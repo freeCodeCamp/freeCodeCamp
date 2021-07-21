@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb5bdef
-title: Iterate with JavaScript For Loops
+title: Iterar com laços for em JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNVCe'
 forumTopicId: 18219
@@ -9,21 +9,21 @@ dashedName: iterate-with-javascript-for-loops
 
 # --description--
 
-You can run the same code multiple times by using a loop.
+Você pode rodar o mesmo código várias vezes usando um laço.
 
-The most common type of JavaScript loop is called a `for` loop because it runs for a specific number of times.
+O tipo mais comum de laço JavaScript é chamado de laço `for` porque ele é executado por um número especificado de vezes.
 
-For loops are declared with three optional expressions separated by semicolons:
+Laços For são declarados com três expressões opcionais separadas por ponto e vírgula:
 
-`for (a; b; c)`, where `a` is the intialization statement, `b` is the condition statement, and `c` is the final expression.
+`for (a; b; c)`, onde `a` é a declaração de inicialização, `b` é a declaração de condição, e `c` é a expressão final.
 
-The initialization statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.
+A declaração de inicialização é executada apenas uma vez antes do laço iniciar. Normalmente é usado para definir e configurar sua variável de laço.
 
-The condition statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to `true`. When the condition is `false` at the start of the iteration, the loop will stop executing. This means if the condition starts as false, your loop will never execute.
+A declaração de condição é verificada no início de cada iteração do laço e irá continuar enquanto seu valor for `true`. Quando a condição for `false` no início da iteração, o laço irá parar de executar. Isso significa que se a condição de início for falsa, seu laço nunca será executado.
 
-The final expression is executed at the end of each loop iteration, prior to the next condition check and is usually used to increment or decrement your loop counter.
+A expressão final é executada no final de cada iteração do laço, antes da verificação da próxima condição e normalmente é usada para incrementar ou decrementar o contador do laço.
 
-In the following example we initialize with `i = 0` and iterate while our condition `i < 5` is true. We'll increment `i` by `1` in each loop iteration with `i++` as our final expression.
+No exemplo a seguir, inicializamos com `i = 0` e iteramos enquanto nossa condição `i < 5` for verdadeira. Nós incrementaremos `i` em `1` em cada iteração do laço com `i++` como nossa expressão final.
 
 ```js
 var ourArray = [];
@@ -32,21 +32,21 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-`ourArray` will now have the value `[0,1,2,3,4]`.
+`ourArray` agora terá o valor de `[0,1,2,3,4]`.
 
 # --instructions--
 
-Use a `for` loop to push the values 1 through 5 onto `myArray`.
+Use o laço `for` para adicionar os valores de 1 até 5 dentro de `myArray`.
 
 # --hints--
 
-You should be using a `for` loop for this.
+Você deve usar um laço `for` para isso.
 
 ```js
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` should equal `[1,2,3,4,5]`.
+`myArray` deve ser igual a `[1,2,3,4,5]`.
 
 ```js
 assert.deepEqual(myArray, [1, 2, 3, 4, 5]);

@@ -1,6 +1,6 @@
 ---
 id: 587d7db2367417b2b2512b8b
-title: Understand the Immediately Invoked Function Expression (IIFE)
+title: Entender a expressão de função invocada imediatamente (IIFE)
 challengeType: 1
 forumTopicId: 301328
 dashedName: understand-the-immediately-invoked-function-expression-iife
@@ -8,7 +8,7 @@ dashedName: understand-the-immediately-invoked-function-expression-iife
 
 # --description--
 
-A common pattern in JavaScript is to execute a function as soon as it is declared:
+Um padrão comum em JavaScript é executar a função assim que ela é declarada:
 
 ```js
 (function () {
@@ -16,23 +16,23 @@ A common pattern in JavaScript is to execute a function as soon as it is declare
 })();
 ```
 
-This is an anonymous function expression that executes right away, and outputs `Chirp, chirp!` immediately.
+Essa é uma expressão de função anônima que executa logo após ser declarada, e exibe imediatamente no console `Chirp, chirp!`.
 
-Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an <dfn>immediately invoked function expression</dfn> or <dfn>IIFE</dfn>.
+Note que a função não possui nome e não é armazenada em uma variável. Os dois parênteses () ao final da expressão da função faz com que ela seja imediatamente executada ou invocada. Este padrão é conhecido como <dfn>immediately invoked function expression (expressão de função invocada imediatamente)</dfn> ou <dfn>IIFE</dfn>.
 
 # --instructions--
 
-Rewrite the function `makeNest` and remove its call so instead it's an anonymous immediately invoked function expression (IIFE).
+Rescreva a função `makeNest` e remova a chamada a ela para que no lugar seja uma expressão de função imediatamente invocada (IIFE) anônima.
 
 # --hints--
 
-The function should be anonymous.
+A função deve ser anônima.
 
 ```js
 assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, '')));
 ```
 
-Your function should have parentheses at the end of the expression to call it immediately.
+Sua função deve ter parênteses no final da expressão para chamar ela imediatamente.
 
 ```js
 assert(/\(.*(\)\(|\}\(\))\)/.test(code.replace(/[\s;]/g, '')));

@@ -1,6 +1,6 @@
 ---
 id: 587d7b89367417b2b2512b48
-title: Use the Spread Operator to Evaluate Arrays In-Place
+title: Use o operador spread para avaliar arrays na hora
 challengeType: 1
 forumTopicId: 301222
 dashedName: use-the-spread-operator-to-evaluate-arrays-in-place
@@ -8,27 +8,27 @@ dashedName: use-the-spread-operator-to-evaluate-arrays-in-place
 
 # --description--
 
-ES6 introduces the <dfn>spread operator</dfn>, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.
+ES6 introduz o <dfn>operador spread</dfn>, o qual nos permite expandir arrays e outras expresões no lugar aonde é esperado diversos parâmetros ou elementos.
 
-The ES5 code below uses `apply()` to compute the maximum value in an array:
+O código em ES5 abaixo usa `apply()` para calcular o valor máximo de um array:
 
 ```js
 var arr = [6, 89, 3, 45];
 var maximus = Math.max.apply(null, arr);
 ```
 
-`maximus` would have a value of `89`.
+`maximus` teria o valor de `89`.
 
-We had to use `Math.max.apply(null, arr)` because `Math.max(arr)` returns `NaN`. `Math.max()` expects comma-separated arguments, but not an array. The spread operator makes this syntax much better to read and maintain.
+Tivemos de usar `Math.max.apply(null, arr)` porque `Math.max(arr)` retorna `NaN`. `Math.max()` espera argumentos separados por vírgula, mas não um array. O operador spread torna essa sintaxe muito mais legível e mais fácil de manter.
 
 ```js
 const arr = [6, 89, 3, 45];
 const maximus = Math.max(...arr);
 ```
 
-`maximus` would have a value of `89`.
+`maximus` teria o valor de `89`.
 
-`...arr` returns an unpacked array. In other words, it *spreads* the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:
+`...arr` retorna um array descompactado. Em outras palavras, ele *espalha (spreads)* o array. No entanto, o operador spread apenas funciona no local, como em um argumento para uma função ou em um array literal. O código a seguir não funcionará:
 
 ```js
 const spreaded = ...arr;
@@ -36,23 +36,23 @@ const spreaded = ...arr;
 
 # --instructions--
 
-Copy all contents of `arr1` into another array `arr2` using the spread operator.
+Copie todo o conteúdo de `arr1` em outro array `arr2` usando o operador spread.
 
 # --hints--
 
-`arr2` should be correct copy of `arr1`.
+`arr2` deve ser uma cópia correta de `arr1`.
 
 ```js
 assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 ```
 
-`...` spread operator should be used to duplicate `arr1`.
+O operador spread `...` deve ser usado para duplicar `arr1`.
 
 ```js
 assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
-`arr2` should remain unchanged when `arr1` is changed.
+`arr2` deve continuar inalterado quando `arr1` é modificado=.
 
 ```js
 assert((arr1, arr2) => {

@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba5
-title: Specify Upper and Lower Number of Matches
+title: Especificar o número de capturas
 challengeType: 1
 forumTopicId: 301367
 dashedName: specify-upper-and-lower-number-of-matches
@@ -8,11 +8,11 @@ dashedName: specify-upper-and-lower-number-of-matches
 
 # --description--
 
-Recall that you use the plus sign `+` to look for one or more characters and the asterisk `*` to look for zero or more characters. These are convenient but sometimes you want to match a certain range of patterns.
+Lembre-se que você pode usar o sinal de `+` para procurar por uma ou mais ocorrências e o asterisco `*` para procurar por zero ou mais ocorrências. Eles são convenientes, mas às vezes você precisa capturar um número exato de caracteres.
 
-You can specify the lower and upper number of patterns with <dfn>quantity specifiers</dfn>. Quantity specifiers are used with curly brackets (`{` and `}`). You put two numbers between the curly brackets - for the lower and upper number of patterns.
+Você pode especificar um número mínimo e um máximo de capturas com <dfn>especificadores de quantidade</dfn>. Para usar especificadores de quantidade, usa-se chaves: `{` e `}`. Você pode especificar os dois números dentro delas para restringir as capturas.
 
-For example, to match only the letter `a` appearing between `3` and `5` times in the string `ah`, your regex would be `/a{3,5}h/`.
+Por exemplo, se você quiser encontrar a letra `a` de `3` a `5` vezes na string `ah`, você pode escrever a regex `/a{3,5}h/`.
 
 ```js
 let A4 = "aaaah";
@@ -22,51 +22,51 @@ multipleA.test(A4);
 multipleA.test(A2);
 ```
 
-The first `test` call would return `true`, while the second would return `false`.
+A primeira chamada a `test` retorna `true` enquanto a segunda retorna `false`.
 
 # --instructions--
 
-Change the regex `ohRegex` to match the entire phrase `Oh no` only when it has `3` to `6` letter `h`'s.
+Altere a regex `ohRegex` para que capture a frase `Oh no`, mas apenas quando nela houver de `3` a `6` letras `h`'s.
 
 # --hints--
 
-Your regex should use curly brackets.
+Sua regex deve usar chaves.
 
 ```js
 assert(ohRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Your regex should not match the string `Ohh no`
+Sua regex não deve encontrar a string `Ohh no`
 
 ```js
 assert(!ohRegex.test('Ohh no'));
 ```
 
-Your regex should match the string `Ohhh no`
+Sua regex deve encontrar a string `Ohhh no`
 
 ```js
 assert('Ohhh no'.match(ohRegex)[0].length === 7);
 ```
 
-Your regex should match the string `Ohhhh no`
+Sua regex deve encontrar a string `Ohhhh no`
 
 ```js
 assert('Ohhhh no'.match(ohRegex)[0].length === 8);
 ```
 
-Your regex should match the string `Ohhhhh no`
+Sua regex deve encontrar a string `Ohhhhh no`
 
 ```js
 assert('Ohhhhh no'.match(ohRegex)[0].length === 9);
 ```
 
-Your regex should match the string `Ohhhhhh no`
+Sua regex deve encontrar a string `Ohhhhhh no`
 
 ```js
 assert('Ohhhhhh no'.match(ohRegex)[0].length === 10);
 ```
 
-Your regex should not match the string `Ohhhhhhh no`
+Sua regex não deve encontrar a string `Ohhhhhhh no`
 
 ```js
 assert(!ohRegex.test('Ohhhhhhh no'));

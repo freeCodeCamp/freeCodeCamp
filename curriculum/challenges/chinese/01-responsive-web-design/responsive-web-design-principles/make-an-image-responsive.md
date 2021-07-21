@@ -2,7 +2,6 @@
 id: 587d78b1367417b2b2512b09
 title: 使图片自适应设备尺寸
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pzrPu4/cz763UD'
 forumTopicId: 301140
 dashedName: make-an-image-responsive
 ---

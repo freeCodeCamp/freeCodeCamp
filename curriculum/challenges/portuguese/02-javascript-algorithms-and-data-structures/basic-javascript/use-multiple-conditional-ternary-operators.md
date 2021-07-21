@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b21
-title: Use Multiple Conditional (Ternary) Operators
+title: Usar operadores de múltiplas condições (ternários)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cyWJBT4'
 forumTopicId: 301179
@@ -9,9 +9,9 @@ dashedName: use-multiple-conditional-ternary-operators
 
 # --description--
 
-In the previous challenge, you used a single conditional operator. You can also chain them together to check for multiple conditions.
+No desafio anterior, você usou um único operador condicional. Você também pode encadear eles juntos para verificar por múltiplas condições.
 
-The following function uses `if`, `else if`, and `else` statements to check multiple conditions:
+A seguinte função usa as instruções `if`, `else if` e `else` para verificar múltiplas condições:
 
 ```js
 function findGreaterOrEqual(a, b) {
@@ -27,7 +27,7 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-The above function can be re-written using multiple conditional operators:
+A função acima pode ser rescrita usando operadores de múltiplas condições (operador ternário):
 
 ```js
 function findGreaterOrEqual(a, b) {
@@ -37,7 +37,7 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-It is considered best practice to format multiple conditional operators such that each condition is on a separate line, as shown above. Using multiple conditional operators without proper indentation may make your code hard to read. For example:
+É considerado a melhor prática para formatar operadores de múltiplas condições, tal que cada condição está em uma linha separada, como mostrada acima. Usando operadores de múltiplas condições sem a indentação adequada pode dificultar a leitura do seu código. Por exemplo:
 
 ```js
 function findGreaterOrEqual(a, b) {
@@ -47,29 +47,29 @@ function findGreaterOrEqual(a, b) {
 
 # --instructions--
 
-In the `checkSign` function, use multiple conditional operators - following the recommended format used in `findGreaterOrEqual` - to check if a number is positive, negative or zero. The function should return `positive`, `negative` or `zero`.
+Na função `checkSign`, use operadores de múltiplas condições - seguindo o formato recomendado usado em `findGreaterOrEqual` - para verificar se um número é positivo, negativo ou zero. A função deve retornar `positive`, `negative` ou `zero`.
 
 # --hints--
 
-`checkSign` should use multiple conditional operators
+`checkSign` deve usar operadores de múltiplas condições
 
 ```js
 assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
 ```
 
-`checkSign(10)` should return the string `positive`. Note that capitalization matters
+`checkSign(10)` deve retornar a string `positive`. Observe que a capitalização importa
 
 ```js
 assert(checkSign(10) === 'positive');
 ```
 
-`checkSign(-12)` should return the string `negative`. Note that capitalization matters
+`checkSign(-12)` deve retornar a string `negative`. Observe que a capitalização importa
 
 ```js
 assert(checkSign(-12) === 'negative');
 ```
 
-`checkSign(0)` should return the string `zero`. Note that capitalization matters
+`checkSign(0)` deve retornar a string `zero`. Observe que a capitalização importa
 
 ```js
 assert(checkSign(0) === 'zero');

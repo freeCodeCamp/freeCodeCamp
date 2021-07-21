@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d98
-title: Creating a Convolutional Neural Network
+title: 創建卷積神經網絡
 challengeType: 11
 videoId: kfv0K8MtkIc
 dashedName: creating-a-convolutional-neural-network
@@ -10,7 +10,7 @@ dashedName: creating-a-convolutional-neural-network
 
 ## --text--
 
-Fill in the blanks below to complete the architecture for a convolutional neural network:
+填寫下面的空白以完成卷積神經網絡的架構：
 
 ```py
 model = models.__A__()

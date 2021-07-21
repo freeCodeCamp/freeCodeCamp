@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c8
-title: Acessando Propriedades de Objeto com Notação de Colchetes
+title: Acessar propriedades de objeto com notação de colchetes
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBvmEHP'
 forumTopicId: 16163

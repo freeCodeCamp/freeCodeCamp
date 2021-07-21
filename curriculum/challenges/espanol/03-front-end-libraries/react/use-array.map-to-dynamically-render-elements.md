@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618a
-title: Use Array.map() to Dynamically Render Elements
+title: Utiliza Array.map() para renderizar dinámicamente los elementos
 challengeType: 6
 forumTopicId: 301417
 dashedName: use-array-map-to-dynamically-render-elements
@@ -8,21 +8,21 @@ dashedName: use-array-map-to-dynamically-render-elements
 
 # --description--
 
-Conditional rendering is useful, but you may need your components to render an unknown number of elements. Often in reactive programming, a programmer has no way to know what the state of an application is until runtime, because so much depends on a user's interaction with that program. Programmers need to write their code to correctly handle that unknown state ahead of time. Using `Array.map()` in React illustrates this concept.
+El renderizado condicional es útil, pero es posible que necesites tus componentes para renderizar un número desconocido de elementos. A menudo en la programación reactiva, un programador no tiene forma de saber cuál es el estado de una aplicación hasta el tiempo de ejecución, porque mucho depende de la interacción de un usuario con ese programa. Los programadores necesitan escribir su código para manejar correctamente ese estado desconocido antes de tiempo. Usar `Array.map()` en React ilustra este concepto.
 
-For example, you create a simple "To Do List" app. As the programmer, you have no way of knowing how many items a user might have on their list. You need to set up your component to dynamically render the correct number of list elements long before someone using the program decides that today is laundry day.
+Por ejemplo, crea una aplicación simple "To Do List". Como programador, no tienes forma de saber cuántos elementos puede tener un usuario en su lista. Necesitas configurar tu componente para renderizar dinámicamente el número correcto de elementos de la lista mucho antes de que alguien que use el programa decida que hoy es día de lavandería.
 
 # --instructions--
 
-The code editor has most of the `MyToDoList` component set up. Some of this code should look familiar if you completed the controlled form challenge. You'll notice a `textarea` and a `button`, along with a couple of methods that track their states, but nothing is rendered to the page yet.
+El editor de código tiene la mayoría del componente `MyToDoList` configurado. Parte de este código debería parecer familiar si completaste el desafío de formulario controlado. Vas a notar un `textarea` y un `button`, junto con un par de métodos que rastrean sus estados, pero aún no se muestra nada a la página.
 
-Inside the `constructor`, create a `this.state` object and define two states: `userInput` should be initialized as an empty string, and `toDoList` should be initialized as an empty array. Next, delete the comment in the `render()` method next to the `items` variable. In its place, map over the `toDoList` array stored in the component's internal state and dynamically render a `li` for each item. Try entering the string `eat, code, sleep, repeat` into the `textarea`, then click the button and see what happens.
+Dentro del `constructor`, crea un objeto `this.state` y define dos estados: `userInput` que debe inicializarse como una cadena vacía, y `toDoList` que debe inicializarse como un arreglo vacío. Luego, elimina el comentario junto a la variable `items` del método `render()`. En su lugar, utiliza la función map() para recorrer el arreglo `toDoList` almacenado en el internal state del componente y renderizar un `li` por cada item. Intenta introducir la cadena `eat, code, sleep, repeat` dentro del `textarea`, haz clic en el botón y ve qué sucede.
 
-**Note:** You may know that all sibling child elements created by a mapping operation like this do need to be supplied with a unique `key` attribute. Don't worry, this is the topic of the next challenge.
+**Nota:** Puede que sepas que todos los elementos hijos hermanos creados por una operación map como ésta necesitan poseer un atributo `key` único. No te preocupes, este es el tema de nuestro próximo desafío.
 
 # --hints--
 
-The MyToDoList component should exist and render to the page.
+El componente MyToDoList debe existir y mostrarse en la página.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-The first child of `MyToDoList` should be a `textarea` element.
+El primer hijo de `MyToDoList` debe ser un elemento `textarea`.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-The second child of `MyToDoList` should be a `br` element.
+El segundo hijo de `MyToDoList` debe ser un elemento `br`.
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-The third child of `MyToDoList` should be a `button` element.
+El tercer hijo de `MyToDoList` debe ser un elemento `button`.
 
 ```js
 assert(
@@ -74,7 +74,7 @@ assert(
 );
 ```
 
-The state of `MyToDoList` should be initialized with `toDoList` as an empty array.
+El estado de `MyToDoList` debe inicializarse con un arreglo vacío `toDoList`.
 
 ```js
 assert(
@@ -89,7 +89,7 @@ assert(
 );
 ```
 
-The state of `MyToDoList` should be initialized with `userInput` as an empty string.
+El estado de `MyToDoList` debe ser inicializado con una cadena vacía `userInput`.
 
 ```js
 assert(
@@ -104,7 +104,7 @@ assert(
 );
 ```
 
-When the `Create List` button is clicked, the `MyToDoList` component should dynamically return an unordered list that contains a list item element for every item of a comma-separated list entered into the `textarea` element.
+Cuando el botón `Create List` es presionado, el componente `MyToDoList` debe devolver dinámicamente una lista desordenada que contenga un artículo por cada elemento de una lista separada por coma dentro del elemento `textarea`.
 
 ```js
 (() => {

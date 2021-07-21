@@ -1,6 +1,6 @@
 ---
 id: a24c1a4622e3c05097f71d67
-title: Aonde eu pertenço
+title: Encontrar local em um array
 challengeType: 5
 forumTopicId: 16094
 dashedName: where-do-i-belong

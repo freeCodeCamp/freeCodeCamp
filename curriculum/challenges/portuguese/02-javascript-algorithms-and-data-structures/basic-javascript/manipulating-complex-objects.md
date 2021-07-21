@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cb
-title: Manipulating Complex Objects
+title: Manipular objetos complexos
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNMfR'
 forumTopicId: 18208
@@ -9,9 +9,9 @@ dashedName: manipulating-complex-objects
 
 # --description--
 
-Sometimes you may want to store data in a flexible <dfn>Data Structure</dfn>. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn>, and <dfn>objects</dfn>.
+Às vezes você pode querer armazenar dados em uma <dfn>Estrutura de Dados</dfn> flexível. Um objeto JavaScript é uma forma de lidar com dados flexíveis. Eles permitem combinações arbitrárias de <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn> e <dfn>objects</dfn>.
 
-Here's an example of a complex data structure:
+Aqui está um exemplo de estrutura de dados complexas:
 
 ```js
 var ourMusic = [
@@ -29,7 +29,7 @@ var ourMusic = [
 ];
 ```
 
-This is an array which contains one object inside. The object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested `formats` array. If you want to add more album records, you can do this by adding records to the top level array. Objects hold data in a property, which has a key-value format. In the example above, `"artist": "Daft Punk"` is a property that has a key of `artist` and a value of `Daft Punk`. [JavaScript Object Notation](http://www.json.org/) or `JSON` is a related data interchange format used to store data.
+Isto é um array o qual contém um objeto dentro dele. O objeto possui vários pedaços de <dfn>metadados</dfn> sobre um album. Também possui um array aninhado `formats`. Se você quiser adicionar mais discos de album, você pode fazer isso ao adicionar os discos no array de alto nível. Objetos armazenam dados em uma propriedade, a qual possui um formato de chave-valor. No exemplo acima, `"artist": "Daft Punk"` é uma propriedade que tem uma chave `artist` e um valor de `Daft Punk`. [Notação de Objeto JavaScript](http://www.json.org/) ou `JSON` é um formato, de interalteração de dados relacionados, usado para armazenar dados.
 
 ```json
 {
@@ -45,39 +45,39 @@ This is an array which contains one object inside. The object has various pieces
 }
 ```
 
-**Note:** You will need to place a comma after every object in the array, unless it is the last object in the array.
+**Nota:** Você precisará colocar uma vírgula após cada objeto no array, a não ser que for o último objeto no array.
 
 # --instructions--
 
-Add a new album to the `myMusic` array. Add `artist` and `title` strings, `release_year` number, and a `formats` array of strings.
+Adicione um novo álbum para o array `myMusic`. Adicione strings: `artist` e `title`, número: `release_year`, e um array de strings: `formats`.
 
 # --hints--
 
-`myMusic` should be an array
+`myMusic` deve ser um array
 
 ```js
 assert(Array.isArray(myMusic));
 ```
 
-`myMusic` should have at least two elements
+`myMusic` deve ter pelo menos dois elementos
 
 ```js
 assert(myMusic.length > 1);
 ```
 
-The elements in the `myMusic` array should be objects
+Os elementos no array `myMusic` devem ser objetos
 
 ```js
 myMusic.forEach(object => {assert.typeOf(object, 'object')})
 ```
 
-Your object in `myMusic` should have at least 4 properties
+Seu objeto em `myMusic` deve ter pelo menos 4 propriedades
 
 ```js
 myMusic.forEach(object => {assert(Object.keys(object).length > 3); });
 ```
 
-Your object in `myMusic` should contain the property `artist` which is a string
+Seu objeto em `myMusic` deve conter a propriedade `artist` a qual é uma string
 
 ```js
 myMusic.forEach(object => {
@@ -86,7 +86,7 @@ myMusic.forEach(object => {
 })
 ```
 
-Your object in `myMusic` should contain the property `title` which is a string
+Seu objeto em `myMusic` deve conter a propriedade `title` a qual é uma string
 
 ```js
 myMusic.forEach(object => {
@@ -95,7 +95,7 @@ myMusic.forEach(object => {
 })
 ```
 
-Your object in `myMusic` should contain the property `release_year` which is a number
+Seu objeto em `myMusic` deve conter a propriedade `release_year` a qual é um número
 
 ```js
 myMusic.forEach(object => {
@@ -104,7 +104,7 @@ myMusic.forEach(object => {
 })
 ```
 
-Your object in `myMusic` should contain a `formats` property which is an array
+Seu objeto em `myMusic` deve conter a propriedade `formats` a qual é um array
 
 ```js
 myMusic.forEach(object => {
@@ -113,7 +113,7 @@ myMusic.forEach(object => {
 })
 ```
 
-`formats` should be an array of strings with at least two elements
+`formats` deve ser um array de strings com pelo menos dois elementos
 
 ```js
 myMusic.forEach(object => {

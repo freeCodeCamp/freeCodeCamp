@@ -1,6 +1,6 @@
 ---
 id: 5f5904ac738bc2fa9efecf5a
-title: Learn Bash Scripting by Building Five Programs
+title: Aprenda Bash Scripting desenvolvendo cinco programas
 challengeType: 12
 helpCategory: Relational Databases
 url: https://github.com/moT01/.learn-bash-scripting-by-building-five-programs

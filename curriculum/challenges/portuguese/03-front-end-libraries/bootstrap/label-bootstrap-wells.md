@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908854
-title: Label Bootstrap Wells
+title: Dê um Label a Wells Bootstrap
 challengeType: 0
 forumTopicId: 18223
 dashedName: label-bootstrap-wells
@@ -8,15 +8,15 @@ dashedName: label-bootstrap-wells
 
 # --description--
 
-For the sake of clarity, let's label both of our wells with their ids.
+Pelo bem da clareza, vamos rotular ambos os nossos wells com seus ids.
 
-Above your left-well, inside its `col-xs-6` `div` element, add a `h4` element with the text `#left-well`.
+Acima do seu well da esquerda, dentro de seu elemento `col-xs-6` `div`, adicione um elemento `h4` com o texto `#left-well`.
 
-Above your right-well, inside its `col-xs-6` `div` element, add a `h4` element with the text `#right-well`.
+Acima do seu well da direita, dentro de seu elemento `col-xs-6` `div`, adicione um elemento `h4` com o texto `#right-well`.
 
 # --hints--
 
-You should add an `h4` element to each of your `<div class="col-xs-6">` elements.
+Você deve adicionar um elemento `h4` para cada um de seus elementos `<div class="col-xs-6">`.
 
 ```js
 assert(
@@ -24,19 +24,19 @@ assert(
 );
 ```
 
-One `h4` element should have the text `#left-well`.
+Um elemento `h4` deve ter o texto `#left-well`.
 
 ```js
 assert(new RegExp('#left-well', 'gi').test($('h4').text()));
 ```
 
-One `h4` element should have the text `#right-well`.
+Um elemento `h4` deve ter o texto `#right-well`.
 
 ```js
 assert(new RegExp('#right-well', 'gi').test($('h4').text()));
 ```
 
-All of your `h4` elements should have closing tags.
+Todos os seus elementos `h4` devem ter tags de fechamento.
 
 ```js
 assert(

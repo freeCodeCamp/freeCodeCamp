@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b95
-title: Match Single Character with Multiple Possibilities
+title: Capturar um único caractere com múltiplas possibilidades
 challengeType: 1
 forumTopicId: 301357
 dashedName: match-single-character-with-multiple-possibilities
@@ -8,11 +8,11 @@ dashedName: match-single-character-with-multiple-possibilities
 
 # --description--
 
-You learned how to match literal patterns (`/literal/`) and wildcard character (`/./`). Those are the extremes of regular expressions, where one finds exact matches and the other matches everything. There are options that are a balance between the two extremes.
+Você aprendeu a capturar padrões literais (`/literal/`) e usar o caractere curinga (`/./`). Eles são os extremos das expressões regulares: um encontra o texto exato e o outro captura qualquer coisa. Existem formas de balancear esses extremos.
 
-You can search for a literal pattern with some flexibility with <dfn>character classes</dfn>. Character classes allow you to define a group of characters you wish to match by placing them inside square (`[` and `]`) brackets.
+Você pode ter alguma flexibilidade ao procurar um padrão literal usando <dfn>classes de caracteres</dfn>. Classes de caracteres permitem a definição de grupos de caracteres que você quer capturar ao colocá-los entre colchetes: `[` e `]`.
 
-For example, you want to match `bag`, `big`, and `bug` but not `bog`. You can create the regex `/b[aiu]g/` to do this. The `[aiu]` is the character class that will only match the characters `a`, `i`, or `u`.
+Por exemplo, se você quiser encontrar `bag`, `big` e `bug` mas não `bog`. Você pode escrever a regex `/b[aiu]g/` para isso. `[aiu]` é a classe de caracteres que só capturará `a`, `i` ou `u`.
 
 ```js
 let bigStr = "big";
@@ -26,41 +26,41 @@ bugStr.match(bgRegex);
 bogStr.match(bgRegex);
 ```
 
-In order, the four `match` calls would return the values `["big"]`, `["bag"]`, `["bug"]`, and `null`.
+As quatro chamadas a `match` retornarão os seguintes valores, nesta ordem: `["big"]`, `["bag"]`, `["bug"]` e `null`.
 
 # --instructions--
 
-Use a character class with vowels (`a`, `e`, `i`, `o`, `u`) in your regex `vowelRegex` to find all the vowels in the string `quoteSample`.
+Use classe de caracteres de vogais (`a`, `e`, `i`, `o`, `u`) na sua regex `vowelRegex` para encontrar todas as vogais na string `quoteSample`.
 
-**Note:** Be sure to match both upper- and lowercase vowels.
+**Nota:** Você quer encontrar tanto maiúsculas quanto minúsculas.
 
 # --hints--
 
-You should find all 25 vowels.
+Você deve encontrar todas as 25 vogais.
 
 ```js
 assert(result.length == 25);
 ```
 
-Your regex `vowelRegex` should use a character class.
+Você deve usar uma classe de caracteres na sua regex `vowelRegex`.
 
 ```js
 assert(/\[.*\]/.test(vowelRegex.source));
 ```
 
-Your regex `vowelRegex` should use the global flag.
+Você deve usar a flag global na sua regex `vowelRegex`.
 
 ```js
 assert(vowelRegex.flags.match(/g/).length == 1);
 ```
 
-Your regex `vowelRegex` should use the case insensitive flag.
+Você deve usar a flag de ignorar caixa na sua regex `vowelRegex`.
 
 ```js
 assert(vowelRegex.flags.match(/i/).length == 1);
 ```
 
-Your regex should not match any consonants.
+Sua regex não deve encontrar nenhuma consoante.
 
 ```js
 assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()));

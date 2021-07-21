@@ -7,14 +7,33 @@ dashedName: part-30
 
 # --description--
 
-It’s looking good. Time to start adding some menu items. Add an empty `article` element under the `Coffees` heading. It will contain a flavor and price of each coffee you currently offer.
+It’s looking good. Time to start adding some menu items. Add an empty `article` element under the `Coffee` heading. It will contain a flavor and price of each coffee you currently offer.
 
 # --hints--
 
-Test 1
+You should have an opening `<article>` tag.
 
 ```js
+assert(code.match(/<article>/i));
+```
 
+You should have a closing `</article>` tag.
+
+```js
+assert(code.match(/<\/article>/i));
+```
+
+You should not change the existing `h2` element.
+
+```js
+assert($('h2').length === 1);
+```
+
+Your `article` element should come after your `h2` element.
+
+```js
+const article = $('article')[0];
+assert(article.previousElementSibling.tagName === 'H2');
 ```
 
 # --seed--
@@ -39,7 +58,7 @@ Test 1
       <main>
         <section>
 --fcc-editable-region--
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
 --fcc-editable-region--
         </section>
       </main>
@@ -50,7 +69,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {

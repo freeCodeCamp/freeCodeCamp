@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf4
-title: Chain Middleware to Create a Time Server
+title: Encadeie middleware para criar um servidor de tempo
 challengeType: 2
 forumTopicId: 301510
 dashedName: chain-middleware-to-create-a-time-server
@@ -8,9 +8,9 @@ dashedName: chain-middleware-to-create-a-time-server
 
 # --description--
 
-Middleware can be mounted at a specific route using `app.METHOD(path, middlewareFunction)`. Middleware can also be chained inside route definition.
+O middleware pode ser montado em uma rota específica usando `app.METHOD(path, middlewareFunction)`. O middleware também pode ser encadeado nas definições de rota.
 
-Look at the following example:
+Observe o exemplo abaixo:
 
 ```js
 app.get('/user', function(req, res, next) {
@@ -21,17 +21,17 @@ app.get('/user', function(req, res, next) {
 });
 ```
 
-This approach is useful to split the server operations into smaller units. That leads to a better app structure, and the possibility to reuse code in different places. This approach can also be used to perform some validation on the data. At each point of the middleware stack you can block the execution of the current chain and pass control to functions specifically designed to handle errors. Or you can pass control to the next matching route, to handle special cases. We will see how in the advanced Express section.
+Esse método é útil para separar as operações de servidor em pedaços menores. Isso fornece uma melhor estrutura de aplicativo, além da possibilidade de reusar código em partes diferentes. Esse método também pode ser usado para realizar algumas validações de dados. Em cada ponto da pilha de middleware, você poderá bloquear a execução da cadeia atual e passar o controle para funções específicas criadas especificamente para gerenciar erros. Você também pode passar o controle para a próxima rota correspondente, para gerenciar casos especiais. Veremos como fazer isso na seção avançada do Express.
 
 # --instructions--
 
-In the route `app.get('/now', ...)` chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the `req.time` key. You can use `new Date().toString()`. In the handler, respond with a JSON object, taking the structure `{time: req.time}`.
+Na rota `app.get('/now', ...)`, encadeie uma função middleware e o handler final. Na função middleware, você deverá adicionar o tempo atual no objeto de requisição na chave `req.time`. Você pode usar `new Date().toString()`. No gerenciador, responda com um objeto JSON, pegando a estrutura `{time: req.time}`.
 
-**Note:** The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct.
+**Nota:** o teste não vai passar se você não encadear o middleware. Se você montar a função em algum outro lugar, o teste vai falhar, mesmo que o resultado final esteja correto.
 
 # --hints--
 
-The /now endpoint should have mounted middleware
+O endpoint (URL) /now deve ter o middleware montado
 
 ```js
 (getUserInput) =>
@@ -49,7 +49,7 @@ The /now endpoint should have mounted middleware
   );
 ```
 
-The /now endpoint should return a time that is +/- 20 secs from now
+O endpoint (URL) /now deve retornar um horário que possui margem de erro de +/- 20 segundos a partir de agora
 
 ```js
 (getUserInput) =>

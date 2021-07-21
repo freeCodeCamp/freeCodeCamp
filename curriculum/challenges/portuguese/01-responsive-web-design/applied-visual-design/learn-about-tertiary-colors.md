@@ -1,6 +1,6 @@
 ---
 id: 587d78a4367417b2b2512ad2
-title: Cores terciárias
+title: Aprender sobre cores terciárias
 challengeType: 0
 forumTopicId: 301057
 dashedName: learn-about-tertiary-colors

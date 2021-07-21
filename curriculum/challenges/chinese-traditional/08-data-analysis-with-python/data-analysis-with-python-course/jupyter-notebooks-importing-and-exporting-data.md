@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c151
-title: Jupyter Notebooks Importing and Exporting Data
+title: 在 Jupyter Notebooks 中導入和導出數據
 challengeType: 11
 videoId: k1msxD3JIxE
 dashedName: jupyter-notebooks-importing-and-exporting-data
@@ -8,39 +8,38 @@ dashedName: jupyter-notebooks-importing-and-exporting-data
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在視頻中我們使用的編輯器工具是在 notebook.ai 這個平臺，你也可以選擇用其他的平臺，比如說 Google Colab 也是一個不錯的選擇。*
 
-More resources:
+更多資源：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
--   [Twitter Cheat Sheet](https://twitter.com/rmotr_com/status/1122176794696847361)
+-   [在 GitHub 平臺的 Notebooks](https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial)
+-   [如何使用 Google Colab 來打開 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What kind of data can you import and work with in a Jupyter Notebook?
+你可以在 Jupyter Notebook 中導入和使用什麼樣的數據？
 
 ## --answers--
 
-Excel files.
+Excel 文件。
 
 ---
 
-CSV files.
+CSV 文件。
 
 ---
 
-XML files.
+XML 文件
 
 ---
 
-Data from an API.
+來自 API 的數據
 
 ---
 
-All of the above.
+以上全部內容
 
 ## --video-solution--
 

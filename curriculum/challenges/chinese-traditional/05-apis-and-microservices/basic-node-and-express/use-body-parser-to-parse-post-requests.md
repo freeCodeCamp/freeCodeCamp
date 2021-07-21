@@ -26,13 +26,15 @@ name=John+Doe&age=25
 
 # --instructions--
 
-在 `package.json` 中安裝 `body-parser` 模塊， 然後在文件頂部 `require` 進來， 用變量 `bodyParser` 保存它。 通過中間件的 `bodyParser.urlencoded({extended: false})` 方法處理 URL 編碼數據， 將調用上個方法返回的函數傳給 `app.use()`， 中間件通常掛載在所有需要它的路由之前。
+在 `package.json` 中安裝 `body-parser` 模塊， 然後在文件頂部 `require` 進來， 用變量 `bodyParser` 保存它。 通過中間件的 `bodyParser.urlencoded({extended: false})` 方法處理 URL 編碼數據， 將通過先前的方法調用返回的函數傳遞到 `app.use()`。 中間件通常掛載在所有需要它的路由之前。
 
-**注意：**`extended=false` 是一個告訴解析器使用經典編碼的配置選項， 當使用它時，值只能是字符串或者數組， 拓展版本數據更加靈活，但稍遜於 JSON。
+**注意：** `extended` 是一個配置選項, 告訴 `body-parser` 需要使用哪個解析。 當 `extended=false` 時，它使用經典編碼 `querystring` 庫。 當 `extended=true`時，它使用 `qs` 庫進行解析。
+
+當使用 `extended=false` 時，值可以只是字符串或數組。 使用 `querystring` 時返回的對象並不繼承的 JavaScript `Object`，這意味着 `hasOwnProperty`、`toString` 等函數將不可用。 拓展版本的數據更加靈活，但稍遜於 JSON。
 
 # --hints--
 
-應該掛載“body-parser”中間件
+應該掛載 “body-parser” 中間件
 
 ```js
 (getUserInput) =>

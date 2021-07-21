@@ -18,7 +18,7 @@ import {
 import Helmet from 'react-helmet';
 import isEmail from 'validator/lib/isEmail';
 import { isString } from 'lodash-es';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { Spacer } from '../components/helpers';
 import './update-email.css';
@@ -28,7 +28,7 @@ import { maybeEmailRE } from '../utils';
 
 interface UpdateEmailProps {
   isNewEmail: boolean;
-  t: (s: string) => string;
+  t: TFunction;
   updateMyEmail: (e: string) => void;
 }
 

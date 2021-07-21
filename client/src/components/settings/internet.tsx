@@ -10,7 +10,7 @@ import {
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import isURL from 'validator/lib/isURL';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { maybeUrlRE } from '../../utils';
 
@@ -26,7 +26,7 @@ interface InternetFormValues {
 }
 
 interface InternetProps extends InternetFormValues {
-  t: (str: string) => string;
+  t: TFunction;
   updateInternetSettings: (formValues: InternetFormValues) => void;
 }
 

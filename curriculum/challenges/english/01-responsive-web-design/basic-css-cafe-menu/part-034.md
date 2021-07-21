@@ -11,10 +11,25 @@ Using your new `flavor` class as a selector, set the `text-align` property's val
 
 # --hints--
 
-Test 1
+You should have a `flavor` class selector.
 
 ```js
+const hasFlavor = new __helpers.CSSHelp(document).getStyle('.flavor');
+assert(hasFlavor);
+```
 
+You should set the `text-align` property to `left`.
+
+```js
+const hasTextAlign = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['text-align'] === 'left');
+assert(hasTextAlign);
+```
+
+Your `flavor` class selector should set the `text-align` property to `left`.
+
+```js
+const flavorTextAlign = new __helpers.CSSHelp(document).getStyle('.flavor')?.getPropertyValue('text-align');
+assert(flavorTextAlign === 'left');
 ```
 
 # --seed--
@@ -38,13 +53,13 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article>
             <p class="flavor">French Vanilla</p>
             <p>3.00</p>
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>
@@ -68,7 +83,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -85,5 +100,6 @@ h1, h2, p {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```
 

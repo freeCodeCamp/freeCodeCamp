@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08806
-title: Altere o Tamanho da Fonte de um Elemento
+title: Alterar o tamanho da fonte de um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bvDc8'
 forumTopicId: 16777

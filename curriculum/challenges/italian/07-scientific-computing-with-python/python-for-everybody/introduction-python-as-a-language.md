@@ -1,6 +1,6 @@
 ---
 id: 5e6a54ba58d3af90110a60a2
-title: 'Introduction: Python as a Language'
+title: 'Introduzione: Python come linguaggio'
 challengeType: 11
 videoId: 0QeGbZNS_bY
 dashedName: introduction-python-as-a-language
@@ -10,7 +10,7 @@ dashedName: introduction-python-as-a-language
 
 ## --text--
 
-What will print out after running these two lines of code:
+Cosa verrà scritto dopo aver eseguito queste due righe di codice?
 
 ```python
 x = 6

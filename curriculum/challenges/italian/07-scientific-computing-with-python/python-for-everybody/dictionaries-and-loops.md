@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f069
-title: Dictionaries and Loops
+title: Dizionari e cicli
 challengeType: 11
 videoId: EEmekKiKG70
 dashedName: dictionaries-and-loops
@@ -8,15 +8,15 @@ dashedName: dictionaries-and-loops
 
 # --description--
 
-More resources:
+Altre risorse:
 
-\- [Exercise](https://www.youtube.com/watch?v=PrhZ9qwBDD8)
+\- [Esercizio](https://www.youtube.com/watch?v=PrhZ9qwBDD8)
 
 # --question--
 
 ## --text--
 
-What will the following code print?:
+Cosa scriverà il seguente codice?
 
 ```python
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}

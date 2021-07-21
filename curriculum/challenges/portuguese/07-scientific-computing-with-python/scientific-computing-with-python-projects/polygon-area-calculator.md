@@ -1,6 +1,6 @@
 ---
 id: 5e444147903586ffb414c94f
-title: Polygon Area Calculator
+title: Calculadora de área de polígono
 challengeType: 10
 forumTopicId: 462363
 dashedName: polygon-area-calculator
@@ -8,26 +8,26 @@ dashedName: polygon-area-calculator
 
 # --description--
 
-In this project you will use object oriented programming to create a Rectangle class and a Square class. The Square class should be a subclass of Rectangle and inherit methods and attributes.
+Neste projeto, você usará programação orientada a objetos para criar a classe Rectangle, para um retângulo, e a classe Square, para um quadrado. A classe Square deve ser uma subclasse da classe Rectangle e herdar métodos e atributos.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator).
+Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com baseado nas instruções do 'README.md', envie o link do seu projeto abaixo.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
 <ul>
   <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
+    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Curso de Python em vídeo para todos</a> (14 horas)
   </li>
   <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
+    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Curso em vídeo Aprenda Python</a> (2 horas)
   </li>
 </ul>
 
 # --hints--
 
-It should create a Rectangle class and Square class and pass all tests.
+Ele deve criar uma classe Rectangle e uma classe Square e passar em todos os testes.
 
 ```js
 

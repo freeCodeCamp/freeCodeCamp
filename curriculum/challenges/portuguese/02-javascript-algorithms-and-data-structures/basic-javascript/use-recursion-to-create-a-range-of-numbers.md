@@ -1,6 +1,6 @@
 ---
 id: 5cc0bd7a49b71cb96132e54c
-title: Use Recursion to Create a Range of Numbers
+title: Usar recursão para criar um intervalo de números
 challengeType: 1
 forumTopicId: 301180
 dashedName: use-recursion-to-create-a-range-of-numbers
@@ -8,21 +8,21 @@ dashedName: use-recursion-to-create-a-range-of-numbers
 
 # --description--
 
-Continuing from the previous challenge, we provide you another opportunity to create a recursive function to solve a problem.
+Continuando do desafio anterior, nós o fornecemos outra oportunidade para criar uma função recursiva para resolver um problema.
 
 # --instructions--
 
-We have defined a function named `rangeOfNumbers` with two parameters. The function should return an array of integers which begins with a number represented by the `startNum` parameter and ends with a number represented by the `endNum` parameter. The starting number will always be less than or equal to the ending number. Your function must use recursion by calling itself and not use loops of any kind. It should also work for cases where both `startNum` and `endNum` are the same.
+Definimos uma função chamada `rangeOfNumbers` com dois parâmetros. A função deve retornar um array de inteiros a qual começa com um número representado pelo parâmetro `startNum` e terminar com um número representado pelo parâmetro `endNum`. O número inicial sempre será menor ou igual ao número final. Sua função precisa usar recursividade ao chamar ela mesma e não depender de nenhum tipo de laço. Também deve funcionar para casos onde ambos `startNum` e `endNum` forem o mesmo.
 
 # --hints--
 
-Your function should return an array.
+Sua função deve retornar um array.
 
 ```js
 assert(Array.isArray(rangeOfNumbers(5, 10)));
 ```
 
-Your code should not use any loop syntax (`for` or `while` or higher order functions such as `forEach`, `map`, `filter`, or `reduce`).
+Seu código não deve depender de nenhum laço (`for` ou `while` ou funções de ordem superior como as funções `forEach`, `map`, `filter` ou `reduce`).
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-`rangeOfNumbers` should use recursion (call itself) to solve this challenge.
+`rangeOfNumbers` deve usar recursão (chamar a si) para resolver este desafio.
 
 ```js
 assert(
@@ -38,19 +38,19 @@ assert(
 );
 ```
 
-`rangeOfNumbers(1, 5)` should return `[1, 2, 3, 4, 5]`.
+`rangeOfNumbers(1, 5)` deve retornar `[1, 2, 3, 4, 5]`.
 
 ```js
 assert.deepStrictEqual(rangeOfNumbers(1, 5), [1, 2, 3, 4, 5]);
 ```
 
-`rangeOfNumbers(6, 9)` should return `[6, 7, 8, 9]`.
+`rangeOfNumbers(6, 9)` deve retornar `[6, 7, 8, 9]`.
 
 ```js
 assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
 ```
 
-`rangeOfNumbers(4, 4)` should return `[4]`.
+`rangeOfNumbers(4, 4)` deve retornar `[4]`.
 
 ```js
 assert.deepStrictEqual(rangeOfNumbers(4, 4), [4]);

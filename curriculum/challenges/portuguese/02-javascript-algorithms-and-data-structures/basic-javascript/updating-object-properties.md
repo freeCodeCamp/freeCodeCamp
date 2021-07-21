@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d1
-title: Updating Object Properties
+title: Atualizar propriedades do objeto
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yEJT4'
 forumTopicId: 18336
@@ -9,9 +9,9 @@ dashedName: updating-object-properties
 
 # --description--
 
-After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
+Depois de criar um objeto JavaScript, você pode atualizar suas propriedades a qualquer momento, como você atualizaria qualquer outra variável. Você pode usar notação de ponto ou colchete para atualizar.
 
-For example, let's look at `ourDog`:
+Por exemplo, vamos dar uma olhada em `ourDog`:
 
 ```js
 var ourDog = {
@@ -22,21 +22,21 @@ var ourDog = {
 };
 ```
 
-Since he's a particularly happy dog, let's change his name to the string `Happy Camper`. Here's how we update his object's name property: `ourDog.name = "Happy Camper";` or `ourDog["name"] = "Happy Camper";` Now when we evaluate `ourDog.name`, instead of getting `Camper`, we'll get his new name, `Happy Camper`.
+Como ele é um cachorro particularmente feliz, vamos mudar seu nome para o texto `Happy Camper`. Veja como atualizamos a propriedade name do objeto: `ourDog.name = "Happy Camper";` ou `ourDog["name"] = "Happy Camper";` Agora, quando avaliamos `ourDog.name`, em vez de obter `Camper`, teremos seu novo nome, `Happy Camper`.
 
 # --instructions--
 
-Update the `myDog` object's name property. Let's change her name from `Coder` to `Happy Coder`. You can use either dot or bracket notation.
+Atualize a propriedade name do objeto `myDog`. Vamos alterar o valor da propriedade name dela de `Coder` para `Happy Coder`. Você pode usar notação de ponto ou de colchetes.
 
 # --hints--
 
-You should update `myDog`'s `name` property to equal the string `Happy Coder`.
+Você deve atualizar a propriedade `name` de `myDog` para ser igual a `Happy Coder`.
 
 ```js
 assert(/happy coder/gi.test(myDog.name));
 ```
 
-You should not edit the `myDog` definition.
+Você não deve editar a definição de `myDog`.
 
 ```js
 assert(/"name": "Coder"/.test(code));

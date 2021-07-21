@@ -7,14 +7,40 @@ dashedName: part-10
 
 # --description--
 
-Create an `h2` element in the `section` element and give it the text `Coffees`.
+Create an `h2` element in the `section` element and give it the text `Coffee`.
 
 # --hints--
 
-Test 1
+You should have an opening `<h2>` tag.
 
 ```js
+assert(code.match(/<h2\s*>/i));
+```
 
+You should have a closing `</h2>` tag.
+
+```js
+assert(code.match(/<\/h2\s*>/i));
+```
+
+You should not change your existing `section` element. Make sure you did not delete the closing tag.
+
+```js
+assert($('section').length === 1);
+```
+
+Your `h2` element should be within your `section` element.
+
+```js
+const h2 = document.querySelector('h2');
+assert(h2.parentElement.tagName === 'SECTION');
+```
+
+Your `h2` element should have the text `Coffee`.
+
+```js
+const h2 = document.querySelector('h2');
+assert(h2.innerText === 'Coffee');
 ```
 
 # --seed--
@@ -42,4 +68,3 @@ Test 1
   </body>
 <html>
 ```
-

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036157
-title: Write a Counter with Redux
+title: Escreva um Contador com Redux
 challengeType: 6
 forumTopicId: 301453
 dashedName: write-a-counter-with-redux
@@ -8,33 +8,33 @@ dashedName: write-a-counter-with-redux
 
 # --description--
 
-Now you've learned all the core principles of Redux! You've seen how to create actions and action creators, create a Redux store, dispatch your actions against the store, and design state updates with pure reducers. You've even seen how to manage complex state with reducer composition and handle asynchronous actions. These examples are simplistic, but these concepts are the core principles of Redux. If you understand them well, you're ready to start building your own Redux app. The next challenges cover some of the details regarding `state` immutability, but first, here's a review of everything you've learned so far.
+Agora você aprendeu todos os princípios fundamentais do Redux! Você viu como criar criadores de ações e ações, criar um store do Redux, despachar suas ações ao store e projetar atualizações de estado com reducers puros. Você até viu como gerenciar o estado complexo com a composição do reducer e a lidar com ações assíncronas. Estes exemplos são simplistas, mas estes conceitos são os princípios fundamentais do Redux. Se você os entendeu bem, você está pronto para começar a construir seu próprio aplicativo Redux. Os próximos desafios cobrem alguns detalhes sobre imutabilidade do `state`, mas primeiro, aqui está uma revisão de tudo o que você aprendeu até agora.
 
 # --instructions--
 
-In this lesson, you'll implement a simple counter with Redux from scratch. The basics are provided in the code editor, but you'll have to fill in the details! Use the names that are provided and define `incAction` and `decAction` action creators, the `counterReducer()`, `INCREMENT` and `DECREMENT` action types, and finally the Redux `store`. Once you're finished you should be able to dispatch `INCREMENT` or `DECREMENT` actions to increment or decrement the state held in the `store`. Good luck building your first Redux app!
+Nesta lição, você implementará um contador simples com o Redux do zero. O básico é fornecido no editor de código, mas você terá que preencher os detalhes! Use os nomes que são fornecidos e defina os criadores de ação `incAction` e `decAction`, os tipos de ação `counterReducer()`, `INCREMENT` e `DECREMENT` e, finalmente, o `store` Redux. Depois de ter terminado, você deve ser capaz de despachar as ações `INCREMENT` ou `DECREMENT` para incrementar ou decrementar o estado mantido no `store`. Boa sorte ao construir seu primeiro aplicativo Redux!
 
 # --hints--
 
-The action creator `incAction` should return an action object with `type` equal to the value of `INCREMENT`
+O criador de ação `incAction` deve retornar um objeto de ação com `type` igual ao valor de `INCREMENT`
 
 ```js
 assert(incAction().type === INCREMENT);
 ```
 
-The action creator `decAction` should return an action object with `type` equal to the value of `DECREMENT`
+O criador de ação `decAction` deve retornar um objeto de ação com `type` igual ao valor de `DECREMENT`
 
 ```js
 assert(decAction().type === DECREMENT);
 ```
 
-The Redux store should initialize with a `state` of 0.
+O store do Redux deve inicializar com o `state` igual a 0.
 
 ```js
 assert(store.getState() === 0);
 ```
 
-Dispatching `incAction` on the Redux store should increment the `state` by 1.
+Despachar `incAction` no store Redux deve incrementar o `state` por 1.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-Dispatching `decAction` on the Redux store should decrement the `state` by 1.
+Despachar `decAction` no store Redux deve decrementar o `state` por 1.
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-`counterReducer` should be a function
+`counterReducer` deve ser uma função
 
 ```js
 assert(typeof counterReducer === 'function');

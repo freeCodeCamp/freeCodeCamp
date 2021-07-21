@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c164
-title: Parsing HTML and Saving Data
+title: Analisi HTML e salvataggio dei dati
 challengeType: 11
 videoId: bJaqnTWQmb0
 dashedName: parsing-html-and-saving-data
@@ -8,18 +8,18 @@ dashedName: parsing-html-and-saving-data
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Invece di usare notebooks.ai come mostrato nel video, puoi usare Google Colab.*
 
-More resources:
+Altre risorse:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-17-reading-html-tables/files)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebook su GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-17-reading-html-tables/files)
+-   [Come aprire Notebooks da GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What Python library has the `.read_html()` method we can we use for parsing HTML documents and extracting tables?
+Quale libreria di Python ha un metodo `.read_html()` che possiamo usare per analizzare documenti HTML ed estrarre tabelle?
 
 ## --answers--
 

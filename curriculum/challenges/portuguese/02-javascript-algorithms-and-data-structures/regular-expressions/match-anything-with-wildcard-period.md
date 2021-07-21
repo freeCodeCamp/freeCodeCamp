@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b94
-title: Match Anything with Wildcard Period
+title: Encontrar qualquer coisa com o caractere curinga
 challengeType: 1
 forumTopicId: 301348
 dashedName: match-anything-with-wildcard-period
@@ -8,9 +8,9 @@ dashedName: match-anything-with-wildcard-period
 
 # --description--
 
-Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, you can save time using the wildcard character: `.`
+Haverá vezes em que você não saberá (ou não precisará saber) quais caracteres exatamente farão parte das suas regexes. Pensar em todas as palavras que capturariam, digamos, um erro ortográfico levaria muito tempo. Por sorte, você pode economizar tempo usando o caractere curinga: `.`
 
-The wildcard character `.` will match any one character. The wildcard is also called `dot` and `period`. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match `hug`, `huh`, `hut`, and `hum`, you can use the regex `/hu./` to match all four words.
+O caractere curinga `.` captura qualquer caractere. O curinga também pode ser chamado de `ponto`. Você pode usar o curinga como qualquer outro caractere na regex. Por exemplo, se você quiser encontrar `hug`, `huh`, `hut` ou `hum`, você pode usar a regex `/hu./` para capturar todas as quatro palavras.
 
 ```js
 let humStr = "I'll hum a song";
@@ -20,62 +20,62 @@ huRegex.test(humStr);
 huRegex.test(hugStr);
 ```
 
-Both of these `test` calls would return `true`.
+As duas chamadas a `test` retornam `true`.
 
 # --instructions--
 
-Complete the regex `unRegex` so that it matches the strings `run`, `sun`, `fun`, `pun`, `nun`, and `bun`. Your regex should use the wildcard character.
+Complete a regex `unRegex` para que ela encontre as strings `run`, `sun`, `fun`, `pun`, `nun` e `bun`. Sua regex deve usar o caractere curinga.
 
 # --hints--
 
-You should use the `.test()` method.
+Você deve usar o método `.test()`.
 
 ```js
 assert(code.match(/\.test\(.*\)/));
 ```
 
-You should use the wildcard character in your regex `unRegex`
+Você deve usar o caractere curinga na regex `unRegex`
 
 ```js
 assert(/\./.test(unRegex.source));
 ```
 
-Your regex `unRegex` should match `run` in the string `Let us go on a run.`
+Sua regex `unRegex` deve encontrar `run` na string `Let us go on a run.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Let us go on a run.'));
 ```
 
-Your regex `unRegex` should match `sun` in the string `The sun is out today.`
+Sua regex `unRegex` deve encontrar `sun` na string `The sun is out today.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('The sun is out today.'));
 ```
 
-Your regex `unRegex` should match `fun` in the string `Coding is a lot of fun.`
+Sua regex `unRegex` deve encontrar `fun` na string `Coding is a lot of fun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Coding is a lot of fun.'));
 ```
 
-Your regex `unRegex` should match `pun` in the string `Seven days without a pun makes one weak.`
+Sua regex `unRegex` deve encontrar `pun` na string `Seven days without a pun makes one weak.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Seven days without a pun makes one weak.'));
 ```
 
-Your regex `unRegex` should match `nun` in the string `One takes a vow to be a nun.`
+Sua regex `unRegex` deve encontrar `nun` na string `One takes a vow to be a nun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('One takes a vow to be a nun.'));
 ```
 
-Your regex `unRegex` should match `bun` in the string `She got fired from the hot dog stand for putting her hair in a bun.`
+Sua regex `unRegex` deve encontrar `bun` na string `She got fired from the hot dog stand for putting her hair in a bun.`
 
 ```js
 unRegex.lastIndex = 0;
@@ -86,14 +86,14 @@ assert(
 );
 ```
 
-Your regex `unRegex` should not match the string `There is a bug in my code.`
+Sua regex `unRegex` não deve incluir a string `There is a bug in my code.` no resultado
 
 ```js
 unRegex.lastIndex = 0;
 assert(!unRegex.test('There is a bug in my code.'));
 ```
 
-Your regex `unRegex` should not match the string `Catch me if you can.`
+Sua regex `unRegex` não deve incluir a string `Catch me if you can.` no resultado
 
 ```js
 unRegex.lastIndex = 0;

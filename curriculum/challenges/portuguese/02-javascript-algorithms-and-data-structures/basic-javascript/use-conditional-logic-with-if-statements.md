@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c12feddfaeb3bdef
-title: Use Conditional Logic with If Statements
+title: Usar lógica condicional com instruções if
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87mf3'
 forumTopicId: 18348
@@ -9,15 +9,15 @@ dashedName: use-conditional-logic-with-if-statements
 
 # --description--
 
-`If` statements are used to make decisions in code. The keyword `if` tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as `Boolean` conditions and they may only be `true` or `false`.
+Instruções `If` são usadas para tomar decisões no código. A palavra-chave `if` diz ao JavaScript para executar o código nas chaves sob certas condições, definidas nos parênteses. Essas condições são conhecidas como condições `Boolean` e elas só podem ser `true` ou `false`.
 
-When the condition evaluates to `true`, the program executes the statement inside the curly braces. When the Boolean condition evaluates to `false`, the statement inside the curly braces will not execute.
+Quando a condição for `true`, o programa executara as instruções dentro das chaves. Quando a condição booleana for `false`, as instruções dentro das chaves não serão executadas.
 
-**Pseudocode**
+**Pseudocódigo**
 
-<blockquote>if (<i>condition is true</i>) {<br>  <i>statement is executed</i><br>}</blockquote>
+<blockquote>if (<i>condição é verdadeira</i>) {<br><i>instrução é executada</i><br>}</blockquote>
 
-**Example**
+**Exemplo**
 
 ```js
 function test (myCondition) {
@@ -30,41 +30,41 @@ test(true);
 test(false);
 ```
 
-`test(true)` returns the string `It was true`, and `test(false)` returns the string `It was false`.
+`test(true)` retorna a string `It was true` e `test(false)` retorna a string `It was false`.
 
-When `test` is called with a value of `true`, the `if` statement evaluates `myCondition` to see if it is `true` or not. Since it is `true`, the function returns `It was true`. When we call `test` with a value of `false`, `myCondition` is *not* `true` and the statement in the curly braces is not executed and the function returns `It was false`.
+Quando `test` é chamado com o valor `true`, a instrução `if` avalia `myCondition` para verificar se é `true` ou não. Já que é `true`, a função retorna `It was true`. Quando chamamos `test` com um valor de `false`, `myCondition` *não é* `true` e a instrução nas chaves não é executada e a função retorna `It was false`.
 
 # --instructions--
 
-Create an `if` statement inside the function to return `Yes, that was true` if the parameter `wasThatTrue` is `true` and return `No, that was false` otherwise.
+Crie uma instrução `if` dentro da função para retornar `Yes, that was true` se o parâmetro `wasThatTrue` for `true` e retorne `No, that was false` caso contrário.
 
 # --hints--
 
-`trueOrFalse` should be a function
+`trueOrFalse` deve ser uma função
 
 ```js
 assert(typeof trueOrFalse === 'function');
 ```
 
-`trueOrFalse(true)` should return a string
+`trueOrFalse(true)` deve retornar uma string
 
 ```js
 assert(typeof trueOrFalse(true) === 'string');
 ```
 
-`trueOrFalse(false)` should return a string
+`trueOrFalse(false)` deve retornar uma string
 
 ```js
 assert(typeof trueOrFalse(false) === 'string');
 ```
 
-`trueOrFalse(true)` should return the string `Yes, that was true`
+`trueOrFalse(true)` deve retornar a string `Yes, that was true`
 
 ```js
 assert(trueOrFalse(true) === 'Yes, that was true');
 ```
 
-`trueOrFalse(false)` should return the string `No, that was false`
+`trueOrFalse(false)` deve retornar a string `No, that was false`
 
 ```js
 assert(trueOrFalse(false) === 'No, that was false');

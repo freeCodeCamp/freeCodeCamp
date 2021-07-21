@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b5
-title: Escapando Aspas Literais em Strings
+title: Escapar citações literais em strings
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvgSr'
 forumTopicId: 17568

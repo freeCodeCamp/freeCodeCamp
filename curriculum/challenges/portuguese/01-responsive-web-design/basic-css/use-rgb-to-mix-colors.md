@@ -1,6 +1,6 @@
 ---
 id: bad82fee1348bd9aedf08721
-title: Usar RGB para Misturar Cores
+title: Usar RGB para misturar cores
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cm24JU6'
 forumTopicId: 18368

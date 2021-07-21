@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036180
-title: Optimize Re-Renders with shouldComponentUpdate
+title: Otimizar Re-Renderizações com shouldComponentUpdate
 challengeType: 6
 forumTopicId: 301398
 dashedName: optimize-re-renders-with-shouldcomponentupdate
@@ -8,17 +8,17 @@ dashedName: optimize-re-renders-with-shouldcomponentupdate
 
 # --description--
 
-So far, if any component receives new `state` or new `props`, it re-renders itself and all its children. This is usually okay. But React provides a lifecycle method you can call when child components receive new `state` or `props`, and declare specifically if the components should update or not. The method is `shouldComponentUpdate()`, and it takes `nextProps` and `nextState` as parameters.
+Até agora, se qualquer componente recebe um novo `state` ou novas `props`, ele se renderiza novamente e todos os seus filhos. Normalmente isto está ok. Mas React fornece um método de ciclo de vida que você pode chamar quando componentes filhos recebem um novo `state` ou `props`, e declarar especificamente se os componentes devem atualizar ou não. O método é `shouldComponentUpdate()`, e leva `nextProps` e `nextState` como parâmetros.
 
-This method is a useful way to optimize performance. For example, the default behavior is that your component re-renders when it receives new `props`, even if the `props` haven't changed. You can use `shouldComponentUpdate()` to prevent this by comparing the `props`. The method must return a `boolean` value that tells React whether or not to update the component. You can compare the current props (`this.props`) to the next props (`nextProps`) to determine if you need to update or not, and return `true` or `false` accordingly.
+Esse método é uma maneira útil de otimizar o desempenho. Por exemplo, o comportamento padrão é que seu componente re-renderiza novamente quando recebe novas `props`, mesmo que as `props` não tenham mudado. Você pode usar `shouldComponentUpdate()` para evitar isso comparando as `props`. O método deve retornar um valor `booleano` que indica ao React se deve ou não atualizar o componente. Você pode comparar os "props" atuais (`this.props`) para os próximos props (`nextProps`) para determinar se você precisa atualizar ou não, e retorne `true` ou `false` de acordo.
 
 # --instructions--
 
-The `shouldComponentUpdate()` method is added in a component called `OnlyEvens`. Currently, this method returns `true` so `OnlyEvens` re-renders every time it receives new `props`. Modify the method so `OnlyEvens` updates only if the `value` of its new props is even. Click the `Add` button and watch the order of events in your browser's console as the lifecycle hooks are triggered.
+O método `shouldComponentUpdate()` é adicionado em um componente chamado `OnlyEvens`. Atualmente, esse método retorna `true` então `OnlyEvens` re-renderiza novamente toda vez que recebe novas `props`. Modifique o método para que `OnlyEvens` seja atualizado somente se os `value` de suas novas props forem par. Clique no botão `Add` e veja a ordem dos eventos no console do seu navegador enquanto os ganchos de ciclo de vida são ativados.
 
 # --hints--
 
-The `Controller` component should render the `OnlyEvens` component as a child.
+O componente `Controller` deve renderizar o componente `OnlyEvens` como um filho.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-The `shouldComponentUpdate` method should be defined on the `OnlyEvens` component.
+O método `shouldComponentUpdate` deve ser definido no componente `OnlyEvens`.
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-The `OnlyEvens` component should return an `h1` tag which renders the value of `this.props.value`.
+O componente </code>OnlyEvens` deve retornar uma tag <code>h1` que renderiza o valor de `this.props.value`.
 
 ```js
 (() => {
@@ -64,7 +64,7 @@ The `OnlyEvens` component should return an `h1` tag which renders the value of `
 })();
 ```
 
-`OnlyEvens` should re-render only when `nextProps.value` is even.
+`OnlyEvens` deve re-renderizar novamente somente quando `nextProps.value` for par.
 
 ```js
 (() => {

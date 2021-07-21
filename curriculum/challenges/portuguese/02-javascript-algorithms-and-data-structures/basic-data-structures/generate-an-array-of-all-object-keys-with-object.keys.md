@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1e
-title: Gere um Array de Todas as Chaves de Objeto com Object.keys()
+title: Gerar um array de todas as chaves de objeto com Object.keys()
 challengeType: 1
 forumTopicId: 301160
 dashedName: generate-an-array-of-all-object-keys-with-object-keys

@@ -7,16 +7,24 @@ dashedName: part-40
 
 # --description--
 
-Well that did not work. Styling the `p` elements as `inline-block` and placing them on a separate lines in the code, creates an extra space to the right of the first `p` element, causing the second one to shift to the next line. One way to fix this is to make each `p`'s width a little less than `50%`.
+Well that did not work. Styling the `p` elements as `inline-block` and placing them on separate lines in the code creates an extra space to the right of the first `p` element, causing the second one to shift to the next line. One way to fix this is to make each `p` element's width a little less than `50%`.
 
 Change the `width` value to `49%` for each class to see what happens.
 
 # --hints--
 
-Test 1
+You should set the `width` property to `49%` in your `.flavor` selector.
 
 ```js
+const flavorWidth = new __helpers.CSSHelp(document).getStyle('.flavor')?.getPropertyValue('width');
+assert(flavorWidth === '49%');
+```
 
+You should set the `width` property to `49%` in your `.price` selector.
+
+```js
+const priceWidth = new __helpers.CSSHelp(document).getStyle('.price')?.getPropertyValue('width');
+assert(priceWidth === '49%');
 ```
 
 # --seed--
@@ -40,13 +48,13 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>
@@ -70,7 +78,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {

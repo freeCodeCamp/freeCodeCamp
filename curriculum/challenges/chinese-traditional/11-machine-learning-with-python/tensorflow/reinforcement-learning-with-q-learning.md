@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da3
-title: Reinforcement Learning With Q-Learning
+title: 使用 Q-Learning 進行強化學習
 challengeType: 11
 videoId: Cf7DSU0gVb4
 dashedName: reinforcement-learning-with-q-learning
@@ -10,19 +10,19 @@ dashedName: reinforcement-learning-with-q-learning
 
 ## --text--
 
-The key components of reinforcement learning are...
+強化學習的關鍵組成部分是......
 
 ## --answers--
 
-environment, representative, state, reaction, and reward.
+環境、代表、狀態、反應和獎勵。
 
 ---
 
-environment, agent, state, action, and reward.
+環境、代理、狀態、動作和獎勵。
 
 ---
 
-habitat, agent, state, action, and punishment.
+環境、代理、狀態、動作和懲罰。
 
 ## --video-solution--
 

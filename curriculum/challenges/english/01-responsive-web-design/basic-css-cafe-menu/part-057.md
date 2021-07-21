@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e04559b939080db057
+id: 5f3ef6e03d719d5ac4738993
 title: Part 57
 challengeType: 0
 dashedName: part-57
@@ -7,14 +7,24 @@ dashedName: part-57
 
 # --description--
 
-Since all 4 sides of the menu have the same internal spacing, go ahead and delete the four properties and use a single `padding` property with the value `20px`.
+The current width of the menu will always take up 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
+
+Add a `max-width` property to the `menu` class with a value of `500px` to prevent it from growing too wide.
 
 # --hints--
 
-Test 1
+You should set the `max-width` property to `500px`.
 
 ```js
+const hasMaxWidth = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['max-width'] === '500px');
+assert(hasMaxWidth);
+```
 
+Your `.menu` element should have a `max-width` of `500px`.
+
+```js
+const menuMaxWidth = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('max-width');
+assert(menuMaxWidth === '500px');
 ```
 
 # --seed--
@@ -38,12 +48,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -78,7 +88,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -91,10 +101,7 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 --fcc-editable-region--
 

@@ -11,10 +11,40 @@ Add a `head` element within the `html` element, so you can add a `title` element
 
 # --hints--
 
-Test 1
+You should have an opening `<head>` tag.
 
 ```js
+assert(code.match(/<head>/i));
+```
 
+You should have a closing `</head>` tag.
+
+```js
+assert(code.match(/<head>/i));
+```
+
+You should have an opening `<title>` tag.
+
+```js
+assert(code.match(/<title>/i));
+```
+
+You should have a closing `</title>` tag.
+
+```js
+assert(code.match(/<\/title>/i));
+```
+
+Your `<title>` element should be nested in your `<head>` element.
+
+```js
+assert(code.match(/<head>\s*<title>.*<\/title>\s*<\/head>/i));
+```
+
+Your `<title>` element should have the text `Camper Cafe Menu`. You may need to check your spelling.
+
+```js
+assert(code.match(/<title>camper\scafe\smenu<\/title>/i));
 ```
 
 # --seed--
@@ -29,4 +59,3 @@ Test 1
 --fcc-editable-region--
 </html>
 ```
-

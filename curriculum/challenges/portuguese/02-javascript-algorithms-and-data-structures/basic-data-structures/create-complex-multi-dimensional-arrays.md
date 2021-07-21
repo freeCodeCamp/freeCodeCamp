@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b16
-title: Crie array complexo multidimensional
+title: Criar arrays multidimensionais complexos
 challengeType: 1
 forumTopicId: 301159
 dashedName: create-complex-multi-dimensional-arrays
@@ -31,7 +31,7 @@ let nestedArray = [
 ];
 ```
 
-O array `deep` está aninhado com 2 níveis de profundidade. Os arrays `mais profundos` são de 3 níveis de profundidade. Os `arrays` mais profundos são de 4º níveis, e o ainda `mais profundos` é de 5º nível.
+O array `deep` está aninhado com 2 níveis de profundidade. Os arrays `deeper` são de 3 níveis de profundidade. Os arrays `deepest` são de 4 níveis, e os `deepest-est?` são de 5 níveis.
 
 Embora este exemplo possa parecer complicado, este nível de complexidade não é inédito, ou ainda fora do normal, quando tratando com grandes quantidades de dados. Entretanto, nós ainda podemos facilmente acessar os níveis mais profundos de um array complexo com a notação de colchetes:
 

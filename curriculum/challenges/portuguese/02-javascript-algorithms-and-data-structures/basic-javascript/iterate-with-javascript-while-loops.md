@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb1bdef
-title: Iterate with JavaScript While Loops
+title: Iterar com laços while em JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c8QbnCM'
 forumTopicId: 18220
@@ -9,9 +9,9 @@ dashedName: iterate-with-javascript-while-loops
 
 # --description--
 
-You can run the same code multiple times by using a loop.
+Você pode rodar o mesmo código várias vezes ao usar um laço.
 
-The first type of loop we will learn is called a `while` loop because it runs while a specified condition is true and stops once that condition is no longer true.
+O primeiro tipo de laço que aprenderemos é chamado de laço `while` porque ele irá rodar enquanto uma condição específica for verdadeira e irá parar uma vez que a condição não for mais verdadeira.
 
 ```js
 var ourArray = [];
@@ -22,23 +22,23 @@ while(i < 5) {
 }
 ```
 
-In the code example above, the `while` loop will execute 5 times and append the numbers 0 through 4 to `ourArray`.
+No código de exemplo acima, o laço `while` executará por 5 vezes e adicionará os números de 0 até 4 ao `ourArray`.
 
-Let's try getting a while loop to work by pushing values to an array.
+Vamos tentar fazer um laço while funcionar empurrando valores para um array.
 
 # --instructions--
 
-Add the numbers 5 through 0 (inclusive) in descending order to `myArray` using a `while` loop.
+Adicione os números de 5 até 1 (inclusivo) em ordem descendente para `myArray` usando um laço `while`.
 
 # --hints--
 
-You should be using a `while` loop for this.
+Você deve usar um laço `while` para isso.
 
 ```js
 assert(code.match(/while/g));
 ```
 
-`myArray` should equal `[5,4,3,2,1,0]`.
+`myArray` deve ser igual a `[5,4,3,2,1,0]`.
 
 ```js
 assert.deepEqual(myArray, [5, 4, 3, 2, 1, 0]);

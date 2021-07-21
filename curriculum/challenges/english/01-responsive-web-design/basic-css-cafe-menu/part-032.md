@@ -7,21 +7,72 @@ dashedName: part-32
 
 # --description--
 
-Starting below the existing coffee/price pair, add the following coffees and prices using an `article` element with two nested `p` elements inside each. As before, the first `p` element's text should contain the coffee flavor and the second `p` element's text should contain the price.
+Starting below the existing coffee/price pair, add the following coffee and prices using `article` elements with two nested `p` elements inside each. As before, the first `p` element's text should contain the coffee flavor and the second `p` element's text should contain the price.
 
 ```bash
-Carmel Macchiato 3.75
+Caramel Macchiato 3.75
 Pumpkin Spice 3.50
 Hazelnut 4.00
-Mocah 4.50
+Mocha 4.50
 ```
 
 # --hints--
 
-Test 1
+You should have five `article` elements.
 
 ```js
+assert($('article').length === 5);
+```
 
+Each `article` element should have two `p` elements.
+
+```js
+const articles = $('article');
+assert(articles[0].children.length === 2);
+assert(articles[1].children.length === 2);
+assert(articles[2].children.length === 2);
+assert(articles[3].children.length === 2);
+assert(articles[4].children.length === 2);
+```
+
+Your first `article` element should have `p` elements with the text `French Vanilla` and `3.00`.
+
+```js
+const children = $('article')[0].children;
+assert(children[0].innerText.match(/French Vanilla/i));
+assert(children[1].innerText.match(/3\.00/i));
+```
+
+Your second `article` element should have `p` elements with the text `Caramel Macchiato` and `3.75`.
+
+```js
+const children = $('article')[1].children;
+assert(children[0].innerText.match(/Caramel Macchiato/i));
+assert(children[1].innerText.match(/3\.75/i));
+```
+
+Your third `article` element should have `p` elements with the text `Pumpkin Spice` and `3.50`.
+
+```js
+const children = $('article')[2].children;
+assert(children[0].innerText.match(/Pumpkin Spice/i));
+assert(children[1].innerText.match(/3\.50/i));
+```
+
+Your fourth `article` element should have `p` elements with the text `Hazelnut` and `4.00`.
+
+```js
+const children = $('article')[3].children;
+assert(children[0].innerText.match(/Hazelnut/i));
+assert(children[1].innerText.match(/4\.00/i));
+```
+
+Your fifth `article` element should have `p` elements with the text `Mocha` and `4.50`.
+
+```js
+const children = $('article')[4].children;
+assert(children[0].innerText.match(/Mocha/i));
+assert(children[1].innerText.match(/4\.50/i));
 ```
 
 # --seed--
@@ -45,7 +96,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
 --fcc-editable-region--
           <article>
             <p>French Vanilla</p>
@@ -61,7 +112,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -75,4 +126,3 @@ h1, h2, p {
   margin-right: auto;
 }
 ```
-

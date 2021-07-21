@@ -1,18 +1,35 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import ScrollableAnchor from 'react-scrollable-anchor';
-import { useTranslation } from 'react-i18next';
 
+import GreenNotCompleted from '../../../assets/icons/green-not-completed';
+import ScrollableAnchor from 'react-scrollable-anchor';
+// import { navigate } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 import ClaimCertSteps from './ClaimCertSteps';
+import GreenPass from '../../../assets/icons/green-pass';
+import { StepsType } from '../../../redux/prop-types';
 import Caret from '../../../assets/icons/caret';
 
 const propTypes = {
-  certSlug: PropTypes.string,
   i18nCertText: PropTypes.string,
+  isProjectsCompleted: PropTypes.bool,
+  stepState: PropTypes.shape({
+    numberOfSteps: PropTypes.number,
+    completedCount: PropTypes.number
+  }),
+  steps: StepsType,
   superBlock: PropTypes.string
 };
 
-const CertificationCard = ({ certSlug, superBlock, i18nCertText }) => {
+const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
+
+const CertificationCard = ({
+  isProjectsCompleted,
+  superBlock,
+  i18nCertText,
+  stepState: { completedCount, numberOfSteps },
+  steps
+}) => {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -23,7 +40,7 @@ const CertificationCard = ({ certSlug, superBlock, i18nCertText }) => {
   const {
     expand: expandText,
     collapse: collapseText,
-    steps: stepsText
+    courses: coursesText
   } = t('intro:misc-text');
   return (
     <ScrollableAnchor id='claim-cert-block'>
@@ -48,13 +65,22 @@ const CertificationCard = ({ certSlug, superBlock, i18nCertText }) => {
           <h4 className='course-title'>
             {`${
               isExpanded ? collapseText : expandText
-            } ${stepsText.toLowerCase()}`}
+            } ${coursesText.toLowerCase()}`}
           </h4>
+          <div className='map-title-completed course-title'>
+            {completedCount === numberOfSteps ? (
+              <GreenPass style={mapIconStyle} />
+            ) : (
+              <GreenNotCompleted style={mapIconStyle} />
+            )}
+            <span className='map-completed-count'>{`${completedCount}/${numberOfSteps}`}</span>
+          </div>
         </button>
         {isExpanded && (
           <ClaimCertSteps
-            certSlug={certSlug}
             i18nCertText={i18nCertText}
+            isProjectsCompleted={isProjectsCompleted}
+            steps={steps}
             superBlock={superBlock}
           />
         )}

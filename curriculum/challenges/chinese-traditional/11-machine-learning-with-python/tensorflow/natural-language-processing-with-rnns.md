@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9b
-title: Natural Language Processing With RNNs
+title: 使用 RNN 的自然語言處理
 challengeType: 11
 videoId: ZyCaF5S-lKg
 dashedName: natural-language-processing-with-rnns
@@ -10,19 +10,19 @@ dashedName: natural-language-processing-with-rnns
 
 ## --text--
 
-Natural Language Processing is a branch of artificial intelligence that...:
+自然語言處理是人工智能的一個分支......：
 
 ## --answers--
 
-deals with how computers understand and process natural/human languages.
+解決計算機如何理解和處理自然語言/人文語言。
 
 ---
 
-translates image data into natural/human languages.
+將圖像數據轉換成自然/人文語言。
 
 ---
 
-is focused on translating computer languages into natural/human languages.
+重點是將計算機語言翻譯成自然/人文語言。
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c9
-title: Acessando Propriedades de Objetos com Variáveis
+title: Acessar propriedades de objetos com variáveis
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnQyKur'
 forumTopicId: 16165

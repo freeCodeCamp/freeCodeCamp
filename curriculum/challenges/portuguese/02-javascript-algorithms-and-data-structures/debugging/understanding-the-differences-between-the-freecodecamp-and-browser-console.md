@@ -1,6 +1,6 @@
 ---
 id: 587d7b83367417b2b2512b37
-title: Understanding the Differences between the freeCodeCamp and Browser Console
+title: Entender a diferença entre o console da freeCodeCamp e do navegador
 challengeType: 1
 forumTopicId: 301193
 dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-console
@@ -8,27 +8,27 @@ dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-c
 
 # --description--
 
-You may have noticed that some freeCodeCamp JavaScript challenges include their own console. This console behaves a little differently than the browser console you used in the last challenge.
+Você pode ter percebido que alguns dos desafios de JavaScript da freeCodeCamp incluem seu próprio console. Esse console se comporta um pouco difrente do console do navegador que você utilizou no último desafio.
 
-The following challenge is meant to highlight the main difference between the freeCodeCamp console and your browser console.
+O desafio a seguir tem a finalidade de destacar a principal diferença entre o console da freeCodeCamp e do navegador.
 
-When you run ordinary JavaScript, the browser's console will display your `console.log()` statements the exact number of times it is called.
+Quando você executa JavaScript comum, o console do navegado exibirá suas instruções `console.log()` a exata quantidade de vezes que é chamada.
 
-The freeCodeCamp console will print your `console.log()` statements a short time after the editor detects a change in the script, as well as during testing.
+O console da freeCodeCamp irá imprimir suas instruções `console.log()` um curto período depois do editor detectar mudança no script, e também durante o teste.
 
-The freeCodeCamp console is cleared before the tests are run and, to avoid spam, only prints the logs during the first test (see the note below for exceptions).
+O console da freeCodeCamp é apagado antes de cada execução de testes e, para evitar spam, só imprime os logs durante o primeiro teste (veja a nota abaixo para exceções).
 
-If you would like to see every log for every test, run the tests, and open the browser console. If you prefer to use the browser console, and want it to mimic the freeCodeCamp console, place `console.clear()` before any other `console` calls, to clear the browser console.
+Se você gostaria de ver todos os logs em todos os testes, execute os testes e abra o console do navegador. Se preferir usar o console do navegador e quiser que ele imite o console da freeCodeCamp, coloque `console.clear()` antes de qualquer outra chamada ao `console`, para apagar o console do navegador.
 
-**Note:** `console.log`s inside functions are printed to the freeCodeCamp console whenever those functions are called. This can help debugging functions that are called during testing.
+**Nota:** `console.log` dentro de funções são impressas no console da freeCodeCamp toda vez que essas funções forem chamadas. Isso pode ajudar a depurar (ou debugar) funções que são chamadas durante os testes.
 
 # --instructions--
 
-First, use `console.log` to log the `output` variable. Then, use `console.clear` to clear the browser console.
+Primeiro, use `console.log` para exibir a variável `output`. Em seguida, use `console.clear` para apagar o console do navegador.
 
 # --hints--
 
-You should use `console.clear()` to clear the browser console.
+Você deve usar `console.clear()` para apagar o console do navegador.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-You should use `console.log()` to print the `output` variable.
+Você deve usar `console.log()` para imprimir a variável `output`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));

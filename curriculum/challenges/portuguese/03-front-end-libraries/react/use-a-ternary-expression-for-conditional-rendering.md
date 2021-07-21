@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036187
-title: Use a Ternary Expression for Conditional Rendering
+title: Usar uma Expressão Ternária para Renderização Condicional
 challengeType: 6
 forumTopicId: 301414
 dashedName: use-a-ternary-expression-for-conditional-rendering
@@ -8,7 +8,7 @@ dashedName: use-a-ternary-expression-for-conditional-rendering
 
 # --description--
 
-Before moving on to dynamic rendering techniques, there's one last way to use built-in JavaScript conditionals to render what you want: the <dfn>ternary operator</dfn>. The ternary operator is often utilized as a shortcut for `if/else` statements in JavaScript. They're not quite as robust as traditional `if/else` statements, but they are very popular among React developers. One reason for this is because of how JSX is compiled, `if/else` statements can't be inserted directly into JSX code. You might have noticed this a couple challenges ago — when an `if/else` statement was required, it was always *outside* the `return` statement. Ternary expressions can be an excellent alternative if you want to implement conditional logic within your JSX. Recall that a ternary operator has three parts, but you can combine several ternary expressions together. Here's the basic syntax:
+Antes de seguir para técnicas de renderização dinâmica, Há uma última maneira de usar condicionais de JavaScript incorporadas para renderizar o que você quer: o <dfn>operador ternário</dfn>. O operador ternário é frequentemente utilizado como um atalho para comandos `if/else` em JavaScript. Eles não são tão robustos quanto as declarações tradicionais `if/else`, mas são muito populares entre desenvolvedores React. Uma das razões para isso é devido a como JSX é compilado, instruções `if/else` não podem ser inseridas diretamente no código JSX. Você pode ter percebido isso há alguns desafios — quando uma instrução `if/else` foi necessária, estava sempre *fora* da instrução `return`. Expressões Ternárias podem ser uma excelente alternativa se você deseja implementar a lógica condicional dentro de seu JSX. Lembre que um operador ternário tem três partes, mas você pode combinar várias expressões ternárias juntas. Aqui está a sintaxe básica:
 
 ```jsx
 condition ? expressionIfTrue : expressionIfFalse;
@@ -16,24 +16,23 @@ condition ? expressionIfTrue : expressionIfFalse;
 
 # --instructions--
 
-The code editor has three constants defined within the `CheckUserAge` component's `render()` method. They are called `buttonOne`, `buttonTwo`, and `buttonThree`. Each of these is assigned a simple JSX expression representing a button element. First, initialize the state of `CheckUserAge` with `input` and `userAge` both set to values of an empty string.
+O editor de código tem três constantes definidas dentro do método `render()` do componente `CheckUserAge`. Eles são chamados de `buttonOne`, `buttonTwo` e `buttonThree`. A cada uma destas é atribuída uma simples expressão JSX representando um elemento de botão. Primeiro, inicialize o estado de `CheckUserAge` com `input` e `userAge` definidos com valores de uma string vazia.
 
-Once the component is rendering information to the page, users should have a way to interact with it. Within the component's `return` statement, set up a ternary expression that implements the following logic: when the page first loads, render the submit button, `buttonOne`, to the page. Then, when a user enters their age and clicks the button, render a different button based on the age. If a user enters a number less than `18`, render `buttonThree`. If a user enters a number greater than or equal to `18`, render `buttonTwo`.
+Uma vez que o componente está renderizando informações na página, os usuários devem ter uma maneira de interagir com ele. Dentro da instrução `return` do componente, configure uma expressão ternária que implementa a seguinte lógica: quando a página primeiro carrega, renderizar o botão de envio, `buttonOne`, para a página. Então, quando um usuário digita sua idade e clica no botão, renderize um botão diferente baseado na idade. Se um usuário inserir um número menor que `18`, renderize `buttonThree`. Se um usuário inserir um número maior ou igual a `18`, renderize `buttonTwo`.
 
 # --hints--
 
-The `CheckUserAge` component should render with a single `input` element and a single `button` element.
+O componente `CheckUserAge` deve renderizar com um único elemento `input` e um único elemento</code>button`.</p>
 
-```js
-assert(
+<pre><code class="js">assert(
   Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('input')
     .length === 1 &&
     Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('button')
       .length === 1
 );
-```
+`</pre>
 
-The `CheckUserAge` component's state should be initialized with a property of `userAge` and a property of `input`, both set to a value of an empty string.
+O state do componente `CheckUserAge` deve ser inicializado com uma propriedade de `userAge` e uma propriedade `input`, ambos definidos com o valor de uma string vazia.
 
 ```js
 assert(
@@ -42,7 +41,7 @@ assert(
 );
 ```
 
-When the `CheckUserAge` component is first rendered to the DOM, the `button`'s inner text should be Submit.
+Quando o componente `CheckUserAge` é renderizado pela primeira vez no DOM, o texto interno do `button` deve ser enviado.
 
 ```js
 assert(
@@ -51,7 +50,7 @@ assert(
 );
 ```
 
-When a number of less than 18 is entered into the `input` element and the `button` is clicked, the `button`'s inner text should read `You Shall Not Pass`.
+Quando um número menor que 18 for inserido no elemento `input` e o `button` for clicado, o texto interno do `button` será `You Shall Not Pass`.
 
 ```js
 (() => {
@@ -83,7 +82,7 @@ When a number of less than 18 is entered into the `input` element and the `butto
 })();
 ```
 
-When a number greater than or equal to 18 is entered into the `input` element and the `button` is clicked, the `button`'s inner text should read `You May Enter`.
+Quando um número maior ou igual a 18 for inserido no elemento `input` e o `button` for clicado, o texto interno do `button` deve ler `You May Enter`.
 
 ```js
 (() => {
@@ -115,7 +114,7 @@ When a number greater than or equal to 18 is entered into the `input` element an
 })();
 ```
 
-Once a number has been submitted, and the value of the `input` is once again changed, the `button` should return to reading `Submit`.
+Uma vez que um número for enviado, e o valor do `input` é novamente alterado, o texto interno do `button` deve voltar a ser `Submit`.
 
 ```js
 (() => {
@@ -156,7 +155,7 @@ Once a number has been submitted, and the value of the `input` is once again cha
 })();
 ```
 
-Your code should not contain any `if/else` statements.
+Seu código não deve conter nenhuma instrução `if/else`.
 
 ```js
 assert(

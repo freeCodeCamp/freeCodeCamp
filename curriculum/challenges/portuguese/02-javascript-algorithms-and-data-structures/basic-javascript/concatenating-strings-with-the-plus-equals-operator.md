@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b8
-title: Concatenando strings com o operador mais igual
+title: Concatenar strings com o operador mais igual
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmmC4'
 forumTopicId: 16803

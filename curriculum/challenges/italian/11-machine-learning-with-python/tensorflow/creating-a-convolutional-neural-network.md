@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d98
-title: Creating a Convolutional Neural Network
+title: Creare una rete neurale convoluzionale
 challengeType: 11
 videoId: kfv0K8MtkIc
 dashedName: creating-a-convolutional-neural-network
@@ -10,7 +10,7 @@ dashedName: creating-a-convolutional-neural-network
 
 ## --text--
 
-Fill in the blanks below to complete the architecture for a convolutional neural network:
+Riempi gli spazi vuoti qui sotto per completare l'architettura di una rete neurale convoluzionale:
 
 ```py
 model = models.__A__()

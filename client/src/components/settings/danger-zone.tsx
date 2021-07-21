@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
@@ -17,7 +17,7 @@ import './danger-zone.css';
 type DangerZoneProps = {
   deleteAccount: () => void;
   resetProgress: () => void;
-  t: (str: string) => JSX.Element;
+  t: TFunction;
 };
 
 type DangerZoneState = {

@@ -1,6 +1,6 @@
 ---
 id: bad88fee1348bd9aedf08816
-title: Link para seções internas de uma página com elementos de âncora
+title: Criar links para seções internas de uma página com elementos de âncora
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 forumTopicId: 301098

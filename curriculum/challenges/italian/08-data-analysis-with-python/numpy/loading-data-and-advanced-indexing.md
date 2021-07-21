@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600eda
-title: Loading Data and Advanced Indexing
+title: Caricamento dei dati e indicizzazione avanzata
 challengeType: 11
 videoId: tUdBZ7pF8Jg
 dashedName: loading-data-and-advanced-indexing
@@ -10,14 +10,14 @@ dashedName: loading-data-and-advanced-indexing
 
 ## --text--
 
-Given a file named `data.txt` with these contents:
+Dato un file chiamato `data.txt` con questi contenuti:
 
 <pre>
 29,97,32,100,45
 15,88,5,75,22
 </pre>
 
-What code would produce the following array?
+Quale codice produrrebbe il seguente array?
 
 ```py
 [29. 32. 45. 15.  5. 22.]

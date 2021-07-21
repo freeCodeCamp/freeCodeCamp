@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618b
-title: Give Sibling Elements a Unique Key Attribute
+title: Dê aos Elementos Irmãos um Atributo Chave Único
 challengeType: 6
 forumTopicId: 301394
 dashedName: give-sibling-elements-a-unique-key-attribute
@@ -8,19 +8,19 @@ dashedName: give-sibling-elements-a-unique-key-attribute
 
 # --description--
 
-The last challenge showed how the `map` method is used to dynamically render a number of elements based on user input. However, there was an important piece missing from that example. When you create an array of elements, each one needs a `key` attribute set to a unique value. React uses these keys to keep track of which items are added, changed, or removed. This helps make the re-rendering process more efficient when the list is modified in any way.
+O último desafio mostrou como o método `map` é usado para renderizar dinamicamente um número de elementos com base na entrada do usuário. No entanto, faltou uma peça importante desse exemplo. Ao criar um array de elementos, cada um precisa de um atributo `key` definido com um valor único. React usa essas chaves para manter o controle de quais itens são adicionados, alterados ou removidos. Isso ajuda a tornar o processo de re-renderização mais eficiente quando a lista é modificada de qualquer forma.
 
-**Note:** Keys only need to be unique between sibling elements, they don't need to be globally unique in your application.
+**Nota:** As chaves só precisam ser únicas entre elementos irmãos, elas não precisam ser globalmente exclusivas na sua aplicação.
 
 # --instructions--
 
-The code editor has an array with some front end frameworks and a stateless functional component named `Frameworks()`. `Frameworks()` needs to map the array to an unordered list, much like in the last challenge. Finish writing the `map` callback to return an `li` element for each framework in the `frontEndFrameworks` array. This time, make sure to give each `li` a `key` attribute, set to a unique value. The `li` elements should also contain text from `frontEndFrameworks`.
+O editor de código tem uma array com alguns frameworks front-end e um componente funcional sem estado chamado `Frameworks()`. `Frameworks()` precisa mapear a matriz para uma lista não ordenada, assim como no último desafio. Finalize a escrita do callback `map` para retornar um elemento `li` para cada framework no array `frontEndFrameworks`. Desta vez, certifique-se de dar a cada `li` um atributo `key`, definido como um valor único. Os elementos `li` também devem conter o texto do `frontEndFrameworks`.
 
-Normally, you want to make the key something that uniquely identifies the element being rendered. As a last resort the array index may be used, but typically you should try to use a unique identification.
+Normalmente, você quer tornar a chave algo que identifica de forma única o elemento que está a ser renderizado. Como um último recurso, o índice da matriz pode ser usado, mas normalmente você deve tentar usar uma identificação exclusiva.
 
 # --hints--
 
-The `Frameworks` component should exist and render to the page.
+O componente `Frameworks` deve existir e renderizar à página.
 
 ```js
 assert(
@@ -28,19 +28,19 @@ assert(
 );
 ```
 
-`Frameworks` should render an `h1` element.
+`Frameworks` deve renderizar um elemento `h1`.
 
 ```js
 assert(Enzyme.mount(React.createElement(Frameworks)).find('h1').length === 1);
 ```
 
-`Frameworks` should render a `ul` element.
+`Frameworks` deve renderizar um elemento `ul`.
 
 ```js
 assert(Enzyme.mount(React.createElement(Frameworks)).find('ul').length === 1);
 ```
 
-The `ul` tag should render 6 child `li` elements.
+A tag `ul` deve renderizar 6 elementos filhos `li`.
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-Each list item element should have a unique `key` attribute.
+Cada elemento de item da lista deve ter um atributo único `key`.
 
 ```js
 assert(
@@ -73,7 +73,7 @@ assert(
 );
 ```
 
-Each list item element should contain text from `frontEndFrameworks`.
+Cada elemento de item da lista deve conter o texto de `frontEndFrameworks`.
 
 ```js
 assert(

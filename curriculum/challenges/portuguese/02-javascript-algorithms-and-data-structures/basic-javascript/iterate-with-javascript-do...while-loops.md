@@ -1,6 +1,6 @@
 ---
 id: 5a2efd662fb457916e1fe604
-title: Iterate with JavaScript Do...While Loops
+title: Iterar com laços do...while em JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqWGcp'
 forumTopicId: 301172
@@ -9,7 +9,7 @@ dashedName: iterate-with-javascript-do---while-loops
 
 # --description--
 
-The next type of loop you will learn is called a `do...while` loop. It is called a `do...while` loop because it will first `do` one pass of the code inside the loop no matter what, and then continue to run the loop `while` the specified condition evaluates to `true`.
+O próximo tipo de laço que você aprenderá é chamado de laço `do...while`. É chamado um laço `do...while` porque primeiro irá toda vez `fazer (do)`, ou executar, uma vez o bloco de código após a instrução do, não importa o que acontecer, e então continuará a executar o laço `enquanto (while)` a condição for `true`.
 
 ```js
 var ourArray = [];
@@ -20,7 +20,7 @@ do {
 } while (i < 5);
 ```
 
-The example above behaves similar to other types of loops, and the resulting array will look like `[0, 1, 2, 3, 4]`. However, what makes the `do...while` different from other loops is how it behaves when the condition fails on the first check. Let's see this in action: Here is a regular `while` loop that will run the code in the loop as long as `i < 5`:
+O exemplo acima se comporta de forma similar a outros tipos de laços, e o array resultante se parecerá com `[0,1,2,3,4]`. No entanto, o que torna o laço `do...while` diferente de outros laços é como ele se comporta quando uma condição falha na primeira verificação. Vamos ver isso na prática: Aqui está um laço comum `while` que rodará o código no laço enquanto `i < 5`:
 
 ```js
 var ourArray = []; 
@@ -31,7 +31,7 @@ while (i < 5) {
 }
 ```
 
-In this example, we initialize the value of `ourArray` to an empty array and the value of `i` to 5. When we execute the `while` loop, the condition evaluates to `false` because `i` is not less than 5, so we do not execute the code inside the loop. The result is that `ourArray` will end up with no values added to it, and it will still look like `[]` when all of the code in the example above has completed running. Now, take a look at a `do...while` loop:
+Nesse exemplo, inicializamos o valor de `ourArray` como um array vazio e o valor de `i` sendo 5. Quando executamos o laço `while`, a condição é igual a `false` porque `i` não é menor que 5, portanto nós não executamos o código dentro do laço. O resultado é que `ourArray` terminará sem valores adicionados a ele, e ainda se parecerá com `[]` quando todas as linhas do código no exemplo acima for completamente executadas. Agora, dê uma olhada no laço `do...while`:
 
 ```js
 var ourArray = []; 
@@ -42,27 +42,27 @@ do {
 } while (i < 5);
 ```
 
-In this case, we initialize the value of `i` to 5, just like we did with the `while` loop. When we get to the next line, there is no condition to evaluate, so we go to the code inside the curly braces and execute it. We will add a single element to the array and then increment `i` before we get to the condition check. When we finally evaluate the condition `i < 5` on the last line, we see that `i` is now 6, which fails the conditional check, so we exit the loop and are done. At the end of the above example, the value of `ourArray` is `[5]`. Essentially, a `do...while` loop ensures that the code inside the loop will run at least once. Let's try getting a `do...while` loop to work by pushing values to an array.
+Nesse caso, nós inicializamos o valor de `i` para 5, assim como fizemos com o laço `while`. Quando chegamos na próxima linha, não há condição a ser analisada, então nós vamos ao código dentro das chaves e o executamos. Nós adicionaremos um único elemento ao array e então incrementamos `i` antes de chegarmos a verificação da condição. Quando nós finalmente temos o resultado da condição `i < 5` na última linha, nós notamos que `i` agora é 6, o que não cumpre a verificação da condição, então nós saímos do laço e terminamos. Ao final do exemplo acima, o valor de `ourArray` é `[5]`. Essencialmente, um laço `do...while` garante que o código dentro do laço será executado pelo menos uma vez. Vamos tentar fazer um laço `do...while` funcionar empurrando valores para um array.
 
 # --instructions--
 
-Change the `while` loop in the code to a `do...while` loop so the loop will push only the number `10` to `myArray`, and `i` will be equal to `11` when your code has finished running.
+Altere o laço `while` no código para um laço `do...while` para que o laço adicione apenas o número `10` no `myArray` e `i` será igual a `11` quando seu código terminar de rodar.
 
 # --hints--
 
-You should be using a `do...while` loop for this exercise.
+Você deve usar um laço `do...while` nesse exercício.
 
 ```js
 assert(code.match(/do/g));
 ```
 
-`myArray` should equal `[10]`.
+`myArray` deve ser igual a `[10]`.
 
 ```js
 assert.deepEqual(myArray, [10]);
 ```
 
-`i` should equal `11`
+`i` deve ser igual a `11`
 
 ```js
 assert.equal(i, 11);

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { Dispatch } from 'redux';
 
 import Login from '../../../components/Header/components/Login';
@@ -106,7 +106,7 @@ interface CompletionModalsProps {
   message: string;
   submitChallenge: () => void;
   superBlock: string;
-  t: (arg0: string) => string;
+  t: TFunction;
   title: string;
 }
 
@@ -171,7 +171,7 @@ export class CompletionModalInner extends Component<
   }
 
   handleKeypress(e: React.KeyboardEvent): void {
-    if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
       // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
       // getting to it.

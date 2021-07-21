@@ -8,14 +8,20 @@ dashedName: date-format
 
 # --description--
 
-Return an array with the current date in the formats:
+Return an array with two date strings of the current date with the following specifications:
 
-<ul>
-  <li>2007-11-23</li>
-  <li>Friday, November 23, 2007</li>
-</ul>
+- The first string's date order should be the year number, month number, and day number separated by dashes (`-`).
+- The first string's year should be four digits in length.
+- The first string's month and day should not contain any leading zeros.
+- The second string's weekday and month names should not be abbreviated.
+- The second string's day should not contain any leading zeros.
 
-Example output: `['2007-11-23', 'Friday, November 23, 2007']`
+Example outputs:
+
+```js
+['2007-11-23', 'Friday, November 23, 2007']
+['2021-3-2', 'Tuesday, March 2, 2021']
+```
 
 # --hints--
 

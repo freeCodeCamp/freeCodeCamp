@@ -1,6 +1,6 @@
 ---
 id: 587d78a9367417b2b2512ae9
-title: Use uma curva de Bézier para mover um elemento
+title: Usar uma curva de Bézier para mover um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bnRCK'
 forumTopicId: 301071

@@ -1,6 +1,6 @@
 ---
 id: 587d7daa367417b2b2512b6c
-title: Combine an Array into a String Using the join Method
+title: Transformar um array em uma string usando o método join
 challengeType: 1
 forumTopicId: 18221
 dashedName: combine-an-array-into-a-string-using-the-join-method
@@ -8,47 +8,47 @@ dashedName: combine-an-array-into-a-string-using-the-join-method
 
 # --description--
 
-The `join` method is used to join the elements of an array together to create a string. It takes an argument for the delimiter that is used to separate the array elements in the string.
+O método `join` é usado para juntar os elementos de um array, resultando em uma string. Ele recebe um delimitador como argumento, que é usado para conectar os elementos na string.
 
-Here's an example:
+Um exemplo:
 
 ```js
 var arr = ["Hello", "World"];
 var str = arr.join(" ");
 ```
 
-`str` would have a value of the string `Hello World`.
+O valor de `str` é `Hello World`.
 # --instructions--
 
-Use the `join` method (among others) inside the `sentensify` function to make a sentence from the words in the string `str`. The function should return a string. For example, `I-like-Star-Wars` would be converted to `I like Star Wars`. For this challenge, do not use the `replace` method.
+Use o método `join` (junto com outros) dentro da função `sentensify` para criar uma frase a partir das palavras da string `str`. A função deve retornar uma string. Por exemplo, `I-like-Star-Wars` deve ser convertido para `I like Star Wars`. Não use o método `replace` neste desafio.
 
 # --hints--
 
-Your code should use the `join` method.
+Você deve usar o método `join`.
 
 ```js
 assert(code.match(/\.join/g));
 ```
 
-Your code should not use the `replace` method.
+Você não deve usar o método `replace`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?replace/g));
 ```
 
-`sentensify("May-the-force-be-with-you")` should return a string.
+`sentensify("May-the-force-be-with-you")` deve retornar uma string.
 
 ```js
 assert(typeof sentensify('May-the-force-be-with-you') === 'string');
 ```
 
-`sentensify("May-the-force-be-with-you")` should return the string `May the force be with you`.
+`sentensify("May-the-force-be-with-you")` deve retornar a string `May the force be with you`.
 
 ```js
 assert(sentensify('May-the-force-be-with-you') === 'May the force be with you');
 ```
 
-`sentensify("The.force.is.strong.with.this.one")` should return the string `The force is strong with this one`.
+`sentensify("The.force.is.strong.with.this.one")` deve retornar a string `The force is strong with this one`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-`sentensify("There,has,been,an,awakening")` should return the string `There has been an awakening`.
+`sentensify("There,has,been,an,awakening")` deve retornar a string `There has been an awakening`.
 
 ```js
 assert(

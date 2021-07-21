@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b47
-title: Use the Rest Parameter with Function Parameters
+title: Use o parâmetro rest com parâmetros de função
 challengeType: 1
 forumTopicId: 301221
 dashedName: use-the-rest-parameter-with-function-parameters
@@ -8,9 +8,9 @@ dashedName: use-the-rest-parameter-with-function-parameters
 
 # --description--
 
-In order to help us create more flexible functions, ES6 introduces the <dfn>rest parameter</dfn> for function parameters. With the rest parameter, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.
+Para nos ajuda a criar funções mais flexíveis, ES6 introduziu o <dfn>parâmetro rest</dfn> para parâmetros de funções. Com o parâmetro rest, você pode criar funções que recebem um número variável de argumentos. Esses argumentos são armazenados em um array que pode ser acessado depois dentro da função.
 
-Check out this code:
+Verifique esse código:
 
 ```js
 function howMany(...args) {
@@ -20,41 +20,41 @@ console.log(howMany(0, 1, 2));
 console.log(howMany("string", null, [1, 2, 3], { }));
 ```
 
-The console would display the strings `You have passed 3 arguments.` and `You have passed 4 arguments.`.
+O console exibiria as strings `You have passed 3 arguments` e `You have passed 4 arguments.</codde>.</p>
 
-The rest parameter eliminates the need to check the `args` array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array.
+<p spaces-before="0">O parâmetro rest elimina a necessidade de verificar o array <code>args` e nos permite usar `map()`, `filter()` e `reduce()` no array de parâmetros.
 
 # --instructions--
 
-Modify the function `sum` using the rest parameter in such a way that the function `sum` is able to take any number of arguments and return their sum.
+Modifique a função `sum` usando o parâmetro rest de tal forma que a função `sum` seja capaz de receber qualquer número de argumentos e retornar a soma deles.
 
 # --hints--
 
-The result of `sum(0,1,2)` should be 3
+O resultado de `sum(0,1,2)` deve ser 3
 
 ```js
 assert(sum(0, 1, 2) === 3);
 ```
 
-The result of `sum(1,2,3,4)` should be 10
+O resultado de `sum(1,2,3,4)` deve ser 10
 
 ```js
 assert(sum(1, 2, 3, 4) === 10);
 ```
 
-The result of `sum(5)` should be 5
+O resultado de `sum(5)` deve ser 5
 
 ```js
 assert(sum(5) === 5);
 ```
 
-The result of `sum()` should be 0
+O resultado de `sum()` deve ser 0
 
 ```js
 assert(sum() === 0);
 ```
 
-`sum` should be an arrow function which uses the rest parameter syntax (`...`) on the `args` parameter.
+`sum` deve ser uma arrow function que usa a sintaxe de parâmetro rest (`...`) no parâmetro `args`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));

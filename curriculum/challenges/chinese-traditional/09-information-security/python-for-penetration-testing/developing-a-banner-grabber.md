@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94db3
-title: Developing a Banner Grabber
+title: 開發橫幅抓取器
 challengeType: 11
 videoId: CeGW761BIsA
 dashedName: developing-a-banner-grabber
@@ -10,7 +10,7 @@ dashedName: developing-a-banner-grabber
 
 ## --text--
 
-Fill in the blanks to complete the `banner` function below:
+填寫空格以完成下面的 `banner` 函數：
 
 ```py
 def banner(ip, port):

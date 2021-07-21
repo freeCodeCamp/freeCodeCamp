@@ -1,6 +1,6 @@
 ---
 id: 587d7db6367417b2b2512b9a
-title: Match Characters that Occur Zero or More Times
+title: Capturar caracteres que aparecem zero ou mais vezes seguidas
 challengeType: 1
 forumTopicId: 301351
 dashedName: match-characters-that-occur-zero-or-more-times
@@ -8,9 +8,9 @@ dashedName: match-characters-that-occur-zero-or-more-times
 
 # --description--
 
-The last challenge used the plus `+` sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.
+O último desafio fez uso do caractere `+` para buscar caracteres que ocorrem uma ou mais vezes. Existe um outro caractere que permite buscar zero ou mais ocorrências de um padrão.
 
-The character to do this is the asterisk or star: `*`.
+O caractere usado para isso é o asterisco: `*`.
 
 ```js
 let soccerWord = "gooooooooal!";
@@ -22,39 +22,39 @@ gPhrase.match(goRegex);
 oPhrase.match(goRegex);
 ```
 
-In order, the three `match` calls would return the values `["goooooooo"]`, `["g"]`, and `null`.
+As três chamadas a `match` retornam, na ordem, os valores: `["goooooooo"]`, `["g"]` e `null`.
 
 # --instructions--
 
-For this challenge, `chewieQuote` has been initialized as the string `Aaaaaaaaaaaaaaaarrrgh!` behind the scenes. Create a regex `chewieRegex` that uses the `*` character to match an uppercase `A` character immediately followed by zero or more lowercase `a` characters in `chewieQuote`. Your regex does not need flags or character classes, and it should not match any of the other quotes.
+Neste desafio, a string `chewieQuote` recebeu o valor `Aaaaaaaaaaaaaaaarrrgh!` por trás dos panos. Escreva uma regex, `chewieRegex`, que usa o caractere `*` para capturar um `A` maiúsculo seguido imediatamente de zero ou mais `a` minúsculos em `chewieQuote`. Sua regex não precisa de flags ou de classes de caracteres. Ela também não deve capturar nenhuma outra parte da string.
 
 # --hints--
 
-Your regex `chewieRegex` should use the `*` character to match zero or more `a` characters.
+Sua regex `chewieRegex` deve usar o caractere `*` para encontrar zero ou mais `a`s.
 
 ```js
 assert(/\*/.test(chewieRegex.source));
 ```
 
-Your regex should match the string `A` in `chewieQuote`.
+Sua regex deve encontrar a string `A` em `chewieQuote`.
 
 ```js
 assert(result[0][0] === 'A');
 ```
 
-Your regex should match the string `Aaaaaaaaaaaaaaaa` in `chewieQuote`.
+Sua regex deve encontrar a string `Aaaaaaaaaaaaaaaa` em `chewieQuote`.
 
 ```js
 assert(result[0] === 'Aaaaaaaaaaaaaaaa');
 ```
 
-Your regex `chewieRegex` should match 16 characters in `chewieQuote`.
+Sua regex `chewieRegex` deve capturar 16 caracteres em `chewieQuote`.
 
 ```js
 assert(result[0].length === 16);
 ```
 
-Your regex should not match any characters in the string `He made a fair move. Screaming about it can't help you.`
+Sua expressão regular não deve corresponder com nenhum caractere na string `He made a fair move. Screaming about it can't help you.`
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Your regex should not match any characters in the string `Let him have it. It's not wise to upset a Wookiee.`
+Sua expressão regular não deve corresponder a nenhum caractere na string `Let him have it. It's not wise to upset a Wookiee.`
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: acda2fb1324d9b0fa741e6b5
-title: Confirme o final
+title: Confirmar o final
 challengeType: 5
 forumTopicId: 16006
 dashedName: confirm-the-ending
@@ -32,7 +32,7 @@ assert(confirmEnding('Congratulation', 'on') === true);
 assert(confirmEnding('Connor', 'n') === false);
 ```
 
-`confirmEnding("Walking on water and developing software from a specifaction are easy if both are frozen","specification")` deve retornar `false`.
+`confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")` deve retornar `false`.
 
 ```js
 assert(

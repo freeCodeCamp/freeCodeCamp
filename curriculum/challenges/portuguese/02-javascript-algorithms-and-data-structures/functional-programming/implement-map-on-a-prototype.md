@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b62
-title: Implement map on a Prototype
+title: Implementar map em um protótipo
 challengeType: 1
 forumTopicId: 301230
 dashedName: implement-map-on-a-prototype
@@ -8,25 +8,25 @@ dashedName: implement-map-on-a-prototype
 
 # --description--
 
-As you have seen from applying `Array.prototype.map()`, or simply `map()` earlier, the `map` method returns an array of the same length as the one it was called on. It also doesn't alter the original array, as long as its callback function doesn't.
+Como você viu ao aplicar `Array.prototype.map()`, ou simplesmente `map()` mais cedo, o método `map` retorna um array do mesmo tamanho que o no qual chamamos o método. Ele também não altera o array original desde que a sua função callback não o faça.
 
-In other words, `map` is a pure function, and its output depends solely on its inputs. Plus, it takes another function as its argument.
+Em outras palavras, `map` é uma função pura e a sua saída depende somente de suas entradas. Além disso, ele recebe outra função como argumento.
 
-You might learn a lot about the `map` method if you implement your own version of it. It is recommended you use a `for` loop or `Array.prototype.forEach()`.
+Você pode aprender muito sobre o método `map` se você implementá-lo por conta própria. Recomenda-se que você use um loop `for` ou o método `Array.prototype.forEach()`.
 
 # --instructions--
 
-Write your own `Array.prototype.myMap()`, which should behave exactly like `Array.prototype.map()`. You should not use the built-in `map` method. The `Array` instance can be accessed in the `myMap` method using `this`.
+Escreva o seu próprio `Array.prototype.myMap()` e faça com que ele se comporte como o `Array.prototype.map()`. Você não deve usar o método `map` disponibilizado. O objeto `Array` pode ser acessado dentro de `myMap` pelo `this`.
 
 # --hints--
 
-`new_s` should equal `[46, 130, 196, 10]`.
+`new_s` deve ser `[46, 130, 196, 10]`.
 
 ```js
 assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]));
 ```
 
-Your code should not use the `map` method.
+Você não deve usar o método `map`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?map/g));

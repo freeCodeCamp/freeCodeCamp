@@ -16,7 +16,19 @@ describe('<Intro />', () => {
     const container = rendererCreateWithRedux(
       <Intro {...loggedOutProps} />
     ).root;
+
+    /**
+     * This rules had to be disabled because the new lint rules are throwing false positives here.
+     * They were interpreting react-test-renderer functions as @testing-library/react functions.
+     */
+    // eslint-disable-next-line testing-library/await-async-query
     expect(container.findAllByType('blockquote').length === 0).toBeTruthy();
+
+    /**
+     * This rules had to be disabled because the new lint rules are throwing false positives here.
+     * They were interpreting react-test-renderer functions as @testing-library/react functions.
+     */
+    // eslint-disable-next-line testing-library/await-async-query
     expect(container.findAllByType('h1').length === 1).toBeTruthy();
   });
 
@@ -24,7 +36,19 @@ describe('<Intro />', () => {
     const container = rendererCreateWithRedux(
       <Intro {...loggedInProps} />
     ).root;
+
+    /**
+     * This rules had to be disabled because the new lint rules are throwing false positives here.
+     * They were interpreting react-test-renderer functions as @testing-library/react functions.
+     */
+    // eslint-disable-next-line testing-library/await-async-query
     expect(container.findAllByType('blockquote').length === 1).toBeTruthy();
+
+    /**
+     * This rules had to be disabled because the new lint rules are throwing false positives here.
+     * They were interpreting react-test-renderer functions as @testing-library/react functions.
+     */
+    // eslint-disable-next-line testing-library/await-async-query
     expect(container.findAllByType('h1').length === 1).toBeTruthy();
   });
 });

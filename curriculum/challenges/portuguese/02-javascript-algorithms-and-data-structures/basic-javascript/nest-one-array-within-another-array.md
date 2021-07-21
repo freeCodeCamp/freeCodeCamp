@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb7bdef
-title: Nest one Array within Another Array
+title: Aninhar um array com outro array
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQZf8'
 forumTopicId: 18247
@@ -9,21 +9,21 @@ dashedName: nest-one-array-within-another-array
 
 # --description--
 
-You can also nest arrays within other arrays, like below:
+Você também pode aninhar arrays dentro de outros arrays, como abaixo:
 
 ```js
 [["Bulls", 23], ["White Sox", 45]]
 ```
 
-This is also called a <dfn>multi-dimensional array</dfn>.
+Isso é chamado um <dfn>array multidimensional</dfn>.
 
 # --instructions--
 
-Create a nested array called `myArray`.
+Crie um array aninhado chamado de `myArray`.
 
 # --hints--
 
-`myArray` should have at least one array nested within another array.
+`myArray` deve ter pelo menos um array aninhado dentro de outro array.
 
 ```js
 assert(Array.isArray(myArray) && myArray.some(Array.isArray));
