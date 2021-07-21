@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c7
-title: Acessando Propriedades de Objetos com Notação de Pontos
+title: Acessar propriedades de objetos com notação de pontos
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cGryJs8'
 forumTopicId: 16164

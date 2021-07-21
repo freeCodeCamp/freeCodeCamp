@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614a
-title: Moving Forward From Here
+title: Movendo Adiante Daqui
 challengeType: 6
 forumTopicId: 301434
 dashedName: moving-forward-from-here
@@ -8,19 +8,19 @@ dashedName: moving-forward-from-here
 
 # --description--
 
-Congratulations! You finished the lessons on React and Redux. There's one last item worth pointing out before you move on. Typically, you won't write React apps in a code editor like this. This challenge gives you a glimpse of what the syntax looks like if you're working with npm and a file system on your own machine. The code should look similar, except for the use of `import` statements (these pull in all of the dependencies that have been provided for you in the challenges). The "Managing Packages with npm" section covers npm in more detail.
+Parabéns! Você concluiu as lições sobre React e Redux. Vale a pena destacar um último item antes de continuar. Normalmente, você não escreverá apps React em um editor de código como esse. Esse desafio dá-lhe um vislumbre de como a sintaxe se parece se você está trabalhando com o npm e um sistema de arquivos na sua própria máquina. O código deve ser similar, exceto para o uso de instruções de `import` (essas puxam em todas as dependências fornecidas para você nos desafios). A seção "Gerenciando pacotes com npm" cobre o npm com mais detalhes.
 
-Finally, writing React and Redux code generally requires some configuration. This can get complicated quickly. If you are interested in experimenting on your own machine, the <a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="nofollow">Create React App</a> comes configured and ready to go.
+Finalmente, escrever o React e o código Redux geralmente requerem alguma configuração. Isto pode tornar-se complicado rapidamente. Se você estiver interessado em experimentar em sua própria máquina, o <a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="nofollow">Criar um App React</a> vem configurado e pronto para ser usado.
 
-Alternatively, you can enable Babel as a JavaScript Preprocessor in CodePen, add React and ReactDOM as external JavaScript resources, and work there as well.
+Como alternativa, você pode habilitar o Babel como um pré-processador de JavaScript no CodePen, adicionar React e ReactDOM como recursos externos de JavaScript, e trabalhar lá também.
 
 # --instructions--
 
-Log the message `'Now I know React and Redux!'` to the console.
+Exiba a mensagem `'Now I know React and Redux!'` no console.
 
 # --hints--
 
-The message `Now I know React and Redux!` should be logged to the console.
+A mensagem `Now I know React and Redux!` deve ser exibida no console.
 
 ```js
 (getUserInput) =>

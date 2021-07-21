@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba7
-title: Especificando o Número Exato de Capturas
+title: Especificar o número exato de capturas
 challengeType: 1
 forumTopicId: 301365
 dashedName: specify-exact-number-of-matches

@@ -1,6 +1,6 @@
 ---
 id: 587d7db6367417b2b2512b98
-title: Capture Caracteres Não Especificados
+title: Capturar caracteres não especificados
 challengeType: 1
 forumTopicId: 301358
 dashedName: match-single-characters-not-specified

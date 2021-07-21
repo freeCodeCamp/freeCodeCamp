@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb8bdef
-title: Modifique Dados de Array Com Índices
+title: Modificar dados de array com índices
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/czQM4A8'
 forumTopicId: 18241

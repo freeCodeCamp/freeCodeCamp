@@ -1,6 +1,6 @@
 ---
 id: 565bbe00e9cc8ac0725390f4
-title: Contando cartas
+title: Contar cartas
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KE7ty'
 forumTopicId: 16809

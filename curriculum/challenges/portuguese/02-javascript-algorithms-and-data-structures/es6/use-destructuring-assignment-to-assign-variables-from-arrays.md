@@ -1,6 +1,6 @@
 ---
 id: 587d7b89367417b2b2512b4b
-title: Use Atribuição de Desestruturação para Atribuir Variáveis de Arrays
+title: Usar atribuição de desestruturação para atribuir variáveis a partir de arrays
 challengeType: 1
 forumTopicId: 301213
 dashedName: use-destructuring-assignment-to-assign-variables-from-arrays

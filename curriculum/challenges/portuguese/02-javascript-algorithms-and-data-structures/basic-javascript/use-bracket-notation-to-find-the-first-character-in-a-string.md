@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c549eddfaeb5bdef
-title: Use Notação de Colchetes para Encontrar o Primeiro Caractere em uma String
+title: Usar notação de colchetes para encontrar o primeiro caractere em uma string
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8JwhW'
 forumTopicId: 18341

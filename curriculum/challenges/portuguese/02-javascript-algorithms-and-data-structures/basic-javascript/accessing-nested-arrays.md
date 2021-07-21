@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cd
-title: Acessando Arrays Aninhados
+title: Acessar arrays aninhados
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cLeGDtZ'
 forumTopicId: 16160

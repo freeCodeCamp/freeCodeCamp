@@ -1,6 +1,6 @@
 ---
 id: 598e8944f009e646fc236146
-title: Entendendo Valor Undefined retornado de uma Função
+title: Entender o valor undefined retornado de uma função
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2p7cL'
 forumTopicId: 301177

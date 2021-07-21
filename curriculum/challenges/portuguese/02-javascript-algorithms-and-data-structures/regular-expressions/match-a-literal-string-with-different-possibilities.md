@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b90
-title: Busque uma String Literal com Diferentes Possibilidades
+title: Buscar uma string literal com diferentes possibilidades
 challengeType: 1
 forumTopicId: 301345
 dashedName: match-a-literal-string-with-different-possibilities
@@ -10,7 +10,7 @@ dashedName: match-a-literal-string-with-different-possibilities
 
 Ao usar regexes como `/coding/`, você pode procurar pelo padrão `coding` em strings.
 
-Isso funciona com strings únicas, mas é limitado a apenas um padrão. Você pode procurar por múltiplos padrões usando o operador de `alternação`, ou `OU`: `|`.
+Isso funciona com strings únicas, mas é limitado a apenas um padrão. Você pode procurar por múltiplos padrões usando o operador de `alternation`, ou `OR`: `|`.
 
 Este operador funciona para buscar padrões à esquerda e à direita dele. Por exemplo, se você quiser encontrar as strings `yes` ou `no`, a regex que você quer é `/yes|no/`.
 

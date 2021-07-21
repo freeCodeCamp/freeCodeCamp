@@ -43,7 +43,7 @@ interface ICamperProps {
   yearsTopContributor: string[];
 }
 
-function joinArray(array: string[], t: TFunction<'translation'>): string {
+function joinArray(array: string[], t: TFunction): string {
   return array.reduce((string, item, index, array) => {
     if (string.length > 0) {
       if (index === array.length - 1) {
@@ -57,7 +57,7 @@ function joinArray(array: string[], t: TFunction<'translation'>): string {
   });
 }
 
-function parseDate(joinDate: string, t: TFunction<'translation'>): string {
+function parseDate(joinDate: string, t: TFunction): string {
   const convertedJoinDate = new Date(joinDate);
   const date = convertedJoinDate.toLocaleString([localeCode, 'en-US'], {
     year: 'numeric',

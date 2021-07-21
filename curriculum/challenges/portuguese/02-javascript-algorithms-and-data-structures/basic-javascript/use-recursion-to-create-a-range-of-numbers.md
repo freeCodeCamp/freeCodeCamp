@@ -1,6 +1,6 @@
 ---
 id: 5cc0bd7a49b71cb96132e54c
-title: Use Recursividade para Criar um Intervalo de Números
+title: Usar recursão para criar um intervalo de números
 challengeType: 1
 forumTopicId: 301180
 dashedName: use-recursion-to-create-a-range-of-numbers

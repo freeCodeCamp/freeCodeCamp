@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb5bdef
-title: Itere com Laços For JavaScript
+title: Iterar com laços for em JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNVCe'
 forumTopicId: 18219

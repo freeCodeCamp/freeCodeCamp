@@ -1,6 +1,6 @@
 ---
 id: a9bd25c716030ec90084d8a1
-title: Macaco Robusto
+title: Dividir e agrupar arrays
 challengeType: 5
 forumTopicId: 16005
 dashedName: chunky-monkey

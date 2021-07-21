@@ -1,6 +1,6 @@
 ---
 id: 587d7dac367417b2b2512b74
-title: Use Ponto Notação para Acessar as Propriedades de um Objeto
+title: Usar notação de ponto para acessar as propriedades de um objeto
 challengeType: 1
 forumTopicId: 301333
 dashedName: use-dot-notation-to-access-the-properties-of-an-object
@@ -18,7 +18,7 @@ let duck = {
 console.log(duck.name);
 ```
 
-Ponto notação é utilizado no nome do objeto, `duck`, seguido pelo nome da propriedade, `name`, para acessar o valor de `Aflac`.
+A notação de ponto é utilizada no nome do objeto, `duck`, seguida pelo nome da propriedade, `name`, para acessar o valor de `Aflac`.
 
 # --instructions--
 

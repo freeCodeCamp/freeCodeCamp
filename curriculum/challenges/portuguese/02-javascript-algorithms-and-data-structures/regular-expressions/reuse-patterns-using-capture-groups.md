@@ -1,6 +1,6 @@
 ---
 id: 587d7dbb367417b2b2512baa
-title: Reusando Padrões com Grupos de Captura
+title: Reusar padrões com grupos de captura
 challengeType: 1
 forumTopicId: 301364
 dashedName: reuse-patterns-using-capture-groups

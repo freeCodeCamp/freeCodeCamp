@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb1bdef
-title: Itere com Laços While em JavaScript
+title: Iterar com laços while em JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c8QbnCM'
 forumTopicId: 18220

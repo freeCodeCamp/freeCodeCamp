@@ -1,6 +1,6 @@
 ---
 id: 587d7b85367417b2b2512b38
-title: Identifique Uso do Operador de Atribuição ao invés do Operador de Igualdade
+title: Identificar uso do operador de atribuição ao invés do operador de igualdade
 challengeType: 1
 forumTopicId: 301191
 dashedName: catch-use-of-assignment-operator-instead-of-equality-operator

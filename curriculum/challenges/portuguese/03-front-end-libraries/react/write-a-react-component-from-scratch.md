@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036168
-title: Write a React Component from Scratch
+title: Escreva um Componente React do Zero
 challengeType: 6
 forumTopicId: 301424
 dashedName: write-a-react-component-from-scratch
@@ -8,17 +8,17 @@ dashedName: write-a-react-component-from-scratch
 
 # --description--
 
-Now that you've learned the basics of JSX and React components, it's time to write a component on your own. React components are the core building blocks of React applications so it's important to become very familiar with writing them. Remember, a typical React component is an ES6 `class` which extends `React.Component`. It has a render method that returns HTML (from JSX) or `null`. This is the basic form of a React component. Once you understand this well, you will be prepared to start building more complex React projects.
+Agora que você aprendeu os conceitos básicos de componentes JSX e React, é hora de escrever um componente por conta própria. Componentes React são os blocos centrais de construção de aplicações React, por isso é importante se familiarizar com a escrita. Lembre-se, um componente típico React é uma classe `ES6` que estende `React.Component`. Ele possui um método de renderização que retorna HTML (a partir de JSX) ou `null`. Essa é a forma básica de um componente React. Assim que você entender bem, você estará preparado para começar a construir projetos mais complexos em React.
 
 # --instructions--
 
-Define a class `MyComponent` that extends `React.Component`. Its render method should return a `div` that contains an `h1` tag with the text: `My First React Component!` in it. Use this text exactly, the case and punctuation matter. Make sure to call the constructor for your component, too.
+Define uma classe `MyComponent` que estende `React.Component`. Seu método de renderização deve retornar uma `div` que contém uma tag `h1` com o texto: `My First React Component!` nela. Use este texto exatamente, letras maiúsculas e minúsculas, e pontuação importam. Certifique-se de chamar o construtor para seu componente também.
 
-Render this component to the DOM using `ReactDOM.render()`. There is a `div` with `id='challenge-node'` available for you to use.
+Renderize este componente para o DOM usando `ReactDOM.render()`. Há um `div` com `id='challenge-node'` disponível para você usar.
 
 # --hints--
 
-There should be a React component called `MyComponent`.
+Deve haver um componente React chamado `MyComponent`.
 
 ```js
 (getUserInput) =>
@@ -29,7 +29,7 @@ There should be a React component called `MyComponent`.
   );
 ```
 
-`MyComponent` should contain an `h1` tag with text `My First React Component!` Case and punctuation matter.
+`MeuComponente` deve conter uma tag `h1` com texto `My First React Component!` Letras maiúsculas e minúsculas, e pontuação importam.
 
 ```js
 assert(
@@ -40,13 +40,13 @@ assert(
 );
 ```
 
-`MyComponent` should render to the DOM.
+`MyComponent` deve existir e ser rendizado no DOM.
 
 ```js
 assert(document.getElementById('challenge-node').childNodes.length === 1);
 ```
 
-`MyComponent` should have a constructor calling `super` with `props`.
+`MyComponent` deve ter um construtor chamando `super` com `props`.
 
 ```js
 assert(

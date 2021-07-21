@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08804
-title: Comentários no HTML
+title: Comentar em HTML
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cGyGbca'
 forumTopicId: 16782

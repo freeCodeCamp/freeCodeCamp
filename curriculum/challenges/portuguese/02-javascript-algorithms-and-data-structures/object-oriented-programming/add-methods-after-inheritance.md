@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b87
-title: Adicionar Métodos Após Herança
+title: Adicionar métodos após a herança
 challengeType: 1
 forumTopicId: 301315
 dashedName: add-methods-after-inheritance

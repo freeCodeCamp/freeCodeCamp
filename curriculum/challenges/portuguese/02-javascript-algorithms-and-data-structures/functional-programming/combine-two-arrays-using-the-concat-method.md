@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b66
-title: Combine Dois Arrays Usando o Método concat
+title: Combinar dois arrays usando o método concat
 challengeType: 1
 forumTopicId: 301229
 dashedName: combine-two-arrays-using-the-concat-method

@@ -5,10 +5,10 @@ import { SearchBar } from './search-bar';
 
 describe('<SearchBar />', () => {
   it('renders to the DOM', () => {
-    const shallow = ShallowRenderer.createRenderer();
-    shallow.render(<SearchBar {...searchBarProps} />);
-    const result = shallow.getRenderOutput();
-    expect(result).toBeTruthy();
+    const utils = ShallowRenderer.createRenderer();
+    utils.render(<SearchBar {...searchBarProps} />);
+    const view = utils.getRenderOutput();
+    expect(view).toBeTruthy();
   });
 
   /* Todo: When e2e testing is in place,

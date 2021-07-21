@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b81
-title: Entenda de Onde Vem o Protótipo de um Objeto
+title: Entender de onde vem o protótipo de um objeto
 challengeType: 1
 forumTopicId: 301330
 dashedName: understand-where-an-objects-prototype-comes-from

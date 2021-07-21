@@ -1,6 +1,6 @@
 ---
 id: 587d7b89367417b2b2512b49
-title: Use Atribuição de Desestruturação para Atribuir Variáveis de Objetos
+title: Usar atribuição de desestruturação para atribuir variáveis de objetos
 challengeType: 1
 forumTopicId: 301215
 dashedName: use-destructuring-assignment-to-assign-variables-from-objects

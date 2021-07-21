@@ -8,7 +8,7 @@ dashedName: test-if-a-value-is-an-array
 
 # --description--
 
-Come promemoria, questo progetto viene a partire dal seguente progetto iniziale su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 # --instructions--
 

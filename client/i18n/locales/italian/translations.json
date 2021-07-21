@@ -96,7 +96,7 @@
     "privacy": "Le impostazioni di questa sezione ti permettono di controllare quello che viene mostrato sul tuo portfolio pubblico di freeCodeCamp.",
     "data": "Per vedere quali dati teniamo nel tuo account, clicca sul pulsante \"Scarica i tuoi dati\" qui sotto",
     "disabled": "Le tue certificazioni saranno disabilitate, se impostato su privato.",
-    "private-name": "Your name will not appear on your certifications, if this is set to private.",
+    "private-name": "Il tuo nome non apparirà sulle certificazioni, se impostato su privato.",
     "claim-legacy": "Una volta che avrai ottenuto le seguenti certificazioni gratuite di freeCodeCamp, sarai in grado di richiedere la {{cert}}:",
     "for": "Impostazioni Account per {{username}}",
     "username": {

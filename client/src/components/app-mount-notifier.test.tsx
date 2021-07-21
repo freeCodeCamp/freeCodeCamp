@@ -42,6 +42,7 @@ describe('AppMountNotifier', () => {
       setup(langCode);
 
       await waitFor(() => {
+        /* eslint-disable-next-line testing-library/no-node-access */
         expect(document.querySelector('html')).toHaveAttribute(
           'lang',
           langCode

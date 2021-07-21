@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036155
-title: Send Action Data to the Store
+title: Enviar Dados de Ação para a loja
 challengeType: 6
 forumTopicId: 301448
 dashedName: send-action-data-to-the-store
@@ -8,19 +8,19 @@ dashedName: send-action-data-to-the-store
 
 # --description--
 
-By now you've learned how to dispatch actions to the Redux store, but so far these actions have not contained any information other than a `type`. You can also send specific data along with your actions. In fact, this is very common because actions usually originate from some user interaction and tend to carry some data with them. The Redux store often needs to know about this data.
+Até agora você aprendeu como enviar ações para o store do Redux, mas até agora essas ações não continham nenhuma informação diferente de um `type`. Você também pode enviar dados específicos, juntamente com suas ações. Na verdade, isso é muito comum porque as ações geralmente se originam de alguma interação do usuário e tendem a carregar alguns dados com elas. Muitas vezes, o store do Redux precisa saber sobre esses dados.
 
 # --instructions--
 
-There's a basic `notesReducer()` and an `addNoteText()` action creator defined in the code editor. Finish the body of the `addNoteText()` function so that it returns an `action` object. The object should include a `type` property with a value of `ADD_NOTE`, and also a `text` property set to the `note` data that's passed into the action creator. When you call the action creator, you'll pass in specific note information that you can access for the object.
+Há dois criadores de ações básicos, `notesReducer()` e um `addNoteText()`, definidos no editor de código. Finalize o corpo da função `addNodeText()` para que ela retorne um objeto `action`. O objeto deve incluir a propriedade `type` com o valor `ADD_NOTE` e também uma propriedade `text` definida para o dado `note` que foi passado ao criador de ação. Quando você chama o criador de ação, você passará uma informação note específica que você pode acessar para o objeto.
 
-Next, finish writing the `switch` statement in the `notesReducer()`. You need to add a case that handles the `addNoteText()` actions. This case should be triggered whenever there is an action of type `ADD_NOTE` and it should return the `text` property on the incoming `action` as the new `state`.
+Em seguida, termine de escreve a instrução `switch` no `notesReducer()`. Você precisa adicionar um caso que lide com ações do `addNodeText()`. Esse caso deve ser acionado sempre que há uma ação do tipo `ADD_NOTE` e ele deve retornar a propriedade `text` na `action` chegando como o novo `state`.
 
-The action is dispatched at the bottom of the code. Once you're finished, run the code and watch the console. That's all it takes to send action-specific data to the store and use it when you update store `state`.
+A ação é despachada no final do código. Quando terminar, rode o código e olhe o console. Isso é tudo que é necessário para enviar dados específicos de ações ao store e o usar quando você atualizar o `state` do store.
 
 # --hints--
 
-The action creator `addNoteText` should return an object with keys `type` and `text`.
+O criador de ação `addNoteText` deve retornar um objeto com chaves `type` e `text`.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Dispatching an action of type `ADD_NOTE` with the `addNoteText` action creator should update the `state` to the string passed to the action creator.
+Despachar uma ação do tipo `ADD_NOTE` com o criador de ação `addNodeText` deve atualizar o `state` para a string passada para o criador da ação.
 
 ```js
 assert(

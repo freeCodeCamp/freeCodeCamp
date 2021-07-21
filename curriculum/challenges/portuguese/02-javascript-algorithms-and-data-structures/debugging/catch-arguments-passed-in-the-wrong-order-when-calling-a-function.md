@@ -1,6 +1,6 @@
 ---
 id: 587d7b85367417b2b2512b3a
-title: Capture Argumentos Passados na Ordem Errada Quando Chamando uma Função
+title: Capturar argumentos passados na ordem errada ao chamar uma função
 challengeType: 1
 forumTopicId: 301184
 dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function

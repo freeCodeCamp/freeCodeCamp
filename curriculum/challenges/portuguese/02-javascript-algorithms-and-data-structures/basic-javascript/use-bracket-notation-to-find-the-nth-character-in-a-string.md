@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c450eddfaeb5bdef
-title: Use Notação de Colchetes para Encontrar o Nº Caractere em uma String
+title: Usar notação de colchetes para encontrar o enésimo caractere em uma string
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVJua'
 forumTopicId: 18343

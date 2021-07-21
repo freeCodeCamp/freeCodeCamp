@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4e
-title: Criar Strings usando Template Literals
+title: Criar strings usando template literals
 challengeType: 1
 forumTopicId: 301200
 dashedName: create-strings-using-template-literals

@@ -1,6 +1,6 @@
 ---
 id: 5e444136903586ffb414c94d
-title: Time Calculator
+title: Calcolatore di tempi
 challengeType: 10
 forumTopicId: 462360
 dashedName: time-calculator
@@ -8,24 +8,24 @@ dashedName: time-calculator
 
 # --description--
 
-Write a function named "add_time" that can add a duration to a start time and return the result.
+Scrivi una funzione denominata "add_time" che possa aggiungere una durata ad un orario di inizio e restituisca il risultato.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-time-calculator). After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Puoi accedere [alla descrizione completa del progetto e al codice iniziale su Replit](https://replit.com/github/freeCodeCamp/boilerplate-time-calculator). Dopo essere andato a quel collegamento, fai un fork del progetto. Una volta completato il progetto in base alle istruzioni riportate in 'README.md', invia il link del progetto qui sotto.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
 
 <ul>
   <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
+    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Video corso Python for Everybody</a> (14 ore)
   </li>
   <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
+    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Video corso Learn Python</a> (2 ore)
   </li>
 </ul>
 
 # --hints--
 
-It should correctly add times and pass all tests.
+Dovrebbe sommare correttamente dei tempi e superare tutti i test.
 
 ```js
 

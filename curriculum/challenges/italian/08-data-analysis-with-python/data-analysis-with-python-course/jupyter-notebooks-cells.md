@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c150
-title: Jupyter Notebooks Cells
+title: Celle di Jupyter Notebook
 challengeType: 11
 videoId: 5PPegAs9aLA
 dashedName: jupyter-notebooks-cells
@@ -8,30 +8,30 @@ dashedName: jupyter-notebooks-cells
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Invece di usare notebooks.ai come mostrato nel video, puoi usare Google Colab.*
 
-More resources:
+Altre risorse:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebook su GitHub](https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial)
+-   [Come aprire Notebooks da GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What are the three main types of Jupyter Notebook Cell?
+Quali sono i tre tipi principali di celle dei Jupyter Notebook?
 
 ## --answers--
 
-Code, Markdown, and Python
+Codice, Markdown e Python
 
 ---
 
-Code, Markdown, and Raw
+Codice, Markdown e output diretto (raw)
 
 ---
 
-Markdown, Python, and Raw
+Markdown, Python, e output diretto (raw)
 
 ## --video-solution--
 

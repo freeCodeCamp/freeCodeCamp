@@ -1,6 +1,6 @@
 ---
 id: 587d7dac367417b2b2512b73
-title: Crie um Objeto JavaScript Básico
+title: Criar um objeto JavaScript básico
 challengeType: 1
 forumTopicId: 301317
 dashedName: create-a-basic-javascript-object

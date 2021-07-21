@@ -1,6 +1,6 @@
 ---
 id: 587d7789367417b2b2512aa4
-title: Melhore a acessibilidade de áudios com o elemento audio
+title: Melhorar a acessibilidade de áudios com o elemento audio
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVkcZ'
 forumTopicId: 301014

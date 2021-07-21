@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5f
-title: Passe Argumentos para Evitar Dependências Externas em Funções
+title: Passar argumentos para evitar dependências externas em funções
 challengeType: 1
 forumTopicId: 301234
 dashedName: pass-arguments-to-avoid-external-dependence-in-a-function

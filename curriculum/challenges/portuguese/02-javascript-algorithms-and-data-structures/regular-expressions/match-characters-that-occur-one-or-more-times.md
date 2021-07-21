@@ -1,6 +1,6 @@
 ---
 id: 587d7db6367417b2b2512b99
-title: Capture Caracteres que Aparecem Uma ou Mais Vezes Seguidas
+title: Capturar caracteres que aparecem uma ou mais vezes seguidas
 challengeType: 1
 forumTopicId: 301350
 dashedName: match-characters-that-occur-one-or-more-times

@@ -1,6 +1,6 @@
 ---
 id: 587d7b85367417b2b2512b39
-title: Capture Abertura e Fechamento de Parênteses Faltantes Após uma Chamada de Função
+title: Capturar abertura e fechamento de parênteses faltantes após uma chamada de função
 challengeType: 1
 forumTopicId: 301185
 dashedName: catch-missing-open-and-closing-parenthesis-after-a-function-call

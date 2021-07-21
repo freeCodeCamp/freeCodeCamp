@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8e
-title: 'Core Learning Algorithms: Building the Model'
+title: 'Algoritmi di apprendimento principali: Costruire il modello'
 challengeType: 11
 videoId: 5wHw8BTd2ZQ
 dashedName: core-learning-algorithms-building-the-model
@@ -10,7 +10,7 @@ dashedName: core-learning-algorithms-building-the-model
 
 ## --text--
 
-What kind of estimator/model does TensorFlow recommend using for classification?
+Che tipo di stimatore/modello TensorFlow consiglia di utilizzare per la classificazione?
 
 ## --answers--
 

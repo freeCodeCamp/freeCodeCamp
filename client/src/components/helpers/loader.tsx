@@ -17,7 +17,10 @@ function Loader({ fullScreen, timeout }: LoaderProps): JSX.Element {
     return () => clearTimeout(timerId);
   }, [setShowSpinner, showSpinner, timeout]);
   return (
-    <div className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}>
+    <div
+      className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}
+      data-testid='fcc-loader'
+    >
       {showSpinner && <Spinner name='line-scale-pulse-out' />}
     </div>
   );

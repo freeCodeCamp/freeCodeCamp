@@ -1,6 +1,6 @@
 ---
 id: afcc8d540bea9ea2669306b6
-title: Repita uma String Repita uma String
+title: Repetir uma string Repetir uma string
 challengeType: 5
 forumTopicId: 16041
 dashedName: repeat-a-string-repeat-a-string

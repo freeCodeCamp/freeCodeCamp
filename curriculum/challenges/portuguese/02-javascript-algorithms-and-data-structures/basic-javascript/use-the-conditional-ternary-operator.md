@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b24
-title: Use o Operador Condicional (ternário)
+title: Use o operador condicional (ternário)
 challengeType: 1
 forumTopicId: 301181
 dashedName: use-the-conditional-ternary-operator

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036141
-title: Getting Started with React Redux
+title: Primeiros Passos com Redux React
 challengeType: 6
 forumTopicId: 301430
 dashedName: getting-started-with-react-redux
@@ -8,19 +8,19 @@ dashedName: getting-started-with-react-redux
 
 # --description--
 
-This series of challenges introduces how to use Redux with React. First, here's a review of some of the key principles of each technology. React is a view library that you provide with data, then it renders the view in an efficient, predictable way. Redux is a state management framework that you can use to simplify the management of your application's state. Typically, in a React Redux app, you create a single Redux store that manages the state of your entire app. Your React components subscribe to only the pieces of data in the store that are relevant to their role. Then, you dispatch actions directly from React components, which then trigger store updates.
+Essa série de desafio introduz como usar o Redux com React. Primeiro, aqui está uma revisão de alguns princípios chaves de cada tecnologia. React é uma biblioteca de visualização que você fornece dados, e então ele renderiza a visualização de uma forma eficiente e previsível. Redux é um framework de gerenciamento de estado que você usa para simplificar o gerenciamento do estado da sua aplicação. Tipicamente, em uma aplicação Redux React, você cria um único store Redux que gerencia o estado de todo o seu app. Seus componentes React inscrevem-se apenas aos pedaços de dados no store que são relevantes para suas responsabilidades. Em seguida, você despacha ações diretamente de componentes React, o que então aciona a atualização do store.
 
-Although React components can manage their own state locally, when you have a complex app, it's generally better to keep the app state in a single location with Redux. There are exceptions when individual components may have local state specific only to them. Finally, because Redux is not designed to work with React out of the box, you need to use the `react-redux` package. It provides a way for you to pass Redux `state` and `dispatch` to your React components as `props`.
+Embora componentes React podem gerenciar seus próprios estados localmente, quando você tem um app complexo, geralmente é melhor manter o estado do app em um único lugar com Redux. Existem exceções quando componentes individuais podem ter um estado local específico apenas para eles. Finalmente, como o redux não é projetado para trabalhar com o React puro, você precisa usar o pacote `react-redux`. Ele fornece uma forma de você passar o `state` e `dispatch` do Redux para seus componentes React como `props`.
 
-Over the next few challenges, first, you'll create a simple React component which allows you to input new text messages. These are added to an array that's displayed in the view. This should be a nice review of what you learned in the React lessons. Next, you'll create a Redux store and actions that manage the state of the messages array. Finally, you'll use `react-redux` to connect the Redux store with your component, thereby extracting the local state into the Redux store.
+Ao longo dos próximos desafios, primeiro, você criará um componente React simples que lhe permite inserir novas mensagens de texto. Estes são adicionados a um array que é exibido na exibição. Essa deve ser uma boa revisão do que você aprendeu nas lições do React. Em seguida, você vai criar um store e ações do Redux que gerenciam o estado do array de mensagens. Finalmente, você usará `react-redux` para conectar o store do Redux com seu componente, deste modo extraindo o state local para o store Redux.
 
 # --instructions--
 
-Start with a `DisplayMessages` component. Add a constructor to this component and initialize it with a state that has two properties: `input`, that's set to an empty string, and `messages`, that's set to an empty array.
+Comece com o componente `DisplayMessages`. Adicione um construtor para esse componente e inicialize ele com um state com duas propriedades: `input`, que é definido como uma string vazia, e `messages`, que é definido para um array vazio.
 
 # --hints--
 
-The `DisplayMessages` component should render an empty `div` element.
+O componente `DisplayMessages` deve renderizar um elemento `div` vazio.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-The `DisplayMessages` constructor should be called properly with `super`, passing in `props`.
+O construtor `DisplayMessages` deve ser chamado corretamente com `super`, passando `props`.
 
 ```js
 (getUserInput) =>
@@ -46,7 +46,7 @@ The `DisplayMessages` constructor should be called properly with `super`, passin
   );
 ```
 
-The `DisplayMessages` component should have an initial state equal to `{input: "", messages: []}`.
+O componente `DisplayMessages` deve ter um state inicial igual a `{input: "", messages: []}`.
 
 ```js
 assert(

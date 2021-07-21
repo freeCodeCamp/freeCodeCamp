@@ -26,15 +26,15 @@ name=John+Doe&age=25
 
 # --instructions--
 
-在 `package.json` 中安装 `body-parser` 模块， 然后在文件顶部 `require` 进来， 用变量 `bodyParser` 保存它。 通过中间件的 `bodyParser.urlencoded({extended: false})` 方法处理 URL 编码数据， Pass the function returned by the previous method call to `app.use()`. As usual, the middleware must be mounted before all the routes that depend on it.
+在 `package.json` 中安装 `body-parser` 模块， 然后在文件顶部 `require` 进来， 用变量 `bodyParser` 保存它。 通过中间件的 `bodyParser.urlencoded({extended: false})` 方法处理 URL 编码数据， 将通过先前的方法调用返回的函数传递到 `app.use()`。 中间件通常挂载在所有需要它的路由之前。
 
-**Note:** `extended` is a configuration option that tells `body-parser` which parsing needs to be used. When `extended=false` it uses the classic encoding `querystring` library. When `extended=true` it uses `qs` library for parsing.
+**注意：** `extended` 是一个配置选项, 告诉 `body-parser` 需要使用哪个解析。 当 `extended=false` 时，它使用经典编码 `querystring` 库。 当 `extended=true`时，它使用 `qs` 库进行解析。
 
-When using `extended=false`, values can be only strings or arrays. The object returned when using `querystring` does not prototypically inherit from the default JavaScript `Object`, which means functions like `hasOwnProperty`, `toString` will not be available. The extended version allows more data flexibility, but it is outmatched by JSON.
+当使用 `extended=false` 时，值可以只是字符串或数组。 使用 `querystring` 时返回的对象并不继承的 JavaScript `Object`，这意味着 `hasOwnProperty`、`toString` 等函数将不可用。 拓展版本的数据更加灵活，但稍逊于 JSON。
 
 # --hints--
 
-The 'body-parser' middleware should be mounted
+应该挂载 “body-parser” 中间件
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 587d7b84367417b2b2512b35
-title: Capture Nomes de Variáveis e Funções Com Erros Ortográficos
+title: Capturar nomes de variáveis e funções com erros ortográficos
 challengeType: 1
 forumTopicId: 301186
 dashedName: catch-misspelled-variable-and-function-names

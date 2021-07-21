@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b79
-title: Estenda Construtores para Receber Argumentos
+title: Estender construtores para receber argumentos
 challengeType: 1
 forumTopicId: 18235
 dashedName: extend-constructors-to-receive-arguments

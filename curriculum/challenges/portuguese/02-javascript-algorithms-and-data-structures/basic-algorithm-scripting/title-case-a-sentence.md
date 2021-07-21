@@ -1,6 +1,6 @@
 ---
 id: ab6137d4e35944e21037b769
-title: Capitalização de Título de uma Frase
+title: Capitalizar o título de uma frase
 challengeType: 5
 forumTopicId: 16088
 dashedName: title-case-a-sentence

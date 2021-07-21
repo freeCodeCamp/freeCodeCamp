@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b41
-title: Declare variáveis somente de leitura com a palavra-chave const
+title: Declarar variáveis somente de leitura com a palavra-chave const
 challengeType: 1
 forumTopicId: 301201
 dashedName: declare-a-read-only-variable-with-the-const-keyword

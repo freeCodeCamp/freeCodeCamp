@@ -8,7 +8,7 @@ dashedName: use-regular-expressions-to-test-a-string
 
 # --description--
 
-Come promemoria, questo progetto viene costruito a partire dal seguente progetto iniziale su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 `match()` afferma che il valore effettivo corrisponde al secondo argomento espressione regolare.
 

@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c59
-title: Run Functional Tests on API Endpoints using Chai-HTTP II
+title: Eseguire test funzionali sugli endpoint API utilizzando Chai-HTTP II
 challengeType: 2
 forumTopicId: 301592
 dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
@@ -8,17 +8,17 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with your name'` test (`// #2`) to assert the `status` and the `text` response to make the test pass.
+All'interno di `tests/2_functional-tests.js`, modifica il test `'Test GET /hello with your name'` (`// #2`) per asserire che le risposte `status` e `text` facciano passare i test.
 
-Send your name in the query, appending `?name=<your_name>` to the route. The endpoint responds with `'hello <your_name>'`.
+Invia il tuo nome nella query, aggiungendo `?name=<your_name>` alla rotta. L'endpoint risponde con `'hello <your_name>'`.
 
 # --hints--
 
-All tests should pass
+Tutti i test dovrebbero essere superati
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass
   );
 ```
 
-You should test for 'res.status' == 200
+Dovresti verificare che 'res.status' == 200
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should test for 'res.status' == 200
   );
 ```
 
-You should test for 'res.text' == 'hello Guest'
+Dovresti verificare che 'res.text' == 'hello Guest'
 
 ```js
 (getUserInput) =>

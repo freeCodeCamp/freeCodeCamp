@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d89
-title: Core Learning Algorithms
+title: Algoritmi di apprendimento principali
 challengeType: 11
 videoId: u5lZURgcWnU
 dashedName: core-learning-algorithms
@@ -10,25 +10,25 @@ dashedName: core-learning-algorithms
 
 ## --text--
 
-Which type of analysis would be best suited for the following problem?:
+Quale tipo di analisi sarebbe più adatto per il seguente problema?
 
-You have the average temperature in the month of March for the last 100 years. Using this data, you want to predict the average temperature in the month of March 5 years from now.
+Hai la temperatura media nel mese di marzo per gli ultimi 100 anni. Utilizzando questi dati, vuoi prevedere la temperatura media nel mese di marzo a 5 anni da adesso.
 
 ## --answers--
 
-Multiple regression
+Regressione multipla
 
 ---
 
-Correlation
+Correlazione
 
 ---
 
-Decision tree
+Albero decisionale
 
 ---
 
-Linear regression
+Regressione lineare
 
 ## --video-solution--
 
