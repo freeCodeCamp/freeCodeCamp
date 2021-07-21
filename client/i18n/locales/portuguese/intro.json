@@ -2,7 +2,7 @@
   "responsive-web-design": {
     "title": "Design responsivo para a web",
     "intro": [
-      "Nessa certificação de Web Design Responsivo, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
+      "Nessa certificação de Design responsivo para a web, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
       "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um formulário web.",
       "Finalmente, você vai aprender a fazer páginas web que respondem a diferentes tamanhos de telas construindo um card do Twitter com Flexbox, e um layout complexo de blog com o CSS Grid."
     ],
@@ -39,7 +39,7 @@
       "responsive-web-design-principles": {
         "title": "Princípios do design responsivo para a web",
         "intro": [
-          "Existem muitos dispositivos que podem acessar a Internet, de todas as formas e tamanhos. O Design Responsivo na web é a prática de se projetar sites flexíveis, que podem responder a diferentes tamanhos de telas, orientações e resoluções.",
+          "Existem muitos dispositivos que podem acessar a Internet, de todas as formas e tamanhos. O Design responsivo para a web é a prática de se projetar sites flexíveis, que podem responder a diferentes tamanhos de telas, orientações e resoluções.",
           "Neste curso, você vai aprender a usar CSS para fazer suas páginas ficarem bonitas, não importa em qual dispositivo elas estão sendo visualizadas."
         ]
       },
@@ -61,7 +61,7 @@
         "title": "Projetos do design responsivo para a web",
         "intro": [
           "Hora de colocar suas novas habilidades aprendidas para funcionar. Ao trabalhar nestes projetos, você terá a oportunidade de aplicar todas as competências, princípios e conceitos que você aprendeu até agora: HTML, CSS, Visual Design, Acessibilidade e muito mais.",
-          "Conclua os cinco projetos de programação web abaixo para ganhar a sua Certificação de Web Design Responsivo."
+          "Conclua os cinco projetos de programação web abaixo para ganhar a sua Certificação de Design responsivo para a web."
         ]
       },
       "basic-html-cat-photo-app": {
@@ -72,7 +72,7 @@
         ]
       },
       "basic-css-cafe-menu": {
-        "title": "Menu CSS Básico de um Café",
+        "title": "Menu de uma cafeteria em CSS básico",
         "intro": [
           "",
           ""

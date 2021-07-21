@@ -66,10 +66,10 @@
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
-    "big-heading-2": "Criar projetos.",
+    "big-heading-2": "Crie projetos.",
     "big-heading-3": "Obtenha certificações.",
     "h2-heading": "Desde 2014, mais de 40.000 pessoas que concluíram o freeCodeCamp.org obtiveram empregos em empresas de tecnologia incluindo:",
-    "hero-img-description": "estudantes do freeCodeCamp em um grupo de estudos local na Coreia do Sul.",
+    "hero-img-description": "Estudantes do freeCodeCamp em um grupo de estudos local na Coreia do Sul.",
     "as-seen-in": "Conforme visto em:",
     "testimonials": {
       "heading": "Veja o que os nossos ex-alunos dizem sobre o freeCodeCamp:",
@@ -561,11 +561,11 @@
   "certification-card": {
     "title": "Solicite sua certificação",
     "intro": "Complete as etapas a seguir para solicitar e ver seu {{i18nCertText}}",
-    "complete-project": "Complete os projetos do {{i18nCertText}}",
-    "accept-honesty": "Aceite nossa política de honestidade acadêmica",
-    "set-name": "Defina seu nome e torne-o público",
-    "set-certs-public": "Defina suas configurações de certificação como públicas",
-    "set-profile-public": "Defina suas configurações de perfil como públicas",
+    "complete-project": "Completar os projetos de {{i18nCertText}}",
+    "accept-honesty": "Aceitar nossa política de honestidade acadêmica",
+    "set-name": "Definir seu nome e torná-lo público",
+    "set-certs-public": "Definir suas configurações de certificação como públicas",
+    "set-profile-public": "Definir suas configurações de perfil como públicas",
     "set-claim": "Solicite e veja sua certificação"
   },
   "forum-help": {
