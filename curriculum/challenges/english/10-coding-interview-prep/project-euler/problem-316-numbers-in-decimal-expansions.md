@@ -26,7 +26,7 @@ for $p = 35528714365004956000049084876408468\mathbf{535}4\ldots$, we get $k = 36
 
 etc and we find that $g(535) = 1008$.
 
-Given that $\displaystyle\sum_{n = 2}^{999} g\left(\left\lfloor\frac{{10}^6}{n}\right\rfloor\right)$, find $\displaystyle\sum_{n = 2}^{999\\,999} g\left(\left\lfloor\frac{{10}^{16}}{n}\right\rfloor\right)$.
+Given that $\displaystyle\sum_{n = 2}^{999} g\left(\left\lfloor\frac{{10}^6}{n}\right\rfloor\right) = 27280188$, find $\displaystyle\sum_{n = 2}^{999\\,999} g\left(\left\lfloor\frac{{10}^{16}}{n}\right\rfloor\right)$.
 
 **Note:** $\lfloor x\rfloor$ represents the floor function.
 

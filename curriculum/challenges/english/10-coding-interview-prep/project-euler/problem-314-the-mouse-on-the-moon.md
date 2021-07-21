@@ -14,7 +14,7 @@ The bigger countries of course have built a 2000 m wall enclosing the entire 250
 
 You have done some preliminary calculations on a sheet of paper. For a 2000 meter wall enclosing the 250 000 $\text{m}^2$ area the $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio is 125.
 
-Although not allowed, but to get an idea if this is anything better: if you place a circle inside the square area touching the four sides the area will be equal to $π \times {250}^2 \text{m}^2$ and the perimeter will be $π \times 500 \text{m}$, so the $\frac{\text{enclosed-area}}{\text{wall-length}} ratio will also be 125.
+Although not allowed, but to get an idea if this is anything better: if you place a circle inside the square area touching the four sides the area will be equal to $π \times {250}^2 \text{m}^2$ and the perimeter will be $π \times 500 \text{m}$, so the $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio will also be 125.
 
 However, if you cut off from the square four triangles with sides 75 m, 75 m and $75\sqrt{2}$ m the total area becomes 238750 $\text{m}^2$ and the perimeter becomes $1400 + 300\sqrt{2}$ m. So this gives an $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio of 130.87, which is significantly better.
 
