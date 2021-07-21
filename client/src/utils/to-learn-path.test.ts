@@ -6,7 +6,7 @@
  * We should either make the expected properties optional, or reevaluate
  * these tests.
  */
-import toLearnPath from '../utils/to-learn-path';
+import toLearnPath from './to-learn-path';
 import { withPrefix } from 'gatsby';
 
 describe('toLearnPath', () => {
