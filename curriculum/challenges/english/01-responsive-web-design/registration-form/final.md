@@ -4,7 +4,7 @@ id:
   id: "`ð'\t\x9A\x15°\x04\NV=Ó"
 title: Final Prototype
 challengeType: 0
-dashedName: part-14
+dashedName: part-25
 ---
 
 # --description--
@@ -84,7 +84,7 @@ Test 1
 				<textarea name="y" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
 			</label>
 		</fieldset>
-		<input type="submit" />
+		<input type="submit" value="Submit" />
 	</form>
 </body>
 

@@ -25,19 +25,19 @@ assert.equal(document.querySelector('label').innerHTML, 'Enter Your First Name:'
 The second `label` should have the text `Enter Your Last Name:`.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(2)').innerHTML, 'Enter Your Last Name:');
+assert.equal(document.querySelector('fieldset > label:nth-child(2)').innerHTML, 'Enter Your Last Name:');
 ```
 
 The third `label` should have the text `Enter Your Email:`.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(3)').innerHTML, 'Enter Your Email:');
+assert.equal(document.querySelector('fieldset > label:nth-child(3)').innerHTML, 'Enter Your Email:');
 ```
 
 The fourth `label` should have the text `Create a New Password:`.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(4)').innerHTML, 'Create a New Password:');
+assert.equal(document.querySelector('fieldset > label:nth-child(4)').innerHTML, 'Create a New Password:');
 ```
 
 # --seed--
