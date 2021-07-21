@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b1b
-title: Use a Palavra-Chave delete para Remover Propriedades de Objetos
+title: Usar a palavra-chave delete para remover propriedades de objetos
 challengeType: 1
 forumTopicId: 301168
 dashedName: use-the-delete-keyword-to-remove-object-properties

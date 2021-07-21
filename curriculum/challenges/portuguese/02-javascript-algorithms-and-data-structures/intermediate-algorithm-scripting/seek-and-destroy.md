@@ -1,6 +1,6 @@
 ---
 id: a39963a4c10bc8b4d4f06d7e
-title: Procurar e Destruir
+title: Procurar e destruir
 challengeType: 5
 forumTopicId: 16046
 dashedName: seek-and-destroy

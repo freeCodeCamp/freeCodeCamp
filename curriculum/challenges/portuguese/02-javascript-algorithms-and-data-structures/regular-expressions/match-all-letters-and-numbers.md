@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9f
-title: Capture Todas as Letras e Números
+title: Capturar todas as letras e números
 challengeType: 1
 forumTopicId: 301346
 dashedName: match-all-letters-and-numbers

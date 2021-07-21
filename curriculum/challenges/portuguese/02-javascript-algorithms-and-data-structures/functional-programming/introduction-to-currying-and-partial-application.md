@@ -1,6 +1,6 @@
 ---
 id: 587d7dab367417b2b2512b70
-title: Introdução à Aplicação Parcial e Currying
+title: Iniciar com currying e aplicação parcial
 challengeType: 1
 forumTopicId: 301232
 dashedName: introduction-to-currying-and-partial-application

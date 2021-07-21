@@ -1,6 +1,6 @@
 ---
 id: 587d7dbb367417b2b2512bac
-title: Removendo Espaço em Branco do Início e Fim de Strings
+title: Remover espaços em branco do início e do fim de strings
 challengeType: 1
 forumTopicId: 301362
 dashedName: remove-whitespace-from-start-and-end
@@ -14,7 +14,7 @@ dashedName: remove-whitespace-from-start-and-end
 
 Escreva uma regex que, junto dos métodos apropriados de string, remove os espaços em branco do começo e do fim delas.
 
-**Nota:** Normalmente usaríamos `String.prototype.trim()` para isso, mas a sua tarefa é fazer o mesmo usando expressões regulares.
+**Observação:** normalmente, usaríamos `String.prototype.trim()` para isso, mas a sua tarefa é fazer o mesmo usando expressões regulares.
 
 # --hints--
 

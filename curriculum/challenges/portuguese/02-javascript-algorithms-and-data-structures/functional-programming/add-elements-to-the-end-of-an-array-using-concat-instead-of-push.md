@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b67
-title: Adicione Elementos ao Final de um Array usando concat em vez de push
+title: Adicionar elementos ao final de um array usando concat em vez de push
 challengeType: 1
 forumTopicId: 301226
 dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push

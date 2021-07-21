@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b93
-title: Encontre Mais do que o Primeiro Resultado
+title: Encontrar mais do que o primeiro resultado
 challengeType: 1
 forumTopicId: 301342
 dashedName: find-more-than-the-first-match

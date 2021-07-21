@@ -1,6 +1,6 @@
 ---
 id: 587d78a5367417b2b2512ad7
-title: Use um gradiente linear com CSS para criar um elemento listrado
+title: Usar um gradiente linear com CSS para criar um elemento listrado
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bmQh2'
 forumTopicId: 301072

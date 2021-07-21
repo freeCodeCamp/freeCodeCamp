@@ -1,6 +1,6 @@
 ---
 id: 587d781c367417b2b2512ac3
-title: Defina a espessura da tipografia para vários elementos de cabeçalho
+title: Definir a espessura da tipografia para vários elementos de cabeçalho
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVWRHq'
 forumTopicId: 301069

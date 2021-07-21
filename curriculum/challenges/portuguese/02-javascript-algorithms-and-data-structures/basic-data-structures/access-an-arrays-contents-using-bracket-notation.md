@@ -1,6 +1,6 @@
 ---
 id: 5a661e0f1068aca922b3ef17
-title: Acesse o Conteúdo de uma Lista Utilizando a Notação de Colchetes
+title: Acessar o conteúdo de uma lista utilizando a notação de colchetes
 challengeType: 1
 forumTopicId: 301149
 dashedName: access-an-arrays-contents-using-bracket-notation

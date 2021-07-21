@@ -1,6 +1,6 @@
 ---
 id: 587d7daf367417b2b2512b7d
-title: Itere Sobre Todas as Propriedades
+title: Iterar sobre todas as propriedades
 challengeType: 1
 forumTopicId: 301320
 dashedName: iterate-over-all-properties

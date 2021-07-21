@@ -1,6 +1,6 @@
 ---
 id: 587d7dad367417b2b2512b76
-title: Faça Código Mais Reutilizável com a Palavra-Chave this
+title: Fazer código mais reutilizável com a palavra-chave this
 challengeType: 1
 forumTopicId: 301321
 dashedName: make-code-more-reusable-with-the-this-keyword
@@ -8,7 +8,7 @@ dashedName: make-code-more-reusable-with-the-this-keyword
 
 # --description--
 
-O último desafio introduziu um método ao objeto `duck`. Ele utiliza ponto notação (`duck.name`) para acessar o valor da propriedade `name` dentro da declaração de retorno:
+O último desafio introduziu um método ao objeto `duck`. Ele utiliza a notação de ponto (`duck.name`) para acessar o valor da propriedade `name` dentro da declaração de retorno:
 
 ```js
 sayName: function() {return "The name of this duck is " + duck.name + ".";}

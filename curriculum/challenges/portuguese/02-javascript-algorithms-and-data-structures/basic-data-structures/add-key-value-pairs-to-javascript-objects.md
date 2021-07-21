@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b18
-title: Adicione Pares de Chave-Valor a objetos JavaScript
+title: Adicionar pares de chave-valor a objetos JavaScript
 challengeType: 1
 forumTopicId: 301153
 dashedName: add-key-value-pairs-to-javascript-objects

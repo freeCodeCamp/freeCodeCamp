@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b84
-title: Herde Comportamentos de um Supertipo
+title: Herdar comportamentos de um supertipo
 challengeType: 1
 forumTopicId: 301319
 dashedName: inherit-behaviors-from-a-supertype
@@ -8,7 +8,7 @@ dashedName: inherit-behaviors-from-a-supertype
 
 # --description--
 
-No desafio anterior, você criou um `supertipo` chamado `Animal` que define os comportamentos compartilhados por todos os animais:
+No desafio anterior, você criou um `supertype` chamado `Animal` que define os comportamentos compartilhados por todos os animais:
 
 ```js
 function Animal() { }
@@ -17,7 +17,7 @@ Animal.prototype.eat = function() {
 };
 ```
 
-Este e o próximo desafio irá abordar como reutilizar métodos de `Animal` dentro de `Bird` e `Dog` sem ter de definir os métodos novamente. Ele utiliza uma técnica chamada herança. Este desafio cobrirá o primeiro passo: fazer uma instância do `supertipo` (ou parente). Você já sabe uma forma de criar instâncias de `Animal` utilizando o operador `new`:
+Este e o próximo desafio irá abordar como reutilizar métodos de `Animal` dentro de `Bird` e `Dog` sem ter de definir os métodos novamente. Ele utiliza uma técnica chamada herança. Este desafio cobrirá o primeiro passo: fazer uma instância do `supertype` (ou parente). Você já sabe uma forma de criar instâncias de `Animal` utilizando o operador `new`:
 
 ```js
 let animal = new Animal();
@@ -29,14 +29,14 @@ Há algumas desvantagens quando utilizamos essa sintaxe para herança, que são 
 let animal = Object.create(Animal.prototype);
 ```
 
-`Object.create(obj)` cria um novo objeto, e define `obj` como o novo `protótipo` do objeto. Lembre-se que o `protótipo` é como uma "receita" para criar um objeto. Ao definir o `prototype` de `animal` para ser um `prototype` de `Animal`, você está efetivamente dando a instância `animal` a mesma "receita" de qualquer outra instância de `Animal`.
+`Object.create(obj)` cria um novo objeto, e define `obj` como o novo `prototype` do objeto. Lembre-se que o `prototype` é como uma "receita" para criar um objeto. Ao definir o `prototype` de `animal` para ser um `prototype` de `Animal`, você está efetivamente dando a instância `animal` a mesma "receita" de qualquer outra instância de `Animal`.
 
 ```js
 animal.eat();
 animal instanceof Animal;
 ```
 
-O método `instanceof` aqui irá retornar `true`.
+O método `instanceof` aqui vai retornar `true`.
 
 # --instructions--
 
@@ -76,13 +76,13 @@ assert(
 );
 ```
 
-`duck` deve ter o `protótipo` de `Animal`.
+`duck` deve ter o `prototype` de `Animal`.
 
 ```js
 assert(duck instanceof Animal);
 ```
 
-`beagle` deve ter o `protótipo` de `Animal`.
+`beagle` deve ter o `prototype` de `Animal`.
 
 ```js
 assert(beagle instanceof Animal);

@@ -1,6 +1,6 @@
 ---
 id: 587d78a6367417b2b2512adc
-title: Use a propriedade skewY de transformação do CSS para distorcer um elemento ao longo do eixo Y
+title: Usar a propriedade skewY de transformação do CSS para distorcer um elemento ao longo do eixo Y
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MZ2uB'
 forumTopicId: 301075

@@ -1,6 +1,6 @@
 ---
 id: a6e40f1041b06c996f7b2406
-title: Achado Não é Roubado
+title: Achar não é roubar
 challengeType: 5
 forumTopicId: 16016
 dashedName: finders-keepers

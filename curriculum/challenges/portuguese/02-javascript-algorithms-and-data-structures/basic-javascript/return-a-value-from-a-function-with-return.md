@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c2
-title: Retorne um Valor de uma Função com Return
+title: Retornar um valor de uma função com return
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87wue'
 forumTopicId: 18271

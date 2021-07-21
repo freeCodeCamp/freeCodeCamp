@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b6a
-title: Retorne um Array Ordenado Sem Modificar o Array Original
+title: Retornar um array ordenado sem modificar o array original
 challengeType: 1
 forumTopicId: 301237
 dashedName: return-a-sorted-array-without-changing-the-original-array

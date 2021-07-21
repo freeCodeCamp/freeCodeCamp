@@ -1,6 +1,6 @@
 ---
 id: 5cdafbb0291309899753167f
-title: Criar uma Promessa em JavaScript
+title: Criar uma promessa em JavaScript
 challengeType: 1
 forumTopicId: 301197
 dashedName: create-a-javascript-promise

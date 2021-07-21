@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ae
-title: Descobrindo o Resto em JavaScript
+title: Descobrir o resto em JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWP24Ub'
 forumTopicId: 18184

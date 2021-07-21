@@ -1,6 +1,6 @@
 ---
 id: 587d7788367417b2b2512aa2
-title: Facilite a navegação do leitor de tela com o ponto de referência nav
+title: Facilitar a navegação do leitor de tela com o ponto de referência nav
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVwWSv'
 forumTopicId: 301024

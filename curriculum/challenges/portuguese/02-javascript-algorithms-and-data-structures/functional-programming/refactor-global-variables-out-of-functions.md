@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b60
-title: Refatore Funções Para Que Não Usem Variáveis Globais
+title: Refatorar variáveis globais fora de funções
 challengeType: 1
 forumTopicId: 301235
 dashedName: refactor-global-variables-out-of-functions

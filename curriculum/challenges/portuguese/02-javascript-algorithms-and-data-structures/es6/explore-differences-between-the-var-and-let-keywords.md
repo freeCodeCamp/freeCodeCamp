@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b3f
-title: Diferenças entre as palavras-chave var e let
+title: Diferenciar entre as palavras-chave var e let
 challengeType: 1
 forumTopicId: 301202
 dashedName: explore-differences-between-the-var-and-let-keywords

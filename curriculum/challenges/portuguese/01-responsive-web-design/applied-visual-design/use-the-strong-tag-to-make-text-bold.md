@@ -1,6 +1,6 @@
 ---
 id: 587d781a367417b2b2512ab7
-title: Use a tag strong para deixar o texto em negrito
+title: Usar a tag strong para deixar o texto em negrito
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/ceJNBSb'
 forumTopicId: 301080

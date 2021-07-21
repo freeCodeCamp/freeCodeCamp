@@ -1,6 +1,6 @@
 ---
 id: 5cd9a70215d3c4e65518328f
-title: Use Recursividade para Criar uma Contagem Regressiva
+title: Usar recursão para criar uma contagem regressiva
 challengeType: 1
 forumTopicId: 305925
 dashedName: use-recursion-to-create-a-countdown

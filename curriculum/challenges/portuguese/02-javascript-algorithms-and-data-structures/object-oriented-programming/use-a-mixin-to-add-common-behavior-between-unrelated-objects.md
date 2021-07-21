@@ -1,6 +1,6 @@
 ---
 id: 587d7db2367417b2b2512b89
-title: Utilize Mixin para Adicionar Comportamentos Comuns Entre Objetos Não-Relacionados
+title: Utilizar mixin para adicionar comportamentos comuns entre objetos não relacionados
 challengeType: 1
 forumTopicId: 301331
 dashedName: use-a-mixin-to-add-common-behavior-between-unrelated-objects

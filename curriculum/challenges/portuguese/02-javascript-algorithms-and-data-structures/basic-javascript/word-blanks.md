@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244bb
-title: Word Blanks
+title: Palavras em branco
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caqn8zuP'
 forumTopicId: 18377
@@ -9,7 +9,7 @@ dashedName: word-blanks
 
 # --description--
 
-Nós iremos agora usar nosso conhecimento de strings para criar um "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)" estilo de jogo de palavras que chamamos de "Palavras em Branco". Você irá criar uma frase no estilo "Preencha os Espaços em Branco" (opcionalmente humorosa).
+Nós vamos agora usar nosso conhecimento de strings para criar um "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)" estilo de jogo de palavras que chamamos de "Palavras em Branco". Você irá criar uma frase no estilo "Preencha os Espaços em Branco" (opcionalmente humorosa).
 
 Em um jogo "Mad Libs", você recebe frases com algumas palavras faltando, como substantivos, verbos, adjetivos e advérbios. Você então irá preencher os pedaços faltantes com palavras de sua escolha em uma forma que a frase completa faça sentido.
 

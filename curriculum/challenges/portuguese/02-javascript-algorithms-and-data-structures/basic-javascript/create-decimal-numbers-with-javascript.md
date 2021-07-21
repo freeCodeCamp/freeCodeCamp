@@ -1,6 +1,6 @@
 ---
 id: cf1391c1c11feddfaeb4bdef
-title: Crie Números Decimais com JavaScript
+title: Criar números decimais com JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GEuW'
 forumTopicId: 16826

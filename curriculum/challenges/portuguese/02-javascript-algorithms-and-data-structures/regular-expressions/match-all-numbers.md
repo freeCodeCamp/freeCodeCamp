@@ -1,6 +1,6 @@
 ---
 id: 5d712346c441eddfaeb5bdef
-title: Capture Todos os Números
+title: Capturar todos os números
 challengeType: 1
 forumTopicId: 18181
 dashedName: match-all-numbers

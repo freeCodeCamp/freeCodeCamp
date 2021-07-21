@@ -1,6 +1,6 @@
 ---
 id: a5229172f011153519423690
-title: Soma todos os números ímpares de Fibonacci
+title: Somar todos os números ímpares de Fibonacci
 challengeType: 5
 forumTopicId: 16084
 dashedName: sum-all-odd-fibonacci-numbers

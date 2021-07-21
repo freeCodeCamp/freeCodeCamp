@@ -1,6 +1,6 @@
 ---
 id: 587d7b83367417b2b2512b37
-title: Entendendo a Diferença entre o console da freeCodeCamp e do Navegador
+title: Entender a diferença entre o console da freeCodeCamp e do navegador
 challengeType: 1
 forumTopicId: 301193
 dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-console

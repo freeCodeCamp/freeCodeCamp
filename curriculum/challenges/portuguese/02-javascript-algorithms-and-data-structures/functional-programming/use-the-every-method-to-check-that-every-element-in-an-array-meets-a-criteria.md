@@ -1,6 +1,6 @@
 ---
 id: 587d7dab367417b2b2512b6e
-title: Use o Método every para Checar Se Todos os Elementos em um Array Atendem a um Critério
+title: Usar o método every para checar se todos os elementos em um array atendem a um critério
 challengeType: 1
 forumTopicId: 301312
 dashedName: use-the-every-method-to-check-that-every-element-in-an-array-meets-a-criteria

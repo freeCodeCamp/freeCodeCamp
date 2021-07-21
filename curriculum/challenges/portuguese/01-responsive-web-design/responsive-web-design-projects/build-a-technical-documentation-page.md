@@ -1,6 +1,6 @@
 ---
 id: 587d78b0367417b2b2512b05
-title: Crie uma página de documentação técnica
+title: Criar uma página de documentação técnica
 challengeType: 3
 forumTopicId: 301146
 dashedName: build-a-technical-documentation-page

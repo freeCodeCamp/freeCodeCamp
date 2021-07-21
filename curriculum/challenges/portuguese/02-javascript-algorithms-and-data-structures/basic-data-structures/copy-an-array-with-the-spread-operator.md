@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b13
-title: Copiar um Array com o Operador Spread
+title: Copiar um array com o operador spread
 challengeType: 1
 forumTopicId: 301157
 dashedName: copy-an-array-with-the-spread-operator

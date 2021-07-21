@@ -1,6 +1,6 @@
 ---
 id: 587d778a367417b2b2512aa5
-title: Melhore a acessibilidade de gráficos com o elemento figure
+title: Melhorar a acessibilidade de gráficos com o elemento figure
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMqtE'
 forumTopicId: 301015

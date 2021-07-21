@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b45
-title: 'Use as Funções de Ordem Superior map, filter ou reduce para Solucionar um Problema Complexo'
+title: 'Usar as funções de ordem superior map, filter ou reduce para solucionar um problema complexo'
 challengeType: 1
 forumTopicId: 301311
 dashedName: use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem

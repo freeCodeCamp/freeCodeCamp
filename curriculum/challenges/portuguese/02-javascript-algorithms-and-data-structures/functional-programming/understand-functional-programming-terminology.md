@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5c
-title: Entenda a Terminologia de Programação Funcional
+title: Entender a terminologia de programação funcional
 challengeType: 1
 forumTopicId: 301240
 dashedName: understand-functional-programming-terminology

@@ -1,6 +1,6 @@
 ---
 id: 587d7db8367417b2b2512ba1
-title: Capture Tudo Exceto Números
+title: Capturar tudo exceto números
 challengeType: 1
 forumTopicId: 301347
 dashedName: match-all-non-numbers

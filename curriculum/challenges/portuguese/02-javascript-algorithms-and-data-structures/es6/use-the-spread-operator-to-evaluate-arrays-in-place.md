@@ -1,6 +1,6 @@
 ---
 id: 587d7b89367417b2b2512b48
-title: Use o Operador Spread para Avaliar Arrays No Lugar
+title: Use o operador spread para avaliar arrays na hora
 challengeType: 1
 forumTopicId: 301222
 dashedName: use-the-spread-operator-to-evaluate-arrays-in-place

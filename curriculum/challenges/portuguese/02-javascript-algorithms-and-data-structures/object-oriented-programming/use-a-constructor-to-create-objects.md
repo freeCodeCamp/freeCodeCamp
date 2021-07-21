@@ -1,6 +1,6 @@
 ---
 id: 587d7dad367417b2b2512b78
-title: Utilize um Construtor para Criar Objetos
+title: Usar um construtor para criar objetos
 challengeType: 1
 forumTopicId: 18233
 dashedName: use-a-constructor-to-create-objects

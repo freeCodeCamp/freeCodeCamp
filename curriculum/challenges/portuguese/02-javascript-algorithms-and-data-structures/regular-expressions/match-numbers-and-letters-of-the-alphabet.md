@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b97
-title: Capture Números e Letras do Alfabeto
+title: Capturar números e letras do alfabeto
 challengeType: 1
 forumTopicId: 301356
 dashedName: match-numbers-and-letters-of-the-alphabet

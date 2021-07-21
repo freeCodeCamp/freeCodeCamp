@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4f
-title: Escreva Declarações Literais de Objetos Concisas usando a Forma Abreviada de Propriedade de Objeto
+title: Escrever declarações literais de objetos concisas usando a forma abreviada de propriedade de objeto
 challengeType: 1
 forumTopicId: 301225
 dashedName: write-concise-object-literal-declarations-using-object-property-shorthand
