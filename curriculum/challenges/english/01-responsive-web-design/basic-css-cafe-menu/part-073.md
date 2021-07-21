@@ -20,7 +20,8 @@ assert(code.match(/padding:\s*20px;?/i));
 Your `body` element should have a `padding` of `20px`.
 
 ```js
-assert($('body').css('padding') === '20px');
+const bodyPadding = new __helpers.CSSHelp(document).getStyle('body')?.getPropertyValue('padding');
+assert(bodyPadding === '20px');
 ```
 
 # --seed--
@@ -147,4 +148,3 @@ h1, h2 {
   width: 25%
 }
 ```
-
