@@ -7,14 +7,26 @@ dashedName: part-48
 
 # --description--
 
-Add an `h2` element in the new section add give it the text `Desserts`.
+Add an `h2` element in the new section and give it the text `Desserts`.
 
 # --hints--
 
-Test 1
+You should not change your existing `section` element.
 
 ```js
+assert($('section').length === 2);
+```
 
+You should add an `h2` element in your second `section` element.
+
+```js
+assert($('section')[1].children[0].tagName === 'H2');
+```
+
+Your new `h2` element should have the text `Desserts`.
+
+```js
+assert($('h2')[1].innerText.match(/Desserts/i));
 ```
 
 # --seed--
@@ -38,12 +50,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -67,7 +79,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {

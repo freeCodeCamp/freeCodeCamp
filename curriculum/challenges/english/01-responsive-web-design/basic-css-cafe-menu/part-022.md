@@ -11,10 +11,25 @@ The goal now is to make the `div` not take up the entire width of the page. The 
 
 # --hints--
 
-Test 1
+You should have a `div` type selector.
 
 ```js
+const hasDiv = new __helpers.CSSHelp(document).getStyle('div');
+assert(hasDiv);
+```
 
+You should set the `width` property to `300px`.
+
+```js
+const hasWidth = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.width === '300px');
+assert(hasWidth);
+```
+
+Your `div` should have a width of 300px.
+
+```js
+const divWidth = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('width');
+assert(divWidth === '300px');
 ```
 
 # --seed--
@@ -38,7 +53,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
         </section>
       </main>
     </div>
@@ -56,5 +71,6 @@ h1, h2, p {
   text-align: center;
 }
 --fcc-editable-region--
+
 ```
 

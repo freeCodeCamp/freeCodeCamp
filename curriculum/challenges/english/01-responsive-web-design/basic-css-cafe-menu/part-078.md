@@ -1,5 +1,5 @@
 ---
-id: 5f4701b942c824109626c3d8
+id: 5f46ede1ff8fec5ba656b44c
 title: Part 78
 challengeType: 0
 dashedName: part-78
@@ -7,14 +7,14 @@ dashedName: part-78
 
 # --description--
 
-Now add the `bottom-line` class to the second `hr` element so the styling is applied.
+Next you are going to be styling the `footer` element. To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
 
 # --hints--
 
-Test 1
+You should have a CSS comment with the text `FOOTER`.
 
 ```js
-
+assert(code.match(/\/\*\s*FOOTER\s*\*\//i));
 ```
 
 # --seed--
@@ -39,12 +39,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -72,10 +72,7 @@ Test 1
           </article>
         </section>
       </main>
---fcc-editable-region--
-      <hr>
---fcc-editable-region--
-      <footer>
+      <hr class="bottom-line">
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -88,7 +85,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -136,7 +133,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 18px;  
 }
 
 .flavor, .dessert {
@@ -148,5 +145,10 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 ```
 

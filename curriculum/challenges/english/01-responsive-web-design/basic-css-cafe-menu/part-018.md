@@ -17,10 +17,24 @@ Add the following within the `head` element:
 
 # --hints--
 
-Test 1
+Your code should have two `meta` elements.
 
 ```js
+assert(code.match(/<meta.*\/?>/g).length === 2);
+```
 
+Your `meta` element should have a `name` attribute with a value of `viewport`.
+
+```js
+const meta = $('meta');
+assert(meta[0].outerHTML.match(/name=('|")viewport\1/) || meta[1].outerHTML.match(/name=('|")viewport\1/));
+```
+
+Your `meta` element should have a `content` attribute with a value of `width=device-width, initial-scale=1.0`.
+
+```js
+const meta = $('meta');
+assert(meta[0].outerHTML.match(/content=('|")width=device-width, initial-scale=1.0\1/) || meta[1].outerHTML.match(/content=('|")width=device-width, initial-scale=1.0\1/));
 ```
 
 # --seed--
@@ -44,7 +58,7 @@ Test 1
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>
@@ -56,4 +70,3 @@ h1, h2, p {
   text-align: center;
 }
 ```
-

@@ -11,10 +11,29 @@ Now that you know it works, you can change the remaining `article` and `p` eleme
 
 # --hints--
 
-Test 1
+You should only have five `article` elements.
 
 ```js
+assert($('article').length === 5);
+```
 
+You should only have five `.item` elements.
+
+```js
+assert($('.item').length === 5);
+```
+
+Your `.item` elements should be your `article` elements.
+
+
+```js
+const articles = $('article');
+const items = $('.item');
+assert(articles[0] === items[0]);
+assert(articles[1] === items[1]);
+assert(articles[2] === items[2]);
+assert(articles[3] === items[3]);
+assert(articles[4] === items[4]);
 ```
 
 # --seed--
@@ -38,13 +57,13 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
 --fcc-editable-region--
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>
@@ -69,7 +88,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {

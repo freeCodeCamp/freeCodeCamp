@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0e9629bad967cd71e
+id: 5f3ef6e06d34faac0447fc44
 title: Part 61
 challengeType: 0
 dashedName: part-61
@@ -7,16 +7,29 @@ dashedName: part-61
 
 # --description--
 
-You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma. This second font would be used in case the browser does not have the font built-in to it.
-
-Add the fallback font `serif` after the `Impact` font.
+Make the `Est. 2020` text italicized by creating an `established` class selector and giving it the `font-style` property with the value `italic`.
 
 # --hints--
 
-Test 1
+You should have an `.established` selector.
 
 ```js
+const hasEstablished = new __helpers.CSSHelp(document).getStyle('.established');
+assert(hasEstablished);
+```
 
+You should set the `font-style` property to `italic`.
+
+```js
+const hasFontStyle = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['font-style'] === 'italic');
+assert(hasFontStyle);
+```
+
+Your `.established` selector should set the `font-style` property to `italic`.
+
+```js
+const establishedFontStyle = new __helpers.CSSHelp(document).getStyle('.established')?.getPropertyValue('font-style');
+assert(establishedFontStyle === 'italic');
 ```
 
 # --seed--
@@ -40,12 +53,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -80,9 +93,13 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
@@ -97,11 +114,9 @@ h1, h2, p {
   max-width: 500px;
 }
 
---fcc-editable-region--
 h1, h2 {
-  font-family: Impact;
+  font-family: Impact, serif;
 }
---fcc-editable-region--
 
 .item p {
   display: inline-block;

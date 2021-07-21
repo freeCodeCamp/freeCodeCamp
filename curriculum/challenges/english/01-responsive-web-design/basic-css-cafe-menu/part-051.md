@@ -11,10 +11,28 @@ For the two `p` elements you just added, add `dessert` as the value of the first
 
 # --hints--
 
-Test 1
+You should have one `p` element with the `dessert` class.
 
 ```js
+assert($('.dessert').length === 1);
+```
 
+Your `p` element with the text `Donut` should have the `dessert` class.
+
+```js
+assert($('.dessert')[0].innerText.match(/donut/i));
+```
+
+Your `p` element with the text `1.50` should have the `price` class.
+
+```js
+assert($('.price').last().text().match(/1\.50/));
+```
+
+You should not have any spaces between your `p` elements.
+
+```js
+assert(!code.match(/<\/p>\s+<p/));
 ```
 
 # --seed--
@@ -38,12 +56,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -71,7 +89,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {

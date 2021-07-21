@@ -1,5 +1,5 @@
 ---
-id: 5f46fc57528aa1c4b5ea7c2e
+id: 5f4701b942c824109626c3d8
 title: Part 77
 challengeType: 0
 dashedName: part-77
@@ -7,16 +7,20 @@ dashedName: part-77
 
 # --description--
 
-Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinnamon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
-
-Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
+Now add the `bottom-line` class to the second `hr` element so the styling is applied.
 
 # --hints--
 
-Test 1
+You should apply the `class="bottom-line"` property.
 
 ```js
+assert(code.match(/class=('|")bottom-line\1/i));
+```
 
+Your `bottom-line` class should be applied to your second `hr` element.
+
+```js
+assert($('hr')[1].className === 'bottom-line');
 ```
 
 # --seed--
@@ -41,12 +45,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -74,7 +78,9 @@ Test 1
           </article>
         </section>
       </main>
+--fcc-editable-region--
       <hr>
+--fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -88,7 +94,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -124,9 +130,9 @@ hr {
   border-color: brown;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+.bottom-line {
+  margin-top: 25px;
+}
 
 h1, h2 {
   font-family: Impact, serif;
@@ -149,4 +155,3 @@ h1, h2 {
   width: 25%
 }
 ```
-

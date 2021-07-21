@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e01f288a026d709587
+id: 5f3f26fa39591db45e5cd7a0
 title: Part 68
 challengeType: 0
 dashedName: part-68
@@ -7,16 +7,31 @@ dashedName: part-68
 
 # --description--
 
-You can use an `hr` element to display a divider between sections of different content.
+The default properties of an `hr` element will make it appear as a thin light grey line. You can change the height of the line by specifying a value for the `height` property.
 
-First, add an `hr` element between the first `header` element and the `main` element.
+Change the height the `hr` element to be `3px`.
 
 # --hints--
 
-Test 1
+You should use the `hr` selector.
 
 ```js
+const hasHr = new __helpers.CSSHelp(document).getStyle('hr');
+assert(hasHr);
+```
 
+You should set the `height` property to `3px`.
+
+```js
+const hasHeight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.height === '3px');
+assert(hasHeight);
+```
+
+Your `hr` element should have a height of `3px`.
+
+```js
+const hrHeight = new __helpers.CSSHelp(document).getStyle('hr')?.getPropertyValue('height');
+assert(hrHeight === '3px');
 ```
 
 # --seed--
@@ -34,19 +49,19 @@ Test 1
   </head>
   <body>
     <div class="menu">
---fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
+      <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -74,7 +89,6 @@ Test 1
           </article>
         </section>
       </main>
---fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -88,7 +102,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
 
@@ -116,6 +130,10 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

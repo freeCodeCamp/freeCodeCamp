@@ -1,5 +1,5 @@
 ---
-id: 5f45a05977e2fa49d9119437
+id: 5f45a276c093334f0f6e9df4
 title: Part 74
 challengeType: 0
 dashedName: part-74
@@ -7,14 +7,45 @@ dashedName: part-74
 
 # --description--
 
-To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
+Focusing on the menu items and prices, there is a fairly large gap between each line.
+
+Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
 
 # --hints--
 
-Test 1
+You should set the `margin-top` property to `5px`.
 
 ```js
+const hasMarginTop = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-top'] === '5px');
+assert(hasMarginTop);
+```
 
+You should set the `margin-bottom` property to `5px`.
+
+```js
+const hasMarginBottom = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-bottom'] === '5px');
+assert(hasMarginBottom);
+```
+
+You should use the existing `.item p` selector.
+
+```js
+const hasOneSelector = new __helpers.CSSHelp(document).getStyleDeclarations('.item p');
+assert(hasOneSelector.length === 1);
+```
+
+Your `p` elements nested in your `.item` elements should have a `margin-top` of `5px`.
+
+```js
+const itemPMarginTop = new __helpers.CSSHelp(document).getStyle('.item p')?.getPropertyValue('margin-top');
+assert(itemPMarginTop === '5px');
+```
+
+Your `p` elements nested in your `.item` elements should have a `margin-bottom` of `5px`.
+
+```js
+const itemPMarginBottom = new __helpers.CSSHelp(document).getStyle('.item p')?.getPropertyValue('margin-bottom');
+assert(itemPMarginBottom === '5px');
 ```
 
 # --seed--
@@ -39,12 +70,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -85,12 +116,11 @@ Test 1
 ```
 
 ```css
---fcc-editable-region--
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
+  padding: 20px;
 }
---fcc-editable-region--
 
 h1 {
   font-size: 40px;
@@ -123,6 +153,7 @@ hr {
   border-color: brown;
 }
 
+--fcc-editable-region--
 h1, h2 {
   font-family: Impact, serif;
 }
@@ -140,5 +171,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
+--fcc-editable-region--
 ```
 
