@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import Profile from './Profile';
 
@@ -55,9 +55,9 @@ const notMyProfileProps = {
 
 describe('<Profile/>', () => {
   it('renders the report button on another persons profile', () => {
-    const { getByText } = render(<Profile {...notMyProfileProps} />);
+    render(<Profile {...notMyProfileProps} />);
 
-    const reportButton: HTMLElement = getByText('buttons.flag-user');
+    const reportButton: HTMLElement = screen.getByText('buttons.flag-user');
     expect(reportButton).toHaveAttribute('href', '/user/string/report-user');
   });
 

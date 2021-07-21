@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036184
-title: Render with an If-Else Condition
+title: Renderizar com uma condição If-Else
 challengeType: 6
 forumTopicId: 301410
 dashedName: render-with-an-if-else-condition
@@ -8,17 +8,17 @@ dashedName: render-with-an-if-else-condition
 
 # --description--
 
-Another application of using JavaScript to control your rendered view is to tie the elements that are rendered to a condition. When the condition is true, one view renders. When it's false, it's a different view. You can do this with a standard `if/else` statement in the `render()` method of a React component.
+Outra aplicação de usar JavaScript para controlar sua visão renderizada é associar os elementos que são renderizados em uma condição. Quando a condição é verdadeira, uma visão renderiza. Quando é falso, é uma visão diferente. Você pode fazer isso com uma instrução padrão `if/else` no método `render()` de um componente React.
 
 # --instructions--
 
-MyComponent contains a `boolean` in its state which tracks whether you want to display some element in the UI or not. The `button` toggles the state of this value. Currently, it renders the same UI every time. Rewrite the `render()` method with an `if/else` statement so that if `display` is `true`, you return the current markup. Otherwise, return the markup without the `h1` element.
+MyComponent contém um `boolean` em seu estado que rastreia se você deseja exibir algum elemento na interface do usuário ou não. O `button` alterna o estado deste valor. No momento, ele renderiza a mesma interface do usuário todas as vezes. Reescreva o método `render()` com uma instrução `if/else` para que se `display` for `true`, você retorna a marcação atual. Caso contrário, retorne a marcação sem o elemento `h1`.
 
-**Note:** You must write an `if/else` to pass the tests. Use of the ternary operator will not pass here.
+**Nota:** Você deve escrever um `if/else` para passar nos testes. O uso do operador ternário não passará aqui.
 
 # --hints--
 
-`MyComponent` should exist and render.
+`MyComponent` deve existir e renderizar.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-When `display` is set to `true`, a `div`, `button`, and `h1` should render.
+Quando `display` é definido como `true`, uma `div`, um `button`, e um `h1` devem renderizar.
 
 ```js
 async () => {
@@ -50,7 +50,7 @@ async () => {
 };
 ```
 
-When `display` is set to `false`, only a `div` and `button` should render.
+Quando `display` é definido como `false`, apenas uma `div` e um `button` devem renderizar.
 
 ```js
 async () => {
@@ -71,7 +71,7 @@ async () => {
 };
 ```
 
-The render method should use an `if/else` statement to check the condition of `this.state.display`.
+O método de renderização deve usar um comando `if/else` para verificar a condição de `this.state.display`.
 
 ```js
 (getUserInput) =>

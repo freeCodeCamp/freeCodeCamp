@@ -13,7 +13,7 @@ import {
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import isEmail from 'validator/lib/isEmail';
-import { Trans, withTranslation } from 'react-i18next';
+import { TFunction, Trans, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 import { updateMyEmail } from '../../redux/settings';
@@ -33,7 +33,7 @@ type EmailProps = {
   email: string;
   isEmailVerified: boolean;
   sendQuincyEmail: boolean;
-  t: (str: string) => string;
+  t: TFunction;
   updateMyEmail: (email: string) => void;
   updateQuincyEmail: (sendQuincyEmail: boolean) => void;
 };

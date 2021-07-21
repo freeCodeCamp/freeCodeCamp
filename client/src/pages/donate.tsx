@@ -5,7 +5,7 @@ import type { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
@@ -32,7 +32,7 @@ interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
-  t: (s: string) => string;
+  t: TFunction;
 }
 
 const mapStateToProps = createSelector(

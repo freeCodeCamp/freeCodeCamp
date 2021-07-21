@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036146
-title: Map Dispatch to Props
+title: Mapeie Dispatch para Props
 challengeType: 6
 forumTopicId: 301432
 dashedName: map-dispatch-to-props
@@ -8,9 +8,9 @@ dashedName: map-dispatch-to-props
 
 # --description--
 
-The `mapDispatchToProps()` function is used to provide specific action creators to your React components so they can dispatch actions against the Redux store. It's similar in structure to the `mapStateToProps()` function you wrote in the last challenge. It returns an object that maps dispatch actions to property names, which become component `props`. However, instead of returning a piece of `state`, each property returns a function that calls `dispatch` with an action creator and any relevant action data. You have access to this `dispatch` because it's passed in to `mapDispatchToProps()` as a parameter when you define the function, just like you passed `state` to `mapStateToProps()`. Behind the scenes, React Redux is using Redux's `store.dispatch()` to conduct these dispatches with `mapDispatchToProps()`. This is similar to how it uses `store.subscribe()` for components that are mapped to `state`.
+A função `mapDispatchToProps()` é usada para fornecer criadores de ação específicos para seus componentes React, para que eles possam despachar ações ao store Redux. É semelhante em estrutura à função `mapStateToProps()` que você escreveu no último desafio. Isso retorna um objeto que mapeia as ações de despache para nomes de propriedades, o que se torna `props` do componente. No entanto, em vez de retornar um pedaço do `state`, cada propriedade retorna uma função que chama `dispatch` com um criador de ação e quaisquer dados de ação relevantes. Você tem acesso a este `dispatch` porque ele foi passado para `mapDispatchToProps()` como um parâmetro quando você define a função, assim como você passou o estado `` para `mapStateToProps()`. Nos bastidores, React Redux está usando `store.dispatch()` do Redux para realizar estes despachos com `mapDispatchToProps()`. Isso é semelhante a como ele usa `store.subscribe()` para componentes que são mapeados para o `state`.
 
-For example, you have a `loginUser()` action creator that takes a `username` as an action payload. The object returned from `mapDispatchToProps()` for this action creator would look something like:
+Por exemplo, você tem o criador de ação `loginUser()` que recebe um `username` como uma ação payload. O objeto retornado do `mapDispatchToProps()` para este criador da ação pareceria algo como:
 
 ```jsx
 {
@@ -22,11 +22,11 @@ For example, you have a `loginUser()` action creator that takes a `username` as 
 
 # --instructions--
 
-The code editor provides an action creator called `addMessage()`. Write the function `mapDispatchToProps()` that takes `dispatch` as an argument, then returns an object. The object should have a property `submitNewMessage` set to the dispatch function, which takes a parameter for the new message to add when it dispatches `addMessage()`.
+O editor de código fornece um criador de ação chamado `addMessage()`. Escreva a função `mapDispatchToProps()` que recebe `dispatch` como um argumento, e então retorna um objeto. O objeto deve ter a propriedade `submitNewMessage` definida para a função de despacho, que recebe um parâmetro para a nova mensagem a ser adicionada quando despachar `addMessage()`.
 
 # --hints--
 
-`addMessage` should return an object with keys `type` and `message`.
+`addMessage` deve retornar um objeto com chaves `type` e `message`.
 
 ```js
 assert(
@@ -40,19 +40,19 @@ assert(
 );
 ```
 
-`mapDispatchToProps` should be a function.
+`mapDispatchToProps` deve ser uma função.
 
 ```js
 assert(typeof mapDispatchToProps === 'function');
 ```
 
-`mapDispatchToProps` should return an object.
+`mapDispatchToProps` deve retornar um objeto.
 
 ```js
 assert(typeof mapDispatchToProps() === 'object');
 ```
 
-Dispatching `addMessage` with `submitNewMessage` from `mapDispatchToProps` should return a message to the dispatch function.
+Despachar `addMessage` com `submitNewMessage` do `mapDispatchToProps` deve retornar uma mensagem para a função de despachamento.
 
 ```js
 assert(

@@ -11,7 +11,7 @@ import {
   Row
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import { Trans, withTranslation } from 'react-i18next';
+import { TFunction, Trans, withTranslation } from 'react-i18next';
 
 import Login from '../components/Header/components/Login';
 
@@ -30,7 +30,7 @@ interface IShowUserProps {
     username: string;
     reportDescription: string;
   }) => void;
-  t: (payload: unknown, ops?: Record<string, unknown>) => string;
+  t: TFunction;
   userFetchState: {
     pending: boolean;
     complete: boolean;

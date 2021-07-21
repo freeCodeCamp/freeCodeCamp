@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 # --description--
 
-Come promemoria, questo progetto viene costruito a partire dal seguente progetto iniziale su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 Nel prossimo esempio vedremo come inviare i dati in nel corpo di un payload di richiesta. Stiamo per testare una richiesta PUT. L'endpoint `'/travellers'` accetta un oggetto JSON che prende la struttura:
 

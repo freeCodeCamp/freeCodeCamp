@@ -1,6 +1,6 @@
 ---
 id: 5e46f979ac417301a38fb932
-title: Port Scanner
+title: Scanner di porte
 challengeType: 10
 forumTopicId: 462372
 helpCategory: Python
@@ -9,26 +9,26 @@ dashedName: port-scanner
 
 # --description--
 
-Create a port scanner using Python.
+Crea uno scanner di porte usando Python.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-port-scanner).
+Puoi accedere [alla descrizione completa del progetto e al codice iniziale su Replit](https://replit.com/github/freeCodeCamp/boilerplate-port-scanner).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Dopo essere andato a quel collegamento, fai un fork del progetto. Una volta completato il progetto in base alle istruzioni riportate in 'README.md', invia il link del progetto qui sotto.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you some of the Python skills required for this project:
+Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno alcune delle abilità Python richieste per questo progetto:
 
 <ul>
   <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
+    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Video corso Python for Everybody</a> (14 ore)
   </li>
   <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
+    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Video corso Learn Python</a> (2 ore)
   </li>
 </ul>
 
 # --hints--
 
-It should pass all Python tests.
+Dovrebbe superare tutti i test Python.
 
 ```js
 

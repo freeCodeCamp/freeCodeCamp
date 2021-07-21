@@ -1,6 +1,6 @@
 ---
 id: 587d824a367417b2b2512c46
-title: Learn How JavaScript Assertions Work
+title: Imparare come funzionano le asserzioni Javascript
 challengeType: 2
 forumTopicId: 301589
 dashedName: learn-how-javascript-assertions-work
@@ -8,21 +8,21 @@ dashedName: learn-how-javascript-assertions-work
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+Lavorare su queste sfide ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
 
-- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-mochachai/) and complete these challenges locally.
-- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+- Clonare [questo repository GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/) e completare queste sfide localmente.
+- Usare [la nostra bozza di progetto su Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) per completare queste sfide.
+- Usare un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#1`, nella suite `Basic Assertions`, cambia ogni asserzione `assert` in `assert.isNull` o `assert.isNotNull` per far superare il test (dovrebbe risultare `true`). Non alterare gli argomenti passati alle asserzioni.
 
 # --hints--
 
-All tests should pass.
+Tutti i test dovrebbero essere superati.
 
 ```js
 (getUserInput) =>
@@ -36,7 +36,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isNull` vs. `isNotNull`.
+Dovresti scegliere il metodo corretto per la prima asserzione - `isNull` oppure `isNotNull`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `isNull` vs. `isN
   );
 ```
 
-You should choose the correct method for the second assertion - `isNull` vs. `isNotNull`.
+Dovresti scegliere il metodo corretto per la seconda asserzione - `isNull` oppure `isNotNull`.
 
 ```js
 (getUserInput) =>

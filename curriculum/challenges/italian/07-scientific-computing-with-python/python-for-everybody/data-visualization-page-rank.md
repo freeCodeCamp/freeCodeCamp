@@ -10,19 +10,19 @@ dashedName: data-visualization-page-rank
 
 ## --text--
 
-How does the PageRank algorithm work?
+Come funziona l'algoritmo PageRank?
 
 ## --answers--
 
-It determines which pages are most highly connected.
+Determina quali pagine sono più connesse.
 
 ---
 
-It ranks pages based on view counts.
+Posiziona le pagine in base al conteggio delle visualizzazioni.
 
 ---
 
-It figures out which pages contain the most important content.
+Indica quali pagine contengono i contenuti più importanti.
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3b
-title: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
+title: Impedire a IE di aprire HTML non attendibile con helmet.ieNoOpen()
 challengeType: 2
 forumTopicId: 301584
 dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
@@ -8,17 +8,17 @@ dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
-Some web applications will serve untrusted HTML for download. Some versions of Internet Explorer by default open those HTML files in the context of your site. This means that an untrusted HTML page could start doing bad things in the context of your pages. This middleware sets the X-Download-Options header to noopen. This will prevent IE users from executing downloads in the trusted site’s context.
+Alcune applicazioni web serviranno HTML non attendibile per il download. Alcune versioni di Internet Explorer per impostazione predefinita aprono quei file HTML nel contesto del tuo sito. Ciò significa che una pagina HTML non attendibile potrebbe iniziare a fare cose sbagliate nel contesto delle tue pagine. Questo middleware imposta l'intestazione delle Opzioni di X-D a noopen. Questo impedirà agli utenti di IE di eseguire i download nel contesto del sito affidabile.
 
 # --instructions--
 
-Use the `helmet.ieNoOpen()` method on your server.
+Usa il metodo `helmet.ieNoOpen()` sul tuo server.
 
 # --hints--
 
-helmet.ieNoOpen() middleware should be mounted correctly
+Il middleware helmet.ieNoOpen() deve essere montato correttamente
 
 ```js
 (getUserInput) =>

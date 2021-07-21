@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed9
-title: Reorganizing Arrays
+title: Riorganizzazione degli array
 challengeType: 11
 videoId: VNWAQbEM-C8
 dashedName: reorganizing-arrays
@@ -10,7 +10,7 @@ dashedName: reorganizing-arrays
 
 ## --text--
 
-What code would produce the following array?
+Quale codice produrrebbe il seguente array?
 
 ```py
 [[1. 1.]

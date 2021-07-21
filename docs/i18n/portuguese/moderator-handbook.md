@@ -1,35 +1,35 @@
-# The Official freeCodeCamp Moderator Handbook
+# O manual oficial para os moderadores do freeCodeCamp
 
-This handbook will help you moderate different places in our community. This covers conversations and interactions in issues & pull request threads on GitHub, the community forum, the chat rooms and other official communities that we foster.
+Esse manual vai ajudá-lo a moderar lugares diferentes em nossa comunidade. Ele cobre conversas e interações nos tópicos de "pull request" e "issues" do GitHub, o fórum da comunidade, as salas de conversa e outras comunidades oficiais fomentadas por nós.
 
-> [!NOTE] All freeCodeCamp moderators are community-wide moderators. That is we trust you to oversee any of these places.
+> [!NOTE] Todos os moderadores do freeCodeCamp são moderadores de toda a comunidade. Isso significa que confiamos em você para supervisionar um qualquer destes lugares.
 
-You can serve as a moderator on any of the platforms that are of the most interest to you. Some moderators just help out on GitHub, while others just help out on the forum. Some moderators are active everywhere.
+Você pode atuar como moderador em qualquer uma das plataformas de seu interesse. Alguns moderadores ajudam apenas no GitHub, enquanto outros ajudam apenas no fórum. Outros moderadores são ativos em todos os lugares.
 
-The bottom line is that we want you to enjoy being a moderator, and invest your scarce time in places that are of interest to you.
+O mais importante é que queremos que você goste de ser um moderador, investindo seu tempo escasso em lugares que sejam de interesse para você.
 
-> "With great power comes great responsibility." - Uncle Ben
+> "Com grandes poderes vêm grandes responsabilidades." - Tio Ben
 
-As a moderator, temperament is more important than technical skill.
+Como moderador, seu temperamento é mais importante do que habilidade técnica.
 
-Listen. Be Helpful. Don't abuse your power.
+Escute. Seja útil. Não abuse do seu poder.
 
-freeCodeCamp is an inclusive community, and we need to keep it that way.
+O freeCodeCamp é uma comunidade inclusiva e temos de mantê-la assim.
 
-We have a single code of conduct that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
+Temos um código de conduta único que rege toda a nossa comunidade. Quanto menos regras, mais fáceis elas são de lembrar. Você pode ler essas regras e guardá-las na memória [aqui](https://code-of-conduct.freecodecamp.org).
 
-> [!NOTE] As a moderator we would add you to one or more teams on GitHub, our community forum(s) & chat servers. If you are missing access on a platform that you would like to moderate please [reach out to a staff member](/FAQ?id=additional-assistance).
+> [!NOTE] Como moderador, nós adicionaríamos você a um ou mais times no GitHub, nos nossos fóruns comunitários e nos servidores de chat. Caso você não tenha acesso a uma plataforma que queira moderar, [entre em contato com um membro da equipe](/FAQ?id=additional-assistance).
 
-## Moderating GitHub
+## Moderando no GitHub
 
-Moderators have two primary responsibilities on GitHub:
+Moderadores têm duas responsabilidades primárias em relação ao GitHub:
 
-1. Triaging and responding to issues
-2. Reviewing and merging pull requests (a.k.a QA).
+1. Avaliar e responder "issues"
+2. Revisar e dar "merge" nos "pull requests" (também conhecido como controle de qualidade).
 
-### Moderating GitHub Issues
+### Moderando issues do GitHub
 
-We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repo as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled and addressed. This is also a great place to start helping with open-source codebase contributions.
+Nós usamos nosso repositório principal [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) como a central de rastreamento de "issues" para todos os nossos repositórios. Todos os dias recebemos novas issues. Todas elas precisam ser testadas e identificadas. Esse é também um ótimo lugar para começar a ajudar repositórios de código aberto com suas contribuições.
 
 #### Issue Triage
 
@@ -55,9 +55,9 @@ A `"first timer only"` label should be applied to a trivial issue (ex. a typo fi
 
 Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's repository. We must perform Quality Assurance (QA) on pull requests before we decide whether to merge them, request changes, or close them.
 
-#### Types of Pull Requests
+#### Tipos de pull requests
 
-1. **Challenge Instruction Edits**
+1. **Edições das instruções de desafios**
 
    These are changes to the text of challenges - the Description, Instructions, or Test Text.
 

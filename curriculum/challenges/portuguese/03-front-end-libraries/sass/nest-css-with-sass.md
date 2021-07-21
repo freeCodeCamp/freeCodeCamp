@@ -1,6 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb5
-title: Nest CSS with Sass
+title: Aninhar CSS com Sass
 challengeType: 0
 forumTopicId: 301457
 dashedName: nest-css-with-sass
@@ -8,9 +8,9 @@ dashedName: nest-css-with-sass
 
 # --description--
 
-Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
+Sass permite aninhar as regras CSS, o que é uma maneira útil de organizar uma folha de estilo.
 
-Normally, each element is targeted on a different line to style it, like so:
+Normalmente, cada elemento é direcionado a uma linha diferente para estilizá-lo, assim:
 
 ```scss
 nav {
@@ -26,7 +26,7 @@ nav ul li {
 }
 ```
 
-For a large project, the CSS file will have many lines and rules. This is where nesting can help organize your code by placing child style rules within the respective parent elements:
+Para um grande projeto, o arquivo CSS terá muitas linhas e regras. Aqui é onde aninhar pode ajudar a organizar seu código colocando regras de estilo filho dentro dos respectivos elementos parentais:
 
 ```scss
 nav {
@@ -45,11 +45,11 @@ nav {
 
 # --instructions--
 
-Use the nesting technique shown above to re-organize the CSS rules for both children of `.blog-post` element. For testing purposes, the `h1` should come before the `p` element.
+Use a técnica de aninhamento mostrada acima para reorganizar as regras CSS para ambos os filhos do elemento `.blog-post`. Para fins de teste, o `h1` deve vir antes do elemento `p`.
 
 # --hints--
 
-Your code should re-organize the CSS rules so the `h1` and `p` are nested in the `.blog-post` parent element.
+Seu código deve re-organizar as regras CSS para que o `h1` e `p` estejam aninhados no elemento pai `.blog-post`.
 
 ```js
 assert(

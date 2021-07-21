@@ -13,16 +13,16 @@ describe('<Honesty />', () => {
     const componentToRender = (
       <Honesty isHonest={false} updateIsHonest={updateIsHonestMock} />
     );
-    const component = renderer.render(componentToRender);
-    expect(component).toMatchSnapshot('Honesty');
+    const view = renderer.render(componentToRender);
+    expect(view).toMatchSnapshot('Honesty');
   });
 
   test('<Honesty /> snapshot when isHonest is true', () => {
     const componentToRender = (
       <Honesty isHonest={true} updateIsHonest={updateIsHonestMock} />
     );
-    const component = renderer.render(componentToRender);
-    expect(component).toMatchSnapshot('HonestyAccepted');
+    const view = renderer.render(componentToRender);
+    expect(view).toMatchSnapshot('HonestyAccepted');
   });
 
   test('should call updateIsHonest method on clicking agree button', () => {
@@ -30,6 +30,11 @@ describe('<Honesty />', () => {
       <Honesty isHonest={false} updateIsHonest={updateIsHonestMock} />
     ).root;
 
+    /**
+     * This rules had to be disabled because the new lint rules are throwing false positives here.
+     * They were interpreting react-test-renderer functions as @testing-library/react functions.
+     */
+    // eslint-disable-next-line testing-library/await-async-query
     root.findByType(Button).props.onClick();
     expect(updateIsHonestMock).toHaveBeenCalledWith({ isHonest: true });
   });
