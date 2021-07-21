@@ -1,6 +1,6 @@
 ---
 id: 587d7b90367417b2b2512b65
-title: Retorne Parte de um Array Usando o Método slice
+title: Retornar parte de um array usando o método slice
 challengeType: 1
 forumTopicId: 301239
 dashedName: return-part-of-an-array-using-the-slice-method

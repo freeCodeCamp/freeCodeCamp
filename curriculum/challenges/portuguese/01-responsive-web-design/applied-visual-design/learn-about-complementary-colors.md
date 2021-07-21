@@ -1,6 +1,6 @@
 ---
 id: 587d78a3367417b2b2512ad1
-title: Cores complementares
+title: Aprender sobre cores complementares
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MD3Tr'
 forumTopicId: 301056

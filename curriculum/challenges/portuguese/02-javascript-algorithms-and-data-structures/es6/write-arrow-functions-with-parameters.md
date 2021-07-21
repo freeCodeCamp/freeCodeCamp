@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b44
-title: Escrever Funções de Seta com Parâmetros
+title: Escrever arrow functions com parâmetros
 challengeType: 1
 forumTopicId: 301223
 dashedName: write-arrow-functions-with-parameters

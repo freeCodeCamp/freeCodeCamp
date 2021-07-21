@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512aba
-title: Use a tag s para deixar o texto tachado
+title: Usar a tag s para deixar o texto tachado
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301079

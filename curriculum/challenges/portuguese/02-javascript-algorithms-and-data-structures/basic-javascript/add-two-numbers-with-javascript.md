@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb3bdef
-title: Adicione Dois Números com JavaScript
+title: Adicionar dois números com JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KBAG'
 forumTopicId: 16650

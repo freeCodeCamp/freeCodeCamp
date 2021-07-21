@@ -1,6 +1,6 @@
 ---
 id: a2f1d72d9b908d0bd72bb9f6
-title: Faça uma Pessoa
+title: Fazer uma pessoa
 challengeType: 5
 forumTopicId: 16020
 dashedName: make-a-person

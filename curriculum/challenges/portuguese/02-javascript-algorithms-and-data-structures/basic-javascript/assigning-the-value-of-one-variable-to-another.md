@@ -1,6 +1,6 @@
 ---
 id: 5ee127a03c3b35dd45426493
-title: Atribua o Valor de Uma Variável para Outra
+title: Atribuir o valor de uma variável para outra
 challengeType: 1
 videoUrl: ''
 forumTopicId: 418265

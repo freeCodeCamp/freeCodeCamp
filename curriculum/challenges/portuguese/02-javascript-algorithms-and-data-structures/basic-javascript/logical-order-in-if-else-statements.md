@@ -1,6 +1,6 @@
 ---
 id: 5690307fddb111c6084545d7
-title: Ordem Lógica em Instruções If Else
+title: Usar a ordem lógica em instruções if else
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cwNvMUV'
 forumTopicId: 18228

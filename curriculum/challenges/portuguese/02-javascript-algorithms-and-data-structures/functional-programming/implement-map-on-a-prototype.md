@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b62
-title: Implemente map em um Protótipo
+title: Implementar map em um protótipo
 challengeType: 1
 forumTopicId: 301230
 dashedName: implement-map-on-a-prototype

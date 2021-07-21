@@ -1,6 +1,6 @@
 ---
 id: 587d7db2367417b2b2512b8b
-title: Entenda a Expressão de Função Invocada Imediatamente (IIFE)
+title: Entender a expressão de função invocada imediatamente (IIFE)
 challengeType: 1
 forumTopicId: 301328
 dashedName: understand-the-immediately-invoked-function-expression-iife
@@ -22,7 +22,7 @@ Note que a função não possui nome e não é armazenada em uma variável. Os d
 
 # --instructions--
 
-Rescreva a função `makeNest` e remova a chamada a ela para que no lugar seja uma expressão de função anônima imediatamente invocada (IIFE).
+Rescreva a função `makeNest` e remova a chamada a ela para que no lugar seja uma expressão de função imediatamente invocada (IIFE) anônima.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 56104e9e514f539506016a5c
-title: Itere Números Ímpares Com um Laço For
+title: Iterar números ímpares com um laço for
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm8n7T9'
 forumTopicId: 18212
@@ -9,7 +9,7 @@ dashedName: iterate-odd-numbers-with-a-for-loop
 
 # --description--
 
-Laços for não tem de iterar um de cada vez. Ao alterar nossa `expressão final`, nós podemos contar os números pares.
+Laços for não tem de iterar um de cada vez. Ao alterar nossa `final-expression`, nós podemos contar os números pares.
 
 Começaremos em `i = 0` e um laço while `i < 10`. Incrementaremos `i` em 2 a cada iteração com `i += 2`.
 
@@ -20,7 +20,7 @@ for (var i = 0; i < 10; i += 2) {
 }
 ```
 
-`ourArray` agora conterá `[0,2,4,6,8]`. Vamos mudar nossa `inicialização` para que possamos contar por números ímpares.
+`ourArray` agora conterá `[0,2,4,6,8]`. Vamos mudar nossa `initialization` para que possamos contar por números ímpares.
 
 # --instructions--
 

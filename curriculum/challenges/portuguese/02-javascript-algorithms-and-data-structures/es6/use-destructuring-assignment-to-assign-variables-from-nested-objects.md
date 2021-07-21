@@ -1,6 +1,6 @@
 ---
 id: 587d7b89367417b2b2512b4a
-title: Use Atribuição de Desestruturação para Atribuir Variáveis de Objetos Aninhados
+title: Usar atribuição de desestruturação para atribuir variáveis de objetos aninhados
 challengeType: 1
 forumTopicId: 301214
 dashedName: use-destructuring-assignment-to-assign-variables-from-nested-objects

@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c441eddfaeb4bdef
-title: Comente seu código JavaScript
+title: Comentar seu código JavaScript
 challengeType: 1
 removeComments: false
 videoUrl: 'https://scrimba.com/c/c7ynnTp'

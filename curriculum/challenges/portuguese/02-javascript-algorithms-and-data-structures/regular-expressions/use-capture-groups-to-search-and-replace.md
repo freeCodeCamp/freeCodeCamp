@@ -1,6 +1,6 @@
 ---
 id: 587d7dbb367417b2b2512bab
-title: Use Grupos de Captura para Buscar e Substituir
+title: Usar grupos de captura para buscar e substituir
 challengeType: 1
 forumTopicId: 301368
 dashedName: use-capture-groups-to-search-and-replace

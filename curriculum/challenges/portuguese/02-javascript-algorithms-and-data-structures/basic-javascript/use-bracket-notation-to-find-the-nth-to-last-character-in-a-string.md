@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c452eddfaeb5bdef
-title: Use Notação de Colchetes para Descobrir o Nº Antes do Ultimo em uma String
+title: Usar notação de colchetes para descobrir o enésimo caractere antes do último em uma string
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cw4vkh9'
 forumTopicId: 18344

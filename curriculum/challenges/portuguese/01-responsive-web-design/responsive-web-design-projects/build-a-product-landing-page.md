@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
-title: Construa uma landing page para um produto
+title: Criar uma landing page para um produto
 challengeType: 3
 forumTopicId: 301144
 dashedName: build-a-product-landing-page

@@ -1,6 +1,6 @@
 ---
 id: a8d97bd4c764e91f9d2bda01
-title: Agentes Binários
+title: Transformar de binário em string
 challengeType: 5
 forumTopicId: 14273
 dashedName: binary-agents

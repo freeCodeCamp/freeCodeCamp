@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cb
-title: Manipule Arrays Com push()
+title: Manipular arrays com push()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237

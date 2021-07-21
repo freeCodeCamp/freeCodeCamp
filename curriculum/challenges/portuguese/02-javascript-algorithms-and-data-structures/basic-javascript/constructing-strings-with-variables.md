@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b9
-title: Construindo Strings com Variáveis
+title: Construir strings com variáveis
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cqk8rf4'
 forumTopicId: 16805

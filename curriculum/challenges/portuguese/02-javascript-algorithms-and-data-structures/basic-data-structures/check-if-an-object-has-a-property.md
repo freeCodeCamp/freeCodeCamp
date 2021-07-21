@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1c
-title: Verifique se um Objeto tem uma Propriedade
+title: Verificar se um objeto tem uma propriedade
 challengeType: 1
 forumTopicId: 301155
 dashedName: check-if-an-object-has-a-property
@@ -8,7 +8,7 @@ dashedName: check-if-an-object-has-a-property
 
 # --description--
 
-Agora podemos adicionar, modificar e remover as chaves dos objetos. Mas e se apenas quiséssemos saber se um objeto tem uma propriedade específica? O JavaScript nos fornece duas maneiras diferentes de fazer isso. Um usa o método `hasOwnProperty()` e o outro usa a palavra-chave `in`. Se tivermos um objeto `usuários` com uma propriedade de `Alan`, poderíamos verificar a sua presença de qualquer uma das seguintes maneiras:
+Agora podemos adicionar, modificar e remover as chaves dos objetos. Mas e se apenas quiséssemos saber se um objeto tem uma propriedade específica? O JavaScript nos fornece duas maneiras diferentes de fazer isso. Um usa o método `hasOwnProperty()` e o outro usa a palavra-chave `in`. Se tivermos um objeto `users` com uma propriedade de `Alan`, poderíamos verificar a sua presença de qualquer uma das seguintes maneiras:
 
 ```js
 users.hasOwnProperty('Alan');

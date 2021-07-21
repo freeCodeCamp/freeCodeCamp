@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5e
-title: Evite Mutações e Efeitos Colaterais usando Programação Funcional
+title: Evitar mutações e efeitos colaterais usando programação funcional
 challengeType: 1
 forumTopicId: 301228
 dashedName: avoid-mutations-and-side-effects-using-functional-programming

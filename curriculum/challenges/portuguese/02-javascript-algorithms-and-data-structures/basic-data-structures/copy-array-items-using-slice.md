@@ -1,6 +1,6 @@
 ---
 id: 587d7b7a367417b2b2512b12
-title: Copiar Itens de um Array Usando slice()
+title: Copiar itens de um array usando slice()
 challengeType: 1
 forumTopicId: 301158
 dashedName: copy-array-items-using-slice

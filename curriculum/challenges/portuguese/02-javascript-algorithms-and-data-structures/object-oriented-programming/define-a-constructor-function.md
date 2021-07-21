@@ -1,6 +1,6 @@
 ---
 id: 587d7dad367417b2b2512b77
-title: Define uma Função Construtora
+title: Definir uma função construtora
 challengeType: 1
 forumTopicId: 16804
 dashedName: define-a-constructor-function
@@ -22,7 +22,7 @@ function Bird() {
 
 O construtor define um objeto `Bird` com propriedades `name`, `color`, e `numLegs` definidos como Albert, blue e 2, respectivamente. Construtores seguem algumas convenções:
 
-<ul><li>Construtores são definidos com a primeira letra do nome maiúscula para distinguir eles de outras funções que não são <code>construtores</code>.</li><li>Construtores usam a palavra-chave <code>this</code> para definir as propriedades do objeto que eles irão criar. Dentro do construtor, <code>this</code> referencia para um novo objeto quer irá ser criado.</li><li>Construtores definem propriedades e comportamentos em vez de retornar valores como outras funções podem fazer.</li></ul>
+<ul><li>Construtores são definidos com a primeira letra do nome maiúscula para distinguir eles de outras funções que não são <code>constructors</code>.</li><li>Construtores usam a palavra-chave <code>this</code> para definir as propriedades do objeto que eles irão criar. Dentro do construtor, <code>this</code> referencia para um novo objeto quer irá ser criado.</li><li>Construtores definem propriedades e comportamentos em vez de retornar valores como outras funções podem fazer.</li></ul>
 
 # --instructions--
 

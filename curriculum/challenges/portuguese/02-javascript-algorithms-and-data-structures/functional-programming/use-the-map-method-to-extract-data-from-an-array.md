@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b61
-title: Use o Método map para Extrair Dados de um Array
+title: Usar o método map para extrair dados de um array
 challengeType: 1
 forumTopicId: 18214
 dashedName: use-the-map-method-to-extract-data-from-an-array

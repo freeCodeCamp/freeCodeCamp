@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b86
-title: Redefina uma Propriedade Construtora Herdada
+title: Redefinir uma propriedade herdada do construtor
 challengeType: 1
 forumTopicId: 301324
 dashedName: reset-an-inherited-constructor-property

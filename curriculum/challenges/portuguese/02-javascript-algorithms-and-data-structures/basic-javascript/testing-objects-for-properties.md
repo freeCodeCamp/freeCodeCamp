@@ -1,6 +1,6 @@
 ---
 id: 567af2437cbaa8c51670a16c
-title: Testando Objetos por Propriedades
+title: Testar objetos por propriedades
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6Wz4ySr'
 forumTopicId: 18324

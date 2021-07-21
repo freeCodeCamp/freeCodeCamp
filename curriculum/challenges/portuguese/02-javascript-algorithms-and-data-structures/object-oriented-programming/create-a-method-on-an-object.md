@@ -1,6 +1,6 @@
 ---
 id: 587d7dad367417b2b2512b75
-title: Cria um Método em um Objeto
+title: Criar um método em um objeto
 challengeType: 1
 forumTopicId: 301318
 dashedName: create-a-method-on-an-object

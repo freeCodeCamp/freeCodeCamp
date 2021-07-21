@@ -1,6 +1,6 @@
 ---
 id: 587d7b8d367417b2b2512b5b
-title: Aprenda Sobre Programação Funcional
+title: Aprender sobre programação funcional
 challengeType: 1
 forumTopicId: 301233
 dashedName: learn-about-functional-programming
@@ -8,7 +8,7 @@ dashedName: learn-about-functional-programming
 
 # --description--
 
-Programação funcional é um estilo de programação em que as soluções são funções simples, isoladas e livres de efeitos colaterais fora do escopo da função: `ENTRADA -> PROCESSAMENTO -> SAÍDA`
+Programação funcional é um estilo de programação em que as soluções são funções simples, isoladas e livres de efeitos colaterais fora do escopo da função: `INPUT -> PROCESS -> OUTPUT`
 
 Quando falamos de programação funcional, pensamos em:
 

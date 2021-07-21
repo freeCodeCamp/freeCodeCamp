@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cf
-title: Escreva JavaScript Reutilizável com Funções
+title: Escrever JavaScript reutilizável com funções
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378

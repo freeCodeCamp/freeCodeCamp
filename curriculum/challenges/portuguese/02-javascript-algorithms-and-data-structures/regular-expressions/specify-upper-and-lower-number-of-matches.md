@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba5
-title: Especificando o Número de Capturas
+title: Especificar o número de capturas
 challengeType: 1
 forumTopicId: 301367
 dashedName: specify-upper-and-lower-number-of-matches

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b64
-title: Implemente o Método filter em um Protótipo
+title: Implementar o método filter em um protótipo
 challengeType: 1
 forumTopicId: 301231
 dashedName: implement-the-filter-method-on-a-prototype

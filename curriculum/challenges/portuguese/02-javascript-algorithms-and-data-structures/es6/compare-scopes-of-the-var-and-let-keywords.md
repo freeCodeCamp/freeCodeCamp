@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b40
-title: Compare Escopos das Palavras-Chaves var e let
+title: Comparar escopos das palavras-chave var e let
 challengeType: 1
 forumTopicId: 301195
 dashedName: compare-scopes-of-the-var-and-let-keywords

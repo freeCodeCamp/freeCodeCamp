@@ -1,6 +1,6 @@
 ---
 id: 587d7b84367417b2b2512b36
-title: 'Identifique Parênteses, Colchetes, Chaves e Aspas Sem Fechamento'
+title: 'Identificar parênteses, colchetes, chaves e aspas sem fechamento'
 challengeType: 1
 forumTopicId: 301190
 dashedName: catch-unclosed-parentheses-brackets-braces-and-quotes

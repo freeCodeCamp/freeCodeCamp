@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c443eddfaeb5bdef
-title: Declare Variáveis JavaScript
+title: Declarar variáveis JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNanrHq'
 forumTopicId: 17556
@@ -11,7 +11,7 @@ dashedName: declare-javascript-variables
 
 Na ciência da computação, <dfn>dado</dfn> é qualquer coisa que tenha significado ao computador. JavaScript fornece oito <dfn>tipos de dados</dfn> diferentes que são `undefined`, `null`, `boolean`, `string`, `symbol`, `bigint`, `number` e `object`.
 
-Por exemplo, os computadores distinguem números, como o número`12`, e`strings`, como o `"12"`, `"dog"`, ou`"123 cats"`, as quais são coleções de caracteres. Computadores podem realizar operações matemáticas em um número, mas não em string.
+Por exemplo, os computadores distinguem números, como o número`12`, e `strings`, como o `"12"`, `"dog"`, ou`"123 cats"`, as quais são coleções de caracteres. Computadores podem realizar operações matemáticas em um número, mas não em string.
 
 <dfn>Variáveis</dfn> permitem aos computadores armazenar e manipular dados de forma dinâmica. Eles fazem isso usando um "rótulo" para apontar ao dado ao invés de usar o próprio dado. Qualquer uma dos 8 tipos de dados podem ser armazenados em variável.
 

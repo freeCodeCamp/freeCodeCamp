@@ -1,6 +1,6 @@
 ---
 id: 587d7daf367417b2b2512b7f
-title: Mudar o Protótipo para um Novo Objeto
+title: Mudar o protótipo para um novo objeto
 challengeType: 1
 forumTopicId: 301316
 dashedName: change-the-prototype-to-a-new-object

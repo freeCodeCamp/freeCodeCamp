@@ -1,6 +1,6 @@
 ---
 id: 587d7daf367417b2b2512b80
-title: Lembre-se de Definir a Propriedade Construtora quando Alterar o Protótipo
+title: Lembrar de definir a propriedade construtora quando alterar o protótipo
 challengeType: 1
 forumTopicId: 301323
 dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
@@ -8,7 +8,7 @@ dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
 
 # --description--
 
-Tem um efeito colateral crucial de definir manualmente o protótipo de um novo objeto. Isso apaga a propriedade `construtor`! Essa propriedade pode ser utilizada para verificar qual função construtora criou a instância, mas já que a propriedade foi sobrescrita, agora retorna resultados falsos:
+Tem um efeito colateral crucial de definir manualmente o protótipo de um novo objeto. Isso apaga a propriedade `constructor`! Essa propriedade pode ser utilizada para verificar qual função construtora criou a instância, mas já que a propriedade foi sobrescrita, agora retorna resultados falsos:
 
 ```js
 duck.constructor === Bird;
@@ -18,7 +18,7 @@ duck instanceof Bird;
 
 Em ordem, essas expressões seriam avaliadas a `false`, `true` e `true`.
 
-Para corrigir isso, toda vez que o protótipo é manualmente definido para um novo objeto, lembre-se de definir a propriedade `construtor`:
+Para corrigir isso, toda vez que o protótipo é manualmente definido para um novo objeto, lembre-se de definir a propriedade `constructor`:
 
 ```js
 Bird.prototype = {
@@ -35,11 +35,11 @@ Bird.prototype = {
 
 # --instructions--
 
-Define a propriedade `construtor` no `prototype` de `Dog`.
+Define a propriedade `constructor` no `prototype` de `Dog`.
 
 # --hints--
 
-`Dog.prototype` deve definir a propriedade `construtor`.
+`Dog.prototype` deve definir a propriedade `constructor`.
 
 ```js
 assert(Dog.prototype.constructor === Dog);

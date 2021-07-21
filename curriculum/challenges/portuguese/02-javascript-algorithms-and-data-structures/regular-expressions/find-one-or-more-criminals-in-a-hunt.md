@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9c
-title: Encontre Um ou Mais Criminosos em uma Caçada
+title: Encontrar um ou mais criminosos em uma caçada
 challengeType: 1
 forumTopicId: 301343
 dashedName: find-one-or-more-criminals-in-a-hunt

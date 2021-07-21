@@ -1,6 +1,6 @@
 ---
 id: 587d7daa367417b2b2512b6c
-title: Transforme um Array em uma String Usando o Método join
+title: Transformar um array em uma string usando o método join
 challengeType: 1
 forumTopicId: 18221
 dashedName: combine-an-array-into-a-string-using-the-join-method

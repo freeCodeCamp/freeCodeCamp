@@ -1,7 +1,7 @@
 ---
 id: 587d7b8a367417b2b2512b4c
 title: >-
-  Use Atribuição de Desestruturação com o Parâmetro Rest para Reatribuir Elementos de Array
+  Usar atribuição de desestruturação com o parâmetro rest para reatribuir elementos de array
 challengeType: 1
 forumTopicId: 301218
 dashedName: >-

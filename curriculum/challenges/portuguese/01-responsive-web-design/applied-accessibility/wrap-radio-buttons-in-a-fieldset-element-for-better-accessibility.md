@@ -1,6 +1,6 @@
 ---
 id: 587d778b367417b2b2512aa7
-title: Envolva botões de opção em um elemento fieldset para melhor acessibilidade
+title: Envolver botões de opção em um elemento fieldset para melhor acessibilidade
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVefw'
 forumTopicId: 301030

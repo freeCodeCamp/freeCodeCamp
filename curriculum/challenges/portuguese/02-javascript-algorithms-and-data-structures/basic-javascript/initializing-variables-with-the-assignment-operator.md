@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244a9
-title: Inicializando Variáveis com o Operador de Atribuição
+title: Inicializar variáveis com o operador de atribuição
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171

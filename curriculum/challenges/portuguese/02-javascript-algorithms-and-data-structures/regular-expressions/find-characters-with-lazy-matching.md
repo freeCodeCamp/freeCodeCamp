@@ -1,6 +1,6 @@
 ---
 id: 587d7db6367417b2b2512b9b
-title: Encontre Caracteres com Captura Preguiçosa
+title: Encontrar caracteres com captura preguiçosa
 challengeType: 1
 forumTopicId: 301341
 dashedName: find-characters-with-lazy-matching

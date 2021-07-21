@@ -1,7 +1,7 @@
 ---
 id: 587d7db2367417b2b2512b8a
 title: >-
-  Use Fecho para Proteger Propriedades Dentro de um Objeto de Serem Modificados Externamente
+  Usar closure para evitar que propriedades de um objeto sejam modificadas externamente
 challengeType: 1
 forumTopicId: 18234
 dashedName: >-
@@ -32,7 +32,7 @@ let ducky = new Bird();
 ducky.getHatchedEggCount();
 ```
 
-Aqui `getHatchedEggCount` é um método privilegiado, porque ele possui acesso à variável privada `hatchedEgg`. Isso é possível porque `hatchedEgg` é declarado no mesmo contexto que `getHatchedEggCount`. Em JavaScript, a função sempre possui acesso ao contexto na qual foi criada. Isso é chamado de `closure(fecho)`.
+Aqui `getHatchedEggCount` é um método privilegiado, porque ele possui acesso à variável privada `hatchedEgg`. Isso é possível porque `hatchedEgg` é declarado no mesmo contexto que `getHatchedEggCount`. Em JavaScript, a função sempre possui acesso ao contexto na qual foi criada. Isso é chamado de `closure`.
 
 # --instructions--
 
