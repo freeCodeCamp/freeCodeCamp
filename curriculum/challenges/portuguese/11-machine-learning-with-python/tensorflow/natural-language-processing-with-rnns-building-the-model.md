@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da1
-title: 'Natural Language Processing With RNNs: Building the Model'
+title: 'Processamento de linguagem natural com RNNs: Criando o modelo'
 challengeType: 11
 videoId: 32WBFS7lfsw
 dashedName: natural-language-processing-with-rnns-building-the-model
@@ -10,7 +10,7 @@ dashedName: natural-language-processing-with-rnns-building-the-model
 
 ## --text--
 
-Fill in the blanks below to complete the `build_model` function:
+Preencha as lacunas abaixo para completar a função `build_model`:
 
 ```py
 def build_mode(vocab_size, embedding_dim, rnn_units, batch_size):

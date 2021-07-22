@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f073
-title: 'Networking: Write a Web Browser'
+title: 'Redes: Escreva um navegador da Web'
 challengeType: 11
 videoId: zjyT9DaAjx4
 dashedName: networking-write-a-web-browser
@@ -10,7 +10,7 @@ dashedName: networking-write-a-web-browser
 
 ## --text--
 
-What does the following code create?:
+O que será criado pelo código abaixo?
 
 ```py
 import socket
@@ -30,19 +30,19 @@ mysock.close()
 
 ## --answers--
 
-A simple web server.
+Um servidor web simples.
 
 ---
 
-A simple email client.
+Um cliente de email simples.
 
 ---
 
-A simple todo list.
+Uma lista de tarefas simples.
 
 ---
 
-A simple web browser.
+Um navegador web simples.
 
 ## --video-solution--
 
