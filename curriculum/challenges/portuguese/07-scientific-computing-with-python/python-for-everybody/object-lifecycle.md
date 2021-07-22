@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f170b6c005b0e76f087
-title: Object Lifecycle
+title: Ciclo de vida de um objeto
 challengeType: 11
 videoId: p1r3h_AMMIM
 dashedName: object-lifecycle
@@ -10,7 +10,7 @@ dashedName: object-lifecycle
 
 ## --text--
 
-What will the following program print?:
+O que será impresso pelo código a seguir?:
 
 ```python
 class PartyAnimal:

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f050b6c005b0e76f058
-title: Conditional Execution
+title: Execução condicional
 challengeType: 11
 videoId: gz_IfIsZQtc
 dashedName: conditional-execution
@@ -10,7 +10,7 @@ dashedName: conditional-execution
 
 ## --text--
 
-Which code is indented correctly to print "Yes" if x = 0 and y = 10?
+Qual código está indentado corretamente para imprimir "Yes" se x = 0 e y = 10?
 
 ## --answers--
 

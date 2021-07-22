@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0b0b6c005b0e76f06d
-title: Comparing and Sorting Tuples
+title: Comparação e ordenação de tuplas
 challengeType: 11
 videoId: dZXzBXUxxCs
 dashedName: comparing-and-sorting-tuples
@@ -8,15 +8,15 @@ dashedName: comparing-and-sorting-tuples
 
 # --description--
 
-More resources:
+Mais recursos:
 
-\- [Exercise](https://www.youtube.com/watch?v=EhQxwzyT16E)
+\- [Exercício](https://www.youtube.com/watch?v=EhQxwzyT16E)
 
 # --question--
 
 ## --text--
 
-Which does the same thing as the following code?:
+Qual das alternativas produz o mesmo resultado que o código seguinte?:
 
 ```python
 lst = []

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f050b6c005b0e76f057
-title: Intermediate Expressions
+title: Expressões intermediárias
 challengeType: 11
 videoId: dKgUaIa5ATg
 dashedName: intermediate-expressions
@@ -8,17 +8,17 @@ dashedName: intermediate-expressions
 
 # --description--
 
-More resources:
+Mais recursos:
 
-\- [Exercise 1](https://youtu.be/t_4DPwsaGDY)
+\- [Exercício 1](https://youtu.be/t_4DPwsaGDY)
 
-\- [Exercise 2](https://youtu.be/wgkC8SxraAQ)
+\- [Exercício 2](https://youtu.be/wgkC8SxraAQ)
 
 # --question--
 
 ## --text--
 
-What will print out after running this code:
+O que será impresso após a execução deste código:
 
 ```python
 width = 15

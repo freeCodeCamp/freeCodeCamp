@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d92
-title: Neural Networks with TensorFlow
+title: Redes neurais com TensorFlow
 challengeType: 11
 videoId: uisdfrNrZW4
 dashedName: neural-networks-with-tensorflow
@@ -10,19 +10,19 @@ dashedName: neural-networks-with-tensorflow
 
 ## --text--
 
-A densely connected neural network is one in which...:
+Uma rede neural densamente conectada é aquela em que...:
 
 ## --answers--
 
-all the neurons in the current layer are connected to one neuron in the previous layer.
+todos os neurônios da camada atual estão conectados a um neurônio na camada anterior.
 
 ---
 
-all the neurons in each layer are connected randomly.
+todos os neurônios em cada camada estão conectados aleatoriamente.
 
 ---
 
-all the neurons in the current layer are connected to every neuron in the previous layer.
+todos os neurônios da camada atual estão conectados a todos os neurônios da camada anterior.
 
 ## --video-solution--
 

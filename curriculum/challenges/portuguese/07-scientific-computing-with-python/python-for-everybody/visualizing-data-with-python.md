@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f690b6c005b0e76f095
-title: Visualizing Data with Python
+title: Visualização de dados com Python
 challengeType: 11
 videoId: e3lydkH0prw
 dashedName: visualizing-data-with-python
@@ -10,27 +10,27 @@ dashedName: visualizing-data-with-python
 
 ## --text--
 
-Most data needs to be \_\_\_\_\_\_ before using it.
+A maior parte dos dados precisa ser \_\_\_\_\_\_ antes de ser usada.
 
 ## --answers--
 
-converted to JSON format
+convertida para o formato JSON
 
 ---
 
-graphed
+transformada em gráfico
 
 ---
 
-cleaned
+limpa
 
 ---
 
-memorized
+memorizada
 
 ---
 
-turned into song
+transformada em música
 
 ## --video-solution--
 

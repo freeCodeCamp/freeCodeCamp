@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8c
-title: 'Core Learning Algorithms: The Training Process'
+title: 'Algoritmos de aprendizagem principais: o processo de treinamento'
 challengeType: 11
 videoId: _cEwvqVoBhI
 dashedName: core-learning-algorithms-the-training-process
@@ -10,19 +10,19 @@ dashedName: core-learning-algorithms-the-training-process
 
 ## --text--
 
-What are epochs?
+O que são epochs?
 
 ## --answers--
 
-The number of times the model will see the same data.
+O número de vezes que o modelo verá os mesmos dados.
 
 ---
 
-A type of graph.
+Um tipo de gráfico.
 
 ---
 
-The number of elements you feed to the model at once.
+O número de elementos que você alimenta no modelo de uma só vez.
 
 ## --video-solution--
 
