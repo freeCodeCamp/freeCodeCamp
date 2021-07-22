@@ -25,7 +25,7 @@ addSum(3);
 
 # --instructions--
 
-Crie uma função `addFive` sem qualquer argumento. Essa função adiciona 5 à variável</code>sum`, mas o valor retornado é <code>undefined`.
+Crie uma função `addFive` sem qualquer argumento. Essa função adiciona 5 à variável`sum`, mas o valor retornado é `undefined`.
 
 # --hints--
 
@@ -35,7 +35,7 @@ Crie uma função `addFive` sem qualquer argumento. Essa função adiciona 5 à 
 assert(typeof addFive === 'function');
 ```
 
-Uma vez que ambas as funções são executadas, a `soma` deve ser igual a `8`.
+Uma vez que ambas as funções são executadas, a `sum` deve ser igual a `8`.
 
 ```js
 assert(sum === 8);
@@ -47,12 +47,13 @@ Valor retornado de `addFive` deve ser `undefined`.
 assert(addFive() === undefined);
 ```
 
-Dentro da função `addFive`, você deve adicionar `5` à variável `sum<code>.</p>
+Dentro da função `addFive`, você deve adicionar `5` à variável `sum`.
 
-<pre><code class="js">assert(
+```js
+assert(
   __helpers.removeWhiteSpace(addFive.toString()).match(/sum=sum\+5|sum\+=5/)
 );
-`</pre>
+```
 
 # --seed--
 
