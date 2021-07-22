@@ -1,6 +1,6 @@
 ---
 id: 587d7dac367417b2b2512b74
-title: Use Dot Notation to Access the Properties of an Object
+title: Usar notação de ponto para acessar as propriedades de um objeto
 challengeType: 1
 forumTopicId: 301333
 dashedName: use-dot-notation-to-access-the-properties-of-an-object
@@ -8,7 +8,7 @@ dashedName: use-dot-notation-to-access-the-properties-of-an-object
 
 # --description--
 
-The last challenge created an object with various properties. Now you'll see how to access the values of those properties. Here's an example:
+O último desafio criou um objeto com várias propriedades. Agora você verá como acessar os valores dessas propriedades. Aqui está um exemplo:
 
 ```js
 let duck = {
@@ -18,21 +18,21 @@ let duck = {
 console.log(duck.name);
 ```
 
-Dot notation is used on the object name, `duck`, followed by the name of the property, `name`, to access the value of `Aflac`.
+A notação de ponto é utilizada no nome do objeto, `duck`, seguida pelo nome da propriedade, `name`, para acessar o valor de `Aflac`.
 
 # --instructions--
 
-Print both properties of the `dog` object to your console.
+Exiba ambas as propriedades do objeto `dog` no seu console.
 
 # --hints--
 
-Your code should use `console.log` to print the value for the `name` property of the `dog` object.
+Seu código deve usar `console.log` para exibir o valor da propriedade `name` do objeto `dog`.
 
 ```js
 assert(/console.log\(.*dog\.name.*\)/g.test(code));
 ```
 
-Your code should use `console.log` to print the value for the `numLegs` property of the `dog` object.
+Seu código deve usar `console.log` para exibir o valor para a propriedade `numLegs` do objeto `dog`.
 
 ```js
 assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));

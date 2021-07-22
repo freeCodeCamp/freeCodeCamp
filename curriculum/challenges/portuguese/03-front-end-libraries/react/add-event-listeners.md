@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617e
-title: Add Event Listeners
+title: Adicionar Ouvintes de Evento
 challengeType: 6
 forumTopicId: 301377
 dashedName: add-event-listeners
@@ -8,19 +8,19 @@ dashedName: add-event-listeners
 
 # --description--
 
-The `componentDidMount()` method is also the best place to attach any event listeners you need to add for specific functionality. React provides a synthetic event system which wraps the native event system present in browsers. This means that the synthetic event system behaves exactly the same regardless of the user's browser - even if the native events may behave differently between different browsers.
+O método `componentDidMount()` também é o melhor local para anexar qualquer ouvinte de evento (event listener) que você precisa adicionar para uma funcionalidade específica. React fornece um sistema de eventos sintéticos que envolve o sistema de evento nativo presente nos navegadores. Isso significa que o sistema de evento sintético se comporta exatamente da mesma forma independente do navegador do usuário - mesmo se os eventos nativos possam se comportar de forma diferente em diferentes navegadores.
 
-You've already been using some of these synthetic event handlers such as `onClick()`. React's synthetic event system is great to use for most interactions you'll manage on DOM elements. However, if you want to attach an event handler to the document or window objects, you have to do this directly.
+Você já tem usado alguns destes manipuladores de eventos sintéticos como `onClick()`. O sistema de evento sintético do React é ótimo de usar para a maioria das interações que você gerenciará em elementos DOM. No entanto, se você que anexar um manipulador de evento aos objetos documento ou janela, você tem que fazer isso diretamente.
 
 # --instructions--
 
-Attach an event listener in the `componentDidMount()` method for `keydown` events and have these events trigger the callback `handleKeyPress()`. You can use `document.addEventListener()` which takes the event (in quotes) as the first argument and the callback as the second argument.
+Anexe um event listener no método `componentDidMount()` para eventos `keydown` e faça com que esses eventos acionem o callback `handleKeyPress()`. Você pode usar `document.addEventListener()` o qual recebe o evento (entre aspas) como o primeiro argumento e o callback como o segundo argumento.
 
-Then, in `componentWillUnmount()`, remove this same event listener. You can pass the same arguments to `document.removeEventListener()`. It's good practice to use this lifecycle method to do any clean up on React components before they are unmounted and destroyed. Removing event listeners is an example of one such clean up action.
+Em seguida, em `componentWillUnmount()`, remova esse mesmo event listener. Você pode passar os mesmos argumentos para `document.removeEventListener()`. É uma boa prática usar este método de ciclo de vida para limpar qualquer componente do React antes deles serem desmontados e destruídos. Remover event listeners é um exemplo de uma ação de limpeza.
 
 # --hints--
 
-`MyComponent` should render a `div` element which wraps an `h1` tag.
+`MyComponent` deve renderizar um elemento `div` o qual envolve a tag `h1`.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-A `keydown` listener should be attached to the document in `componentDidMount`.
+Um ouvinte de `keydown` deve ser anexado ao documento em `componentDidMount`.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-The `keydown` listener should be removed from the document in `componentWillUnmount`.
+O ouvinte de `keydown` deve ser removido do documento em `componentWillUnmount`.
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-Once the component has mounted, pressing `enter` should update its state and the rendered `h1` tag.
+Uma vez que o componente foi montado, pressionar `enter` deve atualizar seu estado e a tag renderizada `h1`.
 
 ```js
 async () => {

@@ -1,6 +1,6 @@
 ---
 id: 587d781c367417b2b2512ac0
-title: Use a propriedade text-transform para deixar o texto em letras maiúsculas
+title: Usar a propriedade text-transform para deixar o texto em letras maiúsculas
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZQSP'
 forumTopicId: 301081

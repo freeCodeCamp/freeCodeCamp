@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b21
-title: Usar Operadores de Múltiplas Condições (Ternário)
+title: Usar operadores de múltiplas condições (ternários)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cyWJBT4'
 forumTopicId: 301179

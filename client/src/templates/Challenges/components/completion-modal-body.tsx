@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import BezierEasing from 'bezier-easing';
 import GreenPass from '../../../assets/icons/green-pass';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 
 interface CompletionModalBodyProps {
   block: string;
   completedPercent: number;
   superBlock: string;
-  t: (arg0: string, arg1?: { percent: number }) => string;
+  t: TFunction;
 }
 
 interface CompletionModalBodyState {
@@ -77,6 +77,7 @@ export class CompletionModalBody extends PureComponent<
         <div className='completion-challenge-details'>
           <GreenPass
             className='completion-success-icon'
+            data-testid='fcc-completion-success-icon'
             onAnimationEnd={() => {
               setTimeout(() => {
                 this.animateProgressBar(completedPercent);
@@ -94,6 +95,7 @@ export class CompletionModalBody extends PureComponent<
             </div>
             <div
               className='progress-bar-percent'
+              data-testid='fcc-progress-bar-percent'
               style={{ width: `${this.state.shownPercent}%` }}
             >
               <div className='progress-bar-foreground'>

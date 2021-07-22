@@ -1,6 +1,6 @@
 ---
 id: 587d7db8367417b2b2512ba2
-title: Restrict Possible Usernames
+title: Restringir nomes de usuário possíveis
 challengeType: 1
 forumTopicId: 301363
 dashedName: restrict-possible-usernames
@@ -8,97 +8,97 @@ dashedName: restrict-possible-usernames
 
 # --description--
 
-Usernames are used everywhere on the internet. They are what give users a unique identity on their favorite sites.
+Nomes de usuário (usernames) são usados em toda a Internet. São o que fazem com que tenham uma identidade única em seus sites favoritos.
 
-You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
+Você precisa verificar todos os usernames em um banco de dados. Existem algumas regras que os usuários precisam seguir quando criam os seus usernames.
 
-1) Usernames can only use alpha-numeric characters.
+1) Nomes de usuário só podem conter caracteres alfanuméricos.
 
-2) The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+2) Os números, se algum, precisam estar no fim da string. Pode haver zero ou mais números. Usernames não podem começar com números.
 
-3) Username letters can be lowercase and uppercase.
+3) As letras podem ser maiúsculas ou minúsculas.
 
-4) Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+4) O tamanho de nomes de usuários precisa ser pelo menos dois. Um username de dois caracteres só pode conter letras.
 
 # --instructions--
 
-Change the regex `userCheck` to fit the constraints listed above.
+Modifique a regex `userCheck` para que inclua as regras listadas.
 
 # --hints--
 
-Your regex should match the string `JACK`
+Sua regex deve encontrar a string `JACK`
 
 ```js
 assert(userCheck.test('JACK'));
 ```
 
-Your regex should not match the string `J`
+Sua regex não deve encontrar a string `J`
 
 ```js
 assert(!userCheck.test('J'));
 ```
 
-Your regex should match the string `Jo`
+Sua regex deve encontrar a string `Jo`
 
 ```js
 assert(userCheck.test('Jo'));
 ```
 
-Your regex should match the string `Oceans11`
+Sua regex deve encontrar a string `Oceans11`
 
 ```js
 assert(userCheck.test('Oceans11'));
 ```
 
-Your regex should match the string `RegexGuru`
+Sua regex deve encontrar a string `RegexGuru`
 
 ```js
 assert(userCheck.test('RegexGuru'));
 ```
 
-Your regex should not match the string `007`
+Sua regex não deve encontrar a string `007`
 
 ```js
 assert(!userCheck.test('007'));
 ```
 
-Your regex should not match the string `9`
+Sua regex não deve encontrar a string `9`
 
 ```js
 assert(!userCheck.test('9'));
 ```
 
-Your regex should not match the string `A1`
+Sua regex não deve encontrar a string `A1`
 
 ```js
 assert(!userCheck.test('A1'));
 ```
 
-Your regex should not match the string `BadUs3rnam3`
+Sua regex não deve encontrar a string `BadUs3rnam3`
 
 ```js
 assert(!userCheck.test('BadUs3rnam3'));
 ```
 
-Your regex should match the string `Z97`
+Sua regex deve encontrar a string `Z97`
 
 ```js
 assert(userCheck.test('Z97'));
 ```
 
-Your regex should not match the string `c57bT3`
+Sua regex não deve encontrar a string `c57bT3`
 
 ```js
 assert(!userCheck.test('c57bT3'));
 ```
 
-Your regex should match the string `AB1`
+Sua regex deve encontrar a string `AB1`
 
 ```js
 assert(userCheck.test('AB1'));
 ```
 
-Your regex should not match the string `J%4`
+Sua regex não deve encontrar a string `J%4`
 
 ```js
 assert(!userCheck.test('J%4'))

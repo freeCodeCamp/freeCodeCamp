@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036176
-title: Use State to Toggle an Element
+title: Usar State para Alternar um Elemento
 challengeType: 6
 forumTopicId: 301421
 dashedName: use-state-to-toggle-an-element
@@ -8,7 +8,7 @@ dashedName: use-state-to-toggle-an-element
 
 # --description--
 
-Sometimes you might need to know the previous state when updating the state. However, state updates may be asynchronous - this means React may batch multiple `setState()` calls into a single update. This means you can't rely on the previous value of `this.state` or `this.props` when calculating the next value. So, you should not use code like this:
+Às vezes você pode precisar saber o estado anterior ao atualizar o estado. No entanto, atualizações de estado podem ser assíncronas - isso significa que React pode fazer várias chamadas `setState()` em uma única atualização. Isto significa que você não pode confiar no valor anterior de `this.state` ou `this.props` ao calcular o próximo valor. Então, você não deve usar códigos como este:
 
 ```jsx
 this.setState({
@@ -16,7 +16,7 @@ this.setState({
 });
 ```
 
-Instead, you should pass `setState` a function that allows you to access state and props. Using a function with `setState` guarantees you are working with the most current values of state and props. This means that the above should be rewritten as:
+Ao invés disso, você deve passar a `setState` uma função que lhe permite acessar state e props. Usando uma função com `setState` garante que você está trabalhando com os valores mais atuais de state e props. Isto significa que o acima deve ser reescrito como:
 
 ```jsx
 this.setState((state, props) => ({
@@ -24,7 +24,7 @@ this.setState((state, props) => ({
 }));
 ```
 
-You can also use a form without `props` if you need only the `state`:
+Você também pode usar um formulário sem `props` se você precisar apenas do `state`:
 
 ```jsx
 this.setState(state => ({
@@ -32,21 +32,21 @@ this.setState(state => ({
 }));
 ```
 
-Note that you have to wrap the object literal in parentheses, otherwise JavaScript thinks it's a block of code.
+Observe que você tem que envolver o objeto literalmente entre parênteses, caso contrário, JavaScript pensa que é um bloco de código.
 
 # --instructions--
 
-`MyComponent` has a `visibility` property which is initialized to `false`. The render method returns one view if the value of `visibility` is true, and a different view if it is false.
+`MyComponent` tem uma propriedade `visibilty` que foi inicializada como `false`. O método de renderização retorna uma view se o valor de `visibility` for verdadeiro e uma view diferente se for falsa.
 
-Currently, there is no way of updating the `visibility` property in the component's `state`. The value should toggle back and forth between true and false. There is a click handler on the button which triggers a class method called `toggleVisibility()`. Pass a function to `setState` to define this method so that the `state` of `visibility` toggles to the opposite value when the method is called. If `visibility` is `false`, the method sets it to `true`, and vice versa.
+Atualmente, não há forma de atualizar a propriedade `visibility` no `state` do componente. O valor deve alternar entre verdadeiro e falso. Há um manipulador de cliques no botão que aciona um método de classe chamado `toggleVisibility()`. Passe uma função para `setState` para definir esse método para que o `state` de `visibility` alterne para o valor oposto quando o método for chamado. Se `visibilidade` for `falso`, o método define para `verdadeiro`, e vice-versa.
 
-Finally, click the button to see the conditional rendering of the component based on its `state`.
+Finalmente, clique no botão para ver a renderização condicional do componente com base no seu `state`.
 
-**Hint:** Don't forget to bind the `this` keyword to the method in the `constructor`!
+**Dica:** Não se esqueça de vincular a palavra-chave `this` ao método no `construtor`!
 
 # --hints--
 
-`MyComponent` should return a `div` element which contains a `button`.
+`MyComponent` deve retornar um elemento `div` que contém um `button`.
 
 ```js
 assert.strictEqual(
@@ -56,7 +56,7 @@ assert.strictEqual(
 );
 ```
 
-The state of `MyComponent` should initialize with a `visibility` property set to `false`.
+O state de `MyComponent` deve inicializar com uma propriedade `visibility` definida como `false`.
 
 ```js
 assert.strictEqual(
@@ -65,7 +65,7 @@ assert.strictEqual(
 );
 ```
 
-Clicking the button element should toggle the `visibility` property in state between `true` and `false`.
+Clicar no elemento do botão deve alternar a propriedade `visibility` no state entre `true` e `false`.
 
 ```js
 (() => {
@@ -89,7 +89,7 @@ Clicking the button element should toggle the `visibility` property in state bet
 })();
 ```
 
-An anonymous function should be passed to `setState`.
+Uma função anônima deve ser passada para `setState`.
 
 ```js
 const paramRegex = '[a-zA-Z$_]\\w*(,[a-zA-Z$_]\\w*)?';
@@ -104,7 +104,7 @@ assert(
 );
 ```
 
-`this` should not be used inside `setState`
+`this` não deve ser usado dentro de `setState`
 
 ```js
 assert(!/this\.setState\([^}]*this/.test(code));

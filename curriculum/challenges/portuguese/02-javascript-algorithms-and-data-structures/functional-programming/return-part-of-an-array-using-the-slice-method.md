@@ -1,6 +1,6 @@
 ---
 id: 587d7b90367417b2b2512b65
-title: Return Part of an Array Using the slice Method
+title: Retornar parte de um array usando o método slice
 challengeType: 1
 forumTopicId: 301239
 dashedName: return-part-of-an-array-using-the-slice-method
@@ -8,30 +8,30 @@ dashedName: return-part-of-an-array-using-the-slice-method
 
 # --description--
 
-The `slice` method returns a copy of certain elements of an array. It can take two arguments, the first gives the index of where to begin the slice, the second is the index for where to end the slice (and it's non-inclusive). If the arguments are not provided, the default is to start at the beginning of the array through the end, which is an easy way to make a copy of the entire array. The `slice` method does not mutate the original array, but returns a new one.
+O método `slice` retorna uma fatia de elementos de um array. Ele pode receber dois argumentos, sendo o primeiro o índice de onde começar a fatiar e o segundo de onde terminar. O índice de fim não é inclusivo. Se os argumentos não forem providenciados, o padrão é começar pelo início e terminar no fim, ou seja, é uma forma simples de criar uma cópia do array inteiro. O método `slice` retorna um novo array sem modificar o original.
 
-Here's an example:
+Um exemplo:
 
 ```js
 var arr = ["Cat", "Dog", "Tiger", "Zebra"];
 var newArray = arr.slice(1, 3);
 ```
 
-`newArray` would have the value `["Dog", "Tiger"]`.
+`newArray` terá o valor `["Dog", "Tiger"]`.
 
 # --instructions--
 
-Use the `slice` method in the `sliceArray` function to return part of the `anim` array given the provided `beginSlice` and `endSlice` indices. The function should return an array.
+Use o método `slice` na função `sliceArray` para retornar parte do array `anim` dado os índices `beginSlice` e `endSlice` providenciados. A função deve retornar um array.
 
 # --hints--
 
-Your code should use the `slice` method.
+Você deve usar o método `slice`.
 
 ```js
 assert(code.match(/\.slice/g));
 ```
 
-The `inputAnim` variable should not change.
+A variável `inputAnim` não deve ser alterada.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 1, 3)` should return `["Dog", "Tiger"]`.
+`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 1, 3)` deve retornar `["Dog", "Tiger"]`.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 0, 1)` should return `["Cat"]`.
+`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 0, 1)` deve retornar `["Cat"]`.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 1, 4)` should return `["Dog", "Tiger", "Zebra"]`.
+`sliceArray(["Cat", "Dog", "Tiger", "Zebra", "Ant"], 1, 4)` deve retornar `["Dog", "Tiger", "Zebra"]`.
 
 ```js
 assert(

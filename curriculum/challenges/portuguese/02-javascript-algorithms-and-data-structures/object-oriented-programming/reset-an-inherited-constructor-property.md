@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b86
-title: Reset an Inherited Constructor Property
+title: Redefinir uma propriedade herdada do construtor
 challengeType: 1
 forumTopicId: 301324
 dashedName: reset-an-inherited-constructor-property
@@ -8,9 +8,9 @@ dashedName: reset-an-inherited-constructor-property
 
 # --description--
 
-When an object inherits its `prototype` from another object, it also inherits the supertype's constructor property.
+Quando um objeto herda seu `protótipo` de outro objeto, ele também herda a propriedade construtora do supertipo.
 
-Here's an example:
+Aqui está um exemplo:
 
 ```js
 function Bird() { }
@@ -19,7 +19,7 @@ let duck = new Bird();
 duck.constructor
 ```
 
-But `duck` and all instances of `Bird` should show that they were constructed by `Bird` and not `Animal`. To do so, you can manually set the constructor property of `Bird` to the `Bird` object:
+Mas `duck` e todas as instâncias de `Bird` devem mostrar que eles foram construídos por `Bird` e não `Animal`. Para fazer isso, você pode manualmente definir a propriedade construtora de `Bird` para o objeto `Bird`:
 
 ```js
 Bird.prototype.constructor = Bird;
@@ -28,29 +28,29 @@ duck.constructor
 
 # --instructions--
 
-Fix the code so `duck.constructor` and `beagle.constructor` return their respective constructors.
+Corrija o código para que `duck.constructor` e `beagle.constructor` retornem seus respectivos construtores.
 
 # --hints--
 
-`Bird.prototype` should be an instance of `Animal`.
+`Bird.prototype` deve ser uma instância de `Animal`.
 
 ```js
 assert(Animal.prototype.isPrototypeOf(Bird.prototype));
 ```
 
-`duck.constructor` should return `Bird`.
+`duck.constructor` deve retornar `Bird`.
 
 ```js
 assert(duck.constructor === Bird);
 ```
 
-`Dog.prototype` should be an instance of `Animal`.
+`Dog.prototype` deve ser uma instância de `Animal`.
 
 ```js
 assert(Animal.prototype.isPrototypeOf(Dog.prototype));
 ```
 
-`beagle.constructor` should return `Dog`.
+`beagle.constructor` deve retornar `Dog`.
 
 ```js
 assert(beagle.constructor === Dog);

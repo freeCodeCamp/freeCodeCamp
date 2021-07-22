@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8a
-title: 'Core Learning Algorithms: Working with Data'
+title: '核心学习算法：处理数据'
 challengeType: 11
 videoId: u85IOSsJsPI
 dashedName: core-learning-algorithms-working-with-data
@@ -10,19 +10,19 @@ dashedName: core-learning-algorithms-working-with-data
 
 ## --text--
 
-What does the pandas `.head()` function do?
+Pandas 的 `.head()` 函数有什么作用？
 
 ## --answers--
 
-Returns the number of entries in a data frame.
+返回数据框中的条目数。
 
 ---
 
-Returns the number of columns in a data frame.
+返回数据框中的列数。
 
 ---
 
-By default, shows the first five rows or entries in a data frame.
+默认情况下，显示数据框中的前五行或条目。
 
 ## --video-solution--
 

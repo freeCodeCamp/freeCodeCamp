@@ -1,6 +1,6 @@
 ---
 id: 587d78a5367417b2b2512ad9
-title: Use a propriedade scale de transformação do CSS para alterar o tamanho de um elemento
+title: Usar a propriedade scale de transformação do CSS para alterar o tamanho de um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MZVSg'
 forumTopicId: 301076

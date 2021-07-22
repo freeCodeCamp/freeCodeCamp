@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b66
-title: Combine Two Arrays Using the concat Method
+title: Combinar dois arrays usando o método concat
 challengeType: 1
 forumTopicId: 301229
 dashedName: combine-two-arrays-using-the-concat-method
@@ -8,39 +8,39 @@ dashedName: combine-two-arrays-using-the-concat-method
 
 # --description--
 
-<dfn>Concatenation</dfn> means to join items end to end. JavaScript offers the `concat` method for both strings and arrays that work in the same way. For arrays, the method is called on one, then another array is provided as the argument to `concat`, which is added to the end of the first array. It returns a new array and does not mutate either of the original arrays. Here's an example:
+<dfn>Concatenação</dfn> significa juntar itens de ponta a ponta. Em JavaScript, ambos strings e arrays possuem o método `concat` e ele funciona igualmente para os dois. Para arrays, o método é chamado em uma instância e um segundo array é passado como argumento. `concat` então junta os dois arrays em um só. O método retorna um novo array e deixa os dois originais intactos. Um exemplo:
 
 ```js
 [1, 2, 3].concat([4, 5, 6]);
 ```
 
-The returned array would be `[1, 2, 3, 4, 5, 6]`.
+`[1, 2, 3, 4, 5, 6]` é o array retornado.
 
 # --instructions--
 
-Use the `concat` method in the `nonMutatingConcat` function to concatenate `attach` to the end of `original`. The function should return the concatenated array.
+Use o método `concat` na função `nonMutatingConcat` para concatenar `attach` ao final de `original`. A função deve retornar o array concatenado.
 
 # --hints--
 
-Your code should use the `concat` method.
+Você deve usar o método `concat`.
 
 ```js
 assert(code.match(/\.concat/g));
 ```
 
-The `first` array should not change.
+O primeiro array, `first`, não deve ser alterado.
 
 ```js
 assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
 ```
 
-The `second` array should not change.
+O segundo array, `second`, não deve ser alterado.
 
 ```js
 assert(JSON.stringify(second) === JSON.stringify([4, 5]));
 ```
 
-`nonMutatingConcat([1, 2, 3], [4, 5])` should return `[1, 2, 3, 4, 5]`.
+`nonMutatingConcat([1, 2, 3], [4, 5])` deve retornar `[1, 2, 3, 4, 5]`.
 
 ```js
 assert(

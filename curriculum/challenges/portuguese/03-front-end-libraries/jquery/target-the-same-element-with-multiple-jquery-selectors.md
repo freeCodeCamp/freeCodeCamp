@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed908626
-title: Target the Same Element with Multiple jQuery Selectors
+title: Mire o Mesmo Elemento com Múltiplos Seletores jQuery
 challengeType: 6
 forumTopicId: 18322
 required:
@@ -11,41 +11,41 @@ dashedName: target-the-same-element-with-multiple-jquery-selectors
 
 # --description--
 
-Now you know three ways of targeting elements: by type: `$("button")`, by class: `$(".btn")`, and by id `$("#target1")`.
+Agora você sabe três formas de mirar elementos: pelo tipo`$("button")`, pela classe: `$(".btn")`, e pelo id `$("#target1")`.
 
-Although it is possible to add multiple classes in a single `.addClass()` call, let's add them to the same element in *three separate ways*.
+Embora seja possível adicionar várias classes em uma única chamada `.addClass()`, vamos adicioná-los ao mesmo elemento de *três formas separadas*.
 
-Using `.addClass()`, add only one class at a time to the same element, three different ways:
+Usando `.addClass()`, adicione apenas uma classe de cada vez ao mesmo elemento, três formas diferentes:
 
-Add the `animated` class to all elements with type `button`.
+Adicione a classe `animated` a todos os elementos do tipo `button`.
 
-Add the `shake` class to all the buttons with class `.btn`.
+Adicione a classe `shake` a todos os botões com classe `.btn`.
 
-Add the `btn-primary` class to the button with id `#target1`.
+Adicione a classe `btn-primary` ao botão com id `#target1`.
 
-**Note:** You should only be targeting one element and adding only one class at a time. Altogether, your three individual selectors will end up adding the three classes `shake`, `animated`, and `btn-primary` to `#target1`.
+**Nota:** Você deve estar mirando apenas um elemento e adicionando apenas uma classe de cada vez. Ao todo, seus três seletores individuais acabarão adicionando as três classes `shake`, `animated` e `btn-primary` para `#target1`.
 
 # --hints--
 
-Your code should use the `$("button")` selector.
+Seu código deve usar o seletor `$("button")`.
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?button\s*?(?:'|")/gi));
 ```
 
-Your code should use the `$(".btn")` selector.
+Seu código deve usar o seletor `$(".btn")`.
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?\.btn\s*?(?:'|")/gi));
 ```
 
-Your code should use the `$("#target1")` selector.
+Seu código deve usar o seletor `$("#target1")`.
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")/gi));
 ```
 
-You should only add one class with each of your three selectors.
+Você deve adicionar apenas uma classe com cada um dos seus três seletores.
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-Your `#target1` element should have the classes `animated`‚ `shake` and `btn-primary`.
+Seu elemento `#target1` deve ter as classes `animated`‚ `shake` e `btn-primary`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-You should only use jQuery to add these classes to the element.
+Você deve usar apenas jQuery para adicionar esses elementos ao elemento.
 
 ```js
 assert(!code.match(/class.*animated/g));

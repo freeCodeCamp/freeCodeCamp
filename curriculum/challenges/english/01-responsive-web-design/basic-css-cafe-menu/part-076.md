@@ -1,5 +1,5 @@
 ---
-id: 5f45a5a7c49a8251f0bdb527
+id: 5f46fc57528aa1c4b5ea7c2e
 title: Part 76
 challengeType: 0
 dashedName: part-76
@@ -7,14 +7,31 @@ dashedName: part-76
 
 # --description--
 
-Using the same style selector in the previous step, make the font size of the items and prices larger by using a value of `18px`.
+Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinnamon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffee` heading.
+
+Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
 
 # --hints--
 
-Test 1
+You should add a `.bottom-line` selector.
 
 ```js
+const hasBottomLine = new __helpers.CSSHelp(document).getStyle('.bottom-line');
+assert(hasBottomLine);
+```
 
+You should set the `margin-top` property to `25px`.
+
+```js
+const hasMarginTop = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-top'] === '25px');
+assert(hasMarginTop);
+```
+
+Your `.bottom-line` selector should have a `margin-top` of `25px`.
+
+```js
+const bottomLineMargin = new __helpers.CSSHelp(document).getStyle('.bottom-line')?.getPropertyValue('margin-top');
+assert(bottomLineMargin === '25px');
 ```
 
 # --seed--
@@ -39,12 +56,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -86,7 +103,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -122,17 +139,20 @@ hr {
   border-color: brown;
 }
 
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 h1, h2 {
   font-family: Impact, serif;
 }
 
---fcc-editable-region--
 .item p {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
+  font-size: 18px;
 }
---fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;

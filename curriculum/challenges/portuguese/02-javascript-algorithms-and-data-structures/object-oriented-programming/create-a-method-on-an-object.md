@@ -1,6 +1,6 @@
 ---
 id: 587d7dad367417b2b2512b75
-title: Create a Method on an Object
+title: Criar um método em um objeto
 challengeType: 1
 forumTopicId: 301318
 dashedName: create-a-method-on-an-object
@@ -8,9 +8,9 @@ dashedName: create-a-method-on-an-object
 
 # --description--
 
-Objects can have a special type of property, called a <dfn>method</dfn>.
+Objetos podem ter um tipo especial de propriedade, chamado de <dfn>método</dfn>.
 
-Methods are properties that are functions. This adds different behavior to an object. Here is the `duck` example with a method:
+Métodos e propriedades são funções. Isso adiciona diferentes comportamentos para um objeto. Aqui está o exemplo `duck` com um método:
 
 ```js
 let duck = {
@@ -21,21 +21,21 @@ let duck = {
 duck.sayName();
 ```
 
-The example adds the `sayName` method, which is a function that returns a sentence giving the name of the `duck`. Notice that the method accessed the `name` property in the return statement using `duck.name`. The next challenge will cover another way to do this.
+O exemplo adiciona o método `sayName`, que é uma função responsável por retornar uma frase contendo o nome do `duck`. Note que o método acessou a propriedade `name` na declaração de retorno usando `duck.name`. O próximo desafio irá mostrar outra forma de fazer isso.
 
 # --instructions--
 
-Using the `dog` object, give it a method called `sayLegs`. The method should return the sentence `This dog has 4 legs.`
+Usando o objeto `dog`, de a ele um método chamado `sayLegs`. O método deve retornar a frase `This dog has 4 legs. (Este cachorro possui 4 pernas.)`
 
 # --hints--
 
-`dog.sayLegs()` should be a function.
+`dog.sayLegs()` deve ser uma função.
 
 ```js
 assert(typeof dog.sayLegs === 'function');
 ```
 
-`dog.sayLegs()` should return the given string - note that punctuation and spacing matter.
+`dog.sayLegs()` deve retornar a string definida - note que pontuação e espaçamento importa.
 
 ```js
 assert(dog.sayLegs() === 'This dog has 4 legs.');

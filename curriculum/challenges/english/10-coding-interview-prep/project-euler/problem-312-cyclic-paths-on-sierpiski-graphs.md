@@ -8,22 +8,32 @@ dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
 
 # --description--
 
-\- A Sierpiński graph of order-1 (S1) is an equilateral triangle.
+- A Sierpiński graph of order-1 ($S_1$) is an equilateral triangle.
+- $S_{n + 1}$ is obtained from $S_n$ by positioning three copies of $S_n$ so that every pair of copies has one common corner.
 
-\- Sn+1 is obtained from Sn by positioning three copies of Sn so that every pair of copies has one common corner.
+<img class="img-responsive center-block" alt="Sierpinski graphs of order-1 to order-5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px;">
 
-Let C(n) be the number of cycles that pass exactly once through all the vertices of Sn. For example, C(3) = 8 because eight such cycles can be drawn on S3, as shown below:
+Let $C(n)$ be the number of cycles that pass exactly once through all the vertices of $S_n$. For example, $C(3) = 8$ because eight such cycles can be drawn on $S_3$, as shown below:
 
-It can also be verified that : C(1) = C(2) = 1 C(5) = 71328803586048 C(10 000) mod 108 = 37652224 C(10 000) mod 138 = 617720485
+<img class="img-responsive center-block" alt="eight cycles that pass exactly once through all vertices of S_3" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px;">
 
-Find C(C(C(10 000))) mod 138.
+It can also be verified that:
+
+$$\begin{align}
+  & C(1) = C(2) = 1 \\\\
+  & C(5) = 71\\,328\\,803\\,586\\,048 \\\\
+  & C(10 000)\bmod {10}^8 = 37\\,652\\,224 \\\\
+  & C(10 000)\bmod {13}^8 = 617\\,720\\,485 \\\\
+\end{align}$$
+
+Find $C(C(C(10\\,000)))\bmod {13}^8$.
 
 # --hints--
 
-`euler312()` should return 324681947.
+`pathsOnSierpinskiGraphs()` should return `324681947`.
 
 ```js
-assert.strictEqual(euler312(), 324681947);
+assert.strictEqual(pathsOnSierpinskiGraphs(), 324681947);
 ```
 
 # --seed--
@@ -31,12 +41,12 @@ assert.strictEqual(euler312(), 324681947);
 ## --seed-contents--
 
 ```js
-function euler312() {
+function pathsOnSierpinskiGraphs() {
 
   return true;
 }
 
-euler312();
+pathsOnSierpinskiGraphs();
 ```
 
 # --solutions--

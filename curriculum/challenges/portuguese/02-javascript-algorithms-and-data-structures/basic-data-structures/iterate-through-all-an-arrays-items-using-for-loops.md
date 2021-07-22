@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b15
-title: Itere Através de Todos os Itens de um Array Usando Laços For
+title: Iterar através de todos os itens de um array usando laços for
 challengeType: 1
 forumTopicId: 301161
 dashedName: iterate-through-all-an-arrays-items-using-for-loops

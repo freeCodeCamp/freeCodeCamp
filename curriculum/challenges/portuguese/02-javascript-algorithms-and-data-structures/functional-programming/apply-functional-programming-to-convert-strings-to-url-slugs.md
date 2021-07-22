@@ -1,6 +1,6 @@
 ---
 id: 587d7dab367417b2b2512b6d
-title: Apply Functional Programming to Convert Strings to URL Slugs
+title: Usar programação funcional para converter strings em slugs de URL
 challengeType: 1
 forumTopicId: 301227
 dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
@@ -8,45 +8,45 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 
 # --description--
 
-The last several challenges covered a number of useful array and string methods that follow functional programming principles. We've also learned about `reduce`, which is a powerful method used to reduce problems to simpler forms. From computing averages to sorting, any array operation can be achieved by applying it. Recall that `map` and `filter` are special cases of `reduce`.
+Os últimos desafios cobriram uma série de métodos úteis de strings e arrays que usam princípios de programação funcional. Também aprendemos o poderoso método `reduce`, que é usado para reduzir arrays a um único valor. Seja para calcular médias ou para ordenação, qualquer operação de array pode ser feita ao usá-lo. Lembre-se que `map` e `filter` são casos especiais de `reduce`.
 
-Let's combine what we've learned to solve a practical problem.
+Vamos combinar o que aprendemos para resolver um problema prático.
 
-Many content management sites (CMS) have the titles of a post added to part of the URL for simple bookmarking purposes. For example, if you write a Medium post titled `Stop Using Reduce`, it's likely the URL would have some form of the title string in it (`.../stop-using-reduce`). You may have already noticed this on the freeCodeCamp site.
+Muitos sites de gerenciamento de conteúdo (*content management sites*, CMS) usam o título das publicações como parte da URL para maior legibilidade. Por exemplo, se você publicar um artigo no Medium chamado `Pare de Usar reduce`, é provável que a URL use o título em sua composição: `.../pare-de-usar-reduce`. Talvez você já tenha percebido que acontece o mesmo no freeCodeCamp.
 
 # --instructions--
 
-Fill in the `urlSlug` function so it converts a string `title` and returns the hyphenated version for the URL. You can use any of the methods covered in this section, and don't use `replace`. Here are the requirements:
+Complete a função `urlSlug` para que ela converta a string `title` e a retorne sem maiúsculas e com hifens no lugar dos espaços. Você pode usar qualquer método coberto nesta seção, mas não use `replace`. Estes são os requisitos:
 
-The input is a string with spaces and title-cased words
+A entrada é uma string com espaços e letras maiúsculas
 
-The output is a string with the spaces between words replaced by a hyphen (`-`)
+A saída é uma string cujos espaços foram substituídos por hifens (`-`)
 
-The output should be all lower-cased letters
+A saída não deve conter letras maiúsculas
 
-The output should not have any spaces
+A saída não deve conter espaços
 
 # --hints--
 
-Your code should not use the `replace` method for this challenge.
+Você não pode usar o método `replace` neste desafio.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?replace/g));
 ```
 
-`urlSlug("Winter Is Coming")` should return the string `winter-is-coming`.
+`urlSlug("Winter Is Coming")` deve retornar a string `winter-is-coming`.
 
 ```js
 assert(urlSlug('Winter Is Coming') === 'winter-is-coming');
 ```
 
-`urlSlug(" Winter Is  Coming")` should return the string `winter-is-coming`.
+`urlSlug(" Winter Is  Coming")` deve retornar a string `winter-is-coming`.
 
 ```js
 assert(urlSlug(' Winter Is  Coming') === 'winter-is-coming');
 ```
 
-`urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")` should return the string `a-mind-needs-books-like-a-sword-needs-a-whetstone`.
+`urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")` deve retornar a string `a-mind-needs-books-like-a-sword-needs-a-whetstone`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-`urlSlug("Hold The Door")` should return the string `hold-the-door`.
+`urlSlug("Hold The Door")` deve retornar a string `hold-the-door`.
 
 ```js
 assert(urlSlug('Hold The Door') === 'hold-the-door');

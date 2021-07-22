@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import HeatMap from './HeatMap';
 
@@ -41,15 +41,15 @@ describe('<HeatMap/>', () => {
   */
 
   it('calculates the correct longest streak', () => {
-    const { getByTestId } = render(<HeatMap {...props} />);
-    expect(getByTestId('longest-streak').textContent).toContain(
+    render(<HeatMap {...props} />);
+    expect(screen.getByTestId('longest-streak')).toHaveTextContent(
       'profile.longest-streak'
     );
   });
 
   it('calculates the correct current streak', () => {
-    const { getByTestId } = render(<HeatMap {...props} />);
-    expect(getByTestId('current-streak').textContent).toContain(
+    render(<HeatMap {...props} />);
+    expect(screen.getByTestId('current-streak')).toHaveTextContent(
       'profile.current-streak'
     );
   });

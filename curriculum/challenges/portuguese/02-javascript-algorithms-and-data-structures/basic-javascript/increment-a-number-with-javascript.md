@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ac
-title: Incremente um Número com JavaScript
+title: Incrementar um número com JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GLT9'
 forumTopicId: 18201

@@ -1,6 +1,6 @@
 ---
 id: ac6993d51946422351508a41
-title: Truncar uma String
+title: Truncar uma string
 challengeType: 5
 forumTopicId: 16089
 dashedName: truncate-a-string

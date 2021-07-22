@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908857
-title: Use Comments to Clarify Code
+title: Use Comentários para Esclarece o Código
 challengeType: 0
 forumTopicId: 18347
 dashedName: use-comments-to-clarify-code
@@ -8,35 +8,35 @@ dashedName: use-comments-to-clarify-code
 
 # --description--
 
-When we start using jQuery, we will modify HTML elements without needing to actually change them in HTML.
+Quando começarmos a usar JQuery, nós modificaremos elementos HTML sem a necessidade de realmente alterá-los no HTML.
 
-Let's make sure that everyone knows they shouldn't actually modify any of this code directly.
+Vamos ter certeza de que todo mundo sabe que eles não deveriam realmente modificar nenhum desse código diretamente.
 
-Remember that you can start a comment with `<!--` and end a comment with `-->`
+Lembre-se de que você pode iniciar um comentário com `<!--` e terminar um comentário com `-->`
 
-Add a comment at the top of your HTML that says `Code below this line should not be changed`
+Adicione um comentário no topo do seu HTML que diz `Code below this line should not be changed` (O código abaixo dessa linha não deve ser alterado)
 
 # --hints--
 
-You should start a comment with `<!--` at the top of your HTML.
+Você deve começar um comentário com `<!--` no topo do seu HTML.
 
 ```js
 assert(code.match(/^\s*<!--/));
 ```
 
-Your comment should have the text `Code below this line should not be changed`.
+Seu comentário deve ter o texto `Code below this line should not be changed`.
 
 ```js
 assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi));
 ```
 
-You should close your comment with `-->`.
+Você deve fechar o seu comentário com `-->`.
 
 ```js
 assert(code.match(/-->.*\n+.+/g));
 ```
 
-You should have the same number of comment openers and closers.
+Você deve ter o mesmo número de abertura e fechamento de comentários.
 
 ```js
 assert(code.match(/<!--/g).length === code.match(/-->/g).length);

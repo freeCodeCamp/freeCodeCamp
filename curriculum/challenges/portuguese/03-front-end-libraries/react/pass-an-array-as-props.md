@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616a
-title: Pass an Array as Props
+title: Passe um Array como Props
 challengeType: 6
 forumTopicId: 301401
 dashedName: pass-an-array-as-props
@@ -8,7 +8,7 @@ dashedName: pass-an-array-as-props
 
 # --description--
 
-The last challenge demonstrated how to pass information from a parent component to a child component as `props` or properties. This challenge looks at how arrays can be passed as `props`. To pass an array to a JSX element, it must be treated as JavaScript and wrapped in curly braces.
+O último desafio demonstrou como passar informações de um componente pai para um componente filho como propriedades `props`. Este desafio analisa como matrizes podem ser passadas como `props`. Para passar um array para um elemento JSX, ele deve ser tratado como JavaScript e encapsulado em chaves.
 
 ```jsx
 <ParentComponent>
@@ -16,15 +16,15 @@ The last challenge demonstrated how to pass information from a parent component 
 </ParentComponent>
 ```
 
-The child component then has access to the array property `colors`. Array methods such as `join()` can be used when accessing the property. `const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>` This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>` Later, we will learn about other common methods to render arrays of data in React.
+O componente filho então tem acesso às propriedades `colors` do array. Métodos de array como `join()` podem ser usados ao acessar a propriedade. `const ChildComponent = (props) => <p>{props.colors. oin(', ')}</p>` Isto irá juntar todas os itens do array `colors` em uma string separada por vírgulas e produzir: `<p>green, blue, red</p>` Mais tarde, aprenderemos sobre outros métodos comuns para renderizar arrays de dados em React.
 
 # --instructions--
 
-There are `List` and `ToDo` components in the code editor. When rendering each `List` from the `ToDo` component, pass in a `tasks` property assigned to an array of to-do tasks, for example `["walk dog", "workout"]`. Then access this `tasks` array in the `List` component, showing its value within the `p` element. Use `join(", ")` to display the `props.tasks`array in the `p` element as a comma separated list. Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.
+Existem os componentes `List` e `ToDo` no editor de código. Ao renderizar cada `List` do componente `ToDo`, passe em uma propriedade `tasks` atribuída a um array de tarefas a fazer, por exemplo `["walk dog", "workout"]`. Em seguida, acesse o array `tasks` no componente `List`, mostrando seu valor dentro do elemento `p`. Use `join(", ")` para exibir o array `props.tasks` no elemento `p` como uma lista separada por vírgulas. A lista de hoje deveria ter pelo menos 2 tarefas e a de amanhã deveria ter pelo menos 3 tarefas.
 
 # --hints--
 
-The `ToDo` component should return a single outer `div`.
+O componente `ToDo` deve retornar um único `div` externo.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-The third child of the `ToDo` component should be an instance of the `List` component.
+O terceiro filho do componente `ToDo` deve ser uma instância do componente `List`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-The fifth child of the `ToDo` component should be an instance of the `List` component.
+O quinto filho do componente `ToDo` deve ser uma instância do componente `List`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-Both instances of the `List` component should have a property called `tasks` and `tasks` should be of type array.
+Ambas as instâncias do componente `List` devem ter uma propriedade chamada `tasks` e `tasks` devem ser do tipo array.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-The first `List` component representing the tasks for today should have 2 or more items.
+O primeiro componente `List` que representa as tarefas para hoje deve ter 2 ou mais itens.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-The second `List` component representing the tasks for tomorrow should have 3 or more items.
+O segundo componente `List` que representa as tarefas para amanhã deve ter 3 ou mais itens.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-The `List` component should render the value from the `tasks` prop in the `p` tag.
+O componente `List` deve renderizar o valor da propriedade `tasks` na tag `p`.
 
 ```js
 assert(

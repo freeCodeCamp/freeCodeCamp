@@ -1,5 +1,5 @@
 ---
-id: 5f46ede1ff8fec5ba656b44c
+id: 5f45a66d4a2b0453301e5a26
 title: Part 79
 challengeType: 0
 dashedName: part-79
@@ -7,14 +7,36 @@ dashedName: part-79
 
 # --description--
 
-Next you are going to be styling the `footer` element. To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
 
 # --hints--
 
-Test 1
+You should have a `footer` selector.
 
 ```js
+const hasFooter = new __helpers.CSSHelp(document).getStyle('footer');
+assert(hasFooter);
+```
 
+Your `footer` selector should be below your comment.
+
+```js
+assert(code.match(/\/\*\s*FOOTER\s*\*\/\s*footer/i));
+```
+
+You should set the `font-size` property to `14px`.
+
+
+```js
+const hasFontSize = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['font-size'] === '14px');
+assert(hasFontSize);
+```
+
+Your `footer` element should have a `font-size` of `14px`.
+
+```js
+const footerFontSize = new __helpers.CSSHelp(document).getStyle('footer')?.getPropertyValue('font-size');
+assert(footerFontSize === '14px');
 ```
 
 # --seed--
@@ -39,12 +61,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -73,6 +95,7 @@ Test 1
         </section>
       </main>
       <hr class="bottom-line">
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -85,7 +108,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -133,7 +156,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;  
+  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -146,8 +169,10 @@ h1, h2 {
   width: 25%
 }
 
+/* FOOTER */
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```
-

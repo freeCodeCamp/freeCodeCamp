@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d87
-title: 'Introduction: Machine Learning Fundamentals'
+title: 'Introduzione: Fondamenti di machine learning'
 challengeType: 11
 videoId: KwL1qTR5MT8
 dashedName: introduction-machine-learning-fundamentals
@@ -10,19 +10,19 @@ dashedName: introduction-machine-learning-fundamentals
 
 ## --text--
 
-Which statement below is **false**?
+Quale delle dichiarazioni qui sotto è **falsa**?
 
 ## --answers--
 
-Neural networks are modeled after the way the human brain works.
+Le reti neurali sono modellate secondo il modo in cui funziona il cervello umano.
 
 ---
 
-Computer programs that play tic-tac-toe or chess against human players are examples of simple artificial intelligence.
+Programmi informatici che giocano a tic-tac-toe o scacchi contro i giocatori umani sono esempi di semplice intelligenza artificiale.
 
 ---
 
-Machine learning is a subset of artificial intelligence.
+L'apprendimento automatico è un sottoinsieme dell'intelligenza artificiale.
 
 ## --video-solution--
 

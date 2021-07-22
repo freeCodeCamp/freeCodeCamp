@@ -8,7 +8,7 @@ import Helmet from 'react-helmet';
 import YouTube from 'react-youtube';
 import { createSelector } from 'reselect';
 import { ObserveKeys } from 'react-hotkeys';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
 // Local Utilities
@@ -63,7 +63,7 @@ interface ShowVideoProps {
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
-  t: (arg0: string) => string;
+  t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
   updateSolutionFormValues: () => void;
 }
@@ -241,20 +241,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     videoId={videoId}
                   />
-                  <i>
-                    <a
-                      href={
-                        'https://www.youtube.com/timedtext_editor?action_mde_edit_form=1&v=' +
-                        videoId +
-                        '&lang=en&bl=watch&ui=hd&ref=wt&tab=captions'
-                      }
-                      rel='noopener noreferrer'
-                      target='_blank'
-                    >
-                      {t('learn.add-subtitles')}
-                    </a>
-                    .
-                  </i>
                 </div>
               </Col>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>

@@ -1,5 +1,5 @@
 ---
-id: 5f46e8284aae155c83015dee
+id: 5f475bb508746c16c9431d42
 title: Part 90
 challengeType: 0
 dashedName: part-90
@@ -7,16 +7,54 @@ dashedName: part-90
 
 # --description--
 
-The menu looks good, but other than the coffee beans background image, it is mainly just text.
+The image you added is not centered horizontally like the `Coffee` heading above it. `img` elements are "like" inline elements.
 
-Under the `Coffees` heading, add an image using the url `https://tinyurl.com/cafe-coffee-fcc`. Give the image an `alt` value of `coffee icon`.
+To make the image behave like heading elements (which are block-level), create an `img` type selector and use the value `block` for the `display` property and use the applicable `margin-left` and `margin-right` values to center it horizontally.
 
 # --hints--
 
-Test 1
+You should use an `img` selector.
 
 ```js
+const hasImg = new __helpers.CSSHelp(document).getStyle('img');
+assert(hasImg);
+```
 
+You should set the `display` property to `block`.
+
+```js
+const hasDisplay = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.display === 'block');
+assert(hasDisplay);
+```
+
+You should set the `margin-left` property to `auto`.
+
+```js
+const marginLeftFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style['margin-left'] === 'auto');
+assert(marginLeftFilter.length === 2);
+```
+
+You should set the `margin-right` property to `auto`.
+
+```js
+const marginRightFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style['margin-right'] === 'auto');
+assert(marginRightFilter.length === 2);
+```
+
+Your `img` element should have a `display` of `block`.
+
+```js
+const imgDisplay = new __helpers.CSSHelp(document).getStyle('img')?.getPropertyValue('display');
+assert(imgDisplay === 'block');
+```
+
+Your `img` element should have a `margin-left` and `margin-right` of `auto`.
+
+```js
+const imgMarginLeft = new __helpers.CSSHelp(document).getStyle('img')?.getPropertyValue('margin-left');
+assert(imgMarginLeft === 'auto');
+const imgMarginRight = new __helpers.CSSHelp(document).getStyle('img')?.getPropertyValue('margin-right');
+assert(imgMarginRight === 'auto');
 ```
 
 # --seed--
@@ -41,14 +79,13 @@ Test 1
       <hr>
       <main>
         <section>
---fcc-editable-region--
-          <h2>Coffees</h2>
---fcc-editable-region--
+          <h2>Coffee</h2>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -90,7 +127,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -121,6 +158,10 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 hr {
   height: 2px;

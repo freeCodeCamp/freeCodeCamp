@@ -287,7 +287,7 @@ Challenges should have the minimum number of tests necessary to verify that a ca
 
 Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
 
-Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
+Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.  In addition, the `__helpers` object exposes several functions that simplify the process of writing tests.  The available functions are defined in _client/src/utils/curriculum-helpers.ts_.
 
 ## Formatting seed code
 

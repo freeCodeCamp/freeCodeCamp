@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036174
-title: Bind 'this' to a Class Method
+title: Vincular 'this' para um Método de Classe
 challengeType: 6
 forumTopicId: 301379
 dashedName: bind-this-to-a-class-method
@@ -8,23 +8,23 @@ dashedName: bind-this-to-a-class-method
 
 # --description--
 
-In addition to setting and updating `state`, you can also define methods for your component class. A class method typically needs to use the `this` keyword so it can access properties on the class (such as `state` and `props`) inside the scope of the method. There are a few ways to allow your class methods to access `this`.
+Além de definir e atualizar `state`, você também pode definir métodos para o seu componente de classe. Um método de classe tipicamente precisa usar a palavra-chave `this` para que possa acessar as propriedades na classe (assim como `state` e `props`) dentro do escopo do método. Existem algumas maneiras para permitir que os métodos da sua classe acessem `this`.
 
-One common way is to explicitly bind `this` in the constructor so `this` becomes bound to the class methods when the component is initialized. You may have noticed the last challenge used `this.handleClick = this.handleClick.bind(this)` for its `handleClick` method in the constructor. Then, when you call a function like `this.setState()` within your class method, `this` refers to the class and will not be `undefined`.
+Uma forma comum é explicitamente vincular `this` no construtor para que `this` torne-se vinculado aos métodos da classe quando o componente é inicializado. Você pode ter percebido que o último desafio usou `this.handleClick = this.handleClick.bind(this)` para o método `handleClick` no construtor. Em seguida, quando você chama uma função como `this.setState()` dentro do método da classe, `this` refere-se a classe e não será `undefined`.
 
-**Note:** The `this` keyword is one of the most confusing aspects of JavaScript but it plays an important role in React. Although its behavior here is totally normal, these lessons aren't the place for an in-depth review of `this` so please refer to other lessons if the above is confusing!
+**Nota:** A palavra-chave `this` é um dos aspectos mais confusos do JavaScript mas ele exerce uma papel importante em React. Embora o seu comportamento aqui é completamente normal, essas aulas não são o lugar para uma análise profunda de `this` portanto, por favor consulte outras aulas se o conteúdo acima for confuso!
 
 # --instructions--
 
-The code editor has a component with a `state` that keeps track of the text. It also has a method which allows you to set the text to `You clicked!`. However, the method doesn't work because it's using the `this` keyword that is undefined. Fix it by explicitly binding `this` to the `handleClick()` method in the component's constructor.
+O editor de código possui um componente com um `state` que mantém o controle do texto. Também possui um método o qual o permite definir o texto para `You clicked!`. No entanto, o método não funciona porque está usando a palavra-chave `this` que é undefined. Corrija isso ao vincular explicitamente `this` ao método `handleClick()` no construtor do componente.
 
-Next, add a click handler to the `button` element in the render method. It should trigger the `handleClick()` method when the button receives a click event. Remember that the method you pass to the `onClick` handler needs curly braces because it should be interpreted directly as JavaScript.
+Em seguida, adicione um manipulador de clique ao elemento `button` no método de renderização. Ele deve acionar o método `handleClick()` quando o botão recebe um evento de clique. Lembre-se que o método que você passou ao manipulador `onClick` precisa de chaves porque ele deve ser interpretador diretamente como JavaScript.
 
-Once you complete the above steps you should be able to click the button and see `You clicked!`.
+Assim que você completar os passos acima você deve ser capaz de clicar o botão e ver `You clicked!`.
 
 # --hints--
 
-`MyComponent` should return a `div` element which wraps two elements, a button and an `h1` element, in that order.
+`MyComponent` deve retornar um elemento `div` o qual envolve dois elementos, os elementos `button` e `h1`, nessa ordem.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The state of `MyComponent` should initialize with the key value pair `{ text: "Hello" }`.
+O state de `MyComponent` deve inicializar com o par de chave e valor `{ text: "Hello" }`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Clicking the `button` element should run the `handleClick` method and set the state `text` to `You clicked!`.
+Clicar o elemento `button` deve executar o método `handleClick` e definir o estado de `text` para `You clicked!`.
 
 ```js
 async () => {

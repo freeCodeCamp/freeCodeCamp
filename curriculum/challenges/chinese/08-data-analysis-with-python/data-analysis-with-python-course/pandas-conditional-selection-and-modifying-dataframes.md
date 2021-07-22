@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15b
-title: Pandas Conditional Selection and Modifying DataFrames
+title: Pandas 条件选择和 DataFrames 的修改
 challengeType: 11
 videoId: BFlH0fN5xRQ
 dashedName: pandas-conditional-selection-and-modifying-dataframes
@@ -8,18 +8,18 @@ dashedName: pandas-conditional-selection-and-modifying-dataframes
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在视频中我们使用的编辑器工具是在 notebook.ai 这个平台，你也可以选择用其他的平台，比如说 Google Colab 也是一个不错的选择。*
 
-More resources:
+以下有更多的资料：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas)
+-   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What will the following code print out?
+以下代码会打印出什么？
 
 ```py
 import pandas as pd

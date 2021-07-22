@@ -10,7 +10,7 @@
 // @ts-nocheck
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
@@ -38,7 +38,7 @@ export interface NavLinksProps {
   displayMenu?: boolean;
   fetchState?: { pending: boolean };
   i18n: Object;
-  t: (x: any) => any;
+  t: TFunction;
   toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement>;
   toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;

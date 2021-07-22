@@ -7,16 +7,17 @@ dashedName: part-52
 
 # --description--
 
-Something does not look right. You added the correct `class` attribute value to the `p` element with `Donunt` as its text, but you have not defined a selector for it.
+Something does not look right. You added the correct `class` attribute value to the `p` element with `Donut` as its text, but you have not defined a selector for it.
 
 Since the `flavor` class selector already has the properties you want, just add the `dessert` class name to it.
 
 # --hints--
 
-Test 1
+You should add the `.dessert` selector to your `.flavor` selector. 
 
 ```js
-
+const selector = new __helpers.CSSHelp(document).getStyle('.flavor, .dessert') || new __helpers.CSSHelp(document).getStyle('.dessert, .flavor');
+assert(selector)
 ```
 
 # --seed--
@@ -40,12 +41,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -71,7 +72,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -101,4 +102,3 @@ h1, h2, p {
   width: 25%
 }
 ```
-

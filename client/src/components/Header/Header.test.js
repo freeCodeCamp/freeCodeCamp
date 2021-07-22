@@ -25,8 +25,8 @@ describe('<UniversalNav />', () => {
   it('renders to the DOM', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<UniversalNav {...UniversalNavProps} />);
-    const result = shallow.getRenderOutput();
-    expect(result).toBeTruthy();
+    const view = shallow.getRenderOutput();
+    expect(view).toBeTruthy();
   });
 });
 
@@ -48,14 +48,14 @@ describe('<NavLinks />', () => {
     };
     const shallow = new ShallowRenderer();
     shallow.render(<NavLinks {...landingPageProps} />);
-    const result = shallow.getRenderOutput();
+    const view = shallow.getRenderOutput();
     expect(
-      hasDonateNavItem(result) &&
-        hasSignInNavItem(result) &&
-        hasCurriculumNavItem(result) &&
-        hasForumNavItem(result) &&
-        hasNewsNavItem(result) &&
-        hasRadioNavItem(result)
+      hasDonateNavItem(view) &&
+        hasSignInNavItem(view) &&
+        hasCurriculumNavItem(view) &&
+        hasForumNavItem(view) &&
+        hasNewsNavItem(view) &&
+        hasRadioNavItem(view)
     ).toBeTruthy();
   });
 
@@ -76,15 +76,15 @@ describe('<NavLinks />', () => {
     };
     const shallow = new ShallowRenderer();
     shallow.render(<NavLinks {...landingPageProps} />);
-    const result = shallow.getRenderOutput();
+    const view = shallow.getRenderOutput();
     expect(
-      hasDonateNavItem(result) &&
-        hasCurriculumNavItem(result) &&
-        hasProfileAndSettingsNavItems(result, landingPageProps.user.username) &&
-        hasForumNavItem(result) &&
-        hasNewsNavItem(result) &&
-        hasRadioNavItem(result) &&
-        hasSignOutNavItem(result)
+      hasDonateNavItem(view) &&
+        hasCurriculumNavItem(view) &&
+        hasProfileAndSettingsNavItems(view, landingPageProps.user.username) &&
+        hasForumNavItem(view) &&
+        hasNewsNavItem(view) &&
+        hasRadioNavItem(view) &&
+        hasSignOutNavItem(view)
     ).toBeTruthy();
   });
 
@@ -105,15 +105,15 @@ describe('<NavLinks />', () => {
     };
     const shallow = new ShallowRenderer();
     shallow.render(<NavLinks {...landingPageProps} />);
-    const result = shallow.getRenderOutput();
+    const view = shallow.getRenderOutput();
     expect(
-      hasThanksForDonating(result) &&
-        hasCurriculumNavItem(result) &&
-        hasProfileAndSettingsNavItems(result, landingPageProps.user.username) &&
-        hasForumNavItem(result) &&
-        hasNewsNavItem(result) &&
-        hasRadioNavItem(result) &&
-        hasSignOutNavItem(result)
+      hasThanksForDonating(view) &&
+        hasCurriculumNavItem(view) &&
+        hasProfileAndSettingsNavItems(view, landingPageProps.user.username) &&
+        hasForumNavItem(view) &&
+        hasNewsNavItem(view) &&
+        hasRadioNavItem(view) &&
+        hasSignOutNavItem(view)
     ).toBeTruthy();
   });
 });
@@ -131,8 +131,8 @@ describe('<AuthOrProfile />', () => {
 
     const shallow = new ShallowRenderer();
     shallow.render(<AuthOrProfile {...defaultUserProps} />);
-    const componentTree = shallow.getRenderOutput();
-    expect(avatarHasClass(componentTree, 'default-border')).toBeTruthy();
+    const view = shallow.getRenderOutput();
+    expect(avatarHasClass(view, 'default-border')).toBeTruthy();
   });
 
   it('has avatar with gold border for donating users', () => {
@@ -147,9 +147,9 @@ describe('<AuthOrProfile />', () => {
     };
     const shallow = new ShallowRenderer();
     shallow.render(<AuthOrProfile {...donatingUserProps} />);
-    const componentTree = shallow.getRenderOutput();
+    const view = shallow.getRenderOutput();
 
-    expect(avatarHasClass(componentTree, 'gold-border')).toBeTruthy();
+    expect(avatarHasClass(view, 'gold-border')).toBeTruthy();
   });
 
   it('has avatar with blue border for top contributors', () => {
@@ -165,9 +165,9 @@ describe('<AuthOrProfile />', () => {
 
     const shallow = new ShallowRenderer();
     shallow.render(<AuthOrProfile {...topContributorUserProps} />);
-    const componentTree = shallow.getRenderOutput();
+    const view = shallow.getRenderOutput();
 
-    expect(avatarHasClass(componentTree, 'blue-border')).toBeTruthy();
+    expect(avatarHasClass(view, 'blue-border')).toBeTruthy();
   });
   it('has avatar with purple border for donating top contributors', () => {
     const topDonatingContributorUserProps = {
@@ -182,8 +182,8 @@ describe('<AuthOrProfile />', () => {
     };
     const shallow = new ShallowRenderer();
     shallow.render(<AuthOrProfile {...topDonatingContributorUserProps} />);
-    const componentTree = shallow.getRenderOutput();
-    expect(avatarHasClass(componentTree, 'purple-border')).toBeTruthy();
+    const view = shallow.getRenderOutput();
+    expect(avatarHasClass(view, 'purple-border')).toBeTruthy();
   });
 });
 
@@ -234,8 +234,10 @@ const hasForumNavItem = component => {
   const { children, to } = navigationLinks(component, 'forum');
   const localizedForums = {
     chinese: 'https://chinese.freecodecamp.org/forum',
+    'chinese-traditional': 'https://chinese.freecodecamp.org/forum',
     espanol: 'https://forum.freecodecamp.org/c/espanol/',
-    english: 'https://forum.freecodecamp.org/'
+    english: 'https://forum.freecodecamp.org/',
+    italian: 'https://forum.freecodecamp.org/c/italian/'
   };
   return (
     children[0].props.children === 'buttons.forum' &&
@@ -247,8 +249,10 @@ const hasNewsNavItem = component => {
   const { children, to } = navigationLinks(component, 'news');
   const localizedNews = {
     chinese: 'https://chinese.freecodecamp.org/news',
+    'chinese-traditional': 'https://chinese.freecodecamp.org/news',
     espanol: 'https://www.freecodecamp.org/espanol/news',
-    english: 'https://www.freecodecamp.org/news'
+    english: 'https://www.freecodecamp.org/news',
+    italian: 'https://www.freecodecamp.org/italian/news'
   };
   return (
     children[0].props.children === 'buttons.news' &&

@@ -1,6 +1,6 @@
 ---
 id: 587d78b2367417b2b2512b0f
-title: Remova Itens de um Array com pop() e shift()
+title: Remover itens de um array com pop() e shift()
 challengeType: 1
 forumTopicId: 301165
 dashedName: remove-items-from-an-array-with-pop-and-shift

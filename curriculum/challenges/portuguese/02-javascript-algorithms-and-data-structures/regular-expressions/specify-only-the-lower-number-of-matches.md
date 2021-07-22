@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba6
-title: Specify Only the Lower Number of Matches
+title: Especificar apenas o mínimo de capturas
 challengeType: 1
 forumTopicId: 301366
 dashedName: specify-only-the-lower-number-of-matches
@@ -8,11 +8,11 @@ dashedName: specify-only-the-lower-number-of-matches
 
 # --description--
 
-You can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes you only want to specify the lower number of patterns with no upper limit.
+Você pode especificar um número mínimo e um máximo de capturas com chaves. Haverá vezes que você precisará especificar um mínimo mas não um máximo.
 
-To only specify the lower number of patterns, keep the first number followed by a comma.
+Para fazer isso, apenas escreva o número seguido de uma vírgula dentro das chaves.
 
-For example, to match only the string `hah` with the letter `a` appearing at least `3` times, your regex would be `/ha{3,}h/`.
+Por exemplo, para capturar pelo menos `3` vezes a letra `a` na string `hah` você pode escrever a regex `/ha{3,}h/`.
 
 ```js
 let A4 = "haaaah";
@@ -24,51 +24,51 @@ multipleA.test(A2);
 multipleA.test(A100);
 ```
 
-In order, the three `test` calls would return `true`, `false`, and `true`.
+As três chamadas a `test` acima retornam, na ordem, os valores: `true`, `false` e `true`.
 
 # --instructions--
 
-Change the regex `haRegex` to match the word `Hazzah` only when it has four or more letter `z`'s.
+Modifique a regex `haRegex` para que capture quatro ou mais `z`s na string `Hazzah`.
 
 # --hints--
 
-Your regex should use curly brackets.
+Sua regex deve usar chaves.
 
 ```js
 assert(haRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Your regex should not match the string `Hazzah`
+Sua regex não deve encontrar a string `Hazzah`
 
 ```js
 assert(!haRegex.test('Hazzah'));
 ```
 
-Your regex should not match the string `Hazzzah`
+Sua regex não deve encontrar a string `Hazzzah`
 
 ```js
 assert(!haRegex.test('Hazzzah'));
 ```
 
-Your regex should match the string `Hazzzzah`
+Sua regex deve encontrar a string `Hazzzzah`
 
 ```js
 assert('Hazzzzah'.match(haRegex)[0].length === 8);
 ```
 
-Your regex should match the string `Hazzzzzah`
+Sua regex deve encontrar a string `Hazzzzzah`
 
 ```js
 assert('Hazzzzzah'.match(haRegex)[0].length === 9);
 ```
 
-Your regex should match the string `Hazzzzzzah`
+Sua regex deve encontrar a string `Hazzzzzzah`
 
 ```js
 assert('Hazzzzzzah'.match(haRegex)[0].length === 10);
 ```
 
-Your regex should match the string `Hazzah` with 30 `z`'s in it.
+Sua regex deve capturar 30 `z`s, se presentes, na string `Hazzah`.
 
 ```js
 assert('Hazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzah'.match(haRegex)[0].length === 34);

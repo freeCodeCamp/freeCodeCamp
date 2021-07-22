@@ -1,22 +1,22 @@
 ---
 id: 5e46fc95ac417301a38fb935
-title: Machine Learning with Python Certificate
+title: Certificato Machine Learning con Python
 challengeType: 7
 isPrivate: true
 tests:
   - 
     id: 5e46f8d6ac417301a38fb92d
-    title: Rock Paper Scissors
+    title: Carta Sasso Forbice
   - 
     id: 5e46f8dcac417301a38fb92e
-    title: Cat and Dog Image Classifier
+    title: Classificatore di immagini di gatti e cani
   - 
     id: 5e46f8e3ac417301a38fb92f
-    title: Book Recommendation Engine using KNN
+    title: Motore per la raccomandazione di libri che usa KNN
   - 
     id: 5e46f8edac417301a38fb930
-    title: Linear Regression Health Costs Calculator
+    title: Calcolatore di costi per la salute con la Regressione Lineare
   - 
     id: 5e46f8edac417301a38fb931
-    title: Neural Network SMS Text Classifier
+    title: Classificatore neurale di messaggi SMS
 

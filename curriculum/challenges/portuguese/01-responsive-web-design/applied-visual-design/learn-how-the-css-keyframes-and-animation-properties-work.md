@@ -1,6 +1,6 @@
 ---
 id: 587d78a7367417b2b2512adf
-title: Aprenda como funcionam as propriedades de animação e @keyframes do CSS
+title: Aprender como funcionam as propriedades de animação e @keyframes do CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakprhv'
 forumTopicId: 301059

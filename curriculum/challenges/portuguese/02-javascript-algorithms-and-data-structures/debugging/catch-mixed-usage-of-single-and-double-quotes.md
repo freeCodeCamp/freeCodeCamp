@@ -1,6 +1,6 @@
 ---
 id: 587d7b84367417b2b2512b37
-title: Identificar Uso Misto de Aspas Simples e Duplas
+title: Identificar uso misto de aspas simples e duplas
 challengeType: 1
 forumTopicId: 301188
 dashedName: catch-mixed-usage-of-single-and-double-quotes

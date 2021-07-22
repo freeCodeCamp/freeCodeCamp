@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b54
-title: Use getters e setter para Controlar Acesso a um Objeto
+title: Usar getters e setter para controlar acesso a um objeto
 challengeType: 1
 forumTopicId: 301220
 dashedName: use-getters-and-setters-to-control-access-to-an-object
@@ -40,7 +40,7 @@ O console exibirá as strings `anonymous` e `newAuthor`.
 
 Note a sintaxe usada para invocar o getter e setter. Eles nem sequer se parecem com funções. Getters e setters são importantes porque escondem os detalhes internos da implementação.
 
-**Nota:** É uma convenção preceder o nome de uma variável privada com um underscore (`_`). No entanto, essa prática por si só não torna uma variável privada.
+**Observação:** é uma convenção preceder o nome de uma variável privada com um underscore (`_`). No entanto, essa prática por si só não torna uma variável privada.
 
 # --instructions--
 

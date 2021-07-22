@@ -11,10 +11,34 @@ To let visitors know the cafe was founded in 2020, add a `p` element below the `
 
 # --hints--
 
-Test 1
+You should have an opening `<p>` tag.
 
 ```js
+assert(code.match(/<p>/i));
+```
 
+You should have a closing `</p>` tag.
+
+```js
+assert(code.match(/<\/p>/i));
+```
+
+You should not change your existing `h1` element. Make sure you did not delete the closing tag.
+
+```js
+assert($('h1').length === 1);
+```
+
+Your `p` element should be below your `h1` element.
+
+```js
+assert($('p')[0].previousElementSibling.tagName === 'H1');
+```
+
+Your `p` element should have the text `Est. 2020`.
+
+```js
+assert(code.match(/<p>Est. 2020<\/p>/i));
 ```
 
 # --seed--

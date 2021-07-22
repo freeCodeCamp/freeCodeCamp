@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c441eddfaeb5bdef
-title: Entendendo Valores Booleanos
+title: Entender valores booleanos
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9Me8t4'
 forumTopicId: 301176

@@ -1,6 +1,6 @@
 ---
 id: 587d7b86367417b2b2512b3d
-title: Previna Laços Infinitos com uma Condição de Término Válida
+title: Prevenir laços infinitos com uma condição de término válida
 challengeType: 1
 forumTopicId: 301192
 dashedName: prevent-infinite-loops-with-a-valid-terminal-condition

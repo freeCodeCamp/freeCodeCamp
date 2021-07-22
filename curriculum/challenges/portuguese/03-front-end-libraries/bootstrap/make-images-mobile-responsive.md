@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08812
-title: Make Images Mobile Responsive
+title: Torne Imagens Responsivas a dispositivos Móveis
 challengeType: 0
 forumTopicId: 18232
 dashedName: make-images-mobile-responsive
@@ -8,39 +8,39 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-First, add a new image below the existing one. Set its `src` attribute to `https://bit.ly/fcc-running-cats`.
+Primeiro, adicione uma nova imagem abaixo da existente. Defina o seu atributo `src` para `https://bit.ly/fcc-running-cats`.
 
-It would be great if this image could be exactly the width of our phone's screen.
+Seria ótimo se essa imagem pudesse ser exatamente do tamanho da nossa tela do celular.
 
-Fortunately, with Bootstrap, all we need to do is add the `img-responsive` class to your image. Do this, and the image should perfectly fit the width of your page.
+Felizmente, com Bootstrap, tudo que precisamos fazer é adicionar a classe `img-responsive` para nossa imagem. Faça isso, e a imagem deve encaixar perfeitamente na largura da sua página.
 
 # --hints--
 
-You should have a total of two images.
+Você deve ter o total de duas imagens.
 
 ```js
 assert($('img').length === 2);
 ```
 
-Your new image should be below your old one and have the class `img-responsive`.
+Sua nova imagem deve estar abaixo da sua antiga e ter a classe `img-responsive`.
 
 ```js
 assert($('img:eq(1)').hasClass('img-responsive'));
 ```
 
-Your new image should not have the class `smaller-image`.
+Sua nova imagem não deve ter a classe `smaller-image`.
 
 ```js
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-Your new image should have a `src` of `https://bit.ly/fcc-running-cats`.
+Sua nova imagem deve ter um `src` de `https://bit.ly/fcc-running-cats`.
 
 ```js
 assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
 ```
 
-Your new `img` element should have a closing angle bracket.
+Seu novo elemento `img` deve ter uma tag de fechamento.
 
 ```js
 assert(

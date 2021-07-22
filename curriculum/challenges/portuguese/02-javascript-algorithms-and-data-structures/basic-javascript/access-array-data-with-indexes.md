@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392ca
-title: Acessar Array de dados com índices
+title: Acessar array de dados com índices
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQbTz'
 forumTopicId: 16158

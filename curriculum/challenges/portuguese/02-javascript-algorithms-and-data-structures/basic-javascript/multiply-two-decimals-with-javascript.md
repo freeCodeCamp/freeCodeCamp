@@ -1,6 +1,6 @@
 ---
 id: bd7993c9c69feddfaeb7bdef
-title: Multiplique Dois Decimais com JavaScript
+title: Multiplicar dois decimais com JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2GeHq'
 forumTopicId: 301173

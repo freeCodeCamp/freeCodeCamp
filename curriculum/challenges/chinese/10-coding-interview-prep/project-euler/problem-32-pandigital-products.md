@@ -12,22 +12,46 @@ We shall say that an `n`-digit number is pandigital if it makes use of all the d
 
 The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital.
 
-Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital.
+Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through `n` pandigital.
 
 **Hint:** Some products can be obtained in more than one way so be sure to only include it once in your sum.
 
 # --hints--
 
-`pandigitalProducts()` should return a number.
+`pandigitalProducts(4)` should return a number.
 
 ```js
-assert(typeof pandigitalProducts() === 'number');
+assert(typeof pandigitalProducts(4) === 'number');
 ```
 
-`pandigitalProducts()` should return 45228.
+`pandigitalProducts(4)` should return `12`.
 
 ```js
-assert.strictEqual(pandigitalProducts(), 45228);
+assert.strictEqual(pandigitalProducts(4), 12);
+```
+
+`pandigitalProducts(6)` should return `162`.
+
+```js
+assert.strictEqual(pandigitalProducts(6), 162);
+```
+
+`pandigitalProducts(7)` should return `0`.
+
+```js
+assert.strictEqual(pandigitalProducts(7), 0);
+```
+
+`pandigitalProducts(8)` should return `13458`.
+
+```js
+assert.strictEqual(pandigitalProducts(8), 13458);
+```
+
+`pandigitalProducts(9)` should return `45228`.
+
+```js
+assert.strictEqual(pandigitalProducts(9), 45228);
 ```
 
 # --seed--
@@ -35,22 +59,21 @@ assert.strictEqual(pandigitalProducts(), 45228);
 ## --seed-contents--
 
 ```js
-function pandigitalProducts() {
+function pandigitalProducts(n) {
 
   return true;
 }
 
-pandigitalProducts();
+pandigitalProducts(4);
 ```
 
 # --solutions--
 
 ```js
-function pandigitalProducts() {
-  function is1to9Pandigital(...numbers) {
-    const digitStr = concatenateNums(...numbers);
-    // check if length is 9
-    if (digitStr.length !== 9) {
+function pandigitalProducts(n) {
+  function is1toNPandigital(n, digitStr) {
+    // check if length is n
+    if (digitStr.length !== n) {
       return false;
     }
     // check if pandigital
@@ -70,15 +93,24 @@ function pandigitalProducts() {
   }
 
   const pandigitalNums = [];
+  const limit = 10 ** Math.floor(n / 2) - 1;
   let sum = 0;
-  for (let mult1 = 2; mult1 < 9876; mult1++) {
-    let mult2 = 123;
-    while (concatenateNums(mult1, mult2, mult1 * mult2).length < 10) {
-      if (is1to9Pandigital(mult1, mult2, mult1 * mult2) && !pandigitalNums.includes(mult1 * mult2)) {
-        pandigitalNums.push(mult1 * mult2);
-        sum += mult1 * mult2;
+  for (let mult1 = 2; mult1 < limit; mult1++) {
+    for (let mult2 = 2; mult2 < limit; mult2++) {
+      const product = mult1 * mult2;
+      const concatenated = concatenateNums(mult1, mult2, product);
+      if (concatenated.length > n) {
+        break;
+      } else if (concatenated.length < n) {
+        continue;
       }
-      mult2++;
+      if (
+        is1toNPandigital(n, concatenated) &&
+        !pandigitalNums.includes(product)
+      ) {
+        pandigitalNums.push(product);
+        sum += product;
+      }
     }
   }
   return sum;

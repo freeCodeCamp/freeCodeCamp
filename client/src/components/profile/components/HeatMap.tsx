@@ -50,7 +50,7 @@ interface IHeatMapInnerProps {
   longestStreak: number;
   pages: IPageData[];
   points?: number;
-  t: TFunction<'translation'>;
+  t: TFunction;
 }
 
 interface IHeatMapInnerState {

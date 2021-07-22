@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392ce
-title: Manipule Arrays Com unshift()
+title: Manipular arrays com unshift()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239

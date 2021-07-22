@@ -1,6 +1,6 @@
 ---
 id: adf08ec01beb4f99fc7a68f2
-title: Removendo falsos
+title: Remover falsos
 challengeType: 5
 forumTopicId: 16014
 dashedName: falsy-bouncer

@@ -64,7 +64,7 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
         isOpen: true
       });
 
-    if (challengeFiles.length) {
+    if (challengeFiles?.length) {
       return (
         <button
           className='project-link-button-override'

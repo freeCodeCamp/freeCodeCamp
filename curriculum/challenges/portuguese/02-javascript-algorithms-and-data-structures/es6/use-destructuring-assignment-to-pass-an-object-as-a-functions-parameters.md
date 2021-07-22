@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4d
-title: Use Atribuição de Desestruturação para Passar um Objeto como Parâmetro de uma Função
+title: Usar atribuição de desestruturação para passar um objeto como parâmetro de uma função
 challengeType: 1
 forumTopicId: 301217
 dashedName: use-destructuring-assignment-to-pass-an-object-as-a-functions-parameters

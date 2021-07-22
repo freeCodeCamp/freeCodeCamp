@@ -11,10 +11,28 @@ Nest two `p` elements inside your `article` element. The first one's text should
 
 # --hints--
 
-Test 1
+You should not change your existing `article` element.
 
 ```js
+assert($('article').length === 6);
+```
 
+Your new `article` element should have two `p` elements.
+
+```js
+assert($('article').last().children('p').length === 2);
+```
+
+Your first `p` element should have the text `Donut`.
+
+```js
+assert($('article').last().children('p')[0].innerText.match(/Donut/i));
+```
+
+Your second `p` element should have the text `1.50`.
+
+```js
+assert($('article').last().children('p')[1].innerText.match(/1\.50/i));
 ```
 
 # --seed--
@@ -38,12 +56,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -70,7 +88,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {

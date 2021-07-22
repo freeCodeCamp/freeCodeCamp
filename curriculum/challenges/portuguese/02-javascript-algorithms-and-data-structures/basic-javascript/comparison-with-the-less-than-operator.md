@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d6
-title: Comparação com o Operador Menor Que
+title: Comparar com o operador menor que
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNVRWtB'
 forumTopicId: 16789

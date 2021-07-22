@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036142
-title: Manage State Locally First
+title: Gerenciar State Localmente Primeiro
 challengeType: 6
 forumTopicId: 301431
 dashedName: manage-state-locally-first
@@ -8,19 +8,19 @@ dashedName: manage-state-locally-first
 
 # --description--
 
-Here you'll finish creating the `DisplayMessages` component.
+Aqui você terminará de criar o componente `DisplayMessages`.
 
 # --instructions--
 
-First, in the `render()` method, have the component render an `input` element, `button` element, and `ul` element. When the `input` element changes, it should trigger a `handleChange()` method. Also, the `input` element should render the value of `input` that's in the component's state. The `button` element should trigger a `submitMessage()` method when it's clicked.
+Primeiro, no método `render()`, faça o componente renderizar os elementos `input`, `button` e `ul`. Quando o elemento `input` alterar, ele deve acionar o método `handleChange()`. Além disso, o elemento `input` deve renderizar o valor do `input` que está no state do componente. O elemento `button` deve acionar o método `submitMessage()` quando for clicado.
 
-Second, write these two methods. The `handleChange()` method should update the `input` with what the user is typing. The `submitMessage()` method should concatenate the current message (stored in `input`) to the `messages` array in local state, and clear the value of the `input`.
+Em segundo lugar, escreva esses dois métodos. O método `handleChange()` deve atualizar o `input` com o que o usuário digitar. O método `submitMessage()` deve concatenar a mensagem atual (armazenada em `input`) para o array `messages` no state local, e limpar o valor do `input`.
 
-Finally, use the `ul` to map over the array of `messages` and render it to the screen as a list of `li` elements.
+Finalmente, use o `ul` para mapear em cima do array `messages` e o renderize na tela como uma lista de elementos `li`.
 
 # --hints--
 
-The `DisplayMessages` component should initialize with a state equal to `{ input: "", messages: [] }`.
+O componente `DisplayMessages` deve inicializar com o estado igual a `{ input: "", messages: []}`.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-The `DisplayMessages` component should render a `div` containing an `h2` element, a `button` element, a `ul` element, and `li` elements as children.
+O componente `DisplayMessages` deve renderizar um `div` contendo um elemento `h2`, um elemento `button`, um elemento `ul` e elementos `li` como filhos.
 
 ```js
 async () => {
@@ -58,13 +58,13 @@ async () => {
 };
 ```
 
-`.map` should be used on the `messages` array.
+`.map` deve ser usado no array de `mensagens`.
 
 ```js
 assert(code.match(/this\.state\.messages\.map/g));
 ```
 
-The `input` element should render the value of `input` in local state.
+O elemento `input` deve renderizar o valor de `input` no state local.
 
 ```js
 async () => {
@@ -83,7 +83,7 @@ async () => {
 };
 ```
 
-Calling the method `handleChange` should update the `input` value in state to the current input.
+Chamar o método `handleChange` deve atualizar o valor do `input` no state para o input atual.
 
 ```js
 async () => {
@@ -106,7 +106,7 @@ async () => {
 };
 ```
 
-Clicking the `Add message` button should call the method `submitMessage` which should add the current `input` to the `messages` array in state.
+Clicar o botão `Add message` deve chamar o método `submitMessage` o qual deve adicionar o texto atual no `input` ao array `messages` no state.
 
 ```js
 async () => {
@@ -149,7 +149,7 @@ async () => {
 };
 ```
 
-The `submitMessage` method should clear the current input.
+O método `submitMessage` deve limpar o input atual.
 
 ```js
 async () => {

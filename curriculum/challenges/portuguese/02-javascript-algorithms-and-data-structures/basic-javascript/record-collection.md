@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244cf
-title: Coleção de Disco
+title: Exibir uma coleção de discos
 challengeType: 1
 forumTopicId: 18261
 dashedName: record-collection

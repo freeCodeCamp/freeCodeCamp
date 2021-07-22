@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b56
-title: Use a exportação para compartilhar um Bloco de Código
+title: Usar a exportação para compartilhar um bloco de código
 challengeType: 1
 forumTopicId: 301219
 dashedName: use-export-to-share-a-code-block

@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c12feddfaeb1bdef
-title: Gerar Números Inteiros Aleatórios com JavaScript
+title: Gerar números inteiros aleatórios com JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6bfr'
 forumTopicId: 18186

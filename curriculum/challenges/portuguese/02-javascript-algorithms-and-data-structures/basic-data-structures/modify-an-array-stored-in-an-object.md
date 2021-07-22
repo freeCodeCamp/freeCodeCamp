@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1f
-title: Modifique o Array Armazenado em um Objeto
+title: Modificar o array armazenado em um objeto
 challengeType: 1
 forumTopicId: 301163
 dashedName: modify-an-array-stored-in-an-object

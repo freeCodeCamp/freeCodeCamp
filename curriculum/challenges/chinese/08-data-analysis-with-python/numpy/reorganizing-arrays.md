@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed9
-title: Reorganizing Arrays
+title: 重组数组
 challengeType: 11
 videoId: VNWAQbEM-C8
 dashedName: reorganizing-arrays
@@ -10,7 +10,7 @@ dashedName: reorganizing-arrays
 
 ## --text--
 
-What code would produce the following array?
+哪个代码会生成下面的数组？
 
 ```py
 [[1. 1.]

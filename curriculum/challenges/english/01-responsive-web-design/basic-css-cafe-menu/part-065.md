@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e07276f782bb46b93d
+id: 5f3ef6e0a81099d9a697b550
 title: Part 65
 challengeType: 0
 dashedName: part-65
@@ -7,14 +7,38 @@ dashedName: part-65
 
 # --description--
 
-Add a `footer` element below the `main` element, where you can some additional information.
+Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
 
 # --hints--
 
-Test 1
+You should not modify the existing `footer` element.
 
 ```js
+assert($('footer').length === 1);
+```
 
+Your new `p` element should be nested within your `footer` element.
+
+```js
+assert($('footer').children('p').length === 1);
+```
+
+Your new `a` element should be nested within your new `p` element.
+
+```js
+assert($('footer').children('p').children('a').length === 1);
+```
+
+Your new `a` element should have the text `Visit our website`.
+
+```js
+assert($('footer').find('a')[0].innerText.match(/Visit our website/i));
+```
+
+Your new `a` element should link to `https://www.freecodecamp.org`. Remember that `a` elements use the `href` attribute to create a link.
+
+```js
+assert($('footer').find('a').attr('href') === 'https://www.freecodecamp.org');
 ```
 
 # --seed--
@@ -36,15 +60,14 @@ Test 1
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
---fcc-editable-region--
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -73,6 +96,9 @@ Test 1
         </section>
       </main>
 --fcc-editable-region--
+      <footer>
+      </footer>
+--fcc-editable-region--
     </div>
   </body>
 <html>
@@ -80,7 +106,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
 

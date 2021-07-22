@@ -144,6 +144,7 @@
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
     "react/jsx-wrap-multilines": 2,
+    "react/jsx-fragments": 2,
     "react/no-did-mount-set-state": 2,
     "react/no-did-update-set-state": 2,
     "react/no-multi-comp": [2, { "ignoreStateless": true }],

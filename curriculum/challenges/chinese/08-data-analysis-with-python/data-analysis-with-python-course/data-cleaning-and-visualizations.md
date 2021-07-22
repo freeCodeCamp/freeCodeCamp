@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c160
-title: Data Cleaning and Visualizations
+title: 数据清理和可视化
 challengeType: 11
 videoId: mHjxzFS5_Z0
 dashedName: data-cleaning-and-visualizations
@@ -8,18 +8,18 @@ dashedName: data-cleaning-and-visualizations
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在视频中我们使用的编辑器工具是在 notebook.ai 这个平台，你也可以选择用其他的平台，比如说 Google Colab 也是一个不错的选择。*
 
-More resources:
+更多资源：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
+-   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-When using Matplotlib's global API, what does the order of numbers mean here?
+当使用 Matplotlib 的全局 API 时，数字的顺序在这里意味着什么？
 
 ```py
 plt.subplot(1, 2, 1)
@@ -27,15 +27,15 @@ plt.subplot(1, 2, 1)
 
 ## --answers--
 
-My figure will have one column, two rows, and I am going to start drawing in the first (left) plot.
+这里将创建一个图像包括一列、两行，并且我将开始在第一个图（左）绘图。
 
 ---
 
-I am going to start drawing in the first (left) plot, my figure will have two rows, and my figure will have one column.
+我将开始在第一个图表（左）绘图，同时我的图像将有两行，也将有一列。
 
 ---
 
-My figure will have one row, two columns, and I am going to start drawing in the first (left) plot.
+这里将创建一个图像包括一行、两列，并且我将开始在第一个图表（左）绘图。
 
 ## --video-solution--
 

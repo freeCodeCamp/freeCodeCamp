@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036154
-title: Combine Multiple Reducers
+title: Combinar Múltiplos Reducers
 challengeType: 6
 forumTopicId: 301436
 dashedName: combine-multiple-reducers
@@ -8,11 +8,11 @@ dashedName: combine-multiple-reducers
 
 # --description--
 
-When the state of your app begins to grow more complex, it may be tempting to divide state into multiple pieces. Instead, remember the first principle of Redux: all app state is held in a single state object in the store. Therefore, Redux provides reducer composition as a solution for a complex state model. You define multiple reducers to handle different pieces of your application's state, then compose these reducers together into one root reducer. The root reducer is then passed into the Redux `createStore()` method.
+Quando o estado do seu app começa a se tornar mais complexo, pode ser tentador dividir o estado em várias peças. Em vez disso, lembre-se do primeiro princípio do Redux: todos os estados do aplicativo são mantidos em um único objeto de estado na store. Portanto, Redux fornece a composição do redutor como solução para um modelo de estado complexo. Você define vários reducers para lidar com diferentes partes do estado da sua aplicação, e então compõe estes reducers em um único reducer raiz. O reducer raiz é então passado para o método Redux `createStore()`.
 
-In order to let us combine multiple reducers together, Redux provides the `combineReducers()` method. This method accepts an object as an argument in which you define properties which associate keys to specific reducer functions. The name you give to the keys will be used by Redux as the name for the associated piece of state.
+Para que possamos combinar múltiplos reducers juntos, Redux fornece o método `combineReducers()`. Este método aceita um objeto como argumento no qual você define propriedades que associam chaves a funções específicas de reducer. Os nomes que você der às chaves serão usados pelo Redux para pedaço do nome associado do state.
 
-Typically, it is a good practice to create a reducer for each piece of application state when they are distinct or unique in some way. For example, in a note-taking app with user authentication, one reducer could handle authentication while another handles the text and notes that the user is submitting. For such an application, we might write the `combineReducers()` method like this:
+Normalmente, é uma boa prática criar um reducer para cada peça do estado da aplicação quando eles são distintos ou únicos de alguma forma. Por exemplo, em um aplicativo de anotações com autenticação de usuário, um reducer poderia lidar com a autenticação enquanto outro manipula o texto e notas que o usuário está enviando. Para tal aplicação, podemos escrever o método `combineReducers()` assim:
 
 ```js
 const rootReducer = Redux.combineReducers({
@@ -21,15 +21,15 @@ const rootReducer = Redux.combineReducers({
 });
 ```
 
-Now, the key `notes` will contain all of the state associated with our notes and handled by our `notesReducer`. This is how multiple reducers can be composed to manage more complex application state. In this example, the state held in the Redux store would then be a single object containing `auth` and `notes` properties.
+Agora, as chaves `notes` conterão todo o estado associado às nossas notas e serão tratadas pelo nosso `notesReducer`. É assim que múltiplos reducers podem ser compostos para gerenciar um estado mais complexo da aplicação. Neste exemplo, o estado mantido no armazenamento do Redux seria, em seguida, um único objeto contendo as propriedades `auth` e `notes`.
 
 # --instructions--
 
-There are `counterReducer()` and `authReducer()` functions provided in the code editor, along with a Redux store. Finish writing the `rootReducer()` function using the `Redux.combineReducers()` method. Assign `counterReducer` to a key called `count` and `authReducer` to a key called `auth`.
+Existem as funções `counterReducer()` e `authReducer()` fornecidas no editor de código, junto com um store (armazém) Redux. Termine de escrever a função `rootReducer()` usando o método `Redux.combineReducers()`. Atribua `counterReducer` a uma chave chamada `count` e `authReducer` a uma chave chamada `auth`.
 
 # --hints--
 
-The `counterReducer` should increment and decrement the `state`.
+O `counterReducer` deve incrementar e decrementar o `estado`.
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-The `authReducer` should toggle the `state` of `authenticated` between `true` and `false`.
+O `authReducer` deve alternar o `state` de `authenticated` entre `true` e `false`.
 
 ```js
 assert(
@@ -59,7 +59,7 @@ assert(
 );
 ```
 
-The store `state` should have two keys: `count`, which holds a number, and `auth`, which holds an object. The `auth` object should have a property of `authenticated`, which holds a boolean.
+O `state` armazenado deve ter duas chaves: `count`, que contém um número e um `auth`, que contém um objeto. O objeto `auth` deve ter a propriedade `authenticated`, a qual possui um booleano.
 
 ```js
 assert(
@@ -74,7 +74,7 @@ assert(
 );
 ```
 
-The `rootReducer` should be a function that combines the `counterReducer` and the `authReducer`.
+`rootReducer` deve ser uma função que combina o `counterReducer` e o `authReducer`.
 
 ```js
 (getUserInput) =>

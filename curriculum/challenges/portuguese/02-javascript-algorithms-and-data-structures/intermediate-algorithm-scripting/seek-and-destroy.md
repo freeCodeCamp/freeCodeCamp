@@ -1,6 +1,6 @@
 ---
 id: a39963a4c10bc8b4d4f06d7e
-title: Seek and Destroy
+title: Procurar e destruir
 challengeType: 5
 forumTopicId: 16046
 dashedName: seek-and-destroy
@@ -8,37 +8,37 @@ dashedName: seek-and-destroy
 
 # --description--
 
-You will be provided with an initial array (the first argument in the `destroyer` function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+Você receberá um array inicial (o primeiro argumento na função `destroyer`), seguido por um ou mais argumentos. Remova todos os elementos da matriz inicial que são do mesmo valor que esses argumentos.
 
-**Note:** You have to use the `arguments` object.
+**Nota:** Você tem que usar os `argumentos` do objeto.
 
 # --hints--
 
-`destroyer([1, 2, 3, 1, 2, 3], 2, 3)` should return `[1, 1]`.
+`destroyer([1, 2, 3, 1, 2, 3], 2, 3)` deve retornar `[1, 1]`.
 
 ```js
 assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1]);
 ```
 
-`destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)` should return `[1, 5, 1]`.
+`destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)` deve retornar `[1, 5, 1]`.
 
 ```js
 assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1]);
 ```
 
-`destroyer([3, 5, 1, 2, 2], 2, 3, 5)` should return `[1]`.
+`destroyer([3, 5, 1, 2, 2], 2, 3, 5)` deve retornar `[1]`.
 
 ```js
 assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1]);
 ```
 
-`destroyer([2, 3, 2, 3], 2, 3)` should return `[]`.
+`destroyer([2, 3, 2, 3], 2, 3)` deve retornar `[]`.
 
 ```js
 assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), []);
 ```
 
-`destroyer(["tree", "hamburger", 53], "tree", 53)` should return `["hamburger"]`.
+`destroyer(["tree", "hamburger", 53], "tree", 53)` deve retornar `["hamburger"]`.
 
 ```js
 assert.deepEqual(destroyer(['tree', 'hamburger', 53], 'tree', 53), [
@@ -46,7 +46,7 @@ assert.deepEqual(destroyer(['tree', 'hamburger', 53], 'tree', 53), [
 ]);
 ```
 
-`destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")` should return `[12,92,65]`.
+`destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")` deve retornar `[12,92,65]`.
 
 ```js
 assert.deepEqual(
