@@ -25,19 +25,18 @@ import {
   submitComplete,
   updateComplete,
   updateFailed,
-  usernameSelector
+  usernameSelector,
+  types as challengeActionTypes
 } from '../../../redux';
 
 import postUpdate$ from '../utils/postUpdate$';
 import { challengeTypes, submitTypes } from '../../../../utils/challengeTypes';
 import { getVerifyCanClaimCert } from '../../../utils/ajax';
-import { createFlashMessage } from '../../../components/Flash/redux';
 
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(value => {
-      console.log(value);
       if (value.type === 'error') {
         return of(updateFailed(value));
       } else {
@@ -56,7 +55,6 @@ function postChallenge(update, username) {
       return of(updateFailed(update));
     })
   );
-  console.log(saveChallenge);
   return saveChallenge;
 }
 
@@ -106,9 +104,14 @@ function submitProject(type, state) {
     endpoint: '/project-completed',
     payload: challengeInfo
   };
-  console.log(update);
   return postChallenge(update, username).pipe(
-    concat(of(updateSolutionFormValues({})))
+    switchMap(project => {
+      const { type, payload } = project;
+      if (type === challengeActionTypes.updateFailed) {
+        return of(updateFailed(payload));
+      }
+      return of(updateSolutionFormValues({}));
+    })
   );
 }
 
@@ -174,13 +177,10 @@ export default function completionEpic(action$, state$) {
 
       return submitter(type, state).pipe(
         switchMap(({ type, payload }) => {
-          console.log(type, payload);
           if (payload.type === 'error') {
-            return of(
-              createFlashMessage({ type: 'danger', message: payload.message })
-            );
+            return of({ type, payload }).pipe(concat(closeChallengeModal));
           }
-          return of(
+          return of({ type, payload }).pipe(
             concat(closeChallengeModal),
             filter(Boolean),
             finalize(async () => navigate(await pathToNavigateTo()))

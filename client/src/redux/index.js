@@ -579,8 +579,15 @@ export const reducer = handleActions(
       };
     },
     [types.updateFailed]: (state, { payload }) => {
-      console.log(payload);
-      return { ...state };
+      return {
+        ...state,
+        updateFetchState: {
+          pending: false,
+          complete: false,
+          errored: true,
+          error: payload
+        }
+      };
     },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({
       ...state,
