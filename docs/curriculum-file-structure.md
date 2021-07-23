@@ -52,7 +52,8 @@ When renaming a superblock, you need to:
 9. Update the `client/utils/help-category-map.json` to use the new name for the superblock as the key.
 10. Update the certificate name in the `legacyCerts` array of the `client/src/client-only-routes/show-project-links.tsx` if needed.
 11. Update the path value in `client/src/assets/icons/index.tsx`.
-12. If the certificate is enabled in i18n builds, update the value in `config/i18n/all-langs.js`
+12. For each language in `curriculum/i18n/locales`, update the `intro.json` file to use the new superblock name.
+13. If the certificate is enabled in i18n builds, update the value in `config/i18n/all-langs.js`
 
 ### Renaming a Block
 
