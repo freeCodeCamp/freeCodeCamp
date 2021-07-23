@@ -1,7 +1,6 @@
 import { FlashApp, FlashMessageArg } from '../components/Flash/redux';
 import { MainApp } from '.';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
-// const allApps = [FlashApp];
 
 export interface State {
   [FlashApp]: FlashState;
