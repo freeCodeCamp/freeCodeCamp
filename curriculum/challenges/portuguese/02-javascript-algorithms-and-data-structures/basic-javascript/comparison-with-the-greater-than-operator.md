@@ -22,7 +22,7 @@ Tal como o operador de igualdade, o operador maior que converterá os tipos de d
 '1' >  9
 ```
 
-Em ordem, essas expressões seriam iguais à `true`, `false`, `true` e `true`.
+Em ordem, essas expressões seriam iguais à `true`, `true`, `false`, e `false`.
 
 # --instructions--
 
