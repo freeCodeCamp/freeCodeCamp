@@ -36,7 +36,23 @@ There may be times when you need to rename a superblock, block, or challenge. Th
 
 ### Renaming a Superblock
 
-coming soon™
+> [!NOTE]
+> When you rename a superblock, the new folder name is used as the path and should be considered the "correct" name. All other values should be updated to reflect that change.
+
+When renaming a superblock, you need to:
+
+1. Rename the superblock folder in the `english` directory.
+2. Rename the superblock folder in *all* language directories.
+3. For each block within that superblock, update the `superBlock` value in the `meta.json` file.
+4. Rename the superblock folder in `client/src/pages/learn`.
+5. Update the `index.md` file in the above folder, changing the `superBlock` value to match the new name.
+6. For each block folder within the above, update the `index.md` to use the correct `superBlock` value.
+7. Update `client/src/redux/index.ts` to use the correct `title` and `certSlug` for the superblock - the `certSlug` being the new folder name.
+8. Update `client/src/resources/cert-and-project.map.ts` in the same manner, updating the path for the cert at the top of the file, and the `title` and `certSlug` for the certificate and the nested `projects` values.
+9. Update the `client/utils/help-category-map.json` to use the new name for the superblock as the key.
+10. Update the certificate name in the `legacyCerts` array of the `client/src/client-only-routes/show-project-links.tsx` if needed.
+11. Update the path value in `client/src/assets/icons/index.tsx`.
+12. If the certificate is enabled in i18n builds, update the value in `config/i18n/all-langs.js`
 
 ### Renaming a Block
 
