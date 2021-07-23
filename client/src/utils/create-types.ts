@@ -10,7 +10,7 @@ type CreateTypesType = {
  *   ...
  * }
  * @param {array} types Names of the actions.
- * @param {string ns Name of the namespace.
+ * @param {string} ns Name of the namespace.
  * @returns {object} Object with action types.
  */
 export function createTypes(types: string[], ns: string): CreateTypesType {
