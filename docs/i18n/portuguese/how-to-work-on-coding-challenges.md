@@ -4,7 +4,7 @@ Our goal is to develop a fun and clear interactive learning experience.
 
 Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
-We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
+Queremos que os usuários freeCodeCamp atinjam um estado ativo no aprendizado. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
 
 Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
@@ -18,35 +18,35 @@ The content for each challenge is stored in its markdown file. This markdown fil
 
 You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges) directory.
 
-## Set up the tooling for the curriculum
+## Configure as ferramentas para o currículo
 
 Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
 
 - You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
-- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
+- Use o Gitpod, um ambiente gratuito de desenvolvimento on-line. Clicar no botão abaixo irá iniciar um ambiente de desenvolvimento pronto para programar para freeCodeCamp em seu navegador. It only takes a few minutes.
 
-  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+  [![Abra no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
+- Edite os arquivos na interface do GitHub clicando no ícone do lápis no arquivo correspondente. Embora seja a maneira mais rápida, **não é recomendado**, porque você não pode testar suas alterações no GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
 
-### How to work on practice projects
+### Trabalhe em projetos práticos
 
-The practice projects have some additional tooling to help create new projects and steps. To read more, see [these docs](how-to-work-on-practice-projects.md)
+Os projetos práticos tem algumas ferramentas adicionais para criar novos projetos e passos. Para saber mais, veja [esses documentos](how-to-work-on-practice-projects.md)
 
 ## Challenge Template
 
 ````md
 ---
-id: Unique identifier (alphanumerical, MongoDB_id)
-title: 'Challenge Title'
-challengeType: Integer, defined in `client/utils/challengeTypes.js`
-videoUrl: 'url of video explanation'
+id: Identificador exclusivo (alfanumérico, MongoDB_id)
+title: 'Título do desafio'
+challengeType: Inteiro, definido em `client/utils/challengeTypes.js`
+videoUrl: 'url de explicação do vídeo'
 forumTopicId: 12345
 ---
 
-# --description--
+# --descrição--
 
-Challenge description text, in markdown
+Texto descritivo do desafio, em markdown
 
 ```html
 <div>example code</div>
@@ -54,17 +54,17 @@ Challenge description text, in markdown
 
 # --instructions--
 
-Challenge instruction text, in markdown
+Texto com instruções para o desafio, em markdown
 
 # --hints--
 
-Tests to run against user code, in pairs of markdown text and code block test code.
+Testes para executar o código do usuário, em par com o markdown e bloco de código de teste.
 
 ```js
 Code for test one
 ```
 
-More instructions in markdown syntax
+Mais instruções em sintaxe markdown
 
 ```js
 More code
@@ -75,7 +75,7 @@ More code
 ## --before-user-code--
 
 ```lang
-Code evaluated before the user’s code.
+Código avaliado antes do código do usuário.
 ```
 
 ## --after-user-code--
@@ -86,11 +86,11 @@ Code evaluated after the user’s code, and just before the tests
 
 ## --seed-contents--
 
-Boilerplate code to render to the editor. This section should only contain code inside backticks, like the following:
+Código Boilerplate para renderizar para o editor.  Esta seção deve somente conter código dentro de crases, como o seguinte exemplo:
 
 ```html
 <body>
-  <p class="main-text">Hello world!</p>
+  <p class="main-text">Olá mundo!</p>
 </body>
 ```
 
@@ -111,67 +111,67 @@ console.log('freeCodeCamp is awesome!');
 
 # --solutions--
 
-Solutions are used for the CI tests to ensure that changes to the hints will still pass as intended
+Soluções são usadas para os testes CI a fim de garantir que mudanças nas dicas ainda passem conforme o esperado
 
 ```js
-// first solution - the language(s) should match the seed.
+// primeira solução - a(s) linguagem(ns) deve(m) ser a mesma do código fornecido.
 ```
 
 ---
 
 ```js
-// second solution - so if the seed is written in HTML...
+// segunda solução - então se o código fornecido está em HTML...
 ```
 
 ---
 
 ```js
-// third solution etc. - Your solutions should be in HTML.
+// terceira solução etc. - Suas soluções devem estar em HTML.
 ```
 
 # --question--
 
-These fields are currently used for the multiple-choice Python challenges.
+Esses espaços são utilizados geralmente para questões de múltipla escolha dos desafios de Python.
 
 ## --text--
 
-The question text goes here.
+O texto da pergunta vêm aqui.
 
 ## --answers--
 
-Answer 1
+Resposta 1
 
 ---
 
-Answer 2
+Resposta 2
 
 ---
 
-More answers
+Mais respostas
 
 ## --video-solution--
 
-The number for the correct answer goes here.
+O número da resposta correta fica aqui.
 ````
 
 > [!NOTE]
 >
-> 1. In the above sections, examples of `lang` are:
+> 1. Nas seções acima, exemplos de `lang` são:
 >
 > - `html` - HTML/CSS
 > - `js` - JavaScript
 > - `jsx` - JSX
 
-## Numbering Challenges
+## Numeração dos desafios
 
-Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
+Todo desafio precisa de um `id`. Se você não especifica um, então o MongoDB criará um aleatório quando os dados forem salvos. Porém, não queremos que ele faça isso. Queremos que os ids dos desafios sejam consistentes em diferentes ambientes (staging, produção, vários desenvolvedores diferentes, etc.).
 
-To generate a new one in a shell (assuming MongoDB is running separately):
+Para gerar um novo no shell (assumindo que o MongoDB está executando separadamente):
 
-1. Run `mongo` command.
-2. Run `ObjectId()` command.
+1. Execute o comando `mongo`.
+2. Execute o comando `ObjectId()`.
 
-For example:
+Por exemplo:
 
 ```bash
 $ mongo
@@ -183,66 +183,66 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-The result is a new id, for example `5a474d78df58bafeb3535d34` above.
+O resultado é um novo id, por exemplo `5a474d78df58bafeb3535d34` acima.
 
-Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
+Quando tiver seu id, coloque-o no arquivo markdown como campo `id` no topo, ex.
 
 ```yml
 ---
 id: 5a474d78df58bafeb3535d34
-title: Challenge Title
+title: Título do desafio
 ```
 
 ## Naming challenges
 
-Naming things is hard. We've made it easier by imposing some constraints.
+Nomear coisas é difícil. Nós facilitamos com algumas restrições.
 
-All challenge titles should be explicit and should follow this pattern:
+Todos os títulos dos desafios devem estar explícitos e devem seguir este padrão:
 
-\[verb\]\[object clause\]
+\[verb\]\[frase objetiva\]
 
-Here are some example challenge names:
+Aqui estão alguns exemplos de nomes para desafios:
 
-- Use Clockwise Notation to Specify the Padding of an Element
-- Condense arrays with .reduce
-- Use Bracket Notation to Find the First Character in a String
+- Usar a notação de sentido horário para especificar o preenchimento (padding) de um elemento
+- Condensar arrays com .reduce
+- Usar notação de colchetes para encontrar o primeiro caractere em uma string
 
 ## Challenge descriptions/instructions
 
-Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
+As frases devem ser claras e resumidas com o mínimo de termos técnicos. Se usado, o termo técnico deve ser imediatamente definido em inglês simples.
 
-Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
+Mantenha os parágrafos curtos (em torno de 1-4 frases). É mais provável que as pessoas leiam vários parágrafos curtos do que um parágrafo enorme.
 
-Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
+O texto do desafio deve usar a segunda pessoa ("você") para ajudar a dar um tom de conversa. Dessa forma, o texto e as instruções parecem falar diretamente ao usuário freeCodeCamp que está resolvendo o desafio. Tente evitar usar a primeira pessoa ("eu", "nós", "vamos").
 
-Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
+Não use links externos. Eles interrompem o fluxo. Os usuários freeCodeCamp nunca devem precisar pesquisar nada no Google durante esses desafios. Se há recursos que você acha que os usuários irão se beneficiar, adicione-os no artigo relacionado ao guia do desafio.
 
-You can add diagrams if necessary.
+Você pode adicionar diagramas se necessário.
 
-Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
+Não use emojis ou emoticons em desafios. O freeCodeCamp possui uma comunidade global, e o significado cultural de um emoji ou emoticon pode ser diferente ao redor do mundo. Além disso, emojis podem ser mostrados de maneiras diferentes em diferentes sistemas.
 
-Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
+Substantivos próprios devem começar com letra maiúscula quando possível. Abaixo está uma lista de palavras e como devem aparecem nos desafios.
 
 - JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
-- Although sometimes inaccurate, non-hyphenated forms of 'back end' and 'front end' should be used, as they are more widely used.
+- Embora às vezes imprecisas, as formas não hifenizadas de 'back end' e 'front end' devem ser usadas, pois são mais amplamente utilizadas.
 
-### The 2-minute rule
+### A regra dos 2 minutos
 
-Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their code and get all the tests to pass.
+Cada desafio deve ser resolvido em 120 segundos por um nativo da língua inglesa que tenha concluído os desafios anteriores. Isso inclui a quantidade de tempo que leva para ler as instruções, entender o código fornecido, escrever o código e passar nos testes.
 
-If it takes longer than two minutes to complete the challenge, you have two options:
+Se levar mais do que dois minutos para completar um desafio, você tem duas opções:
 
 - Simplify the challenge, or
 - Split the challenge into two challenges.
 
-The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+A regra dos 2 minutos força quem criou o desafio a deixar as instruções resumidas, o código fornecido limpo e seus testes diretos.
 
-We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
+Acompanhamos quanto dura para os usuários resolverem mudanças e usamos essa informação para identificar desafios que precisam ser simplificados ou divididos.
 
-### Modularity
+### Modularidade
 
-Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
+Cada desafio deve ensinar exatamente um conceito, e esse conceito deve estar aparente a partir do nome do desafio.
 
 We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
 

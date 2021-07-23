@@ -39,7 +39,7 @@ Você pode nos ajudar a organizar e moderar issues usando etiquetas [dessa lista
 
 Preste atenção especial às etiquetas `"help wanted"` e `"first timers only"`. Elas devem ser adicionadas aos tópicos que você considere que possam ser abertos aos potenciais contribuidores para realizar um "pull request".
 
-A `"first timer only"` label should be applied to a trivial issue (ex. a typo fix) and should include additional information. Você pode usar esse [modelo de resposta](/moderator-handbook?id=first-timer-only-issues).
+Uma etiqueta `"first timer only"` deve ser aplicada a uma issue trivial (ex. consertando um erro de digitação) e deve incluir informações adicionais. Você pode usar esse [modelo de resposta](/moderator-handbook?id=first-timer-only-issues).
 
 #### Fechando issues e pull requests parados, desatualizados ou inativos
 
@@ -53,7 +53,7 @@ A `"first timer only"` label should be applied to a trivial issue (ex. a typo fi
 
 ### Moderando pull requests
 
-Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's repository. We must perform Quality Assurance (QA) on pull requests before we decide whether to merge them, request changes, or close them.
+Pull Requests (PRs) são como os colaboradores enviam alterações para o repositório do freeCodeCamp. Nós temos que garantir a qualidade dos pull requests antes de decidirmos fazer merge, pedir mudanças ou fechá-los.
 
 #### Tipos de pull requests
 
@@ -67,7 +67,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    Se as mudanças parecem boas, por favor aprove-as comentando "LGTM". Uma vez que um pull request tiver pelo menos duas aprovações (incluindo a sua) dos moderadores ou equipe de desenvolvedores, você pode fazer o merge.
 
-2. **Challenge Code Edits**
+2. **Edições de Código de Desafio**
 
    São mudanças feitas no código do desafio - o objetivo do desafio, a solução do desafio e o texto.
 
@@ -101,7 +101,7 @@ Dependendo do tipo de pull request, siga as regras correspondentes listadas ante
 
 ##### Certifique-se de que os testes de CI passaram:
 
-Antes de dar merge em qualquer pull request, certifique-se que há um aviso dizendo que todos os testes passaram (todos marcados em verde) no pull request. If you see any of the checks failing, please investigate and clarify the root cause. A mudança proposta está quebrando nossos testes? O site vai compilar corretamente se darmos merge no PR? Essas verificações são importantes para a estabilidade da plataforma.
+Antes de dar merge em qualquer pull request, certifique-se que há um aviso dizendo que todos os testes passaram (todos marcados em verde) no pull request. Se alguma das verificações falhou, investigue e tente descobrir qual é a causa raíz. A mudança proposta está quebrando nossos testes? O site vai compilar corretamente se darmos merge no PR? Essas verificações são importantes para a estabilidade da plataforma.
 
 > [!WARNING] Fazer merge em um PR que falhou nas verificações CI/CD pode causar dificuldades para todas as partes interessadas, incluindo o time de desenvolvimento e contribuidores.
 
@@ -144,7 +144,7 @@ Há também situações em que o colaborador está tentando adicionar um link pa
 
 Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
 
-#### Other guidelines for Moderators on GitHub
+#### Outras diretrizes para moderadores no GitHub
 
 Embora você tenha acesso de escrita ao repositório do freeCodeCamp, **você nunca deve enviar o código diretamente para repositórios do freeCodeCamp**. Todos os códigos devem entrar na base de código do freeCodeCamp em forma de pull request a partir de um fork do repositório.
 
@@ -152,7 +152,7 @@ Além disso, você nunca deve aceitar seus próprios PRs. Outro moderador deve r
 
 Se você notar que alguém quebrou o [código de conduta](https://code-of-conduct.freecodecamp.org) em issues do GitHub, ou abriu pull requests com conteúdo ou código malicioso, mande um e-mail para `support[at]freecodecamp.org` com o link do pull request e podemos considerar bani-los da organização do freeCodeCamp no GitHub.
 
-## Moderating the Forum
+## Moderando o Fórum
 
 Como moderador, você ajuda a manter nossa comunidade um lugar agradável para qualquer pessoa aprender e buscar ajuda. Você lidará com postagens sinalizadas e tratará spam, mensagens fora do assunto e outras conversas inapropriadas.
 
@@ -170,7 +170,7 @@ Moderadores do fórum podem apagar as postagens dos usuários. Você só deve fa
 2. Alguém postou um link ou código de natureza maliciosa que pode prejudicar os(as) outros(as) usuários(as) freeCodeCamp que clicarem nele.
 3. Alguém lotou um tópico com muitas mensagens de spam.
 
-### Dealing with spam
+### Lidando com spam
 
 Para a primeira postagem de spam de um usuário, envie uma mensagem explicando o problema e remova o link ou a postagem, conforme apropriado. Deixe uma observação no perfil do usuário explicando a ação que você tomou. Se o problema persistir, então bloqueie silenciosamente o usuário de postar (usando a opção de silêncio no painel de Administração de Usuário). Envie um aviso ao usuário com o Código de Conduta. Marque a opção na mensagem privada que indica que a sua mensagem é um "aviso formal."
 
@@ -264,7 +264,7 @@ Veja como os moderadores lidam com violações do nosso[Código de Conduta](http
 
      Moderador: @username Por favor, use o Codepen ou Pastebin ao postar uma grande quantidade de linhas de código.
 
-   - Or if you really have to explain why:
+   - Ou se você realmente tem que explicar o motivo:
 
      Moderador: @username Por favor, use Codepen ou Pastebin ao postar uma grande quantidade de linhas de código, pois isso perturba o chat e pode ser considerado spam de acordo com o nosso Código de Conduta.
 
@@ -292,116 +292,117 @@ Veja como os moderadores lidam com violações do nosso[Código de Conduta](http
 
     Se você não for ficar ativo como Moderador por um tempo devido a motivo de viagem, doença ou qualquer outra razão, certifique-se de avisar aos outros no canal `#mod-chat`. Isso para sabermos se podemos contar contigo para ser regularmente ativo no servidor ou não.
 
-## How to become a moderator
+## Como se tornar um moderador
 
-Suppose you are helping people in the community consistently over time. In that case, our Moderator Team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
+Suponha que você está ajudando pessoas na comunidade de modo consistente. Nesse caso, nosso Time de Moderadores vai notar você e um deles vai mencionar você como um possível moderador que pode ser da [nossa equipe](https://forum.freecodecamp.org/g/Team). Não há atalhos para se tornar um moderador.
 
-If you are approved, we will add you to our Moderator Teams on [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [forum](https://forum.freecodecamp.org/g/moderators), and chat etc.
+Se for aprovado, nós adicionaremos você ao nosso Time de Moderadores no [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [fórum](https://forum.freecodecamp.org/g/moderators), chat, etc.
 
-> [!NOTE] For GitHub: After you've been accepted as a moderator, you will receive a Github repository invitation. You'll need to head over towards [freeCodeCamp GitHub Organisation Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
+> [!NOTE] GitHub: Depois que foi aceito como moderador, você receberá um convite de repositório do GitHub. Você precisará visitar [freeCodeCamp GitHub Organisation Invitation](https://github.com/orgs/freeCodeCamp/invitation) para poder aceitar o convite.
 > 
-> This is required for us to be able to give you write access to some of our repositories.
+> Isso é necessário para nós podermos dar a você acesso de escrita em alguns de nossos repositórios.
 
-## How we retire inactive moderators
+## Como nós retiramos moderadores inativos
 
-Please note that we will frequently remove mods whom we think are inactive. When we do this, we will send the following message:
+Observe que, frequentemente, vamos remover moderadores que achamos estarem inativos. Quando fizermos isso, mandaremos a seguinte mensagem:
 
 ```markdown
-This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our Moderator team. We deeply appreciate your help in the past.
+Essa é uma mensagem padrão notificando que você não parece ter sido um moderador ativo recentemente. Sendo assim, estamos removendo você do nosso time de Moderadores. Nós agradecemos profundamente sua ajuda no passado.
 
-If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting me know.
+Se acha que fizemos isso por engano ou quando você estiver pronto para voltar e contribuir mais, apenas responda essa mensagem me avisando.
 ```
 
-## How our Contributors room works
+## Como funciona nossa sala de Contribuidores
 
-Anyone is welcome in the [Contributors room on our chat server](https://chat.freecodecamp.org/channel/contributors). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
+Todos são bem-vindos na [Sala de contribuidores no nosso servidor de chat](https://chat.freecodecamp.org/channel/contributors). É a sala de chat destinada aos moderadores e outros usuários freeCodeCamp que estão contribuindo para nossa comunidade de diversas formas, incluindo através de grupos de estudo.
 
-We assume contributors will read anything in this room that directly mentions them with an `@username`. Everything else is optional, but feel free to read anything anyone posts in there and interact.
+Assumimos que os contribuidores lerão tudo que for postado nessa sala que diretamente os mencione com um `@username`. Tudo o mais é opcional, mas sinta-se à vontade para ler e interagir com tudo que todos postam lá.
 
-## Dealing with solicitors
+## Lidando com solicitadores
 
-You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
+Você pode ser abordado por organizações que querem formar uma parceria com o freeCodeCamp de alguma maneira. Quando você perceber que essa é a intenção deles, **pedimos que pare de conversar com eles** e diga-lhes para enviar um e-mail para `team[at]freecodecamp.org`.
 
-We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
+Recebemos propostas como essa com frequência e a equipe está em melhor posição para julgar se tal relação valerá a pena para nossa comunidade (e raramente valem).
 
-## Dealing with (mental) health inquiries
+## Lidando com consultas sobre saúde (mental)
 
-You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
+Você pode encontrar situações onde os usuários procuram aconselhamento médico ou estão lidando com questões de saúde mental e buscando apoio.
 
-As a matter of policy, you should avoid talking privately about these matters. Should the situation reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help.
+Como parte de nossa política, você deve evitar falar em privado sobre essas questões. Se a situação em algum ponto refletir o freeCodeCamp, queremos ter a(s) conversa(s) em arquivo. Deixe claro que não somos profissionais da medicina e que você encoraja o usuário a procurar ajuda profissional.
 
-As difficult as it sometimes can be, avoid giving any tips or advice other than pointing the user in the direction of professional help!
+Apesar de ser difícil às vezes, evite dar qualquer dica ou conselho que não seja indicar ao usuário ajuda profissional!
 
-If this happens on our chat server: Create a private channel for the user and the mod team. This can be done with the bot's `private` command.
+Se isso ocorrer no nosso servidor de chat: crie um canal privado para o usuário e o time de moderadores. Isso pode ser feito com o comando `private` do bot.
 
-- The user is guaranteed some privacy
-- Public chat is no longer disrupted
-- Other team members can pitch in, should you be uncomfortable dealing with the situation yourself
+- É garantida privacidade a esse usuário
+- O chat público não está mais interrompido
+- Outros membros do time podem contribuir caso você se sinta desconfortável ao lidar com a situação sozinho
 
-Helpful URLs:
+Links úteis:
 
 http://www.suicide.org/international-suicide-hotlines.html
 
-## A note on free speech
+## Uma nota sobre liberdade de expressão
 
-Sometimes people will defend something offensive or incendiary that they said as "free speech."
+De vez em quando, as pessoas vão defender algo ofensivo ou rebelde que elas disseram como sendo "liberdade de expressão."
 
-This XKCD comic summarizes perfectly most communities' thoughts on free speech. So if someone defends something in the name of "free speech", feel free to send it to them.
+Esse quadrinho da XKDC resume perfeitamente o pensamento da maioria das comunidades sobre liberdade de expressão. Então, se alguém defende algo que está dizendo como "liberdade de expressão", sinta-se à vontade para enviar isso.
 
 <div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
 
-Thanks for reading this, and thanks for helping the developer community!
+Obrigado por ler e obrigado por ajudar a desenvolver a comunidade!
 
-## Reply Templates
+## Modelos de resposta
 
-These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues and pull requests.
+Esses são alguns dos modelos de resposta que você talvez use enquanto estiver cuidando de issues e pull requests.
 
-> You can make your own with GitHub's built-in [**Saved replies**](https://github.com/settings/replies/) feature or use the ones below.
+> Você pode fazer seu próprio modelo com a funcionalidade embutida do GitHub: [**Saved replies**](https://github.com/settings/replies/) ou usar as citadas abaixo.
 
-### Thank you
+### Obrigado(a)
 
 ```markdown
-Thank you for your contribution to the page! 👍
-We are happy to accept these changes and look forward to future contributions. 🎉
+Obrigado(a) por contribuir com a página! 👍
+Estamos felizes em aceitar essas mudanças e esperamos contribuições futuras. 🎉
 ```
 
-### Thank you and congrats
+### Obrigado(a) e parabéns
 
-> For thanking and encouraging first-time contributors.
+> Para agradecer e encorajar contribuidores de primeira viagem.
 
 ```markdown
-Hi @username. Congrats on your first pull request (PR)! 🎉
+Olá, @username. Parabéns por seu primeiro pull request (PR)! 🎉
 
-Thank you for your contribution to the page! 👍
-We are happy to accept these changes and look forward to future contributions. 📝
+Obrigado(a) por contribuir com a página! 👍
+Estamos felizes em aceitar essas mudanças e esperamos contribuições futuras. 📝
 ```
 
-### Build Error
+### Erro de build
 
 ```markdown
-Hey @username
+Olá, @username.
 
-We would love to be able to merge your changes but it looks like there is an error with the CI build. ⚠️
+Gostaríamos imensamente de poder fazer merge em suas mudanças, mas parece que há um erro com o build de CI. ⚠️
 
-Once you resolve these issues, we will be able to review your PR and merge it. 😊
+Assim que você resolver essas issues, nós poderemos rever seu PR e fazer o merge. 😊
 
 ---
 
-Feel free to reference the [contributing guidelines](https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges?id=testing-challenges) for instructions on running the CI build locally. ✅
+Fique à vontade para recorrer às [diretrizes de contribuição]
+(https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges?id=testing-challenges) para ver instruções sobre como executar o build de CI localmente. ✅
 ```
 
-### Syncing Fork
+### Sincronização dos forks
 
-> When PR is not up to date with the `main` branch.
+> Quando um PR não está atualizado com a branch `main`.
 
 ````markdown
-Hey @username
+Olá, @username.
 
-We would love to be able to merge your changes, but it looks like the branch is not up to date. ⚠️
+Gostaríamos imensamente de poder fazer merge de suas mudanças mas parece que a branch não está atualizada. ⚠️
 
-To resolve this error, you will have to sync the latest changes from the `main` branch of the `freeCodeCamp/freeCodeCamp` repo.
+Para resolver esse erro, você terá que sincronizar as últimas mudanças da branch `main` do repositório `freeCodeCamp/freeCodeCamp`.
 
-Using the command line, you can do this in three easy steps:
+Usando a linha de comando, você pode fazer isso em três etapas fáceis:
 
 ```bash
 git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
@@ -411,129 +412,129 @@ git fetch upstream
 git pull upstream master
 ````
 
-If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
+Se você está usando uma interface, você pode simplesmente usar `Add a new remote...` e usar o link `git://github.com/freeCodeCamp/freeCodeCamp.git`.
 
-Once you sync your fork and pass the build, we will be able to review your PR and merge it. 😊
+Quando sincronizar seu fork e passar na compilação, vamos ser capazes de revisar seu PR e fazer merge. 😊
 
 ---
 
-Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
+Fique à vontade para recorrer ao artigo [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) no GitHub para mais ideias de como manter seu fork atualizado com o repositório upstream. 🔄
 ````
 
-### Merge Conflicts
+### Conflitos de merge
 
-> When PR has merge conflicts that need to be resolved.¹
+> Quando um PR tem conflitos de merge, isso precisa ser resolvido.¹
 
 ```markdown
-Hey @username
+Olá, @username.
 
-We would love to be able to merge your changes, but it looks like you have some merge conflicts. ⚠️
+Gostaríamos de poder fazer merge em suas mudanças, mas parece que há algum conflito no merge. ⚠️
 
-Once you resolve these conflicts, we will be able to review your PR and merge it. 😊
+Assim que você resolver esses conflitos, nós poderemos revisar seu PR e fazer o merge. 😊
 
 ---
 
-If you're not familiar with the merge conflict process, feel free to look over GitHub's guide on ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
+Se você não estiver familiarizado com o processo de conflito de merge, fique à vontade para ver o guia do GitHub em ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
 
-Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+Além disso, é uma boa prática escrever uma breve descrição das suas mudanças ao criar um PR no GitHub. 📝
 ````
 
-¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
+¹ Se é a primeira vez de um contribuidor e ele tem um conflito de merge, os mantenedores resolverão o conflito para ele.
 
-### Duplicate
+### Duplicado
 
-> When PR is repetitive or a duplicate.
+> Quando um PR é duplo ou repetitivo.
 
 ```markdown
-Hey @username
+Olá, @username.
 
-This PR seems to make similar changes as the existing PR <#number>. As such, we are going to close this as duplicate.
+Esse PR parece fazer alterações semelhantes às do PR <#number> que já existe. Então, vamos fechar esse por ser duplicado.
 
-If you feel you have additional changes to expand upon this PR, please feel free to push your commits and request this PR be reopened.
+Se você tiver mudanças adicionais para expandir esse PR, fique à vontade para manter seu push e pedir que esse PR seja reaberto.
 
-Thanks again! 😊
+Obrigado(a) de novo! 😊
 
 ---
 
-If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+Se você tiver alguma pergunta, sinta-se à vontade para fazê-la na [categoria 'Contributors' no nosso fórum](https://forum.freecodecamp.org/c/contributors) ou na [sala de bate-papo dos contribuidores](https://chat.freecodecamp.org/channel/contributors).
 ```
 
-### Closing invalid pull requests
+### Fechando pull requests inválidos
 
-> When PR is invalid.
+> Quando um PR é inválido.
 
 ```markdown
-Hey @username
+Olá, @username.
 
-Thank you for opening this pull request.
+Obrigado(a) por abrir esse pull request.
 
-This is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.
+Essa é uma mensagem padrão para notificar que nós revisamos o seu pull request e decidimos não aprová-lo. Gostaríamos de receber seus pull requests futuramente.
 
-Thank you and happy coding.
+Obrigado(a) e feliz programação.
 ```
 
-> When PR adds links to external resources.
+> Quando o PR adiciona links para recursos externos.
 
 ```markdown
-Thank you for your pull request.
+Obrigado(a) pelo seu pull request.
 
-We are closing this pull request. Please suggest links and other details to add the challenge's corresponding guide post through [a forum topic](https://forum.freecodecamp.org/new-topic?category=Contributors&title=&body=**What%20is%20your%20hint%20or%20solution%20suggestion%3F**%0A%0A%0A%0A%0A**Challenge%3A**%0A%0A%0A**Link%20to%20the%20challenge%3A**) instead.
+Estamos fechando esse pull request. Pedimos que, em vez de sugerir links e outros detalhes para adicionar à postagem guia correspondente ao desafio por aqui, que você faça isso pelo [tópico do fórum](https://forum.freecodecamp.org/new-topic?category=Contributors&title=&body=**What%20is%20your%20hint%20or%20solution%20suggestion%3F**%0A%0A%0A%0A%0A**Challenge%3A**%0A%0A%0A**Link%20to%20the%20challenge%3A**).
 
-If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
+Se você acha que cometemos um erro ao fechar essa issue, peça para que seja reaberta e adicione mais detalhes. Obrigado(a) e feliz programação.
 ```
 
-### Closing Invalid Issues
+### Fechando issues inválidas
 
-> When an issue relates to the camper's code.
+> Quando uma issue se refere ao código do usuário freeCodeCamp.
 
 ```markdown
-Thank you for reporting this issue.
+Obrigado(a) por reportar este problema.
 
-This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
+Essa é uma mensagem padrão para notificar que essa issue parece ser um pedido de ajuda. Ao invés de pedir ajuda aqui, clique no botão **"Obter ajuda"** do desafio no freeCodeCamp, e escolha a opção **"Pedir ajuda"**, onde você poderá criar uma pergunta na parte direita do fórum. Geralmente, os voluntários no fórum respondem às perguntas em poucas horas e podem ajudar a determinar se existe um problema com seu código ou com os testes do desafio.
 
-If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
+Se os membros do fórum determinarem que não há nada errado com o seu código, você pode solicitar a reabertura desta issue.
 
-Thank you and happy coding.
+Obrigado(a) e feliz programação.
 ```
 
-> When an issue is duplicate of an earlier issue
+> Quando uma issue é a mesma que uma issue anterior
 
 ```markdown
-Thank you for reporting this issue.
+Obrigado(a) por reportar este problema.
 
-This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so we are closing it as a duplicate.
+Essa é uma mensagem padrão avisando que essa issue parece ser igual a issue #XXXXX, então vamos fechá-la.
 
-If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
+Se você acha que cometemos um erro ao fechar essa issue, peça para que seja reaberta e adicione mais detalhes. Obrigado(a) e feliz programação.
 ```
 
-> When an issue is fixed in staging.
+> Quando uma issue foi resolvida na fase de preparo.
 
 ```markdown
-Thank you for reporting this issue.
+Obrigado(a) por reportar este problema.
 
-This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
+Essa é uma mensagem padrão notificando você de que o problema mencionado aqui está presente na produção, mas que já foi resolvido na fase de preparo. Isso significa que da próxima vez que colocarmos a branch de preparo em produção, esse problema deve estar resolvido. Por isso, estamos fechando essa issue.
 
-If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
+Se você acha que cometemos um erro ao fechar essa issue, peça para que seja reaberta e adicione mais detalhes. Obrigado(a) e feliz programação.
 ```
 
-### First Timer Only Issues
+### Somente para aqueles que lançam uma issue pela primeira vez
 
-> When an issue is deemed to be eligible for first time code contributors.
+> Quando uma issue é considerada eligível pela primeira vez como contribuição ao código.
 
 ```markdown
-Thanks for opening this issue.
+Obrigado(a) por abrir essa issue.
 
-This looks something that can be fixed by "first time" code contributors to this repository. Here are the files that you should be looking at to work on a fix:
+Isso parece algo que pode ser corrigido por aqueles que contribuem com código pela primeira vez a esse repositório. Aqui estão os arquivos que você deve olhar para trabalhar em uma correção:
 
-List of files:
+Lista de arquivos:
 
 1. ...
 2. ...
 3. ...
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
+Certifique-se de que você leu [nosso guia de contribuição](https://contribute.freecodecamp.org/#/), pois nós priorizamos contribuidores que seguiram as instruções em nossos guias. Junte-se a nós na [nossa sala de bate-papo](https://chat.freecodecamp.org/channel/contributors) ou [no fórum](https://forum.freecodecamp.org/c/contributors/3). Se você precisar de ajuda para contribuir, os moderadores vão te guiar.
 
-Sometimes we may get more than one pull requests. We typically accept the most quality contribution followed by the one that is made first.
+Algumas vezes, nós podemos receber mais de um pull-request. Nós tipicamente aceitamos a contribuição mais qualificada seguida pela que foi feita primeiro.
 
-Happy contributing.
+Boas contribuições.
 ```
