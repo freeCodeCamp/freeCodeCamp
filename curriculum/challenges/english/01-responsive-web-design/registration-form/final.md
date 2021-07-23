@@ -4,7 +4,7 @@ id:
   id: "`ð'\t\x9A\x15°\x04\NV=Ó"
 title: Final Prototype
 challengeType: 0
-dashedName: part-25
+dashedName: part-43
 ---
 
 # --description--
@@ -48,11 +48,11 @@ Test 1
 		<fieldset>
 			<!-- <label for="email">Email: </label>
       <input type="email" name="email" /> -->
-			<label>Enter Your First Name: <input type="text" required /></label>
-			<label>Enter Your Last Name: <input type="text" required /></label>
+			<label>Enter Your First Name: <input type="text" name="first-name" required /></label>
+			<label>Enter Your Last Name: <input type="text" name="last-name" required /></label>
 			<label>Enter Your Email: <input type="email" name="email" required /></label>
 			<label>Create a New Password: 
-				<input type="password" minlength="8" pattern="[a-z0-5]{8,}" required />
+				<input type="password" name="password" minlength="8" pattern="[a-z0-5]{8,}" required />
 			</label>
 		</fieldset>
 		<fieldset>
@@ -61,17 +61,17 @@ Test 1
 			<label><input type="radio" name="account-type" class="inline" /> Business
 				Account</label>
 			<label>
-				<input type="checkbox" required class="inline" /> I accept the
+				<input type="checkbox" name="terms" required class="inline" /> I accept the
 				<a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
 			</label>
 		</fieldset>
 		<fieldset>
-			<label>Upload a profile picture: <input type="file" /></label>
+			<label>Upload a profile picture: <input type="file" name="file" /></label>
 			<label>Input your age (years):
-				<input type="number" min="0" max="120" />
+				<input type="number" name="age" min="13" max="120" />
 			</label>
 			<label id="hear">How did you hear about us?
-				<select>
+				<select name="referrer">
 					<option value="">(select one)</option>
 					<option value="1">freeCodeCamp News</option>
 					<option value="2">freeCodeCamp YouTube Channel</option>
@@ -81,7 +81,7 @@ Test 1
 			</label>
 			<label>
 				Provide a bio:
-				<textarea name="y" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+				<textarea name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
 			</label>
 		</fieldset>
 		<input type="submit" value="Submit" />
@@ -131,14 +131,14 @@ fieldset:not(:last-of-type) {
 }
 
 label {
-	width: 100%;
+	/* width: 100%; */
 	display: block;
 	margin: 0.5rem 0;
 }
 
-label input,
-label textarea,
-label select {
+input,
+textarea,
+select {
 	margin: 10px 0 0 0;
 	width: 100%;
 }
