@@ -15,6 +15,7 @@
     "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp"
   },
   "nav": {
-    "forum": "https://forum.freecodecamp.org/"
+    "forum": "https://forum.freecodecamp.org/",
+    "news": "https://freecodecamp.org/news/"
   }
 }

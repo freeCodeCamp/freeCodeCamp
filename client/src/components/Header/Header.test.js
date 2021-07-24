@@ -6,6 +6,7 @@ import { NavLinks } from './components/nav-links';
 import AuthOrProfile from './components/auth-or-profile';
 
 import envData from '../../../../config/env.json';
+import { useTranslation, withTranslation } from 'react-i18next';
 
 const { apiLocation, clientLocale } = envData;
 
@@ -46,9 +47,15 @@ describe('<NavLinks />', () => {
       },
       toggleNightMode: theme => theme
     };
+
+    const testComp = React.createElement(
+      withTranslation()(NavLinks),
+      ...landingPageProps
+    );
     const shallow = new ShallowRenderer();
-    shallow.render(<NavLinks {...landingPageProps} />);
+    shallow.render(testComp);
     const view = shallow.getRenderOutput();
+
     expect(
       hasDonateNavItem(view) &&
         hasSignInNavItem(view) &&
@@ -72,6 +79,7 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
+      t: useTranslation.t,
       toggleNightMode: theme => theme
     };
     const shallow = new ShallowRenderer();
@@ -101,6 +109,7 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
+      t: useTranslation.t,
       toggleNightMode: theme => theme
     };
     const shallow = new ShallowRenderer();

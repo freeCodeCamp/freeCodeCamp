@@ -15,6 +15,7 @@
     "other-ways-url": "https://chinese.freecodecamp.org/news/how-to-donate-to-free-code-camp/"
   },
   "nav": {
-    "forum": "https://chinese.freecodecamp.org/forum/"
+    "forum": "https://chinese.freecodecamp.org/forum/",
+    "news": "https://chinese.freecodecamp.org/news/"
   }
 }
