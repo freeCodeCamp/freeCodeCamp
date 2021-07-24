@@ -1,6 +1,6 @@
 ---
 id: a3566b1109230028080c9345
-title: Soma Todos os Números em um intervalo
+title: Somar todos os números em um intervalo
 challengeType: 5
 forumTopicId: 16083
 dashedName: sum-all-numbers-in-a-range

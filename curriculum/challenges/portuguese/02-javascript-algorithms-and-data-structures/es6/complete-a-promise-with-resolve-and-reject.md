@@ -1,6 +1,6 @@
 ---
 id: 5cdafbc32913098997531680
-title: Concluir uma Promessa com resolve e reject
+title: Concluir uma promessa com resolve e reject
 challengeType: 1
 forumTopicId: 301196
 dashedName: complete-a-promise-with-resolve-and-reject

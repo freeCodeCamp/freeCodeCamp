@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ab
-title: Entendendo a Sensibilidade a Caracteres Maiúsculos e Minúsculos em Variáveis
+title: Entender a sensibilidade a caracteres maiúsculos e minúsculos em variáveis
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334

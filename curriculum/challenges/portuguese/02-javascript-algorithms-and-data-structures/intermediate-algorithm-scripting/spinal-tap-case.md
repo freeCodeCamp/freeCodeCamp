@@ -1,6 +1,6 @@
 ---
 id: a103376db3ba46b2d50db289
-title: Caso de Toque Espinal
+title: Hifenizar
 challengeType: 5
 forumTopicId: 16078
 dashedName: spinal-tap-case
@@ -8,7 +8,7 @@ dashedName: spinal-tap-case
 
 # --description--
 
-Converta uma string para um caso espinal. Casos espinais são todas-as-palavras-minúsculas-unidas-por-traços.
+Converta uma string transformado os espaços em hífens. Casos espinais são todas-as-palavras-minúsculas-unidas-por-traços.
 
 # --hints--
 

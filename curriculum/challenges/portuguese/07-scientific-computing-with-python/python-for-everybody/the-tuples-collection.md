@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f06c
-title: The Tuples Collection
+title: A coleção de tuplas
 challengeType: 11
 videoId: 3Lxpladfh2k
 dashedName: the-tuples-collection
@@ -10,7 +10,7 @@ dashedName: the-tuples-collection
 
 ## --text--
 
-What will the following code print?:
+O que será impresso pelo código a seguir?:
 
 ```python
 d = dict()

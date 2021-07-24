@@ -1,6 +1,6 @@
 ---
 id: 587d7da9367417b2b2512b69
-title: Ordene um Array Alfabeticamente Usando o Método sort
+title: Ordenar um array alfabeticamente usando o método sort
 challengeType: 1
 forumTopicId: 18303
 dashedName: sort-an-array-alphabetically-using-the-sort-method

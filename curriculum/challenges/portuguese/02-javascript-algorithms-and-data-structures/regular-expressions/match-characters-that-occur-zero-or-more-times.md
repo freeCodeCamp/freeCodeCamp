@@ -1,6 +1,6 @@
 ---
 id: 587d7db6367417b2b2512b9a
-title: Capture Caracteres que Aparecem Zero ou Mais Vezes Seguidas
+title: Capturar caracteres que aparecem zero ou mais vezes seguidas
 challengeType: 1
 forumTopicId: 301351
 dashedName: match-characters-that-occur-zero-or-more-times

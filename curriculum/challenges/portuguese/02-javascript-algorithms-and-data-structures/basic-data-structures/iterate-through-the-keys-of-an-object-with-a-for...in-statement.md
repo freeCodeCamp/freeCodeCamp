@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1d
-title: Itere Através das Chaves de um Objeto com a declaração for...in
+title: Iterar através das chaves de um objeto com a declaração for...in
 challengeType: 1
 forumTopicId: 301162
 dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
@@ -20,7 +20,7 @@ Isso iria exibir no console `Alan`, `Jeff`, `Sarah` e `Ryan` - cada valor em sua
 
 Nessa declaração, definimos uma variável `user` e, como você pode ver, essa variável é redefinida durante cada iteração para cada chave do objeto conforme o comando se repete através do objeto, resultando em cada nome de usuário sendo exibido no console.
 
-**Note:** Objetos não mantém uma ordem para as chaves armazenadas como arrays fazem; Portanto a posição de uma chave em um objeto, ou a ordem relativa na qual ela aparece, é irrelevante quando referenciando ou acessando aquela chave.
+**Observação:** objetos não mantém uma ordem para as chaves armazenadas como arrays fazem; Portanto a posição de uma chave em um objeto, ou a ordem relativa na qual ela aparece, é irrelevante quando referenciando ou acessando aquela chave.
 
 # --instructions--
 

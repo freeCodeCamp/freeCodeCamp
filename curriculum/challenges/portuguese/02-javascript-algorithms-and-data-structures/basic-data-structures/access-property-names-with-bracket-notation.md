@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b1a
-title: Acesse Nomes de Propriedades com Notação de Colchetes
+title: Acessar nomes de propriedades com notação de colchetes
 challengeType: 1
 forumTopicId: 301150
 dashedName: access-property-names-with-bracket-notation

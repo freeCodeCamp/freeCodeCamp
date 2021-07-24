@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b7c
-title: Use Propriedades de Protótipos para Reduzir Código Duplicado
+title: Usar propriedades de protótipos para reduzir código duplicado
 challengeType: 1
 forumTopicId: 301336
 dashedName: use-prototype-properties-to-reduce-duplicate-code

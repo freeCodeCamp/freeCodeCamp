@@ -1,5 +1,5 @@
 ---
-id: 5f45a276c093334f0f6e9df4
+id: 5f45a5a7c49a8251f0bdb527
 title: Part 75
 challengeType: 0
 dashedName: part-75
@@ -7,16 +7,29 @@ dashedName: part-75
 
 # --description--
 
-Focusing on the menu items and prices, there is a fairly large gap between each line.
-
-Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
+Using the same style selector in the previous step, make the font size of the items and prices larger by using a value of `18px`.
 
 # --hints--
 
-Test 1
+You should set the `font-size` property to `18px`.
 
 ```js
+const hasFontSize = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['font-size'] === '18px');
+assert(hasFontSize);
+```
 
+You should use the existing `.item p` selector.
+
+```js
+const hasOneSelector = new __helpers.CSSHelp(document).getStyleDeclarations('.item p');
+assert(hasOneSelector.length === 1);
+```
+
+Your `p` elements nested in your `.item` elements should have a `font-size` of `18px`.
+
+```js
+const itemPFontSize = new __helpers.CSSHelp(document).getStyle('.item p')?.getPropertyValue('font-size');
+assert(itemPFontSize === '18px');
 ```
 
 # --seed--
@@ -41,12 +54,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -88,7 +101,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -124,14 +137,17 @@ hr {
   border-color: brown;
 }
 
---fcc-editable-region--
 h1, h2 {
   font-family: Impact, serif;
 }
 
+--fcc-editable-region--
 .item p {
   display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
+--fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;
@@ -142,6 +158,5 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
---fcc-editable-region--
 ```
 

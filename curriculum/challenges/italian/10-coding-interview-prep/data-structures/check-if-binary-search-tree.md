@@ -1,6 +1,6 @@
 ---
 id: 5cc0c1b32479e176caf3b422
-title: Check if Tree is Binary Search Tree
+title: Controlla se l'albero è un albero binario di ricerca
 challengeType: 1
 forumTopicId: 301624
 dashedName: check-if-tree-is-binary-search-tree
@@ -8,17 +8,17 @@ dashedName: check-if-tree-is-binary-search-tree
 
 # --description--
 
-Since you already know what a binary search tree is, this challenge will establish how it is you can tell that a tree is a binary search tree or not.
+Dal momento che sai già cos'è un albero binario di ricerca, questa sfida stabilirà come è possibile stabilire se un albero è un albero binario di ricerca o no.
 
-The main distinction of a binary search tree is that the nodes are ordered in an organized fashion. Nodes have at most 2 child nodes (placed to the right and/or left) based on if the child node's value is greater than or equal to (right) or less than (left) the parent node.
+Quello che contraddistingue un albero binario di ricerca è che i nodi sono ordinati in modo organizzato. I nodi hanno al massimo 2 nodi figli (posizionati a destra e/o a sinistra) in base al fatto che il valore del nodo figlio sia maggiore o uguale a (destra) o inferiore a (sinistra) quello del nodo principale.
 
 # --instructions--
 
-In this challenge, you will create a utility for your tree. Write a JavaScript method `isBinarySearchTree` which takes a tree as an input and returns a boolean value for whether the tree is a binary search tree or not. Use recursion whenever possible.
+In questa sfida, creerai un'utilità per il tuo albero. Scrivi un metodo JavaScript `isBinarySearchTree` che prende un albero come input e restituisce un valore booleano a seconda se l'albero è un albero binario di ricerca o no. Usa la ricorsione quando possibile.
 
 # --hints--
 
-Your Binary Search Tree should return true when checked with `isBinarySearchTree()`.
+Il tuo albero di ricerca binario dovrebbe restituire true quando controllato con `isBinarySearchTree()`.
 
 ```js
 assert(

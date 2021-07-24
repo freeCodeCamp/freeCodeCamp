@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08d
-title: Representing Relationships in a Relational Database
+title: Representação de relacionamentos em um banco de dados relacional
 challengeType: 11
 videoId: '-orenCNdC2Q'
 dashedName: representing-relationships-in-a-relational-database
@@ -10,23 +10,23 @@ dashedName: representing-relationships-in-a-relational-database
 
 ## --text--
 
-What is a foreign key?
+O que é uma chave estrangeira?
 
 ## --answers--
 
-A key that is not supposed to be there.
+Uma chave que não devia estar ali.
 
 ---
 
-A key that uses non-latin characters.
+Uma chave que usa caracteres não latinos.
 
 ---
 
-A number that points to the primary key of an associated row in a different table.
+Um número que aponta para a chave primária de uma linha associada em uma tabela diferente.
 
 ---
 
-A key that the "real world" might use to look up a row.
+Uma chave que o "mundo real" poderia usar para procurar uma linha.
 
 ## --video-solution--
 

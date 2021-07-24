@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b14
-title: Verifique a Presença de um Elemento com indexOf()
+title: Verificar a presença de um elemento com indexOf()
 challengeType: 1
 forumTopicId: 301154
 dashedName: check-for-the-presence-of-an-element-with-indexof
@@ -24,7 +24,7 @@ fruits.indexOf('pears');
 
 # --instructions--
 
-`indexOf()` pode ser incrivelmente útil para verificar rapidamente a presença de um elemento em um array. Definimos uma função, `quickCheck`, que recebe um array e um elemento como argumentos. Modifique a função usando `indexOf()` para que retorne `true` se o elemento passado existe no array, e`false` caso não exista.
+`indexOf()` pode ser incrivelmente útil para verificar rapidamente a presença de um elemento em um array. Definimos uma função, `quickCheck`, que recebe um array e um elemento como argumentos. Modifique a função usando `indexOf()` para que retorne `true` se o elemento passado existe no array, e `false` caso não exista.
 
 # --hints--
 

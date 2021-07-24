@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d8
-title: Comparações com o Operador lógico E
+title: Comparar com o operador lógico AND
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvbRVtr'
 forumTopicId: 16799

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08808
-title: O que fazer quando uma tipografia não estiver disponível
+title: Especificar soluções para quando uma tipografia não estiver disponível
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 forumTopicId: 18304

@@ -1,6 +1,6 @@
 ---
 id: 587d778e367417b2b2512aab
-title: Melhore a legibilidade com textos de alto contraste
+title: Melhorar a legibilidade com textos de alto contraste
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cKb3nCq'
 forumTopicId: 301017

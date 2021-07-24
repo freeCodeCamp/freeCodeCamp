@@ -1,6 +1,6 @@
 ---
 id: 587d7db2367417b2b2512b8c
-title: Utilize um IIFE para Criar um Módulo
+title: Usar uma IIFE para criar um módulo
 challengeType: 1
 forumTopicId: 301332
 dashedName: use-an-iife-to-create-a-module

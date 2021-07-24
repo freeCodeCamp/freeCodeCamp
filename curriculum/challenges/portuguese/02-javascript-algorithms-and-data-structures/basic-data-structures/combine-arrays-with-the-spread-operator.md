@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b17
-title: Combinar Arrays com o Operador Spread
+title: Combinar arrays com o operador spread
 challengeType: 1
 forumTopicId: 301156
 dashedName: combine-arrays-with-the-spread-operator

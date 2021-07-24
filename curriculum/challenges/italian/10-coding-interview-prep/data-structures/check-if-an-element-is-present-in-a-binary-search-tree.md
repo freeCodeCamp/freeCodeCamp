@@ -1,6 +1,6 @@
 ---
 id: 587d8257367417b2b2512c7c
-title: Check if an Element is Present in a Binary Search Tree
+title: Controllare se un elemento è presente in un albero binario di ricerca
 challengeType: 1
 forumTopicId: 301623
 dashedName: check-if-an-element-is-present-in-a-binary-search-tree
@@ -8,15 +8,15 @@ dashedName: check-if-an-element-is-present-in-a-binary-search-tree
 
 # --description--
 
-Now that we have a general sense of what a binary search tree is let's talk about it in a little more detail. Binary search trees provide logarithmic time for the common operations of lookup, insertion, and deletion in the average case, and linear time in the worst case. Why is this? Each of those basic operations requires us to find an item in the tree (or in the case of insertion to find where it should go) and because of the tree structure at each parent node we are branching left or right and effectively excluding half the size of the remaining tree. This makes the search proportional to the logarithm of the number of nodes in the tree, which creates logarithmic time for these operations in the average case. Ok, but what about the worst case? Well, consider constructing a tree from the following values, adding them left to right: `10`, `12`, `17`, `25`. Following our rules for a binary search tree, we will add `12` to the right of `10`, `17` to the right of this, and `25` to the right of this. Now our tree resembles a linked list and traversing it to find `25` would require us to traverse all the items in linear fashion. Hence, linear time in the worst case. The problem here is that the tree is unbalanced. We'll look a little more into what this means in the following challenges.
+Ora che abbiamo un senso generale di cosa è un albero binario di ricerca, parliamo di esso in maggiore dettaglio. Gli alberi binari di ricerca richiedono un tempo logaritmico per le operazioni comuni di ricerca, inserimento, e cancellazione nel caso medio, e tempo lineare nel caso peggiore. Perché? Ognuna di queste operazioni di base ci richiede di trovare un elemento nell'albero (o nel caso di inserimento per trovare dove dovrebbe andare) e a causa della struttura ad albero ad ogni nodo genitore ci dirigiamo o a sinistra o a destra escludendo efficacemente metà della dimensione dell'albero rimanente. Questo rende la ricerca proporzionale al logaritmo del numero di nodi nell'albero, che nel caso medio dà un tempo logaritmico per queste operazioni. Ok, ma nel caso peggiore? Bene, immagina di costruire un albero con i seguenti valori, aggiungendoli da sinistra a destra: `10`, `12`, `17`, `25`. Seguendo le nostre regole per un albero di ricerca binario, aggiungeremo `12` alla destra di `10`, `17` a destra di questo, e `25` a destra di questo. Ora il nostro albero assomiglia a una lista collegata e attraversarlo per trovare `25` ci richiederebbe di attraversare tutti gli oggetti in modo lineare. Quindi, tempo lineare nel caso peggiore. Il problema qui è che l'albero non è bilanciato. Esamineremo un po' di più il significato di questo nelle seguenti sfide.
 
 # --instructions--
 
-In this challenge, we will create a utility for our tree. Write a method `isPresent` which takes an integer value as input and returns a boolean value for the presence or absence of that value in the binary search tree.
+In questa sfida, creeremo un'utilità per il nostro albero. Scrivi un metodo `isPresent` che prende un valore intero come input e restituisce un valore booleano per la presenza o l'assenza di quel valore nell'albero binario di ricerca.
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+La struttura di dati `BinarySearchTree` dovrebbe esistere.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `isPresent`.
+L'albero binario di ricerca dovrebbe avere un metodo chiamato `isPresent`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-The `isPresent` method should correctly check for the presence or absence of elements added to the tree.
+Il metodo `isPresent` dovrebbe controllare correttamente la presenza o l'assenza di elementi aggiunti all'albero.
 
 ```js
 assert(
@@ -74,7 +74,7 @@ assert(
 );
 ```
 
-`isPresent` should handle cases where the tree is empty.
+`isPresent` dovrebbe gestire i casi in cui l'albero è vuoto.
 
 ```js
 assert(

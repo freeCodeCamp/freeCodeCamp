@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b96
-title: Capture Letras do Alfabeto
+title: Capturar letras do alfabeto
 challengeType: 1
 forumTopicId: 301354
 dashedName: match-letters-of-the-alphabet
@@ -8,7 +8,7 @@ dashedName: match-letters-of-the-alphabet
 
 # --description--
 
-Você viu como pode usar <dfn>classes de caracteres</dfn> para especificar um grupo de caracteres para capturar. Mas você precisaria escrever muito para definir uma classe larga como, por exemplo, para capturar todas as letras do alfabeto. Felizmente há uma maneira de fazer com que elas fiquem pequenas e simples.
+Você viu como pode usar <dfn>conjuntos de caracteres</dfn> para especificar um grupo de caracteres para capturar. Mas você precisaria escrever muito para definir uma classe larga como, por exemplo, para capturar todas as letras do alfabeto. Felizmente há uma maneira de fazer com que elas fiquem pequenas e simples.
 
 Você pode usar um hífen (`-`) para definir um intervalo de caracteres para capturar dentro de uma classe.
 

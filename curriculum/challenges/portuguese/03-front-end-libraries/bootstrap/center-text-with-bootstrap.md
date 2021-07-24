@@ -8,9 +8,9 @@ dashedName: center-text-with-bootstrap
 
 # --description--
 
-Agora que estamos usando Bootstrap, podemos centralizar nossos elementos de cabeçalho para deixá-los com melhor aparência. Tudo que precisamos fazer é adicionar a classe `text-center` para o nosso elemento `h2`.
+Agora que estamos usando Bootstrap, podemos centralizar nossos elementos de cabeçalho para deixá-los com melhor aparência. Tudo que precisamos fazer é adicionar a classe `text-center` ao nosso elemento `h2`.
 
-Lembre-se que você pode adicionar diversas classes para o mesmo elemento ao separar cada classe com um espaço, dessa forma:
+Lembre-se de que você pode adicionar várias classes ao mesmo elemento separando cada uma delas com um espaço, assim:
 
 ```html
 <h2 class="red-text text-center">your text</h2>
@@ -18,13 +18,13 @@ Lembre-se que você pode adicionar diversas classes para o mesmo elemento ao sep
 
 # --hints--
 
-Seu elemento `h2` deve estar centralizado ao aplicar a classe `text-center`
+O elemento `h2` deve estar centralizado ao aplicar a classe `text-center`
 
 ```js
 assert($('h2').hasClass('text-center'));
 ```
 
-Seu elemento `h2` ainda deve ter a classe `red-text`
+O elemento `h2` ainda deve ter a classe `red-text`
 
 ```js
 assert($('h2').hasClass('red-text'));

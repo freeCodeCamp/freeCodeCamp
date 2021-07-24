@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cc
-title: Manipule Arrays com pop()
+title: Manipular arrays com pop()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236

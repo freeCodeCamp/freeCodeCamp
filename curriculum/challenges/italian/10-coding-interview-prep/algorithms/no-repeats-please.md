@@ -1,6 +1,6 @@
 ---
 id: a7bf700cd123b9a54eef01d5
-title: No Repeats Please
+title: Nessuna ripetizione per favore
 challengeType: 5
 forumTopicId: 16037
 dashedName: no-repeats-please
@@ -8,67 +8,67 @@ dashedName: no-repeats-please
 
 # --description--
 
-Return the number of total permutations of the provided string that don't have repeated consecutive letters. Assume that all characters in the provided string are each unique.
+Restituisci il numero di permutazioni totali della stringa fornita che non hanno lettere consecutive ripetute. Supponiamo che tutti i caratteri della stringa fornita siano univoci.
 
-For example, `aab` should return 2 because it has 6 total permutations (`aab`, `aab`, `aba`, `aba`, `baa`, `baa`), but only 2 of them (`aba` and `aba`) don't have the same letter (in this case `a`) repeating.
+Ad esempio, `aab` dovrebbe restituire 2 perché ha 6 permutazioni totali (`aab`, `aab`, `aba`, `aba`, `baa`, `baa`), ma solo 2 di loro (`aba` e `aba`) non hanno la stessa lettera (in questo caso `a`) ripetuta.
 
 # --hints--
 
-`permAlone("aab")` should return a number.
+`permAlone("aab")` dovrebbe restituire un numero.
 
 ```js
 assert.isNumber(permAlone('aab'));
 ```
 
-`permAlone("aab")` should return 2.
+`permAlone("aab")` dovrebbe restituire 2.
 
 ```js
 assert.strictEqual(permAlone('aab'), 2);
 ```
 
-`permAlone("aaa")` should return 0.
+`permAlone("aaa")` dovrebbe restituire 0.
 
 ```js
 assert.strictEqual(permAlone('aaa'), 0);
 ```
 
-`permAlone("aabb")` should return 8.
+`permAlone("aabb")` dovrebbe restituire 8.
 
 ```js
 assert.strictEqual(permAlone('aabb'), 8);
 ```
 
-`permAlone("abcdefa")` should return 3600.
+`permAlone("abcdefa")` dovrebbe restituire 3600.
 
 ```js
 assert.strictEqual(permAlone('abcdefa'), 3600);
 ```
 
-`permAlone("abfdefa")` should return 2640.
+`permAlone("abfdefa")` dovrebbe restituire 2640.
 
 ```js
 assert.strictEqual(permAlone('abfdefa'), 2640);
 ```
 
-`permAlone("zzzzzzzz")` should return 0.
+`permAlone("zzzzzzzz")` dovrebbe restituire 0.
 
 ```js
 assert.strictEqual(permAlone('zzzzzzzz'), 0);
 ```
 
-`permAlone("a")` should return 1.
+`permAlone("a")` dovrebbe restituire 1.
 
 ```js
 assert.strictEqual(permAlone('a'), 1);
 ```
 
-`permAlone("aaab")` should return 0.
+`permAlone("aaab")` dovrebbe restituire 0.
 
 ```js
 assert.strictEqual(permAlone('aaab'), 0);
 ```
 
-`permAlone("aaabb")` should return 12.
+`permAlone("aaabb")` dovrebbe restituire 12.
 
 ```js
 assert.strictEqual(permAlone('aaabb'), 12);

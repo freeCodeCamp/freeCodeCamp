@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b92
-title: Extraindo Resultados
+title: Extrair resultados
 challengeType: 1
 forumTopicId: 301340
 dashedName: extract-matches

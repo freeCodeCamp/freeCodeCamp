@@ -1,6 +1,6 @@
 ---
 id: 5c3dda8b4d8df89bea71600f
-title: Validando Grupos Mistos de Caracteres
+title: Validando grupos mistos de caracteres
 challengeType: 1
 forumTopicId: 301339
 dashedName: check-for-mixed-grouping-of-characters

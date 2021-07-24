@@ -17,10 +17,48 @@ Cinammon Roll 2.50
 
 # --hints--
 
-Test 1
+You should have four `.dessert` elements.
 
 ```js
+assert($('.dessert').length === 4);
+```
 
+You should have four new `.price` elements.
+
+```js
+assert($('section').last().find('.price').length === 4);
+```
+
+Your `section` element should have eight `p` elements.
+
+```js
+assert($('section').last().find('p').length === 8);
+```
+
+Your `.dessert` elements should have the text `Donut`, `Cherry Pie`, `Cheesecake`, and `Cinammon Roll`.
+
+```js
+const dessert = $('.dessert');
+assert(dessert[0].innerText.match(/donut/i));
+assert(dessert[1].innerText.match(/cherry pie/i));
+assert(dessert[2].innerText.match(/cheesecake/i));
+assert(dessert[3].innerText.match(/cinammon roll/i));
+```
+
+Your new `.price` elements should have the text `1.50`, `2.75`, `3.00`, and `2.50`.
+
+```js
+const prices = $('section').last().find('.price');
+assert(prices[0].innerText.match(/1\.50/));
+assert(prices[1].innerText.match(/2\.75/));
+assert(prices[2].innerText.match(/3\.00/));
+assert(prices[3].innerText.match(/2\.50/));
+```
+
+You should not have any spaces between your `p` elements.
+
+```js
+assert(!code.match(/<\/p>\s+<p/));
 ```
 
 # --seed--
@@ -44,12 +82,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -77,7 +115,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -105,4 +143,3 @@ h1, h2, p {
   width: 25%
 }
 ```
-

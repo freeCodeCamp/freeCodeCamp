@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b95
-title: Capture um Único Caractere com Múltiplas Possibilidades
+title: Capturar um único caractere com múltiplas possibilidades
 challengeType: 1
 forumTopicId: 301357
 dashedName: match-single-character-with-multiple-possibilities

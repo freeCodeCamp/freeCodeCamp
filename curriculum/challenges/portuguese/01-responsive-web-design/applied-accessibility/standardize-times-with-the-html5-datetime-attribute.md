@@ -1,6 +1,6 @@
 ---
 id: 587d778c367417b2b2512aa9
-title: Padronize o tempo com o atributo datetime no HTML5
+title: Padronizar o tempo com o atributo datetime no HTML5
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMgtz'
 forumTopicId: 301025

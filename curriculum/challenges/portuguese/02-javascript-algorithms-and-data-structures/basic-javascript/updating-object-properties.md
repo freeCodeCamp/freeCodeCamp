@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d1
-title: Atualizando Propriedades do Objeto
+title: Atualizar propriedades do objeto
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yEJT4'
 forumTopicId: 18336
@@ -9,7 +9,7 @@ dashedName: updating-object-properties
 
 # --description--
 
-Depois de criar um objeto JavaScript, você pode atualizar suas propriedades a qualquer momento, como você atualizaria qualquer outra variável. Você pode usar notação do ponto ou colchete para atualizar.
+Depois de criar um objeto JavaScript, você pode atualizar suas propriedades a qualquer momento, como você atualizaria qualquer outra variável. Você pode usar notação de ponto ou colchete para atualizar.
 
 Por exemplo, vamos dar uma olhada em `ourDog`:
 

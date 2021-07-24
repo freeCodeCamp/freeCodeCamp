@@ -1,6 +1,6 @@
 ---
 id: 587d7dab367417b2b2512b6f
-title: Use o Método some para Checar Se Pelo Menos Um Elemento em um Array Atende a um Critério
+title: Usar o método some para checar se pelo menos um elemento em um array atende a um critério
 challengeType: 1
 forumTopicId: 301314
 dashedName: use-the-some-method-to-check-that-any-elements-in-an-array-meet-a-criteria

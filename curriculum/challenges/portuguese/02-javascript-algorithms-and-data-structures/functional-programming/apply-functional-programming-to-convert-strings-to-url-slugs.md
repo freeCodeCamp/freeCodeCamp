@@ -1,6 +1,6 @@
 ---
 id: 587d7dab367417b2b2512b6d
-title: Use Programação Funcional para Converter Strings para <i>Slugs</i> de URL
+title: Usar programação funcional para converter strings em slugs de URL
 challengeType: 1
 forumTopicId: 301227
 dashedName: apply-functional-programming-to-convert-strings-to-url-slugs

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d1
-title: Comparação com o Operador de Igualdade Estrita
+title: Comparar com o operador de igualdade estrita
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87atr'
 forumTopicId: 16790

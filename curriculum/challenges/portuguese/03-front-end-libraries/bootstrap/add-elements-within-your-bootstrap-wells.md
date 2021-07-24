@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908849
-title: Adicione elementos em seus Bootstrap Wells
+title: Adicionar elementos aos poços no Bootstrap
 challengeType: 0
 forumTopicId: 16636
 dashedName: add-elements-within-your-bootstrap-wells
@@ -10,11 +10,11 @@ dashedName: add-elements-within-your-bootstrap-wells
 
 Agora estamos na profundidade de diversos elementos `div` em cada coluna da nossa linha. Isso é tão profundo quanto precisamos ir. Agora podemos adicionar nossos elementos `button`.
 
-Aninhe três elementos `button` dentro de cada um de seus elementos `div` contendo o nome de classe `well`.
+Aninhe três elementos `button` dentro de cada um dos elementos `div` contendo o nome de classe `well`.
 
 # --hints--
 
-Três elementos `button` devem ser aninhados dentro de cada um de seus elementos `div` com a classe `well`.
+Três elementos `button` devem ser aninhados dentro de cada um dos elementos `div` com a classe `well`.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ Você deve ter o total de 6 elementos `button`.
 assert($('button') && $('button').length > 5);
 ```
 
-Todos os seus elementos `button` deve conter tag de fechamento.
+Todos os elementos `button` devem conter tag de fechamento.
 
 ```js
 assert(

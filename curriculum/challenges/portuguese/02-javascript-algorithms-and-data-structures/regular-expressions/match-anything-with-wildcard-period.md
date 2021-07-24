@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b94
-title: Encontre Qualquer Coisa com o Caractere Curinga
+title: Encontrar qualquer coisa com o caractere curinga
 challengeType: 1
 forumTopicId: 301348
 dashedName: match-anything-with-wildcard-period

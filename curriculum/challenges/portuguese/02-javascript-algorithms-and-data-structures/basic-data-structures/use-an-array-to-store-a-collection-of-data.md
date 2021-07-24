@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b20
-title: Use um Array para Armazenar uma Coleção de Dados
+title: Usar um array para armazenar uma coleção de dados
 challengeType: 1
 forumTopicId: 301167
 dashedName: use-an-array-to-store-a-collection-of-data

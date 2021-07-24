@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cd
-title: Manipule Arrays Com shift()
+title: Manipular arrays com shift()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVETW'
 forumTopicId: 18238

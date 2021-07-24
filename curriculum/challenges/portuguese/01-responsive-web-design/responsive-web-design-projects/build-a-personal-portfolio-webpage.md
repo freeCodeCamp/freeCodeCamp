@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
-title: Crie uma página de portfólio pessoal
+title: Criar uma página de portfólio pessoal
 challengeType: 3
 forumTopicId: 301143
 dashedName: build-a-personal-portfolio-webpage

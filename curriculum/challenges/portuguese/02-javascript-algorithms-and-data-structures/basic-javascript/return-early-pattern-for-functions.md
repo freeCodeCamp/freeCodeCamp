@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c4
-title: Retornar o Padrão Inicial para Funções
+title: Retornar o padrão inicial para funções
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272

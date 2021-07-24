@@ -1,6 +1,6 @@
 ---
 id: 587d7b8b367417b2b2512b50
-title: Escreva Declaração de Funções Concisas com ES6
+title: Escrever funções declarativas concisas com ES6
 challengeType: 1
 forumTopicId: 301224
 dashedName: write-concise-declarative-functions-with-es6

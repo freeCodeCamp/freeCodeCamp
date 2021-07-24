@@ -1,6 +1,6 @@
 ---
 id: 587d8259367417b2b2512c86
-title: Implement Insertion Sort
+title: Implementare Insertion Sort
 challengeType: 1
 forumTopicId: 301613
 dashedName: implement-insertion-sort
@@ -8,19 +8,19 @@ dashedName: implement-insertion-sort
 
 # --description--
 
-The next sorting method we'll look at is insertion sort. This method works by building up a sorted array at the beginning of the list. It begins the sorted array with the first element. Then it inspects the next element and swaps it backwards into the sorted array until it is in sorted position. It continues iterating through the list and swapping new items backwards into the sorted portion until it reaches the end. This algorithm has quadratic time complexity in the average and worst cases.
+Il prossimo metodo di ordinamento che vedremo è Insertion Sort. Questo metodo funziona costruendo un array ordinato all'inizio della lista. Esso inizia l'array ordinato con il primo elemento. Poi ispeziona l'elemento successivo e lo scambia all'indietro nell'array ordinato fino a quando non è in posizione ordinata. Continua a iterare attraverso la lista e a scambiare nuovi elementi all'indietro nella porzione ordinata fino a raggiungere la fine. Questo algoritmo ha una complessità di tempo quadratica nei casi medi e peggiori.
 
-**Instructions:** Write a function `insertionSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
+**Istruzioni:** Scrivi una funzione `insertionSort` che prende un array di interi come input e restituisce un array di questi interi in ordine dal più piccolo al più grande.
 
 # --hints--
 
-`insertionSort` should be a function.
+`insertionSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof insertionSort == 'function');
 ```
 
-`insertionSort` should return a sorted array (least to greatest).
+`insertionSort` dovrebbe restituire un array ordinato (dal più piccolo al più grande).
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`insertionSort` should return an array that is unchanged except for order.
+`insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` dovrebbe restituire un array invariato tranne che per l'ordine.
 
 ```js
 assert.sameMembers(
@@ -75,7 +75,7 @@ assert.sameMembers(
 );
 ```
 
-`insertionSort` should not use the built-in `.sort()` method.
+`insertionSort` non deve usare il metodo integrato `.sort()`.
 
 ```js
 assert(isBuiltInSortUsed());
@@ -109,8 +109,6 @@ function insertionSort(array) {
   return array;
   // Only change code above this line
 }
-
-insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

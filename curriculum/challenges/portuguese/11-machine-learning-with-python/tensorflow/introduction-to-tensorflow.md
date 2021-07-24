@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d88
-title: Introduction to TensorFlow
+title: Introdução ao TensorFlow
 challengeType: 11
 videoId: r9hRyGGjOgQ
 dashedName: introduction-to-tensorflow
@@ -10,19 +10,19 @@ dashedName: introduction-to-tensorflow
 
 ## --text--
 
-Which of the following is **not** a type of tensor?
+Qual das seguintes etapas **não** é um tipo de tensor?
 
 ## --answers--
 
-Variable
+Variável
 
 ---
 
-Flowing
+De fluxo
 
 ---
 
-Placeholder
+De espaço reservado
 
 ---
 
@@ -30,7 +30,7 @@ SparseTensor
 
 ---
 
-Constant
+Constante
 
 ## --video-solution--
 

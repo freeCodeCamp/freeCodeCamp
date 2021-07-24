@@ -1,5 +1,5 @@
 ---
-id: 5f45b3c93c027860d9298dbd
+id: 5f45b45d099f3e621fbbb256
 title: Part 83
 challengeType: 0
 dashedName: part-83
@@ -7,16 +7,31 @@ dashedName: part-83
 
 # --description--
 
-You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue; }`.
+You change properties of a link when the link is actually being clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue; }`.
 
-Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
+Change the color of the footer `Visit our website` link to be `white` when clicked on.
 
 # --hints--
 
-Test 1
+You should use the `a:active` pseudo-selector.
 
 ```js
+const hasAActive = new __helpers.CSSHelp(document).getStyle('a:active');
+assert(hasAActive);
+```
 
+You should set the `color` property to `white`.
+
+```js
+const hasColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.color === 'white');
+assert(hasColor);
+```
+
+Your `a:active` should have a `color` of `white`.
+
+```js
+const aActiveColor = new __helpers.CSSHelp(document).getStyle('a:active')?.getPropertyValue('color');
+assert(aActiveColor === 'white');
 ```
 
 # --seed--
@@ -41,12 +56,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -88,7 +103,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -163,8 +178,12 @@ a:visited {
   color: grey;
 }
 
+a:hover {
+  color: brown;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```
-

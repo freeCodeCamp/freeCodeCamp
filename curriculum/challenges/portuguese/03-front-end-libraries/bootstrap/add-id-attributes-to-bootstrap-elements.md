@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908853
-title: Addicone Atributos id aos Elementos Bootstrap
+title: Adicionar atributos id aos elementos do Bootstrap
 challengeType: 0
 forumTopicId: 16639
 dashedName: add-id-attributes-to-bootstrap-elements
@@ -8,23 +8,23 @@ dashedName: add-id-attributes-to-bootstrap-elements
 
 # --description--
 
-Lembre que, além dos atributos de classe, você pode dar a cada um de seus elementos um atributo `id`.
+Lembre-se de que, além dos atributos de classe, você pode dar a cada um de seus elementos um atributo `id`.
 
 Cada id precisa ser único para um elemento específico e utilizado apenas uma vez por página.
 
 Vamos dar um id único para cada um de nossos elementos `div` com classe `well`.
 
-Lembre-se que você pode dar um id a um elemento dessa forma:
+Lembre-se de que você pode dar um id a um elemento dessa forma:
 
 ```html
 <div class="well" id="center-well">
 ```
 
-Dê ao well a esquerda o id `left-well`. Dê ao well a direita o id `right-well`.
+Dê ao poço à esquerda o id `left-well`. Dê ao poço à direita o id `right-well`.
 
 # --hints--
 
-Seu `well` da esquerda deve ter o id `left-well`.
+O `well` da esquerda deve ter o id `left-well`.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-Seu `well` da direita deve ter o id `right-well`.
+O `well` da direita deve ter o id `right-well`.
 
 ```js
 assert(

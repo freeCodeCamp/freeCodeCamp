@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b63
-title: Use o Método filter para Extrair Dados de um Array
+title: Usar o método filter para extrair dados de um array
 challengeType: 1
 forumTopicId: 18179
 dashedName: use-the-filter-method-to-extract-data-from-an-array

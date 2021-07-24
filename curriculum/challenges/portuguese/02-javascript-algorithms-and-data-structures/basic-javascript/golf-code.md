@@ -1,6 +1,6 @@
 ---
 id: 5664820f61c48e80c9fa476c
-title: Código de Golfe
+title: Golfe de código
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9ykNUR'
 forumTopicId: 18195
@@ -9,7 +9,7 @@ dashedName: golf-code
 
 # --description--
 
-No jogo [golf](https://en.wikipedia.org/wiki/Golf), cada buraco tem um `par`, significando, o número médio de `strokes` que um golfista é esperado fazer afim de derrubar a bola no buraco para completar a jogada. Dependendo do quão distante acima ou abaixo de `par` suas `strokes` estiverem, há diferentes apelidos.
+No jogo de [golfe](https://en.wikipedia.org/wiki/Golf), cada buraco tem um `par`, significando o número médio de `strokes` que se espera que golfista faça a fim de derrubar a bola no buraco para completar a jogada. Dependendo do quão distante acima ou abaixo de `par` suas `strokes` estiverem, há diferentes apelidos.
 
 Sua função receberá os argumentos `par` e `strokes`. Retorna a string correta de acordo com esta tabela que lista os strokes em ordem de prioridade; superior (mais alta) para o final (mais baixo):
 

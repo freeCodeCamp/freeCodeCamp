@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f160b6c005b0e76f086
-title: 'Objects: A Sample Class'
+title: 'Objetos: exemplo de uma classe'
 challengeType: 11
 videoId: FiABKEuaSJ8
 dashedName: objects-a-sample-class
@@ -10,7 +10,7 @@ dashedName: objects-a-sample-class
 
 ## --text--
 
-What will the following program print?:
+O que será impresso pelo código a seguir?:
 
 ```python
 class PartyAnimal:
@@ -27,8 +27,8 @@ an.party()
 ## --answers--
 
 <pre>
-So far 1
-So far 2
+Até agora 1
+Até agora 2
 </pre>
 
 ---

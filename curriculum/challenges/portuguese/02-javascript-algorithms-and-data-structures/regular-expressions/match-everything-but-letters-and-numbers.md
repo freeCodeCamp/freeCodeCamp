@@ -1,6 +1,6 @@
 ---
 id: 587d7db8367417b2b2512ba0
-title: Capture Tudo Exceto Letras e Números
+title: Capturar tudo exceto letras e números
 challengeType: 1
 forumTopicId: 301353
 dashedName: match-everything-but-letters-and-numbers
