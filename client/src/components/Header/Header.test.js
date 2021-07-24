@@ -237,7 +237,7 @@ const hasForumNavItem = component => {
     'chinese-traditional': 'https://chinese.freecodecamp.org/forum',
     espanol: 'https://forum.freecodecamp.org/c/espanol/',
     english: 'https://forum.freecodecamp.org/',
-    italian: 'https://forum.freecodecamp.org/c/italian/'
+    italian: 'https://forum.freecodecamp.org/c/italiano/'
   };
   return (
     children[0].props.children === 'buttons.forum' &&

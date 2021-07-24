@@ -118,7 +118,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           external={true}
           key='forum'
           sameTab={false}
-          to={createExternalRedirect('forum', { clientLocale })}
+          to={t('links:nav.forum')}
         >
           <span>{t('buttons.forum')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
