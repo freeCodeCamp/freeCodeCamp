@@ -1,34 +1,20 @@
 ---
-id: 60fadfa2b540b70dcfa8b771
-title: Part 43
+id: 60fc22d1e64d1b04cdd4e602
+title: Part 45
 challengeType: 0
-dashedName: part-43
+dashedName: part-45
 ---
 
 # --description--
 
-For the second `fieldset` we want the `input` and `label` text to appear on the same line.
-
-Start, by giving the `input` elements in the second `fieldset` a class of `inline`.
+Add some space between the `.inline` elements and the `label` text, by giving a right `margin` of `0.5em`. Also, set all the other margin to `0`.
 
 # --hints--
 
-You should give the first `input` a class of `inline`.
+Test 1
 
 ```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[0]?.classList.contains('inline'));
-```
 
-You should give the second `input` a class of `inline`.
-
-```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[1]?.classList.contains('inline'));
-```
-
-You should give the third `input` a class of `inline`.
-
-```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList.contains('inline'));
 ```
 
 # --seed--
@@ -52,15 +38,13 @@ assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList.
         <label>Enter Your Email: <input type="email" name="email" required /></label>
         <label>Create a New Password: <input type="password" name="password" pattern="[a-z0-5]{8,}" required /></label>
       </fieldset>
---fcc-editable-region--
       <fieldset>
-        <label><input type="radio" name="account-type" /> Personal Account</label>
-        <label><input type="radio" name="account-type" /> Business Account</label>
+        <label><input type="radio" name="account-type" class="inline" /> Personal Account</label>
+        <label><input type="radio" name="account-type" class="inline" /> Business Account</label>
         <label>
-          <input type="checkbox" name="terms" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+          <input type="checkbox" name="terms" class="inline" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
 			  </label>
       </fieldset>
---fcc-editable-region--
       <fieldset>
         <label>Upload a profile picture: <input type="file" name="file" /></label>
         <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
@@ -127,5 +111,12 @@ select {
 	margin: 10px 0 0 0;
 	width: 100%;
 }
+
+--fcc-editable-region--
+.inline {
+  width: unset;
+
+}
+--fcc-editable-region--
 
 ```
