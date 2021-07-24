@@ -232,16 +232,9 @@ const hasProfileAndSettingsNavItems = (component, username) => {
 
 const hasForumNavItem = component => {
   const { children, to } = navigationLinks(component, 'forum');
-  const localizedForums = {
-    chinese: 'https://chinese.freecodecamp.org/forum',
-    'chinese-traditional': 'https://chinese.freecodecamp.org/forum',
-    espanol: 'https://forum.freecodecamp.org/c/espanol/',
-    english: 'https://forum.freecodecamp.org/',
-    italian: 'https://forum.freecodecamp.org/c/italiano/'
-  };
+  // TODO: test compiled TFunction value
   return (
-    children[0].props.children === 'buttons.forum' &&
-    to === localizedForums[clientLocale]
+    children[0].props.children === 'buttons.forum' && to === 'links:nav.forum'
   );
 };
 
