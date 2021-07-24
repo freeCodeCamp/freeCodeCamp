@@ -54,7 +54,12 @@ function ToolPanel({
         isMobile ? 'tool-panel-group-mobile' : ''
       }`}
     >
-      <Button block={true} bsStyle='primary' onClick={handleRunTests}>
+      <Button
+        aria-label='Run the tests use shortcut ctrl enter'
+        block={true}
+        bsStyle='primary'
+        onClick={handleRunTests}
+      >
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
       <Button
