@@ -8,7 +8,7 @@ import React, {
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import Loadable from '@loadable/component';
-
+import store from 'store';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
@@ -290,6 +290,21 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
+  const setAccessibilityMode = () => {
+    const accessibilityMode = {
+      isAccessiblityModeOn: props.inAccessibilityMode
+    };
+
+    if (!store.get('accessibilityMode')) {
+      store.set('accessibilityMode', accessibilityMode);
+    }
+
+    /* eslint-disable */
+    const accesibility = store.get('accessibilityMode').isAccessibilityModeOn;
+
+    return accesibility;
+  };
+
   const editorDidMount = (
     editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
@@ -298,7 +313,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     editorRef.current = editor;
     data.editor = editor;
     editor.updateOptions({
-      accessibilitySupport: props.inAccessibilityMode ? 'on' : 'auto'
+      accessibilitySupport: setAccessibilityMode() ? 'on' : 'off'
     });
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
@@ -343,28 +358,21 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addAction({
       id: 'toggle-accessibility',
       label: 'Toggle Accessibility Mode',
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.F1],
+      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E],
       run: () => {
-        const currentAccessibility = props.inAccessibilityMode;
+        const currentAccessibility = setAccessibilityMode();
+ 
         // The store needs to be updated first, as onDidChangeConfiguration is
         // called before updateOptions returns
-        props.setAccessibilityMode(!currentAccessibility);
+        store.set( 'accessibilityMode', { isAccessibilityModeOn: !currentAccessibility });
+
         editor.updateOptions({
-          accessibilitySupport: currentAccessibility ? 'auto' : 'on'
+          accessibilitySupport: setAccessibilityMode() ? 'on' : 'off'
         });
       }
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
     // This is to persist changes caused by the accessibility tooltip.
-    editor.onDidChangeConfiguration(event => {
-      if (
-        event.hasChanged(monaco.editor.EditorOption.accessibilitySupport) &&
-        editor.getRawOptions().accessibilitySupport === 'on' &&
-        !props.inAccessibilityMode
-      ) {
-        props.setAccessibilityMode(true);
-      }
-    });
 
     const editableBoundaries = getEditableRegion();
 
