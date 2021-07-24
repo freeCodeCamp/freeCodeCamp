@@ -292,17 +292,15 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const setAccessibilityMode = () => {
     const accessibilityMode = {
-      isAccessiblityModeOn: props.inAccessibilityMode
+      isAccessibilityModeOn: props.inAccessibilityMode
     };
+    type AccessibilityMode = typeof accessibilityMode;
 
-    if (!store.get('accessibilityMode')) {
+    const accessibility = store.get('accessibilityMode') as AccessibilityMode;
+    if (!accessibility) {
       store.set('accessibilityMode', accessibilityMode);
     }
-
-    /* eslint-disable */
-    const accesibility = store.get('accessibilityMode').isAccessibilityModeOn;
-
-    return accesibility;
+    return accessibility?.isAccessibilityModeOn ?? false;
   };
 
   const editorDidMount = (
