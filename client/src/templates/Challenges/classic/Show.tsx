@@ -167,10 +167,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   onStopResize(event: any) {
     const { name, flex } = event.component.props;
 
-    this.setState(state => ({ ...state, resizing: false }));
-
     // Only interested in tracking layout updates for ReflexElement's
     if (!name) {
+      this.setState(state => ({ ...state, resizing: false }));
       return;
     }
 
@@ -184,10 +183,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           }
         : this.state.layout;
 
-    this.setState(state => ({
-      ...state,
-      layout: newLayout
-    }));
+    this.setState({
+      layout: newLayout,
+      resizing: false
+    });
 
     store.set(REFLEX_LAYOUT, this.state.layout);
   }
