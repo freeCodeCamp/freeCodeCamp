@@ -360,8 +360,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         const currentAccessibility = setAccessibilityMode();
  
-        // The store needs to be updated first, as onDidChangeConfiguration is
-        // called before updateOptions returns
         store.set( 'accessibilityMode', { isAccessibilityModeOn: !currentAccessibility });
 
         editor.updateOptions({
