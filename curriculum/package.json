@@ -54,7 +54,7 @@
     "jsdom": "16.6.0",
     "live-server": "1.2.1",
     "lodash": "4.17.21",
-    "mocha": "9.0.2",
+    "mocha": "9.0.3",
     "mock-require": "3.0.3",
     "puppeteer": "10.1.0",
     "readdirp": "3.6.0",
