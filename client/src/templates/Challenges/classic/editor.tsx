@@ -321,11 +321,12 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility?.isAccessibilityModeOn ?? false;
     };
 
+    const accessibilityMode = storedAccessibilityModes();
     editor.updateOptions({
-      accessibilitySupport: storedAccessibilityModes() ? 'on' : 'off'
+      accessibilitySupport: accessibilityMode ? 'on' : 'off'
     });
 
-    props.setAccessibilityMode(storedAccessibilityModes());
+    props.setAccessibilityMode(accessibilityMode);
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
     if (props.canFocus && !props.inAccessibilityMode) {
