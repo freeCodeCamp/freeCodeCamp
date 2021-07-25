@@ -290,19 +290,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
-  const setAccessibilityMode = () => {
-    const accessibilityMode = {
-      isAccessibilityModeOn: props.inAccessibilityMode
-    };
-    type AccessibilityMode = typeof accessibilityMode;
-
-    const accessibility = store.get('accessibilityMode') as AccessibilityMode;
-    if (!accessibility) {
-      store.set('accessibilityMode', accessibilityMode);
-    }
-    return accessibility?.isAccessibilityModeOn ?? false;
-  };
-
   const editorDidMount = (
     editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
@@ -310,9 +297,34 @@ const Editor = (props: EditorProps): JSX.Element => {
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
     data.editor = editor;
+
+    const setAccessibilityMode = () => {
+      const accessibilityMode = {
+        isAccessibilityModeOn: props.inAccessibilityMode
+      };
+      type AccessibilityMode = typeof accessibilityMode;
+
+      const accessibility = store.get('accessibilityMode') as AccessibilityMode;
+      if (!accessibility) {
+        store.set('accessibilityMode', accessibilityMode);
+      }
+
+      // Only able to set the arialabel when it is set to true
+      // Otherwise it gets overwritten by the monaco default aria-label
+      if (accessibility?.isAccessibilityModeOn) {
+        editor.updateOptions({
+          ariaLabel:
+            'Accessibility mode set to true press ctrl + e to disable; Press alt F1 for more options'
+        });
+      }
+
+      return accessibility?.isAccessibilityModeOn ?? false;
+    };
+
     editor.updateOptions({
       accessibilitySupport: setAccessibilityMode() ? 'on' : 'off'
     });
+
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
     if (props.canFocus && !props.inAccessibilityMode) {
@@ -363,12 +375,12 @@ const Editor = (props: EditorProps): JSX.Element => {
         store.set( 'accessibilityMode', { isAccessibilityModeOn: !currentAccessibility });
 
         editor.updateOptions({
-          accessibilitySupport: setAccessibilityMode() ? 'on' : 'off'
+          accessibilitySupport: setAccessibilityMode() ? 'on' : 'off',
         });
+
       }
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
-    // This is to persist changes caused by the accessibility tooltip.
 
     const editableBoundaries = getEditableRegion();
 
