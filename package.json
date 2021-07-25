@@ -106,7 +106,7 @@
     "@testing-library/cypress": "7.0.7",
     "@testing-library/dom": "8.1.0",
     "@testing-library/jest-dom": "5.14.1",
-    "@testing-library/user-event": "13.2.0",
+    "@testing-library/user-event": "13.2.1",
     "@typescript-eslint/eslint-plugin": "4.28.4",
     "@typescript-eslint/parser": "4.28.4",
     "babel-eslint": "10.1.0",
