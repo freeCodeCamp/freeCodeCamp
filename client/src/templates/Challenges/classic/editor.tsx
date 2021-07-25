@@ -298,17 +298,17 @@ const Editor = (props: EditorProps): JSX.Element => {
     editorRef.current = editor;
     data.editor = editor;
 
-    const setAccessibilityMode = () => {
+    const storedAccessibilityModes = () => {
       const accessibilityMode = {
         isAccessibilityModeOn: props.inAccessibilityMode
       };
+
       type AccessibilityMode = typeof accessibilityMode;
 
       const accessibility = store.get('accessibilityMode') as AccessibilityMode;
       if (!accessibility) {
         store.set('accessibilityMode', accessibilityMode);
       }
-
       // Only able to set the arialabel when it is set to true
       // Otherwise it gets overwritten by the monaco default aria-label
       if (accessibility?.isAccessibilityModeOn) {
@@ -322,9 +322,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     };
 
     editor.updateOptions({
-      accessibilitySupport: setAccessibilityMode() ? 'on' : 'off'
+      accessibilitySupport: storedAccessibilityModes() ? 'on' : 'off'
     });
 
+    props.setAccessibilityMode(storedAccessibilityModes());
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
     if (props.canFocus && !props.inAccessibilityMode) {
@@ -370,12 +371,12 @@ const Editor = (props: EditorProps): JSX.Element => {
       label: 'Toggle Accessibility Mode',
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E],
       run: () => {
-        const currentAccessibility = setAccessibilityMode();
- 
+        const currentAccessibility = storedAccessibilityModes();
+        
         store.set( 'accessibilityMode', { isAccessibilityModeOn: !currentAccessibility });
-
+        props.setAccessibilityMode(!currentAccessibility);
         editor.updateOptions({
-          accessibilitySupport: setAccessibilityMode() ? 'on' : 'off',
+          accessibilitySupport: storedAccessibilityModes() ? 'on' : 'off',
         });
 
       }
