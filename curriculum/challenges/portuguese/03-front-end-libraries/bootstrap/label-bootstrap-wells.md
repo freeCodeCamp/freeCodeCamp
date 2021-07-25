@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908854
-title: Dê um Label a Wells Bootstrap
+title: Dar um label aos poços do Bootstrap
 challengeType: 0
 forumTopicId: 18223
 dashedName: label-bootstrap-wells
@@ -8,15 +8,15 @@ dashedName: label-bootstrap-wells
 
 # --description--
 
-Pelo bem da clareza, vamos rotular ambos os nossos wells com seus ids.
+Para deixar claro, vamos rotular nossos dois poços com seus ids.
 
-Acima do seu well da esquerda, dentro de seu elemento `col-xs-6` `div`, adicione um elemento `h4` com o texto `#left-well`.
+Acima do poço da esquerda, dentro do elemento `col-xs-6` `div`, adicione um elemento `h4` com o texto `#left-well`.
 
-Acima do seu well da direita, dentro de seu elemento `col-xs-6` `div`, adicione um elemento `h4` com o texto `#right-well`.
+Acima do poço da direita, dentro do elemento `col-xs-6` `div`, adicione um elemento `h4` com o texto `#right-well`.
 
 # --hints--
 
-Você deve adicionar um elemento `h4` para cada um de seus elementos `<div class="col-xs-6">`.
+Você deve adicionar um elemento `h4` para cada um dos elementos `<div class="col-xs-6">`.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ Um elemento `h4` deve ter o texto `#right-well`.
 assert(new RegExp('#right-well', 'gi').test($('h4').text()));
 ```
 
-Todos os seus elementos `h4` devem ter tags de fechamento.
+Todos os elementos `h4` devem ter tags de fechamento.
 
 ```js
 assert(

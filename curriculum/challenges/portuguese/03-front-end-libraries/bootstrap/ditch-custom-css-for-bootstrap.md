@@ -1,6 +1,6 @@
 ---
 id: bad87fee1347bd9aedf08845
-title: Livre-se de CSS customizado para Bootstrap
+title: Limpar o CSS customizado para o Bootstrap
 challengeType: 0
 forumTopicId: 17565
 dashedName: ditch-custom-css-for-bootstrap
@@ -12,27 +12,27 @@ Nós podemos limpar nosso código e fazer o aplicativo de fotos de gato parecer 
 
 Não se preocupe - haverá muito tempo para customizar nosso CSS depois.
 
-Delete as declarações CSS `.red-text`, `p` e `.smaller-image` de seu elemento `style` para que as únicas declarações restantes em seu elemento `style` sejam `h2` e `thick-green-border`.
+Exclua as declarações CSS `.red-text`, `p` e `.smaller-image` do elemento `style` para que as únicas declarações restantes no elemento `style` sejam `h2` e `thick-green-border`.
 
-Em seguida, delete o elemento `p` que contem um link morto. Em seguida, remova a classe `red-text` do seu elemento `h2` e substitua-o com a classe Bootstrap `text-primary`.
+Em seguida, exclua o elemento `p` que contem um link morto. Depois disso, remova a classe `red-text` do elemento `h2` e substitua-a pela classe `text-primary`do Bootstrap.
 
-Finalmente, remova a classe `smaller-image` do seu primeiro elemento `img` e substitua o com a classe `img-responsive`.
+Finalmente, remova a classe `smaller-image` do primeiro elemento `img` e substitua-a pela classe `img-responsive`.
 
 # --hints--
 
-Seu elemento `h2` não deve mais conter a classe `red-text`.
+O elemento `h2` não deve mais conter a classe `red-text`.
 
 ```js
 assert(!$('h2').hasClass('red-text'));
 ```
 
-Seu elemento `h2` deve ter agora a classe `text-primary`.
+O elemento `h2` deve ter agora a classe `text-primary`.
 
 ```js
 assert($('h2').hasClass('text-primary'));
 ```
 
-Seus elementos de parágrafo não devem mais usar a fonte `Monospace`.
+Os elementos de parágrafo não devem mais usar a fonte `Monospace`.
 
 ```js
 assert(
@@ -42,13 +42,13 @@ assert(
 );
 ```
 
-A classe `smaller-image` deve ser removida da sua imagem superior.
+A classe `smaller-image` deve ser removida da imagem superior.
 
 ```js
 assert(!$('img').hasClass('smaller-image'));
 ```
 
-Você deve adicionar a classe `img-responsive` para sua imagem superior.
+Você deve adicionar a classe `img-responsive` à imagem superior.
 
 ```js
 assert($('.img-responsive').length > 1);
