@@ -1,6 +1,6 @@
 ---
 id: bad88fee1348ce8acef08815
-title: Use a Grid Bootstrap para Colocar Elementos Lado a Lado
+title: Usar o Bootstrap Grid para colocar elementos lado a lado
 challengeType: 0
 forumTopicId: 18371
 dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
@@ -8,33 +8,33 @@ dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
 
 # --description--
 
-Bootstrap usa o sistema responsivo de grid de 12 colunas, o que torna super fácil colocar elementos em linhas e especificar cada largura relativa de um elemento. A maioria das classes Bootstrap podem ser aplicadas a um elemento `div`.
+Bootstrap usa o sistema responsivo de grid de 12 colunas, o que torna superfácil colocar elementos em linhas e especificar cada largura relativa de um elemento. A maioria das classes do Bootstrap pode ser aplicada a um elemento `div`.
 
-Bootstrap possui diferentes atributos de largura de colunas que utiliza dependendo do quão largo for a tela do usuário. Por exemplo, celulares possuem telas estreitas, e laptops possuem telas mais largas.
+O Bootstrap possui atributos de largura de colunas diferentes, que são utilizados dependendo da largura da tela do usuário. Por exemplo, celulares possuem telas estreitas, enquanto laptops possuem telas mais largas.
 
-Tome como exemplo a classe Bootstrap `col-md-*`. Aqui, `md` significa médio, e `*` é o número especificando quantas colunas de largura o elemento deve ser. Nesse caso, a largura da coluna de um elemento em uma tela de tamanho mediano, como um laptop, está sendo especificado.
+Tome como exemplo a classe `col-md-*` do Bootstrap. Aqui, `md` significa médio, e `*` é um número especificando quantas colunas de largura o elemento deve ter. Nesse caso, a largura da coluna de um elemento em uma tela de tamanho mediano, como um laptop, está sendo especificada.
 
-No app de Foto de Gatos que estamos construindo, utilizaremos `col-xs-*`, onde `xs` significa extra pequeno (como uma tela extra pequena de um telefone móvel), e `*` é o número de colunas especificando quantas colunas de largura o elemento deve ser.
+No app de Fotos de Gatos que estamos construindo, utilizaremos `col-xs-*`, onde `xs` significa extrapequeno (como uma tela extrapequena de um telefone móvel), e `*` é um número de colunas especificando quantas colunas de largura o elemento deve ter.
 
-Coloque os botões `Like`, `Info` e `Delete` lado a lado ao aninhar todos os três em um elemento `<div class="row">`, em seguida, cada um deles dentro de um elemento `<div class="col-xs-4">`.
+Coloque os botões `Like`, `Info` e `Delete` lado a lado ao aninhar todos os três em um elemento `<div class="row">`. Em seguida, coloque cada um deles dentro de um elemento `<div class="col-xs-4">`.
 
-A classe `row` é aplicada à `div`, e os próprios botões podem ser aninhados dentro dela.
+A classe `row` é aplicada à `div`. Os próprios botões podem ser aninhados dentro dela.
 
 # --hints--
 
-Seu botões devem estar aninhados dentro do mesmo elemento `div` com a classe `row`.
+Os botões devem estar aninhados dentro do mesmo elemento `div` com a classe `row`.
 
 ```js
 assert($('div.row:has(button)').length > 0);
 ```
 
-Cada um dos seus botões Bootstrap devem estar aninhados dentro de seu próprio elemento `div` com a classe `col-xs-4`.
+Cada um dos botões do Bootstrap deve estar aninhado dentro do próprio elemento `div` com a classe `col-xs-4`.
 
 ```js
 assert($('div.col-xs-4:has(button)').length > 2);
 ```
 
-Cada um dos seus elementos `button` devem ter uma tag de fechamento.
+Cada um dos elementos `button` deve ter uma tag de fechamento.
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-Cada um dos seus elementos `div` devem ter uma tag de fechamento.
+Cada um dos elementos `div` deve ter uma tag de fechamento.
 
 ```js
 assert(

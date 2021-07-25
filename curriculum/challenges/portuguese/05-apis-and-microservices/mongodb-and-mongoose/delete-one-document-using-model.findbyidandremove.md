@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c10
-title: Delete One Document Using model.findByIdAndRemove
+title: Exclua um documento usando model.findByIdAndRemove
 challengeType: 2
 forumTopicId: 301539
 dashedName: delete-one-document-using-model-findbyidandremove
@@ -8,15 +8,15 @@ dashedName: delete-one-document-using-model-findbyidandremove
 
 # --description--
 
-`findByIdAndRemove` and `findOneAndRemove` are like the previous update methods. They pass the removed document to the db. As usual, use the function argument `personId` as the search key.
+`findByIdAndRemove` e `findOneAndRemove` são como os métodos da atualização anterior. Eles passam o documento removido para a db. Como de costume, use o argumento da função `personId` como chave de pesquisa.
 
 # --instructions--
 
-Modify the `removeById` function to delete one person by the person's `_id`. You should use one of the methods `findByIdAndRemove()` or `findOneAndRemove()`.
+Modifique a função `removeById` para excluir uma pessoa pelo `_id` da pessoa. Você deve usar um dos métodos `findByIdAndRemove()` ou `findOneAndRemove()`.
 
 # --hints--
 
-Deleting an item should succeed
+A exclusão de um item deve ser bem-sucedida
 
 ```js
 (getUserInput) =>

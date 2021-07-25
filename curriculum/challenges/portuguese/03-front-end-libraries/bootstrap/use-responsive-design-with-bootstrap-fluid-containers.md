@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08712
-title: Use Design Responsivo com Contêineres Fluidos do Bootstrap
+title: Usar design responsivo com contêineres fluidos do Bootstrap
 challengeType: 0
 forumTopicId: 18362
 dashedName: use-responsive-design-with-bootstrap-fluid-containers
@@ -8,13 +8,13 @@ dashedName: use-responsive-design-with-bootstrap-fluid-containers
 
 # --description--
 
-Na seção do HTML5 e CSS do freeCodeCamp nós construímos uma aplicação de Foto de Gatos. Agora vamos voltar para isso. Dessa vez, nós estilizaremos usando o popular framework de CSS responsivo Bootstrap.
+Na seção do HTML5 e CSS do freeCodeCamp nós construímos uma aplicação de Fotos de Gatos. Agora vamos voltar para ela. Dessa vez, nós estilizaremos usando o framework de CSS responsivo popular conhecido como Bootstrap.
 
-O Bootstrap descobrirá o quão larga sua tela é e responderá redimensionando os seus elementos HTML - daí o nome <dfn>design responsivo</dfn>.
+O Bootstrap descobrirá a largura da tela e responderá redimensionando os elementos do HTML - daí o nome <dfn>design responsivo</dfn>.
 
-Com um design responsivo, não há necessidade de projetar uma versão móvel do seu site. Vai parecer bom em dispositivos com telas de qualquer largura.
+Com um design responsivo, não há necessidade de projetar uma versão móvel do seu site. Ele terá uma boa aparência em dispositivos com telas de qualquer largura.
 
-Você pode incluir o Bootstrap em qualquer aplicativo, adicionando o seguinte código ao topo do seu HTML:
+Você pode incluir o Bootstrap em qualquer aplicativo, adicionando o seguinte código ao topo do HTML:
 
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
@@ -22,17 +22,17 @@ Você pode incluir o Bootstrap em qualquer aplicativo, adicionando o seguinte c�
 
 Neste caso, já o adicionamos para você a esta página por trás dos panos. Note que usar a tag `>` ou `/>` para fechar a tag `link` é aceitável.
 
-Para começar, devemos aninhar todos os nossos HTML (exceto a tag `link` e o elemento `style`) em um elemento `div` com a classe `container-fluid`.
+Para começar, devemos aninhar todo o HTML (exceto a tag `link` e o elemento `style`) em um elemento `div` com a classe `container-fluid`.
 
 # --hints--
 
-Seu elemento `div` deve ter a classe `container-fluid`.
+O elemento `div` deve ter a classe `container-fluid`.
 
 ```js
 assert($('div').hasClass('container-fluid'));
 ```
 
-Seu elemento `div` deve ter uma tag de fechamento.
+O elemento `div` deve ter uma tag de fechamento.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-Todos os elementos HTML após a tag de fechamento `style` deve estar aninhado dentro de `.container-fluid`.
+Todos os elementos HTML após a tag de fechamento `style` devem estar aninhados dentro de `.container-fluid`.
 
 ```js
 assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').has("style").length && !$('.container-fluid').has("link").length);

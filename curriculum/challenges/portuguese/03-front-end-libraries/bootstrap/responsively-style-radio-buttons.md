@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedb08845
-title: Botões Radio Responsivos
+title: Botões de opção de estilo responsivo
 challengeType: 0
 forumTopicId: 18270
 required:
@@ -13,27 +13,27 @@ dashedName: responsively-style-radio-buttons
 
 # --description--
 
-Você pode usar as classes `col-xs-*` do Bootstrap nos elementos do `formulário` também! Dessa forma, nossos botões radio irão estar simetricamente distribuídos pela página, independente do quão largo a resolução da nossa tela for.
+Você pode usar as classes `col-xs-*` do Bootstrap nos elementos do `form` também! Dessa forma, nossos botões de opção vão estar simetricamente distribuídos pela página, independente da largura da resolução da tela.
 
-Aninhe ambos os seus botões radio dentro de um elemento `<div class="row">`. Em seguida aninhe cada um deles dentro de um elemento `<div class="col-xs-6">`.
+Aninhe os botões de opção dentro de um elemento `<div class="row">`. Em seguida, aninhe cada um deles dentro de um elemento `<div class="col-xs-6">`.
 
-**Nota:** Como um lembrete, botões radio são elementos `input` do tipo `radio`.
+**Observação:** como um lembrete, os botões de opção são elementos `input` do tipo `radio`.
 
 # --hints--
 
-Todos os seus botões radio devem estar aninhados dentro de uma `div` com a classe `row`.
+Todos os botões de opção devem estar aninhados dentro de uma `div` com a classe `row`.
 
 ```js
 assert($('div.row:has(input[type="radio"])').length > 0);
 ```
 
-Cada um dos seus botões radio devem estar aninhados em seus próprios `div` com a classe `col-xs-6`.
+Cada um dos botões de opção devem estar aninhados nas próprias `div` com a classe `col-xs-6`.
 
 ```js
 assert($('div.col-xs-6:has(input[type="radio"])').length > 1);
 ```
 
-Todos os seus elementos `div` devem ter tags de fechamento.
+Todos os elementos `div` devem ter tags de fechamento.
 
 ```js
 assert(

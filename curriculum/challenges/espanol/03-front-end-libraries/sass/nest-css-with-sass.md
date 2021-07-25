@@ -1,6 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb5
-title: Nest CSS with Sass
+title: Anida CSS con Sass
 challengeType: 0
 forumTopicId: 301457
 dashedName: nest-css-with-sass
@@ -8,9 +8,9 @@ dashedName: nest-css-with-sass
 
 # --description--
 
-Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
+Sass permite anidar las reglas CSS, que es una forma útil de organizar una hoja de estilo.
 
-Normally, each element is targeted on a different line to style it, like so:
+Normalmente, cada elemento está dirigido a una línea diferente para darle estilo, así:
 
 ```scss
 nav {
@@ -26,7 +26,7 @@ nav ul li {
 }
 ```
 
-For a large project, the CSS file will have many lines and rules. This is where nesting can help organize your code by placing child style rules within the respective parent elements:
+Para un proyecto grande, el archivo CSS tendrá muchas líneas y reglas. Aquí es donde la anidación puede ayudar a organizar tu código colocando reglas de estilo hijo dentro de los respectivos elementos padres:
 
 ```scss
 nav {
@@ -45,11 +45,11 @@ nav {
 
 # --instructions--
 
-Use the nesting technique shown above to re-organize the CSS rules for both children of `.blog-post` element. For testing purposes, the `h1` should come before the `p` element.
+Utiliza la técnica de anidación mostrada anteriormente para reorganizar las reglas CSS para ambos hijos del elemento `.blog-post`. Para fines de prueba, el `h1` debe ir antes del elemento `p`.
 
 # --hints--
 
-Your code should re-organize the CSS rules so the `h1` and `p` are nested in the `.blog-post` parent element.
+Tu código debe reorganizar las reglas CSS para que `h1` y `p` estén anidados en el elemento padre `.blog-post`.
 
 ```js
 assert(
