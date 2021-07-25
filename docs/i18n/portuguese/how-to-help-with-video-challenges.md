@@ -1,15 +1,15 @@
 # Como ajudar com desafios em vídeo
 
-Video challenges are a new type of challenge in the freeCodeCamp curriculum.
+Os desafios em vídeo são um novo tipo de desafio no currículo freeCodeCamp.
 
-Um desafio em vídeo é uma seção de um curso completo sobre um determinado tópico. Uma página de desafio em vídeo incorpora um vídeo do YouTube. Each challenge page has a single multiple-choice question related to the video. O usuário deve responder a pergunta corretamente antes de avançar para o próximo desafio em vídeo.
+Um desafio em vídeo é uma seção de um curso completo sobre um determinado tópico. Uma página de desafio em vídeo incorpora um vídeo do YouTube. Cada página de desafio tem uma única pergunta de múltipla escolha relacionada ao vídeo. O usuário deve responder a pergunta corretamente antes de avançar para o próximo desafio em vídeo.
 
-As páginas de desafio em vídeo são criadas por membros da equipe freeCodeCamp. YouTube videos are also uploaded by members of the freeCodeCamp team. Muitos dos desafios em vídeo ainda não possuem perguntas associadas a eles.
+As páginas de desafio em vídeo são criadas por membros da equipe freeCodeCamp. Vídeos do YouTube também são enviados por membros da equipe freeCodeCamp. Muitos dos desafios em vídeo ainda não possuem perguntas associadas a eles.
 
-You can help by creating multiple-choice questions related to video sections and adding the questions to the markdown files for the video challenges.
+Você pode ajudar criando questões de múltipla escolha e adicionando-as aos arquivos 'markdown' para os desafios em vídeo.
 
 
-## Challenge Template
+## Modelo de desafio
 
 Abaixo está um modelo de arquivo markdown do desafio.
 
@@ -34,27 +34,27 @@ Challenge description text, in markdown
 
 # --question--
 
-These fields are currently used for the multiple-choice Python challenges.
+Esses espaços são normalmente utilizados para questões de múltipla escolha dos desafios de Python.
 
 ## --text--
 
-The question text goes here.
+O texto da questão vêm aqui.
 
 ## --answers--
 
-Answer 1
+Resposta 1
 
 ---
 
-Answer 2
+Resposta 2
 
 ---
 
-More answers
+Mais respostas
 
 ## --video-solution--
 
-The number for the correct answer goes here.
+O número da resposta correta fica aqui.
 
 ````
 
@@ -75,7 +75,7 @@ Escolha um arquivo dentre as opções acima.
 
 Primeiro, localize o videoId.
 
-For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". No GitHub, a informação deve estar contida em formato tabular.
+Por exemplo, no código a seguir a partir do cabeçalho de um arquivo markdown de desafio de vídeo, o videoId é "nVAaxZ34khk". No GitHub, a informação deve estar contida em formato tabular.
 ````
 ---
 id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
@@ -83,16 +83,16 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Em seguida, acesse o vídeo no YouTube correspondente com aquele `videoId`. The URL for the video will be:
-https://www.youtube.com/watch?v=[videoId]    (replace `videoId` in the URL with the video's ID - without square brackets)
+Em seguida, acesse o vídeo no YouTube correspondente com aquele `videoId`. A URL do vídeo será:
+https://www.youtube.com/watch?v=[videoId]    (troque `videoId` na URL pelo ID do vídeo - sem colchetes)
 
-In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
+No exemplo acima, a URL seria https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
+Assista ao vídeo no YouTube daquele videoId e pense em uma questão de múltipla escolha baseada em seu conteúdo.
 
 ### Adicione a pergunta ao arquivo markdown
 
-Você pode adicionar a pergunta localmente ou utilizando a interface do Github. Para adicionar a pergunta localmente, você precisa [configurar o freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
+Você pode adicionar a pergunta localmente ou utilizando a interface do Github. Para adicionar a pergunta localmente, você precisa [configurar o freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). Você também pode encontrar o arquivo no GitHub e clicar no botão editar para adicionar a pergunta diretamente em seu navegador.
 
 Se uma pergunta não tiver sido adicionada a um desafio de vídeo ainda, ela terá a seguinte forma padrão:
 
@@ -126,7 +126,7 @@ Adicione/atualize o texto da pergunta sob a parte que diz:
 
 ## --text--
 ```
-Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. Make sure to update the number under `## --video-solution--` with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
+Adicione/Atualize (`Resposta 1`, `Resposta 2`, e assim por diante) sob `## --answers--`. Confirme se o número sob  `## --video-solution--` seja o número da resposta correta. Você pode adicionar mais respostas possíveis usando o mesmo formato. Tanto a pergunta quanto as respostas podem estar entre aspas.
 
 ### Exemplos de perguntas
 

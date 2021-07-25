@@ -1,39 +1,39 @@
-# How to work on coding challenges
+# Como trabalhar em desafios de programação
 
-Our goal is to develop a fun and clear interactive learning experience.
+Nosso objetivo é desenvolver uma experiência de aprendizado divertida e interativa.
 
-Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+Projetar desafios interativos de programação é difícil. Seria muito mais fácil escrever uma explicação longa ou criar um tutorial em vídeo. Mas no nosso currículo principal, estamos buscando o que funciona melhor para a maioria das pessoas - uma experiência de jogo totalmente interativa e parecida com vídeo.
 
-Queremos que os usuários freeCodeCamp atinjam um estado ativo no aprendizado. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
+Queremos que os usuários freeCodeCamp atinjam um estado ativo no aprendizado. Queremos que eles sejam impulsionados a percorrer o nosso currículo com o mínimo possível de empecilhos. Nós queremos que eles iniciem os projetos com confiança e adquiram uma ampla exposição aos conceitos de programação.
 
-Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
+Note que para a versão 7.0 do currículo do freeCodeCamp, nós estamos migrando para [um modelo inteiramente focado em projetos e com muito mais repetições](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
+A criação destes desafios exige imensa criatividade e atenção aos pormenores. Há muita ajuda disponível. Você terá o apoio de toda uma equipe de colaboradores para quem você pode buscar ideias e provar seus desafios.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+E como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat dos contribuidores](https://chat.freecodecamp.org/channel/contributors).
 
-With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+Com sua ajuda, nós podemos projetar um currículo de programação interativo que ajudará milhões de pessoas a aprender a programar nos próximos anos.
 
-The content for each challenge is stored in its markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
+O conteúdo para cada desafio é guardado em um arquivo markdown. Este arquivo markdown é posteriormente convertido em HTML usando nossas ferramentas para criar páginas web interativas.
 
-You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges) directory.
+Você pode encontrar todo o conteúdo curricular do freeCodeCamp.org no diretório [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges).
 
 ## Configure as ferramentas para o currículo
 
-Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
+Antes de trabalhar no currículo, você precisará configurar algumas ferramentas para ajudá-lo a testar suas alterações. Você pode usar qualquer opção abaixo:
 
-- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
-- Use o Gitpod, um ambiente gratuito de desenvolvimento on-line. Clicar no botão abaixo irá iniciar um ambiente de desenvolvimento pronto para programar para freeCodeCamp em seu navegador. It only takes a few minutes.
+- Você pode [configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). Isto é **altamente recomendado** para contribuições regulares/repetidas. Esta configuração permite que você trabalhe e teste suas alterações.
+- Use o Gitpod, um ambiente gratuito de desenvolvimento on-line. Clicar no botão abaixo irá iniciar um ambiente de desenvolvimento pronto para programar para freeCodeCamp em seu navegador. Leva só alguns minutos.
 
   [![Abra no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edite os arquivos na interface do GitHub clicando no ícone do lápis no arquivo correspondente. Embora seja a maneira mais rápida, **não é recomendado**, porque você não pode testar suas alterações no GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
+- Edite os arquivos na interface do GitHub clicando no ícone do lápis no arquivo correspondente. Embora seja a maneira mais rápida, **não é recomendado**, porque você não pode testar suas alterações no GitHub. Se nossos mantedores concluirem que as mudanças que você fez precisam ser testadas localmente, você precisará seguir os métods acima.
 
 ### Trabalhe em projetos práticos
 
 Os projetos práticos tem algumas ferramentas adicionais para criar novos projetos e passos. Para saber mais, veja [esses documentos](how-to-work-on-practice-projects.md)
 
-## Challenge Template
+## Modelo de desafio
 
 ````md
 ---
@@ -61,13 +61,13 @@ Texto com instruções para o desafio, em markdown
 Testes para executar o código do usuário, em par com o markdown e bloco de código de teste.
 
 ```js
-Code for test one
+Código para o teste um
 ```
 
 Mais instruções em sintaxe markdown
 
 ```js
-More code
+Mais código
 ```
 
 # --seed--
@@ -81,7 +81,7 @@ Código avaliado antes do código do usuário.
 ## --after-user-code--
 
 ```lang
-Code evaluated after the user’s code, and just before the tests
+Código avaliado após o código do usuário, e pouco antes dos testes
 ```
 
 ## --seed-contents--
@@ -193,7 +193,7 @@ id: 5a474d78df58bafeb3535d34
 title: Título do desafio
 ```
 
-## Naming challenges
+## Nomeando desafios
 
 Nomear coisas é difícil. Nós facilitamos com algumas restrições.
 
@@ -207,7 +207,7 @@ Aqui estão alguns exemplos de nomes para desafios:
 - Condensar arrays com .reduce
 - Usar notação de colchetes para encontrar o primeiro caractere em uma string
 
-## Challenge descriptions/instructions
+## Descrições/instruções do desafio
 
 As frases devem ser claras e resumidas com o mínimo de termos técnicos. Se usado, o termo técnico deve ser imediatamente definido em inglês simples.
 
@@ -223,7 +223,7 @@ Não use emojis ou emoticons em desafios. O freeCodeCamp possui uma comunidade g
 
 Substantivos próprios devem começar com letra maiúscula quando possível. Abaixo está uma lista de palavras e como devem aparecem nos desafios.
 
-- JavaScript (capital letters in "J" and "S" and no abbreviations)
+- JavaScript (letras maiúsculas em "J" e "S" e sem abreviações)
 - Node.js
 - Embora às vezes imprecisas, as formas não hifenizadas de 'back end' e 'front end' devem ser usadas, pois são mais amplamente utilizadas.
 
@@ -233,8 +233,8 @@ Cada desafio deve ser resolvido em 120 segundos por um nativo da língua inglesa
 
 Se levar mais do que dois minutos para completar um desafio, você tem duas opções:
 
-- Simplify the challenge, or
-- Split the challenge into two challenges.
+- Simplifique o desafio, ou
+- Divida o desafio em dois desafios.
 
 A regra dos 2 minutos força quem criou o desafio a deixar as instruções resumidas, o código fornecido limpo e seus testes diretos.
 
@@ -260,7 +260,7 @@ Use `parseInt` para converter a variável `realNumber` em um número inteiro.
 ```
 
 - Referências a nomes de arquivos e caminhos (ex. `package.json`, `src/components`) devem estar entre `` \` ``.
-- Blocos de código com várias linhas **devem ser precedidos por uma linha vazia**. A próxima linha deve começar com três crases seguidas imediatamente por uma das [linguagens suportadas](https://prismjs.com/#supported-languages). Para completar o bloco de código, você deve começar uma nova linha que apenas possui três crases e **outra linha vazia**. See example below:
+- Blocos de código com várias linhas **devem ser precedidos por uma linha vazia**. A próxima linha deve começar com três crases seguidas imediatamente por uma das [linguagens suportadas](https://prismjs.com/#supported-languages). Para completar o bloco de código, você deve começar uma nova linha que apenas possui três crases e **outra linha vazia**. Veja o exemplo abaixo:
 - Os espaços importam no Markdown. Então, recomendamos que os mantenham visíveis no seu editor.
 
 **Observação:** se você for usar um exemplo de códigoem YAML, use `yaml` ao invés de `yml` para a linguagem na direita das crases.
@@ -386,10 +386,10 @@ Se você encontrar um problema nas dicas/tópicos de solução de um desafio exi
 
 Faça o passo-a-passo a seguir quando for adicionar novos tópicos de dicas/soluções relacionadas a um desafio.
 
-1. Start by following the same steps for creating a new topic but review the next for creating the title.
+1. Comece seguindo os mesmos passos para criar um novo tópico, mas revise o seguinte para criar o título.
 2. O título do tópico deve começar com `freeCodeCamp Challenge Guide:` concatenado com o título atual do desafio de currículo. Por exemplo, se o desafio é chamado "`Chunky Monkey`", o título do tópico seria "`freeCodeCamp Challenge Guide: Chunky Monkey`".
-3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
-4. Depois que o novo tópico for criado, será criado um id para o tópico do fórum. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
+3. O `camperbot` deve ser o proprietário destes tópicos/postagens. Então, você precisará solicitar um administrador para alterar a propriedade da postagem principal para `camperbot`.
+4. Depois que o novo tópico for criado, será criado um id para o tópico do fórum. Está localizado no final da URL do tópico do fórum. Este id deve ser adicionado ao arquivo de desafio do currículo através do processo normal de pull request para o botão `Obter uma dica` para vincular ao tópico.
 
 ### Diretrizes para o conteúdo dos tópicos de dicas e soluções
 
@@ -433,15 +433,15 @@ function myFunc() {
 }
 ````
 
-#### Code Explanation
+#### Explicação de Código
 
 - A explicação do código fica aqui
 - A explicação do código fica aqui
 
-#### Relevant Links
+#### Links relevantes
 
-- [Link Text](link_url_goes_here)
-- [Link Text](link_url_goes_here)
+- [Texto do link](link_url_goes_here)
+- [Texto do link](link_url_goes_here)
 
 </details>
 ````
