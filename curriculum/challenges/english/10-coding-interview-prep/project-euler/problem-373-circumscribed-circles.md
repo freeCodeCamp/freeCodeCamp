@@ -8,22 +8,20 @@ dashedName: problem-373-circumscribed-circles
 
 # --description--
 
-Every triangle has a circumscribed circle that goes through the three vertices.
+Every triangle has a circumscribed circle that goes through the three vertices. Consider all integer sided triangles for which the radius of the circumscribed circle is integral as well.
 
-Consider all integer sided triangles for which the radius of the circumscribed circle is integral as well.
+Let $S(n)$ be the sum of the radii of the circumscribed circles of all such triangles for which the radius does not exceed $n$.
 
-Let S(n) be the sum of the radii of the circumscribed circles of all such triangles for which the radius does not exceed n.
+$S(100) = 4\\,950$ and $S(1\\,200) = 1\\,653\\,605$.
 
-S(100)=4950 and S(1200)=1653605.
-
-Find S(107).
+Find $S({10}^7)$.
 
 # --hints--
 
-`euler373()` should return 727227472448913.
+`circumscribedCircles()` should return `727227472448913`.
 
 ```js
-assert.strictEqual(euler373(), 727227472448913);
+assert.strictEqual(circumscribedCircles(), 727227472448913);
 ```
 
 # --seed--
@@ -31,12 +29,12 @@ assert.strictEqual(euler373(), 727227472448913);
 ## --seed-contents--
 
 ```js
-function euler373() {
+function circumscribedCircles() {
 
   return true;
 }
 
-euler373();
+circumscribedCircles();
 ```
 
 # --solutions--

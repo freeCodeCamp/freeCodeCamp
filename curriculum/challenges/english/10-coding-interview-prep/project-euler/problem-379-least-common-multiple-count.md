@@ -8,20 +8,20 @@ dashedName: problem-379-least-common-multiple-count
 
 # --description--
 
-Let f(n) be the number of couples (x,y) with x and y positive integers, x ≤ y and the least common multiple of x and y equal to n.
+Let $f(n)$ be the number of couples ($x$, $y$) with $x$ and $y$ positive integers, $x ≤ y$ and the least common multiple of $x$ and $y$ equal to $n$.
 
-Let g be the summatory function of f, i.e.: g(n) = ∑ f(i) for 1 ≤ i ≤ n.
+Let $g$ be the summatory function of $f$, i.e.: $g(n) = \sum f(i)$ for $1 ≤ i ≤ n$.
 
-You are given that g(106) = 37429395.
+You are given that $g({10}^6) = 37\\,429\\,395$.
 
-Find g(1012).
+Find $g({10}^{12})$.
 
 # --hints--
 
-`euler379()` should return 132314136838185.
+`leastCommonMultipleCount()` should return `132314136838185`.
 
 ```js
-assert.strictEqual(euler379(), 132314136838185);
+assert.strictEqual(leastCommonMultipleCount(), 132314136838185);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler379(), 132314136838185);
 ## --seed-contents--
 
 ```js
-function euler379() {
+function leastCommonMultipleCount() {
 
   return true;
 }
 
-euler379();
+leastCommonMultipleCount();
 ```
 
 # --solutions--
