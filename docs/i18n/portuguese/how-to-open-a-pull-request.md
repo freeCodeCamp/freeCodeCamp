@@ -1,4 +1,4 @@
-# How to open a Pull Request (PR)
+# Como abrir um Pull Request (PR)
 
 Um pull request (PR) permite que você envie alterações do seu fork do GitHub para o repositório principal do freeCodeCamp.org. Depois de terminar de fazer alterações no código, você pode seguir essas diretrizes para abrir um PR.
 
@@ -6,7 +6,7 @@ Um pull request (PR) permite que você envie alterações do seu fork do GitHub 
 
 ## Prepare um bom título para o PR
 
-Recomendamos usar [título e mensagens convencionais](https://www.conventionalcommits.org/) para commits e pull request. The convention has the following format:
+Recomendamos usar [título e mensagens convencionais](https://www.conventionalcommits.org/) para commits e pull request. A convenção tem o seguinte formato:
 
 > `<type>([escopo(s) opcional(is)]): <description>`
 > 
@@ -16,35 +16,35 @@ Recomendamos usar [título e mensagens convencionais](https://www.conventionalco
 
 Quando estiver abrindo um Pull Request (PR), você pode usar a referência abaixo para determinar o tipo, escopo (opcional) e a descrição.
 
-**Type:**
+**Tipo:**
 
-| Tipo  | When to select                                                                         |
+| Tipo  | Quando selecionar                                                                      |
 |:----- |:-------------------------------------------------------------------------------------- |
 | fix   | Funcionalidade mudada ou atualizada/melhorada, testes, a explicação de uma lição, etc. |
-| feat  | Only if you are adding new functionality, tests, etc.                                  |
+| feat  | Somente se você estiver adicionando novas funcionalidades, testes, etc.                |
 | chore | Mudanças não relacionadas ao código, testes ou explicação de uma lição.                |
-| docs  | Changes to `/docs` directory or the contributing guidelines, etc.                      |
+| docs  | Mudanças no diretório `/docs` ou nas diretrizes de contribuição, etc.                  |
 
 **Escopo:**
 
 Você pode selecionar um escopo a partir [desta lista de etiquetas](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**Description:**
+**Descrição:**
 
 Escreva pouco (menos de 30 caracteres) e de modo simples. Você pode adicionar mais informações na caixa de descrição do PR e comentários.
 
-Some examples of good PRs titles would be:
+Alguns exemplos de bons títulos de PRs seriam:
 
 - `fix(a11y): contraste melhorado da barra de pesquisa`
 - `feat: adicionar mais testes aos desafios de HTML e CSS`
 - `fix(api,cliente): previnir erros CORS no envio do formulário`
 - `docs(i18n): tradução para chinês da configuração local`
 
-## Proposing a Pull Request
+## Propondo um Pull Request
 
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
+1. Uma vez que as edições tenham sido realizadas, será solicitado que você crie um pull request na página do GitHub do seu fork.
 
-   ![Image - Compare pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![Imagem - Comparar o prompt de pull request no GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. Por padrão, todos os pull requests devem ser feitos no repositório principal do freeCodeCamp, branch `main`.
 
@@ -56,7 +56,7 @@ Some examples of good PRs titles would be:
 
 4. No corpo de seu PR, há um resumo mais detalhado das alterações feitas e o motivo.
 
-   - You will be presented with a pull request template. É uma checklist que você deve seguir antes de abrir o pull request.
+   - Você será apresentado com um modelo de pull request. É uma checklist que você deve seguir antes de abrir o pull request.
 
    - Preencha os detalhes como quiser. Essas informações serão revisadas e os revisores decidirão se seu pull request será aceito ou não.
 
@@ -80,7 +80,7 @@ E como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do f
 
 > [!TIP] Se você vai contribuir com mais pull requests, recomendamos ler as diretrizes sobre [fazer mudanças e sincronizá-las](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) para evitar o apagamento de seu fork.
 
-## Conflicts on a pull request
+## Conflitos em um pull request
 
 Conflitos podem surgir porque muitos colaboradores trabalham no repositório, e as alterações podem afetar o seu PR, que está aguardando uma revisão e merge.
 
@@ -100,7 +100,7 @@ Quando se está trabalhando em erros normais e funcionalidades na sua branch `ma
 2. Resolva quaisquer conflitos e adicione / edite commits
 
    ```console
-   # Either
+   # Ou
    git add .
    git commit -m "chore: resolve conflicts"
 
@@ -119,7 +119,7 @@ Quando se está trabalhando em erros normais e funcionalidades na sua branch `ma
 
 Quando você estiver trabalhando em funcionalidades para nossas próximas branches `next-*` do currículo, você tem que fazer um cherry pick:
 
-1. Make sure your upstream comes in sync with your local:
+1. Certifique-se de que seu upstream esteja sincronizado com seu local:
 
    ```console
    git checkout main
@@ -135,13 +135,13 @@ Quando você estiver trabalhando em funcionalidades para nossas próximas branch
       ```console
       git checkout <pr-branch-name>
 
-      # example:
+      # exemplo:
       # git checkout feat/add-numpy-video-question
 
       git checkout -b <backup-branch-name>
 
-      # example:
-      #  git checkout -b backup-feat/add-numpy-video-question
+      # exemplo:
+      # git checkout -b backup-feat/add-numpy-video-question
 
       git branch -D <pr-branch-name>
       ```
@@ -151,7 +151,7 @@ Quando você estiver trabalhando em funcionalidades para nossas próximas branch
       ```console
       git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # example:
+      # exemplo:
       #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
       ```
 
@@ -170,7 +170,7 @@ Quando você estiver trabalhando em funcionalidades para nossas próximas branch
    npm ci
    npm run test:curriculum --superblock=<superblock-name>
 
-   # example:
+   # exemplo:
 
    # npm run test:curriculum --superblock=python-for-everybody
 

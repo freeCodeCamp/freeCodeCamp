@@ -1,83 +1,83 @@
-# How to add Cypress tests
+# Como adicionar testes Cypress
 
-When making changes to JavaScript, CSS, or HTML which could change the functionality or layout of a page, it's important to add corresponding [Cypress](https://docs.cypress.io) integration tests.
+Quando estiver realizando alterações em JavaScript, CSS ou HTML que podem mudar a funcionalidade ou aparência de uma página, é importante incluir os testes de integração [Cypress](https://docs.cypress.io) correspondentes.
 
-To learn how to write Cypress tests, or 'specs', please see Cypress' official [documentation](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html).
+Para aprender como escrever testes Cypress ou 'specs', por favor confira a [documentação](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) oficial do Cypress.
 
-> Note: When writing tests for freeCodeCamp, remember to add `/* global cy */` to the top of the file to avoid ESLint issues.
+> Nota: Quando estiver escrevendo testes para o freeCodeCamp, lembre-se de adicionar `/* global cy */` ao topo do arquivo para evitar complicações com ESLint.
 
-## Where to add a test
+## Onde adicionar um teste
 
-- Cypress tests are in the `./cypress` directory.
+- Testes Cypress estão no diretório `./cypress`.
 
-- Cypress tests for a curriculum module are in the corresponding curriculum directory, i.e. `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
+- Testes do Cypress para um módulo do currículo estão no diretório do currículo correspondente, ou seja, `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
 
-## How to run tests
+## Como executar testes
 
-> [!NOTE] If using GitPod, please see [Cypress-GitPod Setup](/how-to-add-cypress-tests#cypress-gitpod-setup)
+> [!NOTE] Se estiver usando GitPod, por favor veja essa [configuração sobre Cypress-GitPod](/how-to-add-cypress-tests#cypress-gitpod-setup)
 
-### 1. Ensure that MongoDB and client applications are running
+### 1. Veja se as aplicações de cliente e MongoDB estão executando
 
-- [Start MongoDB and seed the database](/how-to-setup-freecodecamp-locally#step-3-start-mongodb-and-seed-the-database)
+- [Inicie o MongoDB e crie o banco de dados](/how-to-setup-freecodecamp-locally#step-3-start-mongodb-and-seed-the-database)
 
-- [Start the freeCodeCamp client application and API server](/how-to-setup-freecodecamp-locally#step-4-start-the-freecodecamp-client-application-and-api-server)
+- [Inicie também a aplicação de cliente freeCodeCamp e o servidor API](/how-to-setup-freecodecamp-locally#step-4-start-the-freecodecamp-client-application-and-api-server)
 
-### 2. Run the cypress tests
+### 2. Execute os testes do Cypress
 
-To run tests against production builds, replace `dev` with `prd` below.
+Para executar testes usando compilações de produção, substitua `dev` por `prd` abaixo.
 
-- To run all tests in the `./cypress` directory:
+- Para executar todos os testes no diretório `./cypress`:
 
   ```console
   npm run cypress:dev:run
   ```
 
-- To run a single test:
+- Para executar um único teste:
 
   ```console
   npm run cypress:dev:run -- --spec=cypress/pathToYourSpec/youSpecFileName.js
   ```
 
-- To create a development build, start the development server, and run all existing cypress end-to-end tests:
+- Para criar uma versão de compilação, inicie o servidor de desenvolvimento e execute todos os testes cypress contínuos e funcionais existentes:
 
   ```console
   npm run e2e:dev:run
   ```
 
-## Cypress-GitPod Setup
+## Configuração do Cypress-GitPod
 
-### 1. Ensure you are on the _Feature Preview_ of GitPod _as of 01/02/2021_
+### 1. Certifique-se de estar na _Feature Preview_ do GitPod _a partir de 02/01/2021_
 
-- Go to [GitPod Docs - Feature Preview](https://www.gitpod.io/docs/feature-preview/) to see how to enable _Feature Preview_
+- Visite [GitPod Docs - Feature Preview](https://www.gitpod.io/docs/feature-preview/) para ver como ativar a _Feature Preview_
 
-### 2. Ensure Development Environment is Running
+### 2. Certifique-se que o ambiente de desenvolvimento está em execução
 
-If starting the GitPod environment did not automatically develop the environment:
+Se o ambiente GitPod não foi criado automaticamente:
 
-- Start the database
+- Inicie a base de dados
 
 ```console
 mongod
 ```
 
-- Seed the database
+- Crie a base de dados
 
 ```console
 npm run seed
 ```
 
-- Develop the server and client
+- Desenvolva o servidor e o cliente
 
 ```console
 npm run develop
 ```
 
-### 3. Install Cypress Build Tools
+### 3. Instale ferramentas de compilação do Cypress
 
 ```console
 npm run cypress:install-build-tools
 ```
 
-- When prompted in the terminal, select your keyboard layout by language/area
+- Quando solicitado no terminal, selecione o layout do seu teclado por idioma/área
 
-Now, [Cypress can be run](/how-to-add-cypress-tests#_2-run-the-cypress-tests)
+Agora, [Cypress pode ser executado](/how-to-add-cypress-tests#_2-run-the-cypress-tests)

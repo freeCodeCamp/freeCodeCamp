@@ -2,9 +2,9 @@
 
 > [!NOTE] Antes de seguir estas instruções, verifique se o sistema atende aos requisitos
 > 
-> **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
+> **WSL 2**: Windows 10 64-bit (Versão 2004, Build 19041 ou superior) - disponível para todas as distribuições, incluindo o Windows 10 Home.
 > 
-> **Docker Desktop for Windows**: See respective requirements for [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) and [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
+> **Docker Desktop para Windows**: Veja os respectivos requisitos para [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) e [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
 Este guia abrange algumas etapas comuns sobre a instalação do WSL2. Uma vez resolvidos alguns dos problemas comuns com o WSL2, você deve seguir o nosso [guia de instalação local](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) para trabalhar com o freeCodeCamp no Windows executando uma distro WSL como o Ubuntu.
 
@@ -14,7 +14,7 @@ Siga as instruções na [documentação oficial](https://docs.microsoft.com/en-u
 
 ## Instale o Ubuntu
 
-1. We recommended using Ubuntu-18.04 or above with WSL2.
+1. Recomendamos usar Ubuntu-18.04 ou superior com WSL2.
 
    > [!NOTE]
    > 
@@ -40,19 +40,19 @@ O Git vem pré-instalado com Ubuntu 18.04, verifique sua versão do Git com `git
 git version 2.25.1
 ```
 
-(Optional but recommended) You can now proceed to [setting up your ssh keys](https://help.github.com/articles/generating-an-ssh-key) with GitHub.
+(Opcional, mas recomendado) Agora você pode prosseguir para [configurar suas chaves ssh](https://help.github.com/articles/generating-an-ssh-key) com o GitHub.
 
-## Installing a Code Editor
+## Instalando um Editor de Código
 
-We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. Tem um ótimo suporte para WSL e instala automaticamente todas as extensões necessárias na distribuição WSL.
+É altamente recomendável instalar o [Visual Studio Code](https://code.visualstudio.com) no Windows 10. Tem um ótimo suporte para WSL e instala automaticamente todas as extensões necessárias na distribuição WSL.
 
-Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
+Essencialmente, você irá editar e armazenar seu código no Ubuntu-18.04 com o VS Code instalado no Windows.
 
 Se você usa o [IntelliJ Idea](https://www.jetbrains.com/idea/), talvez precise atualizar seu interpretador do Node e seu gerenciador de pacotes NPM pelo que estiver instalado em sua distro WSL.
 
 Você pode checar essas configurações indo em Settings > Languages & Frameworks > Node.js and NPM.
 
-## Installing Docker Desktop
+## Instalando o Docker Desktop
 
 **O Docker Desktop para Windows** permite instalar e executar banco de dados e serviços como MongoDB, NGINX, etc. Isso é útil para evitar problemas comuns com a instalação do MongoDB ou outros serviços diretamente no Windows ou WSL2.
 
@@ -70,7 +70,7 @@ Isso faz com que os contêineres sejam executados no lado do WSL em vez de serem
 
 Depois de ter configurado o Docker Desktop para trabalhar com o WSL2, siga essas etapas para iniciar um serviço no MongoDB:
 
-1. Launch a new Ubuntu-18.04 terminal
+1. Inicie um novo terminal Ubuntu-18.04
 
 2. Pull `MongoDB 4.0.x` do dockerhub
 
@@ -89,9 +89,9 @@ Depois de ter configurado o Docker Desktop para trabalhar com o WSL2, siga essas
      -d mongo:4.0
    ```
 
-4. You can now access the service from both Windows or Ubuntu at `mongodb://localhost:27017`.
+4. Agora você pode acessar o serviço no Windows ou Ubuntu em `mongodb://localhost:27017`.
 
-## Installing Node.js and npm
+## Instalando Node.js e npm
 
 Recomendamos que você instale a versão LTS para Node.js com um gerenciador de versões do node - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
@@ -100,12 +100,12 @@ Uma vez instalado, use esses comandos para instalar e usar a versão do Node.js,
 ```console
 nvm install --lts
 
-# OR
+# OU
 # nvm install <version>
 
 nvm install 14
 
-# Usage
+# Uso
 # nvm use <version>
 
 nvm use 12
@@ -123,11 +123,11 @@ Agora que você instalou os pré-requisitos, siga [nosso guia de instalação lo
 
 > [!WARNING]
 > 
-> Por favor note que, neste momento, a configuração para testes do Cypress (e necessidades relacionadas à GUI) são um trabalho em andamento. You should still be able to work on most of the codebase.
+> Por favor note que, neste momento, a configuração para testes do Cypress (e necessidades relacionadas à GUI) são um trabalho em andamento. Você ainda deve ser capaz de trabalhar na maior parte do código.
 
-## Useful Links
+## Links Úteis
 
 - [Configuração de desenvolvimento WSL2 com Ubuntu 20.04, Node.js, MongoDB, VS Code e Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - um artigo de Mrugesh Mohapatra (Desenvolvedor de Equipe na freeCodeCamp.org)
-- Frequently asked questions on:
+- Perguntas frequentes sobre:
   - [Subsistema Windows para Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
-  - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)
+  - [Docker Desktop para Windows](https://docs.docker.com/docker-for-windows/faqs)
