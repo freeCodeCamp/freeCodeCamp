@@ -22,8 +22,6 @@ On the segment $R_0R_1$ the point $B$ is drawn such that $\frac{R_0B}{R_0R_1} = 
 
 The Bézier curve defined by the points $P_0$, $P_1$, $P_2$, $P_3$ is the locus of $B$ as $Q_0$ takes all possible positions on the segment $P_0P_1$. (Please note that for all points the value of $t$ is the same.)
 
-At this (external) web address you will find an applet that allows you to drag the points $P_0$, $P_1$, $P_2$ and $P_3$ to see what the Bézier curve (green curve) defined by those points looks like. You can also drag the point $Q_0$ along the segment $P_0P_1$.
-
 From the construction it is clear that the Bézier curve will be tangent to the segments $P_0P_1$ in $P_0$ and $P_2P_3$ in $P_3$.
 
 A cubic Bézier curve with $P_0 = (1, 0)$, $P_1 = (1, v)$, $P_2 = (v, 1)$ and $P_3 = (0, 1)$ is used to approximate a quarter circle. The value $v > 0$ is chosen such that the area enclosed by the lines $OP_0$, $OP_3$ and the curve is equal to $\frac{π}{4}$ (the area of the quarter circle).
