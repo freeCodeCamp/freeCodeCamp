@@ -8,24 +8,28 @@ dashedName: reuse-patterns-using-capture-groups
 
 # --description--
 
-Por vezes você procurará padrões que ocorrem várias vezes em uma string. Não faz sentido repetir a regex manualmente. Existe uma forma muito melhor de especificar quando a string possui múltiplas ocorrências do padrão buscado.
-
-Você pode usar <dfn>grupos de captura</dfn> para buscar substrings repetidas. Usamos parênteses (`(` e `)`) para criar grupos de captura. Só precisamos escrever a regex do padrão que se repete dentro deles.
-
-E, para especificar que a string capturada pelo grupo se repetirá, você escreve uma barra invertida (`\`) seguida de um número. Esse número começa por 1 e aumenta em um para cada grupo de captura que você usa. Por exemplo, `\1` captura o primeiro grupo.
-
-No exemplo abaixo, é capturada qualquer palavra que se repita depois de um espaço:
+Vamos supor que você deseja encontrar a correspondência de uma palavra que ocorra várias vezes como abaixo.
 
 ```js
-let repeatStr = "regex regex";
-let repeatRegex = /(\w+)\s\1/;
-repeatRegex.test(repeatStr);
-repeatStr.match(repeatRegex);
+let repeatStr = "row row row your boat";
 ```
 
-Nele, `test` retorna `true` e `match` retorna `["regex regex", "regex"]`.
+Você poderia usar `/row row row/`, mas e se você não souber a palavra específica repetida? <dfn>Grupos de captura</dfn> podem ser usados para localizar substrings repetidas.
 
-O método `.match()` de uma string retorna um array com a string capturada e cada grupo capturado.
+Os grupos de captura são criados envolvendo o padrão de regex a ser capturado entre parênteses. Neste caso, o objetivo é capturar uma palavra composta de caracteres alfanuméricos para que o grupo de captura seja `\w+` entre parênteses: `/(\w+)/`.
+
+A substring correspondente ao grupo é salva em uma "variável" temporária que pode ser acessada dentro da mesma expressão regular usando uma barra invertida e o número do grupo de captura (ex.: `\1`). Os grupos de captura são automaticamente numerados pela posição de abertura de seus parênteses (esquerda para direita), começando em 1.
+
+O exemplo abaixo captura qualquer palavra que se repita três vezes, separada por espaços:
+
+```js
+let repeatRegex = /(\w+) \1 \1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["row row row", "row"]
+```
+
+Usar o método `.match()` em uma string retornará um array com a substring correspondente, juntamente com seus grupos capturados.
+
 
 # --instructions--
 

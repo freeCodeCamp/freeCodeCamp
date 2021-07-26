@@ -1,6 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bbf
-title: Visualize Data with a Choropleth Map
+title: Visualizar dados com um mapa coroplético
 challengeType: 3
 forumTopicId: 301465
 dashedName: visualize-data-with-a-choropleth-map
@@ -8,42 +8,42 @@ dashedName: visualize-data-with-a-choropleth-map
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/EZKqza>.
+**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/EZKqza>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
+Atenda às [especificações de usuário](https://en.wikipedia.org/wiki/User_story) abaixo para passar em todos os testes. Dê à página o seu próprio estilo pessoal.
 
-You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
+Você pode usar HTML, JavaScript, CSS e a biblioteca de visualização D3, baseada em svg. Os elementos DOM obrigatórios (não virtuais) são consultados no momento de cada teste. Se você usar um framework de front-end (como o Vue por exemplo), os resultados dos testes podem ser imprecisos para conteúdo dinâmico. Esperamos dar suporte a eles um dia, mas atualmente esses frameworks não são suportados para os projetos de D3.
 
-**User Story #1:** My choropleth should have a title with a corresponding `id="title"`.
+**Especificação de usuário nº 1: ** meu coropleto deve ter um título com um `id="title"` correspondente.
 
-**User Story #2:** My choropleth should have a description element with a corresponding `id="description"`.
+**Especificação de usuário nº 2: ** meu coropleto deve ter um elemento de descrição com uma `id="description"` correspondente.
 
-**User Story #3:** My choropleth should have counties with a corresponding `class="county"` that represent the data.
+**Especificação de usuário nº 3: ** meu coropleto deve ter condados com um `class="county"` correspondente que representa os dados.
 
-**User Story #4:** There should be at least 4 different fill colors used for the counties.
+**Especificação de usuário nº 4: ** deve haver pelo menos 4 cores de preenchimento diferentes usadas para os condados.
 
-**User Story #5:** My counties should each have `data-fips` and `data-education` properties containing their corresponding `fips` and `education` values.
+**Especificação de usuário nº 5:** cada um dos meus condados devem ter propriedades `data-fips` e `data-education` contendo seus correspondentes valores de `fips` e `education`.
 
-**User Story #6:** My choropleth should have a county for each provided data point.
+** Especificação de usuário nº 6: ** meu coropleto deve ter um condado para cada dado fornecido.
 
-**User Story #7:** The counties should have `data-fips` and `data-education` values that match the sample data.
+**Especificação de usuário nº 7:** os condados devem ter os valores `data-fips` e `data-education` que correspondam aos dados da amostra.
 
-**User Story #8:** My choropleth should have a legend with a corresponding `id="legend"`.
+**Especificação de usuário nº 8:** meu cloropleto deve ter uma legenda com um `id="legend"` correspondente.
 
-**User Story #9:** There should be at least 4 different fill colors used for the legend.
+**Especificação de usuário nº 9:** deve haver pelo menos 4 cores diferentes de preenchimento usadas para a legenda.
 
-**User Story #10:** I can mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
+**Especificação de usuário nº 10:** eu posso passar com o mouse sobre uma área e ver uma dica com o `id="tooltip"` correspondente, que exibe mais informações sobre a área.
 
-**User Story #11:** My tooltip should have a `data-education` property that corresponds to the `data-education` of the active area.
+**Especificação de usuário nº 11:** minha dica deve ter uma propriedade `data-education` que corresponde ao `data-education` da área ativa.
 
-Here are the datasets you will need to complete this project:
+Aqui estão os conjuntos de dados de que você precisará para completar esse projeto:
 
--   **US Education Data:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json`
--   **US County Data:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json`
+-   **Dados educacionais dos EUA:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json`
+-   **Dados dos condados dos EUA:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json`
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+Quando tiver terminado, envie o URL do seu projeto depois de ele haver passado em todos os testes.
 
 # --solutions--
 

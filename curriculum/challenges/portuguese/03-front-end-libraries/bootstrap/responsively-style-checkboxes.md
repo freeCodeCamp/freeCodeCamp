@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aeda08845
-title: Caixas de seleção Responsivas
+title: Compreender caixas de seleção responsivas
 challengeType: 0
 forumTopicId: 18269
 required:
@@ -13,27 +13,27 @@ dashedName: responsively-style-checkboxes
 
 # --description--
 
-Já que as classes Bootstrap `col-xs-*` são aplicáveis a todos os elementos de `form`, você também pode usá-los nas suas caixas de seleções! Dessa forma, as caixas de seleções irão estar simetricamente distribuídas pela página, independente do quão largo for a resolução da tela.
+Já que as classes `col-xs-*` do Bootstrap são aplicáveis a todos os elementos de `form`, você também pode usá-las nas caixas de seleções! Dessa forma, as caixas de seleções vão estar simetricamente distribuídas pela página, independente da largura da resolução da tela.
 
 # --instructions--
 
-Aninhe todos as suas três caixas de seleção em um elemento `<div class="row">`. Então aninhe cada um deles no elemento `<div class="col-xs-4">`.
+Aninhe as três caixas de seleção em um elemento `<div class="row">`. Então aninhe cada uma deles no elemento `<div class="col-xs-4">`.
 
 # --hints--
 
-Todas as suas caixas de seleção devem estar aninhadas dentro de uma `div` com a classe `row`.
+Todas as caixas de seleção devem estar aninhadas dentro de uma `div` com a classe `row`.
 
 ```js
 assert($('div.row:has(input[type="checkbox"])').length > 0);
 ```
 
-Cada uma das suas caixas de seleção devem estar aninhadas dentro de sua própria `div` com a classe `col-xs-4`.
+Cada uma das caixas de seleção devem estar aninhadas dentro da própria `div` com a classe `col-xs-4`.
 
 ```js
 assert($('div.col-xs-4:has(input[type="checkbox"])').length > 2);
 ```
 
-Todos os seus elementos `div` devem ter tags de fechamento.
+Todos os elementos `div` devem ter tags de fechamento.
 
 ```js
 assert(

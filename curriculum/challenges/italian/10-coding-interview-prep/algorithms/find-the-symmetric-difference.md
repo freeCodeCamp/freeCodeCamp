@@ -1,6 +1,6 @@
 ---
 id: a3f503de51cf954ede28891d
-title: Find the Symmetric Difference
+title: Trovare la differenza simmetrica
 challengeType: 5
 forumTopicId: 301611
 dashedName: find-the-symmetric-difference
@@ -8,77 +8,77 @@ dashedName: find-the-symmetric-difference
 
 # --description--
 
-The mathematical term <dfn>symmetric difference</dfn> (`△` or `⊕`) of two sets is the set of elements which are in either of the two sets but not in both. For example, for sets `A = {1, 2, 3}` and `B = {2, 3, 4}`, `A △ B = {1, 4}`.
+Il termine matematico <dfn>differenza simmetrica</dfn> (`△` o `⊕`) di due insiemi è l'insieme di elementi che sono in uno dei due insiemi ma non in entrambi. Ad esempio, per gli insiemi `A = {1, 2, 3}` e `B = {2, 3, 4}`, `A △ B = {1, 4}`.
 
-Symmetric difference is a binary operation, which means it operates on only two elements. So to evaluate an expression involving symmetric differences among *three* elements (`A △ B △ C`), you must complete one operation at a time. Thus, for sets `A` and `B` above, and `C = {2, 3}`, `A △ B △ C = (A △ B) △ C = {1, 4} △ {2, 3} = {1, 2, 3, 4}`.
+La differenza simmetrica è un'operazione binaria, il che significa che opera solo su due elementi. Quindi per valutare un'espressione che comporta differenze simmetriche tra *tre* elementi (`A △ B △ C`), è necessario completare un'operazione alla volta. Così, per gli insiemi `A` e `B` di cui sopra, e `C = {2, 3}`, `A △ B △ C = (A △ B) △ C = {1, 4} △ {2, 3} = {1, 2, 3, 4}`.
 
 # --instructions--
 
-Create a function that takes two or more arrays and returns an array of their symmetric difference. The returned array must contain only unique values (*no duplicates*).
+Crea una funzione che richiede due o più array e restituisce un array della loro differenza simmetrica. L'array restituito deve contenere solo valori univoci (*nessun duplicato*).
 
 # --hints--
 
-`sym([1, 2, 3], [5, 2, 1, 4])` should return `[3, 4, 5]`.
+`sym([1, 2, 3], [5, 2, 1, 4])` dovrebbe restituire `[3, 4, 5]`.
 
 ```js
 assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 4, 5]);
 ```
 
-`sym([1, 2, 3], [5, 2, 1, 4])` should contain only three elements.
+`sym([1, 2, 3], [5, 2, 1, 4])` dovrebbe contenere solo tre elementi.
 
 ```js
 assert.equal(sym([1, 2, 3], [5, 2, 1, 4]).length, 3);
 ```
 
-`sym([1, 2, 3, 3], [5, 2, 1, 4])` should return `[3, 4, 5]`.
+`sym([1, 2, 3, 3], [5, 2, 1, 4])` dovrebbe restituire `[3, 4, 5]`.
 
 ```js
 assert.sameMembers(sym([1, 2, 3, 3], [5, 2, 1, 4]), [3, 4, 5]);
 ```
 
-`sym([1, 2, 3, 3], [5, 2, 1, 4])` should contain only three elements.
+`sym([1, 2, 3, 3], [5, 2, 1, 4])` dovrebbe contenere solo tre elementi.
 
 ```js
 assert.equal(sym([1, 2, 3, 3], [5, 2, 1, 4]).length, 3);
 ```
 
-`sym([1, 2, 3], [5, 2, 1, 4, 5])` should return `[3, 4, 5]`.
+`sym([1, 2, 3], [5, 2, 1, 4, 5])` dovrebbe restituire `[3, 4, 5]`.
 
 ```js
 assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4, 5]), [3, 4, 5]);
 ```
 
-`sym([1, 2, 3], [5, 2, 1, 4, 5])` should contain only three elements.
+`sym([1, 2, 3], [5, 2, 1, 4, 5])` dovrebbe contenere solo tre elementi.
 
 ```js
 assert.equal(sym([1, 2, 3], [5, 2, 1, 4, 5]).length, 3);
 ```
 
-`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` should return `[1, 4, 5]`
+`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` dovrebbe restituire `[1, 4, 5]`
 
 ```js
 assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5]);
 ```
 
-`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` should contain only three elements.
+`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` dovrebbe contenere solo tre elementi.
 
 ```js
 assert.equal(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]).length, 3);
 ```
 
-`sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])` should return `[1, 4, 5]`.
+`sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])` dovrebbe restituire `[1, 4, 5]`.
 
 ```js
 assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5]);
 ```
 
-`sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])` should contain only three elements.
+`sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])` dovrebbe contenere solo tre elementi.
 
 ```js
 assert.equal(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]).length, 3);
 ```
 
-`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])` should return `[2, 3, 4, 6, 7]`.
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])` dovrebbe restituire `[2, 3, 4, 6, 7]`.
 
 ```js
 assert.sameMembers(
@@ -87,7 +87,7 @@ assert.sameMembers(
 );
 ```
 
-`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])` should contain only five elements.
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])` deve contenere solo cinque elementi.
 
 ```js
 assert.equal(
@@ -96,7 +96,7 @@ assert.equal(
 );
 ```
 
-`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])` should return `[1, 2, 4, 5, 6, 7, 8, 9]`.
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])` dovrebbe restituire `[1, 2, 4, 5, 6, 7, 8, 9]`.
 
 ```js
 assert.sameMembers(
@@ -112,7 +112,7 @@ assert.sameMembers(
 );
 ```
 
-`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])` should contain only eight elements.
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])` dovrebbe contenere solo otto elementi.
 
 ```js
 assert.equal(

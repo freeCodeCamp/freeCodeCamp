@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08e
-title: 'Relational Databases: Relationship Building'
+title: 'Bancos de dados relacionais: construção de relacionamentos'
 challengeType: 11
 videoId: CSbqczsHVnc
 dashedName: relational-databases-relationship-building
@@ -10,19 +10,19 @@ dashedName: relational-databases-relationship-building
 
 ## --text--
 
-What does the INSERT command do in SQL?
+O que o comando INSERT faz em SQL?
 
 ## --answers--
 
-It defines a new row by listing the fields we want to include followed by the values we want placed in the new row.
+Define uma nova linha listando os campos que queremos incluir seguida dos valores que queremos que sejam colocados nessa nova linha.
 
 ---
 
-It defines a new column by listing the rows we want to include followed by the values we want placed in the new column.
+Define uma nova coluna listando as linhas que queremos incluir seguida dos valores que queremos que sejam colocados nessa nova coluna.
 
 ---
 
-It defines a new table by listing the rows and fields we want to include followed by the values that we want placed in the table.
+Define uma nova tabela listando as linhas e campos que queremos incluir seguidos dos valores que queremos que sejam colocados na tabela.
 
 ## --video-solution--
 

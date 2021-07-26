@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd6
-title: Add a Tooltip to a D3 Element
+title: Adicionar uma dica a um elemento D3
 challengeType: 6
 forumTopicId: 301470
 dashedName: add-a-tooltip-to-a-d3-element
@@ -8,71 +8,71 @@ dashedName: add-a-tooltip-to-a-d3-element
 
 # --description--
 
-A tooltip shows more information about an item on a page when the user hovers over that item. There are several ways to add a tooltip to a visualization, this challenge uses the SVG `title` element.
+Uma dica mostra mais informações sobre um item em uma página quando o usuário passa o mouse por cima do item. Existem várias maneiras de adicionar uma dica a uma visualização. Este desafio usa o elemento SVG `title`.
 
-`title` pairs with the `text()` method to dynamically add data to the bars.
+`title` está junto com o método `text()` para adicionar dinamicamente dados às barras.
 
 # --instructions--
 
-Append a `title` element under each `rect` node. Then call the `text()` method with a callback function so the text displays the data value.
+Acrescente um elemento `title` sob cada nó de `rect`. Em seguida, chame o método `text()` com uma função de callback para que o texto mostre o valor dos dados.
 
 # --hints--
 
-Your code should have 9 `title` elements.
+O código deve ter 9 elementos `title`.
 
 ```js
 assert($('title').length == 9);
 ```
 
-The first `title` element should have tooltip text of `12`.
+O primeiro elemento `title` deve ter o texto de dica `12`.
 
 ```js
 assert($('title').eq(0).text() == '12');
 ```
 
-The second `title` element should have tooltip text of `31`.
+O segundo elemento `title` deve ter o texto de dica `31`.
 
 ```js
 assert($('title').eq(1).text() == '31');
 ```
 
-The third `title` element should have tooltip text of `22`.
+O terceiro elemento `title` deve ter o texto de dica `22`.
 
 ```js
 assert($('title').eq(2).text() == '22');
 ```
 
-The fourth `title` element should have tooltip text of `17`.
+O quarto elemento `title` deve ter o texto de dica `17`.
 
 ```js
 assert($('title').eq(3).text() == '17');
 ```
 
-The fifth `title` element should have tooltip text of `25`.
+O quinto elemento `title` deve ter o texto de dica `25`.
 
 ```js
 assert($('title').eq(4).text() == '25');
 ```
 
-The sixth `title` element should have tooltip text of `18`.
+O sexto elemento `title` deve ter o texto de dica `18`.
 
 ```js
 assert($('title').eq(5).text() == '18');
 ```
 
-The seventh `title` element should have tooltip text of `29`.
+O sétimo elemento `title` deve ter o texto de dica `29`.
 
 ```js
 assert($('title').eq(6).text() == '29');
 ```
 
-The eighth `title` element should have tooltip text of `14`.
+O oitavo elemento `title` deve ter o texto de dica `14`.
 
 ```js
 assert($('title').eq(7).text() == '14');
 ```
 
-The ninth `title` element should have tooltip text of `9`.
+O nono elemento `title` deve ter o texto de dica `9`.
 
 ```js
 assert($('title').eq(8).text() == '9');

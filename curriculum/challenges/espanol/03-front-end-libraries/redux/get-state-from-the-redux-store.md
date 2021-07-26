@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614c
-title: Get State from the Redux Store
+title: Obtén el estado del almacén Redux
 challengeType: 6
 forumTopicId: 301443
 dashedName: get-state-from-the-redux-store
@@ -8,21 +8,21 @@ dashedName: get-state-from-the-redux-store
 
 # --description--
 
-The Redux store object provides several methods that allow you to interact with it. For example, you can retrieve the current `state` held in the Redux store object with the `getState()` method.
+El objeto almacén Redux proporciona varios métodos que permiten interactuar con él. Por ejemplo, puedes recuperar el `state` actual que tiene el objeto almacén Redux con el método `getState()`.
 
 # --instructions--
 
-The code from the previous challenge is re-written more concisely in the code editor. Use `store.getState()` to retrieve the `state` from the `store`, and assign this to a new variable `currentState`.
+El código del desafío anterior se reescribe de forma más concisa en el editor de código. Utiliza `store.getState()` para recuperar el `state` del `store`, y asígnalo a una nueva variable `currentState`.
 
 # --hints--
 
-The Redux store should have a value of 5 for the initial state.
+El almacén Redux debe tener un valor de 5 para el estado inicial.
 
 ```js
 assert(store.getState() === 5);
 ```
 
-A variable `currentState` should exist and should be assigned the current state of the Redux store.
+Debe existir una variable `currentState` y se le debe asignar el estado actual del almacén Redux.
 
 ```js
 (getUserInput) =>

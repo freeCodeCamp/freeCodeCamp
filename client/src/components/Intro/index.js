@@ -57,6 +57,15 @@ function Intro({
           )}
         </FullWidthRow>
         <Spacer />
+        <div className='text-center'>
+          <Trans i18nKey='learn.coder-survey'>
+            <a href='https://www.freecodecamp.org/news/2021-new-coder-survey/'>
+              Take the 2021 New Coder Survey
+            </a>{' '}
+            (it takes about 10 minutes – do it for science)
+          </Trans>
+        </div>
+        <Spacer />
         <div className='text-center quote-partial'>
           <blockquote className='blockquote'>
             <span>

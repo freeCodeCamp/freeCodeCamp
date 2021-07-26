@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedd08845
-title: Adicione Ícones de Font Awesome para nossos botões
+title: Adicionar ícones de Font Awesome para nossos botões
 challengeType: 0
 forumTopicId: 16638
 required:
@@ -12,7 +12,7 @@ dashedName: add-font-awesome-icons-to-our-buttons
 
 # --description--
 
-Font Awesome é uma biblioteca conveniente de ícones. Estes ícones podem ser fontes da web ou gráficos vetoriais. Estes ícones são tratados assim como as fontes. Você pode especificar seu tamanho utilizando pixels, e eles irão assumir o tamanho de fonte de seus elementos HTML parentes.
+Font Awesome é uma biblioteca conveniente de ícones. Estes ícones podem ser fontes da web ou gráficos vetoriais. Estes ícones são tratados assim como as fontes. Você pode especificar seu tamanho utilizando pixels, e eles vão assumir o tamanho de fonte dos elementos pais do HTML.
 
 Você pode incluir o Font Awesome em qualquer aplicativo, adicionando o seguinte código ao topo do seu HTML:
 
@@ -32,7 +32,7 @@ Observe que o elemento `span` também é aceitável para uso com ícones.
 
 # --instructions--
 
-Use o Font Awesome para adicionar um ícone `thumbs-up` ao seu botão like, doando-o um elemento `i` com as classes `fas` e `fa-thumbs-up`. Certifique-se de manter o texto `Like` ao lado do ícone.
+Use o Font Awesome para adicionar um ícone `thumbs-up` ao botão like, doando-o um elemento `i` com as classes `fas` e `fa-thumbs-up`. Certifique-se de manter o texto `Like` ao lado do ícone.
 
 # --hints--
 
@@ -42,7 +42,7 @@ Você deve adicionar um elemento `i` com as classes `fas` e `fa-thumbs-up`.
 assert($('i').is('.fas.fa-thumbs-up') || $('span').is('.fas.fa-thumbs-up'));
 ```
 
-Seu ícone `fa-thumbs-up` deve estar localizado dentro do botão Like.
+O ícone `fa-thumbs-up` deve estar localizado dentro do botão Like.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Seu elemento `i` deve estar dentro de seu novo elemento `button`.
+O elemento `i` deve estar dentro do novo elemento `button`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Seu elemento de ícone deve ter uma tag de fechamento.
+O elemento de ícone deve ter uma tag de fechamento.
 
 ```js
 assert(code.match(/<\/i>|<\/span>/g));

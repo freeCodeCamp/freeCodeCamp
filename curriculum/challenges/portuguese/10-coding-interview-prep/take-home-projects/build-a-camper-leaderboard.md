@@ -1,6 +1,6 @@
 ---
 id: bd7156d8c242eddfaeb5bd13
-title: Build a freeCodeCamp Forum Homepage
+title: Construa uma página inicial do fórum do freeCodeCamp
 challengeType: 3
 forumTopicId: 302349
 dashedName: build-a-freecodecamp-forum-homepage
@@ -8,21 +8,21 @@ dashedName: build-a-freecodecamp-forum-homepage
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/JqdoMV>.
+**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/JqdoMV>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**User Story:** I can see a list of the most recent posts on the freeCodeCamp forum.
+**Especificação de usuário:** posso ver uma lista dos posts mais recentes do fórum freeCodeCamp.
 
-**User Story:** For each topic, I can see the title and a list of links to users who have recently posted in it.
+**Especificação de usuário:** para cada tópico, posso ver o título e uma lista de links para usuários que recentemente postaram nele.
 
-**User Story:** I can see the number of replies and views that each topic has had, and a timestamp of when the topic was last active.
+**Especificação de usuário:** posso ver o número de respostas e visualizações que cada tópico teve, e um carimbo de data/hora de quando o tópico foi ativo pela última vez.
 
-**Hint:** To get the 30 most recent forum posts: <https://forum-proxy.freecodecamp.rocks/latest>.
+**Dica:** Para obter os 30 posts mais recentes do fórum: <https://forum-proxy.freecodecamp.rocks/latest>.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 
