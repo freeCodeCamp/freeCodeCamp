@@ -61,9 +61,9 @@ Depois de estar com os pré-requisitos instalados, você precisa preparar seu am
 
 Isso é essencial, pois permite que você trabalhe em sua própria cópia do freeCodeCamp no GitHub, ou fazer download (clone) do repositório para trabalhar localmente. Mais tarde, você poderá solicitar alterações para serem enviadas para o repositório principal através de um pull request (PR).
 
-> [!TIP] O repositório principal em `https://github.com/freeCodeCamp/freeCodeCamp` é frequentemente chamado de `repositório upstream`.
+> [!TIP] O repositório principal em `https://github.com/freeCodeCamp/freeCodeCamp` é frequentemente chamado de repositório `upstream`.
 > 
-> Seu fork em `https://github.com/YOUR_USER_NAME/freeCodeCamp` frequentemente é referenciado como o repositório de `origem`. `YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub.
+> Seu fork em `https://github.com/YOUR_USER_NAME/freeCodeCamp` frequentemente é referenciado como o repositório de `origin`. `YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub.
 
 **Siga estes passos para criar um fork do repositório `https://github.com/freeCodeCamp/freeCodeCamp`:**
 
@@ -84,7 +84,7 @@ Isso é essencial, pois permite que você trabalhe em sua própria cópia do fre
 
 ## Clone o seu fork no GitHub
 
-[Clonar](https://help.github.com/articles/cloning-a-repository/) é ** a ação de fazer o download de uma cópia** de um repositório de um local `remoto` que pertence a você ou a outra pessoa. No seu caso, este local remoto é o seu `fork` do repositório freeCodeCamp que deve estar disponível em `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub.)
+[Clonar](https://help.github.com/articles/cloning-a-repository/) é ** a ação de fazer o download de uma cópia** de um repositório de um local `remote` que pertence a você ou a outra pessoa. No seu caso, este local remoto é o seu `fork` do repositório freeCodeCamp que deve estar disponível em `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` será substituído pelo seu nome de usuário do GitHub.)
 
 > [!WARNING] Se você está usando uma distribuição WSL2 Linux, você talvez tenha problemas relacionados a performance e estabilidade ao executar esse projeto em uma pasta compartilhada entre Windows e WSL2 (ex. `/mnt/c/Users/`). Recomendarmos clonar esse repositório em uma pasta que é principalmente usada pela sua distribuição WSL2 Linux e não diretamente compartilhada com Windows (ex. `~/PROJECTS/`).
 > 
@@ -94,7 +94,7 @@ Execute esses comandos em sua máquina local:
 
 1. Abra um Terminal / Prompt de Comando / Shell no diretório de seus projetos
 
-   _ex.: `/diretoriodoseuprojeto/`_
+   _ex.: `/yourprojectsdirectory/`_
 
 2. Clone seu fork do freeCodeCamp, substituindo `YOUR_USER_NAME` pelo seu nome de usuário do GitHub
 
@@ -202,7 +202,7 @@ Inicie o servidor do MongoDB em um terminal separado:
   mongod
   ```
 
-- No Windows, você deve especificar o caminho completo para o `binário do mongod`
+- No Windows, você deve especificar o caminho completo para o binário do `mongod`
 
   ```console
   "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
@@ -346,7 +346,7 @@ Siga estes passos:
    git status
    ```
 
-   Isso deve mostrar uma lista dos arquivos `não executados` que você editou.
+   Isso deve mostrar uma lista dos arquivos `unstaged` que você editou.
 
    ```console
    Na branch feat/documentation
@@ -371,7 +371,7 @@ Siga estes passos:
    git add caminho/para/meu/arquivo/alterado.ext
    ```
 
-   Ou você pode adicionar todos os arquivos `não preparados` para a área de preparação:
+   Ou você pode adicionar todos os arquivos `unstaged` para a área de preparação:
 
    ```console
    git add .

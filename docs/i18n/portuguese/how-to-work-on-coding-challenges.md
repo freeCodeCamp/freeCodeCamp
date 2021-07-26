@@ -389,7 +389,7 @@ Faça o passo-a-passo a seguir quando for adicionar novos tópicos de dicas/solu
 1. Comece seguindo os mesmos passos para criar um novo tópico, mas revise o seguinte para criar o título.
 2. O título do tópico deve começar com `freeCodeCamp Challenge Guide:` concatenado com o título atual do desafio de currículo. Por exemplo, se o desafio é chamado "`Chunky Monkey`", o título do tópico seria "`freeCodeCamp Challenge Guide: Chunky Monkey`".
 3. O `camperbot` deve ser o proprietário destes tópicos/postagens. Então, você precisará solicitar um administrador para alterar a propriedade da postagem principal para `camperbot`.
-4. Depois que o novo tópico for criado, será criado um id para o tópico do fórum. Está localizado no final da URL do tópico do fórum. Este id deve ser adicionado ao arquivo de desafio do currículo através do processo normal de pull request para o botão `Obter uma dica` para vincular ao tópico.
+4. Depois que o novo tópico for criado, será criado um id para o tópico do fórum. Está localizado no final da URL do tópico do fórum. Este id deve ser adicionado ao arquivo de desafio do currículo através do processo normal de pull request para o botão `Get a Hint` para vincular ao tópico.
 
 ### Diretrizes para o conteúdo dos tópicos de dicas e soluções
 

@@ -126,7 +126,7 @@ Adicione/atualize o texto da pergunta sob a parte que diz:
 
 ## --text--
 ```
-Adicione/Atualize (`Resposta 1`, `Resposta 2`, e assim por diante) sob `## --answers--`. Confirme se o número sob  `## --video-solution--` seja o número da resposta correta. Você pode adicionar mais respostas possíveis usando o mesmo formato. Tanto a pergunta quanto as respostas podem estar entre aspas.
+Adicione/Atualize (`Answer 1`, `Answer 2`, e assim por diante) sob `## --answers--`. Confirme se o número sob  `## --video-solution--` seja o número da resposta correta. Você pode adicionar mais respostas possíveis usando o mesmo formato. Tanto a pergunta quanto as respostas podem estar entre aspas.
 
 ### Exemplos de perguntas
 
