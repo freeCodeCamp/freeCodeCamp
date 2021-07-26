@@ -36,7 +36,7 @@ import Spacer from '../../../../components/helpers/spacer';
 import {
   ChallengeNodeType,
   ChallengeMetaType,
-  Tests
+  Test
 } from '../../../../redux/prop-types';
 import { isSignedInSelector } from '../../../../redux';
 import Hotkeys from '../../components/Hotkeys';
@@ -52,7 +52,7 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   (
     output: string[],
-    tests: Tests[],
+    tests: Test[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean
   ) => ({
@@ -81,7 +81,7 @@ interface BackEndProps {
   forumTopicId: number;
   id: string;
   initConsole: () => void;
-  initTests: (tests: Tests[]) => void;
+  initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   output: string[];
@@ -89,7 +89,7 @@ interface BackEndProps {
     challengeMeta: ChallengeMetaType;
   };
   t: TFunction;
-  tests: Tests[];
+  tests: Test[];
   title: string;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
   updateSolutionFormValues: () => void;

@@ -27,6 +27,7 @@ import { challengeTypes } from '../../../../utils/challengeTypes';
 import { isContained } from '../../../utils/is-contained';
 import {
   ChallengeNodeType,
+  ChallengeFiles,
   ChallengeFile,
   ChallengeMetaType,
   Test,
@@ -77,7 +78,7 @@ interface ShowClassicProps {
   createFiles: (arg0: ChallengeFile[]) => void;
   data: { challengeNode: ChallengeNodeType };
   executeChallenge: () => void;
-  challengeFiles: ChallengeFile[];
+  challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
   output: string[];
@@ -342,7 +343,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const { challengeFiles } = this.props;
     return (
       challengeFiles?.some(
-        challengeFile => challengeFile?.editableRegionBoundaries?.length === 2
+        challengeFile => challengeFile.editableRegionBoundaries?.length === 2
       ) ?? false
     );
   }

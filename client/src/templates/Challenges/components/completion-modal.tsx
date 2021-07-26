@@ -12,7 +12,10 @@ import { Dispatch } from 'redux';
 import Login from '../../../components/Header/components/Login';
 import CompletionModalBody from './completion-modal-body';
 import { dasherize } from '../../../../../utils/slugs';
-import { AllChallengeNodeType, ChallengeFile } from '../../../redux/prop-types';
+import {
+  AllChallengeNodeType,
+  ChallengeFiles
+} from '../../../redux/prop-types';
 
 import {
   closeModal,
@@ -40,7 +43,7 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   successMessageSelector,
   (
-    challengeFiles: ChallengeFile[],
+    challengeFiles: ChallengeFiles,
     { title, id }: { title: string; id: string },
     completedChallengesIds: string[],
     isOpen: boolean,
@@ -99,7 +102,7 @@ interface CompletionModalsProps {
   completedChallengesIds: string[];
   currentBlockIds?: string[];
   executeGA: () => void;
-  challengeFiles: ChallengeFile[];
+  challengeFiles: ChallengeFiles;
   id: string;
   isOpen: boolean;
   isSignedIn: boolean;
@@ -143,7 +146,7 @@ export class CompletionModalInner extends Component<
       URL.revokeObjectURL(downloadURL);
     }
     let newURL = null;
-    if (challengeFiles.length) {
+    if (challengeFiles?.length) {
       const filesForDownload = challengeFiles
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .reduce<string>((allFiles, currentFile: any) => {
