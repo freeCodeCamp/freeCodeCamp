@@ -35,6 +35,9 @@ The `_meta` directory is a special directory which contains `.json` files. These
 
 There may be times when you need to rename a certificate, superblock, block, or challenge. This section will outline the steps needed to avoid build errors when doing so.
 
+> [!ATTENTION]
+> Renaming files within the curriculum structure will often change the path (or URL) of the content on the main webpage. Doing so should be done with care, as redirects have to be set up for each change that is made.
+
 ### Renaming a Certification
 
 When renaming a certification, you will likely want to rename the associated superblock along with it. Do the following to rename only the certificate:
