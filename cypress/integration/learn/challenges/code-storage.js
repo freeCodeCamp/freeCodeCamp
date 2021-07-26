@@ -17,7 +17,7 @@ describe('Challenge with editor', function () {
     const editorContents = `<h1>Hello</h1>`;
     cy.get(selectors.editor)
       .contains(editorContents)
-      .type(`<h1>Hello World</h1>`);
+      .type(`{movetoend}<h1>Hello World</h1>`);
     cy.reload();
     cy.get(selectors.editor).contains(editorContents);
   });
@@ -26,9 +26,9 @@ describe('Challenge with editor', function () {
     const editorContents = `<h1>Hello</h1>`;
     cy.get(selectors.editor)
       .contains(editorContents)
-      .type(`<h1>Hello World</h1>{ctrl+s}`);
+      .type(`{movetoend}<h1>Hello World</h1>{ctrl+s}`);
     cy.contains("Saved! Your code was saved to your browser's local storage.");
     cy.reload();
-    cy.get(selectors.editor).contains('<h1>Hello World</h1>');
+    cy.get(selectors.editor).contains('<h1>Hello</h1><h1>Hello World</h1>');
   });
 });

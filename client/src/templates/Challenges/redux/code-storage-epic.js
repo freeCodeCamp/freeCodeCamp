@@ -134,18 +134,21 @@ function loadCodeEpic(action$, state$) {
       const codeFound = getCode(id);
       if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
+          const foundChallengeFile = codeFound.find(
+            x => x.fileKey === challengeFile.fileKey
+          );
           return [
             ...challengeFiles,
             {
               ...challengeFile,
-              contents: codeFound[challengeFile.fileKey]
-                ? codeFound[challengeFile.fileKey].contents
+              contents: foundChallengeFile?.length
+                ? foundChallengeFile.contents
                 : challengeFile.contents,
-              editableContents: codeFound[challengeFile.fileKey]
-                ? codeFound[challengeFile.fileKey].editableContents
+              editableContents: foundChallengeFile?.length
+                ? foundChallengeFile.editableContents
                 : challengeFile.editableContents,
-              editableRegionBoundaries: codeFound[challengeFile.fileKey]
-                ? codeFound[challengeFile.fileKey].editableRegionBoundaries
+              editableRegionBoundaries: foundChallengeFile?.length
+                ? foundChallengeFile.editableRegionBoundaries
                 : challengeFile.editableRegionBoundaries
             }
           ];
