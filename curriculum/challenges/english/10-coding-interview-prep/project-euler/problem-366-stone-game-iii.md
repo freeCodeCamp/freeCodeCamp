@@ -24,7 +24,7 @@ If the first player takes anything more than one stone the next player will be a
 
 If the first player takes one stone, leaving four, his opponent will take also one stone, leaving three stones.
 
-The first player cannot take all three because he may take at most $2 \times 1 = 2$ stones. So let's say he takes also one stone, leaving 2.
+The first player cannot take all three because he may take at most $2 \times 1 = 2$ stones. So let's say he also takes one stone, leaving 2.
 
 The second player can take the two remaining stones and wins.
 
