@@ -58,7 +58,7 @@ async () => {
 };
 ```
 
-`.map` deve ser usado no array de `mensagens`.
+`.map` deve ser usado no array de `messages`.
 
 ```js
 assert(code.match(/this\.state\.messages\.map/g));

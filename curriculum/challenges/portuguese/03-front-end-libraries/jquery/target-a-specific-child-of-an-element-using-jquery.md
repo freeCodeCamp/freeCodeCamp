@@ -23,11 +23,11 @@ Aqui está como você daria ao terceiro elemento em cada well a classe bounce:
 $(".target:nth-child(3)").addClass("animated bounce");
 ```
 
-Faça o segundo filho em cada um dos seus elementos well quicar. Você deve selecionar os filhos do elemento com a classe `alvo`.
+Faça o segundo filho em cada um dos seus elementos well quicar. Você deve selecionar os filhos do elemento com a classe `target`.
 
 # --hints--
 
-O segundo elemento nos seus elementos `alvo` deve quicar.
+O segundo elemento nos seus elementos `target` deve quicar.
 
 ```js
 assert(

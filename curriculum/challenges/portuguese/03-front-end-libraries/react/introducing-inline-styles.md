@@ -18,7 +18,7 @@ Você aplica estilos em linha em elementos JSX similares a como você faz isso e
 <div style="color: yellow; font-size: 16px">Mellow Yellow</div>
 ```
 
-Elementos JSX usam o atributo </code>style`, mas por causa da forma como o JSX é transpilado, você não pode definir o valor para uma <code>string`. Em vez disso, você o definiu para ser igual a um `objeto` JavaScript. Exemplo:
+Elementos JSX usam o atributo `style`, mas por causa da forma como o JSX é transpilado, você não pode definir o valor para uma `string`. Em vez disso, você o definiu para ser igual a um `objeto` JavaScript. Exemplo:
 
 ```jsx
 <div style={{color: "yellow", fontSize: 16}}>Mellow Yellow</div>
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-O elemento `div` deve ter a cor `vermelha`.
+O elemento `div` deve ter a cor `red`.
 
 ```js
 assert(

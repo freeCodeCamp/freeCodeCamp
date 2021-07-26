@@ -11,15 +11,15 @@ dashedName: iterate-with-javascript-for-loops
 
 Você pode rodar o mesmo código várias vezes usando um laço.
 
-O tipo mais comum de laço JavaScript é chamado de laço `for` porque ele é executado por um número especificado de vezes.
+O tipo mais comum de laço JavaScript é chamado de laço `for`, porque ele é executado por um número especificado de vezes.
 
-Laços For são declarados com três expressões opcionais separadas por ponto e vírgula:
+Laços for são declarados com três expressões opcionais separadas por ponto e vírgula:
 
 `for (a; b; c)`, onde `a` é a declaração de inicialização, `b` é a declaração de condição, e `c` é a expressão final.
 
-A declaração de inicialização é executada apenas uma vez antes do laço iniciar. Normalmente é usado para definir e configurar sua variável de laço.
+A declaração de inicialização é executada apenas uma vez antes de o laço iniciar. Normalmente, é usada para definir e configurar sua variável de laço.
 
-A declaração de condição é verificada no início de cada iteração do laço e irá continuar enquanto seu valor for `true`. Quando a condição for `false` no início da iteração, o laço irá parar de executar. Isso significa que se a condição de início for falsa, seu laço nunca será executado.
+A declaração de condição é verificada no início de cada iteração do laço e vai continuar enquanto seu valor for `true`. Quando a condição for `false` no início da iteração, o laço vai parar de executar. Isso significa que se a condição de início for falsa, seu laço nunca será executado.
 
 A expressão final é executada no final de cada iteração do laço, antes da verificação da próxima condição e normalmente é usada para incrementar ou decrementar o contador do laço.
 

@@ -17,7 +17,7 @@ A chamada da função se parece com:
 parseInt(string, radix);
 ```
 
-E aqui um exemplo:
+Exemplo:
 
 ```js
 var a = parseInt("11", 2);

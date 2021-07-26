@@ -21,7 +21,7 @@ i--;
 i = i - 1;
 ```
 
-**Nota:** A linha inteira torna-se `i--;`, eliminando a necessidade para o sinal de igual (atribuição).
+**Observação:** a linha inteira torna-se `i--;`, eliminando a necessidade para o sinal de igual (atribuição).
 
 # --instructions--
 

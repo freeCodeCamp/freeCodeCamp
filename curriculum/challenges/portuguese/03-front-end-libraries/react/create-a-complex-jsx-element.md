@@ -16,7 +16,7 @@ Este único elemento pai envolveria todos os outros níveis de elementos aninhad
 
 Por exemplo, vários elementos JSX escritos como irmãos sem elemento encapsulador pai não vai transpilar.
 
-Aqui está um exemplo:
+Exemplo:
 
 **JSX válido:**
 

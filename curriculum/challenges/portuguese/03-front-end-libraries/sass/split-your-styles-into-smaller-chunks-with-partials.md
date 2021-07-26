@@ -18,11 +18,11 @@ Por exemplo, se todos os seus mixins são salvos em uma partial chamada "\_mixin
 @import 'mixins'
 ```
 
-Observe que o sublinhado e a extensão de arquivo não são necessários na instrução </code>import` - Sass entende que é partial. Uma vez que um partial é importado para um arquivo, todas as variáveis, mixins e outro código estão disponíveis para uso.</p>
+Observe que o sublinhado e a extensão de arquivo não são necessários na instrução `import` - Sass entende que é partial. Uma vez que um partial é importado para um arquivo, todas as variáveis, mixins e outro código estão disponíveis para uso.
 
-<h1 spaces-before="0">--instructions--</h1>
+# --instructions--
 
-<p spaces-before="0">Escreva uma declaração <code>@import` para importar uma partial chamada `_variables.scss` para o arquivo main.scss.
+Escreva uma declaração `@import` para importar uma partial chamada `_variables.scss` para o arquivo main.scss.
 
 # --hints--
 

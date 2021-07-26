@@ -18,19 +18,19 @@ const tekkenCharacter = {
 };
 ```
 
-O código acima define um objeto de caractere de jogo Tekken chamado `tekkenCharacter`. Tem três propriedades, em que cada uma é mapeada para um valor específico. Se você quer adicionar uma propriedade adicional, como "origin", pode ser feito ao atribuir `origin` ao objeto:
+O código acima define um objeto de personagens do jogo de videogame Tekken chamado `tekkenCharacter`. Tem três propriedades, em que cada uma é mapeada para um valor específico. Se você quer adicionar uma propriedade adicional, como "origin", isso pode ser feito atribuindo `origin` ao objeto:
 
 ```js
 tekkenCharacter.origin = 'South Korea';
 ```
 
-Isso usa notação de ponto. Se você observar o objeto `tekkenCharacter`, agora incluirá a propriedade `origin`. Hwoarang também tinha distintos cabelos laranja. Você pode adicionar essa propriedade com notação de colchetes fazendo:
+Isso usa a notação de ponto. Se você observar o objeto `tekkenCharacter`, ele agora incluirá a propriedade `origin`. Hwoarang também tinha cabelos cor de laranja, bem diferentes. Você pode adicionar essa propriedade com notação de colchetes fazendo:
 
 ```js
 tekkenCharacter['hair color'] = 'dyed orange';
 ```
 
-A notação de colchete é necessária se sua propriedade tem um espaço nele ou se você deseja usar uma variável para nomear a propriedade. No caso acima, a propriedade está entre aspas para denotá-la como uma string e será adicionada exatamente como mostrada. Sem aspas, ele será avaliado como uma variável e o nome da propriedade será qualquer valor que a variável seja. Aqui está um exemplo com uma variável:
+A notação de colchete é necessária se sua propriedade tem um espaço nela ou se você deseja usar uma variável para nomear a propriedade. No caso acima, a propriedade está entre aspas para denotá-la como uma string e será adicionada exatamente como mostrada. Sem aspas, ela será avaliada como uma variável e o nome da propriedade será qualquer valor que a variável for. Aqui está um exemplo com uma variável:
 
 ```js
 const eyes = 'eye color';
@@ -53,7 +53,7 @@ Após adicionar todos os exemplos, o objeto ficará assim:
 
 # --instructions--
 
-O objeto `foods` foi criado com três entradas. Usando a sintaxe de sua escolha, adicione mais três entradas a ele: `bananas` com um valor de `13`, `uvas` com um valor de `35` e `morangos` com um valor de `27`.
+O objeto `foods` foi criado com três entradas. Usando a sintaxe de sua escolha, adicione mais três entradas a ele: `bananas` com um valor de `13`, `grapes` com um valor de `35` e `strawberries` com um valor de `27`.
 
 # --hints--
 

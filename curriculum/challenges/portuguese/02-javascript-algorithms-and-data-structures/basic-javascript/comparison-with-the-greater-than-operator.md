@@ -9,7 +9,7 @@ dashedName: comparison-with-the-greater-than-operator
 
 # --description--
 
-O operador maior que (`>`) compara os valores de dois números. Se o número para a esquerda for maior que o número à direita, ele retorna `true`. Caso contrário, ele retorna `false`.
+O operador maior que (`>`) compara os valores de dois números. Se o número à esquerda for maior que o número à direita, ele retorna `true`. Caso contrário, ele retorna `false`.
 
 Tal como o operador de igualdade, o operador maior que converterá os tipos de dados de valores enquanto compara.
 
@@ -22,7 +22,7 @@ Tal como o operador de igualdade, o operador maior que converterá os tipos de d
 '1' >  9
 ```
 
-Em ordem, essas expressões seriam iguais à `true`, `true`, `false`, e `false`.
+Em ordem, essas expressões seriam iguais à `true`, `true`, `false` e `false`.
 
 # --instructions--
 
