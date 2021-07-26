@@ -28,7 +28,7 @@ Thus, the expected number of tests for each group is $1 + 0.0960792032 × 5 = 1.
 
 Consequently, all 5 groups can be screened using an average of only $1.480396016 × 5 = \mathbf{7.40198008}$ tests, which represents a huge saving of more than 70%!
 
-Although the scheme we have just described seems to be very efficient, it can still be improved considerably (always assuming that the test is sufficiently sensitive and that there are no adverse effects caused by mixing different samples). E.g.:
+Although the scheme we have just described seems to be very efficient, it can still be improved considerably (always assuming that the test is sufficiently sensitive and no adverse effects are caused by mixing different samples). E.g.:
 
 - We may start by running a test on a mixture of all the 25 samples. It can be verified that in about 60.35% of the cases this test will be negative, thus no more tests will be needed. Further testing will only be required for the remaining 39.65% of the cases.
 - If we know that at least one animal in a group of 5 is infected and the first 4 individual tests come out negative, there is no need to run a test on the fifth animal (we know that it must be infected).
