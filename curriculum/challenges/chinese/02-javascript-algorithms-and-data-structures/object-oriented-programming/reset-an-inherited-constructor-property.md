@@ -17,6 +17,7 @@ function Bird() { }
 Bird.prototype = Object.create(Animal.prototype);
 let duck = new Bird();
 duck.constructor
+// => Animal
 ```
 
 但是 `duck` 和其他所有 `Bird` 的实例都应该表明它们是由 `Bird` 创建的，而不是由 `Animal` 创建的。 为此，你可以手动将 `Bird` 的构造函数属性设置为 `Bird` 对象：
@@ -24,6 +25,7 @@ duck.constructor
 ```js
 Bird.prototype.constructor = Bird;
 duck.constructor
+// => Bird
 ```
 
 # --instructions--

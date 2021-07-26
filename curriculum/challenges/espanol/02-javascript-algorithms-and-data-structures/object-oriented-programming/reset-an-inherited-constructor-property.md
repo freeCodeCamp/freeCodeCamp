@@ -17,6 +17,7 @@ function Bird() { }
 Bird.prototype = Object.create(Animal.prototype);
 let duck = new Bird();
 duck.constructor
+// => Animal
 ```
 
 Pero `duck` y todas las instancias de `Bird` deberían mostrar que fueron construidas por `Bird` y no `Animal`. Para ello, puedes establecer manualmente la propiedad del constructor de `Bird` al objeto `Bird`:
@@ -24,6 +25,7 @@ Pero `duck` y todas las instancias de `Bird` deberían mostrar que fueron constr
 ```js
 Bird.prototype.constructor = Bird;
 duck.constructor
+// => Bird
 ```
 
 # --instructions--
