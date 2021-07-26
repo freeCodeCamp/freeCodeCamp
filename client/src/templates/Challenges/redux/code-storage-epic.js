@@ -137,17 +137,18 @@ function loadCodeEpic(action$, state$) {
           const foundChallengeFile = codeFound.find(
             x => x.fileKey === challengeFile.fileKey
           );
+          const isCodeFound = Object.keys(foundChallengeFile).length > 0;
           return [
             ...challengeFiles,
             {
               ...challengeFile,
-              contents: foundChallengeFile?.length
+              contents: isCodeFound
                 ? foundChallengeFile.contents
                 : challengeFile.contents,
-              editableContents: foundChallengeFile?.length
+              editableContents: isCodeFound
                 ? foundChallengeFile.editableContents
                 : challengeFile.editableContents,
-              editableRegionBoundaries: foundChallengeFile?.length
+              editableRegionBoundaries: isCodeFound
                 ? foundChallengeFile.editableRegionBoundaries
                 : challengeFile.editableRegionBoundaries
             }
