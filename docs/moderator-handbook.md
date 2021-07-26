@@ -115,7 +115,7 @@ Sometimes there will be a Merge Conflict.
 
 This means that another pull request has made a change to that same part of that same file. GitHub has a tool for addressing these merge conflicts right on GitHub. You can try to address these conflicts. Just use your best judgment.
 
-The pull request's changes will be on top, and the Master branch's changes will be on the bottom. Sometimes there will be redundant information in there that can be deleted. Before you finish, be sure to delete the `<<<<<<`, `======`, and `>>>>>>` that Git adds to indicate areas of conflict.
+The pull request's changes will be on top, and the main branch's changes will be on the bottom. Sometimes there will be redundant information in there that can be deleted. Before you finish, be sure to delete the `<<<<<<`, `======`, and `>>>>>>` that Git adds to indicate areas of conflict.
 
 If you are uncertain, please ask one of the fellow moderators or the dev-team for assistance.
 
@@ -414,7 +414,7 @@ git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
 
 git fetch upstream
 
-git pull upstream master
+git pull upstream main
 ```
 
 If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
