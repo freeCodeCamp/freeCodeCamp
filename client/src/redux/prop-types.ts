@@ -176,7 +176,7 @@ export type MarkdownRemarkType = {
 };
 
 type Question = { text: string; answers: string[]; solution: number };
-type Fields = { slug: string; blockName: string; tests: Tests[] };
+type Fields = { slug: string; blockName: string; tests: Test[] };
 type Required = {
   link: string;
   raw: boolean;
@@ -190,7 +190,7 @@ export type ChallengeNodeType = {
   challengeType: number;
   dashedName: string;
   description: string;
-  challengeFiles: ChallengeFile[] | null;
+  challengeFiles: ChallengeFiles;
   fields: Fields;
   forumTopicId: number;
   guideUrl: string;
@@ -242,15 +242,19 @@ export type DimensionsType = {
   width: number;
 };
 
-export type Tests = {
-  text: string;
-  testString: string;
-  // challengeSchema suggests this exists. GraphQL disagrees
-  id?: string;
-  // for certificate verification
-  title?: string;
+export type Test = {
   pass?: boolean;
   err?: string;
+} & (ChallengeTest | CertTest);
+
+export type ChallengeTest = {
+  text: string;
+  testString: string;
+};
+
+export type CertTest = {
+  id: string;
+  title: string;
 };
 
 export type UserType = {
@@ -308,7 +312,7 @@ export type CompletedChallenge = {
   githubLink?: string;
   challengeType?: number;
   completedDate: number;
-  challengeFiles: ChallengeFile[];
+  challengeFiles: ChallengeFiles;
 };
 
 export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
@@ -353,7 +357,7 @@ export type FileKeyChallengeType = {
 // think are on the node, but actually do not exist.
 export type ChallengeNode = {
   block: string;
-  challengeFiles: ChallengeFile[];
+  challengeFiles: ChallengeFiles;
   challengeOrder: number;
   challengeType: number;
   dashedName: string;
@@ -361,7 +365,7 @@ export type ChallengeNode = {
   fields: {
     slug: string;
     blockName: string;
-    tests: Tests[];
+    tests: Test[];
   };
   forumTopicId: number;
   // guideUrl: string;
@@ -400,7 +404,7 @@ export type ChallengeNode = {
   superBlock: string;
   superOrder: number;
   template: string;
-  tests: Tests[];
+  tests: Test[];
   time: string;
   title: string;
   translationPending: boolean;
@@ -427,7 +431,9 @@ export type ChallengeFile = {
   contents: string;
   id: string;
   history: [[string], string];
-} | null;
+};
+
+export type ChallengeFiles = ChallengeFile[] | null;
 
 export interface ChallengeSchema {
   block: string;
@@ -440,7 +446,7 @@ export interface ChallengeSchema {
   __commentCounts: Record<string, unknown>;
   dashedName: string;
   description: string;
-  challengeFiles: ChallengeFile[];
+  challengeFiles: ChallengeFiles;
   guideUrl: string;
   // TODO: should be typed with possible values
   helpCategory: string;
@@ -460,7 +466,7 @@ export interface ChallengeSchema {
   superBlock: string;
   superOrder: number;
   suborder: number;
-  tests: Tests[];
+  tests: Test[];
   template: string;
   time: string;
   title: string;

@@ -24,12 +24,12 @@ import {
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
 import {
-  ChallengeFile,
+  ChallengeFiles,
   DimensionsType,
   ExtTypes,
   FileKeyTypes,
   ResizePropsType,
-  Tests
+  Test
 } from '../../../redux/prop-types';
 
 // eslint-disable-next-line import/no-duplicates
@@ -47,7 +47,7 @@ const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
   canFocus: boolean;
-  challengeFiles: ChallengeFile[];
+  challengeFiles: ChallengeFiles;
   containerRef: RefObject<HTMLElement>;
   contents: string;
   description: string;
@@ -65,9 +65,9 @@ interface EditorProps {
   setAccessibilityMode: (isAccessible: boolean) => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
-  tests: Tests[];
+  tests: Test[];
   theme: string;
-  updateFile: (objest: {
+  updateFile: (object: {
     fileKey: FileKeyTypes;
     editorValue: string;
     editableRegionBoundaries: number[] | null;
@@ -249,8 +249,8 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const getEditableRegion = () => {
     const { challengeFiles, fileKey } = props;
-    const edRegBounds = challengeFiles.find(
-      challengeFile => challengeFile?.fileKey === fileKey
+    const edRegBounds = challengeFiles?.find(
+      challengeFile => challengeFile.fileKey === fileKey
     )?.editableRegionBoundaries;
     return edRegBounds ? [...edRegBounds] : [];
   };
@@ -265,8 +265,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
 
-    const challengeFile = challengeFiles.find(
-      challengeFile => challengeFile?.fileKey === fileKey
+    const challengeFile = challengeFiles?.find(
+      challengeFile => challengeFile.fileKey === fileKey
     );
     const model =
       data.model ||
@@ -289,8 +289,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { challengeFiles, fileKey } = props;
     const { model } = dataRef.current[fileKey];
 
-    const newContents = challengeFiles.find(
-      challengeFile => challengeFile?.fileKey === fileKey
+    const newContents = challengeFiles?.find(
+      challengeFile => challengeFile.fileKey === fileKey
     )?.contents;
     if (model?.getValue() !== newContents) {
       model?.setValue(newContents ?? '');
@@ -578,9 +578,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const onChange = (editorValue: string) => {
-    const { updateFile } = props;
-    // TODO: use fileKey everywhere?
-    const { fileKey } = props;
+    const { updateFile, fileKey } = props;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
     // those imply that the positions have changed (i.e. if the content height

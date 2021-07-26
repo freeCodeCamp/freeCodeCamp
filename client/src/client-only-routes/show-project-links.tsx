@@ -10,7 +10,7 @@ import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { find, first } from 'lodash-es';
 import { Trans, useTranslation } from 'react-i18next';
 import {
-  ChallengeFile,
+  ChallengeFiles,
   CompletedChallenge,
   UserType
 } from '../redux/prop-types';
@@ -23,7 +23,7 @@ interface IShowProjectLinksProps {
 
 type SolutionStateType = {
   projectTitle: string;
-  challengeFiles: ChallengeFile[] | null;
+  challengeFiles: ChallengeFiles;
   solution: CompletedChallenge['solution'];
   isOpen: boolean;
 };

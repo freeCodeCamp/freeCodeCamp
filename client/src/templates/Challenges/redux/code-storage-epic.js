@@ -87,12 +87,11 @@ function saveCodeEpic(action$, state$) {
       const challengeFiles = challengeFilesSelector(state);
       try {
         store.set(id, challengeFiles);
-        // Possible fileType values: indexhtml indexjs indexjsx
-        // The files Object always has one of these as the first/only attribute
-        // TODO: Complete this @ShaunSHamilton
-        const fileType = challengeFiles[0];
+        const fileKey = challengeFiles[0].fileKey;
         if (
-          store.get(id)[fileType].contents !== challengeFiles[fileType].contents
+          store.get(id).find(challengeFile => challengeFile.fileKey === fileKey)
+            .contents !==
+          challengeFiles.find(challengeFile => challengeFile.fileKey).contents
         ) {
           throw Error('Failed to save to localStorage');
         }

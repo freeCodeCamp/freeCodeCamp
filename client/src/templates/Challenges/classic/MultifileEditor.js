@@ -43,6 +43,7 @@ const propTypes = {
   setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
+  // TODO: is this used?
   updateFile: PropTypes.func.isRequired,
   visibleEditors: PropTypes.shape({
     indexjs: PropTypes.bool,

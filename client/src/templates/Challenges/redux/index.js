@@ -252,22 +252,23 @@ export const reducer = handleActions(
       challengeFiles: payload,
       visibleEditors: { [getTargetEditor(payload)]: true }
     }),
-    // TODO: Complete this @ShaunSHamilton
     [types.updateFile]: (
       state,
       { payload: { fileKey, editorValue, editableRegionBoundaries } }
-    ) => ({
-      ...state,
-      challengeFiles: [
-        {
-          ...state.challengeFiles,
-          ...state.challengeFiles.find(x => x.fileKey === fileKey),
-          contents: editorValue,
-          editableContents: getLines(editorValue, editableRegionBoundaries),
-          editableRegionBoundaries
-        }
-      ]
-    }),
+    ) => {
+      return {
+        ...state,
+        challengeFiles: [
+          ...state.challengeFiles.filter(x => x.fileKey !== fileKey),
+          {
+            ...state.challengeFiles.find(x => x.fileKey === fileKey),
+            contents: editorValue,
+            editableContents: getLines(editorValue, editableRegionBoundaries),
+            editableRegionBoundaries
+          }
+        ]
+      };
+    },
     [types.storedCodeFound]: (state, { payload }) => ({
       ...state,
       challengeFiles: payload

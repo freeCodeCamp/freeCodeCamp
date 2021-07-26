@@ -27,7 +27,7 @@ import CertificationIcon from '../../../assets/icons/certification-icon';
 
 import { langCodes } from '../../../../../config/i18n/all-langs';
 import envData from '../../../../../config/env.json';
-import { ChallengeFile } from '../../../redux/prop-types';
+import { ChallengeFiles } from '../../../redux/prop-types';
 
 const SolutionViewer = Loadable(
   () => import('../../SolutionViewer/SolutionViewer')
@@ -44,7 +44,7 @@ interface CompletedMap {
   completedDate: number;
   challengeType: number;
   solution: string;
-  challengeFiles: ChallengeFile[];
+  challengeFiles: ChallengeFiles;
   githubLink: string;
 }
 
@@ -57,7 +57,7 @@ interface TimelineProps {
 interface SortedTimeline {
   id: string;
   completedDate: number;
-  challengeFiles: ChallengeFile[];
+  challengeFiles: ChallengeFiles;
   githubLink: string;
   solution: string;
 }
@@ -73,7 +73,7 @@ interface TimeLineInnerState {
   solutionOpen: boolean;
   pageNo: number;
   solution: string | null;
-  challengeFiles: ChallengeFile[] | null;
+  challengeFiles: ChallengeFiles;
 }
 
 class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
@@ -100,7 +100,7 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
 
   renderViewButton(
     id: string,
-    challengeFiles: ChallengeFile[],
+    challengeFiles: ChallengeFiles,
     githubLink: string,
     solution: string
   ): React.ReactNode {
@@ -205,7 +205,7 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
   viewSolution(
     id: string,
     solution: string,
-    challengeFiles: ChallengeFile[]
+    challengeFiles: ChallengeFiles
   ): void {
     this.setState(state => ({
       ...state,
