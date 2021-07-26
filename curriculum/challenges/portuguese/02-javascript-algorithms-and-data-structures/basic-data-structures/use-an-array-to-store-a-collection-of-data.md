@@ -17,7 +17,7 @@ console.log(simpleArray.length);
 
 A chamada a `console.log` exibe `7`.
 
-Todos os arrays possuem uma propriedade length, conforme mostrada acima, pode ser muito facilmente acessado com a sintaxe `Array.length`. Uma implementação mais complexa de um array pode ser vista abaixo. Isso é conhecido como um <dfn>array multidimensional</dfn>, ou um array que contém outros arrays. Note que esse array também contém <dfn>objetos</dfn> JavaScript, os quais examinaremos bem de perto na próxima seção, mas por agora, tudo que você precisa saber é que arrays também são capazes de armazenar objetos complexos.
+Todos os arrays possuem uma propriedade length, conforme mostrado acima, que pode ser muito facilmente acessado com a sintaxe `Array.length`. Uma implementação mais complexa de um array pode ser vista abaixo. Isso é conhecido como um <dfn>array multidimensional</dfn>, ou um array que contém outros arrays. Note que esse array também contém <dfn>objetos</dfn> JavaScript, os quais examinaremos bem de perto na próxima seção. Por agora, tudo que você precisa saber é que arrays também são capazes de armazenar objetos complexos.
 
 ```js
 let complexArray = [
@@ -46,7 +46,7 @@ let complexArray = [
 
 # --instructions--
 
-Definimos uma variável chamada `yourArray`. Complete a instrução atribuindo um array de pelo menos 5 elementos de comprimento à variável para a variável `yourArray`. Seu array deve conter pelo menos um <dfn>string</dfn>, um <dfn>number</dfn> e um <dfn>boolean</dfn>.
+Definimos uma variável chamada `yourArray`. Complete a instrução atribuindo um array de pelo menos 5 elementos de comprimento à variável `yourArray`. Seu array deve conter pelo menos uma <dfn>string</dfn>, um <dfn>número</dfn> e um <dfn>booleano</dfn>.
 
 # --hints--
 

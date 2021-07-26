@@ -9,7 +9,7 @@ dashedName: nesting-for-loops
 
 # --description--
 
-Se você possui um array multidimensional, você pode usar a mesma lógica no ponto de passagem anterior para iterar através ambos os arrays e qualquer sub-arrays. Aqui está um exemplo:
+Se você possui um array multidimensional, você pode usar a mesma lógica no ponto de passagem anterior para iterar através ambos os arrays e qualquer sub-arrays. Exemplo:
 
 ```js
 var arr = [

@@ -20,7 +20,7 @@ Dentro do seu elemento `script`, adicione esse código: `$(document).ready(funct
 
 Aprenderemos mais sobre `functions` depois. O importante a saber é que o código que você colocar dentro de `function` executará assim que o seu navegador carregar a página.
 
-Isso é importante porque sem o `$(document).ready(function() {`, seu código pode executar antes do HTML ser carregado, o que causaria bugs.
+Isso é importante porque sem o `document ready function`, seu código pode executar antes do HTML ser carregado, o que causaria bugs.
 
 # --hints--
 

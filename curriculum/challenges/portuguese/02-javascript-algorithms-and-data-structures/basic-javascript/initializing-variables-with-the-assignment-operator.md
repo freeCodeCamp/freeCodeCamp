@@ -9,17 +9,17 @@ dashedName: initializing-variables-with-the-assignment-operator
 
 # --description--
 
-É comum <dfn>inicializar</dfn> a variável com um valor inicial na mesma linha que declarada.
+É comum <dfn>inicializar</dfn> a variável com um valor inicial na mesma linha em que é declarada.
 
 ```js
 var myVar = 0;
 ```
 
-Cria uma nova variável chamada `myVar` e atribui o seu valor inicial como `0`.
+Crie uma nova variável chamada `myVar` e atribua o seu valor inicial como `0`.
 
 # --instructions--
 
-Define uma variável `a` com `var` e a inicializa com o valor de `9`.
+Defina uma variável `a` com `var` e a inicialize com o valor de `9`.
 
 # --hints--
 

@@ -13,7 +13,7 @@ dashedName: delete-your-jquery-functions
 
 Esses animações eram legais no início, mas agora elas estão causando distração.
 
-Remova todas as três funções jQuery do seu `$(document).ready(function()`, mas deixe seu `document ready function` intacto.
+Remova todas as três funções jQuery do seu `document ready function`, mas deixe seu `document ready function` intacto.
 
 # --hints--
 

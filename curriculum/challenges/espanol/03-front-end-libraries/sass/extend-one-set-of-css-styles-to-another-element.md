@@ -1,6 +1,6 @@
 ---
 id: 587d7fa5367417b2b2512bbd
-title: Extend One Set of CSS Styles to Another Element
+title: Hereda un conjunto de estilos CSS a otro elemento
 challengeType: 0
 forumTopicId: 301456
 dashedName: extend-one-set-of-css-styles-to-another-element
@@ -8,9 +8,9 @@ dashedName: extend-one-set-of-css-styles-to-another-element
 
 # --description--
 
-Sass has a feature called `extend` that makes it easy to borrow the CSS rules from one element and build upon them in another.
+Sass tiene una función llamada `extend` que facilita tomar prestadas las reglas CSS de un elemento y construir sobre ellas en otro.
 
-For example, the below block of CSS rules style a `.panel` class. It has a `background-color`, `height` and `border`.
+Por ejemplo, el siguiente bloque de reglas CSS da estilo a la clase `.panel`. Este tiene un `background-color`, `height` y `border`.
 
 ```scss
 .panel{
@@ -20,7 +20,7 @@ For example, the below block of CSS rules style a `.panel` class. It has a `back
 }
 ```
 
-Now you want another panel called `.big-panel`. It has the same base properties as `.panel`, but also needs a `width` and `font-size`. It's possible to copy and paste the initial CSS rules from `.panel`, but the code becomes repetitive as you add more types of panels. The `extend` directive is a simple way to reuse the rules written for one element, then add more for another:
+Ahora tienes otro panel llamado `.big-panel`. Tiene las mismas propiedades base que `.panel`, pero también necesita `width` y `font-size`. Es posible copiar y pegar las reglas de CSS iniciales de `.panel`, pero el código se vuelve repetitivo a medida que agregas más tipos de paneles. La directiva `extend` es una forma simple de reutilizar las reglas escritas para un elemento y luego añadir más para otro:
 
 ```scss
 .big-panel{
@@ -30,15 +30,15 @@ Now you want another panel called `.big-panel`. It has the same base properties 
 }
 ```
 
-The `.big-panel` will have the same properties as `.panel` in addition to the new styles.
+El `.big-panel` tendrá las mismas propiedades que `.panel` además de los nuevos estilos.
 
 # --instructions--
 
-Make a class `.info-important` that extends `.info` and also has a `background-color` set to magenta.
+Crea una clase `.info-important` que hereda `.info` y también tiene un `background-color` establecido en magenta.
 
 # --hints--
 
-Your `info-important` class should have a `background-color` set to `magenta`.
+Tu clase `info-important` debe tener un `background-color` establecido a `magenta`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Your `info-important` class should use `@extend` to inherit the styling from the `info` class.
+Tu clase `info-important` debe usar `@extend` para heredar el estilo de la clase `info`.
 
 ```js
 assert(

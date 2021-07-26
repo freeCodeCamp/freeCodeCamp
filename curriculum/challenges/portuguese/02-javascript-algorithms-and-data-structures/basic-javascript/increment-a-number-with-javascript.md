@@ -21,11 +21,11 @@ i++;
 i = i + 1;
 ```
 
-**Nota:** A linha inteira se torna `i++;`, eliminando a necessidade do sinal de igual.
+**Observação:** a linha inteira torna-se `i++;`, eliminando a necessidade para o sinal de igual (atribuição).
 
 # --instructions--
 
-Modifique o código usando o operador `++` em `myVar`.
+Altere o código para usar o operador `++` na variável `myVar`.
 
 # --hints--
 

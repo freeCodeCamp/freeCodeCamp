@@ -12,7 +12,7 @@ Até agora, você só tem verificado se existe ou não um padrão dentro de uma 
 
 Para usar o método `.match()`, aplique o método em uma string e passe a regex dentro dos parênteses.
 
-Um exemplo:
+Exemplo:
 
 ```js
 "Hello, World!".match(/Hello/);

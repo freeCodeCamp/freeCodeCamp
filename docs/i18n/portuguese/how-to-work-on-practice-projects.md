@@ -1,78 +1,78 @@
-# How to Work on Practice Projects
+# Como trabalhar em projetos práticos
 
-The `tools/challenge-helper-scripts` folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
+A pasta `tools/challenge-helper-scripts` contém ferramentas para ajudar a facilitar a criação e a manutenção dos projetos baseados no currículo do freeCodeCamp.
 
-## Create a new project
+## Criando um novo projeto
 
-Run `npm run create-project`. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Execute `npm run create-project`. Esse comando abrirá uma interface de linha de comando que vai guiar você através do processo. Uma vez que tiver terminado, deverá aparecer um novo desafio no currículo inglês que você pode usar para começar o projeto. Por exemplo, se você tiver criado um projeto chamado `test-project` na certificação de Design responsivo para a web, ele estará em `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
-If you want to create new steps, the following tools simplify that process.
+Se você quer criar novos passos, as ferramentas a seguir vão simplificar o processo.
 
-## create-next-step
+## create-next-step (criar próximo passo)
 
-A one-off script that will automatically add the next step based on the last step numbered as `part-xxx.md` where `xxx` represents the 3-digit step number of the last step. The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
+Um script único que automaticamente adiciona um novo passo baseado no último passo numerado como `part-xxx.md` onde `xxx` representa o número de 3 dígitos do último passo. O código inicial de desafio usará o código inicial de desafio da etapa anterior com os marcadores de região editáveis ​​(ERMs) removidos.
 
-**Note:** This script also runs [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
+**Observação:** Esse script também executa  [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
 
-### How to run script:
+### Como executar esse script:
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. Mude para o diretório do projeto.
+2. Execute o comando npm a seguir:
 
 ```bash
 npm run create-next-step
 ```
 
-## create-empty-steps
+## create-empty-steps (criar passos vazios)
 
-A one-off script that automatically adds a specified number of steps at a specific starting step number. The challenge seed code for all steps created will be empty.
+Um script único que adiciona automaticamente um número especificado de passos começando a partir de um número específico. O código seed de todos os passos criados estarão vazios.
 
-**Note:** This script also runs [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
+**Observação:** Esse script também executa  [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
 
-### How to run script:
+### Como executar esse script:
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. Mude para o diretório do projeto.
+2. Execute o comando npm a seguir:
 
 ```bash
-npm run create-empty-steps start=X num=Y # where X is the starting step number and Y is the number of steps to create.
+npm run create-empty-steps start=X num=Y # onde X é o número do passo onde deve iniciar e Y é o número de passos que deverão ser criados.
 ```
 
 ## create-step-between
 
-A one-off script that automatically adds a new step between two existing consecutive steps. The challenge seed code will use the existing starting step's challenge seed code with the editable region markers (ERMs) removed.
+Um único script que automaticamente adiciona passos entre dois passos consecutivos. O código inicial do desafio usará o código inicial do desafio da etapa inicial existente com os marcadores de região editáveis ​​(ERMs) removidos.
 
-**Note:** This script also runs [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
+**Observação:** Esse script também executa  [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
 
-### How to run script:
+### Como executar esse script:
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. Mude para o diretório do projeto.
+2. Execute o comando npm a seguir:
 
 ```bash
-npm run create-step-between start=X # where X is the starting step number
+npm run create-step-between start=X # onde X é o número do passo para começar
 ```
 
 ## delete-step
 
-A one-off script that deletes an existing step and then reorders the remaining step files in the project's folder as well as updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
+Um único script que deleta um passo existente e reordena os passos que restaram na pasta do projeto e também atualiza a propriedade do array `challengeOrder` no `meta.json` do projeto com a nova ordem dos passos.
 
-### How to run script
+### Como executar esse script
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. Mude para o diretório do projeto.
+2. Execute o comando npm a seguir:
 
 ```bash
-npm run delete-step num=x # where x is the step number to be deleted.
+npm run delete-step num=x # onde x é o número do passo a ser deletado.
 ```
 
 ## reorder-steps
 
-A one-off script that automatically reorders the step files in a project's markdown files based on the filename. It also updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
+Um script único que automaticamente reordena os aquivos de passos em arquivos markdown do projeto baseado no nome dos arquivos. Também atualiza a propriedade do array `challengeOrder`  no `meta.json` do projeto com a nova ordem dos passos.
 
-### Working Example
+### Exemplo de trabalho
 
-Let's say you start with the following project structure:
+Digamos que você começa com a estrutura de projeto a seguir:
 
 ```bash
 part-1.md
@@ -83,9 +83,9 @@ part-5.md
 part-6.md
 ```
 
-At some point you decide you need to delete `part-2.md`, because that step is no longer needed. Also, you decide to break down `part-4.md` into three steps instead of just one.
+Em algum momento, você decide que precisa deletar `part-2.md`, porque os passos nele não são mais necessários. Você também decide que vai diluir as partes dentro de `part-4.md` em três passos ao invés de um.
 
-To accomplish this restructure, you would need to delete `part-2.md` and then add a `part-4a.md` and a `part-5b.md`. The new folder structure would look like the following:
+Para completar essa reestruturação, você precisará deletar `part-2.md` e então adicionar a `part-4a.md` e a `part-5b.md`. A nova estrutura da pasta deve ficar assim:
 
 ```bash
 part-001.md
@@ -97,9 +97,9 @@ part-005.md
 part-006.md
 ```
 
-You now need the file names to be `part-1.md` through `part-7.md`, because you removed one but gained two more for a net difference of one file. Also, the frontmatter of each file below a deleted step or added step will need to be modified by making the `title` key value match the new step number. For example, after renaming `part-3.md` to `part-2.md`, you would need to change `part-2.md`'s title from `Part 03` to `Part 02`.
+Você precisa agora que os nomes dos arquivos sejam `part-1.md` a `part-7.md`, porque você removeu um, mas ganhou dois arquivos novos, assim gerando somente um arquivo novo. Além disso, o frontmatter de cada arquivo abaixo de um passo adicionado ou excluído precisará ser modificado, onde o valor chave do `title` tem que ser igual ao novo número do passo. Por exemplo, depois de renomeaer `part-3.md` para `part-2.md`, você precisará alterar o título do `part-2.md` de `Part 03` para `Part 02`.
 
-See below for the actual project folder changes needed:
+Veja abaixo as mudanças necessárias na pasta do projeto:
 
 ```bash
 part-001.md
@@ -111,12 +111,12 @@ part-005.md renames to part-006.md and title changes to "Part 6"
 part-006.md renames to part-007.md and title changes to "Part 7"
 ```
 
-Along with the above changes, the `challengeOrder` key in the project's `meta.json` file needs to reflect the new step order. This is needed because each step below a step deletion and/or step addition changes the `title` associated with each of the affected step's challenge `id`.
+Junto com as mudanças acima, a chave `challengeOrder` no arquivo `meta.json` do projeto precisará refletir a nova ordem dos passos. Isso é necessário porque cada etapa abaixo de uma exclusão de etapa e/ou adição de etapa altera o `title` associado a cada um dos `id` do desafio da etapa afetada.
 
-### How to run script
+### Como executar esse script
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. Mude para o diretório do projeto.
+2. Execute o comando npm a seguir:
 
 ```bash
 npm run reorder-steps

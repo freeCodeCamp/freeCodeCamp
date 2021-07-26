@@ -1,6 +1,6 @@
 ---
 id: a24c1a4622e3c05097f71d67
-title: Encontrar local em um array
+title: Encontrar o local em um array
 challengeType: 5
 forumTopicId: 16094
 dashedName: where-do-i-belong
@@ -8,11 +8,11 @@ dashedName: where-do-i-belong
 
 # --description--
 
-Retorne o menor índice aonde um valor (segundo argumento) deve ser inserido no array (primeiro argumento) assim que tenha sido ordenado. O valor retornado deve ser um número.
+Retorne o menor índice em que um valor (segundo argumento) deve ser inserido no array (primeiro argumento) assim que tenha sido ordenado. O valor retornado deve ser um número.
 
 Por exemplo, `getIndexToIns([1,2,3,4], 1.5)` deve retornar `1` porque é maior que `1` (índice 0), mas menor que `2` (índice 1).
 
-Assim como, `getIndexToIns([20,3,5], 19)` deve retornar `2` pois uma vez que o array foi sorteado irá se parecer como `[3,5,20]` e `19` é menor que `20` (índice 2) e maior que `5` (índice 1).
+Da mesma forma, `getIndexToIns([20,3,5], 19)` deve retornar `2` pois uma vez que o array foi sorteado irá se parecer como `[3,5,20]` e `19` é menor que `20` (índice 2) e maior que `5` (índice 1).
 
 # --hints--
 

@@ -8,17 +8,17 @@ dashedName: copy-an-object-with-object-assign
 
 # --description--
 
-Os últimos desafios funcionaram com matrizes, mas também existem maneiras de ajudar a impor a imutabilidade do state quando o state for um `objeto`. Uma ferramenta útil para lidar com objetos é o `Object.assign()`. `Object.assign()` recebe um objeto alvo e objetos fonte e mapeia propriedades dos objetos de origem para o objeto alvo. Qualquer propriedades correspondentes são substituídas por propriedades nos objetos de origem. Esse comportamento é comumente usado para fazer cópias rasas de objetos, passando um objeto vazio como o primeiro argumento seguido do(s) objeto(s) que você deseja copiar. Um exemplo:
+Os últimos desafios funcionaram com matrizes, mas também existem maneiras de ajudar a impor a imutabilidade do state quando o state for um `object`. Uma ferramenta útil para lidar com objetos é o `Object.assign()`. `Object.assign()` recebe um objeto alvo e objetos fonte e mapeia propriedades dos objetos de origem para o objeto alvo. Qualquer propriedades correspondentes são substituídas por propriedades nos objetos de origem. Esse comportamento é comumente usado para fazer cópias rasas de objetos, passando um objeto vazio como o primeiro argumento seguido do(s) objeto(s) que você deseja copiar. Exemplo:
 
 ```js
 const newObject = Object.assign({}, obj1, obj2);
 ```
 
-Isso cria `newObject` como um novo `objeto`, que contém as propriedades que atualmente existem em `obj1` e `obj2`.
+Isso cria `newObject` como um novo `object`, que contém as propriedades que atualmente existem em `obj1` e `obj2`.
 
 # --instructions--
 
-O estado e ações do Redux foram modificados para manipular um `objeto` para o `state`. Edite o código para retornar um novo objeto `state` para ações com tipo `ONLINE`, que define a propriedade `status` para a string `online`. Tente usar `Object.assign()` para completar o desafio.
+O estado e ações do Redux foram modificados para manipular um `object` para o `state`. Edite o código para retornar um novo objeto `state` para ações com tipo `ONLINE`, que define a propriedade `status` para a string `online`. Tente usar `Object.assign()` para completar o desafio.
 
 # --hints--
 

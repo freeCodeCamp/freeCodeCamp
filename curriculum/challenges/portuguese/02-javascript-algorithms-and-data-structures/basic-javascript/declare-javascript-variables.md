@@ -9,13 +9,13 @@ dashedName: declare-javascript-variables
 
 # --description--
 
-Na ciência da computação, <dfn>dado</dfn> é qualquer coisa que tenha significado ao computador. JavaScript fornece oito <dfn>tipos de dados</dfn> diferentes que são `undefined`, `null`, `boolean`, `string`, `symbol`, `bigint`, `number` e `object`.
+Na ciência da computação, <dfn>dado</dfn> é qualquer coisa que tenha significado para o computador. JavaScript fornece oito <dfn>tipos de dados</dfn> diferentes que são `undefined`, `null`, `boolean`, `string`, `symbol`, `bigint`, `number` e `object`.
 
-Por exemplo, os computadores distinguem números, como o número`12`, e `strings`, como o `"12"`, `"dog"`, ou`"123 cats"`, as quais são coleções de caracteres. Computadores podem realizar operações matemáticas em um número, mas não em string.
+Por exemplo, os computadores distinguem números, como o número`12`, e `strings`, como o `"12"`, `"dog"`, ou`"123 cats"`, as quais são coleções de caracteres. Computadores podem realizar operações matemáticas em um número, mas não em uma string.
 
-<dfn>Variáveis</dfn> permitem aos computadores armazenar e manipular dados de forma dinâmica. Eles fazem isso usando um "rótulo" para apontar ao dado ao invés de usar o próprio dado. Qualquer uma dos 8 tipos de dados podem ser armazenados em variável.
+<dfn>Variáveis</dfn> permitem aos computadores armazenar e manipular dados de forma dinâmica. Elas fazem isso usando uma "etiqueta" para apontar para o dado ao invés de usar o próprio dado. Qualquer um dos 8 tipos de dados pode ser armazenado em uma variável.
 
-Variáveis são similares às variáveis x e y utilizados na matemática, o que significa que elas são simples nomes para representar os dados que eles querem se referir. Variáveis de computador diferem das variáveis matemáticas porque elas podem armazenar diferentes valores em momentos diferentes.
+Variáveis são similares às variáveis x e y utilizadas na matemática, o que significa que elas são simples nomes para representar os dados aos quais se referem. Variáveis de computador diferem das variáveis matemáticas porque elas podem armazenar diferentes valores em momentos diferentes.
 
 Dizemos ao JavaScript para criar ou declarar uma variável colocando a palavra-chave `var` na frente dela, dessa forma:
 
@@ -23,7 +23,7 @@ Dizemos ao JavaScript para criar ou declarar uma variável colocando a palavra-c
 var ourName;
 ```
 
-cria uma variável chamada `ourName`. Em JavaScript terminamos uma instrução com ponto e vírgula. Nomes de variáveis podem ser formadas por números, letras e `$` ou `_`, mas não pode conter espaços ou começar com um número.
+cria uma variável chamada `ourName`. Em JavaScript, terminamos uma instrução com ponto e vírgula. Nomes de variáveis podem ser formados por números, letras e `$` ou `_`, mas não podem conter espaços ou começar com um número.
 
 # --instructions--
 

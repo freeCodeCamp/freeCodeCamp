@@ -1,6 +1,6 @@
 ---
 id: 587d824c367417b2b2512c4d
-title: Compare the Properties of Two Elements
+title: Comparar as propriedades de dois elementos
 challengeType: 2
 forumTopicId: 301588
 dashedName: compare-the-properties-of-two-elements
@@ -8,15 +8,15 @@ dashedName: compare-the-properties-of-two-elements
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como observação, este projeto está sendo construído a partir do seguinte projeto no [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou clonado do [Github](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#8` in the `Comparisons` suite, change each `assert` to either `assert.isAbove` or `assert.isAtMost` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Em `tests/1_unit-tests.js`, no teste classificado como `#8` e na suíte `Comparisons`, modifique cada `assert` para `assert.isAbove` ou para `assert.isAtMost`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 
-All tests should pass.
+Todos os testes devem passar.
 
 ```js
 (getUserInput) =>
@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isAbove` vs. `isAtMost`.
+Você deve escolher o método correto para a primeira assertiva - `isAbove` ou `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isAbove` vs. `is
   );
 ```
 
-You should choose the correct method for the second assertion - `isAbove` vs. `isAtMost`.
+Você deve escolher o método correto para a segunda assertiva - `isAbove` ou `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ You should choose the correct method for the second assertion - `isAbove` vs. `i
   );
 ```
 
-You should choose the correct method for the third assertion - `isAbove` vs. `isAtMost`.
+Você deve escolher o método correto para a terceira assertiva - `isAbove` ou `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -80,7 +80,7 @@ You should choose the correct method for the third assertion - `isAbove` vs. `is
   );
 ```
 
-You should choose the correct method for the fourth assertion - `isAbove` vs. `isAtMost`.
+Você deve escolher o método correto para a quarta assertiva - `isAbove` ou `isAtMost`.
 
 ```js
 (getUserInput) =>

@@ -40,7 +40,7 @@ assert(receivedData('data').type === RECEIVED_DATA);
 assert(typeof asyncDataReducer === 'function');
 ```
 
-Despachando o criador de ação `requestingData` deve atualizar a propriedade `state` do store de buscar para `verdadeiro`.
+Despachando o criador de ação `requestingData` deve atualizar a propriedade `state` do store de buscar para `true`.
 
 ```js
 assert(

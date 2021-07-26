@@ -21,11 +21,11 @@ Aqui está como você iria ter como alvo todos os elementos ímpares com a class
 $(".target:odd").addClass("animated shake");
 ```
 
-Tente selecionar todos os elementos `alvo` pares e dar a eles as classes `animated` e `shake`. Lembre-se que **even** refere-se a posição de elementos com base em um sistema indexado a zero.
+Tente selecionar todos os elementos `target` pares e dar a eles as classes `animated` e `shake`. Lembre-se que **even** refere-se a posição de elementos com base em um sistema indexado a zero.
 
 # --hints--
 
-Todos os elementos `alvo` que o jQuery considerar como par devem sacudir.
+Todos os elementos `target` que o jQuery considerar como par devem sacudir.
 
 ```js
 assert(

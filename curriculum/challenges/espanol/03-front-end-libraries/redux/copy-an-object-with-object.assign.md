@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403615b
-title: Copy an Object with Object.assign
+title: Copia un objeto con Object.assign
 challengeType: 6
 forumTopicId: 301437
 dashedName: copy-an-object-with-object-assign
@@ -8,21 +8,21 @@ dashedName: copy-an-object-with-object-assign
 
 # --description--
 
-The last several challenges worked with arrays, but there are ways to help enforce state immutability when state is an `object`, too. A useful tool for handling objects is the `Object.assign()` utility. `Object.assign()` takes a target object and source objects and maps properties from the source objects to the target object. Any matching properties are overwritten by properties in the source objects. This behavior is commonly used to make shallow copies of objects by passing an empty object as the first argument followed by the object(s) you want to copy. Here's an example:
+Los últimos desafíos trabajaron con arreglos, pero hay maneras de ayudar a reforzar la inmutabilidad del estado cuando el estado es también un `object`. Una herramienta útil para el manejo de objetos es la utilidad `Object.assign()`. `Object.assign()` toma un objeto de destino y objetos de origen y asigna propiedades de los objetos de origen al objeto de destino. Las propiedades que coinciden se sobrescriben con las propiedades de los objetos de origen. Este comportamiento se utiliza comúnmente para hacer copias superficiales de objetos pasando un objeto vacío como primer argumento seguido por el/los objeto(s) que se desea(n) copiar. Aquí hay un ejemplo:
 
 ```js
 const newObject = Object.assign({}, obj1, obj2);
 ```
 
-This creates `newObject` as a new `object`, which contains the properties that currently exist in `obj1` and `obj2`.
+Esto crea `newObject` como un nuevo `object`, que contiene las propiedades que existen actualmente en `obj1` y `obj2`.
 
 # --instructions--
 
-The Redux state and actions were modified to handle an `object` for the `state`. Edit the code to return a new `state` object for actions with type `ONLINE`, which set the `status` property to the string `online`. Try to use `Object.assign()` to complete the challenge.
+El estado y las acciones de Redux fueron modificados para manejar un `object` para el `state`. Edita el código para devolver un nuevo objeto `state` para las acciones de tipo `ONLINE`, que establece la propiedad `status` a la cadena `online`. Intenta utilizar `Object.assign()` para completar el desafío.
 
 # --hints--
 
-The Redux store should exist and initialize with a state that is equivalent to the `defaultState` object declared on line 1.
+El almacén Redux debe existir e inicializarse con un estado equivalente al objeto `defaultState` declarado en la línea 1.
 
 ```js
 assert(
@@ -39,13 +39,13 @@ assert(
 );
 ```
 
-`wakeUp` and `immutableReducer` both should be functions.
+`wakeUp` e `immutableReducer` deben ser funciones.
 
 ```js
 assert(typeof wakeUp === 'function' && typeof immutableReducer === 'function');
 ```
 
-Dispatching an action of type `ONLINE` should update the property `status` in state to `online` and should NOT mutate state.
+El envío de una acción de tipo `ONLINE` debe actualizar la propiedad `status` del estado a `online` y NO debe mutar el estado.
 
 ```js
 assert(
@@ -65,7 +65,7 @@ assert(
 );
 ```
 
-`Object.assign` should be used to return new state.
+`Object.assign` debe utilizarse para devolver el nuevo estado.
 
 ```js
 (getUserInput) => assert(getUserInput('index').includes('Object.assign'));

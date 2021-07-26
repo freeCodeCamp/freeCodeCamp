@@ -15,7 +15,7 @@ O operador `*=` multiplica uma variável por um número.
 myVar = myVar * 5;
 ```
 
-irá multiplicar `myVar` por `5`. Isto pode ser reescrito como:
+multiplicará `myVar` por `5`. Essa expressão pode ser reescrita assim:
 
 ```js
 myVar *= 5;

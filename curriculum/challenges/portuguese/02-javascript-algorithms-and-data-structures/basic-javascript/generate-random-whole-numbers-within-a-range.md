@@ -9,7 +9,7 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-Ao invés de gerar um número inteiro aleatório entre 0 e um número especificado como fizemos anteriormente, nós podemos gerar um número inteiro aleatório que cai entre um intervalo de dois números especificados.
+Ao invés de gerar um número inteiro aleatório entre 0 e um número especificado, como fizemos anteriormente, nós podemos gerar um número inteiro aleatório que fica em um intervalo entre dois números especificados.
 
 Para isso, definiremos um número mínimo `min` e um número máximo`max`.
 
@@ -21,7 +21,7 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-Crie uma função chamada `randomRange` que recebe um intervalo de `myMin` e `myMax` e retorne um número inteiro aleatório que é maior ou igual a `myMin`, e é menor ou igual a `myMax`, inclusivo.
+Crie uma função chamada `randomRange` que recebe um intervalo de `myMin` e `myMax` e retorne um número inteiro aleatório que é maior ou igual a `myMin`, e é menor ou igual a `myMax`.
 
 # --hints--
 

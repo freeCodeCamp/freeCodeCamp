@@ -17,7 +17,7 @@ Agora vamos escrever nossa primeira declaração jQuery. Todas as funções do j
 
 jQuery geralmente selecionar um elemento HTML com um <dfn>selector</dfn>, em seguida faz algo a esse elemento.
 
-Por exemplo, vamos fazer todos os nossos elementos `button` quicar. Basta adicionar esse código dentro da sua função `$(document).ready(function() {`:
+Por exemplo, vamos fazer todos os nossos elementos `button` quicar. Basta adicionar esse código dentro da sua função pronta:
 
 ```js
 $("button").addClass("animated bounce");

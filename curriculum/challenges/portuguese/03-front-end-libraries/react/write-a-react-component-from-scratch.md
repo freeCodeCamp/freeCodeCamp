@@ -29,7 +29,7 @@ Deve haver um componente React chamado `MyComponent`.
   );
 ```
 
-`MeuComponente` deve conter uma tag `h1` com texto `My First React Component!` Letras maiúsculas e minúsculas, e pontuação importam.
+`MyComponent` deve conter uma tag `h1` com texto `My First React Component!` Letras maiúsculas e minúsculas, e pontuação importam.
 
 ```js
 assert(
