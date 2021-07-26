@@ -11,7 +11,7 @@ dashedName: comparison-with-the-equality-operator
 
 Há muitos <dfn>operadores de comparação</dfn> em JavaScript. Todos esses operadores retornam um valor booleano `true` ou `false`.
 
-O operador mais básico é o operador de igualdade `==`. O operador de igualdade compara dois valores e retorna `true` se eles são equivalentes ou `false` se não são. Observe que a igualdade é diferente de atribuição (`=`), que atribui o valor à direita do operador para uma variável à esquerda.
+O operador mais básico é o operador de igualdade `==`. O operador de igualdade compara dois valores e retorna `true` se eles são equivalentes ou `false` se não são. Observe que o operador de igualdade é diferente do operador de atribuição (`=`), que atribui o valor à direita do operador para uma variável à esquerda.
 
 ```js
 function equalityTest(myVal) {
@@ -22,7 +22,7 @@ function equalityTest(myVal) {
 }
 ```
 
-Se `myVal` é igual a `10`, o operador de igualdade retorna `true`, assim o código nas chaves será executado e a função retornará `Equal`. Caso contrário, a função retornará `Not Equal`. Para que JavaScript possa comparar dois <dfn>tipos de dados</dfn> diferentes (por exemplo, `números` e `strings`), deve converter um tipo para outro. Isto é conhecido como Coerção do Tipo (casting ou type coercion). No entanto, uma vez que o faça, pode comparar os termos da seguinte forma:
+Se `myVal` é igual a `10`, o operador de igualdade retorna `true`, assim o código nas chaves será executado e a função retornará `Equal`. Caso contrário, a função retornará `Not Equal`. Para que o JavaScript possa comparar dois <dfn>tipos de dados</dfn> diferentes (por exemplo, `numbers` e `strings`), deve converter um tipo para outro. Isto é conhecido como coerção de tipo (casting ou type coercion). No entanto, uma vez que a faça, você pode comparar os termos da seguinte forma:
 
 ```js
 1   ==  1
@@ -31,7 +31,7 @@ Se `myVal` é igual a `10`, o operador de igualdade retorna `true`, assim o cód
 "3" ==  3
 ```
 
-Em ordem, essas expressões seriam avaliadas à `true`, `false`, `true` e `true`.
+Em ordem, essas expressões seriam avaliadas como `true`, `false`, `true` e `true`.
 
 # --instructions--
 

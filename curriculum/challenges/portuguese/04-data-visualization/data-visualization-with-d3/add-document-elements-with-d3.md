@@ -1,6 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bc2
-title: Add Document Elements with D3
+title: Adicionar elementos de documento com D3
 challengeType: 6
 forumTopicId: 301474
 dashedName: add-document-elements-with-d3
@@ -8,23 +8,23 @@ dashedName: add-document-elements-with-d3
 
 # --description--
 
-D3 has several methods that let you add and change elements in your document.
+O D3 tem vários métodos que permitem adicionar e alterar elementos ao documento.
 
-The `select()` method selects one element from the document. It takes an argument for the name of the element you want and returns an HTML node for the first element in the document that matches the name. Here's an example:
+O método `select()` seleciona um elemento do documento. Ele recebe um argumento para o nome do elemento que você deseja e retorna um nó de HTML para o primeiro elemento do documento que corresponde ao nome. Exemplo:
 
 ```js
 const anchor = d3.select("a");
 ```
 
-The above example finds the first anchor tag on the page and saves an HTML node for it in the variable `anchor`. You can use the selection with other methods. The `d3` part of the example is a reference to the D3 object, which is how you access D3 methods.
+O exemplo acima encontra a primeira tag de âncora na página e salva um nó de HTML para ela na variável `anchor`. Você pode usar a seleção com outros métodos. A parte que diz `d3` do exemplo é uma referência ao objeto do D3, que é a maneira de acessar os métodos do D3.
 
-Two other useful methods are `append()` and `text()`.
+Dois outros métodos úteis são `append()` e `text()`.
 
-The `append()` method takes an argument for the element you want to add to the document. It appends an HTML node to a selected item, and returns a handle to that node.
+O método `append()` tem um argumento para o elemento que você deseja adicionar ao documento. Ele anexa um nó de HTML a um item selecionado e retorna um identificador para esse nó.
 
-The `text()` method either sets the text of the selected node, or gets the current text. To set the value, you pass a string as an argument inside the parentheses of the method.
+O método `text()` define o texto do nó selecionado ou obtém o texto atual. Para definir o valor, você passa uma string como um argumento dentro dos parênteses do método.
 
-Here's an example that selects an unordered list, appends a list item, and adds text:
+Aqui está um exemplo que seleciona uma lista não ordenada, associa um item de lista e adiciona texto:
 
 ```js
 d3.select("ul")
@@ -32,45 +32,45 @@ d3.select("ul")
   .text("Very important item");
 ```
 
-D3 allows you to chain several methods together with periods to perform a number of actions in a row.
+O D3 permite que você encadeie vários métodos juntamente com períodos para realizar várias ações em sequência.
 
 # --instructions--
 
-Use the `select` method to select the `body` tag in the document. Then `append` an `h1` tag to it, and add the text `Learning D3` into the `h1` element.
+Use o método `select` para selecionar a tag `body` do documento. Em seguida, use o método `append` em uma tag `h1` e adicione o texto `Learning D3` no elemento `h1`.
 
 # --hints--
 
-The `body` should have one `h1` element.
+A tag `body` deve ter um elemento `h1`.
 
 ```js
 assert($('body').children('h1').length == 1);
 ```
 
-The `h1` element should have the text `Learning D3` in it.
+O elemento `h1` deve conter o texto `Learning D3`.
 
 ```js
 assert($('h1').text() == 'Learning D3');
 ```
 
-Your code should access the `d3` object.
+O código deve acessar o objeto `d3`.
 
 ```js
 assert(code.match(/d3/g));
 ```
 
-Your code should use the `select` method.
+O código deve usar o método `select`.
 
 ```js
 assert(code.match(/\.select/g));
 ```
 
-Your code should use the `append` method.
+O código deve usar o método `append`.
 
 ```js
 assert(code.match(/\.append/g));
 ```
 
-Your code should use the `text` method.
+O código deve usar o método `text`.
 
 ```js
 assert(code.match(/\.text/g));

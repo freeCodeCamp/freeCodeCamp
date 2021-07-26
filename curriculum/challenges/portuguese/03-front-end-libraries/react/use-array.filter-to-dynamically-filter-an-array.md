@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`MyComponent` deve retornar os elementos `div`, `h1` e em seguida uma lista não ordenada contendo elementos `li` para cada usuário que possui o status online como sendo `true (verdadeiro)`.
+`MyComponent` deve retornar os elementos `div`, `h1` e em seguida uma lista não ordenada contendo elementos `li` para cada usuário que possui o status online como sendo `true`.
 
 ```js
 (() => {

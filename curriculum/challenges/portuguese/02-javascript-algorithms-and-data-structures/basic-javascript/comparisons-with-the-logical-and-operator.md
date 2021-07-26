@@ -9,7 +9,7 @@ dashedName: comparisons-with-the-logical-and-operator
 
 # --description--
 
-Às vezes você precisará testar mais de uma coisa de cada vez. O <dfn>operador lógico e</dfn>(`&&`) retornará `true` apenas se os <dfn>operadores</dfn> a esquerda e à direita são verdadeiros.
+Às vezes, você precisará testar mais de uma coisa de cada vez. O <dfn>operador lógico AND</dfn> (`&&`) retornará `true` apenas se os <dfn>operadores</dfn> à esquerda e à direita forem verdadeiros.
 
 O mesmo efeito pode ser alcançado aninhando uma instrução if dentro de outro if:
 
@@ -22,7 +22,7 @@ if (num > 5) {
 return "No";
 ```
 
-só retornará `Yes` se `num` é maior que `5` e menor que `10`. A mesma lógica pode ser escrita como:
+só retornará `Yes` se `num` for maior que `5` e menor que `10`. A mesma lógica pode ser escrita assim:
 
 ```js
 if (num > 5 && num < 10) {
@@ -33,7 +33,7 @@ return "No";
 
 # --instructions--
 
-Substitua as duas instruções if por uma declaração, usando o operador `&&`, que irá retornar a string `Yes` se `val` for menor ou igual a `50` e maior ou igual a `25`. Caso contrário, retornará a string `No`.
+Substitua as duas instruções if por uma declaração, usando o operador `&&`, que vai retornar a string `Yes` se `val` for menor ou igual a `50` e maior ou igual a `25`. Caso contrário, retornará a string `No`.
 
 # --hints--
 

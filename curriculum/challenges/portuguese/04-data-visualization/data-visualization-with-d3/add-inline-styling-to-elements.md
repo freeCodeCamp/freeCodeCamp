@@ -1,6 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc6
-title: Add Inline Styling to Elements
+title: Adicionar estilo em linha aos elementos
 challengeType: 6
 forumTopicId: 301475
 dashedName: add-inline-styling-to-elements
@@ -8,9 +8,9 @@ dashedName: add-inline-styling-to-elements
 
 # --description--
 
-D3 lets you add inline CSS styles on dynamic elements with the `style()` method.
+O D3 permite adicionar estilos CSS em linha em elementos dinâmicos com o método `style()`.
 
-The `style()` method takes a comma-separated key-value pair as an argument. Here's an example to set the selection's text color to blue:
+O método `style()` receb um par chave-valor separado por vírgulas como argumento. Aqui está um exemplo para definir a cor do texto da seleção como azul:
 
 ```js
 selection.style("color","blue");
@@ -18,17 +18,17 @@ selection.style("color","blue");
 
 # --instructions--
 
-Add the `style()` method to the code in the editor to make all the displayed text have a `font-family` of `verdana`.
+Adicione o método `style()` ao código no editor para fazer com que todo o texto exibido tenha a `font-family` `verdana`.
 
 # --hints--
 
-Your `h2` elements should have a `font-family` of `verdana`.
+Os elementos `h2` devem ter a propriedade `font-family` `verdana`.
 
 ```js
 assert($('h2').css('font-family') == 'verdana');
 ```
 
-Your code should use the `style()` method.
+O código deve usar o método `style()`.
 
 ```js
 assert(code.match(/\.style/g));

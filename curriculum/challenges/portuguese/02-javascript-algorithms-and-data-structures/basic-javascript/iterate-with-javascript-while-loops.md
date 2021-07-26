@@ -9,7 +9,7 @@ dashedName: iterate-with-javascript-while-loops
 
 # --description--
 
-Você pode rodar o mesmo código várias vezes ao usar um laço.
+Você pode rodar o mesmo código várias vezes usando um laço.
 
 O primeiro tipo de laço que aprenderemos é chamado de laço `while` porque ele irá rodar enquanto uma condição específica for verdadeira e irá parar uma vez que a condição não for mais verdadeira.
 
@@ -22,13 +22,13 @@ while(i < 5) {
 }
 ```
 
-No código de exemplo acima, o laço `while` executará por 5 vezes e adicionará os números de 0 até 4 ao `ourArray`.
+No código de exemplo acima, o laço `while` executará por 5 vezes e adicionará os números de 0 até 4 a `ourArray`.
 
 Vamos tentar fazer um laço while funcionar empurrando valores para um array.
 
 # --instructions--
 
-Adicione os números de 5 até 1 (inclusivo) em ordem descendente para `myArray` usando um laço `while`.
+Adicione os números de 5 até 1 (inclusive) em ordem descendente para `myArray` usando um laço `while`.
 
 # --hints--
 

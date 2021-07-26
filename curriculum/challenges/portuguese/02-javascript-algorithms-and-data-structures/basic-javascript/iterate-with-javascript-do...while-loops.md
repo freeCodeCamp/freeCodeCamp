@@ -9,7 +9,7 @@ dashedName: iterate-with-javascript-do---while-loops
 
 # --description--
 
-O próximo tipo de laço que você aprenderá é chamado de laço `do...while`. É chamado um laço `do...while` porque primeiro irá toda vez `fazer (do)`, ou executar, uma vez o bloco de código após a instrução do, não importa o que acontecer, e então continuará a executar o laço `enquanto (while)` a condição for `true`.
+O próximo tipo de laço que você aprenderá é chamado de laço `do...while`. O laço `do...while` é chamado assim porque primeiro fará algo (`do`) ou executará algo uma vez dentro do bloco de código, não importando o que acontecer. Em seguida, continuará a executar o laço enquanto (`while`) a condição for `true`.
 
 ```js
 var ourArray = [];
@@ -31,7 +31,7 @@ while (i < 5) {
 }
 ```
 
-Nesse exemplo, inicializamos o valor de `ourArray` como um array vazio e o valor de `i` sendo 5. Quando executamos o laço `while`, a condição é igual a `false` porque `i` não é menor que 5, portanto nós não executamos o código dentro do laço. O resultado é que `ourArray` terminará sem valores adicionados a ele, e ainda se parecerá com `[]` quando todas as linhas do código no exemplo acima for completamente executadas. Agora, dê uma olhada no laço `do...while`:
+Nesse exemplo, inicializamos o valor de `ourArray` como um array vazio e o valor de `i` sendo 5. Quando executamos o laço `while`, a condição é igual a `false` porque `i` não é menor que 5, portanto nós não executamos o código dentro do laço. O resultado é que `ourArray` terminará sem valores adicionados a ele, e ainda se parecerá com `[]` quando todas as linhas do código no exemplo acima forem completamente executadas. Agora, dê uma olhada no laço `do...while`:
 
 ```js
 var ourArray = []; 
@@ -42,7 +42,7 @@ do {
 } while (i < 5);
 ```
 
-Nesse caso, nós inicializamos o valor de `i` para 5, assim como fizemos com o laço `while`. Quando chegamos na próxima linha, não há condição a ser analisada, então nós vamos ao código dentro das chaves e o executamos. Nós adicionaremos um único elemento ao array e então incrementamos `i` antes de chegarmos a verificação da condição. Quando nós finalmente temos o resultado da condição `i < 5` na última linha, nós notamos que `i` agora é 6, o que não cumpre a verificação da condição, então nós saímos do laço e terminamos. Ao final do exemplo acima, o valor de `ourArray` é `[5]`. Essencialmente, um laço `do...while` garante que o código dentro do laço será executado pelo menos uma vez. Vamos tentar fazer um laço `do...while` funcionar empurrando valores para um array.
+Nesse caso, nós inicializamos o valor de `i` para 5, assim como fizemos com o laço `while`. Quando chegamos na próxima linha, não há condição a ser analisada, então nós vamos ao código dentro das chaves e o executamos. Nós adicionaremos um único elemento ao array e então incrementamos `i` antes de chegarmos à verificação da condição. Quando nós finalmente temos o resultado da condição `i < 5` na última linha, nós notamos que `i` agora é 6, o que não cumpre a verificação da condição, então nós saímos do laço e terminamos. Ao final do exemplo acima, o valor de `ourArray` é `[5]`. Essencialmente, um laço `do...while` garante que o código dentro do laço será executado pelo menos uma vez. Vamos tentar fazer um laço `do...while` funcionar inserindo valores em um array.
 
 # --instructions--
 

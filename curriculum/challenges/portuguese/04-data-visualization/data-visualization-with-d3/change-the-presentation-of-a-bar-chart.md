@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bca
-title: Change the Presentation of a Bar Chart
+title: Alterar a apresentação de um gráfico de barras
 challengeType: 6
 forumTopicId: 301481
 dashedName: change-the-presentation-of-a-bar-chart
@@ -8,21 +8,21 @@ dashedName: change-the-presentation-of-a-bar-chart
 
 # --description--
 
-The last challenge created a bar chart, but there are a couple of formatting changes that could improve it:
+No último desafio, criamos um gráfico de barras, mas há algumas mudanças de formatação que poderiam melhorá-lo:
 
-1) Add space between each bar to visually separate them, which is done by adding a margin to the CSS for the `bar` class
+1) Adicione espaço entre cada barra para separá-las visualmente. Isso é feito adicionando uma margem ao CSS para a classe `bar`
 
-2) Increase the height of the bars to better show the difference in values, which is done by multiplying the value by a number to scale the height
+2) Aumente a altura das barras para mostrar melhor a diferença dos valores. Isso é feito multiplicando o valor por um número para dimensionar a altura
 
 # --instructions--
 
-First, add a `margin` of `2px` to the `bar` class in the `style` tag. Next, change the callback function in the `style()` method so it returns a value `10` times the original data value (plus the `px`).
+Primeiro, adicione uma `margin` de `2px` à classe `bar` na tag `style`. Depois, altere a função de callback no método `style()` para que retorne um valor `10` vezes maior que o valor original dos dados (e a expressão `px`).
 
-**Note:** Multiplying each data point by the *same* constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data.
+**Observação:** multiplicar cada ponto dos dados pela *mesma* constante somente altera a escala. É como fazer um zoom. Isso não altera o significado dos dados subjacentes.
 
 # --hints--
 
-The first `div` should have a `height` of `120` pixels and a `margin` of `2` pixels.
+A primeira `div` deve ter uma `height` de `120` pixels e uma `margin` de `2` pixels.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-The second `div` should have a `height` of `310` pixels and a `margin` of `2` pixels.
+A segunda `div` deve ter uma `height` de `310` pixels e uma `margin` de `2` pixels.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The third `div` should have a `height` of `220` pixels and a `margin` of `2` pixels.
+A terceira `div` deve ter uma `height` de `220` pixels e uma `margin` de `2` pixels.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-The fourth `div` should have a `height` of `170` pixels and a `margin` of `2` pixels.
+A quarta `div` deve ter uma `height` de `170` pixels e uma `margin` de `2` pixels.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-The fifth `div` should have a `height` of `250` pixels and a `margin` of `2` pixels.
+A quinta `div` deve ter uma `height` de `250` pixels e uma `margin` de `2` pixels.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-The sixth `div` should have a `height` of `180` pixels and a `margin` of `2` pixels.
+A sexta `div` deve ter uma `height` de `180` pixels e uma `margin` de `2` pixels.
 
 ```js
 assert(
@@ -76,7 +76,7 @@ assert(
 );
 ```
 
-The seventh `div` should have a `height` of `290` pixels and a `margin` of `2` pixels.
+A sétima `div` deve ter uma `height` de `290` pixels e uma `margin` de `2` pixels.
 
 ```js
 assert(
@@ -85,7 +85,7 @@ assert(
 );
 ```
 
-The eighth `div` should have a `height` of `140` pixels and a `margin` of `2` pixels.
+A oitava `div` deve ter uma `height` de `140` pixels e uma `margin` de `2` pixels.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The ninth `div` should have a `height` of `90` pixels and a `margin` of `2` pixels.
+A nona `div` deve ter uma `height` de `90` pixels e uma `margin` de `2` pixels.
 
 ```js
 assert(

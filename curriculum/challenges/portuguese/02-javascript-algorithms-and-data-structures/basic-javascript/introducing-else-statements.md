@@ -9,7 +9,7 @@ dashedName: introducing-else-statements
 
 # --description--
 
-Quando uma condição para uma instrução `if` for verdadeiro, o bloco de código seguinte será executado. E quando a condição for falsa? Normalmente nada aconteceria. Com uma instrução `else`, um bloco de código alternativo pode ser executado.
+Quando uma condição para uma instrução `if` for verdadeira, o bloco de código seguinte será executado. E quando a condição for falsa? Normalmente, nada aconteceria. Com uma instrução `else`, um bloco de código alternativo pode ser executado.
 
 ```js
 if (num > 10) {

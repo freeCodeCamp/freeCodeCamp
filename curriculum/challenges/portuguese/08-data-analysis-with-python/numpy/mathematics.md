@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed8
-title: Mathematics
+title: Matemática
 challengeType: 11
 videoId: 7txegvyhtVk
 dashedName: mathematics
@@ -10,7 +10,7 @@ dashedName: mathematics
 
 ## --text--
 
-What is the value of `b` after running the following code?
+Qual é o valor de `b` depois de executar o seguinte código?
 
 ```py
 import numpy as np

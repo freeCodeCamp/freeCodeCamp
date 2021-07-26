@@ -10,7 +10,7 @@ dashedName: combine-an-array-into-a-string-using-the-join-method
 
 O método `join` é usado para juntar os elementos de um array, resultando em uma string. Ele recebe um delimitador como argumento, que é usado para conectar os elementos na string.
 
-Um exemplo:
+Exemplo:
 
 ```js
 var arr = ["Hello", "World"];

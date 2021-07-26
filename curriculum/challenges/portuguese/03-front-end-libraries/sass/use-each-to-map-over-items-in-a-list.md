@@ -16,7 +16,7 @@ O último desafio mostrou como a diretiva `@for` usa valores de início e fim pa
 }
 ```
 
-Um mapa possui uma sintaxe ligeiramente diferente. Aqui está um exemplo:
+Um mapa possui uma sintaxe ligeiramente diferente. Exemplo:
 
 ```scss
 $colors: (color1: blue, color2: red, color3: green);

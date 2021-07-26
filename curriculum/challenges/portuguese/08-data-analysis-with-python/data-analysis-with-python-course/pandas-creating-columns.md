@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15c
-title: Pandas Creating Columns
+title: Criar colunas com o Pandas
 challengeType: 11
 videoId: _sSo2XZoB3E
 dashedName: pandas-creating-columns
@@ -8,24 +8,24 @@ dashedName: pandas-creating-columns
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Ao invés de usar notebooks.ai como foi mostrado no vídeo, você pode usar o Google Colab como substituto.*
 
-More resources:
+Mais recursos:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebooks no GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas)
+-   [Como abrir notebooks do GitHub usando o Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What code would add a "Certificates per month" column to the `certificates_earned` DataFrame like the one below?
+Qual código adicionaria uma coluna "Certificates per month" ao DataFrame `certificates_earned` como este abaixo?
 
-<pre>      Certificates  Time (in months)  Certificates per month
-Tom               8                16                    0.50
-Kris              2                 5                    0.40
-Ahmad             5                 9                    0.56
-Beau              6                12                    0.50</pre>
+<pre>      Certificates  Time (in months)  Longest streak
+Tom               8                16              13
+Kris              2                 5              11
+Ahmad             5                 9               9
+Beau              6                12               7</pre>
 
 ## --answers--
 

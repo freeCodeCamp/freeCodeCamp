@@ -18,14 +18,15 @@ No código fornecido, o método `render` tem uma matriz que contém 20 frases pa
 
 # --hints--
 
-O componente </code>MagicEightBall` deve existir e deve renderizar à página.</p>
+O componente `MagicEightBall` deve existir e deve renderizar à página.
 
-<pre><code class="js">assert.strictEqual(
+```js
+assert.strictEqual(
   Enzyme.mount(React.createElement(MagicEightBall)).find('MagicEightBall')
     .length,
   1
 );
-`</pre>
+```
 
 O primeiro filho de `MagicEightBall` deve ser um elemento `input`.
 

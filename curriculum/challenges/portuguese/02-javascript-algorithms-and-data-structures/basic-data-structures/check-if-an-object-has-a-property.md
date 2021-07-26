@@ -8,18 +8,18 @@ dashedName: check-if-an-object-has-a-property
 
 # --description--
 
-Agora podemos adicionar, modificar e remover as chaves dos objetos. Mas e se apenas quiséssemos saber se um objeto tem uma propriedade específica? O JavaScript nos fornece duas maneiras diferentes de fazer isso. Um usa o método `hasOwnProperty()` e o outro usa a palavra-chave `in`. Se tivermos um objeto `users` com uma propriedade de `Alan`, poderíamos verificar a sua presença de qualquer uma das seguintes maneiras:
+Agora podemos adicionar, modificar e remover as chaves dos objetos. Mas e se apenas quiséssemos saber se um objeto tem uma propriedade específica? O JavaScript nos fornece duas maneiras diferentes de fazer isso. Um usa o método `hasOwnProperty()` e o outro usa a palavra-chave `in`. Se tivermos um objeto `users` com uma propriedade de `Alan`, podemos verificar a sua presença de qualquer uma das seguintes maneiras:
 
 ```js
 users.hasOwnProperty('Alan');
 'Alan' in users;
 ```
 
-Ambos esses retornariam `true`.
+Ambos retornariam `true`.
 
 # --instructions--
 
-Termine de escrever a função para que ela retorne verdadeiro se o objeto passado a ela contiver todos os quatro nomes, `Alan`, `Jeff`, `Sarah` e `Ryan` e retorna falso caso contrário.
+Termine de escrever a função para que ela retorne true se o objeto passado a ela contiver todos os quatro nomes, `Alan`, `Jeff`, `Sarah` e `Ryan` e retorne false do contrário.
 
 # --hints--
 

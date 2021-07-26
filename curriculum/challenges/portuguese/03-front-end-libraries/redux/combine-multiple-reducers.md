@@ -29,7 +29,7 @@ Existem as funções `counterReducer()` e `authReducer()` fornecidas no editor d
 
 # --hints--
 
-O `counterReducer` deve incrementar e decrementar o `estado`.
+O `counterReducer` deve incrementar e decrementar o `state`.
 
 ```js
 assert(

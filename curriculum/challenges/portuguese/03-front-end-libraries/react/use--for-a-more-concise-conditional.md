@@ -8,13 +8,13 @@ dashedName: use--for-a-more-concise-conditional
 
 # --description--
 
-As declarações `if/else` funcionaram no último desafio, mas há uma maneira mais concisa de alcançar o mesmo resultado. Imagine que está a monitorar várias condições num componente e que pretende que diferentes elementos sejam renderizados, dependendo de cada uma destas condições. Se você escrever muitas instruções `else if` para retornar interfaces de usuário ligeiramente diferentes, você pode repetir código o que deixa espaço para erros. Ao invés disso, você pode usar o operador lógico `&&` para executar a lógica condicional de uma forma mais concisa. Isto é possível porque você quer verificar se uma condição é `verdadeira`, e se é, retorna uma marcação. Um exemplo:
+As declarações `if/else` funcionaram no último desafio, mas há uma maneira mais concisa de alcançar o mesmo resultado. Imagine que está a monitorar várias condições num componente e que pretende que diferentes elementos sejam renderizados, dependendo de cada uma destas condições. Se você escrever muitas instruções `else if` para retornar interfaces de usuário ligeiramente diferentes, você pode repetir código o que deixa espaço para erros. Ao invés disso, você pode usar o operador lógico `&&` para executar a lógica condicional de uma forma mais concisa. Isto é possível porque você quer verificar se uma condição é `true`, e se é, retorna uma marcação. Exemplo:
 
 ```jsx
 {condition && <p>markup</p>}
 ```
 
-Se a `condition` for `verdadeira`, a marcação será retornada. Se a condição for `falsa`, a operação retornará imediatamente `false` após avaliar a `condition` e não retornará nada. Você pode incluir essas declarações diretamente em seu JSX e juntar várias condições, escrevendo `&&` após cada uma. Isso permite que você lide com uma lógica condicional mais complexa em seu método `render()` sem repetir muito código.
+Se a `condition` for `true`, a marcação será retornada. Se a condição for `false`, a operação retornará imediatamente `false` após avaliar a `condition` e não retornará nada. Você pode incluir essas declarações diretamente em seu JSX e juntar várias condições, escrevendo `&&` após cada uma. Isso permite que você lide com uma lógica condicional mais complexa em seu método `render()` sem repetir muito código.
 
 # --instructions--
 

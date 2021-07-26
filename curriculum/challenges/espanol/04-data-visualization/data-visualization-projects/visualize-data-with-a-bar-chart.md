@@ -36,13 +36,13 @@ Puedes utilizar HTML, JavaScript, CSS y la librería de visualización basada en
 
 **Historia de usuario #11:** El atributo `data-gdp` y su correspondiente elemento de barra deben alinearse con el valor correspondiente en el eje-y.
 
-**Historia de usuario #12:** Puedo pasar el ratón por encima de un área y ver una descripción con su correspondiente `id="tooltip"` que muestra más información sobre el área.
+**Historia de usuario #12:** Puedo pasar el ratón por encima de un área y ver una descripción con su correspondiente `id="tooltip"` que muestra más información acerca del área.
 
-**User Story #13:** Mi descripción debe tener una propiedad `data-date` que corresponda con el `data-date` del área activa.
+**Historia de usuario #13:** Mi descripción debe tener una propiedad `data-date` que corresponda con el `data-date` del área activa.
 
 Aquí está el conjunto de datos que necesitarás para completar este proyecto: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json`
 
-Puedes crear tu proyecto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>utilizando la plantilla de CodePen</a> y haciendo clic en `Save` para crear tu propio entorno. O puedes utilizar este enlace CDN para ejecutar las pruebas en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
+Puedes crear tu proyecto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>utilizando esta plantilla de CodePen</a> y haciendo clic en `Save` para crear tu propio entorno. O puedes utilizar este enlace CDN para ejecutar las pruebas en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
 Una vez que hayas terminado, envía la URL de tu proyecto funcional con todas las pruebas aprobadas.
 

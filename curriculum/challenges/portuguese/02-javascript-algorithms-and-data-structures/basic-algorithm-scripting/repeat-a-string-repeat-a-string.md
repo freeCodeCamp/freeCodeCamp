@@ -8,7 +8,7 @@ dashedName: repeat-a-string-repeat-a-string
 
 # --description--
 
-Repita uma string passada `str` (primeiro argumento), `num` vezes (segundo argumento). Retorne uma string vazia se `num` não for um número positivo. Para o propósito do desafio, *Não* use o método embutido `.repeat()`.
+Repita uma string passada `str` (primeiro argumento), `num` vezes (segundo argumento). Retorne uma string vazia se `num` não for um número positivo. Para o propósito do desafio, *Não* use o método integrado `.repeat()`.
 
 # --hints--
 
@@ -48,7 +48,7 @@ assert(repeatStringNumTimes('*', 8) === '********');
 assert(repeatStringNumTimes('abc', -2) === '');
 ```
 
-O método embutido `repeat()` não deve ser usada.
+O método integrado `repeat()` não deve ser usado.
 
 ```js
 assert(!/\.repeat/g.test(code));

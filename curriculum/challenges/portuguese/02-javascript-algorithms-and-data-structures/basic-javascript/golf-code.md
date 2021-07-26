@@ -9,9 +9,9 @@ dashedName: golf-code
 
 # --description--
 
-No jogo de [golfe](https://en.wikipedia.org/wiki/Golf), cada buraco tem um `par`, significando o número médio de `strokes` que se espera que golfista faça a fim de derrubar a bola no buraco para completar a jogada. Dependendo do quão distante acima ou abaixo de `par` suas `strokes` estiverem, há diferentes apelidos.
+No jogo de [golfe](https://en.wikipedia.org/wiki/Golf), cada buraco tem um `par`, significando o número médio de `strokes` que se espera que golfista faça a fim de derrubar a bola no buraco para completar a jogada. Dependendo da distância acima ou abaixo de `par` que seu número de `strokes` estiver, há diferentes apelidos.
 
-Sua função receberá os argumentos `par` e `strokes`. Retorna a string correta de acordo com esta tabela que lista os strokes em ordem de prioridade; superior (mais alta) para o final (mais baixo):
+Sua função receberá os argumentos `par` e `strokes`. Retorne a string correta de acordo com esta tabela que lista os strokes em ordem de prioridade; superior (mais alta) para o final (mais baixo):
 
 <table class='table table-striped'><thead><tr><th>Strokes</th><th>Retorno</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 

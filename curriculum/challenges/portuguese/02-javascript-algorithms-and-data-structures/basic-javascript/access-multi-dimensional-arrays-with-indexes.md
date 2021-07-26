@@ -9,7 +9,7 @@ dashedName: access-multi-dimensional-arrays-with-indexes
 
 # --description--
 
-Uma maneira de pensar em um array <dfn>multi-dimensional</dfn> é como um *array de arrays*. Quando você usa colchetes para acessar seu array, o primeiro conjunto de colchetes se refere às entradas no array mais exterior (o primeiro nível), e cada par adicional de colchetes refere-se ao próximo nível de entradas interno.
+Uma maneira de pensar em um array <dfn>multidimensional</dfn> é como um *array de arrays*. Quando você usa colchetes para acessar seu array, o primeiro conjunto de colchetes se refere às entradas no array mais exterior (o primeiro nível), e cada par adicional de colchetes refere-se ao próximo nível de entradas interno.
 
 **Exemplo**
 
@@ -27,11 +27,11 @@ arr[3][0][1];
 
 `arr[3]` é `[[10, 11, 12], 13, 14]`, `arr[3][0]` é `[10, 11, 12]`, e `arr[3][0][1]` é `11`.
 
-**Nota:** Não deve haver nenhum espaço entre o nome do array e os colchetes como `array [0][0]` e até mesmo `array [0] [0]` não é permitido. Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código.
+**Observação:** não deve haver nenhum espaço entre o nome do array e os colchetes como `array [0][0]` e até mesmo `array [0] [0]` não é permitido. Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código.
 
 # --instructions--
 
-Utilizando notação de colchetes selecione um elemento de `myArray` de forma que `myData` seja igual a `8`.
+Utilizando notação de colchetes, selecione um elemento de `myArray` de forma que `myData` seja igual a `8`.
 
 # --hints--
 
