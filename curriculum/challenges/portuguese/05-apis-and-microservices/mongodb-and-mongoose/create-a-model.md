@@ -1,6 +1,6 @@
 ---
 id: 587d7fb6367417b2b2512c07
-title: Create a Model
+title: Criar um modelo
 challengeType: 2
 forumTopicId: 301535
 dashedName: create-a-model
@@ -8,13 +8,13 @@ dashedName: create-a-model
 
 # --description--
 
-**C**RUD Part I - CREATE
+**C**RUD I Parte I - CREATE
 
-First of all we need a Schema. Each schema maps to a MongoDB collection. It defines the shape of the documents within that collection. Schemas are building block for Models. They can be nested to create complex models, but in this case we'll keep things simple. A model allows you to create instances of your objects, called documents.
+Em primeiro lugar, precisamos de um schema. Cada schema mapeia para uma coleção do MongoDB. Ele define a forma dos documentos dentro daquela coleção. Os schemas são os blocos que compõem os modelos. Eles podem ser aninhados para criar modelos complexos, mas nesse caso vamos simplificar as coisas. Um modelo permite que você crie instâncias de seus objetos, chamados documentos.
 
-Replit is a real server, and in real servers the interactions with the database happen in handler functions. These functions are executed when some event happens (e.g. someone hits an endpoint on your API). We’ll follow the same approach in these exercises. The `done()` function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating, or deleting. It's following the Node convention, and should be called as `done(null, data)` on success, or `done(err)` on error.
+O Replit é um servidor real. Em servidores reais, as interações com o banco de dados acontecem em funções de manipulador. Estas funções são executadas quando algum evento acontece (por exemplo, alguém atinge um endpoint na sua API). Seguiremos a mesma abordagem nestes exercícios. A função `done()` é um callback que nos diz que podemos prosseguir após concluir uma operação assíncrona, como inserir, pesquisar, atualizar ou excluir. Ela segue a convenção do Node e deve ser chamada como `done(null, data)` quando houver sucesso, ou `done(err)` quando houver erro.
 
-Warning - When interacting with remote services, errors may occur!
+Aviso - Ao interagir com serviços remotos, podem ocorrer erros!
 
 ```js
 /* Example */
@@ -28,7 +28,7 @@ const someFunc = function(done) {
 
 # --instructions--
 
-Create a person schema called `personSchema` having this prototype:
+Crie um schema de pessoa chamado `personSchema` que tenha este protótipo:
 
 ```markup
 - Person Prototype -
@@ -38,13 +38,13 @@ age :  number
 favoriteFoods : array of strings (*)
 ```
 
-Use the Mongoose basic schema types. If you want you can also add more fields, use simple validators like required or unique, and set default values. See the [Mongoose docs](http://mongoosejs.com/docs/guide.html).
+Use os tipos de schemas básicos de Mongoose. Se você quiser, também pode adicionar mais campos, usar validadores simples, como required ou unique, e definir valores padrão. Veja a [documentação do Mongoose](http://mongoosejs.com/docs/guide.html).
 
-Now, create a model called `Person` from the `personSchema`.
+Agora, crie um modelo chamado `Person` do `personSchema`.
 
 # --hints--
 
-Creating an instance from a mongoose schema should succeed
+Você deve criar uma instância de um esquema mongoose com sucesso
 
 ```js
 (getUserInput) =>

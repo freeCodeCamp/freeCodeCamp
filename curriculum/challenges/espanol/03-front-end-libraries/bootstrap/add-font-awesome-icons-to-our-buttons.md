@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedd08845
-title: Agregaa íconos Font Awesome a nuestros botones
+title: Agrega íconos Font Awesome a nuestros botones
 challengeType: 0
 forumTopicId: 16638
 required:

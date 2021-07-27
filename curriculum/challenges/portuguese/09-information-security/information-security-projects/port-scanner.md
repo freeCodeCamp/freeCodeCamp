@@ -1,6 +1,6 @@
 ---
 id: 5e46f979ac417301a38fb932
-title: Port Scanner
+title: Scanner de porta
 challengeType: 10
 forumTopicId: 462372
 helpCategory: Python
@@ -9,26 +9,26 @@ dashedName: port-scanner
 
 # --description--
 
-Create a port scanner using Python.
+Crie um scanner de portas usando Python.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-port-scanner).
+Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-port-scanner).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com base nas instruções do 'README.md', envie o link do seu projeto abaixo.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you some of the Python skills required for this project:
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão um pouco sobre as habilidades em Python de que você precisa este projeto:
 
 <ul>
   <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
+    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Curso de Python em vídeo para todos</a> (14 horas)
   </li>
   <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
+    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Curso em vídeo Aprenda Python</a> (2 horas)
   </li>
 </ul>
 
 # --hints--
 
-It should pass all Python tests.
+Ele deve passar em todos os testes do Python.
 
 ```js
 

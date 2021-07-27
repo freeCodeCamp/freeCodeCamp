@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c03
-title: Use the Caret-Character to Use the Latest Minor Version of a Dependency
+title: Usar o circunflexo para usar a última versão secundária de uma dependência
 challengeType: 2
 forumTopicId: 301531
 dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-dependency
@@ -8,25 +8,25 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 # --description--
 
-Similar to how the tilde we learned about in the last challenge allows npm to install the latest PATCH for a dependency, the caret (`^`) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.
+Da mesma forma que o til, que aprendemos no último desafio e que permite que o npm instale o último PATCH de uma dependência, o circunflexo (`^`) permite que o npm instale atualizações futuras também. A diferença é que o circunflexo permitirá tanto atualizações MINOR quanto PATCHes.
 
-Your current version of moment should be "~2.10.2" which allows npm to install to the latest 2.10.x version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any 2.x.x version.
+Sua versão atual neste momento deve ser "~2.10.2", o que permite que o npm instale a versão 2.10.x mais recente. Se você usasse o circunflexo (^) como um prefixo de versão, o npm teria permissão para atualizar para qualquer versão 2.x.x.
 
 ```json
 "package": "^1.3.8"
 ```
 
-This would allow updates to any 1.x.x version of the package.
+Isso permitiria atualizações para qualquer versão 1.x.x do pacote.
 
 # --instructions--
 
-Use the caret (`^`) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.
+Use o circunflexo (`^`) para prefixar a versão do momento em suas dependências e permitir que o npm atualize para qualquer versão MINOR.
 
-**Note:** The version numbers themselves should not be changed.
+**Observação:** os números da versão em si não devem ser alterados.
 
 # --hints--
 
-"dependencies" should include "moment"
+"dependencies" deve incluir o "moment"
 
 ```js
 (getUserInput) =>
@@ -45,7 +45,7 @@ Use the caret (`^`) to prefix the version of moment in your dependencies and all
   );
 ```
 
-"moment" version should match "^2.x.x"
+A versão do "moment" deve corresponder a "^2.x.x"
 
 ```js
 (getUserInput) =>

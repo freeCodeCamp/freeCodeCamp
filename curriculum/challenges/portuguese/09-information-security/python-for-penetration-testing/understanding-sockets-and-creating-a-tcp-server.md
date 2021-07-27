@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94daf
-title: Understanding Sockets and Creating a TCP Server
+title: Compreender sockets e criar um servidor TCP
 challengeType: 11
 videoId: F1QI9tNuDQg
 dashedName: understanding-sockets-and-creating-a-tcp-server
@@ -10,7 +10,7 @@ dashedName: understanding-sockets-and-creating-a-tcp-server
 
 ## --text--
 
-Which of the following functions creates a socket object?
+Quais das funções a seguir criam um objeto de socket?
 
 ## --answers--
 
