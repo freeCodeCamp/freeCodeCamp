@@ -6,7 +6,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import '../intro.css';
 
 const { forumLocation } = envData;
-function IntroDescription() {
+function IntroDescription(): JSX.Element {
   const { t } = useTranslation();
 
   return (
