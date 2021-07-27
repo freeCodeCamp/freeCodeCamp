@@ -6,9 +6,9 @@ import { NavLinks } from './components/nav-links';
 import AuthOrProfile from './components/auth-or-profile';
 
 import envData from '../../../../config/env.json';
-import { useTranslation, withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
-const { apiLocation, clientLocale } = envData;
+const { apiLocation } = envData;
 
 jest.mock('../../analytics');
 
@@ -47,13 +47,8 @@ describe('<NavLinks />', () => {
       },
       toggleNightMode: theme => theme
     };
-
-    const testComp = React.createElement(
-      withTranslation()(NavLinks),
-      ...landingPageProps
-    );
     const shallow = new ShallowRenderer();
-    shallow.render(testComp);
+    shallow.render(<NavLinks {...landingPageProps} />);
     const view = shallow.getRenderOutput();
 
     expect(
@@ -249,16 +244,8 @@ const hasForumNavItem = component => {
 
 const hasNewsNavItem = component => {
   const { children, to } = navigationLinks(component, 'news');
-  const localizedNews = {
-    chinese: 'https://chinese.freecodecamp.org/news',
-    'chinese-traditional': 'https://chinese.freecodecamp.org/news',
-    espanol: 'https://www.freecodecamp.org/espanol/news',
-    english: 'https://www.freecodecamp.org/news',
-    italian: 'https://www.freecodecamp.org/italian/news'
-  };
   return (
-    children[0].props.children === 'buttons.news' &&
-    to === localizedNews[clientLocale]
+    children[0].props.children === 'buttons.news' && to === 'links:nav.news'
   );
 };
 
