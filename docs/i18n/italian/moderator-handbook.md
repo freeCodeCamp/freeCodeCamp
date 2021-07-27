@@ -111,7 +111,7 @@ A volte ci sarà un conflitto di merge.
 
 Ciò significa che un'altra pull request ha apportato una modifica alla stessa parte di quello stesso file. GitHub ha uno strumento per affrontare questi conflitti di unione direttamente su GitHub. Puoi provare ad affrontare questi conflitti. Usa il tuo miglior giudizio.
 
-Le modifiche della pull request saranno in alto e le modifiche del ramo Master saranno in basso. A volte ci saranno informazioni ridondanti che possono essere cancellate. Prima di finire, assicura di cancellare i simboli `<<<<<<`, `======`, e `>>>>>>` che Git aggiunge per indicare le aree in conflitto.
+The pull request's changes will be on top, and the main branch's changes will be on the bottom. A volte ci saranno informazioni ridondanti che possono essere cancellate. Prima di finire, assicura di cancellare i simboli `<<<<<<`, `======`, e `>>>>>>` che Git aggiunge per indicare le aree in conflitto.
 
 Se non sei sicuro, chiedi assistenza a uno degli altri moderatori o al team di sviluppo.
 
@@ -409,7 +409,7 @@ git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
 
 git fetch upstream
 
-git pull upstream master
+git pull upstream main
 ````
 
 Se stai usando una GUI, puoi semplicemente cercare il comando `Add a new remote...` e usare il link `git://github.com/freeCodeCamp/freeCodeCamp.git` visto sopra.
