@@ -19,7 +19,7 @@ describe('Challenge with editor', function () {
       .contains(editorContents)
       .type(`{movetoend}<h1>Hello World</h1>`);
     cy.reload();
-    cy.get(selectors.editor).contains(editorContents);
+    cy.get(selectors.editor, { timeout: 10000 }).contains(editorContents);
   });
 
   it('renders code from localStorage after "Ctrl + S"', () => {
@@ -29,6 +29,8 @@ describe('Challenge with editor', function () {
       .type(`{movetoend}<h1>Hello World</h1>{ctrl+s}`);
     cy.contains("Saved! Your code was saved to your browser's local storage.");
     cy.reload();
-    cy.get(selectors.editor).contains('<h1>Hello</h1><h1>Hello World</h1>');
+    cy.get(selectors.editor, { timeout: 10000 }).contains(
+      '<h1>Hello</h1><h1>Hello World</h1>'
+    );
   });
 });
