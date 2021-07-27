@@ -1,5 +1,5 @@
 const path = require('path');
-const { findIndex, reduce, toString } = require('lodash');
+const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
 const yaml = require('js-yaml');
 const { parseMD } = require('../tools/challenge-parser/parser');
@@ -307,24 +307,6 @@ ${getFullPath('english')}
   return prepareChallenge(challenge);
 }
 
-// TODO: tests and more descriptive name.
-// Is this already an object now?
-function filesToObject(challengeFiles) {
-  return reduce(
-    challengeFiles,
-    (map, challengeFile) => {
-      map[challengeFile.fileKey] = {
-        ...challengeFile,
-        head: arrToString(challengeFile.head),
-        contents: arrToString(challengeFile.contents),
-        tail: arrToString(challengeFile.tail)
-      };
-      return map;
-    },
-    {}
-  );
-}
-
 // gets the challenge ready for sourcing into Gatsby
 function prepareChallenge(challenge) {
   if (challenge.challengeFiles) {
@@ -340,11 +322,6 @@ function prepareChallenge(challenge) {
       },
       []
     );
-  }
-  // solutions = [[{fileKey: 'indexhtml'}, {fileKey: 'indexcss'}]]
-  // TODO: I am convinced this does not exist (remove)
-  if (challenge.solutionFiles) {
-    challenge.solutionFiles = filesToObject(challenge.solutionFiles);
   }
   return challenge;
 }
@@ -380,10 +357,6 @@ function superBlockInfo(fileName) {
 function getBlockNameFromPath(filePath) {
   const [, block] = filePath.split(path.sep);
   return block;
-}
-
-function arrToString(arr) {
-  return Array.isArray(arr) ? arr.join('\n') : toString(arr);
 }
 
 exports.hasEnglishSource = hasEnglishSource;

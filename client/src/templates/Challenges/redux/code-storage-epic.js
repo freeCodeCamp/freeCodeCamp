@@ -142,15 +142,7 @@ function loadCodeEpic(action$, state$) {
             ...challengeFiles,
             {
               ...challengeFile,
-              contents: isCodeFound
-                ? foundChallengeFile.contents
-                : challengeFile.contents,
-              editableContents: isCodeFound
-                ? foundChallengeFile.editableContents
-                : challengeFile.editableContents,
-              editableRegionBoundaries: isCodeFound
-                ? foundChallengeFile.editableRegionBoundaries
-                : challengeFile.editableRegionBoundaries
+              ...(isCodeFound ? foundChallengeFile : {})
             }
           ];
         }, []);

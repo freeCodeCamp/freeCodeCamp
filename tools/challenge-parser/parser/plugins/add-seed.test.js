@@ -36,7 +36,7 @@ describe('add-seed plugin', () => {
     expect('challengeFiles' in file.data).toBe(true);
   });
 
-  it('ensures that the `challengeFiles` property is an object', () => {
+  it('ensures that the `challengeFiles` property is an array', () => {
     plugin(simpleAST, file);
     expect(isArray(file.data.challengeFiles)).toBe(true);
   });
@@ -68,34 +68,23 @@ describe('add-seed plugin', () => {
   });
 
   it('parses seeds without ids', () => {
-    expect.assertions(6);
+    expect.assertions(3);
     plugin(simpleAST, file);
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles.reduce(
-      (challengeObjs, challengeObj) => {
-        return {
-          ...challengeObjs,
-          [challengeObj.fileKey]: {
-            ...challengeObj
-          }
-        };
-      },
-      {}
-    );
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexjs.contents).toBe(`var x = 'y';`);
-    expect(indexjs.fileKey).toBe(`indexjs`);
     expect(indexhtml.contents).toBe(`<html>
   <body>
   </body>
 </html>`);
-    expect(indexhtml.fileKey).toBe(`indexhtml`);
     expect(indexcss.contents).toBe(`body {
   background: green;
 }`);
-    expect(indexcss.fileKey).toBe(`indexcss`);
   });
 
   it('removes region markers from contents', () => {
@@ -118,17 +107,9 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexhtml, indexcss, indexjs } = challengeFiles.reduce(
-      (challengeObjs, challengeObj) => {
-        return {
-          ...challengeObjs,
-          [challengeObj.fileKey]: {
-            ...challengeObj
-          }
-        };
-      },
-      {}
-    );
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexhtml.id).toBe('');
     expect(indexcss.id).toBe('key-for-css');
@@ -159,17 +140,9 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles.reduce(
-      (challengeObjs, challengeObj) => {
-        return {
-          ...challengeObjs,
-          [challengeObj.fileKey]: {
-            ...challengeObj
-          }
-        };
-      },
-      {}
-    );
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexjs.head).toBe('');
     expect(indexhtml.head).toBe(`<!-- comment -->`);
@@ -184,17 +157,9 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles.reduce(
-      (challengeObjs, challengeObj) => {
-        return {
-          ...challengeObjs,
-          [challengeObj.fileKey]: {
-            ...challengeObj
-          }
-        };
-      },
-      {}
-    );
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexjs.tail).toBe(`function teardown(params) {
   // after
@@ -229,17 +194,9 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles.reduce(
-      (challengeObjs, challengeObj) => {
-        return {
-          ...challengeObjs,
-          [challengeObj.fileKey]: {
-            ...challengeObj
-          }
-        };
-      },
-      {}
-    );
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexjs.head).toBe('');
     expect(indexjs.tail).toBe('function teardown(params) {\n  // after\n}');
@@ -255,17 +212,9 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = challengeFiles.reduce(
-      (challengeObjs, challengeObj) => {
-        return {
-          ...challengeObjs,
-          [challengeObj.fileKey]: {
-            ...challengeObj
-          }
-        };
-      },
-      {}
-    );
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexjs.head).toBe('');
     expect(indexjs.tail).toBe('');

@@ -318,7 +318,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
               return;
             }
 
-            // If no .files, then no seed:
+            // If no .challengeFiles, then no seed:
             if (!challenge.challengeFiles) return;
 
             // - None of the translatable comments should appear in the
@@ -336,7 +336,6 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
             // - None of the translated comment texts should appear *outside* a
             //   comment
-            // TODO: Does not look correct @ShaunSHamilton
             challenge.challengeFiles.forEach(challengeFile => {
               let comments = {};
 
@@ -531,7 +530,6 @@ async function createTestRunner(
   const { required = [], template, removeComments } = challenge;
   // we should avoid modifying challenge, as it gets reused:
   const challengeFiles = cloneDeep(challenge.challengeFiles);
-  // const solutions = cloneDeep(challenge.solutions);
   solutionFiles.forEach(solutionFile => {
     const challengeFile = challengeFiles.find(
       x => x.fileKey === solutionFile.fileKey

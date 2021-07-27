@@ -49,6 +49,7 @@ import {
 // Styles
 import './classic.css';
 import '../components/test-frame.css';
+import { HandlerProps } from 'react-reflex';
 
 // Redux Setup
 const mapStateToProps = createStructuredSelector({
@@ -141,7 +142,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   getLayoutState(): ReflexLayout | string {
-    // eslint-disable-next-line
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const reflexLayout: ReflexLayout | string = store.get(REFLEX_LAYOUT);
 
     // Validate if user has not done any resize of the panes
@@ -162,9 +163,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     this.setState(state => ({ ...state, resizing: true }));
   }
 
-  onStopResize(event: unknown) {
-    /* eslint-disable */
-    // @ts-expect-error TODO: typing
+  onStopResize(event: HandlerProps) {
+    // @ts-expect-error TODO: Apparently, name does not exist on type
     const { name, flex } = event.component.props;
 
     // Only interested in tracking layout updates for ReflexElement's

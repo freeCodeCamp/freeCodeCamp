@@ -58,9 +58,7 @@ function buildSourceMap(challengeFiles) {
   // A better solution is to store and handle them separately. Perhaps never
   // setting the name to 'index'. Use 'contents' instead?
   // TODO: is file.source ever defined?
-
-  // TODO: Does not look correct @ShaunSHamilton
-  return challengeFiles.reduce(
+  const source = challengeFiles.reduce(
     (sources, challengeFile) => {
       sources[challengeFile.name] +=
         challengeFile.source || challengeFile.contents;
@@ -69,6 +67,7 @@ function buildSourceMap(challengeFiles) {
     },
     { index: '', editableContents: '' }
   );
+  return source;
 }
 
 function checkFilesErrors(challengeFiles) {

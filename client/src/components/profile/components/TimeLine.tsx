@@ -50,7 +50,7 @@ interface CompletedMap {
 
 interface TimelineProps {
   completedMap: CompletedMap[];
-  t: TFunction<'translation'>;
+  t: TFunction;
   username: string;
 }
 
@@ -323,7 +323,7 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
     );
   }
 }
-/* eslint-disable */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
 function useIdToNameMap(): Map<string, string> {
   const {
     allChallengeNode: { edges }

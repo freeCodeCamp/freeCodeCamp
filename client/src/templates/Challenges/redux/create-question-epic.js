@@ -15,12 +15,12 @@ import i18next from 'i18next';
 const { forumLocation } = envData;
 
 function filesToMarkdown(challengeFiles = {}) {
-  const moreThenOneFile = challengeFiles?.length > 1;
+  const moreThanOneFile = challengeFiles?.length > 1;
   return challengeFiles.reduce((fileString, challengeFile) => {
     if (!challengeFile) {
       return fileString;
     }
-    const fileName = moreThenOneFile
+    const fileName = moreThanOneFile
       ? `\\ file: ${challengeFile.contents}`
       : '';
     const fileType = challengeFile.ext;
