@@ -203,7 +203,7 @@ Il team di sviluppo fa un merge dei cambiamenti dal ramo `prod-staging` a `prod-
 
 Ci sono alcune limitazioni e compromessi noti quando si utilizza la versione beta della piattaforma.
 
-- #### Tutti i dati / progressi personali su queste piattaforme beta `NON saranno salvati o riportati` alla produzione.
+- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production.
 
   **Gli utenti nella versione beta avranno un account separato dalla produzione.** La versione beta utilizza un database fisicamente separato dalla produzione. Questo ci dà la possibilità di prevenire qualsiasi perdita accidentale di dati o modifiche. Il team di sviluppo può eliminare il database su questa versione beta se necessario.
 
