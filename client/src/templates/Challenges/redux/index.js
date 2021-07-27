@@ -307,11 +307,8 @@ export const reducer = handleActions(
       ...state,
       challengeMeta: { ...payload }
     }),
-    // TODO: Complete this @ShaunSHamilton
-    [types.resetChallenge]: state => ({
-      ...state,
-      currentTab: 2,
-      challengeFiles: [
+    [types.resetChallenge]: state => {
+      const challengeFilesReset = [
         ...state.challengeFiles.reduce(
           (challengeFiles, challengeFile) => ({
             ...challengeFiles,
@@ -325,13 +322,18 @@ export const reducer = handleActions(
           }),
           {}
         )
-      ],
-      challengeTests: state.challengeTests.map(({ text, testString }) => ({
-        text,
-        testString
-      })),
-      consoleOut: []
-    }),
+      ];
+      return {
+        ...state,
+        currentTab: 2,
+        challengeFiles: challengeFilesReset,
+        challengeTests: state.challengeTests.map(({ text, testString }) => ({
+          text,
+          testString
+        })),
+        consoleOut: []
+      };
+    },
     [types.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload

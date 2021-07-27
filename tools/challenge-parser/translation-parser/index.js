@@ -20,7 +20,6 @@ exports.translateCommentsInChallenge = (challenge, lang, dict) => {
   if (!challClone.challengeFiles) {
     console.warn(`Challenge ${challClone.title} has no seed to translate`);
   } else {
-    // TODO: Does not look correct @ShaunSHamilton
     challClone.challengeFiles.forEach(challengeFile => {
       if (challengeFile.contents) {
         let { text, commentCounts } = this.translateComments(
