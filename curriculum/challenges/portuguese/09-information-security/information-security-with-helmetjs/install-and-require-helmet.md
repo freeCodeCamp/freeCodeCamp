@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c36
-title: Install and Require Helmet
+title: Instalar e solicitar o Helmet
 challengeType: 2
 forumTopicId: 301581
 dashedName: install-and-require-helmet
@@ -8,25 +8,25 @@ dashedName: install-and-require-helmet
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+Trabalhar nesses desafios irá fazer com que você escreva seu código usando um dos seguintes métodos:
 
-- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-infosec/) and complete these challenges locally.
-- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-infosec) to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+- Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) e complete esses desafios localmente.
+- Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) para completar esses desafios.
+- Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`.
 
-Helmet helps you secure your Express apps by setting various HTTP headers.
+O Helmet ajuda você a proteger seus aplicativos do Express, definindo vários cabeçalhos HTTP.
 
 # --instructions--
 
-All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
+Todo o código para estas aulas vai para o arquivo `myApp.js` entre as linhas de código que fornecemos para você começar. Não altere nem exclua o código que adicionamos para você.
 
-Install Helmet version `3.21.3`, then require it. You can install a specific version of a package with `npm install --save-exact package@version`, or by adding it to your `package.json` directly.
+Instale a versão `3.21.3` do Helmet e, em seguida, solicite-a. Você pode instalar uma versão específica de um pacote com o `npm install --save-exact package@version` ou adicionando-a ao seu `package.json` diretamente.
 
 # --hints--
 
-`helmet` version `3.21.3` should be in `package.json`
+A versão do `helmet` `3.21.3` deve estar no `package.json`
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb9367417b2b2512c12
-title: Chain Search Query Helpers to Narrow Search Results
+title: Encadear auxiliares de consulta para restringir resultados de pesquisa
 challengeType: 2
 forumTopicId: 301533
 dashedName: chain-search-query-helpers-to-narrow-search-results
@@ -8,15 +8,15 @@ dashedName: chain-search-query-helpers-to-narrow-search-results
 
 # --description--
 
-If you don’t pass the callback as the last argument to `Model.find()` (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method `.exec()`. You always need to pass your callback to this last method. There are many query helpers, here we'll use the most commonly used.
+Se você não passar o callback como o último argumento para `Model.find()` (ou para outros métodos de pesquisa), a consulta não é executada. Você pode armazenar a consulta em uma variável para uso posterior. Esse tipo de objeto permite que você crie uma consulta usando a sintaxe de encadeamento. A pesquisa real do banco de dados é executada quando você finalmente encadear o método `.exec()`. Você sempre precisa passar seu callback para este último método. Existem muitos auxiliares de consulta. Aqui, usaremos os mais comuns.
 
 # --instructions--
 
-Modify the `queryChain` function to find people who like the food specified by the variable named `foodToSearch`. Sort them by `name`, limit the results to two documents, and hide their age. Chain `.find()`, `.sort()`, `.limit()`, `.select()`, and then `.exec()`. Pass the `done(err, data)` callback to `exec()`.
+Modifique a função `queryChain` para que encontre pessoas que gostam do alimento especificado pela variável `foodToSearch`. Classifique-os por `name`, limite os resultados a dois documentos e oculte idade deles. Encadeie `.find()`, `.sort()`, `.limit()`, `.select()`e, então, `.exec()`. Passe a callback `done(err, data)` para `exec()`.
 
 # --hints--
 
-Chaining query helpers should succeed
+Você deve ter sucesso em encadear auxiliares de consulta
 
 ```js
 (getUserInput) =>

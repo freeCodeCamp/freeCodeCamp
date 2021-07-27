@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3e
-title: Disable Client-Side Caching with helmet.noCache()
+title: Desativar o cache do lado do client com helmet.noCache()
 challengeType: 2
 forumTopicId: 301576
 dashedName: disable-client-side-caching-with-helmet-nocache
@@ -8,17 +8,17 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Lembrando que este projeto está sento construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
-If you are releasing an update for your website, and you want the users to always download the newer version, you can (try to) disable caching on client’s browser. It can be useful in development too. Caching has performance benefits, which you will lose, so only use this option when there is a real need.
+Se estiver lançando uma atualização para o seu site, e quiser que os usuários façam o download da versão mais recente, você pode (tentar) desabilitar o cache no navegador do client. Isso também pode ser útil para o desenvolvimento. O caching tem benefícios de desempenho, que você vai perder. Então, use esta opção apenas quando houver uma necessidade real.
 
 # --instructions--
 
-Use the `helmet.noCache()` method on your server.
+Use o método `helmet.noCache()` no seu servidor.
 
 # --hints--
 
-helmet.noCache() middleware should be mounted correctly
+O middleware helmet.noCache() deve ser montado corretamente
 
 ```js
 (getUserInput) =>

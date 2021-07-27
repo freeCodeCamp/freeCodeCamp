@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed7
-title: Copying Arrays Warning
+title: Aviso de cópia de arrays
 challengeType: 11
 videoId: iIoQ0_L0GvA
 dashedName: copying-arrays-warning
@@ -10,7 +10,7 @@ dashedName: copying-arrays-warning
 
 ## --text--
 
-What is the value of `a` after running the following code?
+Qual é o valor de `a` depois de executar o seguinte código?
 
 ```py
 import numpy as np

@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3d
-title: Disable DNS Prefetching with helmet.dnsPrefetchControl()
+title: Desativar o DNS Prefetching com helmet.dnsPrefetchControl()
 challengeType: 2
 forumTopicId: 301577
 dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
@@ -8,17 +8,17 @@ dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Lembrando que este projeto está sento construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
-To improve performance, most browsers prefetch DNS records for the links in a page. In that way the destination ip is already known when the user clicks on a link. This may lead to over-use of the DNS service (if you own a big website, visited by millions people…), privacy issues (one eavesdropper could infer that you are on a certain page), or page statistics alteration (some links may appear visited even if they are not). If you have high security needs you can disable DNS prefetching, at the cost of a performance penalty.
+Para melhorar o desempenho, a maioria dos navegadores registra antes do fetching o DNS dos links de uma página. Desta maneira, o IP de destino já é conhecido quando o usuário clica em um link. Isso pode levar a um uso excessivo do serviço de DNS (se você possui um site grande, visitado por milhões de pessoas…), problemas de privacidade (uma escuta pode inferir que você está em uma determinada página), ou em alterações das estatísticas da página (alguns links podem aparecer visitados, mesmo que não sejam). Se você tem elevadas necessidades de segurança, pode desativar a pré-busca de DNS, ao custo de uma penalização de desempenho.
 
 # --instructions--
 
-Use the `helmet.dnsPrefetchControl()` method on your server.
+Use o método `helmet.dnsPrefetchControl()` no seu servidor.
 
 # --hints--
 
-helmet.dnsPrefetchControl() middleware should be mounted correctly
+O middleware helmet.dnsPrefetchControl() deve ser montado corretamente
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3a
-title: Avoid Inferring the Response MIME Type with helmet.noSniff()
+title: Evitar inferências da resposta de MIME Type com helmet.noSniff()
 challengeType: 2
 forumTopicId: 301574
 dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
@@ -8,15 +8,15 @@ dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/). Browsers can use content or MIME sniffing to override response `Content-Type` headers to guess and process the data using an implicit content type. While this can be convenient in some scenarios, it can also lead to some dangerous attacks. This middleware sets the X-Content-Type-Options header to `nosniff`, instructing the browser to not bypass the provided `Content-Type`.
+Lembrando que este projeto está sento construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/). Os navegadores podem usar detecção de conteúdo ou de MIME para substituir os cabeçalhos de resposta `Content-Type` de modo a adivinhar e processar os dados usando um tipo de conteúdo implícito. Embora isso possa ser conveniente em alguns cenários, também pode levar a alguns ataques perigosos. Este middleware define o cabeçalho X-Content-Type-Options para `nosniff`, instruindo o navegador a não ignorar o `Content-Type` fornecido.
 
 # --instructions--
 
-Use the `helmet.noSniff()` method on your server.
+Use o método `helmet.noSniff()` no seu servidor.
 
 # --hints--
 
-helmet.noSniff() middleware should be mounted correctly
+O middleware helmet.noSniff() deve ser montado corretamente
 
 ```js
 (getUserInput) =>
