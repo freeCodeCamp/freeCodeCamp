@@ -8,24 +8,24 @@ dashedName: problem-409-nim-extreme
 
 # --description--
 
-Let n be a positive integer. Consider nim positions where:There are n non-empty piles.
+Let $n$ be a positive integer. Consider nim positions where:
 
-Each pile has size less than 2n.
+- There are $n$ non-empty piles.
+- Each pile has size less than $2^n$.
+- No two piles have the same size.
 
-No two piles have the same size.
+Let $W(n)$ be the number of winning nim positions satisfying the above conditions (a position is winning if the first player has a winning strategy).
 
-Let W(n) be the number of winning nim positions satisfying the above
+For example, $W(1) = 1$, $W(2) = 6$, $W(3) = 168$, $W(5) = 19\\,764\\,360$ and $W(100)\bmod 1\\,000\\,000\\,007 = 384\\,777\\,056$.
 
-conditions (a position is winning if the first player has a winning strategy). For example, W(1) = 1, W(2) = 6, W(3) = 168, W(5) = 19764360 and W(100) mod 1 000 000 007 = 384777056.
-
-Find W(10 000 000) mod 1 000 000 007.
+Find $W(10\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`euler409()` should return 253223948.
+`nimExtreme()` should return `253223948`.
 
 ```js
-assert.strictEqual(euler409(), 253223948);
+assert.strictEqual(nimExtreme(), 253223948);
 ```
 
 # --seed--
@@ -33,12 +33,12 @@ assert.strictEqual(euler409(), 253223948);
 ## --seed-contents--
 
 ```js
-function euler409() {
+function nimExtreme() {
 
   return true;
 }
 
-euler409();
+nimExtreme();
 ```
 
 # --solutions--
