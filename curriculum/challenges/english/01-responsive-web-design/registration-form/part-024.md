@@ -17,22 +17,40 @@ I accept the terms and conditions
 
 # --hints--
 
-You should give the first `label` the text ` Personal Account`.
+You should give the first `label` the text `Personal Account`.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(2) > label')?.innerText, ' Personal Account');
+assert.include(document.querySelector('fieldset:nth-child(2) > label')?.innerText, 'Personal Account');
 ```
 
-You should give the second `label` the text ` Business Account`.
+You should give the second `label` the text `Business Account`.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(2) > label:nth-child(2)')?.innerText, ' Business Account');
+assert.include(document.querySelector('fieldset:nth-child(2) > label:nth-child(2)')?.innerText, 'Business Account');
 ```
 
-You should give the third `label` the text ` I accept the terms and conditions`.
+You should give the third `label` the text `I accept the terms and conditions`.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(2) > label:nth-child(3)')?.innerText, ' I accept the terms and conditions');
+assert.include(document.querySelector('fieldset:nth-child(2) > label:nth-child(3)')?.innerText, 'I accept the terms and conditions');
+```
+
+You should give the first `label` text one space at the front.
+
+```js
+assert.equal(document.querySelector('fieldset:nth-child(2) > label')?.innerText?.[0], ' ');
+```
+
+You should give the second `label` text one space at the front.
+
+```js
+assert.equal(document.querySelector('fieldset:nth-child(2) > label:nth-child(2)')?.innerText?.[0], ' ');
+```
+
+You should give the third `label` text one space at the front.
+
+```js
+assert.equal(document.querySelector('fieldset:nth-child(2) > label:nth-child(3)')?.innerText?.[0], ' ');
 ```
 
 # --seed--

@@ -67,6 +67,7 @@ Start by changing the font to `Tahoma`, and the font size to `16px` in the `body
 ```
 
 ```css
+
 --fcc-editable-region--
 body {
   width: 100%;

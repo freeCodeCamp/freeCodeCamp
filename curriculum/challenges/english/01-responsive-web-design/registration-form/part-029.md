@@ -16,13 +16,13 @@ Start, by adding a `select` element below the two `input` elements. Then, nest 5
 You should add a `select` element to the third `fieldset`.
 
 ```js
-assert.exists(document.querySelector('.fieldset:nth-child(3) > select'));
+assert.exists(document.querySelector('fieldset:nth-child(3) > select'));
 ```
 
 You should nest 5 `option` elements inside the `select` element.
 
 ```js
-assert.equal(document.querySelector('.fieldset:nth-child(3) > select > option').length, 5);
+assert.equal(document.querySelectorAll('fieldset:nth-child(3) > select > option')?.length, 5);
 ```
 
 # --seed--

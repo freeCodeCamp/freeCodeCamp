@@ -36,7 +36,7 @@ assert.equal(document.querySelectorAll('input')?.[2]?.type, 'email');
 You should give the fourth `input` element a `type` attribute of `password`.
 
 ```js
-assert.equal(document.querySelector('input')?.[3]?.type, 'password');
+assert.equal(document.querySelectorAll('input')?.[3]?.type, 'password');
 ```
 
 # --seed--

@@ -9,7 +9,7 @@ dashedName: part-6
 
 Below the heading, use the following text within a paragraph element to encourage users to register:
 
-```text
+```md
 Please fill out this form with the required information
 ```
 
@@ -30,7 +30,7 @@ assert.exists(document.querySelector('h1 + p'));
 You should give the `p` element a text of `Please fill out this form with the required information`.
 
 ```js
-assert.equal(document.querySelector('p')?.text, 'Please fill out this form with the required information');
+assert.equal(document.querySelector('p')?.textContent, 'Please fill out this form with the required information');
 ```
 
 # --seed--

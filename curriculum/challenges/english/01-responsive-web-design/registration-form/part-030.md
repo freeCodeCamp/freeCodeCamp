@@ -20,13 +20,13 @@ assert.exists(document.querySelector('fieldset:nth-child(3) > label:nth-child(3)
 You should give the `label` element the text `How did you hear about us?`.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(3) > label:nth-child(3)')?.textContent, 'How did you hear about us?');
+assert.equal(document.querySelector('fieldset:nth-child(3) > label:nth-child(3)')?.innerText?.trim(), 'How did you hear about us?');
 ```
 
 You should place the text before the `select` element.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(3) > label:nth-child(3) > select')?.innerHTML?.replace(/[\t\n]+/g, ''), 'How did you hear about us?<select><option></option><option></option><option></option><option></option><option></option></select>');
+assert.match(document.querySelector('fieldset:nth-child(3) > label:nth-child(3)')?.innerHTML?.replace(/[\t\n]+/g, ''), /^How did you hear about us\?/);
 ```
 
 # --seed--

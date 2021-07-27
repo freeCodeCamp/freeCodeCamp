@@ -26,7 +26,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('label')?.display, 'block'
 You should add a `margin` property of value `0.5rem 0`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('label')?.margin, '0.5rem 0');
+assert.equal(new __helpers.CSSHelp(document).getStyle('label')?.margin, '0.5rem 0px');
 ```
 
 # --seed--

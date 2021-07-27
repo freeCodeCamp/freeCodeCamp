@@ -40,7 +40,9 @@ assert(code.match(/html\s*>/gi));
 ## --seed-contents--
 
 ```html
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

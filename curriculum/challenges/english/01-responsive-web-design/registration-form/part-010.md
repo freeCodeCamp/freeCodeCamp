@@ -28,7 +28,7 @@ You should give the `action` a value of `https://fcc-registration-form.com`.
 
 ```js
 // TODO: Do we need to use an in-house (domain) URL - just-in-case
-assert.equal(document.querySelector('form')?.action, 'https://fcc-registration-form.com');
+assert.equal(document.querySelector('form')?.action, 'https://fcc-registration-form.com/');
 ```
 
 # --seed--

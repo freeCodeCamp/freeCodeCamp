@@ -14,13 +14,13 @@ Now, get rid of the horizontal scroll-bar, by setting the `body` default `margin
 You should add `margin` within the `body` element selector.
 
 ```js
-assert.notEmpty(__helpers.CSSHelp(document).getStyle('body')?.margin);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('body')?.margin);
 ```
 
 You should give the `margin` a value of `0`.
 
 ```js
-assert.equal(__helpers.CSSHelp(document).getStyle('body')?.margin, '0px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.margin, '0px');
 ```
 
 # --seed--
@@ -42,10 +42,12 @@ assert.equal(__helpers.CSSHelp(document).getStyle('body')?.margin, '0px');
 ```
 
 ```css
+
 --fcc-editable-region--
 body {
   width: 100%;
   height: 100vh;
 }
 --fcc-editable-region--
+
 ```

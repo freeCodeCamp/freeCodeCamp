@@ -70,13 +70,13 @@ assert.notEmpty(document.querySelector('textarea')?.name);
 You should not give any of the `option` elements a `name` attribute.
 
 ```js
-[...document.querySelectorAll('option')]?.forEach(option => assert.isEmpty(option?.name));
+[...document.querySelectorAll('option')]?.forEach(option => assert.isUndefined(option?.name));
 ```
 
 You should not give any of the `label` elements a `name` attribute.
 
 ```js
-[...document.querySelectorAll('label')]?.forEach(label => assert.isEmpty(label?.name));
+[...document.querySelectorAll('label')]?.forEach(label => assert.isUndefined(label?.name));
 ```
 
 You should not give any of the `fieldset` elements a `name` attribute.

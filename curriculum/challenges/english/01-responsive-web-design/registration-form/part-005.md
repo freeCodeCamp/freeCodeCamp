@@ -20,7 +20,7 @@ assert.exists(document.querySelector('body > h1'));
 You should give the `h1` the text `Registration Form`.
 
 ```js
-assert.equal(document.querySelector('body > h1')?.text, 'Registration Form');
+assert.equal(document.querySelector('body > h1')?.textContent, 'Registration Form');
 ```
 
 # --seed--

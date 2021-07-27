@@ -47,6 +47,7 @@ assert(document.querySelectorAll('html').length === 1);
 ## --seed-contents--
 
 ```html
+
 --fcc-editable-region--
 <!DOCTYPE html>
 

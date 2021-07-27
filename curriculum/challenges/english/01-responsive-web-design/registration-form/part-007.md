@@ -14,19 +14,19 @@ To spruce the project up, let us add some CSS. Begin by giving the `body` a `wid
 You should use the `body` element selector.
 
 ```js
-assert.exists(__helpers.CSSHelp(document).getStyle('body'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('body'));
 ```
 
 You should give the `body` a `width` of `100%`.
 
 ```js
-assert.equal(__helpers.CSSHelp(document).getStyle('body')?.width, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.width, '100%');
 ```
 
 You should give the `body` a `height` of `100vh`.
 
 ```js
-assert.equal(__helpers.CSSHelp(document).getStyle('body')?.height, '100vh');
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.height, '100vh');
 ```
 
 # --seed--
@@ -48,7 +48,9 @@ assert.equal(__helpers.CSSHelp(document).getStyle('body')?.height, '100vh');
 ```
 
 ```css
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```
