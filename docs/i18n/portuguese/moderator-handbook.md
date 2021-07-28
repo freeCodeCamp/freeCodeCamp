@@ -111,7 +111,7 @@ Antes de dar merge em qualquer pull request, certifique-se que há um aviso dize
 
 Isso quer dizer que outro pull request fez mudanças na mesma parte de um arquivo. O GitHub tem uma ferramenta para resolver esses conflitos de merges diretamente no GitHub. Você pode tentar resolver esses conflitos. Apenas use seu melhor julgamento.
 
-The pull request's changes will be on top, and the main branch's changes will be on the bottom. Às vezes, haverá informação redundante que pode ser apagada. Antes de terminar, certifique-se de excluir o `<<<<<<`, `======` e o `>>>>>>` que o Git adiciona para indicar áreas de conflito.
+As mudanças do pull request estarão no topo e as mudanças da branch principal (main) estarão embaixo. Às vezes, haverá informação redundante que pode ser apagada. Antes de terminar, certifique-se de excluir o `<<<<<<`, `======` e o `>>>>>>` que o Git adiciona para indicar áreas de conflito.
 
 Se não tem certeza, peça ajuda para algum moderador ou para o time de desenvolvimento.
 
@@ -402,7 +402,7 @@ Gostaríamos imensamente de poder fazer merge de suas mudanças mas parece que a
 
 Para resolver esse erro, você terá que sincronizar as últimas mudanças da branch `main` do repositório `freeCodeCamp/freeCodeCamp`.
 
-Using the command line, you can do this in three easy steps:
+Usando a linha de comando, você pode fazer isso em três etapas fáceis:
 
 ```bash
 git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git

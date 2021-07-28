@@ -85,7 +85,7 @@ part-6.md
 
 Em algum momento, você decide que precisa deletar `part-2.md`, porque os passos nele não são mais necessários. Você também decide que vai diluir as partes dentro de `part-4.md` em três passos ao invés de um.
 
-To accomplish this restructure, you would need to delete `part-2.md` and then add a `part-4a.md` and a `part-4b.md`. A nova estrutura da pasta deve ficar assim:
+Para completar essa reestruturação, você precisará excluir a `part-2.md` e então adicionar a `part-4a.md` e a `part-4b.md`. A nova estrutura da pasta deve ficar assim:
 
 ```bash
 part-001.md
