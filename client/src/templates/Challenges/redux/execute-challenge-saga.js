@@ -143,13 +143,12 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
   for (let i = 0; i < tests.length; i++) {
     const { text, testString } = tests[i];
     const newTest = { text, testString };
-    // only the last test outputs console.logs to avoid log duplication.
-    // const firstTest = i === 1;
     try {
       const { pass, err } = yield call(
         testRunner,
         testString,
         testTimeout,
+        // false here will stop console logs when running tests
         false
       );
       if (pass) {

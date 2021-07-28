@@ -87,11 +87,13 @@ const mountFrame =
   };
 
 const buildProxyConsole = proxyLogger => ctx => {
-  const oldLog = ctx.window.console.log.bind(ctx.window.console);
-  ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args.map(arg => format(arg)).join(' '));
-    return oldLog(...args);
-  };
+  if (proxyLogger) {
+    const oldLog = ctx.window.console.log.bind(ctx.window.console);
+    ctx.window.console.log = function proxyConsole(...args) {
+      proxyLogger(args.map(arg => format(arg)).join(' '));
+      return oldLog(...args);
+    };
+  }
   return ctx;
 };
 
@@ -159,8 +161,8 @@ const writeContentToFrame = ctx => {
 export const createMainFramer = (document, frameReady, proxyLogger) =>
   createFramer(document, frameReady, proxyLogger, mainId, initMainFrame);
 
-export const createTestFramer = (document, frameReady, proxyLogger) =>
-  createFramer(document, frameReady, proxyLogger, testId, initTestFrame);
+export const createTestFramer = (document, frameReady) =>
+  createFramer(document, frameReady, null, testId, initTestFrame);
 
 const createFramer = (document, frameReady, proxyLogger, id, init) =>
   flow(
