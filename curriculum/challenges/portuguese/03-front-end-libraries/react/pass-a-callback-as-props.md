@@ -12,7 +12,7 @@ Você pode passar `state` como "props" para componentes filho, mas você não se
 
 # --instructions--
 
-Existem três componentes delineados no editor de código. O componente `MyApp` é o pai que irá renderizar os componentes filhos `GetInput` e `RenderInput`. Adicione o componente `GetInput` ao método de renderização no `MyApp`, então passe uma propriedade chamada `input` atribuída a `inputValue` do `state` do `MyApp`. Também crie uma propriedade chamada `handleChange` e passe o manipulador de evento `handleChange` para ele.
+Existem três componentes delineados no editor de código. O componente `MyApp` é o pai que vai renderizar os componentes filhos `GetInput` e `RenderInput`. Adicione o componente `GetInput` ao método de renderização no `MyApp`, então passe uma propriedade chamada `input` atribuída a `inputValue` do `state` do `MyApp`. Também crie uma propriedade chamada `handleChange` e passe o manipulador de evento `handleChange` para ele.
 
 Em seguida, adicione `RenderInput` para o método render em `MyApp`, em seguida crie uma propriedade chamada `input` e passe o `inputValue` de `state` para ela. Depois de terminar, você será capaz de digitar no campo `input` no componente `GetInput`, que então chama o método manipulador em seu pai via props. Isso atualiza a entrada no `state` do pai, que é passado como "props" para ambos os filhos. Observe como os dados fluem entre os componentes e como a única fonte da verdade permanece o `state` do componente pai. Reconheço que esse exemplo é um pouco inventado, mas deve servir para ilustrar como dados e callbacks podem ser passados entre componentes React.
 

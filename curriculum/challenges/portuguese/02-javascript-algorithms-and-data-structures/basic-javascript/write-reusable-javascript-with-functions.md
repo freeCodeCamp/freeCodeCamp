@@ -19,7 +19,7 @@ function functionName() {
 }
 ```
 
-Você pode chamar ou <dfn>invocar</dfn> essa função ao usar seu nome seguido de parênteses, da seguinte forma: `functionName();` Cada vez que a função é chamada irá imprimir no console a mensagem `Hello World`. Todo o código entre as chaves será executado toda vez que uma função for chamada.
+Você pode chamar ou <dfn>invocar</dfn> essa função ao usar seu nome seguido de parênteses, da seguinte forma: `functionName();` Cada vez que a função é chamada imprimirá no console a mensagem `Hello World`. Todo o código entre as chaves será executado toda vez que uma função for chamada.
 
 # --instructions--
 

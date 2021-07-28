@@ -21,7 +21,7 @@ O console irá exibir um erro devido à reatribuição do valor de `FAV_PET`.
 
 Como você pode ver, tentar reatribuir uma variável declarada com `const` lançará um erro. Você sempre deve nomear variáveis que você não quer reatribuir, usando a palavra-chave `const`. Isso ajuda quando você acidentalmente tenta reatribuir uma variável que deveria ser constante. Uma prática comum ao nomear constantes é colocar todas as letras em maiúsculas, com palavras separadas por sublinhado (underscore ou underline).
 
-**Observação:** É comum que os desenvolvedores usem nomes de variáveis maiúsculas para valores imutáveis e minúsculas ou camelCase para valores mutáveis (objetos e arrays). Em um desafio posterior, você verá um exemplo de um nome de variável em minúsculo usado para um array.
+**Observação:** é comum que os desenvolvedores usem nomes de variáveis maiúsculas para valores imutáveis e minúsculas ou camelCase para valores mutáveis (objetos e arrays). Em um desafio posterior, você verá um exemplo de um nome de variável em minúsculo usado para um array.
 
 # --instructions--
 

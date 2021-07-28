@@ -12,7 +12,7 @@ Ambos o Chrome e o Firefox possui excelentes consoles JavaScript, também conhec
 
 Você pode encontrar Developer tools no menu do seu Chrome ou Web Console no menu do Firefox. Se você estiver usando um navegador diferente, ou um telefone móvel, recomendamos fortemente mudar para o Firefox ou Chrome Desktop.
 
-O método `console.log()`, o qual "imprime" a saída do que está nos seus parênteses no console, irá provavelmente ser a ferramenta de debug mais útil. Colocá-lo em pontos estratégicos no seu código pode te mostrar os valores intermediários de variáveis. É uma boa prática ter uma ideia do que deveria ser a saída antes de olhar o que é. Ter pontos de verificação para ver o status de seus cálculos ao longo do seu código ajudará a encontrar onde o problema está.
+O método `console.log()`, o qual "imprime" a saída do que está nos seus parênteses no console, provavelmente será a ferramenta de debug mais útil. Colocá-lo em pontos estratégicos no seu código pode te mostrar os valores intermediários de variáveis. É uma boa prática ter uma ideia do que deveria ser a saída antes de olhar o que é. Ter pontos de verificação para ver o status de seus cálculos ao longo do seu código ajudará a encontrar onde o problema está.
 
 Aqui está um exemplo para imprimir a string `Hello world!` no console:
 

@@ -20,7 +20,7 @@ Note que se você faz um componente stateful, nenhum outro componente está cien
 
 No editor de código, `MyComponent` já é stateful. Defina uma tag `h1` no método de renderização do componente que renderiza o valor de `name` no state do componente.
 
-**Nota:** O `h1` deve renderizar apenas o valor de `state` e nada mais. Em JSX, qualquer código que você escrever com chaves `{ }` será tratado como JavaScript. Então para acessar o valor do `state` basta incluir a referência em chaves.
+**Observação:** o `h1` deve renderizar apenas o valor de `state` e nada mais. Em JSX, qualquer código que você escrever com chaves `{ }` será tratado como JavaScript. Então para acessar o valor do `state` basta incluir a referência em chaves.
 
 # --hints--
 

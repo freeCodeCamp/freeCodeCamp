@@ -16,7 +16,7 @@ Outro jeito usual de obter a entrada do cliente é ao codificar os dados após o
 
 Faça uma API de endpoint (URL), montada em `GET /name`. Responda com um documento JSON, pegando a estrutura `{ name: 'firstname lastname'}`. O parâmetros primeiro e último nome devem ser codificados em uma string de consulta como, por exemplo: `?first=firstname&last=lastname`.
 
-**Nota:** no exercício seguinte, você vai receber dados de uma requisição POST, no mesmo caminho de rota `/name`. Se você quiser, poderá usar o método `app.route(path).get(handler).post(handler)`. Essa sintaxe permite a você encadear diferentes manipuladores do tipo verb no mesmo caminho de rota. Você vai economizar na digitação e ter um código mais limpo.
+**Observação:** no exercício seguinte, você vai receber dados de uma requisição POST, no mesmo caminho de rota `/name`. Se você quiser, poderá usar o método `app.route(path).get(handler).post(handler)`. Essa sintaxe permite a você encadear diferentes manipuladores do tipo verb no mesmo caminho de rota. Você vai economizar na digitação e ter um código mais limpo.
 
 # --hints--
 

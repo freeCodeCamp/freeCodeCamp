@@ -24,7 +24,7 @@ function loopy() {
 
 # --instructions--
 
-A função `myFunc()` contém um laço infinito porque a condição de parada `i != 4` nunca será `false` (e então quebrar o laço) - `i` irá incrementar em 2 a cada iteração, e passa direto por 4 já que `i` é ímpar no início. Corrija o operador de comparação para que o laço só rode enquanto `i` for menor ou igual a 4.
+A função `myFunc()` contém um laço infinito porque a condição de parada `i != 4` nunca será `false` (e então quebrar o laço) - `i` vai incrementar em 2 a cada iteração, e passa direto por 4 já que `i` é ímpar no início. Corrija o operador de comparação para que o laço só rode enquanto `i` for menor ou igual a 4.
 
 # --hints--
 

@@ -12,7 +12,7 @@ Além de definir e atualizar `state`, você também pode definir métodos para o
 
 Uma forma comum é explicitamente vincular `this` no construtor para que `this` torne-se vinculado aos métodos da classe quando o componente é inicializado. Você pode ter percebido que o último desafio usou `this.handleClick = this.handleClick.bind(this)` para o método `handleClick` no construtor. Em seguida, quando você chama uma função como `this.setState()` dentro do método da classe, `this` refere-se a classe e não será `undefined`.
 
-**Nota:** A palavra-chave `this` é um dos aspectos mais confusos do JavaScript mas ele exerce uma papel importante em React. Embora o seu comportamento aqui é completamente normal, essas aulas não são o lugar para uma análise profunda de `this` portanto, por favor consulte outras aulas se o conteúdo acima for confuso!
+**Observação:** a palavra-chave `this` é um dos aspectos mais confusos do JavaScript mas ele exerce uma papel importante em React. Embora o seu comportamento aqui é completamente normal, essas aulas não são o lugar para uma análise profunda de `this` portanto, por favor consulte outras aulas se o conteúdo acima for confuso!
 
 # --instructions--
 

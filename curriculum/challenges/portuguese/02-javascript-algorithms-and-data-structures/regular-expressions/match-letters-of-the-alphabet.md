@@ -30,7 +30,7 @@ As três chamadas a `match` retornam, na ordem, os valores: `["cat"]`, `["bat"]`
 
 Capture todas as letras na string `quoteSample`.
 
-**Nota:** Você quer encontrar tanto maiúsculas quanto minúsculas.
+**Observação:** você quer encontrar tanto maiúsculas quanto minúsculas.
 
 # --hints--
 

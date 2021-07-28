@@ -33,7 +33,7 @@ Aqui `badStr` lançará um erro.
 
 Na string <dfn>goodStr</dfn> acima, você pode usar ambas as aspas com segurança ao usar a barra invertida `\` como um caractere de escapamento.
 
-**Nota:** A barra invertida `\` não deve ser confundida com a barra comum `/`. Elas não fazem a mesma coisa.
+**Observação:** a barra invertida `\` não deve ser confundida com a barra comum `/`. Elas não fazem a mesma coisa.
 
 # --instructions--
 

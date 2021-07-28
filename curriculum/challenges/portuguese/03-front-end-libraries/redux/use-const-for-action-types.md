@@ -14,7 +14,7 @@ Uma prática comum ao trabalhar com Redux é atribuir tipos de ação como const
 
 Declare `LOGIN` e `LOGOUT` como valores `const` e os atribua às strings `'LOGIN'` e `'LOGOUT'`, respectivamente. Então, edite o `authReducer()` e os criadores de ação para fazer referência a essas constantes ao invés de valores string.
 
-**Nota:** É uma convenção escrever constantes com todas as letras maiúsculas, e essa prática também é padrão no Redux.
+**Observação:** é uma convenção escrever constantes com todas as letras maiúsculas, e essa prática também é padrão no Redux.
 
 # --hints--
 

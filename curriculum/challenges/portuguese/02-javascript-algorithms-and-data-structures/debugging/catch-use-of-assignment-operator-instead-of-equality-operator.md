@@ -26,7 +26,7 @@ if (x = y) {
 }
 ```
 
-Nesse exemplo, o bloco de código dentro da instrução `if` irá rodar para qualquer valor de `y`, a não ser que `y` seja falso. O bloco de `else`, que nós esperamos ser executado aqui, não irá realmente rodar.
+Nesse exemplo, o bloco de código dentro da instrução `if` vai rodar para qualquer valor de `y`, a não ser que `y` seja falso. O bloco de `else`, que nós esperamos ser executado aqui, não vai realmente rodar.
 
 # --instructions--
 

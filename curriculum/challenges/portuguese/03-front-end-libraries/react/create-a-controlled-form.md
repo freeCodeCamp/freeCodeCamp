@@ -16,7 +16,7 @@ O componente `MyForm` é definido com um `form` vazio com um manipulador de envi
 
 Adicionamos um botão que envia o formulário. Você pode ver que tem o `type` definido como `submit` indicando que é o botão que controla o formulário. Adicione o elemento `input` no `form` e defina seus atributos `value` e `onChange()` como o último desafio. Você deve então completar o método `handleSubmit` para que ele defina a propriedade de estado `submit` do componente para o valor de entrada atual no `state`.
 
-**Nota:** Você deve chamar o evento `event.preventDefault()` no manipulador de envio, para evitar o comportamento de envio de formulário padrão que atualizará a página web. Por conveniência, o comportamento padrão foi desabilitado aqui para impedir que atualizações redefinam o código do desafio.
+**Observação:** você deve chamar o evento `event.preventDefault()` no manipulador de envio, para evitar o comportamento de envio de formulário padrão que atualizará a página web. Por conveniência, o comportamento padrão foi desabilitado aqui para impedir que atualizações redefinam o código do desafio.
 
 Finalmente cria uma tag `h1` após o `form` que renderiza o valor `submit` do `state` do componente. Em seguida você pode digitar no formulário e clicar o botão (ou pressionar enter), e você deve ver seu input renderizado na página.
 

@@ -11,13 +11,13 @@ dashedName: practice-comparing-different-values
 
 Nos últimos dois desafios, aprendemos sobre o operador de igualdade (`==`) e o operador de igualdade estrita (`===`). Vamos fazer uma breve revisão e praticar usando esses operadores mais uma vez.
 
-Se os valores sendo comparados não são do mesmo tipo, o operador de igualdade irá fazer a conversão de tipo e, então, avaliar os valores. No entanto, o operador de igualdade estrita irá comparar ambos os tipos de dados e os valores, sem converter de um tipo para outro.
+Se os valores sendo comparados não são do mesmo tipo, o operador de igualdade fará a conversão de tipo e, então, avaliará os valores. No entanto, o operador de igualdade estrita vai comparar ambos os tipos de dados e os valores, sem converter de um tipo para outro.
 
 **Exemplos**
 
 `3 == '3'` retorna `true` porque JavaScript faz a conversão de tipo de string para número. `3 === '3'` retorna falso porque os tipos são diferentes e não é feita a conversão de tipo.
 
-**Nota:** Em JavaScript, você pode determinar o tipo de uma variável ou de um valor, com o operador `typeof`, como se segue:
+**Observação:** em JavaScript, você pode determinar o tipo de uma variável ou de um valor, com o operador `typeof`, como se segue:
 
 ```js
 typeof 3

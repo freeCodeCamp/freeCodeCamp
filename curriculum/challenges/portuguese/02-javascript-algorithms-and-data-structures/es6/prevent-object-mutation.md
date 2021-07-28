@@ -23,7 +23,7 @@ obj.newProp = "Test";
 console.log(obj); 
 ```
 
-As atribuições `obj.review` e `obj.newProp` não irão funcionar e o console irá exibir o valor `{ name: "FreeCodeCamp", review: "Awesome" }`.
+As atribuições `obj.review` e `obj.newProp` não vão funcionar e o console vai exibir o valor `{ name: "FreeCodeCamp", review: "Awesome" }`.
 
 # --instructions--
 

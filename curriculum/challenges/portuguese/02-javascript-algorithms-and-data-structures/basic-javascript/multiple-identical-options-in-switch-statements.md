@@ -24,7 +24,7 @@ switch(val) {
 }
 ```
 
-Todos os casos para 1, 2 e 3 irão produzir o mesmo resultado.
+Todos os casos para 1, 2 e 3 vão produzir o mesmo resultado.
 
 # --instructions--
 
@@ -33,7 +33,7 @@ Escreva uma instrução para definir `answer` para os seguintes intervalos:
 `4-6` - `Mid`  
 `7-9` - `High`
 
-**Nota:** Você precisará ter uma instrução `case` para cada número no intervalo.
+**Observação:** você precisará ter uma instrução `case` para cada número no intervalo.
 
 # --hints--
 

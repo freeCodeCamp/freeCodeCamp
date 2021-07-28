@@ -12,7 +12,7 @@ Retorne `true` se a string fornecida for um palíndromo. Caso contrário, retorn
 
 Um <dfn>palíndromo</dfn> é uma palavra ou frase que é dita da mesma maneira na ordem natural que na ordem inversa, ignorando pontuação, capitalização e espaçamento.
 
-**Nota:** Você precisará remover **todos os caracteres não alfanuméricos** (pontuação, espaços e símbolos) e transforme tudo na mesma capitalização (letra em minúsculo ou maiúsculo) para verificar se determinada palavra ou frase é um palíndromo.
+**Observação:** você precisará remover **todos os caracteres não alfanuméricos** (pontuação, espaços e símbolos) e transforme tudo na mesma capitalização (letra em minúsculo ou maiúsculo) para verificar se determinada palavra ou frase é um palíndromo.
 
 Vamos passar strings em diferentes formatos, como `racecar`, `RaceCarar` e `race CAR` entre outros.
 

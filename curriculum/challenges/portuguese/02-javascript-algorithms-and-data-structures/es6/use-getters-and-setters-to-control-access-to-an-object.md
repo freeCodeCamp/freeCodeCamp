@@ -50,7 +50,7 @@ Na classe, crie um `getter` para obter a temperatura em Celsius e um `setter` pa
 
 Lembre-se que `C = 5/9 * (F - 32)` e `F = C * 9.0 / 5 + 32`, aonde `F` é o valor da temperatura em Fahrenheit e `C` é o valor da mesma temperatura em Celsius.
 
-**Nota:** Quando você implementa isso, você irá rastrar a temperatura dentro da classe em uma escala, ou Fahrenheit ou Celsius.
+**Observação:** quando você implementa isso, você vai rastrear a temperatura dentro da classe em uma escala, ou Fahrenheit ou Celsius.
 
 Esse é o poder de um getter e um setter. Você está criando uma API para outro uso, que pode pegar o resultado correto independente de qual está rastreando.
 

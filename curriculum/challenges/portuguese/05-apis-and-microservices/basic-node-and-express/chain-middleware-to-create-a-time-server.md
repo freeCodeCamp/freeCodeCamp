@@ -27,7 +27,7 @@ Esse método é útil para separar as operações de servidor em pedaços menore
 
 Na rota `app.get('/now', ...)`, encadeie uma função middleware e o handler final. Na função middleware, você deverá adicionar o tempo atual no objeto de requisição na chave `req.time`. Você pode usar `new Date().toString()`. No gerenciador, responda com um objeto JSON, pegando a estrutura `{time: req.time}`.
 
-**Nota:** o teste não vai passar se você não encadear o middleware. Se você montar a função em algum outro lugar, o teste vai falhar, mesmo que o resultado final esteja correto.
+**Observação:** o teste não vai passar se você não encadear o middleware. Se você montar a função em algum outro lugar, o teste vai falhar, mesmo que o resultado final esteja correto.
 
 # --hints--
 

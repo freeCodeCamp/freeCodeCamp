@@ -14,7 +14,7 @@ Outra aplicação de usar JavaScript para controlar sua visão renderizada é as
 
 MyComponent contém um `boolean` em seu estado que rastreia se você deseja exibir algum elemento na interface do usuário ou não. O `button` alterna o estado deste valor. No momento, ele renderiza a mesma interface do usuário todas as vezes. Reescreva o método `render()` com uma instrução `if/else` para que se `display` for `true`, você retorna a marcação atual. Caso contrário, retorne a marcação sem o elemento `h1`.
 
-**Nota:** Você deve escrever um `if/else` para passar nos testes. O uso do operador ternário não passará aqui.
+**Observação:** você deve escrever um `if/else` para passar nos testes. O uso do operador ternário não passará aqui.
 
 # --hints--
 

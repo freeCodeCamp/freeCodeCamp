@@ -18,7 +18,7 @@ Você começa com uma função `updateRecords` que recebe um objeto literal, `re
 -   Se `prop` for `tracks` e `value` não for uma string vazia, adicione `value` ao final do array existente de `tracks` do álbum.
 -   Se `value` for uma string vazia, remova a propriedade `prop` recebida do álbum.
 
-**Nota:** Uma cópia do objeto `recordCollection` é usada para testes.
+**Observação:** uma cópia do objeto `recordCollection` é usada para testes.
 
 # --hints--
 

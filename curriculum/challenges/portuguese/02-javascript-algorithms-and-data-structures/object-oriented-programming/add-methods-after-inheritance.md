@@ -22,7 +22,7 @@ Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
 ```
 
-Como adicional do que é herdado da classe `Animal`, você deseja adicionar o comportamento que é único de objetos `Bird`. Aqui, `Bird` irá definir a função `fly()`. As funções são adicionadas ao `protótipo` `Bird` da mesma forma que qualquer função construtora:
+Como adicional do que é herdado da classe `Animal`, você deseja adicionar o comportamento que é único de objetos `Bird`. Aqui, `Bird` definirá a função `fly()`. As funções são adicionadas ao `protótipo` `Bird` da mesma forma que qualquer função construtora:
 
 ```js
 Bird.prototype.fly = function() {
