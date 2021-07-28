@@ -203,7 +203,7 @@ Você pode identificar a versão exata implantada visitando os registros de comp
 
 Existem algumas limitações e desvantagens conhecidas ao usar a versão beta da plataforma.
 
-- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production.
+- #### Todos os dados/progresso pessoal nessas plataformas beta NÃO serão salvos ou transferidos para a produção.
 
   **Os usuários na versão beta terão uma conta separada da produção.** A versão beta usa um banco de dados fisicamente separado da produção. Isso nos dá a capacidade de evitar qualquer perda acidental de dados ou modificações. A equipe de desenvolvimento pode limpar o banco de dados nesta versão beta conforme necessário.
 
