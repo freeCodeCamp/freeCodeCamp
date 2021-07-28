@@ -21,6 +21,7 @@ function getComponentNameAndProps(
   elementType: React.JSXElementConstructor<never>,
   pathname: string
 ): NameAndProps {
+  // eslint-disable-next-line testing-library/render-result-naming-convention
   const shallow = ShallowRenderer.createRenderer();
   const LayoutReactComponent = layoutSelector({
     element: { type: elementType, props: {}, key: '' },
