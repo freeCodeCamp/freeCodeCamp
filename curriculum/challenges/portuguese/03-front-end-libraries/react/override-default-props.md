@@ -14,7 +14,7 @@ A habilidade de definir props padrões é um recurso útil em React. A maneira d
 
 O componente `ShoppingCart` agora renderiza um componente filho `Itens`. Este componente `Items` tem uma prop padrão `quantity` definida como o número inteiro `0`. Substitua a prop padrão passando o valor de `10` para `quantity`.
 
-**Nota:** Lembre-se de que a sintaxe para adicionar uma prop a um componente fica semelhante à forma como você adiciona atributos HTML. No entanto, uma vez que o valor para `quantity` é um número inteiro, ele não irá entre aspas mas deve estar entre chaves. Por exemplo, `{100}`. Esta sintaxe diz para JSX interpretar o valor entre chaves diretamente como JavaScript.
+**Observação:** lembre-se de que a sintaxe para adicionar uma prop a um componente fica semelhante à forma como você adiciona atributos HTML. No entanto, uma vez que o valor para `quantity` é um número inteiro, ele não vai entre aspas mas deve estar entre chaves. Por exemplo, `{100}`. Esta sintaxe diz para JSX interpretar o valor entre chaves diretamente como JavaScript.
 
 # --hints--
 

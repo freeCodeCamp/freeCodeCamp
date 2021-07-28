@@ -16,7 +16,7 @@ Para usar esse método, passe nas funções como argumentos, e imediatamente cha
 connect(mapStateToProps, mapDispatchToProps)(MyComponent)
 ```
 
-**Nota:** Se você quiser omitir um dos argumentos do método `connect`, você passa `null` no lugar.
+**Observação:** se você quiser omitir um dos argumentos do método `connect`, você passa `null` no lugar.
 
 # --instructions--
 

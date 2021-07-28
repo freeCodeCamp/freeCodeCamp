@@ -26,7 +26,7 @@ I am ${person.age} years old.`;
 console.log(greeting);
 ```
 
-O console irá exibir as strings `Hello, my name is Zodiac Hasbro!` e `I am 56 years old.`.
+O console vai exibir as strings `Hello, my name is Zodiac Hasbro!` e `I am 56 years old.`.
 
 Muitas coisas aconteceram aqui. Primeiro, o exemplo utiliza crases, ou backticks em Inglês, (`` ` ``), ao invés de aspas (`'` ou `"`), ao redor da string. Segundo, note que a string tem mais de uma linha, tanto no código quanto na saída. Isso torna desnecessário inserir `\n` dentro das strings. A sintaxe `${variable}` usada acima é um espaço reservado (placeholder). Basicamente, você não terá mais que usar concatenação com o operador `+`. Para adicionar o valor de uma variável à string, você a envolve com `${` e `}`. Além de poder usar variáveis, você pode incluir outras expressões. Como por exemplo `${a + b}`. Essa nova maneira de criar strings te dá mais flexibilidade na hora de criar string complexas.
 

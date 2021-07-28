@@ -23,7 +23,7 @@ console.log(numArray);
 console.log(i);
 ```
 
-Aqui o console irá exibir os valores `[0, 1, 2]` e `3`.
+Aqui o console vai exibir os valores `[0, 1, 2]` e `3`.
 
 Com a palavra-chave `var`, `i` é declarado globalmente. Então quando `i++` é executado, ele atualiza a variável global. Esse código é semelhante ao seguinte:
 
@@ -37,9 +37,9 @@ console.log(numArray);
 console.log(i);
 ```
 
-Aqui o console irá exibir os valores `[0, 1, 2]` e `3`.
+Aqui o console vai exibir os valores `[0, 1, 2]` e `3`.
 
-Este comportamento causará problemas se você criasse uma função e armazená-la para depois utilizar dentro de um laço `for` que utiliza a variável `i`. Isso se deve ao fato da função armazenada sempre irá se referir ao valor da variável global `i` atualizada.
+Este comportamento causará problemas se você criasse uma função e armazená-la para depois utilizar dentro de um laço `for` que utiliza a variável `i`. Isso se deve ao fato da função armazenada sempre vai se referir ao valor da variável global `i` atualizada.
 
 ```js
 var printNumTwo;
@@ -53,7 +53,7 @@ for (var i = 0; i < 3; i++) {
 console.log(printNumTwo());
 ```
 
-Aqui o console irá exibir o valor `3`.
+Aqui o console vai exibir o valor `3`.
 
 Como você pode ver, `printNumTwo()` exibe 3 e não 2. Isso se deve ao fato do valor atribuído a `i` foi atualizado e `printNumTwo()` retorna a variável global `i` e não o valor que `i` tinha quando a função foi criada dentro do laço for. A palavra-chave `let` não segue este comportamento:
 
@@ -70,7 +70,7 @@ console.log(printNumTwo());
 console.log(i);
 ```
 
-Aqui o console irá exibir o valor `2`, e um erro que `i is not defined (i não foi definido)`.
+Aqui o console vai exibir o valor `2`, e um erro que `i is not defined` (i não foi definido).
 
 `i` não foi definido porque não foi declarado no escopo global. É declarado apenas dentro da declaração do laço `for`. `printNumTwo()` retornou o valor correto porque três variáveis `i` distintas com valores únicos (0, 1 e 2) foram criados com a palavra-chave `let` dentro da declaração do laço.
 

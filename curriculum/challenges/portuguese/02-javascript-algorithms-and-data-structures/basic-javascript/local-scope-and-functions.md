@@ -22,13 +22,13 @@ myTest();
 console.log(loc);
 ```
 
-A chamada da função `myTest()` irá exibir a string `foo` no console. A linha `console.log(loc)` irá lançar um erro, já que `loc` não foi definido fora da função.
+A chamada da função `myTest()` vai exibir a string `foo` no console. A linha `console.log(loc)` vai lançar um erro, já que `loc` não foi definido fora da função.
 
 # --instructions--
 
 O editor possui dois `console.log` para te ajudar a ver o que está acontecendo. Verifique o console enquanto codifica para ver como muda. Declare uma variável local `myVar` dentro de `myLocalScope` e rode os testes.
 
-**Nota:** O console ainda exibirá `ReferenceError: myVar is not defined`, mas isso não causará falha nos testes.
+**Observação:** o console ainda exibirá `ReferenceError: myVar is not defined`, mas isso não causará falha nos testes.
 
 # --hints--
 

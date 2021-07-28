@@ -22,7 +22,7 @@ console.log(oneDown);
 console.log(threeArr);
 ```
 
-O primeiro `consol.log` exibirá o valor `6`, e o segundo irá exibir o valor `[1, 4]`.
+O primeiro `console.log` exibirá o valor `6`, e o segundo exibirá o valor `[1, 4]`.
 
 # --instructions--
 

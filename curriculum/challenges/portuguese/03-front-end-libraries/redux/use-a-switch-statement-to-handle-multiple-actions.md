@@ -14,7 +14,7 @@ Você pode dizer ao store do Redux como lidar com vários tipos de ação. Digam
 
 O editor de código tem um store, actions e criadores de actions configurados para você. Preencha a função `reducer` para lidar com várias ações de autenticação. Use a instrução do JavaScript `switch` no `reducer` para responder a diferentes eventos de ação. Este é um padrão para escrever reducers do Redux. O comando switch deve mudar acima de `action.type` e retornar o estado de autenticação apropriado.
 
-**Nota:** Neste ponto, não se preocupe com imutabilidade do state, já que é pequeno e simples neste exemplo. Para cada ação, você pode retornar um novo objeto — por exemplo, `{authenticated: true}`. Além disso, não se esqueça de escrever um caso `default` na sua instrução switch que retorna o `state`atual. Isso é importante porque uma vez seu aplicativo tem vários redutores, todos eles são executados toda vez que uma ação é enviada, mesmo quando a ação não é relacionada a esse reducer. Nesses casos, você quer garantir que você retorna o `state` atual.
+**Observação:** neste ponto, não se preocupe com imutabilidade do state, já que é pequeno e simples neste exemplo. Para cada ação, você pode retornar um novo objeto — por exemplo, `{authenticated: true}`. Além disso, não se esqueça de escrever um caso `default` na sua instrução switch que retorna o `state`atual. Isso é importante porque uma vez seu aplicativo tem vários redutores, todos eles são executados toda vez que uma ação é enviada, mesmo quando a ação não é relacionada a esse reducer. Nesses casos, você quer garantir que você retorna o `state` atual.
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 
 # --description--
 
-Continuando a discussão sobre chamada de funções, o próximo bug para prestar atenção é quando os argumentos de uma função são fornecidos na ordem incorreta. Se os argumentos forem de diferentes tipos, tal como uma função esperando um array e um inteiro, isso irá provavelmente lançar um erro de tempo de execução. Se os argumentos são do mesmo tipo (todos os inteiros, por exemplo), então a lógica do código não fará sentido. Certifique-se de fornecer todos os argumentos exigidos, na ordem adequada para evitar esses problemas.
+Continuando a discussão sobre chamada de funções, o próximo bug para prestar atenção é quando os argumentos de uma função são fornecidos na ordem incorreta. Se os argumentos forem de diferentes tipos, tal como uma função esperando um array e um inteiro, isso provavelmente lançará um erro de tempo de execução. Se os argumentos são do mesmo tipo (todos os inteiros, por exemplo), então a lógica do código não fará sentido. Certifique-se de fornecer todos os argumentos exigidos, na ordem adequada para evitar esses problemas.
 
 # --instructions--
 

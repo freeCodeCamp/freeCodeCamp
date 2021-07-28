@@ -28,7 +28,7 @@ Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, Reac
 
 **Especificação de usuário nº 7:** eu consigo ver um elemento com um `id="timer-label"` correspondente, e que contém a string indicando que uma sessão foi inicializada (por exemplo, "Sessão").
 
-**Especificação de usuário nº 8:** eu consigo ver um elemento com `id="time-left"` correspondente. OBSERVAÇÃO: Pausado ou em execução, o valor nesse campo deve sempre ser exibido no formato `mm:ss` (por exemplo, 25:00).
+**Especificação de usuário nº 8:** eu consigo ver um elemento com `id="time-left"` correspondente. OBSERVAÇÃO: pausado ou em execução, o valor nesse campo deve sempre ser exibido no formato `mm:ss` (por exemplo, 25:00).
 
 **Especificação de usuário nº 9:** eu consigo ver um elemento clicável com `id="start_stop"` correspondente.
 

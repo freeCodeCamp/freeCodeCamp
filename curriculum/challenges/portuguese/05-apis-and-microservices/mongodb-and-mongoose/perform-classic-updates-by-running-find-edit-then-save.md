@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c0e
-title: 'Perform Classic Updates by Running Find, Edit, then Save'
+title: 'Realizar atualizações clássicas executando Find, Edit e Save'
 challengeType: 2
 forumTopicId: 301541
 dashedName: perform-classic-updates-by-running-find-edit-then-save
@@ -8,17 +8,17 @@ dashedName: perform-classic-updates-by-running-find-edit-then-save
 
 # --description--
 
-In the good old days, this was what you needed to do if you wanted to edit a document, and be able to use it somehow (e.g. sending it back in a server response). Mongoose has a dedicated updating method: `Model.update()`. It is bound to the low-level mongo driver. It can bulk-edit many documents matching certain criteria, but it doesn’t send back the updated document, only a 'status' message. Furthermore, it makes model validations difficult, because it just directly calls the mongo driver.
+Nos bons e velhos tempos, era isso que você precisava fazer se você quisesse editar um documento e ser capaz de usá-lo de algum modo (ou seja, enviando o documento de volta em uma resposta do servidor). O Mongoose tem um método dedicado à atualização: `Model.update()`. Ele está vinculado ao driver do mongo de nível mais baixo. Ele pode editar em massa muitos documentos que correspondem a certos critérios, mas não envia de volta o documento atualizado, apenas uma mensagem de 'status'. Além disso, ele dificulta as validações de modelo, porque apenas chama diretamente o driver do mongo.
 
 # --instructions--
 
-Modify the `findEditThenSave` function to find a person by `_id` (use any of the above methods) with the parameter `personId` as search key. Add `"hamburger"` to the list of the person's `favoriteFoods` (you can use `Array.push()`). Then - inside the find callback - `save()` the updated `Person`.
+Modifique a função `findEditThenSave` para encontrar uma pessoa por `_id` (use qualquer um dos métodos acima) com o parâmetro `personId` como chave de pesquisa. Adicione `"hamburger"` à lista dos `favoriteFoods` da pessoa (você pode usar `Array.push()`). Em seguida, dentro do callback de find, use `save()` para salvar a `Person` atualizada.
 
-**Note:** This may be tricky, if in your Schema, you declared `favoriteFoods` as an Array, without specifying the type (i.e. `[String]`). In that case, `favoriteFoods` defaults to Mixed type, and you have to manually mark it as edited using `document.markModified('edited-field')`. See [Mongoose documentation](https://mongoosejs.com/docs/schematypes.html#Mixed)
+**Observação:** isso pode ser complicado, se em seu Schema você declarou as `favoriteFoods` como um array, sem especificar o tipo (por exemplo, `[String]`). Nesse caso, `favoriteFoods` tem como padrão o tipo Mixed e você precisa marcá-lo manualmente como editado usando `document.markModified('edited-field')`. Consulte a [documentação do Mongoose](https://mongoosejs.com/docs/schematypes.html#Mixed)
 
 # --hints--
 
-Find-edit-update an item should succeed
+Você deve ter sucesso em encontrar, editar e atualizar um item
 
 ```js
 (getUserInput) =>

@@ -10,7 +10,7 @@ dashedName: use-proptypes-to-define-the-props-you-expect
 
 React fornece recursos úteis de checagem de tipos para verificar se os componentes recebem propriedades do tipo correto. Por exemplo, o seu aplicativo faz uma chamada de API para recuperar dados que você espera estar em um array, que é então passado para um componente como uma prop. Você pode definir `propTypes` no seu componente para exigir que os dados sejam do tipo `array`. Isso lançará um aviso útil quando os dados forem de qualquer outro tipo.
 
-É considerada uma boa prática definir `propTypes` quando você sabe o tipo de uma "prop" antes do tempo. Você pode definir uma propriedade `propTypes` para um componente da mesma forma que você definiu `defaultProps`. Fazendo isso irá verificar se "props" de uma determinada chave estão presentes com um determinado tipo. Aqui está um exemplo para exigir o tipo `function` para uma propriedade chamada `handleClick`:
+É considerada uma boa prática definir `propTypes` quando você sabe o tipo de uma "prop" antes do tempo. Você pode definir uma propriedade `propTypes` para um componente da mesma forma que você definiu `defaultProps`. Fazer isso verificará se as "props" de uma determinada chave estão presentes com um determinado tipo. Aqui está um exemplo para exigir o tipo `function` para uma propriedade chamada `handleClick`:
 
 ```js
 MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
@@ -18,7 +18,7 @@ MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
 
 No exemplo acima, a parte `PropTypes.func` verifica se `handleClick` é uma função. Adicionando `isRequired` diz ao React que `handleClick` é uma propriedade necessária para esse componente. Você verá um aviso se essa propriedade não for fornecida. Também observe que `func` representa `function`. Entre os sete tipos primitivos de JavaScript, `function` e `boolean` (escrito como `bool`) são os únicos dois que usam ortografia incomum. Além dos tipos primitivos, existem outros tipos disponíveis. Por exemplo, você pode verificar que uma prop é um elemento React. Por favor, consulte a [documentação](https://reactjs.org/docs/jsx-in-depth.html#specifying-the-react-element-type) para todas as opções.
 
-**Nota:** A partir do React v15.5.0, `PropTypes` é importado independentemente do React, como: `import PropTypes from 'prop-types';`
+**Observação:** a partir do React v15.5.0, `PropTypes` é importado independentemente do React, como: `import PropTypes from 'prop-types';`
 
 # --instructions--
 

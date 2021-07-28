@@ -8,7 +8,7 @@ dashedName: install-and-require-helmet
 
 # --description--
 
-Trabalhar nesses desafios irá fazer com que você escreva seu código usando um dos seguintes métodos:
+Trabalhar nesses desafios vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
 - Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) e complete esses desafios localmente.
 - Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) para completar esses desafios.

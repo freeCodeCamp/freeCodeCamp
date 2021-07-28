@@ -22,7 +22,7 @@ React Redux fornece uma pequena API com dois principais recursos: `Provider` e `
 
 O editor de código agora mostra todos os seus códigos Redux e React dos vários desafios passados. Inclui o store, actions e o componente `DisplayMessages`. O único novo pedaço é o componente `AppWrapper` na parte inferior. Use este componente de nível superior para renderizar o `Provider` de `ReactRedux`, e passar ao store do Redux como uma propriedade. Em seguida, renderize o componente `DisplayMessages` como filho. Quando você terminar, você deve usar seu componente React renderizado para a página.
 
-**Nota:** Redux React está disponível como uma variável global aqui, então você pode acessar o Provider com notação de ponto. O código no editor aproveita isso e o define para uma constante `Provider` para você usar no método de renderização `AppWrapper`.
+**Observação:** o React Redux está disponível como uma variável global aqui, então você pode acessar o Provider com notação de ponto. O código no editor aproveita isso e o define para uma constante `Provider` para você usar no método de renderização `AppWrapper`.
 
 # --hints--
 

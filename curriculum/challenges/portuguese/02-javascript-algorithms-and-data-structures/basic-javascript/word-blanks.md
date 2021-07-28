@@ -9,9 +9,9 @@ dashedName: word-blanks
 
 # --description--
 
-Nós vamos agora usar nosso conhecimento de strings para criar um "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)" estilo de jogo de palavras que chamamos de "Palavras em Branco". Você irá criar uma frase no estilo "Preencha os Espaços em Branco" (opcionalmente humorosa).
+Nós vamos agora usar nosso conhecimento de strings para criar um "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)" estilo de jogo de palavras que chamamos de "Palavras em Branco". Você criará uma frase no estilo "Preencha os Espaços em Branco" (opcionalmente humorosa).
 
-Em um jogo "Mad Libs", você recebe frases com algumas palavras faltando, como substantivos, verbos, adjetivos e advérbios. Você então irá preencher os pedaços faltantes com palavras de sua escolha em uma forma que a frase completa faça sentido.
+Em um jogo "Mad Libs", você recebe frases com algumas palavras faltando, como substantivos, verbos, adjetivos e advérbios. Você então preencherá os pedaços faltantes com palavras de sua escolha em uma forma que a frase completa faça sentido.
 
 Considere a frase - Era realmente **\_\_\_\_** e nós **\_\_\_\_** nós mesmos **\_\_\_\_**. Essa sentença possui três pedaços faltando - um adjetivo, um verbo e um advérbio, e nós podemos adicionar palavras de nossa escolha para completar. Em seguida, podemos atribuir a frase completa para uma variável como se segue:
 

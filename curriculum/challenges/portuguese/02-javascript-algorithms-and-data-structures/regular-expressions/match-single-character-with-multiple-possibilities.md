@@ -32,7 +32,7 @@ As quatro chamadas a `match` retornarão os seguintes valores, nesta ordem: `["b
 
 Use classe de caracteres de vogais (`a`, `e`, `i`, `o`, `u`) na sua regex `vowelRegex` para encontrar todas as vogais na string `quoteSample`.
 
-**Nota:** Você quer encontrar tanto maiúsculas quanto minúsculas.
+**Observação:** você quer encontrar tanto maiúsculas quanto minúsculas.
 
 # --hints--
 

@@ -18,7 +18,7 @@ O editor de código tem a maioria do componente `MyToDoList` configurado. Parte 
 
 Dentro do `constructor`, crie um objeto `this.state` e defina dois estados: `userInput` deve ser inicializado como uma string vazia, e `toDoList` deve ser inicializado como um array vazio. Em seguida, exclua o comentário no método `render()` ao lado da variável `items`. Em seu lugar, mapeie sobre o array `toDoList` armazenado no estado interno do componente e renderize dinamicamente um `li` para cada item. Tente inserir a string `eat, code, sleep, repeat` dentro do `textarea`, depois clique no botão e veja o que acontece.
 
-**Nota:** Você pode saber que todos os elementos filhos do irmão criados por uma operação de mapeamento como esta precisam ser fornecidos com um atributo `key` exclusivo. Não se preocupe, este é o tema do próximo desafio.
+**Observação:** você pode saber que todos os elementos filhos do irmão criados por uma operação de mapeamento como esta precisam ser fornecidos com um atributo `key` exclusivo. Não se preocupe, este é o tema do próximo desafio.
 
 # --hints--
 

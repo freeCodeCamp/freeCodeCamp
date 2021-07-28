@@ -18,7 +18,7 @@ console.log(duck.constructor === Bird);
 console.log(beagle.constructor === Dog);
 ```
 
-Ambas as chamadas a `console.log` irão exibir `true` no console.
+Ambas as chamadas a `console.log` vão exibir `true` no console.
 
 Note que a propriedade `construtor` é uma referência a função construtora que criou a instância. A vantagem da propriedade `construtor` é que se torna possível verificar essa propriedade para descobrir qual o tipo do objeto. Aqui está um exemplo de como isso poderia ser utilizado:
 

@@ -42,7 +42,7 @@ Defina uma nova constante `JSX` que renderiza uma `div` a qual contém os elemen
 
 Um `h1`, um `p`, e uma lista não ordenada que contém três itens `li`. Você pode incluir qualquer texto que você quiser dentro de cada elemento.
 
-**Nota:** Ao renderizar vários elementos como este, você pode envolver todos entre parênteses, mas não é estritamente necessário. Note também que este desafio usa uma tag `div` para encapsular todos os elementos filhos dentro de um único elemento pai. Se você remover a `div`, o JSX não será mais transpilável. Tenha isso em mente, uma vez que ele também será aplicado quando você retornar elementos JSX em componentes React.
+**Observação:** ao renderizar vários elementos como este, você pode envolver todos entre parênteses, mas não é estritamente necessário. Note também que este desafio usa uma tag `div` para encapsular todos os elementos filhos dentro de um único elemento pai. Se você remover a `div`, o JSX não será mais transpilável. Tenha isso em mente, uma vez que ele também será aplicado quando você retornar elementos JSX em componentes React.
 
 # --hints--
 

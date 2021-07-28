@@ -14,7 +14,7 @@ Antes que nós possamos começar usando jQuery, nós precisamos adicionar alguma
 
 Primeiro, adicione um elemento `script` no topo da sua página. Certifique-se de fechá-la na próxima linha.
 
-Seu navegar irá rodar qualquer JavaScript dentro do elemento `script`, incluindo jQuery.
+O navegador vai rodar qualquer JavaScript dentro do elemento `script`, incluindo jQuery.
 
 Dentro do seu elemento `script`, adicione esse código: `$(document).ready(function() {` ao seu `script`. Em seguida, feche-o na próxima linha (ainda dentro do elemento `script`) com: `});`
 

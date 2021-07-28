@@ -20,7 +20,7 @@ O console da freeCodeCamp é apagado antes de cada execução de testes e, para 
 
 Se você gostaria de ver todos os logs em todos os testes, execute os testes e abra o console do navegador. Se preferir usar o console do navegador e quiser que ele imite o console da freeCodeCamp, coloque `console.clear()` antes de qualquer outra chamada ao `console`, para apagar o console do navegador.
 
-**Nota:** `console.log` dentro de funções são impressas no console da freeCodeCamp toda vez que essas funções forem chamadas. Isso pode ajudar a depurar (ou debugar) funções que são chamadas durante os testes.
+**Observação:** `console.log` dentro de funções é impresso no console do freeCodeCamp toda vez que essas funções forem chamadas. Isso pode ajudar a depurar (ou debugar) funções que são chamadas durante os testes.
 
 # --instructions--
 

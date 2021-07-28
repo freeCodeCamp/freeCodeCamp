@@ -24,7 +24,7 @@ var myVar;
 myVar = 5;
 ```
 
-Primeiro, esse código cria uma variável chamada `myVar`. Em seguida, o código atribui `5` para `myVar`. Agora, se `myVar` aparece novamente no código, o programa irá tratar como se fosse `5`.
+Primeiro, esse código cria uma variável chamada `myVar`. Em seguida, o código atribui `5` para `myVar`. Agora, se `myVar` aparece novamente no código, o programa vai tratar como se fosse `5`.
 
 # --instructions--
 

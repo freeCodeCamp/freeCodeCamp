@@ -45,7 +45,7 @@ Isto é um array o qual contém um objeto dentro dele. O objeto possui vários p
 }
 ```
 
-**Nota:** Você precisará colocar uma vírgula após cada objeto no array, a não ser que for o último objeto no array.
+**Observação:** você precisará colocar uma vírgula após cada objeto no array, a não ser que for o último objeto no array.
 
 # --instructions--
 

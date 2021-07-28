@@ -23,7 +23,7 @@ Adicione a classe `shake` a todos os botões com classe `.btn`.
 
 Adicione a classe `btn-primary` ao botão com id `#target1`.
 
-**Nota:** Você deve estar mirando apenas um elemento e adicionando apenas uma classe de cada vez. Ao todo, seus três seletores individuais acabarão adicionando as três classes `shake`, `animated` e `btn-primary` para `#target1`.
+**Observação:** você deve estar mirando apenas um elemento e adicionando apenas uma classe de cada vez. Ao todo, seus três seletores individuais acabarão adicionando as três classes `shake`, `animated` e `btn-primary` para `#target1`.
 
 # --hints--
 
