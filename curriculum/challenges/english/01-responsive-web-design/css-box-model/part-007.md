@@ -16,19 +16,25 @@ Add a `link` element to link your `styles.css` file. Set the `href` to `./styles
 Your code should have a `link` element.
 
 ```js
-assert(document.querySelectorAll('link').length)
+assert(/<link/.test(code))
 ```
 
-The `link` element should have an `href` of `./styles.css`.
+Your `href` attribute should have the value `./styles.css`.
 
 ```js
-assert(document.querySelectorAll('link')[1].getAttribute('href') === './styles.css');
+assert(/href\s*=\s*('|")(\.\/)?styles\.css\1/.test(code));
 ```
 
-The `rel` attribute should have the value `stylesheet`.
+Your `rel` attribute should have the value `stylesheet`.
 
 ```js
-assert(document.querySelectorAll('link')[1].getAttribute('rel') === 'stylesheet');
+assert(/rel\s*=\s*('|")\s*stylesheet\s*\1/.test(code));
+```
+
+Your `link` element should have `href="./styles.css"` and `rel="stylesheet"` attributes
+
+```js
+assert(/<\s*link(\s+href\s*=\s*("|')(\.\/)?styles\.css\2\s*rel=('|")\s*stylesheet\s*\4|\s+rel\s*=\s*('|")\s*stylesheet\s*\5\s*href\s*=\s*("|')(\.\/)?styles\.css\6)\s*\/?>/.test(code));
 ```
 
 # --seed--
