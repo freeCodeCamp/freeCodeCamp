@@ -7,8 +7,9 @@ import { NavLinks } from './components/nav-links';
 import AuthOrProfile from './components/auth-or-profile';
 
 import envData from '../../../../config/env.json';
+import { useTranslation } from 'react-i18next';
 
-const { apiLocation, clientLocale } = envData;
+const { apiLocation } = envData;
 
 jest.mock('../../analytics');
 
@@ -50,6 +51,7 @@ describe('<NavLinks />', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<NavLinks {...landingPageProps} />);
     const view = shallow.getRenderOutput();
+
     expect(
       hasDonateNavItem(view) &&
         hasSignInNavItem(view) &&
@@ -73,6 +75,7 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
+      t: useTranslation.t,
       toggleNightMode: theme => theme
     };
     const shallow = new ShallowRenderer();
@@ -102,6 +105,7 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
+      t: useTranslation.t,
       toggleNightMode: theme => theme
     };
     const shallow = new ShallowRenderer();
@@ -234,31 +238,16 @@ const hasProfileAndSettingsNavItems = (component, username) => {
 
 const hasForumNavItem = component => {
   const { children, to } = navigationLinks(component, 'forum');
-  const localizedForums = {
-    chinese: 'https://chinese.freecodecamp.org/forum',
-    'chinese-traditional': 'https://chinese.freecodecamp.org/forum',
-    espanol: 'https://forum.freecodecamp.org/c/espanol/',
-    english: 'https://forum.freecodecamp.org/',
-    italian: 'https://forum.freecodecamp.org/c/italian/'
-  };
+  // TODO: test compiled TFunction value
   return (
-    children[0].props.children === 'buttons.forum' &&
-    to === localizedForums[clientLocale]
+    children[0].props.children === 'buttons.forum' && to === 'links:nav.forum'
   );
 };
 
 const hasNewsNavItem = component => {
   const { children, to } = navigationLinks(component, 'news');
-  const localizedNews = {
-    chinese: 'https://chinese.freecodecamp.org/news',
-    'chinese-traditional': 'https://chinese.freecodecamp.org/news',
-    espanol: 'https://www.freecodecamp.org/espanol/news',
-    english: 'https://www.freecodecamp.org/news',
-    italian: 'https://www.freecodecamp.org/italian/news'
-  };
   return (
-    children[0].props.children === 'buttons.news' &&
-    to === localizedNews[clientLocale]
+    children[0].props.children === 'buttons.news' && to === 'links:nav.news'
   );
 };
 
