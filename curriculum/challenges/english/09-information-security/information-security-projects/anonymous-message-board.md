@@ -116,7 +116,38 @@ async (getUserInput) => {
 You can send a POST request to `/api/replies/{board}` with form data including `text`, `delete_password`, & `thread_id`. This will update the `bumped_on` date to the comment's date. In the thread's `replies` array, an object will be saved with at least the properties `_id`, `text`, `created_on`, `delete_password`, & `reported`.
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  const body = await fetch(url + '/api/threads/fcc_test');
+  const thread = await body.json();
 
+  const date = new Date();
+  const text = `fcc_test_reply_${date}`;
+  const delete_password = 'delete_me';
+  const thread_id = thread[0]._id;
+  const replyCount = thread[0].replycount;
+
+  const data = { text, delete_password, thread_id };
+  const res = await fetch(url + '/api/replies/fcc_test', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  if (res.ok) {
+    const checkData = await fetch(`${url}/api/replies/fcc_test?thread_id=${thread_id}`);
+    const parsed = await checkData.json();
+    try {
+      assert.equal(parsed.replycount, replyCount + 1);
+      assert.equal(parsed.replies[0].text, text);
+      assert.equal(parsed._id, thread_id);
+      assert.equal(parsed.bumped_on, parsed.replies[0].created_on);
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
 You can send a GET request to `/api/threads/{board}`. Returned will be an array of the most recent 10 bumped threads on the board with only the most recent 3 replies for each. The `reported` and `delete_password` fields will not be sent to the client.
