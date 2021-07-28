@@ -39,7 +39,8 @@ function getComponentNameAndProps(
     // @ts-ignore
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     name: view.type.WrappedComponent.displayName
-    // Not really sure what to do with .WrappedComponent here
+    // TODO: Revisit this when react-test-renderer is replaced with
+    // react-testing-library
   };
 }
 
