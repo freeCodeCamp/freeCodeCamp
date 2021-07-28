@@ -71,7 +71,6 @@ async function initTestFrame(e = { code: {} }) {
     // the frame-runner as it runs tests
     // make sure the dev tools console is open
     // debugger;
-
     try {
       // eval test string to actual JavaScript
       // This return can be a function
