@@ -29,7 +29,8 @@ You will also need to account for spaces in your string, so that the final sente
 
 # --hints--
 
-`wordBlanks` should be a string.
+`wordBlanks` should be a string, not an integer.
+
 
 ```js
 assert(typeof wordBlanks === 'string');
