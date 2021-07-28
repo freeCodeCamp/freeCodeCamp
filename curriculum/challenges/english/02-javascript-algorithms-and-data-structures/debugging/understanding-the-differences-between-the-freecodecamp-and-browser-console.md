@@ -14,6 +14,13 @@ The following challenge is meant to highlight the main difference between the fr
 
 When you run ordinary JavaScript, the browser's console will display your `console.log()` statements the exact number of times it is called.
 
+console.log() - your code runs automatically so the log will show up in the console
+add .clear - the .log method is the only one that works in the freeCodeCamp console
+check the console of your browsers dev tools to see that the clear method cleared that console
+When you run the tests, your code will run, outputting the log, the clear method doesn't work - and then the code is run through the tests which outputs another log
+
+
+
 The freeCodeCamp console will print your `console.log()` statements a short time after the editor detects a change in the script, as well as during testing.
 
 The freeCodeCamp console is cleared before the tests are run and, to avoid spam, only prints the logs during the first test (see the note below for exceptions).
@@ -36,6 +43,12 @@ assert(
     .removeWhiteSpace(code)
     .match(/console.clear\(\)/)
 );
+```
+
+You should use `console.log()` to print the `output` variable.
+
+```js
+assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
 ```
 
 You should use `console.log()` to print the `output` variable.
