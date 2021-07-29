@@ -12,19 +12,19 @@ As a reminder, this project is being built upon the following starter project on
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Vespucci" - write your e2e test...'` test (`// #6`), automate filling-in and submitting the form from scratch:
+Within `tests/2_functional-tests.js`, in the `'Submit the surname "Vespucci" in the HTML form'` test (`// #5`), automate the following:
 
-1.  Fill in the form with the `surname` of `Vespucci`
-2.  Submit it pressing `'submit'` button
+1.  Fill in the form with the surname `Vespucci`
+2.  Press the submit button
 
-Within the callback:
+And within the `pressButton` callback:
 
-1.  assert that status is `200`
-2.  assert that the text inside the element `span#name` is `'Amerigo'`
-3.  assert that the text inside the element `span#surname` is `'Vespucci'`
-4.  assert that the element(s) `span#dates` exist and their count is `1`
+1.  Assert that status is OK `200`
+2.  Assert that the text inside the element `span#name` is `'Amerigo'`
+3.  Assert that the text inside the element `span#surname` is `'Vespucci'`
+4.  Assert that the element(s) `span#dates` exist and their count is `1`
 
-Do not forget to to remove the `assert.fail()` call.
+Do not forget to remove the `assert.fail()` call.
 
 # --hints--
 
@@ -56,7 +56,7 @@ You should assert that the headless browser request succeeded.
   );
 ```
 
-You should assert that the text inside the element 'span#name' is 'Amerigo'.
+You should assert that the text inside the element `span#name` is `'Amerigo'`.
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ You should assert that the text inside the element 'span#name' is 'Amerigo'.
   );
 ```
 
-You should assert that the text inside the element 'span#surname' is 'Vespucci'.
+You should assert that the text inside the element `span#surname` is `'Vespucci'`.
 
 ```js
 (getUserInput) =>
@@ -88,7 +88,7 @@ You should assert that the text inside the element 'span#surname' is 'Vespucci'.
   );
 ```
 
-You should assert that the element 'span#dates' exist and its count is 1.
+You should assert that the element `span#dates` exist and its count is 1.
 
 ```js
 (getUserInput) =>
