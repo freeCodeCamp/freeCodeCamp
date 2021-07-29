@@ -20,21 +20,21 @@ function loopy() {
 }
 ```
 
-É trabalho do programador garantir que a condição de parada, a qual avisa ao programa quando sair de um laço, é eventualmente alcançada. Um erro é incrementar ou decrementar uma variável contadora na direção errada da condição de parada. Outro erro é acidentalmente reiniciar uma variável contadora ou de índice dentro do laço, ao invés de incrementar ou decrementar.
+É trabalho do programador garantir que a condição de parada, a qual avisa ao programa quando sair de um laço, seja eventualmente alcançada. Um erro é incrementar ou decrementar uma variável contadora na direção errada da condição de parada. Outro erro é acidentalmente reiniciar uma variável contadora ou de índice dentro do laço, ao invés de incrementar ou decrementar.
 
 # --instructions--
 
-A função `myFunc()` contém um laço infinito porque a condição de parada `i != 4` nunca será `false` (e então quebrar o laço) - `i` vai incrementar em 2 a cada iteração, e passa direto por 4 já que `i` é ímpar no início. Corrija o operador de comparação para que o laço só rode enquanto `i` for menor ou igual a 4.
+A função `myFunc()` contém um laço infinito porque a condição de parada `i != 4` nunca será `false` (para, então, quebrar o laço) - `i` vai incrementar em 2 a cada iteração, e passa direto por 4 já que `i` é ímpar no início. Corrija o operador de comparação para que o laço só rode enquanto `i` for menor ou igual a 4.
 
 # --hints--
 
-Seu código deve alterar o operador de comparação na condição de parada (parte do meio) do laço `for`.
+O código deve alterar o operador de comparação na condição de parada (parte do meio) do laço `for`.
 
 ```js
 assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
-Seu código deve corrigir o operador de comparação na condição de parada do laço.
+O código deve corrigir o operador de comparação na condição de parada do laço.
 
 ```js
 assert(!code.match(/i\s*?!=\s*?4;/g));

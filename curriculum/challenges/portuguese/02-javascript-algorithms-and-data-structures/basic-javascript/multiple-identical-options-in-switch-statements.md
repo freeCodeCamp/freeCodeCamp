@@ -9,7 +9,7 @@ dashedName: multiple-identical-options-in-switch-statements
 
 # --description--
 
-Se a instrução `break` for omitida de uma instrução `case` de um `switch`, as instruções seguintes `case` são executadas até que seja encontrado um `break`. Se você tem várias entradas com a mesma saída, você pode representá-los em uma instrução `switch` da seguinte forma:
+Se a instrução `break` for omitida de uma instrução `case` de um `switch`, as instruções `case` seguintes serão executadas até que seja encontrado um `break`. Se você tem várias entradas com a mesma saída, você pode representá-las em uma instrução `switch` da seguinte forma:
 
 ```js
 var result = "";
@@ -91,7 +91,7 @@ assert(sequentialSizes(8) === 'High');
 assert(sequentialSizes(9) === 'High');
 ```
 
-Você não deve usar nenhuma das instruções `if` ou `else`
+Você não deve usar nenhuma instrução do tipo `if` ou `else`
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));

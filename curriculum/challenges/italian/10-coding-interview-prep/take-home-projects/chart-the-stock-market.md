@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443eddfaeb5bd0e
-title: Chart the Stock Market
+title: Grafico della Borsa
 challengeType: 4
 forumTopicId: 302363
 dashedName: chart-the-stock-market
@@ -8,19 +8,19 @@ dashedName: chart-the-stock-market
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://chart-the-stock-market.freecodecamp.rocks/>. Use a site builder of your choice to complete the project.
+Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <https://chart-the-stock-market.freecodecamp.rocks/>. Usa un costruttore di siti di tua scelta per completare il progetto.
 
-Here are the specific user stories you should implement for this project:
+Ecco le specifiche user story da implementare per questo progetto:
 
-**User Story:** You can view a graph displaying the recent trend lines for each added stock.
+**User Story:** Puoi vedere un grafico che mostra le recenti linee di tendenza per ogni titolo aggiunto.
 
-**User Story:** You can add new stocks by their symbol name.
+**User Story:** Puoi aggiungere nuovi titoli dal loro nome breve.
 
-**User Story:** You can remove stocks.
+**User Story:** Puoi rimuovere titoli.
 
-**User Story:** You can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.
+**User Story:** Puoi vedere cambiamenti in tempo reale quando altri utenti aggiungono o rimuovono titoli. Per questo dovrai usare Web Socket.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
 
 # --solutions--
 

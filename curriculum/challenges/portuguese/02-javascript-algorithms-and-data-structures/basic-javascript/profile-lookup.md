@@ -9,7 +9,7 @@ dashedName: profile-lookup
 
 # --description--
 
-Nós temos um array de objetos representando pessoas diferentes nas nossas listas de contatos.
+Temos um array de objetos representando pessoas diferentes nas nossas listas de contatos.
 
 Uma função `lookUpProfile`, que recebe `name` e uma propriedade (`prop`) como argumentos, foi pré-escrita para você.
 

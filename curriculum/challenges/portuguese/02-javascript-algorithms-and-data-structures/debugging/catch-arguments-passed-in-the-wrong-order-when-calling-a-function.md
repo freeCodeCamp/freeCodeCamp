@@ -12,17 +12,17 @@ Continuando a discussão sobre chamada de funções, o próximo bug para prestar
 
 # --instructions--
 
-A função `raiseToPower` eleva uma base para um expoente. Infelizmente, não é chamada corretamente - corrija o código para que o valor de `power` seja o esperado 8.
+A função `raiseToPower` eleva uma base para um expoente. Infelizmente, não é chamada corretamente - corrija o código para que o valor de `power` seja o 8 esperado.
 
 # --hints--
 
-Seu código deve corrigir a variável `power` para que seja igual a 2 elevado a 3ª potência, e não 3 elevado a 2ª potência.
+O código deve corrigir a variável `power` para que seja igual a 2 elevado a 3ª potência, e não 3 elevado a 2ª potência.
 
 ```js
 assert(power == 8);
 ```
 
-Seu código deve usar a ordem correta dos argumentos para a chamada da função `raiseToPower`.
+O código deve usar a ordem correta dos argumentos para a chamada da função `raiseToPower`.
 
 ```js
 assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));

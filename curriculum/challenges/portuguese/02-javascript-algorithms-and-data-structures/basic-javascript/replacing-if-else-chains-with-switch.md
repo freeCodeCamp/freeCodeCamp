@@ -38,7 +38,7 @@ switch(val) {
 
 # --instructions--
 
-Altere a cadeia de instruções `if`/`else if` em um comando `switch`.
+Altere a cadeia de instruções `if`/`else if` por um comando `switch`.
 
 # --hints--
 
