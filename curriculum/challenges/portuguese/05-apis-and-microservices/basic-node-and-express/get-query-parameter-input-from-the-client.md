@@ -1,6 +1,6 @@
 ---
 id: 587d7fb2367417b2b2512bf6
-title: Obter a entrada do parâmetro da consulta do cliente
+title: Obter a entrada do parâmetro da consulta do client
 challengeType: 2
 forumTopicId: 301512
 dashedName: get-query-parameter-input-from-the-client
@@ -8,7 +8,7 @@ dashedName: get-query-parameter-input-from-the-client
 
 # --description--
 
-Outro jeito usual de obter a entrada do cliente é ao codificar os dados após o caminho da rota, usando uma string de consulta. A string de consulta é delimitada por um símbolo de interrogação (?) e inclui pares campo=valor. Cada par é separado por um e comercial(&). O Express pode analisar os dados da string de consulta e preencher o objeto `req.query`. Alguns caracteres, como o de porcentagem (%), não podem estar nos URLs e tem de ser codificados em um formato diferente antes que você os envie. Se você usa a API do JavaScript, você pode usar métodos específicos para codificar/decodificar esses caracteres.
+Outro jeito usual de obter a entrada do client é ao codificar os dados após o caminho da rota, usando uma string de consulta. A string de consulta é delimitada por um símbolo de interrogação (?) e inclui pares campo=valor. Cada par é separado por um e comercial(&). O Express pode analisar os dados da string de consulta e preencher o objeto `req.query`. Alguns caracteres, como o de porcentagem (%), não podem estar nos URLs e tem de ser codificados em um formato diferente antes que você os envie. Se você usa a API do JavaScript, você pode usar métodos específicos para codificar/decodificar esses caracteres.
 
 <blockquote>route_path: '/library'<br>actual_request_URL: '/library?userId=546&#x26;bookId=6754' <br>req.query: {userId: '546', bookId: '6754'}</blockquote>
 

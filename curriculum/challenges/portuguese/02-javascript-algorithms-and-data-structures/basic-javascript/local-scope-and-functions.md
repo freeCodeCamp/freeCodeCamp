@@ -9,7 +9,7 @@ dashedName: local-scope-and-functions
 
 # --description--
 
-Variáveis que são declaradas dentro de uma função, assim como parâmetros de funções, possuem escopo <dfn>local</dfn>. Isso significa que eles são visíveis apenas dentro da função.
+Variáveis que são declaradas dentro de uma função, assim como parâmetros das funções, possuem escopo <dfn>local</dfn>. Isso significa que elas são visíveis apenas dentro da função.
 
 Aqui está uma função `myTest` com uma variável local chamada `loc`.
 
@@ -26,7 +26,7 @@ A chamada da função `myTest()` vai exibir a string `foo` no console. A linha `
 
 # --instructions--
 
-O editor possui dois `console.log` para te ajudar a ver o que está acontecendo. Verifique o console enquanto codifica para ver como muda. Declare uma variável local `myVar` dentro de `myLocalScope` e rode os testes.
+O editor possui dois `console.log` para ajudar você a ver o que está acontecendo. Verifique o console enquanto codifica para ver como muda. Declare uma variável local `myVar` dentro de `myLocalScope` e rode os testes.
 
 **Observação:** o console ainda exibirá `ReferenceError: myVar is not defined`, mas isso não causará falha nos testes.
 

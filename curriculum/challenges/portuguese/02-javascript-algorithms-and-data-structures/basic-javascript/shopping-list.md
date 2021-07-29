@@ -9,15 +9,15 @@ dashedName: shopping-list
 
 # --description--
 
-Crie uma lista de compras na variável `myList`. A lista deve ser um array multidimensional contendo diversos sub arrays.
+Crie uma lista de compras na variável `myList`. A lista deve ser um array multidimensional contendo diversos sub-arrays.
 
-O primeiro elemento em cada sub array deve conter uma string com o nome do item. O segundo elemento deve ser um número representando a quantidade i.e.
+O primeiro elemento em cada sub-array deve conter uma string com o nome do item. O segundo elemento deve ser um número representando a quantidade, ou seja,
 
 ```js
 ["Chocolate Bar", 15]
 ```
 
-Deve ter pelo menos 5 sub arrays na lista.
+Deve haver pelo menos 5 sub-arrays na lista.
 
 # --hints--
 
@@ -27,13 +27,13 @@ Deve ter pelo menos 5 sub arrays na lista.
 assert(isArray);
 ```
 
-Os primeiros elementos em cada um dos seus sub arrays devem ser todos strings.
+Os primeiros elementos em cada um dos seus sub-arrays devem ser todos strings.
 
 ```js
 assert(hasString);
 ```
 
-Os segundos elementos em cada um de seus sub arrays devem ser todos números.
+Os segundos elementos em cada um de seus sub-arrays devem ser todos números.
 
 ```js
 assert(hasNumber);

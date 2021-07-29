@@ -9,17 +9,17 @@ dashedName: understanding-boolean-values
 
 # --description--
 
-Outro tipo de dado é o <dfn>Boolean</dfn>. Booleanos podem ser apenas dois valores: `true` ou `false`. Eles basicamente são interruptores pequenos, onde `true` é ligado e `false` é desligado. Esses dois estados são mutuamente exclusivos.
+Outro tipo de dado é o <dfn>booleano</dfn>. Booleanos podem ser apenas dois valores: `true` ou `false`. Eles basicamente são interruptores pequenos, onde `true` é ligado e `false` é desligado. Esses dois estados são mutuamente exclusivos.
 
-**Observação:** valores booleanos nunca são escritos com aspas. As strings `"true"` e `"false"` não são Booleanos e não tem nenhum significado especial em JavaScript.
+**Observação:** valores booleanos nunca são escritos com aspas. As strings `"true"` e `"false"` não são booleanos e não tem nenhum significado especial em JavaScript.
 
 # --instructions--
 
-Modifique a função `welcomeToBooleans` para que retorne `true` ao invés de `false` quando o botão de correr for clicado.
+Modifique a função `welcomeToBooleans` para que retorne `true` ao invés de `false` quando o botão de executar for clicado.
 
 # --hints--
 
-A função `welcomeToBooleans()` deve retornar um valor Booleano (`true` ou `false`).
+A função `welcomeToBooleans()` deve retornar um valor booleano (`true` ou `false`).
 
 ```js
 assert(typeof welcomeToBooleans() === 'boolean');

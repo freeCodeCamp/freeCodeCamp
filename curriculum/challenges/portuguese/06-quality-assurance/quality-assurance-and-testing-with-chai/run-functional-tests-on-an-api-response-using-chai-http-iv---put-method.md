@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c5b
-title: Run Functional Tests on an API Response using Chai-HTTP IV - PUT method
+title: Executar testes funcionais em uma resposta de API usando Chai-HTTP IV - método PUT
 challengeType: 2
 forumTopicId: 301591
 dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-method
@@ -8,15 +8,15 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/). This exercise is similar to the preceding one. Look at it for the details.
+Lembrando que este projeto está sento construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/). Este exercício é semelhante ao anterior. Vejamos mais detalhes aqui.
 
-Now that you have seen how it is done, it is your turn to do it from scratch.
+Agora que vimos como é feito, é a sua vez de fazer do zero.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'send {surname: "da Verrazzano"}'` test (`// #4`):
+Dentro de `tests/2_functional-tests.js`, altere o teste `'send {surname: "da Verrazzano"}'` test (`// #4`):
 
-Send the following JSON response as a payload to the `/travellers` route:
+Envie a resposta em JSON a seguir como payload para a rota `/travellers`:
 
 ```json
 {
@@ -24,18 +24,18 @@ Send the following JSON response as a payload to the `/travellers` route:
 }
 ```
 
-Check for the following, within a `request.end` callback:
+Verifique o seguinte, dentro de uma função de callback de `request.end`:
 
 1.  `status`
 2.  `type`
 3.  `body.name`
 4.  `body.surname`
 
-Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
+Siga a ordem de declarações acima, pois dependemos disso. Não se esqueça de remover `assert.fail()` assim que o teste terminar.
 
 # --hints--
 
-All tests should pass
+Todos os testes devem passar
 
 ```js
 (getUserInput) =>
@@ -49,7 +49,7 @@ All tests should pass
   );
 ```
 
-You should test for 'res.status' to be 200
+Você deve testar se 'res.status' será 200
 
 ```js
 (getUserInput) =>
@@ -65,7 +65,7 @@ You should test for 'res.status' to be 200
   );
 ```
 
-You should test for 'res.type' to be 'application/json'
+Você deve testar se 'res.type' será 'application/json'
 
 ```js
 (getUserInput) =>
@@ -81,7 +81,7 @@ You should test for 'res.type' to be 'application/json'
   );
 ```
 
-You should test for 'res.body.name' to be 'Giovanni'
+Você deve testar se 'res.body.name' será 'Giovanni'
 
 ```js
 (getUserInput) =>
@@ -97,7 +97,7 @@ You should test for 'res.body.name' to be 'Giovanni'
   );
 ```
 
-You should test for 'res.body.surname' to be 'da Verrazzano'
+Você deve testar se 'res.body.surname' será 'da Verrazzano'
 
 ```js
 (getUserInput) =>
