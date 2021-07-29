@@ -200,8 +200,7 @@ class TimelineInner extends Component<
           {certPath ? (
             <Link
               className='timeline-cert-link'
-              external={true}
-              to={`certification/${username}/${certPath}`}
+              to={`/certification/${username}/${certPath}`}
             >
               {challengeTitle}
               <CertificationIcon />
