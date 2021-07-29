@@ -53,7 +53,6 @@ function renderCertShow(username: string, cert: ICert): React.ReactNode {
         <Col className='certifications' sm={10} smPush={1}>
           <Link
             className='btn btn-lg btn-primary btn-block'
-            external={true}
             to={`/certification/${username}/${cert.certSlug}`}
           >
             View {cert.title}
