@@ -12,7 +12,7 @@ An $m×n$ maze is an $m×n$ rectangular grid with walls placed between grid cell
 
 <img class="img-responsive center-block" alt="9x12 maze and 15x20 maze" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;">
 
-Let $C(m, n)$ be the number of distinct m×n mazes. Mazes which can be formed by rotation and reflection from another maze are considered distinct.
+Let $C(m, n)$ be the number of distinct $m×n$ mazes. Mazes which can be formed by rotation and reflection from another maze are considered distinct.
 
 It can be verified that $C(1, 1) = 1$, $C(2, 2) = 4$, $C(3, 4) = 2415$, and $C(9, 12) = 2.5720\mathrm{e}\\,46$ (in scientific notation rounded to 5 significant digits).
 
