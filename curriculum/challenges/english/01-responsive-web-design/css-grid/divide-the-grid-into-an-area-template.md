@@ -18,11 +18,11 @@ grid-template-areas:
   "footer footer footer";
 ```
 
-The code above merges the top three cells together into an area named `header`, the bottom three cells into a `footer` area, and it makes two areas in the middle row; `advert` and `content`. **Note:** Every word in the code represents a cell and every pair of quotation marks represent a row. In addition to custom labels, you can use a period (`.`) to designate an empty cell in the grid.
+The code above merges the top three cells together into an area named `header`, the bottom three cells into a `footer` area, and it makes two areas in the middle row; `advert` and `content`. Every word in the code represents a cell and every pair of quotation marks represent a row. Defining the areas won't have any visual effect until you assign an item to the area in the next step.
 
 # --instructions--
 
-Place the area template so that the cell labeled `advert` becomes an empty cell.
+Change the template so that `advert` area spans the left cell of the bottom two rows.
 
 # --hints--
 
@@ -33,7 +33,7 @@ assert(
   __helpers
     .removeCssComments(code)
     .match(
-      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
+      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?content\s*?"\s*?"\s*?advert\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
     )
 );
 ```
@@ -99,8 +99,8 @@ assert(
 
     grid-template-areas:
       "header header header"
-      ". content content"
-      "footer footer footer";
+      "advert content content"
+      "advert footer footer";
   }
 </style>
 
