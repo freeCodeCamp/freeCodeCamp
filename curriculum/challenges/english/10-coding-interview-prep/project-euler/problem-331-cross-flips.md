@@ -22,7 +22,7 @@ Let $C_N$ be the following configuration of a board with $N × N$disks: A disk a
 
 Let $T(N)$ be the minimal number of turns to finish a game starting from configuration $C_N$ or 0 if configuration $C_N$ is unsolvable. We have shown that $T(5) = 3$. You are also given that $T(10) = 29$ and $T(1\\,000) = 395\\,253$.
 
-Find $\displaystyle \sum_{i = 3}^{31} T(2^i - 1)$.
+Find $\displaystyle \sum_{i = 3}^{31} T(2^i - i)$.
 
 # --hints--
 

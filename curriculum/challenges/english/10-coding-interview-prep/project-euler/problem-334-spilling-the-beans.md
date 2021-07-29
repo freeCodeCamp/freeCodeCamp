@@ -17,8 +17,8 @@ For example, consider two adjacent bowls containing 2 and 3 beans respectively, 
 You are given the following sequences:
 
 $$\begin{align}
-  & t0 = 123456, \\\\
-  & ti = \begin{cases}
+  & t_0 = 123456, \\\\
+  & t_i = \begin{cases}
          \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ is even} \\\\
          \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{if $t_{i - 1}$ is odd}
          \end{cases} \\\\
