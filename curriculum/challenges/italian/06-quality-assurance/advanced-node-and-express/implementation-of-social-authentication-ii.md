@@ -88,12 +88,12 @@ La strategia di GitHub dovrebbe essere impostata correttamente finora.
       );
       assert.match(
         data,
-        /process.env.GITHUB_CLIENT_SECRET/g,
+        /process(\.|\[['"])env(\.|(['"]\])?\[['"])GITHUB_CLIENT_SECRET(|['"]\])?/g,
         'You should use process.env.GITHUB_CLIENT_SECRET'
       );
       assert.match(
         data,
-        /process.env.GITHUB_CLIENT_ID/g,
+        /process(\.|\[['"])env(\.|(['"]\])?\[['"])GITHUB_CLIENT_ID(|['"]\])?/g,
         'You should use process.env.GITHUB_CLIENT_ID'
       );
     },
