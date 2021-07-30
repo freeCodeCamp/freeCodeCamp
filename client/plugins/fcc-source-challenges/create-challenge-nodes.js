@@ -1,17 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-// eslint-disable-next-line import/unambiguous
-import * as crypto from 'crypto';
+const crypto = require('crypto');
 
-interface ChallengeProps {
-  challenge: {
-    title?: string;
-    description?: string;
-    challengeType?: number;
-  };
-}
-
-function createChallengeNode({ challenge }: ChallengeProps, reporter: Console) {
+function createChallengeNode(challenge, reporter) {
   // challengeType 11 is for video challenges (they only have instructions)
   // challengeType 7 is for certificates (they only have tests)
   // challengeType 12 is for CodeAlly/CodeRoad challenge
@@ -28,9 +17,7 @@ function createChallengeNode({ challenge }: ChallengeProps, reporter: Console) {
     challenge.challengeType !== 12
   ) {
     reporter.warn(`
-
-    ${challenge.title as string} has a description that will break things!
-
+    ${challenge.title} has a description that will break things!
     `);
   }
   const contentDigest = crypto
@@ -43,7 +30,6 @@ function createChallengeNode({ challenge }: ChallengeProps, reporter: Console) {
   };
 
   /* eslint-disable prefer-object-spread/prefer-object-spread */
-
   return JSON.parse(
     JSON.stringify(
       Object.assign(

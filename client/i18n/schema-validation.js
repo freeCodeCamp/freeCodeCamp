@@ -1,11 +1,4 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable import/unambiguous */
-import * as path from 'path';
-
+const path = require('path');
 const { availableLangs } = require('../../config/i18n/all-langs');
 const translationsSchema = require('./locales/english/translations.json');
 const trendingSchema = require('./locales/english/trending.json');
@@ -20,18 +13,15 @@ const linksSchema = require('./locales/english/links.json');
  * @param {Object} obj Object to flatten
  * @param {String} namespace Used for property chaining
  */
-const flattenAnObject = (obj: Record<string, unknown>, namespace = '') => {
-  const flattened = {} as Record<string, unknown>;
+const flattenAnObject = (obj, namespace = '') => {
+  const flattened = {};
   Object.keys(obj).forEach(key => {
     if (Array.isArray(obj[key])) {
       flattened[namespace ? `${namespace}.${key}` : key] = obj[key];
     } else if (typeof obj[key] === 'object') {
       Object.assign(
         flattened,
-        flattenAnObject(
-          obj[key] as Record<string, unknown>,
-          namespace ? `${namespace}.${key}` : key
-        )
+        flattenAnObject(obj[key], namespace ? `${namespace}.${key}` : key)
       );
     } else {
       flattened[namespace ? `${namespace}.${key}` : key] = obj[key];
@@ -47,7 +37,7 @@ const flattenAnObject = (obj: Record<string, unknown>, namespace = '') => {
  * @param {String[]} schema Array of matching schema's keys
  * @param {String} path string path to file
  */
-const findMissingKeys = (file: string[], schema: string[], path: string) => {
+const findMissingKeys = (file, schema, path) => {
   const missingKeys = [];
   for (const key of schema) {
     if (!file.includes(key)) {
@@ -68,7 +58,7 @@ const findMissingKeys = (file: string[], schema: string[], path: string) => {
  * @param {String[]} schema Array of matching schema's keys
  * @param {String} path string path to file
  */
-const findExtraneousKeys = (file: string[], schema: string[], path: string) => {
+const findExtraneousKeys = (file, schema, path) => {
   const extraKeys = [];
   for (const key of file) {
     if (!schema.includes(key)) {
@@ -90,10 +80,7 @@ const findExtraneousKeys = (file: string[], schema: string[], path: string) => {
  * @param {Object} obj The object to check the values of
  * @param {String} namespace String for tracking nested properties
  */
-const noEmptyObjectValues = (
-  obj: Record<string, string>,
-  namespace = ''
-): unknown => {
+const noEmptyObjectValues = (obj, namespace = '') => {
   const emptyKeys = [];
   for (const key of Object.keys(obj)) {
     if (Array.isArray(obj[key])) {
@@ -102,16 +89,12 @@ const noEmptyObjectValues = (
       }
     } else if (typeof obj[key] === 'object') {
       emptyKeys.push(
-        noEmptyObjectValues(
-          obj[key] as unknown as Record<string, string>,
-          namespace ? `${namespace}.${key}` : key
-        )
+        noEmptyObjectValues(obj[key], namespace ? `${namespace}.${key}` : key)
       );
     } else if (!obj[key]) {
       emptyKeys.push(namespace ? `${namespace}.${key}` : key);
     }
   }
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return emptyKeys.flat();
 };
 
@@ -131,7 +114,7 @@ const linksSchemaKeys = Object.keys(flattenAnObject(linksSchema));
  * for each available client language.
  * @param {String[]} languages List of languages to test
  */
-const translationSchemaValidation = (languages: string[]) => {
+const translationSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(
       __dirname,
@@ -149,7 +132,7 @@ const translationSchemaValidation = (languages: string[]) => {
       translationSchemaKeys,
       `${language}/translations.json`
     );
-    const emptyKeys = noEmptyObjectValues(fileJson) as [];
+    const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
       console.warn(
         `${language}/translation.json has these empty keys: ${emptyKeys.join(
@@ -166,7 +149,7 @@ const translationSchemaValidation = (languages: string[]) => {
  * for each available client language.
  * @param {String[]} languages List of languages to test
  */
-const trendingSchemaValidation = (languages: string[]) => {
+const trendingSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/trending.json`);
     const fileJson = require(filePath);
@@ -177,7 +160,7 @@ const trendingSchemaValidation = (languages: string[]) => {
       trendingSchemaKeys,
       `${language}/trending.json`
     );
-    const emptyKeys = noEmptyObjectValues(fileJson) as [];
+    const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
       console.warn(
         `${language}/trending.json has these empty keys: ${emptyKeys.join(
@@ -189,7 +172,7 @@ const trendingSchemaValidation = (languages: string[]) => {
   });
 };
 
-const motivationSchemaValidation = (languages: string[]) => {
+const motivationSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(
       __dirname,
@@ -207,7 +190,7 @@ const motivationSchemaValidation = (languages: string[]) => {
       motivationSchemaKeys,
       `${language}/motivation.json`
     );
-    const emptyKeys = noEmptyObjectValues(fileJson) as [];
+    const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
       console.warn(
         `${language}/motivation.json has these empty keys: ${emptyKeys.join(
@@ -218,8 +201,7 @@ const motivationSchemaValidation = (languages: string[]) => {
     // Special line to assert that objects in motivational quote are correct
     if (
       !fileJson.motivationalQuotes.every(
-        (object: { hasOwnProperty: (arg0: string) => any }) =>
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+        object =>
           object.hasOwnProperty('quote') && object.hasOwnProperty('author')
       )
     ) {
@@ -234,14 +216,14 @@ const motivationSchemaValidation = (languages: string[]) => {
  * for each available client language.
  * @param {String[]} languages List of languages to test
  */
-const introSchemaValidation = (languages: string[]) => {
+const introSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/intro.json`);
     const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
     findExtraneousKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
-    const emptyKeys = noEmptyObjectValues(fileJson) as [];
+    const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
       console.warn(
         `${language}/intro.json has these empty keys: ${emptyKeys.join(', ')}`
@@ -251,7 +233,7 @@ const introSchemaValidation = (languages: string[]) => {
   });
 };
 
-const metaTagsSchemaValidation = (languages: string[]) => {
+const metaTagsSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(
       __dirname,
@@ -265,7 +247,7 @@ const metaTagsSchemaValidation = (languages: string[]) => {
       metaTagsSchemaKeys,
       `${language}/metaTags.json`
     );
-    const emptyKeys = noEmptyObjectValues(fileJson) as [];
+    const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
       console.warn(
         `${language}/metaTags.json has these empty keys: ${emptyKeys.join(
@@ -277,14 +259,14 @@ const metaTagsSchemaValidation = (languages: string[]) => {
   });
 };
 
-const linksSchemaValidation = (languages: string[]) => {
+const linksSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/links.json`);
     const fileJson = require(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, linksSchemaKeys, `${language}/links.json`);
     findExtraneousKeys(fileKeys, linksSchemaKeys, `${language}/links.json`);
-    const emptyKeys = noEmptyObjectValues(fileJson) as [];
+    const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
       console.warn(
         `${language}/links.json has these empty keys: ${emptyKeys.join(', ')}`
@@ -294,9 +276,7 @@ const linksSchemaValidation = (languages: string[]) => {
   });
 };
 
-const translatedLangs = availableLangs.client.filter(
-  (x: string) => x !== 'english'
-);
+const translatedLangs = availableLangs.client.filter(x => x !== 'english');
 
 translationSchemaValidation(translatedLangs);
 trendingSchemaValidation(translatedLangs);
