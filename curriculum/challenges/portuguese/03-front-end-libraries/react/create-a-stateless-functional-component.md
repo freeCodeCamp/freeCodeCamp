@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036162
-title: Criar um Componente Funcional Sem Estado
+title: Criar um componente funcional sem estado
 challengeType: 6
 forumTopicId: 301392
 dashedName: create-a-stateless-functional-component

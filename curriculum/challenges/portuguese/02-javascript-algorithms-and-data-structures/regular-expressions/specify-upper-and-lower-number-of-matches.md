@@ -8,7 +8,7 @@ dashedName: specify-upper-and-lower-number-of-matches
 
 # --description--
 
-Lembre-se que você pode usar o sinal de `+` para procurar por uma ou mais ocorrências e o asterisco `*` para procurar por zero ou mais ocorrências. Eles são convenientes, mas às vezes você precisa capturar um número exato de caracteres.
+Lembre-se de que você pode usar o sinal de `+` para procurar por uma ou mais ocorrências e o asterisco `*` para procurar por zero ou mais ocorrências. Eles são convenientes, mas às vezes você precisa capturar um número exato de caracteres.
 
 Você pode especificar um número mínimo e um máximo de capturas com <dfn>especificadores de quantidade</dfn>. Para usar especificadores de quantidade, usa-se chaves: `{` e `}`. Você pode especificar os dois números dentro delas para restringir as capturas.
 
@@ -30,43 +30,43 @@ Altere a regex `ohRegex` para que capture a frase `Oh no`, mas apenas quando nel
 
 # --hints--
 
-Sua regex deve usar chaves.
+A regex deve usar chaves.
 
 ```js
 assert(ohRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Sua regex não deve encontrar a string `Ohh no`
+A regex não deve encontrar a string `Ohh no`
 
 ```js
 assert(!ohRegex.test('Ohh no'));
 ```
 
-Sua regex deve encontrar a string `Ohhh no`
+A regex deve encontrar a string `Ohhh no`
 
 ```js
 assert('Ohhh no'.match(ohRegex)[0].length === 7);
 ```
 
-Sua regex deve encontrar a string `Ohhhh no`
+A regex deve encontrar a string `Ohhhh no`
 
 ```js
 assert('Ohhhh no'.match(ohRegex)[0].length === 8);
 ```
 
-Sua regex deve encontrar a string `Ohhhhh no`
+A regex deve encontrar a string `Ohhhhh no`
 
 ```js
 assert('Ohhhhh no'.match(ohRegex)[0].length === 9);
 ```
 
-Sua regex deve encontrar a string `Ohhhhhh no`
+A regex deve encontrar a string `Ohhhhhh no`
 
 ```js
 assert('Ohhhhhh no'.match(ohRegex)[0].length === 10);
 ```
 
-Sua regex não deve encontrar a string `Ohhhhhhh no`
+A regex não deve encontrar a string `Ohhhhhhh no`
 
 ```js
 assert(!ohRegex.test('Ohhhhhhh no'));

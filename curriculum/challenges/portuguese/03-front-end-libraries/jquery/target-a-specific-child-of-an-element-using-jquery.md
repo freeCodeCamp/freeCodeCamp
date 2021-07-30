@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed108826
-title: Mire um Filho Específico de um Elemento Usando jQuery
+title: Mirar um filho específico de um elemento usando o jQuery
 challengeType: 6
 forumTopicId: 18315
 required:
@@ -11,11 +11,11 @@ dashedName: target-a-specific-child-of-an-element-using-jquery
 
 # --description--
 
-Você já viu o porque os atributos id são tão convenientes para mirar com seletores jQuery. Mas você nem sempre terá ids legais para trabalhar.
+Você já viu o motivo de mirar os atributos de id ser tão conveniente com seletores jQuery. Mas você nem sempre terá ids legais para trabalhar.
 
-Felizmente, jQuery possui outros truques para apontar para os elementos certos.
+Felizmente, o jQuery possui outros truques para apontar para os elementos certos.
 
-jQuery usa Seletores CSS para apontar elementos. O seletor CSS `target:nth-child(n)` o permite selecionar todos os elementos nth com a classe ou tipo de elemento alvos.
+O jQuery usa seletores CSS para apontar elementos. O seletor CSS `target:nth-child(n)` o permite selecionar todos os enésimos (nth) elementos com a classe ou tipo de elemento alvos.
 
 Aqui está como você daria ao terceiro elemento em cada well a classe bounce:
 
@@ -23,7 +23,7 @@ Aqui está como você daria ao terceiro elemento em cada well a classe bounce:
 $(".target:nth-child(3)").addClass("animated bounce");
 ```
 
-Faça o segundo filho em cada um dos seus elementos well quicar. Você deve selecionar os filhos do elemento com a classe `target`.
+Faça quicar o segundo filho em cada um dos seus elementos well. Você deve selecionar os filhos do elemento com a classe `target`.
 
 # --hints--
 

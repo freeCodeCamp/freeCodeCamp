@@ -28,7 +28,7 @@ Quando o React encontra uma tag HTML personalizada que faz referência a outro c
 
 No editor de código, há um simples componente funcional chamado `ChildComponent` e um componente de classe chamado `ParentComponent`. Componha as duas juntas ao renderizar o `ChildComponent` dentro do `ParentComponent`. Certifique-se de fechar a tag `ChildComponent` com uma barra avançada.
 
-**Observação:** `ChildComponent` é definida com uma arrow function do ES6, porque esta é uma prática muito comum ao usar React. No entanto, é do conhecimento geral que se trata apenas de uma função. Se você não estiver familiarizado com a sintaxe de função de seta, por favor, consulte a seção de JavaScript.
+**Observação:** `ChildComponent` é definida com uma arrow function do ES6, porque esta é uma prática muito comum ao usar React. No entanto, é do conhecimento geral que se trata apenas de uma função. Se você não estiver familiarizado com a sintaxe de função de seta, consulte a seção de JavaScript.
 
 # --hints--
 

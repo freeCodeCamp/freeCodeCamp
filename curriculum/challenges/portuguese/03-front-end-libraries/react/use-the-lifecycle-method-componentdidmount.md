@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617d
-title: Use o Método do Ciclo de Vida componentDidMount
+title: Usar o método do ciclo de vida componentDidMount
 challengeType: 6
 forumTopicId: 301422
 dashedName: use-the-lifecycle-method-componentdidmount
@@ -10,11 +10,11 @@ dashedName: use-the-lifecycle-method-componentdidmount
 
 A maioria dos desenvolvedores web, em algum momento, precisa chamar uma rota de uma API para recuperar dados. Se você está trabalhando com React, é importante saber onde executar esta ação.
 
-A melhor prática com React é colocar chamadas de API ou qualquer chamada para seu servidor no método do ciclo de vida `componentDidMount()`. Este método é chamado depois que um componente é montado no DOM. Qualquer chamada para `setState()` aqui ativará uma re-renderização do componente. Quando você chamar uma API neste método, e definir seu estado com os dados que a API retorna, ele automaticamente acionará uma atualização quando receber os dados.
+A melhor prática com React é colocar chamadas de API ou qualquer chamada para seu servidor no método do ciclo de vida `componentDidMount()`. Este método é chamado depois que um componente é montado no DOM. Qualquer chamada para `setState()` aqui ativará uma nova renderização do componente. Quando você chamar uma API neste método, e definir seu estado com os dados que a API retorna, ele automaticamente acionará uma atualização quando receber os dados.
 
 # --instructions--
 
-Há uma chamada de API simulada em `componentDidMount()`. Ele define o estado após 2.5 segundos para simular a chamada de um servidor para recuperar dados. Este exemplo solicita o total de usuários ativos atuais para um site. No método de renderização, renderiza o valor de `activeUsers` no `h1` após o texto `Active Users:`. Observe o que acontece na pré-visualização e sinta-se livre para mudar o tempo limite para ver os diferentes efeitos.
+Há uma chamada de API simulada em `componentDidMount()`. Ele define o estado após 2,5 segundos para simular a chamada de um servidor para recuperar dados. Este exemplo solicita o total de usuários ativos atuais para um site. No método de renderização, renderiza o valor de `activeUsers` no `h1` após o texto `Active Users:`. Observe o que acontece na pré-visualização e sinta-se livre para mudar o tempo limite para ver os diferentes efeitos.
 
 # --hints--
 

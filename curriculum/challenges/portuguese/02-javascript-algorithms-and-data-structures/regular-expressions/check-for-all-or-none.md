@@ -30,28 +30,28 @@ Altere a regex `favRegex` para encontrar as versões americana (`favorite`) e br
 
 # --hints--
 
-Sua regex deve usar a interrogação (`?`) para validação opcional.
+A regex deve usar a interrogação (`?`) para validação opcional.
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.source.match(/\?/).length > 0);
 ```
 
-Sua regex deve encontrar a string `favorite`
+A regex deve encontrar a string `favorite`
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.test('favorite'));
 ```
 
-Sua regex deve encontrar a string `favourite`
+A regex deve encontrar a string `favourite`
 
 ```js
 favRegex.lastIndex = 0;
 assert(favRegex.test('favourite'));
 ```
 
-Sua regex não deve encontrar a string `fav`
+A regex não deve encontrar a string `fav`
 
 ```js
 favRegex.lastIndex = 0;

@@ -8,7 +8,7 @@ dashedName: sort-an-array-alphabetically-using-the-sort-method
 
 # --description--
 
-O método `sort` consegue ordenar os elementos de um array de acordo com uma função callback.
+O método `sort` consegue ordenar os elementos de um array de acordo com uma função de callback.
 
 Por exemplo:
 
@@ -34,7 +34,7 @@ reverseAlpha(['l', 'h', 'z', 'b', 's']);
 
 Este retorna o valor `['z', 's', 'l', 'h', 'b']`.
 
-O método de ordenação padrão do JavaScript é por valores de ponto Unicode, o que pode nos dar resultados inesperados. Por isso você é encorajado a providenciar uma função callback para especificar como a ordenação deve ocorrer. Quando tal função callback (comumente chamada de `compareFunction`, ou função de comparação) é providenciada, os elementos do array são ordenados de acordo com o valor de retorno dela: se `compareFunction(a,b)` retornar um valor menor que 0 para dois elementos `a` e `b`, então `a` virá antes de `b`. Se `compareFunction(a,b)` retornar um valor maior que 0 para dois elementos `a` e `b`, então `b` virá antes de `a`. Finalmente, se `compareFunction(a,b)` retornar 0, então `a` e `b` não trocarão de lugar entre si.
+O método de ordenação padrão do JavaScript é por valores de ponto Unicode, o que pode nos dar resultados inesperados. Por isso você é encorajado a providenciar uma função de callback para especificar como a ordenação deve ocorrer. Quando tal função callback (comumente chamada de `compareFunction`, ou função de comparação) é providenciada, os elementos do array são ordenados de acordo com o valor de retorno dela: se `compareFunction(a,b)` retornar um valor menor que 0 para dois elementos `a` e `b`, então `a` virá antes de `b`. Se `compareFunction(a,b)` retornar um valor maior que 0 para dois elementos `a` e `b`, então `b` virá antes de `a`. Finalmente, se `compareFunction(a,b)` retornar 0, então `a` e `b` não trocarão de lugar entre si.
 
 # --instructions--
 

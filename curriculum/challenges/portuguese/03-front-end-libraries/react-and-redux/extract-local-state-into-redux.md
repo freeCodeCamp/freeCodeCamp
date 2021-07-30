@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036149
-title: Extrair Estado Local para dentro do Redux
+title: Extrair estado local para dentro do Redux
 challengeType: 6
 forumTopicId: 301428
 dashedName: extract-local-state-into-redux
@@ -8,7 +8,7 @@ dashedName: extract-local-state-into-redux
 
 # --description--
 
-Você está quase pronto! Lembre-se que você escreveu todo o código Redux para que o Redux pudesse controlar o gerenciamento de estado do seu aplicativo de mensagens React. Agora que o Redux está conectado, você precisa extrair o gerenciamento de estado do componente `Presentational` para o Redux. Atualmente, você tem o Redux conectado, mas está manipulando o estado localmente dentro do componente `Presentational`.
+Você está quase pronto! Lembre-se de que você escreveu todo o código Redux para que o Redux pudesse controlar o gerenciamento de estado do seu aplicativo de mensagens React. Agora que o Redux está conectado, você precisa extrair o gerenciamento de estado do componente `Presentational` para o Redux. Atualmente, você tem o Redux conectado, mas está manipulando o estado localmente dentro do componente `Presentational`.
 
 # --instructions--
 

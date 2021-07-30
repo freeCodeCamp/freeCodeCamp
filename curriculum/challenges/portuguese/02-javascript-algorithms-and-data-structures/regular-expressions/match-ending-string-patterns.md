@@ -34,7 +34,7 @@ Você deve usar o cifrão `$` na sua regex para buscar a string `caboose`.
 assert(lastRegex.source == 'caboose$');
 ```
 
-Sua regex não deve usar nenhuma flag.
+A regex não deve usar nenhuma flag.
 
 ```js
 assert(lastRegex.flags == '');

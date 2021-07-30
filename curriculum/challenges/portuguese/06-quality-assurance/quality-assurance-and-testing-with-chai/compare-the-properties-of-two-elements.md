@@ -30,7 +30,7 @@ Todos os testes devem passar.
   );
 ```
 
-Você deve escolher o método correto para a primeira assertiva - `isAbove` ou `isAtMost`.
+Você deve escolher o método correto para a primeira afirmação - `isAbove` ou `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ Você deve escolher o método correto para a primeira assertiva - `isAbove` ou `
   );
 ```
 
-Você deve escolher o método correto para a segunda assertiva - `isAbove` ou `isAtMost`.
+Você deve escolher o método correto para a segunda afirmação - `isAbove` ou `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ Você deve escolher o método correto para a segunda assertiva - `isAbove` ou `i
   );
 ```
 
-Você deve escolher o método correto para a terceira assertiva - `isAbove` ou `isAtMost`.
+Você deve escolher o método correto para a terceira afirmação - `isAbove` ou `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -80,7 +80,7 @@ Você deve escolher o método correto para a terceira assertiva - `isAbove` ou `
   );
 ```
 
-Você deve escolher o método correto para a quarta assertiva - `isAbove` ou `isAtMost`.
+Você deve escolher o método correto para a quarta afirmação - `isAbove` ou `isAtMost`.
 
 ```js
 (getUserInput) =>

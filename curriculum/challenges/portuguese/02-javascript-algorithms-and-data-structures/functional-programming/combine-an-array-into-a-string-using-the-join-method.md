@@ -20,7 +20,7 @@ var str = arr.join(" ");
 O valor de `str` é `Hello World`.
 # --instructions--
 
-Use o método `join` (junto com outros) dentro da função `sentensify` para criar uma frase a partir das palavras da string `str`. A função deve retornar uma string. Por exemplo, `I-like-Star-Wars` deve ser convertido para `I like Star Wars`. Não use o método `replace` neste desafio.
+Use o método `join` (entre outros) dentro da função `sentensify` para criar uma frase a partir das palavras da string `str`. A função deve retornar uma string. Por exemplo, `I-like-Star-Wars` deve ser convertido para `I like Star Wars`. Não use o método `replace` neste desafio.
 
 # --hints--
 

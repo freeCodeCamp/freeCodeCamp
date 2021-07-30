@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616a
-title: Passe um Array como Props
+title: Passar um array como props
 challengeType: 6
 forumTopicId: 301401
 dashedName: pass-an-array-as-props
@@ -16,7 +16,7 @@ O último desafio demonstrou como passar informações de um componente pai para
 </ParentComponent>
 ```
 
-O componente filho então tem acesso às propriedades `colors` do array. Métodos de array como `join()` podem ser usados ao acessar a propriedade. `const ChildComponent = (props) => <p>{props.colors. oin(', ')}</p>` Isto irá juntar todas os itens do array `colors` em uma string separada por vírgulas e produzir: `<p>green, blue, red</p>` Mais tarde, aprenderemos sobre outros métodos comuns para renderizar arrays de dados em React.
+O componente filho então tem acesso às propriedades `colors` do array. Métodos de array como `join()` podem ser usados ao acessar a propriedade. `const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>` Isto unirá todos os itens do array `colors` em uma string separada por vírgulas e produzirá: `<p>green, blue, red</p>` Depois, aprenderemos sobre outros métodos comuns de renderizar arrays de dados em React.
 
 # --instructions--
 

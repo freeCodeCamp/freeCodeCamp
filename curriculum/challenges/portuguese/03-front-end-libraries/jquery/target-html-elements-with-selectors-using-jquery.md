@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9bedc08826
-title: Elementos HTML Alvo com Seletores Usando jQuery
+title: Mirar elementos de HTML com seletores usando o jQuery
 challengeType: 6
 forumTopicId: 18319
 required:
@@ -15,7 +15,7 @@ Agora temos uma função `document ready`.
 
 Agora vamos escrever nossa primeira declaração jQuery. Todas as funções do jQuery começam com um `$`, geralmente são referidas como um operador de sinal de dólar ou como bling.
 
-jQuery geralmente selecionar um elemento HTML com um <dfn>selector</dfn>, em seguida faz algo a esse elemento.
+jQuery geralmente selecionar um elemento HTML com um <dfn>seletor</dfn>, em seguida faz algo a esse elemento.
 
 Por exemplo, vamos fazer todos os nossos elementos `button` quicar. Basta adicionar esse código dentro da sua função pronta:
 

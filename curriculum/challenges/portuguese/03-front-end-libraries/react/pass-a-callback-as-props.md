@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617b
-title: Passe um Callback como Props
+title: Passar uma função de callback como props
 challengeType: 6
 forumTopicId: 301400
 dashedName: pass-a-callback-as-props

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036177
-title: Escrever um Contador Simples
+title: Escrever um contador simples
 challengeType: 6
 forumTopicId: 301425
 dashedName: write-a-simple-counter
@@ -56,7 +56,7 @@ mockedComponent.find('.dec').simulate('click');
 assert(mockedComponent.find('h1').text() === 'Current Count: -1');
 ```
 
-Clicando no botão reset deve redefinir a contagem para `0`.
+Clicar no botão reset deve redefinir a contagem para `0`.
 
 ```js
 const mockedComponent = Enzyme.mount(React.createElement(Counter));

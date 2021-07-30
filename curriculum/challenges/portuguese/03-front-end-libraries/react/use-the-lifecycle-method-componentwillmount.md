@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617c
-title: Use o Método do Ciclo de Vida componentWillMount
+title: Usar o método do ciclo de vida componentWillMount
 challengeType: 6
 forumTopicId: 301423
 dashedName: use-the-lifecycle-method-componentwillmount
@@ -8,7 +8,7 @@ dashedName: use-the-lifecycle-method-componentwillmount
 
 # --description--
 
-Componentes React tem vários métodos especiais que fornecem oportunidades de executar ações em pontos específicos do ciclo de vida de um componente. Esses são chamados métodos do ciclo de vida, ou ganchos do ciclo de vida, e permitem que você capture componentes em certos pontos do tempo. Isso pode ser antes que sejam renderizados, antes que eles atualizem, antes que eles recebam props, antes que eles desmontem e assim por diante. Aqui está uma lista de alguns dos principais métodos do ciclo de vida: `componentWillMount()` `componentDidMount()` `shouldComponentUpdate()` `componentDidUpdate()` `componentWillUnmount()` As próximas aulas cobrirão alguns dos casos de uso básicos para estes métodos de ciclo de vida.
+Componentes do React têm vários métodos especiais que fornecem oportunidades de executar ações em pontos específicos do ciclo de vida de um componente. Eles são chamados de métodos do ciclo de vida, ou hooks do ciclo de vida, e permitem que você capture componentes em certos pontos do tempo. Isso pode ser antes que sejam renderizados, antes que eles atualizem, antes que eles recebam props, antes que eles desmontem e assim por diante. Aqui está uma lista de alguns dos principais métodos do ciclo de vida: `componentWillMount()` `componentDidMount()` `shouldComponentUpdate()` `componentDidUpdate()` `componentWillUnmount()` As próximas aulas cobrirão alguns dos casos de uso básicos para estes métodos de ciclo de vida.
 
 **Observação:** o método do ciclo de vida `componentWillMount` será descontinuado em uma versão futura de 16.X e removido na versão 17. [(Fonte)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8b367417b2b2512b53
-title: Use a sintaxe de classe para criar uma função construtora
+title: Usar a sintaxe de classe para criar uma função construtora
 challengeType: 1
 forumTopicId: 301212
 dashedName: use-class-syntax-to-define-a-constructor-function

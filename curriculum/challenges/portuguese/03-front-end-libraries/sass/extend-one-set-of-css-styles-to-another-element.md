@@ -1,6 +1,6 @@
 ---
 id: 587d7fa5367417b2b2512bbd
-title: Estender um Conjunto de Estilos CSS para Outro Elemento
+title: Estender um conjunto de estilos CSS para outro elemento
 challengeType: 0
 forumTopicId: 301456
 dashedName: extend-one-set-of-css-styles-to-another-element
@@ -8,7 +8,7 @@ dashedName: extend-one-set-of-css-styles-to-another-element
 
 # --description--
 
-Sass tem um recurso chamado `extend` que faz com que seja fácil pegar emprestado as regras CSS de um elemento e construí-las em outro.
+Sass tem um recurso chamado `extend` que faz com que seja fácil pegar emprestado as regras CSS de um elemento e construr a partir delas em outro.
 
 Por exemplo, o bloco abaixo de regras CSS estiliza uma classe `.panel`. Tem um `background-color`, um `height` e um `border`.
 
@@ -38,7 +38,7 @@ Faça uma classe `.info-important` que estenda `.info` e também tenha um `backg
 
 # --hints--
 
-Sua classe `info-important` deve ter um `background-color` definido para `magenta`.
+A classe `info-important` deve ter um `background-color` definido para `magenta`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Sua classe `info-important` deve usar `@extend` para herdar o estilo da classe `info`.
+A classe `info-important` deve usar `@extend` para herdar o estilo da classe `info`.
 
 ```js
 assert(

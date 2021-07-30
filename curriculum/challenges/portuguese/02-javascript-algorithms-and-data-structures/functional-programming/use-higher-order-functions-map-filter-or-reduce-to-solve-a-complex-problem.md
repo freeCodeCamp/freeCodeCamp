@@ -14,7 +14,7 @@ Agora que você já realizou alguns desafios usando funções de ordem superior 
 
 Complete o código para a função `squareList` usando qualquer combinação de `map()`, `filter()` e `reduce()`. A função deve retornar uma nova matriz contendo *apenas* os inteiros positivos (números decimais não são inteiros) elevados ao quadrado quando uma matriz de números reais é passada para ela. Um exemplo de array de números reais é `[-3, 4.8, 5, 3, -3.2]`.
 
-**Obs:** Você não deve usar os loops `for` ou `while` ou a função `forEach()` na sua função.
+**Observação:** você não deve usar os loops `for` ou `while` ou a função `forEach()` na sua função.
 
 # --hints--
 

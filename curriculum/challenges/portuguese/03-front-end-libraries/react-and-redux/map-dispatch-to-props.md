@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036146
-title: Mapeie Dispatch para Props
+title: Mapear dispatch para props
 challengeType: 6
 forumTopicId: 301432
 dashedName: map-dispatch-to-props
@@ -8,9 +8,9 @@ dashedName: map-dispatch-to-props
 
 # --description--
 
-A função `mapDispatchToProps()` é usada para fornecer criadores de ação específicos para seus componentes React, para que eles possam despachar ações ao store Redux. É semelhante em estrutura à função `mapStateToProps()` que você escreveu no último desafio. Isso retorna um objeto que mapeia as ações de despache para nomes de propriedades, o que se torna `props` do componente. No entanto, em vez de retornar um pedaço do `state`, cada propriedade retorna uma função que chama `dispatch` com um criador de ação e quaisquer dados de ação relevantes. Você tem acesso a este `dispatch` porque ele foi passado para `mapDispatchToProps()` como um parâmetro quando você define a função, assim como você passou o `state` para `mapStateToProps()`. Nos bastidores, React Redux está usando `store.dispatch()` do Redux para realizar estes despachos com `mapDispatchToProps()`. Isso é semelhante a como ele usa `store.subscribe()` para componentes que são mapeados para o `state`.
+A função `mapDispatchToProps()` é usada para fornecer criadores de ação específicos para seus componentes React, para que eles possam despachar ações à store Redux. É semelhante em estrutura à função `mapStateToProps()` que você escreveu no último desafio. Isso retorna um objeto que mapeia as ações de despache para nomes de propriedades, o que se torna `props` do componente. No entanto, em vez de retornar um pedaço do `state`, cada propriedade retorna uma função que chama `dispatch` com um criador de ação e quaisquer dados de ação relevantes. Você tem acesso a este `dispatch` porque ele foi passado para `mapDispatchToProps()` como um parâmetro quando você define a função, assim como você passou o `state` para `mapStateToProps()`. Nos bastidores, React Redux está usando `store.dispatch()` do Redux para realizar estes despachos com `mapDispatchToProps()`. Isso é semelhante a como ele usa `store.subscribe()` para componentes que são mapeados para o `state`.
 
-Por exemplo, você tem o criador de ação `loginUser()` que recebe um `username` como uma ação payload. O objeto retornado do `mapDispatchToProps()` para este criador da ação pareceria algo como:
+Por exemplo, você tem o criador de ação `loginUser()` que recebe um `username` como um payload de ação. O objeto retornado do `mapDispatchToProps()` para este criador da ação pareceria algo como:
 
 ```jsx
 {
@@ -52,7 +52,7 @@ assert(typeof mapDispatchToProps === 'function');
 assert(typeof mapDispatchToProps() === 'object');
 ```
 
-Despachar `addMessage` com `submitNewMessage` do `mapDispatchToProps` deve retornar uma mensagem para a função de despachamento.
+Despachar `addMessage` com `submitNewMessage` do `mapDispatchToProps` deve retornar uma mensagem para a função de envio.
 
 ```js
 assert(

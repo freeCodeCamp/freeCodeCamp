@@ -18,7 +18,7 @@ console.log(camper);
 
 Aqui o console vai exibir a string `David`.
 
-Como você pode ver no código acima, a variável `camper` é originalmente declarada com o valor `James` e então substituída pelo valor `David`. Em uma aplicação pequena, você pode não encontrar esse tipo de problema, mas quando seu código se tornar maior, você pode acidentalmente sobrescrever uma variável que você não tinha a intenção. Como esse comportamente não lança nenhum erro, procurar e corrigir bugs se torna mais difícil.  
+Como você pode ver no código acima, a variável `camper` é originalmente declarada com o valor `James` e então substituída pelo valor `David`. Em uma aplicação pequena, você pode não encontrar esse tipo de problema, mas quando seu código se tornar maior, você pode acidentalmente sobrescrever uma variável que você não tinha a intenção. Como esse comportamento não lança nenhum erro, procurar e corrigir bugs se torna mais difícil.  
 Para resolver esse potencial problema com a palavra-chave `var`, uma nova palavra-chave chamada `let` foi introduzida no ES6. Se você tentar substituir `var` por `let` nas declarações de variável do código acima, o resultado será um erro.
 
 ```js
@@ -33,7 +33,7 @@ Esse erro pode ser visto no console do seu navegador. Então, diferente de `var`
 x = 3.14;
 ```
 
-O codigo acima vai exibir o erro: `x is not defined`.
+O código acima vai exibir o erro: `x is not defined`.
 
 # --instructions--
 

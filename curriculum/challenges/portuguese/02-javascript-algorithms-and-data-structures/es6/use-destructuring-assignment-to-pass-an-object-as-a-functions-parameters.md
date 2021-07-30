@@ -53,7 +53,7 @@ Desestruturação deve ser usado.
 assert(__helpers.removeWhiteSpace(code).match(/half=\({\w+,\w+}\)/));
 ```
 
-Parâmetro desestruturado deve ser usado.
+O parâmetro desestruturado deve ser usado.
 
 ```js
 assert(!code.match(/stats\.max|stats\.min/));

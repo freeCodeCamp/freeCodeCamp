@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed908626
-title: Mire o Mesmo Elemento com Múltiplos Seletores jQuery
+title: Mirar o mesmo elemento com múltiplos seletores de jQuery
 challengeType: 6
 forumTopicId: 18322
 required:
@@ -27,19 +27,19 @@ Adicione a classe `btn-primary` ao botão com id `#target1`.
 
 # --hints--
 
-Seu código deve usar o seletor `$("button")`.
+O código deve usar o seletor `$("button")`.
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?button\s*?(?:'|")/gi));
 ```
 
-Seu código deve usar o seletor `$(".btn")`.
+O código deve usar o seletor `$(".btn")`.
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?\.btn\s*?(?:'|")/gi));
 ```
 
-Seu código deve usar o seletor `$("#target1")`.
+O código deve usar o seletor `$("#target1")`.
 
 ```js
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")/gi));
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-Seu elemento `#target1` deve ter as classes `animated`‚ `shake` e `btn-primary`.
+O elemento `#target1` deve ter as classes `animated`‚ `shake` e `btn-primary`.
 
 ```js
 assert(

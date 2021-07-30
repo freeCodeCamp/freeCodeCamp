@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036167
-title: Renderizar um Componente de Classe para o DOM
+title: Renderizar um componente de classe para o DOM
 challengeType: 6
 forumTopicId: 301404
 dashedName: render-a-class-component-to-the-dom
@@ -10,13 +10,13 @@ dashedName: render-a-class-component-to-the-dom
 
 Você talvez se lembre de usar a API do ReactDOM em um desafio anterior para renderizar elementos JSX para o DOM. O processo para renderizar componentes React ficará muito parecido. Os últimos desafios focaram em componentes e composição, então a renderização foi feita pra você nos bastidores. No entanto, nenhum código React que você escreva vai renderizar no DOM sem fazer uma chamada para a API do ReactDOM.
 
-Aqui está uma atualização na sintaxe: `ReactDOM.render(componentToRender, targetNode)`. O primeiro argumento é o componente React que você deseja renderizar. O segundo argumento é o nó DOM onde você quer renderizar esse componente dentro.
+Aqui está uma atualização na sintaxe: `ReactDOM.render(componentToRender, targetNode)`. O primeiro argumento é o componente React que você deseja renderizar. O segundo argumento é o nó do DOM onde você quer renderizar esse componente dentro.
 
-Componentes React são passados a `ReactDOM.render()` um pouco diferente dos elementos JSX. Para elementos JSX, você passa o nome do elemento que deseja renderizar. No entanto, para componentes React, você precisa usar a mesma sintaxe como se estivesse renderizando um componente aninhado, por exemplo `ReactDOM. ender(<ComponentToRender />, targetNode)`. Você usa esta sintaxe para componentes de classe ES6 e componentes funcionais.
+Componentes do React são passados a `ReactDOM.render()` um pouco diferente dos elementos JSX. Para elementos JSX, você passa o nome do elemento que deseja renderizar. No entanto, para componentes do React, você precisa usar a mesma sintaxe como se estivesse renderizando um componente aninhado, por exemplo `ReactDOM.render(<ComponentToRender />, targetNode)`. Você usa esta sintaxe para componentes de classe ES6 e componentes funcionais.
 
 # --instructions--
 
-Tanto os componentes `Fruits` e `Vegetables` são definidos para você nos bastidores. Renderize ambos os componentes como filhos do componente `TypesOfFood` e, em seguida, renderizar `TypesOfFood` para o DOM. Há um `div` com `id='challenge-node'` disponível para você usar.
+Os componentes `Fruits` e `Vegetables` são definidos para você nos bastidores. Renderize ambos os componentes como filhos do componente `TypesOfFood` e, em seguida, renderize `TypesOfFood` para o DOM. Há uma `div` com `id='challenge-node'` disponível para você usar.
 
 # --hints--
 

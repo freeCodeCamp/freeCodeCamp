@@ -26,7 +26,7 @@ Escreva uma única regex que encontra letras entre `h` e `s` e, também, número
 
 # --hints--
 
-Sua regex `myRegex` deve encontrar 17 itens.
+A regex `myRegex` deve encontrar 17 itens.
 
 ```js
 assert(result.length == 17);

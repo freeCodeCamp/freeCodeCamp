@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036156
-title: Usar o Middleware para lidar com Ações Assíncronas
+title: Usar o middleware para lidar com ações assíncronas
 challengeType: 6
 forumTopicId: 301451
 dashedName: use-middleware-to-handle-asynchronous-actions
@@ -8,9 +8,9 @@ dashedName: use-middleware-to-handle-asynchronous-actions
 
 # --description--
 
-Até agora, estes desafios têm evitado discutir ações assíncronas, mas elas constituem uma parte inevitável do desenvolvimento web. Em algum momento, você precisará chamar rotas assíncronas no seu aplicativo Redux, então como você lida com esses tipos de pedidos? Redux fornece o middleware desenhado especificamente para esse propósito, chamado midleware Thunk Redux. Aqui está uma breve descrição sobre como usar isso com o Redux.
+Até agora, estes desafios têm evitado discutir ações assíncronas, mas elas constituem uma parte inevitável do desenvolvimento web. Em algum momento, você precisará chamar rotas assíncronas no seu aplicativo Redux, então como você lida com esses tipos de pedidos? Redux fornece o middleware desenhado especificamente para esse propósito, chamado midleware Redux Thunk. Aqui está uma breve descrição sobre como usar isso com o Redux.
 
-Para incluir o middleware Thunk do Redux, você o passa como um argumento para `Redux.applyMiddleware()`. Esta declaração é então fornecida como o segundo parâmetro opcional para a função `createStore()`. Dê uma olhada no código na parte inferior do editor para ver isso. Então, para criar uma ação assíncrona, você retorna uma função no criador de ação que recebe `dispatch` como argumento. Dentro dessa função, você pode despachar ações e executar requisições assíncronas.
+Para incluir o middleware Redux Thunk, você o passa como um argumento para `Redux.applyMiddleware()`. Esta declaração é então fornecida como o segundo parâmetro opcional para a função `createStore()`. Dê uma olhada no código na parte inferior do editor para ver isso. Então, para criar uma ação assíncrona, você retorna uma função no criador de ação que recebe `dispatch` como argumento. Dentro dessa função, você pode despachar ações e executar requisições assíncronas.
 
 Neste exemplo, uma requisição assíncrona é simulada com uma chamada a `setTimeout()`. É comum despachar uma ação antes de iniciar qualquer comportamento assíncrono para que o estado do seu aplicativo saiba que alguns dados estão sendo requisitados (este estado pode exibir um ícone de carregamento, por exemplo). Em seguida, ao receber os dados, você envia outra ação que carrega os dados como um payload junto com informações de que a ação foi concluída.
 
@@ -18,7 +18,7 @@ Lembre-se de que você está passando o `dispatch` como um parâmetro para este 
 
 # --instructions--
 
-Escreva os dois despachadores no criador de ação `handleAsync()`. Despache `requestingData()` antes do `setTimeout()` (a chamada de API simulada). Então, depois de receber os dados (simulados), despache a ação `receivedData()`, passando estes dados. Agora você sabe como lidar com ações assíncronas no Redux. Todo o resto continua a comportar-se como antes.
+Escreva os dois dispatches no criador de ação `handleAsync()`. Despache `requestingData()` antes do `setTimeout()` (a chamada de API simulada). Então, depois de receber os dados (simulados), despache a ação `receivedData()`, passando estes dados. Agora você sabe como lidar com ações assíncronas no Redux. Todo o resto continua a se comportar como antes.
 
 # --hints--
 
@@ -40,7 +40,7 @@ assert(receivedData('data').type === RECEIVED_DATA);
 assert(typeof asyncDataReducer === 'function');
 ```
 
-Despachando o criador de ação `requestingData` deve atualizar a propriedade `state` do store de buscar para `true`.
+Despachar o criador de ação `requestingData` deve atualizar a propriedade `state` da store de buscar para `true`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Despachando `handleAsync` deve enviar a ação de requisição de dados e, em seguida, enviar a ação de dados recebidos após um atraso.
+Despachar `handleAsync` deve enviar a ação de requisição de dados e, em seguida, enviar a ação de dados recebidos após um atraso.
 
 ```js
 assert(

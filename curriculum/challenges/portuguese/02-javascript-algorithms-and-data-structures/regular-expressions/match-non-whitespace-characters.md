@@ -10,7 +10,7 @@ dashedName: match-non-whitespace-characters
 
 Você aprendeu a procurar por espaço em branco usando `\s` com um `s` minúsculo. Você também pode buscar tudo exceto espaços em branco.
 
-Busque não-espaços em branco usando `\S` com um `s` maiúsculo. Este atalho não captura espaços em branco, retorno de carro, tabulações, feeds de formulário ou quebras de linha. O atalho é equivalente à classe de caracteres `[^ \r\t\f\n\v]`.
+Busque não espaços em branco usando `\S` com um `s` maiúsculo. Este atalho não captura espaços em branco, retorno de carro, tabulações, feeds de formulário ou quebras de linha. O atalho é equivalente à classe de caracteres `[^ \r\t\f\n\v]`.
 
 ```js
 let whiteSpace = "Whitespace. Whitespace everywhere!"
@@ -26,19 +26,19 @@ Modifique a regex `countNonWhiteSpace` para que encontre tudo exceto espaços em
 
 # --hints--
 
-Sua regex deve usar a flag global.
+A regex deve usar a flag global.
 
 ```js
 assert(countNonWhiteSpace.global);
 ```
 
-Sua regex deve usar o atalho `\S` para capturar tudo menos espaços em branco.
+A regex deve usar o atalho `\S` para capturar tudo menos espaços em branco.
 
 ```js
 assert(/\\S/.test(countNonWhiteSpace.source));
 ```
 
-Sua regex deve encontrar 35 não-espaços na string `Men are from Mars and women are from Venus.`
+A regex deve encontrar 35 não espaços na string `Men are from Mars and women are from Venus.`
 
 ```js
 assert(
@@ -47,13 +47,13 @@ assert(
 );
 ```
 
-Sua regex deve encontrar 23 não-espaços na string `Space: the final frontier.`
+A regex deve encontrar 23 não espaços na string `Space: the final frontier.`
 
 ```js
 assert('Space: the final frontier.'.match(countNonWhiteSpace).length == 23);
 ```
 
-Sua regex deve encontrar 21 não-espaços na string `MindYourPersonalSpace`
+A regex deve encontrar 21 não espaços na string `MindYourPersonalSpace`
 
 ```js
 assert('MindYourPersonalSpace'.match(countNonWhiteSpace).length == 21);

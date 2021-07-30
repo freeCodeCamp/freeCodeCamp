@@ -34,7 +34,7 @@ Capture todas as letras na string `quoteSample`.
 
 # --hints--
 
-Sua regex `alphabetRegex` deve encontrar 35 itens.
+A regex `alphabetRegex` deve encontrar 35 itens.
 
 ```js
 assert(result.length == 35);

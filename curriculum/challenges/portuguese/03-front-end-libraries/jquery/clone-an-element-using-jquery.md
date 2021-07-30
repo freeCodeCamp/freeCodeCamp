@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed508826
-title: Clone um Elemento Usando JQuery
+title: Clonar um elemento usando jQuery
 challengeType: 6
 forumTopicId: 16780
 dashedName: clone-an-element-using-jquery
@@ -10,7 +10,7 @@ dashedName: clone-an-element-using-jquery
 
 Além de mover elementos, você também pode copiá-los de um lugar para outro.
 
-JQuery possui uma função chamada `clone()` que faz uma cópia de um elemento.
+O jQuery possui uma função chamada `clone()` que faz uma cópia de um elemento.
 
 Por exemplo, se quiséssemos copiar `target2` do nosso `left-well` para nosso `right-well`, usaríamos:
 
@@ -18,7 +18,7 @@ Por exemplo, se quiséssemos copiar `target2` do nosso `left-well` para nosso `r
 $("#target2").clone().appendTo("#right-well");
 ```
 
-Você percebeu que isso envolve colocar duas funções JQuery juntas? Isso é chamado de <dfn>function chaining</dfn> e é uma forma conveniente para fazer coisas com JQuery.
+Você percebeu que isso envolve colocar duas funções do jQuery juntas? Isso é chamado de <dfn>function chaining</dfn> e é uma forma conveniente para fazer as coisas com jQuery.
 
 Clone seu elemento `target5` e adicione-o ao seu `left-well`.
 
@@ -36,7 +36,7 @@ Uma cópia do seu elemento `target5` também deve estar dentro do seu `left-well
 assert($('#left-well').children('#target5').length > 0);
 ```
 
-Você deve usar apenas JQuery para mover esses elementos.
+Você deve usar apenas jQuery para mover esses elementos.
 
 ```js
 assert(!code.match(/class.*animated/g));

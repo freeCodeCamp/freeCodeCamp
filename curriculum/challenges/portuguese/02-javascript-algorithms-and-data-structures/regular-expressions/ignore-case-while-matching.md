@@ -16,65 +16,65 @@ Você pode encontrar ambas as caixas usando algo que chamamos de <dfn>flag</dfn>
 
 # --instructions--
 
-Escreva uma regex `fccRegex` que encontre `freeCodeCamp`, não importa em que caixa esteja. Sua regex não deve buscar abreviações ou variações com espaços.
+Escreva uma regex `fccRegex` que encontre `freeCodeCamp`, não importa em que caixa esteja. A regex não deve buscar abreviações ou variações com espaços.
 
 # --hints--
 
-Sua regex deve encontrar a string `freeCodeCamp`
+A regex deve encontrar a string `freeCodeCamp`
 
 ```js
 assert(fccRegex.test('freeCodeCamp'));
 ```
 
-Sua regex deve encontrar a string `FreeCodeCamp`
+A regex deve encontrar a string `FreeCodeCamp`
 
 ```js
 assert(fccRegex.test('FreeCodeCamp'));
 ```
 
-Sua regex deve encontrar a string `FreecodeCamp`
+A regex deve encontrar a string `FreecodeCamp`
 
 ```js
 assert(fccRegex.test('FreecodeCamp'));
 ```
 
-Sua regex deve encontrar a string `FreeCodecamp`
+A regex deve encontrar a string `FreeCodecamp`
 
 ```js
 assert(fccRegex.test('FreeCodecamp'));
 ```
 
-Sua regex não deve encontrar a string `Free Code Camp`
+A regex não deve encontrar a string `Free Code Camp`
 
 ```js
 assert(!fccRegex.test('Free Code Camp'));
 ```
 
-Sua regex deve encontrar a string `FreeCOdeCamp`
+A regex deve encontrar a string `FreeCOdeCamp`
 
 ```js
 assert(fccRegex.test('FreeCOdeCamp'));
 ```
 
-Sua regex não deve encontrar a string `FCC`
+A regex não deve encontrar a string `FCC`
 
 ```js
 assert(!fccRegex.test('FCC'));
 ```
 
-Sua regex deve encontrar a string `FrEeCoDeCamp`
+A regex deve encontrar a string `FrEeCoDeCamp`
 
 ```js
 assert(fccRegex.test('FrEeCoDeCamp'));
 ```
 
-Sua regex deve encontrar a string `FrEeCodECamp`
+A regex deve encontrar a string `FrEeCodECamp`
 
 ```js
 assert(fccRegex.test('FrEeCodECamp'));
 ```
 
-Sua regex deve encontrar a string `FReeCodeCAmp`
+A regex deve encontrar a string `FReeCodeCAmp`
 
 ```js
 assert(fccRegex.test('FReeCodeCAmp'));

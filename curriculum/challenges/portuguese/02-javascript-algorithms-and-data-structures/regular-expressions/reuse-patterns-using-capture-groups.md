@@ -37,55 +37,55 @@ Use grupos de captura na regex `reRegex` para capturar em uma string um número 
 
 # --hints--
 
-Sua regex deve usar o atalho de classe de caracteres para dígitos.
+A regex deve usar o atalho de classe de caracteres para dígitos.
 
 ```js
 assert(reRegex.source.match(/\\d/));
 ```
 
-Sua regex deve reusar um grupo de captura duas vezes.
+A regex deve reusar um grupo de captura duas vezes.
 
 ```js
 assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 ```
 
-Sua regex deve encontrar a string `42 42 42`.
+A regex deve encontrar a string `42 42 42`.
 
 ```js
 assert(reRegex.test('42 42 42'));
 ```
 
-Sua regex deve encontrar a string `100 100 100`.
+A regex deve encontrar a string `100 100 100`.
 
 ```js
 assert(reRegex.test('100 100 100'));
 ```
 
-Sua regex não deve encontrar a string `42 42 42 42`.
+A regex não deve encontrar a string `42 42 42 42`.
 
 ```js
 assert.equal('42 42 42 42'.match(reRegex.source), null);
 ```
 
-Sua regex não deve encontrar a string `42 42`.
+A regex não deve encontrar a string `42 42`.
 
 ```js
 assert.equal('42 42'.match(reRegex.source), null);
 ```
 
-Sua regex não deve encontrar a string `101 102 103`.
+A regex não deve encontrar a string `101 102 103`.
 
 ```js
 assert(!reRegex.test('101 102 103'));
 ```
 
-Sua regex não deve encontrar a string `1 2 3`.
+A regex não deve encontrar a string `1 2 3`.
 
 ```js
 assert(!reRegex.test('1 2 3'));
 ```
 
-Sua regex deve encontrar a string `10 10 10`.
+A regex deve encontrar a string `10 10 10`.
 
 ```js
 assert(reRegex.test('10 10 10'));
