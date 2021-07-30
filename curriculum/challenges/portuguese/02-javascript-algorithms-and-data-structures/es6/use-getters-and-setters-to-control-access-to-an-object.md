@@ -48,7 +48,7 @@ Use a palavra-chave `class` para criar a classe `Thermostat`. O `constructor` ac
 
 Na classe, crie um `getter` para obter a temperatura em Celsius e um `setter` para definir a temperatura em Celsius.
 
-Lembre-se que `C = 5/9 * (F - 32)` e `F = C * 9.0 / 5 + 32`, aonde `F` é o valor da temperatura em Fahrenheit e `C` é o valor da mesma temperatura em Celsius.
+Lembre-se de que `C = 5/9 * (F - 32)` e `F = C * 9.0 / 5 + 32`, aonde `F` é o valor da temperatura em Fahrenheit e `C` é o valor da mesma temperatura em Celsius.
 
 **Observação:** quando você implementa isso, você vai rastrear a temperatura dentro da classe em uma escala, ou Fahrenheit ou Celsius.
 

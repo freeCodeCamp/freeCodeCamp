@@ -8,7 +8,7 @@ dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
 
 # --description--
 
-Lembrando que este projeto está sento construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
 Para melhorar o desempenho, a maioria dos navegadores registra antes do fetching o DNS dos links de uma página. Desta maneira, o IP de destino já é conhecido quando o usuário clica em um link. Isso pode levar a um uso excessivo do serviço de DNS (se você possui um site grande, visitado por milhões de pessoas…), problemas de privacidade (uma escuta pode inferir que você está em uma determinada página), ou em alterações das estatísticas da página (alguns links podem aparecer visitados, mesmo que não sejam). Se você tem elevadas necessidades de segurança, pode desativar a pré-busca de DNS, ao custo de uma penalização de desempenho.
 

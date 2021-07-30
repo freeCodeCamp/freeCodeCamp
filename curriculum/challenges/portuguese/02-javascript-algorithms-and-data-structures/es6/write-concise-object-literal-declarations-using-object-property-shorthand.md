@@ -40,7 +40,7 @@ assert.deepEqual(
 );
 ```
 
-Seu código deve usar `key:value`.
+O código deve usar `key:value`.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/:/g));

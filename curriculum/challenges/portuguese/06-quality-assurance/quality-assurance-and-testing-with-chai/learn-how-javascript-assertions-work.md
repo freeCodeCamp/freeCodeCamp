@@ -36,7 +36,7 @@ Todos os testes devem passar.
   );
 ```
 
-Você deve escolher o método correto para a primeira assertiva - `isNull` ou `isNotNull`.
+Você deve escolher o método correto para a primeira afirmação - `isNull` ou `isNotNull`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ Você deve escolher o método correto para a primeira assertiva - `isNull` ou `i
   );
 ```
 
-Você deve escolher o método correto para a segunda assertiva - `isNull` ou `isNotNull`.
+Você deve escolher o método correto para a segunda afirmação - `isNull` ou `isNotNull`.
 
 ```js
 (getUserInput) =>

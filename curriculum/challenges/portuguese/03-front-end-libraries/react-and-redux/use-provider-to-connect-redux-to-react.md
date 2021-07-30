@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036144
-title: Use Provider para Conectar Redux ao React
+title: Usar o provider para conectar o Redux ao React
 challengeType: 6
 forumTopicId: 301435
 dashedName: use-provider-to-connect-redux-to-react
@@ -8,9 +8,9 @@ dashedName: use-provider-to-connect-redux-to-react
 
 # --description--
 
-No último desafio, você criou um store Redux para lidar com o array messages e criou uma ação para adicionar novas mensagens. O próximo passo é fornecer ao React o acesso ao store Redux e as ações que ele precise para despachar atualizações. React Redux fornece seu pacote `react-redux` para ajudar a realizar essas tarefas.
+No último desafio, você criou uma store Redux para lidar com o array messages e criou uma ação para adicionar novas mensagens. O próximo passo é fornecer ao React o acesso à store Redux e as ações que ele precise para despachar atualizações. O React Redux fornece seu pacote `react-redux` para ajudar a realizar essas tarefas.
 
-React Redux fornece uma pequena API com dois principais recursos: `Provider` e `connect`. Outro desafio cobre `connect`. O `Provider` é um componente encapsulador do Redux React que encapsula seu aplicativo React. Este wrapper permite então que você acesse o `store` Redux e funções de `dispatch` em toda a sua árvore de componentes. `Provider` usa duas props, o store do Redux e os componentes filhos do seu aplicativo. Definir o `Provider` para um componente do aplicativo pode se parecer com isto:
+O React Redux fornece uma pequena API com dois principais recursos: `Provider` e `connect`. Outro desafio tratará do `connect`. O `Provider` é um componente encapsulador do React Redux que encapsula seu aplicativo React. Este wrapper permite então que você acesse a `store` Redux e funções de `dispatch` em toda a sua árvore de componentes. `Provider` usa duas props, a store do Redux e os componentes filhos do seu aplicativo. Definir o `Provider` para um componente do aplicativo pode se parecer com isto:
 
 ```jsx
 <Provider store={store}>
@@ -20,7 +20,7 @@ React Redux fornece uma pequena API com dois principais recursos: `Provider` e `
 
 # --instructions--
 
-O editor de código agora mostra todos os seus códigos Redux e React dos vários desafios passados. Inclui o store, actions e o componente `DisplayMessages`. O único novo pedaço é o componente `AppWrapper` na parte inferior. Use este componente de nível superior para renderizar o `Provider` de `ReactRedux`, e passar ao store do Redux como uma propriedade. Em seguida, renderize o componente `DisplayMessages` como filho. Quando você terminar, você deve usar seu componente React renderizado para a página.
+O editor de código agora mostra todos os seus códigos Redux e React dos vários desafios passados. Isso inclui a store, actions e o componente `DisplayMessages`. O único novo pedaço é o componente `AppWrapper` na parte inferior. Use este componente de nível superior para renderizar o `Provider` de `ReactRedux`, e passar à store do Redux como uma propriedade. Em seguida, renderize o componente `DisplayMessages` como filho. Quando você terminar, você deve usar seu componente React renderizado para a página.
 
 **Observação:** o React Redux está disponível como uma variável global aqui, então você pode acessar o Provider com notação de ponto. O código no editor aproveita isso e o define para uma constante `Provider` para você usar no método de renderização `AppWrapper`.
 
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-O componente wrapper do `Provider` deve ter uma propriedade `store` passada para ele, igual ao store do Redux.
+O componente wrapper do `Provider` deve ter uma propriedade `store` passada para ele, igual à store do Redux.
 
 ```js
 (getUserInput) =>

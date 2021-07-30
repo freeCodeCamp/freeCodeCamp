@@ -49,7 +49,7 @@ Use a técnica de aninhamento mostrada acima para reorganizar as regras CSS para
 
 # --hints--
 
-Seu código deve re-organizar as regras CSS para que o `h1` e `p` estejam aninhados no elemento pai `.blog-post`.
+O código deve reorganizar as regras CSS para que o `h1` e `p` estejam aninhados no elemento pai `.blog-post`.
 
 ```js
 assert(

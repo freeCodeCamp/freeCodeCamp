@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036174
-title: Vincular 'this' para um Método de Classe
+title: Vincular 'this' para um método de classe
 challengeType: 6
 forumTopicId: 301379
 dashedName: bind-this-to-a-class-method
@@ -18,7 +18,7 @@ Uma forma comum é explicitamente vincular `this` no construtor para que `this` 
 
 O editor de código possui um componente com um `state` que mantém o controle do texto. Também possui um método o qual o permite definir o texto para `You clicked!`. No entanto, o método não funciona porque está usando a palavra-chave `this` que é undefined. Corrija isso ao vincular explicitamente `this` ao método `handleClick()` no construtor do componente.
 
-Em seguida, adicione um manipulador de clique ao elemento `button` no método de renderização. Ele deve acionar o método `handleClick()` quando o botão recebe um evento de clique. Lembre-se que o método que você passou ao manipulador `onClick` precisa de chaves porque ele deve ser interpretador diretamente como JavaScript.
+Em seguida, adicione um manipulador de clique ao elemento `button` no método de renderização. Ele deve acionar o método `handleClick()` quando o botão recebe um evento de clique. Lembre-se de que o método que você passou ao manipulador `onClick` precisa de chaves porque ele deve ser interpretado diretamente como JavaScript.
 
 Assim que você completar os passos acima você deve ser capaz de clicar o botão e ver `You clicked!`.
 

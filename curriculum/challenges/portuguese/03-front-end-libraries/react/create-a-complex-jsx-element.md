@@ -1,6 +1,6 @@
 ---
 id: 5a24bbe0dba28a8d3cbd4c5d
-title: Criar um Elemento JSX Complexo
+title: Criar um elemento JSX complexo
 challengeType: 6
 forumTopicId: 301382
 dashedName: create-a-complex-jsx-element
@@ -14,7 +14,7 @@ Uma coisa importante a saber sobre JSX aninhado é que ele deve retornar um úni
 
 Este único elemento pai envolveria todos os outros níveis de elementos aninhados.
 
-Por exemplo, vários elementos JSX escritos como irmãos sem elemento encapsulador pai não vai transpilar.
+Por exemplo, vários elementos JSX escritos como irmãos sem elemento encapsulador pai não vão transpilar.
 
 Exemplo:
 

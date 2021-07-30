@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acdd08826
-title: Aprenda Como as Tags de Script e Document Ready Funcionam
+title: Aprender como as tags de script e document ready funcionam
 challengeType: 6
 forumTopicId: 18224
 dashedName: learn-how-script-tags-and-document-ready-work
@@ -12,7 +12,7 @@ Agora nós estamos prontos para aprender jQuery, a ferramenta mais popular de Ja
 
 Antes que nós possamos começar usando jQuery, nós precisamos adicionar algumas coisas ao nosso HTML.
 
-Primeiro, adicione um elemento `script` no topo da sua página. Certifique-se de fechá-la na próxima linha.
+Primeiro, adicione um elemento `script` no topo da página. Certifique-se de fechá-la na próxima linha.
 
 O navegador vai rodar qualquer JavaScript dentro do elemento `script`, incluindo jQuery.
 
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-Você deve adicionar `$(document).ready(function() {` ao início do seu eleemento `script`.
+Você deve adicionar `$(document).ready(function() {` ao início do seu elemento `script`.
 
 ```js
 assert(

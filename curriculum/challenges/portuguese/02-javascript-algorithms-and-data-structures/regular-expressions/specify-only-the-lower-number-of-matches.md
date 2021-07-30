@@ -32,43 +32,43 @@ Modifique a regex `haRegex` para que capture quatro ou mais `z`s na string `Hazz
 
 # --hints--
 
-Sua regex deve usar chaves.
+A regex deve usar chaves.
 
 ```js
 assert(haRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Sua regex não deve encontrar a string `Hazzah`
+A regex não deve encontrar a string `Hazzah`
 
 ```js
 assert(!haRegex.test('Hazzah'));
 ```
 
-Sua regex não deve encontrar a string `Hazzzah`
+A regex não deve encontrar a string `Hazzzah`
 
 ```js
 assert(!haRegex.test('Hazzzah'));
 ```
 
-Sua regex deve encontrar a string `Hazzzzah`
+A regex deve encontrar a string `Hazzzzah`
 
 ```js
 assert('Hazzzzah'.match(haRegex)[0].length === 8);
 ```
 
-Sua regex deve encontrar a string `Hazzzzzah`
+A regex deve encontrar a string `Hazzzzzah`
 
 ```js
 assert('Hazzzzzah'.match(haRegex)[0].length === 9);
 ```
 
-Sua regex deve encontrar a string `Hazzzzzzah`
+A regex deve encontrar a string `Hazzzzzzah`
 
 ```js
 assert('Hazzzzzzah'.match(haRegex)[0].length === 10);
 ```
 
-Sua regex deve capturar 30 `z`s, se presentes, na string `Hazzah`.
+A regex deve capturar 30 `z`s, se presentes, na string `Hazzah`.
 
 ```js
 assert('Hazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzah'.match(haRegex)[0].length === 34);

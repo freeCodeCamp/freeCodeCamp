@@ -21,7 +21,7 @@ let duck = {
 duck.sayName();
 ```
 
-O exemplo adiciona o método `sayName`, que é uma função responsável por retornar uma frase contendo o nome do `duck`. Note que o método acessou a propriedade `name` na declaração de retorno usando `duck.name`. O próximo desafio irá mostrar outra forma de fazer isso.
+O exemplo adiciona o método `sayName`, que é uma função responsável por retornar uma frase contendo o nome do `duck`. Note que o método acessou a propriedade `name` na declaração de retorno usando `duck.name`. O próximo desafio vai mostrar outra forma de fazer isso.
 
 # --instructions--
 

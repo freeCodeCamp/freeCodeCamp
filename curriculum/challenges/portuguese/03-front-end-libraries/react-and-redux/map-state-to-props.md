@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036145
-title: Mapear State para Props
+title: Mapear state para props
 challengeType: 6
 forumTopicId: 301433
 dashedName: map-state-to-props

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036168
-title: Escreva um Componente React do Zero
+title: Escrever um componente do React do zero
 challengeType: 6
 forumTopicId: 301424
 dashedName: write-a-react-component-from-scratch
@@ -8,7 +8,7 @@ dashedName: write-a-react-component-from-scratch
 
 # --description--
 
-Agora que você aprendeu os conceitos básicos de componentes JSX e React, é hora de escrever um componente por conta própria. Componentes React são os blocos centrais de construção de aplicações React, por isso é importante se familiarizar com a escrita. Lembre-se, um componente típico React é uma classe `ES6` que estende `React.Component`. Ele possui um método de renderização que retorna HTML (a partir de JSX) ou `null`. Essa é a forma básica de um componente React. Assim que você entender bem, você estará preparado para começar a construir projetos mais complexos em React.
+Agora que você aprendeu os conceitos básicos de componentes JSX e React, é hora de escrever um componente por conta própria. Componentes do React são os blocos centrais de construção de aplicações React, por isso é importante se familiarizar com a escrita. Lembre-se, um componente típico do React é uma `class` do ES6 que estende `React.Component`. Ele possui um método de renderização que retorna HTML (a partir de JSX) ou `null`. Essa é a forma básica de um componente do React. Assim que você entender bem, você estará preparado para começar a construir projetos mais complexos em React.
 
 # --instructions--
 

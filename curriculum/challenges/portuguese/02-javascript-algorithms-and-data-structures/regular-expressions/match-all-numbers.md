@@ -18,49 +18,49 @@ Use o atalho `\d` para contar quantos dígitos existem em títulos de filmes. N�
 
 # --hints--
 
-Sua regex deve usar o atalho que captura dígitos
+A regex deve usar o atalho que captura dígitos
 
 ```js
 assert(/\\d/.test(numRegex.source));
 ```
 
-Sua regex deve usar a flag global.
+A regex deve usar a flag global.
 
 ```js
 assert(numRegex.global);
 ```
 
-Sua regex deve encontrar um dígito na string `9`.
+A regex deve encontrar um dígito na string `9`.
 
 ```js
 assert('9'.match(numRegex).length == 1);
 ```
 
-Sua regex deve encontrar dois dígitos na string `Catch 22`.
+A regex deve encontrar dois dígitos na string `Catch 22`.
 
 ```js
 assert('Catch 22'.match(numRegex).length == 2);
 ```
 
-Sua regex deve encontrar três dígitos na string `101 Dalmatians`.
+A regex deve encontrar três dígitos na string `101 Dalmatians`.
 
 ```js
 assert('101 Dalmatians'.match(numRegex).length == 3);
 ```
 
-Sua regex não deve encontrar dígito algum na string `One, Two, Three`.
+A regex não deve encontrar dígito algum na string `One, Two, Three`.
 
 ```js
 assert('One, Two, Three'.match(numRegex) == null);
 ```
 
-Sua regex deve encontrar dois dígitos na string `21 Jump Street`.
+A regex deve encontrar dois dígitos na string `21 Jump Street`.
 
 ```js
 assert('21 Jump Street'.match(numRegex).length == 2);
 ```
 
-Sua regex deve encontrar quatro dígitos na string `2001: A Space Odyssey`.
+A regex deve encontrar quatro dígitos na string `2001: A Space Odyssey`.
 
 ```js
 assert('2001: A Space Odyssey'.match(numRegex).length == 4);

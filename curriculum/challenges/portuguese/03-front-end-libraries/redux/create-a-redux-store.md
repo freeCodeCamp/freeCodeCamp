@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614b
-title: Criar um Store Redux
+title: Criar uma store do Redux
 challengeType: 6
 forumTopicId: 301439
 dashedName: create-a-redux-store
@@ -16,21 +16,21 @@ Isso também significa que, a qualquer momento que qualquer parte de seu aplicat
 
 # --instructions--
 
-O `store` do Redux é um objeto que contém e gerencia o `state` da aplicação. Há um método chamado `createStore()` no objeto do Redux, que você usa para criar o `store` do Redux. Este método recebe uma função `reducer` como um argumento necessário. A função `reducer` é coberta em um desafio posterior, e já está definida para você no editor de código. Ele simplesmente recebe o `state` como um argumento e retorna o `state`.
+O `store` do Redux é um objeto que contém e gerencia o `state` da aplicação. Há um método chamado `createStore()` no objeto do Redux, que você usa para criar a `store` do Redux. Este método recebe uma função `reducer` como um argumento necessário. A função `reducer` é coberta em um desafio posterior, e já está definida para você no editor de código. Ele simplesmente recebe o `state` como um argumento e retorna o `state`.
 
 Declare uma variável `store` e atribua-a ao método `createStore()`, passando no `reducer` como argumento.
 
-**Observação:** o código no editor usa a sintaxe de argumento padrão ES6 para inicializar este estado para ter um valor de `5`. Se você não está familiarizado com os argumentos padrão, você pode se referir [ à seção ES6 no Curriculum](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions) que aborda este tópico.
+**Observação:** o código no editor usa a sintaxe de argumento padrão ES6 para inicializar este estado para ter um valor de `5`. Se você não está familiarizado com os argumentos padrão, você pode se referir [ à seção sobre ES6 do currículo](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions) que aborda este tópico.
 
 # --hints--
 
-O store (armazenamento) Redux deve existir.
+A store do Redux deve existir.
 
 ```js
 assert(typeof store.getState === 'function');
 ```
 
-O armazenamento do Redux deve ter um valor de 5 para o estado.
+A store do Redux deve ter um valor de 5 para o estado.
 
 ```js
 assert(store.getState() === 5);

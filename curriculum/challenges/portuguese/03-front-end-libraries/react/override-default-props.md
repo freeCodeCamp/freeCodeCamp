@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616c
-title: Sobrescrever Props Padrão
+title: Sobrescrever props padrão
 challengeType: 6
 forumTopicId: 301399
 dashedName: override-default-props
@@ -8,11 +8,11 @@ dashedName: override-default-props
 
 # --description--
 
-A habilidade de definir props padrões é um recurso útil em React. A maneira de substituir as props padrões é definindo explicitamente os valores das propriedades para um componente.
+A habilidade de definir props padrão é um recurso útil em React. A maneira de substituir as props padrão é definindo explicitamente os valores das propriedades para um componente.
 
 # --instructions--
 
-O componente `ShoppingCart` agora renderiza um componente filho `Itens`. Este componente `Items` tem uma prop padrão `quantity` definida como o número inteiro `0`. Substitua a prop padrão passando o valor de `10` para `quantity`.
+O componente `ShoppingCart` agora renderiza um componente filho `Items`. Este componente `Items` tem uma prop padrão `quantity` definida como o número inteiro `0`. Substitua a prop padrão passando o valor de `10` para `quantity`.
 
 **Observação:** lembre-se de que a sintaxe para adicionar uma prop a um componente fica semelhante à forma como você adiciona atributos HTML. No entanto, uma vez que o valor para `quantity` é um número inteiro, ele não vai entre aspas mas deve estar entre chaves. Por exemplo, `{100}`. Esta sintaxe diz para JSX interpretar o valor entre chaves diretamente como JavaScript.
 

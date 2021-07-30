@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c47
-title: Test if a Variable or Function is Defined
+title: Testar se uma variável ou função é definida
 challengeType: 2
 forumTopicId: 301602
 dashedName: test-if-a-variable-or-function-is-defined
@@ -8,15 +8,15 @@ dashedName: test-if-a-variable-or-function-is-defined
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#2` in the `Basic Assertions` suite, change each `assert` to either `assert.isDefined()` or `assert.isUndefined()` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Em `tests/1_unit-tests.js`, no teste classificado como `#2` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isDefined()` ou para `assert.isUndefined()`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 
-All tests should pass.
+Todos os testes devem passar.
 
 ```js
 (getUserInput) =>
@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isDefined` vs. `isUndefined`.
+Você deve escolher o método correto para a primeira afirmação - `isDefined` ou `isUndefined`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isDefined` vs. `
   );
 ```
 
-You should choose the correct method for the second assertion - `isDefined` vs. `isUndefined`.
+Você deve escolher o método correto para segunda afirmação - `isDefined` ou `isUndefined`.
 
 ```js
 (getUserInput) =>
@@ -66,7 +66,7 @@ You should choose the correct method for the second assertion - `isDefined` vs. 
   );
 ```
 
-You should choose the correct method for the third assertion - `isDefined` vs. `isUndefined`.
+Você deve escolher o método correto para a terceira afirmação - `isDefined` ou `isUndefined`.
 
 ```js
 (getUserInput) =>

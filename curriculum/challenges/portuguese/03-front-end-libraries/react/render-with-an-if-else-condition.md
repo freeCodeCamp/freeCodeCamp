@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036184
-title: Renderizar com uma condição If-Else
+title: Renderizar com uma condição if-else
 challengeType: 6
 forumTopicId: 301410
 dashedName: render-with-an-if-else-condition

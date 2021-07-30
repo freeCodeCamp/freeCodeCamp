@@ -8,7 +8,7 @@ dashedName: understand-the-constructor-property
 
 # --description--
 
-Tem uma propriedade especial do `construtor` localizada nas instâncias dos objetos `duck` e `beagle` que foram criados nos desafios anteriores:
+Tem uma propriedade especial do `constructor` localizada nas instâncias dos objetos `duck` e `beagle` que foram criados nos desafios anteriores:
 
 ```js
 let duck = new Bird();
@@ -20,7 +20,7 @@ console.log(beagle.constructor === Dog);
 
 Ambas as chamadas a `console.log` vão exibir `true` no console.
 
-Note que a propriedade `construtor` é uma referência a função construtora que criou a instância. A vantagem da propriedade `construtor` é que se torna possível verificar essa propriedade para descobrir qual o tipo do objeto. Aqui está um exemplo de como isso poderia ser utilizado:
+Note que a propriedade `constructor` é uma referência a função construtora que criou a instância. A vantagem da propriedade `constructor` é que se torna possível verificar essa propriedade para descobrir qual o tipo do objeto. Aqui está um exemplo de como isso poderia ser utilizado:
 
 ```js
 function joinBirdFraternity(candidate) {
@@ -32,11 +32,11 @@ function joinBirdFraternity(candidate) {
 }
 ```
 
-**Note:** Desde que a propriedade `construtor` pode ser sobrescrita (o que será abordado nos próximos dois desafios), geralmente é melhor utilizar o método `instanceof` para verificar o tipo de um objeto.
+**Observação:** já que a propriedade `constructor` pode ser sobrescrita (o que será abordado nos próximos dois desafios), geralmente é melhor utilizar o método `instanceof` para verificar o tipo de um objeto.
 
 # --instructions--
 
-Escreva a função `joinDogFraternity` que recebe o parâmetro `candidate` e, utilizando a propriedade `construtora`, retorne `true` se o candidato é um `Dog`, e caso não seja, retorne `false`.
+Escreva a função `joinDogFraternity` que recebe o parâmetro `candidate` e, utilizando a propriedade `constructor`, retorne `true` se o candidato é um `Dog`, e caso não seja, retorne `false`.
 
 # --hints--
 

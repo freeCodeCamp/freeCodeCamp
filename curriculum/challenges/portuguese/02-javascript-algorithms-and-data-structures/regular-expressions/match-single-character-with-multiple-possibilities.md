@@ -60,7 +60,7 @@ Você deve usar a flag de ignorar caixa na sua regex `vowelRegex`.
 assert(vowelRegex.flags.match(/i/).length == 1);
 ```
 
-Sua regex não deve encontrar nenhuma consoante.
+A regex não deve encontrar nenhuma consoante.
 
 ```js
 assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()));

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aeda08726
-title: Exclua Suas Funções jQuery
+title: Excluir suas funções do jQuery
 challengeType: 6
 forumTopicId: 17561
 required:
@@ -13,23 +13,23 @@ dashedName: delete-your-jquery-functions
 
 Esses animações eram legais no início, mas agora elas estão causando distração.
 
-Remova todas as três funções jQuery do seu `document ready function`, mas deixe seu `document ready function` intacto.
+Remova todas as três funções do jQuery do `document ready function`, mas deixe o `document ready function` intacto.
 
 # --hints--
 
-Todas as suas três funções jQuery devem ser excluídas do seu `document ready function`.
+As três funções do jQuery devem ser excluídas do `document ready function`.
 
 ```js
 assert(code.match(/\{\s*\}\);/g));
 ```
 
-Você deve deixar seu elemento `script` intacto.
+Você deve deixar o elemento `script` intacto.
 
 ```js
 assert(code.match(/<script>/g));
 ```
 
-Você deve deixar o seu `$(document).ready(function() {` no início do seu elemento `script`.
+Você deve deixar o `$(document).ready(function() {` no início do seu elemento `script`.
 
 ```js
 assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
@@ -41,7 +41,7 @@ Você deve deixar intacto o fechamento `});` da função `document.ready`.
 assert(code.match(/.*\s*\}\);/g));
 ```
 
-Você deve deixar a tag de fechamento do elemento `script` intacto.
+Você deve deixar a tag de fechamento do elemento `script` intacta.
 
 ```js
 assert(

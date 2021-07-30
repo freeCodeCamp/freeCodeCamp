@@ -17,7 +17,7 @@ cities.splice(3, 1);
 
 Aqui `splice` retorna a string `London` e a remove do array cities. `cities` terá o valor `["Chicago", "Delhi", "Islamabad", "Berlin"]`.
 
-Como vimos no último desafio, o método `slice` não altera o array original; ele retorna um novo array que pode ser armazenado em uma variável. Lembre-se que o método `slice` toma dois argumentos para os índices de início e fim e retorna um array com os elementos presentes entre esses índices (o índice de fim é não-inclusivo). Usar o método `slice` em vez do `splice` ajuda a evitar alterações em arrays e, portanto, efeitos colaterais.
+Como vimos no último desafio, o método `slice` não altera o array original; ele retorna um novo array que pode ser armazenado em uma variável. Lembre-se de que o método `slice` toma dois argumentos para os índices de início e fim e retorna um array com os elementos presentes entre esses índices (o índice de fim é não-inclusivo). Usar o método `slice` em vez do `splice` ajuda a evitar alterações em arrays e, portanto, efeitos colaterais.
 
 # --instructions--
 

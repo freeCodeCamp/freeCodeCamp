@@ -1,6 +1,6 @@
 ---
 id: aaa48de84e1ecc7c742e1124
-title: Verificador de Palíndromo
+title: Verificador de palíndromo
 challengeType: 5
 forumTopicId: 16004
 dashedName: palindrome-checker

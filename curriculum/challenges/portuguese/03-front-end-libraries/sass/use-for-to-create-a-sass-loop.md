@@ -1,6 +1,6 @@
 ---
 id: 587d7dbe367417b2b2512bb9
-title: Use @for para Criar um Laço Sass
+title: Use @for para criar um laço em Sass
 challengeType: 0
 forumTopicId: 301462
 dashedName: use-for-to-create-a-sass-loop
@@ -48,37 +48,37 @@ Isso deve criar 5 classes chamadas `.text-1` até `.text-5` onde cada um tem um 
 
 # --hints--
 
-Seu código deve usar a diretiva `@for`.
+O código deve usar a diretiva `@for`.
 
 ```js
 assert(code.match(/@for /g));
 ```
 
-Sua classe `.text-1` deve ter um `font-size` de `15px`.
+A classe `.text-1` deve ter um `font-size` de 15px.
 
 ```js
 assert($('.text-1').css('font-size') == '15px');
 ```
 
-Sua classe `.text-2` deve ter um `font-size` de `15px`.
+A classe `.text-2` deve ter um `font-size` de 30px.
 
 ```js
 assert($('.text-2').css('font-size') == '30px');
 ```
 
-Sua classe `.text-3` deve ter um `font-size` de `15px`.
+A classe `.text-3` deve ter um `font-size` de 45px.
 
 ```js
 assert($('.text-3').css('font-size') == '45px');
 ```
 
-Sua classe `.text-4` deve ter um `font-size` de `15px`.
+A classe `.text-4` deve ter um `font-size` de 60px.
 
 ```js
 assert($('.text-4').css('font-size') == '60px');
 ```
 
-Sua classe `.text-5` deve ter um `font-size` de `15px`.
+A classe `.text-5` deve ter um `font-size` de 75px.
 
 ```js
 assert($('.text-5').css('font-size') == '75px');

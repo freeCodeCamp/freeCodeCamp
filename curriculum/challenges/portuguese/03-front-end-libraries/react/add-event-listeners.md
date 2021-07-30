@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617e
-title: Adicionar Ouvintes de Evento
+title: Adicionar listeners de evento
 challengeType: 6
 forumTopicId: 301377
 dashedName: add-event-listeners
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Um ouvinte de `keydown` deve ser anexado ao documento em `componentDidMount`.
+Um listener de `keydown` deve ser anexado ao documento em `componentDidMount`.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-O ouvinte de `keydown` deve ser removido do documento em `componentWillUnmount`.
+O listener de `keydown` deve ser removido do documento em `componentWillUnmount`.
 
 ```js
 assert(

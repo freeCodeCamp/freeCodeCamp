@@ -22,7 +22,7 @@ console.log(arr);
 
 O console exibiria os valores `1, 2` e `[3, 4, 5, 7]`.
 
-As variáveis `a` e `b` pegam o primeiro e o segundo valores do array. Após isso, por causa da presença do parâmetro rest, `arr` pega o resto dos valores na forma de um array. O elemento rest só funciona corretamente como a última variável na lista. Como em, você não pode usar o parâmetro rest para capturar um subarray que deixa de fora o último elemento do array original.
+As variáveis `a` e `b` pegam o primeiro e o segundo valores do array. Depois disso, por causa da presença do parâmetro rest, `arr` pega o resto dos valores na forma de um array. O elemento rest só funciona corretamente como a última variável na lista. De momento, você não pode usar o parâmetro rest para capturar um sub-array que deixa de fora o último elemento do array original.
 
 # --instructions--
 

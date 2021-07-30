@@ -29,7 +29,7 @@ noquit.match(qRegex);
 
 As duas chamadas a `match` retornam `["q"]`.
 
-Validar dois padrões diferentes em uma string é considerado um uso mais prático de lookaheads. Neste não-tão-aprimorado validador de senhas, os lookaheads procuram por 3 a 6 caracteres e pelo menos um número, respectivamente, na string:
+Validar dois padrões diferentes em uma string é considerado um uso mais prático de lookaheads. Neste não tão aprimorado validador de senhas, os lookaheads procuram por 3 a 6 caracteres e pelo menos um número, respectivamente, na string:
 
 ```js
 let password = "abc123";
@@ -43,55 +43,55 @@ Faça com que `pwRegex` capture senhas que têm 5 ou mais caracteres e dois díg
 
 # --hints--
 
-Sua regex deve usar dois `lookaheads` positivos.
+A regex deve usar dois `lookaheads` positivos.
 
 ```js
 assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null);
 ```
 
-Sua regex não deve encontrar a string `astronaut`
+A regex não deve encontrar a string `astronaut`
 
 ```js
 assert(!pwRegex.test('astronaut'));
 ```
 
-Sua regex não deve encontrar a string `banan1`
+A regex não deve encontrar a string `banan1`
 
 ```js
 assert(!pwRegex.test('banan1'));
 ```
 
-Sua regex deve encontrar a string `bana12`
+A regex deve encontrar a string `bana12`
 
 ```js
 assert(pwRegex.test('bana12'));
 ```
 
-Sua regex deve encontrar a string `abc123`
+A regex deve encontrar a string `abc123`
 
 ```js
 assert(pwRegex.test('abc123'));
 ```
 
-Sua regex não deve encontrar a string `12345`
+A regex não deve encontrar a string `12345`
 
 ```js
 assert(!pwRegex.test('12345'));
 ```
 
-Sua regex deve encontrar a string `8pass99`
+A regex deve encontrar a string `8pass99`
 
 ```js
 assert(pwRegex.test('8pass99'));
 ```
 
-Sua regex não deve encontrar a string `1a2bcde`
+A regex não deve encontrar a string `1a2bcde`
 
 ```js
 assert(!pwRegex.test('1a2bcde'));
 ```
 
-Sua regex deve encontrar a string `astr1on11aut`
+A regex deve encontrar a string `astr1on11aut`
 
 ```js
 assert(pwRegex.test('astr1on11aut'));

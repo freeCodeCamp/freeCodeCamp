@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedc08826
-title: Elementos Alvo por Classe Usando jQuery
+title: Mirar elementos por classe usando o jQuery
 challengeType: 6
 forumTopicId: 18316
 required:

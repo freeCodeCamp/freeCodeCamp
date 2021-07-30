@@ -40,7 +40,7 @@ Você deve usar `.replace()` para buscar e substituir.
 assert(code.match(/\.replace\(.*\)/));
 ```
 
-Sua regex deve mudar a string `one two three` para `three two one`
+A regex deve mudar a string `one two three` para `three two one`
 
 ```js
 assert(result === 'three two one');

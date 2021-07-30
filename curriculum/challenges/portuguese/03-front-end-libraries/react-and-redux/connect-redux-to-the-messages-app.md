@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036148
-title: Conecte o Redux ao App de Mensagens
+title: Conectar o Redux ao app de mensagens
 challengeType: 6
 forumTopicId: 301427
 dashedName: connect-redux-to-the-messages-app
@@ -14,7 +14,7 @@ Na última lição, o componente que você conectou ao Redux foi nomeado `Presen
 
 # --instructions--
 
-O editor de código tem todo o código que você escreveu nesta seção até agora. A única alteração é que o componente React é renomeado para `Presentational`. Crie um novo componente mantido em uma constante chamada `Container` que usa `connect` para conectar o componente `Presentational` ao Redux. Em seguida, no `AppWrapper`, renderize o componente `Provider` do Redux React. Passe `Provider` ao `store` do Redux como prop e renderize `Container` como filho. Assim que tudo estiver pronto, você verá as mensagens do app renderizados na página novamente.
+O editor de código tem todo o código que você escreveu nesta seção até agora. A única alteração é que o componente React é renomeado para `Presentational`. Crie um novo componente mantido em uma constante chamada `Container` que usa `connect` para conectar o componente `Presentational` ao Redux. Em seguida, no `AppWrapper`, renderize o componente `Provider` do Redux React. Passe `Provider` ao `store` do Redux como prop e renderize `Container` como filho. Assim que tudo estiver pronto, você verá as mensagens do app renderizadas na página novamente.
 
 # --hints--
 

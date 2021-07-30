@@ -10,7 +10,7 @@ dashedName: compare-scopes-of-the-var-and-let-keywords
 
 Quando você declara uma variável com a palavra-chave `var`, ela é declarada globalmente, ou localmente se declarada dentro de uma função.
 
-A palvara-chave `let` se comporta de forma similar, mas com alguns recursos extras. Quando você declara a variável com a palavra-chave `let` dentro de um bloco, declaração, ou expressão, seu escopo é limitado ao bloco, declaração, ou expressão.
+A palavra-chave `let` se comporta de forma similar, mas com alguns recursos extras. Quando você declara a variável com a palavra-chave `let` dentro de um bloco, declaração, ou expressão, seu escopo é limitado ao bloco, declaração, ou expressão.
 
 Por exemplo:
 
@@ -70,15 +70,15 @@ console.log(printNumTwo());
 console.log(i);
 ```
 
-Aqui o console vai exibir o valor `2`, e um erro que `i is not defined` (i não foi definido).
+Aqui o console vai exibir o valor `2`, e um erro que `i is not defined` (i não foi definida).
 
-`i` não foi definido porque não foi declarado no escopo global. É declarado apenas dentro da declaração do laço `for`. `printNumTwo()` retornou o valor correto porque três variáveis `i` distintas com valores únicos (0, 1 e 2) foram criados com a palavra-chave `let` dentro da declaração do laço.
+`i` não foi definida porque não foi declarada no escopo global. Ela é declarada apenas dentro da declaração do laço `for`. `printNumTwo()` retornou o valor correto porque três variáveis `i` distintas com valores únicos (0, 1 e 2) foram criadas com a palavra-chave `let` dentro da declaração do laço.
 
 # --instructions--
 
-Corrija o código para que `i` declarado dentro do comando `if` seja uma variável diferente de `i` declarada na primeira linha da função. Tenha certeza de não usar a palavra-chave `var` em nenhum lugar do seu código.
+Corrija o código para que a variável `i` declarada dentro do comando `if` seja diferente da variável `i` declarada na primeira linha da função. Tenha certeza de não usar a palavra-chave `var` em nenhum lugar do seu código.
 
-Este exercício foi projetado para ilustrar a diferença ente como as palavras-chaves `var` e `let` definem o escopo para a variável declarada. Quando programamos uma função semelhar a aquelas utilizadas no exercício, geralmente é melhor utilizar variáveis distintas para evitar confusão.
+Este exercício foi projetado para ilustrar a diferença ente como as palavras-chaves `var` e `let` definem o escopo para a variável declarada. Quando programamos uma função semelhante a aquelas utilizadas no exercício, geralmente, é melhor utilizar variáveis distintas para evitar confusão.
 
 # --hints--
 

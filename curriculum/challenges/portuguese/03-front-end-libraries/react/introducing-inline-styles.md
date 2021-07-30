@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036181
-title: Introduzindo Estilos Em linha
+title: Introduzir estilos em linha
 challengeType: 6
 forumTopicId: 301395
 dashedName: introducing-inline-styles
@@ -10,9 +10,9 @@ dashedName: introducing-inline-styles
 
 Existem outros conceitos complexos que adicionam recursos poderosos ao seu código React. Mas você pode estar se perguntando sobre o problema mais simples de como estilizar esses elementos JSX que você cria em React. Você provavelmente sabe que não será exatamente o mesmo que trabalhar com HTML por causa [da forma como aplica classes aos elementos JSX](/learn/front-end-libraries/react/define-an-html-class-in-jsx).
 
-Se você importar estilos de uma folha de estilos, não é muito diferente de jeito nenhum. Você aplica uma classe ao seu elemento JSX usando o atributo `className` e aplica estilos à classe em sua folha de estilos. Outra opção é aplicar estilos em linha, que são muito comuns no desenvolvimento de ReactJS.
+Se você importar estilos de uma folha de estilos, não é muito diferente. Você aplica uma classe ao seu elemento JSX usando o atributo `className` e aplica estilos à classe em sua folha de estilos. Outra opção é aplicar estilos em linha, que são muito comuns no desenvolvimento de ReactJS.
 
-Você aplica estilos em linha em elementos JSX similares a como você faz isso em HTML, mas com algumas diferenças em JSX. Aqui está um exemplo de estilo embutido em HTML:
+Você aplica estilos em linha em elementos JSX similares a como você faz isso em HTML, mas com algumas diferenças em JSX. Aqui está um exemplo de estilo integrado em HTML:
 
 ```jsx
 <div style="color: yellow; font-size: 16px">Mellow Yellow</div>
@@ -24,7 +24,7 @@ Elementos JSX usam o atributo `style`, mas por causa da forma como o JSX é tran
 <div style={{color: "yellow", fontSize: 16}}>Mellow Yellow</div>
 ```
 
-Percebeu como colocamos em camelCase a propriedade `fontSize`? Isso é porque o React não aceitará chaves de caso kebab, no objeto de estilo. React aplicará o nome de propriedade correto para nós no HTML.
+Percebeu como colocamos em camelCase a propriedade `fontSize`? Isso é porque o React não aceitará chaves hifenizadas (em kebab-case) no objeto de estilo. React aplicará o nome de propriedade correto para nós no HTML.
 
 # --instructions--
 

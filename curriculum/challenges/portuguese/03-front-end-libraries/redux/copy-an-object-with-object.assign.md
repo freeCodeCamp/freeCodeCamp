@@ -8,7 +8,7 @@ dashedName: copy-an-object-with-object-assign
 
 # --description--
 
-Os últimos desafios funcionaram com matrizes, mas também existem maneiras de ajudar a impor a imutabilidade do state quando o state for um `object`. Uma ferramenta útil para lidar com objetos é o `Object.assign()`. `Object.assign()` recebe um objeto alvo e objetos fonte e mapeia propriedades dos objetos de origem para o objeto alvo. Qualquer propriedades correspondentes são substituídas por propriedades nos objetos de origem. Esse comportamento é comumente usado para fazer cópias rasas de objetos, passando um objeto vazio como o primeiro argumento seguido do(s) objeto(s) que você deseja copiar. Exemplo:
+Os últimos desafios funcionaram com arrays, mas também existem maneiras de ajudar a impor a imutabilidade do state quando o state for um `object`. Uma ferramenta útil para lidar com objetos é o `Object.assign()`. `Object.assign()` recebe um objeto alvo e objetos fonte e mapeia propriedades dos objetos de origem para o objeto alvo. Qualquer propriedades correspondentes são substituídas por propriedades nos objetos de origem. Esse comportamento é comumente usado para fazer cópias rasas de objetos, passando um objeto vazio como o primeiro argumento seguido do(s) objeto(s) que você deseja copiar. Exemplo:
 
 ```js
 const newObject = Object.assign({}, obj1, obj2);
@@ -22,7 +22,7 @@ O estado e ações do Redux foram modificados para manipular um `object` para o 
 
 # --hints--
 
-O store do Redux deve existir e inicializar com um estado equivalente ao objeto `defaultState` declarado na linha 1.
+A store do Redux deve existir e inicializar com um estado equivalente ao objeto `defaultState` declarado na linha 1.
 
 ```js
 assert(
@@ -39,13 +39,13 @@ assert(
 );
 ```
 
-`wakeUp` e `immutableReducer` ambas devem ser funções.
+`wakeUp` e `immutableReducer` devem ser funções.
 
 ```js
 assert(typeof wakeUp === 'function' && typeof immutableReducer === 'function');
 ```
 
-Despachando uma ação do tipo `ONLINE` deve atualizar a propriedade `status` no estado para `online` e NÃO deve alterar o estado.
+Despachar uma ação do tipo `ONLINE` deve atualizar a propriedade `status` no estado para `online` e NÃO deve alterar o estado.
 
 ```js
 assert(

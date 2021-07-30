@@ -8,7 +8,7 @@ dashedName: set-state-with-this-setstate
 
 # --description--
 
-Os desafios anteriores abordaram `state` de componente e como inicializar state no `constructor`. Há também uma maneira de alterar o `state` do componente. React fornece um método para atualizar o componente `state` chamado `setState`. Você chama o método `setState` dentro da sua classe de componente assim: `this.setState()`, passando como parâmetro um objeto com pares de valor chave. As chaves são suas propriedades do estado e os valores são dados do estado atualizados. Por exemplo, se armazenássemos um `username` em state e quiséssemos atualizá-lo, ficaria assim:
+Os desafios anteriores abordaram o `state` dos componentes e como inicializar state no `constructor`. Há também uma maneira de alterar o `state` do componente. React fornece um método para atualizar o componente `state` chamado `setState`. Você chama o método `setState` dentro da sua classe de componente assim: `this.setState()`, passando como parâmetro um objeto com pares de valor chave. As chaves são suas propriedades do estado e os valores são dados do estado atualizados. Por exemplo, se armazenássemos um `username` em state e quiséssemos atualizá-lo, ficaria assim:
 
 ```jsx
 this.setState({
@@ -16,13 +16,13 @@ this.setState({
 });
 ```
 
-React espera que você nunca modifique o `state` diretamente, em vez disso sempre use `this.setState()` quando as mudanças de estado ocorrerem. Além disso, você deve notar que React pode agrupar várias atualizações de estado para melhorar o desempenho. Isso significa que atualizações de estado através do método `setState` podem ser assíncronas. Existe uma sintaxe alternativa para o método `setState` que fornece uma forma de contornar esse problema. Isso raramente é necessário, mas é bom ter isso em mente! Por favor, consulte a [documentação do React](https://facebook.github.io/react/docs/state-and-lifecycle.html) para mais detalhes.
+React espera que você nunca modifique o `state` diretamente, em vez disso sempre use `this.setState()` quando as mudanças de estado ocorrerem. Além disso, você deve notar que React pode agrupar várias atualizações de estado para melhorar o desempenho. Isso significa que atualizações de estado através do método `setState` podem ser assíncronas. Existe uma sintaxe alternativa para o método `setState` que fornece uma forma de contornar esse problema. Isso raramente é necessário, mas é bom ter isso em mente! Consulte a [documentação do React](https://facebook.github.io/react/docs/state-and-lifecycle.html) para saber mais detalhes.
 
 # --instructions--
 
 Há um elemento`button` no editor de código que tem um manipulador `onClick()`. Este manipulador é acionado quando o `button` recebe um evento de clique no navegador e executa o método `handleClick` definido no `MyComponent`. Dentro do método `handleClick`, atualize o componente `state` usando `this.setState()`. Defina a propriedade `name` no `state` para ser igual à string `React Rocks!`.
 
-Clique no botão e veja a atualização do estado renderizado. Não se preocupe se você não entender completamente como o código do manipulador de cliques funciona neste momento. Será abordado nos desafios futuros.
+Clique no botão e veja a atualização do estado renderizado. Não se preocupe se você não entender completamente como o código do manipulador de cliques funciona neste momento. Isso será tratado nos desafios futuros.
 
 # --hints--
 

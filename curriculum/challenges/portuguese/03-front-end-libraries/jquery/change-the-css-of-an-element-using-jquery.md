@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed908826
-title: Altere o CSS de um Elemento Usando JQuery
+title: Alterar o CSS de um elemento usando o jQuery
 challengeType: 6
 forumTopicId: 16776
 required:
@@ -13,7 +13,7 @@ dashedName: change-the-css-of-an-element-using-jquery
 
 Nós podemos também alterar o CSS de um elemento HTML diretamente com JQuery.
 
-JQuery possui uma função chamada `.css()` que o permite alterar o CSS de um elemento.
+O jQuery possui uma função chamada `.css()` que o permite alterar o CSS de um elemento.
 
 Aqui está como mudaríamos sua cor para azul:
 
@@ -21,9 +21,9 @@ Aqui está como mudaríamos sua cor para azul:
 $("#target1").css("color", "blue");
 ```
 
-Isso é vagarosamente diferente de uma declaração normal de CSS, porque a propriedade CSS e o seu valor estão entre aspas e separada com vírgula ao invés de ponto e vírgula.
+Isso é um pouco diferente de uma declaração normal de CSS, porque a propriedade CSS e o seu valor estão entre aspas e separada com vírgula ao invés de ponto e vírgula.
 
-Remova seus seletores JQuery, deixando um `$(document).ready(function()` vazio.
+Remova seus seletores de jQuery, deixando uma `document ready function` vazia.
 
 Selecione `target1` e altere sua cor para vermelho.
 
@@ -35,7 +35,7 @@ Seu elemento `target1` deve ter o texto vermelho.
 assert($('#target1').css('color') === 'rgb(255, 0, 0)');
 ```
 
-Você deve usar apenas JQuery para adicionar essas classes ao elemento.
+Você deve usar apenas jQuery para adicionar essas classes ao elemento.
 
 ```js
 assert(!code.match(/class.*animated/g));

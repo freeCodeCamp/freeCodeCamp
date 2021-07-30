@@ -8,9 +8,9 @@ dashedName: use-a-mixin-to-add-common-behavior-between-unrelated-objects
 
 # --description--
 
-Como você já viu, comportamento é compartilhado através de herança. Porém, existem casos em que a herança não é a melhor solução. Herança não funciona muito bem para objetos não-relacionados como `Bird` e `Airplane`. Ambos podem voar, mas um `Bird` não é um tipo de `Airplane` e vice versa.
+Como você já viu, comportamento é compartilhado através de herança. Porém, existem casos em que a herança não é a melhor solução. Herança não funciona muito bem para objetos não-relacionados como `Bird` e `Airplane`. Ambos podem voar, mas um `Bird` não é um tipo de `Airplane` e vice-versa.
 
-Para objetos não-relacionados, é melhor usar <dfn>mixins</dfn>. Um mixin permite outros objetos para utilizar uma coleção de funções.
+Para objetos não relacionados, é melhor usar <dfn>mixins</dfn>. Um mixin permite outros objetos para utilizar uma coleção de funções.
 
 ```js
 let flyMixin = function(obj) {
@@ -54,19 +54,19 @@ Crie um mixin chamado `glideMixin` que define o método chamado `glide`. Em segu
 
 # --hints--
 
-Seu código deve declarar a variável `glideMixin`, a qual é uma função.
+O código deve declarar a variável `glideMixin`, a qual é uma função.
 
 ```js
 assert(typeof glideMixin === 'function');
 ```
 
-Seu código deve utilizar o `glideMixin` no objeto `bird` para dar ao objeto o método `glide`.
+O código deve utilizar o `glideMixin` no objeto `bird` para dar ao objeto o método `glide`.
 
 ```js
 assert(typeof bird.glide === 'function');
 ```
 
-Seu código deve utilizar `glideMixin` no objeto `boat` para dar ao objeto o método `glide`.
+O código deve utilizar `glideMixin` no objeto `boat` para dar ao objeto o método `glide`.
 
 ```js
 assert(typeof boat.glide === 'function');

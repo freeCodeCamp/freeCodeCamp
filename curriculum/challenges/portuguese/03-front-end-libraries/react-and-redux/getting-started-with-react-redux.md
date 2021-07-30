@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036141
-title: Primeiros Passos com Redux React
+title: Primeiros passos com React Redux
 challengeType: 6
 forumTopicId: 301430
 dashedName: getting-started-with-react-redux
@@ -8,11 +8,11 @@ dashedName: getting-started-with-react-redux
 
 # --description--
 
-Essa série de desafio introduz como usar o Redux com React. Primeiro, aqui está uma revisão de alguns princípios chaves de cada tecnologia. React é uma biblioteca de visualização que você fornece dados, e então ele renderiza a visualização de uma forma eficiente e previsível. Redux é um framework de gerenciamento de estado que você usa para simplificar o gerenciamento do estado da sua aplicação. Tipicamente, em uma aplicação Redux React, você cria um único store Redux que gerencia o estado de todo o seu app. Seus componentes React inscrevem-se apenas aos pedaços de dados no store que são relevantes para suas responsabilidades. Em seguida, você despacha ações diretamente de componentes React, o que então aciona a atualização do store.
+Essa série de desafios introduz como usar o Redux com React. Primeiro, aqui está uma revisão de alguns princípios chaves de cada tecnologia. React é uma biblioteca de visualização que você fornece dados, e então ele renderiza a visualização de uma forma eficiente e previsível. Redux é um framework de gerenciamento de estado que você usa para simplificar o gerenciamento do estado da sua aplicação. Tipicamente, em uma aplicação React Redux, você cria um único store Redux que gerencia o estado de todo o seu app. Seus componentes React inscrevem-se apenas aos pedaços de dados no store que são relevantes para suas responsabilidades. Em seguida, você despacha ações diretamente de componentes React, o que então aciona a atualização do store.
 
-Embora componentes React podem gerenciar seus próprios estados localmente, quando você tem um app complexo, geralmente é melhor manter o estado do app em um único lugar com Redux. Existem exceções quando componentes individuais podem ter um estado local específico apenas para eles. Finalmente, como o redux não é projetado para trabalhar com o React puro, você precisa usar o pacote `react-redux`. Ele fornece uma forma de você passar o `state` e `dispatch` do Redux para seus componentes React como `props`.
+Embora componentes React podem gerenciar seus próprios estados localmente, quando você tem um app complexo, geralmente é melhor manter o estado do app em um único lugar com Redux. Existem exceções quando componentes individuais podem ter um estado local específico apenas para eles. Finalmente, como o Redux não é projetado para trabalhar com o React puro, você precisa usar o pacote `react-redux`. Ele fornece uma forma de você passar o `state` e `dispatch` do Redux para seus componentes React como `props`.
 
-Ao longo dos próximos desafios, primeiro, você criará um componente React simples que lhe permite inserir novas mensagens de texto. Estes são adicionados a um array que é exibido na exibição. Essa deve ser uma boa revisão do que você aprendeu nas lições do React. Em seguida, você vai criar um store e ações do Redux que gerenciam o estado do array de mensagens. Finalmente, você usará `react-redux` para conectar o store do Redux com seu componente, deste modo extraindo o state local para o store Redux.
+Ao longo dos próximos desafios, primeiro, você criará um componente React simples que lhe permite inserir novas mensagens de texto. Estas mensagens são adicionadas a um array que é exibido na exibição. Essa deve ser uma boa revisão do que você aprendeu nas lições do React. Em seguida, você vai criar uma store e ações do Redux que gerenciam o estado do array de mensagens. Finalmente, você usará `react-redux` para conectar a store do Redux com seu componente, deste modo extraindo o state local para a store do Redux.
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618b
-title: Dê aos Elementos Irmãos um Atributo Chave Único
+title: Dar aos elementos irmãos um atributo chave único
 challengeType: 6
 forumTopicId: 301394
 dashedName: give-sibling-elements-a-unique-key-attribute
@@ -14,13 +14,13 @@ O último desafio mostrou como o método `map` é usado para renderizar dinamica
 
 # --instructions--
 
-O editor de código tem uma array com alguns frameworks front-end e um componente funcional sem estado chamado `Frameworks()`. `Frameworks()` precisa mapear a matriz para uma lista não ordenada, assim como no último desafio. Finalize a escrita do callback `map` para retornar um elemento `li` para cada framework no array `frontEndFrameworks`. Desta vez, certifique-se de dar a cada `li` um atributo `key`, definido como um valor único. Os elementos `li` também devem conter o texto do `frontEndFrameworks`.
+O editor de código tem uma array com alguns frameworks front-end e um componente funcional sem estado chamado `Frameworks()`. `Frameworks()` precisa mapear a matriz para uma lista não ordenada, assim como no último desafio. Finalize a escrita da função de callback de `map` para retornar um elemento `li` para cada framework no array `frontEndFrameworks`. Desta vez, certifique-se de dar a cada `li` um atributo `key`, definido como um valor único. Os elementos `li` também devem conter o texto do `frontEndFrameworks`.
 
 Normalmente, você quer tornar a chave algo que identifica de forma única o elemento que está a ser renderizado. Como um último recurso, o índice da matriz pode ser usado, mas normalmente você deve tentar usar uma identificação exclusiva.
 
 # --hints--
 
-O componente `Frameworks` deve existir e renderizar à página.
+O componente `Frameworks` deve existir e renderizar a página.
 
 ```js
 assert(

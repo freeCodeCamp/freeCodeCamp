@@ -8,9 +8,9 @@ dashedName: add-methods-after-inheritance
 
 # --description--
 
-Uma função construtora, ou simplesmente construtor, que herda seu objeto de `protótipo` de uma função construtora de supertipo, além dos métodos herdados, ainda poderá ter seus próprios métodos.
+Uma função construtora, ou simplesmente construtor, que herda seu objeto de `prototype` de uma função construtora de supertipo, além dos métodos herdados, ainda poderá ter seus próprios métodos.
 
-Por exemplo, `Bird` é um construtor que herda seu `protótipo` de `Animal`:
+Por exemplo, `Bird` é um construtor que herda seu `prototype` de `Animal`:
 
 ```js
 function Animal() { }
@@ -22,7 +22,7 @@ Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
 ```
 
-Como adicional do que é herdado da classe `Animal`, você deseja adicionar o comportamento que é único de objetos `Bird`. Aqui, `Bird` definirá a função `fly()`. As funções são adicionadas ao `protótipo` `Bird` da mesma forma que qualquer função construtora:
+Como adicional do que é herdado da classe `Animal`, você deseja adicionar o comportamento que é único de objetos `Bird`. Aqui, `Bird` definirá a função `fly()`. As funções são adicionadas ao `Bird's` `prototype` (protótipo do pássaro) da mesma forma que qualquer função construtora:
 
 ```js
 Bird.prototype.fly = function() {
@@ -42,7 +42,7 @@ duck.fly();
 
 # --instructions--
 
-Adiciona todos os códigos necessários para que o objeto `Dog` herde de `Animal` e o `protótipo` de construtor de `Dog` está definido para `Dog`. Então adiciona o método `bark()` para o objeto `Dog` para que um `beagle` possa `eat()` e `bark()`. O método `bark()` deveria imprimir no console a string: `Woof!`.
+Adiciona todos os códigos necessários para que o objeto `Dog` herde de `Animal` e o `prototype` de construtor de `Dog` está definido para `Dog`. Então adiciona o método `bark()` para o objeto `Dog` para que um `beagle` possa `eat()` e `bark()`. O método `bark()` deveria imprimir no console a string: `Woof!`.
 
 # --hints--
 
@@ -64,7 +64,7 @@ O protótipo de `Dog` deve ter o método `bark()`.
 assert('bark' in Dog.prototype);
 ```
 
-`beagle` deve ser uma `instância` de `Animal`.
+`beagle` deve ser uma `instanceof` de `Animal`.
 
 ```js
 assert(beagle instanceof Animal);
