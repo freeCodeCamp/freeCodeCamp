@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036158
-title: Nunca Alterar State
+title: Nunca alterar o state
 challengeType: 6
 forumTopicId: 301445
 dashedName: never-mutate-state
@@ -10,17 +10,17 @@ dashedName: never-mutate-state
 
 Estes desafios finais descrevem vários métodos de aplicação do princípio fundamental da imutabilidade do state em Redux. O state imutável significa que você nunca modifica o estado diretamente, em vez disso, você retorna uma nova cópia do estado.
 
-Se você tirasse um snapshot do estado de um aplicativo Redux ao longo do tempo, você veria algo como `state 1`, `state 2`, `state 3`,`state 4`, `...` e assim por diante onde cada estado pode ser semelhante ao último, mas cada um é um dado distinto. Esta imutabilidade, na verdade, é o que fornece recursos como a depuração de viagem no tempo (time-travel debugging) que você pode ter ouvido sobre.
+Se você tirasse um snapshot do estado de um aplicativo Redux ao longo do tempo, você veria algo como `state 1`, `state 2`, `state 3`,`state 4`, `...` e assim por diante onde cada estado pode ser semelhante ao último, mas cada um é um dado distinto. Esta imutabilidade, na verdade, é o que fornece recursos como a depuração de viagem no tempo (time-travel debugging) sobre o qual você pode ter ouvido a respeito.
 
-Redux não impõe ativamente a imutabilidade do state em seu store ou reducers, essa responsabilidade é do programador. Felizmente, o JavaScript (especialmente ES6) fornece várias ferramentas úteis que você pode usar para impor a imutabilidade do seu estado, tanto se é uma `string`, `number`, `array` ou `objeto`. Observe que as strings e números são valores primitivos e são imutáveis por natureza. Em outras palavras, 3 é sempre 3. Você não pode alterar o valor do número 3. Um `array` ou `objeto`, no entanto, são mutáveis. Na prática, seu estado provavelmente consistirá em um `array` ou `object`, visto que se trata de estruturas de dados úteis para a representação de muitos tipos de informação.
+Redux não impõe ativamente a imutabilidade do state em sua store ou nos reducers. Essa responsabilidade é do programador. Felizmente, o JavaScript (especialmente ES6) fornece várias ferramentas úteis que você pode usar para impor a imutabilidade do seu estado, seja ele uma `string`, `number`, `array` ou `object`. Observe que as strings e números são valores primitivos e são imutáveis por natureza. Em outras palavras, 3 é sempre 3. Você não pode alterar o valor do número 3. Um `array` ou `object`, no entanto, é mutável. Na prática, seu estado provavelmente consistirá em um `array` ou `object`, visto que se trata de estruturas de dados úteis para a representação de muitos tipos de informação.
 
 # --instructions--
 
-Há um `store` e `reducer` no editor de código para gerenciar itens a fazer. Termine de escrever o caso `ADD_TO_DO` no reducer para adicionar um novo 'a fazer' (to-do) ao state. Existem algumas maneiras de realizar isso com JavaScript padrão ou ES6. Veja se você pode encontrar uma maneira de retornar um novo array com o item do `action.todo` anexado ao final.
+Há uma `store` e um `reducer` no editor de código para gerenciar itens a fazer. Termine de escrever o caso `ADD_TO_DO` no reducer para adicionar um novo 'a fazer' (to-do) ao state. Existem algumas maneiras de realizar isso com JavaScript padrão ou ES6. Veja se você pode encontrar uma maneira de retornar um novo array com o item do `action.todo` anexado ao final.
 
 # --hints--
 
-O store do Redux deve existir e inicializar com um estado igual ao array `todos` no editor de código.
+A store do Redux deve existir e inicializar com um estado igual ao array `todos` no editor de código.
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 assert(typeof addToDo === 'function' && typeof immutableReducer === 'function');
 ```
 
-Despachando uma ação do tipo `ADD_TO_DO` no store Redux deve adicionar um item `todo` e NÃO deve modificar o state.
+Despachar uma ação do tipo `ADD_TO_DO` na store do Redux deve adicionar um item `todo` e NÃO deve modificar o state.
 
 ```js
 assert(

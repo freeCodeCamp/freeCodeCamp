@@ -8,18 +8,18 @@ dashedName: problem-432-totient-sum
 
 # --description--
 
-Let S(n,m) = ∑φ(n × i) for 1 ≤ i ≤ m. (φ is Euler's totient function)
+Let $S(n, m) = \sum φ(n × i)$ for $1 ≤ i ≤ m$. ($φ$ is Euler's totient function)
 
-You are given that S(510510,106 )= 45480596821125120.
+You are given that $S(510\\,510, {10}^6) = 45\\,480\\,596\\,821\\,125\\,120$.
 
-Find S(510510,1011). Give the last 9 digits of your answer.
+Find $S(510\\,510, {10}^{11})$. Give the last 9 digits of your answer.
 
 # --hints--
 
-`euler432()` should return 754862080.
+`totientSum()` should return `754862080`.
 
 ```js
-assert.strictEqual(euler432(), 754862080);
+assert.strictEqual(totientSum(), 754862080);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler432(), 754862080);
 ## --seed-contents--
 
 ```js
-function euler432() {
+function totientSum() {
 
   return true;
 }
 
-euler432();
+totientSum();
 ```
 
 # --solutions--

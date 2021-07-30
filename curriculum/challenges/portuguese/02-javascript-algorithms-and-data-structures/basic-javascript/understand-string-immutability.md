@@ -18,7 +18,7 @@ var myStr = "Bob";
 myStr[0] = "J";
 ```
 
-não é possível alterar o valor de `myStr` para `Job`, porque o conteúdo de `myStr` não pode ser alterado. Note que isso *não* significa que `myStr` não pode ser alterado, apenas que os caracteres individuais de uma <dfn>string literal</dfn> não pode ser alterado. A única forma de alterar `myStr` seria atribuindo-a com uma nova string, dessa forma:
+não permite alterar o valor de `myStr` para `Job`, porque o conteúdo de `myStr` não pode ser alterado. Note que isso *não* significa que `myStr` não pode ser alterado, apenas que os caracteres individuais de uma <dfn>string literal</dfn> não podem ser alterados. A única forma de alterar `myStr` seria atribuindo a ela uma nova string, dessa forma:
 
 ```js
 var myStr = "Bob";

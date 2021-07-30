@@ -8,7 +8,7 @@ dashedName: use-the-value-attribute-with-radio-buttons-and-checkboxes
 
 # --description--
 
-Quando um formulário é enviado, os dados vão para um servidor, e este, por sua vez, irá identificar os valores de cada input. Os inputs do tipo `radio` e `checkbox` têm seus valores identificados a partir do atributo `value`.
+Quando um formulário é enviado, os dados vão para um servidor, e este, por sua vez, vai identificar os valores de cada input. Os inputs do tipo `radio` e `checkbox` têm seus valores identificados a partir do atributo `value`.
 
 Por exemplo:
 

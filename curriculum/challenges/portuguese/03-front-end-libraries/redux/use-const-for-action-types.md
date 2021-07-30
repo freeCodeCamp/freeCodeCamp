@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036152
-title: Usar const para Action Types
+title: Usar const para action types
 challengeType: 6
 forumTopicId: 301450
 dashedName: use-const-for-action-types
@@ -14,7 +14,7 @@ Uma prática comum ao trabalhar com Redux é atribuir tipos de ação como const
 
 Declare `LOGIN` e `LOGOUT` como valores `const` e os atribua às strings `'LOGIN'` e `'LOGOUT'`, respectivamente. Então, edite o `authReducer()` e os criadores de ação para fazer referência a essas constantes ao invés de valores string.
 
-**Nota:** É uma convenção escrever constantes com todas as letras maiúsculas, e essa prática também é padrão no Redux.
+**Observação:** é uma convenção escrever constantes com todas as letras maiúsculas, e essa prática também é padrão no Redux.
 
 # --hints--
 
@@ -30,13 +30,13 @@ Chamar a função `logoutUser` deve retornar um objeto com a propriedade `type` 
 assert(logoutUser().type === 'LOGOUT');
 ```
 
-Store deve ser inicializado com um objeto com a propriedade `login` definido como `false`.
+A store deve ser inicializada com um objeto com a propriedade `login` definida como `false`.
 
 ```js
 assert(store.getState().authenticated === false);
 ```
 
-Despachar `loginUser` deve atualizar a propriedade `login` no state do store para `true`.
+Despachar `loginUser` deve atualizar a propriedade `login` no state da store para `true`.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-Despachar `logoutUser` deve atualizar a propriedade `login` no state do store para `false`.
+Despachar `logoutUser` deve atualizar a propriedade `login` no state da store para `false`.
 
 ```js
 assert(
@@ -83,7 +83,7 @@ A função `authReducer` deve lidar com vários tipos de ação com um comando `
   );
 ```
 
-`LOGIN` e `LOGOUT` devem ser declarados como valores `const` e devem ser atribuídos as strings `LOGIN`e `LOGOUT`.
+`LOGIN` e `LOGOUT` devem ser declarados como valores `const` e devem ser atribuídos às strings `LOGIN`e `LOGOUT`.
 
 ```js
 const noWhiteSpace = __helpers.removeWhiteSpace(code);

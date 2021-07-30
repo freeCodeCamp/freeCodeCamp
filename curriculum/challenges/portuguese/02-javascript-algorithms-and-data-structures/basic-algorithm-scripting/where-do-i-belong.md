@@ -12,7 +12,7 @@ Retorne o menor índice em que um valor (segundo argumento) deve ser inserido no
 
 Por exemplo, `getIndexToIns([1,2,3,4], 1.5)` deve retornar `1` porque é maior que `1` (índice 0), mas menor que `2` (índice 1).
 
-Da mesma forma, `getIndexToIns([20,3,5], 19)` deve retornar `2` pois uma vez que o array foi sorteado irá se parecer como `[3,5,20]` e `19` é menor que `20` (índice 2) e maior que `5` (índice 1).
+Da mesma forma, `getIndexToIns([20,3,5], 19)` deve retornar `2` pois uma vez que o array foi sorteado se parecerá com `[3,5,20]` e `19` é menor que `20` (índice 2) e maior que `5` (índice 1).
 
 # --hints--
 

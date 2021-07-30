@@ -1,6 +1,6 @@
 ---
 id: 589fc831f9fc0f352b528e77
-title: Authentication with Socket.IO
+title: Autenticação com Socket.IO
 challengeType: 2
 forumTopicId: 301548
 dashedName: authentication-with-socket-io
@@ -8,9 +8,9 @@ dashedName: authentication-with-socket-io
 
 # --description--
 
-Currently, you cannot determine who is connected to your web socket. While `req.user` contains the user object, that's only when your user interacts with the web server, and with web sockets you have no `req` (request) and therefore no user data. One way to solve the problem of knowing who is connected to your web socket is by parsing and decoding the cookie that contains the passport session then deserializing it to obtain the user object. Luckily, there is a package on NPM just for this that turns a once complex task into something simple!
+Atualmente, você não pode determinar quem está conectado ao socket da web. Embora `req.user` contenha o objeto do usuário,isso só ocorre quando o usuário interage com o servidor web. Com sockets da web, você não tem `req` (solicitação) e, portanto, não tem dados do usuário. Uma maneira de resolver o problema de saber quem está conectando ao socket da web é analisar e decodificar o cookie que contém a sessão do Passport e desserializá-lo para obter o objeto do usuário. Por sorte, existe um pacote no NPM só para este efeito, que transforma uma tarefa que antes era complexa em algo simples!
 
-Add `passport.socketio@~3.7.0`, `connect-mongo@~3.2.0`, and `cookie-parser@~1.4.5` as dependencies and require them as `passportSocketIo`, `MongoStore`, and `cookieParser` respectively. Also, we need to initialize a new memory store, from `express-session` which we previously required. It should look like this:
+Adicione `passport.socketio@~3.7.0`, `connect-mongo@~3.2.0` e `cookie-parser@~1.4.5` como dependências e solicite-as como `passportSocketIo`, `MongoStore` e `cookieParser`, respectivamente. Além disso, precisamos inicializar uma nova store de memória, a partir do `express-session` que solicitamos anteriormente. Deve ficar assim:
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -18,7 +18,7 @@ const URI = process.env.MONGO_URI;
 const store = new MongoStore({ url: URI });
 ```
 
-Now we just have to tell Socket.IO to use it and set the options. Be sure this is added before the existing socket code and not in the existing connection listener. For your server, it should look like this:
+Agora, só precisamos dizer ao Socket.IO para usá-la e definir as opções. Certifique-se de que ela foi adicionada antes do código do socket existente e não no listener das conexões existentes. Para o servidor, ele deve ficar assim:
 
 ```js
 io.use(
@@ -33,11 +33,11 @@ io.use(
 );
 ```
 
-Be sure to add the `key` and `store` to the `session` middleware mounted on the app. This is necessary to tell *SocketIO* which session to relate to.
+Certifique-se de adicionar a `key` e a `store` no middleware `session` montado na aplicação. Isto é necessário para informar ao *SocketIO* a qual sessão ele deve se relacionar.
 
 <hr />
 
-Now, define the `success`, and `fail` callback functions:
+Agora, defina as funções de `success` e `fail` na função de callback:
 
 ```js
 function onAuthorizeSuccess(data, accept) {
@@ -53,19 +53,19 @@ function onAuthorizeFail(data, message, error, accept) {
 }
 ```
 
-The user object is now accessible on your socket object as `socket.request.user`. For example, now you can add the following:
+Agora, o objeto de usuário está acessível no seu objeto de socket como `socket.request.user`. Por exemplo, agora, você pode adicionar o seguinte:
 
 ```js
 console.log('user ' + socket.request.user.name + ' connected');
 ```
 
-It will log to the server console who has connected!
+Ele vai logar no console do servidor que está conectado!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point [here](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto até este momento [aqui](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
 
 # --hints--
 
-`passport.socketio` should be a dependency.
+`passport.socketio` deve ser uma dependência.
 
 ```js
 (getUserInput) =>
@@ -84,7 +84,7 @@ Submit your page when you think you've got it right. If you're running into erro
   );
 ```
 
-`cookie-parser` should be a dependency.
+`cookie-parser` deve ser uma dependência.
 
 ```js
 (getUserInput) =>
@@ -103,7 +103,7 @@ Submit your page when you think you've got it right. If you're running into erro
   );
 ```
 
-passportSocketIo should be properly required.
+O passportSocketIo deve ser solicitado adequadamente.
 
 ```js
 (getUserInput) =>
@@ -121,7 +121,7 @@ passportSocketIo should be properly required.
   );
 ```
 
-passportSocketIo should be properly setup.
+O passportSocketIo deve ser configurado adequadamente.
 
 ```js
 (getUserInput) =>

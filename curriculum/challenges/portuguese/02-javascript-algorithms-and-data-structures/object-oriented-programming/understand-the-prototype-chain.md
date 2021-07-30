@@ -39,7 +39,7 @@ Modifique o código para mostrar corretamente a cadeia de protótipo.
 
 # --hints--
 
-Seu código deve mostrar que `Object.prototype` é o protótipo de `Dog.prototype`
+O código deve mostrar que `Object.prototype` é o protótipo de `Dog.prototype`
 
 ```js
 assert(/Object\.prototype\.isPrototypeOf/.test(code));

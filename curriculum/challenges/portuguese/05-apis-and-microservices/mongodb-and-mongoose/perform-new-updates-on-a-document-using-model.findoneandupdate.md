@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c0f
-title: Perform New Updates on a Document Using model.findOneAndUpdate()
+title: Executar novas atualizações em um documento usando model.findOneAndUpdate()
 challengeType: 2
 forumTopicId: 301542
 dashedName: perform-new-updates-on-a-document-using-model-findoneandupdate
@@ -8,17 +8,17 @@ dashedName: perform-new-updates-on-a-document-using-model-findoneandupdate
 
 # --description--
 
-Recent versions of Mongoose have methods to simplify documents updating. Some more advanced features (i.e. pre/post hooks, validation) behave differently with this approach, so the classic method is still useful in many situations. `findByIdAndUpdate()` can be used when searching by id.
+Versões recentes do Mongoose possuem métodos para simplificar a atualização dos documentos. Alguns recursos mais avançados (como os hooks pre/post, validação, entre outros) se comportam de modo diferente com esta abordagem. Assim, o método clássico ainda é útil em muitas situações. `findByIdAndUpdate()` pode ser usado na busca por id.
 
 # --instructions--
 
-Modify the `findAndUpdate` function to find a person by `Name` and set the person's age to `20`. Use the function parameter `personName` as the search key.
+Modifique a função `findAndUpdate` para encontrar uma pessoa por `Name` e defina a idade da pessoa como `20`. Use o parâmetro `personName` da função como chave de pesquisa.
 
-**Note:** You should return the updated document. To do that, you need to pass the options document `{ new: true }` as the 3rd argument to `findOneAndUpdate()`. By default, these methods return the unmodified object.
+**Observação:** você deve retornar o documento atualizado. Para fazer isso, você precisa passar o documento de opções `{ new: true }` como o terceiro argumento para `findOneAndUpdate()`. Por padrão, esses métodos retornam o objeto não modificado.
 
 # --hints--
 
-findOneAndUpdate an item should succeed
+Usar findOneAndUpdate em um item deve ser bem-sucedido
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512bfd
-title: Add Keywords to Your package.json
+title: Adicionar palavras-chave ao seu package.json
 challengeType: 2
 forumTopicId: 301526
 dashedName: add-keywords-to-your-package-json
@@ -8,23 +8,23 @@ dashedName: add-keywords-to-your-package-json
 
 # --description--
 
-The `keywords` field is where you can describe your project using related keywords. Here's an example:
+O campo `keywords` é onde você pode descrever seu projeto usando palavras-chave relacionadas. Exemplo:
 
 ```json
 "keywords": [ "descriptive", "related", "words" ],
 ```
 
-As you can see, this field is structured as an array of double-quoted strings.
+Como você pode ver, este campo está estruturado como um array de frases cercadas por aspas duplas.
 
 # --instructions--
 
-Add an array of suitable strings to the `keywords` field in the package.json file of your project.
+Adicione uma array de strings adequadas para o campo `keywords` no arquivo package.json do seu projeto.
 
-One of the keywords should be "freecodecamp".
+Uma das palavras-chave deve ser "freecodecamp".
 
 # --hints--
 
-package.json should have a valid "keywords" key
+package.json deve ter uma chave "keywords" válida
 
 ```js
 (getUserInput) =>
@@ -39,7 +39,7 @@ package.json should have a valid "keywords" key
   );
 ```
 
-"keywords" field should be an Array
+O campo "keywords" deve ser um array
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ package.json should have a valid "keywords" key
   );
 ```
 
-"keywords" should include "freecodecamp"
+O campo "keywords" devem incluir "freecodecamp"
 
 ```js
 (getUserInput) =>

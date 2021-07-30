@@ -26,35 +26,35 @@ As três chamadas a `match` retornam, na ordem, os valores: `["goooooooo"]`, `["
 
 # --instructions--
 
-Neste desafio, a string `chewieQuote` recebeu o valor `Aaaaaaaaaaaaaaaarrrgh!` por trás dos panos. Escreva uma regex, `chewieRegex`, que usa o caractere `*` para capturar um `A` maiúsculo seguido imediatamente de zero ou mais `a` minúsculos em `chewieQuote`. Sua regex não precisa de flags ou de classes de caracteres. Ela também não deve capturar nenhuma outra parte da string.
+Neste desafio, a string `chewieQuote` recebeu o valor `Aaaaaaaaaaaaaaaarrrgh!` por trás dos panos. Escreva uma regex, `chewieRegex`, que usa o caractere `*` para capturar um `A` maiúsculo seguido imediatamente de zero ou mais `a` minúsculos em `chewieQuote`. A regex não precisa de flags ou de classes de caracteres. Ela também não deve capturar nenhuma outra parte da string.
 
 # --hints--
 
-Sua regex `chewieRegex` deve usar o caractere `*` para encontrar zero ou mais `a`s.
+A regex `chewieRegex` deve usar o caractere `*` para encontrar zero ou mais `a`s.
 
 ```js
 assert(/\*/.test(chewieRegex.source));
 ```
 
-Sua regex deve encontrar a string `A` em `chewieQuote`.
+A regex deve encontrar a string `A` em `chewieQuote`.
 
 ```js
 assert(result[0][0] === 'A');
 ```
 
-Sua regex deve encontrar a string `Aaaaaaaaaaaaaaaa` em `chewieQuote`.
+A regex deve encontrar a string `Aaaaaaaaaaaaaaaa` em `chewieQuote`.
 
 ```js
 assert(result[0] === 'Aaaaaaaaaaaaaaaa');
 ```
 
-Sua regex `chewieRegex` deve capturar 16 caracteres em `chewieQuote`.
+A regex `chewieRegex` deve capturar 16 caracteres em `chewieQuote`.
 
 ```js
 assert(result[0].length === 16);
 ```
 
-Sua expressão regular não deve corresponder com nenhum caractere na string `He made a fair move. Screaming about it can't help you.`
+A expressão regular não deve corresponder com nenhum caractere na string `He made a fair move. Screaming about it can't help you.`
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Sua expressão regular não deve corresponder a nenhum caractere na string `Let him have it. It's not wise to upset a Wookiee.`
+A expressão regular não deve corresponder a nenhum caractere na string `Let him have it. It's not wise to upset a Wookiee.`
 
 ```js
 assert(

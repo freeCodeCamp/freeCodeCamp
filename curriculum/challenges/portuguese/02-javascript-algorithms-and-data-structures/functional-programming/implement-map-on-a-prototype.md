@@ -8,7 +8,7 @@ dashedName: implement-map-on-a-prototype
 
 # --description--
 
-Como você viu ao aplicar `Array.prototype.map()`, ou simplesmente `map()` mais cedo, o método `map` retorna um array do mesmo tamanho que o no qual chamamos o método. Ele também não altera o array original desde que a sua função callback não o faça.
+Como você viu ao aplicar `Array.prototype.map()`, ou simplesmente `map()` mais cedo, o método `map` retorna um array do mesmo tamanho que o no qual chamamos o método. Ele também não altera o array original desde que a função de callback não o faça.
 
 Em outras palavras, `map` é uma função pura e a sua saída depende somente de suas entradas. Além disso, ele recebe outra função como argumento.
 

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036172
-title: Renderizar Estado na Interface de Usuário de Outra Forma
+title: Renderizar estado na interface de usuário de outra forma
 challengeType: 6
 forumTopicId: 301408
 dashedName: render-state-in-the-user-interface-another-way

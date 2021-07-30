@@ -42,7 +42,7 @@ O resultado, `result`, deve conter a string `coding`
 assert(result.join() === 'coding');
 ```
 
-Sua regex `codingRegex` deve buscar a string `coding`
+A regex `codingRegex` deve buscar a string `coding`
 
 ```js
 assert(codingRegex.source === 'coding');

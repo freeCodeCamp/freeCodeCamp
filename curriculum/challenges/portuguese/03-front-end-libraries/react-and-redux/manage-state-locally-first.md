@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036142
-title: Gerenciar State Localmente Primeiro
+title: Gerenciar state localmente primeiro
 challengeType: 6
 forumTopicId: 301431
 dashedName: manage-state-locally-first

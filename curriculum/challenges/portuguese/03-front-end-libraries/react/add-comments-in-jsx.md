@@ -1,6 +1,6 @@
 ---
 id: 5a24bbe0dba28a8d3cbd4c5e
-title: Adicionar Comentários em JSX
+title: Adicionar comentários em JSX
 challengeType: 6
 forumTopicId: 301376
 dashedName: add-comments-in-jsx
@@ -10,7 +10,7 @@ dashedName: add-comments-in-jsx
 
 JSX é uma sintaxe que é compilada em JavaScript válido. Às vezes, por legibilidade, você pode precisar adicionar comentários no seu código. Assim como a maioria das linguagens de programação, JSX possui sua própria forma de fazer isso.
 
-Para colocar comentários dentro de JSX, você usa a sintaxe `{/* */}` para embrulhar o texto do comentário.
+Para colocar comentários dentro de JSX, você usa a sintaxe `{/* */}` para envolver o texto do comentário.
 
 # --instructions--
 

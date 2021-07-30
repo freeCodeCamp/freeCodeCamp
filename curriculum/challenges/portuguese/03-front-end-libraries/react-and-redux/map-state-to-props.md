@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036145
-title: Mapear State para Props
+title: Mapear state para props
 challengeType: 6
 forumTopicId: 301433
 dashedName: map-state-to-props
@@ -12,7 +12,7 @@ O componente `Provider` permite que você forneça `state` e `dispatch` para seu
 
 Nessas funções, você declara quais pedaços do state você quer ter acesso e quais criadores de ação você precisa ser capaz de despachar. Quando essas funções estiverem no lugar, você verá como usar o método `connect` do React Redux para conectá-los aos seus componentes em outro desafio.
 
-**Nota:** Nos bastidores, o React Redux usa o método `store.subscribe()` para implementar `mapStateToProps()`.
+**Observação:** nos bastidores, o React Redux usa o método `store.subscribe()` para implementar `mapStateToProps()`.
 
 # --instructions--
 

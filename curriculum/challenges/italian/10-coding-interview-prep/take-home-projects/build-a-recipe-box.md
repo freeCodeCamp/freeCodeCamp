@@ -1,6 +1,6 @@
 ---
 id: bd7155d8c242eddfaeb5bd13
-title: Build a Recipe Box
+title: Costruire una scatola delle ricette
 challengeType: 3
 forumTopicId: 302354
 dashedName: build-a-recipe-box
@@ -8,27 +8,27 @@ dashedName: build-a-recipe-box
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/dNVazZ/>.
+**Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: [https://codepen.io/freeCodeCamp/full/dNVazZ](https://codepen.io/freeCodeCamp/full/dNVazZ/).
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
-**User Story:** I can create recipes that have names and ingredients.
+**User Story:** Posso creare ricette che hanno nomi e ingredienti.
 
-**User Story:** I can see an index view where the names of all the recipes are visible.
+**User Story:** Posso vedere un indice in cui i nomi delle ricette sono visibili.
 
-**User Story:** I can click into any of those recipes to view it.
+**User Story:** Posso cliccare su una qualunque di queste ricette per vederla.
 
-**User Story:** I can edit these recipes.
+**User Story:** Posso modificare queste ricette.
 
-**User Story:** I can delete these recipes.
+**User Story:** Posso eliminare queste ricette.
 
-**User Story:** All new recipes I add are saved in my browser's local storage. If I refresh the page, these recipes will still be there.
+**User Story:** Tutte le nuove ricette che aggiungo sono salvate nel local storage del browser. Se ricarico la pagina, queste ricette saranno ancora là.
 
-**Hint:** You should prefix your local storage keys on CodePen, i.e. `_username_recipes`
+**Suggerimento:** Dovresti dare un prefisso alle chiavi del local storage su CodePen, per esempio `_username_recipes`
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando hai finito, includi un link al tuo progetto su CodePen e clicca sul pulsante "Ho completato questa sfida".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul forum [freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

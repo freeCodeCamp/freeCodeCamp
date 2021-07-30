@@ -9,7 +9,7 @@ dashedName: create-visual-direction-by-fading-an-element-from-left-to-right
 
 # --description--
 
-Neste desafio, você irá alterar a propriedade `opacity` (opacidade) de um elemento animado para que ele desapareça gradualmente ao atingir o lado direito da tela.
+Neste desafio, você vai alterar a propriedade `opacity` (opacidade) de um elemento animado para que ele desapareça gradualmente ao atingir o lado direito da tela.
 
 Na animação exibida, o elemento redondo com o fundo gradiente se move para a direita na marca de 50% da animação na regra `@keyframes`.
 

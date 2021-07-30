@@ -19,6 +19,7 @@
   - [在本地运行客户端 web app](how-to-work-on-localized-client-webapp.md)
   - [本地接收电子邮件](how-to-catch-outgoing-emails-locally.md)
   - [测试本地翻译](how-to-test-translations-locally.md)
+  - [Understand the curriculum file structure](curriculum-file-structure.md)
 
 ---
 

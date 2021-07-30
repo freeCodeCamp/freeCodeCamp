@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c49
-title: Test for Truthiness
+title: Testar a veracidade
 challengeType: 2
 forumTopicId: 301596
 dashedName: test-for-truthiness
@@ -8,9 +8,9 @@ dashedName: test-for-truthiness
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`isTrue()` will test for the boolean value `true` and `isNotTrue()` will pass when given anything but the boolean value of `true`.
+`isTrue()` testará o valor booleano `true` e `isNotTrue()` passará quando receber qualquer coisa menos o valor booleano de `true`.
 
 ```js
 assert.isTrue(true, 'this will pass with the boolean value true');
@@ -18,15 +18,15 @@ assert.isTrue('true', 'this will NOT pass with the string value "true"');
 assert.isTrue(1, 'this will NOT pass with the number value 1');
 ```
 
-`isFalse()` and `isNotFalse()` also exist, and behave similarly to their true counterparts except they look for the boolean value of `false`.
+`isFalse()` e `isNotFalse()` também existem e se comportam da mesma forma que seus correspondentes true, exceto porque buscam o valor booleano `false`.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Em `tests/1_unit-tests.js`, no teste classificado como `#4` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isTrue` ou para `assert.isNotTrue`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 
-All tests should pass.
+Todos os testes devem passar.
 
 ```js
 (getUserInput) =>
@@ -40,7 +40,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isTrue` vs. `isNotTrue`.
+Você deve escolher o método correto para a primeira afirmação - `isTrue` ou `isNotTrue`.
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ You should choose the correct method for the first assertion - `isTrue` vs. `isN
   );
 ```
 
-You should choose the correct method for the second assertion - `isTrue` vs. `isNotTrue`.
+Você deve escolher o método correto para a segunda afirmação - `isTrue` ou `isNotTrue`.
 
 ```js
 (getUserInput) =>
@@ -72,7 +72,7 @@ You should choose the correct method for the second assertion - `isTrue` vs. `is
   );
 ```
 
-You should choose the correct method for the third assertion - `isTrue` vs. `isNotTrue`.
+Você deve escolher o método correto para a terceira afirmação - `isTrue` ou `isNotTrue`.
 
 ```js
 (getUserInput) =>

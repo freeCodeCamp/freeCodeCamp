@@ -111,7 +111,7 @@ Antes de dar merge em qualquer pull request, certifique-se que há um aviso dize
 
 Isso quer dizer que outro pull request fez mudanças na mesma parte de um arquivo. O GitHub tem uma ferramenta para resolver esses conflitos de merges diretamente no GitHub. Você pode tentar resolver esses conflitos. Apenas use seu melhor julgamento.
 
-As mudanças do pull request estarão no topo e as mudanças da branch master estarão embaixo. Às vezes, haverá informação redundante que pode ser apagada. Antes de terminar, certifique-se de excluir o `<<<<<<`, `======` e o `>>>>>>` que o Git adiciona para indicar áreas de conflito.
+As mudanças do pull request estarão no topo e as mudanças da branch principal (main) estarão embaixo. Às vezes, haverá informação redundante que pode ser apagada. Antes de terminar, certifique-se de excluir o `<<<<<<`, `======` e o `>>>>>>` que o Git adiciona para indicar áreas de conflito.
 
 Se não tem certeza, peça ajuda para algum moderador ou para o time de desenvolvimento.
 
@@ -409,7 +409,7 @@ git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
 
 git fetch upstream
 
-git pull upstream master
+git pull upstream main
 ````
 
 Se você está usando uma interface, você pode simplesmente usar `Add a new remote...` e usar o link `git://github.com/freeCodeCamp/freeCodeCamp.git`.

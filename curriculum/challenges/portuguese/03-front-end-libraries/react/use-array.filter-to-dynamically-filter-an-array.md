@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618c
-title: Use Array.filter() para Filtrar Dinamicamente um Array
+title: Usar array.filter() para filtrar dinamicamente um array
 challengeType: 6
 forumTopicId: 301416
 dashedName: use-array-filter-to-dynamically-filter-an-array
@@ -16,7 +16,7 @@ let onlineUsers = users.filter(user => user.online);
 
 # --instructions--
 
-No editor de código, o `state` de `MyComponent` é inicializado com um array de usuários. Alguns usuários estão online e outros não. Filtre o array para que você veja apenas os usuários que estão online. Para isso, primeiro use `filter` para retornar um novo array contendo apenas os usuários os quais possuem a propriedade `online` como `true`. Em seguida, na variável `renderOnline`, mapeie sobre o array filtrado e retorne um elemento `li` para cada usuário que contem o texto de seus `username`. Garante que você inclua uma `key` única, como nos últimos desafios.
+No editor de código, o `state` de `MyComponent` é inicializado com um array de usuários. Alguns usuários estão online e outros não. Filtre o array para que você veja apenas os usuários que estão online. Para isso, primeiro use `filter` para retornar um novo array contendo apenas os usuários os quais possuem a propriedade `online` como `true`. Em seguida, na variável `renderOnline`, mapeie sobre o array filtrado e retorne um elemento `li` para cada usuário que contenha o texto de `username` de cada um. Garante que você inclua uma `key` única, como nos últimos desafios.
 
 # --hints--
 

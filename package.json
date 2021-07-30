@@ -107,8 +107,8 @@
     "@testing-library/dom": "8.1.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/user-event": "13.2.1",
-    "@typescript-eslint/eslint-plugin": "4.28.4",
-    "@typescript-eslint/parser": "4.28.4",
+    "@typescript-eslint/eslint-plugin": "4.28.5",
+    "@typescript-eslint/parser": "4.28.5",
     "babel-eslint": "10.1.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
@@ -139,7 +139,7 @@
     "prismjs": "1.24.1",
     "process": "0.11.10",
     "shx": "0.3.3",
-    "start-server-and-test": "1.13.0",
+    "start-server-and-test": "1.13.1",
     "typescript": "4.3.5",
     "webpack-bundle-analyzer": "4.4.2"
   }

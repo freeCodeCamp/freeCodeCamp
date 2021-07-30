@@ -1,6 +1,6 @@
 ---
 id: 5a24bbe0dba28a8d3cbd4c5d
-title: Criar um Elemento JSX Complexo
+title: Criar um elemento JSX complexo
 challengeType: 6
 forumTopicId: 301382
 dashedName: create-a-complex-jsx-element
@@ -14,7 +14,7 @@ Uma coisa importante a saber sobre JSX aninhado é que ele deve retornar um úni
 
 Este único elemento pai envolveria todos os outros níveis de elementos aninhados.
 
-Por exemplo, vários elementos JSX escritos como irmãos sem elemento encapsulador pai não vai transpilar.
+Por exemplo, vários elementos JSX escritos como irmãos sem elemento encapsulador pai não vão transpilar.
 
 Exemplo:
 
@@ -42,7 +42,7 @@ Defina uma nova constante `JSX` que renderiza uma `div` a qual contém os elemen
 
 Um `h1`, um `p`, e uma lista não ordenada que contém três itens `li`. Você pode incluir qualquer texto que você quiser dentro de cada elemento.
 
-**Nota:** Ao renderizar vários elementos como este, você pode envolver todos entre parênteses, mas não é estritamente necessário. Note também que este desafio usa uma tag `div` para encapsular todos os elementos filhos dentro de um único elemento pai. Se você remover a `div`, o JSX não será mais transpilável. Tenha isso em mente, uma vez que ele também será aplicado quando você retornar elementos JSX em componentes React.
+**Observação:** ao renderizar vários elementos como este, você pode envolver todos entre parênteses, mas não é estritamente necessário. Note também que este desafio usa uma tag `div` para encapsular todos os elementos filhos dentro de um único elemento pai. Se você remover a `div`, o JSX não será mais transpilável. Tenha isso em mente, uma vez que ele também será aplicado quando você retornar elementos JSX em componentes React.
 
 # --hints--
 

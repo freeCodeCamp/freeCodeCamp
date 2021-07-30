@@ -10,7 +10,7 @@ dashedName: seek-and-destroy
 
 Você receberá um array inicial (o primeiro argumento na função `destroyer`), seguido por um ou mais argumentos. Remova todos os elementos da matriz inicial que são do mesmo valor que esses argumentos.
 
-**Nota:** Você tem que usar os `argumentos` do objeto.
+**Observação:** você tem que usar os `arguments` do objeto.
 
 # --hints--
 

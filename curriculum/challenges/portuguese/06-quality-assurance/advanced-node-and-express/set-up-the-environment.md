@@ -1,6 +1,6 @@
 ---
 id: 589fc830f9fc0f352b528e74
-title: Set up the Environment
+title: Configure o ambiente
 challengeType: 2
 forumTopicId: 301566
 dashedName: set-up-the-environment
@@ -8,20 +8,20 @@ dashedName: set-up-the-environment
 
 # --description--
 
-The following challenges will make use of the `chat.pug` file. So, in your `routes.js` file, add a GET route pointing to `/chat` which makes use of `ensureAuthenticated`, and renders `chat.pug`, with `{ user: req.user }` passed as an argument to the response. Now, alter your existing `/auth/github/callback` route to set the `req.session.user_id = req.user.id`, and redirect to `/chat`.
+Os desafios a seguir farão uso do arquivo `chat.pug`. Assim, em seu arquivo `routes.js`, adicione uma rota de GET apontando para `/chat`, que faz uso de `ensureAuthenticated` e renderiza `chat.pug`, com `{ user: req.user }` passado como argumento para a resposta. Agora, altere a rota `/auth/github/callback` existente para definir `req.session.user_id = req.user.id`e redirecione para `/chat`.
 
-Add `socket.io@~2.3.0` as a dependency and require/instantiate it in your server defined as follows, with `http` (comes built-in with Nodejs):
+Adicione `socket.io@~2.3.0` como uma dependência e solicite/instancie-o no servidor definido como `http` (que vem integrado ao Node.js), conforme segue:
 
 ```javascript
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 ```
 
-Now that the *http* server is mounted on the *express app*, you need to listen from the *http* server. Change the line with `app.listen` to `http.listen`.
+Agora que o servidor *http* está montado na aplicação do *Express*, você precisa escutar o servidor *http*. Altere a linha com `app.listen` para `http.listen`.
 
-The first thing needing to be handled is listening for a new connection from the client. The <dfn>on</dfn> keyword does just that- listen for a specific event. It requires 2 arguments: a string containing the title of the event that's emitted, and a function with which the data is passed though. In the case of our connection listener, we use *socket* to define the data in the second argument. A socket is an individual client who is connected.
+A primeira coisa que precisa ser tratada é escutar uma nova conexão do client. A palavra-chave <dfn>on</dfn> faz isso - escuta um evento específico. Ela requer 2 argumentos: uma string contendo o título do evento que é emitido e uma função com a qual os dados são passados. No caso do nosso listener de conexão, usamos o *socket* para definir os dados no segundo argumento. Um socket é um client individual que está conectado.
 
-To listen for connections to your server, add the following within your database connection:
+Para escutar as conexões do servidor, adicione o seguinte na sua conexão do banco de dados:
 
 ```javascript
 io.on('connection', socket => {
@@ -29,24 +29,24 @@ io.on('connection', socket => {
 });
 ```
 
-Now for the client to connect, you just need to add the following to your `client.js` which is loaded by the page after you've authenticated:
+Agora, para o client se conectar, basta adicionar o seguinte ao `client.js` que é carregado pela página após a autenticação:
 
 ```js
 /*global io*/
 let socket = io();
 ```
 
-The comment suppresses the error you would normally see since 'io' is not defined in the file. We've already added a reliable CDN to the Socket.IO library on the page in chat.pug.
+O comentário suprime o erro que você normalmente veria, já que 'io' não está definido no arquivo. Já adicionamos um CDN confiável à biblioteca socket.io na página em chat.pug.
 
-Now try loading up your app and authenticate and you should see in your server console 'A user has connected'!
+Agora, tente carregar o aplicativo e autentique-se. Você deve ver no console do servidor a frase 'A user has connected'!
 
-**Note:**`io()` works only when connecting to a socket hosted on the same url/server. For connecting to an external socket hosted elsewhere, you would use `io.connect('URL');`.
+**Observação:** `io()` só funciona ao se conectar a um socket hospedado no mesmo url/servidor. Para se conectar a um socket externo hospedado em outro lugar, você usaria `io.connect('URL');`.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1).
 
 # --hints--
 
-`socket.io` should be a dependency.
+`socket.io` deve ser uma dependência.
 
 ```js
 (getUserInput) =>
@@ -65,7 +65,7 @@ Submit your page when you think you've got it right. If you're running into erro
   );
 ```
 
-You should correctly require and instantiate `http` as `http`.
+Você deve solicitar e instanciar corretamente `http` como `http`.
 
 ```js
 (getUserInput) =>
@@ -83,7 +83,7 @@ You should correctly require and instantiate `http` as `http`.
   );
 ```
 
-You should correctly require and instantiate `socket.io` as `io`.
+Você deve solicitar e instanciar corretamente `socket.io` como `io`.
 
 ```js
 (getUserInput) =>
@@ -101,7 +101,7 @@ You should correctly require and instantiate `socket.io` as `io`.
   );
 ```
 
-Socket.IO should be listening for connections.
+Socket.IO deve estar escutando as conexões.
 
 ```js
 (getUserInput) =>
@@ -119,7 +119,7 @@ Socket.IO should be listening for connections.
   );
 ```
 
-Your client should connect to your server.
+O client deve se conectar ao servidor.
 
 ```js
 (getUserInput) =>

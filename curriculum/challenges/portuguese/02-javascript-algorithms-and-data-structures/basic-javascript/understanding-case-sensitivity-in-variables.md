@@ -13,7 +13,7 @@ Em JavaScript todas os nomes de variáveis e funções são sensíveis a caracte
 
 `MYVAR` não é o mesmo que `MyVar` nem `myvar`. É possível ter diversas variáveis distintas com o mesmo nome mas com capitalização diferente. É extremamente recomendado pelo bem da clareza, que você *não* use esse recurso da linguagem.
 
-**Melhores Práticas**
+**Melhores práticas**
 
 Escreva nomes de variáveis em JavaScript em <dfn>camelCase</dfn>. Em <dfn>camelCase</dfn>, nomes de variáveis com mais de uma palavra possuem a primeira palavra toda em minúscula e a primeira letra de cada palavra subsequente capitalizada.
 

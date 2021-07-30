@@ -8,20 +8,21 @@ dashedName: catch-mixed-usage-of-single-and-double-quotes
 
 # --description--
 
-JavaScript nos permite o uso de ambas as aspas simples (`'<code>) e duplas (<code>"<code>) para declarar uma string. Decidir qual delas usar geralmente é uma questão de preferência pessoal, com algumas exceções.</p>
+JavaScript nos permite o uso de aspas simples (`'`) e duplas (`"`) para declarar uma string. Decidir qual delas usar geralmente é uma questão de preferência pessoal, com algumas exceções.
 
-<p spaces-before="0">Ter duas opções é ótimo quando uma string possui contrações ou outros pedaços de texto que estão entre aspas. Apenas tome cuidado para que você não feche uma string muito cedo, o que causa erro de sintaxe.</p>
+Ter duas opções é ótimo quando uma string possui contrações ou outros pedaços de texto que estão entre aspas. Apenas tome cuidado para que você não feche uma string muito cedo, o que causa erro de sintaxe.
 
-<p spaces-before="0">Aqui estão alguns exemplos de mistura de aspas:</p>
+Aqui estão alguns exemplos de mistura de aspas:
 
-<pre><code class="js">const grouchoContraction = "I've had a perfectly wonderful evening, but this wasn't it.";
+```js
+const grouchoContraction = "I've had a perfectly wonderful evening, but this wasn't it.";
 const quoteInString = "Groucho Marx once said 'Quote me as saying I was mis-quoted.'";
 const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';
-`</pre>
+```
 
 As duas primeiras estão corretas, mas a terceira não.
 
-Claro, não há problema usar apenas um estilo de aspas. Você pode escapar as aspas dentro de uma string ao usar o caractere barra invertida (</code>\</code>):
+Claro, não há problema em usar apenas um estilo de aspas. Você pode escapar as aspas dentro de uma string ao usar o caractere barra invertida (`\`):
 
 ```js
 const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t it.';
@@ -29,17 +30,17 @@ const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t
 
 # --instructions--
 
-Corrija a string para que ou use aspas diferentes para o valor de `href` ou escape as aspas existentes. Mantenha as aspas duplas ao redor de toda a string.
+Corrija a string para que use aspas diferentes para o valor de `href` ou escape as aspas existentes. Mantenha as aspas duplas ao redor de toda a string.
 
 # --hints--
 
-Seu código deve corrigir as aspas em torno do valor de `href`: `#Home` ao mudar ou escapar elas.
+O código deve corrigir as aspas em torno do valor de `href`: `#Home` mudando-as ou escapando-as.
 
 ```js
 assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
-Seu código deve manter as aspas duplas ao redor de toda a string.
+O código deve manter as aspas duplas ao redor de toda a string.
 
 ```js
 assert(code.match(/"<p>.*?<\/p>";/g));

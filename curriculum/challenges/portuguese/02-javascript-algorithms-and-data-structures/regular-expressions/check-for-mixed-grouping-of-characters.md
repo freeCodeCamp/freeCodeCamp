@@ -1,6 +1,6 @@
 ---
 id: 5c3dda8b4d8df89bea71600f
-title: Validando grupos mistos de caracteres
+title: Validar grupos mistos de caracteres
 challengeType: 1
 forumTopicId: 301339
 dashedName: check-for-mixed-grouping-of-characters
@@ -30,28 +30,28 @@ Depois corrija o código, fazendo com que a regex seja testada na string `myStri
 
 # --hints--
 
-Sua regex `myRegex` deve retornar `true` para a string `Franklin D. Roosevelt`
+A regex `myRegex` deve retornar `true` para a string `Franklin D. Roosevelt`
 
 ```js
 myRegex.lastIndex = 0;
 assert(myRegex.test('Franklin D. Roosevelt'));
 ```
 
-Sua regex `myRegex` deve retornar `true` para a string `Eleanor Roosevelt`
+A regex `myRegex` deve retornar `true` para a string `Eleanor Roosevelt`
 
 ```js
 myRegex.lastIndex = 0;
 assert(myRegex.test('Eleanor Roosevelt'));
 ```
 
-Sua regex `myRegex` deve retornar `false` para a string `Franklin Rosevelt`
+A regex `myRegex` deve retornar `false` para a string `Franklin Rosevelt`
 
 ```js
 myRegex.lastIndex = 0;
 assert(!myRegex.test('Franklin Rosevelt'));
 ```
 
-Sua regex `myRegex` deve retornar `false` para a string `Frank Roosevelt`
+A regex `myRegex` deve retornar `false` para a string `Frank Roosevelt`
 
 ```js
 myRegex.lastIndex = 0;

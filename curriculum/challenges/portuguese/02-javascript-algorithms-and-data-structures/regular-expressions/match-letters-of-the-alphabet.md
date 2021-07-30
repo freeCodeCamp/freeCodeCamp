@@ -30,11 +30,11 @@ As três chamadas a `match` retornam, na ordem, os valores: `["cat"]`, `["bat"]`
 
 Capture todas as letras na string `quoteSample`.
 
-**Nota:** Você quer encontrar tanto maiúsculas quanto minúsculas.
+**Observação:** você quer encontrar tanto maiúsculas quanto minúsculas.
 
 # --hints--
 
-Sua regex `alphabetRegex` deve encontrar 35 itens.
+A regex `alphabetRegex` deve encontrar 35 itens.
 
 ```js
 assert(result.length == 35);

@@ -35,7 +35,7 @@ alpha[value];
 
 # --instructions--
 
-Converta a instrução switch em um objeto chamado `lookup`. Use ele para pesquisar por `val` e atribua a string associada para a variável `result`.
+Converta a instrução switch em um objeto chamado `lookup`. Use-o para pesquisar por `val` e atribua a string associada para a variável `result`.
 
 # --hints--
 

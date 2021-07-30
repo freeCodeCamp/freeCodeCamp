@@ -73,7 +73,7 @@ assert(add(1)(2)(3) === 6);
 assert(add(11)(22)(33) === 66);
 ```
 
-Em seu código deve haver uma instrução final que retorna `x + y + z`.
+No código deve haver uma instrução final que retorna `x + y + z`.
 
 ```js
 assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));

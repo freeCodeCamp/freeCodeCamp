@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036189
-title: Mudar CSS Emlinha Condicionalmente Baseado no Estado do Component
+title: Mudar CSS em linha condicionalmente com base no estado do componente
 challengeType: 6
 forumTopicId: 301380
 dashedName: change-inline-css-conditionally-based-on-component-state
@@ -8,9 +8,9 @@ dashedName: change-inline-css-conditionally-based-on-component-state
 
 # --description--
 
-Nesse ponto, você já viu diversas aplicações de renderização condicional e o uso de estilos emlinha. Aqui está mais um exemplo que combina ambos esses tópicos. Você também pode renderizar CSS condicionalmente baseado no estado de um componente React. Para fazer isso, você verifica por uma condição, e se essa condição for atendida, você modifica o objeto styles que foi atribuido aos elementos JSX no método de renderização.
+Nesse ponto, você já viu diversas aplicações de renderização condicional e o uso de estilos em linha. Aqui está mais um exemplo que combina ambos esses tópicos. Você também pode renderizar CSS condicionalmente baseado no estado de um componente React. Para fazer isso, você verifica por uma condição, e se essa condição for atendida, você modifica o objeto styles que foi atribuído aos elementos do JSX no método de renderização.
 
-É importante entender esse paradigma porque é uma mudança dramática da abordagem mais tradicional de aplicar estilos ao modificar diretamente os elementos DOM (o que é muito comum com jQuery, por exemplo).  Nessa abordagem, você precisa monitorar quando um elemento mudar e também lidar com a manipulação diretamente. Pode se tornar difícil acompanhar as mudanças, tornando potencialmente a sua interface de usuário imprevisível. Quando você define um objeto estilo baseado em uma condição, você descreve como a interface deve se parecer com uma função do estado da aplicação. Há um fluxo claro de informação que só avança em uma direção. Esse é o método preferido ao escrever aplicações com React.
+É importante entender esse paradigma porque é uma mudança dramática da abordagem mais tradicional de aplicar estilos ao modificar diretamente os elementos DOM (o que é muito comum com jQuery, por exemplo).  Nessa abordagem, você precisa monitorar quando um elemento mudar e também lidar com a manipulação diretamente. Pode se tornar difícil acompanhar as mudanças, tornando a interface de usuário potencialmente imprevisível. Quando você define um objeto estilo baseado em uma condição, você descreve como a interface deve se parecer com uma função do estado da aplicação. Há um fluxo claro de informação que só avança em uma direção. Esse é o método preferido ao escrever aplicações com React.
 
 # --instructions--
 

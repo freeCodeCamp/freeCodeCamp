@@ -31,24 +31,24 @@ Aqui, `match` retorna o valor `["Repeat", "Repeat", "Repeat"]`
 
 Usando a regex `starRegex`, encontre e extraia ambas ocorrências da palavra `Twinkle` da string `twinkleStar`.
 
-**Obs:**  
-Você pode usar múltiplas flags em uma regex: `/search/gi`
+**Observação:**  
+você pode usar múltiplas flags em uma regex: `/search/gi`
 
 # --hints--
 
-Sua regex `starRegex` deve usar a flag `g`
+A regex `starRegex` deve usar a flag `g`
 
 ```js
 assert(starRegex.flags.match(/g/).length == 1);
 ```
 
-Sua regex `starRegex` deve usar a flag de ignorar caixa, `i`
+A regex `starRegex` deve usar a flag de ignorar caixa, `i`
 
 ```js
 assert(starRegex.flags.match(/i/).length == 1);
 ```
 
-Seu resultado deve conter ambas as ocorrências da palavra `Twinkle`
+O resultado deve conter ambas as ocorrências da palavra `Twinkle`
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-Seu resultado, `result`, deve conter dois elementos.
+O resultado, `result`, deve conter dois elementos.
 
 ```js
 assert(result.length == 2);

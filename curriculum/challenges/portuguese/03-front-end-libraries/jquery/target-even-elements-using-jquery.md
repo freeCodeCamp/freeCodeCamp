@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed008826
-title: Mire Elementos Pares Usando jQuery
+title: Mirar elementos pares usando o jQuery
 challengeType: 6
 forumTopicId: 18318
 required:
@@ -15,13 +15,13 @@ Você também pode ter como alvo elementos baseados em suas posições usando os
 
 Note que jQuery é indexado a zero, o que significa que o primeiro elemento em uma seleção tem a posição 0. Isso pode ser um pouco confuso, pois, contra-intuitivamente, `:odd` seleciona o segundo elemento (position1), fourth element (position 3) e assim por diante.
 
-Aqui está como você iria ter como alvo todos os elementos ímpares com a classe `target` e dar a eles as classes:
+Aqui está como você teria como alvo todos os elementos ímpares com a classe `target` e dar a eles as classes:
 
 ```js
 $(".target:odd").addClass("animated shake");
 ```
 
-Tente selecionar todos os elementos `target` pares e dar a eles as classes `animated` e `shake`. Lembre-se que **even** refere-se a posição de elementos com base em um sistema indexado a zero.
+Tente selecionar todos os elementos `target` pares e dar a eles as classes `animated` e `shake`. Lembre-se de que **even** refere-se a posição de elementos com base em um sistema indexado a zero.
 
 # --hints--
 

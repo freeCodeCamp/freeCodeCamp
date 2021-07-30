@@ -10,24 +10,26 @@ dashedName: problem-463-a-weird-recurrence-relation
 
 The function $f$ is defined for all positive integers as follows:
 
-$f(1)=1$
+$$\begin{align}
+  & f(1) = 1 \\\\
+  & f(3) = 3 \\\\
+  & f(2n) = f(n) \\\\
+  & f(4n + 1) = 2f(2n + 1) - f(n) \\\\
+  & f(4n + 3) = 3f(2n + 1) - 2f(n)
+\end{align}$$
 
-$f(3)=3$
+The function $S(n)$ is defined as $\sum_{i=1}^{n} f(i)$.
 
-$f(2n)=f(n)$
+$S(8) = 22$ and $S(100) = 3604$.
 
-$f(4n + 1)=2f(2n + 1) - f(n)$
-
-$f(4n + 3)=3f(2n + 1) - 2f(n)$
-
-The function $S(n)$ is defined as $\\sum\_{i=1}^{n}f(i)$. $S(8)=22$ and $S(100)=3604$. Find $S(3^{37})$. Give the last 9 digits of your answer.
+Find $S(3^{37})$. Give the last 9 digits of your answer.
 
 # --hints--
 
-`euler463()` should return 808981553.
+`weirdRecurrenceRelation()` should return `808981553`.
 
 ```js
-assert.strictEqual(euler463(), 808981553);
+assert.strictEqual(weirdRecurrenceRelation(), 808981553);
 ```
 
 # --seed--
@@ -35,12 +37,12 @@ assert.strictEqual(euler463(), 808981553);
 ## --seed-contents--
 
 ```js
-function euler463() {
+function weirdRecurrenceRelation() {
 
   return true;
 }
 
-euler463();
+weirdRecurrenceRelation();
 ```
 
 # --solutions--

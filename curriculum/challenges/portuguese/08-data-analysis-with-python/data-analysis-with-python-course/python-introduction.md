@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c165
-title: Python Introduction
+title: Introduzir o Python
 challengeType: 11
 videoId: PrQV9JkLhb4
 dashedName: python-introduction
@@ -8,34 +8,34 @@ dashedName: python-introduction
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Ao invés de usar notebooks.ai como foi mostrado no vídeo, você pode usar o Google Colab como substituto.*
 
-More resources:
+Mais recursos:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebooks no GitHub](https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes)
+-   [Como abrir notebooks do GitHub usando o Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-How do we define blocks of code in the body of functions in Python?
+Como definimos blocos de código no corpo das funções do Python?
 
 ## --answers--
 
-We use a set of curly braces, one on either side of each new block of our code.
+Usamos um conjunto de chaves, um em cada lado de cada novo bloco de nosso código.
 
 ---
 
-We use indentation, usually right-aligned 4 spaces.
+Usamos a indentação, geralmente 4 espaços alinhados à direita.
 
 ---
 
-We do not denote blocks of code.
+Não denotamos blocos de código.
 
 ---
 
-We could use curly braces or indentation to denote blocks of code.
+Poderíamos usar chaves ou indentação para indicar blocos de código.
 
 ## --video-solution--
 

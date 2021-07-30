@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036187
-title: Usar uma Expressão Ternária para Renderização Condicional
+title: Usar uma expressão ternária para renderização condicional
 challengeType: 6
 forumTopicId: 301414
 dashedName: use-a-ternary-expression-for-conditional-rendering
@@ -8,7 +8,7 @@ dashedName: use-a-ternary-expression-for-conditional-rendering
 
 # --description--
 
-Antes de seguir para técnicas de renderização dinâmica, Há uma última maneira de usar condicionais de JavaScript incorporadas para renderizar o que você quer: o <dfn>operador ternário</dfn>. O operador ternário é frequentemente utilizado como um atalho para comandos `if/else` em JavaScript. Eles não são tão robustos quanto as declarações tradicionais `if/else`, mas são muito populares entre desenvolvedores React. Uma das razões para isso é devido a como JSX é compilado, instruções `if/else` não podem ser inseridas diretamente no código JSX. Você pode ter percebido isso há alguns desafios — quando uma instrução `if/else` foi necessária, estava sempre *fora* da instrução `return`. Expressões Ternárias podem ser uma excelente alternativa se você deseja implementar a lógica condicional dentro de seu JSX. Lembre que um operador ternário tem três partes, mas você pode combinar várias expressões ternárias juntas. Aqui está a sintaxe básica:
+Antes de seguir para técnicas de renderização dinâmica, há uma última maneira de usar condicionais de JavaScript incorporadas para renderizar o que você quer: o <dfn>operador ternário</dfn>. O operador ternário é frequentemente utilizado como um atalho para comandos `if/else` em JavaScript. Eles não são tão robustos quanto as declarações tradicionais `if/else`, mas são muito populares entre desenvolvedores React. Uma das razões para isso é devido a como JSX é compilado, instruções `if/else` não podem ser inseridas diretamente no código JSX. Você pode ter percebido isso há alguns desafios — quando uma instrução `if/else` foi necessária, estava sempre *fora* da instrução `return`. Expressões ternárias podem ser uma excelente alternativa se você deseja implementar a lógica condicional dentro de seu JSX. Lembre-se de que um operador ternário tem três partes, mas você pode combinar várias expressões ternárias juntas. Aqui está a sintaxe básica:
 
 ```jsx
 condition ? expressionIfTrue : expressionIfFalse;
@@ -155,7 +155,7 @@ Uma vez que um número for enviado, e o valor do `input` é novamente alterado, 
 })();
 ```
 
-Seu código não deve conter nenhuma instrução `if/else`.
+O código não deve conter nenhuma instrução `if/else`.
 
 ```js
 assert(

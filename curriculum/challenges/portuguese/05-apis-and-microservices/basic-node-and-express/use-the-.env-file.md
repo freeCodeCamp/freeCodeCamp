@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf2
-title: Use the .env File
+title: Usar o arquivo .env
 challengeType: 2
 forumTopicId: 301521
 dashedName: use-the--env-file
@@ -8,23 +8,23 @@ dashedName: use-the--env-file
 
 # --description--
 
-The `.env` file is a hidden file that is used to pass environment variables to your application. This file is secret, no one but you can access it, and it can be used to store data that you want to keep private or hidden. For example, you can store API keys from external services or your database URI. You can also use it to store configuration options. By setting configuration options, you can change the behavior of your application, without the need to rewrite some code.
+O arquivo `.env` é um arquivo oculto que é usado para passar variáveis de ambiente para seu aplicativo. Este arquivo é secreto, ninguém além de você pode acessá-lo. Ele pode ser usado para armazenar dados que você deseja manter privados ou ocultos. Por exemplo, você pode armazenar chaves da API de serviços externos ou o URI do seu banco de dados. Você também pode usá-lo para armazenar as opções de configuração. Ao definir as opções de configuração, você pode alterar o comportamento de sua aplicação sem a necessidade de reescrever algum código.
 
-The environment variables are accessible from the app as `process.env.VAR_NAME`. The `process.env` object is a global Node object, and variables are passed as strings. By convention, the variable names are all uppercase, with words separated by an underscore. The `.env` is a shell file, so you don’t need to wrap names or values in quotes. It is also important to note that there cannot be space around the equals sign when you are assigning values to your variables, e.g. `VAR_NAME=value`. Usually, you will put each variable definition on a separate line.
+As variáveis de ambiente podem ser acessadas pelo aplicativo usando `process.env.VAR_NAME`. O objeto `process.env` é um objeto global do Node e suas variáveis são passadas como strings. Por convenção, os nomes de variáveis ficam todos em letras maiúsculas, com palavras separadas por um sublinhado. O `.env` é um arquivo shell. Assim, você não precisa encapsular nomes ou valores entre aspas. Também é importante notar que não pode haver espaço em torno do sinal de igual quando você estiver atribuindo valores às suas variáveis, como, por exemplo, `VAR_NAME=value`. Normalmente, você colocará cada definição de variável em uma linha separada.
 
 # --instructions--
 
-Let's add an environment variable as a configuration option.
+Vamos adicionar uma variável de ambiente como uma opção de configuração.
 
-Create a `.env` file in the root of your project directory, and store the variable `MESSAGE_STYLE=uppercase` in it.
+Crie um arquivo `.env` na raiz do diretório do seu projeto e armazene a variável `MESSAGE_STYLE=uppercase` nele.
 
-Then, in the `/json` GET route handler you created in the last challenge, transform the response object's message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should either be `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`, depending on the `MESSAGE_STYLE` value.
+Em seguida, no manipulador de rota `/json` do GET que você criou no último desafio, transforme a mensagem do objeto de resposta em letras maiúsculas com `process.env.MESSAGE_STYLE` é igual a `uppercase`. O objeto de resposta deve ser `{"message": "Hello json"}` ou `{"message": "HELLO JSON"}`, dependendo do valor de `MESSAGE_STYLE`.
 
-**Note:** If you are using Replit, you cannot create a `.env` file. Instead, use the built-in <dfn>SECRETS</dfn> tab to add the variable.
+**Observação:** se você estiver usando o Replit, você não poderá criar um arquivo `.env`. Em vez disso, use a aba embutida <dfn>SECRETS</dfn> para adicionar a variável.
 
 # --hints--
 
-The response of the endpoint `/json` should change according to the environment variable `MESSAGE_STYLE`
+A resposta do endpoint `/json` deve ser alterada de acordo com a variável de ambiente `MESSAGE_STYLE`
 
 ```js
 (getUserInput) =>

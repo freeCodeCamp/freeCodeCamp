@@ -19,6 +19,7 @@
   - [Ajude na tradução da aplicação web](how-to-work-on-localized-client-webapp.md)
   - [Capture e-mails enviados localmente](how-to-catch-outgoing-emails-locally.md)
   - [Teste traduções localmente](how-to-test-translations-locally.md)
+  - [Compreenda a estrutura do arquivo do currículo](curriculum-file-structure.md)
 
 ---
 

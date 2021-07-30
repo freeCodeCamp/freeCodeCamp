@@ -11,7 +11,7 @@ dashedName: iterate-with-javascript-while-loops
 
 Você pode rodar o mesmo código várias vezes usando um laço.
 
-O primeiro tipo de laço que aprenderemos é chamado de laço `while` porque ele irá rodar enquanto uma condição específica for verdadeira e irá parar uma vez que a condição não for mais verdadeira.
+O primeiro tipo de laço que aprenderemos é chamado de laço `while` porque ele rodará enquanto uma condição específica for verdadeira e vai parar uma vez que a condição não for mais verdadeira.
 
 ```js
 var ourArray = [];

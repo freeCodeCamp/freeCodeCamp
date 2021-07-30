@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614e
-title: Defina um Criador de Action
+title: Definir um criador de action
 challengeType: 6
 forumTopicId: 301441
 dashedName: define-an-action-creator

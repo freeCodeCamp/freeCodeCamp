@@ -23,7 +23,6 @@ import { Link } from '../../helpers';
 import { updateUserFlag } from '../../../redux/settings';
 import envData from '../../../../../config/env.json';
 import createLanguageRedirect from '../../create-language-redirect';
-import createExternalRedirect from '../../create-external-redirects';
 import {
   availableLangs,
   i18nextCodes,
@@ -118,7 +117,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           external={true}
           key='forum'
           sameTab={false}
-          to={createExternalRedirect('forum', { clientLocale })}
+          to={t('links:nav.forum')}
         >
           <span>{t('buttons.forum')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
@@ -128,7 +127,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           external={true}
           key='news'
           sameTab={false}
-          to={createExternalRedirect('news', { clientLocale })}
+          to={t('links:nav.news')}
         >
           <span>{t('buttons.news')}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />

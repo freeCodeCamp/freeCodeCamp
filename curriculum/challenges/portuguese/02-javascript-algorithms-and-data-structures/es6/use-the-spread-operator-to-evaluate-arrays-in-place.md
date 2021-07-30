@@ -1,6 +1,6 @@
 ---
 id: 587d7b89367417b2b2512b48
-title: Use o operador spread para avaliar arrays na hora
+title: Usar o operador spread para avaliar arrays na hora
 challengeType: 1
 forumTopicId: 301222
 dashedName: use-the-spread-operator-to-evaluate-arrays-in-place
@@ -8,7 +8,7 @@ dashedName: use-the-spread-operator-to-evaluate-arrays-in-place
 
 # --description--
 
-ES6 introduz o <dfn>operador spread</dfn>, o qual nos permite expandir arrays e outras expresões no lugar aonde é esperado diversos parâmetros ou elementos.
+ES6 introduz o <dfn>operador spread</dfn>, o qual nos permite expandir arrays e outras expressões no lugar aonde é esperado diversos parâmetros ou elementos.
 
 O código em ES5 abaixo usa `apply()` para calcular o valor máximo de um array:
 

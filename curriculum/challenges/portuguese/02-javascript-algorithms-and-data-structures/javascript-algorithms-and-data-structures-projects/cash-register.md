@@ -1,6 +1,6 @@
 ---
 id: aa2e6f85cab2ab736c9a9b24
-title: Caixa Registradora
+title: Caixa registradora
 challengeType: 5
 forumTopicId: 16012
 dashedName: cash-register
@@ -8,7 +8,7 @@ dashedName: cash-register
 
 # --description--
 
-Implemente uma função de registradora de caixa `checkCashRegister()` que aceita o preço de compra como o primeiro argumento (`price`), pagamento como o segundo argumento (`cash`) e dinheiro na registradora (`cid`) como o terceiro argumento.
+Implemente uma função de caixa registradora `checkCashRegister()` que aceita o preço de compra como o primeiro argumento (`price`), pagamento como o segundo argumento (`cash`) e dinheiro na registradora (`cid`) como o terceiro argumento.
 
 `cid` é um array de duas dimensões listando a moeda disponível e a quantidade.
 
@@ -20,7 +20,7 @@ Retorne `{status: "CLOSED", change: [...]}` com dinheiro no caixa como o valor p
 
 Caso contrário, retorne `{status: "OPEN", change: [...]}`, com o troco devido em moedas e notas, ordenado do maior para o menor, como o valor da chave `change`.
 
-<table class='table table-striped'><tbody><tr><th>Unidade de moeda</th><th>Quantidade</th></tr><tr><td>Penny</td><td>$0,01 (MET)</td></tr><tr><td>Níquel</td><td>$0,05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0,1 (DIME)</td></tr><tr><td>Quarter</td><td>$0,25 (QUARTER)</td></tr><tr><td>Dólar</td><td>$1 (UM)</td></tr><tr><td>Cinco Dólares</td><td>$5 (CINCO)</td></tr><tr><td>Dez Dólares</td><td>$10 (DEZ)</td></tr><tr><td>Vinte Dólares</td><td>$20 (VINTE)</td></tr><tr><td>Cem Dólares</td><td>$100 (CEM)</td></tr></tbody></table>
+<table class='table table-striped'><tbody><tr><th>Unidade de moeda</th><th>Quantidade</th></tr><tr><td>Penny</td><td>$0,01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0,05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0,1 (DIME)</td></tr><tr><td>Quarter</td><td>$0,25 (QUARTER)</td></tr><tr><td>Dólar</td><td>$1 (ONE)</td></tr><tr><td>Cinco dólares</td><td>$5 (FIVE)</td></tr><tr><td>Dez dólares</td><td>$10 (TEN)</td></tr><tr><td>Vinte dólares</td><td>$20 (TWENTY)</td></tr><tr><td>Cem dólares</td><td>$100 (ONE HUNDRED)</td></tr></tbody></table>
 
 Veja abaixo um exemplo de um array de dinheiro no caixa (cid):
 

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed808826
-title: Desativar um Elemento Usando jQuery
+title: Desativar um elemento usando o jQuery
 challengeType: 6
 forumTopicId: 17563
 dashedName: disable-an-element-using-jquery
@@ -12,7 +12,7 @@ Você também pode alterar as propriedades não CSS de elementos HTML com jQuery
 
 Quando você desativa um botão, ele se tornará cinza e não poderá mais ser clicado.
 
-jQuery possui uma função chamada `.prop()` que o permite ajustar as propriedades de elementos.
+O jQuery possui uma função chamada `.prop()` que o permite ajustar as propriedades de elementos.
 
 Aqui está como você desabilitaria todos os botões:
 
@@ -24,7 +24,7 @@ Desative apenas o botão `target1`.
 
 # --hints--
 
-Seu botão `target1` deve ser desativado.
+O botão `target1` deve ser desativado.
 
 ```js
 assert(

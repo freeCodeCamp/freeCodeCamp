@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036178
-title: Criar um Input Controlado
+title: Criar um input controlado
 challengeType: 6
 forumTopicId: 301385
 dashedName: create-a-controlled-input
@@ -8,7 +8,7 @@ dashedName: create-a-controlled-input
 
 # --description--
 
-Sua aplicação pode ter interações mais complexas entre `state` e a interface renderizada. Por exemplo, elementos de controle de formulário para entradas do tipo texto, assim como `input` e `textarea`, mantém seus próprios estados no DOM enquanto o usuário digita. Com React, você pode mover esse estado mutável para o `state` de um componente React. A entrada do usuário se torna parte do `state` da aplicação, então o React controla o valor desse campo de entrada. Tipicamente, se você tem componentes React com campos de entrada em que o usuário pode digitar, será um formulário de entrada controlado.
+A aplicação pode ter interações mais complexas entre `state` e a interface renderizada. Por exemplo, elementos de controle de formulário para entradas do tipo texto, assim como `input` e `textarea`, mantém seus próprios estados no DOM enquanto o usuário digita. Com React, você pode mover esse estado mutável para o `state` de um componente React. A entrada do usuário se torna parte do `state` da aplicação, então o React controla o valor desse campo de entrada. Tipicamente, se você tem componentes React com campos de entrada em que o usuário pode digitar, será um formulário de entrada controlado.
 
 # --instructions--
 
