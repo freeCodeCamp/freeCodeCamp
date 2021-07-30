@@ -23,12 +23,14 @@ import {
   ResizePropsType
 } from '../../../redux/prop-types';
 import { isContained } from '../../../utils/is-contained';
+import ChallengeDescription from '../components/Challenge-Description';
 import HelpModal from '../components/HelpModal';
 import Hotkeys from '../components/Hotkeys';
 import Preview from '../components/Preview';
 import ResetModal from '../components/ResetModal';
 import SidePanel from '../components/Side-Panel';
 import VideoModal from '../components/VideoModal';
+import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import Output from '../components/output';
 import {
@@ -41,7 +43,8 @@ import {
   challengeMounted,
   consoleOutputSelector,
   executeChallenge,
-  cancelTests
+  cancelTests,
+  isChallengeCompletedSelector
 } from '../redux';
 import { getGuideUrl } from '../utils';
 import DesktopLayout from './DesktopLayout';
@@ -56,7 +59,8 @@ import '../components/test-frame.css';
 const mapStateToProps = createStructuredSelector({
   files: challengeFilesSelector,
   tests: challengeTestsSelector,
-  output: consoleOutputSelector
+  output: consoleOutputSelector,
+  isChallengeCompleted: isChallengeCompletedSelector
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -83,6 +87,7 @@ interface ShowClassicProps {
   files: ChallengeFileType;
   initConsole: (arg0: string) => void;
   initTests: (tests: TestType[]) => void;
+  isChallengeCompleted: boolean;
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMetaType;
@@ -287,15 +292,27 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     return (
       <SidePanel
         block={block}
+        challengeDescription={
+          <ChallengeDescription
+            block={block}
+            description={description}
+            instructions={instructions}
+          />
+        }
+        challengeTitle={
+          <ChallengeTitle
+            block={block}
+            isCompleted={this.props.isChallengeCompleted}
+            superBlock={superBlock}
+            translationPending={translationPending}
+          >
+            {title}
+          </ChallengeTitle>
+        }
         className='full-height'
-        description={description}
         guideUrl={getGuideUrl({ forumTopicId, title })}
-        instructions={instructions}
         instructionsPanelRef={this.instructionsPanelRef}
         showToolPanel={showToolPanel}
-        superBlock={superBlock}
-        title={title}
-        translationPending={translationPending}
         videoUrl={this.getVideoUrl()}
       />
     );

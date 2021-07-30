@@ -4,36 +4,24 @@ import { connect } from 'react-redux';
 
 import { createSelector } from 'reselect';
 import { mathJaxScriptLoader } from '../../../utils/script-loaders';
-import { challengeTestsSelector, isChallengeCompletedSelector } from '../redux';
-import ChallengeDescription from './Challenge-Description';
+import { challengeTestsSelector } from '../redux';
 import TestSuite from './Test-Suite';
 import ToolPanel from './Tool-Panel';
 
-import ChallengeTitle from './challenge-title';
-
 import './side-panel.css';
 
-const mapStateToProps = createSelector(
-  isChallengeCompletedSelector,
-  challengeTestsSelector,
-  (isChallengeCompleted, tests) => ({
-    isChallengeCompleted,
-    tests
-  })
-);
+const mapStateToProps = createSelector(challengeTestsSelector, tests => ({
+  tests
+}));
 
 const propTypes = {
   block: PropTypes.string,
-  description: PropTypes.string,
+  challengeDescription: PropTypes.element.isRequired,
+  challengeTitle: PropTypes.element.isRequired,
   guideUrl: PropTypes.string,
-  instructions: PropTypes.string,
   instructionsPanelRef: PropTypes.any.isRequired,
-  isChallengeCompleted: PropTypes.bool,
   showToolPanel: PropTypes.bool,
-  superBlock: PropTypes.string,
   tests: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
-  translationPending: PropTypes.bool.isRequired,
   videoUrl: PropTypes.string
 };
 
@@ -69,20 +57,8 @@ export class SidePanel extends Component {
   }
 
   render() {
-    const {
-      block,
-      title,
-      description,
-      instructions,
-      instructionsPanelRef,
-      isChallengeCompleted,
-      guideUrl,
-      tests,
-      showToolPanel,
-      superBlock,
-      translationPending,
-      videoUrl
-    } = this.props;
+    const { instructionsPanelRef, guideUrl, tests, showToolPanel, videoUrl } =
+      this.props;
     return (
       <div
         className='instructions-panel'
@@ -90,21 +66,8 @@ export class SidePanel extends Component {
         role='complementary'
         tabIndex='-1'
       >
-        <div>
-          <ChallengeTitle
-            block={block}
-            isCompleted={isChallengeCompleted}
-            superBlock={superBlock}
-            translationPending={translationPending}
-          >
-            {title}
-          </ChallengeTitle>
-          <ChallengeDescription
-            block={block}
-            description={description}
-            instructions={instructions}
-          />
-        </div>
+        {this.props.challengeTitle}
+        {this.props.challengeDescription}
         {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}
         <TestSuite tests={tests} />
       </div>
