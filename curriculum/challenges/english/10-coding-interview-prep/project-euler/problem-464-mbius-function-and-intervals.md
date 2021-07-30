@@ -13,9 +13,9 @@ The Möbius function, denoted $μ(n)$, is defined as:
 - $μ(n) = (-1)^{ω(n)}$ if $n$ is squarefree (where $ω(n)$ is the number of distinct prime factors of $n$)
 - $μ(n) = 0$ if $n$ is not squarefree.
 
-Let $P(a, b)$ be the number of integers $n$ in the interval [a, b] such that $μ(n) = 1$.
+Let $P(a, b)$ be the number of integers $n$ in the interval $[a, b]$ such that $μ(n) = 1$.
 
-Let $N(a, b)$ be the number of integers $n$ in the interval [a, b] such that $μ(n) = -1$.
+Let $N(a, b)$ be the number of integers $n$ in the interval $[a, b]$ such that $μ(n) = -1$.
 
 For example, $P(2, 10) = 2$ and $N(2, 10) = 4$.
 
