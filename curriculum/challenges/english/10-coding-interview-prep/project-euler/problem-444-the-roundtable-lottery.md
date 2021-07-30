@@ -25,7 +25,7 @@ Let $S_1(N) = \displaystyle\sum_{p = 1}^N E(p)$.
 
 Let $S_k(N) = \displaystyle\sum_{p = 1}^N S_{k - 1}(p)$ for $k > 1$.
 
-Find $S_{20}({10}^{14})$ and write the answer as a string in scientific notation rounded to 10 significant digits. Use a lowercase $e$ to separate mantissa and exponent. For example, the answer for $S_3(100)$ would be `5.983679014e5`.
+Find $S_{20}({10}^{14})$ and write the answer as a string in scientific notation rounded to 10 significant digits. Use a lowercase `e` to separate mantissa and exponent. For example, the answer for $S_3(100)$ would be `5.983679014e5`.
 
 # --hints--
 
