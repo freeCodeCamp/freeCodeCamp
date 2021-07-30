@@ -1,12 +1,12 @@
-import React from 'react';
 import {
   ToggleButtonGroup as BSBG,
   ToggleButton as TB
 } from '@freecodecamp/react-bootstrap';
+import React from 'react';
 
 import './toggle-button.css';
-import ToggleCheck from '../../assets/icons/toggle-check';
 import Spacer from '../../assets/icons/spacer';
+import ToggleCheck from '../../assets/icons/toggle-check';
 
 interface ButtonProps {
   name: string;

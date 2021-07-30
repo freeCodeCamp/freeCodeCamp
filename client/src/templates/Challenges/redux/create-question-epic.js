@@ -1,7 +1,8 @@
 import dedent from 'dedent';
+import i18next from 'i18next';
 import { ofType } from 'redux-observable';
 import { tap, mapTo } from 'rxjs/operators';
-import { actionTypes } from './action-types';
+import envData from '../../../../../config/env.json';
 import {
   closeModal,
   challengeFilesSelector,
@@ -9,8 +10,7 @@ import {
   projectFormValuesSelector
 } from '../redux';
 import { transformEditorLink } from '../utils';
-import envData from '../../../../../config/env.json';
-import i18next from 'i18next';
+import { actionTypes } from './action-types';
 
 const { forumLocation } = envData;
 

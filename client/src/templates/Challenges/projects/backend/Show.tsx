@@ -2,15 +2,30 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 // Package Utilities
-import React, { Component } from 'react';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
-import { createSelector } from 'reselect';
-import { connect } from 'react-redux';
 import { graphql } from 'gatsby';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
 // Local Utilities
+import Spacer from '../../../../components/helpers/spacer';
+import LearnLayout from '../../../../components/layouts/learn';
+import { isSignedInSelector } from '../../../../redux';
+import {
+  ChallengeNodeType,
+  ChallengeMetaType,
+  TestType
+} from '../../../../redux/prop-types';
+import ChallengeDescription from '../../components/Challenge-Description';
+import HelpModal from '../../components/HelpModal';
+import Hotkeys from '../../components/Hotkeys';
+import TestSuite from '../../components/Test-Suite';
+import ChallengeTitle from '../../components/challenge-title';
+import CompletionModal from '../../components/completion-modal';
+import Output from '../../components/output';
 import {
   executeChallenge,
   challengeMounted,
@@ -23,23 +38,8 @@ import {
   updateSolutionFormValues
 } from '../../redux';
 import { getGuideUrl } from '../../utils';
-import LearnLayout from '../../../../components/layouts/learn';
-import ChallengeTitle from '../../components/challenge-title';
-import ChallengeDescription from '../../components/Challenge-Description';
-import TestSuite from '../../components/Test-Suite';
-import Output from '../../components/output';
-import CompletionModal from '../../components/completion-modal';
-import HelpModal from '../../components/HelpModal';
-import ProjectToolPanel from '../tool-panel';
 import SolutionForm from '../solution-form';
-import Spacer from '../../../../components/helpers/spacer';
-import {
-  ChallengeNodeType,
-  ChallengeMetaType,
-  TestType
-} from '../../../../redux/prop-types';
-import { isSignedInSelector } from '../../../../redux';
-import Hotkeys from '../../components/Hotkeys';
+import ProjectToolPanel from '../tool-panel';
 
 // Styles
 import '../../components/test-frame.css';

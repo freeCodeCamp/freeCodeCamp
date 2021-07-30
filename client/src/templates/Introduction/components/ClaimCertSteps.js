@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
 
-import { StepsType } from '../../../redux/prop-types';
-import GreenPass from '../../../assets/icons/green-pass';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
+import GreenPass from '../../../assets/icons/green-pass';
+import { StepsType } from '../../../redux/prop-types';
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 

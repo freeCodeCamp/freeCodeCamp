@@ -1,5 +1,5 @@
-import envData from '../../../config/env.json';
 import cookies from 'browser-cookies';
+import envData from '../../../config/env.json';
 
 import type { UserType } from '../redux/prop-types';
 

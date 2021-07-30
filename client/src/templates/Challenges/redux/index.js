@@ -1,17 +1,17 @@
-import { createAction, handleActions } from 'redux-actions';
 import { isEmpty } from 'lodash-es';
+import { createAction, handleActions } from 'redux-actions';
 
 import { getLines } from '../../../../../utils/get-lines';
 import { createPoly } from '../../../../../utils/polyvinyl';
 import { challengeTypes } from '../../../../utils/challengeTypes';
+import { completedChallengesSelector } from '../../../redux';
+import { getTargetEditor } from '../utils/getTargetEditor';
 import { actionTypes, ns } from './action-types';
 import codeLockEpic from './code-lock-epic';
 import codeStorageEpic from './code-storage-epic';
 import completionEpic from './completion-epic';
 import createQuestionEpic from './create-question-epic';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
-import { getTargetEditor } from '../utils/getTargetEditor';
-import { completedChallengesSelector } from '../../../redux';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
 
 export { ns };

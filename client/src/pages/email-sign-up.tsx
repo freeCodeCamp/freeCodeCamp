@@ -1,18 +1,17 @@
+import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import React, { useEffect } from 'react';
+import Helmet from 'react-helmet';
+import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import SectionHeader from '../components/settings/section-header';
-import IntroDescription from '../components/Intro/components/IntroDescription';
-import { TFunction, withTranslation } from 'react-i18next';
-
-import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
-import Helmet from 'react-helmet';
 import { createSelector } from 'reselect';
-
-import { ButtonSpacer, Spacer } from '../components/helpers';
-import { acceptTerms, userSelector } from '../redux';
+import IntroDescription from '../components/Intro/components/IntroDescription';
 import createRedirect from '../components/create-redirect';
+import { ButtonSpacer, Spacer } from '../components/helpers';
+import SectionHeader from '../components/settings/section-header';
+
+import { acceptTerms, userSelector } from '../redux';
 
 import './email-sign-up.css';
 

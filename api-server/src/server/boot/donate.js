@@ -1,11 +1,11 @@
 import debug from 'debug';
+import keys from '../../../../config/secrets';
 import {
   getAsyncPaypalToken,
   verifyWebHook,
   updateUser,
   verifyWebHookType
 } from '../utils/donation';
-import keys from '../../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
 

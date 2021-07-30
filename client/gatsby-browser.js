@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Provider } from 'react-redux';
-import { I18nextProvider } from 'react-i18next';
 import cookies from 'browser-cookies';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { I18nextProvider } from 'react-i18next';
+import { Provider } from 'react-redux';
 
 import i18n from './i18n/config';
-import { createStore } from './src/redux/createStore';
 import AppMountNotifier from './src/components/app-mount-notifier';
+import { createStore } from './src/redux/createStore';
 import layoutSelector from './utils/gatsby/layout-selector';
 
 const store = createStore();

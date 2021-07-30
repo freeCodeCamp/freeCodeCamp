@@ -1,21 +1,20 @@
-import React from 'react';
-import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAward,
   faCalendar,
   faHeart
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Col, Row } from '@freecodecamp/react-bootstrap';
+import React from 'react';
 import { TFunction, useTranslation } from 'react-i18next';
 
+import envData from '../../../../../config/env.json';
+import { langCodes } from '../../../../../config/i18n/all-langs';
 import { AvatarRenderer } from '../../helpers';
-import SocialIcons from './SocialIcons';
 import Link from '../../helpers/link';
+import SocialIcons from './SocialIcons';
 
 import './camper.css';
-
-import { langCodes } from '../../../../../config/i18n/all-langs';
-import envData from '../../../../../config/env.json';
 
 const { clientLocale } = envData;
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment

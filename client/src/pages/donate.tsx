@@ -1,13 +1,12 @@
+import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
+import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
-import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
-import { TFunction, withTranslation } from 'react-i18next';
 
-import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
 import {
   DonationText,
@@ -15,8 +14,9 @@ import {
   DonationOptionsText,
   DonationOptionsAlertText
 } from '../components/Donation/DonationTextComponents';
-import { signInLoadingSelector, userSelector, executeGA } from '../redux';
+import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/CampersImage';
+import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 
 interface ExecuteGaArg {
   type: string;

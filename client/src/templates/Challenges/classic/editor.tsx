@@ -1,3 +1,12 @@
+import Loadable from '@loadable/component';
+// eslint-disable-next-line import/no-duplicates
+import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
+import type {
+  IRange,
+  editor,
+  Range as RangeType
+  // eslint-disable-next-line import/no-duplicates
+} from 'monaco-editor/esm/vs/editor/editor.api';
 import React, {
   useEffect,
   Suspense,
@@ -7,8 +16,17 @@ import React, {
 } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import Loadable from '@loadable/component';
 
+import { Loader } from '../../../components/helpers';
+import { userSelector, isDonationModalOpenSelector } from '../../../redux';
+import {
+  ChallengeFileType,
+  DimensionsType,
+  ExtTypes,
+  FileKeyTypes,
+  ResizePropsType,
+  TestType
+} from '../../../redux/prop-types';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
@@ -21,25 +39,6 @@ import {
   challengeTestsSelector,
   submitChallenge
 } from '../redux';
-import { userSelector, isDonationModalOpenSelector } from '../../../redux';
-import { Loader } from '../../../components/helpers';
-import {
-  ChallengeFileType,
-  DimensionsType,
-  ExtTypes,
-  FileKeyTypes,
-  ResizePropsType,
-  TestType
-} from '../../../redux/prop-types';
-
-// eslint-disable-next-line import/no-duplicates
-import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
-import type {
-  IRange,
-  editor,
-  Range as RangeType
-  // eslint-disable-next-line import/no-duplicates
-} from 'monaco-editor/esm/vs/editor/editor.api';
 
 import './editor.css';
 

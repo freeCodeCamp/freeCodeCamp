@@ -1,7 +1,7 @@
-import { types } from '.';
-import { createGaSaga } from './ga-saga';
-import ga from '../analytics';
 import { expectSaga } from 'redux-saga-test-plan';
+import ga from '../analytics';
+import { createGaSaga } from './ga-saga';
+import { types } from '.';
 
 jest.mock('../analytics');
 

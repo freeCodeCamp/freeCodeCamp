@@ -4,8 +4,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/unbound-method */
-import React, { Component, useMemo } from 'react';
-import { reverse, sortBy } from 'lodash-es';
 import {
   Button,
   Modal,
@@ -13,27 +11,25 @@ import {
   DropdownButton,
   MenuItem
 } from '@freecodecamp/react-bootstrap';
+import Loadable from '@loadable/component';
 import { useStaticQuery, graphql } from 'gatsby';
+import { reverse, sortBy } from 'lodash-es';
+import React, { Component, useMemo } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 
-import './timeline.css';
-import TimelinePagination from './TimelinePagination';
-import { FullWidthRow, Link } from '../../helpers';
-import Loadable from '@loadable/component';
-
+import envData from '../../../../../config/env.json';
+import { langCodes } from '../../../../../config/i18n/all-langs';
 import {
   getCertIds,
   getPathFromID,
   getTitleFromId
 } from '../../../../../utils';
-
-import { maybeUrlRE } from '../../../utils';
 import CertificationIcon from '../../../assets/icons/certification-icon';
+import { maybeUrlRE } from '../../../utils';
+import { FullWidthRow, Link } from '../../helpers';
+import TimelinePagination from './TimelinePagination';
 
-import { langCodes } from '../../../../../config/i18n/all-langs';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import envData from '../../../../../config/env.json';
+import './timeline.css';
 
 const SolutionViewer = Loadable(
   () =>
