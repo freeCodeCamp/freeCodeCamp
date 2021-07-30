@@ -47,8 +47,8 @@ Ao renomear uma certificação, você provavelmente vai querer renomear o superb
 1. No arquivo YAML, altere o `title` para o novo nome.
 1. Renomeie o arquivo e a pasta da etapa 3 para o resto dos idiomas do currículo.
 1. Atualize `client/src/redux/index.ts` para que ele use o `title` correto.
-1. Optionally, update the `certSlug` for the superblock in the same file. **Note** that renaming a `certSlug` will change the URL for certifications and should only be done with careful consideration.
-1. Update the `title` in `client/src/resources/cert-and-project-map.ts` to the new value. **Note** that changing the `title` here **will break** the superBlock page for the associated certification. It relies on the superBlock title to match the certification title. You will likely want to rename the superBlock at the same time.
+1. Como opção, atualize o `certSlug` para o superbloco do mesmo arquivo. **Note** que renomear um `certSlug` mudará o URL para as certificações e somente deverá ser feito depois de se pensar muito sobre o assunto.
+1. Atualize o `title` em `client/src/resources/cert-and-project-map.ts` com o novo valor. **Note** que mudar o `title` aqui **quebrará** a página do superbloco da certificação associada. Ela depende do título do superbloco para encontrar fazer a correspondência com o título da certificação. Você provavelmente vai querer renomear o superbloco ao mesmo tempo.
 1. Se você renomeou o `certSlug` na etapa 7, altere aqui para o cert e para todos os valores de `projects` aninhados.
 1. Em `config/certification-settings.js`, atualize o valor de `certTypeTitleMap` para o novo nome.
 1. Se você renomeou o `certSlug` na etapa 7, atualize a chave de `certSlugTypeMap` no mesmo arquivo.
@@ -67,10 +67,10 @@ Além disso, você provavelmente vai querer renomear o certificado e o bloco `{s
 1. Renomeie a pasta do superbloco em `client/src/pages/learn`.
 1. Atualize o arquivo `index.md` na pasta acima, alterando os valores de `title` e `superBlock` com o novo nome.
 1. Para cada pasta de bloco que estiver dentro daquela citada acima, atualize o `index.md` para que use o valor `superBlock` correto.
-1. In the `client/src/resources/cert-and-project-map.ts` file, update the path for the cert at the top of the file, and the `title` value for that superBlock. **Note** that changing the `title` here **will break** the ability to view the actual certification for this superBlock. It relies on the superBlock title to match the certification title. You will likely want to rename the certification at the same time.
+1. No arquivo `client/src/resources/cert-and-project-map.ts`, atualize o caminho para a certificação na parte superior do arquivo, bem como o valor de `title` para aquele superbloco. **Note** que mudar o `title` aqui **quebrará** a capacidade de ver a certificação real deste superbloco. Ela depende do título do superbloco para fazer a correspondência com o título da certificação. Você provavelmente vai querer renomear a certificação ao mesmo tempo.
 1. Atualize a chave `superBlockCertTypeMap` em `config/certification-settings.js` para o novo nome do superbloco.
 1. Atualize o valor do caminho em `client/src/assets/icons/index.tsx`.
-1. For each language in `client/i18n/locales`, update the `intro.json` file to use the new superBlock `dashedName`. In the English file, also update the `title`.
+1. Para cada idioma em `client/i18n/locales`, atualize o arquivo `intro.json` para que use o novo `dashedName` do superbloco. No arquivo em inglês, atualize também o `title`.
 1. Verifique o arquivo `config/i18n/all-langs.js` para ver se o superbloco está habilitado para as builds do i18n. Atualize todos os valores onde ele for utilizado.
 1. Atualize o arquivo `README.md` principal com o novo nome.
 
@@ -85,7 +85,7 @@ Ao renomear um bloco do currículo, você precisa:
 1. Atualizar `client/utils/help-category-map.json` para que use o novo nome do bloco como chave.
 1. Atualizar a pasta do bloco em `client/src/pages/learn/{superBlock}`.
 1. No arquivo `index.md` da pasta acima, atualize o valor de `block` no frontmatter.
-1. In the `client/i18n/locales/{language}/intro.json` files, update the block name to the new name for all the languages. In the English `intro.json` file, update the `title` as well.
+1. Nos arquivos `client/i18n/locales/{language}/intro.json`, atualize o nome do bloco com o novo nome para todos os idiomas. No arquivo `intro.json` do inglês, atualize também o `title`.
 1. Atualize o arquivo `README.md` principal com o novo nome.
 
 ### Renomear um desafio
@@ -94,11 +94,12 @@ Ao renomear um único arquivo de desafio, você precisa:
 
 1. Mudar o nome do arquivo do desafio no diretório `curriculum/challenges/english/`.
 1. Mudar o nome de `title` e de `dashedName` naquele arquivo.
-1. Mudar o `dashedName` naqueles arquivos para *todos* os outros diretórios de idiomas para que correspondam.
+1. Mudar o nome do arquivo e o `dashedName` naqueles arquivos para *todos* os outros diretórios de idiomas para que correspondam.
 1. Atualizar o nome do desafio no arquivo `meta.json` relevante. Os nomes dos desafios não são usados na build, mas fornecem uma alternativa mais fácil de identificar a ordem dos desafios.
 1. Se o desafio for um projeto de certificado, atualize o arquivo YAML em `curriculum/english/12-certificates/<superBlock>` para o novo nome.
-1. Se o desafio for um projeto de certificado, atualize o arquivo `README.md` principal com o novo nome.
+1. Se o desafio for um projeto de certificação, atualize o `title` e o `link` em `client/src/resources/cert-and-project-map.ts`
+1. Se o desafio for um projeto de certificação, atualize o arquivo `README.md` principal com o novo nome.
 
 ## A propriedade `dashedName`
 
-The `dashedName` property is used to generate the URL path for the superblock, block, or challenge. These should generally match what the `/utils/dasherize.js` helper would output for the file name.
+A propriedade `dashedName` é usada para gerar o caminho do URL para o superbloco, bloco, ou desafio. Eles devem corresponder em geral ao que o assistente `/utils/dasherize.js` daria como resultado para o nome do arquivo.
