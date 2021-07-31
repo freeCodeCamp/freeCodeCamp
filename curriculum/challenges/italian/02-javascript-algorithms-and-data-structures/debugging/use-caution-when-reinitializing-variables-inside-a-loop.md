@@ -38,12 +38,6 @@ assert(
 );
 ```
 
-Il tuo codice dovrebbe impostare la variabile `zeroArray(4,3)` su un array contenente 4 righe di 3 colonne di zeri ciascuna.
-
-```js
-assert(JSON.stringify(zeroArray(4,3)) == '[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]');
-```
-
 # --seed--
 
 ## --seed-contents--
