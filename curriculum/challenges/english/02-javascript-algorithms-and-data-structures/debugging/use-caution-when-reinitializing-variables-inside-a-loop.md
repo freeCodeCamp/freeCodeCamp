@@ -38,24 +38,10 @@ assert(
 );
 ```
 
-Your code should set the `matrix1` variable to an array holding 4 rows of 3 columns of zeroes each.
+Your code should set `zeroArray(4,3)` to return an array holding 4 rows of 3 columns of zeroes each.
 
 ```js
-assert(JSON.stringify(matrix1) == '[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]');
-```
-
-The `matrix1` variable should have 4 rows.
-
-```js
-assert(matrix1.length == 4);
-```
-
-The `matrix1` variable should have 3 columns in each row.
-
-```js
-assert(
-  matrix1[0].length == 3 && matrix1[1].length === 3 && matrix1[2].length === 3 && matrix1[3].length === 3
-);
+assert(JSON.stringify(zeroArray(4,3)) == '[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]');
 ```
 
 # --seed--
