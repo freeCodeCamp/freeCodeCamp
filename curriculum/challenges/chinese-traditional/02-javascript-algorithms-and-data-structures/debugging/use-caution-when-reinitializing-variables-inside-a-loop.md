@@ -38,6 +38,12 @@ assert(
 );
 ```
 
+應將 `zeroArray(4,3)` 設置爲 4 行 3 列“零”的二維數組。
+
+```js
+assert(JSON.stringify(zeroArray(4,3)) == '[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]');
+```
+
 # --seed--
 
 ## --seed-contents--

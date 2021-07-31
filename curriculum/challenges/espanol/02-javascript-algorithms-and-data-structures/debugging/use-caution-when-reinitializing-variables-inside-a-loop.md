@@ -38,6 +38,12 @@ assert(
 );
 ```
 
+Tu código debe establecer `zeroArray(4,3)` en una matriz que contenga 4 filas de 3 columnas de ceros cada una.
+
+```js
+assert(JSON.stringify(zeroArray(4,3)) == '[[0,0,0],[0,0,0],[0,0,0]]');
+```
+
 # --seed--
 
 ## --seed-contents--
