@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9d
-title: 'Natural Language Processing With RNNs: Recurring Neural Networks'
+title: '使用 RNN 进行自然语言处理：循环神经网络'
 challengeType: 11
 videoId: bX5681NPOcA
 dashedName: natural-language-processing-with-rnns-recurring-neural-networks
@@ -10,23 +10,23 @@ dashedName: natural-language-processing-with-rnns-recurring-neural-networks
 
 ## --text--
 
-What is true about Recurrent Neural Networks?
+关于循环神经网络，哪一项是正确的？
 
 ## --answers--
 
-1: They are a type of feed-forward neural network.
+1：它们是一种前馈神经网络。
 
 ---
 
-2: They maintain an internal memory/state of the input that was already processed.
+2：它们保持着一个已经处理过的输入的内部存储器/状态。
 
 ---
 
-3: RNN's contain a loop and process one piece of input at a time.
+3：RNN 包含一个循环，每次处理一个输入。
 
 ---
 
-4: Both 2 and 3.
+4：2 和 3。
 
 ## --video-solution--
 

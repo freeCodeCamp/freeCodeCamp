@@ -35,7 +35,7 @@ Ogni sfida ha dei test che puoi eseguire in qualsiasi momento cliccando sul puls
 
 # --instructions--
 
-Per superare il test di questa sfida, modifica il testo dell'elemento `h1` per dire `Hello World`.
+Per superare il test di questa sfida, modifica il testo dell'elemento `h1` in modo che dica `Hello World`.
 
 # --hints--
 

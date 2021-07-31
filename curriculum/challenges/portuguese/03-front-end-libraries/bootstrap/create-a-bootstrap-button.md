@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acdf08812
-title: Create a Bootstrap Button
+title: Criar um botão do Bootstrap
 challengeType: 0
 forumTopicId: 16811
 dashedName: create-a-bootstrap-button
@@ -8,13 +8,13 @@ dashedName: create-a-bootstrap-button
 
 # --description--
 
-Bootstrap has its own styles for `button` elements, which look much better than the plain HTML ones.
+O Bootstrap possui seus próprios estilos para elementos `button`, os quais ficam muito melhores do que aqueles botões em HTML puro.
 
-Create a new `button` element below your large kitten photo. Give it the `btn` and `btn-default` classes, as well as the text of `Like`.
+Crie um novo elemento `button` abaixo da foto grande do gatinho. Dê a ele as classes `btn` e `btn-default`, assim como o texto `Like`.
 
 # --hints--
 
-You should create a new `button` element with the text `Like`.
+Você deve criar um novo elemento `button` com o texto `Like`.
 
 ```js
 assert(
@@ -23,13 +23,13 @@ assert(
 );
 ```
 
-Your new button should have two classes: `btn` and `btn-default`.
+O novo botão deve ter duas classes: `btn` e `btn-default`.
 
 ```js
 assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
-All of your `button` elements should have closing tags.
+Todos os elementos `button` devem ter tags de fechamento.
 
 ```js
 assert(

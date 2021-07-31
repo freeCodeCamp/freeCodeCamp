@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036141
-title: Getting Started with React Redux
+title: Introducción a React Redux
 challengeType: 6
 forumTopicId: 301430
 dashedName: getting-started-with-react-redux
@@ -8,19 +8,19 @@ dashedName: getting-started-with-react-redux
 
 # --description--
 
-This series of challenges introduces how to use Redux with React. First, here's a review of some of the key principles of each technology. React is a view library that you provide with data, then it renders the view in an efficient, predictable way. Redux is a state management framework that you can use to simplify the management of your application's state. Typically, in a React Redux app, you create a single Redux store that manages the state of your entire app. Your React components subscribe to only the pieces of data in the store that are relevant to their role. Then, you dispatch actions directly from React components, which then trigger store updates.
+Esta serie de desafíos presenta cómo utilizar Redux con React. En primer lugar, repasamos algunos de los principios clave de cada tecnología. React es una librería de vistas a la que le proporcionas datos y luego renderiza la vista de forma eficiente y predecible. Redux es un framework de gestión de estados que puedes utilizar para simplificar la gestión del estado de tu aplicación. Por lo general, en una aplicación React Redux, se crea un único almacén Redux que gestiona el estado de toda la aplicación. Tus componentes de React se suscriben sólo a las piezas de datos del almacén que son relevantes para su función. Luego, se envían acciones directamente desde los componentes de React, que luego activan las actualizaciones del almacén.
 
-Although React components can manage their own state locally, when you have a complex app, it's generally better to keep the app state in a single location with Redux. There are exceptions when individual components may have local state specific only to them. Finally, because Redux is not designed to work with React out of the box, you need to use the `react-redux` package. It provides a way for you to pass Redux `state` and `dispatch` to your React components as `props`.
+Aunque los componentes de React pueden gestionar su propio estado localmente, cuando se tiene una aplicación compleja, generalmente es mejor mantener el estado de la aplicación en una sola ubicación con Redux. Hay excepciones cuando los componentes individuales pueden tener un estado local específico sólo para ellos. Por último, debido a que Redux no está diseñado para trabajar con React de fábrica, es necesario utilizar el paquete `react-redux`. Proporciona una forma para pasar Redux `state` y `dispatch` a tus componentes React como `props`.
 
-Over the next few challenges, first, you'll create a simple React component which allows you to input new text messages. These are added to an array that's displayed in the view. This should be a nice review of what you learned in the React lessons. Next, you'll create a Redux store and actions that manage the state of the messages array. Finally, you'll use `react-redux` to connect the Redux store with your component, thereby extracting the local state into the Redux store.
+A lo largo de los siguientes desafíos, primero crearás un simple componente React que te permita introducir nuevos mensajes de texto. Estos se añaden a un arreglo que se muestra en la vista. Esto debería ser un buen repaso de lo aprendido en las lecciones de React. A continuación, crearás un almacén Redux y acciones que gestionen el estado del arreglo de mensajes. Por último, utilizarás `react-redux` para conectar el almacén Redux con tu componente, extrayendo así el estado local en el almacén Redux.
 
 # --instructions--
 
-Start with a `DisplayMessages` component. Add a constructor to this component and initialize it with a state that has two properties: `input`, that's set to an empty string, and `messages`, that's set to an empty array.
+Comienza con un componente `DisplayMessages`. Añade un constructor a este componente e inicialízalo con un estado que tenga dos propiedades: `input`, que se establece como una cadena vacía, y `messages`, que se establece como un arreglo vacío.
 
 # --hints--
 
-The `DisplayMessages` component should render an empty `div` element.
+El componente `DisplayMessages` debe mostrar un elemento `div` vacío.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-The `DisplayMessages` constructor should be called properly with `super`, passing in `props`.
+El constructor `DisplayMessages` debe ser llamado correctamente con `super`, pasando `props`.
 
 ```js
 (getUserInput) =>
@@ -46,7 +46,7 @@ The `DisplayMessages` constructor should be called properly with `super`, passin
   );
 ```
 
-The `DisplayMessages` component should have an initial state equal to `{input: "", messages: []}`.
+El componente `DisplayMessages` debe tener un estado inicial igual a `{input: "", messages: []}`.
 
 ```js
 assert(

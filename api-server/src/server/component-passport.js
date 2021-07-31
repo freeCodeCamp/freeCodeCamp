@@ -11,9 +11,9 @@ import passportProviders from './passport-providers';
 import { setAccessTokenToResponse } from './utils/getSetAccessToken';
 import {
   getReturnTo,
-  getRedirectBase,
+  getPrefixedLandingPath,
   getRedirectParams,
-  isRootPath
+  haveSamePath
 } from './utils/redirection';
 import { jwtSecret } from '../../../config/secrets';
 import { availableLangs } from '../../../config/i18n/all-langs';
@@ -100,9 +100,14 @@ export const devLoginRedirect = () => {
         };
       }
     );
-    returnTo += isRootPath(getRedirectBase(origin, pathPrefix), returnTo)
-      ? '/learn'
-      : '';
+
+    // if returnTo has a trailing slash, we need to remove it before comparing
+    // it to the prefixed landing path
+    if (returnTo.slice(-1) === '/') {
+      returnTo = returnTo.slice(0, -1);
+    }
+    const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
+    returnTo += haveSamePath(redirectBase, returnTo) ? '/learn' : '';
     return res.redirect(returnTo);
   };
 };
@@ -142,7 +147,7 @@ we recommend using your email address: ${user.email} to sign in instead.
         const state = req && req.query && req.query.state;
         // returnTo, origin and pathPrefix are audited by getReturnTo
         let { returnTo, origin, pathPrefix } = getReturnTo(state, jwtSecret);
-        const redirectBase = getRedirectBase(origin, pathPrefix);
+        const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
 
         // TODO: getReturnTo could return a success flag to show a flash message,
         // but currently it immediately gets overwritten by a second message. We
@@ -150,7 +155,12 @@ we recommend using your email address: ${user.email} to sign in instead.
         // multiple messages to appear at once.
 
         if (user.acceptedPrivacyTerms) {
-          returnTo += isRootPath(redirectBase, returnTo) ? '/learn' : '';
+          // if returnTo has a trailing slash, we need to remove it before comparing
+          // it to the prefixed landing path
+          if (returnTo.slice(-1) === '/') {
+            returnTo = returnTo.slice(0, -1);
+          }
+          returnTo += haveSamePath(redirectBase, returnTo) ? '/learn' : '';
           return res.redirectWithFlash(returnTo);
         } else {
           return res.redirectWithFlash(`${redirectBase}/email-sign-up`);

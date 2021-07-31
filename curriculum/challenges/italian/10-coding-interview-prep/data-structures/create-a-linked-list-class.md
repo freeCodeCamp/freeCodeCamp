@@ -1,6 +1,6 @@
 ---
 id: 587d8251367417b2b2512c62
-title: Create a Linked List Class
+title: Creare una classe Lista Collegata
 challengeType: 1
 forumTopicId: 301628
 dashedName: create-a-linked-list-class
@@ -8,25 +8,25 @@ dashedName: create-a-linked-list-class
 
 # --description--
 
-Let's create a `linked list` class. Every linked list should start out with a few basic properties: a `head` (the first item in your list) and a `length` (number of items in your list). Sometimes you'll see implementations of linked lists that incorporate a `tail` for the last element of the list, but for now we'll just stick with these two. Whenever we add an element to the linked list, our `length` property should be incremented by one.
+Creiamo una classe `linked list`. Ogni lista collegata dovrebbe iniziare con alcune proprietà di base: una testa `head` (il primo elemento nella tua lista) e una lunghezza `length` (numero di elementi nella tua lista). A volte vedrai implementazioni di liste collegate che incorporano una coda `tail` per l'ultimo elemento dell'elenco, ma per ora rimarremo solo con queste due. Ogni volta che aggiungiamo un elemento alla lista collegata, la nostra proprietà `length` dovrebbe essere incrementata di uno.
 
-We'll want to have a way to add items to our linked list, so the first method we'll want to create is the `add` method.
+Vogliamo avere un modo per aggiungere elementi alla nostra lista collegata, quindi il primo metodo che vorremo creare è il metodo `add`.
 
-If our list is empty, adding an element to our linked list is straightforward enough: we just wrap that element in a `Node` class, and we assign that node to the `head` of our linked list.
+Se la nostra lista è vuota, aggiungere un elemento alla nostra lista collegata è abbastanza semplice: basta che avvolgiamo quell'elemento in una classe `Node`, e assegnamo quel nodo alla testa (`head`) della nostra lista collegata.
 
-But what if our list already has one or more members? How do we add an element to the list? Recall that each node in a linked list has a `next` property. To add a node to the list, find the last node in the list, and point that last node's `next` property at our new node. (Hint: you know you've reached the end of a linked list when a node's `next` property is `null`.)
+Ma cosa succede se la nostra lista ha già uno o più membri? Come aggiungiamo un elemento alla lista? Ricorda che ogni nodo in una lista collegata ha una proprietà `next`. Per aggiungere un nodo all'elenco, trova l'ultimo nodo nell'elenco, e punta la proprietà `next` dell'ultimo nodo al nuovo nodo. (Suggerimento: saprai che hai raggiunto la fine di una lista collegata quando la proprietà `next` di un nodo sarà `null`.)
 
 # --instructions--
 
-Write an add method that assigns the first node you push to the linked list to the `head`; after that, whenever adding a node, every node should be referenced by the previous node's `next` property.
+Scrivi un metodo di aggiunta add che assegna il primo nodo che inserisci nella lista collegata alla testa `head`; dopo, ogni volta che aggiungerai un nodo, esso dovrebbe essere referenziato dalla proprietà `next` del nodo precedente.
 
-Note
+Nota
 
-Your list's `length` should increase by one every time an element is added to the linked list.
+La lunghezza `length` della tua lista dovrebbe aumentare di uno ogni volta che un elemento viene aggiunto alla lista collegata.
 
 # --hints--
 
-Your `LinkedList` class should have a `add` method.
+La tua classe `LinkedList` dovrebbe avere un metodo `add`.
 
 ```js
 assert(
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-Your `LinkedList` class should assign `head` to the first node added.
+La tua classe `LinkedList` dovrebbe assegnare `head` al primo nodo aggiunto.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-The previous `node` in your `LinkedList` class should have reference to the newest node created.
+Il `node` precedente nella tua classe `LinkedList` dovrebbe avere riferimento al nodo più recente creato.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-The  `size` of your `LinkedList` class should equal the amount of nodes in the linked list.
+La dimensione (`size`) della tua classe `LinkedList` dovrebbe essere uguale alla quantità di nodi nella lista collegata.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bc9
-title: Update the Height of an Element Dynamically
+title: Aggiornare dinamicamente l'altezza di un elemento
 challengeType: 6
 forumTopicId: 301493
 dashedName: update-the-height-of-an-element-dynamically
@@ -8,13 +8,13 @@ dashedName: update-the-height-of-an-element-dynamically
 
 # --description--
 
-The previous challenges covered how to display data from an array and how to add CSS classes. You can combine these lessons to create a simple bar chart. There are two steps to this:
+Le sfide precedenti hanno spiegato come visualizzare i dati presi da un array e come aggiungere classi CSS. Puoi combinare queste lezioni per creare un semplice grafico a barre. Puoi farlo in due passaggi:
 
-1) Create a `div` for each data point in the array
+1) Creare un `div` per ogni data point nell'array
 
-2) Give each `div` a dynamic height, using a callback function in the `style()` method that sets height equal to the data value
+2) Dare ad ogni `div` un'altezza dinamica, usanto una funzione callback nel metodo `style()` che imposta un'altezza pari al valore del dato
 
-Recall the format to set a style using a callback function:
+Ricordati il formato per impostare uno stile usando una funzione callback:
 
 ```js
 selection.style("cssProperty", (d) => d)
@@ -22,59 +22,59 @@ selection.style("cssProperty", (d) => d)
 
 # --instructions--
 
-Add the `style()` method to the code in the editor to set the `height` property for each element. Use a callback function to return the value of the data point with the string `px` added to it.
+Aggiungi il metodo `style()` al codice nell'editor per impostare la proprietà `height` per ogni elemento. Usa una funzione callback per restituire il valore del data point con la stringa `px` aggiunta ad esso.
 
 # --hints--
 
-The first `div` should have a `height` of `12` pixels.
+Il primo `div` dovrebbe avere un'`height` di `12` pixel.
 
 ```js
 assert($('div').eq(0)[0].style.height === '12px');
 ```
 
-The second `div` should have a `height` of `31` pixels.
+Il secondo `div` dovrebbe avere un'`height` di `31` pixel.
 
 ```js
 assert($('div').eq(1)[0].style.height === '31px');
 ```
 
-The third `div` should have a `height` of `22` pixels.
+Il terzo `div` dovrebbe avere un'`height` di `22` pixel.
 
 ```js
 assert($('div').eq(2)[0].style.height === '22px');
 ```
 
-The fourth `div` should have a `height` of `17` pixels.
+Il quarto `div` dovrebbe avere un'`height` di `17` pixel.
 
 ```js
 assert($('div').eq(3)[0].style.height === '17px');
 ```
 
-The fifth `div` should have a `height` of `25` pixels.
+Il quinto `div` dovrebbe avere un'`height` di `25` pixel.
 
 ```js
 assert($('div').eq(4)[0].style.height === '25px');
 ```
 
-The sixth `div` should have a `height` of `18` pixels.
+Il sesto `div` dovrebbe avere un'`height` di `18` pixel.
 
 ```js
 assert($('div').eq(5)[0].style.height === '18px');
 ```
 
-The seventh `div` should have a `height` of `29` pixels.
+Il settimo `div` dovrebbe avere un'`height` di `29` pixel.
 
 ```js
 assert($('div').eq(6)[0].style.height === '29px');
 ```
 
-The eighth `div` should have a `height` of `14` pixels.
+L'ottavo `div` dovrebbe avere un'`height` di `14` pixel.
 
 ```js
 assert($('div').eq(7)[0].style.height === '14px');
 ```
 
-The ninth `div` should have a `height` of `9` pixels.
+Il nono `div` dovrebbe avere un'`height` di `9` pixel.
 
 ```js
 assert($('div').eq(8)[0].style.height === '9px');

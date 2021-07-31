@@ -1,6 +1,6 @@
 ---
 id: 587d7fad367417b2b2512be1
-title: Handle Click Events with JavaScript using the onclick property
+title: Gestire gli eventi click in JavaScript con la proprietà onclick
 challengeType: 6
 forumTopicId: 301503
 dashedName: handle-click-events-with-javascript-using-the-onclick-property
@@ -8,7 +8,7 @@ dashedName: handle-click-events-with-javascript-using-the-onclick-property
 
 # --description--
 
-You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called `DOMContentLoaded`. Here's the code that does this:
+Vuoi che il tuo codice venga eseguito solo una volta che la pagina avrà terminato il caricamento. A tal fine, puoi collegare un evento JavaScript al documento chiamato `DOMContentLoaded`. Ecco il codice che lo fa:
 
 ```js
 document.addEventListener('DOMContentLoaded', function() {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-You can implement event handlers that go inside of the `DOMContentLoaded` function. You can implement an `onclick` event handler which triggers when the user clicks on the element with id `getMessage`, by adding the following code:
+Puoi implementare i gestori di eventi che vanno all'interno della funzione `DOMContentLoaded`. Puoi implementare un gestore di eventi `onclick` che si attiva quando l'utente fa click sull'elemento con id `getMessage`, aggiungendo il seguente codice:
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -24,17 +24,17 @@ document.getElementById('getMessage').onclick = function(){};
 
 # --instructions--
 
-Add a click event handler inside of the `DOMContentLoaded` function for the element with id of `getMessage`.
+Aggiungi un gestore di eventi click all'interno della funzione `DOMContentLoaded` per l'elemento con id `getMessage`.
 
 # --hints--
 
-Your code should use the `document.getElementById` method to select the `getMessage` element.
+Il tuo codice dovrebbe utilizzare il metodo `document.getElementById` per selezionare l'elemento `getMessage`.
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
 ```
 
-Your code should add an `onclick` event handler.
+Il tuo codice dovrebbe aggiungere un gestore di eventi `onclick`.
 
 ```js
 assert(typeof document.getElementById('getMessage').onclick === 'function');

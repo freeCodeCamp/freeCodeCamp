@@ -1,6 +1,6 @@
 ---
 id: 587d7faf367417b2b2512be8
-title: Get Geolocation Data to Find A User's GPS Coordinates
+title: Ottenere dati di geolocazione per trovare le coordinate GPS di un utente
 challengeType: 6
 forumTopicId: 18188
 dashedName: get-geolocation-data-to-find-a-users-gps-coordinates
@@ -8,15 +8,15 @@ dashedName: get-geolocation-data-to-find-a-users-gps-coordinates
 
 # --description--
 
-Another cool thing you can do is access your user's current location. Every browser has a built in navigator that can give you this information.
+Un'altra cosa speciale che puoi fare è accedere alla posizione attuale del tuo utente. Ogni browser ha integrato un navigatore che può dare questa informazione.
 
-The navigator will get the user's current longitude and latitude.
+Il navigatore ottiene la longitudine e latitudine attuali.
 
-You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.
+Vedrai un prompt per permettere o negare l'accesso di un sito alla tua posizione. La sfida può essere completata con entrambe le opzioni, se il codice è corretto.
 
-By selecting allow, you will see the text on the output phone change to your latitude and longitude.
+Se lo permetti, vedrai il testo del telefono nell'output cambiare con la tua latitudine e longitudine.
 
-Here's code that does this:
+Ecco il codice che lo fa:
 
 ```js
 if (navigator.geolocation){
@@ -26,33 +26,33 @@ if (navigator.geolocation){
 }
 ```
 
-First, it checks if the `navigator.geolocation` object exists. If it does, the `getCurrentPosition` method on that object is called, which initiates an asynchronous request for the user's position. If the request is successful, the callback function in the method runs. This function accesses the `position` object's values for latitude and longitude using dot notation and updates the HTML.
+Come prima cosa, controlla che l'oggetto `navigator.geolocation` esista. Se esiste, il metodo `getCurrentPosition` è chiamato su quell'oggetto, iniziando la richiesta asincrona per la posizione dell'utente. Se la richiesta ha successo, la funzione callback nel metodo viene eseguita. La funzione ha accesso ai valori di latitudine e longitutine nell'oggetto `position` usando la notazione a punto, e aggiorna l'HTML.
 
 # --instructions--
 
-Add the example code inside the `script` tags to check a user's current location and insert it into the HTML.
+Aggiungi il codice di esempio nel tag `script` per controllare la posizione attuale dell'utente e inserirla nell'HTML.
 
 # --hints--
 
-Your code should use `navigator.geolocation` to access the user's current location.
+Il tuo codice dovrebbe usare `navigator.geolocation` per accedere alla posizione attuale dell'utente.
 
 ```js
 assert(code.match(/navigator\.geolocation\.getCurrentPosition/g));
 ```
 
-Your code should use `position.coords.latitude` to display the user's latitudinal location.
+Il tuo codice dovrebbe usare `position.coords.latitude` per mostrare la latitudine della posizione dell'utente.
 
 ```js
 assert(code.match(/position\.coords\.latitude/g));
 ```
 
-Your code should use `position.coords.longitude` to display the user's longitudinal location.
+Il tuo codice dovrebbe usare `position.coords.longitude` per mostrare la longitudine della posizione dell'utente.
 
 ```js
 assert(code.match(/position\.coords\.longitude/g));
 ```
 
-You should display the user's position within the `div` element with `id="data"`.
+Dovresti mostrare la posizione dell'utente all'interno dell'elemento `div` con `id="data"`.
 
 ```js
 assert(

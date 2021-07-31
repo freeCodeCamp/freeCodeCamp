@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be4
-title: Access the JSON Data from an API
+title: Accedere ai dati JSON da un'API
 challengeType: 6
 forumTopicId: 301499
 dashedName: access-the-json-data-from-an-api
@@ -8,37 +8,37 @@ dashedName: access-the-json-data-from-an-api
 
 # --description--
 
-In the previous challenge, you saw how to get JSON data from the freeCodeCamp Cat Photo API.
+Nella sfida precedente, hai visto come ottenere i dati JSON dall'API Cat Photo di freeCodeCamp.
 
-Now you'll take a closer look at the returned data to better understand the JSON format. Recall some notation in JavaScript:
+Ora daremo un'occhiata più da vicino ai dati restituiti per comprendere meglio il formato JSON. Ricorda alcune notazioni in JavaScript:
 
-<blockquote>[ ] -> Square brackets represent an array<br>{ } -> Curly brackets represent an object<br>" " -> Double quotes represent a string. They are also used for key names in JSON</blockquote>
+<blockquote>[ ] -> Le parentesi quadre rappresentano un array<br>{ } -> Le parentesi graffe rappresentano un oggetto<br>" " -> Le virgolette doppie rappresentano una stringa. Vengono utilizzati anche per i nomi delle chiavi in JSON</blockquote>
 
-Understanding the structure of the data that an API returns is important because it influences how you retrieve the values you need.
+Capire la struttura dei dati che un'API restituisce è importante perché influisce su come recuperare i valori di cui hai bisogno.
 
-On the right, click the `Get Message` button to load the freeCodeCamp Cat Photo API JSON into the HTML.
+Sulla destra, fai click sul pulsante `Get Message` per caricare il JSON dell'API Cat Photo di freeCodeCamp nell'HTML.
 
-The first and last character you see in the JSON data are square brackets `[ ]`. This means that the returned data is an array. The second character in the JSON data is a curly `{` bracket, which starts an object. Looking closely, you can see that there are three separate objects. The JSON data is an array of three objects, where each object contains information about a cat photo.
+Il primo e l'ultimo carattere che vedi nei dati JSON sono parentesi quadre `[ ]`. Ciò significa che i dati restituiti sono un array. Il secondo carattere dei dati JSON è una parentesi graffa `{`, che dà inizio a un oggetto. Guardando da vicino, si può vedere che ci sono tre oggetti separati. I dati JSON sono una serie di tre oggetti, in cui ogni oggetto contiene informazioni su una foto di un gatto.
 
-You learned earlier that objects contain "key-value pairs" that are separated by commas. In the Cat Photo example, the first object has `"id":0` where `id` is a key and `0` is its corresponding value. Similarly, there are keys for `imageLink`, `altText`, and `codeNames`. Each cat photo object has these same keys, but with different values.
+Hai imparato in precedenza che gli oggetti contengono "coppie chiave-valore" separate da virgole. Nell'esempio della Cat Photo, il primo oggetto ha `"id":0` dove `id` è una chiave e `0` è il suo valore corrispondente. Allo stesso modo, ci sono chiavi per `imageLink`, `altText` e `codeNames`. Ogni oggetto relativo alla foto di un gatto ha queste stesse chiavi, ma con valori diversi.
 
-Another interesting "key-value pair" in the first object is `"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]`. Here `codeNames` is the key and its value is an array of three strings. It's possible to have arrays of objects as well as a key with an array as a value.
+Un'altra interessante "coppia chiave-valore" nel primo oggetto è `"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]`. Qui `codeNames` è la chiave e il suo valore è un array di tre stringhe. È possibile avere array di oggetti, così come una chiave con un array come valore.
 
-Remember how to access data in arrays and objects. Arrays use bracket notation to access a specific index of an item. Objects use either bracket or dot notation to access the value of a given property. Here's an example that prints the `altText` property of the first cat photo - note that the parsed JSON data in the editor is saved in a variable called `json`:
+Ricorda come accedere ai dati in array e oggetti. Gli array utilizzano la notazione tra parentesi per accedere a un indice specifico di un elemento. Gli oggetti utilizzano la notazione tra parentesi o con il punto per accedere al valore di una data proprietà. Ecco un esempio che stampa la proprietà `altText` della prima foto di gatto - nota che i dati JSON analizzati nell'editor sono salvati in una variabile chiamata `json`:
 
 ```js
 console.log(json[0].altText);
 ```
 
-The console would display the string `A white cat wearing a green helmet shaped melon on its head.`.
+La console mostrerà la stringa `A white cat wearing a green helmet shaped melon on its head.`.
 
 # --instructions--
 
-For the cat with the `id` of 2, print to the console the second value in the `codeNames` array. You should use bracket and dot notation on the object (which is saved in the variable `json`) to access the value.
+Per il gatto con l'`id` di 2, stampa sulla console il secondo valore nell'array `codeNames`. Per accedere al valore dovresti usare sull'oggetto la notazione tra parentesi e con il punto (che viene salvata nella variabile `json`).
 
 # --hints--
 
-Your code should use bracket and dot notation to access the proper code name, and print `Loki` to the console.
+Il tuo codice dovrebbe utilizzare la notazione tra parentesi e con il punto per accedere al codeName corretto e stampare `Loki` sulla console.
 
 ```js
 assert(

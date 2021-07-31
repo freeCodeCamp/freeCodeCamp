@@ -96,6 +96,7 @@
     "privacy": "Los ajustes de esta sección te permiten controlar lo que se muestra en tu portafolio público de freeCodeCamp.",
     "data": "Para ver qué datos tenemos en tu cuenta, haz clic en el botón \"Descarga tus datos\" a continuación",
     "disabled": "Tus certificaciones se deshabilitarán si se configuran como privadas.",
+    "private-name": "Tu nombre no aparecerá en tus certificaciones, si está establecido como privado.",
     "claim-legacy": "Una vez que hayas obtenido las siguientes certificaciones de FreeCodeCamp, podrás reclamar la {{cert}}:",
     "for": "Ajustes de cuenta de {{username}}",
     "username": {
@@ -285,7 +286,8 @@
       "preview": "Vista"
     },
     "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
-    "help-translate-link": "Ayúdanos a traducir."
+    "help-translate-link": "Ayúdanos a traducir.",
+    "coder-survey": "<0>Take the 2021 New Coder Survey</0> (it takes about 10 minutes – do it for science)"
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -396,7 +398,7 @@
     "shield": "Un escudo con una marca de verificación",
     "tensorflow": "Icono de Tensorflow",
     "algorithm": "Nodos ramificados",
-    "magnifier": "magnifier"
+    "magnifier": "lupa"
   },
   "aria": {
     "fcc-logo": "Logo de freeCodeCamp",
@@ -559,7 +561,7 @@
   },
   "certification-card": {
     "title": "Reclamar tu certificación",
-    "intro": "Complete the following steps to claim and view your {{i18nCertText}}",
+    "intro": "Completa los siguientes pasos para reclamar y ver tu {{i18nCertText}}",
     "complete-project": "Completa {{i18nCertText}} proyectos",
     "accept-honesty": "Acepta nuestra política de honestidad académica",
     "set-name": "Establece tu nombre, y hazlo público",

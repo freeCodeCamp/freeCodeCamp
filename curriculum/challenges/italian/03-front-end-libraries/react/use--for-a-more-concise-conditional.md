@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036185
-title: Use && for a More Concise Conditional
+title: Usare && per un condizionale più conciso
 challengeType: 6
 forumTopicId: 301413
 dashedName: use--for-a-more-concise-conditional

@@ -1,5 +1,5 @@
 ---
-id: 5f45a66d4a2b0453301e5a26
+id: 5f45b0731d39e15d54df4dfc
 title: Part 80
 challengeType: 0
 dashedName: part-80
@@ -7,14 +7,30 @@ dashedName: part-80
 
 # --description--
 
-Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
+The default color of a link that has not yet been clicked on is typically blue. The default color of a link that has already been visited from a page is typically purple.
+
+To make the `footer` links the same color regardless if a link has been visited, use a type selector for the anchor element (`a`) and use the value `black` for the `color` property.
 
 # --hints--
 
-Test 1
+You should use an `a` selector.
 
 ```js
+const hasASelector = new __helpers.CSSHelp(document).getStyle('a');
+assert(hasASelector);
+```
 
+You should set the `color` property to `black`.
+
+```js
+const hasColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.color === 'black');
+```
+
+Your `a` element should have a `color` of `black`.
+
+```js
+const aColor = new __helpers.CSSHelp(document).getStyle('a')?.getPropertyValue('color');
+assert(aColor === 'black');
 ```
 
 # --seed--
@@ -39,12 +55,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -86,7 +102,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -149,8 +165,11 @@ h1, h2 {
 
 /* FOOTER */
 
+footer {
+  font-size: 14px;
+}
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```
-

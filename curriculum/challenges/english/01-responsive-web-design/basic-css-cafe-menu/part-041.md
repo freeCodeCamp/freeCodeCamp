@@ -13,10 +13,10 @@ You could keep trying various percentages for the widths. Instead, simply move t
 
 # --hints--
 
-Test 1
+Your `p` elements should not have any space between them.
 
 ```js
-
+assert(code.match(/Vanilla<\/p><p/));
 ```
 
 # --seed--
@@ -40,7 +40,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
 --fcc-editable-region--
             <p class="flavor">French Vanilla</p>
@@ -48,7 +48,7 @@ Test 1
 --fcc-editable-region--
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>
@@ -72,7 +72,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f180b6c005b0e76f08e
-title: 'Relational Databases: Relationship Building'
+title: '關係型數據庫：關係的建立'
 challengeType: 11
 videoId: CSbqczsHVnc
 dashedName: relational-databases-relationship-building
@@ -10,19 +10,19 @@ dashedName: relational-databases-relationship-building
 
 ## --text--
 
-What does the INSERT command do in SQL?
+INSERT 命令在 SQL 中的作用是什麼？
 
 ## --answers--
 
-It defines a new row by listing the fields we want to include followed by the values we want placed in the new row.
+它定義新行，通過列出我們要包括的字段，然後列出要放入新行中的值。
 
 ---
 
-It defines a new column by listing the rows we want to include followed by the values we want placed in the new column.
+它定義新列，通過列出要包含的行以及要放入新列中的值。
 
 ---
 
-It defines a new table by listing the rows and fields we want to include followed by the values that we want placed in the table.
+它定義一個新表，通過列出要包括的行和字段以及要放入表中的值。
 
 ## --video-solution--
 

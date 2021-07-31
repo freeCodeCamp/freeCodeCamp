@@ -1,6 +1,6 @@
 ---
 id: 5895f70df9fc0f352b528e68
-title: Authentication Strategies
+title: Estratégias de autenticação
 challengeType: 2
 forumTopicId: 301547
 dashedName: authentication-strategies
@@ -8,11 +8,11 @@ dashedName: authentication-strategies
 
 # --description--
 
-A strategy is a way of authenticating a user. You can use a strategy for allowing users to authenticate based on locally saved information (if you have them register first) or from a variety of providers such as Google or GitHub. For this project, we will set up a local strategy. To see a list of the hundreds of strategies, visit Passport's site [here](http://passportjs.org/).
+Uma estratégia é uma maneira de autenticar um usuário. Você pode usar uma estratégia para permitir que os usuários se autentiquem com base em informações salvas localmente (se você os tem registrados primeiro) ou em uma variedade de provedores, como o Google ou o GitHub. Para este projeto, vamos configurar uma estratégia local. Para ver uma lista das centenas de estratégias, visite o site do Passport [aqui](http://passportjs.org/).
 
-Add `passport-local@~1.0.0` as a dependency and add it to your server as follows: `const LocalStrategy = require('passport-local');`
+Adicione `passport-local@~1.0.0` como uma dependência e adicione-a ao seu servidor da seguinte forma: `const LocalStrategy = require('passport-local');`
 
-Now you will have to tell passport to **use** an instantiated LocalStrategy object with a few settings defined. Make sure this (as well as everything from this point on) is encapsulated in the database connection since it relies on it!
+Agora, você precisará dizer ao passport para **usar** um objeto LocalStrategy instanciado com algumas configurações definidas. Certifique-se de que isso (assim como tudo a partir desse ponto) esteja encapsulado na conexão do banco de dados, já que isso depende dela!
 
 ```js
 passport.use(new LocalStrategy(
@@ -28,17 +28,17 @@ passport.use(new LocalStrategy(
 ));
 ```
 
-This is defining the process to use when we try to authenticate someone locally. First, it tries to find a user in our database with the username entered, then it checks for the password to match, then finally, if no errors have popped up that we checked for, like an incorrect password, the `user`'s object is returned and they are authenticated.
+Isso está definindo o processo a ser usado quando tentamos autenticar alguém localmente. Primeiro, há a tentativa de encontrar um usuário em nosso banco de dados com o nome de usuário inserido. Depois, verifica-se a senha correspondente e, em seguida, por fim, se nenhum erro tiver aparecido durante a verificação, como uma senha incorreta, o objeto `user` é retornado e autenticado.
 
-Many strategies are set up using different settings, but generally it is easy to set it up based on the README in that strategy's repository. A good example of this is the GitHub strategy where we don't need to worry about a username or password because the user will be sent to GitHub's auth page to authenticate. As long as they are logged in and agree then GitHub returns their profile for us to use.
+Muitas estratégias são configuradas usando definições diferentes, mas geralmente é fácil fazer a configuração com base no README do repositório da estratégia. Um bom exemplo disso é a estratégia do GitHub, onde não precisamos nos preocupar com um nome de usuário ou senha, porque o usuário será enviado para a página de autenticação do GitHub para ser autenticado. Desde que estejam logados e que concordem com isso, o GitHub retorna seu perfil para que o vejamos.
 
-In the next step, we will set up how to actually call the authentication strategy to validate a user based on form data!
+Na próxima etapa, vamos configurar como chamar realmente a estratégia de autenticação para validar um usuário com base nos dados do formulário!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b).
 
 # --hints--
 
-Passport-local should be a dependency.
+Passport-local deve ser uma dependência.
 
 ```js
 (getUserInput) =>
@@ -57,7 +57,7 @@ Passport-local should be a dependency.
   );
 ```
 
-Passport-local should be correctly required and setup.
+Passport-local deve ser solicitado e configurado corretamente.
 
 ```js
 (getUserInput) =>

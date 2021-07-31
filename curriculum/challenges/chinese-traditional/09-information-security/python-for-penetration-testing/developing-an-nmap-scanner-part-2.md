@@ -1,6 +1,6 @@
 ---
 id: 5ea9997bbec2e9bc47e94db2
-title: Developing an Nmap Scanner part 2
+title: 開發 Nmap 掃描器 第二部分
 challengeType: 11
 videoId: a98PscnUsTg
 dashedName: developing-an-nmap-scanner-part-2
@@ -10,7 +10,7 @@ dashedName: developing-an-nmap-scanner-part-2
 
 ## --text--
 
-Which of the following allows you to scan for UDP ports between 21 to 443?
+以下哪項允許你掃描 21 至 443 之間的 UDP 端口？
 
 ## --answers--
 

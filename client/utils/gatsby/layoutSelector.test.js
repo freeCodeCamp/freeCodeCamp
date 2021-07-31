@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import layoutSelector from './layoutSelector';
+import layoutSelector from './layout-selector';
 import { createStore } from '../../src/redux/createStore';
 import FourOhFourPage from '../../src/pages/404';
 import Learn from '../../src/pages/learn';
@@ -22,10 +22,10 @@ function getComponentNameAndProps(elementType, pathname) {
     }
   });
   shallow.render(<Provider store={store}>{LayoutReactComponent}</Provider>);
-  const renderedComponent = shallow.getRenderOutput();
+  const view = shallow.getRenderOutput();
   return {
-    props: renderedComponent.props,
-    name: renderedComponent.type.WrappedComponent.displayName
+    props: view.props,
+    name: view.type.WrappedComponent.displayName
   };
 }
 

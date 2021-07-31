@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618b
-title: Give Sibling Elements a Unique Key Attribute
+title: Proporciona a los elementos hermanos un atributo de clave única
 challengeType: 6
 forumTopicId: 301394
 dashedName: give-sibling-elements-a-unique-key-attribute
@@ -8,19 +8,19 @@ dashedName: give-sibling-elements-a-unique-key-attribute
 
 # --description--
 
-The last challenge showed how the `map` method is used to dynamically render a number of elements based on user input. However, there was an important piece missing from that example. When you create an array of elements, each one needs a `key` attribute set to a unique value. React uses these keys to keep track of which items are added, changed, or removed. This helps make the re-rendering process more efficient when the list is modified in any way.
+El último desafío mostró cómo el método `map` es usado para representar dinámicamente un número de elementos según la entrada del usuario. Sin embargo, faltaba una pieza importante de ese ejemplo. Cuando creas un arreglo de elementos, cada uno necesita un atributo `key` establecido en un valor único. React usa estas claves para realizar un seguimiento de los elementos que se agregan, cambian o eliminan. Esto ayuda a que el proceso de re-renderización sea más eficiente cuando la lista se modifica de alguna manera.
 
-**Note:** Keys only need to be unique between sibling elements, they don't need to be globally unique in your application.
+**Nota:** Las claves solo necesitan ser únicas entre elementos hermanos, no es necesario que sean únicas globalmente en tu aplicación.
 
 # --instructions--
 
-The code editor has an array with some front end frameworks and a stateless functional component named `Frameworks()`. `Frameworks()` needs to map the array to an unordered list, much like in the last challenge. Finish writing the `map` callback to return an `li` element for each framework in the `frontEndFrameworks` array. This time, make sure to give each `li` a `key` attribute, set to a unique value. The `li` elements should also contain text from `frontEndFrameworks`.
+El editor de código tiene un arreglo con algunos frameworks frontend y un componente funcional sin estado llamado `Frameworks()`. `Frameworks()` necesita mapear el arreglo a una lista desordenada, como en el último desafío. Finaliza la escritura del callback `map` para devolver un elemento `li` por cada framework en el arreglo `frontEndFrameworks`. Esta vez, debes asegurarte de dar a cada elemento `li` un atributo `key`, establecido a un valor único. Los elementos `li` también deben contener texto de `frontEndFrameworks`.
 
-Normally, you want to make the key something that uniquely identifies the element being rendered. As a last resort the array index may be used, but typically you should try to use a unique identification.
+Normalmente, deseas hacer que la clave sea algo que identifique de manera única el elemento que se está procesando. Como último recurso se puede utilizar el índice del arreglo, pero normalmente se debe intentar usar una identificación única.
 
 # --hints--
 
-The `Frameworks` component should exist and render to the page.
+El componente `Frameworks` debe de existir y renderizar a la página.
 
 ```js
 assert(
@@ -28,19 +28,19 @@ assert(
 );
 ```
 
-`Frameworks` should render an `h1` element.
+`Frameworks` debe renderizar un elemento `h1`.
 
 ```js
 assert(Enzyme.mount(React.createElement(Frameworks)).find('h1').length === 1);
 ```
 
-`Frameworks` should render a `ul` element.
+`Frameworks` debe renderizar un elemento `ul`.
 
 ```js
 assert(Enzyme.mount(React.createElement(Frameworks)).find('ul').length === 1);
 ```
 
-The `ul` tag should render 6 child `li` elements.
+La etiqueta `ul` debe renderizar 6 elementos hijos `li`.
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-Each list item element should have a unique `key` attribute.
+Cada elemento de la lista de elementos debe tener un atributo `key` único.
 
 ```js
 assert(
@@ -73,7 +73,7 @@ assert(
 );
 ```
 
-Each list item element should contain text from `frontEndFrameworks`.
+Cada elemento de la lista de elementos debe contener un texto de `frontEndFrameworks`.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 5e46f8d6ac417301a38fb92d
-title: Rock Paper Scissors
+title: Carta Sasso Forbici
 challengeType: 10
 forumTopicId: 462376
 dashedName: rock-paper-scissors
@@ -8,17 +8,17 @@ dashedName: rock-paper-scissors
 
 # --description--
 
-For this challenge, you will create a program to play Rock, Paper, Scissors. A program that picks at random will usually win 50% of the time. To pass this challenge your program must play matches against four different bots, winning at least 60% of the games in each match.
+In questa sfida creerai un programma per giocare a carta, sasso, forbici. Un programma che sceglie a caso di solito vincerà il 50% delle volte. Per superare questa sfida il tuo programma deve giocare partite contro quattro diversi bot, vincendo almeno il 60% dei giochi in ogni partita.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors).
+Puoi accedere [alla descrizione completa del progetto e al codice iniziale su Replit](https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Dopo essere andato a quel collegamento, fai un fork del progetto. Una volta completato il progetto in base alle istruzioni riportate in 'README.md', invia il link del progetto qui sotto.
 
-We are still developing the interactive instructional part of the machine learning curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+Stiamo ancora sviluppando ila parte di didattica interattiva per il programma di machine learning. Per ora, dovrai utilizzare altre risorse per imparare a superare questa sfida.
 
 # --hints--
 
-It should pass all Python tests.
+Dovrebbe superare tutti i test Python.
 
 ```js
 

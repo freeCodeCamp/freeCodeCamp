@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0d0b6c005b0e76f075
-title: 'Networking: Using urllib in Python'
+title: '網絡：在 Python 中使用 urllib'
 challengeType: 11
 videoId: 7lFM1T_CxBs
 dashedName: networking-using-urllib-in-python
@@ -10,7 +10,7 @@ dashedName: networking-using-urllib-in-python
 
 ## --text--
 
-What will the output of the following code be like?:
+以下代碼的輸出將是什麼樣的？
 
 ```python
 import urllib.request
@@ -21,15 +21,15 @@ for line in fhand:
 
 ## --answers--
 
-Just contents of "romeo.txt".
+只有 “romeo.txt” 的內容。
 
 ---
 
-A header and the contents of "romeo.txt".
+“romeo.txt” 的 header 和內容。
 
 ---
 
-A header, a footer, and the contents of "romeo.txt".
+“romeo.txt” 的 header、footer 和內容。
 
 ## --video-solution--
 

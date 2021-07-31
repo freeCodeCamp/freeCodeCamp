@@ -7,18 +7,50 @@ dashedName: part-3
 
 # --description--
 
-Next, add opening and closing `head` and `body` tags within the html element.
+Next, add opening and closing `head` and `body` tags within the `html` element.
 
 # --hints--
 
-test-text
+You should have an opening `head` tag.
 
 ```js
-assert(
-  code.match(
-    /<html\s*>\s*<head\s*>\s*<\/head\s*>\s*<body\s*>\s*<\/body\s*>\s*<\/html\s*>/gi
-  )
-);
+assert(code.match(/<head\s*>/i));
+```
+
+You should have a closing `head` tag.
+
+```js
+assert(code.match(/<\/head\s*>/i));
+```
+
+You should have an opening `body` tag.
+
+```js
+assert(code.match(/<body\s*>/i));
+```
+
+You should have a closing `body` tag.
+
+```js
+assert(code.match(/<\/body\s*>/i));
+```
+
+The `head` and `body` elements should be siblings.
+
+```js
+assert(document.querySelector('head').nextElementSibling.localName === 'body');
+```
+
+The `head` element should be within the `html` element.
+
+```js
+assert([...document.querySelector('html').children].some(x => x.localName === 'head'));
+```
+
+The `body` element should be within the `html` element.
+
+```js
+assert([...document.querySelector('html').children].some(x => x.localName === 'body'));
 ```
 
 # --seed--
@@ -27,21 +59,11 @@ assert(
 
 ```html
 <!DOCTYPE html>
+--fcc-editable-region--
 <html>
   
 </html>
+--fcc-editable-region--
+
 ```
 
-# --solutions--
-
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    
-  </head>
-
-  <body>
-  </body>
-</html>
-```

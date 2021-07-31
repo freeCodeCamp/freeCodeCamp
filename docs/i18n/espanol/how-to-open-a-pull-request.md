@@ -2,7 +2,7 @@
 
 Una pull request (PR) le permite enviar cambios desde su bifurcación en GitHub al repositorio principal de freeCodeCamp.org. Una vez que haya hecho cambios en el código, puede seguir estas pautas para abrir un PR.
 
-> [!NOTE] Tu PR debe ser en inglés. Consulta [aquí](#index.md?id=translations) para saber cómo contribuir con las traducciones.
+> [!NOTE] Tu PR debe ser en inglés. See [here](https://contribute.freecodecamp.org/#/index?id=translations) for how to contribute translations.
 
 ## Prepara un buen título para tu PR
 

@@ -13,7 +13,7 @@ dashedName: use-the-u-tag-to-underline-text
 
 # --instructions--
 
-`u` 标签包裹的文本内容应为 `Ph.D. students`。
+给文本 `Ph.D. students` 添加 `u` 标签。
 
 **注意：** 如果使用 `u` 标签添加下划线，可能混淆文本和链接，则应避免使用它。 锚标签也有默认的下划线格式。
 
@@ -25,7 +25,7 @@ dashedName: use-the-u-tag-to-underline-text
 assert($('u').length === 1);
 ```
 
-`u` 标签的文本内容应为 `Ph.D. students`。
+`u` 标签的内容文本应为 `Ph.D. students`。
 
 ```js
 assert($('u').text() === 'Ph.D. students');

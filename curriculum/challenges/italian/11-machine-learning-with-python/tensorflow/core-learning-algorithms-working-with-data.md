@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8a
-title: 'Core Learning Algorithms: Working with Data'
+title: 'Algoritmi di apprendimento principali: Lavorare con i dati'
 challengeType: 11
 videoId: u85IOSsJsPI
 dashedName: core-learning-algorithms-working-with-data
@@ -10,19 +10,19 @@ dashedName: core-learning-algorithms-working-with-data
 
 ## --text--
 
-What does the pandas `.head()` function do?
+Cosa fa la funzione pandas `.head()`?
 
 ## --answers--
 
-Returns the number of entries in a data frame.
+Restituisce il numero di voci in un frame di dati.
 
 ---
 
-Returns the number of columns in a data frame.
+Restituisce il numero di colonne in un frame di dati.
 
 ---
 
-By default, shows the first five rows or entries in a data frame.
+Per impostazione predefinita, mostra le prime cinque righe o voci in un frame di dati.
 
 ## --video-solution--
 

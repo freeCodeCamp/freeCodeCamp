@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c14f
-title: How to use Jupyter Notebooks Intro
+title: 如何使用 Jupyter Notebook
 challengeType: 11
 videoId: h8caJq2Bb9w
 dashedName: how-to-use-jupyter-notebooks-intro
@@ -8,19 +8,18 @@ dashedName: how-to-use-jupyter-notebooks-intro
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在视频中我们使用的编辑器工具是在 notebook.ai 这个平台，你也可以选择用其他的平台，比如说 Google Colab 也是一个不错的选择。*
 
-More resources:
+更多资源：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
--   [Twitter Cheat Sheet](https://twitter.com/rmotr_com/status/1122176794696847361)
+-   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial)
+-   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What is **not** allowed in a Jupyter Notebook's cell?
+以下哪个是 Jupyter Notebook 单元格中**不**允许的？
 
 ## --answers--
 
@@ -28,11 +27,11 @@ Markdown
 
 ---
 
-Python code
+Python 代码
 
 ---
 
-An Excel sheet
+Excel 工作表
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bd7
-title: Create a Scatterplot with SVG Circles
+title: Creare un diagramma a dispersione con cerchi SVG
 challengeType: 6
 forumTopicId: 301484
 dashedName: create-a-scatterplot-with-svg-circles
@@ -8,19 +8,19 @@ dashedName: create-a-scatterplot-with-svg-circles
 
 # --description--
 
-A scatter plot is another type of visualization. It usually uses circles to map data points, which have two values each. These values tie to the `x` and `y` axes, and are used to position the circle in the visualization.
+Un grafico a dispersione è un altro tipo di visualizzazione. Di solito usa i cerchi per mappare i punti dati, e ogni cerchio ha bisogno di due valori. Questi valori si legano agli assi `x` e `y`, e vengono utilizzati per posizionare il cerchio nella visualizzazione.
 
-SVG has a `circle` tag to create the circle shape. It works a lot like the `rect` elements you used for the bar chart.
+SVG ha un tag `circle` per creare la forma del cerchio. Funziona in modo simile agli elementi `rect` che hai usato per il grafico a barre.
 
 # --instructions--
 
-Use the `data()`, `enter()`, and `append()` methods to bind `dataset` to new `circle` elements that are appended to the SVG canvas.
+Usa i metodi `data()`, `enter()`, e `append()` per associare il `dataset` ai nuovi elementi `circle` che sono aggiunti alla tela SVG.
 
-**Note:** The circles won't be visible because we haven't set their attributes yet. We'll do that in the next challenge.
+**Nota:** I cerchi non saranno visibili perché non abbiamo ancora impostato i loro attributi. Lo faremo nella prossima sfida.
 
 # --hints--
 
-Your code should have 10 `circle` elements.
+Il tuo codice dovrebbe avere 10 elementi `circle`.
 
 ```js
 assert($('circle').length == 10);

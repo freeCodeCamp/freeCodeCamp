@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { AsFeatureLogo } from '../../../assets/images/components';
+import { AsSeenInText } from '../../../assets/images/components';
 import { useTranslation } from 'react-i18next';
 
 const AsSeenIn = () => {
@@ -11,7 +11,7 @@ const AsSeenIn = () => {
       <Col sm={8} smOffset={2} xs={12}>
         <div className='text-center'>
           <p className='big-heading'>{t('landing.as-seen-in')}</p>
-          <AsFeatureLogo fill='light' />
+          <AsSeenInText fill='light' />
         </div>
       </Col>
     </Row>

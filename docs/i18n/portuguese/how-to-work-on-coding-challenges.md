@@ -1,52 +1,52 @@
-# How to work on coding challenges
+# Como trabalhar em desafios de programação
 
-Our goal is to develop a fun and clear interactive learning experience.
+Nosso objetivo é desenvolver uma experiência de aprendizado divertida e interativa.
 
-Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+Projetar desafios interativos de programação é difícil. Seria muito mais fácil escrever uma explicação longa ou criar um tutorial em vídeo. Mas no nosso currículo principal, estamos buscando o que funciona melhor para a maioria das pessoas - uma experiência de jogo totalmente interativa e parecida com vídeo.
 
-We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
+Queremos que os usuários freeCodeCamp atinjam um estado ativo no aprendizado. Queremos que eles sejam impulsionados a percorrer o nosso currículo com o mínimo possível de empecilhos. Nós queremos que eles iniciem os projetos com confiança e adquiram uma ampla exposição aos conceitos de programação.
 
-Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
+Note que para a versão 7.0 do currículo do freeCodeCamp, nós estamos migrando para [um modelo inteiramente focado em projetos e com muito mais repetições](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
+A criação destes desafios exige imensa criatividade e atenção aos pormenores. Há muita ajuda disponível. Você terá o apoio de toda uma equipe de colaboradores para quem você pode buscar ideias e provar seus desafios.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+E como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat dos contribuidores](https://chat.freecodecamp.org/channel/contributors).
 
-With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+Com sua ajuda, nós podemos projetar um currículo de programação interativo que ajudará milhões de pessoas a aprender a programar nos próximos anos.
 
-The content for each challenge is stored in its markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
+O conteúdo para cada desafio é guardado em um arquivo markdown. Este arquivo markdown é posteriormente convertido em HTML usando nossas ferramentas para criar páginas web interativas.
 
-You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges) directory.
+Você pode encontrar todo o conteúdo curricular do freeCodeCamp.org no diretório [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges).
 
-## Set up the tooling for the curriculum
+## Configure as ferramentas para o currículo
 
-Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
+Antes de trabalhar no currículo, você precisará configurar algumas ferramentas para ajudá-lo a testar suas alterações. Você pode usar qualquer opção abaixo:
 
-- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
-- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
+- Você pode [configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). Isto é **altamente recomendado** para contribuições regulares/repetidas. Esta configuração permite que você trabalhe e teste suas alterações.
+- Use o Gitpod, um ambiente gratuito de desenvolvimento on-line. Clicar no botão abaixo irá iniciar um ambiente de desenvolvimento pronto para programar para freeCodeCamp em seu navegador. Leva só alguns minutos.
 
-  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+  [![Abra no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
+- Edite os arquivos na interface do GitHub clicando no ícone do lápis no arquivo correspondente. Embora seja a maneira mais rápida, **não é recomendado**, porque você não pode testar suas alterações no GitHub. Se nossos mantedores concluirem que as mudanças que você fez precisam ser testadas localmente, você precisará seguir os métods acima.
 
-### How to work on practice projects
+### Trabalhe em projetos práticos
 
-The practice projects have some additional tooling to help create new projects and steps. To read more, see [these docs](how-to-work-on-practice-projects.md)
+Os projetos práticos tem algumas ferramentas adicionais para criar novos projetos e passos. Para saber mais, veja [esses documentos](how-to-work-on-practice-projects.md)
 
-## Challenge Template
+## Modelo de desafio
 
 ````md
 ---
-id: Unique identifier (alphanumerical, MongoDB_id)
-title: 'Challenge Title'
-challengeType: Integer, defined in `client/utils/challengeTypes.js`
-videoUrl: 'url of video explanation'
+id: Identificador exclusivo (alfanumérico, MongoDB_id)
+title: 'Título do desafio'
+challengeType: Inteiro, definido em `client/utils/challengeTypes.js`
+videoUrl: 'url de explicação do vídeo'
 forumTopicId: 12345
 ---
 
-# --description--
+# --descrição--
 
-Challenge description text, in markdown
+Texto descritivo do desafio, em markdown
 
 ```html
 <div>example code</div>
@@ -54,20 +54,20 @@ Challenge description text, in markdown
 
 # --instructions--
 
-Challenge instruction text, in markdown
+Texto com instruções para o desafio, em markdown
 
 # --hints--
 
-Tests to run against user code, in pairs of markdown text and code block test code.
+Testes para executar o código do usuário, em par com o markdown e bloco de código de teste.
 
 ```js
-Code for test one
+Código para o teste um
 ```
 
-More instructions in markdown syntax
+Mais instruções em sintaxe markdown
 
 ```js
-More code
+Mais código
 ```
 
 # --seed--
@@ -75,22 +75,22 @@ More code
 ## --before-user-code--
 
 ```lang
-Code evaluated before the user’s code.
+Código avaliado antes do código do usuário.
 ```
 
 ## --after-user-code--
 
 ```lang
-Code evaluated after the user’s code, and just before the tests
+Código avaliado após o código do usuário, e pouco antes dos testes
 ```
 
 ## --seed-contents--
 
-Boilerplate code to render to the editor. This section should only contain code inside backticks, like the following:
+Código Boilerplate para renderizar para o editor.  Esta seção deve somente conter código dentro de crases, como o seguinte exemplo:
 
 ```html
 <body>
-  <p class="main-text">Hello world!</p>
+  <p class="main-text">Olá mundo!</p>
 </body>
 ```
 
@@ -111,67 +111,67 @@ console.log('freeCodeCamp is awesome!');
 
 # --solutions--
 
-Solutions are used for the CI tests to ensure that changes to the hints will still pass as intended
+Soluções são usadas para os testes CI a fim de garantir que mudanças nas dicas ainda passem conforme o esperado
 
 ```js
-// first solution - the language(s) should match the seed.
+// primeira solução - a(s) linguagem(ns) deve(m) ser a mesma do código fornecido.
 ```
 
 ---
 
 ```js
-// second solution - so if the seed is written in HTML...
+// segunda solução - então se o código fornecido está em HTML...
 ```
 
 ---
 
 ```js
-// third solution etc. - Your solutions should be in HTML.
+// terceira solução etc. - Suas soluções devem estar em HTML.
 ```
 
 # --question--
 
-These fields are currently used for the multiple-choice Python challenges.
+Esses espaços são utilizados geralmente para questões de múltipla escolha dos desafios de Python.
 
 ## --text--
 
-The question text goes here.
+O texto da pergunta vêm aqui.
 
 ## --answers--
 
-Answer 1
+Resposta 1
 
 ---
 
-Answer 2
+Resposta 2
 
 ---
 
-More answers
+Mais respostas
 
 ## --video-solution--
 
-The number for the correct answer goes here.
+O número da resposta correta fica aqui.
 ````
 
 > [!NOTE]
 >
-> 1. In the above sections, examples of `lang` are:
+> 1. Nas seções acima, exemplos de `lang` são:
 >
 > - `html` - HTML/CSS
 > - `js` - JavaScript
 > - `jsx` - JSX
 
-## Numbering Challenges
+## Numeração dos desafios
 
-Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
+Todo desafio precisa de um `id`. Se você não especifica um, então o MongoDB criará um aleatório quando os dados forem salvos. Porém, não queremos que ele faça isso. Queremos que os ids dos desafios sejam consistentes em diferentes ambientes (staging, produção, vários desenvolvedores diferentes, etc.).
 
-To generate a new one in a shell (assuming MongoDB is running separately):
+Para gerar um novo no shell (assumindo que o MongoDB está executando separadamente):
 
-1. Run `mongo` command.
-2. Run `ObjectId()` command.
+1. Execute o comando `mongo`.
+2. Execute o comando `ObjectId()`.
 
-For example:
+Por exemplo:
 
 ```bash
 $ mongo
@@ -183,139 +183,142 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-The result is a new id, for example `5a474d78df58bafeb3535d34` above.
+O resultado é um novo id, por exemplo `5a474d78df58bafeb3535d34` acima.
 
-Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
+Quando tiver seu id, coloque-o no arquivo markdown como campo `id` no topo, ex.
 
 ```yml
 ---
 id: 5a474d78df58bafeb3535d34
-title: Challenge Title
+title: Título do desafio
 ```
 
-## Naming challenges
+## Nomeando desafios
 
-Naming things is hard. We've made it easier by imposing some constraints.
+Nomear coisas é difícil. Nós facilitamos com algumas restrições.
 
-All challenge titles should be explicit and should follow this pattern:
+Todos os títulos dos desafios devem estar explícitos e devem seguir este padrão:
 
-\[verb\]\[object clause\]
+\[verb\]\[frase objetiva\]
 
-Here are some example challenge names:
+Aqui estão alguns exemplos de nomes para desafios:
 
-- Use Clockwise Notation to Specify the Padding of an Element
-- Condense arrays with .reduce
-- Use Bracket Notation to Find the First Character in a String
+- Usar a notação de sentido horário para especificar o preenchimento (padding) de um elemento
+- Condensar arrays com .reduce
+- Usar notação de colchetes para encontrar o primeiro caractere em uma string
 
-## Challenge descriptions/instructions
+## Descrições/instruções do desafio
 
-Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
+As frases devem ser claras e resumidas com o mínimo de termos técnicos. Se usado, o termo técnico deve ser imediatamente definido em inglês simples.
 
-Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
+Mantenha os parágrafos curtos (em torno de 1-4 frases). É mais provável que as pessoas leiam vários parágrafos curtos do que um parágrafo enorme.
 
-Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
+O texto do desafio deve usar a segunda pessoa ("você") para ajudar a dar um tom de conversa. Dessa forma, o texto e as instruções parecem falar diretamente ao usuário freeCodeCamp que está resolvendo o desafio. Tente evitar usar a primeira pessoa ("eu", "nós", "vamos").
 
-Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
+Não use links externos. Eles interrompem o fluxo. Os usuários freeCodeCamp nunca devem precisar pesquisar nada no Google durante esses desafios. Se há recursos que você acha que os usuários irão se beneficiar, adicione-os no artigo relacionado ao guia do desafio.
 
-You can add diagrams if necessary.
+Você pode adicionar diagramas se necessário.
 
-Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
+Não use emojis ou emoticons em desafios. O freeCodeCamp possui uma comunidade global, e o significado cultural de um emoji ou emoticon pode ser diferente ao redor do mundo. Além disso, emojis podem ser mostrados de maneiras diferentes em diferentes sistemas.
 
-Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
+Substantivos próprios devem começar com letra maiúscula quando possível. Abaixo está uma lista de palavras e como devem aparecem nos desafios.
 
-- JavaScript (capital letters in "J" and "S" and no abbreviations)
+- JavaScript (letras maiúsculas em "J" e "S" e sem abreviações)
 - Node.js
-- Although sometimes inaccurate, non-hyphenated forms of 'back end' and 'front end' should be used, as they are more widely used.
+- Embora às vezes imprecisas, as formas não hifenizadas de 'back end' e 'front end' devem ser usadas, pois são mais amplamente utilizadas.
 
-### The 2-minute rule
+### A regra dos 2 minutos
 
-Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their code and get all the tests to pass.
+Cada desafio deve ser resolvido em 120 segundos por um nativo da língua inglesa que tenha concluído os desafios anteriores. Isso inclui a quantidade de tempo que leva para ler as instruções, entender o código fornecido, escrever o código e passar nos testes.
 
-If it takes longer than two minutes to complete the challenge, you have two options:
+Se levar mais do que dois minutos para completar um desafio, você tem duas opções:
 
-- Simplify the challenge, or
-- Split the challenge into two challenges.
+- Simplifique o desafio, ou
+- Divida o desafio em dois desafios.
 
-The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+A regra dos 2 minutos força quem criou o desafio a deixar as instruções resumidas, o código fornecido limpo e seus testes diretos.
 
-We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
+Acompanhamos quanto dura para os usuários resolverem mudanças e usamos essa informação para identificar desafios que precisam ser simplificados ou divididos.
 
-### Modularity
+### Modularidade
 
-Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
+Cada desafio deve ensinar exatamente um conceito, e esse conceito deve estar aparente a partir do nome do desafio.
 
-We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
+Podemos reforçar conceitos citados anteriormente através de repetição e variações - por exemplo, introduzir elementos h1 em um desafio, então elementos h3 depois.
 
-Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
+Nossa meta é ter vários desafios de 2 minutos. Eles podem se completar e relembrar conceitos anteriormente citados.
 
-### Formatting challenge text
+### Formatando o texto do desafio
 
-Here are specific formatting guidelines for challenge text and examples:
+Aqui estão diretrizes de formatação específicas para o texto do desafio e exemplos:
 
-- Language keywords go in `` \` `` backticks. For example, HTML tag names or CSS property names.
-- References to code parts (i.e. function, method, or variable names) should be wrapped in `` \` `` backticks. See example below:
+- Palavras chaves da linguagem ficam entre `` \` `` crases. Por exemplo, nomes de tags HTML ou nomes de propriedade CSS.
+- Referências a códigos (ex. função, método ou nomes de variáveis) devem estar entre `` \` ``. Veja o exemplo abaixo:
 
 ```md
-Use `parseInt` to convert the variable `realNumber` into an integer.
+Use `parseInt` para converter a variável `realNumber` em um número inteiro.
 ```
 
-- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `` \` `` backticks.
-- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line which only has three backticks and **another empty line**. See example below:
-- Whitespace matters in Markdown, so we recommend that you make it visible in your editor.
+- Referências a nomes de arquivos e caminhos (ex. `package.json`, `src/components`) devem estar entre `` \` ``.
+- Blocos de código com várias linhas **devem ser precedidos por uma linha vazia**. A próxima linha deve começar com três crases seguidas imediatamente por uma das [linguagens suportadas](https://prismjs.com/#supported-languages). Para completar o bloco de código, você deve começar uma nova linha que apenas possui três crases e **outra linha vazia**. Veja o exemplo abaixo:
+- Os espaços importam no Markdown. Então, recomendamos que os mantenham visíveis no seu editor.
 
-**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
+**Observação:** se você for usar um exemplo de códigoem YAML, use `yaml` ao invés de `yml` para a linguagem na direita das crases.
 
-The following is an example of code:
+A seguir um exemplo do código:
 
 ````md
 ```{language}
 
-[YOUR CODE HERE]
+[SEU CÓDIGO]
 
 ````
 ````
 
-- Additional information in the form of a note should be surrounded by blank lines, and formatted: `**Note:** Rest of note text...`
-- If multiple notes are needed, then list all of the notes in separate sentences using the format: `**Notes:** First note text. Second note text.`
-- Use single-quotes where applicable
+- Informações extras, como observações, devem estar entre linhas em branco e formatadas:
+`**Observação:** Texto da observação...`
+- Se muitas observações são necessárias, liste todas elas em frases separadas usando o formato:
+`**Observações:** Texto da primeira observação.
+ Texto da segunda observação.`
+- Use aspas simples quando necessário
 
-**Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
+**Observação:** O _Markdown_ equivalente deve ser usado ao invés de tags _HTML_.
 
-## Writing tests
+## Escrevendo testes
 
-Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
+Desafios devem ter um número mínimo de testes necessários para verificar que um usuário freeCodeCamp entendeu o conceito.
 
-Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
+Nossa meta é comunicar o ponto que o desafio está tentando ensinar e testar se eles entenderam esse ponto.
 
-Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
+Os testes do desafio podem usar bibliotecas Node.js e Chai.js. Se necessário, o código gerado pro usuário pode ser acessado na variável `code` também.  Além disso, os objetos `__helpers` expõem várias funções que simplificam o processo de escrita dos testes.  As funções disponíveis estão definidas em _client/src/utils/curriculum-helpers.ts_.
 
-## Formatting seed code
+## Formatação do código seed
 
-Here are specific formatting guidelines for the challenge seed code:
+Aqui vemos diretrizes de formatação específicas para o código seed do desafio:
 
-- Use two spaces to indent
-- JavaScript statements end with a semicolon
-- Use double quotes where applicable
+- Use dois espaços para indentação
+- Declarações em JavaScript terminam em ponto-e-vírgula
+- Use aspas duplas onde for aplicável
 
-### Seed code comments
+### Comentários do código seed
 
-We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
+Temos um [comment dictionary](/curriculum/dictionaries/english/comments.js) que contém os únicos comentários que podem ser usados no código seed. O espaçamento e as letras maiúsculas e minúsculas do dicionário de comentário devem ser usadas exatamente como são. O dicionário de comentário não deve ser expandido sem uma discussão prévia com o time de desenvolvimento (dev-team).
 
-Comments used should have a space between the comment characters and the comment themselves. In general, comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
+Os comentários usados devem ter um espaço entre os caracteres do comentário e o comentário em si. Geralmente, os comentários devem ser usados com moderação. Sempre considere reescrever a descrição de um desafio ou instrução se for possível evitar usar um comentário de código fornecido.
 
-Example of valid single line JavaScript comment:
+Exemplo de um comentário de uma linha em JavaScript:
 
 ```js
-// Only change code below this line
+// Mude somente abaixo dessa linha
 ````
 
-Example of a valid CSS comment:
+Exemplo de um comentário válido em CSS:
 
 ```css
 /* Only change code above this line */
 ```
 
-If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
+Se um desafio tem apenas um lugar onde as mudanças de código são necessárias, use os comentários seguindo o exemplo a seguir para instruir o usuário sobre o local onde as mudanças devem ser feitas.
 
 ```js
 var a = 3;
@@ -328,7 +331,7 @@ b = 9 + b;
 c = c + 7;
 ```
 
-If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
+Se um desafio tem múltiplos lugares onde se espera que o usuário faça mudanças no código (ex. os desafios de React)
 
 ```jsx
 class MyComponent extends React.Component {
@@ -337,9 +340,9 @@ class MyComponent extends React.Component {
     this.state = {
       text: 'Hello'
     };
-    // Change code below this line
+    // Altere o código abaixo desta linha
 
-    // Change code above this line
+    // Altere o código acima desta linha
   }
   handleClick() {
     this.setState({
@@ -349,9 +352,9 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        {/* Change code below this line */}
+        {/* Altere o código abaixo desta linha */}
         <button>Click Me</button>
-        {/* Change code above this line */}
+        {/* Altere o código acima desta linha */}
         <h1>{this.state.text}</h1>
       </div>
     );
@@ -359,70 +362,70 @@ class MyComponent extends React.Component {
 }
 ```
 
-### Translation of seed code comments
+### Tradução de comentários de código seed
 
-There are separate comment dictionaries for each language. The [English version of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`. Each dictionary consists of an array of objects with a unique `id` property and a `text` property. Only the `text` should be modified to encompass the translation of the corresponding English comment.
+Existem dicionários de comentários separados para cada linguagem. A [versão em inglês do dicionário de comentários](/curriculum/dictionaries/english/comments.js) é a base para as traduções encontradas nas versões correspondentes dos arquivos em outros idiomas. A versão não inglesa do dicionário de comentário chinesa pode ser encontrada em `/curriculum/dictionaries/chinese/comments.js`. Cada dicionário consiste em um array de objetos com uma propriedade de `id` única e uma propriedade de `text`. Somente a propriedade `text` deve ser modificada para englobar a tradução do comentário correspondente em inglês.
 
-Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated. See the comment below as an example. The word `myGlobal` should not be translated.
+Alguns comentários podem conter uma palavra/frase que não deve ser traduzida. Por exemplo, nomes de variáveis, ou nomes próprios de bibliotecas como "React" não devem ser traduzidas. Veja o comentário abaixo como um exemplo. a palavra `myGlobal` não deve ser traduzida.
 
 ```text
-Declare the myGlobal variable below this line
+Declare a variável myGlobal abaixo desta linha
 ```
 
 > [!NOTE]
 > 
-> We are working on an integration to make it possible to work on i18n for the comment dictionary.
+> Estamos trabalhando em uma integração para ser possível trabalhar no i18n para o dicionário de comentário.
 
-## Hints and Solutions
+## Dicas e soluções
 
-Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
+Cada desafio tem um botão `Get a Hint`, assim, o usuário pode acessar qualquer dica/solução que foi criada para aquele desafio. Os tópicos de dicas/soluções são encontrados no [nosso fórum](https://forum.freecodecamp.org/c/guide), abaixo da categoria `Guide`.
 
-If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+Se você encontrar um problema nas dicas/tópicos de solução de um desafio existente, você pode fazer sugestões na [categoria de contribuidores](https://forum.freecodecamp.org/c/contributors) no fórum. Os moderadores e usuários com o nível de confiança 3 vão revisar os comentários e decidir quais incluir as mudanças nos tópicos correspondentes de dicas/soluções.
 
-### Adding new Challenge hints/solutions Topics
+### Adicionando um novo tópico de dicas/soluções em um desafio
 
-Take the following steps when adding a new challenge hints/solutions related topic.
+Faça o passo-a-passo a seguir quando for adicionar novos tópicos de dicas/soluções relacionadas a um desafio.
 
-1. Start by following the same steps for creating a new topic but review the next for creating the title.
-2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
-3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
-4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
+1. Comece seguindo os mesmos passos para criar um novo tópico, mas revise o seguinte para criar o título.
+2. O título do tópico deve começar com `freeCodeCamp Challenge Guide:` concatenado com o título atual do desafio de currículo. Por exemplo, se o desafio é chamado "`Chunky Monkey`", o título do tópico seria "`freeCodeCamp Challenge Guide: Chunky Monkey`".
+3. O `camperbot` deve ser o proprietário destes tópicos/postagens. Então, você precisará solicitar um administrador para alterar a propriedade da postagem principal para `camperbot`.
+4. Depois que o novo tópico for criado, será criado um id para o tópico do fórum. Está localizado no final da URL do tópico do fórum. Este id deve ser adicionado ao arquivo de desafio do currículo através do processo normal de pull request para o botão `Get a Hint` para vincular ao tópico.
 
-### Guidelines for content of hints and solutions topics
+### Diretrizes para o conteúdo dos tópicos de dicas e soluções
 
-When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
+Ao propor uma solução para um tópico do guia relacionado a um desafio de currículo, o código completo deve ser adicionado. Isso inclui todo o código seed original, assim como as alterações necessárias para passar em todos os testes do desafio. O modelo a seguir deve ser usado ao criar um novo tópico de dicas/soluções:
 
 ````md
-# Challenge Name Goes Here
+# O nome do desafio fica aqui
 
 ---
 
-## Problem Explanation
+## Explicação do problema
 
-This summarizes what needs to be done without just restating the challenge description and/or instructions. This is an optional section
+Resume o que precisa ser feito sem copiar a descrição do desafio e/ou instruções. Essa é uma seção opcional
 
-#### Relevant Links
+#### Links relevantes
 
-- [Link Text](link_url_goes_here)
-- [Link Text](link_url_goes_here)
-
----
-
-## Hints
-
-### Hint 1
-
-Hint goes here
-
-### Hint 2
-
-Hint goes here
+- [Texto do link](url_do_link_fica_aqui)
+- [Texto do link](url_do_link_fica_aqui)
 
 ---
 
-## Solutions
+## Dicas
 
-<details><summary>Solution 1 (Click to Show/Hide)</summary>
+### Dica 1
+
+A dica fica aqui
+
+### Dica 2
+
+A dica fica aqui
+
+---
+
+## Soluções
+
+<details><summary>Solução 1 (Clique para mostrar/ocultar)</summary>
 
 ```js
 function myFunc() {
@@ -430,30 +433,30 @@ function myFunc() {
 }
 ````
 
-#### Code Explanation
+#### Explicação de Código
 
-- Code explanation goes here
-- Code explanation goes here
+- A explicação do código fica aqui
+- A explicação do código fica aqui
 
-#### Relevant Links
+#### Links relevantes
 
-- [Link Text](link_url_goes_here)
-- [Link Text](link_url_goes_here)
+- [Texto do link](link_url_goes_here)
+- [Texto do link](link_url_goes_here)
 
 </details>
 ````
 
-## Testing Challenges
+## Testando desafios
 
-Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge.
+Antes de [criar um pull request](how-to-open-a-pull-request.md) para suas modificações, você precisa validar que as mudanças feitas não causam problemas no desafio.
 
-1. To test all challenges run the below command from the root directory
+1. Para testar todos os desafios, execute o comando abaixo a partir do diretório raiz
 
 ````
 npm run test:curriculum
 ```
 
-2. You can also test a block or a superblock of challenges with these commands
+2. Você também pode testar um bloco ou superbloco de desafios com esses comandos
 
 ```
 npm run test:curriculum --block='Basic HTML and HTML5'
@@ -463,29 +466,29 @@ npm run test:curriculum --block='Basic HTML and HTML5'
 npm run test:curriculum --superblock=responsive-web-design
 ```
 
-You are also able to test one challenge individually by performing the following steps:
+Você também é capaz de testar um desafio individualmente seguindo as seguintes etapas:
 
-1. Switch to the `curriculum` directory:
+1.  Mude para o diretório `curriculum`:
 
    ```
    cd curriculum
    ```
 
-2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
+2. Execute o comando a seguir para cada arquivo de desafio que você fez mudanças (substituindo `challenge-title-goes-here` com o título completo do desafio):
 
    ```
    npm run test -- -g challenge-title-goes-here ```
 
-Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
+Quando você verificar que cada desafio modificado passou nos testes, [crie um pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
 
-> [!TIP] You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
+> [!TIP] Você pode definir a variável de ambiente `LOCALE` no `.env` no idioma do(s) desafio(s) que precisa testar.
 > 
-> The currently accepted values are `english` and `chinese`, with `english` being set by default.
+> Os valores atualmente aceitos são `english` e `chinese`, com `english` sendo o padrão.
 
-### Useful Links
+### Links úteis
 
-Creating and Editing Challenges:
+Criando e editando desafios:
 
-1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challengeTypes.js#L1-L13) - what the numeric challenge type values mean (enum).
+1. [Tipos do desafio](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challengeTypes.js#L1-L13) - o que significam os valores do tipo de desafio numérico (enum).
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+2. [Contribuindo para o FreeCodeCamp - Escrevendo testes de desafio ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo com [Ethan Arrowood](https://twitter.com/ArrowoodTech) contribuindo para a versão antiga do currículo.

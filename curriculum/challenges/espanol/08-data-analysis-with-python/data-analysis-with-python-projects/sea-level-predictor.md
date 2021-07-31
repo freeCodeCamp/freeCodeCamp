@@ -2,6 +2,7 @@
 id: 5e4f5c4b570f7e3a4949899f
 title: Sea Level Predictor
 challengeType: 10
+forumTopicId: 462370
 dashedName: sea-level-predictor
 ---
 
@@ -9,7 +10,7 @@ dashedName: sea-level-predictor
 
 In this project, you will analyze a dataset of the global average sea level change since 1880. You will use the data to predict the sea level change through year 2050.
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-sea-level-predictor).
+You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor).
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 

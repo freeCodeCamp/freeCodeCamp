@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed4
-title: 'Accessing and Changing Elements, Rows, Columns'
+title: 'Accedere e cambiare elementi, righe, colonne'
 challengeType: 11
 videoId: v-7Y7koJ_N0
 dashedName: accessing-and-changing-elements-rows-columns
@@ -10,7 +10,7 @@ dashedName: accessing-and-changing-elements-rows-columns
 
 ## --text--
 
-What code would change the values in the 3rd column of both of the following Numpy arrays to 20?
+Quale codice imposterebbe a 20 il valore della terza colonna per entrambi i seguenti array Numpy?
 
 ```py
 a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])

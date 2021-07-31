@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aede08845
-title: Create a Custom Heading
+title: Criar um título personalizado
 challengeType: 0
 forumTopicId: 16816
 dashedName: create-a-custom-heading
@@ -8,23 +8,23 @@ dashedName: create-a-custom-heading
 
 # --description--
 
-We will make a simple heading for our Cat Photo App by putting the title and relaxing cat image in the same row.
+Vamos fazer um título simples para nossa foto de gato ao colocar na mesma linha o título e a imagem do gato relaxando.
 
-Remember, Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a `div` element.
+Lembre-se: o Bootstrap usa o sistema de grade responsiva, o que torna fácil colocar elementos em linha e especificar cada largura relativa de um elemento. A maioria das classes do Bootstrap podem ser aplicadas a um elemento `div`.
 
-Nest your first image and your `h2` element within a single `<div class="row">` element. Nest your `h2` element within a `<div class="col-xs-8">` and your image in a `<div class="col-xs-4">` so that they are on the same line.
+Aninhe sua primeira imagem e seu elemento `h2` dentro de um único elemento `<div class="row">`. Aninhe o seu elemento `h2` dentro de uma `<div class="col-xs-8">` e sua imagem em uma `<div class="col-xs-4">` para que eles estejam na mesma linha.
 
-Notice how the image is now just the right size to fit along the text?
+Notou como a imagem agora está no tamanho exato para encaixar com o texto?
 
 # --hints--
 
-Your `h2` element and topmost `img` element should both be nested together within a `div` element with the class `row`.
+O elemento `h2` e o elemento `img` mais acima devem estar aninhados juntos dentro de um elemento `div` com a classe `row`.
 
 ```js
 assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0);
 ```
 
-Your topmost `img` element should be nested within a `div` with the class `col-xs-4`.
+O elemento `img` superior deve estar aninhado dentro de uma `div` com a classe `col-xs-4`.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-Your `h2` element should be nested within a `div` with the class `col-xs-8`.
+O elemento `h2` deve estar aninhado dentro de uma `div` com a classe `col-xs-8`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-All of your `div` elements should have closing tags.
+Todos os elementos `div` devem ter tags de fechamento.
 
 ```js
 assert(

@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import createWorker from './worker-executor';
 
 function mockWorker({ init, postMessage, terminate } = {}) {

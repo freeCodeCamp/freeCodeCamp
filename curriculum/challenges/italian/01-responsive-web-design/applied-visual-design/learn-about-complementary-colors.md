@@ -17,7 +17,7 @@ Alcuni esempi di colori complementari con i loro codici esadecimali sono:
 
 <blockquote>rosso (#FF0000) e ciano (#00FFFF)<br>verde (#00FF00) e magenta (#FF00FF)<br>blu (#0000FF) e giallo (#FFFF00)</blockquote>
 
-Questo è diverso dal modello di colore superato RYB (Rosso Giallo Blu) che hanno insegnato a molti di noi a scuola, che ha diversi colori primari e complementari. La teoria dei colori moderna utilizza il modello RGB additivo (come su uno schermo del computer) e il modello CMY(K) sottrattivo (come nella stampa). Leggi [qui](https://en.wikipedia.org/wiki/Color_model) per maggiori informazioni su questo argomento complesso.
+Questo è diverso dal modello di colore superato RYB (Rosso Giallo Blu) che hanno insegnato a molti di noi a scuola, che ha diversi colori primari e complementari. La teoria dei colori moderna utilizza il modello RGB additivo (come su uno schermo del computer) e il modello CMY(K) sottrattivo (come nella stampa). Leggi [qui](https://it.wikipedia.org/wiki/Modello_di_colore) per maggiori informazioni su questo argomento complesso.
 
 Ci sono molti strumenti di selezione del colore disponibili online che hanno un'opzione per trovare il complementare di un colore.
 

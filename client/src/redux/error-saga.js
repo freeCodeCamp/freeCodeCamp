@@ -5,7 +5,7 @@ import { isError } from 'lodash-es';
 import { isHandledError, unwrapHandledError } from '../utils/handled-error';
 import { reportClientSideError } from '../utils/report-error';
 import { createFlashMessage } from '../components/Flash/redux';
-import reportedErrorMessage from '../utils/reportedErrorMessage';
+import reportedErrorMessage from '../utils/reported-error-message';
 
 const errorActionSelector = action => isError(action.payload);
 

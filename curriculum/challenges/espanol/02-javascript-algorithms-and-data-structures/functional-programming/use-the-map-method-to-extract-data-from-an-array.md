@@ -37,7 +37,7 @@ La consola mostraría el valor `[ 'John', 'Amy', 'camperCat' ]`.
 
 # --instructions--
 
-El arreglo `watchList` contiene objetos con información sobre varias películas. Usa `map` en `watchList` para asignar un nuevo arreglo de objetos con solo `title` y `rating` claves a la variable `ratings`. El código en el editor utiliza actualmente un bucle `for` para hacer esto, por lo que debería reemplazar la funcionalidad del bucle con su expresión `map`.
+El arreglo `watchList` contiene objetos con información sobre varias películas. Usa `map` en `watchList` para asignar un nuevo arreglo de objetos a la variable `ratings`. Cada película en el nuevo arreglo debe tener solo una tecla `title` con el nombre de la película, y una tecla `rating` con la calificación IMDB. El código en el editor utiliza actualmente un bucle `for` para hacer esto, por lo que debes reemplazar la funcionalidad del bucle con tu expresión `map`.
 
 # --hints--
 

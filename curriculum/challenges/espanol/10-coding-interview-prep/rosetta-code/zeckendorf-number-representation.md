@@ -14,41 +14,144 @@ The decimal number eleven can be written as `0*13 + 1*8 + 0*5 + 1*3 + 0*2 + 0*1`
 
 # --instructions--
 
-Write a function that generates and returns an array of the first `n` Zeckendorf numbers in order.
+Write a function that generates and returns the Zeckendorf number representation of `n`.
 
 # --hints--
 
-zeckendorf should be function.
+`zeckendorf` should be a function.
 
 ```js
 assert.equal(typeof zeckendorf, 'function');
 ```
 
-Your `zeckendorf` function should return the correct answer.
+`zeckendorf(0)` should return `0`.
 
 ```js
-assert.deepEqual(answer, solution20);
+assert.equal(zeckendorf(0), 0);
+
+```
+
+`zeckendorf(1)` should return `1`.
+
+```js
+assert.equal(zeckendorf(1), 1);
+```
+
+`zeckendorf(2)` should return `10`.
+
+```js
+assert.equal(zeckendorf(2), 10);
+```
+
+`zeckendorf(3)` should return `100`.
+
+```js
+assert.equal(zeckendorf(3), 100);
+```
+
+`zeckendorf(4)` should return `101`.
+
+```js
+assert.equal(zeckendorf(4), 101);
+```
+
+`zeckendorf(5)` should return `1000`.
+
+```js
+assert.equal(zeckendorf(5), 1000);
+```
+
+`zeckendorf(6)` should return `1001`.
+
+```js
+assert.equal(zeckendorf(6), 1001);
+```
+
+`zeckendorf(7)` should return `1010`.
+
+```js
+assert.equal(zeckendorf(7), 1010);
+```
+
+`zeckendorf(8)` should return `10000`.
+
+```js
+assert.equal(zeckendorf(8), 10000);
+```
+
+`zeckendorf(9)` should return `10001`.
+
+```js
+assert.equal(zeckendorf(9), 10001);
+```
+
+`zeckendorf(10)` should return `10010`.
+
+```js
+assert.equal(zeckendorf(10), 10010);
+```
+
+`zeckendorf(11)` should return `10100`.
+
+```js
+assert.equal(zeckendorf(11), 10100);
+```
+
+`zeckendorf(12)` should return `10101`.
+
+```js
+assert.equal(zeckendorf(12), 10101);
+```
+
+`zeckendorf(13)` should return `100000`.
+
+```js
+assert.equal(zeckendorf(13), 100000);
+```
+
+`zeckendorf(14)` should return `100001`.
+
+```js
+assert.equal(zeckendorf(14), 100001);
+```
+
+`zeckendorf(15)` should return `100010`.
+
+```js
+assert.equal(zeckendorf(15), 100010);
+```
+
+`zeckendorf(16)` should return `100100`.
+
+```js
+assert.equal(zeckendorf(16), 100100);
+```
+
+`zeckendorf(17)` should return `100101`.
+
+```js
+assert.equal(zeckendorf(17), 100101);
+```
+
+`zeckendorf(18)` should return `101000`.
+
+```js
+assert.equal(zeckendorf(18), 101000);
+```
+
+`zeckendorf(19)` should return `101001`.
+
+```js
+assert.equal(zeckendorf(19), 101001);
+```
+
+`zeckendorf(20)` should return `101010`.
+
+```js
+assert.equal(zeckendorf(20), 101010);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const range = (m, n) => (
-  Array.from({
-    length: Math.floor(n - m) + 1
-  }, (_, i) => m + i)
-);
-
-const solution20 = [
-  '1', '10', '100', '101', '1000', '1001', '1010', '10000', '10001',
-  '10010', '10100', '10101', '100000', '100001', '100010', '100100', '100101',
-  '101000', '101001', '101010'
-];
-
-const answer = range(1, 20).map(zeckendorf);
-```
 
 ## --seed-contents--
 
@@ -61,13 +164,13 @@ function zeckendorf(n) {
 # --solutions--
 
 ```js
-// zeckendorf :: Int -> String
+// zeckendorf :: Int -> Int
 function zeckendorf(n) {
   const f = (m, x) => (m < x ? [m, 0] : [m - x, 1]);
-  return (n === 0 ? ([0]) :
+  return parseInt((n === 0 ? ([0]) :
     mapAccumL(f, n, reverse(
       tail(fibUntil(n))
-    ))[1]).join('');
+    ))[1]).join(''));
 }
 
 // fibUntil :: Int -> [Int]

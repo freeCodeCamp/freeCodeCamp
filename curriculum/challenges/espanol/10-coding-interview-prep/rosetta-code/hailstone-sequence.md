@@ -10,29 +10,18 @@ dashedName: hailstone-sequence
 
 The Hailstone sequence of numbers can be generated from a starting positive integer, `n` by:
 
-<ul>
-  <li>If <code>n</code> is <code>1</code> then the sequence ends</li>
-  <li>If <code>n</code> is <code>even</code> then the next <code>n</code> of the sequence <code>= n/2</code></li>
-  <li>If <code>n</code> is <code>odd</code> then the next <code>n</code> of the sequence <code>= (3 * n) + 1</code></li>
-</ul>
+- If `n` is `1` then the sequence ends
+- If `n` is `even` then the next `n` of the sequence `= n/2`
+- If `n` is `odd` then the next `n` of the sequence `= (3 * n) + 1`
 
-The (unproven) [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz conjecture "wp: Collatz conjecture") is that the hailstone sequence for any starting number always terminates.
+The (unproven) Collatz conjecture is that the hailstone sequence for any starting number always terminates.
 
 The hailstone sequence is also known as hailstone numbers (because the values are usually subject to multiple descents and ascents like hailstones in a cloud), or as the Collatz sequence.
 
 # --instructions--
 
-<ol>
-  <li>Create a routine to generate the hailstone sequence for a number</li>
-  <li>Use the routine to show that the hailstone sequence for the number 27 has 112 elements starting with <code>27, 82, 41, 124</code> and ending with <code>8, 4, 2, 1</code></li>
-  <li>Show the number less than 100,000 which has the longest hailstone sequence together with that sequence's length. (But don't show the actual sequence!)</li>
-</ol>
-
-**See also:**
-
-<ul>
-  <li><a href='https://xkcd.com/710' target='_blank'>xkcd</a> (humourous).</li>
-</ul>
+1. Create a routine to generate the hailstone sequence for a number
+2. Your function should return an array with the number less than `limit` which has the longest hailstone sequence and that sequence's length. (But don't show the actual sequence!)
 
 # --hints--
 
@@ -42,24 +31,36 @@ The hailstone sequence is also known as hailstone numbers (because the values ar
 assert(typeof hailstoneSequence === 'function');
 ```
 
-`hailstoneSequence()` should return `[[27,82,41,124,8,4,2,1], [351, 77031]]`
+`hailstoneSequence(30)` should return an array.
 
 ```js
-assert.deepEqual(hailstoneSequence(), res);
+assert(Array.isArray(hailstoneSequence(30)));
+```
+
+`hailstoneSequence(30)` should return `[27, 112]`.
+
+```js
+assert.deepEqual(hailstoneSequence(30), [27, 112]);
+```
+
+`hailstoneSequence(50000)` should return `[35655, 324]`.
+
+```js
+assert.deepEqual(hailstoneSequence(50000), [35655, 324]);
+```
+
+`hailstoneSequence(100000)` should return `[77031, 351]`.
+
+```js
+assert.deepEqual(hailstoneSequence(100000), [77031, 351]);
 ```
 
 # --seed--
 
-## --after-user-code--
-
-```js
-const res = [[27, 82, 41, 124, 8, 4, 2, 1], [351, 77031]];
-```
-
 ## --seed-contents--
 
 ```js
-function hailstoneSequence() {
+function hailstoneSequence(limit) {
   const res = [];
 
 
@@ -70,9 +71,7 @@ function hailstoneSequence() {
 # --solutions--
 
 ```js
-function hailstoneSequence () {
-  const res = [];
-
+function hailstoneSequence (limit) {
   function hailstone(n) {
     const seq = [n];
     while (n > 1) {
@@ -82,13 +81,9 @@ function hailstoneSequence () {
     return seq;
   }
 
-  const h = hailstone(27);
-  const hLen = h.length;
-  res.push([...h.slice(0, 4), ...h.slice(hLen - 4, hLen)]);
-
   let n = 0;
   let max = 0;
-  for (let i = 100000; --i;) {
+  for (let i = limit; --i;) {
     const seq = hailstone(i);
     const sLen = seq.length;
 
@@ -97,8 +92,7 @@ function hailstoneSequence () {
       max = sLen;
     }
   }
-  res.push([max, n]);
 
-  return res;
+  return [n, max];
 }
 ```

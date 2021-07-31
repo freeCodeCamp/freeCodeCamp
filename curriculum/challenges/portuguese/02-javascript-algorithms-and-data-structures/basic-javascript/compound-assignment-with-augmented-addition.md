@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244af
-title: Compound Assignment With Augmented Addition
+title: Atribuir de modo composto com adição aumentada
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDR6LCb'
 forumTopicId: 16661
@@ -9,15 +9,15 @@ dashedName: compound-assignment-with-augmented-addition
 
 # --description--
 
-In programming, it is common to use assignments to modify the contents of a variable. Remember that everything to the right of the equals sign is evaluated first, so we can say:
+Na programação, é comum usar atribuições para modificar o conteúdo de uma variável. Lembre-se de que tudo à direita do sinal de igual é avaliado primeiro, para que possamos dizer:
 
 ```js
 myVar = myVar + 5;
 ```
 
-to add `5` to `myVar`. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.
+para adicionar `5` a `myVar`. Como este é um padrão tão comum, existem operadores que realizam uma operação matemática e atribuição em um passo.
 
-One such operator is the `+=` operator.
+Um desses operadores é o operador `+=`.
 
 ```js
 var myVar = 1;
@@ -25,39 +25,39 @@ myVar += 5;
 console.log(myVar);
 ```
 
-`6` would be displayed in the console.
+`6` seria exibido no console.
 
 # --instructions--
 
-Convert the assignments for `a`, `b`, and `c` to use the `+=` operator.
+Converta as atribuições para `a`, `b` e `c` para usar o operador `+=`.
 
 # --hints--
 
-`a` should equal `15`.
+`a` deve ser igual a `15`.
 
 ```js
 assert(a === 15);
 ```
 
-`b` should equal `26`.
+`b` deve ser igual a `26`.
 
 ```js
 assert(b === 26);
 ```
 
-`c` should equal `19`.
+`c` deve ser igual a `19`.
 
 ```js
 assert(c === 19);
 ```
 
-You should use the `+=` operator for each variable.
+Você deve usar o operador `+=` para cada variável.
 
 ```js
 assert(code.match(/\+=/g).length === 3);
 ```
 
-You should not modify the code above the specified comment.
+Você não deve modificar o código acima do comentário especificado.
 
 ```js
 assert(

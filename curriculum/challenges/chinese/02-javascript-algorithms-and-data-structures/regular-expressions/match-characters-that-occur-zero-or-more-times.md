@@ -54,7 +54,7 @@ assert(result[0] === 'Aaaaaaaaaaaaaaaa');
 assert(result[0].length === 16);
 ```
 
-你的正则表达式不应该有任何匹配，在字符 `He made a fair move. Screaming about it can't help you.`
+你的正则表达式不应该匹配字符串 `He made a fair move. Screaming about it can't help you.` 中的任何字符。
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-你的正则表达式不应该有任何匹配，在字符 `Let him have it. It's not wise to upset a Wookiee.`
+你的正则表达式不应该匹配字符串 `Let him have it. It's not wise to upset a Wookiee.` 中的任何字符。
 
 ```js
 assert(

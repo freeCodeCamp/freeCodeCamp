@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be3
-title: Get JSON with the JavaScript XMLHttpRequest Method
+title: Ottenere JSON col metodo XMLHttpRequest di JavaScript
 challengeType: 6
 forumTopicId: 301502
 dashedName: get-json-with-the-javascript-xmlhttprequest-method
@@ -8,19 +8,19 @@ dashedName: get-json-with-the-javascript-xmlhttprequest-method
 
 # --description--
 
-You can also request data from an external source. This is where APIs come into play.
+Puoi anche richiedere dati da una fonte esterna. È qui che le API entrano in gioco.
 
-Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another. You'll learn how to update HTML with the data we get from APIs using a technology called AJAX.
+Ricordati che le API (o Application Programming Interface) sono strumenti che i computer usano per comunicare tra di loro. Imparerai come aggiornare l'HTML con i dati che otteniamo dalle API usando una tecnologia chiamata AJAX.
 
-Most web APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation.
+La maggior parte delle API web trasferiscono i dati in un formato chiamato JSON. JSON sta per JavaScript Object Notation.
 
-JSON syntax looks very similar to JavaScript object literal notation. JSON has object properties and their current values, sandwiched between a `{` and a `}`.
+La sintassi JSON è molto simile alla notazione letterale degli oggetti in JavaScript. JSON ha le proprietà degli oggetti e i loro valori correnti tra un `{` e un `}`.
 
-These properties and their values are often referred to as "key-value pairs".
+Queste proprietà e i loro valori sono spesso denominati "coppie chiave-valore" ("key-value pairs").
 
-However, JSON transmitted by APIs are sent as `bytes`, and your application receives it as a `string`. These can be converted into JavaScript objects, but they are not JavaScript objects by default. The `JSON.parse` method parses the string and constructs the JavaScript object described by it.
+Tuttavia, JSON viene inviato dalle API in forma di `bytes`, e la tua applicazione lo riceve come `string`. Questi possono essere convertiti in oggetti JavaScript, ma non sono oggetti JavaScript di default. Il metodo `JSON.parse` analizza la stringa e costruisce l'oggetto JavaScript da essa descritto.
 
-You can request the JSON from freeCodeCamp's Cat Photo API. Here's the code you can put in your click event to do this:
+Puoi fare la richiesta del JSON dall'API Cat Photo di freeCodeCamp. Ecco il codice che puoi inserire nel tuo evento click per fare questo:
 
 ```js
 const req = new XMLHttpRequest();
@@ -32,21 +32,21 @@ req.onload = function(){
 };
 ```
 
-Here's a review of what each piece is doing. The JavaScript `XMLHttpRequest` object has a number of properties and methods that are used to transfer data. First, an instance of the `XMLHttpRequest` object is created and saved in the `req` variable. Next, the `open` method initializes a request - this example is requesting data from an API, therefore is a `GET` request. The second argument for `open` is the URL of the API you are requesting data from. The third argument is a Boolean value where `true` makes it an asynchronous request. The `send` method sends the request. Finally, the `onload` event handler parses the returned data and applies the `JSON.stringify` method to convert the JavaScript object into a string. This string is then inserted as the message text.
+Ecco un ripasso di quello che sta facendo ognuna delle parti in gioco. L'oggetto JavaScript `XMLHttpRequest` ha una serie di proprietà e metodi che vengono utilizzati per trasferire dati. In primo luogo, un'istanza dell'oggetto `XMLHttpRequest` viene creata e salvata nella variabile `req`. Successivamente, il metodo `open` inizializza una richiesta: questo esempio richiede dati da un'API, quindi è una richiesta `GET`. Il secondo argomento per `open` è l'URL dell'API dalla quale stai richiedendo i dati. Il terzo argomento è un valore booleano dove `true` la rende una richiesta asincrona. Il metodo `send` invia la richiesta. Infine, il gestore di evento `onload` analizza i dati restituiti e applica il metodo `JSON.stringify` per convertire l'oggetto JavaScript in una stringa. Questa stringa viene quindi inserita come testo del messaggio.
 
 # --instructions--
 
-Update the code to create and send a `GET` request to the freeCodeCamp Cat Photo API. Then click the `Get Message` button. Your AJAX function will replace the `The message will go here` text with the raw JSON output from the API.
+Modifica il codice per creare e usare una richiesta `GET` all'API Cat Photo di freeCodeCamp. Quindi fai click sul pulsante `Get Message`. La tua funzione AJAX sostituirà il testo `The message will go here` con l'output JSON grezzo ricevuto dall'API.
 
 # --hints--
 
-Your code should create a new `XMLHttpRequest`.
+Il tuo codice dovrebbe creare una nuova `XMLHttpRequest`.
 
 ```js
 assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
 ```
 
-Your code should use the `open` method to initialize a `GET` request to the freeCodeCamp Cat Photo API.
+Il tuo codice dovrebbe utilizzare il metodo `open` per inizializzare una richiesta `GET` alla API Cat Photo di freeCodeCamp.
 
 ```js
 assert(
@@ -56,13 +56,13 @@ assert(
 );
 ```
 
-Your code should use the `send` method to send the request.
+Il tuo codice dovrebbe utilizzare il metodo `send` per inviare la richiesta.
 
 ```js
 assert(code.match(/\.send\(\s*\)/g));
 ```
 
-Your code should have an `onload` event handler set to a function.
+Il tuo codice dovrebbe avere un gestore di eventi `onload` impostato a una funzione.
 
 ```js
 assert(
@@ -70,13 +70,13 @@ assert(
 );
 ```
 
-Your code should use the `JSON.parse` method to parse the `responseText`.
+Il tuo codice dovrebbe utilizzare il metodo `JSON.parse` per analizzare il `responseText`.
 
 ```js
 assert(code.match(/JSON\s*\.parse\(\s*.*\.responseText\s*\)/g));
 ```
 
-Your code should get the element with class `message` and change its inner HTML to the string of JSON data.
+Il tuo codice dovrebbe selezionare l'elemento con classe `message` e cambiare il suo innerHTML con la stringa di dati JSON.
 
 ```js
 assert(

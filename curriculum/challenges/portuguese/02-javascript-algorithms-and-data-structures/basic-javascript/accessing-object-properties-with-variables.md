@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c9
-title: Accessing Object Properties with Variables
+title: Acessar propriedades de objetos com variáveis
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnQyKur'
 forumTopicId: 16165
@@ -9,9 +9,9 @@ dashedName: accessing-object-properties-with-variables
 
 # --description--
 
-Another use of bracket notation on objects is to access a property which is stored as the value of a variable. This can be very useful for iterating through an object's properties or when accessing a lookup table.
+Outro uso de notação de colchetes em objetos é para acessar a propriedade a qual está armazenada como o valor de uma variável. Isso pode ser muito útil para iterar através das propriedades de um objeto ou quando acessando uma tabela de pesquisa.
 
-Here is an example of using a variable to access a property:
+Aqui está um exemplo de usar uma variável para acessar uma propriedade:
 
 ```js
 var dogs = {
@@ -22,9 +22,9 @@ var myBreed = dogs[myDog];
 console.log(myBreed);
 ```
 
-The string `Doberman` would be displayed in the console.
+A string `Doberman` seria exibida no console.
 
-Another way you can use this concept is when the property's name is collected dynamically during the program execution, as follows:
+Outra forma de você usar esse conceito é quando o nome da propriedade é coletado dinamicamente, durante a execução do programa, da seguinte forma:
 
 ```js
 var someObj = {
@@ -38,47 +38,47 @@ var someProp = propPrefix("Name");
 console.log(someObj[someProp]);
 ```
 
-`someProp` would have a value of the string `propName`, and the string `John` would be displayed in the console.
+`someProp` teria o valor da string `propName` e a string `John` seria exibida no console.
 
-Note that we do *not* use quotes around the variable name when using it to access the property because we are using the *value* of the variable, not the *name*.
+Observe que *não* usamos aspas em torno do nome da variável ao usá-la para acessar a propriedade, porque estamos usando o *valor* da variável, e não o *nome*.
 
 # --instructions--
 
-Set the `playerNumber` variable to `16`. Then, use the variable to look up the player's name and assign it to `player`.
+Defina a variável `playerNumber` para ser `16`. Então, use a variável para procurar o nome do jogador e atribuí-la a `player`.
 
 # --hints--
 
-`playerNumber` should be a number
+`playerNumber` deve ser um número
 
 ```js
 assert(typeof playerNumber === 'number');
 ```
 
-The variable `player` should be a string
+A variável `player` deve ser uma string
 
 ```js
 assert(typeof player === 'string');
 ```
 
-The value of `player` should be the string `Montana`
+O valor de `player` deve ser a string `Montana`
 
 ```js
 assert(player === 'Montana');
 ```
 
-You should use bracket notation to access `testObj`
+Você deve usar a notação de colchetes para acessar `testObj`
 
 ```js
 assert(/testObj\s*?\[.*?\]/.test(code));
 ```
 
-You should not assign the value `Montana` to the variable `player` directly.
+Você não deve usar o valor `Montana` diretamente para a variável `player`.
 
 ```js
 assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
 ```
 
-You should be using the variable `playerNumber` in your bracket notation
+Você deve estar usando a variável `playerNumber` na sua notação de colchetes
 
 ```js
 assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));

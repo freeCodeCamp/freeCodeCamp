@@ -8,7 +8,7 @@ dashedName: kaprekar-numbers
 
 # --description--
 
-A positive integer is a [Kaprekar number](<https://en.wikipedia.org/wiki/Kaprekar number>) if:
+A positive integer is a [Kaprekar number](https://en.wikipedia.org/wiki/Kaprekar number) if:
 
 <ul>
   <li>It is 1, or,</li>

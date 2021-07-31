@@ -1,8 +1,7 @@
 ---
 id: 5900f4161000cf542c50ff29
 title: >-
-  Problem 170: Find the largest 0 to 9 pandigital that can be formed by
-  concatenating products
+  Problem 170: Find the largest 0 to 9 pandigital that can be formed by concatenating products
 challengeType: 5
 forumTopicId: 301805
 dashedName: >-

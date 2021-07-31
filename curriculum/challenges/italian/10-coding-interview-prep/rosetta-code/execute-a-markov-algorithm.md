@@ -8,7 +8,7 @@ dashedName: execute-a-markov-algorithm
 
 # --description--
 
-Create an interpreter for a [Markov Algorithm](<https://en.wikipedia.org/wiki/Markov algorithm> "wp: Markov algorithm").
+Create an interpreter for a [Markov Algorithm](https://en.wikipedia.org/wiki/Markov algorithm "wp: Markov algorithm").
 
 Rules have the syntax:
 

@@ -48,8 +48,11 @@ assert(
 
 ```js
 function checkSet(){
-   var set = null;
-   return set;
+  // Only change code below this line
+  var set = null;
+
+  // Only change code above this line
+  return set;   
 }
 ```
 

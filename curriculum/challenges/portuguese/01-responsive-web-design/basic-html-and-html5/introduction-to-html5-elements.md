@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aecf08801
-title: Introdução aos elementos do HTML5
+title: Conhecer os primeiros elementos do HTML5
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cBkZGpt7'
 forumTopicId: 301097
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-O elemento `p` deve conter as palavras do texto `kitty ipsum text` fornecido.
+O elemento `p` deve conter as primeiras palavras do texto adicional `kitty ipsum` fornecido.
 
 ```js
 assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));

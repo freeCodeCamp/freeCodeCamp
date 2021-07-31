@@ -50,7 +50,7 @@ assert(palindrome('race car') === true);
 assert(palindrome('not a palindrome') === false);
 ```
 
-`palindrome("A man, a plan, a canal. Panama")` 应返回 `true`。
+`palindrome("A man, a plan, a canal. Panama")` 应该返回 `true`。
 
 ```js
 assert(palindrome('A man, a plan, a canal. Panama') === true);

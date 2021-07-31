@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036161
-title: Learn About Self-Closing JSX Tags
+title: Aprende sobre las etiquetas JSX auto-cerradas
 challengeType: 6
 forumTopicId: 301396
 dashedName: learn-about-self-closing-jsx-tags
@@ -8,35 +8,35 @@ dashedName: learn-about-self-closing-jsx-tags
 
 # --description--
 
-So far, you’ve seen how JSX differs from HTML in a key way with the use of `className` vs. `class` for defining HTML classes.
+Hasta ahora, has visto cómo JSX difiere de HTML de una manera clave con el uso de `className` vs. `class` para definir clases HTML.
 
-Another important way in which JSX differs from HTML is in the idea of the self-closing tag.
+Otra forma importante en la que JSX difiere de HTML está en la idea de la etiqueta de auto-cierre.
 
-In HTML, almost all tags have both an opening and closing tag: `<div></div>`; the closing tag always has a forward slash before the tag name that you are closing. However, there are special instances in HTML called “self-closing tags”, or tags that don’t require both an opening and closing tag before another tag can start.
+En HTML, casi todas las etiquetas tienen una etiqueta de apertura y cierre: `<div></div>`; la etiqueta de cierre siempre tiene una barra inclinada antes del nombre de la etiqueta que está cerrando. Sin embargo, hay instancias especiales en HTML llamadas “etiquetas auto-cerradas”, o etiquetas que no requieren una etiqueta de apertura y cierre antes de que otra etiqueta pueda comenzar.
 
-For example the line-break tag can be written as `<br>` or as `<br />`, but should never be written as `<br></br>`, since it doesn't contain any content.
+Por ejemplo, la etiqueta salto de línea puede escribirse como `<br>` o como `<br />`, pero nunca debería escribirse como `<br></br>`, ya que no contiene ningún contenido.
 
-In JSX, the rules are a little different. Any JSX element can be written with a self-closing tag, and every element must be closed. The line-break tag, for example, must always be written as `<br />` in order to be valid JSX that can be transpiled. A `<div>`, on the other hand, can be written as `<div />` or `<div></div>`. The difference is that in the first syntax version there is no way to include anything in the `<div />`. You will see in later challenges that this syntax is useful when rendering React components.
+En JSX, las reglas son un poco diferentes. Cualquier elemento JSX se puede escribir con una etiqueta de auto-cierre, y cada elemento debe ser cerrado. La etiqueta de salto de línea, por ejemplo, siempre debe escribirse como `<br />` para ser un JSX válido que puede ser transpilado. Por otra parte, un `<div>` puede escribirse como `<div />` o `<div></div>`. La diferencia es que en la primera versión de sintaxis no hay forma de incluir nada en la `<div />`. Verás en desafíos posteriores que esta sintaxis es útil al renderizar componentes de React.
 
 # --instructions--
 
-Fix the errors in the code editor so that it is valid JSX and successfully transpiles. Make sure you don't change any of the content - you only need to close tags where they are needed.
+Corrige los errores en el editor de código para que sea JSX válido y se transpile exitosamente. Asegúrate de no cambiar nada del contenido: sólo tienes que cerrar las etiquetas donde se necesite.
 
 # --hints--
 
-The constant `JSX` should return a `div` element.
+La constante `JSX` debe devolver un elemento `div`.
 
 ```js
 assert.strictEqual(JSX.type, 'div');
 ```
 
-The `div` should contain a `br` tag.
+El `div` debe contener una etiqueta `br`.
 
 ```js
 assert(Enzyme.shallow(JSX).find('br').length === 1);
 ```
 
-The `div` should contain an `hr` tag.
+El `div` debe contener una etiqueta `hr`.
 
 ```js
 assert(Enzyme.shallow(JSX).find('hr').length === 1);

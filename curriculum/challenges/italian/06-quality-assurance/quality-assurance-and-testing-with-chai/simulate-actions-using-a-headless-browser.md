@@ -1,45 +1,45 @@
 ---
 id: 587d824f367417b2b2512c5c
-title: Simulate Actions Using a Headless Browser
+title: Simulare azioni usando un headless browser
 challengeType: 2
 dashedName: simulate-actions-using-a-headless-browser
 ---
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-In the next challenges we are going to simulate the human interaction with a page using a device called 'Headless Browser'.
+Nelle prossime sfide simuleremo l'interazione umana con una pagina utilizzando un dispositivo chiamato 'Headless Browser' (browser senza testa).
 
-A headless browser is a web browser without a graphical user interface. This kind of tool is particularly useful for testing web pages, as it is able to render and understand HTML, CSS, and JavaScript the same way a browser would.
+Un headless browser è un browser web senza interfaccia utente grafica. Questo tipo di strumento è particolarmente utile per testare le pagine web, poiché è in grado di renderizzare e capire HTML, CSS, e JavaScript proprio come farebbe un browser.
 
-For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Replit. There are many other (more powerful) options.
+Per queste sfide stiamo usando Zombie.JS. È un browser leggero che è totalmente basato su JS, che non richiede binari aggiuntivi da installare. Questa funzione lo rende utilizzabile in un ambiente come Replit. Ci sono molte altre opzioni (più potenti).
 
-Mocha allows you to prepare the ground running some code before the actual tests. This can be useful for example to create items in the database, which will be used in the successive tests.
+Mocha ti consente di preparare il terreno eseguendo del codice prima dei test effettivi. Questo può essere utile, ad esempio, per creare elementi nel database, che saranno utilizzati nei test successivi.
 
-With a headless browser, before the actual testing, we need to **visit** the page we are going to inspect. The `suiteSetup` 'hook' is executed only once at the suite startup. Other different hook types can be executed before each test, after each test, or at the end of a suite. See the Mocha docs for more information.
+Con un headless browser, prima del test effettivo, abbiamo bisogno di **visitare** la pagina che stiamo per controllare. L'hook' `suiteSetup` viene eseguito solo una volta all'avvio della suite. Altri tipi di hook possono essere esuiti prima di ogni test, dopo ogni test, o alla fine della suite. Vedi la documentazione di Mocha per maggiori informazioni.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, immediately after the `Browser` declaration, add your project URL to the `site` property of the variable:
+All'interno di `tests/2_functional-tests.js`, immediatamente dopo la dichiarazione `Browser`, aggiungi l'URL del tuo progetto alla proprietà `site` della variabile:
 
 ```js
 Browser.site = 'https://sincere-cone.gomix.me'; // Your URL here
 ```
 
-If you are testing on a local environment replace the line above with
+Se stai testando su un ambiente locale, sostituisci la riga precedente con
 
 ```js
 Browser.localhost('example.com', process.env.PORT || 3000);
 ```
 
-Within `tests/2_functional-tests.js`, at the root level of the `'Functional Tests with Zombie.js'` suite, instantiate a new instance of the `Browser` object with the following code:
+All'interno di `tests/2_functional-tests.js`, al livello root della suite `'Functional Tests with Zombie.js'`, crea una nuova istanza dell'oggetto `Browser` con il seguente codice:
 
 ```js
 const browser = new Browser();
 ```
 
-Then, use the `suiteSetup` hook to direct the `browser` to the `/` route with the following code:
+Quindi, utilizza l'hook `suiteSetup` per indirizzare il `browser` al percorso `/` con il seguente codice:
 
 ```js
 suiteSetup(function(done) {
@@ -49,7 +49,7 @@ suiteSetup(function(done) {
 
 # --hints--
 
-All tests should pass.
+Tutti i test dovrebbero essere superati.
 
 ```js
 (getUserInput) =>

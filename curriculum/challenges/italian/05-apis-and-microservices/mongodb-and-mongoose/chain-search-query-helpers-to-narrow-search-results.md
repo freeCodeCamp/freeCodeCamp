@@ -1,6 +1,6 @@
 ---
 id: 587d7fb9367417b2b2512c12
-title: Chain Search Query Helpers to Narrow Search Results
+title: Concatenare gli helper delle query per restringere i risultati di ricerca
 challengeType: 2
 forumTopicId: 301533
 dashedName: chain-search-query-helpers-to-narrow-search-results
@@ -8,15 +8,15 @@ dashedName: chain-search-query-helpers-to-narrow-search-results
 
 # --description--
 
-If you don’t pass the callback as the last argument to `Model.find()` (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method `.exec()`. You always need to pass your callback to this last method. There are many query helpers, here we'll use the most commonly used.
+Se non si passa la callback come ultimo argomento a `Model.find()` (o agli altri metodi di ricerca), la query non viene eseguita. È possibile memorizzare la query in una variabile per un uso successivo. Questo tipo di oggetto ti permette di costruire una query usando la sintassi di concatenazione. L'effettiva ricerca nel database viene eseguita quando alla fine concateni il metodo `.exec()`. Hai sempre bisogno di passare la tua callback a questo ultimo metodo. Ci sono molti helper di query: qui useremo i più comuni.
 
 # --instructions--
 
-Modify the `queryChain` function to find people who like the food specified by the variable named `foodToSearch`. Sort them by `name`, limit the results to two documents, and hide their age. Chain `.find()`, `.sort()`, `.limit()`, `.select()`, and then `.exec()`. Pass the `done(err, data)` callback to `exec()`.
+Modifica la funzione `queryChain` per trovare persone a cui piace il cibo specificato dalla variabile denominata `foodToSearch`. Ordina per `name`, limita i risultati a due documenti e nascondi la loro età. Concatena `.find()`, `.sort()`, `.limit()`, `.select()`, e quindi `.exec()`. Passa la callback `done(err, data)` a `exec()`.
 
 # --hints--
 
-Chaining query helpers should succeed
+La concatenazione degli helper delle query dovrebbe avere successo
 
 ```js
 (getUserInput) =>

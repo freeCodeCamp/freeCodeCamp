@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da0
-title: 'Natural Language Processing With RNNs: Create a Play Generator'
+title: 'Processamento de linguagem natural com RNNs: Crie um gerador de reprodução'
 challengeType: 11
 videoId: j5xsxjq_Xk8
 dashedName: natural-language-processing-with-rnns-create-a-play-generator
@@ -10,7 +10,7 @@ dashedName: natural-language-processing-with-rnns-create-a-play-generator
 
 ## --text--
 
-Fill in the blanks below to create the training examples for the RNN:
+Preencha as lacunas abaixo para criar os exemplos de treinamento para a RNN:
 
 ```py
 char_dataset = tf.data.__A__.__B__(text_as_int)

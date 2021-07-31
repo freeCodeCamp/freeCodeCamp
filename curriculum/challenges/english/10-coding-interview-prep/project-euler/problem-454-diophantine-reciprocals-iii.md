@@ -8,20 +8,22 @@ dashedName: problem-454-diophantine-reciprocals-iii
 
 # --description--
 
-In the following equation x, y, and n are positive integers. 1/x + 1/y= 1/n
+In the following equation $x$, $y$, and $n$ are positive integers.
 
-<!-- TODO Use MathJax -->
+$$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
-For a limit L we define F(L) as the number of solutions which satisfy x &lt; y ≤ L.
+For a limit $L$ we define $F(L)$ as the number of solutions which satisfy $x &lt; y ≤ L$.
 
-We can verify that F(15) = 4 and F(1000) = 1069. Find F(1012).
+We can verify that $F(15) = 4$ and $F(1000) = 1069$.
+
+Find $F({10}^{12})$.
 
 # --hints--
 
-`euler454()` should return 5435004633092.
+`diophantineReciprocalsThree()` should return `5435004633092`.
 
 ```js
-assert.strictEqual(euler454(), 5435004633092);
+assert.strictEqual(diophantineReciprocalsThree(), 5435004633092);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler454(), 5435004633092);
 ## --seed-contents--
 
 ```js
-function euler454() {
+function diophantineReciprocalsThree() {
 
   return true;
 }
 
-euler454();
+diophantineReciprocalsThree();
 ```
 
 # --solutions--

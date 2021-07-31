@@ -25,7 +25,7 @@ console.log(greeting());
 
 # --instructions--
 
-給函數 `increment` 加上默認參數，使得在 `value` 沒有被賦值的時候，默認給 `number` 加上 1。
+給函數 `increment` 傳入默認參數，使得在 `value` 沒有被賦值的時候，默認給 `number` 加上 1。
 
 # --hints--
 

@@ -3,6 +3,7 @@
   - [Domande frequenti](FAQ.md)
 - **Contribuire al codice**
   - [Imposta freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
+  - [Buone pratiche per il codebase](codebase-best-practices.md)
   - [Aprire una pull request](how-to-open-a-pull-request.md)
   - [Lavorare sulle sfide di programmazione](how-to-work-on-coding-challenges.md)
   - [Lavorare sulle sfide video](how-to-help-with-video-challenges.md)
@@ -18,6 +19,7 @@
   - [Lavorare sulla app web in locale](how-to-work-on-localized-client-webapp.md)
   - [Intercettare email in uscita localmente](how-to-catch-outgoing-emails-locally.md)
   - [Testare traduzioni in locale](how-to-test-translations-locally.md)
+  - [Understand the curriculum file structure](curriculum-file-structure.md)
 
 ---
 

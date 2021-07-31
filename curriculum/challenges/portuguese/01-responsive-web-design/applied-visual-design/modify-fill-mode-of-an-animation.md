@@ -1,6 +1,6 @@
 ---
 id: 58a7a6ebf9a6318348e2d5aa
-title: Modify Fill Mode of an Animation
+title: Modificar o modo de preenchimento de uma animação
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJDmcE'
 forumTopicId: 301064
@@ -9,9 +9,9 @@ dashedName: modify-fill-mode-of-an-animation
 
 # --description--
 
-That's great, but it doesn't work right yet. Notice how the animation resets after `500ms` has passed, causing the button to revert back to the original color. You want the button to stay highlighted.
+Está legal, mas ainda podemos melhorar. Observe como a animação é reiniciada após `500ms`, fazendo com que o botão volte à cor original. Nós queremos que o botão permaneça destacado.
 
-This can be done by setting the `animation-fill-mode` property to `forwards`. The `animation-fill-mode` specifies the style applied to an element when the animation has finished. You can set it like so:
+Isso pode ser feito definindo a propriedade `animation-fill-mode` com o valor `forwards`. O `animation-fill-mode` especifica o estilo que será aplicado a um elemento quando a animação terminar. Você pode configurá-la assim:
 
 ```css
 animation-fill-mode: forwards;
@@ -19,11 +19,11 @@ animation-fill-mode: forwards;
 
 # --instructions--
 
-Set the `animation-fill-mode` property of `button:hover` to `forwards` so the button stays highlighted when a user hovers over it.
+Defina a propriedade `animation-fill-mode` do seletor `button:hover` com o valor `forwards` para que o botão permaneça destacado quando o usuário tirar o mouse.
 
 # --hints--
 
-`button:hover` should have a `animation-fill-mode` property with a value of `forwards`.
+O seletor `button:hover` deve ter a propriedade `animation-fill-mode` com o valor `forwards`.
 
 ```js
 assert(

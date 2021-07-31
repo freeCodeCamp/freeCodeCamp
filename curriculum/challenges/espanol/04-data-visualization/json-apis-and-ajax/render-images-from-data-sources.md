@@ -14,7 +14,9 @@ When you're looping through these objects, you can use this `imageLink` property
 
 Here's the code that does this:
 
-`html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";`
+```js
+html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
+```
 
 # --instructions--
 
@@ -28,7 +30,7 @@ You should use the `imageLink` property to display the images.
 assert(code.match(/val\.imageLink/g));
 ```
 
-You should use the `altText` for the alt attribute values of the images.
+You should use the `altText` for the `alt` attribute values of the images.
 
 ```js
 assert(code.match(/val\.altText/g));

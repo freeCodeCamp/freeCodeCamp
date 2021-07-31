@@ -10,7 +10,7 @@ dashedName: use-the-conditional-ternary-operator
 
 條件運算符（ <dfn>conditional operator</dfn>,）（也稱爲三元運算符（ <dfn>ternary operator</dfn>））的就像寫成一行的 if-else 表達式
 
-語法是 `a ？ b: c`，其中 `a` 是條件，`b` 是條件返回 `true` 時要運行的代碼，`c` 是條件返回 `false` 時要運行的代碼。
+語法是：`a ? b : c`, where `a` 是條件，當條件返回 `true` 的時候運行代碼 `b`，當條件返回 `false` 的時候運行代碼 `c`。
 
 以下函數使用 `if/else` 語句來檢查條件：
 

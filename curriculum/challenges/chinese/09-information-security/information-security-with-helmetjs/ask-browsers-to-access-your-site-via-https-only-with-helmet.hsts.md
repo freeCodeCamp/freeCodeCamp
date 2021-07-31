@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3c
-title: Ask Browsers to Access Your Site via HTTPS Only with helmet.hsts()
+title: 用 helmet.hsts() 使浏览器只能通过 HTTPS 访问你的网站。
 challengeType: 2
 forumTopicId: 301573
 dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
@@ -8,19 +8,19 @@ dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+请注意，本项目在[这个 Repl.it 项目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基础上进行开发。你也可以从 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
 
-HTTP Strict Transport Security (HSTS) is a web security policy which helps to protect websites against protocol downgrade attacks and cookie hijacking. If your website can be accessed via HTTPS you can ask user’s browsers to avoid using insecure HTTP. By setting the header Strict-Transport-Security, you tell the browsers to use HTTPS for the future requests in a specified amount of time. This will work for the requests coming after the initial request.
+HTTP 严格传输安全（HSTS）是一种网络安全策略，有助于保护网站免受协议降级攻击和 cookie 劫持。 如果你的网站可以通过 HTTPS 访问，你可以要求用户的浏览器避免使用不安全的 HTTP。 通过设置标头 Strict-Transport-Security，你告诉浏览器在指定时间内对未来的请求使用 HTTPS。 这将对初始请求之后的请求起作用。
 
 # --instructions--
 
-Configure `helmet.hsts()` to use HTTPS for the next 90 days. Pass the config object `{maxAge: timeInSeconds, force: true}`. You can create a variable `ninetyDaysInSeconds = 90*24*60*60;` to use for the `timeInSeconds`. Repl.it already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Repl.it header, after inspecting it for testing.
+配置 `helmet.hsts()` 以在未来 90 天内使用 HTTPS。 传递配置对象 `{maxAge: timeInSeconds, force: true}`。 你可以创建一个变量 `ninetyDaysInSeconds = 90*24*60*60;` 来用于 `timeInSeconds`。 Replit 已经启用了 hsts。 要覆盖它的设置，你需要在配置对象中把 “force” 字段设置为 true。 我们将拦截并在对其进行检查测试后恢复 Replit 请求头。
 
-Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and a SSL/TLS Certificate.
+注意：在自定义网站上配置 HTTPS 需要获得一个域名，以及一个 SSL/TLS 证书。
 
 # --hints--
 
-helmet.hsts() middleware should be mounted correctly
+helmet.hsts() 中间件应该被正确安装。
 
 ```js
 (getUserInput) =>
@@ -35,7 +35,7 @@ helmet.hsts() middleware should be mounted correctly
   );
 ```
 
-maxAge should be equal to 7776000 s (90 days)
+maxAge 应该等于 7776000 秒（90 天）。
 
 ```js
 (getUserInput) =>

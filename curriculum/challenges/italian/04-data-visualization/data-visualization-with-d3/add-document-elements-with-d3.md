@@ -1,6 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bc2
-title: Add Document Elements with D3
+title: Aggiungere elementi a un documento con D3
 challengeType: 6
 forumTopicId: 301474
 dashedName: add-document-elements-with-d3
@@ -8,23 +8,23 @@ dashedName: add-document-elements-with-d3
 
 # --description--
 
-D3 has several methods that let you add and change elements in your document.
+D3 ha diversi metodi che consentono di aggiungere e modificare elementi nel documento.
 
-The `select()` method selects one element from the document. It takes an argument for the name of the element you want and returns an HTML node for the first element in the document that matches the name. Here's an example:
+Il metodo `select()` seleziona un elemento del documento. Esso richiede un argomento per il nome dell'elemento che si desidera e restituisce un nodo HTML per il primo elemento del documento che corrisponde a quel nome. Ecco un esempio:
 
 ```js
 const anchor = d3.select("a");
 ```
 
-The above example finds the first anchor tag on the page and saves an HTML node for it in the variable `anchor`. You can use the selection with other methods. The `d3` part of the example is a reference to the D3 object, which is how you access D3 methods.
+L'esempio precedente trova il primo tag di ancoraggio sulla pagina e salva un nodo HTML nella variabile `anchor`. È possibile utilizzare la selezione con altri metodi. La parte `d3` dell'esempio è un riferimento all'oggetto D3, che è il modo usato per accedere ai metodi D3.
 
-Two other useful methods are `append()` and `text()`.
+Altri due metodi utili sono `append()` e `text()`.
 
-The `append()` method takes an argument for the element you want to add to the document. It appends an HTML node to a selected item, and returns a handle to that node.
+Il metodo `append()` richiede un argomento per l'elemento che si desidera aggiungere al documento. Esso aggiunge un nodo HTML a un elemento selezionato e restituisce un handle (un appiglio) a quel nodo.
 
-The `text()` method either sets the text of the selected node, or gets the current text. To set the value, you pass a string as an argument inside the parentheses of the method.
+Il metodo `text()` imposta il testo del nodo selezionato, o ottiene il testo corrente. Per impostare il valore, si passa una stringa come argomento all'interno delle parentesi del metodo.
 
-Here's an example that selects an unordered list, appends a list item, and adds text:
+Ecco un esempio che seleziona una lista non ordinata, aggiunge un elemento alla lista e aggiunge del testo:
 
 ```js
 d3.select("ul")
@@ -32,45 +32,45 @@ d3.select("ul")
   .text("Very important item");
 ```
 
-D3 allows you to chain several methods together with periods to perform a number of actions in a row.
+D3 consente di concatenare diversi metodi tra loro con dei punti per eseguire un certo numero di azioni in una stessa riga.
 
 # --instructions--
 
-Use the `select` method to select the `body` tag in the document. Then `append` an `h1` tag to it, and add the text `Learning D3` into the `h1` element.
+Usa il metodo `select` per selezionare il tag `body` nel documento. Quindi aggiungi ad esso (`append`) un tag `h1` e aggiungi il testo `Learning D3` nell'elemento `h1`.
 
 # --hints--
 
-The `body` should have one `h1` element.
+Il `body` dovrebbe avere un elemento `h1`.
 
 ```js
 assert($('body').children('h1').length == 1);
 ```
 
-The `h1` element should have the text `Learning D3` in it.
+L'elemento `h1` dovrebbe contenere il testo `Learning D3`.
 
 ```js
 assert($('h1').text() == 'Learning D3');
 ```
 
-Your code should access the `d3` object.
+Il tuo codice dovrebbe accedere all'oggetto `d3`.
 
 ```js
 assert(code.match(/d3/g));
 ```
 
-Your code should use the `select` method.
+Il tuo codice dovrebbe utilizzare il metodo `select`.
 
 ```js
 assert(code.match(/\.select/g));
 ```
 
-Your code should use the `append` method.
+Il tuo codice dovrebbe utilizzare il metodo `append`.
 
 ```js
 assert(code.match(/\.append/g));
 ```
 
-Your code should use the `text` method.
+Il tuo codice dovrebbe usare il metodo `text`.
 
 ```js
 assert(code.match(/\.text/g));

@@ -1,6 +1,6 @@
 ---
 id: bd7188d8c242eddfaeb5bd13
-title: Visualize Data with a Heat Map
+title: Visualizzare i dati con una mappa di calore
 challengeType: 3
 forumTopicId: 301466
 dashedName: visualize-data-with-a-heat-map
@@ -8,51 +8,51 @@ dashedName: visualize-data-with-a-heat-map
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/JEXgeY>.
+**Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: <https://codepen.io/freeCodeCamp/full/JEXgeY>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
+Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story) e fai in modo che tutti i test siano superati. Dalle il tuo stile personale.
 
-You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
+Puoi usare HTML, JavaScript, CSS e la libreria di visualizzazione basata su svg D3. Gli elementi del DOM (non-virtuale) richiesti sono selezionati al momento di ogni test. Se usi un framework frontend (come Vue per esempio) i risultati dei test potrebbero essere inaccurati per il contenuto dinamico. Speriamo di supportarli prima o poi, ma questi framework non sono supportati al momento per i progetti D3.
 
-**User Story #1:** My heat map should have a title with a corresponding `id="title"`.
+**User Story #1:** La mia mappa di calore dovrebbe avere un titolo con corrispondente `id="title"`.
 
-**User Story #2:** My heat map should have a description with a corresponding `id="description"`.
+**User Story #2:** La mia mappa di calore dovrebbe avere una descrizione con corrispondente `id="description"`.
 
-**User Story #3:** My heat map should have an x-axis with a corresponding `id="x-axis"`.
+**User Story #3:** La mia mappa di calore dovrebbe avere un asse x con un corrispondente `id="x-axis"`.
 
-**User Story #4:** My heat map should have a y-axis with a corresponding `id="y-axis"`.
+**User Story #4:** La mia mappa di calore dovrebbe avere un asse y con un corrispondente `id="y-axis"`.
 
-**User Story #5:** My heat map should have `rect` elements with a `class="cell"` that represent the data.
+**User Story #5:** La mia mappa di calore dovrebbe avere elementi `rect` con una `class="cell"` che rappresenta i dati.
 
-**User Story #6:** There should be at least 4 different fill colors used for the cells.
+**User Story #6:** Dovrebbero essere usati almeno 4 colori di riempimento diversi per le celle.
 
-**User Story #7:** Each cell will have the properties `data-month`, `data-year`, `data-temp` containing their corresponding `month`, `year`, and `temperature` values.
+**User Story #7:** Ogni cella avrà le proprietà `data-month`, `data-year`, `data-temp` contenenti i corrispondenti valori di `month`, `year` e `temperature`.
 
-**User Story #8:** The `data-month`, `data-year` of each cell should be within the range of the data.
+**User Story #8:** I `data-month` e `data-year` di ogni cella dovrebbero essere all'interno dell'intervallo di dati.
 
-**User Story #9:** My heat map should have cells that align with the corresponding month on the y-axis.
+**User Story #9:** La mia mappa di calore dovrebbe avere celle che si allineano con il mese corrispondente sull'asse y.
 
-**User Story #10:** My heat map should have cells that align with the corresponding year on the x-axis.
+**User Story #10:** La mia mappa di calore dovrebbe avere celle che si allineano con l'anno corrispondente sull'asse x.
 
-**User Story #11:** My heat map should have multiple tick labels on the y-axis with the full month name.
+**User Story #11:** La mia mappa del calore dovrebbe avere più tacche sull'asse y etichettate con il nome del mese completo.
 
-**User Story #12:** My heat map should have multiple tick labels on the x-axis with the years between 1754 and 2015.
+**User Story #12:** La mia mappa di calore dovrebbe avere più tacche x etichettate con gli anni tra il 1754 e il 2015.
 
-**User Story #13:** My heat map should have a legend with a corresponding `id="legend"`.
+**User Story #13:** La mia mappa di calore dovrebbe avere una legenda con una corrispondente `id="legend"`.
 
-**User Story #14:** My legend should contain `rect` elements.
+**User Story #14:** La mia legenda dovrebbe contenere elementi `rect`.
 
-**User Story #15:** The `rect` elements in the legend should use at least 4 different fill colors.
+**User Story #15:** Gli elementi `rect` nella legenda dovrebbero usare almeno 4 colori di riempimento diversi.
 
-**User Story #16:** I can mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
+**User Story #16:** Posso passare con il mouse su un'area e vedere un suggerimento con un corrispondente `id="tooltip"` che mostra maggiori informazioni sull'area.
 
-**User Story #17:** My tooltip should have a `data-year` property that corresponds to the `data-year` of the active area.
+**User Story #17:** Il mio tooltip dovrebbe avere una proprietà `data-year` che corrisponde al `data-year` dell'area attiva.
 
-Here is the dataset you will need to complete this project: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json`
+Ecco il set di dati necessario per completare questo progetto: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json`
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Puoi costruire il tuo progetto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando questo modello CodePen</a> e facendo click su `Save` per creare il tuo pen. Oppure puoi usare questo link CDN per eseguire i test in qualsiasi ambiente tu voglia: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+Una volta fatto, invia l'URL del tuo progetto di lavoro con tutti i suoi test superati.
 
 # --solutions--
 

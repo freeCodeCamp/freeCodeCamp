@@ -20,7 +20,7 @@ var ourStr = "I come first. ";
 ourStr += "I come second.";
 ```
 
-`ourStr` 现在内容为字符串 `I come first. I come second.`
+`ourStr` 的值为字符串 `I come first. I come second.`
 
 # --instructions--
 
@@ -28,7 +28,7 @@ ourStr += "I come second.";
 
 # --hints--
 
-`myStr` 的值应该是 `This is the first sentence. This is the second sentence.`
+`myStr` 的值应该是字符串 `This is the first sentence. This is the second sentence.`
 
 ```js
 assert(myStr === 'This is the first sentence. This is the second sentence.');

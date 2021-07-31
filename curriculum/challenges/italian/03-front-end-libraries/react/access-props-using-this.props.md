@@ -10,11 +10,11 @@ dashedName: access-props-using-this-props
 
 Le ultime sfide hanno mostrato i modi fondamentali per passare le proprietà ai componenti figli. Ma cosa succede se il componente figlio a cui stai passando una prop è un componente di classe ES6, piuttosto che un componente funzionale senza stato? Il componente di classe ES6 utilizza una convenzione leggermente diversa per accedere alle proprietà.
 
-Ogni volta che fai riferimento a un componente di classe all'interno di sé stesso, usi la parola chiave `this`. Per accedere alle proprietà all'interno di un componente di classe, premetti `this` al codice che usi per accedervi. Ad esempio, se un componente di classe ES6 ha una prop chiamata `data`, scriverai `{this.props.data}` in JSX.
+Ogni volta che fai riferimento a un componente di classe all'interno di sé stesso, usa la parola chiave `this`. Per accedere alle proprietà all'interno di un componente di classe, premetti `this` al codice che usi per accedervi. Ad esempio, se un componente di classe ES6 ha una prop chiamata `data`, scriverai `{this.props.data}` in JSX.
 
 # --instructions--
 
-Mostra un'istanza del componente `ReturnTempPassword` nel componente padre `ResetPassword`. Qui, dai a `ReturnTempPassword` una prop di `tempPassword` e assegnale un valore stringa di almeno 8 caratteri. All'interno del figlio, `ReturnTempPassword`, accedi alla prop `tempPassword` all'interno dei tag `strong` per assicurarti che l'utente veda la password temporanea.
+Mostra un'istanza del componente `ReturnTempPassword` nel componente genitore `ResetPassword`. Qui, dai a `ReturnTempPassword` una prop di `tempPassword` e assegnale un valore stringa di almeno 8 caratteri. All'interno del figlio, `ReturnTempPassword`, accedi alla prop `tempPassword` all'interno dei tag `strong` per assicurarti che l'utente veda la password temporanea.
 
 # --hints--
 

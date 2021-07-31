@@ -5,7 +5,7 @@ import { updateMyEmailComplete, updateMyEmailError } from './';
 import { createFlashMessage } from '../../components/Flash/redux';
 
 import { putUserUpdateEmail } from '../../utils/ajax';
-import reallyWeirdErrorMessage from '../../utils/reallyWeirdErrorMessage';
+import reallyWeirdErrorMessage from '../../utils/really-weird-error-message';
 
 function* updateMyEmailSaga({ payload: email = '' }) {
   if (!email || !isEmail(email)) {

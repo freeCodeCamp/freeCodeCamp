@@ -1,6 +1,6 @@
 ---
 id: 587d781c367417b2b2512abf
-title: Decrease the Opacity of an Element
+title: Diminuir a opacidade de um elemento
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7aKqu4'
 forumTopicId: 301055
@@ -9,19 +9,19 @@ dashedName: decrease-the-opacity-of-an-element
 
 # --description--
 
-The `opacity` property in CSS is used to adjust the opacity, or conversely, the transparency for an item.
+A propriedade `opacity` do CSS é usada para ajustar a opacidade ou, inversamente, a transparência de um item.
 
-<blockquote>A value of 1 is opaque, which isn't transparent at all.<br>A value of 0.5 is half see-through.<br>A value of 0 is completely transparent.</blockquote>
+<blockquote>O valor 1 é opaco, o que não é transparente. <br> O valor 0.5 é meio transparente. <br> O valor 0 é totalmente transparente.</blockquote>
 
-The value given will apply to the entire element, whether that's an image with some transparency, or the foreground and background colors for a block of text.
+O valor fornecido se aplicará a todo o elemento, seja uma imagem com alguma transparência ou as cores do primeiro plano e do plano de fundo em um bloco de texto.
 
 # --instructions--
 
-Set the `opacity` of the anchor tags to 0.7 using `links` class to select them.
+Usando a classe `links`, defina a propriedade `opacity` com o valor de 0.7.
 
 # --hints--
 
-Your code should set the `opacity` property to 0.7 on the anchor tags by selecting the class of `links`.
+A propriedade `opacity` deve ter o valor de 0.7 na classe `links`.
 
 ```js
 assert(

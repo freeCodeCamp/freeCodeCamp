@@ -1,6 +1,6 @@
 ---
 id: 5e6a54a558d3af90110a60a0
-title: 'Introduction: Why Program?'
+title: 'Introduzione: perché programmare?'
 challengeType: 11
 videoId: 3muQV-Im3Z0
 dashedName: introduction-why-program
@@ -8,29 +8,29 @@ dashedName: introduction-why-program
 
 # --description--
 
-More resources:
+Altre risorse:
 
-\- [Install Python on Windows](https://youtu.be/F7mtLrYzZP8)
+\- [Installare Python su Windows](https://youtu.be/F7mtLrYzZP8)
 
-\- [Install Python on MacOS](https://youtu.be/wfLnZP-4sZw)
+\- [Installare Python su MacOS](https://youtu.be/wfLnZP-4sZw)
 
 # --question--
 
 ## --text--
 
-Who should learn to program?
+Chi dovrebbe imparare a programmare?
 
 ## --answers--
 
-College students.
+Studenti universitari.
 
 ---
 
-People who want to become software developers.
+Persone che vogliono diventare sviluppatori di software.
 
 ---
 
-Everyone.
+Tutti.
 
 ## --video-solution--
 

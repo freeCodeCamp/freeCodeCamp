@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0a81099d9a697b550
+id: 5f3ef6e0b431cc215bb16f55
 title: Part 66
 challengeType: 0
 dashedName: part-66
@@ -7,14 +7,20 @@ dashedName: part-66
 
 # --description--
 
-Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
+Add a second `p` element below the one with the link and give it the text `123 Free Code Camp Drive`.
 
 # --hints--
 
-Test 1
+You should add a second `p` element to your `footer`.
 
 ```js
+assert($('footer').children('p').length === 2);
+```
 
+Your new `p` element should have the text `123 Free Code Camp Drive`. Make sure your new element comes after your existing element.
+
+```js
+assert($('footer').children('p').last().text().match(/123 Free Code Camp Drive/i));
 ```
 
 # --seed--
@@ -38,12 +44,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -71,10 +77,13 @@ Test 1
           </article>
         </section>
       </main>
---fcc-editable-region--
       <footer>
-      </footer>
 --fcc-editable-region--
+        <p>
+          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
+        </p>
+--fcc-editable-region--
+      </footer>
     </div>
   </body>
 <html>
@@ -82,7 +91,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
 

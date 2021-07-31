@@ -9,7 +9,14 @@
  * from the .env file aren't found in their respective arrays below
  */
 const availableLangs = {
-  client: ['english', 'espanol', 'chinese', 'chinese-traditional', 'italian'],
+  client: [
+    'english',
+    'espanol',
+    'chinese',
+    'chinese-traditional',
+    'italian',
+    'portuguese'
+  ],
   curriculum: [
     'english',
     'espanol',
@@ -39,7 +46,10 @@ const auditedCerts = {
     'front-end-libraries',
     'data-visualization',
     'apis-and-microservices',
-    'quality-assurance'
+    'quality-assurance',
+    'scientific-computing-with-python',
+    'data-analysis-with-python',
+    'information-security'
   ],
   'chinese-traditional': [
     'responsive-web-design',
@@ -47,14 +57,27 @@ const auditedCerts = {
     'front-end-libraries',
     'data-visualization',
     'apis-and-microservices',
-    'quality-assurance'
+    'quality-assurance',
+    'scientific-computing-with-python',
+    'data-analysis-with-python',
+    'information-security'
   ],
   italian: [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries'
+    'front-end-libraries',
+    'data-visualization',
+    'apis-and-microservices',
+    'quality-assurance',
+    'scientific-computing-with-python',
+    'data-analysis-with-python',
+    'information-security',
+    'machine-learning-with-python'
   ],
-  portuguese: ['responsive-web-design']
+  portuguese: [
+    'responsive-web-design',
+    'javascript-algorithms-and-data-structures'
+  ]
 };
 
 // ---------------------------------------------------------------------------

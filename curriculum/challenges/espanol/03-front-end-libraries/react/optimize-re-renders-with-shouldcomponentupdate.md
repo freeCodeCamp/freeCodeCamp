@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036180
-title: Optimize Re-Renders with shouldComponentUpdate
+title: Optimiza re-renderizadores con shouldComponentUpdate
 challengeType: 6
 forumTopicId: 301398
 dashedName: optimize-re-renders-with-shouldcomponentupdate
@@ -8,17 +8,17 @@ dashedName: optimize-re-renders-with-shouldcomponentupdate
 
 # --description--
 
-So far, if any component receives new `state` or new `props`, it re-renders itself and all its children. This is usually okay. But React provides a lifecycle method you can call when child components receive new `state` or `props`, and declare specifically if the components should update or not. The method is `shouldComponentUpdate()`, and it takes `nextProps` and `nextState` as parameters.
+Hasta ahora, si cualquier componente recibe un nuevo `state` o un nuevo `props`, se vuelve a renderizar a sí mismo y a todos sus hijos. Normalmente, esto está bien. Pero React proporciona un método de ciclo de vida al que puedes llamar cuando los componentes hijos reciben nuevos `state` o `props`, y declarar específicamente si los componentes deben actualizarse o no. El método es `shouldComponentUpdate()`y toma `nextProps` y `nextState` como parámetros.
 
-This method is a useful way to optimize performance. For example, the default behavior is that your component re-renders when it receives new `props`, even if the `props` haven't changed. You can use `shouldComponentUpdate()` to prevent this by comparing the `props`. The method must return a `boolean` value that tells React whether or not to update the component. You can compare the current props (`this.props`) to the next props (`nextProps`) to determine if you need to update or not, and return `true` or `false` accordingly.
+Este método es una forma útil de optimizar el rendimiento. Por ejemplo, el comportamiento predeterminado es que el componente re-renderiza cuando recibe nuevos `props`, incluso si los `props` no han cambiado. Puedes usar `shouldComponentUpdate()` para evitar esto comparando los `props`. El método debe devolver un valor `boolean` que le diga a React si actualizar o no el componente. Puedes comparar los "props" actuales (`this.props`) a los siguientes "props" (`nextProps`) para determinar si necesita actualizar o no, y devuelve `true` o `false` en consecuencia.
 
 # --instructions--
 
-The `shouldComponentUpdate()` method is added in a component called `OnlyEvens`. Currently, this method returns `true` so `OnlyEvens` re-renders every time it receives new `props`. Modify the method so `OnlyEvens` updates only if the `value` of its new props is even. Click the `Add` button and watch the order of events in your browser's console as the lifecycle hooks are triggered.
+El método `shouldComponentUpdate()` se añade en un componente llamado `OnlyEvens`. Actualmente, este método devuelve `true`, así que `OnlyEvens` re-renderizar cada vez que recibe nuevos `props`. Modifica el método para que `OnlyEvens` se actualice sólo si el `value` de sus nuevos accesorios es par. Haz clic en el botón `Add` y observa el orden de los eventos en la consola de tu navegador mientras se activan los "hooks" del ciclo de vida.
 
 # --hints--
 
-The `Controller` component should render the `OnlyEvens` component as a child.
+El componente `Controller` debe renderizar el componente `OnlyEvens` como un componente hijo.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-The `shouldComponentUpdate` method should be defined on the `OnlyEvens` component.
+El método `shouldComponentUpdate` debe definirse en el componente `OnlyEvens`.
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-The `OnlyEvens` component should return an `h1` tag which renders the value of `this.props.value`.
+El componente `OnlyEvens` debe devolver una etiqueta `h1` que renderiza el valor de `this.props.value`.
 
 ```js
 (() => {
@@ -64,7 +64,7 @@ The `OnlyEvens` component should return an `h1` tag which renders the value of `
 })();
 ```
 
-`OnlyEvens` should re-render only when `nextProps.value` is even.
+`OnlyEvens` debe re-renderizar sólo cuando `nextProps.value` sea par.
 
 ```js
 (() => {

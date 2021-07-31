@@ -30,13 +30,13 @@ json.forEach(function(val) {
 });
 ```
 
-**Note:** For this challenge, you need to add new HTML elements to the page, so you cannot rely on `textContent`. Instead, you need to use `innerHTML`, which can make a site vulnerable to Cross-site scripting attacks.
+**Note:** For this challenge, you need to add new HTML elements to the page, so you cannot rely on `textContent`. Instead, you need to use `innerHTML`, which can make a site vulnerable to cross-site scripting attacks.
 
 # --instructions--
 
 Add a `forEach` method to loop over the JSON data and create the HTML elements to display it.
 
-Here is some example JSON
+Here is some example JSON:
 
 ```json
 [
@@ -55,7 +55,7 @@ Here is some example JSON
 Your code should store the data in the `html` variable
 
 ```js
-assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g));
+assert(__helpers.removeWhiteSpace(code).match(/html(\+=|=html\+)/g))
 ```
 
 Your code should use a `forEach` method to loop over the JSON data from the API.

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f061
-title: Intermediate Strings
+title: Stringhe Intermedio
 challengeType: 11
 videoId: KgT_fYLXnyk
 dashedName: intermediate-strings
@@ -8,15 +8,15 @@ dashedName: intermediate-strings
 
 # --description--
 
-More resources:
+Altre risorse:
 
-\- [Exercise](https://www.youtube.com/watch?v=1bSqHot-KwE)
+\- [Esercizio](https://www.youtube.com/watch?v=1bSqHot-KwE)
 
 # --question--
 
 ## --text--
 
-What is the value of i in the following code?
+Qual è il valore di i nel seguente codice?
 
 ```python
 word = "bananana"

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
@@ -60,7 +60,7 @@ class MobileLayout extends Component {
     };
 
     return (
-      <Fragment>
+      <>
         <Tabs
           activeKey={currentTab}
           defaultActiveKey={1}
@@ -95,7 +95,7 @@ class MobileLayout extends Component {
           )}
         </Tabs>
         <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
-      </Fragment>
+      </>
     );
   }
 }

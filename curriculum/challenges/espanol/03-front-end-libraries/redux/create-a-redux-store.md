@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403614b
-title: Create a Redux Store
+title: Crea un almacén Redux
 challengeType: 6
 forumTopicId: 301439
 dashedName: create-a-redux-store
@@ -8,29 +8,29 @@ dashedName: create-a-redux-store
 
 # --description--
 
-Redux is a state management framework that can be used with a number of different web technologies, including React.
+Redux es un framework de gestión de estados que se puede utilizar con un número de diferentes tecnologías web, incluyendo React.
 
-In Redux, there is a single state object that's responsible for the entire state of your application. This means if you had a React app with ten components, and each component had its own local state, the entire state of your app would be defined by a single state object housed in the Redux `store`. This is the first important principle to understand when learning Redux: the Redux store is the single source of truth when it comes to application state.
+En Redux, hay un único objeto de estado que es responsable de todo el estado de tu aplicación. Esto significa que si tuvieras una aplicación React con diez componentes, y cada componente tuviera su propio estado local, todo el estado de tu aplicación estaría definido por un único objeto de estado alojado en el `store` (almacén) de Redux. Este es el primer principio importante a entender cuando se aprende Redux: el almacén Redux es la única fuente de verdad cuando se trata del estado de la aplicación.
 
-This also means that any time any piece of your app wants to update state, it **must** do so through the Redux store. The unidirectional data flow makes it easier to track state management in your app.
+Esto también significa que cada vez que cualquier pieza de tu aplicación quiera actualizar el estado, **debe** hacerlo a través del almacén Redux. El flujo de datos unidireccional facilita el seguimiento de la gestión de estados en tu aplicación.
 
 # --instructions--
 
-The Redux `store` is an object which holds and manages application `state`. There is a method called `createStore()` on the Redux object, which you use to create the Redux `store`. This method takes a `reducer` function as a required argument. The `reducer` function is covered in a later challenge, and is already defined for you in the code editor. It simply takes `state` as an argument and returns `state`.
+El `store` de Redux es un objeto que guarda y gestiona el `state` de la aplicación. Hay un método llamado `createStore()` en el objeto Redux, que se utiliza para crear el `store` Redux. Este método toma una función `reducer` como argumento obligatorio. La función `reducer` se trata en un desafío posterior, y ya está definida para ti en el editor de código. Simplemente toma `state` como argumento y devuelve `state`.
 
-Declare a `store` variable and assign it to the `createStore()` method, passing in the `reducer` as an argument.
+Declara una variable `store` y asígnala al método `createStore()`, pasando el `reducer` como argumento.
 
-**Note:** The code in the editor uses ES6 default argument syntax to initialize this state to hold a value of `5`. If you're not familiar with default arguments, you can refer to the [ES6 section in the Curriculum](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions) which covers this topic.
+**Nota:** El código del editor utiliza la sintaxis de los argumentos por defecto de ES6 para inicializar este estado y mantener un valor de `5`. Si no estás familiarizado con los argumentos por defecto, puedes consultar la sección [ES6 en el Plan de Estudios](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions) que cubre este tema.
 
 # --hints--
 
-The redux store should exist.
+El almacén Redux debe existir.
 
 ```js
 assert(typeof store.getState === 'function');
 ```
 
-The redux store should have a value of 5 for the state.
+El almacén Redux debe tener un valor de 5 para el estado.
 
 ```js
 assert(store.getState() === 5);

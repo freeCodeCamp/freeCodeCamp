@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c14c
-title: Introduction to Data Analysis
+title: Introduzir a análise de dados
 challengeType: 11
 videoId: VJrP2FUzKP0
 dashedName: introduction-to-data-analysis
@@ -8,7 +8,7 @@ dashedName: introduction-to-data-analysis
 
 # --description--
 
-More resources:
+Mais recursos:
 
 \- [Slides](https://docs.google.com/presentation/d/1cUIt8b2ySz-85_ykfeuuWsurccwTAuFPn782pZBzFsU/edit?usp=sharing)
 
@@ -16,23 +16,23 @@ More resources:
 
 ## --text--
 
-Which of the following is **not** part of Data Analysis?
+Qual das seguintes etapas **não** é parte da análise de dados?
 
 ## --answers--
 
-Building statistical models and data visualizations.
+Construir modelos estatísticos e visualizações de dados.
 
 ---
 
-Picking a desired conclusion for the analysis.
+Escolher uma conclusão desejada para a análise.
 
 ---
 
-Fixing incorrect values and removing invalid data.
+Corrigir valores incorretos e remover dados inválidos.
 
 ---
 
-Transforming data into an appropriate data structure.
+Transformar dados em uma estrutura de dados apropriada.
 
 ## --video-solution--
 

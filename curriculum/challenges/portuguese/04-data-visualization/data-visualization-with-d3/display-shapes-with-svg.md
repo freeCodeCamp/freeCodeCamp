@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bcc
-title: Display Shapes with SVG
+title: Exibir formas com o SVG
 challengeType: 6
 forumTopicId: 301485
 dashedName: display-shapes-with-svg
@@ -8,47 +8,47 @@ dashedName: display-shapes-with-svg
 
 # --description--
 
-The last challenge created an `svg` element with a given width and height, which was visible because it had a `background-color` applied to it in the `style` tag. The code made space for the given width and height.
+O último desafio criou um elemento `svg` com uma determinada largura e altura, que era visível porque tinha uma `background-color` aplicada a ele na tag `style`. O código criou espaço para a largura e altura fornecidas.
 
-The next step is to create a shape to put in the `svg` area. There are a number of supported shapes in SVG, such as rectangles and circles. They are used to display data. For example, a rectangle (`<rect>`) SVG shape could create a bar in a bar chart.
+O próximo passo é criar uma forma para colocar na área do `svg`. Há várias formas suportadas no SVG, como retângulos e círculos. Elas são usadas para exibir dados. Por exemplo, a forma do retângulo (`<rect>`) do SVG pode criar uma barra em um gráfico de barras.
 
-When you place a shape into the `svg` area, you can specify where it goes with `x` and `y` coordinates. The origin point of (0, 0) is in the upper-left corner. Positive values for `x` push the shape to the right, and positive values for `y` push the shape down from the origin point.
+Quando você coloca uma forma na área do `svg`, você pode especificar onde ela vai com as coordenadas `x` e `y`. O ponto de origem (0, 0) está no canto superior esquerdo. Valores positivos para `x` empurram a forma para a direita, enquanto valores positivos para `y` empurram a forma para baixo do ponto de origem.
 
-To place a shape in the middle of the 500 (width) x 100 (height) `svg` from last challenge, the `x` coordinate would be 250 and the `y` coordinate would be 50.
+Para colocar uma forma no meio do `svg` de 500 (largura) x 100 (altura) do último desafio, a coordenada `x` seria 250 e a coordenada `y` seria 50.
 
-An SVG `rect` has four attributes. There are the `x` and `y` coordinates for where it is placed in the `svg` area. It also has a `height` and `width` to specify the size.
+Uma forma `rect` do SVG tem quatro atributos. Existem as coordenadas `x` e `y`, para onde elas são colocadas na área do `svg`. Ela também tem `height` e `width` para especificar o tamanho.
 
 # --instructions--
 
-Add a `rect` shape to the `svg` using `append()`, and give it a `width` attribute of `25` and `height` attribute of `100`. Also, give the `rect` `x` and `y` attributes each set to `0`.
+Adicione uma forma `rect` ao `svg` usando `append()`. Dê a ele um atributo `width` de `25` e uma `height` de `100`. Além disso, dê aos atributos de `rect`, `x` e `y`, o valor de `0`.
 
 # --hints--
 
-Your document should have 1 `rect` element.
+O documento deve ter 1 elemento `rect`.
 
 ```js
 assert($('rect').length == 1);
 ```
 
-The `rect` element should have a `width` attribute set to `25`.
+O elemento `rect` deve ter um atributo `width` com o valor de `25`.
 
 ```js
 assert($('rect').attr('width') == '25');
 ```
 
-The `rect` element should have a `height` attribute set to `100`.
+O elemento `rect` deve ter um atributo `height` com o valor de `100`.
 
 ```js
 assert($('rect').attr('height') == '100');
 ```
 
-The `rect` element should have an `x` attribute set to `0`.
+O elemento `rect` deve ter um atributo `x` com o valor de `0`.
 
 ```js
 assert($('rect').attr('x') == '0');
 ```
 
-The `rect` element should have a `y` attribute set to `0`.
+O elemento `rect` deve ter um atributo `y` com o valor de `0`.
 
 ```js
 assert($('rect').attr('y') == '0');

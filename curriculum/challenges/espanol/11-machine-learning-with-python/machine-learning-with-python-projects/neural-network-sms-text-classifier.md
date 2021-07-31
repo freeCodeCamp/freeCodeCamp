@@ -2,6 +2,7 @@
 id: 5e46f8edac417301a38fb931
 title: Neural Network SMS Text Classifier
 challengeType: 10
+forumTopicId: 462380
 dashedName: neural-network-sms-text-classifier
 ---
 

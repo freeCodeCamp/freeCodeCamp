@@ -12,7 +12,9 @@ Let's practice removing items from an ES6 Set using the `delete` method.
 
 First, create an ES6 Set:
 
-`var set = new Set([1,2,3]);`
+```js
+var set = new Set([1,2,3]);
+```
 
 Now remove an item from your Set with the `delete` method.
 
@@ -46,8 +48,11 @@ assert(
 
 ```js
 function checkSet(){
-   var set = null;
-   return set;
+  // Only change code below this line
+  var set = null;
+
+  // Only change code above this line
+  return set;   
 }
 ```
 

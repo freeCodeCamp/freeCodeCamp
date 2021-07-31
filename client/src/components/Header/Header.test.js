@@ -1,13 +1,15 @@
 import React from 'react';
+import { create } from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import { UniversalNav } from './components/UniversalNav';
-import { NavLinks } from './components/NavLinks';
-import AuthOrProfile from './components/AuthOrProfile';
+import { UniversalNav } from './components/universal-nav';
+import { NavLinks } from './components/nav-links';
+import AuthOrProfile from './components/auth-or-profile';
 
 import envData from '../../../../config/env.json';
+import { useTranslation } from 'react-i18next';
 
-const { apiLocation, clientLocale } = envData;
+const { apiLocation } = envData;
 
 jest.mock('../../analytics');
 
@@ -25,8 +27,8 @@ describe('<UniversalNav />', () => {
   it('renders to the DOM', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<UniversalNav {...UniversalNavProps} />);
-    const result = shallow.getRenderOutput();
-    expect(result).toBeTruthy();
+    const view = shallow.getRenderOutput();
+    expect(view).toBeTruthy();
   });
 });
 
@@ -48,14 +50,15 @@ describe('<NavLinks />', () => {
     };
     const shallow = new ShallowRenderer();
     shallow.render(<NavLinks {...landingPageProps} />);
-    const result = shallow.getRenderOutput();
+    const view = shallow.getRenderOutput();
+
     expect(
-      hasDonateNavItem(result) &&
-        hasSignInNavItem(result) &&
-        hasCurriculumNavItem(result) &&
-        hasForumNavItem(result) &&
-        hasNewsNavItem(result) &&
-        hasRadioNavItem(result)
+      hasDonateNavItem(view) &&
+        hasSignInNavItem(view) &&
+        hasCurriculumNavItem(view) &&
+        hasForumNavItem(view) &&
+        hasNewsNavItem(view) &&
+        hasRadioNavItem(view)
     ).toBeTruthy();
   });
 
@@ -72,19 +75,20 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
+      t: useTranslation.t,
       toggleNightMode: theme => theme
     };
     const shallow = new ShallowRenderer();
     shallow.render(<NavLinks {...landingPageProps} />);
-    const result = shallow.getRenderOutput();
+    const view = shallow.getRenderOutput();
     expect(
-      hasDonateNavItem(result) &&
-        hasCurriculumNavItem(result) &&
-        hasProfileAndSettingsNavItems(result, landingPageProps.user.username) &&
-        hasForumNavItem(result) &&
-        hasNewsNavItem(result) &&
-        hasRadioNavItem(result) &&
-        hasSignOutNavItem(result)
+      hasDonateNavItem(view) &&
+        hasCurriculumNavItem(view) &&
+        hasProfileAndSettingsNavItems(view, landingPageProps.user.username) &&
+        hasForumNavItem(view) &&
+        hasNewsNavItem(view) &&
+        hasRadioNavItem(view) &&
+        hasSignOutNavItem(view)
     ).toBeTruthy();
   });
 
@@ -101,19 +105,20 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
+      t: useTranslation.t,
       toggleNightMode: theme => theme
     };
     const shallow = new ShallowRenderer();
     shallow.render(<NavLinks {...landingPageProps} />);
-    const result = shallow.getRenderOutput();
+    const view = shallow.getRenderOutput();
     expect(
-      hasThanksForDonating(result) &&
-        hasCurriculumNavItem(result) &&
-        hasProfileAndSettingsNavItems(result, landingPageProps.user.username) &&
-        hasForumNavItem(result) &&
-        hasNewsNavItem(result) &&
-        hasRadioNavItem(result) &&
-        hasSignOutNavItem(result)
+      hasThanksForDonating(view) &&
+        hasCurriculumNavItem(view) &&
+        hasProfileAndSettingsNavItems(view, landingPageProps.user.username) &&
+        hasForumNavItem(view) &&
+        hasNewsNavItem(view) &&
+        hasRadioNavItem(view) &&
+        hasSignOutNavItem(view)
     ).toBeTruthy();
   });
 });
@@ -129,9 +134,9 @@ describe('<AuthOrProfile />', () => {
       pathName: '/learn'
     };
 
-    const shallow = new ShallowRenderer();
-    shallow.render(<AuthOrProfile {...defaultUserProps} />);
-    const componentTree = shallow.getRenderOutput();
+    const componentTree = create(
+      <AuthOrProfile {...defaultUserProps} />
+    ).toJSON();
     expect(avatarHasClass(componentTree, 'default-border')).toBeTruthy();
   });
 
@@ -145,10 +150,10 @@ describe('<AuthOrProfile />', () => {
       pending: false,
       pathName: '/learn'
     };
-    const shallow = new ShallowRenderer();
-    shallow.render(<AuthOrProfile {...donatingUserProps} />);
-    const componentTree = shallow.getRenderOutput();
 
+    const componentTree = create(
+      <AuthOrProfile {...donatingUserProps} />
+    ).toJSON();
     expect(avatarHasClass(componentTree, 'gold-border')).toBeTruthy();
   });
 
@@ -163,12 +168,12 @@ describe('<AuthOrProfile />', () => {
       pathName: '/learn'
     };
 
-    const shallow = new ShallowRenderer();
-    shallow.render(<AuthOrProfile {...topContributorUserProps} />);
-    const componentTree = shallow.getRenderOutput();
-
+    const componentTree = create(
+      <AuthOrProfile {...topContributorUserProps} />
+    ).toJSON();
     expect(avatarHasClass(componentTree, 'blue-border')).toBeTruthy();
   });
+
   it('has avatar with purple border for donating top contributors', () => {
     const topDonatingContributorUserProps = {
       user: {
@@ -180,9 +185,10 @@ describe('<AuthOrProfile />', () => {
       pending: false,
       pathName: '/learn'
     };
-    const shallow = new ShallowRenderer();
-    shallow.render(<AuthOrProfile {...topDonatingContributorUserProps} />);
-    const componentTree = shallow.getRenderOutput();
+
+    const componentTree = create(
+      <AuthOrProfile {...topDonatingContributorUserProps} />
+    ).toJSON();
     expect(avatarHasClass(componentTree, 'purple-border')).toBeTruthy();
   });
 });
@@ -194,7 +200,7 @@ const navigationLinks = (component, key) => {
   return target.props;
 };
 
-const profileNavItem = component => component.props.children;
+const profileNavItem = component => component.children[0];
 
 const hasDonateNavItem = component => {
   const { children, to } = navigationLinks(component, 'donate');
@@ -232,27 +238,16 @@ const hasProfileAndSettingsNavItems = (component, username) => {
 
 const hasForumNavItem = component => {
   const { children, to } = navigationLinks(component, 'forum');
-  const localizedForums = {
-    chinese: 'https://chinese.freecodecamp.org/forum',
-    espanol: 'https://forum.freecodecamp.org/c/espanol/',
-    english: 'https://forum.freecodecamp.org/'
-  };
+  // TODO: test compiled TFunction value
   return (
-    children[0].props.children === 'buttons.forum' &&
-    to === localizedForums[clientLocale]
+    children[0].props.children === 'buttons.forum' && to === 'links:nav.forum'
   );
 };
 
 const hasNewsNavItem = component => {
   const { children, to } = navigationLinks(component, 'news');
-  const localizedNews = {
-    chinese: 'https://chinese.freecodecamp.org/news',
-    espanol: 'https://www.freecodecamp.org/espanol/news',
-    english: 'https://www.freecodecamp.org/news'
-  };
   return (
-    children[0].props.children === 'buttons.news' &&
-    to === localizedNews[clientLocale]
+    children[0].props.children === 'buttons.news' && to === 'links:nav.news'
   );
 };
 
@@ -278,9 +273,10 @@ const hasSignOutNavItem = component => {
 const hasSignInButton = component =>
   component.props.children[1].props.children === 'buttons.sign-in';
 */
+
 const avatarHasClass = (componentTree, classes) => {
   return (
     profileNavItem(componentTree).props.className ===
-    'avatar-nav-link ' + classes
+    'avatar-container ' + classes
   );
 };

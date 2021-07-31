@@ -8,7 +8,7 @@ dashedName: dot-product
 
 # --description--
 
-Create a function, to compute the **[dot product](<https://en.wikipedia.org/wiki/Dot product>)**, also known as the **scalar product** of two vectors.
+Create a function, to compute the **[dot product](https://en.wikipedia.org/wiki/Dot product)**, also known as the **scalar product** of two vectors.
 
 # --hints--
 

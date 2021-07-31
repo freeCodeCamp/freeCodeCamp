@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f080b6c005b0e76f064
-title: Python Lists
+title: Listas em Python
 challengeType: 11
 videoId: Y0cvfDpYC_c
 dashedName: python-lists
@@ -10,7 +10,7 @@ dashedName: python-lists
 
 ## --text--
 
-What is the value of x after running this code:
+Qual é o valor x após a execução deste código:
 
 ```python
 fruit = "banana"

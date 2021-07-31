@@ -85,7 +85,7 @@ part-6.md
 
 A un certo punto decidi che hai bisogno di eliminare  `part-2.md`, perché quel passo non è più necessario. Inoltre, decidi di dividere `part-4.md` in tre passi invece di uno.
 
-Per ottenere questa ristrutturazione, avresti bisogno di eliminare  `part-2.md` e poi aggiungere un `part-4a.md` e un `part-5b.md`. La nuova struttura della cartella assomiglierà alla seguente:
+To accomplish this restructure, you would need to delete `part-2.md` and then add a `part-4a.md` and a `part-4b.md`. La nuova struttura della cartella assomiglierà alla seguente:
 
 ```bash
 part-001.md

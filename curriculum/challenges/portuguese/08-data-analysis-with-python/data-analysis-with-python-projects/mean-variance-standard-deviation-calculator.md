@@ -1,6 +1,6 @@
 ---
 id: 5e46f7e5ac417301a38fb928
-title: Mean-Variance-Standard Deviation Calculator
+title: Calculadora de média, variância e desvio padrão
 challengeType: 10
 forumTopicId: 462366
 dashedName: mean-variance-standard-deviation-calculator
@@ -8,17 +8,17 @@ dashedName: mean-variance-standard-deviation-calculator
 
 # --description--
 
-Create a function that uses Numpy to output the mean, variance, and standard deviation of the rows, columns, and elements in a 3 x 3 matrix.
+Crie uma função que use o NumPy para retornar a média, variação e o desvio-padrão das linhas, colunas e elementos em uma matriz de 3 x 3.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator).
+Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com base nas instruções do 'README.md', envie o link do seu projeto abaixo.
 
-We are still developing the interactive instructional part of the data analysis with Python curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo de análise de dados com Python. Por enquanto, você terá que usar outros recursos para aprender a vencer este desafio.
 
 # --hints--
 
-It should pass all Python tests.
+Ele deve passar em todos os testes do Python.
 
 ```js
 

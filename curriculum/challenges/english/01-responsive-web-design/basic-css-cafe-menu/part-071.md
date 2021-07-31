@@ -1,5 +1,5 @@
 ---
-id: 5f459a7ceb8b5c446656d88b
+id: 5f459cf202c2a3472fae6a9f
 title: Part 71
 challengeType: 0
 dashedName: part-71
@@ -7,16 +7,24 @@ dashedName: part-71
 
 # --description--
 
-Notice the grey color along the edges of the line. Those edges are known as <dfn>borders</dfn>. Each side of an element can have a different color or they can all be the same.
+Notice how the thickness of the line looks bigger? The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
 
-Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
+Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
 
 # --hints--
 
-Test 1
+You should set the `height` property to `2px`.
 
 ```js
+const hasHeight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.height === '2px');
+assert(hasHeight);
+```
 
+Your `hr` element should have a `height` of `2px`.
+
+```js
+const hrHeight = new __helpers.CSSHelp(document).getStyle('hr')?.getPropertyValue('height');
+assert(hrHeight === '2px');
 ```
 
 # --seed--
@@ -41,12 +49,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -87,7 +95,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
 
@@ -120,6 +128,7 @@ h1, h2, p {
 hr {
   height: 3px;
   background-color: brown;
+  border-color: brown;
 }
 --fcc-editable-region--
 

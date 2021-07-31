@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c14e
-title: Data Analysis Example B
+title: 數據分析 案例 B
 challengeType: 11
 videoId: 0kJz0q0pvgQ
 dashedName: data-analysis-example-b
@@ -8,30 +8,30 @@ dashedName: data-analysis-example-b
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在視頻中我們使用的編輯器工具是在 notebook.ai 這個平臺，你也可以選擇用其他的平臺，比如說 Google Colab 也是一個不錯的選擇。*
 
-More resources:
+更多資源：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平臺的 Notebooks](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
+-   [如何使用 Google Colab 來打開 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What does the `loc` method allow you to do?
+`loc` 方法允許您做什麼？
 
 ## --answers--
 
-Retrieve a subset of rows and columns by supplying integer-location arguments.
+通過提供整數位置參數來獲取一個行和列的子集。
 
 ---
 
-Access a group of rows and columns by supplying label(s) arguments.
+通過提供標籤參數來訪問一組行和列。
 
 ---
 
-Returns the first `n` rows based on the integer argument supplied.
+根據提供的整數參數返回前 `n` 行。
 
 ## --video-solution--
 

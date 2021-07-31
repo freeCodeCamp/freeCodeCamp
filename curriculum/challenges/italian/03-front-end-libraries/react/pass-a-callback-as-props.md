@@ -12,7 +12,7 @@ Puoi passare lo `state` come proprietà ai componenti figli, ma non sei limitato
 
 # --instructions--
 
-Ci sono tre componenti delineati nell'editor di codice. Il componente `MyApp` è il genitore che presenterà i componenti figli `GetInput` e `RenderInput`. Aggiungi il componente `GetInput` al metodo render in `MyApp`, poi passagli una proprietà chiamata `input` assegnata a `inputValue` dallo `state` di `MyApp`. Crea anche una proprietà chiamata `handleChange` e passale il gestore di input `handleChange`.
+Ci sono tre componenti delineati nell'editor di codice. Il componente `MyApp` è il genitore che presenterà i componenti figli `GetInput` e `RenderInput`. Aggiungi il componente `GetInput` al metodo render in `MyApp`, poi passagli una proprietà chiamata `input` con valore di `inputValue` dallo `state` di `MyApp`. Crea anche una proprietà chiamata `handleChange` e passale il gestore di input `handleChange`.
 
 Successivamente, aggiungi `RenderInput` al metodo render in `MyApp`, quindi crea una proprietà chiamata `input` e passale l'`inputValue` dallo `state`. Una volta terminato, potrai digitare nel campo `input` nel componente `GetInput`, che poi chiamerà il metodo di gestione nel suo genitore tramite le props. Questo aggiorna l'input nello `state` del genitore, che viene passato come proprietà ad entrambi i figli. Osserva come i dati scorrono tra i componenti e come l'unica fonte di verità rimane lo `state` del componente genitore. Certamente questo esempio è un po' limitato, ma dovrebbe bastare a illustrare come i dati e le callback possono essere passati tra i componenti di React.
 

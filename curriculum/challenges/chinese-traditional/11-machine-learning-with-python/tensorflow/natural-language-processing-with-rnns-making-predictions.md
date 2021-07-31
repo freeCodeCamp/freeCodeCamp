@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9f
-title: 'Natural Language Processing With RNNs: Making Predictions'
+title: '使用 RNN 進行自然語言處理：進行預測'
 challengeType: 11
 videoId: WO1hINnBj20
 dashedName: natural-language-processing-with-rnns-making-predictions
@@ -10,19 +10,19 @@ dashedName: natural-language-processing-with-rnns-making-predictions
 
 ## --text--
 
-Before you make a prediction with your own review, you should...:
+在你通過自己的評論做出預測之前，你應該：
 
 ## --answers--
 
-decode the training dataset and compare the results to the test data.
+對訓練數據集進行解碼，並將結果與測試數據進行比較。
 
 ---
 
-use the encodings from the training dataset to encode your review.
+使用訓練數據集的編碼對你的評論進行編碼。
 
 ---
 
-assign random values between 0 and the maximum number of vocabulary in your dataset to each word in your review.
+將 0 和數據集中最大詞彙量之間的值，隨機分配給你的評論中的每個單詞。
 
 ## --video-solution--
 

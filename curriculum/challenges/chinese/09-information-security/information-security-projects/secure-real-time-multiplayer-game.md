@@ -1,23 +1,28 @@
 ---
 id: 5e601c775ac9d0ecd8b94aff
-title: Secure Real Time Multiplayer Game
+title: 安全的实时多人游戏
 challengeType: 4
+forumTopicId: 462375
 dashedName: secure-real-time-multiplayer-game
 ---
 
 # --description--
 
-Develop a 2D real time multiplayer game using the HTML Canvas API and [Socket.io](https://socket.io/) that is functionally similar to this: <https://secure-real-time-multiplayer-game.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+使用 HTML Canvas API 和 [Socket.io](https://socket.io/) 开发一个 2D 实时多人游戏，其功能与此类似：<https://secure-real-time-multiplayer-game.freecodecamp.rocks/>。 在这个项目中，你将使用以下方法之一编写你的代码：
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/) and complete your project locally.
--   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   克隆[这个 GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/)，并在本地完成你的项目。
+-   使用[我们的 Replit 初始项目](https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game)来完成你的项目。
+-   使用您选择的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 框中提交你的项目 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+
+# --instructions--
+
+**注意** ：`helmet@^3.21.3` 是用户故事所必需的。 这意味着你需要使用以前版本的 Helmet 的文档，了解如何实现用户故事的信息。
 
 # --hints--
 
-You can provide your own project, not the example URL.
+提交自己的项目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -29,112 +34,134 @@ You can provide your own project, not the example URL.
 };
 ```
 
-Multiple players can connect to a server and play.
+多个玩家可以连接到一台服务器游玩。
 
 ```js
 
 ```
 
-Each player has an avatar.
+每个玩家都有头像。
 
 ```js
 
 ```
 
-Each player is represented by an object created by the `Player` class in `Player.mjs`.
+每个玩家都由在 `Player.mjs` 中创建的 `Player` 类对象来代表。
 
 ```js
 
 ```
 
-At a minimum, each player object should contain a unique `id`, a `score`, and `x` and `y` coordinates representing the player's current position.
+至少，每个玩家对象应该包含一个唯一的 `id`、一个 `score`，以及代表玩家当前位置的 `x` 和 `y` 坐标。
 
 ```js
 
 ```
 
-The game has at least one type of collectible item. Complete the `Collectible` class in `Collectible.mjs` to implement this.
+游戏至少有一种类型的可收藏物品。 在 `Collectible.mjs` 中完成 `Collectible` 类来实现这一点。
 
 ```js
 
 ```
 
-At a minimum, each collectible item object created by the `Collectible` class should contain a unique `id`, a `value`, and `x` and `y` coordinates representing the item's current position.
+至少，每个由 `Collectible` 类创建的可收集物品对象应该包含一个唯一的 `id`、一个 `value`，以及代表该物品当前位置的 `x` 和 `y` 坐标。
 
 ```js
 
 ```
 
-Players can use the WASD and/or arrow keys to move their avatar. Complete the `movePlayer` method in `Player.mjs` to implement this.
+玩家可以使用 WASD 或方向键移动头像。 完成 `Player.mjs` 中的 `movePlayer` 方法来实现这一功能。
 
 ```js
 
 ```
 
-The `movePlayer` method should accept two arguments: a string of "up", "down", "left", or "right", and a number for the amount of pixels the player's position should change. `movePlayer` should adjust the `x` and `y` coordinates of the player object it's called from.
+`movePlayer` 方法应该接受两个参数：一个是 “up”、“down”、“left” 或 “right” 的字符串，另一个是玩家角色位置应该改变的像素数量。 `movePlayer` 应该调整它所调用的玩家对象的 `x` 和 `y` 坐标。
 
 ```js
 
 ```
 
-The player's score should be used to calculate their rank among the other players. Complete the `calculateRank` method in the `Player` class to implement this.
+用玩家的分数来计算他们相对其他玩家的名次。 在 `Player` 类中完成 `calculateRank` 方法来实现这个。
 
 ```js
 
 ```
 
-The `calculateRank` method should accept an array of objects representing all connected players and return the string `Rank: currentRanking/totalPlayers`. For example, in a game with two players, if Player A has a score of 3 and Player B has a score of 5, `calculateRank` for Player A should return `Rank: 2/2`.
+`calculateRank` 方法应该接受一个代表所有在线玩家的对象数组，并返回字符串 `Rank: currentRanking/totalPlayers`。 例如，在一局有两个玩家的游戏中，如果玩家 A 的分数是 3，玩家 B 的分数是 5，那么玩家 A 的 `calculateRank` 应该返回 `Rank: 2/2`。
 
 ```js
 
 ```
 
-Players can collide with a collectible item. Complete the `collision` method in `Player.mjs` to implement this.
+玩家可以与可收集物品发生碰撞。 完成 `Player.mjs` 中的 `collision` 方法来实现这一点。
 
 ```js
 
 ```
 
-The `collision` method should accept a collectible item's object as an argument. If the player's avatar intersects with the item, the `collision` method should return `true`.
+`collision` 方法应该接受一个可收集物品的对象作为参数。 如果玩家的头像与物品相交，`collision` 方法应该返回 `true`。
 
 ```js
 
 ```
 
-All players are kept in sync.
+所有玩家都保持游戏状态同步。
 
 ```js
 
 ```
 
-Players can disconnect from the game at any time.
+玩家可以随时断开与游戏的连接。
 
 ```js
 
 ```
 
-Prevent the client from trying to guess / sniff the MIME type.
+阻止客户端试图猜测/嗅探 MIME 类型。
 
 ```js
-
+async (getUserInput) => {
+  const data = await fetch(getUserInput('url') + '/_api/app-info');
+  const parsed = await data.json();
+  assert.equal(parsed.headers['x-content-type-options'], 'nosniff');
+};
 ```
 
-Prevent cross-site scripting (XSS) attacks.
+防止跨站脚本（XSS）攻击。
 
 ```js
-
+async (getUserInput) => {
+  const data = await fetch(getUserInput('url') + '/_api/app-info');
+  const parsed = await data.json();
+  assert.equal(parsed.headers['x-xss-protection'], '1; mode=block');
+};
 ```
 
-Nothing from the website is cached in the client.
+客户端没有缓存任何网站内容。
 
 ```js
-
+async (getUserInput) => {
+  const data = await fetch(getUserInput('url') + '/_api/app-info');
+  const parsed = await data.json();
+  assert.equal(parsed.headers['surrogate-control'], 'no-store');
+  assert.equal(
+    parsed.headers['cache-control'],
+    'no-store, no-cache, must-revalidate, proxy-revalidate'
+  );
+  assert.equal(parsed.headers['pragma'], 'no-cache');
+  assert.equal(parsed.headers['expires'], '0');
+};
 ```
 
-The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
+请求头显示该网站是由 “PHP 7.4.3” 驱动的，尽管实际并非如此（作为一种安全防御措施）。
 
 ```js
-
+async (getUserInput) => {
+  const data = await fetch(getUserInput('url') + '/_api/app-info');
+  const parsed = await data.json();
+  assert.equal(parsed.headers['x-powered-by'], 'PHP 7.4.3');
+};
 ```
 
 # --solutions--

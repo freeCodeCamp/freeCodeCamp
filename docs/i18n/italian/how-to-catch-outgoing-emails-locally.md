@@ -18,7 +18,7 @@ MailHog può essere installato su macOS, Windows e Linux o usato con Docker
 Se hai Docker installato puoi usare
 
 ```bash
-docker run -d --name mailhog --rm mailhog/mailhog
+docker run -d --name mailhog --network host --rm mailhog/mailhog
 ```
 
 per avviare MailHog in background e

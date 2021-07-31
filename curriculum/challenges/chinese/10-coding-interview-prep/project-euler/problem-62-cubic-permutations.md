@@ -8,22 +8,40 @@ dashedName: problem-62-cubic-permutations
 
 # --description--
 
-The cube, 41063625 (345<sup>3</sup>), can be permuted to produce two other cubes: 56623104 (384<sup>3</sup>) and 66430125 (405<sup>3</sup>). In fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube.
+The cube, 41063625 ($345^3$), can be permuted to produce two other cubes: 56623104 ($384^3$) and 66430125 ($405^3$). In fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube.
 
-Find the smallest cube for which exactly five permutations of its digits are cube.
+Find the smallest cube for which exactly `n` permutations of its digits are cube.
 
 # --hints--
 
-`cubicPermutations()` should return a number.
+`cubicPermutations(2)` should return a number.
 
 ```js
-assert(typeof cubicPermutations() === 'number');
+assert(typeof cubicPermutations(2) === 'number');
 ```
 
-`cubicPermutations()` should return 127035954683.
+`cubicPermutations(2)` should return `125`.
 
 ```js
-assert.strictEqual(cubicPermutations(), 127035954683);
+assert.strictEqual(cubicPermutations(2), 125);
+```
+
+`cubicPermutations(3)` should return `41063625`.
+
+```js
+assert.strictEqual(cubicPermutations(3), 41063625);
+```
+
+`cubicPermutations(4)` should return `1006012008`.
+
+```js
+assert.strictEqual(cubicPermutations(4), 1006012008);
+```
+
+`cubicPermutations(5)` should return `127035954683`.
+
+```js
+assert.strictEqual(cubicPermutations(5), 127035954683);
 ```
 
 # --seed--
@@ -31,16 +49,49 @@ assert.strictEqual(cubicPermutations(), 127035954683);
 ## --seed-contents--
 
 ```js
-function cubicPermutations() {
+function cubicPermutations(n) {
 
   return true;
 }
 
-cubicPermutations();
+cubicPermutations(2);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function cubicPermutations(n) {
+  function getDigits(num) {
+    const digits = [];
+    while (num > 0) {
+      digits.push(num % 10);
+      num = Math.floor(num / 10);
+    }
+    return digits;
+  }
+
+  function getCube(num) {
+    return num ** 3;
+  }
+
+  const digitsToCubeCounts = {};
+  let curNum = 1;
+  let digits;
+
+  while (!digitsToCubeCounts[digits] || digitsToCubeCounts[digits].count < n) {
+    const cube = getCube(curNum);
+    digits = getDigits(cube).sort().join();
+    if (!digitsToCubeCounts[digits]) {
+      digitsToCubeCounts[digits] = {
+        count: 1,
+        smallestCube: cube
+      };
+    } else {
+      digitsToCubeCounts[digits].count += 1;
+    }
+
+    curNum++;
+  }
+  return digitsToCubeCounts[digits].smallestCube;
+}
 ```

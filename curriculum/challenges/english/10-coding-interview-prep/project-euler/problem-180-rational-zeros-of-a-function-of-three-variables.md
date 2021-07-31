@@ -8,30 +8,34 @@ dashedName: problem-180-rational-zeros-of-a-function-of-three-variables
 
 # --description--
 
-For any integer n, consider the three functions
+For any integer $n$, consider the three functions
 
-f1,n(x,y,z) = xn+1 + yn+1 − zn+1f2,n(x,y,z) = (xy + yz + zx)\*(xn-1 + yn-1 − zn-1)f3,n(x,y,z) = xyz\*(xn-2 + yn-2 − zn-2)
+$$\begin{align}
+  & f_{1,n}(x,y,z) = x^{n + 1} + y^{n + 1} − z^{n + 1}\\\\
+  & f_{2,n}(x,y,z) = (xy + yz + zx) \times (x^{n - 1} + y^{n - 1} − z^{n - 1})\\\\
+  & f_{3,n}(x,y,z) = xyz \times (x^{n - 2} + y^{n - 2} − z^{n - 2})
+\end{align}$$
 
 and their combination
 
-fn(x,y,z) = f1,n(x,y,z) + f2,n(x,y,z) − f3,n(x,y,z)
+$$\begin{align}
+  & f_n(x,y,z) = f_{1,n}(x,y,z) + f_{2,n}(x,y,z) − f_{3,n}(x,y,z)
+\end{align}$$
 
-We call (x,y,z) a golden triple of order k if x, y, and z are all rational numbers of the form a / b with
+We call $(x,y,z)$ a golden triple of order $k$ if $x$, $y$, and $z$ are all rational numbers of the form $\frac{a}{b}$ with $0 &lt; a &lt; b ≤ k$ and there is (at least) one integer $n$, so that $f_n(x,y,z) = 0$.
 
-0 &lt; a &lt; b ≤ k and there is (at least) one integer n, so that fn(x,y,z) = 0.
+Let $s(x,y,z) = x + y + z$.
 
-Let s(x,y,z) = x + y + z.
+Let $t = \frac{u}{v}$ be the sum of all distinct $s(x,y,z)$ for all golden triples $(x,y,z)$ of order 35. All the $s(x,y,z)$ and $t$ must be in reduced form.
 
-Let t = u / v be the sum of all distinct s(x,y,z) for all golden triples (x,y,z) of order 35. All the s(x,y,z) and t must be in reduced form.
-
-Find u + v.
+Find $u + v$.
 
 # --hints--
 
-`euler180()` should return 285196020571078980.
+`rationalZeros()` should return `285196020571078980`.
 
 ```js
-assert.strictEqual(euler180(), 285196020571078980);
+assert.strictEqual(rationalZeros(), 285196020571078980);
 ```
 
 # --seed--
@@ -39,12 +43,12 @@ assert.strictEqual(euler180(), 285196020571078980);
 ## --seed-contents--
 
 ```js
-function euler180() {
+function rationalZeros() {
 
   return true;
 }
 
-euler180();
+rationalZeros();
 ```
 
 # --solutions--

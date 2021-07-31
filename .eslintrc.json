@@ -11,7 +11,8 @@
   "extends": [
     "./.eslintrc-base.json",
     "plugin:prettier/recommended",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended"
   ],
   "plugins": [
     "react",
@@ -39,20 +40,25 @@
     },
     "import/ignore": ["node_modules"]
   },
-  "overrides": [{
-    "files": ["**/*.ts?(x)"],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": ["./client/tsconfig.json", "./tools/challenge-helper-scripts/tsconfig.json"]
-     },
-    "extends": [
-      "plugin:@typescript-eslint/recommended",
-      "plugin:@typescript-eslint/recommended-requiring-type-checking"
-    ],
-    "plugins": ["@typescript-eslint"]
-  },
-  {
-    "files": ["./tools/ui-components/**/*.test.[jt]s?(x)"],
-    "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
-  }]
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": [
+          "./client/tsconfig.json",
+          "./tools/challenge-helper-scripts/tsconfig.json"
+        ]
+      },
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "plugins": ["@typescript-eslint"]
+    },
+    {
+      "files": ["./tools/ui-components/**/*.test.[jt]s?(x)", "./client/**/*.test.[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
+    }
+  ]
 }

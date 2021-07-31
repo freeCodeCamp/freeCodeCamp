@@ -1,6 +1,6 @@
 ---
 id: 589690e6f9fc0f352b528e6e
-title: Clean Up Your Project with Modules
+title: Limpar seu projeto com módulos
 challengeType: 2
 forumTopicId: 301549
 dashedName: clean-up-your-project-with-modules
@@ -8,9 +8,9 @@ dashedName: clean-up-your-project-with-modules
 
 # --description--
 
-Right now, everything you have is in your `server.js` file. This can lead to hard to manage code that isn't very expandable. Create 2 new files: `routes.js` and `auth.js`
+Nesse momento, tudo que você tem é o seu arquivo `server.js`. Isso pode levar a dificuldades para gerenciar um código que não é muito expansível. Crie 2 arquivos novos: `routes.js` e `auth.js`
 
-Both should start with the following code:
+Ambos devem começar com o seguinte código:
 
 ```js
 module.exports = function (app, myDataBase) {
@@ -18,19 +18,19 @@ module.exports = function (app, myDataBase) {
 }
 ```
 
-Now, in the top of your server file, require these files like so: `const routes = require('./routes.js');` Right after you establish a successful connection with the database, instantiate each of them like so: `routes(app, myDataBase)`
+Agora, no topo do arquivo do seu servidor, solicite estes arquivos assim: `const routes = require('./routes.js');` Depois disso, estabeleça uma conexão com o banco de dados, instanciando cada um dos arquivos da seguinte forma: `routes(app, myDataBase)`
 
-Finally, take all of the routes in your server and paste them into your new files, and remove them from your server file. Also take the `ensureAuthenticated` function, since it was specifically created for routing. Now, you will have to correctly add the dependencies in which are used, such as `const passport = require('passport');`, at the very top, above the export line in your `routes.js` file.
+Por fim, pegue todas as rotas do servidor, cole-as em seus novos arquivos e remova-as do arquivo do arquivo do servidor. Leve também a função `ensureAuthenticated`, já que ela foi especificamente criada para o roteamento. Agora, você precisará adicionar corretamente as dependências em que são usadas, tais como `const passport = require('passport');`, no topo do arquivo, acima da linha de exportação do arquivo `routes.js`.
 
-Keep adding them until no more errors exist, and your server file no longer has any routing (**except for the route in the catch block**)!
+Continue adicionando-os até que não existam mais erros e que o arquivo do servidor não tenha mais nenhuma rota (**exceto a rota no bloco catch**)!
 
-Now do the same thing in your auth.js file with all of the things related to authentication such as the serialization and the setting up of the local strategy and erase them from your server file. Be sure to add the dependencies in and call `auth(app, myDataBase)` in the server in the same spot.
+Agora, faça a mesma coisa no arquivo auth.js. com tudo o que estiver relacionado à autenticação, como a serialização e a configuração da estratégia local, e apague-os do arquivo do servidor. Certifique-se de adicionar as dependências e de chamar `auth(app, myDataBase)` no servidor no mesmo local.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out an example of the completed project [here](https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir um exemplo do projeto concluído [aqui](https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92).
 
 # --hints--
 
-Modules should be present.
+Os módulos devem estar presentes.
 
 ```js
 (getUserInput) =>

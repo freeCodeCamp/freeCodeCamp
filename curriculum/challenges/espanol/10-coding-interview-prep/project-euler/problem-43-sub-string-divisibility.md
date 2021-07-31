@@ -10,49 +10,50 @@ dashedName: problem-43-sub-string-divisibility
 
 The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.
 
-Let d<sub>1</sub> be the 1<sup>st</sup> digit, d<sub>2</sub> be the 2<sup>nd</sup> digit, and so on. In this way, we note the following:
+Let $d_1$ be the $1^{st}$ digit, $d_2$ be the $2^{nd}$ digit, and so on. In this way, we note the following:
 
-<ul>
-  <li>d<sub>2</sub>d<sub>3</sub>d<sub>4</sub> = 406 is divisible by 2</li>
-  <li>d<sub>3</sub>d<sub>4</sub>d<sub>5</sub> = 063 is divisible by 3</li>
-  <li>d<sub>4</sub>d<sub>5</sub>d<sub>6</sub> = 635 is divisible by 5</li>
-  <li>d<sub>5</sub>d<sub>6</sub>d<sub>7</sub> = 357 is divisible by 7</li>
-  <li>d<sub>6</sub>d<sub>7</sub>d<sub>8</sub> = 572 is divisible by 11</li>
-  <li>d<sub>7</sub>d<sub>8</sub>d<sub>9</sub> = 728 is divisible by 13</li>
-  <li>d<sub>8</sub>d<sub>9</sub>d<sub>10</sub> = 289 is divisible by 17</li>
-</ul>
+- ${d_2}{d_3}{d_4} = 406$ is divisible by 2
+- ${d_3}{d_4}{d_5} = 063$ is divisible by 3
+- ${d_4}{d_5}{d_6} = 635$ is divisible by 5
+- ${d_5}{d_6}{d_7} = 357$ is divisible by 7
+- ${d_6}{d_7}{d_8} = 572$ is divisible by 11
+- ${d_7}{d_8}{d_9} = 728$ is divisible by 13
+- ${d_8}{d_9}{d_{10}} = 289$ is divisible by 17
 
-Find the numbers of all 0 to 9 pandigital numbers with this property.
+Find the sum of all 0 to `n` pandigital numbers with sub-strings fulfilling `n - 2` of these divisibility properties.
+
+**Note:** Pandigital numbers starting with `0` are to be considered in the result.
 
 # --hints--
 
-`substringDivisibility()` should return an array.
+`substringDivisibility(5)` should return a number.
 
 ```js
-assert(Array.isArray(substringDivisibility()));
+assert(typeof substringDivisibility(5) === 'number');
 ```
 
-`substringDivisibility()` should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].
+`substringDivisibility(5)` should return `12444480`.
 
 ```js
-assert.sameMembers(substringDivisibility(), [
-  1430952867,
-  1460357289,
-  1406357289,
-  4130952867,
-  4160357289,
-  4106357289
-]);
+assert.strictEqual(substringDivisibility(5), 12444480)
 ```
 
-You should not copy and return the array.
+`substringDivisibility(7)` should return `1099210170`.
 
 ```js
-assert(
-  !code.match(
-      /(1430952867)|(1460357289)|(1406357289)|(4130952867)|(4160357289)|(4106357289)/
-  )
-);
+assert.strictEqual(substringDivisibility(7), 1099210170)
+```
+
+`substringDivisibility(8)` should return `1113342912`.
+
+```js
+assert.strictEqual(substringDivisibility(8), 1113342912)
+```
+
+`substringDivisibility(9)` should return `16695334890`.
+
+```js
+assert.strictEqual(substringDivisibility(9), 16695334890)
 ```
 
 # --seed--
@@ -60,16 +61,66 @@ assert(
 ## --seed-contents--
 
 ```js
-function substringDivisibility() {
+function substringDivisibility(n) {
 
-  return [];
+  return true;
 }
 
-substringDivisibility();
+substringDivisibility(5);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function substringDivisibility(n) {
+  function isSubDivisable(digits) {
+    const factors = [2, 3, 5, 7, 11, 13, 17];
+
+    for (let i = 1; i < digits.length - 2; i++) {
+      const subNumber = digits[i] * 100 + digits[i + 1] * 10 + digits[i + 2];
+      if (subNumber % factors[i - 1] !== 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function heapsPermutations(k, digits, conditionCheck, results) {
+    if (k === 1) {
+      if (conditionCheck(digits)) {
+        const number = parseInt(digits.join(''), 10);
+        results.push(number);
+      }
+      return;
+    }
+
+    heapsPermutations(k - 1, digits, conditionCheck, results);
+
+    for (let i = 0; i < k - 1; i++) {
+      if (k % 2 === 0) {
+        [digits[i], digits[k - 1]] = [digits[k - 1], digits[i]];
+      } else {
+        [digits[0], digits[k - 1]] = [digits[k - 1], digits[0]];
+      }
+      heapsPermutations(k - 1, digits, conditionCheck, results);
+    }
+    return;
+  }
+
+  const allowedDigits = [...new Array(n + 1).keys()];
+  const divisablePandigitals = [];
+  heapsPermutations(
+    allowedDigits.length,
+    allowedDigits,
+    isSubDivisable,
+    divisablePandigitals
+  );
+
+  let sum = 0;
+  for (let i = 0; i < divisablePandigitals.length; i++) {
+    sum += divisablePandigitals[i];
+  }
+
+  return sum;
+}
 ```

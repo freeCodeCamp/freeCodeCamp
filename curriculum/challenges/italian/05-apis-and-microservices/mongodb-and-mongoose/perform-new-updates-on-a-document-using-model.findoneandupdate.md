@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c0f
-title: Perform New Updates on a Document Using model.findOneAndUpdate()
+title: Eseguire nuovi aggiornamenti su un documento utilizzando model.findOneAndUpdate()
 challengeType: 2
 forumTopicId: 301542
 dashedName: perform-new-updates-on-a-document-using-model-findoneandupdate
@@ -8,17 +8,17 @@ dashedName: perform-new-updates-on-a-document-using-model-findoneandupdate
 
 # --description--
 
-Recent versions of Mongoose have methods to simplify documents updating. Some more advanced features (i.e. pre/post hooks, validation) behave differently with this approach, so the classic method is still useful in many situations. `findByIdAndUpdate()` can be used when searching by id.
+Le versioni recenti di Mongoose hanno metodi per semplificare l'aggiornamento dei documenti. Alcune caratteristiche più avanzate (cioè gli agganci pre/post validazione) si comportano in modo diverso con questo approccio, quindi il metodo classico è ancora utile in molte situazioni. `findByIdAndUpdate()` può essere usato durante la ricerca tramite id.
 
 # --instructions--
 
-Modify the `findAndUpdate` function to find a person by `Name` and set the person's age to `20`. Use the function parameter `personName` as the search key.
+Modifica la funzione `findAndUpdate` per trovare una persona in base al suo `Name` e impostare l'età della persona a `20`. Utilizza il parametro `personName` della funzione come chiave di ricerca.
 
-**Note:** You should return the updated document. To do that, you need to pass the options document `{ new: true }` as the 3rd argument to `findOneAndUpdate()`. By default, these methods return the unmodified object.
+**Nota:** Dovresti restituire il documento aggiornato. Per farlo, dovresti passare il documento di opzioni `{ new: true }` come terzo argomento a `findOneAndUpdate()`. Per impostazione predefinita, questi metodi restituiscono l'oggetto non modificato.
 
 # --hints--
 
-findOneAndUpdate an item should succeed
+findOneAndUpdate su un elemento dovrebbe avere successo
 
 ```js
 (getUserInput) =>

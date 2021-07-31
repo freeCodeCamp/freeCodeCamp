@@ -14,7 +14,7 @@ L'ultima sfida ha mostrato che React può controllare lo stato interno di alcuni
 
 Il componente `MyForm` è impostato con un `form` vuoto con un gestore di invio. Il gestore di invio verrà chiamato al momento dell'invio del modulo.
 
-Abbiamo aggiunto un bottone che invia il modulo. Puoi vedere che il `type` è impostato su `submit` indicando che è il bottone che controlla il modulo. Aggiungi l'elemento `input` nel `form` e imposta i suoi attributi `value` e `onChange()` come nell'ultima sfida. Dovresti quindi completare il metodo `handleSubmit` in modo che imposti la proprietà di stato del componente `submit` al valore corrente dell'input nello `state` locale.
+Abbiamo aggiunto un bottone che invia il modulo. Puoi vedere che il `type` è impostato su `submit` indicando che è il bottone che controlla il modulo. Aggiungi l'elemento `input` nel `form` e imposta i suoi attributi `value` e `onChange()` come nell'ultima sfida. Dovresti quindi completare il metodo `handleSubmit` in modo che imposti la proprietà di stato `submit` del componente al valore corrente di input nello `state` locale.
 
 **Nota:** Devi anche chiamare `event.preventDefault()` nel gestore di invio, per evitare il comportamento predefinito di invio del modulo che ricaricherà la pagina web. Per comodità, il comportamento predefinito è stato disabilitato qui per evitare che gli aggiornamenti reimpostino il codice della sfida.
 
@@ -101,19 +101,11 @@ L'invio del modulo dovrebbe eseguire `handleSubmit` che dovrebbe impostare la pr
 `handleSubmit` dovrebbe chiamare `event.preventDefault`
 
 ```js
-const handleSubmit = MyForm.prototype.handleSubmit.toString();
-const allMatches = handleSubmit.match(/\bevent\.preventDefault\(\s*?\)/g) ?? [];
-const blockCommented = handleSubmit.match(
-  /\/\*.*?\bevent\.preventDefault\(\s*?\).*?\*\//gs
-);
-const lineCommented = handleSubmit.match(
-  /\/\/.*?\bevent\.preventDefault\(\s*?\)/g
-);
-const commentedMatches = [...(blockCommented ?? []), ...(lineCommented ?? [])];
-
 assert(
-  // At least one event.preventDefault() call exists and is not commented out
-  allMatches.length > commentedMatches.length
+  __helpers.isCalledWithNoArgs(
+    'event.preventDefault',
+    MyForm.prototype.handleSubmit.toString()
+  )
 );
 ```
 

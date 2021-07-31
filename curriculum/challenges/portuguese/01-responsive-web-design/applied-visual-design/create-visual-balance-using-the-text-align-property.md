@@ -1,6 +1,6 @@
 ---
 id: 587d7791367417b2b2512ab3
-title: Create Visual Balance Using the text-align Property
+title: Criar equilíbrio visual usando a propriedade text-align
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3b4EAp'
 forumTopicId: 301053
@@ -9,31 +9,31 @@ dashedName: create-visual-balance-using-the-text-align-property
 
 # --description--
 
-This section of the curriculum focuses on Applied Visual Design. The first group of challenges build on the given card layout to show a number of core principles.
+Esta seção do currículo se concentra no Design Visual Aplicado. O primeiro grupo de desafios baseia-se no layout de cartão fornecido para mostrar uma série de princípios básicos.
 
-Text is often a large part of web content. CSS has several options for how to align it with the `text-align` property.
+O texto costuma ser uma grande parte do conteúdo na web. O CSS possui várias opções de como alinhá-lo com a propriedade `text-align`.
 
-`text-align: justify;` causes all lines of text except the last line to meet the left and right edges of the line box.
+`text-align: justify;` faz com que todas as linhas de texto, exceto a última linha, encostem nas bordas esquerda e direita da caixa em que o texto está.
 
-`text-align: center;` centers the text
+`text-align: center;` centraliza o texto
 
-`text-align: right;` right-aligns the text
+`text-align: right;` alinha o texto à direita
 
-And `text-align: left;` (the default) left-aligns the text.
+E `text-align: left;` (o padrão) alinha o texto à esquerda.
 
 # --instructions--
 
-Align the `h4` tag's text, which says "Google", to the center. Then justify the paragraph tag which contains information about how Google was founded.
+Alinhe o texto da tag `h4`, que diz "Google", ao centro. Em seguida, justifique (justify) a tag de parágrafo que contém informações sobre como o Google foi fundado.
 
 # --hints--
 
-Your code should use the text-align property on the `h4` tag to set it to `center`.
+Você deve usar a propriedade text-align com o valor de `center` na tag `h4`.
 
 ```js
 assert($('h4').css('text-align') == 'center');
 ```
 
-Your code should use the text-align property on the `p` tag to set it to `justify`.
+Você deve usar a propriedade text-align com o valor de `justify` na tag `p`.
 
 ```js
 assert($('p').css('text-align') == 'justify');

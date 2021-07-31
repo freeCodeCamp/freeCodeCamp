@@ -8,7 +8,7 @@ dashedName: long-multiplication
 
 # --description--
 
-Explicitly implement [long multiplication](<https://en.wikipedia.org/wiki/long multiplication>).
+Explicitly implement [long multiplication](https://en.wikipedia.org/wiki/long multiplication).
 
 This is one possible approach to arbitrary-precision integer algebra.
 

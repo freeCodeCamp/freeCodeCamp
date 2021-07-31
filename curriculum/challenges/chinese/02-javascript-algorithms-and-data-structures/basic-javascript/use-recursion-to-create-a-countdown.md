@@ -10,7 +10,7 @@ dashedName: use-recursion-to-create-a-countdown
 
 在上一个[挑战](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion)，学习了怎样用递归来代替 `for` 循环。 现在来学习一个更复杂的函数，函数返回一个从 `1` 到传递给函数的指定数字的连续数字数组。
 
-正如上一个挑战提到的，会有一个 <dfn>base case</dfn>。 base case 告诉递归函数什么时候不在需要调用其自身。 这是简单 情况，返回得到的值。 还有 <dfn>recursive call</dfn>，继续用不同的参数调用自身。 如果函数无误，一直执行直到 base case 为止。
+正如上一个挑战提到的，会有一个 <dfn>base case</dfn>。 base case 告诉递归函数什么时候不再需要调用其自身。 这是简单 情况，返回得到的值。 还有 <dfn>recursive call</dfn>，继续用不同的参数调用自身。 如果函数无误，一直执行直到 base case 为止。
 
 比如，如果想写一个递归函数，返回一个数字 `1` 到 `n` 的连续数组。 这个函数需要接收一个参数 `n` 代表最终数字。 然后会持续的调用自身，传入一个比 `n` 更小的值一直到传入的值是 `1` 为止。 函数如下：
 

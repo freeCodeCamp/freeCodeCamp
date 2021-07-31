@@ -1,6 +1,6 @@
 ---
 id: 587d7b84367417b2b2512b37
-title: Catch Mixed Usage of Single and Double Quotes
+title: Identificar uso misto de aspas simples e duplas
 challengeType: 1
 forumTopicId: 301188
 dashedName: catch-mixed-usage-of-single-and-double-quotes
@@ -8,11 +8,11 @@ dashedName: catch-mixed-usage-of-single-and-double-quotes
 
 # --description--
 
-JavaScript allows the use of both single (`'`) and double (`"`) quotes to declare a string. Deciding which one to use generally comes down to personal preference, with some exceptions.
+JavaScript nos permite o uso de aspas simples (`'`) e duplas (`"`) para declarar uma string. Decidir qual delas usar geralmente é uma questão de preferência pessoal, com algumas exceções.
 
-Having two choices is great when a string has contractions or another piece of text that's in quotes. Just be careful that you don't close the string too early, which causes a syntax error.
+Ter duas opções é ótimo quando uma string possui contrações ou outros pedaços de texto que estão entre aspas. Apenas tome cuidado para que você não feche uma string muito cedo, o que causa erro de sintaxe.
 
-Here are some examples of mixing quotes:
+Aqui estão alguns exemplos de mistura de aspas:
 
 ```js
 const grouchoContraction = "I've had a perfectly wonderful evening, but this wasn't it.";
@@ -20,9 +20,9 @@ const quoteInString = "Groucho Marx once said 'Quote me as saying I was mis-quot
 const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';
 ```
 
-The first two are correct, but the third is incorrect.
+As duas primeiras estão corretas, mas a terceira não.
 
-Of course, it is okay to use only one style of quotes. You can escape the quotes inside the string by using the backslash (`\`) escape character:
+Claro, não há problema em usar apenas um estilo de aspas. Você pode escapar as aspas dentro de uma string ao usar o caractere barra invertida (`\`):
 
 ```js
 const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t it.';
@@ -30,17 +30,17 @@ const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t
 
 # --instructions--
 
-Fix the string so it either uses different quotes for the `href` value, or escape the existing ones. Keep the double quote marks around the entire string.
+Corrija a string para que use aspas diferentes para o valor de `href` ou escape as aspas existentes. Mantenha as aspas duplas ao redor de toda a string.
 
 # --hints--
 
-Your code should fix the quotes around the `href` value `#Home` by either changing or escaping them.
+O código deve corrigir as aspas em torno do valor de `href`: `#Home` mudando-as ou escapando-as.
 
 ```js
 assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
-Your code should keep the double quotes around the entire string.
+O código deve manter as aspas duplas ao redor de toda a string.
 
 ```js
 assert(code.match(/"<p>.*?<\/p>";/g));

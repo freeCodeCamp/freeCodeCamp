@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08756
-title: Priorize um estilo em detrimento de outro
+title: Priorizar um estilo em detrimento de outro
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cZ8wnHv'
 forumTopicId: 18258
