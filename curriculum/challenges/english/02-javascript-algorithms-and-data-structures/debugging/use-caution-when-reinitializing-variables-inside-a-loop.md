@@ -38,6 +38,26 @@ assert(
 );
 ```
 
+Your code should set the `matrix1` variable to an array holding 4 rows of 3 columns of zeroes each.
+
+```js
+assert(JSON.stringify(matrix1) == '[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]');
+```
+
+The `matrix1` variable should have 4 rows.
+
+```js
+assert(matrix1.length == 4);
+```
+
+The `matrix1` variable should have 3 columns in each row.
+
+```js
+assert(
+  matrix1[0].length == 3 && matrix1[1].length === 3 && matrix1[2].length === 3 && matrix1[3].length === 3
+);
+```
+
 # --seed--
 
 ## --seed-contents--
@@ -62,6 +82,9 @@ function zeroArray(m, n) {
 
 let matrix = zeroArray(3, 2);
 console.log(matrix);
+
+let matrix1 = zeroArray(4, 3);
+console.log(matrix1);
 ```
 
 # --solutions--
@@ -86,4 +109,7 @@ function zeroArray(m, n) {
 
 let matrix = zeroArray(3, 2);
 console.log(matrix);
+
+let matrix1 = zeroArray(4, 3);
+console.log(matrix1);
 ```
