@@ -69,8 +69,6 @@ function zeroArray(m, n) {
 let matrix = zeroArray(3, 2);
 console.log(matrix);
 
-let matrix1 = zeroArray(4, 3);
-console.log(matrix1);
 ```
 
 # --solutions--
@@ -96,6 +94,4 @@ function zeroArray(m, n) {
 let matrix = zeroArray(3, 2);
 console.log(matrix);
 
-let matrix1 = zeroArray(4, 3);
-console.log(matrix1);
 ```
