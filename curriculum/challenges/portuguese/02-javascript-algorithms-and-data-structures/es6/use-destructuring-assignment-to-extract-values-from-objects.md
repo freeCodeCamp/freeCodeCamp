@@ -1,6 +1,6 @@
 ---
 id: 5cfa550e84205a357704ccb6
-title: Use Atribuição de Desestruturação para Extrair Valores de Objetos
+title: Usar atribuição de desestruturação para extrair valores de objetos
 challengeType: 1
 forumTopicId: 301216
 dashedName: use-destructuring-assignment-to-extract-values-from-objects
@@ -8,7 +8,7 @@ dashedName: use-destructuring-assignment-to-extract-values-from-objects
 
 # --description--
 
-<dfn>Atribuição de Desestruturação</dfn> é uma sintaxe especial introduzida na ES6, para atribuir nitidamente valores retirados diretamente de um objeto.
+<dfn>Atribuição de desestruturação</dfn> é uma sintaxe especial introduzida na ES6, para atribuir nitidamente valores retirados diretamente de um objeto.
 
 Considere o seguinte código ES5:
 
@@ -29,7 +29,7 @@ const { name, age } = user;
 
 Novamente, `name` teria o valor da string `John Doe` e `age` teria o número `34`.
 
-Aqui, as variáveis `name` e `age` serão criadas e atribuídas a elas os valores de seus respectivos valores do objeto `user`. Você pode ver quão mais limpo é.
+Aqui, as variáveis `name` e `age` serão criadas e atribuídas a elas os valores de seus respectivos valores do objeto `user`. Você pode ver que fica muito mais limpo.
 
 Você pode extrair quantos valores do objeto quanto você quer.
 

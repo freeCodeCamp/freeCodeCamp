@@ -9,9 +9,9 @@ dashedName: returning-boolean-values-from-functions
 
 # --description--
 
-Você pode se lembrar de [Comparação com o Operador de Igualdade](/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator) que todas os operadores de comparação retornam um valor booleano `true` ou `false`.
+Você pode se lembrar de [Comparação com o operador de igualdade](/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator), em que todos os operadores de comparação retornam um valor booleano `true` ou `false`.
 
-As vezes as pessoas usam uma instrução `if/else` para fazer uma comparação, dessa forma:
+Às vezes, as pessoas usam uma instrução `if/else` para fazer uma comparação, dessa forma:
 
 ```js
 function isEqual(a,b) {
@@ -49,7 +49,7 @@ assert(isLess(10, 15) === true);
 assert(isLess(15, 10) === false);
 ```
 
-Você não deve usar nenhuma das instruções `if` ou `else`
+Você não deve usar nenhuma instrução do tipo `if` ou `else`
 
 ```js
 assert(!/if|else/g.test(code));

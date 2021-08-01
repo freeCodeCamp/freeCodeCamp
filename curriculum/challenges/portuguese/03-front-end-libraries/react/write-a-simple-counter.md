@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036177
-title: Escrever um Contador Simples
+title: Escrever um contador simples
 challengeType: 6
 forumTopicId: 301425
 dashedName: write-a-simple-counter
@@ -14,7 +14,7 @@ Você pode projetar um componente de estado mais complexo combinando os conceito
 
 O componente `Counter` mantém controle de um valor `count` em `state`. Existem dois botões que chamam os métodos `increment()` e `decrement()`. Escreva esses métodos para que o valor do contador seja incrementado ou decrementado por 1 quando o botão apropriado for clicado. Além disso, crie um método `reset()`, para que quando o botão reset é clicado, a contagem é definida como 0.
 
-**Nota:** Certifique-se de não modificar o `className` dos botões. Lembre-se também de adicionar as ligações necessárias para os métodos recém-criados no construtor.
+**Observação:** certifique-se de não modificar o `className` dos botões. Lembre-se também de adicionar as ligações necessárias para os métodos recém-criados no construtor.
 
 # --hints--
 
@@ -56,7 +56,7 @@ mockedComponent.find('.dec').simulate('click');
 assert(mockedComponent.find('h1').text() === 'Current Count: -1');
 ```
 
-Clicando no botão reset deve redefinir a contagem para `0`.
+Clicar no botão reset deve redefinir a contagem para `0`.
 
 ```js
 const mockedComponent = Enzyme.mount(React.createElement(Counter));

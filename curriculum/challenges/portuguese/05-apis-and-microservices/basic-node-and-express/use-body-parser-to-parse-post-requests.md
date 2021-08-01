@@ -1,6 +1,6 @@
 ---
 id: 587d7fb2367417b2b2512bf7
-title: Use body-parser to Parse POST Requests
+title: Usar o body-parser para analisar solicitações de POST
 challengeType: 2
 forumTopicId: 301520
 dashedName: use-body-parser-to-parse-post-requests
@@ -8,9 +8,9 @@ dashedName: use-body-parser-to-parse-post-requests
 
 # --description--
 
-Besides GET, there is another common HTTP verb, it is POST. POST is the default method used to send client data with HTML forms. In REST convention, POST is used to send data to create new items in the database (a new user, or a new blog post). You don’t have a database in this project, but you are going to learn how to handle POST requests anyway.
+Além do GET, existe um outro verbo comum de HTTP, o POST. POST é o método padrão usado para enviar dados do client com formulários HTML. Na convenção de REST, POST é usado para enviar dados para criar novos itens no banco de dados (um novo usuário, ou um nova publicação no blog). Você não tem um banco de dados neste projeto, mas vai aprender como lidar com solicitações de POST, mesmo assim.
 
-In these kind of requests, the data doesn’t appear in the URL, it is hidden in the request body. The body is a part of the HTTP request, also called the payload. Even though the data is not visible in the URL, this does not mean that it is private. To see why, look at the raw content of an HTTP POST request:
+Nesse tipo de solicitação, os dados não aparecem no URL. Eles estão ocultos no corpo da solicitação. O corpo (body) é uma parte da solicitação do HTTP, também chamada de payload. Mesmo que os dados não sejam visíveis no URL, isso não significa que sejam privados. Para saber o porquê, consulte o conteúdo bruto de uma solicitação de POST de HTTP:
 
 ```http
 POST /path/subpath HTTP/1.0
@@ -22,19 +22,19 @@ Content-Length: 20
 name=John+Doe&age=25
 ```
 
-As you can see, the body is encoded like the query string. This is the default format used by HTML forms. With Ajax, you can also use JSON to handle data having a more complex structure. There is also another type of encoding: multipart/form-data. This one is used to upload binary files. In this exercise, you will use a urlencoded body. To parse the data coming from POST requests, you have to install the `body-parser` package. This package allows you to use a series of middleware, which can decode data in different formats.
+Como você pode ver, o body é codificado como a string de consulta. Este é o formato padrão usado pelos formulários de HTML. Com o Ajax, você também pode usar JSON para tratar os dados tendo uma estrutura mais complexa. Existe também um outro tipo de codificação: multipart/form-data. Esta é usada para enviar arquivos binários. Neste exercício, você usará um body urlencoded. Para analisar os dados provenientes de solicitações de POST, você deve instalar o pacote `body-parser`. Este pacote permite que você use uma série de middleware, que pode decodificar os dados em diferentes formatos.
 
 # --instructions--
 
-Install the `body-parser` module in your `package.json`. Then, `require` it at the top of the file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: false})`. Pass the function returned by the previous method call to `app.use()`. As usual, the middleware must be mounted before all the routes that depend on it.
+Instale o módulo `body-parser` no `package.json`. Em seguida, faça o `require` dele no topo do arquivo. Armazene-o em uma variável chamada `bodyParser`. O middleware para manipular dados urlencoded é retornado por `bodyParser.urlencoded({extended: false})`. Passe a função retornada pela chamada do método anterior para `app.use()`. Como sempre, o middleware deve ser montado antes de todas as rotas que dependem dele.
 
-**Note:** `extended` is a configuration option that tells `body-parser` which parsing needs to be used. When `extended=false` it uses the classic encoding `querystring` library. When `extended=true` it uses `qs` library for parsing.
+**Observação:** `extended` é uma opção de configuração que informa ao `body-parser` que a análise (parsing) precisa ser usada. Quando `extended=false` ele usa a biblioteca clássica de codificação, `querystring`. Quando `extended=true` ele usa a biblioteca `qs` para a análise.
 
-When using `extended=false`, values can be only strings or arrays. The object returned when using `querystring` does not prototypically inherit from the default JavaScript `Object`, which means functions like `hasOwnProperty`, `toString` will not be available. The extended version allows more data flexibility, but it is outmatched by JSON.
+Ao usar `extended=false`, os valores podem ser apenas strings ou arrays. O objeto retornado ao usar `querystring` não herda prototipicamente do `Object` de JavaScript padrão, o que significa que funções como `hasOwnProperty` e `toString` não estarão disponíveis. A versão estendida permite mais flexibilidade aos dados, mas é superada por JSON.
 
 # --hints--
 
-The 'body-parser' middleware should be mounted
+O middleware 'body-parser' deve estar montado
 
 ```js
 (getUserInput) =>

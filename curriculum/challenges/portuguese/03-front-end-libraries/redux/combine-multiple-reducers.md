@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036154
-title: Combinar Múltiplos Reducers
+title: Combinar múltiplos reducers
 challengeType: 6
 forumTopicId: 301436
 dashedName: combine-multiple-reducers
@@ -8,9 +8,9 @@ dashedName: combine-multiple-reducers
 
 # --description--
 
-Quando o estado do seu app começa a se tornar mais complexo, pode ser tentador dividir o estado em várias peças. Em vez disso, lembre-se do primeiro princípio do Redux: todos os estados do aplicativo são mantidos em um único objeto de estado na store. Portanto, Redux fornece a composição do redutor como solução para um modelo de estado complexo. Você define vários reducers para lidar com diferentes partes do estado da sua aplicação, e então compõe estes reducers em um único reducer raiz. O reducer raiz é então passado para o método Redux `createStore()`.
+Quando o estado do seu app começa a se tornar mais complexo, pode ser tentador dividir o estado em várias partes. Em vez disso, lembre-se do primeiro princípio do Redux: todos os estados do aplicativo são mantidos em um único objeto de estado na store. Portanto, Redux fornece a composição do redutor como solução para um modelo de estado complexo. Você define vários reducers para lidar com diferentes partes do estado da sua aplicação, e então compõe estes reducers em um único reducer raiz. O reducer raiz é então passado para o método Redux `createStore()`.
 
-Para que possamos combinar múltiplos reducers juntos, Redux fornece o método `combineReducers()`. Este método aceita um objeto como argumento no qual você define propriedades que associam chaves a funções específicas de reducer. Os nomes que você der às chaves serão usados pelo Redux para pedaço do nome associado do state.
+Para que possamos combinar múltiplos reducers juntos, o Redux fornece o método `combineReducers()`. Este método aceita um objeto como argumento no qual você define propriedades que associam chaves a funções específicas de reducer. Os nomes que você der às chaves serão usados pelo Redux para pedaço do nome associado do state.
 
 Normalmente, é uma boa prática criar um reducer para cada peça do estado da aplicação quando eles são distintos ou únicos de alguma forma. Por exemplo, em um aplicativo de anotações com autenticação de usuário, um reducer poderia lidar com a autenticação enquanto outro manipula o texto e notas que o usuário está enviando. Para tal aplicação, podemos escrever o método `combineReducers()` assim:
 
@@ -25,7 +25,7 @@ Agora, as chaves `notes` conterão todo o estado associado às nossas notas e se
 
 # --instructions--
 
-Existem as funções `counterReducer()` e `authReducer()` fornecidas no editor de código, junto com um store (armazém) Redux. Termine de escrever a função `rootReducer()` usando o método `Redux.combineReducers()`. Atribua `counterReducer` a uma chave chamada `count` e `authReducer` a uma chave chamada `auth`.
+Existem as funções `counterReducer()` e `authReducer()` fornecidas no editor de código, junto com uma store do Redux. Termine de escrever a função `rootReducer()` usando o método `Redux.combineReducers()`. Atribua `counterReducer` a uma chave chamada `count` e `authReducer` a uma chave chamada `auth`.
 
 # --hints--
 

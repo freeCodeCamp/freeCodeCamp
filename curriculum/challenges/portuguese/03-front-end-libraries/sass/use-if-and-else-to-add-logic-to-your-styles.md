@@ -18,7 +18,7 @@ A diretiva `@if` no Sass é útil para testar um caso específico - funciona exa
 }
 ```
 
-E assim como em JavaScript, teste `@else if` e `@else` para mais condições:
+Assim como em JavaScript, teste `@else if` e `@else` para mais condições:
 
 ```scss
 @mixin text-effect($val) {
@@ -39,7 +39,7 @@ E assim como em JavaScript, teste `@else if` e `@else` para mais condições:
 
 # --instructions--
 
-Crie um mixin chamado `border-stroke` que recebe o parâmetro `$val`. O mixin deve verificar as seguintes condições usando `@if`, `@else if`, e `@else`:
+Crie um mixin chamado `border-stroke` que recebe o parâmetro `$val`. O mixin deve verificar as seguintes condições usando `@if`, `@else if` e `@else`:
 
 ```scss
 light - 1px solid black
@@ -51,13 +51,13 @@ Se `$val` não for `light`, `medium`, ou `heavy`, a borda deve ser ajustada para
 
 # --hints--
 
-Seu código deve declarar um mixin nomeado `border-stroke` que tem um parâmetro chamado `$val`.
+O código deve declarar um mixin nomeado `border-stroke` que tem um parâmetro chamado `$val`.
 
 ```js
 assert(code.match(/@mixin\s+?border-stroke\s*?\(\s*?\$val\s*?\)\s*?{/gi));
 ```
 
-Seu mixin deve ter uma instrução `@if` para verificar se `$val` é `light`, e definir a `border` como `1px solid black`.
+O mixin deve ter uma instrução `@if` para verificar se `$val` é `light` e definir a `border` como `1px solid black`.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-Seu mixin deve ter uma instrução `@else if` para verificar se `$val` é `medium`, e definir a `border` como `3px solid black`.
+O mixin deve ter uma instrução `@else if` para verificar se `$val` é `medium` e definir a `border` como `3px solid black`.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-Seu mixin deve ter uma instrução `@else if` para verificar se `$val` é `heavy`, e definir a `border` como `6px solid black`.
+O mixin deve ter uma instrução `@else if` para verificar se `$val` é `heavy` e definir a `border` como `6px solid black`.
 
 ```js
 assert(
@@ -87,7 +87,7 @@ assert(
 );
 ```
 
-Seu mixin deve ter um comando `@else` para definir `border` para `none`.
+O mixin deve ter um comando `@else` para definir `border` para `none`.
 
 ```js
 assert(code.match(/@else\s*?{\s*?border\s*?:\s*?none\s*?;\s*?}/gi));

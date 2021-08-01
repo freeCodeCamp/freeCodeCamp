@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036183
-title: Use JavaScript Avançado no Método de Renderização do React
+title: Usar JavaScript avançado no método de renderização do React
 challengeType: 6
 forumTopicId: 301415
 dashedName: use-advanced-javascript-in-react-render-method
@@ -8,13 +8,13 @@ dashedName: use-advanced-javascript-in-react-render-method
 
 # --description--
 
-Nos desafios anteriores, você aprendeu como injetar o código JavaScript em JSX usando chaves `{ }`, para tarefas como acessar props, passar props, acessar o state, inserir comentários em seu código e, mais recentemente, estilizar seus componentes. Estes são todos os casos de uso comuns para colocar JavaScript em JSX, mas eles não são a única maneira de você usar o código JavaScript em seus componentes React.
+Nos desafios anteriores, você aprendeu como injetar o código JavaScript em JSX usando chaves `{ }` para tarefas como acessar props, passar props, acessar o state, inserir comentários em seu código e, mais recentemente, estilizar seus componentes. Estes são todos os casos de uso comuns para colocar JavaScript em JSX, mas eles não são a única maneira de você usar o código JavaScript em seus componentes do React.
 
-Você também pode escrever JavaScript diretamente nos seus métodos de `render`, antes da instrução `return`, ***sem*** inseri-lo dentro de chaves. Isto é devido a ainda não está dentro do código JSX. Quando você quiser usar uma variável mais tarde no código JSX *dentro* da instrução `return`, você coloca o nome da variável dentro de chaves.
+Você também pode escrever JavaScript diretamente nos seus métodos de `render`, antes da instrução `return`, ***sem*** inseri-lo dentro de chaves. Isto é devido a ainda não estar dentro do código JSX. Quando você quiser usar uma variável mais tarde no código JSX *dentro* da instrução `return`, você coloca o nome da variável dentro de chaves.
 
 # --instructions--
 
-No código fornecido, o método `render` tem uma matriz que contém 20 frases para representar as respostas encontradas no clássico brinquedo da Bola de Oito Mágica de 1980. O evento de clique no botão está ligado ao método `ask`, então cada vez que o botão é clicado um número aleatório será gerado e armazenado como o `randomIndex` no state. Na linha 52, exclua a string `change me!` e reatribua a const `answer` para que seu código acesse aleatoriamente um índice diferente do array `possibleAnswers` a cada vez que o componente atualizar. Finalmente, insira a const `answer` dentro das tags `p`.
+No código fornecido, o método `render` tem um array que contém 20 frases para representar as respostas encontradas no clássico brinquedo da Bola Mágica de 1980. O evento de clique no botão está ligado ao método `ask`, então cada vez que o botão é clicado um número aleatório será gerado e armazenado como o `randomIndex` no state. Na linha 52, exclua a string `change me!` e reatribua a const `answer` para que seu código acesse aleatoriamente um índice diferente do array `possibleAnswers` a cada vez que o componente atualizar. Finalmente, insira a const `answer` dentro das tags `p`.
 
 # --hints--
 
@@ -52,7 +52,7 @@ assert.strictEqual(
 );
 ```
 
-`MagicEightBall`deve ser inicializado com uma propriedade `userInput` e uma propriedade `randomIndex` ambas definidas com o valor de uma string vazia.
+`MagicEightBall` deve ser inicializado com uma propriedade `userInput` e uma propriedade `randomIndex` ambas definidas com o valor de uma string vazia.
 
 ```js
 assert(

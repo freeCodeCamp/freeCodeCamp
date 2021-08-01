@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aeda08826
-title: Elementos Alvo por id Usando jQuery
+title: Mirar elementos por id usando o jQuery
 challengeType: 6
 forumTopicId: 18317
 required:

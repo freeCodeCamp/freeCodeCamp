@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036165
-title: Usar React para Renderizar Componentes Aninhados
+title: Usar React para renderizar componentes aninhados
 challengeType: 6
 forumTopicId: 301420
 dashedName: use-react-to-render-nested-components
@@ -10,7 +10,7 @@ dashedName: use-react-to-render-nested-components
 
 O último desafio mostrou uma maneira simples de compor dois componentes, mas há muitas maneiras diferentes que você pode compor componentes com React.
 
-Composição de componente é uma das funcionalidades poderosas do React. Ao trabalhar com React, é importante começar a pensar na sua interface de usuário em termos de componentes como o App exemplo no último desafio. Você divide sua interface de usuário em seus blocos de construção básicos, e essas peças se tornam os componentes. Isso ajuda a separar o código responsável pela interface do usuário do código responsável por lidar com a lógica da sua aplicação. Pode simplificar grandemente o desenvolvimento e a manutenção de projectos complexos.
+Composição de componente é uma das funcionalidades poderosas do React. Ao trabalhar com React, é importante começar a pensar na sua interface de usuário em termos de componentes como o App exemplo no último desafio. Você divide sua interface de usuário em seus blocos de construção básicos, e essas peças se tornam os componentes. Isso ajuda a separar o código responsável pela interface do usuário do código responsável por lidar com a lógica da sua aplicação. Pode simplificar grandemente o desenvolvimento e a manutenção de projetos complexos.
 
 # --instructions--
 
@@ -24,7 +24,7 @@ O componente `TypesOfFood` deve retornar um único elemento `div`.
 assert(Enzyme.shallow(React.createElement(TypesOfFood)).type() === 'div');
 ```
 
-O componente `TypesOfFood` deve retornar o component `Fruits`.
+O componente `TypesOfFood` deve retornar o componente `Fruits`.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-O componente `Fruits` deve retornar o component `TypesOfFruit`.
+O componente `Fruits` deve retornar o componente `TypesOfFruit`.
 
 ```js
 assert(

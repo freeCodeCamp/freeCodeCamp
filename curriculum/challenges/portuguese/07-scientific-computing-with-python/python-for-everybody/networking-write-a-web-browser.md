@@ -34,7 +34,7 @@ Um servidor web simples.
 
 ---
 
-Um cliente de email simples.
+Um client de e-mail simples.
 
 ---
 

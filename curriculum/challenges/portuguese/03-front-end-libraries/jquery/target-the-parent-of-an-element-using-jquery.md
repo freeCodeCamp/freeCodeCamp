@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed308826
-title: Mire o Filho de um Elemento Usando jQuery
+title: Mirar o pai de um elemento usando o jQuery
 challengeType: 6
 forumTopicId: 18321
 dashedName: target-the-parent-of-an-element-using-jquery
@@ -12,7 +12,7 @@ Todo elemento HTML possui um elemento `parent` do qual `inherits` (herda) propri
 
 Por exemplo, seu elemento `jQuery Playground` `h3` tem o elemento parente de `<div class="container-fluid">`, o qual ele mesmo possui o parente `body`.
 
-jQuery possui uma função chamada `parent()` que o permite acessar o parente de qualquer elemento que você selecionou.
+O jQuery possui uma função chamada `parent()` que o permite acessar o parente de qualquer elemento que você selecionou.
 
 Aqui está um exemplo de como você usaria a função `parent()` se você quisesse dar ao elemento parente do elemento `left-well` uma cor de fundo azul:
 
@@ -24,7 +24,7 @@ Dê ao parente do elemento `#target1` uma cor de fundo (background-color) vermel
 
 # --hints--
 
-Seu elemento `left-well` deve ter um fundo vermelho.
+O elemento `left-well` deve ter um fundo vermelho.
 
 ```js
 assert(

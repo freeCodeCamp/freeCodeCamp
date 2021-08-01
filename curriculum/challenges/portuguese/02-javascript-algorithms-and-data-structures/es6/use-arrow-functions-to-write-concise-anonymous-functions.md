@@ -8,7 +8,7 @@ dashedName: use-arrow-functions-to-write-concise-anonymous-functions
 
 # --description--
 
-No JavaScript, muitas vezes não precisamos nomear nossas funções, especialmente quando passamos uma função como argumento para outra função. Em vez disso, criamos funções anônimas. Como não iremos reutilizar essas funções posteriormente, não precisamos nomeá-las.
+No JavaScript, muitas vezes não precisamos nomear nossas funções, especialmente quando passamos uma função como argumento para outra função. Em vez disso, criamos funções anônimas. Como não vamos reutilizar essas funções posteriormente, não precisamos nomeá-las.
 
 Para fazer isso, geralmente usamos a seguinte sintaxe:
 
@@ -48,7 +48,7 @@ Você deve substituir a palavra-chave `var`.
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-A variável `magic` deve ser uma variável constante (use `const`).
+A variável `magic` deve ser uma constante (use `const`).
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+magic/g));

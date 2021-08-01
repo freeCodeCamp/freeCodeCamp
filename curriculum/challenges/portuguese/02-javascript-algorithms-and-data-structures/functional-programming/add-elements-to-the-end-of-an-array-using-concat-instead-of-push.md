@@ -27,13 +27,13 @@ Modifique a função `nonMutatingPush` de forma que ela use `concat` para adicio
 
 # --hints--
 
-O seu código deve usar o método `concat`.
+O código deve usar o método `concat`.
 
 ```js
 assert(code.match(/\.concat/g));
 ```
 
-O seu código não deve usar o método `push`.
+O código não deve usar o método `push`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?push/g));

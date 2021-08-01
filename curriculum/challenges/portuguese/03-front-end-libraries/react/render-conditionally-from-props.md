@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036188
-title: Renderizar Condicionalmente das Props
+title: Renderizar condicionalmente a partir das props
 challengeType: 6
 forumTopicId: 301405
 dashedName: render-conditionally-from-props
@@ -8,13 +8,13 @@ dashedName: render-conditionally-from-props
 
 # --description--
 
-Até agora, você viu como usar o `if/else`, `&&`, e o operador ternário (`condition ? expressionIfTrue : expressionIfFalse`) para tomar decisões condicionais sobre o que renderizar e quando. No entanto, resta um tópico importante para discutir que permite que você combine todos esses conceitos com outro poderoso recurso React: props. Usar props para renderizar condicionalmente código é muito comum entre desenvolvedores React — isto é, eles usam o valor de uma determinada propriedade para tomar decisões automaticamente sobre o que renderizar.
+Até agora, você viu como usar o `if/else`, `&&`, e o operador ternário (`condition ? expressionIfTrue : expressionIfFalse`) para tomar decisões condicionais sobre o que renderizar e quando. No entanto, resta um tópico importante para discutir que permite que você combine todos esses conceitos com outro poderoso recurso React: props. Usar props para renderizar código condicionalmente é muito comum entre desenvolvedores React — isto é, eles usam o valor de uma determinada propriedade para tomar decisões automaticamente sobre o que renderizar.
 
 Neste desafio, você vai configurar um componente filho para tomar decisões de renderização com base em props. Você também usará o operador ternário, mas você pode ver como vários dos outros conceitos que foram abordados nos últimos desafios poderão ser igualmente úteis neste contexto.
 
 # --instructions--
 
-O editor de código tem dois componentes que estão parcialmente definidos para você: um pai chamado `GameOfChance`, e uma filho chamado `Results`. Eles são usados para criar um jogo simples onde o usuário pressiona um botão para ver se ele vence ou perde.
+O editor de código tem dois componentes que estão parcialmente definidos para você: um pai chamado `GameOfChance` e um filho chamado `Results`. Eles são usados para criar um jogo simples onde o usuário pressiona um botão para ver se ele vence ou perde.
 
 Primeiro, você precisará de uma expressão simples que retorna aleatoriamente um valor diferente toda vez que for executado. Você pode usar `Math.random()`. Esse método retorna um valor entre `0` (inclusivo) e `1` (exclusivo) a cada vez que é chamado. Portanto, para probabilidades 50/50, use `Math.random() >= .5` na sua expressão. Estatísticas falando, essa expressão retornará `true` 50% das vezes, e `false` os outros 50%. No método de renderização, substitua `null` pela expressão acima para completar a declaração de variável.
 

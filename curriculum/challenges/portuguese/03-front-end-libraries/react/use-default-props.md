@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616b
-title: Usar Propriedades Padrão
+title: Usar props padrão
 challengeType: 6
 forumTopicId: 301418
 dashedName: use-default-props

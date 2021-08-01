@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c55
-title: Test if an Object has a Property
+title: Testar se um objeto tem uma propriedade
 challengeType: 2
 forumTopicId: 301604
 dashedName: test-if-an-object-has-a-property
@@ -8,17 +8,17 @@ dashedName: test-if-an-object-has-a-property
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`property` asserts that the actual object has a given property.
+`property` afirma que o objeto factual possui uma determinada propriedade.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#16` in the `Objects` suite, change each `assert` to either `assert.property` or `assert.notProperty` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Em `tests/1_unit-tests.js`, no teste de número `#16` no grupo de testes `Objects`, modifique cada `assert` para `assert.property` ou para `assert.notProperty`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 
-All tests should pass.
+Todos os testes devem passar.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `property` vs. `notProperty`.
+Você deve escolher o método correto para a primeira afirmação - `property` ou `notProperty`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `property` vs. `n
   );
 ```
 
-You should choose the correct method for the second assertion - `property` vs. `notProperty`.
+Você deve escolher o método correto para a segunda afirmação - `property` ou `notProperty`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ You should choose the correct method for the second assertion - `property` vs. `
   );
 ```
 
-You should choose the correct method for the third assertion - `property` vs. `notProperty`.
+Você deve escolher o método correto para a terceira afirmação - `property` ou `notProperty`.
 
 ```js
 (getUserInput) =>

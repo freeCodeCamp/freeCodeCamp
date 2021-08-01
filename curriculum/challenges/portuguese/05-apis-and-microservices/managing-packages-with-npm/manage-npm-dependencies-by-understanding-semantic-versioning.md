@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c01
-title: Manage npm Dependencies By Understanding Semantic Versioning
+title: Gerenciar dependências do npm entendendo o versionamento semântico
 challengeType: 2
 forumTopicId: 301529
 dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
@@ -8,23 +8,23 @@ dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
 
 # --description--
 
-`Versions` of the npm packages in the dependencies section of your package.json file follow what’s called Semantic Versioning (SemVer), an industry standard for software versioning aiming to make it easier to manage dependencies. Libraries, frameworks or other tools published on npm should use SemVer in order to clearly communicate what kind of changes projects can expect if they update.
+As `Versions` (versões) dos pacotes do npm na seção de dependências do seu arquivo package.json seguem o que chamamos de Semantic Versioning (SemVer), um padrão do setor para versionamento de software, com o objetivo de facilitar o gerenciamento de dependências. Bibliotecas, frameworks ou outras ferramentas publicadas no npm devem usar o SemVer para comunicar claramente que tipo de mudanças os projetos podem esperar caso eles atualizem.
 
-Knowing SemVer can be useful when you develop software that uses external dependencies (which you almost always do). One day, your understanding of these numbers will save you from accidentally introducing breaking changes to your project without understanding why things that worked yesterday suddenly don’t work today. This is how Semantic Versioning works according to the official website:
+Conhecer o SemVer pode ser útil quando você desenvolve um software que usa dependências externas (algo que você faz quase sempre). Um dia, seu entendimento desses números vai evitar que você introduza acidentalmente alterações que causem problemas em seu projeto, sem compreender por que as coisas que funcionaram ontem, de repente, não funcionam hoje. É assim que o Versionamento Semântico funciona de acordo com o site oficial:
 
 ```json
 "package": "MAJOR.MINOR.PATCH"
 ```
 
-The MAJOR version should increment when you make incompatible API changes. The MINOR version should increment when you add functionality in a backwards-compatible manner. The PATCH version should increment when you make backwards-compatible bug fixes. This means that PATCHes are bug fixes and MINORs add new features but neither of them break what worked before. Finally, MAJORs add changes that won’t work with earlier versions.
+A versão MAJOR (principal) deve incrementar quando você fizer alterações incompatíveis na API. A versão MINOR (secundária) deve incrementar quando adicionar funcionalidades retrocompatíveis. A versão PATCH deve incrementar quando você fizer consertos de bugs retrocompatíveis. Isso significa que PATCHes são correções de bugs e MINORs adicionam novas funcionalidades, mas nenhum deles quebra o que funcionava antes. Por fim, as MAJORs adicionam alterações que não funcionarão com versões anteriores.
 
 # --instructions--
 
-In the dependencies section of your package.json file, change the `version` of moment to match MAJOR version 2, MINOR version 10 and PATCH version 2
+Na seção de dependências do seu arquivo package.json, altere a `version` do moment para que corresponda à versão MAJOR 2, à versão MINOR 10 e à versão 2 de PATCH
 
 # --hints--
 
-"dependencies" should include "moment"
+As "dependencies" devem incluir o "moment"
 
 ```js
 (getUserInput) =>
@@ -43,7 +43,7 @@ In the dependencies section of your package.json file, change the `version` of m
   );
 ```
 
-"moment" version should be "2.10.2"
+A versão do "moment" deve ser a "2.14.0"
 
 ```js
 (getUserInput) =>

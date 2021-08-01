@@ -1,6 +1,6 @@
 ---
 id: 564944c91be2204b269d51e3
-title: Altere Texto Dentro de um Elemento Usando JQuery
+title: Alterar texto dentro de um elemento usando jQuery
 challengeType: 6
 forumTopicId: 16773
 dashedName: change-text-inside-an-element-using-jquery
@@ -8,9 +8,9 @@ dashedName: change-text-inside-an-element-using-jquery
 
 # --description--
 
-Usando JQuery, você pode alterar o texto entre as tags de abertura e fechamento de um elemento. Você pode alterar até a marcação HTML.
+Usando jQuery, você pode alterar o texto entre as tags de abertura e fechamento de um elemento. Você pode alterar até a marcação HTML.
 
-jQuery possui uma função chamada `.html()` que permite a você adicionar tags HTML e texto dentro de um elemento. Qualquer conteúdo previamente dentro do elemento será completamente substituído com o conteúdo que você forneceu usando essa função.
+O jQuery possui uma função chamada `.html()` que permite a você adicionar tags HTML e texto dentro de um elemento. Qualquer conteúdo previamente dentro do elemento será completamente substituído com o conteúdo que você forneceu usando essa função.
 
 Aqui está como você rescreveria e enfatizaria o texto do nosso cabeçalho:
 
@@ -18,7 +18,7 @@ Aqui está como você rescreveria e enfatizaria o texto do nosso cabeçalho:
 $("h3").html("<em>jQuery Playground</em>");
 ```
 
-JQuery também possui uma função similar chamada `.text()` que altera apenas texto sem adicionar tags. Em outras palavras, essa função não irá avaliar nenhuma tag HTML passada a ela, mas ao invés disso irá tratá-la como o texto que você quer substituir o conteúdo atual existente.
+O jQuery também possui uma função similar chamada `.text()` que altera apenas texto sem adicionar tags. Em outras palavras, essa função não irá avaliar nenhuma tag HTML passada a ela, mas ao invés disso irá tratá-la como o texto que você quer substituir o conteúdo atual existente.
 
 Modifique o botão com id `target4` enfatizando seu texto.
 

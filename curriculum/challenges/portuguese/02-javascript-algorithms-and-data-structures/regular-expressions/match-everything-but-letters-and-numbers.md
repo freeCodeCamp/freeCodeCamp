@@ -10,7 +10,7 @@ dashedName: match-everything-but-letters-and-numbers
 
 Você aprendeu que você pode usar um atalho para capturar alfanuméricos `[A-Za-z0-9_]` usando `\w`. Você pode querer capturar exatamente o oposto disso.
 
-Você pode capturar não-alfanuméricos usando `\W` ao invés de `\w`. Observe que o atalho usa uma maiúscula. Este atalho é o mesmo que escrever `[^A-Za-z0-9_]`.
+Você pode capturar não alfanuméricos usando `\W` ao invés de `\w`. Observe que o atalho usa uma maiúscula. Este atalho é o mesmo que escrever `[^A-Za-z0-9_]`.
 
 ```js
 let shortHand = /\W/;
@@ -24,17 +24,17 @@ A primeira chamada a `match` retorna `["%"]` enquanto o segundo retorna `["!"]`.
 
 # --instructions--
 
-Use o atalho `\W` para contar o número de caracteres não-alfanuméricos em várias strings.
+Use o atalho `\W` para contar o número de caracteres não alfanuméricos em várias strings.
 
 # --hints--
 
-Sua regex deve usar a flag global.
+A regex deve usar a flag global.
 
 ```js
 assert(nonAlphabetRegex.global);
 ```
 
-Sua regex deve encontrar 6 caracteres não-alfanuméricos na string `The five boxing wizards jump quickly.`.
+A regex deve encontrar 6 caracteres não alfanuméricos na string `The five boxing wizards jump quickly.`.
 
 ```js
 assert(
@@ -42,13 +42,13 @@ assert(
 );
 ```
 
-Sua regex deve usar o atalho que captura os caracteres não-alfanuméricos.
+A regex deve usar o atalho que captura os caracteres não alfanuméricos.
 
 ```js
 assert(/\\W/.test(nonAlphabetRegex.source));
 ```
 
-Sua regex deve encontrar 8 caracteres não-alfanuméricos na string `Pack my box with five dozen liquor jugs.`
+A regex deve encontrar 8 caracteres não alfanuméricos na string `Pack my box with five dozen liquor jugs.`
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-Sua regex deve encontrar 6 caracteres não-alfanuméricos na string `How vexingly quick daft zebras jump!`
+A regex deve encontrar 6 caracteres não alfanuméricos na string `How vexingly quick daft zebras jump!`
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-Sua regex deve encontrar 12 caracteres não-alfanuméricos na string `123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.`
+A regex deve encontrar 12 caracteres não alfanuméricos na string `123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.`
 
 ```js
 assert(

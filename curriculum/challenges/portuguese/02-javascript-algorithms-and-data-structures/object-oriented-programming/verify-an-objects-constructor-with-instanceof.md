@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b7a
-title: Verifique o Construtor de um Objeto com instanceof
+title: Verificar o construtor de um objeto com instanceof
 challengeType: 1
 forumTopicId: 301337
 dashedName: verify-an-objects-constructor-with-instanceof

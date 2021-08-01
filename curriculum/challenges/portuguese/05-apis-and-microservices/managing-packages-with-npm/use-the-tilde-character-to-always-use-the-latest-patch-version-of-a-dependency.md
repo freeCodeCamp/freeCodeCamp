@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c02
-title: Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency
+title: Usar o til para usar sempre a última versão de patch de uma dependência
 challengeType: 2
 forumTopicId: 301532
 dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-dependency
@@ -8,9 +8,9 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --description--
 
-In the last challenge, you told npm to only include a specific version of a package. That’s a useful way to freeze your dependencies if you need to make sure that different parts of your project stay compatible with each other. But in most use cases, you don’t want to miss bug fixes since they often include important security patches and (hopefully) don’t break things in doing so.
+No último desafio, você disse ao npm para incluir apenas uma versão específica de um pacote. Essa é uma maneira útil de congelar suas dependências, caso você precise garantir que diferentes partes do seu projeto permaneçam compatíveis entre si. Mas, na maioria dos casos de uso, você não quer perder as correções de erros, já que elas geralmente incluem correções de segurança importantes e (esperamos que) não quebrem nada ao fazer isso.
 
-To allow an npm dependency to update to the latest PATCH version, you can prefix the dependency’s version with the tilde (`~`) character. Here's an example of how to allow updates to any 1.3.x version.
+Para permitir que uma dependência do npm atualize para a última versão de PATCH, você pode prefixar a versão da dependência com o caractere de til (`~`). Aqui está um exemplo de como permitir atualizações para qualquer versão 1.3.x.
 
 ```json
 "package": "~1.3.8"
@@ -18,15 +18,15 @@ To allow an npm dependency to update to the latest PATCH version, you can prefix
 
 # --instructions--
 
-In the package.json file, your current rule for how npm may upgrade moment is to use a specific version (2.10.2). But now, you want to allow the latest 2.10.x version.
+No arquivo package.json, sua regra atual de como o npm pode atualizar o moment é usar uma versão específica (2.10.2). Mas agora, você deseja permitir a última versão de 2.10.x.
 
-Use the tilde (`~`) character to prefix the version of moment in your dependencies, and allow npm to update it to any new PATCH release.
+Use o caractere de til (`~`) para prefixar a versão do momento em suas dependências e permitir que o npm atualize para qualquer versão de PATCH.
 
-**Note:** The version numbers themselves should not be changed.
+**Observação:** os números da versão em si não devem ser alterados.
 
 # --hints--
 
-"dependencies" should include "moment"
+"dependencies" deve incluir o "moment"
 
 ```js
 (getUserInput) =>
@@ -45,7 +45,7 @@ Use the tilde (`~`) character to prefix the version of moment in your dependenci
   );
 ```
 
-"moment" version should match "~2.10.2"
+A versão do "moment" deve corresponder a "~2.10.2"
 
 ```js
 (getUserInput) =>

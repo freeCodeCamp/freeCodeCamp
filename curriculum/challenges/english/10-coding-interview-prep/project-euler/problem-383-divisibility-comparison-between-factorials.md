@@ -8,20 +8,22 @@ dashedName: problem-383-divisibility-comparison-between-factorials
 
 # --description--
 
-Let f5(n) be the largest integer x for which 5x divides n.
+Let $f_5(n)$ be the largest integer $x$ for which $5^x$ divides $n$.
 
-For example, f5(625000) = 7.
+For example, $f_5(625\\,000) = 7$.
 
-Let T5(n) be the number of integers i which satisfy f5((2·i-1)!) &lt; 2·f5(i!) and 1 ≤ i ≤ n. It can be verified that T5(103) = 68 and T5(109) = 2408210.
+Let $T_5(n)$ be the number of integers $i$ which satisfy $f_5((2 \times i - 1)!) &lt; 2 \times f_5(i!)$ and $1 ≤ i ≤ n$.
 
-Find T5(1018).
+It can be verified that $T_5({10}^3) = 68$ and $T_5({10}^9) = 2\\,408\\,210$.
+
+Find $T_5({10}^{18})$.
 
 # --hints--
 
-`euler383()` should return 22173624649806.
+`factorialDivisibilityComparison()` should return `22173624649806`.
 
 ```js
-assert.strictEqual(euler383(), 22173624649806);
+assert.strictEqual(factorialDivisibilityComparison(), 22173624649806);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler383(), 22173624649806);
 ## --seed-contents--
 
 ```js
-function euler383() {
+function factorialDivisibilityComparison() {
 
   return true;
 }
 
-euler383();
+factorialDivisibilityComparison();
 ```
 
 # --solutions--

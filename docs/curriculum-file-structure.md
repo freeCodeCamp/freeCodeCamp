@@ -96,9 +96,10 @@ When renaming a single challenge file, you need to:
 
 1. Change the name of the challenge file in the `curriculum/challenges/english` directory.
 1. Change the name of the `title` and `dashedName` within that file.
-1. Change the of the file, and the `dashedName` in those files for *all* of the other language directories to match.
+1. Change the name of the file, and the `dashedName` in those files for *all* of the other language directories to match.
 1. Update the name of the challenge in the relevant `meta.json` file. The challenge names here are not used in the build, but provide a user-friendly way to identify the challenge order.
 1. If the challenge is a certificate project, update the YAML file in `curriculum/english/12-certificates/<superBlock>` to the new name.
+1. If the challenge is a certificate project, update the `title` and `link` in `client/src/resources/cert-and-project-map.ts`
 1. If the challenge is a certificate project, update the main `README.md` file to the new name.
 
 ## The `dashedName` Property

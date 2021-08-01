@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036143
-title: Extrair a Lógica de State do Redux
+title: Extrair a lógica de state do Redux
 challengeType: 6
 forumTopicId: 301429
 dashedName: extract-state-logic-to-redux
