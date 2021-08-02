@@ -1,19 +1,19 @@
-# Curriculum File Structure
+# Struttura dei file del curriculum
 
-Our core instructional content is located within the conveniently named `curriculum` directory. This page will break down how these files are organized.
+Il nostro contenuto educativo centrale è situato nella cartella chiamata convenientemente `curriculum`. Questa pagina analizzerà come questi file sono organizzati.
 
-## Terminology
+## Terminologia
 
-There are a few terms we use when discussing our curriculum content.
+Questi sono alcuni termini che usiamo quando discutiamo il contenuto del nostro curriculum.
 
-- `certification` : When referring to a certification in this instance, it is talking about the actual certificate that users claim. Which is separate from the name of the superBlock.
-- `superBlock` : A superblock is the top level collection of challenges. Each superblock corresponds to a certification in the curriculum (i.e. Responsive Web Design).
-- `block` : A block is a section within a superblock. A block corresponds to a group of challenges in a given certification (i.e. Basic HTML and HTML5)
-- `challenge` : A challenge is a single lesson within the curriculum (i.e. Say Hello to HTML Elements)
+- `certification` : Quando riferito a una certificazione in questa istanza, sta parlando del certificato che gli utenti richiedono. Che è separato dal nome del superBlock.
+- `superBlock` : Un superblock è il raggruppamento superiore di sfide. Ogni superblock corrisponde a una certificazione nel curriculum (per esempio Web Design Responsivo).
+- `block` : Un block è una sezione in un superblock. Un blocco corrisponde a un gruppo di sfide in una certa certificazione (per esempio HTML Base e HTML5)
+- `challenge` : Una sfida è una singola lezione nel curriculum (per esempio Fare conoscenza con gli elementi HTML)
 
-## File Tree
+## Albero dei file
 
-Using those terms, here is how the file structure would be defined:
+Usando quei termini, ecco come la struttura dei file viene definita:
 
 ```md
 
@@ -27,37 +27,37 @@ curriculum/
 │  │  │  ├─ {challenge}.md
 ```
 
-## The `_meta` Directory
+## La cartella `_meta`
 
-The `_meta` directory is a special directory which contains `.json` files. These files correspond to each block in the curriculum, and are used to determine which superBlock a block belongs to, and the order of the challenges within that block.
+La cartella `_meta` è una cartella speciale che contiene dei file `.json`. Questi file corrispondono ad ogni blocco nel curriculum e sono usati per determinare a quale superblocco corrisponde un certo blocco, e l'ordine delle sfide in quel blocco.
 
-## Renaming Files
+## Rinominare i file
 
-There may be times when you need to rename a certificate, superblock, block, or challenge. This section will outline the steps needed to avoid build errors when doing so.
+Ci potrebbero essere volte in cui devi rinominare un certificato, superblocco, blocco o sfida. Questa sezione delinea gli step necessari per evitare errori di build nel farlo.
 
-> [!ATTENTION] Renaming files within the curriculum structure will often change the path (or URL) of the content on the main webpage. Doing so should be done with care, as redirects have to be set up for each change that is made.
+> [!ATTENTION] Rinominare i file nella struttura del curriculum spesso cambia il percorso (o l'URL) del contenuto sulla pagina web principale. Questo è da fare con cura, poiché bisogna configurare reindirizzamenti per ogni cambiamento che viene fatto.
 
-### Renaming a Certification
+### Rinominare una certificazione
 
-When renaming a certification, you will likely want to rename the associated superblock along with it. Do the following to rename only the certificate:
+Quando rinomini una certificazione, vorrai probabilmente rinominare il superblocco associato. Fai quanto segue per rinominare solo il certificato:
 
-1. Rename the `curriculum/challenges/_meta/{superBlock}-certficate` folder to the new name.
-1. In the `meta.json` file of that folder, rename the values in `name`, `dashedName`, and `challengeOrder` to the new cert name.
-1. In `curriculum/challenges/english/12-certificate`, rename the `{superBlock}-certificate` folder, and the YAML file within it, to the new name.
-1. In the YAML file, change the `title` to the new name.
-1. Rename the file and folder from step 3 for the rest curriculum languages.
-1. Update `client/src/redux/index.ts` to use the correct `title`.
-1. Optionally, update the `certSlug` for the superblock in the same file. **Note** that renaming a `certSlug` will change the URL for certifications and should only be done with careful consideration.
-1. Update the `title` in `client/src/resources/cert-and-project-map.ts` to the new value. **Note** that changing the `title` here **will break** the superBlock page for the associated certification. It relies on the superBlock title to match the certification title. You will likely want to rename the superBlock at the same time.
-1. If you renamed the `certSlug` in step 7, change it here for the cert and all the nested `projects` values.
-1. In `config/certification-settings.js`, update the value of `certTypeTitleMap` to the new name.
-1. If you renamed the `certSlug` in step 7, update the key of `certSlugTypeMap` in the same file.
-1. Update the certificate name in the `legacyCerts` array of the `client/src/client-only-routes/show-project-links.tsx` if needed.
-1. Update the main `README.md` file to the new name.
+1. Rinomina la cartella `curriculum/challenges/_meta/{superBlock}-certficate` con il nuovo nome.
+1. Nel file `meta.json` di quella cartella, rinomina i valori in `name`, `dashedName`, e `challengeOrder` con il nuovo nome.
+1. In `curriculum/challenges/english/12-certificate`, rinomina la cartella `{superBlock}-certificate`, e il file YAML dentro di essa, con il nuovo nome.
+1. Nel file YAML, cambia il titolo (`title`) con il nuovo nome.
+1. Rinomina il file e la cartella dello step 3 nel resto delle lingue del curriculum.
+1. Aggiorna `client/src/redux/index.ts` con il corretto `title`.
+1. Facoltativamente, aggiorna il `certSlug` per il superblocco nello stesso file. **Nota** che rinominare un `certSlug` cambia l'URL della certificazione ed è da fare con attenta considerazione.
+1. Aggiorna il `title` in `client/src/resources/cert-and-project-map.ts` al nuovo valore. **Nota** che cambiare `title` qui **romperà** la pagina superBlock per la certificazione associata. Fa affidamento sul titolo del superblocco per combaciare il titolo del certificato. Vorrai probabilmente rinominare il superblocco allo stesso tempo.
+1. Se hai rinominato `certSlug` allo step 7, cambialo qui per il certificato e tutti i valori dei progetti annidati `projects`.
+1. In `config/certification-settings.js`, aggiorna il valore di `certTypeTitleMap` al nuovo nome.
+1. Se hai rinominato `certSlug` allo step 7, aggiorna la key di `certSlugTypeMap` nello stesso file.
+1. Se necessario aggiorna il nome del certificato nell'array `legacyCerts` di `client/src/client-only-routes/show-project-links.tsx`.
+1. Aggiorna il file `README.md` principale al nuovo nome.
 
-### Renaming a Superblock
+### Rinominare un superblocco
 
-> [!NOTE] When you rename a superBlock, the new folder name is used as the path and should be considered the "correct" name. All other values should be updated to reflect that change.
+> [!NOTE] Quando rinomini un superblocco, il nuovo nome della cartella è usato come percorso e dovrebbe essere considerato il nome "corretto". Tutti gli altri valori devono essere aggiornati per riflettere il cambiamento.
 
 Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all shares a name. To rename only a superBlock you need to:
 

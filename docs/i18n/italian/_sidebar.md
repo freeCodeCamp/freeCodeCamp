@@ -19,7 +19,7 @@
   - [Lavorare sulla app web in locale](how-to-work-on-localized-client-webapp.md)
   - [Intercettare email in uscita localmente](how-to-catch-outgoing-emails-locally.md)
   - [Testare traduzioni in locale](how-to-test-translations-locally.md)
-  - [Understand the curriculum file structure](curriculum-file-structure.md)
+  - [Capire la struttura dei file del curriculum](curriculum-file-structure.md)
 
 ---
 
