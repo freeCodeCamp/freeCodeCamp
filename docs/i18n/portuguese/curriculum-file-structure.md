@@ -1,4 +1,4 @@
-# Estrutura do arquivo do currículo
+# Estrutura de arquivos do currículo
 
 Nosso conteúdo principal de instrução está localizado dentro de um diretório convenientemente chamado de `curriculum`. Esta página descreverá como esses arquivos estão organizados.
 
@@ -59,10 +59,10 @@ Ao renomear uma certificação, você provavelmente vai querer renomear o superb
 
 > [!NOTE] Ao renomear um superbloco, o novo nome de pasta é usado como o caminho e deve ser considerado o nome "correto". Todos os outros valores deverão ser atualizados para refletir essa mudança.
 
-Além disso, você provavelmente vai querer renomear o certificado e o bloco `{superBlock}-projects` quando renomear um superbloco, já que todos compartilham um mesmo nome. Para renomear somente um superbloco, você precisa:
+Além disso, você provavelmente vai querer renomear o certificado e o bloco `{superBlock}-projects` quando renomear um superbloco, já que todos compartilham um mesmo nome. Faça o seguinte para renomear somente um superbloco:
 
-1. Renomear a pasta do superbloco no diretório `curriculum/challenges/english`.
-1. Renomear a pasta do superbloco em *todos* os outros diretórios `curriculum/challenges/{language}`.
+1. Renomeie a pasta do superbloco no diretório `curriculum/challenges/english`.
+1. Renomeie a pasta do superbloco em *todos* os outros diretórios `curriculum/challenges/{language}`.
 1. Para cada bloco naquele superbloco, atualize o valor de `superBlock` no arquivo `meta.json` até seu dashedName. Você não precisa renomear as pastas aqui. Faça isso ao renomear um bloco.
 1. Renomeie a pasta do superbloco em `client/src/pages/learn`.
 1. Atualize o arquivo `index.md` na pasta acima, alterando os valores de `title` e `superBlock` com o novo nome.
@@ -76,30 +76,30 @@ Além disso, você provavelmente vai querer renomear o certificado e o bloco `{s
 
 ### Renomear um bloco
 
-Ao renomear um bloco do currículo, você precisa:
+Faça o seguinte para renomear um bloco do currículo:
 
-1. Mudar o nome da pasta do bloco no diretório `curriculum/challenges/english/{superBlock}`.
-1. Mudar o nome da mesma pasta do bloco em *todos* os outros diretórios de idioma para que correspondam. Eles devem ter a mesma estrutura que a do inglês ou haverá um erro na build.
-1. Mudar o nome da pasta do bloco no diretório `_meta`.
-1. Atualizar as propriedades `name` e `dashedName` para aquele arquivo `meta.json` do bloco.
-1. Atualizar `client/utils/help-category-map.json` para que use o novo nome do bloco como chave.
-1. Atualizar a pasta do bloco em `client/src/pages/learn/{superBlock}`.
+1. Mude o nome da pasta do bloco no diretório `curriculum/challenges/english/{superBlock}`.
+1. Mude o nome da mesma pasta do bloco em *todos* os outros diretórios de idioma para que correspondam. Eles devem ter a mesma estrutura que a do inglês ou haverá um erro na build.
+1. Mude o nome da pasta do bloco no diretório `_meta`.
+1. Atualize as propriedades `name` e `dashedName` para aquele arquivo `meta.json` do bloco.
+1. Atualize `client/utils/help-category-map.json` para que use o novo nome do bloco como chave.
+1. Atualize a pasta do bloco em `client/src/pages/learn/{superBlock}`.
 1. No arquivo `index.md` da pasta acima, atualize o valor de `block` no frontmatter.
 1. Nos arquivos `client/i18n/locales/{language}/intro.json`, atualize o nome do bloco com o novo nome para todos os idiomas. No arquivo `intro.json` do inglês, atualize também o `title`.
 1. Atualize o arquivo `README.md` principal com o novo nome.
 
 ### Renomear um desafio
 
-Ao renomear um único arquivo de desafio, você precisa:
+Faça o seguinte para renomear um único arquivo de desafio:
 
-1. Mudar o nome do arquivo do desafio no diretório `curriculum/challenges/english/`.
-1. Mudar o nome de `title` e de `dashedName` naquele arquivo.
-1. Mudar o nome do arquivo e o `dashedName` naqueles arquivos para *todos* os outros diretórios de idiomas para que correspondam.
-1. Atualizar o nome do desafio no arquivo `meta.json` relevante. Os nomes dos desafios não são usados na build, mas fornecem uma alternativa mais fácil de identificar a ordem dos desafios.
+1. Mude o nome do arquivo do desafio no diretório `curriculum/challenges/english/`.
+1. Mude o nome de `title` e de `dashedName` naquele arquivo.
+1. Mude o nome do arquivo e o `dashedName` naqueles arquivos para *todos* os outros diretórios de idiomas para que correspondam.
+1. Atualize o nome do desafio no arquivo `meta.json` relevante. Os nomes dos desafios não são usados na build, mas fornecem uma alternativa mais fácil de identificar a ordem dos desafios.
 1. Se o desafio for um projeto de certificado, atualize o arquivo YAML em `curriculum/english/12-certificates/<superBlock>` para o novo nome.
 1. Se o desafio for um projeto de certificação, atualize o `title` e o `link` em `client/src/resources/cert-and-project-map.ts`
 1. Se o desafio for um projeto de certificação, atualize o arquivo `README.md` principal com o novo nome.
 
 ## A propriedade `dashedName`
 
-A propriedade `dashedName` é usada para gerar o caminho do URL para o superbloco, bloco, ou desafio. Eles devem corresponder em geral ao que o assistente `/utils/dasherize.js` daria como resultado para o nome do arquivo.
+A propriedade `dashedName` é usada para gerar o caminho do URL para o superbloco, bloco, ou desafio. Ela deve corresponder em geral ao que o assistente `/utils/dasherize.js` daria como resultado para o nome do arquivo.
