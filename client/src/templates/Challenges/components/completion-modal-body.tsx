@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
 import BezierEasing from 'bezier-easing';
-import GreenPass from '../../../assets/icons/green-pass';
+import React, { PureComponent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
+import GreenPass from '../../../assets/icons/green-pass';
 
 interface CompletionModalBodyProps {
   block: string;

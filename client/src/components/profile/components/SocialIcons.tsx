@@ -1,12 +1,12 @@
-import React from 'react';
-import { Row, Col } from '@freecodecamp/react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
   faGithub,
   faTwitter
 } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Row, Col } from '@freecodecamp/react-bootstrap';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './social-icons.css';
 

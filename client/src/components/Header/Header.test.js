@@ -1,13 +1,12 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { create } from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import { UniversalNav } from './components/universal-nav';
-import { NavLinks } from './components/nav-links';
-import AuthOrProfile from './components/auth-or-profile';
-
 import envData from '../../../../config/env.json';
-import { useTranslation } from 'react-i18next';
+import AuthOrProfile from './components/auth-or-profile';
+import { NavLinks } from './components/nav-links';
+import { UniversalNav } from './components/universal-nav';
 
 const { apiLocation } = envData;
 

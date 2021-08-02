@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
+import { Row } from '@freecodecamp/react-bootstrap';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
-import { Row } from '@freecodecamp/react-bootstrap';
-import ReactTooltip from 'react-tooltip';
 import addDays from 'date-fns/addDays';
 import addMonths from 'date-fns/addMonths';
-import startOfDay from 'date-fns/startOfDay';
 import isEqual from 'date-fns/isEqual';
+import startOfDay from 'date-fns/startOfDay';
+import React, { Component } from 'react';
 import { TFunction, useTranslation } from 'react-i18next';
-
-import FullWidthRow from '../../helpers/full-width-row';
-import Spacer from '../../helpers/spacer';
+import ReactTooltip from 'react-tooltip';
 
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
-import { langCodes } from '../../../../../config/i18n/all-langs';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import envData from '../../../../../config/env.json';
+import { langCodes } from '../../../../../config/i18n/all-langs';
+import FullWidthRow from '../../helpers/full-width-row';
+import Spacer from '../../helpers/spacer';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { clientLocale } = envData;

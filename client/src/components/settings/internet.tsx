@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   HelpBlock,
   FormControl,
@@ -9,14 +8,15 @@ import {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
-import isURL from 'validator/lib/isURL';
+import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
+import isURL from 'validator/lib/isURL';
 
 import { maybeUrlRE } from '../../utils';
 
-import SectionHeader from './section-header';
 import { FullWidthRow } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
+import SectionHeader from './section-header';
 
 interface InternetFormValues {
   githubProfile: string;

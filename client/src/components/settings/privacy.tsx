@@ -1,20 +1,20 @@
+import { Button, Form } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
+import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { Button, Form } from '@freecodecamp/react-bootstrap';
-import { TFunction, withTranslation } from 'react-i18next';
-import type { Dispatch } from 'redux';
 
 import { userSelector } from '../../redux';
 import { submitProfileUI } from '../../redux/settings';
 
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
-import ToggleSetting from './toggle-setting';
 import SectionHeader from './section-header';
+import ToggleSetting from './toggle-setting';
 
 const mapStateToProps = createSelector(userSelector, user => ({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

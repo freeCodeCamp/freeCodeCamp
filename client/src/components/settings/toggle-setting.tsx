@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   FormGroup,
   ControlLabel,
@@ -6,9 +5,10 @@ import {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
+import React from 'react';
 
-import TB from '../helpers/toggle-button';
 import { ButtonSpacer } from '../helpers';
+import TB from '../helpers/toggle-button';
 
 import './toggle-setting.css';
 

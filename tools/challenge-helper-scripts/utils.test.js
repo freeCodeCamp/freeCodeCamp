@@ -1,6 +1,7 @@
 const fs = require('fs');
-const mock = require('mock-fs');
+const ObjectID = require('bson-objectid');
 const glob = require('glob');
+const mock = require('mock-fs');
 
 // NOTE:
 // Use `console.log()` before mocking the filesystem or use
@@ -48,7 +49,6 @@ jest.mock(
 );
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
-const ObjectID = require('bson-objectid');
 const { getStepTemplate } = require('./helpers/get-step-template');
 const { createStepFile, reorderSteps } = require('./utils');
 

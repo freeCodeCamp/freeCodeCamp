@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import EditorTabs from './EditorTabs';
+import React from 'react';
 import BreadCrumb from '../components/bread-crumb';
+import EditorTabs from './EditorTabs';
 
 const propTypes = {
   block: PropTypes.string,

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import { navigate } from 'gatsby';
 import React from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
-import { navigate } from 'gatsby';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
