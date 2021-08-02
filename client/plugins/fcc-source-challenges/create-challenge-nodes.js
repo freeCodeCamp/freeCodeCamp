@@ -17,9 +17,7 @@ function createChallengeNode(challenge, reporter) {
     challenge.challengeType !== 12
   ) {
     reporter.warn(`
-
     ${challenge.title} has a description that will break things!
-
     `);
   }
   const contentDigest = crypto
