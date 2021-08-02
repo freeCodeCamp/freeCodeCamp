@@ -1,6 +1,6 @@
 ---
 id: 587d8251367417b2b2512c63
-title: Remove Elements from a Linked List
+title: Remover elementos de uma lista encadeada
 challengeType: 1
 forumTopicId: 301712
 dashedName: remove-elements-from-a-linked-list
@@ -8,23 +8,23 @@ dashedName: remove-elements-from-a-linked-list
 
 # --description--
 
-The next important method that any implementation of a linked list will need is a `remove` method. This method should take the element we want to remove as an argument, and then search the list to find and remove the node that contains that element.
+O próximo método importante que qualquer implementação de uma lista encadeada precisará é de um método `remove`. Este método deve receber como argumento o elemento que queremos remover, e, em seguida, procurar na lista para encontrar e remover o nó que contém esse elemento.
 
-Whenever we remove a node from a linked list, it's important that we don't accidentally orphan the rest of the list in doing so. Recall that every node's `next` property points to the node that follows it in the list. If we're removing the middle element, say, we'll want to make sure that we have a connection from that element's previous node's `next` property to the middle element's `next` property (which is the next node in the list!)
+Sempre que removermos um nó de uma lista encadeada, é importante que não deixemos o resto da lista órfã ao fazer isso. Lembre-se de que todos os pontos de propriedade `next` dos nós apontam para o nó que os segue na lista. Se estivermos removendo o elemento do meio, digamos, vamos precisar ter certeza de que temos uma conexão com a propriedade `next` do nó anterior daquele elemento para a propriedade `next` do elemento do meio (que é o próximo nó na lista!)
 
-This might sound really confusing, so let's return to the conga line example so we have a good conceptual model. Picture yourself in a conga line, and the person directly in front of you leaves the line. The person who just left the line no longer has her hands on anyone in line--and you no longer have your hands on the person that left. You step forward and put your hands on next person you see.
+Isso pode parecer muito confuso, então vamos voltar ao exemplo da fila de dançarinos de conga para que tenhamos um bom modelo conceitual. Imagine-se em uma fila de dançarinos de conga e que a pessoa diretamente à sua frente saia da fila. A pessoa que acabou de deixar a fila já não tem as mãos sobre ninguém da fila - e você já não tem as mãos sobre a pessoa que saiu. Você dá um passo para a frente e coloca as mãos na próxima pessoa que vê.
 
-If the element we wish to remove is the `head` element, we reassign the `head` to the second node of the linked list.
+Se o elemento que queremos remover for o elemento `head`, reatribuímos a propriedade `head` para o segundo nó da lista encadeada.
 
 # --instructions--
 
-Write a `remove` method that takes an element and removes it from the linked list.
+Escreva um método `remove` que pegue um elemento e o remova da lista encadeada.
 
-**Note:** The `length` of the list should decrease by one every time an element is removed from the linked list.
+**Observação:** o `length` da lista deve diminuir em um sempre que um elemento for removido da lista encadeada.
 
 # --hints--
 
-Your `LinkedList` class should have a `remove` method.
+A classe `LinkedList` deve ter o método `remove`.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-Your `remove` method should reassign `head` to the second node when the first node is removed.
+O método `remove` deve reatribuir `head` ao segundo nó quando o primeiro nó for removido.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-Your `remove` method should decrease the `length` of the linked list by one for every node removed.
+O método `remove` deve diminuir o `length` da lista encadeada em um para cada nó removido.
 
 ```js
 assert(
@@ -65,7 +65,7 @@ assert(
 );
 ```
 
-Your `remove` method should reassign the reference of the previous node of the removed node to the removed node's `next` reference.
+O método `remove` deve reatribuir a referência do nó anterior ao nó removido para a referência `next` do nó removido.
 
 ```js
 assert(
@@ -81,7 +81,7 @@ assert(
 );
 ```
 
-Your `remove` method should not change the linked list if the element does not exist in the linked list.
+O método `remove` não deve alterar a lista encadeada se o elemento não existir nela.
 
 ```js
 assert(

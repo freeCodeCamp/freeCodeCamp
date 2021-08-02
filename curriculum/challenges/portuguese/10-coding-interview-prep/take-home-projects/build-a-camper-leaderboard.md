@@ -1,6 +1,6 @@
 ---
 id: bd7156d8c242eddfaeb5bd13
-title: Construa uma página inicial do fórum do freeCodeCamp
+title: Criar uma página inicial do fórum do freeCodeCamp
 challengeType: 3
 forumTopicId: 302349
 dashedName: build-a-freecodecamp-forum-homepage

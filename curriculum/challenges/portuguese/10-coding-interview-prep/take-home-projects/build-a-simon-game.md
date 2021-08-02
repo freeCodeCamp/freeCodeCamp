@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd1c
-title: Build a Simon Game
+title: Criar um Genius
 challengeType: 3
 forumTopicId: 302357
 dashedName: build-a-simon-game
@@ -8,31 +8,31 @@ dashedName: build-a-simon-game
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: [https://codepen.io/freeCodeCamp/full/obYBjE](https://codepen.io/freeCodeCamp/full/obYBjE).
+**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: [https://codepen.io/freeCodeCamp/full/obYBjE](https://codepen.io/freeCodeCamp/full/obYBjE).
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**User Story:** I am presented with a random series of button presses.
+**Especificação de usuário:** sou confrontado com uma série aleatória de pressionamentos de botões.
 
-**User Story:** Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.
+**Especificação de usuário:** cada vez que eu inserir uma série de pressionamentos de botões corretamente, vejo a mesma série de pressionamentos de botões, mas com um passo adicional.
 
-**User Story:** I hear a sound that corresponds to each button both when the series of button presses plays, and when I personally press a button.
+**Especificação de usuário:** eu ouço um som que corresponde a cada botão quando a série de pressionamento de botões é reproduzida e quando eu pessoalmente aperto um botão.
 
-**User Story:** If I press the wrong button, I am notified that I have done so, and that series of button presses starts again to remind me of the pattern so I can try again.
+**Especificação de usuário:** se eu pressionar um botão errado, eu sou notificado de que fiz isso. Essa série de pressionamentos de botões começa novamente para me lembrar do padrão para que eu possa tentar novamente.
 
-**User Story:** I can see how many steps are in the current series of button presses.
+**Especificação de usuário:** eu posso ver quantos passos há na série atual de pressionamentos de botões.
 
-**User Story:** If I want to restart, I can hit a button to do so, and the game will return to a single step.
+**Especificação de usuário:** se eu quiser reiniciar, posso apertar um botão para fazer isso. O jogo voltará a uma única etapa.
 
-**User Story:** I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.
+**Especificação de usuário:** posso jogar em modo restrito, onde, se eu apertar um botão errado, o jogo me notifica que eu fiz isso e o jogo reinicia com uma nova série aleatória de pressionamento de botões.
 
-**User Story:** I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
+**Especificação de usuário:** posso vencer o jogo obtendo uma série de 20 etapas corretas. Eu fui notificado da minha vitória e, então, o jogo recomeça.
 
-**Hint:** Here are mp3s you can use for each button: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`.
+**Dica:** aqui estão os mp3s que você pode usar para cada botão: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum do freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

@@ -1,6 +1,6 @@
 ---
 id: bd7108d8c242eddfaeb5bd13
-title: Map Data Across the Globe
+title: Mapeamento de dados através do mundo
 challengeType: 3
 forumTopicId: 302365
 dashedName: map-data-across-the-globe
@@ -8,21 +8,21 @@ dashedName: map-data-across-the-globe
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/mVEJag>.
+**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/mVEJag>.
 
-Fulfill the following [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Atenda às seguintes [especificações de usuário](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**User Story:** I can see where all Meteorites landed on a world map.
+**Especificação de usuário:** posso ver onde todos os meteoritos pousaram no mapa do mundo.
 
-**User Story:** I can tell the relative size of the meteorite, just by looking at the way it's represented on the map.
+**Especificação de usuário:** eu posso dizer o tamanho relativo do meteorito, apenas olhando para a forma como ele é representado no mapa.
 
-**User Story:** I can mouse over the meteorite's data point for additional data.
+**Especificação de usuário:** posso passar o mouse sobre os dados do meteorito para obter dados adicionais.
 
-**Hint:** Here's a dataset you can use to build this: <https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json>
+**Dica:** aqui está um conjunto de dados que você pode usar para criar essa aplicação: <https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json>
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 
