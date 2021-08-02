@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-Your code should set `zeroArray(4,3)` to return an array holding 4 rows of 3 columns of zeroes each.
+`zeroArray(4,3)` should return an array holding 4 rows of 3 columns of zeroes each.
 
 ```js
 assert(JSON.stringify(zeroArray(4,3)) == '[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]');
