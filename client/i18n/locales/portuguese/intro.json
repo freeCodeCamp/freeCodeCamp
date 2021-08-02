@@ -445,7 +445,7 @@
     "intro": [
       "Com tudo o que fazemos on-line, há uma grande quantidade de informações sensíveis em risco: endereços de e-mail, senhas, números de telefone e muito mais.",
       "Com o certificado de segurança da informação, você criará um aplicativo web seguro com o HelmetJS para aprender os fundamentos de proteção de informações on-line.",
-      "Você também vai construir um cliente TCP, um Nmap e um scanner de portas em Python. Isso ajudará você a aprender o básico do teste de penetração — um componente importante de boa segurança da informação."
+      "Você também vai construir um cliente TCP, um Nmap e um scanner de portas em Python. Isso ajudará você a aprender o básico do teste de intrusão — um componente importante de boa segurança da informação."
     ],
     "note": "",
     "blocks": {
@@ -457,10 +457,10 @@
         ]
       },
       "python-for-penetration-testing": {
-        "title": "Python para testes de penetração",
+        "title": "Python para testes de intrusão",
         "intro": [
-          "Estes cursos por vídeo ensinam você a fazer o teste de penetração com Python. Também conhecido como pen test, o teste de penetração é um ataque simulado a um sistema para verificar vulnerabilidades.",
-          "Neste curso, você aprenderá a respeito de sockets, criará um cliente e um servidor TCP, construirá um scanner Nmap, além de outras ferramentas e técnicas que os testadores de invasão usam diariamente."
+          "Estes cursos por vídeo ensinam você a fazer o teste de intrusão com Python. Também conhecido como pen test, o teste de intrusão é um ataque simulado a um sistema para verificar vulnerabilidades.",
+          "Neste curso, você aprenderá a respeito de sockets, criará um cliente e um servidor TCP, construirá um scanner Nmap, além de outras ferramentas e técnicas que os testadores de intrusão usam diariamente."
         ]
       },
       "information-security-projects": {
