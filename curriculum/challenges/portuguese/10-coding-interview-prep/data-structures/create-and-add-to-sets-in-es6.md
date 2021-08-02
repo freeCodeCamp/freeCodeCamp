@@ -1,6 +1,6 @@
 ---
 id: 587d8254367417b2b2512c70
-title: Create and Add to Sets in ES6
+title: Criar e adicionar a conjuntos na ES6
 challengeType: 1
 forumTopicId: 301636
 dashedName: create-and-add-to-sets-in-es6
@@ -8,34 +8,34 @@ dashedName: create-and-add-to-sets-in-es6
 
 # --description--
 
-Now that you have worked through ES5, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure `Set` so many of the operations you wrote by hand are now included for you. Let's take a look:
+Agora que você trabalhou na ES5 e a conhece, vamos fazer algo semelhante na ES6. Isso será consideravelmente mais fácil. A ES6 contém uma estrutura de dados integrada chamada `Set`. Portanto, muitas das operações que você escreveu à mão estão agora incluídas para você. Vamos dar uma olhada:
 
-To create a new empty set:
+Para criar um novo conjunto vazio:
 
 ```js
 var set = new Set();
 ```
 
-You can create a set with a value:
+Você pode criar um conjunto com um valor:
 
 ```js
 var set = new Set(1);
 ```
 
-You can create a set with an array:
+Você pode criar um conjunto com um array:
 
 ```js
 var set = new Set([1, 2, 3]);
 ```
 
-Once you have created a set, you can add the values you wish using the `add` method:
+Depois de criar um conjunto, você pode adicionar os valores que deseja usando o método `add`:
 
 ```js
 var set = new Set([1, 2, 3]);
 set.add([4, 5, 6]);
 ```
 
-As a reminder, a set is a data structure that cannot contain duplicate values:
+É importante lembrar que um conjunto é uma estrutura de dados que não pode conter valores duplicados:
 
 ```js
 var set = new Set([1, 2, 3, 1, 2, 3]);
@@ -44,11 +44,11 @@ var set = new Set([1, 2, 3, 1, 2, 3]);
 
 # --instructions--
 
-For this exercise, return a set with the following values: `1, 2, 3, 'Taco', 'Cat', 'Awesome'`
+Para este exercício, retorne um conjunto com os seguintes valores: `1, 2, 3, 'Taco', 'Cat', 'Awesome'`
 
 # --hints--
 
-Your `Set` should only contain the values `1, 2, 3, Taco, Cat, Awesome`.
+O `Set` deve conter apenas os valores `1, 2, 3, Taco, Cat, Awesome`.
 
 ```js
 assert(

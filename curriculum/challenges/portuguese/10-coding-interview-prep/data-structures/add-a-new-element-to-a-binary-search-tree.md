@@ -1,6 +1,6 @@
 ---
 id: 587d8257367417b2b2512c7b
-title: Add a New Element to a Binary Search Tree
+title: Adicionar um novo elemento a uma árvore binária de busca
 challengeType: 1
 forumTopicId: 301618
 dashedName: add-a-new-element-to-a-binary-search-tree
@@ -8,27 +8,27 @@ dashedName: add-a-new-element-to-a-binary-search-tree
 
 # --description--
 
-This series of challenges will introduce the tree data structure. Trees are an important and versatile data structure in computer science. Of course, their name comes from the fact that when visualized they look much like the trees we are familiar with in the natural world. A tree data structure begins with one node, typically referred to as the root, and from here branches out to additional nodes, each of which may have more child nodes, and so on and so forth. The data structure is usually visualized with the root node at the top; you can think of it as a natural tree flipped upside down.
+Esta série de desafios vai introduzir a estrutura de dados de árvore. As árvores são uma estrutura de dados importante e versátil na ciência da computação. É claro que o seu nome vem do fato de, quando visualizada, se assemelhar muito a uma árvore, com a qual estamos familiarizados no mundo natural. Uma estrutura de dados de árvore começa com um nó, normalmente referido como nó raiz (ou root). Deste nó surgem ramificações para os nós adicionais, cada um dos quais pode ter mais nós filhos, e assim por diante. A estrutura de dados geralmente é visualizada com o nó raiz na parte superior. Imagine-a como se fosse uma árvore natural, mas de cabeça para baixo.
 
-First, let's describe some common terminology we will encounter with trees. The root node is the top of the tree. Data points in the tree are called nodes. Nodes with branches leading to other nodes are referred to as the parent of the node the branch leads to (the child). Other more complicated familial terms apply as you might expect. A subtree refers to all the descendants of a particular node, branches may be referred to as edges, and leaf nodes are nodes at the end of the tree that have no children. Finally, note that trees are inherently recursive data structures. That is, any children of a node are parents of their own subtree, and so on. The recursive nature of trees is important to understand when designing algorithms for common tree operations.
+Primeiro, vamos descrever a terminologia comum que encontraremos ao falar de árvores. O nó raiz é o topo da árvore. Os pontos de dados na árvore são chamados de nós. Nós com ramificações (branches) que levam a outros nós são referidos como o pai dos nós para os quais as ramificações levam (os filhos). São aplicados outros termos familiares mais complicados, como você poderia esperar. Uma subárvore se refere a todos os descendentes de um nó específico. Ramificações podem ser chamadas de ramos, e os nós folhas são nós no final da árvore que não têm filhos. Por fim, observe que as árvores são estruturas de dados inerentemente recursivas. Ou seja, os filhos de um nó são pais de sua própria subárvore, e assim por diante. É importante entender a natureza recursiva das árvores ao projetar algoritmos para operações comuns com árvores.
 
-To begin, we will discuss a particular type of a tree, the binary tree. In fact, we will actually discuss a particular binary tree, a binary search tree. Let's describe what this means. While the tree data structure can have any number of branches at a single node, a binary tree can only have two branches for every node. Furthermore, a binary search tree is ordered with respect to the child subtrees, such that the value of each node in the left subtree is less than or equal to the value of the parent node, and the value of each node in the right subtree is greater than or equal to the value of the parent node. It's very helpful to visualize this relationship in order to understand it better:
+Para começar, vamos discutir um tipo específico de árvore, a árvore binária. De fato, discutiremos uma árvore binária específica, a árvore binária de busca. Vamos descrever o que isso significa. Enquanto a estrutura de dados de árvore pode ter qualquer número de ramificações em um único nó, em uma árvore binária só é possível ter dois ramos para cada nó. Além disso, uma árvore binária de busca é ordenada em relação às subárvores filhas para que o valor de cada nó na subárvore esquerda seja menor ou igual ao valor do nó pai, e que o valor de cada nó na subárvore direita seja maior ou igual ao valor do nó pai. É uma boa ideia visualizar este relacionamento para entender melhor:
 
 <div style='width: 100%; display: flex; justify-content: center; align-items: center;'><img style='width: 100%; max-width: 350px; background-color: var(--gray-05);' src='https://user-images.githubusercontent.com/18563015/32136009-1e665d98-bbd6-11e7-9133-63184f9f9182.png'></div>
 
-Now this ordered relationship is very easy to see. Note that every value to the left of 8, the root node, is less than 8, and every value to the right is greater than 8. Also notice that this relationship applies to each of the subtrees as well. For example, the first left child is a subtree. 3 is the parent node, and it has exactly two child nodes — by the rules governing binary search trees, we know without even looking that the left child of this node (and any of its children) will be less than 3, and the right child (and any of its children) will be greater than 3 (but also less than the structure's root value), and so on.
+Esta relação ordenada é muito fácil de ver. Observe que todo valor à esquerda de 8, o nó raiz, é menor que 8, enquanto todo valor à direita é maior que 8. Perceba que esta relação também se aplica a cada uma das subárvores. Por exemplo, o primeiro filho da esquerda é uma subárvore. 3 é o nó pai e tem exatamente dois nós filhos — pelas regras que regem árvores de pesquisa binária, nós sabemos sem precisarmos ver que o filho à esquerda deste nó (e qualquer um de seus filhos) será menor que 3, e que o filho à direita (e qualquer um de seus filhos) será maior do que 3 (mas também menor do que o valor raiz da estrutura) e assim por diante.
 
-Binary search trees are very common and useful data structures because they provide logarithmic time in the average case for several common operations such as lookup, insertion, and deletion.
+Árvores de busca binárias são estruturas de dados muito comuns e úteis, pois fornecem tempo logarítmico em média para várias operações comuns como pesquisa, inserção e exclusão.
 
 # --instructions--
 
-We'll start simple. We've defined the skeleton of a binary search tree structure here in addition to a function to create nodes for our tree. Observe that each node may have a left and right value. These will be assigned child subtrees if they exist. In our binary search tree, you will create a method to add new values to our binary search tree. The method should be called `add` and it should accept an integer value to add to the tree. Take care to maintain the invariant of a binary search tree: the value in each left child should be less than or equal to the parent value, and the value in each right child should be greater than or equal to the parent value. Here, let's make it so our tree cannot hold duplicate values. If we try to add a value that already exists, the method should return `null`. Otherwise, if the addition is successful, `undefined` should be returned.
+Nós começaremos com algo simples. Definimos o esqueleto de uma estrutura de pesquisa binária aqui, além de uma função para criar nós para nossa árvore. Observe que cada nó pode ter um valor à esquerda e outro à direita. Serão atribuídos a eles subárvores filhas, se existirem. Você criará um método para adicionar novos valores à nossa árvore binária de busca. O método deve ser chamado de `add` e deve aceitar um valor inteiro a ser adicionado à árvore. Tome cuidado para não alterar o que não pode ser alterado em uma árvore binária de busca: o valor em cada filho à esquerda deve ser menor ou igual ao valor original, e o valor em cada filho à direita deve ser maior ou igual ao valor do pai. Aqui, vamos fazer com que nossa árvore não possa ter valores duplicados. Se tentarmos adicionar um valor que já existe, o método deve retornar `null`. Caso contrário, se a adição for bem-sucedida, deve ser retornado `undefined`.
 
-**Hint:** trees are naturally recursive data structures!
+**Dica:** árvores são estruturas de dados recursivas!
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+A estrutura de dados `BinarySearchTree` deve existir.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `add`.
+A árvore binária de busca deve ter um método chamado `add`.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-The add method should add elements according to the binary search tree rules.
+O método add deve adicionar elementos de acordo com as regras da árvore binária de busca.
 
 ```js
 assert(
@@ -87,7 +87,7 @@ assert(
 );
 ```
 
-Adding an element that already exists should return `null`.
+Adicionar um elemento que já existe deve retornar `null`.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 587d8256367417b2b2512c79
-title: Incidence Matrix
+title: Matrice di incidenza
 challengeType: 1
 forumTopicId: 301644
 dashedName: incidence-matrix
@@ -8,21 +8,21 @@ dashedName: incidence-matrix
 
 # --description--
 
-Yet another way to represent a graph is to put it in an <dfn>incidence matrix.</dfn>
+Un altro modo per rappresentare un grafico è quello di metterlo in una <dfn>matrice di incidenza.</dfn>
 
-An <dfn>incidence matrix</dfn> is a two-dimensional (2D) array. Generally speaking, an incidence matrix relates two different classes of objects between its two dimensions. This kind of matrix is similar to an adjacency matrix. However, the rows and columns mean something else here.
+Una <dfn>matrice di incidenza</dfn> è un array bidimensionale (2D). In generale, una matrice di incidenza collega due classi diverse di oggetti tramite le sue due dimensioni. Questo tipo di matrice è simile a una matrice di adiacenza. Tuttavia, le righe e le colonne qui hanno un altro significato.
 
-In graphs, we have edges and nodes. These will be our "two different classes of objects". This matrix will have the rows be the nodes and columns be the edges. This means that we can have an uneven number of rows and columns.
+Nei grafi, abbiamo archi e nodi. Queste saranno le nostre "due classi diverse di oggetti". In questa matrice le righe saranno i nodi e colonne saranno gli archi. Ciò significa che possiamo avere un numero diverso di righe e colonne.
 
-Each column will represent a unique edge. Also, each edge connects two nodes. To show that there is an edge between two nodes, you will put a 1 in the two rows of a particular column. Below is a 3 node graph with one edge between node 1 and node 3.
+Ogni colonna rappresenterà un arco unico. Inoltre, ogni arco collegherà due nodi. Per mostrare che c'è un arco tra due nodi, si metterà un 1 nelle due righe di una particolare colonna. Di seguito è riportato un grafo a 3 nodi con un arco tra il nodo 1 e il nodo 3.
 
 <blockquote>    1<br>   ---<br>1 | 1<br>2 | 0<br>3 | 1</blockquote>
 
-Here is an example of an `incidence matrix` with 4 edges and 4 nodes. Remember, the columns are the edges and rows are the nodes themselves.
+Ecco un esempio di una `incidence matrix` con 4 archi e 4 nodi. Ricorda, le colonne sono gli archi e le righe sono i nodi.
 
 <blockquote>    1 2 3 4<br>   --------<br>1 | 0 1 1 1<br>2 | 1 1 0 0<br>3 | 1 0 0 1<br>4 | 0 0 1 0</blockquote>
 
-Below is a JavaScript implementation of the same thing.
+Di seguito è riportata un'implementazione JavaScript della stessa cosa.
 
 ```js
 var incMat = [
@@ -33,7 +33,7 @@ var incMat = [
 ];
 ```
 
-To make a directed graph, use `-1` for an edge leaving a particular node and `1` for an edge entering a node.
+Per creare un grafo diretto, usa `-1` per un arco che lascia un particolare nodo e `1` per un arco che entra in un nodo.
 
 ```js
 var incMatDirected = [
@@ -44,17 +44,17 @@ var incMatDirected = [
 ];
 ```
 
-Graphs can also have <dfn>weights</dfn> on their edges. So far, we have <dfn>unweighted</dfn> edges where just the presence and lack of edge is binary (`0` or `1`). You can have different weights depending on your application. A different weight is represented as numbers greater than 1.
+I grafi possono anche avere dei <dfn>pesi</dfn> sui loro archi. Finora, abbiamo visto archi <dfn>non ponderati</dfn> dove la sola presenza e assenza degli archi è binaria (`0` o `1`). Puoi avere pesi diversi a seconda della tua applicazione. Un peso diverso è rappresentato con un numero maggiore di 1.
 
 # --instructions--
 
-Create an incidence matrix of an undirected graph with five nodes and four edges. This matrix should be in a multi-dimensional array.
+Crea una matrice di incidenza di un grafo non diretto con cinque nodi e quattro archi. Questa matrice dovrebbe essere in un array multidimensionale.
 
-These five nodes have the following relationships. The first edge is between the first and second node. The second edge is between the second and third node. The third edge is between the third and fifth node. The fourth edge is between the fourth and second node. All edge weights are one and the edge order matters.
+Questi cinque nodi hanno le seguenti relazioni. Il primo arco è tra il primo e il secondo nodo. Il secondo arco è tra il secondo e il terzo nodo. Il terzo arco è tra il terzo e il quinto nodo. Il quarto arco è tra il quarto e il secondo nodo. Tutti i pesi degli archi sono uno e l'ordine dell'arco conta.
 
 # --hints--
 
-`incMatUndirected` should only contain five nodes.
+`incMatUndirected` dovrebbe contenere solo cinque nodi.
 
 ```js
 assert(
@@ -69,25 +69,25 @@ assert(
 );
 ```
 
-There should be a first edge between the first and second node.
+Dovrebbe esserci un primo arco tra il primo e il secondo nodo.
 
 ```js
 assert(incMatUndirected[0][0] === 1 && incMatUndirected[1][0] === 1);
 ```
 
-There should be a second edge between the second and third node.
+Dovrebbe esserci un secondo arco tra il secondo e il terzo nodo.
 
 ```js
 assert(incMatUndirected[1][1] === 1 && incMatUndirected[2][1] === 1);
 ```
 
-There should be a third edge between the third and fifth node.
+Dovrebbe esserci un terzo arco tra il terzo e il quinto nodo.
 
 ```js
 assert(incMatUndirected[2][2] === 1 && incMatUndirected[4][2] === 1);
 ```
 
-There should be a fourth edge between the second and fourth node.
+Dovrebbe esserci un quarto arco tra il secondo e il quarto nodo.
 
 ```js
 assert(incMatUndirected[1][3] === 1 && incMatUndirected[3][3] === 1);

@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eedfaeb5bd1c
-title: Crie um jogo da velha
+title: Criar um jogo da velha
 challengeType: 3
 forumTopicId: 302358
 dashedName: build-a-tic-tac-toe-game

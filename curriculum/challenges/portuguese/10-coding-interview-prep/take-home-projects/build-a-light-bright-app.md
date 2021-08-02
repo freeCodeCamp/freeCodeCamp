@@ -1,6 +1,6 @@
 ---
 id: 5a5d02bd919fcf9ca8cf46cb
-title: Build a Light-Bright App
+title: Criar um app de luzes brilhantes
 challengeType: 3
 forumTopicId: 302350
 dashedName: build-a-light-bright-app
@@ -8,27 +8,27 @@ dashedName: build-a-light-bright-app
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/eyLYXE>.
+**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/eyLYXE>.
 
-**Rule #1:** Don't look at the example project's code. Figure it out for yourself.
+**Regra nº 1:** não olhe o código do projeto de exemplo. Descubra por conta própria.
 
-**Rule #2:** Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+**Regra nº 2:** atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**User Story:** I can click or drag the mouse cursor to color the circles.
+**Especificação de usuário:** posso clicar ou arrastar o cursor do mouse para colorir os círculos.
 
-**User Story:** I can double-click on a colored circle to remove the color.
+**Especificação de usuário:** posso clicar duas vezes em um círculo colorido para remover a cor.
 
-**User Story:** I can click on a colored circle to change its color.
+**Especificação de usuário:** posso clicar em um círculo colorido para mudar a cor dele.
 
-**User Story:** I should get a circle of different color on each click.
+**Especificação de usuário:** eu devo pegar um círculo de cor diferente em cada clique.
 
-**User Story:** I can click on the 'Reset' button to remove the recent color.
+**Especificação de usuário:** posso clicar no botão 'Reset' para remover a cor recente.
 
-**User Story:** I can click on the 'Reset All' button to remove all the colors from the circles.
+**Especificação de usuário:** posso clicar no botão 'Reset All' para remover todas as cores dos círculos.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum do freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

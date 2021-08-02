@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd19
-title: Build a Wikipedia Viewer
+title: Criar um visualizador da Wikipédia
 challengeType: 3
 forumTopicId: 302360
 dashedName: build-a-wikipedia-viewer
@@ -8,23 +8,23 @@ dashedName: build-a-wikipedia-viewer
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/wGqEga/>.
+**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/wGqEga/>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**User Story:** I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
+**Especificação de usuário:** eu posso pesquisar postagens na Wikipédia e ver as entradas da Wikipédia resultantes.
 
-**User Story:** I can click a button to see a random Wikipedia entry.
+**Especificação de usuário:** posso clicar em um botão para ver uma entrada aleatória da Wikipédia.
 
-Hint #1: Here's a URL you can use to get a random Wikipedia article: `https://en.wikipedia.org/wiki/Special:Random`.
+Dica nº 1: aqui está um URL que você pode usar para obter um artigo aleatório da Wikipédia: `https://en.wikipedia.org/wiki/Special:Random`.
 
-Hint #2: Here's an entry on using Wikipedia's API: `https://www.mediawiki.org/wiki/API:Main_page`.
+Dica nº 2: aqui está uma entrada sobre usar a API da Wikipedia: `https://www.mediawiki.org/wiki/API:Main_page`.
 
-Hint #3: Use this [link](https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm) to experiment with Wikipedia's API.
+Dica nº 3: use este [link](https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm) para experimentar com a API da Wikipédia.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum do freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

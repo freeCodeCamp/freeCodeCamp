@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-新建的`p` 元素應包含 `kitty ipsum text` 的前面幾個詞。
+你的 `p` 元素應包含 `kitty ipsum` 文本的前面幾個詞。
 
 ```js
 assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));

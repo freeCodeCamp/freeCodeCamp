@@ -1,6 +1,6 @@
 ---
 id: 587d825c367417b2b2512c90
-title: Breadth-First Search
+title: Busca em largura
 challengeType: 1
 forumTopicId: 301622
 dashedName: breadth-first-search
@@ -8,31 +8,31 @@ dashedName: breadth-first-search
 
 # --description--
 
-So far, we've learned different ways of creating representations of graphs. What now? One natural question to have is what are the distances between any two nodes in the graph? Enter <dfn>graph traversal algorithms</dfn>.
+Até agora, aprendemos diferentes maneiras de criar representações de grafos. E agora? Uma pergunta que é natural fazer é: qual é a distância entre dois nós de um grafo? Aqui entram os <dfn>algoritmos de travessia de grafos</dfn>.
 
-<dfn>Traversal algorithms</dfn> are algorithms to traverse or visit nodes in a graph. One type of traversal algorithm is the breadth-first search algorithm.
+<dfn>Algoritmos de travessia</dfn> são algoritmos que percorrem ou visitem nós em um gráfico. Um tipo de algoritmo de travessia é o algoritmo de busca em largura.
 
-This algorithm starts at one node and visits all its neighbors that are one edge away. It then goes on to visit each of their neighbors and so on until all nodes have been reached.
+Este algoritmo começa em um nó e visita todos os seus vizinhos que estão a uma aresta de distância. Em seguida, ele visita cada um dos vizinhos desses nós e assim por diante, até que todos os nós tenham sido visitados.
 
-An important data structure that will help implement the breadth-first search algorithm is the queue. This is an array where you can add elements to one end and remove elements from the other end. This is also known as a <dfn>FIFO</dfn> or <dfn>First-In-First-Out</dfn> data structure.
+Uma estrutura de dados importante que ajudará a implementar o algoritmo de busca em largura é a fila. Este é um array onde você pode adicionar elementos a uma das extremidades e remover elementos da outra extremidade. Isto também é conhecido como uma estrutura de dados <dfn>FIFO</dfn> ou <dfn>First-In-First-Out</dfn> (ou seja, o primeiro a entrar é o primeiro a sair).
 
-Visually, this is what the algorithm is doing. ![Breadth first search algorithm moving through a tree](https://camo.githubusercontent.com/2f57e6239884a1a03402912f13c49555dec76d06/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34362f416e696d617465645f4246532e676966)
+Visualmente, é isso que o algoritmo está fazendo. ![Algoritmo de busca por largura percorrendo uma árvore](https://camo.githubusercontent.com/2f57e6239884a1a03402912f13c49555dec76d06/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34362f416e696d617465645f4246532e676966)
 
-The grey shading represents a node getting added into the queue and the black shading represents a node getting removed from the queue. See how every time a node gets removed from the queue (node turns black), all their neighbors get added into the queue (node turns grey).
+A sombra cinza representa um nó que está sendo adicionado à fila e a sombra preta representa um nó que está sendo removido da fila. Veja como a cada vez que um nó é removido da fila (quando se torna preto), todos os seus vizinhos são adicionados à fila (se tornam cinza).
 
-To implement this algorithm, you'll need to input a graph structure and a node you want to start at.
+Para implementar este algoritmo, você precisará inserir uma estrutura de grafo e o nó em que deseja começar.
 
-First, you'll want to be aware of the distances from, or number of edges away from, the start node. You'll want to start all your distances with some large number, like `Infinity`. This prevents counting issues for when a node may not be reachable from your start node. Next, you'll want to go from the start node to its neighbors. These neighbors are one edge away and at this point you should add one unit of distance to the distances you're keeping track of.
+Primeiro, você vai querer saber as distâncias do nó inicial, ou o número de arestas de afastamento. Você vai querer começar todas as distâncias com algum número grande, como o `Infinity`. Isto evita problemas de contagem quando um nó não estiver acessível a partir do nó inicial. Em seguida, você vai querer percorrer do ponto inicial até os vizinhos dele. Estes vizinhos estão a uma aresta de distância e, neste ponto, você deve adicionar uma unidade de distância às distâncias que você está acompanhando.
 
 # --instructions--
 
-Write a function `bfs()` that takes an adjacency matrix graph (a two-dimensional array) and a node label root as parameters. The node label will just be the integer value of the node between `0` and `n - 1`, where `n` is the total number of nodes in the graph.
+Escreva uma função `bfs()` que recebe um grafo de matriz de adjacência (um array bidimensional) e um nó com a etiqueta de raiz (root) como parâmetros. A etiqueta do nó será apenas o valor inteiro do nó entre `0` e `n - 1`, onde `n` é o número total de nós no grafo.
 
-Your function will output a JavaScript object key-value pairs with the node and its distance from the root. If the node could not be reached, it should have a distance of `Infinity`.
+A função retornará um par chave-valor em JavaScript com o nó e a sua distância do nó raiz. Se o nó não puder ser alcançado, a distância deve ser `Infinity`.
 
 # --hints--
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `1` should return `{0: 1, 1: 0, 2: 1, 3: 2}`
+O grafo de entrada `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` com o nó inicial `1` deve retornar `{0: 1, 1: 0, 2: 1, 3: 2}`
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `1` should return `{0: 1, 1: 0, 2: 1, 3: Infinity}`
+O grafo de entrada `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` com o nó inicial `1` deve retornar `{0: 1, 1: 0, 2: 1, 3: Infinity}`
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return `{0: 0, 1: 1, 2: 2, 3: 3}`
+O grafo de entrada `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` com o nó inicial `0` deve retornar `{0: 0, 1: 1, 2: 2, 3: 3}`
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-The input graph `[[0, 1], [1, 0]]` with a start node of `0` should return `{0: 0, 1: 1}`
+O gráfico de entrada `[[0, 1], [1, 0]]` com um nó inicial de `0` deve retornar `{0: 0, 1: 1}`
 
 ```js
 assert(
