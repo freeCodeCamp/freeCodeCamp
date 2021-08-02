@@ -33,7 +33,7 @@ io.use(
 );
 ```
 
-You could note that configuring passport authentication for *Socket.IO* is very similar to configuring `session` middleware for our API. This is true because they are meant to use same authentication method - get session id from cookie and validate it.
+Note that configuring Passport authentication for Socket.IO is very similar to the way we configured the `session` middleware for the API. This is because they are meant to use the same authentication method — get the session id from a cookie and validate it.
 
 Beforehand for configuring `session` middleware we didn't set cookie name for session (`key`) explicitly - `express-session` package was using default value.
 But now as we have added another package which needs access to same value from cookies we need to set `key` value explicitly in both configuration objects. So be sure to add the `key` with the cookie name to the `session` middleware to match the *Socket.IO* key as well as the `store` reference to the options, near where we set `saveUninitialized: true`. This is necessary to tell *Socket.IO* which session to relate to.
