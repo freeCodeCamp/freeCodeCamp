@@ -56,6 +56,7 @@ export const types = createTypes(
     'initLogs',
     'updateConsole',
     'updateChallengeMeta',
+    'updateFailed',
     'updateFile',
     'updateJSEnabled',
     'updateSolutionFormValues',
