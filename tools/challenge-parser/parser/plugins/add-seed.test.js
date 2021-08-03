@@ -1,4 +1,3 @@
-const { isObject } = require('lodash');
 const isArray = require('lodash/isArray');
 
 const adjacentKeysAST = require('../__fixtures__/ast-adjacent-keys.json');
