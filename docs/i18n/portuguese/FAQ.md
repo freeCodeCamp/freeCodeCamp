@@ -61,7 +61,7 @@ Tipicamente, não atribuímos issues para ninguém além de contribuidores de lo
 
 **Fique à vontade para pedir ajuda em:**
 
-- A categoria `Contribuidores` do [fórum da nossa comunidade](https://forum.freecodecamp.org/c/contributors).
+- A categoria `Contributors` do [fórum da nossa comunidade](https://forum.freecodecamp.org/c/contributors).
 - O canal `#Contributors` em nosso [servidor](https://chat.freecodecamp.org/channel/contributors).
 
 Estamos animados em ajudar você a contribuir com qualquer tópico que desejar. Se você nos perguntar algo relacionado às issues, vamos ficar felizes em esclarecer. Certifique-se de pesquisar sua pergunta antes de postar uma nova.

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036162
-title: Criar um Componente Funcional Sem Estado
+title: Criar um componente funcional sem estado
 challengeType: 6
 forumTopicId: 301392
 dashedName: create-a-stateless-functional-component
@@ -30,7 +30,7 @@ Como um componente JSX representa HTML, você pode juntar vários componentes pa
 
 O editor de código tem uma função chamada `MyComponent`. Complete essa função para que ela retorne um único elemento `div`, que contém alguma string de texto.
 
-**Nota:** O texto é considerado filho do elemento `div`, portanto você não poderá usar uma tag de fechamento.
+**Observação:** o texto é considerado filho do elemento `div`, portanto você não poderá usar uma tag de fechamento.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036170
-title: Criar um Componente Stateful
+title: Criar um componente stateful
 challengeType: 6
 forumTopicId: 301391
 dashedName: create-a-stateful-component
@@ -18,7 +18,7 @@ this.state = {
 }
 ```
 
-Você precisa acessar o objeto `state` ao longo da vida do seu componente. Você pode atualizá-lo, renderizá-lo na sua interface do usuário e o passar como props para componentes filhos. O objeto `state` pode ser tão complexo ou simples quanto você precise. Note que você precisa criar uma classe de componente ao extender `React.Component` para criar `state` dessa forma.
+Você precisa acessar o objeto `state` ao longo da vida do seu componente. Você pode atualizá-lo, renderizá-lo na sua interface do usuário e o passar como props para componentes filhos. O objeto `state` pode ser tão complexo ou simples quanto você precise. Note que você precisa criar uma classe de componente ao estender `React.Component` para criar `state` dessa forma.
 
 # --instructions--
 

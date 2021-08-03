@@ -1,8 +1,8 @@
+import i18next from 'i18next';
 import React from 'react';
 import { Link } from '../../../components/helpers/index';
 
 import './challenge-title.css';
-import i18next from 'i18next';
 
 interface BreadCrumbProps {
   block: string;
@@ -12,8 +12,6 @@ interface BreadCrumbProps {
 function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
   return (
     <div className='challenge-title-breadcrumbs'>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
       <Link
         className='breadcrumb-left'
         state={{ breadcrumbBlockClick: block }}
@@ -24,8 +22,6 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
         </span>
       </Link>
       <div className='breadcrumb-center' />
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
       <Link
         className='breadcrumb-right'
         state={{ breadcrumbBlockClick: block }}

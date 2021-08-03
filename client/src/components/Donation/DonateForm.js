@@ -1,8 +1,4 @@
 /* eslint-disable no-nested-ternary */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import {
   Col,
   Row,
@@ -11,7 +7,11 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
 import {
   amountsConfig,
@@ -20,9 +20,6 @@ import {
   defaultDonation,
   modalDefaultDonation
 } from '../../../../config/donation-settings';
-import Spacer from '../helpers/spacer';
-import PaypalButton from './PaypalButton';
-import DonateCompletion from './DonateCompletion';
 import {
   isSignedInSelector,
   signInLoadingSelector,
@@ -32,6 +29,9 @@ import {
   defaultDonationFormState,
   userSelector
 } from '../../redux';
+import Spacer from '../helpers/spacer';
+import DonateCompletion from './DonateCompletion';
+import PaypalButton from './PaypalButton';
 
 import './Donation.css';
 

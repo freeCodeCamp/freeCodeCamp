@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c151
-title: Jupyter Notebooks Importing and Exporting Data
+title: Importar e exportar os dados dos Jupyter Notebooks
 challengeType: 11
 videoId: k1msxD3JIxE
 dashedName: jupyter-notebooks-importing-and-exporting-data
@@ -8,38 +8,38 @@ dashedName: jupyter-notebooks-importing-and-exporting-data
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Ao invés de usar notebooks.ai como foi mostrado no vídeo, você pode usar o Google Colab como substituto.*
 
-More resources:
+Mais recursos:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebooks no GitHub](https://github.com/ine-rmotr-curriculum/ds-content-interactive-jupyterlab-tutorial)
+-   [Como abrir notebooks do GitHub usando o Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What kind of data can you import and work with in a Jupyter Notebook?
+Que tipo de dados você pode importar e trabalhar em um Jupyter Notebook?
 
 ## --answers--
 
-Excel files.
+Arquivos do Excel.
 
 ---
 
-CSV files.
+Arquivos CSV.
 
 ---
 
-XML files.
+Arquivos XML.
 
 ---
 
-Data from an API.
+Dados de uma API.
 
 ---
 
-All of the above.
+Todas as anteriores.
 
 ## --video-solution--
 

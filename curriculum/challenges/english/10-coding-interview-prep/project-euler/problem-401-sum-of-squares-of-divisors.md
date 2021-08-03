@@ -8,22 +8,22 @@ dashedName: problem-401-sum-of-squares-of-divisors
 
 # --description--
 
-The divisors of 6 are 1,2,3 and 6.
+The divisors of 6 are 1, 2, 3 and 6.
 
-The sum of the squares of these numbers is 1+4+9+36=50.
+The sum of the squares of these numbers is $1 + 4 + 9 + 36 = 50$.
 
-Let sigma2(n) represent the sum of the squares of the divisors of n. Thus sigma2(6)=50.
+Let $\sigma_2(n)$ represent the sum of the squares of the divisors of $n$. Thus $\sigma_2(6) = 50$.
 
-Let SIGMA2 represent the summatory function of sigma2, that is SIGMA2(n)=∑sigma2(i) for i=1 to n. The first 6 values of SIGMA2 are: 1,6,16,37,63 and 113.
+Let $\Sigma_2$ represent the summatory function of $\sigma_2$, that is $\Sigma_2(n) = \sum \sigma_2(i)$ for $i=1$ to $n$. The first 6 values of $\Sigma_2$ are: 1, 6, 16, 37, 63 and 113.
 
-Find SIGMA2(1015) modulo 109.
+Find $\Sigma_2({10}^{15})$ modulo ${10}^9$.
 
 # --hints--
 
-`euler401()` should return 281632621.
+`sumOfSquaresDivisors()` should return `281632621`.
 
 ```js
-assert.strictEqual(euler401(), 281632621);
+assert.strictEqual(sumOfSquaresDivisors(), 281632621);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler401(), 281632621);
 ## --seed-contents--
 
 ```js
-function euler401() {
+function sumOfSquaresDivisors() {
 
   return true;
 }
 
-euler401();
+sumOfSquaresDivisors();
 ```
 
 # --solutions--

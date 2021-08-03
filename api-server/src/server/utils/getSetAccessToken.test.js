@@ -1,11 +1,11 @@
+import jwt from 'jsonwebtoken';
+import { mockReq, mockRes } from '../boot_tests/challenge.test';
 import {
   getAccessTokenFromRequest,
   errorTypes,
   setAccessTokenToResponse,
   removeCookies
 } from './getSetAccessToken';
-import { mockReq, mockRes } from '../boot_tests/challenge.test';
-import jwt from 'jsonwebtoken';
 
 describe('getSetAccessToken', () => {
   const validJWTSecret = 'this is a super secret string';

@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c162
-title: Reading Data CSV and TXT
+title: Ler dados de CSV e TXT
 challengeType: 11
 videoId: ViGEv0zOzUk
 dashedName: reading-data-csv-and-txt
@@ -8,18 +8,18 @@ dashedName: reading-data-csv-and-txt
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Ao invés de usar notebooks.ai como foi mostrado no vídeo, você pode usar o Google Colab como substituto.*
 
-More resources:
+Mais recursos:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-1-reading-csv-and-txt-files/files)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebooks no GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-1-reading-csv-and-txt-files/files)
+-   [Como abrir notebooks do GitHub usando o Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-How would you import the CSV file `data.csv` and store it in a DataFrame using the Pandas module?
+Como você importaria o arquivo CSV `data.csv` e o armazenaria em um DataFrame usando o módulo Pandas?
 
 ## --answers--
 

@@ -1,5 +1,3 @@
-import React, { Component, FormEvent } from 'react';
-import { nanoid } from 'nanoid';
 import {
   Button,
   FormGroup,
@@ -10,14 +8,16 @@ import {
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash-es';
-import isURL from 'validator/lib/isURL';
+import { nanoid } from 'nanoid';
+import React, { Component, FormEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
+import isURL from 'validator/lib/isURL';
 
 import { hasProtocolRE } from '../../utils';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
-import SectionHeader from './section-header';
 import BlockSaveButton from '../helpers/form/block-save-button';
+import SectionHeader from './section-header';
 
 type PortfolioValues = {
   id: string;

@@ -1,6 +1,6 @@
 ---
 id: bd7150d8c442eddfafb5bd1c
-title: P2P Video Chat Application
+title: Aplicação de chat de vídeo P2P
 challengeType: 4
 forumTopicId: 302366
 dashedName: p2p-video-chat-application
@@ -8,31 +8,31 @@ dashedName: p2p-video-chat-application
 
 # --description--
 
-**Objective:** Build a [Replit](https://replit.com/) app that is functionally similar to this: <https://p2p-video-chat-application.freecodecamp.rocks/>.
+**Objetivo:** criar uma aplicação no [Replit](https://replit.com/) que tenha função semelhante a esta: <https://p2p-video-chat-application.freecodecamp.rocks/>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**User Story:** Upon arriving, the browser will prompt me to access my camera and microphone.
+**Especificação de usuário:** ao chegar, o navegador me pedirá para acessar minha câmera e microfone.
 
-**User Story:** After I give it permission, I am prompted to type in a room name.
+**Especificação de usuário:** depois que eu conceder permissão, sou solicitado a digitar um nome de sala.
 
-**User Story:** Once I type in the room name, a room will be created if no room of that name existed before.
+**Especificação de usuário:** quando eu digitar o nome da sala, ela será criada se não existir nenhuma sala com esse nome.
 
-**User Story:** A friend of mine can subsequently go to the same website, type in the same room I entered, and join the same room, then enter into a video chat with me.
+**Especificação de usuário:** um amigo meu pode posteriormente ir para o mesmo site, digitar a mesma sala em que eu entrei e entrar na mesma sala. Então, ele pode entrar em uma videoconferência comigo.
 
-**User Story:** If I type in a room name, and there are already two people in that room, I get a notification that the room is full.
+**Especificação de usuário:** se eu digitar um nome de sala e se já há duas pessoas nessa sala, recebo uma notificação de que a sala está cheia.
 
-**User Story:** Anyone can create or join any room. And there can be any number of rooms, but all of them must have unique names.
+**Especificação de usuário:** qualquer um pode criar ou entrar em qualquer sala. Pode haver várias salas, mas todas devem ter nomes únicos.
 
-**User Story:** I can choose to not permit the site to access my microphone and webcam. If I choose not to do this, or if some other driver problem occurs, I see an error message saying these are required.
+**Especificação de usuário:** posso optar por não permitir que o site acesse meu microfone e câmera. Se eu optar por não fazer isto, ou se ocorrer algum outro problema com o driver, vejo uma mensagem de erro dizendo que eles são necessários.
 
-**User Story:** When I choose to cancel the room name input step, or if I type in no name, or just spaces, it should again ask me again to type in a valid room name.
+**Especificação de usuário:** quando eu escolher cancelar a etapa de entrada do nome da sala, se eu não digitar um nome ou digitar apenas espaços, a aplicação deve me pedir novamente para digitar um nome de sala válido.
 
-**User Story:** If one of the two people in the room get disconnected, they can reconnect to the same room and continue chatting.
+**Especificação de usuário:** se uma das duas pessoas na sala desconectar, elas poderão se reconectar à mesma sala e continuar conversando.
 
-Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
+Depois de terminar de implementar essas especificações de usuários, digite o URL para sua aplicação ao vivo e, como opção, seu repositório do GitHub. Então, clique no botão "Eu completei este desafio".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum do freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

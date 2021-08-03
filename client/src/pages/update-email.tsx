@@ -1,10 +1,3 @@
-import React, { useState } from 'react';
-import type { FormEvent, ChangeEvent } from 'react';
-import { Link } from 'gatsby';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import {
   Form,
   FormGroup,
@@ -15,10 +8,17 @@ import {
   Col,
   Button
 } from '@freecodecamp/react-bootstrap';
-import Helmet from 'react-helmet';
-import isEmail from 'validator/lib/isEmail';
+import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
+import React, { useState } from 'react';
+import type { FormEvent, ChangeEvent } from 'react';
+import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import type { Dispatch } from 'redux';
+import { createSelector } from 'reselect';
+import isEmail from 'validator/lib/isEmail';
 
 import { Spacer } from '../components/helpers';
 import './update-email.css';

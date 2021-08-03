@@ -1,6 +1,6 @@
 ---
 id: 596e457071c35c882915b3e4
-title: Compare a list of strings
+title: Comparar uma lista de strings
 challengeType: 5
 forumTopicId: 302235
 dashedName: compare-a-list-of-strings
@@ -8,82 +8,82 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-Given a [list](https://en.wikipedia.org/wiki/List_(abstract_data_type) "wp: List\_(abstract_data_type)") of arbitrarily many strings, implement a function for each of the following conditions:
+Dada uma [lista](https://en.wikipedia.org/wiki/List_(abstract_data_type) "wp: List\_(abstract_data_type)") de várias strings arbitrárias, implemente uma função para cada uma das seguintes condições:
 
 <ul>
-  <li>test if they are all lexically equal</li>
-  <li>test if every string is lexically less than the one after it  (i.e. whether the list is in strict ascending order)</li>
+  <li>testar se todas são lexicalmente iguais</li>
+  <li>testar se cada string é lexicalmente menor do que a string imediatamente posterior (ou seja, se a lista está em ordem ascendente estrita)</li>
 </ul>
 
 # --hints--
 
-`allEqual` should be a function.
+`allEqual` deve ser uma função.
 
 ```js
 assert(typeof allEqual === 'function');
 ```
 
-`azSorted` should be a function.
+`azSorted` deve ser uma função.
 
 ```js
 assert(typeof azSorted === 'function');
 ```
 
-`allEqual(["AA", "AA", "AA", "AA"])` should return true.
+`allEqual(["AA", "AA", "AA", "AA"])` deve retornar true.
 
 ```js
 assert(allEqual(testCases[0]));
 ```
 
-`azSorted(["AA", "AA", "AA", "AA"])` should return false.
+`azSorted(["AA", "AA", "AA", "AA"])` deve retornar false.
 
 ```js
 assert(!azSorted(testCases[0]));
 ```
 
-`allEqual(["AA", "ACB", "BB", "CC"])` should return false.
+`allEqual(["AA", "ACB", "BB", "CC"])` deve retornar false.
 
 ```js
 assert(!allEqual(testCases[1]));
 ```
 
-`azSorted(["AA", "ACB", "BB", "CC"])` should return true.
+`azSorted(["AA", "ACB", "BB", "CC"])` deve retornar true.
 
 ```js
 assert(azSorted(testCases[1]));
 ```
 
-`allEqual([])` should return true.
+`allEqual([])` deve retornar true.
 
 ```js
 assert(allEqual(testCases[2]));
 ```
 
-`azSorted([])` should return true.
+`azSorted([])` deve retornar true.
 
 ```js
 assert(azSorted(testCases[2]));
 ```
 
-`allEqual(["AA"])` should return true.
+`allEqual(["AA"])` deve retornar true.
 
 ```js
 assert(allEqual(testCases[3]));
 ```
 
-`azSorted(["AA"])` should return true.
+`azSorted(["AA"])` deve retornar true.
 
 ```js
 assert(azSorted(testCases[3]));
 ```
 
-`allEqual(["BB", "AA"])` should return false.
+`allEqual(["BB", "AA"])` deve retornar false.
 
 ```js
 assert(!allEqual(testCases[4]));
 ```
 
-`azSorted(["BB", "AA"])` should return false.
+`azSorted(["BB", "AA"])` deve retornar false.
 
 ```js
 assert(!azSorted(testCases[4]));

@@ -11,7 +11,7 @@ dashedName: multiply-two-decimals-with-javascript
 
 Em JavaScript, você também pode realizar cálculos com números decimais, assim como com números inteiros.
 
-Vamos multiplicar dois decimais juntos para obter o produto deles.
+Vamos multiplicar dois decimais para obter o produto deles.
 
 # --instructions--
 

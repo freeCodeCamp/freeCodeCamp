@@ -1,5 +1,5 @@
-import React from 'react';
 import { Media } from '@freecodecamp/react-bootstrap';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { FullWidthRow } from '../../helpers';

@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c50
-title: Test if a Value is an Array
+title: Testar se o valor é um array
 challengeType: 2
 forumTopicId: 301600
 dashedName: test-if-a-value-is-an-array
@@ -8,15 +8,15 @@ dashedName: test-if-a-value-is-an-array
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pode ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#11` in the `Arrays` suite, change each `assert` to either `assert.isArray` or `assert.isNotArray` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Em `tests/1_unit-tests.js`, no teste de número `#11` no grupo de testes `Arrays`, modifique cada `assert` para `assert.isArray` ou para `assert.isNotArray`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 
-All tests should pass.
+Todos os testes devem passar.
 
 ```js
 (getUserInput) =>
@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isArray` vs. `isNotArray`.
+Você deve escolher o método correto para a primeira afirmação - `isArray` ou `isNotArray`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isArray` vs. `is
   );
 ```
 
-You should choose the correct method for the second assertion - `isArray` vs. `isNotArray`.
+Você deve escolher o método correto para a segunda afirmação - `isArray` ou `isNotArray`.
 
 ```js
 (getUserInput) =>

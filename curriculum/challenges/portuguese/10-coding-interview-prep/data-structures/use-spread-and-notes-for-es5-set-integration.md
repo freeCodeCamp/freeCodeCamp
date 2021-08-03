@@ -1,6 +1,6 @@
 ---
 id: 587d8255367417b2b2512c73
-title: Use Spread and Notes for ES5 Set() Integration
+title: Usar spread e notas para a integração do Set() da ES5
 challengeType: 1
 forumTopicId: 301720
 dashedName: use-spread-and-notes-for-es5-set-integration
@@ -8,11 +8,11 @@ dashedName: use-spread-and-notes-for-es5-set-integration
 
 # --description--
 
-Do you remember the ES6 spread operator `...`?
+Você se lembra do operador spread da ES6 `...`?
 
-`...` can take iterable objects in ES6 and turn them into arrays.
+`...` pode pegar objetos iteráveis no ES6 e transformá-los em arrays.
 
-Let's create a Set, and check out the spread function.
+Vamos criar um conjunto e conferir a função spread.
 
 ```js
 var set = new Set([1,2,3]);
@@ -22,13 +22,13 @@ console.log(setToArr) // returns [ 1, 2, 3 ]
 
 # --instructions--
 
-In this exercise we will pass a set object to the `checkSet` function. It should return an array containing the values of the Set.
+Nesse exercício, passaremos um objeto definido para a função `checkSet`. Ela deve retornar um array contendo os valores do conjunto.
 
-Now you've successfully learned how to use the ES6 `Set()` object, good job!
+Agora, você aprendeu com sucesso como usar o objeto `Set()` da ES6. Bom trabalho!
 
 # --hints--
 
-`checkSet(new Set([1,2,3,4,5,6,7])` should return `[1, 2, 3, 4, 5, 6, 7]`.
+`checkSet(new Set([1,2,3,4,5,6,7])` deve retornar `[1, 2, 3, 4, 5, 6, 7]`.
 
 ```js
 assert(

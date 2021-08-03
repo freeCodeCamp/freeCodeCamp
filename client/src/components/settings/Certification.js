@@ -1,6 +1,3 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { find, first } from 'lodash-es';
 import {
   Table,
   Button,
@@ -8,19 +5,22 @@ import {
   MenuItem
 } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
-import { createSelector } from 'reselect';
+import { find, first } from 'lodash-es';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
+import { createSelector } from 'reselect';
 
 import {
   projectMap,
   legacyProjectMap
 } from '../../resources/cert-and-project-map';
 
-import SectionHeader from './section-header';
+import { maybeUrlRE } from '../../utils';
 import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
 
-import { maybeUrlRE } from '../../utils';
+import SectionHeader from './section-header';
 
 import './certification.css';
 

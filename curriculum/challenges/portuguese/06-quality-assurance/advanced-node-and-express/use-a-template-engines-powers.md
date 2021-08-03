@@ -1,6 +1,6 @@
 ---
 id: 5895f70bf9fc0f352b528e64
-title: Use a Template Engine's Powers
+title: Usar as capacidades de um mecanismo de modelos
 challengeType: 2
 forumTopicId: 301567
 dashedName: use-a-template-engines-powers
@@ -8,23 +8,23 @@ dashedName: use-a-template-engines-powers
 
 # --description--
 
-One of the greatest features of using a template engine is being able to pass variables from the server to the template file before rendering it to HTML.
+Uma das maiores características do uso de um mecanismo de modelos (template engine) é poder passar variáveis do servidor para o arquivo de modelo antes de renderizá-lo em HTML.
 
-In your Pug file, you're able to use a variable by referencing the variable name as `#{variable_name}` inline with other text on an element or by using an equal sign on the element without a space such as `p=variable_name` which assigns the variable's value to the p element's text.
+No seu arquivo Pug, você pode usar uma variável fazendo referência ao nome da variável como `#{variable_name}` em linha com outro texto em um elemento ou usando um sinal de igual no elemento sem um espaço, como em `p=variable_name`, que atribui o valor da variável ao texto do elemento p.
 
-We strongly recommend looking at the syntax and structure of Pug [here](https://github.com/pugjs/pug) on GitHub's README. Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site.
+É altamente recomendável examinar a sintaxe e a estrutura do Pug [aqui](https://github.com/pugjs/pug) no LEIAME do GitHub. O Pug tem a ver com usar o espaço em branco e as tabulações para mostrar elementos aninhados e diminuir a quantidade de código necessária para fazer um belo site.
 
-Looking at our pug file 'index.pug' included in your project, we used the variables *title* and *message*.
+Olhando para nosso arquivo pug 'index.pug', incluído em seu projeto, podemos ver as variáveis *title* e *message*.
 
-To pass those along from our server, you will need to add an object as a second argument to your *res.render* with the variables and their values. For example, pass this object along setting the variables for your index view: `{title: 'Hello', message: 'Please login'}`
+Para passar esses dados de nosso servidor, você precisará adicionar um objeto como um segundo argumento para *res.render* com as variáveis e seus valores. Para exemplificar, passe este objeto e configure as variáveis para sua visualização do índice: `{title: 'Hello', message: 'Please login'}`
 
-It should look like: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your index.pug file!
+Deve se parecer como o seguinte: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Em seguida, atualize a página e você deve ver esses valores renderizados em sua visualização no ponto correto conforme descrito no arquivo index.pug!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871).
 
 # --hints--
 
-Pug should correctly render variables.
+O Pug deve renderizar as variáveis corretamente.
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036169
-title: Passar Props para um Componente Funcional Sem Estado
+title: Passar props para um componente funcional sem estado
 challengeType: 6
 forumTopicId: 301402
 dashedName: pass-props-to-a-stateless-functional-component
@@ -8,7 +8,7 @@ dashedName: pass-props-to-a-stateless-functional-component
 
 # --description--
 
-Os desafios anteriores cobriram muito sobre a criação e composição de elementos JSX, componentes funcionais e componentes de classe de estilo ES6 no React. Com esta fundação, é hora de olhar outro recurso muito comum em React: **props**. No React, você pode passar props, ou propriedades, para componentes filhos. Digamos que você tem um componente `App` que renderiza um componente filho chamado `Welcome` que é um componente funcional sem estado. Você pode passar a `Welcome` uma propriedade `user` escrevendo:
+Os desafios anteriores cobriram muito sobre a criação e composição de elementos JSX, componentes funcionais e componentes de classe de estilo ES6 no React. Com esta base, é hora de olhar outro recurso muito comum em React: **props**. No React, você pode passar props, ou propriedades, para componentes filhos. Digamos que você tem um componente `App` que renderiza um componente filho chamado `Welcome` que é um componente funcional sem estado. Você pode passar a `Welcome` uma propriedade `user` escrevendo:
 
 ```jsx
 <App>

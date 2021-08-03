@@ -1,6 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bbc
-title: Divida Seus Estilos em Pedaços Menores com Partials
+title: Dividir os estilos em partes menores com partials
 challengeType: 0
 forumTopicId: 301459
 dashedName: split-your-styles-into-smaller-chunks-with-partials
@@ -18,15 +18,15 @@ Por exemplo, se todos os seus mixins são salvos em uma partial chamada "\_mixin
 @import 'mixins'
 ```
 
-Observe que o sublinhado e a extensão de arquivo não são necessários na instrução </code>import` - Sass entende que é partial. Uma vez que um partial é importado para um arquivo, todas as variáveis, mixins e outro código estão disponíveis para uso.</p>
+Observe que o sublinhado e a extensão de arquivo não são necessários na instrução `import` - o Sass entende que é partial. Uma vez que um partial é importado para um arquivo, todas as variáveis, mixins e outro código estão disponíveis para uso.
 
-<h1 spaces-before="0">--instructions--</h1>
+# --instructions--
 
-<p spaces-before="0">Escreva uma declaração <code>@import` para importar uma partial chamada `_variables.scss` para o arquivo main.scss.
+Escreva uma declaração `@import` para importar uma partial chamada `_variables.scss` para o arquivo main.scss.
 
 # --hints--
 
-Seu código deve usar a diretiva `@import` e não deve incluir o sublinhado no nome do arquivo.
+O código deve usar a diretiva `@import` e não deve incluir o sublinhado no nome do arquivo.
 
 ```js
 assert(code.match(/@import\s+?('|")variables\1/gi));

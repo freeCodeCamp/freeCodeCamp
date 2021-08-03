@@ -23,7 +23,7 @@ Em ordem, essas expressões seriam iguais à `false`, `true` e `true`.
 
 # --instructions--
 
-Adicione o operador de desigualdade estrito ao comando `if` para que a função retorne a string `Not Equal` quando `val` não é estritamente igual a `17`
+Adicione o operador de desigualdade estrita ao comando `if` para que a função retorne a string `Not Equal` quando `val` não é estritamente igual a `17`
 
 # --hints--
 

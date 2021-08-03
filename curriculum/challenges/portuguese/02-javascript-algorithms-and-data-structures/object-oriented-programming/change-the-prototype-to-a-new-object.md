@@ -8,7 +8,7 @@ dashedName: change-the-prototype-to-a-new-object
 
 # --description--
 
-Até o momento, você tem adicionado propriedades para cada `protótipo` individualmente:
+Até o momento, você tem adicionado propriedades para cada `prototype` individualmente:
 
 ```js
 Bird.prototype.numLegs = 2;
@@ -26,7 +26,7 @@ Bird.prototype.describe = function() {
 }
 ```
 
-Uma forma mais eficiente é definir o `protótipo` para um novo objeto que já possui as propriedades. Dessa maneira, as propriedades são adicionadas todas de uma vez:
+Uma forma mais eficiente é definir o `prototype` para um novo objeto que já possui as propriedades. Dessa maneira, as propriedades são adicionadas todas de uma vez:
 
 ```js
 Bird.prototype = {
@@ -42,7 +42,7 @@ Bird.prototype = {
 
 # --instructions--
 
-Adiciona a propriedade `numLegs` e os dois métodos `eat()` e `describe()` para o `protótipo` de `Dog` definindo o `protótipo` para um novo objeto.
+Adiciona a propriedade `numLegs` e os dois métodos `eat()` e `describe()` para o `prototype` de `Dog` definindo o `prototype` para um novo objeto.
 
 # --hints--
 

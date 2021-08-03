@@ -1,22 +1,20 @@
+import { combineEpics, ofType } from 'redux-observable';
 import { of } from 'rxjs';
 import { filter, switchMap, map, tap, ignoreElements } from 'rxjs/operators';
-import { combineEpics, ofType } from 'redux-observable';
 import store from 'store';
 
+import { setContent, isPoly } from '../../../../../utils/polyvinyl';
+import { createFlashMessage } from '../../../components/Flash/redux';
+import { actionTypes as appTypes } from '../../../redux/action-types';
+
+import { actionTypes } from './action-types';
 import {
-  types,
   storedCodeFound,
   noStoredCodeFound,
   isCodeLockedSelector,
   challengeFilesSelector,
   challengeMetaSelector
 } from './';
-
-import { types as appTypes } from '../../../redux';
-
-import { setContent, isPoly } from '../../../../../utils/polyvinyl';
-
-import { createFlashMessage } from '../../../components/Flash/redux';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -67,7 +65,7 @@ function isFilesAllPoly(challengeFiles) {
 
 function clearCodeEpic(action$, state$) {
   return action$.pipe(
-    ofType(appTypes.submitComplete, types.resetChallenge),
+    ofType(appTypes.submitComplete, actionTypes.resetChallenge),
     tap(() => {
       const { id } = challengeMetaSelector(state$.value);
       store.remove(id);
@@ -78,7 +76,7 @@ function clearCodeEpic(action$, state$) {
 
 function saveCodeEpic(action$, state$) {
   return action$.pipe(
-    ofType(types.executeChallenge, types.saveEditorContent),
+    ofType(actionTypes.executeChallenge, actionTypes.saveEditorContent),
     // do not save challenge if code is locked
     filter(() => !isCodeLockedSelector(state$.value)),
     map(action => {
@@ -100,7 +98,7 @@ function saveCodeEpic(action$, state$) {
         return { ...action, error: true };
       }
     }),
-    ofType(types.saveEditorContent),
+    ofType(actionTypes.saveEditorContent),
     switchMap(({ error }) =>
       of(
         createFlashMessage({
@@ -117,7 +115,7 @@ function saveCodeEpic(action$, state$) {
 
 function loadCodeEpic(action$, state$) {
   return action$.pipe(
-    ofType(types.challengeMounted),
+    ofType(actionTypes.challengeMounted),
     filter(() => {
       const challengeFiles = challengeFilesSelector(state$.value);
       return challengeFiles?.length > 0;

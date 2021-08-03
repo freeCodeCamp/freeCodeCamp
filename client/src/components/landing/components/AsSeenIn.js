@@ -1,7 +1,7 @@
-import React from 'react';
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { AsSeenInText } from '../../../assets/images/components';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { AsSeenInText } from '../../../assets/images/components';
 
 const AsSeenIn = () => {
   const { t } = useTranslation();

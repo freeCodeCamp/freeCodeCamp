@@ -1,9 +1,9 @@
-const mockAST = require('../__fixtures__/ast-simple.json');
+const { isObject } = require('lodash');
 const editableSolutionAST = require('../__fixtures__/ast-erm-in-solution.json');
 const multiSolnsAST = require('../__fixtures__/ast-multiple-solutions.json');
+const mockAST = require('../__fixtures__/ast-simple.json');
 
 const addSolution = require('./add-solution');
-const { isObject } = require('lodash');
 
 describe('add solution plugin', () => {
   const plugin = addSolution();

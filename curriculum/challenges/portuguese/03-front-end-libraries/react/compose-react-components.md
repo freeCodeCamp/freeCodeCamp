@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036166
-title: Componha Componentes React
+title: Compor componentes do React
 challengeType: 6
 forumTopicId: 301381
 dashedName: compose-react-components

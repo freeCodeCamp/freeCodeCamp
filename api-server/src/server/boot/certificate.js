@@ -1,17 +1,10 @@
+import path from 'path';
+import debug from 'debug';
+import dedent from 'dedent';
 import _ from 'lodash';
 import loopback from 'loopback';
-import path from 'path';
-import dedent from 'dedent';
 import { Observable } from 'rx';
-import debug from 'debug';
 import { isEmail } from 'validator';
-import { reportError } from '../middlewares/sentry-error-handler.js';
-
-import { ifNoUser401 } from '../utils/middleware';
-import { observeQuery } from '../utils/rx';
-
-import { getChallenges } from '../utils/get-curriculum';
-
 import {
   completionHours,
   certTypes,
@@ -22,6 +15,11 @@ import {
   oldDataVizId,
   superBlockCertTypeMap
 } from '../../../../config/certification-settings';
+import { reportError } from '../middlewares/sentry-error-handler.js';
+
+import { getChallenges } from '../utils/get-curriculum';
+import { ifNoUser401 } from '../utils/middleware';
+import { observeQuery } from '../utils/rx';
 
 const {
   legacyFrontEndChallengeId,

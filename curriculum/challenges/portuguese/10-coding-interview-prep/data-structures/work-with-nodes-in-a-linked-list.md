@@ -1,6 +1,6 @@
 ---
 id: 587d8251367417b2b2512c61
-title: Work with Nodes in a Linked List
+title: Trabalhar com nós em uma lista encadeada
 challengeType: 1
 forumTopicId: 301721
 dashedName: work-with-nodes-in-a-linked-list
@@ -8,25 +8,25 @@ dashedName: work-with-nodes-in-a-linked-list
 
 # --description--
 
-Another common data structure you'll run into in computer science is the <dfn>linked list</dfn>. A linked list is a linear collection of data elements, called 'nodes', each of which points to the next. Each <dfn>node</dfn> in a linked list contains two key pieces of information: the `element` itself, and a reference to the next `node`.
+Outra estrutura de dados comum que você vai encontrar frequentemente em ciência da computação é a <dfn>lista encadeada</dfn>. Uma lista encadeada é uma coleção linear de elementos de dados, chamados "nós". Cada um destes nós aponta para o próximo. Cada <dfn>nó</dfn> em uma lista encadeada contém duas informações importantes: o `element` em si e uma referência ao próximo `node` (nó).
 
-Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line: they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.
+Imagine que está em uma fila de dançarinos de conga. Suas mãos estão sobre a próxima pessoa na fila e a pessoa que está atrás de você tem as mãos sobre você. Você pode ver a pessoa diretamente à sua frente, mas ela está bloqueando a vista das outras pessoas na frente dela. Um nó é como uma pessoa em uma fila de dançarinos de conga: eles sabem quem eles são e só podem ver a próxima pessoa na fila, mas não conhecem as outras pessoas à frente ou atrás delas.
 
 # --instructions--
 
-In our code editor, we've created two nodes, `Kitten` and `Puppy`, and we've manually connected the `Kitten` node to the `Puppy` node.
+No nosso editor de código, criamos dois nós, `Kitten` e `Puppy`, e conectamos manualmente o nó `Kitten` com o nó `Puppy`.
 
-Create a `Cat` and `Dog` node and manually add them to the line.
+Crie um nó de `Cat` e um nó `Dog` e adicione-os manualmente à lista.
 
 # --hints--
 
-Your `Puppy` node should have a reference to a `Cat` node.
+O nó `Puppy` deve ter uma referência a um nó `Cat`.
 
 ```js
 assert(Puppy.next.element === 'Cat');
 ```
 
-Your `Cat` node should have a reference to a `Dog` node.
+O nó `Cat` deve ter uma referência a um nó `Dog`.
 
 ```js
 assert(Cat.next.element === 'Dog');

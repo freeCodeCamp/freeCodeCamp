@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import TimeLine from './TimeLine';
 import { useStaticQuery } from 'gatsby';
+import React from 'react';
+import TimeLine from './TimeLine';
 
 beforeEach(() => {
   // @ts-ignore

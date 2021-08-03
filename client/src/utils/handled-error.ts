@@ -1,10 +1,9 @@
-import { has } from 'lodash-es';
 import type { AxiosError, AxiosResponse } from 'axios';
-
-import standardErrorMessage from './standard-error-message';
-import reportedErrorMessage from './reported-error-message';
+import { has } from 'lodash-es';
 
 import { reportClientSideError } from './report-error';
+import reportedErrorMessage from './reported-error-message';
+import standardErrorMessage from './standard-error-message';
 
 interface ErrorData {
   type?: string;

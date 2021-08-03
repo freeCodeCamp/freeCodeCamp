@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import React, { Component, useMemo } from 'react';
-import { reverse, sortBy } from 'lodash-es';
 import {
   Button,
   Modal,
@@ -8,26 +6,26 @@ import {
   DropdownButton,
   MenuItem
 } from '@freecodecamp/react-bootstrap';
+import Loadable from '@loadable/component';
 import { useStaticQuery, graphql } from 'gatsby';
+import { reverse, sortBy } from 'lodash-es';
+import React, { Component, useMemo } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 
-import './timeline.css';
-import TimelinePagination from './TimelinePagination';
-import { FullWidthRow, Link } from '../../helpers';
-import Loadable from '@loadable/component';
-
+import envData from '../../../../../config/env.json';
+import { langCodes } from '../../../../../config/i18n/all-langs';
 import {
   getCertIds,
   getPathFromID,
   getTitleFromId
 } from '../../../../../utils';
-
-import { maybeUrlRE } from '../../../utils';
 import CertificationIcon from '../../../assets/icons/certification-icon';
-
-import { langCodes } from '../../../../../config/i18n/all-langs';
-import envData from '../../../../../config/env.json';
 import { ChallengeFiles } from '../../../redux/prop-types';
+import { maybeUrlRE } from '../../../utils';
+import { FullWidthRow, Link } from '../../helpers';
+import TimelinePagination from './TimelinePagination';
+
+import './timeline.css';
 
 const SolutionViewer = Loadable(
   () => import('../../SolutionViewer/SolutionViewer')
@@ -177,8 +175,7 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
           {certPath ? (
             <Link
               className='timeline-cert-link'
-              external={true}
-              to={`certification/${username}/${certPath as string}`}
+              to={`/certification/${username}/${certPath as string}`}
             >
               {challengeTitle}
               <CertificationIcon />

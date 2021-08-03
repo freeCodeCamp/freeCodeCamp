@@ -18,17 +18,17 @@ Se a string fosse `abab`, a operação retornaria `["a", "a"]` porque entre os d
 
 # --instructions--
 
-Você quer capturar as ocorrências de `s` quando acontecer uma ou mais vezes em `Mississippi`. Escreve uma regex que use o caractere `+`.
+Você quer capturar as ocorrências de `s` quando acontecer uma ou mais vezes em `Mississippi`. Escreva uma regex que use o caractere `+`.
 
 # --hints--
 
-Sua regex `myRegex` deve usar o caractere `+` para encontrar um ou mais `s`s.
+A regex `myRegex` deve usar o caractere `+` para encontrar um ou mais `s`s.
 
 ```js
 assert(/\+/.test(myRegex.source));
 ```
 
-Sua regex `myRegex` deve encontrar 2 itens.
+A regex `myRegex` deve encontrar 2 itens.
 
 ```js
 assert(result.length == 2);

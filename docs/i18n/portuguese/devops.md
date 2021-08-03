@@ -169,7 +169,7 @@ Aqui está o estado atual de teste, compilação e implantação do código.
 
 Você é bem-vindo para testar estes lançamentos em um modo **de "beta testing público"** e obter acesso antecipado às funcionalidades que estão por vir. Às vezes, esses recursos/mudanças são referidos como **next, beta, staging,** etc. interligadamente.
 
-Suas contribuições por meio de comentários e issues nos ajudarão a fazer as plataformas de produção do `freeCodeCamp. rg` mais **resilientes**, **consistentes** e **estáveis** para todos.
+Suas contribuições por meio de comentários e issues nos ajudarão a fazer as plataformas de produção do `freeCodeCamp.org` mais **resilientes**, **consistentes** e **estáveis** para todos.
 
 Agradecemos por relatar erros que encontra e ajuda para melhorar o freeCodeCamp.org. Você é demais!
 

@@ -20,7 +20,7 @@ function Bird() {
 let blueBird = new Bird();
 ```
 
-**Note:** `this` dentro do construtor sempre refere-se ao objeto sendo criado.
+**Observação:** `this` dentro do construtor sempre refere-se ao objeto sendo criado.
 
 Note que o operador `new` é usado quando chamamos o construtor. Isso avisa ao JavaScript para criar uma nova instância de `Bird` chamado `blueBird`. Sem o operador `new`, `this` dentro do construtor não iria apontar para o objeto recentemente criado, dando resultados inesperados. Agora `blueBird` possui todas as propriedades definidas dentro do construtor `Bird`:
 
@@ -49,7 +49,7 @@ Utilize o construtor de `Dog` da última lição para criar uma nova instância 
 assert(hound instanceof Dog);
 ```
 
-Seu código deve utilizar o operador `new` para criar uma instância de `Dog`.
+O código deve utilizar o operador `new` para criar uma instância de `Dog`.
 
 ```js
 assert(code.match(/new/g));

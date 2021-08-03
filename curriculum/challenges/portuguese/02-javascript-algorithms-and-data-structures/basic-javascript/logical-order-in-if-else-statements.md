@@ -9,11 +9,11 @@ dashedName: logical-order-in-if-else-statements
 
 # --description--
 
-Ordem é importante em instruções `if` e `else if`.
+A ordem é importante em instruções `if` e `else if`.
 
-A função é executada de cima para baixo, então você deve ser cuidados com qual instrução vem primeiro.
+A função é executada de cima para baixo, então você deve ser cuidadoso com qual instrução vem primeiro.
 
-Tomem essas duas funções como exemplo.
+Tomemos como exemplo estas duas funções.
 
 Aqui está a primeira:
 
@@ -29,7 +29,7 @@ function foo(x) {
 }
 ```
 
-E a segunda apenas altera a ordem das instruções if e else if:
+A segunda apenas altera a ordem das instruções if e else if:
 
 ```js
 function bar(x) {
@@ -43,14 +43,14 @@ function bar(x) {
 }
 ```
 
-Embora as duas funções se pareçam praticamente idênticas, se nós passarmos um número para ambos nós teremos saídas diferentes.
+Embora as duas funções pareçam praticamente idênticas, se passarmos um número para ambas, teremos saídas diferentes.
 
 ```js
 foo(0)
 bar(0)
 ```
 
-`foo(0)` retornará a string `Less than one`, e `bar(0)` retornará a string `Less than two`.
+`foo(0)` retornará a string `Less than one` e `bar(0)` retornará a string `Less than two`.
 
 # --instructions--
 

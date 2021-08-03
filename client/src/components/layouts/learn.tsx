@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { createSelector } from 'reselect';
-import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import { Loader } from '../../components/helpers';
 import {
   userSelector,
@@ -9,8 +9,8 @@ import {
   isSignedInSelector,
   tryToShowDonationModal
 } from '../../redux';
-import createRedirect from '../create-redirect';
 import DonateModal from '../Donation/DonationModal';
+import createRedirect from '../create-redirect';
 
 import './prism.css';
 import './prism-night.css';

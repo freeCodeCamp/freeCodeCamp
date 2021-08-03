@@ -1,6 +1,6 @@
 ---
 id: 5a8b073d06fa14fcfde687aa
-title: Exercise Tracker
+title: Registrador de exercícios
 challengeType: 4
 forumTopicId: 301505
 dashedName: exercise-tracker
@@ -8,17 +8,17 @@ dashedName: exercise-tracker
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://exercise-tracker.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <https://exercise-tracker.freecodecamp.rocks/>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) e complete o projeto localmente.
+-   Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker) para completar o projeto.
+-   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Você deve fornecer seu próprio projeto, não o exemplo de URL.
 
 ```js
 (getUserInput) => {
@@ -29,7 +29,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can `POST` to `/api/users` with form data `username` to create a new user. The returned response will be an object with `username` and `_id` properties.
+Você pode fazer a solicitação de `POST` para `/api/users` com dados do formulário `username` para criar um novo usuário. A resposta retornada será um objeto com as propriedades `username` e `_id`.
 
 ```js
 async (getUserInput) => {
@@ -49,7 +49,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users` to get an array of all users. Each element in the array is an object containing a user's `username` and `_id`.
+Você pode fazer uma solicitação de `GET` a `/api/users` para obter um array de todos os usuários. Cada elemento no array é um objeto que contém `username` e `_id` dos usuários.
 
 ```js
 async (getUserInput) => {
@@ -66,7 +66,7 @@ async (getUserInput) => {
 };
 ```
 
-You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used. The response returned will be the user object with the exercise fields added.
+Você pode fazer a solicitação de `POST` para `/api/users/:_id/exercises` com os dados do formulário `description`, `duration` e, como opção, `date`. Se nenhuma data for fornecida, a data atual será utilizada. A resposta retornada será o objeto do usuário com os campos de exercício adicionados.
 
 ```js
 async (getUserInput) => {
@@ -102,7 +102,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user. The returned response will be the user object with a `log` array of all the exercises added. Each log item has the `description`, `duration`, and `date` properties.
+Você pode fazer uma solicitação de `GET` a `/api/users/:_id/logs` para obter um registro completo dos exercícios de qualquer usuário. A resposta retornada será o objeto de usuário com um array de `log` de todos os exercícios adicionados. Cada item do registro (log) terá as propriedades `description`, `duration` e `date`.
 
 ```js
 async (getUserInput) => {
@@ -144,7 +144,7 @@ async (getUserInput) => {
 };
 ```
 
-A request to a user's log (`/api/users/:_id/logs`) returns an object with a `count` property representing the number of exercises returned.
+Uma solicitação para o registro (log) de um usuário (`/api/users/:_id/logs`) retornará um objeto com uma propriedade `count`, que representa o número de exercícios retornados.
 
 ```js
 async (getUserInput) => {
@@ -185,7 +185,7 @@ async (getUserInput) => {
 };
 ```
 
-You can add `from`, `to` and `limit` parameters to a `/api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
+Você pode adicionar os parâmetros `from`, `to` e `limit` a uma solicitação para `/api/users/:_id/logs` para recuperar parte do registro de qualquer usuário. `from` e `to` são datas no formato `yyyy-mm-dd`. `limit` é um número inteiro de quantos registros devem ser enviados de volta.
 
 ```js
 async (getUserInput) => {

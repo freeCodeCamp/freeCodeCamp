@@ -1,30 +1,18 @@
 // Package Utilities
+import { graphql } from 'gatsby';
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { HandlerProps } from 'react-reflex';
+import Media from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import { connect } from 'react-redux';
-import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
-import Media from 'react-responsive';
-import { TFunction, withTranslation } from 'react-i18next';
 
 // Local Utilities
-import LearnLayout from '../../../components/layouts/learn';
-import MultifileEditor from './MultifileEditor';
-import Preview from '../components/Preview';
-import SidePanel from '../components/Side-Panel';
-import Output from '../components/output';
-import CompletionModal from '../components/completion-modal';
-import HelpModal from '../components/HelpModal';
-import VideoModal from '../components/VideoModal';
-import ResetModal from '../components/ResetModal';
-import MobileLayout from './MobileLayout';
-import DesktopLayout from './DesktopLayout';
-import Hotkeys from '../components/Hotkeys';
-import { getGuideUrl } from '../utils';
 import store from 'store';
 import { challengeTypes } from '../../../../utils/challengeTypes';
-import { isContained } from '../../../utils/is-contained';
+import LearnLayout from '../../../components/layouts/learn';
 import {
   ChallengeNodeType,
   ChallengeFiles,
@@ -33,6 +21,17 @@ import {
   Test,
   ResizePropsType
 } from '../../../redux/prop-types';
+import { isContained } from '../../../utils/is-contained';
+import ChallengeDescription from '../components/Challenge-Description';
+import HelpModal from '../components/HelpModal';
+import Hotkeys from '../components/Hotkeys';
+import Preview from '../components/Preview';
+import ResetModal from '../components/ResetModal';
+import SidePanel from '../components/Side-Panel';
+import VideoModal from '../components/VideoModal';
+import ChallengeTitle from '../components/challenge-title';
+import CompletionModal from '../components/completion-modal';
+import Output from '../components/output';
 import {
   createFiles,
   challengeFilesSelector,
@@ -43,19 +42,24 @@ import {
   challengeMounted,
   consoleOutputSelector,
   executeChallenge,
-  cancelTests
+  cancelTests,
+  isChallengeCompletedSelector
 } from '../redux';
+import { getGuideUrl } from '../utils';
+import DesktopLayout from './DesktopLayout';
+import MobileLayout from './MobileLayout';
+import MultifileEditor from './MultifileEditor';
 
 // Styles
 import './classic.css';
 import '../components/test-frame.css';
-import { HandlerProps } from 'react-reflex';
 
 // Redux Setup
 const mapStateToProps = createStructuredSelector({
   challengeFiles: challengeFilesSelector,
   tests: challengeTestsSelector,
-  output: consoleOutputSelector
+  output: consoleOutputSelector,
+  isChallengeCompleted: isChallengeCompletedSelector
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -82,6 +86,7 @@ interface ShowClassicProps {
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
+  isChallengeCompleted: boolean;
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMetaType;
@@ -287,15 +292,27 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     return (
       <SidePanel
         block={block}
+        challengeDescription={
+          <ChallengeDescription
+            block={block}
+            description={description}
+            instructions={instructions}
+          />
+        }
+        challengeTitle={
+          <ChallengeTitle
+            block={block}
+            isCompleted={this.props.isChallengeCompleted}
+            superBlock={superBlock}
+            translationPending={translationPending}
+          >
+            {title}
+          </ChallengeTitle>
+        }
         className='full-height'
-        description={description}
         guideUrl={getGuideUrl({ forumTopicId, title })}
-        instructions={instructions}
         instructionsPanelRef={this.instructionsPanelRef}
         showToolPanel={showToolPanel}
-        superBlock={superBlock}
-        title={title}
-        translationPending={translationPending}
         videoUrl={this.getVideoUrl()}
       />
     );
@@ -303,7 +320,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   renderEditor() {
     const { challengeFiles } = this.props;
-    const { description } = this.getChallenge();
+    const { description, title } = this.getChallenge();
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
       challengeFiles && (
@@ -314,6 +331,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           editorRef={this.editorRef}
           hasEditableBoundries={this.hasEditableBoundries()}
           resizeProps={this.resizeProps}
+          title={title}
         />
       )
     );
@@ -395,6 +413,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
             <DesktopLayout
+              block={block}
               challengeFiles={challengeFiles}
               editor={this.renderEditor()}
               hasEditableBoundries={this.hasEditableBoundries()}
@@ -405,6 +424,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               layoutState={this.state.layout}
               preview={this.renderPreview()}
               resizeProps={this.resizeProps}
+              superBlock={superBlock}
               testOutput={this.renderTestOutput()}
             />
           </Media>

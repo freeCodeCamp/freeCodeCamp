@@ -1,14 +1,14 @@
 // Package Utilities
-import React from 'react';
-import { bindActionCreators, Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
+import { createSelector } from 'reselect';
 
 // Local Utilities
-import { isResetModalOpenSelector, closeModal, resetChallenge } from '../redux';
 import { executeGA } from '../../../redux';
+import { isResetModalOpenSelector, closeModal, resetChallenge } from '../redux';
 
 // Styles
 import './reset-modal.css';

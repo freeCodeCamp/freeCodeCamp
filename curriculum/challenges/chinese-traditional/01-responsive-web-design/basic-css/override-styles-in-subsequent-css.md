@@ -17,15 +17,15 @@ dashedName: override-styles-in-subsequent-css
 
 創建一個 `blue-text` class，將元素的顏色設置爲藍色。 將它放在 `pink-text` class 下面。
 
-創建一個字體顏色爲 `blue` 的 `blue-text` class，並確保它在 `pink-text` 下方聲明。
+將 `blue-text` class 應用於 `h1` 元素，看看它和該元素上的 `pink-text` class 哪一個會優先顯示。
 
-HTML 同時應用多個 class 屬性需以空格來間隔，例子如下:
+將多個 class 屬性應用於一個 HTML 元素，需以空格來間隔這些屬性，例如：
 
 ```html
 class="class1 class2"
 ```
 
-**注意：**HTML 元素裏應用的 class 的先後順序無關緊要。
+**注意：** HTML 元素裏應用的 class 的先後順序無關緊要。
 
 但是，在 `<style>` 標籤裏面聲明的 `class` 順序十分重要，之後的聲明會覆蓋之前的聲明。 第二個聲明的優先級始終高於第一個聲明。 由於 `.blue-text` 是在後面聲明的，所以它的樣式會覆蓋 `.pink-text` 裏的樣式。
 

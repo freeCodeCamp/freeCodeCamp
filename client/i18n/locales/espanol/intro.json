@@ -315,7 +315,7 @@
     "intro": [
       "Hasta este punto, sólo has usado JavaScript en la parte de front end para añadir interactividad a una página, resolver los desafíos de algoritmos o construir un SPA. Pero JavaScript también se puede utilizar en el back end, o servidor, para construir aplicaciones web completas.",
       "Hoy en día, una de las formas populares de construir aplicaciones es a través de microservicios, que son pequeñas aplicaciones modulares que trabajan juntas para formar un todo más grande.",
-      "En la certificación de APIs y Microservicios aprenderás cómo escribir para back-end listo con Node.js y npm (Node Package Manager). También construirá aplicaciones web con el framework Express, y construirás un microservicio \"People Finder\" con MongoDB y la librería Mongoose."
+      "In the APIs and Microservices Certification, you'll learn how to write back end apps with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {

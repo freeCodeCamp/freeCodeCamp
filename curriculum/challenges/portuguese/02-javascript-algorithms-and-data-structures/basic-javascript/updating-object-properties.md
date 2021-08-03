@@ -26,7 +26,7 @@ Como ele é um cachorro particularmente feliz, vamos mudar seu nome para o texto
 
 # --instructions--
 
-Atualize a propriedade name do objeto `myDog`. Vamos alterar o valor da propriedade name dela de `Coder` para `Happy Coder`. Você pode usar notação de ponto ou de colchetes.
+Atualize a propriedade name do objeto `myDog`. Vamos alterar o valor da propriedade name dele de `Coder` para `Happy Coder`. Você pode usar notação de ponto ou de colchetes.
 
 # --hints--
 

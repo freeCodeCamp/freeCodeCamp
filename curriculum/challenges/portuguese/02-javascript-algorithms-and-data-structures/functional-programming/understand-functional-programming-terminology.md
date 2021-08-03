@@ -14,7 +14,7 @@ Por causa disso, precisaremos rever a função `getTea` do último desafio para 
 
 Mas primeiro, vejamos um pouco de terminologia funcional:
 
-<dfn>Callbacks</dfn> são funções que são passadas a outras funções, que decidem quando e como são chamados. Você pode ter visto alguns sendo passados a outros métodos. Em `filter`, por exemplo, o callback diz ao JavaScript qual é o critério para filtrar um array.
+<dfn>Callbacks</dfn> são funções que são passadas a outras funções, que decidem quando e como são chamados. Você pode ter visto alguns sendo passados a outros métodos. Em `filter`, por exemplo, a função de callback diz ao JavaScript qual é o critério para filtrar um array.
 
 Funções que podem ser atribuídas a variáveis, passadas a outras funções ou retornadas de outra função como qualquer outro valor são chamadas de <dfn>funções de primeira classe</dfn>. Em JavaScript, todas as funções são funções de primeira classe.
 
@@ -26,7 +26,7 @@ Funções podem ser chamadas de <dfn>lambda</dfn> quando passadas para outra fun
 
 Prepare 27 xícaras de chá verde e 13 xícaras de chá preto; armazene-as nas variáveis `tea4GreenTeamFCC` e `tea4BlackTeamFCC`, respectivamente. Perceba que a função `getTea` foi alterada para receber uma função como primeiro argumento.
 
-Obs: O número de xícaras de chá se tornou o último parâmetro da função. Discutiremos mais sobre isso nas próximas aulas.
+Observação: o número de xícaras de chá se tornou o último parâmetro da função. Discutiremos mais sobre isso nas próximas aulas.
 
 # --hints--
 

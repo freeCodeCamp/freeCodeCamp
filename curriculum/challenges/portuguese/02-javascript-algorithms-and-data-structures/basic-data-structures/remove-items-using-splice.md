@@ -8,9 +8,9 @@ dashedName: remove-items-using-splice
 
 # --description--
 
-Ok, então aprendemos como remover elementos do início e do fim de arrays usando `shift()` e `pop()`, mas e se quisermos remover um elemento de algum lugar do meio? Ou remover mais de um elemento de uma vez? Bem, é aí que `splice()` pode ser útil. `splice()` nos permite fazer isso: **remova qualquer número de elementos consecutivos** de qualquer lugar no array.
+Pois bem. Aprendemos como remover elementos do início e do fim de arrays usando `shift()` e `pop()`, mas e se quisermos remover um elemento de algum lugar do meio? Ou remover mais de um elemento de uma vez? Bem, é aí que `splice()` pode ser útil. `splice()` nos permite fazer isso: **remover qualquer número de elementos consecutivos** de qualquer lugar no array.
 
-`splice` pode receber 3 parâmetros, mas por agora, nós focaremos apenas nos 2 primeiros. Os dois primeiros parâmetros de `splice()` são inteiros que representam índices, ou posições, do array do qual o método `splice()` está sendo chamado. E lembre-se, arrays são *indexados a zero*, então para indicar o primeiro elemento do array, usaríamos `0`. O primeiro parâmetro de `splice()` representa o índice no array do qual começar a remover elementos, enquanto o segundo parâmetro indica o número de elementos a serem removidos. Por exemplo:
+`splice` pode receber 3 parâmetros, mas por agora, nós focaremos apenas nos 2 primeiros. Os dois primeiros parâmetros de `splice()` são inteiros que representam índices, ou posições, do array do qual o método `splice()` está sendo chamado. Lembre-se: arrays são *indexados a zero*. Então, para indicar o primeiro elemento do array, usaríamos `0`. O primeiro parâmetro de `splice()` representa o índice no array do qual começar a remover elementos, enquanto o segundo parâmetro indica o número de elementos a serem removidos. Por exemplo:
 
 ```js
 let array = ['today', 'was', 'not', 'so', 'great'];
@@ -18,7 +18,7 @@ let array = ['today', 'was', 'not', 'so', 'great'];
 array.splice(2, 2);
 ```
 
-Aqui nós removemos 2 elementos, começando com o terceiro elemento (no índice 2). `array` teria o valor `['today', 'was', 'great']`.
+Aqui, nós removemos 2 elementos, começando com o terceiro elemento (no índice 2). `array` teria o valor `['today', 'was', 'great']`.
 
 `splice()` não apenas modifica o array do qual está sendo chamado, mas também retorna um novo array contendo os valores dos elementos removidos:
 
@@ -59,7 +59,7 @@ Seu código deve utilizar o método `splice()` em `arr`.
 assert(__helpers.removeWhiteSpace(code).match(/arr\.splice\(/));
 ```
 
-O splice deve remover apenas os elementos de `arr` e não adicionar qualquer elemento adicional para `arr`.
+O splice deve remover apenas os elementos de `arr` e não adicionar qualquer elemento a mais para `arr`.
 
 ```js
 assert(

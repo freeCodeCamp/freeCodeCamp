@@ -9,11 +9,11 @@ dashedName: comparisons-with-the-logical-or-operator
 
 # --description--
 
-O <dfn>operador lógico ou</dfn> (`||`) retorna `true` se qualquer um dos <dfn>operandos</dfn> for `true`. Caso contrário, retorna `false`.
+O <dfn>operador lógico OR</dfn> (`||`) retorna `true` se qualquer um dos <dfn>operandos</dfn> for `true`. Caso contrário, retorna `false`.
 
-O <dfn>operador lógico ou</dfn> é composto por dois símbolos de pipe: (`||`). Normalmente isso pode ser encontrado entre as teclas Backspace e Enter.
+O <dfn>operador lógico ou</dfn> é composto por dois símbolos de pipe: (`||`). Normalmente, ele pode ser encontrado entre as teclas Backspace e Enter.
 
-O padrão abaixo deve parecer familiar aos pontos da passagens anteriores:
+O padrão abaixo deve parecer familiar aos pontos das passagens anteriores:
 
 ```js
 if (num > 10) {
@@ -25,7 +25,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-retornará `Yes` apenas se `num` for entre `5` e `10` (5 e 10 incluídos). A mesma lógica pode ser escrita como:
+retornará `Yes` apenas se `num` for entre `5` e `10` (5 e 10 incluídos). A mesma lógica pode ser escrita assim:
 
 ```js
 if (num > 10 || num < 5) {

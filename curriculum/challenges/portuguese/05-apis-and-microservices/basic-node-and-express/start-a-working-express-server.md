@@ -1,6 +1,6 @@
 ---
 id: 587d7fb0367417b2b2512bee
-title: Start a Working Express Server
+title: Iniciar um servidor de Express funcional
 challengeType: 2
 forumTopicId: 301519
 dashedName: start-a-working-express-server
@@ -8,9 +8,9 @@ dashedName: start-a-working-express-server
 
 # --description--
 
-In the first two lines of the file `myApp.js`, you can see how easy it is to create an Express app object. This object has several methods, and you will learn many of them in these challenges. One fundamental method is `app.listen(port)`. It tells your server to listen on a given port, putting it in running state. For testing reasons, we need the app to be running in the background so we added this method in the `server.js` file for you.
+Nas duas primeiras linhas do arquivo `myApp.js`, você pode ver como é fácil criar um objeto do aplicativo Express. Este objeto tem vários métodos e você aprenderá muitos deles nestes desafios. Um método fundamental é o `app.listen(port)`. Ele diz ao servidor para que escute em uma determinada porta, colocando-o em estado de execução. Para fins de teste, precisamos que o aplicativo esteja sendo executado em segundo plano para que adicionemos este método no arquivo `server.js` para você.
 
-Let’s serve our first string! In Express, routes takes the following structure: `app.METHOD(PATH, HANDLER)`. METHOD is an http method in lowercase. PATH is a relative path on the server (it can be a string, or even a regular expression). HANDLER is a function that Express calls when the route is matched. Handlers take the form `function(req, res) {...}`, where req is the request object, and res is the response object. For example, the handler
+Vamos servir nossa primeira string! No Express, as rotas têm a seguinte estrutura: `app.METHOD(PATH, HANDLER)`. METHOD é um método http em letras minúsculas. PATH é um caminho relativo no servidor (pode ser uma string ou até mesmo uma expressão regular). HANDLER é uma função que o Express chama quando a rota tem correspondência. Os manipuladores têm o formato `function(req, res) {...}`, onde req é o objeto solicitado, e res é o objeto de resposta. Por exemplo, o manipulador
 
 ```js
 function(req, res) {
@@ -18,17 +18,17 @@ function(req, res) {
 }
 ```
 
-will serve the string 'Response String'.
+servirá a string 'Response String'.
 
 # --instructions--
 
-Use the `app.get()` method to serve the string "Hello Express" to GET requests matching the `/` (root) path. Be sure that your code works by looking at the logs, then see the results in the preview if you are using Replit.
+Use o método `app.get()` para servir a string "Hello Express" para solicitações de GET que correspondam ao caminho `/` (root). Certifique-se de que seu código funciona olhando os logs e, em seguida, veja os resultados na pré-visualização se você estiver usando o Replit.
 
-**Note:** All the code for these lessons should be added in between the few lines of code we have started you off with.
+**Observação:** todo o código para estas lições deve ser adicionado entre as poucas linhas de código que fornecemos para você no início.
 
 # --hints--
 
-Your app should serve the string 'Hello Express'
+Seu aplicativo deve servir a string 'Hello Express'
 
 ```js
 (getUserInput) =>

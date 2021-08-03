@@ -1,10 +1,20 @@
 /* eslint-disable no-loop-func */
 const path = require('path');
+const { inspect } = require('util');
+const vm = require('vm');
+const { assert, AssertionError } = require('chai');
+const jsdom = require('jsdom');
 const liveServer = require('live-server');
-const stringSimilarity = require('string-similarity');
-const { isAuditedCert } = require('../../utils/is-audited');
-
+const lodash = require('lodash');
+const Mocha = require('mocha');
+const mockRequire = require('mock-require');
 const spinner = require('ora')();
+const puppeteer = require('puppeteer');
+const stringSimilarity = require('string-similarity');
+
+// lodash-es can't easily be used in node environments, so we just mock it out
+// for the original lodash in testing.
+mockRequire('lodash-es', lodash);
 
 const clientPath = path.resolve(__dirname, '../../client');
 require('@babel/polyfill');
@@ -16,63 +26,40 @@ require('@babel/register')({
   ignore: [/node_modules/],
   only: [clientPath]
 });
-
-const mockRequire = require('mock-require');
-const lodash = require('lodash');
-
-// lodash-es can't easily be used in node environments, so we just mock it out
-// for the original lodash in testing.
-mockRequire('lodash-es', lodash);
-
-const createPseudoWorker = require('./utils/pseudo-worker');
+const {
+  buildDOMChallenge,
+  buildJSChallenge
+} = require('../../client/src/templates/Challenges/utils/build');
 const {
   default: createWorker
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
+const { challengeTypes } = require('../../client/utils/challengeTypes');
+// the config files are created during the build, but not before linting
+/* eslint-disable import/no-unresolved */
+const testEvaluator =
+  require('../../config/client/test-evaluator.json').filename;
+/* eslint-enable import/no-unresolved */
 
-const { assert, AssertionError } = require('chai');
-const Mocha = require('mocha');
-
-const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 const { getLines } = require('../../utils/get-lines');
+const { isAuditedCert } = require('../../utils/is-audited');
 
-const jsdom = require('jsdom');
-
-const vm = require('vm');
-
-const puppeteer = require('puppeteer');
-
+const { toSortedArray } = require('../../utils/sort-files');
 const {
   getChallengesForLang,
   getMetaForBlock,
   getTranslatableComments
 } = require('../getChallenges');
-
-const MongoIds = require('./utils/mongoIds');
-const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
-const { challengeTypes } = require('../../client/utils/challengeTypes');
-
-const { toSortedArray } = require('../../utils/sort-files');
-
 const { testedLang } = require('../utils');
-
-const {
-  buildDOMChallenge,
-  buildJSChallenge
-} = require('../../client/src/templates/Challenges/utils/build');
+const ChallengeTitles = require('./utils/challengeTitles');
+const MongoIds = require('./utils/mongoIds');
+const createPseudoWorker = require('./utils/pseudo-worker');
 
 const { sortChallenges } = require('./utils/sort-challenges');
 
 const TRANSLATABLE_COMMENTS = getTranslatableComments(
   path.resolve(__dirname, '..', 'dictionaries')
 );
-
-// the config files are created during the build, but not before linting
-/* eslint-disable import/no-unresolved */
-const testEvaluator =
-  require('../../config/client/test-evaluator.json').filename;
-/* eslint-enable import/no-unresolved */
-const { inspect } = require('util');
 
 const commentExtractors = {
   html: require('./utils/extract-html-comments'),
@@ -81,6 +68,8 @@ const commentExtractors = {
   css: require('./utils/extract-css-comments'),
   scriptJs: require('./utils/extract-script-js-comments')
 };
+
+const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 
 // rethrow unhandled rejections to make sure the tests exit with -1
 process.on('unhandledRejection', err => handleRejection(err));

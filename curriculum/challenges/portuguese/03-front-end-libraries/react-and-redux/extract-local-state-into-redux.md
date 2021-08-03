@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036149
-title: Extrair Estado Local para dentro do Redux
+title: Extrair estado local para dentro do Redux
 challengeType: 6
 forumTopicId: 301428
 dashedName: extract-local-state-into-redux
@@ -8,11 +8,11 @@ dashedName: extract-local-state-into-redux
 
 # --description--
 
-Você está quase pronto! Lembre-se que você escreveu todo o código Redux para que o Redux pudesse controlar o gerenciamento de estado do seu aplicativo de mensagens React. Agora que o Redux está conectado, você precisa extrair o gerenciamento de estado do componente `Presentational` para o Redux. Atualmente, você tem o Redux conectado, mas está manipulando o estado localmente dentro do componente `Presentational`.
+Você está quase pronto! Lembre-se de que você escreveu todo o código Redux para que o Redux pudesse controlar o gerenciamento de estado do seu aplicativo de mensagens React. Agora que o Redux está conectado, você precisa extrair o gerenciamento de estado do componente `Presentational` para o Redux. Atualmente, você tem o Redux conectado, mas está manipulando o estado localmente dentro do componente `Presentational`.
 
 # --instructions--
 
-No componente `Presentational`, primeiro, remova a propriedade `messages` no `state` local. Essas mensagens serão gerenciadas pelo Redux. Em seguida, modifique o método `submitMessage()` para que ele despache `submitNewMessage()` de `this.props`, e passe no input de mensagem atual do `state` local como um argumento. Como você removeu `mensagens` do state local, também remova aqui a propriedade `messages` da chamada para `this.setState()`. Finalmente, modifique o método `render()` para que ele mapeie as mensagens recebidas de `props` ao invés do `state`.
+No componente `Presentational`, primeiro, remova a propriedade `messages` no `state` local. Essas mensagens serão gerenciadas pelo Redux. Em seguida, modifique o método `submitMessage()` para que ele despache `submitNewMessage()` de `this.props`, e passe no input de mensagem atual do `state` local como um argumento. Como você removeu `messages` do state local, também remova aqui a propriedade `messages` da chamada para `this.setState()`. Finalmente, modifique o método `render()` para que ele mapeie as mensagens recebidas de `props` ao invés do `state`.
 
 Quando essas alterações forem feitas, o aplicativo continuará a funcionar do mesmo jeito, exceto que o Redux gerencia o estado. Este exemplo também ilustra como um componente pode ter um `state` local: seu componente ainda monitora a entrada do usuário localmente em seu próprio `state`. Você pode ver como o Redux fornece um framework de gerenciamento de estado útil em cima do React. Você alcançou o mesmo resultado usando apenas o state local do React no início, e isso geralmente é possível com aplicativos simples. No entanto, como seus aplicativos se tornam maiores e mais complexos, seu gerenciamento de estado também fica mais complexo, e esse é o problema que o Redux resolve.
 

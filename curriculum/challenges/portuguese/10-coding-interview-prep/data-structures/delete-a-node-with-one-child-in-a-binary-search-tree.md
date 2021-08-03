@@ -1,6 +1,6 @@
 ---
 id: 587d8258367417b2b2512c81
-title: Delete a Node with One Child in a Binary Search Tree
+title: Exclua um nó com um filho em uma árvore binária de busca
 challengeType: 1
 forumTopicId: 301638
 dashedName: delete-a-node-with-one-child-in-a-binary-search-tree
@@ -8,15 +8,15 @@ dashedName: delete-a-node-with-one-child-in-a-binary-search-tree
 
 # --description--
 
-Now that we can delete leaf nodes let's move on to the second case: deleting a node with one child. For this case, say we have a tree with the following nodes 1 — 2 — 3 where 1 is the root. To delete 2, we simply need to make the right reference in 1 point to 3. More generally to delete a node with only one child, we make that node's parent reference the next node in the tree.
+Agora que podemos excluir nós de folhas vamos passar para o segundo caso: excluir um nó com um filho. Para este caso, vamos supor uma árvore com os seguintes nós: 1 — 2 — 3, onde 1 é a raiz. Para excluir 2, temos simplesmente de fazer a referência da direita em 1 apontar para 3. De modo mais geral, para excluir um nó com apenas um filho, fazemos com que o pai desse nó referencie o próximo nó da árvore.
 
 # --instructions--
 
-We've provided some code in our `remove` method that accomplishes the tasks from the last challenge. We find the target to delete and its parent and define the number of children the target node has. Let's add the next case here for target nodes with only one child. Here, we'll have to determine if the single child is a left or right branch in the tree and then set the correct reference in the parent to point to this node. In addition, let's account for the case where the target is the root node (this means the parent node will be `null`). Feel free to replace all the starter code with your own as long as it passes the tests.
+Fornecemos parte do código em nosso método `remove` que realiza as tarefas do último desafio. Encontramos o destino a ser excluído e seu pai e definimos o número de filhos que o nó de destino possui. Vamos adicionar o próximo caso aqui para os nós de destino com apenas um filho. Aqui, teremos que determinar se o filho único é um ramo à esquerda ou à direita na árvore e, então, definir a referência correta no pai para que aponte para este nó. Além disso, vamos levar em conta o caso em que o destino é o nó raiz (o que significa que o nó pai será `null`). Sinta-se à vontade para substituir todo o código inicial por seu próprio código, contanto que ele passe nos testes.
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+A estrutura de dados `BinarySearchTree` deve existir.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `remove`.
+A árvore binária de busca deve ter um método chamado `remove`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-Trying to remove an element that does not exist should return `null`.
+Tentar remover um elemento que não existe deve retornar `null`.
 
 ```js
 assert(
@@ -65,7 +65,7 @@ assert(
 );
 ```
 
-If the root node has no children, deleting it should set the root to `null`.
+Se o nó raiz não tem filhos, a exclusão deve definir a raiz como `null`.
 
 ```js
 assert(
@@ -86,7 +86,7 @@ assert(
 );
 ```
 
-The `remove` method should remove leaf nodes from the tree.
+O método `remove` deve remover os nós de folha da árvore.
 
 ```js
 assert(
@@ -114,7 +114,7 @@ assert(
 );
 ```
 
-The `remove` method should remove nodes with one child.
+O método `remove` deve remover os nós com um filho.
 
 ```js
 assert(
@@ -140,7 +140,7 @@ assert(
 );
 ```
 
-Removing the root in a tree with two nodes should set the second to be the root.
+Remover a raiz de uma árvore com dois nós deve definir o segundo nó como a raiz.
 
 ```js
 assert(
