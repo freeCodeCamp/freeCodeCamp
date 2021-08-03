@@ -73,9 +73,6 @@ export class PaypalButton extends Component<
     this.handleApproval = this.handleApproval.bind(this);
   }
 
-  // I can't figure out if it is necessary
-  // TODO: determine if this needs initializing
-
   static getDerivedStateFromProps(props: PaypalButtonProps): PaypalButtonState {
     const { donationAmount, donationDuration } = props;
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
