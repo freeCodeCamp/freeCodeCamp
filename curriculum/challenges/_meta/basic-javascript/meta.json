@@ -30,6 +30,10 @@
       "Initializing Variables with the Assignment Operator"
     ],
     [
+      "bd7123c9c444eddfaeb5bdef",
+      "Declare String Variables"
+    ],
+    [
       "56533eb9ac21ba0edf2244aa",
       "Understanding Uninitialized Variables"
     ],
@@ -96,10 +100,6 @@
     [
       "56533eb9ac21ba0edf2244b2",
       "Compound Assignment With Augmented Division"
-    ],
-    [
-      "bd7123c9c444eddfaeb5bdef",
-      "Declare String Variables"
     ],
     [
       "56533eb9ac21ba0edf2244b5",
