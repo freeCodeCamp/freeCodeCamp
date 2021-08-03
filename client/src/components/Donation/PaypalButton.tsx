@@ -74,14 +74,10 @@ export class PaypalButton extends Component<
   }
 
   // I can't figure out if it is necessary
-  // state = {};
+  // TODO: determine if this needs initializing
 
-  static getDerivedStateFromProps(
-    props: PaypalButtonProps
-    // state: PaypalButtonState
-  ): PaypalButtonState {
+  static getDerivedStateFromProps(props: PaypalButtonProps): PaypalButtonState {
     const { donationAmount, donationDuration } = props;
-    // Help Needed
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const configurationObj: {
       amount: number;
