@@ -8,7 +8,8 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   paypalConfigurator,
-  paypalConfigTypes
+  paypalConfigTypes,
+  defaultDonation
 } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
 import { signInLoadingSelector, userSelector } from '../../redux';
@@ -68,6 +69,11 @@ export class PaypalButton extends Component<
   PaypalButtonState
 > {
   static displayName = 'PaypalButton';
+  state: PaypalButtonState = {
+    amount: defaultDonation.donationAmount,
+    duration: defaultDonation.donationDuration,
+    planId: null
+  };
   constructor(props: PaypalButtonProps) {
     super(props);
     this.handleApproval = this.handleApproval.bind(this);
