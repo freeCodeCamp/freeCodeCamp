@@ -53,7 +53,7 @@ A variável `catName` deve ser uma string de valor `Oliver`.
 assert(catName === 'Oliver');
 ```
 
-A variável `catSound` deve ser uma string de valor `Meow!`
+A variável `quote` deve ser uma string de valor `Oliver says Meow!`
 
 ```js
 assert(catSound === 'Meow!');

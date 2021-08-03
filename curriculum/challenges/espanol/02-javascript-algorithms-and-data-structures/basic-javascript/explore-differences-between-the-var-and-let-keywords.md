@@ -53,7 +53,7 @@ Actualiza el código para que solo utilice la palabra clave `let`.
 assert(catName === 'Oliver');
 ```
 
-`catSound` debe ser la cadena `Meow!`
+`quote` debe ser la cadena `Oliver says Meow!`
 
 ```js
 assert(catSound === 'Meow!');

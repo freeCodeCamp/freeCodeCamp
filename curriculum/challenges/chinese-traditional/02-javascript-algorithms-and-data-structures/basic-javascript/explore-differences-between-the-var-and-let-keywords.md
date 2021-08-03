@@ -53,7 +53,7 @@ x = 3.14;
 assert(catName === 'Oliver');
 ```
 
-`catSound` 變量的值應該爲 `Meow!`
+`quote` 變量的值應該爲 `Oliver says Meow!`
 
 ```js
 assert(catSound === 'Meow!');
