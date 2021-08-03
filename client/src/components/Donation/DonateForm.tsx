@@ -98,8 +98,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
   static displayName = 'DonateForm';
   durations: { month: 'monthly'; onetime: 'one-time' };
   amounts: { month: number[]; onetime: number[] };
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  constructor(props: any) {
+  constructor(props: DonateFormProps) {
     super(props);
 
     this.durations = durationsConfig as {
