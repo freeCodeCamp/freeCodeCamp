@@ -58,7 +58,10 @@ const {
   paypalClientId,
   deploymentEnv
 }: { paypalClientId: string | null; deploymentEnv: 'staging' | 'live' } =
-  envData as { paypalClientId: string; deploymentEnv: 'staging' | 'live' };
+  envData as {
+    paypalClientId: string | null;
+    deploymentEnv: 'staging' | 'live';
+  };
 
 export class PaypalButton extends Component<
   PaypalButtonProps,
