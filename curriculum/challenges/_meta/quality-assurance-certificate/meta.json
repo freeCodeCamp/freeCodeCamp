@@ -2,12 +2,12 @@
   "name": "Quality Assurance Certificate",
   "isUpcomingChange": false,
   "dashedName": "quality-assurance-v7-certificate",
-  "order": 6,
+  "order": 7,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 12,
+  "superOrder": 0,
   "challengeOrder": [
     [
       "5e611829481575a52dc59c0e",
