@@ -15,7 +15,7 @@ import { signInLoadingSelector, userSelector } from '../../redux';
 import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
 
 type PaypalButtonProps = {
-  addDonation: (data: unknown) => unknown;
+  addDonation: (data: AddDonationData) => void;
   donationAmount: number;
   donationDuration: string;
   handleProcessing: (
@@ -44,14 +44,21 @@ type PaypalButtonProps = {
 type PaypalButtonState = {
   amount: number;
   duration: string;
-  planId: string;
+  planId: string | null;
 };
+
+export interface AddDonationData {
+  redirecting: boolean;
+  processing: boolean;
+  success: boolean;
+  error: string | null;
+}
 
 const {
   paypalClientId,
   deploymentEnv
 }: { paypalClientId: string | null; deploymentEnv: 'staging' | 'live' } =
-  envData;
+  envData as { paypalClientId: string; deploymentEnv: 'staging' | 'live' };
 
 export class PaypalButton extends Component<
   PaypalButtonProps,
@@ -69,18 +76,14 @@ export class PaypalButton extends Component<
   static getDerivedStateFromProps(
     props: PaypalButtonProps
     // state: PaypalButtonState
-  ): {
-    donationAmount: number;
-    donationDuration: string;
-    paypalConfigTypes: unknown;
-  } | null {
+  ): PaypalButtonState {
     const { donationAmount, donationDuration } = props;
     // Help Needed
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const configurationObj: {
-      donationAmount: number;
-      donationDuration: string;
-      paypalConfigTypes: unknown;
+      amount: number;
+      duration: string;
+      planId: string | null;
     } = paypalConfigurator(
       donationAmount,
       donationDuration,
@@ -93,10 +96,7 @@ export class PaypalButton extends Component<
     return { ...configurationObj };
   }
 
-  handleApproval = (
-    data: { error: string | null; [key: string]: unknown },
-    isSubscription: boolean
-  ): void => {
+  handleApproval = (data: AddDonationData, isSubscription: boolean): void => {
     const { amount, duration } = this.state;
     const { skipAddDonation = false } = this.props;
 
@@ -129,7 +129,6 @@ export class PaypalButton extends Component<
       <div className={'paypal-buttons-container'}>
         {/* help needed */}
         <PayPalButtonScriptLoader
-          amount={amount}
           clientId={paypalClientId}
           createOrder={(
             data: unknown,
@@ -157,7 +156,9 @@ export class PaypalButton extends Component<
           createSubscription={(
             data: unknown,
             actions: {
-              subscription: { create: (arg0: { plan_id: string }) => unknown };
+              subscription: {
+                create: (arg0: { plan_id: string | null }) => unknown;
+              };
             }
           ) => {
             return actions.subscription.create({
@@ -165,10 +166,7 @@ export class PaypalButton extends Component<
             });
           }}
           isSubscription={isSubscription}
-          onApprove={(data: {
-            [key: string]: unknown;
-            error: string | null;
-          }) => {
+          onApprove={(data: AddDonationData) => {
             this.handleApproval(data, isSubscription);
           }}
           onCancel={() => {
@@ -187,7 +185,7 @@ export class PaypalButton extends Component<
               error: t('donate.try-again')
             })
           }
-          plantId={planId}
+          planId={planId}
           style={{
             tagline: false,
             height: 43,

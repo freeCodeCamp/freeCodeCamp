@@ -33,7 +33,10 @@ import {
   userSelector
 } from '../../redux';
 import Spacer from '../helpers/spacer';
+
 import DonateCompletion from './DonateCompletion';
+
+import type { AddDonationData } from './PaypalButton';
 import PaypalButton from './PaypalButton';
 
 import './Donation.css';
@@ -52,16 +55,11 @@ type DonateFormState = {
 
 type DonateFormProps = {
   addDonation: (data: unknown) => unknown;
-  defaultTheme: string;
+  defaultTheme?: string;
   email: string;
-  handleProcessing: (
-    duration: string,
-    amount: number,
-    action: string
-  ) => unknown;
+  handleProcessing: (duration: string, amount: number, action: string) => void;
   donationFormState: DonateFormState;
-  isDonating: boolean;
-  isMinimalForm: boolean;
+  isMinimalForm?: boolean;
   isSignedIn: boolean;
   showLoading: boolean;
   t: (
@@ -69,13 +67,7 @@ type DonateFormProps = {
     { usd, hours }?: { usd?: string | number; hours?: string }
   ) => string;
   theme: string;
-  updateDonationFormState: (state: {
-    redirecting: boolean;
-    processing: boolean;
-    success: boolean;
-    error: string;
-  }) => unknown;
-  amounts: { [key: string]: number };
+  updateDonationFormState: (state: AddDonationData) => unknown;
 };
 
 const mapStateToProps = createSelector(
@@ -141,12 +133,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     this.resetDonation();
   }
 
-  onDonationStateChange(donationState: {
-    redirecting: boolean;
-    processing: boolean;
-    success: boolean;
-    error: string;
-  }) {
+  onDonationStateChange(donationState: AddDonationData) {
     // scroll to top
     window.scrollTo(0, 0);
     this.props.updateDonationFormState(donationState);

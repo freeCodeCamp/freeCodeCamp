@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
 import { WindowLocation } from '@reach/router';
 import React, { useEffect } from 'react';

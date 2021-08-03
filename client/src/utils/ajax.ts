@@ -98,6 +98,8 @@ interface Donation {
   customerId: string;
   startDate: Date;
 }
+// TODO: Verify if the body has and needs this Donation type. The api seems to
+// just need the body to exist, but doesn't seem to use the properties.
 export function addDonation(body: Donation): Promise<void> {
   return post('/donate/add-donation', body);
 }

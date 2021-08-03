@@ -76,7 +76,7 @@ const paypalConfigTypes = {
 
 const paypalConfigurator = (donationAmount, donationDuration, paypalConfig) => {
   if (donationDuration === 'onetime') {
-    return { amount: donationAmount, duration: donationDuration };
+    return { amount: donationAmount, duration: donationDuration, planId: null };
   }
   return {
     amount: donationAmount,

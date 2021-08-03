@@ -1,11 +1,11 @@
 /* eslint-disable camelcase */
-
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import { Loader } from '../../components/helpers';
 import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
+
+import type { AddDonationData } from './PaypalButton';
 
 type PayPalButtonScriptLoaderProps = {
   clientId: string;
@@ -24,24 +24,18 @@ type PayPalButtonScriptLoaderProps = {
   createSubscription: (
     data: unknown,
     actions: {
-      subscription: { create: (arg0: { plan_id: string }) => unknown };
+      subscription: { create: (arg0: { plan_id: string | null }) => unknown };
     }
   ) => unknown;
-  donationAmount: number;
-  donationDuration: string;
   isSubscription: boolean;
   onApprove: (
-    data: {
-      [key: string]: unknown;
-      error: string | null;
-    },
+    data: AddDonationData,
     actions?: { order: { capture: () => Promise<unknown> } }
   ) => unknown;
   onCancel: () => unknown;
   onError: () => unknown;
   style: unknown;
-  amount: number;
-  plantId: string;
+  planId: string | null;
 };
 
 type PayPalButtonScriptLoaderState = {
@@ -127,6 +121,11 @@ export class PayPalButtonScriptLoader extends Component<
     actions: { order: { capture: () => Promise<unknown> } }
   ): unknown {
     return actions.order.capture().then((details: unknown) => {
+      // TODO: this looks like a bug (it probably should not be passing details)
+      // but the api does not care what data it gets (yet). If we start to use
+      // that, this will need to be changed.
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       return this.props.onApprove(details, data);
     });
   }
@@ -147,10 +146,16 @@ export class PayPalButtonScriptLoader extends Component<
 
     if (!isSdkLoaded) return <Loader />;
 
-    const Button = window.paypal.Buttons.driver('react', {
-      React,
-      ReactDOM
-    });
+    // TODO: fill in the full list of props instead of any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const Button: React.ComponentType<any> = window.paypal.Buttons.driver(
+      'react',
+      {
+        React,
+        ReactDOM
+      }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ) as React.ComponentType<any>;
 
     return (
       <Button
@@ -159,10 +164,7 @@ export class PayPalButtonScriptLoader extends Component<
         onApprove={
           isSubscription
             ? (
-                data: {
-                  [key: string]: unknown;
-                  error: string | null;
-                },
+                data: AddDonationData,
                 actions: { order: { capture: () => Promise<unknown> } }
               ) => onApprove(data, actions)
             : (
