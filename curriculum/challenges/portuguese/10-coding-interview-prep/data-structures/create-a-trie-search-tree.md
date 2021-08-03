@@ -1,6 +1,6 @@
 ---
 id: 587d8259367417b2b2512c84
-title: Create a Trie Search Tree
+title: Criar uma árvore de busca Trie
 challengeType: 1
 forumTopicId: 301634
 dashedName: create-a-trie-search-tree
@@ -8,15 +8,15 @@ dashedName: create-a-trie-search-tree
 
 # --description--
 
-Here we will move on from binary search trees and take a look at another type of tree structure called a trie. A trie is an ordered search tree commonly used to hold strings, or more generically associative arrays or dynamic datasets in which the keys are strings. They are very good at storing sets of data when many keys will have overlapping prefixes, for example, all the words in a dictionary. Unlike a binary tree, nodes are not associated with actual values. Instead, the path to a node represents a specific key. For instance, if we wanted to store the string code in a trie, we would have four nodes, one for each letter: c — o — d — e. Following that path through all these nodes will then create code as a string — that path is the key we stored. Then, if we wanted to add the string coding, it would share the first three nodes of code before branching away after the d. In this way, large datasets can be stored very compactly. In addition, search can be very quick because it is effectively limited to the length of the string you are storing. Furthermore, unlike binary trees a node can store any number of child nodes. As you might have guessed from the above example, some metadata is commonly stored at nodes that hold the end of a key so that on later traversals that key can still be retrieved. For instance, if we added codes in our example above we would need some way to know that the e in code represents the end of a key that was previously entered. Otherwise, this information would effectively be lost when we add codes.
+Aqui, vamos sair da busca binária e dar uma olhada em outro tipo de estrutura de árvore chamada Trie. Uma Trie é uma árvore de busca ordenada comumente usada para manter strings, ou, mais genericamente, arrays associativos ou conjuntos de dados dinâmicos em que as chaves são strings. Elas são muito boas em armazenar conjuntos de dados quando muitas chaves terão prefixos sobrepostos, como, por exemplo, as palavras de um dicionário. Ao contrário de uma árvore binária, os nós não estão associados com valores reais. Em vez disso, o caminho para um nó representa uma chave específica. Por exemplo, se quiséssemos armazenar a string "code" em uma Trie, teríamos quatro nós, um para cada letra: c — o — d — e. Seguir esse caminho através de todos esses nós, então, criará "code" como uma string — esse caminho é a chave que armazenamos. Então, se quiséssemos adicionar a string "coding", ela compartilharia os três primeiros nós de "code" antes de se ramificar após o d. Desta forma, grandes conjuntos de dados podem ser armazenados de modo bastante compacto. Além disso, a busca pode ser muito rápida porque está efetivamente limitada ao tamanho da string que você está armazenando. Além disso, ao contrário das árvores binárias, um nó pode armazenar qualquer número de nós filhos. Como você já deve ter adivinhado a partir do exemplo acima, alguns metadados são normalmente armazenados em nós que possuem o fim de uma chave para que, ao percorrer os dados posteriormente, a chave ainda possa ser recuperada. Por exemplo, se adicionarmos "codes" no nosso exemplo acima, precisaremos saber de algum modo que o "e" no código representa o final de uma chave que foi inserida anteriormente. Caso contrário, esta informação estaria, de fato, perdida quando acrescentássemos "codes".
 
 # --instructions--
 
-Let's create a trie to store words. It will accept words through an `add` method and store these in a trie data structure. It will also allow us to query if a given string is a word with an `isWord` method, and retrieve all the words entered into the trie with a `print` method. `isWord` should return a boolean value and print should return an array of all these words as string values. In order for us to verify that this data structure is implemented correctly, we've provided a `Node` structure for each node in the tree. Each node will be an object with a `keys` property which is a JavaScript Map object. This will hold the individual letters that are valid keys of each node. We've also created an `end` property on the nodes that can be set to `true` if the node represents the termination of a word.
+Vamos criar uma Trie para armazenar palavras. Ele vai aceitar palavras através de um método `add` e armazená-las em uma estrutura de dados de Trie. Ele também permitirá consultar se uma determinada string é uma palavra com um método `isWord`, além de recuperar todas as palavras inseridas na Trie com um método `print`. `isWord` deve retornar um valor booleano e print deve retornar um array com todas essas palavras como valores de string. Para que possamos verificar se esta estrutura de dados foi implementada corretamente, fornecemos uma estrutura `Node` para cada nó da árvore. Cada nó será um objeto com uma propriedade `keys`, que é um objeto Map do JavaScript. Ele guardará as letras individuais, que são as chaves válidas de cada nó. Também criamos uma propriedade `end` nos nós que pode ser definidas como `true` se o nó representar o final de uma palavra.
 
 # --hints--
 
-The Trie should have an add method.
+A Trie deve ter um método add.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-The Trie should have a print method.
+A Trie deve ter um método print.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-The Trie should have an isWord method.
+A Trie deve ter um método isWord.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-The print method should return all items added to the trie as strings in an array.
+O método print deve retornar todos os itens adicionados à Trie como strings em um array.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-The isWord method should return true only for words added to the trie and false for all other words.
+O método isWord deve retornar true apenas para palavras adicionadas à Trie e false para todas as outras palavras.
 
 ```js
 assert(

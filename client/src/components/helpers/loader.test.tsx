@@ -1,5 +1,5 @@
-import React from 'react';
 import { render, cleanup, screen } from '@testing-library/react';
+import React from 'react';
 
 import Loader from './loader';
 

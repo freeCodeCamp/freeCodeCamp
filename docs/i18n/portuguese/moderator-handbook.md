@@ -2,9 +2,9 @@
 
 Esse manual vai ajudá-lo a moderar lugares diferentes em nossa comunidade. Ele cobre conversas e interações nos tópicos de "pull request" e "issues" do GitHub, o fórum da comunidade, as salas de conversa e outras comunidades oficiais fomentadas por nós.
 
-> [!NOTE] Todos os moderadores do freeCodeCamp são moderadores de toda a comunidade. Isso significa que confiamos em você para supervisionar um qualquer destes lugares.
+> [!NOTE] Todos os moderadores do freeCodeCamp são moderadores de toda a comunidade. Isso significa que confiamos em você para supervisionar qualquer um destes lugares.
 
-Você pode atuar como moderador em qualquer uma das plataformas de seu interesse. Alguns moderadores ajudam apenas no GitHub, enquanto outros ajudam apenas no fórum. Outros moderadores são ativos em todos os lugares.
+Você pode atuar como moderador em qualquer uma das plataformas de seu interesse. Alguns moderadores ajudam apenas no GitHub, enquanto outros ajudam apenas no fórum. Outros moderadores estão ativos em todos os lugares.
 
 O mais importante é que queremos que você goste de ser um moderador, investindo seu tempo escasso em lugares que sejam de interesse para você.
 
@@ -39,7 +39,7 @@ Você pode nos ajudar a organizar e moderar issues usando etiquetas [dessa lista
 
 Preste atenção especial às etiquetas `"help wanted"` e `"first timers only"`. Elas devem ser adicionadas aos tópicos que você considere que possam ser abertos aos potenciais contribuidores para realizar um "pull request".
 
-Uma etiqueta `"first timer only"` deve ser aplicada a uma issue trivial (ex. consertando um erro de digitação) e deve incluir informações adicionais. Você pode usar esse [modelo de resposta](/moderator-handbook?id=first-timer-only-issues).
+Uma etiqueta `"first timer only"` deve ser aplicada a uma issue trivial (ex.: consertar um erro de digitação) e deve incluir informações adicionais. Você pode usar esse [modelo de resposta](/moderator-handbook?id=first-timer-only-issues).
 
 #### Fechando issues e pull requests parados, desatualizados ou inativos
 

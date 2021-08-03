@@ -1,7 +1,7 @@
-import { mockReq as mockRequest, mockRes } from '../boot_tests/challenge.test';
 import jwt from 'jsonwebtoken';
 
 import { homeLocation } from '../../../../config/env.json';
+import { mockReq as mockRequest, mockRes } from '../boot_tests/challenge.test';
 import createRequestAuthorization, {
   isAllowedPath
 } from './request-authorization';

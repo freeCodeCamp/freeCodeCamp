@@ -1,14 +1,14 @@
+import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { Button, Panel } from '@freecodecamp/react-bootstrap';
+import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { TFunction, withTranslation } from 'react-i18next';
 import type { Dispatch } from 'redux';
 
-import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import { deleteAccount, resetProgress } from '../../redux/settings';
+import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import DeleteModal from './delete-modal';
 import ResetModal from './reset-modal';
 

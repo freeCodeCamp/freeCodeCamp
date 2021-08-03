@@ -1,11 +1,10 @@
 import { createAction, handleActions } from 'redux-actions';
-
-import { createTypes, createAsyncTypes } from '../../utils/create-types';
+import { actionTypes as types, ns } from './action-types';
 import { createDangerZoneSaga } from './danger-zone-saga';
 import { createSettingsSagas } from './settings-sagas';
 import { createUpdateMyEmailSaga } from './update-email-saga';
 
-export const ns = 'settings';
+export { ns };
 
 const defaultFetchState = {
   pending: false,
@@ -20,21 +19,6 @@ const initialState = {
     fetchState: { ...defaultFetchState }
   }
 };
-
-export const types = createTypes(
-  [
-    ...createAsyncTypes('validateUsername'),
-    ...createAsyncTypes('submitNewAbout'),
-    ...createAsyncTypes('submitNewUsername'),
-    ...createAsyncTypes('updateMyEmail'),
-    ...createAsyncTypes('updateUserFlag'),
-    ...createAsyncTypes('submitProfileUI'),
-    ...createAsyncTypes('verifyCert'),
-    ...createAsyncTypes('resetProgress'),
-    ...createAsyncTypes('deleteAccount')
-  ],
-  ns
-);
 
 export const sagas = [
   ...createSettingsSagas(types),

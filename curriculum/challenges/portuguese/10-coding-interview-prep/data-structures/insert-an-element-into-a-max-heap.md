@@ -1,6 +1,6 @@
 ---
 id: 587d825a367417b2b2512c8a
-title: Insert an Element into a Max Heap
+title: Inserir um elemento em um Max Heap
 challengeType: 1
 forumTopicId: 301703
 dashedName: insert-an-element-into-a-max-heap
@@ -8,47 +8,47 @@ dashedName: insert-an-element-into-a-max-heap
 
 # --description--
 
-Now we will move on to another tree data structure, the binary heap. A binary heap is a partially ordered binary tree which satisfies the heap property. The heap property specifies a relationship between parent and child nodes. You may have a max heap, in which all parent nodes are greater than or equal to their child nodes, or a min heap, in which the reverse is true. Binary heaps are also complete binary trees. This means that all levels of the tree are fully filled and if the last level is partially filled it is filled from left to right.
+Agora, vamos passar para outra estrutura de dados em árvore, o heap binário. Um heap (pilha) binário é uma árvore binária parcialmente ordenada que satisfaz a propriedade heap. A propriedade heap especifica uma relação entre o nó pai e os nós filhos. Você pode ter um Max Heap, no qual todos os nós pai são maiores ou iguais aos seus nós filhos, ou um Min Heap, em que o inverso é verdadeiro. Heaps binários também são árvores binárias completas. Isso significa que todos os níveis da árvore estão totalmente preenchidos e, se o último nível estiver parcialmente preenchido, ele é preenchido da esquerda para a direita.
 
-While binary heaps may be implemented as tree structures with nodes that contain left and right references, the partial ordering according to the heap property allows us to represent the heap with an array. The parent-children relationship is what we're interested in and with simple arithmetic we can compute the children of any parent and the parent of any child node.
+Enquanto os heaps binários podem ser implementados como estruturas de árvore, com nós que contêm referências à esquerda ou à direita, a ordenação parcial de acordo com a propriedade heap nos permite representar o heap como um array. A relação pai-filho é o que nos interessa e, com aritmética simples, podemos calcular os filhos de qualquer pai ou o pai de qualquer nó filho.
 
-For instance, consider this array representation of a binary min heap:
+Por exemplo, considere esta representação de array de um Min Heap binário:
 
 ```js
 [ 6, 22, 30, 37, 63, 48, 42, 76 ]
 ```
 
-The root node is the first element, `6`. Its children are `22` and `30`. If we look at the relationship between the array indices of these values, for index `i` the children are `2 * i + 1` and `2 * i + 2`. Similarly, the element at index `0` is the parent of these two children at indices `1` and `2`. More generally, we can find the parent of a node at any index with the following: `Math.floor((i - 1) / 2)`. These patterns will hold true as the binary tree grows to any size. Finally, we can make a slight adjustment to make this arithmetic even easier by skipping the first element in the array. Doing this creates the following relationship for any element at a given index `i`:
+O nó raiz é o primeiro elemento, `6`. Seus filhos são `22` e `30`. Se olharmos para a relação entre os índices do array desses valores, para o índice `i`, os filhos são `2 * i + 1` e `2 * i + 2`. Da mesma forma, o elemento no índice `0` é o pai desses dois filhos nos índices `1` e `2`. De forma mais geral, podemos encontrar o pai de um nó em qualquer índice com o seguinte: `Math.floor((i - 1) / 2)`. Esses padrões se manterão fiéis à medida que a árvore binária cresce até qualquer tamanho. Por fim, podemos fazer um ligeiro ajuste para tornar esta aritmética ainda mais fácil, ignorando o primeiro elemento do array. Fazer isso cria a seguinte relação para qualquer elemento em um determinado índice `i`:
 
-Example array representation:
+Exemplo de representação de array:
 
 ```js
 [ null, 6, 22, 30, 37, 63, 48, 42, 76 ]
 ```
 
-An element's left child: `i * 2`
+Um elemento é o filho da esquerda: `i * 2`
 
-An element's right child: `i * 2 + 1`
+Um elemento é o filho da direita: `i * 2 + 1`
 
-An element's parent: `Math.floor(i / 2)`
+Um elemento é o pai: `Math.floor(i / 2)`
 
-Once you wrap your head around the math, using an array representation is very useful because node locations can be quickly determined with this arithmetic and memory usage is diminished because you don't need to maintain references to child nodes.
+Assim que você compreender a matemática, usar uma representação de array passa a ser muito útil, porque os locais dos nós podem ser determinados rapidamente com esta aritmética e o uso de memória é diminuído, porque você não precisa manter referências aos nós filhos.
 
 # --instructions--
 
-Instructions: Here we will create a max heap. Start by just creating an `insert` method which adds elements to our heap. During insertion, it is important to always maintain the heap property. For a max heap this means the root element should always have the greatest value in the tree and all parent nodes should be greater than their children. For an array implementation of a heap, this is typically accomplished in three steps:
+Instruções: Aqui vamos criar um Max Heap. Comece criando um método `insert` que adiciona elementos ao nosso heap. Durante a inserção, é importante manter sempre a propriedade heap. Para um heap máximo, isso significa que o elemento raiz deve sempre ter o maior valor na árvore e todos os nós pai devem ser maiores que seus filhos. Para uma implementação de um array de heap, isso normalmente é feito em três etapas:
 
 <ol>
-  <li>Add the new element to the end of the array.</li>
-  <li>If the element is larger than its parent, switch them.</li>
-  <li>Continue switching until the new element is either smaller than its parent or you reach the root of the tree.</li>
+  <li>Adicione o novo elemento ao final do array.</li>
+  <li>Se o elemento for maior do que o seu pai, troque-o.</li>
+  <li>Continue alterando até que o novo elemento seja menor que o seu pai ou até que você alcance a raiz da árvore.</li>
 </ol>
 
-Finally, add a `print` method which returns an array of all the items that have been added to the heap.
+Por fim, adicione um método `print`, que retorne um array de todos os itens que foram adicionados ao heap.
 
 # --hints--
 
-The MaxHeap data structure should exist.
+A estrutura de dados MaxHeap deve existir.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called insert.
+MaxHeap deve ter um método chamado insert.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called print.
+MaxHeap deve ter um método chamado print.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The insert method should add elements according to the max heap property.
+O método insert deve adicionar elementos de acordo com a propriedade do Max Heap.
 
 ```js
 assert(

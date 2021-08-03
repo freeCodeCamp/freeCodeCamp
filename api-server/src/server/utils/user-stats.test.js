@@ -1,12 +1,12 @@
 import moment from 'moment-timezone';
 
+import { mockUserID, mockApp, mockUser } from '../boot_tests/fixtures';
 import {
   prepUniqueDaysByHours,
   calcCurrentStreak,
   calcLongestStreak,
   getUserById
 } from './user-stats';
-import { mockUserID, mockApp, mockUser } from '../boot_tests/fixtures';
 
 jest.useFakeTimers('modern');
 const PST = 'America/Los_Angeles';

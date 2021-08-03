@@ -2,32 +2,19 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // Package Utilities
+import { graphql } from 'gatsby';
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import Media from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import { connect } from 'react-redux';
-import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
-import Media from 'react-responsive';
-import { TFunction, withTranslation } from 'react-i18next';
 
 // Local Utilities
-import LearnLayout from '../../../components/layouts/learn';
-import MultifileEditor from './MultifileEditor';
-import Preview from '../components/Preview';
-import SidePanel from '../components/Side-Panel';
-import Output from '../components/output';
-import CompletionModal from '../components/completion-modal';
-import HelpModal from '../components/HelpModal';
-import VideoModal from '../components/VideoModal';
-import ResetModal from '../components/ResetModal';
-import MobileLayout from './MobileLayout';
-import DesktopLayout from './DesktopLayout';
-import Hotkeys from '../components/Hotkeys';
-import { getGuideUrl } from '../utils';
 import store from 'store';
 import { challengeTypes } from '../../../../utils/challengeTypes';
-import { isContained } from '../../../utils/is-contained';
+import LearnLayout from '../../../components/layouts/learn';
 import {
   ChallengeNodeType,
   ChallengeFileType,
@@ -35,6 +22,17 @@ import {
   TestType,
   ResizePropsType
 } from '../../../redux/prop-types';
+import { isContained } from '../../../utils/is-contained';
+import ChallengeDescription from '../components/Challenge-Description';
+import HelpModal from '../components/HelpModal';
+import Hotkeys from '../components/Hotkeys';
+import Preview from '../components/Preview';
+import ResetModal from '../components/ResetModal';
+import SidePanel from '../components/Side-Panel';
+import VideoModal from '../components/VideoModal';
+import ChallengeTitle from '../components/challenge-title';
+import CompletionModal from '../components/completion-modal';
+import Output from '../components/output';
 import {
   createFiles,
   challengeFilesSelector,
@@ -45,8 +43,13 @@ import {
   challengeMounted,
   consoleOutputSelector,
   executeChallenge,
-  cancelTests
+  cancelTests,
+  isChallengeCompletedSelector
 } from '../redux';
+import { getGuideUrl } from '../utils';
+import DesktopLayout from './DesktopLayout';
+import MobileLayout from './MobileLayout';
+import MultifileEditor from './MultifileEditor';
 
 // Styles
 import './classic.css';
@@ -56,7 +59,8 @@ import '../components/test-frame.css';
 const mapStateToProps = createStructuredSelector({
   files: challengeFilesSelector,
   tests: challengeTestsSelector,
-  output: consoleOutputSelector
+  output: consoleOutputSelector,
+  isChallengeCompleted: isChallengeCompletedSelector
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -83,6 +87,7 @@ interface ShowClassicProps {
   files: ChallengeFileType;
   initConsole: (arg0: string) => void;
   initTests: (tests: TestType[]) => void;
+  isChallengeCompleted: boolean;
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMetaType;
@@ -287,15 +292,27 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     return (
       <SidePanel
         block={block}
+        challengeDescription={
+          <ChallengeDescription
+            block={block}
+            description={description}
+            instructions={instructions}
+          />
+        }
+        challengeTitle={
+          <ChallengeTitle
+            block={block}
+            isCompleted={this.props.isChallengeCompleted}
+            superBlock={superBlock}
+            translationPending={translationPending}
+          >
+            {title}
+          </ChallengeTitle>
+        }
         className='full-height'
-        description={description}
         guideUrl={getGuideUrl({ forumTopicId, title })}
-        instructions={instructions}
         instructionsPanelRef={this.instructionsPanelRef}
         showToolPanel={showToolPanel}
-        superBlock={superBlock}
-        title={title}
-        translationPending={translationPending}
         videoUrl={this.getVideoUrl()}
       />
     );

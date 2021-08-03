@@ -1,12 +1,12 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 
+const Sentry = require('@sentry/node');
+const createDebugger = require('debug');
 const _ = require('lodash');
 const loopback = require('loopback');
 const boot = require('loopback-boot');
-const createDebugger = require('debug');
 const morgan = require('morgan');
-const Sentry = require('@sentry/node');
 
 const { sentry } = require('../../../config/secrets');
 const { setupPassport } = require('./component-passport');

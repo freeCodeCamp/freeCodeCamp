@@ -29,13 +29,13 @@ O elemento `form` precisa ter um elemento `button` dentro dele.
 assert($('form').children('button').length > 0);
 ```
 
-O botão enviar deve ter o atributo `type` definido como `submit`.
+O botão de envio deve ter o atributo `type` definido como `submit`.
 
 ```js
 assert($('button').attr('type') === 'submit');
 ```
 
-O botão enviar deve ter apenas o texto `Submit`.
+O botão de envio deve ter apenas o texto `Submit`.
 
 ```js
 assert(

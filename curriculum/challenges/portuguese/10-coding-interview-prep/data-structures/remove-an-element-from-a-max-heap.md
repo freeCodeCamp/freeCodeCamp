@@ -1,6 +1,6 @@
 ---
 id: 587d825b367417b2b2512c8b
-title: Remove an Element from a Max Heap
+title: Remover um elemento de um Max Heap
 challengeType: 1
 forumTopicId: 301710
 dashedName: remove-an-element-from-a-max-heap
@@ -8,21 +8,21 @@ dashedName: remove-an-element-from-a-max-heap
 
 # --description--
 
-Now that we can add elements to our heap let's see how we can remove elements. Removing and inserting elements both require similar logic. In a max heap you will usually want to remove the greatest value, so this involves simply extracting it from the root of our tree. This will break the heap property of our tree, so we must reestablish it in some way. Typically, for a max heap this is done in the following way:
+Agora que podemos adicionar elementos à nossa heap, vamos ver como podemos remover elementos. Remover e inserir elementos requerem uma lógica similar. Em um max heap, você normalmente vai querer remover o maior valor, então isso envolve simplesmente tirá-lo da raiz da nossa árvore. Isto vai quebrar a propriedade heap de nossa árvore, então temos de restabelecer a propriedade de alguma forma. Normalmente, para um Max Heap, isso é feito da seguinte maneira:
 
 <ol>
-  <li>Move the last element in the heap into the root position.</li>
-  <li>If either child of the root is greater than it, swap the root with the child of greater value.</li>
-  <li>Continue swapping until the parent is greater than both children or you reach the last level in the tree.</li>
+  <li>Mova o último elemento no heap para a posição raiz.</li>
+  <li>Se qualquer filho da raiz for maior do que ela, troque a raiz pelo filho de maior valor.</li>
+  <li>Continue trocando até que o pai seja maior que os dois filhos ou até que você atinja o último nível da árvore.</li>
 </ol>
 
 # --instructions--
 
-Instructions: Add a method to our max heap called `remove`. This method should return the greatest value that has been added to our max heap and remove it from the heap. It should also reorder the heap so the heap property is maintained. After removing an element, the next greatest element remaining in the heap should become the root.
+Instruções: adicione um método a nosso Max Heap chamado `remove`. Este método deve retornar o maior valor que for adicionado ao nosso Max Heap e removê-lo da heap. Ele também deve reordenar o heap para que a propriedade heap seja mantida. Depois de remover um elemento, o próximo elemento de maior valor do restante do heap deve se tornar a raiz.
 
 # --hints--
 
-The MaxHeap data structure should exist.
+A estrutura de dados MaxHeap deve existir.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called print.
+MaxHeap deve ter um método chamado print.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called insert.
+MaxHeap deve ter um método chamado insert.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called remove.
+MinHeap deve ter um método chamado remove.
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 );
 ```
 
-The remove method should remove the greatest element from the max heap while maintaining the max heap property.
+O método remove deve remover o maior elemento do Max Heap ao mesmo tempo em que mantém a propriedade do Max Heap.
 
 ```js
 assert(

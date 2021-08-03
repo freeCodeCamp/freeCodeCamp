@@ -1,7 +1,3 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { Link } from 'gatsby';
 import {
   HelpBlock,
   Alert,
@@ -12,17 +8,21 @@ import {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
-import isEmail from 'validator/lib/isEmail';
+import { Link } from 'gatsby';
+import React, { Component } from 'react';
 import { TFunction, Trans, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
+import isEmail from 'validator/lib/isEmail';
 
 import { updateMyEmail } from '../../redux/settings';
 import { maybeEmailRE } from '../../utils';
 
+import BlockSaveButton from '../helpers/form/block-save-button';
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
 import SectionHeader from './section-header';
-import BlockSaveButton from '../helpers/form/block-save-button';
 import ToggleSetting from './toggle-setting';
 
 const mapStateToProps = () => ({});

@@ -99,7 +99,7 @@
     "react-helmet": "6.1.0",
     "react-hotkeys": "2.0.0",
     "react-i18next": "11.11.4",
-    "react-instantsearch-dom": "6.12.0",
+    "react-instantsearch-dom": "6.12.1",
     "react-lazy-load": "3.1.13",
     "react-monaco-editor": "0.43.0",
     "react-redux": "5.1.2",
@@ -127,8 +127,8 @@
   },
   "devDependencies": {
     "@babel/types": "7.14.9",
-    "@codesee/babel-plugin-instrument": "0.56.0",
-    "@codesee/tracker": "0.56.0",
+    "@codesee/babel-plugin-instrument": "0.57.0",
+    "@codesee/tracker": "0.57.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@types/jest": "26.0.24",
@@ -159,7 +159,7 @@
     "monaco-editor-webpack-plugin": "4.1.1",
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.3",
-    "webpack": "5.47.1",
+    "webpack": "5.48.0",
     "webpack-cli": "4.7.2"
   }
 }

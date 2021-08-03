@@ -1,11 +1,11 @@
-import React from 'react';
 import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
 import envData from '../../../config/env.json';
-import FullWidthRow from '../components/helpers/full-width-row';
 import { Spacer } from '../components/helpers';
+import FullWidthRow from '../components/helpers/full-width-row';
 
 const { apiLocation } = envData;
 

@@ -1,6 +1,6 @@
 ---
 id: 587d8256367417b2b2512c79
-title: Incidence Matrix
+title: Matriz de incidência
 challengeType: 1
 forumTopicId: 301644
 dashedName: incidence-matrix
@@ -8,21 +8,21 @@ dashedName: incidence-matrix
 
 # --description--
 
-Yet another way to represent a graph is to put it in an <dfn>incidence matrix.</dfn>
+Outra forma de representar um grafo é colocá-lo em uma <dfn>matriz de incidência</dfn>
 
-An <dfn>incidence matrix</dfn> is a two-dimensional (2D) array. Generally speaking, an incidence matrix relates two different classes of objects between its two dimensions. This kind of matrix is similar to an adjacency matrix. However, the rows and columns mean something else here.
+Uma <dfn>matriz de incidência</dfn> é um array bidimensional (2D). Em geral, uma matriz de incidência relaciona duas classes diferentes de objetos entre suas duas dimensões. Esse tipo de matriz é semelhante a uma matriz de adjacência. No entanto, as linhas e as colunas significam algo mais neste caso.
 
-In graphs, we have edges and nodes. These will be our "two different classes of objects". This matrix will have the rows be the nodes and columns be the edges. This means that we can have an uneven number of rows and columns.
+Nos grafos, temos arestas e nós. Estas serão as nossas "duas classes diferentes de objetos". Esta matriz terá as linhas representando os nós e as colunas representando as arestas. Isto significa que podemos ter um número desigual de linhas e colunas.
 
-Each column will represent a unique edge. Also, each edge connects two nodes. To show that there is an edge between two nodes, you will put a 1 in the two rows of a particular column. Below is a 3 node graph with one edge between node 1 and node 3.
+Cada coluna representará uma única aresta. Além disso, cada aresta conectará dois nós. Para mostrar que há uma aresta entre dois nós, você colocará um 1 nas duas linhas de uma coluna específica. Abaixo vemos um grafo de 3 nós com uma aresta entre o nó 1 e o nó 3.
 
 <blockquote>    1<br>   ---<br>1 | 1<br>2 | 0<br>3 | 1</blockquote>
 
-Here is an example of an `incidence matrix` with 4 edges and 4 nodes. Remember, the columns are the edges and rows are the nodes themselves.
+Aqui está um exemplo de uma `incidence matrix` (matriz de incidência) com 4 arestas e 4 nós. Lembre-se, as colunas são as arestas e as linhas são os próprios nós.
 
 <blockquote>    1 2 3 4<br>   --------<br>1 | 0 1 1 1<br>2 | 1 1 0 0<br>3 | 1 0 0 1<br>4 | 0 0 1 0</blockquote>
 
-Below is a JavaScript implementation of the same thing.
+Abaixo, vemos uma implementação em JavaScript da mesma coisa.
 
 ```js
 var incMat = [
@@ -33,7 +33,7 @@ var incMat = [
 ];
 ```
 
-To make a directed graph, use `-1` for an edge leaving a particular node and `1` for an edge entering a node.
+Para criar um grafo direcionado, use `-1` para uma aresta que saia de um nó específico e `1` para uma aresta que chegue a um nó.
 
 ```js
 var incMatDirected = [
@@ -44,17 +44,17 @@ var incMatDirected = [
 ];
 ```
 
-Graphs can also have <dfn>weights</dfn> on their edges. So far, we have <dfn>unweighted</dfn> edges where just the presence and lack of edge is binary (`0` or `1`). You can have different weights depending on your application. A different weight is represented as numbers greater than 1.
+Grafos também podem ter <dfn>pesos</dfn> nas arestas. Até agora, tivemos arestas <dfn>sem peso</dfn>, onde apenas a presença e a falta de aresta é binária (`0` ou `1`). Você pode ter pesos diferentes, dependendo da aplicação. Um peso diferente é representado como números maiores que 1.
 
 # --instructions--
 
-Create an incidence matrix of an undirected graph with five nodes and four edges. This matrix should be in a multi-dimensional array.
+Crie uma matriz de incidência de um grafo não direcionado com cinco nós e quatro arestas. Esta matriz deve estar em um array multidimensional.
 
-These five nodes have the following relationships. The first edge is between the first and second node. The second edge is between the second and third node. The third edge is between the third and fifth node. The fourth edge is between the fourth and second node. All edge weights are one and the edge order matters.
+Estes cinco nós têm as seguintes relações. A primeira aresta está entre o primeiro e o segundo nó. A segunda aresta está entre o segundo e o terceiro nó. A terceira aresta entre o terceiro e o quinto nó. A quarta aresta está entre o quarto e o segundo nó. Todos os pesos das arestas são um e a ordem das arestas importa.
 
 # --hints--
 
-`incMatUndirected` should only contain five nodes.
+`incMatUndirected` deve conter apenas cinco nós.
 
 ```js
 assert(
@@ -69,25 +69,25 @@ assert(
 );
 ```
 
-There should be a first edge between the first and second node.
+Deve haver uma primeira aresta entre o primeiro e o segundo nó.
 
 ```js
 assert(incMatUndirected[0][0] === 1 && incMatUndirected[1][0] === 1);
 ```
 
-There should be a second edge between the second and third node.
+Deve haver uma segunda aresta entre o segundo e o terceiro nó.
 
 ```js
 assert(incMatUndirected[1][1] === 1 && incMatUndirected[2][1] === 1);
 ```
 
-There should be a third edge between the third and fifth node.
+Deve haver uma terceira aresta entre o terceiro e o quinto nó.
 
 ```js
 assert(incMatUndirected[2][2] === 1 && incMatUndirected[4][2] === 1);
 ```
 
-There should be a fourth edge between the second and fourth node.
+Deve haver uma quarta aresta entre o segundo e o quarto nó.
 
 ```js
 assert(incMatUndirected[1][3] === 1 && incMatUndirected[3][3] === 1);

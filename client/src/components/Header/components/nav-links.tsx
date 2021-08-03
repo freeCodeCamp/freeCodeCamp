@@ -8,10 +8,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 // @ts-nocheck
-import React, { Component, Fragment } from 'react';
-import { connect } from 'react-redux';
-import { TFunction, withTranslation } from 'react-i18next';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
   faCheckSquare,
@@ -19,15 +15,19 @@ import {
   faSquare,
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
-import { Link } from '../../helpers';
-import { updateUserFlag } from '../../../redux/settings';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { Component, Fragment } from 'react';
+import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import envData from '../../../../../config/env.json';
-import createLanguageRedirect from '../../create-language-redirect';
 import {
   availableLangs,
   i18nextCodes,
   langDisplayNames
 } from '../../../../../config/i18n/all-langs';
+import { updateUserFlag } from '../../../redux/settings';
+import createLanguageRedirect from '../../create-language-redirect';
+import { Link } from '../../helpers';
 
 const { clientLocale, radioLocation, apiLocation } = envData;
 

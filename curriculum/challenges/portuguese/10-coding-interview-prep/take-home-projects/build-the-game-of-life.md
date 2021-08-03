@@ -1,6 +1,6 @@
 ---
 id: bd7154d8c242eddfaeb5bd13
-title: Build the Game of Life
+title: Criar o Jogo da Vida
 challengeType: 3
 forumTopicId: 302362
 dashedName: build-the-game-of-life
@@ -8,29 +8,29 @@ dashedName: build-the-game-of-life
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/BpwMZv/>.
+**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/BpwMZv/>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**User Story:** When I first arrive at the game, it will randomly generate a board and start playing.
+**Especificação de usuário:** assim que eu chegar ao jogo, ele vai gerar aleatoriamente um tabuleiro e começar a jogar.
 
-**User Story:** I can start and stop the board.
+**Especificação de usuário:** posso iniciar e parar o tabuleiro.
 
-**User Story:** I can set up the board.
+**Especificação de usuário:** posso configurar o tabuleiro.
 
-**User Story:** I can clear the board.
+**Especificação de usuário:** posso limpar o tabuleiro.
 
-**User Story:** When I press start, the game will play out.
+**Especificação de usuário:** quando eu pressionar iniciar, o jogo vai começar.
 
-**User Story:** Each time the board changes, I can see how many generations have gone by.
+**Especificação de usuário:** cada vez que o tabuleiro muda, posso ver quantas gerações já passaram.
 
-**Hint:** Here's an explanation of Conway's Game of Life from John Conway himself: <https://www.youtube.com/watch?v=E8kUJL04ELA>
+**Dica:** aqui está uma explicação do Jogo da Vida da Conway escrito pelo próprio John Conway: <https://www.youtube.com/watch?v=E8kUJL04ELA>
 
-**Hint:** Here's an overview of Conway's Game of Life with rules for your reference: [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+**Dica:** aqui está uma visão geral do Jogo da Vida da Conway, com as regras para sua referência: [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

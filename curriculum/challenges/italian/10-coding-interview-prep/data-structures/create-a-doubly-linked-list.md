@@ -1,6 +1,6 @@
 ---
 id: 587d825a367417b2b2512c87
-title: Create a Doubly Linked List
+title: Creare una lista doppiamente concatenata
 challengeType: 1
 forumTopicId: 301626
 dashedName: create-a-doubly-linked-list
@@ -8,19 +8,19 @@ dashedName: create-a-doubly-linked-list
 
 # --description--
 
-All of the linked lists we've created so far are singly linked lists. Here, we'll create a <dfn>doubly linked list</dfn>. As the name implies, nodes in a doubly linked list have references to the next and previous node in the list.
+Tutte le liste concatenate che abbiamo creato finora sono liste semplicemente concatenate. Qui, creeremo una lista <dfn>doppiamente concatenata</dfn>. Come suggerisce il nome, i nodi in una lista doppiamente concatenata hanno dei riferimenti ai nodi successivo e precedente nella lista.
 
-This allows us to traverse the list in both directions but it also requires more memory to be used because every node must contain an additional reference to the previous node in the list.
+Questo ci permette di attraversare la lista in entrambe le direzioni, ma richiede anche più memoria perché ogni nodo deve contenere un riferimento aggiuntivo al nodo precedente nella lista.
 
 # --instructions--
 
-We've provided a `Node` object and started our `DoublyLinkedList`. Let's add two methods to our doubly linked list called `add` and `remove`. The `add` method should add the given element to the list while the `remove` method should remove all occurrences of a given element in the list.
+Abbiamo fornito un oggetto `Node` e abbiamo avviato il nostro `DoublyLinkedList`. Aggiungiamo due metodi alla nostra lista doppiamente concatenata chiamati `add` e `remove`. Il metodo `add` dovrebbe aggiungere l'elemento dato alla lista mentre il metodo `remove` dovrebbe rimuovere tutte le occorrenze di un dato elemento nella lista.
 
-Be careful to handle any possible edge cases when writing these methods, such as deletions for the first or last element. Also, removing any item on an empty list should return `null`.
+Fai attenzione a gestire eventuali casi limite durante la scrittura di questi metodi, come le cancellazioni per il primo o l'ultimo elemento. Inoltre, la rimozione di qualsiasi elemento in una lista vuota dovrebbe restituire `null`.
 
 # --hints--
 
-The DoublyLinkedList data structure should exist.
+La struttura di dati DoublyLinkedList dovrebbe esistere.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-The DoublyLinkedList should have a method called add.
+La lista DoublyLinkedList dovrebbe avere un metodo chiamato add.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-The DoublyLinkedList should have a method called remove.
+La lista DoublyLinkedList dovrebbe avere un metodo chiamato remove.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-Removing an item from an empty list should return null.
+Rimuovere un elemento da una lista vuota dovrebbe restituire null.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-The add method should add items to the list.
+Il metodo add dovrebbe aggiungere elementi all'elenco.
 
 ```js
 assert(
@@ -99,7 +99,7 @@ assert(
 );
 ```
 
-Each node should keep track of the previous node.
+Ogni nodo dovrebbe tenere traccia del nodo precedente.
 
 ```js
 assert(
@@ -116,7 +116,7 @@ assert(
 );
 ```
 
-The first item should be removable from the list.
+Il primo elemento dovrebbe essere rimovibile dall'elenco.
 
 ```js
 assert(
@@ -134,7 +134,7 @@ assert(
 );
 ```
 
-The last item should be removable from the list.
+L'ultimo elemento dovrebbe essere rimovibile dall'elenco.
 
 ```js
 assert(

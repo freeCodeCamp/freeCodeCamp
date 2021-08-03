@@ -1,6 +1,6 @@
 ---
 id: 587d8259367417b2b2512c83
-title: Invert a Binary Tree
+title: Inverter uma árvore binária
 challengeType: 1
 forumTopicId: 301704
 dashedName: invert-a-binary-tree
@@ -8,11 +8,11 @@ dashedName: invert-a-binary-tree
 
 # --description--
 
-Here will we create a function to invert a binary tree. Given a binary tree, we want to produce a new tree that is equivalently the mirror image of this tree. Running an inorder traversal on an inverted tree will explore the nodes in reverse order when compared to the inorder traversal of the original tree. Write a method to do this called `invert` on our binary tree. Calling this method should invert the current tree structure. Ideally, we would like to do this in-place in linear time. That is, we only visit each node once and we modify the existing tree structure as we go, without using any additional memory. Good luck!
+Aqui criaremos uma função para inverter uma árvore binária. Dada uma árvore binária, queremos produzir uma nova árvore que é equivalentemente à imagem de espelho desta árvore. Executar uma travessia em ordem em uma árvore invertida vai explorar os nós em ordem inversa quando comparado com a travessia em ordem da árvore original. Escreva um método para fazer isso chamado `invert` em nossa árvore binária. Chamar este método deve inverter a estrutura atual da árvore. O ideal é que façamos isso em tempo linear. Ou seja, só visitamos cada nó uma vez e modificamos a estrutura em árvore existente conforme fazemos a travessia, sem usar qualquer memória adicional. Boa sorte!
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+A estrutura de dados `BinarySearchTree` deve existir.
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `invert`.
+A árvore binária de busca deve ter um método chamado `invert`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The `invert` method should correctly invert the tree structure.
+O método `invert` deve inverter corretamente a estrutura da árvore.
 
 ```js
 assert(
@@ -70,7 +70,7 @@ assert(
 );
 ```
 
-Inverting an empty tree should return `null`.
+Inverter uma árvore vazia deve retornar `null`.
 
 ```js
 assert(

@@ -3,8 +3,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // @ts-nocheck
 import React from 'react';
-import { Link, AvatarRenderer } from '../../helpers';
 import { useTranslation } from 'react-i18next';
+import { Link, AvatarRenderer } from '../../helpers';
 import Login from './Login';
 
 export interface AuthOrProfileProps {
