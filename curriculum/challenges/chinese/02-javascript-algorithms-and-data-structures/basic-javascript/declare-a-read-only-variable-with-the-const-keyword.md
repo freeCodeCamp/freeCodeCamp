@@ -38,20 +38,20 @@ FAV_PET = "Dogs";
 `SENTENCE` 应该是使用 `const` 声明的常量。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(const SENTENCE)/g));
+(getUserInput) => assert(getUserInput('index').match(/(const FCC)/g));
 ```
 
 `i` 应该是使用 `let`声明的。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(let i)/g));
+(getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
 ```
 
 `console.log` 应该修改为用于打印 `SENTENCE` 变量。
 
 ```js
 (getUserInput) =>
-  assert(getUserInput('index').match(/console\.log\(\s*SENTENCE\s*\)\s*;?/g));
+  assert(getUserInput('index').match(/console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g));
 ```
 
 # --seed--
@@ -59,31 +59,21 @@ FAV_PET = "Dogs";
 ## --seed-contents--
 
 ```js
-function printManyTimes(str) {
+// Only change code below this line
+var fCC = "freeCodeCamp";
+var fact = "is cool!";
+// Only change code above this line
 
-  // Only change code below this line
-
-  var sentence = str + " is cool!";
-  for (var i = 0; i < str.length; i+=2) {
-    console.log(sentence);
-  }
-
-  // Only change code above this line
-
-}
-printManyTimes("freeCodeCamp");
+fact = "is awesome!";
+console.log(fCC, fact);
 ```
 
 # --solutions--
 
 ```js
-function printManyTimes(str) {
+const FCC = "freeCodeCamp";
+let fact = "is cool!";
 
-  const SENTENCE = str + " is cool!";
-  for (let i = 0; i < str.length; i+=2) {
-    console.log(SENTENCE);
-  }
-
-}
-printManyTimes("freeCodeCamp");
+fact = "is awesome!";
+console.log(FCC, fact);
 ```
