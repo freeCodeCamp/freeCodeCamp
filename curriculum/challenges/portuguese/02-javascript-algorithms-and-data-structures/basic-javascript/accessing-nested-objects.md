@@ -9,7 +9,7 @@ dashedName: accessing-nested-objects
 
 # --description--
 
-As sub propriedades de objetos podem ser acessadas ao encadear a notação de ponto e de colchetes.
+As subpropriedades de objetos podem ser acessadas ao encadear a notação de ponto e de colchetes.
 
 Aqui está um objeto aninhado:
 
@@ -44,7 +44,7 @@ Acesse o objeto `myStorage` e atribua o conteúdo da propriedade `glove box` par
 assert(gloveBoxContents === 'maps');
 ```
 
-Seu código deve usar notação de ponto e de colchetes para acessar `myStorage`.
+O código deve usar notação de ponto e de colchetes para acessar `myStorage`.
 
 ```js
 assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));

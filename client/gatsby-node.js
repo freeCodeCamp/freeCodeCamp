@@ -1,10 +1,10 @@
-const env = require('../config/env.json');
-const webpack = require('webpack');
-
 const { createFilePath } = require('gatsby-source-filesystem');
 // TODO: ideally we'd remove lodash and just use lodash-es, but we can't require
 // es modules here.
 const uniq = require('lodash/uniq');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const webpack = require('webpack');
+const env = require('../config/env.json');
 
 const { blockNameify } = require('../utils/block-nameify');
 const {
@@ -165,15 +165,8 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
   });
 };
 
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
-
-exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   const newPlugins = [
-    plugins.define({
-      HOME_PATH: JSON.stringify(
-        process.env.HOME_PATH || 'http://localhost:3000'
-      )
-    }),
     // We add the shims of the node globals to the global scope
     new webpack.ProvidePlugin({
       Buffer: ['buffer', 'Buffer']

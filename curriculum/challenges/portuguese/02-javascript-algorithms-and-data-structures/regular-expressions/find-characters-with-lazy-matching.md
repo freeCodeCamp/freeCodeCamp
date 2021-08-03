@@ -16,7 +16,7 @@ Expressões regulares são gananciosas por padrão, então o resultado seria `["
 
 Mas você pode usar o caractere `?` para torná-la preguiçosa. Aplicar a regex adaptada `/t[a-z]*?i/` à string `"titanic"` retorna `["ti"]`.
 
-**Obs:** Ler HTML com expressões regulares deve ser evitado, mas procurar uma string HTML usando expressões regulares é perfeitamente aceitável.
+**Observação:** ler HTML com expressões regulares deve ser evitado, mas procurar uma string HTML usando expressões regulares é perfeitamente aceitável.
 
 # --instructions--
 

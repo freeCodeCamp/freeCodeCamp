@@ -15,7 +15,7 @@ O operador `/=` divide uma variável por outro número.
 myVar = myVar / 5;
 ```
 
-Irá dividir `myVar` por `5`. Isto pode ser reescrito como:
+dividirá `myVar` por `5`. Essa expressão pode ser reescrita assim:
 
 ```js
 myVar /= 5;

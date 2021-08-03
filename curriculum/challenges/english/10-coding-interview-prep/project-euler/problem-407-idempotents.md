@@ -8,18 +8,20 @@ dashedName: problem-407-idempotents
 
 # --description--
 
-If we calculate a2 mod 6 for 0 ≤ a ≤ 5 we get: 0,1,4,3,4,1.
+If we calculate $a^2\bmod 6$ for $0 ≤ a ≤ 5$ we get: 0, 1, 4, 3, 4, 1.
 
-The largest value of a such that a2 ≡ a mod 6 is 4. Let's call M(n) the largest value of a &lt; n such that a2 ≡ a (mod n). So M(6) = 4.
+The largest value of a such that $a^2 ≡ a\bmod 6$ is $4$.
 
-Find ∑M(n) for 1 ≤ n ≤ 107.
+Let's call $M(n)$ the largest value of $a &lt; n$ such that $a^2 ≡ a (\text{mod } n)$. So $M(6) = 4$.
+
+Find $\sum M(n)$ for $1 ≤ n ≤ {10}^7$.
 
 # --hints--
 
-`euler407()` should return 39782849136421.
+`idempotents()` should return `39782849136421`.
 
 ```js
-assert.strictEqual(euler407(), 39782849136421);
+assert.strictEqual(idempotents(), 39782849136421);
 ```
 
 # --seed--
@@ -27,12 +29,12 @@ assert.strictEqual(euler407(), 39782849136421);
 ## --seed-contents--
 
 ```js
-function euler407() {
+function idempotents() {
 
   return true;
 }
 
-euler407();
+idempotents();
 ```
 
 # --solutions--

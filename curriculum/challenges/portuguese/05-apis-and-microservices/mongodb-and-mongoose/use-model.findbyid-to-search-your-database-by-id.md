@@ -1,6 +1,6 @@
 ---
 id: 587d7fb7367417b2b2512c0d
-title: Use model.findById() to Search Your Database By _id
+title: Use model.findById() para procurar no seu banco de dados por _id
 challengeType: 2
 forumTopicId: 301544
 dashedName: use-model-findbyid-to-search-your-database-by-id
@@ -8,15 +8,15 @@ dashedName: use-model-findbyid-to-search-your-database-by-id
 
 # --description--
 
-When saving a document, MongoDB automatically adds the field `_id`, and set it to a unique alphanumeric key. Searching by `_id` is an extremely frequent operation, so Mongoose provides a dedicated method for it.
+Ao salvar um documento, o MongoDB adiciona automaticamente o campo `_id`, e define-o como uma chave alfanumérica única. Procurar por `_id` é uma operação extremamente frequente, então o Mongoose fornece um método dedicado para isso.
 
 # --instructions--
 
-Modify the `findPersonById` to find the only person having a given `_id`, using `Model.findById() -> Person`. Use the function argument `personId` as the search key.
+Modifique `findPersonById` para encontrar a única pessoa com um `_id` dado, usando `Model.findById() -> Person`. Use o argumento `personId` da função como chave de pesquisa.
 
 # --hints--
 
-Find an item by Id should succeed
+Você deve ter sucesso em encontrar um item por Id
 
 ```js
 (getUserInput) =>

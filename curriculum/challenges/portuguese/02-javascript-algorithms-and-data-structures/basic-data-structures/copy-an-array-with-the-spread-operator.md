@@ -8,7 +8,7 @@ dashedName: copy-an-array-with-the-spread-operator
 
 # --description--
 
-Enquanto `slice()` nos permite ser seletivo sobre quais elementos de um array copiar, entre várias outras tarefas úteis, o novo operador <dfn>do spread</dfn> da ES6 nos permite facilmente copiar *todos* os elementos de um array, em ordem, com uma sintaxe simples e altamente legível. A sintaxe de spread simplesmente se parece com isso: `...`
+Enquanto `slice()` nos permite sermos seletivos sobre quais elementos de um array copiar, entre várias outras tarefas úteis, o novo operador <dfn>spread</dfn> do ES6 nos permite facilmente copiar *todos* os elementos de um array, em ordem, com uma sintaxe simples e altamente legível. A sintaxe de spread é simplesmente essa: `...`
 
 Na prática, podemos usar o operador "spread" para copiar um array assim:
 
@@ -21,7 +21,7 @@ let thatArray = [...thisArray];
 
 # --instructions--
 
-Definimos uma função, `copyMachine` que recebe `arr` (um array) e `num` (um número) como argumentos. A função deve retornar um novo array composto de `num` cópias de `arr`. Fizemos a maior parte do trabalho para você, mas ainda não funciona muito bem. Modifique a função usando a sintaxe spread para que ela funcione corretamente (dica: outro método já mencionado pode ser útil aqui!).
+Definimos uma função, `copyMachine` que recebe `arr` (um array) e `num` (um número) como argumentos. A função deve retornar um novo array composto de `num` cópias de `arr`. Fizemos a maior parte do trabalho para você, mas isso ainda não está certo. Modifique a função usando a sintaxe de spread para que ela funcione corretamente (dica: outro método já mencionado pode ser útil aqui!).
 
 # --hints--
 

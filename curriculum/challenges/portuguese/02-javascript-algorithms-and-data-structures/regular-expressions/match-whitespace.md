@@ -25,19 +25,19 @@ Mude a regex `countWhiteSpace` para que capture múltiplos espaços em branco em
 
 # --hints--
 
-Sua regex deve usar a flag global.
+A regex deve usar a flag global.
 
 ```js
 assert(countWhiteSpace.global);
 ```
 
-Sua regex deve usar o atalho `\s` para capturar todos os espaços em branco.
+A regex deve usar o atalho `\s` para capturar todos os espaços em branco.
 
 ```js
 assert(/\\s/.test(countWhiteSpace.source));
 ```
 
-Sua regex deve encontrar oito espaços na string `Men are from Mars and women are from Venus.`
+A regex deve encontrar oito espaços na string `Men are from Mars and women are from Venus.`
 
 ```js
 assert(
@@ -46,13 +46,13 @@ assert(
 );
 ```
 
-Sua regex deve encontrar três espaços na string `Space: the final frontier.`
+A regex deve encontrar três espaços na string `Space: the final frontier.`
 
 ```js
 assert('Space: the final frontier.'.match(countWhiteSpace).length == 3);
 ```
 
-Sua regex não deve encontrar espaços na string `MindYourPersonalSpace`
+A regex não deve encontrar espaços na string `MindYourPersonalSpace`
 
 ```js
 assert('MindYourPersonalSpace'.match(countWhiteSpace) == null);

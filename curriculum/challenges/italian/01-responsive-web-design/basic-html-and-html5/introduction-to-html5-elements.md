@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-Il tuo elemento `p` dovrebbe contenere le prime parole dell'ulteriore `kitty ipsum text`.
+Il tuo elemento `p` dovrebbe contenere le prime parole del testo aggiuntivo `kitty ipsum` fornito.
 
 ```js
 assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));

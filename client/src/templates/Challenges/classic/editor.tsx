@@ -1,3 +1,12 @@
+import Loadable from '@loadable/component';
+// eslint-disable-next-line import/no-duplicates
+import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
+import type {
+  IRange,
+  editor,
+  Range as RangeType
+  // eslint-disable-next-line import/no-duplicates
+} from 'monaco-editor/esm/vs/editor/editor.api';
 import React, {
   useEffect,
   Suspense,
@@ -7,8 +16,18 @@ import React, {
 } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import Loadable from '@loadable/component';
 import store from 'store';
+import { Loader } from '../../../components/helpers';
+import { userSelector, isDonationModalOpenSelector } from '../../../redux';
+import {
+  ChallengeFileType,
+  DimensionsType,
+  ExtTypes,
+  FileKeyTypes,
+  ResizePropsType,
+  TestType
+} from '../../../redux/prop-types';
+
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
@@ -21,25 +40,6 @@ import {
   challengeTestsSelector,
   submitChallenge
 } from '../redux';
-import { userSelector, isDonationModalOpenSelector } from '../../../redux';
-import { Loader } from '../../../components/helpers';
-import {
-  ChallengeFileType,
-  DimensionsType,
-  ExtTypes,
-  FileKeyTypes,
-  ResizePropsType,
-  TestType
-} from '../../../redux/prop-types';
-
-// eslint-disable-next-line import/no-duplicates
-import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
-import type {
-  IRange,
-  editor,
-  Range as RangeType
-  // eslint-disable-next-line import/no-duplicates
-} from 'monaco-editor/esm/vs/editor/editor.api';
 
 import './editor.css';
 
@@ -67,6 +67,7 @@ interface EditorProps {
   submitChallenge: () => void;
   tests: TestType[];
   theme: string;
+  title: string;
   updateFile: (objest: {
     key: FileKeyTypes;
     editorValue: string;
@@ -511,7 +512,9 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (data.descriptionNode) return data.descriptionNode;
-    const { description } = props;
+    const { description, title } = props;
+    const jawHeading = document.createElement('h3');
+    jawHeading.innerText = title;
     // TODO: var was used here. Should it?
     const domNode = document.createElement('div');
     const desc = document.createElement('div');
@@ -519,6 +522,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.classList.add('description-container');
     domNode.classList.add('editor-upper-jaw');
     domNode.appendChild(descContainer);
+    descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     // desc.style.background = 'white';
@@ -726,8 +730,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // TODO: handle the case that the editable region reaches the bottom of the
     // editor
     return (
-      data.model?.getDecorationRange(data.endEditDecId)
-        ?.startLineNumber ?? 1
+      data.model?.getDecorationRange(data.endEditDecId)?.startLineNumber ?? 1
     );
   }
 

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b5
-title: Escapar citações literais em strings
+title: Escapar aspas literais em strings
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvgSr'
 forumTopicId: 17568
@@ -9,15 +9,15 @@ dashedName: escaping-literal-quotes-in-strings
 
 # --description--
 
-Quando você estiver definindo uma sequência de caracteres você deve iniciar e terminar com uma aspa simples ou dupla. O que acontece quando você precisa de uma cotação literal: `"` ou `'` dentro de sua string?
+Quando você estiver definindo uma sequência de caracteres você deve iniciar e terminar com uma aspa simples ou dupla. O que acontece quando você precisa de uma aspa literal: `"` ou `'` dentro de sua string?
 
-Em JavaScript, você pode <dfn>escapar</dfn> uma aspas para não ser considerada como o fim de uma string ao colocar a <dfn>barra invertida</dfn> (`\`) na frente da aspa.
+Em JavaScript, você pode <dfn>escapar</dfn> uma aspa para que não seja considerada como o fim de uma string ao colocar a <dfn>barra invertida</dfn> (`\`) na frente da aspa.
 
 ```js
 var sampleStr = "Alan said, \"Peter is learning JavaScript\".";
 ```
 
-Isso sinaliza ao JavaScript que a seguinte aspa não é o fim de uma string, mas ao invés disso, deve aparecer dentro da string. Então, se você fosse imprimir isso no console, você obteria:
+Isso sinaliza ao JavaScript que a aspa seguinte não é o fim de uma string, mas que deve aparecer dentro da string. Então, se você fosse imprimir isso no console, você obteria:
 
 ```js
 Alan said, "Peter is learning JavaScript".
@@ -25,7 +25,7 @@ Alan said, "Peter is learning JavaScript".
 
 # --instructions--
 
-Use <dfn>barras invertidas</dfn> para atribuir a string à variável `myStr` para que se você fosse imprimi-la no console, você veria:
+Use <dfn>barras invertidas</dfn> para atribuir a string à variável `myStr` para que, se você fosse imprimi-la no console, veria:
 
 ```js
 I am a "double quoted" string inside "double quotes".

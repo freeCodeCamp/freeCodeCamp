@@ -1,4 +1,6 @@
 import { put, select, takeEvery, delay, call, take } from 'redux-saga/effects';
+import { addDonation } from '../utils/ajax';
+import { actionTypes as appTypes } from './action-types';
 
 import {
   openDonationModal,
@@ -7,11 +9,8 @@ import {
   preventProgressDonationRequests,
   recentlyClaimedBlockSelector,
   addDonationComplete,
-  addDonationError,
-  types as appTypes
+  addDonationError
 } from './';
-
-import { addDonation } from '../utils/ajax';
 
 const defaultDonationError = `Something is not right. Please contact donors@freecodecamp.org`;
 

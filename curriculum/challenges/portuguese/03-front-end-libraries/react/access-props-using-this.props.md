@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616e
-title: Acessar Props usando this.props
+title: Acessar props usando this.props
 challengeType: 6
 forumTopicId: 301375
 dashedName: access-props-using-this-props
@@ -10,11 +10,11 @@ dashedName: access-props-using-this-props
 
 Os últimos desafios cobriram as formas básicas de passar propriedades para componentes filhos. Mas e se o componente filho para o qual você está passando uma propriedade é um componente de classe ES6, em vez de um componente funcional sem estado? O componente da classe ES6 usa uma convenção ligeiramente diferente para acessar as propriedades.
 
-Sempre que você referir a um componente de classe dentro dele mesmo, você usa a palavra-chave `this`. Para acessar props dentro de um componente de classe, você adiciona `this` ao início do código que você usar para acessá-lo. Por exemplo, se um componente de classe ES6 possui uma prop chamada `data`, você escreve `{this.props.data}` em JSX.
+Sempre que você se refere a um componente de classe dentro dele mesmo, você usa a palavra-chave `this`. Para acessar props dentro de um componente de classe, você adiciona `this` ao início do código que você usar para acessá-lo. Por exemplo, se um componente de classe ES6 possui uma prop chamada `data`, você escreve `{this.props.data}` em JSX.
 
 # --instructions--
 
-Renderizar uma instância do componente `ReturnTempPassword` no componente parente `ResetPassword`. Aqui, dê a `ReturnTempPassword` a prop `tempPassword` e atribua a ela o valor de uma string que tenha pelo menos 8 caracteres. Dentro do filho, `ReturnTempPassword`, acesse a prop `tempPassword` dentro das tags `strong` para certificar-se que o usuário veja a senha temporária.
+Renderize uma instância do componente `ReturnTempPassword` no componente parente `ResetPassword`. Aqui, dê a `ReturnTempPassword` à prop `tempPassword` e atribua a ela o valor de uma string que tenha pelo menos 8 caracteres. Dentro do filho, `ReturnTempPassword`, acesse a prop `tempPassword` dentro das tags `strong` para certificar-se que o usuário veja a senha temporária.
 
 # --hints--
 

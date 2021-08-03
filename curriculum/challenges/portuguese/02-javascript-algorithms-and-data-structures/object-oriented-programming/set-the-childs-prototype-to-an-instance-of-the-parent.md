@@ -16,7 +16,7 @@ Este desafio cobre o próximo passo: definir o `prototype` do subtipo (ou filho)
 Bird.prototype = Object.create(Animal.prototype);
 ```
 
-Lembre-se que o `prototype` é como uma receita para criar um objeto. De certa forma, a receita para `Bird` agora inclui todos os "ingredientes" chave para `Animal`.
+Lembre-se de que o `prototype` é como uma receita para criar um objeto. De certa forma, a receita para `Bird` agora inclui todos os "ingredientes" chave para `Animal`.
 
 ```js
 let duck = new Bird("Donald");

@@ -1,6 +1,6 @@
 ---
 id: 5e46f8d6ac417301a38fb92d
-title: Rock Paper Scissors
+title: Pedra, papel ou tesoura
 challengeType: 10
 forumTopicId: 462376
 dashedName: rock-paper-scissors
@@ -8,17 +8,17 @@ dashedName: rock-paper-scissors
 
 # --description--
 
-For this challenge, you will create a program to play Rock, Paper, Scissors. A program that picks at random will usually win 50% of the time. To pass this challenge your program must play matches against four different bots, winning at least 60% of the games in each match.
+Para este desafio, você criará um programa para jogar Pedra, Papel e Tesoura. Um programa que escolhe aleatoriamente geralmente ganha 50% das vezes. Para passar neste desafio, o programa deve jogar partidas contra quatro bots diferentes, ganhando pelo menos 60% dos jogos em cada partida.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors).
+Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com base nas instruções do 'README.md', envie o link do seu projeto abaixo.
 
-We are still developing the interactive instructional part of the machine learning curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo de aprendizagem de máquina. Por enquanto, você terá que usar outros recursos para aprender a vencer este desafio.
 
 # --hints--
 
-It should pass all Python tests.
+Ele deve passar em todos os testes do Python.
 
 ```js
 

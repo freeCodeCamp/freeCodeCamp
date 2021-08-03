@@ -1,6 +1,6 @@
 ---
 id: 594d8d0ab97724821379b1e6
-title: Averages/Mode
+title: Médias/Moda
 challengeType: 5
 forumTopicId: 302226
 dashedName: averagesmode
@@ -8,27 +8,27 @@ dashedName: averagesmode
 
 # --description--
 
-Write a program to find the [mode](https://en.wikipedia.org/wiki/Mode (statistics) "wp: Mode (statistics)") value of a collection.
+Escreva um programa que encontre o valor da [moda](https://en.wikipedia.org/wiki/Mode (statistics) "wp: Mode (statistics)") de uma coleção.
 
-The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.
+O caso em que a coleção está vazia pode ser ignorado. É preciso ter cuidado para lidar com o caso em que a moda não é única.
 
-If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.
+Se não for apropriado ou possível dar suporte a uma coleção geral, use um vetor (array), se possível. Se não é apropriado ou possível dar suporte a um tipo de valor não especificado, use números inteiros.
 
 # --hints--
 
-`mode` should be a function.
+`mode` deve ser uma função.
 
 ```js
 assert(typeof mode === 'function');
 ```
 
-`mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])` should equal `[6]`
+`mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])` deve ser igual a `[6]`
 
 ```js
 assert.deepEqual(mode(arr1), [6]);
 ```
 
-`mode([1, 2, 4, 4, 1])` should equal `[1, 4]`.
+`mode([1, 2, 4, 4, 1])` deve ser igual a `[1, 4]`.
 
 ```js
 assert.deepEqual(mode(arr2).sort(), [1, 4]);

@@ -1,6 +1,6 @@
 ---
 id: 587d8251367417b2b2512c64
-title: Search within a Linked List
+title: Pesquisar em uma lista encadeada
 challengeType: 1
 forumTopicId: 301715
 dashedName: search-within-a-linked-list
@@ -8,19 +8,19 @@ dashedName: search-within-a-linked-list
 
 # --description--
 
-Let's add a few more useful methods to our linked list class. Wouldn't it be useful if we could tell if our list was empty or not, as with our `Stack` and `Queue` classes?
+Vamos adicionar mais alguns métodos úteis à nossa classe de lista encadeada. Não seria útil se pudéssemos dizer se nossa lista estava vazia ou não. como em nossas classes `Stack` e `Queue`?
 
-We should also be able to find specific elements in our linked list. Traversing through data structures is something you'll want to get a lot of practice with! Let's create an `indexOf` method that takes an `element` as an argument, and returns that element's `index` in the linked list. If the element is not found in the linked list, return `-1`.
+Deveríamos também poder encontrar elementos específicos na nossa lista encadeada. Percorrer estruturas de dados é algo que você vai querer praticar bastante! Vamos criar um método `indexOf`, que recebe um `element` como argumento, e retorna o `index` desse elemento na lista encadeada. Se o elemento não for encontrado na lista encadeada, retorne `-1`.
 
-Let's also implement a method that does the opposite: an `elementAt` method that takes an `index` as an argument and returns the `element` at the given `index`. If no `element` is found, return `undefined`.
+Vamos também implementar um método que faz o oposto: um método `elementAt`, que recebe um `index` como um argumento e retorna o `element` que está no `index` fornecido. Se nenhum `element` passar no teste, retorne `undefined`.
 
 # --instructions--
 
-Write an `isEmpty` method that checks if the linked list is empty, an `indexOf` method that returns the `index` of a given element, and an `elementAt` that returns an `element` at a given `index.`
+Escreva um método `isEmpty`, que verifique se a lista está vazia, um método `indexOf`, que retorna o `index` de um determinado elemento, e um método `elementAt`, que retorna um `element` em um dado `index.`
 
 # --hints--
 
-Your `LinkedList` class should have an `isEmpty` method.
+A classe `LinkedList` deve ter o método `isEmpty`.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Your `isEmpty` method should return `false` when there is at least one element in linked list.
+O método `isEmpty` deve retornar `false` quando houver pelo menos um elemento na lista encadeada.
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-Your `isEmpty` method should return `true` when there are no elements in linked list.
+O método `isEmpty` deve retornar `true` quando não houver elementos na lista encadeada.
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-Your `LinkedList` class should have an `indexOf` method.
+A classe `LinkedList` deve ter o método `indexOf`.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-Your `indexOf` method should return the index of a given element found in linked list.
+O método `indexOf` deve retornar o índice de um determinado elemento encontrado na lista encadeada.
 
 ```js
 assert(
@@ -81,7 +81,7 @@ assert(
 );
 ```
 
-Your `indexOf` method should return `-1` if the given element is not found in linked list
+O método `indexOf` deve retornar `-1` se o elemento fornecido não for encontrado na lista encadeada
 
 ```js
 assert(
@@ -95,7 +95,7 @@ assert(
 );
 ```
 
-Your `LinkedList` class should have an `elementAt` method.
+A classe `LinkedList` deve ter o método `elementAt`.
 
 ```js
 assert(
@@ -106,7 +106,7 @@ assert(
 );
 ```
 
-Your `elementAt` method should return the element found at a given index in linked list.
+O método `elementAt` deve retornar o elemento encontrado no índice fornecido da lista encadeada.
 
 ```js
 assert(
@@ -120,7 +120,7 @@ assert(
 );
 ```
 
-Your `elementAt` method should return `undefined` if the given element is not found at a given index in linked list.
+O método `elementAt` deve retornar `undefined` se o elemento fornecido não for encontrado no índice fornecido na lista encadeada.
 
 ```js
 assert(

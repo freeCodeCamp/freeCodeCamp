@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aede08845
-title: Crie um Título Personalizado
+title: Criar um título personalizado
 challengeType: 0
 forumTopicId: 16816
 dashedName: create-a-custom-heading
@@ -8,9 +8,9 @@ dashedName: create-a-custom-heading
 
 # --description--
 
-Iremos fazer um simples título para nossa foto de gato ao colocar o título e a imagem do gato relaxando na mesma linha.
+Vamos fazer um título simples para nossa foto de gato ao colocar na mesma linha o título e a imagem do gato relaxando.
 
-Lembre-se, Bootstrap usa o sistema de rede responsiva, o que torna fácil colocar elementos em linhas e especificar cada largura relativa de um elemento. A maioria das classes Bootstrap podem ser aplicadas a um elemento `div`.
+Lembre-se: o Bootstrap usa o sistema de grade responsiva, o que torna fácil colocar elementos em linha e especificar cada largura relativa de um elemento. A maioria das classes do Bootstrap podem ser aplicadas a um elemento `div`.
 
 Aninhe sua primeira imagem e seu elemento `h2` dentro de um único elemento `<div class="row">`. Aninhe o seu elemento `h2` dentro de uma `<div class="col-xs-8">` e sua imagem em uma `<div class="col-xs-4">` para que eles estejam na mesma linha.
 
@@ -18,13 +18,13 @@ Notou como a imagem agora está no tamanho exato para encaixar com o texto?
 
 # --hints--
 
-Seu elemento `h2` e o elemento `img` mais a cima devem ambos estarem aninhados juntos dentro de um elemento `div` com a classe `row`.
+O elemento `h2` e o elemento `img` mais acima devem estar aninhados juntos dentro de um elemento `div` com a classe `row`.
 
 ```js
 assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0);
 ```
 
-Seu elemento `img` superior deve estar aninhado dentro de uma `div` com a classe `col-xs-4`.
+O elemento `img` superior deve estar aninhado dentro de uma `div` com a classe `col-xs-4`.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-Seu elemento `h2` deve estar aninhado dentro de uma `div` com a classe `col-xs-8`.
+O elemento `h2` deve estar aninhado dentro de uma `div` com a classe `col-xs-8`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-Todos os seus elementos `div` devem ter tags de fechamento.
+Todos os elementos `div` devem ter tags de fechamento.
 
 ```js
 assert(

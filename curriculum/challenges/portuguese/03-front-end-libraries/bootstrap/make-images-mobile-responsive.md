@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08812
-title: Torne Imagens Responsivas a dispositivos Móveis
+title: Tornar imagens responsivas a dispositivos móveis
 challengeType: 0
 forumTopicId: 18232
 dashedName: make-images-mobile-responsive
@@ -12,7 +12,7 @@ Primeiro, adicione uma nova imagem abaixo da existente. Defina o seu atributo `s
 
 Seria ótimo se essa imagem pudesse ser exatamente do tamanho da nossa tela do celular.
 
-Felizmente, com Bootstrap, tudo que precisamos fazer é adicionar a classe `img-responsive` para nossa imagem. Faça isso, e a imagem deve encaixar perfeitamente na largura da sua página.
+Felizmente, com o Bootstrap, tudo que precisamos fazer é adicionar a classe `img-responsive` para a nossa imagem. Faça isso, e a imagem deve encaixar perfeitamente na largura da página.
 
 # --hints--
 
@@ -22,25 +22,25 @@ Você deve ter o total de duas imagens.
 assert($('img').length === 2);
 ```
 
-Sua nova imagem deve estar abaixo da sua antiga e ter a classe `img-responsive`.
+A nova imagem deve estar abaixo da antiga e ter a classe `img-responsive`.
 
 ```js
 assert($('img:eq(1)').hasClass('img-responsive'));
 ```
 
-Sua nova imagem não deve ter a classe `smaller-image`.
+A nova imagem não deve ter a classe `smaller-image`.
 
 ```js
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-Sua nova imagem deve ter um `src` de `https://bit.ly/fcc-running-cats`.
+A nova imagem deve ter um `src` de `https://bit.ly/fcc-running-cats`.
 
 ```js
 assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
 ```
 
-Seu novo elemento `img` deve ter uma tag de fechamento.
+O novo elemento `img` deve ter uma tag de fechamento.
 
 ```js
 assert(

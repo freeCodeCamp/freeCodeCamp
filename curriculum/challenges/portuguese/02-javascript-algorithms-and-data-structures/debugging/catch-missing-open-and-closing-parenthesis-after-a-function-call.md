@@ -28,13 +28,13 @@ Corrija o código para que a variável `result` seja definida para o valor retor
 
 # --hints--
 
-Seu código deve corrigir a variável `result` para que seja definida para o número que a função `getNine` retorna.
+O código deve corrigir a variável `result` para que seja definida para o número que a função `getNine` retorna.
 
 ```js
 assert(result == 9);
 ```
 
-Seu código deve chamar a função `getNine`.
+O código deve chamar a função `getNine`.
 
 ```js
 assert(code.match(/getNine\(\)/g).length == 2);

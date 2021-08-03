@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed208826
-title: Mire o Filho de um Elemento Usando jQuery
+title: Mirar o filho de um elemento usando o jQuery
 challengeType: 6
 forumTopicId: 18320
 dashedName: target-the-children-of-an-element-using-jquery
@@ -10,7 +10,7 @@ dashedName: target-the-children-of-an-element-using-jquery
 
 Quando elementos HTML são colocadas um nível abaixo de outro eles são chamados <dfn>children(filhos)</dfn> daquele elemento. Por exemplo, os elementos button nesse desafio com o texto `#target1`, `#target2` e `#target3` são todos filhos do elemento `<div class="well" id="left-well">`.
 
-jQuery possui uma função chamada `children()` que o permite acessar os filhos de qualquer elementos que você selecionou.
+O jQuery possui uma função chamada `children()` que o permite acessar os filhos de qualquer elementos que você selecionou.
 
 Aqui está um exemplo de como você usaria a função `children()` para dar ao filho do seu elemento `left-well` a cor `blue`:
 

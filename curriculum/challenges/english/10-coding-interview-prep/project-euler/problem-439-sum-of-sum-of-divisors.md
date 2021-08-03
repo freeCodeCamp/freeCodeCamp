@@ -8,20 +8,22 @@ dashedName: problem-439-sum-of-sum-of-divisors
 
 # --description--
 
-Let d(k) be the sum of all divisors of k.
+Let $d(k)$ be the sum of all divisors of $k$.
 
-We define the function S(N) = ∑1≤i≤N ∑1≤j≤Nd(i·j).
+We define the function $S(N) = \sum_{i = 1}^N \sum_{j = 1}^N d(i \times j)$.
 
-For example, S(3) = d(1) + d(2) + d(3) + d(2) + d(4) + d(6) + d(3) + d(6) + d(9) = 59.
+For example, $S(3) = d(1) + d(2) + d(3) + d(2) + d(4) + d(6) + d(3) + d(6) + d(9) = 59$.
 
-You are given that S(103) = 563576517282 and S(105) mod 109 = 215766508. Find S(1011) mod 109.
+You are given that $S({10}^3) = 563\\,576\\,517\\,282$ and $S({10}^5)\bmod {10}^9 = 215\\,766\\,508$.
+
+Find $S({10}^{11})\bmod {10}^9$.
 
 # --hints--
 
-`euler439()` should return 968697378.
+`sumOfSumOfDivisors()` should return `968697378`.
 
 ```js
-assert.strictEqual(euler439(), 968697378);
+assert.strictEqual(sumOfSumOfDivisors(), 968697378);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler439(), 968697378);
 ## --seed-contents--
 
 ```js
-function euler439() {
+function sumOfSumOfDivisors() {
 
   return true;
 }
 
-euler439();
+sumOfSumOfDivisors();
 ```
 
 # --solutions--

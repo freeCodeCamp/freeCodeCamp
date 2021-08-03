@@ -1,8 +1,4 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import {
   ControlLabel,
   FormControl,
@@ -11,17 +7,21 @@ import {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
+import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
+import { createSelector } from 'reselect';
 
+import { isValidUsername } from '../../../../utils/validate';
 import {
   validateUsername,
   usernameValidationSelector,
   submitNewUsername
 } from '../../redux/settings';
-import FullWidthRow from '../helpers/full-width-row';
 import BlockSaveButton from '../helpers/form/block-save-button';
-import { isValidUsername } from '../../../../utils/validate';
+import FullWidthRow from '../helpers/full-width-row';
 
 type UsernameProps = {
   isValidUsername: boolean;

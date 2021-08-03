@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { WithTranslation } from 'react-i18next';
 
-import { Form } from '../../../components/formHelpers';
 import {
   backend,
   backEndProject,
   frontEndProject,
   pythonProject
 } from '../../../../utils/challengeTypes';
+import { Form } from '../../../components/formHelpers';
 
 interface SubmitProps {
   isShouldCompletionModalOpen: boolean;

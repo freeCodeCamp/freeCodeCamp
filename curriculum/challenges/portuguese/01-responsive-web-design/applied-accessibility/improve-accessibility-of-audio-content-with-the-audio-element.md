@@ -13,7 +13,7 @@ O elemento `audio` do HTML fornece significado semântico quando é utilizado pa
 
 A tag `audio` suporta o atributo `controls`. Este atributo exibe os controles de reprodução, pausa e outras funcionalidades, além de oferecer suporte ao teclado. Este é um atributo booleano, o que significa que não precisa de um valor. Sua presença na tag ativa a configuração.
 
-Um exemplo:
+Exemplo:
 
 ```html
 <audio id="meowClip" controls>

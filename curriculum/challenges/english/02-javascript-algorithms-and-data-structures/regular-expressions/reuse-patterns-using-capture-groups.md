@@ -8,24 +8,28 @@ dashedName: reuse-patterns-using-capture-groups
 
 # --description--
 
-Some patterns you search for will occur multiple times in a string. It is wasteful to manually repeat that regex. There is a better way to specify when you have multiple repeat substrings in your string.
-
-You can search for repeat substrings using <dfn>capture groups</dfn>. Parentheses, `(` and `)`, are used to find repeat substrings. You put the regex of the pattern that will repeat in between the parentheses.
-
-To specify where that repeat string will appear, you use a backslash (`\`) and then a number. This number starts at 1 and increases with each additional capture group you use. An example would be `\1` to match the first group.
-
-The example below matches any word that occurs twice separated by a space:
+Say you want to match a word that occurs multiple times like below.
 
 ```js
-let repeatStr = "regex regex";
-let repeatRegex = /(\w+)\s\1/;
-repeatRegex.test(repeatStr);
-repeatStr.match(repeatRegex);
+let repeatStr = "row row row your boat";
 ```
 
-The `test` call would return `true`, and the `match` call would return `["regex regex", "regex"]`.
+You could use `/row row row/`, but what if you don't know the specific word repeated? <dfn>Capture groups</dfn> can be used to find repeated substrings.
 
-Using the `.match()` method on a string will return an array with the string it matches, along with its capture group.
+Capture groups are constructed by enclosing the regex pattern to be captured in parentheses. In this case, the goal is to capture a word consisting of alphanumeric characters so the capture group will be `\w+` enclosed by parentheses: `/(\w+)/`.
+
+The substring matched by the group is saved to a temporary "variable", which can be accessed within the same regex using a backslash and the number of the capture group (e.g. `\1`). Capture groups are automatically numbered by the position of their opening parentheses (left to right), starting at 1.
+
+The example below matches a word that occurs thrice separated by spaces:
+
+```js
+let repeatRegex = /(\w+) \1 \1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["row row row", "row"]
+```
+
+Using the `.match()` method on a string will return an array with the matched substring, along with its captured groups.
+
 
 # --instructions--
 

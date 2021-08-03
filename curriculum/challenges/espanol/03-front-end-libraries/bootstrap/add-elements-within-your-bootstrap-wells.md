@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908849
-title: Agregar elementos dentro de tus Bootstrap Wells
+title: Agregar elementos dentro de tus recursos de Bootstrap
 challengeType: 0
 forumTopicId: 16636
 dashedName: add-elements-within-your-bootstrap-wells
@@ -14,7 +14,7 @@ Anida tres elementos `button` dentro de cada uno de los elementos `div` que pose
 
 # --hints--
 
-Tres elementos `button` deberían ser anidados cada uno dentro de elementos `div` con la clase `well`.
+Tres elementos `button` deberían ser insertados dentro de cada uno de los elementos `div` con la clase `well`.
 
 ```js
 assert(

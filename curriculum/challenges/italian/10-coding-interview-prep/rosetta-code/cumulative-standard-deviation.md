@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e03
-title: Cumulative standard deviation
+title: Deviazione cumulativa standard
 challengeType: 5
 forumTopicId: 302240
 dashedName: cumulative-standard-deviation
@@ -8,41 +8,41 @@ dashedName: cumulative-standard-deviation
 
 # --description--
 
-Write a function that takes an array of numbers as parameter and returns the [standard deviation](https://en.wikipedia.org/wiki/Standard Deviation) of the series.
+Scrivi una funzione che prende un array di numeri come parametro e restituisce la [deviazione standard](https://en.wikipedia.org/wiki/Standard Deviation) della serie.
 
 # --hints--
 
-`standardDeviation` should be a function.
+`standardDeviation` dovrebbe essere una funzione.
 
 ```js
 assert(typeof standardDeviation == 'function');
 ```
 
-`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` should return a number.
+`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` dovrebbe restituire un numero.
 
 ```js
 assert(typeof standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]) == 'number');
 ```
 
-`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` should return `2`.
+`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` dovrebbe restituire `2`.
 
 ```js
 assert.equal(standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]), 2);
 ```
 
-`standardDeviation([600, 470, 170, 430, 300])` should return `147.323`.
+`standardDeviation([600, 470, 170, 430, 300])` dovrebbe restituire `147.323`.
 
 ```js
 assert.equal(standardDeviation([600, 470, 170, 430, 300]), 147.323);
 ```
 
-`standardDeviation([75, 83, 96, 100, 121, 125])` should return `18.239`.
+`standardDeviation([75, 83, 96, 100, 121, 125])` dovrebbe restituire `18.239`.
 
 ```js
 assert.equal(standardDeviation([75, 83, 96, 100, 121, 125]), 18.239);
 ```
 
-`standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82])` should return `16.87`.
+`standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82])` dovrebbe restituire `16.87`.
 
 ```js
 assert.equal(
@@ -51,7 +51,7 @@ assert.equal(
 );
 ```
 
-`standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314])` should return `22.631`.
+`standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314])` dovrebbe restituire `22.631`.
 
 ```js
 assert.equal(

@@ -9,10 +9,10 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Aspas não são os únicos caracteres que podem ser <dfn>escapadas</dfn> dentro de uma string. Há dois motivos para usar caracteres de escapamento:
+Aspas não são os únicos caracteres que podem ser <dfn>escapados</dfn> dentro de uma string. Há dois motivos para usar caracteres de escapamento:
 
-1.  Para permitir que você use caracteres, você pode não ser capaz de digitar caso contrário, como um retorno de carro.
-2.  Para permiti-lo representar várias aspas em uma string sem o JavaScript entender erroneamente o que você quis dizer.
+1.  Para permitir que você use caracteres que você pode não ser capaz de digitar do contrário, como o caractere de retorno de carro.
+2.  Para permitir que você represente várias aspas em uma string sem o JavaScript entender erroneamente o que você quis dizer.
 
 Aprendemos isso no desafio anterior.
 
@@ -26,9 +26,9 @@ Atribua as três linhas de texto a seguir em uma única variável `myStr` usando
 
 <blockquote>FirstLine<br>    \SecondLine<br>ThirdLine</blockquote>
 
-Você precisará usar sequências de escapamento para inserir corretamente os caracteres especiais. Você também precisará seguir os espaçamentos assim como se parece acima, sem espaços entre sequências de escapamento ou palavras.
+Você precisará usar sequências de escapamento para inserir corretamente os caracteres especiais. Você também precisará seguir os espaçamentos assim como acima, sem espaços entre sequências de escapamento ou palavras.
 
-**Nota:** A identação para `SecondLine` é alcançada com o caracter de espaçamento tab, e não espaços.
+**Observação:** a identação para `SecondLine` é alcançada com o caractere de espaçamento tab, e não com espaços.
 
 # --hints--
 
@@ -52,7 +52,7 @@ assert(
 assert(/FirstLine\n/.test(myStr));
 ```
 
-`myStr` deve conter o caracter tab `\t` a qual está logo após o caractere de nova linha `\n`
+`myStr` deve conter o caractere de tabulação `\t`, que vem após um caractere de nova linha
 
 ```js
 assert(/\n\t/.test(myStr));

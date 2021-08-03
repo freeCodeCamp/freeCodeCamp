@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617a
-title: Passar State como Props para Componentes Filhos
+title: Passar state como props para componentes filhos
 challengeType: 6
 forumTopicId: 301403
 dashedName: pass-state-as-props-to-child-components
@@ -12,7 +12,7 @@ Você viu muitos exemplos que passaram "props" para elementos JSX filhos e compo
 
 Por exemplo, talvez você tenha um componente `App` que renderiza uma `Navbar`, entre outros componentes. No seu `App`, você tem `state` que contém muitas informações de usuário, mas a barra de `Navbar` só precisa acessar o nome de usuário para que possa exibi-lo. Você passa esse pedaço de `state` para o componente `Navbar` como uma prop.
 
-Este padrão ilustra alguns paradigmas importantes em React. O primeiro é um *fluxo de dados unidirecional*. Estado flui em uma direção para baixo na árvore dos componentes da sua aplicação, do componente pai stateful para componentes filho. Os componentes filhos só recebem os dados do estado de que precisam. O segundo é que aplicativos de estado complexos podem ser divididos em apenas alguns, ou talvez um único componente com estado. O resto dos seus componentes simplesmente recebem o state do pai como "props" e renderizam uma interface desse estado. Ele começa a criar uma separação onde o gerenciamento de estado é tratado em uma parte do código e renderização de interface em outra. Este princípio da separação da lógica do estado da lógica da interface do usuário é um dos princípios fundamentais do React. Quando usado corretamente, torna o design de aplicações complexas e com estado muito mais fácil de gerenciar.
+Este padrão ilustra alguns paradigmas importantes em React. O primeiro é um *fluxo de dados unidirecional*. Estado flui em uma direção para baixo na árvore dos componentes da sua aplicação, do componente pai stateful para componentes filho. Os componentes filhos só recebem os dados do estado de que precisam. O segundo é que aplicativos de estado complexos podem ser divididos em apenas alguns, ou talvez um único componente com estado. O resto dos seus componentes simplesmente recebem o state do pai como "props" e renderizam uma interface desse estado. Isso começa a criar uma separação onde o gerenciamento de estado é tratado em uma parte do código e renderização de interface em outra. Este princípio da separação da lógica do estado da lógica da interface do usuário é um dos princípios fundamentais do React. Quando usado corretamente, torna o design de aplicações complexas e com estado muito mais fácil de gerenciar.
 
 # --instructions--
 

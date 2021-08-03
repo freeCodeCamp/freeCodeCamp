@@ -12,7 +12,7 @@ A <dfn>aridade</dfn> de uma função é o número de argumentos que ela toma. Re
 
 Em outras palavras, a função é reestruturada para que ela receba apenas um argumento e retorne outra função que recebe o próximo argumento e assim por diante.
 
-Um exemplo:
+Exemplo:
 
 ```js
 function unCurried(x, y) {
@@ -39,7 +39,7 @@ var funcForY = curried(1);
 console.log(funcForY(2)); // 3
 ```
 
-Da mesma forma, <dfn>aplicação parcial</dfn> pode ser descrita como a aplicação de alguns argumentos a uma função e o retorno de outra função à qual é aplicada a mais argumentos. Um exemplo:
+Da mesma forma, <dfn>aplicação parcial</dfn> pode ser descrita como a aplicação de alguns argumentos a uma função e o retorno de outra função à qual é aplicada a mais argumentos. Exemplo:
 
 ```js
 function impartial(x, y, z) {
@@ -73,7 +73,7 @@ assert(add(1)(2)(3) === 6);
 assert(add(11)(22)(33) === 66);
 ```
 
-Em seu código deve haver uma instrução final que retorna `x + y + z`.
+No código deve haver uma instrução final que retorna `x + y + z`.
 
 ```js
 assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));

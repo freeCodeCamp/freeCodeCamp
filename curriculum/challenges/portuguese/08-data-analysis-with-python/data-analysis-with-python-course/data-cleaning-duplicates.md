@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15f
-title: Data Cleaning Duplicates
+title: Limpar dados duplicados
 challengeType: 11
 videoId: kj7QqjXhH6A
 dashedName: data-cleaning-duplicates
@@ -8,30 +8,30 @@ dashedName: data-cleaning-duplicates
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Ao invés de usar notebooks.ai como foi mostrado no vídeo, você pode usar o Google Colab como substituto.*
 
-More resources:
+Mais recursos:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebooks no GitHub](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
+-   [Como abrir notebooks do GitHub usando o Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-The Python method `.duplicated()` returns a boolean Series for your DataFrame. `True` is the return value for rows that:
+O método `.duplicated()` do Python retorna uma série booleana para o seu DataFrame. `True` é o valor de retorno para as linhas que:
 
 ## --answers--
 
-contain a duplicate, where the value for the row contains the first occurrence of that value.
+contém uma duplicata, onde o valor para a linha contém a primeira ocorrência desse valor.
 
 ---
 
-contain a duplicate, where the value for the row is at least the second occurrence of that value.
+contém uma duplicata, onde o valor para a linha é, ao menos, a segunda ocorrência desse valor.
 
 ---
 
-contain a duplicate, where the value for the row contains either the first or second occurrence.
+contém uma duplicata, onde o valor para a linha contém a primeira ou a segunda ocorrência.
 
 ## --video-solution--
 

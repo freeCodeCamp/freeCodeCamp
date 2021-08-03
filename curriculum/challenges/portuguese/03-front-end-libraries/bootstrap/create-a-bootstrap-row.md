@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9bec908846
-title: Crie uma Linha Bootstrap
+title: Criar uma linha do Bootstrap
 challengeType: 0
 forumTopicId: 16813
 dashedName: create-a-bootstrap-row
@@ -8,13 +8,13 @@ dashedName: create-a-bootstrap-row
 
 # --description--
 
-Agora iremos criar uma linha Bootstrap para nossos elementos em linha.
+Agora vamos criar uma linha do Bootstrap para nossos elementos em linha.
 
 Crie um elemento `div` abaixo da tag `h3`, com a classe `row`.
 
 # --hints--
 
-Você deve adicionar o elemento `div` abaixo do seu elemento `h3`.
+Você deve adicionar o elemento `div` abaixo do elemento `h3`.
 
 ```js
 assert(
@@ -25,19 +25,19 @@ assert(
 );
 ```
 
-Seu elemento `div` deve ter a classe `row`
+O elemento `div` deve ter a classe `row`
 
 ```js
 assert($('div').hasClass('row'));
 ```
 
-Seu `row div` deve estar aninhado dentro de `container-fluid div`
+O `row div` deve estar aninhado dentro de `container-fluid div`
 
 ```js
 assert($('div.container-fluid div.row').length > 0);
 ```
 
-Seu elemento `div` deve ter uma tag de fechamento.
+O elemento `div` deve ter uma tag de fechamento.
 
 ```js
 assert(

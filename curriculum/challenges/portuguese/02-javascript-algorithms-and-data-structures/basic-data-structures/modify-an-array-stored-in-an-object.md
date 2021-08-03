@@ -8,11 +8,11 @@ dashedName: modify-an-array-stored-in-an-object
 
 # --description--
 
-Agora você já viu todas as operações básicas para os objetos JavaScript. Você pode adicionar, modificar e remover pares de chave-valor, verifique se a chave existe e itere sobre todas as chaves em um objeto. Conforme continuar aprendendo JavaScript você verá aplicações de objetos ainda mais versáteis. Adicionalmente, as aulas de Estrutura de Dados localizadas na seção Preparação para Entrevista de Codificação do curriculum também cobrem os objetos ES6 <dfn>Map</dfn> e <dfn>Set</dfn>, ambos são semelhantes a objetos comuns, mas fornecem alguns recursos adicionais. Agora que você aprendeu o básico de arrays e objetos, você está totalmente preparado para começar a resolver problemas mais complexos usando JavaScript!
+Agora você já viu todas as operações básicas para os objetos JavaScript. Você pode adicionar, modificar e remover pares de chave-valor, verifique se a chave existe e itere sobre todas as chaves em um objeto. Conforme continuar aprendendo JavaScript, você verá aplicações de objetos ainda mais versáteis. Adicionalmente, as aulas de Estrutura de Dados localizadas na seção Preparação para Entrevista de Codificação do currículo também cobrem os objetos ES6 <dfn>Map</dfn> e <dfn>Set</dfn>, ambos são semelhantes a objetos comuns, mas fornecem alguns recursos adicionais. Agora que você aprendeu o básico de arrays e objetos, você está totalmente preparado para começar a resolver problemas mais complexos usando JavaScript!
 
 # --instructions--
 
-Dê uma olhada no objeto que fornecemos no editor de código. O objeto `user` contém três chaves. A chave `data` contém 5 chaves, uma delas possui um array de `friends`. A partir disso, você pode ver como objetos são flexíveis assim como estruturas de dados. Nós começamos escrevendo a função `addFriend`. Termine de escrevê-la para que receba um objeto `user` e adicione o nome do argumento `friend` no array armazenado em `user.data.friends` e retorne esse array.
+Dê uma olhada no objeto que fornecemos no editor de código. O objeto `user` contém três chaves. A chave `data` contém 5 chaves, uma delas possui um array de `friends`. A partir disso, você pode ver como objetos são flexíveis assim como estruturas de dados. Nós começamos escrevendo a função `addFriend`. Termine de escrevê-la para que receba um objeto `user`, adicione o nome do argumento `friend` no array armazenado em `user.data.friends` e retorne esse array.
 
 # --hints--
 

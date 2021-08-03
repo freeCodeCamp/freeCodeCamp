@@ -8,7 +8,7 @@ dashedName: complete-a-promise-with-resolve-and-reject
 
 # --description--
 
-Uma promessa possui três estados: pendente (`pending`), cumprida (`fulfilled`) e rejeitada (`rejected`). A promessa que você criou no desafio anterior está presa no estado `pending` para sempre porque você não adicionou uma forma de concluir a promessa. Os parâmetros `resolve` e `reject` passados para o argumento da promessa servem para este propósito. `resolve` é utilizado quando a promessa for bem sucedida, enquanto que `reject` é utilizado quando ela falhar. Ambos são métodos que recebem apenas um argumento, como no exemplo abaixo.
+Uma promessa possui três estados: pendente (`pending`), cumprida (`fulfilled`) e rejeitada (`rejected`). A promessa que você criou no desafio anterior está presa no estado `pending` para sempre porque você não adicionou uma forma de concluir a promessa. Os parâmetros `resolve` e `reject` passados para o argumento da promessa servem para este propósito. `resolve` é utilizado quando a promessa for bem-sucedida, enquanto `reject` é utilizado quando ela falhar. Ambos são métodos que recebem apenas um argumento, como no exemplo abaixo.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -20,7 +20,7 @@ const myPromise = new Promise((resolve, reject) => {
 });
 ```
 
-O exemplo acima usa strings como argumento desses métodos, mas você pode passar qualquer outro tipo de dado. Geralmente, é passado um objeto para esses métodos. Assim você pode acessar as propriedades deste objeto e usá-los em seu site ou em qualquer outro lugar.
+O exemplo acima usa strings como argumento desses métodos, mas você pode passar qualquer outro tipo de dado. Geralmente, é passado um objeto para esses métodos. Assim você pode acessar as propriedades deste objeto e usá-las em seu site ou em qualquer outro lugar.
 
 # --instructions--
 

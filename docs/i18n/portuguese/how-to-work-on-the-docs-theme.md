@@ -12,7 +12,7 @@ Normalmente, você não precisaria alterar nenhuma configuração ou compilar o 
 
 - A fonte da página inicial para este site está disponível em [`docs/index.html`](index.html).
 - Veiculamos este arquivo como uma SPA usando `docsify` e GitHub Pages.
-- O script `docsify` gera o conteúdo de `arquivos` markdown no diretório `docs` sob demanda.
+- O script do `docsify` gera o conteúdo dos arquivos em `markdown` no diretório `docs` sob demanda.
 - A página inicial é gerada a partir do [`_coverpage.md`](_coverpage.md).
 - a navegação da barra lateral é gerada a partir de [`_sidebar.md`](_sidebar.md).
 

@@ -1,6 +1,6 @@
 ---
 id: 587d8257367417b2b2512c7e
-title: Use Depth First Search in a Binary Search Tree
+title: Usar busca em profundidade em uma árvore binária de busca
 challengeType: 1
 forumTopicId: 301719
 dashedName: use-depth-first-search-in-a-binary-search-tree
@@ -8,15 +8,15 @@ dashedName: use-depth-first-search-in-a-binary-search-tree
 
 # --description--
 
-We know how to search a binary search tree for a specific value. But what if we just want to explore the entire tree? Or what if we don't have an ordered tree and we need to just search for a value? Here we will introduce some tree traversal methods which can be used to explore tree data structures. First up is depth-first search. In depth-first search, a given subtree is explored as deeply as possible before the search continues on to another subtree. There are three ways this can be done: In-order: Begin the search at the left-most node and end at the right-most node. Pre-order: Explore all the roots before the leaves. Post-order: Explore all the leaves before the roots. As you may guess, you may choose different search methods depending on what type of data your tree is storing and what you are looking for. For a binary search tree, an inorder traversal returns the nodes in sorted order.
+Sabemos como procurar por um valor específico em uma árvore binária. Mas e se quisermos pesquisar a árvore inteira? E se não tivermos uma árvore ordenada e precisarmos simplesmente pesquisar por um valor? Aqui, vamos introduzir alguns métodos de travessia que podem ser usados para pesquisar essa estrutura de dados. O primeiro método será a busca em profundidade. Na busca em profundidade, uma determinada subárvore é pesquisada o mais profundamente possível antes da busca continuar para outra subárvore. Podemos realizar essa busca de três formas: Em ordem: começa a pesquisa no nó mais à esquerda e termina no nó mais à direita. Pré-ordem: pesquisa todas as raízes antes das folhas. Pós-ordem: pesquisa todas as folhas antes das raízes. Como você pode imaginar, você pode escolher métodos de busca diferentes, dependendo dos dados que sua árvore armazena e do que você está procurando. Em uma árvore binária de busca, uma travessia de ordem retorna os nós de forma ordenada.
 
 # --instructions--
 
-Here we will create these three search methods on our binary search tree. Depth-first search is an inherently recursive operation which continues to explore further subtrees so long as child nodes are present. Once you understand this basic concept, you can simply rearrange the order in which you explore the nodes and subtrees to produce any of the three searches above. For example, in post-order search we would want to recurse all the way to a leaf node before we begin to return any of the nodes themselves, whereas in pre-order search we would want to return the nodes first, and then continue recursing down the tree. Define `inorder`, `preorder`, and `postorder` methods on our tree. Each of these methods should return an array of items which represent the tree traversal. Be sure to return the integer values at each node in the array, not the nodes themselves. Finally, return `null` if the tree is empty.
+Aqui, vamos usar estes três métodos de pesquisa na nossa árvore binária de busca. A busca em profundidade é uma operação inerentemente recursiva que continua a pesquisar mais subárvores enquanto existirem nós filhos. Uma vez que você entende este conceito básico, você pode simplesmente reorganizar a ordem da pesquisa nos nós e nas subárvores para produzir qualquer uma das três buscas. Por exemplo, na busca de pós-ordem, a pesquisa deve, recursivamente, ir até o nó da folha antes de retornar qualquer um dos nós em si. Por outro lado, na busca de pré-ordem, a pesquisa deve retornar os nós primeiro e depois continuar a pesquisa pela árvore. Use os métodos em ordem (`inorder`), pré-ordem (`preorder`) e pós-ordem (`postorder`) na nossa árvore. Cada um desses métodos deve retornar um array de itens que representa a travessia da árvore. Certifique-se de retornar os valores numéricos em cada nó do array, não os nós em si. Por fim, retorne `null` se a árvore estiver vazia.
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+A estrutura de dados `BinarySearchTree` deve existir.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `inorder`.
+A árvore binária de busca deve ter um método chamado `inorder`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `preorder`.
+A árvore binária de busca deve ter um método chamado `preorder`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `postorder`.
+A árvore binária de busca deve ter um método chamado `postorder`.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-The `inorder` method should return an array of the node values that result from an inorder traversal.
+O método `inorder` deve retornar um array com os valores de cada nó.
 
 ```js
 assert(
@@ -108,7 +108,7 @@ assert(
 );
 ```
 
-The `preorder` method should return an array of the node values that result from a preorder traversal.
+O método `preorder` deve retornar um array com os valores de cada nó.
 
 ```js
 assert(
@@ -138,7 +138,7 @@ assert(
 );
 ```
 
-The `postorder` method should return an array of the node values that result from a postorder traversal.
+O método `postorder` deve retornar um array com os valores de cada nó.
 
 ```js
 assert(
@@ -168,7 +168,7 @@ assert(
 );
 ```
 
-The `inorder` method should return `null` for an empty tree.
+O método `inorder` deve retornar `null` quando a árvore estiver vazia.
 
 ```js
 assert(
@@ -187,7 +187,7 @@ assert(
 );
 ```
 
-The `preorder` method should return `null` for an empty tree.
+O método `preorder` deve retornar `null` quando a árvore estiver vazia.
 
 ```js
 assert(
@@ -206,7 +206,7 @@ assert(
 );
 ```
 
-The `postorder` method should return `null` for an empty tree.
+O método `postorder` deve retornar `null` quando a árvore estiver vazia.
 
 ```js
 assert(

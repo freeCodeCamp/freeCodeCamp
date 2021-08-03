@@ -1,6 +1,6 @@
 ---
 id: a3f503de51cfab748ff001aa
-title: Pairwise
+title: A coppie
 challengeType: 5
 forumTopicId: 301617
 dashedName: pairwise
@@ -8,11 +8,11 @@ dashedName: pairwise
 
 # --description--
 
-Given an array `arr`, find element pairs whose sum equal the second argument `arg` and return the sum of their indices.
+Dato un array `arr`, trova coppie di elementi la cui somma è uguale al secondo argomento `arg` e restituisci la somma dei loro indici.
 
-You may use multiple pairs that have the same numeric elements but different indices. Each pair should use the lowest possible available indices. Once an element has been used it cannot be reused to pair with another element. For instance, `pairwise([1, 1, 2], 3)` creates a pair `[2, 1]` using the 1 at index 0 rather than the 1 at index 1, because 0+2 &lt; 1+2.
+È possibile utilizzare più coppie che hanno gli stessi elementi numerici ma indici diversi. Ogni coppia dovrebbe utilizzare i più bassi indici disponibili. Una volta che un elemento è stato usato, non può essere riutilizzato per accoppiarsi con un altro elemento. Per esempio, `pairwise([1, 1, 2], 3)` crea una coppia `[2, 1]` usando l’1 all’indice 0 piuttosto che l’1 all’indice 1, perché 0+2 &lt; 1+2.
 
-For example `pairwise([7, 9, 11, 13, 15], 20)` returns `6`. The pairs that sum to 20 are `[7, 13]` and `[9, 11]`. We can then write out the array with their indices and values.
+Per esempio `pairwise([7, 9, 11, 13, 15], 20)` restituisce `6`. Le coppie la cui somma è 20 sono `[7, 13]` e `[9, 11]`. Possiamo poi scrivere l'array con i loro indici e valori.
 
 <div style='margin-left: 2em;'>
 
@@ -22,7 +22,7 @@ For example `pairwise([7, 9, 11, 13, 15], 20)` returns `6`. The pairs that sum t
 
 </div>
 
-Below we'll take their corresponding indices and add them.
+Qui sotto prenderemo i loro indici corrispondenti e ne faremo la somma.
 
 <div style='margin-left: 2em;'>
 
@@ -34,31 +34,31 @@ Below we'll take their corresponding indices and add them.
 
 # --hints--
 
-`pairwise([1, 4, 2, 3, 0, 5], 7)` should return 11.
+`pairwise([1, 4, 2, 3, 0, 5], 7)` dovrebbe restituire 11.
 
 ```js
 assert.deepEqual(pairwise([1, 4, 2, 3, 0, 5], 7), 11);
 ```
 
-`pairwise([1, 3, 2, 4], 4)` should return 1.
+`pairwise([1, 3, 2, 4], 4)` dovrebbe restituire 1.
 
 ```js
 assert.deepEqual(pairwise([1, 3, 2, 4], 4), 1);
 ```
 
-`pairwise([1, 1, 1], 2)` should return 1.
+`pairwise([1, 1, 1], 2)` dovrebbe restituire 1.
 
 ```js
 assert.deepEqual(pairwise([1, 1, 1], 2), 1);
 ```
 
-`pairwise([0, 0, 0, 0, 1, 1], 1)` should return 10.
+`pairwise([0, 0, 0, 0, 1, 1], 1)` dovrebbe restituire 10.
 
 ```js
 assert.deepEqual(pairwise([0, 0, 0, 0, 1, 1], 1), 10);
 ```
 
-`pairwise([], 100)` should return 0.
+`pairwise([], 100)` dovrebbe restituire 0.
 
 ```js
 assert.deepEqual(pairwise([], 100), 0);

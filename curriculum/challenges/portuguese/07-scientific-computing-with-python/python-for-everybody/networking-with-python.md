@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f071
-title: Networking with Python
+title: Redes com Python
 challengeType: 11
 videoId: _kJvneKVdNM
 dashedName: networking-with-python
@@ -10,7 +10,7 @@ dashedName: networking-with-python
 
 ## --text--
 
-What Python library gives access to TCP Sockets?
+Qual biblioteca Python dá acesso a soquetes TCP?
 
 ## --answers--
 

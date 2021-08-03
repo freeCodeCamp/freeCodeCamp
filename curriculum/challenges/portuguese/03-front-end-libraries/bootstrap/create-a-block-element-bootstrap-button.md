@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08812
-title: Criar um elemento botão de bloco de Bootstrap
+title: Criar um botão de elemento de bloco do Bootstrap
 challengeType: 0
 forumTopicId: 16810
 dashedName: create-a-block-element-bootstrap-button
@@ -8,7 +8,7 @@ dashedName: create-a-block-element-bootstrap-button
 
 # --description--
 
-Normalmente, seus elementos `button` com as classes `btn` e `btn-default` são apenas tão grandes quanto os textos que eles contêm. Por exemplo:
+Normalmente, os elementos `button` com as classes `btn` e `btn-default` são apenas tão grandes quanto os textos que eles contêm. Por exemplo:
 
 ```html
 <button class="btn btn-default">Submit</button>
@@ -18,7 +18,7 @@ Este botão seria apenas tão largo quanto a palavra `Submit`.
 
 <button class='btn btn-default'>Submit</button>
 
-Tornando-os elementos de bloco com a classe adicional `btn-block`, seu botão irá esticar para preencher todo o espaço horizontal da sua página e qualquer elemento seguinte irá fluir para uma nova linha abaixo do bloco.
+Tornando-os elementos de bloco com a classe adicional `btn-block`, o botão vai esticar para preencher todo o espaço horizontal da sua página e qualquer elemento seguinte vai fluir para uma nova linha abaixo do bloco.
 
 ```html
 <button class="btn btn-default btn-block">Submit</button>
@@ -30,17 +30,17 @@ Esse botão ocuparia 100% da largura disponível.
 
 Note que esses botões ainda precisam da classe `btn`.
 
-Adicione classe `btn-block` do Bootstrap para seu botão Bootstrap.
+Adicione a classe `btn-block` do Bootstrap ao botão do Bootstrap.
 
 # --hints--
 
-Seu botão ainda deveria ter as classes `btn` e `btn-default`.
+O botão ainda deve ter as classes `btn` e `btn-default`.
 
 ```js
 assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
-Seu botão deve ter a classe `btn-block`.
+O botão deve ter a classe `btn-block`.
 
 ```js
 assert($('button').hasClass('btn-block'));

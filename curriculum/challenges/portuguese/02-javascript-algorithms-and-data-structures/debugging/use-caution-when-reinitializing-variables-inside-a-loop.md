@@ -8,9 +8,9 @@ dashedName: use-caution-when-reinitializing-variables-inside-a-loop
 
 # --description--
 
-Às vezes é necessário salvar informações, incrementar contadores ou redefinir variáveis dentro de um laço. Um potencial problema é quando variáveis deveriam ser reinicializadas e, não são, ou vice versa. Isso é particularmente perigoso se você acidentalmente redefinir a variável sendo usada para a a condição de parada, causando um laço infinito.
+Às vezes é necessário salvar informações, incrementar contadores ou redefinir variáveis dentro de um laço. Um problema em potencial é quando variáveis deveriam ser reinicializadas e, não são, ou vice versa. Isso é particularmente perigoso se você acidentalmente redefinir a variável sendo usada para a a condição de parada, causando um laço infinito.
 
-Imprimir os valores das variáveis em cada ciclo do seu laço usando `console.log()` pode descobrir comportamentos com bugs relacionados a reiniciar ou falhar ao reiniciar uma variável.
+Imprimir os valores das variáveis em cada ciclo do seu laço usando `console.log()` pode ajudar a descobrir comportamentos com bugs relacionados a reiniciar ou falhar ao reiniciar uma variável.
 
 # --instructions--
 
@@ -18,7 +18,7 @@ A seguinte função deveria criar um array de duas dimensões com `m` linhas e `
 
 # --hints--
 
-Seu código deve definir a variável `matrix` para um array contendo 3 linhas de 2 colunas de zeros.
+O código deve definir a variável `matrix` para um array contendo 3 linhas de 2 colunas de zeros.
 
 ```js
 assert(JSON.stringify(matrix) == '[[0,0],[0,0],[0,0]]');

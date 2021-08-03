@@ -1,14 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { bindActionCreators, Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
+import { isEmpty } from 'lodash-es';
+import React, { useEffect, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
+import { createSelector } from 'reselect';
 
-import ShowProjectLinks from './show-project-links';
+import envData from '../../../config/env.json';
+import { langCodes } from '../../../config/i18n/all-langs';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
 import DonateForm from '../components/Donation/DonateForm';
-import { Trans, useTranslation } from 'react-i18next';
 
+import { createFlashMessage } from '../components/Flash/redux';
+import { Loader, Spacer } from '../components/helpers';
+import RedirectHome from '../components/redirect-home';
 import {
   showCertSelector,
   showCertFetchStateSelector,
@@ -20,17 +25,12 @@ import {
   userByNameSelector,
   fetchProfileForUser
 } from '../redux';
-import { certMap } from '../resources/cert-and-project-map';
-import { createFlashMessage } from '../components/Flash/redux';
-import standardErrorMessage from '../utils/standard-error-message';
-import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
-import { langCodes } from '../../../config/i18n/all-langs';
-import envData from '../../../config/env.json';
-
-import RedirectHome from '../components/redirect-home';
-import { Loader, Spacer } from '../components/helpers';
-import { isEmpty } from 'lodash-es';
 import { UserType } from '../redux/prop-types';
+import { certMap } from '../resources/cert-and-project-map';
+import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
+import standardErrorMessage from '../utils/standard-error-message';
+
+import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData as { clientLocale: keyof typeof langCodes };
 

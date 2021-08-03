@@ -36,17 +36,17 @@ var anotherObject = {
 };
 ```
 
-No entanto, se seu objeto tem quaisquer propriedades que não seja string, o JavaScript irá automaticamente definir seus tipos como strings.
+No entanto, se seu objeto tem quaisquer propriedades que não sejam strings, o JavaScript automaticamente definirá seus tipos como strings.
 
 # --instructions--
 
 Faça um objeto que representa um cachorro chamado `myDog` que contém as propriedades `name` (uma string), `legs`, `tails` e `friends`.
 
-Você pode definir essas propriedades do objeto para os valores que deseja, contanto que `name` seja uma string, `legs` e `tails` são números, e `friends` é um array.
+Você pode definir essas propriedades do objeto para os valores que deseja, contanto que `name` seja uma string, `legs` e `tails` sejam números, e `friends` seja um array.
 
 # --hints--
 
-`myDog` deve conter a propriedade `name` e deve ser uma `string`.
+`myDog` deve conter a propriedade `name`, que deve ser uma `string`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-`myDog` deve conter a propriedade `name` e deve ser uma `string`.
+`myDog` deve conter a propriedade `legs`, que deve ser um `number`.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-`myDog` deve conter a propriedade `tails` e deve ser um `número`.
+`myDog` deve conter a propriedade `tails`, que deve ser um `number`.
 
 ```js
 assert(
@@ -100,7 +100,7 @@ assert(
 );
 ```
 
-`myDog` deve conter a propriedade `friends` e deve ser um `array`.
+`myDog` deve conter a propriedade `friends`, que deve ser um `array`.
 
 ```js
 assert(
@@ -118,7 +118,7 @@ assert(
 );
 ```
 
-`myDog` deve conter apenas todas as propriedades fornecidas.
+`myDog` deve conter apenas as propriedades fornecidas.
 
 ```js
 assert(

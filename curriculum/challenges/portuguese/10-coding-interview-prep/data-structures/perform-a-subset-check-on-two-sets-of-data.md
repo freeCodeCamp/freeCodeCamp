@@ -1,6 +1,6 @@
 ---
 id: 587d8254367417b2b2512c6f
-title: Perform a Subset Check on Two Sets of Data
+title: Verificar subconjuntos em dois conjuntos de dados
 challengeType: 1
 forumTopicId: 301707
 dashedName: perform-a-subset-check-on-two-sets-of-data
@@ -8,13 +8,13 @@ dashedName: perform-a-subset-check-on-two-sets-of-data
 
 # --description--
 
-In this exercise, we are going to perform a subset test on 2 sets of data. We will create a method on our `Set` data structure called `isSubsetOf`. This will compare the first set against the second, and if the first set is fully contained within the second, it will return `true`.
+Neste exercício, vamos realizar um teste de subconjuntos entre dois conjuntos de dados. Vamos criar um método em nossa estrutura de dados `Set`, chamado `isSubsetOf`. Isto vai comparar o primeiro conjunto com o segundo. Se o primeiro conjunto estiver totalmente contido no segundo, ele retornará `true`.
 
-For example, if `setA = ['a','b']` and `setB = ['a','b','c','d']`, then `setA` is a subset of `setB`, so `setA.isSubsetOf(setB)` should return `true`.
+Por exemplo, se `setA = ['a','b']` e `setB = ['a','b','c','d']`, então `setA` é um subconjunto de `setB`, então `setA.isSubsetOf(setB)` deve retornar `true`.
 
 # --hints--
 
-Your `Set` class should have a `isSubsetOf` method.
+A classe `Set` deve ter o método `isSubsetOf`.
 
 ```js
 assert(
@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-The first Set() should be contained in the second Set
+O primeiro conjunto deve estar contido no segundo
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-`['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])` should return `true`
+`['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])` deve retornar `true`
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-`['a', 'b', 'c'].isSubsetOf(['a', 'b'])` should return `false`
+`['a', 'b', 'c'].isSubsetOf(['a', 'b'])` deve retornar `false`
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-`[].isSubsetOf([])` should return `true`
+`[].isSubsetOf([])` deve retornar `true`
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-`['a', 'b'].isSubsetOf(['c', 'd'])` should return `false`
+`['a', 'b'].isSubsetOf(['c', 'd'])` deve retornar `false`
 
 ```js
 assert(

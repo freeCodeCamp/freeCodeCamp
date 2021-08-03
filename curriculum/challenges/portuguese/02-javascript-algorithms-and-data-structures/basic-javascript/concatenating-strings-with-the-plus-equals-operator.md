@@ -11,7 +11,7 @@ dashedName: concatenating-strings-with-the-plus-equals-operator
 
 Também podemos usar o operador `+=` para <dfn>concatenar</dfn> uma string no final de uma variável string existente. Isso pode ser muito útil para quebrar uma longa string em várias linhas.
 
-**Nota:** Cuidado com os espaços. A concatenação não adiciona espaços entre strings concatenadas, então você mesmo precisará adicioná-las.
+**Observação:** cuidado com os espaços. A concatenação não adiciona espaços entre strings concatenadas, então você mesmo precisará adicioná-los.
 
 Exemplo:
 
@@ -24,7 +24,7 @@ ourStr += "I come second.";
 
 # --instructions--
 
-Construa `myStr` sobre várias linhas concatenando essas duas strings: `Esta é a primeira frase.` e `Esta é a segunda frase.` usando o operador `+=`. Use o operador `+=` de modo semelhante a como aparece no exemplo. Comece atribuindo o primeiro texto para `myStr`, e então adicione o segundo texto.
+Crie `myStr` em várias linhas concatenando essas duas strings: `This is the first sentence.` e `This is the second sentence.` usando o operador `+=`. Use o operador `+=` de modo semelhante a como aparece no exemplo. Comece atribuindo o primeiro texto para `myStr`, e então adicione o segundo texto.
 
 # --hints--
 
@@ -34,7 +34,7 @@ Construa `myStr` sobre várias linhas concatenando essas duas strings: `Esta é 
 assert(myStr === 'This is the first sentence. This is the second sentence.');
 ```
 
-Você deve usar o operador `+=` para construir `myStr`.
+Você deve usar o operador `+=` para criar `myStr`.
 
 ```js
 assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));

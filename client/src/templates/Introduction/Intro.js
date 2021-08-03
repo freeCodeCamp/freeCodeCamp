@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
-import Helmet from 'react-helmet';
 import { Grid, ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
+import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-import LearnLayout from '../../components/layouts/learn';
-import FullWidthRow from '../../components/helpers/full-width-row';
 import ButtonSpacer from '../../components/helpers/button-spacer';
+import FullWidthRow from '../../components/helpers/full-width-row';
+import LearnLayout from '../../components/layouts/learn';
 import { MarkdownRemark, AllChallengeNode } from '../../redux/prop-types';
 
 import './intro.css';

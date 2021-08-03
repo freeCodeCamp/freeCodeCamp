@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da3
-title: Reinforcement Learning With Q-Learning
+title: Aprendizagem de reforço com Q-Learning
 challengeType: 11
 videoId: Cf7DSU0gVb4
 dashedName: reinforcement-learning-with-q-learning
@@ -10,19 +10,19 @@ dashedName: reinforcement-learning-with-q-learning
 
 ## --text--
 
-The key components of reinforcement learning are...
+Os principais componentes da aprendizagem de reforço são...
 
 ## --answers--
 
-environment, representative, state, reaction, and reward.
+ambiente, representante, estado, reação e recompensa.
 
 ---
 
-environment, agent, state, action, and reward.
+ambiente, agente, estado, ação e recompensa.
 
 ---
 
-habitat, agent, state, action, and punishment.
+habitat, agente, ação, estado e punição.
 
 ## --video-solution--
 

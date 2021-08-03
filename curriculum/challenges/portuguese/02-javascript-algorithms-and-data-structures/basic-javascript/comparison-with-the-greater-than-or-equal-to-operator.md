@@ -26,7 +26,7 @@ Em ordem, essas expressões seriam iguais à `true`, `true`, `false` e `false`.
 
 # --instructions--
 
-Adicione o operador maior ou igual que para indicar as linhas indicadas para que as instruções de retorno façam sentido.
+Adicione o operador maior ou igual que às linhas indicadas para que as instruções de retorno façam sentido.
 
 # --hints--
 

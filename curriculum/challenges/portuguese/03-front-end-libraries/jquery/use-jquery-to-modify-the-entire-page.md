@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aecb08826
-title: Use jQuery para Modificar a Página Inteira
+title: Usar o jQuery para modificar a página inteira
 challengeType: 6
 forumTopicId: 18361
 required:
@@ -11,9 +11,9 @@ dashedName: use-jquery-to-modify-the-entire-page
 
 # --description--
 
-Terminamos de brincar com nosso jQuery playground. Vamos despedaçar isso!
+Terminamos de brincar com nosso jQuery playground. Vamos quebrar tudo!
 
-jQuery também pode tomar como alvo o elemento `body`.
+O jQuery também pode tomar como alvo o elemento `body`.
 
 Aqui está como você faria para desaparecer todo o body:`$("body").addClass("animated fadeOut");`
 

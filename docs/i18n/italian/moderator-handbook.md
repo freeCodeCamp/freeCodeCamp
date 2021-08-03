@@ -111,7 +111,7 @@ A volte ci sarà un conflitto di merge.
 
 Ciò significa che un'altra pull request ha apportato una modifica alla stessa parte di quello stesso file. GitHub ha uno strumento per affrontare questi conflitti di unione direttamente su GitHub. Puoi provare ad affrontare questi conflitti. Usa il tuo miglior giudizio.
 
-Le modifiche della pull request saranno in alto e le modifiche del ramo Master saranno in basso. A volte ci saranno informazioni ridondanti che possono essere cancellate. Prima di finire, assicura di cancellare i simboli `<<<<<<`, `======`, e `>>>>>>` che Git aggiunge per indicare le aree in conflitto.
+Le modifiche della pull request saranno in alto e le modifiche del ramo main saranno in basso. A volte ci saranno informazioni ridondanti che possono essere cancellate. Prima di finire, assicura di cancellare i simboli `<<<<<<`, `======`, e `>>>>>>` che Git aggiunge per indicare le aree in conflitto.
 
 Se non sei sicuro, chiedi assistenza a uno degli altri moderatori o al team di sviluppo.
 
@@ -402,14 +402,14 @@ We would love to be able to merge your changes, but it looks like the branch is 
 
 To resolve this error, you will have to sync the latest changes from the `main` branch of the `freeCodeCamp/freeCodeCamp` repo.
 
-Using the command line, you can do this in three easy steps:
+Usando il terminale, puoi farlo in tre facili step:
 
 ```bash
 git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
 
 git fetch upstream
 
-git pull upstream master
+git pull upstream main
 ````
 
 Se stai usando una GUI, puoi semplicemente cercare il comando `Add a new remote...` e usare il link `git://github.com/freeCodeCamp/freeCodeCamp.git` visto sopra.

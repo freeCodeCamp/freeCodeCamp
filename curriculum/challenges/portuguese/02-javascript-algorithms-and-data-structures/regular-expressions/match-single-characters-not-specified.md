@@ -20,19 +20,19 @@ Crie uma única regex que captura todos os caracteres que não são números ou 
 
 # --hints--
 
-Sua regex `myRegex` deve encontrar 9 itens.
+A regex `myRegex` deve encontrar 9 itens.
 
 ```js
 assert(result.length == 9);
 ```
 
-Você deve usar a flag global na sua regex `myRegex`.
+Você deve usar a flag global na regex `myRegex`.
 
 ```js
 assert(myRegex.flags.match(/g/).length == 1);
 ```
 
-Você deve usar a flag de ignorar caixa na sua regex `myRegex`.
+Você deve usar a flag de ignorar caixa na regex `myRegex`.
 
 ```js
 assert(myRegex.flags.match(/i/).length == 1);

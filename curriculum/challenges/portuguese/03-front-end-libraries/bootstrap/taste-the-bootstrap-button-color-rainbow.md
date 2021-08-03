@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08811
-title: Experimente o Botão Bootstrap de Cor de Arco-Íris
+title: Experimentar o botão do Bootstrap com as cores do arco-íris
 challengeType: 0
 forumTopicId: 18323
 dashedName: taste-the-bootstrap-button-color-rainbow
@@ -8,27 +8,27 @@ dashedName: taste-the-bootstrap-button-color-rainbow
 
 # --description--
 
-A classe `btn-primary` é a cor principal que você utilizará no seu app. É útil para destacar ações que você deseja que o usuário faça.
+A classe `btn-primary` tem a cor principal que você utilizará no seu app. É útil para destacar ações que você deseja que o usuário faça.
 
-Substitua a classe `btn-default` do Bootstrap com `btn-primary` no seu botão.
+Substitua a classe `btn-default` do Bootstrap por `btn-primary` no botão.
 
-Note que esse botão ainda precisa das classes `btn` e `btn-block`.
+Observe que esse botão ainda precisa das classes `btn` e `btn-block`.
 
 # --hints--
 
-Seu botão deve ter a classe `btn-primary`.
+O botão deve ter a classe `btn-primary`.
 
 ```js
 assert($('button').hasClass('btn-primary'));
 ```
 
-Seu botão ainda deve ter as classes `btn` e `btn-block`.
+O botão ainda deve ter as classes `btn` e `btn-block`.
 
 ```js
 assert($('button').hasClass('btn-block') && $('button').hasClass('btn'));
 ```
 
-Todos os seus elementos `button` devem ter tags de fechamento.
+Todos os elementos `button` devem ter tags de fechamento.
 
 ```js
 assert(

@@ -10,7 +10,7 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 
 Programação funcional é basicamente criar e utilizar funções que não modificam os seus argumentos.
 
-O último desafio mostrou como usar o método `concat` para criar um novo array a partir da combinação de outros sem modificar os originais. Compare os métodos `concat` e `push`. O `push` adiciona um item ao final do array à esquerda do `.`. Ele modifica o array. Um exemplo:
+O último desafio mostrou como usar o método `concat` para criar um novo array a partir da combinação de outros sem modificar os originais. Compare os métodos `concat` e `push`. O `push` adiciona um item ao final do array à esquerda do `.`. Ele modifica o array. Exemplo:
 
 ```js
 var arr = [1, 2, 3];
@@ -27,13 +27,13 @@ Modifique a função `nonMutatingPush` de forma que ela use `concat` para adicio
 
 # --hints--
 
-O seu código deve usar o método `concat`.
+O código deve usar o método `concat`.
 
 ```js
 assert(code.match(/\.concat/g));
 ```
 
-O seu código não deve usar o método `push`.
+O código não deve usar o método `push`.
 
 ```js
 assert(!code.match(/\.?[\s\S]*?push/g));

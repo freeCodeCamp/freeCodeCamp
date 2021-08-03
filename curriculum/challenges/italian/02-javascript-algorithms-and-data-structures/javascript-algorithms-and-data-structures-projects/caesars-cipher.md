@@ -10,9 +10,9 @@ dashedName: caesars-cipher
 
 Uno dei più semplici e più conosciuti <dfn>cifrari</dfn> è il <dfn>cifrario di Cesare</dfn>, noto anche come <dfn>cifrario a scorrimento</dfn>. In un cifrario a scorrimento i significati delle lettere sono spostati di un certo numero di posizioni.
 
-Un uso moderno comune è il cifrario [ROT13](https://en.wikipedia.org/wiki/ROT13), dove i valori delle lettere sono spostati di 13 posti. Così `A ↔ N`, `B ↔ O` e così via.
+Un uso moderno comune è il cifrario [ROT13](https://it.wikipedia.org/wiki/ROT13), dove i valori delle lettere sono spostati di 13 posti. Così `A ↔ N`, `B ↔ O` e così via.
 
-Scrivi una funzione che prenda una stringa codificata [ROT13](https://en.wikipedia.org/wiki/ROT13) come input e restituisca una stringa decodificata.
+Scrivi una funzione che prenda una stringa codificata [ROT13](https://it.wikipedia.org/wiki/ROT13) come input e restituisca una stringa decodificata.
 
 Tutte le lettere saranno maiuscole. Non trasformare alcun carattere non alfabetico (cioè spazi, punteggiatura), ma passali come sono.
 

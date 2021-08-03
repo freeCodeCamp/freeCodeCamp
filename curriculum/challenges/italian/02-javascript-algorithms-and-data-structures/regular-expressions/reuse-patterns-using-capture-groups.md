@@ -8,24 +8,28 @@ dashedName: reuse-patterns-using-capture-groups
 
 # --description--
 
-Alcuni pattern che cerchi si verificheranno più volte in una stringa. È una perdita di tempo ripetere manualmente quell'espressione regolare. C'è un modo migliore per specificare quando si hanno più sottostringhe ripetute nella stringa.
-
-È possibile cercare sottostringhe ripetute utilizzando i <dfn>gruppi di cattura</dfn>. Le parentesi, `(` e `)`, sono usate per trovare sottostringhe ripetute. Metti tra le parentesi l'espressione regolare del pattern che si ripeterà.
-
-Per specificare dove apparirà quella stringa ripetuta, si utilizza una barra rovesciata (`\`) e quindi un numero. Questo numero inizia da 1 e aumenta con ogni gruppo di cattura aggiuntivo che utilizzi. Un esempio potrebbe essere `\1` per abbinare il primo gruppo.
-
-L'esempio sottostante riconosce qualsiasi parola che compare due volte separata da uno spazio:
+Per esempio vuoi trovare una parola che compare più di una volta come qui sotto.
 
 ```js
-let repeatStr = "regex regex";
-let repeatRegex = /(\w+)\s\1/;
-repeatRegex.test(repeatStr);
-repeatStr.match(repeatRegex);
+let repeatStr = "row row row your boat";
 ```
 
-La chiamata a `test` restituirà `true` e la chiamata a `match` restituirà `["regex regex", "regex"]`.
+Potresti usare `/row row row/`, ma se non conosci la specifica parola ripetuta? <dfn>Gruppi di cattura</dfn> possono essere usati per trovare sequenze di caratteri ripetute.
 
-Usando il metodo `.match()` su una stringa esso restituirà un array con la stringa che corrisponde, insieme al suo gruppo di cattura.
+I gruppi di cattura sono costruiti mettendo delle parentesi torne attorno allo schema regex che deve essere catturato. In questo caso, l'obbiettivo è catturare una parora contente caratteri alfanumerici quindi il gruppo di cattura sarà `\w+` circondato da parentesi tonde: `/(\w+)/`.
+
+La sottostringa corrispondente al gruppo è salvata in una "variabile" temporanea, a cui è possibile accedere all'interno della stessa regex utilizzando una barra rovesciata e il numero del gruppo di cattura (per esempio `\1`). I gruppi di cattura sono numerati automaticamente dalla posizione delle parentesi di apertura (da sinistra a destra), a partire da 1.
+
+L'esempio sottostante riconosce qualsiasi parola che compare tre volte separata da spazi:
+
+```js
+let repeatRegex = /(\w+) \1 \1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["row row row", "row"]
+```
+
+Usando il metodo `.match()` su una stringa, esso restituirà un array con la stringa che corrisponde insieme al suo gruppo di cattura.
+
 
 # --instructions--
 
