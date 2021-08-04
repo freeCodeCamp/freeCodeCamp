@@ -42,7 +42,7 @@ assert(myDecimal % 1 != 0);
 ## --seed-contents--
 
 ```js
-var ourDecimal = 5.7;
+const ourDecimal = 5.7;
 
 // Only change code below this line
 ```
@@ -50,5 +50,5 @@ var ourDecimal = 5.7;
 # --solutions--
 
 ```js
-var myDecimal = 9.9;
+const myDecimal = 9.9;
 ```
