@@ -18,7 +18,7 @@ grid-template-areas:
   "advert footer footer";
 ```
 
-The code above groups the cells of the grid into four areas; `header`, `advert`, `content`, and `footer`. Every word represents a cell and every pair of quotation marks represent a row. Defining the areas won't have any visual effect right now. Later, you will make an item use an area to see how it works.
+The code above groups the cells of the grid into four areas; `header`, `advert`, `content`, and `footer`. Every word represents a cell and every pair of quotation marks represent a row.
 
 # --instructions--
 
