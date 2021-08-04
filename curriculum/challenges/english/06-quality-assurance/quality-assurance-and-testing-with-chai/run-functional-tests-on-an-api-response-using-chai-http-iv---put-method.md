@@ -28,10 +28,10 @@ Send the following JSON object with your PUT request:
 
 Check for the following within the `request.end` callback:
 
-1.  `status`
-2.  `type`
-3.  `body.name`
-4.  `body.surname`
+1.  The `status` should be `200`
+2.  The `type` should be `application/json`
+3.  The `body.name` should be `Giovanni`
+4.  The `body.surname` should be `da Verrazzano`
 
 Follow the assertion order above - we rely on it. Also, be sure to remove `assert.fail()` once complete.
 
