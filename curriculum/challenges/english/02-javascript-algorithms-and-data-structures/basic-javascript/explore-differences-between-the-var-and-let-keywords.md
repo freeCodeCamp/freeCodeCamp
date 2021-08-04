@@ -11,8 +11,8 @@ dashedName: explore-differences-between-the-var-and-let-keywords
 One of the biggest problems with declaring variables with the `var` keyword is that you can easily overwrite variable declarations:
 
 ```js
-var camper = 'James';
-var camper = 'David';
+var camper = "James";
+var camper = "David";
 console.log(camper);
 ```
 
@@ -25,8 +25,8 @@ A keyword called `let` was introduced in ES6, a major update to JavaScript, to s
 If you replace `var` with `let` in the code above, it results in an error:
 
 ```js
-let camper = 'James';
-let camper = 'David';
+let camper = "James";
+let camper = "David";
 ```
 
 The error can be seen in your browser console.
