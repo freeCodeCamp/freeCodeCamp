@@ -31,12 +31,6 @@ Within `tests/2_functional-tests.js`, immediately after the `Browser` declaratio
 Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL here
 ```
 
-If you are testing on a local environment, use this instead:
-
-```js
-Browser.localhost('example.com', process.env.PORT || 3000);
-```
-
 Then at the root level of the `'Functional Tests with Zombie.js'` suite, instantiate a new instance of the `Browser` object with the following code:
 
 ```js
@@ -57,11 +51,9 @@ All tests should pass.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
     (data) => {
-      data.slice(0, 4).forEach((test) => {
-        assert.equal(test.state, 'passed');
-      })
+      assert.equal(data.state, 'passed');
     },
     (xhr) => {
       throw new Error(xhr.responseText);
