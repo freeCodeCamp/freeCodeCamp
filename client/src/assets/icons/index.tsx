@@ -1,6 +1,7 @@
 import React from 'react';
 import APIIcon from './API-icon';
 import D3Icon from './D3-icon';
+import DatabaseIcon from './Database-icon';
 import JavaScriptIcon from './JavaScript-icon';
 import ReactIcon from './React-icon';
 import TensorflowIcon from './Tensorflow-icon';
@@ -16,6 +17,7 @@ const iconMap = {
   'javascript-algorithms-and-data-structures': JavaScriptIcon,
   'front-end-libraries': ReactIcon,
   'data-visualization': D3Icon,
+  'relational-databases': DatabaseIcon,
   'apis-and-microservices': APIIcon,
   'quality-assurance': Clipboard,
   'scientific-computing-with-python': PythonIcon,
