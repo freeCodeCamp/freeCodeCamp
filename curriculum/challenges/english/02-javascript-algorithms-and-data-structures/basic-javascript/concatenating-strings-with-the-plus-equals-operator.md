@@ -16,7 +16,7 @@ We can also use the `+=` operator to <dfn>concatenate</dfn> a string onto the en
 Example:
 
 ```js
-var ourStr = "I come first. ";
+let ourStr = "I come first. ";
 ourStr += "I come second.";
 ```
 
@@ -59,12 +59,12 @@ assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
 ```js
 // Only change code below this line
 
-var myStr;
+let myStr;
 ```
 
 # --solutions--
 
 ```js
-var myStr = "This is the first sentence. ";
+let myStr = "This is the first sentence. ";
 myStr += "This is the second sentence.";
 ```
