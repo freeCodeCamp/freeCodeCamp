@@ -22,7 +22,7 @@ The code above groups the cells of the grid into four areas; `header`, `advert`,
 
 # --instructions--
 
-Change the template so the `footer` area spans the entire bottom row.
+Change the template so the `footer` area spans the entire bottom row. Defining the areas won't have any visual effect right now. Later, you will make an item use an area to see how it works.
 
 # --hints--
 
