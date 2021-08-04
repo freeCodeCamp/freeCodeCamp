@@ -2,7 +2,7 @@
 
 const selectors = {
   defaultOutput: '.output-text',
-  editor: '.monaco-editor'
+  editor: '.react-monaco-editor-container'
 };
 
 const location =
@@ -18,7 +18,7 @@ describe('Challenge with editor', function () {
     cy.get(selectors.editor).as('editor').contains(editorContents);
     cy.get('@editor').click().focused().type(`{movetoend}<h1>Hello World</h1>`);
     cy.reload();
-    cy.get(selectors.editor, { timeout: 10000 }).contains(editorContents);
+    cy.get('@editor', { timeout: 10000 }).contains(editorContents);
   });
 
   it('renders code from localStorage after "Ctrl + S"', () => {
@@ -30,7 +30,7 @@ describe('Challenge with editor', function () {
       .type(`{movetoend}<h1>Hello World</h1>{ctrl+s}`);
     cy.contains("Saved! Your code was saved to your browser's local storage.");
     cy.reload();
-    cy.get(selectors.editor, { timeout: 10000 }).contains(
+    cy.get('@editor', { timeout: 10000 }).contains(
       '<h1>Hello</h1><h1>Hello World</h1>'
     );
   });
