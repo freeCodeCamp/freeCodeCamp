@@ -1,13 +1,10 @@
 import { Location } from '@reach/router';
+import type { WindowLocation } from '@reach/router';
 import algoliasearch from 'algoliasearch/lite';
 import { navigate } from 'gatsby';
+import qs from 'query-string';
 import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
-import type { WindowLocation } from '@reach/router';
-import { InstantSearch, Configure } from 'react-instantsearch-dom';
-import { connect } from 'react-redux';
-import qs from 'query-string';
-import React, { Component } from 'react';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { connect } from 'react-redux';
 import Media from 'react-responsive';
