@@ -38,20 +38,20 @@ Cambia el código para que todas las variables sean declaradas usando `let` o `c
 `SENTENCE` debe ser una variable constante declarada con `const`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(const FCC)/g));
+(getUserInput) => assert(getUserInput('index').match(/(const SENTENCE)/g));
 ```
 
 `i` debe ser declarada con `let`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
+(getUserInput) => assert(getUserInput('index').match(/(let i)/g));
 ```
 
 `console.log` debe cambiarse para imprimir la variable `SENTENCE`.
 
 ```js
 (getUserInput) =>
-  assert(getUserInput('index').match(/console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g));
+  assert(getUserInput('index').match(/console\.log\(\s*SENTENCE\s*\)\s*;?/g));
 ```
 
 # --seed--
@@ -59,21 +59,31 @@ Cambia el código para que todas las variables sean declaradas usando `let` o `c
 ## --seed-contents--
 
 ```js
-// Only change code below this line
-var fCC = "freeCodeCamp";
-var fact = "is cool!";
-// Only change code above this line
+function printManyTimes(str) {
 
-fact = "is awesome!";
-console.log(fCC, fact);
+  // Only change code below this line
+
+  var sentence = str + " is cool!";
+  for (var i = 0; i < str.length; i+=2) {
+    console.log(sentence);
+  }
+
+  // Only change code above this line
+
+}
+printManyTimes("freeCodeCamp");
 ```
 
 # --solutions--
 
 ```js
-const FCC = "freeCodeCamp";
-let fact = "is cool!";
+function printManyTimes(str) {
 
-fact = "is awesome!";
-console.log(FCC, fact);
+  const SENTENCE = str + " is cool!";
+  for (let i = 0; i < str.length; i+=2) {
+    console.log(SENTENCE);
+  }
+
+}
+printManyTimes("freeCodeCamp");
 ```

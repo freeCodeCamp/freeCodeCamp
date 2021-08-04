@@ -56,7 +56,7 @@ assert(catName === 'Oliver');
 `quote` 變量的值應該爲 `Oliver says Meow!`
 
 ```js
-assert(catSound === 'Meow!');
+assert(quote === 'Oliver says Meow!');
 ```
 
 # --seed--
@@ -64,13 +64,28 @@ assert(catSound === 'Meow!');
 ## --seed-contents--
 
 ```js
-var catName = "Oliver";
-var catSound = "Meow!";
+var catName;
+var quote;
+function catTalk() {
+  "use strict";
+
+  catName = "Oliver";
+  quote = catName + " says Meow!";
+
+}
+catTalk();
 ```
 
 # --solutions--
 
 ```js
-let catName = "Oliver";
-let catSound = "Meow!";
+let catName;
+let quote;
+function catTalk() {
+  'use strict';
+
+  catName = 'Oliver';
+  quote = catName + ' says Meow!';
+}
+catTalk();
 ```
