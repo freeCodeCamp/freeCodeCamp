@@ -210,6 +210,10 @@
       "Passing Values to Functions with Arguments"
     ],
     [
+      "56533eb9ac21ba0edf2244c2",
+      "Return a Value from a Function with Return"
+    ],
+    [
       "56533eb9ac21ba0edf2244be",
       "Global Scope and Functions"
     ],
@@ -220,10 +224,6 @@
     [
       "56533eb9ac21ba0edf2244c0",
       "Global vs. Local Scope in Functions"
-    ],
-    [
-      "56533eb9ac21ba0edf2244c2",
-      "Return a Value from a Function with Return"
     ],
     [
       "598e8944f009e646fc236146",

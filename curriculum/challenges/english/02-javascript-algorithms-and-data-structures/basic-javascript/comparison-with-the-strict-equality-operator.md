@@ -26,7 +26,7 @@ In the second example, `3` is a `Number` type and `'3'` is a `String` type.
 
 # --instructions--
 
-Use the strict equality operator in the `if` statement so the function will return the string `Equal` when `val` is strictly equal to `7`
+Use the strict equality operator in the `if` statement so the function will return the string `Equal` when `val` is strictly equal to `7`.
 
 # --hints--
 

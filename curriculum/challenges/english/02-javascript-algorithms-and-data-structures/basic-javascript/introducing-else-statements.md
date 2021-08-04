@@ -64,7 +64,7 @@ assert(testElse(10) === 'Bigger than 5');
 You should not change the code above or below the specified comments.
 
 ```js
-assert(/var result = "";/.test(code) && /return result;/.test(code));
+assert(/let result = "";/.test(code) && /return result;/.test(code));
 ```
 
 # --seed--
@@ -73,7 +73,7 @@ assert(/var result = "";/.test(code) && /return result;/.test(code));
 
 ```js
 function testElse(val) {
-  var result = "";
+  let result = "";
   // Only change code below this line
 
   if (val > 5) {
