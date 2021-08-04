@@ -11,7 +11,7 @@ As a reminder, this project is being built upon the following starter project on
 
 In the next challenges, you'll simulate human interaction with a page by using a headless browser.
 
-Headless browsers are web browsers without a GUI. Headless browsers are particularly useful for testing web pages, as they're able to render and interpret HTML, CSS, and JavaScript the same way a regular browser would.
+Headless browsers are web browsers without a GUI. They are able to render and interpret HTML, CSS, and JavaScript the same way a regular browser would, making them particularly useful for testing web pages.
 
 For the following challenges you'll use Zombie.js, which is a lightweight headless browser that doesn't rely on additional binaries to be installed. This feature makes it usable in limited environments like Replit. But there are many other, more powerful headless browser options.
 
