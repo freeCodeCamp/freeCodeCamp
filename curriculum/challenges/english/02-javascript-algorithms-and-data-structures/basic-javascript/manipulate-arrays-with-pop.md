@@ -16,8 +16,8 @@ Another way to change the data in an array is with the `.pop()` function.
 Any type of entry can be popped off of an array - numbers, strings, even nested arrays.
 
 ```js
-var threeArr = [1, 4, 6];
-var oneDown = threeArr.pop();
+const threeArr = [1, 4, 6];
+const oneDown = threeArr.pop();
 console.log(oneDown);
 console.log(threeArr);
 ```
@@ -76,15 +76,15 @@ assert(
 
 ```js
 // Setup
-var myArray = [["John", 23], ["cat", 2]];
+const myArray = [["John", 23], ["cat", 2]];
 
 // Only change code below this line
-var removedFromMyArray;
+const removedFromMyArray = 0;
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["cat", 2]];
-var removedFromMyArray = myArray.pop();
+const myArray = [["John", 23], ["cat", 2]];
+const removedFromMyArray = myArray.pop();
 ```
