@@ -7,14 +7,32 @@ dashedName: part-44
 
 # --description--
 
-Using an `id` selector, style the `grey-mask` element. Give it a `width` of `150px`, a `height` of `150px`, and a `background-color` of `rgb(167, 162, 117)`.
+Using an `id` selector, style the `gray-mask` element. Give it a `width` of `150px`, a `height` of `150px`, and a `background-color` of `rgb(167, 162, 117)`.
 
 # --hints--
 
-Test 1
+You should have a `#gray-mask` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-mask'));
+```
 
+Your `#gray-mask` selector should have a `width` property set to `150px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-mask')?.height === '150px');
+```
+
+Your `#gray-mask` selector should have a `height` property set to `150px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-mask')?.height === '150px')
+```
+
+Your `#gray-mask` selector should have a `background-color` property set to `rgb(167, 162, 117)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-mask')?.backgroundColor === 'rgb(167, 162, 117)');
 ```
 
 # --seed--
@@ -169,4 +187,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

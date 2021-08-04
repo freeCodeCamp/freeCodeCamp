@@ -11,10 +11,22 @@ Inside that `characters` element, create another `div` with an `id` of `offwhite
 
 # --hints--
 
-Test 1
+You should only create 1 additional `div` element.
 
 ```js
+assert(document.querySelectorAll('div').length === 3);
+```
 
+Your new `div` element should be nested in your `.characters` element.
+
+```js
+assert(document.querySelector('.characters div'));
+```
+
+Your new `div` element should have an `id` of `offwhite-character`.
+
+```js
+assert(document.querySelector('.characters div')?.getAttribute('id') === 'offwhite-character');
 ```
 
 # --seed--
@@ -36,6 +48,7 @@ Test 1
           --fcc-editable-region--
 
           --fcc-editable-region--
+          </div>
       </body>
 </html>
 ```

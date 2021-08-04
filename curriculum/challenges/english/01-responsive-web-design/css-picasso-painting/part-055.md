@@ -11,10 +11,22 @@ Give the `blue-right` the correct positioning with `position` set to `absolute`,
 
 # --hints--
 
-Test 1
+Your `#blue-right` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#blue-right')?.position === 'absolute');
+```
 
+Your `#blue-right` selector should have a `top` property set to `50%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#blue-right')?.top === '50%');
+```
+
+Your `#blue-right` selector should have a `left` property set to `40%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#blue-right')?.left === '40%');
 ```
 
 # --seed--

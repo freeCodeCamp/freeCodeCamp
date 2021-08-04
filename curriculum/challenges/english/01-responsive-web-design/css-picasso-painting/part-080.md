@@ -11,10 +11,16 @@ Select the `guitar-left` `id`, and set the `position` to `absolute` and the `lef
 
 # --hints--
 
-Test 1
+You should create a new `#guitar-left` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar-left'));
+```
 
+Your `#guitar-left` selector should have a `position` property set to `absolute`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar-left')?.position === 'absolute');
 ```
 
 # --seed--
@@ -326,4 +332,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

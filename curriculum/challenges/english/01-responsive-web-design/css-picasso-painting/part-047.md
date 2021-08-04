@@ -11,10 +11,22 @@ Give the `white-paper` a `position` of `absolute`, a `top` of `250px`, and a `le
 
 # --hints--
 
-Test 1
+Your `#white-paper` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-paper')?.position === 'absolute');
+```
 
+Your `#white-paper` selector should have a `top` property set to `250px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-paper')?.top === '250px');
+```
+
+Your `#white-paper` selector should have a `left` property set to `-150px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-paper')?.left === '-150px');
 ```
 
 # --seed--

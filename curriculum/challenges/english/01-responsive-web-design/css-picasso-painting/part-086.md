@@ -11,10 +11,34 @@ Time to style your `eyes` elements. Use a `class` selector to set the `width` to
 
 # --hints--
 
-Test 1
+You should create a `.eyes` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.eyes'));
+```
 
+Your `.eyes` selector should have a `width` property set to `35px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.eyes')?.width === '35px');
+```
+
+Your `.eyes` selector should have a `height` property set to `20px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.eyes')?.height === '20px');
+```
+
+Your `.eyes` selector should have a `background-color` property set to `#8B4513`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.eyes')?.backgroundColor === 'rgb(139, 69, 19)');
+```
+
+Your `.eyes` selector should have a `border-radius` property set to `20px 50%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.eyes')?.borderRadius === '20px 50%');
 ```
 
 # --seed--
@@ -352,4 +376,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

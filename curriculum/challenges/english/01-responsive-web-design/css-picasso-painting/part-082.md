@@ -11,10 +11,28 @@ Now you need to move the bar icons in to place. Create a `class` selector for th
 
 # --hints--
 
-Test 1
+You should create a `.fa-bars` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.fa-bars'));
+```
 
+Your `.fa-bars` selector should have a `display` property set to `block`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.fa-bars')?.display === 'block');
+```
+
+Your `.fa-bars` selector should have a `margin-top` property set to `30%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.fa-bars')?.marginTop === '30%');
+```
+
+Your `.fa-bars` selector should have a `margin-left` property set to `30%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.fa-bars')?.marginLeft === '40%');
 ```
 
 # --seed--
@@ -336,4 +354,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

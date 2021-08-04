@@ -11,10 +11,22 @@ Move the `black-character` element into place by setting the `position` to `abso
 
 # --hints--
 
-Test 1
+Your `#black-character` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-character')?.position === 'absolute');
+```
 
+Your `#black-character` selector should have a `top` property set to `30%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-character')?.top === '30%');
+```
+
+Your `#black-character` selector should have a `left` property set to `59%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-character')?.left === '59%');
 ```
 
 # --seed--

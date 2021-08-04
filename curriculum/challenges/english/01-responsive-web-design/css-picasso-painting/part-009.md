@@ -16,10 +16,22 @@ When an element is manually positioned, you can shift its layout with `top`, `le
 
 # --hints--
 
-Test 1
+Your `#back-wall` selector should have the `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#back-wall')?.position === 'absolute');
+```
 
+Your `#back-wall` selector should have the `top` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#back-wall')?.top === '0px');
+```
+
+Your `#back-wall` selector should have the `left` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#back-wall')?.left === '0px');
 ```
 
 # --seed--

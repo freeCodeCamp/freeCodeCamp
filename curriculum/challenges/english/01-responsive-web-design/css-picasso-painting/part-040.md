@@ -11,10 +11,28 @@ Use an `id` selector to create a rule for your `black-hat` element. Give it a `w
 
 # --hints--
 
-Test 1
+You should have a `#black-hat` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat'));
+```
 
+Your `#black-hat` selector should have a `width` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.width === '0px');
+```
+
+Your `#black-hat` selector should have a `height` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.height === '0px');
+```
+
+Your `#black-hat` selector should have a `border-style` property set to `solid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.borderStyle === 'solid');
 ```
 
 # --seed--
@@ -155,4 +173,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

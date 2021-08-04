@@ -7,14 +7,26 @@ dashedName: part-11
 
 # --description--
 
-Within your `back-wall` element, create a `div` with a `class` of `characters`. This is where you will be creating your painting's characters.
+Below your `back-wall` element, create a `div` with a `class` of `characters`. This is where you will be creating your painting's characters.
 
 # --hints--
 
-Test 1
+You should only add one new `div` element.
 
 ```js
+assert(document.querySelectorAll('div').length === 2);
+```
 
+Your new `div` element should come after your `#back-wall` element.
+
+```js
+assert(document.querySelector('#back-wall').nextElementSibling.localName === 'div');
+```
+
+Your new `div` element should have the `class` set to `characters`.
+
+```js
+assert(document.querySelectorAll('div')[1].classList.contains('characters'));
 ```
 
 # --seed--

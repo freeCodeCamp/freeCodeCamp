@@ -11,10 +11,28 @@ Style your `black-round-hat` element with an `id` selector. Set the `width` to `
 
 # --hints--
 
-Test 1
+You should have a `#black-round-hat` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-round-hat'));
+```
 
+Your `#black-round-hat` selector should have a `width` property set to `180px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-round-hat')?.width === '180px');
+```
+
+Your `#black-round-hat` selector should have a `height` property set to `150px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-round-hat')?.height === '150px');
+```
+
+Your `#black-round-hat` selector should have a `background-color` property set to `rgb(45, 31, 19)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-round-hat')?.backgroundColor === 'rgb(45, 31, 19)');
 ```
 
 # --seed--
@@ -273,4 +291,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

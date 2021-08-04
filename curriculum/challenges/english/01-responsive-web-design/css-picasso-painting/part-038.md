@@ -11,10 +11,28 @@ Use an `id` selector to create a rule for your `black-character` element. Set th
 
 # --hints--
 
-Test 1
+You should use a `#black-character` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-character'));
+```
 
+Your `#black-character` selector should have a `width` property set to `300px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-character')?.width === '300px');
+```
+
+Your `#black-character` selector should have a `height` property set to `500px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-character')?.height === '500px');
+```
+
+Your `#black-character` selector should have a `background-color` property to `rgb(45, 31, 19)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-character')?.backgroundColor === 'rgb(45, 31, 19)');
 ```
 
 # --seed--
@@ -146,4 +164,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

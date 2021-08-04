@@ -11,10 +11,22 @@ Move the `offwhite-character` into place by giving it an `absolute` `position`, 
 
 # --hints--
 
-Test 1
+Your `#offwhite-character` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#offwhite-character')?.position === 'absolute');
+```
 
+Your `#offwhite-character` selector should have a `top` property set to `20%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#offwhite-character')?.top === '20%');
+```
+
+Your `#offwhite-character` selector should have a `left` property set to `17.5%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#offwhite-character')?.left === '17.5%');
 ```
 
 # --seed--

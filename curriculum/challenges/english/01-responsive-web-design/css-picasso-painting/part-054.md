@@ -11,10 +11,22 @@ Next, target your `blue-right` element with an `id` selector. Set the `width` to
 
 # --hints--
 
-Test 1
+You should have a `#blue-right` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#blue-right'));
+```
 
+Your `#blue-right` selector should have a `width` property set to `400px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#blue-right')?.width === '400px');
+```
+
+Your `#blue-right` selector should have a `height` property set to `300px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#blue-right')?.height === '300px');
 ```
 
 # --seed--
@@ -208,4 +220,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

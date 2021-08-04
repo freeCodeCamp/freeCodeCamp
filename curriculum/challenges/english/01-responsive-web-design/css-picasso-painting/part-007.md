@@ -11,10 +11,16 @@ Use an id selector to give the `back-wall` element a `background-color` of `#8B4
 
 # --hints--
 
-Test 1
+You should use a `#back-wall` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#back-wall'));
+```
 
+Your `#back-wall` selector should have a `background-color` of `#8B4513`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#back-wall')?.backgroundColor === 'rgb(139, 69, 19)');
 ```
 
 # --seed--
@@ -44,4 +50,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

@@ -11,10 +11,28 @@ Using an `id` selector, style your `white-hat` element. Give it a `width` and `h
 
 # --hints--
 
-Test 1
+You should use a `#white-hat` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat'));
+```
 
+Your `#white-hat` selector should have a `width` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.width === '0px');
+```
+
+Your `#white-hat` selector should have a `height` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.height === '0px');
+```
+
+Your `#white-hat` selector should have a `border-style` property set to `solid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.borderStyle === 'solid');
 ```
 
 # --seed--
@@ -80,4 +98,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

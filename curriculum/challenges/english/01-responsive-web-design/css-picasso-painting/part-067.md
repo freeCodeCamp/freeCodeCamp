@@ -11,10 +11,10 @@ Put the `black-round-hat` on the correct layer with a `z-index` of `-1`.
 
 # --hints--
 
-Test 1
+Your `#black-round-hat` selector should have a `z-index` property set to `-1`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#black-round-hat')?.zIndex === '-1');
 ```
 
 # --seed--

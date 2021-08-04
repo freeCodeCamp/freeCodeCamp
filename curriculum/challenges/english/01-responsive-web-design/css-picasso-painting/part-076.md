@@ -11,10 +11,22 @@ Now use an `id` selector for `guitar`. Set the `width` to `100%`, and the `heigh
 
 # --hints--
 
-Test 1
+You should create a `#guitar` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar'));
+```
 
+Your `#guitar` selector should have a `width` property set to `100%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar')?.width === '100%');
+```
+
+Your `#guitar` selector should have a `height` property set to `100px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar')?.height === '100px');
 ```
 
 # --seed--
@@ -309,4 +321,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

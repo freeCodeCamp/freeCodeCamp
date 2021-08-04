@@ -11,10 +11,24 @@ This character needs eyes. Create two `divs` in the `black-mask` element. Give t
 
 # --hints--
 
-Test 1
+You should create 2 `div` elements within your `#black-mask` element.
 
 ```js
+assert(document.querySelectorAll('#black-mask div').length === 2);
+```
 
+Your first new `div` should have the classes `eyes` and `left`.
+
+```js
+assert(document.querySelectorAll('#black-mask div')[0]?.classList.contains('eyes'));
+assert(document.querySelectorAll('#black-mask div')[0]?.classList.contains('left'));
+```
+
+Your second new `div` should have the classes `eyes` and `right`.
+
+```js
+assert(document.querySelectorAll('#black-mask div')[1]?.classList.contains('eyes'));
+assert(document.querySelectorAll('#black-mask div')[1]?.classList.contains('right'));
 ```
 
 # --seed--

@@ -7,14 +7,21 @@ dashedName: part-5
 
 # --description--
 
-To get your painting started, give your `body` element a `background-color` of `  rgb(184, 132, 46)`.
+To get your painting started, give your `body` element a `background-color` of `rgb(184, 132, 46)`.
 
 # --hints--
 
-Test 1
+You should use the `body` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('body'));
+```
 
+Your `body` element should have the `background-color` property set to `rgb (184, 132, 46)`.
+
+```js
+console.log(new __helpers.CSSHelp(document).getStyle('body'));
+assert(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor === 'rgb(184, 132, 46)');
 ```
 
 # --seed--
@@ -36,7 +43,9 @@ Test 1
 ```  
 
 ```css
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

@@ -11,10 +11,22 @@ Move the table into place by giving it an `absolute` `position`, a `top` value o
 
 # --hints--
 
-Test 1
+Your `#tan-table` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#tan-table')?.position === 'absolute');
+```
 
+Your `#tan-table` selector should have a `top` property set to `275px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#tan-table')?.top === '275px');
+```
+
+Your `#tan-table` selector should have a `left` property set to `15px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#tan-table')?.left === '15px');
 ```
 
 # --seed--
@@ -124,5 +136,8 @@ body {
   width: 450px;
   height: 140px;
   background-color: #D2691E;
+  --fcc-editable-region--
+
+  --fcc-editable-region--
 }
 ```

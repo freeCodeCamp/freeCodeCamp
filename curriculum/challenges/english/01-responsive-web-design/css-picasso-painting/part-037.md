@@ -17,10 +17,20 @@ This special class is how FontAwesome determines which icon to load. `fas` indic
 
 # --hints--
 
-Test 1
+You should have four new `i` elements within your `#white-paper` element.
 
 ```js
+assert(document.querySelectorAll('#white-paper > i')?.length === 4);
+```
 
+All of your `i` elements should have the `class` set to `fas fa-music`.
+
+```js
+const icons = document.querySelectorAll('#white-paper > i');
+for (const icon of icons) {
+  assert(icon.classList.contains('fas'));
+  assert(icon.classList.contains('fa-music'));
+};
 ```
 
 # --seed--

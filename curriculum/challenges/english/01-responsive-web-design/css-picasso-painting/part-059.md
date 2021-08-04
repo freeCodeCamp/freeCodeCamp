@@ -11,10 +11,19 @@ Within the `triangles` div, you will need to add the elements that will become y
 
 # --hints--
 
-Test 1
+You should have 30 `div` elements within your `triangles` element.
 
 ```js
+assert(document.querySelectorAll('#triangles > div').length === 30);
+```
 
+All 30 of your new `div` elements should have the `class` set to `triangle`.
+
+```js
+const divDivDiv = document.querySelectorAll('#triangles > div');
+for (const div of divDivDiv) {
+  assert(div.classList.contains('triangle'));
+}
 ```
 
 # --seed--

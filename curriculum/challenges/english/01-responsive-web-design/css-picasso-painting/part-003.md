@@ -9,14 +9,45 @@ dashedName: part-3
 
 Go ahead and link your CSS file now, even though you have not written any CSS yet.
 
-Add a `link` element with a `rel` of `stylesheet`, a `type` of `text/css`, and an `href` of `./styles.css`.
+Add a `link` element with a `rel` of `stylesheet`, a `type` of `text/css`, and an `href` of `styles.css`.
 
 # --hints--
 
-Test 1
+
+Your code should have a `link` element.
 
 ```js
+assert.match(code, /<link/)
+```
 
+Your `link` element should be a self-closing element.
+
+```js
+assert(code.match(/<link[\w\W\s]+\/>/i));
+```
+
+Your `link` element should be within your `head` element.
+
+```js
+assert(code.match(/<head>[\w\W\s]*<link[\w\W\s]*\/>[\w\W\s]*<\/head>/i))
+```
+
+Your `link` element should have a `rel` attribute with the value `stylesheet`.
+
+```js
+assert.match(code, /<link[\s\S]*?rel=('|"|`)stylesheet\1/)
+```
+
+Your `link` element should have a `type` attribute with the value `text/css`.
+
+```js
+assert.match(code, /<link[\s\S]*?type=('|"|`)text\/css\1/)
+```
+
+Your `link` element should have an `href` attribute with the value `styles.css`.
+
+```js
+assert.match(code, /<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/)
 ```
 
 # --seed--

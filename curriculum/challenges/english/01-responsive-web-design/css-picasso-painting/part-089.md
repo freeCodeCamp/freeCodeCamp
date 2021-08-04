@@ -11,10 +11,16 @@ One last step. The FontAwesome icons are a little too small. Target all of them 
 
 # --hints--
 
-Test 1
+You should create a `.fas` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.fas'));
+```
 
+Your `.fas` selector should have a `font-size` property set to `30px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.fas')?.fontSize === '30px');
 ```
 
 # --seed--
@@ -371,4 +377,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

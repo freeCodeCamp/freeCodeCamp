@@ -11,10 +11,28 @@ Use an id selector to style your `tan-table` element. Give it a `width` of `450p
 
 # --hints--
 
-Test 1
+You should have a `#tan-table` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#tan-table'));
+```
 
+Your `#tan-table` selector should have a `width` property set to `450px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#tan-table')?.width === '450px');
+```
+
+Your `#tan-table` selector should have a `height` property set to `140px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#tan-table')?.height === '140px');
+```
+
+Your `#tan-table` selector should have a `background-color` property set to `#D2691E`.
+
+```js
+assert (new __helpers.CSSHelp(document).getStyle('#tan-table')?.backgroundColor === 'rgb(210, 105, 30)');
 ```
 
 # --seed--
@@ -118,8 +136,10 @@ body {
   display: block;
   margin: auto;
   margin-top: 65%;
+}
+
   --fcc-editable-region--
 
   --fcc-editable-region--
-}
+  
 ```

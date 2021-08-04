@@ -11,10 +11,22 @@ Target your `triangles` element with an `id` selector. Set the `width` to `250px
 
 # --hints--
 
-Test 1
+You should add a `#triangles` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#triangles'));
+```
 
+Your `#triangles` selector should have a `width` property set to `250px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#triangles')?.width === '250px');
+```
+
+Your `#triangles` selector should have a `height` property set to `550px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#triangles')?.height === '550px');
 ```
 
 # --seed--
@@ -292,4 +304,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

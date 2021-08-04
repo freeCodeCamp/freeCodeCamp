@@ -11,10 +11,30 @@ Below your `black-character` element, add two new `div` elements. These will be 
 
 # --hints--
 
-Test 1
+You should have two new `div` elements within your `.characters` element.
 
 ```js
+assert(document.querySelectorAll('.characters > div')?.length === 4);
+```
 
+Your two new `div` elemnts should have the `class` set to `blue`.
+
+```js
+const divs = document.querySelectorAll('.characters > div');
+assert(divs[2].classList.contains('blue'))
+assert(divs[3].classList.contains('blue'))
+```
+
+Your first new `div` should have an `id` of `blue-left`.
+
+```js
+assert(document.querySelectorAll('.characters > div')[2].getAttribute('id') === 'blue-left');
+```
+
+Your second new `div` should have an `id` of `blue-right`.
+
+```js
+assert(document.querySelectorAll('.characters > div')[3].getAttribute('id') === 'blue-right');
 ```
 
 # --seed--

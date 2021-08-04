@@ -11,10 +11,28 @@ Using an `id` selector, give your `gray-instrument` element a `width` of `15%`, 
 
 # --hints--
 
-Test 1
+You should have a `#gray-instrument` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-instrument'));
+```
 
+Your `#gray-instrument` selector should have a `width` property set to `15%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-instrument')?.width === '15%');
+```
+
+Your `#gray-instrument` selector should have a `height` property set to `40%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-instrument')?.height === '40%');
+```
+
+Your `#gray-instrument` selector should have a `background-color` property set to `rgb(167, 162, 117)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-instrument')?.backgroundColor === 'rgb(167, 162, 117)');
 ```
 
 # --seed--
@@ -104,4 +122,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

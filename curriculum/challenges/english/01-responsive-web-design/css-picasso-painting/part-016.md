@@ -11,10 +11,28 @@ Using an `id` selector, create a rule for your `offwhite-character` element. Giv
 
 # --hints--
 
-Test 1
+You should use the `#offwhite-character` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#offwhite-character'));
+```
 
+Your `#offwhite-character` should have a `width` property set to `300px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#offwhite-character')?.width === '300px');
+```
+
+Your `#offwhite-character` should have a `height` property set to `550px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#offwhite-character')?.height === '550px');
+```
+
+Your `#offwhite-character` should have a `background-color` property set to `GhostWhite`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#offwhite-character')?.backgroundColor === 'ghostwhite');
 ```
 
 # --seed--

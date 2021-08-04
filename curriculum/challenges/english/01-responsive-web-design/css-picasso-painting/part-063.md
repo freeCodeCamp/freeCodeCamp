@@ -11,10 +11,22 @@ Give the `orange-character` a `position` of `absolute`, a `top` of `25%`, and a 
 
 # --hints--
 
-Test 1
+Your `#orange-character` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#orange-character')?.position === 'absolute');
+```
 
+Your `#orange-character` selector should have a `top` property set to `25%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#orange-character')?.top === '25%');
+```
+
+Your `#orange-character` selector should have a `left` property set to `40%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#orange-character')?.left === '40%');
 ```
 
 # --seed--

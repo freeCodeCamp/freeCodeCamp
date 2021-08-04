@@ -11,10 +11,22 @@ Now move it into place with an `absolute` `position`, a `top` value of `50px`, a
 
 # --hints--
 
-Test 1
+Your `#gray-instrument` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-instrument')?.position === 'absolute');
+```
 
+Your `#gray-instrument` selector should have a `top` value set to `50px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-instrument')?.top === '50px');
+```
+
+Your `#gray-instrument` selector should have a `left` value set to `125px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-instrument')?.left === '125px');
 ```
 
 # --seed--

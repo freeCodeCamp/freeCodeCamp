@@ -11,10 +11,28 @@ Give your `triangle` elements the correct color. Set the `border-top-color`, `bo
 
 # --hints--
 
-Test 1
+Your `.triangle` selector should have a `border-top-color` property set to `transparent`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.triangle')?.borderTopColor === 'transparent');
+```
 
+Your `.triangle` selector should have a `border-bottom-color` property set to `transparent`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.triangle')?.borderBottomColor === 'transparent');
+```
+
+Your `.triangle` selector should have a `border-left-color` property set to `transparent`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.triangle')?.borderLeftColor === 'transparent');
+```
+
+Your `.triangle` selector should have a `border-right-color` property set to `Gold`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.triangle')?.borderRightColor === 'gold');
 ```
 
 # --seed--

@@ -11,10 +11,10 @@ Set the `z-index` of the `white-paper` to `1`.
 
 # --hints--
 
-Test 1
+Your `#white-paper` selector should have a `z-index` property set to `1`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#white-paper')?.zIndex === '1');
 ```
 
 # --seed--

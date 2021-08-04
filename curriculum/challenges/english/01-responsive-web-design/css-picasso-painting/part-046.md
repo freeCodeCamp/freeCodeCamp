@@ -11,10 +11,28 @@ Using an `id` selector, create a rule for the `white-paper` element. Set the `wi
 
 # --hints--
 
-Test 1
+You should have a `#white-paper` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-paper'));
+```
 
+Your `#white-paper` selector should have a `width` property set to `400px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-paper')?.width === '400px');
+```
+
+Your `#white-paper` selector should have a `height` property set to `100px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-paper')?.height === '100px');
+```
+
+Your `#white-paper` selector should have a `background-color` property set to `GhostWhite`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-paper')?.backgroundColor === 'ghostwhite');
 ```
 
 # --seed--
@@ -178,4 +196,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

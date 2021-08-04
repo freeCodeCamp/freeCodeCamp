@@ -11,10 +11,16 @@ Use a `class` selector to target your new `blue` elements. Set the `background-c
 
 # --hints--
 
-Test 1
+You should have a `.blue` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.blue'));
+```
 
+Your `.blue` selector should have a `background-color` property set to `#1E90FF`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.blue')?.backgroundColor === 'rgb(30, 144, 255)');
 ```
 
 # --seed--
@@ -196,4 +202,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

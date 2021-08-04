@@ -10,10 +10,28 @@ dashedName: part-35
 Within your new `black-character` element, add three `div` elements with the following `id` values, in order: `black-hat`, `gray-mask`, `white-paper`.
 # --hints--
 
-Test 1
+You should have three `div` elements within your `#black-character` element.
 
 ```js
+assert(document.querySelectorAll('#black-character > div').length === 3);
+```
 
+Your first new `div` element should have the `id` set to `black-hat`.
+
+```js
+assert(document.querySelectorAll('#black-character > div')[0]?.getAttribute('id') === 'black-hat');
+```
+
+Your second new `div` element should have the `id` set to `gray-mask`.
+
+```js
+assert(document.querySelectorAll('#black-character > div')[1]?.getAttribute('id') === 'gray-mask');
+```
+
+Your third new `div` element should have the `id` set to `white-paper`.
+
+```js
+assert(document.querySelectorAll('#black-character > div')[2]?.getAttribute('id') === 'white-paper');
 ```
 
 # --seed--

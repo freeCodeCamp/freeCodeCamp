@@ -11,10 +11,16 @@ Style the border of your `triangle` elements. Set the `border-style` to `solid` 
 
 # --hints--
 
-Test 1
+Your `.triangle` selector should have a `border-style` property set to `solid`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.triangle')?.borderStyle === 'solid');
+```
 
+Your `.triangle` selector should have a `border-width` property set to `42px 45px 45px 0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.triangle')?.borderWidth === '42px 45px 45px 0px');
 ```
 
 # --seed--

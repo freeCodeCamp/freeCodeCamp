@@ -11,10 +11,28 @@ Just like with your `white-hat`, you should style the border for the `black-hat`
 
 # --hints--
 
-Test 1
+Your `#black-hat` selector should have a `border-top-color` property set to `transparent`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.borderTopColor === 'transparent');
+```
 
+Your `#black-hat` selector should have a `border-right-color` property set to `transparent`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.borderRightColor === 'transparent');
+```
+
+Your `#black-hat` selector should have a `border-bottom-color` property set to `transparent`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.borderBottomColor === 'transparent');
+```
+
+Your `#black-hat` selector should have a `border-left-color` property set to `rgb(45, 31, 19)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.borderLeftColor === 'rgb(45, 31, 19)');
 ```
 
 # --seed--

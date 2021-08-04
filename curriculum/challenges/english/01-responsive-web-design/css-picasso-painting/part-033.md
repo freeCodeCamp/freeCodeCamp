@@ -11,10 +11,10 @@ And give the table a `z-index` of `1`.
 
 # --hints--
 
-Test 1
+Your `#tan-table` selector should have a `z-index` property set to `1`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#tan-table')?.zIndex === '1');
 ```
 
 # --seed--

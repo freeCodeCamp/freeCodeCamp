@@ -11,10 +11,28 @@ Use a class selector to create a rule for the `black-dot` elements. Set the `wid
 
 # --hints--
 
-Test 1
+You should have a `.black-dot` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.black-dot'));
+```
 
+Your `.black-dot` selector should have a `width` property set to `10px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.black-dot')?.width === '10px');
+```
+
+Your `.black-dot` selector should have a `height` property set to `10px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.black-dot')?.height === '10px');
+```
+
+Your `.black-dot` selector should have a `background-color` property set to `rgb(45, 31, 19)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.black-dot')?.backgroundColor === 'rgb(45, 31, 19)');
 ```
 
 # --seed--
@@ -114,4 +132,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

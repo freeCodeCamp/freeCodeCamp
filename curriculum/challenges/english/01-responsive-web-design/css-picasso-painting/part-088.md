@@ -11,10 +11,28 @@ For the `left` `class`, create the selector and set the `position` to `absolute`
 
 # --hints--
 
-Test 1
+You should create a new `.left` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.left'));
+```
 
+Your `.left` selector should have a `position` property set to `absolute`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.left')?.position === 'absolute');
+```
+
+Your `.left` selector should have a `top` property set to `15px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.left')?.top === '15px');
+```
+
+Your `.left` selector should have a `left` property set to `30px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.left')?.left === '30px');
 ```
 
 # --seed--
@@ -365,4 +383,5 @@ border-radius: 50%;
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

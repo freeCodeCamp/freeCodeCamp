@@ -11,10 +11,22 @@ Move the dots into place by setting the `display` to `block`, the `margin` to `a
 
 # --hints--
 
-Test 1
+Your `.black-dot` selector should have a `display` property set to `block`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.black-dot')?.display === 'block');
+```
 
+Your `.black-dot` selector should have a `margin` property set to `auto`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.black-dot')?.margin.includes('auto'));
+```
+
+Your `.black-dot` selector should have a `margin-top` property set to `65%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.black-dot')?.marginTop === '65%');
 ```
 
 # --seed--

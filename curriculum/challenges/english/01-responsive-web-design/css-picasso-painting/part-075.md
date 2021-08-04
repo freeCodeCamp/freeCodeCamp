@@ -11,10 +11,10 @@ Adjust the layout of the `triangle` elements with a `display` of `inline-block`.
 
 # --hints--
 
-Test 1
+Your `.triangle` selector should have a `display` property set to `inline-block`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.triangle')?.display === 'inline-block');
 ```
 
 # --seed--

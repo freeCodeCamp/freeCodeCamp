@@ -11,10 +11,22 @@ Position the `gray-mask` by setting `position` to `absolute`, the `top` to `-10p
 
 # --hints--
 
-Test 1
+Your `#gray-mask` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-mask')?.position === 'absolute');
+```
 
+Your `#gray-mask` selector should have a `top` property set to `-10px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-mask')?.top === '-10px');
+```
+
+Your `#gray-mask` selector should have a `left` property set to `70px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gray-mask')?.left === '70px');
 ```
 
 # --seed--

@@ -11,10 +11,10 @@ That does not look quite right. Set a `border-width` of `0 120px 140px 180px` to
 
 # --hints--
 
-Test 1
+Your `#white-hat` selector should have a `border-width` property set to `0 120px 140px 180px`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.borderWidth === '0px 120px 140px 180px');
 ```
 
 # --seed--

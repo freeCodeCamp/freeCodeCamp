@@ -11,10 +11,22 @@ Give the mask an `absolute` `position`, and a `top` and `left` value of `0`.
 
 # --hints--
 
-Test 1
+Your `#black-mask` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-mask')?.position === 'absolute');
+```
 
+Your `#black-mask` selector should have a `top` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-mask')?.top === '0px');
+```
+
+Your `#black-mask` selector should have a `left` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-mask')?.left === '0px');
 ```
 
 # --seed--

@@ -15,10 +15,10 @@ Since the `back-wall` element will need to appear "behind" the other elements yo
 
 # --hints--
 
-Test 1
+Your `#back-wall` selector should have the `z-index` property set to `-1`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#back-wall')?.zIndex === '-1');
 ```
 
 # --seed--

@@ -11,10 +11,22 @@ Now position the `black-hat` element. Give it a `position` of `absolute`, with a
 
 # --hints--
 
-Test 1
+Your `#black-hat` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.position === 'absolute');
+```
 
+Your `#black-hat` selector should have a `top` property set to `-150px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.top === '-150px');
+```
+
+Your `#black-hat` selector should have a `left` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.left === '0px');
 ```
 
 # --seed--

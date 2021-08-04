@@ -11,10 +11,22 @@ Now move the `eyes-div` into position with `position` set to `absolute`, `top` s
 
 # --hints--
 
-Test 1
+Your `#eyes-div` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#eyes-div')?.position === 'absolute');
+```
 
+Your `#eyes-div` selector should have a `top` property set to `-40px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#eyes-div')?.top === '-40px');
+```
+
+Your `#eyes-div` selector should have a `left` property set to `20px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#eyes-div')?.left === '20px');
 ```
 
 # --seed--

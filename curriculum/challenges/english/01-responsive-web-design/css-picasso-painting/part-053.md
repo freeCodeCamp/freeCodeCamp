@@ -11,10 +11,22 @@ Now set the `position` to `absolute`, the `top` to `50%`, and the `left` to `40%
 
 # --hints--
 
-Test 1
+Your `#blue-left` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#blue-left')?.position === 'absolute');
+```
 
+Your `#blue-left` selector should have a `top` property set to `50%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#blue-left')?.top === '50%');
+```
+
+Your `#blue-left` selector should have a `left` property set to `40%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#blue-left')?.left === '40%');
 ```
 
 # --seed--

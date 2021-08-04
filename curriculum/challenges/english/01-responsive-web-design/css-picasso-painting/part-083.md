@@ -11,10 +11,28 @@ Use an `id` selector to create a `guitar-neck` rule. Set the `width` to `200px`,
 
 # --hints--
 
-Test 1
+You should create a `#guitar-neck` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar-neck'));
+```
 
+Your `#guitar-neck` selector should have a `width` property set to `200px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar-neck')?.width === '200px');
+```
+
+Your `#guitar-neck` selector should have a `height` property set to `30px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar-neck')?.height === '30px');
+```
+
+Your `#guitar-neck` selector should have a `background-color` property set to `#D2691E`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar-neck')?.backgroundColor === 'rgb(210, 105, 30)');
 ```
 
 # --seed--
@@ -342,4 +360,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

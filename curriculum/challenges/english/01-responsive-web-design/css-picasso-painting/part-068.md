@@ -11,10 +11,22 @@ Use an `id` selector to create a rule for your `eyes-div` element. Set the `widt
 
 # --hints--
 
-Test 1
+You should create an `#eyes-div` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#eyes-div'));
+```
 
+Your `#eyes-div` selector should have a `width` property set to `180px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#eyes-div')?.width === '180px');
+```
+
+Your `#eyes-div` selector should have a `height` property set to `50px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#eyes-div')?.height === '50px');
 ```
 
 # --seed--
@@ -284,4 +296,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

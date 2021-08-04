@@ -11,10 +11,16 @@ Give the `back-wall` element a `width` of `100%` and a `height` of `60%`.
 
 # --hints--
 
-Test 1
+You should set the `width` of the `#back-wall` selector to `100%`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#back-wall')?.width === '100%');
+```
 
+You should set the `height` of the `#back-wall` selector to `60%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#back-wall')?.height === '60%');
 ```
 
 # --seed--

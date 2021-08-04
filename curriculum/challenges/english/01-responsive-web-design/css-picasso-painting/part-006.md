@@ -11,10 +11,16 @@ Within your body tag, add a `div` element. Give it an `id` of `back-wall`.
 
 # --hints--
 
-Test 1
+You should add exactly 1 `div` element.
 
 ```js
+assert(document.querySelectorAll('div').length === 1);
+```
 
+Your `div` element should have the `id` value of `back-wall`.
+
+```js
+assert(document.querySelector('div').getAttribute('id') === 'back-wall');
 ```
 
 # --seed--

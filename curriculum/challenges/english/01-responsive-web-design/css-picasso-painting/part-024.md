@@ -11,10 +11,10 @@ To ensure you can see the mask, give it a `z-index` of `1`.
 
 # --hints--
 
-Test 1
+Your `#black-mask` selector should have a `z-index` property set to `1`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#black-mask')?.zIndex === '1');
 ```
 
 # --seed--
@@ -98,5 +98,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  --fcc-editable-region--
+
+  --fcc-editable-region--
 }
 ```

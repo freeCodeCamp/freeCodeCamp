@@ -11,10 +11,28 @@ Using an `id` selector, create a rule for your `black-mask` element. Give it a `
 
 # --hints--
 
-Test 1
+You should have a `#black-mask` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-mask'));
+```
 
+Your `#black-mask` selector should have a `width` property set to `100%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-mask')?.width === '100%');
+```
+
+Your `#black-mask` selector should have a `height` property set to `50px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-mask')?.height === '50px');
+```
+
+Your `#black-mask` selector should have a `background-color` property set to `rgb(45, 31, 19)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#black-mask')?.backgroundColor === 'rgb(45, 31, 19)');
 ```
 
 # --seed--
@@ -94,4 +112,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

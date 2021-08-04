@@ -11,10 +11,34 @@ Now use a `class` selector to target `guitar`. This will style the two "halves" 
 
 # --hints--
 
-Test 1
+You should create a `.guitar` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.guitar'));
+```
 
+Your `.guitar` selector should have a `width` property set to `150px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.guitar')?.width === '150px');
+```
+
+Your `.guitar` selector should have a `height` property set to `120px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.guitar')?.height === '120px');
+```
+
+Your `.guitar` selector should have a `background-color` property set to `Goldenrod`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.guitar')?.backgroundColor === 'goldenrod');
+```
+
+Your `.guitar` selector should have a `border-radius` property set to `50%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.guitar')?.borderRadius === '50%');
 ```
 
 # --seed--
@@ -319,4 +343,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

@@ -11,10 +11,22 @@ Give the hat an `absolute` `position`, a `top` value of `-140px`, and a `left` v
 
 # --hints--
 
-Test 1
+Your `#white-hat` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.position === 'absolute');
+```
 
+Your `#white-hat` selector should have a `top` property set to `-140px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.top === '-140px');
+```
+
+Your `#white-hat` selector should have a `left` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.left === '0px');
 ```
 
 # --seed--

@@ -11,10 +11,10 @@ The `black-round-hat` should probably be round. Give it a `border-radius` of `50
 
 # --hints--
 
-Test 1
+Your `#black-round-hat` selector should have a `border-radius` property set to `50%`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#black-round-hat')?.borderRadius === '50%');
 ```
 
 # --seed--

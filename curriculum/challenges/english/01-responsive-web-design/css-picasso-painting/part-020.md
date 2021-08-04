@@ -11,10 +11,28 @@ Now you have a large box. Give it a `border-top-color`, `border-right-color`, an
 
 # --hints--
 
-Test 1
+Your `#white-hat` selector should have a `border-top-color` property set to `transparent`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.borderTopColor === 'transparent');
+```
 
+Your `#white-hat` selector should have a `border-right-color` property set to `transparent`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.borderRightColor === 'transparent');
+```
+
+Your `#white-hat` selector should have a `border-left-color` property set to `transparent`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.borderLeftColor === 'transparent');
+```
+
+Your `#white-hat` selector should have a `border-bottom-color` property set to `GhostWhite`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#white-hat')?.borderBottomColor === 'ghostwhite');
 ```
 
 # --seed--

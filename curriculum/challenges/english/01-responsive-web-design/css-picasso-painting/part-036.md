@@ -11,10 +11,26 @@ The mask needs eyes. Within your `gray-mask` element, add two `divs`. The first 
 
 # --hints--
 
-Test 1
+You should have two `div` elements within your `#gray-mask` element.
 
 ```js
+assert(document.querySelectorAll('#gray-mask > div')?.length === 2);
+```
 
+Your first new `div` element should have the `class` set to `eyes left`.
+
+```js
+const first = document.querySelectorAll('#gray-mask > div')[0];
+assert(first?.classList.contains('eyes'));
+assert(first?.classList.contains('left'));
+```
+
+Your second new `div` element should have the `class` set to `eyes right`.
+
+```js
+const second = document.querySelectorAll('#gray-mask > div')[1];
+assert(second?.classList.contains('eyes'));
+assert(second?.classList.contains('right'));
 ```
 
 # --seed--
@@ -49,12 +65,12 @@ Test 1
             <div id="tan-table"></div>
           </div>
           <div id="black-character">
-            <div id="black-hat">
+            <div id="black-hat"></div>
+            <div id="gray-mask">
               --fcc-editable-region--
 
               --fcc-editable-region--
             </div>
-            <div id="gray-mask"></div>
             <div id="white-paper"></div>
           </div>
         </div>

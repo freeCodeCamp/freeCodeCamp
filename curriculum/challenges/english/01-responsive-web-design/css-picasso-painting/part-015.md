@@ -7,14 +7,20 @@ dashedName: part-15
 
 # --description--
 
-Create some "dots" for the instrument. Add five `div` elements, each with the class `black-dot`.
+Create some "dots" for the instrument. Add five `div` elements within your `gray-instrument` element. Set the `class` of each to `black-dot`.
 
 # --hints--
 
-Test 1
+You should have five new `div` elements within your `#gray-instrument` element.
 
 ```js
+assert(document.querySelectorAll('#gray-instrument div').length === 5);
+```
 
+Your five `div` elements should all have the class `black-dot`.
+
+```js
+assert(document.querySelectorAll('#gray-instrument .black-dot').length === 5);
 ```
 
 # --seed--
@@ -65,4 +71,9 @@ body {
   left: 0;
   z-index: -1;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 ```

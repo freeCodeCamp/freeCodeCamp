@@ -13,10 +13,40 @@ The third `div` should not have the `guitar` class.
 
 # --hints--
 
-Test 1
+You should have three new `div` elements within your `guitar` element.
 
 ```js
+assert(document.querySelectorAll('#guitar > div').length === 3);
+```
 
+Your first new `div` should have a `class` set to `guitar`.
+
+```js
+assert(document.querySelectorAll('#guitar > div')[0].classList.contains('guitar'));
+```
+
+Your first new `div` should have an `id` set to `guitar-left`.
+
+```js
+assert(document.querySelectorAll('#guitar > div')[0].getAttribute('id') === 'guitar-left');
+```
+
+Your second new `div` should have a `class` set to `guitar`.
+
+```js
+assert(document.querySelectorAll('#guitar > div')[1].classList.contains('guitar'));
+```
+
+Your second new `div` should have an `id` set to `guitar-right`.
+
+```js
+assert(document.querySelectorAll('#guitar > div')[1].getAttribute('id') === 'guitar-right');
+```
+
+Your third new `div` should have an `id` set to `guitar-neck`.
+
+```js
+assert(document.querySelectorAll('#guitar > div')[2].getAttribute('id') === 'guitar-neck');
 ```
 
 # --seed--

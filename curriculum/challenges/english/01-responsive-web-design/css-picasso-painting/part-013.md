@@ -11,10 +11,34 @@ Create four `div` elements inside your `offwhite-character` element. Give those 
 
 # --hints--
 
-Test 1
+You should add four `div` elements within your `.offwhite-character` element.
 
 ```js
+assert(document.querySelectorAll('#offwhite-character div').length === 4);
+```
 
+Your first new `div` element should have the `id` of `white-hat`.
+
+```js
+assert(document.querySelectorAll('#offwhite-character div')[0]?.getAttribute('id') === 'white-hat');
+```
+
+Your second new `div` element should have the `id` of `black-mask`.
+
+```js
+assert(document.querySelectorAll('#offwhite-character div')[1]?.getAttribute('id') === 'black-mask');
+```
+
+Your third new `div` element should have the `id` of `gray-instrument`.
+
+```js
+assert(document.querySelectorAll('#offwhite-character div')[2]?.getAttribute('id') === 'gray-instrument');
+```
+
+Your fourth new `div` element should have the `id` of `tan-table`.
+
+```js
+assert(document.querySelectorAll('#offwhite-character div')[3]?.getAttribute('id') === 'tan-table');
 ```
 
 # --seed--

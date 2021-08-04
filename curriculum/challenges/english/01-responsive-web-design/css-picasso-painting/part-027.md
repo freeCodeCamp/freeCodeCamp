@@ -11,10 +11,10 @@ Set the `z-index` to `1`.
 
 # --hints--
 
-Test 1
+Your `#gray-instrument` selector should have a `z-index` property set to `1`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#gray-instrument')?.zIndex === '1');
 ```
 
 # --seed--

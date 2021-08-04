@@ -11,10 +11,10 @@ Set the `border-width` of the `black-hat` to `150px 0 0 300px`.
 
 # --hints--
 
-Test 1
+Your `#black-hat` selector should have a `border-width` property set to `150px 0 0 300px`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#black-hat')?.borderWidth === '150px 0px 0px 300px');
 ```
 
 # --seed--

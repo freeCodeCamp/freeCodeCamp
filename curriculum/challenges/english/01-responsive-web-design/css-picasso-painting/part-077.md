@@ -11,10 +11,22 @@ In the same `#guitar` selector, set the `position` to `absolute`, the `top` to `
 
 # --hints--
 
-Test 1
+Your `#guitar` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar')?.position === 'absolute');
+```
 
+Your `#guitar` selector should have a `top` property set to `120px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar')?.top === '120px');
+```
+
+Your `#guitar` selector should have a `left` property set to `0px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#guitar')?.left === '0px');
 ```
 
 # --seed--

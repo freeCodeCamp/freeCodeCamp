@@ -11,10 +11,10 @@ Give the `eyes-div` a `z-index` of `3`.
 
 # --hints--
 
-Test 1
+Your `#eyes-div` selector should have a `z-index` property set to `3`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#eyes-div')?.zIndex === '3');
 ```
 
 # --seed--

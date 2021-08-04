@@ -11,10 +11,28 @@ Select your `orange-character` element with an `id` selector. Give it a `width` 
 
 # --hints--
 
-Test 1
+You should have an `#orange-character` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#orange-character'));
+```
 
+Your `#orange-character` selector should have a `width` property set to `250px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#orange-character')?.width === '250px');
+```
+
+Your `#orange-character` selector should have a `height` property set to `550px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#orange-character')?.height === '550px');
+```
+
+Your `#orange-character` selector should have a `background-color` property set to `rgb(240, 78, 42)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#orange-character')?.backgroundColor === 'rgb(240, 78, 42)');
 ```
 
 # --seed--
@@ -264,4 +282,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

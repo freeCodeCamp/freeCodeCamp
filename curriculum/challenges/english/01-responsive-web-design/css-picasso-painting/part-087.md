@@ -11,10 +11,28 @@ Target the `right` `class` and set the `position` to `absolute`, `top` to `15px`
 
 # --hints--
 
-Test 1
+You should create a `.right` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.right'));
+```
 
+Your `.right` selector should have a `position` property set to `absolute`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.right')?.position === 'absolute');
+```
+
+Your `.right` selector should have a `top` property set to `15px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.right')?.top === '15px');
+```
+
+Your `.right` selector should have a `right` property set to `30px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.right')?.right === '30px');
 ```
 
 # --seed--
@@ -359,4 +377,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

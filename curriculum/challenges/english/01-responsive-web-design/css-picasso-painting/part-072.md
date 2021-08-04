@@ -11,10 +11,22 @@ Create a `class` selector for your `triangle` elements. Set the `width` to `0` a
 
 # --hints--
 
-Test 1
+You should create a `.triangle` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.triangle'));
+```
 
+Your `.triangle` selector should have a `width` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.triangle')?.width === '0px');
+```
+
+Your `.triangle` selector should have a `height` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.triangle')?.height === '0px');
 ```
 
 # --seed--
@@ -297,4 +309,5 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```
