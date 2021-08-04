@@ -38,7 +38,6 @@ Your `.one` element should have a `filter` value of `blur(1px)`.
 ```js
 const one = document.querySelector('.one');
 const oneFilter = getComputedStyle(one).filter;
-console.log(oneFilter);
 assert(oneFilter === 'blur(1px)');
 ```
 

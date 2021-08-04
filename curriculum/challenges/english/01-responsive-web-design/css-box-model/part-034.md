@@ -26,7 +26,6 @@ Your `.two` element should have a `margin` value of `0 auto 20px`.
 
 ```js
 const twoMargin = new __helpers.CSSHelp(document).getStyle('.two')?.getPropertyValue('margin');
-console.log(twoMargin)
 assert(twoMargin === '0px auto 20px');
 ```
 
