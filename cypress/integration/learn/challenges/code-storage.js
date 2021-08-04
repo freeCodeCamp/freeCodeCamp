@@ -15,17 +15,18 @@ describe('Challenge with editor', function () {
 
   it('renders seed code without localStorage', () => {
     const editorContents = `<h1>Hello</h1>`;
-    cy.get(selectors.editor)
-      .contains(editorContents)
-      .type(`{movetoend}<h1>Hello World</h1>`);
+    cy.get(selectors.editor).as('editor').contains(editorContents);
+    cy.get('@editor').click().focused().type(`{movetoend}<h1>Hello World</h1>`);
     cy.reload();
     cy.get(selectors.editor, { timeout: 10000 }).contains(editorContents);
   });
 
   it('renders code from localStorage after "Ctrl + S"', () => {
     const editorContents = `<h1>Hello</h1>`;
-    cy.get(selectors.editor)
-      .contains(editorContents)
+    cy.get(selectors.editor).as('editor').contains(editorContents);
+    cy.get('@editor')
+      .click()
+      .focused()
       .type(`{movetoend}<h1>Hello World</h1>{ctrl+s}`);
     cy.contains("Saved! Your code was saved to your browser's local storage.");
     cy.reload();
