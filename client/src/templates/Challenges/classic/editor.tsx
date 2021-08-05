@@ -359,7 +359,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         const currentAccessibility = storedAccessibilityMode();
         
-        store.set( 'accessibilityMode', !currentAccessibility);
+        store.set('accessibilityMode', !currentAccessibility);
 
         editor.updateOptions({
           accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto',
