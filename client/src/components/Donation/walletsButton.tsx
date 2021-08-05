@@ -1,22 +1,32 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable camelcase */
 
 import { PaymentRequestButtonElement } from '@stripe/react-stripe-js';
+import { Stripe, StripeElements } from '@stripe/stripe-js';
 import React from 'react';
 
-const ELEMENT_OPTIONS = {
-  style: {
-    paymentRequestButton: {
-      type: 'donate',
-      theme: 'dark',
-      height: '43px'
-    }
-  }
-};
+interface WalletsButtonProps {
+  elements: StripeElements | null;
+  stripe: Stripe | null;
+}
 
-class WalletButtons extends React.Component {
-  constructor(props) {
+interface WalletsButtonState {
+  canMakePayment: boolean;
+  hasCheckedAvailability: boolean;
+  errorMessage: string | null;
+  paymentMethod?: Record<string, unknown> | null;
+}
+
+class WalletsButton extends React.Component<
+  WalletsButtonProps,
+  WalletsButtonState
+> {
+  paymentRequest: any;
+  constructor(props: WalletsButtonProps) {
     super(props);
     this.state = {
       canMakePayment: false,
@@ -25,16 +35,16 @@ class WalletButtons extends React.Component {
     };
   }
 
-  async componentDidUpdate() {
+  async componentDidUpdate(): Promise<void> {
     const { stripe } = this.props;
 
     if (stripe && !this.paymentRequest) {
       // Create PaymentRequest after Stripe.js loads.
-      this.createPaymentRequest(stripe);
+      await this.createPaymentRequest(stripe);
     }
   }
 
-  async createPaymentRequest(stripe) {
+  async createPaymentRequest(stripe: Stripe): Promise<void> {
     this.paymentRequest = stripe.paymentRequest({
       country: 'US',
       currency: 'usd',
@@ -46,12 +56,12 @@ class WalletButtons extends React.Component {
       requestPayerEmail: true
     });
 
-    this.paymentRequest.on('paymentmethod', async event => {
+    this.paymentRequest.on('paymentmethod', async (event: any) => {
       this.setState({ paymentMethod: event.paymentMethod });
-      event.complete('success');
+      await event.complete('success');
     });
 
-    this.paymentRequest.on('token', async event => {
+    this.paymentRequest.on('token', (event: any) => {
       console.log({ event });
     });
 
@@ -63,8 +73,7 @@ class WalletButtons extends React.Component {
     }
   }
 
-  render() {
-    console.log('walletButons');
+  render(): JSX.Element {
     const {
       canMakePayment,
       hasCheckedAvailability,
@@ -86,17 +95,23 @@ class WalletButtons extends React.Component {
               }
             }}
             options={{
-              ...ELEMENT_OPTIONS,
+              style: {
+                paymentRequestButton: {
+                  type: 'donate',
+                  theme: 'dark',
+                  height: '43px'
+                }
+              },
               paymentRequest: this.paymentRequest
             }}
           />
         )}
-        {paymentMethod && 'Got PaymentMethod:' + paymentMethod.id}
+        {paymentMethod && `Got PaymentMethod: ${paymentMethod.id}`}
         {!canMakePayment && hasCheckedAvailability && 'notavailableresults'}
-        {errorMessage && 'err:' + { errorMessage }}
+        {errorMessage && `err: ${errorMessage}`}
       </form>
     );
   }
 }
 
-export default WalletButtons;
+export default WalletsButton;

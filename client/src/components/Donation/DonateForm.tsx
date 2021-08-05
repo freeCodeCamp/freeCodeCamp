@@ -41,7 +41,7 @@ import DonateCompletion from './DonateCompletion';
 
 import type { AddDonationData } from './PaypalButton';
 import PaypalButton from './PaypalButton';
-import WalletButtons from './wallets-button';
+import WalletsButton from './walletsButton';
 
 import './Donation.css';
 
@@ -395,7 +395,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
 const InjectedCheckoutForm = () => (
   <ElementsConsumer>
     {({ stripe, elements }) => (
-      <WalletButtons elements={elements} stripe={stripe} />
+      <WalletsButton elements={elements} stripe={stripe} />
     )}
   </ElementsConsumer>
 );
