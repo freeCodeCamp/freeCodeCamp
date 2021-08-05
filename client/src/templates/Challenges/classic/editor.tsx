@@ -32,10 +32,8 @@ import {
   canFocusEditorSelector,
   consoleOutputSelector,
   executeChallenge,
-  inAccessibilityModeSelector,
   saveEditorContent,
   setEditorFocusability,
-  setAccessibilityMode,
   updateFile,
   challengeTestsSelector,
   submitChallenge
@@ -62,7 +60,6 @@ interface EditorProps {
   output: string[];
   resizeProps: ResizePropsType;
   saveEditorContent: () => void;
-  setAccessibilityMode: (isAccessible: boolean) => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
   tests: TestType[];
@@ -101,21 +98,18 @@ interface EditorPropertyStore {
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
   consoleOutputSelector,
-  inAccessibilityModeSelector,
   isDonationModalOpenSelector,
   userSelector,
   challengeTestsSelector,
   (
     canFocus: boolean,
     output: string[],
-    accessibilityMode: boolean,
     open,
     { theme = 'default' }: { theme: string },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
     output,
-    inAccessibilityMode: accessibilityMode,
     theme,
     tests
   })
@@ -126,7 +120,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   executeChallenge,
   saveEditorContent,
-  setAccessibilityMode,
   setEditorFocusability,
   updateFile,
   submitChallenge
@@ -300,7 +293,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     data.editor = editor;
 
     const storedAccessibilityModes = () => {
-      const accessibilityMode = props.inAccessibilityMode;
+      const accessibilityMode = false;
 
       type AccessibilityMode = typeof accessibilityMode;
 
@@ -308,9 +301,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       if (!accessibility) {
         store.set('accessibilityMode', accessibilityMode);
       }
-      // Only able to set the arialabel when it is set to true
+      // Only able to set the arialabel when accessibility mode is set to true
       // Otherwise it gets overwritten by the monaco default aria-label
-      if (accessibility?.isAccessibilityModeOn) {
+      if (accessibility) {
         editor.updateOptions({
           ariaLabel:
             'Accessibility mode set to true press ctrl + e to disable; Press alt F1 for more options'
@@ -324,8 +317,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'off'
     });
-
-    props.setAccessibilityMode(accessibilityMode);
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
     if (props.canFocus && !props.inAccessibilityMode) {
@@ -373,12 +364,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         const currentAccessibility = storedAccessibilityModes();
         
-        store.set( 'accessibilityMode', { isAccessibilityModeOn: !currentAccessibility });
-        props.setAccessibilityMode(!currentAccessibility);
+        store.set( 'accessibilityMode', !currentAccessibility);
+
         editor.updateOptions({
           accessibilitySupport: storedAccessibilityModes() ? 'on' : 'off',
         });
-
       }
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));

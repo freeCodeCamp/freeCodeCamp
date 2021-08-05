@@ -31,7 +31,6 @@ const initialState = {
   challengeTests: [],
   consoleOut: [],
   hasCompletedBlock: false,
-  inAccessibilityMode: false,
   isCodeLocked: false,
   isBuildEnabled: true,
   logsOut: [],
@@ -131,9 +130,6 @@ export const setEditorFocusability = createAction(
 export const toggleVisibleEditor = createAction(
   actionTypes.toggleVisibleEditor
 );
-export const setAccessibilityMode = createAction(
-  actionTypes.setAccessibilityMode
-);
 
 export const currentTabSelector = state => state[ns].currentTab;
 export const challengeFilesSelector = state => state[ns].challengeFiles;
@@ -210,9 +206,6 @@ export const challengeDataSelector = state => {
 
 export const canFocusEditorSelector = state => state[ns].canFocusEditor;
 export const visibleEditorsSelector = state => state[ns].visibleEditors;
-
-export const inAccessibilityModeSelector = state =>
-  state[ns].inAccessibilityMode;
 
 export const reducer = handleActions(
   {
@@ -361,11 +354,7 @@ export const reducer = handleActions(
           [payload]: !state.visibleEditors[payload]
         }
       };
-    },
-    [actionTypes.setAccessibilityMode]: (state, { payload }) => ({
-      ...state,
-      inAccessibilityMode: payload
-    })
+    }
   },
   initialState
 );
