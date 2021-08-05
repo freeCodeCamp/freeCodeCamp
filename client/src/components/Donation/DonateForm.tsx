@@ -278,20 +278,29 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
       theme
     } = this.props;
     const { donationAmount, donationDuration } = this.state;
-
     const isOneTime = donationDuration === 'onetime';
+    const formlabel = `${t(
+      isOneTime ? 'donate.confirm-2' : 'donate.confirm-3',
+      { usd: donationAmount / 100 }
+    )}:`;
+
+    const walletlabel = `${t(
+      isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1.',
+      { usd: donationAmount / 100 }
+    )}:`;
+    const priorityTheme = defaultTheme ? defaultTheme : theme;
+
+    console.log({ priorityTheme, defaultTheme, theme });
 
     return (
       <div>
-        {isOneTime ? (
-          <b>
-            {t('donate.confirm-1')} {donationAmount / 100}:
-          </b>
-        ) : (
-          <b>{t('donate.confirm-3', { usd: donationAmount / 100 })}:</b>
-        )}
+        <b>{formlabel}</b>
         <Spacer />
-        <WalletsWrapper />
+        <WalletsWrapper
+          amount={donationAmount}
+          label={walletlabel}
+          theme={priorityTheme}
+        />
         <div className='donate-btn-group'>
           <PaypalButton
             addDonation={addDonation}
@@ -301,7 +310,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
             isSubscription={isOneTime ? false : true}
             onDonationStateChange={this.onDonationStateChange}
             skipAddDonation={!isSignedIn}
-            theme={defaultTheme ? defaultTheme : theme}
+            theme={priorityTheme}
           />
         </div>
       </div>

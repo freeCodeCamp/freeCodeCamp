@@ -307,6 +307,8 @@
     "confirm-2": "Confirm your one-time donation of ${{usd}}",
     "confirm-3": "Confirm your donation of ${{usd}} / month",
     "confirm-4": "Confirm your donation of ${{usd}} / year",
+    "wallet-label": "${{usd}} donation to freeCodeCamp",
+    "wallet-label-1": "${{usd}} / month donation to freeCodeCamp",
     "your-donation": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world.",
     "your-donation-2": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each month.",
     "your-donation-3": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each year.",

@@ -20,6 +20,13 @@ interface WalletsButtonProps {
   stripe: Stripe | null;
 }
 
+const defaultConfig = {
+  amount: 5,
+  theme: 'dark',
+  label: ''
+};
+
+const WalletConfig = React.createContext(defaultConfig);
 const { stripePublicKey }: { stripePublicKey: string | null } = envData as {
   stripePublicKey: string | null;
 };
@@ -45,6 +52,8 @@ class WalletsButton extends React.Component<
     };
   }
 
+  static contextType = WalletConfig;
+
   async componentDidUpdate(): Promise<void> {
     const { stripe } = this.props;
 
@@ -59,8 +68,8 @@ class WalletsButton extends React.Component<
       country: 'US',
       currency: 'usd',
       total: {
-        label: 'Monthly subscription',
-        amount: 100
+        label: this.context.label,
+        amount: this.context.amount
       },
       requestPayerName: true,
       requestPayerEmail: true,
@@ -91,7 +100,7 @@ class WalletsButton extends React.Component<
       errorMessage,
       paymentMethod
     } = this.state;
-    console.log(this.state);
+    console.log(this.context);
     return (
       <form>
         {canMakePayment && (
@@ -109,7 +118,7 @@ class WalletsButton extends React.Component<
               style: {
                 paymentRequestButton: {
                   type: 'default',
-                  theme: 'dark',
+                  theme: this.context.theme === 'night' ? 'light' : 'dark',
                   height: '43px'
                 }
               },
@@ -135,10 +144,28 @@ const InjectedCheckoutForm = () => (
 
 const stripePromise = loadStripe(stripePublicKey as string);
 
-const WalletsWrapper = (): JSX.Element => (
-  <Elements stripe={stripePromise}>
-    <InjectedCheckoutForm />
-  </Elements>
+interface WrapperProps {
+  label: string;
+  amount: number;
+  theme: string;
+}
+
+const WalletsWrapper = ({
+  label,
+  amount,
+  theme
+}: WrapperProps): JSX.Element => (
+  <WalletConfig.Provider
+    value={{
+      label,
+      amount,
+      theme
+    }}
+  >
+    <Elements stripe={stripePromise}>
+      <InjectedCheckoutForm />
+    </Elements>
+  </WalletConfig.Provider>
 );
 
 export default WalletsWrapper;
