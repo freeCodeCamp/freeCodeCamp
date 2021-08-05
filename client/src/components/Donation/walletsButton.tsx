@@ -5,14 +5,24 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable camelcase */
 
-import { PaymentRequestButtonElement } from '@stripe/react-stripe-js';
-import { Stripe, StripeElements } from '@stripe/stripe-js';
+import {
+  PaymentRequestButtonElement,
+  Elements,
+  ElementsConsumer
+} from '@stripe/react-stripe-js';
+import { Stripe, StripeElements, loadStripe } from '@stripe/stripe-js';
+
 import React from 'react';
+import envData from '../../../../config/env.json';
 
 interface WalletsButtonProps {
   elements: StripeElements | null;
   stripe: Stripe | null;
 }
+
+const { stripePublicKey }: { stripePublicKey: string | null } = envData as {
+  stripePublicKey: string | null;
+};
 
 interface WalletsButtonState {
   canMakePayment: boolean;
@@ -49,11 +59,12 @@ class WalletsButton extends React.Component<
       country: 'US',
       currency: 'usd',
       total: {
-        label: 'Demo total',
+        label: 'Monthly subscription',
         amount: 100
       },
       requestPayerName: true,
-      requestPayerEmail: true
+      requestPayerEmail: true,
+      disableWallets: ['browserCard']
     });
 
     this.paymentRequest.on('paymentmethod', async (event: any) => {
@@ -97,7 +108,7 @@ class WalletsButton extends React.Component<
             options={{
               style: {
                 paymentRequestButton: {
-                  type: 'donate',
+                  type: 'default',
                   theme: 'dark',
                   height: '43px'
                 }
@@ -114,4 +125,20 @@ class WalletsButton extends React.Component<
   }
 }
 
-export default WalletsButton;
+const InjectedCheckoutForm = () => (
+  <ElementsConsumer>
+    {({ stripe, elements }) => (
+      <WalletsButton elements={elements} stripe={stripe} />
+    )}
+  </ElementsConsumer>
+);
+
+const stripePromise = loadStripe(stripePublicKey as string);
+
+const WalletsWrapper = (): JSX.Element => (
+  <Elements stripe={stripePromise}>
+    <InjectedCheckoutForm />
+  </Elements>
+);
+
+export default WalletsWrapper;

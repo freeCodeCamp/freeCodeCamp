@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-
 /* eslint-disable no-nested-ternary */
 import {
   Col,
@@ -11,8 +10,6 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
-import { Elements, ElementsConsumer } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
 
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
@@ -41,7 +38,7 @@ import DonateCompletion from './DonateCompletion';
 
 import type { AddDonationData } from './PaypalButton';
 import PaypalButton from './PaypalButton';
-import WalletsButton from './walletsButton';
+import WalletsWrapper from './walletsButton';
 
 import './Donation.css';
 
@@ -294,9 +291,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
           <b>{t('donate.confirm-3', { usd: donationAmount / 100 })}:</b>
         )}
         <Spacer />
-        <Elements stripe={stripePromise}>
-          <InjectedCheckoutForm />
-        </Elements>
+        <WalletsWrapper />
         <div className='donate-btn-group'>
           <PaypalButton
             addDonation={addDonation}
@@ -392,16 +387,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
   }
 }
 
-const InjectedCheckoutForm = () => (
-  <ElementsConsumer>
-    {({ stripe, elements }) => (
-      <WalletsButton elements={elements} stripe={stripe} />
-    )}
-  </ElementsConsumer>
-);
-
 DonateForm.displayName = 'DonateForm';
-const stripePromise = loadStripe('pk_test_xM2wpbgtyotYqFCK6Ss6noxP008nxRyaE9');
 
 export default connect(
   mapStateToProps,
