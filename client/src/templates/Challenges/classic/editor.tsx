@@ -300,9 +300,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     data.editor = editor;
 
     const storedAccessibilityModes = () => {
-      const accessibilityMode = {
-        isAccessibilityModeOn: props.inAccessibilityMode
-      };
+      const accessibilityMode = props.inAccessibilityMode;
 
       type AccessibilityMode = typeof accessibilityMode;
 
@@ -319,7 +317,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         });
       }
 
-      return accessibility?.isAccessibilityModeOn ?? false;
+      return accessibility;
     };
 
     const accessibilityMode = storedAccessibilityModes();
