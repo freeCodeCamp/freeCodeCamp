@@ -1,6 +1,6 @@
 ---
 id: 587d7790367417b2b2512aaf
-title: Faça com que os links fiquem navegáveis ​​com chaves de acesso HTML
+title: Fazer com que os links fiquem navegáveis ​​com chaves de acesso HTML
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQvmaTp'
 forumTopicId: 301021

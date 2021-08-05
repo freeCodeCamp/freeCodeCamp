@@ -1,6 +1,6 @@
 ---
 id: 587d7dbe367417b2b2512bb9
-title: Use @for para criar um laço em Sass
+title: Usar @for para criar um laço em Sass
 challengeType: 0
 forumTopicId: 301462
 dashedName: use-for-to-create-a-sass-loop

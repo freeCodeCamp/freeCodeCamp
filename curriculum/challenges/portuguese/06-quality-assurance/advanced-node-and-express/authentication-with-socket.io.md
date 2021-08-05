@@ -1,6 +1,6 @@
 ---
 id: 589fc831f9fc0f352b528e77
-title: Autenticação com Socket.IO
+title: Autenticar com o Socket.IO
 challengeType: 2
 forumTopicId: 301548
 dashedName: authentication-with-socket-io

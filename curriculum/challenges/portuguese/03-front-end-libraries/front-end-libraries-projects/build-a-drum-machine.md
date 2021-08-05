@@ -1,6 +1,6 @@
 ---
 id: 587d7dbc367417b2b2512bae
-title: Crie uma bateria eletrônica
+title: Criar uma bateria eletrônica
 challengeType: 3
 forumTopicId: 301370
 dashedName: build-a-drum-machine

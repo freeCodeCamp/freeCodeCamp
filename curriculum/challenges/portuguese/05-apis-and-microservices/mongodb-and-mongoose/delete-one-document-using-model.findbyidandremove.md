@@ -1,6 +1,6 @@
 ---
 id: 587d7fb8367417b2b2512c10
-title: Exclua um documento usando model.findByIdAndRemove
+title: Excluir um documento usando model.findByIdAndRemove
 challengeType: 2
 forumTopicId: 301539
 dashedName: delete-one-document-using-model-findbyidandremove
