@@ -26,7 +26,7 @@ The first `console.log` will display the value `6`, and the second will display 
 
 # --instructions--
 
-Use the `.pop()` function to remove the last item from `myArray`, assigning the popped off value to `removedFromMyArray`.
+Use the `.pop()` function to remove the last item from `myArray` and assign the popped off value to a new variable, `removedFromMyArray`.
 
 # --hints--
 
@@ -69,7 +69,7 @@ assert(
 ## --after-user-code--
 
 ```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 ## --seed-contents--
@@ -79,7 +79,7 @@ assert(
 const myArray = [["John", 23], ["cat", 2]];
 
 // Only change code below this line
-const removedFromMyArray = 0;
+
 ```
 
 # --solutions--

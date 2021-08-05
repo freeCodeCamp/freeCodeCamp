@@ -24,7 +24,7 @@ const removedFromOurArray = ourArray.shift();
 
 # --instructions--
 
-Use the `.shift()` function to remove the first item from `myArray`, assigning the "shifted off" value to `removedFromMyArray`.
+Use the `.shift()` function to remove the first item from `myArray` and assign the "shifted off" value to a new variable, `removedFromMyArray`.
 
 # --hints--
 
@@ -65,7 +65,7 @@ assert(
 ## --after-user-code--
 
 ```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 ## --seed-contents--
@@ -75,7 +75,7 @@ assert(
 const myArray = [["John", 23], ["dog", 3]];
 
 // Only change code below this line
-const removedFromMyArray = 0;
+
 ```
 
 # --solutions--
