@@ -54,7 +54,6 @@ interface EditorProps {
   executeChallenge: (isShouldCompletionModalOpen?: boolean) => void;
   ext: ExtTypes;
   fileKey: FileKeyTypes;
-  inAccessibilityMode: boolean;
   initialEditorContent: string;
   initialExt: string;
   output: string[];
@@ -292,7 +291,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     editorRef.current = editor;
     data.editor = editor;
 
-    const storedAccessibilityModes = () => {
+    const storedAccessibilityMode = () => {
       const accessibility = store.get('accessibilityMode') as boolean;
       if (!accessibility) {
         store.set('accessibilityMode', false);
@@ -309,13 +308,13 @@ const Editor = (props: EditorProps): JSX.Element => {
       return accessibility;
     };
 
-    const accessibilityMode = storedAccessibilityModes();
+    const accessibilityMode = storedAccessibilityMode();
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
-    if (props.canFocus && !props.inAccessibilityMode) {
+    if (props.canFocus && !accessibilityMode) {
       // TODO: only one Editor should be calling for focus at once.
       editor.focus();
     } else focusOnHotkeys();
@@ -358,12 +357,12 @@ const Editor = (props: EditorProps): JSX.Element => {
       label: 'Toggle Accessibility Mode',
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E],
       run: () => {
-        const currentAccessibility = storedAccessibilityModes();
+        const currentAccessibility = storedAccessibilityMode();
         
         store.set( 'accessibilityMode', !currentAccessibility);
 
         editor.updateOptions({
-          accessibilitySupport: storedAccessibilityModes() ? 'on' : 'auto',
+          accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto',
         });
       }
     });
