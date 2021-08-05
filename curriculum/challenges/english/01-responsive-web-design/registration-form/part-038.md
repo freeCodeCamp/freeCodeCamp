@@ -11,10 +11,22 @@ Center the `h1` and `p` element, by giving them a `margin` of `1em auto`, and ce
 
 # --hints--
 
-Test 1
+You should use a comma-separated element selector to style the `h1` and `p` elements.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('h1, p'));
+```
 
+You should use a `margin` of `1em auto` to center the `h1` and `p` elements.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('h1, p')?.margin, '1em auto');
+```
+
+You should use a `text-align` of `center` to center the `h1` and `p` text.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('h1, p')?.textAlign, 'center');
 ```
 
 # --seed--

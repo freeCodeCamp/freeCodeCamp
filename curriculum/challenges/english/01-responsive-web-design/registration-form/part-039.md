@@ -7,14 +7,38 @@ dashedName: part-39
 
 # --description--
 
-Center the `form` element, by giving it a `margin` of `0 auto`. Then, fix its size to maximum `width` of `500px`, and a min-width of `300px`. In between that range, allow it to have a `width` of `60vw`.
+Center the `form` element, by giving it a `margin` of `0 auto`. Then, fix its size to a maximum `width` of `500px`, and a minimum width of `300px`. In between that range, allow it to have a `width` of `60vw`.
 
 # --hints--
 
-Test 1
+You should use a `form` selector to style the `form` element.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('form'));
+```
 
+You should give the `form` a `margin` of `0 auto`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('form')?.margin, '0 auto');
+```
+
+You should give the `form` a `max-width` of `500px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('form')?.maxWidth, '500px');
+```
+
+You should give the `form` a `min-width` of `300px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('form')?.minWidth, '300px');
+```
+
+You should give the `form` a `width` of `60vw`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('form')?.width, '60vw');
 ```
 
 # --seed--

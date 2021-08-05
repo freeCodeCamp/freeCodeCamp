@@ -13,7 +13,23 @@ Start by changing the font to `Tahoma`, and the font size to `16px` in the `body
 
 # --hints--
 
+You should use the `font-family` property to change the font.
 
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily);
+```
+
+You should set the `font-family` property to `Tahoma`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily, 'Tahoma');
+```
+
+You should set the `font-size` property to `16px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px');
+```
 
 # --seed--
 
