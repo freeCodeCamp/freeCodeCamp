@@ -215,54 +215,6 @@ export default function donateBoot(app, done) {
       });
   }
 
-  /* async function createStripeSession(req, res) {
-    console.log('createStripeSession');
-    const {
-      body,
-      body: { donationAmount, donationDuration }
-    } = req;
-    console.log(donationAmount, donationDuration);
-    if (!body) {
-      return res
-        .status(500)
-        .send({ type: 'danger', message: 'Request has not completed.' });
-    }
-    const isSubscription = donationDuration !== 'onetime';
-    const getSKUId = () => {
-      const { id } = onetimeSKUConfig[deploymentEnv || 'staging'].find(
-        skuConfig => skuConfig.amount === `${donationAmount}`
-      );
-      return id;
-    };
-    const price = isSubscription
-      ? `${durationsConfig[donationDuration]}-donation-${donationAmount}`
-      : getSKUId();
-
-    try {
-      const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card'],
-        line_items: [
-          {
-            price,
-            quantity: 1
-          }
-        ],
-        metadata: { ...body },
-        mode: isSubscription ? 'subscription' : 'payment',
-        success_url: donationUrls.successUrl,
-        cancel_url: donationUrls.cancelUrl
-      });
-
-      return res.status(200).json({ id: session.id });
-    } catch (err) {
-      log(err.message);
-      return res.status(500).send({
-        type: 'danger',
-        message: 'Something went wrong.'
-      });
-    }
-  } */
-
   function updatePaypal(req, res) {
     console.log('updatePaypal');
     const { headers, body } = req;

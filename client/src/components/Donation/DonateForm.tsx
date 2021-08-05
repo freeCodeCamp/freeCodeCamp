@@ -130,6 +130,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     this.handleSelectDuration = this.handleSelectDuration.bind(this);
     this.hideAmountOptionsCB = this.hideAmountOptionsCB.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
+    this.postStripeDonation = this.postStripeDonation.bind(this);
   }
 
   componentWillUnmount() {
@@ -187,6 +188,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
   postStripeDonation(token) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
     window.scrollTo(0, 0);
+    console.log(token);
 
     // change the donation modal button label to close
     // or display the close button for the cert donation section

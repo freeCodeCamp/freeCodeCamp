@@ -83,8 +83,7 @@ class WalletsButton extends React.Component<
 
     this.paymentRequest.on('token', (event: any) => {
       const { token, payerEmail, payerName } = event;
-      // this.context.postStripeDonation({ token, payerEmail, payerName });
-      console.log({ token, payerEmail, payerName });
+      this.context.postStripeDonation({ token, payerEmail, payerName });
     });
 
     const canMakePaymentRes = await this.paymentRequest.canMakePayment();
