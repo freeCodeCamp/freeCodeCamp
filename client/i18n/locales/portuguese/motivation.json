@@ -1,818 +1,781 @@
 {
   "compliments": [
-    "Over the top!",
-    "Down the rabbit hole we go!",
-    "Bring that rain!",
-    "Target acquired.",
-    "Feel that need for speed!",
-    "You've got guts!",
-    "We have liftoff!",
-    "To infinity and beyond!",
-    "Encore!",
-    "Onward!",
-    "Challenge destroyed!",
-    "It's on like Donkey Kong!",
-    "Power level? It's over 9000!",
-    "Coding spree!",
-    "Code long and prosper.",
-    "The crowd goes wild!",
-    "One for the guinness book!",
-    "Flawless victory!",
-    "Most efficient!",
-    "You've got the touch!",
-    "You're on fire!",
-    "The town is now red!",
-    "To the nines!",
-    "To the Batmobile!",
-    "Pull out all the stops!",
-    "You're a wizard, Harry!",
-    "You're an all star!",
-    "Way to go!",
-    "Outta sight!",
-    "You're crushing it!",
-    "What sorcery is this?",
-    "The world rejoices!",
-    "That's the way it's done!",
-    "You rock!",
-    "Woo-hoo!",
-    "We knew you could do it!",
-    "Hyper Combo Finish!",
-    "Nothing but net!",
-    "Boom-shakalaka!",
-    "You're a shooting star!",
-    "You're unstoppable!",
-    "Way cool!",
-    "Walk on that sunshine!",
-    "Keep on trucking!",
-    "Off the charts!",
-    "There is no spoon!",
-    "Cranked it up to 11!",
-    "Escape velocity reached!",
-    "You make this look easy!",
-    "Passed with flying colors!",
-    "You've got this!",
-    "Happy, happy, joy, joy!",
-    "Tomorrow, the world!",
-    "Your powers combined!",
-    "It's alive. It's alive!",
-    "Sonic Boom!",
-    "Here's looking at you, Code!",
-    "Ride like the wind!",
-    "Legen - wait for it - dary!",
-    "Ludicrous Speed! Go!",
-    "Most triumphant!",
-    "One loop to rule them all!",
-    "By the power of Grayskull!",
-    "You did it!",
-    "Storm that castle!",
-    "Face-melting guitar solo!",
-    "Checkmate!",
-    "Bodacious!",
-    "Tubular!",
-    "You're outta sight!",
-    "Keep calm and code on!",
-    "Even sad panda smiles!",
-    "Even grumpy cat approves!",
-    "Kool Aid Man says oh yeah!",
-    "Bullseye!",
-    "Far out!",
-    "You're heating up!",
-    "Standing ovation!",
-    "Nice one!",
-    "All right!",
-    "Hasta la vista, challenge!",
-    "Terminated.",
-    "Off the hook!",
+    "Top de linha!",
+    "Agora não para mais!",
+    "Fazendo chover!",
+    "Alvo na mira.",
+    "Pisa fundo!",
+    "Uau, que sucesso!",
+    "Pronto para decolar!",
+    "Ao infinito e além!",
+    "Mais um, mais um!",
+    "Siga em frente!",
+    "Desafio concluído e destruído!",
+    "O nível de poder? Está acima dos 9000!",
+    "Loucura da programação!",
+    "Programação longa e próspera.",
+    "E a galera vai à loucura!",
+    "Batendo recordes!",
+    "Vitória perfeita!",
+    "Que eficiência!",
+    "Você tem o dom!",
+    "Tá com tudo!",
+    "É festa na cidade!",
+    "Vamos nessa!",
+    "Para o Batmóvel!",
+    "Solta o freio!",
+    "Você é um mago, Harry!",
+    "Você é uma estrela!",
+    "Muito bem!",
+    "Mandou essa pra fora do estádio!",
+    "Você tá arrebentando!",
+    "Que bruxaria é essa?",
+    "E o mundo está em paz novamente!",
+    "É assim que se faz!",
+    "Fantástico!",
+    "U-húúúúúú!",
+    "A gente já sabia!",
+    "Finalização com combo!",
+    "É bola na rede!",
+    "Você é imparável!",
+    "Legal demais!",
+    "Essa nem tá no mapa!",
+    "Não existe colher!",
+    "Numa escala de 1 a 10? 11!",
+    "Na velocidade da luz!",
+    "Você faz parecer fácil!",
+    "Passou com estrelinhas!",
+    "Tá tudo dominado!",
+    "Mas que alegria!",
+    "E amanhã, tentar dominar o mundo!",
+    "Seus poderes combinados!",
+    "Está vivo. Está vivo!",
+    "Xiiii, código. Tá olhando pra você!",
+    "Legen - espere um pouco - dário!",
+    "Um laço para todos dominar!",
+    "Pelos poderes de Grayskull!",
+    "Você conseguiu!",
+    "Atacaaaaaar!",
+    "Xeque mate!",
+    "Sem enxergar ninguém na frente!",
+    "Keep calm e segue programando!",
+    "Fazendo até um panda triste sorrir!",
+    "Fazendo até o grumpy cat sorrir!",
+    "Na mosca!",
+    "Tá esquentando!",
+    "E a galera aplaude de pé!",
+    "Boa!",
+    "Isso aí!",
+    "Hasta la vista, desafio!",
+    "Exterminado.",
     "Thundercats, Hooo!",
-    "Shiver me timbers!",
-    "Raise the roof!",
-    "Bingo!",
-    "Even honeybadger cares!",
-    "Helm, Warp Nine. Engage!",
-    "Gotta code 'em all!",
-    "Spool up the FTL drive!",
-    "Cool beans!",
-    "They're in another castle.",
-    "Power UP!",
-    "Pikachu chooses you!",
-    "I gotta have more cow bell.",
-    "Gotta go fast!",
-    "Yipee!",
+    "Ui, isso me dá arrepios!",
+    "Tem que codar todos eles!",
+    "Pikachu, eu escolho você!",
+    "Eeeeeeiiiitaaaaa!",
     "Cowabunga!",
-    "Moon Prism Power!",
-    "Plus Ultra!"
+    "Pelo poder do Prisma Lunar!",
+    "Zerou!"
   ],
   "motivationalQuotes": [
     {
-      "quote": "Whatever you are, be a good one.",
+      "quote": "Seja lá o que você fizer, seja bom nisso.",
       "author": "Abraham Lincoln"
     },
     {
-      "quote": "A change in perspective is worth 80 IQ points.",
+      "quote": "Uma mudança de perspectiva já faz subir 80 pontos de QI.",
       "author": "Alan Kay"
     },
     {
-      "quote": "The best way to predict the future is to invent it.",
+      "quote": "A melhor maneira de prever o futuro é inventá-lo.",
       "author": "Alan Kay"
     },
     {
-      "quote": "The future is not laid out on a track. It is something that we can decide, and to the extent that we do not violate any known laws of the universe, we can probably make it work the way that we want to.",
+      "quote": "O futuro não é um caminho a ser percorrido. É algo que podemos decidir, e enquanto não violarmos alguma lei conhecida do universo, possivelmente, podemos fazer o futuro sair do jeito que queremos que ele seja.",
       "author": "Alan Kay"
     },
     {
-      "quote": "We can only see a short distance ahead, but we can see plenty there that needs to be done.",
+      "quote": "Só podemos enxergar uma pequena distância adiante, mas já podemos ver ali que há muito a ser feito.",
       "author": "Alan Turing"
     },
     {
-      "quote": "In the depth of winter, I finally learned that within me there lay an invincible summer.",
+      "quote": "Na parte mais intensa do inverno, finalmente aprendi que, dentro de mim, existe um verão invencível.",
       "author": "Albert Camus"
     },
     {
-      "quote": "A person who never made a mistake never tried anything new.",
+      "quote": "Quem nunca cometeu um erro jamais tentou fazer algo novo.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "Creativity is intelligence having fun.",
+      "quote": "Criatividade é a inteligência se divertindo.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "I have no special talents. I am only passionately curious.",
+      "quote": "Eu não tenho talentos especiais. Sou apenas apaixonadamente curioso.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "Life is like riding a bicycle. To keep your balance, you must keep moving.",
+      "quote": "A vida é como andar de bicicleta. Para manter o equilíbrio, precisamos continuar em frente.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "Make everything as simple as possible, but not simpler.",
+      "quote": "Torne tudo o mais simples possível, mas não mais simples.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "Never memorize something that you can look up.",
+      "quote": "Nunca memorize algo que você pode pesquisar e encontrar.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "Once we accept our limits, we go beyond them.",
+      "quote": "É quando você aceita seus limites que você os ultrapassa.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "Play is the highest form of research.",
+      "quote": "Jogar é a forma mais nobre de pesquisa.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "We cannot solve our problems with the same thinking we used when we created them.",
+      "quote": "Não podemos resolver problemas com o mesmo pensamento que usamos quando os criamos.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "Wisdom is not a product of schooling but of the lifelong attempt to acquire it.",
+      "quote": "A sabedoria não é um produto da escola, mas da tentativa de adquiri-la, que leva uma vida.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "Your imagination is your preview of life's coming attractions.",
+      "quote": "Sua imaginação é a prévia das atrações por vir nas suas vidas.",
       "author": "Albert Einstein"
     },
     {
-      "quote": "There is only one corner of the universe you can be certain of improving, and that's your own self.",
+      "quote": "Há apenas um canto do universo que você pode melhorar com certeza: você mesmo.",
       "author": "Aldous Huxley"
     },
     {
-      "quote": "The most common way people give up their power is by thinking they don't have any.",
+      "quote": "A maneira mais comum de as pessoas desistirem de seu poder é pensarem que não o têm.",
       "author": "Alice Walker"
     },
     {
-      "quote": "Follow your inner moonlight. Don't hide the madness.",
+      "quote": "Siga sua luz da lua interna. Não oculte a loucura.",
       "author": "Allen Ginsberg"
     },
     {
-      "quote": "The most difficult thing is the decision to act. The rest is merely tenacity.",
+      "quote": "A coisa mais difícil é a decisão de agir. O resto é mera tenacidade.",
       "author": "Amelia Earhart"
     },
     {
-      "quote": "Life shrinks or expands in proportion with one's courage.",
+      "quote": "A vida se encolhe ou se amplia na mesma proporção de sua coragem.",
       "author": "Anaïs Nin"
     },
     {
-      "quote": "Weeks of programming can save you hours of planning.",
-      "author": "Unknown"
+      "quote": "Semanas de programação podem economicar horas de planejamento.",
+      "author": "Desconhecido"
     },
     {
-      "quote": "Quality is not an act, it is a habit.",
-      "author": "Aristotle"
+      "quote": "Qualidade não é um ato, é um hábito.",
+      "author": "Aristóteles"
     },
     {
-      "quote": "Start where you are. Use what you have. Do what you can.",
+      "quote": "Comece onde está. Use o que tem. Faça o que puder.",
       "author": "Arthur Ashe"
     },
     {
-      "quote": "Nothing is impossible, the word itself says \"I'm possible\"!",
-      "author": "Audrey Hepburn"
-    },
-    {
-      "quote": "Every strike brings me closer to the next home run.",
-      "author": "Babe Ruth"
-    },
-    {
-      "quote": "By failing to prepare, you are preparing to fail.",
+      "quote": "Ao errar na preparação, você está se preparando para o erro.",
       "author": "Benjamin Franklin"
     },
     {
-      "quote": "Tell me and I forget.  Teach me and I remember.  Involve me and I learn.",
+      "quote": "Diga-me e eu esquecerei.  Ensine-me e eu me lembrarei.  Envolva-me e eu aprenderei.",
       "author": "Benjamin Franklin"
     },
     {
-      "quote": "Well done is better than well said.",
+      "quote": "Bem feito é melhor do que bem dito.",
       "author": "Benjamin Franklin"
     },
     {
-      "quote": "There are no short cuts to any place worth going.",
+      "quote": "Não há atalhos para os lugares onde vale a pena ir.",
       "author": "Beverly Sills"
     },
     {
-      "quote": "Controlling complexity is the essence of computer programming.",
+      "quote": "Controlar a complexidade é a essência da programação.",
       "author": "Brian Kernighan"
     },
     {
-      "quote": "I fear not the man who has practiced 10,000 kicks once, but I fear the man who has practiced one kick 10,000 times.",
+      "quote": "Não temo aquele que praticou 10 mil golpes uma única vez. Temo o homem que praticou um golpe 10 mil vezes.",
       "author": "Bruce Lee"
     },
     {
-      "quote": "There are far, far better things ahead than any we leave behind.",
+      "quote": "Existem coisas muito, muito melhores adiante do que aquelas que deixamos para trás.",
       "author": "C.S. Lewis"
     },
     {
-      "quote": "We are what we believe we are.",
+      "quote": "Somos aquilo que acreditamos ser.",
       "author": "C.S. Lewis"
     },
     {
-      "quote": "With the possible exception of the equator, everything begins somewhere.",
+      "quote": "Com a possível exceção da linha do equador, tudo começa em algum lugar.",
       "author": "C.S. Lewis"
     },
     {
-      "quote": "You are never too old to set another goal, or to dream a new dream.",
+      "quote": "Nunca se é velho demais para se definir uma nova meta, ou para sonhar novamente.",
       "author": "C.S. Lewis"
     },
     {
-      "quote": "Somewhere, something incredible is waiting to be known.",
+      "quote": "Em algum lugar, algo incrível está esperando ser descoberto.",
       "author": "Carl Sagan"
     },
     {
-      "quote": "If you're not making mistakes, then you're not making decisions.",
+      "quote": "Se não estiver cometendo erros, também não estará tomando decisões.",
       "author": "Catherine Cook"
     },
     {
-      "quote": "Find what you love and let it kill you.",
+      "quote": "Encontre o que você ama e deixe que te mate.",
       "author": "Charles Bukowski"
     },
     {
-      "quote": "What matters most is how well you walk through the fire.",
+      "quote": "O que mais importa é sua capacidade de caminhar pelo fogo.",
       "author": "Charles Bukowski"
     },
     {
-      "quote": "It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change.",
+      "quote": "Não é a espécie mais forte nem a mais inteligente que sobrevive. É aquela que melhor responde às mudanças.",
       "author": "Charles Darwin"
     },
     {
-      "quote": "Life is 10% what happens to you and 90% how you react to it.",
+      "quote": "A vida é 10% o que acontece com você e 90% a forma como você reage a ela.",
       "author": "Charles R. Swindoll"
     },
     {
-      "quote": "You will do foolish things, but do them with enthusiasm.",
+      "quote": "Faça coisas estúpidas, mas faça-as com entusiasmo.",
       "author": "Colette"
     },
     {
-      "quote": "It does not matter how slowly you go as long as you do not stop.",
-      "author": "Confucius"
+      "quote": "Não importa se você é lento, desde que você não pare.",
+      "author": "Confúcio"
     },
     {
-      "quote": "Real knowledge is to know the extent of one's ignorance.",
-      "author": "Confucius"
+      "quote": "O conhecimento verdadeiro é ter noção da extensão de sua ignorância.",
+      "author": "Confúcio"
     },
     {
-      "quote": "The past cannot be changed. The future is yet in your power.",
-      "author": "Confucius"
+      "quote": "O passado não pode ser mudado. O futuro ainda está em nossas mãos.",
+      "author": "Confúcio"
     },
     {
-      "quote": "Looking at code you wrote more than two weeks ago is like looking at code you are seeing for the first time.",
+      "quote": "Olhar para o código que você escreveu há mais de duas semanas é como olhar para um código que você está vendo pela primeira vez.",
       "author": "Dan Hurvitz"
     },
     {
-      "quote": "Someday is not a day of the week.",
+      "quote": "Algum dia não é um dia da semana.",
       "author": "Denise Brennan-Nelson"
     },
     {
-      "quote": "UNIX is simple.  It just takes a genius to understand its simplicity.",
+      "quote": "UNIX é simples.  Basta ser um gênio para entender sua simplicidade.",
       "author": "Dennis Ritchie"
     },
     {
-      "quote": "Computers are good at following instructions, but not at reading your mind.",
+      "quote": "Os computadores são ótimos em seguir instruções, mas péssimos leitores de mentes.",
       "author": "Donald Knuth"
     },
     {
-      "quote": "A good programmer is someone who always looks both ways before crossing a one-way street.",
+      "quote": "Um bom programador é aquele que sempre olha pros dois lados antes de cruzar uma rua de mão única.",
       "author": "Doug Linder"
     },
     {
-      "quote": "Tough times never last, but tough people do.",
+      "quote": "Tempos difíceis nunca duram. Pessoas difíceis, sim.",
       "author": "Dr. Robert Schuller"
     },
     {
-      "quote": "If things start happening, don't worry, don't stew, just go right along and you'll start happening too.",
+      "quote": "Se as coisas começarem a acontecer, não se preocupe, siga o seu caminho e também vai acontecer.",
       "author": "Dr. Seuss"
     },
     {
-      "quote": "Do not go gentle into that good night. Rage, rage against the dying of the light.",
-      "author": "Dylan Thomas"
-    },
-    {
-      "quote": "The question of whether computers can think is like the question of whether submarines can swim.",
+      "quote": "A questão de computadores poderem ou não pensar é como a questão dos submarinos poderem ou não nadar.",
       "author": "E.W. Dijkstra"
     },
     {
-      "quote": "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else.",
-      "author": "Eagleson's Law"
+      "quote": "Quando você escreve um código e não olha para ele por mais de seis meses, se dá conta que ele poderia ser escrito por qualquer outra pessoa.",
+      "author": "Lei de Eagleson"
     },
     {
-      "quote": "Do one thing every day that scares you.",
+      "quote": "Faça uma coisa assustadora por dia.",
       "author": "Eleanor Roosevelt"
     },
     {
-      "quote": "With the new day comes new strength and new thoughts.",
+      "quote": "Com o novo dia, vem a nova força e os novos pensamentos.",
       "author": "Eleanor Roosevelt"
     },
     {
-      "quote": "You must do the things you think you cannot do.",
+      "quote": "Você deve fazer coisas que acha que não consegue.",
       "author": "Eleanor Roosevelt"
     },
     {
-      "quote": "Light tomorrow with today.",
+      "quote": "Ilumine o amanhã com o dia de hoje.",
       "author": "Elizabeth Barrett Browning"
     },
     {
-      "quote": "Forever is composed of nows.",
+      "quote": "O sempre é composto de vários agoras.",
       "author": "Emily Dickinson"
     },
     {
-      "quote": "Computer science education cannot make anybody an expert programmer any more than studying brushes and pigment can make somebody an expert painter.",
+      "quote": "A educação em ciência da computação pode fazer, de qualquer um, um programador especialista da mesma forma que o estudo de pincéis e pigmentos pode tornar alguém um especialista em pintura.",
       "author": "Eric Raymond"
     },
     {
-      "quote": "If you don't risk anything, you risk even more.",
+      "quote": "Se você não arriscar nada, está arriscando ainda mais.",
       "author": "Erica Jong"
     },
     {
-      "quote": "The world breaks everyone, and afterward, many are strong at the broken places.",
+      "quote": "O mundo quebra todos nós. Mais tarde, muitos estão fortes em locais quebrados.",
       "author": "Ernest Hemingway"
     },
     {
-      "quote": "There is nothing noble in being superior to your fellow man; true nobility is being superior to your former self.",
+      "quote": "Não há nada de nobre em ser superior ao seu próximo; a nobreza verdadeira é ser superior a si mesmo antigamente.",
       "author": "Ernest Hemingway"
     },
     {
-      "quote": "Never confuse a single defeat with a final defeat.",
+      "quote": "Nunca confunda uma única derrota com a derrota final.",
       "author": "F. Scott Fitzgerald"
     },
     {
-      "quote": "I attribute my success to this - I never gave or took any excuse.",
+      "quote": "Eu atribuo meu sucesso a isso: eu nunca dei ou aceitei qualquer desculpa.",
       "author": "Florence Nightingale"
     },
     {
-      "quote": "The best revenge is massive success.",
+      "quote": "A melhor vingança é um sucesso estrondoso.",
       "author": "Frank Sinatra"
     },
     {
-      "quote": "The only limit to our realization of tomorrow, will be our doubts of today.",
+      "quote": "Os únicos limites para nossas realizações de amanhã serão as nossas dúvidas de hoje.",
       "author": "Franklin D. Roosevelt"
     },
     {
-      "quote": "Right or wrong, it's very pleasant to break something from time to time.",
+      "quote": "Não importa se é certo ou errado: é muito bom quebrar algo de tempos em tempos.",
       "author": "Fyodor Dostoevsky"
     },
     {
-      "quote": "The harder I work, the luckier I get.",
+      "quote": "Quanto mais eu trabalho, mais sorte eu tenho.",
       "author": "Gary Player"
     },
     {
-      "quote": "Giving up is the only sure way to fail.",
+      "quote": "Desistir é o único modo 100% certo de falhar.",
       "author": "Gena Showalter"
     },
     {
-      "quote": "The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards.",
+      "quote": "O único sistema verdadeiramente seguro é o desligado, preso em um bloco de concreto e trancafiado em um cofre de chumbo com guardas armados na porta.",
       "author": "Gene Spafford"
     },
     {
-      "quote": "A life spent making mistakes is not only more honorable, but more useful than a life spent doing nothing.",
+      "quote": "Uma vida que passou a cometer erros não só é mais honrada, como também mais útil do que uma vida que passou sem fazer nada.",
       "author": "George Bernard Shaw"
     },
     {
-      "quote": "First learn computer science and all the theory. Next develop a programming style. Then forget all that and just hack.",
+      "quote": "Primeiro, aprenda ciência da computação e toda a teoria. Depois, desenvolva um estilo de programação. Por fim, esqueça tudo e comece a hackear.",
       "author": "George Carrette"
     },
     {
-      "quote": "Discovering the unexpected is more important than confirming the known.",
+      "quote": "Descobrir o inesperado é mais importante do que confirmar o que já se sabe.",
       "author": "George Box"
     },
     {
-      "quote": "We only see what we know.",
+      "quote": "Só vemos o que conhecemos.",
       "author": "Goethe"
     },
     {
-      "quote": "Without hard work, nothing grows but weeds.",
+      "quote": "Sem o trabalho duro, tudo o que cresce são as ervas daninhas.",
       "author": "Gordon B. Hinckley"
     },
     {
-      "quote": "The function of good software is to make the complex appear to be simple.",
+      "quote": "A função do software bom é fazer com que o complexo pareça simples.",
       "author": "Grady Booch"
     },
     {
-      "quote": "When you know that you're capable of dealing with whatever comes, you have the only security the world has to offer.",
+      "quote": "Quando você sabe que é capaz de lidar com o que vier, você tem a única segurança que o mundo tem a oferecer.",
       "author": "Harry Browne"
     },
     {
-      "quote": "Pain is inevitable. Suffering is optional.",
+      "quote": "A dor é inevitável. O sofrimento é opcional.",
       "author": "Haruki Murakami"
     },
     {
-      "quote": "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.",
+      "quote": "Otimismo é a fé que leva ao sucesso. Nada pode ser conseguido sem esperança e confiança.",
       "author": "Helen Keller"
     },
     {
-      "quote": "The price of anything is the amount of life you exchange for it.",
+      "quote": "O preço de tudo é a quantidade de vida que você oferece em troca.",
       "author": "Henry David Thoreau"
     },
     {
-      "quote": "Whether you think you can or think you can't, you're right.",
+      "quote": "Se você pensa que pode, está certo. Se pensa que não, também está.",
       "author": "Henry Ford"
     },
     {
-      "quote": "The most exciting phrase to hear in science, the one that heralds discoveries, is not 'Eureka!' but 'Now that's funny…'",
+      "quote": "A expressão mais empolgante de se ouvir em ciência, aquela que leva às descobertas, não é 'Eureka!', é 'Que engraçado isso…'",
       "author": "Isaac Asimov"
     },
     {
-      "quote": "We are all failures. At least the best of us are.",
+      "quote": "Somos todos falhas. Os melhores de nós, ao menos.",
       "author": "J.M. Barrie"
     },
     {
-      "quote": "You can't wait for inspiration. You have to go after it with a club.",
+      "quote": "Não espere por inspiração. Corra atrás dela com um tacape.",
       "author": "Jack London"
     },
     {
-      "quote": "Don't wish it were easier, wish you were better.",
+      "quote": "Não espere que as coisas sejam mais fáceis, espere ser melhor.",
       "author": "Jim Rohn"
     },
     {
-      "quote": "By seeking and blundering we learn.",
+      "quote": "Buscando e errando, aprendemos.",
       "author": "Johann Wolfgang von Goethe"
     },
     {
-      "quote": "Knowing is not enough; we must apply. Wishing is not enough; we must do.",
+      "quote": "Saber não basta; devemos aplicar. Desejar não basta; devemos fazer.",
       "author": "Johann Wolfgang von Goethe"
     },
     {
-      "quote": "We first make our habits, then our habits make us.",
+      "quote": "Primeiro criamos nossos hábitos, depois, nossos hábitos nos fazem.",
       "author": "John Dryden"
     },
     {
-      "quote": "The power of imagination makes us infinite.",
+      "quote": "O poder da imaginação nos torna infinitos.",
       "author": "John Muir"
     },
     {
-      "quote": "May you live every day of your life.",
+      "quote": "Que você viva todos os dias de sua vida.",
       "author": "Jonathan Swift"
     },
     {
-      "quote": "Perseverance is failing 19 times and succeeding the 20th.",
+      "quote": "Perseverança é errar 19 vezes e ter sucesso na vigésima.",
       "author": "Julie Andrews"
     },
     {
-      "quote": "The work of today is the history of tomorrow, and we are its makers.",
+      "quote": "O trabalho de hoje é a história de amanhã, e somos nós que o fazemos.",
       "author": "Juliette Gordon Low"
     },
     {
-      "quote": "If you reveal your secrets to the wind, you should not blame the wind for revealing them to the trees.",
+      "quote": "Se você revelar seus segredos ao vento, não culpe o vento por revelá-los às árvores.",
       "author": "Kahlil Gibran"
     },
     {
-      "quote": "Optimism is an occupational hazard of programming; feedback is the treatment.",
+      "quote": "Otimismo é um perigo ocupacional em programação; o feedback é a cura.",
       "author": "Kent Beck"
     },
     {
-      "quote": "Opportunity does not knock, it presents itself when you beat down the door.",
+      "quote": "A oportunidade não bate à porta. Ela se apresenta quando você derruba a porta.",
       "author": "Kyle Chandler"
     },
     {
-      "quote": "To iterate is human, to recurse divine.",
+      "quote": "Iterar é humano; a recursão é divina.",
       "author": "Peter Deutsch"
     },
     {
-      "quote": "A good traveler has no fixed plans and is not intent on arriving.",
+      "quote": "Um bom viajante não tem planos fixos e não está focado em chegar.",
       "author": "Lao Tzu"
     },
     {
-      "quote": "An ant on the move does more than a dozing ox.",
+      "quote": "Uma formiga em movimento faz mais que um boi dormindo.",
       "author": "Lao Tzu"
     },
     {
-      "quote": "Do the difficult things while they are easy and do the great things while they are small. A journey of a thousand miles must begin with a single step.",
+      "quote": "Faça as coisas difíceis enquanto elas ainda são fáceis e faça as coisas grandes enquanto ainda são pequenas. Uma jornada de mil quilômetros começa com um único passo.",
       "author": "Lao Tzu"
     },
     {
-      "quote": "That's the thing about people who think they hate computers. What they really hate is lousy programmers.",
+      "quote": "Esse é o problema com as pessoas que acham que odeiam computadores. O que elas odeiam de fato são programadores ruins.",
       "author": "Larry Niven"
     },
     {
-      "quote": "It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them. They went out and happened to things.",
+      "quote": "Já percebi há muito tempo que pessoas de sucesso raramente pararam e esperaram que as coisas acontecessem a elas. Elas foram lá e aconteceram para as coisas.",
       "author": "Leonardo da Vinci"
     },
     {
-      "quote": "If you're any good at all, you know you can be better.",
+      "quote": "Se você, ao menos, é bom em algo, sabe que pode ser melhor.",
       "author": "Lindsay Buckingham"
     },
     {
-      "quote": "If people never did silly things, nothing intelligent would ever get done.",
+      "quote": "Se as pessoas não fizessem nada estúpido, nada de inteligente teria sido feito de fato.",
       "author": "Ludwig Wittgenstein"
     },
     {
-      "quote": "You only live once, but if you do it right, once is enough.",
+      "quote": "Você só vive uma vez, mas se fizer isso direito, uma vez só já basta.",
       "author": "Mae West"
     },
     {
-      "quote": "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+      "quote": "Viva como se fosse morrer amanhã. Aprenda como se fosse viver para sempre.",
       "author": "Mahatma Gandhi"
     },
     {
-      "quote": "Strength does not come from physical capacity. It comes from an indomitable will.",
+      "quote": "A força não vem da capacidade física. Ela vem de um desejo indomável.",
       "author": "Mahatma Gandhi"
     },
     {
-      "quote": "One person's 'paranoia' is another person's 'engineering redundancy'.",
+      "quote": "A 'paranoia' de uns é a 'redundância em engenharia' de outros.",
       "author": "Marcus J. Ranum"
     },
     {
-      "quote": "Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.",
+      "quote": "Não se deve temer nada na vida, somente compreender. Este é o momento de compreender mais, então temos de temer menos.",
       "author": "Marie Curie"
     },
     {
-      "quote": "If you have everything under control, you're not moving fast enough.",
+      "quote": "Se você tiver tudo sobre controle, não está rápido o suficiente.",
       "author": "Mario Andretti"
     },
     {
-      "quote": "Education: the path from cocky ignorance to miserable uncertainty.",
+      "quote": "Educação: o caminho da ignorância presunçosa à incerteza miserável.",
       "author": "Mark Twain"
     },
     {
-      "quote": "It ain't what you don't know that gets you into trouble. It's what you know for sure that just ain't so.",
+      "quote": "Não é o que você não sabe que causa o problema. É o que você sabe com certeza e que não é verdade.",
       "author": "Mark Twain"
     },
     {
-      "quote": "The secret of getting ahead is getting started.",
+      "quote": "O segredo de seguir em frente é começar.",
       "author": "Mark Twain"
     },
     {
-      "quote": "The two most important days in your life are the day you are born and the day you find out why.",
+      "quote": "Os dois dias mais importantes de sua vida são o dia que você nasceu e o dia que você descobriu o porquê.",
       "author": "Mark Twain"
     },
     {
-      "quote": "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails.",
+      "quote": "Daqui a vinte anos você estará mais arrependido pelas coisas que não fez do que pelas que fez. Então solte suas amarras. Afaste-se do porto seguro. Agarre o vento em suas velas.",
       "author": "Mark Twain"
     },
     {
-      "quote": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      "quote": "Qualquer idiota pode escrever código que um computador pode entender. Bons programadores escrevem código que humanos podem entender.",
       "author": "Martin Fowler"
     },
     {
-      "quote": "I know, somehow, that only when it is dark enough can you see the stars.",
+      "quote": "Eu sei, de algum modo, que somente quando está escuro o suficiente, podemos ver as estrelas.",
       "author": "Martin Luther King Jr."
     },
     {
-      "quote": "It is never too late to be what you might have been.",
+      "quote": "Nunca é tarde demais para ser o que você seria.",
       "author": "Mary Anne Evans"
     },
     {
-      "quote": "Nothing will work unless you do.",
+      "quote": "Nada trabalhará a seu favor se você não fizer isso.",
       "author": "Maya Angelou"
     },
     {
-      "quote": "We delight in the beauty of the butterfly, but rarely admit the changes it has gone through to achieve that beauty.",
+      "quote": "Sentimos prazer na beleza da borboleta, mas raramente admitimos as mudanças pelas quais ela passou para chegar àquela beleza.",
       "author": "Maya Angelou"
     },
     {
-      "quote": "We may encounter many defeats, but we must not be defeated.",
+      "quote": "Podemos encontrar muitas derrotas no caminho, mas não podemos jamais ser derrotados.",
       "author": "Maya Angelou"
     },
     {
-      "quote": "Everybody has talent, but ability takes hard work.",
+      "quote": "Todos têm talento. É a habilidade que necessita de trabalho árduo.",
       "author": "Michael Jordan"
     },
     {
-      "quote": "I've missed more than 9,000 shots during my career. I've lost almost 300 games. 26 times, I've been trusted to take the game winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed.",
+      "quote": "Eu errei mais de 9 mil arremessos em toda a minha carreira. Perdi quase 300 jogos. Em 26 vezes, confiaram em mim para fazer o arremesso da vitória e eu errei. Eu errei várias e várias vezes na minha vida. E é por isso que tive sucesso.",
       "author": "Michael Jordan"
     },
     {
-      "quote": "Impossible is just a big word thrown around by small men who find it easier to live in the world they've been given than to explore the power they have to change it. Impossible is not a fact. It's an opinion. Impossible is not a declaration. It's a dare. Impossible is potential. Impossible is temporary. Impossible is nothing.",
+      "quote": "Impossível é só uma palavra grande falada por pessoas pequenas que acham mais fácil viver em um mundo que eles receberam nas mãos do que explorar a força que eles têm de mudá-lo. O impossível não é um fato. É uma opinião. O impossível não é uma declaração. É um desafio. Impossível é um potencial. Impossível é temporário. O impossível é nada.",
       "author": "Muhammad Ali"
     },
     {
-      "quote": "A winner is a dreamer who never gives up.",
+      "quote": "Um vencedor é um sonhador que nunca desiste.",
       "author": "Nelson Mandela"
     },
     {
-      "quote": "It always seems impossible until it's done.",
+      "quote": "Sempre parece impossível até ser feito.",
       "author": "Nelson Mandela"
     },
     {
-      "quote": "Failure will never overtake me if my determination to succeed is strong enough.",
+      "quote": "Errar nunca me vencerá se minha determinação de ter sucesso for forte o suficiente.",
       "author": "Og Mandino"
     },
     {
-      "quote": "I am not young enough to know everything.",
+      "quote": "Não sou jovem o bastante para saber de tudo.",
       "author": "Oscar Wilde"
     },
     {
-      "quote": "There is only one thing that makes a dream impossible to achieve: the fear of failure.",
+      "quote": "Apenas uma coisa torna um sonho impossível de ser atingido: o medo de errar.",
       "author": "Paulo Coelho"
     },
     {
-      "quote": "Never go to bed mad. Stay up and fight.",
+      "quote": "Nunca durma irritado. Fique de pé e lute.",
       "author": "Phyllis Diller"
     },
     {
-      "quote": "You can't cross the sea merely by standing and staring at the water.",
+      "quote": "Não é possível cruzar o mar simplesmente ficando parado e olhando para a água.",
       "author": "Rabindranath Tagore"
     },
     {
-      "quote": "The only person you are destined to become is the person you decide to be.",
+      "quote": "A única pessoa que você está destinado a se tornaré a pessoa que você decidir ser.",
       "author": "Ralph Waldo Emerson"
     },
     {
-      "quote": "What you do speaks so loudly that I cannot hear what you say.",
+      "quote": "O que você faz fala tão alto que eu não consigo ouvir o que você diz.",
       "author": "Ralph Waldo Emerson"
     },
     {
-      "quote": "People who are crazy enough to think they can change the world, are the ones who do.",
+      "quote": "As pessoas que são loucas o bastante para achar que podem mudar o mundo, são aquelas que conseguem.",
       "author": "Rob Siltanen"
     },
     {
-      "quote": "The best way out is always through.",
+      "quote": "A melhor maneira de sair é seguir em frente.",
       "author": "Robert Frost"
     },
     {
-      "quote": "Today's accomplishments were yesterday's impossibilities.",
+      "quote": "Os sucessos de hoje foram as impossibilidades de ontem.",
       "author": "Robert H. Schuller"
     },
     {
-      "quote": "Don't be satisfied with stories, how things have gone with others. Unfold your own myth.",
+      "quote": "Não se satisfaça com histórias, com a maneira com as pessoas viveram algo. Desvende seus próprios mitos.",
       "author": "Rumi"
     },
     {
-      "quote": "Forget safety. Live where you fear to live. Destroy your reputation. Be notorious.",
+      "quote": "Esqueça a segurança. Viva onde teme viver. Destrua sua reputação. Seja notório.",
       "author": "Rumi"
     },
     {
-      "quote": "Sell your cleverness and buy bewilderment.",
+      "quote": "Venda sua esperteza e compre deslumbramento.",
       "author": "Rumi"
     },
     {
-      "quote": "The cure for pain is in the pain.",
+      "quote": "A cura para a dor está na dor.",
       "author": "Rumi"
     },
     {
-      "quote": "Have no fear of perfection - you'll never reach it.",
+      "quote": "Não tenha medo da perfeição - você nunca vai alcançá-la.",
       "author": "Salvador Dalí"
     },
     {
-      "quote": "Don't watch the clock. Do what it does. Keep going.",
+      "quote": "Não olhe para o relógio. Faça o que ele faz. Siga andando.",
       "author": "Sam Levenson"
     },
     {
-      "quote": "Ever Tried. Ever failed. No matter. Try again. Fail again. Fail better.",
+      "quote": "Já tentou. Já errou. Não importa. Tente de novo. Erre de novo. Erre melhor.",
       "author": "Samuel Beckett"
     },
     {
-      "quote": "The more you know, the more you realize you know nothing.",
-      "author": "Socrates"
+      "quote": "Quanto mais você sabe, mais percebe que não sabe nada.",
+      "author": "Sócrates"
     },
     {
-      "quote": "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.",
+      "quote": "O grande inimigo do conhecimento não é a ignorância, é a ilusão do conhecimento.",
       "author": "Stephen Hawking"
     },
     {
-      "quote": "The universe doesn't allow perfection.",
+      "quote": "O universo não conhece a perfeição.",
       "author": "Stephen Hawking"
     },
     {
-      "quote": "Whether you want to uncover the secrets of the universe, or you want to pursue a career in the 21st century, basic computer programming is an essential skill to learn.",
+      "quote": "Se você quer descobrir os segredos do universo, ou seguir em uma carreira no século XXI, a programação básica é uma habilidade essencial a ser aprendida.",
       "author": "Stephen Hawking"
     },
     {
-      "quote": "The scariest moment is always just before you start.",
+      "quote": "O momento mais assustador é sempre aquele antes de começar.",
       "author": "Stephen King"
     },
     {
-      "quote": "You can, you should, and if you're brave enough to start, you will.",
+      "quote": "Você pode, você deve, e, se for corajoso o suficiente, você vai.",
       "author": "Stephen King"
     },
     {
-      "quote": "Arise, Awake and Stop not until the goal is reached.",
+      "quote": "Erga-se, acorde e não pare até atingir seu objetivo.",
       "author": "Swami Vivekananda"
     },
     {
-      "quote": "It is said that your life flashes before your eyes just before you die. That is true, it's called Life.",
+      "quote": "Dizem que você vê sua vida passar pelos seus olhos antes de morrer. É verdade, o nome disso é Vida.",
       "author": "Terry Pratchett"
     },
     {
-      "quote": "Believe you can and you're halfway there.",
+      "quote": "Se você acredita que pode já está a meio caminho do destino.",
       "author": "Theodore Roosevelt"
     },
     {
-      "quote": "I have not failed. I've just found 10,000 ways that won't work.",
+      "quote": "Eu não errei. Só encontrei 10 mil maneiras que não deram certo.",
       "author": "Thomas A. Edison"
     },
     {
-      "quote": "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
+      "quote": "Nossa grande fraqueza está em desistir. A maneira mais certa de ter sucesso é sempre tentar pelo menos mais uma vez.",
       "author": "Thomas A. Edison"
     },
     {
-      "quote": "The harder the conflict, the more glorious the triumph.",
+      "quote": "Quanto maior o conflito, mais glorioso é o triunfo.",
       "author": "Thomas Paine"
     },
     {
-      "quote": "The Web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past.",
+      "quote": "A web, como eu a imaginava, nós ainda não a vimos. O futuro ainda é muito maior do que o passado.",
       "author": "Tim Berners-Lee"
     },
     {
-      "quote": "Failure is the condiment that gives success its flavor.",
+      "quote": "Errar é o tempero que dá ao sucesso seu sabor.",
       "author": "Truman Capote"
     },
     {
-      "quote": "Those who says it cannot be done should not interrupt the person doing it.",
-      "author": "Unknown"
+      "quote": "Aqueles que dizem que não pode ser feito não deveriam interromper quem está fazendo.",
+      "author": "Desconhecido"
     },
     {
-      "quote": "Even if you fall on your face, you're still moving forward.",
+      "quote": "Mesmo que você caia de cara, ainda estará indo adiante.",
       "author": "Victor Kiam"
     },
     {
-      "quote": "It's not whether you get knocked down, it's whether you get up.",
+      "quote": "A questão não é saber se você será nocauteado, mas saber se você levantará.",
       "author": "Vince Lombardi"
     },
     {
-      "quote": "I dream my painting and I paint my dream.",
+      "quote": "Eu sonho com minha pintura e pinto meus sonhos.",
       "author": "Vincent van Gogh"
     },
     {
-      "quote": "Let us cultivate our garden.",
+      "quote": "Vamos cultivar nosso jardim.",
       "author": "Voltaire"
     },
     {
-      "quote": "Aim for the moon. If you miss, you may hit a star.",
+      "quote": "Tenha a lua como alvo. Se errar, pode ser que acerte uma estrela.",
       "author": "W. Clement Stone"
     },
     {
-      "quote": "The way to get started is to quit talking and begin doing.",
+      "quote": "A maneira de começar é parar de falar e começar a fazer.",
       "author": "Walt Disney"
     },
     {
-      "quote": "You miss 100% of the shots you don't take.",
+      "quote": "Você erra 100% das vezes que não tenta.",
       "author": "Wayne Gretzky"
     },
     {
-      "quote": "Don't let yesterday take up too much of today.",
+      "quote": "Não deixe que ontem consuma muito do dia de hoje.",
       "author": "Will Rogers"
     },
     {
-      "quote": "Even if you're on the right track, you'll get run over if you just sit there.",
+      "quote": "Mesmo que você esteja no caminho certo, você será atropelado se simplesmente ficar parado lá.",
       "author": "Will Rogers"
     },
     {
-      "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+      "quote": "Não aguarde para bater no ferro quando ele estiver quente; aqueça-o batendo.",
       "author": "William Butler Yeats"
     },
     {
-      "quote": "You cannot swim for new horizons until you have courage to lose sight of the shore.",
+      "quote": "Você não consegue nadar por novos horizontes até ter a coragem de não enxergar mais a costa.",
       "author": "William Faulkner"
     },
     {
-      "quote": "Be not afraid of greatness. Some are born great, some achieve greatness, and others have greatness thrust upon them.",
+      "quote": "Não tenham medo da grandeza. Alguns nascem grandes, alguns conseguem a grandeza e outros têm a grandeza imposta a eles.",
       "author": "William Shakespeare"
     },
     {
-      "quote": "We know what we are, but not what we may be.",
+      "quote": "Sabemos o que somos, mas não o que podemos ser.",
       "author": "William Shakespeare"
     },
     {
-      "quote": "In theory there is no difference between theory and practice. In practice there is.",
+      "quote": "Em teoria, não há diferença entre a teoria e a prática. Na prática, sim.",
       "author": "Yogi Berra"
     },
     {
-      "quote": "You can see a lot by just looking.",
+      "quote": "Você pode enxergar muito se simplesmente olhar.",
       "author": "Yogi Berra"
     },
     {
-      "quote": "There is no elevator to success, you have to take the stairs.",
+      "quote": "Não há elevador para o sucesso. Você precisa usar as escadas.",
       "author": "Zig Ziglar"
     },
     {
-      "quote": "You don't have to be great to start, but you have to start to be great.",
+      "quote": "Não é preciso ser grande para começar, mas é preciso começar para ser grande.",
       "author": "Zig Ziglar"
     }
   ]
