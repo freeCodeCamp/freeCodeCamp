@@ -126,15 +126,12 @@ function InstantSearchRoot({
     }
   });
 
-  const debouncedSetState = useRef<ReturnType<typeof setTimeout>>(
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    setTimeout(() => {})
-  );
+  const debouncedSetState = useRef<number>();
   function updateBrowserHistory(query: string): void {
     if (isSearchPage()) {
       clearTimeout(debouncedSetState.current);
 
-      debouncedSetState.current = setTimeout(() => {
+      debouncedSetState.current = window.setTimeout(() => {
         if (isSearchPage()) {
           void navigate(searchStateToUrl(location, query), {
             state: { query }
