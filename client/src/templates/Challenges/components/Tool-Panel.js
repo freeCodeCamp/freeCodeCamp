@@ -54,7 +54,7 @@ function ToolPanel({
       }`}
     >
       <Button
-        aria-label='Run the tests use shortcut ctrl enter'
+        aria-label='Run the tests use shortcut Ctrl+enter'
         block={true}
         bsStyle='primary'
         onClick={handleRunTests}

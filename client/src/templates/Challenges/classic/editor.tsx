@@ -293,13 +293,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     data.editor = editor;
 
     const storedAccessibilityModes = () => {
-      const accessibilityMode = false;
-
-      type AccessibilityMode = typeof accessibilityMode;
-
-      const accessibility = store.get('accessibilityMode') as AccessibilityMode;
+      const accessibility = store.get('accessibilityMode') as boolean;
       if (!accessibility) {
-        store.set('accessibilityMode', accessibilityMode);
+        store.set('accessibilityMode', false);
       }
       // Only able to set the arialabel when accessibility mode is set to true
       // Otherwise it gets overwritten by the monaco default aria-label
