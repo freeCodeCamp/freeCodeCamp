@@ -58,7 +58,6 @@ assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
 
 ```js
 // Only change code below this line
-
 let myStr;
 ```
 
