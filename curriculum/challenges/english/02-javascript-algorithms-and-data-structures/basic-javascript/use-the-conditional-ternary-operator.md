@@ -29,7 +29,7 @@ This can be re-written using the conditional operator:
 
 ```js
 function findGreater(a, b) {
-  return a > b ? "a is greater" : "b is greater equal";
+  return a > b ? "a is greater" : "b is greater or equal";
 }
 ```
 
