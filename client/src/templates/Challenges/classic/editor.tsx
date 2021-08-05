@@ -306,7 +306,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       if (accessibility) {
         editor.updateOptions({
           ariaLabel:
-            'Accessibility mode set to true press ctrl + e to disable; Press alt F1 for more options'
+            'Accessibility mode set to true. Press Ctrl+e to disable or press Alt+F1 for more options'
         });
       }
 
@@ -315,7 +315,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     const accessibilityMode = storedAccessibilityModes();
     editor.updateOptions({
-      accessibilitySupport: accessibilityMode ? 'on' : 'off'
+      accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
@@ -367,7 +367,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         store.set( 'accessibilityMode', !currentAccessibility);
 
         editor.updateOptions({
-          accessibilitySupport: storedAccessibilityModes() ? 'on' : 'off',
+          accessibilitySupport: storedAccessibilityModes() ? 'on' : 'auto',
         });
       }
     });
