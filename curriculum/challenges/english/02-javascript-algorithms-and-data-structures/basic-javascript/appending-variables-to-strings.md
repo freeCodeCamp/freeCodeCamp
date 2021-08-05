@@ -64,7 +64,6 @@ assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
 
 ```js
 // Change code below this line
-
 const someAdjective = "";
 let myStr = "Learning to code is ";
 ```
