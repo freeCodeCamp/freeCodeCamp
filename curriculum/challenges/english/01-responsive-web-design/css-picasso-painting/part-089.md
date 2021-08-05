@@ -9,6 +9,8 @@ dashedName: part-89
 
 One last step. The FontAwesome icons are a little too small. Target all of them with a `class` selector for `fas`, and set the `font-size` to `30px`.
 
+With that, your Picasso painting is complete!
+
 # --hints--
 
 You should create a `.fas` selector.
