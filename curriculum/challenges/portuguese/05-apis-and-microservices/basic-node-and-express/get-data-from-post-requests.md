@@ -1,6 +1,6 @@
 ---
 id: 587d7fb2367417b2b2512bf8
-title: Retorne dados de requisições POST
+title: Obter dados de solicitações de POST
 challengeType: 2
 forumTopicId: 301511
 dashedName: get-data-from-post-requests

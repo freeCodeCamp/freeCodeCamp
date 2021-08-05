@@ -1,6 +1,6 @@
 ---
 id: 587d7dba367417b2b2512ba9
-title: Lookaheads positivos e negativos
+title: Usar lookaheads positivos e negativos
 challengeType: 1
 forumTopicId: 301360
 dashedName: positive-and-negative-lookahead

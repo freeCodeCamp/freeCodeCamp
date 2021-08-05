@@ -1,6 +1,6 @@
 ---
 id: bd7168d8c242eddfaeb5bd13
-title: Visualize dados com um gráfico de barras
+title: Visualizar dados com um gráfico de barras
 challengeType: 3
 forumTopicId: 301464
 dashedName: visualize-data-with-a-bar-chart

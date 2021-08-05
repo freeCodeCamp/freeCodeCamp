@@ -1,6 +1,6 @@
 ---
 id: 587d7fb7367417b2b2512c0b
-title: Use model.find() para procurar no seu banco de dados
+title: Usar model.find() para procurar no seu banco de dados
 challengeType: 2
 forumTopicId: 301543
 dashedName: use-model-find-to-search-your-database

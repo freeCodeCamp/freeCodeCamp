@@ -19,7 +19,7 @@ Um exemplo que criaria um grid de 100 linhas, cada linha com 50px de altura:
 grid-template-rows: repeat(100, 50px);
 ```
 
-Você pode declarar mias de um tamanho ao usar a função de repetição e também usá-la em conjunto de outros tamanhos quando estiver criando a estrutura de um grid. Exemplo:
+Você também pode repetir vários valores com a função repeat e inserir a função entre outros valores ao definir a estrutura de um grid. Exemplo:
 
 ```css
 grid-template-columns: repeat(2, 1fr 50px) 20px;

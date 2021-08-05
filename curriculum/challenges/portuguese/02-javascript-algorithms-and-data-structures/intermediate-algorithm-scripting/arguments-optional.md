@@ -12,7 +12,7 @@ Crie uma função que some dois argumentos juntos. Se apenas um argumento for fo
 
 Por exemplo, `addTogether(2, 3)` deve retornar `5` e `addTogether(2)` deve retornar uma função.
 
-Chamando essa função retornada com um argumento retornará a soma:
+Chamar essa função retornada com um argumento retornará a soma:
 
 ```js
 var sumTwoAnd = addTogether(2);

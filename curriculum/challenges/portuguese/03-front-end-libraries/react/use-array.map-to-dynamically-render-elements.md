@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403618a
-title: Use array.map() para renderizar elementos dinamicamente
+title: Usar array.map() para renderizar elementos dinamicamente
 challengeType: 6
 forumTopicId: 301417
 dashedName: use-array-map-to-dynamically-render-elements

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf4
-title: Encadeie middleware para criar um servidor de tempo
+title: Encadear middleware para criar um servidor de tempo
 challengeType: 2
 forumTopicId: 301510
 dashedName: chain-middleware-to-create-a-time-server

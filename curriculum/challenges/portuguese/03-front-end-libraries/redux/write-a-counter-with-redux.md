@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036157
-title: Escreva um contador com Redux
+title: Escrever um contador com Redux
 challengeType: 6
 forumTopicId: 301453
 dashedName: write-a-counter-with-redux

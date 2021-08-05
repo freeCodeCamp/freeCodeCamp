@@ -1,6 +1,6 @@
 ---
 id: 589fc830f9fc0f352b528e74
-title: Configure o ambiente
+title: Configurar o ambiente
 challengeType: 2
 forumTopicId: 301566
 dashedName: set-up-the-environment

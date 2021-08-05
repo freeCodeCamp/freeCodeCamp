@@ -38,6 +38,12 @@ assert(
 );
 ```
 
+`zeroArray(4,3)` dovrebbe restituire un array contenente 4 righe di 3 colonne di zeri ciascuna.
+
+```js
+assert(JSON.stringify(zeroArray(4,3)) == '[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]');
+```
+
 # --seed--
 
 ## --seed-contents--
@@ -62,6 +68,7 @@ function zeroArray(m, n) {
 
 let matrix = zeroArray(3, 2);
 console.log(matrix);
+
 ```
 
 # --solutions--
@@ -86,4 +93,5 @@ function zeroArray(m, n) {
 
 let matrix = zeroArray(3, 2);
 console.log(matrix);
+
 ```
