@@ -82,7 +82,9 @@ class WalletsButton extends React.Component<
     });
 
     this.paymentRequest.on('token', (event: any) => {
-      console.log({ event });
+      const { token, payerEmail, payerName } = event;
+      // this.context.postStripeDonation({ token, payerEmail, payerName });
+      console.log({ token, payerEmail, payerName });
     });
 
     const canMakePaymentRes = await this.paymentRequest.canMakePayment();
@@ -148,18 +150,21 @@ interface WrapperProps {
   label: string;
   amount: number;
   theme: string;
+  postStripeDonation: (token: unknown) => void;
 }
 
 const WalletsWrapper = ({
   label,
   amount,
-  theme
+  theme,
+  postStripeDonation
 }: WrapperProps): JSX.Element => (
   <WalletConfig.Provider
     value={{
       label,
       amount,
-      theme
+      theme,
+      postStripeDonation
     }}
   >
     <Elements stripe={stripePromise}>

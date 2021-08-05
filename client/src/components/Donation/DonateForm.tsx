@@ -30,7 +30,8 @@ import {
   addDonation,
   updateDonationFormState,
   defaultDonationFormState,
-  userSelector
+  userSelector,
+  postChargeStripe
 } from '../../redux';
 import Spacer from '../helpers/spacer';
 
@@ -56,6 +57,7 @@ type DonateFormState = {
 
 type DonateFormProps = {
   addDonation: (data: unknown) => unknown;
+  postChargeStripe: (data: unknown) => unknown;
   defaultTheme?: string;
   email: string;
   handleProcessing: (duration: string, amount: number, action: string) => void;
@@ -92,7 +94,8 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   addDonation,
-  updateDonationFormState
+  updateDonationFormState,
+  postChargeStripe
 };
 
 class DonateForm extends Component<DonateFormProps, DonateFormState> {
@@ -179,6 +182,18 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
   handleSelectDuration(donationDuration: 'month' | 'onetime') {
     const donationAmount = this.getActiveDonationAmount(donationDuration, 0);
     this.setState({ donationDuration, donationAmount });
+  }
+
+  postStripeDonation(token) {
+    const { donationAmount: amount, donationDuration: duration } = this.state;
+    window.scrollTo(0, 0);
+
+    // change the donation modal button label to close
+    // or display the close button for the cert donation section
+    if (this.props.handleProcessing) {
+      this.props.handleProcessing(duration, amount, 'Stripe payment submition');
+    }
+    this.props.postChargeStripe({ token, amount, duration });
   }
 
   handleSelectAmount(donationAmount: number) {
@@ -299,6 +314,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
         <WalletsWrapper
           amount={donationAmount}
           label={walletlabel}
+          postStripeDonation={this.postStripeDonation}
           theme={priorityTheme}
         />
         <div className='donate-btn-group'>
