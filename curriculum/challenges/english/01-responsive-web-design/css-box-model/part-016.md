@@ -9,7 +9,7 @@ dashedName: part-16
 
 Add a new `div` element inside of your `.canvas` element.
 
-Give the new `div` the `class` attribute with a value of `one`.
+Give the new `div` the `class` attribute with a value of `one`. This will be your first rectangle.
 
 # --hints--
 

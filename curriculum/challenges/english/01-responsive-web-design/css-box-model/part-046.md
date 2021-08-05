@@ -7,7 +7,9 @@ dashedName: part-46
 
 # --description--
 
-Rotate `.three` counter clockwise by -0.2 degrees.
+Rotate `.three` counter clockwise by 0.2 degrees.
+
+With this final step, your Rothko painting is now complete.
 
 # --hints--
 

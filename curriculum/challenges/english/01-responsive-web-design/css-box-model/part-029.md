@@ -7,7 +7,7 @@ dashedName: part-29
 
 # --description--
 
-Create a new `div` with a `class` value of `three` right under the `.two` element.
+Create a new `div` with a `class` value of `three` right under the `.two` element. This will be your third rectangle.
 
 # --hints--
 

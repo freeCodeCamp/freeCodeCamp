@@ -7,7 +7,7 @@ dashedName: part-23
 
 # --description--
 
-Add another `div` with a `class` value of `two` just below your `one` element.
+Add another `div` with a `class` value of `two` just below your `one` element. This will be your second rectangle.
 
 # --hints--
 

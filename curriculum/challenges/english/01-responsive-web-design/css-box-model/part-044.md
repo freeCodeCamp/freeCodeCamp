@@ -9,7 +9,7 @@ dashedName: part-44
 
 Rotate each rectangle to give them more of an imperfect, hand-painted look.
 
-Use the following to rotate `.one` counter clockwise -0.6 degrees: `transform: rotate(-0.6deg);`
+Use the following to rotate `.one` counter clockwise by 0.6 degrees: `transform: rotate(-0.6deg);`
 
 # --hints--
 
