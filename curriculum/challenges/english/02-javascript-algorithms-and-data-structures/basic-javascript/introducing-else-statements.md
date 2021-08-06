@@ -95,7 +95,7 @@ testElse(4);
 
 ```js
 function testElse(val) {
-  var result = "";
+  let result = "";
   if(val > 5) {
     result = "Bigger than 5";
   } else {
