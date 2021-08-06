@@ -221,7 +221,6 @@ console.log(getRating(watchList));
 # --solutions--
 
 ```js
-// The global variable
 const watchList = [
   {
     "Title": "Inception",
@@ -334,6 +333,7 @@ const watchList = [
     "Response": "True"
   }
 ];
+
 function getRating(watchList) {
   let averageRating;
   const rating = watchList

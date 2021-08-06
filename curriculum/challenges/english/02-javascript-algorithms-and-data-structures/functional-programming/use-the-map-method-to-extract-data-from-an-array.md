@@ -207,7 +207,6 @@ console.log(JSON.stringify(ratings));
 # --solutions--
 
 ```js
-// The global variable
 const watchList = [
   {
     "Title": "Inception",

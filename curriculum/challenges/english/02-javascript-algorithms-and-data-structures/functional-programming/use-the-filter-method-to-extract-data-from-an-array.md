@@ -309,5 +309,6 @@ const watchList = [
     "Response": "True"
   }
 ];
+
 const filteredList = watchList.filter(e => e.imdbRating >= 8).map( ({Title: title, imdbRating: rating}) => ({title, rating}) );
 ```

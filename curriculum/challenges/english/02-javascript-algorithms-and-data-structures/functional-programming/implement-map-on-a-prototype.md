@@ -57,6 +57,7 @@ const new_s = s.myMap(function(item) {
 
 ```js
 const s = [23, 65, 98, 5];
+
 Array.prototype.myMap = function(callback) {
   const newArray = [];
   for (let elem of this) {
@@ -64,6 +65,7 @@ Array.prototype.myMap = function(callback) {
   }
   return newArray;
 };
+
 const new_s = s.myMap(function(item) {
   return item * 2;
 });
