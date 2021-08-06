@@ -1,6 +1,6 @@
 ---
 id: 5895f70df9fc0f352b528e68
-title: Estratégias de autenticação
+title: Usar estratégias de autenticação
 challengeType: 2
 forumTopicId: 301547
 dashedName: authentication-strategies

@@ -1,6 +1,6 @@
 ---
 id: 5664820f61c48e80c9fa476c
-title: Golfe de código
+title: Jogar golfe de código
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9ykNUR'
 forumTopicId: 18195

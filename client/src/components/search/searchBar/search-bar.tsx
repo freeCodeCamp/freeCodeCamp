@@ -9,8 +9,6 @@ import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 
-import WithInstantSearch from '../WithInstantSearch';
-
 import {
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
@@ -18,6 +16,8 @@ import {
   toggleSearchFocused,
   updateSearchQuery
 } from '../redux';
+import WithInstantSearch from '../with-instant-search';
+
 import SearchHits from './search-hits';
 
 import './searchbar-base.css';

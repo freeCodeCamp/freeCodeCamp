@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b24
-title: Use o operador condicional (ternário)
+title: Usar o operador condicional (ternário)
 challengeType: 1
 forumTopicId: 301181
 dashedName: use-the-conditional-ternary-operator
@@ -20,7 +20,7 @@ function findGreater(a, b) {
     return "a is greater";
   }
   else {
-    return "b is greater";
+    return "b is greater or equal";
   }
 }
 ```
@@ -29,7 +29,7 @@ Isto pode ser reescrito usando o operador condicional:
 
 ```js
 function findGreater(a, b) {
-  return a > b ? "a is greater" : "b is greater";
+  return a > b ? "a is greater" : "b is greater or equal";
 }
 ```
 

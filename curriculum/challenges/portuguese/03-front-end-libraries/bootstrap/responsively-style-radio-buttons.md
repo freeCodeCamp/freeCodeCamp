@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedb08845
-title: Botões de opção de estilo responsivo
+title: Criar botões de opção de estilo responsivo
 challengeType: 0
 forumTopicId: 18270
 required:

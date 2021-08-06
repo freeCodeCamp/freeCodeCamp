@@ -1,6 +1,6 @@
 ---
 id: 5900f37f1000cf542c50fe92
-title: 'Problem 19: Counting Sundays'
+title: 'Problema 19: Contando domingos'
 challengeType: 5
 forumTopicId: 301827
 dashedName: problem-19-counting-sundays
@@ -8,37 +8,37 @@ dashedName: problem-19-counting-sundays
 
 # --description--
 
-You are given the following information, but you may prefer to do some research for yourself.
+Você recebeu as seguintes informações, mas se preferir, pode pesquisar por si mesmo.
 
 <ul>
-  <li>1 Jan 1900 was a Monday.</li>
-  <li>Thirty days has September,<br>April, June and November.<br>All the rest have thirty-one,<br>Saving February alone,<br>Which has twenty-eight, rain or shine.<br>And on leap years, twenty-nine.</li>
-  <li>A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.</li>
+  <li>1 de janeiro de 1900 foi uma segunda-feira.</li>
+  <li>Setembro, abril, junho e<br>novembro têm trinta dias.<br>Os outros meses têm trinta e um,<br>exceto fevereiro,<br> que tem vinte e oito, faça chuva ou faça sol.<br>E nos anos bissextos, vinte e nove apenas.</li>
+  <li>Um ano bissexto é aquele que, dividido por 4, não deixa resto. Se o ano for secular, apenas aqueles divisíveis por 400 são bissextos.</li>
 </ul>
 
-How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+Quantos domingos caíram no primeiro dia do mês durante o século 20 (1 de janeiro de 1901 a 31 de dezembro de 2000)?
 
 # --hints--
 
-`countingSundays(1943, 1946)` should return a number.
+`countingSundays(1943, 1946)` deve retornar um número.
 
 ```js
 assert(typeof countingSundays(1943, 1946) === 'number');
 ```
 
-`countingSundays(1943, 1946)` should return 6.
+`countingSundays(1943, 1946)` deve retornar 6.
 
 ```js
 assert.strictEqual(countingSundays(1943, 1946), 6);
 ```
 
-`countingSundays(1995, 2000)` should return 10.
+`countingSundays(1995, 2000)` deve retornar 10.
 
 ```js
 assert.strictEqual(countingSundays(1995, 2000), 10);
 ```
 
-`countingSundays(1901, 2000)` should return 171.
+`countingSundays(1901, 2000)` deve retornar 171.
 
 ```js
 assert.strictEqual(countingSundays(1901, 2000), 171);

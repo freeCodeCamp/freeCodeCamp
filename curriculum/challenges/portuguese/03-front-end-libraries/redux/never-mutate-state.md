@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036158
-title: Nunca alterar o state
+title: Manter o state inalterado
 challengeType: 6
 forumTopicId: 301445
 dashedName: never-mutate-state

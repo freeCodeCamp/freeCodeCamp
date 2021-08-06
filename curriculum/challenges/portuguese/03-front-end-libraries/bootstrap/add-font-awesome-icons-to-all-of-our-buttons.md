@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedc08845
-title: Adicione ícones de Font Awesome para todos os botões
+title: Adicionar ícones de Font Awesome para todos os botões
 challengeType: 0
 forumTopicId: 16637
 required:

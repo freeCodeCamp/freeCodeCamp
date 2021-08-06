@@ -1,6 +1,6 @@
 ---
 id: 59669d08d75b60482359409f
-title: Date format
+title: Formato de data
 challengeType: 5
 forumTopicId: 302243
 dashedName: date-format
@@ -8,15 +8,15 @@ dashedName: date-format
 
 # --description--
 
-Return an array with two date strings of the current date with the following specifications:
+Retorna um array com duas strings de data com a data atual de acordo com as seguintes especificações:
 
-- The first string's date order should be the year number, month number, and day number separated by dashes (`-`).
-- The first string's year should be four digits in length.
-- The first string's month and day should not contain any leading zeros.
-- The second string's weekday and month names should not be abbreviated.
-- The second string's day should not contain any leading zeros.
+- A ordem de data da primeira string deve ser o número do ano, o número do mês e o número do dia separados por traços (`-`).
+- O ano da primeira string deve ter quatro dígitos de tamanho.
+- O mês e o dia da primeira string não devem conter zeros precedentes.
+- Os nomes dos dias e dos meses na segunda string não devem ser abreviados.
+- O dia da segunda string não deve conter zeros precedentes.
 
-Example outputs:
+Exemplos de saída:
 
 ```js
 ['2007-11-23', 'Friday, November 23, 2007']
@@ -25,25 +25,25 @@ Example outputs:
 
 # --hints--
 
-`getDateFormats` should be a function.
+`getDateFormats` deve ser uma função.
 
 ```js
 assert(typeof getDateFormats === 'function');
 ```
 
-`getDateFormats` should return an object.
+`getDateFormats` deve retornar um objeto.
 
 ```js
 assert(typeof getDateFormats() === 'object');
 ```
 
-`getDateFormats` should return an array with 2 elements.
+`getDateFormats` deve retornar um array com 2 elementos.
 
 ```js
 assert(getDateFormats().length === 2);
 ```
 
-`getDateFormats` should return the correct date in the right format
+`getDateFormats` deve retornar a data correta no formato certo
 
 ```js
 assert.deepEqual(getDateFormats(), dates, equalsMessage);

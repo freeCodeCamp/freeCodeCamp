@@ -1,6 +1,6 @@
 ---
 id: 5900f37a1000cf542c50fe8c
-title: 'Problem 13: Large sum'
+title: 'Problema 13: Soma grande'
 challengeType: 5
 forumTopicId: 301757
 dashedName: problem-13-large-sum
@@ -8,7 +8,7 @@ dashedName: problem-13-large-sum
 
 # --description--
 
-Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+Abaixo está um número de 150 dígitos. Após somar este número, retorne os 10 primeiros dígitos.
 
 <div style='padding-left: 4em;'>
   37107287533902102798797998220837590246510135740250<br>
@@ -115,19 +115,19 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 
 # --hints--
 
-`largeSum(testNums)` should return a number.
+`largeSum(testNums)` deve retornar um número.
 
 ```js
 assert(typeof largeSum(testNums) === 'number');
 ```
 
-`largeSum(testNums)` should return 8348422521.
+`largeSum(testNums)` deve retornar 8348422521.
 
 ```js
 assert.strictEqual(largeSum(testNums), 8348422521);
 ```
 
-`largeSum(fiftyDigitNums)` should return 5537376230.
+`largeSum(fiftyDigitNums)` deve retornar 5537376230.
 
 ```js
 assert.strictEqual(largeSum(fiftyDigitNums), 5537376230);

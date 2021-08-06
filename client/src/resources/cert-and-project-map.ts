@@ -469,8 +469,8 @@ const certMap = [
       },
       {
         id: '602da04c22201c65d2a019f4',
-        title: 'Final Boss',
-        link: `${relationalDatabasesBase}/final-boss`,
+        title: 'Number Guessing Game',
+        link: `${relationalDatabasesBase}/number-guessing-game`,
         superBlock: 'relational-databases'
       }
     ]

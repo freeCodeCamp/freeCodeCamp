@@ -15,25 +15,25 @@ You can group cells of your grid together into an <dfn>area</dfn> and give the a
 grid-template-areas:
   "header header header"
   "advert content content"
-  "footer footer footer";
+  "advert footer footer";
 ```
 
-The code above merges the top three cells together into an area named `header`, the bottom three cells into a `footer` area, and it makes two areas in the middle row; `advert` and `content`. **Note:** Every word in the code represents a cell and every pair of quotation marks represent a row. In addition to custom labels, you can use a period (`.`) to designate an empty cell in the grid.
+The code above groups the cells of the grid into four areas; `header`, `advert`, `content`, and `footer`. Every word represents a cell and every pair of quotation marks represent a row.
 
 # --instructions--
 
-Place the area template so that the cell labeled `advert` becomes an empty cell.
+Change the template so the `footer` area spans the entire bottom row. Defining the areas won't have any visual effect right now. Later, you will make an item use an area to see how it works.
 
 # --hints--
 
-`container` class should have a `grid-template-areas` property similar to the preview but with`.` instead of the `advert` area.
+`container` class should have a `grid-template-areas` property similar to the example but with the `footer` area spanning the whole bottom row.
 
 ```js
 assert(
   __helpers
     .removeCssComments(code)
     .match(
-      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
+      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
     )
 );
 ```
@@ -63,7 +63,7 @@ assert(
     /* Only change code below this line */
       "header header header"
       "advert content content"
-      "footer footer footer";
+      "advert footer footer";
     /* Only change code above this line */
   }
 </style>
@@ -99,7 +99,7 @@ assert(
 
     grid-template-areas:
       "header header header"
-      ". content content"
+      "advert content content"
       "footer footer footer";
   }
 </style>

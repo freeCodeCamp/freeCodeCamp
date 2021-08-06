@@ -1,6 +1,6 @@
 ---
 id: 5895f70cf9fc0f352b528e66
-title: Serialização de um objeto de usuário
+title: Serializar um objeto de usuário
 challengeType: 2
 forumTopicId: 301563
 dashedName: serialization-of-a-user-object

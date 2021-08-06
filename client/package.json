@@ -39,9 +39,9 @@
     "@babel/plugin-proposal-export-default-from": "7.14.5",
     "@babel/plugin-proposal-function-bind": "7.14.5",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.14.9",
+    "@babel/preset-env": "7.15.0",
     "@babel/preset-react": "7.14.5",
-    "@babel/standalone": "7.14.9",
+    "@babel/standalone": "7.15.1",
     "@fortawesome/fontawesome": "1.1.8",
     "@fortawesome/fontawesome-svg-core": "1.2.35",
     "@fortawesome/free-brands-svg-icons": "5.15.3",
@@ -104,7 +104,7 @@
     "react-lazy-load": "3.1.13",
     "react-monaco-editor": "0.43.0",
     "react-redux": "5.1.2",
-    "react-reflex": "4.0.2",
+    "react-reflex": "4.0.3",
     "react-responsive": "6.1.2",
     "react-scrollable-anchor": "0.6.1",
     "react-spinkit": "3.0.0",
@@ -127,9 +127,9 @@
     "validator": "13.6.0"
   },
   "devDependencies": {
-    "@babel/types": "7.14.9",
-    "@codesee/babel-plugin-instrument": "0.57.0",
-    "@codesee/tracker": "0.57.0",
+    "@babel/types": "7.15.0",
+    "@codesee/babel-plugin-instrument": "0.60.0",
+    "@codesee/tracker": "0.60.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@types/jest": "26.0.24",
@@ -160,7 +160,7 @@
     "monaco-editor-webpack-plugin": "4.1.1",
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.3",
-    "webpack": "5.48.0",
+    "webpack": "5.49.0",
     "webpack-cli": "4.7.2"
   }
 }

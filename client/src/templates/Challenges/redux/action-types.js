@@ -41,8 +41,7 @@ export const actionTypes = createTypes(
     'moveToTab',
 
     'setEditorFocusability',
-    'toggleVisibleEditor',
-    'setAccessibilityMode'
+    'toggleVisibleEditor'
   ],
   ns
 );

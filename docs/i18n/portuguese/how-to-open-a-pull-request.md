@@ -37,7 +37,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
 - `fix(a11y): contraste melhorado da barra de pesquisa`
 - `feat: adicionar mais testes aos desafios de HTML e CSS`
-- `fix(api,cliente): previnir erros CORS no envio do formulário`
+- `fix(api,cliente): prevenir erros CORS no envio do formulário`
 - `docs(i18n): tradução para chinês da configuração local`
 
 ## Propondo um Pull Request
@@ -54,9 +54,9 @@ Alguns exemplos de bons títulos de PRs seriam:
 
 3. Envie o pull request da sua branch para a branch `main` do freeCodeCamp.
 
-4. No corpo de seu PR, há um resumo mais detalhado das alterações feitas e o motivo.
+4. No corpo de seu PR, inclua um resumo mais detalhado das alterações feitas e o motivo.
 
-   - Você será apresentado com um modelo de pull request. É uma checklist que você deve seguir antes de abrir o pull request.
+   - Será apresentado um modelo de pull request. É uma checklist que você deve seguir antes de abrir o pull request.
 
    - Preencha os detalhes como quiser. Essas informações serão revisadas e os revisores decidirão se seu pull request será aceito ou não.
 
@@ -84,7 +84,7 @@ E como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do f
 
 Conflitos podem surgir porque muitos colaboradores trabalham no repositório, e as alterações podem afetar o seu PR, que está aguardando uma revisão e merge.
 
-Na maioria das vezes você pode não precisar de um rebase, porque nós comprimimos todos os commits, no entanto, se for solicitada uma rebase, é isso que você deve fazer.
+Na maioria das vezes você pode não precisar de um rebase, porque nós comprimimos todos os commits. No entanto, se for solicitada uma rebase, é isso que você deve fazer.
 
 ### Para funcionalidades e correções de erros comuns
 
