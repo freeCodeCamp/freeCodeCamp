@@ -72,15 +72,12 @@ export function injectConditionalTags(
   if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'org') {
     tagsArray.push(
       <script
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
+        // @ts-expect-error TODO: check use of href/rel on <script>
         href={withPrefix('/misc/gap-org.js')}
         id='gap-org'
         key='gap-org'
         rel='stylesheet'
       />
-      // Invalid href and rel attributes for a <script>
-      // Is this supposed to be a <link>?
     );
   }
 
@@ -88,8 +85,7 @@ export function injectConditionalTags(
   if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'dev') {
     tagsArray.push(
       <script
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
+        // @ts-expect-error See above
         href={withPrefix('/misc/gap-dev.js')}
         id='gap-dev'
         key='gap-dev'
@@ -102,16 +98,14 @@ export function injectConditionalTags(
   if (parsedHomeUrl.subdomain === 'chinese' && parsedHomeUrl.tld === 'org') {
     tagsArray.push(
       <script
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
+        // @ts-expect-error See above
         href={withPrefix('/misc/cap.js')}
         id='cap'
         key='cap'
         rel='stylesheet'
       />,
       <script
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
+        // @ts-expect-error See above
         href={withPrefix('/misc/gap-org-chinese.js')}
         id='gap-org-chinese'
         key='gap-org-chinese'
