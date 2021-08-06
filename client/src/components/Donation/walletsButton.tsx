@@ -12,7 +12,7 @@ import {
 } from '@stripe/react-stripe-js';
 import { Stripe, StripeElements, loadStripe } from '@stripe/stripe-js';
 
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import envData from '../../../../config/env.json';
 
 interface WalletsButtonProps {
@@ -38,102 +38,85 @@ interface WalletsButtonState {
   paymentMethod?: Record<string, unknown> | null;
 }
 
-class WalletsButton extends React.Component<
-  WalletsButtonProps,
-  WalletsButtonState
-> {
-  paymentRequest: any;
-  constructor(props: WalletsButtonProps) {
-    super(props);
-    this.state = {
-      canMakePayment: false,
-      hasCheckedAvailability: false,
-      errorMessage: null
-    };
-  }
+const WalletsButton = ({ stripe, elements }: WalletsButtonProps) => {
+  const [token, setToken] = useState(null);
+  const [paymentRequest, setPaymentRequest] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [hasCheckedAvailability, checkAvailability] = useState(false);
+  const [canMakePayment, checkpaymentPossiblity] = useState(false);
 
-  static contextType = WalletConfig;
+  const config = useContext(WalletConfig);
+  console.log('lodaed');
 
-  async componentDidUpdate(): Promise<void> {
-    const { stripe } = this.props;
-
-    if (stripe && !this.paymentRequest) {
-      // Create PaymentRequest after Stripe.js loads.
-      await this.createPaymentRequest(stripe);
+  useEffect(() => {
+    if (!stripe) {
+      // We can't create a PaymentRequest until Stripe.js loads.
+      console.log('nostripe');
+      return;
     }
-  }
 
-  async createPaymentRequest(stripe: Stripe): Promise<void> {
-    this.paymentRequest = stripe.paymentRequest({
+    const pr = stripe.paymentRequest({
       country: 'US',
       currency: 'usd',
       total: {
-        label: this.context.label,
-        amount: this.context.amount
+        label: config.label,
+        amount: config.amount
       },
       requestPayerName: true,
       requestPayerEmail: true,
       disableWallets: ['browserCard']
     });
 
-    this.paymentRequest.on('paymentmethod', async (event: any) => {
-      this.setState({ paymentMethod: event.paymentMethod });
-      await event.complete('success');
-    });
-
-    this.paymentRequest.on('token', (event: any) => {
+    pr.on('token', event => {
       const { token, payerEmail, payerName } = event;
-      this.context.postStripeDonation({ token, payerEmail, payerName });
+      setToken(token);
+      console.log(token);
+      event.complete('success');
+      // this.context.postStripeDonation(token);
     });
 
-    const canMakePaymentRes = await this.paymentRequest.canMakePayment();
-    if (canMakePaymentRes) {
-      this.setState({ canMakePayment: true, hasCheckedAvailability: true });
-    } else {
-      this.setState({ canMakePayment: false, hasCheckedAvailability: true });
-    }
-  }
+    void pr.canMakePayment().then(canMakePaymentRes => {
+      if (canMakePaymentRes) {
+        setPaymentRequest(pr);
+        checkAvailability(true);
+        checkpaymentPossiblity(true);
+      } else {
+        checkAvailability(true);
+        checkpaymentPossiblity(false);
+      }
+    });
+  }, [stripe]);
 
-  render(): JSX.Element {
-    const {
-      canMakePayment,
-      hasCheckedAvailability,
-      errorMessage,
-      paymentMethod
-    } = this.state;
-    console.log(this.context);
-    return (
-      <form>
-        {canMakePayment && (
-          <PaymentRequestButtonElement
-            onClick={event => {
-              if (paymentMethod) {
-                event.preventDefault();
-                this.setState({
-                  errorMessage:
-                    'You can only use the PaymentRequest button once. Refresh the page to start over.'
-                });
+  return (
+    <form>
+      {canMakePayment && (
+        <PaymentRequestButtonElement
+          onClick={event => {
+            if (token) {
+              event.preventDefault();
+              setErrorMessage(
+                'You can only use the PaymentRequest button once.'
+              );
+            }
+          }}
+          options={{
+            style: {
+              paymentRequestButton: {
+                type: 'default',
+                theme: config.theme === 'night' ? 'light' : 'dark',
+                height: '43px'
               }
-            }}
-            options={{
-              style: {
-                paymentRequestButton: {
-                  type: 'default',
-                  theme: this.context.theme === 'night' ? 'light' : 'dark',
-                  height: '43px'
-                }
-              },
-              paymentRequest: this.paymentRequest
-            }}
-          />
-        )}
-        {paymentMethod && `Got PaymentMethod: ${paymentMethod.id}`}
-        {!canMakePayment && hasCheckedAvailability && 'notavailableresults'}
-        {errorMessage && `err: ${errorMessage}`}
-      </form>
-    );
-  }
-}
+            },
+            paymentRequest
+          }}
+        />
+      )}
+      {token && `Got PaymentMethod: ${token.id}`}
+      {!canMakePayment && hasCheckedAvailability && 'notavailableresults'}
+      {errorMessage && `err: ${errorMessage}`}
+    </form>
+  );
+};
 
 const InjectedCheckoutForm = () => (
   <ElementsConsumer>
