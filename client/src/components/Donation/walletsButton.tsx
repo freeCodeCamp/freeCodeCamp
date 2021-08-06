@@ -1,19 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable camelcase */
-
 import {
   PaymentRequestButtonElement,
   Elements,
   ElementsConsumer
 } from '@stripe/react-stripe-js';
 import { Stripe, loadStripe } from '@stripe/stripe-js';
-
+import type { Token, PaymentRequest } from '@stripe/stripe-js';
 import React, { useState, useEffect } from 'react';
 import envData from '../../../../config/env.json';
+import { AddDonationData } from './PaypalButton';
 
 const { stripePublicKey }: { stripePublicKey: string | null } = envData as {
   stripePublicKey: string | null;
@@ -29,8 +23,8 @@ interface WrapperProps {
   label: string;
   amount: number;
   theme: string;
-  postStripeDonation: (token: unknown) => void;
-  onDonationStateChange: (token: unknown) => void;
+  postStripeDonation: (token: Token) => void;
+  onDonationStateChange: (donationState: AddDonationData) => void;
   refreshErrorMessage: string;
 }
 interface WalletsButtonProps extends WrapperProps {
@@ -46,9 +40,11 @@ const WalletsButton = ({
   postStripeDonation,
   onDonationStateChange
 }: WalletsButtonProps) => {
-  const [token, setToken] = useState(null);
-  const [paymentRequest, setPaymentRequest] = useState(null);
-  const [hasCheckedAvailability, checkAvailability] = useState(null);
+  const [token, setToken] = useState<Token | null>(null);
+  const [paymentRequest, setPaymentRequest] = useState<PaymentRequest | null>(
+    null
+  );
+  const [hasCheckedAvailability, checkAvailability] = useState(false);
   const [canMakePayment, checkpaymentPossiblity] = useState(false);
 
   useEffect(() => {
@@ -102,7 +98,7 @@ const WalletsButton = ({
 
   return (
     <form>
-      {canMakePayment && (
+      {canMakePayment && paymentRequest && (
         <PaymentRequestButtonElement
           onClick={event => {
             if (token) {
@@ -127,7 +123,9 @@ const WalletsButton = ({
 
 const InjectedCheckoutForm = (props: WrapperProps): JSX.Element => (
   <ElementsConsumer>
-    {({ stripe }) => <WalletsButton stripe={stripe} {...props} />}
+    {({ stripe }: { stripe: Stripe | null }) => (
+      <WalletsButton stripe={stripe} {...props} />
+    )}
   </ElementsConsumer>
 );
 

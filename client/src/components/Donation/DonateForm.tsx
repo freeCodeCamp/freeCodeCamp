@@ -11,6 +11,7 @@ import {
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
 
+import type { Token } from '@stripe/stripe-js';
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -185,7 +186,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     this.setState({ donationDuration, donationAmount });
   }
 
-  postStripeDonation(token) {
+  postStripeDonation(token: Token) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
     window.scrollTo(0, 0);
     console.log(token);
