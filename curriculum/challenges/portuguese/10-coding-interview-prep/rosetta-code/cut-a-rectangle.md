@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e06
-title: Cut a rectangle
+title: Cortar um retângulo
 challengeType: 5
 forumTopicId: 302242
 dashedName: cut-a-rectangle
@@ -8,7 +8,7 @@ dashedName: cut-a-rectangle
 
 # --description--
 
-A given rectangle is made from *m* × *n* squares. If *m* and *n* are not both odd, then it is possible to cut a path through the rectangle along the square edges such that the rectangle splits into two connected pieces with the same shape (after rotating one of the pieces by 180°). All such paths for 2 × 2 and 4 × 3 rectangles are shown below.
+Um retângulo dado é feito de *m* × *n* quadrados. Se *m* e *n* não são forem ímpares, então é possível cortar um caminho através do retângulo ao longo das bordas quadradas, de modo que o retângulo se divida em duas partes conectadas com a mesma forma (depois de girar uma das partes em 180°). Todos os caminhos para retângulos 2 × 2 e 4 × 3 são mostrados abaixo.
 
 <div style="width: 100%; text-align: center;">
   <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="520" height="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
@@ -92,47 +92,47 @@ A given rectangle is made from *m* × *n* squares. If *m* and *n* are not both o
 
 # --instructions--
 
-Write a function that calculates the number of different ways to cut an *m* × *n* rectangle.
+Escreva uma função que calcula o número de diferentes formas de cortar um retângulo de *m* × *n*.
 
 # --hints--
 
-`cutRectangle` should be a function.
+`cutRectangle` deve ser uma função.
 
 ```js
 assert(typeof cutRectangle == 'function');
 ```
 
-`cutRectangle(2, 2)` should return a number.
+`cutRectangle(2, 2)` deve retornar um número.
 
 ```js
 assert(typeof cutRectangle(2, 2) == 'number');
 ```
 
-`cutRectangle(2, 2)` should return `2`.
+`cutRectangle(2, 2)` deve retornar `2`.
 
 ```js
 assert.equal(cutRectangle(2, 2), 2);
 ```
 
-`cutRectangle(4, 3)` should return `9`.
+`cutRectangle(4, 3)` deve retornar `9`.
 
 ```js
 assert.equal(cutRectangle(4, 3), 9);
 ```
 
-`cutRectangle(4, 4)` should return `22`.
+`cutRectangle(4, 4)` deve retornar `22`.
 
 ```js
 assert.equal(cutRectangle(4, 4), 22);
 ```
 
-`cutRectangle(8, 3)` should return `53`.
+`cutRectangle(8, 3)` deve retornar `53`.
 
 ```js
 assert.equal(cutRectangle(8, 3), 53);
 ```
 
-`cutRectangle(7, 4)` should return `151`.
+`cutRectangle(7, 4)` deve retornar `151`.
 
 ```js
 assert.equal(cutRectangle(7, 4), 151);
