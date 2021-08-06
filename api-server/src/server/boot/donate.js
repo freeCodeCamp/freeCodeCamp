@@ -13,7 +13,6 @@ import { validStripeForm } from '../utils/stripeHelpers';
 const log = debug('fcc:boot:donate');
 
 export default function donateBoot(app, done) {
-  console.log('donationBoot');
   let stripe = false;
   const { User } = app.models;
   const api = app.loopback.Router();
@@ -21,7 +20,6 @@ export default function donateBoot(app, done) {
   const donateRouter = app.loopback.Router();
 
   function connectToStripe() {
-    console.log('connectToStripe');
     return new Promise(function () {
       // connect to stripe API
       stripe = Stripe(keys.stripe.secret);
@@ -29,14 +27,14 @@ export default function donateBoot(app, done) {
   }
 
   function createStripeDonation(req, res) {
-    console.log('createStripeDonation');
-    console.log(req.body);
     const { user, body } = req;
 
     const {
       amount,
       duration,
-      token: { email, id }
+      token: { id },
+      email,
+      name
     } = body;
 
     if (!validStripeForm(amount, duration, email)) {
@@ -45,15 +43,13 @@ export default function donateBoot(app, done) {
       });
     }
 
-    console.log('attemping to add user to fCC database');
     const fccUser = user
       ? Promise.resolve(user)
       : new Promise((resolve, reject) =>
           User.findOrCreate(
             { where: { email } },
             { email },
-            (err, instance, isNew) => {
-              log('creating a new donating user instance: ', isNew);
+            (err, instance) => {
               if (err) {
                 return reject(err);
               }
@@ -72,24 +68,22 @@ export default function donateBoot(app, done) {
     };
 
     const createCustomer = async user => {
-      console.log('createCustomer');
-      let cust;
+      let customer;
       donatingUser = user;
       try {
-        cust = await stripe.customers.create({
+        customer = await stripe.customers.create({
           email,
-          card: id
+          card: id,
+          name
         });
       } catch (err) {
-        console.log('error creating stripe customer: \n', err);
         throw new Error('Error creating stripe customer');
       }
-      return cust;
+      log(`Stripe customer with id ${customer.id} created`);
+      return customer;
     };
 
     const createSubscription = async customer => {
-      console.log(customer);
-      console.log('createSubscription');
       donation.customerId = customer.id;
       let sub;
       try {
@@ -104,15 +98,12 @@ export default function donateBoot(app, done) {
           ]
         });
       } catch (err) {
-        console.log('error creating stripe subscription: \n', err);
         throw new Error('Error creating stripe subscription');
       }
       return sub;
     };
 
     const createAsyncUserDonation = () => {
-      console.log('createAsyncUserDonation');
-
       donatingUser
         .createDonation(donation)
         .toPromise()
@@ -123,28 +114,19 @@ export default function donateBoot(app, done) {
 
     return Promise.resolve(fccUser)
       .then(nonDonatingUser => {
-        const { isDonating } = nonDonatingUser;
-        if (isDonating && duration !== 'onetime') {
-          throw {
-            message: `User already has active recurring donation(s).`,
-            type: 'AlreadyDonatingError'
-          };
-        }
+        // the logic is removed since users can donate without an account
         return nonDonatingUser;
       })
       .then(createCustomer)
       .then(customer => {
         return createSubscription(customer).then(subscription => {
-          console.log('subscription');
-          console.log(subscription);
+          log(`Stripe subscription with id ${subscription.id} created`);
           donation.subscriptionId = subscription.id;
-          return res.send(subscription);
+          return res.status(200);
         });
       })
       .then(createAsyncUserDonation)
       .catch(err => {
-        console.log('err');
-        console.log(err);
         if (
           err.type === 'StripeCardError' ||
           err.type === 'AlreadyDonatingError'
@@ -158,9 +140,7 @@ export default function donateBoot(app, done) {
   }
 
   function addDonation(req, res) {
-    console.log('addDonation');
     const { user, body } = req;
-    console.log(user, body);
     if (!user || !body) {
       return res
         .status(500)
@@ -183,7 +163,6 @@ export default function donateBoot(app, done) {
   }
 
   function updatePaypal(req, res) {
-    console.log('updatePaypal');
     const { headers, body } = req;
     return Promise.resolve(req)
       .then(verifyWebHookType)

@@ -6,8 +6,6 @@ import {
 } from '../../../../config/donation-settings';
 
 export function validStripeForm(amount, duration, email) {
-  console.log('validStripeForm');
-  console.log(amount, duration, email);
   return isEmail('' + email) &&
     isNumeric('' + amount) &&
     durationKeysConfig.includes(duration) &&

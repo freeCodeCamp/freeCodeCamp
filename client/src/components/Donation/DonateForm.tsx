@@ -186,7 +186,11 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     this.setState({ donationDuration, donationAmount });
   }
 
-  postStripeDonation(token: Token) {
+  postStripeDonation(
+    token: Token,
+    payerEmail: string | undefined,
+    payerName: string | undefined
+  ) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
     window.scrollTo(0, 0);
     console.log(token);
@@ -196,7 +200,13 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     if (this.props.handleProcessing) {
       this.props.handleProcessing(duration, amount, 'Stripe payment submition');
     }
-    this.props.postChargeStripe({ token, amount, duration });
+    this.props.postChargeStripe({
+      token,
+      amount,
+      duration,
+      email: payerEmail,
+      name: payerName
+    });
   }
 
   handleSelectAmount(donationAmount: number) {
@@ -303,7 +313,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     )}:`;
 
     const walletlabel = `${t(
-      isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1.',
+      isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
       { usd: donationAmount / 100 }
     )}:`;
     const priorityTheme = defaultTheme ? defaultTheme : theme;

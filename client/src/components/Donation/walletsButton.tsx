@@ -17,7 +17,11 @@ interface WrapperProps {
   label: string;
   amount: number;
   theme: string;
-  postStripeDonation: (token: Token) => void;
+  postStripeDonation: (
+    token: Token,
+    payerEmail: string | undefined,
+    payerName: string | undefined
+  ) => void;
   onDonationStateChange: (donationState: AddDonationData) => void;
   refreshErrorMessage: string;
 }
@@ -38,7 +42,6 @@ const WalletsButton = ({
   const [paymentRequest, setPaymentRequest] = useState<PaymentRequest | null>(
     null
   );
-  const [hasCheckedAvailability, checkAvailability] = useState(false);
   const [canMakePayment, checkpaymentPossiblity] = useState(false);
 
   useEffect(() => {
@@ -51,10 +54,7 @@ const WalletsButton = ({
     const pr = stripe.paymentRequest({
       country: 'US',
       currency: 'usd',
-      total: {
-        label,
-        amount
-      },
+      total: { label, amount },
       requestPayerName: true,
       requestPayerEmail: true,
       disableWallets: ['browserCard']
@@ -65,16 +65,14 @@ const WalletsButton = ({
       setToken(token);
       console.log(token);
       event.complete('success');
-      postStripeDonation(token);
+      postStripeDonation(token, payerEmail, payerName);
     });
 
     void pr.canMakePayment().then(canMakePaymentRes => {
       if (canMakePaymentRes) {
         setPaymentRequest(pr);
-        checkAvailability(true);
         checkpaymentPossiblity(true);
       } else {
-        checkAvailability(true);
         checkpaymentPossiblity(false);
         console.log('walletsavailabler');
       }
