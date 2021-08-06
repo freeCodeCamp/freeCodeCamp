@@ -8,9 +8,7 @@ import {
   canFocusEditorSelector,
   consoleOutputSelector,
   executeChallenge,
-  inAccessibilityModeSelector,
   saveEditorContent,
-  setAccessibilityMode,
   setEditorFocusability,
   visibleEditorsSelector,
   updateFile
@@ -31,7 +29,6 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
-  inAccessibilityMode: PropTypes.bool.isRequired,
   initialEditorContent: PropTypes.string,
   initialExt: PropTypes.string,
   output: PropTypes.arrayOf(PropTypes.string),
@@ -40,7 +37,6 @@ const propTypes = {
     onResize: PropTypes.func
   }),
   saveEditorContent: PropTypes.func.isRequired,
-  setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
   title: PropTypes.string,
@@ -57,21 +53,12 @@ const mapStateToProps = createSelector(
   visibleEditorsSelector,
   canFocusEditorSelector,
   consoleOutputSelector,
-  inAccessibilityModeSelector,
   isDonationModalOpenSelector,
   userSelector,
-  (
-    visibleEditors,
-    canFocus,
-    output,
-    accessibilityMode,
-    open,
-    { theme = 'default' }
-  ) => ({
+  (visibleEditors, canFocus, output, open, { theme = 'default' }) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,
     output,
-    inAccessibilityMode: accessibilityMode,
     theme
   })
 );
@@ -79,7 +66,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   executeChallenge,
   saveEditorContent,
-  setAccessibilityMode,
   setEditorFocusability,
   updateFile
 };
