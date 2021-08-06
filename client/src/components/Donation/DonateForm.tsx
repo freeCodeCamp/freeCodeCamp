@@ -307,8 +307,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     )}:`;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
 
-    console.log({ priorityTheme, defaultTheme, theme });
-
     return (
       <div>
         <b>{formlabel}</b>
@@ -316,7 +314,9 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
         <WalletsWrapper
           amount={donationAmount}
           label={walletlabel}
+          onDonationStateChange={this.onDonationStateChange}
           postStripeDonation={this.postStripeDonation}
+          refreshErrorMessage={t('donate.refresh-needed')}
           theme={priorityTheme}
         />
         <div className='donate-btn-group'>

@@ -446,6 +446,7 @@
     "cert-claim-success": "@{{username}}, you have successfully claimed the {{name}} Certification! Congratulations on behalf of the freeCodeCamp.org team!",
     "wrong-name": "Something went wrong with the verification of {{name}}, please try again. If you continue to receive this error, you can send a message to support@freeCodeCamp.org to get help.",
     "error-claiming": "Error claiming {{certName}}",
+    "refresh-needed": "You can only use the PaymentRequest button once. Refresh the page to start over.",
     "username-not-found": "We could not find a user with the username \"{{username}}\"",
     "add-name": "This user needs to add their name to their account in order for others to be able to view their certification.",
     "not-eligible": "This user is not eligible for freeCodeCamp.org certifications at this time.",

@@ -10,43 +10,46 @@ import {
   Elements,
   ElementsConsumer
 } from '@stripe/react-stripe-js';
-import { Stripe, StripeElements, loadStripe } from '@stripe/stripe-js';
+import { Stripe, loadStripe } from '@stripe/stripe-js';
 
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import envData from '../../../../config/env.json';
 
-interface WalletsButtonProps {
-  elements: StripeElements | null;
-  stripe: Stripe | null;
-}
-
-const defaultConfig = {
-  amount: 5,
-  theme: 'dark',
-  label: ''
-};
-
-const WalletConfig = React.createContext(defaultConfig);
 const { stripePublicKey }: { stripePublicKey: string | null } = envData as {
   stripePublicKey: string | null;
 };
 
-interface WalletsButtonState {
-  canMakePayment: boolean;
-  hasCheckedAvailability: boolean;
-  errorMessage: string | null;
-  paymentMethod?: Record<string, unknown> | null;
+// interface WalletsButtonState {
+//   canMakePayment: boolean;
+//   hasCheckedAvailability: boolean;
+//   errorMessage: string | null;
+//   paymentMethod?: Record<string, unknown> | null;
+// }
+interface WrapperProps {
+  label: string;
+  amount: number;
+  theme: string;
+  postStripeDonation: (token: unknown) => void;
+  onDonationStateChange: (token: unknown) => void;
+  refreshErrorMessage: string;
+}
+interface WalletsButtonProps extends WrapperProps {
+  stripe: Stripe | null;
 }
 
-const WalletsButton = ({ stripe, elements }: WalletsButtonProps) => {
+const WalletsButton = ({
+  stripe,
+  label,
+  amount,
+  theme,
+  refreshErrorMessage,
+  postStripeDonation,
+  onDonationStateChange
+}: WalletsButtonProps) => {
   const [token, setToken] = useState(null);
   const [paymentRequest, setPaymentRequest] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [hasCheckedAvailability, checkAvailability] = useState(false);
+  const [hasCheckedAvailability, checkAvailability] = useState(null);
   const [canMakePayment, checkpaymentPossiblity] = useState(false);
-
-  const config = useContext(WalletConfig);
-  console.log('lodaed');
 
   useEffect(() => {
     if (!stripe) {
@@ -59,8 +62,8 @@ const WalletsButton = ({ stripe, elements }: WalletsButtonProps) => {
       country: 'US',
       currency: 'usd',
       total: {
-        label: config.label,
-        amount: config.amount
+        label,
+        amount
       },
       requestPayerName: true,
       requestPayerEmail: true,
@@ -72,7 +75,7 @@ const WalletsButton = ({ stripe, elements }: WalletsButtonProps) => {
       setToken(token);
       console.log(token);
       event.complete('success');
-      // this.context.postStripeDonation(token);
+      // postStripeDonation(token);
     });
 
     void pr.canMakePayment().then(canMakePaymentRes => {
@@ -83,9 +86,19 @@ const WalletsButton = ({ stripe, elements }: WalletsButtonProps) => {
       } else {
         checkAvailability(true);
         checkpaymentPossiblity(false);
+        console.log('walletsavailabler');
       }
     });
   }, [stripe]);
+
+  const displayRefreshError = (): void => {
+    onDonationStateChange({
+      redirecting: false,
+      processing: false,
+      success: false,
+      error: refreshErrorMessage
+    });
+  };
 
   return (
     <form>
@@ -93,17 +106,14 @@ const WalletsButton = ({ stripe, elements }: WalletsButtonProps) => {
         <PaymentRequestButtonElement
           onClick={event => {
             if (token) {
-              event.preventDefault();
-              setErrorMessage(
-                'You can only use the PaymentRequest button once.'
-              );
+              displayRefreshError();
             }
           }}
           options={{
             style: {
               paymentRequestButton: {
                 type: 'default',
-                theme: config.theme === 'night' ? 'light' : 'dark',
+                theme: theme === 'night' ? 'light' : 'dark',
                 height: '43px'
               }
             },
@@ -111,48 +121,22 @@ const WalletsButton = ({ stripe, elements }: WalletsButtonProps) => {
           }}
         />
       )}
-      {token && `Got PaymentMethod: ${token.id}`}
-      {!canMakePayment && hasCheckedAvailability && 'notavailableresults'}
-      {errorMessage && `err: ${errorMessage}`}
     </form>
   );
 };
 
-const InjectedCheckoutForm = () => (
+const InjectedCheckoutForm = (props: WrapperProps): JSX.Element => (
   <ElementsConsumer>
-    {({ stripe, elements }) => (
-      <WalletsButton elements={elements} stripe={stripe} />
-    )}
+    {({ stripe }) => <WalletsButton stripe={stripe} {...props} />}
   </ElementsConsumer>
 );
 
 const stripePromise = loadStripe(stripePublicKey as string);
 
-interface WrapperProps {
-  label: string;
-  amount: number;
-  theme: string;
-  postStripeDonation: (token: unknown) => void;
-}
-
-const WalletsWrapper = ({
-  label,
-  amount,
-  theme,
-  postStripeDonation
-}: WrapperProps): JSX.Element => (
-  <WalletConfig.Provider
-    value={{
-      label,
-      amount,
-      theme,
-      postStripeDonation
-    }}
-  >
-    <Elements stripe={stripePromise}>
-      <InjectedCheckoutForm />
-    </Elements>
-  </WalletConfig.Provider>
+const WalletsWrapper = (props: WrapperProps): JSX.Element => (
+  <Elements stripe={stripePromise}>
+    <InjectedCheckoutForm {...props} />
+  </Elements>
 );
 
 export default WalletsWrapper;
