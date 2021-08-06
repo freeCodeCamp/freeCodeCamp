@@ -23,7 +23,7 @@ You should always name variables you don't want to reassign using the `const` ke
 
 A common practice when naming constants is to use all uppercase letters, with words separated by an underscore.
 
-**Note:** It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). You will learn more about objects, arrays, and immutable and mutable values in later challenges. In a later challenge you will also see an example of a lowercase variable identifier being used for an array.
+**Note:** It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). You will learn more about objects, arrays, and immutable and mutable values in later challenges. Also in later challenges, you will see examples of uppercase, lowercase, or camelCase variable identifiers.
 
 # --instructions--
 
