@@ -15,7 +15,7 @@ The most common type of JavaScript loop is called a `for` loop because it runs f
 
 For loops are declared with three optional expressions separated by semicolons:
 
-`for (a; b; c)`, where `a` is the intialization statement, `b` is the condition statement, and `c` is the final expression.
+`for (a; b; c)`, where `a` is the initialization statement, `b` is the condition statement, and `c` is the final expression.
 
 The initialization statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.
 
@@ -26,13 +26,14 @@ The final expression is executed at the end of each loop iteration, prior to the
 In the following example we initialize with `i = 0` and iterate while our condition `i < 5` is true. We'll increment `i` by `1` in each loop iteration with `i++` as our final expression.
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 5; i++) {
+const ourArray = [];
+
+for (let i = 0; i < 5; i++) {
   ourArray.push(i);
 }
 ```
 
-`ourArray` will now have the value `[0,1,2,3,4]`.
+`ourArray` will now have the value `[0, 1, 2, 3, 4]`.
 
 # --instructions--
 
@@ -46,7 +47,7 @@ You should be using a `for` loop for this.
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` should equal `[1,2,3,4,5]`.
+`myArray` should equal `[1, 2, 3, 4, 5]`.
 
 ```js
 assert.deepEqual(myArray, [1, 2, 3, 4, 5]);
@@ -64,16 +65,17 @@ if (typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 1; i < 6; i++) {
+const myArray = [];
+for (let i = 1; i < 6; i++) {
   myArray.push(i);
 }
 ```
