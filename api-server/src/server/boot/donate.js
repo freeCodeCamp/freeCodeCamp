@@ -1,15 +1,6 @@
 import debug from 'debug';
 import Stripe from 'stripe';
-import { isEmail, isNumeric } from 'validator';
-import {
-  durationKeysConfig,
-  donationOneTimeConfig,
-  donationSubscriptionConfig
-  // durationsConfig,
-  // onetimeSKUConfig,
-  // donationUrls
-} from '../../../../config/donation-settings';
-// import { deploymentEnv } from '../../../../config/read-env';
+import { donationSubscriptionConfig } from '../../../../config/donation-settings';
 import keys from '../../../../config/secrets';
 import {
   getAsyncPaypalToken,
@@ -17,6 +8,7 @@ import {
   updateUser,
   verifyWebHookType
 } from '../utils/donation';
+import { validStripeForm } from '../utils/stripeHelpers';
 
 const log = debug('fcc:boot:donate');
 
@@ -27,17 +19,6 @@ export default function donateBoot(app, done) {
   const api = app.loopback.Router();
   const hooks = app.loopback.Router();
   const donateRouter = app.loopback.Router();
-
-  function validStripeForm(amount, duration, email) {
-    console.log('validStripeForm');
-    console.log(amount, duration, email);
-    return isEmail('' + email) &&
-      isNumeric('' + amount) &&
-      durationKeysConfig.includes(duration) &&
-      duration === 'onetime'
-      ? donationOneTimeConfig.includes(amount)
-      : donationSubscriptionConfig.plans[duration];
-  }
 
   function connectToStripe() {
     console.log('connectToStripe');
@@ -64,6 +45,7 @@ export default function donateBoot(app, done) {
       });
     }
 
+    console.log('attemping to add user to fCC database');
     const fccUser = user
       ? Promise.resolve(user)
       : new Promise((resolve, reject) =>
@@ -91,8 +73,6 @@ export default function donateBoot(app, done) {
 
     const createCustomer = async user => {
       console.log('createCustomer');
-      // console.log({ user });
-      // console.log('test');
       let cust;
       donatingUser = user;
       try {
@@ -100,7 +80,6 @@ export default function donateBoot(app, done) {
           email,
           card: id
         });
-        // await stripe.customers.retrieve(id);
       } catch (e) {
         console.log('error creating stripe customer');
         console.log(e);
@@ -109,8 +88,8 @@ export default function donateBoot(app, done) {
     };
 
     const createSubscription = customer => {
+      console.log(customer);
       console.log('createSubscription');
-
       donation.customerId = customer.id;
       return stripe.subscriptions.create({
         customer: customer.id,
@@ -124,7 +103,7 @@ export default function donateBoot(app, done) {
       });
     };
 
-    const createOneTimeCharge = customer => {
+    /* const createOneTimeCharge = customer => {
       console.log('createOneTimeCharge');
       console.log({ customer });
 
@@ -134,7 +113,7 @@ export default function donateBoot(app, done) {
         currency: 'usd',
         customer: customer.id
       });
-    };
+    };*/
 
     const createAsyncUserDonation = () => {
       console.log('createAsyncUserDonation');
@@ -160,19 +139,19 @@ export default function donateBoot(app, done) {
       })
       .then(createCustomer)
       .then(customer => {
-        console.log('customer');
-        console.log(customer);
-        return duration === 'onetime'
+        return createSubscription(customer).then(subscription => {
+          console.log('subscription');
+          console.log(subscription);
+          donation.subscriptionId = subscription.id;
+          return res.send(subscription);
+        });
+
+        /* duration === 'onetime'
           ? createOneTimeCharge(customer).then(charge => {
               donation.subscriptionId = 'one-time-charge-prefix-' + charge.id;
               return res.send(charge);
             })
-          : createSubscription(customer).then(subscription => {
-              console.log('subscription');
-              console.log(subscription);
-              donation.subscriptionId = subscription.id;
-              return res.send(subscription);
-            });
+          : */
       })
       .then(createAsyncUserDonation)
       .catch(err => {
@@ -255,13 +234,12 @@ export default function donateBoot(app, done) {
     done();
   } else {
     api.post('/charge-stripe', createStripeDonation);
-    // api.post('/create-stripe-session', createStripeSession);
     api.post('/add-donation', addDonation);
     hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);
     donateRouter.use('/hooks', hooks);
     app.use(donateRouter);
-    connectToStripe().then(done);
+    connectToStripe(stripe).then(done);
     done();
   }
 }
