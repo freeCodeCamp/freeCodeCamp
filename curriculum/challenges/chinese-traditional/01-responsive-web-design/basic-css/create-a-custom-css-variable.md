@@ -9,7 +9,7 @@ dashedName: create-a-custom-css-variable
 
 # --description--
 
-爲創建一個 CSS 變量，你只需要在變量名前添加兩個連字符號，併爲其賦值即可，例子如下：
+爲創建一個 CSS 變量，你只需要在變量名前添加兩個連字符號，並為其賦值即可，例子如下：
 
 ```css
 --penguin-skin: gray;

@@ -16,7 +16,7 @@ dashedName: review-using-props-with-stateless-functional-components
 
 # --instructions--
 
-在代碼編輯器中有一個 `CampSite` 組件，它把 `Camper` 組件渲染爲自己的子組件。 定義 `Camper` 組件，併爲其分配默認 props `{ name: 'CamperBot' }`。 可以在 `Camper` 組件內部渲染任何你想要的代碼，但是要確保有一個 `p` 元素，它只包含作爲 `prop` 傳遞的 `name` 值。 最後，在 `Camper` 組件上定義 `propTypes`，要求提供 `name` 作爲 prop，並驗證它是 `string` 類型。
+在代碼編輯器中有一個 `CampSite` 組件，它把 `Camper` 組件渲染爲自己的子組件。 定義 `Camper` 組件，並為其分配默認 props `{ name: 'CamperBot' }`。 可以在 `Camper` 組件內部渲染任何你想要的代碼，但是要確保有一個 `p` 元素，它只包含作爲 `prop` 傳遞的 `name` 值。 最後，在 `Camper` 組件上定義 `propTypes`，要求提供 `name` 作爲 prop，並驗證它是 `string` 類型。
 
 # --hints--
 

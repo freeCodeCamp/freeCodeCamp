@@ -20,7 +20,7 @@ let flyMixin = function(obj) {
 };
 ```
 
-`flyMixin` 能接受任何對象，併爲其提供 `fly` 方法。
+`flyMixin` 能接受任何對象，並為其提供 `fly` 方法。
 
 ```js
 let bird = {

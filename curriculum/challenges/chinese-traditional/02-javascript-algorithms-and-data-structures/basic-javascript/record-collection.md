@@ -14,7 +14,7 @@ dashedName: record-collection
 
 -   函數必須始終返回整個音樂專輯集合對象。
 -   如果 `prop` 不是 `tracks` 並且 `value` 不是一個空字符串， 將相冊的 `prop` 更新或設置爲 `value`。
--   如果 `prop` 是 `tracks` 但專輯沒有 `tracks` 屬性，則應創建空數組併爲其添加 `value`。
+-   如果 `prop` 是 `tracks` 但專輯沒有 `tracks` 屬性，則應創建空數組並為其添加 `value`。
 -   如果 `prop` 是 `tracks` 並且 `value` 不是一個空字符串，將 `value` 添加到相冊現有 `tracks` 數組的末尾。
 -   如果 `value` 是空字符串，從專輯裏刪除指定的 `prop`。
 

@@ -22,7 +22,7 @@ Redux store 的 state 應該有一個初始值 5。
 assert(store.getState() === 5);
 ```
 
-應該存在一個變量 `currentState`，併爲其分配 Redux store 的當前狀態。
+應該存在一個變量 `currentState`，並為其分配 Redux store 的當前狀態。
 
 ```js
 (getUserInput) =>
