@@ -14,10 +14,11 @@ Sometimes it is useful to check if the property of a given object exists or not.
 **Example**
 
 ```js
-var myObj = {
+const myObj = {
   top: "hat",
   bottom: "pants"
 };
+
 myObj.hasOwnProperty("top");
 myObj.hasOwnProperty("middle");
 ```
