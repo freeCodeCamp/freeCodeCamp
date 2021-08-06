@@ -80,40 +80,35 @@ export default function donateBoot(app, done) {
           email,
           card: id
         });
-      } catch (e) {
-        console.log('error creating stripe customer');
-        console.log(e);
+      } catch (err) {
+        console.log('error creating stripe customer: \n', err);
+        throw new Error('Error creating stripe customer');
       }
       return cust;
     };
 
-    const createSubscription = customer => {
+    const createSubscription = async customer => {
       console.log(customer);
       console.log('createSubscription');
       donation.customerId = customer.id;
-      return stripe.subscriptions.create({
-        customer: customer.id,
-        items: [
-          {
-            plan: `${donationSubscriptionConfig.duration[
-              duration
-            ].toLowerCase()}-donation-${amount}`
-          }
-        ]
-      });
+      let sub;
+      try {
+        sub = await stripe.subscriptions.create({
+          customer: customer.id,
+          items: [
+            {
+              plan: `${donationSubscriptionConfig.duration[
+                duration
+              ].toLowerCase()}-donation-${amount}`
+            }
+          ]
+        });
+      } catch (err) {
+        console.log('error creating stripe subscription: \n', err);
+        throw new Error('Error creating stripe subscription');
+      }
+      return sub;
     };
-
-    /* const createOneTimeCharge = customer => {
-      console.log('createOneTimeCharge');
-      console.log({ customer });
-
-      donation.customerId = customer.id;
-      return stripe.charges.create({
-        amount: amount,
-        currency: 'usd',
-        customer: customer.id
-      });
-    };*/
 
     const createAsyncUserDonation = () => {
       console.log('createAsyncUserDonation');
@@ -145,13 +140,6 @@ export default function donateBoot(app, done) {
           donation.subscriptionId = subscription.id;
           return res.send(subscription);
         });
-
-        /* duration === 'onetime'
-          ? createOneTimeCharge(customer).then(charge => {
-              donation.subscriptionId = 'one-time-charge-prefix-' + charge.id;
-              return res.send(charge);
-            })
-          : */
       })
       .then(createAsyncUserDonation)
       .catch(err => {
