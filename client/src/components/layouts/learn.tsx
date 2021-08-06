@@ -86,6 +86,7 @@ class LearnLayout extends Component<LearnLayoutProps> {
       <>
         <Helmet>
           <meta content='noindex' name='robots' />
+          <base target='_blank' />
         </Helmet>
         <main id='learn-app-wrapper'>{children}</main>
         {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
