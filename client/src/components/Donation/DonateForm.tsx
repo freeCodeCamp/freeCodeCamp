@@ -322,7 +322,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
       <div>
         <b>{formlabel}</b>
         <Spacer />
-
         <div className='donate-btn-group'>
           <WalletsWrapper
             amount={donationAmount}
@@ -363,21 +362,37 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
 
   renderModalForm() {
     const { donationAmount, donationDuration } = this.state;
-    const { handleProcessing, addDonation, defaultTheme, theme } = this.props;
+    const { handleProcessing, addDonation, defaultTheme, theme, t } =
+      this.props;
+    const priorityTheme = defaultTheme ? defaultTheme : theme;
+    const isOneTime = donationDuration === 'onetime';
+    const walletlabel = `${t(
+      isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
+      { usd: donationAmount / 100 }
+    )}:`;
     return (
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+          <b className='donation-label'>{this.getDonationButtonLabel()}:</b>
           <Spacer />
-          <b>{this.getDonationButtonLabel()}:</b>
-          <Spacer />
-          <PaypalButton
-            addDonation={addDonation}
-            donationAmount={donationAmount}
-            donationDuration={donationDuration}
-            handleProcessing={handleProcessing}
-            onDonationStateChange={this.onDonationStateChange}
-            theme={defaultTheme ? defaultTheme : theme}
-          />
+          <div className='donate-btn-group'>
+            <WalletsWrapper
+              amount={donationAmount}
+              label={walletlabel}
+              onDonationStateChange={this.onDonationStateChange}
+              postStripeDonation={this.postStripeDonation}
+              refreshErrorMessage={t('donate.refresh-needed')}
+              theme={priorityTheme}
+            />
+            <PaypalButton
+              addDonation={addDonation}
+              donationAmount={donationAmount}
+              donationDuration={donationDuration}
+              handleProcessing={handleProcessing}
+              onDonationStateChange={this.onDonationStateChange}
+              theme={defaultTheme ? defaultTheme : theme}
+            />
+          </div>
         </Col>
       </Row>
     );
