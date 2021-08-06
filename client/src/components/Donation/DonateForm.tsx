@@ -312,15 +312,16 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
       <div>
         <b>{formlabel}</b>
         <Spacer />
-        <WalletsWrapper
-          amount={donationAmount}
-          label={walletlabel}
-          onDonationStateChange={this.onDonationStateChange}
-          postStripeDonation={this.postStripeDonation}
-          refreshErrorMessage={t('donate.refresh-needed')}
-          theme={priorityTheme}
-        />
+
         <div className='donate-btn-group'>
+          <WalletsWrapper
+            amount={donationAmount}
+            label={walletlabel}
+            onDonationStateChange={this.onDonationStateChange}
+            postStripeDonation={this.postStripeDonation}
+            refreshErrorMessage={t('donate.refresh-needed')}
+            theme={priorityTheme}
+          />
           <PaypalButton
             addDonation={addDonation}
             donationAmount={donationAmount}

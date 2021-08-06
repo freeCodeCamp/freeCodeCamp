@@ -13,12 +13,6 @@ const { stripePublicKey }: { stripePublicKey: string | null } = envData as {
   stripePublicKey: string | null;
 };
 
-// interface WalletsButtonState {
-//   canMakePayment: boolean;
-//   hasCheckedAvailability: boolean;
-//   errorMessage: string | null;
-//   paymentMethod?: Record<string, unknown> | null;
-// }
 interface WrapperProps {
   label: string;
   amount: number;
@@ -71,7 +65,7 @@ const WalletsButton = ({
       setToken(token);
       console.log(token);
       event.complete('success');
-      // postStripeDonation(token);
+      postStripeDonation(token);
     });
 
     void pr.canMakePayment().then(canMakePaymentRes => {
@@ -85,7 +79,7 @@ const WalletsButton = ({
         console.log('walletsavailabler');
       }
     });
-  }, [stripe]);
+  }, [label, amount, stripe, postStripeDonation]);
 
   const displayRefreshError = (): void => {
     onDonationStateChange({
@@ -97,10 +91,10 @@ const WalletsButton = ({
   };
 
   return (
-    <form>
+    <form className='wallets-form'>
       {canMakePayment && paymentRequest && (
         <PaymentRequestButtonElement
-          onClick={event => {
+          onClick={() => {
             if (token) {
               displayRefreshError();
             }
