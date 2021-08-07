@@ -51,6 +51,7 @@ jobs:
           cp sample.env .env
           echo 'STRIPE_PUBLIC_KEY=${{ env.STRIPE_PUBLIC_KEY }}' >> .env
           cat .env
+
       - name: Install Dependencies
         run: |
           npm ci
