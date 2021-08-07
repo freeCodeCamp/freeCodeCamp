@@ -9,9 +9,7 @@ import React, { useState, useEffect } from 'react';
 import envData from '../../../../config/env.json';
 import { AddDonationData } from './PaypalButton';
 
-const { stripePublicKey }: { stripePublicKey: string | null } = envData as {
-  stripePublicKey: string | null;
-};
+const { stripePublicKey }: { stripePublicKey: string } = envData;
 
 interface WrapperProps {
   label: string;
@@ -121,7 +119,7 @@ const InjectedCheckoutForm = (props: WrapperProps): JSX.Element => (
   </ElementsConsumer>
 );
 
-const stripePromise = loadStripe(stripePublicKey as string);
+const stripePromise = loadStripe(stripePublicKey || 'pk_from_stripe_dashboard');
 
 const WalletsWrapper = (props: WrapperProps): JSX.Element => (
   <Elements stripe={stripePromise}>

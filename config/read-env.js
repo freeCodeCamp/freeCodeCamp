@@ -54,9 +54,9 @@ module.exports = Object.assign(locations, {
       ? ''
       : algoliaAPIKey,
   stripePublicKey:
-    !stripePublicKey || stripePublicKey === 'pk_from_stripe_dashboard'
-      ? null
-      : stripePublicKey,
+    typeof stripePublicKey === 'string'
+      ? stripePublicKey
+      : 'pk_from_stripe_dashboard',
   paypalClientId:
     !paypalClientId || paypalClientId === 'id_from_paypal_dashboard'
       ? null
