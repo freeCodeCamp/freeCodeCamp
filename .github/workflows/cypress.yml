@@ -32,6 +32,7 @@ jobs:
           echo "CYPRESS_RECORD_KEY=${{ secrets.CYPRESS_RECORD_KEY }}" >> $GITHUB_ENV
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
           echo "CYPRESS_INSTALL_BINARY=7.1.0" >> $GITHUB_ENV
+          echo "STRIPE_PUBLIC_KEY=${{ secrets.STRIP_PUBLIC_KEY }}" >> $GITHUB_ENV
 
       - name: Checkout Source Files
         uses: actions/checkout@v2
@@ -43,7 +44,7 @@ jobs:
           cache: 'npm'
 
       - name: Set freeCodeCamp Environment Variables
-        run : cat sample.env | sed "s/pk_from_stripe_dashboard/${{ secrets.STRIPE_PUBLIC_KEY }}/" > .env
+        run : cat sample.env | sed "s/pk_from_stripe_dashboard/${{ env.STRIPE_PUBLIC_KEY }}/" > .env
 
       - name: Install Dependencies
         run: |
