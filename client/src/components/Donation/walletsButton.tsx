@@ -6,10 +6,10 @@ import {
 import { Stripe, loadStripe } from '@stripe/stripe-js';
 import type { Token, PaymentRequest } from '@stripe/stripe-js';
 import React, { useState, useEffect } from 'react';
-import envData from '../../../../config/env.json';
+// import envData from '../../../../config/env.json';
 import { AddDonationData } from './PaypalButton';
 
-const { stripePublicKey }: { stripePublicKey: string } = envData;
+// const { stripePublicKey }: { stripePublicKey: string } = envData;
 
 interface WrapperProps {
   label: string;
@@ -119,7 +119,9 @@ const InjectedCheckoutForm = (props: WrapperProps): JSX.Element => (
   </ElementsConsumer>
 );
 
-const stripePromise = loadStripe(stripePublicKey || 'pk_from_stripe_dashboard');
+const stripePromise = loadStripe(
+  'pk_test_51JLFYfCBeU1GYeL7BBPgEfHu7uU5VPuo2BX6kHOY9CMLiaJMF35yJQeRIagU9NiooGKi2T4VQwj19n9WVNiiV5P200USkVKEKb'
+);
 
 const WalletsWrapper = (props: WrapperProps): JSX.Element => (
   <Elements stripe={stripePromise}>
