@@ -45,12 +45,8 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run : |
-          echo $STRIP_PUBLIC_KEY
-          echo ${{ STRIPE_PUBLIC_KEY }}
-          echo ${{ env.STRIPE_PUBLIC_KEY }}
           cp sample.env .env
           echo 'STRIPE_PUBLIC_KEY=${{ env.STRIPE_PUBLIC_KEY }}' >> .env
-          cat .env
 
       - name: Install Dependencies
         run: |
