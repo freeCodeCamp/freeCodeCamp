@@ -43,9 +43,7 @@ jobs:
           cache: 'npm'
 
       - name: Set freeCodeCamp Environment Variables
-        env:
-          STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
-        run : cat sample.env | sed "s/pk_from_stripe_dashboard/$STRIPE_PUBLIC_KEY/" > .env
+        run : cp sample.env .env
 
       - name: Install Dependencies
         run: |
