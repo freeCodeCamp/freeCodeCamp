@@ -9,7 +9,7 @@ import { format as __format } from '../../utils/format';
 const __utils = (() => {
   const MAX_LOGS_SIZE = 64 * 1024;
 
-  let logs = [];
+  let logs: string[] = [];
   function flushLogs() {
     if (logs.length) {
       self.postMessage({
@@ -21,7 +21,7 @@ const __utils = (() => {
   }
 
   const oldLog = self.console.log.bind(self.console);
-  function proxyLog(...args) {
+  function proxyLog(...args: string[]) {
     logs.push(args.map(arg => __format(arg)).join(' '));
     if (logs.join('\n').length > MAX_LOGS_SIZE) {
       flushLogs();
@@ -30,12 +30,12 @@ const __utils = (() => {
   }
 
   // unless data.type is truthy, this sends data out to the testRunner
-  function postResult(data) {
+  function postResult(data: unknown) {
     flushLogs();
     self.postMessage(data);
   }
 
-  function log(...msgs) {
+  function log(...msgs: Error[]) {
     if (msgs && msgs[0] && !(msgs[0] instanceof chai.AssertionError)) {
       // discards the stack trace via toString as it only useful to debug the
       // site, not a specific challenge.
@@ -43,7 +43,7 @@ const __utils = (() => {
     }
   }
 
-  const toggleProxyLogger = on => {
+  const toggleProxyLogger = (on: unknown) => {
     self.console.log = on ? proxyLog : oldLog;
   };
 
@@ -55,9 +55,26 @@ const __utils = (() => {
   };
 })();
 
+// Created this interface to deal with tsc errors
+interface TestEvaluatorEvent extends MessageEvent {
+  data: {
+    code: {
+      contents: string;
+      editableContents: string;
+    };
+    removeComments: boolean;
+    firstTest: unknown;
+    testString: string;
+    build: string;
+    sources: {
+      [fileName: string]: unknown;
+    };
+  };
+}
+
 /* Run the test if there is one.  If not just evaluate the user code */
-self.onmessage = async e => {
-  /* eslint-disable no-unused-vars */
+self.onmessage = async (e: TestEvaluatorEvent) => {
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   let code = (e.data?.code?.contents || '').slice();
   code = e.data?.removeComments ? removeJSComments(code) : code;
   let editableContents = (e.data?.code?.editableContents || '').slice();
@@ -68,14 +85,15 @@ self.onmessage = async e => {
   const assert = chai.assert;
   const __helpers = curriculumHelpers;
   // Fake Deep Equal dependency
-  const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  const DeepEqual = <T>(a: T, b: T) => JSON.stringify(a) === JSON.stringify(b);
 
   // Build errors should be reported, but only once:
   __utils.toggleProxyLogger(e.data.firstTest);
-  /* eslint-enable no-unused-vars */
+  /* eslint-enable @typescript-eslint/no-unused-vars */
   try {
     let testResult;
-    let __userCodeWasExecuted = false;
+    const __userCodeWasExecuted = false;
+    /* eslint-disable @typescript-eslint/no-unsafe-assignment */
     /* eslint-disable no-eval */
     try {
       // Logging is proxyed after the build to catch console.log messages
@@ -95,10 +113,12 @@ ${e.data.testString}`);
       // log build errors unless they're related to import/export/require (there
       // are challenges that use them and they should not trigger warnings)
       if (
+        /* eslint-disable @typescript-eslint/no-unsafe-member-access */
         err.name !== 'ReferenceError' ||
         (err.message !== 'require is not defined' &&
           err.message !== 'exports is not defined')
       ) {
+        /* eslint-enable @typescript-eslint/no-unsafe-member-access */
         __utils.log(err);
       }
       // the tests may not require working code, so they are evaluated even if
@@ -106,8 +126,12 @@ ${e.data.testString}`);
       testResult = eval(e.data.testString);
     }
     /* eslint-enable no-eval */
+    /* eslint-enable @typescript-eslint/no-unsafe-assignment */
     if (typeof testResult === 'function') {
-      await testResult(fileName => __toString(e.data.sources[fileName]));
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      await testResult((fileName: string) =>
+        __toString(e.data.sources[fileName])
+      );
     }
     __utils.postResult({
       pass: true
@@ -121,8 +145,10 @@ ${e.data.testString}`);
     // postResult flushes the logs and must be called after logging is finished.
     __utils.postResult({
       err: {
+        /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
         message: err.message,
         stack: err.stack
+        /* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
       }
     });
   }
