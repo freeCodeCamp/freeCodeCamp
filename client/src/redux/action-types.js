@@ -27,7 +27,8 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('fetchProfileForUser'),
     ...createAsyncTypes('acceptTerms'),
     ...createAsyncTypes('showCert'),
-    ...createAsyncTypes('reportUser')
+    ...createAsyncTypes('reportUser'),
+    ...createAsyncTypes('postChargeStripe')
   ],
   ns
 );

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-
 /* eslint-disable no-nested-ternary */
 import {
   Col,
@@ -11,6 +10,8 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
+
+import type { Token } from '@stripe/stripe-js';
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -30,7 +31,8 @@ import {
   addDonation,
   updateDonationFormState,
   defaultDonationFormState,
-  userSelector
+  userSelector,
+  postChargeStripe
 } from '../../redux';
 import Spacer from '../helpers/spacer';
 
@@ -38,6 +40,7 @@ import DonateCompletion from './DonateCompletion';
 
 import type { AddDonationData } from './PaypalButton';
 import PaypalButton from './PaypalButton';
+import WalletsWrapper from './walletsButton';
 
 import './Donation.css';
 
@@ -55,6 +58,7 @@ type DonateFormState = {
 
 type DonateFormProps = {
   addDonation: (data: unknown) => unknown;
+  postChargeStripe: (data: unknown) => unknown;
   defaultTheme?: string;
   email: string;
   handleProcessing: (duration: string, amount: number, action: string) => void;
@@ -91,7 +95,8 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   addDonation,
-  updateDonationFormState
+  updateDonationFormState,
+  postChargeStripe
 };
 
 class DonateForm extends Component<DonateFormProps, DonateFormState> {
@@ -126,6 +131,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     this.handleSelectDuration = this.handleSelectDuration.bind(this);
     this.hideAmountOptionsCB = this.hideAmountOptionsCB.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
+    this.postStripeDonation = this.postStripeDonation.bind(this);
   }
 
   componentWillUnmount() {
@@ -178,6 +184,28 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
   handleSelectDuration(donationDuration: 'month' | 'onetime') {
     const donationAmount = this.getActiveDonationAmount(donationDuration, 0);
     this.setState({ donationDuration, donationAmount });
+  }
+
+  postStripeDonation(
+    token: Token,
+    payerEmail: string | undefined,
+    payerName: string | undefined
+  ) {
+    const { donationAmount: amount, donationDuration: duration } = this.state;
+    window.scrollTo(0, 0);
+
+    // change the donation modal button label to close
+    // or display the close button for the cert donation section
+    if (this.props.handleProcessing) {
+      this.props.handleProcessing(duration, amount, 'Stripe payment submition');
+    }
+    this.props.postChargeStripe({
+      token,
+      amount,
+      duration,
+      email: payerEmail,
+      name: payerName
+    });
   }
 
   handleSelectAmount(donationAmount: number) {
@@ -277,20 +305,31 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
       theme
     } = this.props;
     const { donationAmount, donationDuration } = this.state;
-
     const isOneTime = donationDuration === 'onetime';
+    const formlabel = `${t(
+      isOneTime ? 'donate.confirm-2' : 'donate.confirm-3',
+      { usd: donationAmount / 100 }
+    )}:`;
+
+    const walletlabel = `${t(
+      isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
+      { usd: donationAmount / 100 }
+    )}:`;
+    const priorityTheme = defaultTheme ? defaultTheme : theme;
 
     return (
       <div>
-        {isOneTime ? (
-          <b>
-            {t('donate.confirm-1')} {donationAmount / 100}:
-          </b>
-        ) : (
-          <b>{t('donate.confirm-3', { usd: donationAmount / 100 })}:</b>
-        )}
+        <b>{formlabel}</b>
         <Spacer />
         <div className='donate-btn-group'>
+          <WalletsWrapper
+            amount={donationAmount}
+            label={walletlabel}
+            onDonationStateChange={this.onDonationStateChange}
+            postStripeDonation={this.postStripeDonation}
+            refreshErrorMessage={t('donate.refresh-needed')}
+            theme={priorityTheme}
+          />
           <PaypalButton
             addDonation={addDonation}
             donationAmount={donationAmount}
@@ -299,7 +338,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
             isSubscription={isOneTime ? false : true}
             onDonationStateChange={this.onDonationStateChange}
             skipAddDonation={!isSignedIn}
-            theme={defaultTheme ? defaultTheme : theme}
+            theme={priorityTheme}
           />
         </div>
       </div>
@@ -322,21 +361,37 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
 
   renderModalForm() {
     const { donationAmount, donationDuration } = this.state;
-    const { handleProcessing, addDonation, defaultTheme, theme } = this.props;
+    const { handleProcessing, addDonation, defaultTheme, theme, t } =
+      this.props;
+    const priorityTheme = defaultTheme ? defaultTheme : theme;
+    const isOneTime = donationDuration === 'onetime';
+    const walletlabel = `${t(
+      isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
+      { usd: donationAmount / 100 }
+    )}:`;
     return (
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+          <b className='donation-label'>{this.getDonationButtonLabel()}:</b>
           <Spacer />
-          <b>{this.getDonationButtonLabel()}:</b>
-          <Spacer />
-          <PaypalButton
-            addDonation={addDonation}
-            donationAmount={donationAmount}
-            donationDuration={donationDuration}
-            handleProcessing={handleProcessing}
-            onDonationStateChange={this.onDonationStateChange}
-            theme={defaultTheme ? defaultTheme : theme}
-          />
+          <div className='donate-btn-group'>
+            <WalletsWrapper
+              amount={donationAmount}
+              label={walletlabel}
+              onDonationStateChange={this.onDonationStateChange}
+              postStripeDonation={this.postStripeDonation}
+              refreshErrorMessage={t('donate.refresh-needed')}
+              theme={priorityTheme}
+            />
+            <PaypalButton
+              addDonation={addDonation}
+              donationAmount={donationAmount}
+              donationDuration={donationDuration}
+              handleProcessing={handleProcessing}
+              onDonationStateChange={this.onDonationStateChange}
+              theme={defaultTheme ? defaultTheme : theme}
+            />
+          </div>
         </Col>
       </Row>
     );
