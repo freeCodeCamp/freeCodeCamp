@@ -22,6 +22,9 @@
       "node",
       "jest",
       "@testing-library/jest-dom"
+    ],
+    "lib": [
+      "WebWorker"
     ]
   }
 }
