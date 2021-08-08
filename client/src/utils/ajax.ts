@@ -105,7 +105,6 @@ export function addDonation(body: Donation): Promise<void> {
 }
 
 export function postChargeStripe(body: Donation): Promise<void> {
-  console.log(body);
   return post('/donate/charge-stripe', body);
 }
 interface Report {

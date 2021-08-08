@@ -44,8 +44,6 @@ const WalletsButton = ({
 
   useEffect(() => {
     if (!stripe) {
-      // We can't create a PaymentRequest until Stripe.js loads.
-      console.log('nostripe');
       return;
     }
 
@@ -61,7 +59,6 @@ const WalletsButton = ({
     pr.on('token', event => {
       const { token, payerEmail, payerName } = event;
       setToken(token);
-      console.log(token);
       event.complete('success');
       postStripeDonation(token, payerEmail, payerName);
     });
@@ -72,7 +69,6 @@ const WalletsButton = ({
         checkpaymentPossiblity(true);
       } else {
         checkpaymentPossiblity(false);
-        console.log('walletsavailabler');
       }
     });
   }, [label, amount, stripe, postStripeDonation]);

@@ -193,7 +193,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
   ) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
     window.scrollTo(0, 0);
-    console.log(token);
 
     // change the donation modal button label to close
     // or display the close button for the cert donation section
