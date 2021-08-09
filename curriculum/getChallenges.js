@@ -4,7 +4,7 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex, reduce, toString } = require('lodash');
 const readDirP = require('readdirp');
-const { helpCategoryMap } = require('../client/utils/challengeTypes');
+const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
 const { curriculum: curriculumLangs } =
   require('../config/i18n/all-langs').availableLangs;

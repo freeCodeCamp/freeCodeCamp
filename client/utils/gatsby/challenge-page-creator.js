@@ -1,7 +1,7 @@
 const path = require('path');
 const { dasherize } = require('../../../utils/slugs');
 
-const { viewTypes } = require('../challengeTypes');
+const { viewTypes } = require('../challenge-types');
 
 const backend = path.resolve(
   __dirname,
@@ -42,21 +42,22 @@ const views = {
   // quiz: Quiz
 };
 
-const getNextChallengePath = (node, index, nodeArray) => {
+function getNextChallengePath(_node, index, nodeArray) {
   const next = nodeArray[index + 1];
   return next ? next.node.fields.slug : '/learn';
-};
+}
 
-const getPrevChallengePath = (node, index, nodeArray) => {
+function getPrevChallengePath(_node, index, nodeArray) {
   const prev = nodeArray[index - 1];
   return prev ? prev.node.fields.slug : '/learn';
-};
+}
 
-const getTemplateComponent = challengeType => views[viewTypes[challengeType]];
+function getTemplateComponent(challengeType) {
+  return views[viewTypes[challengeType]];
+}
 
-exports.createChallengePages =
-  createPage =>
-  ({ node }, index, thisArray) => {
+exports.createChallengePages = function (createPage) {
+  return function ({ node }, index, thisArray) {
     const {
       superBlock,
       block,
@@ -69,7 +70,7 @@ exports.createChallengePages =
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
 
-    return createPage({
+    createPage({
       path: slug,
       component: getTemplateComponent(challengeType),
       context: {
@@ -86,35 +87,40 @@ exports.createChallengePages =
       }
     });
   };
-
-exports.createBlockIntroPages = createPage => edge => {
-  const {
-    fields: { slug },
-    frontmatter: { block }
-  } = edge.node;
-
-  return createPage({
-    path: slug,
-    component: intro,
-    context: {
-      block: dasherize(block),
-      slug
-    }
-  });
 };
 
-exports.createSuperBlockIntroPages = createPage => edge => {
-  const {
-    fields: { slug },
-    frontmatter: { superBlock }
-  } = edge.node;
+exports.createBlockIntroPages = function (createPage) {
+  return function (edge) {
+    const {
+      fields: { slug },
+      frontmatter: { block }
+    } = edge.node;
 
-  return createPage({
-    path: slug,
-    component: superBlockIntro,
-    context: {
-      superBlock,
-      slug
-    }
-  });
+    createPage({
+      path: slug,
+      component: intro,
+      context: {
+        block: dasherize(block),
+        slug
+      }
+    });
+  };
+};
+
+exports.createSuperBlockIntroPages = function (createPage) {
+  return function (edge) {
+    const {
+      fields: { slug },
+      frontmatter: { superBlock }
+    } = edge.node;
+
+    createPage({
+      path: slug,
+      component: superBlockIntro,
+      context: {
+        superBlock,
+        slug
+      }
+    });
+  };
 };

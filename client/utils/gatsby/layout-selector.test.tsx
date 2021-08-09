@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import React from 'react';
 import { Provider } from 'react-redux';
 import ShallowRenderer from 'react-test-renderer/shallow';
@@ -11,10 +12,19 @@ import layoutSelector from './layout-selector';
 jest.mock('../../src/analytics');
 
 const store = createStore();
-function getComponentNameAndProps(elementType, pathname) {
-  const shallow = new ShallowRenderer();
+
+interface NameAndProps {
+  props: Record<string, unknown>;
+  name: string;
+}
+function getComponentNameAndProps(
+  elementType: React.JSXElementConstructor<never>,
+  pathname: string
+): NameAndProps {
+  // eslint-disable-next-line testing-library/render-result-naming-convention
+  const shallow = ShallowRenderer.createRenderer();
   const LayoutReactComponent = layoutSelector({
-    element: { type: elementType },
+    element: { type: elementType, props: {}, key: '' },
     props: {
       location: {
         pathname
@@ -24,8 +34,13 @@ function getComponentNameAndProps(elementType, pathname) {
   shallow.render(<Provider store={store}>{LayoutReactComponent}</Provider>);
   const view = shallow.getRenderOutput();
   return {
-    props: view.props,
+    props: view.props as Record<string, unknown>,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     name: view.type.WrappedComponent.displayName
+    // TODO: Revisit this when react-test-renderer is replaced with
+    // react-testing-library
   };
 }
 

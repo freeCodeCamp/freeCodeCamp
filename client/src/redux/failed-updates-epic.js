@@ -11,7 +11,7 @@ import {
 import store from 'store';
 import { v4 as uuid } from 'uuid';
 
-import { backEndProject } from '../../utils/challengeTypes';
+import { backEndProject } from '../../utils/challenge-types';
 import { isGoodXHRStatus } from '../templates/Challenges/utils';
 import postUpdate$ from '../templates/Challenges/utils/postUpdate$';
 import { actionTypes } from './action-types';
