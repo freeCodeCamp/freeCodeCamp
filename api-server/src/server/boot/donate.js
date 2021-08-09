@@ -122,7 +122,7 @@ export default function donateBoot(app, done) {
         return createSubscription(customer).then(subscription => {
           log(`Stripe subscription with id ${subscription.id} created`);
           donation.subscriptionId = subscription.id;
-          return res.status(200);
+          return res.send(200);
         });
       })
       .then(createAsyncUserDonation)
