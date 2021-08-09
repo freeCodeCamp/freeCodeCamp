@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443eddfaeb5bdff
-title: Build a Nightlife Coordination App
+title: Costruisci un'app per il coordinamento della vita notturna
 challengeType: 4
 forumTopicId: 302351
 dashedName: build-a-nightlife-coordination-app
@@ -8,21 +8,21 @@ dashedName: build-a-nightlife-coordination-app
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://yoyo44.herokuapp.com/>. Use a site builder of your choice to complete the project.
+Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: [herokuapp.com/](https://yoyo44.herokuapp.com/). Usare un costruttore di siti di tua scelta per completare il progetto.
 
-Here are the specific user stories you should implement for this project:
+Ecco le specifiche user story da implementare per questo progetto:
 
-**User Story:** As an unauthenticated user, you can view all bars in my area.
+**User Story:** Come utente non autenticato, posso vedere tutti i bar nella mia zona.
 
-**User Story:** As an authenticated user, you can add myself to a bar to indicate you am going there tonight.
+**User Story:** Come utente autenticato, posso aggiungermi a un bar per indicarti dove vado questa sera.
 
-**User Story:** As an authenticated user, you can remove myself from a bar if you no longer want to go there.
+**User Story:** Come utente autenticato, puoi rimuovermi da un bar se non vuoi più andare là.
 
-**User Story:** As an unauthenticated user, when you login you should not have to search again.
+**User Story:** Come utente non autenticato, quando fai login non devi effettuare di nuovo la ricerca.
 
-**Hint:** Try using the [Yelp API](https://www.yelp.com/developers/documentation/v3) to find venues in the cities your users search for. If you use Yelp's API, be sure to mention so in your app.
+**Suggerimento:** Prova a usare [l'API di Yelp](https://www.yelp.com/developers/documentation/v3) per trovare locali nelle città cercate dai tuoi utenti. Se usi l'API di Yelp, assicurati di menzionarla nella tua app.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
 
 # --solutions--
 

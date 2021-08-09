@@ -1,6 +1,6 @@
 ---
 id: 5956795bc9e2c415eb244de1
-title: Hash join
+title: União de hashes
 challengeType: 5
 forumTopicId: 302284
 dashedName: hash-join
@@ -8,40 +8,40 @@ dashedName: hash-join
 
 # --description--
 
-An [inner join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join "wp: Join\_(SQL)#Inner_join") is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the [nested loop join](https://en.wikipedia.org/wiki/Nested loop join "wp: Nested loop join") algorithm, but a more scalable alternative is the [hash join](https://en.wikipedia.org/wiki/hash join "wp: hash join") algorithm.
+Uma [inner join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join "wp: Join\_(SQL)#Inner_join") (união interna) é uma operação que combina duas tabelas de dados em uma tabela, com base em valores de coluna correspondentes. A maneira mais simples de implementar essa operação é o algoritmo de [união de laços aninhados](https://en.wikipedia.org/wiki/Nested loop join "wp: Nested loop join"), mas uma alternativa mais escalável é o algoritmo de [união de hashes](https://en.wikipedia.org/wiki/hash join "wp: hash join").
 
-The "hash join" algorithm consists of two steps:
+O algoritmo de união de hashes (ou "hash join") consiste em duas etapas:
 
 <ol>
-  <li><strong>Hash phase:</strong> Create a <a href='https://en.wikipedia.org/wiki/Multimap' title='wp: Multimap' target='_blank'>multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
+  <li><strong>Fase de hash:</strong> criar um <a href='https://en.wikipedia.org/wiki/Multimap' title='wp: Multimap' target='_blank'>multimapa</a> de uma das tabelas, mapear a partir do valor de cada coluna de join para todas as linhas que a contêm.</li>
   <ul>
-    <li>The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.</li>
-    <li>Ideally we should create the multimap for the smaller table, thus minimizing its creation time and memory size.</li>
+    <li>O multimapa deve suportar uma pesquisa baseada em hash, que seja melhor dimensionada do que uma simples pesquisa linear, pois esse é o sentido desse algoritmo.</li>
+    <li>Idealmente, devemos criar o multimapa para a tabela menor, assim minimizando seu tempo de criação e o tamanho da memória.</li>
   </ul>
-  <li><strong>Join phase:</strong> Scan the other table, and find matching rows by looking in the multimap created before.</li>
+  <li><strong>Fase de união:</strong> escaneie a outra tabela e encontre linhas correspondentes buscando no multimapa criado anteriormente.</li>
 </ol>
 
-In pseudo-code, the algorithm could be expressed as follows:
+Em pseudocódigo, o algoritmo poderia ser expresso da seguinte forma:
 
-<pre><strong>let</strong> <i>A</i> = the first input table (or ideally, the larger one)
-<strong>let</strong> <i>B</i> = the second input table (or ideally, the smaller one)
-<strong>let</strong> <i>j<sub>A</sub></i> = the join column ID of table <i>A</i>
-<strong>let</strong> <i>j<sub>B</sub></i> = the join column ID of table <i>B</i>
-<strong>let</strong> <i>M<sub>B</sub></i> = a multimap for mapping from single values to multiple rows of table <i>B</i> (starts out empty)
-<strong>let</strong> <i>C</i> = the output table (starts out empty)
-<strong>for each</strong> row <i>b</i> in table <i>B</i>:
-  <strong>place</strong> <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>b(j<sub>B</sub>)</i>
-<strong>for each</strong> row <i>a</i> in table <i>A</i>:
-  <strong>for each</strong> row <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>a(j<sub>A</sub>)</i>:
-    <strong>let</strong> <i>c</i> = the concatenation of row <i>a</i> and row <i>b</i>
-    <strong>place</strong> row <i>c</i> in table <i>C</i>
+<pre><strong>permita que</strong> <i>A</i> = a primeira tabela de entrada (ou idealmente, a maior)
+<strong>permita que</strong> <i>B</i> = a segunda tabela de entrada (ou idealmente, a menor)
+<strong>permita que</strong> <i>j<sub>A</sub></i> = o ID da coluna de união da tabela <i>A</i>
+<strong>permita que</strong> <i>j<sub>B</sub></i> = o ID da coluna de união da tabela <i>B</i>
+<strong>permita que</strong> <i>M<sub>B</sub></i> = um multimapa para o mapeamento de valores únicos para múltiplas linhas da tabela <i>B</i> (começa vazio)
+<strong>permita que</strong> <i>C</i> = a tabela de saída (começa vazia)
+<strong>para cada</strong> linha <i>b</i> na tabela <i>B</i>:
+  <strong>coloque</strong> <i>b</i> no multimapa <i>M<sub>B</sub></i> com a chave <i>b(j<sub>B</sub>)</i>
+<strong>para cada</strong> linha <i>a</i> na tabela <i>A</i>:
+  <strong>para cada</strong> linha <i>b</i> no multimapa <i>M<sub>B</sub></i> com a chave <i>a(j<sub>A</sub>)</i>:
+    <strong>permita que</strong> <i>c</i> = a concatenação da linha <i>a</i> e da linha <i>b</i>
+    <strong>coloque</strong> a linha <i>c</i> na tabela <i>C</i>
 </pre>
 
 # --instructions--
 
-Implement the "hash join" algorithm as a function and demonstrate that it passes the test-case listed below. The function should accept two arrays of objects and return an array of combined objects.
+Implemente o algoritmo de "hash join" como uma função e demonstre que ele passa pelo caso de teste listado abaixo. A função deve aceitar dois arrays de objetos e retornar um array de objetos combinados.
 
-**Input**
+**Entrada**
 
 <table>
   <tr>
@@ -52,8 +52,8 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
           <td style="border:none">
             <table>
               <tr>
-                <th style="padding: 4px; margin: 5px;">Age</th>
-                <th style="padding: 4px; margin: 5px;">Name</th>
+                <th style="padding: 4px; margin: 5px;">Idade</th>
+                <th style="padding: 4px; margin: 5px;">Nome</th>
               </tr>
               <tr>
                 <td style="padding: 4px; margin: 5px;">27</td>
@@ -82,8 +82,8 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
           <td style="border:none">
             <table>
               <tr>
-                <th style="padding: 4px; margin: 5px;">Character</th>
-                <th style="padding: 4px; margin: 5px;">Nemesis</th>
+                <th style="padding: 4px; margin: 5px;">Personagem</th>
+                <th style="padding: 4px; margin: 5px;">Inimigo</th>
               </tr>
               <tr>
                 <td style="padding: 4px; margin: 5px;">Jonah</td>
@@ -113,13 +113,13 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
             <i>j<sub>A</sub> =</i>
           </td>
           <td style="border:none">
-            <i><code>Name</code> (i.e. column 1)</i>
+            <i><code>Name</code> (ou seja, a coluna 1)</i>
           </td>
           <td style="border:none">
             <i>j<sub>B</sub> =</i>
           </td>
           <td style="border:none">
-            <i><code>Character</code> (i.e. column 0)</i>
+            <i><code>Character</code> (ou seja, a coluna 0)</i>
           </td>
         </tr>
       </table>
@@ -127,7 +127,7 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
   </tr>
 </table>
 
-**Output**
+**Saída**
 
 | A_age | A_name | B_character | B_nemesis |
 | ----- | ------ | ----------- | --------- |
@@ -139,17 +139,17 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
 | 28    | Alan   | Alan        | Ghosts    |
 | 28    | Alan   | Alan        | Zombies   |
 
-The order of the rows in the output table is not significant.
+A ordem das linhas na tabela de saída não é significativa.
 
 # --hints--
 
-`hashJoin` should be a function.
+`hashJoin` deve ser uma função.
 
 ```js
 assert(typeof hashJoin === 'function');
 ```
 
-`hashJoin([{ age: 27, name: "Jonah" }, { age: 18, name: "Alan" }, { age: 28, name: "Glory" }, { age: 18, name: "Popeye" }, { age: 28, name: "Alan" }], [{ character: "Jonah", nemesis: "Whales" }, { character: "Jonah", nemesis: "Spiders" }, { character: "Alan", nemesis: "Ghosts" }, { character:"Alan", nemesis: "Zombies" }, { character: "Glory", nemesis: "Buffy" }, { character: "Bob", nemesis: "foo" }])` should return `[{"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Whales"}, {"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Spiders"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}, {"A_age": 28,"A_name": "Glory", "B_character": "Glory", "B_nemesis": "Buffy"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}]`
+`hashJoin([{ age: 27, name: "Jonah" }, { age: 18, name: "Alan" }, { age: 28, name: "Glory" }, { age: 18, name: "Popeye" }, { age: 28, name: "Alan" }], [{ character: "Jonah", nemesis: "Whales" }, { character: "Jonah", nemesis: "Spiders" }, { character: "Alan", nemesis: "Ghosts" }, { character:"Alan", nemesis: "Zombies" }, { character: "Glory", nemesis: "Buffy" }, { character: "Bob", nemesis: "foo" }])` deve retornar `[{"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Whales"}, {"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Spiders"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}, {"A_age": 28,"A_name": "Glory", "B_character": "Glory", "B_nemesis": "Buffy"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}]`
 
 ```js
 assert.deepEqual(hashJoin(hash1, hash2), res);

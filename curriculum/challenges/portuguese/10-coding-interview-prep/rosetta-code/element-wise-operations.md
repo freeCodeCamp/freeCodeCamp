@@ -1,6 +1,6 @@
 ---
 id: 599c333915e0ea32d04d4bec
-title: Element-wise operations
+title: Operações de elementos
 challengeType: 5
 forumTopicId: 302252
 dashedName: element-wise-operations
@@ -8,29 +8,29 @@ dashedName: element-wise-operations
 
 # --description--
 
-Implement basic element-wise matrix-matrix and scalar-matrix operations.
+Implemente operações básicas matriz-matriz e escalar-matriz de elementos.
 
-**Implement:**
+**Implemente:**
 
 <ul>
-  <li>addition</li>
-  <li>subtraction</li>
-  <li>multiplication</li>
-  <li>division</li>
-  <li>exponentiation</li>
+  <li>adição</li>
+  <li>subtração</li>
+  <li>multiplicação</li>
+  <li>divisão</li>
+  <li>exponenciação</li>
 </ul>
 
-The first parameter will be the operation to be performed, for example, "m_add" for matrix addition and "s_add" for scalar addition. The second and third parameters will be the matrices on which the operations are to be performed.
+O primeiro parâmetro será a operação a ser executada, por exemplo, "m_add" para adição de matrizes e "s_add" para a adição escalar. O segundo e o terceiro parâmetros serão as matrizes sobre as quais as operações serão realizadas.
 
 # --hints--
 
-`operation` should be a function.
+`operation` deve ser uma função.
 
 ```js
 assert(typeof operation === 'function');
 ```
 
-`operation("m_add",[[1,2],[3,4]],[[1,2],[3,4]])` should return `[[2,4],[6,8]]`.
+`operation("m_add",[[1,2],[3,4]],[[1,2],[3,4]])` deve retornar `[[2,4],[6,8]]`.
 
 ```js
 assert.deepEqual(
@@ -52,7 +52,7 @@ assert.deepEqual(
 );
 ```
 
-`operation("s_add",[[1,2],[3,4]],2)` should return `[[3,4],[5,6]]`.
+`operation("s_add",[[1,2],[3,4]],2)` deve retornar `[[3,4],[5,6]]`.
 
 ```js
 assert.deepEqual(
@@ -71,7 +71,7 @@ assert.deepEqual(
 );
 ```
 
-`operation("m_sub",[[1,2],[3,4]],[[1,2],[3,4]])` should return `[[0,0],[0,0]]`.
+`operation("m_sub",[[1,2],[3,4]],[[1,2],[3,4]])` deve retornar `[[0,0],[0,0]]`.
 
 ```js
 assert.deepEqual(
@@ -93,7 +93,7 @@ assert.deepEqual(
 );
 ```
 
-`operation("m_mult",[[1,2],[3,4]],[[1,2],[3,4]])` should return `[[1,4],[9,16]]`.
+`operation("m_mult",[[1,2],[3,4]],[[1,2],[3,4]])` deve retornar `[[1,4],[9,16]]`.
 
 ```js
 assert.deepEqual(
@@ -115,7 +115,7 @@ assert.deepEqual(
 );
 ```
 
-`operation("m_div",[[1,2],[3,4]],[[1,2],[3,4]])` should return `[[1,1],[1,1]]`.
+`operation("m_div",[[1,2],[3,4]],[[1,2],[3,4]])` deve retornar `[[1,1],[1,1]]`.
 
 ```js
 assert.deepEqual(
@@ -137,7 +137,7 @@ assert.deepEqual(
 );
 ```
 
-`operation("m_exp",[[1,2],[3,4]],[[1,2],[3,4]])` should return `[[1,4],[27,256]]`.
+`operation("m_exp",[[1,2],[3,4]],[[1,2],[3,4]])` deve retornar `[[1,4],[27,256]]`.
 
 ```js
 assert.deepEqual(
@@ -159,7 +159,7 @@ assert.deepEqual(
 );
 ```
 
-`operation("m_add",[[1,2,3,4],[5,6,7,8]],[[9,10,11,12],[13,14,15,16]])` should return `[[10,12,14,16],[18,20,22,24]]`.
+`operation("m_add",[[1,2,3,4],[5,6,7,8]],[[9,10,11,12],[13,14,15,16]])` deve retornar `[[10,12,14,16],[18,20,22,24]]`.
 
 ```js
 assert.deepEqual(

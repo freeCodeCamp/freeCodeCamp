@@ -1,6 +1,6 @@
 ---
 id: 59f4eafba0343628bb682785
-title: Discordian date
+title: Data discordiana
 challengeType: 5
 forumTopicId: 302250
 dashedName: discordian-date
@@ -8,17 +8,17 @@ dashedName: discordian-date
 
 # --description--
 
-Convert a given date from the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian calendar "wp: Gregorian calendar") to the [Discordian calendar](https://en.wikipedia.org/wiki/Discordian calendar "wp: Discordian calendar").
+Converta uma data fornecida do [Calendário Gregoriano](https://en.wikipedia.org/wiki/Gregorian calendar "wp: Gregorian calendar") para o [Calendário Discordiano](https://en.wikipedia.org/wiki/Discordian calendar "wp: Discordian calendar").
 
 # --hints--
 
-`discordianDate` should be a function.
+`discordianDate` deve ser uma função.
 
 ```js
 assert(typeof discordianDate === 'function');
 ```
 
-`discordianDate(new Date(2010, 6, 22))` should return `"Pungenday, the 57th day of Confusion in the YOLD 3176"`.
+`discordianDate(new Date(2010, 6, 22))` deve retornar `"Pungenday, the 57th day of Confusion in the YOLD 3176"`.
 
 ```js
 assert(
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 28))` should return `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 1, 28))` deve retornar `"Prickle-Prickle, the 59th day of Chaos in the YOLD 3178"`.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 29))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib\'s Day!"`.
+`discordianDate(new Date(2012, 1, 29))` deve retornar `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib\'s Day!"`.
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 2, 1))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178"`.
+`discordianDate(new Date(2012, 2, 1))` deve retornar `"Setting Orange, the 60th day of Chaos in the YOLD 3178"`.
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2010, 0, 5))` should return `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"`.
+`discordianDate(new Date(2010, 0, 5))` deve retornar `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"`.
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2011, 4, 3))` should return `"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"`.
+`discordianDate(new Date(2011, 4, 3))` deve retornar `"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"`.
 
 ```js
 assert(
@@ -72,7 +72,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2015, 9, 19))` should return `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"`.
+`discordianDate(new Date(2015, 9, 19))` deve retornar `"Boomtime, the 73rd day of Bureaucracy in the YOLD 3181"`.
 
 ```js
 assert(
