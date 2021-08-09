@@ -16,13 +16,13 @@ Using another attribute selector, style the `input` with a `type` of `file` to b
 You should use an attribute selector to style the `input` element.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('input[type="file"]'));
 ```
 
 You should give the `input[type="file"]` a `padding` of `1px 2px`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="file"]')?.padding, '1px 2px');
 ```
 
 # --seed--

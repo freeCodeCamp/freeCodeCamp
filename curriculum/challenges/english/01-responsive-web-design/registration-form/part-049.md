@@ -13,10 +13,22 @@ Move the `min-height` property and value so that all three element types have th
 
 # --hints--
 
-Test 1
+You should move the `min-height` property and value to the `input, textarea, select` selector.
 
 ```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('input, textarea, select')?.minHeight);
+```
 
+You should give the `input, textarea, select` selector a `min-height` of `2em`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('input, textarea, select')?.minHeight, '2em');
+```
+
+You should remove the `min-height` declaration from the `input, textarea` selector.
+
+```js
+assert.empty(new __helpers.CSSHelp(document).getStyle('input, textarea')?.minHeight);
 ```
 
 # --seed--

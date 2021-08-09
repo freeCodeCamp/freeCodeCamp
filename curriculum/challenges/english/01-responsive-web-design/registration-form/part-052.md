@@ -11,10 +11,16 @@ To make the submit button look more in line with the rest of the form, give it t
 
 # --hints--
 
-Test 1
+You should give the submit button a `height` of `2em`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.height, '2em');
+```
 
+You should give the submit button a `font-size` of `1.1rem`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.fontSize, '1.1rem');
 ```
 
 # --seed--

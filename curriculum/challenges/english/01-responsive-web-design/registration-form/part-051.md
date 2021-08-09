@@ -13,10 +13,17 @@ Use the same technique used to center the `form` to center the submit button.
 
 # --hints--
 
-Test 1
+You should give the submit button a `margin` of `0 auto`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.margin, '0 auto');
+```
 
+You should not give the submit button a `min-width` or `max-width`.
+
+```js
+assert.empty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.minWidth);
+assert.empty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.maxWidth);
 ```
 
 # --seed--

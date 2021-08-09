@@ -13,10 +13,18 @@ Fix this, by setting the `color` to `#ffffff`, and setting their `min-height` to
 
 # --hints--
 
-Test 1
+You should set the `color` to `#ffffff`.
 
 ```js
+const selFunc = selector => new __helpers.CSSHelp(document).getStyle(selector);
+assert.equal(selFunc(['input, textarea', 'textarea, input'].find(selFunc))?.color, 'rgb(255, 255, 255)');
+```
 
+You should set the `min-height` to `2em`.
+
+```js
+const selFunc = selector => new __helpers.CSSHelp(document).getStyle(selector);
+assert.equal(selFunc(['input, textarea', 'textarea, input'].find(selFunc))?.minHeight, '2em');
 ```
 
 # --seed--

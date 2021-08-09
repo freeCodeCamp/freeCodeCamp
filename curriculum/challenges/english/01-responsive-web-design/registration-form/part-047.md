@@ -11,10 +11,27 @@ To make the `input` and `textarea` elements blend in with the background theme, 
 
 # --hints--
 
-Test 1
+You should use a comma separated element selector to select the `input` and `textarea` elements.
 
 ```js
+const selFunc = selector => new __helpers.CSSHelp(document).getStyle(selector);
+assert.true(['input, textarea', 'textarea, input'].some(selFunc));
+```
 
+You should give the `input` and `textarea` elements a `background-color` of `#0a0a23`.
+
+```js
+const selFunc = selector => new __helpers.CSSHelp(document).getStyle(selector);
+assert.equal(selFunc(['input, textarea', 'textarea, input'].find(selFunc))?.backgroundColor, 'rgb(10, 10, 35)');
+```
+
+You should give the `input` and `textarea` elements a `1px`, `solid` border with a color of `#0a0a23`.
+
+```js
+const selFunc = selector => new __helpers.CSSHelp(document).getStyle(selector);
+assert.equal(selFunc(['input, textarea', 'textarea, input'].find(selFunc))?.borderWidth, '1px');
+assert.equal(selFunc(['input, textarea', 'textarea, input'].find(selFunc))?.borderStyle, 'solid');
+assert.equal(selFunc(['input, textarea', 'textarea, input'].find(selFunc))?.borderColor, 'rgb(10, 10, 35)');
 ```
 
 # --seed--

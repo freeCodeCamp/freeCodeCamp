@@ -19,10 +19,22 @@ Now, use the attribute selector to style the submit button with a `display` of `
 
 # --hints--
 
-Test 1
+You should use an attribute selector of `input[type="submit"]` to style the submit button.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('input[type="submit"]'));
+```
 
+You should give the submit button a `display` of `block`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.display, 'block');
+```
+
+You should give the submit button a `width` of `60%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.width, '60%');
 ```
 
 # --seed--

@@ -16,13 +16,14 @@ Change the `margin` property to include `1em` on the top and bottom, and set the
 You should not change the `width` property. Use the `min-width` property.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.width, '60%');
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.minWidth);
 ```
 
 You should use the existing `margin` property to include `1em` on the top and bottom.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.margin, '1em auto');
 ```
 
 # --seed--

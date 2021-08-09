@@ -22,13 +22,17 @@ assert(['none', '0px'].includes(new __helpers.CSSHelp(document).getStyle('fields
 You should add `padding` of `2rem` to the top and bottom of each `fieldset`.
 
 ```js
-
+const fieldset = new __helpers.CSSHelp(document).getStyle('fieldset')
+assert.equal(fieldset?.paddingTop, '2rem');
+assert.equal(fieldset?.paddingBottom, '2rem');
 ```
 
 You should remove the `padding` from the left and right of each `fieldset`.
 
 ```js
-
+const fieldset = new __helpers.CSSHelp(document).getStyle('fieldset')
+assert.equal(fieldset?.paddingLeft, '0px');
+assert.equal(fieldset?.paddingRight, '0px');
 ```
 
 # --seed--

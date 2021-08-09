@@ -11,10 +11,16 @@ To make the submit button appear more distinct, give it a `background-color` of 
 
 # --hints--
 
-Test 1
+You should give the submit button a `background-color` of `#3b3b4f`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.backgroundColor, 'rgb(59, 59, 79)');
+```
 
+You should give the submit button a `border-color` of `white`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.borderColor, 'white');
 ```
 
 # --seed--

@@ -15,10 +15,45 @@ Also, add `10px` of `margin` to the top of the selected elements. Set the other 
 
 # --hints--
 
+You should use a comma separated element selector to select the `input`, `textarea`, and `select` elements.
+
+```js
+assert.true(['input, textarea, select', 'input, select, textarea', 'select, input, textarea', 'select, textarea, input', 'textarea, input, select', 'textarea, select, input'].some(selector => new __helpers.CSSHelp(document).getStyle(selector)));
+```
+
 You should set the `width` property to `100%`.
 
 ```js
+const selFunc = (selector) => new __helpers.CSSHelp(document).getStyle(selector);
+assert.equal(selFunc(['input, textarea, select', 'input, select, textarea', 'select, input, textarea', 'select, textarea, input', 'textarea, input, select', 'textarea, select, input'].find(selFunc))?.width, '100%');
+```
 
+You should set the `margin-top` property to `10px`.
+
+```js
+const selFunc = (selector) => new __helpers.CSSHelp(document).getStyle(selector);
+assert.equal(selFunc(['input, textarea, select', 'input, select, textarea', 'select, input, textarea', 'select, textarea, input', 'textarea, input, select', 'textarea, select, input'].find(selFunc))?.marginTop, '10px');
+```
+
+You should set the `margin-bottom` property to `0`.
+
+```js
+const selFunc = (selector) => new __helpers.CSSHelp(document).getStyle(selector);
+assert.equal(selFunc(['input, textarea, select', 'input, select, textarea', 'select, input, textarea', 'select, textarea, input', 'textarea, input, select', 'textarea, select, input'].find(selFunc))?.marginBottom, '0px');
+```
+
+You should set the `margin-left` property to `0`.
+
+```js
+const selFunc = (selector) => new __helpers.CSSHelp(document).getStyle(selector);
+assert.equal(selFunc(['input, textarea, select', 'input, select, textarea', 'select, input, textarea', 'select, textarea, input', 'textarea, input, select', 'textarea, select, input'].find(selFunc))?.marginLeft, '0px');
+```
+
+You should set the `margin-right` property to `0`.
+
+```js
+const selFunc = (selector) => new __helpers.CSSHelp(document).getStyle(selector);
+assert.equal(selFunc(['input, textarea, select', 'input, select, textarea', 'select, input, textarea', 'select, textarea, input', 'textarea, input, select', 'textarea, select, input'].find(selFunc))?.marginRight, '0px');
 ```
 
 # --seed--

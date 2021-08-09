@@ -11,10 +11,28 @@ Add some space between the `.inline` elements and the `label` text, by giving a 
 
 # --hints--
 
-Test 1
+You should give the `.inline` elements a `margin-right` of `0.5em`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.inline')?.marginRight, '0.5em');
+```
 
+You should give the `.inline` elements a `margin-bottom` of `0`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.inline')?.marginBottom, '0px');
+```
+
+You should give the `.inline` elements a `margin-top` of `0`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.inline')?.marginTop, '0px');
+```
+
+You should give the `.inline` elements a `margin-left` of `0`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.inline')?.marginLeft, '0px');
 ```
 
 # --seed--

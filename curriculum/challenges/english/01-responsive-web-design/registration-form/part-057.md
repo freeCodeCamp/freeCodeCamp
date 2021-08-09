@@ -16,13 +16,13 @@ Well done! You have completed the final part of the _Registration Form_ practice
 You should use an `a` element selector.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('a'));
 ```
 
 You should give the `a` element a `color` of `#dfdfe2`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('a')?.color, 'rgb(223, 223, 226)');
 ```
 
 # --seed--
