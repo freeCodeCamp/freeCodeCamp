@@ -40,7 +40,6 @@ import DonateCompletion from './DonateCompletion';
 
 import type { AddDonationData } from './PaypalButton';
 import PaypalButton from './PaypalButton';
-import WalletsWrapper from './walletsButton';
 
 import './Donation.css';
 
@@ -310,11 +309,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
       isOneTime ? 'donate.confirm-2' : 'donate.confirm-3',
       { usd: donationAmount / 100 }
     )}:`;
-
-    const walletlabel = `${t(
-      isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
-      { usd: donationAmount / 100 }
-    )}:`;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
 
     return (
@@ -322,14 +316,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
         <b>{formlabel}</b>
         <Spacer />
         <div className='donate-btn-group'>
-          <WalletsWrapper
-            amount={donationAmount}
-            label={walletlabel}
-            onDonationStateChange={this.onDonationStateChange}
-            postStripeDonation={this.postStripeDonation}
-            refreshErrorMessage={t('donate.refresh-needed')}
-            theme={priorityTheme}
-          />
           <PaypalButton
             addDonation={addDonation}
             donationAmount={donationAmount}
@@ -361,28 +347,13 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
 
   renderModalForm() {
     const { donationAmount, donationDuration } = this.state;
-    const { handleProcessing, addDonation, defaultTheme, theme, t } =
-      this.props;
-    const priorityTheme = defaultTheme ? defaultTheme : theme;
-    const isOneTime = donationDuration === 'onetime';
-    const walletlabel = `${t(
-      isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
-      { usd: donationAmount / 100 }
-    )}:`;
+    const { handleProcessing, addDonation, defaultTheme, theme } = this.props;
     return (
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <b className='donation-label'>{this.getDonationButtonLabel()}:</b>
           <Spacer />
           <div className='donate-btn-group'>
-            <WalletsWrapper
-              amount={donationAmount}
-              label={walletlabel}
-              onDonationStateChange={this.onDonationStateChange}
-              postStripeDonation={this.postStripeDonation}
-              refreshErrorMessage={t('donate.refresh-needed')}
-              theme={priorityTheme}
-            />
             <PaypalButton
               addDonation={addDonation}
               donationAmount={donationAmount}
