@@ -191,9 +191,10 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     payerEmail: string | undefined,
     payerName: string | undefined
   ) {
+    const { email } = this.props;
     const { donationAmount: amount, donationDuration: duration } = this.state;
+    payerEmail = email ? email : payerEmail;
     window.scrollTo(0, 0);
-
     // change the donation modal button label to close
     // or display the close button for the cert donation section
     if (this.props.handleProcessing) {
