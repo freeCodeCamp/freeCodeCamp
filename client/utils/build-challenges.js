@@ -1,4 +1,5 @@
 const path = require('path');
+
 const _ = require('lodash');
 
 const envData = require('../../config/env.json');

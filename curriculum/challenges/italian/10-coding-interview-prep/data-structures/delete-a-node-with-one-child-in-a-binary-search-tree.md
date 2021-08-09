@@ -1,6 +1,6 @@
 ---
 id: 587d8258367417b2b2512c81
-title: Delete a Node with One Child in a Binary Search Tree
+title: Eliminare un nodo con un figlio in un albero binario di ricerca
 challengeType: 1
 forumTopicId: 301638
 dashedName: delete-a-node-with-one-child-in-a-binary-search-tree
@@ -8,15 +8,15 @@ dashedName: delete-a-node-with-one-child-in-a-binary-search-tree
 
 # --description--
 
-Now that we can delete leaf nodes let's move on to the second case: deleting a node with one child. For this case, say we have a tree with the following nodes 1 — 2 — 3 where 1 is the root. To delete 2, we simply need to make the right reference in 1 point to 3. More generally to delete a node with only one child, we make that node's parent reference the next node in the tree.
+Ora che sappiamo eliminare i nodi foglia, passiamo al secondo caso: eliminare un nodo con un figlio. Per questo caso, supponiamo di avere un albero con i seguenti nodi 1 — 2 — 3 dove 1 è la radice. Per eliminare il 2, dobbiamo semplicemente far puntare il riferimento destro in 1 a 3. Più in generale per eliminare un nodo con un solo figlio, facciamo in modo che il genitore di quel nodo faccia riferimento al nodo successivo nell'albero.
 
 # --instructions--
 
-We've provided some code in our `remove` method that accomplishes the tasks from the last challenge. We find the target to delete and its parent and define the number of children the target node has. Let's add the next case here for target nodes with only one child. Here, we'll have to determine if the single child is a left or right branch in the tree and then set the correct reference in the parent to point to this node. In addition, let's account for the case where the target is the root node (this means the parent node will be `null`). Feel free to replace all the starter code with your own as long as it passes the tests.
+Abbiamo messo nel nostro metodo `remove` del codice che esegue le attività dall'ultima sfida. Troviamo l'obiettivo da eliminare e il suo genitore e determiniamo il numero di figli che ha il nodo di destinazione. Aggiungiamo qui il caso successivo per i nodi con un solo figlio. Qui dovremo determinare se il singolo figlio è un ramo sinistro o destro nell'albero e quindi impostare il riferimento corretto nel genitore in modo che punti a questo nodo. Inoltre, teniamo conto del caso in cui l'obiettivo è il nodo radice (questo significa che il nodo padre sarà `null`). Sentiti libero di sostituire tutto il codice iniziale con il tuo purché superi i test.
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+La struttura dati `BinarySearchTree` dovrebbe esistere.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `remove`.
+L'albero binario di ricerca dovrebbe avere un metodo chiamato `remove`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-Trying to remove an element that does not exist should return `null`.
+Tentare di rimuovere un elemento che non esiste dovrebbe restituire `null`.
 
 ```js
 assert(
@@ -65,7 +65,7 @@ assert(
 );
 ```
 
-If the root node has no children, deleting it should set the root to `null`.
+Se il nodo radice non ha figli, l'eliminazione dovrebbe impostare la radice a `null`.
 
 ```js
 assert(
@@ -86,7 +86,7 @@ assert(
 );
 ```
 
-The `remove` method should remove leaf nodes from the tree.
+Il metodo `remove` dovrebbe rimuovere i nodi foglia dall'albero.
 
 ```js
 assert(
@@ -114,7 +114,7 @@ assert(
 );
 ```
 
-The `remove` method should remove nodes with one child.
+Il metodo `remove` dovrebbe rimuovere i nodi con un figlio.
 
 ```js
 assert(
@@ -140,7 +140,7 @@ assert(
 );
 ```
 
-Removing the root in a tree with two nodes should set the second to be the root.
+Rimuovere la radice in un albero con due nodi dovrebbe impostare il secondo come radice.
 
 ```js
 assert(

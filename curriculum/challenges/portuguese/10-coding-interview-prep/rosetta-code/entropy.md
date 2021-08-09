@@ -1,6 +1,6 @@
 ---
 id: 599d15309e88c813a40baf58
-title: Entropy
+title: Entropia
 challengeType: 5
 forumTopicId: 302254
 dashedName: entropy
@@ -8,53 +8,53 @@ dashedName: entropy
 
 # --description--
 
-Calculate the Shannon entropy H of a given input string.
+Calcule a entropia H de de uma string de entrada fornecida.
 
-Given the discreet random variable $X$ that is a string of $N$ "symbols" (total characters) consisting of $n$ different characters (n=2 for binary), the Shannon entropy of X in bits/symbol is:
+Dada a variável aleatória discreta $X$, que é uma string de "símbolos" $N$ (total de caracteres) que consiste em $n$ caracteres diferentes (n=2 para binário), a entropia de Shannon de X em bits/símbolo é:
 
 $H_2(X) = -\\sum\_{i=1}^n \\frac{count_i}{N} \\log_2 \\left(\\frac{count_i}{N}\\right)$
 
-where $count_i$ is the count of character $n_i$.
+onde $count_i$ é a contagem de caracteres $n_i$.
 
 # --hints--
 
-`entropy` should be a function.
+`entropy` deve ser uma função.
 
 ```js
 assert(typeof entropy === 'function');
 ```
 
-`entropy("0")` should return `0`
+`entropy("0")` deve retornar `0`
 
 ```js
 assert.equal(entropy('0'), 0);
 ```
 
-`entropy("01")` should return `1`
+`entropy("01")` deve retornar `1`
 
 ```js
 assert.equal(entropy('01'), 1);
 ```
 
-`entropy("0123")` should return `2`
+`entropy("0123")` deve retornar `2`
 
 ```js
 assert.equal(entropy('0123'), 2);
 ```
 
-`entropy("01234567")` should return `3`
+`entropy("01234567")` deve retornar `3`
 
 ```js
 assert.equal(entropy('01234567'), 3);
 ```
 
-`entropy("0123456789abcdef")` should return `4`
+`entropy("0123456789abcdef")` deve retornar `4`
 
 ```js
 assert.equal(entropy('0123456789abcdef'), 4);
 ```
 
-`entropy("1223334444")` should return `1.8464393446710154`
+`entropy("1223334444")` deve retornar `1.8464393446710154`
 
 ```js
 assert.equal(entropy('1223334444'), 1.8464393446710154);

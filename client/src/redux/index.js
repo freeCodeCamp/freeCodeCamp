@@ -125,6 +125,14 @@ export const addDonationComplete = createAction(
 );
 export const addDonationError = createAction(actionTypes.addDonationError);
 
+export const postChargeStripe = createAction(actionTypes.postChargeStripe);
+export const postChargeStripeComplete = createAction(
+  actionTypes.postChargeStripeComplete
+);
+export const postChargeStripeError = createAction(
+  actionTypes.postChargeStripeError
+);
+
 export const fetchProfileForUser = createAction(
   actionTypes.fetchProfileForUser
 );
@@ -412,6 +420,29 @@ export const reducer = handleActions(
       };
     },
     [actionTypes.addDonationError]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, error: payload }
+    }),
+    [actionTypes.postChargeStripe]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, processing: true }
+    }),
+    [actionTypes.postChargeStripeComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            isDonating: true
+          }
+        },
+
+        donationFormState: { ...defaultDonationFormState, success: true }
+      };
+    },
+    [actionTypes.postChargeStripeError]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, error: payload }
     }),

@@ -2,12 +2,12 @@
   "name": "Information Security Certificate",
   "isUpcomingChange": false,
   "dashedName": "information-security-v7-certificate",
-  "order": 9,
+  "order": 10,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 12,
+  "superOrder": 0,
   "challengeOrder": [
     [
       "5e6021435ac9d0ecd8b94b00",

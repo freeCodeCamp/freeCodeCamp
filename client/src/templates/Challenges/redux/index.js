@@ -3,7 +3,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 import { getLines } from '../../../../../utils/get-lines';
 import { createPoly } from '../../../../../utils/polyvinyl';
-import { challengeTypes } from '../../../../utils/challengeTypes';
+import { challengeTypes } from '../../../../utils/challenge-types';
 import { completedChallengesSelector } from '../../../redux';
 import { getTargetEditor } from '../utils/getTargetEditor';
 import { actionTypes, ns } from './action-types';
