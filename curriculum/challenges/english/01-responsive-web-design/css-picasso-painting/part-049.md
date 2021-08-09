@@ -11,28 +11,28 @@ FontAwesome icons come with their own styling to define the icon. However, you c
 
 # --hints--
 
-You should have a `#fa-music` selector.
+You should have a `.fa-music` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#fa-music'));
+assert(new __helpers.CSSHelp(document).getStyle('.fa-music'));
 ```
 
-Your `#fa-music` selector should have a `display` property set to `inline-block`.
+Your `.fa-music` selector should have a `display` property set to `inline-block`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#fa-music')?.display === 'inline-block');
+assert(new __helpers.CSSHelp(document).getStyle('.fa-music')?.display === 'inline-block');
 ```
 
-Your `#fa-music` selector should have a `margin-top` property set to `8%`.
+Your `.fa-music` selector should have a `margin-top` property set to `8%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#fa-music')?.marginTop === '8%');
+assert(new __helpers.CSSHelp(document).getStyle('.fa-music')?.marginTop === '8%');
 ```
 
-Your `#fa-music` selector should have a `margin-left` property set to `13%`.
+Your `.fa-music` selector should have a `margin-left` property set to `13%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#fa-music')?.marginLeft === '13%');
+assert(new __helpers.CSSHelp(document).getStyle('.fa-music')?.marginLeft === '13%');
 ```
 
 # --seed--

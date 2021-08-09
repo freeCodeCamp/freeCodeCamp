@@ -7,26 +7,26 @@ dashedName: part-52
 
 # --description--
 
-Select the `blue-left` element with a `class` selector. Give it a `width` of `500px` and a `height` of `300px`.
+Select the `blue-left` element with a `id` selector. Give it a `width` of `500px` and a `height` of `300px`.
 
 # --hints--
 
-You should have a `.blue-left` selector.
+You should have a `#blue-left` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.blue-left'));
+assert(new __helpers.CSSHelp(document).getStyle('#blue-left'));
 ```
 
-Your `.blue-left` selector should have a `width` property set to `500px`.
+Your `#blue-left` selector should have a `width` property set to `500px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.blue-left')?.width === '500px');
+assert(new __helpers.CSSHelp(document).getStyle('#blue-left')?.width === '500px');
 ```
 
-Your `.blue-left` selector should have a `height` property set to `300px`.
+Your `#blue-left` selector should have a `height` property set to `300px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.blue-left')?.height === '300px');
+assert(new __helpers.CSSHelp(document).getStyle('#blue-left')?.height === '300px');
 ```
 
 # --seed--

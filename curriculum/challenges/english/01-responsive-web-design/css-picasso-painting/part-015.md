@@ -71,9 +71,4 @@ body {
   left: 0;
   z-index: -1;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
-
 ```
