@@ -1,0 +1,9 @@
+{
+  "extends": "../../../tsconfig",
+  "files": ["sass-compile.ts", "test-evaluator.ts"],
+  "compilerOptions": {
+    "lib": [
+      "WebWorker"
+    ]
+  }
+}
