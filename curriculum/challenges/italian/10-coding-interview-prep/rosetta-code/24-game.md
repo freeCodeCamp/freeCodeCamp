@@ -1,6 +1,6 @@
 ---
 id: 5951e88f64ebf159166a1176
-title: 24 game
+title: Il gioco del 24
 challengeType: 5
 forumTopicId: 302218
 dashedName: 24-game
@@ -8,23 +8,23 @@ dashedName: 24-game
 
 # --description--
 
-The [24 Game](https://en.wikipedia.org/wiki/24_Game) tests a person's mental arithmetic.
+Il [gioco del 24](https://en.wikipedia.org/wiki/24_Game) mette alla prova l'abilità di una persona di fare calcoli a mente.
 
-The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
+L'obbiettivo del gioco è di arrangiare quattro numeri in un modo tale che una volta calcolato il risultato sia 24
 
 # --instructions--
 
-Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
+Scrivi una funzione che prenda una stringa di quattro cifre come argomento, con ogni cifra tra uno e nove (inclusi) con ripetizioni, e restituisca un'espressione aritmetica che una volta calcolata dia come risultato 24. Se non c'è una soluzione del genere, restituisci "no solution exists".
 
-**Rules:**
+**Regole:**
 <ul>
-  <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
-  <li> Division should use floating point or rational arithmetic, etc, to preserve remainders. </li>
-  <li> Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong). </li>
-  <li> The order of the digits when given does not have to be preserved. </li>
+  <li> Solo le seguenti operazioni/funzioni sono ammesse: moltiplicazione, divisione, addizione, sottrazione. </li>
+  <li> La divisione dovrebbe essere in virgola mobile o aritmetica razionale (frazioni) per preservare i resti. </li>
+  <li> Formare numeri con più di una cifra dalle cifre date non è permesso. (Quindi una risposta di 12+12 quando le cifre date sono 1, 2, 2 e 1 è sbagliata). </li>
+  <li> L'ordine delle cifre nell'input non deve essere conservato. </li>
 </ul>
 
-| Example input             | Example output            |
+| Esempio di input          | Esempio di output         |
 | ------------------------- | ------------------------- |
 | <code>solve24("4878");</code> | <code>(7-8/8)\*4</code> |
 | <code>solve24("1234");</code> | <code>3\*1\*4\*2</code> |
@@ -33,31 +33,31 @@ Implement a function that takes a string of four digits as its argument, with ea
 
 # --hints--
 
-`solve24` should be a function.
+`solve24` dovrebbe essere una funzione.
 
 ```js
 assert(typeof solve24 === 'function');
 ```
 
-`solve24("4878")` should return `(7-8/8)*4` or `4*(7-8/8)`
+`solve24("4878")` dovrebbe restituire `(7-8/8)*4` o `4*(7-8/8)`
 
 ```js
 assert(include(answers[0], removeParentheses(solve24(testCases[0]))));
 ```
 
-`solve24("1234")` should return any arrangement of `1*2*3*4`
+`solve24("1234")` dovrebbe restituire un qualsiasi ordine di `1*2*3*4`
 
 ```js
 assert(include(answers[1], removeParentheses(solve24(testCases[1]))));
 ```
 
-`solve24("6789")` should return `(6*8)/(9-7)` or `(8*6)/(9-7)`
+`solve24("6789")` dovrebbe restituire `(6*8)/(9-7)` o `(8*6)/(9-7)`
 
 ```js
 assert(include(answers[2], removeParentheses(solve24(testCases[2]))));
 ```
 
-`solve24("1127")` should return a permutation of `(1+7)*(1+2)`
+`solve24("1127")` dovrebbe restuire una permutazione di `(1+7)*(1+2)`
 
 ```js
 assert(include(answers[3], removeParentheses(solve24(testCases[3]))));
