@@ -147,11 +147,11 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
-      {email ? <Badges email={email} /> : null}
       {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
+      {email ? <Badges email={email} /> : null}
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}

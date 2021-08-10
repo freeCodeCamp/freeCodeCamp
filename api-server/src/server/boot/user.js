@@ -3,6 +3,7 @@ import debugFactory from 'debug';
 import { pick } from 'lodash';
 import { Observable } from 'rx';
 import { body } from 'express-validator';
+import request from 'request';
 
 import {
   getProgress,
@@ -28,6 +29,7 @@ function bootUser(app) {
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
+  api.get('/user-badges/:username', userBadges);
 
   api.post('/account/delete', ifNoUser401, postDeleteAccount);
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
@@ -39,6 +41,28 @@ function bootUser(app) {
   );
 
   app.use(api);
+}
+
+function userBadges(req, res) {
+  const username = req.params.username;
+  console.log(username);
+  request(
+    `https://forum.freecodecamp.org/user-badges/${username}.json`,
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org'
+        // 'Api-Key': discourseApi
+      }
+    },
+    (err, response, body) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.json(body);
+      }
+    }
+  );
 }
 
 function createReadSessionUser(app) {

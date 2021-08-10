@@ -36,6 +36,10 @@
   width: 64px;
 }
 
+.badge-icon > img {
+  max-width: 100%;
+}
+
 .badge-info {
   -webkit-text-size-adjust: 100%;
   line-height: 1.2;
