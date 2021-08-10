@@ -1,32 +1,25 @@
-// this exists purely to redirect legacy challenge paths to /learn
-import { Router } from '@reach/router';
+// This exists purely to redirect legacy challenge paths to /learn that could
+// exist in the web (posts, url shares, etc).
+
+import { Router, RouteComponentProps } from '@reach/router';
 import { navigate, withPrefix } from 'gatsby';
 import React from 'react';
 
 import toLearnPath from '../utils/to-learn-path';
 
-// interface RedirectProps1 {
-//   superBlock: string;
-//   block: string;
-//   challenge: string;
-// }
+type RouteComponentPropsExtended = RouteComponentProps & {
+  block?: string;
+  challenge?: string;
+  superBlock?: string;
+};
 
-// interface RedirectProps2 {
-//   path?: string;
-//   default?: boolean;
-// }
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-function Redirect(props) {
+function Redirect(props: RouteComponentPropsExtended): null {
   if (typeof window !== 'undefined') {
     void navigate(toLearnPath(props));
   }
+
   return null;
 }
-// Unsure about Redirect props shape:
-// toLearnPath() takes required superBlock, block, and challenge props
-// but usage below has optional path and default props
 
 function Challenges(): JSX.Element {
   return (
