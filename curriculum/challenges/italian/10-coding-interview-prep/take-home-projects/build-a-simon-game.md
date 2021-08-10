@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd1c
-title: Build a Simon Game
+title: Costruisci un gioco Simon
 challengeType: 3
 forumTopicId: 302357
 dashedName: build-a-simon-game
@@ -8,31 +8,31 @@ dashedName: build-a-simon-game
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: [https://codepen.io/freeCodeCamp/full/obYBjE](https://codepen.io/freeCodeCamp/full/obYBjE).
+**Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: [https://codepen.io/freeCodeCamp/full/obYBjE](https://codepen.io/freeCodeCamp/full/obYBjE).
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
-**User Story:** I am presented with a random series of button presses.
+**User Story:** Mi viene presentata una serie casuale di pressione dei bottoni.
 
-**User Story:** Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.
+**User Story:** Ogni volta che inserisco correttamente una serie di pressione di bottoni, vedo la stessa serie ma con uno step in più.
 
-**User Story:** I hear a sound that corresponds to each button both when the series of button presses plays, and when I personally press a button.
+**User Story:** Sento un suono che corrisponde a ogni bottone sia quando la serie di bottoni è premuta automaticamente, sia quando personalmente premo un bottone.
 
-**User Story:** If I press the wrong button, I am notified that I have done so, and that series of button presses starts again to remind me of the pattern so I can try again.
+**User Story:** Se premo il pulsante sbagliato mi viene detto, e la serie di pressioni dei bottoni ricomincia di nuovo in modo da ricordarmi quale è la serie corretta e possa provare di nuovo.
 
-**User Story:** I can see how many steps are in the current series of button presses.
+**User Story:** Posso vedere quanti step ci sono nella serie attuale di pulsanti.
 
-**User Story:** If I want to restart, I can hit a button to do so, and the game will return to a single step.
+**User Story:** Se voglio ricominciare, posso premere un bottone per farlo, e il gioco ritornerà a una serie con uno step solo.
 
-**User Story:** I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.
+**User Story:** Posso giocare in modalità severa dove se premo il pulsante sbagliato, mi dice che ho sbagliato, e il gioco ricomincia con una nuova serie casuale di pulsanti.
 
-**User Story:** I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
+**User Story:** Posso vincere il gioco inserendo correttamnete una serie di 20 step. Vengo informato della mia vittoria, poi il gioco ricomincia da capo.
 
-**Hint:** Here are mp3s you can use for each button: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`.
+**Suggerimento:** Ecco degli mp3s che puoi usare per ogni pulsante: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando hai finito, includi un link al tuo progetto su CodePen e clicca sul pulsante "Ho completato questa sfida".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul forum [freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 
