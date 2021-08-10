@@ -12,9 +12,9 @@ As a reminder, this project is being built upon the following starter project on
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with your name'` test (`// #2`) to assert the `status` and the `text` response to make the test pass.
+Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with your name'` test (`// #2`) to assert the `status` and the `text` of the response to make the test pass.
 
-Send your name in the query, appending `?name=<your_name>` to the route. The endpoint responds with `'hello <your_name>'`.
+Send your name as a URL query by appending `?name=<your_name>` to the route. The endpoint responds with `'hello <your_name>'`.
 
 # --hints--
 
@@ -32,7 +32,7 @@ All tests should pass
   );
 ```
 
-You should test for 'res.status' == 200
+You should test for `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should test for 'res.status' == 200
   );
 ```
 
-You should test for 'res.text' == 'hello Guest'
+You should test for `res.text` == `'hello <your_name>'`
 
 ```js
 (getUserInput) =>
