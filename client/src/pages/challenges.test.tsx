@@ -1,11 +1,11 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { navigate, withPrefix } from 'gatsby';
 import {
   createHistory,
   createMemorySource,
   LocationProvider
 } from '@reach/router';
+import { render } from '@testing-library/react';
+import { navigate, withPrefix } from 'gatsby';
+import React from 'react';
 
 import Challenges from './challenges';
 
