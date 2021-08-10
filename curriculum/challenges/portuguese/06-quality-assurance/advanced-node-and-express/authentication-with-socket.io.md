@@ -33,11 +33,15 @@ io.use(
 );
 ```
 
-Certifique-se de adicionar a `key` e a `store` no middleware `session` montado na aplicação. Isto é necessário para informar ao *SocketIO* a qual sessão ele deve se relacionar.
+Observe que configurar a autenticação do Passport para o Socket.IO é muito parecido com a maneira como configuramos o middleware `session` para a API. Isso ocorre porque eles devem usar o mesmo método de autenticação — obter o id da sessão de um cookie e validá-lo.
+
+Anteriormente, quando configuramos o middleware `session`, não definimos explicitamente o nome do cookie para a sessão (`key`). Isso ocorre porque o pacote de `session` estava usando o valor padrão. Agora que adicionamos outro pacote que precisa acessar o mesmo valor a partir dos cookies, precisamos definir explicitamente o valor de `key` em ambos os objetos de configuração.
+
+Certifique-se de adicionar `key` com o nome do cookie para o middleware `session` que corresponde à chave do Socket.IO. Além disso, adicione a referência de `store` às opções, perto de onde configuramos `saveUninitialized: true`. Isto é necessário para informar ao SocketIO a qual sessão ele deve se relacionar.
 
 <hr />
 
-Agora, defina as funções de `success` e `fail` na função de callback:
+Agora, defina as funções de `success` e `fail` nas funções de callback:
 
 ```js
 function onAuthorizeSuccess(data, accept) {
@@ -53,7 +57,7 @@ function onAuthorizeFail(data, message, error, accept) {
 }
 ```
 
-Agora, o objeto de usuário está acessível no seu objeto de socket como `socket.request.user`. Por exemplo, agora, você pode adicionar o seguinte:
+Agora, o objeto de usuário está acessível no objeto de socket como `socket.request.user`. Por exemplo, agora, você pode adicionar o seguinte:
 
 ```js
 console.log('user ' + socket.request.user.name + ' connected');
