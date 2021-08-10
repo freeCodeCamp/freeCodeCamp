@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bd0e
-title: URL Shortener Microservice
+title: Microsserviço redutor de URL
 challengeType: 4
 forumTopicId: 301509
 dashedName: url-shortener-microservice
@@ -8,21 +8,21 @@ dashedName: url-shortener-microservice
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://url-shortener-microservice.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <https://url-shortener-microservice.freecodecamp.rocks/>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-urlshortener/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-project-urlshortener/) e complete o projeto localmente.
+-   Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener) para completar o projeto.
+-   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 
 # --instructions--
 
-**HINT:** Do not forget to use a body parsing middleware to handle the POST requests. Also, you can use the function `dns.lookup(host, cb)` from the `dns` core module to verify a submitted URL.
+**DICA:** não se esqueça de usar um middleware de análise do body para tratar as solicitações de POST. Você também pode usar a função `dns.lookup(host, cb)` do módulo central do `dns` para verificar um URL enviado.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Você deve fornecer seu próprio projeto, não o exemplo de URL.
 
 ```js
 (getUserInput) => {
@@ -34,7 +34,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
+Você pode postar um URL para `/api/shorturl` e obter uma resposta em JSON com as propriedades `original_url` e `short_url`. Aqui está um exemplo: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {
@@ -56,7 +56,7 @@ async (getUserInput) => {
 };
 ```
 
-When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
+Quando você visitar `/api/shorturl/<short_url>`, será redirecionado para o URL original.
 
 ```js
 async (getUserInput) => {
@@ -88,7 +88,7 @@ async (getUserInput) => {
 };
 ```
 
-If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`
+Se você passar um URL inválido que não siga o formato válido `http://www.example.com` , a resposta em JSON conterá `{ error: 'invalid url' }`
 
 ```js
 async (getUserInput) => {

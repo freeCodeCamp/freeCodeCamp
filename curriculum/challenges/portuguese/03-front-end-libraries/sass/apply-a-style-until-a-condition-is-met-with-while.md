@@ -1,6 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bbb
-title: Aplicar um Estilo Até que Uma Condição Seja Atendida com @while
+title: Aplicar um estilo até que uma condição seja atendida com @while
 challengeType: 0
 forumTopicId: 301454
 dashedName: apply-a-style-until-a-condition-is-met-with-while
@@ -30,49 +30,49 @@ Deve haver 5 classes diferentes de `text-1` até `text-5`. Em seguida, defina `f
 
 # --hints--
 
-Seu código deve usar a diretiva `@while`.
+O código deve usar a diretiva `@while`.
 
 ```js
 assert(code.match(/@while /g));
 ```
 
-Seu código deve usar uma variável de índice que começa em um índice de 1.
+O código deve usar uma variável de índice que começa em um índice de 1.
 
 ```js
 assert(code.match(/\$.*:\s*?1;/gi));
 ```
 
-Seu código deve incrementar a variável contadora.
+O código deve incrementar a variável contadora.
 
 ```js
 assert(code.match(/\$(.*)\s*?:\s*\$\1\s*\+\s*1\s*;/gi));
 ```
 
-Sua classe `.text-1` deve ter um `font-size` de `15px`.
+A classe `.text-1` deve ter um `font-size` de `15px`.
 
 ```js
 assert($('.text-1').css('font-size') == '15px');
 ```
 
-Sua classe `.text-2` deve ter um `font-size` de `30px`.
+A classe `.text-2` deve ter um `font-size` de `30px`.
 
 ```js
 assert($('.text-2').css('font-size') == '30px');
 ```
 
-Sua classe `.text-3` deve ter um `font-size` de `45px`.
+A classe `.text-3` deve ter um `font-size` de `45px`.
 
 ```js
 assert($('.text-3').css('font-size') == '45px');
 ```
 
-Sua classe `.text-4` deve ter um `font-size` de `60px`.
+A classe `.text-4` deve ter um `font-size` de `60px`.
 
 ```js
 assert($('.text-4').css('font-size') == '60px');
 ```
 
-Sua classe `.text-5` deve ter um `font-size` de `75px`.
+A classe `.text-5` deve ter um `font-size` de `75px`.
 
 ```js
 assert($('.text-5').css('font-size') == '75px');

@@ -13,7 +13,7 @@ Quando as variáveis de JavaScript são declaradas, elas têm um valor inicial d
 
 # --instructions--
 
-Inicialize as três variáveis `a`, `b` e `c` com `5`, `10`, e `"Sou a"` respectivamente para que eles não sejam `undefined`.
+Inicialize as três variáveis `a`, `b` e `c` com `5`, `10`, e `"I am a"` respectivamente para que eles não sejam `undefined`.
 
 # --hints--
 
@@ -29,7 +29,7 @@ assert(typeof a === 'number' && a === 6);
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` não deve conter `undefined` e deve ter o valor da string `eu sou uma String!`
+`c` não deve conter `undefined` e o valor da string deve ser `I am a String!`
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');

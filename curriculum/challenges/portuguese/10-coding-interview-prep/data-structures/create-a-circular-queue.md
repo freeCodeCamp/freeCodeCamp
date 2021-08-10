@@ -1,6 +1,6 @@
 ---
 id: 587d8255367417b2b2512c75
-title: Create a Circular Queue
+title: Criar uma fila circular
 challengeType: 1
 forumTopicId: 301625
 dashedName: create-a-circular-queue
@@ -8,9 +8,9 @@ dashedName: create-a-circular-queue
 
 # --description--
 
-In this challenge you will be creating a Circular Queue. A circular queue is a queue that writes to the end of a collection then begins overwriting itself at the beginning of the collection. This type of data structure is useful in certain situations. For example, a circular queue can be used for streaming media. Once the queue is full, new media data will overwrite old data.
+Neste desafio, você criará uma fila circular. Uma fila circular é uma fila escreve até o final de uma coleção e que, então, começa a se sobrescrever no início da coleção. Este tipo de estrutura de dados é útil em certas situações. Por exemplo, uma fila circular pode ser usada para streaming de mídia. Quando a fila está cheia, os novos dados de mídia vão sobrescrever os dados antigos.
 
-A good way to illustrate this concept is with an array of length `5`:
+Uma boa maneira de ilustrar esse conceito é com um array de tamanho `5`:
 
 ```js
 [null, null, null, null, null]
@@ -18,7 +18,7 @@ A good way to illustrate this concept is with an array of length `5`:
  ^Write @ 0
 ```
 
-Here the read and write are both at position `0`. Now the queue gets 3 new records `a`, `b`, and `c`. Our queue now looks like:
+Aqui, a leitura e a escrita estão ambos na posição `0`. Agora, a fila recebe 3 novos registros `a`, `b`, e `c`. Nossa fila agora se parece assim:
 
 ```js
 [a, b, c, null, null]
@@ -26,7 +26,7 @@ Here the read and write are both at position `0`. Now the queue gets 3 new recor
           ^Write @ 3
 ```
 
-As the read head reads, it can remove values or keep them:
+Como a cabeça de leitura lê, pode remover valores ou mantê-los:
 
 ```js
 [null, null, null, null, null]
@@ -34,7 +34,7 @@ As the read head reads, it can remove values or keep them:
                    ^Write @ 3
 ```
 
-Now we write the values `d`, `e`, and `f` to the queue. Once the write reaches the end of the array it loops back to the beginning:
+Agora, gravamos os valores `d`, `e` e `f` na fila. Quando a gravação atinge o fim do array, ela retorna ao início:
 
 ```js
 [f, null, null, d, e]
@@ -42,21 +42,21 @@ Now we write the values `d`, `e`, and `f` to the queue. Once the write reaches t
     ^Write @ 1
 ```
 
-This approach requires a constant amount of memory but allows files of a much larger size to be processed.
+Esta abordagem requer uma quantidade constante de memória, mas permite que arquivos de um tamanho muito maior sejam processados.
 
 # --instructions--
 
-In this challenge we will implement a circular queue. The circular queue should provide `enqueue` and `dequeue` methods which allow you to read from and write to the queue. The class itself should also accept an integer argument which you can use to specify the size of the queue when created. We've written the starting version of this class for you in the code editor.
+Neste desafio, você criará uma fila circular. A fila circular deve fornecer os métodos `enqueue` e `dequeue`, que permitem que você leia e grave na fila. A classe também deve aceitar um argumento inteiro que você pode usar para especificar o tamanho da fila quando criada. Gravamos a versão inicial desta classe para você no editor de código.
 
-When you enqueue items to the queue, the write pointer should advance forward and loop back to the beginning once it reaches the end of the queue. The `enqueue` method should return the item you enqueued if it is successful; otherwise it will return `null`.
+Quando você incluir itens na fila, o ponteiro de gravação deve avançar para frente e retornar para o início assim que chegar ao final da fila. O método `enqueue` deve retornar o item que você colocou na fila se for bem-sucedido. Caso contrário, ele retornará `null`.
 
-Likewise, the read pointer should advance forward as you dequeue items. When you dequeue an item, that item should be returned. If you cannot dequeue an item, you should return `null`.
+Da mesma forma, o ponteiro de leitura deve avançar enquanto você remove os itens da fila. Quando você remove um item, o item deve ser retornado. Se você não puder remover um item da fila, você deve retornar `null`.
 
-The write pointer should not be allowed to move past the read pointer (our class won't let you overwrite data you haven't read yet) and the read pointer should not be able to advance past data you have written.
+Não deve ser permitido ao ponteiro de gravação passar pelo ponteiro de leitura (nossa classe não permitirá que você substitua dados que ainda não leu). Além disso, o ponteiro de leitura não deve ser capaz de avançar passando por dados que você gravou.
 
 # --hints--
 
-The `enqueue` method should add items to the circular queue.
+O método `enqueue` deve adicionar itens à fila circular.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-You should not enqueue items past the read pointer.
+Você não deve enfileirar itens além do ponteiro de leitura.
 
 ```js
 assert(
@@ -89,7 +89,7 @@ assert(
 );
 ```
 
-The `dequeue` method should dequeue items from the queue.
+O método `dequeue` deve remover os itens da fila.
 
 ```js
 assert(
@@ -105,7 +105,7 @@ assert(
 );
 ```
 
-After an item is dequeued, its position in the queue should be reset to `null`.
+Depois que um item for removido da fila, sua posição na fila deve ser redefinida para `null`.
 
 ```js
 assert(
@@ -122,7 +122,7 @@ assert(
 );
 ```
 
-Trying to dequeue past the write pointer should return `null` and does not advance the write pointer.
+Tentando remover da fila além do ponteiro de gravação deve retornar `null` e não avançará esse ponteiro.
 
 ```js
 assert(

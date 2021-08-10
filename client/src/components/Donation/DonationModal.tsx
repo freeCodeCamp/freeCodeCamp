@@ -1,38 +1,36 @@
-/* eslint-disable max-len */
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
-import { Spacer } from '../helpers';
-import Heart from '../../assets/icons/heart';
-import Cup from '../../assets/icons/cup';
-import DonateForm from './DonateForm';
-import { modalDefaultDonation } from '../../../../config/donation-settings';
+import { WindowLocation } from '@reach/router';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import { goToAnchor } from 'react-scrollable-anchor';
-import { isLocationSuperBlock } from '../../utils/path-parsers';
-
+import { bindActionCreators, Dispatch, AnyAction } from 'redux';
+import { createSelector } from 'reselect';
+import { modalDefaultDonation } from '../../../../config/donation-settings';
+import Cup from '../../assets/icons/cup';
+import Heart from '../../assets/icons/heart';
 import {
   closeDonationModal,
   isDonationModalOpenSelector,
   recentlyClaimedBlockSelector,
   executeGA
 } from '../../redux';
+import { isLocationSuperBlock } from '../../utils/path-parsers';
+import { Spacer } from '../helpers';
+import DonateForm from './DonateForm';
 
 import './Donation.css';
 
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
   recentlyClaimedBlockSelector,
-  (show, recentlyClaimedBlock) => ({
+  (show: boolean, recentlyClaimedBlock: string) => ({
     show,
     recentlyClaimedBlock
   })
 );
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators(
     {
       closeDonationModal,
@@ -41,16 +39,13 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-const propTypes = {
-  activeDonors: PropTypes.number,
-  closeDonationModal: PropTypes.func.isRequired,
-  executeGA: PropTypes.func,
-  location: PropTypes.shape({
-    hash: PropTypes.string,
-    pathname: PropTypes.string
-  }),
-  recentlyClaimedBlock: PropTypes.string,
-  show: PropTypes.bool
+type DonateModalProps = {
+  activeDonors: number;
+  closeDonationModal: typeof closeDonationModal;
+  executeGA: typeof executeGA;
+  location: WindowLocation | undefined;
+  recentlyClaimedBlock: string;
+  show: boolean;
 };
 
 function DonateModal({
@@ -59,10 +54,14 @@ function DonateModal({
   executeGA,
   location,
   recentlyClaimedBlock
-}) {
+}: DonateModalProps): JSX.Element {
   const [closeLabel, setCloseLabel] = React.useState(false);
   const { t } = useTranslation();
-  const handleProcessing = (duration, amount, action) => {
+  const handleProcessing = (
+    duration: string,
+    amount: number,
+    action: string
+  ) => {
     executeGA({
       type: 'event',
       data: {
@@ -108,6 +107,7 @@ function DonateModal({
   const handleModalHide = () => {
     // If modal is open on a SuperBlock page
     if (isLocationSuperBlock(location)) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       goToAnchor('claim-cert-block');
     }
   };
@@ -115,6 +115,8 @@ function DonateModal({
   const blockDonationText = (
     <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
         <Cup className='donation-icon' />
       </div>
       <Row>
@@ -132,6 +134,8 @@ function DonateModal({
   const progressDonationText = (
     <div className='text-center progress-modal-text'>
       <div className='donation-icon-container'>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
         <Heart className='donation-icon' />
       </div>
       <Row>
@@ -176,6 +180,5 @@ function DonateModal({
 }
 
 DonateModal.displayName = 'DonateModal';
-DonateModal.propTypes = propTypes;
 
 export default connect(mapStateToProps, mapDispatchToProps)(DonateModal);

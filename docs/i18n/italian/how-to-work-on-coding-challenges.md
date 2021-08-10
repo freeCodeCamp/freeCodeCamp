@@ -39,7 +39,7 @@ I progetti di pratica hanno degli strumenti addizionali per aiutare a creare i n
 ---
 id: Unique identifier (alphanumerical, MongoDB_id)
 title: 'Challenge Title'
-challengeType: Integer, defined in `client/utils/challengeTypes.js`
+challengeType: Integer, defined in `client/utils/challenge-types.js`
 videoUrl: 'url of video explanation'
 forumTopicId: 12345
 ---
@@ -486,6 +486,6 @@ Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, 
 
 Creare e modificare sfide:
 
-1. [Tipi di sfide](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challengeTypes.js#L1-L13) - cosa significa il valore numerico del tipo della sfida (challenge type) (enum).
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
 
 2. [Contribuire a FreeCodeCamp - Scrivere Test  per le sfide ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - un video che segue [Ethan Arrowood](https://twitter.com/ArrowoodTech) in quanto contributore della vecchia versione del curriculum.

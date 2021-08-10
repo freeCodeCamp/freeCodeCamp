@@ -1,6 +1,6 @@
 ---
 id: 595608ff8bcd7a50bd490181
-title: Hailstone sequence
+title: Sequência de granizo
 challengeType: 5
 forumTopicId: 302279
 dashedName: hailstone-sequence
@@ -8,48 +8,48 @@ dashedName: hailstone-sequence
 
 # --description--
 
-The Hailstone sequence of numbers can be generated from a starting positive integer, `n` by:
+A sequência de números de granizo (hailstone) pode ser gerada a partir de um inteiro inicial positivo, `n` da seguinte forma:
 
-- If `n` is `1` then the sequence ends
-- If `n` is `even` then the next `n` of the sequence `= n/2`
-- If `n` is `odd` then the next `n` of the sequence `= (3 * n) + 1`
+- Se `n` for `1`, a sequência termina
+- Se `n` for `even` (par), o próximo `n` da sequência será `= n/2`
+- Se `n` for `odd` (ímpar), o próximo `n` da sequência será `= (3 * n) + 1`
 
-The (unproven) Collatz conjecture is that the hailstone sequence for any starting number always terminates.
+A conjetura de Collatz (não comprovada) é que a sequência de granizo (hailstone) para qualquer número inicial termina sempre.
 
-The hailstone sequence is also known as hailstone numbers (because the values are usually subject to multiple descents and ascents like hailstones in a cloud), or as the Collatz sequence.
+A sequência de granizo também é conhecida como números granizo (porque os valores geralmente estão sujeitos a múltiplas descidas e subidas, como granizo - hailstone, em inglês - em uma nuvem), ou como a sequência de Collatz.
 
 # --instructions--
 
-1. Create a routine to generate the hailstone sequence for a number
-2. Your function should return an array with the number less than `limit` which has the longest hailstone sequence and that sequence's length. (But don't show the actual sequence!)
+1. Crie uma rotina para gerar a sequência de Hailstone para um número
+2. A função deve retornar um array com o número menor que `limit` que tenha a maior sequência de hailstone e o tamanho da sequência. (Mas não mostrar a sequência real!)
 
 # --hints--
 
-`hailstoneSequence` should be a function.
+`hailstoneSequence` deve ser uma função.
 
 ```js
 assert(typeof hailstoneSequence === 'function');
 ```
 
-`hailstoneSequence(30)` should return an array.
+`hailstoneSequence(30)` deve retornar um array.
 
 ```js
 assert(Array.isArray(hailstoneSequence(30)));
 ```
 
-`hailstoneSequence(30)` should return `[27, 112]`.
+`hailstoneSequence(30)` deve retornar `[27, 112]`.
 
 ```js
 assert.deepEqual(hailstoneSequence(30), [27, 112]);
 ```
 
-`hailstoneSequence(50000)` should return `[35655, 324]`.
+`hailstoneSequence(50000)` deve retornar `[35655, 324]`.
 
 ```js
 assert.deepEqual(hailstoneSequence(50000), [35655, 324]);
 ```
 
-`hailstoneSequence(100000)` should return `[77031, 351]`.
+`hailstoneSequence(100000)` deve retornar `[77031, 351]`.
 
 ```js
 assert.deepEqual(hailstoneSequence(100000), [77031, 351]);

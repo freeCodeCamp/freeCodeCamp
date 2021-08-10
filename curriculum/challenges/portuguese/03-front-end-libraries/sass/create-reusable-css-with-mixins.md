@@ -1,6 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb6
-title: Criar CSS Reutilizável com Mixins
+title: Criar CSS reutilizável com mixins
 challengeType: 0
 forumTopicId: 301455
 dashedName: create-reusable-css-with-mixins
@@ -21,7 +21,7 @@ div {
 }
 ```
 
-É muito digitação para reescrever esta regra para todos os elementos que têm uma `box-shadow`, ou para alterar cada valor para testar efeitos diferentes. Mixins são como funções para CSS. Veja como escrever um:
+É preciso muita digitação para reescrever esta regra para todos os elementos que têm uma `box-shadow`, ou para alterar cada valor para testar efeitos diferentes. Mixins são como funções para CSS. Veja como escrever um:
 
 ```scss
 @mixin box-shadow($x, $y, $blur, $c){ 
@@ -46,13 +46,13 @@ Escreva um mixin para `border-radius` e dê a ele o parâmetro `$radius`. Deve u
 
 # --hints--
 
-Seu código deve declarar um mixin nomeado `border-radius` que tem um parâmetro chamado `$radius`.
+O código deve declarar um mixin nomeado `border-radius` que tem um parâmetro chamado `$radius`.
 
 ```js
 assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
 ```
 
-Seu código deve incluir o prefixo do fornecedor `-webkit-border-radius` que usa o parâmetro `$radius`.
+O código deve incluir o prefixo do fornecedor `-webkit-border-radius` que usa o parâmetro `$radius`.
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-Seu código deve incluir o prefixo do fornecedor `-moz-border-radius` que usa o parâmetro `$radius`.
+O código deve incluir o prefixo do fornecedor `-moz-border-radius` que usa o parâmetro `$radius`.
 
 ```js
 assert(
@@ -68,13 +68,13 @@ assert(
 );
 ```
 
-Seu código deve incluir o prefixo do fornecedor `-ms-border-radius` que usa o parâmetro `$radius`.
+O código deve incluir o prefixo do fornecedor `-ms-border-radius` que usa o parâmetro `$radius`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/-ms-border-radius:\$radius;/gi));
 ```
 
-Seu código deve incluir a regra geral `border-radius` que usa o parâmetro `$radius`.
+O código deve incluir a regra geral `border-radius` que usa o parâmetro `$radius`.
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-Seu código deve chamar o `mixin border-radius` usando a palavra-chave `@include`, definindo-o como `15px`.
+O código deve chamar o `border-radius mixin` usando a palavra-chave `@include`, definindo-o como `15px`.
 
 ```js
 assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));

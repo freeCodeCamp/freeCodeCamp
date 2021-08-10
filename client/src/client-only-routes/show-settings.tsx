@@ -1,30 +1,29 @@
+import { Grid } from '@freecodecamp/react-bootstrap';
 import React from 'react';
+import Helmet from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid } from '@freecodecamp/react-bootstrap';
-import Helmet from 'react-helmet';
 
 import envData from '../../../config/env.json';
+import { createFlashMessage } from '../components/Flash/redux';
+import { Loader, Spacer } from '../components/helpers';
+import Certification from '../components/settings/Certification';
+import About from '../components/settings/about';
+import DangerZone from '../components/settings/danger-zone';
+import Email from '../components/settings/email';
+import Honesty from '../components/settings/honesty';
+import Internet from '../components/settings/internet';
+import Portfolio from '../components/settings/portfolio';
+import Privacy from '../components/settings/privacy';
 import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
   hardGoTo as navigate
 } from '../redux';
-import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
-import { createFlashMessage } from '../components/Flash/redux';
-import { useTranslation } from 'react-i18next';
-
-import { Loader, Spacer } from '../components/helpers';
-import About from '../components/settings/about';
-import Privacy from '../components/settings/privacy';
-import Email from '../components/settings/email';
-import Internet from '../components/settings/internet';
-import Portfolio from '../components/settings/portfolio';
-import Honesty from '../components/settings/honesty';
-import Certification from '../components/settings/Certification';
 import { UserType } from '../redux/prop-types';
-import DangerZone from '../components/settings/danger-zone';
+import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 
 const { apiLocation } = envData;
 

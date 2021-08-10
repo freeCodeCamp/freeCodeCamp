@@ -43,7 +43,7 @@ assert(typeof dog === 'object');
 assert(typeof dog.name === 'string');
 ```
 
-`dog` deve ter uma propriedade `numLeggs` definido para um número.
+`dog` deve ter uma propriedade `numLegs` definido para um número.
 
 ```js
 assert(typeof dog.numLegs === 'number');

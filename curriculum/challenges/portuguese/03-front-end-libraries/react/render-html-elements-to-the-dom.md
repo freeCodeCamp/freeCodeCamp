@@ -16,7 +16,7 @@ Como você esperaria, `ReactDOM.render()` deve ser chamado após as declaraçõe
 
 # --instructions--
 
-O editor de código tem um componente JSX simples. Use o método `ReactDOM.render()` para renderizar este componente na página. Você pode passar elementos JSX definidos diretamente como o primeiro argumento e usar `document.getElementById()` para selecionar o nó do DOM onde renderizá-los. Há um `div` com `id='challenge-node'` disponível para você usar. Certifique-se de não alterar a constante `JSX`.
+O editor de código tem um componente JSX simples. Use o método `ReactDOM.render()` para renderizar este componente na página. Você pode passar elementos JSX definidos diretamente como o primeiro argumento e usar `document.getElementById()` para selecionar o nó do DOM onde renderizá-los. Há uma `div` com `id='challenge-node'` disponível para você usar. Certifique-se de não alterar a constante `JSX`.
 
 # --hints--
 
@@ -26,13 +26,13 @@ A constante `JSX` deve retornar um elemento `div`.
 assert(JSX.type === 'div');
 ```
 
-O `div` deve conter uma tag `h1` como o primeiro elemento.
+A `div` deve conter uma tag `h1` como o primeiro elemento.
 
 ```js
 assert(JSX.props.children[0].type === 'h1');
 ```
 
-O `div` deve conter uma tag `p` como segundo elemento.
+A `div` deve conter uma tag `p` como segundo elemento.
 
 ```js
 assert(JSX.props.children[1].type === 'p');

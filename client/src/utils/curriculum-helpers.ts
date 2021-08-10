@@ -1,5 +1,5 @@
-import CSSHelp from './css-help';
 import strip from '@freecodecamp/strip-comments';
+import CSSHelp from './css-help';
 
 const removeHtmlComments = (str: string): string =>
   str.replace(/<!--[\s\S]*?(-->|$)/g, '');

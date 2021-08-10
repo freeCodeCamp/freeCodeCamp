@@ -11,7 +11,7 @@ dashedName: access-array-data-with-indexes
 
 Podemos acessar os dados dentro de arrays usando <dfn>indexes</dfn>.
 
-Os índices de um array são escritos na mesma notação com colchetes que as strings usam, exceto que em vez de especificar um caractere, eles estão especificando um item do array. Assim como com strings, arrays usam indexação <dfn>zero-based</dfn>, de forma que o primeiro elemento de um array possui índice `0`.
+Os índices de um array são escritos na mesma notação com colchetes que as strings usam. Porém, em vez de especificar um caractere, eles estão especificando um item do array. Assim como ocorre com as strings, os arrays usam indexação <dfn>de base zero</dfn>, de forma que o primeiro elemento de um array possui índice `0`.
 
 <br>
 
@@ -25,7 +25,7 @@ var data = array[1];
 
 `array[0]` agora é `50` e `data` tem o valor `60`.
 
-**Nota:** Não deve haver nenhum espaço entre o nome do array e os colchetes, como `array [0]`. Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código.
+**Observação:** não deve haver nenhum espaço entre o nome do array e os colchetes, como `array [0]`. Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código.
 
 # --instructions--
 

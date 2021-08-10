@@ -8,21 +8,21 @@ dashedName: use-recursion-to-create-a-range-of-numbers
 
 # --description--
 
-Continuando do desafio anterior, nós o fornecemos outra oportunidade para criar uma função recursiva para resolver um problema.
+Continuando do desafio anterior, fornecemos a você outra oportunidade para criar uma função recursiva para resolver um problema.
 
 # --instructions--
 
-Definimos uma função chamada `rangeOfNumbers` com dois parâmetros. A função deve retornar um array de inteiros a qual começa com um número representado pelo parâmetro `startNum` e terminar com um número representado pelo parâmetro `endNum`. O número inicial sempre será menor ou igual ao número final. Sua função precisa usar recursividade ao chamar ela mesma e não depender de nenhum tipo de laço. Também deve funcionar para casos onde ambos `startNum` e `endNum` forem o mesmo.
+Definimos uma função chamada `rangeOfNumbers` com dois parâmetros. A função deve retornar um array de inteiros a qual começa com um número representado pelo parâmetro `startNum` e terminar com um número representado pelo parâmetro `endNum`. O número inicial sempre será menor ou igual ao número final. Sua função precisa usar recursão para chamar a si mesma e não deve depender de nenhum tipo de laço. Também deve funcionar para casos onde `startNum` e `endNum` tiverem o mesmo valor.
 
 # --hints--
 
-Sua função deve retornar um array.
+A função deve retornar um array.
 
 ```js
 assert(Array.isArray(rangeOfNumbers(5, 10)));
 ```
 
-Seu código não deve depender de nenhum laço (`for` ou `while` ou funções de ordem superior como as funções `forEach`, `map`, `filter` ou `reduce`).
+O código não deve depender de nenhum laço (`for` ou `while` ou funções de ordem superior como as funções `forEach`, `map`, `filter` ou `reduce`).
 
 ```js
 assert(

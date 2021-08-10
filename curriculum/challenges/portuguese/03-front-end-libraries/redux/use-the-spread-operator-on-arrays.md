@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036159
-title: Usar o Operador Spread em Arrays
+title: Usar o operador spread em arrays
 challengeType: 6
 forumTopicId: 301452
 dashedName: use-the-spread-operator-on-arrays
@@ -8,13 +8,13 @@ dashedName: use-the-spread-operator-on-arrays
 
 # --description--
 
-Uma solução da ES6 para ajudar a impor imutabilidade do estado no Redux é o operador spread: `...`. O operador spread tem uma variedade de aplicações, um dos quais é bem adequado ao desafio anterior de produzir um novo array a partir de um array existente. Trata-se de uma sintaxe relativamente nova, mas comumente usada. Por exemplo, se você tem um array `myArray` e escreve:
+Uma solução da ES6 para ajudar a impor imutabilidade do estado no Redux é o operador spread: `...`. O operador spread tem uma variedade de aplicações, uma das quais é adequada ao desafio anterior de produzir um novo array a partir de um array existente. Trata-se de uma sintaxe relativamente nova, mas comumente usada. Por exemplo, se você tem um array `myArray` e escreve:
 
 ```js
 let newArray = [...myArray];
 ```
 
-`newArray` agora é um clone de `myArray`. Ambas os arrays ainda existem separadamente na memória. Se você executar uma mutação como `newArray.push(5)`, `myArray` não muda. O `...` efetivamente *spreads (espalha)* os valores em `myArray` em um novo array. Para clonar um array, mas adicionar valores adicionais no novo array, você pode escrever `[...myArray, 'new value']`. Isso retornaria uma nova matriz composta pelos valores em `myArray` e a string `new value` como o último valor. A sintaxe spread pode ser usada várias vezes na composição de array como esta, mas é importante notar que ele só faz uma cópia superficial do array. Ou seja, apenas proporciona operações de array imutáveis para arrays unidimensionais.
+`newArray` agora é um clone de `myArray`. Os dois arrays ainda existem separadamente na memória. Se você executar uma mutação como `newArray.push(5)`, `myArray` não muda. O `...` efetivamente *espalha* os valores em `myArray` em um novo array. Para clonar um array, mas adicionar valores adicionais no novo array, você pode escrever `[...myArray, 'new value']`. Isso retornaria um novo array composto pelos valores em `myArray` e a string `new value` como o último valor. A sintaxe de spread pode ser usada várias vezes na composição de um array desta maneira, mas é importante notar que ele só faz uma cópia superficial do array. Ou seja, apenas proporciona operações de array imutáveis para arrays unidimensionais.
 
 # --instructions--
 
@@ -22,7 +22,7 @@ Use o operador spread para retornar uma nova cópia do state quando uma tarefa (
 
 # --hints--
 
-O store do Redux deve existir e inicializar com um estado igual a `["Do not mutate state!"]`.
+A store do Redux deve existir e inicializar com um estado igual a `["Do not mutate state!"]`.
 
 ```js
 assert(

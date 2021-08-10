@@ -1,6 +1,6 @@
 ---
 id: 5895f70cf9fc0f352b528e67
-title: Implement the Serialization of a Passport User
+title: Implementar a serialização de um usuário do Passport
 challengeType: 2
 forumTopicId: 301556
 dashedName: implement-the-serialization-of-a-passport-user
@@ -8,11 +8,11 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 # --description--
 
-Right now, we're not loading an actual user object since we haven't set up our database. This can be done many different ways, but for our project we will connect to the database once when we start the server and keep a persistent connection for the full life-cycle of the app. To do this, add your database's connection string (for example: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) to the environment variable `MONGO_URI`. This is used in the `connection.js` file.
+No momento, não estamos carregando um objeto de usuário real, já que não configuramos nosso banco de dados. Isto pode ser feito de muitas maneiras diferentes. Para o nosso projeto, no entanto, conectaremos ao banco de dados quando iniciarmos o servidor e manteremos uma conexão persistente para todo o ciclo de vida da aplicação. Para fazer isso, adicione a string de conexão do banco de dados (por exemplo: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) à variável de ambiente `MONGO_URI`. Este é usado no arquivo `connection.js`.
 
-*You can set up a free database on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).*
+*Você pode configurar um banco de dados gratuito no [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).*
 
-Now we want to connect to our database then start listening for requests. The purpose of this is to not allow requests before our database is connected or if there is a database error. To accomplish this, you will want to encompass your serialization and your app routes in the following code:
+Agora, queremos conectar ao nosso banco de dados. Em seguida, vamos começar a escutar pedidos. O objetivo é não permitir solicitações antes de nosso banco de dados estar conectado ou se houver um erro no banco de dados. Para fazer isso, você vai querer englobar a serialização e as rotas da aplicação no código a seguir:
 
 ```js
 myDB(async client => {
@@ -38,13 +38,13 @@ myDB(async client => {
 // app.listen out here...
 ```
 
-Be sure to uncomment the `myDataBase` code in `deserializeUser`, and edit your `done(null, null)` to include the `doc`.
+Certifique-se de descomentar o código `myDataBase` em `deserializeUser` e de editar o seu `done(null, null)` para incluir o `doc`.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7).
 
 # --hints--
 
-Database connection should be present.
+A conexão do banco de dados deve estar presente.
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ Database connection should be present.
   );
 ```
 
-Deserialization should now be correctly using the DB and `done(null, null)` should be called with the `doc`.
+A desserialização agora deve estar usando corretamente o banco de dados e `done(null, null)` deve ser chamado com o `doc`.
 
 ```js
 (getUserInput) =>

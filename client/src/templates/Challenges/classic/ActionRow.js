@@ -1,5 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+import BreadCrumb from '../components/bread-crumb';
 import EditorTabs from './EditorTabs';
 
 const propTypes = {
@@ -11,17 +12,20 @@ const propTypes = {
   switchDisplayTab: PropTypes.func
 };
 
-const ActionRow = ({ switchDisplayTab, showPreview, showConsole }) => {
+const ActionRow = ({
+  switchDisplayTab,
+  showPreview,
+  showConsole,
+  superBlock,
+  block
+}) => {
   const restartStep = () => {
     console.log('restart');
   };
   return (
     <div className='action-row'>
-      <div>
-        <h5 className='breadcrumbs-demo'>
-          Responsive Web Design &gt; Basic HTML Cat Photo App &gt;{' '}
-          <span>Step 23 of 213</span>
-        </h5>
+      <div className='breadcrumbs-demo'>
+        <BreadCrumb block={block} superBlock={superBlock} />
       </div>
       <div className='tabs-row'>
         <EditorTabs />

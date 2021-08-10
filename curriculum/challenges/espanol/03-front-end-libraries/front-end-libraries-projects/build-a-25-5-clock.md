@@ -12,7 +12,7 @@ dashedName: build-a-25--5-clock
 
 Completa las siguientes [historias de usuario](https://en.wikipedia.org/wiki/User_story) y consigue pasar todas las pruebas. Dale tu propio estilo personal.
 
-Puedes utilizar una mezcla de HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux y jQuery para completar este proyecto. Deberías utilizar un framework frontend (como React por ejemplo) porque esta sección trata sobre el aprendizaje de frameworks frontend. No se recomienda utilizar tecnologías adicionales a las indicadas anteriormente, su utilización corre bajo su propio riesgo. Estamos considerando apoyar otros frameworks frontend como Angular y Vue, pero actualmente no están soportados. Aceptaremos e intentaremos solucionar todos los informes de incidencias que utilicen el conjunto de tecnologías sugeridas para este proyecto. ¡Feliz programación!
+Puedes utilizar una combinación de HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux y jQuery para completar este proyecto. Deberías utilizar un framework frontend (como React por ejemplo) porque esta sección trata sobre el aprendizaje de frameworks frontend. No se recomienda utilizar tecnologías adicionales a las indicadas anteriormente, su utilización corre bajo su propio riesgo. Estamos considerando apoyar otros frameworks frontend como Angular y Vue, pero actualmente no están soportados. Aceptaremos e intentaremos solucionar todos los informes de incidencias que utilicen el conjunto de tecnologías sugeridas para este proyecto. ¡Feliz programación!
 
 **Historia de usuario #1:** Puedo ver un elemento con `id="break-label"` que contiene una cadena (por ejemplo: "Break Length").
 

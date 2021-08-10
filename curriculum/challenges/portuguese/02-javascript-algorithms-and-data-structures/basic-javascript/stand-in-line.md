@@ -9,9 +9,9 @@ dashedName: stand-in-line
 
 # --description--
 
-Na Ciência da Computação uma <dfn>fila</dfn> é uma <dfn>estrutura de dados</dfn> abstrata onde itens são mantidos em ordem. Novos itens podem ser adicionados no final da fila e itens mais antigos são removidos do início da fila.
+Na Ciência da Computação, uma <dfn>fila</dfn> é uma <dfn>estrutura de dados</dfn> abstrata onde itens são mantidos em ordem. Novos itens podem ser adicionados no final da fila e itens mais antigos são removidos do início da fila.
 
-Escreva a função `nextInLine` a qual recebe um array (`arr`) e um número (`item`) como argumentos.
+Escreva a função `nextInLine`, que recebe um array (`arr`) e um número (`item`) como argumentos.
 
 Adicione o número no final do array e então remova o primeiro elemento do array.
 
@@ -25,7 +25,7 @@ A função `nextInLine` deve, em seguida, retornar o elemento que foi removido.
 assert.isNumber(nextInLine([], 5));
 ```
 
-`nextInLine([], 1)` deve retonar `1`
+`nextInLine([], 1)` deve retornar `1`
 
 ```js
 assert(nextInLine([], 1) === 1);

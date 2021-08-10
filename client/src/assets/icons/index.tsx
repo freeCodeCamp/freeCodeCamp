@@ -1,21 +1,23 @@
 import React from 'react';
-import ResponsiveDesign from './responsive-design';
+import APIIcon from './API-icon';
+import D3Icon from './D3-icon';
+import DatabaseIcon from './Database-icon';
 import JavaScriptIcon from './JavaScript-icon';
 import ReactIcon from './React-icon';
-import D3Icon from './D3-icon';
-import APIIcon from './API-icon';
-import Clipboard from './clipboard';
-import PythonIcon from './python-icon';
-import Analytics from './analytics';
-import Shield from './shield';
 import TensorflowIcon from './Tensorflow-icon';
 import Algorithm from './algorithm';
+import Analytics from './analytics';
+import Clipboard from './clipboard';
+import PythonIcon from './python-icon';
+import ResponsiveDesign from './responsive-design';
+import Shield from './shield';
 
 const iconMap = {
   'responsive-web-design': ResponsiveDesign,
   'javascript-algorithms-and-data-structures': JavaScriptIcon,
   'front-end-libraries': ReactIcon,
   'data-visualization': D3Icon,
+  'relational-databases': DatabaseIcon,
   'apis-and-microservices': APIIcon,
   'quality-assurance': Clipboard,
   'scientific-computing-with-python': PythonIcon,

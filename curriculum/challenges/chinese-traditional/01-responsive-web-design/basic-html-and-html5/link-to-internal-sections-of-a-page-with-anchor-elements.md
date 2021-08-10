@@ -51,7 +51,7 @@ assert($('footer').length == 1);
 assert($('a').eq(0).attr('href') == '#footer');
 ```
 
-`a` 的內容文本應爲 `Jump to Bottom`。
+`a` 標籤不應有 `target` 屬性。
 
 ```js
 assert(

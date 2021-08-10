@@ -1,6 +1,6 @@
 ---
 id: 595b98f8b5a2245e243aa831
-title: Heronian triangles
+title: Triângulos Heronianos
 challengeType: 5
 forumTopicId: 302285
 dashedName: heronian-triangles
@@ -8,57 +8,57 @@ dashedName: heronian-triangles
 
 # --description--
 
-[Hero's formula](https://en.wikipedia.org/wiki/Heron's formula "wp: Heron's formula") for the area of a triangle given the length of its three sides `a`, `b`, and `c` is given by:
+A [fórmula de Heron](https://en.wikipedia.org/wiki/Heron's formula "wp: Heron's formula") para a área de um triângulo dado o comprimento de seus três lados `a`, `b`, e `c`, é dada por:
 
 $A = \\sqrt{s(s-a)(s-b)(s-c)},$
 
-where `s` is half the perimeter of the triangle; that is,
+onde `s` é metade do perímetro do triângulo, ou seja,
 
 $s=\\frac{a+b+c}{2}.$
 
-Heronian triangles are triangles whose sides and area are all integers.
+Os triângulos Heronianos são triângulos cujos lados e área são todos inteiros.
 
-An example is the triangle with sides `3, 4, 5` whose area is `6` (and whose perimeter is `12`).
+Um exemplo é o triângulo com os lados `3, 4, 5`, cuja área é `6` (e cujo perímetro é `12`).
 
-Note that any triangle whose sides are all an integer multiple of `3, 4, 5`; such as `6, 8, 10,` will also be a Heronian triangle.
+Observe que qualquer triângulo cujos lados são todos números inteiros múltiplo de `3, 4, 5`, como `6, 8, 10,`, por exemplo, também será um triângulo Heroniano.
 
-Define a Primitive Heronian triangle as a Heronian triangle where the greatest common divisor
+Defina um triângulo Heroniano Primitivo como um triângulo Heroniano no qual o maior divisor comum
 
-of all three sides is `1` (unity).
+de todos os três lados é `1` (unidade).
 
-This will exclude, for example, triangle `6, 8, 10.`
+Isso excluirá, por exemplo, o triângulo `6, 8, 10.`
 
 # --instructions--
 
-Implement a function based on Hero's formula that returns the first <code>n<sub>th</sub></code> ordered triangles in an array of arrays.
+Implemente uma função baseada na fórmula de Heron que retorna os primeiros <code>n<sub>th</sub></code> (enésimos) triângulos ordenados em um array de arrays.
 
 # --hints--
 
-`heronianTriangle` should be a function.
+`heronianTriangle` deve ser uma função.
 
 ```js
 assert(typeof heronianTriangle === 'function');
 ```
 
-`heronianTriangle(10)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]]`
+`heronianTriangle(10)` deve retornar `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]]`
 
 ```js
 assert.deepEqual(heronianTriangle(testCases[0]), res[0]);
 ```
 
-`heronianTriangle(15)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15]],`
+`heronianTriangle(15)` deve retornar `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15]],`
 
 ```js
 assert.deepEqual(heronianTriangle(testCases[1]), res[1]);
 ```
 
-`heronianTriangle(20)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53]],`
+`heronianTriangle(20)` deve retornar `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53]],`
 
 ```js
 assert.deepEqual(heronianTriangle(testCases[2]), res[2]);
 ```
 
-`heronianTriangle(25)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53], [19, 20, 37],[16, 17, 17], [17, 17, 30], [16, 25, 39], [13, 20, 21]]`
+`heronianTriangle(25)` deve retornar `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53], [19, 20, 37],[16, 17, 17], [17, 17, 30], [16, 25, 39], [13, 20, 21]]`
 
 ```js
 assert.deepEqual(heronianTriangle(testCases[3]), res[3]);

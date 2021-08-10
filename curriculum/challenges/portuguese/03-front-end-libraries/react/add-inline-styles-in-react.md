@@ -14,11 +14,11 @@ Todas as unidades de valor de comprimento das propriedades (como `height`,`width
 
 # --instructions--
 
-Se você tem um grande conjunto de estilos, você pode atribuir um `objeto` de estilo para uma constante para te ajudar a manter o código organizado. Declare suas constantes de estilo como variáveis globais no topo do arquivo. Inicialize a constante `styles` e atribua um `object` com três propriedades de estilo e os seus valores à constante. Dê a `div` a color (cor) `purple (roxo)`, um font-size (tamanho de fonte) de `40` e um border (borda) de `2px solid purple`. Em seguida, defina o atributo `style` para ser igual a constante `styles`.
+Se você tem um grande conjunto de estilos, você pode atribuir um `object` de estilo para uma constante para te ajudar a manter o código organizado. Declare suas constantes de estilo como variáveis globais no topo do arquivo. Inicialize a constante `styles` e atribua um `object` com três propriedades de estilo e os seus valores à constante. Dê a `div` a color (cor) `purple`, um font-size (tamanho de fonte) de `40` e um border (borda) de `2px solid purple`. Em seguida, defina o atributo `style` para ser igual a constante `styles`.
 
 # --hints--
 
-A variável `styles` deve ser um `objeto` com três propriedades.
+A variável `styles` deve ser um `object` com três propriedades.
 
 ```js
 assert(Object.keys(styles).length === 3);

@@ -1,6 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb4
-title: Armazenar Dados com Variáveis do Sass
+title: Armazenar dados com variáveis do Sass
 challengeType: 0
 forumTopicId: 301460
 dashedName: store-data-with-sass-variables
@@ -8,7 +8,7 @@ dashedName: store-data-with-sass-variables
 
 # --description--
 
-Um recurso do Sass que é diferente do CSS é que ele usa variáveis. Elas são declaradas e definidas para armazenar dados, semelhante ao JavaScript.
+Um recurso do Sass que é diferente do CSS está no fato de ele usar variáveis. Elas são declaradas e definidas para armazenar dados, semelhante ao JavaScript.
 
 Em JavaScript, variáveis são definidas usando as palavras-chave `let` e `const`. Em Sass, variáveis começam com um `$` seguido do nome da variável.
 
@@ -19,7 +19,7 @@ $main-fonts: Arial, sans-serif;
 $headings-color: green;
 ```
 
-A para usar variáveis:
+Para usar variáveis:
 
 ```scss
 h1 {
@@ -28,7 +28,7 @@ h1 {
 }
 ```
 
-Um exemplo onde variáveis são úteis é quando um número de elementos precisa ser da mesma cor. Se essa cor for alterada, o único local para se editar no código é no valor da variável.
+Um exemplo onde variáveis são úteis é quando um certo número de elementos precisa ser da mesma cor. Se essa cor for alterada, o único local para se editar no código é no valor da variável.
 
 # --instructions--
 
@@ -36,25 +36,25 @@ Crie a variável `$text-color` e defina-a como `red`. Em seguida, altere o valor
 
 # --hints--
 
-Seu código deve ter uma variável Sass declarada `$text-color` com o valor `red`.
+O código deve ter uma variável Sass declarada `$text-color` com o valor `red`.
 
 ```js
 assert(code.match(/\$text-color\s*:\s*?red\s*;/g));
 ```
 
-Seu código deve usar a variável `$text-color` para alterar a propriedade `color` para os itens `.blog-post` e `h2`.
+O código deve usar a variável `$text-color` para alterar a propriedade `color` para os itens `.blog-post` e `h2`.
 
 ```js
 assert(code.match(/color\s*:\s*\$text-color\s*;?/g));
 ```
 
-Seu elemento `.blog-post` deve ter a propriedade `color` definida como red.
+O elemento `.blog-post` deve ter a propriedade `color` definida como red.
 
 ```js
 assert($('.blog-post').css('color') == 'rgb(255, 0, 0)');
 ```
 
-Seus elementos `h2` devem ter a propriedade `color` definida como red.
+Os elementos `h2` devem ter a propriedade `color` definida como red.
 
 ```js
 assert($('h2').css('color') == 'rgb(255, 0, 0)');

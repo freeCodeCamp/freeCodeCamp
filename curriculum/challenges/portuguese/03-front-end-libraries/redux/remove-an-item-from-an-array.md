@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403615a
-title: Remover um item de um Array
+title: Remover um item de um array
 challengeType: 6
 forumTopicId: 301447
 dashedName: remove-an-item-from-an-array
@@ -12,11 +12,11 @@ Hora de praticar a remoção de itens de um array. O operador spread também pod
 
 # --instructions--
 
-O reducer e criador de ação foram modificados para remover um item de um array com base no índice do item. Termine de escrever o reducer para que um novo array state seja retornado com o item no índice especificado removido.
+O reducer e o criador de ação foram modificados para remover um item de um array com base no índice do item. Termine de escrever o reducer para que um novo array de state seja retornado com o item no índice especificado removido.
 
 # --hints--
 
-O store do Redux deve existir e inicializar com um estado igual a `[0,1,2,3,4,5]`
+A store do Redux deve existir e inicializar com um estado igual a `[0,1,2,3,4,5]`
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-`removeItem` e `immutableReducer` ambos devem ser funções.
+`removeItem` e `immutableReducer` devem ser funções.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-Despachando o criador de ação `removeItem` deve remover itens do state e NÃO deve modificar o state.
+Despachar o criador de ação `removeItem` deve remover itens do state e NÃO deve modificar o state.
 
 ```js
 assert(

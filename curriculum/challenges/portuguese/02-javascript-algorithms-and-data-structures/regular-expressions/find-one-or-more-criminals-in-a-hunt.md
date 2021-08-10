@@ -36,19 +36,19 @@ Escreva uma regex gananciosa que encontra uma ou mais criminosos em um grupo de 
 
 # --hints--
 
-Sua regex deve encontrar um criminoso (`C`) na string `C`
+A regex deve encontrar um criminoso (`C`) na string `C`
 
 ```js
 assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C');
 ```
 
-Sua regex deve encontrar dois criminosos (`CC`) na string `CC`
+A regex deve encontrar dois criminosos (`CC`) na string `CC`
 
 ```js
 assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC');
 ```
 
-Sua regex deve encontrar três criminosos (`CCC`) na string `P1P5P4CCCcP2P6P3`.
+A regex deve encontrar três criminosos (`CCC`) na string `P1P5P4CCCcP2P6P3`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-Sua regex deve encontrar cinco criminosos (`CCCCC`) na string `P6P2P7P4P5CCCCCP3P1`
+A regex deve encontrar cinco criminosos (`CCCCC`) na string `P6P2P7P4P5CCCCCP3P1`
 
 ```js
 assert(
@@ -66,19 +66,19 @@ assert(
 );
 ```
 
-Sua regex não deve encontrar nenhum criminoso na string vazia `""`
+A regex não deve encontrar nenhum criminoso na string vazia `""`
 
 ```js
 assert(!reCriminals.test(''));
 ```
 
-Sua regex não deve encontrar nenhum criminoso na string `P1P2P3`
+A regex não deve encontrar nenhum criminoso na string `P1P2P3`
 
 ```js
 assert(!reCriminals.test('P1P2P3'));
 ```
 
-Sua regex deve encontrar cinquenta criminosos (`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`) na string `P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3`.
+A regex deve encontrar cinquenta criminosos (`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`) na string `P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3`.
 
 ```js
 assert(

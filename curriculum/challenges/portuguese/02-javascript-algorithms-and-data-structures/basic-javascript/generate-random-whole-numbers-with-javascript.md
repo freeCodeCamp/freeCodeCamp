@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-with-javascript
 
 # --description--
 
-É ótimo podermos gerar números decimais aleatórios, mas é ainda mais útil se usarmos para gerar números inteiros aleatórios.
+É ótimo podermos gerar números decimais aleatórios, mas é ainda mais útil se usarmos isso para gerar números inteiros aleatórios.
 
 <ol><li>Use <code>Math.random()</code> para gerar um decimal aleatório.</li><li>Multiplique o decimal aleatório por <code>20</code>.</li><li>Use outra função, <code>Math.floor()</code> para arredondar o número para baixo para o número inteiro mais próximo.</li></ol>
 
-Lembre-se que `Math.random()` pode nunca retornar um `1` e, porque nós estamos arredondando, é impossível receber examente `20`. Essa técnica nos dará um número inteiro entre `0` e `19`.
+Lembre-se de que `Math.random()` pode nunca retornar um `1` e, por estarmos arredondando, é impossível também receber `20`. Essa técnica nos dará um número inteiro entre `0` e `19`.
 
 Juntando tudo, é assim que nosso código se parece:
 
@@ -21,7 +21,7 @@ Juntando tudo, é assim que nosso código se parece:
 Math.floor(Math.random() * 20);
 ```
 
-Nós estamos chamando `Math.random()`, multiplicando o resultado por 20, e em seguida passando o valor para a função `Math.floor()` para arredondar o valor para o número inteiro para baixo mais próximo.
+Nós estamos chamando `Math.random()`, multiplicando o resultado por 20, e em seguida passando o valor para a função `Math.floor()` para arredondar o valor para o número inteiro mais próximo abaixo.
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7fad367417b2b2512bdf
-title: Add Axes to a Visualization
+title: Adicionar eixos a uma visualização
 challengeType: 6
 forumTopicId: 301472
 dashedName: add-axes-to-a-visualization
@@ -8,15 +8,15 @@ dashedName: add-axes-to-a-visualization
 
 # --description--
 
-Another way to improve the scatter plot is to add an x-axis and a y-axis.
+Outra maneira de melhorar o diagrama de dispersão é adicionar um eixo x e um eixo y.
 
-D3 has two methods, `axisLeft()` and `axisBottom()`, to render the y-axis and x-axis, respectively. Here's an example to create the x-axis based on the `xScale` in the previous challenges:
+O D3 tem dois métodos, `axisLeft()` e `axisBottom()`, para renderizar o eixo y e o eixo x, respectivamente. Aqui temos um exemplo para criar o eixo x com base na `xScale` dos desafios anteriores:
 
 ```js
 const xAxis = d3.axisBottom(xScale);
 ```
 
-The next step is to render the axis on the SVG canvas. To do so, you can use a general SVG component, the `g` element. The `g` stands for group. Unlike `rect`, `circle`, and `text`, an axis is just a straight line when it's rendered. Because it is a simple shape, using `g` works. The last step is to apply a `transform` attribute to position the axis on the SVG canvas in the right place. Otherwise, the line would render along the border of SVG canvas and wouldn't be visible. SVG supports different types of `transforms`, but positioning an axis needs `translate`. When it's applied to the `g` element, it moves the whole group over and down by the given amounts. Here's an example:
+O próximo passo é renderizar o eixo no canvas do SVG. Para fazer isso, você pode usar um componente SVG geral, o elemento `g`. O `g` representa o grupo. Ao contrário de `rect`, `circle` e `text`, um eixo é apenas uma linha reta quando é renderizado. Por ser uma forma simples, usar `g` funciona. O último passo é aplicar um atributo `transform` para posicionar o eixo no lugar certo no canvas do SVG. Caso contrário, a linha seria renderizada ao longo da borda do canvas do SVG e não seria visível. O SVG suporta diferentes tipos de `transforms`, mas posicionar um eixo precisa de `translate`. Quando aplicado ao elemento `g`, ele move o grupo inteiro para cima e para baixo pelos valores indicados. Exemplo:
 
 ```js
 const xAxis = d3.axisBottom(xScale);
@@ -26,21 +26,21 @@ svg.append("g")
    .call(xAxis);
 ```
 
-The above code places the x-axis at the bottom of the SVG canvas. Then it's passed as an argument to the `call()` method. The y-axis works in the same way, except the `translate` argument is in the form `(x, 0)`. Because `translate` is a string in the `attr()` method above, you can use concatenation to include variable values for its arguments.
+O código acima coloca o eixo x na parte inferior do canvas do SVG. Então, ele é passado como um argumento para o método `call()`. O eixo y funciona da mesma forma, exceto pelo fato de o argumento `translate` estar no formato `(x, 0)`. Como `translate` é uma string no método `attr()` acima, você pode usar a concatenação para incluir valores de variáveis para seus argumentos.
 
 # --instructions--
 
-The scatter plot now has an x-axis. Create a y-axis in a variable named `yAxis` using the `axisLeft()` method. Then render the axis using a `g` element. Make sure to use a `transform` attribute to translate the axis by the amount of padding units right, and `0` units down. Remember to `call()` the axis.
+O diagrama de dispersão agora tem um eixo x. Crie um eixo y em uma variável chamada `yAxis` usando o método `axisLeft()`. Em seguida, renderize o eixo usando um elemento `g`. Certifique-se de usar o atributo `transform` para mover o eixo pela quantidade de unidades de preenchimento à direita, e `0` unidades para baixo. Lembre-se de usar `call()` para o eixo.
 
 # --hints--
 
-Your code should use the `axisLeft()` method with `yScale` passed as the argument.
+O código deve usar o método `axisLeft()` com `yScale` passado para o argumento.
 
 ```js
 assert(code.match(/\.axisLeft\(yScale\)/g));
 ```
 
-The y-axis `g` element should have a `transform` attribute to translate the axis by `(60, 0)`.
+O elemento `g` do eixo y deve ter um atributo `transform` para mover o eixo por `(60, 0)`.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-Your code should call the `yAxis`.
+O código deve ter uma tag `yAxis`.
 
 ```js
 assert(code.match(/\.call\(\s*yAxis\s*\)/g));

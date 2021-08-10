@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348ce8acef08814
-title: Avise Seus Usuários de uma Ação Perigosa com btn-danger
+title: Avisar os usuários sobre uma ação perigosa com btn-danger
 challengeType: 0
 forumTopicId: 18375
 dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
@@ -8,11 +8,11 @@ dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
 
 # --description--
 
-Bootstrap vem com diversas cores pré-definidas para botões. A classe `btn-danger` é a cor de botão que você usará para notificar seus usuários que o botão executa uma ação destrutiva, como deletar uma foto de gato.
+O Bootstrap vem com diversas cores predefinidas para botões. A classe `btn-danger` é a cor de botão que você usará para notificar seus usuários de que o botão executa uma ação destrutiva, como excluir uma foto de gato.
 
-Crie um botão com o texto `Delete` e de a ele a classe `btn-danger`.
+Crie um botão com o texto `Delete` e dê a ele a classe `btn-danger`.
 
-Note que esses botões ainda precisam das classes `btn` e `btn-block`.
+Observe que esses botões ainda precisam das classes `btn` e `btn-block`.
 
 # --hints--
 
@@ -22,19 +22,19 @@ Você deve criar um novo elemento `button` com o texto `Delete`.
 assert(new RegExp('Delete', 'gi').test($('button').text()));
 ```
 
-Todos os seus botões Bootstrap devem ter as classes `btn` e `btn-block`.
+Todos os botões do Bootstrap devem ter as classes `btn` e `btn-block`.
 
 ```js
 assert($('button.btn-block.btn').length > 2);
 ```
 
-Seu novo botão deve ter a classe `btn-danger`.
+O novo botão deve ter a classe `btn-danger`.
 
 ```js
 assert($('button').hasClass('btn-danger'));
 ```
 
-Todos os seus elementos `button` devem ter tags de fechamento.
+Todos os elementos `button` devem ter tags de fechamento.
 
 ```js
 assert(

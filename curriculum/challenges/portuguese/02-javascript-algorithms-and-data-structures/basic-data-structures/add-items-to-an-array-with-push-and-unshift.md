@@ -8,9 +8,9 @@ dashedName: add-items-to-an-array-with-push-and-unshift
 
 # --description--
 
-O comprimento de um array, como os tipos de dados que pode conter, não são fixos. Arrays podem ser definidos com um comprimento de qualquer número de elementos e elementos podem ser adicionados e removidos ao decorrer do tempo; em outras palavras, arrays são <dfn>mutáveis</dfn>. Nesse desafio, nós olharemos dois métodos com os quais podemos modificar programaticamente um array: `Array.push()` e `Array.unshift()`.
+O comprimento de um array, como os tipos de dados que pode conter, não são fixos. Arrays podem ser definidos com um comprimento de qualquer número de elementos e elementos podem ser adicionados e removidos com o passar do tempo. Em outras palavras, arrays são <dfn>mutáveis</dfn>. Nesse desafio, examinaremos dois métodos com os quais podemos modificar programaticamente um array: `Array.push()` e `Array.unshift()`.
 
-Ambos os métodos recebem 1 ou mais elementos como parâmetros e adiciona esses elementos ao array no qual o método está sendo chamado; o método `push()` adiciona elementos ao final do array, e `unshift()` adiciona no início. Considere o seguinte:
+Ambos os métodos recebem 1 ou mais elementos como parâmetros e adicionam esses elementos ao array no qual o método está sendo chamado; o método `push()` adiciona elementos ao final do array, e `unshift()` adiciona ao início. Considere o seguinte:
 
 ```js
 let twentyThree = 'XXIII';
@@ -29,7 +29,7 @@ romanNumerals.push(twentyThree);
 
 # --instructions--
 
-Nos definimos uma função, `mixedNumbers`, na qual estamos passando o array como um argumento. Modifique a função usando `push()` e `unshift()` para adicionar `'1', 2, 'three'` no início do array e `7, 'VIII', 9` ao final para que o array retornado contenha a representação dos números de 1 a 9 em ordem.
+Definimos uma função, `mixedNumbers`, na qual estamos passando o array como um argumento. Modifique a função usando `push()` e `unshift()` para adicionar `'1', 2, 'three'` no início do array e `7, 'VIII', 9` ao final para que o array retornado contenha a representação dos números de 1 a 9 em ordem.
 
 # --hints--
 

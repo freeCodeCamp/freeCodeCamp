@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bd0f
-title: File Metadata Microservice
+title: Microsserviço de metadados de arquivos
 challengeType: 4
 forumTopicId: 301506
 dashedName: file-metadata-microservice
@@ -8,21 +8,21 @@ dashedName: file-metadata-microservice
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://file-metadata-microservice.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <https://file-metadata-microservice.freecodecamp.rocks/>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-filemetadata/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-project-filemetadata/) e complete o projeto localmente.
+-   Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata) para completar o projeto.
+-   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 
 # --instructions--
 
-**HINT:** You can use the `multer` npm package to handle file uploading.
+**DICA:** você pode usar o pacote `multer` do npm para lidar com o envio de arquivos.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Você deve fornecer seu próprio projeto, não o exemplo de URL.
 
 ```js
 (getUserInput) => {
@@ -34,7 +34,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can submit a form that includes a file upload.
+Você pode enviar um formulário que inclua o upload de arquivos.
 
 ```js
 async (getUserInput) => {
@@ -45,7 +45,7 @@ async (getUserInput) => {
 };
 ```
 
-The form file input field has the `name` attribute set to `upfile`.
+O campo entrada do arquivo de formulário tem o atributo `name` definido como `upfile`.
 
 ```js
 async (getUserInput) => {
@@ -56,7 +56,7 @@ async (getUserInput) => {
 };
 ```
 
-When you submit a file, you receive the file `name`, `type`, and `size` in bytes within the JSON response.
+Ao enviar um arquivo, você recebe `name` (nome), `type` (tipo) e `size` (tamanho, em bytes) do arquivo dentro da resposta em JSON.
 
 ```js
 async (getUserInput) => {

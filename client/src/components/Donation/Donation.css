@@ -245,11 +245,13 @@ li.disabled > a {
   font-weight: 600;
   font-size: 1.2rem;
 }
-
+.donation-label,
 .donation-modal p,
 .donation-modal b {
   text-align: center;
   font-size: 1rem;
+  width: 100%;
+  display: inline-block;
 }
 
 .donation-icon-container {
@@ -386,30 +388,22 @@ button#confirm-donation-btn:hover {
 
 .donate-btn-group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .donate-btn-group > * {
   width: 100%;
-  height: 43px;
 }
 
-.donate-btn-group button:first-child {
-  margin-bottom: 10px;
+.wallets-form {
+  margin-bottom: 12px;
 }
 
 @media (min-width: 500px) {
-  .donate-btn-group {
-    flex-direction: row;
-  }
   .donate-btn-group > * {
     width: 49%;
-  }
-
-  .donate-btn-group button:first-child {
-    margin-bottom: 0px;
-    margin-right: auto;
   }
 }
 

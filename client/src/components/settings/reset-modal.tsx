@@ -1,10 +1,10 @@
+import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ButtonSpacer } from '../helpers';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
 type ResetModalProps = {
   onHide: () => void;

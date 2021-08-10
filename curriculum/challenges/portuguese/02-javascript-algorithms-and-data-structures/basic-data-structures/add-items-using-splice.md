@@ -8,7 +8,7 @@ dashedName: add-items-using-splice
 
 # --description--
 
-Se lembra que no último desafio mencionamos que `splice()` pode receber até três parâmetros? Bem, você pode usar o terceiro parâmetro, composto por um ou mais elementos, para adicioná-los ao array. Isso pode ser incrivelmente útil para mudar rapidamente um elemento, ou um conjunto de elementos, para outro.
+Você se lembra de quando mencionamos no último desafio que `splice()` pode receber até três parâmetros? Bem, você pode usar o terceiro parâmetro, composto por um ou mais elementos, para adicionar algo ao array. Isso pode ser incrivelmente útil para mudar rapidamente de um elemento, ou um conjunto de elementos, para outro.
 
 ```js
 const numbers = [10, 11, 12, 12, 15];
@@ -21,7 +21,7 @@ console.log(numbers);
 
 A segunda ocorrência de `12` é removida, e adicionamos `13` e `14` no mesmo índice. O array `numbers` agora seria `[ 10, 11, 12, 13, 14, 15 ]`.
 
-Aqui, começamos com um array de números. Em seguida, passamos o seguinte para `splice()`: O índice no qual começar a deletar os elementos (3), o número de elementos a serem deletados (1) e os argumentos restantes (13, 14) serão inseridos com início no mesmo índice. Note que três pode ser qualquer número de elementos (separado por vírgulas) seguindo `amountToDelete`, cada um dos quais são inseridos.
+Aqui, começamos com um array de números. Em seguida, passamos o seguinte para `splice()`: o índice no qual começar a deletar os elementos (3), o número de elementos a serem deletados (1) e os argumentos restantes (13, 14) serão inseridos com início no mesmo índice. Note que pode haver um número qualquer de elementos (separado por vírgulas) seguindo `amountToDelete`, cada um dos quais é inserido.
 
 # --instructions--
 

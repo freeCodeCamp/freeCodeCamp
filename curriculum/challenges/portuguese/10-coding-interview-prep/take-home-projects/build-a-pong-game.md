@@ -1,6 +1,6 @@
 ---
 id: 5a4b7fcdb66f799f199e11db
-title: Build a Pong Game
+title: Criar um jogo Pong
 challengeType: 3
 forumTopicId: 302353
 dashedName: build-a-pong-game
@@ -8,23 +8,23 @@ dashedName: build-a-pong-game
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/satyamdev/full/pdMmBp>.
+**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/satyamdev/full/pdMmBp>.
 
-**Rule #1:** Don't look at the example project's code. Figure it out for yourself.
+**Regra nº 1:** não olhe o código do projeto de exemplo. Descubra por conta própria.
 
-**Rule #2:** Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+**Regra nº 2:** atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**User Story:** I can control a paddle.
+**Especificação de usuário:** posso controlar uma raquete.
 
-**User Story:** The computer can control the other paddle.
+**Especificação de usuário:** o computador pode controlar a outra raquete.
 
-**User Story:** The computer's paddle is unbeatable. It should never miss the ball.
+**Especificação de usuário:** a raquete do computador é invencível. Ela nunca deve perder a bola.
 
-**User Story:** The game keeps track of the player and computer's score.
+**Especificação de usuário:** o jogo mantém o registro dos resultados do jogador e do computador.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum do freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

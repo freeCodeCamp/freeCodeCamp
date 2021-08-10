@@ -19,7 +19,7 @@ Esta é a aparência das linhas em um grid 3x3:
 
 Para controlar a quantidade de colunas que um item ocupará, você pode usar a propriedade `grid-column` definindo o número da linha em que deseja que o item comece e pare.
 
-Um exemplo:
+Exemplo:
 
 ```css
 grid-column: 1 / 3;

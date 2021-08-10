@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908845
-title: Alinhe os Elementos de Formulário de maneira Responsiva com o Bootstrap
+title: Alinhar os elementos de formulário de maneira responsiva com o Bootstrap
 challengeType: 0
 forumTopicId: 18225
 required:
@@ -13,15 +13,15 @@ dashedName: line-up-form-elements-responsively-with-bootstrap
 
 # --description--
 
-Agora vamos colocar o seu `input` e o `button` de submissão do formulário na mesma linha. Faremos isso da mesma forma que fizemos antes: usando um elemento `div` com a classe `row`, e outros elementos `div` dentro do primeiro div usando a classe `col-xs-*`.
+Agora vamos colocar o `input` e o `button` de envio do formulário na mesma linha. Faremos isso da mesma forma que fizemos antes: usando um elemento `div` com a classe `row` e outros elementos `div` dentro do primeiro div usando a classe `col-xs-*`.
 
-Aninhe ambos o `input` de texto e o `button` de submissão do formulário dentro de uma `div` com a classe `row`. Aninhe o texto do `input` do formulário dentro de uma div com a classe `col-xs-7`. Aninhe o seu `button` de submissão do formulário em uma `div` com a classe `col-xs-5`.
+Aninhe o `input` de texto e o `button` de envio do formulário dentro de uma `div` com a classe `row`. Aninhe o texto do `input` do formulário dentro de uma div com a classe `col-xs-7`. Aninhe o `button` de envio do formulário em uma `div` com a classe `col-xs-5`.
 
-Esse é o último desafio que faremos para nossa aplicação Foto de Gato por agora. Esperamos que você tenha gostado de aprender Font Awesome, Bootstrap e design responsivo!
+Esse é o último desafio que faremos para nossa aplicação de fotos de gatos por agora. Esperamos que você tenha gostado de aprender Font Awesome, Bootstrap e design responsivo!
 
 # --hints--
 
-Seu botão de submissão e o input de texto do formulário devem estar aninhados dentro de uma div com a classe `row`.
+O botão de envio e o input de texto do formulário devem estar aninhados dentro de uma div com a classe `row`.
 
 ```js
 assert(
@@ -30,19 +30,19 @@ assert(
 );
 ```
 
-Seu input de texto do formulário deve estar aninhado dentro de uma div com a classe `col-xs-7`.
+O input de texto do formulário deve estar aninhado dentro de uma div com a classe `col-xs-7`.
 
 ```js
 assert($('div.col-xs-7:has(input[type="text"])').length > 0);
 ```
 
-Seu botão de submissão do formulário deve estar aninhado dentro de uma div com a classe `col-xs-5`.
+O botão de envio do formulário deve estar aninhado dentro de uma div com a classe `col-xs-5`.
 
 ```js
 assert($('div.col-xs-5:has(button[type="submit"])').length > 0);
 ```
 
-Todos os seus elementos `div` devem ter tags de fechamento.
+Todos os elementos `div` devem ter tags de fechamento.
 
 ```js
 assert(

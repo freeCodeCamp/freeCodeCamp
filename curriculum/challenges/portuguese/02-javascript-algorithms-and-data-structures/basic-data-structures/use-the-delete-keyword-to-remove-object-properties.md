@@ -8,7 +8,7 @@ dashedName: use-the-delete-keyword-to-remove-object-properties
 
 # --description--
 
-Agora você sabe o que objetos são, seus recursos básicos e suas vantagens. Resumindo, ele são uma forma de armazenar chave-valor que provê uma forma flexível e intuitiva de estruturar dados, ***e***, eles fornecem um desempenho rápido para acessá-los. Ao longo do resto destes desafios, descreveremos diversas operações que você pode executar em objetos, com a finalidade de torná-lo confortável ao usar essas estruturas de dados úteis em seus programas.
+Agora você sabe o que são objetos, seus recursos básicos e suas vantagens. Resumindo, ele são uma forma de armazenar chave-valor que provê uma forma flexível e intuitiva de estruturar dados, ***e***, eles fornecem um desempenho rápido para acessá-los. Ao longo do resto destes desafios, descreveremos diversas operações que você pode executar em objetos, com a finalidade de torná-lo confortável ao usar essas estruturas de dados úteis em seus programas.
 
 Nos desafios anteriores, nós adicionamos e modificamos os pares de chave-valor de objetos. Aqui veremos como podemos *remover* uma chave-valor de um obeto.
 

@@ -1,3 +1,12 @@
+import Loadable from '@loadable/component';
+// eslint-disable-next-line import/no-duplicates
+import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
+import type {
+  IRange,
+  editor,
+  Range as RangeType
+  // eslint-disable-next-line import/no-duplicates
+} from 'monaco-editor/esm/vs/editor/editor.api';
 import React, {
   useEffect,
   Suspense,
@@ -7,22 +16,9 @@ import React, {
 } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import Loadable from '@loadable/component';
-
-import {
-  canFocusEditorSelector,
-  consoleOutputSelector,
-  executeChallenge,
-  inAccessibilityModeSelector,
-  saveEditorContent,
-  setEditorFocusability,
-  setAccessibilityMode,
-  updateFile,
-  challengeTestsSelector,
-  submitChallenge
-} from '../redux';
-import { userSelector, isDonationModalOpenSelector } from '../../../redux';
+import store from 'store';
 import { Loader } from '../../../components/helpers';
+import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import {
   ChallengeFileType,
   DimensionsType,
@@ -32,14 +28,16 @@ import {
   TestType
 } from '../../../redux/prop-types';
 
-// eslint-disable-next-line import/no-duplicates
-import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
-import type {
-  IRange,
-  editor,
-  Range as RangeType
-  // eslint-disable-next-line import/no-duplicates
-} from 'monaco-editor/esm/vs/editor/editor.api';
+import {
+  canFocusEditorSelector,
+  consoleOutputSelector,
+  executeChallenge,
+  saveEditorContent,
+  setEditorFocusability,
+  updateFile,
+  challengeTestsSelector,
+  submitChallenge
+} from '../redux';
 
 import './editor.css';
 
@@ -56,17 +54,16 @@ interface EditorProps {
   executeChallenge: (isShouldCompletionModalOpen?: boolean) => void;
   ext: ExtTypes;
   fileKey: FileKeyTypes;
-  inAccessibilityMode: boolean;
   initialEditorContent: string;
   initialExt: string;
   output: string[];
   resizeProps: ResizePropsType;
   saveEditorContent: () => void;
-  setAccessibilityMode: (isAccessible: boolean) => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
   tests: TestType[];
   theme: string;
+  title: string;
   updateFile: (objest: {
     key: FileKeyTypes;
     editorValue: string;
@@ -100,21 +97,18 @@ interface EditorPropertyStore {
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
   consoleOutputSelector,
-  inAccessibilityModeSelector,
   isDonationModalOpenSelector,
   userSelector,
   challengeTestsSelector,
   (
     canFocus: boolean,
     output: string[],
-    accessibilityMode: boolean,
     open,
     { theme = 'default' }: { theme: string },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
     output,
-    inAccessibilityMode: accessibilityMode,
     theme,
     tests
   })
@@ -125,7 +119,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   executeChallenge,
   saveEditorContent,
-  setAccessibilityMode,
   setEditorFocusability,
   updateFile,
   submitChallenge
@@ -297,12 +290,31 @@ const Editor = (props: EditorProps): JSX.Element => {
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
     data.editor = editor;
+
+    const storedAccessibilityMode = () => {
+      const accessibility = store.get('accessibilityMode') as boolean;
+      if (!accessibility) {
+        store.set('accessibilityMode', false);
+      }
+      // Only able to set the arialabel when accessibility mode is set to true
+      // Otherwise it gets overwritten by the monaco default aria-label
+      if (accessibility) {
+        editor.updateOptions({
+          ariaLabel:
+            'Accessibility mode set to true. Press Ctrl+e to disable or press Alt+F1 for more options'
+        });
+      }
+
+      return accessibility;
+    };
+
+    const accessibilityMode = storedAccessibilityMode();
     editor.updateOptions({
-      accessibilitySupport: props.inAccessibilityMode ? 'on' : 'auto'
+      accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
-    if (props.canFocus && !props.inAccessibilityMode) {
+    if (props.canFocus && !accessibilityMode) {
       // TODO: only one Editor should be calling for focus at once.
       editor.focus();
     } else focusOnHotkeys();
@@ -343,28 +355,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addAction({
       id: 'toggle-accessibility',
       label: 'Toggle Accessibility Mode',
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.F1],
+      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E],
       run: () => {
-        const currentAccessibility = props.inAccessibilityMode;
-        // The store needs to be updated first, as onDidChangeConfiguration is
-        // called before updateOptions returns
-        props.setAccessibilityMode(!currentAccessibility);
+        const currentAccessibility = storedAccessibilityMode();
+        
+        store.set('accessibilityMode', !currentAccessibility);
+
         editor.updateOptions({
-          accessibilitySupport: currentAccessibility ? 'auto' : 'on'
+          accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto',
         });
       }
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
-    // This is to persist changes caused by the accessibility tooltip.
-    editor.onDidChangeConfiguration(event => {
-      if (
-        event.hasChanged(monaco.editor.EditorOption.accessibilitySupport) &&
-        editor.getRawOptions().accessibilitySupport === 'on' &&
-        !props.inAccessibilityMode
-      ) {
-        props.setAccessibilityMode(true);
-      }
-    });
 
     const editableBoundaries = getEditableRegion();
 
@@ -493,7 +495,9 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (data.descriptionNode) return data.descriptionNode;
-    const { description } = props;
+    const { description, title } = props;
+    const jawHeading = document.createElement('h3');
+    jawHeading.innerText = title;
     // TODO: var was used here. Should it?
     const domNode = document.createElement('div');
     const desc = document.createElement('div');
@@ -501,6 +505,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.classList.add('description-container');
     domNode.classList.add('editor-upper-jaw');
     domNode.appendChild(descContainer);
+    descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     // desc.style.background = 'white';
@@ -708,8 +713,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // TODO: handle the case that the editable region reaches the bottom of the
     // editor
     return (
-      data.model?.getDecorationRange(data.endEditDecId)
-        ?.startLineNumber ?? 1
+      data.model?.getDecorationRange(data.endEditDecId)?.startLineNumber ?? 1
     );
   }
 

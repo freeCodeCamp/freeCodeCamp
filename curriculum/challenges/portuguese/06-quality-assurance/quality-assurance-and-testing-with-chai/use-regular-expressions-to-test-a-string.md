@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c54
-title: Use Regular Expressions to Test a String
+title: Usar expressões regulares para testar uma string
 challengeType: 2
 forumTopicId: 301608
 dashedName: use-regular-expressions-to-test-a-string
@@ -8,17 +8,17 @@ dashedName: use-regular-expressions-to-test-a-string
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`match()` asserts that the actual value matches the second argument regular expression.
+`match()` afirma que o valor real corresponde à expressão regular do segundo argumento.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#15` in the `Strings` suite, change each `assert` to either `assert.match` or `assert.notMatch` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Em `tests/1_unit-tests.js`, no teste de número `#15` no grupo de testes `Strings`, modifique cada `assert` para `assert.match` ou para `assert.notMatch`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 
-All tests should pass.
+Todos os testes devem passar.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `match` vs. `notMatch`.
+Você deve escolher o método correto para a primeira afirmação - `match` ou `notMatch`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `match` vs. `notM
   );
 ```
 
-You should choose the correct method for the second assertion - `match` vs. `notMatch`.
+Você deve escolher o método correto para a segunda afirmação - `match` ou `notMatch`.
 
 ```js
 (getUserInput) =>

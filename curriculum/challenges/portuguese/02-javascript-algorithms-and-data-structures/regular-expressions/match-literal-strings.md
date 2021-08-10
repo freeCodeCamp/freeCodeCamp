@@ -35,13 +35,13 @@ Complete a regex `waldoRegex` para encontrar `"Waldo"` na string `waldoIsHiding`
 
 # --hints--
 
-Sua regex `waldoRegex` deve encontrar a string `Waldo`
+A regex `waldoRegex` deve encontrar a string `Waldo`
 
 ```js
 assert(waldoRegex.test(waldoIsHiding));
 ```
 
-Sua regex `waldoRegex` não deve buscar nada além disso.
+A regex `waldoRegex` não deve buscar nada além disso.
 
 ```js
 assert(!waldoRegex.test('Somewhere is hiding in this text.'));

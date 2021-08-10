@@ -9,7 +9,7 @@ dashedName: use-the-parseint-function
 
 # --description--
 
-A função `parseInt()` analisa uma string e retorna um inteiro. Aqui está um exemplo:
+A função `parseInt()` analisa uma string e retorna um inteiro. Exemplo:
 
 ```js
 var a = parseInt("007");

@@ -1,19 +1,20 @@
+import { find, first } from 'lodash-es';
 import React, { useState } from 'react';
 import '../components/layouts/project-links.css';
-import { maybeUrlRE } from '../utils';
-import { Spacer, Link } from '../components/helpers';
-import {
-  projectMap,
-  legacyProjectMap
-} from '../resources/cert-and-project-map';
-import ProjectModal from '../components/SolutionViewer/ProjectModal';
-import { find, first } from 'lodash-es';
 import { Trans, useTranslation } from 'react-i18next';
+import ProjectModal from '../components/SolutionViewer/ProjectModal';
+import { Spacer, Link } from '../components/helpers';
 import {
   ChallengeFileType,
   CompletedChallenge,
   UserType
 } from '../redux/prop-types';
+import {
+  projectMap,
+  legacyProjectMap
+} from '../resources/cert-and-project-map';
+
+import { maybeUrlRE } from '../utils';
 
 interface IShowProjectLinksProps {
   certName: string;

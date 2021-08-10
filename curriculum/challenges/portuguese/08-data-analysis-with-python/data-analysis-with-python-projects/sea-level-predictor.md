@@ -1,6 +1,6 @@
 ---
 id: 5e4f5c4b570f7e3a4949899f
-title: Sea Level Predictor
+title: Previsor de nível do mar
 challengeType: 10
 forumTopicId: 462370
 dashedName: sea-level-predictor
@@ -8,17 +8,17 @@ dashedName: sea-level-predictor
 
 # --description--
 
-In this project, you will analyze a dataset of the global average sea level change since 1880. You will use the data to predict the sea level change through year 2050.
+Neste projeto, você analisará um conjunto de dados da mudança média do nível do mar global desde 1880. Você utilizará os dados para prever a mudança do nível do mar até ao ano de 2050.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor).
+Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com base nas instruções do 'README.md', envie o link do seu projeto abaixo.
 
-We are still developing the interactive instructional part of the data analysis with Python curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo de análise de dados com Python. Por enquanto, você terá que usar outros recursos para aprender a vencer este desafio.
 
 # --hints--
 
-It should pass all Python tests.
+Ele deve passar em todos os testes do Python.
 
 ```js
 

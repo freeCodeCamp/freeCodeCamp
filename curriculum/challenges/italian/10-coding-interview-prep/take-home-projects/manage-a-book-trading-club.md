@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443eddfaeb5bd0f
-title: Manage a Book Trading Club
+title: Gestisci un Club di scambio del libro
 challengeType: 4
 forumTopicId: 302364
 dashedName: manage-a-book-trading-club
@@ -8,21 +8,21 @@ dashedName: manage-a-book-trading-club
 
 # --description--
 
-**Objective:** Build a [Replit](https://replit.com/) app that is functionally similar to this: <https://manage-a-book-trading-club.freecodecamp.rocks/>.
+**Obiettivo:** Costruisci un'app [Replit](https://replit.com/) funzionalmente simile a questa: [https://p2phttps://manage-a-book-trading-club.freecodecamp.rocks/](https://manage-a-book-trading-club.freecodecamp.rocks/).
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
-**User Story:** I can view all books posted by every user.
+**User Story:** Posso vedere tutti i libri postati da ogni utente.
 
-**User Story:** I can add a new book.
+**User Story:** Posso aggiungere un nuovo libro.
 
-**User Story:** I can update my settings to store my full name, city, and state.
+**User Story:** Posso aggiornare le mie impostazioni per aggiungere il mio nome, la mia città e il mio stato.
 
-**User Story:** I can propose a trade and wait for the other user to accept the trade.
+**User Story:** Posso proporre uno scambio e aspettare che l'altro utente accetti lo scambio.
 
-Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
+Una volta terminata l'implementazione di queste user story, scrivi l'URL della tua app live e, opzionalmente, il tuo repository GitHub. Quindi clicca sul pulsante "Ho completato questa sfida".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul forum [freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

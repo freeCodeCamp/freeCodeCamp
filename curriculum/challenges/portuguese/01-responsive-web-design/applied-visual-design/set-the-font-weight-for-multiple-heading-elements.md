@@ -9,7 +9,7 @@ dashedName: set-the-font-weight-for-multiple-heading-elements
 
 # --description--
 
-Você definiu a propriedade `font-size` de cada tag de título no último desafio. neste desafio você irá usar a propriedade `font-weight`.
+Você definiu a propriedade `font-size` de cada tag de título no último desafio. neste desafio você vai usar a propriedade `font-weight`.
 
 A propriedade `font-weight` define a grossura ou finura dos caracteres de um texto.
 

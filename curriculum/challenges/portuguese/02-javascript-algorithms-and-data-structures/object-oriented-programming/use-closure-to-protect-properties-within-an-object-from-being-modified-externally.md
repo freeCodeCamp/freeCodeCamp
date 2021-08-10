@@ -46,13 +46,13 @@ A propriedade `weight` deve ser uma variável privada e deve ser atribuída a el
 assert(code.match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
 ```
 
-Seu código deve criar o método dentro de `Bird` chamado `getWeight` que retorna o valor da variável privada `weight`.
+O código deve criar o método dentro de `Bird` chamado `getWeight` que retorna o valor da variável privada `weight`.
 
 ```js
 assert(new Bird().getWeight() === 15);
 ```
 
-Sua função `getWeight` deve retornar a variável privada `weight`.
+A função `getWeight` deve retornar a variável privada `weight`.
 
 ```js
 assert(code.match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));

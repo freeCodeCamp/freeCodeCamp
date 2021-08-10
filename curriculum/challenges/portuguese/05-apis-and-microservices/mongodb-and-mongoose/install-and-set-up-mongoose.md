@@ -1,6 +1,6 @@
 ---
 id: 587d7fb6367417b2b2512c06
-title: Install and Set Up Mongoose
+title: Instalar e configurar o Mongoose
 challengeType: 2
 forumTopicId: 301540
 dashedName: install-and-set-up-mongoose
@@ -8,21 +8,21 @@ dashedName: install-and-set-up-mongoose
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+Trabalhar nesses desafios vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
-- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) and complete these challenges locally.
-- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose) to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+- Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) e complete esses desafios localmente.
+- Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose) para completar esses desafios.
+- Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`.
 
-In this challenge, you will set up a MongoDB Atlas database and import the required packages to connect to it.
+Neste desafio, você vai configurar um banco de dados do MongoDB Atlas e importar os pacotes necessários para se conectar a ele.
 
-Follow <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' rel='noopener noreferrer' target='_blank'>this tutorial</a> to set up a hosted database on MongoDB Atlas.
+Siga <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' rel='noopener noreferrer' target='_blank'>este tutorial</a> para configurar um banco de dados hospedado no MongoDB Atlas.
 
 # --instructions--
 
-Add `mongodb` and `mongoose` to the project’s `package.json`. Then, require mongoose as `mongoose` in `myApp.js`. Create a `.env` file and add a `MONGO_URI` variable to it. Its value should be your MongoDB Atlas database URI. Be sure to surround the URI with single or double quotes, and remember that you can't use spaces around the `=` in environment variables. For example, `MONGO_URI='VALUE'`. When you are done, connect to the database using the following syntax:
+Adicione `mongodb` e `mongoose` ao `package.json` do projeto. Depois, solicite o mongoose como `mongoose` no `myApp.js`. Crie um arquivo `.env` e adicione uma variável `MONGO_URI` a ele. Esse valor deve ser o URI de banco de dados do MongoDB Atlas. Não se esqueça de cercar o URI com aspas simples ou duplas. Lembre-se de que você não pode usar espaços ao redor de `=` em variáveis de ambiente. Por exemplo, `MONGO_URI='VALUE'`. Quando terminar, conecte-se ao banco de dados utilizando a seguinte sintaxe:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -30,7 +30,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-"mongodb" dependency should be in package.json
+A dependência "mongodb" deve estar no package.json
 
 ```js
 (getUserInput) =>
@@ -45,7 +45,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
   );
 ```
 
-"mongoose" dependency should be in package.json
+A dependência "mongoose" deve estar no package.json
 
 ```js
 (getUserInput) =>
@@ -60,7 +60,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
   );
 ```
 
-"mongoose" should be connected to a database
+O "mongoose" deve estar conectado a um banco de dados
 
 ```js
 (getUserInput) =>

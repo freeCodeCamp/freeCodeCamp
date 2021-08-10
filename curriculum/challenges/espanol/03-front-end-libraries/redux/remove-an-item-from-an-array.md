@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403615a
-title: Remove an Item from an Array
+title: Elimina un elemento de un arreglo
 challengeType: 6
 forumTopicId: 301447
 dashedName: remove-an-item-from-an-array
@@ -8,15 +8,15 @@ dashedName: remove-an-item-from-an-array
 
 # --description--
 
-Time to practice removing items from an array. The spread operator can be used here as well. Other useful JavaScript methods include `slice()` and `concat()`.
+Es hora de practicar la eliminación de elementos de un arreglo. Aquí también se puede utilizar el operador de propagación. Otros métodos útiles de JavaScript son `slice()` y `concat()`.
 
 # --instructions--
 
-The reducer and action creator were modified to remove an item from an array based on the index of the item. Finish writing the reducer so a new state array is returned with the item at the specific index removed.
+El reductor y el creador de acción fueron modificados para eliminar un elemento de un arreglo en función del índice del elemento. Termina de escribir el reductor para que devuelva un nuevo arreglo de estados con el elemento en el índice específico eliminado.
 
 # --hints--
 
-The Redux store should exist and initialize with a state equal to `[0,1,2,3,4,5]`
+El almacén Redux debe existir e inicializarse con un estado igual a `[0,1,2,3,4,5]`
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-`removeItem` and `immutableReducer` both should be functions.
+`removeItem` e `immutableReducer` deben ser funciones.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-Dispatching the `removeItem` action creator should remove items from the state and should NOT mutate state.
+Enviar el creador de acción `removeItem` debe eliminar elementos del estado y NO debe mutar el estado.
 
 ```js
 assert(

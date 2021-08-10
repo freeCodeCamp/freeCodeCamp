@@ -8,7 +8,7 @@ dashedName: iterate-through-all-an-arrays-items-using-for-loops
 
 # --description--
 
-Às vezes quando trabalhando com arrays, é muito útil ser capaz de iterar sobre cada item para encontrar um ou mais elementos que podemos precisar, ou para manipular o array baseado em qual item atende a determinado critério. JavaScript oferece diversos métodos embutidos que fazem iteração sobre arrays de formas ligeiramente diferentes para alcançar resultados diferentes (como `every()`, `forEach()`, `map()`, etc.). Porém, a técnica mais flexível e que oferece-nos a maior capacidade de controle é o simples laço `for`.
+Às vezes quando trabalhando com arrays, é muito útil ser capaz de iterar sobre cada item para encontrar um ou mais elementos que podemos precisar, ou para manipular o array baseado em qual item de dados atende a determinados critérios. JavaScript oferece diversos métodos integrados que fazem iteração sobre arrays de formas ligeiramente diferentes para alcançar resultados diferentes (como `every()`, `forEach()`, `map()`, entre outros). Porém, a técnica mais flexível e que nos oferece a maior capacidade de controle é o laço `for` simples.
 
 Considere o seguinte:
 
@@ -26,11 +26,11 @@ function greaterThanTen(arr) {
 greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
 ```
 
-Usando o laço `for`, essa função itera o array e acessa cada elemento do array, e submete-o a um teste simples que nós criamos. Dessa forma, nós determinamos de forma fácil e programática qual item é maior que `10`, e retorna um novo array, `[12, 14, 80]`, contendo esses itens.
+Usando o laço `for`, essa função itera o array, acessa cada elemento do array e submete-o a um teste simples que nós criamos. Dessa forma, nós determinamos de forma fácil e programática qual item é maior que `10`, e retornamos um novo array, `[12, 14, 80]`, contendo esses itens.
 
 # --instructions--
 
-Definimos uma função, `filteredArray`, a qual recebe `arr`, um array aninhado, e `elem` como argumentos, e retornar um novo array. `elem` representa um elemento que pode ou não estar presente em um ou mais dos arrays aninhados dentro de `arr`. Modifique a função, usando o laço `for`, para retornar uma versão filtrada do array recebido tal qual que qualquer array aninhado dentro de `arr` contendo `elem` seja removido.
+Definimos uma função, `filteredArray`, a qual recebe `arr`, um array aninhado, e `elem` como argumentos, e retornamos um novo array. `elem` representa um elemento que pode ou não estar presente em um ou mais dos arrays aninhados dentro de `arr`. Modifique a função, usando o laço `for`, para retornar uma versão filtrada do array recebido mode que qualquer array aninhado dentro de `arr` e contendo `elem` seja removido.
 
 # --hints--
 

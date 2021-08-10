@@ -1,6 +1,6 @@
 ---
 id: 59880443fb36441083c6c20e
-title: Euler method
+title: Método de Euler
 challengeType: 5
 forumTopicId: 302258
 dashedName: euler-method
@@ -8,63 +8,63 @@ dashedName: euler-method
 
 # --description--
 
-Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value. It is an explicit method for solving initial value problems (IVPs), as described in [the wikipedia page](https://en.wikipedia.org/wiki/Euler method "wp: Euler method").
+O método de Euler aproxima numericamente as soluções de equações diferenciais normais de primeira ordem (ODEs) com um dado valor inicial. É um método explícito para resolver problemas de valor inicial (IVPs), conforme descrito na [página da Wikipédia](https://en.wikipedia.org/wiki/Euler method "wp: Euler method").
 
-The ODE has to be provided in the following form:
+O ODE deve ser fornecido da seguinte forma:
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dy(t)}{dt} = f(t,y(t))$</big></li>
 </ul>
 
-with an initial value
+com um valor inicial
 
 <ul style='list-style: none;'>
   <li><big>$y(t_0) = y_0$</big></li>
 </ul>
 
-To get a numeric solution, we replace the derivative on the LHS with a finite difference approximation:
+Para obter uma solução numérica, substituímos a derivada do lado esquerdo por uma aproximação da diferença finita:
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dy(t)}{dt}  \approx \frac{y(t+h)-y(t)}{h}$</big></li>
 </ul>
 
-then solve for $y(t+h)$:
+então resolva para $y(t+h)$:
 
 <ul style='list-style: none;'>
   <li><big>$y(t+h) \approx y(t) + h \, \frac{dy(t)}{dt}$</big></li>
 </ul>
 
-which is the same as
+que é o mesmo que
 
 <ul style='list-style: none;'>
   <li><big>$y(t+h) \approx y(t) + h \, f(t,y(t))$</big></li>
 </ul>
 
-The iterative solution rule is then:
+A regra de solução iterativa é, então:
 
 <ul style='list-style: none;'>
   <li><big>$y_{n+1} = y_n + h \, f(t_n, y_n)$</big></li>
 </ul>
 
-where $h$ is the step size, the most relevant parameter for accuracy of the solution. A smaller step size increases accuracy but also the computation cost, so it has always has to be hand-picked according to the problem at hand.
+onde $h$ é o tamanho da etapa, o parâmetro mais relevante para a precisão da solução. Um tamanho de etapa menor aumenta a precisão, mas também o custo de cálculo. Então, ele tem que ser sempre escolhido com cuidado e de acordo com o problema em questão.
 
-**Example: Newton's Cooling Law**
+**Exemplo: Lei de resfriamento de Newton**
 
-Newton's cooling law describes how an object of initial temperature $T(t_0) = T_0$ cools down in an environment of temperature $T_R$:
+A lei de resfriamento de Newton descreve como um objeto de temperatura inicial $T(t_0) = T_0$ resfria em um ambiente de temperatura $T_R$:
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dT(t)}{dt} = -k \, \Delta T$</big></li>
 </ul>
 
-or
+ou
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dT(t)}{dt} = -k \, (T(t) - T_R)$</big></li>
 </ul>
 
-It says that the cooling rate $\\frac{dT(t)}{dt}$ of the object is proportional to the current temperature difference $\\Delta T = (T(t) - T_R)$ to the surrounding environment.
+Ela diz que a taxa de resfriamento $\\frac{dT(t)}{dt}$ do objeto é proporcional à diferença de temperatura atual $\\Delta = (T(t) - T_R)$ com relação ao ambiente ao redor.
 
-The analytical solution, which we will compare to the numerical approximation, is
+A solução analítica, que compararemos à aproximação numérica, é
 
 <ul style='list-style: none;'>
   <li><big>$T(t) = T_R + (T_0 - T_R) \; e^{-k t}$</big></li>
@@ -72,54 +72,54 @@ The analytical solution, which we will compare to the numerical approximation, i
 
 # --instructions--
 
-Implement a routine of Euler's method and then use it to solve the given example of Newton's cooling law for three different step sizes of:
+Implemente uma rotina do método de Euler e, em seguida, use-a para resolver o exemplo da lei de resfriamento de Newton para três tamanhos de etapa diferentes de:
 
 <ul>
   <li><code>2 s</code></li>
-  <li><code>5 s</code> and</li>
+  <li><code>5 s</code> e</li>
   <li><code>10 s</code></li>
 </ul>
 
-and compare with the analytical solution.
+e compare com a solução analítica.
 
-**Initial values:**
+**Valores iniciais:**
 
 <ul>
-  <li>initial temperature <big>$T_0$</big> shall be <code>100 °C</code></li>
-  <li>room temperature <big>$T_R$</big> shall be <code>20 °C</code></li>
-  <li>cooling constant <big>$k$</big> shall be <code>0.07</code></li>
-  <li>time interval to calculate shall be from <code>0 s</code> to <code>100 s</code></li>
+  <li>a temperatura inicial <big>$T_0$</big> deve ser <code>100 °C</code></li>
+  <li>a temperatura ambiente <big>$T_R$</big> deve ser <code>20 °C</code></li>
+  <li>a constante de resfriamento <big>$k$</big> será <code>0.07</code></li>
+  <li>o intervalo de tempo para calcular deve ser de <code>0 s</code> a <code>100 s</code></li>
 </ul>
 
-First parameter to the function is initial time, second parameter is initial temperature, third parameter is elapsed time and fourth parameter is step size.
+O primeiro parâmetro para a função é o tempo inicial, o segundo parâmetro é a temperatura inicial, o terceiro parâmetro é o tempo passado e o quarto parâmetro é o tamanho do passo.
 
 # --hints--
 
-`eulersMethod` should be a function.
+`eulersMethod` deve ser uma função.
 
 ```js
 assert(typeof eulersMethod === 'function');
 ```
 
-`eulersMethod(0, 100, 100, 2)` should return a number.
+`eulersMethod(0, 100, 100, 2)` deve retornar um número.
 
 ```js
 assert(typeof eulersMethod(0, 100, 100, 2) === 'number');
 ```
 
-`eulersMethod(0, 100, 100, 2)` should return 20.0424631833732.
+`eulersMethod(0, 100, 100, 2)` deve retornar 20.0424631833732.
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 2), 20.0424631833732);
 ```
 
-`eulersMethod(0, 100, 100, 5)` should return 20.01449963666907.
+`eulersMethod(0, 100, 100, 5)` deve retornar 20.01449963666907.
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907);
 ```
 
-`eulersMethod(0, 100, 100, 10)` should return 20.000472392.
+`eulersMethod(0, 100, 100, 10)` deve retornar 20.000472392.
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392);

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036155
-title: Enviar Dados de Ação para a loja
+title: Enviar dados de ação para a store
 challengeType: 6
 forumTopicId: 301448
 dashedName: send-action-data-to-the-store
@@ -8,7 +8,7 @@ dashedName: send-action-data-to-the-store
 
 # --description--
 
-Até agora você aprendeu como enviar ações para o store do Redux, mas até agora essas ações não continham nenhuma informação diferente de um `type`. Você também pode enviar dados específicos, juntamente com suas ações. Na verdade, isso é muito comum porque as ações geralmente se originam de alguma interação do usuário e tendem a carregar alguns dados com elas. Muitas vezes, o store do Redux precisa saber sobre esses dados.
+Até agora você aprendeu como enviar ações para a store do Redux, mas até agora essas ações não continham nenhuma informação diferente de um `type`. Você também pode enviar dados específicos, juntamente com suas ações. Na verdade, isso é muito comum porque as ações geralmente se originam de alguma interação do usuário e tendem a carregar alguns dados com elas. Muitas vezes, a store do Redux precisa saber sobre esses dados.
 
 # --instructions--
 

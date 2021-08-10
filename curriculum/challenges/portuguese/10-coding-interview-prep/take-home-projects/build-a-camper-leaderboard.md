@@ -1,6 +1,6 @@
 ---
 id: bd7156d8c242eddfaeb5bd13
-title: Construa uma página inicial do fórum do freeCodeCamp
+title: Criar uma página inicial do fórum do freeCodeCamp
 challengeType: 3
 forumTopicId: 302349
 dashedName: build-a-freecodecamp-forum-homepage
@@ -12,7 +12,7 @@ dashedName: build-a-freecodecamp-forum-homepage
 
 Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**História de usuário:** Posso ver uma lista dos posts mais recentes do fórum freeCodeCamp.
+**Especificação de usuário:** posso ver uma lista dos posts mais recentes do fórum freeCodeCamp.
 
 **Especificação de usuário:** para cada tópico, posso ver o título e uma lista de links para usuários que recentemente postaram nele.
 

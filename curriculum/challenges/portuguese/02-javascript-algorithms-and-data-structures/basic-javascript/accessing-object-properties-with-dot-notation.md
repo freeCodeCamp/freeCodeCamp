@@ -24,7 +24,7 @@ var prop1val = myObj.prop1;
 var prop2val = myObj.prop2;
 ```
 
-`prop1val` teria o valor `val1`, e `prop2val` teria o valor `val2`.
+`prop1val` teria o valor `val1` e `prop2val` teria o valor `val2`.
 # --instructions--
 
 Leia os valores de propriedade de `testObj` usando a notação de ponto. Defina a variável `hatValue` igual à propriedade `hat` do objeto e defina a variável `shirtValue` igual à propriedade `shirt` do objeto.

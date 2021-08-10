@@ -1,6 +1,6 @@
 ---
 id: 587d8257367417b2b2512c7d
-title: Find the Minimum and Maximum Height of a Binary Search Tree
+title: Encontrar a altura mínima e a máxima de uma árvore binária de busca
 challengeType: 1
 forumTopicId: 301641
 dashedName: find-the-minimum-and-maximum-height-of-a-binary-search-tree
@@ -8,19 +8,19 @@ dashedName: find-the-minimum-and-maximum-height-of-a-binary-search-tree
 
 # --description--
 
-In the last challenge we described a scenario in which a tree could become unbalanced. To understand the concept of balance, let's take a look at another tree property: height. Height in a tree represents the distance from the root node to any given leaf node. Different paths in a highly branched tree structure may have different heights, but for a given tree there will be a minimum and maximum height. If the tree is balanced, these values will differ at most by one. This means that in a balanced tree, all the leaf nodes exist within the same level, or if they are not within the same level they are at most one level apart.
+No último desafio, descrevemos um cenário em que uma árvore poderia se tornar desbalanceada. Para entender o conceito de balanço, vamos dar uma olhada em outra propriedade da árvore: altura. A altura de uma árvore representa a distância do nó raiz para qualquer nó de folha dado. Caminhos diferentes em uma estrutura de árvore altamente ramificada podem ter alturas diferentes, mas, para uma determinada árvore, haverá uma altura mínima e máxima. Se a árvore estiver balanceada, estes valores terão uma diferença de, no máximo, um. Isto significa que, em uma árvore equilibrada, todos os nós de folhas existem no mesmo nível. Se não se situarem no mesmo nível, estarão, no máximo, a um nível de distância.
 
-The property of balance is important for trees because it is what determines the efficiency of tree operations. As we explained in the last challenge, we face worst case time complexity for heavily unbalanced trees. Self-balancing trees are commonly used to account for this issue in trees with dynamic data sets. Common examples of these include AVL trees, red-black trees, and B-trees. These trees all contain additional internal logic which re-balance the tree when insertions or deletions create a state of imbalance.
+A propriedade de balanço é importante para as árvores, pois é isso que determina a eficiência das operações em uma delas. Como explicamos no último desafio, enfrentamos a pior das hipóteses de complexidade para árvores muito desbalanceadas. As árvores de autobalanceáveis são habitualmente utilizadas para dar conta desta questão nas árvores com conjuntos de dados dinâmicos. Exemplos comuns destas árvores incluem árvores AVL, árvores red-black e árvores B (B-trees). Todas estas árvores contêm uma lógica interna adicional que rebalanceia a árvore quando inserções ou exclusões criam um estado de desbalanceamento.
 
-**Note:** A similar property to height is depth, which refers to how far a given node is from the root node.
+**Observação:** uma propriedade similar à altura é a profundidade, que se refere à distância de um determinado nó do nó raiz.
 
 # --instructions--
 
-Write two methods for our binary tree: `findMinHeight` and `findMaxHeight`. These methods should return an integer value for the minimum and maximum height within a given binary tree, respectively. If the node is empty let's assign it a height of `-1` (that's the base case). Finally, add a third method `isBalanced` which returns `true` or `false` depending on whether the tree is balanced or not. You can use the first two methods you just wrote to determine this.
+Escreva dois métodos para a nossa árvore binária: `findMinHeight` e `findMaxHeight`. Esses métodos devem retornar um valor inteiro para as alturas mínima e máxima dentro de uma determinada árvore binária, respectivamente. Se o nó estiver vazio, vamos atribuir uma altura de `-1` (esse é o caso base). Por fim, vamos adicionar um terceiro método `isBalanced`, que retorna `true` ou `false`, dependendo de a árvore estar balanceada ou não. Você pode usar os dois primeiros métodos que acabou de escrever para determinar isso.
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+A estrutura de dados `BinarySearchTree` deve existir.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `findMinHeight`.
+A árvore binária de busca deve ter um método chamado `findMinHeight`.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `findMaxHeight`.
+A árvore binária de busca deve ter um método chamado `findMaxHeight`.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `isBalanced`.
+A árvore binária de busca deve ter um método chamado `isBalanced`.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-The `findMinHeight` method should return the minimum height of the tree.
+O método `findMinHeight` deve retornar a altura mínima da árvore.
 
 ```js
 assert(
@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-The `findMaxHeight` method should return the maximum height of the tree.
+O método `findMaxHeight` deve retornar a altura máxima da árvore.
 
 ```js
 assert(
@@ -136,7 +136,7 @@ assert(
 );
 ```
 
-An empty tree should return a height of `-1`.
+Uma árvore vazia deve retornar a altura de `-1`.
 
 ```js
 assert(
@@ -155,7 +155,7 @@ assert(
 );
 ```
 
-The `isBalanced` method should return `false` if the tree is an unbalanced binary search tree.
+O método `isBalanced` deve retornar `false` se a árvore é uma árvore binária de busca desbalanceada.
 
 ```js
 assert(
@@ -182,7 +182,7 @@ assert(
 );
 ```
 
-The `isBalanced` method should return `true` if the tree is a balanced binary search tree.
+O método `isBalanced` deve retornar `true` se a árvore é uma árvore binária de busca balanceada.
 
 ```js
 assert(

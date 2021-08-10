@@ -10,7 +10,7 @@ dashedName: confirm-the-ending
 
 Verifique se uma string (primeiro argumento, `str`) termina com a sequência de caracteres de destino fornecida (segundo argumento, `target`).
 
-Este desafio *pode ser resolvido* com o método `.endsWith()`, que foi introduzido na ES2015. Mas para a finalidade deste desafio, gostaríamos que você usasse um dos métodos de substring JavaScript.
+Este desafio *pode ser resolvido* com o método `.endsWith()`, que foi introduzido na ES2015. Para este desafio, entretanto, gostaríamos que você usasse um dos métodos de substring JavaScript.
 
 # --hints--
 
@@ -84,7 +84,7 @@ assert(
 assert(confirmEnding('Abstraction', 'action') === true);
 ```
 
-Seu código não deve usar o método embutido `.endsWith()` para resolver o desafio.
+Seu código não deve usar o método integrado `.endsWith()` para resolver o desafio.
 
 ```js
 assert(!/\.endsWith\(.*?\)\s*?;?/.test(code) && !/\['endsWith'\]/.test(code));

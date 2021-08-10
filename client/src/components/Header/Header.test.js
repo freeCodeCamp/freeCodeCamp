@@ -1,13 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { create } from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import { UniversalNav } from './components/universal-nav';
-import { NavLinks } from './components/nav-links';
-import AuthOrProfile from './components/auth-or-profile';
-
 import envData from '../../../../config/env.json';
+import AuthOrProfile from './components/auth-or-profile';
+import { NavLinks } from './components/nav-links';
+import { UniversalNav } from './components/universal-nav';
 
-const { apiLocation, clientLocale } = envData;
+const { apiLocation } = envData;
 
 jest.mock('../../analytics');
 
@@ -49,6 +50,7 @@ describe('<NavLinks />', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<NavLinks {...landingPageProps} />);
     const view = shallow.getRenderOutput();
+
     expect(
       hasDonateNavItem(view) &&
         hasSignInNavItem(view) &&
@@ -72,6 +74,7 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
+      t: useTranslation.t,
       toggleNightMode: theme => theme
     };
     const shallow = new ShallowRenderer();
@@ -101,6 +104,7 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
+      t: useTranslation.t,
       toggleNightMode: theme => theme
     };
     const shallow = new ShallowRenderer();
@@ -129,10 +133,10 @@ describe('<AuthOrProfile />', () => {
       pathName: '/learn'
     };
 
-    const shallow = new ShallowRenderer();
-    shallow.render(<AuthOrProfile {...defaultUserProps} />);
-    const view = shallow.getRenderOutput();
-    expect(avatarHasClass(view, 'default-border')).toBeTruthy();
+    const componentTree = create(
+      <AuthOrProfile {...defaultUserProps} />
+    ).toJSON();
+    expect(avatarHasClass(componentTree, 'default-border')).toBeTruthy();
   });
 
   it('has avatar with gold border for donating users', () => {
@@ -145,11 +149,11 @@ describe('<AuthOrProfile />', () => {
       pending: false,
       pathName: '/learn'
     };
-    const shallow = new ShallowRenderer();
-    shallow.render(<AuthOrProfile {...donatingUserProps} />);
-    const view = shallow.getRenderOutput();
 
-    expect(avatarHasClass(view, 'gold-border')).toBeTruthy();
+    const componentTree = create(
+      <AuthOrProfile {...donatingUserProps} />
+    ).toJSON();
+    expect(avatarHasClass(componentTree, 'gold-border')).toBeTruthy();
   });
 
   it('has avatar with blue border for top contributors', () => {
@@ -163,12 +167,12 @@ describe('<AuthOrProfile />', () => {
       pathName: '/learn'
     };
 
-    const shallow = new ShallowRenderer();
-    shallow.render(<AuthOrProfile {...topContributorUserProps} />);
-    const view = shallow.getRenderOutput();
-
-    expect(avatarHasClass(view, 'blue-border')).toBeTruthy();
+    const componentTree = create(
+      <AuthOrProfile {...topContributorUserProps} />
+    ).toJSON();
+    expect(avatarHasClass(componentTree, 'blue-border')).toBeTruthy();
   });
+
   it('has avatar with purple border for donating top contributors', () => {
     const topDonatingContributorUserProps = {
       user: {
@@ -180,10 +184,11 @@ describe('<AuthOrProfile />', () => {
       pending: false,
       pathName: '/learn'
     };
-    const shallow = new ShallowRenderer();
-    shallow.render(<AuthOrProfile {...topDonatingContributorUserProps} />);
-    const view = shallow.getRenderOutput();
-    expect(avatarHasClass(view, 'purple-border')).toBeTruthy();
+
+    const componentTree = create(
+      <AuthOrProfile {...topDonatingContributorUserProps} />
+    ).toJSON();
+    expect(avatarHasClass(componentTree, 'purple-border')).toBeTruthy();
   });
 });
 
@@ -194,7 +199,7 @@ const navigationLinks = (component, key) => {
   return target.props;
 };
 
-const profileNavItem = component => component.props.children;
+const profileNavItem = component => component.children[0];
 
 const hasDonateNavItem = component => {
   const { children, to } = navigationLinks(component, 'donate');
@@ -232,31 +237,16 @@ const hasProfileAndSettingsNavItems = (component, username) => {
 
 const hasForumNavItem = component => {
   const { children, to } = navigationLinks(component, 'forum');
-  const localizedForums = {
-    chinese: 'https://chinese.freecodecamp.org/forum',
-    'chinese-traditional': 'https://chinese.freecodecamp.org/forum',
-    espanol: 'https://forum.freecodecamp.org/c/espanol/',
-    english: 'https://forum.freecodecamp.org/',
-    italian: 'https://forum.freecodecamp.org/c/italian/'
-  };
+  // TODO: test compiled TFunction value
   return (
-    children[0].props.children === 'buttons.forum' &&
-    to === localizedForums[clientLocale]
+    children[0].props.children === 'buttons.forum' && to === 'links:nav.forum'
   );
 };
 
 const hasNewsNavItem = component => {
   const { children, to } = navigationLinks(component, 'news');
-  const localizedNews = {
-    chinese: 'https://chinese.freecodecamp.org/news',
-    'chinese-traditional': 'https://chinese.freecodecamp.org/news',
-    espanol: 'https://www.freecodecamp.org/espanol/news',
-    english: 'https://www.freecodecamp.org/news',
-    italian: 'https://www.freecodecamp.org/italian/news'
-  };
   return (
-    children[0].props.children === 'buttons.news' &&
-    to === localizedNews[clientLocale]
+    children[0].props.children === 'buttons.news' && to === 'links:nav.news'
   );
 };
 
@@ -282,9 +272,10 @@ const hasSignOutNavItem = component => {
 const hasSignInButton = component =>
   component.props.children[1].props.children === 'buttons.sign-in';
 */
+
 const avatarHasClass = (componentTree, classes) => {
   return (
     profileNavItem(componentTree).props.className ===
-    'avatar-nav-link ' + classes
+    'avatar-container ' + classes
   );
 };

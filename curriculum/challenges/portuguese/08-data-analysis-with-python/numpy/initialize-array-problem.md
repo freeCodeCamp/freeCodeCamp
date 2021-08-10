@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed6
-title: Initialize Array Problem
+title: Inicializar problema de arrays
 challengeType: 11
 videoId: 0jGfH8BPfOk
 dashedName: initialize-array-problem
@@ -10,7 +10,7 @@ dashedName: initialize-array-problem
 
 ## --text--
 
-What is another way to produce the following array?
+Qual é a outra forma de produzir o array a seguir?
 
 ```py
 [[0. 0. 0. 0. 0. 0. 0.]

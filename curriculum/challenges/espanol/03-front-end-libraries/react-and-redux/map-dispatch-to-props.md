@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036146
-title: Map Dispatch to Props
+title: Asigna el envío a props
 challengeType: 6
 forumTopicId: 301432
 dashedName: map-dispatch-to-props
@@ -8,9 +8,9 @@ dashedName: map-dispatch-to-props
 
 # --description--
 
-The `mapDispatchToProps()` function is used to provide specific action creators to your React components so they can dispatch actions against the Redux store. It's similar in structure to the `mapStateToProps()` function you wrote in the last challenge. It returns an object that maps dispatch actions to property names, which become component `props`. However, instead of returning a piece of `state`, each property returns a function that calls `dispatch` with an action creator and any relevant action data. You have access to this `dispatch` because it's passed in to `mapDispatchToProps()` as a parameter when you define the function, just like you passed `state` to `mapStateToProps()`. Behind the scenes, React Redux is using Redux's `store.dispatch()` to conduct these dispatches with `mapDispatchToProps()`. This is similar to how it uses `store.subscribe()` for components that are mapped to `state`.
+La función `mapDispatchToProps()` se utiliza para proporcionar creadores de acción específicos a tus componentes React para que puedan enviar acciones contra el almacén Redux. Su estructura es similar a la función `mapStateToProps()` que escribiste en el último desafío. Devuelve un objeto que asigna acciones de envío a nombres de propiedades, que se convierten en `props` del componente. Sin embargo, en lugar de devolver una pieza de `state`, cada propiedad devuelve una función que llama a `dispatch` con un creador de acciones y cualquier dato relevante de la acción. Tienes acceso a este `dispatch` porque se pasa a `mapDispatchToProps()` como parámetro cuando defines la función, igual que pasaste `state` a `mapStateToProps()`. Tras bambalinas, React Redux utiliza `store.dispatch()` para realizar estos envíos con `mapDispatchToProps()`. Esto es similar a cómo se utiliza `store.subscribe()` para los componentes que se asignan a `state`.
 
-For example, you have a `loginUser()` action creator that takes a `username` as an action payload. The object returned from `mapDispatchToProps()` for this action creator would look something like:
+Por ejemplo, tienes un creador de acción `loginUser()` que toma un `username` como carga útil de acción. El objeto devuelto por `mapDispatchToProps()` para este creador de acción se vería algo como:
 
 ```jsx
 {
@@ -22,11 +22,11 @@ For example, you have a `loginUser()` action creator that takes a `username` as 
 
 # --instructions--
 
-The code editor provides an action creator called `addMessage()`. Write the function `mapDispatchToProps()` that takes `dispatch` as an argument, then returns an object. The object should have a property `submitNewMessage` set to the dispatch function, which takes a parameter for the new message to add when it dispatches `addMessage()`.
+El editor de código proporciona un creador de acción llamado `addMessage()`. Escribe la función `mapDispatchToProps()` que toma `dispatch` como argumento y devuelve un objeto. El objeto debe tener una propiedad `submitNewMessage` establecida en la función de envío, que toma un parámetro para el nuevo mensaje a añadir cuando envía `addMessage()`.
 
 # --hints--
 
-`addMessage` should return an object with keys `type` and `message`.
+`addMessage` debe devolver un objeto con las claves `type` y `message`.
 
 ```js
 assert(
@@ -40,19 +40,19 @@ assert(
 );
 ```
 
-`mapDispatchToProps` should be a function.
+`mapDispatchToProps` debe ser una función.
 
 ```js
 assert(typeof mapDispatchToProps === 'function');
 ```
 
-`mapDispatchToProps` should return an object.
+`mapDispatchToProps` debe devolver un objeto.
 
 ```js
 assert(typeof mapDispatchToProps() === 'object');
 ```
 
-Dispatching `addMessage` with `submitNewMessage` from `mapDispatchToProps` should return a message to the dispatch function.
+El envío de `addMessage` con `submitNewMessage` desde `mapDispatchToProps` debe devolver un mensaje a la función de envío.
 
 ```js
 assert(

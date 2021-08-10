@@ -13,7 +13,7 @@ Um laço for também pode contar pra trás, contanto que possamos definir as con
 
 Para decrementar em dois cada iteração, nós precisamos alterar nossa inicialização, condição e expressão final.
 
-Nós começaremos em `i = 10` e iterar enquanto `i > 0`. Nós decrementamos `i` por dois em cada iteração com `i -= 2`.
+Nós começaremos em `i = 10` e vamos iterar enquanto `i > 0`. Nós decrementamos `i` por dois em cada iteração com `i -= 2`.
 
 ```js
 var ourArray = [];

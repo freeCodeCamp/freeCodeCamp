@@ -50,7 +50,7 @@ Usando a notação de ponto e de colchetes, defina a variável `secondTree` para
 assert(secondTree === 'pine');
 ```
 
-Seu código deve usar notação de ponto e colchetes para acessar `myPlants`.
+O código deve usar notação de ponto e colchetes para acessar `myPlants`.
 
 ```js
 assert(/=\s*myPlants\[1\].list\[1\]/.test(code));

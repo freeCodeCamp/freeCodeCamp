@@ -33,19 +33,19 @@ Use o atalho `\w` para contar o número de caracteres alfanuméricos em várias 
 
 # --hints--
 
-Sua regex deve usar a flag global.
+A regex deve usar a flag global.
 
 ```js
 assert(alphabetRegexV2.global);
 ```
 
-Sua regex deve usar o atalho `\w` para capturar todos os caracteres alfanuméricos.
+A regex deve usar o atalho `\w` para capturar todos os caracteres alfanuméricos.
 
 ```js
 assert(/\\w/.test(alphabetRegexV2.source));
 ```
 
-Sua regex deve encontrar 31 caracteres alfanuméricos na string `The five boxing wizards jump quickly.`
+A regex deve encontrar 31 caracteres alfanuméricos na string `The five boxing wizards jump quickly.`
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Sua regex deve encontrar 32 caracteres alfanuméricos na string `Pack my box with five dozen liquor jugs.`
+A regex deve encontrar 32 caracteres alfanuméricos na string `Pack my box with five dozen liquor jugs.`
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Sua regex deve encontrar 30 caracteres alfanuméricos na string `How vexingly quick daft zebras jump!`
+A regex deve encontrar 30 caracteres alfanuméricos na string `How vexingly quick daft zebras jump!`
 
 ```js
 assert(
@@ -70,7 +70,7 @@ assert(
 );
 ```
 
-Sua regex deve encontrar 36 caracteres alfanuméricos na string `123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.`
+A regex deve encontrar 36 caracteres alfanuméricos na string `123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.`
 
 ```js
 assert(

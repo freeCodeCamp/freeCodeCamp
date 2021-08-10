@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036161
-title: Aprenda sobre tags JSX com autofechamento
+title: Aprender sobre tags JSX com autofechamento
 challengeType: 6
 forumTopicId: 301396
 dashedName: learn-about-self-closing-jsx-tags
@@ -8,15 +8,15 @@ dashedName: learn-about-self-closing-jsx-tags
 
 # --description--
 
-Até agora, você viu como o JSX difere do HTML de uma forma chave com o uso de `className` vs. `class` para definir classes HTML.
+Até agora, você viu como o JSX difere do HTML de uma forma importante com o uso de `className` em vez de `class` para definir classes HTML.
 
-Outra forma importante em que o JSX difere do HTML é na ideia da tag de auto-fechamento.
+Outra forma importante em que o JSX difere do HTML é na ideia da tag de autofechamento.
 
 Em HTML, quase todas as tags possuem uma tag de abertura e fechamento: `<div></div>`; a tag de fechamento sempre tem uma barra para frente antes do nome da tag que está fechando. No entanto, há instâncias especiais no HTML chamadas de "tags de autofechamento", ou tags que não requerem uma tag de abertura e fechamento antes que outra tag possa iniciar.
 
-Por exemplo, a tag quebra-linha pode ser escrita como `<br>` ou como `<br />`, mas nunca deve ser escrito como `<br></br>`, uma vez que não contém nenhum conteúdo.
+Por exemplo, a tag de quebra de linha pode ser escrita como `<br>` ou como `<br />`, mas nunca deve ser escrita como `<br></br>`, uma vez que não contém nenhum conteúdo.
 
-Em JSX, as regras são um pouco diferentes. Qualquer elemento JSX pode ser escrito com uma tag auto-fechada, e todo elemento deve ser fechado. A tag quebra-linha, por exemplo, deve sempre ser escrita como `<br />` para ser JSX válido que pode ser transpilado. Um `<div>`, por outro lado, pode ser escrito como `<div />` ou `<div></div>`. A diferença é que na primeira versão de sintaxe não há como incluir nada no `<div />`. Você verá em desafios posteriores que essa sintaxe é útil ao renderizar componentes React.
+Em JSX, as regras são um pouco diferentes. Qualquer elemento JSX pode ser escrito com uma tag autofechada, e todo elemento deve ser fechado. A tag de quebra de linha, por exemplo, deve sempre ser escrita como `<br />` para ser JSX válido que pode ser transpilado. Um `<div>`, por outro lado, pode ser escrito como `<div />` ou `<div></div>`. A diferença é que na primeira versão de sintaxe não há como incluir nada no `<div />`. Você verá em desafios posteriores que essa sintaxe é útil ao renderizar componentes React.
 
 # --instructions--
 

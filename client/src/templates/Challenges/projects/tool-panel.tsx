@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { bindActionCreators, Dispatch } from 'redux';
-import { connect } from 'react-redux';
 import { Button } from '@freecodecamp/react-bootstrap';
+import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
 
 import { openModal } from '../redux';
 

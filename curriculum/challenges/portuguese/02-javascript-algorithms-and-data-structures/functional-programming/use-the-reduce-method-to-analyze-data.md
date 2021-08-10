@@ -10,11 +10,11 @@ dashedName: use-the-reduce-method-to-analyze-data
 
 `Array.prototype.reduce()`, ou simplesmente `reduce()`, realiza as operações mais gerais de todas as operações de array em JavaScript. Você pode resolver quase qualquer problema de processamento de array usando o método `reduce`.
 
-O método `reduce` permite formas mais gerais de processamento de array, e é possível mostrar que tanto o `filter` quanto o `map` podem ser derivados como aplicações especiais de `reduce`. O método `reduce` percorre cada elemento de um array e retorna um valor (uma string, um número, um objeto ou array). Isso é factível através de um callback que é chamado para cada elemento.
+O método `reduce` permite formas mais gerais de processamento de array, e é possível mostrar que tanto o `filter` quanto o `map` podem ser derivados como aplicações especiais de `reduce`. O método `reduce` percorre cada elemento de um array e retorna um valor (uma string, um número, um objeto ou array). Isso pode ser feito através de uma função de callback que é chamada para cada elemento.
 
-A função callback toma quatro argumentos. O primeiro argumento é conhecido como o acumulador, ao qual é atribuído o resultado do callback na iteração anterior. O segundo é o elemento a ser processado. O terceiro é o índice do elemento e o quarto é o array do qual `reduce` foi chamado.
+A função de callback recebe quatro argumentos. O primeiro argumento é conhecido como o acumulador, ao qual é atribuído o resultado da função de callback na iteração anterior. O segundo é o elemento a ser processado. O terceiro é o índice do elemento e o quarto é o array do qual `reduce` foi chamado.
 
-Além da função callback, `reduce` tem um parâmetro adicional que recebe um valor inicial para o acumulador. Se o segundo parâmetro não for usado, então a primeira iteração é ignorada e ao acumulador é atribuído o primeiro elemento do array na segunda iteração.
+Além da função de callback, `reduce` tem um parâmetro adicional que recebe um valor inicial para o acumulador. Se o segundo parâmetro não for usado, então a primeira iteração é ignorada e ao acumulador é atribuído o primeiro elemento do array na segunda iteração.
 
 Veja abaixo um exemplo usando `reduce` no array `users` para retornar a soma de todas as idades de todos os usuários. O exemplo usa apenas os dois primeiros argumentos pela simplicidade.
 
@@ -81,7 +81,7 @@ Você não deve usar loops `for`.
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-Sua função deve retornar o valor correto após manipular `watchList` com filter, map e reduce.
+A função deve retornar o valor correto após manipular `watchList` com filter, map e reduce.
 
 ```js
 assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);

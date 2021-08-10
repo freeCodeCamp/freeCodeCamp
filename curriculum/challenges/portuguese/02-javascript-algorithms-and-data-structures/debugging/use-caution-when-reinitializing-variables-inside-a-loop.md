@@ -8,9 +8,9 @@ dashedName: use-caution-when-reinitializing-variables-inside-a-loop
 
 # --description--
 
-Às vezes é necessário salvar informações, incrementar contadores ou redefinir variáveis dentro de um laço. Um potencial problema é quando variáveis deveriam ser reinicializadas e, não são, ou vice versa. Isso é particularmente perigoso se você acidentalmente redefinir a variável sendo usada para a a condição de parada, causando um laço infinito.
+Às vezes é necessário salvar informações, incrementar contadores ou redefinir variáveis dentro de um laço. Um problema em potencial é quando variáveis deveriam ser reinicializadas e, não são, ou vice versa. Isso é particularmente perigoso se você acidentalmente redefinir a variável sendo usada para a a condição de parada, causando um laço infinito.
 
-Imprimir os valores das variáveis em cada ciclo do seu laço usando `console.log()` pode descobrir comportamentos com bugs relacionados a reiniciar ou falhar ao reiniciar uma variável.
+Imprimir os valores das variáveis em cada ciclo do seu laço usando `console.log()` pode ajudar a descobrir comportamentos com bugs relacionados a reiniciar ou falhar ao reiniciar uma variável.
 
 # --instructions--
 
@@ -18,7 +18,7 @@ A seguinte função deveria criar um array de duas dimensões com `m` linhas e `
 
 # --hints--
 
-Seu código deve definir a variável `matrix` para um array contendo 3 linhas de 2 colunas de zeros.
+O código deve definir a variável `matrix` para um array contendo 3 linhas de 2 colunas de zeros.
 
 ```js
 assert(JSON.stringify(matrix) == '[[0,0],[0,0],[0,0]]');
@@ -36,6 +36,12 @@ A variável `matrix` deve ter 2 colunas em cada linha.
 assert(
   matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2
 );
+```
+
+`zeroArray(4,3)` deve retornar um array com 4 linhas de 3 colunas de zeros cada.
+
+```js
+assert(JSON.stringify(zeroArray(4,3)) == '[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]');
 ```
 
 # --seed--
@@ -62,6 +68,7 @@ function zeroArray(m, n) {
 
 let matrix = zeroArray(3, 2);
 console.log(matrix);
+
 ```
 
 # --solutions--
@@ -86,4 +93,5 @@ function zeroArray(m, n) {
 
 let matrix = zeroArray(3, 2);
 console.log(matrix);
+
 ```

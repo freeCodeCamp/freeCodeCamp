@@ -1,6 +1,6 @@
 ---
 id: 5e46f7e5ac417301a38fb929
-title: Demographic Data Analyzer
+title: Analisador de dados demográficos
 challengeType: 10
 forumTopicId: 462367
 dashedName: demographic-data-analyzer
@@ -8,17 +8,17 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-In this challenge you must analyze demographic data using Pandas. You are given a dataset of demographic data that was extracted from the 1994 Census database.
+Neste desafio você deve analisar dados demográficos usando o Pandas. Você receberá um conjunto de dados relativos aos dados demográficos que foram extraídos do banco de dados do censo de 1994.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer).
+Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com base nas instruções do 'README.md', envie o link do seu projeto abaixo.
 
-We are still developing the interactive instructional part of the data analysis with Python curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo de análise de dados com Python. Por enquanto, você terá que usar outros recursos para aprender a vencer este desafio.
 
 # --hints--
 
-It should pass all Python tests.
+Ele deve passar em todos os testes do Python.
 
 ```js
 
