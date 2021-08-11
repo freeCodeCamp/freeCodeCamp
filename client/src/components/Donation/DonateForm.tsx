@@ -61,6 +61,7 @@ type DonateFormState = {
 type DonateFromComponentState = {
   donationAmount: number;
   donationDuration: string;
+  intervalId: null | string;
 };
 
 type DonateFormProps = {
@@ -123,7 +124,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
       ? modalDefaultDonation
       : defaultDonation;
 
-    this.state = { ...initialAmountAndDuration };
+    this.state = { ...initialAmountAndDuration, intervalId: null };
 
     this.onDonationStateChange = this.onDonationStateChange.bind(this);
     this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
@@ -135,9 +136,27 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     this.handlePaymentMethodLoad = this.handlePaymentMethodLoad.bind(this);
   }
 
+  componentDidMount() {
+    const intervalId = setInterval(this.providerLoaderTime, 3000);
+    // store intervalId in the state so it can be accessed later:
+    // eslint-disable-next-line react/no-did-mount-set-state
+    this.setState({ intervalId });
+  }
+
   componentWillUnmount() {
     this.resetDonation();
+    clearInterval(this.state.intervalId);
   }
+
+  providerLoaderTime = () => {
+    this.props.updateDonationFormState({
+      ...this.props.donationFormState,
+      loading: {
+        paypal: false,
+        stripe: false
+      }
+    });
+  };
 
   onDonationStateChange(donationState: AddDonationData) {
     // scroll to top
