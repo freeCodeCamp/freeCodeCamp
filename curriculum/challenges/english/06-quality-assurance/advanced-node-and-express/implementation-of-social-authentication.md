@@ -35,7 +35,7 @@ Submit your page when you think you've got it right. If you're running into erro
 
 # --hints--
 
-Route /auth/github should be correct.
+Route `/auth/github` should be correct.
 
 ```js
 async (getUserInput) => {
@@ -54,11 +54,9 @@ async (getUserInput) => {
     const res2 = await fetch(getUserInput('url') + '/_api/app-stack');
     if (res2.ok) {
       const data2 = JSON.parse(await res2.json());
-      console.log(data2);
-      // assert.deepInclude(data2, { route: {method: { get:true}, path: "/auth/github", stack: [{method: "get", name: "authenticate"}]}});
-      const dataLayer = data2.find(layer => layer?.route?.path === '/auth/github')
-      assert.exists(dataLayer);
-      assert.deepPropertyVal(dataLayer?.route?.stack?.[0], 'name', "authenticate");
+      const dataLayer = data2.find(layer => layer?.route?.path === '/auth/github');
+      assert.deepInclude(dataLayer?.route, { methods: {get: true}, path: "/auth/github"});
+      assert.deepInclude(dataLayer?.route?.stack?.[0], {method: "get", name: "authenticate"});
     } else {
       throw new Error(res2.statusText);
     }
@@ -68,22 +66,35 @@ async (getUserInput) => {
 }
 ```
 
-Route /auth/github/callback should be correct.
+Route `/auth/github/callback` should be correct.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/routes.js').then(
-    (data) => {
+async (getUserInput) => {
+  try {
+    const res = await fetch(getUserInput('url') + '/_api/routes.js');
+    if (res.ok) {
+      const data = await res.text();
       assert.match(
         data.replace(/\s/g, ''),
-        /failureRedirect:("|')\/\2/gi,
+        /failureRedirect:("|')\/\1/g,
         'Route auth/github/callback should accept a get request and call passport.authenticate for github with a failure redirect to home'
       );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
+    } else {
+      throw new Error(res.statusText);
     }
-  );
+    const res2 = await fetch(getUserInput('url') + '/_api/app-stack');
+    if (res2.ok) {
+      const data2 = JSON.parse(await res2.json());
+      const dataLayer = data2.find(layer => layer?.route?.path === '/auth/github/callback');
+      assert.deepInclude(dataLayer?.route, { methods: {get: true}, path: "/auth/github/callback"});
+      assert.deepInclude(dataLayer?.route?.stack?.[0], {method: "get", name: "authenticate"});
+    } else {
+      throw new Error(res2.statusText);
+    }
+  } catch (err) {
+    throw new Error(err);
+  }
+}
 ```
 
 # --solutions--
