@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { connectStateResults, connectHits } from 'react-instantsearch-dom';
-import { SearchState, Hit } from 'react-instantsearch-core';
 import { isEmpty } from 'lodash-es';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { SearchState, Hit } from 'react-instantsearch-core';
+import { connectStateResults, connectHits } from 'react-instantsearch-dom';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
-import Suggestion from './search-suggestion';
 import NoHitsSuggestion from './no-hits-suggestion';
+import Suggestion from './search-suggestion';
 
-const searchUrl = searchPageUrl as string;
+const searchUrl = searchPageUrl;
 interface customHitsPropTypes {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   hits: Array<any>;

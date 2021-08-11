@@ -1,6 +1,6 @@
 ---
 id: 597089c87eec450c68aa1643
-title: Define a primitive data type
+title: Definir um tipo de dado primitivo
 challengeType: 5
 forumTopicId: 302248
 dashedName: define-a-primitive-data-type
@@ -8,42 +8,42 @@ dashedName: define-a-primitive-data-type
 
 # --description--
 
-Define a type that behaves like an integer but has a lowest valid value of 1 and a highest valid value of 10.
+Defina um tipo que se comporte como um número inteiro, mas que tenha seu valor menor válido de 1 e seu maior valor válido de 10.
 
-Error handling:
+Tratamento de erro:
 
 <ul>
-  <li>If you try to instantiate a <code>Num</code> with a value outside of 1 - 10, it should throw a <code>TypeError</code> with an error message of <code>'Out of range'</code>.</li>
-  <li>If you try to instantiate a <code>Num</code> with a value that is not a number, it should throw a <code>TypeError</code> with an error message of <code>'Not a Number'</code>.</li>
+  <li>Se você tentar instanciar um <code>Num</code> com um valor fora do intervalo de 1 - 10, deve lançar um <code>TypeError</code> com uma mensagem de erro de <code>'Out of range'</code>.</li>
+  <li>Se você tentar instanciar um <code>Num</code> com um valor que não seja um número, deve lançar um <code>TypeError</code> com uma mensagem de erro de <code>'Not a Number'</code>.</li>
 </ul>
 
 # --hints--
 
-`Num` should be a function.
+`Num` deve ser uma função.
 
 ```js
 assert(typeof Num === 'function');
 ```
 
-`new Num(4)` should return an object.
+`new Num(4)` deve retornar um objeto.
 
 ```js
 assert(typeof new Num(4) === 'object');
 ```
 
-`new Num('test')` should throw a TypeError with message 'Not a Number'.
+`new Num('test')` deve lançar um TypeError com a mensagem 'Not a Number'.
 
 ```js
 assert.throws(() => new Num('test'), TypeError);
 ```
 
-`new Num(0)` should throw a TypeError with message 'Out of range'.
+`new Num(0)` deve lançar um TypeError com a mensagem 'Out of range'.
 
 ```js
 assert.throws(() => new Num(0), TypeError);
 ```
 
-`new Num(-5)` should throw a TypeError with message 'Out of range'.
+`new Num(-5)` deve lançar um TypeError com a mensagem 'Out of range'.
 
 ```js
 assert.throws(() => new Num(-5), TypeError);
@@ -61,43 +61,43 @@ assert.throws(() => new Num(11), TypeError);
 assert.throws(() => new Num(20), TypeError);
 ```
 
-`new Num(3) + new Num(4)` should equal 7.
+`new Num(3) + new Num(4)` deve ser igual a 7.
 
 ```js
 assert.equal(new Num(3) + new Num(4), 7);
 ```
 
-`new Num(3) - new Num(4)` should equal -1.
+`new Num(3) - new Num(4)` deve ser igual a -1.
 
 ```js
 assert.equal(new Num(3) - new Num(4), -1);
 ```
 
-`new Num(3) * new Num(4)` should equal 12.
+`new Num(3) * new Num(4)` deve ser igual a 12.
 
 ```js
 assert.equal(new Num(3) * new Num(4), 12);
 ```
 
-`new Num(3) / new Num(4)` should equal 0.75.
+`new Num(3) / new Num(4)` deve ser igual a 0.75.
 
 ```js
 assert.equal(new Num(3) / new Num(4), 0.75);
 ```
 
-`new Num(3) < new Num(4)` should be true.
+`new Num(3) < new Num(4)` deve ser true.
 
 ```js
 assert(new Num(3) < new Num(4));
 ```
 
-`new Num(3) > new Num(4)` should be false.
+`new Num(3) > new Num(4)` deve ser false.
 
 ```js
 assert(!(new Num(3) > new Num(4)));
 ```
 
-`(new Num(5)).toString()` should return '5'
+`(new Num(5)).toString()` deve retornar '5'
 
 ```js
 assert.equal(new Num(5).toString(), '5');

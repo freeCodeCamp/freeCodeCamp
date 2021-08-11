@@ -1,6 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb6
-title: Create Reusable CSS with Mixins
+title: Crea CSS reutilizable con Mixins
 challengeType: 0
 forumTopicId: 301455
 dashedName: create-reusable-css-with-mixins
@@ -8,9 +8,9 @@ dashedName: create-reusable-css-with-mixins
 
 # --description--
 
-In Sass, a <dfn>mixin</dfn> is a group of CSS declarations that can be reused throughout the style sheet.
+En Sass, un <dfn>mixin</dfn> es un grupo de declaraciones de CSS que pueden reutilizarse a través de la hoja de estilo.
 
-Newer CSS features take time before they are fully adopted and ready to use in all browsers. As features are added to browsers, CSS rules using them may need vendor prefixes. Consider "box-shadow":
+Las nuevas funciones de CSS tardan en ser adoptadas por completo y estar listas para su uso en todos los navegadores. A medida que se añaden funciones a los navegadores, las reglas CSS que las utilizan pueden necesitar prefijos de proveedor. Consideremos `box-shadow`:
 
 ```scss
 div {
@@ -21,7 +21,7 @@ div {
 }
 ```
 
-It's a lot of typing to re-write this rule for all the elements that have a `box-shadow`, or to change each value to test different effects. Mixins are like functions for CSS. Here is how to write one:
+Es mucho teclear para reescribir esta regla para todos los elementos que tienen un `box-shadow`, o para cambiar cada valor para probar diferentes efectos. Mixins son como funciones para CSS. Aquí está cómo escribir una:
 
 ```scss
 @mixin box-shadow($x, $y, $blur, $c){ 
@@ -32,7 +32,7 @@ It's a lot of typing to re-write this rule for all the elements that have a `box
 }
 ```
 
-The definition starts with `@mixin` followed by a custom name. The parameters (the `$x`, `$y`, `$blur`, and `$c` in the example above) are optional. Now any time a `box-shadow` rule is needed, only a single line calling the mixin replaces having to type all the vendor prefixes. A mixin is called with the `@include` directive:
+La definición empieza con `@mixin` seguido de un nombre personalizado. Los parámetros ( `$x`, `$y`, `$blur`, y `$c` en el ejemplo anterior) son opcionales. Ahora cada vez que se necesite una regla `box-shadow`, una sola línea llamando al mixin reemplaza el tener que escribir todos los prefijos del proveedor. Se llama a un mixin con la directiva `@include`:
 
 ```scss
 div {
@@ -42,17 +42,17 @@ div {
 
 # --instructions--
 
-Write a mixin for `border-radius` and give it a `$radius` parameter. It should use all the vendor prefixes from the example. Then use the `border-radius` mixin to give the `#awesome` element a border radius of 15px.
+Escribe un mixin para `border-radius` y dale un parámetro `$radius`. Debe utilizar todos los prefijos de proveedor del ejemplo. Luego usa el mixin `border-radius` para dar al elemento `#awesome` un border radius de `15px`.
 
 # --hints--
 
-Your code should declare a mixin named `border-radius` which has a parameter named `$radius`.
+Tu código debe declarar un mixin llamado `border-radius` que tiene un parámetro llamado `$radius`.
 
 ```js
 assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
 ```
 
-Your code should include the `-webkit-border-radius` vendor prefix that uses the `$radius` parameter.
+Tu código debe incluir el prefijo de proveedor `-webkit-border-radius` que utiliza el parámetro `$radius`.
 
 ```js
 assert(
@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-Your code should include the `-moz-border-radius` vendor prefix that uses the `$radius` parameter.
+Tu código debe incluir el prefijo de proveedor `-moz-border-radius` que utiliza el parámetro `$radius`.
 
 ```js
 assert(
@@ -68,13 +68,13 @@ assert(
 );
 ```
 
-Your code should include the `-ms-border-radius` vendor prefix that uses the `$radius` parameter.
+Tu código debe incluir el prefijo de proveedor `-ms-border-radius` que utiliza el parámetro `$radius`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/-ms-border-radius:\$radius;/gi));
 ```
 
-Your code should include the general `border-radius` rule that uses the `$radius` parameter.
+Tu código debe incluir la regla general `border-radius` que utiliza el parámetro `$radius`.
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-Your code should call the `border-radius mixin` using the `@include` keyword, setting it to 15px.
+Tu código debe llamar al `border-radius mixin` usando la palabra clave `@include`, configurándolo a `15px`.
 
 ```js
 assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));

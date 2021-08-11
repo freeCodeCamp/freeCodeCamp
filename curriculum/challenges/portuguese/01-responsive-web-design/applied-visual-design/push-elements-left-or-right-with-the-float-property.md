@@ -1,6 +1,6 @@
 ---
 id: 587d78a3367417b2b2512ace
-title: Empurre os elementos para a esquerda ou direita com a propriedade float
+title: Empurrar os elementos para a esquerda ou direita com a propriedade float
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDqu2'
 forumTopicId: 301066

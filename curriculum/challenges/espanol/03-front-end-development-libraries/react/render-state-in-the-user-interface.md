@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036171
-title: Render State in the User Interface
+title: Renderizar estado en la interfaz de usuario
 challengeType: 6
 forumTopicId: 301409
 dashedName: render-state-in-the-user-interface
@@ -8,23 +8,23 @@ dashedName: render-state-in-the-user-interface
 
 # --description--
 
-Once you define a component's initial state, you can display any part of it in the UI that is rendered. If a component is stateful, it will always have access to the data in `state` in its `render()` method. You can access the data with `this.state`.
+Una vez que se define el estado inicial de un componente, se puede mostrar cualquier parte del mismo en la interfaz de usuario que se renderiza. Si un componente tiene estado, siempre tendrá acceso a los datos en `state` en su método `render()`. Puedes acceder a los datos con `this.state`.
 
-If you want to access a state value within the `return` of the render method, you have to enclose the value in curly braces.
+Si quieres acceder a un valor de estado dentro del `return` del método de renderización, tienes que encerrar el valor entre llaves.
 
-`State` is one of the most powerful features of components in React. It allows you to track important data in your app and render a UI in response to changes in this data. If your data changes, your UI will change. React uses what is called a virtual DOM, to keep track of changes behind the scenes. When state data updates, it triggers a re-render of the components using that data - including child components that received the data as a prop. React updates the actual DOM, but only where necessary. This means you don't have to worry about changing the DOM. You simply declare what the UI should look like.
+`state` es una de las características más poderosas de los componentes de React. Esto te permite realizar un seguimiento de los datos importantes en tu aplicación y generar una interfaz de usuario en respuesta a los cambios en estos datos. Si tus datos cambian, tu interfaz de usuario cambiará. React usa lo que se llama un DOM virtual, para realizar un seguimiento de los cambios detrás de escena. Cuando se actualizan los datos de estado, activa un re-renderizado de los componentes usando esos datos - incluyendo componentes hijos que recibieron los datos como un prop. React actualiza el DOM actual, pero solo cuando sea necesario. Esto significa que no tienes que preocuparte por cambiar el DOM. Tú simplemente declara cómo debe verse la UI.
 
-Note that if you make a component stateful, no other components are aware of its `state`. Its `state` is completely encapsulated, or local to that component, unless you pass state data to a child component as `props`. This notion of encapsulated `state` is very important because it allows you to write certain logic, then have that logic contained and isolated in one place in your code.
+Ten en cuenta que si creas un componente con estado, ningún otro componente es consciente de su `state`. Su `state` está completamente encapsulado, o local a ese componente, a menos que pases datos de estado a un componente hijo como `props`. Esta noción de `state` encapsulado, es muy importante porque te permite escribir cierta lógica, luego tener esa lógica contenida y aislada en un lugar de tu código.
 
 # --instructions--
 
-In the code editor, `MyComponent` is already stateful. Define an `h1` tag in the component's render method which renders the value of `name` from the component's state.
+En el editor de código, `MyComponent` ya tiene estado. Define una etiqueta `h1` en el método de renderizado del componente que renderiza el valor del `name` desde el estado del componente.
 
-**Note:** The `h1` should only render the value from `state` and nothing else. In JSX, any code you write with curly braces `{ }` will be treated as JavaScript. So to access the value from `state` just enclose the reference in curly braces.
+**Note:** El `h1` solo debe renderizar el valor de `state` y nada más. En JSX, cualquier código que escribas con llaves `{ }` será tratado como JavaScript. Así que para acceder al valor desde él `state` solo hay que encerrar la referencia entre llaves.
 
 # --hints--
 
-`MyComponent` should have a key `name` with value `freeCodeCamp` stored in its state.
+`MyComponent` debe tener un `name` clave con valor `freeCodeCamp` almacenado en su estado.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-`MyComponent` should render an `h1` header enclosed in a single `div`.
+`MyComponent` debe renderizar un encabezado `h1` incluido en un solo `div`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-The rendered `h1` header should contain text rendered from the component's state.
+El encabezado renderizado `h1` sólo debe contener texto renderizado del estado del componente.
 
 ```js
 async () => {

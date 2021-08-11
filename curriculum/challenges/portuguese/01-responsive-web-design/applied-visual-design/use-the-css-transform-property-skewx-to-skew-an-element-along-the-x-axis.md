@@ -1,6 +1,6 @@
 ---
 id: 587d78a6367417b2b2512adb
-title: Use a propriedade skewX de transformação do CSS para distorcer um elemento ao longo do eixo X
+title: Usar a propriedade skewX de transformação do CSS para distorcer um elemento ao longo do eixo X
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLP8Sr'
 forumTopicId: 301074

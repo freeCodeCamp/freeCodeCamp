@@ -1,6 +1,6 @@
 ---
 id: 5900f3731000cf542c50fe86
-title: 'Problem 7: 10001st prime'
+title: 'Problema 7: 10001º número primo'
 challengeType: 5
 forumTopicId: 302182
 dashedName: problem-7-10001st-prime
@@ -8,43 +8,43 @@ dashedName: problem-7-10001st-prime
 
 # --description--
 
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+Ao listar os primeiros seis números primos: 2, 3, 5, 7, 11 e 13, podemos ver que o sexto número primo é 13.
 
-What is the `n`th prime number?
+Qual é o `n`-ésimo número primo?
 
 # --hints--
 
-`nthPrime(6)` should return a number.
+`nthPrime(6)` deve retornar um número.
 
 ```js
 assert(typeof nthPrime(6) === 'number');
 ```
 
-`nthPrime(6)` should return 13.
+`nthPrime(6)` deve retornar 13.
 
 ```js
 assert.strictEqual(nthPrime(6), 13);
 ```
 
-`nthPrime(10)` should return 29.
+`nthPrime(10)` deve retornar 29.
 
 ```js
 assert.strictEqual(nthPrime(10), 29);
 ```
 
-`nthPrime(100)` should return 541.
+`nthPrime(100)` deve retornar 541.
 
 ```js
 assert.strictEqual(nthPrime(100), 541);
 ```
 
-`nthPrime(1000)` should return 7919.
+`nthPrime(1000)` deve retornar 7919.
 
 ```js
 assert.strictEqual(nthPrime(1000), 7919);
 ```
 
-`nthPrime(10001)` should return 104743.
+`nthPrime(10001)` deve retornar 104743.
 
 ```js
 assert.strictEqual(nthPrime(10001), 104743);

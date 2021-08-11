@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512bff
-title: Add a Version to Your package.json
+title: Aggiungere una versione al tuo package.json
 challengeType: 2
 forumTopicId: 301525
 dashedName: add-a-version-to-your-package-json
@@ -8,7 +8,7 @@ dashedName: add-a-version-to-your-package-json
 
 # --description--
 
-A `version` is one of the required fields of your package.json file. This field describes the current version of your project. Here's an example:
+`version` è uno dei campi obbligatori del file package.json. Questo campo descrive la versione corrente del tuo progetto. Ecco un esempio:
 
 ```json
 "version": "1.2.0",
@@ -16,11 +16,11 @@ A `version` is one of the required fields of your package.json file. This field 
 
 # --instructions--
 
-Add a `version` to the package.json file of your project.
+Aggiungi una `version` al file package.json del tuo progetto.
 
 # --hints--
 
-package.json should have a valid "version" key
+package.json deve avere una chiave "version" valida
 
 ```js
 (getUserInput) =>

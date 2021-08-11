@@ -1,6 +1,6 @@
 ---
 id: 598e8944f009e646fc236146
-title: Understanding Undefined Value returned from a Function
+title: Entender o valor undefined retornado de uma função
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2p7cL'
 forumTopicId: 301177
@@ -9,9 +9,9 @@ dashedName: understanding-undefined-value-returned-from-a-function
 
 # --description--
 
-A function can include the `return` statement but it does not have to. In the case that the function doesn't have a `return` statement, when you call it, the function processes the inner code but the returned value is `undefined`.
+Uma função pode incluir a instrução `return` mas ela não precisa fazer isso. No caso de a função não ter uma instrução `return`, quando você a chamar, a função processa o código interno, mas o valor retornado é `undefined`.
 
-**Example**
+**Exemplo**
 
 ```js
 var sum = 0;
@@ -21,33 +21,33 @@ function addSum(num) {
 addSum(3);
 ```
 
-`addSum` is a function without a `return` statement. The function will change the global `sum` variable but the returned value of the function is `undefined`.
+`addSum` é uma função sem uma instrução `return`. A função vai alterar a variável global `sum`, mas o valor retornado da função é `undefined`.
 
 # --instructions--
 
-Create a function `addFive` without any arguments. This function adds 5 to the `sum` variable, but its returned value is `undefined`.
+Crie uma função `addFive` sem qualquer argumento. Essa função adiciona 5 à variável`sum`, mas o valor retornado é `undefined`.
 
 # --hints--
 
-`addFive` should be a function.
+`addFive` deve ser uma função.
 
 ```js
 assert(typeof addFive === 'function');
 ```
 
-Once both functions have run, the `sum` should be equal to `8`.
+Uma vez que ambas as funções são executadas, a `sum` deve ser igual a `8`.
 
 ```js
 assert(sum === 8);
 ```
 
-Returned value from `addFive` should be `undefined`.
+O valor retornado de `addFive` deve ser `undefined`.
 
 ```js
 assert(addFive() === undefined);
 ```
 
-Inside the `addFive` function, you should add `5` to the `sum` variable.
+Dentro da função `addFive`, você deve adicionar `5` à variável `sum`.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 587d824c367417b2b2512c4c
-title: Assert Deep Equality with .deepEqual and .notDeepEqual
+title: Assegurar a igualdade profunda com .deepEqual e .notDeepEqual
 challengeType: 2
 forumTopicId: 301587
 dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
@@ -8,17 +8,17 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como observação, este projeto está sendo construído a partir do seguinte projeto no [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou clonado do [Github](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`deepEqual()` asserts that two objects are deep equal.
+`deepEqual()` assegura que dois objetos são profundamente iguais.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#7` in the `Equality` suite, change each `assert` to either `assert.deepEqual` or `assert.notDeepEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Em `tests/1_unit-tests.js`, no teste classificado como `#7` e na suíte `Equality`, modifique cada `assert` para `assert.deepEqual` ou para `assert.notDeepEqual`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 
-All tests should pass.
+Todos os testes devem passar.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `deepEqual` vs. `notDeepEqual`.
+Você deve escolher o método correto para a primeira declaração - `deepEqual` ou `notDeepEqual`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `deepEqual` vs. `
   );
 ```
 
-You should choose the correct method for the second assertion - `deepEqual` vs. `notDeepEqual`.
+Você deve escolher o método correto para a segunda declaração - `deepEqual` ou `notDeepEqual`.
 
 ```js
 (getUserInput) =>

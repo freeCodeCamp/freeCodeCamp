@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0b0b6c005b0e76f070
-title: 'Regular Expressions: Practical Applications'
+title: 'Espressioni regolari: applicazioni pratiche'
 challengeType: 11
 videoId: xCjFU9G6x48
 dashedName: regular-expressions-practical-applications
@@ -10,7 +10,7 @@ dashedName: regular-expressions-practical-applications
 
 ## --text--
 
-What will search for a "$" in a regular expression?
+Come si cerca un "$" in un'espressione regolare?
 
 ## --answers--
 

@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443eddfaeb5bdee
-title: Build a Pinterest Clone
+title: Criar um clone do Pinterest
 challengeType: 4
 forumTopicId: 302352
 dashedName: build-a-pinterest-clone
@@ -8,27 +8,27 @@ dashedName: build-a-pinterest-clone
 
 # --description--
 
-**Objective:** Build a [Replit](https://replit.com/) app that is functionally similar to this: <https://build-a-pinterest-clone.freecodecamp.rocks/>.
+**Objetivo:** criar uma aplicação no [Replit](https://replit.com/) que tenha função semelhante a esta: <https://build-a-pinterest-clone.freecodecamp.rocks/>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**User Story:** As an unauthenticated user, I can login with GitHub.
+**Especificação de usuário:** como usuário autenticado, posso fazer login com o GitHub.
 
-**User Story:** As an authenticated user, I can link to images.
+**Especificação de usuário:** como usuário autenticado, eu posso vincular imagens.
 
-**User Story:** As an authenticated user, I can delete images that I've linked to.
+**Especificação de usuário:** como usuário autenticado, eu posso excluir imagens que eu vinculei.
 
-**User Story:** As an authenticated user, I can see a Pinterest-style wall of all the images I've linked to.
+**Especificação de usuário:** como usuário autenticado, eu posso ver um mural ao estilo do Pinterest com todas as imagens que eu vinculei.
 
-**User Story:** As an unauthenticated user, I can browse other users' walls of images.
+**Especificação de usuário:** como usuário não autenticado, eu posso pesquisar os murais de imagens dos outros usuários.
 
-**User Story:** As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
+**Especificação de usuário:** como um usuário não autenticado, se eu enviar uma imagem com o vínculo não funcional, ela será substituída por uma imagem temporária. (é possível usar o jQuery para detectar imagens sem o link funcional)
 
-**Hint:** [Masonry.js](https://masonry.desandro.com/) is a library that allows for Pinterest-style image grids.
+**Dica:** o [Masonry.js](https://masonry.desandro.com/) é uma biblioteca que permite grades de imagens no estilo Pinterest.
 
-Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
+Depois de terminar de implementar essas especificações de usuários, digite o URL para sua aplicação ao vivo e, como opção, seu repositório do GitHub. Então, clique no botão "Eu completei este desafio".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum do freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

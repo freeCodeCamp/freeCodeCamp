@@ -1,11 +1,11 @@
+import { Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/react-bootstrap';
-import { useTranslation } from 'react-i18next';
 
-import { isSignedInSelector } from '../../../redux';
 import envData from '../../../../../config/env.json';
+import { isSignedInSelector } from '../../../redux';
 
 import './login.css';
 

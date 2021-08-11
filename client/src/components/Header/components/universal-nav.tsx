@@ -3,14 +3,14 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable react/prop-types */
 // @ts-nocheck
+import Loadable from '@loadable/component';
 import React, { Ref } from 'react';
+import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
-import NavLogo from './nav-logo';
 import MenuButton from './menu-button';
 import NavLinks from './nav-links';
+import NavLogo from './nav-logo';
 import './universal-nav.css';
-import { isLanding } from '../../../utils/path-parsers';
-import Loadable from '@loadable/component';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(

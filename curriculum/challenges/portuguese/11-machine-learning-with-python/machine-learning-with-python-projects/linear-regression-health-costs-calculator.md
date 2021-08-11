@@ -1,6 +1,6 @@
 ---
 id: 5e46f8edac417301a38fb930
-title: Linear Regression Health Costs Calculator
+title: Calculadora de custos de saúde de regressão linear
 challengeType: 10
 forumTopicId: 462379
 dashedName: linear-regression-health-costs-calculator
@@ -8,19 +8,19 @@ dashedName: linear-regression-health-costs-calculator
 
 # --description--
 
-In this challenge, you will predict healthcare costs using a regression algorithm.
+Neste desafio, você preverá os custos de saúde usando um algoritmo de regressão.
 
-You are given a dataset that contains information about different people including their healthcare costs. Use the data to predict healthcare costs based on new data.
+Você recebe um conjunto de dados que contém informações sobre diferentes pessoas, incluindo seus custos de saúde. Use os dados para prever custos de saúde com base em novos dados.
 
-You can access [the full project instructions and starter code on Google Colaboratory](https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb).
+Você pode acessar [as instruções completas do projeto e o código inicial no Google Colaboratory](https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb).
 
-After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
+Depois de acessar esse link, crie uma cópia do notebook em sua própria conta ou localmente. Depois que você completar o projeto e que ele passar pelo teste (incluído nesse link), envie o link do projeto abaixo. Se você estiver enviando um link do Google Colaboratory, certifique-se de ativar o compartilhamento de links para "qualquer um que tenha o link".
 
-We are still developing the interactive instructional content for the machine learning curriculum. For now, you can go through the video challenges in this certification. You may also have to seek out additional learning resources, similar to what you would do when working on a real-world project.
+Ainda estamos desenvolvendo o conteúdo instrucional interativo do currículo de aprendizagem de máquina. Por enquanto, você pode ver os desafios de vídeo desta certificação. Você também pode ter que procurar recursos adicionais de aprendizagem, do mesmo modo que você faria ao trabalhar em um projeto do mundo real.
 
 # --hints--
 
-It should pass all Python tests.
+Ele deve passar em todos os testes do Python.
 
 ```js
 

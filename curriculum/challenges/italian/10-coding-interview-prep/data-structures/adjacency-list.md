@@ -1,6 +1,6 @@
 ---
 id: 587d8256367417b2b2512c77
-title: Adjacency List
+title: Lista di adiacenza
 challengeType: 1
 forumTopicId: 301620
 dashedName: adjacency-list
@@ -8,11 +8,11 @@ dashedName: adjacency-list
 
 # --description--
 
-Graphs can be represented in different ways. Here we describe one way, which is called an <dfn>adjacency list</dfn>. An adjacency list is essentially a bulleted list where the left side is the node and the right side lists all the other nodes it's connected to. Below is a representation of an adjacency list.
+I grafici possono essere rappresentati in modi diversi. Qui descriviamo un modo, che è chiamato una <dfn>lista di adiacenza</dfn>. Una lista di adiacenza è essenzialmente un elenco puntato dove il lato sinistro è il nodo e il lato destro elenca tutti gli altri nodi a cui è collegato. Di seguito è riportata una rappresentazione di una lista di adiacenza.
 
 <blockquote>Node1: Node2, Node3<br>Node2: Node1<br>Node3: Node1</blockquote>
 
-Above is an undirected graph because `Node1` is connected to `Node2` and `Node3`, and that information is consistent with the connections `Node2` and `Node3` show. An adjacency list for a directed graph would mean each row of the list shows direction. If the above was directed, then `Node2: Node1` would mean there the directed edge is pointing from `Node2` towards `Node1`. We can represent the undirected graph above as an adjacency list by putting it within a JavaScript object.
+Quello sopra è un grafico non orientato perché `Node1` è connesso a `Node2` e `Node3`, e tali informazioni sono coerenti con le connessioni `Node2` e `Node3`. La lista di adiacenza per un grafico orientato significherebbe che ogni riga della lista mostra la direzione. Se quanto sopra fosse orientato, allora `Node2: Node1` significherebbe che l'arco orientato sta puntando da `Node2` verso `Node1`. Possiamo rappresentare il grafo non orientato qui sopra come una lista di adiacenza inserendolo in un oggetto JavaScript.
 
 ```js
 var undirectedG = {
@@ -22,7 +22,7 @@ var undirectedG = {
 };
 ```
 
-This can also be more simply represented as an array where the nodes just have numbers rather than string labels.
+Questo può anche essere rappresentato più semplicemente come un array in cui i nodi hanno solo numeri invece di etichette di stringa.
 
 ```js
 var undirectedGArr = [
@@ -34,17 +34,17 @@ var undirectedGArr = [
 
 # --instructions--
 
-Create a social network as an undirected graph with 4 nodes/people named `James`, `Jill`, `Jenny`, and `Jeff`. There are edges/relationships between James and Jeff, Jill and Jenny, and Jeff and Jenny.
+Crea un social network come grafo non orientato con 4 nodi/persone di nome `James`, `Jill`, `Jenny`, e `Jeff`. Ci sono lati/rapporti tra James e Jeff, Jill e Jenny, e Jeff e Jenny.
 
 # --hints--
 
-`undirectedAdjList` should only contain four nodes.
+`undirectedAdjList` dovrebbe contenere solo quattro nodi.
 
 ```js
 assert(Object.keys(undirectedAdjList).length === 4);
 ```
 
-There should be an edge between `Jeff` and `James`.
+Ci dovrebbe essere un arco tra `Jeff` e `James`.
 
 ```js
 assert(
@@ -53,16 +53,16 @@ assert(
 );
 ```
 
-There should be an edge between `Jill` and `Jenny`.
+Ci dovrebbe essere un arco tra `Jill` e `Jenny`.
 
 ```js
 assert(
   undirectedAdjList.Jill.indexOf('Jenny') !== -1 &&
-    undirectedAdjList.Jill.indexOf('Jenny') !== -1
+    undirectedAdjList.Jenny.indexOf('Jill') !== -1
 );
 ```
 
-There should be an edge between `Jeff` and `Jenny`.
+Dovrebbe esserci un arco tra `Jeff` e `Jenny`.
 
 ```js
 assert(

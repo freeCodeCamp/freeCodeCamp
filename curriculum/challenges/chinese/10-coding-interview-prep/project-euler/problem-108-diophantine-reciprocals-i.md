@@ -10,19 +10,17 @@ dashedName: problem-108-diophantine-reciprocals-i
 
 In the following equation x, y, and n are positive integers.
 
-1/`x` + 1/`y` = 1/`n`
+$$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
 For `n` = 4 there are exactly three distinct solutions:
 
-1/5 + 1/20 = 1/4  
-1/6 + 1/12 = 1/4  
-1/8 + 1/8 = 1/4
+$$\begin{align} & \frac{1}{5} + \frac{1}{20} = \frac{1}{4}\\\\ \\\\ & \frac{1}{6} + \frac{1}{12} = \frac{1}{4}\\\\ \\\\ & \frac{1}{8} + \frac{1}{8} = \frac{1}{4} \end{align}$$
 
 What is the least value of `n` for which the number of distinct solutions exceeds one-thousand?
 
 # --hints--
 
-`diophantineOne()` should return 180180.
+`diophantineOne()` should return `180180`.
 
 ```js
 assert.strictEqual(diophantineOne(), 180180);

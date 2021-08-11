@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import {
   FormGroup,
   ControlLabel,
@@ -8,12 +7,13 @@ import {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
+import React, { Component } from 'react';
 
+import { TFunction, withTranslation } from 'react-i18next';
 import { FullWidthRow, Spacer } from '../helpers';
+import BlockSaveButton from '../helpers/form/block-save-button';
 import ThemeSettings from './theme';
 import UsernameSettings from './username';
-import BlockSaveButton from '../helpers/form/block-save-button';
-import { withTranslation } from 'react-i18next';
 
 type FormValues = {
   name: string;
@@ -30,7 +30,7 @@ type AboutProps = {
   picture: string;
   points: number;
   submitNewAbout: (formValues: FormValues) => void;
-  t: (str: string) => string;
+  t: TFunction;
   toggleNightMode: (theme: string) => void;
   username: string;
 };

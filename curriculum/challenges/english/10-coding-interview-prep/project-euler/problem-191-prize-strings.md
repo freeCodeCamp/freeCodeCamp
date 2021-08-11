@@ -14,16 +14,22 @@ During an n-day period a trinary string is formed for each child consisting of L
 
 Although there are eighty-one trinary strings for a 4-day period that can be formed, exactly forty-three strings would lead to a prize:
 
-OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA LAOO LAOA LAAO
+```
+OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
+OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
+AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL
+AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA
+LAOO LAOA LAAO
+```
 
 How many "prize" strings exist over a 30-day period?
 
 # --hints--
 
-`euler191()` should return 1918080160.
+`prizeStrings()` should return `1918080160`.
 
 ```js
-assert.strictEqual(euler191(), 1918080160);
+assert.strictEqual(prizeStrings(), 1918080160);
 ```
 
 # --seed--
@@ -31,12 +37,12 @@ assert.strictEqual(euler191(), 1918080160);
 ## --seed-contents--
 
 ```js
-function euler191() {
+function prizeStrings() {
 
   return true;
 }
 
-euler191();
+prizeStrings();
 ```
 
 # --solutions--

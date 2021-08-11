@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9d
-title: 'Natural Language Processing With RNNs: Recurring Neural Networks'
+title: 'Processamento de linguagem natural com RNNs: redes neurais recorrentes'
 challengeType: 11
 videoId: bX5681NPOcA
 dashedName: natural-language-processing-with-rnns-recurring-neural-networks
@@ -10,23 +10,23 @@ dashedName: natural-language-processing-with-rnns-recurring-neural-networks
 
 ## --text--
 
-What is true about Recurrent Neural Networks?
+Qual desses fatos é verdadeiro sobre as redes neurais recorrentes?
 
 ## --answers--
 
-1: They are a type of feed-forward neural network.
+1: Elas são um tipo de rede neural sem realimentação.
 
 ---
 
-2: They maintain an internal memory/state of the input that was already processed.
+2: Elas mantêm uma memória/estado interno da entrada que já foi processada.
 
 ---
 
-3: RNN's contain a loop and process one piece of input at a time.
+3: As RNNs contêm um loop e processam uma entrada por vez.
 
 ---
 
-4: Both 2 and 3.
+4: 2 e 3 estão corretas.
 
 ## --video-solution--
 

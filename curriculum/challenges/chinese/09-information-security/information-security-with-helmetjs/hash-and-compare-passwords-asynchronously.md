@@ -1,6 +1,6 @@
 ---
 id: 58a25bcff9fc0f352b528e7d
-title: Hash and Compare Passwords Asynchronously
+title: 哈希和异步比较密码
 challengeType: 2
 forumTopicId: 301578
 dashedName: hash-and-compare-passwords-asynchronously
@@ -8,9 +8,9 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-bcrypt), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+请注意，本项目在[这个 Repl.it 项目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基础上进行开发。 你也可以从[GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/)上克隆。
 
-As hashing is designed to be computationally intensive, it is recommended to do so asynchronously on your server as to avoid blocking incoming connections while you hash. All you have to do to hash a password asynchronous is call
+由于哈希运算会占用很大计算机资源，并且会耗费比较多时间，因此比较推荐的做法是异步调用哈希算法，这样就不会因此阻止其它连接或请求了。 异步调用哈希方法非常简单，只需要：
 
 ```js
 bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
@@ -20,9 +20,9 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 
 # --instructions--
 
-Add this hashing function to your server(we've already defined the variables used in the function for you to use) and log it to the console for you to see! At this point you would normally save the hash to your database.
+把这段哈希方法添加到你的服务器（我们已经定义好这个方法的变量给你直接使用了），然后你可以尝试在控制台输出。 之后，我们通常需要把哈希的结果保存到数据库。
 
-Now when you need to figure out if a new input is the same data as the hash you would just use the compare function.
+当你需要对比用户输入的值是否和之前哈希过的值一样的时候，只需要调用对比函数：
 
 ```js
 bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-Add this into your existing hash function(since you need to wait for the hash to complete before calling the compare function) after you log the completed hash and log 'res' to the console within the compare. You should see in the console a hash then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword' then it should say false.
+当控制台输出生成的哈希并在对比的回调中输出结果后，我们就可以将其添加到现有的哈希函数中。 控制台中会首先输出一个哈希结果，然后输出 true。 如果将比较函数中的 “myPlaintextPassword” 更改为 “someOtherPlaintextPassword”，则比较的结果应显示 false。
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {
@@ -43,11 +43,11 @@ bcrypt.hash('passw0rd!', 13, (err, hash) => {
 
 ```
 
-Submit your page when you think you've got it right.
+请在完成挑战后提交你的页面。
 
 # --hints--
 
-Async hash should be generated and correctly compared.
+应生成异步散列并正确比较。
 
 ```js
 (getUserInput) =>

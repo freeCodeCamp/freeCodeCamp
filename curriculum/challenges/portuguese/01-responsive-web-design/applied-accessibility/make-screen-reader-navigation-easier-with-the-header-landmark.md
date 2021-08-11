@@ -1,6 +1,6 @@
 ---
 id: 587d7787367417b2b2512aa1
-title: Facilite a navegação do leitor de tela com o ponto de referência header
+title: Facilitar a navegação do leitor de tela com o ponto de referência header
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB76vtv'
 forumTopicId: 301023

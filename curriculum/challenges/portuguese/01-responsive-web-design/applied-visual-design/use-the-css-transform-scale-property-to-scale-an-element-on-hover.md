@@ -1,6 +1,6 @@
 ---
 id: 587d78a5367417b2b2512ada
-title: Use a propriedade scale de transformação do CSS para dimensionar um elemento ao passar o cursor do mouse sobre ele
+title: Usar a propriedade scale de transformação do CSS para dimensionar um elemento ao passar o cursor do mouse sobre ele
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLPJuM'
 forumTopicId: 301077

@@ -1,6 +1,6 @@
 ---
 id: 587d8255367417b2b2512c74
-title: Create a Priority Queue Class
+title: Creare una classe Coda di Priorità
 challengeType: 1
 forumTopicId: 301630
 dashedName: create-a-priority-queue-class
@@ -8,27 +8,27 @@ dashedName: create-a-priority-queue-class
 
 # --description--
 
-In this challenge you will be creating a Priority Queue. A Priority Queue is a special type of Queue in which items may have additional information which specifies their priority. This could be simply represented with an integer. Item priority will override placement order in determining the sequence items are dequeued. If an item with a higher priority is enqueued after items with lower priority, the higher priority item will be dequeued before all the others.
+In questa sfida creerai una Coda di Priorità. Una Coda Priorità è un tipo speciale di Coda in cui gli oggetti possono avere informazioni aggiuntive che ne specificano la priorità. Questa potrebbe essere semplicemente rappresentata con un numero intero. La priorità degli elementi sovrascriverà l'ordine di posizionamento nel determinare la sequenza di elementi rimossi dalla coda. Se un elemento con una priorità più alta viene accodato dopo gli elementi con priorità più bassa, l'elemento con priorità più alta sarà rimosso dalla coda prima di tutti gli altri.
 
-For instance, let’s imagine we have a priority queue with three items:
+Per esempio, immaginiamo di avere una coda di priorità con tre elementi:
 
 ```js
 [['kitten', 2], ['dog', 2], ['rabbit', 2]]
 ```
 
-Here the second value (an integer) represents item priority. If we enqueue `['human', 1]` with a priority of `1` (assuming lower priorities are given precedence) it would then be the first item to be dequeued. The collection would look like this:
+Qui il secondo valore (un intero) rappresenta la priorità dell'elemento. Se accodi `['human', 1]` con una priorità di `1` (ipotizzando che le priorità più basse abbiano la precedenza) esso sarebbe il primo elemento ad essere rimosso dalla coda. La collezione assomiglierà a questa:
 
 ```js
 [['human', 1], ['kitten', 2], ['dog', 2], ['rabbit', 2]]
 ```
 
-We’ve started writing a `PriorityQueue` in the code editor. You will need to add an `enqueue` method for adding items with a priority, a `dequeue` method for removing and returning items, a `size` method to return the number of items in the queue, a `front` method to return the element at the front of the queue, and finally an `isEmpty` method that will return `true` if the queue is empty or `false` if it is not.
+Abbiamo iniziato a scrivere una `PriorityQueue` nell'editor di codice. Dovrai aggiungere un metodo `enqueue` per aggiungere elementi con una priorità, un metodo `dequeue` per rimuovere e restituire gli oggetti, un metodo `size` per restituire il numero di elementi nella coda, un metodo `front` per restituire l'elemento nella parte anteriore della coda, e infine un metodo `isEmpty` che restituirà `true` se la coda è vuota o `false` se non lo è.
 
-The `enqueue` should accept items with the format shown above (`['human', 1]`) where `1` represents the priority. `dequeue` and `front` should return only the item's name, not its priority.
+Il metodo `enqueue` dovrebbe accettare gli elementi con il formato mostrato sopra (`['human', 1]`) dove `1` rappresenta la priorità. `dequeue` e `front` dovrebbe restituire solo il nome dell'elemento, non la sua priorità.
 
 # --hints--
 
-Your `PriorityQueue` class should have a `enqueue` method.
+La tua classe `PriorityQueue` dovrebbe avere un metodo `enqueue`.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have a `dequeue` method.
+La tua classe `PriorityQueue` dovrebbe avere un metodo `dequeue`.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have a `size` method.
+La tua classe `PriorityQueue` dovrebbe avere un metodo `size`.
 
 ```js
 assert(
@@ -61,7 +61,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have a `front` method.
+La tua classe `PriorityQueue` dovrebbe avere un metodo `front`.
 
 ```js
 assert(
@@ -72,7 +72,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have an `isEmpty` method.
+La tua classe `PriorityQueue` dovrebbe avere un metodo `isEmpty`.
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should correctly keep track of the current number of items using the `size` method as items are enqueued and dequeued.
+La tua classe `PriorityQueue` dovrebbe tenere correttamente traccia del numero attuale di elementi utilizzando il metodo `size` mentre gli elementi vengono accodati e rimossi.
 
 ```js
 assert(
@@ -102,7 +102,7 @@ assert(
 );
 ```
 
-The `front` method should return the correct item at the front of the queue as items are enqueued and dequeued.
+Il metodo `front` dovrebbe restituire l'elemento corretto nella parte anteriore della coda mentre gli elementi vengono accodati e rimossi.
 
 ```js
 assert(
@@ -129,7 +129,7 @@ assert(
 );
 ```
 
-The `isEmpty` method should return `true` when the queue is empty.
+Il metodo `isEmpty` dovrebbe restituire `true` quando la coda è vuota.
 
 ```js
 assert(
@@ -145,7 +145,7 @@ assert(
 );
 ```
 
-The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.
+La coda di priorità dovrebbe restituire gli elementi con una priorità più alta prima degli elementi con una priorità più bassa e restituire gli elementi nell'ordine first-in-first-out altrimenti.
 
 ```js
 assert(

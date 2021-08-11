@@ -11,10 +11,16 @@ To apply the class's styling to the `div` element, add a `class` attribute to th
 
 # --hints--
 
-Test 1
+Your `div` should still render. Make sure you haven't malformed the `<div>` tag.
 
 ```js
+assert($('div').length === 1);
+```
 
+Your `div` element should have the `menu` class.
+
+```js
+assert($('div').attr('class').includes('menu'));
 ```
 
 # --seed--
@@ -40,7 +46,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
         </section>
       </main>
     </div>

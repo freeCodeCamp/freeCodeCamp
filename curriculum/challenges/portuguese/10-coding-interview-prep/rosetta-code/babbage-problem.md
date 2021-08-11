@@ -1,6 +1,6 @@
 ---
 id: 594db4d0dedb4c06a2a4cefd
-title: Babbage problem
+title: Problema de Babbage
 challengeType: 5
 forumTopicId: 302229
 dashedName: babbage-problem
@@ -8,30 +8,30 @@ dashedName: babbage-problem
 
 # --description--
 
-[Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage "wp: Charles_Babbage"), looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:
+[Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage "wp: Charles_Babbage"), olhando para os tipos de problemas que seu mecanismo analítico poderia resolver, deu este exemplo:
 
 <blockquote>
-  What is the smallest positive integer whose square ends in the digits 269,696?
-  <footer style='margin-left: 2em;'>Babbage, letter to Lord Bowden, 1837; see Hollingdale and Tootill, <i>Electronic Computers</i>, second edition, 1970, p. 125.</footer>
+  Qual é o menor inteiro positivo cujo quadrado termina nos dígitos 269.696?
+  <footer style='margin-left: 2em;'>Babbage, em carta ao Lord Bowden, 1837; veja Hollingdale e Tootill, <i>Electronic Computers</i>, segunda edição, 1970, p. 125.</footer>
 </blockquote>
 
-He thought the answer might be 99,736, whose square is 9,947,269,696; but he couldn't be certain.
+Ele acreditava que a resposta seria 99.736, cujo quadrado é 9.947.269.696, mas ele não tinha certeza.
 
-The task is to find out if Babbage had the right answer.
+A tarefa é descobrir se Babbage achou a resposta certa.
 
 # --instructions--
 
-Implement a function to return the lowest integer that satisfies the Babbage problem. If Babbage was right, return Babbage's number.
+Implemente uma função que retorna o menor inteiro que satisfaça o problema de Babbage. Se Babbage estava certo, retorne o número de Babbage.
 
 # --hints--
 
-`babbage` should be a function.
+`babbage` deve ser uma função.
 
 ```js
 assert(typeof babbage === 'function');
 ```
 
-`babbage(99736, 269696)` should not return 99736 (there is a smaller answer).
+`babbage(99736, 269696)` não deve retornar 99736 (existe uma resposta menor).
 
 ```js
 assert.equal(babbage(babbageAns, endDigits), answer);

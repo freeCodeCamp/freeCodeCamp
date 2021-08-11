@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0f8c230bdd2349716
+id: 5f3ef6e07276f782bb46b93d
 title: Part 64
 challengeType: 0
 dashedName: part-64
@@ -7,16 +7,33 @@ dashedName: part-64
 
 # --description--
 
-The `h1` and `h2` elements' text are set by default values of the user's browser.
-
-Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.
+Add a `footer` element below the `main` element, where you can add some additional information.
 
 # --hints--
 
-Test 1
+You should have an opening `<footer>` tag.
 
 ```js
+assert(code.match(/<footer>/i));
+```
 
+You should have a closing `</footer>` tag.
+
+```js
+assert(code.match(/<\/footer>/i));
+```
+
+You should not modify the existing `main` element.
+
+```js
+assert($('main').length === 1);
+```
+
+Your `footer` element should be below your `main` element.
+
+```js
+const footer = $('footer')[0]
+assert(footer.previousElementSibling.tagName === 'MAIN');
 ```
 
 # --seed--
@@ -38,14 +55,15 @@ Test 1
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
+--fcc-editable-region--
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -73,6 +91,7 @@ Test 1
           </article>
         </section>
       </main>
+--fcc-editable-region--
     </div>
   </body>
 <html>
@@ -80,13 +99,17 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
 
---fcc-editable-region--
+h1 {
+  font-size: 40px;
+}
 
---fcc-editable-region--
+h2 {
+  font-size: 30px;
+}
 
 .established {
   font-style: italic;

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616b
-title: Use Default Props
+title: Usa props predeterminadas
 challengeType: 6
 forumTopicId: 301418
 dashedName: use-default-props
@@ -8,15 +8,15 @@ dashedName: use-default-props
 
 # --description--
 
-React also has an option to set default props. You can assign default props to a component as a property on the component itself and React assigns the default prop if necessary. This allows you to specify what a prop value should be if no value is explicitly provided. For example, if you declare `MyComponent.defaultProps = { location: 'San Francisco' }`, you have defined a location prop that's set to the string `San Francisco`, unless you specify otherwise. React assigns default props if props are undefined, but if you pass `null` as the value for a prop, it will remain `null`.
+React también tiene una opción para establecer props predeterminadas. Puedes asignar props predeterminadas a un componente como si fueran una propiedad dentro del propio componente y React asigna la prop predeterminada si es necesario. Esto te permite especificar cuál debe ser el valor de una prop si no se provee un valor específico. Por ejemplo, si declaras `MyComponent.defaultProps = { location: 'San Francisco' }`, has definido una prop de localización que se establece en la cadena `San Francisco`, a menos que especifiques lo contrario. React asigna props predeterminadas si estas no están definidas, pero si pasas el valor `null` como valor para una prop, este permanecerá `null`.
 
 # --instructions--
 
-The code editor shows a `ShoppingCart` component. Define default props on this component which specify a prop `items` with a value of `0`.
+El editor de código muestra un componente `ShoppingCart`. Define props predeterminadas en este componente que especifican una prop `items` con un valor de `0`.
 
 # --hints--
 
-The `ShoppingCart` component should render.
+El componente `ShoppingCart` debe renderizarse.
 
 ```js
 assert(
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-The `ShoppingCart` component should have a default prop of `{ items: 0 }`.
+El componente `ShoppingCart` debe tener una prop predeterminada de `{ items: 0 }`.
 
 ```js
 assert(

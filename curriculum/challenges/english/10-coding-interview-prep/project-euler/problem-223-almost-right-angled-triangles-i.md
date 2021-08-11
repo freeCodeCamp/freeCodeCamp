@@ -8,16 +8,16 @@ dashedName: problem-223-almost-right-angled-triangles-i
 
 # --description--
 
-Let us call an integer sided triangle with sides a ≤ b ≤ c barely acute if the sides satisfy a2 + b2 = c2 + 1.
+Let us call an integer sided triangle with sides $a ≤ b ≤ c$ barely acute if the sides satisfy $a^2 + b^2 = c^2 + 1$.
 
-How many barely acute triangles are there with perimeter ≤ 25,000,000?
+How many barely acute triangles are there with perimeter $≤ 25\\,000\\,000$?
 
 # --hints--
 
-`euler223()` should return 61614848.
+`almostRightAngledTrianglesOne()` should return `61614848`.
 
 ```js
-assert.strictEqual(euler223(), 61614848);
+assert.strictEqual(almostRightAngledTrianglesOne(), 61614848);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler223(), 61614848);
 ## --seed-contents--
 
 ```js
-function euler223() {
+function almostRightAngledTrianglesOne() {
 
   return true;
 }
 
-euler223();
+almostRightAngledTrianglesOne();
 ```
 
 # --solutions--

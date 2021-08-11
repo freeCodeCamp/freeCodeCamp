@@ -8,9 +8,9 @@ dashedName: closest-pair-problem
 
 # --description--
 
-Provide a function to find the closest two points among a set of given points in two dimensions, i.e. to solve the [Closest pair of points problem](https://en.wikipedia.org/wiki/Closest pair of points problem "wp: Closest pair of points problem") in the *planar* case.
+Provide a function to find the closest two points among a set of given points in two dimensions.
 
-The straightforward solution is a O(n<sup>2</sup>) algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
+The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
 
 <pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
 <strong>if</strong> N &#x3C; 2 <strong>then</strong>
@@ -30,7 +30,7 @@ The straightforward solution is a O(n<sup>2</sup>) algorithm (which we can call 
 <strong>endif</strong>
 </pre>
 
-A better algorithm is based on the recursive divide and conquer approach, as explained also at [Wikipedia's Closest pair of points problem](https://en.wikipedia.org/wiki/Closest pair of points problem#Planar_case "wp: Closest pair of points problem#Planar_case"), which is `O(nlog(n))` a pseudo-code could be:
+A better algorithm is based on the recursive divide and conquer approach, which is $O(n\log n)$ a pseudo-code could be:
 
 <pre><strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
@@ -65,16 +65,38 @@ A better algorithm is based on the recursive divide and conquer approach, as exp
 <strong>endif</strong>
 </pre>
 
-For the input, expect the argument to be an array of objects (points) with `x` and `y` members set to numbers. For the output, return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
+For the input, expect the argument to be an array of `Point` objects with `x` and `y` members set to numbers. Return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
 
-**References and further readings:**
+For example `getClosestPair` with input array `points`:
 
-<ul>
-  <li><a href='https://en.wikipedia.org/wiki/Closest pair of points problem' title='wp: Closest pair of points problem' target='_blank'>Closest pair of points problem</a></li>
-  <li><a href='https://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html' target='_blank'>Closest Pair (McGill)</a></li>
-  <li><a href='https://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf' target='_blank'>Closest Pair (UCSB)</a></li>
-  <li><a href='https://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf' target='_blank'>Closest pair (WUStL)</a></li>
- </ul>
+```js
+const points = [
+  new Point(1, 2),
+  new Point(3, 3),
+  new Point(2, 2)
+];
+```
+
+Would return:
+
+```js
+{
+  distance: 1,
+  pair: [
+    {
+      x: 1,
+      y: 2
+    },
+    {
+      x: 2,
+      y: 2
+    }
+  ]
+}
+```
+
+**Note:** Sort the `pair` array by their `x` values in incrementing order.
+
 
 # --hints--
 
@@ -84,13 +106,13 @@ For the input, expect the argument to be an array of objects (points) with `x` a
 assert(typeof getClosestPair === 'function');
 ```
 
-Distance should be the following.
+`getClosestPair(points1).distance` should be `0.0894096443343775`.
 
 ```js
 assert.equal(getClosestPair(points1).distance, answer1.distance);
 ```
 
-Points should be the following.
+`getClosestPair(points1).pair` should be `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`.
 
 ```js
 assert.deepEqual(
@@ -99,18 +121,33 @@ assert.deepEqual(
 );
 ```
 
-Distance should be the following.
+`getClosestPair(points2).distance` should be `65.06919393998976`.
 
 ```js
 assert.equal(getClosestPair(points2).distance, answer2.distance);
 ```
 
-Points should be the following.
+`getClosestPair(points2).pair` should be `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]`.
 
 ```js
 assert.deepEqual(
   JSON.parse(JSON.stringify(getClosestPair(points2))).pair,
   answer2.pair
+);
+```
+
+`getClosestPair(points3).distance` should be `6754.625082119658`.
+
+```js
+assert.equal(getClosestPair(points3).distance, answer3.distance);
+```
+
+`getClosestPair(points3).pair` should be `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`.
+
+```js
+assert.deepEqual(
+  JSON.parse(JSON.stringify(getClosestPair(points3))).pair,
+  answer3.pair
 );
 ```
 
@@ -132,14 +169,6 @@ const points1 = [
     new Point(1.45428,  0.087596)
 ];
 
-const points2 = [
-  new Point(37100, 13118),
-  new Point(37134, 1963),
-  new Point(37181, 2008),
-  new Point(37276, 21611),
-  new Point(37307, 9320)
-];
-
 const answer1 = {
   distance: 0.0894096443343775,
   pair: [
@@ -153,6 +182,14 @@ const answer1 = {
     }
   ]
 };
+
+const points2 = [
+  new Point(37100, 13118),
+  new Point(37134, 1963),
+  new Point(37181, 2008),
+  new Point(37276, 21611),
+  new Point(37307, 9320)
+];
 
 const answer2 = {
   distance: 65.06919393998976,
@@ -168,8 +205,8 @@ const answer2 = {
   ]
 };
 
-const benchmarkPoints = [
-  new Point(16909, 54699),
+const points3 = [
+  new Point(16910, 54699),
   new Point(14773, 61107),
   new Point(95547, 45344),
   new Point(95951, 17573),
@@ -196,7 +233,7 @@ const benchmarkPoints = [
   new Point(70721, 66707),
   new Point(31863, 9837),
   new Point(49358, 30795),
-  new Point(13041, 39745),
+  new Point(13041, 39744),
   new Point(59635, 26523),
   new Point(25859, 1292),
   new Point(1551, 53890),
@@ -220,6 +257,20 @@ const benchmarkPoints = [
   new Point(51090, 52158),
   new Point(48953, 58567)
 ];
+
+const answer3 = {
+  distance: 6754.625082119658,
+  pair: [
+    {
+      x: 46817,
+      y: 64975
+    },
+    {
+      x: 48953,
+      y: 58567
+    }
+  ]
+}
 ```
 
 ## --seed-contents--
@@ -347,7 +398,7 @@ const closestPair = function _closestPair(Px, Py) {
 
     return {
         distance: minDelta,
-        pair: closestPair
+        pair: closestPair.sort((pointA, pointB) => pointA.x - pointB.x)
     };
 };
 

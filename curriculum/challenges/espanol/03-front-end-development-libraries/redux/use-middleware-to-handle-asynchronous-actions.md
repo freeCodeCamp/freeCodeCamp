@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036156
-title: Use Middleware to Handle Asynchronous Actions
+title: Usa middleware para manejar acciones asíncronas
 challengeType: 6
 forumTopicId: 301451
 dashedName: use-middleware-to-handle-asynchronous-actions
@@ -8,39 +8,39 @@ dashedName: use-middleware-to-handle-asynchronous-actions
 
 # --description--
 
-So far these challenges have avoided discussing asynchronous actions, but they are an unavoidable part of web development. At some point you'll need to call asynchronous endpoints in your Redux app, so how do you handle these types of requests? Redux provides middleware designed specifically for this purpose, called Redux Thunk middleware. Here's a brief description how to use this with Redux.
+Hasta ahora hemos evitado hablar de las acciones asíncronas, pero son una parte inevitable del desarrollo web. En algún momento necesitarás llamar a endpoints asíncronos en tu aplicación Redux, así que ¿cómo manejas este tipo de peticiones? Redux proporciona un middleware diseñado específicamente para este propósito, llamado Redux Thunk middleware. Aquí hay una breve descripción de cómo usar esto con Redux.
 
-To include Redux Thunk middleware, you pass it as an argument to `Redux.applyMiddleware()`. This statement is then provided as a second optional parameter to the `createStore()` function. Take a look at the code at the bottom of the editor to see this. Then, to create an asynchronous action, you return a function in the action creator that takes `dispatch` as an argument. Within this function, you can dispatch actions and perform asynchronous requests.
+Para incluir el Redux Thunk middleware, lo pasas como argumento a `Redux.applyMiddleware()`. Esta declaración se proporciona entonces como un segundo parámetro opcional a la función `createStore()`. Echa un vistazo al código en la parte inferior del editor para ver esto. Entonces, para crear una acción asíncrona, se devuelve una función en el creador de acción que toma `dispatch` como argumento. Dentro de esta función, se pueden enviar acciones y realizar peticiones asíncronas.
 
-In this example, an asynchronous request is simulated with a `setTimeout()` call. It's common to dispatch an action before initiating any asynchronous behavior so that your application state knows that some data is being requested (this state could display a loading icon, for instance). Then, once you receive the data, you dispatch another action which carries the data as a payload along with information that the action is completed.
+En este ejemplo, se simula una petición asíncrona con una llamada `setTimeout()`. Es común enviar una acción antes de iniciar cualquier comportamiento asíncrono para que el estado de tu aplicación sepa que se están solicitando algunos datos (este estado podría mostrar un icono de carga, por ejemplo). Luego, una vez que recibes los datos, envía otra acción que lleva los datos como carga útil junto con la información de que la acción se ha completado.
 
-Remember that you're passing `dispatch` as a parameter to this special action creator. This is what you'll use to dispatch your actions, you simply pass the action directly to dispatch and the middleware takes care of the rest.
+Recuerda que estás pasando `dispatch` como parámetro a este creador de acciones especiales. Esto es lo que usarás para enviar tus acciones, simplemente pasas la acción directamente a dispatch y el middleware se encarga del resto.
 
 # --instructions--
 
-Write both dispatches in the `handleAsync()` action creator. Dispatch `requestingData()` before the `setTimeout()` (the simulated API call). Then, after you receive the (pretend) data, dispatch the `receivedData()` action, passing in this data. Now you know how to handle asynchronous actions in Redux. Everything else continues to behave as before.
+Escribe ambos envíos en el creador de acción `handleAsync()`. Envía `requestingData()` antes del `setTimeout()` (la llamada a la API simulada). A continuación, después de recibir los datos (fingidos), envía la acción `receivedData()`, pasando estos datos. Ahora ya sabes cómo manejar las acciones asíncronas en Redux. Todo lo demás sigue comportándose como antes.
 
 # --hints--
 
-The `requestingData` action creator should return an object of type equal to the value of `REQUESTING_DATA`.
+El creador de acción `requestingData` debe devolver un objeto de tipo igual al valor de `REQUESTING_DATA`.
 
 ```js
 assert(requestingData().type === REQUESTING_DATA);
 ```
 
-The `receivedData` action creator should return an object of type equal to the value of `RECEIVED_DATA`.
+El creador de acción `receivedData` debe devolver un objeto de tipo igual al valor de `RECEIVED_DATA`.
 
 ```js
 assert(receivedData('data').type === RECEIVED_DATA);
 ```
 
-`asyncDataReducer` should be a function.
+`asyncDataReducer` debe ser una función.
 
 ```js
 assert(typeof asyncDataReducer === 'function');
 ```
 
-Dispatching the requestingData action creator should update the store `state` property of fetching to `true`.
+Enviar el creador de acción `requestingData` debe actualizar la propiedad store `state` de fetching a `true`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Dispatching `handleAsync` should dispatch the data request action and then dispatch the received data action after a delay.
+El envío de `handleAsync` debe enviar la acción de solicitud de datos y luego enviar la acción de datos recibidos después de un retraso.
 
 ```js
 assert(

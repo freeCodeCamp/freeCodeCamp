@@ -11,15 +11,34 @@ Nest a `div` with a class of `bb1` in the background buildings container. Give i
 
 # --hints--
 
-test-text
+You should create a new `div` element.
 
 ```js
-const bb1 = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0];
-assert(
-  $('.background-buildings')[0].contains($('div.bb1')[0]) &&
-    /width\s*:\s*10%\s*(;|})/g.test(bb1) &&
-    /height\s*:\s*70%\s*(;|})/g.test(bb1)
-);
+assert.equal(document.querySelectorAll('div').length, 2);
+```
+
+You should give the new `div` a class of `bb1`.
+
+```js
+assert.exists(document.querySelector('div.bb1'));
+```
+
+You should use a `.bb1` class selector to style the element.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('.bb1'));
+```
+
+You should give the `.bb1` element a `width` of `10%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1')?.width, '10%');
+```
+
+You should give the `.bb1` element a `height` of `70%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.bb1')?.height, '70%');
 ```
 
 # --seed--
@@ -31,66 +50,33 @@ assert(
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
+--fcc-editable-region--
     <div class="background-buildings"></div>
+--fcc-editable-region--
   </body>
 </html>
 ```
 
-# --solutions--
+```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-buildings {
-        width: 100%;
-        height: 100%;
-      }
-
-      .bb1 {
-        width: 10%;
-        height: 70%;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="background-buildings">
-      <div class="bb1"></div>
-    </div>
-  </body>
-</html>
+.background-buildings {
+  width: 100%;
+  height: 100%;
+}
+    
 ```
+

@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`insertionSort` should return an array that is unchanged except for order.
+`insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` should return an array that is unchanged except for order.
 
 ```js
 assert.sameMembers(
@@ -73,6 +73,12 @@ assert.sameMembers(
   ]),
   [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]
 );
+```
+
+`insertionSort([5, 4, 33, 2, 8])` should return `[2, 4, 5, 8, 33]`.
+
+```js
+assert.deepEqual(insertionSort([5, 4, 33, 2, 8]), [2, 4, 5, 8, 33])
 ```
 
 `insertionSort` should not use the built-in `.sort()` method.
@@ -109,8 +115,6 @@ function insertionSort(array) {
   return array;
   // Only change code above this line
 }
-
-insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

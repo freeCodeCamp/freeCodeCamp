@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da4
-title: 'Reinforcement Learning With Q-Learning: Part 2'
+title: '使用 Q-Learning 進行強化學習：第 2 部分'
 challengeType: 11
 videoId: DX7hJuaUZ7o
 dashedName: reinforcement-learning-with-q-learning-part-2
@@ -10,15 +10,15 @@ dashedName: reinforcement-learning-with-q-learning-part-2
 
 ## --text--
 
-What can happen if the agent does not have a good balance of taking random actions and using learned actions?
+如果智能體在採取隨機動作和使用學習動作之間沒有很好的平衡，會發生什麼？
 
 ## --answers--
 
-The agent will always try to minimize its reward for the current state/action, leading to local minima.
+智能體將始終嘗試將其對當前狀態/動作的獎勵最小化，從而導致局部最小值。
 
 ---
 
-The agent will always try to maximize its reward for the current state/action, leading to local maxima.
+智能體將始終嘗試將其對當前狀態/動作的獎勵最大化，從而導致局部最大值。
 
 ## --video-solution--
 

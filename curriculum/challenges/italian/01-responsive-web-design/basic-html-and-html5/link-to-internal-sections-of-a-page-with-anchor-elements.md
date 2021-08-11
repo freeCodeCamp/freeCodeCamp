@@ -51,7 +51,7 @@ Il tag `a` dovrebbe avere un attributo `href` impostato a "#footer".
 assert($('a').eq(0).attr('href') == '#footer');
 ```
 
-Il tag `a` non dovrebbe avere un attributo `target`
+Il tag `a` non dovrebbe avere un attributo `target`.
 
 ```js
 assert(

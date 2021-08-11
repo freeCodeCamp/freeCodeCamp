@@ -1,6 +1,6 @@
 ---
 id: 587d8252367417b2b2512c67
-title: Add Elements at a Specific Index in a Linked List
+title: Adicionar elementos em um índice específico em uma lista encadeada
 challengeType: 1
 forumTopicId: 301619
 dashedName: add-elements-at-a-specific-index-in-a-linked-list
@@ -8,15 +8,15 @@ dashedName: add-elements-at-a-specific-index-in-a-linked-list
 
 # --description--
 
-Let's create a addAt(index,element) method that adds an element at a given index. Just like how we remove elements at a given index, we need to keep track of the currentIndex as we traverse the linked list. When the currentIndex matches the given index, we would need to reassign the previous node's next property to reference the new added node. And the new node should reference the next node in the currentIndex. Returning to the conga line example, a new person wants to join the line, but he wants to join in the middle. You are in the middle of the line, so you take your hands off of the person ahead of you. The new person walks over and puts his hands on the person you once had hands on, and you now have your hands on the new person.
+Vamos criar um método addAt(índice, elemento) que adiciona um elemento em um determinado índice. Da mesma forma como removemos os elementos em um determinado índice, precisamos saber qual é o currentIndex enquanto percorremos a lista encadeada. Quando o currentIndex corresponde ao índice dado, precisaremos reatribuir a propriedade next do nó anterior para fazer referência ao novo nó adicionado. E o novo nó deve fazer referência ao próximo nó de currentIndex. Retornando ao exemplo da fila de dançarinos de conga, uma nova pessoa quer se juntar à fila, mas ela quer entrar no meio dela. Você está no meio da fila. Então, tira as mãos da pessoa à sua frente. A nova pessoa entra na fila, coloca as mãos na pessoa que estava à sua frente e você coloca suas mãos nessa pessoa nova.
 
 # --instructions--
 
-Create an `addAt(index,element)` method that adds an element at a given index. Return false if an element could not be added. **Note:** Remember to check if the given index is a negative or is longer than the length of the linked list.
+Crie um método `addAt(index,element)` que adiciona um elemento em um determinado índice. Retorne false se um elemento não puder ser adicionado. **Observação:** lembre-se de verificar se o índice dado é negativo ou é maior que o tamanho da lista encadeada.
 
 # --hints--
 
-Your `addAt` method should reassign `head` to the new node when the given index is 0.
+O método `addAt` deve reatribuir `head` com o novo nó quando o índice dado for 0.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-Your `addAt` method should increase the length of the linked list by one for each new node added to the linked list.
+O método `addAt` deve aumentar o tamanho da lista encadeada em um para cada novo nó adicionado à lista encadeada.
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-Your `addAt` method should return `false` if a node was unable to be added.
+O método `addAt` deve retornar `false` se um nó não puder ser adicionado.
 
 ```js
 assert(

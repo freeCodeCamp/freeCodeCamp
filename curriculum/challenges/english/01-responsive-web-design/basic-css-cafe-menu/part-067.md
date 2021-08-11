@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0b431cc215bb16f55
+id: 5f3ef6e01f288a026d709587
 title: Part 67
 challengeType: 0
 dashedName: part-67
@@ -7,14 +7,36 @@ dashedName: part-67
 
 # --description--
 
-Add a second `p` element below the one with the link and give it the text `123 freeCodeCamp Drive`.
+You can use an `hr` element to display a divider between sections of different content.
+
+First, add an `hr` element between the first `header` element and the `main` element. Note that `hr` elements are self closing.
 
 # --hints--
 
-Test 1
+You should add an `hr` element. `hr` elements are self-closing.
 
 ```js
+assert(code.match(/<hr\s?\/?>/i));
+assert(!code.match(/<\/hr>/i));
+```
 
+You should not change your existing `header` element.
+
+```js
+assert($('header').length === 1);
+```
+
+You should not change your exiting `main` element.
+
+```js
+assert($('main').length === 1);
+```
+
+Your `hr` element should be between your `header` element and your `main` element.
+
+```js
+assert($('hr')[0].previousElementSibling.tagName === 'HEADER');
+assert($('hr')[0].nextElementSibling.tagName === 'MAIN');
 ```
 
 # --seed--
@@ -32,18 +54,19 @@ Test 1
   </head>
   <body>
     <div class="menu">
+--fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -71,12 +94,12 @@ Test 1
           </article>
         </section>
       </main>
-      <footer>
 --fcc-editable-region--
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
---fcc-editable-region--
+        <p>123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>
@@ -85,7 +108,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
 

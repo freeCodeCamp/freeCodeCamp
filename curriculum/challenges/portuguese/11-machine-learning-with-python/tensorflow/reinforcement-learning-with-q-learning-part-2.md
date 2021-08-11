@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da4
-title: 'Reinforcement Learning With Q-Learning: Part 2'
+title: 'Aprendizagem de reforço com Q-Learning: Parte 2'
 challengeType: 11
 videoId: DX7hJuaUZ7o
 dashedName: reinforcement-learning-with-q-learning-part-2
@@ -10,15 +10,15 @@ dashedName: reinforcement-learning-with-q-learning-part-2
 
 ## --text--
 
-What can happen if the agent does not have a good balance of taking random actions and using learned actions?
+O que pode acontecer se o agente não tiver um bom equilíbrio entre realizar ações aleatórias e usar ações aprendidas?
 
 ## --answers--
 
-The agent will always try to minimize its reward for the current state/action, leading to local minima.
+O agente sempre tentará minimizar sua recompensa pelo estado/ação atual, levando ao mínimo local.
 
 ---
 
-The agent will always try to maximize its reward for the current state/action, leading to local maxima.
+O agente sempre tentará maximizar sua recompensa pelo estado/ação atual, levando ao máximo local.
 
 ## --video-solution--
 

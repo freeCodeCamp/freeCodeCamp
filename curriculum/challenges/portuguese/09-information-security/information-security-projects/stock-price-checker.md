@@ -1,6 +1,6 @@
 ---
 id: 587d824a367417b2b2512c44
-title: Stock Price Checker
+title: Verificador de preço de ações
 challengeType: 4
 forumTopicId: 301572
 dashedName: stock-price-checker
@@ -8,36 +8,36 @@ dashedName: stock-price-checker
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://stock-price-checker.freecodecamp.rocks/>.
+Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <https://stock-price-checker.freecodecamp.rocks/>.
 
-Since all reliable stock price APIs require an API key, we've built a workaround. Use <https://stock-price-checker-proxy.freecodecamp.rocks/> to get up-to-date stock price information without needing to sign up for your own key.
+Como todas as APIs de preço de ações confiáveis requerem uma chave de API, criamos uma solução alternativa. Use <https://stock-price-checker-proxy.freecodecamp.rocks/> para obter informações atualizadas sobre o preço das ações sem precisar se inscrever para ter sua própria chave.
 
-Working on this project will involve you writing your code using one of the following methods:
+Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-stockchecker/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-project-stockchecker/) e complete o projeto localmente.
+-   Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker) para completar o projeto.
+-   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
+Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 
 # --instructions--
 
-1.  SET `NODE_ENV` to `test` without quotes and set `DB` to your MongoDB connection string
-2.  Complete the project in `routes/api.js` or by creating a handler/controller
-3.  You will add any security features to `server.js`
-4.  You will create all of the functional tests in `tests/2_functional-tests.js`
+1.  Defina `NODE_ENV` como `test` sem aspas e `DB` como sua string de conexão ao MongoDB
+2.  Complete o projeto em `routes/api.js` ou criando um manipulador/controlador
+3.  Você adicionará todas as funcionalidades de segurança ao `server.js`
+4.  Você criará todos os testes funcionais em `tests/2_functional-tests.js`
 
-Write the following tests in `tests/2_functional-tests.js`:
+Escreva os testes a seguir em `tests/2_functional-tests.js`:
 
--   Viewing one stock: GET request to `/api/stock-prices/`
--   Viewing one stock and liking it: GET request to `/api/stock-prices/`
--   Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
--   Viewing two stocks: GET request to `/api/stock-prices/`
--   Viewing two stocks and liking them: GET request to `/api/stock-prices/`
+-   Visualizar uma ação: faça a solicitação de GET para `/api/stock-prices/`
+-   Visualizar uma ação e dizer que gostou dela: faça a solicitação de GET para `/api/stock-prices/`
+-   Visualizar a mesma ação e dizer que gostou dela novamente: faça a solicitação de GET para `/api/stock-prices/`
+-   Visualizar duas ações: faça a solicitação de GET para `/api/stock-prices/`
+-   Visualizar duas ações e dizer que gostou delas: faça a solicitação de GET para `/api/stock-prices/`
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Você pode fornecer seu próprio projeto, não o exemplo de URL.
 
 ```js
 (getUserInput) => {
@@ -47,7 +47,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-You should set the content security policies to only allow loading of scripts and CSS from your server.
+Você deve definir as políticas de segurança do conteúdo para permitir apenas o carregamento de scripts e CSS do seu servidor.
 
 ```js
 async (getUserInput) => {
@@ -62,7 +62,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ stock symbol to a `stock` query parameter. The returned object will contain a property named `stockData`.
+Você pode enviar uma solicitação de `GET` para `/api/stock-prices`, passando um símbolo da ação na NASDAQ para um parâmetro de consulta de `stock`. O objeto retornado conterá uma propriedade chamada `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -74,7 +74,7 @@ async (getUserInput) => {
 };
 ```
 
-The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
+A propriedade `stockData` inclui o símbolo de `stock` como uma string, o `price` como um número e `likes` como um número.
 
 ```js
 async (getUserInput) => {
@@ -89,13 +89,13 @@ async (getUserInput) => {
 };
 ```
 
-You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
+Você também pode passar adiante um campo `like` como `true` (booleano) para ter sua curtida adicionada ao(s) estoque(s). Apenas 1 curtida por IP deve ser aceita.
 
 ```js
 
 ```
 
-If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
+Se você passar 2 ações, o valor retornado será um array com informações sobre as duas. Em vez de `likes`, será exibido `rel_likes` (a diferença entre curtidas entre ambas as ações) para os dois objetos de `stockData`.
 
 ```js
 async (getUserInput) => {
@@ -110,7 +110,7 @@ async (getUserInput) => {
 };
 ```
 
-All 5 functional tests are complete and passing.
+Todos os 5 testes funcionais foram concluídos e deram aprovação.
 
 ```js
 async (getUserInput) => {

@@ -96,6 +96,7 @@
     "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio.",
     "data": "To see what data we hold on your account, click the \"Download your data\" button below",
     "disabled": "Your certifications will be disabled, if set to private.",
+    "private-name": "Your name will not appear on your certifications, if this is set to private.",
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
     "for": "Account Settings for {{username}}",
     "username": {
@@ -285,7 +286,8 @@
       "preview": "Preview"
     },
     "help-translate": "We are still translating the following certifications.",
-    "help-translate-link": "Help us translate."
+    "help-translate-link": "Help us translate.",
+    "coder-survey": "<0>Take the 2021 New Coder Survey</0> (it takes about 10 minutes – do it for science)"
   },
   "donate": {
     "title": "Support our nonprofit",
@@ -305,6 +307,8 @@
     "confirm-2": "Confirm your one-time donation of ${{usd}}",
     "confirm-3": "Confirm your donation of ${{usd}} / month",
     "confirm-4": "Confirm your donation of ${{usd}} / year",
+    "wallet-label": "${{usd}} donation to freeCodeCamp",
+    "wallet-label-1": "${{usd}} / month donation to freeCodeCamp",
     "your-donation": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world.",
     "your-donation-2": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each month.",
     "your-donation-3": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each year.",
@@ -395,6 +399,7 @@
     "analytics": "A bar chart and line graph",
     "shield": "A shield with a checkmark",
     "tensorflow": "Tensorflow icon",
+    "database": "Database icon",
     "algorithm": "Branching nodes",
     "magnifier": "magnifier"
   },
@@ -441,6 +446,7 @@
     "cert-claim-success": "@{{username}}, you have successfully claimed the {{name}} Certification! Congratulations on behalf of the freeCodeCamp.org team!",
     "wrong-name": "Something went wrong with the verification of {{name}}, please try again. If you continue to receive this error, you can send a message to support@freeCodeCamp.org to get help.",
     "error-claiming": "Error claiming {{certName}}",
+    "refresh-needed": "You can only use the PaymentRequest button once. Refresh the page to start over.",
     "username-not-found": "We could not find a user with the username \"{{username}}\"",
     "add-name": "This user needs to add their name to their account in order for others to be able to view their certification.",
     "not-eligible": "This user is not eligible for freeCodeCamp.org certifications at this time.",

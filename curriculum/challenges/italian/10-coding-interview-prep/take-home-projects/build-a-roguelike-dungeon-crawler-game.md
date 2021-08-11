@@ -1,6 +1,6 @@
 ---
 id: bd7153d8c242eddfaeb5bd13
-title: Build a Roguelike Dungeon Crawler Game
+title: Costruisci un gioco di genere Rogue Dungeon Crawler
 challengeType: 3
 forumTopicId: 302355
 dashedName: build-a-roguelike-dungeon-crawler-game
@@ -8,31 +8,31 @@ dashedName: build-a-roguelike-dungeon-crawler-game
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/apLXEJ/>.
+**Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: [https://codepen.io/freeCodeCamp/full/apLXEJ](https://codepen.io/freeCodeCamp/full/apLXEJ/).
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
-**User Story:** I have health, a level, and a weapon. I can pick up a better weapon. I can pick up health items.
+**User Story:** Ho una salute, un livello, e un'arma. Posso raccogliere un'arma migliore. Posso raccogliere oggetti di cura.
 
-**User Story:** All the items and enemies on the map are arranged at random.
+**User Story:** Tutti gli oggetti e i nemici sulla mappa sono sistemati casualmente.
 
-**User Story:** I can move throughout a map, discovering items.
+**User Story:** Posso muovermi attraverso una mappa, scoprendo oggetti.
 
-**User Story:** I can move anywhere within the map's boundaries, but I can't move through an enemy until I've beaten it.
+**User Story:** Posso muovermi ovunque nei confini della mappa, ma non posso muovermi attraverso un nemico prima di averlo sconfitto.
 
-**User Story:** Much of the map is hidden. When I take a step, all spaces that are within a certain number of spaces from me are revealed.
+**User Story:** La maggior parte della mappa è nascosta. Quando faccio un passo, tutti gli spazi che sono entro un certo numero di spazi da me sono rivelati.
 
-**User Story:** When I beat an enemy, the enemy goes away and I get XP, which eventually increases my level.
+**User Story:** Quando sconfiggo un nemico, il nemico se ne va e io ottengo XP (experience), eventualmente aumentando il mio livello.
 
-**User Story:** When I fight an enemy, we take turns damaging each other until one of us loses. I do damage based off of my level and my weapon. The enemy does damage based off of its level. Damage is somewhat random within a range.
+**User Story:** Quando combatto con un nemico, facciamo a turno ad attaccarci finché uno dei due non perde. Faccio danni basati sul mio livello e la mia arma. Il nemico fa dei danni basati sul suo livello. Il danno è casuale all'interno di un intervallo.
 
-**User Story:** When I find and beat the boss, I win.
+**User Story:** Quando trovo e sconfiggo il boss, vinco.
 
-**User Story:** The game should be challenging, but theoretically winnable.
+**User Story:** Il gioco deve essere sfidante, ma teoricamente battibile.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando hai finito, includi un link al tuo progetto su CodePen e clicca sul pulsante "Ho completato questa sfida".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul forum [freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f090b6c005b0e76f067
-title: Python Dictionaries
+title: Dizionari in Python
 challengeType: 11
 videoId: dnzvfimrRMg
 dashedName: python-dictionaries
@@ -10,7 +10,7 @@ dashedName: python-dictionaries
 
 ## --text--
 
-What does dict equal after running this code?:
+Quanto vale dict dopo l'esecuzione di questo codice?
 
 ```python
 dict = {"Fri": 20, "Thu": 6, "Sat": 1}

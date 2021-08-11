@@ -1,5 +1,5 @@
 ---
-id: 5f46e36e745ead58487aabf2
+id: 5f46e7a4750dd05b5a673920
 title: Part 88
 challengeType: 0
 dashedName: part-88
@@ -7,16 +7,26 @@ dashedName: part-88
 
 # --description--
 
-Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
-
-To decrease the default margin space below the address `p` element, create a class selector named `address` and use the value `5px` for the `margin-bottom` property.
+Now apply the `address` class to the `p` element containing the address.
 
 # --hints--
 
-Test 1
+You should apply the `class="address"` attribute.
 
 ```js
+assert(code.match(/class=('|")address\1/i));
+```
 
+Your `.address` element should be your `p` element.
+
+```js
+assert($('.address')[0].tagName === 'P');
+```
+
+Your `.address` element should have the text `123 freeCodeCamp Drive`.
+
+```js
+assert($('.address')[0].innerText.match(/123 Free Code Camp Drive/i));
 ```
 
 # --seed--
@@ -41,12 +51,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -75,12 +85,14 @@ Test 1
         </section>
       </main>
       <hr class="bottom-line">
+--fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
+--fcc-editable-region--
     </div>
   </body>
 <html>
@@ -88,7 +100,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -157,9 +169,9 @@ footer {
   font-size: 14px;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+.address {
+  margin-bottom: 5px;
+}
 
 a {
   color: black;
@@ -177,4 +189,3 @@ a:active {
   color: brown;
 }
 ```
-

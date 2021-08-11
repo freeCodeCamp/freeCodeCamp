@@ -1,6 +1,6 @@
 ---
 id: 587d8256367417b2b2512c78
-title: Adjacency Matrix
+title: Matriz de adjacência
 challengeType: 1
 forumTopicId: 301621
 dashedName: adjacency-matrix
@@ -8,9 +8,9 @@ dashedName: adjacency-matrix
 
 # --description--
 
-Another way to represent a graph is to put it in an <dfn>adjacency matrix</dfn>. An <dfn>adjacency matrix</dfn> is a two-dimensional (2D) array where each nested array has the same number of elements as the outer array. In other words, it is a matrix or grid of numbers, where the numbers represent the edges.
+Outra forma de representar um grafo é colocá-lo em uma <dfn>matriz de adjacência</dfn>. Um <dfn>matriz de adjacência</dfn> é um array bidimensional (2D) onde cada array aninhado tem o mesmo número de elementos que o array externo. Em outras palavras, é uma matriz ou grade de números, em que os números representam as arestas.
 
-**Note**: The numbers to the top and left of the matrix are just labels for the nodes. Inside the matrix, ones mean there exists an edge between the vertices (nodes) representing the row and column. Finally, zeros mean there is no edge or relationship.
+**Observação**: os números na parte superior e à esquerda da matriz são apenas etiquetas para os nós. Dentro da matriz, os 1s significam que existe uma aresta entre os vértices (nós) representando a linha e a coluna. Por fim, os zeros significam que não há aresta nem relação.
 
 <pre>
     1 2 3
@@ -20,7 +20,7 @@ Another way to represent a graph is to put it in an <dfn>adjacency matrix</dfn>.
 3 | 1 0 0
 </pre>
 
-Above is a very simple, undirected graph where you have three nodes, where the first node is connected to the second and third node. Below is a JavaScript implementation of the same thing.
+Acima vemos um grafo muito simples e não direcionado onde você tem três nós, onde o primeiro nó está conectado ao segundo e ao terceiro nó. Abaixo, vemos uma implementação em JavaScript da mesma coisa.
 
 ```js
 var adjMat = [
@@ -30,7 +30,7 @@ var adjMat = [
 ];
 ```
 
-Unlike an adjacency list, each "row" of the matrix has to have the same number of elements as nodes in the graph. Here we have a three by three matrix, which means we have three nodes in our graph. A directed graph would look similar. Below is a graph where the first node has an edge pointing toward the second node, and then the second node has an edge pointing to the third node.
+Diferente do que ocorre em uma lista de adjacência, cada "linha" da matriz deve ter o mesmo número de elementos que os nós do grafo. Aqui temos uma matriz três por três, o que significa que temos três nós no nosso gráfico. Um grafo direcionado teria a mesma aparência. Abaixo, vemos um grafo onde o primeiro nó tem uma aresta apontando para o segundo nó e o segundo nó tem uma aresta apontando para o terceiro nó.
 
 ```js
 var adjMatDirected = [
@@ -40,15 +40,15 @@ var adjMatDirected = [
 ];
 ```
 
-Graphs can also have <dfn>weights</dfn> on their edges. So far, we have <dfn>unweighted</dfn> edges where just the presence and lack of edge is binary (`0` or `1`). You can have different weights depending on your application.
+Grafos também podem ter <dfn>pesos</dfn> nas arestas. Até agora, tivemos arestas <dfn>sem peso</dfn>, onde apenas a presença e a falta de aresta é binária (`0` ou `1`). Você pode ter pesos diferentes, dependendo da aplicação.
 
 # --instructions--
 
-Create an adjacency matrix of an undirected graph with five nodes. This matrix should be in a multi-dimensional array. These five nodes have relationships between the first and fourth node, the first and third node, the third and fifth node, and the fourth and fifth node. All edge weights are one.
+Crie uma matriz de adjacência de um grafo não direcionado com cinco nós. Esta matriz deve estar em um array multidimensional. Estes cinco nós têm relações entre o primeiro e o quarto nó, entre o primeiro e o terceiro nó, entre o terceiro e o quinto nó, e entre o quarto e o quinto nó. O peso de todas as arestas é um.
 
 # --hints--
 
-`undirectedAdjList` should only contain five nodes.
+`undirectedAdjList` deve conter apenas cinco nós.
 
 ```js
 assert(
@@ -63,25 +63,25 @@ assert(
 );
 ```
 
-There should be an edge between the first and fourth node.
+Deve haver uma aresta entre o primeiro e o quarto nó.
 
 ```js
 assert(adjMatUndirected[0][3] === 1 && adjMatUndirected[3][0] === 1);
 ```
 
-There should be an edge between the first and third node.
+Deve haver uma aresta entre o primeiro e o terceiro nó.
 
 ```js
 assert(adjMatUndirected[0][2] === 1 && adjMatUndirected[2][0] === 1);
 ```
 
-There should be an edge between the third and fifth node.
+Deve haver uma aresta entre o terceiro e o quinto nó.
 
 ```js
 assert(adjMatUndirected[2][4] === 1 && adjMatUndirected[4][2] === 1);
 ```
 
-There should be an edge between the fourth and fifth node.
+Deve haver uma aresta entre o quarto e o quinto nó.
 
 ```js
 assert(adjMatUndirected[3][4] === 1 && adjMatUndirected[4][3] === 1);

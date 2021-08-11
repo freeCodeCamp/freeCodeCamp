@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8f
-title: 'Core Learning Algorithms: Clustering'
+title: 'Algoritmos de aprendizagem principais: agrupamento em clusters'
 challengeType: 11
 videoId: 8sqIaHc9Cz4
 dashedName: core-learning-algorithms-clustering
@@ -10,27 +10,27 @@ dashedName: core-learning-algorithms-clustering
 
 ## --text--
 
-Which of the following steps is **not** part of the K-Means algorithm?
+Qual das seguintes etapas **não** faz parte do algoritmo de médias-K?
 
 ## --answers--
 
-Randomly pick K points to place K centeroids.
+Escolher aleatoriamente K pontos para colocar centroides K.
 
 ---
 
-Assign each K point to the closest K centeroid.
+Atribuir cada ponto K para o centroide K mais próximo.
 
 ---
 
-Move each K centeroid into the middle of all of their data points.
+Mover cada centroide K para o meio de todos os seus pontos de dados.
 
 ---
 
-Shuffle the K points so they're redistributed randomly.
+Embaralhe os pontos K para que sejam redistribuídos aleatoriamente.
 
 ---
 
-Reassign each K point to the closest K centeroid.
+Reatribua cada ponto K para o centeroide K mais próximo.
 
 ## --video-solution--
 

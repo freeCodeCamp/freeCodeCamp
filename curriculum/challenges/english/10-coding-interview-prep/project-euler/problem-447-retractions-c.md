@@ -8,20 +8,26 @@ dashedName: problem-447-retractions-c
 
 # --description--
 
-For every integer n>1, the family of functions fn,a,b is defined
+For every integer $n > 1$, the family of functions $f_{n, a, b}$ is defined by:
 
-by fn,a,b(x)≡ax+b mod n for a,b,x integer and 0
+$f_{n, a, b}(x) ≡ ax + b\bmod n$ for $a, b, x$ integer and $0 \lt a \lt n$, $0 \le b \lt n$, $0 \le x \lt n$.
 
-F(N)=∑R(n) for 2≤n≤N. F(107)≡638042271 (mod 1 000 000 007).
+We will call $f_{n, a, b}$ a retraction if $f_{n, a, b}(f_{n, a, b}(x)) \equiv f_{n, a, b}(x)\bmod n$ for every $0 \le x \lt n$.
 
-Find F(1014) (mod 1 000 000 007).
+Let $R(n)$ be the number of retractions for $n$.
+
+$F(N) = \displaystyle\sum_{n = 2}^N R(n)$.
+
+$F({10}^7) ≡ 638\\,042\\,271\bmod 1\\,000\\,000\\,007$.
+
+Find $F({10}^{14})$. Give your answer modulo $1\\,000\\,000\\,007$.
 
 # --hints--
 
-`euler447()` should return 530553372.
+`retractionsC()` should return `530553372`.
 
 ```js
-assert.strictEqual(euler447(), 530553372);
+assert.strictEqual(retractionsC(), 530553372);
 ```
 
 # --seed--
@@ -29,12 +35,12 @@ assert.strictEqual(euler447(), 530553372);
 ## --seed-contents--
 
 ```js
-function euler447() {
+function retractionsC() {
 
   return true;
 }
 
-euler447();
+retractionsC();
 ```
 
 # --solutions--

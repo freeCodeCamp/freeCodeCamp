@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f0e0b6c005b0e76f07b
-title: 'Web Services: XML'
+title: 'Servizi Web: XML'
 challengeType: 11
 videoId: _pZ0srbg7So
 dashedName: web-services-xml
@@ -10,7 +10,7 @@ dashedName: web-services-xml
 
 ## --text--
 
-What is wrong with the following XML?:
+Cosa c'è di sbagliato nel seguente XML?:
 
 ```xml
 <person>
@@ -23,19 +23,19 @@ What is wrong with the following XML?:
 
 ## --answers--
 
-Email tag is missing closing tag.
+Tag di chiusura dell'email mancante.
 
 ---
 
-Spacing will cause XML to be invalid.
+La spaziatura causerà l'invalidità dell'XML.
 
 ---
 
-Phone tag is missing closing tag.
+Tag di chiusura del telefono mancante.
 
 ---
 
-Plain text should be encoded using UTF-8.
+Il testo semplice dovrebbe essere codificato usando UTF-8.
 
 ## --video-solution--
 

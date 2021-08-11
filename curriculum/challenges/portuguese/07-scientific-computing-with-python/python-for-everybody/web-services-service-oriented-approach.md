@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f140b6c005b0e76f07e
-title: 'Web Services: Service Oriented Approach'
+title: 'Serviços da web: Abordagem orientada a serviços'
 challengeType: 11
 videoId: muerlsCHExI
 dashedName: web-services-service-oriented-approach
@@ -10,19 +10,19 @@ dashedName: web-services-service-oriented-approach
 
 ## --text--
 
-With a services oriented approach to developing web apps, where is the data located?
+Com uma abordagem orientada a serviços para o desenvolvimento de aplicativos da web, onde os dados estarão localizados?
 
 ## --answers--
 
-Spread across many computer systems connected via the internet or internal network.
+Espalhados por vários sistemas de computadores conectados pela Internet ou pela rede interna.
 
 ---
 
-Within different services on the main web server.
+Em diferentes serviços no servidor principal da web.
 
 ---
 
-On a separate database server.
+Em um servidor de banco de dados separado.
 
 ## --video-solution--
 

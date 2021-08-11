@@ -7,14 +7,33 @@ dashedName: part-8
 
 # --description--
 
-It's time to add some menu content. Add a `main` element below the existing `header` element. It will eventually contain pricing information about coffees and desserts offered by the cafe.
+It's time to add some menu content. Add a `main` element below the existing `header` element. It will eventually contain pricing information about coffee and desserts offered by the cafe.
 
 # --hints--
 
-Test 1
+Your code should have an opening `<main>` tag.
 
 ```js
+assert(code.match(/<main>/i));
+```
 
+Your code should have a closing `</main>` tag.
+
+```js
+assert(code.match(/<\/main>/i));
+```
+
+You should not change your `header` element. Make sure you don't accidentally delete your closing tag.
+
+```js
+assert($('header').length === 1);
+```
+
+Your `main` tag should come after your `header` tag.
+
+```js
+const main = document.querySelectorAll('main')[0];
+assert(main.previousElementSibling.tagName === 'HEADER');
 ```
 
 # --seed--
@@ -38,4 +57,3 @@ Test 1
   </body>
 <html>
 ```
-

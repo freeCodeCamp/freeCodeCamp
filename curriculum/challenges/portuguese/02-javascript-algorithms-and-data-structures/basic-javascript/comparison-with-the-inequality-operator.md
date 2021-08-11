@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d2
-title: Comparison with the Inequality Operator
+title: Comparar com o operador de desigualdade
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBm9Sr'
 forumTopicId: 16787
@@ -9,9 +9,9 @@ dashedName: comparison-with-the-inequality-operator
 
 # --description--
 
-The inequality operator (`!=`) is the opposite of the equality operator. It means not equal and returns `false` where equality would return `true` and *vice versa*. Like the equality operator, the inequality operator will convert data types of values while comparing.
+O operador de desigualdade (`!=`) é o oposto do operador de igualdade. Significa que não é igual e retorna `false` onde a igualdade retornaria `true` e *vice-versa*. Tal como o operador de igualdade, o operador de desigualdade converterá os tipos de dados de valores enquanto compara.
 
-**Examples**
+**Exemplos**
 
 ```js
 1 !=  2
@@ -21,45 +21,45 @@ The inequality operator (`!=`) is the opposite of the equality operator. It mean
 0 != false
 ```
 
-In order, these expressions would evaluate to `true`, `false`, `false`, `false`, and `false`.
+Em ordem, essas expressões seriam iguais à `true`, `false`, `false`, `false` e `false`.
 
 # --instructions--
 
-Add the inequality operator `!=` in the `if` statement so that the function will return the string `Not Equal` when `val` is not equivalent to `99`
+Adicione o operador de desigualdade `!=` na instrução `if` para que a função retorne a string `Not Equal` quando `val` não for equivalente a `99`
 
 # --hints--
 
-`testNotEqual(99)` should return the string `Equal`
+`testNotEqual(99)` deve retornar a string `Equal`
 
 ```js
 assert(testNotEqual(99) === 'Equal');
 ```
 
-`testNotEqual("99")` should return the string `Equal`
+`testNotEqual("99")` deve retornar a string `Equal`
 
 ```js
 assert(testNotEqual('99') === 'Equal');
 ```
 
-`testNotEqual(12)` should return the string `Not Equal`
+`testNotEqual(12)` deve retornar a string `Not Equal`
 
 ```js
 assert(testNotEqual(12) === 'Not Equal');
 ```
 
-`testNotEqual("12")` should return the string `Not Equal`
+`testNotEqual("12")` deve retornar a string `Not Equal`
 
 ```js
 assert(testNotEqual('12') === 'Not Equal');
 ```
 
-`testNotEqual("bob")` should return the string `Not Equal`
+`testNotEqual("bob")` deve retornar a string `Not Equal`
 
 ```js
 assert(testNotEqual('bob') === 'Not Equal');
 ```
 
-You should use the `!=` operator
+Você deve usar o operador `!=`
 
 ```js
 assert(code.match(/(?!!==)!=/));

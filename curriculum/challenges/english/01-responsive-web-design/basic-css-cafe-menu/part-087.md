@@ -1,5 +1,5 @@
 ---
-id: 5f46e270702a8456a664f0df
+id: 5f46e36e745ead58487aabf2
 title: Part 87
 challengeType: 0
 dashedName: part-87
@@ -7,14 +7,31 @@ dashedName: part-87
 
 # --description--
 
-To remove some of the vertical space between the `h1` element and the text `Est. 2020`, change the bottom margin of the `h1` to `15px`.
+Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
+
+To decrease the default margin space below the address `p` element, create a class selector named `address` and use the value `5px` for the `margin-bottom` property.
 
 # --hints--
 
-Test 1
+You should add an `.address` selector.
 
 ```js
+const hasAddress = new __helpers.CSSHelp(document).getStyle('.address');
+assert(hasAddress);
+```
 
+You should set the `margin-bottom` property to `5px`.
+
+```js
+const hasMarginBottom = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-bottom'] === '5px');
+assert(hasMarginBottom);
+```
+
+Your `.address` selector should have the `margin-bottom` property set to `5px`.
+
+```js
+const addressMarginBottom = new __helpers.CSSHelp(document).getStyle('.address')?.getPropertyValue('margin-bottom');
+assert(addressMarginBottom === '5px');
 ```
 
 # --seed--
@@ -39,12 +56,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -86,17 +103,16 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
 
---fcc-editable-region--
 h1 {
   font-size: 40px;
   margin-top: 0;
+  margin-bottom: 15px;
 }
---fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -155,6 +171,10 @@ h1, h2 {
 footer {
   font-size: 14px;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 a {
   color: black;

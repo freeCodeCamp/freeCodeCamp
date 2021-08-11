@@ -4,21 +4,21 @@
  * a db migration to fix all completedChallenges
  *
  */
-import { Observable } from 'rx';
-import { isEmpty, pick, omit, find, uniqBy } from 'lodash';
 import debug from 'debug';
 import dedent from 'dedent';
+import { isEmpty, pick, omit, find, uniqBy } from 'lodash';
 import { ObjectID } from 'mongodb';
+import { Observable } from 'rx';
 import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
 
-import { ifNoUserSend } from '../utils/middleware';
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
+import { ifNoUserSend } from '../utils/middleware';
 import {
   getRedirectParams,
-  getRedirectBase,
-  normalizeParams
+  normalizeParams,
+  getPrefixedLandingPath
 } from '../utils/redirection';
 
 const log = debug('fcc:boot:challenges');
@@ -341,7 +341,7 @@ export function createRedirectToCurrentChallenge(
     const { user } = req;
     const { origin, pathPrefix } = getRedirectParams(req, normalizeParams);
 
-    const redirectBase = getRedirectBase(origin, pathPrefix);
+    const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
     if (!user) {
       return res.redirect(redirectBase + '/learn');
     }

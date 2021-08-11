@@ -52,7 +52,7 @@ Your code should use `position.coords.longitude` to display the user's longitudi
 assert(code.match(/position\.coords\.longitude/g));
 ```
 
-You should display the user's position within the `data` div element.
+You should display the user's position within the `div` element with `id="data"`.
 
 ```js
 assert(

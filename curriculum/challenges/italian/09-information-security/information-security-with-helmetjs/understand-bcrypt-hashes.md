@@ -1,6 +1,6 @@
 ---
 id: 58a25bcef9fc0f352b528e7c
-title: Understand BCrypt Hashes
+title: Capire la crittografia hash BCrypt
 challengeType: 2
 forumTopicId: 301586
 dashedName: understand-bcrypt-hashes
@@ -8,23 +8,23 @@ dashedName: understand-bcrypt-hashes
 
 # --description--
 
-For the following challenges, you will be working with a new starter project that is different from the previous one. You can find the new starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), or clone it from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+Per le seguenti sfide, lavorerai con una nuova bozza di progetto che è diversa da quella precedente. Puoi trovare la nuova bozza di progetto su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), o clonarla da [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
 
-BCrypt hashes are very secure. A hash is basically a fingerprint of the original data- always unique. This is accomplished by feeding the original data into an algorithm and returning a fixed length result. To further complicate this process and make it more secure, you can also *salt* your hash. Salting your hash involves adding random data to the original data before the hashing process which makes it even harder to crack the hash.
+Gli hash BCrypt sono molto sicuri. Un hash è fondamentalmente un'impronta digitale dei dati originali, sempre unica. Questo si ottiene inserendo i dati originali in un algoritmo e restituendo un risultato di lunghezza fissa. Per complicare ulteriormente questo processo e renderlo più sicuro, puoi anche aggiungere un *salt* al tuo hash. Aggiungere un salt al tuo hash comporta l'aggiunta di dati casuali ai dati originali prima del processo di hashing che rende ancora più difficile crackare l'hash.
 
-BCrypt hashes will always looks like `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` which does have a structure. The first small bit of data `$2a` is defining what kind of hash algorithm was used. The next portion `$13` defines the *cost*. Cost is about how much power it takes to compute the hash. It is on a logarithmic scale of 2^cost and determines how many times the data is put through the hashing algorithm. For example, at a cost of 10 you are able to hash 10 passwords a second on an average computer, however at a cost of 15 it takes 3 seconds per hash... and to take it further, at a cost of 31 it would takes multiple days to complete a hash. A cost of 12 is considered very secure at this time. The last portion of your hash `$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm`, looks like one large string of numbers, periods, and letters but it is actually two separate pieces of information. The first 22 characters is the salt in plain text, and the rest is the hashed password!
+Gli hash BCrypt appariranno sempre come `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm` che ha una struttura. Il primo pezzettino di dati `$2a` sta definendo che tipo di algoritmo di hash è stato utilizzato. La porzione successiva `$13` definisce il *costo*. Il costo è più o meno quanto potere computazionale è necessario per calcolare l'hash. È su una scala logaritmica di 2^costo e determina quante volte i dati vengono messi attraverso l'algoritmo di hashing. Ad esempio, al costo di 10 sei in grado di crittografare 10 password al secondo su un computer medio, tuttavia al costo di 15 ci vogliono 3 secondi per hash... e per andare oltre, ad un costo di 31 ci vorrebbero più giorni per completare un hash. Un costo di 12 è considerato molto sicuro in questo momento. L'ultima porzione del tuo hash `$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm`, sembra una grande stringa di numeri, punti e lettere, ma sono in realtà due pezzi separati di informazioni. I primi 22 caratteri sono il salt in chiaro, e il resto è la password crittografata!
 
 # --instructions--
 
-To begin using BCrypt, add it as a dependency in your project and require it as 'bcrypt' in your server.
+Per iniziare a usare BCrypt, aggiungilo come dipendenza nel tuo progetto e richiederlo come 'bcrypt' nel tuo server.
 
-Add all your code for these lessons in the `server.js` file between the code we have started you off with. Do not change or delete the code we have added for you.
+Aggiungi tutto il tuo codice per queste lezioni nel file `server.js` in mezzo al codice con cui ti abbiamo avviato. Non modificare o eliminare il codice che abbiamo aggiunto per te.
 
-Submit your page when you think you've got it right.
+Invia la tua pagina quando pensi di averlo fatto correttamente.
 
 # --hints--
 
-BCrypt should be a dependency.
+BCrypt dovrebbe essere una dipendenza.
 
 ```js
 (getUserInput) =>
@@ -43,7 +43,7 @@ BCrypt should be a dependency.
   );
 ```
 
-BCrypt should be properly required.
+BCrypt dovrebbe essere richiesto correttamente.
 
 ```js
 (getUserInput) =>

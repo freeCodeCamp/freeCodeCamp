@@ -1,6 +1,6 @@
 ---
 id: 5e44412c903586ffb414c94c
-title: Arithmetic Formatter
+title: Formatador aritmético
 challengeType: 10
 forumTopicId: 462359
 dashedName: arithmetic-formatter
@@ -8,26 +8,25 @@ dashedName: arithmetic-formatter
 
 # --description--
 
-Create a function that receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side.
+Crie uma função que receba uma lista de strings que sejam problemas aritméticos e retorne os problemas dispostos verticalmente e lado a lado.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter).
+Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com baseado nas instruções do 'README.md', envie o link do seu projeto abaixo.
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
-<ul>
-  <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
+<ul> <li>
+    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Curso de Python em vídeo para todos</a> (14 horas)
   </li>
   <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
+    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Curso em vídeo Aprenda Python</a> (2 horas)
   </li>
 <ul>
 
 # --hints--
 
-It should correctly format an arithmetic problem and pass all tests.
+O programa deve formatar corretamente um problema aritmético e passar em todos os testes.
 
 ```js
 

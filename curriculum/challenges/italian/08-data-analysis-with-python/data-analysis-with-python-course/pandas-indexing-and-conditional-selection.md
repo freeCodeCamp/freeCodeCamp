@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c159
-title: Pandas Indexing and Conditional Selection
+title: Indicizzazione di Pandas e selezione condizionale
 challengeType: 11
 videoId: '-ZOrgV_aA9A'
 dashedName: pandas-indexing-and-conditional-selection
@@ -8,18 +8,18 @@ dashedName: pandas-indexing-and-conditional-selection
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Invece di usare notebooks.ai come mostrato nel video, puoi usare Google Colab.*
 
-More resources:
+Altre risorse:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebook su GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas)
+-   [Come aprire Notebooks da GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What will the following code print out?
+Cosa verrà visualizzato nella console con il seguente codice?
 
 ```py
 import pandas as pd

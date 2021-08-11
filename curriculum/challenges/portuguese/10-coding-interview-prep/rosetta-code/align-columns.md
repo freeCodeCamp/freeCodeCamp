@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad0
-title: Align columns
+title: Alinhar colunas
 challengeType: 5
 forumTopicId: 302224
 dashedName: align-columns
@@ -8,60 +8,68 @@ dashedName: align-columns
 
 # --description--
 
-Given a text file of many lines, where fields within a line are delineated by a single `$` character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
+Dado um array de muitas linhas, onde os campos dentro de uma linha são delineados por um único caractere `$`, escreva um programa que alinha cada coluna de campos, garantindo que as palavras em cada coluna estejam separadas por pelo menos um espaço. Além disso, permita que cada palavra em uma coluna seja deixada justificada à esquerda, justificada à direita ou justificada ao centro em sua coluna.
 
 # --instructions--
 
-Use the following text to test your programs:
+Use o texto a seguir para testar seus programas:
 
-<pre>
-Given$a$text$file$of$many$lines
-where$fields$within$a$line$
-are$delineated$by$a$single$'dollar'$character
-write$a$program
-that$aligns$each$column$of$fields
-by$ensuring$that$words$in$each$
-column$are$separated$by$at$least$one$space.
-Further,$allow$for$each$word$in$a$column$to$be$either$left$
-justified,$right$justified
-or$center$justified$within$its$column.
-</pre>
+```js
+const testText = [
+  'Given$a$text$file$of$many$lines',
+  'where$fields$within$a$line$',
+  'are$delineated$by$a$single$"dollar"$character',
+  'write$a$program',
+  'that$aligns$each$column$of$fields',
+  'by$ensuring$that$words$in$each$',
+  'column$are$separated$by$at$least$one$space.',
+  'Further,$allow$for$each$word$in$a$column$to$be$either$left$',
+  'justified,$right$justified',
+  'or$center$justified$within$its$column.'
+];
+```
 
-**Note that:**
+**Observe que:**
 
-<ul>
-  <li>The example input texts lines may, or may not, have trailing dollar characters.</li>
-  <li>All columns should share the same alignment.</li>
-  <li>Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.</li>
-  <li>Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal.</li>
-  <li>The minimum space between columns should be computed from the text and not hard-coded.</li>
-  <li>It is not a requirement to add separating characters between or around columns.</li>
-</ul>
+- As linhas de textos de entrada de exemplo podem, ou não, ter caracteres de dólar à frente.
+- Todas as colunas devem compartilhar o mesmo alinhamento.
+- Caracteres de espaço consecutivos adjacentes produzidos ao final das linhas são insignificantes para os propósitos da tarefa.
+- O texto de saída será visto em uma fonte monoespaçada em um editor de texto simples ou em um terminal básico. As linhas nele devem ser unidas usando o caractere de nova linha (`\n`).
+- O espaço mínimo entre colunas deve ser calculado a partir do texto e não inserido no código de antemão.
+- Não é um requisito adicionar caracteres separados entre ou em torno das colunas.
+
+Por exemplo, uma das linhas do `testText`, após justificar à direita, à esquerda e ao centro, respectivamente, será:
+
+```js
+'    column        are separated     by     at    least       one space.\n'
+'column     are        separated by     at     least    one       space.\n'
+'  column      are     separated   by     at    least      one    space.\n'
+```
 
 # --hints--
 
-`formatText` should be a function.
+`formatText` deve ser uma função.
 
 ```js
 assert(typeof formatText === 'function');
 ```
 
-`formatText` with the above input and "right" justification should produce the following:
+`formatText(testText, 'right')` deve produzir texto com colunas justificadas à direita.
 
 ```js
-assert.strictEqual(formatText(testInput, 'right'), rightAligned);
+assert.strictEqual(formatText(_testText, 'right'), rightAligned);
 ```
 
-`formatText` with the above input and "left" justification should produce the following:
+`formatText(testText, 'left')` deve produzir texto com colunas justificadas à esquerda.
 
 ```js
-assert.strictEqual(formatText(testInput, 'left'), leftAligned);
+assert.strictEqual(formatText(_testText, 'left'), leftAligned);
 ```
 
-`formatText` with the above input and "center" justification should produce the following:
+`formatText(testText, 'center')` deve produzir texto com colunas justificadas ao centro.
 
 ```js
-assert.strictEqual(formatText(testInput, 'center'), centerAligned);
+assert.strictEqual(formatText(_testText, 'center'), centerAligned);
 ```
 
 # --seed--
@@ -69,10 +77,10 @@ assert.strictEqual(formatText(testInput, 'center'), centerAligned);
 ## --after-user-code--
 
 ```js
-const testInput = [
+const _testText = [
   'Given$a$text$file$of$many$lines',
   'where$fields$within$a$line$',
-  'are$delineated$by$a$single$\"dollar\"$character',
+  'are$delineated$by$a$single$"dollar"$character',
   'write$a$program',
   'that$aligns$each$column$of$fields$',
   'by$ensuring$that$words$in$each$',
@@ -119,7 +127,11 @@ const centerAligned = '  Given        a        text     file    of     many     
 ## --seed-contents--
 
 ```js
-const testArr = [
+function formatText(input, justification) {
+
+}
+
+const testText = [
   'Given$a$text$file$of$many$lines',
   'where$fields$within$a$line$',
   'are$delineated$by$a$single$"dollar"$character',
@@ -131,28 +143,11 @@ const testArr = [
   'justified,$right$justified',
   'or$center$justified$within$its$column.'
 ];
-
-function formatText(input, justification) {
-
-}
 ```
 
 # --solutions--
 
 ```js
-const testArr = [
-  'Given$a$text$file$of$many$lines',
-  'where$fields$within$a$line$',
-  'are$delineated$by$a$single$"dollar"$character',
-  'write$a$program',
-  'that$aligns$each$column$of$fields$',
-  'by$ensuring$that$words$in$each$',
-  'column$are$separated$by$at$least$one$space.',
-  'Further,$allow$for$each$word$in$a$column$to$be$either$left$',
-  'justified,$right$justified',
-  'or$center$justified$within$its$column.'
-];
-
 String.prototype.repeat = function (n) { return new Array(1 + parseInt(n)).join(this); };
 
 function formatText(input, justification) {

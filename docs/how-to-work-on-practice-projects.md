@@ -85,7 +85,7 @@ part-6.md
 
 At some point you decide you need to delete `part-2.md`, because that step is no longer needed. Also, you decide to break down `part-4.md` into three steps instead of just one.
 
-To accomplish this restructure, you would need to delete `part-2.md` and then add a `part-4a.md` and a `part-5b.md`. The new folder structure would look like the following:
+To accomplish this restructure, you would need to delete `part-2.md` and then add a `part-4a.md` and a `part-4b.md`. The new folder structure would look like the following:
 
 ```bash
 part-001.md

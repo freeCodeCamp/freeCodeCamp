@@ -1,6 +1,6 @@
 ---
 id: 589fc832f9fc0f352b528e78
-title: Announce New Users
+title: Anunciar novos usuários
 challengeType: 2
 forumTopicId: 301546
 dashedName: announce-new-users
@@ -8,9 +8,9 @@ dashedName: announce-new-users
 
 # --description--
 
-Many chat rooms are able to announce when a user connects or disconnects and then display that to all of the connected users in the chat. Seeing as though you already are emitting an event on connect and disconnect, you will just have to modify this event to support such a feature. The most logical way of doing so is sending 3 pieces of data with the event: the name of the user who connected/disconnected, the current user count, and if that name connected or disconnected.
+Muitas salas de bate-papo são capazes de anunciar quando um usuário conecta ou desconecta e, em seguida, exibem isso para todos os usuários conectados no bate-papo. Considerando que você já está emitindo um evento ao se conectar e desconectar, você só terá que modificar esse evento para dar suporte a esse recurso. A maneira mais lógica de fazer isso é enviando 3 dados com o evento: o nome do usuário que se conectou/desconectou, a contagem de usuário atual e se esse nome conectou ou desconectou.
 
-Change the event name to `'user'`, and pass an object along containing the fields 'name', 'currentUsers', and 'connected' (to be `true` in case of connection, or `false` for disconnection of the user sent). Be sure to change both 'user count' events and set the disconnect one to send `false` for the field 'connected' instead of `true` like the event emitted on connect.
+Altere o nome do evento para `'user'` e passe um objeto junto com o evento contendo os campos 'name', 'currentUsers', e 'connected' (para ser `true` quando for enviada uma conexão, ou `false` em caso de desconexão do usuário). Certifique-se de alterar os dois eventos 'user count' e defina o evento de desconexão para que envie `false` para o campo 'connected' em vez de `true` como ocorre quando o evento é emitido ao conectar.
 
 ```js
 io.emit('user', {
@@ -20,9 +20,9 @@ io.emit('user', {
 });
 ```
 
-Now your client will have all the necessary information to correctly display the current user count and announce when a user connects or disconnects! To handle this event on the client side we should listen for `'user'`, then update the current user count by using jQuery to change the text of `#num-users` to `'{NUMBER} users online'`, as well as append a `<li>` to the unordered list with id `messages` with `'{NAME} has {joined/left} the chat.'`.
+Agora, o client terá todas as informações necessárias para exibir corretamente a contagem de usuário atual e anunciar quando um usuário se conectar ou desconectar! Para tratar este evento do lado do client, devemos escutar `'user'`. Em seguida, atualizamos a contagem de usuário atual, usando jQuery para alterar o texto de `#num-users` para `'{NUMBER} users online'`. Também acrescentamos um `<li>` à lista não ordenada com o id `messages` dizendo `'{NAME} has {joined/left} the chat.'`.
 
-An implementation of this could look like the following:
+Uma implementação disso seria semelhante a:
 
 ```js
 socket.on('user', data => {
@@ -34,11 +34,11 @@ socket.on('user', data => {
 });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286).
 
 # --hints--
 
-Event `'user'` should be emitted with name, currentUsers, and connected.
+O evento `'user'` deve ser emitido com name, currentUsers e connected.
 
 ```js
 (getUserInput) =>
@@ -56,7 +56,7 @@ Event `'user'` should be emitted with name, currentUsers, and connected.
   );
 ```
 
-Client should properly handle and display the new data from event `'user'`.
+O client deve manipular e exibir adequadamente os novos dados do evento `'user'`.
 
 ```js
 (getUserInput) =>

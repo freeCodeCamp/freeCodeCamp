@@ -11,7 +11,7 @@ dashedName: url-shortener-microservice
 Build a full stack JavaScript app that is functionally similar to this: <https://url-shortener-microservice.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
 
 -   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-urlshortener/) and complete your project locally.
--   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-urlshortener) to complete your project.
+-   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener) to complete your project.
 -   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
@@ -34,26 +34,22 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can POST a URL to `/api/shorturl/new` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
+You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
   const urlVariable = Date.now();
-  const res = await fetch(url + '/api/shorturl/new/', {
+  const fullUrl = `${url}/?v=${urlVariable}`
+  const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `url=https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`
+    body: `url=${fullUrl}`
   });
   if (res.ok) {
     const { short_url, original_url } = await res.json();
     assert.isNotNull(short_url);
-    assert.match(
-      original_url,
-      new RegExp(
-        `https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`
-      )
-    );
+    assert.strictEqual(original_url, `${url}/?v=${urlVariable}`);
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   }
@@ -66,11 +62,12 @@ When you visit `/api/shorturl/<short_url>`, you will be redirected to the origin
 async (getUserInput) => {
   const url = getUserInput('url');
   const urlVariable = Date.now();
+  const fullUrl = `${url}/?v=${urlVariable}`
   let shortenedUrlVariable;
-  const postResponse = await fetch(url + '/api/shorturl/new/', {
+  const postResponse = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `url=https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`
+    body: `url=${fullUrl}`
   });
   if (postResponse.ok) {
     const { short_url } = await postResponse.json();
@@ -84,10 +81,7 @@ async (getUserInput) => {
   if (getResponse) {
     const { redirected, url } = getResponse;
     assert.isTrue(redirected);
-    assert.strictEqual(
-      url,
-      `https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`
-    );
+    assert.strictEqual(url,fullUrl);
   } else {
     throw new Error(`${getResponse.status} ${getResponse.statusText}`);
   }
@@ -99,7 +93,7 @@ If you pass an invalid URL that doesn't follow the valid `http://www.example.com
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/shorturl/new/', {
+  const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `url=ftp:/john-doe.org`

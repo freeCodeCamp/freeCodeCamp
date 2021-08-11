@@ -1,6 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bbc
-title: Split Your Styles into Smaller Chunks with Partials
+title: Divide tus estilos en trozos más pequeños con parciales
 challengeType: 0
 forumTopicId: 301459
 dashedName: split-your-styles-into-smaller-chunks-with-partials
@@ -8,27 +8,25 @@ dashedName: split-your-styles-into-smaller-chunks-with-partials
 
 # --description--
 
-<dfn>Partials</dfn> in Sass are separate files that hold segments of CSS code. These are imported and used in other Sass files. This is a great way to group similar code into a module to keep it organized.
+<dfn>Parciales</dfn> en Sass son archivos separados que contienen segmentos de código CSS. Estos se importan y son utilizados en otros archivos Sass. Esta es una gran manera de agrupar código similar en un módulo para mantenerlo organizado.
 
-Names for partials start with the underscore (`_`) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file. Also, Sass files end with the `.scss` file extension. To bring the code in the partial into another Sass file, use the `@import` directive.
+Los nombres de los parciales comienzan con el carácter de guión bajo (`_`), que le dice a Sass que es un pequeño segmento de CSS y no para convertirlo en un archivo CSS. También, los archivos Sass terminan con la extensión de archivo `.scss`. Para introducir el código en el parcial en otro archivo Sass, utiliza la directiva `@import`.
 
-For example, if all your mixins are saved in a partial named "\_mixins.scss", and they are needed in the "main.scss" file, this is how to use them in the main file:
+Por ejemplo, si todos tus mixins se guardan en un parcial llamado "\_mixins.scss", y son necesarios en el archivo "main.scss", es cómo usarlos en el archivo principal:
 
 ```scss
-// In the main.scss file
-
 @import 'mixins'
 ```
 
-Note that the underscore and file extension are not needed in the `import` statement - Sass understands it is a partial. Once a partial is imported into a file, all variables, mixins, and other code are available to use.
+Ten en cuenta que el guión bajo y la extensión del archivo no son necesarios en la declaración `import` - Sass entiende que es un parcial. Una vez que un parcial es importado en un archivo, todas las variables, mixins y otros códigos están disponibles para usar.
 
 # --instructions--
 
-Write an `@import` statement to import a partial named `_variables.scss` into the main.scss file.
+Escribe una instrucción `@import` para importar un nombre parcial `_variables.scss` en el archivo main.scss.
 
 # --hints--
 
-Your code should use the `@import` directive, and should not include the underscore in the file name.
+Tu código debe usar la directiva `@import` y no debe incluir el guión bajo en el nombre del archivo.
 
 ```js
 assert(code.match(/@import\s+?('|")variables\1/gi));

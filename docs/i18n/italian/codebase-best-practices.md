@@ -1,34 +1,34 @@
-# Codebase Best Practices
+# Buone pratiche per il codebase
 
-## General JavaScript
+## JavaScript generale
 
-In most cases, our [linter](how-to-setup-freecodecamp-locally?id=follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
+Nella maggior parte dei casi, il nostro [linter](how-to-setup-freecodecamp-locally?id=follow-these-steps-to-get-your-development-environment-ready) darà un avvertimento nel caso di un format che va contro le preferenze del nostro codebase.
 
-It is encouraged to use functional components over class-based components.
+Si incoraggia l'utilizzo di componenti funzionali invece di componenti basati su classi.
 
-## Specific TypeScript
+## TypeScript specifico
 
-### Migrating a JavaScript File to TypeScript
+### Migrare un file da JavaScript a TypeScript
 
-#### Retaining Git File History
+#### Mantenere la cronologia del file con Git
 
-Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
+A volte cambiare il file da `<filename>.js` a `<filename>.ts` (o `.tsx`) causa che il file originale viene cancellato e uno nuovo viene creato, altre volte è solo il nome del file a cambiare - per quanto riguarda Git. Idealmente, vogliamo che la storia del file sia conservata.
 
-The best bet at achieving this is to:
+Il modo migliore per assicurarsene è:
 
-1. Rename the file
-2. Commit with the flag `--no-verify` to prevent Husky from complaining about the lint errors
-3. Refactor to TypeScript for migration, in a separate commit
+1. Rinominare il file
+2. Fare un commit con il flag `--no-verify` per prevenire gli avvertimenti di Husky per errori di lint
+3. Fare il refactoring per la migrazione a TypeScript in un commit separato
 
-> [!NOTE] Editors like VSCode are still likely to show you the file has been deleted and a new one created. If you use the CLI to `git add .`, then VSCode will show the file as renamed in stage
+> [!NOTE] Un editor come VSCode ha buona probabilità di mostrare comunque che un file è stato eliminato e uno nuovo è stato creato. Se usi la CLI (Command Line Interface) per eseguire `git add .`, allora VSCode mostrerà che il file è stato rinominato
 
-### Naming Conventions
+### Convenzioni per i nomi
 
-#### Interfaces and Types
+#### Interfacce e Tipi
 
-For the most part, it is encouraged to use interface declarations over type declarations.
+Per la maggior parte, incoraggiamo l'uso di dichiarazioni di interfaccia piuttosto che di tipo.
 
-React Component Props - suffix with `Props`
+Props di componenti React - suffissi con `Props`
 
 ```typescript
 interface MyComponentProps {}
@@ -36,7 +36,7 @@ interface MyComponentProps {}
 const MyComponent = (props: MyComponentProps) => {};
 ```
 
-React Stateful Components - suffix with `State`
+Componenti React stateful - suffissi con `State`
 
 ```typescript
 interface MyComponentState {}
@@ -44,7 +44,7 @@ interface MyComponentState {}
 class MyComponent extends Component<MyComponentProps, MyComponentState> {}
 ```
 
-Default - object name in PascalCase
+Default - nomi di oggetti in PascalCase
 
 ```typescript
 interface MyObject {}
@@ -58,7 +58,7 @@ const myObject: MyObject = {};
 
 ## Redux
 
-### Action Definitions
+### Definizione di azioni
 
 ```typescript
 enum AppActionTypes = {
@@ -73,7 +73,7 @@ export const actionFunction = (
 });
 ```
 
-### How to Reduce
+### Come usare Reducer
 
 ```typescript
 // Base reducer action without payload
@@ -100,9 +100,9 @@ export const reducer = (
 };
 ```
 
-### How to Dispatch
+### Come fare il dispatch
 
-Within a component, import the actions and selectors needed.
+Dentro un componente, importa le azioni e i selettori necessari.
 
 ```tsx
 // Add type definition
@@ -128,7 +128,7 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 <!-- ### Redux Types File -->
 <!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
 
-## Further Literature
+## Letture aggiuntive
 
-- [TypeScript Docs](https://www.typescriptlang.org/docs/)
-- [TypeScript with React CheatSheet](https://github.com/typescript-cheatsheets/react#readme)
+- [Documentazione di TypeScript](https://www.typescriptlang.org/docs/)
+- [CheatSheet di TypeScript con React](https://github.com/typescript-cheatsheets/react#readme)

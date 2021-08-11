@@ -40,13 +40,7 @@ the shop -> my brother
 a never used -> .terminating rule
 </pre>
 
-Sample text of:
-
-`I bought a B of As from T S.`
-
-Should generate the output:
-
-`I bought a bag of apples from my brother.`
+Sample text of `I bought a B of As from T S.` should generate the output `I bought a bag of apples from my brother.`
 
 **Ruleset 2:**
 
@@ -61,13 +55,7 @@ the shop -> my brother
 a never used -> .terminating rule
 </pre>
 
-Sample text of:
-
-`I bought a B of As from T S.`
-
-Should generate:
-
-`I bought a bag of apples from T shop.`
+Sample text of `I bought a B of As from T S.` should generate `I bought a bag of apples from T shop.`
 
 **Ruleset 3:**
 
@@ -86,13 +74,7 @@ the shop -> my brother
 a never used -> .terminating rule
 </pre>
 
-Sample text of:
-
-`I bought a B of As W my Bgage from T S.`
-
-Should generate:
-
-`I bought a bag of apples with my money from T shop.`
+Sample text of `I bought a B of As W my Bgage from T S.` should generate `I bought a bag of apples with my money from T shop.`
 
 **Ruleset 4:**
 
@@ -128,13 +110,7 @@ _1 -> 1
 _+_ ->
 </pre>
 
-Sample text of:
-
-`_1111*11111_`
-
-should generate the output:
-
-`11111111111111111111`
+Sample text of `_1111*11111_` should generate the output `11111111111111111111`
 
 **Ruleset 5:**
 
@@ -164,13 +140,7 @@ B1 -> 1B
 1C1 -> H11
 </pre>
 
-This ruleset should turn
-
-`000000A000000`
-
-into
-
-`00011H1111000`
+This ruleset should turn `000000A000000` into `00011H1111000`
 
 # --hints--
 

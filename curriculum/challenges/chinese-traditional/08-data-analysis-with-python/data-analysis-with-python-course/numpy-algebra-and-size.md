@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c157
-title: Numpy Algebra and Size
+title: Numpy 代數和大小
 challengeType: 11
 videoId: XAT97YLOKD8
 dashedName: numpy-algebra-and-size
@@ -8,34 +8,34 @@ dashedName: numpy-algebra-and-size
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*在視頻中我們使用的編輯器工具是在 notebook.ai 這個平臺，你也可以選擇用其他的平臺，比如說 Google Colab 也是一個不錯的選擇。*
 
-More resources:
+以下有更多的資料：
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [在 GitHub 平臺的 Notebooks](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy)
+-   [如何使用 Google Colab 來打開 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What is the relationship between size of objects (such as lists and datatypes) in memory in Python's standard library and the NumPy library? Knowing this, what are the implications for performance?
+內存中，對象的大小（例如列表和數據類型）在 Python 標準庫和 NumPy 庫之間有什麼關係？ 知道這一點，對性能有何影響？
 
 ## --answers--
 
-Standard Python objects take up much more memory to store than NumPy objects; operations on comparable standard Python and NumPy objects complete in roughly the same time.
+標準的 Python 對象佔用了比 NumPy 對象更多的內存；標準的 Python 和 NumPy 對象完成的操作時間是大致相同的。
 
 ---
 
-NumPy objects take up much more memory than standard Python objects; operations on NumPy objects complete very quickly compared to comparable objects in standard Python.
+Numpy 對象比標準的 Python 對象佔用更多的內存；Numpy 的對象相比較標準的 Python 更快地完成操作。
 
 ---
 
-NumPy objects take up much less memory than Standard Python objects; operations on Standard Python objects complete very quickly compared to comparable objects on NumPy Object.
+Numpy 對象比標準的 Python 對象佔用更少的內存；標準 Python 的對象相比較 Numpy 的對象更快地完成操作。
 
 ---
 
-Standard Python objects take up more memory than NumPy objects; operations on NumPy objects complete very quickly compared to comparable objects in standard Python.
+標準 Python 的對象比 Numpy 的對象佔用更多的內存；Numpy 的對象相比較標準 Python 的對象更快地完成操作。
 
 ## --video-solution--
 

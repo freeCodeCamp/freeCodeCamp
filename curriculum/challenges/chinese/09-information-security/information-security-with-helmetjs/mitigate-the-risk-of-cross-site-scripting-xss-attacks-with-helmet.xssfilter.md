@@ -1,7 +1,7 @@
 ---
 id: 587d8247367417b2b2512c39
 title: >-
-  Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
+  使用 helmet.xssFilter() 降低跨站点脚本（XSS）攻击的风险
 challengeType: 2
 forumTopicId: 301583
 dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xssfilter
@@ -9,23 +9,23 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+请注意，本项目在 [这个 Repl.it 项目](https://replit.com/github/freeCodeCamp/boilerplate-infosec) 的基础上进行开发。你也可以从 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
 
-Cross-site scripting (XSS) is a frequent type of attack where malicious scripts are injected into vulnerable pages, with the purpose of stealing sensitive data like session cookies, or passwords.
+跨站脚本（XSS）是一种常见的攻击类型，恶意脚本被注入到易受攻击的页面，目的是窃取敏感数据，如会话 cookies 或密码。
 
-The basic rule to lower the risk of an XSS attack is simple: “Never trust user’s input”. As a developer you should always sanitize all the input coming from the outside. This includes data coming from forms, GET query urls, and even from POST bodies. Sanitizing means that you should find and encode the characters that may be dangerous e.g. &lt;, >.
+降低 XSS 攻击风险的基本规则很简单："永远不要相信用户的输入"。 作为一个开发者，你应该始终对所有来自外部的输入进行消毒。 这包括来自表单、GET 查询URL，甚至来自 POST 请求体的数据。 净化意味着你应该找到并编码可能有危险的字符，例如 &lt;, >。
 
-Modern browsers can help mitigating the risk by adopting better software strategies. Often these are configurable via http headers.
+现代浏览器通过采用更好的软件策略来帮助降低风险。 通常情况下，这些都是可以通过 http 头文件来配置的。
 
-The X-XSS-Protection HTTP header is a basic protection. The browser detects a potential injected script using a heuristic filter. If the header is enabled, the browser changes the script code, neutralizing it. It still has limited support.
+X-XSS-Protection HTTP 消息头是一种基本的保护。 浏览器使用启发式过滤器检测潜在的注入脚本。 如果请求头被启用，浏览器会改变脚本代码，使其失效。 它得到的支持仍然有限。
 
 # --instructions--
 
-Use `helmet.xssFilter()` to sanitize input sent to your server.
+使用 `helmet.xssFilter()` 来净化发送到服务器的输入。
 
 # --hints--
 
-helmet.xssFilter() middleware should be mounted correctly
+helmet.xssFilter() 中间件应正确安装。
 
 ```js
 (getUserInput) =>

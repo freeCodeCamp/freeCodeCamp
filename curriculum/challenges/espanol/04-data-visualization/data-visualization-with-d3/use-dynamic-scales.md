@@ -32,7 +32,6 @@ const dataset = [
 const w = 500;
 const h = 500;
 
-// Padding between the SVG canvas boundary and the plot
 const padding = 30;
 const xScale = d3.scaleLinear()
   .domain([0, d3.max(dataset, (d) => d[0])])
@@ -43,14 +42,13 @@ The padding may be confusing at first. Picture the x-axis as a horizontal line f
 
 # --instructions--
 
-Use the `yScale` variable to create a linear y-axis scale. The domain should start at zero and go to the maximum y value in the set. The range should use the SVG height (`h`) and include padding.
+Use the `yScale` variable to create a linear y-axis scale. The domain should start at zero and go to the maximum `y` value in the set. The range should use the SVG height (`h`) and include padding.
 
-**Note**  
-Remember to keep the plot right-side-up. When you set the range for the y coordinates, the higher value (height minus padding) is the first argument, and the lower value is the second argument.
+**Note:** Remember to keep the plot right-side-up. When you set the range for the y coordinates, the higher value (height minus padding) is the first argument, and the lower value is the second argument.
 
 # --hints--
 
-The text in the `h2` should be 30.
+The text in the `h2` should be `30`.
 
 ```js
 assert(output == 30 && $('h2').text() == '30');

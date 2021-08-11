@@ -1,6 +1,3 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import {
   Panel,
   FormControl,
@@ -10,18 +7,21 @@ import {
   Col,
   Row
 } from '@freecodecamp/react-bootstrap';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { Trans, withTranslation } from 'react-i18next';
+import { TFunction, Trans, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
 import Login from '../components/Header/components/Login';
 
+import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 import {
   isSignedInSelector,
   userFetchStateSelector,
   userSelector,
   reportUser
 } from '../redux';
-import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 
 interface IShowUserProps {
   email: string;
@@ -30,7 +30,7 @@ interface IShowUserProps {
     username: string;
     reportDescription: string;
   }) => void;
-  t: (payload: unknown, ops?: Record<string, unknown>) => string;
+  t: TFunction;
   userFetchState: {
     pending: boolean;
     complete: boolean;

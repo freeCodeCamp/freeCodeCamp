@@ -1,37 +1,27 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import ChallengeTitle from './challenge-title';
-import ChallengeDescription from './Challenge-Description';
-import ToolPanel from './Tool-Panel';
-import TestSuite from './Test-Suite';
-
-import { challengeTestsSelector, isChallengeCompletedSelector } from '../redux';
 import { createSelector } from 'reselect';
-import './side-panel.css';
-import { mathJaxScriptLoader } from '../../../utils/scriptLoaders';
+import { mathJaxScriptLoader } from '../../../utils/script-loaders';
+import { challengeTestsSelector } from '../redux';
+import TestSuite from './Test-Suite';
+import ToolPanel from './Tool-Panel';
 
-const mapStateToProps = createSelector(
-  isChallengeCompletedSelector,
-  challengeTestsSelector,
-  (isChallengeCompleted, tests) => ({
-    isChallengeCompleted,
-    tests
-  })
-);
+import './side-panel.css';
+
+const mapStateToProps = createSelector(challengeTestsSelector, tests => ({
+  tests
+}));
 
 const propTypes = {
   block: PropTypes.string,
-  description: PropTypes.string,
+  challengeDescription: PropTypes.element.isRequired,
+  challengeTitle: PropTypes.element.isRequired,
   guideUrl: PropTypes.string,
-  instructions: PropTypes.string,
-  isChallengeCompleted: PropTypes.bool,
+  instructionsPanelRef: PropTypes.any.isRequired,
   showToolPanel: PropTypes.bool,
-  superBlock: PropTypes.string,
   tests: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
-  translationPending: PropTypes.bool.isRequired,
   videoUrl: PropTypes.string
 };
 
@@ -67,36 +57,17 @@ export class SidePanel extends Component {
   }
 
   render() {
-    const {
-      block,
-      title,
-      description,
-      instructions,
-      isChallengeCompleted,
-      guideUrl,
-      tests,
-      showToolPanel,
-      superBlock,
-      translationPending,
-      videoUrl
-    } = this.props;
+    const { instructionsPanelRef, guideUrl, tests, showToolPanel, videoUrl } =
+      this.props;
     return (
-      <div className='instructions-panel' role='complementary' tabIndex='-1'>
-        <div>
-          <ChallengeTitle
-            block={block}
-            isCompleted={isChallengeCompleted}
-            superBlock={superBlock}
-            translationPending={translationPending}
-          >
-            {title}
-          </ChallengeTitle>
-          <ChallengeDescription
-            block={block}
-            description={description}
-            instructions={instructions}
-          />
-        </div>
+      <div
+        className='instructions-panel'
+        ref={instructionsPanelRef}
+        role='complementary'
+        tabIndex='-1'
+      >
+        {this.props.challengeTitle}
+        {this.props.challengeDescription}
         {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}
         <TestSuite tests={tests} />
       </div>

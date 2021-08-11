@@ -1,6 +1,6 @@
 ---
 id: 598ee8b91b410510ae82efef
-title: Extensible prime generator
+title: Gerador de números primos extensível
 challengeType: 5
 forumTopicId: 302262
 dashedName: extensible-prime-generator
@@ -8,28 +8,28 @@ dashedName: extensible-prime-generator
 
 # --description--
 
-Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
+Escreva um gerador de números primos, em ordem, que se ajuste automaticamente para acomodar a geração de qualquer número primo razoavelmente alto.
 
-The generator should be able to:
+O gerador deve poder:
 
 <ul>
-  <li>Show the first <code>n</code> prime numbers</li>
-  <li>Show the prime numbers in a range</li>
-  <li>Show the number of primes in a range</li>
-  <li>Show the <code>n<sup>th</sup></code> prime number</li>
+  <li>Mostrar os <code>n</code> primeiros números primos</li>
+  <li>Mostrar os números primos em um intervalo</li>
+  <li>Mostrar a quantidade de números primos em um intervalo</li>
+  <li>Mostrar o <code>n<sup>th</sup></code> (enésimo) número primo</li>
 </ul>
 
-The function should have two parameters. The first will receive `n` or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array.
+A função deve receber dois parâmetros. O primeiro receberá `n` ou o intervalo como um array. O segundo receberá um booleano, que especifica se a função retorna os números primos como um array ou um único número - o número de primos no intervalo ou o <code>n<sup>th</sup></code> (enésimo) primo. De acordo com os parâmetros, a função deve retornar um array.
 
 # --hints--
 
-`primeGenerator` should be a function.
+`primeGenerator` deve ser uma função.
 
 ```js
 assert(typeof primeGenerator === 'function');
 ```
 
-`primeGenerator(20, true)` should return `[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]`.
+`primeGenerator(20, true)` deve retornar `[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]`.
 
 ```js
 assert.deepEqual(primeGenerator(20, true), [
@@ -56,7 +56,7 @@ assert.deepEqual(primeGenerator(20, true), [
 ]);
 ```
 
-`primeGenerator([100, 150], true)` should return `[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]`.
+`primeGenerator([100, 150], true)` deve retornar `[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]`.
 
 ```js
 assert.deepEqual(primeGenerator([100, 150], true), [
@@ -73,13 +73,13 @@ assert.deepEqual(primeGenerator([100, 150], true), [
 ]);
 ```
 
-`primeGenerator([7700, 8000], false)` should return `30`.
+`primeGenerator([7700, 8000], false)` deve retornar `30`.
 
 ```js
 assert.equal(primeGenerator([7700, 8000], false), 30);
 ```
 
-`primeGenerator(10000, false)` should return `104729`.
+`primeGenerator(10000, false)` deve retornar `104729`.
 
 ```js
 assert.equal(primeGenerator(10000, false), 104729);

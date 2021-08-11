@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036177
-title: Write a Simple Counter
+title: Escribe un contador simple
 challengeType: 6
 forumTopicId: 301425
 dashedName: write-a-simple-counter
@@ -8,17 +8,17 @@ dashedName: write-a-simple-counter
 
 # --description--
 
-You can design a more complex stateful component by combining the concepts covered so far. These include initializing `state`, writing methods that set `state`, and assigning click handlers to trigger these methods.
+Puedes diseñar un componente con un estado más complejo combinando los conceptos cubiertos hasta ahora. Estos incluyen inicializar el `state`, escribir métodos que establezcan `state` y asignar manejadores de eventos clic para activar estos métodos.
 
 # --instructions--
 
-The `Counter` component keeps track of a `count` value in `state`. There are two buttons which call methods `increment()` and `decrement()`. Write these methods so the counter value is incremented or decremented by 1 when the appropriate button is clicked. Also, create a `reset()` method so when the reset button is clicked, the count is set to 0.
+El componente `Counter` mantiene un seguimiento de un valor `count` en el `state`. Hay dos botones que llaman a métodos `increment()` y `decrement()`. Escribe estos métodos para que el valor del contador sea incrementado o decrementado por 1 cuando se haga clic en el botón apropiado. También, crea un método `reset()` para que cuando se haga clic en el botón reset, el contador se establezca a 0.
 
-**Note:** Make sure you don't modify the `classNames` of the buttons. Also, remember to add the necessary bindings for the newly-created methods in the constructor.
+**Nota:** Asegúrate de no modificar el `className`de los botones. Además, recuerda agregar en el constructor los enlaces necesarios para los métodos recién creados.
 
 # --hints--
 
-`Counter` should return a `div` element which contains three buttons with text content in this order `Increment!`, `Decrement!`, `Reset`.
+`Counter` debe devolver un elemento `div` que contiene tres botones con contenido de texto en este orden `Increment!`, `Decrement!`, `Reset`.
 
 ```js
 assert(
@@ -33,14 +33,14 @@ assert(
 );
 ```
 
-The state of `Counter` should initialize with a `count` property set to `0`.
+El estado de `Counter` debe inicializarse con una propiedad `count` establecida en `0`.
 
 ```js
 const mockedComponent = Enzyme.mount(React.createElement(Counter));
 assert(mockedComponent.find('h1').text() === 'Current Count: 0');
 ```
 
-Clicking the increment button should increment the count by `1`.
+Al hacer clic en el botón de incremento se incrementará el contador en `1`.
 
 ```js
 const mockedComponent = Enzyme.mount(React.createElement(Counter));
@@ -48,7 +48,7 @@ mockedComponent.find('.inc').simulate('click');
 assert(mockedComponent.find('h1').text() === 'Current Count: 1');
 ```
 
-Clicking the decrement button should decrement the count by `1`.
+Al hacer clic en el botón de disminuir se reducirá el contador en `1`.
 
 ```js
 const mockedComponent = Enzyme.mount(React.createElement(Counter));
@@ -56,7 +56,7 @@ mockedComponent.find('.dec').simulate('click');
 assert(mockedComponent.find('h1').text() === 'Current Count: -1');
 ```
 
-Clicking the reset button should reset the count to `0`.
+Al hacer clic en el botón reset se reiniciará el contador a `0`.
 
 ```js
 const mockedComponent = Enzyme.mount(React.createElement(Counter));

@@ -1,21 +1,20 @@
-import React from 'react';
-import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAward,
   faCalendar,
   faHeart
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Col, Row } from '@freecodecamp/react-bootstrap';
+import React from 'react';
 import { TFunction, useTranslation } from 'react-i18next';
 
+import envData from '../../../../../config/env.json';
+import { langCodes } from '../../../../../config/i18n/all-langs';
 import { AvatarRenderer } from '../../helpers';
-import SocialIcons from './SocialIcons';
 import Link from '../../helpers/link';
+import SocialIcons from './SocialIcons';
 
 import './camper.css';
-
-import { langCodes } from '../../../../../config/i18n/all-langs';
-import envData from '../../../../../config/env.json';
 
 const { clientLocale } = envData;
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -43,7 +42,7 @@ interface ICamperProps {
   yearsTopContributor: string[];
 }
 
-function joinArray(array: string[], t: TFunction<'translation'>): string {
+function joinArray(array: string[], t: TFunction): string {
   return array.reduce((string, item, index, array) => {
     if (string.length > 0) {
       if (index === array.length - 1) {
@@ -57,7 +56,7 @@ function joinArray(array: string[], t: TFunction<'translation'>): string {
   });
 }
 
-function parseDate(joinDate: string, t: TFunction<'translation'>): string {
+function parseDate(joinDate: string, t: TFunction): string {
   const convertedJoinDate = new Date(joinDate);
   const date = convertedJoinDate.toLocaleString([localeCode, 'en-US'], {
     year: 'numeric',
@@ -90,7 +89,7 @@ function Camper({
   return (
     <div>
       <Row>
-        <Col className='avatar-container' xs={12}>
+        <Col className='avatar-camper' xs={12}>
           <AvatarRenderer
             isDonating={isDonating}
             isTopContributor={yearsTopContributor.length > 0}

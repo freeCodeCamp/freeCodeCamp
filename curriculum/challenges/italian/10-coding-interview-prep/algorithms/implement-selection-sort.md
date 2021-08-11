@@ -1,6 +1,6 @@
 ---
 id: 587d8259367417b2b2512c85
-title: Implement Selection Sort
+title: Implementare Selection Sort
 challengeType: 1
 forumTopicId: 301616
 dashedName: implement-selection-sort
@@ -8,19 +8,19 @@ dashedName: implement-selection-sort
 
 # --description--
 
-Here we will implement selection sort. Selection sort works by selecting the minimum value in a list and swapping it with the first value in the list. It then starts at the second position, selects the smallest value in the remaining list, and swaps it with the second element. It continues iterating through the list and swapping elements until it reaches the end of the list. Now the list is sorted. Selection sort has quadratic time complexity in all cases.
+Qui implementeremo Selection Sort. Selection Sort funziona selezionando il valore minimo in una lista e scambiandolo con il primo valore dell'elenco. Poi inizia dalla seconda posizione, seleziona il valore più piccolo nella lista rimanente e lo scambia con il secondo elemento. Continua a iterare attraverso la lista e scambiare gli elementi fino a raggiungere la fine della lista. Ora la lista è ordinata. Il selection sort ha una complessità di tempo quadratica in tutti i casi.
 
-**Instructions**: Write a function `selectionSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
+**Istruzioni:** Scrivi una funzione `selectionSort` che prende un array di interi come input e restituisce un array di questi interi in ordine dal più piccolo al più grande.
 
 # --hints--
 
-`selectionSort` should be a function.
+`selectionSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof selectionSort == 'function');
 ```
 
-`selectionSort` should return a sorted array (least to greatest).
+`selectionSort` dovrebbe restituire un array ordinato (dal più piccolo al più grande).
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`selectionSort` should return an array that is unchanged except for order.
+`selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` dovrebbe restituire un array invariato tranne che per l'ordine.
 
 ```js
 assert.sameMembers(
@@ -75,7 +75,7 @@ assert.sameMembers(
 );
 ```
 
-`selectionSort` should not use the built-in `.sort()` method.
+`selectionSort` non dovrebbe usare il metodo integrato `.sort()`.
 
 ```js
 assert(isBuiltInSortUsed());
@@ -109,9 +109,6 @@ function selectionSort(array) {
   return array;
   // Only change code above this line
 }
-
-
-selectionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

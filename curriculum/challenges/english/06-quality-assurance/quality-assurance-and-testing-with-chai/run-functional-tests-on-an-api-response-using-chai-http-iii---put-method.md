@@ -10,29 +10,37 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-In the next example we'll see how to send data in a request payload (body). We are going to test a PUT request. The `'/travellers'` endpoint accepts a JSON object taking the structure:
+When you test a `PUT` request, you'll often send data along with it. The data you include with your `PUT` request is called the body of the request.
+
+To send a `PUT` request and a JSON object to the `'/travellers'` endpoint, you can use `chai-http` plugin's `put` and `send` methods:
+
+```js
+chai
+  .request(server)
+  .put('/travellers')
+  .send({
+    "surname": [last name of a traveller of the past]
+  })
+  ...
+```
+
+And the route responds with:
 
 ```json
 {
-  "surname": [last name of a traveller of the past]
+  "name": [first name],
+  "surname": [last name],
+  "dates": [birth - death years]
 }
 ```
 
-The route responds with :
-
-```json
-{
-  "name": [first name], "surname": [last name], "dates": [birth - death years]
-}
-```
-
-See the server code for more details.
+See the server code for the different responses to the `'/travellers'` endpoint.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'send {surname: "Colombo"}'` test (`// #3`):
+Within `tests/2_functional-tests.js`, alter the `'Send {surname: "Colombo"}'` test (`// #3`) and use the `put` and `send` methods to test the  `'/travellers'` endpoint.
 
-Send the following JSON response as a payload:
+Send the following JSON object with your PUT request:
 
 ```json
 {
@@ -40,14 +48,14 @@ Send the following JSON response as a payload:
 }
 ```
 
-Check for the following, within the `request.end` callback:
+Check for the following within the `request.end` callback:
 
-1.  `status`
-2.  `type`
-3.  `body.name`
-4.  `body.surname`
+1.  The `status` should be `200`
+2.  The `type` should be `application/json`
+3.  The `body.name` should be `Cristoforo`
+4.  The `body.surname` should be `Colombo`
 
-Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
+Follow the assertion order above - we rely on it. Also, be sure to remove `assert.fail()` once complete.
 
 # --hints--
 
@@ -65,7 +73,7 @@ All tests should pass.
   );
 ```
 
-You should test for 'res.status' to be 200.
+You should test for `res.status` to be 200.
 
 ```js
 (getUserInput) =>
@@ -81,7 +89,7 @@ You should test for 'res.status' to be 200.
   );
 ```
 
-You should test for 'res.type' to be 'application/json'.
+You should test for `res.type` to be `'application/json'`.
 
 ```js
 (getUserInput) =>
@@ -97,7 +105,7 @@ You should test for 'res.type' to be 'application/json'.
   );
 ```
 
-You should test for 'res.body.name' to be 'Cristoforo'.
+You should test for `res.body.name` to be `'Cristoforo'`.
 
 ```js
 (getUserInput) =>
@@ -113,7 +121,7 @@ You should test for 'res.body.name' to be 'Cristoforo'.
   );
 ```
 
-You should test for 'res.body.surname' to be 'Colombo'.
+You should test for `res.body.surname` to be `'Colombo'`.
 
 ```js
 (getUserInput) =>

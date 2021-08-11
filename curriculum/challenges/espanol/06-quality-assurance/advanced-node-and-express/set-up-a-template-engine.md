@@ -8,7 +8,13 @@ dashedName: set-up-a-template-engine
 
 # --description--
 
-As a reminder, this project is built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-advancednode), or clone from [GitHub](https://github.com/freeCodeCamp/boilerplate-advancednode/).
+Working on these challenges will involve you writing your code using one of the following methods:
+
+- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-advancednode/) and complete these challenges locally.
+- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-advancednode) to complete these challenges.
+- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
 A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
 

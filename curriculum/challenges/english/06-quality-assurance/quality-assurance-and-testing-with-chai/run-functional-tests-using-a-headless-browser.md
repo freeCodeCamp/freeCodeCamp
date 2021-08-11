@@ -1,6 +1,6 @@
 ---
 id: 587d8250367417b2b2512c5d
-title: Run Functional Tests using a Headless Browser
+title: Run Functional Tests Using a Headless Browser
 challengeType: 2
 forumTopicId: 301595
 dashedName: run-functional-tests-using-a-headless-browser
@@ -10,21 +10,29 @@ dashedName: run-functional-tests-using-a-headless-browser
 
 As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-In the HTML main view we provided a input form. It sends data to the `PUT /travellers` endpoint that we used above with an Ajax request. When the request successfully completes, the client code appends a `<div>` containing the info returned by the call to the DOM. Here is an example of how to interact with this form:
+On the page there's an input form. It sends data to the `PUT /travellers` endpoint as an AJAX request.
+
+When the request successfully completes, the client code appends a `<div>` containing the information in the response to the DOM.
+
+Here's an example of how to use Zombie.js to interact with the form:
 
 ```js
-test('#test - submit the input "surname" : "Polo"', function (done) {
-  browser.fill('surname', 'Polo').pressButton('submit', function () {
-    browser.assert.success();
-    browser.assert.text('span#name', 'Marco');
-    browser.assert.text('span#surname', 'Polo');
-    browser.assert.elements('span#dates', 1);
-    done();
+test('Submit the surname "Polo" in the HTML form', function (done) {
+  browser.fill('surname', 'Polo').then(() => {
+    browser.pressButton('submit', () => {
+      browser.assert.success();
+      browser.assert.text('span#name', 'Marco');
+      browser.assert.text('span#surname', 'Polo');
+      browser.assert.elements('span#dates', 1);
+      done();
+    });
   });
-}
+});
 ```
 
-First, the `fill` method of the `browser` object fills the `surname` field of the form with the value `'Polo'`. Immediately after, the `pressButton` method invokes the `submit` event listener of the form. The `pressButton` method is asynchronous.
+First, the `fill` method of the `browser` object fills the `surname` field of the form with the value `'Polo'`. `fill` returns a promise, so `then` is chained off of it.
+
+Within the `then` callback, the `pressButton` method of the `browser` object is used to invoke the form's `submit` event listener. The `pressButton` method is asynchronous.
 
 Then, once a response is received from the AJAX request, a few assertions are made confirming:
 
@@ -37,17 +45,17 @@ Finally, the `done` callback is invoked, which is needed due to the asynchronous
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Colombo" - write your e2e test...'` test (`// #5`), automate filling-in and submitting the form:
+Within `tests/2_functional-tests.js`, in the `'Submit the surname "Colombo" in the HTML form'` test (`// #5`), automate the following:
 
-1.  Fill in the form
-2.  Submit it pressing `'submit'` button.
+1.  Fill in the form with the surname `Colombo`
+2.  Press the submit button
 
-Within the callback:
+And within the `pressButton` callback:
 
-1.  assert that status is OK `200`
-2.  assert that the text inside the element `span#name` is `'Cristoforo'`
-3.  assert that the text inside the element `span#surname` is `'Colombo'`
-4.  assert that the element(s) `span#dates` exist and their count is `1`
+1.  Assert that status is OK `200`
+2.  Assert that the text inside the element `span#name` is `'Cristoforo'`
+3.  Assert that the text inside the element `span#surname` is `'Colombo'`
+4.  Assert that the element(s) `span#dates` exist and their count is `1`
 
 Do not forget to remove the `assert.fail()` call.
 
@@ -57,7 +65,7 @@ All tests should pass.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -71,7 +79,7 @@ You should assert that the headless browser request succeeded.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'browser.success');
     },
@@ -81,11 +89,11 @@ You should assert that the headless browser request succeeded.
   );
 ```
 
-You should assert that the text inside the element 'span#name' is 'Cristoforo'.
+You should assert that the text inside the element `span#name` is `'Cristoforo'`.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'browser.text');
       assert.match(data.assertions[1].args[0], /('|")span#name\1/);
@@ -97,11 +105,11 @@ You should assert that the text inside the element 'span#name' is 'Cristoforo'.
   );
 ```
 
-You should assert that the text inside the element 'span#surname' is 'Colombo'.
+You should assert that the text inside the element `span#surname` is `'Colombo'`.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[2].method, 'browser.text');
       assert.match(data.assertions[2].args[0], /('|")span#surname\1/);
@@ -113,11 +121,11 @@ You should assert that the text inside the element 'span#surname' is 'Colombo'.
   );
 ```
 
-You should assert that the element 'span#dates' exist and its count is 1.
+You should assert that the element `span#dates` exist and its count is 1.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[3].method, 'browser.elements');
       assert.match(data.assertions[3].args[0], /('|")span#dates\1/);

@@ -1,6 +1,6 @@
 ---
 id: 587d825a367417b2b2512c89
-title: Implement Quick Sort
+title: Implementare Quick Sort
 challengeType: 1
 forumTopicId: 301615
 dashedName: implement-quick-sort
@@ -8,21 +8,21 @@ dashedName: implement-quick-sort
 
 # --description--
 
-Here we will move on to an intermediate sorting algorithm: quick sort. Quick sort is an efficient, recursive divide-and-conquer approach to sorting an array. In this method, a pivot value is chosen in the original array. The array is then partitioned into two subarrays of values less than and greater than the pivot value. We then combine the result of recursively calling the quick sort algorithm on both sub-arrays. This continues until the base case of an empty or single-item array is reached, which we return. The unwinding of the recursive calls return us the sorted array.
+Qui passeremo ad un algoritmo di ordinamento intermedio: Quick Sort. Quick Sort è un approccio efficiente e ricorsivo di logica divide-et-impera per l'ordinamento di un array. In questo approccio, viene scelto un valore pivot nell'array originale. L'array viene poi suddiviso in due sottoarray di valori inferiori e superiori al valore pivot. Quindi combiniamo il risultato della chiamata ricorsiva dell'algoritmo Quick Sort su entrambi i sotto-array. Questo continua fino al raggiungimento del caso base di un array vuoto o di un singolo oggetto, al che torniamo indietro. Lo svolgimento delle chiamate ricorsive restitusce l'array ordinato.
 
-Quick sort is a very efficient sorting method, providing *O(nlog(n))* performance on average. It is also relatively easy to implement. These attributes make it a popular and useful sorting method.
+Quick Sort è un metodo di ordinamento molto efficiente, che fornisce prestazioni *O(nlog(n))* in media. È anche relativamente facile da implementare. Questi attributi lo rendono un metodo di ordinamento popolare e utile.
 
-**Instructions:** Write a function `quickSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. While the choice of the pivot value is important, any pivot will do for our purposes here. For simplicity, the first or last element could be used.
+**Istruzioni:** Scrivi una funzione `quickSort` che prende un array di interi come input e restituisce un array di questi interi in ordine dal più piccolo al più grande. Anche se la scelta del valore pivot è importante, per i nostri scopi andrà bene qualsiasi pivot. Per semplicità, si potrebbe usare il primo o l'ultimo elemento.
 
 # --hints--
 
-`quickSort` should be a function.
+`quickSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof quickSort == 'function');
 ```
 
-`quickSort` should return a sorted array (least to greatest).
+`quickSort` dovrebbe restituire un array ordinato (dal più piccolo al più grande).
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-`quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` should return an array that is unchanged except for order.
+`quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` dovrebbe restituire un array che è invariato tranne che per l'ordine.
 
 ```js
 assert.sameMembers(
@@ -77,7 +77,7 @@ assert.sameMembers(
 );
 ```
 
-`quickSort` should not use the built-in `.sort()` method.
+`quickSort` non dovrebbe utilizzare il metodo integrato `.sort()`.
 
 ```js
 assert(isBuiltInSortUsed());

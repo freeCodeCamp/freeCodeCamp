@@ -33,7 +33,7 @@ assert(result[0] == '<h1>');
 `myRegex` should use lazy matching
 
 ```js
-assert(/\?/g.test(myRegex));
+assert(/[^\\][\*\+\?]\?/.test(myRegex));
 ```
 
 `myRegex` should not include the string `h1`

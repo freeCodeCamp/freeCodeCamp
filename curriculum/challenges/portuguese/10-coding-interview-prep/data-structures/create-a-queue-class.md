@@ -1,6 +1,6 @@
 ---
 id: 587d8250367417b2b2512c60
-title: Create a Queue Class
+title: Criar uma classe de fila
 challengeType: 1
 forumTopicId: 301631
 dashedName: create-a-queue-class
@@ -8,19 +8,19 @@ dashedName: create-a-queue-class
 
 # --description--
 
-Like stacks, queues are a collection of elements. But unlike stacks, queues follow the FIFO (First-In First-Out) principle. Elements added to a queue are pushed to the tail, or the end, of the queue, and only the element at the front of the queue is allowed to be removed.
+Da mesma forma que ocorre com as pilhas, as filas são uma coleção de elementos. Mas, ao contrário delas, as filas seguem o princípio FIFO (First-In First-Out, o primeiro a entrar é o primeiro a sair). Elementos adicionados à fila vão empurrados para o final da fila. Apenas o elemento da frente da fila pode ser removido.
 
-We could use an array to represent a queue, but just like stacks, we want to limit the amount of control we have over our queues.
+Nós poderíamos usar um array para representar uma fila, mas, assim como fizemos como as pilhas, queremos limitar a quantidade de controle que temos sobre elas.
 
-The two main methods of a queue class is the enqueue and the dequeue method. The enqueue method pushes an element to the tail of the queue, and the dequeue method removes and returns the element at the front of the queue. Other useful methods are the front, size, and isEmpty methods.
+Os dois métodos principais de uma classe de fila são os métodos enqueue (colocar na fila) e dequeue (remover da fila). O método enqueue faz um push de um elemento para o final da fila, enquanto o método dequeue remove e retorna o elemento na frente da fila. Outros métodos úteis são os métodos front, size e isEmpty.
 
 # --instructions--
 
-Write an `enqueue` method that pushes an element to the tail of the queue, a `dequeue` method that removes and returns the front element, a `front` method that lets us see the front element, a `size` method that shows the length, and an `isEmpty` method to check if the queue is empty.
+Escreva um método `enqueue` que faça o push de um elemento para o final da fila, um método `dequeue`, que remove e retorna o elemento da frente, um método `front`, que nos permite ver o elemento da frente, um método `size`, que mostra o tamanho da fila, e um método `isEmpty` para verificar se a fila está vazia.
 
 # --hints--
 
-Your `Queue` class should have a `enqueue` method.
+A classe `Queue` deve ter o método `enqueue`.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Your `Queue` class should have a `dequeue` method.
+A classe `Queue` deve ter o método `dequeue`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-Your `Queue` class should have a `front` method.
+A classe `Queue` deve ter o método `front`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-Your `Queue` class should have a `size` method.
+A classe `Queue` deve ter o método `size`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-Your `Queue` class should have an `isEmpty` method.
+A classe `Queue` deve ter o método `isEmpty`.
 
 ```js
 assert(
@@ -75,7 +75,7 @@ assert(
 );
 ```
 
-The `dequeue` method should remove and return the front element of the queue
+O método `dequeue` deve remover e retornar o elemento da frente da fila
 
 ```js
 assert(
@@ -88,7 +88,7 @@ assert(
 );
 ```
 
-The `front` method should return value of the front element of the queue
+O método `front` deve retornar o valor do elemento da frente da fila
 
 ```js
 assert(
@@ -101,7 +101,7 @@ assert(
 );
 ```
 
-The `size` method should return the length of the queue
+O método `size` deve retornar o tamanho da fila
 
 ```js
 assert(
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-The `isEmpty` method should return `false` if there are elements in the queue
+O método `isEmpty` deve retornar `false` quando houver elementos na fila
 
 ```js
 assert(

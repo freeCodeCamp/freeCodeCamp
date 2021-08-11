@@ -13,11 +13,11 @@ Determine whether a generated string of brackets is balanced; that is, whether i
 **Examples:**
 | Input                     | Output |
 | ------------------------- | ------ |
-| <code>\[]</code>          | true   |
-| <code>]\[</code>          | false  |
-| <code>[][]</code>         | true   |
-| <code>]\[]</code>         | false  |
-| <code>\[]]\[\[]</code>    | false  |
+| <code>\[]</code> | true   |
+| <code>]\[</code> | false  |
+| <code>[][]</code> | true   |
+| <code>]\[]</code> | false  |
+| <code>\[]]\[\[]</code> | false  |
 | <code>\[\[\[\[]]]]</code> | true   |
 
 # --hints--

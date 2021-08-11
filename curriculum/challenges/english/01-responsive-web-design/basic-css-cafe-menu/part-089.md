@@ -1,5 +1,5 @@
 ---
-id: 5f46e7a4750dd05b5a673920
+id: 5f46e8284aae155c83015dee
 title: Part 89
 challengeType: 0
 dashedName: part-89
@@ -7,14 +7,28 @@ dashedName: part-89
 
 # --description--
 
-Now apply the `address` class to the `p` element containing the address.
+The menu looks good, but other than the coffee beans background image, it is mainly just text.
+
+Under the `Coffee` heading, add an image using the url `https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg`. Give the image an `alt` value of `coffee icon`.
 
 # --hints--
 
-Test 1
+You should have an `<img>` tag. Remember that `img` elements are self-closing.
 
 ```js
+assert($('img').length === 1);
+```
 
+Your `img` element should have a `src` attribute of `https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg`.
+
+```js
+assert($('img').attr('src') === 'https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg');
+```
+
+Your `img` element should have an `alt` attribute of `coffee icon`.
+
+```js
+assert($('img').attr('alt').match(/coffee icon/i));
 ```
 
 # --seed--
@@ -39,12 +53,14 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+--fcc-editable-region--
+          <h2>Coffee</h2>
+--fcc-editable-region--
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -73,14 +89,12 @@ Test 1
         </section>
       </main>
       <hr class="bottom-line">
---fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p>123 Free Code Camp Drive</p>
+        <p class="address">123 Free Code Camp Drive</p>
       </footer>
---fcc-editable-region--
     </div>
   </body>
 <html>
@@ -88,7 +102,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }

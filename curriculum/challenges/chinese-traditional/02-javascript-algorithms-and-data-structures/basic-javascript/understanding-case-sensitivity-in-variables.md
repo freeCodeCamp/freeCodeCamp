@@ -11,7 +11,7 @@ dashedName: understanding-case-sensitivity-in-variables
 
 在 JavaScript 中所有的變量和函數名都是大小寫敏感的。 要區別對待大寫字母和小寫字母。
 
-`MYVAR` 與 `MyVar` 和 `myvar` 是不同的變量。 這有可能導致出現多個相似名字的的變量。 所以強烈地建議你，爲了保持代碼清晰*不要*使用這一特性。
+`MYVAR` 與 `MyVar` 和 `myvar` 是不同的變量。 這有可能導致出現多個相似名字的變量。 所以強烈地建議你，爲了保持代碼清晰*不要*使用這一特性。
 
 **最佳實踐**
 

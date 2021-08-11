@@ -8,18 +8,25 @@ dashedName: problem-455-powers-with-trailing-digits
 
 # --description--
 
-Let f(n) be the largest positive integer x less than 109 such that the last 9 digits of nx form the number x (including leading zeros), or zero if no such integer exists.
+Let $f(n)$ be the largest positive integer $x$ less than ${10}^9$ such that the last 9 digits of $n^x$ form the number $x$ (including leading zeros), or zero if no such integer exists.
 
 For example:
 
-f(4) = 411728896 (4411728896 = ...490411728896) f(10) = 0 f(157) = 743757 (157743757 = ...567000743757) Σf(n), 2 ≤ n ≤ 103 = 442530011399 Find Σf(n), 2 ≤ n ≤ 106.
+$$\begin{align}
+  & f(4) = 411\\,728\\,896 (4^{411\\,728\\,896} = ...490\underline{411728896}) \\\\
+  & f(10) = 0 \\\\
+  & f(157) = 743\\,757 (157^{743\\,757} = ...567\underline{000743757}) \\\\
+  & Σf(n), 2 ≤ n ≤ 103 = 442\\,530\\,011\\,399
+\end{align}$$
+
+Find $\sum f(n)$, $2 ≤ n ≤ {10}^6$.
 
 # --hints--
 
-`euler455()` should return 450186511399999.
+`powersWithTrailingDigits()` should return `450186511399999`.
 
 ```js
-assert.strictEqual(euler455(), 450186511399999);
+assert.strictEqual(powersWithTrailingDigits(), 450186511399999);
 ```
 
 # --seed--
@@ -27,12 +34,12 @@ assert.strictEqual(euler455(), 450186511399999);
 ## --seed-contents--
 
 ```js
-function euler455() {
+function powersWithTrailingDigits() {
 
   return true;
 }
 
-euler455();
+powersWithTrailingDigits();
 ```
 
 # --solutions--

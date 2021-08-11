@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908846
-title: Create a Bootstrap Headline
+title: Criar um título com Bootstrap
 challengeType: 0
 forumTopicId: 16812
 dashedName: create-a-bootstrap-headline
@@ -8,23 +8,23 @@ dashedName: create-a-bootstrap-headline
 
 # --description--
 
-Now let's build something from scratch to practice our HTML, CSS and Bootstrap skills.
+Agora vamos construir algo do zero para praticar nossa habilidade em HTML, CSS e Bootstrap.
 
-We'll build a jQuery playground, which we'll soon put to use in our jQuery challenges.
+Vamos construir um playground jQuery, o qual vamos colocar em uso em breve nos desafios de jQuery.
 
-To start with, create an `h3` element, with the text `jQuery Playground`.
+Para começar, crie um elemento `h3`, com o texto `jQuery Playground`.
 
-Color your `h3` element with the `text-primary` Bootstrap class, and center it with the `text-center` Bootstrap class.
+Dê ao elemento `h3` uma cor com a classe `text-primary`, e centralize-o com a classe `text-center` do Bootstrap.
 
 # --hints--
 
-You should add an `h3` element to your page.
+Você deve adicionar um elemento `h3` à página.
 
 ```js
 assert($('h3') && $('h3').length > 0);
 ```
 
-Your `h3` element should have a closing tag.
+O elemento `h3` deve ter uma tag de fechamento.
 
 ```js
 assert(
@@ -34,19 +34,19 @@ assert(
 );
 ```
 
-Your `h3` element should be colored by applying the class `text-primary`
+O elemento `h3` deve ser colorido ao aplicar a classe `text-primary`
 
 ```js
 assert($('h3').hasClass('text-primary'));
 ```
 
-Your `h3` element should be centered by applying the class `text-center`
+O elemento `h3` deve ser centralizado ao aplicar a classe `text-center`
 
 ```js
 assert($('h3').hasClass('text-center'));
 ```
 
-Your `h3` element should have the text `jQuery Playground`.
+O elemento `h3` deve ter o texto `jQuery Playground`.
 
 ```js
 assert.isTrue(/jquery(\s)+playground/gi.test($('h3').text()));

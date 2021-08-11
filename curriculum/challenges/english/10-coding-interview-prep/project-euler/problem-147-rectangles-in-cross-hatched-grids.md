@@ -10,7 +10,18 @@ dashedName: problem-147-rectangles-in-cross-hatched-grids
 
 In a 3x2 cross-hatched grid, a total of 37 different rectangles could be situated within that grid as indicated in the sketch.
 
-There are 5 grids smaller than 3x2, vertical and horizontal dimensions being important, i.e. 1x1, 2x1, 3x1, 1x2 and 2x2. If each of them is cross-hatched, the following number of different rectangles could be situated within those smaller grids: 1x1: 1 2x1: 4 3x1: 8 1x2: 4 2x2: 18
+<img class="img-responsive center-block" alt="ways of situating different rectangles wihtin cross-hatched 3x2 grid" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px;">
+
+There are 5 grids smaller than 3x2, vertical and horizontal dimensions being important, i.e. 1x1, 2x1, 3x1, 1x2 and 2x2. If each of them is cross-hatched, the following number of different rectangles could be situated within those smaller grids:
+
+$$\begin{array}{|c|c|}
+\hline
+  1 \times 1 & 1  \\\\ \hline
+  2 \times 1 & 4  \\\\ \hline
+  3 \times 1 & 8  \\\\ \hline
+  1 \times 2 & 4  \\\\ \hline
+  2 \times 2 & 18 \\\\ \hline
+\end{array}$$
 
 Adding those to the 37 of the 3x2 grid, a total of 72 different rectangles could be situated within 3x2 and smaller grids.
 
@@ -18,10 +29,10 @@ How many different rectangles could be situated within 47x43 and smaller grids?
 
 # --hints--
 
-`euler147()` should return 846910284.
+`crossHatchedRectangles()` should return `846910284`.
 
 ```js
-assert.strictEqual(euler147(), 846910284);
+assert.strictEqual(crossHatchedRectangles(), 846910284);
 ```
 
 # --seed--
@@ -29,12 +40,12 @@ assert.strictEqual(euler147(), 846910284);
 ## --seed-contents--
 
 ```js
-function euler147() {
+function crossHatchedRectangles() {
 
   return true;
 }
 
-euler147();
+crossHatchedRectangles();
 ```
 
 # --solutions--

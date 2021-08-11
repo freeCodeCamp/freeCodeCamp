@@ -1,5 +1,5 @@
-const simpleAST = require('../__fixtures__/ast-simple.json');
 const brokenHintsAST = require('../__fixtures__/ast-broken-hints.json');
+const simpleAST = require('../__fixtures__/ast-simple.json');
 const addTests = require('./add-tests');
 
 describe('add-tests plugin', () => {

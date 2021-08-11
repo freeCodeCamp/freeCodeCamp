@@ -39,7 +39,7 @@ I progetti di pratica hanno degli strumenti addizionali per aiutare a creare i n
 ---
 id: Unique identifier (alphanumerical, MongoDB_id)
 title: 'Challenge Title'
-challengeType: Integer, defined in `client/utils/challengeTypes.js`
+challengeType: Integer, defined in `client/utils/challenge-types.js`
 videoUrl: 'url of video explanation'
 forumTopicId: 12345
 ---
@@ -287,7 +287,7 @@ Le sfide dovrebbero avere il numero minimo di test per verificare che un camper 
 
 Il nostro obbiettivo è comunicare il singolo punto che la sfida sta cercando di insegnare, e testare che abbiano capito il punto.
 
-I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`.
+I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`.  In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test.  Le funzioni disponibili sono definite in _client/src/utils/curriculum-helpers.ts_.
 
 ## Formattare codice di seed
 
@@ -301,7 +301,7 @@ Ecco linee guida specifiche di formattazione per il codice seed delle sfide:
 
 Abbiamo un [dizionario dei commenti](/curriculum/dictionaries/english/comments.js) che contiene gli unici commenti che possono essere usati nel codice seed. I commenti devono essere usati esattamente in quel modo, ricopiando maiuscole, minuscole, e spazi. Il dizionario dei commenti non deve essere allargato senza previa discussione con il team di sviluppo.
 
-I commenti dovrebbero avere uno spazio tra il carattere del commento e il testo del commento. In generale, i commenti dovrebbero essere usati raramente. Considera sempre la possibilità di riscrivere la descrizione o le istruzioni di una sfida se ti permetterebbe di evitare di usare un commento nel codice seed.
+I commenti dovrebbero avere uno spazio tra il carattere del commento e il testo del commento. In generale, i commenti dovrebbero essere usati raramente. Considera sempre la possibilità di riscrivere la descrizione o le istruzioni di una sfida se questo ti permetterebbe di evitare l'uso di un commento nel codice seed.
 
 Esempio di un commento a linea singola in JavaScript:
 
@@ -486,6 +486,6 @@ Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, 
 
 Creare e modificare sfide:
 
-1. [Tipi di sfide](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challengeTypes.js#L1-L13) - cosa significa il valore numerico del tipo della sfida (challenge type) (enum).
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
 
 2. [Contribuire a FreeCodeCamp - Scrivere Test  per le sfide ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - un video che segue [Ethan Arrowood](https://twitter.com/ArrowoodTech) in quanto contributore della vecchia versione del curriculum.

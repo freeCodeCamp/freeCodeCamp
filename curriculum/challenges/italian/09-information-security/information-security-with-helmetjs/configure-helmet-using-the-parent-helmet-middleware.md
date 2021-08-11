@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c40
-title: Configure Helmet Using the ‘parent’ helmet() Middleware
+title: Configurare Helmet usando il middleware 'genitore' helmet()
 challengeType: 2
 forumTopicId: 301575
 dashedName: configure-helmet-using-the-parent-helmet-middleware
@@ -8,11 +8,11 @@ dashedName: configure-helmet-using-the-parent-helmet-middleware
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
-`app.use(helmet())` will automatically include all the middleware introduced above, except `noCache()`, and `contentSecurityPolicy()`, but these can be enabled if necessary. You can also disable or configure any other middleware individually, using a configuration object.
+`app.use(helmet())` includerà automaticamente tutto il middleware introdotto sopra, tranne `noCache()`, e `contentSecurityPolicy()`, ma questi possono essere abilitati se necessario. È inoltre possibile disabilitare o configurare qualsiasi altro middleware singolarmente, utilizzando un oggetto di configurazione.
 
-**Example:**
+**Esempio:**
 
 ```js
 app.use(helmet({
@@ -29,11 +29,11 @@ app.use(helmet({
 }))
 ```
 
-We introduced each middleware separately for teaching purposes and for ease of testing. Using the ‘parent’ `helmet()` middleware is easy to implement in a real project.
+Abbiamo introdotto ogni middleware separatamente per scopi didattici e per facilità di test. L'utilizzo del middleware 'genitore' `helmet()` è facile da implementare in un progetto reale.
 
 # --hints--
 
-no tests - it's a descriptive challenge
+nessun test - è una sfida descrittiva
 
 ```js
 assert(true);

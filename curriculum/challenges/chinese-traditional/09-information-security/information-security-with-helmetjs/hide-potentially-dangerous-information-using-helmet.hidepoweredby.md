@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c37
-title: Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
+title: 使用 helmet.hidePoweredBy() 隱藏潛在的危險信息
 challengeType: 2
 forumTopicId: 301580
 dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
@@ -8,13 +8,13 @@ dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+請注意，本項目在[這個 Repl.it 項目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基礎上進行開發。你也可以從 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
 
-Hackers can exploit known vulnerabilities in Express/Node if they see that your site is powered by Express. X-Powered-By: Express is sent in every request coming from Express by default. The `helmet.hidePoweredBy()` middleware will remove the X-Powered-By header. You can also explicitly set the header to something else, to throw people off. e.g. `app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }))`
+如果黑客發現你的網站是用 Express 搭建的，那麼他們就可以利用 Express 或 Node 現存的漏洞來攻擊你的網站。 `X-Powered-By: Express` 默認在來自 Express 的每個請求中被髮送。 使用 `helmet.hidePoweredBy()` 中間件來移除 X-Powered-By 頭。
 
 # --hints--
 
-helmet.hidePoweredBy() middleware should be mounted correctly
+應正確地安裝 helmet.hidePoweredBy() 中間件
 
 ```js
 (getUserInput) =>

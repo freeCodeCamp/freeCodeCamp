@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf3
-title: Implement a Root-Level Request Logger Middleware
+title: Implementare un middleware logger di richiesta a livello radice
 challengeType: 2
 forumTopicId: 301514
 dashedName: implement-a-root-level-request-logger-middleware
@@ -8,9 +8,9 @@ dashedName: implement-a-root-level-request-logger-middleware
 
 # --description--
 
-Earlier, you were introduced to the `express.static()` middleware function. Now it’s time to see what middleware is, in more detail. Middleware functions are functions that take 3 arguments: the request object, the response object, and the next function in the application’s request-response cycle. These functions execute some code that can have side effects on the app, and usually add information to the request or response objects. They can also end the cycle by sending a response when some condition is met. If they don’t send the response when they are done, they start the execution of the next function in the stack. This triggers calling the 3rd argument, `next()`.
+In precedenza, sei stato introdotto alla funzione middleware `express.static()`. Ora è il momento di vedere cosa è un middleware in modo più dettagliato. Le funzioni middleware sono funzioni che richiedono 3 argomenti: l'oggetto richiesta (request), l'oggetto risposta (response) e la funzione successiva (next) nel ciclo richiesta-risposta dell'applicazione. Queste funzioni eseguono del codice che può avere effetti collaterali sull'app, e di solito aggiungono informazioni alla richiesta o agli oggetti di risposta. Possono anche terminare il ciclo inviando una risposta quando è soddisfatta una certa condizione. Se non inviano la risposta quando hanno finito, iniziano l'esecuzione della funzione successiva nello stack. Questo innesca la chiamata del terzo argomento, `next()`.
 
-Look at the following example:
+Considera l'esempio seguente:
 
 ```js
 function(req, res, next) {
@@ -19,17 +19,17 @@ function(req, res, next) {
 }
 ```
 
-Let’s suppose you mounted this function on a route. When a request matches the route, it displays the string “I’m a middleware…”, then it executes the next function in the stack. In this exercise, you are going to build root-level middleware. As you have seen in challenge 4, to mount a middleware function at root level, you can use the `app.use(<mware-function>)` method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use `app.post(<mware-function>)`. Analogous methods exist for all the HTTP verbs (GET, DELETE, PUT, …).
+Supponiamo che tu abbia montato questa funzione su una rotta. Quando una richiesta corrisponde alla rotta, mostrerà la stringa “I’m a middleware…”, dopodiché eseguirà la funzione successiva nello stack. In questo esercizio, costruirai un middleware a livello di radice. Come hai visto nella sfida 4, per montare una funzione middleware a livello di radice, puoi usare il metodo `app.use(<mware-function>)`. In questo caso, la funzione verrà eseguita per tutte le richieste, ma è anche possibile impostare condizioni più specifiche. Ad esempio, se desideri che una funzione venga eseguita solo per le richieste POST, puoi utilizzare `app.post(<mware-function>)`. Esistono metodi analoghi per tutti i verbi HTTP (GET, DELETE, PUT, …).
 
 # --instructions--
 
-Build a simple logger. For every request, it should log to the console a string taking the following format: `method path - ip`. An example would look like this: `GET /json - ::ffff:127.0.0.1`. Note that there is a space between `method` and `path` and that the dash separating `path` and `ip` is surrounded by a space on both sides. You can get the request method (http verb), the relative route path, and the caller’s ip from the request object using `req.method`, `req.path` and `req.ip`. Remember to call `next()` when you are done, or your server will be stuck forever. Be sure to have the ‘Logs’ opened, and see what happens when some request arrives.
+Costruisci un semplice logger. Per ogni richiesta, esso dovrebbe scrivere nella console una stringa con il seguente formato: `method path - ip`. L'output dovrebbe assomigliare a questo: `GET /json - ::ffff:127.0.0.1`. Nota che c'è uno spazio tra `method` e `path` e che il trattino che separa `path` e `ip` è circondato da uno spazio su entrambi i lati. Puoi ottenere il metodo di richiesta (il verbo http), il percorso relativo e l'ip del chiamante dall'oggetto request utilizzando `req.method`, `req.path` e `req.ip`. Ricordati di chiamare `next()` quando hai finito, o il tuo server rimarrà bloccato per sempre. Assicurati di avere il 'Logs' aperto, e guarda cosa succede quando arriva qualche richiesta.
 
-**Note:** Express evaluates functions in the order they appear in the code. This is true for middleware too. If you want it to work for all the routes, it should be mounted before them.
+**Nota:** Express valuta le funzioni nell'ordine in cui appaiono nel codice. Questo vale anche per i middleware. Se vuoi che funzioni per tutte le rotte, dovresti montarlo prima di loro.
 
 # --hints--
 
-Root level logger middleware should be active
+Il middleware del logger di livello radice dovrebbe essere attivo
 
 ```js
 (getUserInput) =>

@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e05473f91f948724ab
+id: 5f3ef6e056bdde6ae6892ba2
 title: Part 59
 challengeType: 0
 dashedName: part-59
@@ -7,16 +7,36 @@ dashedName: part-59
 
 # --description--
 
-You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
+It is a bit boring for all the text to have the same `font-family`. You can still have the majority of the text `sans-serif` and make just the `h1` and `h2` elements different using a different selector.
 
-Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`. This is a fairly common font that is very readable.
+Style both the `h1` and the `h2` elements so that only these elements' text use `Impact` font.
 
 # --hints--
 
-Test 1
+You should use an `h1, h2` selector.
 
 ```js
+const h1h2Selector = new __helpers.CSSHelp(document).getStyle('h1, h2');
+assert(h1h2Selector);
+```
 
+You should set the `font-family` to `Impact`.
+
+```js
+const hasFontFamily = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['font-family'] === 'Impact');
+assert(hasFontFamily);
+```
+
+Your `h1` element should have a `font-family` of `Impact`.
+
+```js
+assert($('h1').css('font-family').match(/impact/i));
+```
+
+Your `h2` element should have a `font-family` of `Impact`.
+
+```js
+assert($('h2').css('font-family').match(/impact/i));
 ```
 
 # --seed--
@@ -40,12 +60,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -79,11 +99,10 @@ Test 1
 ```
 
 ```css
---fcc-editable-region--
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+  font-family: sans-serif;
 }
---fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
@@ -97,6 +116,10 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .item p {
   display: inline-block;

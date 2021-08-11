@@ -1,11 +1,11 @@
-import fs from 'fs/promises';
 import { existsSync } from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
-import { format } from 'prettier';
 import { prompt } from 'inquirer';
+import { format } from 'prettier';
 
-import { createStepFile } from './utils.js';
 import { blockNameify } from '../../utils/block-nameify';
+import { createStepFile } from './utils.js';
 
 const superBlocks = [
   'responsive-web-design',

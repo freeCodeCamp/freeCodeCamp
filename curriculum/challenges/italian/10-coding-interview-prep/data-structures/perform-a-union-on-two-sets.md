@@ -1,6 +1,6 @@
 ---
 id: 587d8253367417b2b2512c6c
-title: Perform a Union on Two Sets
+title: Eseguire l'unione di due insiemi
 challengeType: 1
 forumTopicId: 301708
 dashedName: perform-a-union-on-two-sets
@@ -8,13 +8,13 @@ dashedName: perform-a-union-on-two-sets
 
 # --description--
 
-In this exercise we are going to perform a union on two sets of data. We will create a method on our `Set` data structure called `union`. This method should take another `Set` as an argument and return the `union` of the two sets, excluding any duplicate values.
+In questo esercizio eseguiremo l'unione di due serie di dati. Creeremo un metodo sulla nostra struttura dati `Set` chiamato `union`. Questo metodo dovrebbe prendere un altro `Set` come argomento e restituire l'`union` dei due insiemi, escludendo eventuali valori duplicati.
 
-For example, if `setA = ['a','b','c']` and `setB = ['a','b','d','e']`, then the union of setA and setB is: `setA.union(setB) = ['a', 'b', 'c', 'd', 'e']`.
+Per esempio, se `setA = ['a','b','c']` e `setB = ['a','b','d','e']`, allora l'unione di setA e setB è: `setA.union(setB) = ['a', 'b', 'c', 'd', 'e']`.
 
 # --hints--
 
-Your `Set` class should have a `union` method.
+La tua classe `Set` dovrebbe avere un metodo `union`.
 
 ```js
 assert(
@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-The union of a Set containing values ["a", "b", "c"] and a Set containing values ["c", "d"] should return a new Set containing values ["a", "b", "c", "d"].
+L'unione di un insieme contenente valori ["a", "b", "c"] e un insieme contenente valori ["c", "d"] dovrebbe restituire un nuovo Set contenente valori ["a", "b", "c", "d"].
 
 ```js
 assert(

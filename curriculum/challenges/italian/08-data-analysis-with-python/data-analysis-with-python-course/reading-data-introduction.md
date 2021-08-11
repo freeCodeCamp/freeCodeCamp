@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c161
-title: Reading Data Introduction
+title: Introduzione alla lettura dei dati
 challengeType: 11
 videoId: cDnt02BcHng
 dashedName: reading-data-introduction
@@ -8,18 +8,18 @@ dashedName: reading-data-introduction
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Invece di usare notebooks.ai come mostrato nel video, puoi usare Google Colab.*
 
-More resources:
+Altre risorse:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebook su GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-1-reading-csv-and-txt-files/files)
+-   [Come aprire Notebooks da GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-Given a file named `certificates.csv` with these contents:
+Dato un file chiamato `certificates.csv` con questi contenuti:
 
 <pre>
 Name$Certificates$Time (in months)
@@ -29,7 +29,7 @@ Ahmad$5$9
 Beau$6$12
 </pre>
 
-Fill in the blanks for the missing arguments below:
+Riempi gli spazi vuoti per gli argomenti mancanti qui sotto:
 
 ```py
 import csv

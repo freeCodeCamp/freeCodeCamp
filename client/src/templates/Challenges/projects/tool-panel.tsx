@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { bindActionCreators, Dispatch } from 'redux';
-import { connect } from 'react-redux';
 import { Button } from '@freecodecamp/react-bootstrap';
-import { withTranslation } from 'react-i18next';
+import React, { Component } from 'react';
+import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
 
 import { openModal } from '../redux';
 
@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ToolPanelProps {
   guideUrl?: string;
   openHelpModal: () => void;
-  t: (args: string) => void;
+  t: TFunction;
 }
 
 export class ToolPanel extends Component<ToolPanelProps> {
