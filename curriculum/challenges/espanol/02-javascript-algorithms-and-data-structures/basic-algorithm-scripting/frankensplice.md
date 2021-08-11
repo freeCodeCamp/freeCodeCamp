@@ -3,7 +3,7 @@ id: 579e2a2c335b9d72dd32e05c
 title: Cortar y rebanar
 challengeType: 5
 forumTopicId: 301148
-dashedName: slice-and-splice
+dashedName: frankensplice
 ---
 
 # --description--
