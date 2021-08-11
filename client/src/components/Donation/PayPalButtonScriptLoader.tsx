@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import { Loader } from '../../components/helpers';
 import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
 
 import type { AddDonationData } from './PaypalButton';
@@ -34,6 +33,7 @@ type PayPalButtonScriptLoaderProps = {
   ) => unknown;
   onCancel: () => unknown;
   onError: () => unknown;
+  onCheck: () => void;
   style: unknown;
   planId: string | null;
 };
@@ -114,6 +114,7 @@ export class PayPalButtonScriptLoader extends Component<
 
   onScriptLoad = (): void => {
     this.setState({ isSdkLoaded: true });
+    this.props.onCheck();
   };
 
   captureOneTimePayment(
@@ -144,7 +145,7 @@ export class PayPalButtonScriptLoader extends Component<
       style
     } = this.props;
 
-    if (!isSdkLoaded) return <Loader />;
+    if (!isSdkLoaded) return <></>;
 
     // TODO: fill in the full list of props instead of any
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -177,6 +178,9 @@ export class PayPalButtonScriptLoader extends Component<
         }
         onCancel={onCancel}
         onError={onError}
+        onReady={() => {
+          console.log('paypal ready');
+        }}
         style={style}
       />
     );

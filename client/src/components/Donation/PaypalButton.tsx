@@ -40,6 +40,7 @@ type PaypalButtonProps = {
   t: (label: string) => string;
   theme: string;
   isSubscription?: boolean;
+  handlePaymentMethodLoad: (provider: 'stripe' | 'paypal') => void;
 };
 
 type PaypalButtonState = {
@@ -53,6 +54,10 @@ export interface AddDonationData {
   processing: boolean;
   success: boolean;
   error: string | null;
+  loading?: {
+    stripe: boolean;
+    paypal: boolean;
+  };
 }
 
 const {
@@ -179,14 +184,16 @@ export class PaypalButton extends Component<
               error: t('donate.failed-pay')
             });
           }}
-          onError={() =>
+          onCheck={() => this.props.handlePaymentMethodLoad('paypal')}
+          onError={() => {
+            this.props.handlePaymentMethodLoad('paypal');
             this.props.onDonationStateChange({
               redirecting: false,
               processing: false,
               success: false,
               error: t('donate.try-again')
-            })
-          }
+            });
+          }}
           planId={planId}
           style={{
             tagline: false,

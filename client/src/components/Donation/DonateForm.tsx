@@ -48,12 +48,19 @@ const numToCommas = (num: number): string =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 type DonateFormState = {
-  donationAmount: number;
-  donationDuration: string;
   processing: boolean;
   redirecting: boolean;
   success: boolean;
   error: string;
+  loading: {
+    stripe: boolean;
+    paypal: boolean;
+  };
+};
+
+type DonateFromComponentState = {
+  donationAmount: number;
+  donationDuration: string;
 };
 
 type DonateFormProps = {
@@ -99,7 +106,7 @@ const mapDispatchToProps = {
   postChargeStripe
 };
 
-class DonateForm extends Component<DonateFormProps, DonateFormState> {
+class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
   static displayName = 'DonateForm';
   durations: { month: 'monthly'; onetime: 'one-time' };
   amounts: { month: number[]; onetime: number[] };
@@ -116,22 +123,16 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
       ? modalDefaultDonation
       : defaultDonation;
 
-    this.state = {
-      ...initialAmountAndDuration,
-      processing: false,
-      redirecting: false,
-      success: false,
-      error: ''
-    };
+    this.state = { ...initialAmountAndDuration };
 
     this.onDonationStateChange = this.onDonationStateChange.bind(this);
     this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
     this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
     this.handleSelectAmount = this.handleSelectAmount.bind(this);
     this.handleSelectDuration = this.handleSelectDuration.bind(this);
-    this.hideAmountOptionsCB = this.hideAmountOptionsCB.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
     this.postStripeDonation = this.postStripeDonation.bind(this);
+    this.handlePaymentMethodLoad = this.handlePaymentMethodLoad.bind(this);
   }
 
   componentWillUnmount() {
@@ -141,9 +142,23 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
   onDonationStateChange(donationState: AddDonationData) {
     // scroll to top
     window.scrollTo(0, 0);
-    this.props.updateDonationFormState(donationState);
+    this.props.updateDonationFormState({
+      ...this.props.donationFormState,
+      ...donationState
+    });
   }
 
+  handlePaymentMethodLoad(provider: 'stripe' | 'paypal') {
+    this.props.updateDonationFormState({
+      ...this.props.donationFormState,
+      loading: {
+        ...this.props.donationFormState.loading,
+        [provider]: false
+      }
+    });
+  }
+
+  //  onload
   getActiveDonationAmount(
     durationSelected: 'month' | 'onetime',
     amountSelected: number
@@ -243,12 +258,13 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
   }
 
   renderDurationAmountOptions() {
-    const { donationAmount, donationDuration, processing } = this.state;
+    const { donationAmount, donationDuration } = this.state;
     const { t } = this.props;
 
-    return !processing ? (
+    // only render when !this.props.processing
+    return (
       <div>
-        <h3>{t('donate.gift-frequency')}</h3>
+        s<h3>{t('donate.gift-frequency')}</h3>
         <Tabs
           activeKey={donationDuration}
           animation={false}
@@ -288,11 +304,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
           )}
         </Tabs>
       </div>
-    ) : null;
-  }
-
-  hideAmountOptionsCB(hide: boolean) {
-    this.setState({ processing: hide });
+    );
   }
 
   renderDonationOptions() {
@@ -324,6 +336,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
         <div className='donate-btn-group'>
           <WalletsWrapper
             amount={donationAmount}
+            handlePaymentMethodLoad={this.handlePaymentMethodLoad}
             label={walletlabel}
             onDonationStateChange={this.onDonationStateChange}
             postStripeDonation={this.postStripeDonation}
@@ -334,6 +347,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
             addDonation={addDonation}
             donationAmount={donationAmount}
             donationDuration={donationDuration}
+            handlePaymentMethodLoad={this.handlePaymentMethodLoad}
             handleProcessing={handleProcessing}
             isSubscription={isOneTime ? false : true}
             onDonationStateChange={this.onDonationStateChange}
@@ -354,6 +368,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     redirecting: boolean;
     success: boolean;
     error: string | null;
+    paymentsNotLoaded: boolean;
     reset: () => unknown;
   }) {
     return <DonateCompletion {...props} />;
@@ -377,6 +392,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
           <div className='donate-btn-group'>
             <WalletsWrapper
               amount={donationAmount}
+              handlePaymentMethodLoad={this.handlePaymentMethodLoad}
               label={walletlabel}
               onDonationStateChange={this.onDonationStateChange}
               postStripeDonation={this.postStripeDonation}
@@ -387,6 +403,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
               addDonation={addDonation}
               donationAmount={donationAmount}
               donationDuration={donationDuration}
+              handlePaymentMethodLoad={this.handlePaymentMethodLoad}
               handleProcessing={handleProcessing}
               onDonationStateChange={this.onDonationStateChange}
               theme={defaultTheme ? defaultTheme : theme}
@@ -408,15 +425,24 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
 
   render() {
     const {
-      donationFormState: { processing, success, error, redirecting },
+      donationFormState: {
+        processing,
+        loading: { stripe, paypal },
+        success,
+        error,
+        redirecting
+      },
       isMinimalForm
     } = this.props;
+
+    const paymentsNotLoaded = stripe || paypal;
     if (success || error) {
       return this.renderCompletion({
         processing,
         redirecting,
         success,
         error,
+        paymentsNotLoaded,
         reset: this.resetDonation
       });
     }
@@ -424,15 +450,20 @@ class DonateForm extends Component<DonateFormProps, DonateFormState> {
     // keep payment provider elements on DOM during processing and redirect to avoid errors.
     return (
       <>
-        {(processing || redirecting) &&
+        {(processing || redirecting || paymentsNotLoaded) &&
           this.renderCompletion({
             processing,
             redirecting,
             success,
             error,
+            paymentsNotLoaded,
             reset: this.resetDonation
           })}
-        <div className={processing || redirecting ? 'hide' : ''}>
+        <div
+          className={
+            processing || redirecting || paymentsNotLoaded ? 'hide' : ''
+          }
+        >
           {isMinimalForm ? this.renderModalForm() : this.renderPageForm()}
         </div>
       </>

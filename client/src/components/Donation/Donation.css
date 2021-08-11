@@ -25,6 +25,9 @@
   align-items: center;
   text-align: center;
 }
+.donation-completion-loading {
+  min-height: 283px;
+}
 
 .donation-completion-buttons {
   display: flex;
