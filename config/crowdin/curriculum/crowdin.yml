@@ -14,7 +14,7 @@ files:
     },
     {
       'source': '/curriculum/challenges/english/00-certificates/**/*.yml',
-      'translation': '/curriculum/challenges/%language%/12-certificates/**/%original_file_name%'
+      'translation': '/curriculum/challenges/%language%/00-certificates/**/%original_file_name%'
     },
     {
       'source': '/curriculum/dictionaries/english/comments.json',
