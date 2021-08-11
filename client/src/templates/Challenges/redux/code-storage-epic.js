@@ -60,7 +60,9 @@ function legacyToFile(code, challengeFiles, fileKey) {
 }
 
 function isFilesAllPoly(challengeFiles) {
-  return challengeFiles.every(file => isPoly(file));
+  // TODO: figure out how challengeFiles might be null/not have .every as a
+  // function
+  return challengeFiles?.every(file => isPoly(file));
 }
 
 function clearCodeEpic(action$, state$) {
