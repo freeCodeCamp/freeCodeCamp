@@ -1,4 +1,4 @@
-FROM node:14.17.4-buster AS builder
+FROM node:14.17.5-buster AS builder
 
 # this is a bit clunky, perhaps there's a more concise way of passing in build
 # arguments
@@ -28,7 +28,7 @@ RUN npm run build:client
 WORKDIR /home/node/config
 RUN git clone https://github.com/freeCodeCamp/client-config.git client
 
-FROM node:14.17.4-alpine
+FROM node:14.17.5-alpine
 RUN npm i -g serve
 USER node
 WORKDIR /home/node
