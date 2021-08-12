@@ -7,7 +7,7 @@ dashedName: part-14
 
 # --description--
 
-This character needs eyes. Create two `divs` in the `black-mask` element. Give them the class `eyes left` and `eyes right`, in order.
+This character needs eyes. Create two `div` elements in the `black-mask` element. Give them the classes `eyes left` and `eyes right`, in that order.
 
 # --hints--
 

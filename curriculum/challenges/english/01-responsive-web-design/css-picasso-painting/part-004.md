@@ -23,14 +23,14 @@ assert(document.querySelectorAll('link').length === 2);
 Your `link` element should have a `rel` of `stylesheet`.
 
 ```js
-assert(document.querySelector('link').getAttribute('rel') === 'stylesheet');
+assert(document.querySelector('link')?.getAttribute('rel') === 'stylesheet');
 ```
 
 Your `link` element should have an `href` of 
 `https://use.fontawesome.com/releases/v5.8.2/css/all.css`.
 
 ```js
-assert(document.querySelectorAll('link')[1].getAttribute('href') === 'https://use.fontawesome.com/releases/v5.8.2/css/all.css')
+assert(document.querySelectorAll('link')?.[1]?.getAttribute('href') === 'https://use.fontawesome.com/releases/v5.8.2/css/all.css')
 ```
 
 # --seed--

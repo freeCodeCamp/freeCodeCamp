@@ -7,7 +7,7 @@ dashedName: part-21
 
 # --description--
 
-Give the hat an `absolute` `position`, a `top` value of `-140px`, and a `left` value of `0`.
+Give the hat a `position` of `absolute`, a `top` value of `-140px`, and a `left` value of `0`.
 
 # --hints--
 

@@ -20,7 +20,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.black-dot')?.display === 'bloc
 Your `.black-dot` selector should have a `margin` property set to `auto`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.black-dot')?.margin.includes('auto'));
+assert(new __helpers.CSSHelp(document).getStyle('.black-dot')?.margin?.includes('auto'));
 ```
 
 Your `.black-dot` selector should have a `margin-top` property set to `65%`.

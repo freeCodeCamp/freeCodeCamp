@@ -20,13 +20,13 @@ assert(document.querySelectorAll('meta').length === 1);
 Your `meta` element should have a `charset` attribute.
 
 ```js
-assert(document.querySelector('meta').getAttribute('charset'));
+assert(document.querySelector('meta')?.getAttribute('charset'));
 ```
 
 Your `charset` attribute should be set to `utf-8`.
 
 ```js
-assert(document.querySelector('meta').getAttribute('charset') === 'utf-8');
+assert(document.querySelector('meta')?.getAttribute('charset') === 'utf-8');
 ```
 
 You should add exactly one `title` element.
@@ -38,7 +38,7 @@ assert(document.querySelectorAll('title').length === 1);
 Your `title` element should have the text `freeCodeCamp Picasso Painting`. Note that spelling and casing matters.
 
 ```js
-assert(document.querySelector('title').innerText === 'freeCodeCamp Picasso Painting');
+assert(document.querySelector('title')?.innerText === 'freeCodeCamp Picasso Painting');
 ```
 
 # --seed--

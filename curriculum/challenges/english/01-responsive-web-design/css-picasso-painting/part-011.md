@@ -20,13 +20,13 @@ assert(document.querySelectorAll('div').length === 2);
 Your new `div` element should come after your `#back-wall` element.
 
 ```js
-assert(document.querySelector('#back-wall').nextElementSibling.localName === 'div');
+assert(document.querySelector('#back-wall')?.nextElementSibling?.localName === 'div');
 ```
 
 Your new `div` element should have the `class` set to `characters`.
 
 ```js
-assert(document.querySelectorAll('div')[1].classList.contains('characters'));
+assert(document.querySelectorAll('div')?.[1]?.classList?.contains('characters'));
 ```
 
 # --seed--

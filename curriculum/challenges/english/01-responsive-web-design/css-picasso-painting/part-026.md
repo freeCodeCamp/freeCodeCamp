@@ -7,7 +7,7 @@ dashedName: part-26
 
 # --description--
 
-Now move it into place with an `absolute` `position`, a `top` value of `50px`, and a `left` value of `125px`.
+Now move it into place with a `position` of `absolute`, a `top` value of `50px`, and a `left` value of `125px`.
 
 # --hints--
 

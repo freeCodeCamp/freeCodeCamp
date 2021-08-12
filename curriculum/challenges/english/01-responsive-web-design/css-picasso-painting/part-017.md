@@ -7,7 +7,7 @@ dashedName: part-17
 
 # --description--
 
-Move the `offwhite-character` into place by giving it an `absolute` `position`, a `top` value of `20%`, and a `left` value of `17.5%`.
+Move the `offwhite-character` into place by giving it a `position` of `absolute`, a `top` value of `20%`, and a `left` value of `17.5%`.
 
 # --hints--
 

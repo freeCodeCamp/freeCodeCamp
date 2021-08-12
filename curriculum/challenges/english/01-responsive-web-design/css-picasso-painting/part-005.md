@@ -20,7 +20,6 @@ assert(new __helpers.CSSHelp(document).getStyle('body'));
 Your `body` element should have the `background-color` property set to `rgb (184, 132, 46)`.
 
 ```js
-console.log(new __helpers.CSSHelp(document).getStyle('body'));
 assert(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor === 'rgb(184, 132, 46)');
 ```
 

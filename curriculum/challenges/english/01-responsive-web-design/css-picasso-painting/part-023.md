@@ -7,7 +7,7 @@ dashedName: part-23
 
 # --description--
 
-Give the mask an `absolute` `position`, and a `top` and `left` value of `0`.
+Give the mask a `position` of `absolute`, and a `top` and `left` value of `0`.
 
 # --hints--
 

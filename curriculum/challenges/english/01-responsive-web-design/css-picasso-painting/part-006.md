@@ -20,7 +20,7 @@ assert(document.querySelectorAll('div').length === 1);
 Your `div` element should have the `id` value of `back-wall`.
 
 ```js
-assert(document.querySelector('div').getAttribute('id') === 'back-wall');
+assert(document.querySelector('div')?.getAttribute('id') === 'back-wall');
 ```
 
 # --seed--
