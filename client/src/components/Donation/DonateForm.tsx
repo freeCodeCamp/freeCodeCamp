@@ -61,7 +61,7 @@ type DonateFormState = {
 type DonateFromComponentState = {
   donationAmount: number;
   donationDuration: string;
-  intervalId: null | string;
+  intervalId?: number;
 };
 
 type DonateFormProps = {
@@ -124,7 +124,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
       ? modalDefaultDonation
       : defaultDonation;
 
-    this.state = { ...initialAmountAndDuration, intervalId: null };
+    this.state = { ...initialAmountAndDuration };
 
     this.onDonationStateChange = this.onDonationStateChange.bind(this);
     this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
@@ -137,7 +137,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
   }
 
   componentDidMount() {
-    const intervalId = setInterval(this.providerLoaderTime, 3000);
+    const intervalId = window.setInterval(this.providerLoaderTime, 3000);
     // store intervalId in the state so it can be accessed later:
     // eslint-disable-next-line react/no-did-mount-set-state
     this.setState({ intervalId });
@@ -145,7 +145,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
 
   componentWillUnmount() {
     this.resetDonation();
-    clearInterval(this.state.intervalId);
+    window.clearInterval(this.state.intervalId);
   }
 
   providerLoaderTime = () => {
