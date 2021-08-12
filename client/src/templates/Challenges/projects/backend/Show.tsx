@@ -14,10 +14,11 @@ import { createSelector } from 'reselect';
 import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
 import { isSignedInSelector } from '../../../../redux';
+
 import {
   ChallengeNodeType,
   ChallengeMetaType,
-  TestType
+  Test
 } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/Challenge-Description';
 import HelpModal from '../../components/HelpModal';
@@ -52,7 +53,7 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   (
     output: string[],
-    tests: TestType[],
+    tests: Test[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean
   ) => ({
@@ -81,7 +82,7 @@ interface BackEndProps {
   forumTopicId: number;
   id: string;
   initConsole: () => void;
-  initTests: (tests: TestType[]) => void;
+  initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   output: string[];
@@ -89,7 +90,7 @@ interface BackEndProps {
     challengeMeta: ChallengeMetaType;
   };
   t: TFunction;
-  tests: TestType[];
+  tests: Test[];
   title: string;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
   updateSolutionFormValues: () => void;
