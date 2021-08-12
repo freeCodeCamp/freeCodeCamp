@@ -14,21 +14,21 @@ The `eyes-div` element should hold some eyes. Add two `div` elements inside. Giv
 You should have two `div` elements nested in your `eyes-div`.
 
 ```js
-assert(document.querySelectorAll('#eyes-div > div').length === 2);
+assert(document.querySelectorAll('#eyes-div > div')?.length === 2);
 ```
 
 The first new `div` should have the `class` set to `eyes left`.
 
 ```js
-assert(document.querySelectorAll('#eyes-div > div')[0].classList.contains('eyes'));
-assert(document.querySelectorAll('#eyes-div > div')[0].classList.contains('left'));
+assert(document.querySelectorAll('#eyes-div > div')?.[0]?.classList?.contains('eyes'));
+assert(document.querySelectorAll('#eyes-div > div')?.[0]?.classList?.contains('left'));
 ```
 
 The second new `div` should have the `class` set to `eyes right`.
 
 ```js
-assert(document.querySelectorAll('#eyes-div > div')[1].classList.contains('eyes'));
-assert(document.querySelectorAll('#eyes-div > div')[1].classList.contains('right'));
+assert(document.querySelectorAll('#eyes-div > div')?.[1]?.classList?.contains('eyes'));
+assert(document.querySelectorAll('#eyes-div > div')?.[1]?.classList?.contains('right'));
 ```
 
 # --seed--

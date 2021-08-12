@@ -14,22 +14,22 @@ Use another FontAwesome icon for your `guitar`. Inside both the `guitar-left` an
 Within your `guitar-left` element, you should add an `i` element.
 
 ```js
-assert(document.querySelectorAll('#guitar-left > i').length === 1);
+assert(document.querySelectorAll('#guitar-left > i')?.length === 1);
 ```
 
 Within your `guitar-right` element, you should add an `i` element.
 
 ```js
-assert(document.querySelectorAll('#guitar-right > i').length === 1);
+assert(document.querySelectorAll('#guitar-right > i')?.length === 1);
 ```
 
 Your two new `i` elements should have the `class` set to `fas fa-bars`.
 
 ```js
-assert(document.querySelector('#guitar-left > i').classList.contains('fas'));
-assert(document.querySelector('#guitar-left > i').classList.contains('fa-bars'));
-assert(document.querySelector('#guitar-right > i').classList.contains('fas'));
-assert(document.querySelector('#guitar-right > i').classList.contains('fa-bars'));
+assert(document.querySelector('#guitar-left > i')?.classList?.contains('fas'));
+assert(document.querySelector('#guitar-left > i')?.classList?.contains('fa-bars'));
+assert(document.querySelector('#guitar-right > i')?.classList?.contains('fas'));
+assert(document.querySelector('#guitar-right > i')?.classList?.contains('fa-bars'));
 ```
 
 # --seed--

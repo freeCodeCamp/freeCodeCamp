@@ -21,20 +21,20 @@ Your two new `div` elemnts should have the `class` set to `blue`.
 
 ```js
 const divs = document.querySelectorAll('.characters > div');
-assert(divs[2].classList.contains('blue'))
-assert(divs[3].classList.contains('blue'))
+assert(divs?.[2]?.classList?.contains('blue'))
+assert(divs?.[3]?.classList?.contains('blue'))
 ```
 
 Your first new `div` should have an `id` of `blue-left`.
 
 ```js
-assert(document.querySelectorAll('.characters > div')[2].getAttribute('id') === 'blue-left');
+assert(document.querySelectorAll('.characters > div')?.[2]?.getAttribute('id') === 'blue-left');
 ```
 
 Your second new `div` should have an `id` of `blue-right`.
 
 ```js
-assert(document.querySelectorAll('.characters > div')[3].getAttribute('id') === 'blue-right');
+assert(document.querySelectorAll('.characters > div')?.[3]?.getAttribute('id') === 'blue-right');
 ```
 
 # --seed--

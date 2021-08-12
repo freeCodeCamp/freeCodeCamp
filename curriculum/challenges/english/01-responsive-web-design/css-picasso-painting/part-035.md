@@ -13,25 +13,25 @@ Within your new `black-character` element, add three `div` elements with the fol
 You should have three `div` elements within your `#black-character` element.
 
 ```js
-assert(document.querySelectorAll('#black-character > div').length === 3);
+assert(document.querySelectorAll('#black-character > div')?.length === 3);
 ```
 
 Your first new `div` element should have the `id` set to `black-hat`.
 
 ```js
-assert(document.querySelectorAll('#black-character > div')[0]?.getAttribute('id') === 'black-hat');
+assert(document.querySelectorAll('#black-character > div')?.[0]?.getAttribute('id') === 'black-hat');
 ```
 
 Your second new `div` element should have the `id` set to `gray-mask`.
 
 ```js
-assert(document.querySelectorAll('#black-character > div')[1]?.getAttribute('id') === 'gray-mask');
+assert(document.querySelectorAll('#black-character > div')?.[1]?.getAttribute('id') === 'gray-mask');
 ```
 
 Your third new `div` element should have the `id` set to `white-paper`.
 
 ```js
-assert(document.querySelectorAll('#black-character > div')[2]?.getAttribute('id') === 'white-paper');
+assert(document.querySelectorAll('#black-character > div')?.[2]?.getAttribute('id') === 'white-paper');
 ```
 
 # --seed--

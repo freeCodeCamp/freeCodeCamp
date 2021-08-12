@@ -14,13 +14,13 @@ Below your `blue` elements, add another `div`. Give it the `id` value of `orange
 You should have a new `div` element within your `characters` element.
 
 ```js
-assert(document.querySelectorAll('.characters > div').length === 5);
+assert(document.querySelectorAll('.characters > div')?.length === 5);
 ```
 
 Your new `div` element should have the `id` set to `orange-character`.
 
 ```js
-assert(document.querySelectorAll('.characters > div')[4].getAttribute('id') === 'orange-character');
+assert(document.querySelectorAll('.characters > div')?.[4]?.getAttribute('id') === 'orange-character');
 ```
 
 # --seed--

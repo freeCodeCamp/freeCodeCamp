@@ -20,17 +20,17 @@ assert(document.querySelectorAll('#gray-mask > div')?.length === 2);
 Your first new `div` element should have the `class` set to `eyes left`.
 
 ```js
-const first = document.querySelectorAll('#gray-mask > div')[0];
-assert(first?.classList.contains('eyes'));
-assert(first?.classList.contains('left'));
+const first = document.querySelectorAll('#gray-mask > div')?.[0];
+assert(first?.classList?.contains('eyes'));
+assert(first?.classList?.contains('left'));
 ```
 
 Your second new `div` element should have the `class` set to `eyes right`.
 
 ```js
-const second = document.querySelectorAll('#gray-mask > div')[1];
-assert(second?.classList.contains('eyes'));
-assert(second?.classList.contains('right'));
+const second = document.querySelectorAll('#gray-mask > div')?.[1];
+assert(second?.classList?.contains('eyes'));
+assert(second?.classList?.contains('right'));
 ```
 
 # --seed--

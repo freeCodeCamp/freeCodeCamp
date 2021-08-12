@@ -14,31 +14,31 @@ Within that `orange-character` element, add four `div` elements. Give them the `
 You should have four new `div` elements within your `orange-character` element.
 
 ```js
-assert(document.querySelectorAll('#orange-character > div').length === 4);
+assert(document.querySelectorAll('#orange-character > div')?.length === 4);
 ```
 
 Your first new `div` element should have an `id` set to `black-round-hat`.
 
 ```js
-assert(document.querySelectorAll('#orange-character > div')[0].getAttribute('id') === 'black-round-hat');
+assert(document.querySelectorAll('#orange-character > div')?.[0]?.getAttribute('id') === 'black-round-hat');
 ```
 
 Your second new `div` element should have an `id` set to `eyes-div`.
 
 ```js
-assert(document.querySelectorAll('#orange-character > div')[1].getAttribute('id') === 'eyes-div');
+assert(document.querySelectorAll('#orange-character > div')?.[1]?.getAttribute('id') === 'eyes-div');
 ```
 
 Your third new `div` element should have an `id` set to `triangles`.
 
 ```js
-assert(document.querySelectorAll('#orange-character > div')[2].getAttribute('id') === 'triangles');
+assert(document.querySelectorAll('#orange-character > div')?.[2]?.getAttribute('id') === 'triangles');
 ```
 
 Your fourth new `div` element should have an `id` set to `guitar`.
 
 ```js
-assert(document.querySelectorAll('#orange-character > div')[3].getAttribute('id') === 'guitar');
+assert(document.querySelectorAll('#orange-character > div')?.[3]?.getAttribute('id') === 'guitar');
 ```
 
 # --seed--

@@ -14,13 +14,13 @@ After your `offwhite-character` `div`, add a `div` with the `id` of `black-chara
 You should add a new `div` element within the `.characters` element.
 
 ```js
-assert(document.querySelectorAll('.characters > div').length === 2);
+assert(document.querySelectorAll('.characters > div')?.length === 2);
 ```
 
 Your new `div` element should have the `id` set to `black-character`.
 
 ```js
-assert(document.querySelectorAll('.characters > div')[1].getAttribute('id') === 'black-character');
+assert(document.querySelectorAll('.characters > div')?.[1]?.getAttribute('id') === 'black-character');
 ```
 
 # --seed--

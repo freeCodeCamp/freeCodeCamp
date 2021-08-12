@@ -28,8 +28,8 @@ All of your `i` elements should have the `class` set to `fas fa-music`.
 ```js
 const icons = document.querySelectorAll('#white-paper > i');
 for (const icon of icons) {
-  assert(icon.classList.contains('fas'));
-  assert(icon.classList.contains('fa-music'));
+  assert(icon.classList?.contains('fas'));
+  assert(icon.classList?.contains('fa-music'));
 };
 ```
 
