@@ -43,7 +43,7 @@ assert.deepEqual(
 );
 ```
 
-All elements from the first array should be added to the second array in their original order.
+All elements from the first array should be added to the second array in their original order. `frankenSplice([1, 2, 3, 4], [], 0)` should return `[1, 2, 3, 4]`.
 
 ```js
 assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4]);

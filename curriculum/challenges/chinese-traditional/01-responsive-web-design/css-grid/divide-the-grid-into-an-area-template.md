@@ -15,25 +15,25 @@ dashedName: divide-the-grid-into-an-area-template
 grid-template-areas:
   "header header header"
   "advert content content"
-  "footer footer footer";
+  "advert footer footer";
 ```
 
-上面的代碼將頂部三個單元格合併成一個名爲 `header` 的區域，將底部三個單元格合併爲一個名爲 `footer` 的區域，並在中間行創建了兩個區域：`advert` 和 `content`。 **注意：**在代碼中，每個單詞代表一個網格單元格，每對引號代表一行。 除了自定義標籤，你還能使用句點（`.`）來表示一個空單元格。
+上面的代碼將網格單元格分成四個區域：`header`、`advert`、`content` 和 `footer`。 每個單詞代表一個單元格，每對引號代表一行。
 
 # --instructions--
 
-請放置區域模板，讓名爲 `advert` 的區域變成空單元格。
+更改模板，使 `footer` 區域跨越整個底部行。 定義區域現在不會有任何可視效果。 稍後，你將使用一個區域來查看它的工作方式。
 
 # --hints--
 
-class 爲 `container` 的元素應具有 `grid-template-areas` 屬性，在其屬性值中，應使用 `.` 代替 `advert`。
+class 爲 `container` 的元素應具有 `grid-template-areas` 屬性，和示例類似，但是 `footer` 區域跨越整個底部行。
 
 ```js
 assert(
   __helpers
     .removeCssComments(code)
     .match(
-      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
+      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
     )
 );
 ```
@@ -63,7 +63,7 @@ assert(
     /* Only change code below this line */
       "header header header"
       "advert content content"
-      "footer footer footer";
+      "advert footer footer";
     /* Only change code above this line */
   }
 </style>
@@ -99,7 +99,7 @@ assert(
 
     grid-template-areas:
       "header header header"
-      ". content content"
+      "advert content content"
       "footer footer footer";
   }
 </style>

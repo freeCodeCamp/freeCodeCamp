@@ -10,37 +10,36 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-Mocha allows testing asyncronous operations. There is a small (BIG) difference. Can you spot it?
+Mocha allows you to test asynchronous operations like calls to API endpoints with a plugin called `chai-http`.
 
-We can test our API endpoints using a plugin, called `chai-http`. Let's see how it works. And remember, API calls are asynchronous.
-
-The following is an example of a test using `chai-http` for the `'GET /hello?name=[name] => "hello [name]"'` suite. The test sends a name string in a url query string (`?name=John`) using a `GET`request to the `server`. In the `end` method's callback function, the response object (`res`) is received and contains the `status` property. The first `assert.equal` checks if the status is equal to `200`. The second `assert.equal` checks that the response string (`res.text`) is equal to `"hello John"`.
+The following is an example of a test using `chai-http` for a suite called `'GET /hello?name=[name] => "hello [name]"'`:
 
 ```js
 suite('GET /hello?name=[name] => "hello [name]"', function () {
-  test("?name=John", function (done) {
+  test('?name=John', function (done) {
     chai
       .request(server)
-      .get("/hello?name=John")
+      .get('/hello?name=John')
       .end(function (err, res) {
-        assert.equal(res.status, 200, "response status should be 200");
-        assert.equal(
-          res.text,
-          "hello John",
-          'response should be "hello John"'
-        );
+        assert.equal(res.status, 200, 'Response status should be 200');
+        assert.equal(res.text, 'hello John', 'Response should be "hello John"');
         done();
       });
   });
+});
 ```
 
-Notice the `done` parameter in the test's callback function. Calling it at the end without an argument is necessary to signal successful asynchronous completion.
+The test sends a `GET` request to the server with a name as a URL query string (`?name=John`). In the `end` method's callback function, the response object (`res`) is received and contains the `status` property.
+
+The first `assert.equal` checks if the status is equal to `200`. The second `assert.equal` checks that the response string (`res.text`) is equal to `"hello John"`.
+
+Also, notice the `done` parameter in the test's callback function. Calling it without an argument at the end of a test is necessary to signal that the asynchronous operation is complete.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` response to make the test pass. Do not alter the arguments passed to the asserts.
+Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` of the response to make the test pass. Do not alter the arguments passed to the asserts.
 
-There should be no name in the query; the endpoint responds with `hello Guest`.
+There should be no URL query. Without a name URL query, the endpoint responds with `hello Guest`.
 
 # --hints--
 
@@ -58,7 +57,7 @@ All tests should pass
   );
 ```
 
-You should test for 'res.status' == 200
+You should test for `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -74,7 +73,7 @@ You should test for 'res.status' == 200
   );
 ```
 
-You should test for 'res.text' == 'hello Guest'
+You should test for `res.text` == `'hello Guest'`
 
 ```js
 (getUserInput) =>

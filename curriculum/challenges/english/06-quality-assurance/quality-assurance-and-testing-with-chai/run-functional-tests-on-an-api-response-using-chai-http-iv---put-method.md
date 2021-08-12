@@ -8,15 +8,17 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/). This exercise is similar to the preceding one. Look at it for the details.
+As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-Now that you have seen how it is done, it is your turn to do it from scratch.
+This exercise is similar to the previous one.
+
+Now that you know how to test a `PUT` request, it's your turn to do it from scratch.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'send {surname: "da Verrazzano"}'` test (`// #4`):
+Within `tests/2_functional-tests.js`, alter the `'Send {surname: "da Verrazzano"}'` test (`// #4`) and use the `put` and `send` methods to test the  `'/travellers'` endpoint.
 
-Send the following JSON response as a payload to the `/travellers` route:
+Send the following JSON object with your PUT request:
 
 ```json
 {
@@ -24,14 +26,14 @@ Send the following JSON response as a payload to the `/travellers` route:
 }
 ```
 
-Check for the following, within a `request.end` callback:
+Check for the following within the `request.end` callback:
 
-1.  `status`
-2.  `type`
-3.  `body.name`
-4.  `body.surname`
+1.  The `status` should be `200`
+2.  The `type` should be `application/json`
+3.  The `body.name` should be `Giovanni`
+4.  The `body.surname` should be `da Verrazzano`
 
-Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
+Follow the assertion order above - we rely on it. Also, be sure to remove `assert.fail()` once complete.
 
 # --hints--
 
@@ -49,7 +51,7 @@ All tests should pass
   );
 ```
 
-You should test for 'res.status' to be 200
+You should test for `res.status` to be 200
 
 ```js
 (getUserInput) =>
@@ -65,7 +67,7 @@ You should test for 'res.status' to be 200
   );
 ```
 
-You should test for 'res.type' to be 'application/json'
+You should test for `res.type` to be `'application/json'`
 
 ```js
 (getUserInput) =>
@@ -81,7 +83,7 @@ You should test for 'res.type' to be 'application/json'
   );
 ```
 
-You should test for 'res.body.name' to be 'Giovanni'
+You should test for `res.body.name` to be `'Giovanni'`
 
 ```js
 (getUserInput) =>
@@ -97,7 +99,7 @@ You should test for 'res.body.name' to be 'Giovanni'
   );
 ```
 
-You should test for 'res.body.surname' to be 'da Verrazzano'
+You should test for `res.body.surname` to be `'da Verrazzano'`
 
 ```js
 (getUserInput) =>

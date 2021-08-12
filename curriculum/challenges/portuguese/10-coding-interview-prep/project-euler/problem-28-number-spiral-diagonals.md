@@ -1,6 +1,6 @@
 ---
 id: 5900f3881000cf542c50fe9b
-title: 'Problem 28: Number spiral diagonals'
+title: 'Problema 28: soma dos números nas diagonais'
 challengeType: 5
 forumTopicId: 301930
 dashedName: problem-28-number-spiral-diagonals
@@ -8,7 +8,7 @@ dashedName: problem-28-number-spiral-diagonals
 
 # --description--
 
-Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
+Começando com o número 1 e movendo-se para a direita no sentido horário, uma espiral de 5x5 é formada:
 
 <div style='padding-left: 4em;'>
   <div style='color: red; display: inline;'>21</div> 22 23 24 <div style='color: red; display: inline;'>25</div><br>
@@ -18,37 +18,37 @@ Starting with the number 1 and moving to the right in a clockwise direction a 5 
   <div style='color: red; display: inline;'>17</div> 16 15 14 <div style='color: red; display: inline;'>13</div><br>
 </div>
 
-It can be verified that the sum of the numbers on the diagonals is 101.
+É possível verificar que a soma dos números nas diagonais é 101.
 
-What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed in the same way?
+Qual é a soma dos números nas diagonais em uma espiral `n` x `n` formada da mesma forma?
 
 # --hints--
 
-`spiralDiagonals(101)` should return a number.
+`spiralDiagonals(101)` deve retornar um número.
 
 ```js
 assert(typeof spiralDiagonals(101) === 'number');
 ```
 
-`spiralDiagonals(101)` should return 692101.
+`spiralDiagonals(101)` deve retornar 692101.
 
 ```js
 assert(spiralDiagonals(101) == 692101);
 ```
 
-`spiralDiagonals(303)` should return 18591725.
+`spiralDiagonals(303)` deve retornar 18591725.
 
 ```js
 assert(spiralDiagonals(303) == 18591725);
 ```
 
-`spiralDiagonals(505)` should return 85986601.
+`spiralDiagonals(505)` deve retornar 85986601.
 
 ```js
 assert(spiralDiagonals(505) == 85986601);
 ```
 
-`spiralDiagonals(1001)` should return 669171001.
+`spiralDiagonals(1001)` deve retornar 669171001.
 
 ```js
 assert(spiralDiagonals(1001) == 669171001);
