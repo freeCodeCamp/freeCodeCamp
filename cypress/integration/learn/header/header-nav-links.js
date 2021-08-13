@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Navigation links', () => {
   it('should render the expected forum and news links.', () => {
     cy.visit('/learn');

@@ -1,4 +1,3 @@
-/* global cy */
 const selectors = {
   heading: "[data-test-label='landing-header']",
   callToAction: "[data-test-label='landing-big-cta']",

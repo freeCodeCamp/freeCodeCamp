@@ -1,5 +1,3 @@
-/* global cy */
-
 const challengeUrl =
   '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements';
 

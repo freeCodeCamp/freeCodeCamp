@@ -1,5 +1,3 @@
-/* global cy */
-
 const projects = {
   superBlock: 'machine-learning-with-python',
   block: 'machine-learning-with-python-projects',
