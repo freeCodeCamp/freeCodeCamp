@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
+import { HandlerProps } from 'react-reflex';
 
-const FileType = PropTypes.shape({
+export const FileType = PropTypes.shape({
   key: PropTypes.string,
   ext: PropTypes.string,
   name: PropTypes.string,
@@ -24,10 +25,7 @@ export const ChallengeNode = PropTypes.shape({
   challengeType: PropTypes.number,
   dashedName: PropTypes.string,
   description: PropTypes.string,
-  files: PropTypes.shape({
-    indexhtml: FileType,
-    indexjs: FileType
-  }),
+  challengeFiles: PropTypes.array,
   fields: PropTypes.shape({
     slug: PropTypes.string,
     blockName: PropTypes.string
@@ -83,7 +81,7 @@ export const User = PropTypes.shape({
       githubLink: PropTypes.string,
       challengeType: PropTypes.number,
       completedDate: PropTypes.number,
-      files: PropTypes.array
+      challengeFiles: PropTypes.array
     })
   ),
   email: PropTypes.string,
@@ -176,19 +174,24 @@ export type MarkdownRemarkType = {
     words: number;
   };
 };
+
+type Question = { text: string; answers: string[]; solution: number };
+type Fields = { slug: string; blockName: string; tests: Test[] };
+type Required = {
+  link: string;
+  raw: boolean;
+  src: string;
+  crossDomain?: boolean;
+};
+
 export type ChallengeNodeType = {
   block: string;
   challengeOrder: number;
   challengeType: number;
   dashedName: string;
   description: string;
-  challengeFiles: ChallengeFileType[];
-  fields: {
-    slug: string;
-    blockName: string;
-    tests: TestType[];
-  };
-  files: ChallengeFileType;
+  challengeFiles: ChallengeFiles;
+  fields: Fields;
   forumTopicId: number;
   guideUrl: string;
   head: string[];
@@ -200,18 +203,8 @@ export type ChallengeNodeType = {
   isLocked: boolean;
   isPrivate: boolean;
   order: number;
-  question: {
-    text: string;
-    answers: string[];
-    solution: number;
-  };
-  required: [
-    {
-      link: string;
-      raw: string;
-      src: string;
-    }
-  ];
+  question: Question;
+  required: Required[];
   superOrder: number;
   superBlock: string;
   tail: string[];
@@ -240,7 +233,7 @@ export type AllMarkdownRemarkType = {
 };
 
 export type ResizePropsType = {
-  onStopResize: (arg0: React.ChangeEvent) => void;
+  onStopResize: (arg0: HandlerProps) => void;
   onResize: () => void;
 };
 
@@ -249,11 +242,19 @@ export type DimensionsType = {
   width: number;
 };
 
-export type TestType = {
-  text: string;
-  testString: string;
+export type Test = {
   pass?: boolean;
   err?: string;
+} & (ChallengeTest | CertTest);
+
+export type ChallengeTest = {
+  text: string;
+  testString: string;
+};
+
+export type CertTest = {
+  id: string;
+  title: string;
 };
 
 export type UserType = {
@@ -311,38 +312,11 @@ export type CompletedChallenge = {
   githubLink?: string;
   challengeType?: number;
   completedDate: number;
-  challengeFiles: ChallengeFileType[] | null;
-  // TODO: remove once files->challengeFiles is refactored
-  files?: ChallengeFileType[] | null;
+  challengeFiles: ChallengeFiles;
 };
-// TODO: renames: files => challengeFiles; key => fileKey; #42489
-export type ChallengeFileType =
-  | {
-      [T in FileKeyTypes]:
-        | ({
-            editableContents: string;
-            editableRegionBoundaries: number[];
-            error?: string | null;
-            history: string[];
-            path: string;
-            seed: string;
-            seedEditableRegionBoundaries?: number[];
-          } & FileKeyChallengeType)
-        | null;
-    }
-  | Record<string, never>;
 
 export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
 export type FileKeyTypes = 'indexjs' | 'indexhtml' | 'indexcss';
-
-export type ChallengeFilesType =
-  | {
-      indexcss: ChallengeFileType;
-      indexhtml: ChallengeFileType;
-      indexjs: ChallengeFileType;
-      indexjsx: ChallengeFileType;
-    }
-  | Record<string, never>;
 
 export type ChallengeMetaType = {
   block: string;
@@ -383,7 +357,7 @@ export type FileKeyChallengeType = {
 // think are on the node, but actually do not exist.
 export type ChallengeNode = {
   block: string;
-  challengeFiles: ChallengeFileType;
+  challengeFiles: ChallengeFiles;
   challengeOrder: number;
   challengeType: number;
   dashedName: string;
@@ -391,7 +365,7 @@ export type ChallengeNode = {
   fields: {
     slug: string;
     blockName: string;
-    tests: TestType[];
+    tests: Test[];
   };
   forumTopicId: number;
   // guideUrl: string;
@@ -430,7 +404,7 @@ export type ChallengeNode = {
   superBlock: string;
   superOrder: number;
   template: string;
-  tests: TestType[];
+  tests: Test[];
   time: string;
   title: string;
   translationPending: boolean;
@@ -441,3 +415,61 @@ export type ChallengeNode = {
   // isPrivate: boolean;
   // tail: string[];
 };
+
+// Extra types built from challengeSchema
+
+export type ChallengeFile = {
+  fileKey: string;
+  ext: ExtTypes;
+  name: string;
+  editableRegionBoundaries: number[];
+  path: string;
+  error: null | string;
+  head: string;
+  tail: string;
+  seed: string;
+  contents: string;
+  id: string;
+  history: [[string], string];
+};
+
+export type ChallengeFiles = ChallengeFile[] | null;
+
+export interface ChallengeSchema {
+  block: string;
+  blockId: string;
+  challengeOrder: number;
+  removeComments: boolean;
+  // TODO: should be typed with possible values
+  challengeType: number;
+  checksum: number;
+  __commentCounts: Record<string, unknown>;
+  dashedName: string;
+  description: string;
+  challengeFiles: ChallengeFiles;
+  guideUrl: string;
+  // TODO: should be typed with possible values
+  helpCategory: string;
+  videoUrl: string;
+  forumTopicId: number;
+  id: string;
+  instructions: string;
+  isComingSoon: boolean;
+  // TODO: Do we still use this
+  isLocked: boolean;
+  isPrivate: boolean;
+  order: number;
+  videoId?: string;
+  question: Question;
+  required: Required[];
+  solutions: ChallengeFile[][];
+  superBlock: string;
+  superOrder: number;
+  suborder: number;
+  tests: Test[];
+  template: string;
+  time: string;
+  title: string;
+  translationPending: boolean;
+  url?: string;
+}
