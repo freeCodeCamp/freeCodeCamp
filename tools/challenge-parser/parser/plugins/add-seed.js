@@ -10,8 +10,8 @@ const editableRegionMarker = '--fcc-editable-region--';
 function findRegionMarkers(challengeFile) {
   const lines = challengeFile.contents.split('\n');
   const editableLines = lines
-    .map((line, id) => (line.trim() === editableRegionMarker ? id : -1))
-    .filter(id => id >= 0);
+    .map((line, id) => (line.trim() === editableRegionMarker ? id + 1 : -1))
+    .filter(id => id > 0);
 
   if (editableLines.length > 2) {
     throw Error('Editable region has too many markers: ' + editableLines);
@@ -28,7 +28,7 @@ function findRegionMarkers(challengeFile) {
 
 function removeLines(contents, toRemove) {
   const lines = contents.split('\n');
-  return lines.filter((_, id) => !toRemove.includes(id)).join('\n');
+  return lines.filter((_, id) => !toRemove.includes(id + 1)).join('\n');
 }
 
 // TODO: DRY this.  Start with an array of markers and go from there.

@@ -43,5 +43,4 @@ assert(code.match(/html\s*>/gi));
 --fcc-editable-region--
 
 --fcc-editable-region--
-
 ```
