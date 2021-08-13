@@ -17,14 +17,14 @@ describe('Legacy redirects', () => {
     );
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
-        'learn/front-end-development-libraries/bootstrap/use-responsive-design-with-bootstrap-fluid-containers/'
+        '/learn/front-end-development-libraries/bootstrap/use-responsive-design-with-bootstrap-fluid-containers'
       );
     });
 
     cy.visit('learn/front-end-libraries/front-end-libraries-projects');
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
-        'learn/front-end-development-libraries/front-end-development-libraries-projects/'
+        '/learn/front-end-development-libraries/front-end-development-libraries-projects/'
       );
     });
 
@@ -33,14 +33,14 @@ describe('Legacy redirects', () => {
     );
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
-        'learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine/'
+        '/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine'
       );
     });
 
     cy.visit('certification/certifieduser/front-end-libraries');
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
-        'certification/certifieduser/front-end-development-libraries/'
+        '/certification/certifieduser/front-end-development-libraries'
       );
     });
   });
@@ -48,13 +48,13 @@ describe('Legacy redirects', () => {
   it('should redirect from /apis-and-microservices to /back-end-development-and-apis', () => {
     cy.visit('learn/apis-and-microservices');
     cy.location().should(loc => {
-      expect(loc.pathname).to.eq('learn/back-end-development-and-apis/');
+      expect(loc.pathname).to.eq('/learn/back-end-development-and-apis/');
     });
 
     cy.visit('learn/apis-and-microservices/managing-packages-with-npm');
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
-        'learn/back-end-development-and-apis/managing-packages-with-npm/'
+        '/learn/back-end-development-and-apis/managing-packages-with-npm/'
       );
     });
 
@@ -63,14 +63,14 @@ describe('Legacy redirects', () => {
     );
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
-        'learn/back-end-development-and-apis/managing-packages-with-npm/how-to-use-package-json-the-core-of-any-node-js-project-or-npm-package/'
+        '/learn/back-end-development-and-apis/managing-packages-with-npm/how-to-use-package-json-the-core-of-any-node-js-project-or-npm-package/'
       );
     });
 
     cy.visit('learn/apis-and-microservices/apis-and-microservices-projects');
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
-        'learn/back-end-development-and-apis/back-end-development-and-apis-projects/'
+        '/learn/back-end-development-and-apis/back-end-development-and-apis-projects/'
       );
     });
 
@@ -79,14 +79,14 @@ describe('Legacy redirects', () => {
     );
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
-        'learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice/'
+        '/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice'
       );
     });
 
     cy.visit('certification/certifieduser/apis-and-microservices');
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
-        'certification/certifieduser/back-end-development-and-apis/'
+        '/certification/certifieduser/back-end-development-and-apis'
       );
     });
   });
