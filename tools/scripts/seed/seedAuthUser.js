@@ -25,7 +25,6 @@ function handleError(err, client) {
   }
 }
 
-/* eslint-disable max-len */
 const authUser = {
   _id: ObjectId('5bd30e0f1caf6ac3ddddddb5'),
   email: 'foo@bar.com',
@@ -38,7 +37,9 @@ const authUser = {
   name: 'Development User',
   location: '',
   picture: defaultUserImage,
-  acceptedPrivacyTerms: true,
+  acceptedPrivacyTerms: envVariables.includes('--unset-privacy-terms')
+    ? null
+    : true,
   sendQuincyEmail: false,
   currentChallengeId: '',
   isHonest: false,
@@ -84,6 +85,7 @@ const authUser = {
   emailAuthLinkTTL: null,
   emailVerifyTTL: null
 };
+
 const blankUser = {
   _id: ObjectId('5bd30e0f1caf6ac3ddddddb9'),
   email: 'bar@bar.com',
