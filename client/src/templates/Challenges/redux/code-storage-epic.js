@@ -60,9 +60,15 @@ function legacyToFile(code, challengeFiles, fileKey) {
 }
 
 function isFilesAllPoly(challengeFiles) {
-  // TODO: figure out how challengeFiles might be null/not have .every as a
-  // function
-  return challengeFiles?.every(file => isPoly(file));
+  if (Array.isArray(challengeFiles)) {
+    return challengeFiles?.every(file => isPoly(file));
+  } else {
+    // TODO: After sufficient time, remove parsing of old code-storage format
+    // This was pushed to production with https://github.com/freeCodeCamp/freeCodeCamp/pull/43023
+    return Object.keys(challengeFiles)
+      .map(key => challengeFiles[key])
+      .every(file => isPoly(file));
+  }
 }
 
 function clearCodeEpic(action$, state$) {
@@ -134,9 +140,16 @@ function loadCodeEpic(action$, state$) {
       const codeFound = getCode(id);
       if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
-          const foundChallengeFile = codeFound.find(
-            x => x.fileKey === challengeFile.fileKey
-          );
+          let foundChallengeFile = {};
+          if (Array.isArray(codeFound)) {
+            foundChallengeFile = codeFound.find(
+              x => x.fileKey === challengeFile.fileKey
+            );
+          } else {
+            // TODO: After sufficient time, remove parsing of old code-storage format
+            // This was pushed to production with https://github.com/freeCodeCamp/freeCodeCamp/pull/43023
+            foundChallengeFile = codeFound[challengeFile.fileKey];
+          }
           const isCodeFound = Object.keys(foundChallengeFile).length > 0;
           return [
             ...challengeFiles,
