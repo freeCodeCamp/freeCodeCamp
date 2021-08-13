@@ -47,17 +47,22 @@ function getLegacyCode(legacy) {
   }, null);
 }
 
-function legacyToFile(code, files, key) {
-  if (isFilesAllPoly(files)) {
-    return { [key]: setContent(code, files[key]) };
+function legacyToFile(code, challengeFiles, fileKey) {
+  if (isFilesAllPoly(challengeFiles)) {
+    return {
+      ...setContent(
+        code,
+        challengeFiles.find(x => x.fileKey === fileKey)
+      )
+    };
   }
   return false;
 }
 
-function isFilesAllPoly(files) {
-  return Object.keys(files)
-    .map(key => files[key])
-    .every(file => isPoly(file));
+function isFilesAllPoly(challengeFiles) {
+  // TODO: figure out how challengeFiles might be null/not have .every as a
+  // function
+  return challengeFiles?.every(file => isPoly(file));
 }
 
 function clearCodeEpic(action$, state$) {
@@ -79,13 +84,15 @@ function saveCodeEpic(action$, state$) {
     map(action => {
       const state = state$.value;
       const { id } = challengeMetaSelector(state);
-      const files = challengeFilesSelector(state);
+      const challengeFiles = challengeFilesSelector(state);
       try {
-        store.set(id, files);
-        // Possible fileType values: indexhtml indexjs indexjsx
-        // The files Object always has one of these as the first/only attribute
-        const fileType = Object.keys(files)[0];
-        if (store.get(id)[fileType].contents !== files[fileType].contents) {
+        store.set(id, challengeFiles);
+        const fileKey = challengeFiles[0].fileKey;
+        if (
+          store.get(id).find(challengeFile => challengeFile.fileKey === fileKey)
+            .contents !==
+          challengeFiles.find(challengeFile => challengeFile.fileKey).contents
+        ) {
           throw Error('Failed to save to localStorage');
         }
         return action;
@@ -112,46 +119,37 @@ function loadCodeEpic(action$, state$) {
   return action$.pipe(
     ofType(actionTypes.challengeMounted),
     filter(() => {
-      const files = challengeFilesSelector(state$.value);
-      return Object.keys(files).length > 0;
+      const challengeFiles = challengeFilesSelector(state$.value);
+      return challengeFiles?.length > 0;
     }),
     switchMap(({ payload: id }) => {
       let finalFiles;
       const state = state$.value;
       const challenge = challengeMetaSelector(state);
-      const files = challengeFilesSelector(state);
-      const fileKeys = Object.keys(files);
+      const challengeFiles = challengeFilesSelector(state);
+      const fileKeys = challengeFiles.map(x => x.fileKey);
       const invalidForLegacy = fileKeys.length > 1;
       const { title: legacyKey } = challenge;
 
       const codeFound = getCode(id);
       if (codeFound && isFilesAllPoly(codeFound)) {
-        finalFiles = {
-          ...fileKeys
-            .map(key => files[key])
-            .reduce(
-              (files, file) => ({
-                ...files,
-                [file.key]: {
-                  ...file,
-                  contents: codeFound[file.key]
-                    ? codeFound[file.key].contents
-                    : file.contents,
-                  editableContents: codeFound[file.key]
-                    ? codeFound[file.key].editableContents
-                    : file.editableContents,
-                  editableRegionBoundaries: codeFound[file.key]
-                    ? codeFound[file.key].editableRegionBoundaries
-                    : file.editableRegionBoundaries
-                }
-              }),
-              {}
-            )
-        };
+        finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
+          const foundChallengeFile = codeFound.find(
+            x => x.fileKey === challengeFile.fileKey
+          );
+          const isCodeFound = Object.keys(foundChallengeFile).length > 0;
+          return [
+            ...challengeFiles,
+            {
+              ...challengeFile,
+              ...(isCodeFound ? foundChallengeFile : {})
+            }
+          ];
+        }, []);
       } else {
         const legacyCode = getLegacyCode(legacyKey);
         if (legacyCode && !invalidForLegacy) {
-          finalFiles = legacyToFile(legacyCode, files, fileKeys[0]);
+          finalFiles = legacyToFile(legacyCode, challengeFiles, fileKeys[0]);
         }
       }
       if (finalFiles) {

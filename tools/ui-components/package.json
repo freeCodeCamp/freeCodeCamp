@@ -43,7 +43,7 @@
     "tailwindcss": "2.2.7",
     "rimraf": "3.0.2",
     "rollup": "2.56.2",
-    "rollup-plugin-postcss": "4.0.0",
+    "rollup-plugin-postcss": "4.0.1",
     "rollup-plugin-terser": "7.0.2"
   },
   "scripts": {

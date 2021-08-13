@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const yaml = require('js-yaml');
-const { findIndex, reduce, toString } = require('lodash');
+const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
 const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
@@ -306,44 +306,21 @@ ${getFullPath('english')}
   return prepareChallenge(challenge);
 }
 
-// TODO: tests and more descriptive name.
-function filesToObject(files) {
-  return reduce(
-    files,
-    (map, file) => {
-      map[file.key] = {
-        ...file,
-        head: arrToString(file.head),
-        contents: arrToString(file.contents),
-        tail: arrToString(file.tail)
-      };
-      return map;
-    },
-    {}
-  );
-}
-
 // gets the challenge ready for sourcing into Gatsby
 function prepareChallenge(challenge) {
-  if (challenge.files) {
-    challenge.files = filesToObject(challenge.files);
-    challenge.files = Object.keys(challenge.files)
-      .filter(key => challenge.files[key])
-      .map(key => challenge.files[key])
-      .reduce(
-        (files, file) => ({
-          ...files,
-          [file.key]: {
-            ...createPoly(file),
-            seed: file.contents.slice(0)
+  if (challenge.challengeFiles) {
+    challenge.challengeFiles = challenge.challengeFiles.reduce(
+      (challengeFiles, challengeFile) => {
+        return [
+          ...challengeFiles,
+          {
+            ...createPoly(challengeFile),
+            seed: challengeFile.contents.slice(0)
           }
-        }),
-        {}
-      );
-  }
-
-  if (challenge.solutionFiles) {
-    challenge.solutionFiles = filesToObject(challenge.solutionFiles);
+        ];
+      },
+      []
+    );
   }
   return challenge;
 }
@@ -379,10 +356,6 @@ function superBlockInfo(fileName) {
 function getBlockNameFromPath(filePath) {
   const [, block] = filePath.split(path.sep);
   return block;
-}
-
-function arrToString(arr) {
-  return Array.isArray(arr) ? arr.join('\n') : toString(arr);
 }
 
 exports.hasEnglishSource = hasEnglishSource;

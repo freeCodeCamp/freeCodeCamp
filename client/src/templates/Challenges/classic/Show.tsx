@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // Package Utilities
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { HandlerProps } from 'react-reflex';
 import Media from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
@@ -17,9 +15,10 @@ import { challengeTypes } from '../../../../utils/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import {
   ChallengeNodeType,
-  ChallengeFileType,
+  ChallengeFiles,
+  ChallengeFile,
   ChallengeMetaType,
-  TestType,
+  Test,
   ResizePropsType
 } from '../../../redux/prop-types';
 import { isContained } from '../../../utils/is-contained';
@@ -57,7 +56,7 @@ import '../components/test-frame.css';
 
 // Redux Setup
 const mapStateToProps = createStructuredSelector({
-  files: challengeFilesSelector,
+  challengeFiles: challengeFilesSelector,
   tests: challengeTestsSelector,
   output: consoleOutputSelector,
   isChallengeCompleted: isChallengeCompletedSelector
@@ -81,28 +80,28 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowClassicProps {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
-  createFiles: (arg0: ChallengeFileType) => void;
+  createFiles: (arg0: ChallengeFile[]) => void;
   data: { challengeNode: ChallengeNodeType };
   executeChallenge: () => void;
-  files: ChallengeFileType;
+  challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
-  initTests: (tests: TestType[]) => void;
+  initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMetaType;
   };
   t: TFunction;
-  tests: TestType[];
+  tests: Test[];
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
 }
 
 interface ShowClassicState {
-  layout: IReflexLayout | string;
+  layout: ReflexLayout | string;
   resizing: boolean;
 }
 
-interface IReflexLayout {
+interface ReflexLayout {
   codePane: { flex: number };
   editorPane: { flex: number };
   instructionPane: { flex: number };
@@ -147,8 +146,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     this.instructionsPanelRef = React.createRef();
   }
 
-  getLayoutState(): IReflexLayout | string {
-    const reflexLayout: IReflexLayout | string = store.get(REFLEX_LAYOUT);
+  getLayoutState(): ReflexLayout | string {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const reflexLayout: ReflexLayout | string = store.get(REFLEX_LAYOUT);
 
     // Validate if user has not done any resize of the panes
     if (!reflexLayout) return BASE_LAYOUT;
@@ -168,8 +168,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     this.setState(state => ({ ...state, resizing: true }));
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onStopResize(event: any) {
+  onStopResize(event: HandlerProps) {
+    // @ts-expect-error TODO: Apparently, name does not exist on type
     const { name, flex } = event.component.props;
 
     // Only interested in tracking layout updates for ReflexElement's
@@ -236,7 +236,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       updateChallengeMeta,
       data: {
         challengeNode: {
-          files,
+          challengeFiles,
           fields: { tests },
           challengeType,
           removeComments,
@@ -246,7 +246,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       pageContext: { challengeMeta }
     } = this.props;
     initConsole('');
-    createFiles(files);
+    createFiles(challengeFiles ?? []);
     initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
@@ -260,7 +260,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   componentWillUnmount() {
     const { createFiles, cancelTests } = this.props;
-    createFiles({});
+    createFiles([]);
     cancelTests();
   }
 
@@ -319,13 +319,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   renderEditor() {
-    const { files } = this.props;
+    const { challengeFiles } = this.props;
     const { description, title } = this.getChallenge();
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
-      files && (
+      challengeFiles && (
         <MultifileEditor
-          challengeFiles={files}
+          challengeFiles={challengeFiles}
           containerRef={this.containerRef}
           description={description}
           editorRef={this.editorRef}
@@ -358,11 +358,11 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   hasEditableBoundries() {
-    const { files } = this.props;
-    return Object.values(files).some(
-      file =>
-        file?.editableRegionBoundaries &&
-        file.editableRegionBoundaries.length === 2
+    const { challengeFiles } = this.props;
+    return (
+      challengeFiles?.some(
+        challengeFile => challengeFile.editableRegionBoundaries?.length === 2
+      ) ?? false
     );
   }
 
@@ -379,7 +379,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
-      files,
+      challengeFiles,
       t
     } = this.props;
 
@@ -414,7 +414,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
             <DesktopLayout
               block={block}
-              challengeFiles={files}
+              challengeFiles={challengeFiles}
               editor={this.renderEditor()}
               hasEditableBoundries={this.hasEditableBoundries()}
               hasPreview={this.hasPreview()}
@@ -478,43 +478,14 @@ export const query = graphql`
         link
         src
       }
-      files {
-        indexcss {
-          key
-          ext
-          name
-          contents
-          head
-          tail
-          editableRegionBoundaries
-        }
-        indexhtml {
-          key
-          ext
-          name
-          contents
-          head
-          tail
-          editableRegionBoundaries
-        }
-        indexjs {
-          key
-          ext
-          name
-          contents
-          head
-          tail
-          editableRegionBoundaries
-        }
-        indexjsx {
-          key
-          ext
-          name
-          contents
-          head
-          tail
-          editableRegionBoundaries
-        }
+      challengeFiles {
+        fileKey
+        ext
+        name
+        contents
+        head
+        tail
+        editableRegionBoundaries
       }
     }
   }
