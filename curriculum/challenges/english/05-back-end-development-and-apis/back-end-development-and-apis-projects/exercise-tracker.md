@@ -185,7 +185,7 @@ async (getUserInput) => {
 };
 ```
 
-A request to a user's log (`GET/api/users/:_id/logs`) returns an object with a `count` property representing the number of exercises returned.
+A request to a user's log (`GET/api/users/:_id/logs`) returns a user object with a `count` property representing the number of exercises that belong to that user.
 
 ```js
 async (getUserInput) => {
