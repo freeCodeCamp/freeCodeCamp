@@ -11,7 +11,6 @@ type DonateCompletionProps = {
   redirecting: boolean;
   reset: () => unknown;
   success: boolean;
-  paymentButtonsLoading: boolean;
 };
 
 function DonateCompletion({
@@ -19,19 +18,12 @@ function DonateCompletion({
   reset,
   success,
   redirecting,
-  paymentButtonsLoading,
   error = null
 }: DonateCompletionProps): JSX.Element {
   /* eslint-disable no-nested-ternary */
   const { t } = useTranslation();
   const style =
-    processing || redirecting
-      ? 'info'
-      : success
-      ? 'success'
-      : paymentButtonsLoading
-      ? ''
-      : 'danger';
+    processing || redirecting ? 'info' : success ? 'success' : 'danger';
 
   const heading = redirecting
     ? `${t('donate.redirecting')}`
@@ -39,20 +31,7 @@ function DonateCompletion({
     ? `${t('donate.processing')}`
     : success
     ? `${t('donate.thank-you')}`
-    : paymentButtonsLoading
-    ? ''
     : `${t('donate.error')}`;
-
-  if (paymentButtonsLoading)
-    return (
-      <div className=' donation-completion donation-completion-loading'>
-        <Spinner
-          className='script-loading-spinner'
-          fadeIn='none'
-          name='line-scale'
-        />
-      </div>
-    );
 
   return (
     <Alert bsStyle={style} className='donation-completion'>
@@ -64,13 +43,6 @@ function DonateCompletion({
           <Spinner
             className='user-state-spinner'
             color='#0a0a23'
-            fadeIn='none'
-            name='line-scale'
-          />
-        )}
-        {paymentButtonsLoading && (
-          <Spinner
-            className='script-loading-spinner'
             fadeIn='none'
             name='line-scale'
           />

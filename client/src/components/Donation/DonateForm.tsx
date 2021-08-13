@@ -10,11 +10,11 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
-
 import type { Token } from '@stripe/stripe-js';
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import Spinner from 'react-spinkit';
 import { createSelector } from 'reselect';
 
 import {
@@ -319,6 +319,9 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
 
   renderDonationOptions() {
     const {
+      donationFormState: {
+        loading: { stripe, paypal }
+      },
       handleProcessing,
       isSignedIn,
       addDonation,
@@ -326,6 +329,8 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
       defaultTheme,
       theme
     } = this.props;
+
+    const paymentButtonsLoading = stripe && paypal;
     const { donationAmount, donationDuration } = this.state;
     const isOneTime = donationDuration === 'onetime';
     const formlabel = `${t(
@@ -343,7 +348,8 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
       <div>
         <b>{formlabel}</b>
         <Spacer />
-        <div className='donate-btn-group'>
+        {paymentButtonsLoading && this.paymentButtonsLoader()}
+        <div className={paymentButtonsLoading ? 'hide' : 'donate-btn-group'}>
           <WalletsWrapper
             amount={donationAmount}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
@@ -373,12 +379,23 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     return this.props.updateDonationFormState({ ...defaultDonationFormState });
   }
 
+  paymentButtonsLoader() {
+    return (
+      <div className=' donation-completion donation-completion-loading'>
+        <Spinner
+          className='script-loading-spinner'
+          fadeIn='none'
+          name='line-scale'
+        />
+      </div>
+    );
+  }
+
   renderCompletion(props: {
     processing: boolean;
     redirecting: boolean;
     success: boolean;
     error: string | null;
-    paymentButtonsLoading: boolean;
     reset: () => unknown;
   }) {
     return <DonateCompletion {...props} />;
@@ -453,7 +470,6 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
         redirecting,
         success,
         error,
-        paymentButtonsLoading,
         reset: this.resetDonation
       });
     }
@@ -461,20 +477,15 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     // keep payment provider elements on DOM during processing and redirect to avoid errors.
     return (
       <>
-        {(processing || redirecting || paymentButtonsLoading) &&
+        {(processing || redirecting) &&
           this.renderCompletion({
             processing,
             redirecting,
             success,
             error,
-            paymentButtonsLoading,
             reset: this.resetDonation
           })}
-        <div
-          className={
-            processing || redirecting || paymentButtonsLoading ? 'hide' : ''
-          }
-        >
+        <div className={processing || redirecting ? 'hide' : ''}>
           {isMinimalForm ? this.renderModalForm() : this.renderPageForm()}
         </div>
       </>
