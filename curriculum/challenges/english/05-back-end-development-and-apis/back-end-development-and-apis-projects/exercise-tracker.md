@@ -144,7 +144,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user. The returned response will be the user object with a `log` array of all the exercises added. Each log item has the `description`, `duration`, and `date` properties.
+You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user.
 
 ```js
 async (getUserInput) => {
@@ -166,14 +166,13 @@ async (getUserInput) => {
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `description=${expected.description}&duration=${expected.duration}`
+      body: `description=${expected .description}&duration=${expected.duration}`
     });
     if (addRes.ok) {
       const logRes = await fetch(url + `/api/users/${_id}/logs`);
       if (logRes.ok) {
-        const { log } = await logRes.json();
-        assert.isArray(log);
-        assert.equal(1, log.length);
+        // confirm that the route works for this test
+        assert(true);
       } else {
         throw new Error(`${logRes.status} ${logRes.statusText}`);
       }
@@ -186,7 +185,7 @@ async (getUserInput) => {
 };
 ```
 
-A request to a user's log (`/api/users/:_id/logs`) returns an object with a `count` property representing the number of exercises returned.
+A request to a user's log (`GET/api/users/:_id/logs`) returns an object with a `count` property representing the number of exercises returned.
 
 ```js
 async (getUserInput) => {
@@ -227,7 +226,239 @@ async (getUserInput) => {
 };
 ```
 
-You can add `from`, `to` and `limit` parameters to a `/api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
+A `GET` request to `/api/users/:id/logs` will return the user object with a `log` array of all the exercises added.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  })
+  if(res.ok){
+    const {_id, username} = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok){
+      const logRes = await fetch(url + `api/users/${_id}/logs`);
+      if(logRes.ok) {
+        const {log} = await logRes.json();
+        assert.isArray(log);
+        assert.equal(1, log.length);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
+};
+```
+
+Each item in that `log` array should have a `description`, `duration`, and `date` properties.
+
+```js
+async(getUserInput){
+  const url = getUserInput('url');
+  const res = await fetch(url + `/api/users`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'}
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  });
+  if(res.ok) {
+    const {_id, username} = await res.json();
+     const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `api/users/${_id}/logs`);
+      if(logRes.ok) {
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.exists(exercise);
+        assert.exists(exercise.description);
+        assert.exists(exercise.duration);
+        assert.exists(exercise.date);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      };
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
+};
+```
+
+The `description` property of the `log` object should be a string.
+
+```js
+async(getUserInput){
+  const url = getUserInput(url);
+  const res = await fetch(url + 'api/users/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+  });
+  if(res.ok) {
+    const {_id, username} = res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `api/users/${_id}/logs`);
+      if(logRes.ok){
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.isString(exercise.description);
+        assert.equal(exercise.description, expected.description);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+The `duration` property of the `log` object should be a `number`.
+
+```js
+async(getUserInput){
+  const url = getUserInput(url);
+  const res = await fetch(url + 'api/users/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+  });
+  if(res.ok) {
+    const {_id, username} = res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `api/users/${_id}/logs`);
+      if(logRes.ok){
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.isNumber(exercise.duration);
+        assert.equal(exercise.duration, expected.duration);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+The `date` property of the `log` object should be a string. Use the `dateString` format of the `Date` API.
+
+```js
+async(getUserInput){
+  const url = getUserInput(url);
+  const res = await fetch(url + 'api/users/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+  });
+  if(res.ok) {
+    const {_id, username} = res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `api/users/${_id}/logs`);
+      if(logRes.ok){
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.isString(exercise.date);
+        assert.equal(exercise.date, expected.date);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+You can add `from`, `to` and `limit` parameters to a `GET /api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
 
 ```js
 async (getUserInput) => {
