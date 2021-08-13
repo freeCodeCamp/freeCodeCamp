@@ -22,7 +22,7 @@ interface WrapperProps {
   ) => void;
   onDonationStateChange: (donationState: AddDonationData) => void;
   refreshErrorMessage: string;
-  handlePaymentMethodLoad: (provider: 'stripe' | 'paypal') => void;
+  handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
 }
 interface WalletsButtonProps extends WrapperProps {
   stripe: Stripe | null;
@@ -36,7 +36,7 @@ const WalletsButton = ({
   refreshErrorMessage,
   postStripeDonation,
   onDonationStateChange,
-  handlePaymentMethodLoad
+  handlePaymentButtonLoad
 }: WalletsButtonProps) => {
   const [token, setToken] = useState<Token | null>(null);
   const [paymentRequest, setPaymentRequest] = useState<PaymentRequest | null>(
@@ -71,10 +71,9 @@ const WalletsButton = ({
         checkpaymentPossiblity(true);
       } else {
         checkpaymentPossiblity(false);
-        handlePaymentMethodLoad('stripe');
       }
     });
-  }, [label, amount, stripe, postStripeDonation, handlePaymentMethodLoad]);
+  }, [label, amount, stripe, postStripeDonation, handlePaymentButtonLoad]);
 
   const displayRefreshError = (): void => {
     onDonationStateChange({
@@ -95,7 +94,7 @@ const WalletsButton = ({
               displayRefreshError();
             }
           }}
-          onReady={() => handlePaymentMethodLoad('stripe')}
+          onReady={() => handlePaymentButtonLoad('stripe')}
           options={{
             style: {
               paymentRequestButton: {

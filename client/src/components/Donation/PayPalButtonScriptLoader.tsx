@@ -33,7 +33,7 @@ type PayPalButtonScriptLoaderProps = {
   ) => unknown;
   onCancel: () => unknown;
   onError: () => unknown;
-  onCheck: () => void;
+  onInit: () => void;
   style: unknown;
   planId: string | null;
 };
@@ -114,7 +114,6 @@ export class PayPalButtonScriptLoader extends Component<
 
   onScriptLoad = (): void => {
     this.setState({ isSdkLoaded: true });
-    this.props.onCheck();
   };
 
   captureOneTimePayment(
@@ -139,6 +138,7 @@ export class PayPalButtonScriptLoader extends Component<
     const {
       onApprove,
       onError,
+      onInit,
       onCancel,
       createSubscription,
       createOrder,
@@ -178,9 +178,7 @@ export class PayPalButtonScriptLoader extends Component<
         }
         onCancel={onCancel}
         onError={onError}
-        onReady={() => {
-          console.log('paypal ready');
-        }}
+        onInit={onInit}
         style={style}
       />
     );

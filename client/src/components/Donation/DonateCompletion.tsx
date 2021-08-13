@@ -11,7 +11,7 @@ type DonateCompletionProps = {
   redirecting: boolean;
   reset: () => unknown;
   success: boolean;
-  paymentsNotLoaded: boolean;
+  paymentButtonsLoading: boolean;
 };
 
 function DonateCompletion({
@@ -19,7 +19,7 @@ function DonateCompletion({
   reset,
   success,
   redirecting,
-  paymentsNotLoaded,
+  paymentButtonsLoading,
   error = null
 }: DonateCompletionProps): JSX.Element {
   /* eslint-disable no-nested-ternary */
@@ -29,7 +29,7 @@ function DonateCompletion({
       ? 'info'
       : success
       ? 'success'
-      : paymentsNotLoaded
+      : paymentButtonsLoading
       ? ''
       : 'danger';
 
@@ -39,11 +39,11 @@ function DonateCompletion({
     ? `${t('donate.processing')}`
     : success
     ? `${t('donate.thank-you')}`
-    : paymentsNotLoaded
+    : paymentButtonsLoading
     ? ''
     : `${t('donate.error')}`;
 
-  if (paymentsNotLoaded)
+  if (paymentButtonsLoading)
     return (
       <div className=' donation-completion donation-completion-loading'>
         <Spinner
@@ -68,7 +68,7 @@ function DonateCompletion({
             name='line-scale'
           />
         )}
-        {paymentsNotLoaded && (
+        {paymentButtonsLoading && (
           <Spinner
             className='script-loading-spinner'
             fadeIn='none'
