@@ -138,7 +138,25 @@ async(getUserInput) => {
 };
 ```
 
-You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used. The response returned will be the user object with the exercise fields added.
+You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used. 
+
+```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  });
+  if (res.ok) {
+    assert(true);
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
+```
+
+The response returned will be the user object with the exercise fields added.
 
 ```js
 async (getUserInput) => {
@@ -165,6 +183,8 @@ async (getUserInput) => {
     if (addRes.ok) {
       const actual = await addRes.json();
       assert.deepEqual(actual, expected);
+      assert.isString(actual.description);
+      assert.isNumber(actual.duration);
     } else {
       throw new Error(`${addRes.status} ${addRes.statusText}`);
     }
