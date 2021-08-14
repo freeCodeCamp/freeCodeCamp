@@ -3,8 +3,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable no-nested-ternary */
 import {
-  Col,
-  Row,
   Tab,
   Tabs,
   ToggleButton,
@@ -317,64 +315,6 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     );
   }
 
-  renderDonationOptions() {
-    const {
-      donationFormState: {
-        loading: { stripe, paypal }
-      },
-      handleProcessing,
-      isSignedIn,
-      addDonation,
-      t,
-      defaultTheme,
-      theme
-    } = this.props;
-
-    const paymentButtonsLoading = stripe && paypal;
-    const { donationAmount, donationDuration } = this.state;
-    const isOneTime = donationDuration === 'onetime';
-    const formlabel = `${t(
-      isOneTime ? 'donate.confirm-2' : 'donate.confirm-3',
-      { usd: donationAmount / 100 }
-    )}:`;
-
-    const walletlabel = `${t(
-      isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
-      { usd: donationAmount / 100 }
-    )}:`;
-    const priorityTheme = defaultTheme ? defaultTheme : theme;
-
-    return (
-      <div>
-        <b>{formlabel}</b>
-        <Spacer />
-        {paymentButtonsLoading && this.paymentButtonsLoader()}
-        <div className={paymentButtonsLoading ? 'hide' : 'donate-btn-group'}>
-          <WalletsWrapper
-            amount={donationAmount}
-            handlePaymentButtonLoad={this.handlePaymentButtonLoad}
-            label={walletlabel}
-            onDonationStateChange={this.onDonationStateChange}
-            postStripeDonation={this.postStripeDonation}
-            refreshErrorMessage={t('donate.refresh-needed')}
-            theme={priorityTheme}
-          />
-          <PaypalButton
-            addDonation={addDonation}
-            donationAmount={donationAmount}
-            donationDuration={donationDuration}
-            handlePaymentButtonLoad={this.handlePaymentButtonLoad}
-            handleProcessing={handleProcessing}
-            isSubscription={isOneTime ? false : true}
-            onDonationStateChange={this.onDonationStateChange}
-            skipAddDonation={!isSignedIn}
-            theme={priorityTheme}
-          />
-        </div>
-      </div>
-    );
-  }
-
   resetDonation() {
     return this.props.updateDonationFormState({ ...defaultDonationFormState });
   }
@@ -401,21 +341,35 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     return <DonateCompletion {...props} />;
   }
 
-  renderModalForm() {
+  renderButtonGroup() {
     const { donationAmount, donationDuration } = this.state;
-    const { handleProcessing, addDonation, defaultTheme, theme, t } =
-      this.props;
+    const {
+      donationFormState: {
+        loading: { stripe, paypal }
+      },
+      handleProcessing,
+      addDonation,
+      defaultTheme,
+      theme,
+      t,
+      isMinimalForm
+    } = this.props;
+    const paymentButtonsLoading = stripe && paypal;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
     const isOneTime = donationDuration === 'onetime';
     const walletlabel = `${t(
       isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
       { usd: donationAmount / 100 }
     )}:`;
+
     return (
       <>
-        <b className='donation-label'>{this.getDonationButtonLabel()}:</b>
+        <b className={isMinimalForm ? 'donation-label-modal' : ''}>
+          {this.getDonationButtonLabel()}:
+        </b>
         <Spacer />
-        <div className='donate-btn-group'>
+        {paymentButtonsLoading && this.paymentButtonsLoader()}
+        <div className={paymentButtonsLoading ? 'hide' : 'donate-btn-group'}>
           <WalletsWrapper
             amount={donationAmount}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
@@ -441,10 +395,10 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
 
   renderPageForm() {
     return (
-      <Row>
-        <Col xs={12}>{this.renderDonationDescription()}</Col>
-        <Col xs={12}>{this.renderDonationOptions()}</Col>
-      </Row>
+      <>
+        <div>{this.renderDonationDescription()}</div>
+        <div>{this.renderButtonGroup()}</div>
+      </>
     );
   }
 
@@ -484,7 +438,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
             reset: this.resetDonation
           })}
         <div className={processing || redirecting ? 'hide' : ''}>
-          {isMinimalForm ? this.renderModalForm() : this.renderPageForm()}
+          {isMinimalForm ? this.renderButtonGroup() : this.renderPageForm()}
         </div>
       </>
     );

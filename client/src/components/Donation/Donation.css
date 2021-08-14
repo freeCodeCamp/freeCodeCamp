@@ -248,7 +248,7 @@ li.disabled > a {
   font-weight: 600;
   font-size: 1.2rem;
 }
-.donation-label,
+.donation-label-modal,
 .donation-modal p,
 .donation-modal b {
   text-align: center;
