@@ -6,7 +6,7 @@ describe('Report User', () => {
     cy.login();
   });
   it('should be possible to report a user from their profile page', () => {
-    // Since going to a user page intially generates a 404, we have to ignore
+    // Since going to a user page initially generates a 404, we have to ignore
     // status codes on that request
     cy.visit('/twaha', { failOnStatusCode: false });
     // The following line is only required if you want to test it in development
