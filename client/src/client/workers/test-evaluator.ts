@@ -91,8 +91,9 @@ self.onmessage = async (e: TestEvaluatorEvent) => {
   /* eslint-enable @typescript-eslint/no-unused-vars */
   try {
     let testResult;
+    // This can be reassigned by the eval inside the try block, so it should be declared as a let
+    // eslint-disable-next-line prefer-const
     let __userCodeWasExecuted = false;
-    /* eslint-disable @typescript-eslint/no-unsafe-assignment */
     /* eslint-disable no-eval */
     try {
       // Logging is proxyed after the build to catch console.log messages
@@ -103,7 +104,7 @@ self.onmessage = async (e: TestEvaluatorEvent) => {
 __utils.flushLogs();
 __userCodeWasExecuted = true;
 __utils.toggleProxyLogger(true);
-${e.data.testString}`);
+${e.data.testString}`) as unknown;
     } catch (err) {
       if (__userCodeWasExecuted) {
         // rethrow error, since test failed.
@@ -112,22 +113,18 @@ ${e.data.testString}`);
       // log build errors unless they're related to import/export/require (there
       // are challenges that use them and they should not trigger warnings)
       if (
-        /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-        err.name !== 'ReferenceError' ||
-        (err.message !== 'require is not defined' &&
-          err.message !== 'exports is not defined')
+        (err as Error).name !== 'ReferenceError' ||
+        ((err as Error).message !== 'require is not defined' &&
+          (err as Error).message !== 'exports is not defined')
       ) {
-        /* eslint-enable @typescript-eslint/no-unsafe-member-access */
         __utils.log(err);
       }
       // the tests may not require working code, so they are evaluated even if
       // the user code does not get executed.
-      testResult = eval(e.data.testString);
+      testResult = eval(e.data.testString) as unknown;
     }
     /* eslint-enable no-eval */
-    /* eslint-enable @typescript-eslint/no-unsafe-assignment */
     if (typeof testResult === 'function') {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       await testResult((fileName: string) =>
         __toString(e.data.sources[fileName])
       );
@@ -144,10 +141,8 @@ ${e.data.testString}`);
     // postResult flushes the logs and must be called after logging is finished.
     __utils.postResult({
       err: {
-        /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
-        message: err.message,
-        stack: err.stack
-        /* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
+        message: (err as Error).message,
+        stack: (err as Error).stack
       }
     });
   }
