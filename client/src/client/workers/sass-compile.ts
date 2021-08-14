@@ -14,16 +14,27 @@ if (!self.crypto) {
 
 self.importScripts('/js/sass.sync.js');
 
+interface WorkerWithSass {
+  Sass: {
+    compile(data: unknown, callback: unknown): void;
+  };
+}
+
 self.onmessage = e => {
   const data: unknown = e.data;
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-explicit-any
-  (self as any).Sass.compile(data, (result: Record<string, unknown>) => {
-    if (result.status === 0) {
-      self.postMessage(result.text);
-    } else {
-      self.postMessage({ type: 'error', data: { message: result.formatted } });
+  (self as WorkerGlobalScope & typeof globalThis & WorkerWithSass).Sass.compile(
+    data,
+    (result: Record<string, unknown>) => {
+      if (result.status === 0) {
+        self.postMessage(result.text);
+      } else {
+        self.postMessage({
+          type: 'error',
+          data: { message: result.formatted }
+        });
+      }
     }
-  });
+  );
 };
 
 self.postMessage({ type: 'contentLoaded' });
