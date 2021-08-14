@@ -91,7 +91,7 @@ self.onmessage = async (e: TestEvaluatorEvent) => {
   /* eslint-enable @typescript-eslint/no-unused-vars */
   try {
     let testResult;
-    const __userCodeWasExecuted = false;
+    let __userCodeWasExecuted = false;
     /* eslint-disable @typescript-eslint/no-unsafe-assignment */
     /* eslint-disable no-eval */
     try {
