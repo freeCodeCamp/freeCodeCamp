@@ -78,19 +78,17 @@ export function buildUserUpdate(
   _completedChallenge,
   timezone
 ) {
-  const { files } = _completedChallenge;
+  const { challengeFiles } = _completedChallenge;
   let completedChallenge = {};
   if (jsProjects.includes(challengeId)) {
     completedChallenge = {
       ..._completedChallenge,
-      files: Object.keys(files)
-        .map(key => files[key])
-        .map(file =>
-          pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext'])
-        )
+      challengeFiles: challengeFiles.map(challengeFile =>
+        pick(challengeFile, ['contents', 'key', 'index', 'name', 'path', 'ext'])
+      )
     };
   } else {
-    completedChallenge = omit(_completedChallenge, ['files']);
+    completedChallenge = omit(_completedChallenge, ['challengeFiles']);
   }
   let finalChallenge;
   const updateData = {};
@@ -220,11 +218,11 @@ export function modernChallengeCompleted(req, res, next) {
     .getCompletedChallenges$()
     .flatMap(() => {
       const completedDate = Date.now();
-      const { id, files } = req.body;
+      const { id, challengeFiles } = req.body;
 
       const { alreadyCompleted, updateData } = buildUserUpdate(user, id, {
         id,
-        files,
+        challengeFiles,
         completedDate
       });
 
@@ -256,7 +254,7 @@ function projectCompleted(req, res, next) {
     'solution',
     'githubLink',
     'challengeType',
-    'files'
+    'challengeFiles'
   ]);
   completedChallenge.completedDate = Date.now();
 
