@@ -12,15 +12,6 @@ describe('Legacy redirects', () => {
       );
     });
 
-    cy.visit(
-      '/learn/front-end-libraries/bootstrap/house-our-page-within-a-bootstrap-container-fluid-div'
-    );
-    cy.location().should(loc => {
-      expect(loc.pathname).to.eq(
-        '/learn/front-end-development-libraries/bootstrap/house-our-page-within-a-bootstrap-container-fluid-div'
-      );
-    });
-
     cy.visit('learn/front-end-libraries/front-end-libraries-projects');
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
@@ -41,6 +32,17 @@ describe('Legacy redirects', () => {
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
         '/certification/certifieduser/front-end-development-libraries'
+      );
+    });
+  });
+
+  it('should load this one challenge that throws an error if we do not test it separately', () => {
+    cy.visit(
+      'learn/front-end-libraries/bootstrap/use-responsive-design-with-bootstrap-fluid-containers'
+    );
+    cy.location().should(loc => {
+      expect(loc.pathname).to.eq(
+        '/learn/front-end-development-libraries/bootstrap/use-responsive-design-with-bootstrap-fluid-containers'
       );
     });
   });
