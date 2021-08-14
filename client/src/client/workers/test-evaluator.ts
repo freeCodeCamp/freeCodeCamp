@@ -55,7 +55,6 @@ const __utils = (() => {
   };
 })();
 
-// Created this interface to deal with tsc errors
 interface TestEvaluatorEvent extends MessageEvent {
   data: {
     code: {
