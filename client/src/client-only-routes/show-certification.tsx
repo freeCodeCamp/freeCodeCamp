@@ -265,7 +265,7 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
         </Row>
       )}
       <Row>
-        <Col md={8} mdOffset={2} xs={12}>
+        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <DonateForm
             defaultTheme='default'
             handleProcessing={handleProcessing}

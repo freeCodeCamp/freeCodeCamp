@@ -158,7 +158,14 @@ function DonateModal({
       <Modal.Body>
         {recentlyClaimedBlock ? blockDonationText : progressDonationText}
         <Spacer />
-        <DonateForm handleProcessing={handleProcessing} isMinimalForm={true} />
+        <Row>
+          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+            <DonateForm
+              handleProcessing={handleProcessing}
+              isMinimalForm={true}
+            />
+          </Col>
+        </Row>
         <Spacer />
         <Row>
           <Col sm={4} smOffset={4} xs={8} xsOffset={2}>

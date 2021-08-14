@@ -412,32 +412,30 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
       { usd: donationAmount / 100 }
     )}:`;
     return (
-      <Row>
-        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-          <b className='donation-label'>{this.getDonationButtonLabel()}:</b>
-          <Spacer />
-          <div className='donate-btn-group'>
-            <WalletsWrapper
-              amount={donationAmount}
-              handlePaymentButtonLoad={this.handlePaymentButtonLoad}
-              label={walletlabel}
-              onDonationStateChange={this.onDonationStateChange}
-              postStripeDonation={this.postStripeDonation}
-              refreshErrorMessage={t('donate.refresh-needed')}
-              theme={priorityTheme}
-            />
-            <PaypalButton
-              addDonation={addDonation}
-              donationAmount={donationAmount}
-              donationDuration={donationDuration}
-              handlePaymentButtonLoad={this.handlePaymentButtonLoad}
-              handleProcessing={handleProcessing}
-              onDonationStateChange={this.onDonationStateChange}
-              theme={defaultTheme ? defaultTheme : theme}
-            />
-          </div>
-        </Col>
-      </Row>
+      <>
+        <b className='donation-label'>{this.getDonationButtonLabel()}:</b>
+        <Spacer />
+        <div className='donate-btn-group'>
+          <WalletsWrapper
+            amount={donationAmount}
+            handlePaymentButtonLoad={this.handlePaymentButtonLoad}
+            label={walletlabel}
+            onDonationStateChange={this.onDonationStateChange}
+            postStripeDonation={this.postStripeDonation}
+            refreshErrorMessage={t('donate.refresh-needed')}
+            theme={priorityTheme}
+          />
+          <PaypalButton
+            addDonation={addDonation}
+            donationAmount={donationAmount}
+            donationDuration={donationDuration}
+            handlePaymentButtonLoad={this.handlePaymentButtonLoad}
+            handleProcessing={handleProcessing}
+            onDonationStateChange={this.onDonationStateChange}
+            theme={defaultTheme ? defaultTheme : theme}
+          />
+        </div>
+      </>
     );
   }
 
