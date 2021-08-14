@@ -91,7 +91,50 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users` to get an array of all users. Each element in the array is an object containing a user's `username` and `_id`.
+You can make a `GET` request to `/api/users` to get a list of all users.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + 'api/users');
+  if(res.ok){
+    assert(true);
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+The `Get` request to `/api/users` returns an array.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + 'api/users');
+  if(res.ok){
+    assert.isArray(res);
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+Each element in the array is an object containing a user's `username` and `_id`.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + 'api/users');
+  if(res.ok){
+    const user = res[0];
+    assert.exists(user);
+    assert.exists(user.username);
+    assert.exists(user._id);
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
 
 ```js
 async (getUserInput) => {
