@@ -36,6 +36,7 @@ type PaypalButtonProps = {
     success: boolean;
     error: string | null;
   }) => void;
+  isPaypalLoading: boolean;
   skipAddDonation?: boolean;
   t: (label: string) => string;
   theme: string;
@@ -125,7 +126,7 @@ export class PaypalButton extends Component<
 
   render(): JSX.Element | null {
     const { duration, planId, amount } = this.state;
-    const { t, theme } = this.props;
+    const { t, theme, isPaypalLoading } = this.props;
     const isSubscription = duration !== 'onetime';
     const buttonColor = theme === 'night' ? 'white' : 'gold';
     if (!paypalClientId) {
@@ -172,6 +173,7 @@ export class PaypalButton extends Component<
               plan_id: planId
             });
           }}
+          isPaypalLoading={isPaypalLoading}
           isSubscription={isSubscription}
           onApprove={(data: AddDonationData) => {
             this.handleApproval(data, isSubscription);

@@ -31,6 +31,7 @@ type PayPalButtonScriptLoaderProps = {
     data: AddDonationData,
     actions?: { order: { capture: () => Promise<unknown> } }
   ) => unknown;
+  isPaypalLoading: boolean;
   onCancel: () => unknown;
   onError: () => unknown;
   onLoad: () => void;
@@ -81,6 +82,8 @@ export class PayPalButtonScriptLoader extends Component<
   componentDidMount(): void {
     if (!window.paypal) {
       this.loadScript(this.props.isSubscription, false);
+    } else if (this.props.isPaypalLoading) {
+      this.props.onLoad();
     }
   }
 
@@ -139,7 +142,6 @@ export class PayPalButtonScriptLoader extends Component<
     const {
       onApprove,
       onError,
-
       onCancel,
       createSubscription,
       createOrder,

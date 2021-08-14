@@ -143,6 +143,10 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
   };
 
   onDonationStateChange(donationState: AddDonationData) {
+    console.log({
+      ...this.props.donationFormState,
+      ...donationState
+    });
     // scroll to top
     window.scrollTo(0, 0);
     this.props.updateDonationFormState({
@@ -301,7 +305,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
         </b>
         <Spacer />
         {paymentButtonsLoading && this.paymentButtonsLoader()}
-        <div className={paymentButtonsLoading ? 'hide' : 'donate-btn-group'}>
+        <div className={'donate-btn-group'}>
           <WalletsWrapper
             amount={donationAmount}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
@@ -317,6 +321,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
             donationDuration={donationDuration}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
             handleProcessing={handleProcessing}
+            isPaypalLoading={paypal}
             onDonationStateChange={this.onDonationStateChange}
             theme={defaultTheme ? defaultTheme : theme}
           />
