@@ -13,11 +13,11 @@ describe('Legacy redirects', () => {
     });
 
     cy.visit(
-      'learn/front-end-libraries/bootstrap/use-responsive-design-with-bootstrap-fluid-containers'
+      '/learn/front-end-libraries/bootstrap/house-our-page-within-a-bootstrap-container-fluid-div'
     );
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(
-        '/learn/front-end-development-libraries/bootstrap/use-responsive-design-with-bootstrap-fluid-containers'
+        '/learn/front-end-development-libraries/bootstrap/house-our-page-within-a-bootstrap-container-fluid-div'
       );
     });
 
