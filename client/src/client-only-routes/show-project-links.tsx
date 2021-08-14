@@ -5,6 +5,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { Spacer, Link } from '../components/helpers';
 import {
+  ChallengeFile,
   ChallengeFiles,
   CompletedChallenge,
   UserType
@@ -50,13 +51,13 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
-    ) as CompletedChallenge;
+    ) as CompletedChallenge & { files: ChallengeFile[] };
 
     if (!completedProject) {
       return null;
     }
 
-    const { solution, githubLink, challengeFiles } = completedProject;
+    const { solution, githubLink, files: challengeFiles } = completedProject;
     const onClickHandler = () =>
       setSolutionState({
         projectTitle,
