@@ -71,7 +71,25 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can `POST` to `/api/users` with form data `username` to create a new user. The returned response will be an object with `username` and `_id` properties.
+You can `POST` to `/api/users` with form data `username` to create a new user.
+
+```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  });
+  if (res.ok) {
+    assert(true);
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
+```
+
+The returned response will be an object with `username` and `_id` properties.
 
 ```js
 async (getUserInput) => {
