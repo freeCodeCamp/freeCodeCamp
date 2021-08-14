@@ -15,12 +15,18 @@ Primeiro, visite o arquivo `config/i18n/all-langs.js` para adicionar o idioma à
 - `langDisplayNames`: esses são os nomes dos idiomas que aparecerão para a seleção no menu de navegação.
 - `langCodes`: esses são os códigos de idiomas usados para formatar datas e números. Esses deverão ser códigos Unicode CLDR ao invés de códigos ISO.
 
-Como um exemplo, se você tivesse que habilitar o idioma Dothraki como seu idioma, os objetos  `all-langs.js` devem ficar assim:
+Como um exemplo, se você tivesse que habilitar o idioma Dothraki como seu idioma, os objetos `all-langs.js` devem ficar assim:
 
 ```js
 const availableLangs = {
   client: ['english', 'espanol', 'chinese', 'chinese-traditional', 'dothraki'],
-  curriculum: ['english', 'espanol', 'chinese', 'chinese-traditional', 'dothraki']
+  curriculum: [
+    'english',
+    'espanol',
+    'chinese',
+    'chinese-traditional',
+    'dothraki'
+  ]
 };
 
 const i18nextCodes = {
@@ -28,7 +34,7 @@ const i18nextCodes = {
   espanol: 'es',
   chinese: 'zh',
   'chinese-traditional': 'zh-Hant',
-  'dothraki': 'mis',
+  dothraki: 'mis'
 };
 
 const langDisplayNames = {
@@ -36,7 +42,7 @@ const langDisplayNames = {
   espanol: 'Español',
   chinese: '中文（简体字）',
   'chinese-traditional': '中文（繁體字）',
-  'dothraki': 'Dothraki',
+  dothraki: 'Dothraki'
 };
 
 const langCodes = {
@@ -44,7 +50,7 @@ const langCodes = {
   espanol: 'es-419',
   chinese: 'zh',
   'chinese-traditional': 'zh-Hant',
-  'dothraki': 'mis',
+  dothraki: 'mis'
 };
 ```
 
@@ -75,11 +81,11 @@ const algoliaIndices = {
   dothraki: {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
-  },
+  }
 };
 ```
 
-Depois, você precisará informar ao client quais certificações estão traduzidas e quais ainda estão em inglês. Abra o arquivo `utils/is-audited.js`. Dentro de `auditedCerts`, adicione uma nova chave com o valor de `availableLangs` de seu idioma. Atribua o valor daquela chave a um array que contém os *nomes hifenizados* para as certificações foram traduzidas. Consulte os dados existentes para aqueles nomes hifenizados.
+Depois, você precisará informar ao client quais certificações estão traduzidas e quais ainda estão em inglês. Abra o arquivo `utils/is-audited.js`. Dentro de `auditedCerts`, adicione uma nova chave com o valor de `availableLangs` de seu idioma. Atribua o valor daquela chave a um array que contém os _nomes hifenizados_ para as certificações foram traduzidas. Consulte os dados existentes para aqueles nomes hifenizados.
 
 Dando continuidade ao trabalho para habilitar o idioma Dothraki – traduzimos as três primeiras certificações:
 
@@ -92,23 +98,23 @@ const auditedCerts = {
   chinese: [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries',
+    'front-end-development-libraries',
     'data-visualization',
-    'apis-and-microservices',
+    'back-end-development-and-apis',
     'quality-assurance'
   ],
   'chinese-traditional': [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries',
+    'front-end-development-libraries',
     'data-visualization',
-    'apis-and-microservices',
+    'back-end-development-and-apis',
     'quality-assurance'
   ],
-  'dothraki': [
+  dothraki: [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries'
+    'front-end-development-libraries'
   ]
 };
 ```
@@ -128,4 +134,4 @@ Quando tiver os arquivos em mãos, você precisará colocá-los no diretório co
 
 Quando estes arquivos estiverem no local certo, você deve poder usar `npm run develop` para ver sua versão traduzida do freeCodeCamp.
 
-> [!ATTENTION] Embora você possa realizar as traduções localmente para fins de teste, lembramos a todos que as traduções *não* devem ser enviadas pelo GitHub e devem ser feitas somente pelo Crowdin. Certifique-se de reiniciar sua base de código local após realizar os testes.
+> [!ATTENTION] Embora você possa realizar as traduções localmente para fins de teste, lembramos a todos que as traduções _não_ devem ser enviadas pelo GitHub e devem ser feitas somente pelo Crowdin. Certifique-se de reiniciar sua base de código local após realizar os testes.

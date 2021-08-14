@@ -66,24 +66,15 @@
       },
       "basic-html-cat-photo-app": {
         "title": "Aplicación básica de fotos de gato HTML",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "basic-css-cafe-menu": {
         "title": "Menú básico de café CSS",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "css-variables-skyline": {
         "title": "Skyline variables de CSS",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -170,29 +161,20 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Juego RPG básico en JavaScript",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Intermedio JavaScript contador de calorías",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "functional-programming-spreadsheet": {
         "title": "Hoja de cálculo de programación funcional",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
-  "front-end-libraries": {
-    "title": "Librerías de desarrollo Front End",
+  "front-end-development-libraries": {
+    "title": "Bibliotecas de desarrollo Front end",
     "intro": [
       "Ahora que ya estás familiarizado con HTML, CSS y JavaScript, mejora tus habilidades aprendiendo algunas de las librerías de Front End más populares de la industria.",
       "En la certificación de librerías de Front End, aprenderás a diseñar tu sitio rápidamente con Bootstrap. También aprenderás cómo añadir lógica a tus estilos CSS y extenderlos con Sass.",
@@ -245,8 +227,8 @@
           "Ahora que sabes cómo administrar el flujo de datos compartidos con Redux, es hora de combinar ese conocimiento con React. En los cursos de React y Redux, construirás un componente de React y aprenderás cómo administrar el estado localmente a nivel de componentes, y a lo largo de toda la aplicación con Redux."
         ]
       },
-      "front-end-libraries-projects": {
-        "title": "Proyectos de librerías de desarrollo Front End",
+      "front-end-development-libraries-projects": {
+        "title": "Front End Development Libraries Projects",
         "intro": [
           "Es hora de poner a prueba tus habilidades con las librerías de desarrollo front end. Usa Bootstrap, jQuery, Sass, React, y Redux para construir 5 proyectos que probarán todo lo que has aprendido hasta este punto.",
           "Completa los 5 proyectos y obtendrás la certificación librerías de desarrollo Front End."
@@ -289,28 +271,21 @@
       },
       "d3-dashboard": {
         "title": "Panel D3",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
   "relational-databases": {
     "title": "Bases de Datos Relacionales",
-    "intro": [
-      "marcador de posición"
-    ],
+    "intro": ["marcador de posición"],
     "blocks": {
       "learn-relational-databases": {
         "title": "Aprender Bases de Datos Relacionales",
-        "intro": [
-          "marcador de posición"
-        ]
+        "intro": ["marcador de posición"]
       }
     }
   },
-  "apis-and-microservices": {
+  "back-end-development-and-apis": {
     "title": "APIs y Microservicios",
     "intro": [
       "Hasta este punto, sólo has usado JavaScript en la parte de front end para añadir interactividad a una página, resolver los desafíos de algoritmos o construir un SPA. Pero JavaScript también se puede utilizar en el back end, o servidor, para construir aplicaciones web completas.",
@@ -343,8 +318,8 @@
           "En los cursos de MongoDB y Mongoose, aprenderás los fundamentos para trabajar con datos persistentes, incluyendo cómo configurar un modelo, guardar, eliminar y encontrar documentos en la base de datos."
         ]
       },
-      "apis-and-microservices-projects": {
-        "title": "Proyectos de microservicios y APIs",
+      "back-end-development-and-apis-projects": {
+        "title": "APIs and Microservices Projects",
         "intro": [
           "Has trabajado con APIs antes, pero ahora que conoces npm, Node, Express, MongoDB y Mongoose, es el momento de construir tu propia API. Basado en todo lo que ha aprendido hasta este punto, crearás 5 microservicios diferentes, que son aplicaciones más pequeñas que tienen un alcance limitado.",
           "Después de crearlas, tendrás 5 APIs de microservicios interesantes que puedes mostrar a amigos, familiares y potenciales empleadores. Oh, y también tendrás una nueva y brillante certificación de APIs y microservicios."

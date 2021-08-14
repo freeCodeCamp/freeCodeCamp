@@ -1,0 +1,21 @@
+---
+id: 561add10cb82ac38a17523bc
+title: Back End Development and APIs Certificate
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c443edefaeb5bdef
+    title: Microsserviço de timestamp
+  - 
+    id: bd7158d8c443edefaeb5bdff
+    title: Microsserviço parseador de cabeçalho de requisição
+  - 
+    id: bd7158d8c443edefaeb5bd0e
+    title: Microsserviço redutor de URL
+  - 
+    id: 5a8b073d06fa14fcfde687aa
+    title: Rastreador de exercícios
+  - 
+    id: bd7158d8c443edefaeb5bd0f
+    title: Microsserviço de metadados de arquivos

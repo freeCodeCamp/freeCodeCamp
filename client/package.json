@@ -31,6 +31,7 @@
     "format:utils": "prettier-eslint --write --trailing-comma none --single-quote './utils/**/*.js'",
     "lint": "node ./i18n/schema-validation.js",
     "serve": "gatsby serve -p 8000",
+    "serve-ci": "serve -l 8000 -c ../serve.json public",
     "prestand-alone": "npm run prebuild",
     "stand-alone": "gatsby develop",
     "validate-keys": "node ./i18n/validate-keys.js"
@@ -104,7 +105,7 @@
     "react-i18next": "11.11.4",
     "react-instantsearch-dom": "6.12.1",
     "react-lazy-load": "3.1.13",
-    "react-monaco-editor": "0.43.0",
+    "react-monaco-editor": "0.44.0",
     "react-redux": "5.1.2",
     "react-reflex": "4.0.3",
     "react-responsive": "6.1.2",
@@ -130,8 +131,8 @@
   },
   "devDependencies": {
     "@babel/types": "7.15.0",
-    "@codesee/babel-plugin-instrument": "0.64.1",
-    "@codesee/tracker": "0.64.1",
+    "@codesee/babel-plugin-instrument": "0.65.0",
+    "@codesee/tracker": "0.65.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@types/jest": "26.0.24",
@@ -163,6 +164,7 @@
     "monaco-editor-webpack-plugin": "4.1.1",
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.3",
+    "serve": "12.0.0",
     "webpack": "5.50.0",
     "webpack-cli": "4.7.2"
   }
