@@ -2,12 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable no-nested-ternary */
-import {
-  Tab,
-  Tabs,
-  ToggleButton,
-  ToggleButtonGroup
-} from '@freecodecamp/react-bootstrap';
+
 import type { Token } from '@stripe/stripe-js';
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
@@ -235,19 +230,6 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     this.setState({ donationAmount });
   }
 
-  renderAmountButtons(duration: 'month' | 'onetime') {
-    return this.amounts[duration].map((amount: number) => (
-      <ToggleButton
-        className='amount-value'
-        id={`${this.durations[duration]}-donation-${amount}`}
-        key={`${this.durations[duration]}-donation-${amount}`}
-        value={amount}
-      >
-        {this.getFormattedAmountLabel(amount)}
-      </ToggleButton>
-    ));
-  }
-
   renderDonationDescription() {
     const { donationAmount, donationDuration } = this.state;
     const { t } = this.props;
@@ -262,56 +244,6 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
           ? t('donate.your-donation-2', { usd: usd, hours: hours })
           : t('donate.your-donation-3', { usd: usd, hours: hours })}
       </p>
-    );
-  }
-
-  renderDurationAmountOptions() {
-    const { donationAmount, donationDuration } = this.state;
-    const { t } = this.props;
-
-    // only render when !this.props.processing
-    return (
-      <div>
-        s<h3>{t('donate.gift-frequency')}</h3>
-        <Tabs
-          activeKey={donationDuration}
-          animation={false}
-          bsStyle='pills'
-          className='donate-tabs'
-          id='Duration'
-          onSelect={this.handleSelectDuration}
-        >
-          {(Object.keys(this.durations) as ['month' | 'onetime']).map(
-            duration => (
-              <Tab
-                eventKey={duration}
-                key={duration}
-                title={this.durations[duration]}
-              >
-                <Spacer />
-                <h3>{t('donate.gift-amount')}</h3>
-                <div>
-                  <ToggleButtonGroup
-                    animation={`false`}
-                    className='amount-values'
-                    name='amounts'
-                    onChange={this.handleSelectAmount}
-                    type='radio'
-                    value={this.getActiveDonationAmount(
-                      duration,
-                      donationAmount
-                    )}
-                  >
-                    {this.renderAmountButtons(duration)}
-                  </ToggleButtonGroup>
-                  <Spacer />
-                  {this.renderDonationDescription()}
-                </div>
-              </Tab>
-            )
-          )}
-        </Tabs>
-      </div>
     );
   }
 
