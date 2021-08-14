@@ -193,7 +193,7 @@ export class PaypalButton extends Component<
               error: t('donate.try-again')
             });
           }}
-          onInit={() => this.props.handlePaymentButtonLoad('paypal')}
+          onLoad={() => this.props.handlePaymentButtonLoad('paypal')}
           planId={planId}
           style={{
             tagline: false,
