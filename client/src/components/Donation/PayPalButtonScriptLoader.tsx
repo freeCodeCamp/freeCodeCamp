@@ -35,7 +35,11 @@ type PayPalButtonScriptLoaderProps = {
   onCancel: () => unknown;
   onError: () => unknown;
   onLoad: () => void;
-  style: unknown;
+  style: {
+    color: string;
+    height: number;
+    tagline: boolean;
+  };
   planId: string | null;
 };
 
@@ -89,11 +93,17 @@ export class PayPalButtonScriptLoader extends Component<
 
   componentDidUpdate(prevProps: {
     isSubscription: boolean;
-    style: unknown;
+    style: {
+      color: string;
+      height: number;
+      tagline: boolean;
+    };
   }): void {
     if (
       prevProps.isSubscription !== this.state.isSubscription ||
-      prevProps.style !== this.props.style
+      prevProps.style.color !== this.props.style.color ||
+      prevProps.style.tagline !== this.props.style.tagline ||
+      prevProps.style.height !== this.props.style.height
     ) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ isSdkLoaded: false });

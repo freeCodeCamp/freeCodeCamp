@@ -143,10 +143,6 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
   };
 
   onDonationStateChange(donationState: AddDonationData) {
-    console.log({
-      ...this.props.donationFormState,
-      ...donationState
-    });
     // scroll to top
     window.scrollTo(0, 0);
     this.props.updateDonationFormState({
@@ -341,18 +337,10 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
 
   render() {
     const {
-      donationFormState: {
-        processing,
-        loading: { stripe, paypal },
-        success,
-        error,
-        redirecting
-      },
+      donationFormState: { processing, success, error, redirecting },
       isMinimalForm
     } = this.props;
 
-    const paymentButtonsLoading = stripe && paypal;
-    console.log({ paymentButtonsLoading, stripe, paypal });
     if (success || error) {
       return this.renderCompletion({
         processing,
