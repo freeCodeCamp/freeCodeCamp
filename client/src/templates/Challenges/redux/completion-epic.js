@@ -67,7 +67,7 @@ function submitModern(type, state) {
       const { username } = userSelector(state);
       const challengeInfo = {
         id,
-        challengeFiles
+        files: challengeFiles
       };
       const update = {
         endpoint: '/modern-challenge-completed',
