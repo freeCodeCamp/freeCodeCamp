@@ -15,10 +15,10 @@ import Shield from './shield';
 const iconMap = {
   'responsive-web-design': ResponsiveDesign,
   'javascript-algorithms-and-data-structures': JavaScriptIcon,
-  'front-end-libraries': ReactIcon,
+  'front-end-development-libraries': ReactIcon,
   'data-visualization': D3Icon,
+  'back-end-development-and-apis': APIIcon,
   'relational-databases': DatabaseIcon,
-  'apis-and-microservices': APIIcon,
   'quality-assurance': Clipboard,
   'scientific-computing-with-python': PythonIcon,
   'data-analysis-with-python': Analytics,

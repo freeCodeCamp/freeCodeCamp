@@ -66,24 +66,15 @@
       },
       "basic-html-cat-photo-app": {
         "title": "Aplicativo básico de fotos de gatos em HTML",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "basic-css-cafe-menu": {
         "title": "Menu de uma cafeteria em CSS básico",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "css-variables-skyline": {
         "title": "Horizonte com variáveis de CSS",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
@@ -170,28 +161,19 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Jogo básico de RPG em JavaScript",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Contador de calorias JavaScript Intermediário",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       },
       "functional-programming-spreadsheet": {
         "title": "Planilha de programação funcional",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
-  "front-end-libraries": {
+  "front-end-development-libraries": {
     "title": "Bibliotecas de desenvolvimento em front-end",
     "intro": [
       "Agora que você está familiarizado com HTML, CSS e JavaScript, melhore suas habilidades aprendendo algumas das bibliotecas front-end mais populares do setor.",
@@ -245,8 +227,8 @@
           "Agora que você sabe como gerenciar o fluxo de dados compartilhados com Redux, é hora de combinar esse conhecimento com React. Nos cursos do React e Redux, você vai construir um componente React e aprender como gerenciar estado localmente, ao nível do componente e por toda aplicação com Redux."
         ]
       },
-      "front-end-libraries-projects": {
-        "title": "Projetos de desenvolvimento com bibliotecas de front-end",
+      "front-end-development-libraries-projects": {
+        "title": "Front End Development Libraries Projects",
         "intro": [
           "É hora de testar suas habilidades nas bibliotecas de desenvolvimento de front-end. Use Bootstrap, jQuery, Sass, React e Redux para criar 5 projetos que testarão tudo o que você aprendeu até agora.",
           "Complete todos os 5 projetos e você ganhará a certificação em Bibliotecas de Desenvolvimento Front-End."
@@ -289,28 +271,21 @@
       },
       "d3-dashboard": {
         "title": "Painel do D3",
-        "intro": [
-          "",
-          ""
-        ]
+        "intro": ["", ""]
       }
     }
   },
   "relational-databases": {
     "title": "Bancos de dados relacionais",
-    "intro": [
-      "placeholder"
-    ],
+    "intro": ["placeholder"],
     "blocks": {
       "learn-relational-databases": {
         "title": "Aprenda bancos de dados relacionais",
-        "intro": [
-          "placeholder"
-        ]
+        "intro": ["placeholder"]
       }
     }
   },
-  "apis-and-microservices": {
+  "back-end-development-and-apis": {
     "title": "APIs e microsserviços",
     "intro": [
       "Até esse ponto, você usou JavaScript apenas no front-end para adicionar interatividade a uma página, resolver desafios de algoritmos ou construir uma SPA. Mas o JavaScript também pode ser usado no back-end, ou servidor, para construir aplicações web inteiras.",
@@ -343,8 +318,8 @@
           "Nos cursos de MongoDB e Mongose, você aprenderá os fundamentos de trabalhar com dados persistentes, incluindo como configurar um modelo, salvar, excluir e buscar documentos no banco de dados."
         ]
       },
-      "apis-and-microservices-projects": {
-        "title": "Projetos de APIs e microsserviços",
+      "back-end-development-and-apis-projects": {
+        "title": "Back End Development and APIs Projects",
         "intro": [
           "Você já trabalhou com APIs antes, mas agora que você conhece o npm, Node, Express, MongoDB e o Mongoose, é hora de construir a sua própria API. Utilize tudo o que você aprendeu até esse ponto para criar 5 microsserviços diferentes – aplicações menores e com escopo limitado.",
           "Depois de criá-las, você terá 5 APIs de microsserviço sensacionais, que poderão ser mostradas para amigos, familiares e potenciais empregadores. Ah, e você também terá uma Certificação em APIs e microsserviços novinha."
