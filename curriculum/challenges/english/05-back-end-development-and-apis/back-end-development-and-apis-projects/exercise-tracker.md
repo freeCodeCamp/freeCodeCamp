@@ -130,24 +130,11 @@ async(getUserInput) => {
     assert.exists(user);
     assert.exists(user.username);
     assert.exists(user._id);
+    assert.isString(user.username);
+    assert.isString(user._id);
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   };
-};
-```
-
-```js
-async (getUserInput) => {
-  const url = getUserInput('url');
-  const res = await fetch(url + '/api/users');
-  if (res.ok) {
-    const data = await res.json();
-    assert.isArray(data);
-    assert.isString(data[0].username);
-    assert.isString(data[0]._id);
-  } else {
-    throw new Error(`${res.status} ${res.statusText}`);
-  }
 };
 ```
 
