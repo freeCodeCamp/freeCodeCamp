@@ -18,7 +18,7 @@ This also means that any time any piece of your app wants to update state, it **
 
 The Redux `store` is an object which holds and manages application `state`. There is a method called `createStore()` on the Redux object, which you use to create the Redux `store`. This method takes a `reducer` function as a required argument. The `reducer` function is covered in a later challenge, and is already defined for you in the code editor. It simply takes `state` as an argument and returns `state`.
 
-Declare a `store` variable and assign it to the `createStore()` method, passing in the `reducer` as an argument.
+Declare a `store` variable and assign to it the `createStore()` method, passing in the `reducer` as an argument.
 
 **Note:** The code in the editor uses ES6 default argument syntax to initialize this state to hold a value of `5`. If you're not familiar with default arguments, you can refer to the [ES6 section in the Curriculum](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions) which covers this topic.
 
