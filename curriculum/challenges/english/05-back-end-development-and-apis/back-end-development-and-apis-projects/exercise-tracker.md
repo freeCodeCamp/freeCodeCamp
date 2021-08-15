@@ -130,7 +130,8 @@ async(getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + 'api/users');
   if(res.ok){
-    assert.isArray(res);
+    const users = await res.json();
+    assert.isArray(users);
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   };
@@ -144,7 +145,8 @@ async(getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + 'api/users');
   if(res.ok){
-    const user = res[0];
+    const users = await res.json();
+    const user = users[0];
     assert.exists(user);
     assert.exists(user.username);
     assert.exists(user._id);
@@ -167,7 +169,24 @@ async (getUserInput) => {
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
   if (res.ok) {
-    assert(true);
+    const { _id, username } = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: 'Mon Jan 01 1990'
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
+    });
+    if (addRes.ok) {
+      assert(true);
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    }
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   }
@@ -203,6 +222,7 @@ async (getUserInput) => {
       assert.deepEqual(actual, expected);
       assert.isString(actual.description);
       assert.isNumber(actual.duration);
+      assert.isString(actual.date);
     } else {
       throw new Error(`${addRes.status} ${addRes.statusText}`);
     }
