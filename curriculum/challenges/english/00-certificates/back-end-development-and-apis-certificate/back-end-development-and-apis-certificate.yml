@@ -6,16 +6,16 @@ isPrivate: true
 tests:
   - 
     id: bd7158d8c443edefaeb5bdef
-    title: Microsserviço de timestamp
+    title: Timestamp Microservice
   - 
     id: bd7158d8c443edefaeb5bdff
-    title: Microsserviço parseador de cabeçalho de requisição
+    title: Request Header Parser Microservice
   - 
     id: bd7158d8c443edefaeb5bd0e
-    title: Microsserviço redutor de URL
+    title: URL Shortener Microservice
   - 
     id: 5a8b073d06fa14fcfde687aa
-    title: Rastreador de exercícios
+    title: Exercise Tracker
   - 
     id: bd7158d8c443edefaeb5bd0f
-    title: Microsserviço de metadados de arquivos
+    title: File Metadata Microservice
