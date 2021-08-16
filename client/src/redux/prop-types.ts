@@ -473,18 +473,3 @@ export interface ChallengeSchema {
   translationPending: boolean;
   url?: string;
 }
-
-type removeField<T, F> = { [Prop in keyof T as Exclude<Prop, F>]: T[Prop] };
-type challengeFilesForFiles<T> = {
-  files: Array<removeField<ChallengeFile, 'fileKey'> & { key: string }>;
-} & removeField<T, 'challengeFiles'>;
-
-export interface ApiSessionUser {
-  user: {
-    [username: string]: removeField<UserType, 'completedChallenges'> & {
-      completedChallenges: challengeFilesForFiles<CompletedChallenge>[];
-    };
-  };
-  sessionMeta: { activeDonations: number };
-  result: string;
-}

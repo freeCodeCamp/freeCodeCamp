@@ -2,7 +2,7 @@ import cookies from 'browser-cookies';
 import envData from '../../../config/env.json';
 
 import type {
-  ApiSessionUser,
+  ChallengeFile,
   CompletedChallenge,
   UserType
 } from '../redux/prop-types';
@@ -59,10 +59,23 @@ interface SessionUser {
   sessionMeta: { activeDonations: number };
   result: string;
 }
+
+type challengeFilesForFiles = {
+  files: Array<Omit<ChallengeFile, 'fileKey'> & { key: string }>;
+} & Omit<CompletedChallenge, 'challengeFiles'>;
+
+type ApiSessionUser = Omit<SessionUser, 'user'> & {
+  user: {
+    [username: string]: Omit<UserType, 'completedChallenges'> & {
+      completedChallenges: challengeFilesForFiles[];
+    };
+  };
+};
+
 export function getSessionUser(): Promise<SessionUser> {
-  const response = get('/user/get-session-user');
+  const response: Promise<ApiSessionUser> = get('/user/get-session-user');
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
-  return (response as Promise<ApiSessionUser>).then((data: ApiSessionUser) => {
+  return response.then((data: ApiSessionUser) => {
     // @ts-expect-error TS has no idea what it is talking about. The type is converted from
     // challengeFilesForFiles<CompletedChallenge> to CompletedChallenge[]
     const completedChallenges: CompletedChallenge[] =
