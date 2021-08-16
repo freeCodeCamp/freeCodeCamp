@@ -6,16 +6,16 @@ isPrivate: true
 tests:
   - 
     id: bd7158d8c442eddfaeb5bd13
-    title: Crie uma máquina de citação aleatória
+    title: Build a Random Quote Machine
   - 
     id: bd7157d8c242eddfaeb5bd13
-    title: Crie um pré-visualizador de markdown
+    title: Build a Markdown Previewer
   - 
     id: 587d7dbc367417b2b2512bae
-    title: Crie uma bateria eletrônica
+    title: Build a Drum Machine
   - 
     id: bd7158d8c442eddfaeb5bd17
-    title: Crie uma calculadora JavaScript
+    title: Build a JavaScript Calculator
   - 
     id: bd7158d8c442eddfaeb5bd0f
-    title: Crie um Relógio 25 + 5
+    title: Build a 25 + 5 Clock
