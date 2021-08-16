@@ -1,7 +1,7 @@
 import cookies from 'browser-cookies';
 import envData from '../../../config/env.json';
 
-import type { UserType } from '../redux/prop-types';
+import type { CompletedChallenge, UserType } from '../redux/prop-types';
 
 const { apiLocation } = envData;
 
@@ -56,7 +56,31 @@ interface SessionUser {
   result: string;
 }
 export function getSessionUser(): Promise<SessionUser> {
-  return get('/user/get-session-user');
+  const response = get('/user/get-session-user');
+  // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
+  return response.then((data: SessionUser) => {
+    const completedChallenges: CompletedChallenge[] = Object.values(data?.user)
+      ?.find(v => v.completedChallenges)
+      ?.completedChallenges?.reduce(
+        (acc, { files: challengeFiles, ...curr }) => [
+          ...acc,
+          {
+            challengeFiles: challengeFiles.map(({ key: fileKey, ...file }) => ({
+              fileKey,
+              ...file
+            })),
+            ...curr
+          }
+        ],
+        []
+      );
+    if (completedChallenges) {
+      Object.values(data.user).find(
+        v => v.completedChallenges
+      ).completedChallenges = completedChallenges;
+    }
+    return data;
+  });
 }
 
 export function getUserProfile(username: string): Promise<UserType> {

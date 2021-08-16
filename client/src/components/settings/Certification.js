@@ -167,7 +167,7 @@ export class CertificationSettings extends Component {
     if (!completedProject) {
       return null;
     }
-    const { solution, githubLink, files: challengeFiles } = completedProject;
+    const { solution, githubLink, challengeFiles } = completedProject;
     const onClickHandler = () =>
       this.setState({
         solutionViewer: {

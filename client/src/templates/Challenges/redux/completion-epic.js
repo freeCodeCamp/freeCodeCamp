@@ -68,7 +68,7 @@ function submitModern(type, state) {
       const challengeInfo = {
         id,
         files: challengeFiles.reduce(
-          (acc, curr) => [...acc, { ...curr, key: curr.fileKey }],
+          (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
           []
         )
       };
