@@ -57,57 +57,91 @@ async function request<T>(
 interface SessionUser {
   user: { [username: string]: UserType };
   sessionMeta: { activeDonations: number };
-  result: string;
 }
 
 type challengeFilesForFiles = {
   files: Array<Omit<ChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<CompletedChallenge, 'challengeFiles'>;
 
-type ApiSessionUser = Omit<SessionUser, 'user'> & {
+type ApiSessionResponse = Omit<SessionUser, 'user'>;
+type ApiUser = {
   user: {
     [username: string]: ApiUserType;
   };
+  result: string;
 };
 
 type ApiUserType = Omit<UserType, 'completedChallenges'> & {
   completedChallenges: challengeFilesForFiles[];
 };
 
+type UserResponseType = {
+  user: { [username: string]: UserType };
+  result: string;
+};
+
+function parseApiResponseToClientUser<T>(
+  data: ApiUser | (T & ApiUser)
+): UserResponseType {
+  const userData = data.user[data.result];
+  let completedChallenges: CompletedChallenge[] = [];
+  if (userData) {
+    completedChallenges =
+      userData.completedChallenges.reduce(
+        (acc: CompletedChallenge[], curr: challengeFilesForFiles) => {
+          return [
+            ...acc,
+            {
+              ...curr,
+              challengeFiles: curr.files.map(({ key: fileKey, ...file }) => ({
+                ...file,
+                fileKey
+              }))
+            }
+          ];
+        },
+        []
+      ) ?? [];
+  }
+  return {
+    user: { [data.result]: { ...userData, completedChallenges } },
+    result: data.result
+  };
+}
+
 export function getSessionUser(): Promise<SessionUser | null> {
-  const response: Promise<ApiSessionUser> = get('/user/get-session-user');
+  const response: Promise<ApiUser & ApiSessionResponse> = get(
+    '/user/get-session-user'
+  );
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
-  return response.then((data: ApiSessionUser) => {
-    const userData = data.user[data.result];
-    let completedChallenges: CompletedChallenge[] = [];
-    if (userData) {
-      completedChallenges =
-        userData.completedChallenges.reduce(
-          (acc: CompletedChallenge[], curr: challengeFilesForFiles) => {
-            return [
-              ...acc,
-              {
-                ...curr,
-                challengeFiles: curr.files.map(({ key: fileKey, ...file }) => ({
-                  ...file,
-                  fileKey
-                }))
-              }
-            ];
-          },
-          []
-        ) ?? [];
-    }
+  return response.then(data => {
+    const { result, user } = parseApiResponseToClientUser(data);
     return {
       sessionMeta: data.sessionMeta,
-      result: data.result,
-      user: { [data.result]: { ...userData, completedChallenges } }
+      result,
+      user
     };
   });
 }
 
-export function getUserProfile(username: string): Promise<UserType> {
-  return get(`/api/users/get-public-profile?username=${username}`);
+type UserProfileResponse = {
+  entities: Omit<UserResponseType, 'result'>;
+  result: string;
+};
+export function getUserProfile(username: string): Promise<UserProfileResponse> {
+  const response: Promise<{ entities: ApiUser; result: string }> = get(
+    `/api/users/get-public-profile?username=${username}`
+  );
+  return response.then(data => {
+    const { result, user } = parseApiResponseToClientUser({
+      user: data.entities.user,
+      result: data.result
+    });
+    return {
+      entities: { user },
+      result
+    };
+  });
 }
 
 interface Cert {
