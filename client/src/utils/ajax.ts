@@ -1,7 +1,11 @@
 import cookies from 'browser-cookies';
 import envData from '../../../config/env.json';
 
-import type { CompletedChallenge, UserType } from '../redux/prop-types';
+import type {
+  ApiSessionUser,
+  CompletedChallenge,
+  UserType
+} from '../redux/prop-types';
 
 const { apiLocation } = envData;
 
@@ -51,35 +55,44 @@ async function request<T>(
 /** GET **/
 
 interface SessionUser {
-  user: UserType;
+  user: { [username: string]: UserType };
   sessionMeta: { activeDonations: number };
   result: string;
 }
 export function getSessionUser(): Promise<SessionUser> {
   const response = get('/user/get-session-user');
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
-  return response.then((data: SessionUser) => {
-    const completedChallenges: CompletedChallenge[] = Object.values(data?.user)
-      ?.find(v => v.completedChallenges)
-      ?.completedChallenges?.reduce(
-        (acc, { files: challengeFiles, ...curr }) => [
-          ...acc,
-          {
-            challengeFiles: challengeFiles.map(({ key: fileKey, ...file }) => ({
-              fileKey,
-              ...file
-            })),
-            ...curr
-          }
-        ],
-        []
-      );
-    if (completedChallenges) {
+  return (response as Promise<ApiSessionUser>).then((data: ApiSessionUser) => {
+    // @ts-expect-error TS has no idea what it is talking about. The type is converted from
+    // challengeFilesForFiles<CompletedChallenge> to CompletedChallenge[]
+    const completedChallenges: CompletedChallenge[] =
+      Object.values(data?.user)
+        ?.find(v => v.completedChallenges)
+        ?.completedChallenges?.reduce(
+          // @ts-expect-error Type is converted
+          (acc, { files: challengeFiles, ...curr }) => {
+            return [
+              ...acc,
+              {
+                challengeFiles: challengeFiles.map(
+                  ({ key: fileKey, ...file }) => ({
+                    fileKey,
+                    ...file
+                  })
+                ),
+                ...curr
+              }
+            ];
+          },
+          []
+        ) ?? [];
+    if (data && completedChallenges) {
+      // @ts-expect-error Object type is specifically changed
       Object.values(data.user).find(
         v => v.completedChallenges
       ).completedChallenges = completedChallenges;
     }
-    return data;
+    return data as unknown as SessionUser;
   });
 }
 
