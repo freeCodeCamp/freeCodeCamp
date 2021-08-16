@@ -78,13 +78,8 @@ export function getSessionUser(): Promise<SessionUser | null> {
   const response: Promise<ApiSessionUser> = get('/user/get-session-user');
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
   return response.then((data: ApiSessionUser) => {
-    const userEntry = Object.entries(data.user).find(
-      ([username, { completedChallenges }]) => username && completedChallenges
-    );
-    const username = userEntry ? userEntry[0] : '';
-    const userData = userEntry ? userEntry[1] : null;
+    const userData = data.user[data.result];
     let completedChallenges: CompletedChallenge[] = [];
-    let newUser: UserType | null = null;
     if (userData) {
       completedChallenges =
         userData.completedChallenges.reduce(
@@ -102,18 +97,12 @@ export function getSessionUser(): Promise<SessionUser | null> {
           },
           []
         ) ?? [];
-      newUser = { ...userData, completedChallenges };
     }
-
-    if (newUser) {
-      return {
-        sessionMeta: data.sessionMeta,
-        result: data.result,
-        user: { [username]: newUser }
-      };
-    } else {
-      return null;
-    }
+    return {
+      sessionMeta: data.sessionMeta,
+      result: data.result,
+      user: { [data.result]: { ...userData, completedChallenges } }
+    };
   });
 }
 
