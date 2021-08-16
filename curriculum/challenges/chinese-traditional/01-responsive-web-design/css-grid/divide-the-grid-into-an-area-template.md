@@ -2,7 +2,7 @@
 id: 5a94fe0569fb03452672e45c
 title: 將網格劃分爲區域模板
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
+videoUrl:
 forumTopicId: 301130
 dashedName: divide-the-grid-into-an-area-template
 ---
@@ -63,7 +63,7 @@ assert(
     /* Only change code below this line */
       "header header header"
       "advert content content"
-      "advert footer footer";
+      "footer footer footer";
     /* Only change code above this line */
   }
 </style>

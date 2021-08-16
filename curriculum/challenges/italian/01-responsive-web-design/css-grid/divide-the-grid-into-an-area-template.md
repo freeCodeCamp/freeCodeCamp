@@ -2,7 +2,7 @@
 id: 5a94fe0569fb03452672e45c
 title: Dividere la griglia in un template area
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
+videoUrl:
 forumTopicId: 301130
 dashedName: divide-the-grid-into-an-area-template
 ---
