@@ -66,46 +66,54 @@ type challengeFilesForFiles = {
 
 type ApiSessionUser = Omit<SessionUser, 'user'> & {
   user: {
-    [username: string]: Omit<UserType, 'completedChallenges'> & {
-      completedChallenges: challengeFilesForFiles[];
-    };
+    [username: string]: ApiUserType;
   };
 };
 
-export function getSessionUser(): Promise<SessionUser> {
+type ApiUserType = Omit<UserType, 'completedChallenges'> & {
+  completedChallenges: challengeFilesForFiles[];
+};
+
+export function getSessionUser(): Promise<SessionUser | null> {
   const response: Promise<ApiSessionUser> = get('/user/get-session-user');
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
   return response.then((data: ApiSessionUser) => {
-    // @ts-expect-error TS has no idea what it is talking about. The type is converted from
-    // challengeFilesForFiles<CompletedChallenge> to CompletedChallenge[]
-    const completedChallenges: CompletedChallenge[] =
-      Object.values(data?.user)
-        ?.find(v => v.completedChallenges)
-        ?.completedChallenges?.reduce(
-          // @ts-expect-error Type is converted
-          (acc, { files: challengeFiles, ...curr }) => {
+    const userEntry = Object.entries(data.user).find(
+      ([username, { completedChallenges }]) => username && completedChallenges
+    );
+    const username = userEntry ? userEntry[0] : '';
+    const userData = userEntry ? userEntry[1] : null;
+    let completedChallenges: CompletedChallenge[] = [];
+    let newUser: UserType | null = null;
+    if (userData) {
+      completedChallenges =
+        userData.completedChallenges.reduce(
+          (acc: CompletedChallenge[], curr: challengeFilesForFiles) => {
             return [
               ...acc,
               {
-                challengeFiles: challengeFiles.map(
-                  ({ key: fileKey, ...file }) => ({
-                    fileKey,
-                    ...file
-                  })
-                ),
-                ...curr
+                ...curr,
+                challengeFiles: curr.files.map(({ key: fileKey, ...file }) => ({
+                  ...file,
+                  fileKey
+                }))
               }
             ];
           },
           []
         ) ?? [];
-    if (data && completedChallenges) {
-      // @ts-expect-error Object type is specifically changed
-      Object.values(data.user).find(
-        v => v.completedChallenges
-      ).completedChallenges = completedChallenges;
+      newUser = { ...userData, completedChallenges };
     }
-    return data as unknown as SessionUser;
+
+    if (newUser) {
+      return {
+        sessionMeta: data.sessionMeta,
+        result: data.result,
+        user: { [username]: newUser }
+      };
+    } else {
+      return null;
+    }
   });
 }
 
