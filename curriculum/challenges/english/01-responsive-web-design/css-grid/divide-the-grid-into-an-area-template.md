@@ -2,7 +2,6 @@
 id: 5a94fe0569fb03452672e45c
 title: Divide the Grid Into an Area Template
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
 dashedName: divide-the-grid-into-an-area-template
 ---
@@ -63,7 +62,7 @@ assert(
     /* Only change code below this line */
       "header header header"
       "advert content content"
-      "advert footer footer";
+      "footer footer footer";
     /* Only change code above this line */
   }
 </style>
