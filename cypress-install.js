@@ -1,6 +1,5 @@
 const util = require('cypress/lib/util');
 const execa = require('execa');
-
 const pkg = util.pkgVersion();
 
 (async () => {
