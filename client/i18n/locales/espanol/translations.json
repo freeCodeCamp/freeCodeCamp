@@ -466,7 +466,9 @@
     "unlink-success": "Has desvinculado correctamente tu {{website}}",
     "provide-username": "Comprueba si has proporcionado un nombre de usuario y un reporte",
     "report-sent": "Se envió un informe al equipo con {{email}} en copia",
-    "certificate-missing": "La certificación que intentaste ver no existe"
+    "certificate-missing": "La certificación que intentaste ver no existe",
+    "generate-token-err": "A server error occurred trying to generate a token",
+    "revoke-token-err": "A server error occurred trying to revoke your token"
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
@@ -594,5 +596,18 @@
     "add-code-one": "Reemplaza estas dos oraciones con tu código copiado.",
     "add-code-two": "Por favor, deja la línea ``` arriba y la línea ``` abajo,",
     "add-code-three": "porque permiten que tu código formatee correctamente en el post."
+  },
+  "webhook-token": {
+    "copy-text": "Copy your user token below to save your progress in this section. There will be a place for you to paste it after a course loads.",
+    "copy": "Copy",
+    "generate": "Generate New Token",
+    "generate-p1": "If you suspect your token has been compromised, generate a new one.",
+    "generate-p2": "You will not be able to save progress in this section using your old token.",
+    "generate-confirm": "Yes please, I would like to generate a new token",
+    "revoke": "Revoke Token",
+    "revoke-p1": "If you suspect your token has been compromised, revoke it to make it unusable.",
+    "revoke-p2": "You will need to generate a new one to save progress in this section.",
+    "revoke-confirm": "Yes please, I would like to revoke my token",
+    "no-thanks": "No thanks, I would like to keep my token"
   }
 }

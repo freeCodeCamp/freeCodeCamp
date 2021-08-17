@@ -466,7 +466,9 @@
     "unlink-success": "你已成功取消 {{website}} 鏈接",
     "provide-username": "檢查你是否提供用戶名和報告",
     "report-sent": "已通過 {{email}} 向團隊發送副本報告",
-    "certificate-missing": "你嘗試查看的認證不存在"
+    "certificate-missing": "你嘗試查看的認證不存在",
+    "generate-token-err": "A server error occurred trying to generate a token",
+    "revoke-token-err": "A server error occurred trying to revoke your token"
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
@@ -594,5 +596,18 @@
     "add-code-one": "用你的複製代碼替換這兩句。",
     "add-code-two": "請保留上方的 ``` 行和下方的 ``` 行",
     "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。"
+  },
+  "webhook-token": {
+    "copy-text": "Copy your user token below to save your progress in this section. There will be a place for you to paste it after a course loads.",
+    "copy": "Copy",
+    "generate": "Generate New Token",
+    "generate-p1": "If you suspect your token has been compromised, generate a new one.",
+    "generate-p2": "You will not be able to save progress in this section using your old token.",
+    "generate-confirm": "Yes please, I would like to generate a new token",
+    "revoke": "Revoke Token",
+    "revoke-p1": "If you suspect your token has been compromised, revoke it to make it unusable.",
+    "revoke-p2": "You will need to generate a new one to save progress in this section.",
+    "revoke-confirm": "Yes please, I would like to revoke my token",
+    "no-thanks": "No thanks, I would like to keep my token"
   }
 }

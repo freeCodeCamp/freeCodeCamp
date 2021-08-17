@@ -1,0 +1,33 @@
+.webhook-button-row {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.webhook-token-input {
+  flex-grow: 3;
+  color: var(--gray-85);
+  background-color: var(--gray-15);
+  padding: 0 5px 0 5px;
+  margin-right: 15px;
+  max-width: 100%;
+}
+
+.webhook-generate-btn {
+  flex-grow: 1;
+  margin-right: 7.5px;
+}
+
+.webhook-revoke-btn {
+  flex-grow: 1;
+  margin-left: 7.5px;
+}
+
+@media (max-width: 400px) {
+  .webhook-token-input {
+    max-width: 65%;
+  }
+
+  .webhook-copy-btn {
+    flex-grow: 1;
+  }
+}
