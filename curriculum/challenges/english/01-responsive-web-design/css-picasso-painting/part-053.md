@@ -7,7 +7,7 @@ dashedName: part-53
 
 # --description--
 
-Now set the `position` to `absolute`, the `top` to `50%`, and the `left` to `40%`.
+Now set the `position` to `absolute`, the `top` to `20%`, and the `left` to `20%`.
 
 # --hints--
 
@@ -17,16 +17,16 @@ Your `#blue-left` selector should have a `position` property set to `absolute`.
 assert(new __helpers.CSSHelp(document).getStyle('#blue-left')?.position === 'absolute');
 ```
 
-Your `#blue-left` selector should have a `top` property set to `50%`.
+Your `#blue-left` selector should have a `top` property set to `20%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#blue-left')?.top === '50%');
+assert(new __helpers.CSSHelp(document).getStyle('#blue-left')?.top === '20%');
 ```
 
-Your `#blue-left` selector should have a `left` property set to `40%`.
+Your `#blue-left` selector should have a `left` property set to `20%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#blue-left')?.left === '40%');
+assert(new __helpers.CSSHelp(document).getStyle('#blue-left')?.left === '20%');
 ```
 
 # --seed--
