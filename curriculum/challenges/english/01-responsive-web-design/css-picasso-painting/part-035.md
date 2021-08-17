@@ -8,6 +8,7 @@ dashedName: part-35
 # --description--
 
 Within your new `black-character` element, add three `div` elements with the following `id` values, in order: `black-hat`, `gray-mask`, `white-paper`.
+
 # --hints--
 
 You should have three `div` elements within your `#black-character` element.

@@ -7,7 +7,7 @@ dashedName: part-32
 
 # --description--
 
-Move the table into place by giving it an `absolute` `position`, a `top` value of `275px`, and a `left` value of `15px`.
+Move the table into place by giving it a `position` of `absolute`, a `top` value of `275px`, and a `left` value of `15px`.
 
 # --hints--
 

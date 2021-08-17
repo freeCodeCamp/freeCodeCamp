@@ -7,7 +7,7 @@ dashedName: part-33
 
 # --description--
 
-And give the table a `z-index` of `1`.
+Give the table a `z-index` of `1`.
 
 # --hints--
 

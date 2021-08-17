@@ -9,7 +9,7 @@ dashedName: part-37
 
 Time to use some FontAwesome icons.
 
-The `i` element is used for idiomatic text, or text that is separate from the "normal" text content. This could be for italic text, such as scientific terms, or for icons like those provided by FontAwesome.
+The `i` element is used for idiomatic text, or text that is separate from the "normal" text content. This could be for _italic_ text, such as scientific terms, or for icons like those provided by FontAwesome.
 
 Within your `white-paper` element, add four `i` elements. Give them all a `class` value of `fas fa-music`.
 

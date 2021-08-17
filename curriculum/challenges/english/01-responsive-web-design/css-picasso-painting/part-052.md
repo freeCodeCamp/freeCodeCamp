@@ -7,7 +7,7 @@ dashedName: part-52
 
 # --description--
 
-Select the `blue-left` element with a `id` selector. Give it a `width` of `500px` and a `height` of `300px`.
+Select the `blue-left` element with an `id` selector. Give it a `width` of `500px` and a `height` of `300px`.
 
 # --hints--
 

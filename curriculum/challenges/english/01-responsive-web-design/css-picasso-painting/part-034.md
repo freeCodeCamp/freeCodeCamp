@@ -7,7 +7,7 @@ dashedName: part-34
 
 # --description--
 
-After your `offwhite-character` `div`, add a `div` with the `id` of `black-character`.
+After your `div#offwhite-character` element, add a `div` with the `id` of `black-character`.
 
 # --hints--
 
