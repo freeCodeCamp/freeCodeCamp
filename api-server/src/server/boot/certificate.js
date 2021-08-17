@@ -36,7 +36,8 @@ const {
   infosecV7Id,
   sciCompPyV7Id,
   dataAnalysisPyV7Id,
-  machineLearningPyV7Id
+  machineLearningPyV7Id,
+  relationalDatabasesV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -112,6 +113,10 @@ function createCertTypeIds(allChallenges) {
     [certTypes.machineLearningPyV7]: getCertById(
       machineLearningPyV7Id,
       allChallenges
+    ),
+    [certTypes.relationalDatabasesV8]: getCertById(
+      relationalDatabasesV8Id,
+      allChallenges
     )
   };
 }
@@ -142,6 +147,8 @@ function sendCertifiedEmail(
     isFrontEndLibsCert,
     isJsAlgoDataStructCert,
     isDataVisCert,
+    // uncomment on release?
+    // isRelationalDatabasesCert,
     isApisMicroservicesCert,
     isQaCertV7,
     isInfosecCertV7,
@@ -157,6 +164,8 @@ function sendCertifiedEmail(
     !isFrontEndLibsCert ||
     !isJsAlgoDataStructCert ||
     !isDataVisCert ||
+    // uncomment on release?
+    // !isRelationalDatabasesCert ||
     !isApisMicroservicesCert ||
     !isQaCertV7 ||
     !isInfosecCertV7 ||
@@ -359,6 +368,8 @@ function createShowCert(app) {
       isSciCompPyCertV7: true,
       isDataAnalysisPyCertV7: true,
       isMachineLearningPyCertV7: true,
+      // Not sure what this is for
+      // isRelationalDatabasesCertV8: true,
       isHonest: true,
       username: true,
       name: true,
@@ -527,6 +538,8 @@ function createVerifyCanClaim(certTypeIds, app) {
       isSciCompPyCertV7: true,
       isDataAnalysisPyCertV7: true,
       isMachineLearningPyCertV7: true,
+      // Not sure what this is for
+      // isRelationalDatabasesCertV8: true,
       username: true,
       name: true,
       isHonest: true,
