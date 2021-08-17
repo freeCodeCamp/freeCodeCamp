@@ -9,7 +9,7 @@ import {
 import Loadable from '@loadable/component';
 import { useStaticQuery, graphql } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
-import React, { Component, useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 
 import envData from '../../../../../config/env.json';
@@ -66,43 +66,58 @@ interface TimelineInnerProps extends TimelineProps {
   totalPages: number;
 }
 
-interface TimeLineInnerState {
-  solutionToView: string | null;
-  solutionOpen: boolean;
-  pageNo: number;
-  solution: string | null;
-  challengeFiles: ChallengeFiles;
-}
+function TimelineInner({
+  idToNameMap,
+  sortedTimeline,
+  totalPages,
 
-class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
-  constructor(props: TimelineInnerProps) {
-    super(props);
+  completedMap,
+  t,
+  username
+}: TimelineInnerProps) {
+  const [solutionToView, setSolutionToView] = useState<string | null>(null);
+  const [solutionOpen, setSolutionOpen] = useState(false);
+  const [pageNo, setPageNo] = useState(1);
+  const [solution, setSolution] = useState<string | null>(null);
+  const [challengeFiles, setChallengeFiles] = useState<ChallengeFiles>(null);
 
-    this.state = {
-      solutionToView: null,
-      solutionOpen: false,
-      pageNo: 1,
-      solution: null,
-      challengeFiles: null
-    };
-
-    this.closeSolution = this.closeSolution.bind(this);
-    this.renderCompletion = this.renderCompletion.bind(this);
-    this.viewSolution = this.viewSolution.bind(this);
-    this.firstPage = this.firstPage.bind(this);
-    this.prevPage = this.prevPage.bind(this);
-    this.nextPage = this.nextPage.bind(this);
-    this.lastPage = this.lastPage.bind(this);
-    this.renderViewButton = this.renderViewButton.bind(this);
+  function viewSolution(
+    id: string,
+    solution_: string,
+    challengeFiles_: ChallengeFiles
+  ): void {
+    setSolutionToView(id);
+    setSolutionOpen(true);
+    setSolution(solution_);
+    setChallengeFiles(challengeFiles_);
   }
 
-  renderViewButton(
+  function closeSolution(): void {
+    setSolutionToView(null);
+    setSolutionOpen(false);
+    setSolution(null);
+    setChallengeFiles(null);
+  }
+
+  function firstPage(): void {
+    setPageNo(1);
+  }
+  function nextPage(): void {
+    setPageNo(prev => prev + 1);
+  }
+  function prevPage(): void {
+    setPageNo(prev => prev - 1);
+  }
+  function lastPage(): void {
+    setPageNo(totalPages);
+  }
+
+  function renderViewButton(
     id: string,
     challengeFiles: ChallengeFiles,
     githubLink: string,
     solution: string
   ): React.ReactNode {
-    const { t } = this.props;
     if (challengeFiles?.length) {
       return (
         <Button
@@ -110,7 +125,7 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
           bsStyle='primary'
           className='btn-invert'
           id={`btn-for-${id}`}
-          onClick={() => this.viewSolution(id, solution, challengeFiles)}
+          onClick={() => viewSolution(id, solution, challengeFiles)}
         >
           {t('buttons.show-code')}
         </Button>
@@ -163,8 +178,7 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
     }
   }
 
-  renderCompletion(completed: SortedTimeline): JSX.Element {
-    const { idToNameMap, username } = this.props;
+  function renderCompletion(completed: SortedTimeline): JSX.Element {
     const { id, challengeFiles, githubLink, solution } = completed;
     const completedDate = new Date(completed.completedDate);
     // @ts-expect-error idToNameMap is not a <string, string> Map...
@@ -184,9 +198,7 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
             <Link to={challengePath as string}>{challengeTitle}</Link>
           )}
         </td>
-        <td>
-          {this.renderViewButton(id, challengeFiles, githubLink, solution)}
-        </td>
+        <td>{renderViewButton(id, challengeFiles, githubLink, solution)}</td>
         <td className='text-center'>
           <time dateTime={completedDate.toISOString()}>
             {completedDate.toLocaleString([localeCode, 'en-US'], {
@@ -199,127 +211,72 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
       </tr>
     );
   }
-  viewSolution(
-    id: string,
-    solution: string,
-    challengeFiles: ChallengeFiles
-  ): void {
-    this.setState(state => ({
-      ...state,
-      solutionToView: id,
-      solutionOpen: true,
-      solution,
-      challengeFiles
-    }));
-  }
 
-  closeSolution() {
-    this.setState(state => ({
-      ...state,
-      solutionToView: null,
-      solutionOpen: false,
-      solution: null,
-      challengeFiles: null
-    }));
-  }
+  const id = solutionToView;
+  const startIndex = (pageNo - 1) * ITEMS_PER_PAGE;
+  const endIndex = pageNo * ITEMS_PER_PAGE;
 
-  firstPage() {
-    this.setState({
-      pageNo: 1
-    });
-  }
-  nextPage() {
-    this.setState(state => ({
-      pageNo: state.pageNo + 1
-    }));
-  }
-
-  prevPage() {
-    this.setState(state => ({
-      pageNo: state.pageNo - 1
-    }));
-  }
-  lastPage() {
-    this.setState((_, props) => ({
-      pageNo: props.totalPages
-    }));
-  }
-  render() {
-    const {
-      completedMap,
-      idToNameMap,
-      username,
-      sortedTimeline,
-      t,
-      totalPages = 1
-    } = this.props;
-    const { solutionToView: id, solutionOpen, pageNo = 1 } = this.state;
-    const startIndex = (pageNo - 1) * ITEMS_PER_PAGE;
-    const endIndex = pageNo * ITEMS_PER_PAGE;
-
-    return (
-      <FullWidthRow>
-        <h2 className='text-center'>{t('profile.timeline')}</h2>
-        {completedMap.length === 0 ? (
-          <p className='text-center'>
-            {t('profile.none-completed')}&nbsp;
-            <Link to='/learn'>{t('profile.get-started')}</Link>
-          </p>
-        ) : (
-          <Table condensed={true} striped={true}>
-            <thead>
-              <tr>
-                <th>{t('profile.challenge')}</th>
-                <th>{t('settings.labels.solution')}</th>
-                <th className='text-center'>{t('profile.completed')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sortedTimeline
-                .slice(startIndex, endIndex)
-                .map(this.renderCompletion)}
-            </tbody>
-          </Table>
-        )}
-        {id && (
-          <Modal
-            aria-labelledby='contained-modal-title'
-            onHide={this.closeSolution}
-            show={solutionOpen}
-          >
-            <Modal.Header closeButton={true}>
-              <Modal.Title id='contained-modal-title'>
-                {`${username}'s Solution to ${
-                  // @ts-expect-error Need better TypeDef for this
-                  idToNameMap.get(id).challengeTitle as string
-                }`}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <SolutionViewer
-                challengeFiles={this.state.challengeFiles}
-                solution={this.state.solution ?? ''}
-              />
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this.closeSolution}>{t('buttons.close')}</Button>
-            </Modal.Footer>
-          </Modal>
-        )}
-        {totalPages > 1 && (
-          <TimelinePagination
-            firstPage={this.firstPage}
-            lastPage={this.lastPage}
-            nextPage={this.nextPage}
-            pageNo={pageNo}
-            prevPage={this.prevPage}
-            totalPages={totalPages}
-          />
-        )}
-      </FullWidthRow>
-    );
-  }
+  return (
+    <FullWidthRow>
+      <h2 className='text-center'>{t('profile.timeline')}</h2>
+      {completedMap.length === 0 ? (
+        <p className='text-center'>
+          {t('profile.none-completed')}&nbsp;
+          <Link to='/learn'>{t('profile.get-started')}</Link>
+        </p>
+      ) : (
+        <Table condensed={true} striped={true}>
+          <thead>
+            <tr>
+              <th>{t('profile.challenge')}</th>
+              <th>{t('settings.labels.solution')}</th>
+              <th className='text-center'>{t('profile.completed')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedTimeline.slice(startIndex, endIndex).map(renderCompletion)}
+          </tbody>
+        </Table>
+      )}
+      {id && (
+        <Modal
+          aria-labelledby='contained-modal-title'
+          onHide={closeSolution}
+          show={solutionOpen}
+        >
+          <Modal.Header closeButton={true}>
+            <Modal.Title id='contained-modal-title'>
+              {`${username}'s Solution to ${
+                // @ts-expect-error Need better TypeDef for this
+                idToNameMap.get(id).challengeTitle as string
+              }`}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <SolutionViewer
+              challengeFiles={challengeFiles}
+              solution={solution ?? ''}
+            />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={closeSolution}>{t('buttons.close')}</Button>
+          </Modal.Footer>
+        </Modal>
+      )}
+      {totalPages > 1 && (
+        <TimelinePagination
+          firstPage={firstPage}
+          lastPage={lastPage}
+          nextPage={nextPage}
+          pageNo={pageNo}
+          prevPage={prevPage}
+          totalPages={totalPages}
+        />
+      )}
+    </FullWidthRow>
+  );
 }
+
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
 function useIdToNameMap(): Map<string, string> {
   const {
