@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        browsers: [chrome, firefox]
+        browsers: [chrome, firefox, electron]
         node-version: [14.x]
     services:
       mongodb:

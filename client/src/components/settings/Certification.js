@@ -240,6 +240,7 @@ export class CertificationSettings extends Component {
         block={true}
         bsStyle='primary'
         className='btn-invert'
+        data-cy={projectTitle}
         id={`btn-for-${projectId}`}
         onClick={onClickHandler}
       >

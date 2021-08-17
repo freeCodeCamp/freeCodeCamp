@@ -1,6 +1,10 @@
 /* global cy */
 
-const projects = {
+const selectors = {
+  editor: '.react-monaco-editor-container'
+};
+
+const pythonProjects = {
   superBlock: 'machine-learning-with-python',
   block: 'machine-learning-with-python-projects',
   challenges: [
@@ -26,10 +30,11 @@ const projects = {
     }
   ]
 };
+
 describe('project submission', () => {
   // NOTE: this will fail once challenge tests are added.
   it('Should be possible to submit Python projects', () => {
-    const { superBlock, block, challenges } = projects;
+    const { superBlock, block, challenges } = pythonProjects;
     challenges.forEach(({ slug }) => {
       const url = `/learn/${superBlock}/${block}/${slug}`;
       cy.visit(url);
@@ -49,4 +54,60 @@ describe('project submission', () => {
       // cy.url().should('not.have.string', url);
     });
   });
+  it(
+    'JavaScript projects can be submitted and then viewed in /settings',
+    { browser: 'electron' },
+    () => {
+      cy.login();
+      cy.fixture('../../config/curriculum.json').then(curriculum => {
+        const { challenges, meta } =
+          curriculum['javascript-algorithms-and-data-structures'].blocks[
+            'javascript-algorithms-and-data-structures-projects'
+          ];
+
+        const projectTitles = meta.challengeOrder.map(([, title]) => title);
+        const projectsInOrder = projectTitles.map(projectTitle => {
+          return challenges.find(({ title }) => title === projectTitle);
+        });
+
+        const textInNextPage = projectTitles.slice(1);
+        textInNextPage.push('Claim Your Certification');
+
+        projectsInOrder.forEach(
+          ({ block, superBlock, dashedName, solutions }, i) => {
+            const url = `/learn/${superBlock}/${block}/${dashedName}`;
+            cy.visit(url);
+
+            solutions.forEach(files => {
+              files.forEach(({ contents }) => {
+                cy.get(selectors.editor).as('editor');
+                cy.get('@editor').click().focused().type('{ctrl+a}{del}');
+                // NOTE: clipboard operations are flaky in watch mode, because
+                // the document can lose focus
+                cy.window()
+                  .its('navigator.clipboard')
+                  .invoke('writeText', contents);
+                cy.document().invoke('execCommand', 'paste');
+                cy.contains('Run the Tests').click();
+                cy.contains('Submit and go to next challenge', {
+                  timeout: 8000
+                }).click();
+                cy.contains(textInNextPage[i]);
+              });
+            });
+          }
+        );
+
+        cy.visit('/settings');
+
+        projectTitles.forEach(title => {
+          cy.get(`[data-cy="${title}"]`).click();
+          // TODO: if we write a test to check that the solution is visible
+          // before reloading, we should include that here.
+          cy.contains('Solution for');
+          cy.contains('Close').click();
+        });
+      });
+    }
+  );
 });
