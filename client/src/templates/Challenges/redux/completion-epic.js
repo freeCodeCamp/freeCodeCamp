@@ -67,7 +67,10 @@ function submitModern(type, state) {
       const { username } = userSelector(state);
       const challengeInfo = {
         id,
-        challengeFiles
+        files: challengeFiles.reduce(
+          (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
+          []
+        )
       };
       const update = {
         endpoint: '/modern-challenge-completed',
