@@ -55,7 +55,7 @@ async function request<T>(
 /** GET **/
 
 interface SessionUser {
-  user: { [username: string]: UserType };
+  user?: { [username: string]: UserType };
   sessionMeta: { activeDonations: number };
 }
 
@@ -68,26 +68,24 @@ type ApiUser = {
   user: {
     [username: string]: ApiUserType;
   };
-  result: string;
+  result?: string;
 };
 
 type ApiUserType = Omit<UserType, 'completedChallenges'> & {
-  completedChallenges: challengeFilesForFiles[];
+  completedChallenges?: challengeFilesForFiles[];
 };
 
 type UserResponseType = {
-  user: { [username: string]: UserType };
-  result: string;
+  user: { [username: string]: UserType } | Record<string, never>;
+  result: string | undefined;
 };
 
-function parseApiResponseToClientUser<T>(
-  data: ApiUser | (T & ApiUser)
-): UserResponseType {
-  const userData = data.user[data.result];
+function parseApiResponseToClientUser(data: ApiUser): UserResponseType {
+  const userData = data.user?.[data?.result ?? ''];
   let completedChallenges: CompletedChallenge[] = [];
   if (userData) {
     completedChallenges =
-      userData.completedChallenges.reduce(
+      userData.completedChallenges?.reduce(
         (acc: CompletedChallenge[], curr: challengeFilesForFiles) => {
           return [
             ...acc,
@@ -104,12 +102,12 @@ function parseApiResponseToClientUser<T>(
       ) ?? [];
   }
   return {
-    user: { [data.result]: { ...userData, completedChallenges } },
+    user: { [data.result ?? '']: { ...userData, completedChallenges } },
     result: data.result
   };
 }
 
-export function getSessionUser(): Promise<SessionUser | null> {
+export function getSessionUser(): Promise<SessionUser> {
   const response: Promise<ApiUser & ApiSessionResponse> = get(
     '/user/get-session-user'
   );
@@ -126,15 +124,15 @@ export function getSessionUser(): Promise<SessionUser | null> {
 
 type UserProfileResponse = {
   entities: Omit<UserResponseType, 'result'>;
-  result: string;
+  result: string | undefined;
 };
 export function getUserProfile(username: string): Promise<UserProfileResponse> {
-  const response: Promise<{ entities: ApiUser; result: string }> = get(
+  const response: Promise<{ entities?: ApiUser; result?: string }> = get(
     `/api/users/get-public-profile?username=${username}`
   );
   return response.then(data => {
     const { result, user } = parseApiResponseToClientUser({
-      user: data.entities.user,
+      user: data.entities?.user ?? {},
       result: data.result
     });
     return {
