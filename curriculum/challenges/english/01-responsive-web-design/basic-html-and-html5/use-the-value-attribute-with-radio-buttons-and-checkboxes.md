@@ -27,7 +27,7 @@ If you omit the `value` attribute, the submitted form data uses the default valu
 
 # --instructions--
 
-Give each of the `radio` and `checkbox` inputs the `value` attribute. Use the input label text, in lowercase, as the value for the attribute.
+Give each of the existing `radio` and `checkbox` inputs the `value` attribute. Do not create any new radio or checkbox elements. Use the input label text, in lowercase, as the value for the attribute.
 
 # --hints--
 
