@@ -1,8 +1,10 @@
 {
   "certNames": {
-    "Responsive Web Design": "RWD Hacked by nhcarrigan"
+    "Responsive Web Design": "RWD Hacked by nhcarrigan",
+    "responsive-web-design": "RWD Hacked by Shaun"
   },
   "projectNames": {
-    "Build a Tribute Page": "Tribute to nhcarrigan"
+    "Build a Tribute Page": "Tribute to nhcarrigan",
+    "build-a-tribute-page": "Tribute to Shaun"
   }
 }

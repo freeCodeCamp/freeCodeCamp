@@ -57,8 +57,7 @@ function renderCertShow(username: string, cert: ICert): React.ReactNode {
             className='btn btn-lg btn-primary btn-block'
             to={`/certification/${username}/${cert.certSlug}`}
           >
-            View{' '}
-            {t(`certs:certNames.${cert.title.replace(' Certification', '')}`)}
+            View {t(`certs:certNames.${cert.certSlug}`)}
           </Link>
         </Col>
       </Row>

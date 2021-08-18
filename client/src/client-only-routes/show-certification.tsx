@@ -8,6 +8,7 @@ import { createSelector } from 'reselect';
 
 import envData from '../../../config/env.json';
 import { langCodes } from '../../../config/i18n/all-langs';
+import { dasherize } from '../../../utils/slugs';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
 import DonateForm from '../components/Donation/DonateForm';
 
@@ -351,7 +352,9 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
               </h1>
               <h3>placeholder</h3>
               <h1>
-                <strong>{{ title: t(`certs:certNames.${certTitle}`) }}</strong>
+                <strong>
+                  {{ title: t(`certs:certNames.${dasherize(certTitle)}`) }}
+                </strong>
               </h1>
               <h4>{{ time: completionTime }}</h4>
             </Trans>
