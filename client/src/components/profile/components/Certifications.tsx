@@ -47,6 +47,8 @@ interface ICertificationProps {
 }
 
 function renderCertShow(username: string, cert: ICert): React.ReactNode {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { t } = useTranslation();
   return cert.show ? (
     <Fragment key={cert.title}>
       <Row>
@@ -55,7 +57,8 @@ function renderCertShow(username: string, cert: ICert): React.ReactNode {
             className='btn btn-lg btn-primary btn-block'
             to={`/certification/${username}/${cert.certSlug}`}
           >
-            View {cert.title}
+            View{' '}
+            {t(`certs:certNames.${cert.title.replace(' Certification', '')}`)}
           </Link>
         </Col>
       </Row>

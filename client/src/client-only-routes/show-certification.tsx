@@ -341,14 +341,17 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
 
         <main className='information'>
           <div className='information-container'>
-            <Trans i18nKey='certification.fulltext' title={certTitle}>
+            <Trans
+              i18nKey='certification.fulltext'
+              title={t(`certificate-names.${certTitle}`)}
+            >
               <h3>placeholder</h3>
               <h1>
                 <strong>{{ user: displayName }}</strong>
               </h1>
               <h3>placeholder</h3>
               <h1>
-                <strong>{{ title: certTitle }}</strong>
+                <strong>{{ title: t(`certs:certNames.${certTitle}`) }}</strong>
               </h1>
               <h4>{{ time: completionTime }}</h4>
             </Trans>

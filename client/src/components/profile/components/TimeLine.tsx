@@ -163,7 +163,10 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
     }
   }
 
-  renderCompletion(completed: SortedTimeline): JSX.Element {
+  renderCompletion(
+    completed: SortedTimeline,
+    t: TFunction<'translation'>
+  ): JSX.Element {
     const { idToNameMap, username } = this.props;
     const { id, challengeFiles, githubLink, solution } = completed;
     const completedDate = new Date(completed.completedDate);
@@ -177,11 +180,18 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
               className='timeline-cert-link'
               to={`/certification/${username}/${certPath as string}`}
             >
-              {challengeTitle}
+              {t(
+                `certs:certNames.${(challengeTitle as string).replace(
+                  ' Certification',
+                  ''
+                )}`
+              )}
               <CertificationIcon />
             </Link>
           ) : (
-            <Link to={challengePath as string}>{challengeTitle}</Link>
+            <Link to={challengePath as string}>
+              {t(`certs:projectNames.${challengeTitle as string}`)}
+            </Link>
           )}
         </td>
         <td>
@@ -277,7 +287,7 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
             <tbody>
               {sortedTimeline
                 .slice(startIndex, endIndex)
-                .map(this.renderCompletion)}
+                .map(el => this.renderCompletion(el, t))}
             </tbody>
           </Table>
         )}

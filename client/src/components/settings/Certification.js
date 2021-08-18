@@ -255,7 +255,7 @@ export class CertificationSettings extends Component {
       <FullWidthRow key={certName}>
         <Spacer />
         <h3 className='text-center' id={`cert-${certSlug}`}>
-          {certName}
+          {t(`certs:certNames.${certName}`)}
         </h3>
         <Table>
           <thead>
@@ -293,7 +293,7 @@ export class CertificationSettings extends Component {
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8'>
-            <Link to={link}>{title}</Link>
+            <Link to={link}>{t(`certs:projectNames.${title}`)}</Link>
           </td>
           <td className='project-solution col-sm-4'>
             {this.getProjectSolution(id, title)}
@@ -371,7 +371,7 @@ export class CertificationSettings extends Component {
             })}
           </p>
           <ul>
-            <li>Responsive Web Design</li>
+            <li>{t(`certs:certNames.${'Responsive Web Design'}`)}</li>
             <li>JavaScript Algorithms and Data Structures</li>
             <li>Front End Development Libraries</li>
             <li>Data Visualization</li>

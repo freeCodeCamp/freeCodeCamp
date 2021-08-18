@@ -146,7 +146,7 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       ({ link, title, id }) => (
         <li key={id}>
           <Link className='project-link' to={link}>
-            {t(`certification.project.title.${title as string}`, title)}
+            {t(`certs:projectNames.${title as string}`)}
           </Link>
           : {getProjectSolution(id, title)}
         </li>
