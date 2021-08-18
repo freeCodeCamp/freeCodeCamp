@@ -46,7 +46,7 @@ Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.free
 
 # --instructions--
 
-Nest the existing `a` element within a new `p` element. The new paragraph should have text that says `View more cat photos`, where `cat photos` is a link, and the rest is plain text.
+Nest the existing `a` element within a new `p` element. Do not create a new anchor tag. The new paragraph should have text that says `View more cat photos`, where `cat photos` is a link, and the rest is plain text.
 
 # --hints--
 

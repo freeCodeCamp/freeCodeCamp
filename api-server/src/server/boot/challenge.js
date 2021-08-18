@@ -83,11 +83,9 @@ export function buildUserUpdate(
   if (jsProjects.includes(challengeId)) {
     completedChallenge = {
       ..._completedChallenge,
-      files: Object.keys(files)
-        .map(key => files[key])
-        .map(file =>
-          pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext'])
-        )
+      files: files.map(file =>
+        pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext'])
+      )
     };
   } else {
     completedChallenge = omit(_completedChallenge, ['files']);
