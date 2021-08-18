@@ -1,4 +1,7 @@
-name: Cypress
+# Mirrors the Cypress workflow with the following changes:
+# - Cypress run has a spec
+# - We create the stats.json file here since the workflow only runs once.
+name: Cypress Electron
 on:
   push:
     branches-ignore:
@@ -11,7 +14,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        browsers: [chrome, firefox]
+        browsers: [electron]
         node-version: [14.x]
     services:
       mongodb:
@@ -74,4 +77,11 @@ jobs:
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
+          spec: 'cypress/integration/learn/challenges/projects.js'
           headless: true
+
+      - name: Upload Webpack stats
+        uses: actions/upload-artifact@v2
+        with:
+          name: webpack-stats
+          path: client/public/stats.json
