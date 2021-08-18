@@ -7,7 +7,7 @@ dashedName: part-87
 
 # --description--
 
-Target the `right` `class` and set the `position` to `absolute`, `top` to `15px`, and `right` to `30px`.
+Target the `class` with value `right` and set the `position` to `absolute`, `top` to `15px`, and `right` to `30px`.
 
 # --hints--
 

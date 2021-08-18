@@ -7,7 +7,7 @@ dashedName: part-81
 
 # --description--
 
-Select the `guitar-right` `id`, and also set `position` to `absolute`. This time, set `left` to `100px`.
+Select the `id` with value `guitar-right`, and also set `position` to `absolute`. This time, set `left` to `100px`.
 
 # --hints--
 

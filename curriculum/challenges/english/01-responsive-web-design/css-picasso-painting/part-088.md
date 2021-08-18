@@ -7,7 +7,7 @@ dashedName: part-88
 
 # --description--
 
-For the `left` `class`, create the selector and set the `position` to `absolute`, the `top` to `15px`, and the `left` to `30px`.
+For the `class` with value `left`, create the selector and set the `position` to `absolute`, the `top` to `15px`, and the `left` to `30px`.
 
 # --hints--
 

@@ -7,7 +7,7 @@ dashedName: part-58
 
 # --description--
 
-The `eyes-div` element should hold some eyes. Add two `div` elements inside. Give the first the `class` `eyes left`, and give the second the `class` `eyes right`.
+The `eyes-div` element should hold some eyes. Add two `div` elements inside. Give the first a `class` of `eyes left`, and give the second a `class` of `eyes right`.
 
 # --hints--
 

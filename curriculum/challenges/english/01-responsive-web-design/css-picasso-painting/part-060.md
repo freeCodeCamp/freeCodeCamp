@@ -49,6 +49,12 @@ Your third new `div` should have an `id` set to `guitar-neck`.
 assert(document.querySelectorAll('#guitar > div')?.[2]?.getAttribute('id') === 'guitar-neck');
 ```
 
+You should not give the third new `div` a `class` of `guitar`.
+
+```js
+assert.notExists(document.querySelector('#guitar > #guitar-neck.guitar'));
+```
+
 # --seed--
 
 ## --seed-contents--
