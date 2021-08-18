@@ -190,7 +190,7 @@ async (getUserInput) => {
 };
 ```
 
-The response returned will be the user object with the exercise fields added.
+The response returned from `POST/api/users/:_id/exercises` will be the user object with the exercise fields added.
 
 ```js
 async (getUserInput) => {
