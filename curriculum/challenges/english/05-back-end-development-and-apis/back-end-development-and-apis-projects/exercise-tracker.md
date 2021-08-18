@@ -121,7 +121,7 @@ async(getUserInput) => {
 };
 ```
 
-The `Get` request to `/api/users` returns an array.
+The `GET` request to `/api/users` returns an array.
 
 ```js
 async(getUserInput) => {
@@ -136,7 +136,7 @@ async(getUserInput) => {
 };
 ```
 
-Each element in the array is an object containing a user's `username` and `_id`.
+Each element in the `GET/api/users` array is an object literal containing a user's `username` and `_id`.
 
 ```js
 async(getUserInput) => {
