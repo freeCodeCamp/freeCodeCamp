@@ -353,7 +353,7 @@ async(getUserInput) => {
 };
 ```
 
-Each item in that `log` array should have a `description`, `duration`, and `date` properties.
+Each item in the `log` array that is returned from `GET/api/users/:id/logs` is an object that should have a `description`, `duration`, and `date` properties.
 
 ```js
 async(getUserInput){
@@ -400,7 +400,7 @@ async(getUserInput){
 };
 ```
 
-The `description` property of the `log` object should be a string.
+The `description` property of any object in the `log` array that is returned from `GET/api/users/:id/logs` should be a string.
 
 ```js
 async(getUserInput){
@@ -447,7 +447,7 @@ async(getUserInput){
 };
 ```
 
-The `duration` property of the `log` object should be a `number`.
+The `duration` property of any object in the `log` array that is returned from `GET/api/users/:id/logs` should be a number.
 
 ```js
 async(getUserInput){
@@ -494,7 +494,7 @@ async(getUserInput){
 };
 ```
 
-The `date` property of the `log` object should be a string. Use the `dateString` format of the `Date` API.
+The `date` property of any object in the `log` array that is returned from `GET/api/users/:id/logs` should be a string.. Use the `dateString` format of the `Date` API.
 
 ```js
 async(getUserInput){
