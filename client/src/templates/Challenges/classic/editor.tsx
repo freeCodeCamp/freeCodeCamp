@@ -365,11 +365,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E],
       run: () => {
         const currentAccessibility = storedAccessibilityMode();
-        
+
         store.set('accessibilityMode', !currentAccessibility);
 
         editor.updateOptions({
-          accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto',
+          accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto'
         });
       }
     });
@@ -591,7 +591,8 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     const editableRegion = getCurrentEditableRegion();
     const editableRegionBoundaries = editableRegion && [
-      editableRegion.startLineNumber - 1,
+      // TEST: editableRegion.startLineNumber,
+      Math.max(editableRegion.startLineNumber - 1, 1),
       editableRegion.endLineNumber + 1
     ];
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
