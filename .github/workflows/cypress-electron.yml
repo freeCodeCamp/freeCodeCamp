@@ -1,6 +1,7 @@
 # Mirrors the Cypress workflow with the following changes:
 # - Cypress run has a spec
 # - We create the stats.json file here since the workflow only runs once.
+# - Mailhog is missing since none of the tests use it.
 name: Cypress Electron
 on:
   push:
