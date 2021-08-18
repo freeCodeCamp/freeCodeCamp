@@ -55,7 +55,6 @@ jobs:
         run: |
           npm ci
           npm run ensure-env
-          npm run build:curriculum
 
       - name: Move serve.json to client
         run: |
