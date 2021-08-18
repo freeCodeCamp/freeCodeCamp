@@ -1,36 +1,28 @@
 import Prism from 'prismjs';
-import React, { Component } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 interface PrismFormattedProps {
   className?: string;
   text: string;
 }
 
-class PrismFormatted extends Component<PrismFormattedProps> {
-  static displayName: string;
-  instructionsRef: React.RefObject<HTMLInputElement>;
-  componentDidMount(): void {
+function PrismFormatted({ className, text }: PrismFormattedProps): JSX.Element {
+  const instructionsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
     // Just in case 'current' has not been created, though it should have been.
-    if (this.instructionsRef.current) {
-      Prism.highlightAllUnder(this.instructionsRef.current);
+    if (instructionsRef.current) {
+      Prism.highlightAllUnder(instructionsRef.current);
     }
-  }
+  }, []);
 
-  constructor(props: PrismFormattedProps | Readonly<PrismFormattedProps>) {
-    super(props);
-    this.instructionsRef = React.createRef();
-  }
-
-  render(): JSX.Element {
-    const { text, className } = this.props;
-    return (
-      <div
-        className={className}
-        dangerouslySetInnerHTML={{ __html: text }}
-        ref={this.instructionsRef}
-      />
-    );
-  }
+  return (
+    <div
+      className={className}
+      dangerouslySetInnerHTML={{ __html: text }}
+      ref={instructionsRef}
+    />
+  );
 }
 
 PrismFormatted.displayName = 'PrismFormatted';
