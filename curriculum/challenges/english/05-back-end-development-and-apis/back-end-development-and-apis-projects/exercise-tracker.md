@@ -81,11 +81,10 @@ async (getUserInput) => {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
-  if (res.ok) {
-    assert(true);
-  } else {
-    throw new Error(`${res.status} ${res.statusText}`);
-  }
+  assert.truthy(res.ok);
+  if(!res.ok) {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
 };
 ```
 
@@ -115,10 +114,9 @@ You can make a `GET` request to `/api/users` to get a list of all users.
 async(getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + 'api/users');
-  if(res.ok){
-    assert(true);
-  } else {
-    throw new Error(`${res.status} ${res.statusText}`);
+  assert.truthy(res.ok);
+  if(!res.ok) {
+    throw new Error(`${res.status} ${res.statusText}`)
   };
 };
 ```
@@ -182,11 +180,10 @@ async (getUserInput) => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
     });
-    if (addRes.ok) {
-      assert(true);
-    } else {
-      throw new Error(`${addRes.status} ${addRes.statusText}`);
-    }
+  assert.truthy(addRes.ok);
+  if(!addRes.ok) {
+    throw new Error(`${addRes.status} ${addRes.statusText}`)
+  };
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   }
@@ -258,12 +255,10 @@ async (getUserInput) => {
     });
     if (addRes.ok) {
       const logRes = await fetch(url + `/api/users/${_id}/logs`);
-      if (logRes.ok) {
-        // confirm that the route works for this test
-        assert(true);
-      } else {
-        throw new Error(`${logRes.status} ${logRes.statusText}`);
-      }
+    assert.truthy(logRes.ok);
+    if(!logRes.ok) {
+      throw new Error(`${logRes.status} ${logRes.statusText}`)
+    };
     } else {
       throw new Error(`${addRes.status} ${addRes.statusText}`);
     }
