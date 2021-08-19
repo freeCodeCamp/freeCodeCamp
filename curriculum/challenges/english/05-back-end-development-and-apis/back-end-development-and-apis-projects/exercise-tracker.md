@@ -403,9 +403,9 @@ async(getUserInput){
 The `description` property of any object in the `log` array that is returned from `GET/api/users/:id/logs` should be a string.
 
 ```js
-async(getUserInput){
+async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + 'api/users/', {
+  const res = await fetch(url + '/api/users/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -447,12 +447,12 @@ async(getUserInput){
 };
 ```
 
-The `duration` property of any object in the `log` array that is returned from `GET/api/users/:id/logs` should be a number.
+The `duration` property of any object in the `log` array that is returned from `GET /api/users/:id/logs` should be a number.
 
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + 'api/users/', {
+  const res = await fetch(url + '/api/users/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -494,12 +494,12 @@ async(getUserInput) => {
 };
 ```
 
-The `date` property of any object in the `log` array that is returned from `GET/api/users/:id/logs` should be a string.. Use the `dateString` format of the `Date` API.
+The `date` property of any object in the `log` array that is returned from `GET /api/users/:id/logs` should be a string.. Use the `dateString` format of the `Date` API.
 
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + 'api/users/', {
+  const res = await fetch(url + '/api/users/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
