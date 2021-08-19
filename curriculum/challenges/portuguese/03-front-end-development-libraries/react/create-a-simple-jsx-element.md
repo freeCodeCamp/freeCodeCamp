@@ -12,7 +12,7 @@ O React é uma biblioteca de visualização de código aberto criada e mantida p
 
 React usa a sintaxe de extensão do JavaScript chamada JSX que o permite escrever HTML diretamente no JavaScript. Isso possui diversos benefícios. Ela permite a você usar todo o poder programático do JavaScript dentro do HTML, e ajuda a manter o seu código legível. Em grande parte, JSX é semelhante ao HTML que você já aprendeu, no entanto existem algumas diferenças chaves que cobriremos durante esses desafios.
 
-Por exemplo, porque o JSX é uma extensão sintática de JavaScript, você realmente pode escrever JavaScript diretamente dentro do JSX. Para isso, você simplesmente inclui o código que você quer que seja tratado como JavaScript dentro de chaves: `{'this is treated as JavaScript code'}`. Mantenha isso em mente, já que é utilizado em diversos desafios futuros.
+Por exemplo, porque o JSX é uma extensão sintática de JavaScript, você realmente pode escrever JavaScript diretamente dentro do JSX. Para isso, você simplesmente inclui o código que você quer que seja tratado como JavaScript dentro de chaves: `{ 'this is treated as JavaScript code' }`. Mantenha isso em mente, já que é utilizado em diversos desafios futuros.
 
 No entanto, porque JSX não é JavaScript válido, código JSX precisa ser compilado em JavaScript. O transpilador Babel é uma ferramenta popular para esse processo. Para sua conveniência, já está adicionado por trás dos panos para esses desafios. Se por acaso você escrever JSX inválido sintaticamente, você verá o primeiro teste nesses desafios falhar.
 

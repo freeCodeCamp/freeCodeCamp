@@ -28,7 +28,7 @@ O criador de ação `requestingData` deve retornar um objeto de tipo igual ao va
 assert(requestingData().type === REQUESTING_DATA);
 ```
 
-O criador de ação `receivedData` deve retornar um objeto de tipo igual ao valor de `REQUESTING_DATA`.
+O criador de ação `receivedData` deve retornar um objeto de tipo igual ao valor de `RECEIVED_DATA`.
 
 ```js
 assert(receivedData('data').type === RECEIVED_DATA);

@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Cliccando sull'elemento `button` dovrebbe essere eseguito il metodo `handleClick` e dovrebbe essere impostare lo stato `text` a `You clicked!`.
+Cliccando sull'elemento `button` dovrebbe essere eseguito il metodo `handleClick` e dovrebbe impostare lo stato `text` a `You clicked!`.
 
 ```js
 async () => {

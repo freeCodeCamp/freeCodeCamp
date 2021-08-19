@@ -16,7 +16,7 @@ Como você esperaria, `ReactDOM.render()` deve ser chamado após as declaraçõe
 
 # --instructions--
 
-O editor de código tem um componente JSX simples. Use o método `ReactDOM.render()` para renderizar este componente na página. Você pode passar elementos JSX definidos diretamente como o primeiro argumento e usar `document.getElementById()` para selecionar o nó do DOM onde renderizá-los. Há uma `div` com `id='challenge-node'` disponível para você usar. Certifique-se de não alterar a constante `JSX`.
+O editor de código tem um componente JSX simples. Use o método `ReactDOM.render()` para renderizar este componente na página. Você pode passar elementos JSX definidos diretamente como o primeiro argumento e usar `document.getElementById()` para selecionar o nó do DOM onde renderizá-los. Há um `div` com `id='challenge-node'` disponível para você usar. Certifique-se de não alterar a constante `JSX`.
 
 # --hints--
 

@@ -9,7 +9,7 @@ tests:
     title: Controllo del prezzo delle azioni
   - 
     id: 587d824a367417b2b2512c45
-    title: Pannello messaggi Anonimo
+    title: Pannello messaggi anonimo
   - 
     id: 5e46f979ac417301a38fb932
     title: Port Scanner

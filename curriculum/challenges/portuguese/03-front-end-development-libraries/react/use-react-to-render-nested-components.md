@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-O componente `TypesOfFood` deve retornar os elementos `h2` e `ul`.
+O componente `TypesOfFruit` deve retornar os elementos `h2` e `ul`.
 
 ```js
 assert(

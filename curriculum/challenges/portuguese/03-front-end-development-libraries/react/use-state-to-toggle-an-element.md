@@ -36,7 +36,7 @@ Observe que você tem que envolver o objeto literalmente entre parênteses, caso
 
 # --instructions--
 
-`MyComponent` tem uma propriedade `visibilty` que foi inicializada como `false`. O método de renderização retorna uma view se o valor de `visibility` for verdadeiro e uma view diferente se for falsa.
+`MyComponent` tem uma propriedade `visibility` que foi inicializada como `false`. O método de renderização retorna uma view se o valor de `visibility` for verdadeiro e uma view diferente se for falsa.
 
 Atualmente, não há forma de atualizar a propriedade `visibility` no `state` do componente. O valor deve alternar entre verdadeiro e falso. Há um manipulador de cliques no botão que aciona um método de classe chamado `toggleVisibility()`. Passe uma função para `setState` para definir esse método para que o `state` de `visibility` alterne para o valor oposto quando o método for chamado. Se `visibility` for `false`, o método define para `true`, e vice-versa.
 

@@ -16,7 +16,7 @@ Componentes do React são passados a `ReactDOM.render()` um pouco diferente dos 
 
 # --instructions--
 
-Os componentes `Fruits` e `Vegetables` são definidos para você nos bastidores. Renderize ambos os componentes como filhos do componente `TypesOfFood` e, em seguida, renderize `TypesOfFood` para o DOM. Há uma `div` com `id='challenge-node'` disponível para você usar.
+Os componentes `Fruits` e `Vegetables` são definidos para você nos bastidores. Renderize ambos os componentes como filhos do componente `TypesOfFood` e, em seguida, renderize `TypesOfFood` para o DOM. Há um `div` com `id='challenge-node'` disponível para você usar.
 
 # --hints--
 

@@ -40,7 +40,7 @@ Ecco un esempio:
 
 Definisci una nuova costante `JSX` che esegua il render di un `div` che contenga i seguenti elementi in ordine:
 
-Un `h1`, un `p`e una lista non ordinata che contiene tre elementi `li`. Puoi includere qualsiasi testo desideri all'interno di ogni elemento.
+Un `h1`, un `p` e una lista non ordinata che contiene tre elementi `li`. Puoi includere qualsiasi testo desideri all'interno di ogni elemento.
 
 **Nota:** Quando si visualizzano più elementi come questo, è possibile avvolgerli tutti in parentesi, ma non è strettamente necessario. Nota anche che questa sfida utilizza un tag `div` per avvolgere tutti gli elementi figli all'interno di un singolo elemento genitore. Se rimuovi il `div`, il JSX non sarà più transcodificato. Tienilo a mente, perché questo si applicherà anche quando restituirai elementi JSX in componenti React.
 

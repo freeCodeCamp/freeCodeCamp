@@ -1,6 +1,6 @@
 ---
 id: 5900f38f1000cf542c50fea2
-title: 'Problem 35: Circular primes'
+title: 'Problema 35: Números primos circulares'
 challengeType: 5
 forumTopicId: 302009
 dashedName: problem-35-circular-primes
@@ -8,55 +8,55 @@ dashedName: problem-35-circular-primes
 
 # --description--
 
-The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+O número 197 é chamado de primo circular porque todas as rotações dos dígitos: 197, 971 e 719 formam números primos.
 
-There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+Há treze números primos menores que 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79 e 97.
 
-How many circular primes are there below `n`, whereas 100 ≤ `n` ≤ 1000000?
+Quantos números primos circulares existem abaixo de `n`, onde 100 ≤ `n` ≤ 1000000?
 
-**Note:**
+**Observação:**
 
-Circular primes individual rotation can exceed `n`.
+A rotação dos números primos circulares pode ser maior que `n`.
 
 # --hints--
 
-`circularPrimes(100)` should return a number.
+`circularPrimes(100)` deve retornar um número.
 
 ```js
 assert(typeof circularPrimes(100) === 'number');
 ```
 
-`circularPrimes(100)` should return 13.
+`circularPrimes(100)` deve retornar 13.
 
 ```js
 assert(circularPrimes(100) == 13);
 ```
 
-`circularPrimes(100000)` should return 43.
+`circularPrimes(100000)` deve retornar 43.
 
 ```js
 assert(circularPrimes(100000) == 43);
 ```
 
-`circularPrimes(250000)` should return 45.
+`circularPrimes(250000)` deve retornar 45.
 
 ```js
 assert(circularPrimes(250000) == 45);
 ```
 
-`circularPrimes(500000)` should return 49.
+`circularPrimes(500000)` deve retornar 49.
 
 ```js
 assert(circularPrimes(500000) == 49);
 ```
 
-`circularPrimes(750000)` should return 49.
+`circularPrimes(750000)` deve retornar 49.
 
 ```js
 assert(circularPrimes(750000) == 49);
 ```
 
-`circularPrimes(1000000)` should return 55.
+`circularPrimes(1000000)` deve retornar 55.
 
 ```js
 assert(circularPrimes(1000000) == 55);
