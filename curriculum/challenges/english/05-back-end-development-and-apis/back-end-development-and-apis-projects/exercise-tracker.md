@@ -356,7 +356,7 @@ async(getUserInput) => {
 Each item in the `log` array that is returned from `GET /api/users/:id/logs` is an object that should have a `description`, `duration`, and `date` properties.
 
 ```js
-async(getUserInput){
+async(getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + `/api/users`, {
     method: 'POST',
