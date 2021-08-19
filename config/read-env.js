@@ -25,6 +25,7 @@ const {
   ALGOLIA_API_KEY: algoliaAPIKey,
   STRIPE_PUBLIC_KEY: stripePublicKey,
   PAYPAL_CLIENT_ID: paypalClientId,
+  SQUARE_APPLICATION_ID: squareApplicationId,
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges
 } = process.env;
@@ -61,5 +62,9 @@ module.exports = Object.assign(locations, {
     !paypalClientId || paypalClientId === 'id_from_paypal_dashboard'
       ? null
       : paypalClientId,
+  squareApplicationId:
+    !squareApplicationId || squareApplicationId === 'id_from_square_dashboard'
+      ? null
+      : squareApplicationId,
   showUpcomingChanges: showUpcomingChanges === 'true'
 });

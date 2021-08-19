@@ -33,6 +33,7 @@ import DonateCompletion from './DonateCompletion';
 
 import type { AddDonationData } from './PaypalButton';
 import PaypalButton from './PaypalButton';
+import SquareForm from './square-form';
 import WalletsWrapper from './walletsButton';
 
 import './Donation.css';
@@ -306,10 +307,13 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
             donationDuration={donationDuration}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
             handleProcessing={handleProcessing}
+            isMinimalForm={isMinimalForm}
             isPaypalLoading={loading.paypal}
             onDonationStateChange={this.onDonationStateChange}
             theme={defaultTheme ? defaultTheme : theme}
           />
+          {isMinimalForm && <div className='separator'>Or pay with card</div>}
+          {isMinimalForm && <SquareForm />}
         </div>
       </>
     );

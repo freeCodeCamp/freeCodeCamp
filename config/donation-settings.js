@@ -85,7 +85,11 @@ const paypalConfigurator = (donationAmount, donationDuration, paypalConfig) => {
   };
 };
 
-//
+const squareLocationConfig = {
+  staging: 'LG956BJXJ7SSW',
+  live: 'LDFNMPWSFJEN2'
+};
+
 const donationUrls = {
   successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
   cancelUrl: 'https://freecodecamp.org/donate'
@@ -103,5 +107,6 @@ module.exports = {
   onetimeSKUConfig,
   paypalConfigTypes,
   paypalConfigurator,
-  donationUrls
+  donationUrls,
+  squareLocationConfig
 };

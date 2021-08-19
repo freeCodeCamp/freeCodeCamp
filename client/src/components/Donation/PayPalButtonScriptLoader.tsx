@@ -7,6 +7,7 @@ import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
 import type { AddDonationData } from './PaypalButton';
 
 type PayPalButtonScriptLoaderProps = {
+  isMinimalForm: boolean | undefined;
   clientId: string;
   createOrder: (
     data: unknown,
@@ -60,6 +61,10 @@ declare global {
       };
       [key: string]: unknown;
     };
+    Square: {
+      errors: unknown;
+      payments: () => void;
+    };
   }
 }
 
@@ -98,12 +103,14 @@ export class PayPalButtonScriptLoader extends Component<
       height: number;
       tagline: boolean;
     };
+    isMinimalForm: boolean | undefined;
   }): void {
     if (
       prevProps.isSubscription !== this.state.isSubscription ||
       prevProps.style.color !== this.props.style.color ||
       prevProps.style.tagline !== this.props.style.tagline ||
-      prevProps.style.height !== this.props.style.height
+      prevProps.style.height !== this.props.style.height ||
+      prevProps.isMinimalForm !== this.props.isMinimalForm
     ) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ isSdkLoaded: false });
@@ -113,7 +120,8 @@ export class PayPalButtonScriptLoader extends Component<
 
   loadScript(subscription: boolean, deleteScript: boolean | undefined): void {
     if (deleteScript) scriptRemover('paypal-sdk');
-    let queries = `?client-id=${this.props.clientId}&disable-funding=credit,bancontact,blik,eps,giropay,ideal,mybank,p24,sepa,sofort,venmo`;
+    const allowCardPayment = this.props.isMinimalForm ? 'card,' : '';
+    let queries = `?client-id=${this.props.clientId}&disable-funding=${allowCardPayment}credit,bancontact,blik,eps,giropay,ideal,mybank,p24,sepa,sofort,venmo`;
     if (subscription) queries += '&vault=true&intent=subscription';
 
     scriptLoader(

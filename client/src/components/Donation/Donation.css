@@ -52,7 +52,7 @@
 }
 
 .paypal-buttons-container {
-  min-height: 142px;
+  min-height: auto;
 }
 
 .donate-input-element {
@@ -366,7 +366,7 @@ li.disabled > a {
   align-self: center;
 }
 
-button#confirm-donation-btn {
+button.confirm-donation-btn {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -376,10 +376,15 @@ button#confirm-donation-btn {
   border-color: var(--yellow-light);
   color: black;
   font-weight: bold;
+  width: 100%;
+  min-height: 42px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
 }
-button#confirm-donation-btn:active,
-button#confirm-donation-btn:active:focus,
-button#confirm-donation-btn:hover {
+button.confirm-donation-btn:active,
+button.confirm-donation-btn:active:focus,
+button.confirm-donation-btn:hover {
   color: black;
   background-color: #f2ba38;
   border-color: #f2ba38;
@@ -413,4 +418,28 @@ button#confirm-donation-btn:hover {
 .donate-page-wrapper .alert.alert-info a:hover {
   color: #327290;
   background-color: #acdef3;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9em;
+  margin: 20px 0;
+  color: var(--quaternary-color);
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--quaternary-background);
+}
+
+.separator:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 0.25em;
 }
