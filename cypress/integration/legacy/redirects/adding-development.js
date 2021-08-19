@@ -32,9 +32,7 @@ describe('Legacy redirects', () => {
         '/certification/certifieduser/front-end-development-libraries'
       );
     });
-  });
 
-  it('should load this one challenge that throws an error if we do not test it separately', () => {
     cy.visit(
       'learn/front-end-libraries/bootstrap/use-responsive-design-with-bootstrap-fluid-containers'
     );
@@ -43,6 +41,9 @@ describe('Legacy redirects', () => {
         '/learn/front-end-development-libraries/bootstrap/use-responsive-design-with-bootstrap-fluid-containers'
       );
     });
+    // Bit of hack: but we need to make sure the page is fully loaded before
+    // moving on.
+    cy.get('.react-monaco-editor-container').should('be.visible');
   });
 
   it('should redirect from /apis-and-microservices to /back-end-development-and-apis', () => {
