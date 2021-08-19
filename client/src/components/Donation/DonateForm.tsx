@@ -132,16 +132,6 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     this.resetDonation();
   }
 
-  providerLoaderTime = () => {
-    this.props.updateDonationFormState({
-      ...this.props.donationFormState,
-      loading: {
-        paypal: false,
-        stripe: false
-      }
-    });
-  };
-
   onDonationStateChange(donationState: AddDonationData) {
     // scroll to top
     window.scrollTo(0, 0);
