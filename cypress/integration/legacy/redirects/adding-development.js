@@ -1,3 +1,7 @@
+// These tests require the client to be built and served with additional
+// redirect configuration. The Cypress action in .github/workflows/cypress.yml
+// contains the necessary commands to do this.
+
 describe('Legacy redirects', () => {
   it('should redirect from front-end-libraries to front-end-development-libraries', () => {
     cy.visit('learn/front-end-libraries');
