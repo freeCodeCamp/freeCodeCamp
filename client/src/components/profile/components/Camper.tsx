@@ -129,7 +129,7 @@ function Camper({
           <br />
           <p className='text-center yearsTopContributor'>
             <FontAwesomeIcon icon={faAward} />{' '}
-            <Link {t('links:top-contributors')}={'/top-contributors'}>{t('profile.contributor')}</Link>
+            <Link to={t('links:top-contributors')}>{t('profile.contributor')}</Link>
           </p>
           <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
         </div>
