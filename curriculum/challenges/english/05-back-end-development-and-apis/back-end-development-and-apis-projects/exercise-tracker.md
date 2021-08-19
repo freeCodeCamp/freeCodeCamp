@@ -81,7 +81,7 @@ async (getUserInput) => {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
-  assert.truthy(res.ok);
+  assert.isTrue(res.ok);
   if(!res.ok) {
     throw new Error(`${res.status} ${res.statusText}`)
   };
@@ -113,8 +113,8 @@ You can make a `GET` request to `/api/users` to get a list of all users.
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + 'api/users');
-  assert.truthy(res.ok);
+  const res = await fetch(url + '/api/users');
+  assert.isTrue(res.ok);
   if(!res.ok) {
     throw new Error(`${res.status} ${res.statusText}`)
   };
@@ -126,7 +126,7 @@ The `GET` request to `/api/users` returns an array.
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + 'api/users');
+  const res = await fetch(url + '/api/users');
   if(res.ok){
     const users = await res.json();
     assert.isArray(users);
@@ -180,7 +180,7 @@ async (getUserInput) => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
     });
-  assert.truthy(addRes.ok);
+  assert.isTrue(addRes.ok);
   if(!addRes.ok) {
     throw new Error(`${addRes.status} ${addRes.statusText}`)
   };
@@ -255,7 +255,7 @@ async (getUserInput) => {
     });
     if (addRes.ok) {
       const logRes = await fetch(url + `/api/users/${_id}/logs`);
-    assert.truthy(logRes.ok);
+    assert.isTrue(logRes.ok);
     if(!logRes.ok) {
       throw new Error(`${logRes.status} ${logRes.statusText}`)
     };
@@ -404,7 +404,7 @@ The `description` property of any object in the `log` array that is returned fro
 
 ```js
 async(getUserInput){
-  const url = getUserInput(url);
+  const url = getUserInput('url');
   const res = await fetch(url + 'api/users/', {
     method: 'POST',
     headers: {
@@ -450,8 +450,8 @@ async(getUserInput){
 The `duration` property of any object in the `log` array that is returned from `GET/api/users/:id/logs` should be a number.
 
 ```js
-async(getUserInput){
-  const url = getUserInput(url);
+async(getUserInput) => {
+  const url = getUserInput('url');
   const res = await fetch(url + 'api/users/', {
     method: 'POST',
     headers: {
@@ -497,8 +497,8 @@ async(getUserInput){
 The `date` property of any object in the `log` array that is returned from `GET/api/users/:id/logs` should be a string.. Use the `dateString` format of the `Date` API.
 
 ```js
-async(getUserInput){
-  const url = getUserInput(url);
+async(getUserInput) => {
+  const url = getUserInput('url');
   const res = await fetch(url + 'api/users/', {
     method: 'POST',
     headers: {
