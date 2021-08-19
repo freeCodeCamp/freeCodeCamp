@@ -1,0 +1,13 @@
+{
+  "name": "Accessibility Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "accessibility-quiz",
+  "order": 42,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [["611e5716f9246f125f63815b", "Part 1"]]
+}

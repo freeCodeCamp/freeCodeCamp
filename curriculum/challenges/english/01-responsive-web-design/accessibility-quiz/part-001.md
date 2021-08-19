@@ -1,0 +1,48 @@
+---
+id: 611e5716f9246f125f63815b
+title: Part 1
+challengeType: 0
+dashedName: part-1
+---
+
+# --description--
+
+Welcome to the first part in the Accessibility Quiz. As you are becoming a seasoned HTML and CSS developer, we have started you off with the basic boilerplate.
+
+Start this accessibility journey, by providing a `lang` attribute to your `html` element. This will assist screen readers in identifying the language of the page.
+
+# --hints--
+
+You should give the `html` element a `lang` attribute. _Hint: You can use the value `en` for English._
+
+```js
+assert.notThrow(Intl.getCanonicalLocales(document.querySelector('html').getAttribute('lang')));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+--fcc-editable-region--
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+  </body>
+</html>
+--fcc-editable-region--
+
+```
+
+```css
+body {
+	background: #f5f6f7;
+	color: #1b1b32;
+	font-family: Helvetica;
+	margin: 0;
+}
+```
