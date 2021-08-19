@@ -361,7 +361,7 @@ async(getUserInput) => {
   const res = await fetch(url + `/api/users`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'}
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
@@ -413,7 +413,7 @@ async(getUserInput) => {
     body: `username=fcc_test_${Date.now()}`.substr(0,29)
   });
   if(res.ok) {
-    const {_id, username} = res.json();
+    const {_id, username} = await res.json();
     const expected = {
       username,
       description: 'test',
@@ -460,7 +460,7 @@ async(getUserInput) => {
     body: `username=fcc_test_${Date.now()}`.substr(0,29)
   });
   if(res.ok) {
-    const {_id, username} = res.json();
+    const {_id, username} = await res.json();
     const expected = {
       username,
       description: 'test',
@@ -507,7 +507,7 @@ async(getUserInput) => {
     body: `username=fcc_test_${Date.now()}`.substr(0,29)
   });
   if(res.ok) {
-    const {_id, username} = res.json();
+    const {_id, username} = await res.json();
     const expected = {
       username,
       description: 'test',
