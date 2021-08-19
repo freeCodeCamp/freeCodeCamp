@@ -136,7 +136,7 @@ async(getUserInput) => {
 };
 ```
 
-Each element in the `GET/api/users` array is an object literal containing a user's `username` and `_id`.
+Each element in the `GET /api/users` array is an object literal containing a user's `username` and `_id`.
 
 ```js
 async(getUserInput) => {
@@ -190,7 +190,7 @@ async (getUserInput) => {
 };
 ```
 
-The response returned from `POST/api/users/:_id/exercises` will be the user object with the exercise fields added.
+The response returned from `POST /api/users/:_id/exercises` will be the user object with the exercise fields added.
 
 ```js
 async (getUserInput) => {
@@ -268,7 +268,7 @@ async (getUserInput) => {
 };
 ```
 
-A request to a user's log (`GET/api/users/:_id/logs`) returns a user object with a `count` property representing the number of exercises that belong to that user.
+A request to a user's log `GET /api/users/:_id/logs` returns a user object with a `count` property representing the number of exercises that belong to that user.
 
 ```js
 async (getUserInput) => {
@@ -353,7 +353,7 @@ async(getUserInput) => {
 };
 ```
 
-Each item in the `log` array that is returned from `GET/api/users/:id/logs` is an object that should have a `description`, `duration`, and `date` properties.
+Each item in the `log` array that is returned from `GET /api/users/:id/logs` is an object that should have a `description`, `duration`, and `date` properties.
 
 ```js
 async(getUserInput){
@@ -400,7 +400,7 @@ async(getUserInput){
 };
 ```
 
-The `description` property of any object in the `log` array that is returned from `GET/api/users/:id/logs` should be a string.
+The `description` property of any object in the `log` array that is returned from `GET /api/users/:id/logs` should be a string.
 
 ```js
 async(getUserInput) => {
