@@ -52,7 +52,7 @@ type DonateFormState = {
   };
 };
 
-type DonateFromComponentState = {
+type DonateFormComponentState = {
   donationAmount: number;
   donationDuration: string;
 };
@@ -100,7 +100,7 @@ const mapDispatchToProps = {
   postChargeStripe
 };
 
-class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
+class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   static displayName = 'DonateForm';
   durations: { month: 'monthly'; onetime: 'one-time' };
   amounts: { month: number[]; onetime: number[] };
