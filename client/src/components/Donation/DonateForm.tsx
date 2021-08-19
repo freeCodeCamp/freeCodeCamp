@@ -276,9 +276,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
   renderButtonGroup() {
     const { donationAmount, donationDuration } = this.state;
     const {
-      donationFormState: {
-        loading: { stripe, paypal }
-      },
+      donationFormState: { loading },
       handleProcessing,
       addDonation,
       defaultTheme,
@@ -286,7 +284,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
       t,
       isMinimalForm
     } = this.props;
-    const paymentButtonsLoading = stripe && paypal;
+    const paymentButtonsLoading = loading.stripe && loading.paypal;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
     const isOneTime = donationDuration === 'onetime';
     const walletlabel = `${t(
@@ -317,7 +315,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
             donationDuration={donationDuration}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
             handleProcessing={handleProcessing}
-            isPaypalLoading={paypal}
+            isPaypalLoading={loading.paypal}
             onDonationStateChange={this.onDonationStateChange}
             theme={defaultTheme ? defaultTheme : theme}
           />
