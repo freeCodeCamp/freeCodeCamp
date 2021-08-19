@@ -141,7 +141,7 @@ Each element in the `GET /api/users` array is an object literal containing a use
 ```js
 async(getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + 'api/users');
+  const res = await fetch(url + '/api/users');
   if(res.ok){
     const users = await res.json();
     const user = users[0];
@@ -330,13 +330,13 @@ async(getUserInput) => {
       _id,
       date: new Date().toDateString()
     };
-    const addRes = await fetch(url + `api/users/${_id}/exercises`, {
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}`
     });
     if(addRes.ok){
-      const logRes = await fetch(url + `api/users/${_id}/logs`);
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
       if(logRes.ok) {
         const {log} = await logRes.json();
         assert.isArray(log);
@@ -374,13 +374,13 @@ async(getUserInput) => {
       _id,
       date: new Date().toDateString()
     };
-    const addRes = await fetch(url + `api/users/${_id}/exercises`, {
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}`
     });
     if(addRes.ok) {
-      const logRes = await fetch(url + `api/users/${_id}/logs`);
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
       if(logRes.ok) {
         const {log} = await logRes.json();
         const exercise = log[0];
@@ -421,7 +421,7 @@ async(getUserInput) => {
       _id,
       date: new Date().toDateString()
     };
-    const addRes = await fetch(url + `api/users/${_id}/exercises`, {
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -429,7 +429,7 @@ async(getUserInput) => {
       body: `description=${expected.description}&duration=${expected.duration}`
     });
     if(addRes.ok) {
-      const logRes = await fetch(url + `api/users/${_id}/logs`);
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
       if(logRes.ok){
         const {log} = await logRes.json();
         const exercise = log[0];
@@ -468,7 +468,7 @@ async(getUserInput) => {
       _id,
       date: new Date().toDateString()
     };
-    const addRes = await fetch(url + `api/users/${_id}/exercises`, {
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -476,7 +476,7 @@ async(getUserInput) => {
       body: `description=${expected.description}&duration=${expected.duration}`
     });
     if(addRes.ok) {
-      const logRes = await fetch(url + `api/users/${_id}/logs`);
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
       if(logRes.ok){
         const {log} = await logRes.json();
         const exercise = log[0];
@@ -515,7 +515,7 @@ async(getUserInput) => {
       _id,
       date: new Date().toDateString()
     };
-    const addRes = await fetch(url + `api/users/${_id}/exercises`, {
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -523,7 +523,7 @@ async(getUserInput) => {
       body: `description=${expected.description}&duration=${expected.duration}`
     });
     if(addRes.ok) {
-      const logRes = await fetch(url + `api/users/${_id}/logs`);
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
       if(logRes.ok){
         const {log} = await logRes.json();
         const exercise = log[0];
