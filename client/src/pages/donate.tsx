@@ -113,7 +113,11 @@ function DonatePage({
                 </Alert>
               ) : null}
               <DonationText />
-              <DonateForm handleProcessing={handleProcessing} />
+              <Row>
+                <Col xs={12}>
+                  <DonateForm handleProcessing={handleProcessing} />
+                </Col>
+              </Row>
               <Row className='donate-support'>
                 <Col xs={12}>
                   <hr />
