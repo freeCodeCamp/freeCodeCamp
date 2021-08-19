@@ -88,7 +88,7 @@ async (getUserInput) => {
 };
 ```
 
-The returned response will be an object with `username` and `_id` properties.
+The returned response from `POST /api/users` with form data `username` will be an object with `username` and `_id` properties.
 
 ```js
 async (getUserInput) => {
