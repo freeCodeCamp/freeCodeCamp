@@ -767,13 +767,17 @@ const Editor = (props: EditorProps): JSX.Element => {
       // editor
       const secondRange = model.getDecorationRange(endEditDecId);
       if (firstRange && secondRange) {
-        const { startLineNumber, endLineNumber } = getLinesBetweenRanges(
-          firstRange,
-          secondRange
-        );
+        const editableRegion = getLinesBetweenRanges(firstRange, secondRange);
+        const startLineNumber = editableRegion.startLineNumber;
 
-        // TODO: endLineNumber can outside the editor, which is odd. We should
-        // defensively code to handle this, but really it should never happen.
+        let endLineNumber = editableRegion.endLineNumber;
+
+        // TODO: this prevents the editor from crashing, but it's still possible
+        // for the editable region to become empty and for the editable
+        // decorations to get out of sync with the jaw locations.
+        endLineNumber = Math.max(endLineNumber, startLineNumber + 1);
+        endLineNumber = Math.min(endLineNumber, model.getLineCount());
+
         const endColumn = model.getLineLength(endLineNumber) + 1;
         return new monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
       }
