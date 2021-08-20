@@ -9,7 +9,7 @@ import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const mapStateToProps = (state: any, props: ICertificationProps) =>
+const mapStateToProps = (state: any, props: CertificationProps) =>
   createSelector(
     certificatesByNameSelector(props.username),
     ({
@@ -18,7 +18,7 @@ const mapStateToProps = (state: any, props: ICertificationProps) =>
       currentCerts,
       legacyCerts
     }: Pick<
-      ICertificationProps,
+      CertificationProps,
       'hasModernCert' | 'hasLegacyCert' | 'currentCerts' | 'legacyCerts'
     >) => ({
       hasModernCert,
@@ -31,23 +31,23 @@ const mapStateToProps = (state: any, props: ICertificationProps) =>
     // @ts-ignore
   )(state, props);
 
-interface ICert {
+interface Cert {
   show: boolean;
   title: string;
   certSlug: string;
 }
 
-interface ICertificationProps {
-  currentCerts?: ICert[];
+interface CertificationProps {
+  currentCerts?: Cert[];
   hasLegacyCert?: boolean;
   hasModernCert?: boolean;
-  legacyCerts?: ICert[];
+  legacyCerts?: Cert[];
   username: string;
 }
 
 interface CertLinkProps {
   username: string;
-  cert: ICert;
+  cert: Cert;
 }
 
 function CertLink({ username, cert }: CertLinkProps): JSX.Element {
@@ -75,7 +75,7 @@ function Certificates({
   hasLegacyCert,
   hasModernCert,
   username
-}: ICertificationProps): JSX.Element {
+}: CertificationProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <FullWidthRow className='certifications'>
