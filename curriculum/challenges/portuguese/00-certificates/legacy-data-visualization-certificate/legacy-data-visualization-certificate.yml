@@ -6,31 +6,31 @@ isPrivate: true
 tests:
   - 
     id: bd7157d8c242eddfaeb5bd13
-    title: Crie um pré-visualizador de markdown
+    title: Criar um pré-visualizador de markdown
   - 
     id: bd7156d8c242eddfaeb5bd13
-    title: Crie um painel de estatísticas dos campers
+    title: Criar um painel de estatísticas dos campers
   - 
     id: bd7155d8c242eddfaeb5bd13
-    title: Crie uma caixa de receitas
+    title: Criar uma caixa de receitas
   - 
     id: bd7154d8c242eddfaeb5bd13
-    title: Crie o Jogo da Vida
+    title: Criar o Jogo da Vida
   - 
     id: bd7153d8c242eddfaeb5bd13
-    title: Crie um jogo de RPG do tipo Dungeon Crawler
+    title: Criar um jogo de RPG do tipo Dungeon Crawler
   - 
     id: bd7168d8c242eddfaeb5bd13
-    title: Visualize dados com um gráfico de barras
+    title: Visualizar dados com um gráfico de barras
   - 
     id: bd7178d8c242eddfaeb5bd13
-    title: Visualize dados com um gráfico de dispersão
+    title: Visualizar dados com um gráfico de dispersão
   - 
     id: bd7188d8c242eddfaeb5bd13
-    title: Visualize dados com um mapa de calor
+    title: Visualizar dados com um mapa de calor
   - 
     id: bd7198d8c242eddfaeb5bd13
     title: Mostrar contiguidade nacional com um gráfico direcionado de força
   - 
     id: bd7108d8c242eddfaeb5bd13
-    title: Mapeamento de dados através do mundo
+    title: Mapear dados através do mundo

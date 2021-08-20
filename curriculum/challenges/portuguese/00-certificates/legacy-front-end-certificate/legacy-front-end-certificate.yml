@@ -6,31 +6,31 @@ isPrivate: true
 tests:
   - 
     id: bd7158d8c242eddfaeb5bd13
-    title: Crie uma página de portfólio pessoal
+    title: Criar uma página de portfólio pessoal
   - 
     id: bd7158d8c442eddfaeb5bd13
-    title: Crie uma máquina de citação aleatória
+    title: Criar uma máquina de citação aleatória
   - 
     id: bd7158d8c442eddfaeb5bd0f
-    title: Construa um relógio de 25 + 5
+    title: Criar um Relógio 25 + 5
   - 
     id: bd7158d8c442eddfaeb5bd17
-    title: Crie uma calculadora JavaScript
+    title: Criar uma calculadora JavaScript
   - 
     id: bd7158d8c442eddfaeb5bd10
     title: Exibir o clima local
   - 
     id: bd7158d8c442eddfaeb5bd1f
-    title: Use a API de JSON do TwitchTV
+    title: Usar a API de JSON do TwitchTV
   - 
     id: bd7158d8c442eddfaeb5bd18
-    title: Estilize stories do Camper News
+    title: Estilizar stories do Camper News
   - 
     id: bd7158d8c442eddfaeb5bd19
-    title: Crie um visualizador da Wikipédia
+    title: Criar um visualizador da Wikipédia
   - 
     id: bd7158d8c442eedfaeb5bd1c
-    title: Crie um jogo da velha
+    title: Criar um jogo da velha
   - 
     id: bd7158d8c442eddfaeb5bd1c
-    title: Crie um Genius
+    title: Criar um Genius

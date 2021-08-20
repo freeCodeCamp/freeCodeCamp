@@ -33,11 +33,15 @@ io.use(
 );
 ```
 
-记得要把 `key` 和 `store` 加到 app 的 `session` 中间件。 这样，*SocketIO* 才知道该对哪个 session 执行此配置。
+请注意，为 Socket.IO 配置 Passport 认证与我们为 API 配置的 `session` 中间件非常相似。 这是因为它们旨在使用相同的身份验证方法 — — 从 cookie 获取会话 id 并验证它。
+
+以前，当我们配置 `session` 中间件的时候，我们没有为 session 明确设置 cookie 名称（`key`）。 这是因为 `session` 包使用了默认值。 现在我们已经添加了另一个需要从 cookie 访问相同值的软件包， 我们需要在两个配置对象中设置 `key` 值。
+
+请将带有 cookie 名称的 `key` 添加到匹配 Socket.IO 密钥的 `session` 中间件。 另外，将 `store` 引用添加到选项中，靠近我们设置 `saveUninitialized: true` 的位置。 这样，Socket.IO 才知道与哪个 session 关联。
 
 <hr />
 
-接下来，我们可以定义 `success` 与 `fail` 的回调函数：
+接下来，定义 `success` 与 `fail` 回调函数：
 
 ```js
 function onAuthorizeSuccess(data, accept) {
@@ -53,15 +57,15 @@ function onAuthorizeFail(data, message, error, accept) {
 }
 ```
 
-现在，我们可以通过 `socket.request.user` 访问用户数据。 为此，你可以这样做：
+现在，我们可以通过 `socket.request.user` 访问用户对象。 例如，你可以这样做：
 
 ```js
 console.log('user ' + socket.request.user.name + ' connected');
 ```
 
-这样，我们可以在 console 里看到谁连接到了我们的服务器。
+它将在服务器控制台记录已连接的用户！
 
-完成上述要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254)的答案。
+完成以上要求后，请提交你的页面链接。 如果你遇到了问题，可以参考[这里](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254)的答案。
 
 # --hints--
 

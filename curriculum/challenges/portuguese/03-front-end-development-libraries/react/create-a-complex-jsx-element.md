@@ -52,7 +52,7 @@ A constante `JSX` deve retornar um elemento `div`.
 assert(JSX.type === 'div');
 ```
 
-O `div` deve conter uma tag `h1` como o primeiro elemento.
+A `div` deve conter uma tag `h1` como o primeiro elemento.
 
 ```js
 assert(JSX.props.children[0].type === 'h1');
@@ -64,7 +64,7 @@ A `div` deve conter uma tag `p` como o segundo elemento.
 assert(JSX.props.children[1].type === 'p');
 ```
 
-O `div` deve conter uma tag `ul` como o terceiro elemento.
+A `div` deve conter uma tag `ul` como o terceiro elemento.
 
 ```js
 assert(JSX.props.children[2].type === 'ul');

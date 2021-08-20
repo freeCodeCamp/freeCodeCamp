@@ -35,7 +35,7 @@ Você deve deixar o `$(document).ready(function() {` no início do seu elemento 
 assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
 ```
 
-Você deve deixar intacto o fechamento `});` da função `document.ready`.
+Você deve deixar intacto o fechamento `})` da função `document.ready`.
 
 ```js
 assert(code.match(/.*\s*\}\);/g));

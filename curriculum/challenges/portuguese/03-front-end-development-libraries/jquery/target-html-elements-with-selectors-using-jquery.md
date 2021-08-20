@@ -23,7 +23,7 @@ Por exemplo, vamos fazer todos os nossos elementos `button` quicar. Basta adicio
 $("button").addClass("animated bounce");
 ```
 
-Note que nós já incluímos ambas as bibliotecas jQuery e Animate.css por trás dos panos para que você possa utilizá-las no editor.  Então você está usando jQuery para aplicar a classe `bounce` do Animate.css ao seus elementos `button`.
+Note que nós já incluímos ambas as bibliotecas jQuery e Animate.css por trás dos panos para que você possa utilizá-las no editor. Então você está usando jQuery para aplicar a classe `bounce` do Animate.css ao seus elementos `button`.
 
 # --hints--
 
@@ -39,7 +39,7 @@ Você deve usar apenas jQuery para adicionar essas classes ao elemento.
 assert(!code.match(/class.*animated/g));
 ```
 
-Seu código jQuery deve estar dentro da função `$(document).ready()`.
+Seu código jQuery deve estar dentro da função `$(document).ready();`.
 
 ```js
 assert(

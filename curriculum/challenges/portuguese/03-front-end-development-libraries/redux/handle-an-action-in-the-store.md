@@ -18,7 +18,7 @@ O editor de código tem o exemplo anterior, bem como o início de uma função `
 
 # --hints--
 
-Chamar a função `loginAction` deve retornar um objeto com a propriedade `type` definida para a string `LOGIN`.
+Chamar a função `loginAction` deve retornar um objeto com a propriedade type definida para a string `LOGIN`.
 
 ```js
 assert(loginAction().type === 'LOGIN');

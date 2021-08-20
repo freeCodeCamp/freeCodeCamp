@@ -1,6 +1,6 @@
 ---
 id: 5900f50d1000cf542c51001f
-title: 'Problem 417: Reciprocal cycles II'
+title: 'Problema 417: Dízimas periódicas'
 challengeType: 5
 forumTopicId: 302086
 dashedName: problem-417-reciprocal-cycles-ii
@@ -8,24 +8,24 @@ dashedName: problem-417-reciprocal-cycles-ii
 
 # --description--
 
-A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:
+Em uma fração unitária, o numerador é 1. A representação decimal das frações unitárias com denominadores de 2 a 10 é a seguinte:
 
-1/2= 0.5 1/3= 0.(3) 1/4= 0.25 1/5= 0.2 1/6= 0.1(6) 1/7= 0.(142857) 1/8= 0.125 1/9= 0.(1) 1/10= 0.1
+$$\begin{align} & \frac{1}{2}  = 0.5 \\\\ & \frac{1}{3}  = 0.(3) \\\\ & \frac{1}{4}  = 0.25 \\\\ & \frac{1}{5}  = 0.2 \\\\ & \frac{1}{6}  = 0.1(6) \\\\ & \frac{1}{7}  = 0.(142857) \\\\ & \frac{1}{8}  = 0.125 \\\\ & \frac{1}{9}  = 0.(1) \\\\ & \frac{1}{10} = 0.1 \\\\ \end{align}$$
 
-Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.
+A expressão $0.1(6)$ significa $0.16666666\dots$, e tem um ciclo recorrente de 1 algarismo. Pode ser visto que $\frac{1}{7}$ tem um ciclo recorrente de 6 dígitos.
 
-Unit fractions whose denominator has no other prime factors than 2 and/or 5 are not considered to have a recurring cycle. We define the length of the recurring cycle of those unit fractions as 0.
+Frações unitárias cujo denominador não tem outros fatores primos além de 2 e/ou 5 não são consideradas como tendo um ciclo recorrente. Definimos 0 como o comprimento do ciclo recorrente dessas frações unitárias.
 
-Let L(n) denote the length of the recurring cycle of 1/n. You are given that ∑L(n) for 3 ≤ n ≤ 1 000 000 equals 55535191115.
+Considere que $L(n)$ denota o comprimento do ciclo recorrente de $\frac{1}{n}$. Você recebe a informação de que $\sum L(n)$ por $3 ≤ n ≤ 1\\,000\\,000$ é igual a $55\\,535\\,191\\,115$.
 
-Find ∑L(n) for 3 ≤ n ≤ 100 000 000
+Calcule $\sum L(n)$ por $3 ≤ n ≤ 100\\,000\\,000$.
 
 # --hints--
 
-`euler417()` should return 446572970925740.
+`reciprocalCyclesTwo()` deve retornar `446572970925740`.
 
 ```js
-assert.strictEqual(euler417(), 446572970925740);
+assert.strictEqual(reciprocalCyclesTwo(), 446572970925740);
 ```
 
 # --seed--
@@ -33,12 +33,12 @@ assert.strictEqual(euler417(), 446572970925740);
 ## --seed-contents--
 
 ```js
-function euler417() {
+function reciprocalCyclesTwo() {
 
   return true;
 }
 
-euler417();
+reciprocalCyclesTwo();
 ```
 
 # --solutions--

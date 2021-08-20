@@ -23,7 +23,7 @@ Conway forneceu um programa para números primos em FRACTRAN:
 
 $\\dfrac{17}{91}$, $\\dfrac{78}{85}$, $\\dfrac{19}{51}$, $\\dfrac{23}{38}$, $\\dfrac{29}{33}$, $\\dfrac{77}{29}$, $\\dfrac{95}{23}$, $\\dfrac{77}{19}$, $\\dfrac{1}{17}$, $\\dfrac{11}{13}$, $\\dfrac{13}{11}$, $\\dfrac{15}{14}$, $\\dfrac{15}{2}$, $\\dfrac{55}{1}$
 
-Começando com $n=2$, este programa em FRACTRAN mudará $n$ para $15=2\\vezes (\\frac{15}{2})$, então $825=15\\vezes (\\frac{55}{1})$, gerando a seguinte sequência de inteiros:
+Começando com $n=2$, este programa em FRACTRAN mudará $n$ para $15=2\\times (\\frac{15}{2})$, então $825=15\\times (\\frac{55}{1})$, gerando a seguinte sequência de inteiros:
 
 $2$, $15$, $825$, $725$, $1925$, $2275$, $425$, $390$, $330$, $290$, $770$, $\\ldots$
 

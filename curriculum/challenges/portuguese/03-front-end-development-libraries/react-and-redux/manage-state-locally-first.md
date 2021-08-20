@@ -20,7 +20,7 @@ Finalmente, use o `ul` para mapear em cima do array `messages` e o renderize na 
 
 # --hints--
 
-O componente `DisplayMessages` deve inicializar com o estado igual a `{ input: "", messages: []}`.
+O componente `DisplayMessages` deve inicializar com o estado igual a `{ input: "", messages: [] }`.
 
 ```js
 assert(

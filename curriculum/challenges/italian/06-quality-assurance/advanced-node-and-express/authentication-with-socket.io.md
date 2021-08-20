@@ -33,11 +33,15 @@ io.use(
 );
 ```
 
-Assicurati di aggiungere la `key` e lo `store` al middleware `session` montato sull'app. Questo è necessario per dire a *SocketIO* a quale sessione riferirsi.
+Nota che la configurazione dell'autenticazione Passport per Socket.IO è molto simile a quella che abbiamo preparato per il middleware `session` per l'API. Questo perché utilizzano lo stesso metodo di autenticazione - ottenere l'id di sessione da un cookie e convalidarlo.
+
+In precedenza, quando abbiamo configurato il middleware `session`, non abbiamo esplicitamente impostato il nome del cookie per la sessione (`key`). Questo perché il pacchetto `session` usava il valore predefinito. Ora che abbiamo aggiunto un altro pacchetto che necessita di accedere allo stesso valore dai cookie, abbiamo bisogno di impostare esplicitamente il valore `key` in entrambi gli oggetti di configurazione.
+
+Assicurati di aggiungere la `key` con il nome del cookie al middleware `session` che corrisponde alla chiave Socket.IO. Inoltre, aggiungi il riferimento `store` alle opzioni, vicino a dove abbiamo impostato `saveUninitialized: true`. Questo è necessario per dire a Socket.IO a quale sessione deve fare riferimento.
 
 <hr />
 
-Ora, definisci le funzioni di callback per `success` e `fail`:
+Ora definisci le funzioni di callback per `success` e `fail`:
 
 ```js
 function onAuthorizeSuccess(data, accept) {
@@ -61,7 +65,7 @@ console.log('user ' + socket.request.user.name + ' connected');
 
 Scriverà sulla console del server chi si è connesso!
 
-Invia la tua pagina quando pensi che sia corretto. Se dovessi incontrare degli errori, puoi controllare il progetto fino a questo punto [qui](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se dovessi incontrare degli errori, puoi controllare il progetto fino a questo punto [qui](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
 
 # --hints--
 
@@ -103,7 +107,7 @@ Invia la tua pagina quando pensi che sia corretto. Se dovessi incontrare degli e
   );
 ```
 
-passportSocketIo dovrebbe essere richiesta correttamente.
+passportSocketIo dovrebbe essere richiesto correttamente.
 
 ```js
 (getUserInput) =>
@@ -121,7 +125,7 @@ passportSocketIo dovrebbe essere richiesta correttamente.
   );
 ```
 
-passportSocketIo dovrebbe essere configurata correttamente.
+passportSocketIo dovrebbe essere configurato correttamente.
 
 ```js
 (getUserInput) =>

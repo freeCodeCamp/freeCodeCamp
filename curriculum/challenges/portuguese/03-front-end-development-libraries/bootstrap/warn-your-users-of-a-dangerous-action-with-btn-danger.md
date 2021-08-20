@@ -12,7 +12,7 @@ O Bootstrap vem com diversas cores predefinidas para botões. A classe `btn-dang
 
 Crie um botão com o texto `Delete` e dê a ele a classe `btn-danger`.
 
-Observe que esses botões ainda precisam das classes `btn` e `btn-block`.
+Note que esses botões ainda precisam das classes `btn` e `btn-block`.
 
 # --hints--
 

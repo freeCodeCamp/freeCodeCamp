@@ -28,7 +28,7 @@ Adicione a versão "2.14.0" do pacote "moment" ao campo `dependencies` do seu ar
 
 # --hints--
 
-"dependencies" deve incluir o "moment"
+As "dependencies" devem incluir o "moment"
 
 ```js
 (getUserInput) =>
