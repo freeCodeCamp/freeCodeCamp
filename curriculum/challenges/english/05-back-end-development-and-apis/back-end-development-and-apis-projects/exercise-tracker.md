@@ -136,7 +136,7 @@ async(getUserInput) => {
 };
 ```
 
-Each element in the `GET /api/users` array is an object literal containing a user's `username` and `_id`.
+Each element in the array returned from `GET /api/users` is an object literal containing a user's `username` and `_id`.
 
 ```js
 async(getUserInput) => {
