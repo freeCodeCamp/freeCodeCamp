@@ -1,5 +1,4 @@
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { curry } from 'lodash-es';
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -46,11 +45,15 @@ interface ICertificationProps {
   username: string;
 }
 
-function renderCertShow(username: string, cert: ICert): React.ReactNode {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+interface CertLinkProps {
+  username: string;
+  cert: ICert;
+}
+
+function CertLink({ username, cert }: CertLinkProps): JSX.Element {
   const { t } = useTranslation();
-  return cert.show ? (
-    <Fragment key={cert.title}>
+  return (
+    <>
       <Row>
         <Col className='certifications' sm={10} smPush={1}>
           <Link
@@ -62,8 +65,8 @@ function renderCertShow(username: string, cert: ICert): React.ReactNode {
         </Col>
       </Row>
       <ButtonSpacer />
-    </Fragment>
-  ) : null;
+    </>
+  );
 }
 
 function Certificates({
@@ -74,13 +77,16 @@ function Certificates({
   username
 }: ICertificationProps): JSX.Element {
   const { t } = useTranslation();
-  const renderCertShowWithUsername = curry(renderCertShow)(username);
   return (
     <FullWidthRow className='certifications'>
       <h2 className='text-center'>{t('profile.fcc-certs')}</h2>
       <br />
       {hasModernCert && currentCerts ? (
-        currentCerts.map(renderCertShowWithUsername)
+        currentCerts
+          .filter(({ show }) => show)
+          .map(cert => (
+            <CertLink cert={cert} key={cert.title} username={username} />
+          ))
       ) : (
         <p className='text-center'>{t('profile.no-certs')}</p>
       )}
@@ -89,7 +95,12 @@ function Certificates({
           <br />
           <h3 className='text-center'>{t('settings.headings.legacy-certs')}</h3>
           <br />
-          {legacyCerts && legacyCerts.map(renderCertShowWithUsername)}
+          {legacyCerts &&
+            legacyCerts
+              .filter(({ show }) => show)
+              .map(cert => (
+                <CertLink cert={cert} key={cert.title} username={username} />
+              ))}
           <Spacer size={2} />
         </div>
       ) : null}
