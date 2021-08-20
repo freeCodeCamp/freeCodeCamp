@@ -33,7 +33,11 @@ export const defaultDonationFormState = {
   redirecting: false,
   processing: false,
   success: false,
-  error: ''
+  error: '',
+  loading: {
+    stripe: true,
+    paypal: true
+  }
 };
 
 const initialState = {
@@ -266,8 +270,8 @@ export const certificatesByNameSelector = username => state => {
       },
       {
         show: isFrontEndLibsCert,
-        title: 'Front End Libraries Certification',
-        certSlug: 'front-end-libraries'
+        title: 'Front End Development Libraries Certification',
+        certSlug: 'front-end-development-libraries'
       },
       {
         show: is2018DataVisCert,
@@ -276,8 +280,8 @@ export const certificatesByNameSelector = username => state => {
       },
       {
         show: isApisMicroservicesCert,
-        title: 'APIs and Microservices Certification',
-        certSlug: 'apis-and-microservices'
+        title: 'Back End Development and APIs Certification',
+        certSlug: 'back-end-development-and-apis'
       },
       {
         show: isQaCertV7,

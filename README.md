@@ -64,17 +64,17 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker),[ Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter), [Caesar's Cipher](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher), [Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator), [Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register)
 
-#### 3. [Front End Libraries Certification](https://www.freecodecamp.org/learn/front-end-libraries/)
+#### 3. [Front End Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/)
 
-- [Bootstrap](https://www.freecodecamp.org/learn/front-end-libraries/#bootstrap)
-- [jQuery](https://www.freecodecamp.org/learn/front-end-libraries/#jquery)
-- [Sass](https://www.freecodecamp.org/learn/front-end-libraries/#sass)
-- [React](https://www.freecodecamp.org/learn/front-end-libraries/#react)
-- [Redux](https://www.freecodecamp.org/learn/front-end-libraries/#redux)
-- [React and Redux](https://www.freecodecamp.org/learn/front-end-libraries/#react-and-redux)
+- [Bootstrap](https://www.freecodecamp.org/learn/front-end-development-libraries/#bootstrap)
+- [jQuery](https://www.freecodecamp.org/learn/front-end-development-libraries/#jquery)
+- [Sass](https://www.freecodecamp.org/learn/front-end-development-libraries/#sass)
+- [React](https://www.freecodecamp.org/learn/front-end-development-libraries/#react)
+- [Redux](https://www.freecodecamp.org/learn/front-end-development-libraries/#redux)
+- [React and Redux](https://www.freecodecamp.org/learn/front-end-development-libraries/#react-and-redux)
   <br />
   <br />
-  **Projects**: [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine), [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer), [Drum Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine), [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator), [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock)
+  **Projects**: [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine), [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer), [Drum Machine](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine), [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator), [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock)
 
 #### 4. [Data Visualization Certification](https://www.freecodecamp.org/learn/data-visualization/)
 
@@ -84,14 +84,14 @@ Here are our ten core certifications:
   <br />
   **Projects**: [Bar Chart](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart), [Scatterplot Graph](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph), [Heat Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map), [Choropleth Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map), [Treemap Diagram](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
 
-#### 5. [APIs and Microservices Certification](https://www.freecodecamp.org/learn/apis-and-microservices/)
+#### 5. [APIs and Microservices Certification](https://www.freecodecamp.org/learn/back-end-development-and-apis/)
 
-- [Managing Packages with Npm](https://www.freecodecamp.org/learn/apis-and-microservices/#managing-packages-with-npm)
-- [Basic Node and Express](https://www.freecodecamp.org/learn/apis-and-microservices/#basic-node-and-express)
-- [MongoDB and Mongoose](https://www.freecodecamp.org/learn/apis-and-microservices/#mongodb-and-mongoose)
+- [Managing Packages with Npm](https://www.freecodecamp.org/learn/back-end-development-and-apis/#managing-packages-with-npm)
+- [Basic Node and Express](https://www.freecodecamp.org/learn/back-end-development-and-apis/#basic-node-and-express)
+- [MongoDB and Mongoose](https://www.freecodecamp.org/learn/back-end-development-and-apis/#mongodb-and-mongoose)
   <br />
   <br />
-  **Projects**: [Timestamp Microservice](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice), [Request Header Parser](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/request-header-parser-microservice), [URL Shortener](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/url-shortener-microservice), [Exercise Tracker](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/exercise-tracker), [File Metadata Microservice](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/file-metadata-microservice)
+  **Projects**: [Timestamp Microservice](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice), [Request Header Parser](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice), [URL Shortener](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/url-shortener-microservice), [Exercise Tracker](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker), [File Metadata Microservice](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice)
 
 #### 6. [Quality Assurance Certification](https://www.freecodecamp.org/learn/quality-assurance/)
 
@@ -134,7 +134,7 @@ Here are our ten core certifications:
 
 #### Legacy Full Stack Development Certification
 
-Once you have earned the Responsive Web Design, Algorithms and Data Structures, Front End Libraries, Data Visualization, APIs and Microservices, and Legacy Information Security and Quality Assurance certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This distinction signifies that you've completed around 1,800 hours of coding with a wide range of web development tools.
+Once you have earned the Responsive Web Design, Algorithms and Data Structures, Front End Development Libraries, Data Visualization, Back End Development and APIs, and Legacy Information Security and Quality Assurance certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This distinction signifies that you've completed around 1,800 hours of coding with a wide range of web development tools.
 
 #### Legacy Certifications
 

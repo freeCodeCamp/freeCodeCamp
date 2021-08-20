@@ -28,7 +28,7 @@ const {
   legacyInfosecQaId,
   legacyFullStackId,
   respWebDesignId,
-  frontEndLibsId,
+  frontEndDevLibsId,
   jsAlgoDataStructId,
   dataVis2018Id,
   apisMicroservicesId,
@@ -92,7 +92,7 @@ function createCertTypeIds(allChallenges) {
 
     // modern
     [certTypes.respWebDesign]: getCertById(respWebDesignId, allChallenges),
-    [certTypes.frontEndLibs]: getCertById(frontEndLibsId, allChallenges),
+    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, allChallenges),
     [certTypes.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
     [certTypes.jsAlgoDataStruct]: getCertById(
       jsAlgoDataStructId,

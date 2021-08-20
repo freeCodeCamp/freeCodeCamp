@@ -10,29 +10,37 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-No próximo exemplo, veremos como enviar dados em uma payload de solicitação (corpo). Vamos testar uma solicitação de PUT. O endpoint `'/travellers'` aceita um objeto JSON que tem essa estrutura:
+Ao testar uma solicitação de `PUT`, você geralmente envia dados com ela. Os dados que você inclui com sua solicitação de `PUT` são chamados de corpo (body) da solicitação.
+
+Para enviar uma solicitação de `PUT` e um objeto JSON para o endpoint `'/travellers'`, você pode usar os métodos `put` e `send` do plugin `chai-http`:
+
+```js
+chai
+  .request(server)
+  .put('/travellers')
+  .send({
+    "surname": [last name of a traveller of the past]
+  })
+  ...
+```
+
+A rota responderá com:
 
 ```json
 {
-  "surname": [last name of a traveller of the past]
+  "name": [first name],
+  "surname": [last name],
+  "dates": [birth - death years]
 }
 ```
 
-A rota responde com:
-
-```json
-{
-  "name": [first name], "surname": [last name], "dates": [birth - death years]
-}
-```
-
-Veja o código do servidor para mais detalhes.
+Consulte o código do servidor para ver as diferentes respostas para o endpoint `'/travellers'`.
 
 # --instructions--
 
-Dentro de `tests/2_functional-tests.js`, altere o teste `'send {surname: "Colombo"}'` test (`// #3`):
+Em `tests/2_functional-tests.js`, altere o teste `'Send {surname: "Colombo"}'` (`// #3`) e use os métodos `put` e `send` para testar o endpoint  `'/travellers'`.
 
-Enviar a seguinte resposta JSON como payload:
+Envie o objeto JSON a seguir com a sua solicitação de PUT:
 
 ```json
 {
@@ -40,14 +48,14 @@ Enviar a seguinte resposta JSON como payload:
 }
 ```
 
-Verifique o seguinte, dentro da função de callback de `request.end`:
+Verifique o seguinte dentro da função de callback de `request.end`:
 
-1.  `status`
-2.  `type`
-3.  `body.name`
-4.  `body.surname`
+1.  O `status` deve ser `200`
+2.  O `type` deve ser `application/json`
+3.  O `body.name` deve ser `Cristoforo`
+4.  O `body.surname` deve ser `Colombo`
 
-Siga a ordem de declarações acima, pois dependemos disso. Não se esqueça de remover `assert.fail()` assim que o teste terminar.
+Siga a ordem de declarações acima, pois dependemos disso. Além disso, não se esqueça de remover `assert.fail()` assim que o teste terminar.
 
 # --hints--
 
@@ -65,7 +73,7 @@ Todos os testes devem passar.
   );
 ```
 
-Você deve testar se 'res.status' será 200.
+Você deve testar se `res.status` será 200.
 
 ```js
 (getUserInput) =>
@@ -81,7 +89,7 @@ Você deve testar se 'res.status' será 200.
   );
 ```
 
-Você deve testar se 'res.type' será 'application/json'.
+Você deve testar se `res.type` será `'application/json'`.
 
 ```js
 (getUserInput) =>
@@ -97,7 +105,7 @@ Você deve testar se 'res.type' será 'application/json'.
   );
 ```
 
-Você deve testar se 'res.body.name' será 'Cristoforo'.
+Você deve testar se `res.body.name` será `'Cristoforo'`.
 
 ```js
 (getUserInput) =>
@@ -113,7 +121,7 @@ Você deve testar se 'res.body.name' será 'Cristoforo'.
   );
 ```
 
-Você deve testar se 'res.body.surname' será 'Colombo'.
+Você deve testar se `res.body.surname` será `'Colombo'`.
 
 ```js
 (getUserInput) =>

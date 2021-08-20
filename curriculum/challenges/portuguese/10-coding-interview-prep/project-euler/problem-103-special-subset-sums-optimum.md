@@ -1,6 +1,6 @@
 ---
 id: 5900f3d61000cf542c50fee7
-title: 'Problem 103: Special subset sums: optimum'
+title: 'Problema 103: Quantidade especial de subconjuntos: ideal'
 challengeType: 5
 forumTopicId: 301727
 dashedName: problem-103-special-subset-sums-optimum
@@ -8,26 +8,26 @@ dashedName: problem-103-special-subset-sums-optimum
 
 # --description--
 
-Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+Vamos $S(A)$ representar a soma dos elementos no conjunto A, de tamanho n. Vamos chamá-la de uma soma especial definida se, para dois subconjuntos disjuntos, B e C, as seguintes propriedades são verdadeiras:
 
-1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+1. $S(B) ≠ S(C)$; ou seja, somas de subconjuntos não podem ser iguais.
+2. Se B contém mais elementos que C, $S(B) > S(C)$.
 
-If $S(A)$ is minimised for a given n, we shall call it an optimum special sum set. The first five optimum special sum sets are given below.
+Se $S(A)$ for minimizado por um determinado n, vamos chamar de um conjunto de soma especial ideal. Os primeiros cinco conjuntos de somas especiais ideais são fornecidos abaixo.
 
 $$\begin{align} & n = 1: \\{1\\} \\\\ & n = 2: \\{1, 2\\} \\\\ & n = 3: \\{2, 3, 4\\} \\\\ & n = 4: \\{3, 5, 6, 7\\} \\\\ & n = 5: \\{6, 9, 11, 12, 13\\} \\\\ \end{align}$$
 
-It seems that for a given optimum set, $A = \\{a_1, a_2, \ldots, a_n\\}$, the next optimum set is of the form $B = \\{b, a_1 + b, a_2 + b, \ldots, a_n + b\\}$, where b is the "middle" element on the previous row.
+Parece que, para um determinado conjunto ideal, $A = \\{a_1, a_2, \ldots, a_n\\}$, o próximo conjunto ideal é do formato $B = \\{b, a_1 + b, a_2 + b, \ldots, a_n + b\\}$, onde b é o elemento do "meio" na linha anterior.
 
-By applying this "rule" we would expect the optimum set for $n = 6$ to be $A = \\{11, 17, 20, 22, 23, 24\\}$, with $S(A) = 117$. However, this is not the optimum set, as we have merely applied an algorithm to provide a near optimum set. The optimum set for $n = 6$ is $A = \\{11, 18, 19, 20, 22, 25\\}$, with $S(A) = 115$ and corresponding set string: `111819202225`.
+Aplicando esta "regra", esperaríamos que o conjunto ideal para $n = 6$ fosse $A = \\{11, 17, 20, 22, 23, 24\\}$, com $S(A) = 117$. No entanto, este não é o conjunto ideal, já que apenas aplicamos um algoritmo para fornecer um conjunto quase ideal. O conjunto ideal para $n = 6$ é $A = \\{11, 18, 19, 20, 22, 25\\}$, com $S(A) = 115$ e string correspondente do conjunto: `111819202225`.
 
-Given that A is an optimum special sum set for $n = 7$, find its set string.
+Dado que A é uma soma especial ideal para $n = 7$, encontre sua string definida.
 
-**Note:** This problem is related to Problem 105 and Problem 106.
+**Observação:** este problema está relacionado ao Problema 105 e ao Problema 106.
 
 # --hints--
 
-`optimumSpecialSumSet()` should return the string `20313839404245`.
+`optimumSpecialSumSet()` deve retornar a string `20313839404245`.
 
 ```js
 assert.strictEqual(optimumSpecialSumSet(), '20313839404245');

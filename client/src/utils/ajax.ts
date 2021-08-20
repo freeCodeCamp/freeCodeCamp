@@ -1,7 +1,11 @@
 import cookies from 'browser-cookies';
 import envData from '../../../config/env.json';
 
-import type { UserType } from '../redux/prop-types';
+import type {
+  ChallengeFile,
+  CompletedChallenge,
+  UserType
+} from '../redux/prop-types';
 
 const { apiLocation } = envData;
 
@@ -51,16 +55,91 @@ async function request<T>(
 /** GET **/
 
 interface SessionUser {
-  user: UserType;
+  user?: { [username: string]: UserType };
   sessionMeta: { activeDonations: number };
-  result: string;
-}
-export function getSessionUser(): Promise<SessionUser> {
-  return get('/user/get-session-user');
 }
 
-export function getUserProfile(username: string): Promise<UserType> {
-  return get(`/api/users/get-public-profile?username=${username}`);
+type challengeFilesForFiles = {
+  files: Array<Omit<ChallengeFile, 'fileKey'> & { key: string }>;
+} & Omit<CompletedChallenge, 'challengeFiles'>;
+
+type ApiSessionResponse = Omit<SessionUser, 'user'>;
+type ApiUser = {
+  user: {
+    [username: string]: ApiUserType;
+  };
+  result?: string;
+};
+
+type ApiUserType = Omit<UserType, 'completedChallenges'> & {
+  completedChallenges?: challengeFilesForFiles[];
+};
+
+type UserResponseType = {
+  user: { [username: string]: UserType } | Record<string, never>;
+  result: string | undefined;
+};
+
+function parseApiResponseToClientUser(data: ApiUser): UserResponseType {
+  const userData = data.user?.[data?.result ?? ''];
+  let completedChallenges: CompletedChallenge[] = [];
+  if (userData) {
+    completedChallenges =
+      userData.completedChallenges?.reduce(
+        (acc: CompletedChallenge[], curr: challengeFilesForFiles) => {
+          return [
+            ...acc,
+            {
+              ...curr,
+              challengeFiles: curr.files.map(({ key: fileKey, ...file }) => ({
+                ...file,
+                fileKey
+              }))
+            }
+          ];
+        },
+        []
+      ) ?? [];
+  }
+  return {
+    user: { [data.result ?? '']: { ...userData, completedChallenges } },
+    result: data.result
+  };
+}
+
+export function getSessionUser(): Promise<SessionUser> {
+  const response: Promise<ApiUser & ApiSessionResponse> = get(
+    '/user/get-session-user'
+  );
+  // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
+  return response.then(data => {
+    const { result, user } = parseApiResponseToClientUser(data);
+    return {
+      sessionMeta: data.sessionMeta,
+      result,
+      user
+    };
+  });
+}
+
+type UserProfileResponse = {
+  entities: Omit<UserResponseType, 'result'>;
+  result: string | undefined;
+};
+export function getUserProfile(username: string): Promise<UserProfileResponse> {
+  const response: Promise<{ entities?: ApiUser; result?: string }> = get(
+    `/api/users/get-public-profile?username=${username}`
+  );
+  return response.then(data => {
+    const { result, user } = parseApiResponseToClientUser({
+      user: data.entities?.user ?? {},
+      result: data.result
+    });
+    return {
+      entities: { user },
+      result
+    };
+  });
 }
 
 interface Cert {
