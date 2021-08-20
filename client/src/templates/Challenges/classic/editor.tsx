@@ -365,7 +365,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E],
       run: () => {
         const currentAccessibility = storedAccessibilityMode();
-        
+
         store.set('accessibilityMode', !currentAccessibility);
 
         editor.updateOptions({
@@ -773,9 +773,8 @@ const Editor = (props: EditorProps): JSX.Element => {
           secondRange
         );
 
-        // getValueInRange includes column x if
-        // startColumnNumber <= x < endColumnNumber
-        // so we add 1 here
+        // TODO: endLineNumber can outside the editor, which is odd. We should
+        // defensively code to handle this, but really it should never happen.
         const endColumn = model.getLineLength(endLineNumber) + 1;
         return new monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
       }
@@ -796,14 +795,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { model } = data;
     const monaco = monacoRef.current;
     if (!model || !monaco) return;
-    const forbiddenRanges: [number, number][] = [
+    const forbiddenRegions: [number, number][] = [
       [0, editableRegion[0]],
       [editableRegion[1], model.getLineCount()]
     ];
-
-    const ranges = forbiddenRanges.map(positions => {
-      return positionsToRange(model, monaco, positions);
-    });
 
     const editableRange = positionsToRange(model, monaco, [
       editableRegion[0] + 1,
@@ -818,34 +813,40 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     // if the forbidden range includes the top of the editor
     // we simply don't add those decorations
-    if (forbiddenRanges[0][1] > 0) {
+    if (forbiddenRegions[0][1] > 0) {
+      const forbiddenRange = positionsToRange(
+        model,
+        monaco,
+        forbiddenRegions[0]
+      );
       // the first range should expand at the top
       // TODO: Unsure what this should be - returns an array, so I added [0] @ojeytonwilliams
       data.startEditDecId = highlightLines(
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
         model,
-        ranges[0]
+        forbiddenRange
       )[0];
 
       highlightText(
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
         model,
-        ranges[0]
+        forbiddenRange
       );
     }
 
+    const forbiddenRange = positionsToRange(model, monaco, forbiddenRegions[1]);
     // TODO: handle the case the region covers the bottom of the editor
     // the second range should expand at the bottom
     data.endEditDecId = highlightLines(
       monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
       model,
-      ranges[1]
+      forbiddenRange
     )[0];
 
     highlightText(
       monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
       model,
-      ranges[1]
+      forbiddenRange
     );
 
     // The deleted line is always considered to be the one that has moved up.
