@@ -28,7 +28,7 @@ var ourStr = "I come first. " + "I come second.";
 The string `I come first. I come second.` would be displayed in the console.
 # --instructions--
 
-Build `myStr` from the strings <pre><code>`This is the start. `</code></pre> and `This is the end.` using the `+` operator.
+Build `myStr` from the strings <pre>`This is the start. `</pre> and `This is the end.` using the `+` operator.
 
 # --hints--
 

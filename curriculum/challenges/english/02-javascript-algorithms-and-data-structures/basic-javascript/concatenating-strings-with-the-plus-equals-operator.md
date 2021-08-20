@@ -24,7 +24,7 @@ ourStr += "I come second.";
 
 # --instructions--
 
-Build `myStr` over several lines by concatenating these two strings: <pre><code>`This is the first sentence. `</code></pre> and `This is the second sentence.` using the `+=` operator. Use the `+=` operator similar to how it is shown in the example. Start by assigning the first string to `myStr`, then add on the second string.
+Build `myStr` over several lines by concatenating these two strings: <pre>`This is the first sentence. `</pre> and `This is the second sentence.` using the `+=` operator. Use the `+=` operator similar to how it is shown in the example. Start by assigning the first string to `myStr`, then add on the second string.
 
 # --hints--
 
