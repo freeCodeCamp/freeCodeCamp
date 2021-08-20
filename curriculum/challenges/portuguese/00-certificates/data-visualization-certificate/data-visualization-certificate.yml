@@ -6,16 +6,16 @@ isPrivate: true
 tests:
   - 
     id: bd7168d8c242eddfaeb5bd13
-    title: Visualize dados com um gráfico de barras
+    title: Visualizar dados com um gráfico de barras
   - 
     id: bd7178d8c242eddfaeb5bd13
-    title: Visualize dados com um gráfico de dispersão
+    title: Visualizar dados com um gráfico de dispersão
   - 
     id: bd7188d8c242eddfaeb5bd13
-    title: Visualize dados com um mapa de calor
+    title: Visualizar dados com um mapa de calor
   - 
     id: 587d7fa6367417b2b2512bbf
-    title: Visualize dados com um mapa coroplético
+    title: Visualizar dados com um mapa coroplético
   - 
     id: 587d7fa6367417b2b2512bc0
-    title: Visualize dados com um diagrama Treemap
+    title: Visualizar dados com um diagrama Treemap

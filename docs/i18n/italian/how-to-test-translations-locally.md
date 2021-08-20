@@ -85,7 +85,7 @@ const algoliaIndices = {
 };
 ```
 
-Quindi, devi dire al client quali certificazioni sono tradotte e quali sono ancora in inglese. Apri il file `utils/is-audited.js`. Aggiungi a `auditedCerts` una nuova chiave con il valore della tua lingua in `availableLangs`. Assegna a quella chiave un array contenente i _nomi con trattino_ per le certificazioni che sono state tradotte. Riferisciti ai dati esistenti per i nomi con trattino.
+Quindi, devi dire al client quali certificazioni sono tradotte e quali sono ancora in inglese. Apri il file `utils/is-audited.js`. Aggiungi a `auditedCerts` una nuova chiave con il valore della tua lingua in `availableLangs`. Assign the value of that key to an array containing the _dashed names_ for the certifications that have been translated. Riferisciti ai dati esistenti per i nomi con trattino.
 
 Continuando il lavoro per attivare Dothraki, abbiamo tradotto le prime tre certificazioni:
 
@@ -134,4 +134,4 @@ Una volta che avrai i file, li dovrai mettere nelle cartelle giuste. Per le sfid
 
 Una volta che questi saranno in posizione, dovresti essere in grado di eseguire `npm run develop` per vedere la versione tradotta di freeCodeCamp.
 
-> [!ATTENTION] Anche se puoi farei delle traduzioni localmente per i test, ricordiamo che le traduzioni _non_ devono essere inviate attraverso GitHub ma solo tramite Crowdin. Assicurati di resettare il tuo codebase locale dopo che avrai finito con i test.
+> [!ATTENTION] While you may perform translations locally for the purpose of testing, we remind everyone that translations should _not_ be submitted through GitHub and should only be done through Crowdin. Assicurati di resettare il tuo codebase locale dopo che avrai finito con i test.

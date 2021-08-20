@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec2
-title: Jaro distance
+title: Distância de Jaro
 challengeType: 5
 forumTopicId: 302292
 dashedName: jaro-distance
@@ -8,28 +8,28 @@ dashedName: jaro-distance
 
 # --description--
 
-The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that `0` equates to no similarity and `1` is an exact match.
+A distância de Jaro é uma medida de semelhança entre duas strings. Quanto maior a distância de Jaro entre as duas strings, mais parecidas elas são. A pontuação é normalizada, de modo que `0` é igual a nenhuma similaridade e `1` é uma correspondência exata.
 
-**Definition**
+**Definição**
 
-The Jaro distance \\( d_j \\) of two given strings \\(s_1\\) and \\(s_2\\) is
+A distância de Jaro \\( d_j \\) de duas strings fornecidas \\(s_1\\) e \\(s_2\\) é
 
 \\begin{align}d_j = \\begin{cases}0& & \\text{if }m=0 \\\\\\\\{\\frac {1}{3}}\\left({\\frac {m}{|s\_{1}|}}+{\\frac {m}{|s\_{2}|}}+{\\frac {m-t}{m}}\\right)& & \\text{otherwise}\\end{cases}\\end{align}
 
-Where:
+Onde:
 
 <ul>
-  <li>\(m\) is the number of <i>matching characters</i>;</li>
-  <li> \(t\) is half the number of <i>transpositions</i>.</li>
+  <li>\(m\) é o número de <i>caracteres correspondentes</i>;</li>
+  <li> \(t\) é a metade do número de <i>transposições</i>.</li>
 </ul>
 
-Two characters from \\(s_1\\) and \\(s_2\\) respectively, are considered *matching* only if they are the same and not farther than \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).
+Dois caracteres de \\(s_1\\) e \\(s_2\\), respectivamente, são considerados *correspondentes* somente se forem iguais e não mais distante do que \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).
 
-Each character of \\(s_1\\) is compared with all its matching characters in \\(s_2\\) . The number of matching (but different sequence order) characters divided by 2 defines the number of *transpositions*.
+Cada caractere de \\(s_1\\) é comparado com todos os seus caracteres correspondentes em \\(s_2\\) . O número de caracteres correspondentes (mas em ordem sequencial diferente) dividido por 2 define o número de *transposições*.
 
-**Example**
+**Exemplo**
 
-Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
+Dadas as strings \\(s_1\\) *DWAYNE* e \\(s_2\\) *DUANE*, encontramos:
 
 <ul>
   <li>\(m = 4\)</li>
@@ -38,51 +38,51 @@ Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
   <li>\(t = 0\)</li>
 </ul>
 
-We find a Jaro score of: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
+Encontramos uma pontuação de Jaro de: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
 
 # --instructions--
 
-Write a function a that takes two strings as parameters and returns the associated Jaro distance.
+Escreva uma função que receba duas strings como parâmetros e retorne a distância de Jaro associada.
 
 # --hints--
 
-`jaro` should be a function.
+`jaro` deve ser uma função.
 
 ```js
 assert(typeof jaro == 'function');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return a number.
+`jaro("MARTHA", "MARHTA")` deve retornar um número.
 
 ```js
 assert(typeof jaro('MARTHA', 'MARHTA') == 'number');
 ```
 
-`jaro("MARTHA", "MARHTA")` should return `0.9444444444444445`.
+`jaro("MARTHA", "MARHTA")` deve retornar `0.9444444444444445`.
 
 ```js
 assert.equal(jaro('MARTHA', 'MARHTA'), 0.9444444444444445);
 ```
 
-`jaro("DIXON", "DICKSONX")` should return `0.7666666666666666`.
+`jaro("DIXON", "DICKSONX")` deve retornar `0.7666666666666666`.
 
 ```js
 assert.equal(jaro('DIXON', 'DICKSONX'), 0.7666666666666666);
 ```
 
-`jaro("JELLYFISH", "SMELLYFISH")` should return `0.8962962962962964`.
+`jaro("JELLYFISH", "SMELLYFISH")` deve retornar `0.8962962962962964`.
 
 ```js
 assert.equal(jaro('JELLYFISH', 'SMELLYFISH'), 0.8962962962962964);
 ```
 
-`jaro("HELLOS", "CHELLO")` should return `0.888888888888889`.
+`jaro("HELLOS", "CHELLO")` deve retornar `0.888888888888889`.
 
 ```js
 assert.equal(jaro('HELLOS', 'CHELLO'), 0.888888888888889);
 ```
 
-`jaro("ABCD", "BCDA")` should return `0.8333333333333334`.
+`jaro("ABCD", "BCDA")` deve retornar `0.8333333333333334`.
 
 ```js
 assert.equal(jaro('ABCD', 'BCDA'), 0.8333333333333334);

@@ -24,6 +24,7 @@ function DonateCompletion({
   const { t } = useTranslation();
   const style =
     processing || redirecting ? 'info' : success ? 'success' : 'danger';
+
   const heading = redirecting
     ? `${t('donate.redirecting')}`
     : processing
@@ -31,6 +32,7 @@ function DonateCompletion({
     : success
     ? `${t('donate.thank-you')}`
     : `${t('donate.error')}`;
+
   return (
     <Alert bsStyle={style} className='donation-completion'>
       <h4>

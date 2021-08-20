@@ -18,19 +18,19 @@ tests:
     title: Camada de abstração de pesquisa de imagens
   - 
     id: bd7158d8c443edefaeb5bd0f
-    title: Microserviço de metadados de arquivos
+    title: Microsserviço de metadados de arquivos
   - 
     id: bd7158d8c443eddfaeb5bdef
-    title: Crie um aplicativo de votação
+    title: Criar um aplicativo de votação
   - 
     id: bd7158d8c443eddfaeb5bdff
-    title: Crie um aplicativo de coordenação da vida noturna
+    title: Criar um aplicativo de coordenação da vida noturna
   - 
     id: bd7158d8c443eddfaeb5bd0e
-    title: Faça um gráfico do mercado de ações
+    title: Fazer um gráfico do mercado de ações
   - 
     id: bd7158d8c443eddfaeb5bd0f
-    title: Gerencie um clube de negociações de livros
+    title: Gerenciar um clube de negociações de livros
   - 
     id: bd7158d8c443eddfaeb5bdee
-    title: Crie um clone do Pinterest
+    title: Criar um clone do Pinterest

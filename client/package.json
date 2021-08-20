@@ -55,7 +55,7 @@
     "@loadable/component": "5.15.0",
     "@reach/router": "1.3.4",
     "@stripe/react-stripe-js": "1.4.1",
-    "@stripe/stripe-js": "1.17.0",
+    "@stripe/stripe-js": "1.17.1",
     "@types/react-scrollable-anchor": "0.6.1",
     "algoliasearch": "4.10.3",
     "assert": "2.0.0",
@@ -131,8 +131,8 @@
   },
   "devDependencies": {
     "@babel/types": "7.15.0",
-    "@codesee/babel-plugin-instrument": "0.69.0",
-    "@codesee/tracker": "0.69.0",
+    "@codesee/babel-plugin-instrument": "0.71.1",
+    "@codesee/tracker": "0.71.1",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@types/jest": "26.0.24",
@@ -165,7 +165,7 @@
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.3",
     "serve": "12.0.0",
-    "webpack": "5.50.0",
+    "webpack": "5.51.1",
     "webpack-cli": "4.8.0"
   }
 }
