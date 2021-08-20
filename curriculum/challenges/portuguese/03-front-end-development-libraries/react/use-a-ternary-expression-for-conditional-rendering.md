@@ -22,15 +22,16 @@ Uma vez que o componente está renderizando informações na página, os usuári
 
 # --hints--
 
-O componente `CheckUserAge` deve renderizar com um único elemento `input` e um único elemento</code>button`.</p>
+O componente `CheckUserAge` deve renderizar com um único elemento `input` e um único elemento`button`.
 
-<pre><code class="js">assert(
+```js
+assert(
   Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('input')
     .length === 1 &&
     Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('button')
       .length === 1
 );
-`</pre>
+```
 
 O state do componente `CheckUserAge` deve ser inicializado com uma propriedade de `userAge` e uma propriedade `input`, ambos definidos com o valor de uma string vazia.
 

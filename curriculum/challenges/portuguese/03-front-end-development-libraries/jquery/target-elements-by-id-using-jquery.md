@@ -17,7 +17,7 @@ Primeiro, vamos tomar como alvo seu elemento `button` com o id `target3` usando 
 
 Note que, assim como as declarações CSS, você digita um `#` antes do nome do id.
 
-Em seguida use a função `.addClass` do jQuery para adicionar as classes `animated` e `fadeOut`.
+Em seguida use a função `.addClass()` do jQuery para adicionar as classes `animated` e `fadeOut`.
 
 Aqui está como você faria o elemento `button` com o id `target6` desaparecer:
 

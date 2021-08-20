@@ -16,6 +16,48 @@ Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a
 
 Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 
+# --instructions--
+
+Suas respostas devem ter as seguintes estruturas.
+
+Exercício:
+
+```js
+{
+  username: "fcc_test"
+  description: "test",
+  duration: 60,
+  date: "Mon Jan 01 1990",
+  _id: "5fb5853f734231456ccb3b05"
+}
+```
+
+Usuário:
+
+```js
+{
+  username: "fcc_test",
+  _id: "5fb5853f734231456ccb3b05"
+}
+```
+
+Log:
+
+```js
+{
+  username: "fcc_test",
+  count: 1,
+  _id: "5fd01a41c5b5cf05d080502f",
+  log: [{
+    description: "test",
+    duration: 60,
+    date: "Mon Jan 01 1990",
+  }]
+}
+```
+
+**Dica:** para a propriedade `date`, o método `toDateString` da API `Date` pode ser usado para conseguir o resultado esperado.
+
 # --hints--
 
 Você deve fornecer seu próprio projeto, não o exemplo de URL.

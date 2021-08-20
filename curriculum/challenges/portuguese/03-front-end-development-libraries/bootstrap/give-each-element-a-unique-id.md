@@ -12,7 +12,7 @@ Nós também queremos ser capazes de usar jQuery para selecionar cada botão a p
 
 Dê a cada um dos botões um id único, começando com `target1` e terminando com `target6`.
 
-Certifique-se de que `target1` até `target3` estão em `#left-well`, e `target4` até `target6` estão em `#right well`.
+Certifique-se de que `target1` até `target3` estão em `#left-well`, e `target4` até `target6` estão em `#right-well`.
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: extend-one-set-of-css-styles-to-another-element
 
 # --description--
 
-Sass tem um recurso chamado `extend` que faz com que seja fácil pegar emprestado as regras CSS de um elemento e construr a partir delas em outro.
+Sass tem um recurso chamado `extend` que faz com que seja fácil pegar emprestado as regras CSS de um elemento e construir a partir delas em outro.
 
 Por exemplo, o bloco abaixo de regras CSS estiliza uma classe `.panel`. Tem um `background-color`, um `height` e um `border`.
 

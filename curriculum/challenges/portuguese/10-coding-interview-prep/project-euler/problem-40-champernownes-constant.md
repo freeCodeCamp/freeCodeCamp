@@ -1,6 +1,6 @@
 ---
 id: 5900f3941000cf542c50fea7
-title: 'Problem 40: Champernowne''s constant'
+title: 'Problema 40: Constante de Champernowne'
 challengeType: 5
 forumTopicId: 302066
 dashedName: problem-40-champernownes-constant
@@ -8,37 +8,37 @@ dashedName: problem-40-champernownes-constant
 
 # --description--
 
-An irrational decimal fraction is created by concatenating the positive integers:
+Uma fração decimal irracional é criada concatenando os números inteiros positivos:
 
 0.12345678910**1**112131415161718192021...
 
-It can be seen that the 12<sup>th</sup> digit of the fractional part is 1.
+Podemos notar que o 12º algarismo da parte fracionária é 1.
 
-If *d<sub>n</sub>* represents the *n*<sup>th</sup> digit of the fractional part, find the value of the following expression.
+Se *d<sub>n</sub>* representa o *n*-ésimo dígito da parte fracionária, encontre o valor da expressão a seguir:
 
 d<sub>1</sub> × d<sub>10</sub> × d<sub>100</sub> × d<sub>1000</sub> × d<sub>10000</sub> × d<sub>100000</sub> × d<sub>1000000</sub>
 
 # --hints--
 
-`champernownesConstant(100)` should return a number.
+`champernownesConstant(100)` deve retornar um número.
 
 ```js
 assert(typeof champernownesConstant(100) === 'number');
 ```
 
-`champernownesConstant(100)` should return 5.
+`champernownesConstant(100)` deve retornar 5.
 
 ```js
 assert.strictEqual(champernownesConstant(100), 5);
 ```
 
-`champernownesConstant(1000)` should return 15.
+`champernownesConstant(1000)` deve retornar 15.
 
 ```js
 assert.strictEqual(champernownesConstant(1000), 15);
 ```
 
-`champernownesConstant(1000000)` should return 210.
+`champernownesConstant(1000000)` deve retornar 210.
 
 ```js
 assert.strictEqual(champernownesConstant(1000000), 210);

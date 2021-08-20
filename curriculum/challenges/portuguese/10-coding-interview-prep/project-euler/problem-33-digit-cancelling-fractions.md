@@ -1,6 +1,6 @@
 ---
 id: 5900f38d1000cf542c50fea0
-title: 'Problem 33: Digit cancelling fractions'
+title: 'Problema 33: Frações com cancelamento de dígitos'
 challengeType: 5
 forumTopicId: 301987
 dashedName: problem-33-digit-cancelling-fractions
@@ -8,23 +8,23 @@ dashedName: problem-33-digit-cancelling-fractions
 
 # --description--
 
-The fraction <sup>49</sup>/<sub>98</sub> is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub>, which is correct, is obtained by cancelling the 9s.
+A fração <sup>49</sup>/<sub>98</sub> é uma fração curiosa, já que um matemático inexperiente, na tentativa de simplificá-la, pode acreditar, erroneamente, que <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub> pelo cancelamento dos dígitos 9. Embora o resultado esteja correto, o raciocínio não está.
 
-We shall consider fractions like, <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub>, to be trivial examples.
+Devemos considerar frações como, por exemplo, <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub>, como exemplos triviais.
 
-There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.
+Existem exatamente quatro exemplos não triviais desse tipo de fração, com resultado inferior a 1 e que contêm dois dígitos no numerador e no denominador.
 
-If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+Se o produto dessas quatro frações é dado por seus mínimos divisores comuns, encontre o valor do denominador.
 
 # --hints--
 
-`digitCancellingFractions()` should return a number.
+`digitCancellingFractions()` deve retornar um número.
 
 ```js
 assert(typeof digitCancellingFractions() === 'number');
 ```
 
-`digitCancellingFractions()` should return 100.
+`digitCancellingFractions()` deve retornar 100.
 
 ```js
 assert.strictEqual(digitCancellingFractions(), 100);

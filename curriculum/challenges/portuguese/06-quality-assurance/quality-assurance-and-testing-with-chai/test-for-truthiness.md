@@ -13,9 +13,9 @@ Lembrando que este projeto está sendo construído a partir do [Replit](https://
 `isTrue()` testará o valor booleano `true` e `isNotTrue()` passará quando receber qualquer coisa menos o valor booleano de `true`.
 
 ```js
-assert.isTrue(true, 'this will pass with the boolean value true');
-assert.isTrue('true', 'this will NOT pass with the string value "true"');
-assert.isTrue(1, 'this will NOT pass with the number value 1');
+assert.isTrue(true, 'This will pass with the boolean value true');
+assert.isTrue('true', 'This will NOT pass with the string value "true"');
+assert.isTrue(1, 'This will NOT pass with the number value 1');
 ```
 
 `isFalse()` e `isNotFalse()` também existem e se comportam da mesma forma que seus correspondentes true, exceto porque buscam o valor booleano `false`.

@@ -6,16 +6,16 @@ isPrivate: true
 tests:
   - 
     id: bd7158d8c442eddfaeb5bd18
-    title: Crie uma página de homenagem
+    title: Criar uma página de homenagem
   - 
     id: 587d78af367417b2b2512b03
-    title: Crie um formulário de pesquisa
+    title: Criar um formulário de pesquisa
   - 
     id: 587d78af367417b2b2512b04
-    title: Crie uma página inicial para um produto
+    title: Criar uma página inicial para um produto
   - 
     id: 587d78b0367417b2b2512b05
-    title: Crie uma página de documentação técnica
+    title: Criar uma página de documentação técnica
   - 
     id: bd7158d8c242eddfaeb5bd13
-    title: Crie uma página de portfólio pessoal
+    title: Criar uma página de portfólio pessoal

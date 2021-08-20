@@ -19,9 +19,9 @@ Primeiro, vamos ter como alvo seus elementos `div` com a classe `well` usando o 
 
 Observe que, assim como com declarações CSS, você digita um `.` antes do nome da classe.
 
-Em seguida, use a função `.addClass()` do jQuery para adicionar as classes `animated<code> e <code>shake`.
+Em seguida, use a função `.addClass()` do jQuery para adicionar as classes `animated` e `shake`.
 
-Por exemplo, você poderia fazer todos os elementos com a classe `text-primary` sacudir adicionando o seguinte ao seu `$(document).ready(function() {`:
+Por exemplo, você poderia fazer todos os elementos com a classe `text-primary` sacudir adicionando o seguinte à sua `document ready function`:
 
 ```js
 $(".text-primary").addClass("animated shake");

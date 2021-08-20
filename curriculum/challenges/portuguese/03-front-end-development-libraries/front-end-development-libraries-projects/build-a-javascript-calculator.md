@@ -12,7 +12,7 @@ dashedName: build-a-javascript-calculator
 
 Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story) e obtenha aprovação em todos os testes. Dê a ele o seu próprio estilo pessoal.
 
-Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux e jQuery para completar este projeto. Você deve usar um framework de front-end (como React, por exemplo) porque essa seção trata de aprender frameworks de front-end. Tecnologias adicionais não listadas acima não são recomendadas e usá-las é por sua conta e risco. Estamos buscando apoiar outros frameworks de front-end, como Angular e Vue, mas eles não são atualmente suportados. Vamos aceitar e tentar corrigir todos os relatórios de problemas que usem o conjunto de tecnologias sugeridas para esse projeto. Boa programação!
+Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux e JQuery para completar este projeto. Você deve usar um framework de front-end (como React por exemplo) porque essa seção trata de aprender frameworks de front-end. Tecnologias adicionais não listadas acima não são recomendadas e usá-las é por sua conta e risco. Estamos buscando apoiar outros frameworks de front-end, como Angular e Vue, mas eles não são atualmente suportados. Vamos aceitar e tentar corrigir todos os relatórios de problemas que usem o conjunto de tecnologias sugeridas para esse projeto. Boa programação!
 
 **Especificação de usuário nº 1:** minha calculadora deve conter um elemento clicável contendo um `=` (sinal de igualdade) com o `id="equals"` correspondente.
 
@@ -38,7 +38,7 @@ Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, Reac
 
 **Especificação de usuário nº 12:** eu devo ser capaz de executar qualquer operação (`+`, `-`, `*`, `/`) em números contendo pontos decimais.
 
-**User Story #13:** Se 2 ou mais operadores forem inseridos consecutivamente, a operação executada deve ser o último operador inserido, excluindo o símbolo de negação (`-`). Por exemplo, se `5 + * 7 =` for inserido, o resultado deve ser `35` (ou seja, `5 * 7`); se `5 * - 5 =` for inserido, o resultado deve ser `-25` (ou seja, `5 * (-5)`).
+**Especificação de usuário nº 13:** Se 2 ou mais operadores forem inseridos consecutivamente, a operação executada deve ser o último operador inserido, excluindo o símbolo de negação (`-`). Por exemplo, se `5 + * 7 =` for inserido, o resultado deve ser `35` (ou seja, `5 * 7`); se `5 * - 5 =` for inserido, o resultado deve ser `-25` (ou seja, `5 * (-5)`).
 
 **Especificação de usuário nº 14:** pressionar um operador imediatamente após um `=` deve iniciar um novo cálculo que opera no resultado da avaliação anterior.
 

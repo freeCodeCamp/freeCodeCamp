@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`MyComponent` deve existir e ser rendizado no DOM.
+`MyComponent` deve existir e ser renderizado no DOM.
 
 ```js
 assert(document.getElementById('challenge-node').childNodes.length === 1);

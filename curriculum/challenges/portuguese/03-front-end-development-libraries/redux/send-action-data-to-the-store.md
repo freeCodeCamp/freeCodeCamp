@@ -12,9 +12,9 @@ Até agora você aprendeu como enviar ações para a store do Redux, mas até ag
 
 # --instructions--
 
-Há dois criadores de ações básicos, `notesReducer()` e um `addNoteText()`, definidos no editor de código. Finalize o corpo da função `addNodeText()` para que ela retorne um objeto `action`. O objeto deve incluir a propriedade `type` com o valor `ADD_NOTE` e também uma propriedade `text` definida para o dado `note` que foi passado ao criador de ação. Quando você chama o criador de ação, você passará uma informação note específica que você pode acessar para o objeto.
+Há dois criadores de ações básicos, `notesReducer()` e um `addNoteText()`, definidos no editor de código. Finalize o corpo da função `addNoteText()` para que ela retorne um objeto `action`. O objeto deve incluir a propriedade `type` com o valor `ADD_NOTE` e também uma propriedade `text` definida para o dado `note` que foi passado ao criador de ação. Quando você chama o criador de ação, você passará uma informação note específica que você pode acessar para o objeto.
 
-Em seguida, termine de escreve a instrução `switch` no `notesReducer()`. Você precisa adicionar um caso que lide com ações do `addNodeText()`. Esse caso deve ser acionado sempre que há uma ação do tipo `ADD_NOTE` e ele deve retornar a propriedade `text` na `action` chegando como o novo `state`.
+Em seguida, termine de escreve a instrução `switch` no `notesReducer()`. Você precisa adicionar um caso que lide com ações do `addNoteText()`. Esse caso deve ser acionado sempre que há uma ação do tipo `ADD_NOTE` e ele deve retornar a propriedade `text` na `action` chegando como o novo `state`.
 
 A ação é despachada no final do código. Quando terminar, rode o código e olhe o console. Isso é tudo que é necessário para enviar dados específicos de ações ao store e o usar quando você atualizar o `state` do store.
 
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Despachar uma ação do tipo `ADD_NOTE` com o criador de ação `addNodeText` deve atualizar o `state` para a string passada para o criador da ação.
+Despachar uma ação do tipo `ADD_NOTE` com o criador de ação `addNoteText` deve atualizar o `state` para a string passada para o criador da ação.
 
 ```js
 assert(

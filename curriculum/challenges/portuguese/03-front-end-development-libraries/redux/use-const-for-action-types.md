@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-A função `authReducer` deve lidar com vários tipos de ação com um comando `switch`.
+A função `authReducer` deve lidar com vários tipos de ação com um comando switch.
 
 ```js
 (getUserInput) =>

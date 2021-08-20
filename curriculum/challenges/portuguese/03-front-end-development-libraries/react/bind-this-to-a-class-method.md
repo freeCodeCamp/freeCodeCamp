@@ -24,7 +24,7 @@ Assim que você completar os passos acima você deve ser capaz de clicar o botã
 
 # --hints--
 
-`MyComponent` deve retornar um elemento `div` o qual envolve dois elementos, os elementos `button` e `h1`, nessa ordem.
+`MyComponent` deve retornar um elemento `div` o qual envolve dois elementos, os elementos button e `h1`, nessa ordem.
 
 ```js
 assert(
