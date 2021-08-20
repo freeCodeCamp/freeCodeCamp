@@ -251,7 +251,7 @@ async (getUserInput) => {
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `description=${expected .description}&duration=${expected.duration}`
+      body: `description=${expected.description}&duration=${expected.duration}`
     });
     if (addRes.ok) {
       const logRes = await fetch(url + `/api/users/${_id}/logs`);
