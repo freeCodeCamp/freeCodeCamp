@@ -335,7 +335,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       null,
       () => {}
     );
-    /* eslint-disable */
+    /* eslint-enable */
     editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
@@ -369,7 +369,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         store.set('accessibilityMode', !currentAccessibility);
 
         editor.updateOptions({
-          accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto',
+          accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto'
         });
       }
     });
@@ -733,7 +733,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // TODO: TESTS!
   // Make 100% sure this is inclusive.
-  // TODO: pass around monacoRef.current instead of using the global one?
   const getLinesBetweenRanges = (
     firstRange: RangeType,
     secondRange: RangeType
@@ -876,9 +875,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       // edit, then a warned one.  Could it track that they need to make 3
       // undos?
       const newLineRanges = getNewLineRanges(e).map(range => {
-        if (monaco) {
-          return toStartOfLine(monaco.Range.lift(range));
-        }
+        return toStartOfLine(monaco.Range.lift(range));
       });
       const deletedLine = getDeletedLine(e);
 
