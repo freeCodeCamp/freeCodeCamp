@@ -46,7 +46,7 @@ Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.free
 
 # --instructions--
 
-Insira o elemento `a` dentro de um novo elemento `p`. O novo parágrafo deve ter um texto que diz `View more cat photos`, onde `cat photos` é um link, enquanto o restante é texto sem formatação.
+Insira o elemento `a` dentro de um novo elemento `p`. Não crie uma nova tag de âncora. O novo parágrafo deve ter um texto que diz `View more cat photos`, onde `cat photos` é um link, enquanto o restante é texto sem formatação.
 
 # --hints--
 

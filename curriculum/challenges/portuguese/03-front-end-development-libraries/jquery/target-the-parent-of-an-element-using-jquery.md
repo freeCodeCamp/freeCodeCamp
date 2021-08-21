@@ -14,7 +14,7 @@ Por exemplo, seu elemento `jQuery Playground` `h3` tem o elemento parente de `<d
 
 O jQuery possui uma função chamada `parent()` que o permite acessar o parente de qualquer elemento que você selecionou.
 
-Aqui está um exemplo de como você usaria a função `parent()` se você quisesse dar ao elemento parente do elemento `left-well` uma cor de fundo azul:
+Aqui está um exemplo de como você usaria a função `parent()` se você quisesse dar ao elemento pai do elemento `left-well` uma cor de fundo azul:
 
 ```js
 $("#left-well").parent().css("background-color", "blue")
