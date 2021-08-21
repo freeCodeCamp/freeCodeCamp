@@ -16,7 +16,7 @@ In HTML, quasi tutti i tag hanno sia un tag di apertura che di chiusura: `<div><
 
 Ad esempio, il tag line-break può essere scritto come `<br>` o come `<br />`, ma non dovrebbe mai essere scritto come `<br></br>`, poiché non contiene alcun contenuto.
 
-In JSX, le regole sono un po 'diverse. Qualsiasi elemento JSX può essere scritto con un tag a chiusura automatica, e ogni elemento deve essere chiuso. Il tag line-break, ad esempio, deve essere sempre scritto come `<br />` per essere codice JSX valido che possa essere transcodificato. Un `<div>`, invece, può essere scritto come `<div />` o `<div></div>`. La differenza è che nella prima versione della sintassi non c'è modo di includere nulla nel `<div />`. Vedrai nelle sfide successive che questa sintassi è utile durante il rendering dei componenti React.
+In JSX, le regole sono un po' diverse. Qualsiasi elemento JSX può essere scritto con un tag a chiusura automatica, e ogni elemento deve essere chiuso. Il tag line-break, ad esempio, deve essere sempre scritto come `<br />` per essere codice JSX valido che possa essere transcodificato. Un `<div>`, invece, può essere scritto come `<div />` o `<div></div>`. La differenza è che nella prima versione della sintassi non c'è modo di includere nulla nel `<div />`. Vedrai nelle sfide successive che questa sintassi è utile durante il rendering dei componenti React.
 
 # --instructions--
 

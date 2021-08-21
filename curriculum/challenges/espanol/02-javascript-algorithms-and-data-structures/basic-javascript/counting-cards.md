@@ -11,7 +11,7 @@ dashedName: counting-cards
 
 En el juego de casino Blackjack el jugador puede sacarle ventaja a la casa llevando un registro del numero relativo de cartas altas y bajas que quedan en la baraja. Esto es llamado [conteo de cartas](https://es.wikipedia.org/wiki/Conteo_de_cartas).
 
-Tener más cartas altas en la baraja es una ventaja para el jugador. Se le asigna una valor a cada carta de acuerdo a la siguiente tabla. Cuando el conteo es positivo, el jugador debería apostar alto. Cuando el conteo da 0 o negativo, el jugador debería apostar bajo.
+Tener más cartas altas en la baraja es una ventaja para el jugador. Se le asigna un valor a cada carta de acuerdo a la siguiente tabla. Cuando el conteo es positivo, el jugador debería apostar alto. Cuando el conteo da 0 o negativo, el jugador debería apostar bajo.
 
 <table class='table table-striped'><thead><tr><th>Cambios del conteo</th><th>Cartas</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
 
