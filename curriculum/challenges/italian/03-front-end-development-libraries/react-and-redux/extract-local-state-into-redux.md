@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Il componente `Presentational` dovrebbe fare il render degli elementi `h2`, `input`, `button`e `ul`.
+Il componente `Presentational` dovrebbe fare il render degli elementi `h2`, `input`, `button` e `ul`.
 
 ```js
 assert(

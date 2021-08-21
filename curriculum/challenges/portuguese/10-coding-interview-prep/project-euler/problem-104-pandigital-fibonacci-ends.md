@@ -1,6 +1,6 @@
 ---
 id: 5900f3d51000cf542c50fee6
-title: 'Problem 104: Pandigital Fibonacci ends'
+title: 'Problema 104: Extremidades do Fibonacci pandigital'
 challengeType: 5
 forumTopicId: 301728
 dashedName: problem-104-pandigital-fibonacci-ends
@@ -8,17 +8,17 @@ dashedName: problem-104-pandigital-fibonacci-ends
 
 # --description--
 
-The Fibonacci sequence is defined by the recurrence relation:
+A sequência de Fibonacci é definida pela relação de recorrência:
 
-$F_n = F_{n − 1} + F_{n − 2}$, where $F_1 = 1$ and $F_2 = 1$
+$F_n = F_{n − 1} + F_{n − 2}$, onde $F_1 = 1$ e $F_2 = 1$
 
-It turns out that $F_{541}$, which contains 113 digits, is the first Fibonacci number for which the last nine digits are 1 - 9 pandigital (contain all the digits 1 to 9, but not necessarily in order). And $F_{2749}$, which contains 575 digits, is the first Fibonacci number for which the first nine digits are 1 - 9 pandigital.
+$F_{541} $, que contém 113 dígitos, é o primeiro número de Fibonacci para o qual os últimos nove dígitos são de 1a 9 pandigital (contém todos os dígitos de 1 a 9, mas não necessariamente em ordem). E $F_{2749}$, que contém 575 dígitos, é o primeiro número de Fibonacci para o qual os primeiros nove dígitos são 1 - 9 pandigital.
 
-Given that $F_k$ is the first Fibonacci number for which the first nine digits AND the last nine digits are 1 - 9 pandigital, find `k`.
+Dado que $F_k$ é o primeiro número de Fibonacci para o qual os primeiros nove dígitos E os últimos nove dígitos são de 1 a 9 pandigital, encontre `k`.
 
 # --hints--
 
-`pandigitalFibonacciEnds()` should return `329468`.
+`pandigitalFibonacciEnds()` deve retornar `329468`.
 
 ```js
 assert.strictEqual(pandigitalFibonacciEnds(), 329468);
