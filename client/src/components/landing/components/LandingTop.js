@@ -40,7 +40,7 @@ function LandingTop({ page }) {
             <GoogleLogo />
             <MicrosoftLogo />
 
-            {clientLocale === 'english' ? (
+            {clientLocale === 'chinese' ? (
               <>
                 <TencentLogo />
                 <AlibabaLogo />
