@@ -70,7 +70,7 @@ Some examples of good PRs titles would be:
 
    - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](/how-to-add-cypress-tests).
+   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 
 ## Feedback on pull requests
 
@@ -81,7 +81,7 @@ Our moderators will now take a look and leave you feedback. Please be patient wi
 And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
 > [!TIP]
-> If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
+> If you are to be contributing more pull requests, we recommend you read the [how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
 
 ## Conflicts on a pull request
 
