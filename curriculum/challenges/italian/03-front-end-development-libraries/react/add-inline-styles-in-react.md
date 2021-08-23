@@ -42,7 +42,7 @@ La variabile `styles` dovrebbe avere una proprietà `border` impostata su un val
 assert(styles.border === '2px solid purple');
 ```
 
-Il componente dovrebbe presentare un elemento `div`.
+Il componente dovrebbe mostrare un elemento `div`.
 
 ```js
 assert(

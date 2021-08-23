@@ -66,15 +66,24 @@
       },
       "basic-html-cat-photo-app": {
         "title": "基础 HTML 猫图应用",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "basic-css-cafe-menu": {
         "title": "基础 CSS 咖啡菜单",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "css-variables-skyline": {
         "title": "CSS 变量 Skyline",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -161,77 +170,86 @@
       },
       "basic-javascript-rpg-game": {
         "title": "基础 JavaScript RPG 游戏",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "中级 JavaScript 卡路里计算器",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "functional-programming-spreadsheet": {
         "title": "函数式编程电子表格",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
   "front-end-development-libraries": {
-    "title": "前端开发库",
+    "title": "Front End Development Libraries",
     "intro": [
-      "你已经熟悉了 HTML、CSS 和 JavaScript。现在学习行业中一些流行的前端库来提升你的技能吧。",
-      "在前端库认证中，你将学习如何使用 Bootstrap 快速设置网站样式，以及如何在 CSS 样式中添加逻辑，并使用 Sass 对其进行扩展。",
-      "稍后，你将建立一个购物车和其他应用程序，学习如何使用 React 和 Redux 创建强大的单页应用程序（SPAs）。"
+      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front end libraries in the industry.",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
+      "Later, you'll build a shopping cart and other applications to learn how to create powerful Single Page Applications (SPAs) with React and Redux."
     ],
     "note": "",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap 一个是用于设计响应性网页和应用程序的前端框架。它对网页开发采用移动优先的方法，具有预定义的 CSS 样式和 class，以及一些 JavaScript 功能。",
-          "在这个课程中，你将学习如何使用 Bootstrap 来建立响应式网页，并使用它的 class 来设置按钮、图像、表格、导航和其他常见元素的样式。"
+          "Bootstrap is a front end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
+          "In this course, you'll learn how to build responsive websites with Bootstrap, and use its included classes to style buttons, images, forms, navigation, and other common elements."
         ]
       },
       "jquery": {
         "title": "jQuery",
         "intro": [
-          "jQuery 是开发者们最常用的 JavaScript 库之一。",
-          "在 jQuery 于 2006 年发布时，各种常用浏览器处理 JavaScript 的方式都略有不同。jQuery 简化了编写客户端 JavaScript 的过程，并确保代码在所有浏览器中以同样的方式运行。",
-          "在这个课程中，你将学习如何使用 jQuery 选择、移除、克隆和修改页面上的不同元素。"
+          "jQuery is one of the most widely used JavaScript libraries in the world.",
+          "In 2006 when it was released, all major browsers handled JavaScript slightly differently. jQuery simplified the process of writing client-side JavaScript, and also ensured that your code worked the same way in all browsers.",
+          "In this course, you'll learn how to use jQuery to select, remove, clone, and modify different elements on the page."
         ]
       },
       "sass": {
         "title": "SASS",
         "intro": [
-          "Sass，英文全称为 “Syntactically Awesome StyleSheets”，是对 CSS 的扩展。它添加了一些 CSS 语法不具有的新特性。Sass 简化了 CSS，这让维护样式表变得更容易。",
-          "在 Sass 课程中，你将学习如何将数据存储在变量中、嵌套 CSS、创建可重用的样式、为样式添加逻辑和循环等等。"
+          "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available in basic CSS, which make it easier for you to simplify and maintain the style sheets for your projects.",
+          "In this Sass course, you'll learn how to store data in variables, nest CSS, create reusable styles with mixins, add logic and loops to your styles, and more."
         ]
       },
       "react": {
         "title": "React",
         "intro": [
-          "React 是一个流行的 JavaScript 库，用于为网页或应用程序构建可重用的组件驱动的用户界面。",
-          "React 将 HTML 与 JavaScript 结合在了一起，以此创建出一个新的标签语言 JSX。React 还使得管理整个应用程序的数据流变得更容易。",
-          "在这个课程中，你将学习如何创建不同的 React 组件，以 state props 管理数据，以及使用不同的生命周期方法（例如 <code>componentDidMount</code>）和更多内容。"
+          "React is a popular JavaScript library for building reusable, component-driven user interfaces for web pages or applications.",
+          "React combines HTML with JavaScript functionality into its own markup language called JSX. React also makes it easy to manage the flow of data throughout the application.",
+          "In this course, you'll learn how to create different React components, manage data in the form of state props, use different lifecycle methods like <code>componentDidMount</code>, and much more."
         ]
       },
       "redux": {
         "title": "Redux",
         "intro": [
-          "随着应用程序规模和范围的扩大，管理共享数据变得更加困难。 Redux 被定义为 “JavaScript 应用的可预测状态容器”，它有助于确保你的应用能够可预测地运行，并且更容易测试。",
-          "虽然你可以使用任何视图库的 Redux，但我们在这里介绍 Redux，然后在下一组课程中与 React 结合起来。",
-          "在这个课程中，你将学习 Redux stores、actions、reducers 和中间件的基础知识，来管理应用程序的数据。"
+          "As applications grow in size and scope, managing shared data becomes much more difficult. Redux is defined as a \"predictable state container for JavaScript apps\" that helps ensure your apps work predictably, and are easier to test.",
+          "While you can use Redux with any view library, we introduce Redux here before combining it with React in the next set of courses.",
+          "In this course, you'll learn the fundamentals of Redux stores, actions, reducers and middleware to manage data throughout your application."
         ]
       },
       "react-and-redux": {
-        "title": "React 和 Redux",
+        "title": "React and Redux",
         "intro": [
-          "React 和 Redux 经常一起被提及，这是有充分理由的。创建 Redux 的开发人员是一个 React 开发者，他希望简化不同组件间的数据共享。",
-          "你已经知道了如何使用 Redux 管理共享数据流，是时候将这些知识与 React 结合起来了。在 React 和 Redux 课程中，你将构建一个 React 组件，并学习如何使用 Redux 在组件级别本地管理状态，以及在整个应用程序中管理状态。"
+          "React and Redux are often mentioned together, and with good reason. The developer who created Redux was a React developer who wanted to make it easier to share data across different components.",
+          "Now that you know how to manage the flow of shared data with Redux, it's time to combine that knowledge with React. In the React and Redux courses, you'll build a React component and learn how to manage state locally at the component level, and throughout the entire application with Redux."
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "前端开发库项目",
+        "title": "Front End Development Libraries Projects",
         "intro": [
-          "现在是时候应用你的前端开发库技术进行测试。用 Bootstrap、jQuery、Sass、React、和 Redux 构建 5 个项目，测试你到现在所学到的知识。",
-          "完成全部 5 个项目，然后你会获得前端开发库认证。"
+          "It's time to put your front end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
+          "Complete all 5 projects, and you'll earn the Front End Development Libraries certification."
         ]
       }
     }
@@ -271,58 +289,65 @@
       },
       "d3-dashboard": {
         "title": "D3 面板",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
   "relational-databases": {
     "title": "关系型数据库",
-    "intro": ["占位符"],
+    "intro": [
+      "占位符"
+    ],
     "blocks": {
       "learn-relational-databases": {
         "title": "学习关系型数据库",
-        "intro": ["占位符"]
+        "intro": [
+          "占位符"
+        ]
       }
     }
   },
   "back-end-development-and-apis": {
-    "title": "APIs 和 微服务",
+    "title": "Back End Development and APIs",
     "intro": [
-      "在这之前，你只是在前端使用 JavaScript 来给页面添加交互、解决算法挑战，或构建一个 SP。但 JavaScript 也可以用于后端或者服务器来构建整个 web 应用程序。",
-      "今天，构建应用软件的广受欢迎的方法之一是微服务，这些微服务是一种小型模块化的应用，能够共同形成一个更大的整体。",
-      "In the APIs and Microservices Certification, you'll learn how to write back end apps with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
+      "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
+      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
       "managing-packages-with-npm": {
-        "title": "使用 NPM 管理软件包",
+        "title": "Managing Packages with NPM",
         "intro": [
-          "npm（Node 包管理工具）是一个命令行工具，用于安装、创建和分享为 Node.js 编写的 JavaScript 代码包。在 npm 上有许多开放源码软件包，所以在项目启动之前，需要一些时间来探索，这样你就不会最后重新创建轮子来处理像日期或从 API 获取数据这样的事项。",
-          "在这个课程中，你将学习使用 npm 的基本知识，包括如何使用 <code>package.json</code> 和如何管理已安装的依赖项。"
+          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
+          "In this course, you'll learn the basics of using npm, including how to work with the <code>package.json</code> and how to manage your installed dependencies."
         ]
       },
       "basic-node-and-express": {
-        "title": "Node 和 Express 基础",
+        "title": "Basic Node and Express",
         "intro": [
-          "Node.js 是一个 JavaScript 运行时，它允许开发人员在 JavaScript 中写入后端（服务器侧）程序。Node.js 有几个内置的模块——小型、独立的程序——来帮助实现这一点，一些核心模块包括像服务器一样运作的 HTTP 和文件系统，一个读取和修改文件的模块。",
-          "在上一组课程中你学到了怎么从 npm下载和管理软件包，这些软件包是较小模块的集合，可以帮助你打造更大更复杂的程序。",
-          "Express 是一个轻量级的网页应用框架，是最受欢迎的 npm 软件包之一。 Express 提供精简的基本 web 应用程序功能，包括应用的路由。路由在用户访问一个端点如 <pre>/blog</pre> 时将用户导向到相应的页面。",
-          "在这个课程中，你将学习 Node 和 Express 的基础知识，包括如何创建服务器， 处理不同的文件，及处理不同的浏览器请求。"
+          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
+          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing the routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
+          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
       },
       "mongodb-and-mongoose": {
-        "title": "MongoDB 和 Mongose",
+        "title": "MongoDB and Mongoose",
         "intro": [
-          "MongoDB 是一个存储您可以在应用程序中使用的 JSON 文件(或记录)的数据库应用程序。 不同于SQL，另一种类型的数据库。Mongo是一个不相关的或“NoSQL”的数据库。 这意味着Mongo将所有相关数据存储在一个记录中，而不是像SQL数据库中那样在许多预设表中存储。",
-          "Mongoose 是一个受欢迎的 npm 包，通常和 Mongo 一起安装。通过 Mongoose，你可以使用 JavaScript 对象而不是 JSON ，这样就更容易与 Mongo 配合使用。 此外，它允许你为 schema 文件创建蓝图，所以你不会意外地保存错误的数据类型并出现错误。",
-          "在 MongoDB 和 Mongoose 课程中，你将学习使用的基本知识，包括如何建立模型，保存、删除并在数据库中查找文档。"
+          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, Mongo is a non-relational or \"NoSQL\" database. This means Mongo stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
+          "Mongoose is a popular npm package that is often installed alongside Mongo. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with Mongo. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
+          "In the MongoDB and Mongoose courses, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "API 和微服务项目",
+        "title": "Back End Development and APIs Projects",
         "intro": [
-          "你之前用过 API，但是现在你知道 npm、Node、Express、MongoDB 和 Mongoose，是时候创建应用 了。用你到现在所学的所有知识来创建 5 个不同的微服务，这些微服务是使用范围有限的小应用。",
-          "在创建这些项目后，你会有 5 个很酷的微服务 API，你可以向朋友、家人和潜在的雇主展示。同时，你也会获得 API 和微服务认证。"
+          "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back End Development and APIs Certification, too."
         ]
       }
     }

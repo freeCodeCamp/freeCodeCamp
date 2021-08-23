@@ -6,9 +6,9 @@ Boas contribuições.
 
 Fique à vontade para:
 
-- Criar, atualizar e corrigir bugs em nosso [currículo](#curriculum).
-- Nos ajudar a corrigir bugs na [plataforma de aprendizado](#learning-platform) do freeCodeCamp.org.
-- [Ajude-nos a traduzir](#translations) freeCodeCamp.org para vários idiomas.
+- Criar, atualizar e corrigir bugs em nosso [currículo](#curr%c3%adculo).
+- Nos ajudar a corrigir bugs na [plataforma de aprendizado](#plataforma-de-aprendizado) do freeCodeCamp.org.
+- [Nos ajudar a traduzir](#tradu%c3%a7%c3%b5es) freeCodeCamp.org para vários idiomas.
 
 Respondemos às perguntas mais comuns sobre como contribuir [no nosso FAQ do colaborador](/FAQ.md).
 

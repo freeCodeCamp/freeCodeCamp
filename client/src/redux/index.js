@@ -33,7 +33,11 @@ export const defaultDonationFormState = {
   redirecting: false,
   processing: false,
   success: false,
-  error: ''
+  error: '',
+  loading: {
+    stripe: true,
+    paypal: true
+  }
 };
 
 const initialState = {

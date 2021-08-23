@@ -39,4 +39,4 @@ const generateIconComponent = (
   return <Icon className={className} />;
 };
 
-export { generateIconComponent };
+export { generateIconComponent, SuperBlock };

@@ -2,7 +2,6 @@
 id: 5a94fe0569fb03452672e45c
 title: Divide la cuadrícula en una plantilla de área
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
 dashedName: divide-the-grid-into-an-area-template
 ---

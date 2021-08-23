@@ -2,7 +2,6 @@
 id: 5a94fe0569fb03452672e45c
 title: Dividere la griglia in un template area
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
 dashedName: divide-the-grid-into-an-area-template
 ---
@@ -15,25 +14,25 @@ Puoi raggruppare le celle della griglia in un'<dfn>area</dfn> e dare un nome per
 grid-template-areas:
   "header header header"
   "advert content content"
-  "footer footer footer";
+  "advert footer footer";
 ```
 
-Il codice qui sopra riunisce le tre celle superiori in un'area denominata `header`, le tre celle inferiori in un'area `footer`, e crea due aree nella riga intermedia; `advert` e `content`. **Nota:** Ogni parola nel codice rappresenta una cella e ogni coppia di virgolette rappresenta una riga. In aggiunta alle etichette personalizzate, puoi usare un punto (`.`) per designare una cella vuota nella griglia.
+Questo codice raggruppa le celle della griglia in quattro aree; `header`, `advert`, `content` e `footer`. Ogni parola rappresenta una cella e ogni coppia di virgolette rappresenta una riga.
 
 # --instructions--
 
-Posiziona il template dell'area in modo che la cella etichettata `advert` diventi una cella vuota.
+Cambia il template in modo che l'area `footer` copra l'intera riga inferiore. La definizione delle aree non avrà alcun effetto visivo in questo momento. Più tardi, farai usare un'area ad un oggetto per vedere come funziona.
 
 # --hints--
 
-La classe `container` dovrebbe avere una proprietà `grid-template-areas` simile all'anteprima ma con `.` al posto dell'area `advert`.
+La classe `container` dovrebbe avere una proprietà `grid-template-areas` simile all'esempio ma con con l'area `footer` che si espande attraverso tutta la riga più in basso.
 
 ```js
 assert(
   __helpers
     .removeCssComments(code)
     .match(
-      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
+      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
     )
 );
 ```
@@ -63,7 +62,7 @@ assert(
     /* Only change code below this line */
       "header header header"
       "advert content content"
-      "footer footer footer";
+      "advert footer footer";
     /* Only change code above this line */
   }
 </style>
@@ -99,7 +98,7 @@ assert(
 
     grid-template-areas:
       "header header header"
-      ". content content"
+      "advert content content"
       "footer footer footer";
   }
 </style>

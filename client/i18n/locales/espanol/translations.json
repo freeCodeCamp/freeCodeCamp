@@ -287,7 +287,7 @@
     },
     "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
     "help-translate-link": "Ayúdanos a traducir.",
-    "coder-survey": "<0>Take the 2021 New Coder Survey</0> (it takes about 10 minutes – do it for science)"
+    "coder-survey": "<0>Toma la nueva encuesta del programador de 2021</0> (tarda unos 10 minutos - hazlo por la ciencia)"
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -307,8 +307,8 @@
     "confirm-2": "Confirma tu donación única de ${{usd}}",
     "confirm-3": "Confirma tu donación de ${{usd}} / mes",
     "confirm-4": "Confirma tu donación de ${{usd}} / año",
-    "wallet-label": "${{usd}} donation to freeCodeCamp",
-    "wallet-label-1": "${{usd}} / month donation to freeCodeCamp",
+    "wallet-label": "${{usd}} donación a freeCodeCamp",
+    "wallet-label-1": "${{usd}} / donación mensual a freeCodeCamp",
     "your-donation": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo.",
     "your-donation-2": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada mes.",
     "your-donation-3": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada año.",
@@ -399,7 +399,7 @@
     "analytics": "Un gráfico de barras y un gráfico de líneas",
     "shield": "Un escudo con una marca de verificación",
     "tensorflow": "Icono de Tensorflow",
-    "database": "Database icon",
+    "database": "Icono de base de datos",
     "algorithm": "Nodos ramificados",
     "magnifier": "lupa"
   },
@@ -446,7 +446,7 @@
     "cert-claim-success": "¡@{{username}}, has reclamado con éxito la certificación {{name}}! ¡Felicitaciones en nombre del equipo de freeCodeCamp.org!",
     "wrong-name": "Se produjo un error con la verificación de {{name}}. Por favor, inténtalo de nuevo. Si continúas recibiendo este error, puedes enviar un mensaje a support@freeCodeCamp.org para obtener ayuda.",
     "error-claiming": "Error al reclamar {{certName}}",
-    "refresh-needed": "You can only use the PaymentRequest button once. Refresh the page to start over.",
+    "refresh-needed": "Solamente puedes utilizar el botón de Pago una vez. Actualiza la página para empezar de nuevo.",
     "username-not-found": "No pudimos encontrar un usuario con el nombre de usuario \"{{username}}\"",
     "add-name": "Este usuario debe agregar su nombre a su cuenta para que otros puedan ver su certificación.",
     "not-eligible": "Este usuario no es elegible para las certificaciones de freeCodeCamp.org en este momento.",

@@ -29,7 +29,7 @@ Chamando a função `loginAction` deve retornar um objeto com a propriedade `typ
 assert(loginAction().type === 'LOGIN');
 ```
 
-A store deve ser inicializada com um objeto com a propriedade `login` definido como `false`.
+A store deve ser inicializada com um objeto com a propriedade `login` definida como `false`.
 
 ```js
 assert(store.getState().login === false);

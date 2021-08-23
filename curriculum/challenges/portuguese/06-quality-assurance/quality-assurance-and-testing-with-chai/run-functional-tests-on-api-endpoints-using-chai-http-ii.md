@@ -12,9 +12,9 @@ Lembrando que este projeto está sendo construído a partir do [Replit](https://
 
 # --instructions--
 
-Dentro de `tests/2_functional-tests.js`, altere o teste `'Test GET /hello with your name'` (`// #2`) para afirmar o `status` e a resposta `text` para fazer o teste passar.
+Dentro de `tests/2_functional-tests.js`, altere o teste `'Test GET /hello with your name'` (`// #2`) para afirmar o `status` e o `text` da resposta para fazer o teste passar.
 
-Envie seu nome na consulta, acrescentando `?name=<your_name>` à rota. O endpoint responde com `'hello <your_name>'`.
+Envie seu nome como consulta do URL, acrescentando `?name=<your_name>` à rota. O endpoint responde com `'hello <your_name>'`.
 
 # --hints--
 
@@ -32,7 +32,7 @@ Todos os testes devem passar
   );
 ```
 
-Você deve testar se 'res.status' == 200
+Você deve testar que `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ Você deve testar se 'res.status' == 200
   );
 ```
 
-Você deve testar se 'res.text' == 'hello Guest'
+Você deve testar se `res.text` == `'hello <your_name>'`
 
 ```js
 (getUserInput) =>

@@ -10,7 +10,7 @@ dashedName: create-a-stateful-component
 
 Um dos tópicos mais importantes em React é `state`. State consiste em qualquer dado que sua aplicação precisar saber, que pode ser alterado durante o tempo. Você quer que seus aplicativos respondam a mudanças de estado e apresentem uma interface atualizada quando necessário. React oferece uma boa solução para o gerenciamento de estados de aplicações web modernas.
 
-Você pode criar um estado em um componente React ao declarar a propriedade `state` na classe do componente no seu `constructor`. Isso inicializa o componente com `state` quando é criado. A propriedade `state` deve ser definida para um `objeto` JavaScript. Declarando, ele se parece com isso:
+Você pode criar um estado em um componente React ao declarar a propriedade `state` na classe do componente no seu `constructor`. Isso inicializa o componente com `state` quando é criado. A propriedade `state` deve ser definida para um `object` JavaScript. Declarando, ele se parece com isso:
 
 ```jsx
 this.state = {

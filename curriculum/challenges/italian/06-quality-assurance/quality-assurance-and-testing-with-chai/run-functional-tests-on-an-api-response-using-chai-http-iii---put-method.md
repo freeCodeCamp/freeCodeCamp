@@ -10,29 +10,37 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-Nel prossimo esempio vedremo come inviare i dati in nel corpo di un payload di richiesta. Stiamo per testare una richiesta PUT. L'endpoint `'/travellers'` accetta un oggetto JSON che prende la struttura:
+Quando testi una richiesta `PUT`, invierai spesso dei dati con essa. I dati che includi con la tua richiesta `PUT` sono chiamati corpo della richiesta.
 
-```json
-{
-  "surname": [last name of a traveller of the past]
-}
+Per inviare una richiesta `PUT` e un oggetto JSON all'endpoint `'/travellers'`, è possibile utilizzare i metodi `put` e `send` del plugin`chai-http`:
+
+```js
+chai
+  .request(server)
+  .put('/travellers')
+  .send({
+    "surname": [last name of a traveller of the past]
+  })
+  ...
 ```
 
 La rotta risponde con:
 
 ```json
 {
-  "name": [first name], "surname": [last name], "dates": [birth - death years]
+  "name": [first name],
+  "surname": [last name],
+  "dates": [birth - death years]
 }
 ```
 
-Vedi il codice del server per maggiori dettagli.
+Vedi il codice del server per le diverse risposte all'endpoint `'/travellers'`.
 
 # --instructions--
 
-All'interno di `tests/2_functional-tests.js`, modifica il test `'send {surname: "Colombo"}'` (`// #3`):
+All'interno di `tests/2_functional-tests.js`, cambia il test `'Send {surname: "Colombo"}'` (`// #3`) e usa i metodi `put` e `send` per testare l'endpoint  `'/travellers'`.
 
-Invia la seguente risposta JSON come payload:
+Invia il seguente oggetto JSON con la tua richiesta PUT:
 
 ```json
 {
@@ -42,12 +50,12 @@ Invia la seguente risposta JSON come payload:
 
 Controlla quanto segue, all'interno della callback `request.end`:
 
-1.  `status`
-2.  `type`
-3.  `body.name`
-4.  `body.surname`
+1.  Lo `status` dovrebbe essere `200`
+2.  Il `type` dovrebbe essere `application/json`
+3.  Il `body.name` dovrebbe essere `Cristoforo`
+4.  Il `body.surname` dovrebbe essere `Colombo`
 
-Segui l'ordine di asserzione indicato sopra - facciamo affidamento su di esso. Assicurati di rimuovere `assert.fail()`, una volta finito.
+Segui l'ordine di asserzione indicato sopra - facciamo affidamento su di esso. Inoltre, assicurati di rimuovere `assert.fail()` una volta finito.
 
 # --hints--
 
@@ -65,7 +73,7 @@ Tutti i test dovrebbero essere superati.
   );
 ```
 
-Dovresti verificare che 'res.status' sia 200.
+Dovresti verificare che `res.status` sia 200.
 
 ```js
 (getUserInput) =>
@@ -81,7 +89,7 @@ Dovresti verificare che 'res.status' sia 200.
   );
 ```
 
-Dovresti verificare che 'res.type' sia 'application/json'.
+Dovresti verificare che `res.type` sia `'application/json'`.
 
 ```js
 (getUserInput) =>
@@ -97,7 +105,7 @@ Dovresti verificare che 'res.type' sia 'application/json'.
   );
 ```
 
-Dovresti verificare che 'res.body.name' sia 'Cristoforo''.
+Dovresti verificare che `res.body.name` sia `'Cristoforo'`.
 
 ```js
 (getUserInput) =>
@@ -113,7 +121,7 @@ Dovresti verificare che 'res.body.name' sia 'Cristoforo''.
   );
 ```
 
-Dovresti verificare che 'res.body.surname' sia 'Colombo''.
+Dovresti verificare che `res.body.surname` sia `'Colombo'`.
 
 ```js
 (getUserInput) =>

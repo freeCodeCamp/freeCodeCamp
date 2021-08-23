@@ -5,7 +5,7 @@ const { forumLocation } = envData;
 export function getGuideUrl({ forumTopicId, title = '' }) {
   title = encodeURIComponent(title);
   return forumTopicId
-    ? `${forumLocation}/t/${forumTopicId}`
+    ? `https://forum.freecodecamp.org/t/${forumTopicId}`
     : `${forumLocation}/search?q=${title}%20in%3Atitle%20order%3Aviews`;
 }
 

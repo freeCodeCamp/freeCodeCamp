@@ -8,7 +8,7 @@ dashedName: introducing-inline-styles
 
 # --description--
 
-Ci sono altri concetti complessi che aggiungono potenti funzionalità al tuo codice React. Ma forse ti stai chiedendo come stilizzare quegli elementi JSX che crei in React. Probabilmente sai che non sarà esattamente come lavorare con HTML a causa del [modo in cui applichi le classi agli elementi JSX](/learn/front-end-development-libraries/react/define-an-html-class-in-jsx).
+Ci sono altri concetti complessi che aggiungono potenti funzionalità al tuo codice React. Ma forse ti stai chiedendo come stilizzare quegli elementi JSX che crei in React. Probabilmente sai che non sarà esattamente come lavorare con HTML a causa del [modo in cui applichi le classi agli elementi JSX](/italian/learn/front-end-development-libraries/react/define-an-html-class-in-jsx).
 
 Se importi degli stili da un foglio di stile, non è poi così diverso. Applichi una classe al tuo elemento JSX usando l'attributo `className` e applichi gli stili alla classe nel tuo foglio di stile. Un'altra opzione è quella di applicare degli stili in linea, che sono molto comuni nello sviluppo di ReactJS.
 
@@ -31,7 +31,6 @@ Vedi come abbiamo usato camelCase nella proprietà `fontSize`? Questo perché Re
 Aggiungi un attributo `style` al `div`nell'editor di codice per dare al testo un colore rosso e una dimensione del carattere di `72px`.
 
 Nota che è possibile impostare facoltativamente la dimensione del carattere come un numero, omettendo le unità `px` o scrivendole come `72px`.
-
 # --hints--
 
 Il componente dovrebbe mostrare un elemento `div`.

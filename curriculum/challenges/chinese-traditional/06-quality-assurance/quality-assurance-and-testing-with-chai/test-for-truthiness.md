@@ -13,9 +13,9 @@ dashedName: test-for-truthiness
 `isTrue()` 僅當給出的值爲 Boolean 的 `true` 時可以通過測試；`isNotTrue()` 則會在給出除 `true` 以外的值時通過測試。
 
 ```js
-assert.isTrue(true, 'this will pass with the boolean value true');
-assert.isTrue('true', 'this will NOT pass with the string value "true"');
-assert.isTrue(1, 'this will NOT pass with the number value 1');
+assert.isTrue(true, 'This will pass with the boolean value true');
+assert.isTrue('true', 'This will NOT pass with the string value "true"');
+assert.isTrue(1, 'This will NOT pass with the number value 1');
 ```
 
 `isFalse()` 和 `isNotFalse()` 同樣存在，與上面提到的兩個方法類似，只不過它們針對值爲 `false` 的布爾值。

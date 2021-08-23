@@ -1,6 +1,6 @@
 ---
 id: bad82fee1322bd9aedf08721
-title: Diferenças entre unidades absolutas e relativas
+title: Diferenciar entre unidades absolutas e relativas
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN66JSL'
 forumTopicId: 301089

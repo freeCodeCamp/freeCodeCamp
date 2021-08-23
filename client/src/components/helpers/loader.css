@@ -6,7 +6,8 @@
   align-items: center;
 }
 
-.fcc-loader .sk-spinner {
+.fcc-loader .sk-spinner,
+.script-loading-spinner {
   color: var(--secondary-color);
 }
 

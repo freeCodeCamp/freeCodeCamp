@@ -18,7 +18,7 @@ O editor de código tem todo o código que você escreveu nesta seção até ago
 
 # --hints--
 
-O `AppWrapper` deve ser renderizardo na página.
+O `AppWrapper` deve ser renderizado na página.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-O componente `Presentational` deve renderizar os elementos `h2`, `input`, `button`, e `ul`.
+O componente `Presentational` deve renderizar os elementos `h2`, `input`, `button` e `ul`.
 
 ```js
 assert(
