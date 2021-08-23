@@ -73,7 +73,7 @@ assert(/myStr\s*=/.test(code));
 ## --seed-contents--
 
 ```js
-const myStr = ""; // Change this line
+let myStr; // Change this line
 ```
 
 # --solutions--
