@@ -81,7 +81,7 @@ Our moderators will now take a look and leave you feedback. Please be patient wi
 And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
 > [!TIP]
-> If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md?id=making-changes-locally) guidelines to avoid having to delete your fork.
+> If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
 
 ## Conflicts on a pull request
 
