@@ -31,7 +31,7 @@ Set `remainder` equal to the remainder of `11` divided by `3` using the <dfn>rem
 The variable `remainder` should be initialized
 
 ```js
-assert(/const|let|var\s+?remainder/.test(code));
+assert(/(const|let|var)\s+?remainder/.test(code));
 ```
 
 The value of `remainder` should be `2`
