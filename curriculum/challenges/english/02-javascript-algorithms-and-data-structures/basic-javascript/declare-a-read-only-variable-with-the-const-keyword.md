@@ -37,10 +37,20 @@ Change the code so that all variables are declared using `let` or `const`. Use `
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
+You should change `fCC` to all uppercase.
+
+```js
+(getUserInput) => {
+  assert(getUserInput('index').match(/(FCC)/));
+  assert(!getUserInput('index').match(/fCC/));
+}
+```
+
 `FCC` should be a constant variable declared with `const`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(const FCC)/g));
+assert.equal(FCC, 'freeCodeCamp');
+assert.match(code, /const\s+FCC/);
 ```
 
 `fact` should be declared with `let`.
@@ -61,10 +71,8 @@ Change the code so that all variables are declared using `let` or `const`. Use `
 ## --seed-contents--
 
 ```js
-// Only change code below this line
 var fCC = "freeCodeCamp";
 var fact = "is cool!";
-// Only change code above this line
 
 fact = "is awesome!";
 console.log(fCC, fact);
