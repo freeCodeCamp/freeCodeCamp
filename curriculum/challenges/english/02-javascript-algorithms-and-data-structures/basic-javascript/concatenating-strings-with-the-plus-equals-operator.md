@@ -57,7 +57,6 @@ assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
 ## --seed-contents--
 
 ```js
-// Only change code below this line
 let myStr;
 ```
 
