@@ -32,7 +32,7 @@ describe('Top contributor in user profile', () => {
     cy.contains('Top Contributor').should(
       'have.attr',
       'href',
-      'https://freecodecamp.org/top-contributors'
+      'https://www.freecodecamp.org/news/freecodecamp-top-contributors/'
     );
   });
 
