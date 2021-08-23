@@ -5,9 +5,11 @@ function TencentLogo(
 ): React.ReactNode {
   return (
     <svg
+      height='75'
       id='tencent-logo'
       version='1.1'
       viewBox='0 0 1000 190'
+      width='100'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
     >
