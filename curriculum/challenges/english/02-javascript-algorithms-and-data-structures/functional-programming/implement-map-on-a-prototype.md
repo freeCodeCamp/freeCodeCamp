@@ -60,7 +60,7 @@ const s = [23, 65, 98, 5];
 
 Array.prototype.myMap = function(callback) {
   const newArray = [];
-  for (let elem of this) {
+  for (const elem of this) {
     newArray.push(callback(elem));
   }
   return newArray;
