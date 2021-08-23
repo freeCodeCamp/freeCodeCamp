@@ -63,7 +63,7 @@ assert(!__helpers.removeWhiteSpace(code).match(/total[=+-]0*[1-9]+/gm));
 
 ```js
 // Setup
-const myArr = [ 2, 3, 4, 5, 6];
+const myArr = [2, 3, 4, 5, 6];
 
 // Only change code below this line
 
