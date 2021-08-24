@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import React, { useEffect, useState } from 'react';
 import { squareLocationConfig } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
@@ -53,23 +51,26 @@ function SquareForm({
   }, []);
 
   useEffect(() => {
-    if (squareLoaded && !squarePayments) {
-      console.log('setting square payments...');
-      const locationId: string = squareLocationConfig[deploymentEnv];
-      // eslint-disable-next-line
-      setSquarePayments(
-        window.Square?.payments(squareApplicationId, locationId)
-      );
+    function squareLoadedEffect() {
+      if (squareLoaded && !squarePayments) {
+        console.log('setting square payments...');
+        const locationId: string = squareLocationConfig[deploymentEnv];
+        setSquarePayments(
+          window.Square?.payments(squareApplicationId, locationId)
+        );
+      }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [squareLoaded]);
+    squareLoadedEffect();
+  });
 
   useEffect(() => {
-    if (squarePayments) {
-      if (!squareCard) void initializeSquareCard();
+    function squarePaymentsEffect() {
+      if (squarePayments) {
+        if (!squareCard) void initializeSquareCard();
+      }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [squarePayments]);
+    squarePaymentsEffect();
+  });
 
   interface Card {
     attach: (conternerId: string) => Promise<void>;
@@ -86,17 +87,17 @@ function SquareForm({
 
   const initializeSquareCard = async () => {
     console.log('initializing square card...');
-    const card: Card = await squarePayments.card();
-    if (!squareCard) await card.attach('#card-container');
-    setSquareCard(card);
+    const card: Card | undefined = await squarePayments?.card();
+    if (!squareCard) await card?.attach('#card-container');
+    if (card) setSquareCard(card);
     handlePaymentButtonLoad('square');
     handlePaymentButtonLoad('square');
-    card.addEventListener('focusClassAdded', handleCardEvents);
-    card.addEventListener('focusClassRemoved', handleCardEvents);
-    card.addEventListener('errorClassAdded', handleCardEvents);
-    card.addEventListener('errorClassRemoved', handleCardEvents);
-    card.addEventListener('cardBrandChanged', handleCardEvents);
-    card.addEventListener('postalCodeChanged', handleCardEvents);
+    card?.addEventListener('focusClassAdded', handleCardEvents);
+    card?.addEventListener('focusClassRemoved', handleCardEvents);
+    card?.addEventListener('errorClassAdded', handleCardEvents);
+    card?.addEventListener('errorClassRemoved', handleCardEvents);
+    card?.addEventListener('cardBrandChanged', handleCardEvents);
+    card?.addEventListener('postalCodeChanged', handleCardEvents);
   };
 
   interface Event {
@@ -147,14 +148,15 @@ function SquareForm({
   }
 
   async function tokenizePaymentMethod(): Promise<string | void> {
-    const tokenResult: Token = await squareCard.tokenize();
+    const tokenResult: Token | undefined = await squareCard?.tokenize();
     // A list of token statuses can be found here:
     // https://developer.squareup.com/reference/sdks/web/payments/enums/TokenStatus
-    if (tokenResult.status === 'OK') {
+    if (tokenResult?.status === 'OK') {
       return tokenResult.token;
     }
-    let errorMessage = `Tokenization failed-status: ${tokenResult.status}`;
-    if (tokenResult.errors) {
+    let errorMessage = `Tokenization failed-status: `;
+    if (tokenResult?.status) errorMessage += tokenResult.status;
+    if (tokenResult?.errors) {
       errorMessage += ` and errors: ${JSON.stringify(tokenResult.errors)}`;
     }
     throw new Error(errorMessage);

@@ -1,7 +1,4 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable no-nested-ternary */
 
 import type { Token } from '@stripe/stripe-js';
 import React, { Component } from 'react';
@@ -223,7 +220,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     });
   }
 
-  chargeSquare(token: string) {
+  chargeSquare(token: string | void) {
     const { email } = this.props;
     const { donationAmount: amount, donationDuration: duration } = this.state;
     if (this.props.handleProcessing) {
@@ -251,15 +248,24 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     const usd = this.getFormattedAmountLabel(donationAmount);
     const hours = this.convertToTimeContributed(donationAmount);
 
-    return (
-      <p className='donation-description'>
-        {donationDuration === 'onetime'
-          ? t('donate.your-donation', { usd: usd, hours: hours })
-          : donationDuration === 'month'
-          ? t('donate.your-donation-2', { usd: usd, hours: hours })
-          : t('donate.your-donation-3', { usd: usd, hours: hours })}
-      </p>
-    );
+    let donationDescription = t('donate.your-donation-3', {
+      usd: usd,
+      hours: hours
+    });
+
+    if (donationDuration === 'onetime') {
+      donationDescription = t('donate.your-donation', {
+        usd: usd,
+        hours: hours
+      });
+    } else if (donationDuration === 'month') {
+      donationDescription = t('donate.your-donation-2', {
+        usd: usd,
+        hours: hours
+      });
+    }
+
+    return <p className='donation-description'>{donationDescription}</p>;
   }
 
   resetDonation() {
