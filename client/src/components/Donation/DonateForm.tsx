@@ -248,21 +248,12 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     const usd = this.getFormattedAmountLabel(donationAmount);
     const hours = this.convertToTimeContributed(donationAmount);
 
-    let donationDescription = t('donate.your-donation-3', {
-      usd: usd,
-      hours: hours
-    });
+    let donationDescription = t('donate.your-donation-3', { usd, hours });
 
     if (donationDuration === 'onetime') {
-      donationDescription = t('donate.your-donation', {
-        usd: usd,
-        hours: hours
-      });
+      donationDescription = t('donate.your-donation', { usd, hours });
     } else if (donationDuration === 'month') {
-      donationDescription = t('donate.your-donation-2', {
-        usd: usd,
-        hours: hours
-      });
+      donationDescription = t('donate.your-donation-2', { usd, hours });
     }
 
     return <p className='donation-description'>{donationDescription}</p>;
