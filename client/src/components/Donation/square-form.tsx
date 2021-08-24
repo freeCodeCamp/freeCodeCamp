@@ -15,8 +15,16 @@ const {
 
 function SquareForm(): JSX.Element | null {
   const [squareLoaded, setSquareLoaded] = useState(false);
-  const [squarePayments, setSquarePayments] = useState<void>();
-  const [squareCard, setSquareCard] = useState();
+  const [squarePayments, setSquarePayments] = useState<Payments | void>();
+  const [squareCard, setSquareCard] = useState<Card | null>(null);
+  const [isSubmitting, setSubmitting] = useState(false);
+  const [validFields, setValidFields] = useState({
+    cardNumber: false,
+    cvv: false,
+    expirationDate: false,
+    postalCode: false
+  });
+  const isCardFieldsValid = Object.values(validFields).every(v => v);
 
   useEffect(() => {
     const squareScript = document.getElementById('squareScript');
@@ -40,17 +48,12 @@ function SquareForm(): JSX.Element | null {
       console.log('setting square payments...');
       const locationId: string = squareLocationConfig[deploymentEnv];
       // eslint-disable-next-line
-      setSquarePayments(window.Square?.payments(squareApplicationId, locationId));
+      setSquarePayments(
+        window.Square?.payments(squareApplicationId, locationId)
+      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [squareLoaded]);
-
-  const initializeSquareCard = async () => {
-    console.log('initializing square card...');
-    const card = await squarePayments.card();
-    if (!squareCard) await card.attach('#card-container');
-    setSquareCard(card);
-  };
 
   useEffect(() => {
     if (squarePayments) {
@@ -59,13 +62,108 @@ function SquareForm(): JSX.Element | null {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [squarePayments]);
 
+  interface Card {
+    attach: (conternerId: string) => Promise<void>;
+    addEventListener: (
+      event: string,
+      handler: ({ detail }: Event) => void
+    ) => void;
+    tokenize: () => Promise<Token>;
+  }
+
+  interface Payments {
+    card: () => Promise<Card>;
+  }
+
+  const initializeSquareCard = async () => {
+    console.log('initializing square card...');
+    const card: Card = await squarePayments.card();
+    if (!squareCard) await card.attach('#card-container');
+    setSquareCard(card);
+    card.addEventListener('focusClassAdded', handleCardEvents);
+    card.addEventListener('focusClassRemoved', handleCardEvents);
+    card.addEventListener('errorClassAdded', handleCardEvents);
+    card.addEventListener('errorClassRemoved', handleCardEvents);
+    card.addEventListener('cardBrandChanged', handleCardEvents);
+    card.addEventListener('postalCodeChanged', handleCardEvents);
+  };
+
+  interface Event {
+    detail: { currentState: { isCompletelyValid: unknown }; field: string };
+  }
+
+  const handleCardEvents = ({ detail }: Event) => {
+    console.log(detail);
+    if (detail) {
+      const { currentState: { isCompletelyValid } = {}, field } = detail;
+      if (field) {
+        setValidFields(prevState => ({
+          ...prevState,
+          [field]: isCompletelyValid
+        }));
+      }
+    }
+  };
+
+  const handleSubmition = async () => {
+    // handle card form verification
+    console.log('submition');
+    // error handling
+    // customer verification
+    console.log(isCardFieldsValid);
+    if (!isCardFieldsValid) return;
+    if (!isSubmitting) {
+      // Disable the submit button as we await tokenization and make a
+      // payment request
+      setSubmitting(true);
+      try {
+        const token = await tokenizePaymentMethod();
+        // Create your own addPayment function to communicate with your API
+        // await addPayment(token)
+        console.log('TOKEN', token);
+      } catch (error) {
+        console.error('FAILURE', error);
+      } finally {
+        setSubmitting(false);
+      }
+    }
+  };
+
+  interface Token {
+    status: string;
+    token: string;
+    errors: unknown;
+  }
+
+  async function tokenizePaymentMethod(): Promise<string | void> {
+    const tokenResult: Token = await squareCard.tokenize();
+    // A list of token statuses can be found here:
+    // https://developer.squareup.com/reference/sdks/web/payments/enums/TokenStatus
+    if (tokenResult.status === 'OK') {
+      return tokenResult.token;
+    }
+    let errorMessage = `Tokenization failed-status: ${tokenResult.status}`;
+    if (tokenResult.errors) {
+      errorMessage += ` and errors: ${JSON.stringify(tokenResult.errors)}`;
+    }
+    throw new Error(errorMessage);
+  }
+
   return squareLoaded ? (
-    <form id='payment-form'>
-      <div id='card-container' />
-      <button className='confirm-donation-btn' id='card-button' type='button'>
-        Pay $1,000,000
-      </button>
-    </form>
+    <>
+      {}
+      <form className={squareCard ? '' : 'hide'} id='payment-form'>
+        <div id='card-container' />
+        <button
+          className='confirm-donation-btn'
+          id='card-button'
+          onClick={handleSubmition}
+          type='button'
+        >
+          Donate
+        </button>
+      </form>
+    </>
   ) : null;
 }
 

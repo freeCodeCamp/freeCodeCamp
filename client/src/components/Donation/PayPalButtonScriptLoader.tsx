@@ -63,7 +63,10 @@ declare global {
     };
     Square: {
       errors: unknown;
-      payments: () => void;
+      payments: (
+        squareApplicationId: string | null,
+        locationId: string
+      ) => void;
     };
   }
 }
