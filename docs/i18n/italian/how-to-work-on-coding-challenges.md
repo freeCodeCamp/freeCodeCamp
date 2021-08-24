@@ -486,6 +486,6 @@ Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, 
 
 Creare e modificare sfide:
 
-1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
+1. [Tipo della sfida (challenge type)](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - cosa significa il tipo di sfida numerico (enum).
 
 2. [Contribuire a FreeCodeCamp - Scrivere Test  per le sfide ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - un video che segue [Ethan Arrowood](https://twitter.com/ArrowoodTech) in quanto contributore della vecchia versione del curriculum.

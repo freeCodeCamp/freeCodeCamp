@@ -68,7 +68,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 
    - Questo è molto importante quando si fanno cambiamenti che non sono solo modifiche a contenuto testuale come documentazione o descrizioni di sfide. Esempi di modifiche che hanno bisogno di essere testate localmente includono JavaScript, CSS o HTML che potrebbero cambiare funzionalità o layout di una pagina.
 
-   - Se la tua PR ha effetto sul comportamento di una pagina dovrebbe essere accompagnato da corrispondenti [test di integrazione di Cypress](/how-to-add-cypress-tests).
+   - Se la tua PR ha effetto sul comportamento di una pagina dovrebbe essere accompagnato da corrispondenti [test di integrazione di Cypress](how-to-add-cypress-tests.md).
 
 ## Feedback sulle pull request
 

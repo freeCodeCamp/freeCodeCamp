@@ -298,8 +298,8 @@ Você deve manter as VMs atualizadas realizando atualizações e atualizações.
 
 > [!WARNING] Antes de executar estes comandos:
 > 
-> - Certifique-se que a MV foi completamente fornecida e que não há etapas pós instalação sendo executadas.
-> - Se você estiver atualizando pacotes em uma MV que já está servindo uma aplicação, certifique-se que a aplicação está parada/salva. Atualizações de pacotes causarão picos no uso da banda larga, memória e/ou CPU levando à falhas nas aplicações que estão sendo executadas.
+> - Certifique-se de que a MV foi completamente fornecida e que não há etapas pós instalação sendo executadas.
+> - Se você estiver atualizando pacotes em uma MV que já está servindo uma aplicação, certifique-se de que a aplicação está parada/salva. Atualizações de pacotes causarão picos no uso da banda larga, memória e/ou CPU levando à falhas nas aplicações que estão sendo executadas.
 
 Atualize informações do pacote
 
@@ -847,7 +847,7 @@ Você vai precisar de um PAT, que você pode pegar nesse link: https://dev.azure
 
 Vá para [Azure Devops](https://dev.azure.com/freeCodeCamp-org) e registre o agente do zero nos [grupos de implantação](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup) necessários.
 
-> [!NOTE] Você deve executar os scripts no diretório principal e ter certeza de que nenhum outro diretório `azagent` existe.
+> [!NOTE] Você deve executar os scripts no diretório principal e garantir que nenhum outro diretório `azagent` existe.
 
 ### Atualizando agentes
 

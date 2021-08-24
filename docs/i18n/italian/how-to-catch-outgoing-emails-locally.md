@@ -7,7 +7,7 @@
 
 ## Introduzione
 
-Alcuni flussi di lavoro di posta elettronica, come l'aggiornamento dell'email di un utente, richiedono l'api-server di back-end per inviare email in uscita. MailHog is an alternative to using an email service provider to send actual email messages. It is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
+Alcuni flussi di lavoro di posta elettronica, come l'aggiornamento dell'email di un utente, richiedono l'api-server di back-end per inviare email in uscita. MailHog è una alternativa ad usare un provider di un servizio email per mandare messagi email. È uno strumento per lo sviluppo per testare le email che catturerà i messaggi email mandati dalla tua istanza di freeCodeCamp.
 
 ## Installare MailHog
 
