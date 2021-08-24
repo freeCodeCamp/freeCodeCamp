@@ -37,7 +37,7 @@ function AcceptPrivacyTerms({
   t
 }: AcceptPrivacyTermsProps) {
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
-  const acceptTermsRef = useRef<typeof acceptTerms>(acceptTerms);
+  const acceptTermsRef = useRef(acceptTerms);
   useEffect(() => {
     acceptedPrivacyRef.current = acceptedPrivacyTerms;
     acceptTermsRef.current = acceptTerms;
