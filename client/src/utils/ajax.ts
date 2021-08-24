@@ -186,6 +186,11 @@ export function addDonation(body: Donation): Promise<void> {
 export function postChargeStripe(body: Donation): Promise<void> {
   return post('/donate/charge-stripe', body);
 }
+
+export function postChargeSquare(body: Donation): Promise<void> {
+  console.log(body);
+  return post('/donate/charge-square', body);
+}
 interface Report {
   username: string;
   reportDescription: string;

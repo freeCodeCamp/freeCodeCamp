@@ -25,7 +25,8 @@ import {
   updateDonationFormState,
   defaultDonationFormState,
   userSelector,
-  postChargeStripe
+  postChargeStripe,
+  postChargeSquare
 } from '../../redux';
 import Spacer from '../helpers/spacer';
 
@@ -61,6 +62,7 @@ type DonateFormComponentState = {
 type DonateFormProps = {
   addDonation: (data: unknown) => unknown;
   postChargeStripe: (data: unknown) => unknown;
+  postChargeSquare: (data: unknown) => unknown;
   defaultTheme?: string;
   email: string;
   handleProcessing: (duration: string, amount: number, action: string) => void;
@@ -98,7 +100,8 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   addDonation,
   updateDonationFormState,
-  postChargeStripe
+  postChargeStripe,
+  postChargeSquare
 };
 
 class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
@@ -128,6 +131,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     this.resetDonation = this.resetDonation.bind(this);
     this.postStripeDonation = this.postStripeDonation.bind(this);
     this.handlePaymentButtonLoad = this.handlePaymentButtonLoad.bind(this);
+    this.chargeSquare = this.chargeSquare.bind(this);
   }
 
   componentWillUnmount() {
@@ -216,6 +220,24 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       duration,
       email: payerEmail,
       name: payerName
+    });
+  }
+
+  chargeSquare(token: string) {
+    const { email } = this.props;
+    const { donationAmount: amount, donationDuration: duration } = this.state;
+    if (this.props.handleProcessing) {
+      this.props.handleProcessing(
+        duration,
+        amount,
+        'Square payment submission'
+      );
+    }
+    this.props.postChargeSquare({
+      token,
+      amount,
+      duration,
+      email
     });
   }
 
@@ -316,6 +338,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           {loading.square && this.paymentButtonsLoader()}
           {isMinimalForm && (
             <SquareForm
+              chargeSquare={this.chargeSquare}
               handlePaymentButtonLoad={this.handlePaymentButtonLoad}
               isSquareLoading={loading.square}
             />

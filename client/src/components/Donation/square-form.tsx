@@ -16,10 +16,12 @@ const {
 interface SquareForProps {
   handlePaymentButtonLoad: (provider: 'square') => void;
   isSquareLoading: boolean;
+  chargeSquare: (token: string | void) => void;
 }
 function SquareForm({
   handlePaymentButtonLoad,
-  isSquareLoading
+  isSquareLoading,
+  chargeSquare
 }: SquareForProps): JSX.Element | null {
   const [squareLoaded, setSquareLoaded] = useState(false);
   const [squarePayments, setSquarePayments] = useState<Payments | void>();
@@ -102,7 +104,6 @@ function SquareForm({
   }
 
   const handleCardEvents = ({ detail }: Event) => {
-    console.log(detail);
     if (detail) {
       const { currentState: { isCompletelyValid } = {}, field } = detail;
       if (field) {
@@ -127,6 +128,7 @@ function SquareForm({
       setSubmitting(true);
       try {
         const token = await tokenizePaymentMethod();
+        chargeSquare(token);
         // Create your own addPayment function to communicate with your API
         // await addPayment(token)
         console.log('TOKEN', token);
