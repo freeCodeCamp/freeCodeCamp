@@ -45,7 +45,6 @@ Cypress.Commands.add('login', () => {
 });
 
 Cypress.Commands.add('toggleAll', () => {
-  cy.login();
   cy.visit('/settings');
   // cy.get('input[name="isLocked"]').click();
   // cy.get('input[name="name"]').click();
