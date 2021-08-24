@@ -14,7 +14,7 @@ Per imparare come scrivere test Cypress, o specs, per favore vedi la [dcoumentaz
 
 ## Come eseguire i test
 
-> [!NOTE] Se stai usando GitPod, vedi [Cypress-GitPod Setup](/how-to-add-cypress-tests#cypress-gitpod-setup)
+> [!NOTE] Se stai usando GitPod, vedi [Cypress-GitPod Setup](#setup-di-cypress-su-gitpod)
 
 ### 1. Assicurati che MongoDB e l'applicazione del client siano in esecuzione
 
@@ -80,4 +80,4 @@ npm run cypress:install-build-tools
 
 - Quando chiesto dal terminale, seleziona il layout della tua tastiera per lingua/area
 
-Ora, [puoi eseguire Cypress](/how-to-add-cypress-tests#_2-run-the-cypress-tests)
+Ora, [puoi eseguire Cypress](#_2-esegui-i-test-cypress)
