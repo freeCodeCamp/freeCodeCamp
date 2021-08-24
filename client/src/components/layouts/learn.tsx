@@ -61,13 +61,16 @@ function LearnLayout({
 }: LearnLayoutProps): JSX.Element {
   useEffect(() => {
     tryToShowDonationModal();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     return () => {
       const metaTag = document.querySelector(`meta[name="robots"]`);
       if (metaTag) {
         metaTag.remove();
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (fetchState.pending && !fetchState.complete) {
