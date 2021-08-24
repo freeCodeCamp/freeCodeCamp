@@ -49,6 +49,7 @@ describe('Responsive Web Design Superblock', () => {
   });
   describe('After submitting all 5 projects', () => {
     before(() => {
+      cy.login();
       cy.toggleAll();
       const { superBlock, block, challenges } = projects;
       challenges.forEach(({ slug, solution }) => {
