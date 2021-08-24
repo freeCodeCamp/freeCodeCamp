@@ -32,6 +32,9 @@ const pythonProjects = {
 };
 
 describe('project submission', () => {
+  beforeEach(() => {
+    cy.exec('npm run seed');
+  });
   // NOTE: this will fail once challenge tests are added.
   it('Should be possible to submit Python projects', () => {
     const { superBlock, block, challenges } = pythonProjects;
@@ -55,7 +58,7 @@ describe('project submission', () => {
     });
   });
   it(
-    'JavaScript projects can be submitted and then viewed in /settings',
+    'JavaScript projects can be submitted and then viewed in /settings and on the certifications',
     { browser: 'electron' },
     () => {
       cy.login();
@@ -70,6 +73,8 @@ describe('project submission', () => {
           return challenges.find(({ title }) => title === projectTitle);
         });
 
+        // We need to wait for everything to finish loading and hydrating, so we
+        // use this text as a proxy for that.
         const textInNextPage = projectTitles.slice(1);
         textInNextPage.push('Claim Your Certification');
 
@@ -102,6 +107,21 @@ describe('project submission', () => {
 
         projectTitles.forEach(title => {
           cy.get(`[data-cy="${title}"]`).click();
+          // TODO: if we write a test to check that the solution is visible
+          // before reloading, we should include that here.
+          cy.contains('Solution for');
+          cy.contains('Close').click();
+        });
+
+        // Claim and view solutions on certification page
+
+        cy.toggleAll();
+        cy.visit('/learn/javascript-algorithms-and-data-structures');
+        cy.contains('Claim Certification').click();
+        cy.contains('Show Certification').click();
+
+        projectTitles.forEach(title => {
+          cy.get(`[data-cy="${title} solution"]`).click();
           // TODO: if we write a test to check that the solution is visible
           // before reloading, we should include that here.
           cy.contains('Solution for');
