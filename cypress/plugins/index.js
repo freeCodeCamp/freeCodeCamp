@@ -11,7 +11,14 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 /* eslint-disable no-unused-vars */
+
+const { execSync } = require('child_process');
+const { existsSync } = require('fs');
+
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+  on('before:run', () => {
+    if (!existsSync('../../config/curriculum.json')) {
+      execSync('npm run build:curriculum');
+    }
+  });
 };

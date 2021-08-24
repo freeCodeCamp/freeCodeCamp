@@ -1,5 +1,3 @@
-/* global cy */
-
 const locations = {
   index:
     'learn/back-end-development-and-apis/managing-packages-with-npm/' +

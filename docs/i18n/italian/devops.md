@@ -44,7 +44,7 @@ Una volta che le modifiche sono inviate ai branch di rilascio protetti, una pipe
 
 La pipeline di build continua ad attivare una corrispondente pipeline di rilascio se completa un'esecuzione riuscita. Le pipeline di rilascio sono responsabili della raccolta degli artefatti di build, e di spostarli sui server di produzione.
 
-Lo stato delle build e delle release è [disponibile qui](#build-test-and-deployment-status).
+Lo stato delle build e delle release è [disponibile qui](#stato-di-build-test-e-distribuzione).
 
 ## Avviare un build, test e deploy
 

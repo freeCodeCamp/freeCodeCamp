@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Top contributor in user profile', () => {
   before(() => {
     cy.clearCookies();

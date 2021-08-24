@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Help Button', () => {
   it('should be visible', () => {
     cy.visit(

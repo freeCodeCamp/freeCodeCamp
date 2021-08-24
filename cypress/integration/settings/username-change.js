@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Username input field', () => {
   beforeEach(() => {
     cy.login();

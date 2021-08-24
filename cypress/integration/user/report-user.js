@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Report User', () => {
   beforeEach(() => {
     cy.exec('npm run seed');
@@ -21,5 +19,3 @@ describe('Report User', () => {
     cy.contains('A report was sent to the team with foo@bar.com in copy');
   });
 });
-
-// A report was sent to the team with foo@bar.com in copy
