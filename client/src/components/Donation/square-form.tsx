@@ -13,7 +13,14 @@ const {
     deploymentEnv: 'staging' | 'live';
   };
 
-function SquareForm(): JSX.Element | null {
+interface SquareForProps {
+  handlePaymentButtonLoad: (provider: 'square') => void;
+  isSquareLoading: boolean;
+}
+function SquareForm({
+  handlePaymentButtonLoad,
+  isSquareLoading
+}: SquareForProps): JSX.Element | null {
   const [squareLoaded, setSquareLoaded] = useState(false);
   const [squarePayments, setSquarePayments] = useState<Payments | void>();
   const [squareCard, setSquareCard] = useState<Card | null>(null);
@@ -80,6 +87,8 @@ function SquareForm(): JSX.Element | null {
     const card: Card = await squarePayments.card();
     if (!squareCard) await card.attach('#card-container');
     setSquareCard(card);
+    handlePaymentButtonLoad('square');
+    handlePaymentButtonLoad('square');
     card.addEventListener('focusClassAdded', handleCardEvents);
     card.addEventListener('focusClassRemoved', handleCardEvents);
     card.addEventListener('errorClassAdded', handleCardEvents);
@@ -152,7 +161,7 @@ function SquareForm(): JSX.Element | null {
   return squareLoaded ? (
     <>
       {}
-      <form className={squareCard ? '' : 'hide'} id='payment-form'>
+      <form className={isSquareLoading ? 'hide' : ''} id='payment-form'>
         <div id='card-container' />
         <button
           className='confirm-donation-btn'

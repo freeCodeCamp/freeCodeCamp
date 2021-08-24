@@ -49,6 +49,7 @@ type DonateFormState = {
   loading: {
     stripe: boolean;
     paypal: boolean;
+    square: boolean;
   };
 };
 
@@ -142,7 +143,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     });
   }
 
-  handlePaymentButtonLoad(provider: 'stripe' | 'paypal') {
+  handlePaymentButtonLoad(provider: 'stripe' | 'paypal' | 'square') {
     this.props.updateDonationFormState({
       ...this.props.donationFormState,
       loading: {
@@ -276,7 +277,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       t,
       isMinimalForm
     } = this.props;
-    const paymentButtonsLoading = loading.stripe && loading.paypal;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
     const isOneTime = donationDuration === 'onetime';
     const walletlabel = `${t(
@@ -290,8 +290,8 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           {this.getDonationButtonLabel()}:
         </b>
         <Spacer />
-        {paymentButtonsLoading && this.paymentButtonsLoader()}
         <div className={'donate-btn-group'}>
+          {loading.stripe && loading.paypal && this.paymentButtonsLoader()}
           <WalletsWrapper
             amount={donationAmount}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
@@ -313,7 +313,13 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             theme={defaultTheme ? defaultTheme : theme}
           />
           {isMinimalForm && <div className='separator'>Or pay with card</div>}
-          {isMinimalForm && <SquareForm />}
+          {loading.square && this.paymentButtonsLoader()}
+          {isMinimalForm && (
+            <SquareForm
+              handlePaymentButtonLoad={this.handlePaymentButtonLoad}
+              isSquareLoading={loading.square}
+            />
+          )}
         </div>
       </>
     );
@@ -330,9 +336,11 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
 
   render() {
     const {
-      donationFormState: { processing, success, error, redirecting },
+      donationFormState: { processing, success, error, redirecting, loading },
       isMinimalForm
     } = this.props;
+
+    console.log(loading);
 
     if (success || error) {
       return this.renderCompletion({
