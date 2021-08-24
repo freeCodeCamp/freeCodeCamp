@@ -81,7 +81,9 @@ function createQuestionEpic(action$, state$, { window }) {
         )}\n${i18next.t('forum-help.add-code-three')}\n\n\`\`\`\n${endingText}`
       );
 
-      const category = window.encodeURIComponent(helpCategory || 'Help');
+      const category = window.encodeURIComponent(
+        i18next.t('links:help.' + helpCategory || 'Help')
+      );
 
       const studentCode = window.encodeURIComponent(textMessage);
       const altStudentCode = window.encodeURIComponent(altTextMessage);

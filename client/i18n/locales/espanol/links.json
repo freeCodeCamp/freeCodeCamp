@@ -18,5 +18,11 @@
   "nav": {
     "forum": "https://forum.freecodecamp.org/c/espanol/",
     "news": "https://freecodecamp.org/espanol/news/"
+  },
+  "help": {
+    "HTML-CSS": "Espanol/HTML-CSS",
+    "JavaScript": "Espanol/JavaScript",
+    "Python": "Espanol/Python",
+    "Relational Databases": "Espanol/Relational Databases"
   }
 }

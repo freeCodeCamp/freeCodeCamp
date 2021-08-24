@@ -18,5 +18,11 @@
   "nav": {
     "forum": "https://forum.freecodecamp.org/",
     "news": "https://freecodecamp.org/news/"
+  },
+  "help": {
+    "HTML-CSS": "HTML-CSS",
+    "JavaScript": "JavaScript",
+    "Python": "Python",
+    "Relational Databases": "Relational Databases"
   }
 }
