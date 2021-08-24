@@ -66,15 +66,24 @@
       },
       "basic-html-cat-photo-app": {
         "title": "HTML base: App per Foto di Gatti",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "basic-css-cafe-menu": {
         "title": "CSS base: Menu Caffetteria",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "css-variables-skyline": {
         "title": "Variabili CSS: Skyline",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -161,15 +170,24 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Gioco RPG di base in Javascript",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Contatore Calorie in Javascript Intermedio",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "functional-programming-spreadsheet": {
         "title": "Foglio di calcolo in Programmazione Funzionale",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -177,7 +195,7 @@
     "title": "Librerie di sviluppo Front End",
     "intro": [
       "Ora che hai familiarità con HTML, CSS, e JavaScript, aumenta le tue competenze conoscendo alcune delle più popolari librerie di front-end del settore.",
-      "Nella Certificazione Librerie di Front End imparerai come stilizzare rapidamente il tuo sito con Bootstrap. Imparerai anche come aggiungere la logica ai tuoi stili CSS e ad estenderli con Sass.",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
       "Più tardi, costruirai un carrello e altre applicazioni per imparare a creare potenti applicazioni a pagina singola (Single Page Application, SPA) con React e Redux."
     ],
     "note": "",
@@ -271,26 +289,33 @@
       },
       "d3-dashboard": {
         "title": "Dashboard D3",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
   "relational-databases": {
     "title": "Database relazionali",
-    "intro": ["segnaposto"],
+    "intro": [
+      "segnaposto"
+    ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Conosci i Database Relazionali",
-        "intro": ["segnaposto"]
+        "intro": [
+          "segnaposto"
+        ]
       }
     }
   },
   "back-end-development-and-apis": {
-    "title": "API e Microservizi",
+    "title": "Back End Development and APIs",
     "intro": [
       "Fino a questo punto, hai usato solo JavaScript sul front-end per aggiungere interattività a una pagina, risolvere sfide algoritmiche o costruire una Single Page Application. Ma JavaScript può essere utilizzato anche nel backend (cioè lato server), per costruire intere applicazioni web.",
       "Oggi, uno dei modi più popolari per costruire applicazioni è attraverso i microservizi, che sono piccole applicazioni modulari che lavorano insieme per formare qualcosa di più grande.",
-      "Nelle Certificazione API e Microservizi, imparerai a scrivere app per il backend con Node.js e npm (Node Package Manager). Costruirai anche applicazioni web con il framework Express, e costruirai un microservizio Trova Persone con MongoDB e la libreria Mongoose."
+      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -319,10 +344,10 @@
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Progetti di API e Microservizi",
+        "title": "Back End Development and APIs Projects",
         "intro": [
           "Hai già lavorato con le API prima, ma ora che conosci npm, Node, Express, MongoDB e Mongoose, è ora di costruirle. Costruisci su tutto quello che hai imparato fino a questo punto per creare 5 diversi microservizi, che sono applicazioni più piccole, con un ambito di applicazione ristretto.",
-          "Dopo averli creati, avrai 5 belle API di microservizi che potrai mostrare a amici, familiari e potenziali datori di lavoro. Oh, e avrai anche una certificazione nuova di zecca su API e Microservizi."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back End Development and APIs Certification, too."
         ]
       }
     }

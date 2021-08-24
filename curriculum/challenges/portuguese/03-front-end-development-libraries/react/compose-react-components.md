@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-O componente `TypesOfFood` deve retornar o component `Fruits`.
+O componente `TypesOfFood` deve retornar o componente `Fruits`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-O componente `Fruits` deve retornar o componente `Vegetables` abaixo do componente `Fruits`.
+O componente `TypesOfFood` deve retornar o componente `Vegetables` abaixo do componente `Fruits`.
 
 ```js
 assert(

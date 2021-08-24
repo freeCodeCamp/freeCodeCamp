@@ -20,7 +20,7 @@ Puoi aggiungere Bootstrap a qualsiasi app inserendo il seguente codice nella par
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 ```
 
-In questo caso, lo abbiamo già aggiunto per te a questa pagina dietro le quinte. Nota che che usare `>` o `/>` per chiudere il tag `link` è accettabile.
+In questo caso, lo abbiamo già aggiunto per te a questa pagina dietro le quinte. Nota che è accettabile usare sia `>` che `/>` per chiudere il tag `link`.
 
 Per iniziare, dovremmo annidare tutto il nostro HTML (tranne il tag `link` e l'elemento `style`) in un elemento `div` di classe `container-fluid`.
 

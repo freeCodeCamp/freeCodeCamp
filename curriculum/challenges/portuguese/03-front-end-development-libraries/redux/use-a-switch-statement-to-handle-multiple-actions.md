@@ -18,13 +18,13 @@ O editor de código tem uma store, actions e criadores de actions configurados p
 
 # --hints--
 
-Chamar a função `loginUser` deve retornar um objeto com a propriedade `type` definida para a string `LOGIN`.
+Chamar a função `loginUser` deve retornar um objeto com a propriedade type definida para a string `LOGIN`.
 
 ```js
 assert(loginUser().type === 'LOGIN');
 ```
 
-Chamar a função `logoutUser` deve retornar um objeto com a propriedade `type` definida para a string `LOGOUT`.
+Chamar a função `logoutUser` deve retornar um objeto com a propriedade type definida para a string `LOGOUT`.
 
 ```js
 assert(logoutUser().type === 'LOGOUT');

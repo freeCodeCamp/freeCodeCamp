@@ -33,13 +33,13 @@ No crees ninguna variable nueva.
 
 # --hints--
 
-`studlyCapVar` debe definirse y tener un valor de `10`.
+`studlyCapVar` debe estar definido y tener un valor de `10`.
 
 ```js
 assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
 ```
 
-`properCamelCase` debe definirse y tener una cadena con valor `A String`.
+`properCamelCase` debe estar definido y tener una cadena con valor `A String`.
 
 ```js
 assert(
@@ -47,25 +47,25 @@ assert(
 );
 ```
 
-`titleCaseOver` debe definirse y tener una cadena con valor `9000`.
+`titleCaseOver` debe estar definido y tener una cadena con valor `9000`.
 
 ```js
 assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
 ```
 
-`studlyCapVar` debe usar camelCase tanto en las sección de declaración como de asignación.
+`studlyCapVar` debe usar camelCase tanto en las secciones de declaración como de asignación.
 
 ```js
 assert(code.match(/studlyCapVar/g).length === 2);
 ```
 
-`properCamelCase` debe usar camelCase tanto en las sección de declaración como de asignación.
+`properCamelCase` debe usar camelCase tanto en las secciones de declaración como de asignación.
 
 ```js
 assert(code.match(/properCamelCase/g).length === 2);
 ```
 
-`titleCaseOver` debe usar camelCase tanto en las sección de declaración como de asignación.
+`titleCaseOver` debe usar camelCase tanto en las secciones de declaración como de asignación.
 
 ```js
 assert(code.match(/titleCaseOver/g).length === 2);

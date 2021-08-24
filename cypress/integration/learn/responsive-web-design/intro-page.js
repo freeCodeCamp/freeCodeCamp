@@ -1,5 +1,3 @@
-/* global cy */
-
 const selectors = {
   firstBlock: '.block-ui > .block:nth-child(1) > .map-title'
 };

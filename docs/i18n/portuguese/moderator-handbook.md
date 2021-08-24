@@ -101,7 +101,7 @@ Dependendo do tipo de pull request, siga as regras correspondentes listadas ante
 
 ##### Certifique-se de que os testes de CI passaram:
 
-Antes de dar merge em qualquer pull request, certifique-se que há um aviso dizendo que todos os testes passaram (todos marcados em verde) no pull request. Se alguma das verificações falhou, investigue e tente descobrir qual é a causa raíz. A mudança proposta está quebrando nossos testes? O site vai compilar corretamente se darmos merge no PR? Essas verificações são importantes para a estabilidade da plataforma.
+Antes de dar merge em qualquer pull request, certifique-se de que haja um aviso dizendo que todos os testes passaram (todos marcados em verde) no pull request. Se alguma das verificações falhou, investigue e tente descobrir qual é a causa raíz. A mudança proposta está quebrando nossos testes? O site vai compilar corretamente se darmos merge no PR? Essas verificações são importantes para a estabilidade da plataforma.
 
 > [!WARNING] Fazer merge em um PR que falhou nas verificações CI/CD pode causar dificuldades para todas as partes interessadas, incluindo o time de desenvolvimento e contribuidores.
 
@@ -246,7 +246,7 @@ Veja como os moderadores lidam com violações do nosso[Código de Conduta](http
 
    - Alguém postou um anúncio e/ou a uma mensagem/imagem se promovendo (rede social).
 
-   Em todas as outras situações - até mesmo quando o código de conduta é violado -, os moderadores não devem apagar as mensagens porque elas são registros históricos importantes.  Quando você apagar uma mensagem, tenha certeza que você tirou uma captura de tela dela antes! A captura de tela pode ser registrada no canal #mod-log.
+   Em todas as outras situações - até mesmo quando o código de conduta é violado -, os moderadores não devem apagar as mensagens porque elas são registros históricos importantes.  Quando você apagar uma mensagem, não se esqueça de fazer uma captura de tela da mensagem antes! A captura de tela pode ser registrada no canal #mod-log.
 
    > [!NOTE] Se a mensagem contém material que possa ser ilegal ao capturar a tela, copie o link dela e forneça-o para @raisedadead encaminhá-la para o time de Confiança e Segurança do Discord.
 

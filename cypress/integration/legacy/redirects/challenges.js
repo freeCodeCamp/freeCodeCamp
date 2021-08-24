@@ -1,5 +1,3 @@
-/* global cy */
-
 const locations = {
   chalSuper: '/challenges/responsive-web-design/',
   chalBlock: '/challenges/responsive-web-design/basic-html-and-html5',

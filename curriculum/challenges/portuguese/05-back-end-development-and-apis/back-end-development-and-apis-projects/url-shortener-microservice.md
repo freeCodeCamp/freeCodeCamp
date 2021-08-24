@@ -88,7 +88,7 @@ async (getUserInput) => {
 };
 ```
 
-Se você passar um URL inválido que não siga o formato válido `http://www.example.com` , a resposta em JSON conterá `{ error: 'invalid url' }`
+Se você passar um URL inválido que não siga o formato válido `http://www.example.com`, a resposta em JSON conterá `{ error: 'invalid url' }`
 
 ```js
 async (getUserInput) => {

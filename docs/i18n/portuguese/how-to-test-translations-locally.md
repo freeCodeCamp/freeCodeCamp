@@ -15,7 +15,7 @@ Primeiro, visite o arquivo `config/i18n/all-langs.js` para adicionar o idioma à
 - `langDisplayNames`: esses são os nomes dos idiomas que aparecerão para a seleção no menu de navegação.
 - `langCodes`: esses são os códigos de idiomas usados para formatar datas e números. Esses deverão ser códigos Unicode CLDR ao invés de códigos ISO.
 
-Como um exemplo, se você tivesse que habilitar o idioma Dothraki como seu idioma, os objetos `all-langs.js` devem ficar assim:
+Como um exemplo, se você tivesse que habilitar o idioma Dothraki como seu idioma, os objetos  `all-langs.js` devem ficar assim:
 
 ```js
 const availableLangs = {

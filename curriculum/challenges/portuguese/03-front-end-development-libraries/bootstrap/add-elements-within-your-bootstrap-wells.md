@@ -29,7 +29,7 @@ Você deve ter o total de 6 elementos `button`.
 assert($('button') && $('button').length > 5);
 ```
 
-Todos os elementos `button` devem conter tag de fechamento.
+Todos os elementos `button` devem ter tags de fechamento.
 
 ```js
 assert(

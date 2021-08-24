@@ -10,7 +10,7 @@ dashedName: build-a-drum-machine
 
 **Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: <https://codepen.io/freeCodeCamp/full/MJyNMd>.
 
-Compila le [user stories](https://en.wikipedia.org/wiki/User_story) qui sotto e fai passare tutti i test. Dalle il tuo stile personale.
+Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story) e fai passare tutti i test. Usa il tuo stile personale.
 
 Puoi utilizzare qualsiasi mix di HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux e jQuery per completare questo progetto. Dovresti usare un framework frontend (come React per esempio) perché questa sezione riguarda l'apprendimento dei framework per il frontend. Ulteriori tecnologie non elencate sopra non sono raccomandate e usarle è a tuo rischio. Stiamo cercando di supportare altri framework per il frontend come Angular e Vue, ma attualmente non sono supportati. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
 
@@ -18,7 +18,7 @@ Puoi utilizzare qualsiasi mix di HTML, JavaScript, CSS, Bootstrap, SASS, React, 
 
 **User Story #2:** All'interno di `#drum-machine` posso vedere un elemento con un corrispondente `id="display"`.
 
-**User Story #3:** Dentro a `#drum-machine` posso vedere 9 elementi tamburo cliccabili, ognuno di classe `drum-pad`, con un id univoco che descrive la clip audio che l'elemento dovrà avviare, e un testo interno che corrisponde a uno dei seguenti tasti sulla tastiera: `Q` `W`, `E`, `A`, `S`, `D`, `Z`, `X`, `C`. I tamburi DEVONO essere in questo ordine.
+**User Story #3:** Dentro a `#drum-machine` posso vedere 9 elementi tamburo cliccabili, ognuno di classe `drum-pad`, con un id univoco che descrive la clip audio che l'elemento dovrà avviare, e un testo interno che corrisponde a uno dei seguenti tasti sulla tastiera: `Q`, `W`, `E`, `A`, `S`, `D`, `Z`, `X`, `C`. I tamburi DEVONO essere in questo ordine.
 
 **User Story #4:** All'interno di ogni `.drum-pad`, ci dovrebbe essere un elemento HTML5 `audio` che ha un attributo `src` che indica una clip audio, un nome di classe `clip` e un id corrispondente al testo interno del `.drum-pad` genitore (ad es. `id="Q"`, `id="W"`, `id="E"` ecc.).
 

@@ -1,5 +1,3 @@
-/* global cy */
-
 const selectors = {
   defaultOutput: '.output-text',
   editor: '.react-monaco-editor-container'

@@ -15,7 +15,7 @@ Vedi come abbiamo fatto rimbalzare tutti gli elementi del tuo `button`? Li abbia
 
 Hai appena usato la funzione `.addClass()` di jQuery, che ti permette di aggiungere classi agli elementi.
 
-Innanzitutto, individuiamo bene gli elementi `div` con la classe `well` utilizzando il selettore `$(".well")`.
+Innanzitutto, individuiamo gli elementi `div` con la classe `well` utilizzando il selettore `$(".well")`.
 
 Nota che, proprio come con le dichiarazioni CSS, devi digitare un `.` prima del nome della classe.
 

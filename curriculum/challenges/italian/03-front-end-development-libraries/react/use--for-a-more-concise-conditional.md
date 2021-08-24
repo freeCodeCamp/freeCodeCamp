@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036185
-title: Usare && per un condizionale più conciso
+title: Use && for a More Concise Conditional
 challengeType: 6
 forumTopicId: 301413
 dashedName: use--for-a-more-concise-conditional
@@ -8,7 +8,7 @@ dashedName: use--for-a-more-concise-conditional
 
 # --description--
 
-Le istruzioni `if/else` hanno funzionato nell'ultima sfida, ma c'è un modo più conciso per raggiungere lo stesso risultato. Immagina di dover tracciare diverse condizioni in un componente e di volere che elementi differenti siano presentati a seconda di ciascuna di queste condizioni. Se scrivi un sacco di istruzioni `else if` per restituire interfacce utente leggermente diverse, puoi dover ripetere il codice lasciando spazio a degli errori. Puoi invece utilizzare l'operatore logico `&&` per eseguire la logica condizionale in modo più conciso. Questo è possibile perché si desidera controllare se una condizione è `true`, e se è così, restituire qualche markup. Ecco un esempio:
+Le istruzioni `if/else` hanno funzionato nell'ultima sfida, ma c'è un modo più conciso per raggiungere lo stesso risultato. Immagina di dover tracciare diverse condizioni in un componente e di volere che elementi differenti siano presentati a seconda di ciascuna di queste condizioni. Se scrivi un sacco di istruzioni `else if` per restituire interfacce utente leggermente diverse, puoi dover ripetere il codice lasciando spazio a degli errori. Puoi invece utilizzare l'operatore logico `&&` per eseguire la logica condizionale in modo più conciso. Questo è possibile perché si desidera controllare se una condizione è `true`, e se è così, restituire qualche markup. Qui un esempio:
 
 ```jsx
 {condition && <p>markup</p>}

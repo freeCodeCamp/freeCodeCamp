@@ -56,7 +56,7 @@ Pedimos apenas que entenda os seguintes pontos:
 
 ## Primeiros passos
 
-Primeiro, tenha certeza de vir dar um "Oi" na nossa [sala de chat de tradutores](https://chat.freecodecamp.org/channel/contributors). Nós postamos atualizações regulares sobre recursos de tradução e respondemos a muitas de suas dúvidas lá.
+Primeiro, não se esqueça de vir dar um "Oi" na nossa [sala de chat de tradutores](https://chat.freecodecamp.org/channel/contributors). Nós postamos atualizações regulares sobre recursos de tradução e respondemos a muitas de suas dúvidas lá.
 
 Depois, vá para a nossa [plataforma de tradução](https://translate.freecodecamp.org/) e faça o login (se você não contribuiu com traduções anteriormente, você precisará criar uma conta).
 

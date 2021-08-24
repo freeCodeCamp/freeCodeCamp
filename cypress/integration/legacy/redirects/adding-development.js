@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Legacy redirects', () => {
   it('should redirect from front-end-libraries to front-end-development-libraries', () => {
     cy.visit('learn/front-end-libraries');

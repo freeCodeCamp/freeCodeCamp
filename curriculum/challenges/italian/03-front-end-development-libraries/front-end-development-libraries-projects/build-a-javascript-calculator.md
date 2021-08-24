@@ -10,7 +10,7 @@ dashedName: build-a-javascript-calculator
 
 **Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: <https://codepen.io/freeCodeCamp/full/wgGVVX>.
 
-Compila le [user stories](https://en.wikipedia.org/wiki/User_story) qui sotto e fai passare tutti i test. Dalle il tuo stile personale.
+Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story) e fai passare tutti i test. Usa il tuo stile personale.
 
 Puoi utilizzare qualsiasi mix di HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux e jQuery per completare questo progetto. Dovresti usare un framework frontend (come React per esempio) perché questa sezione riguarda l'apprendimento dei framework per il frontend. Ulteriori tecnologie non elencate sopra non sono raccomandate e usarle è a tuo rischio. Stiamo cercando di supportare altri framework per il frontend come Angular e Vue, ma attualmente non sono supportati. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
 
@@ -26,7 +26,7 @@ Puoi utilizzare qualsiasi mix di HTML, JavaScript, CSS, Bootstrap, SASS, React, 
 
 **User Story #6:** La mia calcolatrice dovrebbe contenere un elemento per visualizzare i valori con un corrispondente `id="display"`.
 
-**User Story #7:** In qualsiasi momento, premendo il pulsante `clear` dovrebbero essere cancellati i valori di input e output, e la calcolatrice dovrebbe tornare suo stato iniziale; nell'elemento con l'id `display` dovrebbe essere mostrato 0.
+**User Story #7:** In qualsiasi momento, premendo il pulsante `clear` dovrebbero essere cancellati i valori di input e output, e la calcolatrice dovrebbe tornare al suo stato iniziale; nell'elemento con l'id `display` dovrebbe essere mostrato 0.
 
 **User Story #8:** Quando inserisco dei numeri, dovrei essere in grado di vedere il mio input nell'elemento con l'id `display`.
 

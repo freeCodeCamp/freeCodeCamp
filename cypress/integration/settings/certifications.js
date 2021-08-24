@@ -1,5 +1,3 @@
-/* global cy */
-
 import '@testing-library/cypress/add-commands';
 
 describe('Settings certifications area', () => {

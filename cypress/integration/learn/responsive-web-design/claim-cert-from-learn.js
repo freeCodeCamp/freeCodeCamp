@@ -1,5 +1,3 @@
-/* global cy */
-
 const projects = {
   superBlock: 'responsive-web-design',
   block: 'responsive-web-design-projects',

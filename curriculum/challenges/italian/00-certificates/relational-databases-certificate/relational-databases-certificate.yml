@@ -1,6 +1,6 @@
 ---
 id: 606243f50267e718b1e755f4
-title: Certificato Database Relazionali
+title: Certificato Database Relazionale
 challengeType: 7
 isPrivate: true
 tests:
@@ -18,4 +18,4 @@ tests:
     title: Database della Tavola Periodica
   - 
     id: 602da04c22201c65d2a019f4
-    title: Final Boss
+    title: Gioco di indovinare il numero
