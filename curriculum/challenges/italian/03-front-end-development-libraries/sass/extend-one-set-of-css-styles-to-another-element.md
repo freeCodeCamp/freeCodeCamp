@@ -30,7 +30,7 @@ Supponi ora di volere un altro pannello chiamato `.big-panel`. Ha le stesse prop
 }
 ```
 
-Il `.big-panel` avrà le stesse proprietà di `.panel` in aggiunta ai nuovi stili.
+`.big-panel` avrà le stesse proprietà di `.panel` in aggiunta ai nuovi stili.
 
 # --instructions--
 

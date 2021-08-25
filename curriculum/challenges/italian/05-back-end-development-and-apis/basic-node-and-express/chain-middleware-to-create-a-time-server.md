@@ -10,7 +10,7 @@ dashedName: chain-middleware-to-create-a-time-server
 
 Il middleware può essere montato su un percorso specifico utilizzando `app.METHOD(path, middlewareFunction)`. Il middleware può anche essere concatenato all'interno della definizione del percorso.
 
-Guarda l'esempio seguente:
+Considera l'esempio seguente:
 
 ```js
 app.get('/user', function(req, res, next) {

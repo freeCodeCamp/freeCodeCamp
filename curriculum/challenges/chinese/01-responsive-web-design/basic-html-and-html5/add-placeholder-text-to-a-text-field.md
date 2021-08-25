@@ -17,7 +17,7 @@ dashedName: add-placeholder-text-to-a-text-field
 <input type="text" placeholder="this is placeholder text">
 ```
 
-**注意：**别忘了 `input` 元素是 "自闭和标签"，即不需要结束标签。
+**注意：** 别忘了 `input` 元素是 "自闭和标签"，即不需要结束标签。
 
 # --instructions--
 

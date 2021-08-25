@@ -26,7 +26,7 @@ nav ul li {
 }
 ```
 
-Per un grande progetto però, il file CSS avrà molte linee e regole. Questo è dove la nidificazione può aiutare a organizzare il codice inserendo le regole di stile figlie all'interno dei rispettivi elementi genitori:
+Per un grande progetto però, il file CSS avrà molte linee e regole. Qui la nidificazione può aiutare a organizzare il codice inserendo le regole di stile figlie all'interno dei rispettivi elementi genitori:
 
 ```scss
 nav {
@@ -45,7 +45,7 @@ nav {
 
 # --instructions--
 
-Utilizzare la tecnica di nidificazione mostrata sopra per riorganizzare le regole CSS per entrambi i figli dell'elemento `.blog-post`. Ai fini dei test, l'elemento `h1` dovrebbe venire prima dell'elemento `p`.
+Utilizza la tecnica di nidificazione mostrata sopra per riorganizzare le regole CSS per entrambi i figli dell'elemento `.blog-post`. Ai fini dei test, l'elemento `h1` dovrebbe venire prima dell'elemento `p`.
 
 # --hints--
 

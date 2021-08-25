@@ -9,37 +9,35 @@ dashedName: simulate-actions-using-a-headless-browser
 
 Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-Nelle prossime sfide simuleremo l'interazione umana con una pagina utilizzando un dispositivo chiamato 'Headless Browser' (browser senza testa).
+Nelle prossime sfide, simulerai l'interazione umana con una pagina utilizzando un headless browser (browser senza testa).
 
-Un headless browser è un browser web senza interfaccia utente grafica. Questo tipo di strumento è particolarmente utile per testare le pagine web, poiché è in grado di renderizzare e capire HTML, CSS, e JavaScript proprio come farebbe un browser.
+I browser senza intestazione sono browser web senza interfaccia grafica. Essi sono in grado di visualizzare e interpretare HTML, CSS, e JavaScript allo stesso modo in cui farebbe un browser normale, rendendoli particolarmente utili per testare le pagine web.
 
-Per queste sfide stiamo usando Zombie.JS. È un browser leggero che è totalmente basato su JS, che non richiede binari aggiuntivi da installare. Questa funzione lo rende utilizzabile in un ambiente come Replit. Ci sono molte altre opzioni (più potenti).
+Per le seguenti sfide userai Zombie.js, che è un browser senza testa leggero che non si basa su binari aggiuntivi da installare. Questa funzione lo rende utilizzabile in ambienti limitati come Replit. Ma ci sono molte altre, più potenti opzioni di browser senza intestazione.
 
-Mocha ti consente di preparare il terreno eseguendo del codice prima dei test effettivi. Questo può essere utile, ad esempio, per creare elementi nel database, che saranno utilizzati nei test successivi.
+Mocha consente di eseguire qualche codice prima dell'effettiva esecuzione dei test. Questo può essere utile per fare cose come aggiungere voci a un database che sarà utilizzato nel resto dei test.
 
-Con un headless browser, prima del test effettivo, abbiamo bisogno di **visitare** la pagina che stiamo per controllare. L'hook' `suiteSetup` viene eseguito solo una volta all'avvio della suite. Altri tipi di hook possono essere esuiti prima di ogni test, dopo ogni test, o alla fine della suite. Vedi la documentazione di Mocha per maggiori informazioni.
+Con un browser senza testa, prima di eseguire i test, è necessario **visitare** la pagina da testare.
+
+L'hook `suiteSetup` viene eseguito solo una volta all'inizio di una suite di test.
+
+Ci sono diversi altri tipi di hook che possono eseguire il codice prima di ogni test, dopo ogni test, o alla fine di una suite di test. Vedi la documentazione di Mocha per maggiori informazioni.
 
 # --instructions--
 
 All'interno di `tests/2_functional-tests.js`, immediatamente dopo la dichiarazione `Browser`, aggiungi l'URL del tuo progetto alla proprietà `site` della variabile:
 
 ```js
-Browser.site = 'https://sincere-cone.gomix.me'; // Your URL here
+Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL here
 ```
 
-Se stai testando su un ambiente locale, sostituisci la riga precedente con
-
-```js
-Browser.localhost('example.com', process.env.PORT || 3000);
-```
-
-All'interno di `tests/2_functional-tests.js`, al livello root della suite `'Functional Tests with Zombie.js'`, crea una nuova istanza dell'oggetto `Browser` con il seguente codice:
+Poi al livello di root della suite `'Functional Tests with Zombie.js'`, instanzia una nuova istanza dell'oggetto `Browser` con il seguente codice:
 
 ```js
 const browser = new Browser();
 ```
 
-Quindi, utilizza l'hook `suiteSetup` per indirizzare il `browser` al percorso `/` con il seguente codice:
+E usa l'hook `suiteSetup` per indirizzare il `browser` al percorso `/` con il seguente codice:
 
 ```js
 suiteSetup(function(done) {
@@ -53,11 +51,9 @@ Tutti i test dovrebbero essere superati.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
     (data) => {
-      data.slice(0, 4).forEach((test) => {
-        assert.equal(test.state, 'passed');
-      })
+      assert.equal(data.state, 'passed');
     },
     (xhr) => {
       throw new Error(xhr.responseText);

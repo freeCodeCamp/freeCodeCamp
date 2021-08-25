@@ -12,13 +12,55 @@ Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: 
 
 -   Clonare [questa repository GitHub](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) e completa il tuo progetto localmente.
 -   Usare [la nostra bozza di progetto su Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker) per completare il tuo progetto.
--   Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file della nostra repository GitHub.
+-   Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata pubblicamente da qualche parte. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
+
+# --instructions--
+
+Le tue risposte dovrebbero avere le seguenti strutture.
+
+Exercise:
+
+```js
+{
+  username: "fcc_test"
+  description: "test",
+  duration: 60,
+  date: "Mon Jan 01 1990",
+  _id: "5fb5853f734231456ccb3b05"
+}
+```
+
+User:
+
+```js
+{
+  username: "fcc_test",
+  _id: "5fb5853f734231456ccb3b05"
+}
+```
+
+Log:
+
+```js
+{
+  username: "fcc_test",
+  count: 1,
+  _id: "5fd01a41c5b5cf05d080502f",
+  log: [{
+    description: "test",
+    duration: 60,
+    date: "Mon Jan 01 1990",
+  }]
+}
+```
+
+**Suggerimento:** Per la prorpietà `date`, puoi usare il metodo `toDateString` della API `Date` per ottenere l'output previsto.
 
 # --hints--
 
-Dovresti inviare il tuo progetto, non l'URL di esempio.
+È necessario fornire il proprio progetto, non l'URL di esempio.
 
 ```js
 (getUserInput) => {

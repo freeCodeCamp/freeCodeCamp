@@ -27,7 +27,7 @@ Se si omette l'attributo `value`, i dati del modulo inviato usano il valore pred
 
 # --instructions--
 
-Dai a ciascuno degli input `radio` e `checkbox` l'attributo `value`. Usa il testo dell'etichetta, in minuscolo, come valore per l'attributo.
+Dai a ciascuno degli elementi di input esistenti di tipo `radio` e `checkbox` l'attributo `value`. Non creare alcun nuovo elemento radio o casella di controllo. Usa il testo dell'etichetta, in minuscolo, come valore per l'attributo.
 
 # --hints--
 
