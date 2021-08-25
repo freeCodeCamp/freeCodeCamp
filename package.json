@@ -126,7 +126,7 @@
     "eslint-plugin-react-hooks": "2.5.1",
     "eslint-plugin-testing-library": "4.12.0",
     "execa": "5.1.1",
-    "husky": "7.0.1",
+    "husky": "7.0.2",
     "jest": "27.0.6",
     "js-yaml": "3.14.1",
     "lerna": "4.0.0",
