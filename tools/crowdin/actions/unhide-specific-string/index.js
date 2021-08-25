@@ -2,7 +2,6 @@ require('dotenv').config({ path: `${__dirname}/../../.env` });
 const core = require('@actions/core');
 const { getFiles } = require('../../utils/files');
 const { getStrings, changeHiddenStatus } = require('../../utils/strings');
-// eslint-disable-next-line import/no-unresolved
 
 const filename = core.getInput('filename');
 const stringContent = core.getInput('string-content');
