@@ -51,26 +51,22 @@ function SquareForm({
   }, []);
 
   useEffect(() => {
-    function squareLoadedEffect() {
-      if (squareLoaded && !squarePayments) {
-        console.log('setting square payments...');
-        const locationId: string = squareLocationConfig[deploymentEnv];
-        setSquarePayments(
-          window.Square?.payments(squareApplicationId, locationId)
-        );
-      }
+    if (squareLoaded && !squarePayments) {
+      console.log('setting square payments...');
+      const locationId: string = squareLocationConfig[deploymentEnv];
+      setSquarePayments(
+        window.Square?.payments(squareApplicationId, locationId)
+      );
     }
-    squareLoadedEffect();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [squareLoaded]);
 
   useEffect(() => {
-    function squarePaymentsEffect() {
-      if (squarePayments) {
-        if (!squareCard) void initializeSquareCard();
-      }
+    if (squarePayments) {
+      if (!squareCard) void initializeSquareCard();
     }
-    squarePaymentsEffect();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [squarePayments]);
 
   interface Card {
     attach: (conternerId: string) => Promise<void>;
