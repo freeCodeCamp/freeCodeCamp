@@ -12,17 +12,17 @@ Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza
 
 # --instructions--
 
-All'interno di `tests/2_functional-tests.js`, nel test `'submit "surname" : "Vespucci" - write your e2e test...'` (`// #6`), automatizza la compilazione e invia il modulo:
+All'interno di `tests/2_functional-tests.js`, nel `'Submit the surname "Vespucci" in the HTML form'` test (`// #5`), automatizza quanto segue:
 
-1.  Compila il modulo con il `surname` di `Vespucci`
-2.  Invia premendo il pulsante `'submit'`
+1.  Compila il modulo con il cognome `Vespucci`
+2.  Premi il pulsante submit
 
-All'interno della callback:
+E all'interno della callback `pressButton`:
 
-1.  asserisci che lo stato è `200`
-2.  asserisci che il testo all'interno dell'elemento `span#name` è `'Amerigo'`
-3.  asserisci che il testo all'interno dell'elemento `span#surname` è `'Vespucci'`
-4.  asserisci che gli elementi `span#dates` esistono e il loro conteggio è `1`
+1.  Asserisci che lo stato sia OK `200`
+2.  Asserisci che il testo all'interno dell'elemento `span#name` è `'Amerigo'`
+3.  Asserisci che il testo all'interno dell'elemento `span#surname` è `'Vespucci'`
+4.  Asserisci che gli elementi `span#dates` esistono e il loro conteggio è `1`
 
 Non dimenticare di rimuovere la chiamata `assert.fail()`.
 
@@ -32,7 +32,7 @@ Tutti i test dovrebbero essere superati.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -46,7 +46,7 @@ Dovresti asserire che la richiesta dell'headless browser sia riuscita.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'browser.success');
     },
@@ -56,11 +56,11 @@ Dovresti asserire che la richiesta dell'headless browser sia riuscita.
   );
 ```
 
-Dovresti asserire che il testo all'interno dell'elemento 'span#name' sia 'Amerigo'.
+Dovresti controllare che il testo all'interno dell'elemento `span#name` è `'Amerigo'`.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'browser.text');
       assert.match(data.assertions[1].args[0], /('|")span#name\1/);
@@ -72,11 +72,11 @@ Dovresti asserire che il testo all'interno dell'elemento 'span#name' sia 'Amerig
   );
 ```
 
-Dovresti asserire che il testo all'interno dell'elemento 'span#surname' sia 'Vespucci'.
+Dovresti verificare che il testo all'interno dell'elemento `span#surname` è `'Vespucci'`.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
     (data) => {
       assert.equal(data.assertions[2].method, 'browser.text');
       assert.match(data.assertions[2].args[0], /('|")span#surname\1/);
@@ -88,11 +88,11 @@ Dovresti asserire che il testo all'interno dell'elemento 'span#surname' sia 'Ves
   );
 ```
 
-Dovresti asserire che l'elemento 'span#dates' esista e il suo conteggio sia 1.
+Dovresti affermare che l'elemento `span#dates` esiste e il suo conteggio è 1.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
     (data) => {
       assert.equal(data.assertions[3].method, 'browser.elements');
       assert.match(data.assertions[3].args[0], /('|")span#dates\1/);

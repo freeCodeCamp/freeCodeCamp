@@ -6,13 +6,65 @@ on:
   pull_request:
 
 jobs:
+  build-client:
+    name: Build
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Checkout client-config
+        uses: actions/checkout@v2
+        with:
+          repository: freeCodeCamp/client-config
+          path: client-config
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: 'npm'
+
+      - name: Set freeCodeCamp Environment Variables
+        run: cp sample.env .env
+
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Move serve.json to Public Folder
+        run: cp client-config/serve.json client/public/serve.json
+
+      # We tar them for performance reasons - uploading a lot of files is slow.
+      - name: Tar Files
+        run: tar -cf client-artifact.tar client/public
+
+      - name: Upload Client Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: client-artifact
+          path: client-artifact.tar
+
+      - name: Upload Webpack Stats
+        uses: actions/upload-artifact@v2
+        with:
+          name: webpack-stats
+          path: client/public/stats.json
+
+
   cypress-run:
     name: Test
     runs-on: ubuntu-18.04
+    needs: build-client
     strategy:
       matrix:
-        browsers: [chrome, firefox]
+        browsers: [chrome, firefox, electron]
         node-version: [14.x]
+        include:
+          - browsers: electron
+            spec: cypress/integration/learn/challenges/projects.js
     services:
       mongodb:
         image: mongo:3.6.19
@@ -36,11 +88,14 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@v2
 
-      - name: Checkout client config
-        uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
         with:
-          repository: freeCodeCamp/client-config
-          path: client-config
+          name: client-artifact
+
+      - name: Unpack Client Artifact
+        run: |
+          tar -xf client-artifact.tar
+          rm client-artifact.tar
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
@@ -51,15 +106,12 @@ jobs:
       - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
 
-      - name: Install Dependencies
+      - name: Install and Build
         run: |
           npm ci
           npm run ensure-env
-
-      - name: Move serve.json to client
-        run: |
-          mkdir -p client/public
-          cp client-config/serve.json client/public/serve.json
+          npm run build:curriculum
+          npm run build:server
 
       - name: Seed Database
         run: npm run seed
@@ -68,10 +120,10 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
-          build: npm run build
           start: npm run start-ci
           wait-on: http://localhost:8000
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           headless: true
+          spec: ${{ matrix.spec }}

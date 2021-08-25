@@ -18,5 +18,11 @@
   "nav": {
     "forum": "https://forum.freecodecamp.org/c/italiano/",
     "news": "https://freecodecamp.org/italian/news/"
+  },
+  "help": {
+    "HTML-CSS": "Italiano/HTML-CSS",
+    "JavaScript": "Italiano/JavaScript",
+    "Python": "Italiano/Python",
+    "Relational Databases": "Italiano/Relational Databases"
   }
 }

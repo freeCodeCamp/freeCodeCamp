@@ -46,7 +46,7 @@ Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.free
 
 # --instructions--
 
-Annida l'elemento `a` esistente all'interno di un nuovo elemento `p`. Il nuovo paragrafo dovrebbe contenere un testo che dice `View more cat photos`, dove `cat photos` è un collegamento, e il resto è testo semplice.
+Annida l'elemento `a` esistente all'interno di un nuovo elemento `p`. Non creare un nuovo elemento di ancoraggio. Il nuovo paragrafo dovrebbe contenere testo che dice `View more cat photos`, dove `cat photos` è un collegamento, e il resto è testo semplice.
 
 # --hints--
 

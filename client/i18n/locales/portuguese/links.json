@@ -18,5 +18,11 @@
   "nav": {
     "forum": "https://forum.freecodecamp.org/c/portugues/",
     "news": "https://freecodecamp.org/portuguese/news/"
+  },
+  "help": {
+    "HTML-CSS": "Portugues/HTML-CSS",
+    "JavaScript": "Portugues/JavaScript",
+    "Python": "Portugues/Python",
+    "Relational Databases": "Portugues/Relational Databases"
   }
 }
