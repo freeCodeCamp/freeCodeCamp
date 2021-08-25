@@ -32,7 +32,7 @@ Un esempio in cui le variabili sono utili è quando un certo numero di elementi 
 
 # --instructions--
 
-Crea una variabile `$text-color` e impostala su `red`. Quindi cambiare il valore della proprietà `color` per il `.blog-post` e per `h2` impostandoli alla variabile `$text-color`.
+Crea una variabile `$text-color` e impostala su `red`. Quindi cambia il valore della proprietà `color` per `.blog-post` e per `h2` impostandoli alla variabile `$text-color`.
 
 # --hints--
 

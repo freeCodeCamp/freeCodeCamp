@@ -1,6 +1,6 @@
 ---
 id: 5900f3a31000cf542c50feb6
-title: 'Problem 55: Lychrel numbers'
+title: 'Problema 55: Números de Lychrel'
 challengeType: 5
 forumTopicId: 302166
 dashedName: problem-55-lychrel-numbers
@@ -8,9 +8,9 @@ dashedName: problem-55-lychrel-numbers
 
 # --description--
 
-If we take 47, reverse and add, 47 + 74 = 121, which is palindromic.
+Se pegarmos o número 47, invertemos e somarmos, 47 + 74 = 121, temos um número palíndromo.
 
-Not all numbers produce palindromes so quickly. For example,
+Nem todos os números, no entanto, produzem palíndromos tão facilmente. Por exemplo:
 
 <div style="margin-left: 4em;">
   349 + 943 = 1292,<br>
@@ -18,49 +18,49 @@ Not all numbers produce palindromes so quickly. For example,
   4213 + 3124 = 7337<br>
 </div>
 
-That is, 349 took three iterations to arrive at a palindrome.
+Ou seja, 349 precisou de três iterações para chegar a um palíndromo.
 
-Although no one has proved it yet, it is thought that some numbers, like 196, never produce a palindrome. A number that never forms a palindrome through the reverse and add process is called a Lychrel number. Due to the theoretical nature of these numbers, and for the purpose of this problem, we shall assume that a number is Lychrel until proven otherwise. In addition you are given that for every number below ten-thousand, it will either (i) become a palindrome in less than fifty iterations, or, (ii) no one, with all the computing power that exists, has managed so far to map it to a palindrome. In fact, 10677 is the first number to be shown to require over fifty iterations before producing a palindrome: 4668731596684224866951378664 (53 iterations, 28-digits).
+Embora ninguém tenha provado ainda, pensa-se que alguns números, como 196, nunca produzem um palíndromo. Um número que nunca produz um palíndromo através do processo de inversão e adição é conhecido como um número de Lychrel. Devido à natureza teórica destes números e para fins de aprendizado, partiremos do princípio de que todo número é um número de Lychrel até que se prove o contrário. Além disso, você irá assumir que para cada número abaixo de dez mil, ou (i) ele se torna um palíndromo em menos de cinquenta iterações, ou, (ii) ninguém, com todo o poder de computação que existe, conseguiu mapeá-lo para um palíndromo. Na verdade, 10677 é o primeiro número que exige mais de cinquenta iterações antes de produzir um palíndromo: 4668731596684224866951378664 (53 iterações, gerando um número com 28 dígitos).
 
-Surprisingly, there are palindromic numbers that are themselves Lychrel numbers; the first example is 4994.
+Surpreendentemente, há números palíndromos que são, ao mesmo tempo, um número de Lychrel. O primeiro exemplo é o 4994.
 
-How many Lychrel numbers are there below `num`?
+Quantos números de Lychrel existem abaixo de `num`?
 
-**Note:** Wording was modified slightly on 24 April 2007 to emphasize the theoretical nature of Lychrel numbers.
+**Observação:** o texto foi ligeiramente modificado em 24 de abril de 2007 para enfatizar a natureza teórica dos números de Lychrel.
 
 # --hints--
 
-`countLychrelNumbers(1000)` should return a number.
+`countLychrelNumbers(1000)` deve retornar um número.
 
 ```js
 assert(typeof countLychrelNumbers(1000) === 'number');
 ```
 
-`countLychrelNumbers(1000)` should return 13.
+`countLychrelNumbers(1000)` deve retornar 13.
 
 ```js
 assert.strictEqual(countLychrelNumbers(1000), 13);
 ```
 
-`countLychrelNumbers(3243)` should return 39.
+`countLychrelNumbers(3243)` deve retornar 39.
 
 ```js
 assert.strictEqual(countLychrelNumbers(3243), 39);
 ```
 
-`countLychrelNumbers(5000)` should return 76.
+`countLychrelNumbers(5000)` deve retornar 76.
 
 ```js
 assert.strictEqual(countLychrelNumbers(5000), 76);
 ```
 
-`countLychrelNumbers(7654)` should return 140.
+`countLychrelNumbers(7654)` deve retornar 140.
 
 ```js
 assert.strictEqual(countLychrelNumbers(7654), 140);
 ```
 
-`countLychrelNumbers(10000)` should return 249.
+`countLychrelNumbers(10000)` deve retornar 249.
 
 ```js
 assert.strictEqual(countLychrelNumbers(10000), 249);

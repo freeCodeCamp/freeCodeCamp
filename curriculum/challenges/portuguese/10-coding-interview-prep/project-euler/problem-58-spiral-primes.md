@@ -1,6 +1,6 @@
 ---
 id: 5900f3a61000cf542c50feb9
-title: 'Problem 58: Spiral primes'
+title: 'Problema 58: Espiral de números primos'
 challengeType: 5
 forumTopicId: 302169
 dashedName: problem-58-spiral-primes
@@ -8,7 +8,7 @@ dashedName: problem-58-spiral-primes
 
 # --description--
 
-Starting with 1 and spiralling anticlockwise in the following way, a square spiral with side length 7 is formed.
+Começando com o número 1 e movendo-se em espiral no sentido anti-horário, uma espiral quadrada com cada lado contendo 7 números é formada.
 
 <div style='text-align: center;'>
   <strong><span style='color: red;'>37</span></strong> 36 35 34 33 32 <strong><span style='color: red;'>31</span></strong><br>
@@ -20,31 +20,31 @@ Starting with 1 and spiralling anticlockwise in the following way, a square spir
   <strong><span style='color: red;'>43</span></strong> 44 45 46 47 48 49<br>
 </div>
 
-It is interesting to note that the odd squares lie along the bottom right diagonal, but what is more interesting is that 8 out of the 13 numbers lying along both diagonals are prime; that is, a ratio of 8/13 ≈ 62%.
+É interessante notar que os números ímpares estão ao longo da diagonal inferior direita. Mas o mais interessante é que 8 dos 13 números que estão em ambas as diagonais são primos, ou seja, uma proporção de 8/13 ≈ 62%.
 
-If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the percent of primes along both diagonals first falls below `percent`?
+Se envolvermos a espiral acima com uma nova camada, a espiral passará a ter 9 números em cada lado. Se este processo continuar, qual será o comprimento de cada lado da espiral onde a porcentagem de números primos ao longo de ambas as diagonais é menor que `percent`?
 
 # --hints--
 
-`spiralPrimes(50)` should return a number.
+`spiralPrimes(50)` deve retornar um número.
 
 ```js
 assert(typeof spiralPrimes(50) === 'number');
 ```
 
-`spiralPrimes(50)` should return `11`.
+`spiralPrimes(50)` deve retornar `11`.
 
 ```js
 assert.strictEqual(spiralPrimes(50), 11);
 ```
 
-`spiralPrimes(15)` should return `981`.
+`spiralPrimes(15)` deve retornar `981`.
 
 ```js
 assert.strictEqual(spiralPrimes(15), 981);
 ```
 
-`spiralPrimes(10)` should return `26241`.
+`spiralPrimes(10)` deve retornar `26241`.
 
 ```js
 assert.strictEqual(spiralPrimes(10), 26241);

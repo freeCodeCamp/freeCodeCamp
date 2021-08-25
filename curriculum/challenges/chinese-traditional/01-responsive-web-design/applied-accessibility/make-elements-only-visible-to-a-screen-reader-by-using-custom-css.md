@@ -26,7 +26,7 @@ dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
 }
 ```
 
-**注意：**以下的 CSS 解決方案與上面的結果不同：
+**注意：** 以下的 CSS 解決方案與上面的結果不同：
 
 <ul>
 <li><code>display: none;</code> 或 <code>visibility: hidden;</code> 會把內容徹底隱藏起來，屏幕閱讀器也無法獲取這些內容。</li>

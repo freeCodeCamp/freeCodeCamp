@@ -12,9 +12,9 @@ Lavorare su queste sfide ti porterà a scrivere il tuo codice utilizzando uno de
 
 - Clonare [questo repository GitHub](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) e completare queste sfide localmente.
 - Usare [la nostra bozza di progetto su Replit](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose) per completare queste sfide.
-- Usa un costruttore di siti a tua scelta per completare il progetto. Assicurati di incorporare tutti i file dal nostro repository GitHub.
+- Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
-Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata pubblicamente da qualche parte. Quindi invia l'URL nel campo `Solution Link`.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`.
 
 In questa sfida, imposterai un database MongoDB Atlas e importerai i pacchetti necessari per connetterti ad esso.
 

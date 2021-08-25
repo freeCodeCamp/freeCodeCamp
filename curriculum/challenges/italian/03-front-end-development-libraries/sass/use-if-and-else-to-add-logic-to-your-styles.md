@@ -1,6 +1,6 @@
 ---
 id: 587d7dbe367417b2b2512bb8
-title: Usare @if e @else per aggiungere logica ai tuoi stili
+title: Usare @if e @else per aggiungere logica agli stili
 challengeType: 0
 forumTopicId: 301463
 dashedName: use-if-and-else-to-add-logic-to-your-styles

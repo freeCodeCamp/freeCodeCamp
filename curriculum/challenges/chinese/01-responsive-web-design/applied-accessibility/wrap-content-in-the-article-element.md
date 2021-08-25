@@ -15,7 +15,7 @@ dashedName: wrap-content-in-the-article-element
 
 请牢记，辅助设备依赖组织良好、语义化的标签来获取页面中的信息。
 
-**注意：**`section` 元素也是 HTML5 引入的新元素，其语义与 `article` 略有不同。 `article` 用于独立且完整的内容，而 `section` 用于对与主题相关的内容进行分组。 它们可以根据需要来嵌套使用。 举个例子：如果一本书是一个 `article` 的话，那么每个章节就是 `section`。 当内容组之间没有联系时，我们可以使用 `div`。
+**注意：** `section` 元素也是 HTML5 引入的新元素，其语义与 `article` 略有不同。 `article` 用于独立且完整的内容，而 `section` 用于对与主题相关的内容进行分组。 它们可以根据需要来嵌套使用。 举个例子：如果一本书是一个 `article` 的话，那么每个章节就是 `section`。 当内容组之间没有联系时，我们可以使用 `div`。
 
 `<div>` - 一组内容 `<section>` - 几组相关的内容 `<article>` - 几组独立的内容
 
