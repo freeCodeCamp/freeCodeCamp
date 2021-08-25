@@ -23,7 +23,9 @@ const propTypes = {
 const { clientLocale } = envData;
 function LandingTop({ page }) {
   const { t } = useTranslation();
-
+  const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
+    clientLocale
+  );
   return (
     <div className='landing-top'>
       <Row>
@@ -39,8 +41,7 @@ function LandingTop({ page }) {
             <AppleLogo />
             <GoogleLogo />
             <MicrosoftLogo />
-
-            {clientLocale === ('chinese' || 'chinese-traditional') ? (
+            {showChineseLogos ? (
               <>
                 <TencentLogo />
                 <AlibabaLogo />
