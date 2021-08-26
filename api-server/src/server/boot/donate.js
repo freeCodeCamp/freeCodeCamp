@@ -178,22 +178,28 @@ export default function donateBoot(app, done) {
 
   const stripeKey = keys.stripe.public;
   const secKey = keys.stripe.secret;
+  const squareKey = keys.square.public;
+  const squareSec = keys.square.secret;
   const paypalKey = keys.paypal.client;
   const paypalSec = keys.paypal.secret;
 
   const stripeSecretInvalid = !secKey || secKey === 'sk_from_stripe_dashboard';
   const stripPublicInvalid =
     !stripeKey || stripeKey === 'pk_from_stripe_dashboard';
-
   const paypalSecretInvalid =
     !paypalKey || paypalKey === 'id_from_paypal_dashboard';
   const paypalPublicInvalid =
     !paypalSec || paypalSec === 'secret_from_paypal_dashboard';
+  const squareSecretInvalid =
+    !squareSec || squareSec === 'token_from_square_dashboard';
+  const squarePublicInvalid =
+    !squareKey || squareKey === 'id_from_square_dashboard';
 
+  const squareInvalid = squareSecretInvalid || squarePublicInvalid;
   const stripeInvalid = stripeSecretInvalid || stripPublicInvalid;
   const paypalInvalid = paypalPublicInvalid || paypalSecretInvalid;
 
-  if (stripeInvalid || paypalInvalid) {
+  if (stripeInvalid || paypalInvalid || squareInvalid) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error('Donation API keys are required to boot the server!');
     }

@@ -32,6 +32,9 @@ const {
   STRIPE_PUBLIC_KEY,
   STRIPE_SECRET_KEY,
 
+  SQUARE_APPLICATION_ID,
+  SQUARE_ACCESS_TOKEN,
+
   PAYPAL_CLIENT_ID,
   PAYPAL_SECRET,
   PAYPAL_VERIFY_WEBHOOK_URL,
@@ -98,6 +101,11 @@ module.exports = {
   stripe: {
     public: STRIPE_PUBLIC_KEY,
     secret: STRIPE_SECRET_KEY
+  },
+
+  square: {
+    public: SQUARE_APPLICATION_ID,
+    secret: SQUARE_ACCESS_TOKEN
   },
 
   paypal: {
