@@ -1,5 +1,5 @@
 import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -36,6 +36,13 @@ function AcceptPrivacyTerms({
   acceptedPrivacyTerms,
   t
 }: AcceptPrivacyTermsProps) {
+  const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
+  const acceptTermsRef = useRef(acceptTerms);
+  useEffect(() => {
+    acceptedPrivacyRef.current = acceptedPrivacyTerms;
+    acceptTermsRef.current = acceptTerms;
+  });
+
   useEffect(() => {
     return () => {
       // if a user navigates away from here we should set acceptedPrivacyTerms
@@ -43,14 +50,10 @@ function AcceptPrivacyTerms({
       // preferences (hence the null payload)
       // This makes sure that the user has to opt in to Quincy's emails and that
       // they are only asked twice
-      if (!acceptedPrivacyTerms) {
-        acceptTerms(null);
+      if (!acceptedPrivacyRef.current) {
+        acceptTermsRef.current(null);
       }
     };
-    // We're ignoring all dependencies, since this effect must only run once
-    // (when the user leaves the page).
-    // TODO: figure out how to useCallback to only run this effect once.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function onClick(isWeeklyEmailAccepted: boolean) {
