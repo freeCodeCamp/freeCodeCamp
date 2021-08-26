@@ -477,7 +477,7 @@ You are also able to test one challenge individually by performing the following
    npm run test -- -g challenge-title-goes-here
    ```
 
-Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
+Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](how-to-open-a-pull-request.md).
 
 > [!TIP]
 > You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.

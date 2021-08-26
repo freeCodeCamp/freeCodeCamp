@@ -8,7 +8,7 @@ Yes - You can contribute to any of the 30+ languages we have enabled on our tran
 
 We have the user contributed translations live in Chinese (中文) and Spanish (Español). We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
 
-If you are interested in contributing to translations please makes sure you [read this guide](/how-to-translate-files) first.
+If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
 
 ### How can I report a new bug?
 
