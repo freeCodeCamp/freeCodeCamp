@@ -6,7 +6,7 @@ import { Link, Spacer } from '../../helpers';
 import '../intro.css';
 
 const { forumLocation } = envData;
-function IntroDescription() {
+function IntroDescription(): JSX.Element {
   const { t } = useTranslation();
 
   return (

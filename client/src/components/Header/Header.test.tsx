@@ -1,6 +1,10 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+
+import React, { Ref } from 'react';
 import { useTranslation } from 'react-i18next';
-import { create } from 'react-test-renderer';
+import { create, ReactTestRendererJSON } from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 import envData from '../../../../config/env.json';
@@ -15,8 +19,9 @@ jest.mock('../../analytics');
 describe('<UniversalNav />', () => {
   const UniversalNavProps = {
     displayMenu: false,
-    menuButtonRef: {},
+    menuButtonRef: {} as Ref<HTMLButtonElement> | undefined,
     searchBarRef: {},
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     toggleDisplayMenu: function () {},
     pathName: '/',
     fetchState: {
@@ -24,14 +29,15 @@ describe('<UniversalNav />', () => {
     }
   };
   it('renders to the DOM', () => {
-    const shallow = new ShallowRenderer();
-    shallow.render(<UniversalNav {...UniversalNavProps} />);
-    const view = shallow.getRenderOutput();
+    const utils = ShallowRenderer.createRenderer();
+    utils.render(<UniversalNav {...UniversalNavProps} />);
+    const view = utils.getRenderOutput();
     expect(view).toBeTruthy();
   });
 });
 
 describe('<NavLinks />', () => {
+  const { t } = useTranslation();
   it('has expected navigation links when not signed in', () => {
     const landingPageProps = {
       fetchState: {
@@ -45,12 +51,12 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
-      toggleNightMode: theme => theme
+      toggleNightMode: (theme: string) => theme,
+      t: t
     };
-    const shallow = new ShallowRenderer();
-    shallow.render(<NavLinks {...landingPageProps} />);
-    const view = shallow.getRenderOutput();
-
+    const utils = ShallowRenderer.createRenderer();
+    utils.render(<NavLinks {...landingPageProps} />);
+    const view = utils.getRenderOutput();
     expect(
       hasDonateNavItem(view) &&
         hasSignInNavItem(view) &&
@@ -74,12 +80,12 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
-      t: useTranslation.t,
-      toggleNightMode: theme => theme
+      t: t,
+      toggleNightMode: (theme: string) => theme
     };
-    const shallow = new ShallowRenderer();
-    shallow.render(<NavLinks {...landingPageProps} />);
-    const view = shallow.getRenderOutput();
+    const utils = ShallowRenderer.createRenderer();
+    utils.render(<NavLinks {...landingPageProps} />);
+    const view = utils.getRenderOutput();
     expect(
       hasDonateNavItem(view) &&
         hasCurriculumNavItem(view) &&
@@ -104,12 +110,12 @@ describe('<NavLinks />', () => {
       i18n: {
         language: 'en'
       },
-      t: useTranslation.t,
-      toggleNightMode: theme => theme
+      t: t,
+      toggleNightMode: (theme: string) => theme
     };
-    const shallow = new ShallowRenderer();
-    shallow.render(<NavLinks {...landingPageProps} />);
-    const view = shallow.getRenderOutput();
+    const utils = ShallowRenderer.createRenderer();
+    utils.render(<NavLinks {...landingPageProps} />);
+    const view = utils.getRenderOutput();
     expect(
       hasThanksForDonating(view) &&
         hasCurriculumNavItem(view) &&
@@ -192,39 +198,43 @@ describe('<AuthOrProfile />', () => {
   });
 });
 
-const navigationLinks = (component, key) => {
+const navigationLinks = (component: JSX.Element, key: string) => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const target = component.props.children.find(
-    child => child && child.key === key
+    (child: { key?: string }) => child && child.key === key
   );
   return target.props;
 };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const profileNavItem = (component: any) => component.children[0];
 
-const profileNavItem = component => component.children[0];
-
-const hasDonateNavItem = component => {
+const hasDonateNavItem = (component: JSX.Element) => {
   const { children, to } = navigationLinks(component, 'donate');
   return children === 'buttons.donate' && to === '/donate';
 };
 
-const hasThanksForDonating = component => {
+const hasThanksForDonating = (component: JSX.Element) => {
   const { children } = navigationLinks(component, 'donate');
-  return children[0].props.children === 'donate.thanks';
+  return children ? children[0].props.children === 'donate.thanks' : null;
 };
 
-const hasSignInNavItem = component => {
+const hasSignInNavItem = (component: JSX.Element) => {
   const { children } = navigationLinks(component, 'signin');
   return children === 'buttons.sign-in';
 };
 
-const hasCurriculumNavItem = component => {
+const hasCurriculumNavItem = (component: JSX.Element) => {
   const { children, to } = navigationLinks(component, 'learn');
   return children === 'buttons.curriculum' && to === '/learn';
 };
 
-const hasProfileAndSettingsNavItems = (component, username) => {
+const hasProfileAndSettingsNavItems = (
+  component: JSX.Element,
+  username: string
+) => {
   const fragment = navigationLinks(component, 'profile-settings');
 
-  const profile = fragment.children[0].props;
+  const profile = fragment ? fragment.children[0].props : null;
   const settings = fragment.children[1].props;
 
   const hasProfile =
@@ -235,7 +245,7 @@ const hasProfileAndSettingsNavItems = (component, username) => {
   return hasProfile && hasSettings;
 };
 
-const hasForumNavItem = component => {
+const hasForumNavItem = (component: JSX.Element) => {
   const { children, to } = navigationLinks(component, 'forum');
   // TODO: test compiled TFunction value
   return (
@@ -243,14 +253,14 @@ const hasForumNavItem = component => {
   );
 };
 
-const hasNewsNavItem = component => {
+const hasNewsNavItem = (component: JSX.Element) => {
   const { children, to } = navigationLinks(component, 'news');
   return (
     children[0].props.children === 'buttons.news' && to === 'links:nav.news'
   );
 };
 
-const hasRadioNavItem = component => {
+const hasRadioNavItem = (component: JSX.Element) => {
   const { children, to } = navigationLinks(component, 'radio');
   return (
     children[0].props.children === 'buttons.radio' &&
@@ -258,7 +268,7 @@ const hasRadioNavItem = component => {
   );
 };
 
-const hasSignOutNavItem = component => {
+const hasSignOutNavItem = (component: JSX.Element) => {
   const { children } = navigationLinks(component, 'signout-frag');
   const signOutProps = children[1].props;
 
@@ -273,7 +283,10 @@ const hasSignInButton = component =>
   component.props.children[1].props.children === 'buttons.sign-in';
 */
 
-const avatarHasClass = (componentTree, classes) => {
+const avatarHasClass = (
+  componentTree: ReactTestRendererJSON | ReactTestRendererJSON[] | null,
+  classes: string
+) => {
   return (
     profileNavItem(componentTree).props.className ===
     'avatar-container ' + classes
