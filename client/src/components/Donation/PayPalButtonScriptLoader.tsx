@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
 
 import type { AddDonationData } from './PaypalButton';
+import type { Payments } from './square-form';
 
 type PayPalButtonScriptLoaderProps = {
   isMinimalForm: boolean | undefined;
@@ -66,7 +67,7 @@ declare global {
       payments: (
         squareApplicationId: string | null,
         locationId: string
-      ) => void;
+      ) => Payments;
     };
   }
 }

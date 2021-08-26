@@ -36,7 +36,8 @@ export const defaultDonationFormState = {
   error: '',
   loading: {
     stripe: true,
-    paypal: true
+    paypal: true,
+    square: true
   }
 };
 
@@ -135,6 +136,13 @@ export const postChargeStripeComplete = createAction(
 );
 export const postChargeStripeError = createAction(
   actionTypes.postChargeStripeError
+);
+export const postChargeSquare = createAction(actionTypes.postChargeSquare);
+export const postChargeSquareComplete = createAction(
+  actionTypes.postChargeSquareComplete
+);
+export const postChargeSquareError = createAction(
+  actionTypes.postChargeSquareError
 );
 
 export const fetchProfileForUser = createAction(
@@ -447,6 +455,29 @@ export const reducer = handleActions(
       };
     },
     [actionTypes.postChargeStripeError]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, error: payload }
+    }),
+    [actionTypes.postChargeSquare]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, processing: true }
+    }),
+    [actionTypes.postChargeSquareComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            isDonating: true
+          }
+        },
+
+        donationFormState: { ...defaultDonationFormState, success: true }
+      };
+    },
+    [actionTypes.postChargeSquareError]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, error: payload }
     }),

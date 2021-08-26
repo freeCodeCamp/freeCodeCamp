@@ -14,7 +14,30 @@ const {
 interface SquareForProps {
   handlePaymentButtonLoad: (provider: 'square') => void;
   isSquareLoading: boolean;
-  chargeSquare: (token: string | void) => void;
+  chargeSquare: (token: string | undefined) => void;
+}
+
+interface Card {
+  attach: (conternerId: string) => Promise<void>;
+  addEventListener: (
+    event: string,
+    handler: ({ detail }: Event) => void
+  ) => void;
+  tokenize: () => Promise<Token>;
+}
+
+interface Event {
+  detail: { currentState: { isCompletelyValid: unknown }; field: string };
+}
+
+interface Token {
+  status: string;
+  token: string;
+  errors: unknown;
+}
+
+export interface Payments {
+  card: () => Promise<Card>;
 }
 function SquareForm({
   handlePaymentButtonLoad,
@@ -22,7 +45,7 @@ function SquareForm({
   chargeSquare
 }: SquareForProps): JSX.Element | null {
   const [squareLoaded, setSquareLoaded] = useState(false);
-  const [squarePayments, setSquarePayments] = useState<Payments | void>();
+  const [squarePayments, setSquarePayments] = useState<Payments>();
   const [squareCard, setSquareCard] = useState<Card | null>(null);
   const [isSubmitting, setSubmitting] = useState(false);
   const [validFields, setValidFields] = useState({
@@ -68,25 +91,11 @@ function SquareForm({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [squarePayments]);
 
-  interface Card {
-    attach: (conternerId: string) => Promise<void>;
-    addEventListener: (
-      event: string,
-      handler: ({ detail }: Event) => void
-    ) => void;
-    tokenize: () => Promise<Token>;
-  }
-
-  interface Payments {
-    card: () => Promise<Card>;
-  }
-
   const initializeSquareCard = async () => {
     console.log('initializing square card...');
     const card: Card | undefined = await squarePayments?.card();
     if (!squareCard) await card?.attach('#card-container');
     if (card) setSquareCard(card);
-    handlePaymentButtonLoad('square');
     handlePaymentButtonLoad('square');
     card?.addEventListener('focusClassAdded', handleCardEvents);
     card?.addEventListener('focusClassRemoved', handleCardEvents);
@@ -95,10 +104,6 @@ function SquareForm({
     card?.addEventListener('cardBrandChanged', handleCardEvents);
     card?.addEventListener('postalCodeChanged', handleCardEvents);
   };
-
-  interface Event {
-    detail: { currentState: { isCompletelyValid: unknown }; field: string };
-  }
 
   const handleCardEvents = ({ detail }: Event) => {
     if (detail) {
@@ -137,13 +142,7 @@ function SquareForm({
     }
   };
 
-  interface Token {
-    status: string;
-    token: string;
-    errors: unknown;
-  }
-
-  async function tokenizePaymentMethod(): Promise<string | void> {
+  async function tokenizePaymentMethod(): Promise<string | undefined> {
     const tokenResult: Token | undefined = await squareCard?.tokenize();
     // A list of token statuses can be found here:
     // https://developer.squareup.com/reference/sdks/web/payments/enums/TokenStatus
@@ -165,6 +164,7 @@ function SquareForm({
         <div id='card-container' />
         <button
           className='confirm-donation-btn'
+          disabled={!isCardFieldsValid || isSubmitting}
           id='card-button'
           onClick={handleSubmition}
           type='button'

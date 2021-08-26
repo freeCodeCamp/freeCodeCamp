@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/unbound-method */
 
 import type { Token } from '@stripe/stripe-js';
@@ -97,8 +98,8 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   addDonation,
   updateDonationFormState,
-  postChargeStripe,
-  postChargeSquare
+  postChargeSquare,
+  postChargeStripe
 };
 
 class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
@@ -220,7 +221,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     });
   }
 
-  chargeSquare(token: string | void) {
+  chargeSquare(token: string | undefined) {
     const { email } = this.props;
     const { donationAmount: amount, donationDuration: duration } = this.state;
     if (this.props.handleProcessing) {
