@@ -2,13 +2,13 @@
 
 The react based client web app that powers our learning platform is built using Gatsby. It is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
 
-You can learn more about setting up the client application locally for development by following [our local setup guide here](/how-to-setup-freecodecamp-locally). By default the application is available only in English.
+You can learn more about setting up the client application locally for development by following [our local setup guide here](how-to-setup-freecodecamp-locally.md). By default the application is available only in English.
 
 Once you have setup the project locally you should be able to follow this documentation to run the client in the language of your choice from the list of available languages.
 
 This could be helpful when you are working on a feature that specifically targets something that involves localization, and requires you to validate for instance a button's label in a different language.
 
-> [!TIP] You do not need to follow this document for translating freeCodeCamp's curriculum or contributing documentation. Read [this guide here](./how-to-translate-files.md) instead.
+> [!TIP] You do not need to follow this document for translating freeCodeCamp's curriculum or contributing documentation. Read [this guide here](how-to-translate-files.md) instead.
 
 Let's understand how the i18n frameworks and tooling work.
 
@@ -67,7 +67,7 @@ Some of these files are translated on our translation platform (Crowdin), some a
 
 - The `intro.json` file contains the key-value pairs for the introduction text on the certification pages.
 
-  If you want to add/update translations for the keys please [read this guide here](/how-to-translate-files.md).
+  If you want to add/update translations for the keys please [read this guide here](how-to-translate-files.md).
 
 **Files NOT translated on our translations platform:**
 

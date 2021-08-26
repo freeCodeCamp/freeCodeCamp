@@ -18,7 +18,7 @@ O freeCodeCamp é uma comunidade inclusiva e temos de mantê-la assim.
 
 Temos um código de conduta único que rege toda a nossa comunidade. Quanto menos regras, mais fáceis elas são de lembrar. Você pode ler essas regras e guardá-las na memória [aqui](https://code-of-conduct.freecodecamp.org).
 
-> [!NOTE] Como moderador, nós adicionaríamos você a um ou mais times no GitHub, nos nossos fóruns comunitários e nos servidores de chat. Caso você não tenha acesso a uma plataforma que queira moderar, [entre em contato com um membro da equipe](/FAQ?id=additional-assistance).
+> [!NOTE] Como moderador, nós adicionaríamos você a um ou mais times no GitHub, nos nossos fóruns comunitários e nos servidores de chat. If you are missing access on a platform that you would like to moderate please [reach out to a staff member](FAQ.md#additional-assistance).
 
 ## Moderando no GitHub
 
@@ -39,7 +39,7 @@ Você pode nos ajudar a organizar e moderar issues usando etiquetas [dessa lista
 
 Preste atenção especial às etiquetas `"help wanted"` e `"first timers only"`. Elas devem ser adicionadas aos tópicos que você considere que possam ser abertos aos potenciais contribuidores para realizar um "pull request".
 
-Uma etiqueta `"first timer only"` deve ser aplicada a uma issue trivial (ex.: consertar um erro de digitação) e deve incluir informações adicionais. Você pode usar esse [modelo de resposta](/moderator-handbook?id=first-timer-only-issues).
+Uma etiqueta `"first timer only"` deve ser aplicada a uma issue trivial (ex.: consertar um erro de digitação) e deve incluir informações adicionais. You can use this [reply template](moderator-handbook.md#first-timer-only-issues) for triage.
 
 #### Fechando issues e pull requests parados, desatualizados ou inativos
 
@@ -49,7 +49,7 @@ Uma etiqueta `"first timer only"` deve ser aplicada a uma issue trivial (ex.: co
 
 - Se o criador do PR pedir assistência adicional ou mais tempo, as regras acima podem ser revistas após uma resposta. Em todo caso, os moderadores devem usar o melhor julgamento para resolverem o estado do PR.
 
-> [!TIP] Recomendamos usar essa lista de [modelos de resposta](https://contribute.freecodecamp.org/#/moderator-handbook?id=reply-templates) padrão enquanto estiver monitorando issues.
+> [!TIP] We recommend you use this list of standard [reply templates](moderator-handbook.md#reply-templates) while triaging issues.
 
 ### Moderando pull requests
 
@@ -63,7 +63,7 @@ Pull Requests (PRs) são como os colaboradores enviam alterações para o reposi
 
    Você também pode revisar isso diretamente no GitHub e decidir fazer merge ou não. Precisamos ter um pouco mais de cuidado com relação a isso, pois milhões de pessoas encontrarão este texto enquanto usam o currículo do freeCodeCamp. O pull request deixa o texto mais claro sem deixá-lo muito mais longo? As edições são relevantes e não são excessivamente pedantes? Lembre-se que nosso objetivo é que os desafios sejam mais claros e curtos dentro do possível. Não são o lugar para detalhes obscuros. Os contribuidores talvez tentem adicionar links para recursos dos desafios.
 
-   Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
+   You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
    Se as mudanças parecem boas, por favor aprove-as comentando "LGTM". Uma vez que um pull request tiver pelo menos duas aprovações (incluindo a sua) dos moderadores ou equipe de desenvolvedores, você pode fazer o merge.
 
@@ -75,7 +75,7 @@ Pull Requests (PRs) são como os colaboradores enviam alterações para o reposi
 
    Alguns contribuidores podem tentar adicionar mais testes para cobrir casos confusos pedantes. Precisamos ter cuidado para não deixarmos o desafio muito complicado. Esses desafios e seus testes devem ser simples e intuitivos na medida do possível. Além dos desafios de algoritmo e a seção de preparação para entrevistas, os estudantes devem ser capazes de resolver cada desafio em aproximadamente 2 minutos.
 
-   Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
+   You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
    Se as mudanças parecem boas, por favor aprove-as comentando "LGTM". Uma vez que um pull request tiver pelo menos duas aprovações (incluindo a sua) dos moderadores ou equipe de desenvolvedores, você pode fazer o merge.
 
@@ -142,7 +142,7 @@ Muitas vezes, um pull request será obviamente de baixo esforço. Muitas vezes, 
 
 Há também situações em que o colaborador está tentando adicionar um link para o seu próprio site, incluir uma biblioteca que criou, ou tem uma edição frívola que não serve para ajudar ninguém, exceto a si mesmo.
 
-Você pode fechar pull requests inválidos e respondê-los com esses [modelos de resposta](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
+You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
 #### Outras diretrizes para moderadores no GitHub
 
@@ -387,8 +387,7 @@ Assim que você resolver essas issues, nós poderemos rever seu PR e fazer o mer
 
 ---
 
-Fique à vontade para recorrer às [diretrizes de contribuição]
-(https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges?id=testing-challenges) para ver instruções sobre como executar o build de CI localmente. ✅
+Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
 ### Sincronização dos forks

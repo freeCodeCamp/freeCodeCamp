@@ -2,7 +2,7 @@
 
 A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-> [!NOTE] Your PR should be in English. See [here](https://contribute.freecodecamp.org/#/index?id=translations) for how to contribute translations.
+> [!NOTE] Your PR should be in English. See [here](index.md#translations) for how to contribute translations.
 
 ## Prepare a good PR title
 
@@ -68,7 +68,7 @@ Some examples of good PRs titles would be:
 
    - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](/how-to-add-cypress-tests).
+   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 
 ## Feedback on pull requests
 
@@ -78,7 +78,7 @@ Our moderators will now take a look and leave you feedback. Please be patient wi
 
 And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
-> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
+> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
 
 ## Conflicts on a pull request
 

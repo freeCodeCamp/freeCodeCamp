@@ -14,7 +14,7 @@ You should see the list of projects you have been granted access to. Select the 
 
 You should now see the list of available files. Choose your file by selecting the `Proofread` button on the right of that file, then choosing `Proofreading` from the drop-down menu that appears.
 
-> [!NOTE] Si estás en la vista "workspace" pero quieres trabajar en [traducir un archivo](./how-to-translate-files.md) en lugar de corregirlo, puedes seleccionar la opción `Crowdsourcing` del menú desplegable.
+> [!NOTE] If you are in this workspace view, but want to work on [translating a file](how-to-translate-files.md) instead of proofreading, you may select `Crowdsourcing` from the dropdown menu instead.
 
 ## Revisar traducciones
 
