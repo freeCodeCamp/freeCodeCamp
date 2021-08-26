@@ -170,8 +170,10 @@ export const stepsToClaimSelector = state => {
   const currentCerts = certificatesByNameSelector(user.username)(
     state
   ).currentCerts;
+  const isSignedIn = isSignedInSelector(state);
   return {
     currentCerts: currentCerts,
+    isSignedIn: isSignedIn,
     isHonest: user?.isHonest,
     isShowName: user?.profileUI?.showName,
     isShowCerts: user?.profileUI?.showCerts,

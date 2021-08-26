@@ -567,6 +567,7 @@
     "title": "Solicite sua certificação",
     "intro": "Complete as etapas a seguir para solicitar e ver seu {{i18nCertText}}",
     "complete-project": "Completar os projetos de {{i18nCertText}}",
+    "login": "Login to claim certification",
     "accept-honesty": "Aceitar nossa política de honestidade acadêmica",
     "set-name": "Definir seu nome e torná-lo público",
     "set-certs-public": "Definir suas configurações de certificação como públicas",

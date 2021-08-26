@@ -2,7 +2,6 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
-
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { StepsType } from '../../../redux/prop-types';
@@ -33,14 +32,23 @@ const ClaimCertSteps = ({
 
   const settingsLink = '/settings#privacy-settings';
   const honestyPolicyAnchor = '/settings#honesty-policy';
+  const loginLink = '/login';
   const {
+    isSignedIn = false,
     isHonest = false,
     isShowName = false,
     isShowCerts = false,
     isShowProfile = false
   } = steps;
+
   return (
     <ul className='map-challenges-ul' data-cy='claim-cert-steps'>
+      <li className='map-challenge-title map-challenge-wrap'>
+        <Link to={loginLink}>
+          <span className='badge map-badge'>{renderCheckMark(isSignedIn)}</span>
+          {t('certification-card.login')}
+        </Link>
+      </li>
       <li className='map-challenge-title map-challenge-wrap'>
         <Link to={honestyPolicyAnchor}>
           <span className='badge map-badge'>{renderCheckMark(isHonest)}</span>
