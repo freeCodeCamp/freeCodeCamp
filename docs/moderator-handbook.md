@@ -1,6 +1,6 @@
 # The Official freeCodeCamp Moderator Handbook
 
-This handbook will help you moderate different places in our community. This covers conversations and interactions in issues & pull request threads on GitHub, the community forum, the chat rooms and other official communities that we foster.
+This handbook will help you moderate different places in our community. This covers conversations and interactions in issues and pull request threads on GitHub, the community forum, the chat rooms and other official communities that we foster.
 
 > [!NOTE]
 > All freeCodeCamp moderators are community-wide moderators. That is we trust you to oversee any of these places.
