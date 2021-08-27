@@ -28,7 +28,7 @@ var ourStr = "I come first. " + "I come second.";
 A string `I come first. I come second.` seria exibida no console.
 # --instructions--
 
-Crie `myStr` a partir das strings `This is the start.` e `This is the end.` usando o operador `+`.
+Crie `myStr` a partir das strings `This is the start.` e `This is the end.` usando o operador `+`. Não se esqueça de incluir um espaço entre as duas strings.
 
 # --hints--
 
