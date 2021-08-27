@@ -19,7 +19,6 @@ import {
   getPathFromID,
   getTitleFromId
 } from '../../../../../utils';
-import { dasherize } from '../../../../../utils/slugs';
 import CertificationIcon from '../../../assets/icons/certification-icon';
 import { ChallengeFiles } from '../../../redux/prop-types';
 import { maybeUrlRE } from '../../../utils';
@@ -172,7 +171,7 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
     const { id, challengeFiles, githubLink, solution } = completed;
     const completedDate = new Date(completed.completedDate);
     // @ts-expect-error idToNameMap is not a <string, string> Map...
-    const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
+    const { challengePath, certPath } = idToNameMap.get(id);
     console.table(idToNameMap.get(id));
     return (
       <tr className='timeline-row' key={id}>
@@ -187,7 +186,11 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
             </Link>
           ) : (
             <Link to={challengePath as string}>
-              {t(`certs:projectNames.${dasherize(challengeTitle as string)}`)}
+              {t(
+                `certs:projectNames.${
+                  (challengePath as string).split('/').reverse()[0]
+                }`
+              )}
             </Link>
           )}
         </td>

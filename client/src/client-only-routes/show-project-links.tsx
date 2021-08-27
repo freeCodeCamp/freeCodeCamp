@@ -2,7 +2,6 @@ import { find, first } from 'lodash-es';
 import React, { useState } from 'react';
 import '../components/layouts/project-links.css';
 import { Trans, useTranslation } from 'react-i18next';
-import { dasherize } from '../../../utils/slugs';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { Spacer, Link } from '../components/helpers';
 import {
@@ -147,7 +146,7 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       ({ link, title, id }) => (
         <li key={id}>
           <Link className='project-link' to={link}>
-            {t(`certs:projectNames.${dasherize(title as string)}`)}
+            {t(`certs:projectNames.${link.split('/').reverse()[0] as string}`)}
           </Link>
           : {getProjectSolution(id, title)}
         </li>
