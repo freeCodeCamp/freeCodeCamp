@@ -2,7 +2,7 @@
 
 ## JavaScript generale
 
-Nella maggior parte dei casi, il nostro [linter](how-to-setup-freecodecamp-locally?id=segui-questi-passaggi-per-preparare-il-tuo-ambiente-di-sviluppo) darà un avvertimento nel caso di un format che va contro le preferenze del nostro codebase.
+In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
 
 Si incoraggia l'utilizzo di componenti funzionali invece di componenti basati su classi.
 

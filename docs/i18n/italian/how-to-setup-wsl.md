@@ -6,7 +6,7 @@
 > 
 > **Docker Desktop per Windows**: Vedi i rispettivi requisiti per [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) e [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
-Questa guida copre alcuni passi comuni con la configurazione di WSL2. Una volta che i problemi più comuni con WSL2 sono stati considerati, dovresti essere in grado di seguire [questa guida per settare freeCodeCamp in locale](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) per lavorare su Windows usando una distribuzione WSL come Ubuntu.
+Questa guida copre alcuni passi comuni con la configurazione di WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow [this local setup guide](how-to-setup-freecodecamp-locally.md) to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
 
 ## Abilita WSL
 
@@ -119,7 +119,7 @@ npm install -g npm@latest
 
 ## Imposta freeCodeCamp localmente
 
-Ora che hai installato i pre-requisiti, segui [la nostra guida per settare freeCodeCamp localmente](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) per clonare, installare e settare freeCodeCamp sul tuo computer.
+Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and setup freeCodeCamp locally on your machine.
 
 > [!WARNING]
 > 

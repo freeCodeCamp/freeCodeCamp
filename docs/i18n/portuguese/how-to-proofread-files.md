@@ -14,7 +14,7 @@ Você deve ver a lista de projetos aos quais foi concedido acesso. Selecione o p
 
 Agora você deve ver a lista de arquivos disponíveis. Escolha seu arquivo selecionando o botão `Proofread` à direita do arquivo, depois escolha `Proofreading` no menu que aparece.
 
-> [!NOTE] Se você estiver nesta visão de espaço de trabalho, mas quiser [traduzir um arquivo](./how-to-translate-files.md) em vez de revisar, você pode selecionar `Crowdsourcing` no menu suspenso.
+> [!NOTE] If you are in this workspace view, but want to work on [translating a file](how-to-translate-files.md) instead of proofreading, you may select `Crowdsourcing` from the dropdown menu instead.
 
 ## Traduções revisadas
 

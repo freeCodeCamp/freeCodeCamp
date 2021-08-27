@@ -8,7 +8,7 @@ Sim. Você pode contribuir com qualquer um dos mais de 30 idiomas disponíveis e
 
 Temos as traduções de chinês (中文) e espanhol (Español) no ar. Pretendemos traduzir o freeCodeCamp para vários idiomas. Você pode ler mais sobre isso em nosso [anúncio aqui](https://www.freecodecamp.org/news/world-language-translation-effort).
 
-Se você está interessado em contribuir com as traduções, certifique-se de [ler este guia](/how-to-translate-files) primeiro.
+If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
 
 ### Como posso relatar um novo erro?
 

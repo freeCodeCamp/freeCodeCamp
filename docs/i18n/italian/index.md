@@ -10,7 +10,7 @@ Sei invitato a:
 - Aiutarci a correggere i bug nella [piattaforma di apprendimento](#piattaforma-di-apprendimento) di freeCodeCamp.org.
 - [Aiutarci a tradurre](#traduzioni) freeCodeCamp.org in tutte le lingue del mondo.
 
-Rispondiamo alle domande più comuni su come contribuire [nelle nostre FAQ per i contributori](/FAQ.md).
+We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
 
 ## Curriculum
 

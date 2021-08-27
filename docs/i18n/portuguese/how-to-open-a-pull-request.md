@@ -2,7 +2,7 @@
 
 Um pull request (PR) permite que você envie alterações do seu fork do GitHub para o repositório principal do freeCodeCamp.org. Depois de terminar de fazer alterações no código, você pode seguir essas diretrizes para abrir um PR.
 
-> [!NOTE] Seu PR deve estar em inglês. Veja [aqui](https://contribute.freecodecamp.org/#/index?id=translations) como contribuir com traduções.
+> [!NOTE] Seu PR deve estar em inglês. See [here](index.md#translations) for how to contribute translations.
 
 ## Prepare um bom título para o PR
 
@@ -68,7 +68,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
    - Isso é muito importante quando se está fazendo mudanças que não são apenas edições no conteúdo do texto como a documentação ou descrição de um desafio. Exemplos de mudanças que precisam ser testadas localmente incluem JavaScript, CSS ou HTML que podem mudar a funcionalidade ou aparência de uma página.
 
-   - Se seu PR afeta o comportamento de uma página ele deve estar acompanhado pelo correspondente [teste de integração Cypress](/how-to-add-cypress-tests).
+   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 
 ## Comentários nos pull requests
 
@@ -78,7 +78,7 @@ Nossos moderadores vão dar uma olhada e deixar um comentário para você. Seja 
 
 E como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat dos contribuidores](https://chat.freecodecamp.org/channel/contributors).
 
-> [!TIP] Se você vai contribuir com mais pull requests, recomendamos ler as diretrizes sobre [fazer mudanças e sincronizá-las](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) para evitar o apagamento de seu fork.
+> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
 
 ## Conflitos em um pull request
 
