@@ -71,8 +71,6 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       <Helmet>
         <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
       <Spacer />
       <h2 className='text-center'>{t('misc.update-email-2')}</h2>
       <Grid>

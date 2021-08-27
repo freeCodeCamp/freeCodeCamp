@@ -115,8 +115,6 @@ function DonateModal({
   const blockDonationText = (
     <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
         <Cup className='donation-icon' />
       </div>
       <Row>
@@ -134,8 +132,6 @@ function DonateModal({
   const progressDonationText = (
     <div className='text-center progress-modal-text'>
       <div className='donation-icon-container'>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
         <Heart className='donation-icon' />
       </div>
       <Row>

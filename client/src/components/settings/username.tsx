@@ -4,8 +4,6 @@ import {
   FormControl,
   Alert,
   FormGroup
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';

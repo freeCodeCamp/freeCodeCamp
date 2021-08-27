@@ -3,8 +3,6 @@ import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { ButtonSpacer } from '../helpers';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 
 import './danger-zone.css';
 
