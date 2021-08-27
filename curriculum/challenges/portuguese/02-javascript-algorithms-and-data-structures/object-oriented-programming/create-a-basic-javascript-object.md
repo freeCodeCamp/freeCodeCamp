@@ -1,6 +1,6 @@
 ---
 id: 587d7dac367417b2b2512b73
-title: Crie um Objeto JavaScript Básico
+title: Criar um objeto JavaScript básico
 challengeType: 1
 forumTopicId: 301317
 dashedName: create-a-basic-javascript-object
@@ -43,7 +43,7 @@ assert(typeof dog === 'object');
 assert(typeof dog.name === 'string');
 ```
 
-`dog` deve ter uma propriedade `numLeggs` definido para um número.
+`dog` deve ter uma propriedade `numLegs` definido para um número.
 
 ```js
 assert(typeof dog.numLegs === 'number');

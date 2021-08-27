@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c452eddfaeb5bdef
-title: Use Notação de Colchetes para Descobrir o Nº Antes do Ultimo em uma String
+title: Usar notação de colchetes para descobrir o enésimo caractere antes do último em uma string
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cw4vkh9'
 forumTopicId: 18344
@@ -9,9 +9,9 @@ dashedName: use-bracket-notation-to-find-the-nth-to-last-character-in-a-string
 
 # --description--
 
-Você pode usar o mesmo princípio que nós acabamos de usar para recuperar o último caractere em uma string, para recuperar o Nº antes do último caractere.
+Você pode usar o mesmo princípio que nós acabamos de usar para recuperar o último caractere em uma string, para recuperar o enésimo caractere antes do último caractere.
 
-Por exemplo, você pode pegar o valor da antepenúltima letra da string `var fistName = "Augusta` usando `firstName[firstName.length -3]`
+Por exemplo, você pode pegar o valor da antepenúltima letra da string `var firstName = "Augusta"` usando `firstName[firstName.length - 3]`
 
 Exemplo:
 
@@ -26,7 +26,7 @@ var thirdToLastLetter = firstName[firstName.length - 3];
 
 Use <dfn>notação de colchetes</dfn> para descobrir o penúltimo caractere na string `lastName`.
 
-**Dica:** Tente olhar o exemplo acima se você ficar travado.
+**Dica:** tente olhar o exemplo acima se você ficar travado.
 
 # --hints--
 

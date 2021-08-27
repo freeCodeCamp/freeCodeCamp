@@ -1,5 +1,5 @@
 ---
-id: 5f475bb508746c16c9431d42
+id: 5f475e1c7f71a61d913836c6
 title: Part 91
 challengeType: 0
 dashedName: part-91
@@ -7,16 +7,26 @@ dashedName: part-91
 
 # --description--
 
-The image you added is not centered horizontally like the `Coffees` heading above it. `img` elements are "like" inline elements.
-
-To make the image behave like heading elements (which are block-level), create an `img` type selector and use the value `block` for the `display` property and use the applicable `margin-left` and `margin-right` values to center it horizontally.
+Add one last image under the `Desserts` heading using the url `https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg`. Give the image an `alt` value of `pie icon`.
 
 # --hints--
 
-Test 1
+You should add a second `img` element.
 
 ```js
+assert($('img').length === 2);
+```
 
+Your new `img` element should have a `src` of `https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg`.
+
+```js
+assert($('img').last().attr('src') === 'https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg');
+```
+
+Your new `img` element should have an `alt` of `pie icon`.
+
+```js
+assert($('img').last().attr('alt').match(/pie icon/i));
 ```
 
 # --seed--
@@ -41,13 +51,13 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
-          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
+          <h2>Coffee</h2>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -60,7 +70,9 @@ Test 1
           </article>
         </section>
         <section>
+--fcc-editable-region--
           <h2>Desserts</h2>
+--fcc-editable-region--
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
@@ -89,7 +101,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -121,9 +133,11 @@ h1, h2, p {
   max-width: 500px;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 hr {
   height: 2px;
@@ -153,7 +167,7 @@ h1, h2 {
 
 .price {
   text-align: right;
-  width: 25%
+  width: 25%;
 }
 
 /* FOOTER */

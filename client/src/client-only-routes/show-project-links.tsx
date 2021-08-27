@@ -1,19 +1,20 @@
+import { find, first } from 'lodash-es';
 import React, { useState } from 'react';
 import '../components/layouts/project-links.css';
-import { maybeUrlRE } from '../utils';
+import { Trans, useTranslation } from 'react-i18next';
+import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { Spacer, Link } from '../components/helpers';
+import {
+  ChallengeFiles,
+  CompletedChallenge,
+  UserType
+} from '../redux/prop-types';
 import {
   projectMap,
   legacyProjectMap
 } from '../resources/cert-and-project-map';
-import ProjectModal from '../components/SolutionViewer/ProjectModal';
-import { find, first } from 'lodash-es';
-import { Trans, useTranslation } from 'react-i18next';
-import {
-  ChallengeFileType,
-  CompletedChallenge,
-  UserType
-} from '../redux/prop-types';
+
+import { maybeUrlRE } from '../utils';
 
 interface IShowProjectLinksProps {
   certName: string;
@@ -23,14 +24,14 @@ interface IShowProjectLinksProps {
 
 type SolutionStateType = {
   projectTitle: string;
-  files?: ChallengeFileType[] | null;
+  challengeFiles: ChallengeFiles;
   solution: CompletedChallenge['solution'];
   isOpen: boolean;
 };
 
 const initSolutionState: SolutionStateType = {
   projectTitle: '',
-  files: null,
+  challengeFiles: null,
   solution: null,
   isOpen: false
 };
@@ -55,16 +56,16 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       return null;
     }
 
-    const { solution, githubLink, files } = completedProject;
+    const { solution, githubLink, challengeFiles } = completedProject;
     const onClickHandler = () =>
       setSolutionState({
         projectTitle,
-        files,
+        challengeFiles,
         solution,
         isOpen: true
       });
 
-    if (files) {
+    if (challengeFiles?.length) {
       return (
         <button
           className='project-link-button-override'
@@ -100,7 +101,11 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       );
     }
     return (
-      <button className='project-link-button-override' onClick={onClickHandler}>
+      <button
+        className='project-link-button-override'
+        data-cy={`${projectTitle} solution`}
+        onClick={onClickHandler}
+      >
         {t('certification.project.solution')}
       </button>
     );
@@ -111,9 +116,9 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       const legacyCerts = [
         { title: 'Responsive Web Design' },
         { title: 'JavaScript Algorithms and Data Structures' },
-        { title: 'Front End Libraries' },
+        { title: 'Front End Development Libraries' },
         { title: 'Data Visualization' },
-        { title: 'APIs and Microservices' },
+        { title: 'Back End Development and APIs' },
         { title: 'Legacy Information Security and Quality Assurance' }
       ];
       return legacyCerts.map((cert, ind) => {
@@ -162,7 +167,7 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
     name,
     user: { username }
   } = props;
-  const { files, isOpen, projectTitle, solution } = solutionState;
+  const { challengeFiles, isOpen, projectTitle, solution } = solutionState;
   return (
     <div>
       {t(
@@ -176,7 +181,7 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       <Spacer />
       {isOpen ? (
         <ProjectModal
-          files={files}
+          challengeFiles={challengeFiles}
           handleSolutionModalHide={handleSolutionModalHide}
           isOpen={isOpen}
           projectTitle={projectTitle}

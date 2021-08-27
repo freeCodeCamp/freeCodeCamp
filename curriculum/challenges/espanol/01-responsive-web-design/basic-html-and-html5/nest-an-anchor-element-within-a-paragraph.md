@@ -46,7 +46,7 @@ Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.free
 
 # --instructions--
 
-Anida el elemento `a` existente dentro de un nuevo elemento `p`. El nuevo párrafo debe tener un texto que diga `View more cat photos`, donde `cat photos` es un enlace, y el resto es texto regular.
+Anida el elemento `a` existente dentro de un nuevo elemento `p`. No vayas a crear una nueva etiqueta de anchor. El nuevo párrafo debe tener un texto que diga `View more cat photos`, donde `cat photos` es un enlace, y el resto es texto regular.
 
 # --hints--
 

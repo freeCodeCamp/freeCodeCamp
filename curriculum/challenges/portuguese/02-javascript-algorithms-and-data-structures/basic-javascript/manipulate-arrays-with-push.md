@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cb
-title: Manipule Arrays Com push()
+title: Manipular arrays com push()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
@@ -27,7 +27,7 @@ arr2.push(["happy", "joy"]);
 
 # --instructions--
 
-Empurre `["dog", 3]` no final da variável `myArray`.
+Empurre `["dog", 3]` para o final da variável `myArray`.
 
 # --hints--
 

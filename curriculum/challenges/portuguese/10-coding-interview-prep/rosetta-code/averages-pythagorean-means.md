@@ -1,6 +1,6 @@
 ---
 id: 594d966a1467eb84194f0086
-title: Averages/Pythagorean means
+title: Média/Médias pitagóricas
 challengeType: 5
 forumTopicId: 302227
 dashedName: averagespythagorean-means
@@ -8,24 +8,24 @@ dashedName: averagespythagorean-means
 
 # --description--
 
-Compute all three of the [Pythagorean means](https://en.wikipedia.org/wiki/Pythagorean means "wp: Pythagorean means") of the set of integers $1$ through $10$ (inclusive).
+Calcule as três [médias pitagóricas](https://en.wikipedia.org/wiki/Pythagorean means "wp: Pythagorean means") do conjunto de inteiros de $1$ a $10$ (inclusive).
 
-Show that $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ for this set of positive integers.
+Exiba $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ para este conjunto de inteiros positivos.
 
 <ul>
-  <li>The most common of the three means, the <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>arithmetic mean</a>, is the sum of the list divided by its length:<br>
+  <li>A mais comum das três médias, a <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>média aritmética</a>, é a soma da lista dividida pelo seu tamanho:<br>
   <big>$ A(x_1, \ldots, x_n) = \frac{x_1 + \cdots + x_n}{n}$</big></li>
-  <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean' target='_blank'>geometric mean</a> is the $n$th root of the product of the list:<br>
+  <li>A <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean' target='_blank'>média geométrica</a> é a $n$-ésima raiz do produto da lista:<br>
   <big>$ G(x_1, \ldots, x_n) = \sqrt[n]{x_1 \cdots x_n} $</big></li>
-  <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean' target='_blank'>harmonic mean</a> is $n$ divided by the sum of the reciprocal of each item in the list:<br>
+  <li>A <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean' target='_blank'>média harmônica</a> é $n$ dividido pela soma dos recíprocos de cada item da lista:<br>
   <big>$ H(x_1, \ldots, x_n) = \frac{n}{\frac{1}{x_1} + \cdots + \frac{1}{x_n}} $</big></li>
 </ul>
 
 # --instructions--
 
-When writing your function, assume the input is an ordered array of all inclusive numbers.
+Ao escrever sua função, assuma que a entrada é um array ordenado incluindo todos os números.
 
-For the answer, please output an object in the following format:
+Para a resposta, dê como resultado um objeto com o seguinte formato:
 
 ```js
 {
@@ -40,13 +40,13 @@ For the answer, please output an object in the following format:
 
 # --hints--
 
-`pythagoreanMeans` should be a function.
+`pythagoreanMeans` deve ser uma função.
 
 ```js
 assert(typeof pythagoreanMeans === 'function');
 ```
 
-`pythagoreanMeans([1, 2, ..., 10])` should equal the same output above.
+`pythagoreanMeans([1, 2, ..., 10])` deve ser igual ao mesmo resultado acima.
 
 ```js
 assert.deepEqual(pythagoreanMeans(range1), answer1);

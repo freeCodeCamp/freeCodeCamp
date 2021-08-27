@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e1
-title: Aninhando Laços For
+title: Aninhar laços for
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6GHM'
 forumTopicId: 18248
@@ -9,7 +9,7 @@ dashedName: nesting-for-loops
 
 # --description--
 
-Se você possui um array multidimensional, você pode usar a mesma lógica no ponto de passagem anterior para iterar através ambos os arrays e qualquer sub-arrays. Aqui está um exemplo:
+Se você possui um array multidimensional, você pode usar a mesma lógica no ponto de passagem anterior para iterar através de arrays e de qualquer sub-array. Exemplo:
 
 ```js
 var arr = [
@@ -22,11 +22,11 @@ for (var i=0; i < arr.length; i++) {
 }
 ```
 
-Isso exibi no console cada sub elemento dentro de `arr`, um de cada vez. Note que para o laço interno, nós estamos verificando a propriedade `.length` de `arr[i]`, desde que `arr[i]` também é um array.
+Isso exibe no console cada subelemento dentro de `arr`, um de cada vez. Note que para o laço interno, nós estamos verificando a propriedade `.length` de `arr[i]`, desde que `arr[i]` também seja um array.
 
 # --instructions--
 
-Modifique a função `multiplyAll` para que retorne o produto de todos os números nos sub arrays de `arr`.
+Modifique a função `multiplyAll` para que retorne o produto de todos os números nos sub-arrays de `arr`.
 
 # --hints--
 

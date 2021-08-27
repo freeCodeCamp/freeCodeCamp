@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b88
-title: Sobrescreva Métodos Herdados
+title: Sobrescrever métodos herdados
 challengeType: 1
 forumTopicId: 301322
 dashedName: override-inherited-methods

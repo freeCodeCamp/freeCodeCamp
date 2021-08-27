@@ -1,5 +1,5 @@
 ---
-id: 5f459225127805351a6ad057
+id: 5f459a7ceb8b5c446656d88b
 title: Part 70
 challengeType: 0
 dashedName: part-70
@@ -7,14 +7,24 @@ dashedName: part-70
 
 # --description--
 
-Change the background color of the `hr` element to `brown` so it matches the color of the coffee beans.
+Notice the grey color along the edges of the line. Those edges are known as <dfn>borders</dfn>. Each side of an element can have a different color or they can all be the same.
+
+Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
 
 # --hints--
 
-Test 1
+You should set the `border-color` property to `brown`.
 
 ```js
+const hasBorderColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-color'] === 'brown');
+assert(hasBorderColor);
+```
 
+Your `hr` element should have a `border-color` of `brown`.
+
+```js
+const hrBorderColor = new __helpers.CSSHelp(document).getStyle('hr')?.getPropertyValue('border-color');
+assert(hrBorderColor === 'brown');
 ```
 
 # --seed--
@@ -39,12 +49,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -85,7 +95,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
 
@@ -117,6 +127,7 @@ h1, h2, p {
 --fcc-editable-region--
 hr {
   height: 3px;
+  background-color: brown;
 }
 --fcc-editable-region--
 

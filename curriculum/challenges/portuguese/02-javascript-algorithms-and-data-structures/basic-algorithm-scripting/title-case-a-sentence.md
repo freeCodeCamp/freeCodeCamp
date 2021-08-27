@@ -1,6 +1,6 @@
 ---
 id: ab6137d4e35944e21037b769
-title: Capitalização de Título de uma Frase
+title: Capitalizar o título de uma frase
 challengeType: 5
 forumTopicId: 16088
 dashedName: title-case-a-sentence
@@ -8,7 +8,7 @@ dashedName: title-case-a-sentence
 
 # --description--
 
-Retorne a string fornecida com a primeira letra de cada palavra em maiúscula. Certifique-se de que o resto da palavra esteja em minúsculo.
+Retorne a string fornecida com a primeira letra de cada palavra em letra maiúscula. Certifique-se de que o resto da palavra esteja em letras minúsculas.
 
 Para o propósito desse exercício, você também deve capitalizar as palavras conectoras como `the` e `of`.
 

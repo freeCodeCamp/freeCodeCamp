@@ -1,6 +1,6 @@
 ---
 id: 587d7b7e367417b2b2512b21
-title: Usar Operadores de Múltiplas Condições (Ternário)
+title: Usar operadores de múltiplas condições (ternários)
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cyWJBT4'
 forumTopicId: 301179
@@ -37,7 +37,7 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-É considerado a melhor prática para formatar operadores de múltiplas condições, tal que cada condição está em uma linha separada, como mostrada acima. Usando operadores de múltiplas condições sem a indentação adequada pode dificultar a leitura do seu código. Por exemplo:
+É considerada a melhor prática para formatar operadores de múltiplas condições, já que cada condição está em uma linha separada, como mostrado acima. Usar operadores de múltiplas condições sem a indentação adequada pode dificultar a leitura do seu código. Por exemplo:
 
 ```js
 function findGreaterOrEqual(a, b) {

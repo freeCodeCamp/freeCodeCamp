@@ -1,6 +1,6 @@
 ---
 id: 587d7b84367417b2b2512b34
-title: Use typeof para Verificar o Tipo da Variável
+title: Usar typeof para verificar o tipo da variável
 challengeType: 1
 forumTopicId: 18374
 dashedName: use-typeof-to-check-the-type-of-a-variable
@@ -29,19 +29,19 @@ Adicione duas instruções `console.log()` para verificar o `typeof` de cada uma
 
 # --hints--
 
-Seu código deve usar `typeof` em duas instruções `console.log()` para verificar o tipo das variáveis.
+O código deve usar `typeof` em duas instruções `console.log()` para verificar o tipo das variáveis.
 
 ```js
 assert(code.match(/console\.log\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
-Seu código deve usar `typeof` para verificar o tipo da variável `seven`.
+O código deve usar `typeof` para verificar o tipo da variável `seven`.
 
 ```js
 assert(code.match(/typeof[\( ]seven\)?/g));
 ```
 
-Seu código deve usar `typeof` para verificar o tipo da variável `three`.
+O código deve usar `typeof` para verificar o tipo da variável `three`.
 
 ```js
 assert(code.match(/typeof[\( ]three\)?/g));

@@ -1,6 +1,6 @@
 ---
 id: 587d7b8c367417b2b2512b54
-title: Use getters e setter para Controlar Acesso a um Objeto
+title: Usar getters e setter para controlar acesso a um objeto
 challengeType: 1
 forumTopicId: 301220
 dashedName: use-getters-and-setters-to-control-access-to-an-object
@@ -40,7 +40,7 @@ O console exibirá as strings `anonymous` e `newAuthor`.
 
 Note a sintaxe usada para invocar o getter e setter. Eles nem sequer se parecem com funções. Getters e setters são importantes porque escondem os detalhes internos da implementação.
 
-**Nota:** É uma convenção preceder o nome de uma variável privada com um underscore (`_`). No entanto, essa prática por si só não torna uma variável privada.
+**Observação:** é uma convenção preceder o nome de uma variável privada com um underscore (`_`). No entanto, essa prática por si só não torna uma variável privada.
 
 # --instructions--
 
@@ -48,9 +48,9 @@ Use a palavra-chave `class` para criar a classe `Thermostat`. O `constructor` ac
 
 Na classe, crie um `getter` para obter a temperatura em Celsius e um `setter` para definir a temperatura em Celsius.
 
-Lembre-se que `C = 5/9 * (F - 32)` e `F = C * 9.0 / 5 + 32`, aonde `F` é o valor da temperatura em Fahrenheit e `C` é o valor da mesma temperatura em Celsius.
+Lembre-se de que `C = 5/9 * (F - 32)` e `F = C * 9.0 / 5 + 32`, aonde `F` é o valor da temperatura em Fahrenheit e `C` é o valor da mesma temperatura em Celsius.
 
-**Nota:** Quando você implementa isso, você irá rastrar a temperatura dentro da classe em uma escala, ou Fahrenheit ou Celsius.
+**Observação:** quando você implementa isso, você vai rastrear a temperatura dentro da classe em uma escala, ou Fahrenheit ou Celsius.
 
 Esse é o poder de um getter e um setter. Você está criando uma API para outro uso, que pode pegar o resultado correto independente de qual está rastreando.
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b82
-title: Entenda o Protótipo Cadeia
+title: Entender a cadeia de protótipos
 challengeType: 1
 forumTopicId: 301329
 dashedName: understand-the-prototype-chain
@@ -39,7 +39,7 @@ Modifique o código para mostrar corretamente a cadeia de protótipo.
 
 # --hints--
 
-Seu código deve mostrar que `Object.prototype` é o protótipo de `Dog.prototype`
+O código deve mostrar que `Object.prototype` é o protótipo de `Dog.prototype`
 
 ```js
 assert(/Object\.prototype\.isPrototypeOf/.test(code));

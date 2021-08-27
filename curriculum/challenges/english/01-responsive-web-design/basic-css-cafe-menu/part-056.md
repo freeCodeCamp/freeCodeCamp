@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e050279c7a4a7101d3
+id: 5f3ef6e04559b939080db057
 title: Part 56
 challengeType: 0
 dashedName: part-56
@@ -7,14 +7,46 @@ dashedName: part-56
 
 # --description--
 
-That looks better. Now try to add the same `20px` padding to the top and bottom of the menu.
+Since all 4 sides of the menu have the same internal spacing, go ahead and delete the four properties and use a single `padding` property with the value `20px`.
 
 # --hints--
 
-Test 1
+You should remove the `padding-left` property.
 
 ```js
+assert(!code.match(/padding-left/i));
+```
 
+You should remove the `padding-right` property.
+
+```js
+assert(!code.match(/padding-right/i));
+```
+
+You should remove the `padding-top` property.
+
+```js
+assert(!code.match(/padding-top/i));
+```
+
+You should remove the `padding-bottom` property.
+
+```js
+assert(!code.match(/padding-bottom/i));
+```
+
+You should set the `padding` property to `20px`.
+
+```js
+const hasPadding = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['padding'] === '20px');
+assert(hasPadding);
+```
+
+Your `.menu` element should have a `padding` value of `20px`.
+
+```js
+const menuPadding = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding');
+assert(menuPadding === '20px');
 ```
 
 # --seed--
@@ -38,12 +70,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -78,7 +110,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -93,6 +125,8 @@ h1, h2, p {
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 --fcc-editable-region--
 

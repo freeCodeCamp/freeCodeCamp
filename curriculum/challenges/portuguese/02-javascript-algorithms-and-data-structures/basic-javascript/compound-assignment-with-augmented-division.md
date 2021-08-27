@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b2
-title: Atribuição Composta Com Divisão Aumentada
+title: Atribuir de modo composto com divisão aumentada
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvKT2'
 forumTopicId: 16659
@@ -15,7 +15,7 @@ O operador `/=` divide uma variável por outro número.
 myVar = myVar / 5;
 ```
 
-Irá dividir `myVar` por `5`. Isto pode ser reescrito como:
+dividirá `myVar` por `5`. Essa expressão pode ser reescrita assim:
 
 ```js
 myVar /= 5;

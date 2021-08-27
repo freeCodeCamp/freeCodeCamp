@@ -1,4 +1,3 @@
-/* global cy Cypress*/
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -36,12 +35,16 @@
 Cypress.Commands.add('login', () => {
   cy.visit('/');
   cy.contains("Get started (it's free)").click();
-  cy.url().should('eq', Cypress.config().baseUrl + '/learn/');
+  cy.location().should(loc => {
+    // I'm not 100% sure why logins get redirected to /learn/ via 301 in
+    // development, but not in production, but they do. Hence to make it easier
+    // work on tests, we'll just allow for both.
+    expect(loc.pathname).to.match(/^\/learn\/?$/);
+  });
   cy.contains('Welcome back');
 });
 
 Cypress.Commands.add('toggleAll', () => {
-  cy.login();
   cy.visit('/settings');
   // cy.get('input[name="isLocked"]').click();
   // cy.get('input[name="name"]').click();

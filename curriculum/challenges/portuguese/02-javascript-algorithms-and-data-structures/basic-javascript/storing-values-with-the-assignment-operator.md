@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244a8
-title: Armazenando Valores com o Operador de Atribuição
+title: Armazenar valores com o operador de atribuição
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEanysE'
 forumTopicId: 18310
@@ -15,16 +15,16 @@ Em JavaScript, você pode armazenar um valor em uma variável com o operador de 
 myVariable = 5;
 ```
 
-Isso atribui o valor de `Number` `5` para `myVariable`.
+Isso atribui um valor do tipo `Number` de `5` para `myVariable`.
 
-Se há qualquer cálculo a direita do operador `=`, esses cálculos são executados antes do valor ser atribuído à variável na esquerda do operador.
+Se há qualquer cálculo à direita do operador `=`, esses cálculos são executados antes do valor ser atribuído à variável na esquerda do operador.
 
 ```js
 var myVar;
 myVar = 5;
 ```
 
-Primeiro, esse código cria uma variável chamada `myVar`. Em seguida, o código atribui `5` para `myVar`. Agora, se `myVar` aparece novamente no código, o programa irá tratar como se fosse `5`.
+Primeiro, esse código cria uma variável chamada `myVar`. Em seguida, o código atribui `5` para `myVar`. Agora, se `myVar` aparece novamente no código, o programa vai tratá-la como se fosse `5`.
 
 # --instructions--
 

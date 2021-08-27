@@ -1,10 +1,10 @@
+import { first } from 'lodash-es';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
-import PropTypes from 'prop-types';
-import { first } from 'lodash-es';
-import EditorTabs from './EditorTabs';
-import ActionRow from './ActionRow';
 import envData from '../../../../../config/env.json';
+import ActionRow from './ActionRow';
+import EditorTabs from './EditorTabs';
 
 const { showUpcomingChanges } = envData;
 
@@ -13,7 +13,8 @@ const paneType = {
 };
 
 const propTypes = {
-  challengeFiles: PropTypes.object,
+  block: PropTypes.string,
+  challengeFiles: PropTypes.array,
   editor: PropTypes.element,
   hasEditableBoundries: PropTypes.bool,
   hasPreview: PropTypes.bool,
@@ -30,6 +31,7 @@ const propTypes = {
     onStopResize: PropTypes.func,
     onResize: PropTypes.func
   }),
+  superBlock: PropTypes.string,
   testOutput: PropTypes.element
 };
 
@@ -56,7 +58,7 @@ class DesktopLayout extends Component {
 
   getChallengeFile() {
     const { challengeFiles } = this.props;
-    return first(Object.keys(challengeFiles).map(key => challengeFiles[key]));
+    return first(challengeFiles);
   }
 
   render() {
@@ -68,7 +70,9 @@ class DesktopLayout extends Component {
       hasPreview,
       layoutState,
       preview,
-      hasEditableBoundries
+      hasEditableBoundries,
+      superBlock,
+      block
     } = this.props;
 
     const { showPreview, showConsole } = this.state;
@@ -85,7 +89,12 @@ class DesktopLayout extends Component {
     return (
       <ReflexContainer className='desktop-layout' orientation='horizontal'>
         {projectBasedChallenge && (
-          <ActionRow switchDisplayTab={this.switchDisplayTab} {...this.state} />
+          <ActionRow
+            block={block}
+            switchDisplayTab={this.switchDisplayTab}
+            {...this.state}
+            superBlock={superBlock}
+          />
         )}
         <ReflexElement flex={8} {...reflexProps} {...resizeProps}>
           <ReflexContainer orientation='vertical'>
@@ -112,7 +121,7 @@ class DesktopLayout extends Component {
                 !hasEditableBoundries && <EditorTabs />}
               {challengeFile && (
                 <ReflexContainer
-                  key={challengeFile.key}
+                  key={challengeFile.fileKey}
                   orientation='horizontal'
                 >
                   <ReflexElement

@@ -1,6 +1,6 @@
 ---
 id: 587d7db3367417b2b2512b8e
-title: Usando o Método Test
+title: Usar o método test
 challengeType: 1
 forumTopicId: 301369
 dashedName: using-the-test-method

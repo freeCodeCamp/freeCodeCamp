@@ -1,6 +1,6 @@
 ---
 id: a3566b1109230028080c9345
-title: Soma Todos os Números em um intervalo
+title: Somar todos os números em um intervalo
 challengeType: 5
 forumTopicId: 16083
 dashedName: sum-all-numbers-in-a-range
@@ -10,7 +10,7 @@ dashedName: sum-all-numbers-in-a-range
 
 Vamos passar um array de dois números. Retorne a soma desses dois números mais a soma de todos os números entre eles. O menor número nem sempre chegará primeiro.
 
-Por exemplo, `somAll([4, 1])` deve retornar `10` porque a soma de todos os números entre 1 e 4 (ambos incluídos) é `10`.
+Por exemplo, `sumAll([4,1])` deve retornar `10` porque a soma de todos os números entre 1 e 4 (ambos incluídos) é `10`.
 
 # --hints--
 

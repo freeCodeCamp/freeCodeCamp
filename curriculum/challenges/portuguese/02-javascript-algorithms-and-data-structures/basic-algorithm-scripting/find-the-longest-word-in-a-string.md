@@ -1,6 +1,6 @@
 ---
 id: a26cbbe9ad8655a977e1ceb5
-title: Encontre a palavra mais longa em uma String
+title: Encontrar a palavra mais longa em uma string
 challengeType: 5
 forumTopicId: 16015
 dashedName: find-the-longest-word-in-a-string
@@ -8,7 +8,7 @@ dashedName: find-the-longest-word-in-a-string
 
 # --description--
 
-Retornar o comprimento da palavra mais comprida na frase fornecida.
+Retornar o comprimento da palavra mais longa na frase fornecida.
 
 Sua resposta deve ser um número.
 

@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c451eddfaeb5bdef
-title: Use Notação de Colchetes para Encontrar o Último Caractere em uma String
+title: Usar notação de colchetes para encontrar o último caractere em uma string
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQGcv'
 forumTopicId: 18342
@@ -9,7 +9,7 @@ dashedName: use-bracket-notation-to-find-the-last-character-in-a-string
 
 # --description--
 
-Em ordem para pegar a última letra de uma string, você pode subtrair um do tamanho da string.
+Para pegar a última letra de uma string, você pode subtrair um do tamanho da string.
 
 Por exemplo, se `var firstName = "Ada"`, você pode pegar o valor da última letra da string ao usar `firstName[firstName.length - 1]`.
 
@@ -24,9 +24,9 @@ var lastLetter = firstName[firstName.length - 1];
 
 # --instructions--
 
-Use <dfn>notação de colchetes</dfn> para descobrir o último caracter na variável `lastName`.
+Use <dfn>notação de colchetes</dfn> para descobrir o último caractere na variável `lastName`.
 
-**Dica:** Tente olhar o exemplo acima se você ficar travado.
+**Dica:** tente olhar o exemplo acima se você ficar travado.
 
 # --hints--
 

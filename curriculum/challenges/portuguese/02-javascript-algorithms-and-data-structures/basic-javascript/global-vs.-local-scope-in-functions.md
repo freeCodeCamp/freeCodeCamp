@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c0
-title: Escopo Global vs Local em Funções
+title: Diferenciar escopo global e local em funções
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QwKH2'
 forumTopicId: 18194
@@ -9,7 +9,7 @@ dashedName: global-vs--local-scope-in-functions
 
 # --description--
 
-É possível ter ambas variáveis <dfn>local</dfn> e <dfn>global</dfn> com o mesmo nome. Quando você faz isso, a variável local tem precedência sobre a variável global.
+É possível ter as variáveis <dfn>local</dfn> e <dfn>global</dfn> com o mesmo nome. Quando você faz isso, a variável local tem precedência sobre a variável global.
 
 Neste exemplo:
 

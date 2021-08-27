@@ -1,14 +1,14 @@
 const fs = require('fs');
 const path = require('path');
-const matter = require('gray-matter');
 const ObjectID = require('bson-objectid');
-const { parseMDSync } = require('../challenge-parser/parser');
+const matter = require('gray-matter');
 const {
   getMetaData
 } = require('../challenge-helper-scripts/helpers/get-project-path-metadata');
-const { getStepTemplate } = require('./helpers/get-step-template');
+const { parseMDSync } = require('../challenge-parser/parser');
 const { getProjectMetaPath } = require('./helpers/get-project-meta-path');
 const { getProjectPath } = require('./helpers/get-project-path');
+const { getStepTemplate } = require('./helpers/get-step-template');
 const { padWithLeadingZeros } = require('./helpers/pad-with-leading-zeros');
 
 const createStepFile = ({

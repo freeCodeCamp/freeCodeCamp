@@ -1,6 +1,6 @@
 ---
 id: 579e2a2c335b9d72dd32e05c
-title: Fatiar e Emendar
+title: Fatiar e emendar
 challengeType: 5
 forumTopicId: 301148
 dashedName: slice-and-splice
@@ -43,7 +43,7 @@ assert.deepEqual(
 );
 ```
 
-Todos os elementos do primeiro array devem ser adicionados no segundo array em suas ordens originais.
+Todos os elementos do primeiro array devem ser adicionados no segundo array em suas ordens originais. `frankenSplice([1, 2, 3, 4], [], 0)` deve retornar `[1, 2, 3, 4]`.
 
 ```js
 assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4]);

@@ -1,8 +1,8 @@
-import __testHelpers, { removeJSComments } from './curriculum-helpers';
-import jsTestValues from './__fixtures/curriculum-helpers-javascript';
 import cssTestValues from './__fixtures/curriculum-helpers-css';
 import htmlTestValues from './__fixtures/curriculum-helpers-html';
+import jsTestValues from './__fixtures/curriculum-helpers-javascript';
 import whiteSpaceTestValues from './__fixtures/curriculum-helpers-remove-white-space';
+import __testHelpers, { removeJSComments } from './curriculum-helpers';
 
 const { stringWithWhiteSpaceChars, stringWithWhiteSpaceCharsRemoved } =
   whiteSpaceTestValues;

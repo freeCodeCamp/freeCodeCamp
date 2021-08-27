@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ad
-title: Decremente um Número com JavaScript
+title: Decrementar um número com JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KeS2'
 forumTopicId: 17558
@@ -21,7 +21,7 @@ i--;
 i = i - 1;
 ```
 
-**Nota:** A linha inteira torna-se `i--;`, eliminando a necessidade para o sinal de igual (atribuição).
+**Observação:** a linha inteira torna-se `i--;`, eliminando a necessidade para o sinal de igual (atribuição).
 
 # --instructions--
 

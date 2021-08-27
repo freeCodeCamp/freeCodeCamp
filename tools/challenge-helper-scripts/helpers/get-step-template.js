@@ -27,7 +27,10 @@ function getStepTemplate({
 }) {
   const seedTexts = Object.values(challengeSeeds)
     .map(({ contents, ext, editableRegionBoundaries }) => {
-      const fullContents = insertErms(contents, editableRegionBoundaries);
+      let fullContents = contents;
+      if (editableRegionBoundaries.length >= 2) {
+        fullContents = insertErms(contents, editableRegionBoundaries);
+      }
       return getCodeBlock(ext, fullContents);
     })
     .join('\n');

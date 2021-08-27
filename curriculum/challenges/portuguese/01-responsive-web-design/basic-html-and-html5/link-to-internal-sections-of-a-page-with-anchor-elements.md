@@ -1,6 +1,6 @@
 ---
 id: bad88fee1348bd9aedf08816
-title: Link para seções internas de uma página com elementos de âncora
+title: Criar links para seções internas de uma página com elementos de âncora
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 forumTopicId: 301098
@@ -51,7 +51,7 @@ A tag `a` deve ter o atributo `href` definido com o valor de "#footer".
 assert($('a').eq(0).attr('href') == '#footer');
 ```
 
-A tag `a` não deve ter o atributo `target`
+A tag `a` não deve ter o atributo `target`.
 
 ```js
 assert(

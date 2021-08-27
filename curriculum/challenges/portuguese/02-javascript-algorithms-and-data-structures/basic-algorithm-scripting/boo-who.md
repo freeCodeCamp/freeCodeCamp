@@ -1,6 +1,6 @@
 ---
 id: a77dbc43c33f39daa4429b4f
-title: Verdadeiro ou falso
+title: Identificar verdadeiro ou falso
 challengeType: 5
 forumTopicId: 16000
 dashedName: boo-who
@@ -8,9 +8,9 @@ dashedName: boo-who
 
 # --description--
 
-Verifica se um valor é classificado como booleano primitivo. Retorna `true` ou `false`.
+Verifique se um valor é classificado como booleano primitivo. Retorna `true` ou `false`.
 
-Primitivas booleanas são `true` e `false`.
+Os booleanos primitivos são `true` e `false`.
 
 # --hints--
 

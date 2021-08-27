@@ -7,7 +7,7 @@ dashedName: part-38
 
 # --description--
 
-The `p` elements are nested in an `article` elements with the class attribute of `item`. You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
+The `p` elements are nested in an `article` element with the class attribute of `item`. You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
 
 ```css
 .item p { }
@@ -17,10 +17,25 @@ Using the above selector, add a `display` property with value `inline-block` so 
 
 # --hints--
 
-Test 1
+You should use the `.item p` selector.
 
 ```js
+const hasItemP = new __helpers.CSSHelp(document).getStyle('.item p');
+assert(hasItemP);
+```
 
+You should set the `display` property to `inline-block`.
+
+```js
+const hasDisplay = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.display === 'inline-block');
+assert(hasDisplay);
+```
+
+Your `.item p` selector should set the `display` property to `inline-block`.
+
+```js
+const itemPDisplay = new __helpers.CSSHelp(document).getStyle('.item p')?.getPropertyValue('display');
+assert(itemPDisplay === 'inline-block');
 ```
 
 # --seed--
@@ -44,13 +59,13 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>
@@ -74,7 +89,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -100,4 +115,3 @@ h1, h2, p {
   text-align: right;
 }
 ```
-

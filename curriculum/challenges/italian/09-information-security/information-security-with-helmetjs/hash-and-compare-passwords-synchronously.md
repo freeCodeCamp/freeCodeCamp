@@ -1,6 +1,6 @@
 ---
 id: 58a25bcff9fc0f352b528e7e
-title: Hash and Compare Passwords Synchronously
+title: Crittografare e confrontare le password in modo sincrono
 challengeType: 2
 forumTopicId: 301579
 dashedName: hash-and-compare-passwords-synchronously
@@ -8,31 +8,31 @@ dashedName: hash-and-compare-passwords-synchronously
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
 
-Hashing synchronously is just as easy to do but can cause lag if using it server side with a high cost or with hashing done very often. Hashing with this method is as easy as calling
+L' hashing sincrono è altrettanto facile da fare, ma può causare ritardo se lo si utilizza dal lato server con un costo elevato o con hashing fatto molto spesso. Crittografare con questo metodo è facile come chiamare
 
 ```js
 var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
 ```
 
-Add this method of hashing to your code and then log the result to the console. Again, the variables used are already defined in the server so you won't need to adjust them. You may notice even though you are hashing the same password as in the async function, the result in the console is different- this is due to the salt being randomly generated each time as seen by the first 22 characters in the third string of the hash. Now to compare a password input with the new sync hash, you would use the compareSync method:
+Aggiungi questo metodo di hashing al tuo codice e poi scrivi il risultato sulla console. Anche in questo caso, le variabili utilizzate sono già definite nel server, quindi non è necessario modificarle. Puoi notare che, anche se stiamo crittografando la stessa password come nella funzione asincrona, il risultato nella console è diverso - questo è dovuto al fatto che il salt viene generato casualmente ogni volta come si vede dai primi 22 caratteri nella terza stringa dell'hash. Ora per confrontare un inserimento di password con il nuovo hash di sincronizzazione, si utilizza il metodo compareSync:
 
 ```js
 var result = bcrypt.compareSync(myPlaintextPassword, hash);
 ```
 
-with the result being a boolean true or false.
+il cui risultato è un booleano vero o falso.
 
 # --instructions--
 
-Add the function in and log the result to the console to see it working.
+Aggiungi la funzione e scrivi il risultato sulla console per vederla funzionare.
 
-Submit your page when you think you've got it right.
+Invia la tua pagina quando pensi di averlo fatto correttamente.
 
 # --hints--
 
-Sync hash should be generated and correctly compared.
+L'hash asincrono dovrebbe essere generato e confrontato correttamente.
 
 ```js
 (getUserInput) =>

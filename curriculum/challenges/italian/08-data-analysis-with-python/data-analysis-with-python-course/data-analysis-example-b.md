@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c14e
-title: Data Analysis Example B
+title: Esempio B di analisi dei dati
 challengeType: 11
 videoId: 0kJz0q0pvgQ
 dashedName: data-analysis-example-b
@@ -8,30 +8,30 @@ dashedName: data-analysis-example-b
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Invece di usare notebooks.ai come mostrato nel video, puoi usare Google Colab.*
 
-More resources:
+Altre risorse:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebook su GitHub](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
+-   [Come aprire Notebooks da GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What does the `loc` method allow you to do?
+Cosa ti permette di fare il metodo `loc`?
 
 ## --answers--
 
-Retrieve a subset of rows and columns by supplying integer-location arguments.
+Recuperare un sottoinsieme di righe e colonne fornendo argomenti interi di localizzazione.
 
 ---
 
-Access a group of rows and columns by supplying label(s) arguments.
+Accedere a un gruppo di righe e colonne fornendo argomenti di etichetta.
 
 ---
 
-Returns the first `n` rows based on the integer argument supplied.
+Restituisce le prime `n` righe basate sull'argomento intero fornito.
 
 ## --video-solution--
 

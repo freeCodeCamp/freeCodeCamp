@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b85
-title: Defina o Protótipo de Child para ser uma Instância do Parent
+title: Definir o protótipo da classe filha para que seja uma instância do pai
 challengeType: 1
 forumTopicId: 301325
 dashedName: set-the-childs-prototype-to-an-instance-of-the-parent
@@ -16,7 +16,7 @@ Este desafio cobre o próximo passo: definir o `prototype` do subtipo (ou filho)
 Bird.prototype = Object.create(Animal.prototype);
 ```
 
-Lembre-se que o `prototype` é como uma receita para criar um objeto. De certa forma, a receita para `Bird` agora inclui todos os "ingredientes" chave para `Animal`.
+Lembre-se de que o `prototype` é como uma receita para criar um objeto. De certa forma, a receita para `Bird` agora inclui todos os "ingredientes" chave para `Animal`.
 
 ```js
 let duck = new Bird("Donald");

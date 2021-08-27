@@ -9,14 +9,35 @@ dashedName: part-29
 
 Since the cafe's main product for sale is coffee, you could use an image of coffee beans for the background of the page.
 
-Delete the comment and its contents inside the `body` type selector. Now add a `background-image` property and set its value to `url(https://tinyurl.com/coffee-beans-fcc)`.
+Delete the comment and its contents inside the `body` type selector. Now add a `background-image` property and set its value to `url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg)`.
 
 # --hints--
 
-Test 1
+You should remove the commented out `background-color` property.
 
 ```js
+assert(!code.match(/\/\*\s*background-color:\s*burlywood;?\s*\*\//i))
+```
 
+Your `body` selector should not have any comments.
+
+```js
+assert(!code.match(/body\s*{\s*\/\*/i));
+```
+
+You should set the `background-image` property to `url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg)`.
+
+```js
+const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-image'] === `url("https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg")`)
+assert(hasBackground)
+```
+
+Your `body` element should have the coffee beans background image.
+
+```js
+const bodyBackground = new __helpers.CSSHelp(document).getStyle('body')?.getPropertyValue('background-image');
+console.log(bodyBackground);
+assert(bodyBackground === `url("https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg")`);
 ```
 
 # --seed--
@@ -40,7 +61,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
         </section>
       </main>
     </div>

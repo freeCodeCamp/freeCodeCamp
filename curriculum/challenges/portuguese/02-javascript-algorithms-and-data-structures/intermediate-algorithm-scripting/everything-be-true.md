@@ -1,6 +1,6 @@
 ---
 id: a10d2431ad0c6a099a4b8b52
-title: Tudo Seja Verdadeiro
+title: Verificar se tudo é verdadeiro
 challengeType: 5
 forumTopicId: 16011
 dashedName: everything-be-true
@@ -12,7 +12,7 @@ Verifique se o predicado (segundo argumento) é <dfn>truthy</dfn> em todos os el
 
 Em outras palavras, você recebe uma coleção de array de objetos. O predicado `pre` será uma propriedade de objeto e você precisa retornar `true` se seu valor for `truthy`. Caso contrário, retorne `false`.
 
-Em JavaScript, valores </code>truthy` são valores que traduzem para <code>true` quando avaliados em um contexto booleano.
+Em JavaScript, valores `truthy` são valores que traduzem para `true` quando avaliados em um contexto booleano.
 
 Lembre-se, você pode acessar propriedades de objeto através de notação de ponto ou notação `[]`.
 

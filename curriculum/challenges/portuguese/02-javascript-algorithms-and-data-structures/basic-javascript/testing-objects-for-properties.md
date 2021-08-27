@@ -1,6 +1,6 @@
 ---
 id: 567af2437cbaa8c51670a16c
-title: Testando Objetos por Propriedades
+title: Testar objetos por propriedades
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6Wz4ySr'
 forumTopicId: 18324
@@ -9,7 +9,7 @@ dashedName: testing-objects-for-properties
 
 # --description--
 
-Às vezes é útil verificar se a propriedade de um determinado objeto existe ou não. Podemos usar o método de objetos `.hasOwnProperty(propname)` para determinar se aquele objeto possui o nome de propriedade fornecido. `.hasOwnProperty()` retorna `true` ou `false` se a propriedade for encontrada ou não.
+Às vezes, é útil verificar se a propriedade de um determinado objeto existe ou não. Podemos usar o método de objetos `.hasOwnProperty(propname)` para determinar se aquele objeto possui o nome de propriedade fornecido. `.hasOwnProperty()` retorna `true` ou `false` se a propriedade for encontrada ou não.
 
 **Exemplo**
 

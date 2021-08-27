@@ -14,7 +14,7 @@ Inizia installando i prerequisiti software per il tuo sistema operativo.
 
 Sosteniamo principalmente lo sviluppo su sistemi Linux e basati su Unix. Il nostro staff e i collaboratori della community lavorano regolarmente con il codebase utilizzando strumenti installati su Ubuntu e macOS.
 
-Supportiamo anche Windows 10 via WSL2, che puoi preparare [leggendo questa guida](/how-to-setup-wsl).
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
 
 Alcuni membri della comunità sviluppano anche su Windows 10 nativamente con Git per Windows (Git Bash) e altri strumenti installati su Windows. Al momento non disponiamo di un supporto ufficiale per una tale configurazione, consigliamo invece di utilizzare WSL2.
 
@@ -544,7 +544,7 @@ Se incontri degli errori durante l'installazione delle dipendenze, assicurati di
 
 La prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete. Sii paziente, e se continui a rimanere bloccato ti raccomandiamo di usare GitPod invece di un setup offline.
 
-> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
+> [!NOTE] Se stai usando un device Apple con Chip M1 per eseguire l'applicazione in locale, suggeriamo di usare Node v14.7 o superiore. Altrimenti potresti avere problemi con dipendenze come Sharp.
 
 ## Ottenere Aiuto
 

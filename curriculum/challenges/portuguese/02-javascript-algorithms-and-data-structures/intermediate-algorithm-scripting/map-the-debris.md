@@ -1,6 +1,6 @@
 ---
 id: af4afb223120f7348cdfc9fd
-title: Mapear o Debris
+title: Mapear órbitas
 challengeType: 5
 forumTopicId: 16021
 dashedName: map-the-debris

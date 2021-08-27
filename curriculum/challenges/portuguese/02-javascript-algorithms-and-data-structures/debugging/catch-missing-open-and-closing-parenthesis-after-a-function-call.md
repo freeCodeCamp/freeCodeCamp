@@ -1,6 +1,6 @@
 ---
 id: 587d7b85367417b2b2512b39
-title: Capture Abertura e Fechamento de Parênteses Faltantes Após uma Chamada de Função
+title: Capturar abertura e fechamento de parênteses faltantes após uma chamada de função
 challengeType: 1
 forumTopicId: 301185
 dashedName: catch-missing-open-and-closing-parenthesis-after-a-function-call
@@ -28,13 +28,13 @@ Corrija o código para que a variável `result` seja definida para o valor retor
 
 # --hints--
 
-Seu código deve corrigir a variável `result` para que seja definida para o número que a função `getNine` retorna.
+O código deve corrigir a variável `result` para que seja definida para o número que a função `getNine` retorna.
 
 ```js
 assert(result == 9);
 ```
 
-Seu código deve chamar a função `getNine`.
+O código deve chamar a função `getNine`.
 
 ```js
 assert(code.match(/getNine\(\)/g).length == 2);

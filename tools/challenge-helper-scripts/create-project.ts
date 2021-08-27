@@ -1,18 +1,18 @@
-import fs from 'fs/promises';
 import { existsSync } from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
-import { format } from 'prettier';
 import { prompt } from 'inquirer';
+import { format } from 'prettier';
 
-import { createStepFile } from './utils.js';
 import { blockNameify } from '../../utils/block-nameify';
+import { createStepFile } from './utils.js';
 
 const superBlocks = [
   'responsive-web-design',
   'javascript-algorithms-and-data-structures',
-  'front-end-libraries',
+  'front-end-development-libraries',
   'data-visualization',
-  'apis-and-microservices',
+  'back-end-development-and-apis',
   'quality-assurance',
   'scientific-computing-with-python',
   'data-analysis-with-python',

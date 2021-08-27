@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-title: Crie uma página de homenagem
+title: Criar uma página de homenagem
 challengeType: 3
 forumTopicId: 301147
 dashedName: build-a-tribute-page

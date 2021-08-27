@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392d2
-title: Adicione Novas Propriedades para um Objeto JavaScript
+title: Adicionar novas propriedades para um objeto JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe38UD'
 forumTopicId: 301169
@@ -9,7 +9,7 @@ dashedName: add-new-properties-to-a-javascript-object
 
 # --description--
 
-Você pode adicionar novas propriedades para um objeto JavaScript existente da mesma forma que você iria modificá-los.
+Você pode adicionar novas propriedades para um objeto JavaScript existente da mesma forma pela qual você os modificaria.
 
 Aqui está como adicionaríamos uma propriedade `bark` para `ourDog`:
 

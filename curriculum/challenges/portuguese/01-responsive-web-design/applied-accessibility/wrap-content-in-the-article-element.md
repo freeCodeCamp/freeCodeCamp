@@ -1,6 +1,6 @@
 ---
 id: 587d774e367417b2b2512aa0
-title: Envolva conteúdos usando o elemento article
+title: Envolver conteúdos usando o elemento article
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp79S3'
 forumTopicId: 301029

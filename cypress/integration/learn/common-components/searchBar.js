@@ -1,5 +1,3 @@
-/* global cy */
-
 const search = query => {
   cy.get('.ais-SearchBox').within(() => {
     cy.get('input').type(query);

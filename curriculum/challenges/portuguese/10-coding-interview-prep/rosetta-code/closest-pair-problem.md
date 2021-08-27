@@ -1,6 +1,6 @@
 ---
 id: 5951a53863c8a34f02bf1bdc
-title: Closest-pair problem
+title: Problema do par mais próximo
 challengeType: 5
 forumTopicId: 302232
 dashedName: closest-pair-problem
@@ -8,66 +8,66 @@ dashedName: closest-pair-problem
 
 # --description--
 
-Provide a function to find the closest two points among a set of given points in two dimensions.
+Forneça uma função para encontrar os dois pontos mais próximos entre um conjunto de pontos dados em duas dimensões.
 
-The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
+A solução simples é um algoritmo $O(n^2)$ (que podemos chamar de *algoritmo de força bruta*). O pseudocódigo (usando índices) poderia ser, simplesmente:
 
-<pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
-<strong>if</strong> N &#x3C; 2 <strong>then</strong>
-  <strong>return</strong> ∞
-<strong>else</strong>
+<pre><strong>bruteForceClosestPair</strong> de P(1), P(2), ... P(N)
+<strong>se</strong> N &#x3C; 2 <strong>então</strong>
+  <strong>retorne</strong> ∞
+<strong>senão</strong>
   minDistance ← |P(1) - P(2)|
   minPoints ← { P(1), P(2) }
-  <strong>foreach</strong> i ∈ [1, N-1]
-    <strong>foreach</strong> j ∈ [i+1, N]
-      <strong>if</strong> |P(i) - P(j)| &#x3C; minDistance <strong>then</strong>
+  <strong>paraCada</strong> i ∈ [1, N-1]
+    <strong>paraCada</strong> j ∈ [i+1, N]
+      <strong>se</strong> |P(i) - P(j)| &#x3C; minDistance <strong>então</strong>
         minDistance ← |P(i) - P(j)|
         minPoints ← { P(i), P(j) }
-      <strong>endif</strong>
-    <strong>endfor</strong>
-  <strong>endfor</strong>
-  <strong>return</strong> minDistance, minPoints
-<strong>endif</strong>
+      <strong>fimSe</strong>
+    <strong>fimPara</strong>
+  <strong>fimPara</strong>
+  <strong>retorne</strong> minDistance, minPoints
+<strong>fimSe</strong>
 </pre>
 
-A better algorithm is based on the recursive divide and conquer approach, which is $O(n\log n)$ a pseudo-code could be:
+Um algoritmo melhor com base na abordagem recursiva de dividir e conquistar, com complexidade $O(n\log n)$, teria, como pseudocódigo:
 
-<pre><strong>closestPair</strong> of (xP, yP)
-  where xP is P(1) .. P(N) sorted by x coordinate, and
-  yP is P(1) .. P(N) sorted by y coordinate (ascending order)
-<strong>if</strong> N ≤ 3 <strong>then</strong>
-  <strong>return</strong> closest points of xP using brute-force algorithm
-<strong>else</strong>
-  xL ← points of xP from 1 to ⌈N/2⌉
-  xR ← points of xP from ⌈N/2⌉+1 to N
+<pre><strong>closestPair</strong> de (xP, yP)
+  onde xP é P(1) .. P(N) ordenado pela coordenada x, e
+  yP é P(1) .. P(N) ordenado pela coordenada y (ordem ascendente)
+<strong>se</strong> N ≤ 3 <strong>então</strong>
+  <strong>retorne</strong> pontos mais próximos de xP usando o algoritmo de força bruta
+<strong>senão</strong>
+  xL ← pontos de xP de 1 a ⌈N/2⌉
+  xR ← pontos de xP de ⌈N/2⌉+1 a N
   xm ← xP(⌈N/2⌉)<sub>x</sub>
   yL ← { p ∈ yP : p<sub>x</sub> ≤ xm }
   yR ← { p ∈ yP : p<sub>x</sub> > xm }
-  (dL, pairL) ← closestPair of (xL, yL)
-  (dR, pairR) ← closestPair of (xR, yR)
+  (dL, pairL) ← closestPair de (xL, yL)
+  (dR, pairR) ← closestPair de (xR, yR)
   (dmin, pairMin) ← (dR, pairR)
-  <strong>if</strong> dL &#x3C; dR <strong>then</strong>
+  <strong>se</strong> dL &#x3C; dR <strong>então</strong>
     (dmin, pairMin) ← (dL, pairL)
-  <strong>endif</strong>
+  <strong>fimSe</strong>
   yS ← { p ∈ yP : |xm - p<sub>x</sub>| &#x3C; dmin }
-  nS ← number of points in yS
+  nS ← número de pontos em yS
   (closest, closestPair) ← (dmin, pairMin)
-  <strong>for</strong> i <strong>from</strong> 1 <strong>to</strong> nS - 1
+  <strong>para</strong> i <strong>de</strong> 1 <strong>a</strong> nS - 1
     k ← i + 1
-    <strong>while</strong> k ≤ nS <strong>and</strong> yS(k)<sub>y</sub> - yS(i)<sub>y</sub> &#x3C; dmin
-      <strong>if</strong> |yS(k) - yS(i)| &#x3C; closest <strong>then</strong>
+    <strong>enquanto</strong> k ≤ nS <strong>e</strong> yS(k)<sub>y</sub> - yS(i)<sub>y</sub> &#x3C; dmin
+      <strong>se</strong> |yS(k) - yS(i)| &#x3C; closest <strong>então</strong>
         (closest, closestPair) ← (|yS(k) - yS(i)|, {yS(k), yS(i)})
-      <strong>endif</strong>
+      <strong>fimSe</strong>
       k ← k + 1
-    <strong>endwhile</strong>
-  <strong>endfor</strong>
-  <strong>return</strong> closest, closestPair
-<strong>endif</strong>
+    <strong>fimEnquanto</strong>
+  <strong>fimPara</strong>
+  <strong>retorne</strong> closest, closestPair
+<strong>fimSe</strong>
 </pre>
 
-For the input, expect the argument to be an array of `Point` objects with `x` and `y` members set to numbers. Return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
+Para a entrada, espere que o argumento seja um array de objetos `Point` com membros `x` e `y` definidos como números. Retorna um objeto que contém os pares chave-valor de `distance` e `pair` (o par com os dois pontos mais próximos).
 
-For example `getClosestPair` with input array `points`:
+Por exemplo, `getClosestPair` com o array de entrada `points`:
 
 ```js
 const points = [
@@ -77,7 +77,7 @@ const points = [
 ];
 ```
 
-Would return:
+Retornaria:
 
 ```js
 {
@@ -95,24 +95,24 @@ Would return:
 }
 ```
 
-**Note:** Sort the `pair` array by their `x` values in incrementing order.
+**Observação:** ordene o array de `pair` por seus valores em `x` na ordem de incrementação.
 
 
 # --hints--
 
-`getClosestPair` should be a function.
+`getClosestPair` deve ser uma função.
 
 ```js
 assert(typeof getClosestPair === 'function');
 ```
 
-`getClosestPair(points1).distance` should be `0.0894096443343775`.
+`getClosestPair(points1).distance` deve ser `0.0894096443343775`.
 
 ```js
 assert.equal(getClosestPair(points1).distance, answer1.distance);
 ```
 
-`getClosestPair(points1).pair` should be `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`.
+`getClosestPair(points1).pair` deve ser `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`.
 
 ```js
 assert.deepEqual(
@@ -121,13 +121,13 @@ assert.deepEqual(
 );
 ```
 
-`getClosestPair(points2).distance` should be `65.06919393998976`.
+`getClosestPair(points2).distance` deve ser `65.06919393998976`.
 
 ```js
 assert.equal(getClosestPair(points2).distance, answer2.distance);
 ```
 
-`getClosestPair(points2).pair` should be `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]`.
+`getClosestPair(points2).pair` deve ser `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]`.
 
 ```js
 assert.deepEqual(
@@ -136,13 +136,13 @@ assert.deepEqual(
 );
 ```
 
-`getClosestPair(points3).distance` should be `6754.625082119658`.
+`getClosestPair(points3).distance` deve ser `6754.625082119658`.
 
 ```js
 assert.equal(getClosestPair(points3).distance, answer3.distance);
 ```
 
-`getClosestPair(points3).pair` should be `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`.
+`getClosestPair(points3).pair` deve ser `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`.
 
 ```js
 assert.deepEqual(

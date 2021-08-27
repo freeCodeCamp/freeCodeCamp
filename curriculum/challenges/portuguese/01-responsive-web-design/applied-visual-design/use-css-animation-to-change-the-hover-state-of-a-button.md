@@ -1,6 +1,6 @@
 ---
 id: 587d78a7367417b2b2512ae0
-title: Use animações CSS para alterar o estado de foco de um botão
+title: Usar animações CSS para alterar o estado de foco de um botão
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4vZAa'
 forumTopicId: 301073

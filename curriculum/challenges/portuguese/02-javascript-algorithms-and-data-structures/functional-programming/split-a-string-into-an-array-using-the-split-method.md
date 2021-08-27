@@ -1,6 +1,6 @@
 ---
 id: 587d7daa367417b2b2512b6b
-title: Divida uma String em um Array Usando o Método split
+title: Dividir uma string em um array usando o método split
 challengeType: 1
 forumTopicId: 18305
 dashedName: split-a-string-into-an-array-using-the-split-method

@@ -1,6 +1,6 @@
 ---
 id: 5ee127a03c3b35dd45426493
-title: Atribua o Valor de Uma Variável para Outra
+title: Atribuir o valor de uma variável para outra
 challengeType: 1
 videoUrl: ''
 forumTopicId: 418265
@@ -18,7 +18,7 @@ var myNum;
 myNum = myVar;
 ```
 
-O código acima declara uma variável `myVar` sem valor, e então atribui a ela o valor `5`. Em seguida, uma variável chamada `myNum` é declarada sem valor. Em seguida, o conteúdo de `myVar` (o qual é `5`) é atribuído para a variável `myNum`. Agora, `myNum` também possui o valor de `5`.
+O código acima declara uma variável `myVar` sem valor, e então atribui a ela o valor `5`. Em seguida, uma variável chamada `myNum` é declarada sem valor. Depois, o conteúdo de `myVar` (o qual é `5`) é atribuído para a variável `myNum`. Agora, `myNum` também possui o valor de `5`.
 
 # --instructions--
 

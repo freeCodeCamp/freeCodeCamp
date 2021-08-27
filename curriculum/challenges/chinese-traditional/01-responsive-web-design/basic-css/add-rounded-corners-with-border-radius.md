@@ -15,7 +15,7 @@ dashedName: add-rounded-corners-with-border-radius
 
 `border-radius` 的屬性值單位可以是 px（像素）。 請將貓咪圖片 `border-radius` 的屬性值設置爲 `10px`。
 
-**注意：**這個挑戰有多個解決方法。 例如，添加 `border-radius` 屬性到 `.thick-green-border` 或 `.smaller-image` 都是可行的。
+**注意：** 這個挑戰有多個解決方法。 例如，添加 `border-radius` 屬性到 `.thick-green-border` 或 `.smaller-image` 都是可行的。
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: a3bfc1673c0526e06d3ac698
-title: Somar Todos os Primos
+title: Somar todos os primos
 challengeType: 5
 forumTopicId: 16085
 dashedName: sum-all-primes

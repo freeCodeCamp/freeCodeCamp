@@ -14,9 +14,9 @@ O primeiro argumento é a frase para realizar a busca e substituir.
 
 O segundo argumento é a palavra que você substituirá (antes).
 
-O terceiro argumento é com o que você irá substituir o segundo argumento (depois).
+O terceiro argumento é com o que você vai substituir o segundo argumento (depois).
 
-**Nota:** Preserve a capitalização do primeiro caractere na palavra original quando você estiver substituindo. Por exemplo, se você quiser substituir a palavra `Book` com a palavra `dog`, deve ser substituído com `Dog`
+**Observação:** preserve a capitalização do primeiro caractere na palavra original quando você estiver substituindo. Por exemplo, se você quiser substituir a palavra `Book` com a palavra `dog`, deve ser substituído com `Dog`
 
 # --hints--
 

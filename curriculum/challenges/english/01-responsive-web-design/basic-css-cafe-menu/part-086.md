@@ -1,5 +1,5 @@
 ---
-id: 5f45b715301bbf667badc04a
+id: 5f46e270702a8456a664f0df
 title: Part 86
 challengeType: 0
 dashedName: part-86
@@ -7,16 +7,22 @@ dashedName: part-86
 
 # --description--
 
-The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu. This is due to the browser having some default top margin for the `h1` element.
-
-Change the top margin of the `h1` element to `0` to remove all the top margin.
+To remove some of the vertical space between the `h1` element and the text `Est. 2020`, change the bottom margin of the `h1` to `15px`.
 
 # --hints--
 
-Test 1
+You should set the `margin-bottom` property to `15px`.
 
 ```js
+const hasMarginBottom = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-bottom'] === '15px');
+assert(hasMarginBottom);
+```
 
+Your `h1` element should have a `margin-bottom` of `15px`.
+
+```js
+const h1MarginBottom = new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('margin-bottom');
+assert(h1MarginBottom === '15px');
 ```
 
 # --seed--
@@ -41,12 +47,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -88,7 +94,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -96,6 +102,7 @@ body {
 --fcc-editable-region--
 h1 {
   font-size: 40px;
+  margin-top: 0;
 }
 --fcc-editable-region--
 

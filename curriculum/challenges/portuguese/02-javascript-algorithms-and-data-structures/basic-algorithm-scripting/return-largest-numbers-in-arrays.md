@@ -1,6 +1,6 @@
 ---
 id: a789b3483989747d63b0e427
-title: Retorne os Maior Número em Arrays
+title: Retornar os maiores números em arrays
 challengeType: 5
 forumTopicId: 16042
 dashedName: return-largest-numbers-in-arrays
@@ -8,9 +8,9 @@ dashedName: return-largest-numbers-in-arrays
 
 # --description--
 
-Retorna um array que consiste do maior número de cada sub-array fornecido. Por simplicidade, o array fornecido conterá exatamente 4 sub-arrays.
+Retorna um array que consiste no maior número de cada sub-array fornecido. Por simplicidade, o array fornecido conterá exatamente 4 sub-arrays.
 
-Lembre-se, você pode iterar através de um array com um loop simples, e acesse cada membro com a sintaxe de array `arr[i]`.
+Lembre-se: você pode iterar através de um array com um loop simples, e acesse cada membro com a sintaxe de array `arr[i]`.
 
 # --hints--
 

@@ -33,7 +33,7 @@ assert(result[0] == '<h1>');
 `myRegex` 應該使用懶惰匹配
 
 ```js
-assert(/\?/g.test(myRegex));
+assert(/[^\\][\*\+\?]\?/.test(myRegex));
 ```
 
 `myRegex` 不應包含字符串 `h1`

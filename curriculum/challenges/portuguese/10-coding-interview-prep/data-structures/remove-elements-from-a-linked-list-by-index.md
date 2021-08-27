@@ -1,6 +1,6 @@
 ---
 id: 587d8251367417b2b2512c65
-title: Remove Elements from a Linked List by Index
+title: Remover elementos de uma lista encadeada por índice
 challengeType: 1
 forumTopicId: 301711
 dashedName: remove-elements-from-a-linked-list-by-index
@@ -8,23 +8,23 @@ dashedName: remove-elements-from-a-linked-list-by-index
 
 # --description--
 
-Before we move on to another data structure, let's get a couple of last bits of practice with linked lists.
+Antes de avançarmos para outra estrutura de dados, vamos aprender algumas práticas finais com listas encadeadas.
 
-Let's write a `removeAt` method that removes the `element` at a given `index`. The method should be called `removeAt(index)`. To remove an `element` at a certain `index`, we'll need to keep a running count of each node as we move along the linked list.
+Vamos escrever um método `removeAt`, que remove o `element` em um determinado `index`. O método deve ser chamado `removeAt(index)`. Para remover um `element` em um certo `index`, precisaremos manter uma contagem em execução de cada nó enquanto percorremos a lista encadeada.
 
-A common technique used to iterate through the elements of a linked list involves a <dfn>'runner'</dfn>, or sentinel, that 'points' at the nodes that your code is comparing. In our case, starting at the `head` of our list, we start with a `currentIndex` variable that starts at `0`. The `currentIndex` should increment by one for each node we pass.
+Uma técnica comum usada para iterar através dos elementos de uma lista encadeada envolve um <dfn>'percorredor'</dfn>, ou sentinela, que 'aponte' para os nós que o seu código está comparando. Em nosso caso, começando com a `head` de nossa lista, iniciamos com uma variável `currentIndex` com o valor `0`. O `currentIndex` deve incrementar de um em um para cada nó que percorrermos.
 
-Just like our `remove(element)` method, which [we covered in a previous lesson](/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list), we need to be careful not to orphan the rest of our list when we remove the node in our `removeAt(index)` method. We keep our nodes contiguous by making sure that the node that has reference to the removed node has a reference to the next node.
+Assim como nosso método `remove(element)`, que [abordamos em uma aula anterior](/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list), precisamos ser cuidadosos para não deixar órfã o resto de nossa lista quando removermos o nó em nosso método `removeAt(index)`. Manteremos nossos nós um após o outro, garantindo que o nó que possui a referência ao nó removido tenha uma referência ao próximo nó.
 
 # --instructions--
 
-Write a `removeAt(index)` method that removes and returns a node at a given `index`. The method should return `null` if the given `index` is either negative, or greater than or equal to the `length` of the linked list.
+Escreva um método `removeAt(index)`, que remove e retorna um nó em um determinado `index`. O método deve retornar `null` se o dado `index` for negativo, maior que ou igual ao `length` da lista encadeada.
 
-**Note:** Remember to keep count of the `currentIndex`.
+**Observação:** lembre-se de manter a contagem do `currentIndex`.
 
 # --hints--
 
-Your `LinkedList` class should have a `removeAt` method.
+A classe `LinkedList` deve ter o método `removeAt`.
 
 ```js
 assert(
@@ -35,7 +35,7 @@ assert(
 );
 ```
 
-Your `removeAt` method should reduce the `length` of the linked list by one.
+O método `removeAt` deve diminuir o `length` da lista encadeada em um.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-Your `removeAt` method should remove the element at the specified index from the linked list.
+O método `removeAt` deve remover o elemento no índice especificado da lista encadeada.
 
 ```js
 assert(
@@ -69,7 +69,7 @@ assert(
 );
 ```
 
-When only one element is present in the linked list, your `removeAt` method should remove and return the element at specified index, and reduce the length of the linked list.
+Quando apenas um elemento está presente na lista encadeada, o método `removeAt` deve remover e retornar o elemento no índice especificado e reduzir o tamanho da lista encadeada.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-Your `removeAt` method should return the element of the removed node.
+O método `removeAt` deve retornar o elemento do nó removido.
 
 ```js
 assert(
@@ -96,7 +96,7 @@ assert(
 );
 ```
 
-Your `removeAt` method should return `null` and the linked list should not change if the given index is less than `0`.
+O método `removeAt` deve retornar `null` e a lista encadeada não deve mudar se o índice dado for menor que `0`.
 
 ```js
 assert(
@@ -115,7 +115,7 @@ assert(
 );
 ```
 
-Your `removeAt` method should return `null` and the linked list should not change if the given index is greater than or equal to the `length` of the list.
+O método `removeAt` deve retornar `null` e a lista encadeada não deve mudar se o índice dado for maior que ou igual ao `length` da lista.
 
 ```js
 assert(

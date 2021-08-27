@@ -1,13 +1,13 @@
+import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
+import type { TFunction } from 'i18next';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
+import { withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
-import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
-import { withTranslation } from 'react-i18next';
 
-import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
 import {
   DonationText,
@@ -15,8 +15,9 @@ import {
   DonationOptionsText,
   DonationOptionsAlertText
 } from '../components/Donation/DonationTextComponents';
-import { signInLoadingSelector, userSelector, executeGA } from '../redux';
+import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/CampersImage';
+import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 
 interface ExecuteGaArg {
   type: string;
@@ -32,7 +33,7 @@ interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
-  t: (s: string) => string;
+  t: TFunction;
 }
 
 const mapStateToProps = createSelector(
@@ -112,7 +113,11 @@ function DonatePage({
                 </Alert>
               ) : null}
               <DonationText />
-              <DonateForm handleProcessing={handleProcessing} />
+              <Row>
+                <Col xs={12}>
+                  <DonateForm handleProcessing={handleProcessing} />
+                </Col>
+              </Row>
               <Row className='donate-support'>
                 <Col xs={12}>
                   <hr />

@@ -1,6 +1,6 @@
 ---
 id: 587d7db4367417b2b2512b92
-title: Extraindo Resultados
+title: Extrair resultados
 challengeType: 1
 forumTopicId: 301340
 dashedName: extract-matches
@@ -12,7 +12,7 @@ Até agora, você só tem verificado se existe ou não um padrão dentro de uma 
 
 Para usar o método `.match()`, aplique o método em uma string e passe a regex dentro dos parênteses.
 
-Um exemplo:
+Exemplo:
 
 ```js
 "Hello, World!".match(/Hello/);
@@ -42,7 +42,7 @@ O resultado, `result`, deve conter a string `coding`
 assert(result.join() === 'coding');
 ```
 
-Sua regex `codingRegex` deve buscar a string `coding`
+A regex `codingRegex` deve buscar a string `coding`
 
 ```js
 assert(codingRegex.source === 'coding');

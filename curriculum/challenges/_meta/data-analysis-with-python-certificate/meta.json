@@ -2,12 +2,12 @@
   "name": "Data Analysis with Python Certificate",
   "isUpcomingChange": false,
   "dashedName": "data-analysis-with-python-v7-certificate",
-  "order": 8,
+  "order": 9,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 12,
+  "superOrder": 0,
   "challengeOrder": [
     [
       "5e46fc95ac417301a38fb934",

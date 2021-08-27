@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f190b6c005b0e76f090
-title: 'Relational Databases: Many-to-many Relationships'
+title: 'Database Relazionali: relazioni molti-a-molti'
 challengeType: 11
 videoId: z-SBYcvEQOc
 dashedName: relational-databases-many-to-many-relationships
@@ -8,39 +8,39 @@ dashedName: relational-databases-many-to-many-relationships
 
 # --description--
 
-More resources:
+Altre risorse:
 
-\- [Exercise: Email](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
+\- [Esercizio: Email](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
 
-\- [Exercise: Roster](https://www.youtube.com/watch?v=qEkUEAz8j3o)
+\- [Esercizio: Roster](https://www.youtube.com/watch?v=qEkUEAz8j3o)
 
-\- [Exercise: Tracks](https://www.youtube.com/watch?v=I-E7avcPeSE)
+\- [Esercizio: Tracce](https://www.youtube.com/watch?v=I-E7avcPeSE)
 
-\- [Exercise: Twfriends](https://www.youtube.com/watch?v=RZRAoBFIH6A)
+\- [Esercizio: Twfriends](https://www.youtube.com/watch?v=RZRAoBFIH6A)
 
-\- [Exercise: Twspider](https://www.youtube.com/watch?v=xBaJddvJL4A)
+\- [Esercizio: Twspider](https://www.youtube.com/watch?v=xBaJddvJL4A)
 
 # --question--
 
 ## --text--
 
-Which is an example of a many-to-many relationship?
+Qual è un esempio di una relazione molti a molti?
 
 ## --answers--
 
-teacher to student
+insegnante a studente
 
 ---
 
-customer to order
+cliente a ordine
 
 ---
 
-book to pages
+libro a pagine
 
 ---
 
-city to country
+città a paese
 
 ## --video-solution--
 

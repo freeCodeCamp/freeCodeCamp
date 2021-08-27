@@ -1,6 +1,6 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed5
-title: Initializing Different Arrays
+title: Inicializar arrays diferentes
 challengeType: 11
 videoId: CEykdsKT4U4
 dashedName: initializing-different-arrays
@@ -10,7 +10,7 @@ dashedName: initializing-different-arrays
 
 ## --text--
 
-What will the following code print?
+O que será impresso pelo código a seguir?
 
 ```py
 a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])

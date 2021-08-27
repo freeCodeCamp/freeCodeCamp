@@ -7,7 +7,7 @@
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 12,
+  "superOrder": 0,
   "challengeOrder": [
     [
       "561abd10cb81ac38a17513bc",

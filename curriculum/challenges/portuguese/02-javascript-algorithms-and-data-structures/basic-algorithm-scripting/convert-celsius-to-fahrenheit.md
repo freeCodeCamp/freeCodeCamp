@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b3
-title: Converta Celsius para Fahrenheit
+title: Converter Celsius para Fahrenheit
 challengeType: 1
 forumTopicId: 16806
 dashedName: convert-celsius-to-fahrenheit
@@ -10,7 +10,7 @@ dashedName: convert-celsius-to-fahrenheit
 
 O algoritmo para converter de Celsius para Fahrenheit é a temperatura em Celsius vezes `9/5`, mais `32`.
 
-Você tem uma variável `celsius` representando uma temperatura em Celsius. Use a variável `fahrenheit` já definida e atribua a ela a temperatura equivalente à temperatura Celsius indicada. Use o algoritmo mencionado acima para ajudar a converter a temperatura Celsius para Fahrenheit.
+Você tem uma variável `celsius` representando uma temperatura em Celsius. Use a variável `fahrenheit` já definida e atribua a ela a temperatura equivalente à temperatura Celsius indicada. Use o algoritmo mencionado acima para ajudar a converter a temperatura em Celsius para Fahrenheit.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 56105e7b514f539506016a5e
-title: Conte para Trás com um Laço For
+title: Contar para trás com um laço for
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2R6BHa'
 forumTopicId: 16808
@@ -13,7 +13,7 @@ Um laço for também pode contar pra trás, contanto que possamos definir as con
 
 Para decrementar em dois cada iteração, nós precisamos alterar nossa inicialização, condição e expressão final.
 
-Nós começaremos em `i = 10` e iterar enquanto `i > 0`. Nós decrementamos `i` por dois em cada iteração com `i -= 2`.
+Nós começaremos em `i = 10` e vamos iterar enquanto `i > 0`. Nós decrementamos `i` por dois em cada iteração com `i -= 2`.
 
 ```js
 var ourArray = [];

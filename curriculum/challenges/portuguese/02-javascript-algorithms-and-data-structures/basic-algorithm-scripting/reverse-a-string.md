@@ -1,6 +1,6 @@
 ---
 id: a202eed8fc186c8434cb6d61
-title: Inverter uma String
+title: Inverter uma string
 challengeType: 5
 forumTopicId: 16043
 dashedName: reverse-a-string
@@ -10,7 +10,7 @@ dashedName: reverse-a-string
 
 Inverta a string fornecida.
 
-Você pode ter que transformar a string em um array antes de você poder inverter.
+Você pode ter que transformar a string em um array antes de poder inverter.
 
 Seu resultado deve ser uma string.
 

@@ -1,6 +1,6 @@
 ---
 id: a6b0bb188d873cb2c8729495
-title: Converter Entidades HTML
+title: Converter entidades HTML
 challengeType: 5
 forumTopicId: 16007
 dashedName: convert-html-entities

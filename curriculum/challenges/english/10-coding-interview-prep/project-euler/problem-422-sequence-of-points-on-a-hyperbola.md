@@ -8,22 +8,30 @@ dashedName: problem-422-sequence-of-points-on-a-hyperbola
 
 # --description--
 
-Let H be the hyperbola defined by the equation 12x2 + 7xy - 12y2 = 625.
+Let $H$ be the hyperbola defined by the equation $12x^2 + 7xy - 12y^2 = 625$.
 
-Next, define X as the point (7, 1). It can be seen that X is in H.
+Next, define $X$ as the point (7, 1). It can be seen that $X$ is in $H$.
 
-Now we define a sequence of points in H, {Pi : i ≥ 1}, as: P1 = (13, 61/4). P2 = (-43/6, -4). For i > 2, Pi is the unique point in H that is different from Pi-1 and such that line PiPi-1 is parallel to line Pi-2X. It can be shown that Pi is well-defined, and that its coordinates are always rational. You are given that P3 = (-19/2, -229/24), P4 = (1267/144, -37/12) and P7 = (17194218091/143327232, 274748766781/1719926784).
+Now we define a sequence of points in $H, \\{P_i : i ≥ 1\\}$, as:
 
-Find Pn for n = 1114 in the following format:If Pn = (a/b, c/d) where the fractions are in lowest terms and the denominators are positive, then the answer is (a + b + c + d) mod 1 000 000 007.
+- $P_1 = (13, \frac{61}{4})$.
+- $P_2 = (\frac{-43}{6}, -4)$.
+- For $i > 2$, $P_i$ is the unique point in $H$ that is different from $P_{i - 1}$ and such that line $P_iP_{i - 1}$ is parallel to line $P_{i - 2}X$. It can be shown that $P_i$ is well-defined, and that its coordinates are always rational.
 
-For n = 7, the answer would have been: 806236837.
+<img class="img-responsive center-block" alt="animation showing defining points P_1 to P_6" src="https://cdn.freecodecamp.org/curriculum/project-euler/sequence-of-points-on-a-hyperbola.gif" style="background-color: white; padding: 10px;">
+
+You are given that $P_3 = (\frac{-19}{2}, \frac{-229}{24})$, $P_4 = (\frac{1267}{144}, \frac{-37}{12})$ and $P_7 = (\frac{17\\,194\\,218\\,091}{143\\,327\\,232}, \frac{274\\,748\\,766\\,781}{1\\,719\\,926\\,784})$.
+
+Find $P_n$ for $n = {11}^{14}$ in the following format: If $P_n = (\frac{a}{b}, \frac{c}{d})$ where the fractions are in lowest terms and the denominators are positive, then the answer is $(a + b + c + d)\bmod 1\\,000\\,000\\,007$.
+
+For $n = 7$, the answer would have been: $806\\,236\\,837$.
 
 # --hints--
 
-`euler422()` should return 92060460.
+`sequenceOfPointsOnHyperbola()` should return `92060460`.
 
 ```js
-assert.strictEqual(euler422(), 92060460);
+assert.strictEqual(sequenceOfPointsOnHyperbola(), 92060460);
 ```
 
 # --seed--
@@ -31,12 +39,12 @@ assert.strictEqual(euler422(), 92060460);
 ## --seed-contents--
 
 ```js
-function euler422() {
+function sequenceOfPointsOnHyperbola() {
 
   return true;
 }
 
-euler422();
+sequenceOfPointsOnHyperbola();
 ```
 
 # --solutions--

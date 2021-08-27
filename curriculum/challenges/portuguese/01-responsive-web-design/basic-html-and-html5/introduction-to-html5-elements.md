@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aecf08801
-title: Introdução aos elementos do HTML5
+title: Conhecer os primeiros elementos do HTML5
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cBkZGpt7'
 forumTopicId: 301097
@@ -13,7 +13,7 @@ O HTML5 apresenta tags HTML mais descritivas. Essas tags incluem `main`, `header
 
 Essas tags conferem uma estrutura descritiva ao seu HTML, tornam seu HTML mais fácil de ler e ajudam com a otimização dos mecanismos de busca (SEO) e com a acessibilidade. A tag `main` do HTML5 ajuda os mecanismos de busca e outros desenvolvedores a encontrar o conteúdo principal de sua página.
 
-Vemos abaixo um exemplo de uso de um elemento `main` com dois elementos filhos dentre dele:
+Vemos abaixo um exemplo de uso de um elemento `main` com dois elementos filhos dentro dele:
 
 ```html
 <main> 
@@ -47,13 +47,13 @@ assert(
 );
 ```
 
-O elemento `p` deve conter as palavras do texto `kitty ipsum text` fornecido.
+O elemento `p` deve conter as primeiras palavras do texto adicional `kitty ipsum` fornecido.
 
 ```js
 assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));
 ```
 
-O seu código deve ter um elemento `main`.
+O código deve ter um elemento `main`.
 
 ```js
 assert($('main').length === 1);

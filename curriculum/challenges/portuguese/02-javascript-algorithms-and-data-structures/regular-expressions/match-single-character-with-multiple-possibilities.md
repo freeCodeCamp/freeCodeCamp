@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b95
-title: Capture um Único Caractere com Múltiplas Possibilidades
+title: Capturar um único caractere com múltiplas possibilidades
 challengeType: 1
 forumTopicId: 301357
 dashedName: match-single-character-with-multiple-possibilities
@@ -32,7 +32,7 @@ As quatro chamadas a `match` retornarão os seguintes valores, nesta ordem: `["b
 
 Use classe de caracteres de vogais (`a`, `e`, `i`, `o`, `u`) na sua regex `vowelRegex` para encontrar todas as vogais na string `quoteSample`.
 
-**Nota:** Você quer encontrar tanto maiúsculas quanto minúsculas.
+**Observação:** você quer encontrar tanto maiúsculas quanto minúsculas.
 
 # --hints--
 
@@ -60,7 +60,7 @@ Você deve usar a flag de ignorar caixa na sua regex `vowelRegex`.
 assert(vowelRegex.flags.match(/i/).length == 1);
 ```
 
-Sua regex não deve encontrar nenhuma consoante.
+A regex não deve encontrar nenhuma consoante.
 
 ```js
 assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()));

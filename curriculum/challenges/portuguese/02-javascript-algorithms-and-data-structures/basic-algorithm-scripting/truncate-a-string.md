@@ -1,6 +1,6 @@
 ---
 id: ac6993d51946422351508a41
-title: Truncar uma String
+title: Truncar uma string
 challengeType: 5
 forumTopicId: 16089
 dashedName: truncate-a-string
@@ -8,7 +8,7 @@ dashedName: truncate-a-string
 
 # --description--
 
-Truncar uma string (primeiro argumento) se ela for maior que o comprimento máximo da string (segundo argumento). Retorne a string truncada com `...` (reticências) ao final.
+Trunque uma string (primeiro argumento) se ela for maior que o comprimento máximo da string (segundo argumento). Retorne a string truncada com `...` (reticências) ao final.
 
 # --hints--
 

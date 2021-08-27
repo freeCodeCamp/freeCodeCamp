@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. An alternative to using an email service provider to send actual email messages, Mailhog is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
+Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. MailHog is an alternative to using an email service provider to send actual email messages. It is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
 
 ## Installing MailHog
 
@@ -18,7 +18,7 @@ MailHog can be installed on macOS, Windows and Linux or used via Docker
 If you have Docker installed then you can use
 
 ```bash
-docker run -d --name mailhog --rm mailhog/mailhog
+docker run -d --name mailhog --network host --rm mailhog/mailhog
 ```
 
 to start MailHog in the background and

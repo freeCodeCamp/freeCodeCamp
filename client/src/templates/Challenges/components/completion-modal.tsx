@@ -1,20 +1,25 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import React, { Component } from 'react';
-import { noop } from 'lodash-es';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
-import { withTranslation } from 'react-i18next';
+import { noop } from 'lodash-es';
+import React, { Component } from 'react';
+import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { createSelector } from 'reselect';
 
-import Login from '../../../components/Header/components/Login';
-import CompletionModalBody from './completion-modal-body';
 import { dasherize } from '../../../../../utils/slugs';
-import { AllChallengeNodeType } from '../../../redux/prop-types';
-
-import './completion-modal.css';
+import Login from '../../../components/Header/components/Login';
+import {
+  isSignedInSelector,
+  executeGA,
+  allowBlockDonationRequests
+} from '../../../redux';
+import {
+  AllChallengeNodeType,
+  ChallengeFiles
+} from '../../../redux/prop-types';
 
 import {
   closeModal,
@@ -25,12 +30,9 @@ import {
   challengeFilesSelector,
   challengeMetaSelector
 } from '../redux';
+import CompletionModalBody from './completion-modal-body';
 
-import {
-  isSignedInSelector,
-  executeGA,
-  allowBlockDonationRequests
-} from '../../../redux';
+import './completion-modal.css';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -40,14 +42,14 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   successMessageSelector,
   (
-    files: Record<string, unknown>,
+    challengeFiles: ChallengeFiles,
     { title, id }: { title: string; id: string },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
     message: string
   ) => ({
-    files,
+    challengeFiles,
     title,
     id,
     completedChallengesIds,
@@ -99,14 +101,14 @@ interface CompletionModalsProps {
   completedChallengesIds: string[];
   currentBlockIds?: string[];
   executeGA: () => void;
-  files: Record<string, unknown>;
+  challengeFiles: ChallengeFiles;
   id: string;
   isOpen: boolean;
   isSignedIn: boolean;
   message: string;
   submitChallenge: () => void;
   superBlock: string;
-  t: (arg0: string) => string;
+  t: TFunction;
   title: string;
 }
 
@@ -134,7 +136,7 @@ export class CompletionModalInner extends Component<
     props: CompletionModalsProps,
     state: CompletionModalInnerState
   ): CompletionModalInnerState {
-    const { files, isOpen } = props;
+    const { challengeFiles, isOpen } = props;
     if (!isOpen) {
       return { downloadURL: null, completedPercent: 0 };
     }
@@ -143,16 +145,14 @@ export class CompletionModalInner extends Component<
       URL.revokeObjectURL(downloadURL);
     }
     let newURL = null;
-    const fileKeys = Object.keys(files);
-    if (fileKeys.length) {
-      const filesForDownload = fileKeys
-        .map(key => files[key])
+    if (challengeFiles?.length) {
+      const filesForDownload = challengeFiles
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .reduce<string>((allFiles, currentFile: any) => {
           const beforeText = `** start of ${currentFile.path} **\n\n`;
           const afterText = `\n\n** end of ${currentFile.path} **\n\n`;
           allFiles +=
-            fileKeys.length > 1
+            challengeFiles.length > 1
               ? `${beforeText}${currentFile.contents}${afterText}`
               : currentFile.contents;
           return allFiles;

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244de
-title: Adicionando uma Opção Padrão (default) em Instruções Switch
+title: Adicionar uma opção padrão em instruções switch
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JvVfg'
 forumTopicId: 16653
@@ -9,7 +9,7 @@ dashedName: adding-a-default-option-in-switch-statements
 
 # --description--
 
-Na instrução `switch` você não deve ser capaz de especificar todos os possíveis valores como instruções `case`. Ao invés disso, você pode adicionar a instrução `default` a qual será executada se nenhuma instrução `case` correspondente for encontrada. Pense nisso como a instrução final `else` em uma cadeia de `if/else`.
+Na instrução `switch`, você não deve ser capaz de especificar todos os possíveis valores como instruções `case`. Ao invés disso, você pode adicionar a instrução `default`, que será executada se nenhuma instrução `case` correspondente for encontrada. Pense nisso como a instrução final `else` em uma cadeia de `if/else`.
 
 A instrução `default` deve ser o último caso.
 
@@ -68,7 +68,7 @@ assert(switchOfStuff('d') === 'stuff');
 assert(switchOfStuff(4) === 'stuff');
 ```
 
-Você não deve usar nenhuma das instruções `if` ou `else`
+Você não deve usar nenhuma instrução do tipo `if` ou `else`
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));

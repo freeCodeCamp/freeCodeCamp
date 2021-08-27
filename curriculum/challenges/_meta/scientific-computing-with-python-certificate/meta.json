@@ -2,12 +2,12 @@
   "name": "Scientific Computing with Python Certificate",
   "isUpcomingChange": false,
   "dashedName": "scientific-computing-with-python-v7-certificate",
-  "order": 7,
+  "order": 8,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 12,
+  "superOrder": 0,
   "challengeOrder": [
     [
       "5e44431b903586ffb414c951",

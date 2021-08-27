@@ -1,6 +1,6 @@
 ---
 id: 587d7db5367417b2b2512b97
-title: Capture Números e Letras do Alfabeto
+title: Capturar números e letras do alfabeto
 challengeType: 1
 forumTopicId: 301356
 dashedName: match-numbers-and-letters-of-the-alphabet
@@ -26,7 +26,7 @@ Escreva uma única regex que encontra letras entre `h` e `s` e, também, número
 
 # --hints--
 
-Sua regex `myRegex` deve encontrar 17 itens.
+A regex `myRegex` deve encontrar 17 itens.
 
 ```js
 assert(result.length == 17);

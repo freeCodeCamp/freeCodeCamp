@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c450eddfaeb5bdef
-title: Use Notação de Colchetes para Encontrar o Nº Caractere em uma String
+title: Usar notação de colchetes para encontrar o enésimo caractere em uma string
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVJua'
 forumTopicId: 18343
@@ -11,7 +11,7 @@ dashedName: use-bracket-notation-to-find-the-nth-character-in-a-string
 
 Você também pode usar <dfn>notação de colchetes</dfn> para pegar caracteres em outras posições em uma string.
 
-Lembre-se que computadores começam contando do `0`, então o primeiro caractere é na verdade o caractere na posição 0.
+Lembre-se de que computadores começam contando do `0`. Então, o primeiro caractere é na verdade o caractere na posição 0.
 
 Exemplo:
 
@@ -26,7 +26,7 @@ var secondLetterOfFirstName = firstName[1];
 
 Vamos tentar definir `thirdLetterOfLastName` para ser igual a terceira letra da variável `lastName` usando notação de colchetes.
 
-**Dica:** Tente olhar o exemplo acima se você ficar travado.
+**Dica:** tente olhar o exemplo acima se você ficar travado.
 
 # --hints--
 

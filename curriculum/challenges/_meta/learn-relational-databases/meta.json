@@ -7,7 +7,7 @@
   "template": "",
   "required": [],
   "superBlock": "relational-databases",
-  "superOrder": 12,
+  "superOrder": 5,
   "challengeOrder": [
     [
       "5ea8adfab628f68d805bfc5e",
@@ -35,7 +35,7 @@
     ],
     [
       "602da0de22201c65d2a019f6",
-      "Learn Advanced Bash by Building"
+      "Learn Advanced Bash by Building a Kitty Ipsum Translator"
     ],
     [
       "5f5b969a05380d2179fe6e18",
@@ -63,7 +63,7 @@
     ],
     [
       "602da04c22201c65d2a019f4",
-      "Final Boss"
+      "Number Guessing Game"
     ]
   ],
   "helpRoom": "HelpBackend",

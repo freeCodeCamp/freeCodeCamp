@@ -1,6 +1,6 @@
 ---
 id: cf1391c1c11feddfaeb4bdef
-title: Crie Números Decimais com JavaScript
+title: Criar números decimais com JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GEuW'
 forumTopicId: 16826
@@ -9,9 +9,9 @@ dashedName: create-decimal-numbers-with-javascript
 
 # --description--
 
-Nós também podemos armazenar números decimais em variáveis. Números decimais são referidos as vezes como números de <dfn>ponto flutuante</dfn> ou <dfn>floats</dfn>.
+Nós também podemos armazenar números decimais em variáveis. Números decimais são às vezes referidos como números de <dfn>ponto flutuante</dfn> ou <dfn>floats</dfn>.
 
-**Nota:** Nem todos os números reais podem ser representados com precisão no <dfn>ponto flutuante</dfn>. Isso pode levar a erros de arredondamento. [Detalhes aqui](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems).
+**Observação:** nem todos os números reais podem ser representados com precisão no <dfn>ponto flutuante</dfn>. Isso pode levar a erros de arredondamento. [Detalhes aqui](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems).
 
 # --instructions--
 

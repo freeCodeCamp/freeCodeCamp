@@ -1,6 +1,6 @@
 ---
 id: 587d825a367417b2b2512c88
-title: Reverse a Doubly Linked List
+title: Inverter uma lista duplamente encadeada
 challengeType: 1
 forumTopicId: 301714
 dashedName: reverse-a-doubly-linked-list
@@ -8,11 +8,11 @@ dashedName: reverse-a-doubly-linked-list
 
 # --description--
 
-Let's create one more method for our doubly linked list called reverse which reverses the list in place. Once the method is executed the head should point to the previous tail and the tail should point to the previous head. Now, if we traverse the list from head to tail we should meet the nodes in a reverse order compared to the original list. Trying to reverse an empty list should return null.
+Vamos criar mais um método para a nossa lista duplamente encadeada, chamado reverse, que inverterá a lista atual. Quando o método for executado, a head (início da lista) deve apontar para a tail (fim da lista) anterior e a tail deve apontar para a head anterior. Agora, se percorrermos a lista da head para a tail, devemos encontrar os nós em uma ordem inversa em comparação com a lista original. Tentar reverter uma lista vazia deve retornar null.
 
 # --hints--
 
-The DoublyLinkedList data structure should exist.
+A estrutura de dados DoublyLinkedList deve existir.
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-The DoublyLinkedList should have a method called reverse.
+A DoublyLinkedList deve ter um método chamado reverse.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-Reversing an empty list should return null.
+Inverter uma árvore vazia deve retornar null.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-The reverse method should reverse the list.
+O método reverse deverá inverter a lista.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-The next and previous references should be correctly maintained when a list is reversed.
+As referências next e previous devem ser mantidas corretamente quando a lista é revertida.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b1
-title: Atribuição Composta Com Multiplicação Aumentada
+title: Atribuir de modo composto com multiplicação aumentada
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c83vrfa'
 forumTopicId: 16662
@@ -15,7 +15,7 @@ O operador `*=` multiplica uma variável por um número.
 myVar = myVar * 5;
 ```
 
-irá multiplicar `myVar` por `5`. Isto pode ser reescrito como:
+multiplicará `myVar` por `5`. Essa expressão pode ser reescrita assim:
 
 ```js
 myVar *= 5;

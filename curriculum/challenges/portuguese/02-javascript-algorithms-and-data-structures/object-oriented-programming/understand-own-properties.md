@@ -1,6 +1,6 @@
 ---
 id: 587d7dae367417b2b2512b7b
-title: Entendendo Propriedades Próprias
+title: Entender propriedades próprias
 challengeType: 1
 forumTopicId: 301326
 dashedName: understand-own-properties
@@ -34,7 +34,7 @@ for (let property in duck) {
 console.log(ownProps);
 ```
 
-O console irá exibir o valor `["name", "numLegs"]`.
+O console vai exibir o valor `["name", "numLegs"]`.
 
 # --instructions--
 

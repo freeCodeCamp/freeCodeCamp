@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d4
-title: Comparação com o Operador Maior Que
+title: Comparar com o operador maior que
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp6GbH4'
 forumTopicId: 16786
@@ -9,7 +9,7 @@ dashedName: comparison-with-the-greater-than-operator
 
 # --description--
 
-O operador maior que (`>`) compara os valores de dois números. Se o número para a esquerda for maior que o número à direita, ele retorna `true`. Caso contrário, ele retorna `false`.
+O operador maior que (`>`) compara os valores de dois números. Se o número à esquerda for maior que o número à direita, ele retorna `true`. Caso contrário, ele retorna `false`.
 
 Tal como o operador de igualdade, o operador maior que converterá os tipos de dados de valores enquanto compara.
 
@@ -22,7 +22,7 @@ Tal como o operador de igualdade, o operador maior que converterá os tipos de d
 '1' >  9
 ```
 
-Em ordem, essas expressões seriam iguais à `true`, `false`, `true` e `true`.
+Em ordem, essas expressões seriam iguais à `true`, `true`, `false` e `false`.
 
 # --instructions--
 

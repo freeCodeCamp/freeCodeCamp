@@ -11,7 +11,7 @@ dashedName: improve-compatibility-with-browser-fallbacks
 
 Ao trabalhar com CSS, você provavelmente terá problemas de compatibilidade entre navegadores em algum momento. É por isso que é importante pensar em um plano B para evitar possíveis problemas.
 
-Quando o navegador analisa o CSS de uma página web, ele ignora todas as propriedades que não reconhece ou suporta. Por exemplo, se você usar uma variável CSS para atribuir uma cor de fundo em um site, o Internet Explorer irá ignorar a cor de fundo porque não oferece suporte a variáveis CSS. Nesse caso, o navegador usará qualquer outro valor que ele encontrar para essa propriedade. Se ele não conseguir encontrar nenhum outro valor definido para essa propriedade, ele reverterá para o valor padrão, que normalmente não é o ideal.
+Quando o navegador analisa o CSS de uma página web, ele ignora todas as propriedades que não reconhece ou suporta. Por exemplo, se você usar uma variável CSS para atribuir uma cor de fundo em um site, o Internet Explorer vai ignorar a cor de fundo porque não oferece suporte a variáveis CSS. Nesse caso, o navegador usará qualquer outro valor que ele encontrar para essa propriedade. Se ele não conseguir encontrar nenhum outro valor definido para essa propriedade, ele reverterá para o valor padrão, que normalmente não é o ideal.
 
 Para evitar esse comportamento, você pode criar um plano B. E isso é tão fácil quanto fornecer outro valor que possua um suporte mais amplo. Dessa forma, um navegador mais antigo terá algo em que se apoiar, enquanto que um navegador mais recente interpretará qualquer estilo declarado posteriormente.
 

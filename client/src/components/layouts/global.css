@@ -20,9 +20,9 @@ body {
 }
 
 .page-wrapper {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
 }
 
 .btn-cta-big {
@@ -30,6 +30,9 @@ body {
   font-size: 1.5rem;
   white-space: normal;
   width: 100%;
+  max-width: 500px;
+  padding: 5px;
+  margin: 0 auto;
 }
 
 /*

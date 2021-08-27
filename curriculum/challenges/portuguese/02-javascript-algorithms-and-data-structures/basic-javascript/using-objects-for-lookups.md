@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ca
-title: Usando Objetos para Pesquisas
+title: Usar objetos para pesquisas
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
@@ -35,7 +35,7 @@ alpha[value];
 
 # --instructions--
 
-Converta a instrução switch em um objeto chamado `lookup`. Use ele para pesquisar por `val` e atribua a string associada para a variável `result`.
+Converta a instrução switch em um objeto chamado `lookup`. Use-o para pesquisar por `val` e atribua a string associada para a variável `result`.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b19
-title: Modifique um Objeto Aninhado Dentro de um Objeto
+title: Modificar um objeto aninhado dentro de um objeto
 challengeType: 1
 forumTopicId: 301164
 dashedName: modify-an-object-nested-within-an-object

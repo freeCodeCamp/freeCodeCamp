@@ -1,5 +1,5 @@
 ---
-id: 5f3f26fa39591db45e5cd7a0
+id: 5f459225127805351a6ad057
 title: Part 69
 challengeType: 0
 dashedName: part-69
@@ -7,16 +7,21 @@ dashedName: part-69
 
 # --description--
 
-The default properties of an `hr` element will make it appear as a thin light grey line. You can change the height of the line by specifying a value for the `height` property.
-
-Change the height the `hr` element to be `3px`.
+Change the background color of the `hr` element to `brown` so it matches the color of the coffee beans.
 
 # --hints--
 
-Test 1
+You should set the value of the `background-color` property to `brown`.
 
 ```js
+const hasBackgroundColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'brown');
+```
 
+Your `hr` element should have a `background-color` of `brown`.
+
+```js
+const hrBackgroundColor = new __helpers.CSSHelp(document).getStyle('hr')?.getPropertyValue('background-color');
+assert(hrBackgroundColor === 'brown');
 ```
 
 # --seed--
@@ -41,12 +46,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -87,7 +92,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
 
@@ -117,7 +122,9 @@ h1, h2, p {
 }
 
 --fcc-editable-region--
-
+hr {
+  height: 3px;
+}
 --fcc-editable-region--
 
 h1, h2 {

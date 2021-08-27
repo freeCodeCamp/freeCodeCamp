@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c163
-title: Reading Data from Databases
+title: Ler dados do banco de dados
 challengeType: 11
 videoId: MtgXS1MofRw
 dashedName: reading-data-from-databases
@@ -8,30 +8,30 @@ dashedName: reading-data-from-databases
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Ao invés de usar notebooks.ai como foi mostrado no vídeo, você pode usar o Google Colab como substituto.*
 
-More resources:
+Mais recursos:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-11-reading-data-from-relational-databases/files)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebooks no GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-11-reading-data-from-relational-databases/files)
+-   [Como abrir notebooks do GitHub usando o Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What method does a `Cursor` instance have and what does it allow?
+Qual método uma instância de `Cursor` tem e o que esse método permite?
 
 ## --answers--
 
-The `Cursor` instance has a `.run()` method which allows you to run SQL queries.
+A instância de `Cursor` tem um método `.run()` que permite que você execute consultas SQL.
 
 ---
 
-The `Cursor` instance has a `.select()` method which allows you to select records.
+A instância de `Cursor` tem um método `.select()` que permite que você selecione registros.
 
 ---
 
-The `Cursor` instance has an `.execute()` method which will receive SQL parameters to run against the database.
+A instância de `Cursor` tem um método `.execute()`, que receberá parâmetros de SQL para serem executados no banco de dados.
 
 ## --video-solution--
 

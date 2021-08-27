@@ -92,9 +92,9 @@
     "intro": [
       "Mentre HTML e CSS controllano il contenuto e lo stile della pagina, JavaScript viene utilizzato per renderla interattiva. Nella Certificazione Algoritmi e Strutture Dati in JavaScript, imparerai le basi di JavaScript, incluse variabili, array, oggetti, cicli e funzioni.",
       "Una volta che avrai appreso le basi, applicherai questa conoscenza creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
-      "Along the way, you'll also learn two important programming styles or paradigms: Object Oriented Programming (OOP) and Functional Programming (FP)."
+      "Lungo il percorso, imparerai anche due importanti stili di programmazione o paradigmi: Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP) e Programmazione Funzionale (Functional Programming, FP)."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
+    "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e gli script-blocker, possono interferire con i test. In caso di problemi, ti raccomandiamo di disabilitare le estensioni che modificano o bloccano il contenuto delle pagine durante il corso.",
     "blocks": {
       "basic-javascript": {
         "title": "JavaScript Base",
@@ -107,7 +107,7 @@
         "title": "ES6",
         "intro": [
           "ECMAScript o ES è una versione standardizzata di JavaScript. Dato che tutti i maggiori browser seguono queste specifiche, i termini ECMAScript e JavaScript sono intercambiabili.",
-          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is constantly evolving, and new features are released every year.",
+          "La maggior parte del JavaScript che hai appreso finora era in ES5 (ECMAScript 5), che fu definito nel 2009. Anche se puoi ancora scrivere programmi in ES5, JavaScript è in costante evoluzione, e vengono rilasciate ogni anno nuove funzionalità.",
           "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, inclusi <code>let</code> e <code>const</code>, funzioni freccia, classi, promise e moduli."
         ]
       },
@@ -137,15 +137,15 @@
         "title": "Scrittura di Algoritmi Base",
         "intro": [
           "Un algoritmo è una serie di istruzioni passo-passo che descrivono come fare qualcosa.",
-          "To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code.",
+          "Per scrivere un algoritmo efficace, aiuta spezzare un problema in parti più piccole e pensare attentamente a come risolvere ogni parte con il codice.",
           "In questo corso, imparerai i fondamenti del pensiero algoritmico scrivendo algoritmi che fanno di tutto, dalla conversione delle temperature alla gestione di complessi array 2D."
         ]
       },
       "object-oriented-programming": {
         "title": "Programmazione Orientata agli Oggetti",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes organize code to describe things and what they can do.",
-          "In this course, you'll learn the basic principles of OOP in JavaScript, including the <code>this</code> keyword, prototype chains, constructors, and inheritance."
+          "La Programmazione Orientata agli Oggetti (OOP, o Object Oriented Programming), è uno dei principali approcci al processo di sviluppo del software. In OOP, gli oggetti e le classi sono utilizzati per organizzare il codice per descrivere le cose e cosa possono fare.",
+          "In questo corso, imparerai i principi di base di OOP in JavaScript includendo la parola chiave <code>this</code>, le catene di prototipi, i costruttori e l'ereditarietà."
         ]
       },
       "functional-programming": {
@@ -191,11 +191,11 @@
       }
     }
   },
-  "front-end-libraries": {
+  "front-end-development-libraries": {
     "title": "Librerie di sviluppo Front End",
     "intro": [
       "Ora che hai familiarità con HTML, CSS, e JavaScript, aumenta le tue competenze conoscendo alcune delle più popolari librerie di front-end del settore.",
-      "Nella Certificazione Librerie di Front End imparerai come stilizzare rapidamente il tuo sito con Bootstrap. Imparerai anche come aggiungere la logica ai tuoi stili CSS e ad estenderli con Sass.",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
       "Più tardi, costruirai un carrello e altre applicazioni per imparare a creare potenti applicazioni a pagina singola (Single Page Application, SPA) con React e Redux."
     ],
     "note": "",
@@ -245,7 +245,7 @@
           "Ora che sai come gestire il flusso di dati condivisi con Redux, è il momento di combinare tale conoscenza con React. Nei corsi React e Redux, costruirai un componente React e imparerai a gestire lo stato localmente al livello dei componenti e in tutta l'applicazione con Redux."
         ]
       },
-      "front-end-libraries-projects": {
+      "front-end-development-libraries-projects": {
         "title": "Progetti sulle Librerie di Sviluppo Front-End",
         "intro": [
           "È tempo di mettere alla prova le tue capacità di sviluppo con le librerie di sviluppo del front-end. Usa Bootstrap, jQuery, Sass, React e Redux per costruire 5 progetti che testeranno tutto quello che hai imparato fino a questo punto.",
@@ -310,12 +310,12 @@
       }
     }
   },
-  "apis-and-microservices": {
-    "title": "API e Microservizi",
+  "back-end-development-and-apis": {
+    "title": "Back End Development and APIs",
     "intro": [
       "Fino a questo punto, hai usato solo JavaScript sul front-end per aggiungere interattività a una pagina, risolvere sfide algoritmiche o costruire una Single Page Application. Ma JavaScript può essere utilizzato anche nel backend (cioè lato server), per costruire intere applicazioni web.",
       "Oggi, uno dei modi più popolari per costruire applicazioni è attraverso i microservizi, che sono piccole applicazioni modulari che lavorano insieme per formare qualcosa di più grande.",
-      "Nelle Certificazione API e Microservizi, imparerai a scrivere per il backend con Node.js e npm (Node Package Manager). Costruirai anche applicazioni web con il framework Express, e costruirai un microservizio Trova Persone con MongoDB e la libreria Mongoose."
+      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -331,7 +331,7 @@
         "intro": [
           "Node.js è un runtime JavaScript che permette agli sviluppatori di scrivere programmi backend (lato server) in JavaScript. Node.js viene fornito con una manciata di moduli incorporati — piccoli programmi indipendenti — che aiutano in questo. Alcuni dei moduli principali includono HTTP, che agisce come un server e File System, un modulo per leggere e modificare i file.",
           "Nell'ultimo gruppo di corsi hai imparato ad installare e gestire pacchetti da npm, che sono collezioni di moduli più piccoli. Questi pacchetti possono aiutarti a costruire applicazioni più grandi e complesse.",
-          "Express è un framework per applicazioni web leggero ed è uno dei pacchetti più popolari su npm. Express rende molto più facile creare un server e gestire l'instradamento (routing) per l'applicazione, che gestisce cose come dirigere le persone alla pagina corretta quando visitano un determinato endpoint come <pre>/blog</pre>.",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
           "In questo corso, imparerai le basi di Node e Express, incluso come creare un server, servire file diversi, e gestire richieste diverse dal browser."
         ]
       },
@@ -343,11 +343,11 @@
           "Nei corsi di MongoDB e Mongoose, imparerai i fondamenti di come si lavora con dati persistenti, incluso come impostare un modello, e salvare, cancellare e trovare documenti nel database."
         ]
       },
-      "apis-and-microservices-projects": {
-        "title": "Progetti di API e Microservizi",
+      "back-end-development-and-apis-projects": {
+        "title": "Back End Development and APIs Projects",
         "intro": [
           "Hai già lavorato con le API prima, ma ora che conosci npm, Node, Express, MongoDB e Mongoose, è ora di costruirle. Costruisci su tutto quello che hai imparato fino a questo punto per creare 5 diversi microservizi, che sono applicazioni più piccole, con un ambito di applicazione ristretto.",
-          "Dopo averli creati, avrai 5 belle API di microservizi che potrai mostrare a amici, familiari e potenziali datori di lavoro. Oh, e avrai anche una certificazione nuova di zecca su API e Microservizi."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back End Development and APIs Certification, too."
         ]
       }
     }

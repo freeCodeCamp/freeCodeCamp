@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e087d56ed3ffdc36be
+id: 5f3ef6e0f8c230bdd2349716
 title: Part 63
 challengeType: 0
 dashedName: part-63
@@ -7,14 +7,38 @@ dashedName: part-63
 
 # --description--
 
-Now apply the `established` class to the `Est. 2020` text.
+The typography of heading elements (e.g. `h1`, `h2`) is set by default values of users' browsers.
+
+Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.
 
 # --hints--
 
-Test 1
+You should use an `h1` selector.
 
 ```js
+const hasH1 = new __helpers.CSSHelp(document).getStyle('h1');
+assert(hasH1);
+```
 
+You should use an `h2` selector.
+
+```js
+const hasH2 = new __helpers.CSSHelp(document).getStyle('h2');
+assert(hasH2);
+```
+
+Your `h1` element should have a `font-size` of `40px`.
+
+```js
+const h1FontSize = new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('font-size');
+assert(h1FontSize === '40px');
+```
+
+Your `h2` element should have a `font-size` of `30px`.
+
+```js
+const h2FontSize = new __helpers.CSSHelp(document).getStyle('h2')?.getPropertyValue('font-size');
+assert(h2FontSize === '30px');
 ```
 
 # --seed--
@@ -32,20 +56,18 @@ Test 1
   </head>
   <body>
     <div class="menu">
---fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
-        <p>Est. 2020</p>
+        <p class="established">Est. 2020</p>
       </header>
---fcc-editable-region--
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -80,9 +102,13 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .established {
   font-style: italic;
@@ -119,4 +145,3 @@ h1, h2 {
   width: 25%
 }
 ```
-

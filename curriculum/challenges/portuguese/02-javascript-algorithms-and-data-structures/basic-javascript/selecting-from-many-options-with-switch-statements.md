@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244dd
-title: Selecionando de Muitas Opções com Instruções Switch
+title: Selecionar entre várias opções com instruções switch
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c4mv4fm'
 forumTopicId: 18277
@@ -9,7 +9,7 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-Se você possui muitas opções pra escolher, use uma instrução <dfn>switch</dfn>. Uma instrução `switch` testa um valor e pode ter muitas instruções <dfn>case</dfn> as quais definem os diversos valores possíveis. Instruções são executadas desde o primeiro `case` correspondente até que encontre um `break`.
+Se você possui muitas opções pra escolher, use uma instrução <dfn>switch</dfn>. Uma instrução `switch` testa um valor e pode ter muitas instruções <dfn>case</dfn> as quais definem os diversos valores possíveis. As instruções são executadas desde o primeiro `case` correspondente até que seja encontrado um `break`.
 
 Aqui está um exemplo de uma instrução `switch`:
 
@@ -24,7 +24,7 @@ switch(lowercaseLetter) {
 }
 ```
 
-Valores `case` são testados com o operador de igualdade estrita (`===`). O `break` diz ao JavaScript parar a execução das instruções. Se o `break` for omitido, a próxima instrução case será executada.
+Valores `case` são testados com o operador de igualdade estrita (`===`). O `break` diz ao JavaScript parar interromper a execução das instruções. Se o `break` for omitido, a próxima instrução case será executada.
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c14d
-title: Data Analysis Example A
+title: Esempio A di analisi dei dati
 challengeType: 11
 videoId: nVAaxZ34khk
 dashedName: data-analysis-example-a
@@ -8,34 +8,34 @@ dashedName: data-analysis-example-a
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*Invece di usare notebooks.ai come mostrato nel video, puoi usare Google Colab.*
 
-More resources:
+Altre risorse:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebook su GitHub](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
+-   [Come aprire Notebooks da GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What does the shape of our dataframe tell us?
+Cosa ci dice il profilo (shape) del nostro dataframe?
 
 ## --answers--
 
-The size in gigabytes the dataframe we loaded into memory is.
+La dimensione in gigabyte del dataframe che abbiamo caricato in memoria.
 
 ---
 
-How many rows and columns our dataframe has.
+Quante righe e colonne ha il nostro database.
 
 ---
 
-How many rows the source data had before loading.
+Quante righe aveva la sorgente dei dati prima del caricamento.
 
 ---
 
-How many columns the source data had before loading.
+Quante colonne aveva la sorgente dei dati prima del caricamento.
 
 ## --video-solution--
 

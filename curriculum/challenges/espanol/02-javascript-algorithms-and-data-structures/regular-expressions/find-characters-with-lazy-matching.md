@@ -33,7 +33,7 @@ assert(result[0] == '<h1>');
 `myRegex` debe usar una coincidencia perezosa
 
 ```js
-assert(/\?/g.test(myRegex));
+assert(/[^\\][\*\+\?]\?/.test(myRegex));
 ```
 
 `myRegex` no debe incluir la cadena `h1`

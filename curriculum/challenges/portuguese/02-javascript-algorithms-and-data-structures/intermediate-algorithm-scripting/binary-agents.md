@@ -1,6 +1,6 @@
 ---
 id: a8d97bd4c764e91f9d2bda01
-title: Agentes Binários
+title: Transformar de binário em string
 challengeType: 5
 forumTopicId: 14273
 dashedName: binary-agents
@@ -8,7 +8,7 @@ dashedName: binary-agents
 
 # --description--
 
-Retorne uma frase traduzida em Inglês da string binária passada.
+Retorne uma frase traduzida para o inglês da string binária passada.
 
 A string binária será separada por espaço.
 

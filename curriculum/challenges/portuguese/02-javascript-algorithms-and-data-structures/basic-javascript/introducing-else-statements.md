@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244da
-title: Introduzindo Instruções Else
+title: Introduzir instruções else
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cek4Efq'
 forumTopicId: 18207
@@ -9,7 +9,7 @@ dashedName: introducing-else-statements
 
 # --description--
 
-Quando uma condição para uma instrução `if` for verdadeiro, o bloco de código seguinte será executado. E quando a condição for falsa? Normalmente nada aconteceria. Com uma instrução `else`, um bloco de código alternativo pode ser executado.
+Quando uma condição para uma instrução `if` for verdadeira, o bloco de código seguinte será executado. E quando a condição for falsa? Normalmente, nada aconteceria. Com uma instrução `else`, um bloco de código alternativo pode ser executado.
 
 ```js
 if (num > 10) {

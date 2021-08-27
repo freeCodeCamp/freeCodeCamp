@@ -1,5 +1,5 @@
 ---
-id: 5f45b0731d39e15d54df4dfc
+id: 5f45b25e7ec2405f166b9de1
 title: Part 81
 challengeType: 0
 dashedName: part-81
@@ -7,16 +7,31 @@ dashedName: part-81
 
 # --description--
 
-The default color of link that has not yet been clicked on a page is typically blue. The default color of a link that has already been visited from a page is typically purple.
+You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue; }`.
 
-To make the `footer` links the same color regardless if a link has been visited, use a type selector for the anchor element (`a`) and use the value `black` for the `color` property.
+Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
 
 # --hints--
 
-Test 1
+You should use the `a:visited` pseudoselector.
 
 ```js
+const hasAVisited = new __helpers.CSSHelp(document).getStyle('a:visited');
+assert(hasAVisited);
+```
 
+You should set the `color` property to `grey`.
+
+```js
+const hasColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.color === 'grey');
+assert(hasColor);
+```
+
+Your `a:visited` should have a `color` of `grey`.
+
+```js
+const aVisitedColor = new __helpers.CSSHelp(document).getStyle('a:visited')?.getPropertyValue('color');
+assert(aVisitedColor === 'grey');
 ```
 
 # --seed--
@@ -41,12 +56,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -88,7 +103,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -154,8 +169,14 @@ h1, h2 {
 footer {
   font-size: 14px;
 }
+
+a {
+  color: black;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```
 

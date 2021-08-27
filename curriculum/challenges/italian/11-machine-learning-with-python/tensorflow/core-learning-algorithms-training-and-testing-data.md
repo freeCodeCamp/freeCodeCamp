@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8b
-title: 'Core Learning Algorithms: Training and Testing Data'
+title: 'Algoritmi di apprendimento principali: training e test di dati'
 challengeType: 11
 videoId: wz9J1slsi7I
 dashedName: core-learning-algorithms-training-and-testing-data
@@ -10,19 +10,19 @@ dashedName: core-learning-algorithms-training-and-testing-data
 
 ## --text--
 
-What is categorical data?
+Che cosa sono i dati categorici?
 
 ## --answers--
 
-Another term for one-hot encoding.
+Un altro termine per la codifica a caldo.
 
 ---
 
-Any data that is not numeric.
+Qualsiasi dato non numerico.
 
 ---
 
-Any data that is represented numerically.
+Qualsiasi dato rappresentato numericamente.
 
 ## --video-solution--
 

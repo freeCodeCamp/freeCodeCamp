@@ -1,6 +1,6 @@
 ---
 id: 587d7db7367417b2b2512b9d
-title: Padrões de Início de String
+title: Encontrar padrões ao início da string
 challengeType: 1
 forumTopicId: 301349
 dashedName: match-beginning-string-patterns
@@ -28,25 +28,25 @@ Use o circunflexo em uma regex para encontrar `Cal`, mas apenas no começo da st
 
 # --hints--
 
-Sua regex deve buscar a string `Cal` com uma maiúscula.
+A regex deve buscar a string `Cal` com uma maiúscula.
 
 ```js
 assert(calRegex.source == '^Cal');
 ```
 
-Sua regex não deve usar nenhuma flag.
+A regex não deve usar nenhuma flag.
 
 ```js
 assert(calRegex.flags == '');
 ```
 
-Sua regex deve capturar a string `Cal` no começo de uma string.
+A regex deve capturar a string `Cal` no começo de uma string.
 
 ```js
 assert(calRegex.test('Cal and Ricky both like racing.'));
 ```
 
-Sua regex não deve capturar a string `Cal` no meio de uma string.
+A regex não deve capturar a string `Cal` no meio de uma string.
 
 ```js
 assert(!calRegex.test('Ricky and Cal both like racing.'));

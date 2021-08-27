@@ -3,26 +3,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
-import { getTargetEditor } from '../utils/getTargetEditor';
 import { isDonationModalOpenSelector, userSelector } from '../../../redux';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
   executeChallenge,
-  inAccessibilityModeSelector,
   saveEditorContent,
-  setAccessibilityMode,
   setEditorFocusability,
   visibleEditorsSelector,
   updateFile
 } from '../redux';
+import { getTargetEditor } from '../utils/getTargetEditor';
 import './editor.css';
 import Editor from './editor';
 
 const propTypes = {
   canFocus: PropTypes.bool,
   // TODO: use shape
-  challengeFiles: PropTypes.object,
+  challengeFiles: PropTypes.array,
   containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
   description: PropTypes.string,
@@ -31,7 +29,6 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
-  inAccessibilityMode: PropTypes.bool.isRequired,
   initialEditorContent: PropTypes.string,
   initialExt: PropTypes.string,
   output: PropTypes.arrayOf(PropTypes.string),
@@ -40,9 +37,10 @@ const propTypes = {
     onResize: PropTypes.func
   }),
   saveEditorContent: PropTypes.func.isRequired,
-  setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
+  // TODO: is this used?
+  title: PropTypes.string,
   updateFile: PropTypes.func.isRequired,
   visibleEditors: PropTypes.shape({
     indexjs: PropTypes.bool,
@@ -56,21 +54,12 @@ const mapStateToProps = createSelector(
   visibleEditorsSelector,
   canFocusEditorSelector,
   consoleOutputSelector,
-  inAccessibilityModeSelector,
   isDonationModalOpenSelector,
   userSelector,
-  (
-    visibleEditors,
-    canFocus,
-    output,
-    accessibilityMode,
-    open,
-    { theme = 'default' }
-  ) => ({
+  (visibleEditors, canFocus, output, open, { theme = 'default' }) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,
     output,
-    inAccessibilityMode: accessibilityMode,
     theme
   })
 );
@@ -78,7 +67,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   executeChallenge,
   saveEditorContent,
-  setAccessibilityMode,
   setEditorFocusability,
   updateFile
 };
@@ -98,6 +86,7 @@ class MultifileEditor extends Component {
       editorRef,
       theme,
       resizeProps,
+      title,
       visibleEditors: { indexcss, indexhtml, indexjs, indexjsx }
     } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
@@ -155,6 +144,7 @@ class MultifileEditor extends Component {
                   key='indexjsx'
                   resizeProps={resizeProps}
                   theme={editorTheme}
+                  title={title}
                 />
               </ReflexElement>
             )}
@@ -174,6 +164,7 @@ class MultifileEditor extends Component {
                   key='indexhtml'
                   resizeProps={resizeProps}
                   theme={editorTheme}
+                  title={title}
                 />
               </ReflexElement>
             )}
@@ -191,6 +182,7 @@ class MultifileEditor extends Component {
                   key='indexcss'
                   resizeProps={resizeProps}
                   theme={editorTheme}
+                  title={title}
                 />
               </ReflexElement>
             )}
@@ -209,6 +201,7 @@ class MultifileEditor extends Component {
                   key='indexjs'
                   resizeProps={resizeProps}
                   theme={editorTheme}
+                  title={title}
                 />
               </ReflexElement>
             )}

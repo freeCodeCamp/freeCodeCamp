@@ -1,6 +1,6 @@
 ---
 id: 587d8258367417b2b2512c80
-title: Delete a Leaf Node in a Binary Search Tree
+title: Excluir um nó de folha em uma árvore binária de busca
 challengeType: 1
 forumTopicId: 301637
 dashedName: delete-a-leaf-node-in-a-binary-search-tree
@@ -8,15 +8,15 @@ dashedName: delete-a-leaf-node-in-a-binary-search-tree
 
 # --description--
 
-This is the first of three challenges where we will implement a more difficult operation in binary search trees: deletion. Deletion is difficult because removing nodes breaks links in the tree. These links must be carefully reestablished to ensure the binary tree structure is maintained. For some deletions, this means the tree must be rearranged. In general, you will encounter one of three cases when trying to delete a node: Leaf Node: The target to delete has zero children. One Child: The target to delete only has one child. Two Children: The target to delete has two child nodes. Removing a leaf node is easy, we simply remove it. Deleting a node with one child is also relatively easy, we simply remove it and link its parent to child of the node we deleted. Removing a node with two children is more difficult, however, because this creates two child nodes that need to be reconnected to the parent tree. We'll see how to deal with this case in the third challenge. Additionally, you need to be mindful of some edge cases when handling deletion. What if the tree is empty? What if the node to delete is the root node? What if there are only two elements in the tree? For now, let's handle the first case where we delete a leaf node.
+Este é o primeiro de três desafios onde implementaremos uma operação mais difícil em árvores binárias de busca: a exclusão. A exclusão é difícil porque remover nós quebra as ligações da árvore. Estas ligações devem ser cuidadosamente restabelecidas para garantir a manutenção da estrutura da árvore binária. Para algumas exclusões, isto significa que a árvore tem de ser reorganizada. Em geral, você encontrará um dos três casos ao tentar excluir um nó: Nó de folha: o destino que se quer excluir tem zero filhos. Um filho: o destino que se quer excluir tem apenas um filho. Dois filhos: o destino que se quer excluir tem dois nós filhos. Remover um nó de folha é fácil, simplesmente o removemos. Excluir um nó com um filho também é relativamente fácil, simplesmente removemos ele e vinculamos o seu pai ao filho do nó que excluímos. Remover um nó com dois filhos é mais difícil, no entanto, porque cria dois nós filhos que precisam ser reconectados à árvore pai. Vamos ver como lidar com esse caso no terceiro desafio. Além disso, você precisa estar atento a alguns casos extremos ao lidar com a exclusão. E se a árvore estiver vazia? E se o nó a ser excluído é o nó raiz? E se há apenas dois elementos na árvore? Por agora, vamos lidar com o primeiro caso, em que excluímos um nó de folha.
 
 # --instructions--
 
-Create a method on our binary tree called `remove`. We'll build the logic for our deletion operation in here. First, you'll want to create a function within remove that finds the node we are trying to delete in the current tree. If the node is not present in the tree, `remove` should return `null`. Now, if the target node is a leaf node with no children, then the parent reference to it should be set to `null`. This effectively deletes the node from the tree. To do this, you will have to keep track of the parent of the node we are trying to delete as well. It will also be useful to create a way to track the number of children the target node has, as this will determine which case our deletion falls under. We will handle the second and third cases in the next challenges. Good luck!
+Crie um método em nossa árvore binária chamado `remove`. Vamos construir a lógica para nossa operação de exclusão aqui. Primeiro, você vai querer criar uma função dentro de remove que encontre o nó que estamos tentando excluir na árvore atual. Se o nó não estiver presente na árvore, `remove` deve retornar `null`. Agora, se o nó de destino for um nó de folha sem filhos, então a referência pai deve ser definida como `null`. Isto efetivamente exclui o nó da árvore. Para fazer isso, você terá que acompanhar o pai do nó que estamos tentando excluir também. Também será útil criar uma maneira de rastrear o número de filhos que o nó alvo tem, pois isso determinará qual o caso da nossa exclusão. Trataremos do segundo e do terceiro caso nos próximos desafios. Boa sorte!
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+A estrutura de dados `BinarySearchTree` deve existir.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `remove`.
+A árvore binária de busca deve ter um método chamado `remove`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-Trying to remove an element that does not exist should return `null`.
+Tentar remover um elemento que não existe deve retornar `null`.
 
 ```js
 assert(
@@ -65,7 +65,7 @@ assert(
 );
 ```
 
-If the root node has no children, deleting it should set the root to `null`.
+Se o nó raiz não tem filhos, a exclusão deve definir a raiz como `null`.
 
 ```js
 assert(
@@ -86,7 +86,7 @@ assert(
 );
 ```
 
-The `remove` method should remove leaf nodes from the tree.
+O método `remove` deve remover os nós de folha da árvore.
 
 ```js
 assert(

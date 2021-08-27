@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b14
-title: Verifique a Presença de um Elemento com indexOf()
+title: Verificar a presença de um elemento com indexOf()
 challengeType: 1
 forumTopicId: 301154
 dashedName: check-for-the-presence-of-an-element-with-indexof
@@ -8,7 +8,7 @@ dashedName: check-for-the-presence-of-an-element-with-indexof
 
 # --description--
 
-Já que arrays podem ser alterados, ou *mutadas*, a qualquer momentos, não há garantia de onde um pedaço de dado estará em um determinado array, ou se esse elemento se quer existe. Felizmente, JavaScript nos fornece com outro método embutido, `indexOf()`, que nos permite rapidamente e facilmente checar pela presença de um elemento em um array. `indexOf()` recebe um elemento como parâmetro, e quando chamado, retorna a posição, ou índice, daquele elemento, ou `-1` se o elemento não existe no array.
+Já que arrays podem ser alterados, ou *mutados*, a qualquer momento, não há garantia de onde um dado estará em um determinado array, ou se esse elemento sequer existe. Felizmente, o JavaScript nos fornece outro método integrado, `indexOf()`, que nos permite rapidamente e facilmente checar pela presença de um elemento em um array. `indexOf()` recebe um elemento como parâmetro, e quando chamado, retorna a posição, ou índice, daquele elemento, ou `-1` se o elemento não existe no array.
 
 Por exemplo:
 
@@ -24,7 +24,7 @@ fruits.indexOf('pears');
 
 # --instructions--
 
-`indexOf()` pode ser incrivelmente útil para verificar rapidamente a presença de um elemento em um array. Definimos uma função, `quickCheck`, que recebe um array e um elemento como argumentos. Modifique a função usando `indexOf()` para que retorne `true` se o elemento passado existe no array, e`false` caso não exista.
+`indexOf()` pode ser incrivelmente útil para verificar rapidamente a presença de um elemento em um array. Definimos uma função, `quickCheck`, que recebe um array e um elemento como argumentos. Modifique a função usando `indexOf()` para que retorne `true` se o elemento passado existe no array, e `false` caso não exista.
 
 # --hints--
 

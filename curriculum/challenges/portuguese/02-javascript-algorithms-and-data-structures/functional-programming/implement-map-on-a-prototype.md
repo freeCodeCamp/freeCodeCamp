@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b62
-title: Implemente map em um Protótipo
+title: Implementar map em um protótipo
 challengeType: 1
 forumTopicId: 301230
 dashedName: implement-map-on-a-prototype
@@ -8,7 +8,7 @@ dashedName: implement-map-on-a-prototype
 
 # --description--
 
-Como você viu ao aplicar `Array.prototype.map()`, ou simplesmente `map()` mais cedo, o método `map` retorna um array do mesmo tamanho que o no qual chamamos o método. Ele também não altera o array original desde que a sua função callback não o faça.
+Como você viu ao aplicar `Array.prototype.map()`, ou simplesmente `map()` mais cedo, o método `map` retorna um array do mesmo tamanho que o no qual chamamos o método. Ele também não altera o array original desde que a função de callback não o faça.
 
 Em outras palavras, `map` é uma função pura e a sua saída depende somente de suas entradas. Além disso, ele recebe outra função como argumento.
 

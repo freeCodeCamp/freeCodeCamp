@@ -22,7 +22,7 @@ HTML5 引入了很多更具描述性的 HTML 元素， 包括 `main`、`header`�
 </main>
 ```
 
-**提示：**在后面的应用无障碍课程中我们会接触到更多新的 HTML5 元素，以及明白它们的用处。
+**提示：** 在后面的应用无障碍课程中我们会接触到更多新的 HTML5 元素，以及明白它们的用处。
 
 # --instructions--
 
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-新建的`p` 元素应包含 `kitty ipsum text` 的前面几个词。
+你的 `p` 元素应包含 `kitty ipsum` 文本的前面几个词。
 
 ```js
 assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));

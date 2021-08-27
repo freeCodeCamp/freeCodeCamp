@@ -1,6 +1,6 @@
 ---
 id: 587d7b7c367417b2b2512b1a
-title: Acesse Nomes de Propriedades com Notação de Colchetes
+title: Acessar nomes de propriedades com notação de colchetes
 challengeType: 1
 forumTopicId: 301150
 dashedName: access-property-names-with-bracket-notation
@@ -15,11 +15,11 @@ let selectedFood = getCurrentFood(scannedItem);
 let inventory = foods[selectedFood];
 ```
 
-Esse código irá avaliar o valor armazenado na variável `selectedFood` e retorna o valor daquela chave no objeto `foods`, ou `undefined` se não estiver presente. Notação de colchetes é muito útil porque às vezes as propriedades de um objeto não são conhecidas antes da execução ou nós precisamos acessá-las de uma forma mais dinâmica.
+Esse código vai avaliar o valor armazenado na variável `selectedFood` e retorna o valor daquela chave no objeto `foods`, ou `undefined` se não estiver presente. Notação de colchetes é muito útil porque, às vezes, as propriedades de um objeto não são conhecidas antes da execução ou nós precisamos acessá-las de uma forma mais dinâmica.
 
 # --instructions--
 
-Nós definimos uma função, `checkInventory`, a qual recebe um item escaneado como argumento. Retornar o valor atual da chave `scannedItem` no objeto `foods`. Você pode assumir que apenas chaves válidas serão fornecidas como um argumento para `checkInventory`.
+Nós definimos uma função, `checkInventory`, a qual recebe um item escaneado como argumento. Retorne o valor atual da chave `scannedItem` no objeto `foods`. Você pode assumir que apenas chaves válidas serão fornecidas como um argumento para `checkInventory`.
 
 # --hints--
 
@@ -29,7 +29,7 @@ Nós definimos uma função, `checkInventory`, a qual recebe um item escaneado c
 assert.strictEqual(typeof checkInventory, 'function');
 ```
 
-O objeto `foods` deve ter apenas as duplas de chaves e valores a seguir: `apples: 25`, `oranges: 32`, `plums: 28`, `bananas: 13`, `grapes: 35`, `strawberries: 27`.
+O objeto `foods` deve ter apenas os pares chave-valor a seguir: `apples: 25`, `oranges: 32`, `plums: 28`, `bananas: 13`, `grapes: 35`, `strawberries: 27`.
 
 ```js
 assert.deepEqual(foods, {

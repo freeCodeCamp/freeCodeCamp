@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5f
-title: Passe Argumentos para Evitar Dependências Externas em Funções
+title: Passar argumentos para evitar dependências externas em funções
 challengeType: 1
 forumTopicId: 301234
 dashedName: pass-arguments-to-avoid-external-dependence-in-a-function
@@ -40,7 +40,7 @@ A função `incrementer` deve receber um argumento.
 assert(incrementer.length === 1);
 ```
 
-Sua função `incrementer` deve retornar um valor que é maior que o valor `fixedValue`.
+A função `incrementer` deve retornar um valor que é maior que o valor `fixedValue`.
 
 ```js
 const __newValue = incrementer(fixedValue);

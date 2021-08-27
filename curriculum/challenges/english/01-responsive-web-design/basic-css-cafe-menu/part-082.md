@@ -1,5 +1,5 @@
 ---
-id: 5f45b25e7ec2405f166b9de1
+id: 5f45b3c93c027860d9298dbd
 title: Part 82
 challengeType: 0
 dashedName: part-82
@@ -7,16 +7,31 @@ dashedName: part-82
 
 # --description--
 
-You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue; }`.
+You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue; }`.
 
-Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
+Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
 
 # --hints--
 
-Test 1
+You should use the `a:hover` pseudoselector.
 
 ```js
+const hasAHover = new __helpers.CSSHelp(document).getStyle('a:hover');
+assert(hasAHover);
+```
 
+You should set the `color` property to `brown`.
+
+```js
+const hasColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.color === 'brown');
+assert(hasColor);
+```
+
+Your `a:hover` should have a `color` of `brown`.
+
+```js
+const aHoverColor = new __helpers.CSSHelp(document).getStyle('a:hover')?.getPropertyValue('color');
+assert(aHoverColor === 'brown');
 ```
 
 # --seed--
@@ -41,12 +56,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -88,7 +103,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -159,8 +174,13 @@ a {
   color: black;
 }
 
+a:visited {
+  color: grey;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```
 

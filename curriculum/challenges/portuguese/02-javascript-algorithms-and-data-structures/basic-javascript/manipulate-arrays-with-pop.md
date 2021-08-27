@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cc
-title: Manipule Arrays com pop()
+title: Manipular arrays com pop()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
@@ -11,7 +11,7 @@ dashedName: manipulate-arrays-with-pop
 
 Outra forma de alterar os dados em um array é com a função `.pop()`.
 
-`.pop()` é usado para remover um valor do final do array. Nós podemos armazenar esse valor removido ao atribuir a saída da chamada do método a uma variável. Em outras palavras, `.pop()` remove o último elemento de um array e retorna aquele elemento.
+`.pop()` é usado para remover um valor do final do array. Nós podemos armazenar esse valor removido atribuindo-o a uma variável. Em outras palavras, `.pop()` remove o último elemento de um array e retorna aquele elemento.
 
 Qualquer tipo de entrada pode ser removida de um array - numbers, strings e até mesmo arrays aninhados.
 
@@ -22,7 +22,7 @@ console.log(oneDown);
 console.log(threeArr);
 ```
 
-O primeiro `consol.log` exibirá o valor `6`, e o segundo irá exibir o valor `[1, 4]`.
+O primeiro `console.log` exibirá o valor `6` e o segundo exibirá o valor `[1, 4]`.
 
 # --instructions--
 

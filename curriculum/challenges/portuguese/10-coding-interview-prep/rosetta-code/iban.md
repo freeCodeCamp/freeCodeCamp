@@ -8,61 +8,61 @@ dashedName: iban
 
 # --description--
 
-The [International Bank Account Number (IBAN)](https://en.wikipedia.org/wiki/International_Bank_Account_Number) is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating [transcription errors](https://en.wikipedia.org/wiki/Transcription_error).
+O [Número de Conta Bancária Internacional (IBAN)](https://en.wikipedia.org/wiki/International_Bank_Account_Number) é uma maneira acordada internacionalmente para identificar contas bancárias através das fronteiras nacionais com um risco reduzido de propagação de [erros de transcrição](https://en.wikipedia.org/wiki/Transcription_error).
 
-The IBAN consists of up to 34 alphanumeric characters:
+O IBAN consiste em até 34 caracteres alfanuméricos:
 
 <ul>
-  <li>first the two-letter ISO 3166-1 alpha-2 country code</li>
-  <li>then two check digits, and</li>
-  <li>finally a country-specific Basic Bank Account Number (BBAN).</li>
+  <li>primeiro o código de país ISO 3166-1 alpha-2 de duas letras</li>
+  <li>depois dois dígitos de verificação, e</li>
+  <li>finalmente, um número de conta bancária básica específico do país (BBAN).</li>
 </ul>
 
-The check digits enable a sanity check of the bank account number to confirm its integrity even before submitting a transaction.
+Os dígitos de verificação habilitam uma verificação de sanidade do número da conta bancária para confirmar a sua integridade mesmo antes de enviar uma transação.
 
 # --instructions--
 
-Write a function that takes IBAN string as parameter. If it is valid return true. Otherwise, return false.
+Escreva uma função que recebe a string de IBAN como parâmetro. Se for válida, retorne true. Caso contrário, retorne false.
 
 # --hints--
 
-`isValid` should be a function.
+`isValid` deve ser uma função.
 
 ```js
 assert(typeof isValid == 'function');
 ```
 
-`isValid("GB82 WEST 1234 5698 7654 32")` should return a boolean.
+`isValid("GB82 WEST 1234 5698 7654 32")` deve retornar um booleano.
 
 ```js
 assert(typeof isValid('GB82 WEST 1234 5698 7654 32') == 'boolean');
 ```
 
-`isValid("GB82 WEST 1234 5698 7654 32")` should return `true`.
+`isValid("GB82 WEST 1234 5698 7654 32")` deve retornar `true`.
 
 ```js
 assert.equal(isValid('GB82 WEST 1234 5698 7654 32'), true);
 ```
 
-`isValid("GB82 WEST 1.34 5698 7654 32")` should return `false`.
+`isValid("GB82 WEST 1.34 5698 7654 32")` deve retornar `false`.
 
 ```js
 assert.equal(isValid('GB82 WEST 1.34 5698 7654 32'), false);
 ```
 
-`isValid("GB82 WEST 1234 5698 7654 325")` should return `false`.
+`isValid("GB82 WEST 1234 5698 7654 325")` deve retornar `false`.
 
 ```js
 assert.equal(isValid('GB82 WEST 1234 5698 7654 325'), false);
 ```
 
-`isValid("GB82 TEST 1234 5698 7654 32")` should return `false`.
+`isValid("GB82 TEST 1234 5698 7654 32")` deve retornar `false`.
 
 ```js
 assert.equal(isValid('GB82 TEST 1234 5698 7654 32'), false);
 ```
 
-`isValid("SA03 8000 0000 6080 1016 7519")` should return `true`.
+`isValid("SA03 8000 0000 6080 1016 7519")` deve retornar `true`.
 
 ```js
 assert.equal(isValid('SA03 8000 0000 6080 1016 7519'), true);

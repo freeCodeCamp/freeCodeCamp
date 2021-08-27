@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d93
-title: 'Neural Networks: Activation Functions'
+title: 'Reti Neurali: funzioni di attivazione'
 challengeType: 11
 videoId: S45tqW6BqRs
 dashedName: neural-networks-activation-functions
@@ -10,15 +10,15 @@ dashedName: neural-networks-activation-functions
 
 ## --text--
 
-Which activation function switches values between -1 and 1?
+Quale funzione di attivazione passa i valori da -1 a 1?
 
 ## --answers--
 
-ReLU (Rectified Linear Unit)
+ReLU (Unità Lineare Rettificata)
 
 ---
 
-Tanh (Hyperbolic Tangent)
+Tanh (Tangente Iperbolica)
 
 ---
 

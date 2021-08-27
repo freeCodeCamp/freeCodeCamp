@@ -1,6 +1,6 @@
 ---
 id: 587d781e367417b2b2512aca
-title: Mova um elemento posicionado relativamente com as propriedades de deslocamentos CSS
+title: Mover um elemento posicionado relativamente com as propriedades de deslocamentos CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bQEA4'
 forumTopicId: 301065

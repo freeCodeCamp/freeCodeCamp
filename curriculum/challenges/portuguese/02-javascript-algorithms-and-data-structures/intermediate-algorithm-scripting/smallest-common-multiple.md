@@ -1,6 +1,6 @@
 ---
 id: ae9defd7acaf69703ab432ea
-title: Menores Múltiplos Comuns
+title: Encontrar o menor múltiplo comum
 challengeType: 5
 forumTopicId: 16075
 dashedName: smallest-common-multiple

@@ -10,7 +10,7 @@ dashedName: mutate-an-array-declared-with-const
 
 Variáveis declaradas com `const` têm muitos casos de uso no JavaScript moderno.
 
-Alguns desenvolvedores preferem criar todas suas variáveis usando `const`, a menos que eles saibam que irão precisar reatribuir o valor. Apenas nesse caso, eles usam `let`.
+Alguns desenvolvedores preferem criar todas suas variáveis usando `const`, a menos que eles saibam que vão precisar reatribuir o valor. Apenas nesse caso, eles usam `let`.
 
 No entanto, é importante entender que objetos (incluindo arrays e funções) atribuídos a uma variável usando `const` ainda são mutáveis. Usar a declaração `const` só impede a reatribuição do identificador (nome) da variável.
 

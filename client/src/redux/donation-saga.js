@@ -1,4 +1,14 @@
-import { put, select, takeEvery, delay, call, take } from 'redux-saga/effects';
+import {
+  put,
+  select,
+  takeEvery,
+  takeLeading,
+  delay,
+  call,
+  take
+} from 'redux-saga/effects';
+import { addDonation, postChargeStripe } from '../utils/ajax';
+import { actionTypes as appTypes } from './action-types';
 
 import {
   openDonationModal,
@@ -8,10 +18,9 @@ import {
   recentlyClaimedBlockSelector,
   addDonationComplete,
   addDonationError,
-  types as appTypes
+  postChargeStripeComplete,
+  postChargeStripeError
 } from './';
-
-import { addDonation } from '../utils/ajax';
 
 const defaultDonationError = `Something is not right. Please contact donors@freecodecamp.org`;
 
@@ -45,9 +54,23 @@ function* addDonationSaga({ payload }) {
   }
 }
 
+function* postChargeStripeSaga({ payload }) {
+  try {
+    yield call(postChargeStripe, payload);
+    yield put(postChargeStripeComplete());
+  } catch (error) {
+    const err =
+      error.response && error.response.data
+        ? error.response.data.error
+        : defaultDonationError;
+    yield put(postChargeStripeError(err));
+  }
+}
+
 export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
-    takeEvery(types.addDonation, addDonationSaga)
+    takeEvery(types.addDonation, addDonationSaga),
+    takeLeading(types.postChargeStripe, postChargeStripeSaga)
   ];
 }

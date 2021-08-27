@@ -1,25 +1,24 @@
-import React, { useEffect } from 'react';
+import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
+import React, { useEffect, useRef } from 'react';
+import Helmet from 'react-helmet';
+import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import SectionHeader from '../components/settings/section-header';
-import IntroDescription from '../components/Intro/components/IntroDescription';
-import { withTranslation } from 'react-i18next';
-
-import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
-import Helmet from 'react-helmet';
 import { createSelector } from 'reselect';
-
-import { ButtonSpacer, Spacer } from '../components/helpers';
-import { acceptTerms, userSelector } from '../redux';
+import IntroDescription from '../components/Intro/components/IntroDescription';
 import createRedirect from '../components/create-redirect';
+import { ButtonSpacer, Spacer } from '../components/helpers';
+import SectionHeader from '../components/settings/section-header';
+
+import { acceptTerms, userSelector } from '../redux';
 
 import './email-sign-up.css';
 
 interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
-  t: (s: string) => string;
+  t: TFunction;
 }
 
 const mapStateToProps = createSelector(
@@ -37,18 +36,25 @@ function AcceptPrivacyTerms({
   acceptedPrivacyTerms,
   t
 }: AcceptPrivacyTermsProps) {
-  // if a user navigates away from here we should set acceptedPrivacyTerms
-  // to true (so they do not get pulled back) without changing their email
-  // preferences (hence the null payload)
-  // This ensures the user has to click the checkbox and then click the
-  // 'Continue...' button to sign up.
+  const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
+  const acceptTermsRef = useRef(acceptTerms);
+  useEffect(() => {
+    acceptedPrivacyRef.current = acceptedPrivacyTerms;
+    acceptTermsRef.current = acceptTerms;
+  });
+
   useEffect(() => {
     return () => {
-      if (!acceptedPrivacyTerms) {
-        acceptTerms(null);
+      // if a user navigates away from here we should set acceptedPrivacyTerms
+      // to true (so they do not get pulled back) without changing their email
+      // preferences (hence the null payload)
+      // This makes sure that the user has to opt in to Quincy's emails and that
+      // they are only asked twice
+      if (!acceptedPrivacyRef.current) {
+        acceptTermsRef.current(null);
       }
     };
-  }, [acceptTerms, acceptedPrivacyTerms]);
+  }, []);
 
   function onClick(isWeeklyEmailAccepted: boolean) {
     acceptTerms(isWeeklyEmailAccepted);
@@ -61,7 +67,10 @@ function AcceptPrivacyTerms({
       <Helmet>
         <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid className='default-page-wrapper email-sign-up'>
+      <Grid
+        className='default-page-wrapper email-sign-up'
+        data-cy='email-sign-up'
+      >
         <SectionHeader>{t('misc.email-signup')}</SectionHeader>
         <Row>
           <IntroDescription />

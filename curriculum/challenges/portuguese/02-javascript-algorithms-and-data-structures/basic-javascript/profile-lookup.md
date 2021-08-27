@@ -1,6 +1,6 @@
 ---
 id: 5688e62ea601b2482ff8422b
-title: Busca de Perfil
+title: Pesquisar perfil
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqW2Cg'
 forumTopicId: 18259
@@ -9,7 +9,7 @@ dashedName: profile-lookup
 
 # --description--
 
-Nós temos um array de objetos representando pessoas diferentes nas nossas listas de contatos.
+Temos um array de objetos representando pessoas diferentes nas nossas listas de contatos.
 
 Uma função `lookUpProfile`, que recebe `name` e uma propriedade (`prop`) como argumentos, foi pré-escrita para você.
 

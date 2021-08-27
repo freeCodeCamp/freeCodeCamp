@@ -1,38 +1,39 @@
 import dedent from 'dedent';
+import i18next from 'i18next';
 import { ofType } from 'redux-observable';
+import { tap, mapTo } from 'rxjs/operators';
+import envData from '../../../../../config/env.json';
 import {
-  types,
   closeModal,
   challengeFilesSelector,
   challengeMetaSelector,
   projectFormValuesSelector
 } from '../redux';
-import { tap, mapTo } from 'rxjs/operators';
 import { transformEditorLink } from '../utils';
-import envData from '../../../../../config/env.json';
-import i18next from 'i18next';
+import { actionTypes } from './action-types';
 
 const { forumLocation } = envData;
 
-function filesToMarkdown(files = {}) {
-  const moreThenOneFile = Object.keys(files).length > 1;
-  return Object.keys(files).reduce((fileString, key) => {
-    const file = files[key];
-    if (!file) {
+function filesToMarkdown(challengeFiles = {}) {
+  const moreThanOneFile = challengeFiles?.length > 1;
+  return challengeFiles.reduce((fileString, challengeFile) => {
+    if (!challengeFile) {
       return fileString;
     }
-    const fileName = moreThenOneFile ? `\\ file: ${file.contents}` : '';
-    const fileType = file.ext;
-    return `${fileString}\`\`\`${fileType}\n${fileName}\n${file.contents}\n\`\`\`\n\n`;
+    const fileName = moreThanOneFile
+      ? `\\ file: ${challengeFile.contents}`
+      : '';
+    const fileType = challengeFile.ext;
+    return `${fileString}\`\`\`${fileType}\n${fileName}\n${challengeFile.contents}\n\`\`\`\n\n`;
   }, '\n');
 }
 
 function createQuestionEpic(action$, state$, { window }) {
   return action$.pipe(
-    ofType(types.createQuestion),
+    ofType(actionTypes.createQuestion),
     tap(() => {
       const state = state$.value;
-      const files = challengeFilesSelector(state);
+      const challengeFiles = challengeFilesSelector(state);
       const { title: challengeTitle, helpCategory } =
         challengeMetaSelector(state);
       const {
@@ -64,7 +65,7 @@ function createQuestionEpic(action$, state$, { window }) {
         ${
           projectFormValues
             ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n`)
-            ?.join('') || filesToMarkdown(files)
+            ?.join('') || filesToMarkdown(challengeFiles)
         }\n\n
         ${endingText}`);
 
@@ -80,7 +81,9 @@ function createQuestionEpic(action$, state$, { window }) {
         )}\n${i18next.t('forum-help.add-code-three')}\n\n\`\`\`\n${endingText}`
       );
 
-      const category = window.encodeURIComponent(helpCategory || 'Help');
+      const category = window.encodeURIComponent(
+        i18next.t('links:help.' + helpCategory || 'Help')
+      );
 
       const studentCode = window.encodeURIComponent(textMessage);
       const altStudentCode = window.encodeURIComponent(altTextMessage);

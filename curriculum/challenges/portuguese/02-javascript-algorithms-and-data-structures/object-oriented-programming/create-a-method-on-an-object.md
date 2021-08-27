@@ -1,6 +1,6 @@
 ---
 id: 587d7dad367417b2b2512b75
-title: Cria um Método em um Objeto
+title: Criar um método em um objeto
 challengeType: 1
 forumTopicId: 301318
 dashedName: create-a-method-on-an-object
@@ -21,7 +21,7 @@ let duck = {
 duck.sayName();
 ```
 
-O exemplo adiciona o método `sayName`, que é uma função responsável por retornar uma frase contendo o nome do `duck`. Note que o método acessou a propriedade `name` na declaração de retorno usando `duck.name`. O próximo desafio irá mostrar outra forma de fazer isso.
+O exemplo adiciona o método `sayName`, que é uma função responsável por retornar uma frase contendo o nome do `duck`. Note que o método acessou a propriedade `name` na declaração de retorno usando `duck.name`. O próximo desafio vai mostrar outra forma de fazer isso.
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: bd7123c9c444eddfaeb5bdef
-title: Declarar Variáveis de String
+title: Declarar variáveis de string
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvWU6'
 forumTopicId: 17557
@@ -9,17 +9,17 @@ dashedName: declare-string-variables
 
 # --description--
 
-Anteriormente nós usamos o código
+Anteriormente, nós usamos o código
 
 ```js
 var myName = "your name";
 ```
 
-`"your name"` é chamado de <dfn>string literal</dfn>. É uma string porque é uma série de 0 ou mais caracteres entre aspas simples ou duplas.
+`"your name"` é chamado de <dfn>string</dfn> <dfn>literal</dfn>. É uma string porque é uma série de 0 ou mais caracteres entre aspas simples ou duplas.
 
 # --instructions--
 
-Crie duas novas variáveis de string: `myFirstName` e `myLastName` e atribua a eles os valores do seu primeiro e último nome, respectivamente.
+Crie duas novas variáveis de string: `myFirstName` e `myLastName` e atribua a elas os valores do seu primeiro e último nome, respectivamente.
 
 # --hints--
 

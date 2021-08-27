@@ -1,6 +1,6 @@
 ---
 id: ab306dbdcc907c7ddfc30830
-title: Rolo compressor
+title: Usar o rolo compressor
 challengeType: 5
 forumTopicId: 16079
 dashedName: steamroller
@@ -36,7 +36,7 @@ assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4]);
 assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 ```
 
-Sua solução não deve usar os métodos `Array.prototype.flat()` ou `Array.prototype.flatMap()`.
+A solução não deve usar os métodos `Array.prototype.flat()` ou `Array.prototype.flatMap()`.
 
 ```js
 assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));

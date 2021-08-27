@@ -1,6 +1,6 @@
 ---
 id: 587d7db9367417b2b2512ba7
-title: Especificando o Número Exato de Capturas
+title: Especificar o número exato de capturas
 challengeType: 1
 forumTopicId: 301365
 dashedName: specify-exact-number-of-matches
@@ -32,41 +32,41 @@ Modifique a regex `timRegex` para que capture quatro `m`s na string `Timber`.
 
 # --hints--
 
-Sua regex deve conter chaves.
+A regex deve conter chaves.
 
 ```js
 assert(timRegex.source.match(/{.*?}/).length > 0);
 ```
 
-Sua regex não deve encontrar a string `Timber`
+A regex não deve encontrar a string `Timber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timber'));
 ```
 
-Sua regex não deve encontrar a string `Timmber`
+A regex não deve encontrar a string `Timmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timmber'));
 ```
 
-Sua regex não deve encontrar a string `Timmmber`
+A regex não deve encontrar a string `Timmmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(!timRegex.test('Timmmber'));
 ```
 
-Sua regex deve encontrar a string `Timmmmber`
+A regex deve encontrar a string `Timmmmber`
 
 ```js
 timRegex.lastIndex = 0;
 assert(timRegex.test('Timmmmber'));
 ```
 
-Sua regex não deve encontrar a string `Timber` se nela houver 30 `m`s.
+A regex não deve encontrar a string `Timber` se nela houver 30 `m`s.
 
 ```js
 timRegex.lastIndex = 0;

@@ -1,5 +1,3 @@
-/* global cy */
-
 const selectors = {
   footer: '.site-footer'
 };

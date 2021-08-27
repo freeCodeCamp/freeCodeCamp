@@ -1,6 +1,6 @@
 ---
 id: 587d8258367417b2b2512c82
-title: Delete a Node with Two Children in a Binary Search Tree
+title: Eliminare un nodo con due figli in un albero binario di ricerca
 challengeType: 1
 forumTopicId: 301639
 dashedName: delete-a-node-with-two-children-in-a-binary-search-tree
@@ -8,15 +8,15 @@ dashedName: delete-a-node-with-two-children-in-a-binary-search-tree
 
 # --description--
 
-Removing nodes that have two children is the hardest case to implement. Removing a node like this produces two subtrees that are no longer connected to the original tree structure. How can we reconnect them? One method is to find the smallest value in the right subtree of the target node and replace the target node with this value. Selecting the replacement in this way ensures that it is greater than every node in the left subtree it becomes the new parent of but also less than every node in the right subtree it becomes the new parent of. Once this replacement is made the replacement node must be removed from the right subtree. Even this operation is tricky because the replacement may be a leaf or it may itself be the parent of a right subtree. If it is a leaf we must remove its parent's reference to it. Otherwise, it must be the right child of the target. In this case, we must replace the target value with the replacement value and make the target reference the replacement's right child.
+Rimuovere i nodi che hanno due figli è il caso più difficile da implementare. Rimuovere un nodo come questo produce due sotto-alberi che non sono più collegati alla struttura originale dell'albero. Come possiamo ricollegarli? Un metodo è quello di trovare il valore più piccolo nel sottoalbero destro del nodo obiettivo e sostituire il nodo obiettivo con questo valore. Selezionare il rimpiazzo in questo modo assicura che sia maggiore di ogni nodo nel sottoalbero sinistro di cui diventa il nuovo genitore ma anche minore di ogni nodo nel sottoalbero destro di cui diventa il nuovo genitore. Una volta effettuata la sostituzione, il nodo di rimpiazzo deve essere rimosso dal sotto-albero destro. Anche questa operazione è difficile perché il rimpiazzo può essere una foglia o può essere di per sé il genitore di un sottoalbero destro. Se si tratta di una foglia dobbiamo eliminare il riferimento nel suo genitore. In caso contrario, deve essere il figlio destro del nodo obiettivo. In questo caso, dobbiamo sostituire il valore obiettivo con il valore di sostituzione e far sì che il riferimento dell'obiettivo punti al figlio destro del sostituto.
 
 # --instructions--
 
-Let's finish our `remove` method by handling the third case. We've provided some code again for the first two cases. Add some code now to handle target nodes with two children. Any edge cases to be aware of? What if the tree has only three nodes? Once you are finished this will complete our deletion operation for binary search trees. Nice job, this is a pretty hard problem!
+Finiamo il nostro metodo `remove` gestendo il terzo caso. Abbiamo fornito di nuovo del codice per i primi due casi. Aggiungi adesso un po' di codice per gestire i nodi obiettivo con due figli. Eventuali casi limite di cui essere a conoscenza? E se l'albero avesse solo tre nodi? Una volta finito, questo completerà la nostra operazione di cancellazione per gli alberi di ricerca binari. Bel lavoro, questo è un problema piuttosto difficile!
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+La struttura di dati `BinarySearchTree` dovrebbe esistere.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `remove`.
+L'albero binario di ricerca dovrebbe avere un metodo chiamato `remove`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-Trying to remove an element that does not exist should return `null`.
+Tentare di rimuovere un elemento che non esiste dovrebbe restituire `null`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-If the root node has no children, deleting it should set the root to `null`.
+Se il nodo radice non ha figli, l'eliminazione dovrebbe impostare la radice a `null`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-The `remove` method should remove leaf nodes from the tree.
+Il metodo `remove` dovrebbe rimuovere i nodi foglia dall'albero.
 
 ```js
 assert(
@@ -107,7 +107,7 @@ assert(
 );
 ```
 
-The `remove` method should remove nodes with one child.
+Il metodo `remove` dovrebbe rimuovere i nodi con un figlio.
 
 ```js
 assert(
@@ -133,7 +133,7 @@ assert(
 );
 ```
 
-Removing the root in a tree with two nodes should set the second to be the root.
+Rimuovere la radice in un albero con due nodi dovrebbe impostare il secondo come radice.
 
 ```js
 assert(
@@ -155,7 +155,7 @@ assert(
 );
 ```
 
-The `remove` method should remove nodes with two children while maintaining the binary search tree structure.
+Il metodo `remove` dovrebbe rimuovere i nodi con due figli mantenendo la struttura dell'albero binario di ricerca.
 
 ```js
 assert(
@@ -212,7 +212,7 @@ assert(
 );
 ```
 
-The root should be removable on a tree of three nodes.
+La radice dovrebbe essere rimovibile su un albero di tre nodi.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b0
-title: Atribuição Composta Com Subtração Aumentada
+title: Atribuir de modo composto com subtração aumentada
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2Qv7AV'
 forumTopicId: 16660
@@ -15,7 +15,7 @@ Como o operador `+=`, `-=` subtrai um número de uma variável.
 myVar = myVar - 5;
 ```
 
-irá subtrair `5` de `myVar`. Isto pode ser reescrito como:
+vai subtrair `5` de `myVar`. Essa expressão pode ser reescrita assim:
 
 ```js
 myVar -= 5;

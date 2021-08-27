@@ -1,6 +1,6 @@
 ---
 id: 587d7b8f367417b2b2512b60
-title: Refatore Funções Para Que Não Usem Variáveis Globais
+title: Refatorar variáveis globais fora de funções
 challengeType: 1
 forumTopicId: 301235
 dashedName: refactor-global-variables-out-of-functions
@@ -20,7 +20,7 @@ Incrementar um número em um não é tão divertido, mas podemos aplicar esses p
 
 Reescreva o código de forma que o array global `bookList` não seja alterado em nenhuma das funções. A função `add` deve adicionar o nome do livro, `bookName` ao array passado e retornar um novo array. A função `remove` deve remover o `bookName` do array passado a ela.
 
-**Obs:** Ambas as funções devem retornar um array e novos parâmetros devem ser adicionados antes do parâmetro `bookName`.
+**Observação:** ambas as funções devem retornar um array e novos parâmetros devem ser adicionados antes do parâmetro `bookName`.
 
 # --hints--
 

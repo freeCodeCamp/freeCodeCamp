@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244df
-title: Várias Opções Idênticas em Instruções Switch
+title: Lidar com várias opções idênticas em instruções switch
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBKWCV'
 forumTopicId: 18242
@@ -9,7 +9,7 @@ dashedName: multiple-identical-options-in-switch-statements
 
 # --description--
 
-Se a instrução `break` for omitida de uma instrução `case` de um `switch`, as instruções seguintes `case` são executadas até que seja encontrado um `break`. Se você tem várias entradas com a mesma saída, você pode representá-los em uma instrução `switch` da seguinte forma:
+Se a instrução `break` for omitida de uma instrução `case` de um `switch`, as instruções `case` seguintes serão executadas até que seja encontrado um `break`. Se você tem várias entradas com a mesma saída, você pode representá-las em uma instrução `switch` da seguinte forma:
 
 ```js
 var result = "";
@@ -24,7 +24,7 @@ switch(val) {
 }
 ```
 
-Todos os casos para 1, 2 e 3 irão produzir o mesmo resultado.
+Todos os casos para 1, 2 e 3 vão produzir o mesmo resultado.
 
 # --instructions--
 
@@ -33,7 +33,7 @@ Escreva uma instrução para definir `answer` para os seguintes intervalos:
 `4-6` - `Mid`  
 `7-9` - `High`
 
-**Nota:** Você precisará ter uma instrução `case` para cada número no intervalo.
+**Observação:** você precisará ter uma instrução `case` para cada número no intervalo.
 
 # --hints--
 
@@ -91,7 +91,7 @@ assert(sequentialSizes(8) === 'High');
 assert(sequentialSizes(9) === 'High');
 ```
 
-Você não deve usar nenhuma das instruções `if` ou `else`
+Você não deve usar nenhuma instrução do tipo `if` ou `else`
 
 ```js
 assert(!/else/g.test(code) || !/if/g.test(code));

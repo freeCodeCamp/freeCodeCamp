@@ -1,7 +1,7 @@
 ---
 id: 587d7db2367417b2b2512b8a
 title: >-
-  Use Fecho para Proteger Propriedades Dentro de um Objeto de Serem Modificados Externamente
+  Usar closure para evitar que propriedades de um objeto sejam modificadas externamente
 challengeType: 1
 forumTopicId: 18234
 dashedName: >-
@@ -32,7 +32,7 @@ let ducky = new Bird();
 ducky.getHatchedEggCount();
 ```
 
-Aqui `getHatchedEggCount` é um método privilegiado, porque ele possui acesso à variável privada `hatchedEgg`. Isso é possível porque `hatchedEgg` é declarado no mesmo contexto que `getHatchedEggCount`. Em JavaScript, a função sempre possui acesso ao contexto na qual foi criada. Isso é chamado de `closure(fecho)`.
+Aqui `getHatchedEggCount` é um método privilegiado, porque ele possui acesso à variável privada `hatchedEgg`. Isso é possível porque `hatchedEgg` é declarado no mesmo contexto que `getHatchedEggCount`. Em JavaScript, a função sempre possui acesso ao contexto na qual foi criada. Isso é chamado de `closure`.
 
 # --instructions--
 
@@ -46,13 +46,13 @@ A propriedade `weight` deve ser uma variável privada e deve ser atribuída a el
 assert(code.match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
 ```
 
-Seu código deve criar o método dentro de `Bird` chamado `getWeight` que retorna o valor da variável privada `weight`.
+O código deve criar o método dentro de `Bird` chamado `getWeight` que retorna o valor da variável privada `weight`.
 
 ```js
 assert(new Bird().getWeight() === 15);
 ```
 
-Sua função `getWeight` deve retornar a variável privada `weight`.
+A função `getWeight` deve retornar a variável privada `weight`.
 
 ```js
 assert(code.match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));

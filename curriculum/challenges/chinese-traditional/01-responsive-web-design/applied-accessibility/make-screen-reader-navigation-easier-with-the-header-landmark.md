@@ -13,7 +13,7 @@ dashedName: make-screen-reader-navigation-easier-with-the-header-landmark
 
 與 `main` 類似，`header` 的語義化特性也可以讓輔助工具快速定位到它的內容。
 
-**注意：**`header` 應當在 HTML 文檔的 `body` 標籤內使用。 它與包含頁面標題、元信息的 `head` 標籤不同。
+**注意：** `header` 應當在 HTML 文檔的 `body` 標籤內使用。 它與包含頁面標題、元信息的 `head` 標籤不同。
 
 # --instructions--
 

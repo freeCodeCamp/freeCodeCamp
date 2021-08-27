@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244c8
-title: Acessando Propriedades de Objeto com Notação de Colchetes
+title: Acessar propriedades de objeto com notação de colchetes
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBvmEHP'
 forumTopicId: 16163
@@ -9,7 +9,7 @@ dashedName: accessing-object-properties-with-bracket-notation
 
 # --description--
 
-A segunda forma para acessar as propriedades de um objeto é a notação de colchetes (`[]`). Se a propriedade do objeto que você está tentando acessar possui um espaço no seu nome, você irá precisar usar a notação de colchetes.
+A segunda forma para acessar as propriedades de um objeto é a notação de colchetes (`[]`). Se a propriedade do objeto que você está tentando acessar possui um espaço no seu nome, você precisará usar a notação de colchetes.
 
 No entanto, você ainda pode usar a notação de colchetes nas propriedades dos objetos sem espaços.
 

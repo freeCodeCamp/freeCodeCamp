@@ -1,6 +1,6 @@
 ---
 id: 587d781a367417b2b2512ab9
-title: Use a tag em para colocar o texto em itálico
+title: Usar a tag em para colocar o texto em itálico
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJRBtp'
 forumTopicId: 301078

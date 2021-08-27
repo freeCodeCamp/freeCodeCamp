@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b45
-title: 'Use as Funções de Ordem Superior map, filter ou reduce para Solucionar um Problema Complexo'
+title: 'Usar as funções de ordem superior map, filter ou reduce para solucionar um problema complexo'
 challengeType: 1
 forumTopicId: 301311
 dashedName: use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem
@@ -14,7 +14,7 @@ Agora que você já realizou alguns desafios usando funções de ordem superior 
 
 Complete o código para a função `squareList` usando qualquer combinação de `map()`, `filter()` e `reduce()`. A função deve retornar uma nova matriz contendo *apenas* os inteiros positivos (números decimais não são inteiros) elevados ao quadrado quando uma matriz de números reais é passada para ela. Um exemplo de array de números reais é `[-3, 4.8, 5, 3, -3.2]`.
 
-**Obs:** Você não deve usar os loops `for` ou `while` ou a função `forEach()` na sua função.
+**Observação:** você não deve usar os loops `for` ou `while` ou a função `forEach()` na sua função.
 
 # --hints--
 
