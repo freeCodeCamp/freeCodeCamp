@@ -203,7 +203,7 @@ You can identify the exact version deployed by visiting the build and deployment
 
 There are some known limitations and tradeoffs when using the beta version of the platform.
 
-- #### All data / personal progress on these beta platforms `will NOT be saved or carried over` to production.
+- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production.
 
   **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev team may purge the database on this beta version as needed.
 
@@ -483,7 +483,7 @@ pm2 monit
 
 Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding environment variables.
 
-> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
 
@@ -550,25 +550,20 @@ Provisioning VMs with the Code
    cd client
    ```
 
-   ```console
-   git clone https://github.com/freeCodeCamp/client-config.git client
-   cd client
-   ```
-
    Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipeline.
 
    > Todo: This setup needs to move to S3 or Azure Blob storage 
    > 
    > ```console
-   echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
-   chmod +x client-start-primary.sh
-   pm2 delete client-primary
-   pm2 start  ./client-start-primary.sh --name client-primary
-   echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
-   chmod +x client-start-secondary.sh
-   pm2 delete client-secondary
-   pm2 start  ./client-start-secondary.sh --name client-secondary
-```
+   >    echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   >    chmod +x client-start-primary.sh
+   >    pm2 delete client-primary
+   >    pm2 start  ./client-start-primary.sh --name client-primary
+   >    echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   >    chmod +x client-start-secondary.sh
+   >    pm2 delete client-secondary
+   >    pm2 start  ./client-start-secondary.sh --name client-secondary
+   > ```
 
 ### Logging and Monitoring
 
@@ -584,7 +579,7 @@ pm2 monit
 
 Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding environment variables.
 
-> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
 
@@ -840,7 +835,7 @@ pm2 save
 pm2 logs
 ```
 
-> [!DANGER] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
+> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
 
 ## Installing and Updating Azure Pipeline Agents
 

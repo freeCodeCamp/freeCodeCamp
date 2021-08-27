@@ -1,4 +1,3 @@
-/* global expect */
 import { ensureLowerCaseEmail } from './User-Identity';
 
 test('returns lowercase email when one exists', () => {

@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const propTypes = {};
 
 function ApplePay(props) {
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>Apple Pay Logo</span>
       <svg
         height={272}
@@ -32,7 +32,7 @@ function ApplePay(props) {
           </g>
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

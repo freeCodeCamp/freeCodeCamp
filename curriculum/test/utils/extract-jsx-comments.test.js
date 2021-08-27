@@ -1,4 +1,3 @@
-/* global expect */
 const extractJSXComments = require('./extract-jsx-comments');
 
 const someJSX = `<Link

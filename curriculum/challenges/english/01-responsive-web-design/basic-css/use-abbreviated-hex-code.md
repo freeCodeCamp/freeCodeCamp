@@ -32,7 +32,7 @@ assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 The abbreviated `hex code` for the color red should be used instead of the hex code `#FF0000`.
 
 ```js
-assert(code.match(/\.red-text\s*?{\s*?color:\s*?#F00\s*?;\s*?}/gi));
+assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
 ```
 
 Your `h1` element with the text `I am green!` should be given the `color` green.
@@ -44,7 +44,7 @@ assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 The abbreviated `hex code` for the color green should be used instead of the hex code `#00FF00`.
 
 ```js
-assert(code.match(/\.green-text\s*?{\s*?color:\s*?#0F0\s*?;\s*?}/gi));
+assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
 ```
 
 Your `h1` element with the text `I am cyan!` should be given the `color` cyan.
@@ -56,7 +56,7 @@ assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
 The abbreviated `hex code` for the color cyan should be used instead of the hex code `#00FFFF`.
 
 ```js
-assert(code.match(/\.cyan-text\s*?{\s*?color:\s*?#0FF\s*?;\s*?}/gi));
+assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
 ```
 
 Your `h1` element with the text `I am fuchsia!` should be given the `color` fuchsia.
@@ -68,7 +68,7 @@ assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
 The abbreviated `hex code` for the color fuchsia should be used instead of the hex code `#FF00FF`.
 
 ```js
-assert(code.match(/\.fuchsia-text\s*?{\s*?color:\s*?#F0F\s*?;\s*?}/gi));
+assert(code.match(/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi));
 ```
 
 # --seed--

@@ -1,25 +1,23 @@
-/* global describe it expect beforeEach */
 const isArray = require('lodash/isArray');
 
-const simpleAST = require('../__fixtures__/ast-simple.json');
-const withEditableAST = require('../__fixtures__/ast-with-markers.json');
-const withSeedKeysAST = require('../__fixtures__/ast-seed-keys.json');
-const withExtraLinesAST = require('../__fixtures__/ast-with-extra-lines.json');
-const orphanKeyAST = require('../__fixtures__/ast-orphan-key.json');
 const adjacentKeysAST = require('../__fixtures__/ast-adjacent-keys.json');
 const withBeforeAfterAST = require('../__fixtures__/ast-before-after.json');
-const emptyBeforeAST = require('../__fixtures__/ast-empty-before.json');
+const cCodeAST = require('../__fixtures__/ast-c-code.json');
+const doubleMarkerAST = require('../__fixtures__/ast-double-marker.json');
 const emptyAfterAST = require('../__fixtures__/ast-empty-after.json');
+const emptyBeforeAST = require('../__fixtures__/ast-empty-before.json');
+const emptyContentAST = require('../__fixtures__/ast-empty-contents.json');
 const emptyCSSAST = require('../__fixtures__/ast-empty-css.json');
 const emptyHTMLAST = require('../__fixtures__/ast-empty-html.json');
-const doubleMarkerAST = require('../__fixtures__/ast-double-marker.json');
-const jsxSeedAST = require('../__fixtures__/ast-jsx-seed.json');
-const cCodeAST = require('../__fixtures__/ast-c-code.json');
 const explodedMarkerAST = require('../__fixtures__/ast-exploded-marker.json');
-const emptyContentAST = require('../__fixtures__/ast-empty-contents.json');
+const jsxSeedAST = require('../__fixtures__/ast-jsx-seed.json');
+const orphanKeyAST = require('../__fixtures__/ast-orphan-key.json');
+const withSeedKeysAST = require('../__fixtures__/ast-seed-keys.json');
+const simpleAST = require('../__fixtures__/ast-simple.json');
+const withExtraLinesAST = require('../__fixtures__/ast-with-extra-lines.json');
+const withEditableAST = require('../__fixtures__/ast-with-markers.json');
 
 const addSeed = require('./add-seed');
-const { isObject } = require('lodash');
 
 describe('add-seed plugin', () => {
   const plugin = addSeed();
@@ -33,26 +31,26 @@ describe('add-seed plugin', () => {
     expect(typeof plugin).toEqual('function');
   });
 
-  it('adds a `files` property to `file.data`', () => {
+  it('adds a `challengeFiles` property to `file.data`', () => {
     plugin(simpleAST, file);
-    expect('files' in file.data).toBe(true);
+    expect('challengeFiles' in file.data).toBe(true);
   });
 
-  it('ensures that the `files` property is an object', () => {
+  it('ensures that the `challengeFiles` property is an array', () => {
     plugin(simpleAST, file);
-    expect(isObject(file.data.files)).toBe(true);
+    expect(isArray(file.data.challengeFiles)).toBe(true);
   });
 
-  it('adds test objects to the files array following a schema', () => {
+  it('adds test objects to the challengeFiles array following a schema', () => {
     expect.assertions(17);
     plugin(simpleAST, file);
     const {
-      data: { files }
+      data: { challengeFiles }
     } = file;
-    const testObject = files.indexjs;
+    const testObject = challengeFiles.find(x => x.fileKey === 'indexjs');
     expect(Object.keys(testObject).length).toEqual(8);
-    expect(testObject).toHaveProperty('key');
-    expect(typeof testObject['key']).toBe('string');
+    expect(testObject).toHaveProperty('fileKey');
+    expect(typeof testObject['fileKey']).toBe('string');
     expect(testObject).toHaveProperty('ext');
     expect(typeof testObject['ext']).toBe('string');
     expect(testObject).toHaveProperty('name');
@@ -70,33 +68,32 @@ describe('add-seed plugin', () => {
   });
 
   it('parses seeds without ids', () => {
-    expect.assertions(6);
+    expect.assertions(3);
     plugin(simpleAST, file);
     const {
-      data: { files }
+      data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = files;
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexjs.contents).toBe(`var x = 'y';`);
-    expect(indexjs.key).toBe(`indexjs`);
     expect(indexhtml.contents).toBe(`<html>
   <body>
   </body>
 </html>`);
-    expect(indexhtml.key).toBe(`indexhtml`);
     expect(indexcss.contents).toBe(`body {
   background: green;
 }`);
-    expect(indexcss.key).toBe(`indexcss`);
   });
 
   it('removes region markers from contents', () => {
     expect.assertions(2);
     plugin(withEditableAST, file);
     const {
-      data: { files }
+      data: { challengeFiles }
     } = file;
-    const { indexcss } = files;
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexcss.contents).not.toMatch('--fcc-editable-region--');
     expect(indexcss.editableRegionBoundaries).toEqual([1, 4]);
@@ -108,9 +105,11 @@ describe('add-seed plugin', () => {
     expect.assertions(3);
     plugin(withSeedKeysAST, file);
     const {
-      data: { files }
+      data: { challengeFiles }
     } = file;
-    const { indexhtml, indexcss, indexjs } = files;
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexhtml.id).toBe('');
     expect(indexcss.id).toBe('key-for-css');
@@ -139,9 +138,11 @@ describe('add-seed plugin', () => {
     expect.assertions(3);
     plugin(withBeforeAfterAST, file);
     const {
-      data: { files }
+      data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = files;
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexjs.head).toBe('');
     expect(indexhtml.head).toBe(`<!-- comment -->`);
@@ -154,9 +155,11 @@ describe('add-seed plugin', () => {
     expect.assertions(3);
     plugin(withBeforeAfterAST, file);
     const {
-      data: { files }
+      data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = files;
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexjs.tail).toBe(`function teardown(params) {
   // after
@@ -189,9 +192,11 @@ describe('add-seed plugin', () => {
     expect.assertions(6);
     plugin(emptyBeforeAST, file);
     const {
-      data: { files }
+      data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = files;
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexjs.head).toBe('');
     expect(indexjs.tail).toBe('function teardown(params) {\n  // after\n}');
@@ -205,9 +210,11 @@ describe('add-seed plugin', () => {
     expect.assertions(6);
     plugin(emptyAfterAST, file);
     const {
-      data: { files }
+      data: { challengeFiles }
     } = file;
-    const { indexjs, indexhtml, indexcss } = files;
+    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
+    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
+    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
 
     expect(indexjs.head).toBe('');
     expect(indexjs.tail).toBe('');
@@ -235,9 +242,9 @@ describe('add-seed plugin', () => {
     expect.assertions(4);
     plugin(jsxSeedAST, file);
     const {
-      data: { files }
+      data: { challengeFiles }
     } = file;
-    const { indexjsx } = files;
+    const indexjsx = challengeFiles.find(x => x.fileKey === 'indexjsx');
 
     expect(indexjsx.head).toBe(`function setup() {}`);
     expect(indexjsx.tail).toBe(`function teardown(params) {
@@ -249,7 +256,7 @@ describe('add-seed plugin', () => {
 const Button = () => {
   return <button> {/* another comment! */} text </button>;
 };`);
-    expect(indexjsx.key).toBe(`indexjsx`);
+    expect(indexjsx.fileKey).toBe(`indexjsx`);
   });
 
   it('combines all the code of a specific language into a single file', () => {

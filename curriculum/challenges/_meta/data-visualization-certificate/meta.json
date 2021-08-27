@@ -7,13 +7,12 @@
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 12,
+  "superOrder": 0,
   "challengeOrder": [
     [
       "5a553ca864b52e1d8bceea14",
       "Data Visualization Certificate"
     ]
   ],
-  "isPrivate": true,
-  "fileName": "12-certificates/data-visualization-certificate.json"
+  "isPrivate": true
 }

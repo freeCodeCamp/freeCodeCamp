@@ -36,7 +36,7 @@ assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 Debes usar el `hex code` correspondiente al color rojo en lugar de la palabra reservada `red`.
 
 ```js
-assert(code.match(/\.red-text\s*?{\s*?color:\s*?(#FF0000|#F00)\s*?;\s*?}/gi));
+assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?(#FF0000|#F00)\s*?;?\s*?}/gi));
 ```
 
 Debes asignar al elemento `h1` que tiene el texto `I am green!` ("¡Soy de color verde!) el `color` verde.
@@ -48,7 +48,7 @@ assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 Debes usar el `hex code` correspondiente al color verde en lugar de la palabra reservada `green`.
 
 ```js
-assert(code.match(/\.green-text\s*?{\s*?color:\s*?(#00FF00|#0F0)\s*?;\s*?}/gi));
+assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?(#00FF00|#0F0)\s*?;?\s*?}/gi));
 ```
 
 Debes asignar al elemento `h1` que tiene el texto `I am dodger blue!` ("¡Soy de color azul dodger!) el `color` azul dodger.
@@ -60,7 +60,7 @@ assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)');
 Debes usar el `hex code` correspondiente al color azul dodger en lugar de la palabra reservada `dodgerblue`.
 
 ```js
-assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi));
+assert(code.match(/\.dodger-blue-text\s*?{\s*?color\s*:\s*?#1E90FF\s*?;?\s*?}/gi));
 ```
 
 Debes asignar al elemento `h1` que tiene el texto `I am orange!` ("¡Soy de color naranja!) el `color` naranja.
@@ -72,7 +72,7 @@ assert($('.orange-text').css('color') === 'rgb(255, 165, 0)');
 Debes usar el `hex code` correspondiente al color naranja en lugar de la palabra reservada `orange`.
 
 ```js
-assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi));
+assert(code.match(/\.orange-text\s*?{\s*?color\s*:\s*?#FFA500\s*?;?\s*?}/gi));
 ```
 
 # --seed--

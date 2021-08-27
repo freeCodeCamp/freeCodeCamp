@@ -64,7 +64,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -78,7 +78,7 @@ assert(
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="https://freecatphotoapp.com/submit-cat-photo">
+  <form action="https://www.freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
   </form>
 </main>
@@ -91,7 +91,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -105,7 +105,7 @@ assert(
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="https://freecatphotoapp.com/submit-cat-photo">
+  <form action="https://www.freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
     <button type="submit">Submit</button>
   </form>

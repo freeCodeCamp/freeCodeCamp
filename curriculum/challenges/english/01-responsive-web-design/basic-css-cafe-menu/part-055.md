@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0eaa7da26e3d34d78
+id: 5f3ef6e050279c7a4a7101d3
 title: Part 55
 challengeType: 0
 dashedName: part-55
@@ -7,16 +7,45 @@ dashedName: part-55
 
 # --description--
 
-You can give your menu some space between the content and the sides with various `padding` properties.
-
-Give the `menu` class a `padding-left` and a `padding-right` with the same value `20px`.
+That looks better. Now try to add the same `20px` padding to the top and bottom of the menu.
 
 # --hints--
 
-Test 1
+You should not remove the `padding-left` or `padding-right` properties.
 
 ```js
+const paddingLeft = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding-left');
+assert(paddingLeft === '20px');
+const paddingRight = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding-right');
+assert(paddingRight === '20px');
+```
 
+You should set the `padding-top` property to `20px`.
+
+```js
+const hasPaddingTop = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['padding-top'] === '20px');
+assert(hasPaddingTop);
+```
+
+You should set the `padding-bottom` property to `20px`.
+
+```js
+const hasPaddingBottom = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['padding-top'] === '20px');
+assert(hasPaddingBottom);
+```
+
+Your `.menu` element should have a `padding-top` of `20px`.
+
+```js
+const menuPaddingTop = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding-top');
+assert(menuPaddingTop === '20px');
+```
+
+Your `.menu` element should have a `padding-bottom` of `20px`.
+
+```js
+const menuPaddingBottom = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding-bottom');
+assert(menuPaddingBottom === '20px');
 ```
 
 # --seed--
@@ -40,12 +69,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -80,7 +109,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -93,6 +122,8 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 --fcc-editable-region--
 

@@ -65,7 +65,7 @@ assert.deepEqual(copyMachine(['it works'], 3), [
 La función `copyMachine` debe utilizar el `spread operator` (operador de propagación) con el arreglo `arr`
 
 ```js
-assert(__helpers.removeJSComments(code).match(/\.\.\.arr/));
+assert(code.match(/\.\.\.arr/));
 ```
 
 # --seed--

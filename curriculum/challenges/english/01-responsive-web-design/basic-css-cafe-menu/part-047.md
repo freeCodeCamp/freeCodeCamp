@@ -11,10 +11,28 @@ You will come back to the styling the menu in a few steps, but for now, go ahead
 
 # --hints--
 
-Test 1
+You should have an opening `section` tag.
 
 ```js
+assert(code.match(/<section>/ig).length === 2);
+```
 
+You should have a closing `section` tag.
+
+```js
+assert(code.match(/<\/section>/ig).length === 2);
+```
+
+You should not change the existing `main` element.
+
+```js
+assert($('main').length === 1);
+```
+
+Your new `section` element should be nested in the `main` element.
+
+```js
+assert($('main').children('section').length === 2);
 ```
 
 # --seed--
@@ -39,12 +57,12 @@ Test 1
       <main>
 --fcc-editable-region--
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -65,7 +83,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {

@@ -19,11 +19,19 @@ users.hasOwnProperty('Alan');
 
 # --instructions--
 
-我们已经定义了一个包含若干用户信息的 `users` 对象和一个 `isEveryoneHere` 函数，该函数接收 `users` 对象作为参数。 请完成该函数使其在 `users` 对象中同时包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 四个属性时才返回 `true`，否则返回 `false`。
+请完善这个函数，如果传递给它的对象包含四个名字 `Alan`、`Jeff`、`Sarah` 和 `Ryan`，函数返回 true，否则返回 false。
 
 # --hints--
 
-`users` 对象应该只包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 4 个属性。
+不应直接访问 `users` 对象。
+
+```js 
+
+assert(code.match(/users/gm).length <= 2)
+
+```
+
+`users` 对象应该只包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 4 个键。
 
 ```js
 assert(
@@ -35,13 +43,13 @@ assert(
 );
 ```
 
-`isEveryoneHere` 函数在 `users` 对象包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 4 个属性时应返回 `true`。
+如果 `Alan`、`Jeff`、`Sarah`、`Ryan` 是传递给函数 `isEveryoneHere` 对象的属性，则函数应返回 `true`。
 
 ```js
 assert(isEveryoneHere(users) === true);
 ```
 
-`isEveryoneHere` 函数在 `users` 对象不包含 `Alan` 时应返回 `false`。
+如果传递给函数 `isEveryoneHere` 对象的属性中不包含 `Alan`，则函数返回 `false`。
 
 ```js
 assert(
@@ -52,7 +60,7 @@ assert(
 );
 ```
 
-`isEveryoneHere` 函数在 `users` 对象不包含 `Jeff` 时应返回 `false`。
+如果传递给函数 `isEveryoneHere` 对象的属性中不包含 `Jeff`，则函数返回 `false`。
 
 ```js
 assert(
@@ -63,7 +71,7 @@ assert(
 );
 ```
 
-`isEveryoneHere` 函数在 `users` 对象不包含 `Sarah` 时应返回 `false`。
+如果传递给函数 `isEveryoneHere` 对象的属性中不包含 `Sarah`，则函数返回 `false`。
 
 ```js
 assert(
@@ -74,7 +82,7 @@ assert(
 );
 ```
 
-`isEveryoneHere` 函数在 `users` 对象不包含 `Ryan` 时应返回 `false`。
+如果传递给函数 `isEveryoneHere` 对象的属性中不包含 `Ryan`，则函数返回 `false`。
 
 ```js
 assert(
@@ -109,7 +117,7 @@ let users = {
   }
 };
 
-function isEveryoneHere(obj) {
+function isEveryoneHere(userObj) {
   // Only change code below this line
 
   // Only change code above this line
@@ -140,13 +148,13 @@ let users = {
   }
 };
 
-function isEveryoneHere(obj) {
+function isEveryoneHere(userObj) {
   return [
     'Alan',
     'Jeff',
     'Sarah',
     'Ryan'
-  ].every(i => obj.hasOwnProperty(i));
+  ].every(user => userObj.hasOwnProperty(user));
 }
 
 console.log(isEveryoneHere(users));

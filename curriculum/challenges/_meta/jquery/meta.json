@@ -10,7 +10,7 @@
       "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"
     }
   ],
-  "superBlock": "front-end-libraries",
+  "superBlock": "front-end-development-libraries",
   "superOrder": 3,
   "challengeOrder": [
     [
@@ -85,7 +85,4 @@
       "bad87fee1348bd9aecb08826",
       "Use jQuery to Modify the Entire Page"
     ]
-  ],
-  "helpRoom": "Help",
-  "fileName": "03-front-end-libraries/jquery.json"
-}
+  ]}

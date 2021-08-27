@@ -9,7 +9,7 @@ dashedName: standardize-times-with-the-html5-datetime-attribute
 
 # --description--
 
-继续日期主题。 HTML5 还引入了 `time` 标签与 `datetime` 属性来标准化时间。 `datetime` 属性是一个内联元素，可以在一个页面上包含日期或时间。 `datetime` 属性包含的有效格式。 辅助设备可以获取这个值。 这个属性也有助于避免混乱，因为它规定了时间的标准化版本，甚至可以在文本中以非正式的方式或学术方式使用它。
+继续日期主题。 HTML5 还引入了 `time` 标签与 `datetime` 属性来标准化时间。 `time` 元素是一个行内元素，用于在一个页面上显示日期或时间。 `datetime` 属性包含的有效格式。 辅助设备可以获取这个值。 这个属性也有助于避免混乱，因为它规定了时间的标准化版本，甚至可以在文本中以非正式的方式或学术方式使用它。
 
 举个例子：
 
@@ -19,7 +19,7 @@ dashedName: standardize-times-with-the-html5-datetime-attribute
 
 # --instructions--
 
-Camper Cat 的比武大会的时间确定了！ 用 `time` 标签包裹文本 `Thursday, September 15<sup>th<sup>`，添加一个 `datetime` 属性，将属性值设置为 `2016-09-15`。
+Camper Cat 格斗的调查结果出来了！ 用 `time` 标签包裹文本 `Thursday, September 15<sup>th</sup>`，添加一个 `datetime` 属性，将属性值设置为 `2016-09-15`。
 
 # --hints--
 

@@ -1,10 +1,10 @@
 import debug from 'debug';
 import { check } from 'express-validator';
 
-import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
-import { themes } from '../../common/utils/themes.js';
-import { alertTypes } from '../../common/utils/flash.js';
 import { isValidUsername } from '../../../../utils/validate';
+import { alertTypes } from '../../common/utils/flash.js';
+import { themes } from '../../common/utils/themes.js';
+import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 
 const log = debug('fcc:boot:settings');
 
@@ -28,7 +28,6 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
   api.post('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
-  api.post('/update-my-projects', ifNoUser401, updateMyProjects);
   api.post(
     '/update-my-theme',
     ifNoUser401,
@@ -157,16 +156,6 @@ function updateMyProfileUI(req, res, next) {
     profileUI,
     createStandardHandler(req, res, next)
   );
-}
-
-function updateMyProjects(req, res, next) {
-  const {
-    user,
-    body: { projects: project }
-  } = req;
-  return user
-    .updateMyProjects(project)
-    .subscribe(message => res.json({ message }), next);
 }
 
 function updateMyAbout(req, res, next) {

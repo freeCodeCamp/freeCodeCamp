@@ -1,10 +1,7 @@
-const {
-  reorderSteps,
-  createStepFile,
-  getExistingStepNums,
-  getProjectPath,
-  getArgValues
-} = require('./utils');
+const { getArgValues } = require('./helpers/get-arg-values');
+const { getExistingStepNums } = require('./helpers/get-existing-step-nums');
+const { getProjectPath } = require('./helpers/get-project-path');
+const { createStepFile, reorderSteps } = require('./utils');
 
 const anyStepExists = (steps, stepsToFind) =>
   stepsToFind.some(num => steps.includes(num));
@@ -22,8 +19,8 @@ if (!num) {
 num = parseInt(num, 10);
 const stepStart = parseInt(start, 10);
 
-if (num < 1 || num > 20) {
-  throw `No steps created. arg 'num' must be between 1 and 20 inclusive`;
+if (num < 1 || num > 100) {
+  throw `No steps created. arg 'num' must be between 1 and 100 inclusive`;
 }
 
 const maxStepNum = stepStart + num - 1;

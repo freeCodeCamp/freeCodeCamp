@@ -21,7 +21,7 @@ dashedName: remove-whitespace-from-start-and-end
 `result` 应该等于 `Hello, World!`
 
 ```js
-assert(result == 'Hello, World!');
+assert(result === 'Hello, World!');
 ```
 
 你不应该使用 `String.prototype.trim()` 方法。
@@ -30,10 +30,10 @@ assert(result == 'Hello, World!');
 assert(!code.match(/\.?[\s\S]*?trim/));
 ```
 
-`result` 变量不应该设置为等于字符串。
+`result` 变量的值不应该是一个字符串。
 
 ```js
-assert(!code.match(/result\s*=\s*".*?"/));
+assert(!code.match(/result\s*=\s*["'`].*?["'`]/));
 ```
 
 # --seed--

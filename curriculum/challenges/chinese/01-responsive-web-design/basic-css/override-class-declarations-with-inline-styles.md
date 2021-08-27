@@ -15,7 +15,7 @@ dashedName: override-class-declarations-with-inline-styles
 
 # --instructions--
 
-使用行内样式尝试让 `h1` 的字体颜色变白。 像这样使用：
+使用行内样式尝试让 `h1` 的字体颜色变白。 记住，内联样式看起来是像这样：
 
 ```html
 <h1 style="color: green;">

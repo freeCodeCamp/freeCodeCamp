@@ -44,9 +44,8 @@ const hideNonTranslatedStrings = async projectId => {
     const crowdinStrings = await getStrings({ projectId });
     if (crowdinStrings && crowdinStrings.length) {
       for (let string of crowdinStrings) {
-        const { crowdinFilePath, challengeTitle } = challengeTitleLookup[
-          string.data.fileId
-        ];
+        const { crowdinFilePath, challengeTitle } =
+          challengeTitleLookup[string.data.fileId];
         await updateFileString({
           projectId,
           string,

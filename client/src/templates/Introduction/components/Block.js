@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
+import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
+import { bindActionCreators } from 'redux';
+import { createSelector } from 'reselect';
 
-import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { completedChallengesSelector, executeGA } from '../../../redux';
-import Challenges from './Challenges';
-import Caret from '../../../assets/icons/Caret';
-import GreenPass from '../../../assets/icons/GreenPass';
-import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-import { isAuditedCert } from '../../../../../utils/is-audited';
 import envData from '../../../../../config/env.json';
+import { isAuditedCert } from '../../../../../utils/is-audited';
+import Caret from '../../../assets/icons/caret';
+import GreenNotCompleted from '../../../assets/icons/green-not-completed';
+import GreenPass from '../../../assets/icons/green-pass';
 import { Link } from '../../../components/helpers/';
+import { completedChallengesSelector, executeGA } from '../../../redux';
+import { makeExpandedBlockSelector, toggleBlock } from '../redux';
+import Challenges from './Challenges';
 
 const { curriculumLocale } = envData;
 
@@ -40,7 +40,7 @@ const propTypes = {
   completedChallenges: PropTypes.arrayOf(PropTypes.string),
   executeGA: PropTypes.func,
   isExpanded: PropTypes.bool,
-  superBlockDashedName: PropTypes.string,
+  superBlock: PropTypes.string,
   t: PropTypes.func,
   toggleBlock: PropTypes.func.isRequired
 };
@@ -90,7 +90,7 @@ export class Block extends Component {
       completedChallenges,
       challenges,
       isExpanded,
-      superBlockDashedName,
+      superBlock,
       t
     } = this.props;
 
@@ -123,9 +123,7 @@ export class Block extends Component {
       );
     });
 
-    const blockIntroObj = t(
-      `intro:${superBlockDashedName}.blocks.${blockDashedName}`
-    );
+    const blockIntroObj = t(`intro:${superBlock}.blocks.${blockDashedName}`);
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
     const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
     const {
@@ -144,7 +142,7 @@ export class Block extends Component {
                 <span className='block-link-icon'>#</span>
               </h3>
             </a>
-            {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
+            {!isAuditedCert(curriculumLocale, superBlock) && (
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
@@ -172,7 +170,7 @@ export class Block extends Component {
                 <span className='block-link-icon'>#</span>
               </h3>
             </a>
-            {!isAuditedCert(curriculumLocale, superBlockDashedName) && (
+            {!isAuditedCert(curriculumLocale, superBlock) && (
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'

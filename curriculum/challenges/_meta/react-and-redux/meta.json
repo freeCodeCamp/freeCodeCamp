@@ -19,7 +19,7 @@
       "src": "https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.7/react-redux.min.js"
     }
   ],
-  "superBlock": "front-end-libraries",
+  "superBlock": "front-end-development-libraries",
   "superOrder": 3,
   "challengeOrder": [
     [
@@ -62,7 +62,4 @@
       "5a24c314108439a4d403614a",
       "Moving Forward From Here"
     ]
-  ],
-  "helpRoom": "Help",
-  "fileName": "03-front-end-libraries/react-and-redux.json"
-}
+  ]}

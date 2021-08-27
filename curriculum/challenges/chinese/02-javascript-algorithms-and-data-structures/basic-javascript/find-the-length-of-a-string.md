@@ -17,7 +17,7 @@ console.log("Alan Peter".length);
 
 字符串 `10` 将会出现在控制台中。
 
-例如，我们创建了一个变量 `var firstName = "Charles"`，我们就可以通过使用 `firstName.length` 来获得 `Charles` 字符串的长度。
+例如，如果我们创建了一个变量 `var firstName = "Ada"`，我们就可以通过使用 `firstName.length` 属性来获得字符串 `Ada` 的长度。
 
 # --instructions--
 

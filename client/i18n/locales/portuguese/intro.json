@@ -1,0 +1,559 @@
+{
+  "responsive-web-design": {
+    "title": "Design responsivo para a web",
+    "intro": [
+      "Nessa certificação de Design responsivo para a web, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
+      "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um formulário web.",
+      "Finalmente, você vai aprender a fazer páginas web que respondem a diferentes tamanhos de telas construindo um card do Twitter com Flexbox, e um layout complexo de blog com o CSS Grid."
+    ],
+    "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e extensões de modo escuro podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem o conteúdo ou o layout das páginas durante o curso.",
+    "blocks": {
+      "basic-html-and-html5": {
+        "title": "HTML e HTML5 básicos",
+        "intro": [
+          "HTML é uma linguagem de marcação que usa uma sintaxe ou notação especial para descrever a estrutura de uma página da Web para o navegador. Os elementos HTML geralmente têm tags de abertura e fechamento que os circundam e dão significado ao conteúdo. Elementos diferentes, por exemplo, podem descrever o texto como um título, um parágrafo ou item da lista.",
+          "Neste curso, você vai construir um aplicativo de fotografia de gatos para aprender alguns dos elementos HTML mais comuns: os blocos de construção de qualquer página da web."
+        ]
+      },
+      "basic-css": {
+        "title": "CSS básico",
+        "intro": [
+          "O CSS, ou Folhas de Estilo em Cascata, diz ao navegador como exibir o texto e outros conteúdos que você escreve em HTML. Com o CSS, você pode controlar a cor, fonte, tamanho, espaçamento e muitos outros aspectos dos elementos HTML.",
+          "Agora que você descreveu a estrutura do seu aplicativo de fotos de gatos, aplique um pouco de estilo com o CSS."
+        ]
+      },
+      "applied-visual-design": {
+        "title": "Design visual aplicado",
+        "intro": [
+          "O design visual é uma combinação de tipografia, teoria de cores, gráficos, animação, layout da página e mais para ajudar a entregar sua mensagem única.",
+          "Neste curso, você vai aprender como aplicar esses diferentes elementos do design visual em suas páginas da web."
+        ]
+      },
+      "applied-accessibility": {
+        "title": "Acessibilidade aplicada",
+        "intro": [
+          "No desenvolvimento web, a acessibilidade refere-se ao conteúdo da web e uma UI (interface do usuário) que pode ser compreendida, navegada e interagida por um público amplo. Isto inclui pessoas com deficiência visual, auditiva, de mobilidade ou cognitiva.",
+          "Nesse curso, você aprenderá as melhores práticas para a construção de páginas da Web que sejam acessíveis a todos."
+        ]
+      },
+      "responsive-web-design-principles": {
+        "title": "Princípios do design responsivo para a web",
+        "intro": [
+          "Existem muitos dispositivos que podem acessar a Internet, de todas as formas e tamanhos. O Design responsivo para a web é a prática de se projetar sites flexíveis, que podem responder a diferentes tamanhos de telas, orientações e resoluções.",
+          "Neste curso, você vai aprender a usar CSS para fazer suas páginas ficarem bonitas, não importa em qual dispositivo elas estão sendo visualizadas."
+        ]
+      },
+      "css-flexbox": {
+        "title": "CSS Flexbox",
+        "intro": [
+          "O Flexbox é um método de layout poderoso e com bastante suporte, que foi introduzido na versão mais recente do CSS, o CSS3. Com o Flexbox, é fácil centralizar os elementos na página e criar interfaces dinâmicas que diminuem e aumentam de tamanho automaticamente.",
+          "Nesse curso, você aprenderá os fundamentos de flexbox e layouts dinâmicos construindo um card do Twitter."
+        ]
+      },
+      "css-grid": {
+        "title": "CSS Grid",
+        "intro": [
+          "O CSS Grid é um padrão mais recente, que torna fácil construir layouts responsivos complexos. Ele funciona transformando um elemento HTML em uma grade e permite que você coloque elementos filhos em qualquer lugar dentro dele.",
+          "Nesse curso, você aprenderá os fundamentos do CSS Grid construindo diferentes layouts complexos, incluindo um blog."
+        ]
+      },
+      "responsive-web-design-projects": {
+        "title": "Projetos do design responsivo para a web",
+        "intro": [
+          "Hora de colocar suas novas habilidades aprendidas para funcionar. Ao trabalhar nestes projetos, você terá a oportunidade de aplicar todas as competências, princípios e conceitos que você aprendeu até agora: HTML, CSS, Visual Design, Acessibilidade e muito mais.",
+          "Conclua os cinco projetos de programação web abaixo para ganhar a sua Certificação de Design responsivo para a web."
+        ]
+      },
+      "basic-html-cat-photo-app": {
+        "title": "Aplicativo básico de fotos de gatos em HTML",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "basic-css-cafe-menu": {
+        "title": "Menu de uma cafeteria em CSS básico",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-variables-skyline": {
+        "title": "Horizonte com variáveis de CSS",
+        "intro": [
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "javascript-algorithms-and-data-structures": {
+    "title": "Algoritmos e estruturas de dados em JavaScript",
+    "intro": [
+      "Enquanto o HTML e o CSS controlam o conteúdo e o estilo de uma página, o JavaScript é usado para torná-lo interativo. Na certificação de Algoritmos e Estruturas de Dados em JavaScript, você aprenderá os fundamentos do JavaScript, incluindo variáveis, arrays, objetos, laços e funções.",
+      "Assim que souber os fundamentos abaixo, você aplicará esse conhecimento, criando algoritmos para manipular strings, fatorar números e até mesmo calcular a órbita da Estação Espacial Internacional.",
+      "Durante o processo, você também aprenderá dois estilos ou paradigmas de programação importantes: a Programação Orientada a Objetos (POO) e a Programação Funcional (PF)."
+    ],
+    "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e bloqueadores de scripts, podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem ou bloqueiem o conteúdo das páginas durante o curso.",
+    "blocks": {
+      "basic-javascript": {
+        "title": "JavaScript básico",
+        "intro": [
+          "O JavaScript é uma linguagem de script que você pode usar para tornar as páginas da web interativas. É uma das principais tecnologias da web, juntamente com o HTML e o CSS e tem o suporte de todos os navegadores modernos.",
+          "Neste curso, você aprenderá conceitos básicos de programação em JavaScript. Você vai começar com estruturas básicas de dados, como números e strings. Então, você aprenderá a trabalhar com arrays, objetos, funções, laços, instruções if/else e muito mais."
+        ]
+      },
+      "es6": {
+        "title": "ES6",
+        "intro": [
+          "ECMAScript, ou ES, é uma versão padronizada do JavaScript. Como todos os principais navegadores seguem essa especificação, os termos ECMAScript e JavaScript são intercambiáveis.",
+          "A maior parte do JavaScript que você aprendeu até este momento estava na ES5 (ECMAScript 5), que foi finalizada em 2009. Mesmo que você ainda possa escrever programas em ES5, saiba que o JavaScript está constantemente em evolução e, por isso, novas funcionalidades são lançadas todos os anos.",
+          "O ES6, lançado em 2015, adicionou muitos recursos novos e poderosos à linguagem. Neste curso, você aprenderá quais são eles, incluindo <code>let</code> e <code>const</code>, arrow functions, classes, promises e módulos."
+        ]
+      },
+      "regular-expressions": {
+        "title": "Expressões regulares",
+        "intro": [
+          "Expressões regulares, muitas vezes abreviadas como \"regex\" ou \"regexp\", são padrões que ajudam programadores a encontrar correspondências, pesquisar e substituir texto. Expressões regulares são muito poderosas, mas podem ser difíceis de ler porque usam caracteres especiais para fazer correspondências mais complexas e flexíveis.",
+          "Neste curso, você aprenderá a usar caracteres especiais, grupos de captura, buscas positivas e negativas e outras técnicas para encontrar correspondências com o texto desejado."
+        ]
+      },
+      "debugging": {
+        "title": "Depuração",
+        "intro": [
+          "A depuração é o processo de revisão de código, procurando qualquer problema e corrigindo-o.",
+          "Os problemas no código geralmente chegam em três formas: erros de sintaxe, que impedem que o programa seja executado, erros de tempo de execução, onde o código tem um comportamento inesperado, ou erros lógicos, onde o código não faz o que você pretendia.",
+          "Neste curso, você aprenderá a usar o console do JavaScript para depurar programas e prevenir erros comuns antes de que aconteçam."
+        ]
+      },
+      "basic-data-structures": {
+        "title": "Estruturas de dados básicas",
+        "intro": [
+          "Os dados podem ser guardados e acessados de muitas formas. Você já conhece algumas estruturas de dados comuns em JavaScript: os arrays e os objetos.",
+          "Neste curso de Estruturas de Dados Básicas, você vai aprender mais sobre as diferenças entre arrays e objetos, e qual deles usar em diferentes situações. Também aprenderá a usar métodos úteis do JS, como <code>splice()</code> e <code>Object.keys()</code>, para acessar e manipular dados."
+        ]
+      },
+      "basic-algorithm-scripting": {
+        "title": "Programação de algoritmos básicos",
+        "intro": [
+          "Um algoritmo é uma série de instruções passo a passo, que descrevem como fazer alguma coisa.",
+          "Para escrever um algoritmo eficiente, é importante saber dividir o problema em partes menores e pensar atentamente sobre maneiras de resolver cada uma dessas partes com código.",
+          "Nesse curso, você aprenderá os fundamentos do raciocínio algorítmico escrevendo algoritmos que fazem de tudo, desde a conversão de temperaturas ao tratamento de arrays bidimensionais complexos."
+        ]
+      },
+      "object-oriented-programming": {
+        "title": "Programação Orientada a Objetos",
+        "intro": [
+          "A POO, ou Programação Orientada a Objetos, é uma das abordagens principais do processo de desenvolvimento de software. Na POO, os objetos e as classes são usados para organizar o código, descrever coisas e o que elas podem fazer.",
+          "Neste curso, você aprenderá os princípios básicos de POO em JavaScript, incluindo a palavra-chave <code>this</code>, cadeias de protótipos, construtores e herança."
+        ]
+      },
+      "functional-programming": {
+        "title": "Programação Funcional",
+        "intro": [
+          "Programação funcional é outra abordagem popular em desenvolvimento de software. Na programação funcional, o código é organizado em funções menores e básicas, que podem ser combinadas para criar programas complexos.",
+          "Neste curso, você aprenderá os conceitos principais da Programação Funcional, incluindo funções puras, como evitar mutações e como escrever código mais limpo com métodos como <code>.map()</code> e <code>.filter()</code>."
+        ]
+      },
+      "intermediate-algorithm-scripting": {
+        "title": "Programação de algoritmos intermediários",
+        "intro": [
+          "Agora que você conhece as noções básicas de raciocínio algorítmico, juntamente com POO e Programação Funcional, teste suas habilidades com os desafios de Programação de Algoritmos Intermediários."
+        ]
+      },
+      "javascript-algorithms-and-data-structures-projects": {
+        "title": "Projetos de algoritmos e estruturas de dados em JavaScript",
+        "intro": [
+          "É hora de colocar suas novas habilidades em JavaScript para funcionar. Estes projetos são similares aos desafios de programação de algoritmos que você fez antes — só que muito mais difíceis.",
+          "Conclua estes 5 projetos de JavaScript para ganhar a certificação de Algoritmos e Estruturas de Dados do JavaScript."
+        ]
+      },
+      "basic-javascript-rpg-game": {
+        "title": "Jogo básico de RPG em JavaScript",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "intermediate-javascript-calorie-counter": {
+        "title": "Contador de calorias JavaScript Intermediário",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "functional-programming-spreadsheet": {
+        "title": "Planilha de programação funcional",
+        "intro": [
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "front-end-development-libraries": {
+    "title": "Bibliotecas de desenvolvimento em front-end",
+    "intro": [
+      "Agora que você está familiarizado com HTML, CSS e JavaScript, melhore suas habilidades aprendendo algumas das bibliotecas front-end mais populares do setor.",
+      "Na certificação de bibliotecas de desenvolvimento em front-end, você aprenderá a estilizar seu site rapidamente com Bootstrap. Você também aprenderá a adicionar a lógica aos seus estilos CSS e a ampliá-los com Sass.",
+      "Mais tarde, você construirá um carrinho de compras e outras aplicações para aprender a criar Aplicativos de Página Única (Single Page Applications - SPA) poderosos com React e Redux."
+    ],
+    "note": "",
+    "blocks": {
+      "bootstrap": {
+        "title": "Bootstrap",
+        "intro": [
+          "O Bootstrap é um framework de front-end usado para projetar páginas da web e aplicativos responsivos. Ele adota uma abordagem mobile-first para o desenvolvimento na web e inclui estilos e classes CSS pré-construídos, além de algumas funcionalidades JavaScript.",
+          "Neste curso, você aprenderá a criar sites responsivos com Bootstrap, e usará as classes que ele tem para estilizar botões, imagens, formulários, navegação e outros elementos comuns."
+        ]
+      },
+      "jquery": {
+        "title": "jQuery",
+        "intro": [
+          "O jQuery é uma das bibliotecas JavaScript mais usadas no mundo.",
+          "Em 2006, quando foi lançado, todos os principais navegadores lidavam com JavaScript de forma ligeiramente diferente. O jQuery simplificou o processo de escrita de JavaScript do lado do cliente, além de assegurar que seu código funcionasse da mesma forma em todos os navegadores.",
+          "Neste curso, você aprenderá a usar jQuery para selecionar, remover, clonar e modificar diferentes elementos na página."
+        ]
+      },
+      "sass": {
+        "title": "SASS",
+        "intro": [
+          "Sass, ou \"Stylesheets Sintaticamente Incríveis\", do inglês \"Syntactically Awesome StyleSheets\", é uma extensão da linguagem CSS. A extensão adiciona recursos que não estão disponíveis no CSS básico, facilitando a simplificação e manutenção dos arquivos de estilo de seus projetos.",
+          "Neste curso sobre Sass, você aprenderá a armazenar dados em variáveis, aninhar CSS, criar estilos reutilizáveis com mixins, adicionar lógica e loops aos seus estilos, e mais."
+        ]
+      },
+      "react": {
+        "title": "React",
+        "intro": [
+          "React é uma biblioteca JavaScript popular para a criação de interfaces de usuário reutilizáveis e orientadas por componentes para páginas ou aplicações.",
+          "O React combina HTML com funcionalidade JavaScript em sua própria linguagem markup, chamada JSX. Ele também facilita a gestão do fluxo de dados por toda a aplicação.",
+          "Neste curso, você vai aprender a criar diferentes componentes do React, a gerenciar dados na forma de propriedades de estado (\"state props\"), a utilizar diferentes métodos de ciclo de vida, como o <code>componentDidMount</code>, e muito mais."
+        ]
+      },
+      "redux": {
+        "title": "Redux",
+        "intro": [
+          "À medida que as aplicações crescem em tamanho e escopo, o gerenciamento de dados compartilhados torna-se muito mais difícil. O Redux é definido como um \"contêiner de estado previsível para aplicações JavaScript\", o que ajuda a garantir que suas aplicações funcionem de forma previsível e que sejam mais fáceis de testar.",
+          "Embora você possa usar o Redux com qualquer biblioteca de visualizações, apresentamos o Redux aqui antes de combiná-lo com React no próximo conjunto de cursos.",
+          "Nesse curso, você vai aprender os fundamentos das stores, actions, reducers e middlewares do Redux para gerenciar dados por toda sua aplicação."
+        ]
+      },
+      "react-and-redux": {
+        "title": "React e Redux",
+        "intro": [
+          "React e Redux são muitas vezes mencionados juntos, e por uma boa razão. O desenvolvedor que criou o Redux era um desenvolvedor do React que queria facilitar o compartilhamento de dados entre diferentes componentes.",
+          "Agora que você sabe como gerenciar o fluxo de dados compartilhados com Redux, é hora de combinar esse conhecimento com React. Nos cursos do React e Redux, você vai construir um componente React e aprender como gerenciar estado localmente, ao nível do componente e por toda aplicação com Redux."
+        ]
+      },
+      "front-end-development-libraries-projects": {
+        "title": "Projetos de desenvolvimento com bibliotecas de front-end",
+        "intro": [
+          "É hora de testar suas habilidades nas bibliotecas de desenvolvimento de front-end. Use Bootstrap, jQuery, Sass, React e Redux para criar 5 projetos que testarão tudo o que você aprendeu até agora.",
+          "Complete todos os 5 projetos e você ganhará a certificação em Bibliotecas de Desenvolvimento Front-End."
+        ]
+      }
+    }
+  },
+  "data-visualization": {
+    "title": "Visualização de dados",
+    "intro": [
+      "Os dados estão ao nosso redor, mas isso não quer dizer muita coisa se eles não tiverem forma ou contexto.",
+      "Na certificação de visualização de dados, você criará tabelas, gráficos e mapas para apresentar diferentes tipos de dados com a biblioteca D3.js.",
+      "Você também aprenderá sobre JSON (JavaScript Object Notation) e sobre como trabalhar com dados on-line usando uma API (Application Programming Interface)."
+    ],
+    "note": "",
+    "blocks": {
+      "data-visualization-with-d3": {
+        "title": "Visualização de dados com D3",
+        "intro": [
+          "D3, ou D3.js, significa Documentos Orientados aos Dados. É uma biblioteca JavaScript para criar visualizações de dados dinâmicas e interativas no navegador.",
+          "O D3 foi criado para funcionar com padrões web comuns, como o HTML, o CSS e os Scalable Vector Graphics (SVG).",
+          "O D3 suporta vários tipos diferentes de formatos de dados de entrada. Usando os poderosos métodos integrados do D3, você consegue transformar esses dados em diferentes gráficos, diagramas e mapas.",
+          "Nos cursos de visualização de dados com o D3, você aprenderá a trabalhar com dados para criar diferentes diagramas, gráficos, elementos \"hover\" e outros componentes para gerar visualizações de dados dinâmicas e atrativas."
+        ]
+      },
+      "json-apis-and-ajax": {
+        "title": "APIs JSON e AJAX",
+        "intro": [
+          "Da mesma forma como as IUs ajudam as pessoas a usarem os programas, as APIs (Interfaces de Programação de Aplicação) ajudam programas a interagir com outros programas. As APIs são ferramentas que os computadores usam para se comunicarem uns com os outros, em parte, para enviar e receber dados.",
+          "Programadores frequentemente usam AJAX (JavaScript e XML assíncronos) quando estão trabalhando com APIs. AJAX refere-se a um conjunto de tecnologias que faz solicitações assíncronas para um servidor transferir dados e, em seguida, carregar os dados que forem retornados para a página. Os dados transferidos entre o navegador e o servidor frequentemente estão em um formato chamado JSON (JavaScript Object Notation).",
+          "Este curso ensinará o básico sobre como trabalhar com APIs e diferentes tecnologias AJAX no browser."
+        ]
+      },
+      "data-visualization-projects": {
+        "title": "Projetos de visualização de dados",
+        "intro": [
+          "Agora que você aprendeu a trabalhar com D3, APIs e tecnologias AJAX, teste suas habilidades com esses 5 projetos de Visualização de Dados.",
+          "Nestes projetos, você precisará buscar dados e analisar um conjunto de dados e, em seguida, usar D3 para criar diferentes visualizações de dados. Conclua todos para receber a sua certificação de Visualização de Dados."
+        ]
+      },
+      "d3-dashboard": {
+        "title": "Painel do D3",
+        "intro": [
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "relational-databases": {
+    "title": "Bancos de dados relacionais",
+    "intro": [
+      "placeholder"
+    ],
+    "blocks": {
+      "learn-relational-databases": {
+        "title": "Aprenda bancos de dados relacionais",
+        "intro": [
+          "placeholder"
+        ]
+      }
+    }
+  },
+  "back-end-development-and-apis": {
+    "title": "APIs e desenvolvimento de back-end",
+    "intro": [
+      "Até esse ponto, você usou JavaScript apenas no front-end para adicionar interatividade a uma página, resolver desafios de algoritmos ou construir uma SPA. Mas o JavaScript também pode ser usado no back-end, ou servidor, para construir aplicações web inteiras.",
+      "Hoje em dia, uma das formas populares de se criar aplicações é através do uso de microsserviços, que são pequenas aplicações modulares que trabalham em conjunto para formar uma aplicação maior inteira.",
+      "Na certificação de APIs e desenvolvimento de back-end, você aprenderá a escrever aplicações de back-end com o Node.js e o npm (Node Package Manager). Você também vai construir aplicações web com o framework Express e criará um microsserviço de localização de pessoas com o MongoDB e com a biblioteca Mongoose."
+    ],
+    "note": "",
+    "blocks": {
+      "managing-packages-with-npm": {
+        "title": "Gerenciamento de pacotes com o NPM",
+        "intro": [
+          "O npm (Node Package Manager) é uma ferramenta de linha de comando para instalar, criar e compartilhar pacotes de código JavaScript escritos para Node.js. Há muitos pacotes de código aberto disponíveis no npm. Então, antes de iniciar um projeto, explore os pacotes que já existem para que você não acabe recriando do zero coisas como trabalhar com datas ou buscar dados de uma API.",
+          "Neste curso, você aprenderá o básico sobre como usar o npm, incluindo como trabalhar com o <code>package.json</code> e como gerenciar suas dependências instaladas."
+        ]
+      },
+      "basic-node-and-express": {
+        "title": "Básico sobre Node e Express",
+        "intro": [
+          "O Node.js é um ambiente de execução em Javascript que permite que os desenvolvedores escrevam programas de back-end (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
+          "Nos últimos cursos, você aprendeu a instalar e gerenciar pacotes a partir do npm, que são coleções de pequenos módulos. Estes pacotes podem ajudá-lo a construir aplicações maiores e mais complexas.",
+          "O Express é um framework leve para a criação de aplicações web, sendo um dos pacotes mais populares no npm. O Express torna muito mais fácil criar um servidor e lidar com o roteamento para seu aplicativo, lidando com coisas como direcionar as pessoas para a página correta quando elas visitam um determinado endpoint, como <pre>/blog</pre>.",
+          "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
+        ]
+      },
+      "mongodb-and-mongoose": {
+        "title": "MongoDB e Mongoose",
+        "intro": [
+          "O MongoDB é uma aplicação de banco de dados que armazena documentos JSON (ou registros) que podem ser usados em sua aplicação. Ao contrário do SQL, outro tipo de banco de dados, o Mongo é um banco de dados não relacional ou \"NoSQL\". Isto significa que o Mongo armazena todos os dados associados dentro de um registro, em vez de armazená-los em muitas tabelas predefinidas, como em um banco de dados SQL.",
+          "O Mongoose é um pacote popular do npm que é frequentemente instalado junto com MongoDB. Com o Mongoose, você pode usar objetos JavaScript simples em vez de JSON, o que torna mais fácil trabalhar com o Mongo. Além disso, ele permite que você crie projetos para seus documentos, chamados schemas, para que você não salve acidentalmente o tipo errado de dados e cause bugs mais tarde.",
+          "Nos cursos de MongoDB e Mongoose, você aprenderá os fundamentos de trabalhar com dados persistentes, incluindo como configurar um modelo, salvar, excluir e buscar documentos no banco de dados."
+        ]
+      },
+      "back-end-development-and-apis-projects": {
+        "title": "Projetos de APIs e desenvolvimento de back-end",
+        "intro": [
+          "Você já trabalhou com APIs antes, mas agora que você conhece o npm, Node, Express, MongoDB e o Mongoose, é hora de construir a sua própria API. Utilize tudo o que você aprendeu até esse ponto para criar 5 microsserviços diferentes – aplicações menores e com escopo limitado.",
+          "Depois de criá-las, você terá 5 APIs de microsserviço sensacionais, que poderão ser mostradas para amigos, familiares e potenciais empregadores. Ah, e você também terá uma Certificação em APIs e desenvolvimento de back-end novinha."
+        ]
+      }
+    }
+  },
+  "quality-assurance": {
+    "title": "Garantia de qualidade",
+    "intro": [
+      "À medida que seus programas ou aplicativos da web se tornam mais complexos, você vai querer testá-los para garantir que novas alterações não quebrem as funcionalidades originais.",
+      "Na certificação de garantia de qualidade, você aprenderá a escrever testes com o Chai para garantir que suas aplicações funcionem da maneira que você espera.",
+      "Em seguida, você vai construir uma aplicação de chat para aprender conceitos avançados de Node e Express. Você também usará o Pug como um modelo de motor, o Passport, para autenticação, e o Socket.io, para comunicação em tempo real entre o servidor e os clientes conectados."
+    ],
+    "note": "",
+    "blocks": {
+      "quality-assurance-and-testing-with-chai": {
+        "title": "Garantia de qualidade e teste com o Chai",
+        "intro": [
+          "O Chai é uma biblioteca de testes do JavaScript que ajuda você a confirmar que seu programa ainda se comporta como você espera após realizar alterações no código.",
+          "Usando o Chai, você pode escrever testes que descrevem as exigências do programa e ver se o programa as satisfaz.",
+          "Neste curso, você aprenderá sobre afirmações, igualdade profunda, condição de verdade, testes de APIs e outros fundamentos para testar aplicações JavaScript."
+        ]
+      },
+      "advanced-node-and-express": {
+        "title": "Node e Express avançado",
+        "intro": [
+          "Agora é hora de fazer um mergulho profundo no Node.js e no Express.js, construindo uma aplicação de chat com um sistema de login.",
+          "Para implementar o sistema de login de forma segura, você precisará saber sobre autenticação. Este é o ato de verificar a identidade de uma pessoa ou um processo.",
+          "Neste curso, você aprenderá a usar o Passport, para gerenciar a autenticação, o Pug, para criar modelos reutilizáveis para a construção rápida do front-end, e web sockets, para a comunicação em tempo real entre os clientes e o servidor."
+        ]
+      },
+      "quality-assurance-projects": {
+        "title": "Projetos de garantia de qualidade",
+        "intro": [
+          "Agora que você conhece bem o front-end e o back-end, chegou a hora de aplicar todas as habilidades e conceitos que você aprendeu até agora. Você vai construir 5 aplicações web diferentes e escrever testes para cada uma, para garantir que estão funcionando e que podem lidar com casos diferentes.",
+          "Depois de concluir estes projetos de garantia de qualidade (QA), você terá mais 5 projetos e uma nova certificação para exibir em seu portfólio."
+        ]
+      }
+    }
+  },
+  "scientific-computing-with-python": {
+    "title": "Computação científica com Python",
+    "intro": [
+      "Python é uma das linguagens de programação mais populares e flexíveis atualmente. Você pode usá-la para tudo, desde programação básica até aprendizagem de máquina.",
+      "Na certificação em computação científica com Python, você aprenderá o básico sobre Python, como variáveis, \"loops\", condicionais e funções. Depois, você vai evoluir rapidamente para estruturas de dados complexas, redes, bancos de dados relacionais e visualização de dados."
+    ],
+    "note": "",
+    "blocks": {
+      "python-for-everybody": {
+        "title": "Python para todos",
+        "intro": [
+          "Python para todos é uma série gratuita vídeos de cursos que ensina o básico para usar o Python 3.",
+          "Os cursos foram criados pelo Dr. Charles Severance (também conhecido como Dr. Chuck). Ele é Professor Clínico na Escola de Informação da Universidade de Michigan, onde leciona vários cursos orientados à tecnologia, incluindo programação, projeto de banco de dados e desenvolvimento web."
+        ]
+      },
+      "scientific-computing-with-python-projects": {
+        "title": "Computação científica com projetos em Python",
+        "intro": [
+          "Está na hora de testar suas habilidades em Python. Ao completar esses projetos, você demonstrará que possui um bom conhecimento fundamental em Python e se qualificará para a certificação em computação científica em Python."
+        ]
+      }
+    }
+  },
+  "data-analysis-with-python": {
+    "title": "Análise de dados com Python",
+    "intro": [
+      "A análise de dados já existe há um bom tempo. Porém, até poucos anos atrás, os desenvolvedores praticavam-na apenas usando ferramentas caras e de código fechado, como o Tableau. Recentemente, Python, SQL e outras bibliotecas abertas começaram a mudar a análise de dados para sempre.",
+      "Na certificação em análise de dados com Python, você aprenderá os fundamentos da análise de dados com Python. No final desta certificação, você saberá ler dados de fontes como CSVs e SQL, além de usar bibliotecas como Numpy, Pandas, Matplolib e Seaborn para processar e visualizar dados."
+    ],
+    "note": "",
+    "blocks": {
+      "data-analysis-with-python-course": {
+        "title": "Análise de dados com Python",
+        "intro": [
+          "Nestes cursos completos em vídeo, criados por Santiago Basulto, você aprenderá todo o processo de análise de dados. Você fará a leitura de dados a partir de múltiplas fontes (CSV, SQL, Excel), processará estes dados usando NumPy e Pandas, e os visualizará usando Matplotlib e Seaborn.",
+          "Além disso, incluímos um curso completo sobre o Jupyter Notebook, bem como uma referência rápida para o Python para atualizar suas habilidades em programação."
+        ]
+      },
+      "numpy": {
+        "title": "Numpy",
+        "intro": [
+          "Aprenda os conceitos básicos da biblioteca NumPy nos vídeos do curso a seguir, criado por Keith Galli.",
+          "Neste curso, você vai aprender como a NumPy funciona e como ela se compara às listas incorporadas do Python. Você também aprenderá a escrever código com NumPy, indexação, remodelação, estatísticas aplicadas e muito mais."
+        ]
+      },
+      "data-analysis-with-python-projects": {
+        "title": "Projetos de análise de dados com Python",
+        "intro": [
+          "Existem muitas maneiras de analisar dados com o Python. Ao completar esses projetos, você vai demonstrar que tem um bom conhecimento fundamental de análise de dados com Python.",
+          "Conclua todos os cursos para solicitar a certificação em Análise de Dados com Python."
+        ]
+      }
+    }
+  },
+  "information-security": {
+    "title": "Segurança da informação",
+    "intro": [
+      "Com tudo o que fazemos on-line, há uma grande quantidade de informações sensíveis em risco: endereços de e-mail, senhas, números de telefone e muito mais.",
+      "Com o certificado de segurança da informação, você criará um aplicativo web seguro com o HelmetJS para aprender os fundamentos de proteção de informações on-line.",
+      "Você também vai construir um cliente TCP, um Nmap e um scanner de portas em Python. Isso ajudará você a aprender o básico do teste de intrusão — um componente importante de boa segurança da informação."
+    ],
+    "note": "",
+    "blocks": {
+      "information-security-with-helmetjs": {
+        "title": "Segurança da informação com HelmetJS",
+        "intro": [
+          "Este curso de programação se concentra no HelmetJS, um tipo de middleware para aplicativos baseados em Express que define automaticamente os cabeçalhos HTTP. Desta forma, ele pode prevenir que informações confidenciais sejam transmitidas involuntariamente entre o servidor e o cliente.",
+          "A conclusão dos cursos abaixo ajudará você a entender como proteger seu site de comportamentos maliciosos."
+        ]
+      },
+      "python-for-penetration-testing": {
+        "title": "Python para testes de intrusão",
+        "intro": [
+          "Estes cursos por vídeo ensinam você a fazer o teste de intrusão com Python. Também conhecido como pen test, o teste de intrusão é um ataque simulado a um sistema para verificar vulnerabilidades.",
+          "Neste curso, você aprenderá a respeito de sockets, criará um cliente e um servidor TCP, construirá um scanner Nmap, além de outras ferramentas e técnicas que os testadores de intrusão usam diariamente."
+        ]
+      },
+      "information-security-projects": {
+        "title": "Projetos de segurança da informação",
+        "intro": [
+          "Agora é hora de colocar suas novas habilidades em segurança da informação para funcionar. Estes projetos darão a chance de você praticar as habilidades, princípios e conceitos de segurança da informação que aprendeu.",
+          "Quando você tiver terminado, você terá aprendido diversos projetos de segurança da informação, juntamente com uma certificação que poderá mostrar a amigos, familiares e empregadores."
+        ]
+      }
+    }
+  },
+  "machine-learning-with-python": {
+    "title": "Aprendizado de máquina com Python",
+    "intro": [
+      "A aprendizagem de máquina tem várias aplicações práticas que você pode usar em seus projetos ou no trabalho.",
+      "Na certificação de aprendizagem de máquina com Python, você usará o framework chamado TensorFlow para construir várias redes neurais e explorar técnicas mais avançadas, como o processamento de linguagem natural e a aprendizagem por reforço.",
+      "Você também vai mergulhar em redes neurais e aprender os princípios por trás de como as redes neurais profundas, recorrentes e convolucionais funcionam."
+    ],
+    "note": "",
+    "blocks": {
+      "tensorflow": {
+        "title": "Tensorflow",
+        "intro": [
+          "O TensorFlow é um framework de código aberto que facilita o uso da aprendizagem de máquina e das redes neurais.",
+          "O curso por vídeos a seguir foi criado por Tim Ruscica, também conhecido como \"Tech With Tim\". Ele ajudará você a entender o TensorFlow e algumas de suas capacidades poderosas."
+        ]
+      },
+      "how-neural-networks-work": {
+        "title": "Como as redes neurais funcionam",
+        "intro": [
+          "As redes neurais estão no núcleo daquilo a que hoje chamamos de inteligência artificial. Mas, historicamente, elas foram difíceis de entender, especialmente para os iniciantes no campo de aprendizagem de máquina.",
+          "Mesmo se você for completamente novo em redes neurais, esses cursos por vídeo de Brandon Rohrer farão com que você se sinta confortável com os conceitos e com a matemática por trás deles."
+        ]
+      },
+      "machine-learning-with-python-projects": {
+        "title": "Projetos de aprendizagem de máquina com Python",
+        "intro": [
+          "A aprendizagem de máquina tem muitas aplicações práticas. Ao completar estes projetos de programação gratuitos e desafiadores, você vai demonstrar que tem um bom conhecimento nos fundamentos de aprendizagem de máquina, além de se qualificar para sua certificação em aprendizagem de máquina com Python."
+        ]
+      }
+    }
+  },
+  "coding-interview-prep": {
+    "title": "Preparação para entrevistas de programação",
+    "intro": [
+      "Se estiver procurando exercícios gratuitos de programação para se preparar para sua próxima entrevista de emprego, nós temos o que você precisa.",
+      "Esta seção contém centenas de desafios de programação que testam seu conhecimento de algoritmos, estruturas de dados e matemática. Ela também possui vários projetos adicionais, que você pode usar para fortalecer suas habilidades ou adicionar ao seu portfólio."
+    ],
+    "note": "",
+    "blocks": {
+      "algorithms": {
+        "title": "Algoritmos",
+        "intro": [
+          "Esses exercícios de programação gratuitos ensinam alguns algoritmos comuns que você provavelmente encontrará na vida real. Eles são uma grande oportunidade para melhorar suas habilidades de lógica e programação.",
+          "Estes algoritmos são frequentemente usados em entrevistas de trabalho para testar as habilidades de um candidato. Nós vamos oferecer explicações claras e concisas sobre como esses vários algoritmos funcionam para que você possa implementar uma solução para cada um."
+        ]
+      },
+      "data-structures": {
+        "title": "Estruturas de dados",
+        "intro": [
+          "Esses cursos de programação gratuitos têm o objetivo de ajudá-lo a lidar com estruturas de dados grandes e complexas com as quais você ainda não está familiarizado.",
+          "Trabalhando com os cursos abaixo, você aprenderá sobre cada tipo de estrutura de dados e implementará algoritmos para reforçar seu entendimento sobre eles."
+        ]
+      },
+      "take-home-projects": {
+        "title": "Projetos para levar para casa",
+        "intro": [
+          "Entrevistas de programação sempre foram estressantes. Os candidatos a empregos às vezes recebem um projeto para levar para casa, a ser concluído fora da entrevista. Esses tipos de entrevistas geralmente exigem muito trabalho, mas são uma ótima maneira para os empregadores verem como você se sairia no trabalho.",
+          "Realize os projetos de codificação adicionais abaixo para uma prática extra. Não tenha pressa, melhore-os e coloque no seu currículo ou portfólio para mostrar a possíveis empregadores."
+        ]
+      },
+      "rosetta-code": {
+        "title": "Rosetta Code",
+        "intro": [
+          "Aumente o nível de suas habilidades criativas de resolução de problemas com essas tarefas de programação gratuitas da biblioteca clássica do Rosetta Code.",
+          "Esses desafios podem ser difíceis, mas levarão sua lógica de algoritmos a novos patamares."
+        ]
+      },
+      "project-euler": {
+        "title": "Projeto Euler",
+        "intro": [
+          "Complete os desafios de programação abaixo, diretamente dos grandes arquivos do Projeto Euler. Isso fortalecerá seu conhecimento de algoritmos e de matemática.",
+          "Esses problemas variam em dificuldade e, para muitos, a experiência é uma aprendizagem em sequência indutiva. Ou seja, ao resolver um problema, você será exposto a um novo conceito que permite a você resolver um problema que antes era inacessível. Você consegue concluir todos eles?"
+        ]
+      }
+    }
+  },
+  "misc-text": {
+    "certification": "Certificação {{cert}}",
+    "browse-other": "Navegue por nossas outras certificações gratuitas\n(recomendamos fazer isto em sequência)",
+    "courses": "Cursos",
+    "steps": "Passos",
+    "expand": "Expandir",
+    "collapse": "Recolher"
+  }
+}

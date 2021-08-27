@@ -66,9 +66,7 @@ assert.equal(sum([2, 3, 4, 5], 3), 9);
 
 ```js
 assert(
-  !__helpers
-    .removeJSComments(code)
-    .match(/for|while|forEach|map|filter|reduce/g)
+  !code.match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 
@@ -76,7 +74,7 @@ assert(
 
 ```js
 assert(
-  __helpers.removeJSComments(sum.toString()).match(/sum\(.*\)/g).length > 1
+  sum.toString().match(/sum\(.*\)/g).length > 1
 );
 ```
 

@@ -32,7 +32,7 @@ assert($('h1').hasClass('pink-text'));
 Your `<style>` should have a `pink-text` CSS class that changes the `color`.
 
 ```js
-assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g));
+assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;?\s*\}/g));
 ```
 
 Your `h1` element should be pink.

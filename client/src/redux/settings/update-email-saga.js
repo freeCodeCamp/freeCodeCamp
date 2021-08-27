@@ -1,11 +1,11 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import isEmail from 'validator/lib/isEmail';
 
-import { updateMyEmailComplete, updateMyEmailError } from './';
 import { createFlashMessage } from '../../components/Flash/redux';
 
 import { putUserUpdateEmail } from '../../utils/ajax';
-import reallyWeirdErrorMessage from '../../utils/reallyWeirdErrorMessage';
+import reallyWeirdErrorMessage from '../../utils/really-weird-error-message';
+import { updateMyEmailComplete, updateMyEmailError } from './';
 
 function* updateMyEmailSaga({ payload: email = '' }) {
   if (!email || !isEmail(email)) {
@@ -13,7 +13,7 @@ function* updateMyEmailSaga({ payload: email = '' }) {
     return;
   }
   try {
-    const { data: response } = yield call(putUserUpdateEmail, email);
+    const response = yield call(putUserUpdateEmail, email);
     yield put(
       updateMyEmailComplete({
         ...response,

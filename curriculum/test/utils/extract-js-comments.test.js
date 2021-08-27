@@ -1,4 +1,3 @@
-/* global expect */
 const extractJSComments = require('./extract-js-comments');
 
 const someJS = `

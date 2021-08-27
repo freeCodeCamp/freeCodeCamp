@@ -59,9 +59,7 @@ Tu código no debe depender de ningún tipo de bucles (`for`, `while` o funcione
 
 ```js
 assert(
-  !__helpers
-    .removeJSComments(code)
-    .match(/for|while|forEach|map|filter|reduce/g)
+  !code.match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 
@@ -69,7 +67,7 @@ Debes usar recursión para resolver este problema.
 
 ```js
 assert(
-  __helpers.removeJSComments(countdown.toString()).match(/countdown\s*\(.+\)/)
+  countdown.toString().match(/countdown\s*\(.+\)/)
 );
 ```
 

@@ -7,6 +7,13 @@ pre[class*='language-'] {
   background: var(--primary-background);
 }
 
+.default pre[class*='language-']::selection,
+.default pre[class*='language-'] ::selection,
+.default code[class*='language-']::selection,
+.default code[class*='language-'] ::selection {
+  background: var(--selection-color);
+}
+
 * {
   text-shadow: none !important;
 }

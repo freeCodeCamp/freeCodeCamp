@@ -46,7 +46,7 @@ assert($('h2').hasClass('red-text'));
 Tu hoja de estilos debe declarar una clase `red-text` y su color debe ser `red` (rojo).
 
 ```js
-assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g));
+assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;?\s*\}/g));
 ```
 
 No debes usar declaraciones de tipo inline style como `style="color: red"` en tu elemento `h2`.

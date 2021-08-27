@@ -16,6 +16,12 @@ jobs:
         with:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
+      - name: Install Dependencies
+        working-directory: ./tools
+        run: |
+          cd ./crowdin
+          npm ci
+
       ##### Download Chinese #####
       - name: Crowdin Download Chinese Translations
         uses: crowdin/github-action@master
@@ -49,6 +55,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+
+
+      # Convert Simplified Chinese to Traditional #
+      - name: Generate Translations
+        uses: ./tools/crowdin/actions/convert-chinese
 
       ##### Download Espanol #####
       - name: Crowdin Download Espanol Translations
@@ -84,6 +95,74 @@ jobs:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
+      ##### Download Italian #####
+      - name: Crowdin Download Italian Translations
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: false
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+
+          # downloads
+          download_translations: true
+          download_language: it
+          skip_untranslated_files: true
+          export_only_approved: true
+
+          push_translations: false
+
+          # pull-request
+          create_pull_request: false
+
+          # global options
+          config: './config/crowdin/curriculum/crowdin.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          # dryrun_action: true
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+
+      ##### Download Brazilian Portuguese #####
+      - name: Crowdin Download Portuguese (Brazilian) Translations
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: false
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+
+          # downloads
+          download_translations: true
+          download_language: pt-BR
+          skip_untranslated_files: true
+          export_only_approved: true
+
+          push_translations: false
+
+          # pull-request
+          create_pull_request: false
+
+          # global options
+          config: './config/crowdin/curriculum/crowdin.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          # dryrun_action: true
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+
       # Create Commit
       - name: Commit Changes
         env:
@@ -95,12 +174,6 @@ jobs:
           git add .
           git diff-index --quiet HEAD || git commit -m "chore(i18n,curriculum): update translations"
           git push -u origin i18n-sync-curriculum -f
-
-      - name: Install Dependencies
-        working-directory: ./tools
-        run: |
-          cd ./crowdin
-          npm ci
 
       # Generate PR - all languages should go ABOVE this. #
       - name: Create PR

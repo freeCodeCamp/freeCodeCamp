@@ -1,3 +1,5 @@
+import { navigate } from 'gatsby';
+import { ofType } from 'redux-observable';
 import { of, empty } from 'rxjs';
 import {
   switchMap,
@@ -5,30 +7,30 @@ import {
   catchError,
   concat,
   filter,
-  tap
+  finalize
 } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-import { navigate } from 'gatsby';
 
+import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
+import {
+  userSelector,
+  isSignedInSelector,
+  submitComplete,
+  updateComplete,
+  updateFailed,
+  usernameSelector
+} from '../../../redux';
+
+import { getVerifyCanClaimCert } from '../../../utils/ajax';
+import postUpdate$ from '../utils/postUpdate$';
+import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,
-  types,
   challengeMetaSelector,
   challengeTestsSelector,
   closeModal,
   challengeFilesSelector,
   updateSolutionFormValues
 } from './';
-import {
-  userSelector,
-  isSignedInSelector,
-  submitComplete,
-  updateComplete,
-  updateFailed
-} from '../../../redux';
-
-import postUpdate$ from '../utils/postUpdate$';
-import { challengeTypes, submitTypes } from '../../../../utils/challengeTypes';
 
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
@@ -55,17 +57,20 @@ function submitModern(type, state) {
     challengeType === 11 ||
     (tests.length > 0 && tests.every(test => test.pass && !test.err))
   ) {
-    if (type === types.checkChallenge) {
+    if (type === actionTypes.checkChallenge) {
       return of({ type: 'this was a check challenge' });
     }
 
-    if (type === types.submitChallenge) {
+    if (type === actionTypes.submitChallenge) {
       const { id } = challengeMetaSelector(state);
-      const files = challengeFilesSelector(state);
+      const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
       const challengeInfo = {
         id,
-        files
+        files: challengeFiles.reduce(
+          (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
+          []
+        )
       };
       const update = {
         endpoint: '/modern-challenge-completed',
@@ -78,7 +83,7 @@ function submitModern(type, state) {
 }
 
 function submitProject(type, state) {
-  if (type === types.checkChallenge) {
+  if (type === actionTypes.checkChallenge) {
     return empty();
   }
 
@@ -102,7 +107,7 @@ function submitProject(type, state) {
 function submitBackendChallenge(type, state) {
   const tests = challengeTestsSelector(state);
   if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
-    if (type === types.submitChallenge) {
+    if (type === actionTypes.submitChallenge) {
       const { id } = challengeMetaSelector(state);
       const { username } = userSelector(state);
       const {
@@ -129,11 +134,11 @@ const submitters = {
 
 export default function completionEpic(action$, state$) {
   return action$.pipe(
-    ofType(types.submitChallenge),
+    ofType(actionTypes.submitChallenge),
     switchMap(({ type }) => {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
-      const { nextChallengePath, challengeType } = meta;
+      const { nextChallengePath, challengeType, superBlock } = meta;
       const closeChallengeModal = of(closeModal('completion'));
 
       let submitter = () => of({ type: 'no-user-signed-in' });
@@ -150,11 +155,55 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
+      const pathToNavigateTo = async () => {
+        return await findPathToNavigateTo(
+          nextChallengePath,
+          superBlock,
+          state,
+          challengeType
+        );
+      };
+
       return submitter(type, state).pipe(
-        tap(() => navigate(nextChallengePath)),
         concat(closeChallengeModal),
-        filter(Boolean)
+        filter(Boolean),
+        finalize(async () => navigate(await pathToNavigateTo()))
       );
     })
   );
+}
+
+async function findPathToNavigateTo(
+  nextChallengePath,
+  superBlock,
+  state,
+  challengeType
+) {
+  let canClaimCert = false;
+  const isProjectSubmission = [
+    challengeTypes.frontEndProject,
+    challengeTypes.backEndProject,
+    challengeTypes.pythonProject
+  ].includes(challengeType);
+  if (isProjectSubmission) {
+    const username = usernameSelector(state);
+    try {
+      const response = await getVerifyCanClaimCert(username, superBlock);
+      if (response.status === 200) {
+        canClaimCert = response.data?.response?.message === 'can-claim-cert';
+      }
+    } catch (err) {
+      console.error('failed to verify if user can claim certificate', err);
+    }
+  }
+  let pathToNavigateTo;
+
+  if (nextChallengePath.includes(superBlock) && !canClaimCert) {
+    pathToNavigateTo = nextChallengePath;
+  } else if (canClaimCert) {
+    pathToNavigateTo = `/learn/${superBlock}/#claim-cert-block`;
+  } else {
+    pathToNavigateTo = `/learn/${superBlock}/#${superBlock}-projects`;
+  }
+  return pathToNavigateTo;
 }

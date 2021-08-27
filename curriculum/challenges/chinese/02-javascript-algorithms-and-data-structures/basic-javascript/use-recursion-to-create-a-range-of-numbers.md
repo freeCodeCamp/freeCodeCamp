@@ -26,9 +26,7 @@ assert(Array.isArray(rangeOfNumbers(5, 10)));
 
 ```js
 assert(
-  !__helpers
-    .removeJSComments(code)
-    .match(/for|while|forEach|map|filter|reduce/g)
+  !code.match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 
@@ -36,9 +34,7 @@ assert(
 
 ```js
 assert(
-  __helpers
-    .removeJSComments(rangeOfNumbers.toString())
-    .match(/rangeOfNumbers\s*\(.+\)/)
+  rangeOfNumbers.toString().match(/rangeOfNumbers\s*\(.+\)/)
 );
 ```
 

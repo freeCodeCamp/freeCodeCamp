@@ -6,6 +6,7 @@
       "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
       "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
     ],
+    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
     "blocks": {
       "basic-html-and-html5": {
         "title": "Basic HTML and HTML5",
@@ -82,8 +83,9 @@
     "intro": [
       "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.",
       "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
-      "Along the way, you'll also learn two important programing styles or paradigms: Object Oriented Programing (OOP), and Functional Programing (FP)."
+      "Along the way, you'll also learn two important programming styles or paradigms: Object Oriented Programming (OOP) and Functional Programming (FP)."
     ],
+    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
       "basic-javascript": {
         "title": "Basic JavaScript",
@@ -96,7 +98,7 @@
         "title": "ES6",
         "intro": [
           "ECMAScript, or ES, is a standardized version of JavaScript. Because all major browsers follow this specification, the terms ECMAScript and JavaScript are interchangeable.",
-          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is always evolving, and new features are released every year.",
+          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is constantly evolving, and new features are released every year.",
           "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including <code>let</code> and <code>const</code>, arrow functions, classes, promises, and modules."
         ]
       },
@@ -126,22 +128,22 @@
         "title": "Basic Algorithm Scripting",
         "intro": [
           "An algorithm is a series of step-by-step instructions that describe how to do something.",
-          "To write an effective algorithm, it helps to break a problem down into smaller parts, and think carefully about how to solve each part with code.",
+          "To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code.",
           "In this course, you'll learn the fundamentals of algorithmic thinking by writing algorithms that do everything from converting temperatures to handling complex 2D arrays."
         ]
       },
       "object-oriented-programming": {
         "title": "Object Oriented Programming",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes are used to organize code to describe things and what they can do.",
-          "In this course, you'll learn the basic principles of OOP in JavaScript including the <code>this</code> keyword, prototype chains, constructors, and inheritance."
+          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes organize code to describe things and what they can do.",
+          "In this course, you'll learn the basic principles of OOP in JavaScript, including the <code>this</code> keyword, prototype chains, constructors, and inheritance."
         ]
       },
       "functional-programming": {
         "title": "Functional Programming",
         "intro": [
           "Functional Programming is another popular approach to software development. In Functional Programming, code is organized into smaller, basic functions that can be combined to build complex programs.",
-          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
+          "In this course, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how to write cleaner code with methods like <code>.map()</code> and <code>.filter()</code>."
         ]
       },
       "intermediate-algorithm-scripting": {
@@ -171,13 +173,14 @@
       }
     }
   },
-  "front-end-libraries": {
+  "front-end-development-libraries": {
     "title": "Front End Development Libraries",
     "intro": [
       "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front end libraries in the industry.",
-      "In the Front End Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
+      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
       "Later, you'll build a shopping cart and other applications to learn how to create powerful Single Page Applications (SPAs) with React and Redux."
     ],
+    "note": "",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",
@@ -224,7 +227,7 @@
           "Now that you know how to manage the flow of shared data with Redux, it's time to combine that knowledge with React. In the React and Redux courses, you'll build a React component and learn how to manage state locally at the component level, and throughout the entire application with Redux."
         ]
       },
-      "front-end-libraries-projects": {
+      "front-end-development-libraries-projects": {
         "title": "Front End Development Libraries Projects",
         "intro": [
           "It's time to put your front end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
@@ -238,8 +241,9 @@
     "intro": [
       "Data is all around us, but it doesn't mean much without shape or context.",
       "In the Data Visualization Certification, you'll build charts, graphs, and maps to present different types of data with the D3.js library.",
-      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programing Interface)."
+      "You'll also learn about JSON (JavaScript Object Notation), and how to work with data online using an API (Application Programming Interface)."
     ],
+    "note": "",
     "blocks": {
       "data-visualization-with-d3": {
         "title": "Data Visualization with D3",
@@ -271,13 +275,24 @@
       }
     }
   },
-  "apis-and-microservices": {
-    "title": "APIs and Microservices",
+  "relational-databases": {
+    "title": "Relational Databases",
+    "intro": ["placeholder"],
+    "blocks": {
+      "learn-relational-databases": {
+        "title": "Learn Relational Databases",
+        "intro": ["placeholder"]
+      }
+    }
+  },
+  "back-end-development-and-apis": {
+    "title": "Back End Development and APIs",
     "intro": [
       "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
       "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
-      "In the APIs and Microservices Certification, you'll learn how to write back end-ready with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
+    "note": "",
     "blocks": {
       "managing-packages-with-npm": {
         "title": "Managing Packages with NPM",
@@ -291,7 +306,7 @@
         "intro": [
           "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
           "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
-          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing the routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
           "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
       },
@@ -303,11 +318,11 @@
           "In the MongoDB and Mongoose courses, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
         ]
       },
-      "apis-and-microservices-projects": {
-        "title": "APIs and Microservices Projects",
+      "back-end-development-and-apis-projects": {
+        "title": "Back End Development and APIs Projects",
         "intro": [
           "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
-          "After creating these, you'll have 5 cool microservice APIs you can show of to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices Certification, too."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back End Development and APIs Certification, too."
         ]
       }
     }
@@ -319,6 +334,7 @@
       "In the Quality Assurance Certification, you'll learn how to write tests with Chai to ensure your applications work the way you expect them to.",
       "Then you'll build a chat application to learn advanced Node and Express concepts. You'll also use Pug as a template engine, Passport for authentication, and Socket.io for real-time communication between the server and connected clients."
     ],
+    "note": "",
     "blocks": {
       "quality-assurance-and-testing-with-chai": {
         "title": "Quality Assurance and Testing with Chai",
@@ -351,6 +367,7 @@
       "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning.",
       "In the Scientific Computing with Python Certification, you'll learn Python fundamentals like variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
     ],
+    "note": "",
     "blocks": {
       "python-for-everybody": {
         "title": "Python for Everybody",
@@ -373,6 +390,7 @@
       "Data Analysis has been around for a long time. But up until a few years ago, developers practiced it using expensive, closed-source tools like Tableau. But recently, Python, SQL, and other open libraries have changed Data Analysis forever.",
       "In the Data Analysis with Python Certification, you'll learn the fundamentals of data analysis with Python. By the end of this certification, you'll know how to read data from sources like CSVs and SQL, and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data."
     ],
+    "note": "",
     "blocks": {
       "data-analysis-with-python-course": {
         "title": "Data Analysis with Python",
@@ -404,6 +422,7 @@
       "With the Information Security Certification, you'll build a secure web app with HelmetJS to learn the fundamentals of protecting people's information online.",
       "You'll also build a TCP client, and an Nmap and port scanner in Python. This will help you learn the basics of penetration testing — an important component of good information security."
     ],
+    "note": "",
     "blocks": {
       "information-security-with-helmetjs": {
         "title": "Information Security with HelmetJS",
@@ -435,6 +454,7 @@
       "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks and explore more advanced techniques like natural language processing and reinforcement learning.",
       "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
     ],
+    "note": "",
     "blocks": {
       "tensorflow": {
         "title": "Tensorflow",
@@ -464,6 +484,7 @@
       "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
       "This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio."
     ],
+    "note": "",
     "blocks": {
       "algorithms": {
         "title": "Algorithms",
@@ -506,6 +527,7 @@
     "certification": "{{cert}} Certification",
     "browse-other": "Browse our other free certifications\n(we recommend doing these in order)",
     "courses": "Courses",
+    "steps": "Steps",
     "expand": "Expand",
     "collapse": "Collapse"
   }

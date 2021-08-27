@@ -19,7 +19,7 @@ d3.select("body").selectAll("div")
   .append("div")
 ```
 
-There are a few differences working with `rect` elements instead of `divs`. The `rects` must be appended to an `svg` element, not directly to the `body`. Also, you need to tell D3 where to place each `rect` within the `svg` area. The bar placement will be covered in the next challenge.
+There are a few differences working with `rect` elements instead of `div` elements. The `rect` elements must be appended to an `svg` element, not directly to the `body`. Also, you need to tell D3 where to place each `rect` within the `svg` area. The bar placement will be covered in the next challenge.
 
 # --instructions--
 

@@ -15,7 +15,7 @@ dashedName: create-a-horizontal-line-using-the-hr-element
 
 在卡片标题元素 `h4` 下方添加一个 `hr` 标签。
 
-**注意：**HTML 中的 `hr` 是自闭合标签，所以我们不需要为它添加结束标签。
+**注意：** HTML 中的 `hr` 是自闭合标签，所以我们不需要为它添加结束标签。
 
 # --hints--
 

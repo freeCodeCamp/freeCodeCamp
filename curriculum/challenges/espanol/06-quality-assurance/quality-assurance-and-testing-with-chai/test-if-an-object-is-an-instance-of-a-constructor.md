@@ -8,7 +8,7 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 `#instanceOf` asserts that an object is an instance of a constructor.
 

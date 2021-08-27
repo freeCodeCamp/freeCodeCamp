@@ -14,7 +14,8 @@
     "tools/contributor/one-off-scripts",
     "tools/crowdin",
     "tools/scripts/build",
-    "tools/scripts/seed"
+    "tools/scripts/seed",
+    "tools/ui-components"
   ],
   "command": {
     "bootstrap": {
@@ -24,7 +25,8 @@
         "tools/contributor/dashboard-app/server",
         "tools/contributor/lib/",
         "tools/contributor/one-off-scripts",
-        "tools/crowdin"
+        "tools/crowdin",
+        "tools/ui-components"
       ]
     }
   },

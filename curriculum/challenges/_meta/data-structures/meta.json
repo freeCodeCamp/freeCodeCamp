@@ -7,7 +7,7 @@
   "template": "",
   "required": [],
   "superBlock": "coding-interview-prep",
-  "superOrder": 11,
+  "superOrder": 12,
   "challengeOrder": [
     [
       "587d8253367417b2b2512c6a",
@@ -201,7 +201,4 @@
       "587d825d367417b2b2512c96",
       "Depth-First Search"
     ]
-  ],
-  "helpRoom": "HelpJavaScript",
-  "fileName": "08-coding-interview-prep/data-structures.json"
-}
+  ]}

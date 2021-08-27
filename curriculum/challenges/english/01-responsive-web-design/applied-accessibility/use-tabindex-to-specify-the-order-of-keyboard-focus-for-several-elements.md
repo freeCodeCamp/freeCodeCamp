@@ -29,6 +29,8 @@ Here's an example:
 
 Camper Cat has a search field on his Inspirational Quotes page that he plans to position in the upper right corner with CSS. He wants the search `input` and submit `input` form controls to be the first two items in the tab order. Add a `tabindex` attribute set to `1` to the `search` `input`, and a `tabindex` attribute set to `2` to the `submit` `input`.
 
+Another thing to note is that some browsers may place you in the middle of your tab order when an element is clicked. An element has been added to the page that ensures you will always start at the beginning of your tab order.
+
 # --hints--
 
 Your code should add a `tabindex` attribute to the `search` `input` tag.
@@ -61,6 +63,7 @@ assert($('#submit').attr('tabindex') == '2');
 
 ```html
 <body>
+  <div tabindex="1" class="overlay"></div>
   <header>
     <h1>Even Deeper Thoughts with Master Camper Cat</h1>
     <nav>
@@ -91,12 +94,26 @@ assert($('#submit').attr('tabindex') == '2');
   </blockquote>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+<style>
+  body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 8px;
+  }
+  .overlay {
+    margin: -8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 ```
 
 # --solutions--
 
 ```html
 <body>
+  <div tabindex="1" class="overlay"></div>
   <header>
     <h1>Even Deeper Thoughts with Master Camper Cat</h1>
     <nav>
@@ -127,4 +144,17 @@ assert($('#submit').attr('tabindex') == '2');
   </blockquote>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+<style>
+  body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 8px;
+  }
+  .overlay {
+    margin: -8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 ```

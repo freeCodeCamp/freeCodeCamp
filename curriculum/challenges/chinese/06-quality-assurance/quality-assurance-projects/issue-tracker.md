@@ -11,7 +11,7 @@ dashedName: issue-tracker
 构建一个 JavaScript 的全栈应用，在功能上与这个应用相似： <https://issue-tracker.freecodecamp.rocks/>。 可以采用下面的任意一种方式完成这个挑战：
 
 -   克隆 [GitHub 仓库](https://github.com/freeCodeCamp/boilerplate-project-issuetracker/) 并在本地完成你的项目。
--   使用 [repl.it 上的初始化项目](https://repl.it/github/freeCodeCamp/boilerplate-project-issuetracker) 来完成项目。
+-   使用[我们的 Replit 初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker)来完成你的项目。
 -   使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
 
 完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 框中提交你的项目 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
@@ -22,7 +22,7 @@ dashedName: issue-tracker
 -   在 `tests/2_functional-tests.js` 中创建所有的功能测试
 -   复制 `sample.env` 文件到 `.env` 并按需设置变量
 -   要运行测试，在 `.env` 文件中取消注释 `NODE_ENV=test`
--   使用 `npm run test` 命令，在 console 运行测试。 按 Ctrl+Shift+P (在 Mac 上是 Cmd+Shift+P) 并输入"open shell"，打开 Repl.it 控制台。
+-   使用 `npm run test` 命令，在 console 运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open shell”，打开 Replit 控制台。
 
 在 `tests/2_functional-tests.js` 中编写下以下测试：
 

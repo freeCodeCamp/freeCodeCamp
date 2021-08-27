@@ -32,11 +32,7 @@ Make the promise handle success and failure. If `responseFromServer` is `true`, 
 
 ```js
 assert(
-  __helpers
-    .removeJSComments(code)
-    .match(
-      /if\s*\(\s*responseFromServer\s*\)\s*{\s*resolve\s*\(\s*('|"|`)We got the data\1\s*\)(\s*|\s*;\s*)}/g
-    )
+  code.match(/if\s*\(\s*responseFromServer\s*\)\s*{\s*resolve\s*\(\s*('|"|`)We got the data\1\s*\)(\s*|\s*;\s*)}/g)
 );
 ```
 
@@ -44,11 +40,7 @@ assert(
 
 ```js
 assert(
-  __helpers
-    .removeJSComments(code)
-    .match(
-      /}\s*else\s*{\s*reject\s*\(\s*('|"|`)Data not received\1\s*\)(\s*|\s*;\s*)}/g
-    )
+  code.match(/}\s*else\s*{\s*reject\s*\(\s*('|"|`)Data not received\1\s*\)(\s*|\s*;\s*)}/g)
 );
 ```
 

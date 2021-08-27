@@ -1,0 +1,12 @@
+name: 'Hide Specific String'
+description: "Updates a specific string to be hidden"
+runs:
+  using: 'node12'
+  main: './index.js'
+inputs:
+  filename:
+    description: 'name of file with specific string to hide'
+    required: true
+  string-content:
+    description: 'text content of string to hide'
+    required: true

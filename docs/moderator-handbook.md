@@ -1,11 +1,11 @@
-# The official freeCodeCamp Moderator Handbook.
+# The Official freeCodeCamp Moderator Handbook
 
 This handbook will help you moderate different places in our community. This covers conversations and interactions in issues & pull request threads on GitHub, the community forum, the chat rooms and other official communities that we foster.
 
 > [!NOTE]
 > All freeCodeCamp moderators are community-wide moderators. That is we trust you to oversee any of these places.
 
-You can serve as a moderator on any of the platforms that are of the most interest to you. Some moderators just help out on GitHub. Others just help out on the forum. Some are active everywhere.
+You can serve as a moderator on any of the platforms that are of the most interest to you. Some moderators just help out on GitHub, while others just help out on the forum. Some moderators are active everywhere.
 
 The bottom line is that we want you to enjoy being a moderator, and invest your scarce time in places that are of interest to you.
 
@@ -20,7 +20,7 @@ freeCodeCamp is an inclusive community, and we need to keep it that way.
 We have a single code of conduct that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
 
 > [!NOTE]
-> As a moderator we would add you to one or more teams on GitHub, our community forum(s) & chat servers. If you are missing access on a platform that you would like to moderate please [reach out to a staff member](/FAQ?id=additional-assistance).
+> As a moderator we would add you to one or more teams on GitHub, our community forum(s) & chat servers. If you are missing access on a platform that you would like to moderate please [reach out to a staff member](FAQ.md#additional-assistance).
 
 ## Moderating GitHub
 
@@ -41,7 +41,7 @@ You can help us organize and triage the issue reports by applying labels from [t
 
 Please pay special attention to the labels `"help wanted"` and `"first timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
 
-A `"first timer only"` label should be applied to a trivial issue (ex. a typo fix) and should include additional information. You can use this [reply template](/moderator-handbook?id=first-timer-only-issues) for triage.
+A `"first timer only"` label should be applied to a trivial issue (ex. a typo fix) and should include additional information. You can use this [reply template](moderator-handbook.md#first-timer-only-issues) for triage.
 
 #### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
@@ -52,7 +52,7 @@ A `"first timer only"` label should be applied to a trivial issue (ex. a typo fi
 - If the contributor asks for additional assistance or even time, the above can be relaxed and revisited after a response is given. In any case, the mods should use their best judgment to resolve the outstanding PR's status.
 
 > [!TIP]
-> We recommend you use this list of standard [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=reply-templates) while triaging issues.
+> We recommend you use this list of standard [reply templates](moderator-handbook.md#reply-templates) while triaging issues.
 
 ### Moderating Pull Requests
 
@@ -66,27 +66,27 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    You can also review these right on GitHub and decide whether to merge them. We need to be a bit more careful about these because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details. Contributors may try to add links to resources to the challenges.
 
-   You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
+   You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
-   If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull-request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
+   If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
 2. **Challenge Code Edits**
 
    These are changes to the code in a challenge - the Challenge Seed, Challenge Solution, and Test Strings.
 
-   These pull requests need to be pulled down from GitHub and tested on your local computer or GitPod to make sure the challenge tests can still be passed with the current solution, and the new code doesn't introduce any errors.
+   These pull requests need to be pulled down from GitHub and tested on your local computer or Gitpod to make sure the challenge tests can still be passed with the current solution, and the new code doesn't introduce any errors.
 
    Some contributors may try to add additional tests to cover pedantic corner-cases. We need to be careful to not make the challenge too complicated. These challenges and their tests should be as simple and intuitive as possible. Aside from the algorithm challenges and interview prep section, learners should be able to solve each challenge within about 2 minutes.
 
-   You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
+   You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
-   If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull-request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
+   If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
 3. **Platform Changes**
 
    These code edits change the functionality of the freeCodeCamp platform itself.
 
-   Sometimes contributors try to make changes without much explanation, but for code changes, we need to make sure there's a genuine need for the change. So these pull requests should reference an existing GitHub issue where the reasons for the change are discussed. Then you can open the pull request on your computer and test them out locally.
+   Sometimes contributors try to make changes without much explanation, but for code changes, we need to make sure there's a genuine need for the change. These pull requests should reference an existing GitHub issue where the reasons for the change are discussed. Then you can open the pull request on your computer and test them out locally.
 
    After you've done so, if the changes look good, don't merge them quite yet. You can comment on the pull request saying "LGTM", then mention **"@freeCodeCamp/dev-team"** so they can take a final look.
 
@@ -104,7 +104,7 @@ Depending on the type of pull request it is, follow the corresponding rules list
 
 ##### Ensure the CI checks are passing:
 
-Before merging any pull request, make sure that GitHub is reporting all checks to be passing (green check marks) on the pull-requests. If you see any of the checks failing, please investigate and clarify the root cause. Is the change being made breaking our tests? Will the site build correctly if the the PR is merged? These checks are critical for the stability of the platform.
+Before merging any pull request, make sure that GitHub is reporting all checks to be passing (green check marks) on the pull requests. If you see any of the checks failing, please investigate and clarify the root cause. Is the change being made breaking our tests? Will the site build correctly if the PR is merged? These checks are critical for the stability of the platform.
 
 > [!WARNING]
 > Merging a PR that fails CI/CD checks can cause difficulties for all stakeholders, including the dev-team and contributors.
@@ -115,7 +115,7 @@ Sometimes there will be a Merge Conflict.
 
 This means that another pull request has made a change to that same part of that same file. GitHub has a tool for addressing these merge conflicts right on GitHub. You can try to address these conflicts. Just use your best judgment.
 
-The pull request's changes will be on top, and the Master branch's changes will be on the bottom. Sometimes there will be redundant information in there that can be deleted. Before you finish, be sure to delete the `<<<<<<`, `======`, and `>>>>>>` that Git adds to indicate areas of conflict.
+The pull request's changes will be on top, and the main branch's changes will be on the bottom. Sometimes there will be redundant information in there that can be deleted. Before you finish, be sure to delete the `<<<<<<`, `======`, and `>>>>>>` that Git adds to indicate areas of conflict.
 
 If you are uncertain, please ask one of the fellow moderators or the dev-team for assistance.
 
@@ -145,7 +145,7 @@ Often, a pull request will be low effort. You can usually tell this immediately 
 
 There are also situations where the contributor is trying to add a link to their website, include a library they created, or have a frivolous edit that doesn't help anyone but themselves.
 
-You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
+You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
 #### Other guidelines for Moderators on GitHub
 
@@ -217,7 +217,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 1. **Make sure the user intended to violate the Code of Conduct.**
 
-   Not all violations of the CoC were intended as such. A new camper might post a large amount of code for help, unaware that this can be considered spamming. In these cases, you can just ask them to paste their code with services like Codepen or Pastebin.
+   Not all violations of the CoC were intended as such. A new camper might post a large amount of code for help, unaware that this can be considered spamming. In these cases, you can just ask them to paste their code with services like CodePen or Pastebin.
 
 2. **If the camper clearly and intentionally violates the Code of Conduct, the moderator will proceed as follows:**
 
@@ -233,11 +233,11 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
    There may be situations where you need to address a concern with a camper privately. This should not be done through DMs, which can lead to situations where you claim one thing and the camper claims another. Instead, use the bot's functionality to create a private discussion:
 
-   - Call the `!fCC private username` command, where `username` is the camper's chat user name.
+   - Call the `!fCC private username` command, where `username` is the camper's chat username.
    - The bot will create a new channel, and add the mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
    - When the conversation is complete, call the `!fCC close` command _in the private channel_ to have the bot close and delete that channel.
 
-4. **Deleting messages**
+4. **Deleting Messages**
 
    Moderators can delete messages on our chat server. They should only exercise this ability in four very specific situations:
 
@@ -267,11 +267,11 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
    - Camper posts a wall of code to request help:
 
-     Moderator: @username Please use Codepen or Pastebin when posting large amounts of code.
+     Moderator: @username Please use CodePen or Pastebin when posting large amounts of code.
 
    - Or if you really have to explain why:
 
-     Moderator: @username Please use Codepen or Pastebin when posting large amounts of code, because it disrupts the chat for everyone and could be considered spamming according to our Code of Conduct.
+     Moderator: @username Please use CodePen or Pastebin when posting large amounts of code, because it disrupts the chat for everyone and could be considered spamming according to our Code of Conduct.
 
    - For mild and unintentional violations of the code of conduct:
 
@@ -328,7 +328,7 @@ We assume contributors will read anything in this room that directly mentions th
 
 You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
 
-We proposals like this all the time and is in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
+We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
 ## Dealing with (mental) health inquiries
 
@@ -352,7 +352,7 @@ http://www.suicide.org/international-suicide-hotlines.html
 
 Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
-This XKCD comic perfectly summarizes most communities' thoughts on free speech. So if someone defends something in the name of "free speech", feel free to send it to them.
+This XKCD comic summarizes perfectly most communities' thoughts on free speech. So if someone defends something in the name of "free speech", feel free to send it to them.
 
 <div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
 
@@ -389,11 +389,11 @@ Hey @username
 
 We would love to be able to merge your changes but it looks like there is an error with the CI build. ⚠️
 
-Once you resolve these issues, We will be able to review your PR and merge it. 😊
+Once you resolve these issues, we will be able to review your PR and merge it. 😊
 
 ---
 
-Feel free to reference the [contributing guidelines](https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges?id=testing-challenges) for instructions on running the CI build locally. ✅
+Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
 ### Syncing Fork
@@ -403,7 +403,7 @@ Feel free to reference the [contributing guidelines](https://contribute.freecode
 ````markdown
 Hey @username
 
-We would love to be able to merge your changes but it looks like the branch is not up to date. ⚠️
+We would love to be able to merge your changes, but it looks like the branch is not up to date. ⚠️
 
 To resolve this error, you will have to sync the latest changes from the `main` branch of the `freeCodeCamp/freeCodeCamp` repo.
 
@@ -414,7 +414,7 @@ git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
 
 git fetch upstream
 
-git pull upstream master
+git pull upstream main
 ```
 
 If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
@@ -433,9 +433,9 @@ Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syn
 ```markdown
 Hey @username
 
-We would love to be able to merge your changes but it looks like you have some merge conflicts. ⚠️
+We would love to be able to merge your changes, but it looks like you have some merge conflicts. ⚠️
 
-Once you resolve these conflicts, We will be able to review your PR and merge it. 😊
+Once you resolve these conflicts, we will be able to review your PR and merge it. 😊
 
 ---
 
@@ -537,9 +537,9 @@ List of files:
 2. ...
 3. ...
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in our chat room or the forum if you need help contributing, our moderators will guide you through this.
+Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
 
-Sometimes we may get more than one pull-requests. We typically accept the most quality contribution followed by the one that is made first.
+Sometimes we may get more than one pull requests. We typically accept the most quality contribution followed by the one that is made first.
 
 Happy contributing.
 ```

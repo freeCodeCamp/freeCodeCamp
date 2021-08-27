@@ -8,24 +8,28 @@ dashedName: reuse-patterns-using-capture-groups
 
 # --description--
 
-一些你所搜寻的匹配模式会在字符串中出现多次。 手动重复该正则表达式显得不够简洁。 当字符串中出现多个重复子字符串时，有一种更好的方式来编写模式。
-
-可以使用捕获组（<dfn>capture groups</dfn>）搜寻重复的子字符串。 括号 `(` 和 `)` 可以用来匹配重复的子字符串。 把需要重复匹配的模式放在括号中即可。
-
-要指定重复字符串将出现的位置，可以使用反斜杠（`\`）后接一个数字。 这个数字从 1 开始，随着你使用的每个捕获组的增加而增加。 这里有一个示例，`\1` 可以匹配第一个组。
-
-下面的示例展示的是匹配被空格隔开的两个相同单词：
+当你想要匹配一个像下面这样多次出现的单词，
 
 ```js
-let repeatStr = "regex regex";
-let repeatRegex = /(\w+)\s\1/;
-repeatRegex.test(repeatStr);
-repeatStr.match(repeatRegex);
+let repeatStr = "row row row your boat";
 ```
 
-`test` 调用将返回 `true`，`match` 调用将返回 `["regex regex", "regex"]`。
+你可以使用 `/row row row/`。但如果你不知道重复的特定单词，怎么办？ <dfn>捕获组</dfn> 可以用于找到重复的子字符串。
 
-在字符串上调用 `.match()` 方法将返回一个数组，其中包含它最终匹配到的字符串及其捕获组。
+捕获组是通过把要捕获的正则表达式放在括号中来构建的。 在这个例子里， 目标是捕获一个包含字母数字字符的词，所以捕获组是将 `\w+` 放在括号中：`/(\w+)/`。
+
+分组匹配的子字符串被保存到一个临时的“变量”， 可以使用同一正则表达式和反斜线及捕获组的编号来访问它（例如：`\1`）。 捕获组按其开头括号的位置自动编号（从左到右），从 1 开始。
+
+下面的示例是匹配被空格隔开的两个相同单词：
+
+```js
+let repeatRegex = /(\w+) \1 \1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["row row row", "row"]
+```
+
+在字符串上调用 `.match()` 方法将返回一个数组，其中包含它最终匹配到的子字符串及其捕获组。
+
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f070b6c005b0e76f05f
-title: 'Iterations: More Patterns'
+title: '迭代：更多模式'
 challengeType: 11
 videoId: 9Wtqo6vha1M
 dashedName: iterations-more-patterns
@@ -8,15 +8,15 @@ dashedName: iterations-more-patterns
 
 # --description--
 
-More resources:
+更多资源：
 
-\- [Exercise](https://www.youtube.com/watch?v=kjxXZQw0uPg)
+\- [练习](https://www.youtube.com/watch?v=kjxXZQw0uPg)
 
 # --question--
 
 ## --text--
 
-Which of these evaluates to False?
+其中哪一个评估为 False（假）？
 
 ## --answers--
 

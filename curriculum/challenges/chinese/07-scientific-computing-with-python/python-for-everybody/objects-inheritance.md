@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f170b6c005b0e76f088
-title: 'Objects: Inheritance'
+title: '对象：继承'
 challengeType: 11
 videoId: FBL3alYrxRM
 dashedName: objects-inheritance
@@ -10,23 +10,23 @@ dashedName: objects-inheritance
 
 ## --text--
 
-What is inheritance in object-oriented programming?
+面向对象编程中的继承是指什么？
 
 ## --answers--
 
-A new class created when a parent class is extended.
+扩展父类时创建的新类。
 
 ---
 
-A constructed instance of a class.
+类的构造实例。
 
 ---
 
-The ability to create a new class by extending an existing class.
+通过扩展现有类来创建新类的能力。
 
 ---
 
-A method that is called at the moment when a class is being used to construct an object.
+在使用类构造对象时调用的方法。
 
 ## --video-solution--
 

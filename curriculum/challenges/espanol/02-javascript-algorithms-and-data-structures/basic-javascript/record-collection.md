@@ -8,21 +8,21 @@ dashedName: record-collection
 
 # --description--
 
-Se te da un objeto JSON que representa una parte de tu colección de álbumes musicales. Cada álbum tiene un número de id único como clave y varias otras propiedades. No todos los álbumes tienen una información completa.
+Se te da un objeto literal que representa una parte de tu colección de álbumes musicales. Cada álbum tiene un número de id único como clave y varias otras propiedades. No todos los álbumes tienen una información completa.
 
-Empiezas con una función `updateRecords` el cual toma un objeto `collection`, un `id`, una `prop` (como `artist` o `tracks`), y un `value`. Completa la función usando las reglas siguientes para modificar el objeto pasado a la función.
+Empiezas con una función `updateRecords` la cual toma un objeto literal, `records`, que contiene el álbum musical de la colección, un `id`, `prop` (como `artist` o `tracks`), y `value`. Completa la función usando las reglas siguientes para modificar el objeto pasado a la función.
 
--   Tu función siempre debe devolver el objeto completo.
+-   Tu función siempre debe devolver el objeto de colección de registros completo.
 -   Si `prop` no es `tracks` y `value` no es una cadena vacía, actualiza o establece la propiedad `prop` del album a `value`.
 -   Si `prop` es `tracks` pero el álbum no tiene una propiedad `tracks`, crea un arreglo vacío y agrégale `value` a él.
 -   Si `prop` es `tracks` y `value` no es una cadena vacía, agrega `value` al final del arreglo de `tracks` existentes del álbum.
 -   Si `value` es una cadena vacía, elimina esa propiedad `prop` del álbum.
 
-**Nota:** Una copia del objeto `collection` es usada para las pruebas.
+**Nota:** Se usa una copia del objeto `recordCollection` para las pruebas.
 
 # --hints--
 
-Después de `updateRecords(collection, 5439, "artist", "ABBA")`, `artist` debe ser la cadena `ABBA`
+Después `updateRecords(recordCollection, 5439, "artist", "ABBA")`, `artist` debe ser la cadena `ABBA`
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Después de `updateRecords(collection, 5439, "tracks", "Take a Chance on Me")`, `tracks` debe tener la cadena `Take a Chance on Me` como último elemento.
+Después de `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")`, `tracks` debe tener la cadena `Take a Chance on Me` como último elemento.
 
 ```js
 assert(
@@ -41,14 +41,14 @@ assert(
 );
 ```
 
-Después de `updateRecords(collection, 2548, "artist", "")`, `artist` no debe establecerse
+Después de `updateRecords(recordCollection, 2548, "artist", "")`, `artist` no se debe establecido
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
 assert(!_recordCollection[2548].hasOwnProperty('artist'));
 ```
 
-Después de `updateRecords(collection, 1245, "tracks", "Addicted to Love")`, `tracks` debe tener la cadena `Addicted to Love` como último elemento.
+Después de `updateRecords(recordCollection, 1245, "tracks", "Addicted to Love")`, `tracks` debe tener la cadena `Addicted to Love` como último elemento.
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-Después de `updateRecords(collection, 2468, "tracks", "Free")`, `tracks` debe tener la cadena `1999` como primer elemento.
+Después `updateRecords(recordCollection, 2468, "tracks", "Free")`, `tracks` debe tener la cadena `1999` como el primer elemento.
 
 ```js
 assert(
@@ -68,14 +68,14 @@ assert(
 );
 ```
 
-Después de `updateRecords(collection, 2548, "tracks", "")`, `tracks` no debe establecerse
+Después `updateRecords(recordCollection, 2548, "tracks", "")`, `tracks` no se debe establecido
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');
 assert(!_recordCollection[2548].hasOwnProperty('tracks'));
 ```
 
-Después de `updateRecords(collection, 1245, "albumTitle", "Riptide")`, `albumTitle` debe ser la cadena `Riptide`
+Después de `updateRecords(recordCollection, 1245, "albumTitle", "Riptide")`, `albumTitle` debe ser la cadena `Riptide`
 
 ```js
 assert(
@@ -115,7 +115,7 @@ const _recordCollection = {
 
 ```js
 // Setup
-var collection = {
+var recordCollection = {
   2548: {
     albumTitle: 'Slippery When Wet',
     artist: 'Bon Jovi',
@@ -136,17 +136,17 @@ var collection = {
 };
 
 // Only change code below this line
-function updateRecords(object, id, prop, value) {
-  return object;
+function updateRecords(records, id, prop, value) {
+  return records;
 }
 
-updateRecords(collection, 5439, 'artist', 'ABBA');
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
 ```
 
 # --solutions--
 
 ```js
-var collection = {
+var recordCollection = {
   2548: {
     albumTitle: 'Slippery When Wet',
     artist: 'Bon Jovi',
@@ -167,15 +167,15 @@ var collection = {
 };
 
 // Only change code below this line
-function updateRecords(object, id, prop, value) {
-  if (value === '') delete object[id][prop];
+function updateRecords(records, id, prop, value) {
+  if (value === '') delete records[id][prop];
   else if (prop === 'tracks') {
-    object[id][prop] = object[id][prop] || [];
-    object[id][prop].push(value);
+    records[id][prop] = records[id][prop] || [];
+    records[id][prop].push(value);
   } else {
-    object[id][prop] = value;
+    records[id][prop] = value;
   }
 
-  return object;
+  return records;
 }
 ```

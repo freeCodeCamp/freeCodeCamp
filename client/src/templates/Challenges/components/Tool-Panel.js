@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-
 import {
   Button,
   DropdownButton,
   MenuItem
 } from '@freecodecamp/react-bootstrap';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import './tool-panel.css';
 import { openModal, executeChallenge } from '../redux';
@@ -44,61 +43,67 @@ function ToolPanel({
   guideUrl,
   videoUrl
 }) {
+  const handleRunTests = () => {
+    executeChallenge(true);
+  };
   const { t } = useTranslation();
   return (
-    <Fragment>
-      <div
-        className={`tool-panel-group button-group ${
-          isMobile ? 'tool-panel-group-mobile' : ''
-        }`}
+    <div
+      className={`tool-panel-group button-group ${
+        isMobile ? 'tool-panel-group-mobile' : ''
+      }`}
+    >
+      <Button
+        aria-label='Run the tests use shortcut Ctrl+enter'
+        block={true}
+        bsStyle='primary'
+        onClick={handleRunTests}
       >
-        <Button block={true} bsStyle='primary' onClick={executeChallenge}>
-          {isMobile ? t('buttons.run') : t('buttons.run-test')}
-        </Button>
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={openResetModal}
-        >
-          {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
-        </Button>
-        <DropdownButton
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          id='get-help-dropdown'
-          title={isMobile ? t('buttons.help') : t('buttons.get-help')}
-        >
-          {guideUrl ? (
-            <MenuItem
-              bsStyle='primary'
-              className='btn-invert'
-              href={guideUrl}
-              target='_blank'
-            >
-              {t('buttons.get-hint')}
-            </MenuItem>
-          ) : null}
-          {videoUrl ? (
-            <MenuItem
-              bsStyle='primary'
-              className='btn-invert'
-              onClick={openVideoModal}
-            >
-              {t('buttons.watch-video')}
-            </MenuItem>
-          ) : null}
+        {isMobile ? t('buttons.run') : t('buttons.run-test')}
+      </Button>
+      <Button
+        block={true}
+        bsStyle='primary'
+        className='btn-invert'
+        onClick={openResetModal}
+      >
+        {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
+      </Button>
+      <DropdownButton
+        block={true}
+        bsStyle='primary'
+        className='btn-invert'
+        id='get-help-dropdown'
+        title={isMobile ? t('buttons.help') : t('buttons.get-help')}
+      >
+        {guideUrl ? (
           <MenuItem
             bsStyle='primary'
             className='btn-invert'
-            onClick={openHelpModal}
+            href={guideUrl}
+            target='_blank'
           >
-            {t('buttons.ask-for-help')}
+            {t('buttons.get-hint')}
           </MenuItem>
-        </DropdownButton>
-      </div>
-    </Fragment>
+        ) : null}
+        {videoUrl ? (
+          <MenuItem
+            bsStyle='primary'
+            className='btn-invert'
+            onClick={openVideoModal}
+          >
+            {t('buttons.watch-video')}
+          </MenuItem>
+        ) : null}
+        <MenuItem
+          bsStyle='primary'
+          className='btn-invert'
+          onClick={openHelpModal}
+        >
+          {t('buttons.ask-for-help')}
+        </MenuItem>
+      </DropdownButton>
+    </div>
   );
 }
 

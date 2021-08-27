@@ -20,7 +20,7 @@ Functions that can be assigned to a variable, passed into another function, or r
 
 The functions that take a function as an argument, or return a function as a return value are called <dfn>higher order</dfn> functions.
 
-When the functions are passed in to another function or returned from another function, then those functions which gets passed in or returned can be called a <dfn>lambda</dfn>.
+When functions are passed in to or returned from another function, then those functions which were passed in or returned can be called a <dfn>lambda</dfn>.
 
 # --instructions--
 

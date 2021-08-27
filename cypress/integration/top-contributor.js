@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Top contributor in user profile', () => {
   before(() => {
     cy.clearCookies();
@@ -32,7 +30,7 @@ describe('Top contributor in user profile', () => {
     cy.contains('Top Contributor').should(
       'have.attr',
       'href',
-      '/top-contributors'
+      'https://www.freecodecamp.org/news/freecodecamp-top-contributors/'
     );
   });
 

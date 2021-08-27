@@ -1,7 +1,4 @@
-/* global describe xdescribe it expect */
 import { first, find } from 'lodash';
-import sinon from 'sinon';
-import { mockReq, mockRes } from 'sinon-express-mock';
 
 import {
   buildUserUpdate,
@@ -22,6 +19,22 @@ import {
   mockCompletedChallenge,
   mockCompletedChallenges
 } from './fixtures';
+
+export const mockReq = opts => {
+  const req = {};
+  return { ...req, ...opts };
+};
+
+export const mockRes = opts => {
+  const res = {};
+  res.status = jest.fn().mockReturnValue(res);
+  res.json = jest.fn().mockReturnValue(res);
+  res.redirect = jest.fn().mockReturnValue(res);
+  res.set = jest.fn().mockReturnValue(res);
+  res.clearCookie = jest.fn().mockReturnValue(res);
+  res.cookie = jest.fn().mockReturnValue(res);
+  return { ...res, ...opts };
+};
 
 describe('boot/challenge', () => {
   xdescribe('backendChallengeCompleted', () => {});
@@ -221,37 +234,35 @@ describe('boot/challenge', () => {
     const validObjectId = '5c716d1801013c3ce3aa23e6';
 
     it('declares a 403 for an invalid id in the body', () => {
-      expect.assertions(3);
+      expect.assertions(2);
       const req = mockReq({
         body: { id: 'not-a-real-id' }
       });
       const res = mockRes();
-      const next = sinon.spy();
+      const next = jest.fn();
 
       isValidChallengeCompletion(req, res, next);
 
-      expect(res.status.called).toBe(true);
-      expect(res.status.getCall(0).args[0]).toBe(403);
-      expect(next.called).toBe(false);
+      expect(res.status).toHaveBeenCalledWith(403);
+      expect(next).not.toHaveBeenCalled();
     });
 
     it('declares a 403 for an invalid challengeType in the body', () => {
-      expect.assertions(3);
+      expect.assertions(2);
       const req = mockReq({
         body: { id: validObjectId, challengeType: 'ponyfoo' }
       });
       const res = mockRes();
-      const next = sinon.spy();
+      const next = jest.fn();
 
       isValidChallengeCompletion(req, res, next);
 
-      expect(res.status.called).toBe(true);
-      expect(res.status.getCall(0).args[0]).toBe(403);
-      expect(next.called).toBe(false);
+      expect(res.status).toHaveBeenCalledWith(403);
+      expect(next).not.toHaveBeenCalled();
     });
 
     it('declares a 403 for an invalid solution in the body', () => {
-      expect.assertions(3);
+      expect.assertions(2);
       const req = mockReq({
         body: {
           id: validObjectId,
@@ -260,13 +271,12 @@ describe('boot/challenge', () => {
         }
       });
       const res = mockRes();
-      const next = sinon.spy();
+      const next = jest.fn();
 
       isValidChallengeCompletion(req, res, next);
 
-      expect(res.status.called).toBe(true);
-      expect(res.status.getCall(0).args[0]).toBe(403);
-      expect(next.called).toBe(false);
+      expect(res.status).toHaveBeenCalledWith(403);
+      expect(next).not.toHaveBeenCalled();
     });
 
     it('calls next if the body is valid', () => {
@@ -278,11 +288,11 @@ describe('boot/challenge', () => {
         }
       });
       const res = mockRes();
-      const next = sinon.spy();
+      const next = jest.fn();
 
       isValidChallengeCompletion(req, res, next);
 
-      expect(next.called).toBe(true);
+      expect(next).toHaveBeenCalled();
     });
 
     it('calls next if only the id is provided', () => {
@@ -292,11 +302,11 @@ describe('boot/challenge', () => {
         }
       });
       const res = mockRes();
-      const next = sinon.spy();
+      const next = jest.fn();
 
       isValidChallengeCompletion(req, res, next);
 
-      expect(next.called).toBe(true);
+      expect(next).toHaveBeenCalled();
     });
 
     it('can handle an "int" challengeType', () => {
@@ -307,11 +317,11 @@ describe('boot/challenge', () => {
         }
       });
       const res = mockRes();
-      const next = sinon.spy();
+      const next = jest.fn();
 
       isValidChallengeCompletion(req, res, next);
 
-      expect(next.called).toBe(true);
+      expect(next).toHaveBeenCalled();
     });
   });
 
@@ -329,7 +339,7 @@ describe('boot/challenge', () => {
     });
     const mockNormalizeParams = params => params;
 
-    it('redirects to the learn base url for non-users', async done => {
+    it('redirects to the learn base url for non-users', async () => {
       const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
         () => {},
         mockNormalizeParams,
@@ -337,15 +347,14 @@ describe('boot/challenge', () => {
       );
       const req = mockReq();
       const res = mockRes();
-      const next = sinon.spy();
+      const next = jest.fn();
       await redirectToCurrentChallenge(req, res, next);
 
-      expect(res.redirect.calledWith(mockLearnUrl));
-      done();
+      expect(res.redirect).toHaveBeenCalledWith(mockLearnUrl);
     });
 
     // eslint-disable-next-line max-len
-    it('redirects to the url provided by the challengeUrlResolver', async done => {
+    it('redirects to the url provided by the challengeUrlResolver', async () => {
       const challengeUrlResolver = await createChallengeUrlResolver(
         mockAllChallenges,
         {
@@ -362,15 +371,14 @@ describe('boot/challenge', () => {
         user: mockUser
       });
       const res = mockRes();
-      const next = sinon.spy();
+      const next = jest.fn();
       await redirectToCurrentChallenge(req, res, next);
 
-      expect(res.redirect.calledWith(expectedUrl)).toBe(true);
-      done();
+      expect(res.redirect).toHaveBeenCalledWith(expectedUrl);
     });
 
     // eslint-disable-next-line max-len
-    it('redirects to the first challenge for users without a currentChallengeId', async done => {
+    it('redirects to the first challenge for users without a currentChallengeId', async () => {
       const challengeUrlResolver = await createChallengeUrlResolver(
         mockAllChallenges,
         {
@@ -386,11 +394,10 @@ describe('boot/challenge', () => {
         user: { ...mockUser, currentChallengeId: '' }
       });
       const res = mockRes();
-      const next = sinon.spy();
+      const next = jest.fn();
       await redirectToCurrentChallenge(req, res, next);
       const expectedUrl = `${mockHomeLocation}${firstChallengeUrl}`;
-      expect(res.redirect.calledWith(expectedUrl)).toBe(true);
-      done();
+      expect(res.redirect).toHaveBeenCalledWith(expectedUrl);
     });
   });
 });

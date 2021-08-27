@@ -4,8 +4,6 @@ When making changes to JavaScript, CSS, or HTML which could change the functiona
 
 To learn how to write Cypress tests, or 'specs', please see Cypress' official [documentation](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html).
 
-> Note: When writing tests for freeCodeCamp, remember to add `/* global cy */` to the top of the file to avoid ESLint issues.
-
 ## Where to add a test
 
 - Cypress tests are in the `./cypress` directory.

@@ -1,26 +1,25 @@
+import path from 'path';
+import debug from 'debug';
+import dedent from 'dedent';
 import _ from 'lodash';
 import loopback from 'loopback';
-import path from 'path';
-import dedent from 'dedent';
 import { Observable } from 'rx';
-import debug from 'debug';
 import { isEmail } from 'validator';
-import { reportError } from '../middlewares/sentry-error-handler.js';
-
-import { ifNoUser401 } from '../utils/middleware';
-import { observeQuery } from '../utils/rx';
-
-import { getChallenges } from '../utils/get-curriculum';
-
 import {
   completionHours,
   certTypes,
-  superBlockCertTypeMap,
+  certSlugTypeMap,
   certTypeTitleMap,
   certTypeIdMap,
   certIds,
-  oldDataVizId
+  oldDataVizId,
+  superBlockCertTypeMap
 } from '../../../../config/certification-settings';
+import { reportError } from '../middlewares/sentry-error-handler.js';
+
+import { getChallenges } from '../utils/get-curriculum';
+import { ifNoUser401 } from '../utils/middleware';
+import { observeQuery } from '../utils/rx';
 
 const {
   legacyFrontEndChallengeId,
@@ -29,7 +28,7 @@ const {
   legacyInfosecQaId,
   legacyFullStackId,
   respWebDesignId,
-  frontEndLibsId,
+  frontEndDevLibsId,
   jsAlgoDataStructId,
   dataVis2018Id,
   apisMicroservicesId,
@@ -49,9 +48,11 @@ export default function bootCertificate(app) {
   const certTypeIds = createCertTypeIds(getChallenges());
   const showCert = createShowCert(app);
   const verifyCert = createVerifyCert(certTypeIds, app);
+  const verifyCanClaimCert = createVerifyCanClaim(certTypeIds, app);
 
   api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
-  api.get('/certificate/showCert/:username/:cert', showCert);
+  api.get('/certificate/showCert/:username/:certSlug', showCert);
+  api.get('/certificate/verify-can-claim-cert', verifyCanClaimCert);
 
   app.use(api);
 }
@@ -66,9 +67,11 @@ export function getFallbackFrontEndDate(completedChallenges, completedDate) {
   return latestCertDate ? latestCertDate : completedDate;
 }
 
+const certSlugs = Object.keys(certSlugTypeMap);
+
 function ifNoSuperBlock404(req, res, next) {
-  const { superBlock } = req.body;
-  if (superBlock && superBlocks.includes(superBlock)) {
+  const { certSlug } = req.body;
+  if (certSlug && certSlugs.includes(certSlug)) {
     return next();
   }
   return res.status(404).end();
@@ -89,7 +92,7 @@ function createCertTypeIds(allChallenges) {
 
     // modern
     [certTypes.respWebDesign]: getCertById(respWebDesignId, allChallenges),
-    [certTypes.frontEndLibs]: getCertById(frontEndLibsId, allChallenges),
+    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, allChallenges),
     [certTypes.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
     [certTypes.jsAlgoDataStruct]: getCertById(
       jsAlgoDataStructId,
@@ -129,8 +132,6 @@ function getCertById(anId, allChallenges) {
       challengeType
     }))[0];
 }
-
-const superBlocks = Object.keys(superBlockCertTypeMap);
 
 function sendCertifiedEmail(
   {
@@ -223,11 +224,11 @@ function createVerifyCert(certTypeIds, app) {
   const { Email } = app.models;
   return function verifyCert(req, res, next) {
     const {
-      body: { superBlock },
+      body: { certSlug },
       user
     } = req;
-    log(superBlock);
-    let certType = superBlockCertTypeMap[superBlock];
+    log(certSlug);
+    let certType = certSlugTypeMap[certSlug];
     log(certType);
     return Observable.of(certTypeIds[certType])
       .flatMap(challenge => {
@@ -335,9 +336,9 @@ function createShowCert(app) {
   }
 
   return function showCert(req, res, next) {
-    let { username, cert } = req.params;
+    let { username, certSlug } = req.params;
     username = username.toLowerCase();
-    const certType = superBlockCertTypeMap[cert];
+    const certType = certSlugTypeMap[certSlug];
     const certId = certTypeIdMap[certType];
     const certTitle = certTypeTitleMap[certType];
     const completionTime = completionHours[certType] || 300;
@@ -492,5 +493,78 @@ function createShowCert(app) {
         ]
       });
     }, next);
+  };
+}
+
+function createVerifyCanClaim(certTypeIds, app) {
+  const { User } = app.models;
+
+  function findUserByUsername$(username, fields) {
+    return observeQuery(User, 'findOne', {
+      where: { username },
+      fields
+    });
+  }
+  return function verifyCert(req, res, next) {
+    const { superBlock, username } = req.query;
+    log(superBlock);
+    let certType = superBlockCertTypeMap[superBlock];
+    log(certType);
+
+    return findUserByUsername$(username, {
+      isFrontEndCert: true,
+      isBackEndCert: true,
+      isFullStackCert: true,
+      isRespWebDesignCert: true,
+      isFrontEndLibsCert: true,
+      isJsAlgoDataStructCert: true,
+      isDataVisCert: true,
+      is2018DataVisCert: true,
+      isApisMicroservicesCert: true,
+      isInfosecQaCert: true,
+      isQaCertV7: true,
+      isInfosecCertV7: true,
+      isSciCompPyCertV7: true,
+      isDataAnalysisPyCertV7: true,
+      isMachineLearningPyCertV7: true,
+      username: true,
+      name: true,
+      isHonest: true,
+      completedChallenges: true
+    }).subscribe(user => {
+      return Observable.of(certTypeIds[certType])
+        .flatMap(challenge => {
+          const certName = certTypeTitleMap[certType];
+          const { tests = [] } = challenge;
+          const { isHonest, completedChallenges } = user;
+          const isProjectsCompleted = canClaim(tests, completedChallenges);
+          let result = 'incomplete-requirements';
+          let status = false;
+
+          if (isHonest && isProjectsCompleted) {
+            status = true;
+            result = 'requirements-met';
+          } else if (isProjectsCompleted) {
+            result = 'projects-completed';
+          } else if (isHonest) {
+            result = 'is-honest';
+          }
+          return Observable.just({
+            type: 'success',
+            message: { status, result },
+            variables: { name: certName }
+          });
+        })
+        .subscribe(message => {
+          return res.status(200).json({
+            response: message,
+            isCertMap: getUserIsCertMap(user),
+            // send back the completed challenges
+            // NOTE: we could just send back the latest challenge, but this
+            // ensures the challenges are synced.
+            completedChallenges: user.completedChallenges
+          });
+        }, next);
+    });
   };
 }

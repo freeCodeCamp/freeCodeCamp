@@ -1,5 +1,3 @@
-/* global it expect */
-
 import { getFallbackFrontEndDate } from '../boot/certificate';
 import { fullStackChallenges } from './fixtures';
 

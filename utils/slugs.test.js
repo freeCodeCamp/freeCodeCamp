@@ -1,5 +1,3 @@
-/* global describe expect it */
-
 const slugs = require('./slugs');
 
 describe('dasherize', () => {

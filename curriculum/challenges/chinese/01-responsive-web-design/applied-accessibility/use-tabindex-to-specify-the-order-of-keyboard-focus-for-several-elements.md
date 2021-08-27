@@ -29,6 +29,8 @@ dashedName: use-tabindex-to-specify-the-order-of-keyboard-focus-for-several-elem
 
 Camper Cat 在他的励志名言页面中有一个搜索区域，他打算使用 CSS 把这个区域定位在页面的右上角。 Camper Cat 希望他的搜索（search）`input` 与提交（submit）`input` 表单控件是 tab 键焦点顺序的前两项。 请给 `search` `input` 添加 `tabindex` 属性，将属性值设置为 `1`；给 `submit` `input` 添加一个 `tabindex` 属性，将属性值设置为 `2`。
 
+另一件需要注意的事情是，单击元素时，某些浏览器可能会将你置于 tab 键焦点顺序的中间位置。 页面上已添加一个元素，以确保你始终从 tab 键焦点顺序的开头开始。
+
 # --hints--
 
 应给 `search` `input` 标签添加一个 `tabindex` 属性。
@@ -37,7 +39,7 @@ Camper Cat 在他的励志名言页面中有一个搜索区域，他打算使用
 assert($('#search').attr('tabindex'));
 ```
 
-应给 `submit` `input` 添加一个 `tabindex` 属性。
+应给 `submit` `input` 标签添加一个 `tabindex` 属性。
 
 ```js
 assert($('#submit').attr('tabindex'));
@@ -61,6 +63,7 @@ assert($('#submit').attr('tabindex') == '2');
 
 ```html
 <body>
+  <div tabindex="1" class="overlay"></div>
   <header>
     <h1>Even Deeper Thoughts with Master Camper Cat</h1>
     <nav>
@@ -91,12 +94,26 @@ assert($('#submit').attr('tabindex') == '2');
   </blockquote>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+<style>
+  body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 8px;
+  }
+  .overlay {
+    margin: -8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 ```
 
 # --solutions--
 
 ```html
 <body>
+  <div tabindex="1" class="overlay"></div>
   <header>
     <h1>Even Deeper Thoughts with Master Camper Cat</h1>
     <nav>
@@ -127,4 +144,17 @@ assert($('#submit').attr('tabindex') == '2');
   </blockquote>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+<style>
+  body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 8px;
+  }
+  .overlay {
+    margin: -8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 ```

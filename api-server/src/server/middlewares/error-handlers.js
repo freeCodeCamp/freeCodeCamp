@@ -37,7 +37,8 @@ export default function prodErrorHandler() {
 
     // parse res type
     const accept = accepts(req);
-    const type = accept.type('html', 'json', 'text');
+    // prioritise returning json
+    const type = accept.type('json', 'html', 'text');
 
     const redirectTo = handled.redirectTo || `${origin}/`;
     const message =
@@ -48,22 +49,16 @@ export default function prodErrorHandler() {
       console.error(errTemplate(err, req));
     }
 
-    if (type === 'html') {
+    if (type === 'json') {
+      return res.json({
+        type: handled.type || 'errors',
+        message
+      });
+    } else {
       if (typeof req.flash === 'function') {
         req.flash(handled.type || 'danger', message);
       }
       return res.redirectWithFlash(redirectTo);
-      // json
-    } else if (type === 'json') {
-      res.setHeader('Content-Type', 'application/json');
-      return res.send({
-        type: handled.type || 'errors',
-        message
-      });
-      // plain text
-    } else {
-      res.setHeader('Content-Type', 'text/plain');
-      return res.send(message);
     }
   };
 }

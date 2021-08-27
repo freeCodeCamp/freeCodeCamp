@@ -23,7 +23,14 @@ function functionName() {
 
 # --instructions--
 
-<ol><li>先创建一个名为 <code>reusableFunction</code> 的函数，这个函数可以打印 <code>"Hi World"</code> 到控制台上。</li><li>然后调用这个函数。</li></ol>
+<ol>
+  <li>
+    先创建一个名为 <code>reusableFunction</code> 的函数，这个函数打印 <code>Hi World</code> 到控制台上。
+  </li>
+  <li>
+    然后调用这个函数。
+  </li>
+</ol>
 
 # --hints--
 

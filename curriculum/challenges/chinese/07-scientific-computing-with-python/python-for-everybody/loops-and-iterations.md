@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f05c
-title: Loops and Iterations
+title: 循环和迭代
 challengeType: 11
 videoId: dLA-szNRnUY
 dashedName: loops-and-iterations
@@ -10,7 +10,7 @@ dashedName: loops-and-iterations
 
 ## --text--
 
-What will the following code print out?:
+这些代码会打印出什么？
 
 ```python
 n = 0

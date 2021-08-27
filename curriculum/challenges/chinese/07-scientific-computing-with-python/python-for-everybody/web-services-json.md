@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f140b6c005b0e76f07d
-title: 'Web Services: JSON'
+title: 'Web 服务：JSON'
 challengeType: 11
 videoId: ZJE-U56BppM
 dashedName: web-services-json
@@ -10,7 +10,7 @@ dashedName: web-services-json
 
 ## --text--
 
-What will the following code print?:
+这些代码会打印出什么？
 
 ```python
 import json
@@ -48,7 +48,7 @@ Mrugesh
 
 ---
 
-[Error]
+[Error]（错误）
 
 ## --video-solution--
 

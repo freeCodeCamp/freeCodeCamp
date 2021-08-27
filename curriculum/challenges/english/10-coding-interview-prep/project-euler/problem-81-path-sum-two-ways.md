@@ -8,46 +8,51 @@ dashedName: problem-81-path-sum-two-ways
 
 # --description--
 
-In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by **only moving to the right and down**, is indicated in bold red and is equal to 2427.
+In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by **only moving to the right and down**, is indicated in bold red and is equal to `2427`.
 
-<div style='text-align: center;'>
-  $\begin{pmatrix}
+  $$\begin{pmatrix}
   \color{red}{131} & 673 & 234 & 103 & 18\\\\
   \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\
   630 & 803 & \color{red}{746} & \color{red}{422} & 111\\\\
   537 & 699 & 497 & \color{red}{121} & 956\\\\
   805 & 732 & 524 & \color{red}{37} & \color{red}{331}
-  \end{pmatrix}$
-</div>
+  \end{pmatrix}$$
 
-Find the minimal path sum from the top left to the bottom right by only moving right and down in `matrix`, a 2D array containing an 80 by 80 matrix.
+Find the minimal path sum from the top left to the bottom right by only moving right and down in `matrix`, a 2D array representing a matrix. The maximum matrix size used in the tests will be 80 by 80.
 
 # --hints--
 
-`pathSumTwoWays(testMatrix)` should return a number.
+`pathSumTwoWays(testMatrix1)` should return a number.
 
 ```js
-assert(typeof pathSumTwoWays(testMatrix) === 'number');
+assert(typeof pathSumTwoWays(_testMatrix1) === 'number');
 ```
 
-`pathSumTwoWays(testMatrix)` should return 2427.
+`pathSumTwoWays(testMatrix1)` should return `2427`.
 
 ```js
-assert.strictEqual(pathSumTwoWays(testMatrix), 2427);
+assert.strictEqual(pathSumTwoWays(_testMatrix1), 2427);
 ```
 
-`pathSumTwoWays(matrix)` should return 427337.
+`pathSumTwoWays(testMatrix2)` should return `427337`.
 
 ```js
-assert.strictEqual(pathSumTwoWays(matrix), 427337);
+assert.strictEqual(pathSumTwoWays(_testMatrix2), 427337);
 ```
 
 # --seed--
 
-## --before-user-code--
+## --after-user-code--
 
 ```js
-const matrix = [
+const _testMatrix1 = [
+  [131, 673, 234, 103, 18],
+  [201, 96, 342, 965, 150],
+  [630, 803, 746, 422, 111],
+  [537, 699, 497, 121, 956],
+  [805, 732, 524, 37, 331]
+];
+const _testMatrix2 = [
   [4445,2697,5115,718,2209,2212,654,4348,3079,6821,7668,3276,8874,4190,3785,2752,9473,7817,9137,496,7338,3434,7152,4355,4552,7917,7827,2460,2350,691,3514,5880,3145,7633,7199,3783,5066,7487,3285,1084,8985,760,872,8609,8051,1134,9536,5750,9716,9371,7619,5617,275,9721,2997,2698,1887,8825,6372,3014,2113,7122,7050,6775,5948,2758,1219,3539,348,7989,2735,9862,1263,8089,6401,9462,3168,2758,3748,5870],
   [1096,20,1318,7586,5167,2642,1443,5741,7621,7030,5526,4244,2348,4641,9827,2448,6918,5883,3737,300,7116,6531,567,5997,3971,6623,820,6148,3287,1874,7981,8424,7672,7575,6797,6717,1078,5008,4051,8795,5820,346,1851,6463,2117,6058,3407,8211,117,4822,1317,4377,4434,5925,8341,4800,1175,4173,690,8978,7470,1295,3799,8724,3509,9849,618,3320,7068,9633,2384,7175,544,6583,1908,9983,481,4187,9353,9377],
   [9607,7385,521,6084,1364,8983,7623,1585,6935,8551,2574,8267,4781,3834,2764,2084,2669,4656,9343,7709,2203,9328,8004,6192,5856,3555,2260,5118,6504,1839,9227,1259,9451,1388,7909,5733,6968,8519,9973,1663,5315,7571,3035,4325,4283,2304,6438,3815,9213,9806,9536,196,5542,6907,2475,1159,5820,9075,9470,2179,9248,1828,4592,9167,3713,4640,47,3637,309,7344,6955,346,378,9044,8635,7466,5036,9515,6385,9230],
@@ -134,14 +139,14 @@ const matrix = [
 ## --seed-contents--
 
 ```js
-function pathSumTwoWays(arr) {
+function pathSumTwoWays(matrix) {
 
   return true;
 }
 
 // Only change code above this line
 
-const testMatrix = [
+const testMatrix1 = [
   [131, 673, 234, 103, 18],
   [201, 96, 342, 965, 150],
   [630, 803, 746, 422, 111],
@@ -149,11 +154,36 @@ const testMatrix = [
   [805, 732, 524, 37, 331]
 ];
 
-pathSumTwoWays(testMatrix);
+pathSumTwoWays(testMatrix1);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+function pathSumTwoWays(matrix) {
+  function makeMinimalMove(row, column) {
+    if (resultMatrix[row][column + 1] < resultMatrix[row + 1][column]) {
+      return resultMatrix[row][column + 1];
+    }
+    return resultMatrix[row + 1][column];
+  }
+
+  const size = matrix.length;
+  const resultMatrix = [];
+  for (let i = 0; i < size; i++) {
+    resultMatrix.push([...matrix[i]])
+  }
+
+  for (let i = size - 2; i >= 0; i--) {
+    resultMatrix[size - 1][i] += resultMatrix[size - 1][i + 1];
+    resultMatrix[i][size - 1] += resultMatrix[i + 1][size - 1];
+  }
+
+  for (let row = size - 2; row >= 0; row--) {
+    for (let column = size - 2; column >= 0; column--) {
+      resultMatrix[row][column] += makeMinimalMove(row, column);
+    }
+  }
+  return resultMatrix[0][0];
+}
 ```

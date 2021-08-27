@@ -1,99 +1,154 @@
-import React, { Component } from 'react';
+import { Button } from '@freecodecamp/react-bootstrap';
+import { navigate } from 'gatsby-link';
 import PropTypes from 'prop-types';
-import { navigate } from 'gatsby';
+import React, { useState, useEffect } from 'react';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { withTranslation } from 'react-i18next';
 
-import CertificationIcon from '../../../assets/icons/CertificationIcon';
-import GreenPass from '../../../assets/icons/GreenPass';
-import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-import { userSelector } from '../../../redux';
-import { User } from '../../../redux/propTypes';
-import { certMap } from '../../../resources/certAndProjectMap';
+import {
+  certSlugTypeMap,
+  superBlockCertTypeMap
+} from '../../../../../config/certification-settings';
+import { createFlashMessage } from '../../../components/Flash/redux';
+import { stepsToClaimSelector } from '../../../redux';
+
+import { StepsType, User } from '../../../redux/prop-types';
+import { verifyCert } from '../../../redux/settings';
+
+import { certMap } from '../../../resources/cert-and-project-map';
+import { getVerifyCanClaimCert } from '../../../utils/ajax';
+import CertificationCard from './CertificationCard';
 
 const propTypes = {
+  createFlashMessage: PropTypes.func.isRequired,
+  steps: StepsType,
   superBlock: PropTypes.string,
   t: PropTypes.func,
   title: PropTypes.string,
-  user: User
+  user: User,
+  verifyCert: PropTypes.func.isRequired
+};
+
+const honestyInfoMessage = {
+  type: 'info',
+  message: 'flash.honest-first'
 };
 
 const mapStateToProps = state => {
-  return createSelector(userSelector, user => ({
-    user
+  return createSelector(stepsToClaimSelector, steps => ({
+    steps
   }))(state);
 };
 
-export class CertChallenge extends Component {
-  render() {
-    const {
-      superBlock,
-      t,
-      title,
-      user: {
-        is2018DataVisCert,
-        isApisMicroservicesCert,
-        isFrontEndLibsCert,
-        isQaCertV7,
-        isInfosecCertV7,
-        isJsAlgoDataStructCert,
-        isRespWebDesignCert,
-        isSciCompPyCertV7,
-        isDataAnalysisPyCertV7,
-        isMachineLearningPyCertV7,
-        username
-      }
-    } = this.props;
+const mapDispatchToProps = {
+  createFlashMessage,
+  verifyCert
+};
 
-    const userCertificates = {
-      'responsive-web-design': isRespWebDesignCert,
-      'javascript-algorithms-and-data-structures': isJsAlgoDataStructCert,
-      'front-end-libraries': isFrontEndLibsCert,
-      'data-visualization': is2018DataVisCert,
-      'apis-and-microservices': isApisMicroservicesCert,
-      'quality-assurance': isQaCertV7,
-      'information-security': isInfosecCertV7,
-      'scientific-computing-with-python': isSciCompPyCertV7,
-      'data-analysis-with-python': isDataAnalysisPyCertV7,
-      'machine-learning-with-python': isMachineLearningPyCertV7
-    };
+const CertChallenge = ({
+  createFlashMessage,
+  steps = {},
+  superBlock,
+  t,
+  verifyCert,
+  title,
+  user: { isHonest, username }
+}) => {
+  const [canClaim, setCanClaim] = useState({ status: false, result: '' });
+  const [isCertified, setIsCertified] = useState(false);
+  const [stepState, setStepState] = useState({
+    numberOfSteps: 0,
+    completedCount: 0
+  });
+  const [canViewCert, setCanViewCert] = useState(false);
+  const [isProjectsCompleted, setIsProjectsCompleted] = useState(false);
 
-    const cert = certMap.find(x => x.title === title);
-    const isCertified = userCertificates[superBlock];
-    const certLocation = `/certification/${username}/${cert.slug}`;
-    const certCheckmarkStyle = { height: '40px', width: '40px' };
-    const i18nSuperBlock = t(`intro:${superBlock}.title`);
-    const i18nCertText = t(`intro:misc-text.certification`, {
-      cert: i18nSuperBlock
-    });
+  useEffect(() => {
+    if (username) {
+      (async () => {
+        try {
+          const data = await getVerifyCanClaimCert(username, superBlock);
+          const { status, result } = data?.response?.message;
+          setCanClaim({ status, result });
+        } catch (e) {
+          // TODO: How do we handle errors...?
+        }
+      })();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [username]);
 
-    return (
-      <div className='block'>
-        <button
-          className={`map-cert-title ${
-            isCertified ? 'map-is-cert' : 'no-cursor'
-          }`}
-          onClick={isCertified ? () => navigate(certLocation) : null}
-        >
-          <CertificationIcon />
-          <h3>{i18nCertText}</h3>
-          <div className='map-title-completed-big'>
-            <span>
-              {isCertified ? (
-                <GreenPass style={certCheckmarkStyle} />
-              ) : (
-                <GreenNotCompleted style={certCheckmarkStyle} />
-              )}
-            </span>
-          </div>
-        </button>
-      </div>
+  const { certSlug } = certMap.find(x => x.title === title);
+
+  useEffect(() => {
+    setIsCertified(
+      steps?.currentCerts?.find(
+        cert =>
+          certSlugTypeMap[cert.certSlug] === superBlockCertTypeMap[superBlock]
+      )?.show ?? false
     );
-  }
-}
+
+    const projectsCompleted =
+      canClaim.status || canClaim.result === 'projects-completed';
+    const completedCount =
+      Object.values(steps).filter(
+        stepVal => typeof stepVal === 'boolean' && stepVal
+      ).length + projectsCompleted;
+    const numberOfSteps = Object.keys(steps).length;
+
+    setCanViewCert(completedCount === numberOfSteps);
+    setStepState({ numberOfSteps, completedCount });
+    setIsProjectsCompleted(projectsCompleted);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [steps, canClaim]);
+
+  const certLocation = `/certification/${username}/${certSlug}`;
+  const i18nSuperBlock = t(`intro:${superBlock}.title`);
+  const i18nCertText = t(`intro:misc-text.certification`, {
+    cert: i18nSuperBlock
+  });
+
+  const createClickHandler = certSlug => e => {
+    e.preventDefault();
+    if (isCertified) {
+      return navigate(certLocation);
+    }
+    return isHonest
+      ? verifyCert(certSlug)
+      : createFlashMessage(honestyInfoMessage);
+  };
+
+  return (
+    <div className='block'>
+      {(!isCertified || !canViewCert) && (
+        <CertificationCard
+          i18nCertText={i18nCertText}
+          isProjectsCompleted={isProjectsCompleted}
+          steps={steps}
+          stepState={stepState}
+          superBlock={superBlock}
+        />
+      )}
+      <Button
+        block={true}
+        bsStyle='primary'
+        disabled={!canClaim.status || (isCertified && !canViewCert)}
+        href={certLocation}
+        onClick={createClickHandler(certSlug)}
+      >
+        {isCertified ? t('buttons.show-cert') : t('buttons.claim-cert')}
+      </Button>
+    </div>
+  );
+};
 
 CertChallenge.displayName = 'CertChallenge';
 CertChallenge.propTypes = propTypes;
 
-export default connect(mapStateToProps)(withTranslation()(CertChallenge));
+export { CertChallenge };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(CertChallenge));

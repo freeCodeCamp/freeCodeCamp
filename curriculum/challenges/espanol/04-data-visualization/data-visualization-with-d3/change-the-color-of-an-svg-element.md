@@ -14,7 +14,7 @@ In SVG, a `rect` shape is colored with the `fill` attribute. It supports hex cod
 
 # --instructions--
 
-Add an `attr()` method to set the "fill" of all the bars to the color "navy".
+Add an `attr()` method to set the `fill` of all the bars to the color navy.
 
 # --hints--
 

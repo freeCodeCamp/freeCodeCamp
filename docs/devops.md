@@ -209,7 +209,7 @@ You can identify the exact version deployed by visiting the build and deployment
 
 There are some known limitations and tradeoffs when using the beta version of the platform.
 
-- #### All data / personal progress on these beta platforms `will NOT be saved or carried over` to production.
+- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production.
 
   **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev team may purge the database on this beta version as needed.
 
@@ -508,7 +508,7 @@ Code changes need to be deployed to the API instances from time to time. It can
 be a rolling update or a manual update. The later is essential when changing
 dependencies or adding environment variables.
 
-> [!DANGER] The automated pipelines are not handling dependencies updates at the
+> [!ATTENTION] The automated pipelines are not handling dependencies updates at the
 > minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
@@ -577,11 +577,6 @@ Provisioning VMs with the Code
    cd client
    ```
 
-   ```console
-   git clone https://github.com/freeCodeCamp/client-config.git client
-   cd client
-   ```
-
    Start placeholder instances for the web client, these will be updated with
    artifacts from the Azure pipeline.
 
@@ -614,7 +609,7 @@ Code changes need to be deployed to the API instances from time to time. It can
 be a rolling update or a manual update. The later is essential when changing
 dependencies or adding environment variables.
 
-> [!DANGER] The automated pipelines are not handling dependencies updates at the
+> [!ATTENTION] The automated pipelines are not handling dependencies updates at the
 > minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
@@ -877,7 +872,7 @@ pm2 save
 pm2 logs
 ```
 
-> [!DANGER]
+> [!ATTENTION]
 > For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
 
 ## Installing and Updating Azure Pipeline Agents

@@ -1,7 +1,5 @@
-/* global expect */
-
-const { toSortedArray } = require('./sort-files');
 const { challengeFiles } = require('./__fixtures__/challenges');
+const { toSortedArray } = require('./sort-files');
 
 describe('sort-files', () => {
   describe('toSortedArray', () => {
@@ -11,14 +9,14 @@ describe('sort-files', () => {
     });
     it('should not modify the challenges', () => {
       const sorted = toSortedArray(challengeFiles);
-      const expected = Object.values(challengeFiles);
+      const expected = challengeFiles;
       expect(sorted).toEqual(expect.arrayContaining(expected));
       expect(sorted.length).toEqual(expected.length);
     });
 
     it('should sort the objects into html, js, css order', () => {
-      const sorted = toSortedArray(challengeFiles);
-      const sortedKeys = sorted.map(({ key }) => key);
+      const sorted = challengeFiles;
+      const sortedKeys = sorted.map(({ fileKey }) => fileKey);
       const expected = ['indexhtml', 'indexjsx', 'indexjs', 'indexcss'];
       expect(sortedKeys).toStrictEqual(expected);
     });

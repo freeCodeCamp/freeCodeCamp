@@ -15,7 +15,7 @@ You should see the list of projects you have been granted access to. Select the 
 You should now see the list of available files. Choose your file by selecting the `Proofread` button on the right of that file, then choosing `Proofreading` from the drop-down menu that appears.
 
 > [!NOTE]
-> If you are in this workspace view, but want to work on [translating a file](./how-to-translate-files.md) instead of proofreading, you may select `Crowdsourcing` from the dropdown menu instead.
+> If you are in this workspace view, but want to work on [translating a file](how-to-translate-files.md) instead of proofreading, you may select `Crowdsourcing` from the dropdown menu instead.
 
 ## Proofread Translations
 
@@ -43,7 +43,7 @@ No additional actions are required once a file has been proofread.
 
 ## Becoming a proofreader
 
-If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [translators chat room](https://chat.freecodecamp.org/channel/translators). We will typically grant you proofreading access if you have been contributing to freeCodeCamp for a while.
+If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors). We will typically grant you proofreading access if you have been contributing to freeCodeCamp for a while.
 
 Our staff team and community moderators teams are always looking for kind volunteers like you who help us make high quality translations available to the world.
 
@@ -52,6 +52,6 @@ Our staff team and community moderators teams are always looking for kind volunt
 
 ## Creating a channel on Chat for a world language
 
-For the most part we encourage you to use the [translators chat](https://chat.freecodecamp.org/channel/translators) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating additional break-out channel for the language.
+For the most part we encourage you to use the [contributors chat](https://chat.freecodecamp.org/channel/contributors) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating additional break-out channel for the language.
 
 If you are already a proofreader and are interested in having a dedicated channel on our chat servers for a specific language, [fill out this form](https://forms.gle/XU5CyutrYCgDYaVZA).

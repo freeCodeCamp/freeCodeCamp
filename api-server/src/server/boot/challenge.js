@@ -4,21 +4,21 @@
  * a db migration to fix all completedChallenges
  *
  */
-import { Observable } from 'rx';
-import { isEmpty, pick, omit, find, uniqBy } from 'lodash';
 import debug from 'debug';
 import dedent from 'dedent';
+import { isEmpty, pick, omit, find, uniqBy } from 'lodash';
 import { ObjectID } from 'mongodb';
+import { Observable } from 'rx';
 import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
 
-import { ifNoUserSend } from '../utils/middleware';
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
+import { ifNoUserSend } from '../utils/middleware';
 import {
   getRedirectParams,
-  getRedirectBase,
-  normalizeParams
+  normalizeParams,
+  getPrefixedLandingPath
 } from '../utils/redirection';
 
 const log = debug('fcc:boot:challenges');
@@ -83,11 +83,9 @@ export function buildUserUpdate(
   if (jsProjects.includes(challengeId)) {
     completedChallenge = {
       ..._completedChallenge,
-      files: Object.keys(files)
-        .map(key => files[key])
-        .map(file =>
-          pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext'])
-        )
+      files: files.map(file =>
+        pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext'])
+      )
     };
   } else {
     completedChallenge = omit(_completedChallenge, ['files']);
@@ -286,7 +284,7 @@ function projectCompleted(req, res, next) {
         })
       );
       return Observable.fromPromise(updatePromise).doOnNext(() => {
-        return res.send({
+        return res.json({
           alreadyCompleted,
           points: alreadyCompleted ? user.points : user.points + 1,
           completedDate: completedChallenge.completedDate
@@ -320,7 +318,7 @@ function backendChallengeCompleted(req, res, next) {
         })
       );
       return Observable.fromPromise(updatePromise).doOnNext(() => {
-        return res.send({
+        return res.json({
           alreadyCompleted,
           points: alreadyCompleted ? user.points : user.points + 1,
           completedDate: completedChallenge.completedDate
@@ -341,7 +339,7 @@ export function createRedirectToCurrentChallenge(
     const { user } = req;
     const { origin, pathPrefix } = getRedirectParams(req, normalizeParams);
 
-    const redirectBase = getRedirectBase(origin, pathPrefix);
+    const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
     if (!user) {
       return res.redirect(redirectBase + '/learn');
     }

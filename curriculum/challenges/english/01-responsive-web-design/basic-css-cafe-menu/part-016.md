@@ -7,14 +7,22 @@ dashedName: part-16
 
 # --description--
 
-Now that you have the CSS in the `styles.css` file, go ahead and remove the `style` element and all its content. Once it is removed, the text that as centered, will shift back to the left.
+Now that you have the CSS in the `styles.css` file, go ahead and remove the `style` element and all its content. Once it is removed, the text that was centered will shift back to the left.
 
 # --hints--
 
-Test 1
+You should not have any `style` tags in your code.
 
 ```js
+assert(!code.match(/style/i));
+```
 
+You should not have any CSS selectors in your HTML file.
+
+```js
+const html = code.split('<!DOCTYPE html>')[1];
+assert(!html.includes('style'));
+assert(!html.includes('text-align'));
 ```
 
 # --seed--
@@ -42,7 +50,7 @@ Test 1
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>

@@ -58,10 +58,10 @@ assert(typeof Animal.prototype.bark == 'undefined');
 assert(typeof Dog.prototype.eat == 'function');
 ```
 
-`Dog` debe tener el método `bark()` como una propiedad propia `own`.
+El prototipo `Dog` debe tener un método `bark()`.
 
 ```js
-assert(Dog.prototype.hasOwnProperty('bark'));
+assert('bark' in Dog.prototype);
 ```
 
 `beagle` debe ser una instancia de (`instanceof`) `Animal`.

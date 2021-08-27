@@ -53,14 +53,12 @@ export const mockCancellationHook = {
     },
     links: [
       {
-        href:
-          'https://api.sandbox.paypal.com/v1/notifications/webhooks-events/WH-1VF24938EU372274X-83540367M0110254R',
+        href: 'https://api.sandbox.paypal.com/v1/notifications/webhooks-events/WH-1VF24938EU372274X-83540367M0110254R',
         rel: 'self',
         method: 'GET'
       },
       {
-        href:
-          'https://api.sandbox.paypal.com/v1/notifications/webhooks-events/WH-1VF24938EU372274X-83540367M0110254R/resend',
+        href: 'https://api.sandbox.paypal.com/v1/notifications/webhooks-events/WH-1VF24938EU372274X-83540367M0110254R/resend',
         rel: 'resend',
         method: 'POST'
       }
@@ -156,32 +154,27 @@ export const mockActivationHook = {
       },
       links: [
         {
-          href:
-            'https://api.paypal.com/v1/billing/subscriptions/I-BW452GLLEP1G',
+          href: 'https://api.paypal.com/v1/billing/subscriptions/I-BW452GLLEP1G',
           rel: 'self',
           method: 'GET'
         },
         {
-          href:
-            'https://api.paypal.com/v1/billing/subscriptions/I-BW452GLLEP1G',
+          href: 'https://api.paypal.com/v1/billing/subscriptions/I-BW452GLLEP1G',
           rel: 'edit',
           method: 'PATCH'
         },
         {
-          href:
-            'https://api.paypal.com/v1/billing/subscriptions/I-BW452GLLEP1G/suspend',
+          href: 'https://api.paypal.com/v1/billing/subscriptions/I-BW452GLLEP1G/suspend',
           rel: 'suspend',
           method: 'POST'
         },
         {
-          href:
-            'https://api.paypal.com/v1/billing/subscriptions/I-BW452GLLEP1G/cancel',
+          href: 'https://api.paypal.com/v1/billing/subscriptions/I-BW452GLLEP1G/cancel',
           rel: 'cancel',
           method: 'POST'
         },
         {
-          href:
-            'https://api.paypal.com/v1/billing/subscriptions/I-BW452GLLEP1G/capture',
+          href: 'https://api.paypal.com/v1/billing/subscriptions/I-BW452GLLEP1G/capture',
           rel: 'capture',
           method: 'POST'
         }
@@ -194,15 +187,13 @@ export const mockActivationHook = {
     },
     links: [
       {
-        href:
-          'https://api.paypal.com/v1/notifications/webhooks-events/WH-77687562XN25889J8-8Y6T55435R66168T6',
+        href: 'https://api.paypal.com/v1/notifications/webhooks-events/WH-77687562XN25889J8-8Y6T55435R66168T6',
         rel: 'self',
         method: 'GET',
         encType: 'application/json'
       },
       {
-        href:
-          'https://api.paypal.com/v1/notifications/webhooks-events/WH-77687562XN25889J8-8Y6T55435R66168T6/resend',
+        href: 'https://api.paypal.com/v1/notifications/webhooks-events/WH-77687562XN25889J8-8Y6T55435R66168T6/resend',
         rel: 'resend',
         method: 'POST',
         encType: 'application/json'

@@ -1,8 +1,10 @@
-const env = require('../config/env');
-const webpack = require('webpack');
-
 const { createFilePath } = require('gatsby-source-filesystem');
+// TODO: ideally we'd remove lodash and just use lodash-es, but we can't require
+// es modules here.
 const uniq = require('lodash/uniq');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const webpack = require('webpack');
+const env = require('../config/env.json');
 
 const { blockNameify } = require('../utils/block-nameify');
 const {
@@ -56,10 +58,11 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
       throw new Error('Stripe public key is required to start the client!');
     } else {
       reporter.info(
-        'Stripe public key missing or invalid. Required for donations.'
+        'Stripe public key is missing or invalid. Required for Stripe integration.'
       );
     }
   }
+
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -132,32 +135,29 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
         );
 
         // Create intro pages
+        // TODO: Remove allMarkdownRemark (populate from elsewhere)
         result.data.allMarkdownRemark.edges.forEach(edge => {
           const {
             node: { frontmatter, fields }
           } = edge;
 
           if (!fields) {
-            return null;
+            return;
           }
           const { slug, nodeIdentity } = fields;
           if (slug.includes('LICENCE')) {
-            return null;
+            return;
           }
           try {
             if (nodeIdentity === 'blockIntroMarkdown') {
-              if (!blocks.some(block => block === frontmatter.block)) {
-                return null;
+              if (!blocks.includes(frontmatter.block)) {
+                return;
               }
-            } else if (
-              !superBlocks.some(
-                superBlock => superBlock === frontmatter.superBlock
-              )
-            ) {
-              return null;
+            } else if (!superBlocks.includes(frontmatter.superBlock)) {
+              return;
             }
             const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-            return pageBuilder(edge);
+            pageBuilder(edge);
           } catch (e) {
             console.log(`
             ident: ${nodeIdentity} does not belong to a function
@@ -167,7 +167,6 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
 
             `);
           }
-          return null;
         });
 
         return null;
@@ -176,16 +175,8 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
   });
 };
 
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
-
-exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   const newPlugins = [
-    plugins.define({
-      HOME_PATH: JSON.stringify(
-        process.env.HOME_PATH || 'http://localhost:3000'
-      ),
-      STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
-    }),
     // We add the shims of the node globals to the global scope
     new webpack.ProvidePlugin({
       Buffer: ['buffer', 'Buffer']
@@ -198,7 +189,9 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   // involved in SSR. Also, if the plugin is used during the 'build-html' stage
   // it overwrites the minfied files with ordinary ones.
   if (stage !== 'build-html') {
-    newPlugins.push(new MonacoWebpackPlugin());
+    newPlugins.push(
+      new MonacoWebpackPlugin({ filename: '[name].worker-[contenthash].js' })
+    );
   }
   actions.setWebpackConfig({
     resolve: {
@@ -230,10 +223,6 @@ exports.onCreateBabelConfig = ({ actions }) => {
       '@freecodecamp/react-bootstrap': {
         transform: '@freecodecamp/react-bootstrap/lib/${member}',
         preventFullImport: true
-      },
-      lodash: {
-        transform: 'lodash/${member}',
-        preventFullImport: true
       }
     }
   });
@@ -255,16 +244,11 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
     type ChallengeNode implements Node {
-      files: ChallengeFile
-    }
-    type ChallengeFile {
-      indexcss: FileContents
-      indexhtml: FileContents
-      indexjs: FileContents
-      indexjsx: FileContents
+      challengeFiles: [FileContents]
+      url: String
     }
     type FileContents {
-      key: String
+      fileKey: String
       ext: String
       name: String
       contents: String

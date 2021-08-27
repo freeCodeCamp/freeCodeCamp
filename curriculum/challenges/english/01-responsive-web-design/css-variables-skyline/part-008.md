@@ -7,14 +7,26 @@ dashedName: part-8
 
 # --description--
 
-It's tough to see now, but there's a border at the edge of your preview, that's the body. Create a `div` element in the body with a class of `background-buildings`. This will be a container for a group of buildings.
+It's tough to see now, but there's a border at the edge of your preview, that's the `body`. Create a `div` element in the `body` with a class of `background-buildings`. This will be a container for a group of buildings.
 
 # --hints--
 
-test-text
+You should create a `div` element.
 
 ```js
-assert($('#display-body')[0].contains($('div.background-buildings')[0]));
+assert.exists(document.querySelector('div'));
+```
+
+Your `div` element should be within the `body`.
+
+```js
+assert(document.querySelector('div')?.parentElement?.localName === 'body');
+```
+
+Your `div` element should have a class of `background-buildings`
+
+```js
+assert([...document.querySelector('div')?.classList]?.includes('background-buildings'));
 ```
 
 # --seed--
@@ -26,48 +38,27 @@ assert($('#display-body')[0].contains($('div.background-buildings')[0]));
 <html>    
   <head>
     <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
-
+--fcc-editable-region--
   <body>
+
   </body>
+--fcc-editable-region--
 </html>
 ```
 
-# --solutions--
+```css
+* {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
-```html
-<!DOCTYPE html>
-<html>    
-  <head>
-    <title>freeCodeCamp Skyline Project</title>
-    <style>
-      * {
-        border: 1px solid black;
-        box-sizing: border-box;
-      }
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-      body {
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="background-buildings"></div>
-  </body>
-</html>
 ```
+

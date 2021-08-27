@@ -1,4 +1,3 @@
-/* global describe it expect beforeEach */
 const simpleAST = require('../__fixtures__/ast-simple.json');
 const mockVideoAST = require('../__fixtures__/ast-video-challenge.json');
 // eslint-disable-next-line max-len

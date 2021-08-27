@@ -11,16 +11,16 @@ dashedName: use-bracket-notation-to-find-the-last-character-in-a-string
 
 In order to get the last letter of a string, you can subtract one from the string's length.
 
-For example, if `var firstName = "Charles"`, you can get the value of the last letter of the string by using `firstName[firstName.length - 1]`.
+For example, if `var firstName = "Ada"`, you can get the value of the last letter of the string by using `firstName[firstName.length - 1]`.
 
 Example:
 
 ```js
-var firstName = "Charles";
+var firstName = "Ada";
 var lastLetter = firstName[firstName.length - 1];
 ```
 
-`lastLetter` would have a value of the string `s`.
+`lastLetter` would have a value of the string `a`.
 
 # --instructions--
 

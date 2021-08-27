@@ -46,7 +46,7 @@ assert(
 应使用 `filter` 方法。
 
 ```js
-assert(code.match(/\.filter/g));
+assert(code.match(/\s*\.\s*filter/g));
 ```
 
 不能使用 `for` 循环。

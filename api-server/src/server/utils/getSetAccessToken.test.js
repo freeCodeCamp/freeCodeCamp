@@ -1,12 +1,11 @@
-/* global describe it expect */
+import jwt from 'jsonwebtoken';
+import { mockReq, mockRes } from '../boot_tests/challenge.test';
 import {
   getAccessTokenFromRequest,
   errorTypes,
   setAccessTokenToResponse,
   removeCookies
 } from './getSetAccessToken';
-import { mockReq, mockRes } from 'sinon-express-mock';
-import jwt from 'jsonwebtoken';
 
 describe('getSetAccessToken', () => {
   const validJWTSecret = 'this is a super secret string';
@@ -130,7 +129,8 @@ describe('getSetAccessToken', () => {
 
       setAccessTokenToResponse({ accessToken }, req, res, validJWTSecret);
 
-      expect(res.cookie.getCall(0).args).toEqual([
+      expect(res.cookie).toHaveBeenNthCalledWith(
+        1,
         'jwt_access_token',
         expectedJWT,
         {
@@ -138,7 +138,7 @@ describe('getSetAccessToken', () => {
           domain,
           maxAge: accessToken.ttl
         }
-      ]);
+      );
     });
   });
 
@@ -152,16 +152,18 @@ describe('getSetAccessToken', () => {
 
       removeCookies(req, res);
 
-      expect(res.clearCookie.getCall(0).args).toEqual([
+      expect(res.clearCookie).toHaveBeenNthCalledWith(
+        1,
         'jwt_access_token',
         jwtOptions
-      ]);
-      expect(res.clearCookie.getCall(1).args).toEqual([
+      );
+      expect(res.clearCookie).toHaveBeenNthCalledWith(
+        2,
         'access_token',
         jwtOptions
-      ]);
-      expect(res.clearCookie.getCall(2).args).toEqual(['userId', jwtOptions]);
-      expect(res.clearCookie.getCall(3).args).toEqual(['_csrf', jwtOptions]);
+      );
+      expect(res.clearCookie).toHaveBeenNthCalledWith(3, 'userId', jwtOptions);
+      expect(res.clearCookie).toHaveBeenNthCalledWith(4, '_csrf', jwtOptions);
     });
   });
 });

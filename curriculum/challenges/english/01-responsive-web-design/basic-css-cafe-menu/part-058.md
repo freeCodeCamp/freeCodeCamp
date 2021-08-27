@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e03d719d5ac4738993
+id: 5f3ef6e05473f91f948724ab
 title: Part 58
 challengeType: 0
 dashedName: part-58
@@ -7,16 +7,23 @@ dashedName: part-58
 
 # --description--
 
-The current width of the menu will always take of 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
+You can change the `font-family` of text, to make it look different from the default font of your browser. Each browser has some common fonts available to it.
 
-Add a `max-width` property to the `menu` class with a value of `500px` to prevent it from growing too wide.
+Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`. This is a fairly common font that is very readable.
 
 # --hints--
 
-Test 1
+You should set the `font-family` property to `sans-serif`.
 
 ```js
+const hasFontFamily = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['font-family'] === 'sans-serif');
+```
 
+Your `body` should have a `font-family` of `sans-serif`.
+
+```js
+const bodyFontFamily = new __helpers.CSSHelp(document).getStyle('body')?.getPropertyValue('font-family');
+assert(bodyFontFamily === 'sans-serif');
 ```
 
 # --seed--
@@ -40,12 +47,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -79,23 +86,24 @@ Test 1
 ```
 
 ```css
+--fcc-editable-region--
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
+--fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
 }
 
---fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+  max-width: 500px;
 }
---fcc-editable-region--
 
 .item p {
   display: inline-block;
@@ -111,4 +119,3 @@ h1, h2, p {
   width: 25%
 }
 ```
-

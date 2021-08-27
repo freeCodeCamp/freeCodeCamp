@@ -19,10 +19,25 @@ Center your `h1` element by setting its `text-align` property to the value `cent
 
 # --hints--
 
-Test 1
+You should have an `h1` selector in your `style` element.
 
 ```js
+const hasSelector = new __helpers.CSSHelp(document).getStyle('h1');
+assert(hasSelector);
+```
 
+Your `text-align` property should set a value of `center`.
+
+```js
+const hasTextAlign = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['text-align'] === 'center');
+assert(hasTextAlign);
+```
+
+Your `h1` selector should set the `text-align` property to `center`.
+
+```js
+const h1TextAlign = new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('text-align');
+assert(h1TextAlign === 'center');
 ```
 
 # --seed--
@@ -47,7 +62,7 @@ Test 1
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>

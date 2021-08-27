@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
-const { availableLangs } = require('../../../../config/i18n/all-langs');
 const { allowedOrigins } = require('../../../../config/cors-settings');
 // homeLocation is being used as a fallback here. If the one provided by the
 // client is invalid we default to this.
-const { homeLocation } = require('../../../../config/env');
+const { homeLocation } = require('../../../../config/env.json');
+const { availableLangs } = require('../../../../config/i18n/all-langs');
 
 function getReturnTo(encryptedParams, secret, _homeLocation = homeLocation) {
   let params;
@@ -50,10 +50,7 @@ function normalizeParams(
   return { returnTo, origin, pathPrefix };
 }
 
-// TODO: tests!
-// TODO: ensure origin and pathPrefix validation happens first
-// (it needs a dedicated function that can be called from here and getReturnTo)
-function getRedirectBase(origin, pathPrefix) {
+function getPrefixedLandingPath(origin, pathPrefix) {
   const redirectPathSegment = pathPrefix ? `/${pathPrefix}` : '';
   return `${origin}${redirectPathSegment}`;
 }
@@ -66,18 +63,18 @@ function getRedirectParams(req, _normalizeParams = normalizeParams) {
   const origin = returnUrl.origin;
   // if this is not one of the client languages, validation will convert
   // this to '' before it is used.
-  const pathPrefix = returnUrl.pathname.split('/')[0];
+  const pathPrefix = returnUrl.pathname.split('/')[1];
   return _normalizeParams({ returnTo: returnUrl.href, origin, pathPrefix });
 }
 
-function isRootPath(redirectBase, returnUrl) {
+function haveSamePath(redirectBase, returnUrl) {
   const base = new URL(redirectBase);
   const url = new URL(returnUrl);
   return base.pathname === url.pathname;
 }
 
 module.exports.getReturnTo = getReturnTo;
-module.exports.getRedirectBase = getRedirectBase;
+module.exports.getPrefixedLandingPath = getPrefixedLandingPath;
 module.exports.normalizeParams = normalizeParams;
 module.exports.getRedirectParams = getRedirectParams;
-module.exports.isRootPath = isRootPath;
+module.exports.haveSamePath = haveSamePath;

@@ -14,7 +14,7 @@ Puedes convertir elementos en enlaces, anidándolos dentro de un elemento `a`.
 Anida tu imagen dentro de un elemento `a`. A continuación, te presentamos un ejemplo:
 
 ```html
-<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."></a>
+<a href="#"><img src="https://www.bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."></a>
 ```
 
 Recuerda usar `#` como propiedad `href` de tu elemento `a` para convertirlo en un enlace muerto.
@@ -58,7 +58,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
@@ -72,7 +72,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>

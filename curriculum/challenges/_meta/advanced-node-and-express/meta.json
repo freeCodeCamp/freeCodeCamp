@@ -7,7 +7,7 @@
   "template": "",
   "required": [],
   "superBlock": "quality-assurance",
-  "superOrder": 6,
+  "superOrder": 7,
   "challengeOrder": [
     [
       "5895f700f9fc0f352b528e63",
@@ -97,7 +97,4 @@
       "589fc832f9fc0f352b528e79",
       "Send and Display Chat Messages"
     ]
-  ],
-  "helpRoom": "Help",
-  "fileName": "06-information-security-and-quality-assurance/advanced-express-tools.json"
-}
+  ]}

@@ -1,5 +1,5 @@
-const findIndex = require('lodash/findIndex');
 const Joi = require('joi');
+const findIndex = require('lodash/findIndex');
 Joi.objectId = require('joi-objectid')(Joi);
 
 const schema = Joi.objectId();
@@ -10,7 +10,7 @@ class MongoIds {
   }
   check(id, title) {
     try {
-      Joi.validate(id, schema);
+      schema.validate(id);
     } catch {
       throw new Error(`Expected a valid ObjectId for ${title}, but got ${id}`);
     }

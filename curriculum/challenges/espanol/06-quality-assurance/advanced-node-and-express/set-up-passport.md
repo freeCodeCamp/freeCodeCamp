@@ -10,9 +10,9 @@ dashedName: set-up-passport
 
 It's time to set up *Passport* so we can finally start allowing a user to register or login to an account! In addition to Passport, we will use Express-session to handle sessions. Using this middleware saves the session id as a cookie in the client and allows us to access the session data using that id on the server. This way we keep personal account information out of the cookie used by the client to verify to our server they are authenticated and just keep the *key* to access the data stored on the server.
 
-To set up Passport for use in your project, you will need to add it as a dependency first in your package.json. `"passport": "^0.3.2"`
+To set up Passport for use in your project, you will need to add it as a dependency first in your package.json. `passport@~0.4.1`
 
-In addition, add Express-session as a dependency now as well. Express-session has a ton of advanced features you can use but for now we're just going to use the basics! `"express-session": "^1.15.0"`
+In addition, add Express-session as a dependency now as well. Express-session has a ton of advanced features you can use but for now we're just going to use the basics! `express-session@~1.17.1`
 
 You will need to set up the session settings now and initialize Passport. Be sure to first create the variables 'session' and 'passport' to require 'express-session' and 'passport' respectively.
 

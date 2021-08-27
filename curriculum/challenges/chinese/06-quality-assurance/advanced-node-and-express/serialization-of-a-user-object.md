@@ -12,7 +12,7 @@ dashedName: serialization-of-a-user-object
 
 我们需要用到序列化和反序列化的方法来进行配置。 passport 为我们提供了 `passport.serializeUser( OURFUNCTION )` 和 `passport.deserializeUser( OURFUNCTION )` 两个方法。
 
-`serializeUser` 方法接收两个参数，分别是表示用户的对象和一个回调函数。 其中，回调函数的返回值应为这个用户的唯一标识符：最简单的写法就是让它返回用户的 `_id`。 这个属性是 MongoDB 为用户创建的唯一字段。 类似地，`deserializeUser` 也接收两个参数，分别是在序列化时生成的标识符以及一个回调函数。在回调函数里，我们需要根据根据传入的标识符（比如 \_id）返回表示用户的对象。 为了在 MongoDB 中通过 query（查询语句）获取 `_id` 字段，首先我们需要创建 `const ObjectID = require('mongodb').ObjectID;`；然后调用它：`new ObjectID(THE_ID)`。 当然，这一切的前提都是先引入 MongoDB 作为依赖。 你可以在下面的例子中看到：
+`serializeUser` 方法接收两个参数，分别是表示用户的对象和一个回调函数。 其中，回调函数的返回值应为这个用户的唯一标识符：最简单的写法就是让它返回用户的 `_id`。 它应当是唯一的，是由 MongoDB 产生的。 类似地，`deserializeUser` 也接收两个参数，分别是在序列化时生成的标识符以及一个回调函数。在回调函数里，我们需要根据根据传入的标识符（比如 \_id）返回表示用户的对象。 为了在 MongoDB 中通过 query（查询语句）获取 `_id` 字段，首先我们需要创建 `const ObjectID = require('mongodb').ObjectID;`；然后调用它：`new ObjectID(THE_ID)`。 确保添加 `mongodb@~3.6.0` 作为依赖项。 你可以在下面的例子中看到：
 
 ```js
 passport.serializeUser((user, done) => {

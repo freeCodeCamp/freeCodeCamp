@@ -1,9 +1,8 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const {
-  curriculum: curriculumLangs
-} = require('../config/i18n/all-langs').availableLangs;
+const { curriculum: curriculumLangs } =
+  require('../config/i18n/all-langs').availableLangs;
 
 exports.testedLang = function testedLang() {
   if (process.env.CURRICULUM_LOCALE) {

@@ -1,4 +1,3 @@
-/* global describe it expect jest beforeEach */
 const path = require('path');
 
 const lint = require('.');

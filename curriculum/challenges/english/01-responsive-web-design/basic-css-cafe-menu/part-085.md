@@ -1,5 +1,5 @@
 ---
-id: 5f45b4c81cea7763550e40df
+id: 5f45b715301bbf667badc04a
 title: Part 85
 challengeType: 0
 dashedName: part-85
@@ -7,14 +7,24 @@ dashedName: part-85
 
 # --description--
 
-To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked.
+The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu. This is due to the browser having some default top margin for the `h1` element.
+
+Change the top margin of the `h1` element to `0` to remove all the top margin.
 
 # --hints--
 
-Test 1
+You should set the `margin-top` property to `0`.
 
 ```js
+const hasMarginTop = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['margin-top'] === '0px');
+assert(hasMarginTop);
+```
 
+Your `h1` element should have a `margin-top` of `0`.
+
+```js
+const h1MarginTop = new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('margin-top');
+assert(h1MarginTop === '0px');
 ```
 
 # --seed--
@@ -39,12 +49,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -86,14 +96,16 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
 
+--fcc-editable-region--
 h1 {
   font-size: 40px;
 }
+--fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -157,9 +169,8 @@ a {
   color: black;
 }
 
---fcc-editable-region--
 a:visited {
-  color: grey;
+  color: black;
 }
 
 a:hover {
@@ -167,8 +178,7 @@ a:hover {
 }
 
 a:active {
-  color: white;
+  color: brown;
 }
---fcc-editable-region--
 ```
 

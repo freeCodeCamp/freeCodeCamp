@@ -1,6 +1,6 @@
 import { createAction, handleActions } from 'redux-actions';
 
-import { createTypes } from '../../../utils/createTypes';
+import { createTypes } from '../../../utils/create-types';
 
 export const ns = 'search';
 

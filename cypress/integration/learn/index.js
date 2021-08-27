@@ -1,5 +1,3 @@
-/* global cy expect */
-
 const selectors = {
   challengeMap: "[data-test-label='learn-curriculum-map']"
 };
@@ -13,7 +11,7 @@ const superBlockNames = [
   'JavaScript Algorithms and Data Structures Certification',
   'Front End Development Libraries Certification',
   'Data Visualization Certification',
-  'APIs and Microservices Certification',
+  'Back End Development and APIs Certification',
   'Quality Assurance Certification',
   'Scientific Computing with Python Certification',
   'Data Analysis with Python Certification',
@@ -54,8 +52,7 @@ describe('Learn Landing page (not logged in)', () => {
 
 describe('Quotes', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.contains("Get started (it's free)").click();
+    cy.login();
   });
 
   it('Should show a quote', () => {
@@ -73,8 +70,7 @@ describe('Quotes', () => {
 
 describe('Superblocks and Blocks', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.contains("Get started (it's free)").click();
+    cy.login();
   });
 
   it('Has all superblocks visible', () => {

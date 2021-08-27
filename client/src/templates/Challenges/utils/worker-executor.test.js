@@ -1,4 +1,6 @@
-/* global expect, jest */
+/**
+ * @jest-environment node
+ */
 
 import createWorker from './worker-executor';
 

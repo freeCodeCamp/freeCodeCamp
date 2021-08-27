@@ -40,7 +40,7 @@ assert(
 `nonMutatingSort(globalArray)` should not be hard coded.
 
 ```js
-assert(!nonMutatingSort.toString().match(/[23569]/g));
+assert(!nonMutatingSort.toString().match(/\[.*?[23569].*?\]/gs));
 ```
 
 The function should return a new array, not the array passed to it.

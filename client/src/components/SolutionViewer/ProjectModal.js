@@ -1,19 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import SolutionViewer from './SolutionViewer';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import SolutionViewer from './SolutionViewer';
 
 const propTypes = {
-  files: PropTypes.arrayOf(
-    PropTypes.shape({
-      contents: PropTypes.string,
-      ext: PropTypes.string,
-      key: PropTypes.string,
-      name: PropTypes.string,
-      path: PropTypes.string
-    })
-  ),
+  challengeFiles: PropTypes.array,
+  // TODO: removed once refactored to TS
+  //   PropTypes.shape({
+  //     contents: PropTypes.string,
+  //     ext: PropTypes.string,
+  //     key: PropTypes.string,
+  //     name: PropTypes.string,
+  //     path: PropTypes.string
+  //   })
+  // ),
   handleSolutionModalHide: PropTypes.func,
   isOpen: PropTypes.bool,
   projectTitle: PropTypes.string,
@@ -24,7 +25,7 @@ const ProjectModal = props => {
   const {
     isOpen,
     projectTitle,
-    files,
+    challengeFiles,
     solution,
     handleSolutionModalHide
   } = props;
@@ -44,7 +45,7 @@ const ProjectModal = props => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <SolutionViewer files={files} solution={solution} />
+        <SolutionViewer challengeFiles={challengeFiles} solution={solution} />
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={handleSolutionModalHide}>{t('buttons.close')}</Button>

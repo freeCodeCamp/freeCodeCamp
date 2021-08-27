@@ -12,7 +12,7 @@ dashedName: use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-p
 
 # --instructions--
 
-已经定义了一个函数 `squareList`。 你需要使用 `map()`，`filter()` 和 `reduce()` 的任意组合来完成 `squareList` 函数的代码。当传入一个实数数组时，返回一个*仅*包含正整数（小数不是整数）的平方的新数组。 仅包含实数字的数组示例是 `[-3, 4.8, 5, 3, -3.2]`。
+使用 `map()`、`filter()` 和 `reduce()` 的任何组合完成 `squareList` 函数的代码。 传递一个包含实数的数组给函数时，函数应返回一个新的数组，*只*包含正整数（小数不是整数）的平方值， 例如 `[-3, 4.8, 5, 3, -3.2]` 这样一个包含实数的数组。
 
 **注意：** 函数不应该包含任何形式的 `for` 或者 `while` 循环或者 `forEach()` 函数。
 
@@ -28,7 +28,7 @@ assert.typeOf(squareList, 'function'),
 不应该使用 `for`、`while` 或者 `forEach`。
 
 ```js
-assert(!__helpers.removeJSComments(code).match(/for|while|forEach/g));
+assert(!code.match(/for|while|forEach/g));
 ```
 
 应该使用 `map`、`filter` 或者 `reduce`。
@@ -36,7 +36,7 @@ assert(!__helpers.removeJSComments(code).match(/for|while|forEach/g));
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(__helpers.removeJSComments(code))
+    .removeWhiteSpace(code)
     .match(/\.(map|filter|reduce)\(/g)
 );
 ```

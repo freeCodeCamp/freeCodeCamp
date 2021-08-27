@@ -1,6 +1,6 @@
 ---
 id: 5e6a54af58d3af90110a60a1
-title: 'Introduction: Hardware Architecture'
+title: '导言：硬件架构'
 challengeType: 11
 videoId: H6qtjRTfSog
 dashedName: introduction-hardware-architecture
@@ -10,19 +10,19 @@ dashedName: introduction-hardware-architecture
 
 ## --text--
 
-Where are your programs stored when they are running?
+当你的程序运作时，它被存储在哪里？
 
 ## --answers--
 
-Hard Drive.
+硬盘。
 
 ---
 
-Memory.
+内存。
 
 ---
 
-Central Processing Unit.
+中央处理器。
 
 ## --video-solution--
 

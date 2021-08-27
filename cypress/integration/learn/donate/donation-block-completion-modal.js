@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Donate page', () => {
   before(() => {
     cy.clearCookies();

@@ -8,7 +8,8 @@ const amountsConfig = {
   onetime: [2500, 5000, 7500, 10000, 15000]
 };
 const defaultAmount = {
-  month: 500
+  month: 500,
+  onetime: 7500
 };
 const defaultDonation = {
   donationAmount: defaultAmount['month'],
@@ -75,7 +76,7 @@ const paypalConfigTypes = {
 
 const paypalConfigurator = (donationAmount, donationDuration, paypalConfig) => {
   if (donationDuration === 'onetime') {
-    return { amount: donationAmount, duration: donationDuration };
+    return { amount: donationAmount, duration: donationDuration, planId: null };
   }
   return {
     amount: donationAmount,

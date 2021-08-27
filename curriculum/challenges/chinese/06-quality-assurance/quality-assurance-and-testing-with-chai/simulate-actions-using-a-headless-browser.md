@@ -7,13 +7,13 @@ dashedName: simulate-actions-using-a-headless-browser
 
 # --description--
 
-请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
+请注意，本项目在[这个 Replit 项目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 在接下来的挑战中，我们将使用名为 “Headless Browser（无头浏览器）” 的设备模拟人与页面的交互。
 
 无头浏览器是没有图形用户界面的 Web 浏览器。 这种工具对于测试网页特别有用，因为它能够以与浏览器相同的方式呈现和理解 HTML、CSS 和 JavaScript。
 
-针对这些挑战，我们使用 Zombie.JS。 它是一个轻量级浏览器，完全基于 JS，而不需要额外的二进制文件来安装。 这个功能使我们可以在 Repl.it 等环境中使用它。 还有许多其他（更强大的）选择。
+针对这些挑战，我们使用 Zombie.JS。 它是一个轻量级浏览器，完全基于 JS，而不需要额外的二进制文件来安装。 这个特性使我们可以在 Replit 等环境中使用它。 还有许多其他（更强大的）选择。
 
 Mocha 允许你在实际测试之前准备一些代码运行的基础。 这可能有助于例如在数据库中创建项目，用于连续测试。
 

@@ -26,11 +26,11 @@ Una vez que el equipo de desarrolladores [`@freeCodeCamp/dev-team`](https://gith
 
 Esta es la versión final que despliega los cambios a nuestras plataformas de producción en freeCodeCamp.org.
 
-#### Pruebas de cambios - Pruebas de Integración y Aceptación del Usuario.
+#### Pruebas de cambios - pruebas de Integración y aceptación del usuario.
 
 Empleamos varios niveles de pruebas de integración y aceptación para verificar la calidad del código. Todas nuestras pruebas se realizan a través de software como [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) y [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
-Contamos con pruebas unitarias para probar nuestras soluciones a los desafíos, las API del Servidor y las interfaces de Usuario. Estas nos ayudan a probar la integración entre diferentes componentes.
+Contamos con pruebas unitarias para probar nuestras soluciones a los desafíos, las API del servidor y las interfaces de usuario. Estas nos ayudan a probar la integración entre diferentes componentes.
 
 > [!NOTE] También estamos en el proceso de redactar pruebas de usuario final que nos ayudarán a replicar escenarios del mundo real, como actualizar un correo electrónico o hacer una llamada a la API o servicios de terceros.
 
@@ -203,7 +203,7 @@ Puedes identificar la versión exacta desplegada visitando los registros de comp
 
 Existen algunas limitaciones y problemas conocidos al utilizar la versión beta de la plataforma.
 
-- #### Todos los datos / progreso personal en estas plataformas beta `NO se guardarán ni se transferirán` a producción.
+- #### All data / personal progress on these beta platforms will NOT be saved or carried over to production.
 
   **Los usuarios de la versión beta tendrán una cuenta separada a la de producción.** La versión beta usa una base de datos físicamente separada de la de producción. Esto nos da la capacidad de prevenir cualquier pérdida accidental de datos o modificaciones. El equipo de desarrollo puede purgar la base de datos en esta versión beta según sea necesario.
 
@@ -483,7 +483,7 @@ pm2 monit
 
 Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding environment variables.
 
-> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
 
@@ -550,25 +550,20 @@ Provisioning VMs with the Code
    cd client
    ```
 
-   ```console
-   git clone https://github.com/freeCodeCamp/client-config.git client
-   cd client
-   ```
-
    Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipeline.
 
    > Todo: This setup needs to move to S3 or Azure Blob storage 
    > 
    > ```console
-   echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
-   chmod +x client-start-primary.sh
-   pm2 delete client-primary
-   pm2 start  ./client-start-primary.sh --name client-primary
-   echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
-   chmod +x client-start-secondary.sh
-   pm2 delete client-secondary
-   pm2 start  ./client-start-secondary.sh --name client-secondary
-```
+   >    echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   >    chmod +x client-start-primary.sh
+   >    pm2 delete client-primary
+   >    pm2 start  ./client-start-primary.sh --name client-primary
+   >    echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   >    chmod +x client-start-secondary.sh
+   >    pm2 delete client-secondary
+   >    pm2 start  ./client-start-secondary.sh --name client-secondary
+   > ```
 
 ### Registro de Eventos y Monitoreo
 
@@ -584,7 +579,7 @@ pm2 monit
 
 Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding environment variables.
 
-> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
 
@@ -840,7 +835,7 @@ pm2 save
 pm2 logs
 ```
 
-> [!DANGER] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
+> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
 
 ## Installing and Updating Azure Pipeline Agents
 

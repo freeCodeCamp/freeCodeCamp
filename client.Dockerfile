@@ -1,4 +1,4 @@
-FROM node:14.16.1-buster AS builder
+FROM node:14.17.5-buster AS builder
 
 # this is a bit clunky, perhaps there's a more concise way of passing in build
 # arguments
@@ -9,9 +9,9 @@ ARG FORUM_LOCATION
 ARG NEWS_LOCATION
 ARG CLIENT_LOCALE
 ARG CURRICULUM_LOCALE
-ARG STRIPE_PUBLIC_KEY
 ARG ALGOLIA_APP_ID
 ARG ALGOLIA_API_KEY
+ARG STRIPE_PUBLIC_KEY
 ARG PAYPAL_CLIENT_ID
 ARG DEPLOYMENT_ENV
 ARG SHOW_UPCOMING_CHANGES
@@ -28,7 +28,7 @@ RUN npm run build:client
 WORKDIR /home/node/config
 RUN git clone https://github.com/freeCodeCamp/client-config.git client
 
-FROM node:14.16.1-alpine
+FROM node:14.17.5-alpine
 RUN npm i -g serve
 USER node
 WORKDIR /home/node

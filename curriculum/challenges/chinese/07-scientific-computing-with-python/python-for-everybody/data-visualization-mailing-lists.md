@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f6a0b6c005b0e76f097
-title: 'Data Visualization: Mailing Lists'
+title: '数据可视化：邮件列表'
 challengeType: 11
 videoId: RYdW660KkaQ
 dashedName: data-visualization-mailing-lists
@@ -8,27 +8,27 @@ dashedName: data-visualization-mailing-lists
 
 # --description--
 
-More resources:
+更多资源：
 
-\- [Exercise: Geodata](https://www.youtube.com/watch?v=KfhslNzopxo)
+\- [练习：Geodata](https://www.youtube.com/watch?v=KfhslNzopxo)
 
-\- [Exercise: Gmane Model](https://www.youtube.com/watch?v=wSpl1-7afAk)
+\- [练习：Gmane 模型](https://www.youtube.com/watch?v=wSpl1-7afAk)
 
-\- [Exercise: Gmane Spider](https://www.youtube.com/watch?v=H3w4lOFBUOI)
+\- [练习：Gmane Spider](https://www.youtube.com/watch?v=H3w4lOFBUOI)
 
-\- [Exercise: Gmane Viz](https://www.youtube.com/watch?v=LRqVPMEXByw)
+\- [练习：Gmane Viz](https://www.youtube.com/watch?v=LRqVPMEXByw)
 
-\- [Exercise: Page Rank](https://www.youtube.com/watch?v=yFRAZBkBDBs)
+\- [练习：Page Rank](https://www.youtube.com/watch?v=yFRAZBkBDBs)
 
-\- [Exercise: Page Spider](https://www.youtube.com/watch?v=sXedPQ_AnWA)
+\- [练习：Page Spider](https://www.youtube.com/watch?v=sXedPQ_AnWA)
 
-\- [Exercise: Page Viz](https://www.youtube.com/watch?v=Fm0hpkxsZoo)
+\- [练习: Page Viz](https://www.youtube.com/watch?v=Fm0hpkxsZoo)
 
 # --question--
 
 ## --text--
 
-Which is a common JavaScript visualization library?
+哪个是常见的 JavaScript 可视化库？
 
 ## --answers--
 

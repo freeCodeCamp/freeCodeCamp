@@ -14,6 +14,5 @@
       "Legacy Front End Certificate"
     ]
   ],
-  "isPrivate": true,
-  "fileName": "12-certificates/legacy-front-end-certificate.json"
+  "isPrivate": true
 }

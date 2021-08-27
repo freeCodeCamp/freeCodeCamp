@@ -1,9 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Spacer } from '../../../components/helpers';
 import { generateIconComponent } from '../../../assets/icons';
+import { Spacer } from '../../../components/helpers';
 
 const propTypes = {
   superBlock: PropTypes.string
@@ -16,7 +16,8 @@ function SuperBlockIntro(props) {
   const superBlockIntroObj = t(`intro:${superBlock}`);
   const {
     title: i18nSuperBlock,
-    intro: superBlockIntroText
+    intro: superBlockIntroText,
+    note: superBlockNoteText
   } = superBlockIntroObj;
 
   return (
@@ -28,6 +29,11 @@ function SuperBlockIntro(props) {
       {superBlockIntroText.map((str, i) => (
         <p key={i}>{str}</p>
       ))}
+      {superBlockNoteText && (
+        <div className='alert alert-info' style={{ marginTop: '2rem' }}>
+          {superBlockNoteText}
+        </div>
+      )}
     </>
   );
 }

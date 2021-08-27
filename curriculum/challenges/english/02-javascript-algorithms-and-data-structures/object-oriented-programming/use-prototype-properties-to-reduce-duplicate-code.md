@@ -12,7 +12,7 @@ Since `numLegs` will probably have the same value for all instances of `Bird`, y
 
 This may not be an issue when there are only two instances, but imagine if there are millions of instances. That would be a lot of duplicated variables.
 
-A better way is to use `Bird’s` `prototype`. Properties in the `prototype` are shared among ALL instances of `Bird`. Here's how to add `numLegs` to the `Bird prototype`:
+A better way is to use the `prototype` of `Bird`. Properties in the `prototype` are shared among ALL instances of `Bird`. Here's how to add `numLegs` to the `Bird prototype`:
 
 ```js
 Bird.prototype.numLegs = 2;
@@ -45,7 +45,7 @@ assert(beagle.numLegs !== undefined);
 assert(typeof beagle.numLegs === 'number');
 ```
 
-`numLegs` should be a `prototype` property not an `own` property.
+`numLegs` should be a `prototype` property not an own property.
 
 ```js
 assert(beagle.hasOwnProperty('numLegs') === false);

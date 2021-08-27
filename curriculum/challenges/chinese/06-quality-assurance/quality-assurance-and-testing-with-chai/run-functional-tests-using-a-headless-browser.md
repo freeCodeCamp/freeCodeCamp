@@ -8,7 +8,7 @@ dashedName: run-functional-tests-using-a-headless-browser
 
 # --description--
 
-请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。 你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
+请注意，本项目在[这个 Replit 项目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 在 HTML 主视图中有一个输入表格。 它发送数据到 `PUT /travellers` 端点，我们在上面的 Ajax 请求中使用。 当请求成功完成时，客户端代码会给 DOM 增加一个包含调用返回信息的 `<div>`。 下面的例子展示了如何使用这个表格：
 
@@ -18,7 +18,7 @@ test('#test - submit the input "surname" : "Polo"', function (done) {
     browser.assert.success();
     browser.assert.text('span#name', 'Marco');
     browser.assert.text('span#surname', 'Polo');
-    browser.assert.element('span#dates', 1);
+    browser.assert.elements('span#dates', 1);
     done();
   });
 }
@@ -119,7 +119,7 @@ test('#test - submit the input "surname" : "Polo"', function (done) {
 (getUserInput) =>
   $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
     (data) => {
-      assert.equal(data.assertions[3].method, 'browser.element');
+      assert.equal(data.assertions[3].method, 'browser.elements');
       assert.match(data.assertions[3].args[0], /('|")span#dates\1/);
       assert.equal(data.assertions[3].args[1], 1);
     },

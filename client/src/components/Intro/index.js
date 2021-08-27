@@ -1,13 +1,13 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
-import { randomQuote } from '../../utils/get-words';
-import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
-import IntroDescription from './components/IntroDescription';
+import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { randomQuote } from '../../utils/get-words';
+import Login from '../Header/components/Login';
+import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
+import CurrentChallengeLink from '../helpers/current-challenge-link';
+import IntroDescription from './components/IntroDescription';
 
 import './intro.css';
-import Login from '../Header/components/Login';
 
 const propTypes = {
   complete: PropTypes.bool,
@@ -48,9 +48,6 @@ function Intro({
         </h1>
         <Spacer />
         <FullWidthRow>
-          <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-            {t('buttons.update-settings')}
-          </Link>
           {completedChallengeCount > 0 ? (
             <CurrentChallengeLink isLargeBtn={true}>
               {t('buttons.current-challenge')}
@@ -59,6 +56,15 @@ function Intro({
             ''
           )}
         </FullWidthRow>
+        <Spacer />
+        <div className='text-center'>
+          <Trans i18nKey='learn.coder-survey'>
+            <a href='https://www.freecodecamp.org/news/2021-new-coder-survey/'>
+              Take the 2021 New Coder Survey
+            </a>{' '}
+            (it takes about 10 minutes – do it for science)
+          </Trans>
+        </div>
         <Spacer />
         <div className='text-center quote-partial'>
           <blockquote className='blockquote'>

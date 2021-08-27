@@ -1,9 +1,6 @@
-/* global cy */
-
 describe('Username input field', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.contains("Get started (it's free)").click({ force: true });
+    cy.login();
     cy.visit('/settings');
 
     // Setting aliases here
@@ -121,7 +118,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('Quincy Larson', { force: true });
 
-    cy.contains('Username "quincy larson" contains invalid characters')
+    cy.contains('Username "Quincy Larson" contains invalid characters')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
@@ -197,5 +194,23 @@ describe('Username input field', () => {
     cy.contains('Account Settings for symbol').should('be.visible');
 
     cy.resetUsername();
+  });
+  it('Should show warning if username includes uppercase characters', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('QuincyLarson', { force: true });
+
+    cy.contains('Username "QuincyLarson" must be lowercase')
+      .should('be.visible')
+      .should('have.attr', 'role', 'alert')
+      .should('have.class', 'alert alert-danger');
+  });
+
+  it('Should not be able to click the `Save` button if username includes uppercase characters', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('QuincyLarson', { force: true });
+
+    cy.get('@usernameForm').contains('Save').should('be.disabled');
   });
 });

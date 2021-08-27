@@ -5,7 +5,7 @@ const { forumLocation } = envData;
 export function getGuideUrl({ forumTopicId, title = '' }) {
   title = encodeURIComponent(title);
   return forumTopicId
-    ? `${forumLocation}/t/${forumTopicId}`
+    ? `https://forum.freecodecamp.org/t/${forumTopicId}`
     : `${forumLocation}/search?q=${title}%20in%3Atitle%20order%3Aviews`;
 }
 
@@ -17,11 +17,11 @@ export function isGoodXHRStatus(status) {
 export function transformEditorLink(url) {
   return url
     .replace(
-      /(?<=\/\/)(?<projectname>[^.]+)\.(?<username>[^.]+)\.repl\.co\/?/,
-      'replit.com/@$<username>/$<projectname>'
+      /(\/\/)(?<projectname>[^.]+)\.(?<username>[^.]+)\.repl\.co\/?/,
+      '//replit.com/@$<username>/$<projectname>'
     )
     .replace(
-      /(?<=\/\/)(?<projectname>[^.]+)\.glitch\.me\/?/,
-      'glitch.com/edit/#!/$<projectname>'
+      /(\/\/)(?<projectname>[^.]+)\.glitch\.me\/?/,
+      '//glitch.com/edit/#!/$<projectname>'
     );
 }

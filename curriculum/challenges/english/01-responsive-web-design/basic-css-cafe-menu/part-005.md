@@ -7,14 +7,38 @@ dashedName: part-5
 
 # --description--
 
-The name of the cafe is `Camper Cafe`. Add an `h1` element with the name of the cafe in capitalized letters to make it stand out.
+The name of the cafe is `CAMPER CAFE`. Add an `h1` element within your `body` element. Give it the name of the cafe in capitalized letters to make it stand out.
 
 # --hints--
 
-Test 1
+You should have an opening `<h1>` tag.
 
 ```js
+assert(code.match(/<h1>/i));
+```
 
+You should have a closing `</h1>` tag.
+
+```js
+assert(code.match(/<\/h1>/i));
+```
+
+You should not change your existing `body` element.
+
+```js
+assert($('body').length === 1);
+```
+
+Your `h1` element should be nested in your `body` element.
+
+```js
+assert($('h1')[0].parentElement.tagName === "BODY");
+```
+
+Your `h1` element should have the text `CAMPER CAFE`.
+
+```js
+assert(code.match(/<h1>CAMPER CAFE<\/h1>/));
 ```
 
 # --seed--
@@ -34,4 +58,3 @@ Test 1
 --fcc-editable-region--
 <html>
 ```
-

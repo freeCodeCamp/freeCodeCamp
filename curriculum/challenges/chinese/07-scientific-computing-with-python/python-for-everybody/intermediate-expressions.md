@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f050b6c005b0e76f057
-title: Intermediate Expressions
+title: 中间表达式
 challengeType: 11
 videoId: dKgUaIa5ATg
 dashedName: intermediate-expressions
@@ -8,17 +8,17 @@ dashedName: intermediate-expressions
 
 # --description--
 
-More resources:
+更多资源：
 
-\- [Exercise 1](https://youtu.be/t_4DPwsaGDY)
+\- [练习 1](https://youtu.be/t_4DPwsaGDY)
 
-\- [Exercise 2](https://youtu.be/wgkC8SxraAQ)
+\- [练习 2](https://youtu.be/wgkC8SxraAQ)
 
 # --question--
 
 ## --text--
 
-What will print out after running this code:
+这些代码运作之后会打印出什么：
 
 ```python
 width = 15

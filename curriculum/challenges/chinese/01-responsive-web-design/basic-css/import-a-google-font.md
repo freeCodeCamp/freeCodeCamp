@@ -40,7 +40,7 @@ GENERIC_NAME 是可选的，它用来指明在其他字体不可用时的后备�
 应引入 `Lobster` 字体。
 
 ```js
-assert(new RegExp('googleapis', 'gi').test(code));
+assert($('link[href*="googleapis" i]').length);
 ```
 
 `h2` 元素应使用 `Lobster` 字体。
@@ -57,7 +57,7 @@ assert(
 
 ```js
 assert(
-  /\s*[^\.]h2\s*\{\s*font-family\:\s*(['"]?)Lobster\1\s*(;\s*\}|\})/gi.test(
+  /\s*[^\.]h2\s*\{\s*font-family\s*:\s*('|"|)Lobster\1\s*(,\s*('|"|)[a-z -]+\3\s*)?(;\s*\}|\})/gi.test(
     code
   )
 );

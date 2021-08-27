@@ -15,7 +15,7 @@ Esto también es útil cuando estás cambiando el comportamiento de un enlace us
 
 # --instructions--
 
-El valor actual del atributo `href` es un enlace que apunta a "`https://freecatphotoapp.com`". Reemplaza el valor del atributo `href` por un `#` (también conocido como símbolo hash, numeral o almohadilla) para crear un enlace muerto.
+El valor actual del atributo `href` es un enlace que apunta a "`https://www.freecatphotoapp.com`". Reemplaza el valor del atributo `href` por un `#` (también conocido como símbolo hash, numeral o almohadilla) para crear un enlace muerto.
 
 Por ejemplo: `href="#"`
 
@@ -34,9 +34,9 @@ assert($('a').attr('href') === '#');
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+  <p>Click here to view more <a href="https://www.freecatphotoapp.com" target="_blank">cat photos</a>.</p>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
@@ -50,7 +50,7 @@ assert($('a').attr('href') === '#');
 <main>
   <p>Click here to view more <a href="#" target="_blank">cat photos</a>.</p>
 
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  <img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>

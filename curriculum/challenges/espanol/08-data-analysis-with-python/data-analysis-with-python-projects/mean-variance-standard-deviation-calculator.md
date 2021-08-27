@@ -2,6 +2,7 @@
 id: 5e46f7e5ac417301a38fb928
 title: Mean-Variance-Standard Deviation Calculator
 challengeType: 10
+forumTopicId: 462366
 dashedName: mean-variance-standard-deviation-calculator
 ---
 
@@ -9,7 +10,7 @@ dashedName: mean-variance-standard-deviation-calculator
 
 Create a function that uses Numpy to output the mean, variance, and standard deviation of the rows, columns, and elements in a 3 x 3 matrix.
 
-You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator).
+You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator).
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 

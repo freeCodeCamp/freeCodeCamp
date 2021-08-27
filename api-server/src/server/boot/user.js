@@ -1,19 +1,19 @@
-import dedent from 'dedent';
 import debugFactory from 'debug';
+import dedent from 'dedent';
+import { body } from 'express-validator';
 import { pick } from 'lodash';
 import { Observable } from 'rx';
-import { body } from 'express-validator';
 
+import { fixCompletedChallengeItem } from '../../common/utils';
+import { removeCookies } from '../utils/getSetAccessToken';
+import { ifNoUser401, ifNoUserRedirectHome } from '../utils/middleware';
 import {
   getProgress,
   normaliseUserFields,
   userPropsForSession
 } from '../utils/publicUserProps';
-import { fixCompletedChallengeItem } from '../../common/utils';
-import { ifNoUser401, ifNoUserRedirectHome } from '../utils/middleware';
-import { removeCookies } from '../utils/getSetAccessToken';
-import { trimTags } from '../utils/validators';
 import { getRedirectParams } from '../utils/redirection';
+import { trimTags } from '../utils/validators';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -185,7 +185,7 @@ function postResetProgress(req, res, next) {
       if (err) {
         return next(err);
       }
-      return res.sendStatus(200);
+      return res.status(200).json({});
     }
   );
 }
@@ -199,7 +199,7 @@ function createPostDeleteAccount(app) {
       }
       req.logout();
       removeCookies(req, res);
-      return res.sendStatus(200);
+      return res.status(200).json({});
     });
   };
 }

@@ -1,22 +1,20 @@
-/* global describe it expect afterAll  */
 import moment from 'moment-timezone';
-import sinon from 'sinon';
 
+import { mockUserID, mockApp, mockUser } from '../boot_tests/fixtures';
 import {
   prepUniqueDaysByHours,
   calcCurrentStreak,
   calcLongestStreak,
   getUserById
 } from './user-stats';
-import { mockUserID, mockApp, mockUser } from '../boot_tests/fixtures';
 
-// setting now to 2016-02-03T11:00:00 (PST)
-const clock = sinon.useFakeTimers(1454526000000);
+jest.useFakeTimers('modern');
 const PST = 'America/Los_Angeles';
 
 describe('user stats', () => {
-  afterAll(() => {
-    clock.restore();
+  beforeEach(() => {
+    // setting now to 2016-02-03T11:00:00 (PST)
+    jest.setSystemTime(1454526000000);
   });
 
   describe('prepUniqueDaysByHours', () => {
@@ -595,7 +593,7 @@ describe('user stats', () => {
 
     it('resolves a user for a given id', done => {
       expect.assertions(7);
-      return getUserById(mockUserID, mockApp.models.User)
+      getUserById(mockUserID, mockApp.models.User)
         .then(user => {
           expect(user).toEqual(mockUser);
 

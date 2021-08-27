@@ -30,13 +30,21 @@ Set the `width` of the `h2` tag to 80% of the viewport's width and the `width` o
 Your `h2` tag should have a `width` of 80vw.
 
 ```js
-assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g));
+assert(
+  __helpers
+    .removeCssComments(code)
+    .match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g)
+);
 ```
 
 Your `p` tag should have a `width` of 75vmin.
 
 ```js
-assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g));
+assert(
+  __helpers
+    .removeCssComments(code)
+    .match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g)
+);
 ```
 
 # --seed--

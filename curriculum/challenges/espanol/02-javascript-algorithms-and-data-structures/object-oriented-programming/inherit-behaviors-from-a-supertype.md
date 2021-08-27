@@ -17,7 +17,7 @@ Animal.prototype.eat = function() {
 };
 ```
 
-Este desafío y el siguiente cubrirán como reutilizar los métodos de `Animal's` dentro de `Bird` y `Dog` sin tener que definirlos otra vez. Se utiliza una técnica llamada herencia. Este desafío cubre el primer paso: crear una instancia del `supertype` (o objecto padre). Ya conoces una forma de crear una instancia de `Animal` utilizando el operador `new`:
+Este desafío y el siguiente cubrirán como reutilizar los métodos de `Animal` dentro de `Bird` y `Dog` sin tener que definirlos otra vez. Se utiliza una técnica llamada herencia. Este desafío cubre el primer paso: crear una instancia del `supertype` (o objecto padre). Ya conoces una forma de crear una instancia de `Animal` utilizando el operador `new`:
 
 ```js
 let animal = new Animal();
@@ -29,7 +29,7 @@ Hay algunas desventajas cuando se utiliza esta sintaxis para la herencia, pero s
 let animal = Object.create(Animal.prototype);
 ```
 
-`Object.create(obj)` crea un objeto nuevo y establece `obj` como el `prototype` del nuevo objeto. Recuerda que `prototype` es como la "receta" para crear un objecto. Al establecer el `prototype` de `animal` como el `prototype` de `Animal's`, estás dándole a la instancia `animal` la misma “receta" que a cualquier otra instancia de `Animal`.
+`Object.create(obj)` crea un objeto nuevo y establece `obj` como el `prototype` del nuevo objeto. Recuerda que `prototype` es como la "receta" para crear un objecto. Al establecer el `prototype` de `animal` como el `prototype` de `Animal`, estás dándole a la instancia `animal` la misma “receta" que a cualquier otra instancia de `Animal`.
 
 ```js
 animal.eat();

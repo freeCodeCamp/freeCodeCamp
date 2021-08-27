@@ -27,7 +27,7 @@ Si omites el atributo `value`, los datos del formulario enviado utilizarán el v
 
 # --instructions--
 
-Agrega a cada una de los inputs de tipo `radio` y de tipo `checkbox` el atributo `value`. Usa el texto de input label (etiqueta), en minúsculas, como valor del atributo.
+Agrega a cada una de los inputs de tipo `radio` y de tipo `checkbox` el atributo `value`. No vayas a crear ningún nuevo elemento de tipo radio o tipo checkbox. Usa el texto de input label (etiqueta), en minúsculas, como valor del atributo.
 
 # --hints--
 
@@ -88,7 +88,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -102,7 +102,7 @@ assert(
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="https://freecatphotoapp.com/submit-cat-photo">
+  <form action="https://www.freecatphotoapp.com/submit-cat-photo">
     <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
     <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
@@ -121,7 +121,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -135,7 +135,7 @@ assert(
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="https://freecatphotoapp.com/submit-cat-photo">
+  <form action="https://www.freecatphotoapp.com/submit-cat-photo">
     <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
     <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
     <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving"> Loving</label>

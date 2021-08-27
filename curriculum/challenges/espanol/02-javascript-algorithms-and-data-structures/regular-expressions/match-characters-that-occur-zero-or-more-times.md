@@ -54,7 +54,7 @@ Tu expresión regular `chewieRegex` debe coincidir con 16 caracteres en `chewieQ
 assert(result[0].length === 16);
 ```
 
-Tu expresión regular no debe coincidir con ningún carácter con la cadena `He made a fair move. Screaming about it can't help you.`
+Tu regex no debe coincidir con ningún carácter en la cadena `He made a fair move. Screaming about it can't help you.`
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Tu expresión regular no debe coincidir con ningún carácter con la cadena `Let him have it. It's not wise to upset a Wookiee.`
+Tu regex no debe coincidir con ningún carácter en la cadena `Let him have it. It's not wise to upset a Wookiee.`
 
 ```js
 assert(

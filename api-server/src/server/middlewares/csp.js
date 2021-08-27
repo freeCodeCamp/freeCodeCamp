@@ -1,6 +1,6 @@
 import helmet from 'helmet';
 
-import { homeLocation } from '../../../../config/env';
+import { homeLocation } from '../../../../config/env.json';
 
 let trusted = [
   "'self'",

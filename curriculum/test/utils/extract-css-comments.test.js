@@ -1,4 +1,3 @@
-/* global expect */
 const extractCSSComments = require('./extract-css-comments');
 
 const someHTMLWithCSS = `<body>

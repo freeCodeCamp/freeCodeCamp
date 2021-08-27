@@ -1,3 +1,4 @@
+import protect from '@freecodecamp/loop-protect';
 import {
   attempt,
   cond,
@@ -8,16 +9,19 @@ import {
   overSome,
   partial,
   stubTrue
-} from 'lodash';
-
-import protect from '@freecodecamp/loop-protect';
-
-import * as vinyl from '../../../../../utils/polyvinyl.js';
-import createWorker from '../utils/worker-executor';
+} from 'lodash-es';
 
 // the config files are created during the build, but not before linting
 // eslint-disable-next-line import/no-unresolved
 import sassData from '../../../../../config/client/sass-compile.json';
+import {
+  transformContents,
+  transformHeadTailAndContents,
+  setExt,
+  setImportedFiles,
+  compileHeadTail
+} from '../../../../../utils/polyvinyl';
+import createWorker from '../utils/worker-executor';
 
 const { filename: sassCompile } = sassData;
 
@@ -114,7 +118,7 @@ export const testJS$JSX = overSome(testJS, testJSX);
 export const replaceNBSP = cond([
   [
     testHTML$JS$JSX,
-    partial(vinyl.transformContents, contents => contents.replace(NBSPReg, ' '))
+    partial(transformContents, contents => contents.replace(NBSPReg, ' '))
   ],
   [stubTrue, identity]
 ]);
@@ -142,7 +146,7 @@ const babelTransformer = options => {
         await loadPresetEnv();
         const babelOptions = getBabelOptions(options);
         return partial(
-          vinyl.transformHeadTailAndContents,
+          transformHeadTailAndContents,
           tryTransform(babelTransformCode(babelOptions))
         )(code);
       }
@@ -154,10 +158,10 @@ const babelTransformer = options => {
         await loadPresetReact();
         return flow(
           partial(
-            vinyl.transformHeadTailAndContents,
+            transformHeadTailAndContents,
             tryTransform(babelTransformCode(babelOptionsJSX))
           ),
-          partial(vinyl.setExt, 'js')
+          partial(setExt, 'js')
         )(code);
       }
     ],
@@ -205,26 +209,55 @@ const transformHtml = async function (file) {
   const div = document.createElement('div');
   div.innerHTML = file.contents;
   await Promise.all([transformSASS(div), transformScript(div)]);
-  return vinyl.transformContents(() => div.innerHTML, file);
+  return transformContents(() => div.innerHTML, file);
+};
+
+// Find if the base html refers to the css or js files and record if they do. If
+// the link or script exists we remove those elements since those files don't
+// exist on the site, only in the editor
+const transformIncludes = async function (fileP) {
+  const file = await fileP;
+  const div = document.createElement('div');
+  div.innerHTML = file.contents;
+  const link =
+    div.querySelector('link[href="styles.css"]') ??
+    div.querySelector('link[href="./styles.css"]');
+  const script =
+    div.querySelector('script[src="script.js"]') ??
+    div.querySelector('script[src="./script.js"]');
+  const importedFiles = [];
+  if (link) {
+    importedFiles.push('index.css');
+    link.remove();
+  }
+  if (script) {
+    importedFiles.push('index.js');
+    script.remove();
+  }
+
+  return flow(
+    partial(setImportedFiles, importedFiles),
+    partial(transformContents, () => div.innerHTML)
+  )(file);
 };
 
 export const composeHTML = cond([
   [
     testHTML,
     flow(
-      partial(vinyl.transformHeadTailAndContents, source => {
+      partial(transformHeadTailAndContents, source => {
         const div = document.createElement('div');
         div.innerHTML = source;
         return div.innerHTML;
       }),
-      partial(vinyl.compileHeadTail, '')
+      partial(compileHeadTail, '')
     )
   ],
   [stubTrue, identity]
 ]);
 
 export const htmlTransformer = cond([
-  [testHTML, transformHtml],
+  [testHTML, flow(transformHtml, transformIncludes)],
   [stubTrue, identity]
 ]);
 

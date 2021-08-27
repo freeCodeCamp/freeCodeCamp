@@ -20,7 +20,7 @@ Las funciones que pueden ser asignadas a una variable, pasadas a otra función o
 
 Las funciones que toman una función como argumento o devuelven una función como valor de retorno se llaman <dfn>funciones de orden superior</dfn>.
 
-Cuando las funciones son pasadas a otra función o devueltas desde otra función, entonces esas funciones que se pasan o devuelven pueden llamarse una <dfn>lambda</dfn>.
+Cuando las funciones se pasan o se devuelven desde otra función, las funciones que se pasaron o devolvieron se pueden llamar <dfn>lambda</dfn>.
 
 # --instructions--
 

@@ -1,3 +1,6 @@
+import i18next from 'i18next';
+import { escape } from 'lodash-es';
+import { channel } from 'redux-saga';
 import {
   delay,
   put,
@@ -10,10 +13,17 @@ import {
   take,
   cancel
 } from 'redux-saga/effects';
-import { channel } from 'redux-saga';
-import escape from 'lodash/escape';
-import i18next from 'i18next';
 
+import {
+  buildChallenge,
+  canBuildChallenge,
+  getTestRunner,
+  challengeHasPreview,
+  updatePreview,
+  isJavaScriptChallenge,
+  isLoopProtected
+} from '../utils/build';
+import { actionTypes } from './action-types';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -26,19 +36,8 @@ import {
   updateTests,
   openModal,
   isBuildEnabledSelector,
-  disableBuildOnError,
-  types
+  disableBuildOnError
 } from './';
-
-import {
-  buildChallenge,
-  canBuildChallenge,
-  getTestRunner,
-  challengeHasPreview,
-  updatePreview,
-  isJavaScriptChallenge,
-  isLoopProtected
-} from '../utils/build';
 
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
@@ -52,7 +51,7 @@ export function* executeCancellableChallengeSaga(payload) {
   const task = yield fork(executeChallengeSaga, payload);
   previewTask = yield fork(previewChallengeSaga, { flushLogs: false });
 
-  yield take(types.cancelTests);
+  yield take(actionTypes.cancelTests);
   yield cancel(task);
 }
 
@@ -74,9 +73,9 @@ export function* executeChallengeSaga({
     yield put(initLogs());
     yield put(initConsole(i18next.t('learn.running-tests')));
     // reset tests to initial state
-    const tests = (yield select(
-      challengeTestsSelector
-    )).map(({ text, testString }) => ({ text, testString }));
+    const tests = (yield select(challengeTestsSelector)).map(
+      ({ text, testString }) => ({ text, testString })
+    );
     yield put(updateTests(tests));
 
     yield fork(takeEveryLog, consoleProxy);
@@ -93,7 +92,7 @@ export function* executeChallengeSaga({
     const testRunner = yield call(
       getTestRunner,
       buildData,
-      { proxyLogger },
+      { proxyLogger, removeComments: challengeMeta.removeComments },
       document
     );
     const testResults = yield executeTests(testRunner, tests);
@@ -208,7 +207,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         const document = yield getContext('document');
         yield call(updatePreview, buildData, document, proxyLogger);
       } else if (isJavaScriptChallenge(challengeData)) {
-        const runUserCode = getTestRunner(buildData, { proxyLogger });
+        const runUserCode = getTestRunner(buildData, {
+          proxyLogger,
+          removeComments: challengeMeta.removeComments
+        });
         // without a testString the testRunner just evaluates the user's code
         yield call(runUserCode, null, previewTimeout);
       }

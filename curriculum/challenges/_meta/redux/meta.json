@@ -13,7 +13,7 @@
       "src": "https://cdnjs.cloudflare.com/ajax/libs/redux-thunk/2.2.0/redux-thunk.min.js"
     }
   ],
-  "superBlock": "front-end-libraries",
+  "superBlock": "front-end-development-libraries",
   "superOrder": 3,
   "challengeOrder": [
     [
@@ -84,7 +84,4 @@
       "5a24c314108439a4d403615b",
       "Copy an Object with Object.assign"
     ]
-  ],
-  "helpRoom": "Help",
-  "fileName": "03-front-end-libraries/redux.json"
-}
+  ]}

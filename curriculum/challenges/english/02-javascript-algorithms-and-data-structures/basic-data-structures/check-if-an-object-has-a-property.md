@@ -19,9 +19,17 @@ Both of these would return `true`.
 
 # --instructions--
 
-We've created an object, `users`, with some users in it and a function `isEveryoneHere`, which we pass the `users` object to as an argument. Finish writing this function so that it returns `true` only if the `users` object contains all four names, `Alan`, `Jeff`, `Sarah`, and `Ryan`, as keys, and `false` otherwise.
+Finish writing the function so that it returns true if the object passed to it contains all four names, `Alan`, `Jeff`, `Sarah` and `Ryan` and returns false otherwise.
 
 # --hints--
+
+The `users` object should not be accessed directly
+
+```js 
+
+assert(code.match(/users/gm).length <= 2)
+
+```
 
 The `users` object should only contain the keys `Alan`, `Jeff`, `Sarah`, and `Ryan`
 
@@ -35,13 +43,13 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `true` if `Alan`, `Jeff`, `Sarah`, and `Ryan` are properties on the `users` object
+The function `isEveryoneHere` should return `true` if `Alan`, `Jeff`, `Sarah`, and `Ryan` are properties on the object passed to it. 
 
 ```js
 assert(isEveryoneHere(users) === true);
 ```
 
-The function `isEveryoneHere` should return `false` if `Alan` is not a property on the `users` object
+The function `isEveryoneHere` should return `false` if `Alan` is not a property on the object passed to it.
 
 ```js
 assert(
@@ -52,7 +60,7 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `false` if `Jeff` is not a property on the `users` object
+The function `isEveryoneHere` should return `false` if `Jeff` is not a property on the object passed to it.
 
 ```js
 assert(
@@ -63,7 +71,7 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `false` if `Sarah` is not a property on the `users` object
+The function `isEveryoneHere` should return `false` if `Sarah` is not a property on the object passed to it.
 
 ```js
 assert(
@@ -74,7 +82,7 @@ assert(
 );
 ```
 
-The function `isEveryoneHere` should return `false` if `Ryan` is not a property on the `users` object
+The function `isEveryoneHere` should return `false` if `Ryan` is not a property on the object passed to it.
 
 ```js
 assert(
@@ -109,9 +117,9 @@ let users = {
   }
 };
 
-function isEveryoneHere(obj) {
+function isEveryoneHere(userObj) {
   // Only change code below this line
-
+  
   // Only change code above this line
 }
 
@@ -140,13 +148,13 @@ let users = {
   }
 };
 
-function isEveryoneHere(obj) {
+function isEveryoneHere(userObj) {
   return [
     'Alan',
     'Jeff',
     'Sarah',
     'Ryan'
-  ].every(i => obj.hasOwnProperty(i));
+  ].every(user => userObj.hasOwnProperty(user));
 }
 
 console.log(isEveryoneHere(users));

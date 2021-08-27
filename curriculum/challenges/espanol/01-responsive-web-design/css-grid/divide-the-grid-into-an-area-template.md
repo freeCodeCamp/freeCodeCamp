@@ -2,38 +2,37 @@
 id: 5a94fe0569fb03452672e45c
 title: Divide la cuadrícula en una plantilla de área
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
 dashedName: divide-the-grid-into-an-area-template
 ---
 
 # --description--
 
-Puedes agrupar las celdas de tu grid en una <dfn>área</dfn> y darle a esa área un nombre personalizado. Haz esto usando `grid-template-areas` en el contenedor de la siguiente manera:
+Puedes agrupar las celdas de tu cuadrícula en una <dfn>área</dfn> y darle a esa área un nombre personalizado. Haz esto usando `grid-template-areas` en el contenedor de la siguiente manera:
 
 ```css
 grid-template-areas:
   "header header header"
   "advert content content"
-  "footer footer footer";
+  "advert footer footer";
 ```
 
-El código anterior fusiona las tres celdas superiores en una área llamada `header`, las tres celdas inferiores en una área `footer` y hace dos áreas en la fila del medio; `advert` y `content`. **Nota:** cada palabra en el código representa una celda y cada par de comillas representa una fila. Además de los nombres personalizados, puedes usar un punto (`.`) para designar una celda vacía en la grid.
+El código anterior agrupa las celdas de la cuadrícula en cuatro áreas; `header`, `advert`, `content`y `footer`. Cada palabra representa una celda y cada par de comillas representa una fila.
 
 # --instructions--
 
-Acomoda la plantilla de área de manera que la celda llamada `advert` se convierta en una celda vacía.
+Cambia la plantilla para que el área de `footer` abarque toda la fila de abajo. La definición de las áreas no tendrá ningún efecto visual en este momento. Después, usarás un elemento para ver cómo funciona.
 
 # --hints--
 
-La clase `container` debe tener una propiedad `grid-template-areas` similar al anterior, pero que tenga `.` en vez del área `advert`.
+La clase `container` debe tener una propiedad `grid-template-areas` similar al ejemplo, pero con el área `footer` abarcando toda la fila de abajo.
 
 ```js
 assert(
   __helpers
     .removeCssComments(code)
     .match(
-      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
+      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
     )
 );
 ```
@@ -63,7 +62,7 @@ assert(
     /* Only change code below this line */
       "header header header"
       "advert content content"
-      "footer footer footer";
+      "advert footer footer";
     /* Only change code above this line */
   }
 </style>
@@ -99,7 +98,7 @@ assert(
 
     grid-template-areas:
       "header header header"
-      ". content content"
+      "advert content content"
       "footer footer footer";
   }
 </style>

@@ -13,7 +13,7 @@
       "src": "https://unpkg.com/react-dom@16.4.0/umd/react-dom.production.min.js"
     }
   ],
-  "superBlock": "front-end-libraries",
+  "superBlock": "front-end-development-libraries",
   "superOrder": 3,
   "challengeOrder": [
     [
@@ -204,7 +204,4 @@
       "5a24c314108439a4d403618d",
       "Render React on the Server with renderToString"
     ]
-  ],
-  "helpRoom": "Help",
-  "fileName": "03-front-end-libraries/react.json"
-}
+  ]}

@@ -203,12 +203,8 @@ button.map-title {
   stroke: var(--color-quaternary);
 }
 
-.map-title svg:first-child {
-  transform: rotate(90deg);
-}
-
 .open > .map-title svg:first-child {
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
 }
 
 .map-challenges-ul {

@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f140b6c005b0e76f07e
-title: 'Web Services: Service Oriented Approach'
+title: 'Web 服务：面向服务的方法'
 challengeType: 11
 videoId: muerlsCHExI
 dashedName: web-services-service-oriented-approach
@@ -10,19 +10,19 @@ dashedName: web-services-service-oriented-approach
 
 ## --text--
 
-With a services oriented approach to developing web apps, where is the data located?
+用面向服务的方法来开发网络应用，数据位于何处？
 
 ## --answers--
 
-Spread across many computer systems connected via the internet or internal network.
+分布在许多通过互联网或内部网络连接的计算机系统上。
 
 ---
 
-Within different services on the main web server.
+在主 Web 服务器上的不同服务中。
 
 ---
 
-On a separate database server.
+在单独的数据库服务器上。
 
 ## --video-solution--
 

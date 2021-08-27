@@ -8,7 +8,13 @@ dashedName: install-and-require-helmet
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Working on these challenges will involve you writing your code using one of the following methods:
+
+- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-infosec/) and complete these challenges locally.
+- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-infosec) to complete these challenges.
+- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
 Helmet helps you secure your Express apps by setting various HTTP headers.
 
@@ -16,7 +22,7 @@ Helmet helps you secure your Express apps by setting various HTTP headers.
 
 All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
 
-Install Helmet version `3.21.3`, then require it.
+Install Helmet version `3.21.3`, then require it. You can install a specific version of a package with `npm install --save-exact package@version`, or by adding it to your `package.json` directly.
 
 # --hints--
 
@@ -26,8 +32,9 @@ Install Helmet version `3.21.3`, then require it.
 (getUserInput) =>
   $.get(getUserInput('url') + '/_api/package.json').then(
     (data) => {
-      var packJson = JSON.parse(data);
-      assert(packJson.dependencies.helmet === '3.21.3');
+      const packJson = JSON.parse(data);
+      const helmet = packJson.dependencies.helmet;
+      assert(helmet === '3.21.3' || helmet === '^3.21.3');
     },
     (xhr) => {
       throw new Error(xhr.responseText);

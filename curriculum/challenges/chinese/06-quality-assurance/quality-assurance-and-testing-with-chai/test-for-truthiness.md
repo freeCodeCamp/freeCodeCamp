@@ -8,14 +8,14 @@ dashedName: test-for-truthiness
 
 # --description--
 
-请注意，本项目在[这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
+请注意，本项目在[这个 Replit 项目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
 `isTrue()` 仅当给出的值为 Boolean 的 `true` 时可以通过测试；`isNotTrue()` 则会在给出除 `true` 以外的值时通过测试。
 
 ```js
-assert.isTrue(true, 'this will pass with the boolean value true');
-assert.isTrue('true', 'this will NOT pass with the string value "true"');
-assert.isTrue(1, 'this will NOT pass with the number value 1');
+assert.isTrue(true, 'This will pass with the boolean value true');
+assert.isTrue('true', 'This will NOT pass with the string value "true"');
+assert.isTrue(1, 'This will NOT pass with the number value 1');
 ```
 
 `isFalse()` 和 `isNotFalse()` 同样存在，与上面提到的两个方法类似，只不过它们针对值为 `false` 的布尔值。

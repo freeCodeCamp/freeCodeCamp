@@ -9,14 +9,22 @@ dashedName: part-46
 
 If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line. This is because the width of the `p` elements on the left side can only take up `50%` of the space.
 
-Since you know the prices on the right have significantly fewer characters, change the `flavor` class `width` value to be `75%` and then `dessert` class `width` value to be `25%`.
+Since you know the prices on the right have significantly fewer characters, change the `flavor` class `width` value to be `75%` and then `price` class `width` value to be `25%`.
 
 # --hints--
 
-Test 1
+You should set the `width` property to `75%` in your `.flavor` selector.
 
 ```js
+const flavorWidth = new __helpers.CSSHelp(document).getStyle('.flavor')?.getPropertyValue('width');
+assert(flavorWidth === '75%');
+```
 
+You should set the `width` property to `25%` in your `.price` selector.
+
+```js
+const priceWidth = new __helpers.CSSHelp(document).getStyle('.price')?.getPropertyValue('width');
+assert(priceWidth === '25%');
 ```
 
 # --seed--
@@ -40,12 +48,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -65,7 +73,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
