@@ -2,13 +2,13 @@
 
 La app client basata su react che alimenta la nostra piattaforma è costruita usando Gatsby. È tradotta in varie lingue internazionali usando [react-i18next](https://react.i18next.com/) e [i18next](https://www.i18next.com/).
 
-You can learn more about setting up the client application locally for development by following [our local setup guide here](how-to-setup-freecodecamp-locally.md). Di default, l'applicazione è disponibile solo in inglese.
+Puoi scoprire di più su come configurare l'applicazione client localmente per lo sviluppo seguendo [la nostra guida alla configurazione in locale](how-to-setup-freecodecamp-locally.md). Di default, l'applicazione è disponibile solo in inglese.
 
 Una volta che avrai configurato il progetto localmente dovresti essere in grado di seguire questa documentazione per eseguire il client nella lingua di tua scelta dall'elenco delle lingue disponibili.
 
 Questo può essere utile quando stai lavorando su una caratteristica che riguarda specificatamente qualcosa che coinvolge la localizzazione e ti richiede ad esempio l'etichetta di un bottone in una lingua diversa.
 
-> [!TIP] Non hai bisogno di seguire questo documento per tradurre il curriculum di freeCodeCamp o per contribuire alla documentazione. Read [this guide here](how-to-translate-files.md) instead.
+> [!TIP] Non hai bisogno di seguire questo documento per tradurre il curriculum di freeCodeCamp o per contribuire alla documentazione. Invece, leggi [questa guida](how-to-translate-files.md).
 
 Andiamo a vedere come funzionano il framework e gli strumenti.
 
@@ -67,7 +67,7 @@ Alcuni di questi file sono tradotti sulla nostra piattaforma di traduzione (Crow
 
 - Il file `intro.json` contiene le coppie chiave-valore relative al testo introduttivo sulle pagine delle certificazioni.
 
-  If you want to add/update translations for the keys please [read this guide here](how-to-translate-files.md).
+  Se vuoi aggiungere/aggiornare le traduzioni per le chiavi, per favore [leggi questa guida](how-to-translate-files.md).
 
 **File NON tradotti con la nostra piattaforma di traduzione:**
 
