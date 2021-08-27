@@ -11,8 +11,6 @@ dashedName: move-a-relatively-positioned-element-with-css-offsets
 
 Gli offset (scostamenti) CSS di `top` o `bottom`, e `left` o `right` dicono al browser di quanto spostare un elemento rispetto a dove risiederebbe nel normale flusso del documento. Stai allontanando un elemento da un dato punto, e questo sposta l'elemento lontano dal lato di riferimento (di fatto lo sposta nella direzione opposta). Come hai visto nell'ultima sfida, utilizzando l'offset `top` abbiamo spostato l'`h2` verso il basso. Allo stesso modo, usando un offset `left` sposterai un elemento verso destra.
 
-<img src='https://cdn-media-1.freecodecamp.org/imgr/eWWi3gZ.gif' alt='' />
-
 # --instructions--
 
 Usa gli spostamenti CSS per spostare `h2` di 15 pixel verso destra e 10 pixel verso l'alto.
