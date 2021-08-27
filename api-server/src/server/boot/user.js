@@ -16,6 +16,8 @@ import {
 import { getRedirectParams } from '../utils/redirection';
 import { trimTags } from '../utils/validators';
 
+const { DISCOURSE_API } = process.env;
+
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
 
@@ -29,7 +31,7 @@ function bootUser(app) {
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
-  api.get('/user-badges/:username', userBadges);
+  api.get('/user-badges', userBadges);
 
   api.post('/account/delete', ifNoUser401, postDeleteAccount);
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
@@ -44,22 +46,51 @@ function bootUser(app) {
 }
 
 function userBadges(req, res) {
-  const username = req.params.username;
-  console.log(username);
+  const { email } = req.query;
+  const flag = 'active';
+  // Get list of emails from Discourse
+  // TODO: I think 'active' means someone online.
+  // Probably want to change this, unless we explain via
+  // flash message that Camper must also be online Discourse??
   request(
-    `https://forum.freecodecamp.org/user-badges/${username}.json`,
+    `https://forum.freecodecamp.org/admin/users/list/${flag}.json?show_emails=true`,
     {
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org'
-        // 'Api-Key': discourseApi
+        'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org',
+        'Api-Key': DISCOURSE_API,
+        // TODO: Whilst testing
+        'Api-Username': 'Sky020'
       }
     },
     (err, response, body) => {
-      if (err) {
-        res.status(500).send(err);
+      const users = JSON.parse(body);
+      if (err || users.errors) {
+        return res.status(500).send(err || users.errors);
       } else {
-        res.json(body);
+        // Find user with matching email
+        const user = users?.find(u => u.email === email);
+        console.log(users.length);
+        if (user.length === 0) {
+          return res.status(404).send('No associated Discourse email found');
+        }
+        // Return user's Discourse badges
+        return request(
+          `https://forum.freecodecamp.org/user-badges/${user.username}.json`,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org'
+            }
+          },
+          (err, response, body) => {
+            if (err) {
+              res.status(500).send(err);
+            } else {
+              res.json(body);
+            }
+          }
+        );
       }
     }
   );

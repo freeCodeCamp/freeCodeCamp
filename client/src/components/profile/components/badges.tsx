@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect } from 'react';
 import './badges.css';
-import { getUserBadges } from '../../../utils/ajax';
 import { Badge, BadgeData } from '../../../redux/prop-types';
+import { getUserBadges } from '../../../utils/ajax';
 
+// @ts-expect-error I have no idea what TS is going on about
 library.add(fas, fab, far);
 
 function parseIcon(icon: string): [string, string] {
@@ -35,9 +36,12 @@ const Badges = ({ email }: { email: string }): JSX.Element => {
   const [badges, setBadges] = React.useState<BadgeMod[]>([]);
   useEffect(() => {
     if (email) {
-      console.log(email);
       void (async () => {
-        const response = await getUserBadges('sky020');
+        // TODO: For testing, insert Shaun's Discourse email
+        const testEmail = '';
+        // TODO: Probably do not want to send email to server, because server
+        // can get this itself.
+        const response = await getUserBadges(testEmail);
         const data = JSON.parse(response) as BadgeData;
         console.log(data);
         const badgesParsed = data.badges.map(badge => ({

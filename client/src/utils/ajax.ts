@@ -167,8 +167,8 @@ export function getVerifyCanClaimCert(
 }
 
 // TODO: returns a JSON string of type BadgeData
-export function getUserBadges(username: string): Promise<string> {
-  return get(`/user-badges/${username}`);
+export function getUserBadges(email: string): Promise<string> {
+  return get(`/user-badges?email=${email}`);
 }
 
 /** POST **/
