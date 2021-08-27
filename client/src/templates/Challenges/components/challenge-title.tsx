@@ -25,8 +25,6 @@ function ChallengeTitle({
     <div className='challenge-title-wrap'>
       {translationPending && (
         <>
-          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-          {/* @ts-ignore */}
           <Link
             className='title-translation-cta'
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

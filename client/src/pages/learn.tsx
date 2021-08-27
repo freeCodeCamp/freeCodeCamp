@@ -82,8 +82,6 @@ function LearnPage({
               slug={slug}
             />
             <Map />
-            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-            {/* @ts-ignore */}
             <Spacer size={2} />
           </Col>
         </Row>

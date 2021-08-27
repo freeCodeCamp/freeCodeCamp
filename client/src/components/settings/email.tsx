@@ -5,8 +5,6 @@ import {
   ControlLabel,
   FormControl,
   Button
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import React, { Component } from 'react';

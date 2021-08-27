@@ -85,10 +85,6 @@ function DonatePage({
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
       <Grid className='donate-page-wrapper'>
-        {/* 'Spacer' cannot be used as a JSX component. */}
-        {/* Its return type 'Element | Element[]' is not a valid JSX element. */}
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
         <Spacer />
         <Row>
           <>
@@ -100,8 +96,6 @@ function DonatePage({
                   ) : (
                     <h2>{t('donate.help-more')}</h2>
                   )}
-                  {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                  {/* @ts-ignore */}
                   <Spacer />
                 </Col>
               </Row>
@@ -131,8 +125,6 @@ function DonatePage({
             </Col>
           </>
         </Row>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
         <Spacer />
       </Grid>
     </>

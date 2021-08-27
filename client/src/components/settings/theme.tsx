@@ -1,7 +1,5 @@
 import { Form } from '@freecodecamp/react-bootstrap';
 import React from 'react';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import { useTranslation } from 'react-i18next';
 
 import ToggleSetting from './toggle-setting';

@@ -76,12 +76,8 @@ function AcceptPrivacyTerms({
           <IntroDescription />
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <strong>{t('misc.quincy')}</strong>
-            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-            {/* @ts-ignore */}
             <Spacer />
             <p>{t('misc.email-blast')}</p>
-            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-            {/* @ts-ignore */}
             <Spacer />
           </Col>
 
@@ -110,8 +106,6 @@ function AcceptPrivacyTerms({
             <ButtonSpacer />
           </Col>
           <Col xs={12}>
-            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-            {/* @ts-ignore */}
             <Spacer />
           </Col>
         </Row>
