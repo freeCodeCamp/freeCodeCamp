@@ -133,20 +133,28 @@ var MaxHeap = function() {
 ```js
 var MaxHeap = function() {
     // Only change code below this line
-    this.heap = [null];
-    this.insert = (ele) => {
-        var index = this.heap.length;
-        var arr = [...this.heap];
-        arr.push(ele);
-        while (ele > arr[Math.floor(index / 2)] && index > 1) {
-            arr[index] = arr[Math.floor(index / 2)];
-            arr[Math.floor(index / 2)] = ele;
-            index = arr[Math.floor(index / 2)];
-        }
-        this.heap = arr;
+    this.heap = [];
+    this.parent = index => {
+      return Math.floor((index - 1) / 2);
+    }
+    this.insert = element => {
+      this.heap.push(element);
+      this.heapifyUp(this.heap.length - 1);
+    }
+    this.heapifyUp = index => {
+      let currentIndex = index,
+      parentIndex = this.parent(currentIndex);
+      while (currentIndex > 0 && this.heap[currentIndex] > this.heap[parentIndex]) {
+        this.swap(currentIndex, parentIndex);
+        currentIndex = parentIndex;
+        parentIndex = this.parent(parentIndex);
+      }
+    }
+    this.swap = (index1, index2) => {
+      [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
     }
     this.print = () => {
-        return this.heap.slice(1);
+      return this.heap;
     }
     // Only change code above this line
 };
