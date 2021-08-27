@@ -18,7 +18,7 @@ freeCodeCamp è una comunità inclusiva ed è necessario lasciarla così.
 
 Abbiamo un unico codice di comportamento che governa la nostra intera comunità. Meno sono le regole, più facile sarà ricordarle. Puoi leggere queste regole e impegnarti a ricordarle [qui](https://code-of-conduct.freecodecamp.org).
 
-> [!NOTE] Come moderatore, ti aggiungeremo a uno o più team su GitHub, ai forum della community & ai server delle chat. If you are missing access on a platform that you would like to moderate please [reach out to a staff member](FAQ.md#additional-assistance).
+> [!NOTE] Come moderatore, ti aggiungeremo a uno o più team su GitHub, ai forum della community & ai server delle chat. Se ti manca l'accesso a una piattaforma che vorresti moderare, per favore [contatta un membro dello staff](FAQ.md#additional-assistance).
 
 ## Moderare GitHub
 
@@ -39,7 +39,7 @@ Puoi aiutarci ad organizzare e fare lo smistamento delle issue riportate applica
 
 Per favore, fai particolare attenzione alle etichette `"help wanted"` e `"first timers only"`. Queste devono essere aggiunte ai thread che pensi possano essere aperti a potenziali contributori per creare una pull request.
 
-Un'etichetta `"first timer only"` dovrebbe essere applicata per problemi banali (es. un refuso) e dovrebbe includere informazioni addizionali. You can use this [reply template](moderator-handbook.md#first-timer-only-issues) for triage.
+Un'etichetta `"first timer only"` dovrebbe essere applicata per problemi banali (es. un refuso) e dovrebbe includere informazioni addizionali. Puoi usare questo [modello di risposta](moderator-handbook.md#first-timer-only-issues) per lo smistamento.
 
 #### Chiudere issues e pull request stantii, obsoleti e inattivi
 
@@ -49,7 +49,7 @@ Un'etichetta `"first timer only"` dovrebbe essere applicata per problemi banali 
 
 - Se il contributore chiede ulteriore assistenza o anche del tempo, quanto sopra può essere rilassato e rivisitato dopo che è stata data una risposta. In ogni caso, i moderatori dovrebbero usare il loro buon senso per prendere una decisione sullo status in sospeso della PR.
 
-> [!TIP] We recommend you use this list of standard [reply templates](moderator-handbook.md#reply-templates) while triaging issues.
+> [!TIP] Ti consigliamo di usare questa lista di [modelli di risposta](moderator-handbook.md#reply-templates) mentre smisti le issue.
 
 ### Moderare le pull request
 
@@ -63,7 +63,7 @@ Le pull request (PR) sono il modo in cui i contributori sottopongono cambiamenti
 
    Puoi anche farne la revisione direttamente su GitHub e decidere se fare il merge. Dobbiamo fare un po' attenzione su questo perché milioni di persone incontreranno questo testo lavorando sul curriculum di freeCodeCamp. La pull request rende il testo più chiaro senza allungarlo troppo? Le modifiche sono rilevanti e non troppo pedanti? Ricorda che il nostro obbiettivo è che le sfide siano più chiare e più corte possibile. Non sono il luogo per dettagli incomprensibili. I contributori possono provare ad aggiungere link e risorse alle sfide.
 
-   You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
+   Puoi chiudere le pull request non valide e rispondervi con questi [modelli di risposta](moderator-handbook.md#closing-invalid-pull-requests).
 
    Se la modifica va bene, assicurati di lasciare un'approvazione con un commento "LGTM". Una volta che una pull request riceve almeno due approvazioni (inclusa la tua) dai moderatori o dal dev-team, puoi procedere e farne il merge.
 
@@ -75,7 +75,7 @@ Le pull request (PR) sono il modo in cui i contributori sottopongono cambiamenti
 
    Alcuni contributori potrebbero provare ad aggiungere test addizionali per coprire casi limite pedanti. Dobbiamo fare attenzione a non rendere le sfide troppo complicate. Queste sfide e i loro test dovrebbero essere più semplici e intuitivi possibile. Ad eccezione delle sfide sugli algoritmi e della sezione di preparazione al colloquio di lavoro, gli studenti dovrebbero essere in grado di risolvere ogni sfida entro due minuti.
 
-   You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
+   Puoi chiudere le pull request non valide e rispondervi con questi [modelli di risposta](moderator-handbook.md#closing-invalid-pull-requests).
 
    Se la modifica va bene, assicurati di lasciare un'approvazione con un commento "LGTM". Una volta che una pull request ha ricevuto almeno due approvazioni (inclusa la tua) dai moderatori o dal dev-team, puoi procedere e farne il merge.
 
@@ -142,7 +142,7 @@ Spesso una pull request avrà richiesto uno sforzo minimo. Puoi capirlo immediat
 
 Ci sono anche situazioni in cui il contributore sta cercando di aggiungere un collegamento al proprio sito Web, includere una libreria che ha creato o apportare una modifica frivola che non aiuta nessuno tranne se stesso.
 
-You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
+Puoi chiudere le pull request non valide e rispondervi con questi [modelli di risposta](moderator-handbook.md#closing-invalid-pull-requests).
 
 #### Altre linee guida per i Moderatori su GitHub
 

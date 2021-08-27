@@ -10,7 +10,7 @@ Fique à vontade para:
 - Nos ajudar a corrigir bugs na [plataforma de aprendizado](#plataforma-de-aprendizado) do freeCodeCamp.org.
 - [Nos ajudar a traduzir](#tradu%c3%a7%c3%b5es) freeCodeCamp.org para vários idiomas.
 
-We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
+Respondemos às perguntas mais comuns sobre como contribuir [no nosso FAQ do colaborador](FAQ.md).
 
 ## Currículo
 

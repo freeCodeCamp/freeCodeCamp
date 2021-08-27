@@ -12,7 +12,7 @@ Se você quer criar novos passos, as ferramentas a seguir vão simplificar o pro
 
 Um script único que automaticamente adiciona um novo passo baseado no último passo numerado como `part-xxx.md` onde `xxx` representa o número de 3 dígitos do último passo. O código inicial de desafio usará o código inicial de desafio da etapa anterior com os marcadores de região editáveis ​​(ERMs) removidos.
 
-**Note:** This script also runs [reorder-steps](#reorder-steps).
+**Observação:** esse script também executa  [reorder-steps](#reorder-steps).
 
 ### Como executar esse script:
 
@@ -27,7 +27,7 @@ npm run create-next-step
 
 Um script único que adiciona automaticamente um número especificado de passos começando a partir de um número específico. O código seed de todos os passos criados estarão vazios.
 
-**Note:** This script also runs [reorder-steps](#reorder-steps).
+**Observação:** esse script também executa  [reorder-steps](#reorder-steps).
 
 ### Como executar esse script:
 
@@ -42,7 +42,7 @@ npm run create-empty-steps start=X num=Y # onde X é o número do passo onde dev
 
 Um único script que automaticamente adiciona passos entre dois passos consecutivos. O código inicial do desafio usará o código inicial do desafio da etapa inicial existente com os marcadores de região editáveis ​​(ERMs) removidos.
 
-**Note:** This script also runs [reorder-steps](#reorder-steps).
+**Observação:** esse script também executa  [reorder-steps](#reorder-steps).
 
 ### Como executar esse script:
 

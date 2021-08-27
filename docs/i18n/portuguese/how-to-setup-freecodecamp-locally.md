@@ -14,7 +14,7 @@ Comece instalando o software pré-requisito para seu sistema operacional.
 
 Apoiamos principalmente o desenvolvimento em sistemas Linux e Unix. Nossa equipe e colaboradores da comunidade trabalham regularmente com a base de código usando ferramentas instaladas no Ubuntu e no macOS.
 
-We also support Windows 10 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
+Também suportamos o Windows 10 via WSL2, que você pode preparar [lendo este guia](how-to-setup-wsl.md).
 
 Alguns membros da comunidade também desenvolvem no Windows 10 nativamente com Git para Windows (Git Bash), e outras ferramentas instaladas no Windows. Neste momento, não dispomos de apoio oficial para esse tipo de instalações, recomendamos que se utilize WSL2.
 

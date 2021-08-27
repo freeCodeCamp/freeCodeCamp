@@ -2,13 +2,13 @@
 
 O nosso cliente web app com base em React que alimenta nossa plataforma de aprendizado foi criado usando o Gatsby. Ele é traduzido em vários idiomas do mundo todo usando [react-i18next](https://react.i18next.com/) e  [i18next](https://www.i18next.com/).
 
-You can learn more about setting up the client application locally for development by following [our local setup guide here](how-to-setup-freecodecamp-locally.md). Por padrão, a aplicação está disponível somente em inglês.
+Você pode aprender mais sobre configurar o cliente localmente para desenvolvimento seguindo [nosso guia de configuração aqui](how-to-setup-freecodecamp-locally.md). Por padrão, a aplicação está disponível somente em inglês.
 
 Assim que você tiver o projeto configurado localmente, você poderá seguir essa documentação para rodar o cliente no idioma de sua escolha a partir de uma lista de idiomas disponíveis.
 
 Isso pode ser de grande ajuda quando você estiver trabalhando em uma nova feature que envolva tradução, em especial, e que necessite que você valide, por exemplo, uma label de botão em um idioma diferente.
 
-> [!TIP] Você não precisa seguir esse documento para traduzir o currículo do freeCodeCamp ou contribuir com a documentação. Read [this guide here](how-to-translate-files.md) instead.
+> [!TIP] Você não precisa seguir esse documento para traduzir o currículo do freeCodeCamp ou contribuir com a documentação. Em vez disso, leia [esse guia aqui](how-to-translate-files.md).
 
 Vamos entender como o framework i18n e suas ferramentas funcionam.
 
@@ -67,7 +67,7 @@ Alguns desses arquivos estão traduzidos na nossa plataforma de tradução (Crow
 
 - O arquivo `intro.json` contém os pares chave-valor para o texto de introdução nas páginas de certificação.
 
-  If you want to add/update translations for the keys please [read this guide here](how-to-translate-files.md).
+  Se você deseja adicionar/atualizar traduções para as chaves, [leia este guia aqui](how-to-translate-files.md).
 
 **Arquivos NÃO traduzidos na nossa plataforma de tradução:**
 
