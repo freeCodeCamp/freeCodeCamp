@@ -3,8 +3,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonSpacer } from '../helpers';
 
-import './webhook-token.css';
-
 type WebhookRevokeModalProps = {
   onHide: () => void;
   revoke: () => void;
