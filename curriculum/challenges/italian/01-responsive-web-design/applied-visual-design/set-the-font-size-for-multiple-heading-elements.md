@@ -27,38 +27,43 @@ La proprietà `font-size` è usata per specificare quanto grande è il testo in 
 Il codice dovrebbe impostare la proprietà `font-size` per il tag `h1` a 68 pixel.
 
 ```js
-assert($('h1').css('font-size') == '68px');
+ const fontSizeOfh1 = new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('font-size');
+ assert(fontSizeOfh1 === '68px');
 ```
 
 Il codice dovrebbe impostare la proprietà `font-size` per il tag `h2` a 52 pixel.
 
 ```js
-assert($('h2').css('font-size') == '52px');
+ const fontSizeOfh2 = new __helpers.CSSHelp(document).getStyle('h2')?.getPropertyValue('font-size');
+ assert(fontSizeOfh2 === '52px');
 ```
 
 Il codice dovrebbe impostare la proprietà `font-size` per il tag `h3` a 40 pixel.
 
 ```js
-assert($('h3').css('font-size') == '40px');
+ const fontSizeOfh3 = new __helpers.CSSHelp(document).getStyle('h3')?.getPropertyValue('font-size');
+ assert(fontSizeOfh3 === '40px');
 ```
 
 Il codice dovrebbe impostare la proprietà `font-size` per il tag `h4` a 32 pixel.
 
 ```js
-assert($('h4').css('font-size') == '32px');
+ const fontSizeOfh4 = new __helpers.CSSHelp(document).getStyle('h4')?.getPropertyValue('font-size');
+ assert(fontSizeOfh4 === '32px');
 ```
 
 Il codice dovrebbe impostare la proprietà `font-size` per il tag `h5` a 21 pixel.
 
 ```js
-assert($('h5').css('font-size') == '21px');
+ const fontSizeOfh5 = new __helpers.CSSHelp(document).getStyle('h5')?.getPropertyValue('font-size');
+ assert(fontSizeOfh5 === '21px');
 ```
 
 Il codice dovrebbe impostare la proprietà `font-size` per il tag `h6` a 14 pixel.
 
 ```js
-const regex = /h6\s*\{\s*font-size\s*:\s*14px\s*(;\s*\}|\})/i;
-assert.strictEqual(true, regex.test(code));
+ const fontSizeOfh6 = new __helpers.CSSHelp(document).getStyle('h6')?.getPropertyValue('font-size');
+ assert(fontSizeOfh6 === '14px');
 ```
 
 # --seed--

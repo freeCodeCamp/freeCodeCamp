@@ -15,7 +15,7 @@ Start by installing the prerequisite software for your operating system.
 
 We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
 
-We also support Windows 10 via WSL2, which you can prepare by [reading this guide](/how-to-setup-wsl).
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
 
 Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 

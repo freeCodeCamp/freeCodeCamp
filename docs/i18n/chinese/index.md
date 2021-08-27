@@ -10,7 +10,7 @@
 - 帮助我们修复 freeCodeCamp.org 的[学习平台](#learning-platform)中的 bug 。
 - [帮助我们翻译](#translations) freeCodeCamp.org 的内容为各种语言。
 
-我们在这里回答了贡献者最常见的一些问题：[有关贡献者的 FAQ](/FAQ.md).
+We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
 
 ## 课程
 

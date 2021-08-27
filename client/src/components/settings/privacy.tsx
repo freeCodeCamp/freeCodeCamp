@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 
 import { userSelector } from '../../redux';
 import { submitProfileUI } from '../../redux/settings';

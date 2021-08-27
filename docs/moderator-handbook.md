@@ -20,7 +20,7 @@ freeCodeCamp is an inclusive community, and we need to keep it that way.
 We have a single code of conduct that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
 
 > [!NOTE]
-> As a moderator we would add you to one or more teams on GitHub, our community forum(s) & chat servers. If you are missing access on a platform that you would like to moderate please [reach out to a staff member](/FAQ?id=additional-assistance).
+> As a moderator we would add you to one or more teams on GitHub, our community forum(s) & chat servers. If you are missing access on a platform that you would like to moderate please [reach out to a staff member](FAQ.md#additional-assistance).
 
 ## Moderating GitHub
 
@@ -41,7 +41,7 @@ You can help us organize and triage the issue reports by applying labels from [t
 
 Please pay special attention to the labels `"help wanted"` and `"first timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
 
-A `"first timer only"` label should be applied to a trivial issue (ex. a typo fix) and should include additional information. You can use this [reply template](/moderator-handbook?id=first-timer-only-issues) for triage.
+A `"first timer only"` label should be applied to a trivial issue (ex. a typo fix) and should include additional information. You can use this [reply template](moderator-handbook.md#first-timer-only-issues) for triage.
 
 #### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
@@ -52,7 +52,7 @@ A `"first timer only"` label should be applied to a trivial issue (ex. a typo fi
 - If the contributor asks for additional assistance or even time, the above can be relaxed and revisited after a response is given. In any case, the mods should use their best judgment to resolve the outstanding PR's status.
 
 > [!TIP]
-> We recommend you use this list of standard [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=reply-templates) while triaging issues.
+> We recommend you use this list of standard [reply templates](moderator-handbook.md#reply-templates) while triaging issues.
 
 ### Moderating Pull Requests
 
@@ -66,7 +66,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    You can also review these right on GitHub and decide whether to merge them. We need to be a bit more careful about these because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details. Contributors may try to add links to resources to the challenges.
 
-   You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
+   You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
    If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
@@ -78,7 +78,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
    Some contributors may try to add additional tests to cover pedantic corner-cases. We need to be careful to not make the challenge too complicated. These challenges and their tests should be as simple and intuitive as possible. Aside from the algorithm challenges and interview prep section, learners should be able to solve each challenge within about 2 minutes.
 
-   You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
+   You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
    If the change looks good, please ensure to leave an approval with a "LGTM" comment. Once a pull request gets at least two approvals (including yours) from the moderators or the dev-team, you can go ahead and merge it.
 
@@ -145,7 +145,7 @@ Often, a pull request will be low effort. You can usually tell this immediately 
 
 There are also situations where the contributor is trying to add a link to their website, include a library they created, or have a frivolous edit that doesn't help anyone but themselves.
 
-You can close invalid pull requests and reply to them with these [reply templates](https://contribute.freecodecamp.org/#/moderator-handbook?id=closing-invalid-pull-requests).
+You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
 #### Other guidelines for Moderators on GitHub
 
@@ -393,7 +393,7 @@ Once you resolve these issues, we will be able to review your PR and merge it. �
 
 ---
 
-Feel free to reference the [contributing guidelines](https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges?id=testing-challenges) for instructions on running the CI build locally. ✅
+Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
 ### Syncing Fork

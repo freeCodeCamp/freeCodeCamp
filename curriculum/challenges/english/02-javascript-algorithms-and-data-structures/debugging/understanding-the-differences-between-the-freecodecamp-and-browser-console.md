@@ -8,25 +8,23 @@ dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-c
 
 # --description--
 
-You may have noticed that some freeCodeCamp JavaScript challenges include their own console. This console behaves a little differently than the browser console you used in the last challenge.
+You may have noticed that some freeCodeCamp challenges include their own console. This console behaves a little differently than the browser console.
 
-The following challenge is meant to highlight the main difference between the freeCodeCamp console and your browser console.
-
-When you run ordinary JavaScript, the browser's console will display your `console.log()` statements the exact number of times it is called.
-
-The freeCodeCamp console will print your `console.log()` statements a short time after the editor detects a change in the script, as well as during testing.
-
-The freeCodeCamp console is cleared before the tests are run and, to avoid spam, only prints the logs during the first test (see the note below for exceptions).
-
-If you would like to see every log for every test, run the tests, and open the browser console. If you prefer to use the browser console, and want it to mimic the freeCodeCamp console, place `console.clear()` before any other `console` calls, to clear the browser console.
-
-**Note:** `console.log`s inside functions are printed to the freeCodeCamp console whenever those functions are called. This can help debugging functions that are called during testing.
+There are many methods to use with `console` to output messages. `log`, `warn`, and `clear` to name a few. The freeCodeCamp console will only output `log` messages, while the browser console will output all messages. When you make changes to your code, it will automatically run and show the logs. The freeCodeCamp console is then cleared each time your code runs.
 
 # --instructions--
 
-First, use `console.log` to log the `output` variable. Then, use `console.clear` to clear the browser console.
+First, open your browser console so you can see the logs. To do that, you can right-click the freeCodeCamp navigation bar at the top and click `inspect` on most browsers. Then find the `console` tab in the window that opens.
+
+After that, use `console.log` to log the `output` variable. View the two consoles to see the log. Finally, use `console.clear` after your log to clear the browser console. View the difference in the two consoles.
 
 # --hints--
+
+You should use `console.log()` to print the `output` variable.
+
+```js
+assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
+```
 
 You should use `console.clear()` to clear the browser console.
 
@@ -38,10 +36,14 @@ assert(
 );
 ```
 
-You should use `console.log()` to print the `output` variable.
+You should clear the console after your log.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
+assert(
+  __helpers
+    .removeWhiteSpace(code)
+    .match(/console\.log\(output\)[\s\S]*console.clear\(\)/)
+);
 ```
 
 # --seed--
@@ -49,25 +51,15 @@ assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
 ## --seed-contents--
 
 ```js
-// Open your browser console.
-let output = "Get this to log once in the freeCodeCamp console and twice in the browser console";
-// Use console.log() to print the output variable.
+let output = "Get this to show once in the freeCodeCamp console and not at all in the browser console";
 
-// Run the tests to see the difference between the two consoles.
-
-// Now, add console.clear() before your console.log() to clear the browser console, and pass the tests.
 ```
 
 # --solutions--
 
 ```js
-// Open your browser console.
-let output = "Get this to log once in the freeCodeCamp console and twice in the browser console";
-// Use console.log() to print the output variable.
-console.clear();
+let output = "Get this to show once in the freeCodeCamp console and not at all in the browser console";
+
 console.log(output);
-
-// Run the tests to see the difference between the two consoles.
-
-// Now, add console.clear() before your console.log() to clear the browser console, and pass the tests.
+console.clear();
 ```

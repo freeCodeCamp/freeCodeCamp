@@ -4,8 +4,6 @@ import {
   ControlLabel,
   FormControl,
   HelpBlock
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';

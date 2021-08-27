@@ -2,7 +2,7 @@
 
 Una pull request (PR) consente di inviare modifiche dal tuo fork su GitHub al repository principale di freeCodeCamp.org. Una volta che hai fatto delle modifiche al codice, puoi seguire queste linee guida per aprire una PR.
 
-> [!NOTE] La tua PR dovrebbe essere in inglese. Vedi [qui](https://contribute.freecodecamp.org/#/index?id=translations) per come contribuire alla traduzione.
+> [!NOTE] La tua PR dovrebbe essere in inglese. Vedi [qui](index.md#translations) per come contribuire alla traduzione.
 
 ## Preparare un buon titolo PR
 
@@ -78,7 +78,7 @@ I nostri moderatori ora daranno un'occhiata e ti lasceranno un feedback. Ti preg
 
 E come sempre, poni liberamente le tue domande nella [categoria 'Contributors' del nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://chat.freecodecamp.org/channel/contributors).
 
-> [!TIP] Se vuoi contribuire a più di una PR, ti raccomandiamo di leggere la [guida su fare modifiche e sincronizzare](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) per evitare di dover cancellare il tuo fork.
+> [!TIP] Se vuoi contribuire a più di una PR, ti raccomandiamo di leggere la [guida su fare modifiche e sincronizzare](how-to-setup-freecodecamp-locally.md#making-changes-locally) per evitare di dover cancellare il tuo fork.
 
 ## Conflitti su una pull request
 

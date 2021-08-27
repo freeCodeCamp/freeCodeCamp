@@ -476,7 +476,7 @@ Puoi anche testare una sfida singola con i seguenti step:
    ```
    npm run test -- -g challenge-title-goes-here ```
 
-Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, [per favore crea una pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
+Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, [per favore crea una pull request](how-to-open-a-pull-request.md).
 
 > [!TIP] Puoi impostare la variabile d'ambiente  `LOCALE` nel file `.env` alla lingua usata nelle sfide che devi testare.
 > 
