@@ -377,6 +377,7 @@ async (getUserInput) => {
   assert.isTrue(parsed.length >= 10);
   parsed.forEach((test) => {
     assert.equal(test.state, 'passed');
+    assert.isAtLeast(test.assertions.length, 1);
   });
 };
 ```
