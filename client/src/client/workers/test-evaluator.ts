@@ -6,13 +6,16 @@ import curriculumHelpers, {
 } from '../../utils/curriculum-helpers';
 import { format as __format } from '../../utils/format';
 
+const ctx: Worker & typeof globalThis = self as unknown as Worker &
+  typeof globalThis;
+
 const __utils = (() => {
   const MAX_LOGS_SIZE = 64 * 1024;
 
   let logs: string[] = [];
   function flushLogs() {
     if (logs.length) {
-      self.postMessage({
+      ctx.postMessage({
         type: 'LOG',
         data: logs.join('\n')
       });
@@ -20,7 +23,7 @@ const __utils = (() => {
     }
   }
 
-  const oldLog = self.console.log.bind(self.console);
+  const oldLog = ctx.console.log.bind(ctx.console);
   function proxyLog(...args: string[]) {
     logs.push(args.map(arg => __format(arg)).join(' '));
     if (logs.join('\n').length > MAX_LOGS_SIZE) {
@@ -32,7 +35,7 @@ const __utils = (() => {
   // unless data.type is truthy, this sends data out to the testRunner
   function postResult(data: unknown) {
     flushLogs();
-    self.postMessage(data);
+    ctx.postMessage(data);
   }
 
   function log(...msgs: Error[]) {
@@ -44,7 +47,7 @@ const __utils = (() => {
   }
 
   const toggleProxyLogger = (on: unknown) => {
-    self.console.log = on ? proxyLog : oldLog;
+    ctx.console.log = on ? proxyLog : oldLog;
   };
 
   return {
@@ -72,7 +75,7 @@ interface TestEvaluatorEvent extends MessageEvent {
 }
 
 /* Run the test if there is one.  If not just evaluate the user code */
-self.onmessage = async (e: TestEvaluatorEvent) => {
+ctx.onmessage = async (e: TestEvaluatorEvent) => {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   let code = (e.data?.code?.contents || '').slice();
   code = e.data?.removeComments ? removeJSComments(code) : code;
@@ -149,4 +152,4 @@ ${e.data.testString}`) as unknown;
   }
 };
 
-self.postMessage({ type: 'contentLoaded' });
+ctx.postMessage({ type: 'contentLoaded' });
