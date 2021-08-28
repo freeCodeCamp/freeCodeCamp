@@ -84,7 +84,8 @@ self.onmessage = async (e: TestEvaluatorEvent) => {
   const assert = chai.assert;
   const __helpers = curriculumHelpers;
   // Fake Deep Equal dependency
-  const DeepEqual = <T>(a: T, b: T) => JSON.stringify(a) === JSON.stringify(b);
+  const DeepEqual = (a: unknown, b: unknown) =>
+    JSON.stringify(a) === JSON.stringify(b);
 
   // Build errors should be reported, but only once:
   __utils.toggleProxyLogger(e.data.firstTest);
