@@ -47,8 +47,7 @@
       "parserOptions": {
         "project": [
           "./client/tsconfig.json",
-          "./tools/challenge-helper-scripts/tsconfig.json",
-          "./client/src/client/workers/tsconfig.json"
+          "./tools/challenge-helper-scripts/tsconfig.json"
         ]
       },
       "extends": [

@@ -5,7 +5,6 @@
     "./src/**/*",
     "./utils/**/*"
   ],
-  "exclude": ["./src/client/workers/*"],
   "compilerOptions": {
     "target": "es2020",
     "module": "es2020",
