@@ -11,7 +11,6 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 
-import { dasherize } from '../../../../utils/slugs';
 import {
   projectMap,
   legacyProjectMap
@@ -294,7 +293,9 @@ export class CertificationSettings extends Component {
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8'>
-            <Link to={link}>{t(`certs:projectNames.${dasherize(title)}`)}</Link>
+            <Link to={link}>
+              {t(`certs:projectNames.${link.split('/').reverse()[0]}`)}
+            </Link>
           </td>
           <td className='project-solution col-sm-4'>
             {this.getProjectSolution(id, title)}
