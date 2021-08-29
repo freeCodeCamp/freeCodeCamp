@@ -567,7 +567,6 @@
     "title": "領取你的認證",
     "intro": "完成以下步驟來領取並查看你的 {{i18nCertText}}",
     "complete-project": "完成 {{i18nCertText}} 項目",
-    "login": "Login to claim certification",
     "accept-honesty": "接受我們的學術誠信政策",
     "set-name": "設置你的名字，並將它設置爲公開",
     "set-certs-public": "將你的認證設置爲公開",

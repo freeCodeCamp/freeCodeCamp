@@ -567,7 +567,6 @@
     "title": "Reclamar tu certificación",
     "intro": "Completa los siguientes pasos para reclamar y ver tu {{i18nCertText}}",
     "complete-project": "Completa {{i18nCertText}} proyectos",
-    "login": "Login to claim certification",
     "accept-honesty": "Acepta nuestra política de honestidad académica",
     "set-name": "Establece tu nombre, y hazlo público",
     "set-certs-public": "Establezca la configuración de tu certificación al público",
