@@ -90,6 +90,19 @@ const squareLocationConfig = {
   live: 'LDFNMPWSFJEN2'
 };
 
+const squarePlanConfig = {
+  live: {
+    month: {
+      500: 'UTZ4I7AMCYWEBHKMTUOZUHIP'
+    }
+  },
+  staging: {
+    month: {
+      500: 'GH5PWHDIMVB3UX3S5XVKPU4K'
+    }
+  }
+};
+
 const donationUrls = {
   successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
   cancelUrl: 'https://freecodecamp.org/donate'
@@ -108,5 +121,6 @@ module.exports = {
   paypalConfigTypes,
   paypalConfigurator,
   donationUrls,
-  squareLocationConfig
+  squareLocationConfig,
+  squarePlanConfig
 };

@@ -1,12 +1,20 @@
 import debug from 'debug';
+import { Client, Environment } from 'square';
 import Stripe from 'stripe';
-import { donationSubscriptionConfig } from '../../../../config/donation-settings';
+import uuid from 'uuid/v4';
+
+import {
+  donationSubscriptionConfig,
+  squarePlanConfig,
+  squareLocationConfig
+} from '../../../../config/donation-settings';
 import keys from '../../../../config/secrets';
 import {
   getAsyncPaypalToken,
   verifyWebHook,
   updateUser,
-  verifyWebHookType
+  verifyWebHookType,
+  createAsyncUserDonation
 } from '../utils/donation';
 import { validStripeForm } from '../utils/stripeHelpers';
 
@@ -24,6 +32,105 @@ export default function donateBoot(app, done) {
       // connect to stripe API
       stripe = Stripe(keys.stripe.secret);
     });
+  }
+
+  async function createSquareDonation(req, res) {
+    const {
+      body: { token, email, amount, duration },
+      user: { name, id, completedChallenges },
+      user
+    } = req;
+
+    try {
+      if (
+        !token ||
+        !email ||
+        !amount ||
+        !duration ||
+        !name ||
+        !id ||
+        !completedChallenges
+      ) {
+        return res.status(500).send({
+          error: 'Request is not valid'
+        });
+      }
+      // check if after signing the previous challenges are sent to api
+      // check if completedChallenges are passed to api
+      if (completedChallenges.length > 1000) throw Error('New user');
+
+      // check if a user has already made multiple donations
+      const { Donation } = app.models;
+      await Donation.find({ where: { userId: id } }, (err, donations) => {
+        if (err) throw Error(err);
+        if (donations.length > 3000) throw Error('Too many Donations');
+      });
+      // connect to square
+      const { customersApi, cardsApi, subscriptionsApi } = new Client({
+        environment: Environment.Sandbox,
+        accessToken: keys.square.secret
+      });
+
+      // create a customer
+      const {
+        result: {
+          customer: { id: customerId }
+        }
+      } = await customersApi.createCustomer({
+        idempotencyKey: uuid(),
+        emailAddress: email,
+        givenName: name === '' ? 'freeCodeCamp donor' : name
+      });
+
+      // create a card for the customer
+      const {
+        result: {
+          card: { id: cardId }
+        }
+      } = await cardsApi.createCard({
+        card: {
+          customerId
+        },
+        sourceId: token,
+        idempotencyKey: uuid()
+      });
+
+      // add user to a subscription
+      const locationId = squareLocationConfig[process.env.DEPLOYMENT_ENV];
+      const planId =
+        squarePlanConfig[process.env.DEPLOYMENT_ENV][duration][amount];
+      const {
+        result: {
+          subscription: { id: subscriptionId }
+        }
+      } = await subscriptionsApi.createSubscription({
+        idempotencyKey: uuid(),
+        locationId,
+        planId,
+        customerId,
+        cardId
+      });
+
+      // save Donation
+      let donation = {
+        email,
+        amount,
+        duration,
+        provider: 'square',
+        subscriptionId,
+        customerId,
+        startDate: new Date().toISOString()
+      };
+      await createAsyncUserDonation(user, donation);
+
+      console.log({ customerId, cardId, subscriptionId });
+      return res.status(200);
+    } catch (err) {
+      // and send back an error accondingly
+      console.log(err);
+      res.status(500).send({ error: 'Donation failed due to a server error.' });
+      throw new Error('Error creating square subscription');
+    }
   }
 
   function createStripeDonation(req, res) {
@@ -208,6 +315,7 @@ export default function donateBoot(app, done) {
   } else {
     api.post('/charge-stripe', createStripeDonation);
     api.post('/add-donation', addDonation);
+    api.post('/charge-square', createSquareDonation);
     hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);
     donateRouter.use('/hooks', hooks);
