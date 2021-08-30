@@ -67,7 +67,10 @@ export default function donateBoot(app, done) {
       });
       // connect to square
       const { customersApi, cardsApi, subscriptionsApi } = new Client({
-        environment: Environment.Sandbox,
+        environment:
+          process.env.DEPLOYMENT_ENV === 'production'
+            ? Environment.Production
+            : Environment.Sandbox,
         accessToken: keys.square.secret
       });
 
@@ -122,9 +125,8 @@ export default function donateBoot(app, done) {
         startDate: new Date().toISOString()
       };
       await createAsyncUserDonation(user, donation);
-
       console.log({ customerId, cardId, subscriptionId });
-      return res.status(200);
+      return res.status(200).json({ isDonating: true });
     } catch (err) {
       // and send back an error accondingly
       console.log(err);
