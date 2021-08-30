@@ -60,24 +60,25 @@ function SquareForm({
 
   useEffect(() => {
     const squareScript = document.getElementById('squareScript');
+
     if (squareScript) setSquareLoaded(true);
     else {
-      console.log('adding square script...');
       const script = document.createElement('script');
+      const scriptSource = `https://${
+        deploymentEnv === 'staging' ? 'sandbox.web' : ''
+      }.squarecdn.com/v1/square.js`;
       script.crossOrigin = 'anonymous';
       script.id = 'squareScript';
-      script.src = 'https://sandbox.web.squarecdn.com/v1/square.js';
+      script.src = scriptSource;
       document.head.appendChild(script);
       script.onload = () => {
         setSquareLoaded(true);
-        console.log('onSquareLoad');
       };
     }
   }, []);
 
   useEffect(() => {
     if (squareLoaded && !squarePayments) {
-      console.log('setting square payments...');
       const locationId: string = squareLocationConfig[deploymentEnv];
       setSquarePayments(
         window.Square?.payments(squareApplicationId, locationId)
@@ -128,7 +129,6 @@ function SquareForm({
   };
 
   const initializeSquareCard = async () => {
-    console.log('initializing square card...');
     const style = theme === 'night' ? darkModeStyles : {};
     const card: Card | undefined = await squarePayments?.card({ style });
     if (!squareCard) await card?.attach('#card-container');
@@ -156,21 +156,12 @@ function SquareForm({
 
   const handleSubmition = async () => {
     // handle card form verification
-    console.log('submition');
-    // error handling
-    // customer verification
-    console.log(isCardFieldsValid);
     if (!isCardFieldsValid) return;
     if (!isSubmitting) {
-      // Disable the submit button as we await tokenization and make a
-      // payment request
       setSubmitting(true);
       try {
         const token = await tokenizePaymentMethod();
         chargeSquare(token);
-        // Create your own addPayment function to communicate with your API
-        // await addPayment(token)
-        console.log('TOKEN', token);
       } catch (error) {
         console.error('FAILURE', error);
       } finally {
