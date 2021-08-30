@@ -333,7 +333,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             theme={defaultTheme ? defaultTheme : theme}
           />
           {isMinimalForm && <div className='separator'>Or pay with card</div>}
-          {loading.square && this.paymentButtonsLoader()}
+          {isMinimalForm && loading.square && this.paymentButtonsLoader()}
           {isMinimalForm && (
             <SquareForm
               chargeSquare={this.chargeSquare}
