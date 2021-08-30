@@ -15,6 +15,7 @@ interface SquareForProps {
   handlePaymentButtonLoad: (provider: 'square') => void;
   isSquareLoading: boolean;
   chargeSquare: (token: string | undefined) => void;
+  theme: string;
 }
 
 interface Card {
@@ -37,12 +38,13 @@ interface Token {
 }
 
 export interface Payments {
-  card: () => Promise<Card>;
+  card: (styles: unknown) => Promise<Card>;
 }
 function SquareForm({
   handlePaymentButtonLoad,
   isSquareLoading,
-  chargeSquare
+  chargeSquare,
+  theme
 }: SquareForProps): JSX.Element | null {
   const [squareLoaded, setSquareLoaded] = useState(false);
   const [squarePayments, setSquarePayments] = useState<Payments>();
@@ -91,9 +93,44 @@ function SquareForm({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [squarePayments]);
 
+  const darkModeStyles = {
+    '.input-container': {
+      borderColor: '#3b3b4f'
+    },
+    '.input-container.is-focus': {
+      borderColor: '#006AFF'
+    },
+    '.input-container.is-error': {
+      borderColor: '#ff1600'
+    },
+    '.message-text': {
+      color: '#d0d0d5'
+    },
+    '.message-icon': {
+      color: '#d0d0d5'
+    },
+    '.message-text.is-error': {
+      color: '#ff1600'
+    },
+    '.message-icon.is-error': {
+      color: '#ff1600'
+    },
+    input: {
+      backgroundColor: '#0a0a23',
+      color: '#FFFFFF'
+    },
+    'input::placeholder': {
+      color: '#858591'
+    },
+    'input.is-error': {
+      color: '#ff1600'
+    }
+  };
+
   const initializeSquareCard = async () => {
     console.log('initializing square card...');
-    const card: Card | undefined = await squarePayments?.card();
+    const style = theme === 'night' ? darkModeStyles : {};
+    const card: Card | undefined = await squarePayments?.card({ style });
     if (!squareCard) await card?.attach('#card-container');
     if (card) setSquareCard(card);
     handlePaymentButtonLoad('square');

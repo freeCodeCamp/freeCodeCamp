@@ -339,6 +339,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
               chargeSquare={this.chargeSquare}
               handlePaymentButtonLoad={this.handlePaymentButtonLoad}
               isSquareLoading={loading.square}
+              theme={priorityTheme}
             />
           )}
         </div>
