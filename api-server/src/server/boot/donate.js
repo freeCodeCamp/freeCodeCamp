@@ -55,16 +55,42 @@ export default function donateBoot(app, done) {
           error: 'Request is not valid'
         });
       }
-      // check if after signing the previous challenges are sent to api
-      // check if completedChallenges are passed to api
-      if (completedChallenges.length > 1000) throw Error('New user');
 
-      // check if a user has already made multiple donations
+      // check request validity
       const { Donation } = app.models;
       await Donation.find({ where: { userId: id } }, (err, donations) => {
         if (err) throw Error(err);
-        if (donations.length > 3000) throw Error('Too many Donations');
+
+        // check if a user has already made multiple donations
+        if (donations.length > 10)
+          throw {
+            message: 'Donor has more than 10 donations',
+            type: 'LargeNumbersOfDonations'
+          };
+
+        // check if a user has made a donation within an hour
+        if (donations.length > 1) {
+          const milliSecondsInHour = 3600000;
+          const milliSecondsNow = new Date().getTime();
+          const donatedInAnHour = donations.some(donation => {
+            return (
+              milliSecondsNow -
+                new Date(donation.startDate['_date']).getTime() <
+              milliSecondsInHour
+            );
+          });
+
+          if (donatedInAnHour)
+            throw {
+              message: 'Donor has recently donated',
+              type: 'HighFrequencyDonation'
+            };
+        }
       });
+
+      // todo: check if after signing up the previous completed challenges are sent to api
+      // and check for minimum completed challegnes.
+
       // connect to square
       const { customersApi, cardsApi, subscriptionsApi } = new Client({
         environment:
@@ -74,7 +100,7 @@ export default function donateBoot(app, done) {
         accessToken: keys.square.secret
       });
 
-      // create a customer
+      // create a square customer
       const {
         result: {
           customer: { id: customerId }
@@ -85,7 +111,9 @@ export default function donateBoot(app, done) {
         givenName: name === '' ? 'freeCodeCamp donor' : name
       });
 
-      // create a card for the customer
+      log(`Square Customer with id ${customerId} created`);
+
+      // create a card for the square customer
       const {
         result: {
           card: { id: cardId }
@@ -98,7 +126,7 @@ export default function donateBoot(app, done) {
         idempotencyKey: uuid()
       });
 
-      // add user to a subscription
+      // add user to a square subscription
       const locationId = squareLocationConfig[process.env.DEPLOYMENT_ENV];
       const planId =
         squarePlanConfig[process.env.DEPLOYMENT_ENV][duration][amount];
@@ -114,6 +142,8 @@ export default function donateBoot(app, done) {
         cardId
       });
 
+      log(`Square subscription with id ${subscriptionId} created`);
+
       // save Donation
       let donation = {
         email,
@@ -125,13 +155,17 @@ export default function donateBoot(app, done) {
         startDate: new Date().toISOString()
       };
       await createAsyncUserDonation(user, donation);
-      console.log({ customerId, cardId, subscriptionId });
       return res.status(200).json({ isDonating: true });
     } catch (err) {
-      // and send back an error accondingly
-      console.log(err);
-      res.status(500).send({ error: 'Donation failed due to a server error.' });
-      throw new Error('Error creating square subscription');
+      if (
+        err.type === 'LargeNumbersOfDonations' ||
+        err.type === 'HighFrequencyDonation'
+      ) {
+        return res.status(500).send({ error: err.message });
+      }
+      return res
+        .status(500)
+        .send({ error: 'Donation failed due to a server error.' });
     }
   }
 
