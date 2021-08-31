@@ -467,8 +467,10 @@
     "provide-username": "Verifique se você forneceu um nome de usuário e um relatório",
     "report-sent": "Um relatório foi enviado para a equipe com {{email}} em cópia",
     "certificate-missing": "A certificação que você tentou visualizar não existe",
-    "generate-token-err": "A server error occurred trying to generate a token",
-    "revoke-token-err": "A server error occurred trying to revoke your token"
+    "create-token-err": "An error occurred trying to create a token",
+    "delete-token-err": "An error occurred trying to delete your token",
+    "token-created": "You have successfully created a new token.",
+    "token-deleted": "Your token has been deleted."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
@@ -598,16 +600,16 @@
     "add-code-three": "pois elas permitirão a formatação adequada de seu código na publicação."
   },
   "webhook-token": {
-    "copy-text": "Copy your user token below to save your progress in this section. There will be a place for you to paste it after a course loads.",
-    "copy": "Copy",
-    "generate": "Generate New Token",
-    "generate-p1": "If you suspect your token has been compromised, generate a new one.",
-    "generate-p2": "You will not be able to save progress in this section using your old token.",
-    "generate-confirm": "Yes please, I would like to generate a new token",
-    "revoke": "Revoke Token",
-    "revoke-p1": "If you suspect your token has been compromised, revoke it to make it unusable.",
-    "revoke-p2": "You will need to generate a new one to save progress in this section.",
-    "revoke-confirm": "Yes please, I would like to revoke my token",
-    "no-thanks": "No thanks, I would like to keep my token"
+    "title": "Webhook Token",
+    "create": "Create a new token",
+    "create-p1": "It looks like you don't have a webhook token. Create one to save your progress on this section",
+    "create-p2": "Create a webhook token to save your progress on curriculum that uses a virtual machine.",
+    "delete": "Delete my token",
+    "delete-title": "Delete My Webhook Token",
+    "delete-p1": "Your webhook token below is used to save your progress on curriculum that uses a virtual machine.",
+    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
+    "delete-p3": "You will need to create a new token to save future progress on curriulum that uses a virtual machine.",
+    "no-thanks": "No thanks, I would like to keep my token",
+    "yes-please": "Yes please, I would like to delete my token"
   }
 }

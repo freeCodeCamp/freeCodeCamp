@@ -3,15 +3,15 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonSpacer } from '../helpers';
 
-type WebhookRevokeModalProps = {
+type WebhookDeleteModalProps = {
   onHide: () => void;
-  revoke: () => void;
+  deleteFunction: () => void;
   show: boolean;
 };
 
-function WebhookRevokeModal(props: WebhookRevokeModalProps): JSX.Element {
+function WebhookDeleteModal(props: WebhookDeleteModalProps): JSX.Element {
   const { t } = useTranslation();
-  const { show, onHide, revoke } = props;
+  const { show, onHide, deleteFunction } = props;
 
   return (
     <Modal
@@ -24,11 +24,13 @@ function WebhookRevokeModal(props: WebhookRevokeModalProps): JSX.Element {
       show={show}
     >
       <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title'>{t('webhook-token.revoke')}</Modal.Title>
+        <Modal.Title id='modal-title'>
+          {t('webhook-token.delete-title')}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>{t('webhook-token.revoke-p1')}</p>
-        <p>{t('webhook-token.revoke-p2')}</p>
+        <p>{t('webhook-token.delete-p2')}</p>
+        <p>{t('webhook-token.delete-p3')}</p>
         <hr />
         <Button
           block={true}
@@ -46,10 +48,10 @@ function WebhookRevokeModal(props: WebhookRevokeModalProps): JSX.Element {
           bsSize='lg'
           bsStyle='danger'
           className='btn-danger'
-          onClick={revoke}
+          onClick={deleteFunction}
           type='button'
         >
-          {t('webhook-token.revoke-confirm')}
+          {t('webhook-token.yes-please')}
         </Button>
       </Modal.Body>
       <Modal.Footer>
@@ -59,6 +61,6 @@ function WebhookRevokeModal(props: WebhookRevokeModalProps): JSX.Element {
   );
 }
 
-WebhookRevokeModal.displayName = 'WebhookRevokeModal';
+WebhookDeleteModal.displayName = 'WebhookDeleteModal';
 
-export default WebhookRevokeModal;
+export default WebhookDeleteModal;

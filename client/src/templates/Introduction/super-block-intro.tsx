@@ -189,9 +189,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
             <Spacer size={2} />
             <SuperBlockIntro superBlock={superBlock} />
             {superBlock === 'relational-databases' && isSignedIn && (
-              <div className='alert alert-info'>
-                <WebhookToken />
-              </div>
+              <WebhookToken isSuperBlockPage={true} />
             )}
             <Spacer size={2} />
             <h2 className='text-center big-subheading'>

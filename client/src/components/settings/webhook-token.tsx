@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Button } from '@freecodecamp/react-bootstrap';
+import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -10,27 +10,26 @@ import {
   deleteWebhookToken,
   webhookTokenSelector
 } from '../../redux';
-import { ButtonSpacer } from '../helpers';
-import WebhookGenerateModal from './webhook-generate-modal';
-import WebhookRevokeModal from './webhook-revoke-modal';
+import { ButtonSpacer, FullWidthRow, Spacer } from '../helpers';
+import WebhookDeleteModal from './webhook-delete-modal';
 
 import './webhook-token.css';
 
 type WebhookTokenProps = {
-  postWebhookToken: () => void;
   deleteWebhookToken: () => void;
+  isSuperBlockPage?: boolean;
+  postWebhookToken: () => void;
   t: TFunction;
-  webhookToken: string;
+  webhookToken: string | null;
 };
 
 type WebhookTokenState = {
-  webhookGenerateModal: boolean;
-  webhookRevokeModal: boolean;
+  webhookDeleteModal: boolean;
 };
 
 const mapStateToProps = createSelector(
   webhookTokenSelector,
-  (webhookToken: string) => ({
+  (webhookToken: string | null) => ({
     webhookToken
   })
 );
@@ -42,110 +41,108 @@ const mapDispatchToProps = {
 
 class WebhookToken extends Component<WebhookTokenProps, WebhookTokenState> {
   static displayName: string;
-  private tokenElRef = React.createRef<HTMLInputElement>();
   constructor(props: WebhookTokenProps) {
     super(props);
 
     this.state = {
-      webhookGenerateModal: false,
-      webhookRevokeModal: false
+      webhookDeleteModal: false
     };
 
-    this.generateToken = this.generateToken.bind(this);
-    this.revokeToken = this.revokeToken.bind(this);
+    this.createToken = this.createToken.bind(this);
+    this.deleteToken = this.deleteToken.bind(this);
   }
 
-  generateToken = (toggleModal = true) => {
+  createToken = () => {
     this.props.postWebhookToken();
-    if (toggleModal) this.toggleWebhookGenerateModal();
   };
 
-  revokeToken = () => {
+  deleteToken = () => {
     this.props.deleteWebhookToken();
-    this.toggleWebhookRevokeModal();
+    this.toggleWebhookDeleteModal();
   };
 
-  copyTokenToClipboard = () => {
-    this.tokenElRef?.current?.select();
-    document.execCommand('copy');
-  };
-
-  toggleWebhookGenerateModal = () => {
+  toggleWebhookDeleteModal = () => {
     return this.setState(state => ({
       ...state,
-      webhookGenerateModal: !state.webhookGenerateModal
-    }));
-  };
-
-  toggleWebhookRevokeModal = () => {
-    return this.setState(state => ({
-      ...state,
-      webhookRevokeModal: !state.webhookRevokeModal
+      webhookDeleteModal: !state.webhookDeleteModal
     }));
   };
 
   render() {
-    const { webhookToken = '', t } = this.props;
-    return (
-      <div className='light-palette'>
-        {t('webhook-token.copy-text')}
-        <div className='webhook-button-row'>
-          <input
-            aria-label={webhookToken}
-            className='webhook-token-input'
-            data-autoselect=''
-            readOnly={true}
-            ref={this.tokenElRef}
-            type='text'
-            value={webhookToken}
+    const { isSuperBlockPage = false, t, webhookToken = null } = this.props;
+    console.log('webhhookToken');
+    console.log(webhookToken);
+
+    return isSuperBlockPage ? (
+      <>
+        {!webhookToken && (
+          <div className='alert alert-info'>
+            <p>{t('webhook-token.create-p1')}</p>
+            <Spacer />
+            <Button
+              block={true}
+              bsSize='lg'
+              onClick={() => this.createToken()}
+              type='button'
+            >
+              {t('webhook-token.create')}
+            </Button>
+          </div>
+        )}
+      </>
+    ) : (
+      <div className='webhook-token text-center'>
+        <FullWidthRow>
+          <Panel className='webhook-panel'>
+            <Panel.Heading>{t('webhook-token.title')}</Panel.Heading>
+            <Spacer />
+            {!webhookToken ? (
+              <p>{t('webhook-token.create-p2')}</p>
+            ) : (
+              <p>{t('webhook-token.delete-p1')}</p>
+            )}
+            <FullWidthRow>
+              <input
+                aria-label='Webhook token'
+                className='webhook-token-input'
+                readOnly={true}
+                type='text'
+                value={webhookToken || ''}
+              />
+              <ButtonSpacer />
+              {!webhookToken ? (
+                <Button
+                  block={true}
+                  bsSize='lg'
+                  bsStyle='danger'
+                  className='btn-info'
+                  onClick={() => this.createToken()}
+                  type='button'
+                >
+                  {t('webhook-token.create')}
+                </Button>
+              ) : (
+                <Button
+                  block={true}
+                  bsSize='lg'
+                  bsStyle='danger'
+                  className='btn-info'
+                  onClick={() => this.toggleWebhookDeleteModal()}
+                  type='button'
+                >
+                  {t('webhook-token.delete')}
+                </Button>
+              )}
+              <Spacer />
+            </FullWidthRow>
+          </Panel>
+
+          <WebhookDeleteModal
+            deleteFunction={() => this.deleteToken()}
+            onHide={() => this.toggleWebhookDeleteModal()}
+            show={this.state.webhookDeleteModal}
           />
-          <Button
-            bsSize='sm'
-            className='webhook-copy-btn'
-            onClick={() => this.copyTokenToClipboard()}
-            type='button'
-          >
-            {t('webhook-token.copy')}
-          </Button>
-        </div>
-        <div className='webhook-button-row'>
-          <Button
-            bsSize='sm'
-            className='webhook-generate-btn'
-            onClick={
-              webhookToken === ''
-                ? () => this.generateToken(false)
-                : () => this.toggleWebhookGenerateModal()
-            }
-            type='button'
-            variant='outline-dark'
-          >
-            {t('webhook-token.generate')}
-          </Button>
-          <ButtonSpacer />
-          <Button
-            bsSize='sm'
-            className='webhook-revoke-btn'
-            onClick={
-              webhookToken !== '' ? () => this.toggleWebhookRevokeModal() : null
-            }
-            type='button'
-          >
-            {t('webhook-token.revoke')}
-          </Button>
-        </div>
-
-        <WebhookGenerateModal
-          generate={() => this.generateToken()}
-          onHide={() => this.toggleWebhookGenerateModal()}
-          show={this.state.webhookGenerateModal}
-        />
-
-        <WebhookRevokeModal
-          onHide={() => this.toggleWebhookRevokeModal()}
-          revoke={() => this.revokeToken()}
-          show={this.state.webhookRevokeModal}
-        />
+        </FullWidthRow>
       </div>
     );
   }

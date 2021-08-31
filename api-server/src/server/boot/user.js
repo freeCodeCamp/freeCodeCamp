@@ -59,7 +59,7 @@ function createPostWebhookToken(app) {
     } catch (e) {
       return res.status(500).json({
         type: 'danger',
-        message: 'flash.generate-token-err'
+        message: 'flash.create-token-err'
       });
     }
 
@@ -76,11 +76,11 @@ function createDeleteWebhookToken(app) {
     } catch (e) {
       return res.status(500).json({
         type: 'danger',
-        message: 'flash.revoke-token-err'
+        message: 'flash.delete-token-err'
       });
     }
 
-    return res.json('');
+    return res.json(null);
   };
 }
 
@@ -94,7 +94,7 @@ function createReadSessionUser(app) {
     const webhookTokenArr = await queryUser.webhookTokens({
       userId: queryUser.id
     });
-    const webhookToken = webhookTokenArr[0]?.id || '';
+    const webhookToken = webhookTokenArr[0]?.id || null;
 
     const source =
       queryUser &&

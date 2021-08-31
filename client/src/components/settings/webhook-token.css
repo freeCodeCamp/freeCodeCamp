@@ -1,33 +1,45 @@
-.webhook-button-row {
-  display: flex;
-  margin-top: 1rem;
+.webhook-panel {
+  border-color: var(--highlight-background);
 }
 
 .webhook-token-input {
-  flex-grow: 3;
-  color: var(--gray-85);
-  background-color: var(--gray-15);
-  padding: 0 5px 0 5px;
-  margin-right: 15px;
-  max-width: 100%;
+  display: block;
+  width: 100%;
+  padding: 3px 8px;
+  background-color: var(--primary-background);
+  border-color: var(--highlight-background);
+  border-style: solid;
+  color: var(--highlight-color);
 }
 
-.webhook-generate-btn {
-  flex-grow: 1;
-  margin-right: 7.5px;
+.webhook-token-input:focus {
+  border-color: var(--highlight-color);
 }
 
-.webhook-revoke-btn {
-  flex-grow: 1;
-  margin-left: 7.5px;
+.btn-info {
+  background-color: var(--highlight-color);
+  color: var(--highlight-background);
+  border-color: var(--highlight-background);
 }
 
-@media (max-width: 400px) {
-  .webhook-token-input {
-    max-width: 65%;
-  }
+.btn-info:hover,
+.btn-info:focus {
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
+  border-color: var(--highlight-background);
+}
 
-  .webhook-copy-btn {
-    flex-grow: 1;
-  }
+.webhook-token .panel-heading {
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
+  border-radius: 0;
+  border: none;
+}
+
+.webhook-token .panel-info {
+  border-color: var(--highlight-background);
+}
+
+.webhook-token p {
+  color: var(--highlight-color);
 }
