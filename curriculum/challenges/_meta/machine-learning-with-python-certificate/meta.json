@@ -1,7 +1,7 @@
 {
-  "name": "Machine Learning with Python Certificate",
+  "name": "Machine Learning with Python Certification",
   "isUpcomingChange": false,
-  "dashedName": "machine-learning-with-python-v7-certificate",
+  "dashedName": "machine-learning-with-python-v7-certification",
   "order": 11,
   "time": "",
   "template": "",
@@ -11,7 +11,7 @@
   "challengeOrder": [
     [
       "5e46fc95ac417301a38fb935",
-      "Machine Learning with Python Certificate"
+      "Machine Learning with Python Certification"
     ]
   ],
   "isPrivate": true

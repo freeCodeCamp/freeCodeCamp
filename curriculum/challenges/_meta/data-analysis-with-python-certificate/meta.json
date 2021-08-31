@@ -1,7 +1,7 @@
 {
-  "name": "Data Analysis with Python Certificate",
+  "name": "Data Analysis with Python Certification",
   "isUpcomingChange": false,
-  "dashedName": "data-analysis-with-python-v7-certificate",
+  "dashedName": "data-analysis-with-python-v7-certification",
   "order": 9,
   "time": "",
   "template": "",
@@ -11,7 +11,7 @@
   "challengeOrder": [
     [
       "5e46fc95ac417301a38fb934",
-      "Data Analysis with Python Certificate"
+      "Data Analysis with Python Certification"
     ]
   ],
   "isPrivate": true

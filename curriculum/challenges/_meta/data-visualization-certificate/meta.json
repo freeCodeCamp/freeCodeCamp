@@ -1,7 +1,7 @@
 {
-  "name": "Data Visualization Certificate",
+  "name": "Data Visualization Certification",
   "isUpcomingChange": false,
-  "dashedName": "data-visualization-certificate",
+  "dashedName": "data-visualization-certification",
   "order": 4,
   "time": "",
   "template": "",
@@ -11,7 +11,7 @@
   "challengeOrder": [
     [
       "5a553ca864b52e1d8bceea14",
-      "Data Visualization Certificate"
+      "Data Visualization Certification"
     ]
   ],
   "isPrivate": true

@@ -1,7 +1,7 @@
 {
-  "name": "Quality Assurance Certificate",
+  "name": "Quality Assurance Certification",
   "isUpcomingChange": false,
-  "dashedName": "quality-assurance-v7-certificate",
+  "dashedName": "quality-assurance-v7-certification",
   "order": 7,
   "time": "",
   "template": "",
@@ -11,7 +11,7 @@
   "challengeOrder": [
     [
       "5e611829481575a52dc59c0e",
-      "Quality Assurance Certificate"
+      "Quality Assurance Certification"
     ]
   ],
   "isPrivate": true

@@ -1,7 +1,7 @@
 {
-  "name": "Scientific Computing with Python Certificate",
+  "name": "Scientific Computing with Python Certification",
   "isUpcomingChange": false,
-  "dashedName": "scientific-computing-with-python-v7-certificate",
+  "dashedName": "scientific-computing-with-python-v7-certification",
   "order": 8,
   "time": "",
   "template": "",
@@ -11,7 +11,7 @@
   "challengeOrder": [
     [
       "5e44431b903586ffb414c951",
-      "Scientific Computing with Python Certificate"
+      "Scientific Computing with Python Certification"
     ]
   ],
   "isPrivate": true
