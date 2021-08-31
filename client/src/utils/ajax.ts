@@ -35,7 +35,7 @@ function put<T = void>(path: string, body: unknown): Promise<T> {
   return request('PUT', path, body);
 }
 
-function deleet<T = void>(path: string, body: unknown): Promise<T> {
+function deleteRequest<T = void>(path: string, body: unknown): Promise<T> {
   return request('DELETE', path, body);
 }
 
@@ -262,5 +262,5 @@ export function putVerifyCert(certSlug: string): Promise<void> {
 
 /** DELETE **/
 export function deleteWebhookToken(): Promise<void> {
-  return deleet('/user/webhook-token', {});
+  return deleteRequest('/user/webhook-token', {});
 }
