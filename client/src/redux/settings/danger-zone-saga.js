@@ -7,15 +7,26 @@ import { postResetProgress, postDeleteAccount } from '../../utils/ajax';
 import { actionTypes as appTypes } from '../action-types';
 import { deleteAccountError, resetProgressError } from './';
 
+// Dealy funtion
+function wait(ms) {
+  var start = new Date().getTime();
+  var end = start;
+  while (end < start + ms) {
+    end = new Date().getTime();
+  }
+}
+
 function* deleteAccountSaga() {
   try {
     yield call(postDeleteAccount);
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'flash.account-deleted'
+        message: 'Your account has been successfully deleted'
       })
     );
+    // add delay of 3 seconds
+    wait(3000);
     // remove current user information from application state
     yield put(resetUserData());
     yield call(navigate, '/');
@@ -30,9 +41,11 @@ function* resetProgressSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'flash.progress-reset'
+        message: 'Your progress has been reset'
       })
     );
+    // add delay of 3 seconds
+    wait(3000);
     // refresh current user data in application state
     yield put(fetchUser());
     // wait for the refresh to complete
