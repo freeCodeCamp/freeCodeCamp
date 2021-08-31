@@ -163,15 +163,9 @@ export const postWebhookToken = createAction(actionTypes.postWebhookToken);
 export const postWebhookTokenComplete = createAction(
   actionTypes.postWebhookTokenComplete
 );
-export const postWebhookTokenError = createAction(
-  actionTypes.postWebhookTokenError
-);
 export const deleteWebhookToken = createAction(actionTypes.deleteWebhookToken);
 export const deleteWebhookTokenComplete = createAction(
   actionTypes.deleteWebhookTokenComplete
-);
-export const deleteWebhookTokenError = createAction(
-  actionTypes.deleteWebhookTokenError
 );
 
 export const updateCurrentChallengeId = createAction(
@@ -627,9 +621,6 @@ export const reducer = handleActions(
         }
       };
     },
-    [actionTypes.postWebhookTokenError]: state => {
-      return { ...state };
-    },
     [actionTypes.deleteWebhookToken]: state => {
       return { ...state };
     },
@@ -645,9 +636,6 @@ export const reducer = handleActions(
           }
         }
       };
-    },
-    [actionTypes.deleteWebhookTokenError]: state => {
-      return { ...state };
     },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({
       ...state,
