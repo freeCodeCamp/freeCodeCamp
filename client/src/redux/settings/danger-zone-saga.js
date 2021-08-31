@@ -22,7 +22,7 @@ function* deleteAccountSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'Your account has been successfully deleted'
+        message: 'flash.account-deleted'
       })
     );
     // add delay of 3 seconds
@@ -41,7 +41,7 @@ function* resetProgressSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'Your progress has been reset'
+        message: 'flash.progress-reset'
       })
     );
     // add delay of 3 seconds
