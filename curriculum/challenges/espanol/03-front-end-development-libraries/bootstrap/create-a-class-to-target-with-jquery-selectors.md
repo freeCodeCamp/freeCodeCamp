@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908852
-title: Crear una clase para apuntar con selectores jQuery
+title: Crear una clase para seleccionar con selectores jQuery
 challengeType: 0
 forumTopicId: 16815
 dashedName: create-a-class-to-target-with-jquery-selectors
@@ -8,7 +8,7 @@ dashedName: create-a-class-to-target-with-jquery-selectors
 
 # --description--
 
-No todas las clases necesitan tener CSS correspondientes. A veces creamos clases sólo con el propósito de seleccionar aquellos elementos más fácilmente utilizando jQuery.
+No es necesario que todas las clases tengan su correspondiente CSS. A veces creamos clases sólo con el propósito de seleccionar aquellos elementos más fácilmente utilizando jQuery.
 
 Dale a cada uno de tus elementos `button` la clase `target`.
 

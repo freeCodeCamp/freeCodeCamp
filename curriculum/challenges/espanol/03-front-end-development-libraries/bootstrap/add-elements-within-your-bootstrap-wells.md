@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908849
-title: Agregar elementos dentro de tus recursos de Bootstrap
+title: Agrega elementos dentro de tus recursos de Bootstrap
 challengeType: 0
 forumTopicId: 16636
 dashedName: add-elements-within-your-bootstrap-wells
@@ -8,13 +8,13 @@ dashedName: add-elements-within-your-bootstrap-wells
 
 # --description--
 
-Ahora estamos a varios elementos `div` de profundidad en cada columna de nuestras filas. Esto es todo lo que necesitamos. Ahora podemos agregar nuestros elementos `button`.
+Ahora estamos a varios elementos `div` de profundidad en cada columna de nuestra fila. Esto es lo más profundo que necesitaremos ir. Ahora podemos agregar nuestros elementos `button`.
 
 Anida tres elementos `button` dentro de cada uno de los elementos `div` que posean una clase `well`.
 
 # --hints--
 
-Tres elementos `button` deberían ser insertados dentro de cada uno de los elementos `div` con la clase `well`.
+Tres elementos `button` deben estar anidados dentro de cada uno de tus elementos `div` con la clase `well`.
 
 ```js
 assert(
@@ -23,13 +23,13 @@ assert(
 );
 ```
 
-Debería haber un total de 6 elementos `button`.
+Debes tener un total de 6 elementos `button`.
 
 ```js
 assert($('button') && $('button').length > 5);
 ```
 
-Todos los elementos `button` deben tener etiqueta de cierre.
+Todos tus elementos `button` deben tener etiquetas de cierre.
 
 ```js
 assert(

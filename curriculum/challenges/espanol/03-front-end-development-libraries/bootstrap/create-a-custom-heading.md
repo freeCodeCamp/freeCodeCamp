@@ -8,11 +8,11 @@ dashedName: create-a-custom-heading
 
 # --description--
 
-Crearemos un título simple para nuestra aplicación de fotos de gatos colocando el título y la imagen relajante del gato en la misma fila.
+Haremos un encabezado simple para nuestro 'Cat Photo App' colocando el título y la imagen del gato relajándose en la misma fila.
 
-Recuerda, Bootstrap usa un sistema de cuadrícula responsivo, lo que facilita la colocación de elementos en filas y especifica el ancho relativo de cada elemento. La mayoría de las clases de Bootstrap se pueden aplicar a un elemento `div`.
+Recuerda que Bootcamp utiliza un sistema de cuadrícula responsivo, el cual hace más fácil poner elementos en filas y especificar el ancho relativo de cada elemento. La mayoría de las clases de Bootstrap pueden ser aplicadas a un elemento `div`.
 
-Anida tu primera imagen y tu elemento `h2` dentro de un solo elemento `<div class="row">`. Anida tu elemento `h2` dentro de un `<div class="col-xs-8">` y tu imagen en un `<div class="col-xs-4">` de modo que estén en la misma línea.
+Anida tu primera imagen y tu elemento `h2` dentro de un solo elemento `<div class="row">`. Anida tu elemento `h2` dentro de `<div class="col-xs-8">` y tu imagen en un `<div class="col-xs-4">` para que estén en la misma línea.
 
 ¿Observas cómo la imagen ahora tiene el tamaño adecuado para ajustarse al texto?
 
