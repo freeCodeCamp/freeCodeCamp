@@ -6,10 +6,10 @@ isPrivate: true
 tests:
   - 
     id: 587d8249367417b2b2512c41
-    title: 公制 - 英制轉換器
+    title: 公英制轉換器
   - 
     id: 587d8249367417b2b2512c42
-    title: 問題跟蹤器
+    title: 問題追蹤器
   - 
     id: 587d824a367417b2b2512c43
     title: 個人圖書館

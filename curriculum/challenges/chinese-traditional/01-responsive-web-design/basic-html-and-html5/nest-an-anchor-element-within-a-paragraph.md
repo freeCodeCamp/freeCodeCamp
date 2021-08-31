@@ -46,7 +46,7 @@ Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.free
 
 # --instructions--
 
-創建一個新的段落 `p` 元素來包裹 `a` 元素。 新段落應有文本 `View more cat photos`，其中 `cat photos` 是一個鏈接，其餘是純文本。
+創建一個新的段落 `p` 元素來包裹 `a` 元素。 不要創建一個新的錨點標籤。 新段落應有文本 `View more cat photos`，其中 `cat photos` 是一個鏈接，其餘是純文本。
 
 # --hints--
 

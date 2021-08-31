@@ -8,7 +8,7 @@ dashedName: iterate-over-all-properties
 
 # --description--
 
-現在你已經瞭解了兩種屬性: <dfn>自身屬性</dfn>和 `prototype` 屬性。 自身屬性是直接在對象上定義的。 而 `prototype` 屬性是定義在 `prototype` 上的。
+現在你已經瞭解了兩種屬性: <dfn>自身屬性</dfn>和 `prototype` 屬性。 自身屬性是直接在對象上定義的。 而原型屬性在 `prototype` 上定義。
 
 ```js
 function Bird(name) {
