@@ -17,6 +17,7 @@ import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
 
 type PaypalButtonProps = {
   addDonation: (data: AddDonationData) => void;
+  isSignedIn: boolean;
   donationAmount: number;
   donationDuration: string;
   handleProcessing: (
@@ -106,10 +107,10 @@ export class PaypalButton extends Component<
 
   handleApproval = (data: AddDonationData, isSubscription: boolean): void => {
     const { amount, duration } = this.state;
-    const { skipAddDonation = false } = this.props;
+    const { isSignedIn = false } = this.props;
 
-    // Skip the api if user is not signed in or if its a one-time donation
-    if (!skipAddDonation || isSubscription) {
+    // If the user is signed in and the payment is subscritipn call the api
+    if (isSignedIn && isSubscription) {
       this.props.addDonation(data);
     }
 
