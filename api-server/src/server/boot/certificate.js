@@ -147,7 +147,7 @@ function sendCertifiedEmail(
     isFrontEndLibsCert,
     isJsAlgoDataStructCert,
     isDataVisCert,
-    // uncomment on release?
+    // uncomment on release? Pretty sure this is for full stack cert
     // isRelationalDatabasesCert,
     isApisMicroservicesCert,
     isQaCertV7,
@@ -164,7 +164,7 @@ function sendCertifiedEmail(
     !isFrontEndLibsCert ||
     !isJsAlgoDataStructCert ||
     !isDataVisCert ||
-    // uncomment on release?
+    // uncomment on release? Pretty sure this is for full stack cert
     // !isRelationalDatabasesCert ||
     !isApisMicroservicesCert ||
     !isQaCertV7 ||
@@ -368,7 +368,7 @@ function createShowCert(app) {
       isSciCompPyCertV7: true,
       isDataAnalysisPyCertV7: true,
       isMachineLearningPyCertV7: true,
-      // Not sure what this is for
+      // Not sure what this is for, but likely want to uncomment on release
       // isRelationalDatabasesCertV8: true,
       isHonest: true,
       username: true,
@@ -538,7 +538,7 @@ function createVerifyCanClaim(certTypeIds, app) {
       isSciCompPyCertV7: true,
       isDataAnalysisPyCertV7: true,
       isMachineLearningPyCertV7: true,
-      // Not sure what this is for
+      // Not sure what this is for, but likely want to uncomment on release
       // isRelationalDatabasesCertV8: true,
       username: true,
       name: true,

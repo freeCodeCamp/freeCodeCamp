@@ -16,7 +16,8 @@ import Honesty from '../components/settings/honesty';
 import Internet from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
-import WebhookToken from '../components/settings/webhook-token';
+// uncomment on release
+// import WebhookToken from '../components/settings/webhook-token';
 import {
   signInLoadingSelector,
   userSelector,
@@ -199,8 +200,9 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
             username={username}
             verifyCert={verifyCert}
           />
+          {/* uncomment on release
           <Spacer />
-          <WebhookToken />
+          <WebhookToken />*/}
           <Spacer />
           <DangerZone />
         </main>
