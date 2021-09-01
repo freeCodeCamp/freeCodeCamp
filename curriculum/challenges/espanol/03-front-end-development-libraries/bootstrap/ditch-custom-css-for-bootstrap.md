@@ -1,6 +1,6 @@
 ---
 id: bad87fee1347bd9aedf08845
-title: Deja de lado el CSS personalizado por Bootstrap
+title: Adiós CSS Personalizado. Hola Bootstrap
 challengeType: 0
 forumTopicId: 17565
 dashedName: ditch-custom-css-for-bootstrap
@@ -8,31 +8,31 @@ dashedName: ditch-custom-css-for-bootstrap
 
 # --description--
 
-Podemos limpiar nuestro código y hacer que nuestra aplicación de fotos de gatos parezca más convencional, usando los estilos incorporados de Bootstrap, en lugar de los estilos personalizados que hemos creado antes.
+Podemos limpiar nuestro código y hacer que nuestro 'Cat Photo App' se vea más convencional utilizando los estilos incorporados de Bootstrap en lugar de los estilos personalizados que creamos antes.
 
-No te preocupes – tendremos mucho tiempo para personalizar nuestro CSS más adelante.
+No te preocupes - habrá mucho tiempo para personalizar nuestro CSS después.
 
-Elimina las declaraciones de CSS `.red-text`, `p` y `.smaller-image` de tu elemento `style` para que la únicas declaraciones que queden en tu elemento `style` sean `h2` y `thick-green-border`.
+Borra las declaraciones de CSS `.red-text`, `p` y `.smaller-image` de tu elemento `style` para que las únicas declaraciones en tu elemento `style` sean `h2` y `thick-green-border`.
 
-A continuación elimina el elemento `p` que contiene un enlace roto. Después elimina la clase `red-text` de tu elemento `h2` y reemplázala con la clase `text-primary` de Bootstrap.
+Luego, borra el elemento `p` que contiene un enlace muerto. Después, borra la clase `red-text` de tu elemento `h2` y reemplázalo con la clase de Bootstrap `text-primary`.
 
-Finalmente elimina la clase `smaller-image` de tu primer elemento `img` y reemplázala con la clase `img-responsive`.
+Finalmente, remueve la clase `smaller-image` de tu primer elemento `img` y reemplázalo con la clase `img-responsive`.
 
 # --hints--
 
-Tu elemento `h2` ya no debería incluir la clase `red-text`.
+Tu elemento `h2` ya no debe tener la clase `red-text`.
 
 ```js
 assert(!$('h2').hasClass('red-text'));
 ```
 
-Tu elemento `h2` ahora debe incluir la clase `text-primary`.
+Tu elemento `h2` ahora debe tener la clase `text-primary`.
 
 ```js
 assert($('h2').hasClass('text-primary'));
 ```
 
-Tus elementos p (párrafo) ya no deben usar la fuente `Monospace`.
+Tus elementos de párrafo ya no deben usar la fuente `Monospace`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-La clase `smaller-image` debe ser eliminada de tu imagen superior.
+La clase `smaller-image` debe ser removida de tu imagen superior.
 
 ```js
 assert(!$('img').hasClass('smaller-image'));

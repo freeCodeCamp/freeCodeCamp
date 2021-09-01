@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedc08845
-title: Agrega íconos Font Awesome a todos nuestros botones
+title: Agrega iconos Font Awesome a todos nuestros botones
 challengeType: 0
 forumTopicId: 16637
 required:
@@ -12,17 +12,17 @@ dashedName: add-font-awesome-icons-to-all-of-our-buttons
 
 # --description--
 
-Font Awesome es una conveniente librería de íconos. Éstos pueden ser fuentes de la web o gráficos vectoriales. Los iconos son tratados como fuentes. Puedes especificar su tamaño usando píxeles y ellos asumirán el tamaño de fuente de su elemento HTML padre.
+Font Awesome es una conveniente librería de iconos. Estos pueden ser fuentes web o gráficos vectoriales. Estos iconos son tratados como fuentes. Puedes especificar su tamaño usando píxeles, y ellos asumirán el tamaño de fuente de su elemento HTML padre.
 
 # --instructions--
 
 Utiliza Font Awesome para agregar un icono `info-circle` a su botón info y un icono `trash` al botón borrar.
 
-** Nota: **El elemento `span` es una alternativa aceptable al elemento `i` para las direcciones a continuación.
+**Nota:**El elemento `span` es una alternativa aceptable al elemento `i` para las direcciones a continuación.
 
 # --hints--
 
-Deberías añadir un elemento `<i class="fas fa-info-circle"></i>` dentro de tu elemento `info` botón info.
+Debes añadir un elemento `<i class="fas fa-info-circle"></i>` dentro de tu elemento botón `info`.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Deberías añadir un elemento `<i class="fas fa-trash"></i>` dentro de tu elemento botón `delete`.
+Debes añadir un elemento `<i class="fas fa-trash"></i>` dentro de tu elemento botón `delete`.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-Cada uno de tus elementos `i` debe tener una etiqueta de cierre y `<i class="fas fa-thumbs-up"></i>` tiene que estar en el botón `like`.
+Cada uno de tus elementos `i` debe tener una etiqueta de cierre y `<i class="fas fa-thumbs-up"></i>` tiene que estar en tu elemento botón `like`.
 
 ```js
 assert(

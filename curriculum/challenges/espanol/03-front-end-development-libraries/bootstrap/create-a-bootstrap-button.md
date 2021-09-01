@@ -8,7 +8,7 @@ dashedName: create-a-bootstrap-button
 
 # --description--
 
-Bootstrap tiene sus propios estilos para los elementos `button`, que se ven mucho mejor que el HTML plano.
+Bootstrap tiene sus propios estilos para los elementos `button`, que se ven mucho mejor que los de HTML puro.
 
 Crea un nuevo elemento `button` debajo de la foto grande de tu gatito. Dale las clases `btn` y `btn-default`, así como el texto de `Like`.
 
@@ -23,13 +23,13 @@ assert(
 );
 ```
 
-Tu nuevo botón debería tener dos clases: `btn` y `btn-default`.
+Tu nuevo botón debe tener dos clases: `btn` y `btn-default`.
 
 ```js
 assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
-Todos los elementos `button` deben tener etiquetas de cierre.
+Todos los elementos de tu `button` deben tener etiquetas de cierre.
 
 ```js
 assert(

@@ -42,7 +42,7 @@ There may be times when you need to rename a certificate, superblock, block, or 
 
 When renaming a certification, you will likely want to rename the associated superblock along with it. Do the following to rename only the certificate:
 
-1. Rename the `curriculum/challenges/_meta/{superBlock}-certficate` folder to the new name.
+1. Rename the `curriculum/challenges/_meta/{superBlock}-certificate` folder to the new name.
 1. In the `meta.json` file of that folder, rename the values in `name`, `dashedName`, and `challengeOrder` to the new cert name.
 1. In `curriculum/challenges/english/12-certificate`, rename the `{superBlock}-certificate` folder, and the YAML file within it, to the new name.
 1. In the YAML file, change the `title` to the new name.

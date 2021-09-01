@@ -28,7 +28,7 @@ dashedName: escape-sequences-in-strings
 
 你需要使用转义字符正确地插入特殊字符。 确保间距与上面文本一致，并且单词或转义字符之间没有空格。
 
-**注意：** `SecondLine` 是因为键入了转义字符（而不是空格），所以在那个位置。
+**注意：**`SecondLine` 前面的空白是制表符，而不是空格。
 
 # --hints--
 

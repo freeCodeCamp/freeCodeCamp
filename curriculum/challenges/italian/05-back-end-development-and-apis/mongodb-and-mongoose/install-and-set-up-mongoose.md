@@ -22,7 +22,7 @@ Segui <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/
 
 # --instructions--
 
-Aggiungi `mongodb` e `mongoose` al `package.json` del progetto. Poi, richiedi mongoose come `mongoose` in `myApp.js`. Crea un file `.env` e aggiungi una variabile `MONGO_URI` ad esso. Il suo valore dovrebbe essere l'URI del database MongoDB Atlas. Assicurati di racchiudere l'URI tra virgolette singole o doppie, e ricorda che non puoi usare spazi attorno al segno `=` nelle variabili d'ambiente. Ad esempio, `MONGO_URI='VALUE'`. Quando hai finito, connettiti al database usando la seguente sintassi:
+Aggiungi `mongodb@~3.6.0` e `mongoose@~5.4.0` al `package.json` del progetto. Poi, richiedi mongoose come `mongoose` in `myApp.js`. Crea un file `.env` e aggiungi una variabile `MONGO_URI` ad esso. Il suo valore dovrebbe essere l'URI del database MongoDB Atlas. Assicurati di racchiudere l'URI tra virgolette singole o doppie, e ricorda che non puoi usare spazi attorno al segno `=` nelle variabili d'ambiente. Ad esempio, `MONGO_URI='VALUE'`. Quando hai finito, connettiti al database usando la seguente sintassi:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });

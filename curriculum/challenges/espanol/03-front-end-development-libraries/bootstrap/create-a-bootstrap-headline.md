@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908846
-title: Crear un encabezado de Bootstrap
+title: Crea un encabezado de Bootstrap
 challengeType: 0
 forumTopicId: 16812
 dashedName: create-a-bootstrap-headline
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-Tu elemento `h3` debe estar coloreado al aplicar la clase `text-primary`
+Tu elemento `h3` debe ser coloreado aplicando la clase `text-primary`
 
 ```js
 assert($('h3').hasClass('text-primary'));
