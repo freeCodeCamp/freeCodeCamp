@@ -8,7 +8,11 @@ const commonProps = {
   donationDuration: 'month',
   handleProcessing: () => null,
   isDonating: false,
-  onDonationStateChange: () => null
+  onDonationStateChange: () => null,
+  isPaypalLoading: true,
+  t: jest.fn(),
+  theme: 'night',
+  handlePaymentButtonLoad: jest.fn()
 };
 
 const donationData = {
@@ -18,17 +22,11 @@ const donationData = {
   error: null
 };
 
-interface Ref {
-  current: null | {
-    handleApproval: (donationData: unknown, isSubscription: boolean) => void;
-  };
-}
-
 jest.mock('../../analytics');
 
 describe('<Paypal Button/>', () => {
   it('calls api on approval when user is signed and subscribes', () => {
-    const ref: Ref = React.createRef();
+    const ref = React.createRef<PaypalButton>();
     const isSubscription = false;
     const addDonation = jest.fn();
     render(
@@ -44,7 +42,7 @@ describe('<Paypal Button/>', () => {
     expect(addDonation).toBeCalledTimes(0);
   });
   it('calls api on approval when user is signed and subscribes', () => {
-    const ref: Ref = React.createRef();
+    const ref = React.createRef<PaypalButton>();
     const isSubscription = true;
     const addDonation = jest.fn();
     render(

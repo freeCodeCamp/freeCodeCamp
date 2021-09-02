@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable camelcase */
 
-import React, { Component } from 'react';
+import React, { Component, Ref } from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -40,6 +40,7 @@ type PaypalButtonProps = {
   isPaypalLoading: boolean;
   skipAddDonation?: boolean;
   t: (label: string) => string;
+  ref?: Ref<PaypalButton>;
   theme: string;
   isSubscription?: boolean;
   handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
