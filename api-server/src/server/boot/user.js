@@ -16,7 +16,7 @@ import {
 import { getRedirectParams } from '../utils/redirection';
 import { trimTags } from '../utils/validators';
 
-const { DISCOURSE_API } = process.env;
+const { DISCOURSE_API_KEY, FORUM_LOCATION } = process.env;
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -46,37 +46,30 @@ function bootUser(app) {
 }
 
 function userBadges(req, res) {
-  const { email } = req.query;
-  const flag = 'active';
-  // Get list of emails from Discourse
-  // TODO: I think 'active' means someone online.
-  // Probably want to change this, unless we explain via
-  // flash message that Camper must also be online Discourse??
+  const { discourse_user_id } = getSessionUser();
   request(
-    `https://forum.freecodecamp.org/admin/users/list/${flag}.json?show_emails=true`,
+    `${FORUM_LOCATION}/admin/users/${discourse_user_id}.json`,
     {
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org',
-        'Api-Key': DISCOURSE_API,
+        'Api-Key': DISCOURSE_API_KEY,
         // TODO: Whilst testing
         'Api-Username': 'Sky020'
       }
     },
     (err, response, body) => {
-      const users = JSON.parse(body);
-      if (err || users.errors) {
-        return res.status(500).send(err || users.errors);
+      const user = JSON.parse(body);
+      if (err || user.errors) {
+        return res.status(500).send(err || user.errors);
       } else {
-        // Find user with matching email
-        const user = users?.find(u => u.email === email);
-        console.log(users.length);
+        console.log(user);
         if (user.length === 0) {
           return res.status(404).send('No associated Discourse email found');
         }
         // Return user's Discourse badges
         return request(
-          `https://forum.freecodecamp.org/user-badges/${user.username}.json`,
+          `${FORUM_LOCATION}/user-badges/${user.username}.json`,
           {
             headers: {
               'Content-Type': 'application/json',
