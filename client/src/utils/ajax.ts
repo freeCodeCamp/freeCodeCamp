@@ -168,7 +168,7 @@ export function getVerifyCanClaimCert(
 
 // TODO: returns a JSON string of type BadgeData
 export function getUserBadges(email: string): Promise<string> {
-  return get(`/user-badges?email=${email}`);
+  return get(`/user/badges?email=${email}`);
 }
 
 /** POST **/
@@ -251,4 +251,9 @@ export function putUserUpdateEmail(email: string): Promise<void> {
 
 export function putVerifyCert(certSlug: string): Promise<void> {
   return put('/certificate/verify', { certSlug });
+}
+
+// TODO: is this a Promise<void>?
+export function putConnectDiscourseAccount(userId: string): Promise<void> {
+  return put('/discourse/connect', { userId });
 }

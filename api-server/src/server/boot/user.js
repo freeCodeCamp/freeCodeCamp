@@ -27,11 +27,12 @@ function bootUser(app) {
   const getSessionUser = createReadSessionUser(app);
   const postReportUserProfile = createPostReportUserProfile(app);
   const postDeleteAccount = createPostDeleteAccount(app);
+  const getUserBadges = createGetUserBadges(app);
 
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
-  api.get('/user-badges', userBadges);
+  api.get('/user/badges', getSessionUser, getUserBadges);
 
   api.post('/account/delete', ifNoUser401, postDeleteAccount);
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
@@ -45,48 +46,51 @@ function bootUser(app) {
   app.use(api);
 }
 
-function userBadges(req, res) {
-  const { discourse_user_id } = getSessionUser();
-  request(
-    `${FORUM_LOCATION}/admin/users/${discourse_user_id}.json`,
-    {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org',
-        'Api-Key': DISCOURSE_API_KEY,
-        // TODO: Whilst testing
-        'Api-Username': 'Sky020'
-      }
-    },
-    (err, response, body) => {
-      const user = JSON.parse(body);
-      if (err || user.errors) {
-        return res.status(500).send(err || user.errors);
-      } else {
-        console.log(user);
-        if (user.length === 0) {
-          return res.status(404).send('No associated Discourse email found');
+// TODO: How to get user from previous middleware?
+function createGetUserBadges(app) {
+  return (req, res) => {
+    const { discourseId } = req.user;
+    request(
+      `${FORUM_LOCATION}/admin/users/${discourseId}.json`,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org',
+          'Api-Key': DISCOURSE_API_KEY,
+          // TODO: Whilst testing
+          'Api-Username': 'Sky020'
         }
-        // Return user's Discourse badges
-        return request(
-          `${FORUM_LOCATION}/user-badges/${user.username}.json`,
-          {
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org'
-            }
-          },
-          (err, response, body) => {
-            if (err) {
-              res.status(500).send(err);
-            } else {
-              res.json(body);
-            }
+      },
+      (err, response, body) => {
+        const user = JSON.parse(body);
+        if (err || user.errors) {
+          return res.status(500).send(err || user.errors);
+        } else {
+          console.log(user);
+          if (user.length === 0) {
+            return res.status(404).send('No associated Discourse email found');
           }
-        );
+          // Return user's Discourse badges
+          return request(
+            `${FORUM_LOCATION}/user-badges/${user.username}.json`,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org'
+              }
+            },
+            (err, response, body) => {
+              if (err) {
+                res.status(500).send(err);
+              } else {
+                res.json(body);
+              }
+            }
+          );
+        }
       }
-    }
-  );
+    );
+  };
 }
 
 function createReadSessionUser(app) {
