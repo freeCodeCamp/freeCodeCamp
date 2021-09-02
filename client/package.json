@@ -131,8 +131,8 @@
   },
   "devDependencies": {
     "@babel/types": "7.15.0",
-    "@codesee/babel-plugin-instrument": "0.74.0",
-    "@codesee/tracker": "0.74.0",
+    "@codesee/babel-plugin-instrument": "0.75.0",
+    "@codesee/tracker": "0.75.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@types/jest": "26.0.24",
@@ -165,7 +165,7 @@
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.3",
     "serve": "12.0.0",
-    "webpack": "5.51.1",
+    "webpack": "5.51.2",
     "webpack-cli": "4.8.0"
   }
 }
