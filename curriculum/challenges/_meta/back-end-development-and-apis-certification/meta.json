@@ -1,0 +1,18 @@
+{
+  "name": "Back End Development and APIs Certification",
+  "isUpcomingChange": false,
+  "dashedName": "back-end-development-and-apis-certification",
+  "order": 6,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "certifications",
+  "superOrder": 0,
+  "challengeOrder": [
+    [
+      "561add10cb82ac38a17523bc",
+      "Back End Development and APIs Certification"
+    ]
+  ],
+  "isPrivate": true
+}
