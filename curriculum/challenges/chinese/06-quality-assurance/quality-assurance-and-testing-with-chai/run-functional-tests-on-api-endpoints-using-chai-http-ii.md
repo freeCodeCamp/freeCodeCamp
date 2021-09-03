@@ -12,9 +12,9 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
 
 # --instructions--
 
-在 `tests/2_functional-tests.js` 中，修改 `'Test GET /hello with your name'` 测试（`// #2`），对 `status` 和 `text` 断言。
+在 `tests/2_functional-tests.js` 中，修改 `'Test GET /hello with your name'` 测试（`// #2`），对响应的 `status` 和 `text` 使用断言来通过测试。
 
-在查询中发送 name，将 `?name=<your_name>` 添加到路由。 端点响应 `'hello <your_name>'`。
+通过将 `?name=<your_name>` 附加到路由，将你的姓名作为 URL 查询发送。 端点响应 `'hello <your_name>'`。
 
 # --hints--
 
@@ -32,7 +32,7 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
   );
 ```
 
-应测试 “res.status” 是否为 200。
+应该测试 `res.status` 为 200
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http-ii
   );
 ```
 
-应测试 “res.text“ 是否为 ”hello Guest“。
+应该测试 `res.text` == `'hello <your_name>'`
 
 ```js
 (getUserInput) =>

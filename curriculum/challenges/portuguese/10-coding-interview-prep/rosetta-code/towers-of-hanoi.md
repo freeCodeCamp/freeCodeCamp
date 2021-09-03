@@ -1,6 +1,6 @@
 ---
 id: 5951ed8945deab770972ae56
-title: Towers of Hanoi
+title: Torres de Hanói
 challengeType: 5
 forumTopicId: 302341
 dashedName: towers-of-hanoi
@@ -8,41 +8,41 @@ dashedName: towers-of-hanoi
 
 # --description--
 
-Solve the [Towers of Hanoi](https://en.wikipedia.org/wiki/Towers_of_Hanoi "wp: Towers_of_Hanoi") problem.
+Resolva o problema das [Torres de Hanói](https://pt.wikipedia.org/wiki/Torre_de_Han%C3%B3i "wp: Torres_de_Hanoi").
 
-Your solution should accept the number of discs as the first parameters, and three string used to identify each of the three stacks of discs, for example `towerOfHanoi(4, 'A', 'B', 'C')`. The function should return an array of arrays containing the list of moves, source -> destination.
+Sua solução deve aceitar o número de discos como os primeiros parâmetros, e três strings usadas para identificar cada uma das três pilhas de discos, por exemplo `towerOfHanoi(4, 'A', 'B', 'C')`. A função deve retornar um array de arrays contendo a lista de movimentos, origem -> destino.
 
-For example, the array `[['A', 'C'], ['B', 'A']]` indicates that the 1st move was to move a disc from stack A to C, and the 2nd move was to move a disc from stack B to A.
+Por exemplo, o array `[['A', 'C'], ['B', 'A']]` indica que o primeiro movimento foi mover um disco da pilha A para C, e o segundo movimento foi para mover um disco da pilha B para A.
 
 <p></p>
 
 # --hints--
 
-`towerOfHanoi` should be a function.
+`towerOfHanoi` deve ser uma função.
 
 ```js
 assert(typeof towerOfHanoi === 'function');
 ```
 
-`towerOfHanoi(3, ...)` should return 7 moves.
+`towerOfHanoi(3, ...)` deve retornar 7 movimentos.
 
 ```js
 assert(res3.length === 7);
 ```
 
-`towerOfHanoi(3, 'A', 'B', 'C')` should return `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]`.
+`towerOfHanoi(3, 'A', 'B', 'C')` deve retornar `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]`.
 
 ```js
 assert.deepEqual(towerOfHanoi(3, 'A', 'B', 'C'), res3Moves);
 ```
 
-`towerOfHanoi(5, "X", "Y", "Z")` 10th move should be Y -> X.
+O décimo movimento da `towerOfHanoi(5, "X", "Y", "Z")` deve ser Y -> X.
 
 ```js
 assert.deepEqual(res5[9], ['Y', 'X']);
 ```
 
-`towerOfHanoi(7, 'A', 'B', 'C')` first ten moves should be `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','C'], ['B','A']]`
+Os dez primeiros movimentos da `towerOfHanoi(7, 'A', 'B', 'C')` devem ser `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','C'], ['B','A']]`
 
 ```js
 assert.deepEqual(towerOfHanoi(7, 'A', 'B', 'C').slice(0, 10), res7First10Moves);
