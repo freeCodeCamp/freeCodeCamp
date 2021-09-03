@@ -40,9 +40,9 @@
     "@babel/plugin-proposal-export-default-from": "7.14.5",
     "@babel/plugin-proposal-function-bind": "7.14.5",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.15.0",
+    "@babel/preset-env": "7.15.4",
     "@babel/preset-react": "7.14.5",
-    "@babel/standalone": "7.15.3",
+    "@babel/standalone": "7.15.4",
     "@fortawesome/fontawesome": "1.1.8",
     "@fortawesome/fontawesome-svg-core": "1.2.36",
     "@fortawesome/free-brands-svg-icons": "5.15.4",
@@ -130,9 +130,9 @@
     "validator": "13.6.0"
   },
   "devDependencies": {
-    "@babel/types": "7.15.0",
-    "@codesee/babel-plugin-instrument": "0.75.0",
-    "@codesee/tracker": "0.75.0",
+    "@babel/types": "7.15.4",
+    "@codesee/babel-plugin-instrument": "0.78.0",
+    "@codesee/tracker": "0.78.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@types/jest": "26.0.24",
@@ -154,7 +154,7 @@
     "@types/sanitize-html": "2.3.2",
     "@types/store": "2.0.2",
     "@types/validator": "13.6.3",
-    "autoprefixer": "10.3.3",
+    "autoprefixer": "10.3.4",
     "axios": "0.21.1",
     "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.2",
@@ -165,7 +165,7 @@
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.3",
     "serve": "12.0.0",
-    "webpack": "5.51.2",
+    "webpack": "5.52.0",
     "webpack-cli": "4.8.0"
   }
 }

@@ -9,37 +9,35 @@ dashedName: simulate-actions-using-a-headless-browser
 
 請注意，本項目在[這個 Replit 項目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-在接下來的挑戰中，我們將使用名爲 “Headless Browser（無頭瀏覽器）” 的設備模擬人與頁面的交互。
+在接下來的挑戰中，你將使用無頭瀏覽器模擬人類與頁面的交互。
 
-無頭瀏覽器是沒有圖形用戶界面的 Web 瀏覽器。 這種工具對於測試網頁特別有用，因爲它能夠以與瀏覽器相同的方式呈現和理解 HTML、CSS 和 JavaScript。
+無頭瀏覽器是沒有 GUI 的 Web 瀏覽器。 它們能夠以與常規瀏覽器相同的方式呈現和解釋 HTML、CSS 和 JavaScript，這使得它們對於測試網頁特別有用。
 
-針對這些挑戰，我們使用 Zombie.JS。 它是一個輕量級瀏覽器，完全基於 JS，而不需要額外的二進制文件來安裝。 這個特性使我們可以在 Replit 等環境中使用它。 還有許多其他（更強大的）選擇。
+在下面的挑戰中，你將使用Zombie.js，它是一個輕量級的無頭瀏覽器，不依賴額外的二進制文件來安裝。 這一特點使其可以在 Replit 這樣的有限環境中使用。 但是還有許多其他更強大的無頭瀏覽器選項。
 
-Mocha 允許你在實際測試之前準備一些代碼運行的基礎。 這可能有助於例如在數據庫中創建項目，用於連續測試。
+Mocha 允許你在任何實際測試運行之前運行一些代碼。 這對做一些事情很有用，比如向數據庫添加條目，這些條目將在其餘測試中使用。
 
-使用無頭瀏覽器，在進行實際測試之前，我們需要**訪問**我們將要檢查的頁面。 `suiteSetup` “hook” 僅在套件啓動時執行。 其他不同的鉤子類型可以在每次測試之前、每次測試之後或者在套件的末尾執行。 更多信息請參閱 Mocha 文檔。
+使用無頭瀏覽器，在運行測試之前，你需要 **訪問** 你要測試的頁面。
+
+`suiteSetup` 鉤子僅在測試套件開始時執行一次。
+
+還有其他幾種鉤子類型，可以在每次測試前、每次測試後或測試套件結束時執行代碼。 有關更多信息，請參閱 Mocha 文檔。
 
 # --instructions--
 
-在 `tests/2_functional-tests.js`中，緊接着 `Browser` 聲明之後，將你的項目 URL 添加到變量的 `site` 屬性：
+在 `tests/2_functional-tests.js` 中，緊跟在 `Browser` 聲明之後，將你的項目 URL 添加到變量的 `site` 屬性：
 
 ```js
-Browser.site = 'https://sincere-cone.gomix.me'; // Your URL here
+Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL here
 ```
 
-如果你在本地環境中測試，則替換上面的代碼爲：
-
-```js
-Browser.localhost('example.com', process.env.PORT || 3000);
-```
-
-在 `tests/2_functional-tests.js` 中，在 `'Functional Tests with Zombie.js'` 套件的底部，使用以下代碼實例化一個新的 `Browser` 對象：
+然後在 `'Functional Tests with Zombie.js'` 套件的根級別，使用以下代碼實例化 `Browser` 對象的新實例：
 
 ```js
 const browser = new Browser();
 ```
 
-然後，通過以下代碼，使用 `suiteSetup` 鉤子把 `browser` 指向 `/` 路由：
+並使用 `suiteSetup` 鉤子將 `browser` 定向到帶有以下代碼的 `/` 路由：
 
 ```js
 suiteSetup(function(done) {
@@ -53,11 +51,9 @@ suiteSetup(function(done) {
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
     (data) => {
-      data.slice(0, 4).forEach((test) => {
-        assert.equal(test.state, 'passed');
-      })
+      assert.equal(data.state, 'passed');
     },
     (xhr) => {
       throw new Error(xhr.responseText);

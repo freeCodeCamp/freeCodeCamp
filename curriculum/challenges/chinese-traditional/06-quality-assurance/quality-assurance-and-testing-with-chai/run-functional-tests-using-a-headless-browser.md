@@ -10,23 +10,31 @@ dashedName: run-functional-tests-using-a-headless-browser
 
 請注意，本項目在[這個 Replit 項目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-在 HTML 主視圖中有一個輸入表格。 它發送數據到 `PUT /travellers` 端點，我們在上面的 Ajax 請求中使用。 當請求成功完成時，客戶端代碼會給 DOM 增加一個包含調用返回信息的 `<div>`。 下面的例子展示瞭如何使用這個表格：
+在頁面上有一個輸入表單。 它將數據作爲 AJAX 請求發送到 `PUT /travellers` 端點。
+
+當請求成功完成後，客戶端代碼將一個包含響應信息的 `<div>` 附加到 DOM 中。
+
+下面是一個如何使用 Zombie.js 與表單互動的例子。
 
 ```js
-test('#test - submit the input "surname" : "Polo"', function (done) {
-  browser.fill('surname', 'Polo').pressButton('submit', function () {
-    browser.assert.success();
-    browser.assert.text('span#name', 'Marco');
-    browser.assert.text('span#surname', 'Polo');
-    browser.assert.elements('span#dates', 1);
-    done();
+test('Submit the surname "Polo" in the HTML form', function (done) {
+  browser.fill('surname', 'Polo').then(() => {
+    browser.pressButton('submit', () => {
+      browser.assert.success();
+      browser.assert.text('span#name', 'Marco');
+      browser.assert.text('span#surname', 'Polo');
+      browser.assert.elements('span#dates', 1);
+      done();
+    });
   });
-}
+});
 ```
 
-首先， `browser` 對象的 `fill` 方法在表格的 `surname` 字段中填入值 `'Polo'`。 緊接着，`pressButton` 方法調用表單的 `submit` 事件監聽器。 `pressButton` 方法是異步的。
+首先， `browser` 對象的 `fill` 方法在表格的 `surname` 字段中填入值 `'Polo'`。 `fill` 返回一個 promise，所以 `then` 被鏈接起來。
 
-收到 AJAX 請求的響應之後，會有幾項斷言確認：
+在 `then` 回調中，`browser` 對象的 `pressButton` 方法用於調用表單的 `submit` 的事件偵聽器。 `pressButton` 方法是異步的。
+
+然後，一旦收到來自 AJAX 請求的響應，就會做出一些斷言來確認：
 
 1.  響應狀態是 `200`
 2.  `<span id='name'></span>` 元素的文本是 `'Marco'`
@@ -37,17 +45,17 @@ test('#test - submit the input "surname" : "Polo"', function (done) {
 
 # --instructions--
 
-在 `tests/2_functional-tests.js` 中，`'submit "surname" : "Colombo" - write your e2e test...'` 測試（`// #5`），自動化填入和提交表單：
+在 `tests/2_functional-tests.js` 中，在 `'Submit the surname "Colombo" in the HTML form'` 測試（`// #5`），自動執行以下操作：
 
-1.  填寫表單
-2.  點擊 `'submit'` 按鈕提交表單
+1.  在表格中填寫姓氏 `Colombo`。
+2.  點擊提交按鈕
 
-在回調中：
+在 `pressButton` 回調中：
 
-1.  斷言狀態是正常的 `200`
-2.  斷言元素 `span#name` 中的文本是 `'Cristoforo'`
-3.  斷言元素 `span#surname` 元素中的文本是 `'Colombo'`
-4.  斷言有 `span#dates` 元素，它們的計數是 `1`
+1.  斷言狀態是正常的 `200`。
+2.  斷言元素 `span#name` 中的文本是 `'Cristoforo'`。
+3.  斷言元素 `span#surname` 中的文本是 `'Colombo'`。
+4.  斷言有 `span#dates` 元素，它們的計數是 `1`。
 
 不要忘記刪除 `assert.fail()` 調用。
 
@@ -57,7 +65,7 @@ test('#test - submit the input "surname" : "Polo"', function (done) {
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -67,11 +75,11 @@ test('#test - submit the input "surname" : "Polo"', function (done) {
   );
 ```
 
-應該斷言無頭瀏覽器請求成功。
+應斷言無頭瀏覽器成功執行請求。
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'browser.success');
     },
@@ -81,11 +89,11 @@ test('#test - submit the input "surname" : "Polo"', function (done) {
   );
 ```
 
-應該斷言元素 “span#name” 中的文字爲 “Cristoforo”。
+應斷言元素 `span#name` 中的文本是 `'Cristoforo'`。
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'browser.text');
       assert.match(data.assertions[1].args[0], /('|")span#name\1/);
@@ -97,11 +105,11 @@ test('#test - submit the input "surname" : "Polo"', function (done) {
   );
 ```
 
-應該斷言元素 “span#surname” 中的文字爲 “Colombo”。
+應斷言元素 `span#surname` 中的文本是 `'Colombo'`。
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[2].method, 'browser.text');
       assert.match(data.assertions[2].args[0], /('|")span#surname\1/);
@@ -113,11 +121,11 @@ test('#test - submit the input "surname" : "Polo"', function (done) {
   );
 ```
 
-應該斷言元素 “span#dates” 存在，且它的值爲 1。
+應該斷言元素 `span#dates` 存在，且它的值爲 1。
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[3].method, 'browser.elements');
       assert.match(data.assertions[3].args[0], /('|")span#dates\1/);

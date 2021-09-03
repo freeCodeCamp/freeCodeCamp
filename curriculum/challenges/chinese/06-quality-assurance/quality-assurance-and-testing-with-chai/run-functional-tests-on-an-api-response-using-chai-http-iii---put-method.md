@@ -10,29 +10,37 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 请注意，本项目在[这个 Replit 项目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-接下来，我们将了解如何使用请求的 payload（body）发送数据。 我们需要测试一个 PUT 请求， `'/travellers'` 接收如下的 JSON 对象：
+当你测试一个 `PUT` 请求时，你经常会随同它一起发送数据。 你在 `PUT` 请求中包含的数据被称为请求的主体。
+
+要将 `PUT` 请求和 JSON 对象发送到 `'/travellers'` 端点，你可以使用 `chai-http` 插件的 `put` 和 `send` 方法：
+
+```js
+chai
+  .request(server)
+  .put('/travellers')
+  .send({
+    "surname": [last name of a traveller of the past]
+  })
+  ...
+```
+
+并且路由响应如下：
 
 ```json
 {
-  "surname": [last name of a traveller of the past]
+  "name": [first name],
+  "surname": [last name],
+  "dates": [birth - death years]
 }
 ```
 
-路由响应如下：
-
-```json
-{
-  "name": [first name], "surname": [last name], "dates": [birth - death years]
-}
-```
-
-更多细节请查看服务器代码。
+请参阅服务器代码以了解对 `'/travellers'` 端点的不同响应。
 
 # --instructions--
 
-在 `tests/2_functional-tests.js` 中，修改 `'send {surname: "Colombo"}'` 测试（`// #3`）：
+在 `tests/2_functional-tests.js` 中，更改 `'Send {surname: "Colombo"}'` 测试（`// #3`），并使用 `put` 和 `send` 方法来测试 `'/travellers'` 端点。
 
-发送以下 JSON 响应作为有效载荷：
+在你的 PUT 请求中发送以下 JSON 对象。
 
 ```json
 {
@@ -40,14 +48,14 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 }
 ```
 
-在 `request.end` 返回中检查以下情况：
+在 `request.end` 的返回中检查以下情况：
 
-1.  `status`
-2.  `type`
-3.  `body.name`
-4.  `body.surname`
+1.  `status` 应该是 `200`
+2.  `type` 应该是 `application/json`
+3.  `body.name` 应该是 `Cristoforo`
+4.  `body.surname` 应该是 `Colombo`
 
-请按照以上顺序书写断言，顺序错误会影响系统判定。 完成后，请务必移除 `assert.fail()`。
+请按照以上顺序书写断言，顺序错误会影响系统判定。 此外，请确保在完成后删除 `assert.fail()`。
 
 # --hints--
 
@@ -65,7 +73,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
   );
 ```
 
-应测试 “res.status” 是否为 200。
+应该测试 `res.status` 为 200。
 
 ```js
 (getUserInput) =>
@@ -81,7 +89,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
   );
 ```
 
-需要测试 “res.type” 是否为 “application/json”。
+应该测试 `res.type` 是否为 `'application/json'`。
 
 ```js
 (getUserInput) =>
@@ -97,7 +105,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
   );
 ```
 
-需要测试 “res.body.name” 是否为 “Cristoforo”。
+你应该测试 `res.body.name` 是否为 `'Cristoforo'`。
 
 ```js
 (getUserInput) =>
@@ -113,7 +121,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
   );
 ```
 
-需要测试 “res.body.surname” 是否为 “Colombo”。
+你应该测试 `res.body.surname` 是否为 `'Colombo'`。
 
 ```js
 (getUserInput) =>

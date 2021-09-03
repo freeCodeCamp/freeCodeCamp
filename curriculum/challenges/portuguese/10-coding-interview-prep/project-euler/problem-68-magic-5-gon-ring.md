@@ -1,6 +1,6 @@
 ---
 id: 5900f3b01000cf542c50fec3
-title: 'Problem 68: Magic 5-gon ring'
+title: 'Problema 68: Anel de 5 linhas mágicas'
 challengeType: 5
 forumTopicId: 302180
 dashedName: problem-68-magic-5-gon-ring
@@ -8,13 +8,13 @@ dashedName: problem-68-magic-5-gon-ring
 
 # --description--
 
-Consider the following "magic" 3-gon ring, filled with the numbers 1 to 6, and each line adding to nine.
+Considere o seguinte anel de 3 linhas "mágicas" com números de 1 a 6. Note que ao somar os números de cada linha, o resultado é nove.
 
-<img class="img-responsive center-block" alt="a completed example of a 3-gon ring" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="um exemplo completo de um anel de 3 linhas" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
 
-Working **clockwise**, and starting from the group of three with the numerically lowest external node (4,3,2 in this example), each solution can be described uniquely. For example, the above solution can be described by the set: 4,3,2; 6,2,1; 5,1,3.
+Trabalhando **no sentido horário**, e começando pelo grupo onde o nó externo é numericamente menor (4, 3, 2 neste exemplo), cada solução pode ser descrita de forma única. Por exemplo, a solução acima pode ser descrita pelo conjunto: 4,3,2; 6,2,1; 5,1,3.
 
-It is possible to complete the ring with four different totals: 9, 10, 11, and 12. There are eight solutions in total.
+É possível completar o anel com quatro totais diferentes: 9, 10, 11 e 12. No total, há oito soluções.
 
 <div style='text-align: center;'>
 
@@ -31,21 +31,21 @@ It is possible to complete the ring with four different totals: 9, 10, 11, and 1
 
 </div>
 
-By concatenating each group it is possible to form 9-digit strings; the maximum string for a 3-gon ring is 432621513.
+Ao concatenar cada grupo, é possível formar números de 9 algarismos; o maior número para um anel de 3 linhas é 432621513.
 
-Using the numbers 1 to 10, and depending on arrangements, it is possible to form 16- and 17-digit strings. What is the maximum **16-digit** string for a "magic" 5-gon ring?
+Usando os números de 1 a 10 e dependendo dos arranjos, é possível formar números de 16 e 17 algarismos. Qual é o maior número de **16 algarismos** em um anel de 5 linhas?
 
-<img class="img-responsive center-block" alt="a blank diagram of a 5-gon ring" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="um diagrama em branco de um anel de 5 linhas" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
 
 # --hints--
 
-`magic5GonRing()` should return a number.
+`magic5GonRing()` deve retornar um número.
 
 ```js
 assert(typeof magic5GonRing() === 'number');
 ```
 
-`magic5GonRing()` should return 6531031914842725.
+`magic5GonRing()` deve retornar 6531031914842725.
 
 ```js
 assert.strictEqual(magic5GonRing(), 6531031914842725);

@@ -1,0 +1,18 @@
+{
+  "name": "Legacy Back End Certification",
+  "isUpcomingChange": false,
+  "dashedName": "legacy-back-end-certification",
+  "order": 1,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "certifications",
+  "superOrder": 12,
+  "challengeOrder": [
+    [
+      "660add10cb82ac38a17513be",
+      "Legacy Back End Certification"
+    ]
+  ],
+  "isPrivate": true
+}
