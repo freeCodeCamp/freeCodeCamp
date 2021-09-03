@@ -25,15 +25,15 @@ const donationData = {
 jest.mock('../../analytics');
 
 describe('<Paypal Button/>', () => {
-  it('calls api on approval when user is signed and subscribes', () => {
+  it('does not call addDonate api on payment approval when user is not signed ', () => {
     const ref = React.createRef<PaypalButton>();
-    const isSubscription = false;
+    const isSubscription = true;
     const addDonation = jest.fn();
     render(
       <PaypalButton
         {...commonProps}
         addDonation={addDonation}
-        isSignedIn={true}
+        isSignedIn={false}
         ref={ref}
       />
     );
@@ -41,7 +41,7 @@ describe('<Paypal Button/>', () => {
     ref.current?.handleApproval(donationData, isSubscription);
     expect(addDonation).toBeCalledTimes(0);
   });
-  it('calls api on approval when user is signed and subscribes', () => {
+  it('calls addDonate api on payment approval when user is signed in', () => {
     const ref = React.createRef<PaypalButton>();
     const isSubscription = true;
     const addDonation = jest.fn();
