@@ -1,8 +1,8 @@
 ---
 id: 611e5716f9246f125f63815b
-title: Part 1
+title: Final Prototype
 challengeType: 0
-dashedName: part-1
+dashedName: part-7
 ---
 
 # --description--
@@ -39,7 +39,7 @@ Test 1
     improves SEO too! -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
-	<title>HTML and CSS Quiz</title>
+	<title>freeCodeCamp: Accessibility Quiz</title>
 	<link rel="stylesheet" href="styles.css" />
 </head>
 
