@@ -95,7 +95,7 @@
 
 @media screen and (max-width: 991px) {
   .challenge-success-modal .btn-lg {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .completion-modal-body {

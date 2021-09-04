@@ -27,10 +27,9 @@ body {
 
 .btn-cta-big {
   max-height: 100%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   white-space: normal;
   width: 100%;
-  max-width: 500px;
   padding: 5px;
   margin: 0 auto;
 }
@@ -99,7 +98,7 @@ p {
   background-color: var(--selection-color);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   .big-heading {
     font-size: 1.5rem !important;
   }
@@ -118,7 +117,7 @@ p {
   }
 }
 
-@media (max-width: 1199px) {
+@media (min-width: 1000px) {
   .btn-cta-big {
     font-size: 1.3rem;
   }
