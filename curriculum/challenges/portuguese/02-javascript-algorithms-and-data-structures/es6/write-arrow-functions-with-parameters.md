@@ -8,7 +8,7 @@ dashedName: write-arrow-functions-with-parameters
 
 # --description--
 
-Assim como uma função normal, você pode passar argumentos para uma função de seta.
+Assim como uma função normal, você pode passar argumentos para uma arrow function.
 
 ```js
 const doubler = (item) => item * 2;
@@ -17,13 +17,13 @@ doubler(4);
 
 `doubler(4)` retornaria o valor `8`.
 
-Se uma função de seta tiver um único parâmetro, os parênteses envolvendo o parâmetro podem ser omitidos.
+Se uma arrow function tiver um único parâmetro, os parênteses envolvendo o parâmetro podem ser omitidos.
 
 ```js
 const doubler = item => item * 2;
 ```
 
-É possível passar mais de um argumento para uma função de seta.
+É possível passar mais de um argumento para uma arrow function.
 
 ```js
 const multiplier = (item, multi) => item * multi;
@@ -50,7 +50,7 @@ Você deve substituir a palavra-chave `var`.
 (getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
 ```
 
-`myConcat` deve ser uma função de seta com dois parâmetros
+`myConcat` deve ser uma arrow function com dois parâmetros
 
 ```js
 assert(

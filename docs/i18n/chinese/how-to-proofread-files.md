@@ -14,7 +14,7 @@ You should see the list of projects you have been granted access to. Select the 
 
 You should now see the list of available files. Choose your file by selecting the `Proofread` button on the right of that file, then choosing `Proofreading` from the drop-down menu that appears.
 
-> [!NOTE] 如果你在工作区视图（workspace view）中，但想要[翻译文件](./how-to-translate-files.md)，而不是校对文件，那么你可以从下拉菜单中选择 `Crowdsourcing`。
+> [!NOTE] If you are in this workspace view, but want to work on [translating a file](how-to-translate-files.md) instead of proofreading, you may select `Crowdsourcing` from the dropdown menu instead.
 
 ## 校对译文
 

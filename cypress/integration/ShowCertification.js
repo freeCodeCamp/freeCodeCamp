@@ -1,4 +1,3 @@
-/* global cy */
 const certificationUrl = '/certification/developmentuser/responsive-web-design';
 const projects = {
   superBlock: 'responsive-web-design',

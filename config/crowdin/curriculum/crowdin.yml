@@ -13,8 +13,8 @@ files:
       'ignore': ['/**/part-[0-9][0-9][0-9].md']
     },
     {
-      'source': '/curriculum/challenges/english/00-certificates/**/*.yml',
-      'translation': '/curriculum/challenges/%language%/00-certificates/**/%original_file_name%'
+      'source': '/curriculum/challenges/english/00-certifications/**/*.yml',
+      'translation': '/curriculum/challenges/%language%/00-certifications/**/%original_file_name%'
     },
     {
       'source': '/curriculum/dictionaries/english/comments.json',

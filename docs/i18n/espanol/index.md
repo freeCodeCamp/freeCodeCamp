@@ -10,7 +10,7 @@ Eres bienvenido a:
 - Ayúdanos a corregir errores en la [plataforma de aprendizaje](#learning-platform) de freeCodeCamp.org.
 - [Ayúdanos a traducir](#translations) freeCodeCamp.org a idiomas del mundo.
 
-Respondemos a las preguntas más comunes sobre cómo contribuir [en nuestras preguntas frecuentes del contribuidor](/FAQ.md).
+We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
 
 ## Plan de estudios
 

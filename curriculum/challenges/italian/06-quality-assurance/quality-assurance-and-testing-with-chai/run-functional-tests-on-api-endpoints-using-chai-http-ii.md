@@ -12,9 +12,9 @@ Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza
 
 # --instructions--
 
-All'interno di `tests/2_functional-tests.js`, modifica il test `'Test GET /hello with your name'` (`// #2`) per asserire che le risposte `status` e `text` facciano passare i test.
+All'interno di `tests/2_functional-tests.js`, modifica il test `'Test GET /hello with your name'` (`// #2`) per asserire che lo `status` e il `text` della risposta facciano passare i test.
 
-Invia il tuo nome nella query, aggiungendo `?name=<your_name>` alla rotta. L'endpoint risponde con `'hello <your_name>'`.
+Invia il tuo nome come query URL, aggiungendo `?name=<your_name>` alla rotta. L'endpoint risponde con `'hello <your_name>'`.
 
 # --hints--
 
@@ -32,7 +32,7 @@ Tutti i test dovrebbero essere superati
   );
 ```
 
-Dovresti verificare che 'res.status' == 200
+Dovresti verificare che `res.status` sia 200
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ Dovresti verificare che 'res.status' == 200
   );
 ```
 
-Dovresti verificare che 'res.text' == 'hello Guest'
+Dovresti verificare che `res.text` == `'hello <your_name>'`
 
 ```js
 (getUserInput) =>

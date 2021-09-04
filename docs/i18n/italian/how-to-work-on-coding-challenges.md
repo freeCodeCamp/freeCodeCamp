@@ -476,7 +476,7 @@ Puoi anche testare una sfida singola con i seguenti step:
    ```
    npm run test -- -g challenge-title-goes-here ```
 
-Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, [per favore crea una pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
+Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, [per favore crea una pull request](how-to-open-a-pull-request.md).
 
 > [!TIP] Puoi impostare la variabile d'ambiente  `LOCALE` nel file `.env` alla lingua usata nelle sfide che devi testare.
 > 
@@ -486,6 +486,6 @@ Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, 
 
 Creare e modificare sfide:
 
-1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
+1. [Tipo della sfida (challenge type)](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - cosa significa il tipo di sfida numerico (enum).
 
 2. [Contribuire a FreeCodeCamp - Scrivere Test  per le sfide ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - un video che segue [Ethan Arrowood](https://twitter.com/ArrowoodTech) in quanto contributore della vecchia versione del curriculum.

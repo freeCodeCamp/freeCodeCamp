@@ -13,9 +13,9 @@ Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza
 `isTrue()` testa per il valore boleano `true` e `isNotTrue()` passa per qualsiasi cosa che non sia il valore booleano `true`.
 
 ```js
-assert.isTrue(true, 'this will pass with the boolean value true');
-assert.isTrue('true', 'this will NOT pass with the string value "true"');
-assert.isTrue(1, 'this will NOT pass with the number value 1');
+assert.isTrue(true, 'This will pass with the boolean value true');
+assert.isTrue('true', 'This will NOT pass with the string value "true"');
+assert.isTrue(1, 'This will NOT pass with the number value 1');
 ```
 
 Esistono anche `isFalse()` e `isNotFalse()`, si comportano in maniera simile alle loro controparti con true tranne per il fatto che testano per il valore booleano `false`.

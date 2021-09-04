@@ -8,25 +8,25 @@ dashedName: create-bootstrap-wells
 
 # --description--
 
-Bootstrap tiene una clase llamada `well` (pozo) que puede crear una ilusión visual de profundidad en las columnas.
+Bootstrap tiene una clase llamada `well` que puede crear una sensación visual de profundidad en tus columnas.
 
-Incrusta un elemento `div` con la clase `well` en cada uno de los elementos `col-xs-6` y `div`.
+Anida un elemento `div` con la clase `well` dentro de cada uno de tus elementos `col-xs-6` `div`.
 
 # --hints--
 
-Debes añadir un elemento `div` con la clase `well` dentro de cada uno de los elementos `div` con la clase `col-xs-6`
+Debes añadir un elemento `div` con la clase `well` dentro de cada uno de tus elementos `div` con la clase `col-xs-6`
 
 ```js
 assert($('div.col-xs-6').not(':has(>div.well)').length < 1);
 ```
 
-Ambos elementos `div` con la clase `col-xs-6` deben estar incrustados en el elemento `div` con la clase `row`.
+Ambos de tus elementos `div` con la clase `col-xs-6` deben estar anidados dentro de tu elemento `div` con la clase `row`.
 
 ```js
 assert($('div.row > div.col-xs-6').length > 1);
 ```
 
-Todos los elementos `div` deben tener etiquetas de cierre.
+Todos tus elementos `div` deben tener etiquetas de cierre.
 
 ```js
 assert(

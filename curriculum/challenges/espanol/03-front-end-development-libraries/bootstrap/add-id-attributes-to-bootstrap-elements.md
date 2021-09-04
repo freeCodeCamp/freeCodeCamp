@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908853
-title: Añade atributos de identificación a elementos de Bootstrap
+title: Añade atributos de "id" a elementos de Bootstrap
 challengeType: 0
 forumTopicId: 16639
 dashedName: add-id-attributes-to-bootstrap-elements
@@ -8,11 +8,11 @@ dashedName: add-id-attributes-to-bootstrap-elements
 
 # --description--
 
-Recuerda que además de los atributos de clase, puedes darle a cada elemento un atributo `id`.
+Recuerda que además de los atributos de clase, puedes darle a cada uno de tus elementos un atributo `id`.
 
 Cada "id" debe ser único en un elemento específico y utilizarse una sola vez por página.
 
-Vamos a dar un "id" único a cada uno de nuestros elementos `div` de la clase `well`.
+Vamos a dar un "id" único a cada uno de nuestros elementos `div` con la clase `well`.
 
 Recuerda que puedes dar un "id" a un elemento de esta manera:
 
@@ -20,11 +20,11 @@ Recuerda que puedes dar un "id" a un elemento de esta manera:
 <div class="well" id="center-well">
 ```
 
-Agrega el "id" `left-well` al elemento de la izquierda de la clase "well". Agrega el "id" `right-well` al elemento de la derecha de la clase "well".
+Agrega el "id" `left-well` al elemento de la izquierda con la clase "well". Agrega el "id" `right-well` al elemento de la derecha con la clase "well".
 
 # --hints--
 
-El elemento de la izquierda de la clase `well` deberá tener el "id" `left-well`.
+El elemento de la izquierda con la clase `well` debe tener el "id" `left-well`.
 
 ```js
 assert(
@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-El elemento de la derecha de la clase `well` deberá tener el "id" `right-well`.
+El elemento de la derecha con la clase `well` debe tener el "id" `right-well`.
 
 ```js
 assert(

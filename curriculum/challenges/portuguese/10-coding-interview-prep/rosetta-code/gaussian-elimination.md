@@ -10,7 +10,7 @@ dashedName: gaussian-elimination
 
 Escreva uma função para calcular \\(Ax = b\\) usando a eliminação gaussiana e, em seguida, a substituição reversa.
 
-\\(A\\) sendo uma matriz \\(n \\vezes n\\). Além disso, \\(x\\) e \\(b\\) são vetores \\(n\\) por 1.
+\\(A\\) sendo uma matriz \\(n \\times n\\). Além disso, \\(x\\) e \\(b\\) são vetores \\(n\\) por 1.
 
 Para melhorar a precisão, use pivô parcial e escala.
 

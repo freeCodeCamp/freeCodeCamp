@@ -8,7 +8,7 @@ dashedName: call-out-optional-actions-with-btn-info
 
 # --description--
 
-Bootstrap viene con diferentes colores predefinidos para botones. La clase `btn-info` se utiliza para llamar la atención sobre las acciones opcionales que el usuario puede realizar.
+Bootstrap viene con varios colores predefinidos para los botones. La clase `btn-info` se utiliza para llamar la atención sobre las acciones opcionales que el usuario puede realizar.
 
 Crea un nuevo botón de Bootstrap debajo de tu botón `Like` con el texto `Info` y añádele las clases de Bootstrap `btn-info` y `btn-block`.
 
@@ -22,7 +22,7 @@ Debes crear un nuevo elemento `button` con el texto `Info`.
 assert(new RegExp('info', 'gi').test($('button').text()));
 ```
 
-Ambos botones deben tener las clases `btn` y `btn-block`.
+Tus dos botones de Bootstrap deben tener las clases `btn` y `btn-block`.
 
 ```js
 assert($('button.btn-block.btn').length > 1);

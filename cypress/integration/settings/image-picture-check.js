@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Picture input field', () => {
   beforeEach(() => {
     cy.login();

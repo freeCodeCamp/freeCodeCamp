@@ -24,7 +24,7 @@ ourStr += "I come second.";
 
 # --instructions--
 
-Costruisci `myStr` su diverse righe concatenando queste due stringhe: `This is the first sentence.` e `This is the second sentence.` usando l'operatore `+=`. Usa l'operatore `+=` in modo simile a quello mostrato nell'esempio. Inizia assegnando la prima stringa a `myStr`, quindi aggiungi la seconda.
+Costruisci `myStr` su diverse righe concatenando queste due stringhe: `This is the first sentence.` e `This is the second sentence.` usando l'operatore `+=`. Usa l'operatore `+=` in modo simile a quello mostrato nell'esempio e assicurati di includere uno spazio tra le due stringhe. Inizia assegnando la prima stringa a `myStr`, quindi aggiungi la seconda.
 
 # --hints--
 

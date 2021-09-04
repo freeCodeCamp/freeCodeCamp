@@ -1,7 +1,5 @@
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import React, { Component } from 'react';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

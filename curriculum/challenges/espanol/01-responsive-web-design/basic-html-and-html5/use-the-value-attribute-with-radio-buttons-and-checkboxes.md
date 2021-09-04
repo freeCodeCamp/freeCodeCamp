@@ -27,7 +27,7 @@ Si omites el atributo `value`, los datos del formulario enviado utilizarán el v
 
 # --instructions--
 
-Agrega a cada una de los inputs de tipo `radio` y de tipo `checkbox` el atributo `value`. Usa el texto de input label (etiqueta), en minúsculas, como valor del atributo.
+Agrega a cada una de los inputs de tipo `radio` y de tipo `checkbox` el atributo `value`. No vayas a crear ningún nuevo elemento de tipo radio o tipo checkbox. Usa el texto de input label (etiqueta), en minúsculas, como valor del atributo.
 
 # --hints--
 

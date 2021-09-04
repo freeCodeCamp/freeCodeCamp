@@ -1,6 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bba
-title: Usare @each per iterare sugli elementi in una lista
+title: Usare @each per iterare sugli elementi di una lista
 challengeType: 0
 forumTopicId: 301461
 dashedName: use-each-to-map-over-items-in-a-list

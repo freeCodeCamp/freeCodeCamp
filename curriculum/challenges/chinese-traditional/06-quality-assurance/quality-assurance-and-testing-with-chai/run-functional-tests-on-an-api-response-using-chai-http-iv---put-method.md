@@ -8,15 +8,17 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 # --description--
 
-請注意，本項目在[這個 Replit 項目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基礎上進行開發。你也可以從 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。 這個練習與上一個類似， 我們詳細看看。
+請注意，本項目在 [這個 Replit 項目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) 的基礎上進行開發。你也可以從 [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/) 上克隆。
 
-你已經看到了它是如何完成的，現在你需要從零開始搭建。
+這個練習與上一個類似。
+
+現在你知道如何測試一個 `PUT` 請求了，輪到你從頭開始做了。
 
 # --instructions--
 
-在 `tests/2_functional-tests.js` 中，修改 `'send {surname: "da Verrazzano"}'` 測試（`// #4`）。
+在 `tests/2_functional-tests.js` 中，更改 `'Send {surname: "da Verrazzano"}'` 測試（`// #4`）並使用 `put` 和 `send` 方法來測試 `'/travellers'` 端點。
 
-發送以下 JSON 響應作爲有效載荷到 `/travellers` 路徑：
+在你的 PUT 請求中發送以下 JSON 對象。
 
 ```json
 {
@@ -24,18 +26,18 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 }
 ```
 
-在 `request.end` 返回中檢查以下情況：
+在 `request.end` 的返回中檢查以下情況：
 
-1.  `status`
-2.  `type`
-3.  `body.name`
-4.  `body.surname`
+1.  `status` 應該是 `200`
+2.  `type` 應該是 `application/json`
+3.  `body.name` 應該是 `Giovanni`
+4.  `body.surname` 應該是 `da Verrazzano`
 
-請按照以上順序書寫斷言，順序錯誤會影響系統判定。 完成後請務必刪除 `assert.fail()`。
+請按照以上順序書寫斷言，順序錯誤會影響系統判定。 此外，請確保在完成後刪除 `assert.fail()`。
 
 # --hints--
 
-需要通過所有測試。
+應通過所有測試。
 
 ```js
 (getUserInput) =>
@@ -49,7 +51,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
   );
 ```
 
-需要測試 “res.status” 是否爲 200。
+應該測試 `res.status` 爲 200。
 
 ```js
 (getUserInput) =>
@@ -65,7 +67,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
   );
 ```
 
-需要測試 “res.type” 是否爲 “application/json”。
+應該測試 `res.type` 是否爲 `'application/json'`。
 
 ```js
 (getUserInput) =>
@@ -81,7 +83,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
   );
 ```
 
-需要測試 “res.body.name” 爲 “Giovanni”。
+應該測試 `res.body.name` 是否爲 `'Giovanni'`
 
 ```js
 (getUserInput) =>
@@ -97,7 +99,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
   );
 ```
 
-需要測試 “res.body.surname” 是否爲 “da Verrazzano”。
+應該測試 `res.body.surname` 是否爲 `'da Verrazzano'`
 
 ```js
 (getUserInput) =>

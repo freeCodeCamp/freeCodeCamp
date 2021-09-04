@@ -13,7 +13,7 @@ dashedName: target-even-elements-using-jquery
 
 Você também pode ter como alvo elementos baseados em suas posições usando os seletores `:odd` ou `:even`.
 
-Note que jQuery é indexado a zero, o que significa que o primeiro elemento em uma seleção tem a posição 0. Isso pode ser um pouco confuso, pois, contra-intuitivamente, `:odd` seleciona o segundo elemento (position1), fourth element (position 3) e assim por diante.
+Note que jQuery é indexado a zero, o que significa que o primeiro elemento em uma seleção tem a posição 0. Isso pode ser um pouco confuso, pois, contraintuitivamente, `:odd` seleciona o segundo elemento (position1), fourth element (position 3) e assim por diante.
 
 Aqui está como você teria como alvo todos os elementos ímpares com a classe `target` e dar a eles as classes:
 

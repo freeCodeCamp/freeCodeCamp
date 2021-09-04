@@ -85,7 +85,7 @@ const algoliaIndices = {
 };
 ```
 
-Quindi, devi dire al client quali certificazioni sono tradotte e quali sono ancora in inglese. Apri il file `utils/is-audited.js`. Aggiungi a `auditedCerts` una nuova chiave con il valore della tua lingua in `availableLangs`. Assegna a quella chiave un array contenente i _nomi con trattino_ per le certificazioni che sono state tradotte. Riferisciti ai dati esistenti per i nomi con trattino.
+Quindi, devi dire al client quali certificazioni sono tradotte e quali sono ancora in inglese. Apri il file `utils/is-audited.js`. Aggiungi a `auditedCerts` una nuova chiave con il valore della tua lingua in `availableLangs`. Assegna il valore di quella chiave a un array contenente i _nomi con trattino_ (dashed name) per le certificazioni che sono state tradotte. Riferisciti ai dati esistenti per i nomi con trattino.
 
 Continuando il lavoro per attivare Dothraki, abbiamo tradotto le prime tre certificazioni:
 

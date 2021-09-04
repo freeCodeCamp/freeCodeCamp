@@ -219,8 +219,6 @@ class BackEnd extends Component<BackEndProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
                 <Spacer />
                 <ChallengeTitle
                   block={block}
@@ -254,8 +252,6 @@ class BackEnd extends Component<BackEndProps> {
                   output={output}
                 />
                 <TestSuite tests={tests} />
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
                 <Spacer />
               </Col>
               <CompletionModal

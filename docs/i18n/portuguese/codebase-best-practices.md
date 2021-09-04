@@ -2,7 +2,7 @@
 
 ## JavaScript em geral
 
-Na maioria dos casos, nosso [linter](how-to-setup-freecodecamp-locally?id=follow-these-steps-to-get-your-development-environment-ready) avisará sobre qualquer formatação que contradiga as práticas recomendadas desta base de código.
+Na maioria dos casos, nosso [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) avisará sobre qualquer formatação que contradiga as práticas recomendadas desta base de código.
 
 Recomendamos o uso de componentes funcionais em vez de componentes baseados em classes.
 

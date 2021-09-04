@@ -66,15 +66,24 @@
       },
       "basic-html-cat-photo-app": {
         "title": "Aplicativo básico de fotos de gatos em HTML",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "basic-css-cafe-menu": {
         "title": "Menu de uma cafeteria em CSS básico",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "css-variables-skyline": {
         "title": "Horizonte com variáveis de CSS",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -161,15 +170,24 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Jogo básico de RPG em JavaScript",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Contador de calorias JavaScript Intermediário",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "functional-programming-spreadsheet": {
         "title": "Planilha de programação funcional",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -177,7 +195,7 @@
     "title": "Bibliotecas de desenvolvimento em front-end",
     "intro": [
       "Agora que você está familiarizado com HTML, CSS e JavaScript, melhore suas habilidades aprendendo algumas das bibliotecas front-end mais populares do setor.",
-      "Na certificação de bibliotecas de front-end, você aprenderá a estilizar seu site rapidamente com Bootstrap. Você também aprenderá a adicionar a lógica aos seus estilos CSS e a ampliá-los com Sass.",
+      "Na certificação de bibliotecas de desenvolvimento em front-end, você aprenderá a estilizar seu site rapidamente com Bootstrap. Você também aprenderá a adicionar a lógica aos seus estilos CSS e a ampliá-los com Sass.",
       "Mais tarde, você construirá um carrinho de compras e outras aplicações para aprender a criar Aplicativos de Página Única (Single Page Applications - SPA) poderosos com React e Redux."
     ],
     "note": "",
@@ -228,7 +246,7 @@
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Front End Development Libraries Projects",
+        "title": "Projetos de desenvolvimento com bibliotecas de front-end",
         "intro": [
           "É hora de testar suas habilidades nas bibliotecas de desenvolvimento de front-end. Use Bootstrap, jQuery, Sass, React e Redux para criar 5 projetos que testarão tudo o que você aprendeu até agora.",
           "Complete todos os 5 projetos e você ganhará a certificação em Bibliotecas de Desenvolvimento Front-End."
@@ -271,26 +289,33 @@
       },
       "d3-dashboard": {
         "title": "Painel do D3",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
   "relational-databases": {
     "title": "Bancos de dados relacionais",
-    "intro": ["placeholder"],
+    "intro": [
+      "placeholder"
+    ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Aprenda bancos de dados relacionais",
-        "intro": ["placeholder"]
+        "intro": [
+          "placeholder"
+        ]
       }
     }
   },
   "back-end-development-and-apis": {
-    "title": "APIs e microsserviços",
+    "title": "APIs e desenvolvimento de back-end",
     "intro": [
       "Até esse ponto, você usou JavaScript apenas no front-end para adicionar interatividade a uma página, resolver desafios de algoritmos ou construir uma SPA. Mas o JavaScript também pode ser usado no back-end, ou servidor, para construir aplicações web inteiras.",
       "Hoje em dia, uma das formas populares de se criar aplicações é através do uso de microsserviços, que são pequenas aplicações modulares que trabalham em conjunto para formar uma aplicação maior inteira.",
-      "Na certificação de APIs e microsserviços, você aprenderá a escrever aplicações de back-end com o Node.js e o npm (Node Package Manager). Você também vai construir aplicações web com o framework Express e criará um microsserviço de localização de pessoas com o MongoDB e com a biblioteca Mongoose."
+      "Na certificação de APIs e desenvolvimento de back-end, você aprenderá a escrever aplicações de back-end com o Node.js e o npm (Node Package Manager). Você também vai construir aplicações web com o framework Express e criará um microsserviço de localização de pessoas com o MongoDB e com a biblioteca Mongoose."
     ],
     "note": "",
     "blocks": {
@@ -304,7 +329,7 @@
       "basic-node-and-express": {
         "title": "Básico sobre Node e Express",
         "intro": [
-          "O Node.js é um ambiente de execução em Javascript que permite que os desenvolvedores escrevam programas de backend (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
+          "O Node.js é um ambiente de execução em Javascript que permite que os desenvolvedores escrevam programas de back-end (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
           "Nos últimos cursos, você aprendeu a instalar e gerenciar pacotes a partir do npm, que são coleções de pequenos módulos. Estes pacotes podem ajudá-lo a construir aplicações maiores e mais complexas.",
           "O Express é um framework leve para a criação de aplicações web, sendo um dos pacotes mais populares no npm. O Express torna muito mais fácil criar um servidor e lidar com o roteamento para seu aplicativo, lidando com coisas como direcionar as pessoas para a página correta quando elas visitam um determinado endpoint, como <pre>/blog</pre>.",
           "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
@@ -314,15 +339,15 @@
         "title": "MongoDB e Mongoose",
         "intro": [
           "O MongoDB é uma aplicação de banco de dados que armazena documentos JSON (ou registros) que podem ser usados em sua aplicação. Ao contrário do SQL, outro tipo de banco de dados, o Mongo é um banco de dados não relacional ou \"NoSQL\". Isto significa que o Mongo armazena todos os dados associados dentro de um registro, em vez de armazená-los em muitas tabelas predefinidas, como em um banco de dados SQL.",
-          "O Mongoose é um pacote popular do npm que é frequentemente instalado junto com MongoDB. Com o Mongose, você pode usar objetos JavaScript simples em vez de JSON, o que torna mais fácil trabalhar com o Mongo. Além disso, ele permite que você crie projetos para seus documentos, chamados schemas, para que você não salve acidentalmente o tipo errado de dados e cause bugs mais tarde.",
-          "Nos cursos de MongoDB e Mongose, você aprenderá os fundamentos de trabalhar com dados persistentes, incluindo como configurar um modelo, salvar, excluir e buscar documentos no banco de dados."
+          "O Mongoose é um pacote popular do npm que é frequentemente instalado junto com MongoDB. Com o Mongoose, você pode usar objetos JavaScript simples em vez de JSON, o que torna mais fácil trabalhar com o Mongo. Além disso, ele permite que você crie projetos para seus documentos, chamados schemas, para que você não salve acidentalmente o tipo errado de dados e cause bugs mais tarde.",
+          "Nos cursos de MongoDB e Mongoose, você aprenderá os fundamentos de trabalhar com dados persistentes, incluindo como configurar um modelo, salvar, excluir e buscar documentos no banco de dados."
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Back End Development and APIs Projects",
+        "title": "Projetos de APIs e desenvolvimento de back-end",
         "intro": [
           "Você já trabalhou com APIs antes, mas agora que você conhece o npm, Node, Express, MongoDB e o Mongoose, é hora de construir a sua própria API. Utilize tudo o que você aprendeu até esse ponto para criar 5 microsserviços diferentes – aplicações menores e com escopo limitado.",
-          "Depois de criá-las, você terá 5 APIs de microsserviço sensacionais, que poderão ser mostradas para amigos, familiares e potenciais empregadores. Ah, e você também terá uma Certificação em APIs e microsserviços novinha."
+          "Depois de criá-las, você terá 5 APIs de microsserviço sensacionais, que poderão ser mostradas para amigos, familiares e potenciais empregadores. Ah, e você também terá uma Certificação em APIs e desenvolvimento de back-end novinha."
         ]
       }
     }

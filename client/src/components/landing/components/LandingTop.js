@@ -2,12 +2,15 @@ import { Col, Row } from '@freecodecamp/react-bootstrap';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import envData from '../../../../../config/env.json';
 import {
   AmazonLogo,
   AppleLogo,
   MicrosoftLogo,
   SpotifyLogo,
-  GoogleLogo
+  GoogleLogo,
+  TencentLogo,
+  AlibabaLogo
 } from '../../../assets/images/components';
 import { Spacer } from '../../helpers';
 import BigCallToAction from './BigCallToAction';
@@ -17,9 +20,12 @@ const propTypes = {
   page: PropTypes.string
 };
 
+const { clientLocale } = envData;
 function LandingTop({ page }) {
   const { t } = useTranslation();
-
+  const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
+    clientLocale
+  );
   return (
     <div className='landing-top'>
       <Row>
@@ -35,8 +41,17 @@ function LandingTop({ page }) {
             <AppleLogo />
             <GoogleLogo />
             <MicrosoftLogo />
-            <AmazonLogo />
-            <SpotifyLogo />
+            {showChineseLogos ? (
+              <>
+                <TencentLogo />
+                <AlibabaLogo />
+              </>
+            ) : (
+              <>
+                <SpotifyLogo />
+                <AmazonLogo />
+              </>
+            )}
           </div>
           <Spacer />
           <BigCallToAction page={page} />

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7eca
-title: Kaprekar numbers
+title: Números de Kaprekar
 challengeType: 5
 forumTopicId: 302296
 dashedName: kaprekar-numbers
@@ -8,77 +8,77 @@ dashedName: kaprekar-numbers
 
 # --description--
 
-A positive integer is a [Kaprekar number](https://en.wikipedia.org/wiki/Kaprekar number) if:
+Um número inteiro positivo é um [número de Kaprekar](https://en.wikipedia.org/wiki/Kaprekar number) se:
 
 <ul>
-  <li>It is 1, or,</li>
-  <li>The decimal representation of its square may be split once into two parts consisting of positive integers which sum to the original number. </li>
+  <li>É o número 1, ou</li>
+  <li>A representação decimal de seu quadrado puder ser dividida uma vez em duas partes, que consistem em inteiros positivos que, somados, resultam no número original. </li>
 </ul>
 
-Note that a split resulting in a part consisting purely of 0s is not valid, as 0 is not considered positive.Example
+Note que uma divisão resultando em uma parte que consiste puramente em 0s não é válida, já que 0 não é considerado um número positivo. Veja o exemplo abaixo:
 
-Kaprekar numbers:
+Números de Kaprekar:
 
 <ul>
-  <li><code>2223</code> is a Kaprekar number, as <code>2223 * 2223 = 4941729</code>, <code>4941729</code> may be split to <code>494</code> and <code>1729</code>, and <code>494 + 1729 = 2223</code></li>
-  <li>The series of Kaprekar numbers is known as <a href='https://oeis.org/A006886' target='_blank'>A006886</a>, and begins as <code>1, 9, 45, 55, ...</code></li>
+  <li><code>2223</code> é um número de Kaprekar, pois <code>2223 * 2223 = 4941729</code>, <code>4941729</code> pode ser dividido em <code>494</code> e <code>1729</code>, e <code>494 + 1729 = 2223</code></li>
+  <li>A série de números de Kaprekar é conhecida como <a href='https://oeis.org/A006886' target='_blank'>A006886</a> e começa assim: <code>1, 9, 45, 55, ...</code></li>
 </ul>
 
 # --instructions--
 
-Write a function that takes a number $n$, a base $bs$, and returns true if the number is a Kaprekar number for the given base. Otherwise, the function returns false.
+Escreva uma função que receba um número $n$, uma base $bs$, e retorne true se o número for um número de Kaprekar para a base fornecida. Caso contrário, a função retornará false.
 
 # --hints--
 
-`isKaprekar` should be a function.
+`isKaprekar` deve ser uma função.
 
 ```js
 assert(typeof isKaprekar == 'function');
 ```
 
-`isKaprekar(1, 10)` should return a boolean.
+`isKaprekar(1, 10)` deve retornar um booleano.
 
 ```js
 assert(typeof isKaprekar(1, 10) == 'boolean');
 ```
 
-`isKaprekar(1, 10)` should return `true`.
+`isKaprekar(1, 10)` deve retornar `true`.
 
 ```js
 assert.equal(isKaprekar(1, 10), true);
 ```
 
-`isKaprekar(9, 10)` should return `true`.
+`isKaprekar(9, 10)` deve retornar `true`.
 
 ```js
 assert.equal(isKaprekar(9, 10), true);
 ```
 
-`isKaprekar(2223, 10)` should return `true`.
+`isKaprekar(2223, 10)` deve retornar `true`.
 
 ```js
 assert.equal(isKaprekar(2223, 10), true);
 ```
 
-`isKaprekar(22823, 10)` should return `false`.
+`isKaprekar(22823, 10)` deve retornar `false`.
 
 ```js
 assert.equal(isKaprekar(22823, 10), false);
 ```
 
-`isKaprekar(9, 17)` should return `false`.
+`isKaprekar(9, 17)` deve retornar `false`.
 
 ```js
 assert.equal(isKaprekar(9, 17), false);
 ```
 
-`isKaprekar(225, 17)` should return `true`.
+`isKaprekar(225, 17)` deve retornar `true`.
 
 ```js
 assert.equal(isKaprekar(225, 17), true);
 ```
 
-`isKaprekar(999, 17)` should return `false`.
+`isKaprekar(999, 17)` deve retornar `false`.
 
 ```js
 assert.equal(isKaprekar(999, 17), false);

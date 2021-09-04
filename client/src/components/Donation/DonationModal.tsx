@@ -115,8 +115,6 @@ function DonateModal({
   const blockDonationText = (
     <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
         <Cup className='donation-icon' />
       </div>
       <Row>
@@ -134,8 +132,6 @@ function DonateModal({
   const progressDonationText = (
     <div className='text-center progress-modal-text'>
       <div className='donation-icon-container'>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
         <Heart className='donation-icon' />
       </div>
       <Row>
@@ -158,7 +154,14 @@ function DonateModal({
       <Modal.Body>
         {recentlyClaimedBlock ? blockDonationText : progressDonationText}
         <Spacer />
-        <DonateForm handleProcessing={handleProcessing} isMinimalForm={true} />
+        <Row>
+          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+            <DonateForm
+              handleProcessing={handleProcessing}
+              isMinimalForm={true}
+            />
+          </Col>
+        </Row>
         <Spacer />
         <Row>
           <Col sm={4} smOffset={4} xs={8} xsOffset={2}>

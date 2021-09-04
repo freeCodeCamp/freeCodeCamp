@@ -4,8 +4,6 @@ Al realizar cambios en JavaScript, CSS o HTML que podrían cambiar la funcionali
 
 Para aprender como escribir pruebas de Cypress, o especificaciones, observa la [documentación](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) oficial de Cypress.
 
-> Nota: Cuando escribimos pruebas para freeCodeCamp, recuerda agregar `/* global cy */` al inicio del archivo para evitar problemas con ESLint.
-
 ## Donde agregar una prueba
 
 - Las pruebas de Cypress están en el directorio `./cypress`.
@@ -14,7 +12,7 @@ Para aprender como escribir pruebas de Cypress, o especificaciones, observa la [
 
 ## Como ejecutar pruebas
 
-> [!NOTE] Si utilizas GitPod, por favor mira la [Configuración de Cypress-GitPod ](/how-to-add-cypress-tests#cypress-gitpod-setup)
+> [!NOTE] If using GitPod, please see [Cypress-GitPod Setup](/how-to-add-cypress-tests#cypress-gitpod-setup)
 
 ### 1. Asegúrate de que MongoDB y la aplicación de cliente se estén ejecutando
 

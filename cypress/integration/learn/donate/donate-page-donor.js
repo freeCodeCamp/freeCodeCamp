@@ -1,5 +1,3 @@
-/* global cy */
-
 const selectors = {
   donateAlert: {
     firstText: '.alert-info p:first-child',

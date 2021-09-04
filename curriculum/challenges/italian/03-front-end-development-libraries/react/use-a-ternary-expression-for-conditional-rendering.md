@@ -16,7 +16,7 @@ condition ? expressionIfTrue : expressionIfFalse;
 
 # --instructions--
 
-L'editor di codice ha tre costanti definite nel metodo `render()` del componente `CheckUserAge`. Si chiamano `buttonOne`, `buttonTwo`e `buttonThree`. Ad ognuno di questi viene assegnata una semplice espressione JSX che rappresenta un elemento button. Innanzitutto, inizializza lo stato di `CheckUserAge` con `input` e `userAge` entrambi impostati su una stringa vuota.
+L'editor di codice ha tre costanti definite nel metodo `render()` del componente `CheckUserAge`. Si chiamano `buttonOne`, `buttonTwo` e `buttonThree`. Ad ognuno di questi viene assegnata una semplice espressione JSX che rappresenta un elemento button. Innanzitutto, inizializza lo stato di `CheckUserAge` con `input` e `userAge` entrambi impostati su una stringa vuota.
 
 Una volta che il componente sta presentando delle informazioni sulla pagina, gli utenti dovrebbero avere un modo per interagire con esso. All'interno dell'istruzione `return` del componente, imposta un'espressione ternaria che implementa la seguente logica: quando la pagina viene caricata inizialmente, presenta il pulsante di invio, `buttonOne`, sulla pagina. Poi, quando un utente inserisce la sua età e fa click sul bottone, presenta un pulsante diverso in base all'età. Se un utente inserisce un numero inferiore a `18`, presenta `buttonThree`. Se un utente inserisce un numero maggiore o uguale a `18`, presenta `buttonTwo`.
 

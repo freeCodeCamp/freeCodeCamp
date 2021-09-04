@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import { Loader } from '../../components/helpers';
 import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
 
 import type { AddDonationData } from './PaypalButton';
@@ -32,9 +31,15 @@ type PayPalButtonScriptLoaderProps = {
     data: AddDonationData,
     actions?: { order: { capture: () => Promise<unknown> } }
   ) => unknown;
+  isPaypalLoading: boolean;
   onCancel: () => unknown;
   onError: () => unknown;
-  style: unknown;
+  onLoad: () => void;
+  style: {
+    color: string;
+    height: number;
+    tagline: boolean;
+  };
   planId: string | null;
 };
 
@@ -81,16 +86,24 @@ export class PayPalButtonScriptLoader extends Component<
   componentDidMount(): void {
     if (!window.paypal) {
       this.loadScript(this.props.isSubscription, false);
+    } else if (this.props.isPaypalLoading) {
+      this.props.onLoad();
     }
   }
 
   componentDidUpdate(prevProps: {
     isSubscription: boolean;
-    style: unknown;
+    style: {
+      color: string;
+      height: number;
+      tagline: boolean;
+    };
   }): void {
     if (
       prevProps.isSubscription !== this.state.isSubscription ||
-      prevProps.style !== this.props.style
+      prevProps.style.color !== this.props.style.color ||
+      prevProps.style.tagline !== this.props.style.tagline ||
+      prevProps.style.height !== this.props.style.height
     ) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ isSdkLoaded: false });
@@ -114,6 +127,7 @@ export class PayPalButtonScriptLoader extends Component<
 
   onScriptLoad = (): void => {
     this.setState({ isSdkLoaded: true });
+    this.props.onLoad();
   };
 
   captureOneTimePayment(
@@ -144,7 +158,7 @@ export class PayPalButtonScriptLoader extends Component<
       style
     } = this.props;
 
-    if (!isSdkLoaded) return <Loader />;
+    if (!isSdkLoaded) return <></>;
 
     // TODO: fill in the full list of props instead of any
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

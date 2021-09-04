@@ -1,6 +1,6 @@
 ---
 id: 5900f3a51000cf542c50feb8
-title: 'Problem 57: Square root convergents'
+title: 'Problema 57: Convergentes da raiz quadrada'
 challengeType: 5
 forumTopicId: 302168
 dashedName: problem-57-square-root-convergents
@@ -8,11 +8,11 @@ dashedName: problem-57-square-root-convergents
 
 # --description--
 
-It is possible to show that the square root of two can be expressed as an infinite continued fraction.
+É possível mostrar que a raiz quadrada de dois pode ser expressa como uma fração que se repete infinitamente.
 
 <div style='text-align: center;'>$\sqrt 2 =1+ \frac 1 {2+ \frac 1 {2 +\frac 1 {2+ \dots}}}$</div>
 
-By expanding this for the first four iterations, we get:
+Entrando em detalhes, as primeiras quatro iterações são:
 
 $1 + \\frac 1 2 = \\frac 32 = 1.5$
 
@@ -22,31 +22,31 @@ $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 2}} = \\frac {17}{12} = 1.41666 \\dots$
 
 $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 {2+\\frac 1 2}}} = \\frac {41}{29} = 1.41379 \\dots$
 
-The next three expansions are $\\frac {99}{70}$, $\\frac {239}{169}$, and $\\frac {577}{408}$, but the eighth expansion, $\\frac {1393}{985}$, is the first example where the number of digits in the numerator exceeds the number of digits in the denominator.
+As três próximas iterações são $\\frac {99}{70}$, $\\frac {239}{169}$ e $\\frac {577}{408}$. Mas a oitava iteração, $\\frac {1393}{985}$, é o primeiro exemplo em que o número de dígitos no numerador excede o número de dígitos no denominador.
 
-In the first `n` expansions, how many fractions contain a numerator with more digits than denominator?
+Nas primeiras `n` iterações, quantas frações contém um numerador com mais dígitos que o denominador?
 
 # --hints--
 
-`squareRootConvergents(10)` should return a number.
+`squareRootConvergents(10)` deve retornar um número.
 
 ```js
 assert(typeof squareRootConvergents(10) === 'number');
 ```
 
-`squareRootConvergents(10)` should return 1.
+`squareRootConvergents(10)` deve retornar 1.
 
 ```js
 assert.strictEqual(squareRootConvergents(10), 1);
 ```
 
-`squareRootConvergents(100)` should return 15.
+`squareRootConvergents(100)` deve retornar 15.
 
 ```js
 assert.strictEqual(squareRootConvergents(100), 15);
 ```
 
-`squareRootConvergents(1000)` should return 153.
+`squareRootConvergents(1000)` deve retornar 153.
 
 ```js
 assert.strictEqual(squareRootConvergents(1000), 153);

@@ -27,38 +27,43 @@ dashedName: set-the-font-size-for-multiple-heading-elements
 `h1` 標籤的 `font-size` 屬性值應爲 68px。
 
 ```js
-assert($('h1').css('font-size') == '68px');
+ const fontSizeOfh1 = new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('font-size');
+ assert(fontSizeOfh1 === '68px');
 ```
 
 `h2` 標籤的 `font-size` 屬性值應爲 52px。
 
 ```js
-assert($('h2').css('font-size') == '52px');
+ const fontSizeOfh2 = new __helpers.CSSHelp(document).getStyle('h2')?.getPropertyValue('font-size');
+ assert(fontSizeOfh2 === '52px');
 ```
 
 `h3` 標籤的 `font-size` 屬性值應爲 40px。
 
 ```js
-assert($('h3').css('font-size') == '40px');
+ const fontSizeOfh3 = new __helpers.CSSHelp(document).getStyle('h3')?.getPropertyValue('font-size');
+ assert(fontSizeOfh3 === '40px');
 ```
 
 `h4` 標籤的 `font-size` 屬性值應爲 32px。
 
 ```js
-assert($('h4').css('font-size') == '32px');
+ const fontSizeOfh4 = new __helpers.CSSHelp(document).getStyle('h4')?.getPropertyValue('font-size');
+ assert(fontSizeOfh4 === '32px');
 ```
 
 `h5` 標籤的 `font-size` 屬性值應爲 21px。
 
 ```js
-assert($('h5').css('font-size') == '21px');
+ const fontSizeOfh5 = new __helpers.CSSHelp(document).getStyle('h5')?.getPropertyValue('font-size');
+ assert(fontSizeOfh5 === '21px');
 ```
 
 `h6` 標籤的 `font-size` 屬性值應爲 14px。
 
 ```js
-const regex = /h6\s*\{\s*font-size\s*:\s*14px\s*(;\s*\}|\})/i;
-assert.strictEqual(true, regex.test(code));
+ const fontSizeOfh6 = new __helpers.CSSHelp(document).getStyle('h6')?.getPropertyValue('font-size');
+ assert(fontSizeOfh6 === '14px');
 ```
 
 # --seed--

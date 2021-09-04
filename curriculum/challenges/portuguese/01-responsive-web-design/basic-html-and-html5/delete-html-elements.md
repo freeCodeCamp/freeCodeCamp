@@ -11,7 +11,7 @@ dashedName: delete-html-elements
 
 A tela do nosso telefone não possui muito espaço vertical.
 
-Vamos remover os elementos desnecessário para podermos começar a construir nosso CatPhotoApp.
+Vamos remover os elementos desnecessários para podermos começar a construir nosso CatPhotoApp.
 
 # --instructions--
 

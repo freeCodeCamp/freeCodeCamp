@@ -13,7 +13,7 @@ dashedName: use-the-flex-direction-property-to-make-a-row
 
 `flex-direction` 的其他可選值還有 `row-reverse` 和 `column-reverse`。
 
-**注意：**`flex-direction` 的默認值爲 `row`。
+**注意：** `flex-direction` 的默認值爲 `row`。
 
 # --instructions--
 

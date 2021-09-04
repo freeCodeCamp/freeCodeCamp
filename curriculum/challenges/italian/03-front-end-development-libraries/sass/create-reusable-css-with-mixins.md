@@ -32,7 +32,7 @@ Ci sarebbe molto da digitare per riscrivere questa regola per tutti gli elementi
 }
 ```
 
-La definizione inizia con `@mixin` seguito da un nome personalizzato. I parametri ( `$x`, `$y`, `$blur`e `$c` nell'esempio sopra) sono opzionali. Ora ogni volta che è necessaria una regola `box-shadow`, invece di dover digitare tutti i prefissi dei venditori dovremo solo scrivere una singola linea che chiama il mixin. Un mixin è chiamato con la direttiva `@include`:
+La definizione inizia con `@mixin` seguito da un nome personalizzato. I parametri ( `$x`, `$y`, `$blur`e `$c` nell'esempio sopra) sono opzionali. Ora ogni volta che è necessaria una regola `box-shadow`, invece di dover digitare tutti i prefissi dei venditori dovremo scrivere una singola linea che chiama il mixin. Un mixin è chiamato con la direttiva `@include`:
 
 ```scss
 div {
