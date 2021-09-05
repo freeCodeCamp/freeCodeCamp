@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908856
-title: Etiquetas Buttons Bootstrap
+title: Etiqueta botones de Bootstrap
 challengeType: 0
 forumTopicId: 18222
 dashedName: label-bootstrap-buttons
@@ -8,9 +8,9 @@ dashedName: label-bootstrap-buttons
 
 # --description--
 
-Al igual que hemos etiquetado nuestros "wells", queremos etiquetar nuestros botones.
+Así como etiquetamos nuestros "wells", también queremos etiquetar nuestros botones.
 
-Da a cada uno de tus elementos `button` el texto que corresponde a su id.
+Dale a cada uno de tus elementos `button`, texto que corresponde a su id.
 
 # --hints--
 

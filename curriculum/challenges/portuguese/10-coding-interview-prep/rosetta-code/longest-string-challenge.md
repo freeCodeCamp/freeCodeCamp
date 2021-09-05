@@ -1,6 +1,6 @@
 ---
 id: 5e6dd14192286d95fc43046e
-title: Longest string challenge
+title: Desafio da string mais longa
 challengeType: 5
 forumTopicId: 385275
 dashedName: longest-string-challenge
@@ -8,27 +8,27 @@ dashedName: longest-string-challenge
 
 # --description--
 
-In this challenge, you have to find the strings that are the longest among the given strings.
+Nesse desafio, você precisa encontrar as strings que são as mais longas entre as strings fornecidas.
 
 # --instructions--
 
-Write a function that takes an array of strings and returns the strings that have a length equal to the longest length.
+Escreva uma função que receba um array de strings e retorne as strings que têm um comprimento igual ao comprimento mais longo.
 
 # --hints--
 
-`longestString` should be a function.
+`longestString` deve ser uma função.
 
 ```js
 assert(typeof longestString == 'function');
 ```
 
-`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` should return a array.
+`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` deve retornar um array.
 
 ```js
 assert(Array.isArray(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg'])));
 ```
 
-`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` should return `["ccc", "ggg"]'`.
+`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` deve retornar `["ccc", "ggg"]'`.
 
 ```js
 assert.deepEqual(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg']), [
@@ -37,7 +37,7 @@ assert.deepEqual(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg']), [
 ]);
 ```
 
-`longestString(["afedg", "bb", "sdccc", "efdee", "f", "geegg"])` should return `["afedg", "sdccc", "efdee", "geegg"]`.
+`longestString(["afedg", "bb", "sdccc", "efdee", "f", "geegg"])` deve retornar `["afedg", "sdccc", "efdee", "geegg"]`.
 
 ```js
 assert.deepEqual(
@@ -46,7 +46,7 @@ assert.deepEqual(
 );
 ```
 
-`longestString(["a", "bhghgb", "ccc", "efde", "fssdrr", "ggg"])` should return `["bhghgb", "fssdrr"]`.
+`longestString(["a", "bhghgb", "ccc", "efde", "fssdrr", "ggg"])` deve retornar `["bhghgb", "fssdrr"]`.
 
 ```js
 assert.deepEqual(
@@ -55,7 +55,7 @@ assert.deepEqual(
 );
 ```
 
-`longestString(["ahgfhg", "bdsfsb", "ccc", "ee", "f", "ggdsfg"])` should return `["ahgfhg", "bdsfsb", "ggdsfg"]`.
+`longestString(["ahgfhg", "bdsfsb", "ccc", "ee", "f", "ggdsfg"])` deve retornar `["ahgfhg", "bdsfsb", "ggdsfg"]`.
 
 ```js
 assert.deepEqual(
@@ -64,7 +64,7 @@ assert.deepEqual(
 );
 ```
 
-`longestString(["a", "bbdsf", "ccc", "edfe", "gzzzgg"])` should return `["gzzzgg"]`.
+`longestString(["a", "bbdsf", "ccc", "edfe", "gzzzgg"])` deve retornar `["gzzzgg"]`.
 
 ```js
 assert.deepEqual(longestString(['a', 'bbdsf', 'ccc', 'edfe', 'gzzzgg']), [

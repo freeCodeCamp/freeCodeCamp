@@ -1,6 +1,6 @@
 ---
 id: 595011cba5a81735713873bd
-title: Top rank per group
+title: Melhores classificações por grupo
 challengeType: 5
 forumTopicId: 302339
 dashedName: top-rank-per-group
@@ -8,9 +8,9 @@ dashedName: top-rank-per-group
 
 # --description--
 
-Find the top `n` ranked data in each group, where `n` is provided as a parameter. Name of the rank and the group are also provided as parameter.
+Encontre os melhores `n` dados classificados em cada grupo, onde `n` é fornecido como um parâmetro. O nome da classificação e o grupo também são fornecidos como parâmetro.
 
-Given the following data:
+Considerando os dados a seguir:
 
 ```js
 testData1 = [
@@ -30,13 +30,13 @@ testData1 = [
 ];
 ```
 
-One could rank top 10 employees in each department by calling:
+É possível classificar os 10 melhores funcionários em cada departamento chamando:
 
 ```js
 topRankPerGroup(10, testData1, 'dept', 'salary')
 ```
 
-Given the following data:
+Considerando os dados a seguir:
 
 ```js
 testData2 = [
@@ -48,15 +48,15 @@ testData2 = [
 ];
 ```
 
-One could rank the top-rated movie in each genre by calling:
+É possível classificar o filme melhor classificado em cada gênero chamando:
 
 ```js
 topRankPerGroup(1, testData2, 'genre', 'rating')
 ```
 
-The function should return an array with an array for each group containing the top `n` objects.
+A função deve retornar um array com um array para cada grupo contendo os melhores objetos `n`.
 
-For example, given data:
+Por exemplo, considerando os dados:
 
 ```js
 [
@@ -69,7 +69,7 @@ For example, given data:
 ];
 ```
 
-Top two ranking employees in each department by salary would be:
+Os dois maiores funcionários classificados em cada departamento, por salário, são:
 
 ```js
 [ [ { name: 'Kim Arlich', id: 'E10001', salary: 57000, dept: 'D050' },
@@ -80,37 +80,37 @@ Top two ranking employees in each department by salary would be:
 
 # --hints--
 
-`topRankPerGroup` should be a function.
+`topRankPerGroup` deve ser uma função.
 
 ```js
 assert(typeof topRankPerGroup === 'function');
 ```
 
-`topRankPerGroup` should return undefined on negative n values.
+`topRankPerGroup` deve retornar undefined para valores de n negativos.
 
 ```js
 assert(typeof topRankPerGroup(-1, []) === 'undefined');
 ```
 
-For `topRankPerGroup(10, testData1, 'dept', 'salary')`, the first result in the first group should be `{ name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'}`.
+Para `topRankPerGroup(10, testData1, 'dept', 'salary')`, o primeiro resultado no primeiro grupo deve ser `{ name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'}`.
 
 ```js
 assert.deepEqual(res1[0][0], { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'});
 ```
 
-For `topRankPerGroup(10, testData1, 'dept', 'salary')`, the last result in the last group should be `{ name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' }`.
+Para `topRankPerGroup(10, testData1, 'dept', 'salary')`, o último resultado no último grupo deve ser `{ name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' }`.
 
 ```js
 assert.deepEqual(res1[3][3], { name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' });
 ```
 
-`topRankPerGroup(1, ...)` should return only top ranking result per group.
+`topRankPerGroup(1, ...)` deve retornar apenas o maior resultado do ranking por grupo.
 
 ```js
 assert.equal(res2[2].length, 1);
 ```
 
-`topRankPerGroup(2, ...)` should return two ranking results per group.
+`topRankPerGroup(2, ...)` deve retornar dois resultados do ranking por grupo.
 
 ```js
 assert.equal(res3[2][1].name, 'Maze Runner');

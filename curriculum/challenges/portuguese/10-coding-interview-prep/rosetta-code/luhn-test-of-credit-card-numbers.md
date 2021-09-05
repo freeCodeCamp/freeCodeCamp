@@ -1,6 +1,6 @@
 ---
 id: 5ea28156e79528a9ab248f27
-title: Luhn test of credit card numbers
+title: Teste de Luhn de números de cartão de crédito
 challengeType: 5
 forumTopicId: 385284
 dashedName: luhn-test-of-credit-card-numbers
@@ -8,22 +8,22 @@ dashedName: luhn-test-of-credit-card-numbers
 
 # --description--
 
-The [Luhn test](https://en.wikipedia.org/wiki/Luhn algorithm) is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
+O [teste de Luhn](https://en.wikipedia.org/wiki/Luhn algorithm) é usado por algumas empresas de cartões de crédito para distinguir números válidos de cartão de crédito do que poderia ser uma seleção aleatória de dígitos.
 
-Those companies using credit card numbers that can be validated by the Luhn test have numbers that pass the following test:
+Essas empresas que usam números de cartão de crédito que podem ser validados pelo teste de Luhn têm números que passam no teste a seguir:
 
 <ol>
-  <li> Reverse the order of the digits in the number.</li>
-  <li> Take the first, third, ... and every other odd digit in the reversed digits and sum them to form the partial sum s1</li>
-  <li> Taking the second, fourth ... and every other even digit in the reversed digits:</li>
+  <li> Inverter a ordem dos dígitos no número.</li>
+  <li> Pegar o primeiro, o terceiro, ... e qualquer outro dígito ímpar nos dígitos invertidos e somá-los para formar a soma parcial s1</li>
+  <li> Tomando o segundo, o quarto ... e todos os outros dígitos pares nos dígitos invertidos:</li>
     <ol>
-      <li>Multiply each digit by two and sum the digits if the answer is greater than nine to form partial sums for the even digits.</li>
-      <li>Sum the partial sums of the even digits to form s2.</li>
+      <li>Multiplicar cada algarismo por dois e somar os dígitos se a resposta for maior que nove para formar somas parciais para os dígitos pares.</li>
+      <li>Somar as somas parciais dos dígitos pares para formar s2.</li>
     </ol>
-  <li>If s1 + s2 ends in zero then the original number is in the form of a valid credit card number as verified by the Luhn test.</li>
+  <li>Se s1 + s2 terminar em zero, então o número original está na forma de um número de cartão de crédito válido, conforme verificado pelo teste de Luhn.</li>
 </ol>
 
-For example, if the trial number is 49927398716:
+Por exemplo, se o número avaliado for 49927398716:
 
 ```bash
 Reverse the digits:
@@ -44,53 +44,53 @@ s1 + s2 = 70 which ends in zero which means that 49927398716 passes the Luhn tes
 
 # --instructions--
 
-Write a function that will validate a number with the Luhn test. Return true if it's a valid number. Otherwise, return false.
+Escreva uma função que valide um número com o teste de Luhn. Retorne true se for um número válido. Caso contrário, retorne false.
 
 # --hints--
 
-`luhnTest` should be a function.
+`luhnTest` deve ser uma função.
 
 ```js
 assert(typeof luhnTest === 'function');
 ```
 
-`luhnTest("4111111111111111")` should return a boolean.
+`luhnTest("4111111111111111")` deve retornar um booleano.
 
 ```js
 assert(typeof luhnTest('4111111111111111') === 'boolean');
 ```
 
-`luhnTest("4111111111111111")` should return `true`.
+`luhnTest("4111111111111111")` deve retornar `true`.
 
 ```js
 assert.equal(luhnTest('4111111111111111'), true);
 ```
 
-`luhnTest("4111111111111112")` should return `false`.
+`luhnTest("4111111111111112")` deve retornar `false`.
 
 ```js
 assert.equal(luhnTest('4111111111111112'), false);
 ```
 
-`luhnTest("49927398716")` should return `true`.
+`luhnTest("49927398716")` deve retornar `true`.
 
 ```js
 assert.equal(luhnTest('49927398716'), true);
 ```
 
-`luhnTest("49927398717")` should return `false`.
+`luhnTest("49927398717")` deve retornar `false`.
 
 ```js
 assert.equal(luhnTest('49927398717'), false);
 ```
 
-`luhnTest("1234567812345678")` should return `false`.
+`luhnTest("1234567812345678")` deve retornar `false`.
 
 ```js
 assert.equal(luhnTest('1234567812345678'), false);
 ```
 
-`luhnTest("1234567812345670")` should return `true`.
+`luhnTest("1234567812345670")` deve retornar `true`.
 
 ```js
 assert.equal(luhnTest('1234567812345670'), true);
