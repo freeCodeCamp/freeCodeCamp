@@ -12,31 +12,27 @@ import { nanoid } from 'nanoid';
 import React, { Component, FormEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
+import { PortfolioType } from '../../redux/prop-types';
 
 import { hasProtocolRE } from '../../utils';
+import { putConnectDiscourseAccount } from '../../utils/ajax';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
 
-type PortfolioValues = {
-  id: string;
-  description: string;
-  image: string;
-  title: string;
-  url: string;
-};
-
 type PortfolioProps = {
+  discourseId: string;
   picture?: string;
-  portfolio: PortfolioValues[];
+  portfolio: PortfolioType[];
   t: TFunction;
-  updatePortfolio: (obj: { portfolio: PortfolioValues[] }) => void;
+  updatePortfolio: (obj: { portfolio: PortfolioType[] }) => void;
   username?: string;
+  userId: string;
 };
 
 type PortfolioState = {
-  portfolio: PortfolioValues[];
+  portfolio: PortfolioType[];
 };
 
 function createEmptyPortfolio() {
@@ -50,7 +46,7 @@ function createEmptyPortfolio() {
 }
 
 function createFindById(id: string) {
-  return (p: PortfolioValues) => p.id === id;
+  return (p: PortfolioType) => p.id === id;
 }
 
 const mockEvent = {
@@ -198,13 +194,20 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       : { state: 'warning', message: t('validation.use-valid-url') };
   }
 
+  handleDiscourseAuthentication = () => {
+    const { userId } = this.props;
+    // TODO: Figure out what to do with result of PUT
+    // @eslint-disable-next-line @typescript-eslint/no-floating-promises
+    (async () => console.log(await putConnectDiscourseAccount(userId)))();
+  };
+
   renderPortfolio = (
-    portfolio: PortfolioValues,
+    portfolio: PortfolioType,
     index: number,
-    arr: PortfolioValues[]
+    arr: PortfolioType[]
   ) => {
     const { t } = this.props;
-    const { id, title, description, url, image } = portfolio;
+    const { id, title, description = '', url, image = '' } = portfolio;
     const pristine = this.isFormPristine(id);
     const { state: titleState, message: titleMessage } =
       this.getTitleValidation(title);
@@ -335,6 +338,21 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             type='button'
           >
             {t('buttons.add-portfolio')}
+          </Button>
+        </FullWidthRow>
+        <Spacer size={2} />
+        <FullWidthRow>
+          <ButtonSpacer />
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='primary'
+            onClick={this.handleDiscourseAuthentication}
+            type='button'
+          >
+            {this.props.discourseId
+              ? t('buttons.reconnect-discourse')
+              : t('buttons.connect-discourse')}
           </Button>
         </FullWidthRow>
         <Spacer size={2} />

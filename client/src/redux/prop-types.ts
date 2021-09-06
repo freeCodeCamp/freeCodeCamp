@@ -86,6 +86,7 @@ export const User = PropTypes.shape({
   ),
   email: PropTypes.string,
   githubProfile: PropTypes.string,
+  id: PropTypes.string,
   is2018DataVisCert: PropTypes.bool,
   isApisMicroservicesCert: PropTypes.bool,
   isBackEndCert: PropTypes.bool,
@@ -262,9 +263,11 @@ export type UserType = {
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
   currentChallengeId: string;
+  discourseId: string;
   email: string;
   emailVerified: boolean;
   githubProfile: string;
+  id: string;
   isBanned: boolean;
   isCheater: boolean;
   isHonest: boolean;
@@ -333,8 +336,8 @@ export type ChallengeMetaType = {
 
 export type PortfolioType = {
   id: string;
-  title?: string;
-  url?: string;
+  title: string;
+  url: string;
   image?: string;
   description?: string;
 };

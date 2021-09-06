@@ -62,7 +62,8 @@
     "verify-email": "Verify Email",
     "submit-and-go": "Submit and go to next challenge",
     "go-to-next": "Go to next challenge",
-    "ask-later": "Ask me later"
+    "ask-later": "Ask me later",
+    "connect-discourse": "Connect to Forum Account"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
