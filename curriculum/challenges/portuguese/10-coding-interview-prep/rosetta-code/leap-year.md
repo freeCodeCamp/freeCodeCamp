@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ede
-title: Leap year
+title: Ano bissexto
 challengeType: 5
 forumTopicId: 302300
 dashedName: leap-year
@@ -8,53 +8,53 @@ dashedName: leap-year
 
 # --description--
 
-Determine whether a given year is a leap year in the Gregorian calendar.
+Determine se o ano fornecido é um ano bissexto no calendário Gregoriano.
 
 # --hints--
 
-`isLeapYear` should be a function.
+`isLeapYear` deve ser uma função.
 
 ```js
 assert(typeof isLeapYear == 'function');
 ```
 
-`isLeapYear()` should return a boolean.
+`isLeapYear()` deve retornar um booleano.
 
 ```js
 assert(typeof isLeapYear(2018) == 'boolean');
 ```
 
-`isLeapYear(2018)` should return `false`.
+`isLeapYear(2018)` deve retornar `false`.
 
 ```js
 assert.equal(isLeapYear(2018), false);
 ```
 
-`isLeapYear(2016)` should return `true`.
+`isLeapYear(2016)` deve retornar `true`.
 
 ```js
 assert.equal(isLeapYear(2016), true);
 ```
 
-`isLeapYear(2000)` should return `true`.
+`isLeapYear(2000)` deve retornar `true`.
 
 ```js
 assert.equal(isLeapYear(2000), true);
 ```
 
-`isLeapYear(1900)` should return `false`.
+`isLeapYear(1900)` deve retornar `false`.
 
 ```js
 assert.equal(isLeapYear(1900), false);
 ```
 
-`isLeapYear(1996)` should return `true`.
+`isLeapYear(1996)` deve retornar `true`.
 
 ```js
 assert.equal(isLeapYear(1996), true);
 ```
 
-`isLeapYear(1800)` should return `false`.
+`isLeapYear(1800)` deve retornar `false`.
 
 ```js
 assert.equal(isLeapYear(1800), false);

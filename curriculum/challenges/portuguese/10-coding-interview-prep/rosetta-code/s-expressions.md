@@ -1,6 +1,6 @@
 ---
 id: 59667989bf71cf555dd5d2ff
-title: S-Expressions
+title: Expressões S
 challengeType: 5
 forumTopicId: 302303
 dashedName: s-expressions
@@ -8,47 +8,47 @@ dashedName: s-expressions
 
 # --description--
 
-[S-Expressions](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") are one convenient way to parse and store data.
+[Expressões S](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") são uma maneira conveniente de analisar e armazenar dados.
 
 # --instructions--
 
-Write a simple reader/parser for S-Expressions that handles quoted and unquoted strings, integers and floats.
+Escreva um leitor/analisador simples para Expressões S que lide com strings entre aspas ou não, números inteiros e flutuantes (decimais).
 
-The function should read a single but nested S-Expression from a string and return it as a (nested) array.
+A função deve ler uma única Expressão S, porém aninhada, de uma string e retorná-la como um array (aninhado).
 
-Newlines and other whitespace may be ignored unless contained within a quoted string.
+Novas linhas e outros tipos de espaço em branco devem ser ignorados a menos que estejam contidos em uma string entre aspas.
 
-"`()`" inside quoted strings are not interpreted, but treated as part of the string.
+"`()`" em strings entre aspas não são interpretados, mas tratados como parte da string.
 
-Handling escaped quotes inside a string is optional; thus "`(foo"bar)`" may be treated as a string "`foo"bar`", or as an error.
+Tratar de aspas com escape dentro de uma string é opcional. Assim, "`(foo"bar)`" pode ser tratado como uma string "`foo"bar`" ou como um erro.
 
-For this, the reader need not recognize `\` for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
+Para isso, o leitor não precisa reconhecer `\` para escape, mas deve, além disso, reconhecer números se a linguagem tiver tipos de dados apropriados.
 
-Note that with the exception of `()"` (`\` if escaping is supported) and whitespace, there are no special characters. Anything else is allowed without quotes.
+Observe que, com a exceção de `()"` (`\`, se houver suporte a escape) e do espaço em branco, não há caracteres especiais. Todo o resto é permitido sem aspas.
 
-The reader should be able to read the following input
+O leitor deve poder ler a entrada a seguir
 
 <pre>((data "quoted data" 123 4.5)
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-and turn it into a native data structure. (See the [Pike](https://rosettacode.org/wiki/S-Expressions#Pike "\#Pike"), [Python](https://rosettacode.org/wiki/S-Expressions#Python "\#Python") and [Ruby](https://rosettacode.org/wiki/S-Expressions#Ruby "\#Ruby") implementations for examples of native data structures.)
+e transformá-la em uma estrutura de dados nativa. (veja as implementações em [Pike](https://rosettacode.org/wiki/S-Expressions#Pike "\#Pike"), [Python](https://rosettacode.org/wiki/S-Expressions#Python "\#Python") e [Ruby](https://rosettacode.org/wiki/S-Expressions#Ruby "\#Ruby") para obter exemplos de estruturas de dados nativas.)
 
 # --hints--
 
-`parseSexpr` should be a function.
+`parseSexpr` deve ser uma função.
 
 ```js
 assert(typeof parseSexpr === 'function');
 ```
 
-`parseSexpr('(data1 data2 data3)')` should return `['data1', 'data2', 'data3']`
+`parseSexpr('(data1 data2 data3)')` deve retornar `['data1', 'data2', 'data3']`
 
 ```js
 assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution);
 ```
 
-`parseSexpr('((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))')` should return `[['data', '"quoted data"', 123, 4.5], ['data', ['!@#', [4.5], '"(more"', '"data)"']]]`.
+`parseSexpr('((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))')` deve retornar `[['data', '"quoted data"', 123, 4.5], ['data', ['!@#', [4.5], '"(more"', '"data)"']]]`.
 
 ```js
 assert.deepEqual(parseSexpr(basicSExpr), basicSolution);

@@ -8,7 +8,7 @@ dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
 
 # --description--
 
-Bootstrap viene con diferentes colores predefinidos para botones. La clase `btn-danger` es el color del botón que usarás para notificar a los usuarios que el botón realiza una acción destructiva, como eliminar una foto de gato.
+Bootstrap viene con varios colores predefinidos para botones. La clase `btn-danger` es el color del botón que usarás para notificar a los usuarios que el botón realiza una acción destructiva, como eliminar la foto de un gato.
 
 Crea un botón con el texto `Delete` y dale la clase `btn-danger`.
 
@@ -22,7 +22,7 @@ Debes crear un nuevo elemento `button` con el texto `Delete`.
 assert(new RegExp('Delete', 'gi').test($('button').text()));
 ```
 
-Todos tus botones de Bootstrap deben tener clases `btn` y `btn-block`.
+Todos tus botones de Bootstrap deben tener las clases `btn` y `btn-block`.
 
 ```js
 assert($('button.btn-block.btn').length > 2);
@@ -34,7 +34,7 @@ Tu nuevo botón debe tener la clase `btn-danger`.
 assert($('button').hasClass('btn-danger'));
 ```
 
-Todos los elementos `button` deben tener etiquetas de cierre.
+Todos tus elementos `button` deben tener etiquetas de cierre.
 
 ```js
 assert(

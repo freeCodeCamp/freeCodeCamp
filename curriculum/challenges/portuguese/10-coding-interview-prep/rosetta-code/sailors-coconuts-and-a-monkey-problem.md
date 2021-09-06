@@ -1,6 +1,6 @@
 ---
 id: 59da22823d04c95919d46269
-title: 'Sailors, coconuts and a monkey problem'
+title: 'Problema dos marinheiros, dos cocos e do macaco'
 challengeType: 5
 forumTopicId: 302304
 dashedName: sailors-coconuts-and-a-monkey-problem
@@ -8,38 +8,38 @@ dashedName: sailors-coconuts-and-a-monkey-problem
 
 # --description--
 
-Five sailors are shipwrecked on an island and collect a large pile of coconuts during the day. That night the first sailor wakes up and decides to take his first share early so tries to divide the pile of coconuts equally into five piles but finds that there is one coconut left over, so he tosses it to a monkey and then hides "his" one of the five equally sized piles of coconuts and pushes the other four piles together to form a single visible pile of coconuts again and goes to bed. To cut a long story short, each of the sailors in turn gets up once during the night and performs the same actions of dividing the coconut pile into five, finding that one coconut is left over and giving that single remainder coconut to the monkey. In the morning (after the surreptitious and separate action of each of the five sailors during the night), the remaining coconuts are divided into five equal piles for each of the sailors, whereupon it is found that the pile of coconuts divides equally amongst the sailors with no remainder. (Nothing for the monkey in the morning.)
+Cinco marinheiros são náufragos em uma ilha e coletam muitos cocos durante o dia. Naquela noite, o primeiro marinheiro acorda e decide tomar a sua parte dos cocos mais cedo, então tenta dividir o monte de cocos igualmente em cinco pilhas, mas descobre que ainda há um coco sobrando. Então, ele o joga para um macaco e então esconde "sua" pilha, uma das cinco pilhas de cocos de tamanho igual, e empurra os outros quatro montes para formar um único monte visível de cocos novamente e vai para a cama. Resumindo uma longa história, cada marinheiro por sua vez se levanta uma vez durante a noite e executa as mesmas ações de dividir a pilha de cocos em cinco, descobrindo que sobra um coco e deixando o coco que resta para o macaco. De manhã (depois da ação às escondidas e separada de cada um dos cinco marinheiros durante a noite), os cocos restantes são divididos em cinco pilhas iguais para cada um dos marinheiros, onde se descobre que a pilha de cocos pode ser dividida igualmente entre os marinheiros, sem sobrar nenhum. (Nada é dado para o macaco da manhã.)
 
 # --instructions--
 
-Create a function that returns the minimum possible size of the initial pile of coconuts collected during the day for `N` sailors. **Note:** Of course the tale is told in a world where the collection of any amount of coconuts in a day and multiple divisions of the pile, etc. can occur in time fitting the story line, so as not to affect the mathematics. **C.f:**
+Crie uma função que retorne o tamanho mínimo possível para a pilha inicial de cocos coletados durante o dia para `N` marinheiros. **Observação:** logicamente, a história é contada em um mundo onde a coleção de qualquer quantidade de cocos em um dia e múltiplas divisões do monte pode ocorrer em tempo ajustando a linha da história, de modo a não afetar a matemática. **De acordo com:**
 
 <ul>
-  <li><a href="https://www.youtube.com/watch?v=U9qU20VmvaU" target="_blank"> Monkeys and Coconuts - Numberphile</a> (Video) Analytical solution.</li>
-  <li><a href="https://oeis.org/A002021" target="_blank">A002021 Pile of coconuts problem</a> The On-Line Encyclopedia of Integer Sequences. (Although some of its references may use the alternate form of the tale).</li>
+  <li><a href="https://www.youtube.com/watch?v=U9qU20VmvaU" target="_blank"> Monkeys and Coconuts - Numberphile</a> (Vídeo) Solução analítica.</li>
+  <li><a href="https://oeis.org/A002021" target="_blank">A002021 Pile of coconuts problem</a> The On-Line Encyclopedia of Integer Sequences. (Embora algumas das referências possam usar a forma alternativa de conto).</li>
 </ul>
 
 # --hints--
 
-`splitCoconuts` should be a function.
+`splitCoconuts` deve ser uma função.
 
 ```js
 assert(typeof splitCoconuts === 'function');
 ```
 
-`splitCoconuts(5)` should return 3121.
+`splitCoconuts(5)` deve retornar 3121.
 
 ```js
 assert(splitCoconuts(5) === 3121);
 ```
 
-`splitCoconuts(6)` should return 233275.
+`splitCoconuts(6)` deve retornar 233275.
 
 ```js
 assert(splitCoconuts(6) === 233275);
 ```
 
-`splitCoconuts(7)` should return 823537.
+`splitCoconuts(7)` deve retornar 823537.
 
 ```js
 assert(splitCoconuts(7) === 823537);

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed908845
-title: Estilo de entradas de texto como controles de formulario
+title: Estiliza entradas de texto como controles de formulario
 challengeType: 0
 forumTopicId: 18312
 required:
@@ -13,27 +13,27 @@ dashedName: style-text-inputs-as-form-controls
 
 # --description--
 
-Puedes añadir el icono `fa-paper-plane` de Font Awesome, agregando `<i class="fa fa-paper-plane"></i>` dentro del elemento `button` de tipo `submit`.
+Puedes agregar el icono `fa-paper-plane` de Font Awesome agregando `<i class="fa fa-paper-plane"></i>` dentro de tu elemento `button` de envío.
 
-Da al input(campo de entrada de texto) de tu formulario una clase `form-control`. Da el botón de envío(submit) de tu formulario las clases `btn btn-primary`. También da a este botón el icono de Font Awesome con `fa-paper-plane`.
+Dale a tu campo de entrada de texto la clase `form-control`. Dale a tu botón de envío de formulario las clases `btn btn-primary`. También asígnale a este botón el icono de Font Awesome `fa-paper-plane`.
 
-Todo el texto en los elementos `<input>`, `<textarea>`, y `<select>` con la clase `.form-control` deben tener un ancho del 100%.
+Todos los elementos textuales `<input>`, `<textarea>`, y `<select>` con la clase `.form-control` tienen un ancho de 100%.
 
 # --hints--
 
-El botón de envío submit en tu formulario debe tener las clases `btn btn-primary`.
+El botón de envío en tu formulario debe tener las clases `btn btn-primary`.
 
 ```js
 assert($('button[type="submit"]').hasClass('btn btn-primary'));
 ```
 
-Debes añadir `<i class="fa fa-paper-plane"></i>` dentro de tu elemento button.
+Debes añadir un `<i class="fa fa-paper-plane"></i>` dentro de tu elemento `button`.
 
 ```js
 assert($('button[type="submit"]:has(i.fa.fa-paper-plane)').length > 0);
 ```
 
-El texto en `input` en tu formulario debe tener la clase `form-control`.
+El `input` de tipo texto en tu formulario debe tener la clase `form-control`.
 
 ```js
 assert($('input[type="text"]').hasClass('form-control'));

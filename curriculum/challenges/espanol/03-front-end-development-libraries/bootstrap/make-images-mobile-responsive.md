@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08812
-title: Hacer que las imágenes se adapten a dispositivos móviles
+title: Haz que las imágenes se adapten a dispositivos móviles
 challengeType: 0
 forumTopicId: 18232
 dashedName: make-images-mobile-responsive
@@ -8,39 +8,39 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-Primero, agregue una nueva imagen debajo de la existente. Establezca su atributo `src` en `https://bit.ly/fcc-running-cats`.
+Primero, agrega una nueva imagen debajo de la existente. Establece su atributo `src` a `https://bit.ly/fcc-running-cats`.
 
 Sería genial si esta imagen pudiera tener exactamente el ancho de la pantalla de nuestro teléfono.
 
-Afortunadamente, con Bootstrap, todo lo que tenemos que hacer es agregar la clase `img-responsive` a tus imágenes. Haga esto y la imagen debe ajustarse perfectamente al ancho de su página.
+Afortunadamente, con Bootstrap, todo lo que necesitamos hacer es agregar la clase `img-responsive` a nuestra imagen. Hazlo, y la imagen debería caber perfectamente en el ancho de tu página.
 
 # --hints--
 
-Debe tener un total de dos imágenes.
+Debes tener un total de dos imágenes.
 
 ```js
 assert($('img').length === 2);
 ```
 
-Tu nueva imagen debería estar debajo de la anterior y tener la clase `img-responsive`.
+Tu nueva imagen debe estar debajo de la anterior y tener la clase `img-responsive`.
 
 ```js
 assert($('img:eq(1)').hasClass('img-responsive'));
 ```
 
-Tu nueva imagen no debería tener la clase `smaller-image`.
+Tu nueva imagen no debe tener la clase `smaller-image`.
 
 ```js
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-Tu nueva imagen debe tener el atributo `src` en `https://bit.ly/fcc-running-cats`.
+Tu nueva imagen debe tener el atributo `src` con el valor `https://bit.ly/fcc-running-cats`.
 
 ```js
 assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
 ```
 
-Tu nuevo elemento `img` debe tener una etiqueta de cierre.
+Tu nuevo elemento `img` debe tener etiqueta de cierre.
 
 ```js
 assert(
