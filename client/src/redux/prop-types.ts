@@ -134,7 +134,6 @@ export const CurrentCertsType = PropTypes.arrayOf(
 
 export const StepsType = PropTypes.shape({
   currentCerts: CurrentCertsType,
-  isSignedIn: PropTypes.bool,
   isShowCerts: PropTypes.bool,
   isShowName: PropTypes.bool,
   isShowProfile: PropTypes.bool

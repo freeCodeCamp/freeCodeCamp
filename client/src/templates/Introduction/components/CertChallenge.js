@@ -10,7 +10,11 @@ import {
   superBlockCertTypeMap
 } from '../../../../../config/certification-settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
-import { userFetchStateSelector, stepsToClaimSelector } from '../../../redux';
+import {
+  userFetchStateSelector,
+  stepsToClaimSelector,
+  isSignedInSelector
+} from '../../../redux';
 
 import { StepsType, User } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings';
@@ -26,6 +30,7 @@ const propTypes = {
     complete: PropTypes.bool,
     errored: PropTypes.bool
   }),
+  isSignedIn: PropTypes.bool,
   steps: StepsType,
   superBlock: PropTypes.string,
   t: PropTypes.func,
@@ -43,9 +48,11 @@ const mapStateToProps = state => {
   return createSelector(
     stepsToClaimSelector,
     userFetchStateSelector,
-    (steps, fetchState) => ({
+    isSignedInSelector,
+    (steps, fetchState, isSignedIn) => ({
       steps,
-      fetchState
+      fetchState,
+      isSignedIn
     })
   )(state);
 };
@@ -63,6 +70,7 @@ const CertChallenge = ({
   verifyCert,
   title,
   fetchState,
+  isSignedIn,
   user: { isHonest, username }
 }) => {
   const { pending, complete } = fetchState;
@@ -134,10 +142,9 @@ const CertChallenge = ({
       ? verifyCert(certSlug)
       : createFlashMessage(honestyInfoMessage);
   };
-
   return (
     <div className='block'>
-      {!isCertified && userLoaded && (
+      {!isCertified && userLoaded && isSignedIn && (
         <CertificationCard
           i18nCertText={i18nCertText}
           isProjectsCompleted={isProjectsCompleted}
