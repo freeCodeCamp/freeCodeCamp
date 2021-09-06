@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9acde08712
-title: Utiliza diseño responsivo con contenedores de fluido Bootstrap
+title: Utiliza diseño responsivo con contenedores de fluido de Bootstrap
 challengeType: 0
 forumTopicId: 18362
 dashedName: use-responsive-design-with-bootstrap-fluid-containers
@@ -8,19 +8,19 @@ dashedName: use-responsive-design-with-bootstrap-fluid-containers
 
 # --description--
 
-En la sección de HTML5 y CSS de freeCodeCamp, creamos una aplicación de fotos de gatos. Ahora vamos de vuelta a la aplicación. Esta vez, lo estilizaremos usando el popular framework CSS responsivo de Bootstrap.
+En la seccion de HTML5 y CSS de freeCodeCamp construimos un 'Cat Photo App'. Ahora volvamos a él. Esta vez, vamos a estilizarlo utilizando el popular framework CSS responsivo de Bootstrap.
 
-Bootstap averiguará la anchura de tu pantalla y responderá redimensionando los elementos HTML, de aquí el nombre <dfn>diseño responsivo</dfn>.
+Bootstrap averiguará cuan ancha es tu pantalla y responderá redimensionando tus elementos HTML - de ahí el nombre <dfn>diseño responsivo</dfn>.
 
-Con diseño responsivo, no hay necesidad de diseñar una versión móvil de tu sitio web. Se verá bien en dispositivos con pantallas de cualquier anchura.
+Con diseño responsivo, no hay necesidad de diseñar una versión móvil de tu sitio web. Se verá bien en dispositivos con pantallas de cualquier ancho.
 
-Puedes añadir Bootstrap a cualquier aplicación al agregar el siguiente código encima de tu HTML:
+Puedes añadir Bootstrap a cualquier aplicación agregando el siguiente código en la parte superior de tu HTML:
 
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 ```
 
-En este caso, ya lo añadimos a esta página. Ten en cuenta que para cerrar la etiqueta `link` puedes utilizar `>` o `/>`.
+En este caso, ya lo hemos añadido por ti en esta página, tras bambalinas. Ten en cuenta que para cerrar la etiqueta `link` puedes utilizar `>` o `/>`.
 
 Para comenzar, debemos anidar todo nuestro HTML (menos la etiqueta `link` y el elemento `style`) en un elemento `div` con la clase `container-fluid`.
 
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-Todos los elementos HTML después de la etiqueta de cierre `style` deben anidarse en `.container-fluid`.
+Todos los elementos HTML después de la etiqueta de cierre de `style` deben estar anidados dentro de `.container-fluid`.
 
 ```js
 assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').has("style").length && !$('.container-fluid').has("link").length);

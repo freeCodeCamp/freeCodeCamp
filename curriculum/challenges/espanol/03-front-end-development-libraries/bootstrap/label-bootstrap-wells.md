@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908854
-title: Etiqueta Wells de Boostrap
+title: Etiqueta wells de Bootstrap
 challengeType: 0
 forumTopicId: 18223
 dashedName: label-bootstrap-wells
@@ -8,15 +8,15 @@ dashedName: label-bootstrap-wells
 
 # --description--
 
-Para mayor claridad, etiquetemos ambos `well` con sus ids.
+Para mayor claridad, vamos a etiquetar nuestros dos wells con sus ids.
 
-Sobre tu "left-well", dentro del elemento `col-xs-6` `div`, agrega el elemento `h4` con el texto `#left-well`.
+Sobre tu "left-well", dentro de su elemento `div` `col-xs-6`, agrega un elemento `h4` con el texto `#left-well`.
 
-Sobre tu "right-well", dentro del elemento `col-xs-6` `div`, agrega el elemento `h4` con el texto `#right-well`.
+Sobre tu "right-well", dentro de su elemento `div` `col-xs-6` agrega un elemento `h4` con el texto `#right-well`.
 
 # --hints--
 
-Debes añadir un elemento `h4` para cada uno de sus elementos `<div class="col-xs-6">`.
+Debes agregar un elemento `h4` a cada uno de tus elementos `<div class="col-xs-6">`.
 
 ```js
 assert(

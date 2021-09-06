@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908746
-title: Aloja nuestra página dentro de un container-fluid de Bootstrap div
+title: Aloja nuestra página dentro de un container-fluid div de Bootstrap
 challengeType: 0
 forumTopicId: 18198
 dashedName: house-our-page-within-a-bootstrap-container-fluid-div
@@ -8,7 +8,7 @@ dashedName: house-our-page-within-a-bootstrap-container-fluid-div
 
 # --description--
 
-Ahora asegurémonos de que todo el contenido de tu página sea compatible con dispositivos móviles.
+Ahora vamos a asegurarnos que todo el contenido de tu página es mobile-responsive.
 
 Anidemos tu elemento `h3` dentro de un elemento `div` con la clase `container-fluid`.
 
@@ -20,7 +20,7 @@ Tu elemento `div` debe tener la clase `container-fluid`.
 assert($('div').hasClass('container-fluid'));
 ```
 
-Cada uno de tus elementos `div` deben tener etiquetas de cierre.
+Cada uno de tus elementos `div` debe tener etiquetas de cierre.
 
 ```js
 assert(
