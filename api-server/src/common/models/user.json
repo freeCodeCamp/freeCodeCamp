@@ -39,7 +39,8 @@
     },
     "discourseId": {
       "type": "string",
-      "description": "An id used to identify user accounts in Discourse"
+      "description": "An id used to identify user accounts in Discourse",
+      "default": ""
     },
     "password": {
       "type": "string",
