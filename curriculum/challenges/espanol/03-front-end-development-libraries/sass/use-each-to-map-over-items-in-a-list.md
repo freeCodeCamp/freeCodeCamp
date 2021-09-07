@@ -16,7 +16,7 @@ El último desafío mostró cómo la directiva `@for` utiliza un valor inicial y
 }
 ```
 
-Un mapa tiene una sintaxis ligeramente diferente. Aquí hay un ejemplo:
+Un mapa tiene una sintaxis ligeramente diferente. He aquí un ejemplo:
 
 ```scss
 $colors: (color1: blue, color2: red, color3: green);

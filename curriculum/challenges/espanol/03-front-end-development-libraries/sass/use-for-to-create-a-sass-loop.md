@@ -8,7 +8,7 @@ dashedName: use-for-to-create-a-sass-loop
 
 # --description--
 
-La directiva `@for` añade estilos en un bucle, muy similar a un bucle `for` en JavaScript.
+La directiva `@for` agrega estilos en un bucle, muy similar a un bucle `for` en JavaScript.
 
 `@for` se utiliza de dos maneras: "de principio hasta el fin" o "de principio a fin". La principal diferencia es que el "de principio **a** fin" *excluye* el número final como parte de la cuenta, y "de principio **hasta** el fin" *incluye* el número final como parte de la cuenta.
 

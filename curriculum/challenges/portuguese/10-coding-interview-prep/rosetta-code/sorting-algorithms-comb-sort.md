@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8005
-title: Sorting algorithms/Comb sort
+title: Algoritmos de ordenação/ordenação do pente
 challengeType: 5
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
@@ -8,48 +8,48 @@ dashedName: sorting-algorithmscomb-sort
 
 # --description--
 
-Implement a *comb sort*.
+Implemente uma *ordenação de pente*.
 
-The **Comb Sort** is a variant of the [Bubble Sort](https://rosettacode.org/wiki/Bubble Sort).
+A **ordenação de pente** é uma variante da [ordenação de bolha](https://rosettacode.org/wiki/Bubble Sort).
 
-Like the [Shell sort](https://rosettacode.org/wiki/Shell sort), the Comb Sort increases the gap used in comparisons and exchanges.
+Como a [ordenação de concha](https://rosettacode.org/wiki/Shell sort), a ordenação de pente aumenta o intervalo usado nas comparações e trocas.
 
-Dividing the gap by $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ works best, but 1.3 may be more practical.
+Dividir a diferença por $(1-e^{-\\varphi})^{-1} \\approx 1,247330950103979$ funciona melhor, mas 1,3 pode ser mais prático.
 
-Some implementations use the insertion sort once the gap is less than a certain amount.
+Algumas implementações usam a ordenação de inserção, já que a diferença é menor do que uma certa quantidade.
 
-**Also see**
-
-<ul>
-  <li>the Wikipedia article: <a href='https://en.wikipedia.org/wiki/Comb sort' target='_blank'>Comb sort</a>.</li>
-</ul>
-
-Variants:
+**Veja também**
 
 <ul>
-  <li>Combsort11 makes sure the gap ends in (11, 8, 6, 4, 3, 2, 1), which is significantly faster than the other two possible endings.</li>
-  <li>Combsort with different endings changes to a more efficient sort when the data is almost sorted (when the gap is small). Comb sort with a low gap isn't much better than the Bubble Sort.</li>
+  <li>o artigo da Wikipédia: <a href='https://pt.wikipedia.org/wiki/Comb_sort' target='_blank'>Comb sort</a>.</li>
 </ul>
 
-Pseudocode:
+Variantes:
+
+<ul>
+  <li>Combsort11 garante que a diferença termine em (11, 8, 6, 4, 3, 2, 1), o que é significativamente mais rápido do que as outras duas terminações possíveis.</li>
+  <li>A ordenação de pente com terminações diferentes muda para uma ordenação mais eficiente quando os dados estão quase ordenados (quando a diferença é pequena). A ordenação de pente com diferença baixa não é muito melhor que a ordenação de bolha.</li>
+</ul>
+
+Pseudocódigo:
 
 <pre><b>function</b> combsort(<b>array</b> input)
-  gap := input<b>.size</b> <i>//initialize gap size</i>
+  gap := input<b>.size</b> <i>//inicialize o tamanho da diferença</i>
   <b>loop until</b> gap = 1 <b>and</b> swaps = 0
-    <i>//update the gap value for a next comb. Below is an example</i>
+    <i>//atualize o valor da diferença para o próximo pente. Abaixo, vemos um exemplo</i>
     gap := int(gap / 1.25)
     <b>if</b> gap &#x3C; 1 
-      <i>//minimum gap is 1</i>
+      <i>//a diferença mínima é 1</i>
       gap := 1
     <b>end if</b>
     i := 0
-    swaps := 0 <i>//see <a href='https://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort' target='_blank'>Bubble Sort</a> for an explanation</i>
-    <i>//a single "comb" over the input list</i>
-    <b>loop until</b> i + gap >= input<b>.size</b> <i>//see <a href='https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort' target='_blank'>Shell sort</a> for similar idea</i>
+    swaps := 0 <i>//veja <a href='https://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort' target='_blank'>ordenação de bolha</a> para uma explicação</i>
+    <i>//um único "pente" sobre a lista de entradas</i>
+    <b>loop until</b> i + gap >= input<b>.size</b> <i>//consulte a <a href='https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort' target='_blank'>ordenação de concha</a> para ver uma ideia semelhante</i>
       <b>if</b> input[i] > input[i+gap]
         <b>swap</b>(input[i], input[i+gap])
-        swaps := 1 <i>// Flag a swap has occurred, so the</i>
-            <i>// list is not guaranteed sorted</i>
+        swaps := 1 <i>// Marque uma troca que ocorreu, para que</i>
+            <i>// a lista não esteja garantidamente ordenada</i>
       <b>end if</b>
       i := i + 1
     <b>end loop</b>
@@ -59,41 +59,41 @@ Pseudocode:
 
 # --instructions--
 
-Write a function that sorts a given array using Comb sort.
+Escreva uma função que ordene um determinado array usando uma ordenação de pente.
 
 # --hints--
 
-`combSort` should be a function.
+`combSort` deve ser uma função.
 
 ```js
 assert(typeof combSort == 'function');
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return an array.
+`combSort([25, 32, 12, 7, 20])` deve retornar um array.
 
 ```js
 assert(Array.isArray(combSort([25, 32, 12, 7, 20])));
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`combSort([25, 32, 12, 7, 20])` deve retornar `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(combSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`combSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`combSort([38, 45, 35, 8, 13])` deve retornar `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(combSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`combSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`combSort([43, 36, 20, 34, 24])` deve retornar `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(combSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`combSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`combSort([12, 33, 26, 18, 1, 16, 38])` deve retornar `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -107,7 +107,7 @@ assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`combSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`combSort([3, 39, 48, 16, 1, 4, 29])` deve retornar `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(combSort([3, 39, 48, 16, 1, 4, 29]), [

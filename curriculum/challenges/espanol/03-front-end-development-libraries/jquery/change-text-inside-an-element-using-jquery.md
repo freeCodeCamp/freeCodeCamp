@@ -8,27 +8,27 @@ dashedName: change-text-inside-an-element-using-jquery
 
 # --description--
 
-Usando jQuery, puedes cambiar el texto entre las etiquetas de inicio y fin de un elemento. Puedes incluso cambiar el código HTML.
+Con jQuery, puedes cambiar el texto entre las etiquetas de abertura y cierre de un elemento. Puedes incluso cambiar el código HTML.
 
-jQuery tiene una función llamada `.html()` que te permite añadir etiquetas HTML y texto dentro de un elemento. Cualquier contenido anterior dentro del elemento será completamente reemplazado con el contenido que proporciones usando esta función.
+jQuery tiene una función llamada `.html()` que te permite agregar etiquetas HTML y texto dentro de un elemento. Cualquier contenido anterior dentro del elemento será completamente reemplazado con el contenido que proporciones usando esta función.
 
-Así es como se reescribiría y enfatizaría el texto de nuestro título:
+Así es como reescribirías y enfatizarías el texto de nuestro título:
 
 ```js
 $("h3").html("<em>jQuery Playground</em>");
 ```
 
-jQuery también tiene una función similar llamada `.text()` que solo altera el texto sin añadir etiquetas. En otras palabras, esta función no evaluará las etiquetas HTML que se le pasen. En cambio, lo tomará como el texto con el que quieres reemplazar el contenido existente.
+jQuery también tiene una función similar llamada `.text()` que solamente altera el texto sin agregar etiquetas. En otras palabras, esta función no evaluará ninguna etiqueta HTML que le pasemos, pero en cambio, la tratará como el texto por el que quieres reemplazar el contenido existente.
 
-Cambia el botón con id `target4`, enfatizando su texto.
+Cambia el botón con id `target4` enfatizando su texto.
 
 [ Ve a nuestro artículo sobre &lt;em>](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element) para aprender la diferencia entre `<i>` y `<em>` y sus usos.
 
-Ten en cuenta que, aunque la etiqueta `<i>` se ha utilizado tradicionalmente para enfatizar texto, se ha adoptado su uso desde entonces como etiqueta para íconos. La etiqueta `<em>` es ahora ampliamente aceptada como la etiqueta de énfasis. Cualquiera de las dos servirá para este desafío.
+Ten en cuenta que mientras la etiqueta `<i>` tradicionalmente se usaba para enfatizar texto, fue adaptada para ser usada como etiqueta para iconos. La etiqueta `<em>` ahora es ampliamente aceptada como la etiqueta de énfasis. Cualquiera de las dos servirá para este desafío.
 
 # --hints--
 
-Debes enfatizar el texto en el botón `target4` añadiendo etiquetas HTML.
+Debes enfatizar el texto en tu botón `target4` añadiendo etiquetas HTML.
 
 ```js
 assert.isTrue(
@@ -36,7 +36,7 @@ assert.isTrue(
 );
 ```
 
-De lo contrario, el texto debe permanecer inalterado.
+De lo contrario, el texto no debe modificarse.
 
 ```js
 assert($('#target4') && $('#target4').text().trim() === '#target4');
