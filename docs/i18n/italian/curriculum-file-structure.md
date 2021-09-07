@@ -41,7 +41,7 @@ Ci potrebbero essere volte in cui devi rinominare un certificato, superblocco, b
 
 Quando rinomini una certificazione, vorrai probabilmente rinominare il superblocco associato. Fai quanto segue per rinominare solo il certificato:
 
-1. Rename the `curriculum/challenges/_meta/{superBlock}-certificate` folder to the new name.
+1. Rinomina la cartella `curriculum/challenges/_meta/{superBlock}-certificate` con il nuovo nome.
 1. Nel file `meta.json` di quella cartella, rinomina i valori in `name`, `dashedName`, e `challengeOrder` con il nuovo nome.
 1. In `curriculum/challenges/english/12-certificate`, rinomina la cartella `{superBlock}-certificate`, e il file YAML dentro di essa, con il nuovo nome.
 1. Nel file YAML, cambia il titolo (`title`) con il nuovo nome.
