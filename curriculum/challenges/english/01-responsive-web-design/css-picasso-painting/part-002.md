@@ -35,7 +35,7 @@ You should add exactly one `title` element.
 assert(document.querySelectorAll('title').length === 1);
 ```
 
-Your `title` element should have the text `freeCodeCamp Picasso Painting`. Note that spelling and casing matters.
+Your `title` element should have the text `freeCodeCamp Picasso Painting`. Note that spelling and casing matter.
 
 ```js
 assert(document.querySelector('title')?.innerText === 'freeCodeCamp Picasso Painting');
