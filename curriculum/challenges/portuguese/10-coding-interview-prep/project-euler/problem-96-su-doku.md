@@ -1,6 +1,6 @@
 ---
 id: 5900f3cc1000cf542c50fedf
-title: 'Problem 96: Su Doku'
+title: 'Problema 96: Sudoku'
 challengeType: 5
 forumTopicId: 302213
 dashedName: problem-96-su-doku
@@ -8,7 +8,7 @@ dashedName: problem-96-su-doku
 
 # --description--
 
-Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+Sudoku (do japonês, *lugar do número*) é o nome dado a um conceito de desafio popular. A sua origem não é clara, mas o mérito deve ser atribuído a Leonhard Euler, que inventou uma ideia de quebra-cabeça semelhante e muito mais difícil, chamada de Quadrados Latinos. No entanto, o objetivo dos quebra-cabeças de sudoku é substituir as lacunas (ou zeros) em um tabuleiro de 9 por 9, de tal forma que cada linha, coluna e caixa de 3 por 3 contenha cada um dos dígitos de 1 a 9. Abaixo, vemos um exemplo típico de tabuleiro inicial e o tabuleiro solucionado.
 
 <div style="margin: auto; background-color: white; padding: 10px; width: 80%; text-align: center;">
   <table border="0" cellpadding="0" cellspacing="0" align="center">
@@ -100,27 +100,27 @@ Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle 
   </table>
 </div>
 
-A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
+Um quebra-cabeças de sudoku bem construído tem uma solução única e pode ser resolvida por lógica, embora possa ser necessário utilizar métodos de "adivinhação e teste" a fim de eliminar opções (há opiniões bastante contestadas a esse respeito). A complexidade da busca determina a dificuldade do quebra-cabeça. O exemplo acima é considerado fácil, pois pode ser resolvido através de dedução direta.
 
-The `puzzlesArr` array contains different Su Doku puzzle strings ranging in difficulty, but all with unique solutions.
+O array `puzzlesArr` contém cadeias de quebra-cabeças de sudoku de várias dificuldades, mas com soluções únicas.
 
-By solving all puzzles in `puzzlesArr`, find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
+Resolvendo todos os quebra-cabeças de `puzzlesArr`, encontre a soma dos números de 3 algarismos encontrados no canto superior esquerdo de cada tabuleiro solucionado. Por exemplo, 483 é o número de 3 dígitos encontrado no canto superior esquerdo do tabuleiro solucionado acima.
 
 # --hints--
 
-`suDoku(testPuzzles1)` should return a number.
+`suDoku(testPuzzles1)` deve retornar um número.
 
 ```js
 assert(typeof suDoku(_testPuzzles1) === 'number');
 ```
 
-`suDoku(testPuzzles1)` should return `1190`.
+`suDoku(testPuzzles1)` deve retornar `1190`.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles1), 1190);
 ```
 
-`suDoku(testPuzzles2)` should return `24702`.
+`suDoku(testPuzzles2)` deve retornar `24702`.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles2), 24702);

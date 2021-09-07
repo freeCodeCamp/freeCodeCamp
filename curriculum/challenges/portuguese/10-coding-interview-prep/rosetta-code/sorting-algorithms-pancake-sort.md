@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc800b
-title: Sorting algorithms/Pancake sort
+title: Algoritmos de ordenação/ordenação da panqueca
 challengeType: 5
 forumTopicId: 302315
 dashedName: sorting-algorithmspancake-sort
@@ -8,51 +8,51 @@ dashedName: sorting-algorithmspancake-sort
 
 # --description--
 
-Write a function to sort an array of integers (of any convenient size) into ascending order using [Pancake sorting](https://en.wikipedia.org/wiki/Pancake sorting). The function should return the sorted array.
+Escreva uma função para ordenar um array de inteiros (de qualquer tamanho conveniente) em ordem ascendente usando o método de ordenação [Pancake sorting](https://en.wikipedia.org/wiki/Pancake sorting). A função deve retornar o array ordenado.
 
-In short, instead of individual elements being sorted, the only operation allowed is to "flip" one end of the list, like so:
+Em resumo, em vez de serem ordenados elementos individuais, a única operação permitida é "virar" uma extremidade da lista, assim:
 
-<pre>Before:
+<pre>Antes:
 <b>6 7 8 9</b> 2 5 3 4 1<br>
-After:
+Depois:
 <b>9 8 7 6</b> 2 5 3 4 1
 </pre>
 
-Only one end of the list can be flipped; this should be the low end, but the high end is okay if it's easier to code or works better, but it **must** be the same end for the entire solution. (The end flipped can't be arbitrarily changed.)
+Apenas uma extremidade da lista pode ser invertida. Esta deve ser a extremidade inferior, mas pode ser a extremidade superior se for mais fácil codificar ou se funcionar melhor. mas **deve** ser a mesma extremidade virada para toda a solução. (A extremidade virada não pode ser alterada arbitrariamente.)
 
 # --hints--
 
-`pancakeSort` should be a function.
+`pancakeSort` deve ser uma função.
 
 ```js
 assert(typeof pancakeSort == 'function');
 ```
 
-`pancakeSort([25, 32, 12, 7, 20])` should return an array.
+`pancakeSort([25, 32, 12, 7, 20])` deve retornar um array.
 
 ```js
 assert(Array.isArray(pancakeSort([25, 32, 12, 7, 20])));
 ```
 
-`pancakeSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`pancakeSort([25, 32, 12, 7, 20])` deve retornar `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(pancakeSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`pancakeSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`pancakeSort([38, 45, 35, 8, 13])` deve retornar `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(pancakeSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`pancakeSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`pancakeSort([43, 36, 20, 34, 24])` deve retornar `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(pancakeSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`pancakeSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`pancakeSort([12, 33, 26, 18, 1, 16, 38])` deve retornar `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(pancakeSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -66,7 +66,7 @@ assert.deepEqual(pancakeSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`pancakeSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`pancakeSort([3, 39, 48, 16, 1, 4, 29])` deve retornar `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(pancakeSort([3, 39, 48, 16, 1, 4, 29]), [

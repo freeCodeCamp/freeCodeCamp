@@ -13,17 +13,17 @@ dashedName: target-the-same-element-with-multiple-jquery-selectors
 
 Ahora conoces tres maneras de seleccionar elementos: por tipo: `$("button")`, por clase: `$(".btn")`, y por id `$("#target1")`.
 
-Aunque es posible añadir múltiples clases en una sola llamada `.addClass()`, vamos a añadirlos al mismo elemento en *tres maneras diferentes*.
+Aunque es posible agregar múltiples clases en una sola llamada `.addClass()`, vamos a agregarlos al mismo elemento de *tres maneras diferentes*.
 
-Usando `.addClass()`, añade solo una clase a la vez al mismo elemento, de tres maneras diferentes:
+Usando `.addClass()`, agrega solo una clase a la vez al mismo elemento, de tres maneras diferentes:
 
-Añade la clase `animated` a todos los elementos con el tipo `button`.
+Agrega la clase `animated` a todos los elementos con el tipo `button`.
 
-Añade la clase `shake` a todos los botones con la clase `.btn`.
+Agrega la clase `shake` a todos los botones con la clase `.btn`.
 
-Añade la clase `btn-primary` al botón con id `#target1`.
+Agrega la clase `btn-primary` al botón con id `#target1`.
 
-**Nota:** Solo debes apuntar a un elemento y añadir solo una clase a la vez. En total, tus tres selectores individuales terminarán agregando las tres clases `shake`, `animated`, y `btn-primary` a `#target1`.
+**Nota:** Solo debes apuntar a un elemento y agregar solo una clase a la vez. En total, tus tres selectores individuales terminarán agregando las tres clases `shake`, `animated`, y `btn-primary` a `#target1`.
 
 # --hints--
 
@@ -45,7 +45,7 @@ Tu código debe usar el selector `$("#target1")`.
 assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")/gi));
 ```
 
-Solo debes añadir una clase con cada uno de tus tres selectores.
+Solo debes agregar una clase con cada uno de tus tres selectores.
 
 ```js
 assert(
