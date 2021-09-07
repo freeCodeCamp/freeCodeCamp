@@ -17,11 +17,11 @@ jQuery también puede seleccionar al elemento `body`.
 
 Así es como haríamos que el cuerpo entero se desvaneciera: `$("body").addClass("animated fadeOut");`
 
-Pero hagamos algo más dramático. Añade las clases `animated` y `hinge` a tu elemento `body`.
+Pero hagamos algo más dramático. Agrega las clases `animated` y `hinge` a tu elemento `body`.
 
 # --hints--
 
-Debes añadir las clases `animated` y `hinge` a tu elemento `body`.
+Debes agregar las clases `animated` y `hinge` a tu elemento `body`.
 
 ```js
 assert($('body').hasClass('animated') && $('body').hasClass('hinge'));

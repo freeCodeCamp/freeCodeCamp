@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8040
-title: Sum multiples of 3 and 5
+title: Soma dos múltiplos de 3 e 5
 challengeType: 5
 forumTopicId: 302332
 dashedName: sum-multiples-of-3-and-5
@@ -8,47 +8,47 @@ dashedName: sum-multiples-of-3-and-5
 
 # --description--
 
-The objective is to write a function that finds the sum of all positive multiples of 3 or 5 below *n*.
+O objetivo é escrever uma função que encontra a soma de todos os múltiplos positivos de 3 ou 5 abaixo de *n*.
 
 # --hints--
 
-`sumMults` should be a function.
+`sumMults` deve ser uma função.
 
 ```js
 assert(typeof sumMults == 'function');
 ```
 
-`sumMults(10)` should return a number.
+`sumMults(10)` deve retornar um número.
 
 ```js
 assert(typeof sumMults(10) == 'number');
 ```
 
-`sumMults(10)` should return `23`.
+`sumMults(10)` deve retornar `23`.
 
 ```js
 assert.equal(sumMults(10), 23);
 ```
 
-`sumMults(100)` should return `2318`.
+`sumMults(100)` deve retornar `2318`.
 
 ```js
 assert.equal(sumMults(100), 2318);
 ```
 
-`sumMults(1000)` should return `233168`.
+`sumMults(1000)` deve retornar `233168`.
 
 ```js
 assert.equal(sumMults(1000), 233168);
 ```
 
-`sumMults(10000)` should return `23331668`.
+`sumMults(10000)` deve retornar `23331668`.
 
 ```js
 assert.equal(sumMults(10000), 23331668);
 ```
 
-`sumMults(100000)` should return `2333316668`.
+`sumMults(100000)` deve retornar `2333316668`.
 
 ```js
 assert.equal(sumMults(100000), 2333316668);

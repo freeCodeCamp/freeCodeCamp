@@ -10,9 +10,9 @@ dashedName: build-a-25--5-clock
 
 **Objetivo:** Construye una aplicación funcional [CodePen.io](https://codepen.io) similar a esta: <https://codepen.io/freeCodeCamp/full/XpKrrW>.
 
-Completa las siguientes [historias de usuario](https://en.wikipedia.org/wiki/User_story) y consigue pasar todas las pruebas. Dale tu propio estilo personal.
+Completa las siguientes [historias de usuario](https://en.wikipedia.org/wiki/User_story) y consigue que pasen todas las pruebas. Dale tu propio estilo personal.
 
-Puedes utilizar una combinación de HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux y jQuery para completar este proyecto. Deberías utilizar un framework frontend (como React por ejemplo) porque esta sección trata sobre el aprendizaje de frameworks frontend. No se recomienda utilizar tecnologías adicionales a las indicadas anteriormente, su utilización corre bajo su propio riesgo. Estamos considerando apoyar otros frameworks frontend como Angular y Vue, pero actualmente no están soportados. Aceptaremos e intentaremos solucionar todos los informes de incidencias que utilicen el conjunto de tecnologías sugeridas para este proyecto. ¡Feliz programación!
+Puedes utilizar una combinación de HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux y jQuery para completar este proyecto. Debes usar un framework frontend (como React por ejemplo), ya que esta sección trata sobre el aprendizaje de frameworks frontend. No se recomienda utilizar tecnologías adicionales que no estén enlistadas, su utilización corre bajo tu propio riesgo. Estamos buscando apoyar otros frameworks de frontend como Angular y Vue, pero actualmente no están soportados. Aceptaremos e intentaremos arreglar todos los informes de incidencias que utilicen el stack de tecnologías sugeridas para este proyecto. ¡Feliz día programando!
 
 **Historia de usuario #1:** Puedo ver un elemento con `id="break-label"` que contiene una cadena (por ejemplo: "Break Length").
 
@@ -46,25 +46,25 @@ Puedes utilizar una combinación de HTML, JavaScript, CSS, Bootstrap, SASS, Reac
 
 **Historia de usuario #16:** No debo ser capaz de establecer una duración de la sesión o pausa &lt;= 0.
 
-**Historia de usuario #17:** No debería poder establecer una duración de la sesión o pausa > 60.
+**Historia de usuario #17:** No debo poder establecer una duración de la sesión o pausa > 60.
 
 **Historia de usuario #18:** Cuando hago clic por primera vez en el elemento con el correspondiente `id="start_stop"`, el temporizador debe comenzar a correr desde el valor mostrado actualmente en `id="session-length"`, incluso si el valor se incrementó o se redujo respecto al valor original 25.
 
-**Historia de usuario #19:** Si el temporizador se está ejecutando, el elemento con el id: `time-left` debería mostrar el tiempo restante en formato `mm:ss` (reduciendo 1 y actualizando el valor mostrado cada 1000ms).
+**Historia de usuario #19:** Si el temporizador se está ejecutando, el elemento con el id: `time-left` debe mostrar el tiempo restante en formato `mm:ss` (reduciendo 1 y actualizando el valor mostrado cada 1000ms).
 
-**Historia de usuario #20:** Si el temporizador se está ejecutando y hago clic en el elemento `id="start_stop"`, la cuenta atrás debería pausarse.
+**Historia de usuario #20:** Si el temporizador se está ejecutando y hago clic en el elemento `id="start_stop"`, la cuenta atrás debe pausarse.
 
 **Historia de usuario #21:** Si el temporizador está pausado y hago clic en el elemento `id="start_stop"`, la cuenta atrás debe reanudarse desde el punto en el que fue pausada.
 
-**Historia de usuario #22:** Cuando la cuenta atrás de la sesión llega a cero (NOTA: temporizador DEBE llegar a 00:00) y una nueva cuenta atrás comienza, el elemento cuyo id es `timer-label` debería mostrar una cadena en la que se indica que el descanso (break) ha comenzado.
+**Historia de usuario #22:** Cuando la cuenta atrás de la sesión llega a cero (NOTA: el temporizador DEBE llegar a 00:00) y una nueva cuenta atrás comienza, el elemento cuyo id es `timer-label` debería mostrar una cadena en la que se indica que el descanso (break) ha comenzado.
 
-**Historia de usuario #23:** Cuando la cuenta atrás de la sesión llega a cero (NOTA: temporizador DEBE llegar a 00:00), una nueva cuenta atrás comienza para el periodo de descanso (break) y se inicia desde el valor mostrado actualmente por el elemento `id="break-length"`.
+**Historia de usuario #23:** Cuando la cuenta atrás de la sesión llega a cero (NOTA: el temporizador DEBE llegar a 00:00), una nueva cuenta atrás comienza para el periodo de descanso (break) y se inicia desde el valor mostrado actualmente por el elemento `id="break-length"`.
 
-**Historia de usuario #24:** Cuando la cuenta atrás en el periodo de descanso (break) llega a cero (NOTA: temporizador DEBE llegar a 00:00) y una nueva cuenta atrás debe comenzar, el elemento cuyo id es `timer-label` debe mostrar una cadena en la que se indica que la sesión ha comenzado.
+**Historia de usuario #24:** Cuando la cuenta atrás en el periodo de descanso (break) llega a cero (NOTA: el temporizador DEBE llegar a 00:00) y una nueva cuenta atrás debe comenzar, el elemento cuyo id es `timer-label` debe mostrar una cadena en la que se indica que la sesión ha comenzado.
 
-**Historia de usuario #25:** Cuando la cuenta atrás en el periodo de descanso (break) llega a cero (NOTA: temporizador DEBE llegar a 00:00), una nueva cuenta atrás debe comenzar para la sesión, la cual se inicia desde el valor mostrado actualmente por el elemento `id="session-length"`.
+**Historia de usuario #25:** Cuando la cuenta atrás en el periodo de descanso (break) llega a cero (NOTA: el temporizador DEBE llegar a 00:00), una nueva cuenta atrás debe comenzar para la sesión, la cual se inicia desde el valor mostrado actualmente por el elemento `id="session-length"`.
 
-**Historia de usuario #26:** Cuando una cuenta atrás llega a cero (NOTA: temporizador DEBE llegar a 00:00), debe reproducirse un sonido que indica que el tiempo se ha agotado. Se debe utilizar una etiqueta HTML5 `audio` y tener un `id="beep"`.
+**Historia de usuario #26:** Cuando una cuenta atrás llega a cero (NOTA: el temporizador DEBE llegar a 00:00), debe reproducirse un sonido que indica que el tiempo se ha agotado. Se debe utilizar una etiqueta HTML5 `audio` y tener un `id="beep"`.
 
 **Historia de usuario #27:** El elemento de audio `id="beep"` debe ser de 1 segundo o mayor.
 

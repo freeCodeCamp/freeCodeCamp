@@ -11,15 +11,15 @@ dashedName: target-elements-by-class-using-jquery
 
 # --description--
 
-¿Ves como hicimos que todos tus elementos `button` reboten? Los seleccionamos con `$("button")`, luego agregamos algo de clases CSS a ellos con `.addClass("animated bounce");`.
+¿Ves cómo hemos hecho que todos tus elementos `button` reboten? Los seleccionamos con `$("button")`, luego agregamos algo de clases CSS a ellos con `.addClass("animated bounce");`.
 
-Acabas de usar la función `.addClass()` de jQuery, que te permite añadir clases a los elementos.
+Acabas de usar la función `.addClass()` de jQuery, que te permite agregar clases a los elementos.
 
 Primero, apuntemos tus elementos `div` con la clase `well` usando el selector `$(".well")`.
 
 Ten en cuenta que, al igual que con las declaraciones CSS, escribes un `.` antes del nombre de la clase.
 
-Luego usa la función `.addClass()` de jQuery para añadir las clases `animated` y `shake`.
+Luego usa la función `.addClass()` de jQuery para agregar las clases `animated` y `shake`.
 
 Por ejemplo, puedes hacer que todos los elementos con la clase `text-primary` se agiten agregando lo siguiente a tu función `document ready function`:
 
@@ -35,7 +35,7 @@ Debes usar la función jQuery `addClass()` para dar las clases `animated` y `sha
 assert($('.well').hasClass('animated') && $('.well').hasClass('shake'));
 ```
 
-Solo debes usar jQuery para añadir estas clases al elemento.
+Debes usar solo jQuery para agregar estas clases al elemento.
 
 ```js
 assert(!code.match(/class\.\*animated/g));

@@ -10,7 +10,7 @@ dashedName: create-reusable-css-with-mixins
 
 En Sass, un <dfn>mixin</dfn> es un grupo de declaraciones de CSS que pueden reutilizarse a través de la hoja de estilo.
 
-Las nuevas funciones de CSS tardan en ser adoptadas por completo y estar listas para su uso en todos los navegadores. A medida que se añaden funciones a los navegadores, las reglas CSS que las utilizan pueden necesitar prefijos de proveedor. Consideremos `box-shadow`:
+Las nuevas funciones de CSS tardan en ser adoptadas por completo y estar listas para su uso en todos los navegadores. A medida que se agregan funciones a los navegadores, las reglas CSS que las utilizan pueden necesitar prefijos de proveedor. Consideremos `box-shadow`:
 
 ```scss
 div {

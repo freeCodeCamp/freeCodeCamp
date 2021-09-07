@@ -12,31 +12,31 @@ Además de mover elementos, también puedes copiarlos de un lugar a otro.
 
 jQuery tiene una función llamada `clone()` que hace una copia de un elemento.
 
-Por ejemplo, si quisiéramos copìar `target2` de nuestro `left-well` a nuestro `right-well`, usaríamos:
+Por ejemplo, si quisiéramos copiar `target2` de nuestro `left-well` a nuestro `right-well`, usaríamos:
 
 ```js
 $("#target2").clone().appendTo("#right-well");
 ```
 
-¿Notaste que esto implica usar dos funciones jQuery juntas? Esto es llamado <dfn>function chaining</dfn> (encadenamiento de funciones) y es una forma conveniente de hacer cosas con jQuery.
+¿Notaste que esto implica pegar dos funciones jQuery juntas? Esto es llamado <dfn>function chaining</dfn> (encadenamiento de funciones) y es una forma conveniente de lograr cosas con jQuery.
 
-Clona tu elemento `target5` y añadelo a tu `left-well`.
+Clona tu elemento `target5` y agrégalo a tu `left-well`.
 
 # --hints--
 
-Tu elemento `target5` debe estar dentro de `right-well`.
+Tu elemento `target5` debe estar dentro de tu `right-well`.
 
 ```js
 assert($('#right-well').children('#target5').length > 0);
 ```
 
-Una copia de tu elemento `target5` también debe estar dentro de `left-well`.
+Una copia de tu elemento `target5` debe estar también dentro de `left-well`.
 
 ```js
 assert($('#left-well').children('#target5').length > 0);
 ```
 
-Sólo debes usar jQuery para mover estos elementos.
+Debes usar solamente jQuery para mover estos elementos.
 
 ```js
 assert(!code.match(/class.*animated/g));
