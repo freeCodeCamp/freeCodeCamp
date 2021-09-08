@@ -15,7 +15,7 @@ import isURL from 'validator/lib/isURL';
 import { PortfolioType } from '../../redux/prop-types';
 
 import { hasProtocolRE } from '../../utils';
-import { putConnectDiscourseAccount } from '../../utils/ajax';
+import { postConnectDiscourseAccount } from '../../utils/ajax';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
@@ -198,7 +198,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { userId } = this.props;
     // TODO: Figure out what to do with result of PUT
     // @eslint-disable-next-line @typescript-eslint/no-floating-promises
-    (async () => console.log(await putConnectDiscourseAccount(userId)))();
+    void (async () => {
+      const res = await postConnectDiscourseAccount(userId);
+      // const data = await res.json();
+      console.log(res);
+    })();
   };
 
   renderPortfolio = (

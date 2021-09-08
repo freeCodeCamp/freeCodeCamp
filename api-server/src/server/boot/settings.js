@@ -2,11 +2,18 @@ import debug from 'debug';
 import { check } from 'express-validator';
 
 import { isValidUsername } from '../../../../utils/validate';
+import { nanoidCharSet } from '../../common/models/user';
+
 import { alertTypes } from '../../common/utils/flash.js';
 import { themes } from '../../common/utils/themes.js';
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
+import { getRedirectParams } from '../utils/redirection';
+
+const generate = require('nanoid/generate');
 
 const log = debug('fcc:boot:settings');
+
+const { FORUM_LOCATION, DISCOURSE_SECRET, HOME_LOCATION } = process.env;
 
 export default function settingsController(app) {
   const api = app.loopback.Router();
@@ -46,6 +53,16 @@ export default function settingsController(app) {
   api.put('/update-my-profileui', ifNoUser401, updateMyProfileUI);
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
+
+  // DISCOURSE SSO
+  api.post('/discourse/connect', ifNoUser401, connectDiscourse);
+  // GET is only made from Discourse (ifNoUser401 NOT needed)
+  api.get(
+    '/auth/discourse/callback',
+    checkDidAuthenticate,
+    addDiscourseUserId,
+    handleSuccessfulConnection
+  );
 
   app.use(api);
 }
@@ -237,4 +254,84 @@ const updatePrivacyTerms = (req, res, next) => {
 function updateUserFlag(req, res, next) {
   const { user, body: update } = req;
   return user.updateAttributes(update, createStandardHandler(req, res, next));
+}
+
+// redirect user to https://forum.freecodecamp.org/session/sso_provider?sso=URL_ENCODED_PAYLOAD&sig=HEX_SIGNATURE
+function connectDiscourse(req, res) {
+  // Generate nonce
+  const nonce = generate(nanoidCharSet, 20);
+  req.nonce = nonce;
+  // Create payload with nonce and return url: nonce=NONCE&return_sso_url=RETURN_URL
+  const payload = `nonce=${nonce}&return_sso_url=${HOME_LOCATION}/auth/discourse/callback`;
+  // BASE64 encode payload: BASE64_PAYLOAD
+  const BASE64_PAYLOAD = Buffer.from(payload).toString('base64');
+  // URL encode payload: URL_ENCODED_PAYLOAD
+  const URL_ENCODED_PAYLOAD = encodeURIComponent(BASE64_PAYLOAD);
+
+  // Generate HMAC-SHA256 signature from BASE64_PAYLOAD and secret:
+  const signature = crypto.createHmac('sha256', DISCOURSE_SECRET);
+  signature.update(BASE64_PAYLOAD);
+  const HEX_SIGNATURE = signature.digest('hex');
+  log(URL_ENCODED_PAYLOAD, HEX_SIGNATURE);
+  // TODO: This was a try to fix CORS - failed, but maybe needed anyway?
+  res.set('Access-Control-Allow-Origin', HOME_LOCATION);
+  return res.redirect(
+    `${FORUM_LOCATION}/session/sso_provider?sso=${URL_ENCODED_PAYLOAD}&sig=${HEX_SIGNATURE}`
+  );
+}
+
+function checkDidAuthenticate(req, res, next) {
+  // Discourse will redirect logged in user to return_sso_url
+  // Query string will include `sig` and `sso` with some user info
+  log(req.query);
+  // Compute the HMAC-SHA256 of sso using sso provider secret as key
+  const signature = crypto.createHmac('sha256', DISCOURSE_SECRET);
+  signature.update(req.query.sso);
+  // Convert `sig` from hex string into bytes: SIGNATURE_BYTES
+  const SIGNATURE_BYTES = Buffer.from(req.query.sig, 'hex');
+  // Compare HMAC-SHA256 signature with SIGNATURE_BYTES (must be equal)
+  const isValid = signature.digest('hex') === SIGNATURE_BYTES.toString('hex');
+  if (!isValid) {
+    log('invalid signature');
+    return res.status(401).send('invalid signature');
+  }
+  // BASE64 decode sso - shuold be equal to passed embedded query string.
+  log(req.query.sso);
+  const BASE64_SSO = Buffer.from(req.query.sso, 'base64').toString();
+  log(BASE64_SSO);
+  // Take `nonce` key and compare it with nonce generated
+  const nonce = BASE64_SSO.match(/nonce=([^&]+)/)[1];
+  if (nonce !== req.nonce) {
+    log('invalid nonce');
+    return res.status(401).send('invalid nonce');
+  }
+  return next();
+}
+
+function addDiscourseUserId(req, res, next) {
+  // drop generated nonce.
+  delete req.nonce;
+  // Use query string with user information to store DISCOURSE_USER_ID in fCC DB
+  const { id } = req.query;
+  const { userId } = req.body;
+  log(id, userId);
+  req.user.updateAttribute({ discourseId: id }, err => {
+    // TODO: Use standardError or flash?
+    if (err) {
+      req.flash('error', 'We were unable to link your Discourse account');
+      const { origin } = getRedirectParams(req);
+      return res.redirectWithFlash(origin);
+    }
+    return next();
+  });
+}
+
+function handleSuccessfulConnection(req, res) {
+  req.flash(
+    'success',
+    'You have successfully connected your Discourse account'
+  );
+  const { origin } = getRedirectParams(req);
+  // Should this just redirect to /settings ?
+  return res.redirectWithFlash(origin);
 }

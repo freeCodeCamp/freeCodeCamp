@@ -254,6 +254,6 @@ export function putVerifyCert(certSlug: string): Promise<void> {
 }
 
 // TODO: is this a Promise<void>?
-export function putConnectDiscourseAccount(userId: string): Promise<void> {
-  return put('/discourse/connect', { userId });
+export function postConnectDiscourseAccount(userId: string): Promise<void> {
+  return post('/discourse/connect', { userId });
 }
