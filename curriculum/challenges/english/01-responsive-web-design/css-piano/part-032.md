@@ -1,0 +1,133 @@
+---
+id: 612ec0490ae8626e9adf82e4
+title: Part 32
+challengeType: 0
+dashedName: part-32
+---
+
+# --description--
+
+You might have noticed the keys collapse when the browser window is smaller than `768px`. To take care of this issue, set `overflow` to `hidden` in the first `.keys` selector. This property will hide any element that is pushed outside the set `width` value of `.keys`.
+
+# --hints--
+
+Your original `.keys` selector should have the `overflow` property set to `hidden`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.keys')?.overflow === 'hidden');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsive Web Design Piano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div id="piano">
+      <img class="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
+      <div class="keys">
+        <div class="key"></div>
+        <div class="key black--key"></div>
+        <div class="key black--key"></div>
+        <div class="key"></div>
+        <div class="key black--key"></div>
+        <div class="key black--key"></div>
+        <div class="key black--key"></div>
+
+        <div class="key"></div>
+        <div class="key black--key"></div>
+        <div class="key black--key"></div>
+        <div class="key"></div>
+        <div class="key black--key"></div>
+        <div class="key black--key"></div>
+        <div class="key black--key"></div>
+
+        <div class="key"></div>
+        <div class="key black--key"></div>
+        <div class="key black--key"></div>
+        <div class="key"></div>
+        <div class="key black--key"></div>
+        <div class="key black--key"></div>
+        <div class="key black--key"></div>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+```css
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+#piano {
+  width: 992px;
+  height: 290px;
+  margin: 80px auto;
+  padding: 90px 20px 0 20px;
+  background-color: #00471b;
+  position: relative;
+  border-radius: 10px;
+}
+
+--fcc-editable-region--
+.keys {
+  width: 949px;
+  height: 180px;
+  padding-left: 2px;
+  background-color: #040404;
+}
+--fcc-editable-region--
+
+.key {
+  position: relative;
+  width: 41px;
+  height: 175px;
+  margin: 2px;
+  float: left;
+  background-color: #ffffff;
+  border-radius: 0 0 3px 3px;
+}
+
+.key.black--key::after {
+  content: "";
+  position: absolute;
+  left: -18px;
+  width: 32px;
+  height: 100px;
+  background-color: #1d1e22;
+  border-radius: 0 0 3px 3px;
+}
+
+.logo {
+  width: 200px;
+  position: absolute;
+  top: 23px;
+}
+
+@media (max-width: 768px) {
+  #piano {
+    width: 335px;
+  }
+
+  .keys {
+    width: 318px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}
+```
