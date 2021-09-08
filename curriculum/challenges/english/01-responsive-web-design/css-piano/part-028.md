@@ -1,5 +1,5 @@
 ---
-id: 612ebcba99bfa46a15370b11
+id: 612ebe7fe6d07e6b76d1cae2
 title: Part 28
 challengeType: 0
 dashedName: part-28
@@ -7,21 +7,24 @@ dashedName: part-28
 
 # --description--
 
-Now you need to make it responsive. Add a `@media` query with a `max-width` of `768px`.
+Add a new `#piano` selector within your `@media` query, and set the `width` to `335px`.
 
 # --hints--
 
-You should add a new `@media` query.
+Your `@media` rule should have a `#piano` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.length === 1);
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 768px)');
+const piano = rules?.find(rule => rule.selectorText === '#piano');
+assert(piano);
 ```
 
-Your `@media` query should have a `max-width` of `768px`.
+Your new `#piano` selector should have a `width` of `335px`.
 
 ```js
-console.log(new __helpers.CSSHelp(document).getCSSRules('media')[0]?.media?.mediaText)
-assert(new __helpers.CSSHelp(document).getCSSRules('media')[0]?.media?.mediaText === '(max-width: 768px)');
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 768px)');
+const piano = rules?.find(rule => rule.selectorText === '#piano');
+assert(piano?.style.width === '335px');
 ```
 
 # --seed--
@@ -80,39 +83,39 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
   position: relative;
   border-radius: 10px;
 }
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
   border-radius: 0 0 3px 3px;
 }
 
 .key.black--key::after {
+  background-color: #1d1e22;
   content: "";
   position: absolute;
   left: -18px;
   width: 32px;
   height: 100px;
-  background-color: #1d1e22;
   border-radius: 0 0 3px 3px;
 }
 
@@ -123,6 +126,8 @@ html {
 }
 
 --fcc-editable-region--
-
+@media (max-width: 768px) {
+  
+}
 --fcc-editable-region--
 ```

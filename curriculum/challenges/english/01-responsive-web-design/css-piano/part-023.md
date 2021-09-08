@@ -1,5 +1,5 @@
 ---
-id: 612eb4893b63c75bb9251ddf
+id: 612eb75153591b5e3b1ab65e
 title: Part 23
 challengeType: 0
 dashedName: part-23
@@ -7,32 +7,14 @@ dashedName: part-23
 
 # --description--
 
-Start styling the logo by creating a `.logo` selector. Set the `width` to `200px`, a `position` of `absolute` and a `top` set to `23px`.
+The `img` element needs its parent to have a `position` set as a point of reference. Set the `position` of the `#piano` selector to `relative`.
 
 # --hints--
 
-You should have a `.logo` selector.
+Your `#piano` selector should have a `position` property set to `relative`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.logo'));
-```
-
-Your `.logo` selector should have a `width` property set to `200px`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.logo')?.width === '200px');
-```
-
-Your `.logo` selector should have a `position` property set to `absolute`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.logo')?.position === 'absolute');
-```
-
-Your `.logo` selector should have a `top` property set to `23px`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.logo')?.top === '23px');
+assert(new __helpers.CSSHelp(document).getStyle('#piano')?.position === 'relative');
 ```
 
 # --seed--
@@ -90,40 +72,44 @@ html {
   box-sizing: inherit;
 }
 
+--fcc-editable-region--
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
 }
+--fcc-editable-region--
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
 }
 
 .key.black--key::after {
+  background-color: #1d1e22;
   content: "";
   position: absolute;
   left: -18px;
   width: 32px;
   height: 100px;
-  background-color: #1d1e22;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+.logo {
+  width: 200px;
+  position: absolute;
+  top: 23px;
+}
 ```

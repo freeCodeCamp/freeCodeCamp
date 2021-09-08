@@ -1,5 +1,5 @@
 ---
-id: 612eb8e984cd73677a92b7e9
+id: 612eb934f64a4d6890a45518
 title: Part 26
 challengeType: 0
 dashedName: part-26
@@ -7,14 +7,14 @@ dashedName: part-26
 
 # --description--
 
-Give the `.key` selector a `border-radius` value of `0 0 3px 3px`.
+Give the `.key.black--key::after` selector a `border-radius` of `0 0 3px 3px` to match the keys.
 
 # --hints--
 
-Your `.key` selector should have a `border-radius` property set to `0 0 3px 3px`.
+Your `.key.black--key::after` selector should have a `border-radius` property set to `0 0 3px 3px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.key')?.borderRadius === '0px 0px 3px 3px');
+assert(new __helpers.CSSHelp(document).getStyle('.key.black--key::after')?.borderRadius === '0px 0px 3px 3px');
 ```
 
 # --seed--
@@ -73,41 +73,42 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
   position: relative;
   border-radius: 10px;
 }
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
---fcc-editable-region--
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
+  border-radius: 0 0 3px 3px;
 }
---fcc-editable-region--
 
+--fcc-editable-region--
 .key.black--key::after {
+  background-color: #1d1e22;
   content: "";
   position: absolute;
   left: -18px;
   width: 32px;
   height: 100px;
-  background-color: #1d1e22;
 }
+--fcc-editable-region--
 
 .logo {
   width: 200px;

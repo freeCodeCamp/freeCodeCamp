@@ -1,5 +1,5 @@
 ---
-id: 612ec19d5268da7074941f84
+id: 612ec29c84b9a6718b1f5cec
 title: Part 33
 challengeType: 0
 dashedName: part-33
@@ -7,24 +7,43 @@ dashedName: part-33
 
 # --description--
 
-Add another `@media` rule to apply if the browser window is bigger than `769px` but smaller than `1199px`.
+For the new `@media` rule, set the `width` of the `#piano` to `675px` and the `width` of the `.keys` to `633px`.
+
+With that, your piano is complete!
 
 # --hints--
 
-You should add a new `@media` query.
+Your second `@media` rule should have a `#piano` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.length === 2);
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 1199px) and (min-width: 769px)');
+const piano = rules?.find(rule => rule.selectorText === '#piano');
+assert(piano);
 ```
 
-Your `@media` query should have a `min-width` of `769px` and a `max-width` of `1199px`.
+Your new `#piano` selector should have a `width` of `675px`.
 
 ```js
-const mediaText = new __helpers.CSSHelp(document).getCSSRules('media')[1]?.media?.mediaText;
-console.log(mediaText);
-assert(mediaText === '(max-width: 1199px) and (min-width: 769px)' || mediaText === '(min-width: 769px) and (max-width: 1199px)');
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 1199px) and (min-width: 769px)');
+const piano = rules?.find(rule => rule.selectorText === '#piano');
+assert(piano?.style.width === '675px');
 ```
 
+Your second `@media` rule should have a `.keys` selector.
+
+```js
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 1199px) and (min-width: 769px)');
+const keys = rules?.find(rule => rule.selectorText === '.keys');
+assert(keys);
+```
+
+Your new `.keys` selector should have a `width` of `633px`.
+
+```js
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 1199px) and (min-width: 769px)');
+const keys = rules?.find(rule => rule.selectorText === '.keys');
+assert(keys?.style.width === '633px');
+```
 
 # --seed--
 
@@ -82,40 +101,40 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
   position: relative;
   border-radius: 10px;
 }
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
   overflow: hidden;
 }
 
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
   border-radius: 0 0 3px 3px;
 }
 
 .key.black--key::after {
+  background-color: #1d1e22;
   content: "";
   position: absolute;
   left: -18px;
   width: 32px;
   height: 100px;
-  background-color: #1d1e22;
   border-radius: 0 0 3px 3px;
 }
 
@@ -140,6 +159,8 @@ html {
 }
 
 --fcc-editable-region--
+@media (max-width: 1199px) and (min-width: 769px) {
 
+}
 --fcc-editable-region--
 ```

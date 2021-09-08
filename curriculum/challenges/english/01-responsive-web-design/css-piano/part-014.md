@@ -7,7 +7,7 @@ dashedName: part-14
 
 # --description--
 
-Give the `.keys` a `padding-left` of `2px` and a `background-color` property of `#040404`
+Give the `.keys` a `padding-left` of `2px`.
 
 # --hints--
 
@@ -15,12 +15,6 @@ Your `.keys` selector should have a `padding-left` property set to `2px`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.keys')?.paddingLeft === '2px');
-```
-
-Your `.keys` selector should have a `background-color` property set to `#040404`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.keys')?.backgroundColor === 'rgb(4, 4, 4)');
 ```
 
 # --seed--
@@ -78,14 +72,15 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
-  background-color: #00471b;
 }
 
 --fcc-editable-region--
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
 }

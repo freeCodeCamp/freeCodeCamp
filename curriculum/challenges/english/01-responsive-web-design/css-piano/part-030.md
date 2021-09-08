@@ -1,5 +1,5 @@
 ---
-id: 612ebedec97e096c8bf64999
+id: 612ebf9a210f2b6d77001e68
 title: Part 30
 challengeType: 0
 dashedName: part-30
@@ -7,25 +7,24 @@ dashedName: part-30
 
 # --description--
 
-Within the `@media` query, add a `.keys` selector and set the `width` to `318px`.
+Now add a `.logo` selector to the `@media` query, and set the `width` property to `150px`.
 
 # --hints--
 
-
-Your `@media` rule should have a `.keys` selector.
+Your `@media` rule should have a `.logo` selector.
 
 ```js
 const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 768px)');
-const keys = rules?.find(rule => rule.selectorText === '.keys');
-assert(keys);
+const logo = rules?.find(rule => rule.selectorText === '.logo');
+assert(logo);
 ```
 
-Your new `.keys` selector should have a `width` of `318px`.
+Your new `.logo` selector should have a `width` of `150px`.
 
 ```js
 const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 768px)');
-const keys = rules?.find(rule => rule.selectorText === '.keys');
-assert(keys?.style.width === '318px');
+const logo = rules?.find(rule => rule.selectorText === '.logo');
+assert(logo?.style.width === '150px');
 ```
 
 # --seed--
@@ -84,39 +83,39 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
   position: relative;
   border-radius: 10px;
 }
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
   border-radius: 0 0 3px 3px;
 }
 
 .key.black--key::after {
+  background-color: #1d1e22;
   content: "";
   position: absolute;
   left: -18px;
   width: 32px;
   height: 100px;
-  background-color: #1d1e22;
   border-radius: 0 0 3px 3px;
 }
 
@@ -130,6 +129,10 @@ html {
 @media (max-width: 768px) {
   #piano {
     width: 335px;
+  }
+
+  .keys {
+    width: 318px;
   }
 }
 --fcc-editable-region--

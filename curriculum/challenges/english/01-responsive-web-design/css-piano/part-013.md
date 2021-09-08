@@ -7,7 +7,7 @@ dashedName: part-13
 
 # --description--
 
-Time to style the keys. Below the `#piano` rule, target the `.keys` with a `class` selector. Give the new rule a `width` property of `949px` and a `height` property of `180px`.
+Time to style the keys. Below the `#piano` rule, target the `.keys` with a `class` selector. Give the new rule a `background-color` property of `#040404`, a `width` property of `949px` and a `height` property of `180px`.
 
 # --hints--
 
@@ -15,6 +15,12 @@ You should have a `.keys` selector.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.keys'));
+```
+
+Your `.keys` selector should have a `background-color` property set to `#040404`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.keys')?.backgroundColor === 'rgb(4, 4, 4)');
 ```
 
 Your `.keys` selector should have the `width` property set to `949px`.
@@ -84,10 +90,10 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
-  background-color: #00471b;
 }
 
 --fcc-editable-region--

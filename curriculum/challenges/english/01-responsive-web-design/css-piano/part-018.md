@@ -9,7 +9,7 @@ dashedName: part-18
 
 Now it is time to use the pseudo-selectors you prepared for earlier. To create the black keys, add a new `.key.black--key::after` selector. This will target the elements with the class `key black--key`, and select the pseudo-element after these elements in the HTML.
 
-In the new selector, set the `content` property to `""`. This will make the pseudo-elements empty.
+In the new selector, set the `background-color` to `#1d1e22`. Also set the `content` property to `""`. This will make the pseudo-elements empty.
 
 # --hints--
 
@@ -17,6 +17,12 @@ You should have a `.key.black--key::after` selector.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.key.black--key::after'));
+```
+
+Your `.key.black--key::after` selector should have a `background-color` property set to `#1d1e22`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.key.black--key::after')?.backgroundColor === 'rgb(29, 30, 34)');
 ```
 
 Your `.key.black--key::after` selector should have a `content` property set to `""`.
@@ -80,27 +86,27 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
 }
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
 }
 
 --fcc-editable-region--

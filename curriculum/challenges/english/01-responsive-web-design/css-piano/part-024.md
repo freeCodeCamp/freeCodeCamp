@@ -1,5 +1,5 @@
 ---
-id: 612eb75153591b5e3b1ab65e
+id: 612eb7ca8c275d5f89c73333
 title: Part 24
 challengeType: 0
 dashedName: part-24
@@ -7,14 +7,14 @@ dashedName: part-24
 
 # --description--
 
-The `img` element needs its parent to have a `position` set as a point of reference. Set the `position` of the `#piano` selector to `relative`.
+To smooth the sharp edges of the piano and keys, start by giving the `#piano` a `border-radius` of `10px`.
 
 # --hints--
 
-Your `#piano` selector should have a `position` property set to `relative`.
+Your `#piano` selector should have a `border-radius` property set to `10px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#piano')?.position === 'relative');
+assert(new __helpers.CSSHelp(document).getStyle('#piano')?.borderRadius === '10px');
 ```
 
 # --seed--
@@ -74,37 +74,38 @@ html {
 
 --fcc-editable-region--
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
+  position: relative;
 }
 --fcc-editable-region--
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
 }
 
 .key.black--key::after {
+  background-color: #1d1e22;
   content: "";
   position: absolute;
   left: -18px;
   width: 32px;
   height: 100px;
-  background-color: #1d1e22;
 }
 
 .logo {

@@ -73,17 +73,17 @@ html {
 
 --fcc-editable-region--
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
-  background-color: #00471b;
 }
 --fcc-editable-region--
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 ```

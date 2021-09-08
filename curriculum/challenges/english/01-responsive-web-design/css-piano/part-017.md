@@ -7,7 +7,7 @@ dashedName: part-17
 
 # --description--
 
-Give the `.key` a `margin` of `2px`, a `float` property set to `left`, and a `background-color` set to the value `#ffffff`.
+Give the `.key` a `margin` of `2px` and a `float` property set to `left`.
 
 # --hints--
 
@@ -21,12 +21,6 @@ Your `.key` selector should have a `float` property set to `left`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.key')?.float === 'left');
-```
-
-Your `.key` selector should have a `background-color` property set to `#ffffff`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.key').backgroundColor === 'rgb(255, 255, 255)');
 ```
 
 # --seed--
@@ -84,22 +78,23 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
 }
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
 --fcc-editable-region--
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;

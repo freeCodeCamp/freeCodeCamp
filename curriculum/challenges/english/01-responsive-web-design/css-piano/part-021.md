@@ -1,5 +1,5 @@
 ---
-id: 612eadd1987bce5701f45d41
+id: 612eaf56b7ba3257fdbfb0db
 title: Part 21
 challengeType: 0
 dashedName: part-21
@@ -7,14 +7,50 @@ dashedName: part-21
 
 # --description--
 
-Give the `.key.black--key::after` a `background-color` of `#1d1e22`.
+The piano needs the freeCodeCamp logo to make it official.
+
+Add an `img` element before your `.keys` element. Give the `img` a `class` of `logo`, and set the `src` to `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`. Give it an `alt` text of `freeCodeCamp Logo`.
 
 # --hints--
 
-Your `.key.black--key::after` selector should have a `background-color` property set to `#1d1e22`.
+You should add a new `img` element.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.key.black--key::after')?.backgroundColor === 'rgb(29, 30, 34)');
+assert(document.querySelectorAll('img')?.length === 1);
+```
+
+Your `img` element should come before your first `.key` element.
+
+```js
+const img = document.querySelector('img');
+assert(img?.nextElementSibling?.className === 'keys');
+assert(img?.previousElementSibling === null);
+```
+
+Your `img` element should have a `class` set to logo.
+
+```js
+const img = document.querySelector('img');
+assert(img?.className === 'logo');
+```
+
+Your `img` element should have a `src` set to `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`.
+
+```js
+const img = document.querySelector('img');
+assert(img?.getAttribute('src') === 'https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg');
+```
+
+Your `img` element should have an `alt` attribute set to `freeCodeCamp Logo`.
+
+```js
+assert(document.querySelector('img')?.getAttribute('alt')?.toLowerCase() === 'freecodecamp logo');
+```
+
+Remember that casing and spelling matter.
+
+```js
+assert(document.querySelector('img')?.getAttribute('alt') === 'freeCodeCamp Logo');
 ```
 
 # --seed--
@@ -31,8 +67,10 @@ assert(new __helpers.CSSHelp(document).getStyle('.key.black--key::after')?.backg
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
+    --fcc-editable-region--
     <div id="piano">
       <div class="keys">
+    --fcc-editable-region--
         <div class="key"></div>
         <div class="key black--key"></div>
         <div class="key black--key"></div>
@@ -72,36 +110,35 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
 }
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
 }
 
---fcc-editable-region--
 .key.black--key::after {
+  background-color: #1d1e22;
   content: "";
   position: absolute;
   left: -18px;
   width: 32px;
   height: 100px;
 }
---fcc-editable-region--
 ```

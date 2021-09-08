@@ -7,7 +7,7 @@ dashedName: part-16
 
 # --description--
 
-Time to style the keys themselves. Create a `class` selector for the `.key` elements. Set the `position` property to `relative`, the `width` property to `41px`, and the `height` property to `175px`.
+Time to style the keys themselves. Create a `class` selector for the `.key` elements. Set the `background-color` set to the value `#ffffff`, the `position` property to `relative`, the `width` property to `41px`, and the `height` property to `175px`.
 
 # --hints--
 
@@ -15,6 +15,12 @@ You should have a `.key` selector.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.key'));
+```
+
+Your `.key` selector should have a `background-color` property set to `#ffffff`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.key').backgroundColor === 'rgb(255, 255, 255)');
 ```
 
 Your `.key` selector should have the `position` property set to `relative`.
@@ -91,18 +97,18 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
 }
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
 --fcc-editable-region--

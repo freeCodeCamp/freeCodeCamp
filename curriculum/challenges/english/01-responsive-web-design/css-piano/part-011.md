@@ -7,7 +7,7 @@ dashedName: part-11
 
 # --description--
 
-Now target your `#piano` element with an `id` selector. Set the `width` property to `992px` and the `height` property to `290px`.
+Now target your `#piano` element with an `id` selector. Set `background-color` proerty to `#00471b`, the `width` property to `992px` and the `height` property to `290px`.
 
 # --hints--
 
@@ -15,6 +15,12 @@ You should have a `#piano` selector.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('#piano'));
+```
+
+Your `#piano` selector should have the `background-color` property set to `#00471b`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#piano')?.backgroundColor === 'rgb(0, 71, 27)');
 ```
 
 Your `#piano` selector should have a `width` property set to `992px`.

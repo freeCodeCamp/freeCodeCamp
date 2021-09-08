@@ -1,5 +1,5 @@
 ---
-id: 612eb7ca8c275d5f89c73333
+id: 612eb8e984cd73677a92b7e9
 title: Part 25
 challengeType: 0
 dashedName: part-25
@@ -7,14 +7,14 @@ dashedName: part-25
 
 # --description--
 
-To smooth the sharp edges of the piano and keys, start by giving the `#piano` a `border-radius` of `10px`.
+Give the `.key` selector a `border-radius` value of `0 0 3px 3px`.
 
 # --hints--
 
-Your `#piano` selector should have a `border-radius` property set to `10px`.
+Your `.key` selector should have a `border-radius` property set to `0 0 3px 3px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#piano')?.borderRadius === '10px');
+assert(new __helpers.CSSHelp(document).getStyle('.key')?.borderRadius === '0px 0px 3px 3px');
 ```
 
 # --seed--
@@ -72,40 +72,41 @@ html {
   box-sizing: inherit;
 }
 
---fcc-editable-region--
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
   position: relative;
+  border-radius: 10px;
 }
---fcc-editable-region--
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
+--fcc-editable-region--
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
 }
+--fcc-editable-region--
 
 .key.black--key::after {
+  background-color: #1d1e22;
   content: "";
   position: absolute;
   left: -18px;
   width: 32px;
   height: 100px;
-  background-color: #1d1e22;
 }
 
 .logo {

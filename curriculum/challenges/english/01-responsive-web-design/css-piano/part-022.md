@@ -1,5 +1,5 @@
 ---
-id: 612eaf56b7ba3257fdbfb0db
+id: 612eb4893b63c75bb9251ddf
 title: Part 22
 challengeType: 0
 dashedName: part-22
@@ -7,50 +7,32 @@ dashedName: part-22
 
 # --description--
 
-The piano needs the freeCodeCamp logo to make it official.
-
-Add an `img` element before your `.keys` element. Give the `img` a `class` of `logo`, and set the `src` to `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`. Give it an `alt` text of `freeCodeCamp Logo`.
+Start styling the logo by creating a `.logo` selector. Set the `width` to `200px`, a `position` of `absolute` and a `top` set to `23px`.
 
 # --hints--
 
-You should add a new `img` element.
+You should have a `.logo` selector.
 
 ```js
-assert(document.querySelectorAll('img')?.length === 1);
+assert(new __helpers.CSSHelp(document).getStyle('.logo'));
 ```
 
-Your `img` element should come before your first `.key` element.
+Your `.logo` selector should have a `width` property set to `200px`.
 
 ```js
-const img = document.querySelector('img');
-assert(img?.nextElementSibling?.className === 'keys');
-assert(img?.previousElementSibling === null);
+assert(new __helpers.CSSHelp(document).getStyle('.logo')?.width === '200px');
 ```
 
-Your `img` element should have a `class` set to logo.
+Your `.logo` selector should have a `position` property set to `absolute`.
 
 ```js
-const img = document.querySelector('img');
-assert(img?.className === 'logo');
+assert(new __helpers.CSSHelp(document).getStyle('.logo')?.position === 'absolute');
 ```
 
-Your `img` element should have a `src` set to `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`.
+Your `.logo` selector should have a `top` property set to `23px`.
 
 ```js
-const img = document.querySelector('img');
-assert(img?.getAttribute('src') === 'https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg');
-```
-
-Your `img` element should have an `alt` attribute set to `freeCodeCamp Logo`.
-
-```js
-assert(document.querySelector('img')?.getAttribute('alt')?.toLowerCase() === 'freecodecamp logo');
-```
-
-Remember that casing and spelling matter.
-
-```js
-assert(document.querySelector('img')?.getAttribute('alt') === 'freeCodeCamp Logo');
+assert(new __helpers.CSSHelp(document).getStyle('.logo')?.top === '23px');
 ```
 
 # --seed--
@@ -67,10 +49,9 @@ assert(document.querySelector('img')?.getAttribute('alt') === 'freeCodeCamp Logo
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    --fcc-editable-region--
     <div id="piano">
+      <img class="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
       <div class="keys">
-    --fcc-editable-region--
         <div class="key"></div>
         <div class="key black--key"></div>
         <div class="key black--key"></div>
@@ -110,35 +91,39 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
 }
 
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
 
 .key {
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
 }
 
 .key.black--key::after {
+  background-color: #1d1e22;
   content: "";
   position: absolute;
   left: -18px;
   width: 32px;
   height: 100px;
-  background-color: #1d1e22;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```

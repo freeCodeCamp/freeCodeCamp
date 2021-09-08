@@ -7,7 +7,7 @@ dashedName: part-12
 
 # --description--
 
-Set the `margin` of the `#piano` to `80px auto`, and the `background-color` to `#00471b`.
+Set the `margin` of the `#piano` to `80px auto`.
 
 # --hints--
 
@@ -15,12 +15,6 @@ Your `#piano` selector should have the `margin` property set to `80px auto`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('#piano')?.margin === '80px auto');
-```
-
-Your `#piano` selector should have the `background-color` property set to `#00471b`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('#piano')?.backgroundColor === 'rgb(0, 71, 27)');
 ```
 
 # --seed--
@@ -79,6 +73,7 @@ html {
 
 --fcc-editable-region--
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
 }

@@ -1,5 +1,5 @@
 ---
-id: 612ebf9a210f2b6d77001e68
+id: 612ec0490ae8626e9adf82e4
 title: Part 31
 challengeType: 0
 dashedName: part-31
@@ -7,24 +7,14 @@ dashedName: part-31
 
 # --description--
 
-Now add a `.logo` selector to the `@media` query, and set the `width` property to `150px`.
+You might have noticed the keys collapse when the browser window is smaller than `768px`. To take care of this issue, set `overflow` to `hidden` in the first `.keys` selector. This property will hide any element that is pushed outside the set `width` value of `.keys`.
 
 # --hints--
 
-Your `@media` rule should have a `.logo` selector.
+Your original `.keys` selector should have the `overflow` property set to `hidden`.
 
 ```js
-const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 768px)');
-const logo = rules?.find(rule => rule.selectorText === '.logo');
-assert(logo);
-```
-
-Your new `.logo` selector should have a `width` of `150px`.
-
-```js
-const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 768px)');
-const logo = rules?.find(rule => rule.selectorText === '.logo');
-assert(logo?.style.width === '150px');
+assert(new __helpers.CSSHelp(document).getStyle('.keys')?.overflow === 'hidden');
 ```
 
 # --seed--
@@ -83,39 +73,42 @@ html {
 }
 
 #piano {
+  background-color: #00471b;
   width: 992px;
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  background-color: #00471b;
   position: relative;
   border-radius: 10px;
 }
 
+--fcc-editable-region--
 .keys {
+  background-color: #040404;
   width: 949px;
   height: 180px;
   padding-left: 2px;
-  background-color: #040404;
 }
+--fcc-editable-region--
 
 .key {
+  background-color: #1d1e22;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
-  background-color: #ffffff;
+ background-color: #ffffff;
   border-radius: 0 0 3px 3px;
 }
 
 .key.black--key::after {
+  background-color: #1d1e22;
   content: "";
   position: absolute;
   left: -18px;
   width: 32px;
   height: 100px;
-  background-color: #1d1e22;
   border-radius: 0 0 3px 3px;
 }
 
@@ -125,7 +118,6 @@ html {
   top: 23px;
 }
 
---fcc-editable-region--
 @media (max-width: 768px) {
   #piano {
     width: 335px;
@@ -134,6 +126,9 @@ html {
   .keys {
     width: 318px;
   }
+
+  .logo {
+    width: 150px;
+  }
 }
---fcc-editable-region--
 ```
