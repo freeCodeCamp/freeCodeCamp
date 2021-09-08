@@ -49,6 +49,7 @@ type DonateFormState = {
     stripe: boolean;
     paypal: boolean;
   };
+  isSignedIn: boolean;
 };
 
 type DonateFromComponentState = {
@@ -259,6 +260,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     redirecting: boolean;
     success: boolean;
     error: string | null;
+    isSignedIn: boolean;
     reset: () => unknown;
   }) {
     return <DonateCompletion {...props} />;
@@ -328,7 +330,13 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
 
   render() {
     const {
-      donationFormState: { processing, success, error, redirecting },
+      donationFormState: {
+        processing,
+        success,
+        error,
+        redirecting,
+        isSignedIn
+      },
       isMinimalForm
     } = this.props;
 
@@ -338,6 +346,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
         redirecting,
         success,
         error,
+        isSignedIn,
         reset: this.resetDonation
       });
     }
@@ -351,6 +360,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
             redirecting,
             success,
             error,
+            isSignedIn,
             reset: this.resetDonation
           })}
         <div className={processing || redirecting ? 'hide' : ''}>

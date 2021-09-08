@@ -2,8 +2,9 @@ import { Alert, Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
-
+import { createSelector } from 'reselect';
 import './Donation.css';
+import { isSignedInSelector } from '../../redux';
 
 type DonateCompletionProps = {
   error: string | null;
@@ -11,13 +12,19 @@ type DonateCompletionProps = {
   redirecting: boolean;
   reset: () => unknown;
   success: boolean;
+  isSignedIn: boolean;
 };
+
+createSelector(isSignedInSelector, (isSignedIn: boolean) => ({
+  isSignedIn
+}));
 
 function DonateCompletion({
   processing,
   reset,
   success,
   redirecting,
+  isSignedIn,
   error = null
 }: DonateCompletionProps): JSX.Element {
   /* eslint-disable no-nested-ternary */
@@ -50,7 +57,7 @@ function DonateCompletion({
         {success && (
           <div>
             <p>{t('donate.free-tech')}</p>
-            <p>{t('donate.no-halo')}</p>
+            {isSignedIn && <p>{t('donate.no-halo')}</p>}
           </div>
         )}
         {error && <p>{error}</p>}
