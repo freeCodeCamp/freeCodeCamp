@@ -12,6 +12,7 @@ import {
   TencentLogo,
   AlibabaLogo
 } from '../../../assets/images/components';
+import MobileAdShow from '../../MobileAd/mobile-ad-modal';
 import { Spacer } from '../../helpers';
 import BigCallToAction from './BigCallToAction';
 import CampersImage from './CampersImage';
@@ -28,6 +29,7 @@ function LandingTop({ page }) {
   );
   return (
     <div className='landing-top'>
+      {localStorage.getItem('firstTime') === null && <MobileAdShow />}
       <Row>
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>

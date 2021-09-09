@@ -1,0 +1,7 @@
+.mobile-ad-modal-body {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 16px;
+}
