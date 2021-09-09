@@ -29,14 +29,16 @@ One `meta` element should have a `name` set to `viewport`, and `content` set to 
 
 ```js
 const meta = [...document.querySelectorAll('meta')];
-const target = meta?.find(m => m.getAttribute('name') === 'viewport' && m.getAttribute('content') === 'width=device-width, initial-scale=1.0' && !m.getAttribute('charset'));
+const target = meta?.find(m => m?.getAttribute('name') === 'viewport' && m?.getAttribute('content') === 'width=device-width, initial-scale=1.0' && !m?.getAttribute('charset'));
+assert.exists(target);
 ```
 
 The other `meta` element should have the `charset` attribute set to `UTF-8`.
 
 ```js
 const meta = [...document.querySelectorAll('meta')];
-const target = meta?.find(m => !m.getAttribute('name') && !m.getAttribute('content') && m.getAttribute('charset') === 'UTF-8');
+const target = meta?.find(m => !m?.getAttribute('name') && !m?.getAttribute('content') && m?.getAttribute('charset') === 'UTF-8');
+assert.exists(target);
 ```
 
 
