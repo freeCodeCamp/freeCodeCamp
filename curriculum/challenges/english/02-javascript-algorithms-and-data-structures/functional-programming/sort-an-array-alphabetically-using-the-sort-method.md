@@ -85,6 +85,7 @@ function alphabeticalOrder(arr) {
 
 
   // Only change code above this line
+  return arr
 }
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```
