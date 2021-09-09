@@ -80,19 +80,19 @@ assert(code.match(/<\/body\s*>/i));
 The `head` and `body` elements should be siblings.
 
 ```js
-assert(document.querySelector('head').nextElementSibling.localName === 'body');
+assert(document.querySelector('head')?.nextElementSibling?.localName === 'body');
 ```
 
 The `head` element should be within the `html` element.
 
 ```js
-assert([...document.querySelector('html').children].some(x => x.localName === 'head'));
+assert([...document.querySelector('html')?.children].some(x => x?.localName === 'head'));
 ```
 
 The `body` element should be within the `html` element.
 
 ```js
-assert([...document.querySelector('html').children].some(x => x.localName === 'body'));
+assert([...document.querySelector('html')?.children].some(x => x?.localName === 'body'));
 ```
 
 Your code should have a `title` element.
@@ -106,14 +106,14 @@ Your project should have a title of `Responsive Web Design Piano`.
 
 ```js
 const title = document.querySelector('title');
-assert.equal(title.text.trim().toLowerCase(), 'responsive web design piano')
+assert.equal(title?.text?.trim()?.toLowerCase(), 'responsive web design piano')
 ```
 
 Remember, the casing and spelling matter for the title.
 
 ```js
 const title = document.querySelector('title');
-assert.equal(title.text.trim(), 'Responsive Web Design Piano');
+assert.equal(title?.text?.trim(), 'Responsive Web Design Piano');
 ```
 
 # --seed--
