@@ -2,9 +2,8 @@ import { Alert, Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
-import { createSelector } from 'reselect';
+
 import './Donation.css';
-import { isSignedInSelector } from '../../redux';
 
 type DonateCompletionProps = {
   error: string | null;
@@ -14,10 +13,6 @@ type DonateCompletionProps = {
   success: boolean;
   isSignedIn: boolean;
 };
-
-createSelector(isSignedInSelector, (isSignedIn: boolean) => ({
-  isSignedIn
-}));
 
 function DonateCompletion({
   processing,
