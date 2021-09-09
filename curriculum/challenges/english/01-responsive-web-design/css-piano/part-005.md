@@ -23,14 +23,14 @@ Your seven new `div` elements should be within your `.keys` element.
 ```js
 const keys = document.querySelector('.keys');
 assert([...keys?.children].length === 7);
-assert([...keys?.children].every(child => child.tagName === 'DIV'));
+assert([...keys?.children].every(child => child?.tagName === 'DIV'));
 ```
 
 Your seven new `div` elements should all have the `class` set to `key`.
 
 ```js
 const keys = document.querySelector('.keys');
-assert([...keys?.children].every(child => child.classList.contains('key')));
+assert([...keys?.children].every(child => child?.classList?.contains('key')));
 ```
 
 # --seed--

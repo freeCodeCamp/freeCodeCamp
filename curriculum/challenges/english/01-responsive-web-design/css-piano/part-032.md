@@ -21,7 +21,6 @@ Your `@media` query should have a `min-width` of `769px` and a `max-width` of `1
 
 ```js
 const mediaText = new __helpers.CSSHelp(document).getCSSRules('media')[1]?.media?.mediaText;
-console.log(mediaText);
 assert(mediaText === '(max-width: 1199px) and (min-width: 769px)' || mediaText === '(min-width: 769px) and (max-width: 1199px)');
 ```
 

@@ -20,7 +20,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.key'));
 Your `.key` selector should have a `background-color` property set to `#ffffff`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.key').backgroundColor === 'rgb(255, 255, 255)');
+assert(new __helpers.CSSHelp(document).getStyle('.key')?.backgroundColor === 'rgb(255, 255, 255)');
 ```
 
 Your `.key` selector should have the `position` property set to `relative`.

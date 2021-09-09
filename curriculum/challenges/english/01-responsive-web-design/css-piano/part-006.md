@@ -15,35 +15,35 @@ Your second `.key` element should also have a `class` of `black--key`.
 
 ```js
 const key = document.querySelectorAll('.key')?.[1];
-assert(key?.className.includes('black--key'));
+assert(key?.className?.includes('black--key'));
 ```
 
 Your third `.key` should have `black--key` in the `class`.
 
 ```js
 const third = document.querySelectorAll('.key')?.[2];
-assert(third?.classList.contains('black--key'));
+assert(third?.classList?.contains('black--key'));
 ```
 
 Your fifth `.key` should have `black--key` in the `class`.
 
 ```js
 const fifth = document.querySelectorAll('.key')?.[4];
-assert(fifth?.classList.contains('black--key'));
+assert(fifth?.classList?.contains('black--key'));
 ```
 
 Your sixth `.key` should have `black--key` in the `class`.
 
 ```js
 const sixth = document.querySelectorAll('.key')?.[5];
-assert(sixth?.classList.contains('black--key'));
+assert(sixth?.classList?.contains('black--key'));
 ```
 
 Your seventh `.key` should have `black--key` in the `class`.
 
 ```js
 const seventh = document.querySelectorAll('.key')?.[6];
-assert(seventh?.classList.contains('black--key'));
+assert(seventh?.classList?.contains('black--key'));
 ```
 
 You should have five `.black--key` elements.

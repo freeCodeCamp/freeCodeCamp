@@ -20,7 +20,6 @@ assert(new __helpers.CSSHelp(document).getCSSRules('media')?.length === 1);
 Your `@media` query should have a `max-width` of `768px`.
 
 ```js
-console.log(new __helpers.CSSHelp(document).getCSSRules('media')[0]?.media?.mediaText)
 assert(new __helpers.CSSHelp(document).getCSSRules('media')[0]?.media?.mediaText === '(max-width: 768px)');
 ```
 
