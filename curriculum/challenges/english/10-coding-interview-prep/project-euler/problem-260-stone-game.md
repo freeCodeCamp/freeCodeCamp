@@ -10,7 +10,7 @@ dashedName: problem-260-stone-game
 
 A game is played with three piles of stones and two players.
 
-On each player's turn, the player removes one or more stones from the piles. However, if the player takes stones from more than one pile, the same number of stunes must be removed from each of the selected piles.
+On each player's turn, the player removes one or more stones from the piles. However, if the player takes stones from more than one pile, the same number of stones must be removed from each of the selected piles.
 
 In other words, the player chooses some $N > 0$ and removes:
 
