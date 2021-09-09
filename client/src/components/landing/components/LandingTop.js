@@ -27,9 +27,17 @@ function LandingTop({ page }) {
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale
   );
+
+  function localStorageCheck() {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('firstTime') === null;
+    }
+    return false;
+  }
+
   return (
     <div className='landing-top'>
-      {localStorage.getItem('firstTime') === null && <MobileAdShow />}
+      {localStorageCheck() && <MobileAdShow />}
       <Row>
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>

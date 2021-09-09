@@ -89,7 +89,9 @@
         "testimony": "\"I've always struggled with learning JavaScript. I've taken many courses but freeCodeCamp's course was the one which stuck. Studying JavaScript as well as data structures and algorithms on <strong>freeCodeCamp gave me the skills</strong> and confidence I needed to land my dream job as a software engineer at Spotify.\""
       }
     },
-    "certification-heading": "Earn free verified certifications in:"
+    "certification-heading": "Earn free verified certifications in:",
+    "mobile-ad-title": "Hey there! It looks like you're using {{os}}",
+    "mobile-ad-body": "We recommend installing the freeCodeCamp {{os}} app for a better coding experience. Or at least reading this"
   },
   "settings": {
     "share-projects": "Share your non-freeCodeCamp projects, articles or accepted pull requests.",

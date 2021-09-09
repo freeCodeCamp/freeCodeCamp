@@ -1,5 +1,6 @@
 import { Modal } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './mobile-ad-modal.css';
 
@@ -29,8 +30,11 @@ function MobileAdShow(): JSX.Element {
   const [show, setShow] = useState(true);
   /* eslint-disable no-nested-ternary */
   const os = getOS();
+  const { t } = useTranslation();
   function close() {
-    localStorage.setItem('firstTime', 'true');
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('firstTime', 'true');
+    }
     setShow(false);
   }
   return (
@@ -49,12 +53,15 @@ function MobileAdShow(): JSX.Element {
             closeButton={true}
           >
             <Modal.Title className='completion-message'>
-              Hey there! It looks like you're using {os}.
+              {t('landing.mobile-ad-title', {
+                os: os
+              })}
             </Modal.Title>
           </Modal.Header>
           <Modal.Body className='mobile-ad-modal-body'>
-            We recommend installing the freeCodeCamp {os} app for a better
-            coding experience. Or at least reading this
+            {t('landing.mobile-ad-body', {
+              os: os
+            })}
             <a
               href='https://www.freecodecamp.org/news/freecodecamp-mobile/'
               style={{ fontSize: 11 }}
