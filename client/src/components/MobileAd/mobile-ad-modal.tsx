@@ -51,9 +51,7 @@ function MobileAdShow(): JSX.Element {
           )}
           {os === 'iOS' && (
             <Modal.Body className='mobile-ad-modal-body'>
-              {t('landing.mobile-ad-body-ios', {
-                os: os
-              })}
+              {t('landing.mobile-ad-body-ios')}
               <a
                 href='https://www.freecodecamp.org/news/freecodecamp-mobile/'
                 style={{ fontSize: 11 }}
