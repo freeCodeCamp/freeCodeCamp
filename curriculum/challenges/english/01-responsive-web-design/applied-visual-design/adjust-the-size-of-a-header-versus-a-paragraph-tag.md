@@ -1,15 +1,15 @@
 ---
 id: 587d781b367417b2b2512abd
-title: Adjust the Size of a Header Versus a Paragraph Tag
+title: Adjust the Size of a Heading Tag Versus a Paragraph Tag
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
-dashedName: adjust-the-size-of-a-header-versus-a-paragraph-tag
+dashedName: adjust-the-size-of-a-heading-tag-versus-a-paragraph-tag
 ---
 
 # --description--
 
-The font size of header tags (`h1` through `h6`) should generally be larger than the font size of paragraph tags. This makes it easier for the user to visually understand the layout and level of importance of everything on the page. You use the `font-size` property to adjust the size of the text in an element.
+The font size of heading tags (`h1` through `h6`) should generally be larger than the font size of paragraph tags. This makes it easier for the user to visually understand the layout and level of importance of everything on the page. You use the `font-size` property to adjust the size of the text in an element.
 
 # --instructions--
 
