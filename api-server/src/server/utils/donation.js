@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import axios from 'axios';
 import debug from 'debug';
+import { donationSubscriptionConfig } from '../../../../config/donation-settings';
 import keys from '../../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
@@ -170,4 +171,96 @@ export async function updateUser(body, app) {
       message: 'Webhook type is not supported',
       type: 'UnsupportedWebhookType'
     };
+}
+
+export function hasDonatedToday(donations) {
+  if (donations.length > 1) {
+    const milliSecondsInDay = 86400000;
+    const milliSecondsNow = new Date().getTime();
+    return donations.some(donation => {
+      return (
+        milliSecondsNow - new Date(donation.startDate['_date']).getTime() <
+        milliSecondsInDay
+      );
+    });
+  }
+  return false;
+}
+
+export async function createStripeCardDonation(req, res, stripe, app) {
+  const {
+    body: {
+      token: { id: tokenId },
+      amount,
+      duration
+    },
+    user: { name, id: userId, email },
+    user
+  } = req;
+
+  if (!tokenId || !amount || !duration || !name || !userId || !email) {
+    throw {
+      message: 'Request is not valid',
+      type: 'InvalidRequest'
+    };
+  }
+
+  // check request validity
+  const { Donation } = app.models;
+
+  Donation.find({ where: { userId } }, (err, donations) => {
+    if (err) throw Error(err);
+
+    // check if a user has already made multiple donations
+    if (donations.length > 10)
+      throw {
+        message: 'Donor has more than 10 donations',
+        type: 'LargeNumbersOfDonations'
+      };
+
+    // check if a user has made a donation within an hour
+    if (hasDonatedToday(donations)) {
+      throw {
+        message: 'Donor has recently donated',
+        type: 'HighDonationFrequency'
+      };
+    }
+  });
+
+  // todo: check if after signing up the previous completed challenges are sent to api
+  // and check for minimum completed challegnes.
+
+  // create a customer
+  const { id: customerId } = await stripe.customers.create({
+    email,
+    card: tokenId,
+    name
+  });
+  log(`Stripe customer with id ${customerId} created`);
+
+  // create a subscription
+  const { id: subscriptionId } = await stripe.subscriptions.create({
+    customer: customerId,
+    items: [
+      {
+        plan: `${donationSubscriptionConfig.duration[
+          duration
+        ].toLowerCase()}-donation-${amount}`
+      }
+    ]
+  });
+  log(`Stripe subscription with id ${subscriptionId} created`);
+
+  // save Donation
+  let donation = {
+    email,
+    amount,
+    duration,
+    provider: 'stripe',
+    subscriptionId,
+    customerId,
+    startDate: new Date().toISOString()
+  };
+  await createAsyncUserDonation(user, donation);
+  return res.status(200).json({ isDonating: true });
 }

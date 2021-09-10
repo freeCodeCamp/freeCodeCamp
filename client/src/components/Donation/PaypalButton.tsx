@@ -44,6 +44,7 @@ type PaypalButtonProps = {
   theme: string;
   isSubscription?: boolean;
   handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
+  isMinimalForm: boolean | undefined;
 };
 
 type PaypalButtonState = {
@@ -128,7 +129,7 @@ export class PaypalButton extends Component<
 
   render(): JSX.Element | null {
     const { duration, planId, amount } = this.state;
-    const { t, theme, isPaypalLoading } = this.props;
+    const { t, theme, isPaypalLoading, isMinimalForm } = this.props;
     const isSubscription = duration !== 'onetime';
     const buttonColor = theme === 'night' ? 'white' : 'gold';
     if (!paypalClientId) {
@@ -175,6 +176,7 @@ export class PaypalButton extends Component<
               plan_id: planId
             });
           }}
+          isMinimalForm={isMinimalForm}
           isPaypalLoading={isPaypalLoading}
           isSubscription={isSubscription}
           onApprove={(data: AddDonationData) => {
