@@ -14,7 +14,6 @@ const selectors = {
 
 describe('The hotkeys should work correctly', () => {
   beforeEach(() => {
-    cy.login();
     cy.visit(selectors.link1);
   });
 
@@ -26,9 +25,9 @@ describe('The hotkeys should work correctly', () => {
     cy.get('body').type('p');
     cy.url().should('include', selectors.link1);
     cy.visit(selectors.link3);
-    cy.get(selectors.description).click().type('{esc}').type('n');
+    cy.get('body').type('{esc}').type('n');
     cy.url().should('include', selectors.link4);
-    cy.get(selectors.description).click().type('{esc}').type('p');
+    cy.get('body').type('{esc}').type('p');
     cy.url().should('include', selectors.link3);
   });
 
@@ -41,5 +40,10 @@ describe('The hotkeys should work correctly', () => {
   it('should be possible to press ctrl enter to run the test', () => {
     cy.get(selectors.description).click().type('{ctrl}{enter}');
     cy.get(selectors.console).contains('// running tests');
+  });
+
+  it('should be possible to go to navigation view by pressing escape', () => {
+    cy.get(selectors.editor).type('{esc}');
+    cy.get(selectors.editor).should('not.have.focus');
   });
 });
