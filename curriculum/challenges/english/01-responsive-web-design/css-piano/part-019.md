@@ -11,7 +11,7 @@ Give the `.key.black--key::after` a `position` property set to `absolute` and a 
 
 # --hints--
 
-Your `.key.black--key::after` selector should have a position property set to `absolute`.
+Your `.key.black--key::after` selector should have a `position` property set to `absolute`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.key.black--key::after')?.position === 'absolute');

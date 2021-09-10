@@ -11,7 +11,7 @@ Now that you have reset the `html` box model, you need to pass that on to the el
 
 You will also need to target the pseudo-elements, which are special keywords that follow a selector. Pseudo-elements allow you to style specific parts of the targeted element.
 
-Create a CSS selector to target all elements with `*`, and include the psueudo-elements with `::before` and `::after`. Set the `box-sizing` property to `inherit`.
+Create a CSS selector to target all elements with `*`, and include the pseudo-elements with `::before` and `::after`. Set the `box-sizing` property to `inherit`.
 
 # --hints--
 
