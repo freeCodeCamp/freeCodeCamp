@@ -43,7 +43,6 @@
   }
   .donation-elements div:nth-child(1) {
     flex: 4 4 80%;
-    /* min-width: 200px; */
     border-radius: 5px 0px 0px 5px;
     border: none;
   }
