@@ -92,13 +92,12 @@ html {
 --fcc-editable-region--
 
 .key {
-  background-color: #1d1e22;
+  background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
   margin: 2px;
   float: left;
- background-color: #ffffff;
   border-radius: 0 0 3px 3px;
 }
 
