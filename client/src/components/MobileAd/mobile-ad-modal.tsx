@@ -36,17 +36,32 @@ function MobileAdShow(): JSX.Element {
               })}
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body className='mobile-ad-modal-body'>
-            {t('landing.mobile-ad-body', {
-              os: os
-            })}
-            <a
-              href='https://www.freecodecamp.org/news/freecodecamp-mobile/'
-              style={{ fontSize: 11 }}
-            >
-              https://www.freecodecamp.org/news/freecodecamp-mobile/
-            </a>
-          </Modal.Body>
+          {os === 'Android' && (
+            <Modal.Body className='mobile-ad-modal-body'>
+              {t('landing.mobile-ad-body-android', {
+                os: os
+              })}
+              <a
+                href='https://www.freecodecamp.org/news/freecodecamp-mobile/'
+                style={{ fontSize: 11 }}
+              >
+                https://www.freecodecamp.org/news/freecodecamp-mobile/
+              </a>
+            </Modal.Body>
+          )}
+          {os === 'iOS' && (
+            <Modal.Body className='mobile-ad-modal-body'>
+              {t('landing.mobile-ad-body-ios', {
+                os: os
+              })}
+              <a
+                href='https://www.freecodecamp.org/news/freecodecamp-mobile/'
+                style={{ fontSize: 11 }}
+              >
+                https://www.freecodecamp.org/news/freecodecamp-mobile/
+              </a>
+            </Modal.Body>
+          )}
         </Modal>
       )}
     </>

@@ -91,7 +91,8 @@
     },
     "certification-heading": "Earn free verified certifications in:",
     "mobile-ad-title": "Hey there! It looks like you're using {{os}}",
-    "mobile-ad-body": "We recommend installing the freeCodeCamp {{os}} app for a better coding experience. Or at least reading this"
+    "mobile-ad-body-android": "We recommend installing the freeCodeCamp {{os}} app for a better coding experience. Or at least reading this",
+    "mobile-ad-body-ios": "We recommend reading this article"
   },
   "settings": {
     "share-projects": "Share your non-freeCodeCamp projects, articles or accepted pull requests.",
