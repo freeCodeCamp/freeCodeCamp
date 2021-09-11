@@ -12,8 +12,8 @@ module.exports = (env = {}) => {
     mode: __DEV__ ? 'development' : 'production',
     entry: {
       'frame-runner': './src/client/frame-runner.js',
-      'sass-compile': './src/client/workers/sass-compile.js',
-      'test-evaluator': './src/client/workers/test-evaluator.js'
+      'sass-compile': './src/client/workers/sass-compile.ts',
+      'test-evaluator': './src/client/workers/test-evaluator.ts'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
