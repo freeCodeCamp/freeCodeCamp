@@ -26,9 +26,9 @@ describe('The hotkeys should work correctly', () => {
     cy.url().should('include', selectors.link1);
     cy.visit(selectors.link3);
     cy.get('body').type('{esc}').type('n');
-    cy.url().should('include', selectors.link4);
+    cy.url().should('include', selectors.link4, { timeout: 10000 });
     cy.get('body').type('{esc}').type('p');
-    cy.url().should('include', selectors.link3);
+    cy.url().should('include', selectors.link3, { timeout: 10000 });
   });
 
   it('should be possible to focus on the editor with pressing "e"', () => {
