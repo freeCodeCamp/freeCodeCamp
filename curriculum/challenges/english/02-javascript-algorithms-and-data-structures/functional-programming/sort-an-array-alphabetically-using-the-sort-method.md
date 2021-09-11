@@ -38,7 +38,7 @@ JavaScript's default sorting method is by string Unicode point value, which may 
 
 # --instructions--
 
-Use the `sort` method in the `alphabeticalOrder` function to sort the elements of `arr` in alphabetical order. The function will return a sorted array.
+Use the `sort` method in the `alphabeticalOrder` function to sort the elements of `arr` in alphabetical order. The function should return a sorted array.
 
 # --hints--
 
