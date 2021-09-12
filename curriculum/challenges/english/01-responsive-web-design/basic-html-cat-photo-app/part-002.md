@@ -51,7 +51,7 @@ Your `h2` element should have a closing tag. Closing tags have a `/` just after 
 assert(code.match(/<\/h2\>/));
 ```
 
-Your `h2` element's text should be 'Cat Photos'. Only place the text `Cat Photos` between the opening and closing `h2` tags.
+Your `h2` element's text should be 'Cat Photos'. Only place the text `Cat Photos` between the opening and closing `<h2>` tags.
 
 ```js
 assert(document.querySelector('h2').innerText.toLowerCase() === 'cat photos');
