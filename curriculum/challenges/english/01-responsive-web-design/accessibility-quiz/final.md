@@ -2,7 +2,7 @@
 id: 611e5716f9246f125f63815b
 title: Final Prototype
 challengeType: 0
-dashedName: part-7
+dashedName: part-9
 ---
 
 # --description--
@@ -165,9 +165,10 @@ Who is flexbox...
 ```
 
 ```css
-* {
-	scroll-behavior: smooth;
-	/* Create-React-App accessibility scrolling	 */
+@media (prefers-reduced-motion: no-preference) {
+	* {
+		scroll-behavior: smooth;
+	}
 }
 
 body {
@@ -191,7 +192,9 @@ header {
 
 #logo {
 	width: max(100px, 18vw);
-	height: calc(100% - 0.3rem);
+  aspect-ratio: 4 / 1;
+  max-height: 100%;
+	/* height: calc(100% - 0.3rem); */
 	color: black;
 	background-color: black;
 	padding: 0 0.3rem;

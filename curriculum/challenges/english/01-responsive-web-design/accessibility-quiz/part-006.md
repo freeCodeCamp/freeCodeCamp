@@ -29,7 +29,7 @@ You should add a `main` element to the `body`.
 
 ```
 
-The `header` and `main` elements should be siblings.
+The `header` element should come before the `main` element.
 
 ```js
 
