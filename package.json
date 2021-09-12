@@ -118,7 +118,7 @@
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.24.2",
-    "eslint-plugin-jest-dom": "3.9.0",
+    "eslint-plugin-jest-dom": "3.9.2",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-prefer-object-spread": "1.2.1",
     "eslint-plugin-prettier": "3.4.1",
