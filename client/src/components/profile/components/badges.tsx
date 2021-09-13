@@ -32,19 +32,15 @@ interface BadgeMod extends Badge {
   icon: [string, string];
 }
 
-const Badges = ({ email }: { email: string }): JSX.Element => {
+const Badges = ({ discourseId }: { discourseId: string }): JSX.Element => {
   const [badges, setBadges] = React.useState<BadgeMod[]>([]);
   useEffect(() => {
-    if (email) {
+    if (discourseId) {
       void (async () => {
-        // TODO: For testing, insert Shaun's Discourse email
-        const testEmail = '';
-        // TODO: Probably do not want to send email to server, because server
-        // can get this itself.
-        const response = await getUserBadges(testEmail);
-        const data = JSON.parse(response) as BadgeData;
+        const data = (await getUserBadges(discourseId)) as unknown as BadgeData;
+        // TODO: Why on earth does this return the sessionUser?!
         console.log(data);
-        const badgesParsed = data.badges.map(badge => ({
+        const badgesParsed = data?.badges?.map(badge => ({
           ...badge,
           icon: parseIcon(badge.icon),
           description: parseDescription(badge.description)

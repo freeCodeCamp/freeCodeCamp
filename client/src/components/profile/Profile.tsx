@@ -51,6 +51,7 @@ interface IProfileProps {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     yearsTopContributor: any[];
     isDonating: boolean;
+    discourseId: string;
   };
 }
 
@@ -106,7 +107,6 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     calendar,
     completedChallenges,
-    email,
     githubProfile,
     isLinkedIn,
     isGithub,
@@ -124,7 +124,8 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
     portfolio,
     about,
     yearsTopContributor,
-    isDonating
+    isDonating,
+    discourseId
   } = user;
   return (
     <>
@@ -151,7 +152,7 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
-      {email ? <Badges email={email} /> : null}
+      {discourseId ? <Badges discourseId={discourseId} /> : null}
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}

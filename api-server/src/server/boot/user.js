@@ -49,9 +49,9 @@ function bootUser(app) {
 // TODO: How to get user from previous middleware?
 function createGetUserBadges() {
   return (req, res) => {
-    const { discourseId } = req.user;
+    const { discourseId } = req.query;
     request(
-      `${FORUM_LOCATION}/admin/users/${discourseId}.json`,
+      `${FORUM_LOCATION}/u/by-external/discourse/${discourseId}.json`,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -80,10 +80,11 @@ function createGetUserBadges() {
               }
             },
             (err, response, body) => {
+              console.log(body);
               if (err) {
-                res.status(500).send(err);
+                return res.status(500).send(err);
               } else {
-                res.json(body);
+                return res.json(body);
               }
             }
           );
