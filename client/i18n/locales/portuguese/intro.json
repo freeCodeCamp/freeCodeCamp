@@ -78,6 +78,13 @@
           ""
         ]
       },
+      "css-box-model": {
+        "title": "Modelo da caixa do CSS",
+        "intro": [
+          "Mark Rothko era conhecido por seu estilo abstrato de pintura. As pinturas de Rothko comumente retratavam regiões retangulares coloridas em tamanhos variados.",
+          "Nesta lição, você usará o CSS para criar sua própria pintura no estilo de Rothko. Você usará muitas das habilidades que você já está praticando, bem como novas ferramentas do CSS como o desfoque (blur) e a transformação (transform)."
+        ]
+      },
       "css-variables-skyline": {
         "title": "Horizonte com variáveis de CSS",
         "intro": [
