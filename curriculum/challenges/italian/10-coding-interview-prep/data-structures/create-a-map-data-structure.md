@@ -1,6 +1,6 @@
 ---
 id: 8d5823c8c441eddfaeb5bdef
-title: Create a Map Data Structure
+title: Crea una struttura dati Mappa
 challengeType: 1
 forumTopicId: 301629
 dashedName: create-a-map-data-structure
@@ -8,25 +8,25 @@ dashedName: create-a-map-data-structure
 
 # --description--
 
-The next few challenges will cover maps and hash tables. Maps are data structures that store key-value pairs. In JavaScript, these are available to us as objects. Maps provide rapid lookup of stored items based on key values and are very common and useful data structures.
+Le prossime sfide riguarderanno mappe e tabelle di hash. Le mappe sono strutture dati che memorizzano coppie chiave-valore. In JavaScript, questi sono disponibili per noi come oggetti. Le mappe forniscono una rapida ricerca degli elementi memorizzati in base ai valori delle chiavi (key) e sono strutture di dati molto comuni e utili.
 
 # --instructions--
 
-Let's get some practice creating our own map. Because JavaScript objects provide a much more efficient map structure than anything we could write here, this is intended primarily as a learning exercise. However, JavaScript objects only provide us with certain operations. What if we wanted to define custom operations? Use the `Map` object provided here as a wrapper around a JavaScript `object`. Create the following methods and operations on the Map object:
+Facciamo un po' di pratica nel creare la nostra mappa. Poiché gli oggetti JavaScript forniscono una struttura di mappa molto più efficiente di qualsiasi cosa potremmo scrivere qui, questo è inteso principalmente come un esercizio di apprendimento. Tuttavia, gli oggetti JavaScript ci forniscono solo determinate operazioni. E se volessimo definire operazioni personalizzate? Utilizzare l'oggetto `Map` fornito qui come un wrapper intorno a un `object` di JavaScript. Creare i seguenti metodi e operazioni sull'oggetto mappa:
 
 <ul>
-<li><code>add</code> accepts a <code>key, value</code> pair to add to the map.</li>
-<li><code>remove</code> accepts a key and removes the associated <code>key, value</code> pair</li>
-<li><code>get</code> accepts a <code>key</code> and returns the stored <code>value</code></li>
-<li><code>has</code> accepts a <code>key</code> and returns <dfn>true</dfn> if the key exists or <dfn>false</dfn> if it doesn't.</li>
-<li><code>values</code> returns an array of all the values in the map</li>
-<li><code>size</code> returns the number of items in the map</li>
-<li><code>clear</code> empties the map</li>
+<li><code>add</code> accetta una coppia <code>key, value</code> da aggiungere alla mappa.</li>
+<li><code>remove</code> accetta una chiave e rimuove la coppia <code>key, value</code> associata</li>
+<li><code>get</code> accetta una <code>key</code> e ritorna il <code>value</code> memorizzato</li>
+<li><code>has</code> accetta una <code>key</code> e restituisce <dfn>true</dfn> se la chiave esiste o <dfn>false</dfn> se non esiste.</li>
+<li><code>values</code> restituisce un array di tutti i valori nella mappa</li>
+<li><code>size</code> restituisce il numero di elementi nella mappa</li>
+<li><code>clear</code> svuota la mappa</li>
 </ul>
 
 # --hints--
 
-The Map data structure should exist.
+La struttura di dati Mappa dovrebbe esistere.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The Map object should have the following methods: add, remove, get, has, values, clear, and size.
+L'oggetto Map dovrebbe avere i seguenti metodi: add, remove, get, has, values, clear e size.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-The add method should add items to the map.
+Il metodo add dovrebbe aggiungere oggetti alla mappa.
 
 ```js
 assert(
@@ -79,7 +79,7 @@ assert(
 );
 ```
 
-The has method should return true for added items and false for absent items.
+Il metodo has dovrebbe restituire true per elementi esistenti e false per oggetti non esistenti.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The get method should accept keys as input and should return the associated values.
+Il metodo get dovrebbe accettare delle chiavi come input e dovrebbe restituire i valori associati.
 
 ```js
 assert(
@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-The values method should return all the values stored in the map as strings in an array.
+Il metodo values dovrebbe restituire tutti i valori immagazzinati nella mappa come stringhe in un array.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 );
 ```
 
-The clear method should empty the map and the size method should return the number of items present in the map.
+Il metodo clear dovrebbe svuotare la mappa e il metodo size dovrebbe restituire il numeri di oggetti presenti nella mappa.
 
 ```js
 assert(

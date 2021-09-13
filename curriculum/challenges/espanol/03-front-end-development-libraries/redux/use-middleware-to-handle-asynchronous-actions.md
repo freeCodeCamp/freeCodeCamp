@@ -18,7 +18,7 @@ Recuerda que estás pasando `dispatch` como parámetro a este creador de accione
 
 # --instructions--
 
-Escribe ambos envíos en el creador de acción `handleAsync()`. Envía `requestingData()` antes del `setTimeout()` (la llamada a la API simulada). A continuación, después de recibir los datos (fingidos), envía la acción `receivedData()`, pasando estos datos. Ahora ya sabes cómo manejar las acciones asíncronas en Redux. Todo lo demás sigue comportándose como antes.
+Escribe ambos envíos en el creador de acción `handleAsync()`. Envía `requestingData()` antes del `setTimeout()` (la llamada al API simulada). A continuación, después de recibir los datos (fingidos), envía la acción `receivedData()`, pasando estos datos. Ahora ya sabes cómo manejar las acciones asíncronas en Redux. Todo lo demás sigue comportándose como antes.
 
 # --hints--
 

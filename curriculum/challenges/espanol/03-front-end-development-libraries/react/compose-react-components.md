@@ -14,7 +14,7 @@ A medida que los desafíos continúan utilizando composiciones más complejas co
 
 En el editor de código, el componente `TypesOfFood` ya está incluyendo (renderizando) un componente llamado `Vegetables`. Además, también está el componente `Fruits` del último desafío.
 
-Anida dos componentes dentro de `Fruits` - primero `NonCitrus` y luego `Citrus`. Ambos componentes se te proporcionan en segundo plano. A continuación, anida el componente de clase `Fruits` en el componente `TypesOfFood`, debajo del encabezado (header) `h1` y encima de `Vegetables`. El resultado debe ser una serie de componentes anidados, que utiliza dos tipos de componentes diferentes.
+Anida dos componentes dentro de `Fruits`: primero `NonCitrus` y luego `Citrus`. Ambos componentes se te proporcionan en segundo plano. A continuación, anida el componente de clase `Fruits` en el componente `TypesOfFood`, debajo del encabezado (header) `h1` y encima de `Vegetables`. El resultado debe ser una serie de componentes anidados, que utiliza dos tipos de componentes diferentes.
 
 # --hints--
 
