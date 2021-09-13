@@ -56,7 +56,11 @@ type DonateFormComponentState = {
 type DonateFormProps = {
   addDonation: (data: unknown) => unknown;
   postChargeStripe: (data: unknown) => unknown;
-  postChargeStripeCard: (data: unknown) => unknown;
+  postChargeStripeCard: (data: {
+    token: Token;
+    amount: number;
+    duration: string;
+  }) => void;
   defaultTheme?: string;
   email: string;
   handleProcessing: (duration: string, amount: number, action: string) => void;
@@ -218,7 +222,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   }
 
   postStripeCardDonation(token: Token) {
-    const { email } = this.props;
     const { donationAmount: amount, donationDuration: duration } = this.state;
     if (this.props.handleProcessing) {
       this.props.handleProcessing(
@@ -230,8 +233,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     this.props.postChargeStripeCard({
       token,
       amount,
-      duration,
-      email
+      duration
     });
   }
 

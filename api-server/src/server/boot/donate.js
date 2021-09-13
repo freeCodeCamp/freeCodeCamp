@@ -30,17 +30,12 @@ export default function donateBoot(app, done) {
 
   async function handleStripeCardDonation(req, res) {
     return createStripeCardDonation(req, res, stripe, app).catch(err => {
-      log(err.message);
-      if (
-        err.type === 'LargeNumbersOfDonations' ||
-        err.type === 'HighDonationFrequency' ||
-        err.type === 'InvalidRequest'
-      ) {
-        return res.status(500).send({ error: err.message });
+      if (err.type === 'AlreadyDonatingError') {
+        return res.status(402).send(err);
       }
       return res
         .status(500)
-        .send({ error: 'Donation failed due to a server error.' });
+        .send({ message: 'Donation failed due to a server error.' });
     });
   }
 

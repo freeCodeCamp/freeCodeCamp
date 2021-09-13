@@ -173,21 +173,7 @@ export async function updateUser(body, app) {
     };
 }
 
-export function hasDonatedToday(donations) {
-  if (donations.length > 1) {
-    const milliSecondsInDay = 86400000;
-    const milliSecondsNow = new Date().getTime();
-    return donations.some(donation => {
-      return (
-        milliSecondsNow - new Date(donation.startDate['_date']).getTime() <
-        milliSecondsInDay
-      );
-    });
-  }
-  return false;
-}
-
-export async function createStripeCardDonation(req, res, stripe, app) {
+export async function createStripeCardDonation(req, res, stripe) {
   const {
     body: {
       token: { id: tokenId },
@@ -205,30 +191,12 @@ export async function createStripeCardDonation(req, res, stripe, app) {
     };
   }
 
-  // check request validity
-  const { Donation } = app.models;
-
-  Donation.find({ where: { userId } }, (err, donations) => {
-    if (err) throw Error(err);
-
-    // check if a user has already made multiple donations
-    if (donations.length > 10)
-      throw {
-        message: 'Donor has more than 10 donations',
-        type: 'LargeNumbersOfDonations'
-      };
-
-    // check if a user has made a donation within an hour
-    if (hasDonatedToday(donations)) {
-      throw {
-        message: 'Donor has recently donated',
-        type: 'HighDonationFrequency'
-      };
-    }
-  });
-
-  // todo: check if after signing up the previous completed challenges are sent to api
-  // and check for minimum completed challegnes.
+  if (user.isDonating && duration !== 'onetime') {
+    throw {
+      message: `User already has active recurring donation(s).`,
+      type: 'AlreadyDonatingError'
+    };
+  }
 
   // create a customer
   const { id: customerId } = await stripe.customers.create({
