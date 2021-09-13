@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403617e
-title: Agrega detector de eventos (Event Listeners)
+title: Agrega detectores de eventos (Event Listeners)
 challengeType: 6
 forumTopicId: 301377
 dashedName: add-event-listeners

@@ -137,7 +137,7 @@
     "@testing-library/react": "12.1.0",
     "@types/jest": "26.0.24",
     "@types/loadable__component": "5.13.4",
-    "@types/lodash-es": "4.17.4",
+    "@types/lodash-es": "4.17.5",
     "@types/prismjs": "1.16.6",
     "@types/psl": "1.1.0",
     "@types/reach__router": "1.3.9",
