@@ -13,7 +13,7 @@ const generate = require('nanoid/generate');
 
 const log = debug('fcc:boot:settings');
 
-const { FORUM_LOCATION, DISCOURSE_SECRET, HOME_LOCATION } = process.env;
+const { FORUM_LOCATION, DISCOURSE_SECRET, API_LOCATION } = process.env;
 
 export default function settingsController(app) {
   const api = app.loopback.Router();
@@ -260,9 +260,9 @@ function updateUserFlag(req, res, next) {
 function connectDiscourse(req, res) {
   // Generate nonce
   const nonce = generate(nanoidCharSet, 20);
-  req.nonce = nonce;
+  // req.nonce = nonce;
   // Create payload with nonce and return url: nonce=NONCE&return_sso_url=RETURN_URL
-  const payload = `nonce=${nonce}&return_sso_url=${HOME_LOCATION}/auth/discourse/callback`;
+  const payload = `nonce=${nonce}&return_sso_url=${API_LOCATION}/auth/discourse/callback`;
   // BASE64 encode payload: BASE64_PAYLOAD
   const BASE64_PAYLOAD = Buffer.from(payload).toString('base64');
   // URL encode payload: URL_ENCODED_PAYLOAD
@@ -272,18 +272,19 @@ function connectDiscourse(req, res) {
   const signature = crypto.createHmac('sha256', DISCOURSE_SECRET);
   signature.update(BASE64_PAYLOAD);
   const HEX_SIGNATURE = signature.digest('hex');
-  log(URL_ENCODED_PAYLOAD, HEX_SIGNATURE);
-  // TODO: This was a try to fix CORS - failed, but maybe needed anyway?
-  res.set('Access-Control-Allow-Origin', HOME_LOCATION);
-  return res.redirect(
-    `${FORUM_LOCATION}/session/sso_provider?sso=${URL_ENCODED_PAYLOAD}&sig=${HEX_SIGNATURE}`
-  );
+
+  return res.json({
+    urlToNavigateTo: `${FORUM_LOCATION}/session/sso_provider?sso=${URL_ENCODED_PAYLOAD}&sig=${HEX_SIGNATURE}`
+  });
+  // Redirect does not work because of null origin in Discourse request
+  // return res.redirect(
+  //   `${FORUM_LOCATION}/session/sso_provider?sso=${URL_ENCODED_PAYLOAD}&sig=${HEX_SIGNATURE}`
+  // );
 }
 
 function checkDidAuthenticate(req, res, next) {
   // Discourse will redirect logged in user to return_sso_url
   // Query string will include `sig` and `sso` with some user info
-  log(req.query);
   // Compute the HMAC-SHA256 of sso using sso provider secret as key
   const signature = crypto.createHmac('sha256', DISCOURSE_SECRET);
   signature.update(req.query.sso);
@@ -296,26 +297,28 @@ function checkDidAuthenticate(req, res, next) {
     return res.status(401).send('invalid signature');
   }
   // BASE64 decode sso - shuold be equal to passed embedded query string.
-  log(req.query.sso);
   const BASE64_SSO = Buffer.from(req.query.sso, 'base64').toString();
-  log(BASE64_SSO);
+  req.externalId = BASE64_SSO.match(/external_id=([^&]+)/)[1];
   // Take `nonce` key and compare it with nonce generated
-  const nonce = BASE64_SSO.match(/nonce=([^&]+)/)[1];
-  if (nonce !== req.nonce) {
-    log('invalid nonce');
-    return res.status(401).send('invalid nonce');
-  }
+  // const nonce = BASE64_SSO.match(/nonce=([^&]+)/)[1];
+
+  // TODO: Figure out how to persist nonce from previous query
+  // if (nonce !== req.nonce) {
+  //   log('invalid nonce');
+  //   return res.status(401).send('invalid nonce');
+  // }
   return next();
 }
 
 function addDiscourseUserId(req, res, next) {
   // drop generated nonce.
-  delete req.nonce;
+  // delete req.nonce;
   // Use query string with user information to store DISCOURSE_USER_ID in fCC DB
-  const { id } = req.query;
-  const { userId } = req.body;
-  log(id, userId);
-  req.user.updateAttribute({ discourseId: id }, err => {
+  log(req.query);
+  const { externalId } = req;
+  // const { userId } = req.body;
+  log(externalId);
+  req.user.updateAttribute('discourseId', externalId, err => {
     // TODO: Use standardError or flash?
     if (err) {
       req.flash('error', 'We were unable to link your Discourse account');

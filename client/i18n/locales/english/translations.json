@@ -63,7 +63,8 @@
     "submit-and-go": "Submit and go to next challenge",
     "go-to-next": "Go to next challenge",
     "ask-later": "Ask me later",
-    "connect-discourse": "Connect to Forum Account"
+    "connect-discourse": "Connect to Forum Account",
+    "reconnect-discourse": "Changed Forum Account? Connect New Forum Account"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",

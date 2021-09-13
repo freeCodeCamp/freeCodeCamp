@@ -27,7 +27,7 @@ function bootUser(app) {
   const getSessionUser = createReadSessionUser(app);
   const postReportUserProfile = createPostReportUserProfile(app);
   const postDeleteAccount = createPostDeleteAccount(app);
-  const getUserBadges = createGetUserBadges(app);
+  const getUserBadges = createGetUserBadges();
 
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
@@ -47,7 +47,7 @@ function bootUser(app) {
 }
 
 // TODO: How to get user from previous middleware?
-function createGetUserBadges(app) {
+function createGetUserBadges() {
   return (req, res) => {
     const { discourseId } = req.user;
     request(

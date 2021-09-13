@@ -199,9 +199,12 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     // TODO: Figure out what to do with result of PUT
     // @eslint-disable-next-line @typescript-eslint/no-floating-promises
     void (async () => {
-      const res = await postConnectDiscourseAccount(userId);
-      // const data = await res.json();
-      console.log(res);
+      try {
+        const { urlToNavigateTo } = await postConnectDiscourseAccount(userId);
+        location.assign(urlToNavigateTo);
+      } catch (err) {
+        console.error(err);
+      }
     })();
   };
 
