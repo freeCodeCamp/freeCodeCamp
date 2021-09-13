@@ -18,7 +18,7 @@ Una vez realizados estos cambios, la aplicación seguirá funcionando igual, sal
 
 # --hints--
 
-`AppWrapper` debe renderizarse.
+El `AppWrapper` debe renderizarse.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-El componente `Presentational` debe renderizar los siguientes elementos: `h2`, `input`, `button` y `ul`.
+El componente `Presentational` debe renderizar los siguientes elementos: un `h2`, `input`, `button`, y `ul`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-El componente `Presentational` debe recibir `messages` desde el almacenamiento de Redux como una propiedad.
+El componente `Presentational` debe recibir `messages` desde el store Redux como una prop.
 
 ```js
 assert(
@@ -70,7 +70,7 @@ assert(
 );
 ```
 
-El componente `Presentational` debe recibir `submitMessage` como una propiedad.
+El componente `Presentational` debe recibir la acción `submitMessage` como una prop.
 
 ```js
 assert(
