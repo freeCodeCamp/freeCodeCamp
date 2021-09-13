@@ -7,7 +7,7 @@ dashedName: part-3
 
 # --description--
 
-Time to start working on the piano. Within your `body` element, create a `div` element with the `id` set to `piano`.
+Time to start working on the piano. Create a `div` element within your `body` element with the `id` set to `piano`.
 
 # --hints--
 

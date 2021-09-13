@@ -7,7 +7,7 @@ dashedName: part-31
 
 # --description--
 
-You might have noticed the keys collapse when the browser window is smaller than `768px`. To take care of this issue, set `overflow` to `hidden` in the first `.keys` selector. This property will hide any element that is pushed outside the set `width` value of `.keys`.
+You might have noticed the keys collapse when the browser window is smaller than `768px`. Set `overflow` to `hidden` in the first `.keys` selector, to take care of this issue. This property will hide any element that is pushed outside the set `width` value of `.keys`.
 
 # --hints--
 
