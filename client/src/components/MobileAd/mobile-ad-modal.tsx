@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './mobile-ad-modal.css';
 
-function MobileAdShow(): JSX.Element {
+function MobileAd(): JSX.Element {
   const [show, setShow] = useState(true);
   const os = Bowser.getParser(window.navigator.userAgent).getOSName();
   const { t } = useTranslation();
@@ -66,6 +66,4 @@ function MobileAdShow(): JSX.Element {
   );
 }
 
-MobileAdShow.show = true;
-
-export default MobileAdShow;
+export default MobileAd;

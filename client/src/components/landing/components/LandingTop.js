@@ -12,7 +12,7 @@ import {
   TencentLogo,
   AlibabaLogo
 } from '../../../assets/images/components';
-import MobileAdShow from '../../MobileAd/mobile-ad-modal';
+import MobileAd from '../../MobileAd/mobile-ad-modal';
 import { Spacer } from '../../helpers';
 import BigCallToAction from './BigCallToAction';
 import CampersImage from './CampersImage';
@@ -28,7 +28,7 @@ function LandingTop({ page }) {
     clientLocale
   );
 
-  function localStorageCheck() {
+  function isFirstTime() {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('firstTime') === null;
     }
@@ -37,7 +37,7 @@ function LandingTop({ page }) {
 
   return (
     <div className='landing-top'>
-      {localStorageCheck() && <MobileAdShow />}
+      {isFirstTime() && <MobileAd />}
       <Row>
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
