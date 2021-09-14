@@ -28,7 +28,7 @@ import {
   postChargeStripeCardError
 } from './';
 
-const defaultDonationError = `Something is not right. Please contact donors@freecodecamp.org`;
+const defaultDonationErrorMessage = `Something is not right. Please contact donors@freecodecamp.org`;
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
@@ -54,7 +54,7 @@ function* addDonationSaga({ payload }) {
       error.response && error.response.data
         ? error.response.data
         : {
-            message: defaultDonationError
+            message: defaultDonationErrorMessage
           };
     yield put(addDonationError(data.message));
   }
@@ -68,21 +68,21 @@ function* postChargeStripeSaga({ payload }) {
     const err =
       error.response && error.response.data
         ? error.response.data.error
-        : defaultDonationError;
+        : defaultDonationErrorMessage;
     yield put(postChargeStripeError(err));
   }
 }
 
 function* postChargeStripeCardSaga({ payload }) {
   try {
-    yield call(postChargeStripeCard, payload);
+    const { error } = yield call(postChargeStripeCard, payload);
+    if (error) throw error;
     yield put(postChargeStripeCardComplete());
   } catch (error) {
-    const err =
-      error.response && error.response.data
-        ? error.response.data.error
-        : defaultDonationError;
-    yield put(postChargeStripeCardError(err));
+    const errorMessage = error.message
+      ? error.message
+      : defaultDonationErrorMessage;
+    yield put(postChargeStripeCardError(errorMessage));
   }
 }
 
