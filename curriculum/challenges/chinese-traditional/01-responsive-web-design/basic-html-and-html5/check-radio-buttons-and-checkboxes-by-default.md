@@ -23,7 +23,7 @@ dashedName: check-radio-buttons-and-checkboxes-by-default
 
 # --hints--
 
-表單的第一個多選按鈕應被默認選中。
+表單的第一個單選按鈕應被默認選中。
 
 ```js
 assert($('input[type="radio"]').prop('checked'));

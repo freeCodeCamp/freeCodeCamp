@@ -38,7 +38,7 @@ El componente React debe devolver un único elemento `div`.
 assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div');
 ```
 
-El `div` retornado debe renderizar un encabezado `h1` dentro de él.
+El `div` devuelto debe renderizar un encabezado `h1` dentro de él.
 
 ```js
 assert(
