@@ -27,7 +27,7 @@ Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix 
 
 # --hints--
 
-Your code should have 6 `<h3>` tags.
+Your code should have 6 `h3` elements.
 
 ```js
 assert($('h3').length === 6);
