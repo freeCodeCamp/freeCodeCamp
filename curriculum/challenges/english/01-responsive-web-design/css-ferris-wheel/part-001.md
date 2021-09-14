@@ -7,7 +7,11 @@ dashedName: part-1
 
 # --description--
 
-step 1 instructions
+Begin with the standard boilerplate. Add your `DOCTYPE` declaration, your `html` element, your `head` and `body` elements.
+
+Add your `meta` element for the correct `charset`, your `title` element, and a `link` element for the `./styles.css` file.
+
+Set the `title` to `CSS Ferris Wheel`.
 
 # --hints--
 
@@ -25,4 +29,8 @@ Test 1
 --fcc-editable-region--
 
 --fcc-editable-region--
+```
+
+```css
+
 ```

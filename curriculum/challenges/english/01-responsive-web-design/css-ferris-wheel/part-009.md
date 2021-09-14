@@ -1,0 +1,79 @@
+---
+id: 6140d1a351e88f159ed54fca
+title: Part 9
+challengeType: 0
+dashedName: part-9
+---
+
+# --description--
+
+Using the same pattern, create a separate selector for the third `.line`, the fourth `.line`, the fifth `.line`, and the sixth `.line`.
+
+Set the `transform` property for the third `.line` to `rotate(120deg)`, the fourth to `rotate(180deg)`, the fifth to `rotate(240deg)`, and the sixth to `rotate(300deg)`.
+
+# --hints--
+
+Test 1
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <title> Learn CSS Animations by Building a Ferris Wheel</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+
+    <div class="cabin"></div>
+    <div class="cabin"></div>
+    <div class="cabin"></div>
+    <div class="cabin"></div>
+    <div class="cabin"></div>
+    <div class="cabin"></div>
+  </body>
+</html>
+```
+
+```css
+.wheel {
+  border: 2px solid black;
+  border-radius: 50%;
+  margin-left: 50px;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+}
+
+.line {
+  background-color: black;
+  width: 50%;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%;
+}
+
+.line:nth-of-type(2) {
+  transform: rotate(60deg);
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+```
