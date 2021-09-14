@@ -33,7 +33,7 @@ Your code should have 6 `h3` elements.
 assert($('h3').length === 6);
 ```
 
-Your code should have 6 `<h3>` closing tags.
+Your code should have 6 `h3` closing tags.
 
 ```js
 assert((code.match(/\/h3/g) || []).length === 6);
