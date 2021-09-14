@@ -29,7 +29,7 @@ La clase `btn-default` debe ser eliminada de todos los elementos `button`.
 assert($('.btn-default').length === 0);
 ```
 
-Sólo debes usar jQuery para eliminar esta clase del elemento.
+Solo debes usar jQuery para eliminar esta clase del elemento.
 
 ```js
 assert(code.match(/btn btn-default/g));

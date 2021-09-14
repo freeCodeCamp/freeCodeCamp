@@ -273,7 +273,8 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
       defaultTheme,
       theme,
       t,
-      isMinimalForm
+      isMinimalForm,
+      isSignedIn
     } = this.props;
     const paymentButtonsLoading = loading.stripe && loading.paypal;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
@@ -307,6 +308,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
             handleProcessing={handleProcessing}
             isPaypalLoading={loading.paypal}
+            isSignedIn={isSignedIn}
             onDonationStateChange={this.onDonationStateChange}
             theme={defaultTheme ? defaultTheme : theme}
           />

@@ -10,7 +10,7 @@ dashedName: use-appendto-to-move-elements-with-jquery
 
 Ahora intentemos mover elementos de un `div` a otro.
 
-jQuery tiene una función llamada `appendTo()` que te permite seleccionar elementos HTML y añadirlos a otro elemento.
+jQuery tiene una función llamada `appendTo()` que te permite seleccionar elementos HTML y agregarlos a otro elemento.
 
 Por ejemplo, si quisiéramos mover `target4` desde nuestro "right well" a nuestro "left well", usaríamos:
 
@@ -34,7 +34,7 @@ Tu elemento `target2` debe estar dentro de `right-well`.
 assert($('#right-well').children('#target2').length > 0);
 ```
 
-Sólo debes usar jQuery para mover estos elementos.
+Solo debes usar jQuery para mover estos elementos.
 
 ```js
 assert(!code.match(/class.*animated/g));

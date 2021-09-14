@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable camelcase */
 
-import React, { Component } from 'react';
+import React, { Component, Ref } from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -17,6 +17,7 @@ import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
 
 type PaypalButtonProps = {
   addDonation: (data: AddDonationData) => void;
+  isSignedIn: boolean;
   donationAmount: number;
   donationDuration: string;
   handleProcessing: (
@@ -39,6 +40,7 @@ type PaypalButtonProps = {
   isPaypalLoading: boolean;
   skipAddDonation?: boolean;
   t: (label: string) => string;
+  ref?: Ref<PaypalButton>;
   theme: string;
   isSubscription?: boolean;
   handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
@@ -106,10 +108,10 @@ export class PaypalButton extends Component<
 
   handleApproval = (data: AddDonationData, isSubscription: boolean): void => {
     const { amount, duration } = this.state;
-    const { skipAddDonation = false } = this.props;
+    const { isSignedIn = false } = this.props;
 
-    // Skip the api if user is not signed in or if its a one-time donation
-    if (!skipAddDonation || isSubscription) {
+    // If the user is signed in and the payment is subscritipn call the api
+    if (isSignedIn && isSubscription) {
       this.props.addDonation(data);
     }
 

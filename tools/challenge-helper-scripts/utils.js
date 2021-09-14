@@ -113,7 +113,7 @@ const reorderSteps = () => {
 };
 
 const getChallengeSeeds = challengeFilePath => {
-  return parseMDSync(challengeFilePath).files;
+  return parseMDSync(challengeFilePath).challengeFiles;
 };
 
 module.exports = {

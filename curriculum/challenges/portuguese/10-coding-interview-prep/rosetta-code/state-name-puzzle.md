@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8024
-title: State name puzzle
+title: Desafio do nome do estado
 challengeType: 5
 forumTopicId: 302323
 dashedName: state-name-puzzle
@@ -8,21 +8,21 @@ dashedName: state-name-puzzle
 
 # --description--
 
-This task is inspired by Mark Nelson's DDJ Column "Wordplay" and one of the weekly puzzle challenges from Will Shortz on NPR Weekend Edition [\[1\]](https://www.npr.org/templates/story/story.php?storyId=9264290) and originally attributed to David Edelheit. The challenge was to take the names of two U.S. States, mix them all together, then rearrange the letters to form the names of two *different* U.S. States (so that all four state names differ from one another). What states are these? The problem was reissued on [the Unicon Discussion Web](https://tapestry.tucson.az.us/twiki/bin/view/Main/StateNamesPuzzle) which includes several solutions with analysis. Several techniques may be helpful and you may wish to refer to [Gödel numbering](https://en.wikipedia.org/wiki/Goedel_numbering), [equivalence relations](https://en.wikipedia.org/wiki/Equivalence_relation), and [equivalence classes](https://en.wikipedia.org/wiki/Equivalence_classes). The basic merits of these were discussed in the Unicon Discussion Web. A second challenge in the form of a set of fictitious new states was also presented.
+Esta tarefa é inspirada na coluna "Wordplay", de Mark Nelson no DDJ e um dos desafios semanais de Will Shortz na edição de fim de semana da NPR [\[1\]](https://www.npr.org/templates/story/story.php?storyId=9264290), sendo originalmente atribuída a David Edelheit. O desafio era pegar os nomes de dois estados dos Estados Unidos misturá-los, e, então, reorganizar as letras para formar os nomes de dois estados *diferentes* (para que os quatro nomes de estados sejam diferentes um do outro). Que estados são esses? O problema foi publicado novamente na [Unicon Discussion Web](https://tapestry.tucson.az.us/twiki/bin/view/Main/StateNamesPuzzle), que inclui diversas soluções com a análise. Várias técnicas podem ser úteis caso você queira consultar, como: [a numeração de Gödel](https://en.wikipedia.org/wiki/Goedel_numbering), [as relações de equivalência](https://en.wikipedia.org/wiki/Equivalence_relation) e [as classes de equivalência](https://en.wikipedia.org/wiki/Equivalence_classes). Os méritos básicos destas técnicas foram discutidos na Unicon Discussion Web. Foi também apresentado um segundo desafio, sob a forma de um conjunto de novos estados fictícios.
 
 # --instructions--
 
-Write a function to solve the challenge for the given array of names of states. The function should return an array. Each element should be an object in this form: `{"from":[],"to":[]}`. The "from" array should contain the original names and the "to" array should contain the resultant names.
+Escreva uma função para resolver o desafio para o array de nomes de estados fornecido. A função deve retornar um array. Cada elemento deve ser um objeto neste formato: `{"from":[],"to":[]}`. O array "from" deve conter os nomes originais e o array "to" deve conter os nomes resultantes.
 
 # --hints--
 
-`solve` should be a function.
+`solve` deve ser uma função.
 
 ```js
 assert(typeof solve == 'function');
 ```
 
-`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` should return an array.
+`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` deve retornar um array.
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
 );
 ```
 
-`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` should return `[{ from: ["North Carolina ", "South Dakota"], to: ["North Dakota", "South Carolina"] }]`.
+`solve(["New Mexico", "New York", "North Carolina ", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota"])` deve retornar `[{ from: ["North Carolina ", "South Dakota"], to: ["North Dakota", "South Carolina"] }]`.
 
 ```js
 assert.deepEqual(
@@ -70,7 +70,7 @@ assert.deepEqual(
 );
 ```
 
-`solve(["New York", "New Kory", "Wen Kory", "York New", "Kory New", "New Kory"])` should return `[{ from: ["New Kory", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "New York"], to: ["Kory New", "Wen Kory"] }, { from: ["New Kory", "New York"], to: ["Kory New", "York New"] }, { from: ["New York", "Wen Kory"], to: ["New Kory", "York New"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "New Kory"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New York", "York New"], to: ["New Kory", "Wen Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "New Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "York New"] }, { from: ["Kory New", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New Kory", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New Kory"], to: ["Wen Kory", "York New"] }]`.
+`solve(["New York", "New Kory", "Wen Kory", "York New", "Kory New", "New Kory"])` deve retornar `[{ from: ["New Kory", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "New York"], to: ["Kory New", "Wen Kory"] }, { from: ["New Kory", "New York"], to: ["Kory New", "York New"] }, { from: ["New York", "Wen Kory"], to: ["New Kory", "York New"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "New Kory"] }, { from: ["New York", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New York", "York New"], to: ["New Kory", "Wen Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "New Kory"] }, { from: ["New York", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "Wen Kory"] }, { from: ["Kory New", "New York"], to: ["New Kory", "York New"] }, { from: ["Kory New", "New York"], to: ["Wen Kory", "York New"] }, { from: ["New Kory", "Wen Kory"], to: ["Kory New", "York New"] }, { from: ["New Kory", "York New"], to: ["Kory New", "Wen Kory"] }, { from: ["Kory New", "New Kory"], to: ["Wen Kory", "York New"] }]`.
 
 ```js
 assert.deepEqual(

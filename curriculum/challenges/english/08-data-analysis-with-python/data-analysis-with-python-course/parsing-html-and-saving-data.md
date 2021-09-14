@@ -19,7 +19,7 @@ More resources:
 
 ## --text--
 
-What Python library has the `.read_html()` method we can we use for parsing HTML documents and extracting tables?
+What Python library has the `.read_html()` method we can use for parsing HTML documents and extracting tables?
 
 ## --answers--
 

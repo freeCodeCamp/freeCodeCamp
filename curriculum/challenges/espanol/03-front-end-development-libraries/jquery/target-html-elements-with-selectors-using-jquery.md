@@ -17,7 +17,7 @@ Ahora vamos a escribir nuestra primera declaración de jQuery. Todas las funcion
 
 jQuery a menudo selecciona un elemento HTML con un <dfn>selector</dfn>, y luego le hace algo a ese elemento.
 
-Por ejemplo, hagamos que todos tus elementos `button` reboten. Simplemente añade este código dentro de tu función de documento listo (document ready):
+Por ejemplo, hagamos que todos tus elementos `button` reboten. Simplemente agrega este código dentro de tu función document ready:
 
 ```js
 $("button").addClass("animated bounce");
@@ -33,13 +33,13 @@ Debes usar la función de jQuery `addClass()` para dar las clases `animated` y `
 assert($('button').hasClass('animated') && $('button').hasClass('bounce'));
 ```
 
-Solo debes usar jQuery para añadir estas clases al elemento.
+Solo debes usar jQuery para agregar estas clases al elemento.
 
 ```js
 assert(!code.match(/class.*animated/g));
 ```
 
-Tu código de jQuery debería estar dentro de la función `$(document).ready();`.
+Tu código de jQuery debe estar dentro de la función `$(document).ready();`.
 
 ```js
 assert(

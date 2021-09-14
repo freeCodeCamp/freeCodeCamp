@@ -1,6 +1,6 @@
 ---
 id: 594ecc0d9a8cf816e3340187
-title: Taxicab numbers
+title: Números taxicab
 challengeType: 5
 forumTopicId: 302337
 dashedName: taxicab-numbers
@@ -8,67 +8,67 @@ dashedName: taxicab-numbers
 
 # --description--
 
-A [taxicab number](https://en.wikipedia.org/wiki/Hardy–Ramanujan number "wp: Hardy–Ramanujan number") (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
+Um [Número taxicab](https://pt.wikipedia.org/wiki/N%C3%Bamero_taxicab) (a definição que está sendo usada aqui) é um inteiro positivo que pode ser expressado como a soma de dois cubos positivos em mais de uma maneira.
 
-The first taxicab number is `1729`, which is:
+O primeiro número taxicab é `1729`, que é:
 
-1<sup>3</sup> + 12<sup>3</sup> and
+1<sup>3</sup> + 12<sup>3</sup> e
 
 9<sup>3</sup> + 10<sup>3</sup>.
 
-Taxicab numbers are also known as:
+Os números taxicab também são conhecidos como:
 
 <ul>
-  <li>taxi numbers</li>
-  <li>taxi-cab numbers</li>
-  <li>taxi cab numbers</li>
-  <li>Hardy-Ramanujan numbers</li>
+  <li>números taxi</li>
+  <li>números taxi-cab</li>
+  <li>números taxi cab</li>
+  <li>Números de Hardy-Ramanujan</li>
 </ul>
 
 # --instructions--
 
-Write a function that returns the lowest `n` taxicab numbers. For each of the taxicab numbers, show the number as well as its constituent cubes.
+Escreva uma função que retorne o menor número taxicab de `n`. Para cada um dos números taxicab, mostre o número e os cubos que o constituem.
 
-**See also:**
+**Veja também:**
 
 <ul>
-  <li><a href='https://oeis.org/A001235' target='_blank'>A001235 taxicab numbers</a> on The On-Line Encyclopedia of Integer Sequences.</li>
-  <li><a href='https://en.wikipedia.org/wiki/Taxicab_number' target='_blank'>taxicab number</a> on Wikipedia.</li>
+  <li><a href='https://oeis.org/A001235' target='_blank'>A001235 números taxicab</a> na The On-Line Encyclopedia of Integer Sequences.</li>
+  <li><a href='https://pt.wikipedia.org/wiki/N%C3%Bamero_taxicab' target='_blank'>Número taxicab</a> na Wikipédia.</li>
 </ul>
 
 # --hints--
 
-`taxicabNumbers` should be a function.
+`taxicabNumbers` deve ser uma função.
 
 ```js
 assert(typeof taxicabNumbers === 'function');
 ```
 
-`taxicabNumbers` should return an array.
+`taxicabNumbers` deve retornar um array.
 
 ```js
 assert(typeof taxicabNumbers(2) === 'object');
 ```
 
-`taxicabNumbers` should return an array of numbers.
+`taxicabNumbers` deve retornar um array de números.
 
 ```js
 assert(typeof taxicabNumbers(100)[0] === 'number');
 ```
 
-`taxicabNumbers(4)` should return [1729, 4104, 13832, 20683].
+`taxicabNumbers(4)` deve retornar [1729, 4104, 13832, 20683].
 
 ```js
 assert.deepEqual(taxicabNumbers(4), res4);
 ```
 
-`taxicabNumbers(25)` should return [1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656, 110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763, 373464, 402597]
+`taxicabNumbers(25)` deve retornar [1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656, 110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 2656, 314496, 320264, 327763, 373464, 402597]
 
 ```js
 assert.deepEqual(taxicabNumbers(25), res25);
 ```
 
-`taxicabNumbers(39)` resulting numbers from 20 - 29 should be [314496,320264,327763,373464,402597,439101,443889,513000,513856].
+`taxicabNumbers(39)` resultando números de 20 - 29 devem ser [314496,320264,327763,373464,402597,439101,443889,513000,513856].
 
 ```js
 assert.deepEqual(taxicabNumbers(39).slice(20, 29), res39From20To29);

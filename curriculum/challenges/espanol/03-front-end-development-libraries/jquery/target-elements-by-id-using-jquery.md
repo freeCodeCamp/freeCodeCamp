@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aeda08826
-title: Apunta a elementos por clase usando jQuery
+title: Apunta a elementos por id usando jQuery
 challengeType: 6
 forumTopicId: 18317
 required:
@@ -17,7 +17,7 @@ Primero apunta a tu elemento `button` con el id `target3` usando el selector `$(
 
 Ten en cuenta que, al igual que con las declaraciones CSS, escribes un `#` antes del nombre del id.
 
-Luego usa la función `.addClass()` de jQuery para añadir las clases `animated` y `fadeOut`.
+Luego usa la función `.addClass()` de jQuery para agregar las clases `animated` y `fadeOut`.
 
 Así es como harás que el elemento `button` con el id `target6` se desvanezca:
 
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-Solo debes usar jQuery para agregar estas clases al elemento.
+Debes usar solo jQuery para agregar estas clases al elemento.
 
 ```js
 assert(!code.match(/class.*animated/g));

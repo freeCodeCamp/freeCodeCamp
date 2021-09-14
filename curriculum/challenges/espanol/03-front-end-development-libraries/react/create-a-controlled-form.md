@@ -22,7 +22,7 @@ Por último, crea una etiqueta `h1` después del `form` que renderiza el valor d
 
 # --hints--
 
-`MyForm` debe retornar un elemento `div` que contiene un `form` y una etiqueta `h1`. El formulario debe incluir un `input` y un `button`.
+`MyForm` debe devolver un elemento `div` que contiene un `form` y una etiqueta `h1`. El formulario debe incluir un `input` y un `button`.
 
 ```js
 assert(

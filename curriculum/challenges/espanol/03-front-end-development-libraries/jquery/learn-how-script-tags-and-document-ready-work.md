@@ -10,13 +10,13 @@ dashedName: learn-how-script-tags-and-document-ready-work
 
 Ahora estamos listos para aprender jQuery, la herramienta de JavaScript más popular de todos los tiempos.
 
-Antes de empezar a usar jQuery, necesitamos añadir algunas cosas a nuestro HTML.
+Antes de empezar a usar jQuery, necesitamos agregar algunas cosas a nuestro HTML.
 
-Primero, añade un elemento `script` en la parte superior de tu página. Asegúrate de cerrarlo en la siguiente línea.
+Primero, agrega un elemento `script` en la parte superior de tu página. Asegúrate de cerrarlo en la siguiente línea.
 
 Tu navegador ejecutará cualquier JavaScript dentro de un elemento `script`, incluyendo jQuery.
 
-Dentro de tu elemento `script`, añade este código: `$(document).ready(function() {` a tu `script`. Luego ciérralo en la siguiente línea (todavía dentro de tu elemento `script`) con: `});`
+Dentro de tu elemento `script`, agrega este código: `$(document).ready(function() {` a tu `script`. Luego ciérralo en la siguiente línea (todavía dentro de tu elemento `script`) con: `});`
 
 Aprenderemos más sobre `functions` más tarde. Lo importante a saber es que el código que pongas dentro de esta `function` (función) se ejecutará tan pronto como tu navegador haya cargado tu página.
 
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-Debes añadir `$(document).ready(function() {` al principio de tu elemento `script`.
+Debes agregar `$(document).ready(function() {` al principio de tu elemento `script`.
 
 ```js
 assert(

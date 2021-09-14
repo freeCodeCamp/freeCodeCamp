@@ -39,7 +39,7 @@ Debes usar el selector `:even` para modificar estos elementos.
 assert(code.match(/\:even/g));
 ```
 
-Solo debes usar jQuery para añadir estas clases al elemento.
+Solo debes usar jQuery para agregar estas clases al elemento.
 
 ```js
 assert(

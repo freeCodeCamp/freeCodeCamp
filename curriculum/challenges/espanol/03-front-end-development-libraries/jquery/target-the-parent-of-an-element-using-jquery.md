@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-Solo debes usar jQuery para añadir estas clases al elemento.
+Solo debes usar jQuery para agregar estas clases al elemento.
 
 ```js
 assert(code.match(/<div class="well" id="left-well">/g));

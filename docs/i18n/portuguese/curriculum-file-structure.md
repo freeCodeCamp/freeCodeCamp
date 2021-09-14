@@ -41,7 +41,7 @@ Pode haver situações em que você precise renomear um certificado, superbloco,
 
 Ao renomear uma certificação, você provavelmente vai querer renomear o superbloco associado a ela. Faça o seguinte para renomear somente o certificado:
 
-1. Rename the `curriculum/challenges/_meta/{superBlock}-certificate` folder to the new name.
+1. Renomeie a pasta `curriculum/challenges/_meta/{superBlock}-certificate` com o novo nome.
 1. No arquivo `meta.json` daquela pasta, renomeie os valores em `name`, `dashedName` e `challengeOrder` para o novo nome do certificado.
 1. Em `curriculum/challenges/english/12-certificate`, renomeie a pasta `{superBlock}-certificate` e o arquivo YAML dentro dela com o novo nome.
 1. No arquivo YAML, altere o `title` para o novo nome.
