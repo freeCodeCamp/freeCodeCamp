@@ -39,7 +39,7 @@ Your code should have 6 `<h3>` closing tags.
 assert((code.match(/\/h3/g) || []).length === 6);
 ```
 
-Your code should not have any `<h5>` tags.
+Your code should not have any `h5` elements.
 
 ```js
 assert($('h5').length === 0);
