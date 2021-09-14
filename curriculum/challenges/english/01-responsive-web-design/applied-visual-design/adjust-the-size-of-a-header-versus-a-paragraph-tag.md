@@ -4,7 +4,7 @@ title: Adjust the Size of a Heading Tag Versus a Paragraph Tag
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
-dashedName: adjust-the-size-of-a-heading-tag-versus-a-paragraph-tag
+dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 ---
 
 # --description--
