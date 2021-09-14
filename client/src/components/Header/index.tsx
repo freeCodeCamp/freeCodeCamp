@@ -26,7 +26,6 @@ export class Header extends React.Component<
       displayMenu: false
     };
     this.menuButtonRef = React.createRef();
-    this.searchBarRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.toggleDisplayMenu = this.toggleDisplayMenu.bind(this);
   }
