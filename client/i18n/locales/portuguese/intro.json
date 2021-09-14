@@ -98,6 +98,13 @@
           "Pablo Picasso era conhecido pelo seu estilo de pintura, o Cubismo, um estilo reconhecido pelas representações de objetos quebrados e remontados a partir de múltiplas perspectivas. As pinturas de Picasso são muitas vezes muito abstratas e fazem pensar.",
           "Neste curso, você usará o CSS para criar sua própria pintura ao estilo de Picasso. Você aprenderá sobre os ícones SVG FontAwesome, posicionamento em CSS e reforçará as habilidades que você já está aprendendo."
         ]
+      },
+      "css-piano": {
+        "title": "CSS Piano",
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
