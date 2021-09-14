@@ -1,0 +1,13 @@
+{
+  "name": "CSS Ferris Wheel",
+  "isUpcomingChange": true,
+  "dashedName": "css-ferris-wheel",
+  "order": 15,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [["6140c7e645d8e905819f1dd4", "Part 1"]]
+}
