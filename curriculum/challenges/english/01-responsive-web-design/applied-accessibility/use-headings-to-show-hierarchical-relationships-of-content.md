@@ -45,7 +45,7 @@ Your code should not have any `h5` elements.
 assert($('h5').length === 0);
 ```
 
-Your code should not have any `<h5>` closing tags.
+Your code should not have any `h5` closing tags.
 
 ```js
 assert(/\/h5/.test(code) === false);
