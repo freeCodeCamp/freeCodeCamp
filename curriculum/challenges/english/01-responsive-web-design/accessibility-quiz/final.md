@@ -2,7 +2,7 @@
 id: 611e5716f9246f125f63815b
 title: Final Prototype
 challengeType: 0
-dashedName: part-9
+dashedName: part-13
 ---
 
 # --description--
@@ -181,29 +181,27 @@ body {
 header {
 	width: 100%;
 	height: 50px;
+	background-color: #1b1b32;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	position: fixed;
-	background-color: #1b1b32;
 	top: 0;
 }
 
 #logo {
 	width: max(100px, 18vw);
-  aspect-ratio: 4 / 1;
+	background-color: #0a0a23;
+  aspect-ratio: 35 / 4;
+	padding: 0.4rem;
   max-height: 100%;
-	/* height: calc(100% - 0.3rem); */
-	color: black;
-	background-color: black;
-	padding: 0 0.3rem;
 }
 
 h1 {
-	text-align: center;
-	font-size: min(5vw, 1.2em);
 	color: #f1be32;
+	font-size: min(5vw, 1.2em);
+	text-align: center;
 }
 
 nav {
@@ -215,7 +213,7 @@ nav {
 nav > ul {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
 	padding-inline-start: 0;
 	margin-block: 0;

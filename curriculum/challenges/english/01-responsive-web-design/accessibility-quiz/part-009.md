@@ -1,25 +1,49 @@
 ---
-id: 613e275749ebd008e74bb62e
-title: Part 8
+id: 6140827cff96e906bd38fc2b
+title: Part 9
 challengeType: 0
-dashedName: part-8
+dashedName: part-9
 ---
 
 # --description--
 
-A useful property of an _SVG_ (scalable vector graphics) is that is contains a `path` attribute which allows the image to be scaled without affecting the resolution of the resultant image.
+As described in the [freeCodeCamp Style Guide](https://design-style-guide.freecodecamp.org/), the logo should retain an aspect ratio of `35:4`, and have padding around the text.
 
-Currently, the `img` is assuming it's default size, which is too large. Correctly, scale the image using it's `id` as a selector, and setting the `width` to `max(100px, 18vw)`.
+First, change the `background-color` to `#0a0a23` so you can see the logo. Then, use the `aspect-ratio` property to set the desired aspect ratio. Finally, add a `padding` of `0.4rem` all around.
 
 # --hints--
 
-You should use the `#logo` selector to target the `img` element.
+You should give the `#logo` a `background-color` of `#0a0a23`.
 
 ```js
 
 ```
 
-You should give the `img` a `width` of `max(100px, 18vw)`.
+You should use the `aspect-ratio` property.
+
+```js
+
+```
+
+You should not use the `height` property.
+
+```js
+
+```
+
+You should not change the `width` property.
+
+```js
+
+```
+
+You should give the `img` an `aspect-ratio` of `35 / 4`.
+
+```js
+
+```
+
+You should give the `img` a `padding` of `0.4rem`.
 
 ```js
 
@@ -60,7 +84,10 @@ body {
 }
 
 --fcc-editable-region--
+#logo {
+  width: max(100px, 18vw);
 
+}
 --fcc-editable-region--
 
 ```

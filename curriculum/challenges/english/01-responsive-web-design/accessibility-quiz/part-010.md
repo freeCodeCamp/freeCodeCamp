@@ -1,25 +1,41 @@
 ---
-id: 613e275749ebd008e74bb62e
-title: Part 8
+id: 6140883f74224508174794c0
+title: Part 10
 challengeType: 0
-dashedName: part-8
+dashedName: part-10
 ---
 
 # --description--
 
-A useful property of an _SVG_ (scalable vector graphics) is that is contains a `path` attribute which allows the image to be scaled without affecting the resolution of the resultant image.
-
-Currently, the `img` is assuming it's default size, which is too large. Correctly, scale the image using it's `id` as a selector, and setting the `width` to `max(100px, 18vw)`.
+Make the `header` take up the full width of its parent container, set it's `height` to `50px`, and set the `background-color` to `#1b1b32`. Then, set the `display` to use _Flexbox_.
 
 # --hints--
 
-You should use the `#logo` selector to target the `img` element.
+You should use the `header` element selector.
 
 ```js
 
 ```
 
-You should give the `img` a `width` of `max(100px, 18vw)`.
+You should give the `header` a `width` of `100%`.
+
+```js
+
+```
+
+You should give the `header` a `height` of `50px`.
+
+```js
+
+```
+
+You should give the `header` a `background-color` of `#1b1b32`.
+
+```js
+
+```
+
+You should give the `header` a `display` of `flex`.
 
 ```js
 
@@ -62,5 +78,12 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
+#logo {
+  width: max(100px, 18vw);
+	background-color: #0a0a23;
+  aspect-ratio: 35 / 4;
+	padding: 0.4rem;
+}
 
 ```

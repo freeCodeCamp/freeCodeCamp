@@ -1,25 +1,29 @@
 ---
-id: 613e275749ebd008e74bb62e
-title: Part 8
+id: 61408e4ae3e35d08feb260eb
+title: Part 11
 challengeType: 0
-dashedName: part-8
+dashedName: part-11
 ---
 
 # --description--
 
-A useful property of an _SVG_ (scalable vector graphics) is that is contains a `path` attribute which allows the image to be scaled without affecting the resolution of the resultant image.
-
-Currently, the `img` is assuming it's default size, which is too large. Correctly, scale the image using it's `id` as a selector, and setting the `width` to `max(100px, 18vw)`.
+Change the `h1` font colour to `#f1be32`, and set the font size to `min(5vw, 1.2em)`.
 
 # --hints--
 
-You should use the `#logo` selector to target the `img` element.
+You should use the `h1` element selector.
 
 ```js
 
 ```
 
-You should give the `img` a `width` of `max(100px, 18vw)`.
+You should give the `h1` a `font-color` of `#f1be32`.
+
+```js
+
+```
+
+You should give the `h1` a `font-size` of `min(5vw, 1.2em)`.
 
 ```js
 
@@ -59,8 +63,21 @@ body {
 	margin: 0;
 }
 
---fcc-editable-region--
+header {
+  width: 100%;
+	height: 50px;
+	background-color: #1b1b32;
+	display: flex;
+}
+
+#logo {
+  width: max(100px, 18vw);
+	background-color: #0a0a23;
+  aspect-ratio: 35 / 4;
+	padding: 0.4rem;
+}
 
 --fcc-editable-region--
 
+--fcc-editable-region--
 ```
