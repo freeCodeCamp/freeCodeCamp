@@ -7,9 +7,7 @@ dashedName: part-12
 
 # --description--
 
-Set the `.cabin` to have a `transform-origin` property of `50% 0%`.
-
-TODO: Think this is new toooooo
+Set the `.cabin` to have a `transform-origin` property of `50% 0%`. This will set the origin point to be offset `50%` from the left and `0%` from the top, placing it in the middle of the top edge of the element.
 
 # --hints--
 

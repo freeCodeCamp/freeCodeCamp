@@ -7,9 +7,9 @@ dashedName: part-22
 
 # --description--
 
-Set the `animation` property of the `.cabin` rule to `cabins 10s linear infinite`.
+With your `.wheel` selector, you created four different properties to control the animation. For your `.cabin` selector, you can use the `animation` property to set these all at once.
 
-TODO: More explain
+Set the `animation` property of the `.cabin` rule to `cabins 10s linear infinite`. This will set the `animation-name`, `animation-duration`, `animation-timing-function`, and `animation-iteration-count` properties in that order.
 
 # --hints--
 

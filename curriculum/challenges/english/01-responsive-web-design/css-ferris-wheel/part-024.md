@@ -7,9 +7,7 @@ dashedName: part-24
 
 # --description--
 
-In the `0%` selector, set the `background-color` to `yellow`.
-
-TODO: More explain
+You can use `@keyframes` rules to control more than just the transformation of an element. In the `0%` selector, set the `background-color` to `yellow`.
 
 # --hints--
 

@@ -7,9 +7,7 @@ dashedName: part-16
 
 # --description--
 
-In the `@keyframes wheel`, create a `0%` selector.
-
-TODO: More explain
+You now need to define how your animation should start. To do this, create a `0%` rule within your `@keyframes wheel` rule. The properties you set in this nested selector will apply at the beginning of your animation.
 
 # --hints--
 

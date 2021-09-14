@@ -7,9 +7,9 @@ dashedName: part-7
 
 # --description--
 
-Give the `.line` selector a `transform-origin` property of `0% 0%`.
+The `transform-origin` property is used to set the point around which a CSS transformation is applied. For example, when performing a `rotate` (which you will do later in this project), the `transform-origin` determines around which point the element is rotated.
 
-TODO: This is new concept? Explain better?
+Give the `.line` selector a `transform-origin` property of `0% 0%`. This will offset the origin point by `0%` from the left and `0%` from the top, setting it to the top left corner of the element.
 
 # --hints--
 

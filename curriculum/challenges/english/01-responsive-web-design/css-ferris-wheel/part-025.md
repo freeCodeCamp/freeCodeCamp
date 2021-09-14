@@ -7,9 +7,9 @@ dashedName: part-25
 
 # --description--
 
-Between the `0%` and `100%` selectors, add a `50%` selector. Set the `background-color` to `purple`.
+Between the `0%` and `100%` selectors, add a `50%` selector. This will apply in the middle of the animation cycle. Set the `background-color` to `purple`.
 
-TODO: Explain
+With that, your ferris wheel is complete! 
 
 # --hints--
 

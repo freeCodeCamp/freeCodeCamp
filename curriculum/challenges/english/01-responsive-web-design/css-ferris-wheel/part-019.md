@@ -7,9 +7,9 @@ dashedName: part-19
 
 # --description--
 
-Give the `.wheel` selector an `animation-name` property set to `wheel` and an `animation-duration` property set to `10s`.
+The `animation-name` property is used to link a `@keyframes` rule to a CSS selector. The value of this property should match the name of the `@keyframes` rule. Give your `.wheel` selector an `animation-name` property set to `wheel`.
 
-TODO: More explain
+The `animation-duration` property is used to set how long the animation should sequence to complete. The time should be specified in either seconds (`s`) or milliseconds (`ms`). Set your `.wheel` selector to have an `animation-duration` property of `10s`.
 
 # --hints--
 

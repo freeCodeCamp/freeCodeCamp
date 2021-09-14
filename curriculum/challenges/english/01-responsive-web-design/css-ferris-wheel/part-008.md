@@ -9,7 +9,7 @@ dashedName: part-8
 
 Create a selector to target your second `.line` element. Set the `transform` property to `rotate(40deg)`.
 
-TODO: Is transform new?
+Remember that the `transform` property allows you to manipulate the shape of an element. In this case, using the `rotate(40deg)` value will rotate the element around its `transform-origin` point by 40 degrees clockwise.
 
 # --hints--
 

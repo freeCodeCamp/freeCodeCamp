@@ -7,9 +7,9 @@ dashedName: part-23
 
 # --description--
 
-Replace `linear` to `ease-in-out` in the `.cabin` selector.
+To make your cabin animation seem more like a natural swinging motion, you can use the `ease-in-out` timing function. This setting will tell the animation to start and end at a slower pace, but move more quickly in the middle of the cycle.
 
-TODO: More explain
+Replace `linear` to `ease-in-out` in the `.cabin` selector.
 
 # --hints--
 

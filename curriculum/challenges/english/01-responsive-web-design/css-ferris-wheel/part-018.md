@@ -7,7 +7,7 @@ dashedName: part-18
 
 # --description--
 
-Now give the `@keyframes wheel` rule a `100%` selector. Within that, set the `transform` to `rotate(360deg)`.
+Now give the `@keyframes wheel` rule a `100%` selector. Within that, set the `transform` to `rotate(360deg)`. By doing this, your animation will now complete a full rotation.
 
 # --hints--
 

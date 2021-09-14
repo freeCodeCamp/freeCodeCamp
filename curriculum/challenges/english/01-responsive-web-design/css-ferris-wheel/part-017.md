@@ -7,9 +7,7 @@ dashedName: part-17
 
 # --description--
 
-Give the `0%` rule a `transform` property set to `rotate(0deg)`.
-
-TODO: More explain
+Give the `0%` rule a `transform` property set to `rotate(0deg)`. This will start the animation with no rotation.
 
 # --hints--
 

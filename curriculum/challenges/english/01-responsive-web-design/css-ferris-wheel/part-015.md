@@ -7,9 +7,11 @@ dashedName: part-15
 
 # --description--
 
-Time to start animating. Create a `@keyframes` rule named `wheel`.
+The `@keyframes` at-rule is used to define the flow of a CSS animation. Within the `@keyframes` rule, you can create selectors for specific points in the animation sequence, such as `0%` or `25%`, or use `from` and `to` to define the start and end of the sequence.
 
-TODO: More explain.
+`@keyframes` at-rules require a name to be assigned to them, which you use in other rules to reference. For example, the `@keyframes freeCodeCamp` rule would be named `freeCodeCamp`.
+
+Time to start animating. Create a `@keyframes` rule named `wheel`.
 
 # --hints--
 
