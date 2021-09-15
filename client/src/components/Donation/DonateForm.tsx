@@ -223,13 +223,11 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
 
   postStripeCardDonation(token: Token) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
-    if (this.props.handleProcessing) {
-      this.props.handleProcessing(
-        duration,
-        amount,
-        'Stripe card payment submission'
-      );
-    }
+    this.props.handleProcessing(
+      duration,
+      amount,
+      'Stripe card payment submission'
+    );
     this.props.postChargeStripeCard({
       token,
       amount,
@@ -334,8 +332,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           />
           {isMinimalForm && (
             <>
-              <div className='separator'>Or donate with card</div>
-
+              <div className='separator'>{t('donate.or-card')}</div>
               <StripeCardForm
                 onDonationStateChange={this.onDonationStateChange}
                 postStripeCardDonation={this.postStripeCardDonation}

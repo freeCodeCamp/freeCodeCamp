@@ -319,6 +319,7 @@
     "nicely-done": "Nicely done. You just completed {{block}}.",
     "credit-card": "Credit Card",
     "credit-card-2": "Or donate with a credit card:",
+    "or-card": "Or donate with card", 
     "paypal": "with PayPal:",
     "need-email": "We need a valid email address to which we can send your donation tax receipt.",
     "went-wrong": "Something went wrong processing your donation. Your card has not been charged.",

@@ -92,6 +92,7 @@ const StripeCardForm = ({
     if (!isPaymentInfoValid) return setSubmissionValidity(false);
     else setSubmissionValidity(true);
 
+    setSubmitting(true);
     if (!isSubmitting && stripe && elements) {
       const cardElement = elements.getElement(CardNumberElement);
       if (cardElement) {

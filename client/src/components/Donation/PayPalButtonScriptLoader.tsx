@@ -101,6 +101,7 @@ export class PayPalButtonScriptLoader extends Component<
     };
     isMinimalForm: boolean | undefined;
   }): void {
+    // We need to load a new script if any of the following changes.
     if (
       prevProps.isSubscription !== this.state.isSubscription ||
       prevProps.style.color !== this.props.style.color ||
