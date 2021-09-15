@@ -4,7 +4,7 @@ title: Ajusta el tamaño de un título contra una etiqueta de párrafo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
-dashedName: adjust-the-size-of-a-header-versus-a-paragraph-tag
+dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 ---
 
 # --description--

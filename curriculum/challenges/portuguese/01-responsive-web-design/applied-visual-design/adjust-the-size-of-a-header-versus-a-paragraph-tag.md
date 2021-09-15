@@ -4,7 +4,7 @@ title: Contrastar o tamanho de um título com o de um parágrafo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
-dashedName: adjust-the-size-of-a-header-versus-a-paragraph-tag
+dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 ---
 
 # --description--

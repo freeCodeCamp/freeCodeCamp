@@ -4,7 +4,7 @@ title: Regolare la dimensione di un'intestazione rispetto a quella di un paragra
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
-dashedName: adjust-the-size-of-a-header-versus-a-paragraph-tag
+dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 ---
 
 # --description--
