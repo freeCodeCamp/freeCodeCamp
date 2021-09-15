@@ -42,12 +42,10 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.margin, '0px');
 ```
 
 ```css
-
 --fcc-editable-region--
 body {
   width: 100%;
   height: 100vh;
 }
 --fcc-editable-region--
-
 ```

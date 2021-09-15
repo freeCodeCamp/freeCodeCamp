@@ -58,7 +58,6 @@ assert([...document.querySelector('html').children].some(x => x.localName === 'b
 ## --seed-contents--
 
 ```html
-
 --fcc-editable-region--
 <!DOCTYPE html>
 <html>

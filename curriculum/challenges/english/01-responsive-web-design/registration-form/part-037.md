@@ -83,7 +83,6 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
 ```
 
 ```css
-
 --fcc-editable-region--
 body {
   width: 100%;

@@ -48,9 +48,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.height, '100vh');
 ```
 
 ```css
-
 --fcc-editable-region--
 
 --fcc-editable-region--
-
 ```

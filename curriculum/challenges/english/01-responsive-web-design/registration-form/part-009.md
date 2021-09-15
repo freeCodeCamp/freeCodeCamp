@@ -54,7 +54,6 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.color, 'rgb(245, 
 ```
 
 ```css
-
 --fcc-editable-region--
 body {
   width: 100%;
@@ -62,5 +61,4 @@ body {
   margin: 0;
 }
 --fcc-editable-region--
-
 ```
