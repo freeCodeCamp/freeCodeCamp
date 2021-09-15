@@ -9,7 +9,6 @@ const selectors = {
     '/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form',
   description: '#description',
   instructions: '.instructions-panel',
-  learnWrapper: '#learn-app-wrapper',
   editor: '.monaco-editor textarea:first',
   console: '.output-text'
 };
@@ -21,15 +20,15 @@ describe('The hotkeys should work correctly', () => {
 
   it('should be possible to navigate to the next challenge/projects and previous', () => {
     cy.get(selectors.description).click().type('{esc}');
-    cy.get(selectors.learnWrapper).type('n');
+    cy.get('body').type('n');
     cy.url().should('include', selectors.link2);
     cy.get(selectors.description).click().type('{esc}');
-    cy.get(selectors.learnWrapper).type('p');
+    cy.get('body').type('p');
     cy.url().should('include', selectors.link1);
     cy.visit(selectors.link3);
-    cy.get(selectors.learnWrapper).type('{esc}').type('n');
+    cy.get('body').type('{esc}').type('n');
     cy.url().should('include', selectors.link4);
-    cy.get(selectors.learnWrapper).type('{esc}').type('p');
+    cy.get('body').type('{esc}').type('p');
     cy.url().should('include', selectors.link3);
   });
 
@@ -49,7 +48,6 @@ describe('The hotkeys should work correctly', () => {
     cy.get(selectors.editor).should('not.have.focus');
   });
 
-  // it should be possible to focus on the instructions by pressing r
   it('it should be possible to focus on the instructions by pressing r', () => {
     cy.get(selectors.editor).type('{esc}');
     cy.get(selectors.instructions).click().type('r');
