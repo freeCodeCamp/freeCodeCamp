@@ -567,7 +567,6 @@
     "title": "Claim Your Certification",
     "intro": "Complete the following steps to claim and view your {{i18nCertText}}",
     "complete-project": "Complete {{i18nCertText}} Projects",
-    "login": "Login to claim certification",
     "accept-honesty": "Accept our Academic Honesty Policy",
     "set-name": "Set your name, and make it public",
     "set-certs-public": "Set your certification settings to public",

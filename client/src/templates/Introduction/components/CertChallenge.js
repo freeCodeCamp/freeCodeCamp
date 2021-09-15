@@ -73,7 +73,6 @@ const CertChallenge = ({
   isSignedIn,
   user: { isHonest, username }
 }) => {
-  const { pending, complete } = fetchState;
   const [canClaim, setCanClaim] = useState({ status: false, result: '' });
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
@@ -102,10 +101,14 @@ const CertChallenge = ({
   const { certSlug } = certMap.find(x => x.title === title);
 
   useEffect(() => {
+    const { pending, complete } = fetchState;
+
     if (complete && !pending) {
       setUserLoaded(true);
     }
+  }, [fetchState]);
 
+  useEffect(() => {
     setIsCertified(
       steps?.currentCerts?.find(
         cert =>
