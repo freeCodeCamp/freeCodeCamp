@@ -147,9 +147,8 @@ const CardFormWrapper = (props: FormPropTypes): JSX.Element | null => {
   if (!stripePublicKey) {
     return null;
   } else {
-    const stripePromise = loadStripe(stripePublicKey);
     return (
-      <Elements stripe={stripePromise}>
+      <Elements stripe={loadStripe(stripePublicKey)}>
         <StripeCardForm {...props} />
       </Elements>
     );

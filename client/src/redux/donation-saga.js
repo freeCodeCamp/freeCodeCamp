@@ -79,9 +79,7 @@ function* postChargeStripeCardSaga({ payload }) {
     if (error) throw error;
     yield put(postChargeStripeCardComplete());
   } catch (error) {
-    const errorMessage = error.message
-      ? error.message
-      : defaultDonationErrorMessage;
+    const errorMessage = error.message || defaultDonationErrorMessage;
     yield put(postChargeStripeCardError(errorMessage));
   }
 }
