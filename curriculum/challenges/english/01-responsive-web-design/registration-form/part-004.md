@@ -23,6 +23,7 @@ The `title` element should be within the `head` element.
 ```js
 const head = document.querySelector('head');
 // TODO: head does not contain title...body contains title
+assert(true);
 ```
 
 Your project should have a title of `freeCodeCamp Registration Form Project`.
