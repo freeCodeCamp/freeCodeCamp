@@ -78,6 +78,13 @@
           ""
         ]
       },
+      "css-box-model": {
+        "title": "Modelo da caixa do CSS",
+        "intro": [
+          "Mark Rothko era conhecido por seu estilo abstrato de pintura. As pinturas de Rothko comumente retratavam regiões retangulares coloridas em tamanhos variados.",
+          "Nesta lição, você usará o CSS para criar sua própria pintura no estilo de Rothko. Você usará muitas das habilidades que você já está praticando, bem como novas ferramentas do CSS como o desfoque (blur) e a transformação (transform)."
+        ]
+      },
       "css-variables-skyline": {
         "title": "Horizonte com variáveis de CSS",
         "intro": [
@@ -90,6 +97,13 @@
         "intro": [
           "Pablo Picasso era conhecido pelo seu estilo de pintura, o Cubismo, um estilo reconhecido pelas representações de objetos quebrados e remontados a partir de múltiplas perspectivas. As pinturas de Picasso são muitas vezes muito abstratas e fazem pensar.",
           "Neste curso, você usará o CSS para criar sua própria pintura ao estilo de Picasso. Você aprenderá sobre os ícones SVG FontAwesome, posicionamento em CSS e reforçará as habilidades que você já está aprendendo."
+        ]
+      },
+      "css-piano": {
+        "title": "CSS Piano",
+        "intro": [
+          "",
+          ""
         ]
       }
     }
