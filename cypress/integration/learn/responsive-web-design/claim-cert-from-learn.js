@@ -1,5 +1,3 @@
-/* global cy */
-
 const projects = {
   superBlock: 'responsive-web-design',
   block: 'responsive-web-design-projects',
@@ -51,6 +49,7 @@ describe('Responsive Web Design Superblock', () => {
   });
   describe('After submitting all 5 projects', () => {
     before(() => {
+      cy.login();
       cy.toggleAll();
       const { superBlock, block, challenges } = projects;
       challenges.forEach(({ slug, solution }) => {
@@ -62,7 +61,13 @@ describe('Responsive Web Design Superblock', () => {
         cy.contains("I've completed this challenge")
           .should('not.be.disabled')
           .click();
+        cy.intercept('http://localhost:3000/project-completed').as(
+          'challengeCompleted'
+        );
         cy.contains('Submit and go to next challenge').click();
+        cy.wait('@challengeCompleted')
+          .its('response.statusCode')
+          .should('eq', 200);
         cy.location().should(loc => {
           expect(loc.pathname).to.not.eq(url);
         });
@@ -74,7 +79,7 @@ describe('Responsive Web Design Superblock', () => {
       });
       cy.get('.donation-modal').should('be.visible');
       cy.contains('Ask me later').click();
-      cy.get('.donation-modal').should('not.be.visible');
+      cy.get('.donation-modal').should('not.exist');
       // directed to claim-cert-block section
       cy.url().should('include', '#claim-cert-block');
       cy.contains('Claim Certification').should('not.be.disabled').click();

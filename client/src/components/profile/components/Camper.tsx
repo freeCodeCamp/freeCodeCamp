@@ -1,21 +1,20 @@
-import React from 'react';
-import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAward,
   faCalendar,
   faHeart
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Col, Row } from '@freecodecamp/react-bootstrap';
+import React from 'react';
 import { TFunction, useTranslation } from 'react-i18next';
 
+import envData from '../../../../../config/env.json';
+import { langCodes } from '../../../../../config/i18n/all-langs';
 import { AvatarRenderer } from '../../helpers';
-import SocialIcons from './SocialIcons';
 import Link from '../../helpers/link';
+import SocialIcons from './SocialIcons';
 
 import './camper.css';
-
-import { langCodes } from '../../../../../config/i18n/all-langs';
-import envData from '../../../../../config/env.json';
 
 const { clientLocale } = envData;
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -90,7 +89,7 @@ function Camper({
   return (
     <div>
       <Row>
-        <Col className='avatar-container' xs={12}>
+        <Col className='avatar-camper' xs={12}>
           <AvatarRenderer
             isDonating={isDonating}
             isTopContributor={yearsTopContributor.length > 0}
@@ -130,7 +129,9 @@ function Camper({
           <br />
           <p className='text-center yearsTopContributor'>
             <FontAwesomeIcon icon={faAward} />{' '}
-            <Link to={'/top-contributors'}>{t('profile.contributor')}</Link>
+            <Link to={t('links:top-contributors')}>
+              {t('profile.contributor')}
+            </Link>
           </p>
           <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
         </div>

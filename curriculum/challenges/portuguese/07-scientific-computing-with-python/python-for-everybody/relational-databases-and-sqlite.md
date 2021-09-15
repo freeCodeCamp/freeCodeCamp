@@ -1,6 +1,6 @@
 ---
 id: 5e7b9f170b6c005b0e76f08a
-title: Relational Databases and SQLite
+title: Bancos de dados relacionais e SQLite
 challengeType: 11
 videoId: QlNod5-kFpA
 dashedName: relational-databases-and-sqlite
@@ -10,23 +10,23 @@ dashedName: relational-databases-and-sqlite
 
 ## --text--
 
-Which is NOT a primary data structure in a database?
+Qual dessas NÃO é uma estrutura de dados primária em um banco de dados?
 
 ## --answers--
 
-index
+índice
 
 ---
 
-table
+tabela
 
 ---
 
-row
+linha
 
 ---
 
-column
+coluna
 
 ## --video-solution--
 

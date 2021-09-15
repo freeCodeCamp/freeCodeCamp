@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9f
-title: 'Natural Language Processing With RNNs: Making Predictions'
+title: 'Processamento de linguagem natural com RNNs: Fazendo previsões'
 challengeType: 11
 videoId: WO1hINnBj20
 dashedName: natural-language-processing-with-rnns-making-predictions
@@ -10,19 +10,19 @@ dashedName: natural-language-processing-with-rnns-making-predictions
 
 ## --text--
 
-Before you make a prediction with your own review, you should...:
+Antes de fazer uma previsão com sua própria revisão, você deve...:
 
 ## --answers--
 
-decode the training dataset and compare the results to the test data.
+decodificar o conjunto de dados do treinamento e comparar os resultados com os dados do teste.
 
 ---
 
-use the encodings from the training dataset to encode your review.
+usar as codificações do conjunto de dados de treinamento para codificar sua avaliação.
 
 ---
 
-assign random values between 0 and the maximum number of vocabulary in your dataset to each word in your review.
+atribuir valores aleatórios entre 0 e o número máximo de vocabulário no seu conjunto de dados para cada palavra em sua revisão.
 
 ## --video-solution--
 

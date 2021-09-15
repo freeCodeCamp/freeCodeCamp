@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import TimeLine from './TimeLine';
 import { useStaticQuery } from 'gatsby';
+import React from 'react';
+import TimeLine from './TimeLine';
 
 beforeEach(() => {
   // @ts-ignore
@@ -80,7 +80,7 @@ describe('<TimeLine />', () => {
 
 const contents = 'This is not JS';
 const ext = 'js';
-const key = 'indexjs';
+const fileKey = 'indexjs';
 const name = 'index';
 const path = 'index.js';
 
@@ -100,15 +100,7 @@ const propsForOnlySolution = {
     {
       id: '5e46f7f8ac417301a38fb92a',
       completedDate: 1604043678032,
-      files: [
-        {
-          contents,
-          ext,
-          key,
-          name,
-          path
-        }
-      ]
+      challengeFiles: [{ contents, ext, fileKey, name, path }]
     }
   ],
   username: 'developmentuser'

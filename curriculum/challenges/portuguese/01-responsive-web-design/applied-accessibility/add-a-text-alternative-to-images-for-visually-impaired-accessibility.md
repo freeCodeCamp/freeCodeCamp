@@ -9,7 +9,7 @@ dashedName: add-a-text-alternative-to-images-for-visually-impaired-accessibility
 
 # --description--
 
-Você provavelmente já viu um atributo `alt` em uma tag `img` em outros desafios. O texto do atributo `alt` descreve o conteúdo da imagem, dando a ela um texto alternativo. Um atributo `alt` ajuda nos casos onde a imagem não carrega ou não pode ser vista pelo usuário. Os mecanismos de busca também a utilizam para compreender o que uma imagem contém para a incluir nos resultados de pesquisa. Aqui está um exemplo:
+Você provavelmente já viu um atributo `alt` em uma tag `img` em outros desafios. O texto do atributo `alt` descreve o conteúdo da imagem, dando a ela um texto alternativo. Um atributo `alt` ajuda nos casos onde a imagem não carrega ou não pode ser vista pelo usuário. Os mecanismos de busca também a utilizam para compreender o que uma imagem contém para a incluir nos resultados de pesquisa. Exemplo:
 
 ```html
 <img src="importantLogo.jpeg" alt="Company logo">

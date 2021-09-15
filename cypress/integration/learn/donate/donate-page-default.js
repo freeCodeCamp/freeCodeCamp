@@ -1,5 +1,3 @@
-/* global cy */
-
 const selectors = {
   donateSupport: {
     firstTitle: '.donate-support h4:first-of-type b',

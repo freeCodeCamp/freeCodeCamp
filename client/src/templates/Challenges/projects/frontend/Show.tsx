@@ -1,21 +1,28 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 // Package Utilities
-import React, { Component } from 'react';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
-import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
+import { createSelector } from 'reselect';
 
 // Local Utilities
+import Spacer from '../../../../components/helpers/spacer';
+import LearnLayout from '../../../../components/layouts/learn';
 import {
   ChallengeNodeType,
   ChallengeMetaType
 } from '../../../../redux/prop-types';
+import ChallengeDescription from '../../components/Challenge-Description';
+import HelpModal from '../../components/HelpModal';
+import Hotkeys from '../../components/Hotkeys';
+import ChallengeTitle from '../../components/challenge-title';
+import CompletionModal from '../../components/completion-modal';
 import {
   challengeMounted,
   isChallengeCompletedSelector,
@@ -24,15 +31,8 @@ import {
   updateSolutionFormValues
 } from '../../redux';
 import { getGuideUrl } from '../../utils';
-import LearnLayout from '../../../../components/layouts/learn';
-import ChallengeTitle from '../../components/challenge-title';
-import ChallengeDescription from '../../components/Challenge-Description';
-import Spacer from '../../../../components/helpers/spacer';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
-import CompletionModal from '../../components/completion-modal';
-import HelpModal from '../../components/HelpModal';
-import Hotkeys from '../../components/Hotkeys';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -168,8 +168,6 @@ class Project extends Component<ProjectProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
                 <Spacer />
                 <ChallengeTitle
                   block={block}
@@ -191,8 +189,6 @@ class Project extends Component<ProjectProps> {
                   guideUrl={getGuideUrl({ forumTopicId, title })}
                 />
                 <br />
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
                 <Spacer />
               </Col>
               <CompletionModal

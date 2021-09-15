@@ -1,8 +1,8 @@
+import { isEmpty } from 'lodash-es';
 import React, { Component } from 'react';
 import sanitizeHtml from 'sanitize-html';
 
 import './output.css';
-import { isEmpty } from 'lodash-es';
 
 interface OutputProps {
   defaultOutput: string;

@@ -8,9 +8,9 @@ dashedName: use-inheritance-so-you-dont-repeat-yourself
 
 # --description--
 
-Tem um princípio da programação chamado <dfn>Don't Repeat Yourself (DRY) (Não Repita Você Mesmo)</dfn>. O motivo pelo qual código repetido é um problema se deve ao fato de qualquer alteração exige correção de código em vários locais. Geralmente isso significa mais trabalho para os programadores e mais espaço para erros.
+Tem um princípio da programação chamado <dfn>Don't Repeat Yourself (DRY) - Não se Repita</dfn>. O motivo pelo qual código repetido é um problema se deve ao fato de qualquer alteração exige correção de código em vários locais. Geralmente isso significa mais trabalho para os programadores e mais espaço para erros.
 
-Note que o exemplo abaixo que `descreve` o método é compartilhado por `Bird` e `Dog`:
+Note que, no exemplo abaixo, o método `describe` é compartilhado por `Bird` e `Dog`:
 
 ```js
 Bird.prototype = {
@@ -28,7 +28,7 @@ Dog.prototype = {
 };
 ```
 
-O método `describe` é repetido em dois locais. O código pode ser editado para seguir o princípio DRY (Não Repita Você Mesmo) ao criar um `supertipo` (ou parente) chamado `Animal`:
+O método `describe` é repetido em dois locais. O código pode ser editado para seguir o princípio DRY (Não se Repita) ao criar um `supertype` (ou parente) chamado `Animal`:
 
 ```js
 function Animal() { };
@@ -55,7 +55,7 @@ Dog.prototype = {
 
 # --instructions--
 
-O método `eat` é repetido em `Cat` e `Bear`. Edite o código no espírito do princípio DRY ao mover o método `eat` do `supertipo` de `Animal`.
+O método `eat` é repetido em `Cat` e `Bear`. Edite o código no espírito do princípio DRY ao mover o método `eat` do `supertype` de `Animal`.
 
 # --hints--
 

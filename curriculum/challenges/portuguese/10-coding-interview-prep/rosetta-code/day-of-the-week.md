@@ -1,6 +1,6 @@
 ---
 id: 5966f99c45e8976909a85575
-title: Day of the week
+title: Dia da semana
 challengeType: 5
 forumTopicId: 302245
 dashedName: day-of-the-week
@@ -8,33 +8,33 @@ dashedName: day-of-the-week
 
 # --description--
 
-A company decides that whenever Xmas falls on a Sunday they will give their workers all extra paid holidays so that, together with any public holidays, workers will not have to work the following week (between the 25th of December and the first of January).
+Uma empresa decide que, sempre que o Natal cai num domingo, dará aos seus trabalhadores todas as férias remuneradas extra, para que, juntamente com quaisquer feriados públicos, os trabalhadores não tenham de trabalhar na semana seguinte (entre 25 de dezembro e 1 de janeiro).
 
 # --instructions--
 
-Write a function that takes a start year and an end year and return an array of all the years where the 25th of December will be a Sunday.
+Escreva uma função que leve um ano de início e um ano de fim e retorne um array de todos os anos onde o dia 25 de dezembro será um domingo.
 
 # --hints--
 
-`findXmasSunday` should be a function.
+`findXmasSunday` deve ser uma função.
 
 ```js
 assert(typeof findXmasSunday === 'function');
 ```
 
-`findXmasSunday(2000, 2100)` should return an array.
+`findXmasSunday(2000, 2100)` deve retornar um array.
 
 ```js
 assert(typeof findXmasSunday(2000, 2100) === 'object');
 ```
 
-`findXmasSunday(1970, 2017)` should return `[1977, 1983, 1988, 1994, 2005, 2011, 2016]`
+`findXmasSunday(1970, 2017)` deve retornar `[1977, 1983, 1988, 1994, 2005, 2011, 2016]`
 
 ```js
 assert.deepEqual(findXmasSunday(1970, 2017), firstSolution);
 ```
 
-`findXmasSunday(2008, 2121)` should return `[2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]`
+`findXmasSunday(2008, 2121)` deve retornar `[2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]`
 
 ```js
 assert.deepEqual(findXmasSunday(2008, 2121), secondSolution);

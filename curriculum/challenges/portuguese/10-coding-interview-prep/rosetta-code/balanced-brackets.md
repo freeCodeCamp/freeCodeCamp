@@ -1,6 +1,6 @@
 ---
 id: 594dc6c729e5700999302b45
-title: Balanced brackets
+title: Colchetes balanceados
 challengeType: 5
 forumTopicId: 302230
 dashedName: balanced-brackets
@@ -8,129 +8,129 @@ dashedName: balanced-brackets
 
 # --description--
 
-Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
+Determine se uma sequência de colchetes gerada é equilibrada, ou seja, se consiste inteiramente de pares de colchetes de abertura/fechamento (nessa ordem), nenhum dos quais colocado incorretamente.
 
-**Examples:**
-| Input                     | Output |
-| ------------------------- | ------ |
-| <code>\[]</code> | true   |
-| <code>]\[</code> | false  |
-| <code>[][]</code> | true   |
-| <code>]\[]</code> | false  |
-| <code>\[]]\[\[]</code> | false  |
-| <code>\[\[\[\[]]]]</code> | true   |
+**Exemplos:**
+| Entrada                   | Saída |
+| ------------------------- | ----- |
+| <code>\[]</code> | true  |
+| <code>]\[</code> | false |
+| <code>[][]</code> | true  |
+| <code>]\[]</code> | false |
+| <code>\[]]\[\[]</code> | false |
+| <code>\[\[\[\[]]]]</code> | true  |
 
 # --hints--
 
-`isBalanced` should be a function.
+`isBalanced` deve ser uma função.
 
 ```js
 assert(typeof isBalanced === 'function');
 ```
 
-`isBalanced("[]")` should return true.
+`isBalanced("[]")` deve retornar true.
 
 ```js
 assert(isBalanced(testCases[0]));
 ```
 
-`isBalanced("]][[[][][][]][")` should return false.
+`isBalanced("]][[[][][][]][")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[1]));
 ```
 
-`isBalanced("[][[[[][][[[]]]]]]")` should return true.
+`isBalanced("[][[[[][][[[]]]]]]")` deve retornar true.
 
 ```js
 assert(isBalanced(testCases[2]));
 ```
 
-`isBalanced("][")` should return false.
+`isBalanced("][")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[3]));
 ```
 
-`isBalanced("[[[]]]][[]")` should return false.
+`isBalanced("[[[]]]][[]")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[4]));
 ```
 
-`isBalanced("][[]")` should return false.
+`isBalanced("][[]")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[5]));
 ```
 
-`isBalanced("][[][]][[[]]")` should return false.
+`isBalanced("][[][]][[[]]")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[6]));
 ```
 
-`isBalanced("[[][]]][")` should return false.
+`isBalanced("[[][]]][")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[7]));
 ```
 
-`isBalanced("[[[]]][[]]]][][[")` should return false.
+`isBalanced("[[[]]][[]]]][][[")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[8]));
 ```
 
-`isBalanced("[]][[]]][[[[][]]")` should return false.
+`isBalanced("[]][[]]][[[[][]]")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[9]));
 ```
 
-`isBalanced("][]][[][")` should return false.
+`isBalanced("][]][[][")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[10]));
 ```
 
-`isBalanced("[[]][[][]]")` should return true.
+`isBalanced("[[]][[][]]")` deve retornar true.
 
 ```js
 assert(isBalanced(testCases[11]));
 ```
 
-`isBalanced("[[]]")` should return true.
+`isBalanced("[[]]")` deve retornar true.
 
 ```js
 assert(isBalanced(testCases[12]));
 ```
 
-`isBalanced("]][]][[]][[[")` should return false.
+`isBalanced("]][]][[]][[[")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[13]));
 ```
 
-`isBalanced("][]][][[")` should return false.
+`isBalanced("][]][][[")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[14]));
 ```
 
-`isBalanced("][][")` should return false.
+`isBalanced("][][")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[15]));
 ```
 
-`isBalanced("[]]]")` should return false.
+`isBalanced("[]]]")` deve retornar false.
 
 ```js
 assert(!isBalanced(testCases[16]));
 ```
 
-`isBalanced("")` should return true.
+`isBalanced("")` deve retornar true.
 
 ```js
 assert(isBalanced(testCases[17]));

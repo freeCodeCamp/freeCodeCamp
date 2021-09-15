@@ -11,10 +11,22 @@ Next, you want to align the price to the right. Add a class named `price` to you
 
 # --hints--
 
-Test 1
+You should add the `price` class to your `p` element.
 
 ```js
+assert(code.match(/<p\s*class=('|")price\1\s*>/i));
+```
 
+You should only have one element with the `price` class.
+
+```js
+assert($('.price').length === 1);
+```
+
+Your `price` class should be on the `p` element with the text `3.00`.
+
+```js
+assert($('.price')[0].innerText.match(/3\.00/i));
 ```
 
 # --seed--
@@ -38,7 +50,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article>
             <p class="flavor">French Vanilla</p>
 --fcc-editable-region--
@@ -46,7 +58,7 @@ Test 1
 --fcc-editable-region--
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>
@@ -70,7 +82,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -88,4 +100,3 @@ h1, h2, p {
   text-align: left;
 }
 ```
-

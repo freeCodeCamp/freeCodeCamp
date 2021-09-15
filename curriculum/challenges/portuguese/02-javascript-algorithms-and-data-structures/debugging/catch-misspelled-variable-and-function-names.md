@@ -8,9 +8,9 @@ dashedName: catch-misspelled-variable-and-function-names
 
 # --description--
 
-Os métodos `console.log()` e `typeof` são duas formas primárias para verificar valores intermediários e tipos de saída do programa. Agora é hora entrar nas formas comuns que um bug assume. Um problema de nível de sintaxe que digitadores rápidos podem ter passado é o humilde erro de digitação incorreta.
+Os métodos `console.log()` e `typeof` são duas formas primárias para verificar valores intermediários e tipos de saída do programa. Agora é hora de conhecer as formas comuns que um bug assume. Um problema de nível de sintaxe que digitadores rápidos podem deixar passar é um simples erro de digitação incorreta.
 
-Caracteres deslocados, faltando ou capitalizado erroneamente em um nome de variável ou função fará com que o navegador procure por um objeto que não existe - e reclamará na forma de um erro de referência. Variáveis e funções JavaScript são sensíveis a caracteres maiúsculos e minúsculos.
+Caracteres deslocados, faltando ou capitalizados erroneamente em um nome de variável ou função farão com que o navegador procure por um objeto que não existe - e reclame na forma de um erro de referência. Variáveis e funções JavaScript são sensíveis a caracteres maiúsculos e minúsculos.
 
 # --instructions--
 
@@ -24,7 +24,7 @@ Verifique a ortografia das duas variáveis usadas no cálculo de netWorkingCapit
 assert(netWorkingCapital === 2);
 ```
 
-Não deve haver instâncias de variáveis com ortografia incorretas no código.
+Não deve haver instâncias de variáveis com ortografia incorreta no código.
 
 ```js
 assert(!code.match(/recievables/g));
@@ -36,7 +36,7 @@ A variável `receivables` deve ser declarada e usada corretamente no código.
 assert(code.match(/receivables/g).length == 2);
 ```
 
-Não deve haver instâncias de variáveis com ortografia incorretas no código.
+Não deve haver instâncias de variáveis com ortografia incorreta no código.
 
 ```js
 assert(!code.match(/payable;/g));

@@ -1,6 +1,6 @@
 ---
 id: 599d1566a02b571412643b84
-title: Ethiopian multiplication
+title: Multiplicação etíope
 challengeType: 5
 forumTopicId: 302257
 dashedName: ethiopian-multiplication
@@ -8,24 +8,24 @@ dashedName: ethiopian-multiplication
 
 # --description--
 
-Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.
+A multiplicação etíope é um método de multiplicação de inteiros usando apenas adição, duplicação e divisão pela metade.
 
-**Method:**
+**Método:**
 
 <ol>
-  <li>Take two numbers to be multiplied and write them down at the top of two columns</li>
-  <li>In the left-hand column repeatedly halve the last number, discarding any remainders, and write the result below the last in the same column, until you write a value of <code>1</code></li>
-  <li>In the right-hand column repeatedly double the last number and write the result below. stop when you add a result in the same row as where the left hand column shows <code>1</code></li>
-  <li>Examine the table produced and discard any row where the value in the left column is even</li>
-  <li>Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together</li>
+  <li>Pegue dois números para serem multiplicados e anote-os no topo de duas colunas</li>
+  <li>Na coluna da esquerda, reduza repetidamente pela metade o último número, descartando quaisquer restos, e escreva o resultado abaixo do último na mesma coluna, até você escrever o valor de <code>1</code></li>
+  <li>Na coluna da direita, duplique repetidamente o último número e escreva o resultado abaixo. Pare quando adicionar um resultado na mesma linha onde a coluna da esquerda mostre <code>1</code></li>
+  <li>Examinar a tabela produzida e descarte qualquer linha onde o valor na coluna da esquerda seja par</li>
+  <li>Soma os valores na coluna da direita que permanecem para produzir o resultado da multiplicação dos dois números originais juntos</li>
 </ol>
 
-**For example:** `17 × 34`
+**Por exemplo:** `17 × 34`
 
 <pre>17   34
 </pre>
 
-Halving the first column:
+Dividindo o valor da primeira coluna pela metade:
 
 <pre>17   34
 8
@@ -34,7 +34,7 @@ Halving the first column:
 1
 </pre>
 
-Doubling the second column:
+Duplicando o valor da segunda coluna:
 
 <pre>17   34
 8    68
@@ -43,7 +43,7 @@ Doubling the second column:
 1   544
 </pre>
 
-Strike-out rows whose first cell is even:
+Removendo as linhas em que a primeira célula é par:
 
 <pre>17   34
 8    <strike>68</strike>
@@ -52,7 +52,7 @@ Strike-out rows whose first cell is even:
 1   544
 </pre>
 
-Sum the remaining numbers in the right-hand column:
+Somando os números restantes na coluna da direita:
 
 <!-- markdownlint-disable MD003 -->
 
@@ -67,55 +67,55 @@ Sum the remaining numbers in the right-hand column:
 
 <!-- markdownlint-enable MD003 -->
 
-So `17` multiplied by `34`, by the Ethiopian method is `578`.
+Temos, então, que `17` multiplicado por `34`, pelo método etíope, é `578`.
 
 # --instructions--
 
-The task is to define three named functions/methods/procedures/subroutines:
+A tarefa é definir três funções/métodos/procedimentos/sub-rotinas nomeadas:
 
 <ol>
-  <li>one to halve an integer,</li>
-  <li>one to double an integer, and</li>
-  <li>one to state if an integer is even</li>
+  <li>um para dividir pela metade um número inteiro,</li>
+  <li>um para dobrar um número inteiro, e</li>
+  <li>uma para declarar se um inteiro é par</li>
 </ol>
 
-Use these functions to create a function that does Ethiopian multiplication.
+Use essas funções para criar uma função que faça uma multiplicação etíope.
 
 <!-- markdownlint-disable MD046-->
 
 # --hints--
 
-`eth_mult` should be a function.
+`eth_mult` deve ser uma função.
 
 ```js
 assert(typeof eth_mult === 'function');
 ```
 
-`eth_mult(17,34)` should return `578`.
+`eth_mult(17,34)` deve retornar `578`.
 
 ```js
 assert.equal(eth_mult(17, 34), 578);
 ```
 
-`eth_mult(23,46)` should return `1058`.
+`eth_mult(23,46)` deve retornar `1058`.
 
 ```js
 assert.equal(eth_mult(23, 46), 1058);
 ```
 
-`eth_mult(12,27)` should return `324`.
+`eth_mult(12,27)` deve retornar `324`.
 
 ```js
 assert.equal(eth_mult(12, 27), 324);
 ```
 
-`eth_mult(56,98)` should return `5488`.
+`eth_mult(56,98)` deve retornar `5488`.
 
 ```js
 assert.equal(eth_mult(56, 98), 5488);
 ```
 
-`eth_mult(63,74)` should return `4662`.
+`eth_mult(63,74)` deve retornar `4662`.
 
 ```js
 assert.equal(eth_mult(63, 74), 4662);

@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e056bdde6ae6892ba2
+id: 5f3ef6e0e9629bad967cd71e
 title: Part 60
 challengeType: 0
 dashedName: part-60
@@ -7,16 +7,17 @@ dashedName: part-60
 
 # --description--
 
-It is a bit boring for all the text to have the same `font-family`. You can still have the majority of the text `sans-serif` and make just the `h1` and `h2` elements different using a different selector.
+You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma. This second font would be used in case the browser does not have the font built-in to it.
 
-Style both the `h1` and the `h2` elements so that only these elements' text use `Impact` font.
+Add the fallback font `serif` after the `Impact` font.
 
 # --hints--
 
-Test 1
+You should add `serif` as a fallback for the `Impact` font.
 
 ```js
-
+const fontFamily = new __helpers.CSSHelp(document).getStyle('h1, h2')?.getPropertyValue('font-family');
+assert(fontFamily === 'Impact, serif');
 ```
 
 # --seed--
@@ -40,12 +41,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -80,7 +81,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
 }
 
@@ -98,7 +99,9 @@ h1, h2, p {
 }
 
 --fcc-editable-region--
-
+h1, h2 {
+  font-family: Impact;
+}
 --fcc-editable-region--
 
 .item p {

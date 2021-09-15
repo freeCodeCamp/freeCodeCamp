@@ -28,7 +28,7 @@ var ourStr = "I come first. " + "I come second.";
 La cadena `I come first. I come second.` se mostrará en la consola.
 # --instructions--
 
-Construye `myStr` a partir de las cadenas `This is the start.` y `This is the end.` utilizando el operador `+`.
+Construye `myStr` a partir de las cadenas `This is the start.` y `This is the end.` utilizando el operador `+`. Asegúrate de incluir un espacio entre las dos cadenas.
 
 # --hints--
 

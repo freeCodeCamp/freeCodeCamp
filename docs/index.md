@@ -11,7 +11,7 @@ You are welcome to:
 - Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
 - [Help us translate](#translations) freeCodeCamp.org to world languages.
 
-We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
+We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
 
 ## Curriculum
 

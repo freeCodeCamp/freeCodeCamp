@@ -1,6 +1,6 @@
 ---
 id: 589fc831f9fc0f352b528e75
-title: Communicate by Emitting
+title: Comunicar por envio
 challengeType: 2
 forumTopicId: 301550
 dashedName: communicate-by-emitting
@@ -8,27 +8,27 @@ dashedName: communicate-by-emitting
 
 # --description--
 
-<dfn>Emit</dfn> is the most common way of communicating you will use. When you emit something from the server to 'io', you send an event's name and data to all the connected sockets. A good example of this concept would be emitting the current count of connected users each time a new user connects!
+<dfn>Enviar</dfn> é a forma mais comum de comunicação que você usará. Quando você envia algo do servidor para 'io', está enviando o nome e os dados de um evento para todos os sockets conectados. Um bom exemplo deste conceito seria enviar a contagem atual de usuários conectados a cada vez que um novo usuário se conecta!
 
-Start by adding a variable to keep track of the users, just before where you are currently listening for connections.
+Comece adicionando uma variável para manter o controle dos usuários, logo antes do local onde você está escutando as conexões no momento.
 
 ```js
 let currentUsers = 0;
 ```
 
-Now, when someone connects, you should increment the count before emitting the count. So, you will want to add the incrementer within the connection listener.
+Agora, quando alguém se conecta, você deve incrementar a contagem antes de enviá-la. Então, você vai querer adicionar o incrementador dentro do listener de conexões.
 
 ```js
 ++currentUsers;
 ```
 
-Finally, after incrementing the count, you should emit the event (still within the connection listener). The event should be named 'user count', and the data should just be the `currentUsers`.
+Por fim, depois de incrementar a contagem, você deve enviar o evento (ainda dentro do listener de conexão). O evento deve ser nomeado 'user count' e o dado devem ser simplesmente `currentUsers`.
 
 ```js
 io.emit('user count', currentUsers);
 ```
 
-Now, you can implement a way for your client to listen for this event! Similar to listening for a connection on the server, you will use the `on` keyword.
+Agora, você pode implementar uma maneira de o client escutar este evento! De modo semelhante a escutar uma conexão no servidor, você usará a palavra-chave `on`.
 
 ```js
 socket.on('user count', function(data) {
@@ -36,13 +36,13 @@ socket.on('user count', function(data) {
 });
 ```
 
-Now, try loading up your app, authenticate, and you should see in your client console '1' representing the current user count! Try loading more clients up, and authenticating to see the number go up.
+Agora, tente carregar o seu aplicativo, autentique-se e você deve ver no console do client '1', representando a contagem de usuários no momento! Tente carregar mais clients, e autenticar para ver o número subir.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5).
 
 # --hints--
 
-currentUsers should be defined.
+currentUsers deve estar definido.
 
 ```js
 (getUserInput) =>
@@ -60,7 +60,7 @@ currentUsers should be defined.
   );
 ```
 
-Server should emit the current user count at each new connection.
+O servidor deve enviar o contador atual a cada nova conexão.
 
 ```js
 (getUserInput) =>
@@ -78,7 +78,7 @@ Server should emit the current user count at each new connection.
   );
 ```
 
-Your client should be listening for 'user count' event.
+O client deve estar escutando o evento 'user count'.
 
 ```js
 (getUserInput) =>

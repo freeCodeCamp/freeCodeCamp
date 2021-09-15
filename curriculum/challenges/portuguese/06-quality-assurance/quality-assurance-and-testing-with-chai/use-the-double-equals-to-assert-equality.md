@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c4a
-title: Use the Double Equals to Assert Equality
+title: Usar o sinal duplo de igual para avaliar igualdade
 challengeType: 2
 forumTopicId: 301609
 dashedName: use-the-double-equals-to-assert-equality
@@ -8,17 +8,17 @@ dashedName: use-the-double-equals-to-assert-equality
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`equal()` compares objects using `==`.
+`equal()` compara objetos usando `==`.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#5` in the `Equality` suite, change each `assert` to either `assert.equal` or `assert.notEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Em `tests/1_unit-tests.js`, no teste classificado como `#5` e na suíte `Equality`, modifique cada `assert` para `assert.equal` ou para `assert.notEqual`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 
-All tests should pass.
+Todos os testes devem passar.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `equal` vs. `notEqual`.
+Você deve escolher o método correto para a primeira afirmação - `equal` ou `notEqual`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `equal` vs. `notE
   );
 ```
 
-You should choose the correct method for the second assertion - `equal` vs. `notEqual`.
+Você deve escolher o método correto para a segunda afirmação - `equal` ou `notEqual`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ You should choose the correct method for the second assertion - `equal` vs. `not
   );
 ```
 
-You should choose the correct method for the third assertion - `equal` vs. `notEqual`.
+Você deve escolher o método correto para a terceira afirmação - `equal` ou `notEqual`.
 
 ```js
 (getUserInput) =>
@@ -86,7 +86,7 @@ You should choose the correct method for the third assertion - `equal` vs. `notE
   );
 ```
 
-You should choose the correct method for the fourth assertion - `equal` vs. `notEqual`.
+Você deve escolher o método correto para a quarta afirmação - `equal` ou `notEqual`.
 
 ```js
 (getUserInput) =>

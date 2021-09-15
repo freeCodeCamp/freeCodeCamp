@@ -1,6 +1,6 @@
 ---
 id: 5900f3b11000cf542c50fec4
-title: 'Problem 69: Totient maximum'
+title: 'Problema 69: Totiente máximo'
 challengeType: 5
 forumTopicId: 302181
 dashedName: problem-69-totient-maximum
@@ -8,7 +8,7 @@ dashedName: problem-69-totient-maximum
 
 # --description--
 
-Euler's Totient function, ${\phi}(n)$ (sometimes called the phi function), is used to determine the number of numbers less than `n` which are relatively prime to `n`. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, ${\phi}(9) = 6$.
+A função Totiente de Euler, ${\phi}(n)$ (às vezes chamada de função phi), é usada para determinar a quantidade de números menores que `n`, que são primos próximos de `n`. Por exemplo, 1, 2, 4, 5, 7 e 8 são todos inferiores a nove e primos relativos de nove, ${\phi}(9) = 6$.
 
 <div style='margin-left: 4em;'>
 
@@ -26,37 +26,37 @@ Euler's Totient function, ${\phi}(n)$ (sometimes called the phi function), is us
 
 </div>
 
-It can be seen that `n` = 6 produces a maximum $\displaystyle\frac{n}{{\phi}(n)}$ for `n` ≤ 10.
+Aqui, vemos que `n` = 6 produz um máximo $\displaystyle\frac{n}{{\phi}(n)}$, onde `n` ≤ 10.
 
-Find the value of `n` ≤ `limit` for which $\displaystyle\frac{n}{{\phi(n)}}$ is a maximum.
+Calcule o valor de `n` ≤ `limit` onde $\displaystyle\frac{n}{{\phi(n)}}$ é um máximo.
 
 # --hints--
 
-`totientMaximum(10)` should return a number.
+`totientMaximum(10)` deve retornar um número.
 
 ```js
 assert(typeof totientMaximum(10) === 'number');
 ```
 
-`totientMaximum(10)` should return `6`.
+`totientMaximum(10)` deve retornar `6`.
 
 ```js
 assert.strictEqual(totientMaximum(10), 6);
 ```
 
-`totientMaximum(10000)` should return `2310`.
+`totientMaximum(10000)` deve retornar `2310`.
 
 ```js
 assert.strictEqual(totientMaximum(10000), 2310);
 ```
 
-`totientMaximum(500000)` should return `30030`.
+`totientMaximum(500000)` deve retornar `30030`.
 
 ```js
 assert.strictEqual(totientMaximum(500000), 30030);
 ```
 
-`totientMaximum(1000000)` should return `510510`.
+`totientMaximum(1000000)` deve retornar `510510`.
 
 ```js
 assert.strictEqual(totientMaximum(1000000), 510510);

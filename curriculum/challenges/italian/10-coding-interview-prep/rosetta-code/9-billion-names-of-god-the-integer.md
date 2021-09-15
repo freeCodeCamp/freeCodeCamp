@@ -1,6 +1,6 @@
 ---
 id: 5949b579404977fbaefcd736
-title: 9 billion names of God the integer
+title: I 9 miliardi di nomi di Dio
 challengeType: 5
 forumTopicId: 302219
 dashedName: 9-billion-names-of-god-the-integer
@@ -8,21 +8,21 @@ dashedName: 9-billion-names-of-god-the-integer
 
 # --description--
 
-This task is a variation of the [short story by Arthur C. Clarke](https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary "wp: The Nine Billion Names of God#Plot_summary").
+Questa sfida è una variazione [della storia breve di Arthur C. Clarke](https://it.wikipedia.org/wiki/I_nove_miliardi_di_nomi_di_Dio).
 
-(Solvers should be aware of the consequences of completing this task.)
+(I risolutori dovrebbero essere consapevoli delle consequenze di completare questa sfida)
 
-In detail, to specify what is meant by a "name":
+In dettaglio, per specificare cosa si intende per "nome":
 
 <ul>
-  <li>The integer 1 has 1 name "1".</li>
-  <li>The integer 2 has 2 names "1+1" and "2".</li>
-  <li>The integer 3 has 3 names "1+1+1", "2+1",  and "3".</li>
-  <li>The integer 4 has 5 names "1+1+1+1", "2+1+1", "2+2", "3+1", "4".</li>
-  <li>The integer 5 has 7 names "1+1+1+1+1", "2+1+1+1", "2+2+1", "3+1+1", "3+2", "4+1", "5".</li>
+  <li>Il numero 1 ha 1 nome "1".</li>
+  <li>Il numero 2 ha 2 nomi "1+1" e "2".</li>
+  <li>Il numero 3 ha 3 nomi "1+1+1", "2+1", e "3".</li>
+  <li>Il numero 4 ha 5 nomi "1+1+1+1", "2+1+1", "2+2", "3+1" e "4".</li>
+  <li>Il numero 5 ha 7 nomi "1+1+1+1+1", "2+1+1+1", "2+2+1", "3+1+1", "3+2", "4+1", "5".</li>
 </ul>
 
-This can be visualized in the following form:
+Questo può essere visualizzato nella seguente forma:
 
 <pre>          1
         1   1
@@ -32,53 +32,53 @@ This can be visualized in the following form:
 1   3   3   2   1   1
 </pre>
 
-Where row $n$ corresponds to integer $n$, and each column $C$ in row $m$ from left to right corresponds to the number of names beginning with $C$.
+Dove la riga $n$ corrisponde al numero $n$, e ogni colonna $C$ nella riga $m$ da sinistra a destra corrisponde al numero di nomi che inizia con $C$.
 
-Optionally note that the sum of the $n$-th row $P(n)$ is the integer partition function.
+Facoltativamente, nota che la somma dell'$n$-sima riga $P(n)$ è la funzione di partizione dei numeri interi.
 
 # --instructions--
 
-Implement a function that returns the sum of the $n$-th row.
+Implementa una funzione che restituisca la somma della $n$-sima riga.
 
 # --hints--
 
-`numberOfNames` should be function.
+`numberOfNames` dovrebbe essere una funzione.
 
 ```js
 assert(typeof numberOfNames === 'function');
 ```
 
-`numberOfNames(5)` should equal 7.
+`numberOfNames(5)` dovrebbe essere uguale a 7.
 
 ```js
 assert.equal(numberOfNames(5), 7);
 ```
 
-`numberOfNames(12)` should equal 77.
+`numberOfNames(12)` dovrebbe essere uguale a 77.
 
 ```js
 assert.equal(numberOfNames(12), 77);
 ```
 
-`numberOfNames(18)` should equal 385.
+`numberOfNames(18)` dovrebbe essere uguale a 385.
 
 ```js
 assert.equal(numberOfNames(18), 385);
 ```
 
-`numberOfNames(23)` should equal 1255.
+`numberOfNames(23)` dovrebbe essere uguale a 1255.
 
 ```js
 assert.equal(numberOfNames(23), 1255);
 ```
 
-`numberOfNames(42)` should equal 53174.
+`numberOfNames(42)` dovrebbe essere uguale a 53174.
 
 ```js
 assert.equal(numberOfNames(42), 53174);
 ```
 
-`numberOfNames(123)` should equal 2552338241.
+`numberOfNames(123)` dovrebbe essere uguale a 2552338241.
 
 ```js
 assert.equal(numberOfNames(123), 2552338241);

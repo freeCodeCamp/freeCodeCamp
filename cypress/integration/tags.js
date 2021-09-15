@@ -1,4 +1,3 @@
-/* global cy */
 describe('The Document Metadata', () => {
   before(() => {
     cy.visit('/');

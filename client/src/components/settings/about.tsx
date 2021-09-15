@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
 import {
   FormGroup,
   ControlLabel,
   FormControl,
   HelpBlock,
   Alert
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
+import React, { Component } from 'react';
 
+import { TFunction, withTranslation } from 'react-i18next';
 import { FullWidthRow, Spacer } from '../helpers';
+import BlockSaveButton from '../helpers/form/block-save-button';
 import ThemeSettings from './theme';
 import UsernameSettings from './username';
-import BlockSaveButton from '../helpers/form/block-save-button';
-import { TFunction, withTranslation } from 'react-i18next';
 
 type FormValues = {
   name: string;

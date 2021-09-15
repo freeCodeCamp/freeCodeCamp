@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2f5ac708cc68c1df261
-title: Linear congruential generator
+title: Gerador congruente linear
 challengeType: 5
 forumTopicId: 385266
 dashedName: linear-congruential-generator
@@ -8,65 +8,65 @@ dashedName: linear-congruential-generator
 
 # --description--
 
-The [linear congruential generator](https://en.wikipedia.org/wiki/linear congruential generator) is a very simple example of a [random number generator](http://rosettacode.org/wiki/random number generator). All linear congruential generators use this formula:
+O [gerador congruente linear](https://en.wikipedia.org/wiki/linear congruential generator) é um exemplo muito simples de um [gerador de números aleatórios](http://rosettacode.org/wiki/random number generator). Todos os geradores congruentes lineares usam esta fórmula:
 
 $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
-Where:
+Onde:
 
 <ul>
-<li>$ r_0 $ is a seed.</li>
-<li>$r_1$, $r_2$, $r_3$, ..., are the random numbers.</li>
-<li>$a$, $c$, $m$ are constants.</li>
+<li>$ r_0 $ é uma seed.</li>
+<li>$r_1$, $r_2$, $r_3$, ..., são os números aleatórios.</li>
+<li>$a$, $c$, $m$ são constantes.</li>
 </ul>
 
-If one chooses the values of $a$, $c$ and $m$ with care, then the generator produces a uniform distribution of integers from $0$ to $m - 1$.
+Se a escolha de $a$, $c$ e $m$ for feita com cuidado, o gerador produzirá uma distribuição uniforme de números inteiros de $0$ a $m - 1$.
 
-LCG numbers have poor quality. $r_n$ and $r\_{n + 1}$ are not independent, as true random numbers would be. Anyone who knows $r_n$ can predict $r\_{n + 1}$, therefore LCG is not cryptographically secure. The LCG is still good enough for simple tasks like [Miller-Rabin primality test](http://rosettacode.org/wiki/Miller-Rabin primality test), or [FreeCell deals](http://rosettacode.org/wiki/deal cards for FreeCell). Among the benefits of the LCG, one can easily reproduce a sequence of numbers, from the same $r_0$. One can also reproduce such sequence with a different programming language, because the formula is so simple.
+Os números LCG são de má qualidade. $r_n$ e $r\_{n + 1}$ não são independentes como os números verdadeiramente aleatórios seriam. Qualquer um que conheça $r_n$ pode prever $r\_{n + 1}$. Assim, o LCG não é criptograficamente seguro. O LCG, ainda assim, é bom o suficiente para tarefas simples como [o teste de primalidade de Miller-Rabin ](http://rosettacode.org/wiki/Miller-Rabin primality test) ou [dar as cartas no FreeCell](http://rosettacode.org/wiki/deal cards for FreeCell). Entre os benefícios do LCG, pode-se facilmente reproduzir uma sequência de números, a partir da mesma $r_0$. Também é possível reproduzir essa sequência com uma linguagem de programação diferente, porque a fórmula é muito simples.
 
 # --instructions--
 
-Write a function that takes $r_0,a,c,m,n$ as parameters and returns $r_n$.
+Escreva uma função que receba $r_0,a,c,m,n$ como parâmetros e retorne $r_n$.
 
 # --hints--
 
-`linearCongGenerator` should be a function.
+`linearCongGenerator` deve ser uma função.
 
 ```js
 assert(typeof linearCongGenerator == 'function');
 ```
 
-`linearCongGenerator(324, 1145, 177, 2148, 3)` should return a number.
+`linearCongGenerator(324, 1145, 177, 2148, 3)` deve retornar um número.
 
 ```js
 assert(typeof linearCongGenerator(324, 1145, 177, 2148, 3) == 'number');
 ```
 
-`linearCongGenerator(324, 1145, 177, 2148, 3)` should return `855`.
+`linearCongGenerator(324, 1145, 177, 2148, 3)` deve retornar `855`.
 
 ```js
 assert.equal(linearCongGenerator(324, 1145, 177, 2148, 3), 855);
 ```
 
-`linearCongGenerator(234, 11245, 145, 83648, 4)` should return `1110`.
+`linearCongGenerator(234, 11245, 145, 83648, 4)` deve retornar `1110`.
 
 ```js
 assert.equal(linearCongGenerator(234, 11245, 145, 83648, 4), 1110);
 ```
 
-`linearCongGenerator(85, 11, 1234, 214748, 5)` should return `62217`.
+`linearCongGenerator(85, 11, 1234, 214748, 5)` deve retornar `62217`.
 
 ```js
 assert.equal(linearCongGenerator(85, 11, 1234, 214748, 5), 62217);
 ```
 
-`linearCongGenerator(0, 1103515245, 12345, 2147483648, 1)` should return `12345`.
+`linearCongGenerator(0, 1103515245, 12345, 2147483648, 1)` deve retornar `12345`.
 
 ```js
 assert.equal(linearCongGenerator(0, 1103515245, 12345, 2147483648, 1), 12345);
 ```
 
-`linearCongGenerator(0, 1103515245, 12345, 2147483648, 2)` should return `1406932606`.
+`linearCongGenerator(0, 1103515245, 12345, 2147483648, 2)` deve retornar `1406932606`.
 
 ```js
 assert.equal(

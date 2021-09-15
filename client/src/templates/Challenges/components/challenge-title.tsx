@@ -1,11 +1,10 @@
-import React from 'react';
-import { Link } from '../../../components/helpers/index';
 import i18next from 'i18next';
+import React from 'react';
+import GreenPass from '../../../assets/icons/green-pass';
+import { Link } from '../../../components/helpers/index';
+import BreadCrumb from './bread-crumb';
 
 import './challenge-title.css';
-
-import GreenPass from '../../../assets/icons/green-pass';
-import BreadCrumb from './bread-crumb';
 
 interface ChallengeTitleProps {
   block: string;
@@ -26,8 +25,6 @@ function ChallengeTitle({
     <div className='challenge-title-wrap'>
       {translationPending && (
         <>
-          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-          {/* @ts-ignore */}
           <Link
             className='title-translation-cta'
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

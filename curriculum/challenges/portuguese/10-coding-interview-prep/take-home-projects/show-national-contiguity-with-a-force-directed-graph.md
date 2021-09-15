@@ -1,6 +1,6 @@
 ---
 id: bd7198d8c242eddfaeb5bd13
-title: Show National Contiguity with a Force Directed Graph
+title: Mostrar contiguidade nacional com um gráfico direcionado de força
 challengeType: 3
 forumTopicId: 302367
 dashedName: show-national-contiguity-with-a-force-directed-graph
@@ -8,21 +8,21 @@ dashedName: show-national-contiguity-with-a-force-directed-graph
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/xVopBo>.
+**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/xVopBo>.
 
-Fulfill the following [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Atenda às seguintes [especificações de usuário](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**User Story:** I can see a Force-directed Graph that shows which countries share borders.
+**Especificação de usuário:** eu posso ver um gráfico orientado por força que mostra quais países compartilham fronteiras.
 
-**User Story:** I can see each country's flag on its node.
+**Especificação de usuário:** posso ver a bandeira de cada país em seu nó.
 
-**Hint:** Here's a dataset you can use to build this: <https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json>
+**Dica:** aqui está um conjunto de dados que você pode usar para criar essa aplicação: <https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json>
 
-**Hint:** You can create a spritesheet of national flags at <https://www.flag-sprites.com>.
+**Dica:** você pode criar um spritesheet de bandeiras nacionais em <https://www.flag-sprites.com>.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

@@ -15,7 +15,7 @@ Como o operador `+=`, `-=` subtrai um número de uma variável.
 myVar = myVar - 5;
 ```
 
-irá subtrair `5` de `myVar`. Isto pode ser reescrito como:
+vai subtrair `5` de `myVar`. Essa expressão pode ser reescrita assim:
 
 ```js
 myVar -= 5;

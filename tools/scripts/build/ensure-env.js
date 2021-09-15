@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const env = require('../../../config/read-env');
 const { availableLangs } = require('../../../config/i18n/all-langs');
+const env = require('../../../config/read-env');
 
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
@@ -45,7 +45,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     'showUpcomingChanges'
   ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
-  const donationKeys = ['paypalClientId'];
+  const donationKeys = ['stripePublicKey', 'paypalClientId'];
 
   const expectedVariables = locationKeys.concat(
     deploymentKeys,

@@ -17,7 +17,7 @@ console.log("Alan Peter".length);
 
 O valor `10` seria exibido no console.
 
-Por exemplo, se nós criarmos uma variável `var firstName = "Ada"`, poderíamos descobrir qual o tamanho da string `Ada` ao usar a propriedade `firstName.length`.
+Por exemplo, se nós criássemos uma variável `var firstName = "Ada"`, poderíamos descobrir qual o tamanho da string `Ada` usando a propriedade `firstName.length`.
 
 # --instructions--
 
@@ -25,7 +25,7 @@ Use a propriedade `.length` para contar o número de caracteres na variável `la
 
 # --hints--
 
-Você não deve alterar as declarações de variáveis a seção `// Setup`.
+Você não deve alterar as declarações de variáveis na seção `// Setup`.
 
 ```js
 assert(

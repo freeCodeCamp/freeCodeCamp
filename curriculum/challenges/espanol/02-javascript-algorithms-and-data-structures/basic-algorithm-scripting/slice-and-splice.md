@@ -43,7 +43,7 @@ assert.deepEqual(
 );
 ```
 
-Todos los elementos del primer arreglo deben ser añadidos al segundo arreglo en su orden original.
+Todos los elementos del primer arreglo deben ser añadidos al segundo arreglo en su orden original. `frankenSplice([1, 2, 3, 4], [], 0)` debe devolver `[1, 2, 3, 4]`.
 
 ```js
 assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4]);

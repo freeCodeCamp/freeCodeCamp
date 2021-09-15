@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
 
 // Package Utilities
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 
 // Local Utilities

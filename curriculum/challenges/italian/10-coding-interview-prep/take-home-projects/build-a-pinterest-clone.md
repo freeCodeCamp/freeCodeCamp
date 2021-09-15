@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443eddfaeb5bdee
-title: Build a Pinterest Clone
+title: Costruisci un Clone di Pinterest
 challengeType: 4
 forumTopicId: 302352
 dashedName: build-a-pinterest-clone
@@ -8,27 +8,27 @@ dashedName: build-a-pinterest-clone
 
 # --description--
 
-**Objective:** Build a [Replit](https://replit.com/) app that is functionally similar to this: <https://build-a-pinterest-clone.freecodecamp.rocks/>.
+**Obiettivo:** Costruisci un'app [Replit](https://replit.com/) funzionalmente simile a questa: [https://p2phttps://build-a-pinterest-clone.freecodecamp.rocks/](https://build-a-pinterest-clone.freecodecamp.rocks/).
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
-**User Story:** As an unauthenticated user, I can login with GitHub.
+**User Story:** Come utente non autenticato, posso autenticarmi con GitHub.
 
-**User Story:** As an authenticated user, I can link to images.
+**User Story:** Come utente autenticato, posso linkare a immagini.
 
-**User Story:** As an authenticated user, I can delete images that I've linked to.
+**User Story:** Come utente autenticato, posso eliminare immagini che ho linkato.
 
-**User Story:** As an authenticated user, I can see a Pinterest-style wall of all the images I've linked to.
+**User Story:** Come utente autenticato, posso vedere un muro di immagini che ho linkato nello stile di Pinterest.
 
-**User Story:** As an unauthenticated user, I can browse other users' walls of images.
+**User Story:** Come utente non autenticato, posso navigare i muri di immagini degli altri utenti.
 
-**User Story:** As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
+**User Story:** Come utente autenticato, se carico una immagine rotta, sarà rimpiazzata da una immagine segnaposto. (puoi usare il rilevatore di immagini rotte di jQuery)
 
-**Hint:** [Masonry.js](https://masonry.desandro.com/) is a library that allows for Pinterest-style image grids.
+**Suggerimento:** [Masonry.js](https://masonry.desandro.com/) è una libreria che permette griglie di immagini nello stile di Pinterest.
 
-Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
+Una volta terminata l'implementazione di queste user story, scrivi l'URL della tua app live e, opzionalmente, il tuo repository GitHub. Quindi clicca sul pulsante "Ho completato questa sfida".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul forum [freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

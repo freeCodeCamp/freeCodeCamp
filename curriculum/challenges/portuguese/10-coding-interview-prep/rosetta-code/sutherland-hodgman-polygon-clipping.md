@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8045
-title: Sutherland-Hodgman polygon clipping
+title: Recorte de polígonos de Sutherland-Hodgman
 challengeType: 5
 forumTopicId: 302336
 dashedName: sutherland-hodgman-polygon-clipping
@@ -8,27 +8,27 @@ dashedName: sutherland-hodgman-polygon-clipping
 
 # --description--
 
-The [Sutherland-Hodgman clipping algorithm](https://en.wikipedia.org/wiki/Sutherland-Hodgman clipping algorithm) finds the polygon that is the intersection between an arbitrary polygon (the "subject polygon") and a convex polygon (the "clip polygon"). It is used in computer graphics (especially 2D graphics) to reduce the complexity of a scene being displayed by eliminating parts of a polygon that do not need to be displayed. Take the closed polygon defined by the points:
+O [algoritmo de recorte de polígonos de Sutherland-Hodgman](https://en.wikipedia.org/wiki/Sutherland-Hodgman clipping algorithm) encontra o polígono que é a intersecção entre um polígono arbitrário (o "polígono sujeito") e um polígono convexo (o "polígono de recorte"). Ele é usado em gráficos de computador (especialmente gráficos 2D) para reduzir a complexidade de uma cena que está sendo exibida eliminando partes de um polígono que não precisam ser exibidas. Pegue o polígono que se fecha definido pelos pontos:
 
 <pre>[(50, 150), (200, 50), (350, 150), (350, 300), (250, 300), (200, 250), (150, 350), (100, 250), (100, 200)]</pre>
 
-and clip it by the rectangle defined by the points:
+e recorte-o pelo retângulo definido pelos pontos:
 
 <pre>[(100, 100), (300, 100), (300, 300), (100, 300)]</pre>
 
 # --instructions--
 
-Write a function that takes 2 arrays as parameters. The first array contains the points of the subject polygon and the second array contains the points of the clipping polygon. The function should return an array containing the points of the clipped polygon. Each number should be rounded to 3 decimal places.
+Escreva uma função que receba dois arrays como parâmetro. O primeiro array contém os pontos do polígono sujeito e o segundo array contém os pontos do polígono de recorte. A função deve retornar um array contendo os pontos do polígono recortado. Cada número deve ser arredondado para 3 casas decimais.
 
 # --hints--
 
-`clip` should be a function.
+`clip` deve ser uma função.
 
 ```js
 assert(typeof clip == 'function');
 ```
 
-`clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])` should return an array.
+`clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])` deve retornar um array.
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-`clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])` should return `[[100, 116.667], [125, 100], [275, 100], [300, 116.667], [300, 300], [250, 300], [200, 250], [175, 300], [125, 300], [100, 250]]`.
+`clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])` deve retornar `[[100, 116.667], [125, 100], [275, 100], [300, 116.667], [300, 300], [250, 300], [200, 250], [175, 300], [125, 300], [100, 250]]`.
 
 ```js
 assert.deepEqual(
@@ -94,7 +94,7 @@ assert.deepEqual(
 );
 ```
 
-`clip([[150, 200], [400, 450], [30, 50]], [[10, 10], [300, 200], [400, 600], [100, 300]])` should return `[[150, 200], [350, 400], [348.611, 394.444], [30, 50]]`.
+`clip([[150, 200], [400, 450], [30, 50]], [[10, 10], [300, 200], [400, 600], [100, 300]])` deve retornar `[[150, 200], [350, 400], [348.611, 394.444], [30, 50]]`.
 
 ```js
 assert.deepEqual(
@@ -120,7 +120,7 @@ assert.deepEqual(
 );
 ```
 
-`clip([[250, 200], [100, 450], [130, 250]], [[50, 60], [100, 230], [400, 600], [100, 300]])` should return `[[129.167, 329.167], [119.565, 319.565], [121.854, 304.305]]`.
+`clip([[250, 200], [100, 450], [130, 250]], [[50, 60], [100, 230], [400, 600], [100, 300]])` deve retornar `[[129.167, 329.167], [119.565, 319.565], [121.854, 304.305]]`.
 
 ```js
 assert.deepEqual(

@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0086dc80481f8cb03
+id: 5f3ef6e0eaa7da26e3d34d78
 title: Part 54
 challengeType: 0
 dashedName: part-54
@@ -7,16 +7,38 @@ dashedName: part-54
 
 # --description--
 
-Something does not look right. You added the correct `class` attribute to the `p` elements with dessert names, but you have not defined a selector for it.
+You can give your menu some space between the content and the sides with various `padding` properties.
 
-Since the `flavor` class selector already has the properties you want, just add the `dessert` class to it.
+Give the `menu` class a `padding-left` and a `padding-right` with the same value `20px`.
 
 # --hints--
 
-Test 1
+You should set the `padding-left` property to `20px`.
 
 ```js
+const hasPaddingLeft = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['padding-left'] === '20px');
+assert(hasPaddingLeft);
+```
 
+You should set the `padding-right` property to `20px`.
+
+```js
+const hasPaddingRight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['padding-right'] === '20px');
+assert(hasPaddingRight);
+```
+
+Your `.menu` element should have a `padding-left` of `20px`.
+
+```js
+const menuPaddingLeft = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding-left');
+assert(menuPaddingLeft === '20px');
+```
+
+Your `.menu` element should have a `padding-right` of `20px`.
+
+```js
+const menuPaddingRight = new __helpers.CSSHelp(document).getStyle('.menu')?.getPropertyValue('padding-right');
+assert(menuPaddingRight === '20px');
 ```
 
 # --seed--
@@ -40,12 +62,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -80,30 +102,30 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
   text-align: center;
 }
 
+--fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
 }
+--fcc-editable-region--
 
 .item p {
   display: inline-block;
 }
 
---fcc-editable-region--
-.flavor {
+.flavor, .dessert {
   text-align: left;
   width: 75%;
 }
---fcc-editable-region--
 
 .price {
   text-align: right;

@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d96
-title: Convolutional Neural Networks
+title: Redes Neurais Convolucionais
 challengeType: 11
 videoId: _1kTP7uoU9E
 dashedName: convolutional-neural-networks
@@ -10,19 +10,19 @@ dashedName: convolutional-neural-networks
 
 ## --text--
 
-Dense neural networks analyze input on a global scale and recognize patterns in specific areas. Convolutional neural networks...:
+As redes neurais densas analisam a entrada em uma escala global e reconhecem padrões em áreas específicas. Redes Neurais Convolucionais...:
 
 ## --answers--
 
-also analyze input globally and extract features from specific areas.
+também analisam entradas globalmente e extraem recursos de áreas específicas.
 
 ---
 
-do not work well for image classification or object detection.
+não funcionam bem para a classificação de imagens ou para a detecção de objetos.
 
 ---
 
-scan through the entire input a little at a time and learn local patterns.
+escaneiam a entrada inteira um pouco por vez e aprendem os padrões locais.
 
 ## --video-solution--
 

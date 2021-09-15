@@ -7,14 +7,33 @@ dashedName: part-15
 
 # --description--
 
-You have styled three elements by writing CSS inside the `style` tags. This works, but since there will many more styles, it's best to put all the styles in a separate file and link to it. Start by rewriting the styles you have created into the `styles.css` file. Make sure to exclude the opening and closing `style` tags.
+You have styled three elements by writing CSS inside the `style` tags. This works, but since there will many more styles, it's best to put all the styles in a separate file and link to it.
+
+We have created a separate `styles.css` file for you and switched the editor view to that file. You can change between files with the tabs at the top of the editor.
+
+Start by rewriting the styles you have created into the `styles.css` file. Make sure to exclude the opening and closing `style` tags.
 
 # --hints--
 
-Test 1
+Your `styles.css` file should have the `h1, h2, p` type selector.
 
 ```js
+const css = code.split('<!DOCTYPE html>')[0];
+assert(__helpers.removeWhiteSpace(css).match(/(h1|h2|p),(h1|h2|p),(h1|h2|p){/))
+```
 
+Your selector should set the `text-align` property to `center`.
+
+```js
+const css = code.split('<!DOCTYPE html>')[0];
+assert(css.match(/text-align:\s*center;?/));
+```
+
+You should only have one selector.
+
+```js
+const css = code.split('<!DOCTYPE html>')[0];
+assert(css.match(/text-align:\s*center;?/).length === 1);
 ```
 
 # --seed--
@@ -40,7 +59,7 @@ Test 1
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>
@@ -51,5 +70,5 @@ Test 1
 --fcc-editable-region--
 
 --fcc-editable-region--
-```
 
+```

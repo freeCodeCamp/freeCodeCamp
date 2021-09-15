@@ -1,6 +1,6 @@
 ---
 id: 587d7fad367417b2b2512be2
-title: Change Text with click Events
+title: Alterar texto com eventos de clique
 challengeType: 6
 forumTopicId: 301500
 dashedName: change-text-with-click-events
@@ -8,11 +8,11 @@ dashedName: change-text-with-click-events
 
 # --description--
 
-When the click event happens, you can use JavaScript to update an HTML element.
+Quando ocorre o evento de clique, você pode usar o JavaScript para atualizar um elemento HTML.
 
-For example, when a user clicks the `Get Message` button, it changes the text of the element with the class `message` to say `Here is the message`.
+Por exemplo, quando um usuário clica no botão `Get Message`, ele muda o texto do elemento com a classe `message` para que passe a dizer `Here is the message`.
 
-This works by adding the following code within the click event:
+Isso ocorre quando adicionamos o seguinte código ao evento de clique:
 
 ```js
 document.getElementsByClassName('message')[0].textContent="Here is the message";
@@ -20,11 +20,11 @@ document.getElementsByClassName('message')[0].textContent="Here is the message";
 
 # --instructions--
 
-Add code inside the `onclick` event handler to change the text inside the `message` element to say `Here is the message`.
+Adicione código ao manipulador de evento `onclick` para alterar o texto dentro do elemento `message` de modo que ele diga `Here is the message`.
 
 # --hints--
 
-Your code should use the `document.getElementsByClassName` method to select the element with class `message` and set its `textContent` to the given string.
+O código deve usar o método `document.getElementsByClassName` para selecionar o elemento com ac classe `message` e definir o `textContent` como a string mencionada.
 
 ```js
 assert(

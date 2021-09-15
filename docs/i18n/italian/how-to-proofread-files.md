@@ -14,7 +14,7 @@ Dovresti vedere la lista di progetti a cui ti è stato dato accesso. Seleziona i
 
 Ora dovresti vedere la lista dei file disponibili. Scegli il file selezionando il pulsante `Proofread` a destra del file, e scegliendo quindi `Proofreading` dal menu che compare.
 
-> [!NOTE] Se sei in workspace view, ma vuoi larorare sulla [traduzione di un file](./how-to-translate-files.md) invece di revisionare, puoi selezionare `Crowdsourcing` dal menu.
+> [!NOTE] Se sei in workspace view, ma vuoi larorare sulla [traduzione di un file](how-to-translate-files.md) invece di revisionare, puoi selezionare `Crowdsourcing` dal menu.
 
 ## Revisionare le traduzioni
 

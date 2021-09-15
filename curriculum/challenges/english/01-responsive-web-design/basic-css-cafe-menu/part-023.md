@@ -2,6 +2,7 @@
 id: 5f356ed60a5decd94ab66986
 title: Part 23
 challengeType: 0
+removeComments: false
 dashedName: part-23
 ---
 
@@ -17,10 +18,18 @@ In your style sheet, comment out the the line containing the `background-color` 
 
 # --hints--
 
-Test 1
+You should comment out the `background-color: burlywood;` line in your CSS.
 
 ```js
+assert(code.match(/\/\*\s*background-color:\s*burlywood;?\s*\*\//i));
+```
 
+
+Your `body` should have a white background.
+
+```js
+const bodyCSS = $('body').css('background-color');
+assert(bodyCSS === "rgba(0, 0, 0, 0)")
 ```
 
 # --seed--
@@ -44,7 +53,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
         </section>
       </main>
     </div>

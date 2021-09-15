@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9c
-title: 'Natural Language Processing With RNNs: Part 2'
+title: 'Processamento de linguagem natural com RNNs: Parte 2'
 challengeType: 11
 videoId: mUU9YXOFbZg
 dashedName: natural-language-processing-with-rnns-part-2
@@ -10,19 +10,19 @@ dashedName: natural-language-processing-with-rnns-part-2
 
 ## --text--
 
-Word embeddings are...:
+Incorporações de palavras são...:
 
 ## --answers--
 
-an unordered group of encoded words that describes the frequency of words in a given document.
+um grupo não ordenado de palavras codificadas que descreve a frequência das palavras em um determinado documento.
 
 ---
 
-a group of encoded words that preserves the original order of the words in a given document.
+um grupo de palavras codificadas que preserva a ordem original das palavras em um determinado documento.
 
 ---
 
-a vectorized representation of words in a given document that places words with similar meanings near each other.
+uma representação vetorizada de palavras em um determinado documento que coloca palavras com significados semelhantes próximas umas das outras.
 
 ## --video-solution--
 

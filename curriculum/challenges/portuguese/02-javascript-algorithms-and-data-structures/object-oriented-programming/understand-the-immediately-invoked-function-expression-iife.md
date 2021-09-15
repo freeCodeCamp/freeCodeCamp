@@ -32,7 +32,7 @@ A função deve ser anônima.
 assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, '')));
 ```
 
-Sua função deve ter parênteses no final da expressão para chamar ela imediatamente.
+A função deve ter parênteses no final da expressão para chamar ela imediatamente.
 
 ```js
 assert(/\(.*(\)\(|\}\(\))\)/.test(code.replace(/[\s;]/g, '')));

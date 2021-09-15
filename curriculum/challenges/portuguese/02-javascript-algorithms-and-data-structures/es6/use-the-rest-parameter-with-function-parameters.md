@@ -1,6 +1,6 @@
 ---
 id: 587d7b88367417b2b2512b47
-title: Use o parâmetro rest com parâmetros de função
+title: Usar o parâmetro rest com parâmetros de função
 challengeType: 1
 forumTopicId: 301221
 dashedName: use-the-rest-parameter-with-function-parameters

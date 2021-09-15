@@ -12,7 +12,7 @@ If you want to create new steps, the following tools simplify that process.
 
 A one-off script that will automatically add the next step based on the last step numbered as `part-xxx.md` where `xxx` represents the 3-digit step number of the last step. The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
 
-**Note:** This script also runs [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
+**Note:** This script also runs [reorder-steps](#reorder-steps).
 
 ### How to run script:
 
@@ -27,7 +27,7 @@ npm run create-next-step
 
 A one-off script that automatically adds a specified number of steps at a specific starting step number. The challenge seed code for all steps created will be empty.
 
-**Note:** This script also runs [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
+**Note:** This script also runs [reorder-steps](#reorder-steps).
 
 ### How to run script:
 
@@ -42,7 +42,7 @@ npm run create-empty-steps start=X num=Y # where X is the starting step number a
 
 A one-off script that automatically adds a new step between two existing consecutive steps. The challenge seed code will use the existing starting step's challenge seed code with the editable region markers (ERMs) removed.
 
-**Note:** This script also runs [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
+**Note:** This script also runs [reorder-steps](#reorder-steps).
 
 ### How to run script:
 
@@ -85,7 +85,7 @@ part-6.md
 
 At some point you decide you need to delete `part-2.md`, because that step is no longer needed. Also, you decide to break down `part-4.md` into three steps instead of just one.
 
-To accomplish this restructure, you would need to delete `part-2.md` and then add a `part-4a.md` and a `part-5b.md`. The new folder structure would look like the following:
+To accomplish this restructure, you would need to delete `part-2.md` and then add a `part-4a.md` and a `part-4b.md`. The new folder structure would look like the following:
 
 ```bash
 part-001.md

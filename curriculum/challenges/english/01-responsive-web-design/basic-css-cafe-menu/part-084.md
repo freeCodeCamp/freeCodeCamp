@@ -1,5 +1,5 @@
 ---
-id: 5f45b45d099f3e621fbbb256
+id: 5f45b4c81cea7763550e40df
 title: Part 84
 challengeType: 0
 dashedName: part-84
@@ -7,16 +7,22 @@ dashedName: part-84
 
 # --description--
 
-You change properties of a link when the link is actually clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue; }`.
-
-Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
+To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked.
 
 # --hints--
 
-Test 1
+You should set the `color` property to `black` when the link is `visited`.
 
 ```js
+const aVisitedColor = new __helpers.CSSHelp(document).getStyle('a:visited')?.getPropertyValue('color');
+assert(aVisitedColor === 'black');
+```
 
+You should set the `color` property to `brown` when the link is `active`.
+
+```js
+const aActiveColor = new __helpers.CSSHelp(document).getStyle('a:active')?.getPropertyValue('color');
+assert(aActiveColor === 'brown');
 ```
 
 # --seed--
@@ -41,12 +47,12 @@ Test 1
       <hr>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
             <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
@@ -88,7 +94,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
 }
@@ -159,6 +165,7 @@ a {
   color: black;
 }
 
+--fcc-editable-region--
 a:visited {
   color: grey;
 }
@@ -167,8 +174,9 @@ a:hover {
   color: brown;
 }
 
---fcc-editable-region--
-
+a:active {
+  color: white;
+}
 --fcc-editable-region--
 ```
 

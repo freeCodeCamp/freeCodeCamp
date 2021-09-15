@@ -22,12 +22,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@actions/core": "1.4.0",
+    "@actions/core": "1.5.0",
     "@actions/github": "5.0.0",
     "dotenv": "10.0.0",
     "fs-extra": "10.0.0",
     "gray-matter": "4.0.3",
-    "node-fetch": "2.6.1",
+    "node-fetch": "2.6.2",
     "node-opencc": "2.0.1",
     "path": "0.12.7",
     "readdirp": "3.6.0"

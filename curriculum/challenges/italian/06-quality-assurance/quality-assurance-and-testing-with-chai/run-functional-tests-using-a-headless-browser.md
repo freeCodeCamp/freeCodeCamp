@@ -1,6 +1,6 @@
 ---
 id: 587d8250367417b2b2512c5d
-title: Eseguire test funzionali usando un headless browser
+title: Eseguire test funzionali utilizzando un browser senza intestazione
 challengeType: 2
 forumTopicId: 301595
 dashedName: run-functional-tests-using-a-headless-browser
@@ -10,23 +10,31 @@ dashedName: run-functional-tests-using-a-headless-browser
 
 Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-Nella vista principale HTML abbiamo fornito un modulo di input. Esso invia con una richiesta Ajax i dati all'endpoint `PUT /travellers` che abbiamo usato sopra. Quando la richiesta è completata con successo, il codice client aggiunge un `<div>` contenente le informazioni restituite dalla chiamata al DOM. Ecco un esempio di come interagire con questo modulo:
+Nella pagina c'è un modulo di inserimento. Esso invia i dati all'endpoint `PUT /travellers` come richiesta AJAX.
+
+Quando la richiesta è completata con successo, il codice client aggiunge al DOM un `<div>` contenente le informazioni nella risposta.
+
+Ecco un esempio di come usare Zombie.js per interagire con il modulo:
 
 ```js
-test('#test - submit the input "surname" : "Polo"', function (done) {
-  browser.fill('surname', 'Polo').pressButton('submit', function () {
-    browser.assert.success();
-    browser.assert.text('span#name', 'Marco');
-    browser.assert.text('span#surname', 'Polo');
-    browser.assert.elements('span#dates', 1);
-    done();
+test('Submit the surname "Polo" in the HTML form', function (done) {
+  browser.fill('surname', 'Polo').then(() => {
+    browser.pressButton('submit', () => {
+      browser.assert.success();
+      browser.assert.text('span#name', 'Marco');
+      browser.assert.text('span#surname', 'Polo');
+      browser.assert.elements('span#dates', 1);
+      done();
+    });
   });
-}
+});
 ```
 
-In primo luogo, il metodo `fill` dell'oggetto `browser` compila il campo `surname` del modulo con il valore `'Polo'`. Subito dopo, il metodo `pressButton` invoca l'event lister `submit` del modulo. Il metodo `pressButton` è asincrono.
+Per prima cosa, il metodo `fill` dell'oggetto `browser` compila il campo `surname` del modulo con il valore `'Polo'`. `fill` restituisce una promessa, quindi `then` viene incatenato fuori.
 
-Poi, una volta ricevuta una risposta dalla richiesta AJAX, vengono fatte alcune asserzioni, confermando che:
+All'interno della callback `then`, il metodo `pressButton` dell'oggetto `browser` viene utilizzato per invocare l'event listener `submit` del modulo. Il metodo `pressButton` è asincrono.
+
+Poi, una volta ricevuta una risposta dalla richiesta AJAX, vengono fatte alcune asserzioni confermando:
 
 1.  Lo stato della risposta è `200`
 2.  Il testo all'interno dell'elemento `<span id='name'></span>` corrisponde a `'Marco'`
@@ -37,17 +45,17 @@ Infine, viene invocata la callback `done`, che è necessaria a causa del test as
 
 # --instructions--
 
-All'interno di `tests/2_functional-tests.js`, nel test `'submit "surname" : "Colombo" - write your e2e test...'` (`// #5`), automatizza la compilazione e invia il modulo:
+All'interno di `tests/2_functional-tests.js`, nel test `'Submit the surname "Colombo" in the HTML form'` (`// #5`), automatizza quanto segue:
 
-1.  Compila il modulo
-2.  Invia premendo il pulsante `'submit'`.
+1.  Compila il modulo con il cognome `Colombo`
+2.  Premi il pulsante submit
 
-All'interno della callback:
+E all'interno della callback `pressButton`:
 
-1.  asserisci che lo stato è OK `200`
-2.  asserisci che il testo all'interno dell'elemento `span#name` è `'Cristoforo'`
-3.  asserisci che il testo all'interno dell'elemento `span#surname` è `'Colombo'`
-4.  asserisci che gli elementi `span#dates` esistono e il loro conteggio è `1`
+1.  Asserisci che lo stato sia OK `200`
+2.  Asserisci che il testo all'interno dell'elemento `span#name` sia `'Cristoforo'`
+3.  Asserisci che il testo all'interno dell'elemento `span#surname` sia `'Colombo'`
+4.  Asserisci che gli elementi `span#dates` esistono e il loro conteggio è `1`
 
 Non dimenticare di rimuovere la chiamata `assert.fail()`.
 
@@ -57,7 +65,7 @@ Tutti i test dovrebbero essere superati.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -71,7 +79,7 @@ Dovresti asserire che la richiesta dell'headless browser sia riuscita.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'browser.success');
     },
@@ -81,11 +89,11 @@ Dovresti asserire che la richiesta dell'headless browser sia riuscita.
   );
 ```
 
-Dovresti asserire che il testo all'interno dell'elemento 'span#name' sia 'Cristoforo'.
+Dovresti asserire che il testo all'interno dell'elemento `span#name` è `'Cristoforo'`.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'browser.text');
       assert.match(data.assertions[1].args[0], /('|")span#name\1/);
@@ -97,11 +105,11 @@ Dovresti asserire che il testo all'interno dell'elemento 'span#name' sia 'Cristo
   );
 ```
 
-Dovresti asserire che il testo all'interno dell'elemento 'span#surname' sia 'Colombo'.
+Dovresti asserire che il testo all'interno dell'elemento `span#surname` è `'Colombo'`.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[2].method, 'browser.text');
       assert.match(data.assertions[2].args[0], /('|")span#surname\1/);
@@ -113,11 +121,11 @@ Dovresti asserire che il testo all'interno dell'elemento 'span#surname' sia 'Col
   );
 ```
 
-Dovresti asserire che l'elemento 'span#dates' esiste e il suo conteggio sia 1.
+Dovresti affermare che l'elemento `span#dates` esiste e il suo conteggio è 1.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[3].method, 'browser.elements');
       assert.match(data.assertions[3].args[0], /('|")span#dates\1/);

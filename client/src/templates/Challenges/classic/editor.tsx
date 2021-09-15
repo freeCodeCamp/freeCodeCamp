@@ -1,3 +1,12 @@
+import Loadable from '@loadable/component';
+// eslint-disable-next-line import/no-duplicates
+import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
+import type {
+  IRange,
+  editor,
+  Range as RangeType
+  // eslint-disable-next-line import/no-duplicates
+} from 'monaco-editor/esm/vs/editor/editor.api';
 import React, {
   useEffect,
   Suspense,
@@ -7,39 +16,28 @@ import React, {
 } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import Loadable from '@loadable/component';
+import store from 'store';
+import { Loader } from '../../../components/helpers';
+import { userSelector, isDonationModalOpenSelector } from '../../../redux';
+import {
+  ChallengeFiles,
+  DimensionsType,
+  ExtTypes,
+  FileKeyTypes,
+  ResizePropsType,
+  Test
+} from '../../../redux/prop-types';
 
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
   executeChallenge,
-  inAccessibilityModeSelector,
   saveEditorContent,
   setEditorFocusability,
-  setAccessibilityMode,
   updateFile,
   challengeTestsSelector,
   submitChallenge
 } from '../redux';
-import { userSelector, isDonationModalOpenSelector } from '../../../redux';
-import { Loader } from '../../../components/helpers';
-import {
-  ChallengeFileType,
-  DimensionsType,
-  ExtTypes,
-  FileKeyTypes,
-  ResizePropsType,
-  TestType
-} from '../../../redux/prop-types';
-
-// eslint-disable-next-line import/no-duplicates
-import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
-import type {
-  IRange,
-  editor,
-  Range as RangeType
-  // eslint-disable-next-line import/no-duplicates
-} from 'monaco-editor/esm/vs/editor/editor.api';
 
 import './editor.css';
 
@@ -47,7 +45,7 @@ const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
   canFocus: boolean;
-  challengeFiles: ChallengeFileType;
+  challengeFiles: ChallengeFiles;
   containerRef: RefObject<HTMLElement>;
   contents: string;
   description: string;
@@ -56,19 +54,18 @@ interface EditorProps {
   executeChallenge: (isShouldCompletionModalOpen?: boolean) => void;
   ext: ExtTypes;
   fileKey: FileKeyTypes;
-  inAccessibilityMode: boolean;
   initialEditorContent: string;
   initialExt: string;
   output: string[];
   resizeProps: ResizePropsType;
   saveEditorContent: () => void;
-  setAccessibilityMode: (isAccessible: boolean) => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
-  tests: TestType[];
+  tests: Test[];
   theme: string;
-  updateFile: (objest: {
-    key: FileKeyTypes;
+  title: string;
+  updateFile: (object: {
+    fileKey: FileKeyTypes;
     editorValue: string;
     editableRegionBoundaries: number[] | null;
   }) => void;
@@ -100,21 +97,18 @@ interface EditorPropertyStore {
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
   consoleOutputSelector,
-  inAccessibilityModeSelector,
   isDonationModalOpenSelector,
   userSelector,
   challengeTestsSelector,
   (
     canFocus: boolean,
     output: string[],
-    accessibilityMode: boolean,
     open,
     { theme = 'default' }: { theme: string },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
     output,
-    inAccessibilityMode: accessibilityMode,
     theme,
     tests
   })
@@ -125,7 +119,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   executeChallenge,
   saveEditorContent,
-  setAccessibilityMode,
   setEditorFocusability,
   updateFile,
   submitChallenge
@@ -249,7 +242,9 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const getEditableRegion = () => {
     const { challengeFiles, fileKey } = props;
-    const edRegBounds = challengeFiles[fileKey]?.editableRegionBoundaries;
+    const edRegBounds = challengeFiles?.find(
+      challengeFile => challengeFile.fileKey === fileKey
+    )?.editableRegionBoundaries;
     return edRegBounds ? [...edRegBounds] : [];
   };
 
@@ -263,11 +258,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
 
+    const challengeFile = challengeFiles?.find(
+      challengeFile => challengeFile.fileKey === fileKey
+    );
     const model =
       data.model ||
       monaco.editor.createModel(
-        challengeFiles[fileKey]?.contents ?? '',
-        modeMap[challengeFiles[fileKey]?.ext ?? 'html']
+        challengeFile?.contents ?? '',
+        modeMap[challengeFile?.ext ?? 'html']
       );
     data.model = model;
     const editableRegion = getEditableRegion();
@@ -284,7 +282,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { challengeFiles, fileKey } = props;
     const { model } = dataRef.current[fileKey];
 
-    const newContents = challengeFiles[fileKey]?.contents;
+    const newContents = challengeFiles?.find(
+      challengeFile => challengeFile.fileKey === fileKey
+    )?.contents;
     if (model?.getValue() !== newContents) {
       model?.setValue(newContents ?? '');
     }
@@ -297,12 +297,31 @@ const Editor = (props: EditorProps): JSX.Element => {
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
     data.editor = editor;
+
+    const storedAccessibilityMode = () => {
+      const accessibility = store.get('accessibilityMode') as boolean;
+      if (!accessibility) {
+        store.set('accessibilityMode', false);
+      }
+      // Only able to set the arialabel when accessibility mode is set to true
+      // Otherwise it gets overwritten by the monaco default aria-label
+      if (accessibility) {
+        editor.updateOptions({
+          ariaLabel:
+            'Accessibility mode set to true. Press Ctrl+e to disable or press Alt+F1 for more options'
+        });
+      }
+
+      return accessibility;
+    };
+
+    const accessibilityMode = storedAccessibilityMode();
     editor.updateOptions({
-      accessibilitySupport: props.inAccessibilityMode ? 'on' : 'auto'
+      accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
-    if (props.canFocus && !props.inAccessibilityMode) {
+    if (props.canFocus && !accessibilityMode) {
       // TODO: only one Editor should be calling for focus at once.
       editor.focus();
     } else focusOnHotkeys();
@@ -316,7 +335,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       null,
       () => {}
     );
-    /* eslint-disable */
+    /* eslint-enable */
     editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
@@ -343,28 +362,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addAction({
       id: 'toggle-accessibility',
       label: 'Toggle Accessibility Mode',
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.F1],
+      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E],
       run: () => {
-        const currentAccessibility = props.inAccessibilityMode;
-        // The store needs to be updated first, as onDidChangeConfiguration is
-        // called before updateOptions returns
-        props.setAccessibilityMode(!currentAccessibility);
+        const currentAccessibility = storedAccessibilityMode();
+
+        store.set('accessibilityMode', !currentAccessibility);
+
         editor.updateOptions({
-          accessibilitySupport: currentAccessibility ? 'auto' : 'on'
+          accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto'
         });
       }
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
-    // This is to persist changes caused by the accessibility tooltip.
-    editor.onDidChangeConfiguration(event => {
-      if (
-        event.hasChanged(monaco.editor.EditorOption.accessibilitySupport) &&
-        editor.getRawOptions().accessibilitySupport === 'on' &&
-        !props.inAccessibilityMode
-      ) {
-        props.setAccessibilityMode(true);
-      }
-    });
 
     const editableBoundaries = getEditableRegion();
 
@@ -493,7 +502,9 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (data.descriptionNode) return data.descriptionNode;
-    const { description } = props;
+    const { description, title } = props;
+    const jawHeading = document.createElement('h3');
+    jawHeading.innerText = title;
     // TODO: var was used here. Should it?
     const domNode = document.createElement('div');
     const desc = document.createElement('div');
@@ -501,6 +512,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.classList.add('description-container');
     domNode.classList.add('editor-upper-jaw');
     domNode.appendChild(descContainer);
+    descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     // desc.style.background = 'white';
@@ -571,9 +583,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const onChange = (editorValue: string) => {
-    const { updateFile } = props;
-    // TODO: use fileKey everywhere?
-    const { fileKey: key } = props;
+    const { updateFile, fileKey } = props;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
     // those imply that the positions have changed (i.e. if the content height
@@ -584,7 +594,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       editableRegion.startLineNumber - 1,
       editableRegion.endLineNumber + 1
     ];
-    updateFile({ key, editorValue, editableRegionBoundaries });
+    updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
 
   function showEditableRegion(editableBoundaries: number[]) {
@@ -708,8 +718,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // TODO: handle the case that the editable region reaches the bottom of the
     // editor
     return (
-      data.model?.getDecorationRange(data.endEditDecId)
-        ?.startLineNumber ?? 1
+      data.model?.getDecorationRange(data.endEditDecId)?.startLineNumber ?? 1
     );
   }
 
@@ -724,7 +733,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // TODO: TESTS!
   // Make 100% sure this is inclusive.
-  // TODO: pass around monacoRef.current instead of using the global one?
   const getLinesBetweenRanges = (
     firstRange: RangeType,
     secondRange: RangeType
@@ -759,14 +767,17 @@ const Editor = (props: EditorProps): JSX.Element => {
       // editor
       const secondRange = model.getDecorationRange(endEditDecId);
       if (firstRange && secondRange) {
-        const { startLineNumber, endLineNumber } = getLinesBetweenRanges(
-          firstRange,
-          secondRange
-        );
+        const editableRegion = getLinesBetweenRanges(firstRange, secondRange);
+        const startLineNumber = editableRegion.startLineNumber;
 
-        // getValueInRange includes column x if
-        // startColumnNumber <= x < endColumnNumber
-        // so we add 1 here
+        let endLineNumber = editableRegion.endLineNumber;
+
+        // TODO: this prevents the editor from crashing, but it's still possible
+        // for the editable region to become empty and for the editable
+        // decorations to get out of sync with the jaw locations.
+        endLineNumber = Math.max(endLineNumber, startLineNumber + 1);
+        endLineNumber = Math.min(endLineNumber, model.getLineCount());
+
         const endColumn = model.getLineLength(endLineNumber) + 1;
         return new monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
       }
@@ -787,14 +798,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { model } = data;
     const monaco = monacoRef.current;
     if (!model || !monaco) return;
-    const forbiddenRanges: [number, number][] = [
+    const forbiddenRegions: [number, number][] = [
       [0, editableRegion[0]],
       [editableRegion[1], model.getLineCount()]
     ];
-
-    const ranges = forbiddenRanges.map(positions => {
-      return positionsToRange(model, monaco, positions);
-    });
 
     const editableRange = positionsToRange(model, monaco, [
       editableRegion[0] + 1,
@@ -809,34 +816,40 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     // if the forbidden range includes the top of the editor
     // we simply don't add those decorations
-    if (forbiddenRanges[0][1] > 0) {
+    if (forbiddenRegions[0][1] > 0) {
+      const forbiddenRange = positionsToRange(
+        model,
+        monaco,
+        forbiddenRegions[0]
+      );
       // the first range should expand at the top
       // TODO: Unsure what this should be - returns an array, so I added [0] @ojeytonwilliams
       data.startEditDecId = highlightLines(
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
         model,
-        ranges[0]
+        forbiddenRange
       )[0];
 
       highlightText(
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
         model,
-        ranges[0]
+        forbiddenRange
       );
     }
 
+    const forbiddenRange = positionsToRange(model, monaco, forbiddenRegions[1]);
     // TODO: handle the case the region covers the bottom of the editor
     // the second range should expand at the bottom
     data.endEditDecId = highlightLines(
       monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
       model,
-      ranges[1]
+      forbiddenRange
     )[0];
 
     highlightText(
       monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
       model,
-      ranges[1]
+      forbiddenRange
     );
 
     // The deleted line is always considered to be the one that has moved up.
@@ -866,9 +879,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       // edit, then a warned one.  Could it track that they need to make 3
       // undos?
       const newLineRanges = getNewLineRanges(e).map(range => {
-        if (monaco) {
-          return toStartOfLine(monaco.Range.lift(range));
-        }
+        return toStartOfLine(monaco.Range.lift(range));
       });
       const deletedLine = getDeletedLine(e);
 

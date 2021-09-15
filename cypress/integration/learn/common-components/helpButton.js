@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Help Button', () => {
   it('should be visible', () => {
     cy.visit(
@@ -24,7 +22,7 @@ describe('Help Button', () => {
 
   it('should render two links when video is not available', () => {
     cy.visit(
-      '/learn/front-end-libraries/bootstrap/apply-the-default-bootstrap-button-style'
+      '/learn/front-end-development-libraries/bootstrap/apply-the-default-bootstrap-button-style'
     );
     cy.get('#get-help-dropdown').scrollIntoView().click();
     cy.get('ul[role="menu"]').within(() => {

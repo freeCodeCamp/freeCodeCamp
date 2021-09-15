@@ -18,20 +18,22 @@ Alternatively, the player can choose to make the special move of pocketing the l
 
 The winner is the player who pockets the silver dollar.
 
+<img class="img-responsive center-block" alt="silver dollar game" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;">
+
 A winning configuration is an arrangement of coins on the strip where the first player can force a win no matter what the second player does.
 
-Let W(n,c) be the number of winning configurations for a strip of n squares, c worthless coins and one silver dollar.
+Let $W(n, c)$ be the number of winning configurations for a strip of $n$ squares, $c$ worthless coins and one silver dollar.
 
-You are given that W(10,2) = 324 and W(100,10) = 1514704946113500.
+You are given that $W(10, 2) = 324$ and $W(100, 10) = 1\\,514\\,704\\,946\\,113\\,500$.
 
-Find W(1 000 000, 100) modulo the semiprime 1000 036 000 099 (= 1 000 003 · 1 000 033).
+Find $W(1\\,000\\,000, 100)$ modulo the semiprime $1000\\,036\\,000\\,099 (= 1\\,000\\,003 \times 1\\,000\\,033)$.
 
 # --hints--
 
-`euler344()` should return 65579304332.
+`silverDollarGame()` should return `65579304332`.
 
 ```js
-assert.strictEqual(euler344(), 65579304332);
+assert.strictEqual(silverDollarGame(), 65579304332);
 ```
 
 # --seed--
@@ -39,12 +41,12 @@ assert.strictEqual(euler344(), 65579304332);
 ## --seed-contents--
 
 ```js
-function euler344() {
+function silverDollarGame() {
 
   return true;
 }
 
-euler344();
+silverDollarGame();
 ```
 
 # --solutions--

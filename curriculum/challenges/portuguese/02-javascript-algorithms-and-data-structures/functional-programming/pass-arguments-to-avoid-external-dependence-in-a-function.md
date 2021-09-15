@@ -40,7 +40,7 @@ A função `incrementer` deve receber um argumento.
 assert(incrementer.length === 1);
 ```
 
-Sua função `incrementer` deve retornar um valor que é maior que o valor `fixedValue`.
+A função `incrementer` deve retornar um valor que é maior que o valor `fixedValue`.
 
 ```js
 const __newValue = incrementer(fixedValue);

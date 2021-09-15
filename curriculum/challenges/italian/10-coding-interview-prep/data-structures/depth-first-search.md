@@ -1,6 +1,6 @@
 ---
 id: 587d825d367417b2b2512c96
-title: Depth-First Search
+title: Ricerca Depth-First
 challengeType: 1
 forumTopicId: 301640
 dashedName: depth-first-search
@@ -8,31 +8,31 @@ dashedName: depth-first-search
 
 # --description--
 
-Similar to <dfn>breadth-first search</dfn>, here we will learn about another graph traversal algorithm called <dfn>depth-first search</dfn>.
+Similmente alla ricerca <dfn>breadth-first</dfn>, qui impareremo a conoscere un altro algoritmo di attraversamento chiamato ricerca <dfn>depth-first</dfn>.
 
-Whereas the breadth-first search searches incremental edge lengths away from the source node, <dfn>depth-first search</dfn> first goes down a path of edges as far as it can.
+Mentre la ricerca breadth-first cerca lunghezze di archi incrementali lontano dal nodo di origine, la ricerca <dfn>depth-first</dfn> scende prima lungo un percorso di archi il più profondo possibile.
 
-Once it reaches one end of a path, the search will backtrack to the last node with an un-visited edge path and continue searching.
+Una volta che raggiunge la fine di un percorso, la ricerca tornerà indietro fino all'ultimo nodo con un percorso di archi non visitato e continuerà a cercare.
 
-The animation below shows how the algorithm works. The algorithm starts with the top node and visits the nodes in the numbered order.
+L'animazione qui sotto mostra come funziona l'algoritmo. L'algoritmo inizia con il nodo iniziale e visita i nodi nell'ordine numerato.
 
 <img class='img-responsive' src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
 
-Notice how, unlike breadth-first search, every time a node is visited, it doesn't visit all of its neighbors. Instead, it first visits one of its neighbors and continues down that path until there are no more nodes to be visited on that path.
+Nota come, a differenza della ricerca breadth-first, ogni volta che un nodo viene visitato, non visita tutti i suoi vicini. Invece, prima visita uno dei suoi vicini e continua lungo quel percorso fino a quando non ci sono più nodi da visitare su di esso.
 
-To implement this algorithm, you'll want to use a stack. A stack is an array where the last element added is the first to be removed. This is also known as a <dfn>Last-In-First-Out</dfn> data structure. A stack is helpful in depth-first search algorithms because, as we add neighbors to the stack, we want to visit the most recently added neighbors first and remove them from the stack.
+Per implementare questo algoritmo, vorrai utilizzare una pila (stack). Una pila è un array in cui l'ultimo elemento aggiunto è il primo ad essere rimosso. Questo è noto anche come una struttura di dati <dfn>Last-In-First-Out</dfn>. Uno stack è utile negli algoritmi di ricerca depth-first perché, mano a mano che aggiungiamo nodi vicini allo stack, vogliamo visitare prima i nodi vicini aggiunti più di recente e rimuoverli dallo stack.
 
-A simple output of this algorithm is a list of nodes which are reachable from a given node. Therefore, you'll also want to keep track of the nodes you visit.
+Un semplice output di questo algoritmo è un elenco di nodi raggiungibili da un dato nodo. Pertanto, dovrai anche tenere traccia dei nodi che visiti.
 
 # --instructions--
 
-Write a function `dfs()` that takes an undirected, adjacency matrix `graph` and a node label `root` as parameters. The node label will just be the numeric value of the node between `0` and `n - 1`, where `n` is the total number of nodes in the graph.
+Scrivi una funzione `dfs()` che richiede una matrice di adiacenza non orientata `graph`, e un'etichetta di nodo `root` come parametri. L' etichetta del nodo sarà solo il valore numerico del nodo tra `0` e `n - 1`, dove `n` è il numero totale dei nodi nel grafo.
 
-Your function should output an array of all nodes reachable from `root`.
+La tua funzione dovrebbe generare un array di tutti i nodi raggiungibili da `root`.
 
 # --hints--
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `1` should return an array with `0`, `1`, `2`, and `3`.
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` con un nodo iniziale di `1` dovrebbe restituire un array con `0`, `1`, `2`e `3`.
 
 ```js
 assert.sameMembers(
@@ -49,7 +49,7 @@ assert.sameMembers(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `1` should return an array with four elements.
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` con un nodo di partenza di `1` dovrebbe restituire un array con quattro elementi.
 
 ```js
 assert(
@@ -65,7 +65,7 @@ assert(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `3` should return an array with `3`.
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` con un nodo di partenza di `3` dovrebbe restituire un array con `3`.
 
 ```js
 assert.sameMembers(
@@ -82,7 +82,7 @@ assert.sameMembers(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `3` should return an array with one element.
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` con un nodo iniziale di `3` dovrebbe restituire un array con un unico elemento.
 
 ```js
 assert(
@@ -98,7 +98,7 @@ assert(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with `2` and `3`.
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` con un nodo iniziale di `3` dovrebbe restituire un array con `2` e `3`.
 
 ```js
 assert.sameMembers(
@@ -115,7 +115,7 @@ assert.sameMembers(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with two elements.
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` con un nodo di inizio di `3` dovrebbe restituire un array con due elementi.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return an array with `0` and `1`.
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` con un nodo iniziale di `0` deve restituire un array con `0` e `1`.
 
 ```js
 assert.sameMembers(
@@ -148,7 +148,7 @@ assert.sameMembers(
 );
 ```
 
-The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return an array with two elements.
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` con un nodo di inizio di `0` dovrebbe restituire un array con due elementi.
 
 ```js
 assert(

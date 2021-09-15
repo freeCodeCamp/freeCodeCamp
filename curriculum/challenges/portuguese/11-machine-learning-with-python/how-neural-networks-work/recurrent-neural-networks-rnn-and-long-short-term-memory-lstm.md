@@ -1,6 +1,6 @@
 ---
 id: 5e9a0e9ef99a403d019610cb
-title: Recurrent Neural Networks RNN and Long Short Term Memory LSTM
+title: Redes neurais recorrentes RNN e a memória de curto e longo prazo LSTM
 challengeType: 11
 videoId: UVimlsy9eW0
 dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
@@ -10,19 +10,19 @@ dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
 
 ## --text--
 
-What are the main neural network components that make up a Long Short Term Memory network?
+Quais são os principais componentes de rede neural que compõem uma rede de memória de longo e curto prazo?
 
 ## --answers--
 
-New information and prediction.
+Novas informações e previsão.
 
 ---
 
-Prediction, collected possibilities, and selection.
+Previsão, possibilidades coletadas e seleção.
 
 ---
 
-Prediction, ignoring, forgetting, and selection.
+Previsão, capacidade de ignorar, capacidade de esquecer e seleção.
 
 ## --video-solution--
 

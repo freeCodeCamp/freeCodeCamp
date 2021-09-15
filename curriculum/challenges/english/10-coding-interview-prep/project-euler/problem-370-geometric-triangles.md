@@ -8,20 +8,20 @@ dashedName: problem-370-geometric-triangles
 
 # --description--
 
-Let us define a geometric triangle as an integer sided triangle with sides a ≤ b ≤ c so that its sides form a geometric progression, i.e. b2 = a · c .
+Let us define a geometric triangle as an integer sided triangle with sides $a ≤ b ≤ c$ so that its sides form a geometric progression, i.e. $b^2 = a \times c$.
 
-An example of such a geometric triangle is the triangle with sides a = 144, b = 156 and c = 169.
+An example of such a geometric triangle is the triangle with sides $a = 144$, $b = 156$ and $c = 169$.
 
-There are 861805 geometric triangles with perimeter ≤ 106 .
+There are $861\\,805$ geometric triangles with $\text{perimeter} ≤ {10}^6$.
 
-How many geometric triangles exist with perimeter ≤ 2.5·1013 ?
+How many geometric triangles exist with $\text{perimeter} ≤ 2.5 \times {10}^{13}$?
 
 # --hints--
 
-`euler370()` should return 41791929448408.
+`geometricTriangles()` should return `41791929448408`.
 
 ```js
-assert.strictEqual(euler370(), 41791929448408);
+assert.strictEqual(geometricTriangles(), 41791929448408);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler370(), 41791929448408);
 ## --seed-contents--
 
 ```js
-function euler370() {
+function geometricTriangles() {
 
   return true;
 }
 
-euler370();
+geometricTriangles();
 ```
 
 # --solutions--

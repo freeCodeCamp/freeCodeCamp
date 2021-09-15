@@ -9,18 +9,18 @@ dashedName: counting-cards
 
 # --description--
 
-No jogo de casino Blackjack, um jogador pode ganhar vantagem sobre a casa, mantendo o número relativo de cartas altas e baixas restantes no deck. Isso se chama [Contagem de Cartas](https://en.wikipedia.org/wiki/Card_counting).
+No jogo de casino Blackjack, um jogador pode ganhar vantagem sobre a casa, mantendo o número relativo de cartas altas e baixas restantes no baralho. Isso se chama [contagem de cartas](https://en.wikipedia.org/wiki/Card_counting).
 
-Ter cartas mais altas restantes no deck favorece o jogador. A cada carta é atribuído um valor de acordo com a tabela abaixo. Quando o contador for positivo, o jogador deve apostar alto. Quando a contagem for zero ou negativa, o jogador deverá apostar baixo.
+Ter cartas mais altas restantes no baralho favorece o jogador. A cada carta é atribuído um valor de acordo com a tabela abaixo. Quando o contador for positivo, o jogador deve apostar alto. Quando a contagem for zero ou negativa, o jogador deverá apostar baixo.
 
-<table class='table table-striped'><thead><tr><th>Contagem de mudança</th><th>Cartas</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Mudança na contagem</th><th>Cartas</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>
 
-Você vai escrever uma função de contagem de cartas. A função receberá um parâmetro `card`, a qual pode ser um número ou uma string e incrementar ou decrementar a variável global `count` de acordo com o valor da carta (veja a tabela). Em seguida, a função retornará a string com o valor atual de contagem (variável count) e a string `Bet` se a contagem for positiva, ou `Hold` se a contagem for zero ou negativa. A contagem atual e a decisão do jogador (`Bet` ou `Hold`) deve ser separado por um único espaço.
+Você vai escrever uma função de contagem de cartas. A função receberá um parâmetro `card`, que pode ser um número ou uma string, e incrementar ou decrementar a variável global `count` de acordo com o valor da carta (veja a tabela). Em seguida, a função retornará a string com o valor atual de contagem (variável count) e a string `Bet` se a contagem for positiva, ou `Hold` se a contagem for zero ou negativa. A contagem atual e a decisão do jogador (`Bet` ou `Hold`) deve ser separado por um único espaço.
 
-**Exemplo de Saída:** `-3 Hold` ou `5 Bet`
+**Exemplo de saída:** `-3 Hold` ou `5 Bet`
 
 **Dica**  
-Não redefina o valor de `count` para 0 quando o valor for 7, 8, or 9. Não retorne um array.  
+NÃO redefina o valor de `count` para 0 quando o valor for 7, 8, ou 9. Não retorne um array.  
 Não inclua aspas (simples ou duplas) na saída.
 
 # --hints--

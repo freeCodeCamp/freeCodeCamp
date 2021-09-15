@@ -1,4 +1,3 @@
-/* global cy */
 const selectors = {
   heading: "[data-test-label='landing-header']",
   callToAction: "[data-test-label='landing-big-cta']",
@@ -12,7 +11,7 @@ const certifications = [
   'JavaScript Algorithms and Data Structures',
   'Front End Development Libraries',
   'Data Visualization',
-  'APIs and Microservices',
+  'Back End Development and APIs',
   'Quality Assurance',
   'Scientific Computing with Python',
   'Data Analysis with Python',

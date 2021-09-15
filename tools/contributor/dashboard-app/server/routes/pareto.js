@@ -13,7 +13,7 @@ const createPareto = reportObj =>
     }, [])
     .sort((a, b) => b.count - a.count);
 
-router.get('/', reqLimiter, async (reqeust, response) => {
+router.get('/', reqLimiter, async (request, response) => {
   const prs = await PR.find({}).then(data => data);
   prs.sort((a, b) => a._id - b._id);
   const reportObj = prs.reduce((obj, pr) => {

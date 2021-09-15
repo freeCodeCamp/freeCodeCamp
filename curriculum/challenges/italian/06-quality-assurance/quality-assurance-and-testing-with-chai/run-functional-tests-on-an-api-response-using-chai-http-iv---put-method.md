@@ -8,15 +8,17 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 # --description--
 
-Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/). Questo esercizio è simile a quello precedente. Guardalo per i dettagli.
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-Ora che hai visto come si fa, tocca a te farlo da zero.
+Questo esercizio è simile a quello precedente.
+
+Ora che sai come testare una richiesta `PUT`, è il tuo turno di farlo da zero.
 
 # --instructions--
 
-All'interno di `tests/2_functional-tests.js`, modifica il test `'send {surname: "da Verrazzano"}'` (`// #4`):
+All'interno di `tests/2_functional-tests.js`, cambia il test `'Send {surname: "da Verrazzano"}'` (`// #4`) e usa i metodi `put` e `send` per testare l'endpoint  `'/travellers'`.
 
-Invia la seguente risposta JSON come carico utile sulla rotta `/travellers`:
+Invia il seguente oggetto JSON con la tua richiesta PUT:
 
 ```json
 {
@@ -26,16 +28,16 @@ Invia la seguente risposta JSON come carico utile sulla rotta `/travellers`:
 
 Controlla quanto segue, all'interno della callback `request.end`:
 
-1.  `status`
-2.  `type`
-3.  `body.name`
-4.  `body.surname`
+1.  Lo `status` dovrebbe essere `200`
+2.  Il `type` dovrebbe essere `application/json`
+3.  Il `body.name` dovrebbe essere `Giovanni`
+4.  Il `body.surname` dovrebbe essere `da Verrazzano`
 
-Segui l'ordine di asserzione indicato sopra - facciamo affidamento su di esso. Assicurati di rimuovere `assert.fail()`, una volta finito.
+Segui l'ordine di asserzione indicato sopra - facciamo affidamento su di esso. Inoltre, assicurati di rimuovere `assert.fail()` una volta completato.
 
 # --hints--
 
-Tutti i test dovrebbero essere superati
+Tutti i test dovrebbero passare
 
 ```js
 (getUserInput) =>
@@ -49,7 +51,7 @@ Tutti i test dovrebbero essere superati
   );
 ```
 
-Dovresti verificare che 'res.status' sia 200
+Dovresti verificare che `res.status` sia 200
 
 ```js
 (getUserInput) =>
@@ -65,7 +67,7 @@ Dovresti verificare che 'res.status' sia 200
   );
 ```
 
-Dovresti verificare che 'res.type' sia 'application/json'
+Dovresti verificare che `res.type` sia `'application/json'`
 
 ```js
 (getUserInput) =>
@@ -81,7 +83,7 @@ Dovresti verificare che 'res.type' sia 'application/json'
   );
 ```
 
-Dovresti verificare che 'res.body.name' sia 'Giovanni'
+Dovresti verificare che `res.body.name` sia `'Giovanni'`
 
 ```js
 (getUserInput) =>
@@ -97,7 +99,7 @@ Dovresti verificare che 'res.body.name' sia 'Giovanni'
   );
 ```
 
-Dovresti verificare che 'res.body.surname' sia 'da Verrazzano''
+Dovresti verificare che `res.body.surname` sia `'da Verrazzano'`
 
 ```js
 (getUserInput) =>

@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import { Button } from '@freecodecamp/react-bootstrap';
+import { navigate } from 'gatsby-link';
 import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { withTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/react-bootstrap';
 
-import CertificationCard from './CertificationCard';
-
-import { stepsToClaimSelector } from '../../../redux';
-import { verifyCert } from '../../../redux/settings';
-import { createFlashMessage } from '../../../components/Flash/redux';
-import { StepsType, User } from '../../../redux/prop-types';
-
-import { certMap } from '../../../resources/cert-and-project-map';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../../config/certification-settings';
+import { createFlashMessage } from '../../../components/Flash/redux';
+import { stepsToClaimSelector } from '../../../redux';
+
+import { StepsType, User } from '../../../redux/prop-types';
+import { verifyCert } from '../../../redux/settings';
+
+import { certMap } from '../../../resources/cert-and-project-map';
 import { getVerifyCanClaimCert } from '../../../utils/ajax';
-import { navigate } from 'gatsby-link';
+import CertificationCard from './CertificationCard';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,

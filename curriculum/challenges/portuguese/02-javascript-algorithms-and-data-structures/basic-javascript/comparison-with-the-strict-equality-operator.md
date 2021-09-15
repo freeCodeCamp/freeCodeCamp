@@ -20,13 +20,13 @@ Se os valores que são comparados tiverem valores diferentes, são considerados 
 3 === '3'
 ```
 
-Essas condições retornariam `true` e `false` respectivamente.
+Essas condições retornariam `true` e `false`, respectivamente.
 
 No segundo exemplo, `3` é um tipo de `Number` e `'3'` é um tipo `String`.
 
 # --instructions--
 
-Use o operador de igualdade estrito na instrução `if`, para que a função retorne a string `Equal` quando `val` for estritamente igual a `7`
+Use o operador de igualdade estrita na instrução `if`, para que a função retorne a string `Equal` quando `val` for estritamente igual a `7`
 
 # --hints--
 

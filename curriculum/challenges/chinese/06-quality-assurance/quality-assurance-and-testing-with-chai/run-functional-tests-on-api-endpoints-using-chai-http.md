@@ -10,37 +10,36 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 请注意，本项目在[这个 Replit 项目](https://replit.com/github/freeCodeCamp/boilerplate-mochachai)的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-Mocha 允许测试异步操作。 有一个差异， 你能发现它吗？
+Mocha 允许你使用名为 `chai-http` 的插件测试异步操作，例如调用 API 端点。
 
-我们可以使用一个叫作 `chai-http` 的插件测试 API 端点。 让我们看看它是如何工作的。 请记住，API 调用是异步的。
-
-以下是使用 `chai-http` 测试 `'GET /hello?name=[name] => "hello [name]"'` 套件的例子。 测试通过 `GET` 请求在 url 查询字符串 `?name=John` 中发送一个名称字符串给 `server`。 在 `end` 方法的回调函数中，接收包含 `status` 属性的响应对象（`res`）。 第一个 `assert.equal` 检查状态是否为 `200`。 第二个 `assert.equal` 检查响应字符串 `res.text` 是否为 `"hello John"`。
+以下是使用 `chai-http` 测试名为 `'GET /hello?name=[name] => "hello [name]"'` 的套件的示例：
 
 ```js
 suite('GET /hello?name=[name] => "hello [name]"', function () {
-  test("?name=John", function (done) {
+  test('?name=John', function (done) {
     chai
       .request(server)
-      .get("/hello?name=John")
+      .get('/hello?name=John')
       .end(function (err, res) {
-        assert.equal(res.status, 200, "response status should be 200");
-        assert.equal(
-          res.text,
-          "hello John",
-          'response should be "hello John"'
-        );
+        assert.equal(res.status, 200, 'Response status should be 200');
+        assert.equal(res.text, 'hello John', 'Response should be "hello John"');
         done();
       });
   });
+});
 ```
 
-请注意测试的回调函数中的 `done` 参数。 在没有传入参数的情况下调用它，是成功完成异步任务所必需的。
+该测试向服务器发送一个 `GET` 请求，并将名称作为 URL 查询字符串（`?name=John`）。 在`end` 方法的回调函数中，接收到响应对象（`res`）并包含 `status` 属性。
+
+第一个 `assert.equal` 检查状态是否为 `200`。 第二个 `assert.equal` 检查响应字符串（`res.text`）是否为 `"hello John"`。
+
+同时，请注意测试的回调函数中的 `done` 参数。 在测试结束时，调用它且不带参数，是发出异步操作完成所必需的信号。
 
 # --instructions--
 
-在 `tests/2_functional-tests.js` 中，修改 `'Test GET /hello with no name'` 测试（`// #1`），对 `status` 和 `text` 使用断言。 不要修改传给断言的参数。
+在 `tests/2_functional-tests.js` 中，修改 `'Test GET /hello with no name'` 测试（`// #1`），对响应的 `status` 和 `text` 使用断言来通过测试。 不要改变传递给断言的参数。
 
-不要在 query 中传入 name，端点将会返回 `hello Guest`。
+不应该有任何 URL 查询。 如果没有名称 URL 查询，端点将使用 `hello Guest` 进行响应。
 
 # --hints--
 
@@ -58,7 +57,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-应测试 “res.status” 是否为 200。
+应该测试 `res.status` 为 200。
 
 ```js
 (getUserInput) =>
@@ -74,7 +73,7 @@ suite('GET /hello?name=[name] => "hello [name]"', function () {
   );
 ```
 
-应测试 “res.text“ 是否为 ”hello Guest“。
+应该测试 `res.text` == `'hello Guest'`。
 
 ```js
 (getUserInput) =>
