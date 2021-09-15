@@ -7,15 +7,66 @@ dashedName: part-21
 
 # --description--
 
-Create another `@keyframes` rule with the name `cabins`. Use the same properties as your `@keyframes wheel`.
+Create another `@keyframes` rule with the name `cabins`. Use the same properties as your `@keyframes wheel`, but set the `transform` property of the `100%` selector to `rotate(-360deg)`.
 
 # --hints--
 
-Test 1
+You should have a `@keyframes` rule.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.length === 2);
 ```
+
+Your new `@keyframes` rule should be named `cabins`.
+
+```js
+const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes');
+assert(rules?.[0]?.name === 'cabins' || rules?.[1]?.name === 'cabins');
+```
+
+Your new `@keyframes` rule should come after your `@keyframes wheel` rule.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.name === 'cabins');
+```
+
+You should not change the name of your `@keyframes wheel` rule.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === 'wheel');
+```
+
+Your `@keyframes cabins` rule should have a `0%` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[0]?.keyText === '0%');
+```
+
+Your `0%` selector should have a `transform` property set to `rotate(0deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[0]?.style?.transform === 'rotate(0deg)');
+```
+
+Your `@keyframes cabins` rule should have a `100%` selector.
+
+```js
+const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules
+assert(rules?.[0]?.keyText === '100%' || rules?.[1]?.keyText === '100%');
+```
+
+Your `100%` selector should come after your `0%` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.keyText === '100%')
+```
+
+Your `100%` selector should have a `transform` property set to `rotate(-360deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.style?.transform === 'rotate(-360deg)')
+```
+
 
 # --seed--
 
@@ -30,19 +81,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

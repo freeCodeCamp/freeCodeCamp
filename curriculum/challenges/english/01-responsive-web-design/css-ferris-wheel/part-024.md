@@ -7,14 +7,14 @@ dashedName: part-24
 
 # --description--
 
-You can use `@keyframes` rules to control more than just the transformation of an element. In the `0%` selector, set the `background-color` to `yellow`.
+You can use `@keyframes` rules to control more than just the transformation of an element. In the `0%` selector of your `@keyframes cabins`, set the `background-color` to `yellow`.
 
 # --hints--
 
-Test 1
+Your `0%` selector should have a `background-color` property set to `yellow`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[0]?.style?.backgroundColor === 'yellow');
 ```
 
 # --seed--
@@ -30,19 +30,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```
@@ -132,12 +134,12 @@ Test 1
 }
 
 --fcc-editable-region--
-@keyframes cabin-animation {
+@keyframes cabins {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
 --fcc-editable-region--

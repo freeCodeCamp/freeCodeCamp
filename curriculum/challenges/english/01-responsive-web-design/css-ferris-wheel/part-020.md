@@ -13,10 +13,16 @@ The `animation-timing-function` property sets how the animation should progress 
 
 # --hints--
 
-Test 1
+Your `.wheel` selector should have an `animation-iteration-count` property set to `infinite`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationIterationCount === 'infinite');
+```
 
+Your `.wheel` selector should have an `animation-timing-function` property set to `linear`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationTimingFunction === 'linear');
 ```
 
 # --seed--
@@ -32,19 +38,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

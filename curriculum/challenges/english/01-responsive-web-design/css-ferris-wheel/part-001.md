@@ -15,10 +15,139 @@ Set the `title` to `CSS Ferris Wheel`.
 
 # --hints--
 
-Test 1
+Your code should contain the `DOCTYPE` reference.
 
 ```js
+assert(code.match(/<!DOCTYPE/gi));
+```
 
+You should include a space after the `DOCTYPE` reference.
+
+```js
+assert(code.match(/<!DOCTYPE\s+/gi));
+```
+
+You should define the document type to be `html`.
+
+```js
+assert(code.match(/<!DOCTYPE\s+html/gi));
+```
+
+You should close the `DOCTYPE` declaration with a `>` after the type.
+
+```js
+assert(code.match(/<!DOCTYPE\s+html\s*>/gi));
+```
+
+Your `html` element should have an opening tag.
+
+```js
+assert(code.match(/<html\s*>/gi));
+```
+
+Your `html` element should have a closing tag.
+
+```js
+assert(code.match(/<\/html\s*>/));
+```
+
+Your `html` element should be below the `DOCTYPE` declaration.
+
+```js
+assert(code.match(/(?<!<html\s*>)<!DOCTYPE\s+html\s*>/gi));
+```
+
+You should have an opening `head` tag.
+
+```js
+assert(code.match(/<head\s*>/i));
+```
+
+You should have a closing `head` tag.
+
+```js
+assert(code.match(/<\/head\s*>/i));
+```
+
+You should have an opening `body` tag.
+
+```js
+assert(code.match(/<body\s*>/i));
+```
+
+You should have a closing `body` tag.
+
+```js
+assert(code.match(/<\/body\s*>/i));
+```
+
+The `head` and `body` elements should be siblings.
+
+```js
+assert(document.querySelector('head')?.nextElementSibling?.localName === 'body');
+```
+
+The `head` element should be within the `html` element.
+
+```js
+assert([...document.querySelector('html')?.children].some(x => x?.localName === 'head'));
+```
+
+The `body` element should be within the `html` element.
+
+```js
+assert([...document.querySelector('html')?.children].some(x => x?.localName === 'body'));
+```
+
+Your code should have a `title` element.
+
+```js
+const title = document.querySelector('title');
+assert.exists(title);
+```
+
+Your project should have a title of `CSS Ferris Wheel`.
+
+```js
+const title = document.querySelector('title');
+assert.equal(title?.text?.trim()?.toLowerCase(), 'css ferris wheel')
+```
+
+Remember, the casing and spelling matter for the title.
+
+```js
+const title = document.querySelector('title');
+assert.equal(title?.text?.trim(), 'CSS Ferris Wheel');
+```
+
+Your code should have a `link` element.
+
+```js
+assert.match(code, /<link/)
+```
+
+Your `link` element should be a self-closing element.
+
+```js
+assert(code.match(/<link[\w\W\s]+\/>/i));
+```
+
+Your `link` element should be within your `head` element.
+
+```js
+assert(code.match(/<head>[\w\W\s]*<link[\w\W\s]*\/>[\w\W\s]*<\/head>/i))
+```
+
+Your `link` element should have a `rel` attribute with the value `stylesheet`.
+
+```js
+assert.match(code, /<link[\s\S]*?rel=('|"|`)stylesheet\1/)
+```
+
+Your `link` element should have an `href` attribute with the value `styles.css`.
+
+```js
+assert.match(code, /<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/)
 ```
 
 # --seed--

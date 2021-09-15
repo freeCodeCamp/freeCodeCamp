@@ -13,10 +13,23 @@ With that, your ferris wheel is complete!
 
 # --hints--
 
-Test 1
+You should create a new `50%` selector in your `@keyframes cabins` rule.
 
 ```js
+const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1];
+assert(rules?.[0]?.keyText === '50%' || rules?.[1]?.keyText === '50%' || rules?.[2]?.keyText === '50%'); 
+```
 
+Your `50%` selector should be between your `0%` and `100%` selectors.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.[1]?.keyText === '50%');
+```
+
+Your `50%` selector should have a `background-color` property set to `purple`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.[1]?.style?.backgroundColor === 'purple');
 ```
 
 # --seed--
@@ -32,19 +45,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```
@@ -134,13 +149,13 @@ Test 1
 }
 
 --fcc-editable-region--
-@keyframes cabin-animation {
+@keyframes cabins {
   0% {
     transform: rotate(0deg);
     background-color: yellow;
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
 --fcc-editable-region--

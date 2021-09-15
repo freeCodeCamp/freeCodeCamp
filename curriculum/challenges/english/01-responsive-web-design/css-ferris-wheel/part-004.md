@@ -11,10 +11,22 @@ Set the `position` property of the `.wheel` selector to `absolute`. Set the `hei
 
 # --hints--
 
-Test 1
+Your `.wheel` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.position === 'absolute');
+```
 
+Your `.wheel` selector should have a `height` property set to `500px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.height === '500px');
+```
+
+Your `.wheel` selector should have a `width` property set to `500px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.width === '500px');
 ```
 
 # --seed--
@@ -30,19 +42,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

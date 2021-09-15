@@ -13,10 +13,10 @@ Give the `.line` selector a `transform-origin` property of `0% 0%`. This will of
 
 # --hints--
 
-Test 1
+Your `.line` selector should have a `transform-origin` property set to `0% 0%`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.line')?.transformOrigin === '0% 0%');
 ```
 
 # --seed--
@@ -32,19 +32,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

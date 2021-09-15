@@ -11,10 +11,10 @@ Set the `.cabin` to have a `transform-origin` property of `50% 0%`. This will se
 
 # --hints--
 
-Test 1
+Your `.cabin` selector should have a `transform-origin` property set to `50% 0%`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.transformOrigin === '50% 0%');
 ```
 
 # --seed--
@@ -30,19 +30,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

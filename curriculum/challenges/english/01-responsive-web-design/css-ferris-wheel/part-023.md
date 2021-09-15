@@ -13,11 +13,12 @@ Replace `linear` to `ease-in-out` in the `.cabin` selector.
 
 # --hints--
 
-Test 1
+Your `.cabin` selector should have an `animation` property set to `cabins 10s ease-in-out infinite`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.animation === '10s ease-in-out 0s infinite normal none running cabins');
 ```
+
 
 # --seed--
 
@@ -32,19 +33,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```
@@ -135,12 +138,12 @@ Test 1
    }
 }
 
-@keyframes cabin-animation {
+@keyframes cabins {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
 ```

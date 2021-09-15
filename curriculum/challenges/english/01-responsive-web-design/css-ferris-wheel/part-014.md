@@ -12,15 +12,99 @@ Continuing the pattern, select the following `.cabin` elements and apply the spe
 - The second `.cabin` should have the `right` property set to `17%` and the `top` property set to `93.5%`.
 - The third `.cabin` should have the `right` property set to `67%` and the `top` property set to `93.5%`.
 - The fourth `.cabin` should have the `left` property set to `-8.5%` and the `top` property set to `50%`.
-- The fifth ``.cabin` should have the `left` property set to `17%` and the `top` property set to `7%`.
+- The fifth `.cabin` should have the `left` property set to `17%` and the `top` property set to `7%`.
 - The sixth `.cabin` should have the `right` property set to `17%` and the `top` property set to `7%`.
 
 # --hints--
 
-Test 1
+You should have a `.cabin:nth-of-type(2)` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(2)'));
+```
 
+Your `.cabin:nth-of-type(2)` selector should have a `right` property set to `17%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(2)')?.right === '17%');
+```
+
+Your `.cabin:nth-of-type(2)` selector should have a `top` property set to `93.5%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(2)')?.top === '93.5%');
+```
+
+You should have a `.cabin:nth-of-type(3)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(3)'));
+```
+
+Your `.cabin:nth-of-type(3)` selector should have a `right` property set to `67%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(3)')?.right === '67%');
+```
+
+Your `.cabin:nth-of-type(3)` selector should have a `top` property set to `93.5%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(3)')?.top === '93.5%');
+```
+
+You should have a `.cabin:nth-of-type(4)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(4)'));
+```
+
+Your `.cabin:nth-of-type(4)` selector should have a `left` property set to `-8.5%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(4)')?.left === '-8.5%');
+```
+
+Your `.cabin:nth-of-type(4)` selector should have a `top` property set to `50%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(4)')?.top === '50%');
+```
+
+You should have a `.cabin:nth-of-type(5)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(5)'));
+```
+
+Your `.cabin:nth-of-type(5)` selector should have a `left` property set to `17%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(5)')?.left === '17%');
+```
+
+Your `.cabin:nth-of-type(5)` selector should have a `top` property set to `7%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(5)')?.top === '7%');
+```
+
+You should have a `.cabin:nth-of-type(6)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)'));
+```
+
+Your `.cabin:nth-of-type(6)` selector should have a `right` property set to `17%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.right === '17%');
+```
+
+Your `.cabin:nth-of-type(6)` selector should have a `top` property set to `7%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.top === '7%');
 ```
 
 # --seed--
@@ -36,19 +120,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

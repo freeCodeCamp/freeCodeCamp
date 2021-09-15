@@ -11,10 +11,16 @@ Give the `.cabin` a `position` of `absolute`, and a `border` of `2px solid`.
 
 # --hints--
 
-Test 1
+Your `.cabin` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.position === 'absolute');
+```
 
+Your `.cabin` selector should have a `border` property set to `2px solid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.border === '2px solid');
 ```
 
 # --seed--
@@ -30,19 +36,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

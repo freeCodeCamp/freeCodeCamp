@@ -13,10 +13,16 @@ The `animation-duration` property is used to set how long the animation should s
 
 # --hints--
 
-Test 1
+Your `.wheel` selector should have an `animation-name` property set to `wheel`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationName === 'wheel');
+```
 
+Your `.wheel` selector should have an `animation-duration` property set to `10s`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationDuration === '10s');
 ```
 
 # --seed--
@@ -32,19 +38,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

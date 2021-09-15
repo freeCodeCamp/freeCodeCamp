@@ -7,14 +7,32 @@ dashedName: part-3
 
 # --description--
 
-Create a selector for your `.wheel` element. Set the `position` to `absolute`.
+Create a selector for your `.wheel` element. Start by setting the `border` to `2px solid black`, the `border-radius` to `50%`, and the `margin-left` to `50px`.
 
 # --hints--
 
-Test 1
+You should have a `.wheel` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel'));
+```
 
+Your `.wheel` selector should have a `border` property set to `2px solid black`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.border === '2px solid black');
+```
+
+Your `.wheel` selector should have a `border-radius` property set to `50%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.borderRadius === '50%');
+```
+
+Your `.wheel` selector should have a `margin-left` property set to `50px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.marginLeft === '50px');
 ```
 
 # --seed--
@@ -30,7 +48,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

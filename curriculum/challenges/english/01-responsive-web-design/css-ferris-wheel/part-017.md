@@ -11,10 +11,10 @@ Give the `0%` rule a `transform` property set to `rotate(0deg)`. This will start
 
 # --hints--
 
-Test 1
+Your `0%` selector should have a `transform` property set to `rotate(0deg)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[0]?.style?.transform === 'rotate(0deg)');
 ```
 
 # --seed--
@@ -30,19 +30,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

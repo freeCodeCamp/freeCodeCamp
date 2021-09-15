@@ -11,10 +11,28 @@ Create a selector for your `.line` elements. Start by setting the `background-co
 
 # --hints--
 
-Test 1
+You should have a `.line` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.line'));
+```
 
+Your `.line` selector should have a `background-color` property set to `black`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line')?.backgroundColor === "black");
+```
+
+Your `.line` selector should have a `width` property set to `50%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line')?.width === "50%");
+```
+
+Your `.line` selector should have a `height` property set to `2px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line')?.height === "2px");
 ```
 
 # --seed--
@@ -30,19 +48,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

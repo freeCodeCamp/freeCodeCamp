@@ -11,10 +11,28 @@ Create a `.cabin` selector. Set the `background-color` to `red`, the `width` to 
 
 # --hints--
 
-Test 1
+You should have a `.cabin` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin'));
+```
 
+Your `.cabin` selector should have a `background-color` property set to `red`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.backgroundColor === 'red');
+```
+
+Your `.cabin` selector should have a `width` property set to `80px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.width === '80px');
+```
+
+Your `.cabin` selector should have a `height` property set to `100px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.height === '100px');
 ```
 
 # --seed--
@@ -30,19 +48,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

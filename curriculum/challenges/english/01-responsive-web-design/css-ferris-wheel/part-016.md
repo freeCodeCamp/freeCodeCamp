@@ -11,10 +11,10 @@ You now need to define how your animation should start. To do this, create a `0%
 
 # --hints--
 
-Test 1
+Your `@keyframes wheel` rule should have a `0%` selector.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[0]?.keyText === '0%');
 ```
 
 # --seed--
@@ -30,19 +30,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

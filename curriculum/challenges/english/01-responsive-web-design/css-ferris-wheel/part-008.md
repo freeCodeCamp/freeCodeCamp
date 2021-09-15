@@ -7,16 +7,22 @@ dashedName: part-8
 
 # --description--
 
-Create a selector to target your second `.line` element. Set the `transform` property to `rotate(40deg)`.
+Create a selector to target your second `.line` element. Set the `transform` property to `rotate(60deg)`.
 
-Remember that the `transform` property allows you to manipulate the shape of an element. In this case, using the `rotate(40deg)` value will rotate the element around its `transform-origin` point by 40 degrees clockwise.
+Remember that the `transform` property allows you to manipulate the shape of an element. In this case, using the `rotate(60deg)` value will rotate the element around its `transform-origin` point by 60 degrees clockwise.
 
 # --hints--
 
-Test 1
+You should create a `.line:nth-of-type(2)` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(2)'));
+```
 
+Your `.line:nth-of-type(2)` selector should have a `transform` property set to `rotate(60deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(2)')?.transform === 'rotate(60deg)');
 ```
 
 # --seed--
@@ -32,19 +38,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

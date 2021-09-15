@@ -9,14 +9,49 @@ dashedName: part-2
 
 Add a `div` within your `body` element and give it a `class` of `wheel`.
 
-Inside your new `div`, add twelve more `div` elements. Give the first six a class of `line`, and the last six a class of `cabin`.
+Inside your new `div`, add six `span` elements with a `class` set to `line`, and six `div` elements with a `class` set to `cabin`.
 
 # --hints--
 
-Test 1
+You should create a new `div` within your `body` element.
 
 ```js
+const divs = [...document.querySelector('body')?.children].filter(child => child?.localName === 'div');
+assert(divs?.length === 1);
+```
 
+Your `div` within your `body` element should have a `class` of `wheel`.
+
+```js
+assert(document.querySelector('body div')?.classList?.contains('wheel'));
+```
+
+Your `.wheel` element should have six `span` elements within.
+
+```js
+assert(document.querySelectorAll('.wheel span')?.length === 6);
+```
+
+Your six `span` elements within the `.wheel` element should have a `class` of `line`.
+
+```js
+const spans = [...document.querySelectorAll('.wheel span')];
+assert(spans?.every(span => span?.classList?.contains('line')));
+assert(document.querySelectorAll('.line')?.length === 6);
+```
+
+Your `.wheel` element should have six `div` elements within.
+
+```js
+assert(document.querySelectorAll('.wheel div')?.length === 6);
+```
+
+Your six `div` elements within the `.wheel` element should have a `class` of `cabin`.
+
+```js
+const divs = [...document.querySelectorAll('.wheel div')];
+assert(divs?.every(div => div?.classList?.contains('cabin')));
+assert(document.querySelectorAll('.cabin')?.length === 6);
 ```
 
 # --seed--

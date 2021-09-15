@@ -13,11 +13,54 @@ Set the `transform` property for the third `.line` to `rotate(120deg)`, the four
 
 # --hints--
 
-Test 1
+You should create a `.line:nth-of-type(3)` selector.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(3)'));
 ```
+
+Your `.line:nth-of-type(3)` selector should have a `transform` property set to `rotate(120deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(3)')?.transform === 'rotate(120deg)');
+```
+
+You should create a `.line:nth-of-type(4)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(4)'));
+```
+
+Your `.line:nth-of-type(4)` selector should have a `transform` property set to `rotate(180deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(4)')?.transform === 'rotate(180deg)');
+```
+
+You should create a `.line:nth-of-type(5)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(5)'));
+```
+
+Your `.line:nth-of-type(5)` selector should have a `transform` property set to `rotate(240deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(5)')?.transform === 'rotate(240deg)');
+```
+
+You should create a `.line:nth-of-type(6)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(6)'));
+```
+
+Your `.line:nth-of-type(6)` selector should have a `transform` property set to `rotate(300deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(6)')?.transform === 'rotate(300deg)');
+```
+
 
 # --seed--
 
@@ -32,19 +75,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```

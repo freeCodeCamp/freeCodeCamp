@@ -11,11 +11,25 @@ Now give the `@keyframes wheel` rule a `100%` selector. Within that, set the `tr
 
 # --hints--
 
-Test 1
+Your `@keyframes wheel` rule should have a `100%` selector.
 
 ```js
-
+const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules
+assert(rules?.[0]?.keyText === '100%' || rules?.[1]?.keyText === '100%');
 ```
+
+Your `100%` selector should come after your `0%` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[1]?.keyText === '100%')
+```
+
+Your `100%` selector should have a `transform` property set to `rotate(360deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[1]?.style?.transform === 'rotate(360deg)')
+```
+
 
 # --seed--
 
@@ -30,19 +44,21 @@ Test 1
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
 
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
-    <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+      <div class="cabin"></div>
+    </div>
   </body>
 </html>
 ```
