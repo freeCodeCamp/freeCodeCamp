@@ -2,7 +2,7 @@
 id: 611e5716f9246f125f63815b
 title: Final Prototype
 challengeType: 0
-dashedName: part-13
+dashedName: part-18
 ---
 
 # --description--
@@ -57,7 +57,7 @@ Test 1
 	</header>
 	<main>
 		<form action="https://freecodecamp.org/practice-project/accessibility-quiz">
-			<section role="group" aria-labelledby="student-info" class="student-info">
+			<section role="region" aria-labelledby="student-info">
 				<h2 id="student-info">Student Info</h2>
 
 				<div class="info">
@@ -74,7 +74,7 @@ Test 1
 					<input type="date" id="quiz-date" name="quiz-date" />
 				</div>
 			</section>
-			<section role="group" aria-labelledby="html-questions" class="quiz-section html">
+			<section role="region" aria-labelledby="html-questions">
 				<h2 id="html-questions">HTML</h2>
 				<div class="question-block">
 					<p>1</p>
@@ -123,7 +123,7 @@ Test 1
 					</fieldset>
 				</div>
 			</section>
-			<section role="group" aria-labelledby="css-questions" class="quiz-section css">
+			<section role="region" aria-labelledby="css-questions">
 				<h2 id="css-questions">CSS</h2>
 				<div class="formrow">
 					<div class="question-block">
@@ -181,27 +181,29 @@ body {
 header {
 	width: 100%;
 	height: 50px;
-	background-color: #1b1b32;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	position: fixed;
+	background-color: #1b1b32;
 	top: 0;
 }
 
 #logo {
 	width: max(100px, 18vw);
+	/* 	height: calc(100% - 0.3rem); */
+	aspect-ratio: 35 / 4;
+	max-height: 100%;
+	/* 	color: black; */
 	background-color: #0a0a23;
-  aspect-ratio: 35 / 4;
 	padding: 0.4rem;
-  max-height: 100%;
 }
 
 h1 {
-	color: #f1be32;
-	font-size: min(5vw, 1.2em);
 	text-align: center;
+	font-size: min(5vw, 1.2em);
+	color: #f1be32;
 }
 
 nav {
@@ -239,21 +241,28 @@ li > a {
 }
 
 main {
-  padding-top: 50px;
+	padding-top: 50px;
 }
 
-input {
-	font-size: 16px;
-	/* max-width: 95%; */
+section {
+	width: 80%;
+	margin: 0px auto 10px auto;
+	min-height: 100px;
+	max-width: 600px;
 }
 
-.student-info {
+h1,
+h2 {
+	font-family: Verdana;
 }
 
-section h2 {
+h2 {
+	text-align: left;
+	border-bottom: 4px solid #dfdfe2;
 	margin-top: 0px;
 	padding-top: 60px;
 }
+
 
 .info {
 	margin: 0 auto;
@@ -264,8 +273,9 @@ section h2 {
 	padding: 0px 15px;
 }
 
-hr {
-	width: 70%;
+input {
+	font-size: 16px;
+	/* 	max-width: 95%; */
 }
 
 .info label,
@@ -285,29 +295,12 @@ hr {
 	text-align: left;
 }
 
-h1,
-h2 {
-	font-family: Verdana;
-}
-
-h2 {
-	text-align: left;
-	border-bottom: 4px solid #dfdfe2;
-}
-
 .question-block {
 	text-align: left;
 	display: block;
 	width: 100%;
 	margin-top: 20px;
 	padding-top: 5px;
-}
-
-section {
-	width: 80%;
-	margin: 0px auto 10px auto;
-	min-height: 100px;
-	max-width: 600px;
 }
 
 p {
@@ -320,7 +313,7 @@ p::before {
 	content: "Question #";
 }
 
-fieldset.question {
+.question {
 	border: none;
 	padding-bottom: 0;
 }

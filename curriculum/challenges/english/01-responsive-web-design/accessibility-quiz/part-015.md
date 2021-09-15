@@ -1,31 +1,31 @@
 ---
-id: 614090d5a22b6f0a5a6b464c
-title: Part 13
+id: 6141fed65b61320743da5894
+title: Part 15
 challengeType: 0
-dashedName: part-13
+dashedName: part-15
 ---
-
-<!-- TODO: I purposefully added the `nav` styles without Camper input -->
 
 # --description--
 
-Target unordered list elements within `nav` elements, and use _Flexbox_ to evenly space the children.
+To increase the page accessibility, the `role` attribute can be used to indicate the purpose behind an element on the page to assistive technologies. The `role` attribute is a part of the _Web Accessibility Initiative_ (WAI), and accepts preset values.
+
+Give each of the `section` elements the `region` role.
 
 # --hints--
 
-You should use the `nav > ul` selector.
+You should give the first `section` element the `region` role.
 
 ```js
 
 ```
 
-You should give the `nav > ul` elements a `display` of `flex`.
+You should give the second `section` element the `region` role.
 
 ```js
 
 ```
 
-You should give the `nav > ul` elements a `justify-content` of `space-evenly`.
+You should give the third `section` element the `region` role.
 
 ```js
 
@@ -57,7 +57,15 @@ You should give the `nav > ul` elements a `justify-content` of `space-evenly`.
 			  </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+--fcc-editable-region--
+      <form action="https://freecodecamp.org/practice-project/accessibility-quiz">
+        <section></section>
+        <section></section>
+        <section></section>
+      </form>
+--fcc-editable-region--
+    </main>
   </body>
 </html>
 
@@ -96,7 +104,8 @@ nav {
 	height: 50px;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+nav > ul {
+	display: flex;
+	justify-content: space-evenly;
+}
 ```

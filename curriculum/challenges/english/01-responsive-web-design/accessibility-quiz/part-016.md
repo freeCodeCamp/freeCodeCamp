@@ -1,0 +1,171 @@
+---
+id: 614202874ca576084fca625f
+title: Part 16
+challengeType: 0
+dashedName: part-16
+---
+
+# --description--
+
+Every `region` role requires a visible lable, which should be referenced by the `aria-labelledby` attribute.
+
+To the `section` elements, give the following `aria-labelledby` attributes:
+
+- `student-info`
+- `html-questions`
+- `css-questions`
+
+Then, within each `section` element, nest one `h2` element with an `id` matching the corresponding `aria-labelledby` attribute. Give each `h2` suitable text content.
+
+# --hints--
+
+You should give the first `section` element an `aria-labelledby` attribute of `student-info`.
+
+```js
+
+```
+
+You should give the second `section` element an `aria-labelledby` attribute of `html-questions`.
+
+```js
+
+```
+
+You should give the third `section` element an `aria-labelledby` attribute of `css-questions`.
+
+```js
+
+```
+
+You should nest one `h2` element within the first `section` element.
+
+```js
+
+```
+
+You should nest one `h2` element within the second `section` element.
+
+```js
+
+```
+
+You should nest one `h2` element within the third `section` element.
+
+```js
+
+```
+
+You should give the first `h2` element an `id` attribute of `student-info`.
+
+```js
+
+```
+
+You should give the second `h2` element an `id` attribute of `html-questions`.
+
+```js
+
+```
+
+You should give the third `h2` element an `id` attribute of `css-questions`.
+
+```js
+
+```
+
+You should give the first `h2` element suitable text content. _Hint: I would have chosen `Student Info`_
+
+```js
+
+```
+
+You should give the second `h2` element suitable text content. _Hint: I would have chosen `HTML`_
+
+```js
+
+```
+
+You should give the third `h2` element suitable text content. _Hint: I would have chosen `CSS`_
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+    <title>freeCodeCamp: Accessibility Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg">
+      <h1>HTML/CSS Quiz</h1>
+      <nav>
+        <ul>
+          <li><a>INFO</a></li>
+          <li><a>HTML</a></li>
+          <li><a>CSS</a></li>
+			  </ul>
+      </nav>
+    </header>
+    <main>
+--fcc-editable-region--
+      <form action="https://freecodecamp.org/practice-project/accessibility-quiz">
+        <section role="region"></section>
+        <section role="region"></section>
+        <section role="region"></section>
+      </form>
+--fcc-editable-region--
+    </main>
+  </body>
+</html>
+
+```
+
+```css
+body {
+  background: #f5f6f7;
+	color: #1b1b32;
+	font-family: Helvetica;
+	margin: 0;
+}
+
+header {
+  width: 100%;
+	height: 50px;
+	background-color: #1b1b32;
+	display: flex;
+}
+
+#logo {
+  width: max(100px, 18vw);
+	background-color: #0a0a23;
+  aspect-ratio: 35 / 4;
+	padding: 0.4rem;
+}
+
+h1 {
+  color: #f1be32;
+	font-size: min(5vw, 1.2em);
+}
+
+nav {
+	width: 50%;
+	max-width: 300px;
+	height: 50px;
+}
+
+nav > ul {
+	display: flex;
+	justify-content: space-evenly;
+}
+```

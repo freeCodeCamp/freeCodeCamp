@@ -1,31 +1,37 @@
 ---
-id: 614090d5a22b6f0a5a6b464c
-title: Part 13
+id: 6141fabd6f75610664e908fd
+title: Part 14
 challengeType: 0
-dashedName: part-13
+dashedName: part-14
 ---
-
-<!-- TODO: I purposefully added the `nav` styles without Camper input -->
 
 # --description--
 
-Target unordered list elements within `nav` elements, and use _Flexbox_ to evenly space the children.
+As this is a quiz, you will need a form for users to submit answers. You can semantically separate the content within the form using `section` elements.
+
+Within the `main` element, create a form with three nested `section` elements. Then, make the form submit to `https://freecodecamp.org/practice-project/accessibility-quiz`.
 
 # --hints--
 
-You should use the `nav > ul` selector.
+You should nest a `form` element within your `main` element.
 
 ```js
 
 ```
 
-You should give the `nav > ul` elements a `display` of `flex`.
+You should nest three `section` elements within your `form` element.
 
 ```js
 
 ```
 
-You should give the `nav > ul` elements a `justify-content` of `space-evenly`.
+You should give the `form` element an `action` attribute.
+
+```js
+
+```
+
+You should give the `action` attribute a value of `https://freecodecamp.org/practice-project/accessibility-quiz`.
 
 ```js
 
@@ -57,7 +63,11 @@ You should give the `nav > ul` elements a `justify-content` of `space-evenly`.
 			  </ul>
       </nav>
     </header>
-    <main></main>
+--fcc-editable-region--
+    <main>
+
+    </main>
+--fcc-editable-region--
   </body>
 </html>
 
@@ -96,7 +106,8 @@ nav {
 	height: 50px;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+nav > ul {
+	display: flex;
+	justify-content: space-evenly;
+}
 ```

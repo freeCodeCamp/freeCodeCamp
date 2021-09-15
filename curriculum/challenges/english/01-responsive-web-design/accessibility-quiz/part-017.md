@@ -1,31 +1,17 @@
 ---
-id: 614090d5a22b6f0a5a6b464c
-title: Part 13
+id: 614206033d366c090ca7dd42
+title: Part 17
 challengeType: 0
-dashedName: part-13
+dashedName: part-17
 ---
-
-<!-- TODO: I purposefully added the `nav` styles without Camper input -->
 
 # --description--
 
-Target unordered list elements within `nav` elements, and use _Flexbox_ to evenly space the children.
+
 
 # --hints--
 
-You should use the `nav > ul` selector.
-
-```js
-
-```
-
-You should give the `nav > ul` elements a `display` of `flex`.
-
-```js
-
-```
-
-You should give the `nav > ul` elements a `justify-content` of `space-evenly`.
+Test 1
 
 ```js
 
@@ -57,7 +43,21 @@ You should give the `nav > ul` elements a `justify-content` of `space-evenly`.
 			  </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+--fcc-editable-region--
+      <form action="https://freecodecamp.org/practice-project/accessibility-quiz">
+        <section role="region" aria-labelledby="student-info">
+          <h2 id="student-info">Student Info</h2>
+        </section>
+        <section role="region" aria-labelledby="html-questions">
+          <h2 id="html-questions">HTML</h2>
+        </section>
+        <section role="region" aria-labelledby="css-questions">
+          <h2 id="css-questions">CSS</h2>
+        </section>
+      </form>
+--fcc-editable-region--
+    </main>
   </body>
 </html>
 
@@ -96,7 +96,8 @@ nav {
 	height: 50px;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+nav > ul {
+	display: flex;
+	justify-content: space-evenly;
+}
 ```
