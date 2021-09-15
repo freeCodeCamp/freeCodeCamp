@@ -147,7 +147,7 @@ const CertChallenge = ({
   };
   return (
     <div className='block'>
-      {!isCertified && userLoaded && isSignedIn && (
+      {(!isCertified || !canViewCert) && userLoaded && isSignedIn && (
         <CertificationCard
           i18nCertText={i18nCertText}
           isProjectsCompleted={isProjectsCompleted}
