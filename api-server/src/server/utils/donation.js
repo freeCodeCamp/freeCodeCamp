@@ -198,7 +198,6 @@ export async function createStripeCardDonation(req, res, stripe) {
     };
   }
 
-  // create a customer
   const { id: customerId } = await stripe.customers.create({
     email,
     card: tokenId,
@@ -206,7 +205,6 @@ export async function createStripeCardDonation(req, res, stripe) {
   });
   log(`Stripe customer with id ${customerId} created`);
 
-  // create a subscription
   const { id: subscriptionId } = await stripe.subscriptions.create({
     customer: customerId,
     items: [
