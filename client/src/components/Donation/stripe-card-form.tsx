@@ -92,7 +92,8 @@ const StripeCardForm = ({
     e.preventDefault();
     if (!isPaymentInfoValid) return setSubmissionValidity(false);
     else setSubmissionValidity(true);
-    if (!isTokenizing && !processing && stripe && elements) {
+    const isSubmitting = isTokenizing || processing;
+    if (!isSubmitting && stripe && elements) {
       const cardElement = elements.getElement(CardNumberElement);
       if (cardElement) {
         setTokenizing(true);
@@ -135,7 +136,7 @@ const StripeCardForm = ({
         block={true}
         bsStyle='primary'
         className='confirm-donation-btn'
-        disabled={!stripe || !elements || isTokenizing}
+        disabled={!stripe || !elements || isSubmitting}
         type='submit'
       >
         Donate
