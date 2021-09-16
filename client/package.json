@@ -149,7 +149,7 @@
     "@types/react-responsive": "8.0.2",
     "@types/react-spinkit": "3.0.7",
     "@types/react-test-renderer": "17.0.1",
-    "@types/react-transition-group": "4.4.2",
+    "@types/react-transition-group": "4.4.3",
     "@types/redux-actions": "2.6.2",
     "@types/sanitize-html": "2.3.2",
     "@types/store": "2.0.2",
