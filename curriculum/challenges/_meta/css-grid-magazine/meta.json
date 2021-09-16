@@ -1,0 +1,13 @@
+{
+  "name": "CSS Grid Magazine",
+  "isUpcomingChange": true,
+  "dashedName": "css-grid-magazine",
+  "order": 16,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [["61437d575fb98f57fa8f7f36", "Part 1"]]
+}
