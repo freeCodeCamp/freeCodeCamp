@@ -38,7 +38,6 @@ const Badges = ({ discourseId }: { discourseId: string }): JSX.Element => {
     if (discourseId) {
       void (async () => {
         const data = (await getUserBadges(discourseId)) as unknown as BadgeData;
-        // TODO: Why on earth does this return the sessionUser?!
         console.log(data);
         const badgesParsed = data?.badges?.map(badge => ({
           ...badge,
@@ -53,7 +52,7 @@ const Badges = ({ discourseId }: { discourseId: string }): JSX.Element => {
 
   return (
     <div className='badges'>
-      {badges.map(badge => {
+      {badges?.map(badge => {
         return (
           <div className='badge-contents' key={badge.id}>
             <a className='badge-icon badge-type-bronze' href={`#a`}>

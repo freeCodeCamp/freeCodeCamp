@@ -45,9 +45,7 @@ async function request<T>(
     method,
     headers: {
       'CSRF-Token': getCSRFToken(),
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org',
-      Origin: process.env.HOME_LOCATION || 'https://freecodecamp.org'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(body)
   };
@@ -212,6 +210,14 @@ export function postResetProgress(): Promise<void> {
   return post('/account/reset-progress', {});
 }
 
+export function postConnectDiscourseAccount(
+  userId: string
+): Promise<{ URL_ENCODED_PAYLOAD: string; HEX_SIGNATURE: string }> {
+  // TODO: To get around 'origin: null' error: https://stackoverflow.com/a/22625354/11829775
+  // Server responds with URL for client to redirect to? (Instead of Server redirecting client)
+  return post('/discourse/connect', { userId });
+}
+
 /** PUT **/
 
 interface MyAbout {
@@ -253,13 +259,4 @@ export function putUserUpdateEmail(email: string): Promise<void> {
 
 export function putVerifyCert(certSlug: string): Promise<void> {
   return put('/certificate/verify', { certSlug });
-}
-
-// TODO: is this a Promise<void>?
-export function postConnectDiscourseAccount(
-  userId: string
-): Promise<{ urlToNavigateTo: string }> {
-  // TODO: To get around 'origin: null' error: https://stackoverflow.com/a/22625354/11829775
-  // Server responds with URL for client to redirect to? (Instead of Server redirecting client)
-  return post('/discourse/connect', { userId });
 }

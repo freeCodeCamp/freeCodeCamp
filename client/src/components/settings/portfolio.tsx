@@ -200,7 +200,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     // @eslint-disable-next-line @typescript-eslint/no-floating-promises
     void (async () => {
       try {
-        const { urlToNavigateTo } = await postConnectDiscourseAccount(userId);
+        const { URL_ENCODED_PAYLOAD, HEX_SIGNATURE } =
+          await postConnectDiscourseAccount(userId);
+        const urlToNavigateTo = `${
+          process.env.FORUM_LOCATION || 'https://forum.freecodecamp.org'
+        }/session/sso_provider?sso=${URL_ENCODED_PAYLOAD}&sig=${HEX_SIGNATURE}`;
         location.assign(urlToNavigateTo);
       } catch (err) {
         console.error(err);

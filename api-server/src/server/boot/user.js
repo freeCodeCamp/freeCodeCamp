@@ -32,7 +32,7 @@ function bootUser(app) {
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
-  api.get('/user/badges', getSessionUser, getUserBadges);
+  api.get('/user/badges', getUserBadges);
 
   api.post('/account/delete', ifNoUser401, postDeleteAccount);
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
@@ -46,16 +46,15 @@ function bootUser(app) {
   app.use(api);
 }
 
-// TODO: How to get user from previous middleware?
 function createGetUserBadges() {
   return (req, res) => {
     const { discourseId } = req.query;
     request(
-      `${FORUM_LOCATION}/u/by-external/discourse/${discourseId}.json`,
+      `${FORUM_LOCATION}/admin/users/${discourseId}.json`,
       {
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org',
+          // 'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org',
           'Api-Key': DISCOURSE_API_KEY,
           // TODO: Whilst testing
           'Api-Username': 'Sky020'
@@ -66,9 +65,8 @@ function createGetUserBadges() {
         if (err || user.errors) {
           return res.status(500).send(err || user.errors);
         } else {
-          console.log(user);
           if (user.length === 0) {
-            return res.status(404).send('No associated Discourse email found');
+            return res.status(404).send('No associated Discourse id found');
           }
           // Return user's Discourse badges
           return request(
@@ -79,12 +77,11 @@ function createGetUserBadges() {
                 'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org'
               }
             },
-            (err, response, body) => {
-              console.log(body);
+            (err, response, badges) => {
               if (err) {
                 return res.status(500).send(err);
               } else {
-                return res.json(body);
+                return res.json(badges);
               }
             }
           );

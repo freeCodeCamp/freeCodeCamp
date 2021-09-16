@@ -13,7 +13,7 @@ const generate = require('nanoid/generate');
 
 const log = debug('fcc:boot:settings');
 
-const { FORUM_LOCATION, DISCOURSE_SECRET, API_LOCATION } = process.env;
+const { DISCOURSE_SECRET, API_LOCATION } = process.env;
 
 export default function settingsController(app) {
   const api = app.loopback.Router();
@@ -256,11 +256,11 @@ function updateUserFlag(req, res, next) {
   return user.updateAttributes(update, createStandardHandler(req, res, next));
 }
 
-// redirect user to https://forum.freecodecamp.org/session/sso_provider?sso=URL_ENCODED_PAYLOAD&sig=HEX_SIGNATURE
 function connectDiscourse(req, res) {
   // Generate nonce
   const nonce = generate(nanoidCharSet, 20);
-  // req.nonce = nonce;
+  // Save nonce to dedicated collection
+  saveNonceToDB(nonce);
   // Create payload with nonce and return url: nonce=NONCE&return_sso_url=RETURN_URL
   const payload = `nonce=${nonce}&return_sso_url=${API_LOCATION}/auth/discourse/callback`;
   // BASE64 encode payload: BASE64_PAYLOAD
@@ -274,7 +274,8 @@ function connectDiscourse(req, res) {
   const HEX_SIGNATURE = signature.digest('hex');
 
   return res.json({
-    urlToNavigateTo: `${FORUM_LOCATION}/session/sso_provider?sso=${URL_ENCODED_PAYLOAD}&sig=${HEX_SIGNATURE}`
+    URL_ENCODED_PAYLOAD,
+    HEX_SIGNATURE
   });
   // Redirect does not work because of null origin in Discourse request
   // return res.redirect(
@@ -300,24 +301,20 @@ function checkDidAuthenticate(req, res, next) {
   const BASE64_SSO = Buffer.from(req.query.sso, 'base64').toString();
   req.externalId = BASE64_SSO.match(/external_id=([^&]+)/)[1];
   // Take `nonce` key and compare it with nonce generated
-  // const nonce = BASE64_SSO.match(/nonce=([^&]+)/)[1];
-
-  // TODO: Figure out how to persist nonce from previous query
-  // if (nonce !== req.nonce) {
-  //   log('invalid nonce');
-  //   return res.status(401).send('invalid nonce');
-  // }
+  const nonce = BASE64_SSO.match(/nonce=([^&]+)/)[1];
+  const dbNonce = getNonceFromDB();
+  if (nonce !== dbNonce) {
+    log('invalid nonce');
+    return res.status(401).send('invalid nonce');
+  }
   return next();
 }
 
 function addDiscourseUserId(req, res, next) {
-  // drop generated nonce.
-  // delete req.nonce;
+  // drop generated nonce from collection
+
   // Use query string with user information to store DISCOURSE_USER_ID in fCC DB
-  log(req.query);
   const { externalId } = req;
-  // const { userId } = req.body;
-  log(externalId);
   req.user.updateAttribute('discourseId', externalId, err => {
     // TODO: Use standardError or flash?
     if (err) {
@@ -327,6 +324,14 @@ function addDiscourseUserId(req, res, next) {
     }
     return next();
   });
+}
+
+function getNonceFromDB() {
+  // TODO: Get nonce from nonce collection
+}
+function saveNonceToDB(nonce) {
+  // TODO: Save nonce to nonce collection
+  return nonce;
 }
 
 function handleSuccessfulConnection(req, res) {
