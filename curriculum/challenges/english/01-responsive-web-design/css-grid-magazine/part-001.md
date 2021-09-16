@@ -7,7 +7,9 @@ dashedName: part-1
 
 # --description--
 
-step 1 instructions
+Begin with your standard HTML boilerplate. Add a `DOCTYPE` declaration, an `html` element, a `head` element, and a `body` element.
+
+Within the `head` element, add a `meta` tag with the appropriate `charset`, and a `meta` tag for mobile responsiveness.
 
 # --hints--
 
@@ -25,4 +27,8 @@ Test 1
 --fcc-editable-region--
 
 --fcc-editable-region--
+```
+
+```css
+
 ```

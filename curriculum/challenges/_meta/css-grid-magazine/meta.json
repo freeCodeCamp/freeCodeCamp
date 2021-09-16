@@ -9,5 +9,98 @@
   "superBlock": "responsive-web-design",
   "superOrder": 1,
   "isBeta": true,
-  "challengeOrder": [["61437d575fb98f57fa8f7f36", "Part 1"]]
+  "challengeOrder": [
+    [
+      "61437d575fb98f57fa8f7f36",
+      "Part 1"
+    ],
+    [
+      "614385513d91ae5c251c2052",
+      "Part 2"
+    ],
+    [
+      "6143862a5e54455d262c212e",
+      "Part 3"
+    ],
+    [
+      "6143869bb45bd85e3b1926aa",
+      "Part 4"
+    ],
+    [
+      "614387cbefeeba5f3654a291",
+      "Part 5"
+    ],
+    [
+      "614389f601bb4f611db98563",
+      "Part 6"
+    ],
+    [
+      "61438b5b66d76a6264430f2a",
+      "Part 7"
+    ],
+    [
+      "61438ec09438696391076d6a",
+      "Part 8"
+    ],
+    [
+      "61439dc084fa5f659cf75d7c",
+      "Part 9"
+    ],
+    [
+      "61439dfc811e12666b04be6f",
+      "Part 10"
+    ],
+    [
+      "61439e33e4fb7967609e0c83",
+      "Part 11"
+    ],
+    [
+      "6143a1a228f7d068ab16a130",
+      "Part 12"
+    ],
+    [
+      "6143a73279ce6369de4b9bcc",
+      "Part 13"
+    ],
+    [
+      "6143a778bffc206ac6b1dbe3",
+      "Part 14"
+    ],
+    [
+      "6143a83fcc32c26bcfae3efa",
+      "Part 15"
+    ],
+    [
+      "6143b97c06c3306d23d5da47",
+      "Part 16"
+    ],
+    [
+      "6143b9e1f5035c6e5f2a8231",
+      "Part 17"
+    ],
+    [
+      "6143bb50e8e48c6f5ef9d8d5",
+      "Part 18"
+    ],
+    [
+      "6143c2a363865c715f1a3f72",
+      "Part 19"
+    ],
+    [
+      "6143cd08fe927072ca3a371d",
+      "Part 20"
+    ],
+    [
+      "6143cdf48b634a747de42104",
+      "Part 21"
+    ],
+    [
+      "6143d003ad9e9d76766293ec",
+      "Part 22"
+    ],
+    [
+      "6143d2842b497779bad947de",
+      "Part 23"
+    ]
+  ]
 }
