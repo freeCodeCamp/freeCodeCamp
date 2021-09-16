@@ -285,7 +285,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   renderButtonGroup() {
     const { donationAmount, donationDuration } = this.state;
     const {
-      donationFormState: { loading },
+      donationFormState: { loading, processing },
       handleProcessing,
       addDonation,
       defaultTheme,
@@ -336,6 +336,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
               <StripeCardForm
                 onDonationStateChange={this.onDonationStateChange}
                 postStripeCardDonation={this.postStripeCardDonation}
+                processing={processing}
                 t={t}
                 theme={defaultTheme ? defaultTheme : theme}
               />

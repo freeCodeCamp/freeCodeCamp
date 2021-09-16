@@ -24,6 +24,7 @@ interface FormPropTypes {
   postStripeCardDonation: (token: Token) => void;
   t: (label: string) => string;
   theme: string;
+  processing: boolean;
 }
 
 interface Element {
@@ -38,10 +39,11 @@ const StripeCardForm = ({
   theme,
   t,
   onDonationStateChange,
-  postStripeCardDonation
+  postStripeCardDonation,
+  processing
 }: FormPropTypes): JSX.Element => {
   const [isSubmissionValid, setSubmissionValidity] = useState(true);
-  const [isSubmitting, setSubmitting] = useState(false);
+  const [isTokenizing, setTokenizing] = useState(false);
   const [paymentInfoValidation, setPaymentValidity] =
     useState<PaymentInfoValidation>([
       {
@@ -88,14 +90,12 @@ const StripeCardForm = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!isPaymentInfoValid) return setSubmissionValidity(false);
     else setSubmissionValidity(true);
-
-    setSubmitting(true);
-    if (!isSubmitting && stripe && elements) {
+    if (!isTokenizing && !processing && stripe && elements) {
       const cardElement = elements.getElement(CardNumberElement);
       if (cardElement) {
+        setTokenizing(true);
         const { error, token } = await stripe.createToken(cardElement);
         if (error) {
           onDonationStateChange({
@@ -107,7 +107,7 @@ const StripeCardForm = ({
         } else if (token) postStripeCardDonation(token);
       }
     }
-    return setSubmitting(false);
+    return setTokenizing(false);
   };
 
   return (
@@ -135,7 +135,7 @@ const StripeCardForm = ({
         block={true}
         bsStyle='primary'
         className='confirm-donation-btn'
-        disabled={!stripe || !elements || isSubmitting}
+        disabled={!stripe || !elements || isTokenizing}
         type='submit'
       >
         Donate
