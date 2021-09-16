@@ -1,45 +1,19 @@
 ---
-id: 614206033d366c090ca7dd42
-title: Part 17
+id: 6143920c8eafb00b735746ce
+title: Part 22
 challengeType: 0
-dashedName: part-17
+dashedName: part-22
 ---
 
 # --description--
 
-Typeface plays an important role in the accessibility of a page. Some fonts are easier to read than others, and this is especially true on low-resolution screens.
+Even though you added a `placeholder` to the first `input` element in the previous lesson, this is actually not a best-practice for accessibility; too often, users confuse the placeholder text with an actual input value - they think there is already a value in the input.
 
-Change the font for both the `h1` and `h2` elements to `Verdana`, and use another sans-serif _web safe_ font as a fallback.
-
-Also, add a `boder-bottom` of `4px solid #dfdfe2` to `h2` elements, to make the sections distinct.
+Remove the placeholder text from the first `input` element, relying on the `label` being the best-practice.
 
 # --hints--
 
-You should use a multiple element selector to target the `h1` and `h2` elements.
-
-```js
-
-```
-
-You should set the first value of the `font-family` property to `Verdana`.
-
-```js
-
-```
-
-You should set the second value of the `font-family` property to another sans-serif, web safe font. _Hint: I would choose Tahoma_.
-
-```js
-// Acceptable fonts: Arial, Helvetica, Tahoma, Trebuchet MS.
-```
-
-You should use an `h2` element selector to target the `h2` elements.
-
-```js
-
-```
-
-You should set the `border-bottom` property to `4px solid #dfdfe2`.
+You should remove the `placeholder` attribute from the first `input` element.
 
 ```js
 
@@ -65,9 +39,9 @@ You should set the `border-bottom` property to `4px solid #dfdfe2`.
       <h1>HTML/CSS Quiz</h1>
       <nav>
         <ul>
-          <li><a>INFO</a></li>
-          <li><a>HTML</a></li>
-          <li><a>CSS</a></li>
+          <li><a href="#student-info">INFO</a></li>
+          <li><a href="#html-questions">HTML</a></li>
+          <li><a href="#css-questions">CSS</a></li>
 			  </ul>
       </nav>
     </header>
@@ -75,6 +49,20 @@ You should set the `border-bottom` property to `4px solid #dfdfe2`.
       <form action="https://freecodecamp.org/practice-project/accessibility-quiz">
         <section role="region" aria-labelledby="student-info">
           <h2 id="student-info">Student Info</h2>
+--fcc-editable-region--
+          <div class="info">
+            <label for="student-name">Name:</label>
+            <input type="text" name="student-name" id="student-name" placeholder="e.g. Quincy Larson" />
+          </div>
+--fcc-editable-region--
+          <div class="info">
+            <label for="student-email">Email:</label>
+            <input type="email" name="student-email" id="student-email" />
+          </div>
+          <div class="info">
+            <label for="birth-date">D.O.B.:</label>
+            <input type="date" name="birth-date" id="birth-date" />
+          </div>
         </section>
         <section role="region" aria-labelledby="html-questions">
           <h2 id="html-questions">HTML</h2>
@@ -127,8 +115,13 @@ nav > ul {
 	justify-content: space-evenly;
 }
 
---fcc-editable-region--
+h1,
+h2 {
+	font-family: Verdana, Tahoma;
+}
 
---fcc-editable-region--
+h2 {
+	border-bottom: 4px solid #dfdfe2;
+}
 
 ```

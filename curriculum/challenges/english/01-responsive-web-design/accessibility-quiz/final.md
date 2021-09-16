@@ -2,7 +2,7 @@
 id: 611e5716f9246f125f63815b
 title: Final Prototype
 challengeType: 0
-dashedName: part-18
+dashedName: part-27
 ---
 
 # --description--
@@ -67,11 +67,11 @@ Test 1
 				</div>
 				<div class="info">
 					<label for="student-email">Email:</label>
-					<input type="text" name="student-email" id="student-email" />
+					<input type="email" name="student-email" id="student-email" />
 				</div>
 				<div class="info">
-					<label for="quiz-date">D.O.B.<span class="sr-only">(Date of Birth)</span>:</label>
-					<input type="date" id="quiz-date" name="quiz-date" />
+					<label for="birth-date">D.O.B.<span class="sr-only">(Date of Birth)</span>:</label>
+					<input type="date" id="birth-date" name="birth-date" />
 				</div>
 			</section>
 			<section role="region" aria-labelledby="html-questions">
@@ -253,11 +253,10 @@ section {
 
 h1,
 h2 {
-	font-family: Verdana;
+	font-family: Verdana, Tahoma;
 }
 
 h2 {
-	text-align: left;
 	border-bottom: 4px solid #dfdfe2;
 	margin-top: 0px;
 	padding-top: 60px;

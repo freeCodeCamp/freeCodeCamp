@@ -1,45 +1,29 @@
 ---
-id: 614206033d366c090ca7dd42
-title: Part 17
+id: 61435e3c0679a306c20f1acc
+title: Part 18
 challengeType: 0
-dashedName: part-17
+dashedName: part-18
 ---
 
 # --description--
 
-Typeface plays an important role in the accessibility of a page. Some fonts are easier to read than others, and this is especially true on low-resolution screens.
-
-Change the font for both the `h1` and `h2` elements to `Verdana`, and use another sans-serif _web safe_ font as a fallback.
-
-Also, add a `boder-bottom` of `4px solid #dfdfe2` to `h2` elements, to make the sections distinct.
+To be able to navigate within the page, give each anchor element an `href` corresponding to the `id` of the `h2` elements.
 
 # --hints--
 
-You should use a multiple element selector to target the `h1` and `h2` elements.
+You should give the first `a` element an `href` of `#student-info`.
 
 ```js
 
 ```
 
-You should set the first value of the `font-family` property to `Verdana`.
+You should give the second `a` element an `href` of `#html-questions`.
 
 ```js
 
 ```
 
-You should set the second value of the `font-family` property to another sans-serif, web safe font. _Hint: I would choose Tahoma_.
-
-```js
-// Acceptable fonts: Arial, Helvetica, Tahoma, Trebuchet MS.
-```
-
-You should use an `h2` element selector to target the `h2` elements.
-
-```js
-
-```
-
-You should set the `border-bottom` property to `4px solid #dfdfe2`.
+You should give the third `a` element an `href` of `#css-questions`.
 
 ```js
 
@@ -64,11 +48,13 @@ You should set the `border-bottom` property to `4px solid #dfdfe2`.
       <img id="logo" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg">
       <h1>HTML/CSS Quiz</h1>
       <nav>
+--fcc-editable-region--
         <ul>
           <li><a>INFO</a></li>
           <li><a>HTML</a></li>
           <li><a>CSS</a></li>
 			  </ul>
+--fcc-editable-region--
       </nav>
     </header>
     <main>
@@ -127,8 +113,13 @@ nav > ul {
 	justify-content: space-evenly;
 }
 
---fcc-editable-region--
+h1,
+h2 {
+	font-family: Verdana, Tahoma;
+}
 
---fcc-editable-region--
+h2 {
+	border-bottom: 4px solid #dfdfe2;
+}
 
 ```

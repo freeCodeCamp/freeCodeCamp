@@ -1,45 +1,53 @@
 ---
-id: 614206033d366c090ca7dd42
-title: Part 17
+id: 6143908b6aafb00a659ca189
+title: Part 21
 challengeType: 0
-dashedName: part-17
+dashedName: part-21
 ---
 
 # --description--
 
-Typeface plays an important role in the accessibility of a page. Some fonts are easier to read than others, and this is especially true on low-resolution screens.
-
-Change the font for both the `h1` and `h2` elements to `Verdana`, and use another sans-serif _web safe_ font as a fallback.
-
-Also, add a `boder-bottom` of `4px solid #dfdfe2` to `h2` elements, to make the sections distinct.
+Keeping in mind best-practices for form inputs, give each `input` an appropriate `type` and `name` attribute. Then, give the first `input` a `placeholder` attribute.
 
 # --hints--
 
-You should use a multiple element selector to target the `h1` and `h2` elements.
+You should give the first `input` a `type` of `text`.
 
 ```js
 
 ```
 
-You should set the first value of the `font-family` property to `Verdana`.
+You should give the second `input` a `type` of `email`.
 
 ```js
 
 ```
 
-You should set the second value of the `font-family` property to another sans-serif, web safe font. _Hint: I would choose Tahoma_.
-
-```js
-// Acceptable fonts: Arial, Helvetica, Tahoma, Trebuchet MS.
-```
-
-You should use an `h2` element selector to target the `h2` elements.
+You should give the third `input` a `type` of `date`.
 
 ```js
 
 ```
 
-You should set the `border-bottom` property to `4px solid #dfdfe2`.
+You should give the first `input` an appropriate `name` attribute.
+
+```js
+
+```
+
+You should give the second `input` an appropriate `name` attribute.
+
+```js
+
+```
+
+You should give the third `input` an appropriate `name` attribute.
+
+```js
+
+```
+
+You should give the first `input` a `placeholder` attribute.
 
 ```js
 
@@ -65,17 +73,31 @@ You should set the `border-bottom` property to `4px solid #dfdfe2`.
       <h1>HTML/CSS Quiz</h1>
       <nav>
         <ul>
-          <li><a>INFO</a></li>
-          <li><a>HTML</a></li>
-          <li><a>CSS</a></li>
+          <li><a href="#student-info">INFO</a></li>
+          <li><a href="#html-questions">HTML</a></li>
+          <li><a href="#css-questions">CSS</a></li>
 			  </ul>
       </nav>
     </header>
     <main>
       <form action="https://freecodecamp.org/practice-project/accessibility-quiz">
+--fcc-editable-region--
         <section role="region" aria-labelledby="student-info">
           <h2 id="student-info">Student Info</h2>
+          <div class="info">
+            <label for="student-name">Name:</label>
+            <input id="student-name" />
+          </div>
+          <div class="info">
+            <label for="student-email">Email:</label>
+            <input id="student-email" />
+          </div>
+          <div class="info">
+            <label for="birth-date">D.O.B.:</label>
+            <input id="birth-date" />
+          </div>
         </section>
+--fcc-editable-region--
         <section role="region" aria-labelledby="html-questions">
           <h2 id="html-questions">HTML</h2>
         </section>
@@ -127,8 +149,13 @@ nav > ul {
 	justify-content: space-evenly;
 }
 
---fcc-editable-region--
+h1,
+h2 {
+	font-family: Verdana, Tahoma;
+}
 
---fcc-editable-region--
+h2 {
+	border-bottom: 4px solid #dfdfe2;
+}
 
 ```
