@@ -1,67 +1,17 @@
 ---
-id: 614396f7ae83f20ea6f9f4b3
-title: Part 26
+id: 6143cb26f7edff2dc28f7da5
+title: Part 27
 challengeType: 0
-dashedName: part-26
+dashedName: part-27
 ---
 
 # --description--
 
-Within the second `section` element, add two `div` elements with a class of `question-block`.
-
-Then, within each `div.question-block` element, add one `p` element with text of incrementing numbers, starting at `1`, and one `fieldset` element with a class of `question`.
+step 27 instructions
 
 # --hints--
 
-You should nest two `div` elements within the second `section` element.
-
-```js
-
-```
-
-You should give the first new `div` element a class of `question-block`.
-
-```js
-
-```
-
-You should give the second new `div` element a class of `question-block`.
-
-```js
-
-```
-
-You should nest one `p` element within each `div.question-block` element.
-
-```js
-
-```
-
-You should give the first `p` element text of `1`.
-
-```js
-
-```
-
-You should give the second `p` element text of `2`.
-
-```js
-
-```
-
-You should nest one `fieldset` element within each `div.question-block` element.
-
-```js
-
-```
-
-You should give the first `fieldset` element a class of `question`.
-
-```js
-
-```
-
-You should give the second `fieldset` element a class of `question`.
+Test 1
 
 ```js
 
@@ -113,7 +63,14 @@ You should give the second `fieldset` element a class of `question`.
 --fcc-editable-region--
         <section role="region" aria-labelledby="html-questions">
           <h2 id="html-questions">HTML</h2>
-
+          <div class="question-block">
+            <p>1</p>
+            <fieldset class="question"></fieldset>
+          </div>
+          <div class="question-block">
+            <p>2</p>
+            <fieldset class="question"></fieldset>
+          </div>
         </section>
 --fcc-editable-region--
         <section role="region" aria-labelledby="css-questions">
