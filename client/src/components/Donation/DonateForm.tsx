@@ -1,8 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/unbound-method */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable no-nested-ternary */
-
 import type { Token } from '@stripe/stripe-js';
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
@@ -25,14 +22,14 @@ import {
   updateDonationFormState,
   defaultDonationFormState,
   userSelector,
-  postChargeStripe
+  postChargeStripe,
+  postChargeStripeCard
 } from '../../redux';
 import Spacer from '../helpers/spacer';
-
 import DonateCompletion from './DonateCompletion';
-
 import type { AddDonationData } from './PaypalButton';
 import PaypalButton from './PaypalButton';
+import StripeCardForm from './stripe-card-form';
 import WalletsWrapper from './walletsButton';
 
 import './Donation.css';
@@ -51,7 +48,7 @@ type DonateFormState = {
   };
 };
 
-type DonateFromComponentState = {
+type DonateFormComponentState = {
   donationAmount: number;
   donationDuration: string;
 };
@@ -59,6 +56,11 @@ type DonateFromComponentState = {
 type DonateFormProps = {
   addDonation: (data: unknown) => unknown;
   postChargeStripe: (data: unknown) => unknown;
+  postChargeStripeCard: (data: {
+    token: Token;
+    amount: number;
+    duration: string;
+  }) => void;
   defaultTheme?: string;
   email: string;
   handleProcessing: (duration: string, amount: number, action: string) => void;
@@ -96,10 +98,11 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   addDonation,
   updateDonationFormState,
-  postChargeStripe
+  postChargeStripe,
+  postChargeStripeCard
 };
 
-class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
+class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   static displayName = 'DonateForm';
   durations: { month: 'monthly'; onetime: 'one-time' };
   amounts: { month: number[]; onetime: number[] };
@@ -125,6 +128,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     this.handleSelectDuration = this.handleSelectDuration.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
     this.postStripeDonation = this.postStripeDonation.bind(this);
+    this.postStripeCardDonation = this.postStripeCardDonation.bind(this);
     this.handlePaymentButtonLoad = this.handlePaymentButtonLoad.bind(this);
   }
 
@@ -217,6 +221,20 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     });
   }
 
+  postStripeCardDonation(token: Token) {
+    const { donationAmount: amount, donationDuration: duration } = this.state;
+    this.props.handleProcessing(
+      duration,
+      amount,
+      'Stripe card payment submission'
+    );
+    this.props.postChargeStripeCard({
+      token,
+      amount,
+      duration
+    });
+  }
+
   handleSelectAmount(donationAmount: number) {
     this.setState({ donationAmount });
   }
@@ -227,15 +245,15 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
     const usd = this.getFormattedAmountLabel(donationAmount);
     const hours = this.convertToTimeContributed(donationAmount);
 
-    return (
-      <p className='donation-description'>
-        {donationDuration === 'onetime'
-          ? t('donate.your-donation', { usd: usd, hours: hours })
-          : donationDuration === 'month'
-          ? t('donate.your-donation-2', { usd: usd, hours: hours })
-          : t('donate.your-donation-3', { usd: usd, hours: hours })}
-      </p>
-    );
+    let donationDescription = t('donate.your-donation-3', { usd, hours });
+
+    if (donationDuration === 'onetime') {
+      donationDescription = t('donate.your-donation', { usd, hours });
+    } else if (donationDuration === 'month') {
+      donationDescription = t('donate.your-donation-2', { usd, hours });
+    }
+
+    return <p className='donation-description'>{donationDescription}</p>;
   }
 
   resetDonation() {
@@ -267,7 +285,7 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
   renderButtonGroup() {
     const { donationAmount, donationDuration } = this.state;
     const {
-      donationFormState: { loading },
+      donationFormState: { loading, processing },
       handleProcessing,
       addDonation,
       defaultTheme,
@@ -276,7 +294,6 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
       isMinimalForm,
       isSignedIn
     } = this.props;
-    const paymentButtonsLoading = loading.stripe && loading.paypal;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
     const isOneTime = donationDuration === 'onetime';
     const walletlabel = `${t(
@@ -290,8 +307,8 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
           {this.getDonationButtonLabel()}:
         </b>
         <Spacer />
-        {paymentButtonsLoading && this.paymentButtonsLoader()}
         <div className={'donate-btn-group'}>
+          {loading.stripe && loading.paypal && this.paymentButtonsLoader()}
           <WalletsWrapper
             amount={donationAmount}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
@@ -307,11 +324,24 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
             donationDuration={donationDuration}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
             handleProcessing={handleProcessing}
+            isMinimalForm={isMinimalForm}
             isPaypalLoading={loading.paypal}
             isSignedIn={isSignedIn}
             onDonationStateChange={this.onDonationStateChange}
             theme={defaultTheme ? defaultTheme : theme}
           />
+          {isMinimalForm && (
+            <>
+              <div className='separator'>{t('donate.or-card')}</div>
+              <StripeCardForm
+                onDonationStateChange={this.onDonationStateChange}
+                postStripeCardDonation={this.postStripeCardDonation}
+                processing={processing}
+                t={t}
+                theme={defaultTheme ? defaultTheme : theme}
+              />
+            </>
+          )}
         </div>
       </>
     );
