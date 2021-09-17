@@ -1,49 +1,55 @@
 ---
-id: 6143cb26f7edff2dc28f7da5
-title: Part 27
+id: 6144e818fd5ea704fe56081d
+title: Part 28
 challengeType: 0
-dashedName: part-27
+dashedName: part-28
 ---
 
 # --description--
 
-Each `fieldset` will contain a true/false question.
+Give each `fieldset` an adaquate `name` attribute. Then, give both unordered lists a `class` of `answers-list`.
 
-Within each `fieldset`, nest one `legend` element, and one `ul` element with two options.
+Finally, add use the `legend` to caption the content of the `fieldset`, by placing a true/false question as the text content.
 
 # --hints--
 
-You should nest one `legend` element within the first `fieldset` element.
+You should give the first `fieldset` an adaquate `name` attribute. _Hint: I would use `html-question-one`_
 
 ```js
 
 ```
 
-You should nest one `ul` element within the first `fieldset` element.
+You should give the second `fieldset` an adaquate `name` attribute. _Hint: I would use `html-question-two`_
 
 ```js
 
 ```
 
-You should nest two `li` elements within the first `ul` element.
+You should give the first `ul` element a `class` of `answers-list`.
 
 ```js
 
 ```
 
-You should nest one `legend` element within the second `fieldset` element.
+You should give the second `ul` element a `class` of `answers-list`.
 
 ```js
 
 ```
 
-You should nest one `ul` element within the second `fieldset` element.
+You should give the first `legend` element text content.
 
 ```js
 
 ```
 
-You should nest two `li` elements within the second `ul` element.
+You should give the second `legend` element text content.
+
+```js
+
+```
+
+You should not use the same text content for both `legend` elements.
 
 ```js
 
@@ -97,11 +103,23 @@ You should nest two `li` elements within the second `ul` element.
           <h2 id="html-questions">HTML</h2>
           <div class="question-block">
             <p>1</p>
-            <fieldset class="question"></fieldset>
+            <fieldset class="question">
+              <legend></legend>
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </fieldset>
           </div>
           <div class="question-block">
             <p>2</p>
-            <fieldset class="question"></fieldset>
+            <fieldset class="question">
+              <legend></legend>
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </fieldset>
           </div>
         </section>
 --fcc-editable-region--

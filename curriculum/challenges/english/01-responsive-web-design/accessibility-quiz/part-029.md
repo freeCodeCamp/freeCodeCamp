@@ -1,49 +1,17 @@
 ---
-id: 6143cb26f7edff2dc28f7da5
-title: Part 27
+id: 6144f8dc6849e405dd8bb829
+title: Part 29
 challengeType: 0
-dashedName: part-27
+dashedName: part-29
 ---
 
 # --description--
 
-Each `fieldset` will contain a true/false question.
 
-Within each `fieldset`, nest one `legend` element, and one `ul` element with two options.
 
 # --hints--
 
-You should nest one `legend` element within the first `fieldset` element.
-
-```js
-
-```
-
-You should nest one `ul` element within the first `fieldset` element.
-
-```js
-
-```
-
-You should nest two `li` elements within the first `ul` element.
-
-```js
-
-```
-
-You should nest one `legend` element within the second `fieldset` element.
-
-```js
-
-```
-
-You should nest one `ul` element within the second `fieldset` element.
-
-```js
-
-```
-
-You should nest two `li` elements within the second `ul` element.
+Test 1
 
 ```js
 
@@ -92,19 +60,37 @@ You should nest two `li` elements within the second `ul` element.
             <input type="date" name="birth-date" id="birth-date" />
           </div>
         </section>
---fcc-editable-region--
         <section role="region" aria-labelledby="html-questions">
           <h2 id="html-questions">HTML</h2>
           <div class="question-block">
             <p>1</p>
-            <fieldset class="question"></fieldset>
+            <fieldset class="question" name="html-question-one">
+              <legend>
+                The legend element represents a caption for the content of its
+                parent fieldset element
+              </legend>
+--fcc-editable-region--
+              <ul class="answers-list">
+                <li></li>
+                <li></li>
+              </ul>
+            </fieldset>
           </div>
           <div class="question-block">
             <p>2</p>
-            <fieldset class="question"></fieldset>
+            <fieldset class="question" name="html-question-two">
+              <legend>
+                A label element nesting an input element is required to have a
+                for attribute with the same value as the input's id
+              </legend>
+              <ul class="answers-list">
+                <li></li>
+                <li></li>
+              </ul>
+--fcc-editable-region--
+            </fieldset>
           </div>
         </section>
---fcc-editable-region--
         <section role="region" aria-labelledby="css-questions">
           <h2 id="css-questions">CSS</h2>
         </section>
