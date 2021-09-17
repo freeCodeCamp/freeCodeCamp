@@ -1,0 +1,45 @@
+.webhook-panel {
+  border-color: var(--highlight-background);
+}
+
+.webhook-token-input {
+  display: block;
+  width: 100%;
+  padding: 3px 8px;
+  background-color: var(--primary-background);
+  border-color: var(--highlight-background);
+  border-style: solid;
+  color: var(--highlight-color);
+}
+
+.webhook-token-input:focus {
+  border-color: var(--highlight-color);
+}
+
+.btn-info {
+  background-color: var(--highlight-color);
+  color: var(--highlight-background);
+  border-color: var(--highlight-background);
+}
+
+.btn-info:hover,
+.btn-info:focus {
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
+  border-color: var(--highlight-background);
+}
+
+.webhook-token .panel-heading {
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
+  border-radius: 0;
+  border: none;
+}
+
+.webhook-token .panel-info {
+  border-color: var(--highlight-background);
+}
+
+.webhook-token p {
+  color: var(--highlight-color);
+}
