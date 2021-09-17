@@ -34,9 +34,9 @@ export default function donateBoot(app, done) {
         return res.status(402).send({ error: err });
       if (err.type === 'InvalidRequest')
         return res.status(400).send({ error: err });
-      return res
-        .status(500)
-        .send({ message: 'Donation failed due to a server error.' });
+      return res.status(500).send({
+        error: 'Donation failed due to a server error.'
+      });
     });
   }
 

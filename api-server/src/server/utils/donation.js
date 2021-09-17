@@ -198,23 +198,41 @@ export async function createStripeCardDonation(req, res, stripe) {
     };
   }
 
-  const { id: customerId } = await stripe.customers.create({
-    email,
-    card: tokenId,
-    name
-  });
+  let customerId;
+  try {
+    const customer = await stripe.customers.create({
+      email,
+      card: tokenId,
+      name
+    });
+    customerId = customer?.id;
+  } catch {
+    throw {
+      type: 'customerCreationFailed',
+      message: 'Failed to create stripe customer'
+    };
+  }
   log(`Stripe customer with id ${customerId} created`);
 
-  const { id: subscriptionId } = await stripe.subscriptions.create({
-    customer: customerId,
-    items: [
-      {
-        plan: `${donationSubscriptionConfig.duration[
-          duration
-        ].toLowerCase()}-donation-${amount}`
-      }
-    ]
-  });
+  let subscriptionId;
+  try {
+    const subscription = await stripe.subscriptions.create({
+      customer: customerId,
+      items: [
+        {
+          plan: `${donationSubscriptionConfig.duration[
+            duration
+          ].toLowerCase()}-donation-${amount}`
+        }
+      ]
+    });
+    subscriptionId = subscription?.id;
+  } catch {
+    throw {
+      type: 'subscriptionCreationFailed',
+      message: 'Failed to create stripe subscription'
+    };
+  }
   log(`Stripe subscription with id ${subscriptionId} created`);
 
   // save Donation
