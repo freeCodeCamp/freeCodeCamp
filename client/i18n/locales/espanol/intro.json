@@ -9,7 +9,7 @@
     "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o extensiones de modo oscuro pueden interferir con las pruebas. Si tienes algun problema, te recomendamos deshabilitar las extensiones que modifiquen el contenido de la página, mientras tomas el curso.",
     "blocks": {
       "basic-html-and-html5": {
-        "title": "HTML y HTML 5 básico",
+        "title": "HTML básico y HTML5",
         "intro": [
           "HTML es un lenguaje de marcado que usa una sintaxis o notación especial para describir la estructura de una página web al navegador. Los elementos HTML generalmente tienen etiquetas de apertura y cierre que rodean y dan sentido al contenido. Por ejemplo, diferentes elementos pueden describir el texto como un título, párrafo o elemento de lista.",
           "En este curso, crearás una aplicación de fotos para gatos para aprender algunos de los elementos HTML más comunes, los bloques básicos de cualquier página web."
