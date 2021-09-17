@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import axios from 'axios';
 import debug from 'debug';
+import { donationSubscriptionConfig } from '../../../../config/donation-settings';
 import keys from '../../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
@@ -170,4 +171,80 @@ export async function updateUser(body, app) {
       message: 'Webhook type is not supported',
       type: 'UnsupportedWebhookType'
     };
+}
+
+export async function createStripeCardDonation(req, res, stripe) {
+  const {
+    body: {
+      token: { id: tokenId },
+      amount,
+      duration
+    },
+    user: { name, id: userId, email },
+    user
+  } = req;
+
+  if (!tokenId || !amount || !duration || !name || !userId || !email) {
+    throw {
+      message: 'Request is not valid',
+      type: 'InvalidRequest'
+    };
+  }
+
+  if (user.isDonating && duration !== 'onetime') {
+    throw {
+      message: `User already has active recurring donation(s).`,
+      type: 'AlreadyDonatingError'
+    };
+  }
+
+  let customerId;
+  try {
+    const customer = await stripe.customers.create({
+      email,
+      card: tokenId,
+      name
+    });
+    customerId = customer?.id;
+  } catch {
+    throw {
+      type: 'customerCreationFailed',
+      message: 'Failed to create stripe customer'
+    };
+  }
+  log(`Stripe customer with id ${customerId} created`);
+
+  let subscriptionId;
+  try {
+    const subscription = await stripe.subscriptions.create({
+      customer: customerId,
+      items: [
+        {
+          plan: `${donationSubscriptionConfig.duration[
+            duration
+          ].toLowerCase()}-donation-${amount}`
+        }
+      ]
+    });
+    subscriptionId = subscription?.id;
+  } catch {
+    throw {
+      type: 'subscriptionCreationFailed',
+      message: 'Failed to create stripe subscription'
+    };
+  }
+  log(`Stripe subscription with id ${subscriptionId} created`);
+
+  // save Donation
+  let donation = {
+    email,
+    amount,
+    duration,
+    provider: 'stripe',
+    subscriptionId,
+    customerId,
+    startDate: new Date().toISOString()
+  };
+  await createAsyncUserDonation(user, donation);
+  return res.status(200).json({ isDonating: true });
 }

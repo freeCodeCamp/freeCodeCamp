@@ -1,4 +1,3 @@
-// Package Utilities
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -8,49 +7,47 @@ import { HandlerProps } from 'react-reflex';
 import Media from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
-
-// Local Utilities
 import store from 'store';
 import { challengeTypes } from '../../../../utils/challenge-types';
+
 import LearnLayout from '../../../components/layouts/learn';
 import {
-  ChallengeNodeType,
-  ChallengeFiles,
   ChallengeFile,
+  ChallengeFiles,
   ChallengeMetaType,
-  Test,
-  ResizePropsType
+  ChallengeNodeType,
+  ResizePropsType,
+  Test
 } from '../../../redux/prop-types';
 import { isContained } from '../../../utils/is-contained';
 import ChallengeDescription from '../components/Challenge-Description';
-import HelpModal from '../components/HelpModal';
 import Hotkeys from '../components/Hotkeys';
-import Preview from '../components/Preview';
 import ResetModal from '../components/ResetModal';
-import SidePanel from '../components/Side-Panel';
-import VideoModal from '../components/VideoModal';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
+import HelpModal from '../components/help-modal';
 import Output from '../components/output';
+import Preview from '../components/preview';
+import SidePanel from '../components/side-panel';
+import VideoModal from '../components/video-modal';
 import {
-  createFiles,
+  cancelTests,
   challengeFilesSelector,
+  challengeMounted,
   challengeTestsSelector,
+  consoleOutputSelector,
+  createFiles,
+  executeChallenge,
   initConsole,
   initTests,
-  updateChallengeMeta,
-  challengeMounted,
-  consoleOutputSelector,
-  executeChallenge,
-  cancelTests,
-  isChallengeCompletedSelector
+  isChallengeCompletedSelector,
+  updateChallengeMeta
 } from '../redux';
 import { getGuideUrl } from '../utils';
 import DesktopLayout from './DesktopLayout';
 import MobileLayout from './MobileLayout';
 import MultifileEditor from './MultifileEditor';
 
-// Styles
 import './classic.css';
 import '../components/test-frame.css';
 
@@ -124,7 +121,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   static displayName: string;
   containerRef: React.RefObject<unknown>;
   editorRef: React.RefObject<unknown>;
-  instructionsPanelRef: React.RefObject<HTMLElement>;
+  instructionsPanelRef: React.RefObject<HTMLDivElement>;
   resizeProps: ResizePropsType;
 
   constructor(props: ShowClassicProps) {
@@ -309,7 +306,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             {title}
           </ChallengeTitle>
         }
-        className='full-height'
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructionsPanelRef={this.instructionsPanelRef}
         showToolPanel={showToolPanel}
