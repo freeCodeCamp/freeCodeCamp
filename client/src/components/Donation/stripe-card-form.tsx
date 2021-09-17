@@ -60,7 +60,7 @@ const StripeCardForm = ({
   const isPaymentInfoValid = paymentInfoValidation.every(
     ({ complete, error }) => complete && !error
   );
-
+  const isSubmitting = isTokenizing || processing;
   const stripe = useStripe();
   const elements = useElements();
 
@@ -92,7 +92,7 @@ const StripeCardForm = ({
     e.preventDefault();
     if (!isPaymentInfoValid) return setSubmissionValidity(false);
     else setSubmissionValidity(true);
-    const isSubmitting = isTokenizing || processing;
+
     if (!isSubmitting && stripe && elements) {
       const cardElement = elements.getElement(CardNumberElement);
       if (cardElement) {

@@ -69,7 +69,10 @@ export class PayPalButtonScriptLoader extends Component<
   PayPalButtonScriptLoaderState
 > {
   // Lint says that paypal does not exist on window
-  state = { isSdkLoaded: window.paypal ? true : false, isSubscription: true };
+  state = {
+    isSdkLoaded: window.paypal ? true : false,
+    isSubscription: true
+  };
 
   static displayName = 'PayPalButtonScriptLoader';
 
@@ -85,11 +88,11 @@ export class PayPalButtonScriptLoader extends Component<
   }
 
   componentDidMount(): void {
-    if (!window.paypal) {
-      this.loadScript(this.props.isSubscription, false);
-    } else if (this.props.isPaypalLoading) {
-      this.props.onLoad();
-    }
+    this.loadScript(this.props.isSubscription, true);
+  }
+
+  componentWillUnmount(): void {
+    scriptRemover('paypal-sdk');
   }
 
   componentDidUpdate(prevProps: {
