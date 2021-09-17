@@ -29,7 +29,6 @@ import HelpModal from '../components/help-modal';
 import Output from '../components/output';
 import Preview from '../components/preview';
 import SidePanel from '../components/side-panel';
-import '../components/test-frame.css';
 import VideoModal from '../components/video-modal';
 import {
   cancelTests,
@@ -45,11 +44,12 @@ import {
   updateChallengeMeta
 } from '../redux';
 import { getGuideUrl } from '../utils';
-// Styles
-import './classic.css';
 import DesktopLayout from './DesktopLayout';
 import MobileLayout from './MobileLayout';
 import MultifileEditor from './MultifileEditor';
+
+import './classic.css';
+import '../components/test-frame.css';
 
 // Redux Setup
 const mapStateToProps = createStructuredSelector({
