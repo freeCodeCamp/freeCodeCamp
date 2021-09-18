@@ -49,7 +49,6 @@ type DonateFormState = {
     stripe: boolean;
     paypal: boolean;
   };
-  isSignedIn: boolean;
 };
 
 type DonateFromComponentState = {
@@ -330,14 +329,9 @@ class DonateForm extends Component<DonateFormProps, DonateFromComponentState> {
 
   render() {
     const {
-      donationFormState: {
-        processing,
-        success,
-        error,
-        redirecting,
-        isSignedIn
-      },
-      isMinimalForm
+      donationFormState: { processing, success, error, redirecting },
+      isMinimalForm,
+      isSignedIn
     } = this.props;
 
     if (success || error) {
