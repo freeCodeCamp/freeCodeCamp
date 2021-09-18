@@ -123,7 +123,6 @@ const CertChallenge = ({
         stepVal => typeof stepVal === 'boolean' && stepVal
       ).length + projectsCompleted;
     const numberOfSteps = Object.keys(steps).length;
-
     setCanViewCert(completedCount === numberOfSteps);
     setStepState({ numberOfSteps, completedCount });
     setIsProjectsCompleted(projectsCompleted);
@@ -147,7 +146,7 @@ const CertChallenge = ({
   };
   return (
     <div className='block'>
-      {(!isCertified || !canViewCert) && userLoaded && isSignedIn && (
+      {userLoaded && isSignedIn && !isCertified && !canViewCert && (
         <CertificationCard
           i18nCertText={i18nCertText}
           isProjectsCompleted={isProjectsCompleted}
