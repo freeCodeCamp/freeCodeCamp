@@ -67,7 +67,7 @@ describe('The hotkeys should work correctly', () => {
 
   it('it should be possible to focus on the instructions by pressing r', () => {
     cy.get(selectors.editorContainer).type('{esc}');
-    cy.get(selectors.instructionsPanel).click().type('r');
+    cy.get(selectors.console).click().type('r');
     cy.get(selectors.instructionsPanel).should('have.focus');
   });
 });
