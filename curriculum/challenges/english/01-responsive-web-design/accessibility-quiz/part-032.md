@@ -1,85 +1,55 @@
 ---
-id: 6144f8dc6849e405dd8bb829
-title: Part 29
+id: 6145eb5f08a38a0786c7a80c
+title: Part 32
 challengeType: 0
-dashedName: part-29
+dashedName: part-32
 ---
 
 # --description--
 
-To provide the functionality of the true/false questions, we need a set of inputs which do not allow both to be selected at the same time.
+If you click on the radio inputs, you might notice both inputs within the same true/false fieldset can be selected at the same time.
 
-Within each list element, nest one `label` element, and within each `label` element, nest one `input` element with the appropriate `type`.
+Group the relevant inputs together such that only one input from a pair can be selected at a time.
 
 # --hints--
 
-You should nest one `label` element within the first `li` element.
+You should give the first `input` a `name` attribute.
 
 ```js
 
 ```
 
-You should nest one `label` element within the second `li` element.
+You should give the second `input` a `name` attribute.
 
 ```js
 
 ```
 
-You should nest one `label` element within the third `li` element.
+You should give the third `input` a `name` attribute.
 
 ```js
 
 ```
 
-You should nest one `label` element within the fourth `li` element.
+You should give the fourth `input` a `name` attribute.
 
 ```js
 
 ```
 
-You should nest one `input` element within the first `label` element.
+You should give the second `input` a `name` attribute matching the `name` attribute of the first `input`.
 
 ```js
 
 ```
 
-You should nest one `input` element within the second `label` element.
+You should give the fourth `input` a `name` attribute matching the `name` attribute of the third `input`.
 
 ```js
 
 ```
 
-You should nest one `input` element within the third `label` element.
-
-```js
-
-```
-
-You should nest one `input` element within the fourth `label` element.
-
-```js
-
-```
-
-You should give the first `input` a `type` of `radio`.
-
-```js
-
-```
-
-You should give the second `input` a `type` of `radio`.
-
-```js
-
-```
-
-You should give the third `input` a `type` of `radio`.
-
-```js
-
-```
-
-You should give the fourth `input` a `type` of `radio`.
+You should give different `name` attributes to the first `input` and the third `input`.
 
 ```js
 
@@ -139,8 +109,18 @@ You should give the fourth `input` a `type` of `radio`.
               </legend>
 --fcc-editable-region--
               <ul class="answers-list">
-                <li></li>
-                <li></li>
+                <li>
+                  <label for="q1-a1">
+                    <input type="radio" id="q1-a1" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q1-a2">
+                    <input type="radio" id="q1-a2" value="false" />
+                    False
+                  </label>
+                </li>
               </ul>
             </fieldset>
           </div>
@@ -152,8 +132,18 @@ You should give the fourth `input` a `type` of `radio`.
                 for attribute with the same value as the input's id
               </legend>
               <ul class="answers-list">
-                <li></li>
-                <li></li>
+                <li>
+                  <label for="q2-a1">
+                    <input type="radio" id="q2-a1" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q2-a2">
+                    <input type="radio" id="q2-a2" value="false" />
+                    False
+                  </label>
+                </li>
               </ul>
 --fcc-editable-region--
             </fieldset>

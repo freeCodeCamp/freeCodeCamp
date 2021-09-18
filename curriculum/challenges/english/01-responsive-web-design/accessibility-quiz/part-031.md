@@ -1,85 +1,121 @@
 ---
-id: 6144f8dc6849e405dd8bb829
-title: Part 29
+id: 6145e8b5080a5f06bb0223d0
+title: Part 31
 challengeType: 0
-dashedName: part-29
+dashedName: part-31
 ---
 
 # --description--
 
-To provide the functionality of the true/false questions, we need a set of inputs which do not allow both to be selected at the same time.
+Give the `label` elements text such that the `input` comes before the text. Then, give the `input` elements a `value` matching the text.
 
-Within each list element, nest one `label` element, and within each `label` element, nest one `input` element with the appropriate `type`.
+The text should either be `True` or `False`.
 
 # --hints--
 
-You should nest one `label` element within the first `li` element.
+You should give the first `label` element text content.
 
 ```js
 
 ```
 
-You should nest one `label` element within the second `li` element.
+You should give the second `label` element text content.
 
 ```js
 
 ```
 
-You should nest one `label` element within the third `li` element.
+You should give the third `label` element text content.
 
 ```js
 
 ```
 
-You should nest one `label` element within the fourth `li` element.
+You should give the fourth `label` element text content.
 
 ```js
 
 ```
 
-You should nest one `input` element within the first `label` element.
+You should place the first `label` text content after the `input` element.
 
 ```js
 
 ```
 
-You should nest one `input` element within the second `label` element.
+You should place the second `label` text content after the `input` element.
 
 ```js
 
 ```
 
-You should nest one `input` element within the third `label` element.
+You should place the third `label` text content after the `input` element.
 
 ```js
 
 ```
 
-You should nest one `input` element within the fourth `label` element.
+You should place the fourth `label` text content after the `input` element.
 
 ```js
 
 ```
 
-You should give the first `input` a `type` of `radio`.
+You should give the first `label` the text `True` or `False`.
 
 ```js
 
 ```
 
-You should give the second `input` a `type` of `radio`.
+You should give the second `label` the text `True`.
 
 ```js
 
 ```
 
-You should give the third `input` a `type` of `radio`.
+You should give the second `label` the text `False`.
 
 ```js
 
 ```
 
-You should give the fourth `input` a `type` of `radio`.
+You should give the third `label` the text `True` or `False`.
+
+```js
+
+```
+
+You should give the fourth `label` the text `True`.
+
+```js
+
+```
+
+You should give the fourth `label` the text `False`.
+
+```js
+
+```
+
+You should give the first `input` a `value` matching the `label` text content.
+
+```js
+
+```
+
+You should give the second `input` a `value` matching the `label` text content.
+
+```js
+
+```
+
+You should give the third `input` a `value` matching the `label` text content.
+
+```js
+
+```
+
+You should give the fourth `input` a `value` matching the `label` text content.
 
 ```js
 
@@ -139,8 +175,16 @@ You should give the fourth `input` a `type` of `radio`.
               </legend>
 --fcc-editable-region--
               <ul class="answers-list">
-                <li></li>
-                <li></li>
+                <li>
+                  <label for="q1-a1">
+                    <input type="radio" id="q1-a1" />
+                  </label>
+                </li>
+                <li>
+                  <label for="q1-a2">
+                    <input type="radio" id="q1-a2" />
+                  </label>
+                </li>
               </ul>
             </fieldset>
           </div>
@@ -152,8 +196,16 @@ You should give the fourth `input` a `type` of `radio`.
                 for attribute with the same value as the input's id
               </legend>
               <ul class="answers-list">
-                <li></li>
-                <li></li>
+                <li>
+                  <label for="q2-a1">
+                    <input type="radio" id="q2-a1" />
+                  </label>
+                </li>
+                <li>
+                  <label for="q2-a2">
+                    <input type="radio" id="q2-a2" />
+                  </label>
+                </li>
               </ul>
 --fcc-editable-region--
             </fieldset>

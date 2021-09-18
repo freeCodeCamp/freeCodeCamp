@@ -1,85 +1,61 @@
 ---
-id: 6144f8dc6849e405dd8bb829
-title: Part 29
+id: 6145f14f019a4b0adb94b051
+title: Part 36
 challengeType: 0
-dashedName: part-29
+dashedName: part-36
 ---
 
 # --description--
 
-To provide the functionality of the true/false questions, we need a set of inputs which do not allow both to be selected at the same time.
+Within the first `div.answer` element, nest one required `select` element with three `option` elements.
 
-Within each list element, nest one `label` element, and within each `label` element, nest one `input` element with the appropriate `type`.
+Give the first `option` element a `value` of `""`, and the text `Select an option`. Give the second `option` element a `value` of `yes`, and the text `Yes`. Give the third `option` element a `value` of `no`, and the text `No`.
 
 # --hints--
 
-You should nest one `label` element within the first `li` element.
+You should nest one `select` element within the first `div.answer` element.
 
 ```js
 
 ```
 
-You should nest one `label` element within the second `li` element.
+You should nest three `option` elements within the `select` element.
 
 ```js
 
 ```
 
-You should nest one `label` element within the third `li` element.
+You should give the first `option` element a `value` of `""`.
 
 ```js
 
 ```
 
-You should nest one `label` element within the fourth `li` element.
+You should give the first `option` element a text content of `Select an option`.
 
 ```js
 
 ```
 
-You should nest one `input` element within the first `label` element.
+You should give the second `option` element a `value` of `yes`.
 
 ```js
 
 ```
 
-You should nest one `input` element within the second `label` element.
+You should give the second `option` element a text content of `Yes`.
 
 ```js
 
 ```
 
-You should nest one `input` element within the third `label` element.
+You should give the third `option` element a `value` of `no`.
 
 ```js
 
 ```
 
-You should nest one `input` element within the fourth `label` element.
-
-```js
-
-```
-
-You should give the first `input` a `type` of `radio`.
-
-```js
-
-```
-
-You should give the second `input` a `type` of `radio`.
-
-```js
-
-```
-
-You should give the third `input` a `type` of `radio`.
-
-```js
-
-```
-
-You should give the fourth `input` a `type` of `radio`.
+You should give the third `option` element a text content of `No`.
 
 ```js
 
@@ -137,10 +113,19 @@ You should give the fourth `input` a `type` of `radio`.
                 The legend element represents a caption for the content of its
                 parent fieldset element
               </legend>
---fcc-editable-region--
               <ul class="answers-list">
-                <li></li>
-                <li></li>
+                <li>
+                  <label for="q1-a1">
+                    <input type="radio" id="q1-a1" name="q1" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q1-a2">
+                    <input type="radio" id="q1-a2" name="q1" value="false" />
+                    False
+                  </label>
+                </li>
               </ul>
             </fieldset>
           </div>
@@ -152,15 +137,39 @@ You should give the fourth `input` a `type` of `radio`.
                 for attribute with the same value as the input's id
               </legend>
               <ul class="answers-list">
-                <li></li>
-                <li></li>
+                <li>
+                  <label for="q2-a1">
+                    <input type="radio" id="q2-a1" name="q2" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q2-a2">
+                    <input type="radio" id="q2-a2" name="q2" value="false" />
+                    False
+                  </label>
+                </li>
               </ul>
---fcc-editable-region--
             </fieldset>
           </div>
         </section>
         <section role="region" aria-labelledby="css-questions">
           <h2 id="css-questions">CSS</h2>
+          <div class="formrow">
+            <div class="question-block">
+              <label>Are you a frontend developer?</label>
+            </div>
+--fcc-editable-region--
+            <div class="answer">
+              
+            </div>
+--fcc-editable-region--
+            <div class="question-block">
+              <label>Do you have any questions:</label>
+            </div>
+            <div class="answer">
+            </div>
+          </div>
         </section>
       </form>
     </main>
@@ -216,8 +225,12 @@ h2 {
   border-bottom: 4px solid #dfdfe2;
 }
 
+p::before {
+  content: "Question #";
+}
+
 .sr-only {
-	position: absolute;
+  position: absolute;
 	width: 1px;
 	height: 1px;
 	padding: 0;

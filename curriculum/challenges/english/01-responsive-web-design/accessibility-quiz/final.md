@@ -2,7 +2,7 @@
 id: 611e5716f9246f125f63815b
 title: Final Prototype
 challengeType: 0
-dashedName: part-30
+dashedName: part-45
 ---
 
 # --description--
@@ -127,10 +127,10 @@ Test 1
 				<h2 id="css-questions">CSS</h2>
 				<div class="formrow">
 					<div class="question-block">
-						<label for="cust">Are you an frontend developer?</label>
+						<label for="customer">Are you an frontend developer?</label>
 					</div>
 					<div class="answer">
-						<select name="cust" id="cust" required>
+						<select name="customer" id="customer" required>
 							<option value="">Select an option</option>
 							<option value="yes">Yes</option>
 							<option value="no">No</option>
@@ -151,9 +151,7 @@ Who is flexbox...
 	</main>
 	<footer>
 		<address>
-			You can visit
-			<a href="https://www.freecodecamp.org">freeCodeCamp</a>:<br />
-			freeCodeCamp<br />
+			<a href="https://www.freecodecamp.org">freeCodeCamp</a><br />
 			San Fransisco<br />
 			California<br />
 			USA

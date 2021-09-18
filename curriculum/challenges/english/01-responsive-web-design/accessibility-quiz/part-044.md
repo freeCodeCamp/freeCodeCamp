@@ -1,85 +1,24 @@
 ---
-id: 6144f8dc6849e405dd8bb829
-title: Part 29
+id: 6145fc3707fc3310c277f5c8
+title: Part 44
 challengeType: 0
-dashedName: part-29
+dashedName: part-44
 ---
 
 # --description--
 
-To provide the functionality of the true/false questions, we need a set of inputs which do not allow both to be selected at the same time.
+Back to styling the page. Select the list elements within the navigation bar, and give them the following styles:
 
-Within each list element, nest one `label` element, and within each `label` element, nest one `input` element with the appropriate `type`.
+```css
+color: #dfdfe2;
+margin: 0 0.2rem;
+padding: 0.2rem;
+display: block;
+```
 
 # --hints--
 
-You should nest one `label` element within the first `li` element.
-
-```js
-
-```
-
-You should nest one `label` element within the second `li` element.
-
-```js
-
-```
-
-You should nest one `label` element within the third `li` element.
-
-```js
-
-```
-
-You should nest one `label` element within the fourth `li` element.
-
-```js
-
-```
-
-You should nest one `input` element within the first `label` element.
-
-```js
-
-```
-
-You should nest one `input` element within the second `label` element.
-
-```js
-
-```
-
-You should nest one `input` element within the third `label` element.
-
-```js
-
-```
-
-You should nest one `input` element within the fourth `label` element.
-
-```js
-
-```
-
-You should give the first `input` a `type` of `radio`.
-
-```js
-
-```
-
-You should give the second `input` a `type` of `radio`.
-
-```js
-
-```
-
-You should give the third `input` a `type` of `radio`.
-
-```js
-
-```
-
-You should give the fourth `input` a `type` of `radio`.
+Test 1
 
 ```js
 
@@ -137,10 +76,19 @@ You should give the fourth `input` a `type` of `radio`.
                 The legend element represents a caption for the content of its
                 parent fieldset element
               </legend>
---fcc-editable-region--
               <ul class="answers-list">
-                <li></li>
-                <li></li>
+                <li>
+                  <label for="q1-a1">
+                    <input type="radio" id="q1-a1" name="q1" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q1-a2">
+                    <input type="radio" id="q1-a2" name="q1" value="false" />
+                    False
+                  </label>
+                </li>
               </ul>
             </fieldset>
           </div>
@@ -152,18 +100,56 @@ You should give the fourth `input` a `type` of `radio`.
                 for attribute with the same value as the input's id
               </legend>
               <ul class="answers-list">
-                <li></li>
-                <li></li>
+                <li>
+                  <label for="q2-a1">
+                    <input type="radio" id="q2-a1" name="q2" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q2-a2">
+                    <input type="radio" id="q2-a2" name="q2" value="false" />
+                    False
+                  </label>
+                </li>
               </ul>
---fcc-editable-region--
             </fieldset>
           </div>
         </section>
         <section role="region" aria-labelledby="css-questions">
           <h2 id="css-questions">CSS</h2>
+          <div class="formrow">
+            <div class="question-block">
+              <label for="customer">Are you a frontend developer?</label>
+            </div>
+            <div class="answer">
+              <select name="customer" id="customer" required>
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="question-block">
+              <label for="css-questions">Do you have any questions:</label>
+            </div>
+            <div class="answer">
+              <textarea id="css-questions" name="css-questions" rows="5" cols="24">
+                Who is flexbox...
+              </textarea>
+            </div>
+          </div>
         </section>
+        <button type="submit">Submit</button>
       </form>
     </main>
+    <footer>
+      <address>
+        <a href="https://freecodecamp.org">freeCodeCamp</a><br />
+        San Fransisco<br />
+        Califormia<br />
+        USA
+      </address>
+    </footer>
   </body>
 </html>
 
@@ -207,6 +193,10 @@ nav > ul {
 	justify-content: space-evenly;
 }
 
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 h1,
 h2 {
   font-family: Verdana, Tahoma;
@@ -216,8 +206,12 @@ h2 {
   border-bottom: 4px solid #dfdfe2;
 }
 
+p::before {
+  content: "Question #";
+}
+
 .sr-only {
-	position: absolute;
+  position: absolute;
 	width: 1px;
 	height: 1px;
 	padding: 0;
