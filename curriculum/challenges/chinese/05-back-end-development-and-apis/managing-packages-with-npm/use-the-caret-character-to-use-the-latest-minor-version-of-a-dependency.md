@@ -22,7 +22,7 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 在依赖项中，使用脱字符（`^`）为 moment 的版本添加前缀，允许 npm 更新依赖包到任意新的次版本。
 
-**注意：**原来的版本号不用更改。
+**注意：** 原来的版本号不用更改。
 
 # --hints--
 

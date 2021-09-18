@@ -26,7 +26,7 @@ dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-
 
 # --hints--
 
-“dependencies”應該包含“moment”
+“dependencies”字段中應包含“moment”
 
 ```js
 (getUserInput) =>

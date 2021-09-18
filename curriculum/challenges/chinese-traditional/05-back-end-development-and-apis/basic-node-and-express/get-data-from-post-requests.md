@@ -18,11 +18,11 @@ dashedName: get-data-from-post-requests
 
 POST（有時候是 PUT）- 使用請求發送信息，以創建新資源；
 
-GET- 讀取不用修改的已存在的資源；
+GET - 讀取不用修改的已存在的資源；
 
 PUT 或者 PATCH（有時候是 POST）- 發送數據，以更新資源；
 
-DELETE=> 刪除一個資源。
+DELETE => 刪除一個資源。
 
 還有其他兩種方法常用於與服務進行交互。 除了 GET 之外，上面列出的所有方法都可以負載數據（即數據都能放到消息正文中）， 這些方法也可以使用 body-parser 中間件。
 

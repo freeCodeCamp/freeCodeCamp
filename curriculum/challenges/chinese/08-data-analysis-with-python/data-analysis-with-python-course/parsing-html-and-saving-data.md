@@ -19,7 +19,7 @@ dashedName: parsing-html-and-saving-data
 
 ## --text--
 
-为了解析 HTML 文本和提取表格，`.read_html()` 位于哪个 Python 的库？
+哪个 Python 库有 `.read_html()` 方法，我们可以用于解析 HTML 文档和提取表格？
 
 ## --answers--
 

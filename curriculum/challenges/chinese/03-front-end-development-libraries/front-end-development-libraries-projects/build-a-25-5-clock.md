@@ -10,9 +10,9 @@ dashedName: build-a-25--5-clock
 
 **目标：** 在 [CodePen.io](https://codepen.io) 上实现一个功能类似 <https://codepen.io/freeCodeCamp/full/XpKrrW> 的 App。
 
-在满足以下[需求](https://en.wikipedia.org/wiki/User_story)并能通过所有测试的前提下， 可以根据自己的喜好来美化 app。
+在满足以下 [需求](https://en.wikipedia.org/wiki/User_story) 并能通过所有测试的前提下， 赋予它你自己的个人风格。
 
-可以使用 HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、jQuery 来完成这个挑战。 但鉴于这个章节的学习内容与前端框架相关，推荐使用一款前端框架（比如 React）来完成这个挑战。 不推荐使用前面没有提到的技术，否则风险自负。 我们有计划新增其他前端框架课程，例如 Angular 和 Vue，不过目前还没有这些内容。 如果使用建议的技术栈完成这个项目，我们会接受并尝试修复相关的问题反馈。 编码愉快！
+可以使用 HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、jQuery 来完成这个挑战。 但鉴于这个章节的学习内容与前端框架相关，推荐使用一款前端框架（比如 React）来完成这个挑战；不推荐使用前面没有提到的技术，否则风险自负。 不推荐使用前面没有提到的技术，否则风险自担。 我们有计划新增其他前端框架课程，例如 Angular 和 Vue，不过目前还没有这些内容。 我们会接受并尝试修复你在使用推荐技术栈创建项目时报告的问题。 编码愉快！
 
 **需求 1：** 应该能看到一个具有`id="break-label"`属性的元素，这个元素的内容应该是一个字符串（例如："Break Length"）。
 

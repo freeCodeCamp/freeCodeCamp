@@ -18,7 +18,7 @@ dashedName: connect-redux-to-the-messages-app
 
 # --hints--
 
-`AppWrapper` 应渲染该页面上。
+`AppWrapper` 应该渲染该到页面上。
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-`Presentational` 组件应该渲染到页面上。
+`Presentational` 应该渲染到页面上.
 
 ```js
 assert(
@@ -70,7 +70,7 @@ assert(
 );
 ```
 
-`Presentational` 组件应接收创建 action 的函数 `submitMessage` 属性。
+`Presentational` 组件应接收创建 action 的函数的 `submitMessage` 属性。
 
 ```js
 assert(

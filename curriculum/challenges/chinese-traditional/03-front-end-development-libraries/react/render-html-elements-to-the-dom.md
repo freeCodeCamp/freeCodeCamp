@@ -16,7 +16,7 @@ ReactDOM 提供了一個簡單的方法來將 React 元素呈現給 DOM，如下
 
 # --instructions--
 
-代碼編輯器有一個簡單的 JSX 組件。 使用 `ReactDOM.render()` 方法將該組件渲染到頁面。 可以將定義好的 JSX 元素直接作爲第一個參數傳入，然後使用 `document.getElementById()` 來選擇要渲染到的 DOM 節點， 在這個挑戰中，請渲染到 `id='challenge-node'` 的 `div` 中。 確保沒有修改 `JSX` 常量。
+代碼編輯器有一個簡單的 JSX 組件。 使用 `ReactDOM.render()` 方法將該組件渲染到頁面。 可以將定義好的 JSX 元素直接作爲第一個參數傳入，然後使用 `document.getElementById()` 來選擇要渲染到的 DOM 節點， 在這個挑戰中，請渲染到 `id='challenge-node'`的 `div` 中。 確保沒有修改 `JSX` 常量。
 
 # --hints--
 

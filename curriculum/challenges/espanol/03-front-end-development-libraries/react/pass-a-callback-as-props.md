@@ -14,7 +14,7 @@ Puedes pasar `state` como "props" a los componentes hijos, pero no estás limita
 
 Hay tres componentes descritos en el editor de código. El componente `MyApp` es el padre que renderizará los componentes hijos `GetInput` y `RenderInput`. Añade el componente `GetInput` al método de renderizar en `MyApp`, luego pásale un "prop" llamado `input` asignado a `inputValue` desde el estado `state` de `MyApp`. También crea un "prop" llamado `handleChange` y pasa el controlador de entrada `handleChange` a este.
 
-A continuación, añade `RenderInput` al método de renderizar en `MyApp`, luego crea un "prop" llamado `input` y pasa él `inputValue` desde el estado `state` a este. Una vez que hayas terminado podrás escribir en el campo `input` en el componente `GetInput`, que luego llama al método manejador en su padre a través de "props". Esto actualiza la entrada en el `state` del padre, que se pasa como "props" a ambos hijos. Observa cómo fluyen los datos entre los componentes y cómo la única fuente de verdad sigue siendo el `state` del componente padre. Es cierto que este ejemplo es un poco inventado, pero debe servir para ilustrar cómo los datos y los callbacks pueden ser pasados entre componentes React.
+A continuación, añade `RenderInput` al método de renderizar en `MyApp`, luego crea un "prop" llamado `input` y pasa el `inputValue` desde el estado `state` a este. Una vez que hayas terminado podrás escribir en el campo `input` en el componente `GetInput`, que luego llama al método manejador en su padre a través de "props". Esto actualiza la entrada en el `state` del padre, que se pasa como "props" a ambos hijos. Observa cómo fluyen los datos entre los componentes y cómo la única fuente de verdad sigue siendo el `state` del componente padre. Es cierto que este ejemplo es un poco inventado, pero debe servir para ilustrar cómo los datos y los callbacks pueden ser pasados entre componentes React.
 
 # --hints--
 
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-El componente `GetInput` debe recibir la propiedad de estado `MyApp` `inputValue` como "props" y contener un elemento `input` que modifica el estado de `MyApp`.
+El componente `GetInput` debe recibir la propiedad de estado `inputValue` de `MyApp` como "props" y contener un elemento `input` que modifica el estado de `MyApp`.
 
 ```js
 async () => {
@@ -74,7 +74,7 @@ async () => {
 };
 ```
 
-El componente `RenderInput` debe recibir la propiedad de estado `MyApp` `inputValue` como "props".
+El componente `RenderInput` debe recibir la propiedad de estado `inputValue` de `MyApp` como "props".
 
 ```js
 async () => {

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036185
-title: Use && for a More Concise Conditional
+title: 使用 && 獲得更簡潔的條件
 challengeType: 6
 forumTopicId: 301413
 dashedName: use--for-a-more-concise-conditional
@@ -8,7 +8,7 @@ dashedName: use--for-a-more-concise-conditional
 
 # --description--
 
-`if/else` 語句在上一次挑戰中是有效的，但是有一種更簡潔的方法可以達到同樣的結果。 假設正在跟蹤組件中的幾個條件，並且希望根據這些條件中的每一個來渲染不同的元素。 如果你寫了很多 `else if` 語句來返回稍微不同的 UI，你可能會寫很多重複代碼，這就留下了出錯的空間。 相反，你可以使用 `&&` 邏輯運算符以更簡潔的方式執行條件邏輯。 這是完全可行的，因爲你希望檢查條件是否爲 `true`。如果是，則返回一些標記。 這裏有一個例子：
+`if/else` 語句在上一次挑戰中是有效的，但是有一種更簡潔的方法可以達到同樣的結果。 假設正在跟蹤組件中的幾個條件，並且希望根據這些條件中的每一個來渲染不同的元素。 如果你寫了很多 `else if` 語句來返回稍微不同的 UI，你可能會寫很多重複代碼，這就留下了出錯的空間。 相反，你可以使用 `&&` 邏輯運算符以更簡潔的方式執行條件邏輯。 這是完全可行的，因爲你希望檢查條件是否爲 `true`。如果是，則返回一些標記。 下面是一個示例：
 
 ```jsx
 {condition && <p>markup</p>}

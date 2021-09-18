@@ -14,7 +14,7 @@ Otra forma importante en la que JSX difiere de HTML está en la idea de la etiqu
 
 En HTML, casi todas las etiquetas tienen una etiqueta de apertura y cierre: `<div></div>`; la etiqueta de cierre siempre tiene una barra inclinada antes del nombre de la etiqueta que está cerrando. Sin embargo, hay instancias especiales en HTML llamadas “etiquetas auto-cerradas”, o etiquetas que no requieren una etiqueta de apertura y cierre antes de que otra etiqueta pueda comenzar.
 
-Por ejemplo, la etiqueta salto de línea puede escribirse como `<br>` o como `<br />`, pero nunca debería escribirse como `<br></br>`, ya que no contiene ningún contenido.
+Por ejemplo, la etiqueta de salto de línea puede escribirse como `<br>` o como `<br />`, pero nunca debe escribirse como `<br></br>`, ya que no contiene ningún contenido.
 
 En JSX, las reglas son un poco diferentes. Cualquier elemento JSX se puede escribir con una etiqueta de auto-cierre, y cada elemento debe ser cerrado. La etiqueta de salto de línea, por ejemplo, siempre debe escribirse como `<br />` para ser un JSX válido que puede ser transpilado. Por otra parte, un `<div>` puede escribirse como `<div />` o `<div></div>`. La diferencia es que en la primera versión de sintaxis no hay forma de incluir nada en la `<div />`. Verás en desafíos posteriores que esta sintaxis es útil al renderizar componentes de React.
 

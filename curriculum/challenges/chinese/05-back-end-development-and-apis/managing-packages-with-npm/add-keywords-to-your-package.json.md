@@ -8,7 +8,7 @@ dashedName: add-keywords-to-your-package-json
 
 # --description--
 
-在 `keywords` 字段中可以使用相关的关键字描述项目。 例如：
+在 `keywords` 字段中可以使用相关的关键字描述项目。 下面是一个示例：
 
 ```json
 "keywords": [ "descriptive", "related", "words" ],
