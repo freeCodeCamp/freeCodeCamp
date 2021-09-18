@@ -38,7 +38,7 @@ JavaScript 的默认排序方法是 Unicode 值顺序排序，有时可能会得
 
 # --instructions--
 
-在 `alphabeticalOrder` 函数中使用 `sort` 方法对 `arr` 中的元素按照字母顺序排列。
+在 `alphabeticalOrder` 函数中使用 `sort` 方法对 `arr` 中的元素按照字母顺序排列。 该函数应返回一个排序的数组。
 
 # --hints--
 
@@ -83,7 +83,7 @@ assert(
 function alphabeticalOrder(arr) {
   // Only change code below this line
 
-
+  return arr
   // Only change code above this line
 }
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
