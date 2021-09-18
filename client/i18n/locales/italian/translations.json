@@ -319,6 +319,7 @@
     "nicely-done": "Ben fatto. Hai appena completato {{block}}.",
     "credit-card": "Carta di credito",
     "credit-card-2": "O dona con una carta di credito:",
+    "or-card": "Or donate with card",
     "paypal": "con PayPal:",
     "need-email": "Abbiamo bisogno di un indirizzo email valido a cui possiamo inviare la tua ricevuta fiscale della donazione.",
     "went-wrong": "Qualcosa è andato storto nell'elaborazione della tua donazione. La tua carta non è stata addebitata.",
