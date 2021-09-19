@@ -1,34 +1,34 @@
-# Codebase Best Practices
+# Las mejores prácticas de la base de código
 
-## General JavaScript
+## JavaScript en general
 
-In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
+En la mayoría de los casos, nuestro [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) advertirá de cualquier formato que vaya en contra de la práctica definida de la base de código.
 
-It is encouraged to use functional components over class-based components.
+Se recomienda utilizar componentes funcionales en vez de componentes basados en clases.
 
-## Specific TypeScript
+## TypeScript específico
 
-### Migrating a JavaScript File to TypeScript
+### Migrando un archivo JavaScript a TypeScript
 
-#### Retaining Git File History
+#### Retención del historial de archivos Git
 
-Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
+A veces, cambiar el archivo de `<filename>.js` a `<filename>.ts` (o `.tsx`) causa que el archivo original se elimine, y crea uno nuevo. Otras veces, el nombre del archivo solo cambia - en términos de Git. Preferiblemente, queremos que el historial del archivo se conserve.
 
-The best bet at achieving this is to:
+La mejor manera de lograr esto es:
 
-1. Rename the file
-2. Commit with the flag `--no-verify` to prevent Husky from complaining about the lint errors
-3. Refactor to TypeScript for migration, in a separate commit
+1. Renombrar el archivo
+2. Comenta con la etiqueta `--no-verify` para evitar que Husky se queje de los errores de lint
+3. Refactoriza a TypeScript para la migración, en un commit separado
 
-> [!NOTE] Editors like VSCode are still likely to show you the file has been deleted and a new one created. If you use the CLI to `git add .`, then VSCode will show the file as renamed in stage
+> [!NOTE] Es probable que los editores como VSCode te muestren que el archivo se ha eliminado y que se ha creado uno nuevo. Si utilizas CLI para `git add .`,  entonces VSCode mostrará el archivo como renombrado en stage
 
-### Naming Conventions
+### Convenciones de nomenclatura
 
-#### Interfaces and Types
+#### Interfaces y Tipos
 
-For the most part, it is encouraged to use interface declarations over type declarations.
+Por lo general, se recomienda utilizar declaraciones de interfaz en lugar de declaraciones de tipo.
 
-React Component Props - suffix with `Props`
+Propiedades de componentes React - Sufijo de  `Props`
 
 ```typescript
 interface MyComponentProps {}
@@ -36,7 +36,7 @@ interface MyComponentProps {}
 const MyComponent = (props: MyComponentProps) => {};
 ```
 
-React Stateful Components - suffix with `State`
+Componentes React con Estado - sufijo con `State`
 
 ```typescript
 interface MyComponentState {}
@@ -44,7 +44,7 @@ interface MyComponentState {}
 class MyComponent extends Component<MyComponentProps, MyComponentState> {}
 ```
 
-Default - object name in PascalCase
+Predeterminado - nombre del objeto en PascalCase
 
 ```typescript
 interface MyObject {}
@@ -58,7 +58,7 @@ const myObject: MyObject = {};
 
 ## Redux
 
-### Action Definitions
+### Definición de acciones
 
 ```typescript
 enum AppActionTypes = {
@@ -73,12 +73,12 @@ export const actionFunction = (
 });
 ```
 
-### How to Reduce
+### Cómo reducir
 
 ```typescript
-// Base reducer action without payload
+// Acción del reductor de base sin carga útil
 type ReducerBase<T> = { type: T };
-// Logic for handling optional payloads
+// Lógica para manejar cargas útiles opcionales
 type ReducerPayload<T extends AppActionTypes> =
   T extends AppActionTypes.actionFunction
     ? ReducerBase<T> & {
@@ -100,9 +100,9 @@ export const reducer = (
 };
 ```
 
-### How to Dispatch
+### Cómo enviar
 
-Within a component, import the actions and selectors needed.
+Dentro de un componente, importa las acciones y los selectores necesarios.
 
 ```tsx
 // Add type definition
@@ -128,7 +128,7 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 <!-- ### Redux Types File -->
 <!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
 
-## Further Literature
+## Lectura Adicional
 
-- [TypeScript Docs](https://www.typescriptlang.org/docs/)
-- [TypeScript with React CheatSheet](https://github.com/typescript-cheatsheets/react#readme)
+- [Documentos de TypeScript](https://www.typescriptlang.org/docs/)
+- [TypeScript con hoja de trucos de React](https://github.com/typescript-cheatsheets/react#readme)
