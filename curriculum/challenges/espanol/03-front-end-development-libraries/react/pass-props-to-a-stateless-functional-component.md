@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036169
-title: Pasa props a un componente funcional sin estado
+title: Pasa "props" a un componente funcional sin estado
 challengeType: 6
 forumTopicId: 301402
 dashedName: pass-props-to-a-stateless-functional-component
@@ -30,7 +30,7 @@ Hay componentes `Calendar` y `CurrentDate` en el editor de código. Al prensenta
 
 # --hints--
 
-El componente `Calendar` debe retornar un único elemento `div`.
+El componente `Calendar` debe devolver un único elemento `div`.
 
 ```js
 assert(

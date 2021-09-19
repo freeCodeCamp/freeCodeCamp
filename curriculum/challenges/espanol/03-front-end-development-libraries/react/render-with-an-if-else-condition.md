@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036184
-title: Renderizar con una condición If-Else
+title: Renderiza con una condición If-Else
 challengeType: 6
 forumTopicId: 301410
 dashedName: render-with-an-if-else-condition
@@ -8,11 +8,11 @@ dashedName: render-with-an-if-else-condition
 
 # --description--
 
-Otra aplicación de uso de JavaScript para controlar su vista renderizada es vincular los elementos que son renderizados a una condición. Cuando la condición es verdadera (true), se renderiza una vista. Cuando es falso (false), es una vista diferente. Puedes hacer esto con una sentencia estándar `if/else` en el método `render()` de un componente React.
+Otra aplicación del uso de JavaScript para controlar la vista renderizada es vincular los elementos que se renderizan a una condición. Cuando la condición es verdadera (true), se renderiza una vista. Cuando es falso (false), es una vista diferente. Puedes hacer esto con una sentencia estándar `if/else` en el método `render()` de un componente React.
 
 # --instructions--
 
-MyComponent contiene un `boolean` en su estado que rastrea si deseas mostrar algún elemento en la interfaz de usuario o no. Él `button` alterna el estado de este valor. Actualmente, renderiza la misma UI cada vez. Reescribir el método `render()` con una sentencia `if/else` de modo que si `display` es `true`, devuelvas el marcado actual. De lo contrario, devuelve el marcado sin el elemento `h1`.
+MyComponent contiene un `boolean` en su estado que rastrea si deseas mostrar algún elemento en la interfaz de usuario o no. El `button` alterna el estado de este valor. Actualmente, renderiza la misma interfaz de usuario cada vez. Reescribir el método `render()` con una sentencia `if/else` de modo que si `display` es `true`, devuelvas el marcado actual. De lo contrario, devuelve el marcado sin el elemento `h1`.
 
 **Note:** Debes escribir un `if/else` para pasar las pruebas. El uso del operador ternario no pasará aquí.
 
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-Cuando `display` se establece en `true`, un `div`, `button`, y `h1` deben renderizarse.
+Cuando `display` se establece en `true`, un `div`, `button`, y `h1` debe renderizarse.
 
 ```js
 async () => {
@@ -50,7 +50,7 @@ async () => {
 };
 ```
 
-Cuando `display` se establece en `false`, solo un `div` y un `button` deben renderizarse.
+Cuando `display` se establece en `false`, solo un `div` y un `button` debe renderizarse.
 
 ```js
 async () => {

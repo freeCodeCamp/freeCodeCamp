@@ -1,6 +1,6 @@
 ---
 id: 5f32db63eb37f7e17323f459
-title: Learn Nano by Building a Castle
+title: 通过构建城堡来学习 Nano
 challengeType: 12
 helpCategory: Relational Databases
 url: https://github.com/moT01/.learn-nano-by-building-a-castle

@@ -1,6 +1,6 @@
 ---
 id: 5a8b073d06fa14fcfde687aa
-title: Exercise 追蹤器
+title: 運動追蹤器
 challengeType: 4
 forumTopicId: 301505
 dashedName: exercise-tracker
@@ -8,13 +8,55 @@ dashedName: exercise-tracker
 
 # --description--
 
-構建一個 JavaScript 的全棧應用，在功能上與這個應用相似： <https://exercise-tracker.freecodecamp.rocks/>。 可以採用下面的一種方式完成這個挑戰：
+構建一個 JavaScript 的全棧應用，在功能上與這個應用相似： <https://exercise-tracker.freecodecamp.rocks/>。 在這個項目中，你將使用以下方法之一編寫你的代碼：
 
 -   克隆 [GitHub 倉庫](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) 並在本地完成你的項目。
 -   使用[我們的 Replit 初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker)來完成你的項目。
--   使用你選擇的網站生成器來完成項目， 並確保包含了我們 GitHub 倉庫的所有文件。
+-   使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-當完成本項目，請確認有一個正常運行的 demo 可以公開訪問。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 字段中提交它的 URL。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+
+# --instructions--
+
+你的答案應該有以下結構。
+
+運動：
+
+```js
+{
+  username: "fcc_test"
+  description: "test",
+  duration: 60,
+  date: "Mon Jan 01 1990",
+  _id: "5fb5853f734231456ccb3b05"
+}
+```
+
+用戶：
+
+```js
+{
+  username: "fcc_test",
+  _id: "5fb5853f734231456ccb3b05"
+}
+```
+
+日誌：
+
+```js
+{
+  username: "fcc_test",
+  count: 1,
+  _id: "5fb5853f734231456ccb3b05",
+  log: [{
+    description: "test",
+    duration: 60,
+    date: "Mon Jan 01 1990",
+  }]
+}
+```
+
+**提示：** 對於 `date` 屬性，`Date` API 的 `toDateString` 方法可以用於實現預期的輸出。
 
 # --hints--
 
@@ -29,7 +71,24 @@ dashedName: exercise-tracker
 };
 ```
 
-可以將表單裏的 `username` 通過 `POST` 請求發送到 `/api/users`，以創建一個新的用戶。 返回的響應內容是一個帶有 `username` 和 `_id` 的對象
+可以將表單裏的 `username` 通過 `POST` 請求發送到 `/api/users`，以創建一個新的用戶。
+
+```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  });
+  assert.isTrue(res.ok);
+  if(!res.ok) {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
+};
+```
+
+`POST /api/users` 帶有表單數據 `username` 對請求，返回的響應將是一個具有 `username` 和 `_id` 屬性的對象.
 
 ```js
 async (getUserInput) => {
@@ -49,24 +108,89 @@ async (getUserInput) => {
 };
 ```
 
-可以發送 `GET` 請求到 `/api/users`，以獲取一個所有用戶的數組， 數組裏的每個元素都是一個包含 `username` 和 `_id` 的用戶對象。
+你可以向 `/api/users` 發出 `GET` 請求以獲取所有用戶的列表。
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users');
+  assert.isTrue(res.ok);
+  if(!res.ok) {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
+};
+```
+
+對 `/api/users` 的 `GET` 請求返回一個數組。
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users');
+  if(res.ok){
+    const users = await res.json();
+    assert.isArray(users);
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+從 `GET /api/users` 返回的數組中的每個元素都是一個對象字面量，包含用戶的 `username` 和 `_id`。
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users');
+  if(res.ok){
+    const users = await res.json();
+    const user = users[0];
+    assert.exists(user);
+    assert.exists(user.username);
+    assert.exists(user._id);
+    assert.isString(user.username);
+    assert.isString(user._id);
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+你能用表單裏的 `description`、`duration` 和 `date`（可選）發送 `POST` 請求到 `/api/users/:_id/exercises`。 如果沒有傳入 date，默認採用當前日期。
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users');
+  const res = await fetch(url + '/api/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  });
   if (res.ok) {
-    const data = await res.json();
-    assert.isArray(data);
-    assert.isString(data[0].username);
-    assert.isString(data[0]._id);
+    const { _id, username } = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: 'Mon Jan 01 1990'
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
+    });
+  assert.isTrue(addRes.ok);
+  if(!addRes.ok) {
+    throw new Error(`${addRes.status} ${addRes.statusText}`)
+  };
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   }
 };
 ```
 
-你能用表單裏的 `description`、`duration` 和 `date`（可選）發送 `POST` 請求到 `/api/users/:_id/exercises`。 如果沒有傳入 date，默認採用當前日期。 響應內容是包含 exercise 表單內容的 user 對象。
+從 `POST /api/users/:_id/exercises` 返回的響應將是添加了運動字段的用戶對象。
 
 ```js
 async (getUserInput) => {
@@ -93,6 +217,9 @@ async (getUserInput) => {
     if (addRes.ok) {
       const actual = await addRes.json();
       assert.deepEqual(actual, expected);
+      assert.isString(actual.description);
+      assert.isNumber(actual.duration);
+      assert.isString(actual.date);
     } else {
       throw new Error(`${addRes.status} ${addRes.statusText}`);
     }
@@ -102,7 +229,7 @@ async (getUserInput) => {
 };
 ```
 
-可以發送 `GET` 請求到 `/api/users/:_id/logs`，以獲取任何用戶的完整 exercise 日誌。 響應內容是一個 user 對象，它帶有一個 `log` 屬性，該屬性的值是所有被添加的 exercises 表單記錄組成的數組， 每一個 log 數組裏的元素應該是一個含有 `description`、`duration` 和 `date` 等屬性的對象。
+可以發送 `GET` 請求到 `/api/users/:_id/logs`，以獲取任何用戶的完整 exercise 日誌。
 
 ```js
 async (getUserInput) => {
@@ -128,13 +255,10 @@ async (getUserInput) => {
     });
     if (addRes.ok) {
       const logRes = await fetch(url + `/api/users/${_id}/logs`);
-      if (logRes.ok) {
-        const { log } = await logRes.json();
-        assert.isArray(log);
-        assert.equal(1, log.length);
-      } else {
-        throw new Error(`${logRes.status} ${logRes.statusText}`);
-      }
+    assert.isTrue(logRes.ok);
+    if(!logRes.ok) {
+      throw new Error(`${logRes.status} ${logRes.statusText}`)
+    };
     } else {
       throw new Error(`${addRes.status} ${addRes.statusText}`);
     }
@@ -144,7 +268,7 @@ async (getUserInput) => {
 };
 ```
 
-用戶日誌請求（`/api/users/:_id/logs`）返回一個帶有 `count` 屬性的對象，該屬性反映 exercises 表單的成功提交次數（譯者注：即 log 屬性元素的個數）。
+對用戶日誌的請求 `GET /api/users/:_id/logs` 返回一個用戶對象，該對象具有一個 `count` 屬性，表示屬於該用戶的運動次數。
 
 ```js
 async (getUserInput) => {
@@ -185,7 +309,239 @@ async (getUserInput) => {
 };
 ```
 
-可以把 `from`、`to` 和 `limit` 參數添加到一個 `/api/users/:_id/logs` 請求，以查詢該用戶的部分 exercise 表單提交記錄， `from` 和 `to` 是 `yyyy-mm-dd` 形式的日期， `limit` 是希望返回的 log 數量。
+對 `/api/users/:id/logs` 的 `GET` 請求將返回用戶對象，其中包含添加的所有練習的 `log` 數組。
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  })
+  if(res.ok){
+    const {_id, username} = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok){
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
+      if(logRes.ok) {
+        const {log} = await logRes.json();
+        assert.isArray(log);
+        assert.equal(1, log.length);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
+};
+```
+
+從 `GET /api/users/:id/logs` 返回的 `log` 數組中的每一項都是一個應該具有 `description` 的對象， `duration` 和 `date` 屬性。
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + `/api/users`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  });
+  if(res.ok) {
+    const {_id, username} = await res.json();
+     const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
+      if(logRes.ok) {
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.exists(exercise);
+        assert.exists(exercise.description);
+        assert.exists(exercise.duration);
+        assert.exists(exercise.date);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      };
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
+};
+```
+
+從 `GET /api/users/:id/logs` 返回的 `log` 數組中任何對象的 `description` 屬性都應該是一個字符串。
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+  });
+  if(res.ok) {
+    const {_id, username} = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
+      if(logRes.ok){
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.isString(exercise.description);
+        assert.equal(exercise.description, expected.description);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+從 `GET /api/users/:id/logs` 返回的 `log` 數組中任何對象的 `duration` 屬性都應該是一個數字。
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+  });
+  if(res.ok) {
+    const {_id, username} = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
+      if(logRes.ok){
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.isNumber(exercise.duration);
+        assert.equal(exercise.duration, expected.duration);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+從 `GET /api/users/:id/logs` 返回的 `log` 數組中任何對象的 `date` 屬性應該是一個字符串。 使用 `Date` API 的 `dateString` 格式。
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+  });
+  if(res.ok) {
+    const {_id, username} = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
+      if(logRes.ok){
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.isString(exercise.date);
+        assert.equal(exercise.date, expected.date);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+你可以將 `from`、`to` 和 `limit` 參數添加到 `GET /api/users/:_id/logs` 請求檢索任何用戶的部分日誌。 `from` 和 `to` 是 `yyyy-mm-dd` 形式的日期， `limit` 是希望返回的 log 數量。
 
 ```js
 async (getUserInput) => {

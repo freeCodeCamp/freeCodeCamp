@@ -10,9 +10,9 @@ dashedName: build-a-javascript-calculator
 
 **目標：** 在 [CodePen.io](https://codepen.io) 上實現一個功能類似 <https://codepen.io/freeCodeCamp/full/wgGVVX> 的 App。
 
-在滿足以下[需求](https://en.wikipedia.org/wiki/User_story)並能通過所有測試的前提下， 可以根據自己的喜好來美化 app。
+在滿足以下 [需求](https://en.wikipedia.org/wiki/User_story) 並能通過所有測試的前提下， 賦予它你自己的個人風格。
 
-可以使用 HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、jQuery 來完成這個挑戰。 但鑑於這個章節的學習內容與前端框架相關，推薦使用一款前端框架（比如 React）來完成這個挑戰。 不推薦使用前面沒有提到的技術，否則風險自負。 我們有計劃新增其他前端框架課程，例如 Angular 和 Vue，不過目前還沒有這些內容。 我們會接受並嘗試修復使用推薦技術棧遇到的反饋問題。 編碼愉快！
+可以使用 HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、jQuery 來完成這個挑戰。 但鑑於這個章節的學習內容與前端框架相關，推薦使用一款前端框架（比如 React）來完成這個挑戰；不推薦使用前面沒有提到的技術，否則風險自負。 不推薦使用前面沒有提到的技術，否則風險自擔。 我們有計劃新增其他前端框架課程，例如 Angular 和 Vue，不過目前還沒有這些內容。 我們會接受並嘗試修復你在使用推薦技術棧創建項目時報告的問題。 編碼愉快！
 
 **需求 1：** 計算器應該包含一個具有 `id="equals"` 屬性的可以點擊的元素，元素的文本內容爲 `=`（等於符號）。
 

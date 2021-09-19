@@ -99,7 +99,7 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.15.4",
+    "@babel/eslint-parser": "7.15.7",
     "@babel/plugin-proposal-function-bind": "7.14.5",
     "@babel/preset-env": "7.15.6",
     "@babel/preset-react": "7.14.5",
@@ -133,7 +133,7 @@
     "lint-staged": "11.1.2",
     "lodash": "4.17.21",
     "markdownlint": "0.24.0",
-    "mock-fs": "5.0.0",
+    "mock-fs": "5.1.0",
     "npm-run-all": "4.1.5",
     "ora": "5.4.1",
     "prettier": "2.4.1",
