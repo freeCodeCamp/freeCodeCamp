@@ -8,7 +8,7 @@ dashedName: use-state-to-toggle-an-element
 
 # --description--
 
-A veces puedes necesitar conocer el estado anterior al actualizar el estado. Sin embargo, las actualizaciones del estado pueden ser asíncronas - esto significa que React puede procesar múltiples llamadas a `setState()` en una sola actualización. Esto significa que no puedes confiar en el valor anterior de `this.state` o `this.props` al calcular el siguiente valor. Por lo tanto, no debes usar código como este:
+A veces puedes necesitar conocer el estado anterior al actualizar el estado. Sin embargo, las actualizaciones del estado pueden ser asíncronas: esto significa que React puede procesar múltiples llamadas a `setState()` en una sola actualización. Esto significa que no puedes confiar en el valor anterior de `this.state` o `this.props` al calcular el siguiente valor. Por lo tanto, no debes usar código como este:
 
 ```jsx
 this.setState({
