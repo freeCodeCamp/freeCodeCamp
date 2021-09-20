@@ -20,19 +20,19 @@ The `main` element will contain the core content of your page.
 You should add a `header` element to the `body`.
 
 ```js
-
+assert.exists(document.querySelector('body > header'));
 ```
 
 You should add a `main` element to the `body`.
 
 ```js
-
+assert.exists(document.querySelector('body > main'));
 ```
 
 The `header` element should come before the `main` element.
 
 ```js
-
+assert.exists(document.querySelector('main + header'));
 ```
 
 # --seed--

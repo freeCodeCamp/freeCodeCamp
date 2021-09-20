@@ -16,19 +16,20 @@ Add a `viewport` tag with a `content` attribute detailing the `width` and `initi
 You should create another `meta` element in the `head`.
 
 ```js
-
+assert.equal(document.querySelectorAll('body > meta')?.length, 2);
 ```
 
 You should give the `meta` a `name` attribute of `viewport`.
 
 ```js
-
+assert.equal(document.querySelectorAll('body > meta[name="viewport"]')?.length, 1);
 ```
 
 You should give the `meta` a `content` attribute of `width=device-width, initial-scale=1`.
 
 ```js
 // TODO: Double-check this is the only correct answer
+assert.equal(document.querySelectorAll('body > meta[content="width=device-width, initial-scale=1"]')?.length, 1);
 ```
 
 # --seed--

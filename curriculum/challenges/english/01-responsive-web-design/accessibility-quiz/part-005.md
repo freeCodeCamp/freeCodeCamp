@@ -16,19 +16,21 @@ Give your page a `title` that is descriptive and concise.
 You should add a `title` element to the `head`.
 
 ```js
-
+// TODO: Fix once builder puts head in the right place
+assert.exists(document.querySelector('body > title'));
 ```
 
 You should not make the `title` longer than 60 characters.
 
 ```js
-
+assert.isAtMost(document.querySelector('body > title')?.textContent?.length, 60);
 ```
 
-Try being more descriptive with your `title` element.
+Try being more descriptive with your `title` element. _Hint: At least 20 characters_
 
 ```js
 // TODO: Check title is longer than 20 characters
+assert.isAtLeast(document.querySelector('body > title')?.textContent?.length, 20);
 ```
 
 # --seed--

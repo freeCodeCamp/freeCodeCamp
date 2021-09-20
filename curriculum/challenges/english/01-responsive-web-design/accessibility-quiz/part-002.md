@@ -18,13 +18,14 @@ The `charset` attribute specifies the character encoding of the page, and, nowad
 You should create a `meta` element within the `head` element.
 
 ```js
-
+// TODO: Once builder is fixed so head info is not in body
+assert.exists(document.querySelector('body > meta'));
 ```
 
 You should give the `meta` tag a `charset` of `UTF-8`.
 
 ```js
-
+assert.equal(document.querySelector('body > meta')?.getAttribute('charset'), 'UTF-8');
 ```
 
 # --seed--

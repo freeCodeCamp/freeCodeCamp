@@ -16,25 +16,25 @@ Add a `meta` tag with the `name` attribute set to `description`, and give it a u
 You should add a new `meta` tag to the `head`.
 
 ```js
-
+assert.equal(document.querySelectorAll('meta').length, 3);
 ```
 
 You should give the `meta` a `name` attribute of `description`.
 
 ```js
-
+assert.exists(document.querySelector('meta[name="description"]'));
 ```
 
 You should give the `meta` a `content` attribute.
 
 ```js
-
+assert.notEmpty(document.querySelector('meta[name="description"]')?.getAttribute('content'));
 ```
 
 The `content` attribute value should not be more than 165 characters. _This is Google's maximum description length._
 
 ```js
-
+assert.isAtMost(document.querySelector('meta[name="description"]')?.getAttribute('content')?.length, 165);
 ```
 
 # --seed--

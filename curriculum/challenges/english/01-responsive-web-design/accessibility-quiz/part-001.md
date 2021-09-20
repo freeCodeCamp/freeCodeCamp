@@ -16,7 +16,9 @@ Start this accessibility journey, by providing a `lang` attribute to your `html`
 You should give the `html` element a `lang` attribute. _Hint: You can use the value `en` for English._
 
 ```js
-assert.notThrow(Intl.getCanonicalLocales(document.querySelector('html').getAttribute('lang')));
+assert.match(code, /<html\s+lang=('|")[\w\-]+?\1\s*>/i);
+// TODO: This should/could be fixed in the builder.js
+// assert.notThrow(Intl.getCanonicalLocales(document.querySelector('html').getAttribute('lang')));
 ```
 
 # --seed--

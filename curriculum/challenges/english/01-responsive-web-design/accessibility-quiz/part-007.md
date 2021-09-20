@@ -18,43 +18,44 @@ The `h1` should contain the text `HTML/CSS Quiz`.
 You should add an `img` element to the `header` element.
 
 ```js
-
+assert.exists(document.querySelector('header > img'));
 ```
 
 You should add an `h1` element to the `header` element.
 
 ```js
-
+assert.exists(document.querySelector('header > h1'));
 ```
 
 You should add a `nav` element to the `header` element.
 
 ```js
-
+assert.exists(document.querySelector('header > nav'));
 ```
 
 You should place the `img`, `h1`, and `nav` elements in that order.
 
 ```js
-
+assert.exists(document.querySelector('img + h1 + nav'));
 ```
 
 You should give the `img` element a `src` attribute of `https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg`.
 
 ```js
 // TODO: Use CDN for same svg
+assert.equal(document.querySelector('img')?.getAttribute('src'), 'https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg');
 ```
 
 You should give the `img` element an `id` attribute of `logo`.
 
 ```js
-
+assert.equal(document.querySelector('img')?.getAttribute('id'), 'logo');
 ```
 
 You should give the `h1` element the text `HTML/CSS Quiz`.
 
 ```js
-
+assert.equal(document.querySelector('h1')?.textContent?.toLowerCase(), 'html/css quiz');
 ```
 
 # --seed--
