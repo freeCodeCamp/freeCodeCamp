@@ -411,6 +411,10 @@ hr {
   background: var(--secondary-background);
 }
 
+.codeally-frame {
+  margin-top: calc(-1 * var(--header-height));
+}
+
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary,

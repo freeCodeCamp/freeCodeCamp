@@ -15,7 +15,6 @@ import {
   ChallengeMetaType
 } from '../../../redux/prop-types';
 import { updateChallengeMeta, challengeMounted } from '../redux';
-
 // Redux
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -61,6 +60,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       <LearnLayout>
         <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
         <iframe
+          className='codeally-frame'
           sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
           // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           src={`http://codeally.io/embed/?repoUrl=${url}`}
