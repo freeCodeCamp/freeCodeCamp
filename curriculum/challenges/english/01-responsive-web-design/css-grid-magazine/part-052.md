@@ -1,15 +1,13 @@
 ---
-id: 6144ee790af79815ad15a832
-title: Part 29
+id: 6148c6aa9981d74af202125e
+title: Part 52
 challengeType: 0
-dashedName: part-29
+dashedName: part-52
 ---
 
 # --description--
 
-Now you are ready to start putting together the CSS grid. CSS Grid offers a two-dimensonal grid-based layout, allowing you to center items horizontally and vertically, while still retaining control to do things like overlap elements.
-
-Begin by creating a `main` selector and giving it a `display` property set to `grid`.
+Give the `.text` selector a `font-size` property set to `1.8rem` and a `letter-spacing` property set to `0.6px`.
 
 # --hints--
 
@@ -158,8 +156,8 @@ Test 1
             <li>
               <h4 class="list-subtitle">V3 - 2015</h4>
               <p>
-                We added our own HTML+CSS challenges (before we'd been relying
-                on General Assembly's Dash course for these).
+                We added our own HTML+CSS challenges (before we'd been relying on
+                General Assembly's Dash course for these).
               </p>
             </li>
             <li>
@@ -179,8 +177,8 @@ Test 1
             <li>
               <h4 class="list-subtitle">V6 - 2018</h4>
               <p>
-                We launched 6 new certifications to replace our old ones. This
-                was the biggest curriculum improvement to date.
+                We launched 6 new certifications to replace our old ones. This was
+                the biggest curriculum improvement to date.
               </p>
             </li>
           </ul>
@@ -205,9 +203,9 @@ Test 1
           <blockquote class="image-quote">
             <hr />
             <p class="quote">
-              The millions of people who are learning to code
-              through freeCodeCamp will have an even better resource to help
-              them learn these fundamentals.
+              The millions of people who are learning to code through freeCodeCamp
+              will have an even better resource to help them learn these
+              fundamentals.
             </p>
             <hr />
           </blockquote>
@@ -227,7 +225,9 @@ Test 1
 ```
 
 ```css
-*, ::before, ::after {
+*,
+::before,
+::after {
   padding: 0;
   margin: 0;
 }
@@ -256,7 +256,67 @@ a {
   color: linen;
 }
 
---fcc-editable-region--
+main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+  row-gap: 3rem;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.heading {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1.5rem;
+}
 
 --fcc-editable-region--
+.text {
+  grid-column: 2 / 3;
+}
+--fcc-editable-region--
+
+.hero {
+  grid-column: 1 / -1;
+  position: relative;
+}
+
+.hero-title {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  color: orangered;
+  font-size: 8rem;
+}
+
+.hero-subtitle {
+  font-size: 2.4rem;
+  color: orangered;
+  text-align: center;
+}
+
+.author {
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.author-name a:hover {
+  background-color: #306203;
+}
+
+.publish-date {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.social-icons {
+  display: grid;
+  font-size: 3rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: column;
+  align-items: center;
+}
 ```
