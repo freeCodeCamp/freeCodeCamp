@@ -1,13 +1,15 @@
 ---
-id: 6143d2842b497779bad947de
-title: Part 23
+id: 6148b0d764e4192e5712ed92
+title: Part 35
 challengeType: 0
-dashedName: part-23
+dashedName: part-35
 ---
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` psuedo-selectors. Set the `padding` property and `margin` property both to `0`.
+For additional control over the layout of your content, you can have a CSS Grid within a CSS Grid.
+
+Set the `display` property of your `.heading` selector to `grid`.
 
 # --hints--
 
@@ -223,7 +225,48 @@ Test 1
 ```
 
 ```css
---fcc-editable-region--
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Baskervville', serif;
+  color: linen;
+  background-color: rgb(20, 30, 40);
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: linen;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+  row-gap: 3rem;
+}
 
 --fcc-editable-region--
+.heading {
+  grid-column: 2 / 3;
+}
+--fcc-editable-region--
+
+.text {
+  grid-column: 2 / 3;
+}
 ```

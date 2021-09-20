@@ -1,13 +1,15 @@
 ---
-id: 6143d2842b497779bad947de
-title: Part 23
+id: 6144ee790af79815ad15a832
+title: Part 29
 challengeType: 0
-dashedName: part-23
+dashedName: part-29
 ---
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` psuedo-selectors. Set the `padding` property and `margin` property both to `0`.
+Now you are ready to start putting together the CSS grid. CSS Grid offers a two-dimensonal grid-based layout, allowing you to center items horizontally and vertically, while still retaining control to do things like overlap elements.
+
+Begin by creating a `main` selector and giving it a `display` property set to `grid`.
 
 # --hints--
 
@@ -223,6 +225,35 @@ Test 1
 ```
 
 ```css
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Baskervville', serif;
+  color: linen;
+  background-color: rgb(20, 30, 40);
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: linen;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--
