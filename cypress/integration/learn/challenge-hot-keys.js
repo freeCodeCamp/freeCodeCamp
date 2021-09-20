@@ -33,13 +33,12 @@ describe('The hotkeys should work correctly', () => {
     cy.focused().type('{esc}');
     cy.focused().type('n');
     cy.url().should('include', links.classic2);
-    cy.focused().type('{esc}');
     cy.focused().type('p');
     cy.url().should('include', links.classic1);
     cy.visit(links.frontEnd1);
     cy.focused().type('{esc}').type('n');
     cy.url().should('include', links.frontEnd2);
-    cy.focused().type('{esc}').type('p');
+    cy.focused().type('p');
     cy.url().should('include', links.frontEnd1);
   });
 
@@ -47,7 +46,7 @@ describe('The hotkeys should work correctly', () => {
     cy.visit(links.videoLink1);
     cy.focused().type('{esc}').type('n');
     cy.url().should('include', links.videoLink2);
-    cy.get(selectors.instructions).click().type('{esc}').type('p');
+    cy.focused().type('p');
     cy.url().should('include', links.videoLink1);
   });
 
@@ -55,7 +54,7 @@ describe('The hotkeys should work correctly', () => {
     cy.visit(links.backEnd1);
     cy.focused().type('{esc}').type('n');
     cy.url().should('include', links.backEnd2);
-    cy.focused().type('{esc}').type('p');
+    cy.focused().type('p');
     cy.url().should('include', links.backEnd1);
   });
 
