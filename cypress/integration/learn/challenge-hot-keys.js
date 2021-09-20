@@ -18,9 +18,9 @@ const links = {
     '/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice',
   backEnd2:
     'learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice',
-  videoLink1:
+  video1:
     '/learn/scientific-computing-with-python/python-for-everybody/introduction-why-program',
-  videoLink2:
+  video2:
     'learn/scientific-computing-with-python/python-for-everybody/introduction-hardware-architecture'
 };
 
