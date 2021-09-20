@@ -1,48 +1,43 @@
 ---
-id: 6145fc3707fc3310c277f5c8
-title: Part 44
+id: 6147a14ef5668b5881ef2297
+title: Part 46
 challengeType: 0
-dashedName: part-44
+dashedName: part-46
 ---
 
 # --description--
 
-Back to styling the page. Select the list elements within the navigation bar, and give them the following styles:
+To make the navigation buttons look more like typical buttons, remove the underline from the anchor tags.
 
-```css
-color: #dfdfe2;
-margin: 0 0.2rem;
-padding: 0.2rem;
-display: block;
-```
+Then, create a new selector targetting the navigation list elements so that when the cursor hovers over them, the background color and text color are switched, and the cursor becomes a pointer.
 
 # --hints--
 
-You should use either the `nav li` or `nav > ul > li` selector.
+You should use the existing `li > a` selector to set the `text-decoration` to `none`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `color` of `#dfdfe2`.
+You should use either the `nav > ul > li:hover` or `nav li:hover` selector to style the elements on hover.
 
 ```js
 
 ```
 
-You should give the `li` elements a `margin` of `0 0.2rem`.
+You should give hovered `li` elements a `background-color` of `#dfdfe2`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `padding` of `0.2rem`.
+You should give hovered `li` elements a `color` of `#1b1b32`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `display` of `block`.
+You should give hovered `li` elements a `cursor` of `pointer`.
 
 ```js
 
@@ -217,8 +212,19 @@ nav > ul {
 	justify-content: space-evenly;
 }
 
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+	padding: 0.2rem;
+	display: block;
+}
+
 --fcc-editable-region--
 
+
+li > a {
+  color: inherit;
+}
 --fcc-editable-region--
 
 h1,

@@ -1,50 +1,40 @@
 ---
-id: 6145fc3707fc3310c277f5c8
-title: Part 44
+id: 61487b77d4a37707073a64e5
+title: Part 48
 challengeType: 0
-dashedName: part-44
+dashedName: part-48
 ---
 
 # --description--
 
-Back to styling the page. Select the list elements within the navigation bar, and give them the following styles:
+When the screen width is small, the `h1` does not wrap its text content how it should. Center align the text for the `h1`.
 
-```css
-color: #dfdfe2;
-margin: 0 0.2rem;
-padding: 0.2rem;
-display: block;
-```
+Then, give the `main` padding such that the `Student Info` section header can be fully seen.
 
 # --hints--
 
-You should use either the `nav li` or `nav > ul > li` selector.
+You shoudl give the `h1` a `text-align` of `center`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `color` of `#dfdfe2`.
+You should add a `main` selector to target the `main` element.
 
 ```js
 
 ```
 
-You should give the `li` elements a `margin` of `0 0.2rem`.
+You should give the `main` a `padding-top` of at least `25px`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `padding` of `0.2rem`.
+You should only change the `padding-top` value.
 
 ```js
-
-```
-
-You should give the `li` elements a `display` of `block`.
-
-```js
+// TODO: Check for other padding value changes...
 
 ```
 
@@ -192,6 +182,10 @@ header {
 	height: 50px;
 	background-color: #1b1b32;
 	display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
 }
 
 #logo {
@@ -201,10 +195,15 @@ header {
 	padding: 0.4rem;
 }
 
+--fcc-editable-region--
 h1 {
   color: #f1be32;
 	font-size: min(5vw, 1.2em);
+
 }
+
+
+--fcc-editable-region--
 
 nav {
   width: 50%;
@@ -217,9 +216,23 @@ nav > ul {
 	justify-content: space-evenly;
 }
 
---fcc-editable-region--
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+	padding: 0.2rem;
+	display: block;
+}
 
---fcc-editable-region--
+nav > ul > li:hover {
+  background-color: #dfdfe2;
+  color: #1b1b32;
+  cursor: pointer;
+}
+
+li > a {
+  color: inherit;
+  text-decoration: none;
+}
 
 h1,
 h2 {

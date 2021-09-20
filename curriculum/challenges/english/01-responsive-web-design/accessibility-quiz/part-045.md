@@ -1,52 +1,36 @@
 ---
-id: 6145fc3707fc3310c277f5c8
-title: Part 44
+id: 614796cb8086be482d60e0ac
+title: Part 45
 challengeType: 0
-dashedName: part-44
+dashedName: part-45
 ---
 
 # --description--
 
-Back to styling the page. Select the list elements within the navigation bar, and give them the following styles:
+On the topic of visual accessibility, contrast between elements is a key factor. For example, the contrast between the text and the background of a heading should be at least 4.5:1.
 
-```css
-color: #dfdfe2;
-margin: 0 0.2rem;
-padding: 0.2rem;
-display: block;
-```
+Change the font color of all the anchor elements within list elements to something with a contrast ratio of at least 7:1.
 
 # --hints--
 
-You should use either the `nav li` or `nav > ul > li` selector.
+You should use the `li > a` selector.
 
 ```js
 
 ```
 
-You should give the `li` elements a `color` of `#dfdfe2`.
+You should give the `a` element a `color` property.
 
 ```js
 
 ```
 
-You should give the `li` elements a `margin` of `0 0.2rem`.
+You should give the `color` property a contrast with the background of at least 7:1. _Hint: I would use `#dfdfe2`_
 
 ```js
 
 ```
 
-You should give the `li` elements a `padding` of `0.2rem`.
-
-```js
-
-```
-
-You should give the `li` elements a `display` of `block`.
-
-```js
-
-```
 
 # --seed--
 
@@ -215,6 +199,13 @@ nav {
 nav > ul {
   display: flex;
 	justify-content: space-evenly;
+}
+
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+	padding: 0.2rem;
+	display: block;
 }
 
 --fcc-editable-region--

@@ -2,7 +2,7 @@
 id: 611e5716f9246f125f63815b
 title: Final Prototype
 challengeType: 0
-dashedName: part-45
+dashedName: part-68
 ---
 
 # --description--
@@ -245,7 +245,7 @@ main {
 section {
 	width: 80%;
 	margin: 0px auto 10px auto;
-	min-height: 100px;
+	/* min-height: 100px; */
 	max-width: 600px;
 }
 
@@ -279,7 +279,7 @@ input {
 .info input {
 	display: inline-block;
 	text-align: right;
-	padding: 0 2px;
+	/* padding: 0 2px; */
 }
 
 .info label {

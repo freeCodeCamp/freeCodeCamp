@@ -1,48 +1,41 @@
 ---
-id: 6145fc3707fc3310c277f5c8
-title: Part 44
+id: 6148e5aeb102e3142de026a2
+title: Part 67
 challengeType: 0
-dashedName: part-44
+dashedName: part-67
 ---
 
 # --description--
 
-Back to styling the page. Select the list elements within the navigation bar, and give them the following styles:
+Finally, the navigation accessibility can be improved with providing keyboard shortcuts.
 
-```css
-color: #dfdfe2;
-margin: 0 0.2rem;
-padding: 0.2rem;
-display: block;
+The `access-key` attribute accepts a space-separated list of access keys. For example:
+
+```html
+<button type="submit" access-key="s">Submit</button>
 ```
+
+Give each of the navigation links a single-letter access key.
+
+_Note: It is not always advised to use access keys, but they can be useful_
+
+Well done. You have completed the _Accessibility Quiz_ practice project.
 
 # --hints--
 
-You should use either the `nav li` or `nav > ul > li` selector.
+You should give the first `a` element a single-letter `access-key`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `color` of `#dfdfe2`.
+You should give the second `a` element a single-letter `access-key`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `margin` of `0 0.2rem`.
-
-```js
-
-```
-
-You should give the `li` elements a `padding` of `0.2rem`.
-
-```js
-
-```
-
-You should give the `li` elements a `display` of `block`.
+You should give the third `a` element a single-letter `access-key`.
 
 ```js
 
@@ -67,11 +60,13 @@ You should give the `li` elements a `display` of `block`.
       <img id="logo" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg">
       <h1>HTML/CSS Quiz</h1>
       <nav>
+--fcc-editable-region--
         <ul>
           <li><a href="#student-info">INFO</a></li>
           <li><a href="#html-questions">HTML</a></li>
           <li><a href="#css-questions">CSS</a></li>
 			  </ul>
+--fcc-editable-region--
       </nav>
     </header>
     <main>
@@ -180,6 +175,12 @@ You should give the `li` elements a `display` of `block`.
 ```
 
 ```css
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background: #f5f6f7;
 	color: #1b1b32;
@@ -192,6 +193,10 @@ header {
 	height: 50px;
 	background-color: #1b1b32;
 	display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
 }
 
 #logo {
@@ -204,6 +209,7 @@ header {
 h1 {
   color: #f1be32;
 	font-size: min(5vw, 1.2em);
+  text-align: center;
 }
 
 nav {
@@ -215,11 +221,40 @@ nav {
 nav > ul {
   display: flex;
 	justify-content: space-evenly;
+  flex-wrap: wrap;
+	align-items: center;
+	padding-inline-start: 0;
+	margin-block: 0;
+	height: 100%;
 }
 
---fcc-editable-region--
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+	padding: 0.2rem;
+	display: block;
+}
 
---fcc-editable-region--
+nav > ul > li:hover {
+  background-color: #dfdfe2;
+  color: #1b1b32;
+  cursor: pointer;
+}
+
+li > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  padding-top: 50px;
+}
+
+section {
+  width: 80%;
+  margin: 0 auto 10px auto;
+  max-width: 600px;
+}
 
 h1,
 h2 {
@@ -228,10 +263,90 @@ h2 {
 
 h2 {
   border-bottom: 4px solid #dfdfe2;
+  margin-top: 0px;
+  padding-top: 60px;
+}
+
+.info {
+  padding: 10px 0 0 5px;
+}
+
+.formrow {
+  margin-top: 30px;
+	padding: 0px 15px;
+}
+
+input {
+  font-size: 16px;
+}
+
+.info label, .info input {
+  display: inline-block;
+  text-align: right;
+}
+
+.info input {
+  width: 50%;
+  text-align: left;
+}
+
+.info label {
+  width: 10%;
+  min-width: 55px;
+}
+
+.question-block {
+  text-align: left;
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+	padding-top: 5px;
+}
+
+p {
+  margin-top: 5px;
+  padding-left: 15px;
+  font-size: 20px;
 }
 
 p::before {
   content: "Question #";
+}
+
+.question {
+  border: none;
+  padding-bottom: 0;
+}
+
+.answers-list {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+	display: block;
+	margin: 40px auto;
+	width: 40%;
+	padding: 15px;
+	font-size: 23px;
+	background: #d0d0d5;
+	border: 3px solid #3b3b4f;
+}
+
+footer {
+	background-color: #2a2a40;
+	display: flex;
+	justify-content: center;
+}
+
+footer,
+footer a {
+  color: #dfdfe2;
+}
+
+address {
+  text-align: center;
+  padding: 0.3em;
 }
 
 .sr-only {

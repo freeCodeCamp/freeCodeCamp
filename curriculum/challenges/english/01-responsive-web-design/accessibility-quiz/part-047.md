@@ -1,48 +1,37 @@
 ---
-id: 6145fc3707fc3310c277f5c8
-title: Part 44
+id: 614878f7a412310647873015
+title: Part 47
 challengeType: 0
-dashedName: part-44
+dashedName: part-47
 ---
 
 # --description--
 
-Back to styling the page. Select the list elements within the navigation bar, and give them the following styles:
+Tidy up the `header`, by using _Flexbox_ to put space between the children, and vertically center them.
 
-```css
-color: #dfdfe2;
-margin: 0 0.2rem;
-padding: 0.2rem;
-display: block;
-```
+Then, fix the `header` to the top of the viewport.
 
 # --hints--
 
-You should use either the `nav li` or `nav > ul > li` selector.
+You should give the `header` a `justify-content` of `space-between`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `color` of `#dfdfe2`.
+You should give the `header` an `align-items` of `center`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `margin` of `0 0.2rem`.
+You should give the `header` a `position` of `fixed`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `padding` of `0.2rem`.
-
-```js
-
-```
-
-You should give the `li` elements a `display` of `block`.
+You should give the `header` a `top` of `0`.
 
 ```js
 
@@ -187,12 +176,15 @@ body {
 	margin: 0;
 }
 
+--fcc-editable-region--
 header {
   width: 100%;
 	height: 50px;
 	background-color: #1b1b32;
 	display: flex;
+
 }
+--fcc-editable-region--
 
 #logo {
   width: max(100px, 18vw);
@@ -217,9 +209,23 @@ nav > ul {
 	justify-content: space-evenly;
 }
 
---fcc-editable-region--
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+	padding: 0.2rem;
+	display: block;
+}
 
---fcc-editable-region--
+nav > ul > li:hover {
+  background-color: #dfdfe2;
+  color: #1b1b32;
+  cursor: pointer;
+}
+
+li > a {
+  color: inherit;
+  text-decoration: none;
+}
 
 h1,
 h2 {

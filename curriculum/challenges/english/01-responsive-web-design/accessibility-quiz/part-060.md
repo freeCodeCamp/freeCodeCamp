@@ -1,48 +1,29 @@
 ---
-id: 6145fc3707fc3310c277f5c8
-title: Part 44
+id: 6148defa9c01520fb9d178a0
+title: Part 60
 challengeType: 0
-dashedName: part-44
+dashedName: part-60
 ---
 
 # --description--
 
-Back to styling the page. Select the list elements within the navigation bar, and give them the following styles:
-
-```css
-color: #dfdfe2;
-margin: 0 0.2rem;
-padding: 0.2rem;
-display: block;
-```
+Remove the default styling for the list items of `.answers-list`, and remove the unordered list padding.
 
 # --hints--
 
-You should use either the `nav li` or `nav > ul > li` selector.
+You should use the `.answers-list` selector.
 
 ```js
 
 ```
 
-You should give the `li` elements a `color` of `#dfdfe2`.
+You should give `.answers-list` a `list-style` of `none`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `margin` of `0 0.2rem`.
-
-```js
-
-```
-
-You should give the `li` elements a `padding` of `0.2rem`.
-
-```js
-
-```
-
-You should give the `li` elements a `display` of `block`.
+You should give `.answers-list` a `padding` of `0`.
 
 ```js
 
@@ -192,6 +173,10 @@ header {
 	height: 50px;
 	background-color: #1b1b32;
 	display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
 }
 
 #logo {
@@ -204,6 +189,7 @@ header {
 h1 {
   color: #f1be32;
 	font-size: min(5vw, 1.2em);
+  text-align: center;
 }
 
 nav {
@@ -215,11 +201,40 @@ nav {
 nav > ul {
   display: flex;
 	justify-content: space-evenly;
+  flex-wrap: wrap;
+	align-items: center;
+	padding-inline-start: 0;
+	margin-block: 0;
+	height: 100%;
 }
 
---fcc-editable-region--
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+	padding: 0.2rem;
+	display: block;
+}
 
---fcc-editable-region--
+nav > ul > li:hover {
+  background-color: #dfdfe2;
+  color: #1b1b32;
+  cursor: pointer;
+}
+
+li > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  padding-top: 50px;
+}
+
+section {
+  width: 80%;
+  margin: 0 auto 10px auto;
+  max-width: 600px;
+}
 
 h1,
 h2 {
@@ -228,11 +243,64 @@ h2 {
 
 h2 {
   border-bottom: 4px solid #dfdfe2;
+  margin-top: 0px;
+  padding-top: 60px;
+}
+
+.info {
+  padding: 10px 0 0 5px;
+}
+
+.formrow {
+  margin-top: 30px;
+	padding: 0px 15px;
+}
+
+input {
+  font-size: 16px;
+}
+
+.info label, .info input {
+  display: inline-block;
+  text-align: right;
+}
+
+.info input {
+  width: 50%;
+  text-align: left;
+}
+
+.info label {
+  width: 10%;
+  min-width: 55px;
+}
+
+.question-block {
+  text-align: left;
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+	padding-top: 5px;
+}
+
+p {
+  margin-top: 5px;
+  padding-left: 15px;
+  font-size: 20px;
 }
 
 p::before {
   content: "Question #";
 }
+
+.question {
+  border: none;
+  padding-bottom: 0;
+}
+
+--fcc-editable-region--
+  
+--fcc-editable-region--
 
 .sr-only {
   position: absolute;

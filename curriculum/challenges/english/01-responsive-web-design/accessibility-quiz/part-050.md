@@ -1,48 +1,55 @@
 ---
-id: 6145fc3707fc3310c277f5c8
-title: Part 44
+id: 61487f703571b60899055cf9
+title: Part 50
 challengeType: 0
-dashedName: part-44
+dashedName: part-50
 ---
 
 # --description--
 
-Back to styling the page. Select the list elements within the navigation bar, and give them the following styles:
+Set the width of the `section` elements to `80%` of their parent container. Then, use margins to center the `section` elements, adding `10px` to the bottom margin.
 
-```css
-color: #dfdfe2;
-margin: 0 0.2rem;
-padding: 0.2rem;
-display: block;
-```
+Also, ensure the `section` elements cannot be larger than `600px` in width.
 
 # --hints--
 
-You should use either the `nav li` or `nav > ul > li` selector.
+You should use a `section` selector.
 
 ```js
 
 ```
 
-You should give the `li` elements a `color` of `#dfdfe2`.
+You should give the `section` a `width` of `80%`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `margin` of `0 0.2rem`.
+You should give the `section` a `margin-top` of `0`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `padding` of `0.2rem`.
+You should give the `section` a `margin-right` of `auto`.
 
 ```js
 
 ```
 
-You should give the `li` elements a `display` of `block`.
+You should give the `section` a `margin-bottom` of `10px`.
+
+```js
+
+```
+
+You should give the `section` a `margin-left` of `auto`.
+
+```js
+
+```
+
+You should give the `section` a `max-width` of `600px`.
 
 ```js
 
@@ -192,6 +199,10 @@ header {
 	height: 50px;
 	background-color: #1b1b32;
 	display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
 }
 
 #logo {
@@ -204,6 +215,7 @@ header {
 h1 {
   color: #f1be32;
 	font-size: min(5vw, 1.2em);
+  text-align: center;
 }
 
 nav {
@@ -215,9 +227,37 @@ nav {
 nav > ul {
   display: flex;
 	justify-content: space-evenly;
+  flex-wrap: wrap;
+	align-items: center;
+	padding-inline-start: 0;
+	margin-block: 0;
+	height: 100%;
+}
+
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+	padding: 0.2rem;
+	display: block;
+}
+
+nav > ul > li:hover {
+  background-color: #dfdfe2;
+  color: #1b1b32;
+  cursor: pointer;
+}
+
+li > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  padding-top: 50px;
 }
 
 --fcc-editable-region--
+
 
 --fcc-editable-region--
 
