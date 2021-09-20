@@ -137,6 +137,7 @@ Test 1
           the beginning. And freeCodeCamp will be a much smoother experience.
         </p>
       </section>
+      <section class="text text-with-images">
         <article class="top-four">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
@@ -217,6 +218,7 @@ Test 1
             height="200"
           />
         </aside>
+      </section>
     </main>
   </body>
 </html>

@@ -141,86 +141,88 @@ Test 1
           the beginning. And freeCodeCamp will be a much smoother experience.
         </p>
       </section>
-      <article class="top-four">
-        <h3 class="list-title">A Brief History</h3>
-        <p>Of the Curriculum</p>
-        <ul class="lists">
-          <li>
-            <h4 class="list-subtitle">V1 - 2014</h4>
-            <p>
-              We launched freeCodeCamp with a simple list of 15 resources,
-              including Harvard's CS50 and Stanford's Database Class.
+      <section class="text text-with-images">
+        <article class="top-four">
+          <h3 class="list-title">A Brief History</h3>
+          <p>Of the Curriculum</p>
+          <ul class="lists">
+            <li>
+              <h4 class="list-subtitle">V1 - 2014</h4>
+              <p>
+                We launched freeCodeCamp with a simple list of 15 resources,
+                including Harvard's CS50 and Stanford's Database Class.
+              </p>
+            </li>
+            <li>
+              <h4 class="list-subtitle">V2 - 2015</h4>
+              <p>We added interactive algorithm challenges.</p>
+            </li>
+            <li>
+              <h4 class="list-subtitle">V3 - 2015</h4>
+              <p>
+                We added our own HTML+CSS challenges (before we'd been relying on
+                General Assembly's Dash course for these).
+              </p>
+            </li>
+            <li>
+              <h4 class="list-subtitle">V4 - 2016</h4>
+              <p>
+                We expanded the curriculum to 3 certifications, including Front
+                End, Back End, and Data Visualization. They each had 10 required
+                projects, but only the Front End section had its own challenges.
+                For the other certs, we were still using external resources like
+                Node School.
+              </p>
+            </li>
+            <li>
+              <h4 class="list-subtitle">V5 - 2017</h4>
+              <p>We added the back end and data visualization challenges.</p>
+            </li>
+            <li>
+              <h4 class="list-subtitle">V6 - 2018</h4>
+              <p>
+                We launched 6 new certifications to replace our old ones. This was
+                the biggest curriculum improvement to date.
+              </p>
+            </li>
+          </ul>
+        </article>
+        <aside class="image-wrapper">
+          <img
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
+            alt="image of the quote machine project"
+            loading="lazy"
+            class="image-1"
+            width="600"
+            height="400"
+          />
+          <img
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
+            alt="astronaut in spacesuit floating in space, photo by NASA"
+            loading="lazy"
+            class="image-2"
+            width="400"
+            height="400"
+          />
+          <blockquote class="image-quote">
+            <hr />
+            <p class="quote">
+              The millions of people who are learning to code through freeCodeCamp
+              will have an even better resource to help them learn these
+              fundamentals.
             </p>
-          </li>
-          <li>
-            <h4 class="list-subtitle">V2 - 2015</h4>
-            <p>We added interactive algorithm challenges.</p>
-          </li>
-          <li>
-            <h4 class="list-subtitle">V3 - 2015</h4>
-            <p>
-              We added our own HTML+CSS challenges (before we'd been relying on
-              General Assembly's Dash course for these).
-            </p>
-          </li>
-          <li>
-            <h4 class="list-subtitle">V4 - 2016</h4>
-            <p>
-              We expanded the curriculum to 3 certifications, including Front
-              End, Back End, and Data Visualization. They each had 10 required
-              projects, but only the Front End section had its own challenges.
-              For the other certs, we were still using external resources like
-              Node School.
-            </p>
-          </li>
-          <li>
-            <h4 class="list-subtitle">V5 - 2017</h4>
-            <p>We added the back end and data visualization challenges.</p>
-          </li>
-          <li>
-            <h4 class="list-subtitle">V6 - 2018</h4>
-            <p>
-              We launched 6 new certifications to replace our old ones. This was
-              the biggest curriculum improvement to date.
-            </p>
-          </li>
-        </ul>
-      </article>
-      <aside class="image-wrapper">
-        <img
-          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
-          alt="image of the quote machine project"
-          loading="lazy"
-          class="image-1"
-          width="600"
-          height="400"
-        />
-        <img
-          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
-          alt="astronaut in spacesuit floating in space, photo by NASA"
-          loading="lazy"
-          class="image-2"
-          width="400"
-          height="400"
-        />
-        <blockquote class="image-quote">
-          <hr />
-          <p class="quote">
-            The millions of people who are learning to code through freeCodeCamp
-            will have an even better resource to help them learn these
-            fundamentals.
-          </p>
-          <hr />
-        </blockquote>
-        <img
-          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg"
-          alt="four people working on code"
-          loading="lazy"
-          class="image-3"
-          width="600"
-          height="200"
-        />
-      </aside>
+            <hr />
+          </blockquote>
+          <img
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg"
+            alt="four people working on code"
+            loading="lazy"
+            class="image-3"
+            width="600"
+            height="200"
+          />
+        </aside>
+      </section>
     </main>
   </body>
 </html>

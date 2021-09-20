@@ -146,6 +146,7 @@ Test 1
           the beginning. And freeCodeCamp will be a much smoother experience.
         </p>
       </section>
+      <section class="text text-with-images">
 --fcc-editable-region--
         <article class="top-four">
           <h3 class="list-title">A Brief History</h3>
@@ -156,6 +157,7 @@ Test 1
         </article>
 --fcc-editable-region--
         <aside class="image-wrapper"></aside>
+      </section>
     </main>
   </body>
 </html>

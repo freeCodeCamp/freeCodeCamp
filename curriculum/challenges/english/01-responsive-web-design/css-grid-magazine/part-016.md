@@ -137,12 +137,14 @@ Test 1
           the beginning. And freeCodeCamp will be a much smoother experience.
         </p>
       </section>
+      <section class="text text-with-images">
 --fcc-editable-region--
         <article class="top-four">
 
         </article>
 --fcc-editable-region--
         <aside class="image-wrapper"></aside>
+      </section>
     </main>
   </body>
 </html>
