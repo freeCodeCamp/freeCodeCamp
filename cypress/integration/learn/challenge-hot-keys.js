@@ -45,9 +45,9 @@ describe('The hotkeys should work correctly', () => {
   it('should be possible to navigate to the next (and previous) video', () => {
     cy.visit(links.videoLink1);
     cy.focused().type('{esc}').type('n');
-    cy.url().should('include', links.videoLink2);
+    cy.url().should('include', links.video2);
     cy.focused().type('p');
-    cy.url().should('include', links.videoLink1);
+    cy.url().should('include', links.video1);
   });
 
   it('should be possible to navigate to the next (and previous) backend project', () => {
