@@ -1,13 +1,15 @@
 ---
-id: 6143d2842b497779bad947de
-title: Part 23
+id: 6144f1410990ea17187a722b
+title: Part 30
 challengeType: 0
-dashedName: part-23
+dashedName: part-30
 ---
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` psuedo-selectors. Set the `padding` property and `margin` property both to `0`.
+Now you can style the layout of your grid. CSS Grid is similar to Flexbox in that it has a special property for both the parent and child elements. 
+
+In this case, your parent element is the `main` element. Set the content to have a three column layout by adding a `grid-template-columns` property with a value of `1fr 94rem 1fr`. This will create three columns where the middle column is `94rem` wide, and the first and last columns are both 1 fraction of the remaining space in the grid container.
 
 # --hints--
 
@@ -223,7 +225,38 @@ Test 1
 ```
 
 ```css
---fcc-editable-region--
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+}
 
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Baskervville', serif;
+  color: linen;
+  background-color: rgb(20, 30, 40);
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: linen;
+}
+
+--fcc-editable-region--
+main {
+  display: grid;
+}
 --fcc-editable-region--
 ```

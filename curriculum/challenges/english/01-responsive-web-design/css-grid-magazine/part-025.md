@@ -1,13 +1,13 @@
 ---
-id: 6143d2842b497779bad947de
-title: Part 23
+id: 6144d7dbdd3e580da730ff45
+title: Part 25
 challengeType: 0
-dashedName: part-23
+dashedName: part-25
 ---
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` psuedo-selectors. Set the `padding` property and `margin` property both to `0`.
+Create a `body` selector. Set the `font-family` property to `Baskerville`, with a fallback of `serif`. Set the `color` property to `linen` and the `background-color` property to `rgb(20, 30, 40)`.
 
 # --hints--
 
@@ -223,6 +223,16 @@ Test 1
 ```
 
 ```css
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--

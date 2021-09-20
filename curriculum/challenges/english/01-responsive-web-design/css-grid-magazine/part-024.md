@@ -1,13 +1,17 @@
 ---
-id: 6143d2842b497779bad947de
-title: Part 23
+id: 6144d66a5358db0c80628757
+title: Part 24
 challengeType: 0
-dashedName: part-23
+dashedName: part-24
 ---
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` psuedo-selectors. Set the `padding` property and `margin` property both to `0`.
+Create an `html` selector and give it a `font-size` property set to `62.5%`. This will set the default font size for your web page to 10px (the browser default is 16px).
+
+This will make it easier for you to work with `rem` units later, as `2rem` would be 20px.
+
+Also set the `box-sizing` property to `border-box`.
 
 # --hints--
 
@@ -223,6 +227,11 @@ Test 1
 ```
 
 ```css
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--

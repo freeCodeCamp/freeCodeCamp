@@ -1,13 +1,13 @@
 ---
-id: 6143d2842b497779bad947de
-title: Part 23
+id: 6144f42204c8c8195f1f3345
+title: Part 32
 challengeType: 0
-dashedName: part-23
+dashedName: part-32
 ---
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` psuedo-selectors. Set the `padding` property and `margin` property both to `0`.
+To add space between rows in the grid layout, you can use the `row-gap` property. Give the `main` selector a `row-gap` property of `3rem`.
 
 # --hints--
 
@@ -223,7 +223,39 @@ Test 1
 ```
 
 ```css
---fcc-editable-region--
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+}
 
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Baskervville', serif;
+  color: linen;
+  background-color: rgb(20, 30, 40);
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: linen;
+}
+
+--fcc-editable-region--
+main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+}
 --fcc-editable-region--
 ```

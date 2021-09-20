@@ -1,13 +1,13 @@
 ---
-id: 6143d2842b497779bad947de
-title: Part 23
+id: 6148b07081759c2c691166a9
+title: Part 34
 challengeType: 0
-dashedName: part-23
+dashedName: part-34
 ---
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` psuedo-selectors. Set the `padding` property and `margin` property both to `0`.
+Create a `.text` selector and give it a `grid-columns` property set to `2 / 3`.
 
 # --hints--
 
@@ -223,6 +223,45 @@ Test 1
 ```
 
 ```css
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Baskervville', serif;
+  color: linen;
+  background-color: rgb(20, 30, 40);
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: linen;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+  row-gap: 3rem;
+}
+
+.heading {
+  grid-column: 2 / 3;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--

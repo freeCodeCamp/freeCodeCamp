@@ -1,13 +1,17 @@
 ---
-id: 6143d2842b497779bad947de
-title: Part 23
+id: 6144f47b7c631e1a6f304dd5
+title: Part 33
 challengeType: 0
-dashedName: part-23
+dashedName: part-33
 ---
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` psuedo-selectors. Set the `padding` property and `margin` property both to `0`.
+Your magazine will have three primary sections. You already set the overall layout in the `main` rule, but you can adjust the placement in the child rules.
+
+One option to do so is the `grid-column` property, which is shorthand for `grid-column-start` and `grid-column-end`. The `grid-column` property tells the grid item which grid line to start and end at.
+
+Create a `.heading` rule and set the `grid-column` property to `2 / 3`. This will tell the `.heading` element to start at grid line 2 and end at grid line 3.
 
 # --hints--
 
@@ -223,6 +227,41 @@ Test 1
 ```
 
 ```css
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Baskervville', serif;
+  color: linen;
+  background-color: rgb(20, 30, 40);
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: linen;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+  row-gap: 3rem;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--

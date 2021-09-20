@@ -1,13 +1,13 @@
 ---
-id: 6143d2842b497779bad947de
-title: Part 23
+id: 6148c224ecb157439bc5247c
+title: Part 48
 challengeType: 0
-dashedName: part-23
+dashedName: part-48
 ---
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` psuedo-selectors. Set the `padding` property and `margin` property both to `0`.
+The default settings for CSS Grid will create additional rows as needed, unlike Flexbox. Give the `.social-icons` selector a `grid-template-columns` property set to `repeat(5, 1fr)` to arrange the icons in a single row.
 
 # --hints--
 
@@ -137,93 +137,181 @@ Test 1
           the beginning. And freeCodeCamp will be a much smoother experience.
         </p>
       </section>
-        <article class="top-four">
-          <h3 class="list-title">A Brief History</h3>
-          <p>Of the Curriculum</p>
-          <ul class="lists">
-            <li>
-              <h4 class="list-subtitle">V1 - 2014</h4>
-              <p>
-                We launched freeCodeCamp with a simple list of 15 resources,
-                including Harvard's CS50 and Stanford's Database Class.
-              </p>
-            </li>
-            <li>
-              <h4 class="list-subtitle">V2 - 2015</h4>
-              <p>We added interactive algorithm challenges.</p>
-            </li>
-            <li>
-              <h4 class="list-subtitle">V3 - 2015</h4>
-              <p>
-                We added our own HTML+CSS challenges (before we'd been relying
-                on General Assembly's Dash course for these).
-              </p>
-            </li>
-            <li>
-              <h4 class="list-subtitle">V4 - 2016</h4>
-              <p>
-                We expanded the curriculum to 3 certifications, including Front
-                End, Back End, and Data Visualization. They each had 10 required
-                projects, but only the Front End section had its own challenges.
-                For the other certs, we were still using external resources like
-                Node School.
-              </p>
-            </li>
-            <li>
-              <h4 class="list-subtitle">V5 - 2017</h4>
-              <p>We added the back end and data visualization challenges.</p>
-            </li>
-            <li>
-              <h4 class="list-subtitle">V6 - 2018</h4>
-              <p>
-                We launched 6 new certifications to replace our old ones. This
-                was the biggest curriculum improvement to date.
-              </p>
-            </li>
-          </ul>
-        </article>
-        <aside class="image-wrapper">
-          <img
-            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
-            alt="image of the quote machine project"
-            loading="lazy"
-            class="image-1"
-            width="600"
-            height="400"
-          />
-          <img
-            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
-            alt="astronaut in spacesuit floating in space, photo by NASA"
-            loading="lazy"
-            class="image-2"
-            width="400"
-            height="400"
-          />
-          <blockquote class="image-quote">
-            <hr />
-            <p class="quote">
-              The millions of people who are learning to code
-              through freeCodeCamp will have an even better resource to help
-              them learn these fundamentals.
+      <article class="top-four">
+        <h3 class="list-title">A Brief History</h3>
+        <p>Of the Curriculum</p>
+        <ul class="lists">
+          <li>
+            <h4 class="list-subtitle">V1 - 2014</h4>
+            <p>
+              We launched freeCodeCamp with a simple list of 15 resources,
+              including Harvard's CS50 and Stanford's Database Class.
             </p>
-            <hr />
-          </blockquote>
-          <img
-            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg"
-            alt="four people working on code"
-            loading="lazy"
-            class="image-3"
-            width="600"
-            height="200"
-          />
-        </aside>
+          </li>
+          <li>
+            <h4 class="list-subtitle">V2 - 2015</h4>
+            <p>We added interactive algorithm challenges.</p>
+          </li>
+          <li>
+            <h4 class="list-subtitle">V3 - 2015</h4>
+            <p>
+              We added our own HTML+CSS challenges (before we'd been relying on
+              General Assembly's Dash course for these).
+            </p>
+          </li>
+          <li>
+            <h4 class="list-subtitle">V4 - 2016</h4>
+            <p>
+              We expanded the curriculum to 3 certifications, including Front
+              End, Back End, and Data Visualization. They each had 10 required
+              projects, but only the Front End section had its own challenges.
+              For the other certs, we were still using external resources like
+              Node School.
+            </p>
+          </li>
+          <li>
+            <h4 class="list-subtitle">V5 - 2017</h4>
+            <p>We added the back end and data visualization challenges.</p>
+          </li>
+          <li>
+            <h4 class="list-subtitle">V6 - 2018</h4>
+            <p>
+              We launched 6 new certifications to replace our old ones. This was
+              the biggest curriculum improvement to date.
+            </p>
+          </li>
+        </ul>
+      </article>
+      <aside class="image-wrapper">
+        <img
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
+          alt="image of the quote machine project"
+          loading="lazy"
+          class="image-1"
+          width="600"
+          height="400"
+        />
+        <img
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
+          alt="astronaut in spacesuit floating in space, photo by NASA"
+          loading="lazy"
+          class="image-2"
+          width="400"
+          height="400"
+        />
+        <blockquote class="image-quote">
+          <hr />
+          <p class="quote">
+            The millions of people who are learning to code through freeCodeCamp
+            will have an even better resource to help them learn these
+            fundamentals.
+          </p>
+          <hr />
+        </blockquote>
+        <img
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg"
+          alt="four people working on code"
+          loading="lazy"
+          class="image-3"
+          width="600"
+          height="200"
+        />
+      </aside>
     </main>
   </body>
 </html>
 ```
 
 ```css
---fcc-editable-region--
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+}
 
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Baskervville', serif;
+  color: linen;
+  background-color: rgb(20, 30, 40);
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: linen;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+  row-gap: 3rem;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.heading {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1.5rem;
+}
+
+.text {
+  grid-column: 2 / 3;
+}
+
+.hero {
+  grid-column: 1 / -1;
+  position: relative;
+}
+
+.hero-title {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  color: orangered;
+  font-size: 8rem;
+}
+
+.hero-subtitle {
+  font-size: 2.4rem;
+  color: orangered;
+  text-align: center;
+}
+
+.author {
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.author-name a:hover {
+  background-color: #306203;
+}
+
+.publish-date {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+--fcc-editable-region--
+.social-icons {
+  display: grid;
+  font-size: 3rem;
+}
 --fcc-editable-region--
 ```
