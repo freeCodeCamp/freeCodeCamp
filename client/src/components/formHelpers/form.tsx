@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Form } from 'react-final-form';
 
+import { ValidatedValues } from '../../templates/Challenges/projects/solution-form';
 import {
   FormFields,
   BlockSaveButton,
@@ -9,27 +9,24 @@ import {
   formatUrlValues
 } from '.';
 
-const propTypes = {
-  buttonText: PropTypes.string,
-  enableSubmit: PropTypes.bool,
-  formFields: PropTypes.arrayOf(
-    PropTypes.shape({ name: PropTypes.string, label: PropTypes.string })
-      .isRequired
-  ).isRequired,
-  hideButton: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-  initialValues: PropTypes.object,
-  options: PropTypes.shape({
-    ignored: PropTypes.arrayOf(PropTypes.string),
-    isEditorLinkAllowed: PropTypes.bool,
-    required: PropTypes.arrayOf(PropTypes.string),
-    types: PropTypes.objectOf(PropTypes.string),
-    placeholders: PropTypes.shape({
-      solution: PropTypes.string,
-      githubLink: PropTypes.string
-    })
-  }),
-  submit: PropTypes.func.isRequired
+export type FormOptions = {
+  ignored?: string[];
+  isEditorLinkAllowed?: boolean;
+  isLocalLinkAllowed?: boolean;
+  required?: string[];
+  types?: { [key: string]: string };
+  placeholders?: { [key: string]: string };
+};
+
+type FormProps = {
+  buttonText?: string;
+  enableSubmit?: boolean;
+  formFields: { name: string; label: string }[];
+  hideButton?: boolean;
+  id?: string;
+  initialValues?: Record<string, unknown>;
+  options: FormOptions;
+  submit: (values: ValidatedValues, ...args: unknown[]) => void;
 };
 
 function DynamicForm({
@@ -41,16 +38,17 @@ function DynamicForm({
   buttonText,
   enableSubmit,
   hideButton
-}) {
+}: FormProps): JSX.Element {
   return (
     <Form
       initialValues={initialValues}
-      onSubmit={(values, ...args) =>
+      onSubmit={(values: ValidatedValues, ...args: unknown[]) =>
         submit(formatUrlValues(values, options), ...args)
       }
     >
       {({ handleSubmit, pristine, error }) => (
         <form
+          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           id={`dynamic-${id}`}
           onSubmit={handleSubmit}
           style={{ width: '100%' }}
@@ -58,7 +56,9 @@ function DynamicForm({
           <FormFields formFields={formFields} options={options} />
           <BlockSaveWrapper>
             {hideButton ? null : (
-              <BlockSaveButton disabled={(pristine && !enableSubmit) || error}>
+              <BlockSaveButton
+                disabled={(pristine && !enableSubmit) || (error as boolean)}
+              >
                 {buttonText ? buttonText : null}
               </BlockSaveButton>
             )}
@@ -70,6 +70,5 @@ function DynamicForm({
 }
 
 DynamicForm.displayName = 'DynamicForm';
-DynamicForm.propTypes = propTypes;
 
 export default DynamicForm;
