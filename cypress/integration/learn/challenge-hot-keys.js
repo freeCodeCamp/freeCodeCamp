@@ -6,14 +6,18 @@ const selectors = {
 };
 
 const links = {
-  link1:
+  classic1:
     '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements',
-  link2:
+  classic2:
     '/learn/responsive-web-design/basic-html-and-html5/headline-with-the-h2-element',
-  link3:
+  frontEnd1:
     '/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page',
-  link4:
+  frontEnd2:
     '/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form',
+  backEnd1:
+    '/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice',
+  backEnd2:
+    'learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice',
   videoLink1:
     '/learn/scientific-computing-with-python/python-for-everybody/introduction-why-program',
   videoLink2:
@@ -22,29 +26,37 @@ const links = {
 
 describe('The hotkeys should work correctly', () => {
   beforeEach(() => {
-    cy.visit(links.link1);
+    cy.visit(links.classic1);
   });
 
   it('should be possible to navigate to the next challenge/projects and previous', () => {
     cy.focused().type('{esc}');
     cy.focused().type('n');
-    cy.url().should('include', links.link2);
+    cy.url().should('include', links.classic2);
     cy.focused().type('{esc}');
     cy.focused().type('p');
-    cy.url().should('include', links.link1);
-    cy.visit(links.link3);
+    cy.url().should('include', links.classic1);
+    cy.visit(links.frontEnd1);
     cy.focused().type('{esc}').type('n');
-    cy.url().should('include', links.link4);
+    cy.url().should('include', links.frontEnd2);
     cy.focused().type('{esc}').type('p');
-    cy.url().should('include', links.link3);
+    cy.url().should('include', links.frontEnd1);
   });
 
-  it('should be possible to navigate to the next video and previous', () => {
+  it('should be possible to navigate to the next (and previous) video', () => {
     cy.visit(links.videoLink1);
-    cy.get(selectors.instructions).click().type('{esc}').type('n');
+    cy.focused().type('{esc}').type('n');
     cy.url().should('include', links.videoLink2);
     cy.get(selectors.instructions).click().type('{esc}').type('p');
     cy.url().should('include', links.videoLink1);
+  });
+
+  it('should be possible to navigate to the next (and previous) backend project', () => {
+    cy.visit(links.backEnd1);
+    cy.focused().type('{esc}').type('n');
+    cy.url().should('include', links.backEnd2);
+    cy.focused().type('{esc}').type('p');
+    cy.url().should('include', links.backEnd1);
   });
 
   it('should be possible to focus on the editor with pressing "e"', () => {
