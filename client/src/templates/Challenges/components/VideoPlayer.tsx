@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import YouTube from 'react-youtube';
 import envData from '../../../../../config/env.json';
 import type { BilibiliIds, VideoLocaleIds } from '../../../redux/prop-types';
@@ -32,8 +31,6 @@ function VideoPlayer({
   bilibiliIds,
   title
 }: VideoPlayerProps): JSX.Element {
-  const { t } = useTranslation();
-
   let bilibiliSrc = null;
 
   if (
@@ -59,36 +56,20 @@ function VideoPlayer({
           title={title}
         />
       ) : (
-        <>
-          <YouTube
-            className={
-              videoIsLoaded ? 'display-youtube-video' : 'hide-youtube-video'
-            }
-            onReady={onVideoLoad}
-            opts={{
-              playerVars: {
-                rel: 0
-              },
-              width: 'auto',
-              height: 'auto'
-            }}
-            videoId={videoId}
-          />
-          <i>
-            <a
-              href={
-                'https://www.youtube.com/timedtext_editor?action_mde_edit_form=1&v=' +
-                videoId +
-                '&lang=en&bl=watch&ui=hd&ref=wt&tab=captions'
-              }
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t('learn.add-subtitles')}
-            </a>
-            .
-          </i>
-        </>
+        <YouTube
+          className={
+            videoIsLoaded ? 'display-youtube-video' : 'hide-youtube-video'
+          }
+          onReady={onVideoLoad}
+          opts={{
+            playerVars: {
+              rel: 0
+            },
+            width: 'auto',
+            height: 'auto'
+          }}
+          videoId={videoId}
+        />
       )}
     </>
   );
