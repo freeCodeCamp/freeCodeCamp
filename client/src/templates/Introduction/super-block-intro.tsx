@@ -10,7 +10,7 @@ import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 
-import DonateModal from '../../../../client/src/components/Donation/DonationModal';
+import DonateModal from '../../components/Donation/DonationModal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';

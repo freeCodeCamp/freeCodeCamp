@@ -7,7 +7,7 @@ import {
   BlockSaveButton,
   BlockSaveWrapper,
   formatUrlValues
-} from './';
+} from '.';
 
 const propTypes = {
   buttonText: PropTypes.string,
