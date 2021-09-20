@@ -4,6 +4,8 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
+    branches-ignore:
+      - 'renovate/**'
 
 name: CodeSee Map
 
