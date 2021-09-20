@@ -24,7 +24,7 @@ assert(
 );
 ```
 
-Sólo debes utilizar jQuery para remover este elemento.
+Solo debes utilizar jQuery para remover este elemento.
 
 ```js
 assert(

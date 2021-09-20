@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908855
-title: Dale a cada elemento un id único
+title: Dale un id único a cada elemento
 challengeType: 0
 forumTopicId: 18191
 dashedName: give-each-element-a-unique-id
@@ -8,11 +8,11 @@ dashedName: give-each-element-a-unique-id
 
 # --description--
 
-También vamos a querer poder usar jQuery para apuntar a cada botón por su identificación única.
+También vamos a querer poder usar jQuery para seleccionar cada botón por su id único.
 
-Da a cada uno de tus botones un id único, empezando con `target1` y terminando con `target6`.
+Dale a cada uno de tus botones un id único, empezando con `target1` y finalizando con `target6`.
 
-Asegúrate de que `target1` a `target3` estén en `#left-well`, y `target4` a `target6` están en `#right-well`.
+Asegúrate de que `target1` a `target3` se encuentren en `#left-well` y `target4` a `target6` se encuentren en `#right-well`.
 
 # --hints--
 

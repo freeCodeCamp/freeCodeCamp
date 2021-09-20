@@ -7,7 +7,11 @@ import {
   call,
   take
 } from 'redux-saga/effects';
-import { addDonation, postChargeStripe } from '../utils/ajax';
+import {
+  addDonation,
+  postChargeStripe,
+  postChargeStripeCard
+} from '../utils/ajax';
 import { actionTypes as appTypes } from './action-types';
 
 import {
@@ -19,10 +23,12 @@ import {
   addDonationComplete,
   addDonationError,
   postChargeStripeComplete,
-  postChargeStripeError
+  postChargeStripeError,
+  postChargeStripeCardComplete,
+  postChargeStripeCardError
 } from './';
 
-const defaultDonationError = `Something is not right. Please contact donors@freecodecamp.org`;
+const defaultDonationErrorMessage = `Something is not right. Please contact donors@freecodecamp.org`;
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
@@ -48,7 +54,7 @@ function* addDonationSaga({ payload }) {
       error.response && error.response.data
         ? error.response.data
         : {
-            message: defaultDonationError
+            message: defaultDonationErrorMessage
           };
     yield put(addDonationError(data.message));
   }
@@ -62,8 +68,19 @@ function* postChargeStripeSaga({ payload }) {
     const err =
       error.response && error.response.data
         ? error.response.data.error
-        : defaultDonationError;
+        : defaultDonationErrorMessage;
     yield put(postChargeStripeError(err));
+  }
+}
+
+function* postChargeStripeCardSaga({ payload }) {
+  try {
+    const { error } = yield call(postChargeStripeCard, payload);
+    if (error) throw error;
+    yield put(postChargeStripeCardComplete());
+  } catch (error) {
+    const errorMessage = error.message || defaultDonationErrorMessage;
+    yield put(postChargeStripeCardError(errorMessage));
   }
 }
 
@@ -71,6 +88,7 @@ export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
     takeEvery(types.addDonation, addDonationSaga),
-    takeLeading(types.postChargeStripe, postChargeStripeSaga)
+    takeLeading(types.postChargeStripe, postChargeStripeSaga),
+    takeLeading(types.postChargeStripeCard, postChargeStripeCardSaga)
   ];
 }

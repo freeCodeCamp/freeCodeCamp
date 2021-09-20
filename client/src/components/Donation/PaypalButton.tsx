@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable camelcase */
 
-import React, { Component } from 'react';
+import React, { Component, Ref } from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -17,6 +17,7 @@ import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
 
 type PaypalButtonProps = {
   addDonation: (data: AddDonationData) => void;
+  isSignedIn: boolean;
   donationAmount: number;
   donationDuration: string;
   handleProcessing: (
@@ -39,9 +40,11 @@ type PaypalButtonProps = {
   isPaypalLoading: boolean;
   skipAddDonation?: boolean;
   t: (label: string) => string;
+  ref?: Ref<PaypalButton>;
   theme: string;
   isSubscription?: boolean;
   handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
+  isMinimalForm: boolean | undefined;
 };
 
 type PaypalButtonState = {
@@ -106,10 +109,10 @@ export class PaypalButton extends Component<
 
   handleApproval = (data: AddDonationData, isSubscription: boolean): void => {
     const { amount, duration } = this.state;
-    const { skipAddDonation = false } = this.props;
+    const { isSignedIn = false } = this.props;
 
-    // Skip the api if user is not signed in or if its a one-time donation
-    if (!skipAddDonation || isSubscription) {
+    // If the user is signed in and the payment is subscritipn call the api
+    if (isSignedIn && isSubscription) {
       this.props.addDonation(data);
     }
 
@@ -126,7 +129,7 @@ export class PaypalButton extends Component<
 
   render(): JSX.Element | null {
     const { duration, planId, amount } = this.state;
-    const { t, theme, isPaypalLoading } = this.props;
+    const { t, theme, isPaypalLoading, isMinimalForm } = this.props;
     const isSubscription = duration !== 'onetime';
     const buttonColor = theme === 'night' ? 'white' : 'gold';
     if (!paypalClientId) {
@@ -173,6 +176,7 @@ export class PaypalButton extends Component<
               plan_id: planId
             });
           }}
+          isMinimalForm={isMinimalForm}
           isPaypalLoading={isPaypalLoading}
           isSubscription={isSubscription}
           onApprove={(data: AddDonationData) => {

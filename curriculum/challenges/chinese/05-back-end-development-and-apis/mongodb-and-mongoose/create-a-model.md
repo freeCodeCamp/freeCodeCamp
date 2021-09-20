@@ -8,7 +8,7 @@ dashedName: create-a-model
 
 # --description--
 
-**C**RUD 第一小节——CREATE
+**C** RUD 第一小节——CREATE
 
 首先，我们需要一个 Schema， 每一个 Schema 都对应一个 MongoDB 的 collection， 并且在相应的 collection 里定义 documents 的“样子”。 Schema 用于组成模型（Model）， 我们甚至可以通过嵌套 Schema 来创建复杂的模型。目前我们先从简。 我们可以根据模型创建实例，模型实例化后的对象称为 documents。
 

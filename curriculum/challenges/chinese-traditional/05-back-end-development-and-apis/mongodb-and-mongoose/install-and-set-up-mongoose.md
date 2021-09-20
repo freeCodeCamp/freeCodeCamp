@@ -8,13 +8,13 @@ dashedName: install-and-set-up-mongoose
 
 # --description--
 
-可以採用下面的任意一種方式完成這些挑戰：
+你可以採用下面的任意一種編寫代碼的方式來完成這些挑戰：
 
-- 克隆 [GitHub repo](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) 並在本地完成項目。
+- 克隆 [這個 GitHub 倉庫](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) 並在本地完成項目。
 - 使用[我們的 Replit 上的初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose)來完成項目。
-- 使用你選擇的網站生成器來完成項目， 並確保包含了我們 GitHub 倉庫的所有文件。
+- 使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-當完成本項目，請確認有一個正常運行的 demo 可以公開訪問。 然後將 URL 提交到 `Solution Link` 中。
+完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 字段中提交它的 URL。
 
 在這個挑戰中，你將建立一個 MongoDB Atlas 數據庫並導入連接到它所需的軟件包。
 
@@ -22,7 +22,7 @@ dashedName: install-and-set-up-mongoose
 
 # --instructions--
 
-將 `mongodb` 和 `mongoose` 添加到項目的 `package.json` 文件中。 然後，在 `myApp.js` 文件中請求 `mongoose`。 創建一個 `.env` 文件，給它添加一個 `MONGO_URI` 變量。 變量的值爲你的 MongoDB Atlas 數據庫 URI。 應用單引號或雙引號包裹 URI。請記住，環境變量 `=` 兩邊不能有空格。 例如，`MONGO_URI='VALUE'`。 完成後，使用下面的代碼來連接數據庫。
+將 `mongodb@~3.6.0` 和 `mongoose@~5.4.0` 添加到項目的 `package.json` 中。 然後，在 `myApp.js` 文件中請求 `mongoose`。 創建一個 `.env` 文件，給它添加一個 `MONGO_URI` 變量。 變量的值爲你的 MongoDB Atlas 數據庫 URI。 應用單引號或雙引號包裹 URI。請記住，環境變量 `=` 兩邊不能有空格。 例如，`MONGO_URI='VALUE'`。 完成後，使用下面的代碼來連接數據庫。
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });

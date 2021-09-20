@@ -18,11 +18,11 @@ dashedName: get-data-from-post-requests
 
 POST（有时候是 PUT）- 使用请求发送信息，以创建新资源；
 
-GET- 读取不用修改的已存在的资源；
+GET - 读取不用修改的已存在的资源；
 
 PUT 或者 PATCH（有时候是 POST）- 发送数据，以更新资源；
 
-DELETE=> 删除一个资源。
+DELETE => 删除一个资源。
 
 还有其他两种方法常用于与服务进行交互。 除了 GET 之外，上面列出的所有方法都可以负载数据（即数据都能放到消息正文中）， 这些方法也可以使用 body-parser 中间件。
 

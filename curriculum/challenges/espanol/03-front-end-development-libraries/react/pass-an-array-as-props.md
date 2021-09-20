@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616a
-title: Pasa un arreglo como props
+title: Pasa un arreglo como "props"
 challengeType: 6
 forumTopicId: 301401
 dashedName: pass-an-array-as-props

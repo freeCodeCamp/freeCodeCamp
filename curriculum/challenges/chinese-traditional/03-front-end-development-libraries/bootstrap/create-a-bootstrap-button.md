@@ -29,7 +29,7 @@ assert(
 assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
-保證所有 `button` 元素都有一個閉合標籤。
+確保所有 `button` 元素都有閉合標籤。
 
 ```js
 assert(

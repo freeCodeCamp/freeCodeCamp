@@ -17,13 +17,13 @@ Afortunadamente, jQuery tiene algunos otros trucos para apuntar a los elementos 
 
 jQuery usa selectores de CSS para apuntar elementos. El selector `target:nth-child(n)` de CSS, te permite seleccionar todos los enésimos elementos con el tipo de elemento o la clase apuntada.
 
-Así es como le darías al tercer elemento en cada pozo la clase de rebote:
+Así es como le darías al tercer elemento en cada "well" la clase de rebote:
 
 ```js
 $(".target:nth-child(3)").addClass("animated bounce");
 ```
 
-Has que el segundo niño en cada uno de sus elementos de pozo rebote. Debes seleccionar los hijos de los elementos con la clase `target`.
+Haz que el segundo niño en cada uno de sus elementos de "well" rebote. Debes seleccionar los hijos de los elementos con la clase `target`.
 
 # --hints--
 
@@ -48,7 +48,7 @@ Debes usar el selector `:nth-child()` para modificar estos elementos.
 assert(code.match(/\:nth-child\(/g));
 ```
 
-Solo debes usar jQuery para añadir estas clases al elemento.
+Solo debes usar jQuery para agregar estas clases al elemento.
 
 ```js
 assert(

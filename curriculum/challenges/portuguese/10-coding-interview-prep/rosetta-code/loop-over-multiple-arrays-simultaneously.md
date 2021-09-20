@@ -1,6 +1,6 @@
 ---
 id: 5e6dd15004c88cf00d2a78b3
-title: Loop over multiple arrays simultaneously
+title: Percorrer vários arrays simultaneamente
 challengeType: 5
 forumTopicId: 385279
 dashedName: loop-over-multiple-arrays-simultaneously
@@ -8,15 +8,15 @@ dashedName: loop-over-multiple-arrays-simultaneously
 
 # --description--
 
-Loop over multiple arrays and create a new array whose $i^{th}$ element is the concatenation of $i^{th}$ element of each of the given.
+Percorra diversos arrays e crie um novo array, cujo $i^{o}$ elemento seja a concatenação do $i^{o}$ elemento de cada um dos arrays fornecidos.
 
-For this example, if you are given this array of arrays:
+Para este exemplo, se você receber este array de arrays:
 
 ```js
 [ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]
 ```
 
-the output should be:
+o resultado deve ser:
 
 ```js
 ["aA1","bB2","cC3"]
@@ -24,17 +24,17 @@ the output should be:
 
 # --instructions--
 
-Write a function that takes an array of arrays as a parameter and returns an array of strings satisfying the given description.
+Escreva uma função que receba um array de arrays como parâmetro e retorne um array de strings que satisfaçam a descrição dada.
 
 # --hints--
 
-`loopSimult` should be a function.
+`loopSimult` deve ser uma função.
 
 ```js
 assert(typeof loopSimult == 'function');
 ```
 
-`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` should return a array.
+`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` deve retornar um array.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` should return `["aA1", "bB2", "cC3"]`.
+`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` deve retornar `["aA1", "bB2", "cC3"]`.
 
 ```js
 assert.deepEqual(
@@ -61,7 +61,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]])` should return `["c47", "b57", "cC3"]`.
+`loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]])` deve retornar `["c47", "b57", "cC3"]`.
 
 ```js
 assert.deepEqual(
@@ -74,7 +74,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]])` should return `["aA1", "bB2", "cC3", "dd4"]`.
+`loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]])` deve retornar `["aA1", "bB2", "cC3", "dd4"]`.
 
 ```js
 assert.deepEqual(
@@ -87,7 +87,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["a", "b"], ["A", "B"], [1, 2]])` should return `["aA1", "bB2"]`.
+`loopSimult([["a", "b"], ["A", "B"], [1, 2]])` deve retornar `["aA1", "bB2"]`.
 
 ```js
 assert.deepEqual(
@@ -100,7 +100,7 @@ assert.deepEqual(
 );
 ```
 
-`loopSimult([["b", "c"], ["B", "C"], [2, 3]])` should return `["bB2", "cC3"]`.
+`loopSimult([["b", "c"], ["B", "C"], [2, 3]])` deve retornar `["bB2", "cC3"]`.
 
 ```js
 assert.deepEqual(

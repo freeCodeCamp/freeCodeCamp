@@ -13,11 +13,11 @@ dashedName: responsively-style-checkboxes
 
 # --description--
 
-Dado que las clases `col-xs-*` de Bootstrap son aplicables a todos los elementos `form`, ¡también puedes usarlas en tus casillas de verificación! De esta manera, las casillas de verificación se distribuirán uniformemente por toda la página, independientemente de la amplitud de la resolución de la pantalla.
+Dado que las clases de Bootstrap `col-xs-*` son aplicables a todos los elementos `form`, ¡también puedes usarlas para tus casillas de verificación! De esta manera, las casillas de verificación se distribuirán uniformemente por toda la página, independientemente de la amplitud de la resolución de la pantalla.
 
 # --instructions--
 
-Anida las tres casillas de verificación en un elemento `<div class="row">`. Luego incrusta cada uno de ellos en un elemento `<div class="col-xs-4">`.
+Anida las tres casillas de verificación en un elemento `<div class="row">`. Luego, anida cada uno de ellos en un elemento `<div class="col-xs-4">`.
 
 # --hints--
 
@@ -27,13 +27,13 @@ Todas las casillas de verificación deben anidarse dentro de un `div` con la cla
 assert($('div.row:has(input[type="checkbox"])').length > 0);
 ```
 
-Cada casilla de verificación debe inscrustarse dentro de un `div` con la clase `row`.
+Cada casilla de verificación debe anidarse dentro de un `div` con la clase `col-xs-4`.
 
 ```js
 assert($('div.col-xs-4:has(input[type="checkbox"])').length > 2);
 ```
 
-Todos los elementos `div` deben tener etiquetas de cierre.
+Todos tus elementos `div` deben tener etiquetas de cierre.
 
 ```js
 assert(
