@@ -16,109 +16,113 @@ The text should either be `True` or `False`.
 You should give the first `label` element text content.
 
 ```js
-
+assert.notEmpty(document.querySelectorAll('ul.answer-list > li > label')?.[0]?.textContent);
 ```
 
 You should give the second `label` element text content.
 
 ```js
-
+assert.notEmpty(document.querySelectorAll('ul.answer-list > li > label')?.[1]?.textContent);
 ```
 
 You should give the third `label` element text content.
 
 ```js
-
+assert.notEmpty(document.querySelectorAll('ul.answer-list > li > label')?.[2]?.textContent);
 ```
 
 You should give the fourth `label` element text content.
 
 ```js
-
+assert.notEmpty(document.querySelectorAll('ul.answer-list > li > label')?.[3]?.textContent);
 ```
 
 You should place the first `label` text content after the `input` element.
 
 ```js
-
+// TODO
 ```
 
 You should place the second `label` text content after the `input` element.
 
 ```js
-
+// TODO
 ```
 
 You should place the third `label` text content after the `input` element.
 
 ```js
-
+// TODO
 ```
 
 You should place the fourth `label` text content after the `input` element.
 
 ```js
-
+// TODO
 ```
 
 You should give the first `label` the text `True` or `False`.
 
 ```js
-
+assert.include(['True', 'False'], document.querySelectorAll('ul.answer-list > li > label')?.[0]?.textContent);
 ```
 
 You should give the second `label` the text `True`.
 
 ```js
-
+const l = (n) => document.querySelectorAll('ul.answer-list > li > label')?.[n]?.textContent;
+assert(l(0) === 'False' ? l(1) === 'True' : true);
 ```
 
 You should give the second `label` the text `False`.
 
 ```js
-
+const l = (n) => document.querySelectorAll('ul.answer-list > li > label')?.[n]?.textContent;
+assert(l(0) === 'True' ? l(1) === 'False' : true);
 ```
 
 You should give the third `label` the text `True` or `False`.
 
 ```js
-
+assert.include(['True', 'False'], document.querySelectorAll('ul.answer-list > li > label')?.[2]?.textContent);
 ```
 
 You should give the fourth `label` the text `True`.
 
 ```js
-
+const l = (n) => document.querySelectorAll('ul.answer-list > li > label')?.[n]?.textContent;
+assert(l(2) === 'False' ? l(3) === 'True' : true);
 ```
 
 You should give the fourth `label` the text `False`.
 
 ```js
-
+const l = (n) => document.querySelectorAll('ul.answer-list > li > label')?.[n]?.textContent;
+assert(l(2) === 'True' ? l(3) === 'False' : true);
 ```
 
 You should give the first `input` a `value` matching the `label` text content.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[0]?.textContent?.toLowerCase(), document.querySelectorAll('ul.answer-list > li > label > input')?.[0]?.value?.toLowerCase());
 ```
 
 You should give the second `input` a `value` matching the `label` text content.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[1]?.textContent?.toLowerCase(), document.querySelectorAll('ul.answer-list > li > label > input')?.[1]?.value?.toLowerCase());
 ```
 
 You should give the third `input` a `value` matching the `label` text content.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[2]?.textContent?.toLowerCase(), document.querySelectorAll('ul.answer-list > li > label > input')?.[2]?.value?.toLowerCase());
 ```
 
 You should give the fourth `input` a `value` matching the `label` text content.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[3]?.textContent?.toLowerCase(), document.querySelectorAll('ul.answer-list > li > label > input')?.[3]?.value?.toLowerCase());
 ```
 
 # --seed--

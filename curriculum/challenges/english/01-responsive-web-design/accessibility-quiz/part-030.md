@@ -7,7 +7,7 @@ dashedName: part-30
 
 # --description--
 
-Although not required, it is still best-practice to explicitly link a `label` with its corresponding `input` element.
+Although not required for `label` elements with a nested `input`, it is still best-practice to explicitly link a `label` with its corresponding `input` element.
 
 Link the `label` elements with their corresponding `input` elements.
 
@@ -16,25 +16,25 @@ Link the `label` elements with their corresponding `input` elements.
 You should give the first `label` a `for` attribute matching the `id` of its `input` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[0]?.htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[0]?.id);
 ```
 
 You should give the second `label` a `for` attribute matching the `id` of its `input` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[1]?.htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[1]?.id);
 ```
 
 You should give the third `label` a `for` attribute matching the `id` of its `input` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[2]?.htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[2]?.id);
 ```
 
 You should give the fourth `label` a `for` attribute matching the `id` of its `input` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[3]?.htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[3]?.id);
 ```
 
 # --seed--

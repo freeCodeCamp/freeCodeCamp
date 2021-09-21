@@ -14,19 +14,19 @@ Change the `h1` font colour to `#f1be32`, and set the font size to `min(5vw, 1.2
 You should use the `h1` element selector.
 
 ```js
-
+assert.exists(new helpers.CSSHelp(document).getStyle('h1'));
 ```
 
-You should give the `h1` a `font-color` of `#f1be32`.
+You should give the `h1` a `color` of `#f1be32`.
 
 ```js
-
+assert.equal(new helpers.CSSHelp(document).getStyle('h1')?.color, '#f1be32');
 ```
 
 You should give the `h1` a `font-size` of `min(5vw, 1.2em)`.
 
 ```js
-
+assert.equal(new helpers.CSSHelp(document).getStyle('h1')?.fontSize, 'min(5vw, 1.2em)');
 ```
 
 # --seed--

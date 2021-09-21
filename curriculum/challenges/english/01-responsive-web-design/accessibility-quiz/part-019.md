@@ -16,61 +16,64 @@ Then, within each `div` nest one `label` element, and one `input` element.
 You should nest three `div` elements below the `h2#student-info` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2#student-info ~ div')?.length, 3);
 ```
 
 You should give the first `div` a `class` of `info`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2#student-info ~ div')?.[0]?.className, 'info');
 ```
 
 You should give the second `div` a `class` of `info`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2#student-info ~ div')?.[1]?.className, 'info');
 ```
 
 You should give the third `div` a `class` of `info`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2#student-info ~ div')?.[2]?.className, 'info');
 ```
 
 You should nest one `label` element within the first `div`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2#student-info ~ div')?.[0]?.querySelectorAll('label')?.length, 1);
 ```
 
 You should nest one `input` element within the first `div`, after the `label`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2#student-info ~ div')?.[0]?.querySelectorAll('input')?.length, 1);
+assert.exists(document.querySelectorAll('h2#student-info ~ div')?.[0]?.querySelector('label + input'));
 ```
 
 You should nest one `label` element within the second `div`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2#student-info ~ div')?.[1]?.querySelectorAll('label')?.length, 1);
 ```
 
 You should nest one `input` element within the second `div`, after the `label`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2#student-info ~ div')?.[1]?.querySelectorAll('input')?.length, 1);
+assert.exists(document.querySelectorAll('h2#student-info ~ div')?.[1]?.querySelector('label + input'));
 ```
 
 You should nest one `label` element within the third `div`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2#student-info ~ div')?.[2]?.querySelectorAll('label')?.length, 1);
 ```
 
 You should nest one `input` element within the third `div`, after the `label`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2#student-info ~ div')?.[2]?.querySelectorAll('input')?.length, 1);
+assert.exists(document.querySelectorAll('h2#student-info ~ div')?.[2]?.querySelector('label + input'));
 ```
 
 # --seed--

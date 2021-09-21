@@ -18,67 +18,73 @@ This section will take a student's name, email address, and date of birth. Give 
 You should give the first `label` element an appropriate `for` attribute.
 
 ```js
-
+assert.isAtLeast(document.querySelectorAll('label')?.[0]?.htmlFor?.length, 1);
 ```
 
 You should give the second `label` element an appropriate `for` attribute.
 
 ```js
-
+assert.isAtLeast(document.querySelectorAll('label')?.[1]?.htmlFor?.length, 1);
 ```
 
 You should give the third `label` element an appropriate `for` attribute.
 
 ```js
-
+assert.isAtLeast(document.querySelectorAll('label')?.[2]?.htmlFor?.length, 1);
 ```
 
 You should give the first `label` element an appropriate text content.
 
 ```js
-
+assert.isAtLeast(document.querySelectorAll('label')?.[0]?.textContent?.length, 1);
 ```
 
 You should give the second `label` element an appropriate text content.
 
 ```js
-
+assert.isAtLeast(document.querySelectorAll('label')?.[1]?.textContent?.length, 1);
 ```
 
 You should give the third `label` element an appropriate text content.
 
 ```js
-
+assert.isAtLeast(document.querySelectorAll('label')?.[2]?.textContent?.length, 1);
 ```
 
 You should give the first `input` element an `id` attribute matching the `for` attribute of the first `label`.
 
 ```js
-
+assert.equal(document.querySelectorAll('input')?.[0]?.id, document.querySelectorAll('label')?.[0]?.htmlFor);
 ```
 
 You should give the second `input` element an `id` attribute matching the `for` attribute of the second `label`.
 
 ```js
-
+assert.equal(document.querySelectorAll('input')?.[1]?.id, document.querySelectorAll('label')?.[1]?.htmlFor);
 ```
 
 You should give the third `input` element an `id` attribute matching the `for` attribute of the third `label`.
 
 ```js
-
+assert.equal(document.querySelectorAll('input')?.[2]?.id, document.querySelectorAll('label')?.[2]?.htmlFor);
 ```
 
 You should not use the same `id` attribute for more than one `input` element.
 
 ```js
-
+const id = (n) => document.querySelectorAll('input')?.[n]?.id;
+assert.notEqual(id(0), id(1));
+assert.notEqual(id(0), id(2));
+assert.notEqual(id(1), id(2));
 ```
 
 You should not use the same `for` attribute for more than one `label` element.
 
 ```js
-
+const htmlFor = (n) => document.querySelectorAll('label')?.[n]?.htmlFor;
+assert.notEqual(htmlFor(0), htmlFor(1));
+assert.notEqual(htmlFor(0), htmlFor(2));
+assert.notEqual(htmlFor(1), htmlFor(2));
 ```
 
 # --seed--

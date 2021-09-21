@@ -16,73 +16,73 @@ Within each list element, nest one `label` element, and within each `label` elem
 You should nest one `label` element within the first `li` element.
 
 ```js
-
+assert.exists(document.querySelector('ul.answers-list > li:nth-of-type(1) > label'));
 ```
 
 You should nest one `label` element within the second `li` element.
 
 ```js
-
+assert.exists(document.querySelector('ul.answers-list > li:nth-of-type(2) > label'));
 ```
 
 You should nest one `label` element within the third `li` element.
 
 ```js
-
+assert.exists(document.querySelector('ul.answers-list > li:nth-of-type(3) > label'));
 ```
 
 You should nest one `label` element within the fourth `li` element.
 
 ```js
-
+assert.exists(document.querySelector('ul.answers-list > li:nth-of-type(4) > label'));
 ```
 
 You should nest one `input` element within the first `label` element.
 
 ```js
-
+assert.exists(document.querySelector('ul.answers-list > li > label:nth-of-type(1) > input'));
 ```
 
 You should nest one `input` element within the second `label` element.
 
 ```js
-
+assert.exists(document.querySelector('ul.answers-list > li > label:nth-of-type(2) > input'));
 ```
 
 You should nest one `input` element within the third `label` element.
 
 ```js
-
+assert.exists(document.querySelector('ul.answers-list > li > label:nth-of-type(3) > input'));
 ```
 
 You should nest one `input` element within the fourth `label` element.
 
 ```js
-
+assert.exists(document.querySelector('ul.answers-list > li > label:nth-of-type(4) > input'));
 ```
 
 You should give the first `input` a `type` of `radio`.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[0]?.getAttribute('type'), 'radio');
 ```
 
 You should give the second `input` a `type` of `radio`.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[1]?.getAttribute('type'), 'radio');
 ```
 
 You should give the third `input` a `type` of `radio`.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[2]?.getAttribute('type'), 'radio');
 ```
 
 You should give the fourth `input` a `type` of `radio`.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[3]?.getAttribute('type'), 'radio');
 ```
 
 # --seed--

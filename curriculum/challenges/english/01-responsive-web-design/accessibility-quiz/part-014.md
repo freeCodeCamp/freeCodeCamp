@@ -16,25 +16,25 @@ Within the `main` element, create a form with three nested `section` elements. T
 You should nest a `form` element within your `main` element.
 
 ```js
-
+assert.exists(document.querySelector('main > form'));
 ```
 
 You should nest three `section` elements within your `form` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('main > form > section')?.length, 3);
 ```
 
 You should give the `form` element an `action` attribute.
 
 ```js
-
+assert.notEmpty(document.querySelector('main > form').getAttribute('action'));
 ```
 
 You should give the `action` attribute a value of `https://freecodecamp.org/practice-project/accessibility-quiz`.
 
 ```js
-
+assert.equal(document.querySelector('main > form').getAttribute('action'), 'https://freecodecamp.org/practice-project/accessibility-quiz');
 ```
 
 # --seed--

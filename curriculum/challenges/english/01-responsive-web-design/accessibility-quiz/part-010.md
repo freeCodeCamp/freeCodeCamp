@@ -14,31 +14,31 @@ Make the `header` take up the full width of its parent container, set it's `heig
 You should use the `header` element selector.
 
 ```js
-
+assert.exists(new helpers.CSSHelp(document).getStyle('header'));
 ```
 
 You should give the `header` a `width` of `100%`.
 
 ```js
-
+assert.equal(new helpers.CSSHelp(document).getStyle('header')?.width, '100%');
 ```
 
 You should give the `header` a `height` of `50px`.
 
 ```js
-
+assert.equal(new helpers.CSSHelp(document).getStyle('header')?.height, '50px');
 ```
 
 You should give the `header` a `background-color` of `#1b1b32`.
 
 ```js
-
+assert.equal(new helpers.CSSHelp(document).getStyle('header')?.backgroundColor, '#1b1b32');
 ```
 
 You should give the `header` a `display` of `flex`.
 
 ```js
-
+assert.equal(new helpers.CSSHelp(document).getStyle('header')?.display, 'flex');
 ```
 
 # --seed--

@@ -22,73 +22,73 @@ Then, within each `section` element, nest one `h2` element with an `id` matching
 You should give the first `section` element an `aria-labelledby` attribute of `student-info`.
 
 ```js
-
+assert.equal(document.querySelectorAll('section')?.[0]?.getAttribute('aria-labelledby'), 'student-info');
 ```
 
 You should give the second `section` element an `aria-labelledby` attribute of `html-questions`.
 
 ```js
-
+assert.equal(document.querySelectorAll('section')?.[1]?.getAttribute('aria-labelledby'), 'html-questions');
 ```
 
 You should give the third `section` element an `aria-labelledby` attribute of `css-questions`.
 
 ```js
-
+assert.equal(document.querySelectorAll('section')?.[2]?.getAttribute('aria-labelledby'), 'css-questions');
 ```
 
 You should nest one `h2` element within the first `section` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('section')?.[0]?.querySelectorAll('h2')?.length, 1);
 ```
 
 You should nest one `h2` element within the second `section` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('section')?.[1]?.querySelectorAll('h2')?.length, 1);
 ```
 
 You should nest one `h2` element within the third `section` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('section')?.[2]?.querySelectorAll('h2')?.length, 1);
 ```
 
 You should give the first `h2` element an `id` attribute of `student-info`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2')?.[0]?.getAttribute('id'), 'student-info');
 ```
 
 You should give the second `h2` element an `id` attribute of `html-questions`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2')?.[1]?.getAttribute('id'), 'html-questions');
 ```
 
 You should give the third `h2` element an `id` attribute of `css-questions`.
 
 ```js
-
+assert.equal(document.querySelectorAll('h2')?.[2]?.getAttribute('id'), 'css-questions');
 ```
 
 You should give the first `h2` element suitable text content. _Hint: I would have chosen `Student Info`_
 
 ```js
-
+assert.isAtLeast(document.querySelectorAll('h2')?.[0]?.textContent?.length, 1);
 ```
 
 You should give the second `h2` element suitable text content. _Hint: I would have chosen `HTML`_
 
 ```js
-
+assert.isAtLeast(document.querySelectorAll('h2')?.[1]?.textContent?.length, 1);
 ```
 
 You should give the third `h2` element suitable text content. _Hint: I would have chosen `CSS`_
 
 ```js
-
+assert.isAtLeast(document.querySelectorAll('h2')?.[2]?.textContent?.length, 1);
 ```
 
 # --seed--

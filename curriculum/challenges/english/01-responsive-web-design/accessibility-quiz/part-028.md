@@ -16,43 +16,43 @@ Finally, add use the `legend` to caption the content of the `fieldset`, by placi
 You should give the first `fieldset` an adaquate `name` attribute. _Hint: I would use `html-question-one`_
 
 ```js
-
+assert.notEmpty(document.querySelectorAll('fieldset')?.[0]?.getAttribute('name'));
 ```
 
 You should give the second `fieldset` an adaquate `name` attribute. _Hint: I would use `html-question-two`_
 
 ```js
-
+assert.notEmpty(document.querySelectorAll('fieldset')?.[1]?.getAttribute('name'));
 ```
 
 You should give the first `ul` element a `class` of `answers-list`.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul')?.[0]?.getAttribute('class'), 'answers-list');
 ```
 
 You should give the second `ul` element a `class` of `answers-list`.
 
 ```js
-
+assert.equal(document.querySelectorAll('ul')?.[1]?.getAttribute('class'), 'answers-list');
 ```
 
 You should give the first `legend` element text content.
 
 ```js
-
+assert.notEmpty(document.querySelectorAll('legend')?.[0]?.textContent);
 ```
 
 You should give the second `legend` element text content.
 
 ```js
-
+assert.notEmpty(document.querySelectorAll('legend')?.[1]?.textContent);
 ```
 
 You should not use the same text content for both `legend` elements.
 
 ```js
-
+assert.notEqual(document.querySelectorAll('legend')?.[0]?.textContent, document.querySelectorAll('legend')?.[1]?.textContent);
 ```
 
 # --seed--

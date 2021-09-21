@@ -14,7 +14,7 @@ Within the `span` element, add the text `(Date of Birth)`.
 You should give the `span` element the text `(Date of Birth)`.
 
 ```js
-
+assert.equal(document.querySelector('label:nth-of-type(3) > span')?.textContent, '(Date of Birth)');
 ```
 
 # --seed--

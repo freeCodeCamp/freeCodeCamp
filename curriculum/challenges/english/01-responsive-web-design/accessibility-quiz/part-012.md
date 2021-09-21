@@ -20,37 +20,37 @@ The list items should be wrapped in anchor tags.
 You should nest one `ul` element inside the `nav`.
 
 ```js
-
+assert.equal(document.querySelectorAll('nav > ul')?.length, 1);
 ```
 
 You should nest three `li` elements inside the `ul` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('nav > ul > li')?.length, 3);
 ```
 
 You should nest one `a` element inside each `li` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('nav > ul > li > a')?.length, 3);
 ```
 
 You should give the first `a` element the text `INFO`.
 
 ```js
-
+assert.equal(document.querySelectorAll('nav > ul > li > a')?.[0]?.textContent, 'INFO');
 ```
 
 You should give the second `a` element the text `HTML`.
 
 ```js
-
+assert.equal(document.querySelectorAll('nav > ul > li > a')?.[1]?.textContent, 'HTML');
 ```
 
 You should give the third `a` element the text `CSS`.
 
 ```js
-
+assert.equal(document.querySelectorAll('nav > ul > li > a')?.[2]?.textContent, 'CSS');
 ```
 
 # --seed--
