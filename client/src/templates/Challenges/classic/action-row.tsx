@@ -1,16 +1,15 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import BreadCrumb from '../components/bread-crumb';
 import EditorTabs from './EditorTabs';
 
-const propTypes = {
-  block: PropTypes.string,
-  showConsole: PropTypes.bool,
-  showNotes: PropTypes.bool,
-  showPreview: PropTypes.bool,
-  superBlock: PropTypes.string,
-  switchDisplayTab: PropTypes.func
-};
+interface ActionRowProps {
+  block: string;
+  showConsole: boolean;
+  showNotes: boolean;
+  showPreview: boolean;
+  superBlock: string;
+  switchDisplayTab: (displayTab: string) => void;
+}
 
 const ActionRow = ({
   switchDisplayTab,
@@ -18,7 +17,7 @@ const ActionRow = ({
   showConsole,
   superBlock,
   block
-}) => {
+}: ActionRowProps): JSX.Element => {
   const restartStep = () => {
     console.log('restart');
   };
@@ -57,6 +56,5 @@ const ActionRow = ({
   );
 };
 
-ActionRow.propTypes = propTypes;
 ActionRow.displayName = 'ActionRow';
 export default ActionRow;
