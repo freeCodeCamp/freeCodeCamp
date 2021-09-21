@@ -207,8 +207,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   // automatically be first, but  if there's jsx and js (for some reason) it
   //  will be [jsx, js].
 
-  // NOTE: the ARIA state is controlled by fileKey, so changes to it must
-  // trigger a re-render.  Hence state:
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
     scrollBeyondLastLine: false,
@@ -450,7 +448,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     data.viewZoneHeight = domNode.offsetHeight;
 
     const background = document.createElement('div');
-    // background.style.background = 'lightgreen';
 
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
@@ -484,7 +481,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     data.outputZoneHeight = outputNode.offsetHeight;
 
     const background = document.createElement('div');
-    // background.style.background = 'lightpink';
 
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
@@ -505,7 +501,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { description, title } = props;
     const jawHeading = document.createElement('h3');
     jawHeading.innerText = title;
-    // TODO: var was used here. Should it?
     const domNode = document.createElement('div');
     const desc = document.createElement('div');
     const descContainer = document.createElement('div');
@@ -515,8 +510,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
-    // desc.style.background = 'white';
-    // domNode.style.background = 'lightgreen';
     // TODO: the solution is probably just to use an overlay that's forced to
     // follow the decorations.
     // TODO: this is enough for Firefox, but Chrome needs more before the
@@ -526,8 +519,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.style.zIndex = '10';
 
     domNode.setAttribute('aria-hidden', 'true');
-
-    // domNode.style.background = 'lightYellow';
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
@@ -705,9 +696,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // It's not possible to directly access the current view zone so we track
   // the region it should cover instead.
-  // TODO: DRY
   function getLineAfterViewZone() {
-    // TODO: abstract away the data, ids etc.
     const range = data.model?.getDecorationRange(data.startEditDecId);
     // if the first decoration is missing, this implies the region reaches the
     // start of the editor.
@@ -731,7 +720,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     return monacoRef.current?.Range.lift(iRange);
   };
 
-  // TODO: TESTS!
   // Make 100% sure this is inclusive.
   const getLinesBetweenRanges = (
     firstRange: RangeType,
@@ -785,7 +773,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
-  // TODO: do this once after _monaco has been created.
   const getStartOfEditor = () =>
     monacoRef.current?.Range.lift({
       startLineNumber: 1,
@@ -869,7 +856,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       return newLines.map(({ range }) => range);
     }
 
-    // TODO refactor this mess
     // TODO this listener needs to be replaced on reset.
     model.onDidChangeContent(e => {
       // TODO: it would be nice if undoing could remove the warning, but
