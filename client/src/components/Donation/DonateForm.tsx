@@ -277,6 +277,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     redirecting: boolean;
     success: boolean;
     error: string | null;
+    isSignedIn: boolean;
     reset: () => unknown;
   }) {
     return <DonateCompletion {...props} />;
@@ -359,7 +360,8 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   render() {
     const {
       donationFormState: { processing, success, error, redirecting },
-      isMinimalForm
+      isMinimalForm,
+      isSignedIn
     } = this.props;
 
     if (success || error) {
@@ -368,6 +370,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         redirecting,
         success,
         error,
+        isSignedIn,
         reset: this.resetDonation
       });
     }
@@ -381,6 +384,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             redirecting,
             success,
             error,
+            isSignedIn,
             reset: this.resetDonation
           })}
         <div className={processing || redirecting ? 'hide' : ''}>

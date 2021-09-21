@@ -12,7 +12,7 @@ Puedes diseñar un componente con un estado más complejo combinando los concept
 
 # --instructions--
 
-El componente `Counter` mantiene un seguimiento de un valor `count` en el `state`. Hay dos botones que llaman a métodos `increment()` y `decrement()`. Escribe estos métodos para que el valor del contador sea incrementado o decrementado por 1 cuando se haga clic en el botón apropiado. También, crea un método `reset()` para que cuando se haga clic en el botón reset, el contador se establezca a 0.
+El componente `Counter` mantiene un seguimiento de un valor `count` en el `state`. Hay dos botones que llaman a métodos `increment()` y `decrement()`. Escribe estos métodos para que el valor del contador sea incrementado o disminuyendo por 1 cuando se haga clic en el botón apropiado. También, crea un método `reset()` para que cuando se haga clic en el botón reset, el contador se establezca a 0.
 
 **Nota:** Asegúrate de no modificar el `className`de los botones. Además, recuerda agregar en el constructor los enlaces necesarios para los métodos recién creados.
 
@@ -48,7 +48,7 @@ mockedComponent.find('.inc').simulate('click');
 assert(mockedComponent.find('h1').text() === 'Current Count: 1');
 ```
 
-Al hacer clic en el botón de disminuir se reducirá el contador en `1`.
+Al hacer clic en el botón de disminuir se disminuirá el contador en `1`.
 
 ```js
 const mockedComponent = Enzyme.mount(React.createElement(Counter));

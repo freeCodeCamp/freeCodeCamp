@@ -1,0 +1,62 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+name: CodeSee Map
+
+jobs:
+  test_map_action:
+    runs-on: ubuntu-latest
+    name: Run map action on action code
+    steps:
+      - name: checkout
+        id: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      # codesee-detect-languages has an output with id languages.
+      - name: Detect Languages
+        id: detect-languages
+        uses: Codesee-io/codesee-detect-languages-action@latest
+
+      - name: Configure JDK 16
+        uses: actions/setup-java@v2
+        if: ${{ fromJSON(steps.detect-languages.outputs.languages).java }}
+        with:
+          java-version: '16'
+          distribution: 'zulu'
+
+      # CodeSee Maps Go support uses a static binary so there's no setup step required.
+
+      - name: Configure Node.js 14
+        uses: actions/setup-node@v2
+        if: ${{ fromJSON(steps.detect-languages.outputs.languages).javascript }}
+        with:
+          node-version: '14'
+
+      - name: Configure Python 3.x
+        uses: actions/setup-python@v2
+        if: ${{ fromJSON(steps.detect-languages.outputs.languages).python }}
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+
+      - name: Configure Ruby '3.x'
+        uses: ruby/setup-ruby@v1
+        if: ${{ fromJSON(steps.detect-languages.outputs.languages).ruby }}
+        with:
+          ruby-version: '3.0'
+
+      # CodeSee Maps Rust support uses a static binary so there's no setup step required.
+
+      - name: run
+        id: run
+        uses: Codesee-io/codesee-map-action@latest
+        with:
+          api_token: ${{ secrets.CODESEE_ARCH_DIAG_API_TOKEN }}
+          github_ref: ${{ github.ref }}
+          support_typescript: true

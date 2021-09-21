@@ -112,6 +112,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
+    this._container?.focus();
   }
 
   componentDidUpdate(prevProps: ShowVideoProps): void {

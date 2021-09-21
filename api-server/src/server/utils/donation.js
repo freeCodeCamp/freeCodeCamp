@@ -184,7 +184,7 @@ export async function createStripeCardDonation(req, res, stripe) {
     user
   } = req;
 
-  if (!tokenId || !amount || !duration || !name || !userId || !email) {
+  if (!tokenId || !amount || !duration || !userId || !email) {
     throw {
       message: 'Request is not valid',
       type: 'InvalidRequest'
@@ -203,7 +203,7 @@ export async function createStripeCardDonation(req, res, stripe) {
     const customer = await stripe.customers.create({
       email,
       card: tokenId,
-      name
+      ...(name && { name })
     });
     customerId = customer?.id;
   } catch {
