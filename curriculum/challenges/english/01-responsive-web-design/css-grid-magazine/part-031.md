@@ -13,10 +13,10 @@ Wrap each of your already defined values of the `grid-template-columns` property
 
 # --hints--
 
-Test 1
+Your `main` selector should have a `grid-template-columns` property set to `minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('main')?.gridTemplateColumns === 'minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr)');
 ```
 
 # --seed--
@@ -140,7 +140,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

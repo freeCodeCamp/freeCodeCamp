@@ -7,14 +7,20 @@ dashedName: part-68
 
 # --description--
 
-Create a `.list-title, list-subtitle` selector and set the `color` property to `#00beef`.
+Create a `.list-title, .list-subtitle` selector and set the `color` property to `#00beef`.
 
 # --hints--
 
-Test 1
+You should have a `.list-title, .list-subtitle` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle'))
+```
 
+Your `.list-title, .list-subtitle` selector should have a `color` property set to `#00beef`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle')?.color === 'rgb(0, 190, 239)');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

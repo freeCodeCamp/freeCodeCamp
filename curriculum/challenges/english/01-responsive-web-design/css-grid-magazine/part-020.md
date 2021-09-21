@@ -11,10 +11,40 @@ Within your `.image-wrapper` element, give the second `img` element a `src` of `
 
 # --hints--
 
-Test 1
+Your second `img` element should have a `src` set to `https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png`.
 
 ```js
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('src') === 'https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png');
+```
 
+Your second `img` element should have an `alt` set to `image of the calculator project`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('alt') === 'image of the calculator project');
+```
+
+Your second `img` element should have a `loading` attribute set to `lazy`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('loading') === 'lazy');
+```
+
+Your second `img` element should have a `class` set to `image-2`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.classList?.contains('image-2'));
+```
+
+Your second `img` element should have a `width` set to `400`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('width') === '400');
+```
+
+Your second `img` element should have a `height` set to `400`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('height') === '400');
 ```
 
 # --seed--
@@ -138,7 +168,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

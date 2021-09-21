@@ -11,10 +11,40 @@ Within your `.image-wrapper` element, give your third `img` element a `src` of `
 
 # --hints--
 
-Test 1
+Your third `img` element should have a `src` set to `https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg`.
 
 ```js
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('src') === 'https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg');
+```
 
+Your third `img` element should have an `alt` set to `four people working on code`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('alt') === 'four people working on code');
+```
+
+Your third `img` element should have a `loading` attribute set to `lazy`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('loading') === 'lazy');
+```
+
+Your third `img` element should have a `class` set to `image-3`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.classList?.contains('image-3'));
+```
+
+Your third `img` element should have a `width` attribute set to `600`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('width') === '600');
+```
+
+Your third `img` element should have a `height` attribute set to `200`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('height') === '200');
 ```
 
 # --seed--
@@ -138,7 +168,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

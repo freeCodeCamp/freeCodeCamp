@@ -11,10 +11,55 @@ Within your `article` element, create an `h3` element with the class set to `lis
 
 # --hints--
 
-Test 1
+You should create an `h3` element within your `article` element.
 
 ```js
+assert.exists(document.querySelector('article h3'));
+```
 
+You should create a `p` element within your `article` element.
+
+```js
+assert.exists(document.querySelector('article p'));
+```
+
+You should create a `ul` element within your `article` element.
+
+```js
+assert.exists(document.querySelector('article ul'));
+```
+
+Your elements within the `article` element should be in the correct order.
+
+```js
+const children = document.querySelector('article')?.children;
+assert(children?.[0].localName === 'h3');
+assert(children?.[1].localName === 'p');
+assert(children?.[2].localName === 'ul');
+```
+
+Your new `h3` element should have the `class` set to `list-title`.
+
+```js
+assert(document.querySelector('article h3')?.className === 'list-title');
+```
+
+Your new `h3` element should have the text of `A Brief History`.
+
+```js
+assert(document.querySelector('article h3')?.innerText === 'A Brief History');
+```
+
+Your new `p` element should have the text of `Of the Curriculum`.
+
+```js
+assert(document.querySelector('article p')?.innerText === 'Of the Curriculum');
+```
+
+Your new `ul` element should have the `class` set to `lists`.
+
+```js
+assert(document.querySelector('article ul')?.className === 'lists');
 ```
 
 # --seed--
@@ -139,7 +184,7 @@ Test 1
       </section>
       <section class="text text-with-images">
 --fcc-editable-region--
-        <article class="top-four">
+        <article class="brief-history">
 
         </article>
 --fcc-editable-region--

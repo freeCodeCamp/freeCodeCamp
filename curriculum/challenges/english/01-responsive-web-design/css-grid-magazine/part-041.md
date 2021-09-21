@@ -11,10 +11,28 @@ Create a `.hero-title` selector and give it a `position` property set to `absolu
 
 # --hints--
 
-Test 1
+You should have a `.hero-title` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title'));
+```
 
+Your `.hero-title` selector should have a `position` property set to `absolute`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.position === 'absolute');
+```
+
+Your `.hero-title` selector should have a `top` property set to `10%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.top === '10%');
+```
+
+Your `.hero-title` selector should have a `left` property set to `15%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.left === '15%');
 ```
 
 # --seed--
@@ -138,7 +156,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

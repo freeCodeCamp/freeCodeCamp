@@ -11,10 +11,16 @@ Create an `hr` selector, and give it a `margin` property set to `1.5rem 0`.
 
 # --hints--
 
-Test 1
+You should have an `hr` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('hr'));
+```
 
+Your `hr` selector should have a `margin` property set to `1.5rem 0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('hr')?.margin === '1.5rem 0px');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

@@ -13,10 +13,10 @@ Give your `.text` selector a `column-width` property set to `25rem`.
 
 # --hints--
 
-Test 1
+Your `.text` selector should have a `column-width` property set to `25rem`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.columnWidth === '25rem');
 ```
 
 # --seed--
@@ -140,7 +140,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

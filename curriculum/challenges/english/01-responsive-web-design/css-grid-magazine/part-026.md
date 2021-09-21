@@ -11,10 +11,16 @@ Create an `h1` selector, and set the `font-family` property to `Anton` with the 
 
 # --hints--
 
-Test 1
+You should have an `h1` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('h1'));
+```
 
+Your `h1` selector should have a `font-family` property set to `Anton` with the fallback of `sans-serif`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.fontFamily === 'Anton, sans-serif');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

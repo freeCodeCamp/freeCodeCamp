@@ -11,10 +11,16 @@ Create a `.lists` selector and set the `list-style-type` property to `none`. Thi
 
 # --hints--
 
-Test 1
+You should have a `.lists` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.lists'));
+```
 
+Your `.lists` selector should have a `list-style-type` property set to `none`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.lists')?.listStyleType === 'none');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

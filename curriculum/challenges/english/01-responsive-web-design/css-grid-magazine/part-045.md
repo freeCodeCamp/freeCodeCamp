@@ -9,14 +9,20 @@ dashedName: part-45
 
 Create a `.author-name a:hover` selector and give it a `background-color` property set to `#306203`.
 
-TODO: Explain this selector.
+This will create a hover effect only for the `a` element within the `.author-name`, showing the original freeCodeCamp green in the background.
 
 # --hints--
 
-Test 1
+You should have an `.author-name a:hover` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.author-name a:hover'));
+```
 
+Your `.author-name a:hover` selector should have a `background-color` property set to `#306203`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.author-name a:hover')?.backgroundColor === 'rgb(48, 98, 3)');
 ```
 
 # --seed--
@@ -140,7 +146,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

@@ -13,10 +13,10 @@ Set the `display` property of your `.heading` selector to `grid`.
 
 # --hints--
 
-Test 1
+Your `.heading` selector should have a `display` property set to `grid`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.heading')?.display === 'grid');
 ```
 
 # --seed--
@@ -140,7 +140,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

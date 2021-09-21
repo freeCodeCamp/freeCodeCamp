@@ -15,10 +15,29 @@ Create a `.quote::after` selector and set the `content` property to `"` with a s
 
 # --hints--
 
-Test 1
+You should have a `.quote::before` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote::before'));
+```
 
+Your `.quote::before` selector should have a `content` property set to `" `.
+
+```js
+console.log(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content);
+assert(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content?.match(/\\?\"\s/));
+```
+
+You should have a `.quote::after` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote::after'));
+```
+
+Your `.quote::after` selector should have a `content` property set to ` "`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote::after')?.content?.match(/\s\\?\"/));
 ```
 
 # --seed--
@@ -142,7 +161,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

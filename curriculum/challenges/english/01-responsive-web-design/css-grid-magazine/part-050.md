@@ -13,10 +13,10 @@ You can override this with the `grid-auto-columns` property. Give the `.social-i
 
 # --hints--
 
-Test 1
+Your `.social-icons` selector should have a `grid-auto-columns` property set to `1fr`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridAutoColumns === '1fr');
 ```
 
 # --seed--
@@ -140,7 +140,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

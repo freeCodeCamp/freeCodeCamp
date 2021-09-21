@@ -15,10 +15,10 @@ For your `.social-icons` selector, set the `grid-auto-flow` property to `column`
 
 # --hints--
 
-Test 1
+Your `.social-icons` selector should have a `grid-auto-flow` property set to `column`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridAutoFlow === 'column');
 ```
 
 # --seed--
@@ -142,7 +142,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

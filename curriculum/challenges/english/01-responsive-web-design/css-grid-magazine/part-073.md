@@ -11,10 +11,16 @@ Create an `.image-1, .image-3` rule and give it a `grid-column` property set to 
 
 # --hints--
 
-Test 1
+You should have an `.image-1, .image-3` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.image-1, .image-3'));
+```
 
+Your `.image-1, .image-3` selector should have a `grid-column` property set to `1 / -1`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.image-1, .image-3')?.gridColumn === '1 / -1');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

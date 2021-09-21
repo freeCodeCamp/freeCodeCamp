@@ -13,10 +13,10 @@ Give the `.image-wrapper` selector a `place-items` property set to `center`.
 
 # --hints--
 
-Test 1
+Your `.image-wrapper` selector should have a `place-items` property set to `center`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.placeItems === 'center');
 ```
 
 # --seed--
@@ -140,7 +140,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

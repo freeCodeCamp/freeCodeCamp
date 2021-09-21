@@ -11,10 +11,16 @@ Create a `.lists li` rule to target the list items within your `.lists` element.
 
 # --hints--
 
-Test 1
+You should have a `.lists li` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.lists li'));
+```
 
+Your `.lists li` selector should have a `margin-bottom` property set to `1.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.lists li')?.marginBottom === '1.5rem');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

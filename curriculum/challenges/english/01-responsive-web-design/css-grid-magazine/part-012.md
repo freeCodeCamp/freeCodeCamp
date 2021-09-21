@@ -22,10 +22,22 @@ of repetition.
 
 # --hints--
 
-Test 1
+You should add a fourth `p` element to your `.text` element.
 
 ```js
+assert(document.querySelectorAll('.text p')?.length === 5);
+```
 
+Your new `p` element should come after your `blockquote` element.
+
+```js
+assert(document.querySelectorAll('.text p')?.[4]?.previousElementSibling?.localName === 'blockquote');
+```
+
+Your new `p` element should have the provided text.
+
+```js
+assert(document.querySelectorAll('.text p')?.[4]?.innerText === 'No more walls of explanatory text. No more walls of tests. Just one test at a time, as you build up a working project. Over the course of passing thousands of tests, you build up projects and your own understanding of coding fundamentals. There is no transition between lessons and projects, because the lessons themselves are baked into projects. And there\'s plenty of repetition to help you retain everything because - hey - building projects in real life has plenty of repetition.');
 ```
 
 # --seed--

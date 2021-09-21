@@ -15,10 +15,94 @@ Below that, add a second `p` element with the class `publish-date` and the text 
 
 # --hints--
 
-Test 1
+You should create a new `div` element.
 
 ```js
+assert.exists(document.querySelector('div'));
+```
 
+Your `div` element should come after your `header` element.
+
+```js
+assert(document.querySelector('div')?.previousElementSibling?.localName === 'header');
+```
+
+Your `div` element should have the `class` set to `author`.
+
+```js
+assert(document.querySelector('div')?.className === 'author');
+```
+
+You should create two new `p` element.
+
+```js
+assert(document.querySelectorAll('p')?.length === 3);
+```
+
+Your two new `p` elements should be within your `div` element.
+
+```js
+assert.exists(document.querySelector('div')?.querySelectorAll('p')?.length === 2);
+```
+
+Your first new `p` element should have a `class` set to `author-name`.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.className === 'author-name');
+```
+
+Your first new `p` element should have the text `By freeCodeCamp`.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.textContent === 'By freeCodeCamp');
+```
+
+Your second new `p` element should have a `class` set to `publish-date`.
+
+```js
+assert(document.querySelector('div')?.querySelectorAll('p')?.[1].className === 'publish-date');
+```
+
+Your second new `p` element should have the text `March 7, 2019`.
+
+```js
+assert(document.querySelector('div')?.querySelectorAll('p')?.[1].textContent === 'March 7, 2019');
+```
+
+You should create a new `a` element.
+
+```js
+assert.exists(document.querySelector('a'));
+```
+
+Your `a` element should be within your first new `p` element.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.localName === 'a');
+```
+
+Your `a` element should have the `href` set to `https://freecodecamp.org`.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('href') === 'https://freecodecamp.org');
+```
+
+Your `a` element should have the `target` set to `_blank`.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('target') === '_blank');
+```
+
+Your `a` element should have the `rel` set to `noreferrer`.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('rel') === 'noreferrer');
+```
+
+Your `a` element should surround the text `freeCodeCamp`.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.textContent === 'freeCodeCamp');
 ```
 
 # --seed--

@@ -11,10 +11,16 @@ Give the `.text` selector a `font-size` property set to `1.8rem` and a `letter-s
 
 # --hints--
 
-Test 1
+Your `.text` selector should have a `font-size` property set to `1.8rem`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.fontSize === '1.8rem');
+```
 
+Your `.text` selector should have a `letter-spacing` property set to `0.6px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.letterSpacing === '0.6px');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

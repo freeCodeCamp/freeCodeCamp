@@ -13,10 +13,49 @@ Give the `.quote` element the text `The entire curriculum should be a series of 
 
 # --hints--
 
-Test 1
+You should create a new `blockquote` element within your `.text` element.
 
 ```js
+assert.exists(document.querySelector('.text blockquote'));
+```
 
+Your `blockquote` element should come after your three `p` elements.
+
+```js
+assert(document.querySelector('.text')?.children?.[3]?.localName === 'blockquote');
+```
+
+Your `blockquote` element should have two `hr` elements.
+
+```js
+assert(document.querySelectorAll('.text blockquote hr')?.length === 2);
+```
+
+Your `blockquote` element should have a `p` element.
+
+```js
+assert.exists(document.querySelector('.text blockquote p'));
+```
+
+Your `blockquote` children should be in the correct order.
+
+```js
+const children = document.querySelector('.text blockquote')?.children;
+assert(children?.[0]?.localName === 'hr');
+assert(children?.[1]?.localName === 'p');
+assert(children?.[2]?.localName === 'hr');
+```
+
+Your new `p` element should have the `class` set to `quote`.
+
+```js
+assert(document.querySelector('.text blockquote p')?.className === 'quote');
+```
+
+Your new `p` element should have the text `The entire curriculum should be a series of projects`.
+
+```js
+assert(document.querySelector('.text blockquote p')?.innerText === 'The entire curriculum should be a series of projects');
 ```
 
 # --seed--

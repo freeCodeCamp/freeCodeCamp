@@ -13,10 +13,22 @@ Create a `.first-paragraph::first-letter` selector and set the `font-size` prope
 
 # --hints--
 
-Test 1
+You should have a `.first-paragraph::first-letter` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter'));
+```
 
+Your `.first-paragraph::first-letter` selector should have a `font-size` property set to `6rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.fontSize === '6rem');
+```
+
+Your `.first-paragraph::first-letter` selector should have a `color` property set to `orangered`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.color === 'orangered');
 ```
 
 # --seed--
@@ -140,7 +152,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

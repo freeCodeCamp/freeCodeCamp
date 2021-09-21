@@ -11,10 +11,22 @@ Create an `a` selector, and give it a `text-decoration` property set to `none` a
 
 # --hints--
 
-Test 1
+You should have an `a` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('a'));
+```
 
+Your `a` selector should have a `text-decoration` property set to `none`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('a')?.textDecoration === 'none');
+```
+
+Your `a` selector should have a `color` property set to `linen`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('a')?.color === 'linen');
 ```
 
 # --seed--
@@ -138,7 +150,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

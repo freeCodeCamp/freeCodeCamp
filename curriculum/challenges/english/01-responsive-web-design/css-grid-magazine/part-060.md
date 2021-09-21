@@ -11,10 +11,10 @@ To make the quote text stand out more, give the `.quote` selector a `font-family
 
 # --hints--
 
-Test 1
+Your `.quote` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.fontFamily === 'Raleway, sans-serif');
 ```
 
 # --seed--
@@ -138,7 +138,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

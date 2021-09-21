@@ -7,14 +7,20 @@ dashedName: part-56
 
 # --description--
 
-The letter has been shifted out of place. Move it into position by giving the `.first-paragraph::first-letter` selector a `float` property set to `left` and a `margin-right` property set to `1rem`.
+The other text has been shifted out of place. Move it into position by giving the `.first-paragraph::first-letter` selector a `float` property set to `left` and a `margin-right` property set to `1rem`.
 
 # --hints--
 
-Test 1
+Your `.first-paragraph::first-letter` selector should have a `float` property set to `left`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.float === 'left');
+```
 
+Your `.first-paragraph::first-letter` selector should have a `margin-right` property set to `1rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.marginRight === '1rem');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

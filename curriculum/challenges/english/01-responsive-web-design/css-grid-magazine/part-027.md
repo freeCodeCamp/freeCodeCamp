@@ -11,10 +11,16 @@ Create an `h2, h3, h4, h5, h6` selector. Give it a `font-family` property set to
 
 # --hints--
 
-Test 1
+You should have an `h2, h3, h4, h5, h6` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('h2, h3, h4, h5, h6'));
+```
 
+Your `h2, h3, h4, h5, h6` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h2, h3, h4, h5, h6')?.fontFamily === 'Raleway, sans-serif');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

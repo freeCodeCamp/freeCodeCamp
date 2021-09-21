@@ -7,16 +7,28 @@ dashedName: part-77
 
 # --description--
 
-Create one final `@media` query for a `max-width` of `420px`. Within, create a `.hero-title` selector with a `font-size` property set to `4.5rem`.
+Create one final `@media` query for `only screen` with a `max-width` of `420px`. Within, create a `.hero-title` selector with a `font-size` property set to `4.5rem`.
 
 Congratulations! Your magazine is now complete.
 
 # --hints--
 
-Test 1
+You should have a new `@media` query for `only screen and (max-width: 420px)`. This should be the last query in the `@media` query list.
 
 ```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.media?.mediaText === 'only screen and (max-width: 420px)');
+```
 
+Your new `@media` query should have a `.hero-title` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.cssRules?.[0]?.selectorText === '.hero-title');
+```
+
+Your `.hero-title` selector should have a `font-size` property set to `4.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.cssRules?.[0]?.style?.fontSize === '4.5rem');
 ```
 
 # --seed--
@@ -140,7 +152,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">
@@ -382,7 +394,7 @@ hr {
   grid-column: 1 / -1;
 }
 
-@media only screen and(max-width: 720px) {
+@media only screen and (max-width: 720px) {
   .image-wrapper {
     grid-template-columns: 1fr;
   }

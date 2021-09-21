@@ -11,10 +11,16 @@ Create a `.publish-date` selector and give it a `color` property of `rgba(255, 2
 
 # --hints--
 
-Test 1
+You should have a `.publish-date` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.publish-date'));
+```
 
+Your `.publish-date` selector should have a `color` property set to `rgba(255, 255, 255, 0.5)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.publish-date')?.color === 'rgba(255, 255, 255, 0.5)');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

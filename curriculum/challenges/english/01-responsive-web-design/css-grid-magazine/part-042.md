@@ -11,10 +11,16 @@ The title is still not quite right. Give the `.hero-title` selector a `color` pr
 
 # --hints--
 
-Test 1
+Your `.hero-title` selector should have a `color` property set to `orangered`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.color === 'orangered');
+```
 
+Your `.hero-title` selector should have a `font-size` property set to `8rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.fontSize === '8rem');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">
