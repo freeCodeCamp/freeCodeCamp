@@ -7,9 +7,9 @@ dashedName: part-20
 
 # --description--
 
-The `animation-iteration-count` property sets how many times your animation should repeat. This can be set to a number, or to `infinite` to indefinitely repeat the animation. Your ferris wheel should never stop, so set the `.wheel` selector to have an `animation-iteration-count` of `infinite`.
+The `animation-iteration-count` property sets how many times your animation should repeat. This can be set to a number, or to `infinite` to indefinitely repeat the animation. Your Ferris wheel should never stop, so set the `.wheel` selector to have an `animation-iteration-count` of `infinite`.
 
-The `animation-timing-function` property sets how the animation should progress over time. There are a few different values for this property, but you want the ferris wheel animation to run at the same rate from start to finish. Set the `animation-timing-function` to `linear` in your `.wheel` selector.
+The `animation-timing-function` property sets how the animation should progress over time. There are a few different values for this property, but you want the Ferris wheel animation to run at the same rate from start to finish. Set the `animation-timing-function` to `linear` in your `.wheel` selector.
 
 # --hints--
 
