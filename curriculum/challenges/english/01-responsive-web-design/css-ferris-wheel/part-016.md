@@ -9,6 +9,16 @@ dashedName: part-16
 
 You now need to define how your animation should start. To do this, create a `0%` rule within your `@keyframes wheel` rule. The properties you set in this nested selector will apply at the beginning of your animation.
 
+As an example, this would be a `12%` rule:
+
+```css
+@keyframes freecodecamp {
+  12% {
+    color: green;
+  }
+}
+```
+
 # --hints--
 
 Your `@keyframes wheel` rule should have a `0%` selector.

@@ -7,7 +7,7 @@ dashedName: part-21
 
 # --description--
 
-Create another `@keyframes` rule with the name `cabins`. Use the same properties as your `@keyframes wheel`, but set the `transform` property of the `100%` selector to `rotate(-360deg)`.
+Create another `@keyframes` rule with the name `cabins`. Use the same properties as your `@keyframes wheel`, copying both the `0%` and `100%` rules, but set the `transform` property of the `100%` selector to `rotate(-360deg)`.
 
 # --hints--
 
