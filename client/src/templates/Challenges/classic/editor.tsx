@@ -438,18 +438,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   ) => {
     const editor = data.editor;
     if (!editor) return;
-    // TODO: is there any point creating this here? I know it's cached, but
-    // would it not be better just sourced from the overlayWidget?
     const domNode = createDescription(editor);
 
     // make sure the overlayWidget has resized before using it to set the height
 
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
-    // TODO: set via onComputedHeight?
     data.descriptionZoneHeight = domNode.offsetHeight;
-
-    const background = document.createElement('div');
 
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
@@ -457,7 +452,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const viewZone = {
       afterLineNumber: getLineAfterDescriptionZone() - 1,
       heightInPx: domNode.offsetHeight,
-      domNode: background,
+      domNode: document.createElement('div'),
       onComputedHeight: () =>
         data.descriptionWidget &&
         editor.layoutOverlayWidget(data.descriptionWidget)
@@ -466,24 +461,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     data.descriptionZoneId = changeAccessor.addZone(viewZone);
   };
 
-  // TODO: this is basically the same as descriptionZoneCallback, so DRY them out.
   const outputZoneCallback = (
     changeAccessor: editor.IViewZoneChangeAccessor
   ) => {
     const editor = data.editor;
     if (!editor) return;
-    // TODO: is there any point creating this here? I know it's cached, but
-    // would it not be better just sourced from the overlayWidget?
     const outputNode = createOutputNode(editor);
 
     // make sure the overlayWidget has resized before using it to set the height
 
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
-    // TODO: set via onComputedHeight?
     data.outputZoneHeight = outputNode.offsetHeight;
-
-    const background = document.createElement('div');
 
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
@@ -491,7 +480,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const viewZone = {
       afterLineNumber: getLineAfterEditableRegion() - 1,
       heightInPx: outputNode.offsetHeight,
-      domNode: background,
+      domNode: document.createElement('div'),
       onComputedHeight: () =>
         data.outputWidget && editor.layoutOverlayWidget(data.outputWidget)
     };
