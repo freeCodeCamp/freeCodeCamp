@@ -15,9 +15,6 @@ Aquí hay un ejemplo de como cambiar el ancho de una imagen al pasar sobre ella:
 
 ```html
 <style>
-  img {
-    width: 30px;
-  }
   img:hover {
     animation-name: width;
     animation-duration: 500ms;
