@@ -7,7 +7,7 @@ dashedName: part-21
 
 # --description--
 
-After the unordered list, add a new image with an `src` attribute value set to `https://freecodecamp.s3.amazonaws.com/lasagna.jpg` and an `alt` attribute value set to `A slice of lasagna on a plate.`
+After the unordered list, add a new image with an `src` attribute value set to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg` and an `alt` attribute value set to `A slice of lasagna on a plate.`
 
 # --hints--
 
@@ -40,12 +40,12 @@ The new image does not have an `src` attribute. Check that there is a space afte
 assert($('section')[1].lastElementChild.hasAttribute('src'));
 ```
 
-The new image should have an `src` value of `https://freecodecamp.s3.amazonaws.com/lasagna.jpg`. Make sure the `src` attribute's value is surrounded with quotation marks.
+The new image should have an `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg`. Make sure the `src` attribute's value is surrounded with quotation marks.
 
 ```js
 assert(
   $('section')[1].lastElementChild.getAttribute('src') ===
-    'https://freecodecamp.s3.amazonaws.com/lasagna.jpg'
+    'https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg'
 );
 ```
 
@@ -68,7 +68,7 @@ assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/freecodecamp\.s3\.amazonaws\.com\/lasa
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
-        <a href="https://freecatphotoapp.com"><img src="https://freecodecamp.s3.amazonaws.com/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+        <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
       <section>
         <h2>Cat Lists</h2>

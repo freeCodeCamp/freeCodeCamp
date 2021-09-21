@@ -7,7 +7,7 @@ dashedName: part-28
 
 # --description--
 
-Inside the `figure` element you just added, nest an `img` element with a `src` attribute set to `https://freecodecamp.s3.amazonaws.com/cats.jpg`.
+Inside the `figure` element you just added, nest an `img` element with a `src` attribute set to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
 
 # --hints--
 
@@ -35,17 +35,17 @@ You should have a third `img` element nested in the `figure` element.
 const catsImg = document.querySelectorAll('figure > img')[1];
 assert(
   catsImg &&
-    catsImg.getAttribute('src').toLowerCase() === 'https://freecodecamp.s3.amazonaws.com/cats.jpg'
+    catsImg.getAttribute('src').toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
 );
 ```
 
-The third image should have an `src` attribute set to `https://freecodecamp.s3.amazonaws.com/cats.jpg`.
+The third image should have an `src` attribute set to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
 assert(
   catsImg &&
-    catsImg.getAttribute('src').toLowerCase() === 'https://freecodecamp.s3.amazonaws.com/cats.jpg'
+    catsImg.getAttribute('src').toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
 );
 ```
 
@@ -68,7 +68,7 @@ assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/freecodecamp\.s3\.amazonaws\.com\/cats
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
-        <a href="https://freecatphotoapp.com"><img src="https://freecodecamp.s3.amazonaws.com/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+        <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
       <section>
         <h2>Cat Lists</h2>
@@ -79,7 +79,7 @@ assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/freecodecamp\.s3\.amazonaws\.com\/cats
           <li>lasagna</li>
         </ul>
         <figure>
-          <img src="https://freecodecamp.s3.amazonaws.com/lasagna.jpg" alt="A slice of lasagna on a plate.">
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
           <figcaption>Cats <em>love</em> lasagna.</figcaption>  
         </figure>
         <h3>Top 3 things cats hate:</h3>
