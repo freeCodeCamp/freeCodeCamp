@@ -25,6 +25,10 @@ body {
   min-height: 100%;
 }
 
+.codeally-frame {
+  height: calc(100vh - var(--header-height, 125px));
+}
+
 .btn-cta-big {
   max-height: 100%;
   font-size: 1.5rem;
@@ -409,10 +413,6 @@ hr {
 
 .panel-default {
   background: var(--secondary-background);
-}
-
-.codeally-frame {
-  margin-top: calc(-1 * var(--header-height));
 }
 
 .btn-primary:active,
