@@ -34,7 +34,7 @@ assert(document.querySelector('img').src === 'https://cdn.freecodecamp.org/curri
 Although you have set the `img` element's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
 
 ```js
-assert(!/\<img\s+src\s*=\s*https:\/\/freecodecamp\.s3\.amazonaws\.\/relaxing-cat\.jpg/.test(code));
+assert(!/\<img\s+src\s*=\s*https:\/\/cdn\.freecodecamp\.org\/curriculum\/cat-photo-app\/relaxing-cat\.jpg/.test(code));
 ```
 
 # --seed--
