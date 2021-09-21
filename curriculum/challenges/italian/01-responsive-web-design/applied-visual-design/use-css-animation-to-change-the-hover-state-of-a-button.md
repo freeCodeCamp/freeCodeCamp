@@ -15,6 +15,9 @@ Ecco un esempio di cambiamento della larghezza di un'immagine quando ci si passa
 
 ```html
 <style>
+  img {
+    width: 30px;
+  }
   img:hover {
     animation-name: width;
     animation-duration: 500ms;
