@@ -74,16 +74,16 @@ interface EditorProps {
 interface EditorProperties {
   editor?: editor.IStandaloneCodeEditor;
   model?: editor.ITextModel;
-  viewZoneId: string;
+  descriptionZoneId: string;
   startEditDecId: string;
   endEditDecId: string;
   insideEditDecId: string;
-  viewZoneHeight: number;
+  descriptionZoneHeight: number;
   outputZoneHeight: number;
   outputZoneId: string;
   descriptionNode?: HTMLDivElement;
   outputNode?: HTMLDivElement;
-  overlayWidget?: editor.IOverlayWidget;
+  descriptionWidget?: editor.IOverlayWidget;
   outputWidget?: editor.IOverlayWidget;
 }
 
@@ -174,11 +174,11 @@ const toLastLine = (range: RangeType) => {
 
 // TODO: properly initialise data with values not null
 const initialData: EditorProperties = {
-  viewZoneId: '',
+  descriptionZoneId: '',
   startEditDecId: '',
   endEditDecId: '',
   insideEditDecId: '',
-  viewZoneHeight: 0,
+  descriptionZoneHeight: 0,
   outputZoneId: '',
   outputZoneHeight: 0
 };
@@ -398,42 +398,44 @@ const Editor = (props: EditorProps): JSX.Element => {
         };
       };
 
-      const domNode = createDescription(editor);
+      const descriptionNode = createDescription(editor);
 
       const outputNode = createOutputNode(editor);
 
-      const overlayWidget = createWidget(
-        'my.overlay.widget',
-        domNode,
-        getViewZoneTop
+      const descriptionWidget = createWidget(
+        'description.widget',
+        descriptionNode,
+        getDescriptionZoneTop
       );
-      data.overlayWidget = overlayWidget;
+      data.descriptionWidget = descriptionWidget;
       const outputWidget = createWidget(
-        'my.output.widget',
+        'output.widget',
         outputNode,
         getOutputZoneTop
       );
       data.outputWidget = outputWidget;
 
-      editor.addOverlayWidget(overlayWidget);
+      editor.addOverlayWidget(descriptionWidget);
 
       // TODO: order of insertion into the DOM probably matters, revisit once
       // the tabs have been fixed!
 
       editor.addOverlayWidget(outputWidget);
 
-      editor.changeViewZones(viewZoneCallback);
+      editor.changeViewZones(descriptionZoneCallback);
       editor.changeViewZones(outputZoneCallback);
 
       editor.onDidScrollChange(() => {
-        editor.layoutOverlayWidget(overlayWidget);
+        editor.layoutOverlayWidget(descriptionWidget);
         editor.layoutOverlayWidget(outputWidget);
       });
       showEditableRegion(editableBoundaries);
     }
   };
 
-  const viewZoneCallback = (changeAccessor: editor.IViewZoneChangeAccessor) => {
+  const descriptionZoneCallback = (
+    changeAccessor: editor.IViewZoneChangeAccessor
+  ) => {
     const editor = data.editor;
     if (!editor) return;
     // TODO: is there any point creating this here? I know it's cached, but
@@ -445,7 +447,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
     // TODO: set via onComputedHeight?
-    data.viewZoneHeight = domNode.offsetHeight;
+    data.descriptionZoneHeight = domNode.offsetHeight;
 
     const background = document.createElement('div');
 
@@ -453,17 +455,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
-      afterLineNumber: getLineAfterViewZone() - 1,
+      afterLineNumber: getLineAfterDescriptionZone() - 1,
       heightInPx: domNode.offsetHeight,
       domNode: background,
       onComputedHeight: () =>
-        data.overlayWidget && editor.layoutOverlayWidget(data.overlayWidget)
+        data.descriptionWidget &&
+        editor.layoutOverlayWidget(data.descriptionWidget)
     };
 
-    data.viewZoneId = changeAccessor.addZone(viewZone);
+    data.descriptionZoneId = changeAccessor.addZone(viewZone);
   };
 
-  // TODO: this is basically the same as viewZoneCallback, so DRY them out.
+  // TODO: this is basically the same as descriptionZoneCallback, so DRY them out.
   const outputZoneCallback = (
     changeAccessor: editor.IViewZoneChangeAccessor
   ) => {
@@ -522,7 +525,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
-    domNode.style.top = getViewZoneTop();
+    domNode.style.top = getDescriptionZoneTop();
     data.descriptionNode = domNode;
     return domNode;
   }
@@ -663,14 +666,14 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   // NOTE: this is where the view zone *should* be, not necessarily were it
-  // currently is. (see getLineAfterViewZone)
+  // currently is. (see getLineAfterDescriptionZone)
   // TODO: DRY this and getOutputZoneTop out.
-  function getViewZoneTop() {
+  function getDescriptionZoneTop() {
     const editor = data.editor;
-    const heightDelta = data.viewZoneHeight;
+    const heightDelta = data.descriptionZoneHeight;
     if (editor) {
       const top = `${
-        editor.getTopForLineNumber(getLineAfterViewZone()) -
+        editor.getTopForLineNumber(getLineAfterDescriptionZone()) -
         heightDelta -
         editor.getScrollTop()
       }px`;
@@ -696,7 +699,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // It's not possible to directly access the current view zone so we track
   // the region it should cover instead.
-  function getLineAfterViewZone() {
+  function getLineAfterDescriptionZone() {
     const range = data.model?.getDecorationRange(data.startEditDecId);
     // if the first decoration is missing, this implies the region reaches the
     // start of the editor.
@@ -879,7 +882,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       if (e.isUndoing) {
         // TODO: can we be more targeted? Only update when they could get out of
         // sync
-        updateViewZone();
+        updateDescriptionZone();
         updateOutputZone();
         return;
       }
@@ -908,7 +911,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       // have changed if a line has been added or removed
       const handleDescriptionZoneChange = () => {
         if (newLineRanges.length > 0 || deletedLine > 0) {
-          updateViewZone();
+          updateDescriptionZone();
         }
       };
 
@@ -1103,7 +1106,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const editor = data.editor;
     editor?.layout();
     if (data.startEditDecId) {
-      updateViewZone();
+      updateDescriptionZone();
       updateOutputZone();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1118,11 +1121,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
   }
 
-  function updateViewZone() {
+  function updateDescriptionZone() {
     const editor = data.editor;
     editor?.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(data.viewZoneId);
-      viewZoneCallback(changeAccessor);
+      changeAccessor.removeZone(data.descriptionZoneId);
+      descriptionZoneCallback(changeAccessor);
     });
   }
 
