@@ -26,7 +26,7 @@ body {
 }
 
 .codeally-frame {
-  height: calc(100vh - var(--header-height, 125px));
+  height: calc(100vh - var(--header-height, 0px));
 }
 
 .btn-cta-big {
