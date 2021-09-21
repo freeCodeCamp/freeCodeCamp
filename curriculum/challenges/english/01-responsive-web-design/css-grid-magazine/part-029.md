@@ -13,10 +13,16 @@ Begin by creating a `main` selector and giving it a `display` property set to `g
 
 # --hints--
 
-Test 1
+You should have a `main` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('main'));
+```
 
+Your `main` selector should have a `display` property set to `grid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('main')?.display === 'grid');
 ```
 
 # --seed--
@@ -140,7 +146,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

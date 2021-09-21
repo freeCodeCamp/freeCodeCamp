@@ -15,10 +15,10 @@ Give your `.heading` element a `grid-template-columns` property set to `repeat(2
 
 # --hints--
 
-Test 1
+Your `.heading` selector should have a `grid-template-columns` property set to `repeat(2, 1fr)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.heading')?.gridTemplateColumns === 'repeat(2, 1fr)');
 ```
 
 # --seed--
@@ -142,7 +142,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

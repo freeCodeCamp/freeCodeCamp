@@ -20,10 +20,40 @@ only changing the optional coding challenges.
 
 # --hints--
 
-Test 1
+You should create a new `section` element.
 
 ```js
+assert(document.querySelectorAll('section')?.length === 2);
+```
 
+Your new `section` element should come after your `.heading` element.
+
+```js
+assert(document.querySelectorAll('section')?.[1]?.previousElementSibling?.className === 'heading');
+```
+
+Your new `section` element should have the `class` set to `text`.
+
+```js
+assert(document.querySelectorAll('section')?.[1]?.className === 'text');
+```
+
+You should create a new `p` element within your `text` element.
+
+```js
+assert(document.querySelector('.text')?.querySelectorAll('p')?.length === 1);
+```
+
+Your new `p` element should have the `class` set to `first-paragraph`.
+
+```js
+assert(document.querySelector('.text p')?.className === 'first-paragraph');
+```
+
+Your new `p` element should have the provided text.
+
+```js
+assert(document.querySelector('.first-paragraph')?.innerText === 'Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you\'ll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.');
 ```
 
 # --seed--

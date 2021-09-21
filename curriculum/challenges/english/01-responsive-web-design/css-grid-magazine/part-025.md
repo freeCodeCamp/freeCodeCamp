@@ -7,14 +7,32 @@ dashedName: part-25
 
 # --description--
 
-Create a `body` selector. Set the `font-family` property to `Baskerville`, with a fallback of `serif`. Set the `color` property to `linen` and the `background-color` property to `rgb(20, 30, 40)`.
+Create a `body` selector. Set the `font-family` property to `Baskervville`, with a fallback of `serif`. Set the `color` property to `linen` and the `background-color` property to `rgb(20, 30, 40)`.
 
 # --hints--
 
-Test 1
+You should have a `body` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('body'));
+```
 
+Your `body` selector should have a `font-family` property set to `Baskerville`, with a fallback of `serif`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily === 'Baskervville, serif');
+```
+
+Your `body` selector should have a `color` property set to `linen`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.color === 'linen');
+```
+
+Your `body` selector should have a `background-color` property set to `rgb(20, 30, 40)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor === 'rgb(20, 30, 40)');
 ```
 
 # --seed--
@@ -138,7 +156,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

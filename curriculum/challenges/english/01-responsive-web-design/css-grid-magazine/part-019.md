@@ -11,10 +11,40 @@ Within the `.image-wrapper` element, give your first `img` element a `src` of `h
 
 # --hints--
 
-Test 1
+Your first `img` element should have a `src` attribute set to `https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png`.
 
 ```js
+assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('src') === 'https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png');
+```
 
+Your first `img` element should have an `alt` attribute set to `image of the quote machine project`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('alt') === 'image of the quote machine project');
+```
+
+Your first `img` element should have a `class` attribute set to `image-1`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[0]?.classList?.contains('image-1'));
+```
+
+Your first `img` element should have a `loading` attribute set to `lazy`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('loading') === 'lazy');
+```
+
+Your first `img` element should have a `width` attribute set to `600`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('width') === '600');
+```
+
+Your first `img` element should have a `height` attribute set to `400`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('height') === '400');
 ```
 
 # --seed--
@@ -138,7 +168,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

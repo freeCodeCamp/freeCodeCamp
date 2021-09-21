@@ -11,10 +11,22 @@ To start your CSS, normalize the CSS rules by targeting all elements with `*`, i
 
 # --hints--
 
-Test 1
+You should have a `*, ::before, ::after` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after'));
+```
 
+Your `*, ::before, ::after` selector should have a `padding` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after')?.padding === '0px');
+```
+
+Your `*, ::before, ::after` selector should have a `margin` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after')?.margin === '0px');
 ```
 
 # --seed--
@@ -138,7 +150,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

@@ -11,10 +11,22 @@ Create an `.author` selector and give it a `font-size` property set to `2rem` an
 
 # --hints--
 
-Test 1
+You should have an `.author` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.author'));
+```
 
+Your `.author` selector should have a `font-size` property set to `2rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontSize === '2rem');
+```
+
+Your `.author` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontFamily === 'Raleway, sans-serif');
 ```
 
 # --seed--
@@ -138,7 +150,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

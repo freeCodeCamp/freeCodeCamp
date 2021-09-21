@@ -11,10 +11,10 @@ Give your `.heading` selector a `row-gap` property set to `1.5rem`.
 
 # --hints--
 
-Test 1
+Your `.heading` selector should have a `row-gap` property set to `1.5rem`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.heading')?.rowGap === '1.5rem');
 ```
 
 # --seed--
@@ -138,7 +138,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

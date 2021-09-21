@@ -11,10 +11,10 @@ To give the `hr` a color, you need to adjust the `border` property. Give the `hr
 
 # --hints--
 
-Test 1
+Your `hr` should have a `border` property set to `1px solid rgba(120, 120, 120, 0.6)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('hr')?.border === '1px solid rgba(120, 120, 120, 0.6)');
 ```
 
 # --seed--
@@ -138,7 +138,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

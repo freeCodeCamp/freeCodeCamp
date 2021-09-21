@@ -13,10 +13,10 @@ Give the `.image-wrapper` selector a `gap` property set to `2rem`.
 
 # --hints--
 
-Test 1
+Your `.image-wrapper` element should have a `gap` property set to `2rem`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gap === '2rem');
 ```
 
 # --seed--
@@ -140,7 +140,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

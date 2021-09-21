@@ -7,14 +7,28 @@ dashedName: part-75
 
 # --description--
 
-Create another `@media` query for a `max-width` of `600px`. Within, create a `.text-with-images` rule and give it a `grid-template-columns` property of `1fr`.
+Create another `@media` query for `only screen` with a `max-width` of `600px`. Within, create a `.text-with-images` rule and give it a `grid-template-columns` property of `1fr`.
+
+This will collapse your bottom text area into a single column on smaller screens.
 
 # --hints--
 
-Test 1
+You should create a new `@media` query for `only screen and (max-width: 600px)`. This should be below your previous `@media` query.
 
 ```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.media?.mediaText === 'only screen and (max-width: 600px)');
+```
 
+Your new `@media` query should have a `.text-with-images` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.cssRules?.[0]?.selectorText === '.text-with-images');
+```
+
+Your new `.text-with-images` selector should have a `grid-template-columns` property with a value of `1fr`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.cssRules?.[0]?.style?.gridTemplateColumns === '1fr');
 ```
 
 # --seed--
@@ -138,7 +152,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">
@@ -380,7 +394,7 @@ hr {
   grid-column: 1 / -1;
 }
 
-@media only screen and(max-width: 720px) {
+@media only screen and (max-width: 720px) {
   .image-wrapper {
     grid-template-columns: 1fr;
   }

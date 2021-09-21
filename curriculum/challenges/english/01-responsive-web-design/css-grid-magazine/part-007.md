@@ -17,10 +17,54 @@ Within each of your new `a` elements, add an `i` element and give them the follo
 
 # --hints--
 
-Test 1
+You should have five `i` elements.
 
 ```js
+assert(document.querySelectorAll('i')?.length === 5);
+```
 
+Each `a` element should only have one `i` element.
+
+```js
+const aaaaa = [...document.querySelectorAll('.social-icons a')];
+assert(aaaaa?.every(a => a?.children?.length === 1 && a?.children?.[0]?.localName === 'i'));
+```
+
+Each `i` element should have a `class` attribute which includes `fab`.
+
+```js
+const iiiii = [...document.querySelectorAll('i')];
+assert(iiiii?.every(i => i?.classList?.contains('fab')));
+```
+
+The first `i` element should have a `class` attribute which includes `fa-facebook-f`.
+
+```js
+assert(document.querySelectorAll('i')?.[0]?.classList?.contains('fa-facebook-f'));
+```
+
+The second `i` element should have a `class` attribute which includes `fa-twitter`.
+
+```js
+assert(document.querySelectorAll('i')?.[1]?.classList?.contains('fa-twitter'));
+```
+
+The third `i` element should have a `class` attribute which includes `fa-instagram`.
+
+```js
+assert(document.querySelectorAll('i')?.[2]?.classList?.contains('fa-instagram'));
+```
+
+The fourth `i` element should have a `class` attribute which includes `fa-linkedin-in`.
+
+```js
+assert(document.querySelectorAll('i')?.[3]?.classList?.contains('fa-linkedin-in'));
+```
+
+The fifth `i` element should have a `class` attribute which includes `fa-youtube`.
+
+```js
+assert(document.querySelectorAll('i')?.[4]?.classList?.contains('fa-youtube'));
 ```
 
 # --seed--

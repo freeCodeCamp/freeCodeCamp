@@ -13,10 +13,22 @@ The `object-fit` property tells the browser how to position the element within i
 
 # --hints--
 
-Test 1
+You should have an `img` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('img'));
+```
 
+Your `img` selector should have a `width` property set to `100%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('img')?.width === '100%');
+```
+
+Your `img` selector should have an `object-fit` property set to `cover`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('img')?.objectFit === 'cover');
 ```
 
 # --seed--
@@ -140,7 +152,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

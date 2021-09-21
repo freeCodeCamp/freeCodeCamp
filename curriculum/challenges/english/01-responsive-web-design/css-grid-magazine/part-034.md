@@ -7,14 +7,20 @@ dashedName: part-34
 
 # --description--
 
-Create a `.text` selector and give it a `grid-columns` property set to `2 / 3`.
+Create a `.text` selector and give it a `grid-column` property set to `2 / 3`.
 
 # --hints--
 
-Test 1
+You should have a `.text` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.text'));
+```
 
+Your `.text` selector should have a `grid-column` property set to `2 / 3`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.gridColumn === '2 / 3');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

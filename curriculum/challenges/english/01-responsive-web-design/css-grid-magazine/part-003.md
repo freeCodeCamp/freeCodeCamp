@@ -11,10 +11,34 @@ Within your `body`, create a `main` element. Then in that element, create a `sec
 
 # --hints--
 
-Test 1
+You should have a `main` element.
 
 ```js
+assert.exists(document.querySelector('main'));
+```
 
+Your `main` element should be within your `body` element.
+
+```js
+assert(document.querySelector('main')?.parentElement?.localName === 'body');
+```
+
+You should have a `section` element.
+
+```js
+assert.exists(document.querySelector('section'));
+```
+
+Your `section` element should be within your `main` element.
+
+```js
+assert(document.querySelector('section')?.parentElement?.localName === 'main');
+```
+
+Your `section` element should have the `class` set to `heading`.
+
+```js
+assert(document.querySelector('section')?.classList?.contains('heading'));
 ```
 
 # --seed--

@@ -11,10 +11,28 @@ Create a `.quote` selector. Give it a `color` property set to `#00beef`, a `font
 
 # --hints--
 
-Test 1
+You should have a `.quote` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote'));
+```
 
+Your `.quote` selector should have a `color` property set to `#00beef`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.color === 'rgb(0, 190, 239)');
+```
+
+Your `.quote` selector should have a `font-size` property set to `2.4rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.fontSize === '2.4rem');
+```
+
+Your `.quote` selector should have a `text-align` property set to `center`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.textAlign === 'center');
 ```
 
 # --seed--
@@ -138,7 +156,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

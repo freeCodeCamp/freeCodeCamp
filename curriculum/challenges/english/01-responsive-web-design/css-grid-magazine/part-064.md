@@ -11,10 +11,10 @@ Give the `.text-with-images` selector a `margin-bottom` property set to `3rem`.
 
 # --hints--
 
-Test 1
+Your `.text-with-images` selector should have a `margin-bottom` property set to `3rem`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.marginBottom === '3rem');
 ```
 
 # --seed--
@@ -138,7 +138,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

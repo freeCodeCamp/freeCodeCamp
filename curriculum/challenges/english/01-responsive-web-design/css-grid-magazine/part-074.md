@@ -9,16 +9,28 @@ dashedName: part-74
 
 Now that the magazine layout is finished, you need to make it responsive.
 
-Start with a `@media` query with a `max-width` of `720px`. Inside, create an `.image-wrapper` selector and give it a `grid-template-columns` property of `1fr`.
+Start with a `@media` query for `only screen` with a `max-width` of `720px`. Inside, create an `.image-wrapper` selector and give it a `grid-template-columns` property of `1fr`.
 
-TODO: Explain why
+This will collapse the three images into one column on smaller screens.
 
 # --hints--
 
-Test 1
+You should have a new `@media` rule for `only screen and (max-width: 720px)`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === 'only screen and (max-width: 720px)');
+```
 
+Your new `@media` rule should have an `.image-wrapper` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.cssRules?.[0]?.selectorText === '.image-wrapper');
+```
+
+Your new `.image-wrapper` selector should have a `grid-template-columns` property of `1fr`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.cssRules?.[0]?.style?.gridTemplateColumns === '1fr');
 ```
 
 # --seed--
@@ -142,7 +154,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

@@ -15,10 +15,22 @@ Also set the `box-sizing` property to `border-box`.
 
 # --hints--
 
-Test 1
+You should create an `html` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('html'));
+```
 
+Your `html` selector should have a `font-size` property set to `62.5%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('html')?.fontSize === '62.5%');
+```
+
+Your `html` selector should have a `box-sizing` property set to `border-box`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('html')?.boxSizing === 'border-box');
 ```
 
 # --seed--
@@ -142,7 +154,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

@@ -15,10 +15,16 @@ Create a `.heading` rule and set the `grid-column` property to `2 / 3`. This wil
 
 # --hints--
 
-Test 1
+You should have a `.heading` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.heading'));
+```
 
+Your `.heading` selector should have a `grid-column` property set to `2 / 3`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.heading')?.gridColumn === '2 / 3');
 ```
 
 # --seed--
@@ -142,7 +148,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

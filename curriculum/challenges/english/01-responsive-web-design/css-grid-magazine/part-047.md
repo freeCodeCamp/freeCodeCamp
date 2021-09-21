@@ -11,10 +11,22 @@ Create a `.social-icons` selector. Give it a `display` property set to `grid`, a
 
 # --hints--
 
-Test 1
+You should have a `.social-icons` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons'));
+```
 
+Your `.social-icons` selector should have a `display` property set to `grid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.display === 'grid');
+```
+
+Your `.social-icons` selector should have a `font-size` property set to `3rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.fontSize === '3rem');
 ```
 
 # --seed--
@@ -138,7 +150,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

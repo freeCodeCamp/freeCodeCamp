@@ -13,10 +13,16 @@ Create a `.text-with-images` selector and set the `display` property to `grid`.
 
 # --hints--
 
-Test 1
+You should have a `.text-with-images` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images'));
+```
 
+Your `.text-with-images` selector should have a `display` property set to `grid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.display === 'grid');
 ```
 
 # --seed--
@@ -140,7 +146,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

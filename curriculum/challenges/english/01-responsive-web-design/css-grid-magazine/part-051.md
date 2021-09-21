@@ -13,10 +13,10 @@ Give the `.social-icons` selector an `align-items` property set to `center`.
 
 # --hints--
 
-Test 1
+Your `.social-icons` selector should have an `align-items` property set to `center`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.alignItems === 'center');
 ```
 
 # --seed--
@@ -140,7 +140,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

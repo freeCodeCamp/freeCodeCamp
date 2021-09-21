@@ -11,10 +11,10 @@ Give the `.text` selector a `text-align` property set to `justify.`
 
 # --hints--
 
-Test 1
+Your `.text` selector should have a `text-align` property set to `justify.`
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.textAlign === 'justify');
 ```
 
 # --seed--
@@ -138,7 +138,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

@@ -19,10 +19,58 @@ Add five `a` elements within that new `div`, and give them the following `href` 
 
 # --hints--
 
-Test 1
+You should create a new `div` element.
 
 ```js
+assert(document.querySelectorAll('div')?.length === 2);
+```
 
+Your new `div` element should come after your `.author` element.
+
+```js
+assert(document.querySelector('.author')?.nextElementSibling?.localName === 'div');
+```
+
+Your new `div` element should have the class `social-icons`.
+
+```js
+assert(document.querySelector('.author')?.nextElementSibling?.classList.contains('social-icons'));
+```
+
+Your `.social-icons` element should have five `a` elements.
+
+```js
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.length === 5);
+```
+
+Your first `a` element should have an `href` set to `https://www.facebook.com/freecodecamp`.
+
+```js
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[0]?.getAttribute('href') === 'https://www.facebook.com/freecodecamp');
+```
+
+Your second `a` element should have an `href` set to `https://twitter.com/freecodecamp`.
+
+```js
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[1]?.getAttribute('href') === 'https://twitter.com/freecodecamp');
+```
+
+Your third `a` element should have an `href` set to `https://instagram.com/freecodecamp`.
+
+```js
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[2]?.getAttribute('href') === 'https://instagram.com/freecodecamp');
+```
+
+Your fourth `a` element should have an `href` set to `https://www.linkedin.com/school/freecodecamp`.
+
+```js
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[3]?.getAttribute('href') === 'https://www.linkedin.com/school/freecodecamp');
+```
+
+Your fifth `a` element should have an `href` set to `https://www.youtube.com/freecodecamp`.
+
+```js
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[4]?.getAttribute('href') === 'https://www.youtube.com/freecodecamp');
 ```
 
 # --seed--

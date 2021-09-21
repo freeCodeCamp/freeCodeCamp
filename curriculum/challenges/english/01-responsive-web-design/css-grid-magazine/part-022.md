@@ -11,10 +11,37 @@ Within your `.image-quote` element, nest an `hr` element, a `p` element` and a s
 
 # --hints--
 
-Test 1
+You should add two `hr` elements to your `.image-quote` element.
 
 ```js
+assert(document.querySelectorAll('.image-quote hr')?.length === 2);
+```
 
+You should add a `p` element to your `.image-quote` element.
+
+```js
+assert(document.querySelectorAll('.image-quote p')?.length === 1);
+```
+
+Your `.image-quote` children should be in the correct order.
+
+```js
+const children = document.querySelector('.image-quote')?.children;
+assert(children?.[0]?.localName === 'hr');
+assert(children?.[1]?.localName === 'p');
+assert(children?.[2]?.localName === 'hr');
+```
+
+Your new `p` element should have a `class` set to `quote`.
+
+```js
+assert(document.querySelector('.image-quote p')?.classList.contains('quote'));
+```
+
+Your new `p` element should have the text `The millions of people who are learning to code through freeCodeCamp will have an even better resource to help them learn these fundamentals.`.
+
+```js
+assert(document.querySelector('.image-quote p')?.innerText === 'The millions of people who are learning to code through freeCodeCamp will have an even better resource to help them learn these fundamentals.');
 ```
 
 # --seed--
@@ -138,7 +165,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

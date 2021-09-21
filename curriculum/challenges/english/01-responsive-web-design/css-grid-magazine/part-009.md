@@ -18,10 +18,16 @@ what makes time travel possible: the flux capacitor!
 
 # --hints--
 
-Test 1
+You should create a second `p` element within your `.text` element.
 
 ```js
+assert(document.querySelectorAll('.text p')?.length === 2)
+```
 
+Your second `p` element should have the provided text.
+
+```js
+assert(document.querySelectorAll('.text p')?.[1]?.innerText === 'After years - years - of pondering these two problems and how to solve them, I slipped, hit my head on the sink, and when I came to I had a revelation! A vision! A picture in my head! A picture of this! This is what makes time travel possible: the flux capacitor!')
 ```
 
 # --seed--

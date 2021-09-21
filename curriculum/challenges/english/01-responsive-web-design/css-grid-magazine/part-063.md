@@ -11,10 +11,16 @@ You will need to have a column for text and a column for images. Give the `.text
 
 # --hints--
 
-Test 1
+Your `.text-with-images` selector should have a `grid-template-columns` property set to `1fr 2fr`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.gridTemplateColumns === '1fr 2fr');
+```
 
+Your `.text-with-images` selector should have a `column-gap` property set to `3rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.columnGap === '3rem');
 ```
 
 # --seed--
@@ -138,7 +144,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

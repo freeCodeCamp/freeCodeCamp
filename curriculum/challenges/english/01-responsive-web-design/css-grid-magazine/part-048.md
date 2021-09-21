@@ -11,10 +11,10 @@ The default settings for CSS Grid will create additional rows as needed, unlike 
 
 # --hints--
 
-Test 1
+Your `.social-icons` selector should have a `grid-template-columns` property set to `repeat(5, 1fr)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridTemplateColumns === 'repeat(5, 1fr)');
 ```
 
 # --seed--
@@ -138,7 +138,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

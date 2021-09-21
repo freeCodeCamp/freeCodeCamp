@@ -11,10 +11,28 @@ The subtitle also needs to be styled. Create a `.hero-subtitle` selector and giv
 
 # --hints--
 
-Test 1
+You should have a `.hero-subtitle` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle'));
+```
 
+Your `.hero-subtitle` selector should have a `font-size` property set to `2.4rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.fontSize === '2.4rem');
+```
+
+Your `.hero-subtitle` selector should have a `color` property set to `orangered`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.color === 'orangered');
+```
+
+Your `.hero-subtitle` selector should have a `text-align` property set to `center`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.textAlign === 'center');
 ```
 
 # --seed--
@@ -138,7 +156,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

@@ -13,10 +13,16 @@ Give the `.image-wrapper` selector a `grid-template-columns` property set to `2f
 
 # --hints--
 
-Test 1
+Your `.image-wrapper` selector should have a `grid-template-columns` property set to `2fr 1fr`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gridTemplateColumns === '2fr 1fr');
+```
 
+Your `.image-wrapper` selector should have a `grid-template-rows` property set to `repeat(3, min-content)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gridTemplateRows === 'repeat(3, min-content)');
 ```
 
 # --seed--
@@ -140,7 +146,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">

@@ -11,10 +11,32 @@ Within your `aside` element, create two `img` elements, a `blockquote` element, 
 
 # --hints--
 
-Test 1
+You should create three `img` elements within your `aside` element.
 
 ```js
+assert(document.querySelectorAll('aside img')?.length === 3);
+```
 
+You should create a `blockquote` element within your `aside` element.
+
+```js
+assert.exists(document.querySelector('aside blockquote'));
+```
+
+Your `blockquote` element should have a `class` set to `image-quote`.
+
+```js
+assert(document.querySelector('aside blockquote')?.classList?.contains('image-quote'));
+```
+
+Your new elements should be in the correct order.
+
+```js
+const children = document.querySelector('aside')?.children;
+assert(children?.[0]?.localName === 'img');
+assert(children?.[1]?.localName === 'img');
+assert(children?.[2]?.localName === 'blockquote');
+assert(children?.[3]?.localName === 'img');
 ```
 
 # --seed--
@@ -138,7 +160,7 @@ Test 1
         </p>
       </section>
       <section class="text text-with-images">
-        <article class="top-four">
+        <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">
