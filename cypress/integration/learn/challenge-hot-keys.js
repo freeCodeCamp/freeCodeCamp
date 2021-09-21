@@ -24,20 +24,28 @@ const links = {
     'learn/scientific-computing-with-python/python-for-everybody/introduction-hardware-architecture'
 };
 
-describe('The hotkeys should work correctly', () => {
-  beforeEach(() => {
-    cy.visit(links.classic1);
-  });
+// It's possible for the location to change before the new page has loaded, so
+// we wait for these titles to be present:
+const titles = {
+  classic2: 'Headline with the h2 Element',
+  frontEnd2: 'Build a Survey Form',
+  backEnd2: 'Request Header Parser Microservice',
+  video2: 'Introduction: Hardware Architecture'
+};
 
+describe('The hotkeys should work correctly', () => {
   it('should be possible to navigate to the next challenge/projects and previous', () => {
+    cy.visit(links.classic1);
     cy.focused().type('{esc}');
     cy.focused().type('n');
     cy.url().should('include', links.classic2);
+    cy.contains(titles.classic2);
     cy.focused().type('p');
     cy.url().should('include', links.classic1);
     cy.visit(links.frontEnd1);
     cy.focused().type('{esc}').type('n');
     cy.url().should('include', links.frontEnd2);
+    cy.contains(titles.frontEnd2);
     cy.focused().type('p');
     cy.url().should('include', links.frontEnd1);
   });
@@ -46,6 +54,7 @@ describe('The hotkeys should work correctly', () => {
     cy.visit(links.video1);
     cy.focused().type('{esc}').type('n');
     cy.url().should('include', links.video2);
+    cy.contains(titles.video2);
     cy.focused().type('p');
     cy.url().should('include', links.video1);
   });
@@ -54,11 +63,13 @@ describe('The hotkeys should work correctly', () => {
     cy.visit(links.backEnd1);
     cy.focused().type('{esc}').type('n');
     cy.url().should('include', links.backEnd2);
+    cy.contains(titles.backEnd2);
     cy.focused().type('p');
     cy.url().should('include', links.backEnd1);
   });
 
   it('should be possible to focus on the editor with pressing "e"', () => {
+    cy.visit(links.classic1);
     cy.get(selectors.editorContainer).click();
     cy.focused().as('editor').type('{esc}');
     cy.get(selectors.instructions).click().type('e');
@@ -66,17 +77,20 @@ describe('The hotkeys should work correctly', () => {
   });
 
   it('should be possible to press ctrl enter to run the test', () => {
+    cy.visit(links.classic1);
     cy.get(selectors.instructions).click().type('{ctrl}{enter}');
     cy.get(selectors.console).contains('// running tests');
   });
 
   it('should be possible to go to navigation view by pressing escape', () => {
+    cy.visit(links.classic1);
     cy.get(selectors.editorContainer).click();
     cy.focused().as('editor').type('{esc}');
     cy.get('@editor').should('not.have.focus');
   });
 
   it('it should be possible to focus on the instructions by pressing r', () => {
+    cy.visit(links.classic1);
     cy.get(selectors.editorContainer).type('{esc}');
     cy.get(selectors.console).click().type('r');
     cy.get(selectors.instructionsPanel).should('have.focus');
