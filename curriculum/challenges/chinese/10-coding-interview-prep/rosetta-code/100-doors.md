@@ -8,27 +8,27 @@ dashedName: 100-doors
 
 # --description--
 
-连续 100 个门都是最初关闭的。 You make 100 passes by the doors. The first time through, visit every door and 'toggle' the door (if the door is closed, open it; if it is open, close it). The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...) and toggle it. The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc., until you only visit the 100th door.
+连续 100 个门都是最初关闭的。 你在门前通行了 100 次。 第一次通行时，访问每扇门，并“切换”门（如果门是关闭的，就打开它；如果门是打开的，就关闭它）。 第二次，只访问每个第二扇门（即门 #2，#4，#6，...）并切换它们。 第三次，每三个门访问一次（即门 #3，#6，#9，...）等，直到你只访问第 100 个门。
 
 # --instructions--
 
-Implement a function to determine the state of the doors after the last pass. Return the final result in an array, with only the door number included in the array if it is open.
+实现一个函数，以确定最后一次通过后门的状态。 以数组形式返回最终结果，数组中只包含打开的门的门号。
 
 # --hints--
 
-`getFinalOpenedDoors` should be a function.
+`getFinalOpenedDoors` 应该是一个函数。
 
 ```js
 assert(typeof getFinalOpenedDoors === 'function');
 ```
 
-`getFinalOpenedDoors` should return an array.
+`getFinalOpenedDoors` 应该返回一个数组。
 
 ```js
 assert(Array.isArray(getFinalOpenedDoors(100)));
 ```
 
-`getFinalOpenedDoors` should produce the correct result.
+`getFinalOpenedDoors` 应该产生正确的结果。
 
 ```js
 assert.deepEqual(getFinalOpenedDoors(100), solution);

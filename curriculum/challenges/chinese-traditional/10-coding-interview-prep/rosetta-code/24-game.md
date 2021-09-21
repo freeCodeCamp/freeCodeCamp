@@ -1,6 +1,6 @@
 ---
 id: 5951e88f64ebf159166a1176
-title: 24 game
+title: 24 點遊戲
 challengeType: 5
 forumTopicId: 302218
 dashedName: 24-game
@@ -8,23 +8,23 @@ dashedName: 24-game
 
 # --description--
 
-The [24 Game](https://en.wikipedia.org/wiki/24_Game) tests a person's mental arithmetic.
+[24 點遊戲](https://en.wikipedia.org/wiki/24_Game)測試一個人的心算能力。
 
-The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
+遊戲的目標是使四個數字的計算結果是 24。
 
 # --instructions--
 
-Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
+實現一個函數，該函數將一個四位數的字符串作爲其參數，每個數字從 1 到 9（含）並允許重複，並返回一個計算結果爲數字 24 的算術表達式。 如果不存在這樣的解，則返回“沒有解決方案”。
 
-**Rules:**
+**規則：**
 <ul>
-  <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
-  <li> Division should use floating point or rational arithmetic, etc, to preserve remainders. </li>
-  <li> Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong). </li>
-  <li> The order of the digits when given does not have to be preserved. </li>
+  <li> 只允許以下運算符/函數：乘法、除法、加法、減法。 </li>
+  <li> 除法應使用浮點或有理算術等來保留餘數。 </li>
+  <li> 不允許從提供的數字中形成多位數字。 （所以當給出 1、2、2 和 1 時，12 + 12 的答案是錯誤的）。 </li>
+  <li> 不必依照給定的數字順序。 </li>
 </ul>
 
-| Example input             | Example output            |
+| 示例輸入                      | 示例輸出                      |
 | ------------------------- | ------------------------- |
 | <code>solve24("4878");</code> | <code>(7-8/8)\*4</code> |
 | <code>solve24("1234");</code> | <code>3\*1\*4\*2</code> |
@@ -33,31 +33,31 @@ Implement a function that takes a string of four digits as its argument, with ea
 
 # --hints--
 
-`solve24` should be a function.
+`solve24` 應該是一個函數。
 
 ```js
 assert(typeof solve24 === 'function');
 ```
 
-`solve24("4878")` should return `(7-8/8)*4` or `4*(7-8/8)`
+`solve24("4878")` 應該返回 `(7-8/8)*4` 或 `4*(7-8/8)`。
 
 ```js
 assert(include(answers[0], removeParentheses(solve24(testCases[0]))));
 ```
 
-`solve24("1234")` should return any arrangement of `1*2*3*4`
+`solve24("1234")` 應該返回 `1*2*3*4`。
 
 ```js
 assert(include(answers[1], removeParentheses(solve24(testCases[1]))));
 ```
 
-`solve24("6789")` should return `(6*8)/(9-7)` or `(8*6)/(9-7)`
+`solve24("6789")` 應該返回 `(6*8)/(9-7)` 或 `(8*6)/(9-7)`。
 
 ```js
 assert(include(answers[2], removeParentheses(solve24(testCases[2]))));
 ```
 
-`solve24("1127")` should return a permutation of `(1+7)*(1+2)`
+`solve24("1127")` 應該返回 `(1+7)*(1+2)`。
 
 ```js
 assert(include(answers[3], removeParentheses(solve24(testCases[3]))));

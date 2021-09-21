@@ -26,7 +26,7 @@ var cat = {
 };
 ```
 
-Neste exemplo, todas as propriedades são armazenadas como strings, como - `name`, `legs`e `tails`. Porém, você também pode usar números como propriedades. Você pode até omitir as aspas para propriedades de string com uma única palavra, da seguinte forma:
+Neste exemplo, todas as propriedades são armazenadas como strings, como `name`, `legs` e `tails`. Porém, você também pode usar números como propriedades. Você pode até omitir as aspas para propriedades de string com uma única palavra, da seguinte forma:
 
 ```js
 var anotherObject = {
