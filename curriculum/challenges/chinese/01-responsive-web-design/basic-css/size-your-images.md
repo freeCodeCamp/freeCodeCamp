@@ -31,7 +31,7 @@ CSS 的 `width` 属性可以控制元素的宽度。 和设置文本字号一样
 
 ```js
 assert(
-  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class')
+  $("img[src='https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg']").attr('class')
     .trim().split(/\s+/g).includes('smaller-image')
 );
 ```
@@ -70,7 +70,7 @@ assert(
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <div>
     <p>Things cats love:</p>
@@ -126,7 +126,7 @@ assert(
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <div>
     <p>Things cats love:</p>

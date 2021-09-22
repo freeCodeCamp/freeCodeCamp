@@ -27,7 +27,7 @@ Aqui está um exemplo de alteração da largura de uma imagem ao passar o cursor
   }
 </style>
 
-<img src="https://bit.ly/smallgooglelogo" alt="Google's Logo" />
+<img src="https://cdn.freecodecamp.org/curriculum/applied-visual-design/google-logo.png" alt="Google's Logo" />
 ```
 
 # --instructions--
