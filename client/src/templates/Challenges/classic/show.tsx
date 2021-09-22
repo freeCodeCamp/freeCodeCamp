@@ -44,9 +44,9 @@ import {
   updateChallengeMeta
 } from '../redux';
 import { getGuideUrl } from '../utils';
-import DesktopLayout from './DesktopLayout';
 import MobileLayout from './MobileLayout';
 import MultifileEditor from './MultifileEditor';
+import DesktopLayout from './desktop-layout';
 
 import './classic.css';
 import '../components/test-frame.css';
@@ -94,7 +94,7 @@ interface ShowClassicProps {
 }
 
 interface ShowClassicState {
-  layout: ReflexLayout | string;
+  layout: ReflexLayout;
   resizing: boolean;
 }
 
@@ -143,9 +143,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     this.instructionsPanelRef = React.createRef();
   }
 
-  getLayoutState(): ReflexLayout | string {
+  getLayoutState(): ReflexLayout {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const reflexLayout: ReflexLayout | string = store.get(REFLEX_LAYOUT);
+    const reflexLayout: ReflexLayout = store.get(REFLEX_LAYOUT);
 
     // Validate if user has not done any resize of the panes
     if (!reflexLayout) return BASE_LAYOUT;
@@ -409,10 +409,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
             <DesktopLayout
-              block={block}
               challengeFiles={challengeFiles}
               editor={this.renderEditor()}
-              hasEditableBoundries={this.hasEditableBoundries()}
+              hasEditableBoundaries={this.hasEditableBoundries()}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
                 showToolPanel: true
@@ -420,7 +419,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               layoutState={this.state.layout}
               preview={this.renderPreview()}
               resizeProps={this.resizeProps}
-              superBlock={superBlock}
               testOutput={this.renderTestOutput()}
             />
           </Media>

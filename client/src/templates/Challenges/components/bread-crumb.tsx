@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import i18next from 'i18next';
 import React from 'react';
 import { Link } from '../../../components/helpers/index';
@@ -5,8 +6,8 @@ import { Link } from '../../../components/helpers/index';
 import './challenge-title.css';
 
 interface BreadCrumbProps {
-  block: string;
-  superBlock: string;
+  block: string | undefined;
+  superBlock: string | undefined;
 }
 
 function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {

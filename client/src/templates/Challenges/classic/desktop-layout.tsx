@@ -1,19 +1,18 @@
-import React, { useState, Fragment, ReactElement } from 'react';
-import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { first } from 'lodash-es';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import envData from '../../../../../config/env.json';
-import { ChallengeFileType } from '../../../redux/prop-types';
+import { ChallengeFiles, ResizePropsType } from '../../../redux/prop-types';
+import EditorTabs from './EditorTabs';
+import ActionRow from './action-row';
 
 const { showUpcomingChanges } = envData;
 
 type Pane = { flex: number };
 
 interface DesktopLayoutProps {
-  challengeFiles: ChallengeFileType[];
-  editor: ReactElement;
+  challengeFiles: ChallengeFiles;
+  editor: ReactElement | null;
   hasEditableBoundaries: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
@@ -25,10 +24,7 @@ interface DesktopLayoutProps {
     testsPane: Pane;
   };
   preview: ReactElement;
-  resizeProps: {
-    onStopResize: () => void;
-    onResize: () => void;
-  };
+  resizeProps: ResizePropsType;
   testOutput: ReactElement;
 }
 
@@ -60,7 +56,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const getChallengeFile = () => {
     const { challengeFiles } = props;
-    // TODO: part of challengeFiles becoming an array
     return first(challengeFiles);
   };
 
@@ -85,7 +80,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     layoutState;
 
   return (
-    <Fragment>
+    <>
       <ReflexContainer className='desktop-layout' orientation='horizontal'>
         {projectBasedChallenge && (
           <ActionRow
@@ -119,7 +114,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
                     {...reflexProps}
                     {...resizeProps}
                   >
-                    <Fragment>{editor}</Fragment>
+                    <>{editor}</>
                   </ReflexElement>
                   {isConsoleDisplayable && (
                     <ReflexSplitter propagate={true} {...resizeProps} />
@@ -147,7 +142,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           </ReflexContainer>
         </ReflexElement>
       </ReflexContainer>
-    </Fragment>
+    </>
   );
 };
 
