@@ -15,9 +15,6 @@ dashedName: use-css-animation-to-change-the-hover-state-of-a-button
 
 ```html
 <style>
-  img {
-    width: 30px;
-  }
   img:hover {
     animation-name: width;
     animation-duration: 500ms;
