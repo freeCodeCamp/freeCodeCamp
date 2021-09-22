@@ -27,7 +27,7 @@ dashedName: use-css-animation-to-change-the-hover-state-of-a-button
   }
 </style>
 
-<img src="https://bit.ly/smallgooglelogo" alt="Google's Logo" />
+<img src="https://cdn.freecodecamp.org/curriculum/applied-visual-design/google-logo.png" alt="Google's Logo" />
 ```
 
 # --instructions--

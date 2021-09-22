@@ -27,7 +27,7 @@ Ecco un esempio di cambiamento della larghezza di un'immagine quando ci si passa
   }
 </style>
 
-<img src="https://bit.ly/smallgooglelogo" alt="Google's Logo" />
+<img src="https://cdn.freecodecamp.org/curriculum/applied-visual-design/google-logo.png" alt="Google's Logo" />
 ```
 
 # --instructions--
