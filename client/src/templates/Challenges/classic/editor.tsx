@@ -238,7 +238,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     suggestOnTriggerCharacters: false
   };
 
-  const getEditableRegion = () => {
+  const getEditableRegionFromRedux = () => {
     const { challengeFiles, fileKey } = props;
     const edRegBounds = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
@@ -266,7 +266,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         modeMap[challengeFile?.ext ?? 'html']
       );
     data.model = model;
-    const editableRegion = getEditableRegion();
+    const editableRegion = getEditableRegionFromRedux();
 
     if (editableRegion.length === 2) decorateForbiddenRanges(editableRegion);
 
@@ -373,7 +373,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
 
-    const editableBoundaries = getEditableRegion();
+    const editableBoundaries = getEditableRegionFromRedux();
 
     if (editableBoundaries.length === 2) {
       const createWidget = (
@@ -1006,7 +1006,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, [props.challengeFiles]);
   useEffect(() => {
     const { output, tests } = props;
-    const editableRegion = getEditableRegion();
+    const editableRegion = getEditableRegionFromRedux();
     if (editableRegion.length === 2) {
       const challengeComplete = tests.every(test => test.pass && !test.err);
       const chellengeHasErrors = tests.some(test => test.err);
