@@ -815,13 +815,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       return isDeleted ? event.changes[0].range.endLineNumber : 0;
     }
 
-    function getNewLineRanges(event: editor.IModelContentChangedEvent) {
-      const newLines = event.changes.filter(
-        ({ text }) => text[0] === event.eol
-      );
-      return newLines.map(({ range }) => range);
-    }
-
     // TODO this listener needs to be replaced on reset.
     model.onDidChangeContent(e => {
       // TODO: it would be nice if undoing could remove the warning, but
@@ -830,9 +823,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       // edits. However, what if they made a warned edit, then a normal
       // edit, then a warned one.  Could it track that they need to make 3
       // undos?
-      const newLineRanges = getNewLineRanges(e).map(range => {
-        return toStartOfLine(monaco.Range.lift(range));
-      });
       const deletedLine = getDeletedLine(e);
 
       const deletedRange = {
@@ -862,24 +852,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       };
 
-      // Make sure the zone tracks the decoration (i.e. the region), which might
-      // have changed if a line has been added or removed
-      const handleHintsZoneChange = () => {
-        if (newLineRanges.length > 0 || deletedLine > 0) {
-          updateOutputZone();
-        }
-      };
-
-      // Make sure the zone tracks the decoration (i.e. the region), which might
-      // have changed if a line has been added or removed
-      const handleDescriptionZoneChange = () => {
-        if (newLineRanges.length > 0 || deletedLine > 0) {
-          updateDescriptionZone();
-        }
-      };
-
-      // Stops the greyed out region from covering the editable region. Does not
-      // change the font decoration.
+      // TODO: can this be removed along with the rest of the forbidden region
+      // decorators?
       const preventOverlap = (
         id: string,
         stickiness: number,
@@ -952,16 +926,15 @@ const Editor = (props: EditorProps): JSX.Element => {
         highlightEditableLines
       );
 
-      // TODO: do the same for the description widget
-      // this has to be handle differently, because we care about the END
-      // of the zone, not the START
-      // if the editable region includes the first line, the first decoration
-      // will be missing.
+      // If the content has changed, the zones may need moving. Rather than
+      // working out if they have to for a particular content changed, we simply
+      // ask monaco to update regardless.
+      updateDescriptionZone();
+      updateOutputZone();
+
       if (data.startEditDecId) {
-        handleDescriptionZoneChange();
         warnUser(data.startEditDecId);
       }
-      handleHintsZoneChange();
       if (data.endEditDecId) {
         warnUser(data.endEditDecId);
       }
