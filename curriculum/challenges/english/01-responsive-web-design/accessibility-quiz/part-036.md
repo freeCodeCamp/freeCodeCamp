@@ -16,49 +16,49 @@ Give the first `option` element a `value` of `""`, and the text `Select an optio
 You should nest one `select` element within the first `div.answer` element.
 
 ```js
-
+assert.exists(document.querySelector('div.answer > select'));
 ```
 
 You should nest three `option` elements within the `select` element.
 
 ```js
-
+assert.equal(document.querySelectorAll('div.answer > select > option')?.length, 3);
 ```
 
 You should give the first `option` element a `value` of `""`.
 
 ```js
-
+assert.equal(document.querySelector('div.answer > select > option:nth-child(1)')?.getAttribute('value'), '');
 ```
 
 You should give the first `option` element a text content of `Select an option`.
 
 ```js
-
+assert.equal(document.querySelector('div.answer > select > option:nth-child(1)')?.textContent, 'Select an option');
 ```
 
 You should give the second `option` element a `value` of `yes`.
 
 ```js
-
+assert.equal(document.querySelector('div.answer > select > option:nth-child(2)')?.getAttribute('value'), 'yes');
 ```
 
 You should give the second `option` element a text content of `Yes`.
 
 ```js
-
+assert.equal(document.querySelector('div.answer > select > option:nth-child(2)')?.textContent, 'Yes');
 ```
 
 You should give the third `option` element a `value` of `no`.
 
 ```js
-
+assert.equal(document.querySelector('div.answer > select > option:nth-child(3)')?.getAttribute('value'), 'no');
 ```
 
 You should give the third `option` element a text content of `No`.
 
 ```js
-
+assert.equal(document.querySelector('div.answer > select > option:nth-child(3)')?.textContent, 'No');
 ```
 
 # --seed--

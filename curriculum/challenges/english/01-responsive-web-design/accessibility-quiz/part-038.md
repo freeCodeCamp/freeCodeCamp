@@ -16,25 +16,29 @@ Then, give the `textarea` placeholder text describing an example answer.
 You should nest one `textarea` element within the second `div.answer` element.
 
 ```js
-
+assert.exists(document.querySelector('div.answer:nth-of-type(2) > textarea'));
 ```
 
 You should give the `textarea` a `rows` attribute with a number.
 
 ```js
-
+const rows = document.querySelector('div.answer:nth-of-type(2) > textarea').getAttribute('rows');
+assert.notEmpty(rows);
+assert.isNotNaN(Number(rows));
 ```
 
 You should give the `textarea` a `cols` attribute with a number.
 
 ```js
-
+const cols = document.querySelector('div.answer:nth-of-type(2) > textarea').getAttribute('cols');
+assert.notEmpty(cols);
+assert.isNotNaN(Number(cols));
 ```
 
 You should give the `textarea` placeholder text describing an example answer.
 
 ```js
-
+assert.notEmpty(document.querySelector('div.answer:nth-of-type(2) > textarea')?.getAttribute('placeholder'));
 ```
 
 # --seed--

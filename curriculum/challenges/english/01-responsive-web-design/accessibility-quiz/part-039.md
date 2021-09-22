@@ -11,22 +11,22 @@ As with the other input elements and `labels`, link the `textarea` to its corres
 
 # --hints--
 
-You should give the second `label` element a `for` attribute.
+You should give the `label` element a `for` attribute.
 
 ```js
-
+assert.notEmpty(document.querySelector('.formrow > .question-block:nth-of-type(2) > label')?.getAttribute('for'));
 ```
 
 You should give the `textarea` element an `id` attribute matching the `for` attribute of the `label` element.
 
 ```js
-
+assert.equal(document.querySelector('.formrow > .question-block:nth-of-type(2) > label')?.getAttribute('for'), document.querySelector('.answer:nth-of-type(2) > textarea')?.getAttribute('id'));
 ```
 
 You should give the `textarea` element a `name` attribute.
 
 ```js
-
+assert.notEmpty(document.querySelector('.answer:nth-of-type(2) > textarea')?.getAttribute('name'));
 ```
 
 # --seed--

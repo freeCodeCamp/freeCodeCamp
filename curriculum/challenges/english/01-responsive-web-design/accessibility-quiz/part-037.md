@@ -14,25 +14,25 @@ Link the first `label` element to the `select` element, and give the `select` el
 You should give the `label` element a `for` attribute.
 
 ```js
-
+assert.notEmpty(document.querySelector('.question-block > label')?.getAttribute('for'));
 ```
 
 You should give the `select` element an `id` attribute.
 
 ```js
-
+assert.notEmpty(document.querySelector('.answer > select')?.getAttribute('id'));
 ```
 
 You should give the `select` element an `id` matching the `for` attribute of the `label` element.
 
 ```js
-
+assert.equal(document.querySelector('.answer > select')?.getAttribute('id'), document.querySelector('.question-block > label')?.getAttribute('for'));
 ```
 
 You should give the `select` element a `name` attribute.
 
 ```js
-
+assert.notEmpty(document.querySelector('.answer > select')?.getAttribute('name'));
 ```
 
 # --seed--

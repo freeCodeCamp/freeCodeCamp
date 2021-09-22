@@ -16,49 +16,49 @@ Begin by nesting a `div` with a `class` of `formrow`, and nest four `div` elemen
 You should add one `div` element within the final `section`.
 
 ```js
-
+assert.exists(document.querySelector('section:nth-of-type(3) > div'));
 ```
 
 You should give the first `div` a `class` of `formrow`.
 
 ```js
-
+assert.equal(document.querySelector('section:nth-of-type(3) > div')?.className, 'formrow');
 ```
 
 You should place `div.formrow` after the `h2` element.
 
 ```js
-
+assert.exists(document.querySelector('section:nth-of-type(3) > h2 + div.formrow'));
 ```
 
 You should nest four `div` elements inside `div.formrow`.
 
 ```js
-
+assert.equal(document.querySelectorAll('section:nth-of-type(3) > div.formrow > div')?.length, 4);
 ```
 
 You should give the first nested `div` a `class` of `question-block`.
 
 ```js
-
+assert.equal(document.querySelector('section:nth-of-type(3) > div.formrow > div:nth-of-type(1)')?.className, 'question-block');
 ```
 
 You should give the second nested `div` a `class` of `answer`.
 
 ```js
-
+assert.equal(document.querySelector('section:nth-of-type(3) > div.formrow > div:nth-of-type(2)')?.className, 'answer');
 ```
 
 You should give the third nested `div` a `class` of `question-block`.
 
 ```js
-
+assert.equal(document.querySelector('section:nth-of-type(3) > div.formrow > div:nth-of-type(3)')?.className, 'question-block');
 ```
 
 You should give the fourth nested `div` a `class` of `answer`.
 
 ```js
-
+assert.equal(document.querySelector('section:nth-of-type(3) > div.formrow > div:nth-of-type(4)')?.className, 'answer');
 ```
 
 # --seed--
