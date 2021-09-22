@@ -5,7 +5,6 @@ import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
-import { ReflexContainer } from 'react-reflex';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 
@@ -60,20 +59,13 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     return (
       <LearnLayout>
         <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
-        <ReflexContainer orientation='vertical'>
-          <iframe
-            className='codeally-frame'
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
-            src={`http://codeally.io/embed/?repoUrl=${url}`}
-            style={{
-              width: '100%',
-              overflow: 'hidden',
-              border: 0
-            }}
-            title='Editor'
-          />
-        </ReflexContainer>
+        <iframe
+          className='codeally-frame'
+          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+          sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+          src={`http://codeally.io/embed/?repoUrl=${url}`}
+          title='Editor'
+        />
       </LearnLayout>
     );
   }

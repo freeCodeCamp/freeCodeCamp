@@ -26,7 +26,10 @@ body {
 }
 
 .codeally-frame {
+  display: block;
   height: calc(100vh - var(--header-height, 0px));
+  width: 100%;
+  border: 0px;
 }
 
 .btn-cta-big {
