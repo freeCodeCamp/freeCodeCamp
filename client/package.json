@@ -90,7 +90,7 @@
     "nanoid": "3.1.25",
     "normalize-url": "4.5.1",
     "path-browserify": "1.0.1",
-    "postcss": "8.3.6",
+    "postcss": "8.3.7",
     "prismjs": "1.25.0",
     "process": "0.11.10",
     "prop-types": "15.7.2",
