@@ -168,10 +168,6 @@ const toStartOfLine = (range: RangeType) => {
   return range.setStartPosition(range.startLineNumber, 1);
 };
 
-const toLastLine = (range: RangeType) => {
-  return range.setStartPosition(range.endLineNumber, 1);
-};
-
 // TODO: properly initialise data with values not null
 const initialData: EditorProperties = {
   descriptionZoneId: '',
@@ -577,10 +573,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     // those imply that the positions have changed (i.e. if the content height
     // has changed or if content is dragged between regions)
 
-    const editableRegion = getCurrentEditableRegion();
-    const editableRegionBoundaries = editableRegion && [
-      editableRegion.startLineNumber - 1,
-      editableRegion.endLineNumber + 1
+    const coveringRange = getLinesCoveringEditableRegion();
+    const editableRegionBoundaries = coveringRange && [
+      coveringRange.startLineNumber - 1,
+      coveringRange.endLineNumber + 1
     ];
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
@@ -686,66 +682,28 @@ const Editor = (props: EditorProps): JSX.Element => {
     return monacoRef.current?.Range.lift(iRange);
   };
 
-  // Make 100% sure this is inclusive.
-  const getLinesBetweenRanges = (
-    firstRange: RangeType,
-    secondRange: RangeType
-  ) => {
-    const startRange = translateRange(toLastLine(firstRange), 1);
-    const endRange = translateRange(
-      toStartOfLine(secondRange),
-      -1
-    )?.collapseToStart();
-
-    return {
-      startLineNumber: startRange?.startLineNumber ?? 1,
-      endLineNumber: endRange?.endLineNumber ?? 2
-    };
-  };
-
-  const getCurrentEditableRegion = () => {
+  // This Range covers all the text in the editable region,
+  const getLinesCoveringEditableRegion = () => {
     const monaco = monacoRef.current;
-    const { model, startEditDecId, endEditDecId } = data;
+    const { model, insideEditDecId } = data;
     // TODO: this is a little low-level, but we should bail if there is no
     // editable region defined.
-    // NOTE: if a decoration is missing, there is still an editable region - it
-    // just extends to the edge of the editor. However, no decorations means no
-    // editable region.
-    if ((!startEditDecId && !endEditDecId) || !model || !monaco) {
+    if (!insideEditDecId || !model || !monaco) {
       return null;
     } else {
-      const firstRange = startEditDecId
-        ? model.getDecorationRange(startEditDecId)
-        : getStartOfEditor();
-      // TODO: handle the case that the editable region reaches the bottom of the
-      // editor
-      const secondRange = model.getDecorationRange(endEditDecId);
-      if (firstRange && secondRange) {
-        const editableRegion = getLinesBetweenRanges(firstRange, secondRange);
-        const startLineNumber = editableRegion.startLineNumber;
+      const currentRange = model.getDecorationRange(insideEditDecId);
 
-        let endLineNumber = editableRegion.endLineNumber;
-
-        // TODO: this prevents the editor from crashing, but it's still possible
-        // for the editable region to become empty and for the editable
-        // decorations to get out of sync with the jaw locations.
-        endLineNumber = Math.max(endLineNumber, startLineNumber + 1);
-        endLineNumber = Math.min(endLineNumber, model.getLineCount());
-
-        const endColumn = model.getLineLength(endLineNumber) + 1;
-        return new monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
+      if (currentRange) {
+        return new monaco.Range(
+          currentRange.startLineNumber,
+          1,
+          currentRange.endLineNumber,
+          model.getLineLength(currentRange.endLineNumber) + 1
+        );
       }
       return null;
     }
   };
-
-  const getStartOfEditor = () =>
-    monacoRef.current?.Range.lift({
-      startLineNumber: 1,
-      endLineNumber: 1,
-      startColumn: 1,
-      endColumn: 1
-    });
 
   function decorateForbiddenRanges(editableRegion: number[]) {
     const { model } = data;
@@ -831,6 +789,20 @@ const Editor = (props: EditorProps): JSX.Element => {
         startColumn: 1,
         endColumn: 1
       };
+
+      const redecorateEditableRegion = () => {
+        const coveringRange = getLinesCoveringEditableRegion();
+        if (coveringRange) {
+          data.insideEditDecId = highlightEditableLines(
+            monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
+            model,
+            coveringRange,
+            [data.insideEditDecId]
+          )[0];
+        }
+      };
+
+      redecorateEditableRegion();
 
       if (e.isUndoing) {
         // TODO: can we be more targeted? Only update when they could get out of
@@ -918,12 +890,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         data.endEditDecId,
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
         highlightLines
-      );
-
-      data.insideEditDecId = preventOverlap(
-        data.insideEditDecId,
-        monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-        highlightEditableLines
       );
 
       // If the content has changed, the zones may need moving. Rather than
