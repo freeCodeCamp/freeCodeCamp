@@ -448,7 +448,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
-      afterLineNumber: getLineAfterDescriptionZone() - 1,
+      afterLineNumber: getLineBeforeEditableRegion(),
       heightInPx: domNode.offsetHeight,
       domNode: document.createElement('div'),
       onComputedHeight: () =>
@@ -479,7 +479,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
-      afterLineNumber: getLineAfterEditableRegion() - 1,
+      afterLineNumber: getLastLineOfEditableRegion(),
       heightInPx: outputNode.offsetHeight,
       domNode: document.createElement('div'),
       onComputedHeight: () =>
@@ -667,21 +667,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     return `${data.outputZoneTop}px`;
   }
 
-  // It's not possible to directly access the current view zone so we track
-  // the region it should cover instead.
-  function getLineAfterDescriptionZone() {
-    const range = data.model?.getDecorationRange(data.startEditDecId);
-    // if the first decoration is missing, this implies the region reaches the
-    // start of the editor.
-    return range ? range.endLineNumber + 1 : 1;
+  function getLineBeforeEditableRegion() {
+    const range = data.model?.getDecorationRange(data.insideEditDecId);
+    return range ? range.startLineNumber - 1 : 1;
   }
 
-  function getLineAfterEditableRegion() {
-    // TODO: handle the case that the editable region reaches the bottom of the
-    // editor
-    return (
-      data.model?.getDecorationRange(data.endEditDecId)?.startLineNumber ?? 1
-    );
+  function getLastLineOfEditableRegion() {
+    const range = data.model?.getDecorationRange(data.insideEditDecId);
+    return range ? range.endLineNumber : 1;
   }
 
   const translateRange = (range: IRange, lineDelta: number) => {
