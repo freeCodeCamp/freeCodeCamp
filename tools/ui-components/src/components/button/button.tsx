@@ -1,18 +1,20 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { ButtonProps  } from '../..//types/button.types';
 
 import './button.css';
+
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({
-  primary = false,
+  primary,
   size = 'medium',
   backgroundColor,
   label,
   ...props
-}) => {
+}: ButtonProps) => {
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
