@@ -78,8 +78,8 @@ interface EditorProperties {
   startEditDecId: string;
   endEditDecId: string;
   insideEditDecId: string;
-  descriptionZoneHeight: number;
-  outputZoneHeight: number;
+  descriptionZoneTop: number;
+  outputZoneTop: number;
   outputZoneId: string;
   descriptionNode?: HTMLDivElement;
   outputNode?: HTMLDivElement;
@@ -178,9 +178,9 @@ const initialData: EditorProperties = {
   startEditDecId: '',
   endEditDecId: '',
   insideEditDecId: '',
-  descriptionZoneHeight: 0,
+  descriptionZoneTop: 0,
   outputZoneId: '',
-  outputZoneHeight: 0
+  outputZoneTop: 0
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
@@ -444,8 +444,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
-    data.descriptionZoneHeight = domNode.offsetHeight;
-
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
@@ -455,7 +453,12 @@ const Editor = (props: EditorProps): JSX.Element => {
       domNode: document.createElement('div'),
       onComputedHeight: () =>
         data.descriptionWidget &&
-        editor.layoutOverlayWidget(data.descriptionWidget)
+        editor.layoutOverlayWidget(data.descriptionWidget),
+      onDomNodeTop: (top: number) => {
+        data.descriptionZoneTop = top;
+        if (data.descriptionWidget)
+          editor.layoutOverlayWidget(data.descriptionWidget);
+      }
     };
 
     data.descriptionZoneId = changeAccessor.addZone(viewZone);
@@ -472,8 +475,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
-    data.outputZoneHeight = outputNode.offsetHeight;
-
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
@@ -482,7 +483,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       heightInPx: outputNode.offsetHeight,
       domNode: document.createElement('div'),
       onComputedHeight: () =>
-        data.outputWidget && editor.layoutOverlayWidget(data.outputWidget)
+        data.outputWidget && editor.layoutOverlayWidget(data.outputWidget),
+      onDomNodeTop: (top: number) => {
+        data.outputZoneTop = top;
+        if (data.outputWidget) editor.layoutOverlayWidget(data.outputWidget);
+      }
     };
 
     data.outputZoneId = changeAccessor.addZone(viewZone);
@@ -654,36 +659,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     return target.deltaDecorations(oldIds, [inlineDecoration]);
   }
 
-  // NOTE: this is where the view zone *should* be, not necessarily were it
-  // currently is. (see getLineAfterDescriptionZone)
-  // TODO: DRY this and getOutputZoneTop out.
   function getDescriptionZoneTop() {
-    const editor = data.editor;
-    const heightDelta = data.descriptionZoneHeight;
-    if (editor) {
-      const top = `${
-        editor.getTopForLineNumber(getLineAfterDescriptionZone()) -
-        heightDelta -
-        editor.getScrollTop()
-      }px`;
-
-      return top;
-    }
-    return '0';
+    return `${data.descriptionZoneTop}px`;
   }
 
   function getOutputZoneTop() {
-    const editor = data.editor;
-    const heightDelta = data.outputZoneHeight;
-    if (editor) {
-      const top = `${
-        editor.getTopForLineNumber(getLineAfterEditableRegion()) -
-        heightDelta -
-        editor.getScrollTop()
-      }px`;
-      return top;
-    }
-    return '0';
+    return `${data.outputZoneTop}px`;
   }
 
   // It's not possible to directly access the current view zone so we track
