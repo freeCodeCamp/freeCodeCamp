@@ -15,7 +15,7 @@ Here's an example of changing the width of an image on hover:
 
 ```html
 <style>
-  img{
+  img {
     width: 30px;
   }
   img:hover {
