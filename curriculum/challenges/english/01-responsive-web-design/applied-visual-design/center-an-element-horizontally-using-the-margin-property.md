@@ -15,7 +15,7 @@ This method works for images, too. Images are inline elements by default, but ca
 
 # --instructions--
 
-Center the `div` on the page by adding a `margin` property with a value of `auto`.y
+Center the `div` on the page by adding a `margin` property with a value of `auto`.
 
 # --hints--
 
