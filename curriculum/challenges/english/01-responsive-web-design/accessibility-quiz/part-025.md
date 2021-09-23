@@ -72,7 +72,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.sr-only')?.overflow, 'hi
 You should give the `.sr-only` a `clip` of `rect(0, 0, 0, 0)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.sr-only')?.clip, 'rect(0, 0, 0, 0)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sr-only')?.clip, 'rect(0px, 0px, 0px, 0px)');
 ```
 
 You should give the `.sr-only` a `white-space` of `nowrap`.

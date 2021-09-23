@@ -7,7 +7,7 @@ dashedName: part-16
 
 # --description--
 
-Every `region` role requires a visible lable, which should be referenced by the `aria-labelledby` attribute.
+Every `region` role requires a visible label, which should be referenced by the `aria-labelledby` attribute.
 
 To the `section` elements, give the following `aria-labelledby` attributes:
 

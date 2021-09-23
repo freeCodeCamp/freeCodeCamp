@@ -9,7 +9,7 @@ dashedName: part-7
 
 Within the `header`, provide context about the page by nesting one `img`, `h1`, and `nav` element.
 
-The `img` should point to `https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg`, and have an `id` of `logo`.
+The `img` should point to `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`, and have an `id` of `logo`.
 
 The `h1` should contain the text `HTML/CSS Quiz`.
 

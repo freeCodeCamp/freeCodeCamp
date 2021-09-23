@@ -7,7 +7,7 @@ dashedName: part-11
 
 # --description--
 
-Change the `h1` font colour to `#f1be32`, and set the font size to `min(5vw, 1.2em)`.
+Change the `h1` font color to `#f1be32`, and set the font size to `min(5vw, 1.2em)`.
 
 # --hints--
 
