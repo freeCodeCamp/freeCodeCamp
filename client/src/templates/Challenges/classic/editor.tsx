@@ -17,7 +17,7 @@ import React, {
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
-import * as Tone from 'tone';
+import { Sampler, context } from 'tone';
 
 import { Loader } from '../../../components/helpers';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
@@ -200,7 +200,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     indexjsx: { ...initialData }
   });
   const player = useRef<{
-    sampler: Tone.Sampler | undefined;
+    sampler: Sampler | undefined;
     noteIndex: number;
     shouldPlay: boolean;
   }>({
@@ -281,9 +281,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (editableRegion.length === 2) decorateForbiddenRanges(editableRegion);
 
     if (!player.current.sampler) {
-      player.current.sampler = new Tone.Sampler(
-        editorToneOptions
-      ).toDestination();
+      player.current.sampler = new Sampler(editorToneOptions).toDestination();
     }
 
     // TODO: do we need to return this?
@@ -600,7 +598,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     ];
 
     if (player.current.sampler?.loaded && player.current.shouldPlay) {
-      if (Tone.context.state !== 'running') Tone.context.resume();
+      if (context.state !== 'running') void context.resume();
       player.current.sampler.triggerAttack(
         editorNotes[player.current.noteIndex]
       );

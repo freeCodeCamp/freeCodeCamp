@@ -14,7 +14,7 @@ import {
   cancel
 } from 'redux-saga/effects';
 import store from 'store';
-import * as Tone from 'tone';
+import { Player } from 'tone';
 
 import {
   buildChallenge,
@@ -103,13 +103,13 @@ export function* executeChallengeSaga({
     const challengeComplete = testResults.every(test => test.pass && !test.err);
     const playSound = store.get('fcc-sound');
     if (challengeComplete && isShouldCompletionModalOpen) {
-      const player = new Tone.Player(
+      const player = new Player(
         'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/chal-comp.mp3'
       ).toDestination();
       player.autostart = playSound;
       yield put(openModal('completion'));
     } else {
-      const player = new Tone.Player(
+      const player = new Player(
         'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/try-again.mp3'
       ).toDestination();
       player.autostart = playSound;

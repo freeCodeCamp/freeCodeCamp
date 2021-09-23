@@ -7,7 +7,7 @@ import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
 import store from 'store';
-import * as Tone from 'tone';
+import { Player, context } from 'tone';
 import { modalDefaultDonation } from '../../../../config/donation-settings';
 import Cup from '../../assets/icons/cup';
 import Heart from '../../assets/icons/heart';
@@ -79,11 +79,11 @@ function DonateModal({
 
   useEffect(() => {
     if (show) {
-      const playSound = store.get('fcc-sound');
-      const player = new Tone.Player(
+      const playSound = store.get('fcc-sound') as boolean;
+      const player = new Player(
         'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/donate.mp3'
       ).toDestination();
-      if (Tone.context.state !== 'running') Tone.context.resume();
+      if (context.state !== 'running') void context.resume();
       player.autostart = playSound;
       executeGA({ type: 'modal', data: '/donation-modal' });
       executeGA({

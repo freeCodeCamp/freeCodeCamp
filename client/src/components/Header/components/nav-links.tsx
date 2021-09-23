@@ -20,7 +20,7 @@ import React, { Component, Fragment } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import store from 'store';
-import * as Tone from 'tone';
+import { Player, context } from 'tone';
 import envData from '../../../../../config/env.json';
 
 import {
@@ -55,8 +55,8 @@ export class NavLinks extends Component<NavLinksProps, {}> {
   async toggleTheme(currentTheme = 'default', toggleNightMode: any) {
     const playSound = store.get('fcc-sound') as boolean;
     if (playSound) {
-      const player = new Tone.Player().toDestination();
-      if (Tone.context.state !== 'running') await Tone.context.resume();
+      const player = new Player().toDestination();
+      if (context.state !== 'running') await context.resume();
       if (currentTheme === 'night') {
         await player.load(
           'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/day.mp3'
