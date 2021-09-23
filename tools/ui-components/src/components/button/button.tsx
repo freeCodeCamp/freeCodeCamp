@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
 import React from 'react';
-import { ButtonProps } from '../..//types/button.types';
+import { ButtonProps } from '../../types/button.types';
 
 import './button.css';
 
@@ -32,11 +31,4 @@ export const Button = ({
       {label}
     </button>
   );
-};
-
-Button.propTypes = {
-  backgroundColor: PropTypes.string,
-  label: PropTypes.string,
-  primary: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
