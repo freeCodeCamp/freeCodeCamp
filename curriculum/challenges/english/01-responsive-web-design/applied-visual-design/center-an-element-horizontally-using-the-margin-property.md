@@ -21,9 +21,9 @@ Center the `div` on the page by adding a `margin` property with a value of `auto
 
 The `div` should have a `margin` set to `auto`.
 
-```js 
+```js
 assert(new __helpers.CSSHelp(document).getStyle('div')?.margin === 'auto');
-``` 
+```
 
 # --seed--
 
