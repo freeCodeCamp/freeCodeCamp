@@ -36,9 +36,7 @@ const propTypes = {
 };
 
 const reflexProps = {
-  propagateDimensions: true,
-  renderOnResize: true,
-  renderOnResizeRate: 20
+  propagateDimensions: true
 };
 
 class DesktopLayout extends Component {
