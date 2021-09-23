@@ -16,19 +16,19 @@ Append a `span` element with a class of `sr-only` to the current text content of
 You should add a `span` element within the third `label` element.
 
 ```js
-assert.exists(document.querySelector('label:nth-of-type(3) > span'));
+assert.exists(document.querySelector('.info:nth-of-type(3) > label > span'));
 ```
 
 You should give the `span` element a class of `sr-only`.
 
 ```js
-assert.equal(document.querySelector('label:nth-of-type(3) > span')?.className, 'sr-only');
+assert.equal(document.querySelector('.info:nth-of-type(3) > label > span')?.className, 'sr-only');
 ```
 
 You should place the `span` after the text content `D.O.B.`.
 
 ```js
-assert.match(document.querySelector('label:nth-of-type(3) > label')?.innerHTML, /D\.O\.B\.<span/);
+assert.match(document.querySelector('.info:nth-of-type(3) > label')?.innerHTML, /D\.O\.B\.<span/);
 ```
 
 # --seed--

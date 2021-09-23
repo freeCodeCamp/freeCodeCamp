@@ -14,25 +14,25 @@ Within the `div.question-block` elements, nest one `label` element, and give the
 You should nest one `label` element within the first `div.question-block` element.
 
 ```js
-assert.exists(document.querySelector('div.question-block:nth-child(1) > label'));
+assert.exists(document.querySelectorAll('.formrow > .question-block')?.[0]?.querySelector('label'));
 ```
 
 You should nest one `label` element within the second `div.question-block` element.
 
 ```js
-assert.exists(document.querySelector('div.question-block:nth-child(2) > label'));
+assert.exists(document.querySelectorAll('.formrow > .question-block')?.[1]?.querySelector('label'));
 ```
 
 You should give the first `label` element text content.
 
 ```js
-assert.isAtLeast(document.querySelector('div.question-block:nth-child(1) > label')?.textContent?.length, 1);
+assert.isAtLeast(document.querySelectorAll('.formrow > .question-block')?.[0]?.querySelector('label')?.textContent?.length, 1);
 ```
 
 You should give the second `label` element text content.
 
 ```js
-assert.isAtLeast(document.querySelector('div.question-block:nth-child(2) > label')?.textContent?.length, 1);
+assert.isAtLeast(document.querySelectorAll('.formrow > .question-block')?.[1]?.querySelector('label')?.textContent?.length, 1);
 ```
 
 # --seed--

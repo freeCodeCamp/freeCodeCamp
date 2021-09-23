@@ -16,37 +16,37 @@ Within each `fieldset`, nest one `legend` element, and one `ul` element with two
 You should nest one `legend` element within the first `fieldset` element.
 
 ```js
-assert.equal(document.querySelectorAll('fieldset:nth-of-type(1) > legend')?.length, 1);
+assert.equal(document.querySelectorAll('.question-block:nth-of-type(1) > fieldset > legend')?.length, 1);
 ```
 
 You should nest one `ul` element within the first `fieldset` element.
 
 ```js
-assert.equal(document.querySelectorAll('fieldset:nth-of-type(1) > ul')?.length, 1);
+assert.equal(document.querySelectorAll('.question-block:nth-of-type(1) > fieldset > ul')?.length, 1);
 ```
 
 You should nest two `li` elements within the first `ul` element.
 
 ```js
-assert.equal(document.querySelectorAll('ul:nth-of-type(1) > li')?.length, 2);
+assert.equal(document.querySelectorAll('fieldset > ul')?.[0]?.querySelectorAll('li')?.length, 2);
 ```
 
 You should nest one `legend` element within the second `fieldset` element.
 
 ```js
-assert.equal(document.querySelectorAll('fieldset:nth-of-type(2) > legend')?.length, 1);
+assert.equal(document.querySelectorAll('.question-block:nth-of-type(2) > fieldset > legend')?.length, 1);
 ```
 
 You should nest one `ul` element within the second `fieldset` element.
 
 ```js
-assert.equal(document.querySelectorAll('fieldset:nth-of-type(2) > ul')?.length, 1);
+assert.equal(document.querySelectorAll('.question-block:nth-of-type(2) > fieldset > ul')?.length, 1);
 ```
 
 You should nest two `li` elements within the second `ul` element.
 
 ```js
-assert.equal(document.querySelectorAll('ul:nth-of-type(2) > li')?.length, 2);
+assert.equal(document.querySelectorAll('fieldset > ul')?.[1]?.querySelectorAll('li')?.length, 2);
 ```
 
 # --seed--

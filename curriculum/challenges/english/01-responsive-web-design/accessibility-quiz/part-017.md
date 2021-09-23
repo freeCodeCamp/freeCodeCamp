@@ -33,10 +33,10 @@ assert.include(style?.fontFamily, 'Verdana');
 You should set the second value of the `font-family` property to another sans-serif, web safe font. _Hint: I would choose Tahoma_.
 
 ```js
-// Acceptable fonts: Arial, Helvetica, Tahoma, Trebuchet MS.
+// Acceptable fonts: Arial, sans-serif, Helvetica, Tahoma, Trebuchet MS.
 const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
 const style = gs('h1, h2') || gs('h2, h1');
-assert.match(style?.fontFamily, /(Tahoma)|(Arial)|(Helvetica)|(Trebuchet MS)/);
+assert.match(style?.fontFamily, /(Tahoma)|(Arial)|(sans-serif)|(Helvetica)|(Trebuchet MS)/);
 ```
 
 You should use an `h2` element selector to target the `h2` elements.
@@ -48,7 +48,7 @@ assert.exists(new __helpers.CSSHelp(document).getStyle('h2'));
 You should give `h2` a `border-bottom` property of `4px solid #dfdfe2`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('h2')?.borderBottom, '4px solid #dfdfe2');
+assert.equal(new __helpers.CSSHelp(document).getStyle('h2')?.borderBottom, '4px solid rgb(223, 223, 226)');
 ```
 
 # --seed--
