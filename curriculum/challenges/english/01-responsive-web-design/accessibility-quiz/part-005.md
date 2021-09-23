@@ -29,7 +29,6 @@ assert.isAtMost(document.querySelector('body > title')?.textContent?.length, 60)
 Try being more descriptive with your `title` element. _Hint: At least 20 characters_
 
 ```js
-// TODO: Check title is longer than 20 characters
 assert.isAtLeast(document.querySelector('body > title')?.textContent?.length, 20);
 ```
 

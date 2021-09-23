@@ -42,14 +42,13 @@ assert.exists(document.querySelector('img + h1 + nav'));
 You should give the `img` element a `src` attribute of `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`.
 
 ```js
-// TODO: Use CDN for same svg
-assert.equal(document.querySelector('img')?.getAttribute('src'), 'https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg');
+assert.equal(document.querySelector('img')?.src, 'https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg');
 ```
 
 You should give the `img` element an `id` attribute of `logo`.
 
 ```js
-assert.equal(document.querySelector('img')?.getAttribute('id'), 'logo');
+assert.equal(document.querySelector('img')?.id, 'logo');
 ```
 
 You should give the `h1` element the text `HTML/CSS Quiz`.

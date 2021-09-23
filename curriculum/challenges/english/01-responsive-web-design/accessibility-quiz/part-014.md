@@ -9,7 +9,7 @@ dashedName: part-14
 
 As this is a quiz, you will need a form for users to submit answers. You can semantically separate the content within the form using `section` elements.
 
-Within the `main` element, create a form with three nested `section` elements. Then, make the form submit to `https://freecodecamp.org/practice-project/accessibility-quiz`.
+Within the `main` element, create a form with three nested `section` elements. Then, make the form submit to `https://freecodecamp.org/practice-project/accessibility-quiz`, using the correct method.
 
 # --hints--
 
@@ -28,13 +28,25 @@ assert.equal(document.querySelectorAll('main > form > section')?.length, 3);
 You should give the `form` element an `action` attribute.
 
 ```js
-assert.notEmpty(document.querySelector('main > form').getAttribute('action'));
+assert.notEmpty(document.querySelector('main > form')?.action);
 ```
 
 You should give the `action` attribute a value of `https://freecodecamp.org/practice-project/accessibility-quiz`.
 
 ```js
-assert.equal(document.querySelector('main > form').getAttribute('action'), 'https://freecodecamp.org/practice-project/accessibility-quiz');
+assert.equal(document.querySelector('main > form')?.action, 'https://freecodecamp.org/practice-project/accessibility-quiz');
+```
+
+You should give the `form` element a `method` attribute.
+
+```js
+assert.notEmpty(document.querySelector('main > form')?.method);
+```
+
+You should give the `form` element a `method` attribute with a value of `post`.
+
+```js
+assert.equal(document.querySelector('main > form')?.method?.toLowerCase(), 'post');
 ```
 
 # --seed--

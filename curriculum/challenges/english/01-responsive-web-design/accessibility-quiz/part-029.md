@@ -64,25 +64,25 @@ assert.exists(document.querySelector('ul.answers-list > li > label:nth-of-type(4
 You should give the first `input` a `type` of `radio`.
 
 ```js
-assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[0]?.getAttribute('type'), 'radio');
+assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[0]?.type, 'radio');
 ```
 
 You should give the second `input` a `type` of `radio`.
 
 ```js
-assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[1]?.getAttribute('type'), 'radio');
+assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[1]?.type, 'radio');
 ```
 
 You should give the third `input` a `type` of `radio`.
 
 ```js
-assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[2]?.getAttribute('type'), 'radio');
+assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[2]?.type, 'radio');
 ```
 
 You should give the fourth `input` a `type` of `radio`.
 
 ```js
-assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[3]?.getAttribute('type'), 'radio');
+assert.equal(document.querySelectorAll('ul.answers-list > li > label > input')?.[3]?.type, 'radio');
 ```
 
 # --seed--

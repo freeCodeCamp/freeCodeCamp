@@ -14,19 +14,19 @@ To be able to navigate within the page, give each anchor element an `href` corre
 You should give the first `a` element an `href` of `#student-info`.
 
 ```js
-assert.equal(document.querySelectorAll('a')?.[0]?.getAttribute('href'), '#student-info');
+assert.equal(document.querySelectorAll('a')?.[0]?.href, '#student-info');
 ```
 
 You should give the second `a` element an `href` of `#html-questions`.
 
 ```js
-assert.equal(document.querySelectorAll('a')?.[1]?.getAttribute('href'), '#html-questions');
+assert.equal(document.querySelectorAll('a')?.[1]?.href, '#html-questions');
 ```
 
 You should give the third `a` element an `href` of `#css-questions`.
 
 ```js
-assert.equal(document.querySelectorAll('a')?.[2]?.getAttribute('href'), '#css-questions');
+assert.equal(document.querySelectorAll('a')?.[2]?.href, '#css-questions');
 ```
 
 # --seed--

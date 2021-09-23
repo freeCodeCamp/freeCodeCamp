@@ -18,7 +18,7 @@ You should give the `html` element a `lang` attribute. _Hint: You can use the va
 ```js
 assert.match(code, /<html\s+lang=('|")[\w\-]+?\1\s*>/i);
 // TODO: This should/could be fixed in the builder.js
-// assert.notThrow(Intl.getCanonicalLocales(document.querySelector('html').getAttribute('lang')));
+// assert.notThrow(Intl.getCanonicalLocales(document.querySelector('html').lang));
 ```
 
 # --seed--

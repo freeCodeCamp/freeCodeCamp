@@ -13,7 +13,7 @@ To enable navigation on the page, add an unordered list with the following three
 - `HTML`
 - `CSS`
 
-The list items should be wrapped in anchor tags.
+The list items text should be wrapped in anchor tags.
 
 # --hints--
 

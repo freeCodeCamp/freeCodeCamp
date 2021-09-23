@@ -14,43 +14,43 @@ Keeping in mind best-practices for form inputs, give each `input` an appropriate
 You should give the first `input` a `type` of `text`.
 
 ```js
-assert.equal(document.querySelectorAll('input')?.[0]?.getAttribute('type'), 'text');
+assert.equal(document.querySelectorAll('input')?.[0]?.type, 'text');
 ```
 
 You should give the second `input` a `type` of `email`.
 
 ```js
-assert.equal(document.querySelectorAll('input')?.[1]?.getAttribute('type'), 'email');
+assert.equal(document.querySelectorAll('input')?.[1]?.type, 'email');
 ```
 
 You should give the third `input` a `type` of `date`.
 
 ```js
-assert.equal(document.querySelectorAll('input')?.[2]?.getAttribute('type'), 'date');
+assert.equal(document.querySelectorAll('input')?.[2]?.type, 'date');
 ```
 
 You should give the first `input` an appropriate `name` attribute.
 
 ```js
-assert.isAtLeast(document.querySelectorAll('input')?.[0]?.getAttribute('name')?.length, 1);
+assert.isAtLeast(document.querySelectorAll('input')?.[0]?.name?.length, 1);
 ```
 
 You should give the second `input` an appropriate `name` attribute.
 
 ```js
-assert.isAtLeast(document.querySelectorAll('input')?.[1]?.getAttribute('name')?.length, 1);
+assert.isAtLeast(document.querySelectorAll('input')?.[1]?.name?.length, 1);
 ```
 
 You should give the third `input` an appropriate `name` attribute.
 
 ```js
-assert.isAtLeast(document.querySelectorAll('input')?.[2]?.getAttribute('name')?.length, 1);
+assert.isAtLeast(document.querySelectorAll('input')?.[2]?.name?.length, 1);
 ```
 
 You should give the first `input` a `placeholder` attribute.
 
 ```js
-assert.notEmpty(document.querySelectorAll('input')?.[0]?.getAttribute('placeholder'));
+assert.notEmpty(document.querySelectorAll('input')?.[0]?.placeholder);
 ```
 
 # --seed--

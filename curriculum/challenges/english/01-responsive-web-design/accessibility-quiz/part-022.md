@@ -16,7 +16,7 @@ Remove the placeholder text from the first `input` element, relying on the `labe
 You should remove the `placeholder` attribute from the first `input` element.
 
 ```js
-assert.isEmpty(document.querySelectorAll('input')?.[0].getAttribute('placeholder'));
+assert.isEmpty(document.querySelectorAll('input')?.[0]?.placeholder);
 ```
 
 # --seed--

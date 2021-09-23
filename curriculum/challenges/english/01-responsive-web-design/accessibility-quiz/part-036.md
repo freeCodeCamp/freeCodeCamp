@@ -28,7 +28,7 @@ assert.equal(document.querySelectorAll('div.answer > select > option')?.length, 
 You should give the first `option` element a `value` of `""`.
 
 ```js
-assert.equal(document.querySelector('div.answer > select > option:nth-child(1)')?.getAttribute('value'), '');
+assert.equal(document.querySelector('div.answer > select > option:nth-child(1)')?.value, '');
 ```
 
 You should give the first `option` element a text content of `Select an option`.
@@ -40,7 +40,7 @@ assert.equal(document.querySelector('div.answer > select > option:nth-child(1)')
 You should give the second `option` element a `value` of `yes`.
 
 ```js
-assert.equal(document.querySelector('div.answer > select > option:nth-child(2)')?.getAttribute('value'), 'yes');
+assert.equal(document.querySelector('div.answer > select > option:nth-child(2)')?.value, 'yes');
 ```
 
 You should give the second `option` element a text content of `Yes`.
@@ -52,7 +52,7 @@ assert.equal(document.querySelector('div.answer > select > option:nth-child(2)')
 You should give the third `option` element a `value` of `no`.
 
 ```js
-assert.equal(document.querySelector('div.answer > select > option:nth-child(3)')?.getAttribute('value'), 'no');
+assert.equal(document.querySelector('div.answer > select > option:nth-child(3)')?.value, 'no');
 ```
 
 You should give the third `option` element a text content of `No`.

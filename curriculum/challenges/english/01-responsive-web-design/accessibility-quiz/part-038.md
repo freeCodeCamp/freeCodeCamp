@@ -38,7 +38,7 @@ assert.isNotNaN(Number(cols));
 You should give the `textarea` placeholder text describing an example answer.
 
 ```js
-assert.notEmpty(document.querySelector('div.answer:nth-of-type(2) > textarea')?.getAttribute('placeholder'));
+assert.notEmpty(document.querySelector('div.answer:nth-of-type(2) > textarea')?.placeholder);
 ```
 
 # --seed--

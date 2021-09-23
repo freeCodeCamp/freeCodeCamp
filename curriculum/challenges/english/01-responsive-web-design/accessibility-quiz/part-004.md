@@ -7,7 +7,7 @@ dashedName: part-4
 
 # --description--
 
-Another important `meta` tag for accessibility and SEO is the `description` tag. The value of the `content` attribute is used by search engines to provide a description of your page.
+Another important `meta` tag for accessibility and SEO is the `description` definition. The value of the `content` attribute is used by search engines to provide a description of your page.
 
 Add a `meta` tag with the `name` attribute set to `description`, and give it a useful `content` attribute.
 
@@ -28,13 +28,13 @@ assert.exists(document.querySelector('meta[name="description"]'));
 You should give the `meta` a `content` attribute.
 
 ```js
-assert.notEmpty(document.querySelector('meta[name="description"]')?.getAttribute('content'));
+assert.notEmpty(document.querySelector('meta[name="description"]')?.content);
 ```
 
 The `content` attribute value should not be more than 165 characters. _This is Google's maximum description length._
 
 ```js
-assert.isAtMost(document.querySelector('meta[name="description"]')?.getAttribute('content')?.length, 165);
+assert.isAtMost(document.querySelector('meta[name="description"]')?.content?.length, 165);
 ```
 
 # --seed--
