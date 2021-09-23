@@ -39,11 +39,11 @@ You should place the `img`, `h1`, and `nav` elements in that order.
 assert.exists(document.querySelector('img + h1 + nav'));
 ```
 
-You should give the `img` element a `src` attribute of `https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg`.
+You should give the `img` element a `src` attribute of `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`.
 
 ```js
 // TODO: Use CDN for same svg
-assert.equal(document.querySelector('img')?.getAttribute('src'), 'https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg');
+assert.equal(document.querySelector('img')?.getAttribute('src'), 'https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg');
 ```
 
 You should give the `img` element an `id` attribute of `logo`.

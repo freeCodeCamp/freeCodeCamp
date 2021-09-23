@@ -57,7 +57,7 @@ assert.equal(document.querySelectorAll('a')?.[2]?.accessKey?.length, 1);
   </head>
   <body>
     <header>
-      <img id="logo" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg">
+      <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
       <h1>HTML/CSS Quiz</h1>
       <nav>
 --fcc-editable-region--
@@ -379,7 +379,7 @@ address {
 
 <body>
 	<header>
-		<img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg" id="logo" alt="freeCodeCamp logo" />
+		<img src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" id="logo" alt="freeCodeCamp logo" />
 		<h1>HTML/CSS Quiz</h1>
 		<nav>
 			<ul>

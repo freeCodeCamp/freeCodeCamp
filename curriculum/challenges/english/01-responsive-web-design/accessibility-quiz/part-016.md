@@ -107,7 +107,7 @@ assert.isAtLeast(document.querySelectorAll('h2')?.[2]?.textContent?.length, 1);
   </head>
   <body>
     <header>
-      <img id="logo" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/main/build/platform/universal/fcc_primary.svg">
+      <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
       <h1>HTML/CSS Quiz</h1>
       <nav>
         <ul>
