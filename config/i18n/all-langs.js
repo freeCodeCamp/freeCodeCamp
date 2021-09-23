@@ -49,7 +49,8 @@ const auditedCerts = {
     'quality-assurance',
     'scientific-computing-with-python',
     'data-analysis-with-python',
-    'information-security'
+    'information-security',
+    'machine-learning-with-python'
   ],
   'chinese-traditional': [
     'responsive-web-design',
@@ -60,7 +61,8 @@ const auditedCerts = {
     'quality-assurance',
     'scientific-computing-with-python',
     'data-analysis-with-python',
-    'information-security'
+    'information-security',
+    'machine-learning-with-python'
   ],
   italian: [
     'responsive-web-design',
