@@ -19,16 +19,10 @@ Center the `div` on the page by adding a `margin` property with a value of `auto
 
 # --hints--
 
-The css selector should select the `div`
-
-```js
-assert(code.match(/div\s*?{/g));
-```
-
 The `div` should have a `margin` set to `auto`.
 
 ```js 
-assert(code.match(/margin:\s*?auto;?\s*?}/g));
+assert(new __helpers.CSSHelp(document).getStyle('div')?.margin === 'auto');
 ``` 
 
 # --seed--
