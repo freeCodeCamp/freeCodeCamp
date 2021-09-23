@@ -59,7 +59,7 @@ assert.equal(document.querySelectorAll('section')?.[2]?.role, 'region');
     </header>
     <main>
 --fcc-editable-region--
-      <form action="https://freecodecamp.org/practice-project/accessibility-quiz">
+      <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
         <section></section>
         <section></section>
         <section></section>

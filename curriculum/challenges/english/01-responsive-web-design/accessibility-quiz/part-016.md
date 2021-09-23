@@ -119,7 +119,7 @@ assert.isAtLeast(document.querySelectorAll('h2')?.[2]?.textContent?.length, 1);
     </header>
     <main>
 --fcc-editable-region--
-      <form action="https://freecodecamp.org/practice-project/accessibility-quiz">
+      <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
         <section role="region"></section>
         <section role="region"></section>
         <section role="region"></section>

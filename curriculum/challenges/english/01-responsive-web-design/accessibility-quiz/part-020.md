@@ -114,7 +114,7 @@ assert.notEqual(htmlFor(1), htmlFor(2));
       </nav>
     </header>
     <main>
-      <form action="https://freecodecamp.org/practice-project/accessibility-quiz">
+      <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
 --fcc-editable-region--
         <section role="region" aria-labelledby="student-info">
           <h2 id="student-info">Student Info</h2>

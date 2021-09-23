@@ -44,7 +44,7 @@ assert.equal(document.querySelector('label:nth-of-type(3) > span')?.textContent,
       </nav>
     </header>
     <main>
-      <form action="https://freecodecamp.org/practice-project/accessibility-quiz">
+      <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
         <section role="region" aria-labelledby="student-info">
           <h2 id="student-info">Student Info</h2>
           <div class="info">
