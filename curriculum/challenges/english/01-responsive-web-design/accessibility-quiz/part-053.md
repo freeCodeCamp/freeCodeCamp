@@ -183,7 +183,7 @@ You should give the `input` a `font-size` greater than `13px`.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

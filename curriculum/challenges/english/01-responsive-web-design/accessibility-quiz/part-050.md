@@ -16,43 +16,43 @@ Also, ensure the `section` elements cannot be larger than `600px` in width.
 You should use a `section` selector.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('section'));
 ```
 
 You should give the `section` a `width` of `80%`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('section')?.width, '80%');
 ```
 
 You should give the `section` a `margin-top` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('section')?.marginTop, '0px');
 ```
 
 You should give the `section` a `margin-right` of `auto`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('section')?.marginRight, 'auto');
 ```
 
 You should give the `section` a `margin-bottom` of `10px`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('section')?.marginBottom, '10px');
 ```
 
 You should give the `section` a `margin-left` of `auto`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('section')?.marginLeft, 'auto');
 ```
 
 You should give the `section` a `max-width` of `600px`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('section')?.maxWidth, '600px');
 ```
 
 # --seed--
@@ -177,7 +177,7 @@ You should give the `section` a `max-width` of `600px`.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

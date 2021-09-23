@@ -157,7 +157,7 @@ You should give `footer` a `justify-content` of `center`.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

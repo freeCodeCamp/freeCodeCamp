@@ -16,25 +16,25 @@ Then, fix the `header` to the top of the viewport.
 You should give the `header` a `justify-content` of `space-between`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('header')?.justifyContent, 'space-between');
 ```
 
 You should give the `header` an `align-items` of `center`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('header')?.alignItems, 'center');
 ```
 
 You should give the `header` a `position` of `fixed`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('header')?.position, 'fixed');
 ```
 
 You should give the `header` a `top` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('header')?.top, '0px');
 ```
 
 # --seed--
@@ -159,7 +159,7 @@ You should give the `header` a `top` of `0`.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

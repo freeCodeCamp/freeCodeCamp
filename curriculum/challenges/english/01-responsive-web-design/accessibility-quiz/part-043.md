@@ -16,19 +16,20 @@ Wrap a link around the text `freeCodeCamp`, and set its location to `https://fre
 You should add an `a` element.
 
 ```js
-
+assert.exists(document.querySelector('address > a'));
 ```
 
 You should give the `a` element a `href` attribute of `https://freecodecamp.org`.
 
 ```js
-
+assert.equal(document.querySelector('address > a')?.href, 'https://freecodecamp.org');
 ```
 
 You should wrap the `a` element around the existing text `freeCodeCamp`.
 
 ```js
-
+assert.equal(document.querySelector('address > a')?.innerHTML, 'freeCodeCamp');
+assert.equal(document.querySelector('address')?.innerHTML?.match(/freeCodeCamp/g)?.length, 1);
 ```
 
 # --seed--
@@ -154,7 +155,7 @@ You should wrap the `a` element around the existing text `freeCodeCamp`.
       <address>
         freeCodeCamp<br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

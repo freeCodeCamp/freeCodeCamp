@@ -21,31 +21,40 @@ display: block;
 You should use either the `nav li` or `nav > ul > li` selector.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+assert.exists(gs('nav li') || gs('nav > ul > li'));
 ```
 
 You should give the `li` elements a `color` of `#dfdfe2`.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+const color = gs('nav li')?.color ?? gs('nav > ul > li')?.color;
+assert.equal(color, 'rgb(223, 223, 226)');
 ```
 
 You should give the `li` elements a `margin` of `0 0.2rem`.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+const margin = gs('nav li')?.margin ?? gs('nav > ul > li')?.margin;
+assert.equal(margin, '0px 0.2rem');
 ```
 
 You should give the `li` elements a `padding` of `0.2rem`.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+const padding = gs('nav li')?.padding ?? gs('nav > ul > li')?.padding;
+assert.equal(padding, '0.2rem');
 ```
 
 You should give the `li` elements a `display` of `block`.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+const display = gs('nav li')?.display ?? gs('nav > ul > li')?.display;
+assert.equal(display, 'block');
 ```
 
 # --seed--
@@ -170,7 +179,7 @@ You should give the `li` elements a `display` of `block`.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

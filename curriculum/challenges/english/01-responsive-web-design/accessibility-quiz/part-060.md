@@ -151,7 +151,7 @@ You should give `.answers-list` a `padding` of `0`.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

@@ -16,31 +16,38 @@ Then, create a new selector targetting the navigation list elements so that when
 You should use the existing `li > a` selector to set the `text-decoration` to `none`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('li > a')?.textDecoration, 'none');
 ```
 
 You should use either the `nav > ul > li:hover` or `nav li:hover` selector to style the elements on hover.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+assert.exists(gs('nav > ul > li:hover') || gs('nav li:hover'));
 ```
 
 You should give hovered `li` elements a `background-color` of `#dfdfe2`.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+const bgColor = gs('nav > ul > li:hover')?.backgroundColor ?? gs('nav li:hover')?.backgroundColor;
+assert.equal(bgColor, 'rgb(223, 223, 226)');
 ```
 
 You should give hovered `li` elements a `color` of `#1b1b32`.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+const color = gs('nav > ul > li:hover')?.color ?? gs('nav li:hover')?.color;
+assert.equal(color, 'rgb(27, 27, 50)');
 ```
 
 You should give hovered `li` elements a `cursor` of `pointer`.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+const cursor = gs('nav > ul > li:hover')?.cursor ?? gs('nav li:hover')?.cursor;
+assert.equal(cursor, 'pointer');
 ```
 
 # --seed--
@@ -165,7 +172,7 @@ You should give hovered `li` elements a `cursor` of `pointer`.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

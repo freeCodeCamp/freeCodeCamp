@@ -30,61 +30,61 @@ Use the above to define the `sr-only` class.
 You should use the `.sr-only` selector.
 
 ```js
-assert.exists(new helpers.CSSHelp(document).getStyle('.sr-only'));
+assert.exists(new _helpers.CSSHelp(document).getStyle('.sr-only'));
 ```
 
 You should give the `.sr-only` a `position` of `absolute`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('.sr-only')?.position, 'absolute');
+assert.equal(new _helpers.CSSHelp(document).getStyle('.sr-only')?.position, 'absolute');
 ```
 
 You should give the `.sr-only` a `width` of `1px`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('.sr-only')?.width, '1px');
+assert.equal(new _helpers.CSSHelp(document).getStyle('.sr-only')?.width, '1px');
 ```
 
 You should give the `.sr-only` a `height` of `1px`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('.sr-only')?.height, '1px');
+assert.equal(new _helpers.CSSHelp(document).getStyle('.sr-only')?.height, '1px');
 ```
 
 You should give the `.sr-only` a `padding` of `0`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('.sr-only')?.padding, '0px');
+assert.equal(new _helpers.CSSHelp(document).getStyle('.sr-only')?.padding, '0px');
 ```
 
 You should give the `.sr-only` a `margin` of `-1px`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('.sr-only')?.margin, '-1px');
+assert.equal(new _helpers.CSSHelp(document).getStyle('.sr-only')?.margin, '-1px');
 ```
 
 You should give the `.sr-only` an `overflow` of `hidden`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('.sr-only')?.overflow, 'hidden');
+assert.equal(new _helpers.CSSHelp(document).getStyle('.sr-only')?.overflow, 'hidden');
 ```
 
 You should give the `.sr-only` a `clip` of `rect(0, 0, 0, 0)`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('.sr-only')?.clip, 'rect(0, 0, 0, 0)');
+assert.equal(new _helpers.CSSHelp(document).getStyle('.sr-only')?.clip, 'rect(0, 0, 0, 0)');
 ```
 
 You should give the `.sr-only` a `white-space` of `nowrap`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('.sr-only')?.whiteSpace, 'nowrap');
+assert.equal(new _helpers.CSSHelp(document).getStyle('.sr-only')?.whiteSpace, 'nowrap');
 ```
 
 You should give the `.sr-only` a `border` of `0`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('.sr-only')?.border, '0px');
+assert.equal(new _helpers.CSSHelp(document).getStyle('.sr-only')?.border, '0px');
 ```
 
 # --seed--

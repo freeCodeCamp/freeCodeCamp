@@ -16,19 +16,19 @@ Target unordered list elements within `nav` elements, and use _Flexbox_ to evenl
 You should use the `nav > ul` selector.
 
 ```js
-assert.exists(new helpers.CSSHelp(document).getStyle('nav > ul'));
+assert.exists(new _helpers.CSSHelp(document).getStyle('nav > ul'));
 ```
 
 You should give the `nav > ul` elements a `display` of `flex`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('nav > ul')?.display, 'flex');
+assert.equal(new _helpers.CSSHelp(document).getStyle('nav > ul')?.display, 'flex');
 ```
 
 You should give the `nav > ul` elements a `justify-content` of `space-evenly`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('nav > ul')?.justifyContent, 'space-evenly');
+assert.equal(new _helpers.CSSHelp(document).getStyle('nav > ul')?.justifyContent, 'space-evenly');
 ```
 
 # --seed--

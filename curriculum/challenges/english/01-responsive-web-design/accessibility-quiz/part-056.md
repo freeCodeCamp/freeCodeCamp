@@ -159,7 +159,7 @@ You should set the `text-align: right` property before the `.info input` rule.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

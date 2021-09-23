@@ -191,7 +191,7 @@ You should give `button` a `border` of `3px solid #3b3b4f`.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

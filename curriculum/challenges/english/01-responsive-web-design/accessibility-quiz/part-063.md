@@ -145,7 +145,7 @@ You should set the `color` to a value with a contrast ratio of at least `7:1`. _
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

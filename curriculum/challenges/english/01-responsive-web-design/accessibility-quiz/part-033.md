@@ -14,13 +14,13 @@ To prevent unnecessary repetition, target the `before` sudo-element of the `p` e
 You should use the `p::before` selector.
 
 ```js
-assert.exists(new helpers.CSSHelp(document).getStyle('p::before'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('p::before'));
 ```
 
 You should give the `p::before` sudo-element a `content` property of `Question #`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('p::before')?.content, 'Question #');
+assert.equal(new __helpers.CSSHelp(document).getStyle('p::before')?.content, 'Question #');
 ```
 
 # --seed--

@@ -152,7 +152,7 @@ You should wrap the existing `*` rule within the `@media` rule.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>

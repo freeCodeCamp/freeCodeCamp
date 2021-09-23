@@ -16,13 +16,13 @@ After the `main` element, add one `footer` element, and nest one `address` eleme
 You should add one `footer` element after the `main` element.
 
 ```js
-
+assert.exists(document.querySelector('main + footer'));
 ```
 
 You should nest one `address` element within the `footer` element.
 
 ```js
-
+assert.exists(document.querySelector('footer > address'));
 ```
 
 # --seed--

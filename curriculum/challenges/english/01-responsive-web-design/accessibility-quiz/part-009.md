@@ -16,37 +16,37 @@ First, change the `background-color` to `#0a0a23` so you can see the logo. Then,
 You should give `#logo` a `background-color` of `#0a0a23`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('#logo')?.backgroundColor, '#0a0a23');
+assert.equal(new _helpers.CSSHelp(document).getStyle('#logo')?.backgroundColor, '#0a0a23');
 ```
 
 You should use the `aspect-ratio` property.
 
 ```js
-assert.notEmpty(new helpers.CSSHelp(document).getStyle('#logo')?.aspectRatio);
+assert.notEmpty(new _helpers.CSSHelp(document).getStyle('#logo')?.aspectRatio);
 ```
 
 You should not use the `height` property.
 
 ```js
-assert.isEmpty(new helpers.CSSHelp(document).getStyle('#logo')?.height);
+assert.isEmpty(new _helpers.CSSHelp(document).getStyle('#logo')?.height);
 ```
 
 You should not change the `width` property.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('#logo')?.width, 'max(100px, 18vw)');
+assert.equal(new _helpers.CSSHelp(document).getStyle('#logo')?.width, 'max(100px, 18vw)');
 ```
 
 You should give the `img` an `aspect-ratio` of `35 / 4`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('#logo')?.aspectRatio, '35 / 4');
+assert.equal(new _helpers.CSSHelp(document).getStyle('#logo')?.aspectRatio, '35 / 4');
 ```
 
 You should give the `img` a `padding` of `0.4rem`.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('#logo')?.padding, '0.4rem');
+assert.equal(new _helpers.CSSHelp(document).getStyle('#logo')?.padding, '0.4rem');
 ```
 
 # --seed--

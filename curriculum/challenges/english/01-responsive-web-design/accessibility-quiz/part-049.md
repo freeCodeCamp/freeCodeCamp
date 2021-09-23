@@ -9,7 +9,7 @@ dashedName: part-49
 
 On small screens, the unordered list in the navigation bar overflows the right side of the screen.
 
-Fix this by using _Flexbox_ to wrap the `ul` content. The, set the following CSS properties to correctly align the text:
+Fix this by using _Flexbox_ to wrap the `ul` content. Then, set the following CSS properties to correctly align the text:
 
 ```css
 align-items: center;
@@ -23,31 +23,31 @@ height: 100%;
 You should give the `ul` a `flex-wrap` of `wrap`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('nav > ul')?.flexWrap, 'wrap');
 ```
 
 You should give the `ul` an `align-items` of `center`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('nav > ul')?.alignItems, 'center');
 ```
 
 You should give the `ul` a `padding-inline-start` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('nav > ul')?.paddingInlineStart, '0px');
 ```
 
 You should give the `ul` a `margin-block` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('nav > ul')?.marginBlock, '0px');
 ```
 
 You should give the `ul` a `height` of `100%`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('nav > ul')?.height, '100%');
 ```
 
 # --seed--
@@ -172,7 +172,7 @@ You should give the `ul` a `height` of `100%`.
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
         San Fransisco<br />
-        Califormia<br />
+        California<br />
         USA
       </address>
     </footer>
