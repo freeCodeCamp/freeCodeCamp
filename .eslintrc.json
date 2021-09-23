@@ -55,7 +55,10 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ],
-      "plugins": ["@typescript-eslint"]
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": ["off"]
+      }
     },
     {
       "files": ["./tools/ui-components/**/*.test.[jt]s?(x)", "./client/**/*.test.[jt]s?(x)"],

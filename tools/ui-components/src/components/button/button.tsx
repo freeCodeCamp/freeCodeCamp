@@ -7,13 +7,13 @@ import './button.css';
 /**
  * Primary UI component for user interaction
  */
-export const Button: React.FC<ButtonProps> = ({
+export const Button = ({
   primary,
   size = 'medium',
   backgroundColor,
   label,
   ...props
-}) => {
+}: ButtonProps) => {
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
