@@ -1,6 +1,6 @@
 ---
 id: 561add10cb82ac38a17513bc
-title: Certificado de Diseño Web Responsivo
+title: Certificación en Diseño Web Responsivo
 challengeType: 7
 isPrivate: true
 tests:
@@ -12,10 +12,10 @@ tests:
     title: Crea un formulario de encuesta
   - 
     id: 587d78af367417b2b2512b04
-    title: Crea una página de inicio de producto
+    title: Crea una Página de Producto
   - 
     id: 587d78b0367417b2b2512b05
-    title: Crea una página de documentación técnica
+    title: Construye una página de documentación técnica
   - 
     id: bd7158d8c242eddfaeb5bd13
-    title: Crea una página web de portafolio personal
+    title: Crea un Portafolio Personal

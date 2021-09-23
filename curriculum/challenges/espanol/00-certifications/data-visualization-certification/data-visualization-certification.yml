@@ -1,21 +1,21 @@
 ---
 id: 5a553ca864b52e1d8bceea14
-title: Data Visualization Certification
+title: Certificación en Visualización de Datos
 challengeType: 7
 isPrivate: true
 tests:
   - 
     id: bd7168d8c242eddfaeb5bd13
-    title: Visualize Data with a Bar Chart
+    title: Visualiza Datos con un Gráfico de Barras
   - 
     id: bd7178d8c242eddfaeb5bd13
-    title: Visualize Data with a Scatterplot Graph
+    title: Visualiza Datos con un Gráfico de Dispersión
   - 
     id: bd7188d8c242eddfaeb5bd13
-    title: Visualize Data with a Heat Map
+    title: Visualiza Datos con un Mapa de Calor
   - 
     id: 587d7fa6367417b2b2512bbf
-    title: Visualize Data with a Choropleth Map
+    title: Visualiza Datos con un Mapa Coroplético
   - 
     id: 587d7fa6367417b2b2512bc0
-    title: Visualize Data with a Treemap Diagram
+    title: Visualiza Datos con un Diagrama de Mapa de Árbol
