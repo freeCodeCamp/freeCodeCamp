@@ -15,15 +15,21 @@ This method works for images, too. Images are inline elements by default, but ca
 
 # --instructions--
 
-Center the `div` on the page by adding a `margin` property with a value of `auto`.
+Center the `div` on the page by adding a `margin` property with a value of `auto`.y
 
 # --hints--
 
-The `div` should have a `margin` set to `auto`.
+The css selector should select the `div`
 
 ```js
-assert(code.match(/margin:\s*?auto;/g));
+assert(code.match(/div\s*?{/g));
 ```
+
+The `div` should have a `margin` set to `auto`.
+
+```js 
+assert(code.match(/margin:\s*?auto;?\s*?}/g));
+``` 
 
 # --seed--
 
