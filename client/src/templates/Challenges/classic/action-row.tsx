@@ -3,11 +3,11 @@ import BreadCrumb from '../components/bread-crumb';
 import EditorTabs from './EditorTabs';
 
 interface ActionRowProps {
-  block?: string;
+  block: string;
   showConsole: boolean;
   showNotes?: boolean;
   showPreview: boolean;
-  superBlock?: string;
+  superBlock: string;
   switchDisplayTab: (displayTab: string) => void;
 }
 

@@ -11,6 +11,7 @@ const { showUpcomingChanges } = envData;
 type Pane = { flex: number };
 
 interface DesktopLayoutProps {
+  block: string;
   challengeFiles: ChallengeFiles;
   editor: ReactElement | null;
   hasEditableBoundaries: boolean;
@@ -25,6 +26,7 @@ interface DesktopLayoutProps {
   };
   preview: ReactElement;
   resizeProps: ResizePropsType;
+  superBlock: string;
   testOutput: ReactElement;
 }
 
@@ -60,6 +62,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   };
 
   const {
+    block,
     resizeProps,
     instructions,
     editor,
@@ -67,7 +70,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     hasPreview,
     layoutState,
     preview,
-    hasEditableBoundaries
+    hasEditableBoundaries,
+    superBlock
   } = props;
 
   const challengeFile = getChallengeFile();
@@ -84,8 +88,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       <ReflexContainer className='desktop-layout' orientation='horizontal'>
         {projectBasedChallenge && (
           <ActionRow
+            block={block}
             showConsole={showConsole}
             showPreview={showPreview}
+            superBlock={superBlock}
             switchDisplayTab={switchDisplayTab}
           />
         )}

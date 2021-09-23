@@ -325,7 +325,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           containerRef={this.containerRef}
           description={description}
           editorRef={this.editorRef}
-          hasEditableBoundries={this.hasEditableBoundries()}
+          hasEditableBoundaries={this.hasEditableBoundaries()}
           resizeProps={this.resizeProps}
           title={title}
         />
@@ -353,7 +353,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     );
   }
 
-  hasEditableBoundries() {
+  hasEditableBoundaries() {
     const { challengeFiles } = this.props;
     return (
       challengeFiles?.some(
@@ -409,9 +409,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
             <DesktopLayout
+              block={block}
               challengeFiles={challengeFiles}
               editor={this.renderEditor()}
-              hasEditableBoundaries={this.hasEditableBoundries()}
+              hasEditableBoundaries={this.hasEditableBoundaries()}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
                 showToolPanel: true
@@ -419,6 +420,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               layoutState={this.state.layout}
               preview={this.renderPreview()}
               resizeProps={this.resizeProps}
+              superBlock={superBlock}
               testOutput={this.renderTestOutput()}
             />
           </Media>

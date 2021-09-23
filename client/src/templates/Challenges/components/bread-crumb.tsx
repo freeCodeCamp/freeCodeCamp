@@ -6,8 +6,8 @@ import { Link } from '../../../components/helpers/index';
 import './challenge-title.css';
 
 interface BreadCrumbProps {
-  block: string | undefined;
-  superBlock: string | undefined;
+  block: string;
+  superBlock: string;
 }
 
 function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
