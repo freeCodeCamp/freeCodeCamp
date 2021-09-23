@@ -14,25 +14,25 @@ Set the `footer` background color to `#2a2a40`, and use _Flexbox_ to horizontall
 You should use the `footer` element selector.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('footer'));
 ```
 
 You should give `footer` a `background-color` of `#2a2a40`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('footer')?.backgroundColor, 'rgb(42, 42, 64)');
 ```
 
 You should give `footer` a `display` of `flex`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('footer')?.display, 'flex');
 ```
 
 You should give `footer` a `justify-content` of `center`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('footer')?.justifyContent, 'center');
 ```
 
 # --seed--

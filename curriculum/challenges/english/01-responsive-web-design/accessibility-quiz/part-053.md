@@ -16,49 +16,49 @@ Then, increase the font size for all `input` elements.
 You should use a `.formrow` selector to target the `.formrow` elements.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('.formrow'));
 ```
 
 You should give the `.formrow` a `margin-top` of at least `1px`.
 
 ```js
-
+assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('.formrow')?.marginTop?.replace(/\D+/, '')), 1);
 ```
 
 You should give the `.formrow` a `padding-top` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.formrow')?.paddingTop, '0px');
 ```
 
 You should give the `.formrow` a `padding-right` of at least `1px`.
 
 ```js
-
+assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('.formrow')?.paddingRight?.replace(/\D+/, '')), 1);
 ```
 
 You should give the `.formrow` a `padding-bottom` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.formrow')?.paddingBottom, '0px');
 ```
 
 You should give the `.formrow` a `padding-left` of at least `1px`.
 
 ```js
-
+assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('.formrow')?.paddingLeft?.replace(/\D+/, '')), 1);
 ```
 
 You should use an `input` selector to target the `input` elements.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('input'));
 ```
 
 You should give the `input` a `font-size` greater than `13px`.
 
 ```js
-
+assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('input')?.fontSize?.replace(/\D+/, '')), 13);
 ```
 
 # --seed--

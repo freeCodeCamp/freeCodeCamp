@@ -11,10 +11,27 @@ Target all `label` elements within `.info` elements, and set their `width` to `1
 
 # --hints--
 
-Test 1
+You should use either the `.info label` or `.info > label` selector.
 
 ```js
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+assert.exists(gs('.info label') || gs('.info > label'));
+```
 
+You should give the `label` elements a `width` of `10%`.
+
+```js
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s)?.width;
+const width = gs('.info label') || gs('.info > label');
+assert.equal(width, '10%');
+```
+
+You should give the `label` elements a `min-width` of `55px`.
+
+```js
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s)?.minWidth;
+const minWidth = gs('.info label') || gs('.info > label');
+assert.equal(minWidth, '55px');
 ```
 
 # --seed--

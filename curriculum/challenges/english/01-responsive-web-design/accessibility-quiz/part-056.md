@@ -16,24 +16,31 @@ Also, align the text to the right.
 You should use either a `.info > label, .info > input` or `.info label, .info input` selector.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+assert.exists(gs('.info > label, .info > input') || gs('.info label, .info input') || gs('.info > input, .info > label') || gs('.info input, .info label'));
 ```
 
 You should give the `input` and `label` elements a `display` of `inline-block`.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s)?.display;
+const display = gs('.info > label, .info > input') ?? gs('.info label, .info input') ?? gs('.info > input, .info > label') ?? gs('.info input, .info label');
+assert.equal(display, 'inline-block');
 ```
 
 You should give the `input` and `label` elements a `text-align` of `right`.
 
 ```js
-
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s)?.textAlign;
+const textAlign = gs('.info > label, .info > input') ?? gs('.info label, .info input') ?? gs('.info > input, .info > label') ?? gs('.info input, .info label');
+assert.equal(textAlign, 'right');
 ```
 
 You should set the `text-align: right` property before the `.info input` rule.
 
 ```js
+const gs = (s) => new __helpers.CSSHelp(document).getStyleRule(s);
+assert(gs('.info input').isDeclaredAfter('.info label, .info input') || gs('.info input').isDeclaredAfter('.info > label, .info > input') || gs('.info input').isDeclaredAfter('.info > input, .info > label') || gs('.info input').isDeclaredAfter('.info input, .info label'));
 
 ```
 

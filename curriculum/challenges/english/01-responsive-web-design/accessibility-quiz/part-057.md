@@ -19,10 +19,40 @@ padding-top: 5px;
 
 # --hints--
 
-Test 1
+You should use the `.question-block` selector.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('.question-block'));
+```
 
+You should give the `.question-block` element a `display` of `block`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.question-block')?.display, 'block');
+```
+
+You should give the `.question-block` element a `width` of `100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.question-block')?.width, '100%');
+```
+
+You should give the `.question-block` element a `margin-top` of `20px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.question-block')?.marginTop, '20px');
+```
+
+You should give the `.question-block` element a `padding-top` of `5px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.question-block')?.paddingTop, '5px');
+```
+
+You should give the `.question-block` element a `text-align` of `left`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.question-block')?.textAlign, 'left');
 ```
 
 # --seed--

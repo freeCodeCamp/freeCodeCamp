@@ -16,19 +16,19 @@ Remove the border and bottom padding on the `.question` elements.
 You should use the `.question` selector.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('.question'));
 ```
 
 You should give the `.question` a `border` of `none`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.question')?.border, 'none');
 ```
 
 You should give the `.question` a `padding-bottom` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.question')?.paddingBottom, '0px');
 ```
 
 # --seed--

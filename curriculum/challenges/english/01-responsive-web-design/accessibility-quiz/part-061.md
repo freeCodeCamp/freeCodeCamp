@@ -24,49 +24,49 @@ border: 3px solid #3b3b4f;
 You should use the `button` element selector.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('button'));
 ```
 
 You should give `button` a `display` of `block`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.display, 'block');
 ```
 
 You should give `button` a `margin` of `40px auto`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.margin, '40px auto');
 ```
 
 You should give `button` a `width` of `40%`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.width, '40%');
 ```
 
 You should give `button` a `padding` of `15px`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.padding, '15px');
 ```
 
 You should give `button` a `font-size` of `23px`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.fontSize, '23px');
 ```
 
 You should give `button` a `background` of `#d0d0d5`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.background, 'rgb(208, 208, 213)');
 ```
 
 You should give `button` a `border` of `3px solid #3b3b4f`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.border, '3px solid #3b3b4f');
 ```
 
 # --seed--

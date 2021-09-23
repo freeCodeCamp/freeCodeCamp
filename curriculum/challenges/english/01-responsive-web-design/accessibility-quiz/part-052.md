@@ -14,31 +14,31 @@ Add padding to the top and left of the `.info` elements, and set the other value
 You should use the `.info` selector.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('.info'));
 ```
 
 You should give `.info` a `padding-top` of at least `1px`.
 
 ```js
-
+assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('.info')?.paddingTop?.replace(/\D+/, '')), 1);
 ```
 
 You should give `.info` a `padding-right` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.info')?.paddingRight, '0px');
 ```
 
 You should give `.info` a `padding-bottom` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.info')?.paddingBottom, '0px');
 ```
 
 You should give `.info` a `padding-left` of at least `1px`.
 
 ```js
-
+assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('.info')?.paddingLeft?.replace(/\D+/, '')), 1);
 ```
 
 # --seed--

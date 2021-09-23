@@ -20,7 +20,25 @@ font-size: 20px;
 You should use the `p` element selector.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('p'));
+```
 
+You should give the `p` element a `margin-top` of `5px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('p')?.marginTop, '5px');
+```
+
+You should give the `p` element a `padding-left` of `15px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('p')?.paddingLeft, '15px');
+```
+
+You should give the `p` element a `font-size` of `20px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('p')?.fontSize, '20px');
 ```
 
 # --seed--

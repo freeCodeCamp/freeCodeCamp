@@ -14,13 +14,13 @@ Replace the top margin of the `h2` elements with `60px` of top padding.
 You should give the `h2` a `margin-top` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('h2')?.marginTop, '0px');
 ```
 
 You should give the `h2` a `padding-top` of `60px`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('h2')?.paddingTop, '60px');
 ```
 
 # --seed--

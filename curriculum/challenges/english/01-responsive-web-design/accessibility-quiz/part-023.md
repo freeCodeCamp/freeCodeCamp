@@ -28,7 +28,7 @@ assert.equal(document.querySelector('label:nth-of-type(3) > span')?.className, '
 You should place the `span` after the text content `D.O.B.`.
 
 ```js
-// TODO
+assert.match(document.querySelector('label:nth-of-type(3) > label')?.innerHTML, /D\.O\.B\.<span/);
 ```
 
 # --seed--

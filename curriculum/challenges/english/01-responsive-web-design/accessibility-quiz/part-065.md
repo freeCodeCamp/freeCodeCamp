@@ -16,13 +16,13 @@ Select all elements, and set the `scroll-behavior` to `smooth`.
 You should use the `*` selector.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('*'));
 ```
 
 You should give `*` a `scroll-behavior` of `smooth`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('*')?.scrollBehavior, 'smooth');
 ```
 
 # --seed--

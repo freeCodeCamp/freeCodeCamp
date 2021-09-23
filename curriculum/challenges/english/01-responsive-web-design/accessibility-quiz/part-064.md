@@ -14,37 +14,37 @@ Horizontally center all the text within the `address` element, and add some padd
 You should use the `address` element selector.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('address'));
 ```
 
 You should give `address` a `text-align` of `center`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('address')?.textAlign, 'center');
 ```
 
 You should give `address` a `padding-top` of at least `1px`.
 
 ```js
-
+assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('address')?.paddingTop?.replace(/\D+/, '')), 1);
 ```
 
 You should give `address` a `padding-right` of at least `1px`.
 
 ```js
-
+assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('address')?.paddingRight?.replace(/\D+/, '')), 1);
 ```
 
 You should give `address` a `padding-bottom` of at least `1px`.
 
 ```js
-
+assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('address')?.paddingBottom?.replace(/\D+/, '')), 1);
 ```
 
 You should give `address` a `padding-left` of at least `1px`.
 
 ```js
-
+assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('address')?.paddingLeft?.replace(/\D+/, '')), 1);
 ```
 
 # --seed--

@@ -14,19 +14,19 @@ Remove the default styling for the list items of `.answers-list`, and remove the
 You should use the `.answers-list` selector.
 
 ```js
-
+assert.exists(new __helpers.CSSHelp(document).getStyle('.answers-list'));
 ```
 
 You should give `.answers-list` a `list-style` of `none`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.answers-list')?.listStyle, 'none');
 ```
 
 You should give `.answers-list` a `padding` of `0`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.answers-list')?.padding, '0px');
 ```
 
 # --seed--

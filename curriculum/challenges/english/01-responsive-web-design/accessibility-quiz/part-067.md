@@ -26,19 +26,19 @@ Well done. You have completed the _Accessibility Quiz_ practice project.
 You should give the first `a` element a single-letter `access-key`.
 
 ```js
-
+assert.equal(document.querySelector('a')?.[0]?.getAttribute('access-key')?.length, 1);
 ```
 
 You should give the second `a` element a single-letter `access-key`.
 
 ```js
-
+assert.equal(document.querySelector('a')?.[1]?.getAttribute('access-key')?.length, 1);
 ```
 
 You should give the third `a` element a single-letter `access-key`.
 
 ```js
-
+assert.equal(document.querySelector('a')?.[2]?.getAttribute('access-key')?.length, 1);
 ```
 
 # --seed--

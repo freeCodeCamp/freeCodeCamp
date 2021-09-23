@@ -11,10 +11,27 @@ To make the first section look more inline, target only the `input` elements wit
 
 # --hints--
 
-Test 1
+You should use either the `.info input` or `.info > input` selector.
 
 ```js
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
+assert.exists(gs('.info input') || gs('.info > input'));
+```
 
+You should give the `input` elements a `width` of `50%`.
+
+```js
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s)?.width;
+const width = gs('.info input') ?? gs('.info > input');
+assert.equal(width, '50%');
+```
+
+You should give the `input` elements a `text-align` of `left`.
+
+```js
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s)?.textAlign;
+const textAlign = gs('.info input') ?? gs('.info > input');
+assert.equal(textAlign, 'left');
 ```
 
 # --seed--
