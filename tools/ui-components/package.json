@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "dependencies": {
+    "@babel/preset-typescript": "^7.15.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.9.6",
     "@types/react": "^17.0.24",

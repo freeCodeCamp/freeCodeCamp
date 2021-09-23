@@ -8,7 +8,8 @@
         }
       }
     ],
-    "@babel/preset-react"
+    "@babel/preset-react",
+    "@babel/preset-typescript"
   ],
   "plugins": [["transform-react-remove-prop-types", { "removeImport": true }]]
 }
