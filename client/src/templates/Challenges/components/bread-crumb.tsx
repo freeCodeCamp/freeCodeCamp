@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import i18next from 'i18next';
 import React from 'react';
 import { Link } from '../../../components/helpers/index';
