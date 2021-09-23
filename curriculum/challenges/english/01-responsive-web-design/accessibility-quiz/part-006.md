@@ -32,7 +32,7 @@ assert.exists(document.querySelector('body > main'));
 The `header` element should come before the `main` element.
 
 ```js
-assert.exists(document.querySelector('main + header'));
+assert.exists(document.querySelector('header + main'));
 ```
 
 # --seed--

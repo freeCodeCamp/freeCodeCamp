@@ -7,7 +7,7 @@ dashedName: part-3
 
 # --description--
 
-Continuing with the `meta` tags, a `viewport` tag tells the browser how to render the page. Including one betters visual accessability on mobile, and improves _SEO_ (search engine optimisation).
+Continuing with the `meta` tags, a `viewport` type tells the browser how to render the page. Including one betters visual accessability on mobile, and improves _SEO_ (search engine optimisation).
 
 Add a `viewport` tag with a `content` attribute detailing the `width` and `initial-scale` of the apge.
 

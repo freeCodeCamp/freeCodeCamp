@@ -58,19 +58,19 @@ assert.equal(document.querySelectorAll('section')?.[2]?.querySelectorAll('h2')?.
 You should give the first `h2` element an `id` attribute of `student-info`.
 
 ```js
-assert.equal(document.querySelectorAll('h2')?.[0]?.getAttribute('id'), 'student-info');
+assert.equal(document.querySelectorAll('h2')?.[0]?.id, 'student-info');
 ```
 
 You should give the second `h2` element an `id` attribute of `html-questions`.
 
 ```js
-assert.equal(document.querySelectorAll('h2')?.[1]?.getAttribute('id'), 'html-questions');
+assert.equal(document.querySelectorAll('h2')?.[1]?.id, 'html-questions');
 ```
 
 You should give the third `h2` element an `id` attribute of `css-questions`.
 
 ```js
-assert.equal(document.querySelectorAll('h2')?.[2]?.getAttribute('id'), 'css-questions');
+assert.equal(document.querySelectorAll('h2')?.[2]?.id, 'css-questions');
 ```
 
 You should give the first `h2` element suitable text content. _Hint: I would have chosen `Student Info`_

@@ -16,13 +16,13 @@ Currently, the `img` is assuming it's default size, which is too large. Correctl
 You should use the `#logo` selector to target the `img` element.
 
 ```js
-assert.exists(new _helpers.CSSHelp(document).getStyle('#logo'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('#logo'));
 ```
 
 You should give the `img` a `width` of `max(100px, 18vw)`.
 
 ```js
-assert.equal(new _helpers.CSSHelp(document).getStyle('#logo')?.width, 'max(100px, 18vw)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('#logo')?.width, 'max(100px, 18vw)');
 ```
 
 # --seed--

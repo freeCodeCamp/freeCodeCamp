@@ -38,7 +38,7 @@ function contrast(rgb1, rgb2) {
 }
 const backgroundColor = [42, 42, 64];
 const gs = (s) => new __helpers.CSSHelp(document).getStyle(s)?.color;
-const color = gs('footer, footer a') ? gs('footer a, footer');
+const color = gs('footer, footer a') ?? gs('footer a, footer');
 const rgb = color?.match(/(\d+),\s(\d+),\s(\d+)/);
 const camperColor = [rgb[1], rgb[2], rgb[3]];
 assert.isAtLeast(contrast(backgroundColor, camperColor), 7);

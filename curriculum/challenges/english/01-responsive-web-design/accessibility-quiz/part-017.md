@@ -18,14 +18,14 @@ Also, add a `boder-bottom` of `4px solid #dfdfe2` to `h2` elements, to make the 
 You should use a multiple element selector to target the `h1` and `h2` elements.
 
 ```js
-const gs = (s) => new _helpers.CSSHelp(document).getStyle(s);
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
 assert.exists(gs('h1, h2') || gs('h2, h1'));
 ```
 
 You should set the first value of the `font-family` property to `Verdana`.
 
 ```js
-const gs = (s) => new _helpers.CSSHelp(document).getStyle(s);
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
 const style = gs('h1, h2') || gs('h2, h1');
 assert.include(style?.fontFamily, 'Verdana');
 ```
@@ -34,7 +34,7 @@ You should set the second value of the `font-family` property to another sans-se
 
 ```js
 // Acceptable fonts: Arial, Helvetica, Tahoma, Trebuchet MS.
-const gs = (s) => new _helpers.CSSHelp(document).getStyle(s);
+const gs = (s) => new __helpers.CSSHelp(document).getStyle(s);
 const style = gs('h1, h2') || gs('h2, h1');
 assert.match(style?.fontFamily, /(Tahoma)|(Arial)|(Helvetica)|(Trebuchet MS)/);
 ```
@@ -42,13 +42,13 @@ assert.match(style?.fontFamily, /(Tahoma)|(Arial)|(Helvetica)|(Trebuchet MS)/);
 You should use an `h2` element selector to target the `h2` elements.
 
 ```js
-assert.exists(new _helpers.CSSHelp(document).getStyle('h2'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('h2'));
 ```
 
 You should give `h2` a `border-bottom` property of `4px solid #dfdfe2`.
 
 ```js
-assert.equal(new _helpers.CSSHelp(document).getStyle('h2')?.borderBottom, '4px solid #dfdfe2');
+assert.equal(new __helpers.CSSHelp(document).getStyle('h2')?.borderBottom, '4px solid #dfdfe2');
 ```
 
 # --seed--

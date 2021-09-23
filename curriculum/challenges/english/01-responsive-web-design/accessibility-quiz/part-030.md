@@ -16,25 +16,33 @@ Link the `label` elements with their corresponding `input` elements.
 You should give the first `label` a `for` attribute matching the `id` of its `input` element.
 
 ```js
-assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[0]?.htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[0]?.id);
+const htmlFor = document.querySelectorAll('ul.answer-list > li > label')?.[0]?.htmlFor;
+assert.notEmpty(htmlFor);
+assert.equal(htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[0]?.id);
 ```
 
 You should give the second `label` a `for` attribute matching the `id` of its `input` element.
 
 ```js
-assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[1]?.htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[1]?.id);
+const htmlFor = document.querySelectorAll('ul.answer-list > li > label')?.[1]?.htmlFor;
+assert.notEmpty(htmlFor);
+assert.equal(htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[1]?.id);
 ```
 
 You should give the third `label` a `for` attribute matching the `id` of its `input` element.
 
 ```js
-assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[2]?.htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[2]?.id);
+const htmlFor = document.querySelectorAll('ul.answer-list > li > label')?.[2]?.htmlFor;
+assert.notEmpty(htmlFor);
+assert.equal(htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[2]?.id);
 ```
 
 You should give the fourth `label` a `for` attribute matching the `id` of its `input` element.
 
 ```js
-assert.equal(document.querySelectorAll('ul.answer-list > li > label')?.[3]?.htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[3]?.id);
+const htmlFor = document.querySelectorAll('ul.answer-list > li > label')?.[3]?.htmlFor;
+assert.notEmpty(htmlFor);
+assert.equal(htmlFor, document.querySelectorAll('ul.answer-list > li > label > input')?.[3]?.id);
 ```
 
 # --seed--
