@@ -229,7 +229,7 @@ assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.cssRules?.[0]?
             loading="lazy"
             class="image-3"
             width="600"
-            height="200"
+            height="400"
           />
         </aside>
       </section>

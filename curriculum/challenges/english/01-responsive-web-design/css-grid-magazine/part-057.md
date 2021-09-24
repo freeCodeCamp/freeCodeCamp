@@ -221,7 +221,7 @@ assert(new __helpers.CSSHelp(document).getStyle('hr')?.margin === '1.5rem 0px');
             loading="lazy"
             class="image-3"
             width="600"
-            height="200"
+            height="400"
           />
         </aside>
       </section>
