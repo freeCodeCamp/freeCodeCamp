@@ -6,6 +6,7 @@ on:
     types: [opened, synchronize, reopened]
     branches-ignore:
       - 'renovate/**'
+      - 'i18n-sync-**'
 
 name: CodeSee Map
 
