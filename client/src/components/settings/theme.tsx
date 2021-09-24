@@ -28,7 +28,7 @@ export default function ThemeSettings({
         offLabel={t('buttons.off')}
         onLabel={t('buttons.on')}
         toggleFlag={async () => {
-          const playSound = store.get('fcc-sound') as boolean;
+          const playSound = store.get('fcc-sound') as boolean | undefined;
           if (playSound) {
             const tone = await import('tone');
             const nightToDayPlayer = new tone.Player(

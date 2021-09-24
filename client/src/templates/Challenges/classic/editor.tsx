@@ -202,12 +202,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sampler: any;
     noteIndex: number;
-    shouldPlay: boolean;
+    shouldPlay: boolean | undefined;
   }>({
     // eslint-disable-next-line no-undefined
     sampler: undefined,
     noteIndex: 0,
-    shouldPlay: store.get('fcc-sound') as boolean
+    shouldPlay: store.get('fcc-sound') as boolean | undefined
   });
 
   const data = dataRef.current[fileKey];

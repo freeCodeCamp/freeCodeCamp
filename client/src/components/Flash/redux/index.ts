@@ -20,7 +20,7 @@ export const sagas = [];
 export const createFlashMessage = createAction(
   types.createFlashMessage,
   (msg: { type: string; message: string }) => {
-    const playSound = store.get('fcc-sound') as boolean;
+    const playSound = store.get('fcc-sound') as boolean | undefined;
     if (playSound) {
       void import('tone').then(tone => {
         if (tone.context.state !== 'running') {

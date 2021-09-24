@@ -78,7 +78,7 @@ function DonateModal({
 
   useEffect(() => {
     if (show) {
-      const playSound = store.get('fcc-sound') as boolean;
+      const playSound = store.get('fcc-sound') as boolean | undefined;
       if (playSound) {
         void import('tone').then(tone => {
           const player = new tone.Player(
