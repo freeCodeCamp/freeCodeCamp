@@ -7,7 +7,7 @@ dashedName: part-22
 
 # --description--
 
-Within your `.image-quote` element, nest an `hr` element, a `p` element` and a second `hr` element. Give the `p` element a `class` set to `quote` and the text `The millions of people who are learning to code through freeCodeCamp will have an even better resource to help them learn these fundamentals.`.
+Within your `.image-quote` element, nest an `hr` element, a `p` element and a second `hr` element. Give the `p` element a `class` set to `quote` and the text `The millions of people who are learning to code through freeCodeCamp will have an even better resource to help them learn these fundamentals.`.
 
 # --hints--
 
