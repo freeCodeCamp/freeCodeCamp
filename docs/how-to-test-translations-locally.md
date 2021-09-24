@@ -120,7 +120,16 @@ const auditedCerts = {
 };
 ```
 
-For the video challenges, you need to change at least two files. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
+Finally, in your `.env` file, set `CLIENT_LOCALE` and `CURRICULUM_LOCALE` to your new language (use the `availableLangs` value.)
+
+```txt
+CLIENT_LOCALE="dothraki"
+CURRICULUM_LOCALE="dothraki"
+```
+
+## Enabling Localized Videos
+
+For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -147,11 +156,29 @@ dashedName: introduction-why-program
 ---
 ```
 
-Finally, in your `.env` file, set `CLIENT_LOCALE` and `CURRICULUM_LOCALE` to your new language (use the `availableLangs` value.)
+Update the `VideoLocaleIds` interface in `client/src/redux/prop-types` to include the new language.
 
-```txt
-CLIENT_LOCALE="dothraki"
-CURRICULUM_LOCALE="dothraki"
+```ts
+export interface VideoLocaleIds {
+  espanol?: string;
+  italian?: string;
+  portuguese?: string;
+  dothraki?: string;
+}
+```
+
+And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
+
+```js
+videoLocaleIds: Joi.when('challengeType', {
+  is: challengeTypes.video,
+  then: Joi.object().keys({
+    espanol: Joi.string(),
+    italian: Joi.string(),
+    portuguese: Joi.string(),
+    dothraki: Joi.string()
+  })
+}),
 ```
 
 ## Loading Translations
