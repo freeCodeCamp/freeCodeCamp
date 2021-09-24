@@ -9,7 +9,7 @@ dashedName: part-69
 
 Time to style the last section of the magazine - the images.
 
-The images are wrapped with an `aside` element using the `image-wrapper` class, so create an `.image-wrapper` selector. Set the `display` property to `grid.
+The images are wrapped with an `aside` element using the `image-wrapper` class, so create an `.image-wrapper` selector. Set the `display` property to `grid`.
 
 # --hints--
 

@@ -7,7 +7,7 @@ dashedName: part-20
 
 # --description--
 
-Within your `.image-wrapper` element, give the second `img` element a `src` of `https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png`, an `alt` of `image of the calculator project`, a `loading` attribute set to `lazy`, a `class` set to `image-2`, a width attribute set to `400`, and a height attribute set to `400`.
+Within your `.image-wrapper` element, give the second `img` element a `src` of `https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png`, an `alt` of `image of the calculator project`, a `loading` attribute set to `lazy`, a `class` set to `image-2`, a `width` attribute set to `400`, and a `height` attribute set to `400`.
 
 # --hints--
 
