@@ -8,7 +8,7 @@ dashedName: render-conditionally-from-props
 
 # --description--
 
-Hasta ahora, has visto cómo utilizar `if/else`, `&&`, y el operador ternario (`condition ? expressionIfTrue : expressionIfFalse`) para tomar decisiones condicionales sobre qué renderizar y cuándo. Sin embargo, queda un tema importante por discutir que te permite combinar cualquier o todos estos conceptos con otra poderosa característica de React: los props. El uso de props para renderizar condicionalmente el código es muy común entre los desarrolladores de React, es decir, utilizan el valor de una prop dada para automáticamente tomar decisiones sobre qué renderizar.
+Hasta ahora, has visto cómo usar `if/else`, `&&`y el operador ternario (`condition ? expressionIfTrue : expressionIfFalse`) para tomar decisiones condicionales sobre qué renderizar y cuándo. Sin embargo, queda un tema importante por discutir que te permite combinar cualquier o todos estos conceptos con otra poderosa característica de React: los props. El uso de props para renderizar condicionalmente el código es muy común entre los desarrolladores de React, es decir, utilizan el valor de una prop dada para automáticamente tomar decisiones sobre qué renderizar.
 
 En este desafío, configurarás un componente hijo para tomar decisiones de renderizado basadas en props. También usarás el operador ternario, pero puedes ver cómo varios de los otros conceptos que se cubrieron en los últimos desafíos podrían ser igual de útiles en este contexto.
 
