@@ -20,6 +20,7 @@
   - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Test translations locally](how-to-test-translations-locally.md)
   - [Understand the curriculum file structure](curriculum-file-structure.md)
+  - [How to work on tutorials that use CodeRoad](how-to-work-on-tutorials-that-use-CodeRoad.md)
 
 ---
 
