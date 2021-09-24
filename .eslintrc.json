@@ -55,13 +55,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ],
-      "plugins": ["@typescript-eslint"],
-      "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": ["off"],
-        "@typescript-eslint/no-unsafe-call":["off"],
-        "@typescript-eslint/no-unsafe-assignment":["off"],
-        "@typescript-eslint/no-unsafe-member-access":["off"]
-      }
+      "plugins": ["@typescript-eslint"]
     },
     {
       "files": ["./tools/ui-components/**/*.test.[jt]s?(x)", "./client/**/*.test.[jt]s?(x)"],

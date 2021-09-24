@@ -6,7 +6,7 @@ import './button.css';
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
+export const Button: React.FC<ButtonProps> = ({
   primary,
   size = 'medium',
   backgroundColor,
