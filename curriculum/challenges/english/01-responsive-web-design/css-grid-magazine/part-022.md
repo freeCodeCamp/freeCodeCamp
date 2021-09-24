@@ -237,7 +237,7 @@ assert(document.querySelector('.image-quote p')?.innerText === 'The millions of 
             loading="lazy"
             class="image-3"
             width="600"
-            height="200"
+            height="400"
           />
         </aside>
 --fcc-editable-region--

@@ -215,7 +215,7 @@ assert(new __helpers.CSSHelp(document).getStyle('main')?.rowGap === '3rem');
             loading="lazy"
             class="image-3"
             width="600"
-            height="200"
+            height="400"
           />
         </aside>
       </section>

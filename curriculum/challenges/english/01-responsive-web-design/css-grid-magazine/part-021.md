@@ -41,10 +41,10 @@ Your third `img` element should have a `width` attribute set to `600`.
 assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('width') === '600');
 ```
 
-Your third `img` element should have a `height` attribute set to `200`.
+Your third `img` element should have a `height` attribute set to `400`.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('height') === '200');
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('height') === '400');
 ```
 
 # --seed--

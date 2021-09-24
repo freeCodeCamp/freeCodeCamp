@@ -223,7 +223,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.display === '
             loading="lazy"
             class="image-3"
             width="600"
-            height="200"
+            height="400"
           />
         </aside>
       </section>

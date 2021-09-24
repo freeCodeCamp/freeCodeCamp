@@ -221,7 +221,7 @@ assert(new __helpers.CSSHelp(document).getStyle('h2, h3, h4, h5, h6')?.fontFamil
             loading="lazy"
             class="image-3"
             width="600"
-            height="200"
+            height="400"
           />
         </aside>
       </section>
