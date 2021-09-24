@@ -1,5 +1,5 @@
 ---
-id: 6148b0d764e4192e5712ed92
+id: 6148b07081759c2c691166a9
 title: Part 35
 challengeType: 0
 dashedName: part-35
@@ -7,16 +7,20 @@ dashedName: part-35
 
 # --description--
 
-For additional control over the layout of your content, you can have a CSS Grid within a CSS Grid.
-
-Set the `display` property of your `.heading` selector to `grid`.
+Create a `.text` selector and give it a `grid-column` property set to `2 / 3`.
 
 # --hints--
 
-Your `.heading` selector should have a `display` property set to `grid`.
+You should have a `.text` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.heading')?.display === 'grid');
+assert(new __helpers.CSSHelp(document).getStyle('.text'));
+```
+
+Your `.text` selector should have a `grid-column` property set to `2 / 3`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.gridColumn === '2 / 3');
 ```
 
 # --seed--
@@ -48,6 +52,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.heading')?.display === 'grid')
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -262,13 +267,11 @@ main {
   row-gap: 3rem;
 }
 
---fcc-editable-region--
 .heading {
   grid-column: 2 / 3;
 }
+
 --fcc-editable-region--
 
-.text {
-  grid-column: 2 / 3;
-}
+--fcc-editable-region--
 ```

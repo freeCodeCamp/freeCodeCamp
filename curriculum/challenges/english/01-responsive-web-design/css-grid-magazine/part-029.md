@@ -1,5 +1,5 @@
 ---
-id: 6144ee790af79815ad15a832
+id: 6144ee46a9d6e614c598cc05
 title: Part 29
 challengeType: 0
 dashedName: part-29
@@ -7,22 +7,26 @@ dashedName: part-29
 
 # --description--
 
-Now you are ready to start putting together the CSS grid. CSS Grid offers a two-dimensonal grid-based layout, allowing you to center items horizontally and vertically, while still retaining control to do things like overlap elements.
-
-Begin by creating a `main` selector and giving it a `display` property set to `grid`.
+Create an `a` selector, and give it a `text-decoration` property set to `none` and a `color` property set to `linen`.
 
 # --hints--
 
-You should have a `main` selector.
+You should have an `a` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('main'));
+assert(new __helpers.CSSHelp(document).getStyle('a'));
 ```
 
-Your `main` selector should have a `display` property set to `grid`.
+Your `a` selector should have a `text-decoration` property set to `none`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('main')?.display === 'grid');
+assert(new __helpers.CSSHelp(document).getStyle('a')?.textDecoration === 'none');
+```
+
+Your `a` selector should have a `color` property set to `linen`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('a')?.color === 'linen');
 ```
 
 # --seed--
@@ -54,6 +58,7 @@ assert(new __helpers.CSSHelp(document).getStyle('main')?.display === 'grid');
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -255,11 +260,6 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: linen;
 }
 
 --fcc-editable-region--

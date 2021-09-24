@@ -1,5 +1,5 @@
 ---
-id: 6148e789329dc9736ce59b85
+id: 6148e5a204d99e70343a63e4
 title: Part 73
 challengeType: 0
 dashedName: part-73
@@ -7,20 +7,16 @@ dashedName: part-73
 
 # --description--
 
-Create an `.image-1, .image-3` rule and give it a `grid-column` property set to `1 / -1`. This will allow the first and third images to span the full width of the grid.
+The `gap` property is a shorthand way to set the value of `column-gap` and `row-gap` at the same time. If given one value, it sets the `column-gap` and `row-gap` both to that value. If given two values, it sets the `row-gap` to the first value and the `column-gap` to the second.
+
+Give the `.image-wrapper` selector a `gap` property set to `2rem`.
 
 # --hints--
 
-You should have an `.image-1, .image-3` selector.
+Your `.image-wrapper` element should have a `gap` property set to `2rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-1, .image-3'));
-```
-
-Your `.image-1, .image-3` selector should have a `grid-column` property set to `1 / -1`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-1, .image-3')?.gridColumn === '1 / -1');
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gap === '2rem');
 ```
 
 # --seed--
@@ -374,15 +370,11 @@ hr {
   color: #00beef;
 }
 
+--fcc-editable-region--
 .image-wrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, min-content);
-  gap: 2rem;
-  place-items: center;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

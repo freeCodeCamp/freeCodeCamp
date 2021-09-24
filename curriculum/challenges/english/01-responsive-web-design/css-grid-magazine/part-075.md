@@ -1,5 +1,5 @@
 ---
-id: 6148f600cde42b7670c2611f
+id: 6148e789329dc9736ce59b85
 title: Part 75
 challengeType: 0
 dashedName: part-75
@@ -7,28 +7,20 @@ dashedName: part-75
 
 # --description--
 
-Create another `@media` query for `only screen` with a `max-width` of `600px`. Within, create a `.text-with-images` rule and give it a `grid-template-columns` property of `1fr`.
-
-This will collapse your bottom text area into a single column on smaller screens.
+Create an `.image-1, .image-3` rule and give it a `grid-column` property set to `1 / -1`. This will allow the first and third images to span the full width of the grid.
 
 # --hints--
 
-You should create a new `@media` query for `only screen and (max-width: 600px)`. This should be below your previous `@media` query.
+You should have an `.image-1, .image-3` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.media?.mediaText === 'only screen and (max-width: 600px)');
+assert(new __helpers.CSSHelp(document).getStyle('.image-1, .image-3'));
 ```
 
-Your new `@media` query should have a `.text-with-images` selector.
+Your `.image-1, .image-3` selector should have a `grid-column` property set to `1 / -1`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.cssRules?.[0]?.selectorText === '.text-with-images');
-```
-
-Your new `.text-with-images` selector should have a `grid-template-columns` property with a value of `1fr`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.cssRules?.[0]?.style?.gridTemplateColumns === '1fr');
+assert(new __helpers.CSSHelp(document).getStyle('.image-1, .image-3')?.gridColumn === '1 / -1');
 ```
 
 # --seed--
@@ -388,16 +380,6 @@ hr {
   grid-template-rows: repeat(3, min-content);
   gap: 2rem;
   place-items: center;
-}
-
-.image-1, .image-3 {
-  grid-column: 1 / -1;
-}
-
-@media only screen and (max-width: 720px) {
-  .image-wrapper {
-    grid-template-columns: 1fr;
-  }
 }
 
 --fcc-editable-region--

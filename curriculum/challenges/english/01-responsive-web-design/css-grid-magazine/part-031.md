@@ -1,5 +1,5 @@
 ---
-id: 6144f3818bfbc51844152e36
+id: 6144f1410990ea17187a722b
 title: Part 31
 challengeType: 0
 dashedName: part-31
@@ -7,16 +7,16 @@ dashedName: part-31
 
 # --description--
 
-Use the `minmax` function to make your columns responsive on any device. The `minmax` function takes two arguments, the first being the minimum value and the second being the maximum. These values could be a length, percentage, `fr`, or even a keyword like `max-content`.
+Now you can style the layout of your grid. CSS Grid is similar to Flexbox in that it has a special property for both the parent and child elements. 
 
-Wrap each of your already defined values of the `grid-template-columns` property in a `minmax` function, using each value as the second argument. The first argument should be `2rem`, `min-content`, and `2rem` respectively.
+In this case, your parent element is the `main` element. Set the content to have a three column layout by adding a `grid-template-columns` property with a value of `1fr 94rem 1fr`. This will create three columns where the middle column is `94rem` wide, and the first and last columns are both 1 fraction of the remaining space in the grid container.
 
 # --hints--
 
-Your `main` selector should have a `grid-template-columns` property set to `minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr)`.
+Your `main` section should have a `grid-template-columns` property set to `1fr 94rem 1fr`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('main')?.gridTemplateColumns === 'minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr)');
+assert(new __helpers.CSSHelp(document).getStyle('main')?.gridTemplateColumns === '1fr 94rem 1fr');
 ```
 
 # --seed--
@@ -48,6 +48,7 @@ assert(new __helpers.CSSHelp(document).getStyle('main')?.gridTemplateColumns ===
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -259,7 +260,6 @@ a {
 --fcc-editable-region--
 main {
   display: grid;
-  grid-template-columns: 1fr 94rem 1fr;
 }
 --fcc-editable-region--
 ```

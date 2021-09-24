@@ -1,5 +1,5 @@
 ---
-id: 6148bf49fcc7913f05dbf9b7
+id: 6148be3d605d6b3ca9425d11
 title: Part 45
 challengeType: 0
 dashedName: part-45
@@ -7,22 +7,32 @@ dashedName: part-45
 
 # --description--
 
-Create a `.author-name a:hover` selector and give it a `background-color` property set to `#306203`.
-
-This will create a hover effect only for the `a` element within the `.author-name`, showing the original freeCodeCamp green in the background.
+The subtitle also needs to be styled. Create a `.hero-subtitle` selector and give it a `font-size` property set to `2.4rem`, a `color` property set to `orangered`, and a `text-align` property set to `center`.
 
 # --hints--
 
-You should have an `.author-name a:hover` selector.
+You should have a `.hero-subtitle` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author-name a:hover'));
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle'));
 ```
 
-Your `.author-name a:hover` selector should have a `background-color` property set to `#306203`.
+Your `.hero-subtitle` selector should have a `font-size` property set to `2.4rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author-name a:hover')?.backgroundColor === 'rgb(48, 98, 3)');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.fontSize === '2.4rem');
+```
+
+Your `.hero-subtitle` selector should have a `color` property set to `orangered`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.color === 'orangered');
+```
+
+Your `.hero-subtitle` selector should have a `text-align` property set to `center`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.textAlign === 'center');
 ```
 
 # --seed--
@@ -297,17 +307,6 @@ img {
   left: 15%;
   color: orangered;
   font-size: 8rem;
-}
-
-.hero-subtitle {
-  font-size: 2.4rem;
-  color: orangered;
-  text-align: center;
-}
-
-.author {
-  font-size: 2rem;
-  font-family: "Raleway", sans-serif;
 }
 
 --fcc-editable-region--

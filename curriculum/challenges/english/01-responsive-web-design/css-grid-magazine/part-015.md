@@ -1,5 +1,5 @@
 ---
-id: 6143a83fcc32c26bcfae3efa
+id: 6143a778bffc206ac6b1dbe3
 title: Part 15
 challengeType: 0
 dashedName: part-15
@@ -7,56 +7,29 @@ dashedName: part-15
 
 # --description--
 
-Below your `.text` element, create a new `section` element and give it a class of `text text-with-images`. Within that, create an `article` element with a `class` set to `brief-history`, and an `aside` element with the `class` set to `image-wrapper`.
+Create one final `p` element at the end of your `.text` element and give it the following text:
+
+```
+Instead of a series of coding challenges, people will be in their code
+editor passing one test after another, quickly building up a project.
+People will get into a real flow state, similar to what they
+experience when they build the required projects at the end of each
+certification. They'll get that sense of forward progress right from
+the beginning. And freeCodeCamp will be a much smoother experience.
+```
 
 # --hints--
 
-You should create a new `section` element.
+You should add a sixth `p` element to the `.text` element.
 
 ```js
-assert(document.querySelectorAll('section')?.length === 3)
+assert(document.querySelectorAll('.text p')?.length === 7)
 ```
 
-Your new `section` element should come after your `.text` element.
+Your sixth `p` element should have the provided text.
 
 ```js
-assert(document.querySelectorAll('section')?.[2]?.previousElementSibling?.className === 'text')
-```
-
-Your new `section` element should have the `class` set to `text text-with-images`.
-
-```js
-assert(document.querySelectorAll('section')?.[2]?.className === 'text text-with-images')
-```
-
-Your new `section` element should have an `article` element.
-
-```js
-assert.exists(document.querySelector('.text-with-images article'));
-```
-
-Your new `section` element should have an `aside` element.
-
-```js
-assert.exists(document.querySelector('.text-with-images aside'));
-```
-
-The `article` element should come before the `aside` element.
-
-```js
-assert(document.querySelector('.text-with-images article')?.nextElementSibling?.localName === 'aside');
-```
-
-Your `article` element should have the `class` set to `brief-history`.
-
-```js
-assert(document.querySelector('.text-with-images article')?.className === 'brief-history');
-```
-
-Your `aside` element should have the `class` set to `image-wrapper`.
-
-```js
-assert(document.querySelector('.text-with-images aside')?.className === 'image-wrapper');
+assert(document.querySelectorAll('.text p')?.[6]?.innerText === 'Instead of a series of coding challenges, people will be in their code editor passing one test after another, quickly building up a project. People will get into a real flow state, similar to what they experience when they build the required projects at the end of each certification. They\'ll get that sense of forward progress right from the beginning. And freeCodeCamp will be a much smoother experience.')
 ```
 
 # --seed--
@@ -88,6 +61,7 @@ assert(document.querySelector('.text-with-images aside')?.className === 'image-w
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -122,6 +96,7 @@ assert(document.querySelector('.text-with-images aside')?.className === 'image-w
           </a>
         </div>
       </section>
+--fcc-editable-region--
       <section class="text">
         <p class="first-paragraph">
           Soon the freeCodeCamp curriculum will be 100% project-driven learning.
@@ -170,17 +145,7 @@ assert(document.querySelector('.text-with-images aside')?.className === 'image-w
           People will be coding the entire time, rather than switching back and
           forth from "reading mode" to "coding mode".
         </p>
-        <p>
-          Instead of a series of coding challenges, people will be in their code
-          editor passing one test after another, quickly building up a project.
-          People will get into a real flow state, similar to what they
-          experience when they build the required projects at the end of each
-          certification. They'll get that sense of forward progress right from
-          the beginning. And freeCodeCamp will be a much smoother experience.
-        </p>
       </section>
---fcc-editable-region--
-
 --fcc-editable-region--
     </main>
   </body>

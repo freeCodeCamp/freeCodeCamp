@@ -1,5 +1,5 @@
 ---
-id: 6148d3fff5186b57123d97e2
+id: 6148d2444d01ab541e64a1e4
 title: Part 61
 challengeType: 0
 dashedName: part-61
@@ -7,37 +7,32 @@ dashedName: part-61
 
 # --description--
 
-A quote is not really a quote without proper quotation marks. You can add these with CSS pseudo selectors.
-
-Create a `.quote::before` selector and set the `content` property to `"` with a space following it.
-
-Create a `.quote::after` selector and set the `content` property to `"` with a space preceding it.
+Create a `.quote` selector. Give it a `color` property set to `#00beef`, a `font-size` property set to `2.4rem`, and a `text-align` property set to `center`.
 
 # --hints--
 
-You should have a `.quote::before` selector.
+You should have a `.quote` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::before'));
+assert(new __helpers.CSSHelp(document).getStyle('.quote'));
 ```
 
-Your `.quote::before` selector should have a `content` property set to `" `.
+Your `.quote` selector should have a `color` property set to `#00beef`.
 
 ```js
-console.log(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content);
-assert(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content?.match(/\\?\"\s/));
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.color === 'rgb(0, 190, 239)');
 ```
 
-You should have a `.quote::after` selector.
+Your `.quote` selector should have a `font-size` property set to `2.4rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::after'));
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.fontSize === '2.4rem');
 ```
 
-Your `.quote::after` selector should have a `content` property set to ` "`.
+Your `.quote` selector should have a `text-align` property set to `center`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::after')?.content?.match(/\s\\?\"/));
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.textAlign === 'center');
 ```
 
 # --seed--
@@ -354,13 +349,6 @@ hr {
   color: orangered;
   float: left;
   margin-right: 1rem;
-}
-
-.quote {
-  color: #00beef;
-  font-size: 2.4rem;
-  text-align: center;
-  font-family: "Raleway", sans-serif;
 }
 
 --fcc-editable-region--

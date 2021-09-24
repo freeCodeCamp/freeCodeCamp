@@ -1,5 +1,5 @@
 ---
-id: 6148d2444d01ab541e64a1e4
+id: 6148d1bdf39c5b5186f5974b
 title: Part 59
 challengeType: 0
 dashedName: part-59
@@ -7,32 +7,20 @@ dashedName: part-59
 
 # --description--
 
-Create a `.quote` selector. Give it a `color` property set to `#00beef`, a `font-size` property set to `2.4rem`, and a `text-align` property set to `center`.
+Create an `hr` selector, and give it a `margin` property set to `1.5rem 0`.
 
 # --hints--
 
-You should have a `.quote` selector.
+You should have an `hr` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote'));
+assert(new __helpers.CSSHelp(document).getStyle('hr'));
 ```
 
-Your `.quote` selector should have a `color` property set to `#00beef`.
+Your `hr` selector should have a `margin` property set to `1.5rem 0`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote')?.color === 'rgb(0, 190, 239)');
-```
-
-Your `.quote` selector should have a `font-size` property set to `2.4rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote')?.fontSize === '2.4rem');
-```
-
-Your `.quote` selector should have a `text-align` property set to `center`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote')?.textAlign === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('hr')?.margin === '1.5rem 0px');
 ```
 
 # --seed--
@@ -285,9 +273,9 @@ img {
   object-fit: cover;
 }
 
-hr {
-  margin: 1.5rem 0;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .heading {
   grid-column: 2 / 3;
@@ -350,8 +338,4 @@ hr {
   float: left;
   margin-right: 1rem;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

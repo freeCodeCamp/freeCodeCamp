@@ -1,5 +1,5 @@
 ---
-id: 6148ceaf5d897d4d8b3554b3
+id: 6148c6aa9981d74af202125e
 title: Part 54
 challengeType: 0
 dashedName: part-54
@@ -7,14 +7,20 @@ dashedName: part-54
 
 # --description--
 
-Give the `.text` selector a `text-align` property set to `justify.`
+Give the `.text` selector a `font-size` property set to `1.8rem` and a `letter-spacing` property set to `0.6px`.
 
 # --hints--
 
-Your `.text` selector should have a `text-align` property set to `justify.`
+Your `.text` selector should have a `font-size` property set to `1.8rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text')?.textAlign === 'justify');
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.fontSize === '1.8rem');
+```
+
+Your `.text` selector should have a `letter-spacing` property set to `0.6px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.letterSpacing === '0.6px');
 ```
 
 # --seed--
@@ -277,9 +283,6 @@ img {
 --fcc-editable-region--
 .text {
   grid-column: 2 / 3;
-  font-size: 1.8rem;
-  letter-spacing: 0.6px;
-  column-width: 25rem;
 }
 --fcc-editable-region--
 

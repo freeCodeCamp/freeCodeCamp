@@ -1,5 +1,5 @@
 ---
-id: 6148be3d605d6b3ca9425d11
+id: 6148bd62bbb8c83a5f1fc1b3
 title: Part 43
 challengeType: 0
 dashedName: part-43
@@ -7,32 +7,32 @@ dashedName: part-43
 
 # --description--
 
-The subtitle also needs to be styled. Create a `.hero-subtitle` selector and give it a `font-size` property set to `2.4rem`, a `color` property set to `orangered`, and a `text-align` property set to `center`.
+Create a `.hero-title` selector and give it a `position` property set to `absolute`, a `top` property set to `10%`, and a `left` property set to `15%`.
 
 # --hints--
 
-You should have a `.hero-subtitle` selector.
+You should have a `.hero-title` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle'));
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title'));
 ```
 
-Your `.hero-subtitle` selector should have a `font-size` property set to `2.4rem`.
+Your `.hero-title` selector should have a `position` property set to `absolute`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.fontSize === '2.4rem');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.position === 'absolute');
 ```
 
-Your `.hero-subtitle` selector should have a `color` property set to `orangered`.
+Your `.hero-title` selector should have a `top` property set to `10%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.color === 'orangered');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.top === '10%');
 ```
 
-Your `.hero-subtitle` selector should have a `text-align` property set to `center`.
+Your `.hero-title` selector should have a `left` property set to `15%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.textAlign === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.left === '15%');
 ```
 
 # --seed--
@@ -299,14 +299,6 @@ img {
 .hero {
   grid-column: 1 / -1;
   position: relative;
-}
-
-.hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
-  color: orangered;
-  font-size: 8rem;
 }
 
 --fcc-editable-region--

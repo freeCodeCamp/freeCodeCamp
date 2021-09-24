@@ -1,5 +1,5 @@
 ---
-id: 6148b185ef37522f688316b0
+id: 6148b0d764e4192e5712ed92
 title: Part 36
 challengeType: 0
 dashedName: part-36
@@ -7,18 +7,16 @@ dashedName: part-36
 
 # --description--
 
-Now you can style the content of the `.heading` element with CSS Grid.
+For additional control over the layout of your content, you can have a CSS Grid within a CSS Grid.
 
-The CSS `repeat()` function is used to repeat a value, rather than writing it out manually, and is helpful for grid layouts. For example, setting the `grid-template-columns` property to `repeat(20, 200px)` would create 20 columns each `200px` wide.
-
-Give your `.heading` element a `grid-template-columns` property set to `repeat(2, 1fr)` to create two columns of equal width.
+Set the `display` property of your `.heading` selector to `grid`.
 
 # --hints--
 
-Your `.heading` selector should have a `grid-template-columns` property set to `repeat(2, 1fr)`.
+Your `.heading` selector should have a `display` property set to `grid`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.heading')?.gridTemplateColumns === 'repeat(2, 1fr)');
+assert(new __helpers.CSSHelp(document).getStyle('.heading')?.display === 'grid');
 ```
 
 # --seed--
@@ -50,6 +48,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.heading')?.gridTemplateColumns
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -160,8 +159,8 @@ assert(new __helpers.CSSHelp(document).getStyle('.heading')?.gridTemplateColumns
             <li>
               <h4 class="list-subtitle">V3 - 2015</h4>
               <p>
-                We added our own HTML+CSS challenges (before we'd been relying on
-                General Assembly's Dash course for these).
+                We added our own HTML+CSS challenges (before we'd been relying
+                on General Assembly's Dash course for these).
               </p>
             </li>
             <li>
@@ -181,8 +180,8 @@ assert(new __helpers.CSSHelp(document).getStyle('.heading')?.gridTemplateColumns
             <li>
               <h4 class="list-subtitle">V6 - 2018</h4>
               <p>
-                We launched 6 new certifications to replace our old ones. This was
-                the biggest curriculum improvement to date.
+                We launched 6 new certifications to replace our old ones. This
+                was the biggest curriculum improvement to date.
               </p>
             </li>
           </ul>
@@ -207,9 +206,9 @@ assert(new __helpers.CSSHelp(document).getStyle('.heading')?.gridTemplateColumns
           <blockquote class="image-quote">
             <hr />
             <p class="quote">
-              The millions of people who are learning to code through freeCodeCamp
-              will have an even better resource to help them learn these
-              fundamentals.
+              The millions of people who are learning to code
+              through freeCodeCamp will have an even better resource to help
+              them learn these fundamentals.
             </p>
             <hr />
           </blockquote>
@@ -229,9 +228,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.heading')?.gridTemplateColumns
 ```
 
 ```css
-*,
-::before,
-::after {
+*, ::before, ::after {
   padding: 0;
   margin: 0;
 }
@@ -269,7 +266,6 @@ main {
 --fcc-editable-region--
 .heading {
   grid-column: 2 / 3;
-  display: grid;
 }
 --fcc-editable-region--
 

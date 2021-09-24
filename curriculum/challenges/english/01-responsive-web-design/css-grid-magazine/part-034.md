@@ -1,5 +1,5 @@
 ---
-id: 6148b07081759c2c691166a9
+id: 6144f47b7c631e1a6f304dd5
 title: Part 34
 challengeType: 0
 dashedName: part-34
@@ -7,20 +7,24 @@ dashedName: part-34
 
 # --description--
 
-Create a `.text` selector and give it a `grid-column` property set to `2 / 3`.
+Your magazine will have three primary sections. You already set the overall layout in the `main` rule, but you can adjust the placement in the child rules.
+
+One option to do so is the `grid-column` property, which is shorthand for `grid-column-start` and `grid-column-end`. The `grid-column` property tells the grid item which grid line to start and end at.
+
+Create a `.heading` rule and set the `grid-column` property to `2 / 3`. This will tell the `.heading` element to start at grid line 2 and end at grid line 3.
 
 # --hints--
 
-You should have a `.text` selector.
+You should have a `.heading` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text'));
+assert(new __helpers.CSSHelp(document).getStyle('.heading'));
 ```
 
-Your `.text` selector should have a `grid-column` property set to `2 / 3`.
+Your `.heading` selector should have a `grid-column` property set to `2 / 3`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text')?.gridColumn === '2 / 3');
+assert(new __helpers.CSSHelp(document).getStyle('.heading')?.gridColumn === '2 / 3');
 ```
 
 # --seed--
@@ -52,6 +56,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.text')?.gridColumn === '2 / 3'
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -264,10 +269,6 @@ main {
   display: grid;
   grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
   row-gap: 3rem;
-}
-
-.heading {
-  grid-column: 2 / 3;
 }
 
 --fcc-editable-region--

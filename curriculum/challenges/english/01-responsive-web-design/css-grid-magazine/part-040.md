@@ -1,5 +1,5 @@
 ---
-id: 6148b59ef318e03875f35c4a
+id: 6148b5623efa8f369f2c3643
 title: Part 40
 challengeType: 0
 dashedName: part-40
@@ -7,28 +7,14 @@ dashedName: part-40
 
 # --description--
 
-Create an `img` selector and give it a `width` property set to `100%`, and an `object-fit` property set to `cover`.
-
-The `object-fit` property tells the browser how to position the element within its container. In this case, `cover` will set the image to fill the container, cropping as needed to avoid changing the aspect ratio.
+Give the `.hero` selector a `position` property set to `relative`.
 
 # --hints--
 
-You should have an `img` selector.
+Your `.hero` selector should have a `position` property set to `relative`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('img'));
-```
-
-Your `img` selector should have a `width` property set to `100%`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('img')?.width === '100%');
-```
-
-Your `img` selector should have an `object-fit` property set to `cover`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('img')?.objectFit === 'cover');
+assert(new __helpers.CSSHelp(document).getStyle('.hero')?.position === 'relative');
 ```
 
 # --seed--
@@ -60,6 +46,7 @@ assert(new __helpers.CSSHelp(document).getStyle('img')?.objectFit === 'cover');
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -276,10 +263,6 @@ main {
   row-gap: 3rem;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 .heading {
   grid-column: 2 / 3;
   display: grid;
@@ -291,8 +274,9 @@ main {
   grid-column: 2 / 3;
 }
 
+--fcc-editable-region--
 .hero {
   grid-column: 1 / -1;
-  position: relative;
 }
+--fcc-editable-region--
 ```

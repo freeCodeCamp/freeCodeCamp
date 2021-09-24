@@ -1,5 +1,5 @@
 ---
-id: 6143c2a363865c715f1a3f72
+id: 6143bb50e8e48c6f5ef9d8d5
 title: Part 19
 challengeType: 0
 dashedName: part-19
@@ -7,44 +7,36 @@ dashedName: part-19
 
 # --description--
 
-Within the `.image-wrapper` element, give your first `img` element a `src` of `https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png`, an `alt` of `image of the quote machine project`, a `class` of `image-1`, a `loading` attribute set to `lazy`, a `width` attribute of `600`, and a `height` attribute of `400`.
+Within your `aside` element, create two `img` elements, a `blockquote` element, and a third `img` element. Give the `blockquote` element a `class` set to `image-quote`.
 
 # --hints--
 
-Your first `img` element should have a `src` attribute set to `https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png`.
+You should create three `img` elements within your `aside` element.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('src') === 'https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png');
+assert(document.querySelectorAll('aside img')?.length === 3);
 ```
 
-Your first `img` element should have an `alt` attribute set to `image of the quote machine project`.
+You should create a `blockquote` element within your `aside` element.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('alt') === 'image of the quote machine project');
+assert.exists(document.querySelector('aside blockquote'));
 ```
 
-Your first `img` element should have a `class` attribute set to `image-1`.
+Your `blockquote` element should have a `class` set to `image-quote`.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[0]?.classList?.contains('image-1'));
+assert(document.querySelector('aside blockquote')?.classList?.contains('image-quote'));
 ```
 
-Your first `img` element should have a `loading` attribute set to `lazy`.
+Your new elements should be in the correct order.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('loading') === 'lazy');
-```
-
-Your first `img` element should have a `width` attribute set to `600`.
-
-```js
-assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('width') === '600');
-```
-
-Your first `img` element should have a `height` attribute set to `400`.
-
-```js
-assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('height') === '400');
+const children = document.querySelector('aside')?.children;
+assert(children?.[0]?.localName === 'img');
+assert(children?.[1]?.localName === 'img');
+assert(children?.[2]?.localName === 'blockquote');
+assert(children?.[3]?.localName === 'img');
 ```
 
 # --seed--
@@ -76,6 +68,7 @@ assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('heigh
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -215,10 +208,7 @@ assert(document.querySelectorAll('.image-wrapper img')?.[0]?.getAttribute('heigh
         </article>
 --fcc-editable-region--
         <aside class="image-wrapper">
-          <img />
-          <img />
-          <blockquote class="image-quote"></blockquote>
-          <img />
+
         </aside>
 --fcc-editable-region--
       </section>

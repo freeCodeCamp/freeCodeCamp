@@ -1,5 +1,5 @@
 ---
-id: 6148d7720f0db36775db868a
+id: 6148d3fff5186b57123d97e2
 title: Part 63
 challengeType: 0
 dashedName: part-63
@@ -7,20 +7,37 @@ dashedName: part-63
 
 # --description--
 
-You will need to have a column for text and a column for images. Give the `.text-with-images` selector a `grid-template-columns` property set to `1fr 2fr`. Also set the `column-gap` property to `3rem` to provide more spacing between the columns.
+A quote is not really a quote without proper quotation marks. You can add these with CSS pseudo selectors.
+
+Create a `.quote::before` selector and set the `content` property to `"` with a space following it.
+
+Create a `.quote::after` selector and set the `content` property to `"` with a space preceding it.
 
 # --hints--
 
-Your `.text-with-images` selector should have a `grid-template-columns` property set to `1fr 2fr`.
+You should have a `.quote::before` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.gridTemplateColumns === '1fr 2fr');
+assert(new __helpers.CSSHelp(document).getStyle('.quote::before'));
 ```
 
-Your `.text-with-images` selector should have a `column-gap` property set to `3rem`.
+Your `.quote::before` selector should have a `content` property set to `" `.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.columnGap === '3rem');
+console.log(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content);
+assert(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content?.match(/\\?\"\s/));
+```
+
+You should have a `.quote::after` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote::after'));
+```
+
+Your `.quote::after` selector should have a `content` property set to ` "`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote::after')?.content?.match(/\s\\?\"/));
 ```
 
 # --seed--
@@ -346,17 +363,7 @@ hr {
   font-family: "Raleway", sans-serif;
 }
 
-.quote::before {
-  content: '" ';
-}
-
-.quote::after {
-  content: ' "';
-}
-
 --fcc-editable-region--
-.text-with-images {
-  display: grid;
-}
+
 --fcc-editable-region--
 ```

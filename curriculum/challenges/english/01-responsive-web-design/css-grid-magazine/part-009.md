@@ -1,5 +1,5 @@
 ---
-id: 61439dc084fa5f659cf75d7c
+id: 61438ec09438696391076d6a
 title: Part 9
 challengeType: 0
 dashedName: part-9
@@ -7,27 +7,53 @@ dashedName: part-9
 
 # --description--
 
-Create another `p` element below your `.first-paragraph` element, and give it the following text:
+Below your `.heading` element, create a new `section` element with the `class` set to `text`. Within that, create a `p` element with the `class` set to `first-paragraph` and the following text:
 
 ```
-After years - years - of pondering these two problems and how to solve
-them, I slipped, hit my head on the sink, and when I came to I had a
-revelation! A vision! A picture in my head! A picture of this! This is
-what makes time travel possible: the flux capacitor!
+Soon the freeCodeCamp curriculum will be 100% project-driven learning.
+Instead of a series of coding challenges, you'll learn through
+building projects - step by step. Before we get into the details, let
+me emphasize: we are not changing the certifications. All 6
+certifications will still have the same 5 required projects. We are
+only changing the optional coding challenges.
 ```
 
 # --hints--
 
-You should create a second `p` element within your `.text` element.
+You should create a new `section` element.
 
 ```js
-assert(document.querySelectorAll('.text p')?.length === 2)
+assert(document.querySelectorAll('section')?.length === 2);
 ```
 
-Your second `p` element should have the provided text.
+Your new `section` element should come after your `.heading` element.
 
 ```js
-assert(document.querySelectorAll('.text p')?.[1]?.innerText === 'After years - years - of pondering these two problems and how to solve them, I slipped, hit my head on the sink, and when I came to I had a revelation! A vision! A picture in my head! A picture of this! This is what makes time travel possible: the flux capacitor!')
+assert(document.querySelectorAll('section')?.[1]?.previousElementSibling?.className === 'heading');
+```
+
+Your new `section` element should have the `class` set to `text`.
+
+```js
+assert(document.querySelectorAll('section')?.[1]?.className === 'text');
+```
+
+You should create a new `p` element within your `text` element.
+
+```js
+assert(document.querySelector('.text')?.querySelectorAll('p')?.length === 1);
+```
+
+Your new `p` element should have the `class` set to `first-paragraph`.
+
+```js
+assert(document.querySelector('.text p')?.className === 'first-paragraph');
+```
+
+Your new `p` element should have the provided text.
+
+```js
+assert(document.querySelector('.first-paragraph')?.innerText === 'Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you\'ll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.');
 ```
 
 # --seed--
@@ -59,6 +85,7 @@ assert(document.querySelectorAll('.text p')?.[1]?.innerText === 'After years - y
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -94,16 +121,7 @@ assert(document.querySelectorAll('.text p')?.[1]?.innerText === 'After years - y
         </div>
       </section>
 --fcc-editable-region--
-      <section class="text">
-        <p class="first-paragraph">
-          Soon the freeCodeCamp curriculum will be 100% project-driven learning.
-          Instead of a series of coding challenges, you'll learn through
-          building projects - step by step. Before we get into the details, let
-          me emphasize: we are not changing the certifications. All 6
-          certifications will still have the same 5 required projects. We are
-          only changing the optional coding challenges.
-        </p>
-      </section>
+
 --fcc-editable-region--
     </main>
   </body>

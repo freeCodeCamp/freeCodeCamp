@@ -1,5 +1,5 @@
 ---
-id: 6148e246146b646cf4255f0c
+id: 6148e162e255676ae0da6a76
 title: Part 68
 challengeType: 0
 dashedName: part-68
@@ -7,20 +7,14 @@ dashedName: part-68
 
 # --description--
 
-Create a `.list-title, .list-subtitle` selector and set the `color` property to `#00beef`.
+Give the `.lists` selector a `margin-top` property set to `2rem`.
 
 # --hints--
 
-You should have a `.list-title, .list-subtitle` selector.
+Your `.lists` selector should have a `margin-top` property set to `2rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle'))
-```
-
-Your `.list-title, .list-subtitle` selector should have a `color` property set to `#00beef`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle')?.color === 'rgb(0, 190, 239)');
+assert(new __helpers.CSSHelp(document).getStyle('.lists')?.marginTop === '2rem');
 ```
 
 # --seed--
@@ -361,16 +355,9 @@ hr {
   margin-bottom: 3rem;
 }
 
+--fcc-editable-region--
 .lists {
   list-style-type: none;
-  margin-top: 2rem;
 }
-
-.lists li {
-  margin-bottom: 1.5rem;
-}
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

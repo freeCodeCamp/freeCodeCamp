@@ -1,5 +1,5 @@
 ---
-id: 6148e4d6861a486f60681f36
+id: 6148e246146b646cf4255f0c
 title: Part 70
 challengeType: 0
 dashedName: part-70
@@ -7,22 +7,20 @@ dashedName: part-70
 
 # --description--
 
-The images should be within a two column, three row layout.
-
-Give the `.image-wrapper` selector a `grid-template-columns` property set to `2fr 1fr` and a `grid-template-rows` property set to `repeat(3, min-content)`. This will give our grid rows that adjust in height based on the content, but columns that remain a fixed width based on the container.
+Create a `.list-title, .list-subtitle` selector and set the `color` property to `#00beef`.
 
 # --hints--
 
-Your `.image-wrapper` selector should have a `grid-template-columns` property set to `2fr 1fr`.
+You should have a `.list-title, .list-subtitle` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gridTemplateColumns === '2fr 1fr');
+assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle'))
 ```
 
-Your `.image-wrapper` selector should have a `grid-template-rows` property set to `repeat(3, min-content)`.
+Your `.list-title, .list-subtitle` selector should have a `color` property set to `#00beef`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gridTemplateRows === 'repeat(3, min-content)');
+assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle')?.color === 'rgb(0, 190, 239)');
 ```
 
 # --seed--
@@ -372,13 +370,7 @@ hr {
   margin-bottom: 1.5rem;
 }
 
-.list-title, .list-subtitle {
-  color: #00beef;
-}
-
 --fcc-editable-region--
-.image-wrapper {
-  display: grid;
-}
+
 --fcc-editable-region--
 ```

@@ -1,5 +1,5 @@
 ---
-id: 6148c434bd731d45617a76c6
+id: 6148c004ffc8434252940dc3
 title: Part 49
 challengeType: 0
 dashedName: part-49
@@ -7,18 +7,26 @@ dashedName: part-49
 
 # --description--
 
-If you wanted to add more social icons, but keep them on the same row, you would need to update the `grid-template-columns` to create additional columns. As an alternative, you can use the `grid-auto-flow` property.
-
-This property takes either `row` or `column` as the first value, with an optional second value of `dense`. The `grid-auto-flow` uses an auto-placement algorithm to adjust the grid layout. Setting it to `column` will tell the algorithm to create new columns for content as needed. The `dense` value allows the algorithm to backtrack and fill holes in the grid with smaller items, which can result in items appearing out of order.
-
-For your `.social-icons` selector, set the `grid-auto-flow` property to `column`.
+Create a `.social-icons` selector. Give it a `display` property set to `grid`, and a `font-size` property set to `3rem.`
 
 # --hints--
 
-Your `.social-icons` selector should have a `grid-auto-flow` property set to `column`.
+You should have a `.social-icons` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridAutoFlow === 'column');
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons'));
+```
+
+Your `.social-icons` selector should have a `display` property set to `grid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.display === 'grid');
+```
+
+Your `.social-icons` selector should have a `font-size` property set to `3rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.fontSize === '3rem');
 ```
 
 # --seed--
@@ -315,10 +323,6 @@ img {
 }
 
 --fcc-editable-region--
-.social-icons {
-  display: grid;
-  font-size: 3rem;
-  grid-template-columns: repeat(5, 1fr);
-}
+
 --fcc-editable-region--
 ```

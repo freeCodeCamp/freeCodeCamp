@@ -1,5 +1,5 @@
 ---
-id: 6148be82ca63c63daa8cca49
+id: 6148bda8aa613f3b81ccf372
 title: Part 44
 challengeType: 0
 dashedName: part-44
@@ -7,26 +7,20 @@ dashedName: part-44
 
 # --description--
 
-Create an `.author` selector and give it a `font-size` property set to `2rem` and a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+The title is still not quite right. Give the `.hero-title` selector a `color` property set to `orangered` and a `font-size` property set to `8rem`.
 
 # --hints--
 
-You should have an `.author` selector.
+Your `.hero-title` selector should have a `color` property set to `orangered`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author'));
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.color === 'orangered');
 ```
 
-Your `.author` selector should have a `font-size` property set to `2rem`.
+Your `.hero-title` selector should have a `font-size` property set to `8rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontSize === '2rem');
-```
-
-Your `.author` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontFamily === 'Raleway, sans-serif');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.fontSize === '8rem');
 ```
 
 # --seed--
@@ -295,21 +289,11 @@ img {
   position: relative;
 }
 
+--fcc-editable-region--
 .hero-title {
   position: absolute;
   top: 10%;
   left: 15%;
-  color: orangered;
-  font-size: 8rem;
 }
-
-.hero-subtitle {
-  font-size: 2.4rem;
-  color: orangered;
-  text-align: center;
-}
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

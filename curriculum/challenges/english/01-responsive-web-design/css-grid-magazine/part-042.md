@@ -1,5 +1,5 @@
 ---
-id: 6148bda8aa613f3b81ccf372
+id: 6148b59ef318e03875f35c4a
 title: Part 42
 challengeType: 0
 dashedName: part-42
@@ -7,20 +7,28 @@ dashedName: part-42
 
 # --description--
 
-The title is still not quite right. Give the `.hero-title` selector a `color` property set to `orangered` and a `font-size` property set to `8rem`.
+Create an `img` selector and give it a `width` property set to `100%`, and an `object-fit` property set to `cover`.
+
+The `object-fit` property tells the browser how to position the element within its container. In this case, `cover` will set the image to fill the container, cropping as needed to avoid changing the aspect ratio.
 
 # --hints--
 
-Your `.hero-title` selector should have a `color` property set to `orangered`.
+You should have an `img` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.color === 'orangered');
+assert(new __helpers.CSSHelp(document).getStyle('img'));
 ```
 
-Your `.hero-title` selector should have a `font-size` property set to `8rem`.
+Your `img` selector should have a `width` property set to `100%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.fontSize === '8rem');
+assert(new __helpers.CSSHelp(document).getStyle('img')?.width === '100%');
+```
+
+Your `img` selector should have an `object-fit` property set to `cover`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('img')?.objectFit === 'cover');
 ```
 
 # --seed--
@@ -268,10 +276,9 @@ main {
   row-gap: 3rem;
 }
 
-img {
-  width: 100%;
-  object-fit: cover;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .heading {
   grid-column: 2 / 3;
@@ -288,12 +295,4 @@ img {
   grid-column: 1 / -1;
   position: relative;
 }
-
---fcc-editable-region--
-.hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
-}
---fcc-editable-region--
 ```
