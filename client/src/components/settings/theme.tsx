@@ -30,20 +30,27 @@ export default function ThemeSettings({
         toggleFlag={async () => {
           const playSound = store.get('fcc-sound') as boolean;
           if (playSound) {
-            await import('tone').then(async tone => {
-              const nightToDayPlayer = new tone.Player(
-                'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/day.mp3'
-              ).toDestination();
-              const dayToNightPlayer = new tone.Player(
-                'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/night.mp3'
-              ).toDestination();
-              if (tone.context.state === 'running') await tone.context.resume();
-              if (currentTheme === 'night') {
-                nightToDayPlayer.start(1);
-              } else {
-                dayToNightPlayer.start(1);
-              }
-            });
+            const tone = await import('tone');
+            const nightToDayPlayer = new tone.Player(
+              'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/day.mp3'
+            ).toDestination();
+            const dayToNightPlayer = new tone.Player(
+              'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/night.mp3'
+            ).toDestination();
+            if (tone.context.state !== 'running') await tone.context.resume();
+            if (currentTheme === 'night') {
+              if (!nightToDayPlayer.loaded)
+                await nightToDayPlayer.load(
+                  'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/day.mp3'
+                );
+              nightToDayPlayer.start();
+            } else {
+              if (!dayToNightPlayer.loaded)
+                await dayToNightPlayer.load(
+                  'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/night.mp3'
+                );
+              dayToNightPlayer.start();
+            }
           }
           toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
         }}
