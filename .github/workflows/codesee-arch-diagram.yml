@@ -4,14 +4,12 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
-    branches-ignore:
-      - 'renovate/**'
-      - 'i18n-sync-**'
 
 name: CodeSee Map
 
 jobs:
   test_map_action:
+    if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
     runs-on: ubuntu-latest
     name: Run map action on action code
     steps:
