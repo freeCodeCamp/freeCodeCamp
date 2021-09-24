@@ -7,7 +7,7 @@ dashedName: part-38
 
 # --description--
 
-Center the `h1` and `p` element, by giving them a `margin` of `1em auto`, and center aligning the text.
+Center the `h1` and `p` elements by giving them a `margin` of `1em auto`. Then, center align the text as well.
 
 # --hints--
 
