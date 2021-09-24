@@ -120,7 +120,7 @@ const auditedCerts = {
 };
 ```
 
-For the video challenges, you need to add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
+For the video challenges, you need to change at least two files. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -133,6 +133,18 @@ For the video challenges, you need to add the new locale to the GraphQL query in
         dothraki
       }
       ...
+```
+
+Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.js` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`.  The frontmatter should then look like this:
+
+```
+videoLocaleIds:
+  espanol: 3muQV-Im3Z0
+  italian: hiRTRAqNlpE
+  portuguese: AelGAcoMXbI
+  dothraki: new-id-here
+dashedName: introduction-why-program
+---
 ```
 
 Finally, in your `.env` file, set `CLIENT_LOCALE` and `CURRICULUM_LOCALE` to your new language (use the `availableLangs` value.)
