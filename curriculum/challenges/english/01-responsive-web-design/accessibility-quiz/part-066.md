@@ -27,7 +27,7 @@ assert.exists(new __helpers.CSSHelp(document).getRuleListsWithinMedia('(prefers-
 You should wrap the existing `*` rule within the `@media` rule.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia('(prefers-reduced-motion: no-preference)').find(x => x.selectorText === '*')?.style?.scrollBehavior, 'smooth');
+assert.equal(new __helpers.CSSHelp(document).getRuleListsWithinMedia('(prefers-reduced-motion: no-preference)')?.find(x => x.selectorText === '*')?.style?.scrollBehavior, 'smooth');
 assert.notExists(new __helpers.CSSHelp(document).getStyle('*'));
 ```
 

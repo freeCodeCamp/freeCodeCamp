@@ -28,13 +28,13 @@ assert.notEmpty(document.querySelectorAll('fieldset')?.[1]?.name);
 You should give the first `ul` element a `class` of `answers-list`.
 
 ```js
-assert.equal(document.querySelectorAll('ul')?.[0]?.className, 'answers-list');
+assert.equal(document.querySelectorAll('fieldset > ul')?.[0]?.className, 'answers-list');
 ```
 
 You should give the second `ul` element a `class` of `answers-list`.
 
 ```js
-assert.equal(document.querySelectorAll('ul')?.[1]?.className, 'answers-list');
+assert.equal(document.querySelectorAll('fieldset > ul')?.[1]?.className, 'answers-list');
 ```
 
 You should give the first `legend` element text content.
