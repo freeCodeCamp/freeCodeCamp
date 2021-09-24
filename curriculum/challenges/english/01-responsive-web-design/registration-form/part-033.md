@@ -31,6 +31,12 @@ You should nest a `textarea` element within the `label`.
 assert.exists(document.querySelector('fieldset:nth-child(3) > label:nth-child(4) > textarea'));
 ```
 
+You should give the `textarea` element opening and closing tags.
+
+```js
+assert.match(code, /<textarea\s*>[\s\S]*<\/textarea\s*>/);
+```
+
 # --seed--
 
 ## --seed-contents--

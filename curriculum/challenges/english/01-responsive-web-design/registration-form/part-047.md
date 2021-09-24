@@ -15,7 +15,7 @@ You should use a comma separated element selector to select the `input` and `tex
 
 ```js
 const selFunc = selector => new __helpers.CSSHelp(document).getStyle(selector);
-assert.true(['input, textarea', 'textarea, input'].some(selFunc));
+assert.isTrue(['input, textarea', 'textarea, input'].some(selFunc));
 ```
 
 You should give the `input` and `textarea` elements a `background-color` of `#0a0a23`.

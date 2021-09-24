@@ -7,7 +7,7 @@ dashedName: part-34
 
 # --description--
 
-The `textarea` appears too small. To give it an initial size, we can add the `rows` and `cols` attributes.
+The `textarea` appears too small. To give it an initial size, you can add the `rows` and `cols` attributes.
 
 Add an initial size of `3` rows and `30` columns.
 
@@ -16,13 +16,13 @@ Add an initial size of `3` rows and `30` columns.
 You should give the `textarea` a `rows` attribute with value `3`.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(3) > label:nth-child(4) > textarea').rows, 3);
+assert.equal(document.querySelector('fieldset:nth-child(3) > label:nth-child(4) > textarea')?.rows, 3);
 ```
 
 You should give the textarea a `cols` attribute with value `30`.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(3) > label:nth-child(4) > textarea').cols, 30);
+assert.equal(document.querySelector('fieldset:nth-child(3) > label:nth-child(4) > textarea')?.cols, 30);
 ```
 
 # --seed--

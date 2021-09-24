@@ -16,7 +16,7 @@ Remove the `border`, and add `2rem` of padding only to the top and bottom of eac
 You can use either a value of `none` or `0` to remove the `border`.
 
 ```js
-assert(['none', '0px'].includes(new __helpers.CSSHelp(document).getStyle('fieldset')?.border));
+assert.match(new __helpers.CSSHelp(document).getStyle('fieldset')?.border, /(none)|(0px)/);
 ```
 
 You should add `padding` of `2rem` to the top and bottom of each `fieldset`.

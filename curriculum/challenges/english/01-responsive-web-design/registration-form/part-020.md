@@ -7,7 +7,7 @@ dashedName: part-20
 
 # --description--
 
-With `type="password"` we can use the `pattern` attribute to define a regular expression that the password must match to be considered valid.
+With `type="password"` you can use the `pattern` attribute to define a regular expression that the password must match to be considered valid.
 
 Add a `pattern` attribute to the password `input` element to require the input match: `[a-z0-5]{8,}`
 
@@ -18,7 +18,7 @@ The above is a regular expression which matches eight or more lowercase letters 
 You should give the password `input` element a `pattern` attribute.
 
 ```js
-assert.notEmpty(document.querySelector('input[type="password"]').pattern);
+assert.isNotEmpty(document.querySelector('input[type="password"]').pattern);
 ```
 
 You should give the `pattern` attribute a value of `[a-z0-5]{8,}`.

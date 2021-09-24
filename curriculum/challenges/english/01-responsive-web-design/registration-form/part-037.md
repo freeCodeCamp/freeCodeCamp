@@ -7,7 +7,7 @@ dashedName: part-37
 
 # --description--
 
-That is the HTML for the registration form finished. Now, we can spruce it up a bit.
+The HTML for the registration form is finished. Now, you can spruce it up a bit.
 
 Start by changing the font to `Tahoma`, and the font size to `16px` in the `body`.
 
@@ -16,7 +16,7 @@ Start by changing the font to `Tahoma`, and the font size to `16px` in the `body
 You should use the `font-family` property to change the font.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily);
 ```
 
 You should set the `font-family` property to `Tahoma`.

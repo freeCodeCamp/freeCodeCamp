@@ -16,55 +16,55 @@ Go ahead, and give each submittable element a unique `name` attribute of your ch
 You should give the `input` expecting a first name a `name` attribtute. _P.S. I would have chosen `first-name`_
 
 ```js
-assert.notEmpty(document.querySelector('fieldset:nth-child(1) > label:nth-child(1) > input')?.name);
+assert.isNotEmpty(document.querySelector('fieldset:nth-child(1) > label:nth-child(1) > input')?.name);
 ```
 
 You should give the `input` expecting a last name a `name` attribute. _P.S. I would have chosen `last-name`_
 
 ```js
-assert.notEmpty(document.querySelector('fieldset:nth-child(1) > label:nth-child(2) > input')?.name);
+assert.isNotEmpty(document.querySelector('fieldset:nth-child(1) > label:nth-child(2) > input')?.name);
 ```
 
 You should give the `email` a `name` attribute. _P.S. I would have chosen `email`_
 
 ```js
-assert.notEmpty(document.querySelector('input[type="email"]')?.name);
+assert.isNotEmpty(document.querySelector('input[type="email"]')?.name);
 ```
 
 You should give the `password` a `name` attribute. _P.S. I would have chosen `password`_
 
 ```js
-assert.notEmpty(document.querySelector('input[type="password"]')?.name);
+assert.isNotEmpty(document.querySelector('input[type="password"]')?.name);
 ```
 
 You should give the `checkbox` a `name` attribute. _P.S. I would have chosen `terms`_
 
 ```js
-assert.notEmpty(document.querySelector('input[type="checkbox"]')?.name);
+assert.isNotEmpty(document.querySelector('input[type="checkbox"]')?.name);
 ```
 
 You should give the `file` a `name` attribute. _P.S. I would have chosen `file`_
 
 ```js
-assert.notEmpty(document.querySelector('input[type="file"]')?.name);
+assert.isNotEmpty(document.querySelector('input[type="file"]')?.name);
 ```
 
 You should give the `number` a `name` attribute. _P.S. I would have chosen `age`_
 
 ```js
-assert.notEmpty(document.querySelector('input[type="number"]')?.name);
+assert.isNotEmpty(document.querySelector('input[type="number"]')?.name);
 ```
 
 You should give the `select` element a `name` attribute. _P.S. I would have chosen `referrer`_
 
 ```js
-assert.notEmpty(document.querySelector('select')?.name);
+assert.isNotEmpty(document.querySelector('select')?.name);
 ```
 
 You should give the `textarea` element a `name` attribute. _P.S. I would have chosen `bio`_
 
 ```js
-assert.notEmpty(document.querySelector('textarea')?.name);
+assert.isNotEmpty(document.querySelector('textarea')?.name);
 ```
 
 You should not give any of the `option` elements a `name` attribute.

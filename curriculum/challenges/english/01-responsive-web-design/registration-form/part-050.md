@@ -7,7 +7,7 @@ dashedName: part-50
 
 # --description--
 
-To style the submit button, we can use an _attribute_ selector, which selects an element based on the given attribute value. Here is an example:
+To style the submit button, you can use an _attribute_ selector, which selects an element based on the given attribute value. Here is an example:
 
 ```css
 input[name="password"]

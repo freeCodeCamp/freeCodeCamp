@@ -18,7 +18,7 @@ Also, add `10px` of `margin` to the top of the selected elements. Set the other 
 You should use a comma separated element selector to select the `input`, `textarea`, and `select` elements.
 
 ```js
-assert.true(['input, textarea, select', 'input, select, textarea', 'select, input, textarea', 'select, textarea, input', 'textarea, input, select', 'textarea, select, input'].some(selector => new __helpers.CSSHelp(document).getStyle(selector)));
+assert.isTrue(['input, textarea, select', 'input, select, textarea', 'select, input, textarea', 'select, textarea, input', 'textarea, input, select', 'textarea, select, input'].some(selector => new __helpers.CSSHelp(document).getStyle(selector)));
 ```
 
 You should set the `width` property to `100%`.

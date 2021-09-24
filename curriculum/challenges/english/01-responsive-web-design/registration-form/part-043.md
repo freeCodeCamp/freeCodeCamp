@@ -7,7 +7,7 @@ dashedName: part-43
 
 # --description--
 
-For the second `fieldset` we want the `input` and `label` text to appear on the same line.
+For the second `fieldset`, you want the `input` and `label` text to appear on the same line.
 
 Start, by giving the `input` elements in the second `fieldset` a class of `inline`.
 
@@ -16,19 +16,19 @@ Start, by giving the `input` elements in the second `fieldset` a class of `inlin
 You should give the first `input` a class of `inline`.
 
 ```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[0]?.classList.contains('inline'));
+assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[0]?.classList?.contains('inline'));
 ```
 
 You should give the second `input` a class of `inline`.
 
 ```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[1]?.classList.contains('inline'));
+assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[1]?.classList?.contains('inline'));
 ```
 
 You should give the third `input` a class of `inline`.
 
 ```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList.contains('inline'));
+assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList?.contains('inline'));
 ```
 
 # --seed--

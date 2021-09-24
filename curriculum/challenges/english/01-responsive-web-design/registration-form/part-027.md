@@ -7,7 +7,7 @@ dashedName: part-27
 
 # --description--
 
-Moving on to the final `fieldset`: What if we wanted to allow a user to upload a profile picture?
+Moving on to the final `fieldset`. What if you wanted to allow a user to upload a profile picture?
 
 Well, the `input` type `file` allows just that. Add a `label` with the text `Upload a profile picture: `, and add an `input` accepting a file upload.
 

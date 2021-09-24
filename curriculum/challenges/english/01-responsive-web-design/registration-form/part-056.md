@@ -14,7 +14,7 @@ Speaking of `padding`, the submit button is sitting at the bottom of the `form` 
 You should use the `padding-bottom` property.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('form')?.paddingBottom);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('form')?.paddingBottom);
 ```
 
 You should give the `padding-bottom` a value of `2em`.

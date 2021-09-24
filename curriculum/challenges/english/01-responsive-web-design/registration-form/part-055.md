@@ -7,7 +7,7 @@ dashedName: part-55
 
 # --description--
 
-Most browsers inject their own default CSS properties and values for different elements. If you look closely, you might be able to notice the file `input` is smaller than the other text `input` elements. By default, a `padding` of `1px 2px` is given to `inputs` you can type in.
+Most browsers inject their own default CSS properties and values for different elements. If you look closely, you might be able to notice the file `input` is smaller than the other text `input` elements. By default, a `padding` of `1px 2px` is given to `input` elements you can type in.
 
 Using another attribute selector, style the `input` with a `type` of `file` to be the same size as the other `input` elements.
 

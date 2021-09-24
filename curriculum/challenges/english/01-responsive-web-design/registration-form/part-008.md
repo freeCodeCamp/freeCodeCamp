@@ -14,7 +14,7 @@ Now, get rid of the horizontal scroll-bar, by setting the `body` default `margin
 You should add `margin` within the `body` element selector.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('body')?.margin);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('body')?.margin);
 ```
 
 You should give the `margin` a value of `0`.

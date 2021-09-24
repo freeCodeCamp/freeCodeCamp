@@ -7,7 +7,7 @@ dashedName: part-10
 
 # --description--
 
-As suggested by the title, we are creating a form. So, after the `p` element, insert a `form` with an `action` attribute targetting `https://fcc-registration-form.com`.
+As suggested by the title, you are creating a form. So, after the `p` element, insert a `form` with an `action` attribute targetting `https://fcc-registration-form.com`.
 
 # --hints--
 

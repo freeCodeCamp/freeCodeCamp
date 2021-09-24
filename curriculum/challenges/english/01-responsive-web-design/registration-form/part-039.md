@@ -20,7 +20,7 @@ assert.exists(new __helpers.CSSHelp(document).getStyle('form'));
 You should give the `form` a `margin` of `0 auto`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('form')?.margin, '0 auto');
+assert.equal(new __helpers.CSSHelp(document).getStyle('form')?.margin, '0px auto');
 ```
 
 You should give the `form` a `max-width` of `500px`.

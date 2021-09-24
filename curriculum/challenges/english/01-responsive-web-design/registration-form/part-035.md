@@ -16,7 +16,7 @@ Give the `textarea` a `placeholder` of `I like coding on the beach...`.
 You should give the `textarea` a `placeholder` attribute.
 
 ```js
-assert.notEmpty(document.querySelector('fieldset:nth-child(3) > label:nth-child(4) > textarea')?.placeholder);
+assert.isNotEmpty(document.querySelector('fieldset:nth-child(3) > label:nth-child(4) > textarea')?.placeholder);
 ```
 
 You should give the `placeholder` a value of `I like coding on the beach...`.

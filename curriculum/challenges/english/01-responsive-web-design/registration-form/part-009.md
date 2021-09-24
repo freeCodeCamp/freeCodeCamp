@@ -14,7 +14,7 @@ That is better. Now, make the background easy on the eyes, by changing the `body
 You should add the `background-color` within the `body` element selector.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor);
 ```
 
 You should give the `background-color` a value of `#1b1b32`.
@@ -26,7 +26,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor, 
 You should add the `color` within the `body` element selector.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('body')?.color);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('body')?.color);
 ```
 
 You should give the `color` a value of `#f5f6f7`.

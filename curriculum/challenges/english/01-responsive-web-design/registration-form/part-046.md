@@ -16,7 +16,7 @@ To combat this, set the `vertical-align` property to `middle`.
 You should set the `vertical-align` property to `middle` for all `.inline` elements.
 
 ```js
-assert.equal(new helpers.CSSHelp(document).getStyle('.inline')?.verticalAlign, 'middle');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.inline')?.verticalAlign, 'middle');
 ```
 
 # --seed--
