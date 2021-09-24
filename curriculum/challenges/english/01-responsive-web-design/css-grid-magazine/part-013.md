@@ -1,5 +1,5 @@
 ---
-id: 6143a73279ce6369de4b9bcc
+id: 6143a1a228f7d068ab16a130
 title: Part 13
 challengeType: 0
 dashedName: part-13
@@ -7,28 +7,37 @@ dashedName: part-13
 
 # --description--
 
-Create a fifth `p` element at the end of your `.text` element, and give it the following text:
+Below your `blockquote` element, add another `p` element with the following text:
 
 ```
-The main design challenge is taking what is currently paragraphs of
-explanation and instructions and packing them into a single test
-description text. Each project will involve dozens of tests like this.
-People will be coding the entire time, rather than switching back and
-forth from "reading mode" to "coding mode".
+No more walls of explanatory text. No more walls of tests. Just one
+test at a time, as you build up a working project. Over the course of
+passing thousands of tests, you build up projects and your own
+understanding of coding fundamentals. There is no transition between
+lessons and projects, because the lessons themselves are baked into
+projects. And there's plenty of repetition to help you retain
+everything because - hey - building projects in real life has plenty
+of repetition.
 ```
 
 # --hints--
 
-You should add a fifth `p` element.
+You should add a fourth `p` element to your `.text` element.
 
 ```js
-assert(document.querySelectorAll('.text p')?.length === 6);
+assert(document.querySelectorAll('.text p')?.length === 5);
+```
+
+Your new `p` element should come after your `blockquote` element.
+
+```js
+assert(document.querySelectorAll('.text p')?.[4]?.previousElementSibling?.localName === 'blockquote');
 ```
 
 Your new `p` element should have the provided text.
 
 ```js
-assert(document.querySelectorAll('.text p')?.[5]?.innerText === 'The main design challenge is taking what is currently paragraphs of explanation and instructions and packing them into a single test description text. Each project will involve dozens of tests like this. People will be coding the entire time, rather than switching back and forth from "reading mode" to "coding mode".');
+assert(document.querySelectorAll('.text p')?.[4]?.innerText === 'No more walls of explanatory text. No more walls of tests. Just one test at a time, as you build up a working project. Over the course of passing thousands of tests, you build up projects and your own understanding of coding fundamentals. There is no transition between lessons and projects, because the lessons themselves are baked into projects. And there\'s plenty of repetition to help you retain everything because - hey - building projects in real life has plenty of repetition.');
 ```
 
 # --seed--
@@ -60,6 +69,7 @@ assert(document.querySelectorAll('.text p')?.[5]?.innerText === 'The main design
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -126,16 +136,6 @@ assert(document.querySelectorAll('.text p')?.[5]?.innerText === 'The main design
           </p>
           <hr />
         </blockquote>
-        <p>
-          No more walls of explanatory text. No more walls of tests. Just one
-          test at a time, as you build up a working project. Over the course of
-          passing thousands of tests, you build up projects and your own
-          understanding of coding fundamentals. There is no transition between
-          lessons and projects, because the lessons themselves are baked into
-          projects. And there's plenty of repetition to help you retain
-          everything because - hey - building projects in real life has plenty
-          of repetition.
-        </p>
       </section>
 --fcc-editable-region--
     </main>

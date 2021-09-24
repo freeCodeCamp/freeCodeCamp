@@ -1,5 +1,5 @@
 ---
-id: 6148e62a6f768f71c4f04828
+id: 6148e4d6861a486f60681f36
 title: Part 72
 challengeType: 0
 dashedName: part-72
@@ -7,16 +7,22 @@ dashedName: part-72
 
 # --description--
 
-The `place-items` property can be used to set the `align-items` and `justify-items` values at the same time. The `place-items` property takes one or two values. If one value is provided, it is used for both the `align-items` and `justify-items` properties. If two values are provided, the first value is used for the `align-items` property and the second value is used for the `justify-items` property.
+The images should be within a two column, three row layout.
 
-Give the `.image-wrapper` selector a `place-items` property set to `center`.
+Give the `.image-wrapper` selector a `grid-template-columns` property set to `2fr 1fr` and a `grid-template-rows` property set to `repeat(3, min-content)`. This will give our grid rows that adjust in height based on the content, but columns that remain a fixed width based on the container.
 
 # --hints--
 
-Your `.image-wrapper` selector should have a `place-items` property set to `center`.
+Your `.image-wrapper` selector should have a `grid-template-columns` property set to `2fr 1fr`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.placeItems === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gridTemplateColumns === '2fr 1fr');
+```
+
+Your `.image-wrapper` selector should have a `grid-template-rows` property set to `repeat(3, min-content)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gridTemplateRows === 'repeat(3, min-content)');
 ```
 
 # --seed--
@@ -373,9 +379,6 @@ hr {
 --fcc-editable-region--
 .image-wrapper {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(3, min-content);
-  gap: 2rem;
 }
 --fcc-editable-region--
 ```

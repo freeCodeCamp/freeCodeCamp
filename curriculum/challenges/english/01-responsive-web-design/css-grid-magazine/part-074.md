@@ -1,5 +1,5 @@
 ---
-id: 6148f34ebedc2274bceeb99c
+id: 6148e62a6f768f71c4f04828
 title: Part 74
 challengeType: 0
 dashedName: part-74
@@ -7,30 +7,16 @@ dashedName: part-74
 
 # --description--
 
-Now that the magazine layout is finished, you need to make it responsive.
+The `place-items` property can be used to set the `align-items` and `justify-items` values at the same time. The `place-items` property takes one or two values. If one value is provided, it is used for both the `align-items` and `justify-items` properties. If two values are provided, the first value is used for the `align-items` property and the second value is used for the `justify-items` property.
 
-Start with a `@media` query for `only screen` with a `max-width` of `720px`. Inside, create an `.image-wrapper` selector and give it a `grid-template-columns` property of `1fr`.
-
-This will collapse the three images into one column on smaller screens.
+Give the `.image-wrapper` selector a `place-items` property set to `center`.
 
 # --hints--
 
-You should have a new `@media` rule for `only screen and (max-width: 720px)`.
+Your `.image-wrapper` selector should have a `place-items` property set to `center`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === 'only screen and (max-width: 720px)');
-```
-
-Your new `@media` rule should have an `.image-wrapper` selector.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.cssRules?.[0]?.selectorText === '.image-wrapper');
-```
-
-Your new `.image-wrapper` selector should have a `grid-template-columns` property of `1fr`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.cssRules?.[0]?.style?.gridTemplateColumns === '1fr');
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.placeItems === 'center');
 ```
 
 # --seed--
@@ -384,19 +370,12 @@ hr {
   color: #00beef;
 }
 
+--fcc-editable-region--
 .image-wrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, min-content);
   gap: 2rem;
-  place-items: center;
 }
-
-.image-1, .image-3 {
-  grid-column: 1 / -1;
-}
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

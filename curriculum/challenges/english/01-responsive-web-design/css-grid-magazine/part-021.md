@@ -1,5 +1,5 @@
 ---
-id: 6143cdf48b634a747de42104
+id: 6143cd08fe927072ca3a371d
 title: Part 21
 challengeType: 0
 dashedName: part-21
@@ -7,44 +7,44 @@ dashedName: part-21
 
 # --description--
 
-Within your `.image-wrapper` element, give your third `img` element a `src` of `https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg`, an `alt` of `four people working on code`, a `loading` attribute of `lazy`, a `class` set to `image-3`, a `width` attribute set to `600`, and a `height` attribute set to `200`.
+Within your `.image-wrapper` element, give the second `img` element a `src` of `https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png`, an `alt` of `image of the calculator project`, a `loading` attribute set to `lazy`, a `class` set to `image-2`, a `width` attribute set to `400`, and a `height` attribute set to `400`.
 
 # --hints--
 
-Your third `img` element should have a `src` set to `https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg`.
+Your second `img` element should have a `src` set to `https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png`.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('src') === 'https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg');
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('src') === 'https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png');
 ```
 
-Your third `img` element should have an `alt` set to `four people working on code`.
+Your second `img` element should have an `alt` set to `image of the calculator project`.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('alt') === 'four people working on code');
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('alt') === 'image of the calculator project');
 ```
 
-Your third `img` element should have a `loading` attribute set to `lazy`.
+Your second `img` element should have a `loading` attribute set to `lazy`.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('loading') === 'lazy');
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('loading') === 'lazy');
 ```
 
-Your third `img` element should have a `class` set to `image-3`.
+Your second `img` element should have a `class` set to `image-2`.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[2]?.classList?.contains('image-3'));
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.classList?.contains('image-2'));
 ```
 
-Your third `img` element should have a `width` attribute set to `600`.
+Your second `img` element should have a `width` set to `400`.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('width') === '600');
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('width') === '400');
 ```
 
-Your third `img` element should have a `height` attribute set to `400`.
+Your second `img` element should have a `height` set to `400`.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('height') === '400');
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('height') === '400');
 ```
 
 # --seed--
@@ -76,6 +76,7 @@ assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('heigh
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
@@ -223,14 +224,7 @@ assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('heigh
             width="600"
             height="400"
           />
-          <img
-            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
-            alt="image of a calculator project"
-            loading="lazy"
-            class="image-2"
-            width="400"
-            height="400"
-          />
+          <img />
           <blockquote class="image-quote"></blockquote>
           <img />
         </aside>

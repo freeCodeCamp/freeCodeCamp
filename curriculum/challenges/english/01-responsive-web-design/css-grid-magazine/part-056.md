@@ -1,5 +1,5 @@
 ---
-id: 6148d0b863d10d50544ace0e
+id: 6148ceaf5d897d4d8b3554b3
 title: Part 56
 challengeType: 0
 dashedName: part-56
@@ -7,20 +7,14 @@ dashedName: part-56
 
 # --description--
 
-The other text has been shifted out of place. Move it into position by giving the `.first-paragraph::first-letter` selector a `float` property set to `left` and a `margin-right` property set to `1rem`.
+Give the `.text` selector a `text-align` property set to `justify.`
 
 # --hints--
 
-Your `.first-paragraph::first-letter` selector should have a `float` property set to `left`.
+Your `.text` selector should have a `text-align` property set to `justify.`
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.float === 'left');
-```
-
-Your `.first-paragraph::first-letter` selector should have a `margin-right` property set to `1rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.marginRight === '1rem');
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.textAlign === 'justify');
 ```
 
 # --seed--
@@ -280,13 +274,14 @@ img {
   row-gap: 1.5rem;
 }
 
+--fcc-editable-region--
 .text {
   grid-column: 2 / 3;
   font-size: 1.8rem;
   letter-spacing: 0.6px;
   column-width: 25rem;
-  text-align: justify;
 }
+--fcc-editable-region--
 
 .hero {
   grid-column: 1 / -1;
@@ -327,11 +322,4 @@ img {
   grid-auto-flow: column;
   align-items: center;
 }
-
---fcc-editable-region--
-.first-paragraph::first-letter {
-  font-size: 6rem;
-  color: orangered;
-}
---fcc-editable-region--
 ```

@@ -1,5 +1,5 @@
 ---
-id: 6148f693e0728f77c87f3020
+id: 6148f34ebedc2274bceeb99c
 title: Part 76
 challengeType: 0
 dashedName: part-76
@@ -7,47 +7,30 @@ dashedName: part-76
 
 # --description--
 
-Create a third `@media` query for `only screen` with a `max-width` of `550px`. Within, create a `.hero-title` selector with a `font-size` set to `6rem`, a `.hero-subtitle, .author, .quote, .list-header` selector with a `font-size` set to `1.8rem`, a `.social-icons` selector with a `font-size` set to `2rem`, and a `.text` selector with a `font-size` set to `1.6rem`.
+Now that the magazine layout is finished, you need to make it responsive.
+
+Start with a `@media` query for `only screen` with a `max-width` of `720px`. Inside, create an `.image-wrapper` selector and give it a `grid-template-columns` property of `1fr`.
+
+This will collapse the three images into one column on smaller screens.
 
 # --hints--
 
-You should have a new `@media` query for `only screen` with a `max-width` of `550px`. This should come after your previous two.
+You should have a new `@media` rule for `only screen and (max-width: 720px)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[2]?.media?.mediaText === 'only screen and (max-width: 550px)');
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === 'only screen and (max-width: 720px)');
 ```
 
-Your new `@media` rule should have a `.hero-title` selector, a `.hero-subtitle, .author, .quote, .list-header` selector, a `.social-icons` selector, and a `.text` selector. These selectors should be in this order.
+Your new `@media` rule should have an `.image-wrapper` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[2]?.cssRules?.[0]?.selectorText === '.hero-title');
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[2]?.cssRules?.[1]?.selectorText === '.hero-subtitle, .author, .quote, .list-header');
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[2]?.cssRules?.[2]?.selectorText === '.social-icons');
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[2]?.cssRules?.[3]?.selectorText === '.text');
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.cssRules?.[0]?.selectorText === '.image-wrapper');
 ```
 
-Your `.hero-title` selector should have a `font-size` set to `6rem`.
+Your new `.image-wrapper` selector should have a `grid-template-columns` property of `1fr`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[2]?.cssRules?.[0]?.style?.fontSize === '6rem');
-```
-
-Your `.hero-subtitle, .author, .quote, .list-header` selector should have a `font-size` set to `1.8rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[2]?.cssRules?.[1]?.style?.fontSize === '1.8rem');
-```
-
-Your `.social-icons` selector should have a `font-size` set to `2rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[2]?.cssRules?.[2]?.style?.fontSize === '2rem');
-```
-
-Your `.text` selector should have a `font-size` set to `1.6rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[2]?.cssRules?.[3]?.style?.fontSize === '1.6rem');
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.cssRules?.[0]?.style?.gridTemplateColumns === '1fr');
 ```
 
 # --seed--
@@ -411,18 +394,6 @@ hr {
 
 .image-1, .image-3 {
   grid-column: 1 / -1;
-}
-
-@media only screen and (max-width: 720px) {
-  .image-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .text-with-images {
-    grid-template-columns: 1fr;
-  }
 }
 
 --fcc-editable-region--

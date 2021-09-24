@@ -1,5 +1,5 @@
 ---
-id: 6148d9825b50a3698aeee644
+id: 6148d7720f0db36775db868a
 title: Part 65
 challengeType: 0
 dashedName: part-65
@@ -7,20 +7,20 @@ dashedName: part-65
 
 # --description--
 
-Create a `.lists` selector and set the `list-style-type` property to `none`. This will get rid of the bullet points on the list items.
+You will need to have a column for text and a column for images. Give the `.text-with-images` selector a `grid-template-columns` property set to `1fr 2fr`. Also set the `column-gap` property to `3rem` to provide more spacing between the columns.
 
 # --hints--
 
-You should have a `.lists` selector.
+Your `.text-with-images` selector should have a `grid-template-columns` property set to `1fr 2fr`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists'));
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.gridTemplateColumns === '1fr 2fr');
 ```
 
-Your `.lists` selector should have a `list-style-type` property set to `none`.
+Your `.text-with-images` selector should have a `column-gap` property set to `3rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists')?.listStyleType === 'none');
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.columnGap === '3rem');
 ```
 
 # --seed--
@@ -354,14 +354,9 @@ hr {
   content: ' "';
 }
 
+--fcc-editable-region--
 .text-with-images {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 3rem;
-  margin-bottom: 3rem;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

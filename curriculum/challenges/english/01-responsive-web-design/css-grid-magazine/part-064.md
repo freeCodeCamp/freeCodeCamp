@@ -1,5 +1,5 @@
 ---
-id: 6148d94fdf6a5d6899f8ff15
+id: 6148d4d57b965358c9fa38bf
 title: Part 64
 challengeType: 0
 dashedName: part-64
@@ -7,14 +7,22 @@ dashedName: part-64
 
 # --description--
 
-Give the `.text-with-images` selector a `margin-bottom` property set to `3rem`.
+Now to style your second `section`. Note that it has the `text` and `text-with-images` values for the `class` attribute, which means it is already inheriting the styles from your `.text` rule.
+
+Create a `.text-with-images` selector and set the `display` property to `grid`.
 
 # --hints--
 
-Your `.text-with-images` selector should have a `margin-bottom` property set to `3rem`.
+You should have a `.text-with-images` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.marginBottom === '3rem');
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images'));
+```
+
+Your `.text-with-images` selector should have a `display` property set to `grid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.display === 'grid');
 ```
 
 # --seed--
@@ -349,10 +357,6 @@ hr {
 }
 
 --fcc-editable-region--
-.text-with-images {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 3rem;
-}
+
 --fcc-editable-region--
 ```

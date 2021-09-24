@@ -1,5 +1,5 @@
 ---
-id: 6148c224ecb157439bc5247c
+id: 6148bfc43df3bc40fe0e6405
 title: Part 48
 challengeType: 0
 dashedName: part-48
@@ -7,14 +7,20 @@ dashedName: part-48
 
 # --description--
 
-The default settings for CSS Grid will create additional rows as needed, unlike Flexbox. Give the `.social-icons` selector a `grid-template-columns` property set to `repeat(5, 1fr)` to arrange the icons in a single row.
+Create a `.publish-date` selector and give it a `color` property of `rgba(255, 255, 255, 0.5)`.
 
 # --hints--
 
-Your `.social-icons` selector should have a `grid-template-columns` property set to `repeat(5, 1fr)`.
+You should have a `.publish-date` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridTemplateColumns === 'repeat(5, 1fr)');
+assert(new __helpers.CSSHelp(document).getStyle('.publish-date'));
+```
+
+Your `.publish-date` selector should have a `color` property set to `rgba(255, 255, 255, 0.5)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.publish-date')?.color === 'rgba(255, 255, 255, 0.5)');
 ```
 
 # --seed--
@@ -306,14 +312,7 @@ img {
   background-color: #306203;
 }
 
-.publish-date {
-  color: rgba(255, 255, 255, 0.5);
-}
-
 --fcc-editable-region--
-.social-icons {
-  display: grid;
-  font-size: 3rem;
-}
+
 --fcc-editable-region--
 ```

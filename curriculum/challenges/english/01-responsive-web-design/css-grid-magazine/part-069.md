@@ -1,5 +1,5 @@
 ---
-id: 6148e2dcdd60306dd77d41cc
+id: 6148e19c3e26436be0155690
 title: Part 69
 challengeType: 0
 dashedName: part-69
@@ -7,22 +7,20 @@ dashedName: part-69
 
 # --description--
 
-Time to style the last section of the magazine - the images.
-
-The images are wrapped with an `aside` element using the `image-wrapper` class, so create an `.image-wrapper` selector. Set the `display` property to `grid`.
+Create a `.lists li` rule to target the list items within your `.lists` element. Give it a `margin-bottom` property set to `1.5rem`.
 
 # --hints--
 
-You should have an `.image-wrapper` selector.
+You should have a `.lists li` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper'));
+assert(new __helpers.CSSHelp(document).getStyle('.lists li'));
 ```
 
-Your `.image-wrapper` selector should have a `display` property set to `grid`.
+Your `.lists li` selector should have a `margin-bottom` property set to `1.5rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.display === 'grid');
+assert(new __helpers.CSSHelp(document).getStyle('.lists li')?.marginBottom === '1.5rem');
 ```
 
 # --seed--
@@ -366,14 +364,6 @@ hr {
 .lists {
   list-style-type: none;
   margin-top: 2rem;
-}
-
-.lists li {
-  margin-bottom: 1.5rem;
-}
-
-.list-title, .list-subtitle {
-  color: #00beef;
 }
 
 --fcc-editable-region--

@@ -1,5 +1,5 @@
 ---
-id: 6148d33e31fccf558696c745
+id: 6148d1f9eb63c252e1f8acc4
 title: Part 60
 challengeType: 0
 dashedName: part-60
@@ -7,14 +7,14 @@ dashedName: part-60
 
 # --description--
 
-To make the quote text stand out more, give the `.quote` selector a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+To give the `hr` a color, you need to adjust the `border` property. Give the `hr` selector a `border` property set to `1px solid rgba(120, 120, 120, 0.6)`.
 
 # --hints--
 
-Your `.quote` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+Your `hr` should have a `border` property set to `1px solid rgba(120, 120, 120, 0.6)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote')?.fontFamily === 'Raleway, sans-serif');
+assert(new __helpers.CSSHelp(document).getStyle('hr')?.border === '1px solid rgba(120, 120, 120, 0.6)');
 ```
 
 # --seed--
@@ -267,9 +267,11 @@ img {
   object-fit: cover;
 }
 
+--fcc-editable-region--
 hr {
   margin: 1.5rem 0;
 }
+--fcc-editable-region--
 
 .heading {
   grid-column: 2 / 3;
@@ -332,12 +334,4 @@ hr {
   float: left;
   margin-right: 1rem;
 }
-
---fcc-editable-region--
-.quote {
-  color: #00beef;
-  font-size: 2.4rem;
-  text-align: center;
-}
---fcc-editable-region--
 ```

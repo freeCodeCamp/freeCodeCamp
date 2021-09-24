@@ -1,5 +1,5 @@
 ---
-id: 6148e162e255676ae0da6a76
+id: 6148d94fdf6a5d6899f8ff15
 title: Part 66
 challengeType: 0
 dashedName: part-66
@@ -7,14 +7,14 @@ dashedName: part-66
 
 # --description--
 
-Give the `.lists` selector a `margin-top` property set to `2rem`.
+Give the `.text-with-images` selector a `margin-bottom` property set to `3rem`.
 
 # --hints--
 
-Your `.lists` selector should have a `margin-top` property set to `2rem`.
+Your `.text-with-images` selector should have a `margin-bottom` property set to `3rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists')?.marginTop === '2rem');
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.marginBottom === '3rem');
 ```
 
 # --seed--
@@ -348,16 +348,11 @@ hr {
   content: ' "';
 }
 
+--fcc-editable-region--
 .text-with-images {
   display: grid;
   grid-template-columns: 1fr 2fr;
   column-gap: 3rem;
-  margin-bottom: 3rem;
-}
-
---fcc-editable-region--
-.lists {
-  list-style-type: none;
 }
 --fcc-editable-region--
 ```

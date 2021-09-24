@@ -1,5 +1,5 @@
 ---
-id: 6148d1bdf39c5b5186f5974b
+id: 6148cf094b3f2b4e8a032c63
 title: Part 57
 challengeType: 0
 dashedName: part-57
@@ -7,20 +7,28 @@ dashedName: part-57
 
 # --description--
 
-Create an `hr` selector, and give it a `margin` property set to `1.5rem 0`.
+The `::first-letter` pseudo-selector allows you to target the first letter in the text content of an element.
+
+Create a `.first-paragraph::first-letter` selector and set the `font-size` property to `6rem`. Also give it a `color` property set to `orangered` to make it stand out.
 
 # --hints--
 
-You should have an `hr` selector.
+You should have a `.first-paragraph::first-letter` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('hr'));
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter'));
 ```
 
-Your `hr` selector should have a `margin` property set to `1.5rem 0`.
+Your `.first-paragraph::first-letter` selector should have a `font-size` property set to `6rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('hr')?.margin === '1.5rem 0px');
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.fontSize === '6rem');
+```
+
+Your `.first-paragraph::first-letter` selector should have a `color` property set to `orangered`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.color === 'orangered');
 ```
 
 # --seed--
@@ -273,10 +281,6 @@ img {
   object-fit: cover;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 .heading {
   grid-column: 2 / 3;
   display: grid;
@@ -332,10 +336,7 @@ img {
   align-items: center;
 }
 
-.first-paragraph::first-letter {
-  font-size: 6rem;
-  color: orangered;
-  float: left;
-  margin-right: 1rem;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```

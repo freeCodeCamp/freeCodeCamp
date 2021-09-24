@@ -1,5 +1,5 @@
 ---
-id: 6148bfc43df3bc40fe0e6405
+id: 6148be82ca63c63daa8cca49
 title: Part 46
 challengeType: 0
 dashedName: part-46
@@ -7,20 +7,26 @@ dashedName: part-46
 
 # --description--
 
-Create a `.publish-date` selector and give it a `color` property of `rgba(255, 255, 255, 0.5)`.
+Create an `.author` selector and give it a `font-size` property set to `2rem` and a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 # --hints--
 
-You should have a `.publish-date` selector.
+You should have an `.author` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.publish-date'));
+assert(new __helpers.CSSHelp(document).getStyle('.author'));
 ```
 
-Your `.publish-date` selector should have a `color` property set to `rgba(255, 255, 255, 0.5)`.
+Your `.author` selector should have a `font-size` property set to `2rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.publish-date')?.color === 'rgba(255, 255, 255, 0.5)');
+assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontSize === '2rem');
+```
+
+Your `.author` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontFamily === 'Raleway, sans-serif');
 ```
 
 # --seed--
@@ -301,15 +307,6 @@ img {
   font-size: 2.4rem;
   color: orangered;
   text-align: center;
-}
-
-.author {
-  font-size: 2rem;
-  font-family: "Raleway", sans-serif;
-}
-
-.author-name a:hover {
-  background-color: #306203;
 }
 
 --fcc-editable-region--

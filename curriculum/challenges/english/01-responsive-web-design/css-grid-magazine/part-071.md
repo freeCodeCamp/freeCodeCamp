@@ -1,5 +1,5 @@
 ---
-id: 6148e5a204d99e70343a63e4
+id: 6148e2dcdd60306dd77d41cc
 title: Part 71
 challengeType: 0
 dashedName: part-71
@@ -7,16 +7,22 @@ dashedName: part-71
 
 # --description--
 
-The `gap` property is a shorthand way to set the value of `column-gap` and `row-gap` at the same time. If given one value, it sets the `column-gap` and `row-gap` both to that value. If given two values, it sets the `row-gap` to the first value and the `column-gap` to the second.
+Time to style the last section of the magazine - the images.
 
-Give the `.image-wrapper` selector a `gap` property set to `2rem`.
+The images are wrapped with an `aside` element using the `image-wrapper` class, so create an `.image-wrapper` selector. Set the `display` property to `grid`.
 
 # --hints--
 
-Your `.image-wrapper` element should have a `gap` property set to `2rem`.
+You should have an `.image-wrapper` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gap === '2rem');
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper'));
+```
+
+Your `.image-wrapper` selector should have a `display` property set to `grid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.display === 'grid');
 ```
 
 # --seed--
@@ -371,10 +377,6 @@ hr {
 }
 
 --fcc-editable-region--
-.image-wrapper {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(3, min-content);
-}
+
 --fcc-editable-region--
 ```

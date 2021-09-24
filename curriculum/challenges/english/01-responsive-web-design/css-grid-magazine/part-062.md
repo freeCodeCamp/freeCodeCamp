@@ -1,5 +1,5 @@
 ---
-id: 6148d4d57b965358c9fa38bf
+id: 6148d33e31fccf558696c745
 title: Part 62
 challengeType: 0
 dashedName: part-62
@@ -7,22 +7,14 @@ dashedName: part-62
 
 # --description--
 
-Now to style your second `section`. Note that it has the `text` and `text-with-images` values for the `class` attribute, which means it is already inheriting the styles from your `.text` rule.
-
-Create a `.text-with-images` selector and set the `display` property to `grid`.
+To make the quote text stand out more, give the `.quote` selector a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 # --hints--
 
-You should have a `.text-with-images` selector.
+Your `.quote` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images'));
-```
-
-Your `.text-with-images` selector should have a `display` property set to `grid`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.display === 'grid');
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.fontFamily === 'Raleway, sans-serif');
 ```
 
 # --seed--
@@ -341,22 +333,11 @@ hr {
   margin-right: 1rem;
 }
 
+--fcc-editable-region--
 .quote {
   color: #00beef;
   font-size: 2.4rem;
   text-align: center;
-  font-family: "Raleway", sans-serif;
 }
-
-.quote::before {
-  content: '" ';
-}
-
-.quote::after {
-  content: ' "';
-}
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

@@ -1,5 +1,5 @@
 ---
-id: 6148bd62bbb8c83a5f1fc1b3
+id: 614e0e503b110f76d3ac2ff6
 title: Part 41
 challengeType: 0
 dashedName: part-41
@@ -7,32 +7,14 @@ dashedName: part-41
 
 # --description--
 
-Create a `.hero-title` selector and give it a `position` property set to `absolute`, a `top` property set to `10%`, and a `left` property set to `15%`.
+Before you write the CSS for your `.hero-img`, you should remove the temporary `width` attribute.
 
 # --hints--
 
-You should have a `.hero-title` selector.
+Your `.hero-img` should not have a `width` attribute.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title'));
-```
-
-Your `.hero-title` selector should have a `position` property set to `absolute`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.position === 'absolute');
-```
-
-Your `.hero-title` selector should have a `top` property set to `10%`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.top === '10%');
-```
-
-Your `.hero-title` selector should have a `left` property set to `15%`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.left === '15%');
+assert.isNull(document.querySelector('.hero-img')?.getAttribute('width'));
 ```
 
 # --seed--
@@ -59,17 +41,20 @@ assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.left === '15%');
     <main>
       <section class="heading">
         <header class="hero">
+--fcc-editable-region--
           <img
             src="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png"
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
             Our efforts to restructure our curriculum with a more project-based
             focus
           </p>
+--fcc-editable-region--
         </header>
         <div class="author">
           <p class="author-name">
@@ -280,11 +265,6 @@ main {
   row-gap: 3rem;
 }
 
-img {
-  width: 100%;
-  object-fit: cover;
-}
-
 .heading {
   grid-column: 2 / 3;
   display: grid;
@@ -298,10 +278,5 @@ img {
 
 .hero {
   grid-column: 1 / -1;
-  position: relative;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

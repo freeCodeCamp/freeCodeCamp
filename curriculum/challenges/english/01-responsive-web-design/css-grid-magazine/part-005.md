@@ -1,5 +1,5 @@
 ---
-id: 614387cbefeeba5f3654a291
+id: 614e0e588f0e8a772a8a81a6
 title: Part 5
 challengeType: 0
 dashedName: part-5
@@ -7,102 +7,16 @@ dashedName: part-5
 
 # --description--
 
-After your `header` element, create a `div` with the `class` set to `author`.
+Your image currently takes up a lot of space. In order to better see what you are working on, add a `width` attribute to the `img` element, with a value of `400`.
 
-Within that `div`, create a `p` element with the `class` set to `author-name` and give it the text `By freeCodeCamp`. Wrap the `freeCodeCamp` portion in an `a` element with the `href` set to `https://freecodecamp.org`, the `target` set to `_blank`, and the `rel` set to `noreferrer`.
-
-Below that, add a second `p` element with the class `publish-date` and the text `March 7, 2019`.
+You will remove this later on when you have worked on the CSS.
 
 # --hints--
 
-You should create a new `div` element.
+Your `img` element should have a `width` attribute set to `400`.
 
 ```js
-assert.exists(document.querySelector('div'));
-```
-
-Your `div` element should come after your `header` element.
-
-```js
-assert(document.querySelector('div')?.previousElementSibling?.localName === 'header');
-```
-
-Your `div` element should have the `class` set to `author`.
-
-```js
-assert(document.querySelector('div')?.className === 'author');
-```
-
-You should create two new `p` element.
-
-```js
-assert(document.querySelectorAll('p')?.length === 3);
-```
-
-Your two new `p` elements should be within your `div` element.
-
-```js
-assert.exists(document.querySelector('div')?.querySelectorAll('p')?.length === 2);
-```
-
-Your first new `p` element should have a `class` set to `author-name`.
-
-```js
-assert(document.querySelector('div')?.querySelector('p')?.className === 'author-name');
-```
-
-Your first new `p` element should have the text `By freeCodeCamp`.
-
-```js
-assert(document.querySelector('div')?.querySelector('p')?.textContent === 'By freeCodeCamp');
-```
-
-Your second new `p` element should have a `class` set to `publish-date`.
-
-```js
-assert(document.querySelector('div')?.querySelectorAll('p')?.[1].className === 'publish-date');
-```
-
-Your second new `p` element should have the text `March 7, 2019`.
-
-```js
-assert(document.querySelector('div')?.querySelectorAll('p')?.[1].textContent === 'March 7, 2019');
-```
-
-You should create a new `a` element.
-
-```js
-assert.exists(document.querySelector('a'));
-```
-
-Your `a` element should be within your first new `p` element.
-
-```js
-assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.localName === 'a');
-```
-
-Your `a` element should have the `href` set to `https://freecodecamp.org`.
-
-```js
-assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('href') === 'https://freecodecamp.org');
-```
-
-Your `a` element should have the `target` set to `_blank`.
-
-```js
-assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('target') === '_blank');
-```
-
-Your `a` element should have the `rel` set to `noreferrer`.
-
-```js
-assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('rel') === 'noreferrer');
-```
-
-Your `a` element should surround the text `freeCodeCamp`.
-
-```js
-assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.textContent === 'freeCodeCamp');
+assert(document.querySelector('img')?.getAttribute('width') === '400');
 ```
 
 # --seed--
@@ -126,6 +40,7 @@ assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.tex
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+--fcc-editable-region--
     <main>
       <section class="heading">
         <header class="hero">
@@ -141,8 +56,6 @@ assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.tex
             focus
           </p>
         </header>
---fcc-editable-region--
-
       </section>
     </main>
 --fcc-editable-region--

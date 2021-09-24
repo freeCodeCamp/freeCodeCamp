@@ -1,5 +1,5 @@
 ---
-id: 6148e19c3e26436be0155690
+id: 6148d9825b50a3698aeee644
 title: Part 67
 challengeType: 0
 dashedName: part-67
@@ -7,20 +7,20 @@ dashedName: part-67
 
 # --description--
 
-Create a `.lists li` rule to target the list items within your `.lists` element. Give it a `margin-bottom` property set to `1.5rem`.
+Create a `.lists` selector and set the `list-style-type` property to `none`. This will get rid of the bullet points on the list items.
 
 # --hints--
 
-You should have a `.lists li` selector.
+You should have a `.lists` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists li'));
+assert(new __helpers.CSSHelp(document).getStyle('.lists'));
 ```
 
-Your `.lists li` selector should have a `margin-bottom` property set to `1.5rem`.
+Your `.lists` selector should have a `list-style-type` property set to `none`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists li')?.marginBottom === '1.5rem');
+assert(new __helpers.CSSHelp(document).getStyle('.lists')?.listStyleType === 'none');
 ```
 
 # --seed--
@@ -359,11 +359,6 @@ hr {
   grid-template-columns: 1fr 2fr;
   column-gap: 3rem;
   margin-bottom: 3rem;
-}
-
-.lists {
-  list-style-type: none;
-  margin-top: 2rem;
 }
 
 --fcc-editable-region--

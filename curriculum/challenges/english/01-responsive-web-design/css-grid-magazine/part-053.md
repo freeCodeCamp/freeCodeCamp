@@ -1,5 +1,5 @@
 ---
-id: 6148c721e74ecd4c619ae51c
+id: 6148c58bace368497fb11bcf
 title: Part 53
 challengeType: 0
 dashedName: part-53
@@ -7,16 +7,16 @@ dashedName: part-53
 
 # --description--
 
-Your `.text` element is not a CSS Grid, but you can create columns within an element without using Grid using the `column-width` property.
+Much like Flexbox, with CSS Grid you can align the content of grid items with `align-items` and `justify-items`. `align-items` will align child elements along the column axis, and `justify-items` will align child elements along the row axis.
 
-Give your `.text` selector a `column-width` property set to `25rem`.
+Give the `.social-icons` selector an `align-items` property set to `center`.
 
 # --hints--
 
-Your `.text` selector should have a `column-width` property set to `25rem`.
+Your `.social-icons` selector should have an `align-items` property set to `center`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text')?.columnWidth === '25rem');
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.alignItems === 'center');
 ```
 
 # --seed--
@@ -276,13 +276,9 @@ img {
   row-gap: 1.5rem;
 }
 
---fcc-editable-region--
 .text {
   grid-column: 2 / 3;
-  font-size: 1.8rem;
-  letter-spacing: 0.6px;
 }
---fcc-editable-region--
 
 .hero {
   grid-column: 1 / -1;
@@ -316,11 +312,12 @@ img {
   color: rgba(255, 255, 255, 0.5);
 }
 
+--fcc-editable-region--
 .social-icons {
   display: grid;
   font-size: 3rem;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-flow: column;
-  align-items: center;
 }
+--fcc-editable-region--
 ```

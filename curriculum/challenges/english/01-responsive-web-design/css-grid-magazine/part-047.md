@@ -1,5 +1,5 @@
 ---
-id: 6148c004ffc8434252940dc3
+id: 6148bf49fcc7913f05dbf9b7
 title: Part 47
 challengeType: 0
 dashedName: part-47
@@ -7,26 +7,22 @@ dashedName: part-47
 
 # --description--
 
-Create a `.social-icons` selector. Give it a `display` property set to `grid`, and a `font-size` property set to `3rem.`
+Create a `.author-name a:hover` selector and give it a `background-color` property set to `#306203`.
+
+This will create a hover effect only for the `a` element within the `.author-name`, showing the original freeCodeCamp green in the background.
 
 # --hints--
 
-You should have a `.social-icons` selector.
+You should have an `.author-name a:hover` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons'));
+assert(new __helpers.CSSHelp(document).getStyle('.author-name a:hover'));
 ```
 
-Your `.social-icons` selector should have a `display` property set to `grid`.
+Your `.author-name a:hover` selector should have a `background-color` property set to `#306203`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.display === 'grid');
-```
-
-Your `.social-icons` selector should have a `font-size` property set to `3rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.fontSize === '3rem');
+assert(new __helpers.CSSHelp(document).getStyle('.author-name a:hover')?.backgroundColor === 'rgb(48, 98, 3)');
 ```
 
 # --seed--
@@ -312,14 +308,6 @@ img {
 .author {
   font-size: 2rem;
   font-family: "Raleway", sans-serif;
-}
-
-.author-name a:hover {
-  background-color: #306203;
-}
-
-.publish-date {
-  color: rgba(255, 255, 255, 0.5);
 }
 
 --fcc-editable-region--
