@@ -202,7 +202,7 @@ assert(new __helpers.CSSHelp(document).getStyle('main')?.display === 'grid');
           />
           <img
             src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
-            alt="astronaut in spacesuit floating in space, photo by NASA"
+            alt="image of a calculator project"
             loading="lazy"
             class="image-2"
             width="400"
