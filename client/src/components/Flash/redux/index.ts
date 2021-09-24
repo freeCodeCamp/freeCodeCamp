@@ -2,7 +2,6 @@ import { nanoid } from 'nanoid';
 import { createAction, handleActions } from 'redux-actions';
 
 import store from 'store';
-import { Player, context } from 'tone';
 import { createTypes } from '../../../utils/create-types';
 
 export const ns = 'flash';
@@ -22,21 +21,26 @@ export const createFlashMessage = createAction(
   types.createFlashMessage,
   (msg: { type: string; message: string }) => {
     const playSound = store.get('fcc-sound') as boolean;
-    if (context.state !== 'running') {
-      void context.resume();
+    if (playSound) {
+      void import('tone').then(tone => {
+        if (tone.context.state !== 'running') {
+          void tone.context.resume();
+        }
+        if (msg.message === 'flash.incomplete-steps') {
+          const player = new tone.Player(
+            'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/try-again.mp3'
+          ).toDestination();
+          player.autostart = playSound;
+        }
+        if (msg.message === 'flash.cert-claim-success') {
+          const player = new tone.Player(
+            'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/cert.mp3'
+          ).toDestination();
+          player.autostart = playSound;
+        }
+      });
     }
-    if (msg.message === 'flash.incomplete-steps') {
-      const player = new Player(
-        'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/try-again.mp3'
-      ).toDestination();
-      player.autostart = playSound;
-    }
-    if (msg.message === 'flash.cert-claim-success') {
-      const player = new Player(
-        'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/cert.mp3'
-      ).toDestination();
-      player.autostart = playSound;
-    }
+
     return { id: nanoid(), ...msg };
   }
 );

@@ -1,8 +1,8 @@
 import { Form } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import store from 'store';
 
-import { Player, context } from 'tone';
 import ToggleSetting from './toggle-setting';
 
 type ThemeProps = {
@@ -16,13 +16,6 @@ export default function ThemeSettings({
 }: ThemeProps): JSX.Element {
   const { t } = useTranslation();
 
-  const nightToDayPlayer = new Player(
-    'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/day.mp3'
-  ).toDestination();
-  const dayToNightPlayer = new Player(
-    'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/night.mp3'
-  ).toDestination();
-
   return (
     <Form
       inline={true}
@@ -35,11 +28,22 @@ export default function ThemeSettings({
         offLabel={t('buttons.off')}
         onLabel={t('buttons.on')}
         toggleFlag={async () => {
-          if (context.state === 'running') await context.resume();
-          if (currentTheme === 'night') {
-            nightToDayPlayer.start(1);
-          } else {
-            dayToNightPlayer.start(1);
+          const playSound = store.get('fcc-sound') as boolean;
+          if (playSound) {
+            await import('tone').then(async tone => {
+              const nightToDayPlayer = new tone.Player(
+                'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/day.mp3'
+              ).toDestination();
+              const dayToNightPlayer = new tone.Player(
+                'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/night.mp3'
+              ).toDestination();
+              if (tone.context.state === 'running') await tone.context.resume();
+              if (currentTheme === 'night') {
+                nightToDayPlayer.start(1);
+              } else {
+                dayToNightPlayer.start(1);
+              }
+            });
           }
           toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
         }}

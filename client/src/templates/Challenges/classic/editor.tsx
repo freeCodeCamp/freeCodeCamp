@@ -17,7 +17,7 @@ import React, {
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
-import { Sampler, context } from 'tone';
+import { Sampler } from 'tone';
 
 import { Loader } from '../../../components/helpers';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
@@ -598,14 +598,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     ];
 
     if (player.current.sampler?.loaded && player.current.shouldPlay) {
-      if (context.state !== 'running') void context.resume();
-      player.current.sampler.triggerAttack(
-        editorNotes[player.current.noteIndex]
-      );
-      player.current.noteIndex++;
-      if (player.current.noteIndex >= editorNotes.length) {
-        player.current.noteIndex = 0;
-      }
+      void import('tone').then(tone => {
+        if (tone.context.state !== 'running') void tone.context.resume();
+        player.current.sampler?.triggerAttack(
+          editorNotes[player.current.noteIndex]
+        );
+        player.current.noteIndex++;
+        if (player.current.noteIndex >= editorNotes.length) {
+          player.current.noteIndex = 0;
+        }
+      });
     }
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
