@@ -168,10 +168,6 @@ const toStartOfLine = (range: RangeType) => {
   return range.setStartPosition(range.startLineNumber, 1);
 };
 
-const toLastLine = (range: RangeType) => {
-  return range.setStartPosition(range.endLineNumber, 1);
-};
-
 // TODO: properly initialise data with values not null
 const initialData: EditorProperties = {
   descriptionZoneId: '',
@@ -238,7 +234,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     suggestOnTriggerCharacters: false
   };
 
-  const getEditableRegion = () => {
+  const getEditableRegionFromRedux = () => {
     const { challengeFiles, fileKey } = props;
     const edRegBounds = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
@@ -266,7 +262,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         modeMap[challengeFile?.ext ?? 'html']
       );
     data.model = model;
-    const editableRegion = getEditableRegion();
+    const editableRegion = getEditableRegionFromRedux();
 
     if (editableRegion.length === 2) decorateForbiddenRanges(editableRegion);
 
@@ -373,7 +369,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
 
-    const editableBoundaries = getEditableRegion();
+    const editableBoundaries = getEditableRegionFromRedux();
 
     if (editableBoundaries.length === 2) {
       const createWidget = (
@@ -448,7 +444,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
-      afterLineNumber: getLineAfterDescriptionZone() - 1,
+      afterLineNumber: getLineBeforeEditableRegion(),
       heightInPx: domNode.offsetHeight,
       domNode: document.createElement('div'),
       onComputedHeight: () =>
@@ -479,7 +475,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
-      afterLineNumber: getLineAfterEditableRegion() - 1,
+      afterLineNumber: getLastLineOfEditableRegion(),
       heightInPx: outputNode.offsetHeight,
       domNode: document.createElement('div'),
       onComputedHeight: () =>
@@ -577,10 +573,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     // those imply that the positions have changed (i.e. if the content height
     // has changed or if content is dragged between regions)
 
-    const editableRegion = getCurrentEditableRegion();
-    const editableRegionBoundaries = editableRegion && [
-      editableRegion.startLineNumber - 1,
-      editableRegion.endLineNumber + 1
+    const coveringRange = getLinesCoveringEditableRegion();
+    const editableRegionBoundaries = coveringRange && [
+      coveringRange.startLineNumber - 1,
+      coveringRange.endLineNumber + 1
     ];
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
@@ -667,21 +663,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     return `${data.outputZoneTop}px`;
   }
 
-  // It's not possible to directly access the current view zone so we track
-  // the region it should cover instead.
-  function getLineAfterDescriptionZone() {
-    const range = data.model?.getDecorationRange(data.startEditDecId);
-    // if the first decoration is missing, this implies the region reaches the
-    // start of the editor.
-    return range ? range.endLineNumber + 1 : 1;
+  function getLineBeforeEditableRegion() {
+    const range = data.model?.getDecorationRange(data.insideEditDecId);
+    return range ? range.startLineNumber - 1 : 1;
   }
 
-  function getLineAfterEditableRegion() {
-    // TODO: handle the case that the editable region reaches the bottom of the
-    // editor
-    return (
-      data.model?.getDecorationRange(data.endEditDecId)?.startLineNumber ?? 1
-    );
+  function getLastLineOfEditableRegion() {
+    const range = data.model?.getDecorationRange(data.insideEditDecId);
+    return range ? range.endLineNumber : 1;
   }
 
   const translateRange = (range: IRange, lineDelta: number) => {
@@ -693,66 +682,28 @@ const Editor = (props: EditorProps): JSX.Element => {
     return monacoRef.current?.Range.lift(iRange);
   };
 
-  // Make 100% sure this is inclusive.
-  const getLinesBetweenRanges = (
-    firstRange: RangeType,
-    secondRange: RangeType
-  ) => {
-    const startRange = translateRange(toLastLine(firstRange), 1);
-    const endRange = translateRange(
-      toStartOfLine(secondRange),
-      -1
-    )?.collapseToStart();
-
-    return {
-      startLineNumber: startRange?.startLineNumber ?? 1,
-      endLineNumber: endRange?.endLineNumber ?? 2
-    };
-  };
-
-  const getCurrentEditableRegion = () => {
+  // This Range covers all the text in the editable region,
+  const getLinesCoveringEditableRegion = () => {
     const monaco = monacoRef.current;
-    const { model, startEditDecId, endEditDecId } = data;
+    const { model, insideEditDecId } = data;
     // TODO: this is a little low-level, but we should bail if there is no
     // editable region defined.
-    // NOTE: if a decoration is missing, there is still an editable region - it
-    // just extends to the edge of the editor. However, no decorations means no
-    // editable region.
-    if ((!startEditDecId && !endEditDecId) || !model || !monaco) {
+    if (!insideEditDecId || !model || !monaco) {
       return null;
     } else {
-      const firstRange = startEditDecId
-        ? model.getDecorationRange(startEditDecId)
-        : getStartOfEditor();
-      // TODO: handle the case that the editable region reaches the bottom of the
-      // editor
-      const secondRange = model.getDecorationRange(endEditDecId);
-      if (firstRange && secondRange) {
-        const editableRegion = getLinesBetweenRanges(firstRange, secondRange);
-        const startLineNumber = editableRegion.startLineNumber;
+      const currentRange = model.getDecorationRange(insideEditDecId);
 
-        let endLineNumber = editableRegion.endLineNumber;
-
-        // TODO: this prevents the editor from crashing, but it's still possible
-        // for the editable region to become empty and for the editable
-        // decorations to get out of sync with the jaw locations.
-        endLineNumber = Math.max(endLineNumber, startLineNumber + 1);
-        endLineNumber = Math.min(endLineNumber, model.getLineCount());
-
-        const endColumn = model.getLineLength(endLineNumber) + 1;
-        return new monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
+      if (currentRange) {
+        return new monaco.Range(
+          currentRange.startLineNumber,
+          1,
+          currentRange.endLineNumber,
+          model.getLineLength(currentRange.endLineNumber) + 1
+        );
       }
       return null;
     }
   };
-
-  const getStartOfEditor = () =>
-    monacoRef.current?.Range.lift({
-      startLineNumber: 1,
-      endLineNumber: 1,
-      startColumn: 1,
-      endColumn: 1
-    });
 
   function decorateForbiddenRanges(editableRegion: number[]) {
     const { model } = data;
@@ -822,13 +773,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       return isDeleted ? event.changes[0].range.endLineNumber : 0;
     }
 
-    function getNewLineRanges(event: editor.IModelContentChangedEvent) {
-      const newLines = event.changes.filter(
-        ({ text }) => text[0] === event.eol
-      );
-      return newLines.map(({ range }) => range);
-    }
-
     // TODO this listener needs to be replaced on reset.
     model.onDidChangeContent(e => {
       // TODO: it would be nice if undoing could remove the warning, but
@@ -837,9 +781,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       // edits. However, what if they made a warned edit, then a normal
       // edit, then a warned one.  Could it track that they need to make 3
       // undos?
-      const newLineRanges = getNewLineRanges(e).map(range => {
-        return toStartOfLine(monaco.Range.lift(range));
-      });
       const deletedLine = getDeletedLine(e);
 
       const deletedRange = {
@@ -848,6 +789,20 @@ const Editor = (props: EditorProps): JSX.Element => {
         startColumn: 1,
         endColumn: 1
       };
+
+      const redecorateEditableRegion = () => {
+        const coveringRange = getLinesCoveringEditableRegion();
+        if (coveringRange) {
+          data.insideEditDecId = highlightEditableLines(
+            monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
+            model,
+            coveringRange,
+            [data.insideEditDecId]
+          )[0];
+        }
+      };
+
+      redecorateEditableRegion();
 
       if (e.isUndoing) {
         // TODO: can we be more targeted? Only update when they could get out of
@@ -869,24 +824,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       };
 
-      // Make sure the zone tracks the decoration (i.e. the region), which might
-      // have changed if a line has been added or removed
-      const handleHintsZoneChange = () => {
-        if (newLineRanges.length > 0 || deletedLine > 0) {
-          updateOutputZone();
-        }
-      };
-
-      // Make sure the zone tracks the decoration (i.e. the region), which might
-      // have changed if a line has been added or removed
-      const handleDescriptionZoneChange = () => {
-        if (newLineRanges.length > 0 || deletedLine > 0) {
-          updateDescriptionZone();
-        }
-      };
-
-      // Stops the greyed out region from covering the editable region. Does not
-      // change the font decoration.
+      // TODO: can this be removed along with the rest of the forbidden region
+      // decorators?
       const preventOverlap = (
         id: string,
         stickiness: number,
@@ -953,22 +892,15 @@ const Editor = (props: EditorProps): JSX.Element => {
         highlightLines
       );
 
-      data.insideEditDecId = preventOverlap(
-        data.insideEditDecId,
-        monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-        highlightEditableLines
-      );
+      // If the content has changed, the zones may need moving. Rather than
+      // working out if they have to for a particular content changed, we simply
+      // ask monaco to update regardless.
+      updateDescriptionZone();
+      updateOutputZone();
 
-      // TODO: do the same for the description widget
-      // this has to be handle differently, because we care about the END
-      // of the zone, not the START
-      // if the editable region includes the first line, the first decoration
-      // will be missing.
       if (data.startEditDecId) {
-        handleDescriptionZoneChange();
         warnUser(data.startEditDecId);
       }
-      handleHintsZoneChange();
       if (data.endEditDecId) {
         warnUser(data.endEditDecId);
       }
@@ -1006,7 +938,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, [props.challengeFiles]);
   useEffect(() => {
     const { output, tests } = props;
-    const editableRegion = getEditableRegion();
+    const editableRegion = getEditableRegionFromRedux();
     if (editableRegion.length === 2) {
       const challengeComplete = tests.every(test => test.pass && !test.err);
       const chellengeHasErrors = tests.some(test => test.err);
