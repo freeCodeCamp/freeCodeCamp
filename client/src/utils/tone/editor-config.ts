@@ -47,6 +47,5 @@ export const editorToneOptions = {
     E7: 'Guitar-Sample-45.mp3'
   },
   release: 1,
-  baseUrl:
-    'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/mariachi/'
+  baseUrl: 'https://campfire-mode.freecodecamp.org/mariachi/'
 };

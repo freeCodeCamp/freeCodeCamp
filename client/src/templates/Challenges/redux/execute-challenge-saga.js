@@ -106,8 +106,8 @@ export function* executeChallengeSaga({
       void import('tone').then(tone => {
         player = new tone.Player(
           challengeComplete && isShouldCompletionModalOpen
-            ? 'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/chal-comp.mp3'
-            : 'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/try-again.mp3'
+            ? 'https://campfire-mode.freecodecamp.org/chal-comp.mp3'
+            : 'https://campfire-mode.freecodecamp.org/try-again.mp3'
         ).toDestination();
         player.autostart = true;
       });

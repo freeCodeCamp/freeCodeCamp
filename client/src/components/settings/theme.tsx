@@ -32,22 +32,22 @@ export default function ThemeSettings({
           if (playSound) {
             const tone = await import('tone');
             const nightToDayPlayer = new tone.Player(
-              'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/day.mp3'
+              'https://campfire-mode.freecodecamp.org/day.mp3'
             ).toDestination();
             const dayToNightPlayer = new tone.Player(
-              'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/night.mp3'
+              'https://campfire-mode.freecodecamp.org/night.mp3'
             ).toDestination();
             if (tone.context.state !== 'running') await tone.context.resume();
             if (currentTheme === 'night') {
               if (!nightToDayPlayer.loaded)
                 await nightToDayPlayer.load(
-                  'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/day.mp3'
+                  'https://campfire-mode.freecodecamp.org/day.mp3'
                 );
               nightToDayPlayer.start();
             } else {
               if (!dayToNightPlayer.loaded)
                 await dayToNightPlayer.load(
-                  'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/night.mp3'
+                  'https://campfire-mode.freecodecamp.org/night.mp3'
                 );
               dayToNightPlayer.start();
             }

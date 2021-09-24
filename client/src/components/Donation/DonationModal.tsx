@@ -82,7 +82,7 @@ function DonateModal({
       if (playSound) {
         void import('tone').then(tone => {
           const player = new tone.Player(
-            'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/donate.mp3'
+            'https://campfire-mode.freecodecamp.org/donate.mp3'
           ).toDestination();
           if (tone.context.state !== 'running') void tone.context.resume();
           player.autostart = playSound;

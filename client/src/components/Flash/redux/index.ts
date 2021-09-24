@@ -28,13 +28,13 @@ export const createFlashMessage = createAction(
         }
         if (msg.message === 'flash.incomplete-steps') {
           const player = new tone.Player(
-            'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/try-again.mp3'
+            'https://campfire-mode.freecodecamp.org/try-again.mp3'
           ).toDestination();
           player.autostart = playSound;
         }
         if (msg.message === 'flash.cert-claim-success') {
           const player = new tone.Player(
-            'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/cert.mp3'
+            'https://campfire-mode.freecodecamp.org/cert.mp3'
           ).toDestination();
           player.autostart = playSound;
         }
