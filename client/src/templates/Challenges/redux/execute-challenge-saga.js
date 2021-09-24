@@ -14,7 +14,6 @@ import {
   cancel
 } from 'redux-saga/effects';
 import store from 'store';
-import { Player } from 'tone';
 
 import {
   buildChallenge,
@@ -102,19 +101,20 @@ export function* executeChallengeSaga({
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
     const playSound = store.get('fcc-sound');
-    if (challengeComplete && isShouldCompletionModalOpen) {
-      const player = new Player(
-        'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/chal-comp.mp3'
-      ).toDestination();
-      player.autostart = playSound;
-      yield put(openModal('completion'));
-    } else {
-      const player = new Player(
-        'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/try-again.mp3'
-      ).toDestination();
-      player.autostart = playSound;
+    let player;
+    if (playSound) {
+      void import('tone').then(tone => {
+        player = new tone.Player(
+          challengeComplete && isShouldCompletionModalOpen
+            ? 'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/chal-comp.mp3'
+            : 'http://campfire-mode.freecodecamp.org.s3-website-us-east-1.amazonaws.com/try-again.mp3'
+        ).toDestination();
+        player.autostart = true;
+      });
     }
-
+    if (challengeComplete && isShouldCompletionModalOpen) {
+      yield put(openModal('completion'));
+    }
     yield put(updateConsole(i18next.t('learn.tests-completed')));
     yield put(logsToConsole(i18next.t('learn.console-output')));
   } catch (e) {

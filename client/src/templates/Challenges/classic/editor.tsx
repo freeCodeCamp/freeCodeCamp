@@ -17,7 +17,6 @@ import React, {
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
-import { Sampler } from 'tone';
 
 import { Loader } from '../../../components/helpers';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
@@ -200,7 +199,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     indexjsx: { ...initialData }
   });
   const player = useRef<{
-    sampler: Sampler | undefined;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    sampler: any;
     noteIndex: number;
     shouldPlay: boolean;
   }>({
@@ -280,8 +280,12 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     if (editableRegion.length === 2) decorateForbiddenRanges(editableRegion);
 
-    if (!player.current.sampler) {
-      player.current.sampler = new Sampler(editorToneOptions).toDestination();
+    if (player.current.shouldPlay && !player.current.sampler) {
+      void import('tone').then(tone => {
+        player.current.sampler = new tone.Sampler(
+          editorToneOptions
+        ).toDestination();
+      });
     }
 
     // TODO: do we need to return this?
@@ -597,9 +601,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       coveringRange.endLineNumber + 1
     ];
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (player.current.sampler?.loaded && player.current.shouldPlay) {
       void import('tone').then(tone => {
         if (tone.context.state !== 'running') void tone.context.resume();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         player.current.sampler?.triggerAttack(
           editorNotes[player.current.noteIndex]
         );
