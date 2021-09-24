@@ -12,7 +12,7 @@ dashedName: add-font-awesome-icons-to-our-buttons
 
 # --description--
 
-Font Awesome 是一个非常便利的图标库。 我们可以通过 webfont 或矢量图的方式来使用这些图标。 这些图标就和字体一样， 不仅能通过像素单位指定它们的大小，它们也同样会继承父级 HTML 元素的字体大小。
+Font Awesome 是一个非常便利的图标库。 我们可以通过 webfont 或矢量图的方式来使用这些图标。 这些图标就和字体一样， 不仅能通过像素单位指定它们的大小，它们也同样会继承父级 HTML 元素的字号。
 
 可以将 Font Awesome 图标库添加至任何一个 web app 中，方法很简单，只需要在 HTML head 标签中添加以下代码即可：
 
@@ -93,10 +93,10 @@ assert(code.match(/<\/i>|<\/span>/g));
       <h2 class="text-primary text-center">CatPhotoApp</h2>
     </div>
     <div class="col-xs-4">
-      <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
     </div>
   </div>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
       <button class="btn btn-block btn-primary">Like</button>
@@ -155,10 +155,10 @@ assert(code.match(/<\/i>|<\/span>/g));
       <h2 class="text-primary text-center">CatPhotoApp</h2>
     </div>
     <div class="col-xs-4">
-      <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
     </div>
   </div>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
       <button class="btn btn-block btn-primary"><i class="fas fa-thumbs-up"></i> Like</button>

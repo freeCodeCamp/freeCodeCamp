@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import envData from '../../../../../config/env.json';
-import ActionRow from './ActionRow';
 import EditorTabs from './EditorTabs';
+import ActionRow from './action-row.tsx';
 
 const { showUpcomingChanges } = envData;
 

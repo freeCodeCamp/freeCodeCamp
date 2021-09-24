@@ -8,13 +8,13 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 # --description--
 
-可以采用下面的任意一种方式完成这些挑战：
+你可以采用下面的任意一种编写代码的方式来完成这些挑战：
 
 - 克隆 [GitHub repo](https://github.com/freeCodeCamp/boilerplate-npm/) 并在本地完成项目。
 - 使用[我们的 Replit 上的初始化项目](https://replit.com/github/freeCodeCamp/boilerplate-npm)来完成项目。
-- 使用你选择的网站生成器来完成项目， 并确保包含了我们 GitHub 仓库的所有文件。
+- 使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-当完成本项目，请确认有一个正常运行的 demo 可以公开访问。 然后将 URL 提交到 `Solution Link` 中。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
+完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 字段中提交它的 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
 
 `package.json` 文件是所有 Node.js 项目和 npm 包的枢纽， 和 HTML 文档中的 &lt;head> 区域用来描述网页的配置信息（元数据）一样，它存储项目的相关信息。 它由单个 JSON 对象组成，并以键值对的形式存储项目信息， 且至少包含两个必填字段：“name”和“version”——但是最好提供有关项目的其他信息，这将对用户或者维护者有所帮助。
 

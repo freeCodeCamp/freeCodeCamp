@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036185
-title: Use && for a More Concise Conditional
+title: 使用 && 获得更简洁的条件
 challengeType: 6
 forumTopicId: 301413
 dashedName: use--for-a-more-concise-conditional
@@ -8,7 +8,7 @@ dashedName: use--for-a-more-concise-conditional
 
 # --description--
 
-`if/else` 语句在上一次挑战中是有效的，但是有一种更简洁的方法可以达到同样的结果。 假设正在跟踪组件中的几个条件，并且希望根据这些条件中的每一个来渲染不同的元素。 如果你写了很多 `else if` 语句来返回稍微不同的 UI，你可能会写很多重复代码，这就留下了出错的空间。 相反，你可以使用 `&&` 逻辑运算符以更简洁的方式执行条件逻辑。 这是完全可行的，因为你希望检查条件是否为 `true`。如果是，则返回一些标记。 这里有一个例子：
+`if/else` 语句在上一次挑战中是有效的，但是有一种更简洁的方法可以达到同样的结果。 假设正在跟踪组件中的几个条件，并且希望根据这些条件中的每一个来渲染不同的元素。 如果你写了很多 `else if` 语句来返回稍微不同的 UI，你可能会写很多重复代码，这就留下了出错的空间。 相反，你可以使用 `&&` 逻辑运算符以更简洁的方式执行条件逻辑。 这是完全可行的，因为你希望检查条件是否为 `true`。如果是，则返回一些标记。 下面是一个示例：
 
 ```jsx
 {condition && <p>markup</p>}

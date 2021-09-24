@@ -10,7 +10,7 @@ dashedName: prevent-object-mutation
 
 通過之前的挑戰可以看出，`const` 聲明並不會真的保護數據不被改變。 爲了確保數據不被改變，JavaScript 提供了一個函數 `Object.freeze`。
 
-當一個對象被凍結的時候，你不能再對它的屬性再進行增、刪、改的操作。 任何試圖改變對象的操作都會被阻止，卻不會報錯。
+任何更改對象的嘗試都將被拒絕，如果腳本在嚴格模式下運行，將拋出錯誤。
 
 ```js
 let obj = {
@@ -23,7 +23,7 @@ obj.newProp = "Test";
 console.log(obj); 
 ```
 
-`obj.review` 和 `obj.newProp` 賦值將導致錯誤，控制檯將顯示值 `{ name: "FreeCodeCamp", review: "Awesome" }`。
+`obj.review` 和 `obj.newProp` 賦值將導致錯誤，因爲我們的編輯器默認在嚴格模式下運行，控制檯將顯示值 `{ name: "FreeCodeCamp", review: "Awesome" }`。
 
 # --instructions--
 

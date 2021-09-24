@@ -319,6 +319,7 @@
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
     "credit-card-2": "或者使用信用卡捐款：",
+    "or-card": "Or donate with card",
     "paypal": "使用 PayPal：",
     "need-email": "请提供一个有效的邮件地址，我们将把捐款税务收据发送给你。",
     "went-wrong": "你的捐款处理有点问题，尚未从你的卡片扣除金额。",

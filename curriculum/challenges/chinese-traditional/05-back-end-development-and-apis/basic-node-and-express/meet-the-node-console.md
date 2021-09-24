@@ -8,13 +8,13 @@ dashedName: meet-the-node-console
 
 # --description--
 
-可以採用下面的任意一種方式完成這些挑戰：
+你可以採用下面的任意一種編寫代碼的方式來完成這些挑戰：
 
 - 克隆 [這個 GitHub 倉庫](https://github.com/freeCodeCamp/boilerplate-express/) 並在本地完成項目。
 - 使用[我們的 Repl.it 上的初始化項目](https://replit.com/github/freeCodeCamp/boilerplate-express)來完成項目。
-- 使用你選擇的網站生成器來完成項目， 並確保包含了我們 GitHub 倉庫的所有文件。
+- 使用你選擇的網站生成器來完成項目。 需要包含我們 GitHub 倉庫的所有文件。
 
-當完成本項目，請確認有一個正常運行的 demo 可以公開訪問。 然後將 URL 提交到 `Solution Link` 中。
+完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後在 `Solution Link` 字段中提交它的 URL。
 
 在開發過程中，能夠隨時看到代碼的運行結果是非常重要的。
 

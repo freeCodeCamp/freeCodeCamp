@@ -38,7 +38,7 @@ Por defecto, JavaScript ordena basándose en el valor "Unicode" de la cadena de 
 
 # --instructions--
 
-Utiliza el método `sort` en la función `alphabeticalOrder` para ordenar los elementos de `arr` en orden alfabético.
+Utiliza el método `sort` en la función `alphabeticalOrder` para ordenar los elementos de `arr` en orden alfabético. La función debe devolver el arreglo ordenado.
 
 # --hints--
 
@@ -83,7 +83,7 @@ assert(
 function alphabeticalOrder(arr) {
   // Only change code below this line
 
-
+  return arr
   // Only change code above this line
 }
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);

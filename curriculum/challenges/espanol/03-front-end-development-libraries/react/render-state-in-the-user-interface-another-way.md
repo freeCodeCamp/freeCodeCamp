@@ -12,7 +12,7 @@ Hay otra manera de acceder al `state` de un componente. En el método `render()`
 
 # --instructions--
 
-En el método de renderización de `MyComponent`, define una `const` llamada `name` y ponlo igual al valor del nombre en el `state` del componente. Debido a que puedes escribir JavaScript directamente en esta parte del código, no tienes que incluir esta referencia entre llaves.
+En el método de renderización de `MyComponent`, define una `const` llamada `name` y asígnalo igual al valor del nombre en el `state` del componente. Debido a que puedes escribir JavaScript directamente en esta parte del código, no tienes que incluir esta referencia entre llaves.
 
 A continuación, en la sentencia return, renderiza este valor en una etiqueta `h1` usando la variable `name`. Recuerda, necesitas usar la sintaxis JSX (llaves para JavaScript) en la sentencia return.
 

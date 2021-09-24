@@ -1,12 +1,14 @@
 import debug from 'debug';
 import Stripe from 'stripe';
+
 import { donationSubscriptionConfig } from '../../../../config/donation-settings';
 import keys from '../../../../config/secrets';
 import {
   getAsyncPaypalToken,
   verifyWebHook,
   updateUser,
-  verifyWebHookType
+  verifyWebHookType,
+  createStripeCardDonation
 } from '../utils/donation';
 import { validStripeForm } from '../utils/stripeHelpers';
 
@@ -23,6 +25,18 @@ export default function donateBoot(app, done) {
     return new Promise(function () {
       // connect to stripe API
       stripe = Stripe(keys.stripe.secret);
+    });
+  }
+
+  async function handleStripeCardDonation(req, res) {
+    return createStripeCardDonation(req, res, stripe, app).catch(err => {
+      if (err.type === 'AlreadyDonatingError')
+        return res.status(402).send({ error: err });
+      if (err.type === 'InvalidRequest')
+        return res.status(400).send({ error: err });
+      return res.status(500).send({
+        error: 'Donation failed due to a server error.'
+      });
     });
   }
 
@@ -184,7 +198,6 @@ export default function donateBoot(app, done) {
   const stripeSecretInvalid = !secKey || secKey === 'sk_from_stripe_dashboard';
   const stripPublicInvalid =
     !stripeKey || stripeKey === 'pk_from_stripe_dashboard';
-
   const paypalSecretInvalid =
     !paypalKey || paypalKey === 'id_from_paypal_dashboard';
   const paypalPublicInvalid =
@@ -201,6 +214,7 @@ export default function donateBoot(app, done) {
     done();
   } else {
     api.post('/charge-stripe', createStripeDonation);
+    api.post('/charge-stripe-card', handleStripeCardDonation);
     api.post('/add-donation', addDonation);
     hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);
