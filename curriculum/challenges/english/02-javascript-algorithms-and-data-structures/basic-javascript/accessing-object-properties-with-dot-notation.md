@@ -16,15 +16,17 @@ Dot notation is what you use when you know the name of the property you're tryin
 Here is a sample of using dot notation (`.`) to read an object's property:
 
 ```js
-var myObj = {
+const myObj = {
   prop1: "val1",
   prop2: "val2"
 };
-var prop1val = myObj.prop1;
-var prop2val = myObj.prop2;
+
+const prop1val = myObj.prop1;
+const prop2val = myObj.prop2;
 ```
 
 `prop1val` would have a value of the string `val1`, and `prop2val` would have a value of the string `val2`.
+
 # --instructions--
 
 Read in the property values of `testObj` using dot notation. Set the variable `hatValue` equal to the object's property `hat` and set the variable `shirtValue` equal to the object's property `shirt`.
@@ -73,27 +75,26 @@ assert(code.match(/testObj\.\w+/g).length > 1);
 
 ```js
 // Setup
-var testObj = {
+const testObj = {
   "hat": "ballcap",
   "shirt": "jersey",
   "shoes": "cleats"
 };
 
 // Only change code below this line
-
-var hatValue = testObj;      // Change this line
-var shirtValue = testObj;    // Change this line
+const hatValue = testObj;      // Change this line
+const shirtValue = testObj;    // Change this line
 ```
 
 # --solutions--
 
 ```js
-var testObj = {
+const testObj = {
   "hat": "ballcap",
   "shirt": "jersey",
   "shoes": "cleats"
 };
 
-var hatValue = testObj.hat;
-var shirtValue = testObj.shirt;
+const hatValue = testObj.hat;
+const shirtValue = testObj.shirt;
 ```

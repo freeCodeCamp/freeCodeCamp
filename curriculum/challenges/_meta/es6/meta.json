@@ -10,16 +10,8 @@
   "superOrder": 2,
   "challengeOrder": [
     [
-      "587d7b87367417b2b2512b3f",
-      "Explore Differences Between the var and let Keywords"
-    ],
-    [
       "587d7b87367417b2b2512b40",
       "Compare Scopes of the var and let Keywords"
-    ],
-    [
-      "587d7b87367417b2b2512b41",
-      "Declare a Read-Only Variable with the const Keyword"
     ],
     [
       "587d7b87367417b2b2512b42",

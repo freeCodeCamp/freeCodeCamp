@@ -9,12 +9,12 @@ dashedName: modify-array-data-with-indexes
 
 # --description--
 
-Unlike strings, the entries of arrays are <dfn>mutable</dfn> and can be changed freely.
+Unlike strings, the entries of arrays are <dfn>mutable</dfn> and can be changed freely, even if the array was declared with `const`.
 
 **Example**
 
 ```js
-var ourArray = [50,40,30];
+const ourArray = [50, 40, 30];
 ourArray[0] = 15;
 ```
 
@@ -28,7 +28,7 @@ Modify the data stored at index `0` of `myArray` to a value of `45`.
 
 # --hints--
 
-`myArray` should now be `[45,64,99]`.
+`myArray` should now be `[45, 64, 99]`.
 
 ```js
 assert(
@@ -73,14 +73,15 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [18,64,99];
+const myArray = [18, 64, 99];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [18,64,99];
+const myArray = [18, 64, 99];
 myArray[0] = 45;
 ```

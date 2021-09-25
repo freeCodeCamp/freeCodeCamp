@@ -17,7 +17,7 @@ console.log("Alan Peter".length);
 
 The value `10` would be displayed in the console.
 
-For example, if we created a variable `var firstName = "Ada"`, we could find out how long the string `Ada` is by using the `firstName.length` property.
+For example, if we created a variable `const firstName = "Ada"`, we could find out how long the string `Ada` is by using the `firstName.length` property.
 
 # --instructions--
 
@@ -29,8 +29,8 @@ You should not change the variable declarations in the `// Setup` section.
 
 ```js
 assert(
-  code.match(/var lastNameLength = 0;/) &&
-    code.match(/var lastName = "Lovelace";/)
+  code.match(/let lastNameLength = 0;/) &&
+    code.match(/const lastName = "Lovelace";/)
 );
 ```
 
@@ -52,18 +52,17 @@ assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
 
 ```js
 // Setup
-var lastNameLength = 0;
-var lastName = "Lovelace";
+let lastNameLength = 0;
+const lastName = "Lovelace";
 
 // Only change code below this line
-
 lastNameLength = lastName;
 ```
 
 # --solutions--
 
 ```js
-var lastNameLength = 0;
-var lastName = "Lovelace";
+let lastNameLength = 0;
+const lastName = "Lovelace";
 lastNameLength = lastName.length;
 ```

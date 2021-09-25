@@ -16,7 +16,7 @@ Not only can you `shift` elements off of the beginning of an array, you can also
 Example:
 
 ```js
-var ourArray = ["Stimpson", "J", "cat"];
+const ourArray = ["Stimpson", "J", "cat"];
 ourArray.shift();
 ourArray.unshift("Happy");
 ```
@@ -25,7 +25,7 @@ After the `shift`, `ourArray` would have the value `["J", "cat"]`. After the `un
 
 # --instructions--
 
-Add `["Paul",35]` to the beginning of the `myArray` variable using `unshift()`.
+Add `["Paul", 35]` to the beginning of the `myArray` variable using `unshift()`.
 
 # --hints--
 
@@ -63,16 +63,17 @@ assert(
 
 ```js
 // Setup
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 myArray.shift();
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 myArray.shift();
 myArray.unshift(["Paul", 35]);
 ```

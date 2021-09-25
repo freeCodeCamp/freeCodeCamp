@@ -14,9 +14,10 @@ You can run the same code multiple times by using a loop.
 The first type of loop we will learn is called a `while` loop because it runs while a specified condition is true and stops once that condition is no longer true.
 
 ```js
-var ourArray = [];
-var i = 0;
-while(i < 5) {
+const ourArray = [];
+let i = 0;
+
+while (i < 5) {
   ourArray.push(i);
   i++;
 }
@@ -38,7 +39,7 @@ You should be using a `while` loop for this.
 assert(code.match(/while/g));
 ```
 
-`myArray` should equal `[5,4,3,2,1,0]`.
+`myArray` should equal `[5, 4, 3, 2, 1, 0]`.
 
 ```js
 assert.deepEqual(myArray, [5, 4, 3, 2, 1, 0]);
@@ -56,17 +57,18 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-var i = 5;
-while(i >= 0) {
+const myArray = [];
+let i = 5;
+while (i >= 0) {
   myArray.push(i);
   i--;
 }

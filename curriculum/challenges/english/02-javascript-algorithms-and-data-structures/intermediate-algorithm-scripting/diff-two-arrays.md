@@ -157,7 +157,7 @@ assert(diffArray([1, 'calf', 3, 'piglet'], [7, 'filly']).length === 6);
 
 ```js
 function diffArray(arr1, arr2) {
-  var newArr = [];
+  const newArr = [];
   return newArr;
 }
 
@@ -168,13 +168,12 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 
 ```js
 function diffArray(arr1, arr2) {
-  var newArr = [];
-  var h1 = Object.create(null);
+  const newArr = [];
+  const h1 = Object.create(null);
   arr1.forEach(function(e) {
     h1[e] = e;
   });
-
-  var h2 = Object.create(null);
+  const h2 = Object.create(null);
   arr2.forEach(function(e) {
     h2[e] = e;
   });

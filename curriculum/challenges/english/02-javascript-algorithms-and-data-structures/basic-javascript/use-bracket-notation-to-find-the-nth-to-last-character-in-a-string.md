@@ -11,13 +11,13 @@ dashedName: use-bracket-notation-to-find-the-nth-to-last-character-in-a-string
 
 You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.
 
-For example, you can get the value of the third-to-last letter of the `var firstName = "Augusta"` string by using `firstName[firstName.length - 3]`
+For example, you can get the value of the third-to-last letter of the `const firstName = "Augusta"` string by using `firstName[firstName.length - 3]`
 
 Example:
 
 ```js
-var firstName = "Augusta";
-var thirdToLastLetter = firstName[firstName.length - 3];
+const firstName = "Augusta";
+const thirdToLastLetter = firstName[firstName.length - 3];
 ```
 
 `thirdToLastLetter` would have a value of the string `s`.
@@ -54,15 +54,15 @@ assert(code.match(/\.length/g).length > 0);
 
 ```js
 // Setup
-var lastName = "Lovelace";
+const lastName = "Lovelace";
 
 // Only change code below this line
-var secondToLastLetterOfLastName = lastName; // Change this line
+const secondToLastLetterOfLastName = lastName; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var lastName = "Lovelace";
-var secondToLastLetterOfLastName = lastName[lastName.length - 2];
+const lastName = "Lovelace";
+const secondToLastLetterOfLastName = lastName[lastName.length - 2];
 ```

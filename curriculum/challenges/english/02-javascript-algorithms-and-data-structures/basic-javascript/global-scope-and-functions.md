@@ -11,13 +11,13 @@ dashedName: global-scope-and-functions
 
 In JavaScript, <dfn>scope</dfn> refers to the visibility of variables. Variables which are defined outside of a function block have <dfn>Global</dfn> scope. This means, they can be seen everywhere in your JavaScript code.
 
-Variables which are declared without the `var` keyword are automatically created in the `global` scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with `var`.
+Variables which are declared without the `let` or `const` keywords are automatically created in the `global` scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with `let` or `const`.
 
 # --instructions--
 
-Using `var`, declare a global variable named `myGlobal` outside of any function. Initialize it with a value of `10`.
+Using `let` or `const`, declare a global variable named `myGlobal` outside of any function. Initialize it with a value of `10`.
 
-Inside function `fun1`, assign `5` to `oopsGlobal` ***without*** using the `var` keyword.
+Inside function `fun1`, assign `5` to `oopsGlobal` ***without*** using the `let` or `const` keywords.
 
 # --hints--
 
@@ -33,10 +33,10 @@ assert(typeof myGlobal != 'undefined');
 assert(myGlobal === 10);
 ```
 
-`myGlobal` should be declared using the `var` keyword
+`myGlobal` should be declared using the `let` or `const` keywords
 
 ```js
-assert(/var\s+myGlobal/.test(code));
+assert(/(let|const)\s+myGlobal/.test(code));
 ```
 
 `oopsGlobal` should be a global variable and have a value of `5`
@@ -109,7 +109,7 @@ function fun2() {
 # --solutions--
 
 ```js
-var myGlobal = 10;
+const myGlobal = 10;
 
 function fun1() {
   oopsGlobal = 5;

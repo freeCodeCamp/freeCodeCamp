@@ -22,7 +22,7 @@ In JavaScript, when the `+` operator is used with a `String` value, it is called
 Example:
 
 ```js
-var ourStr = "I come first. " + "I come second.";
+const ourStr = "I come first. " + "I come second.";
 ```
 
 The string `I come first. I come second.` would be displayed in the console.
@@ -44,10 +44,10 @@ You should use the `+` operator to build `myStr`.
 assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
-`myStr` should be created using the `var` keyword.
+`myStr` should be created using the `const` keyword.
 
 ```js
-assert(/var\s+myStr/.test(code));
+assert(/const\s+myStr/.test(code));
 ```
 
 You should assign the result to the `myStr` variable.
@@ -73,11 +73,11 @@ assert(/myStr\s*=/.test(code));
 ## --seed-contents--
 
 ```js
-var myStr; // Change this line
+const myStr = ""; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var myStr = "This is the start. " + "This is the end.";
+const myStr = "This is the start. " + "This is the end.";
 ```

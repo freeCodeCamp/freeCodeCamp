@@ -25,7 +25,7 @@ In order, these expressions would evaluate to `true`, `false`, `false`, `false`,
 
 # --instructions--
 
-Add the inequality operator `!=` in the `if` statement so that the function will return the string `Not Equal` when `val` is not equivalent to `99`
+Add the inequality operator `!=` in the `if` statement so that the function will return the string `Not Equal` when `val` is not equivalent to `99`.
 
 # --hints--
 

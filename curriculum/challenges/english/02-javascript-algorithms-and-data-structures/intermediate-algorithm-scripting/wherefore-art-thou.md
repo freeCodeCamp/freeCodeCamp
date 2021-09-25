@@ -103,7 +103,7 @@ assert.deepEqual(
 
 ```js
 function whatIsInAName(collection, source) {
-  var arr = [];
+  const arr = [];
   // Only change code below this line
 
 
@@ -118,8 +118,8 @@ whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: 
 
 ```js
 function whatIsInAName(collection, source) {
-  var arr = [];
-  var keys = Object.keys(source);
+  const arr = [];
+  const keys = Object.keys(source);
   collection.forEach(function(e) {
     if(keys.every(function(key) {return e[key] === source[key];})) {
       arr.push(e);

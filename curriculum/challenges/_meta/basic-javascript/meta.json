@@ -30,12 +30,24 @@
       "Initializing Variables with the Assignment Operator"
     ],
     [
+      "bd7123c9c444eddfaeb5bdef",
+      "Declare String Variables"
+    ],
+    [
       "56533eb9ac21ba0edf2244aa",
       "Understanding Uninitialized Variables"
     ],
     [
       "56533eb9ac21ba0edf2244ab",
       "Understanding Case Sensitivity in Variables"
+    ],
+    [
+      "587d7b87367417b2b2512b3f",
+      "Explore Differences Between the var and let Keywords"
+    ],
+    [
+      "587d7b87367417b2b2512b41",
+      "Declare a Read-Only Variable with the const Keyword"
     ],
     [
       "cf1111c1c11feddfaeb3bdef",
@@ -92,10 +104,6 @@
     [
       "56533eb9ac21ba0edf2244b2",
       "Compound Assignment With Augmented Division"
-    ],
-    [
-      "bd7123c9c444eddfaeb5bdef",
-      "Declare String Variables"
     ],
     [
       "56533eb9ac21ba0edf2244b5",
@@ -202,6 +210,10 @@
       "Passing Values to Functions with Arguments"
     ],
     [
+      "56533eb9ac21ba0edf2244c2",
+      "Return a Value from a Function with Return"
+    ],
+    [
       "56533eb9ac21ba0edf2244be",
       "Global Scope and Functions"
     ],
@@ -212,10 +224,6 @@
     [
       "56533eb9ac21ba0edf2244c0",
       "Global vs. Local Scope in Functions"
-    ],
-    [
-      "56533eb9ac21ba0edf2244c2",
-      "Return a Value from a Function with Return"
     ],
     [
       "598e8944f009e646fc236146",

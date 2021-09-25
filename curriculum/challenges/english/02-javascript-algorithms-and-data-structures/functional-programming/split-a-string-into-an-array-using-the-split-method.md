@@ -13,11 +13,11 @@ The `split` method splits a string into an array of strings. It takes an argumen
 Here are two examples that split one string by spaces, then another by digits using a regular expression:
 
 ```js
-var str = "Hello World";
-var bySpace = str.split(" ");
+const str = "Hello World";
+const bySpace = str.split(" ");
 
-var otherString = "How9are7you2today";
-var byDigits = otherString.split(/\d/);
+const otherString = "How9are7you2today";
+const byDigits = otherString.split(/\d/);
 ```
 
 `bySpace` would have the value `["Hello", "World"]` and `byDigits` would have the value `["How", "are", "you", "today"]`.
@@ -74,6 +74,7 @@ function splitify(str) {
 
   // Only change code above this line
 }
+
 splitify("Hello World,I-am code");
 ```
 
@@ -81,8 +82,6 @@ splitify("Hello World,I-am code");
 
 ```js
 function splitify(str) {
-  // Only change code below this line
   return str.split(/\W/);
-  // Only change code above this line
 }
 ```

@@ -92,7 +92,7 @@ assert(code.match(/break/g).length > 2);
 
 ```js
 function switchOfStuff(val) {
-  var answer = "";
+  let answer = "";
   // Only change code below this line
 
 
@@ -108,7 +108,7 @@ switchOfStuff(1);
 
 ```js
 function switchOfStuff(val) {
-  var answer = "";
+  let answer = "";
 
   switch(val) {
     case "a":

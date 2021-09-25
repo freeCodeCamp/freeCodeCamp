@@ -14,13 +14,14 @@ For loops don't have to iterate one at a time. By changing our `final-expression
 We'll start at `i = 0` and loop while `i < 10`. We'll increment `i` by 2 each loop with `i += 2`.
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 10; i += 2) {
+const ourArray = [];
+
+for (let i = 0; i < 10; i += 2) {
   ourArray.push(i);
 }
 ```
 
-`ourArray` will now contain `[0,2,4,6,8]`. Let's change our `initialization` so we can count by odd numbers.
+`ourArray` will now contain `[0, 2, 4, 6, 8]`. Let's change our `initialization` so we can count by odd numbers.
 
 # --instructions--
 
@@ -34,7 +35,7 @@ You should be using a `for` loop for this.
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` should equal `[1,3,5,7,9]`.
+`myArray` should equal `[1, 3, 5, 7, 9]`.
 
 ```js
 assert.deepEqual(myArray, [1, 3, 5, 7, 9]);
@@ -52,16 +53,17 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 1; i < 10; i += 2) {
+const myArray = [];
+for (let i = 1; i < 10; i += 2) {
   myArray.push(i);
 }
 ```

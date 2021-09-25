@@ -39,7 +39,7 @@ assert(myVar === 10);
 
 ```js
 assert(
-  /var\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code)
+  /let\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code)
 );
 ```
 
@@ -52,7 +52,7 @@ assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
 You should not change code above the specified comment.
 
 ```js
-assert(/var myVar = 11;/.test(code));
+assert(/let myVar = 11;/.test(code));
 ```
 
 # --seed--
@@ -66,7 +66,7 @@ assert(/var myVar = 11;/.test(code));
 ## --seed-contents--
 
 ```js
-var myVar = 11;
+let myVar = 11;
 
 // Only change code below this line
 myVar = myVar - 1;
@@ -75,6 +75,6 @@ myVar = myVar - 1;
 # --solutions--
 
 ```js
-var myVar = 11;
+let myVar = 11;
 myVar--;
 ```

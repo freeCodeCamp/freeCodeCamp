@@ -17,7 +17,7 @@ Assume we have pre-defined a function `sum` which adds two numbers together, the
 ourSum = sum(5, 12);
 ```
 
-will call `sum` function, which returns a value of `17` and assigns it to `ourSum` variable.
+will call the `sum` function, which returns a value of `17` and assigns it to the `ourSum` variable.
 
 # --instructions--
 
@@ -49,13 +49,14 @@ assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
 
 ```js
 // Setup
-var processed = 0;
+let processed = 0;
 
 function processArg(num) {
   return (num + 3) / 5;
 }
 
 // Only change code below this line
+
 ```
 
 # --solutions--

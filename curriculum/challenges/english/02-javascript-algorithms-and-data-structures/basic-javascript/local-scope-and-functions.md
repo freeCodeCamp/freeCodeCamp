@@ -15,9 +15,10 @@ Here is a function `myTest` with a local variable called `loc`.
 
 ```js
 function myTest() {
-  var loc = "foo";
+  const loc = "foo";
   console.log(loc);
 }
+
 myTest();
 console.log(loc);
 ```
@@ -38,6 +39,7 @@ The code should not contain a global `myVar` variable.
 function declared() {
   myVar;
 }
+
 assert.throws(declared, ReferenceError);
 ```
 
@@ -57,7 +59,6 @@ assert(
 
 ```js
 function myLocalScope() {
-
   // Only change code below this line
 
   console.log('inside myLocalScope', myVar);
@@ -73,9 +74,8 @@ console.log('outside myLocalScope', myVar);
 
 ```js
 function myLocalScope() {
-
   // Only change code below this line
-  var myVar;
+  let myVar;
   console.log('inside myLocalScope', myVar);
 }
 myLocalScope();

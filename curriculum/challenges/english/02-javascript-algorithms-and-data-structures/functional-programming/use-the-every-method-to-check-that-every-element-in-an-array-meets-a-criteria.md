@@ -13,7 +13,8 @@ The `every` method works with arrays to check if *every* element passes a partic
 For example, the following code would check if every element in the `numbers` array is less than 10:
 
 ```js
-var numbers = [1, 5, 8, 0, 10, 11];
+const numbers = [1, 5, 8, 0, 10, 11];
+
 numbers.every(function(currentValue) {
   return currentValue < 10;
 });
@@ -62,6 +63,7 @@ function checkPositive(arr) {
 
   // Only change code above this line
 }
+
 checkPositive([1, 2, 3, -4, 5]);
 ```
 
@@ -69,9 +71,6 @@ checkPositive([1, 2, 3, -4, 5]);
 
 ```js
 function checkPositive(arr) {
-  // Only change code below this line
   return arr.every(num => num > 0);
-  // Only change code above this line
 }
-checkPositive([1, 2, 3, -4, 5]);
 ```

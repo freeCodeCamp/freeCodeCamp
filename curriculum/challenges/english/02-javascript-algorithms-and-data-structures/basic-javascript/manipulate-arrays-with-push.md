@@ -16,10 +16,10 @@ An easy way to append data to the end of an array is via the `push()` function.
 Examples:
 
 ```js
-var arr1 = [1,2,3];
+const arr1 = [1, 2, 3];
 arr1.push(4);
 
-var arr2 = ["Stimpson", "J", "cat"];
+const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
@@ -64,14 +64,15 @@ assert(
 
 ```js
 // Setup
-var myArray = [["John", 23], ["cat", 2]];
+const myArray = [["John", 23], ["cat", 2]];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["cat", 2]];
+const myArray = [["John", 23], ["cat", 2]];
 myArray.push(["dog",3]);
 ```

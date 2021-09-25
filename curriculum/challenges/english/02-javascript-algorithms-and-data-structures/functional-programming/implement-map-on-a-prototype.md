@@ -38,17 +38,17 @@ assert(!code.match(/\.?[\s\S]*?map/g));
 
 ```js
 // The global variable
-var s = [23, 65, 98, 5];
+const s = [23, 65, 98, 5];
 
 Array.prototype.myMap = function(callback) {
-  var newArray = [];
+  const newArray = [];
   // Only change code below this line
 
   // Only change code above this line
   return newArray;
 };
 
-var new_s = s.myMap(function(item) {
+const new_s = s.myMap(function(item) {
   return item * 2;
 });
 ```
@@ -56,20 +56,17 @@ var new_s = s.myMap(function(item) {
 # --solutions--
 
 ```js
-// the global Array
-var s = [23, 65, 98, 5];
+const s = [23, 65, 98, 5];
 
 Array.prototype.myMap = function(callback) {
-  var newArray = [];
-  // Only change code below this line
-  for (var elem of this) {
+  const newArray = [];
+  for (const elem of this) {
     newArray.push(callback(elem));
   }
-  // Only change code above this line
   return newArray;
 };
 
-var new_s = s.myMap(function(item) {
+const new_s = s.myMap(function(item) {
   return item * 2;
 });
 ```

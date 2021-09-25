@@ -16,7 +16,7 @@ The most basic operator is the equality operator `==`. The equality operator com
 ```js
 function equalityTest(myVal) {
   if (myVal == 10) {
-     return "Equal";
+    return "Equal";
   }
   return "Not Equal";
 }

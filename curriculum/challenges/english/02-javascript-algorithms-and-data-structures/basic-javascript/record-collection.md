@@ -115,7 +115,7 @@ const _recordCollection = {
 
 ```js
 // Setup
-var recordCollection = {
+const recordCollection = {
   2548: {
     albumTitle: 'Slippery When Wet',
     artist: 'Bon Jovi',
@@ -146,7 +146,7 @@ updateRecords(recordCollection, 5439, 'artist', 'ABBA');
 # --solutions--
 
 ```js
-var recordCollection = {
+const recordCollection = {
   2548: {
     albumTitle: 'Slippery When Wet',
     artist: 'Bon Jovi',
