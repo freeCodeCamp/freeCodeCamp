@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c14d
 title: Data Analysis Example A
 challengeType: 11
 videoId: nVAaxZ34khk
+bilibiliIds:
+  aid: 590571151
+  bvid: BV1sq4y1f7gr
+  cid: 409002372
 dashedName: data-analysis-example-a
 ---
 
