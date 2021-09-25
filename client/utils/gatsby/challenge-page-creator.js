@@ -21,11 +21,11 @@ const codeally = path.resolve(
 );
 const intro = path.resolve(
   __dirname,
-  '../../src/templates/Introduction/Intro.js'
+  '../../src/templates/Introduction/intro.tsx'
 );
 const superBlockIntro = path.resolve(
   __dirname,
-  '../../src/templates/Introduction/SuperBlockIntro.js'
+  '../../src/templates/Introduction/super-block-intro.tsx'
 );
 const video = path.resolve(
   __dirname,

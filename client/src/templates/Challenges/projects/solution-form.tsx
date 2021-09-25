@@ -21,7 +21,7 @@ interface FormProps extends WithTranslation {
   updateSolutionForm: (arg0: Record<string, unknown>) => void;
 }
 
-interface ValidatedValues {
+export interface ValidatedValues {
   errors: string[];
   invalidValues: string[];
   values: Record<string, unknown>;
