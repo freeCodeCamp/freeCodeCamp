@@ -17,6 +17,7 @@ import React, {
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
+
 import { Loader } from '../../../components/helpers';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import {
@@ -27,7 +28,8 @@ import {
   ResizePropsType,
   Test
 } from '../../../redux/prop-types';
-
+import { editorToneOptions } from '../../../utils/tone/editor-config';
+import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
@@ -41,6 +43,7 @@ import {
 
 import './editor.css';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
@@ -195,6 +198,17 @@ const Editor = (props: EditorProps): JSX.Element => {
     indexjs: { ...initialData },
     indexjsx: { ...initialData }
   });
+  const player = useRef<{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    sampler: any;
+    noteIndex: number;
+    shouldPlay: boolean | undefined;
+  }>({
+    // eslint-disable-next-line no-undefined
+    sampler: undefined,
+    noteIndex: 0,
+    shouldPlay: store.get('fcc-sound') as boolean | undefined
+  });
 
   const data = dataRef.current[fileKey];
 
@@ -265,6 +279,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     const editableRegion = getEditableRegionFromRedux();
 
     if (editableRegion.length === 2) decorateForbiddenRanges(editableRegion);
+
+    if (player.current.shouldPlay && !player.current.sampler) {
+      void import('tone').then(tone => {
+        player.current.sampler = new tone.Sampler(
+          editorToneOptions
+        ).toDestination();
+      });
+    }
 
     // TODO: do we need to return this?
     return { model };
@@ -578,6 +600,21 @@ const Editor = (props: EditorProps): JSX.Element => {
       coveringRange.startLineNumber - 1,
       coveringRange.endLineNumber + 1
     ];
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    if (player.current.sampler?.loaded && player.current.shouldPlay) {
+      void import('tone').then(tone => {
+        if (tone.context.state !== 'running') void tone.context.resume();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+        player.current.sampler?.triggerAttack(
+          editorNotes[player.current.noteIndex]
+        );
+        player.current.noteIndex++;
+        if (player.current.noteIndex >= editorNotes.length) {
+          player.current.noteIndex = 0;
+        }
+      });
+    }
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
 

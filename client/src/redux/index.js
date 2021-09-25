@@ -15,9 +15,9 @@ import { createGaSaga } from './ga-saga';
 import hardGoToEpic from './hard-go-to-epic';
 import { createNightModeSaga } from './night-mode-saga';
 import { createReportUserSaga } from './report-user-saga';
-
 import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
+import { createSoundModeSaga } from './sound-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
 
 export { ns };
@@ -75,7 +75,8 @@ export const sagas = [
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
-  ...createNightModeSaga({ ...actionTypes, ...settingsTypes })
+  ...createNightModeSaga({ ...actionTypes, ...settingsTypes }),
+  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes })
 ];
 
 export const appMount = createAction(actionTypes.appMount);
