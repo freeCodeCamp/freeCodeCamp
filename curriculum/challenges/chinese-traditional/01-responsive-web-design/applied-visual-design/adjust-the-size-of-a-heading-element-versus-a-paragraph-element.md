@@ -1,23 +1,23 @@
 ---
 id: 587d781b367417b2b2512abd
-title: Regolare la dimensione di un'intestazione rispetto a quella di un paragrafo
+title: 調整標題與段落的大小
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
-dashedName: adjust-the-size-of-a-header-versus-a-paragraph-tag
+dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 ---
 
 # --description--
 
-La dimensione del carattere dei tag di intestazione (da `h1` a `h6`) dovrebbe essere generalmente più grande della dimensione del carattere dei tag di paragrafo. Questo rende più facile per l'utente capire visivamente il layout e il livello di importanza di ogni elemento della pagina. Si utilizza la proprietà `font-size` per regolare la dimensione del testo in un elemento.
+標題標籤的字體大小（從 `h1` 到 `h6`）一般應該大於段落標籤的字體大小。 這使用戶更容易在視覺上了解頁面上所有內容的佈局和重要程度。 你可以使用 `font-size` 屬性來設置元素內文字的大小。
 
 # --instructions--
 
-Per rendere l'intestazione significativamente più grande del paragrafo, porta `font-size` del tag `h4` a 27 pixel.
+把 `h4` 標籤的 `font-size` 的屬性值改成 27px，讓標題更醒目。
 
 # --hints--
 
-Il tuo codice dovrebbe aggiungere una proprietà `font-size` all'elemento `h4`, impostata a 27 pixel.
+應給 `h4` 元素添加一個 `font-size` 屬性並將屬性值設置爲 27px。
 
 ```js
 assert($('h4').css('font-size') == '27px');
