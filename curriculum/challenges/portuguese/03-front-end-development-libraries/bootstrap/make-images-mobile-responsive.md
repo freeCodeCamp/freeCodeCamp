@@ -8,7 +8,7 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-Primeiro, adicione uma nova imagem abaixo da existente. Defina o seu atributo `src` para `https://bit.ly/fcc-running-cats`.
+Primeiro, adicione uma nova imagem abaixo da existente. Defina o seu atributo `src` como `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 Seria ótimo se essa imagem pudesse ser exatamente do tamanho da nossa tela do celular.
 
@@ -34,10 +34,10 @@ A nova imagem não deve ter a classe `smaller-image`.
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-A nova imagem deve ter um `src` de `https://bit.ly/fcc-running-cats`.
+A nova imagem deve ter um `src` de `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 ```js
-assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
+assert($('img:eq(1)').attr('src') === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg');
 ```
 
 O novo elemento `img` deve ter uma tag de fechamento.
@@ -87,7 +87,7 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -148,8 +148,8 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive">
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive">
 
   <p>Things cats love:</p>
   <ul>
