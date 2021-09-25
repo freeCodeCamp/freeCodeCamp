@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c157
 title: Numpy Algebra and Size
 challengeType: 11
 videoId: XAT97YLOKD8
+bilibiliIds:
+  aid: 250621433
+  bvid: BV1hv41137uM
+  cid: 409013128
 dashedName: numpy-algebra-and-size
 ---
 

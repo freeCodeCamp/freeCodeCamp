@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c14c
 title: Introduction to Data Analysis
 challengeType: 11
 videoId: VJrP2FUzKP0
+bilibiliIds:
+  aid: 378034466
+  bvid: BV19f4y1c7nu
+  cid: 409001487
 dashedName: introduction-to-data-analysis
 ---
 

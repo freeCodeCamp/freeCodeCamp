@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c163
 title: Reading Data from Databases
 challengeType: 11
 videoId: MtgXS1MofRw
+bilibiliIds:
+  aid: 890546354
+  bvid: BV1JP4y1h7gk
+  cid: 409020851
 dashedName: reading-data-from-databases
 ---
 
