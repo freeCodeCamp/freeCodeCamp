@@ -163,12 +163,16 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
     }
   }
 
-  renderCompletion(completed: SortedTimeline): JSX.Element {
+  renderCompletion(
+    completed: SortedTimeline,
+    t: TFunction<'translation'>
+  ): JSX.Element {
     const { idToNameMap, username } = this.props;
     const { id, challengeFiles, githubLink, solution } = completed;
     const completedDate = new Date(completed.completedDate);
     // @ts-expect-error idToNameMap is not a <string, string> Map...
-    const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
+    const { challengePath, certPath } = idToNameMap.get(id);
+    console.table(idToNameMap.get(id));
     return (
       <tr className='timeline-row' key={id}>
         <td>
@@ -177,11 +181,17 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
               className='timeline-cert-link'
               to={`/certification/${username}/${certPath as string}`}
             >
-              {challengeTitle}
+              {t(`certs:certNames.${certPath as string}`)}
               <CertificationIcon />
             </Link>
           ) : (
-            <Link to={challengePath as string}>{challengeTitle}</Link>
+            <Link to={challengePath as string}>
+              {t(
+                `certs:projectNames.${
+                  (challengePath as string).split('/').reverse()[0]
+                }`
+              )}
+            </Link>
           )}
         </td>
         <td>
@@ -277,7 +287,7 @@ class TimelineInner extends Component<TimelineInnerProps, TimeLineInnerState> {
             <tbody>
               {sortedTimeline
                 .slice(startIndex, endIndex)
-                .map(this.renderCompletion)}
+                .map(el => this.renderCompletion(el, t))}
             </tbody>
           </Table>
         )}

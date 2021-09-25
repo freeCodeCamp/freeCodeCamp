@@ -1,5 +1,4 @@
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { curry } from 'lodash-es';
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -10,7 +9,7 @@ import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const mapStateToProps = (state: any, props: ICertificationProps) =>
+const mapStateToProps = (state: any, props: CertificationProps) =>
   createSelector(
     certificatesByNameSelector(props.username),
     ({
@@ -19,7 +18,7 @@ const mapStateToProps = (state: any, props: ICertificationProps) =>
       currentCerts,
       legacyCerts
     }: Pick<
-      ICertificationProps,
+      CertificationProps,
       'hasModernCert' | 'hasLegacyCert' | 'currentCerts' | 'legacyCerts'
     >) => ({
       hasModernCert,
@@ -32,36 +31,42 @@ const mapStateToProps = (state: any, props: ICertificationProps) =>
     // @ts-ignore
   )(state, props);
 
-interface ICert {
+interface Cert {
   show: boolean;
   title: string;
   certSlug: string;
 }
 
-interface ICertificationProps {
-  currentCerts?: ICert[];
+interface CertificationProps {
+  currentCerts?: Cert[];
   hasLegacyCert?: boolean;
   hasModernCert?: boolean;
-  legacyCerts?: ICert[];
+  legacyCerts?: Cert[];
   username: string;
 }
 
-function renderCertShow(username: string, cert: ICert): React.ReactNode {
-  return cert.show ? (
-    <Fragment key={cert.title}>
+interface CertLinkProps {
+  username: string;
+  cert: Cert;
+}
+
+function CertLink({ username, cert }: CertLinkProps): JSX.Element {
+  const { t } = useTranslation();
+  return (
+    <>
       <Row>
         <Col className='certifications' sm={10} smPush={1}>
           <Link
             className='btn btn-lg btn-primary btn-block'
             to={`/certification/${username}/${cert.certSlug}`}
           >
-            View {cert.title}
+            View {t(`certs:certNames.${cert.certSlug}`)}
           </Link>
         </Col>
       </Row>
       <ButtonSpacer />
-    </Fragment>
-  ) : null;
+    </>
+  );
 }
 
 function Certificates({
@@ -70,15 +75,18 @@ function Certificates({
   hasLegacyCert,
   hasModernCert,
   username
-}: ICertificationProps): JSX.Element {
+}: CertificationProps): JSX.Element {
   const { t } = useTranslation();
-  const renderCertShowWithUsername = curry(renderCertShow)(username);
   return (
     <FullWidthRow className='certifications'>
       <h2 className='text-center'>{t('profile.fcc-certs')}</h2>
       <br />
       {hasModernCert && currentCerts ? (
-        currentCerts.map(renderCertShowWithUsername)
+        currentCerts
+          .filter(({ show }) => show)
+          .map(cert => (
+            <CertLink cert={cert} key={cert.title} username={username} />
+          ))
       ) : (
         <p className='text-center'>{t('profile.no-certs')}</p>
       )}
@@ -87,7 +95,12 @@ function Certificates({
           <br />
           <h3 className='text-center'>{t('settings.headings.legacy-certs')}</h3>
           <br />
-          {legacyCerts && legacyCerts.map(renderCertShowWithUsername)}
+          {legacyCerts &&
+            legacyCerts
+              .filter(({ show }) => show)
+              .map(cert => (
+                <CertLink cert={cert} key={cert.title} username={username} />
+              ))}
           <Spacer size={2} />
         </div>
       ) : null}
