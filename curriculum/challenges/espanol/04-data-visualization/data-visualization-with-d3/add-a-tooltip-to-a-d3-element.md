@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd6
-title: Add a Tooltip to a D3 Element
+title: Agrega un cuadro emergente a un elemento D3
 challengeType: 6
 forumTopicId: 301470
 dashedName: add-a-tooltip-to-a-d3-element
@@ -8,71 +8,71 @@ dashedName: add-a-tooltip-to-a-d3-element
 
 # --description--
 
-A tooltip shows more information about an item on a page when the user hovers over that item. There are several ways to add a tooltip to a visualization, this challenge uses the SVG `title` element.
+Un cuadro emergente muestra más información acerca de un elemento en la página cuando el usuario se coloca sobre ese elemento. Hay varias formas de agregar un cuadro emergente a una visualización, este desafío usa el elemento SVG`title`.
 
-`title` pairs with the `text()` method to dynamically add data to the bars.
+`title` se empareja con el método `text()` para agregar datos dinámicamente a las barras.
 
 # --instructions--
 
-Append a `title` element under each `rect` node. Then call the `text()` method with a callback function so the text displays the data value.
+Añade un elemento `title` debajo de cada nodo `rect`. Luego llama al método `text()` con una función de devolución de llamada para que el texto muestre el valor de los datos.
 
 # --hints--
 
-Your code should have 9 `title` elements.
+Tu código debe tener 9 elementos `title`.
 
 ```js
 assert($('title').length == 9);
 ```
 
-The first `title` element should have tooltip text of `12`.
+El primer elemento `title` debe tener un cuadro emergente de texto de `12`.
 
 ```js
 assert($('title').eq(0).text() == '12');
 ```
 
-The second `title` element should have tooltip text of `31`.
+El segundo elemento `title` debe tener un cuadro emergente de texto de `31`.
 
 ```js
 assert($('title').eq(1).text() == '31');
 ```
 
-The third `title` element should have tooltip text of `22`.
+El tercer elemento `title` debe tener un cuadro emergente de texto de `22`.
 
 ```js
 assert($('title').eq(2).text() == '22');
 ```
 
-The fourth `title` element should have tooltip text of `17`.
+El cuarto elemento `title` debe tener un cuadro emergente de texto de `17`.
 
 ```js
 assert($('title').eq(3).text() == '17');
 ```
 
-The fifth `title` element should have tooltip text of `25`.
+El quinto elemento `title` debe tener uncuadro emergente de texto de `25`.
 
 ```js
 assert($('title').eq(4).text() == '25');
 ```
 
-The sixth `title` element should have tooltip text of `18`.
+El sexto elemento `title` debe tener un cuadro emergente de texto de `18`.
 
 ```js
 assert($('title').eq(5).text() == '18');
 ```
 
-The seventh `title` element should have tooltip text of `29`.
+El séptimo elemento `title` debe tener uncuadro emergente de texto de `29`.
 
 ```js
 assert($('title').eq(6).text() == '29');
 ```
 
-The eighth `title` element should have tooltip text of `14`.
+El octavo elemento `title` debe tener un cuadro emergente de texto de `14`.
 
 ```js
 assert($('title').eq(7).text() == '14');
 ```
 
-The ninth `title` element should have tooltip text of `9`.
+El noveno elemento `title` debe tener un cuadro emergente de texto de `9`.
 
 ```js
 assert($('title').eq(8).text() == '9');
