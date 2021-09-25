@@ -13,7 +13,7 @@ You can add a gap in between the rows of a grid using `grid-row-gap` in the same
 
 # --instructions--
 
-Create a gap for the rows that is `5px` tall.
+Give the rows in the grid a `5px` gap.
 
 # --hints--
 
