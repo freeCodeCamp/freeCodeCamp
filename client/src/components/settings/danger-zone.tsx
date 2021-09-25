@@ -1,5 +1,5 @@
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -18,11 +18,6 @@ type DangerZoneProps = {
   t: TFunction;
 };
 
-type DangerZoneState = {
-  reset: boolean;
-  delete: boolean;
-};
-
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
@@ -33,79 +28,65 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-class DangerZone extends Component<DangerZoneProps, DangerZoneState> {
-  static displayName: string;
-  constructor(props: DangerZoneProps) {
-    super(props);
-    this.state = {
-      reset: false,
-      delete: false
-    };
+function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
+  const [reset, setReset] = useState(false);
+  const [delete_, setDelete] = useState(false);
+  // delete is reserved
+
+  function toggleResetModal(): void {
+    setReset(prev => !prev);
   }
 
-  toggleResetModal = () => {
-    return this.setState(state => ({
-      ...state,
-      reset: !state.reset
-    }));
-  };
+  function toggleDeleteModal(): void {
+    setDelete(prev => !prev);
+  }
 
-  toggleDeleteModal = () => {
-    return this.setState(state => ({
-      ...state,
-      delete: !state.delete
-    }));
-  };
-
-  render() {
-    const { deleteAccount, resetProgress, t } = this.props;
-    return (
-      <div className='danger-zone text-center'>
-        <FullWidthRow>
-          <Panel bsStyle='danger'>
-            <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
+  return (
+    <div className='danger-zone text-center'>
+      <FullWidthRow>
+        <Panel bsStyle='danger'>
+          <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
+          <Spacer />
+          <p>{t('settings.danger.be-careful')}</p>
+          <FullWidthRow>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='danger'
+              className='btn-danger'
+              onClick={toggleResetModal}
+              type='button'
+            >
+              {t('settings.danger.reset')}
+            </Button>
+            <ButtonSpacer />
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='danger'
+              className='btn-danger'
+              onClick={toggleDeleteModal}
+              type='button'
+            >
+              {t('settings.danger.delete')}
+            </Button>
             <Spacer />
-            <p>{t('settings.danger.be-careful')}</p>
-            <FullWidthRow>
-              <Button
-                block={true}
-                bsSize='lg'
-                bsStyle='danger'
-                className='btn-danger'
-                onClick={() => this.toggleResetModal()}
-                type='button'
-              >
-                {t('settings.danger.reset')}
-              </Button>
-              <ButtonSpacer />
-              <Button
-                block={true}
-                bsSize='lg'
-                bsStyle='danger'
-                className='btn-danger'
-                onClick={() => this.toggleDeleteModal()}
-                type='button'
-              >
-                {t('settings.danger.delete')}
-              </Button>
-              <Spacer />
-            </FullWidthRow>
-          </Panel>
+          </FullWidthRow>
+        </Panel>
 
-          <ResetModal
-            onHide={() => this.toggleResetModal()}
-            reset={resetProgress}
-            show={this.state.reset}
-          />
-          <DeleteModal
-            delete={deleteAccount}
-            onHide={() => this.toggleDeleteModal()}
-            show={this.state.delete}
-          />
-        </FullWidthRow>
-      </div>
-    );
-  }
+        <ResetModal
+          onHide={toggleResetModal}
+          reset={resetProgress}
+          show={reset}
+        />
+        <DeleteModal
+          delete={deleteAccount}
+          onHide={toggleDeleteModal}
+          show={delete_}
+        />
+      </FullWidthRow>
+    </div>
+  );
 }
 
 DangerZone.displayName = 'DangerZone';
