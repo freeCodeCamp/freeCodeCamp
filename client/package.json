@@ -125,7 +125,7 @@
     "sass.js": "0.11.1",
     "store": "2.0.12",
     "stream-browserify": "3.0.0",
-    "typescript": "4.3.5",
+    "typescript": "4.4.3",
     "uuid": "8.3.2",
     "validator": "13.6.0"
   },
