@@ -62,6 +62,7 @@
     "babel-plugin-preval": "5.0.0",
     "babel-plugin-prismjs": "2.1.0",
     "bezier-easing": "2.1.0",
+    "bowser": "^2.11.0",
     "browser-cookies": "1.2.0",
     "buffer": "6.0.3",
     "chai": "4.3.4",
