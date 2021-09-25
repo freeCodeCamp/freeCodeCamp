@@ -77,6 +77,7 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
     toggleNightMode,
     user: {
       completedChallenges,
+      discourseId,
       email,
       is2018DataVisCert,
       isApisMicroservicesCert,
@@ -97,6 +98,7 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
       isHonest,
       sendQuincyEmail,
       username,
+      id: userId,
       about,
       picture,
       points,
@@ -117,7 +119,7 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
     updateIsHonest,
     verifyCert
   } = props;
-
+  console.log(props.user);
   if (showLoading) {
     return <Loader fullScreen={true} />;
   }
@@ -165,8 +167,12 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
             website={website}
           />
           <Spacer />
-          {/* @ts-expect-error Portfolio types mismatch */}
-          <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
+          <Portfolio
+            discourseId={discourseId}
+            portfolio={portfolio}
+            updatePortfolio={updatePortfolio}
+            userId={userId}
+          />
           <Spacer />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer />

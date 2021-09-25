@@ -9,6 +9,7 @@ import Certifications from './components/Certifications';
 import HeatMap from './components/HeatMap';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
+import Badges from './components/badges';
 
 interface IProfileProps {
   isSessionUser: boolean;
@@ -31,6 +32,7 @@ interface IProfileProps {
     completedChallenges: any[];
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     portfolio: any[];
+    email: string;
     about: string;
     githubProfile: string;
     isGithub: boolean;
@@ -49,6 +51,7 @@ interface IProfileProps {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     yearsTopContributor: any[];
     isDonating: boolean;
+    discourseId: string;
   };
 }
 
@@ -121,7 +124,8 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
     portfolio,
     about,
     yearsTopContributor,
-    isDonating
+    isDonating,
+    discourseId
   } = user;
   return (
     <>
@@ -148,6 +152,7 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
+      {discourseId ? <Badges discourseId={discourseId} /> : null}
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}

@@ -166,6 +166,11 @@ export function getVerifyCanClaimCert(
   );
 }
 
+// TODO: returns a JSON string of type BadgeData
+export function getUserBadges(discourseId: string): Promise<string> {
+  return get(`/user/badges?discourseId=${discourseId}`);
+}
+
 /** POST **/
 
 interface Donation {
@@ -207,6 +212,14 @@ export function postDeleteAccount(): Promise<void> {
 
 export function postResetProgress(): Promise<void> {
   return post('/account/reset-progress', {});
+}
+
+export function postConnectDiscourseAccount(
+  userId: string
+): Promise<{ URL_ENCODED_PAYLOAD: string; HEX_SIGNATURE: string }> {
+  // TODO: To get around 'origin: null' error: https://stackoverflow.com/a/22625354/11829775
+  // Server responds with URL for client to redirect to? (Instead of Server redirecting client)
+  return post('/discourse/connect', { userId });
 }
 
 /** PUT **/

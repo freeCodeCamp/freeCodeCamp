@@ -2,6 +2,7 @@ import debugFactory from 'debug';
 import dedent from 'dedent';
 import { body } from 'express-validator';
 import { pick } from 'lodash';
+import request from 'request';
 import { Observable } from 'rx';
 
 import { fixCompletedChallengeItem } from '../../common/utils';
@@ -15,6 +16,8 @@ import {
 import { getRedirectParams } from '../utils/redirection';
 import { trimTags } from '../utils/validators';
 
+const { DISCOURSE_API_KEY, FORUM_LOCATION } = process.env;
+
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
 
@@ -24,10 +27,12 @@ function bootUser(app) {
   const getSessionUser = createReadSessionUser(app);
   const postReportUserProfile = createPostReportUserProfile(app);
   const postDeleteAccount = createPostDeleteAccount(app);
+  const getUserBadges = createGetUserBadges();
 
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
+  api.get('/user/badges', getUserBadges);
 
   api.post('/account/delete', ifNoUser401, postDeleteAccount);
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
@@ -39,6 +44,51 @@ function bootUser(app) {
   );
 
   app.use(api);
+}
+
+function createGetUserBadges() {
+  return (req, res) => {
+    const { discourseId } = req.query;
+    request(
+      `${FORUM_LOCATION}/admin/users/${discourseId}.json`,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          // 'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org',
+          'Api-Key': DISCOURSE_API_KEY,
+          // TODO: Whilst testing
+          'Api-Username': 'Sky020'
+        }
+      },
+      (err, response, body) => {
+        const user = JSON.parse(body);
+        if (err || user.errors) {
+          return res.status(500).send(err || user.errors);
+        } else {
+          if (user.length === 0) {
+            return res.status(404).send('No associated Discourse id found');
+          }
+          // Return user's Discourse badges
+          return request(
+            `${FORUM_LOCATION}/user-badges/${user.username}.json`,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'https://forum.freecodecamp.org'
+              }
+            },
+            (err, response, badges) => {
+              if (err) {
+                return res.status(500).send(err);
+              } else {
+                return res.json(badges);
+              }
+            }
+          );
+        }
+      }
+    );
+  };
 }
 
 function createReadSessionUser(app) {

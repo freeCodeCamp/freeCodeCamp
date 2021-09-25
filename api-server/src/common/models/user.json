@@ -37,6 +37,11 @@
       "type": "string",
       "description": "An ObjectId used to unsubscribe users from the mailing list(s)"
     },
+    "discourseId": {
+      "type": "string",
+      "description": "An id used to identify user accounts in Discourse",
+      "default": ""
+    },
     "password": {
       "type": "string",
       "description": "No longer used for new accounts"
@@ -276,9 +281,7 @@
       "default": {}
     },
     "donationEmails": {
-      "type": [
-        "string"
-      ]
+      "type": ["string"]
     },
     "isDonating": {
       "type": "boolean",

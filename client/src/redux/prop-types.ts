@@ -86,6 +86,7 @@ export const User = PropTypes.shape({
   ),
   email: PropTypes.string,
   githubProfile: PropTypes.string,
+  id: PropTypes.string,
   is2018DataVisCert: PropTypes.bool,
   isApisMicroservicesCert: PropTypes.bool,
   isBackEndCert: PropTypes.bool,
@@ -262,9 +263,11 @@ export type UserType = {
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
   currentChallengeId: string;
+  discourseId: string;
   email: string;
   emailVerified: boolean;
   githubProfile: string;
+  id: string;
   isBanned: boolean;
   isCheater: boolean;
   isHonest: boolean;
@@ -333,8 +336,8 @@ export type ChallengeMetaType = {
 
 export type PortfolioType = {
   id: string;
-  title?: string;
-  url?: string;
+  title: string;
+  url: string;
   image?: string;
   description?: string;
 };
@@ -415,6 +418,62 @@ export type ChallengeNode = {
   // isPrivate: boolean;
   // tail: string[];
 };
+/* eslint-disable camelcase */
+export interface BadgeData {
+  badge_types: BadgeType[];
+  badges: Badge[];
+  granted_bies: GrantedBie[];
+  user_badges: UserBadge[];
+}
+
+export interface BadgeType {
+  id: number;
+  name: string;
+  sort_order: number;
+}
+
+export interface Badge {
+  allow_title: boolean;
+  badge_grouping_id: number;
+  badge_type_id: number;
+  description: string;
+  enabled: boolean;
+  grant_count: number;
+  icon: string;
+  id: number;
+  image_url: null | string;
+  listable: boolean;
+  manually_grantable: boolean;
+  multiple_grant: boolean;
+  name: string;
+  slug: string;
+  system: boolean;
+}
+
+export interface GrantedBie {
+  admin: boolean;
+  avatar_template: string;
+  flair_name: null | string;
+  id: number;
+  moderator: boolean;
+  name: string;
+  trust_level: number;
+  username: string;
+}
+
+export interface UserBadge {
+  badge_id: number;
+  can_favorite: boolean;
+  granted_at: string;
+  granted_by_id: number;
+  grouping_position: number;
+  id: number;
+  is_favorite: null;
+  post_number: number;
+  topic_id: number;
+  topic_title: string;
+}
+/* eslint-enable camelcase */
 
 // Extra types built from challengeSchema
 
