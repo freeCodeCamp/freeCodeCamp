@@ -98,9 +98,7 @@ class MultifileEditor extends Component {
     // editors.map(props => <EditorWrapper ...props>).join(<ReflexSplitter>)
     // ...probably! As long as we can put keys in the right places.
     const reflexProps = {
-      propagateDimensions: true,
-      renderOnResize: true,
-      renderOnResizeRate: 20
+      propagateDimensions: true
     };
 
     let splitterJSXRight, splitterHTMLRight, splitterCSSRight;
