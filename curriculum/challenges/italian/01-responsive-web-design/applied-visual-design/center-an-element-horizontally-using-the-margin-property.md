@@ -22,7 +22,7 @@ Centra il `div` sulla pagina aggiungendo una proprietà `margin` con un valore `
 Il `div` dovrebbe avere un `margin` impostato su `auto`.
 
 ```js
-assert(code.match(/margin:\s*?auto;/g));
+assert(new __helpers.CSSHelp(document).getStyle('div')?.margin === 'auto');
 ```
 
 # --seed--

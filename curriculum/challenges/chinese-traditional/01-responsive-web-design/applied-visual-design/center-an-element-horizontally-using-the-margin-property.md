@@ -22,7 +22,7 @@ dashedName: center-an-element-horizontally-using-the-margin-property
 `div` 應有一個 `margin`，設置爲 `auto`。
 
 ```js
-assert(code.match(/margin:\s*?auto;/g));
+assert(new __helpers.CSSHelp(document).getStyle('div')?.margin === 'auto');
 ```
 
 # --seed--

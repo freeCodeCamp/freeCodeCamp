@@ -22,7 +22,7 @@ Centralize a `div` na página adicionando a propriedade `margin` com o valor `au
 Esta `div` deve conter a propriedade `margin` definida com o valor `auto`.
 
 ```js
-assert(code.match(/margin:\s*?auto;/g));
+assert(new __helpers.CSSHelp(document).getStyle('div')?.margin === 'auto');
 ```
 
 # --seed--

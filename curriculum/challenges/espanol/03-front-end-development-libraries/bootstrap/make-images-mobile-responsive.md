@@ -8,7 +8,7 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-Primero, agrega una nueva imagen debajo de la existente. Establece su atributo `src` a `https://bit.ly/fcc-running-cats`.
+Primero, agrega una nueva imagen debajo de la existente. Establece su atributo `src` a `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 Sería genial si esta imagen pudiera tener exactamente el ancho de la pantalla de nuestro teléfono.
 
@@ -34,10 +34,10 @@ Tu nueva imagen no debe tener la clase `smaller-image`.
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-Tu nueva imagen debe tener el atributo `src` con el valor `https://bit.ly/fcc-running-cats`.
+Tu nueva imagen debe tener el atributo `src` con el valor `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 ```js
-assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
+assert($('img:eq(1)').attr('src') === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg');
 ```
 
 Tu nuevo elemento `img` debe tener etiqueta de cierre.
@@ -87,7 +87,7 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -148,8 +148,8 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive">
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive">
 
   <p>Things cats love:</p>
   <ul>
