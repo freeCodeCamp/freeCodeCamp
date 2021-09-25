@@ -1,5 +1,7 @@
-{
+module.exports = {
   "presets": [
+    "@babel/preset-react",
+    "@babel/preset-typescript",
     [
       "@babel/preset-env",
       {
@@ -7,8 +9,7 @@
           "browsers": [">0.25%", "not dead"]
         }
       }
-    ],
-    "@babel/preset-react"
+    ]
   ],
   "plugins": [["transform-react-remove-prop-types", { "removeImport": true }]]
 }

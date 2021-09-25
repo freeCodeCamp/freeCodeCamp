@@ -8,7 +8,8 @@ const babelOptions = {
         }
       }
     ],
-    '@babel/react'
+    '@babel/react',
+    '@babel/preset-typescript'
   ]
 };
 

@@ -1,8 +1,9 @@
+import { Meta, Story } from '@storybook/react';
 import React from 'react';
-
 import { Button } from './button';
+import { ButtonProps } from './button.types';
 
-const story = {
+const story: Meta = {
   title: 'Example/Button',
   component: Button,
   argTypes: {
@@ -10,26 +11,26 @@ const story = {
   }
 };
 
-const Template = args => <Button {...args} />;
+const Template: Story<ButtonProps> = args => <Button {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({}) as Meta;
 Primary.args = {
   primary: true,
   label: 'Button'
 };
 
-export const Secondary = Template.bind({});
+export const Secondary = Template.bind({}) as Meta;
 Secondary.args = {
   label: 'Button'
 };
 
-export const Large = Template.bind({});
+export const Large = Template.bind({}) as Meta;
 Large.args = {
   size: 'large',
   label: 'Button'
 };
 
-export const Small = Template.bind({});
+export const Small = Template.bind({}) as Meta;
 Small.args = {
   size: 'small',
   label: 'Button'
