@@ -5,13 +5,16 @@ import React, { useState, useEffect } from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../../config/certification-settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
-import { stepsToClaimSelector } from '../../../redux';
+import {
+  userFetchStateSelector,
+  stepsToClaimSelector,
+  isSignedInSelector
+} from '../../../redux';
 
 import { StepsType, User } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings';
@@ -22,6 +25,12 @@ import CertificationCard from './CertificationCard';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
+  fetchState: PropTypes.shape({
+    pending: PropTypes.bool,
+    complete: PropTypes.bool,
+    errored: PropTypes.bool
+  }),
+  isSignedIn: PropTypes.bool,
   steps: StepsType,
   superBlock: PropTypes.string,
   t: PropTypes.func,
@@ -36,9 +45,16 @@ const honestyInfoMessage = {
 };
 
 const mapStateToProps = state => {
-  return createSelector(stepsToClaimSelector, steps => ({
-    steps
-  }))(state);
+  return createSelector(
+    stepsToClaimSelector,
+    userFetchStateSelector,
+    isSignedInSelector,
+    (steps, fetchState, isSignedIn) => ({
+      steps,
+      fetchState,
+      isSignedIn
+    })
+  )(state);
 };
 
 const mapDispatchToProps = {
@@ -53,10 +69,13 @@ const CertChallenge = ({
   t,
   verifyCert,
   title,
+  fetchState,
+  isSignedIn,
   user: { isHonest, username }
 }) => {
   const [canClaim, setCanClaim] = useState({ status: false, result: '' });
   const [isCertified, setIsCertified] = useState(false);
+  const [userLoaded, setUserLoaded] = useState(false);
   const [stepState, setStepState] = useState({
     numberOfSteps: 0,
     completedCount: 0
@@ -82,6 +101,14 @@ const CertChallenge = ({
   const { certSlug } = certMap.find(x => x.title === title);
 
   useEffect(() => {
+    const { pending, complete } = fetchState;
+
+    if (complete && !pending) {
+      setUserLoaded(true);
+    }
+  }, [fetchState]);
+
+  useEffect(() => {
     setIsCertified(
       steps?.currentCerts?.find(
         cert =>
@@ -96,7 +123,6 @@ const CertChallenge = ({
         stepVal => typeof stepVal === 'boolean' && stepVal
       ).length + projectsCompleted;
     const numberOfSteps = Object.keys(steps).length;
-
     setCanViewCert(completedCount === numberOfSteps);
     setStepState({ numberOfSteps, completedCount });
     setIsProjectsCompleted(projectsCompleted);
@@ -118,10 +144,9 @@ const CertChallenge = ({
       ? verifyCert(certSlug)
       : createFlashMessage(honestyInfoMessage);
   };
-
   return (
     <div className='block'>
-      {(!isCertified || !canViewCert) && (
+      {userLoaded && isSignedIn && !isCertified && !canViewCert && (
         <CertificationCard
           i18nCertText={i18nCertText}
           isProjectsCompleted={isProjectsCompleted}
@@ -133,11 +158,14 @@ const CertChallenge = ({
       <Button
         block={true}
         bsStyle='primary'
+        className='cert-btn'
         disabled={!canClaim.status || (isCertified && !canViewCert)}
         href={certLocation}
         onClick={createClickHandler(certSlug)}
       >
-        {isCertified ? t('buttons.show-cert') : t('buttons.claim-cert')}
+        {isCertified && userLoaded
+          ? t('buttons.show-cert')
+          : t('buttons.claim-cert')}
       </Button>
     </div>
   );

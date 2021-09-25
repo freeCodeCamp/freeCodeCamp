@@ -17,6 +17,7 @@ import { Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
+  signInLoadingSelector,
   isSignedInSelector,
   tryToShowDonationModal,
   userSelector
@@ -50,6 +51,7 @@ const propTypes = {
     })
   }),
   resetExpansion: PropTypes.func,
+  signInLoading: PropTypes.bool,
   t: PropTypes.func,
   toggleBlock: PropTypes.func,
   tryToShowDonationModal: PropTypes.func.isRequired,
@@ -62,11 +64,13 @@ const mapStateToProps = state => {
   return createSelector(
     currentChallengeIdSelector,
     isSignedInSelector,
+    signInLoadingSelector,
     userFetchStateSelector,
     userSelector,
-    (currentChallengeId, isSignedIn, fetchState, user) => ({
+    (currentChallengeId, isSignedIn, signInLoading, fetchState, user) => ({
       currentChallengeId,
       isSignedIn,
+      signInLoading,
       fetchState,
       user
     })
@@ -150,6 +154,7 @@ const SuperBlockIntroductionPage = props => {
       allChallengeNode: { edges }
     },
     isSignedIn,
+    signInLoading,
     t,
     user
   } = props;
@@ -202,7 +207,7 @@ const SuperBlockIntroductionPage = props => {
                 </div>
               )}
             </div>
-            {!isSignedIn && (
+            {!isSignedIn && !signInLoading && (
               <div>
                 <Spacer size={2} />
                 <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
