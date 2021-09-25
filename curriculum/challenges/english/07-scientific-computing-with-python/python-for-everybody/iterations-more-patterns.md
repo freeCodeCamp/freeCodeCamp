@@ -3,6 +3,10 @@ id: 5e7b9f070b6c005b0e76f05f
 title: 'Iterations: More Patterns'
 challengeType: 11
 videoId: 9Wtqo6vha1M
+bilibiliIds:
+  aid: 334491369
+  bvid: BV1tw411R7Mm
+  cid: 376530765
 dashedName: iterations-more-patterns
 ---
 
