@@ -364,6 +364,7 @@
   },
   "misc": {
     "offline": "Sembra che tu sia offline, i tuoi progressi potrebbero non essere salvati",
+    "server-offline": "The server could not be reached and your progress may not be saved. Please contact support if this message persists",
     "unsubscribed": "Hai annullato correttamente l'iscrizione",
     "keep-coding": "Qualsiasi cosa tu abbia intenzione di fare, continua a programmare!",
     "email-signup": "Registrazione con email",

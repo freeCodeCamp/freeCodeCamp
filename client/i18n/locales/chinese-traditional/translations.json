@@ -364,6 +364,7 @@
   },
   "misc": {
     "offline": "你已離線，學習進度可能不會被保存",
+    "server-offline": "The server could not be reached and your progress may not be saved. Please contact support if this message persists",
     "unsubscribed": "你已成功取消訂閱",
     "keep-coding": "無論你做什麼，都要繼續編程！",
     "email-signup": "郵件註冊",

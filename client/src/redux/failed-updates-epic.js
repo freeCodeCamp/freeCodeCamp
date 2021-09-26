@@ -15,7 +15,11 @@ import { backEndProject } from '../../utils/challenge-types';
 import { isGoodXHRStatus } from '../templates/Challenges/utils';
 import postUpdate$ from '../templates/Challenges/utils/postUpdate$';
 import { actionTypes } from './action-types';
-import { onlineStatusChange, isOnlineSelector, isSignedInSelector } from './';
+import {
+  serverStatusChange,
+  isServerOnlineSelector,
+  isSignedInSelector
+} from './';
 
 const key = 'fcc-failed-updates';
 
@@ -37,14 +41,14 @@ function failedUpdateEpic(action$, state$) {
         store.set(key, [...failures, payload]);
       }
     }),
-    map(() => onlineStatusChange(false))
+    map(() => serverStatusChange(false))
   );
 
   const flushUpdates = action$.pipe(
     ofType(actionTypes.fetchUserComplete, actionTypes.updateComplete),
     filter(() => isSignedInSelector(state$.value)),
     filter(() => store.get(key)),
-    filter(() => isOnlineSelector(state$.value)),
+    filter(() => isServerOnlineSelector(state$.value)),
     tap(() => {
       let failures = store.get(key) || [];
 

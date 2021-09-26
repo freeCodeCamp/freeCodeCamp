@@ -8,20 +8,24 @@ let id: ReturnType<typeof setTimeout>;
 
 interface OfflineWarningProps {
   isOnline: boolean;
+  isServerOnline: boolean;
   isSignedIn: boolean;
 }
 
 function OfflineWarning({
   isOnline,
+  isServerOnline,
   isSignedIn
 }: OfflineWarningProps): JSX.Element | null {
   const { t } = useTranslation();
   const [showWarning, setShowWarning] = React.useState(false);
+  let message;
 
-  if (!isSignedIn || isOnline) {
+  if (!isSignedIn || (isOnline && isServerOnline)) {
     clearTimeout(id);
     if (showWarning) setShowWarning(false);
   } else {
+    message = !isOnline ? t('misc.offline') : t('misc.server-offline');
     timeout();
   }
 
@@ -32,7 +36,7 @@ function OfflineWarning({
   }
 
   return showWarning ? (
-    <div className='offline-warning alert-info'>{t('misc.offline')}</div>
+    <div className='offline-warning alert-info'>{message}</div>
   ) : null;
 }
 
