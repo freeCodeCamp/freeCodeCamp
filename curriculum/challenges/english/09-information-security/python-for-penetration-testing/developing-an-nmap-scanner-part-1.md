@@ -3,6 +3,10 @@ id: 5ea9997bbec2e9bc47e94db1
 title: Developing an Nmap Scanner part 1
 challengeType: 11
 videoId: jYk9XaGoAnk
+bilibiliIds:
+  aid: 805657338
+  bvid: BV1o34y1S7zf
+  cid: 414718986
 dashedName: developing-an-nmap-scanner-part-1
 ---
 
