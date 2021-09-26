@@ -42,7 +42,7 @@ Your `nav` element should have a closing tag.
 ```js
 assert(
   code.match(/<\/nav>/g) &&
-    code.match(/<\/nav>/g).length === code.match(/<nav>/g).length
+    code.match(/<\/nav>/g).length === code.match(/<nav\s*>/g).length
 );
 ```
 
