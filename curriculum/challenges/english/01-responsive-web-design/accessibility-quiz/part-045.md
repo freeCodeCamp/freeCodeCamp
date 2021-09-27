@@ -43,10 +43,14 @@ function contrast(rgb1, rgb2) {
     return (brightest + 0.05)
          / (darkest + 0.05);
 }
-const backgroundColor = [27, 27, 50];
-const rgb = new __helpers.CSSHelp(document).getStyle('li > a')?.color?.match(/(\d+),\s(\d+),\s(\d+)/);
-const camperColor = [rgb[1], rgb[2], rgb[3]];
-assert.isAtLeast(contrast(backgroundColor, camperColor), 7);
+const backgroundColour = [27, 27, 50];
+
+for (let elem of document.querySelectorAll('li > a')) {
+  const a = getComputedStyle(elem)?.color;
+  const rgbA = a?.match(/(\d+),\s(\d+),\s(\d+)/);
+  const aColour = [rgbA[1], rgbA[2], rgbA[3]];
+  assert.isAtLeast(contrast(backgroundColour, aColour), 7);
+}
 ```
 
 

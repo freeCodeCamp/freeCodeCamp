@@ -22,7 +22,22 @@ assert.exists(new __helpers.CSSHelp(document).getStyle('.formrow'));
 You should give the `.formrow` a `margin-top` of at least `1px`.
 
 ```js
-assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('.formrow')?.marginTop?.replace(/\D+/, '')), 1);
+const val = new __helpers.CSSHelp(document).getStyle('.formrow')?.marginTop;
+let valInPx = 0;
+if (/^\d+rem$/.test(val)) {
+  valInPx = remToPx(Number(val.replace('rem', '')));
+} else if (/^\d+em$/.test(val)) {
+  valInPx = emToPx(Number(val.replace('em', '')));
+} else {
+  valInPx = Number(val?.replace('px', ''));
+}
+function emToPx(em) {
+  return em * parseFloat(getComputedStyle(document.querySelector('.formrow'))?.fontSize);
+}
+function remToPx(rem) {
+  return rem * parseFloat(getComputedStyle(document.documentElement)?.fontSize);
+}
+assert.isAtLeast(valInPx, 1);
 ```
 
 You should give the `.formrow` a `padding-top` of `0`.
@@ -34,7 +49,22 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.formrow')?.paddingTop, '
 You should give the `.formrow` a `padding-right` of at least `1px`.
 
 ```js
-assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('.formrow')?.paddingRight?.replace(/\D+/, '')), 1);
+const val = new __helpers.CSSHelp(document).getStyle('.formrow')?.paddingRight;
+let valInPx = 0;
+if (/^\d+rem$/.test(val)) {
+  valInPx = remToPx(Number(val.replace('rem', '')));
+} else if (/^\d+em$/.test(val)) {
+  valInPx = emToPx(Number(val.replace('em', '')));
+} else {
+  valInPx = Number(val?.replace('px', ''));
+}
+function emToPx(em) {
+  return em * parseFloat(getComputedStyle(document.querySelector('.formrow'))?.fontSize);
+}
+function remToPx(rem) {
+  return rem * parseFloat(getComputedStyle(document.documentElement)?.fontSize);
+}
+assert.isAtLeast(valInPx, 1);
 ```
 
 You should give the `.formrow` a `padding-bottom` of `0`.
@@ -46,7 +76,22 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.formrow')?.paddingBottom
 You should give the `.formrow` a `padding-left` of at least `1px`.
 
 ```js
-assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('.formrow')?.paddingLeft?.replace(/\D+/, '')), 1);
+const val = new __helpers.CSSHelp(document).getStyle('.formrow')?.paddingLeft;
+let valInPx = 0;
+if (/^\d+rem$/.test(val)) {
+  valInPx = remToPx(Number(val.replace('rem', '')));
+} else if (/^\d+em$/.test(val)) {
+  valInPx = emToPx(Number(val.replace('em', '')));
+} else {
+  valInPx = Number(val?.replace('px', ''));
+}
+function emToPx(em) {
+  return em * parseFloat(getComputedStyle(document.querySelector('.formrow'))?.fontSize);
+}
+function remToPx(rem) {
+  return rem * parseFloat(getComputedStyle(document.documentElement)?.fontSize);
+}
+assert.isAtLeast(valInPx, 1);
 ```
 
 You should use an `input` selector to target the `input` elements.
@@ -58,7 +103,22 @@ assert.exists(new __helpers.CSSHelp(document).getStyle('input'));
 You should give the `input` a `font-size` greater than `13px`.
 
 ```js
-assert.isAtLeast(Number(new __helpers.CSSHelp(document).getStyle('input')?.fontSize?.replace(/\D+/, '')), 13);
+const val = new __helpers.CSSHelp(document).getStyle('input')?.fontSize;
+let valInPx = 0;
+if (/^\d+rem$/.test(val)) {
+  valInPx = remToPx(Number(val.replace('rem', '')));
+} else if (/^\d+em$/.test(val)) {
+  valInPx = emToPx(Number(val.replace('em', '')));
+} else {
+  valInPx = Number(val?.replace('px', ''));
+}
+function emToPx(em) {
+  return em * parseFloat(getComputedStyle(document.querySelector('.formrow'))?.fontSize);
+}
+function remToPx(rem) {
+  return rem * parseFloat(getComputedStyle(document.documentElement)?.fontSize);
+}
+assert.isAtLeast(valInPx, 13);
 ```
 
 # --seed--

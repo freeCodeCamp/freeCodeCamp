@@ -61,6 +61,12 @@ You should give the third `option` element a text content of `No`.
 assert.equal(document.querySelector('div.answer > select > option:nth-child(3)')?.textContent, 'No');
 ```
 
+You should give the `select` an attribute of `required`.
+
+```js
+assert.isTrue(document.querySelector('div.answer > select')?.required);
+```
+
 # --seed--
 
 ## --seed-contents--

@@ -16,45 +16,45 @@ Group the relevant inputs together such that only one input from a pair can be s
 You should give the first `input` a `name` attribute.
 
 ```js
-assert.notEmpty(document.querySelectorAll('ul.answer-list > li > label > input')?.[0]?.name);
+assert.notEmpty(document.querySelectorAll('ul.answers-list > li > label > input')?.[0]?.name);
 ```
 
 You should give the second `input` a `name` attribute.
 
 ```js
-assert.notEmpty(document.querySelectorAll('ul.answer-list > li > label > input')?.[1]?.name);
+assert.notEmpty(document.querySelectorAll('ul.answers-list > li > label > input')?.[1]?.name);
 ```
 
 You should give the third `input` a `name` attribute.
 
 ```js
-assert.notEmpty(document.querySelectorAll('ul.answer-list > li > label > input')?.[2]?.name);
+assert.notEmpty(document.querySelectorAll('ul.answers-list > li > label > input')?.[2]?.name);
 ```
 
 You should give the fourth `input` a `name` attribute.
 
 ```js
-assert.notEmpty(document.querySelectorAll('ul.answer-list > li > label > input')?.[3]?.name);
+assert.notEmpty(document.querySelectorAll('ul.answers-list > li > label > input')?.[3]?.name);
 ```
 
 You should give the second `input` a `name` attribute matching the `name` attribute of the first `input`.
 
 ```js
-const i = (n) => document.querySelectorAll('ul.answer-list > li > label > input')?.[n]?.name;
+const i = (n) => document.querySelectorAll('ul.answers-list > li > label > input')?.[n]?.name;
 assert.equal(i(1), i(0));
 ```
 
 You should give the fourth `input` a `name` attribute matching the `name` attribute of the third `input`.
 
 ```js
-const i = (n) => document.querySelectorAll('ul.answer-list > li > label > input')?.[n]?.name;
+const i = (n) => document.querySelectorAll('ul.answers-list > li > label > input')?.[n]?.name;
 assert.equal(i(3), i(2));
 ```
 
 You should give different `name` attributes to the first `input` and the third `input`.
 
 ```js
-const i = (n) => document.querySelectorAll('ul.answer-list > li > label > input')?.[n]?.name;
+const i = (n) => document.querySelectorAll('ul.answers-list > li > label > input')?.[n]?.name;
 assert.notEqual(i(0), i(2));
 ```
 

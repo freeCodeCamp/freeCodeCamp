@@ -22,7 +22,7 @@ assert.exists(document.querySelector('address > a'));
 You should give the `a` element a `href` attribute of `https://freecodecamp.org`.
 
 ```js
-assert.equal(document.querySelector('address > a')?.href, 'https://freecodecamp.org');
+assert.equal(document.querySelector('address > a')?.getAttribute('href'), 'https://freecodecamp.org');
 ```
 
 You should wrap the `a` element around the existing text `freeCodeCamp`.

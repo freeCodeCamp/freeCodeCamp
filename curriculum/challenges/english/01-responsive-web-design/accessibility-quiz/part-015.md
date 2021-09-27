@@ -16,19 +16,19 @@ Give each of the `section` elements the `region` role.
 You should give the first `section` element the `region` role.
 
 ```js
-assert.equal(document.querySelectorAll('section')?.[0]?.role, 'region');
+assert.equal(document.querySelectorAll('section')?.[0]?.getAttribute('role'), 'region');
 ```
 
 You should give the second `section` element the `region` role.
 
 ```js
-assert.equal(document.querySelectorAll('section')?.[1]?.role, 'region');
+assert.equal(document.querySelectorAll('section')?.[1]?.getAttribute('role'), 'region');
 ```
 
 You should give the third `section` element the `region` role.
 
 ```js
-assert.equal(document.querySelectorAll('section')?.[2]?.role, 'region');
+assert.equal(document.querySelectorAll('section')?.[2]?.getAttribute('role'), 'region');
 ```
 
 # --seed--

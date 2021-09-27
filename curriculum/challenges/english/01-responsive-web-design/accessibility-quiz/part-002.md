@@ -25,7 +25,7 @@ assert.exists(document.querySelector('body > meta'));
 You should give the `meta` tag a `charset` of `UTF-8`.
 
 ```js
-assert.equal(document.querySelector('body > meta')?.charset, 'UTF-8');
+assert.equal(document.querySelector('body > meta')?.getAttribute('charset'), 'UTF-8');
 ```
 
 # --seed--

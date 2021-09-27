@@ -66,7 +66,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.background, 'rg
 You should give `button` a `border` of `3px solid #3b3b4f`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.border, '3px solid #3b3b4f');
+assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.border, '3px solid rgb(59, 59, 79)');
 ```
 
 # --seed--

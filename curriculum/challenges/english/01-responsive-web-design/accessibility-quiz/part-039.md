@@ -20,7 +20,7 @@ assert.notEmpty(document.querySelectorAll('.formrow > .question-block')?.[1]?.qu
 You should give the `textarea` element an `id` attribute matching the `for` attribute of the `label` element.
 
 ```js
-assert.equal(document.querySelectorAll('.formrow > .question-block')?.[1]?.querySelector('label')?.htmlFor, document.querySelector('.answer:nth-of-type(2) > textarea')?.id);
+assert.equal(document.querySelectorAll('.formrow > .question-block')?.[1]?.querySelector('label')?.htmlFor, document.querySelectorAll('.answer')?.[1]?.querySelector('textarea')?.id);
 ```
 
 You should give the `textarea` element a `name` attribute.

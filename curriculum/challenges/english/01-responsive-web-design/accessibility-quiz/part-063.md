@@ -36,12 +36,17 @@ function contrast(rgb1, rgb2) {
     return (brightest + 0.05)
          / (darkest + 0.05);
 }
-const backgroundColor = [42, 42, 64];
-const gs = (s) => new __helpers.CSSHelp(document).getStyle(s)?.color;
-const color = gs('footer, footer a') ?? gs('footer a, footer');
-const rgb = color?.match(/(\d+),\s(\d+),\s(\d+)/);
-const camperColor = [rgb[1], rgb[2], rgb[3]];
-assert.isAtLeast(contrast(backgroundColor, camperColor), 7);
+const backgroundColour = [42, 42, 64];
+
+const foot = getComputedStyle(document.querySelector('footer'))?.color;
+const a = getComputedStyle(document.querySelector('footer a'))?.color;
+
+const rgbFoot = foot?.match(/(\d+),\s(\d+),\s(\d+)/);
+const rgbA = a?.match(/(\d+),\s(\d+),\s(\d+)/);
+const footColour = [rgbFoot[1], rgbFoot[2], rgbFoot[3]];
+const aColour = [rgbA[1], rgbA[2], rgbA[3]];
+assert.isAtLeast(contrast(backgroundColour, footColour), 7);
+assert.isAtLeast(contrast(backgroundColour, aColour), 7);
 ```
 
 # --seed--
