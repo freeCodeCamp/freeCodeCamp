@@ -120,7 +120,7 @@ const CertChallenge = ({
           certSlugTypeMap[cert.certSlug] === superBlockCertTypeMap[superBlock]
       )?.show ?? false
     );
-    console.log(steps);
+
     const projectsCompleted =
       canClaimCert || certVerificationMessage === 'projects-completed';
     const completedCount =
