@@ -6,6 +6,8 @@
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "strict": true,
+    "noEmit": true
   },
 }
