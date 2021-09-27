@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
+import { toSortedArray } from '../../../../../utils/sort-files';
 import {
   toggleVisibleEditor,
   visibleEditorsSelector,
@@ -38,7 +39,7 @@ class EditorTabs extends Component {
     const { challengeFiles, toggleVisibleEditor, visibleEditors } = this.props;
     return (
       <div className='monaco-editor-tabs'>
-        {challengeFiles.map(challengeFile => (
+        {toSortedArray(challengeFiles).map(challengeFile => (
           <button
             aria-selected={visibleEditors[challengeFile.fileKey]}
             className='monaco-editor-tab'

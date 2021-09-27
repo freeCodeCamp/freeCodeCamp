@@ -3,7 +3,7 @@ id: 5f87ac112ae598023a42df1a
 title: 沙龙日程安排程序
 challengeType: 12
 helpCategory: Relational Databases
-url: https://github.com/moT01/.salon-appointment-scheduler
+url: https://github.com/freeCodeCamp/learn-salon-appointment-scheduler
 dashedName: salon-appointment-scheduler
 ---
 
