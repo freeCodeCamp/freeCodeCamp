@@ -2,7 +2,7 @@
 
 Una pull request (PR) le permite enviar cambios desde su bifurcación en GitHub al repositorio principal de freeCodeCamp.org. Una vez que haya hecho cambios en el código, puede seguir estas pautas para abrir un PR.
 
-> [!NOTE] Tu PR debe ser en inglés. See [here](index.md#translations) for how to contribute translations.
+> [!NOTE] Tu PR debe ser en inglés. Consulta [aquí](index.md#translations) para saber cómo contribuir con las traducciones.
 
 ## Prepara un buen título para tu PR
 
@@ -68,7 +68,7 @@ Algunos ejemplos de buenos títulos para PRs serían:
 
    - Esto es muy importante cuando se hagan cambios que no sean solo ediciones del contenido de texto como documentación o una descripción de un desafío. Ejemplos de los cambios que necesitan pruebas en el entorno local incluyen JavaScript, CSS o HTML que podrían cambiar la funcionalidad o el diseño de una página.
 
-   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
+   - Si tu PR afecta el comportamiento de una página, debe ir acompañada de la correspondiente [pruebas de integración de Cypress](how-to-add-cypress-tests.md).
 
 ## Comentarios sobre pull requests
 
@@ -78,7 +78,7 @@ Nuestros moderadores ahora echarán un vistazo y te dejarán tus comentarios. Po
 
 Y como siempre, siéntete libre de preguntar en la [categoría de 'Contribuidores' de nuestro foro](https://forum.freecodecamp.org/c/contributors) o [en la sala de chat de contribuidores](https://chat.freecodecamp.org/channel/contributors).
 
-> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
+> [!TIP] Si vas a contribuir con más PRs, te recomendamos que leas las directrices ["haciendo cambios y sincronizando"](how-to-setup-freecodecamp-locally.md#making-changes-locally) para evitar la necesidad de borrar tu bifurcación.
 
 ## Conflicto en un pull request
 

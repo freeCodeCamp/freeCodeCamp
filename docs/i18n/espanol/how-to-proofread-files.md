@@ -1,54 +1,55 @@
 # Como revisar traducciones
 
-Our proofreading team is responsible for ensuring that translations accurately reflect the source text. We trust our proofreaders to ensure that we have very high quality translations.
+Nuestro equipo de revisión es responsable de garantizar que las traducciones reflejen con precisión el texto original. Confiamos en nuestro equipo de revisión para asegurarnos de que tenemos traducciones de muy alta calidad.
 
-All our translations are done by hand, by real humans. Proofreading ensures that there is a consistent tone across our all our translated resources like the curriculum.
+Todas nuestras traducciones están hechas a mano, por humanos reales. La revisión garantiza que haya un tono coherente en todos nuestros recursos traducidos, como el plan de estudios.
 
-To begin proofreading, visit [our translation platform](https://translate.freecodecamp.org) and login. Select "Go to console" in the top navigation bar to switch from the public view to the workspace view.
+Para comenzar a revisar, visita [nuestra plataforma de traducción](https://translate.freecodecamp.org) e inicia sesión. Selecciona "Ir a la consola" en la barra de navegación superior para cambiar de la vista pública a la vista de espacio de trabajo.
 
 ## Seleccionar un archivo
 
-You should see the list of projects you have been granted access to. Select the project that you would like to proofread, then select the language.
+Verás la lista de proyectos a los que se le ha otorgado acceso. Selecciona el proyecto que te gustaría revisar y luego selecciona el idioma.
 
-![Image - Proofreading File Tree](https://contribute.freecodecamp.org/images/crowdin/proof-file-tree.png)
+![Imagen - Árbol de archivos de revisión](https://contribute.freecodecamp.org/images/crowdin/proof-file-tree.png)
 
-You should now see the list of available files. Choose your file by selecting the `Proofread` button on the right of that file, then choosing `Proofreading` from the drop-down menu that appears.
+Ahora podrás ver la lista de archivos disponibles. Elige tu archivo seleccionando el botón `Proofread` a la derecha de ese archivo, luego elige `Proofreading` en el menú desplegable que aparece.
 
-> [!NOTE] If you are in this workspace view, but want to work on [translating a file](how-to-translate-files.md) instead of proofreading, you may select `Crowdsourcing` from the dropdown menu instead.
+> [!NOTE] Si estás en la vista "workspace" pero quieres trabajar en [traducir un archivo](how-to-translate-files.md) en lugar de revisar, puedes seleccionar la opción `Crowdsourcing` del menú desplegable.
 
 ## Revisar traducciones
 
-![Image - Proofreading View](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
+![
+Imagen - Vista de corrección](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
 
 <!--Add proofread/crowdsource button to the image-->
 
-Here you will see the list of strings in the selected file, with their related translations. The translation that is displayed here is the translation that has received the highest score (between upvotes and downvotes) from the translation community.
+Aquí verás la lista de cadenas en el archivo seleccionado, con sus traducciones correspondientes. La traducción que se muestra aquí es la traducción que ha recibido la puntuación más alta (entre votos a favor y en contra) de la comunidad de traducción.
 
-While you can view _all_ proposed translations for a given string, the community scores (determined by the upvotes and downvotes) should be taken into consideration when choosing which translation to approve. The community can review proposed translations and recommend which one is most accurate and clear.
+Mientras puedas ver _todas_ las traducciones propuestas para una cadena determinada, las puntuaciones de la comunidad (determinadas por los votos a favor y en contra) deben tenerse en cuenta al elegir cuál traducción aprobar. La comunidad puede revisar las traducciones propuestas y recomendar cuál es la más clara y precisa.
 
 1. Este es el segmento original (en inglés).
 2. Este es el segmento traducido que le corresponde. Aquí se mostrará la traducción propuesta más popular, según sus votos positivos y negativos.
 3. Al hacer clic en este botón de tilde aprobarás esa traducción.
-4. Crowdin mostrará el estado de cada segmento. `Done` (listo) significa que una traducción ha sido aprobada y que será descargada en el próximo pull de Crowdin. `Todo` (por hacer o "to do") significa que el segmento aún no ha sido revisado. `Hidden` means the string is locked and _should not be translated_. `Comment` significa que el segmento incluye un comentario.
+4. Crowdin mostrará el estado de cada segmento. `Done` (listo) significa que una traducción ha sido aprobada y que será descargada en el próximo pull de Crowdin. `Todo` (por hacer o "to do") significa que el segmento aún no ha sido revisado. `Hidden` (Oculto) significa que la cadena está bloqueada y _no debe traducirse_. `Comment` significa que la cadena de texto incluye un comentario.
 5. Puedes usar las casillas de verificación para seleccionar varias traducciones y aprobarlas en un solo paso.
 6. Aquí puedes ver las traducciones propuestas por la comunidad, sus puntajes de popularidad y las traducciones sugeridas por Crowdin.
 7. Este botón muestra/oculta el panel del lado derecho, donde puedes ver traducciones, comentarios, la memoria de traducciones y el glosario de términos.
 8. Crowdin muestra aquí los mensajes de error de las verificaciones de calidad (QA / quality assurance). En otras palabras, Crowdin te notificará si algo en la traducción no parece estar correcto. Estas traducciones deberían ser aprobadas cuidadosamente.
 
-No additional actions are required once a file has been proofread.
+No se requieren acciones adicionales una vez que el archivo ha sido revisado.
 
-> [!NOTE] Approving a string in the proofreading view will mark it as complete and it will be downloaded in our next pull from Crowdin to GitHub.
+> [!NOTE] Aprobar una cadena en la vista de revisión la marcará como completa y se descargará en nuestra próxima extracción de Crowdin a GitHub.
 
-## Becoming a proofreader
+## Llegar hacer un revisor
 
-If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors). We will typically grant you proofreading access if you have been contributing to freeCodeCamp for a while.
+Si tienes alguna pregunta o te interesa colaborar como revisor, ten la liberta de contactarnos en nuestra [sala de chat de contribuidores](https://chat.freecodecamp.org/channel/contributors). Generalmente, le concederemos acceso a la corrección si ha estado contribuyendo a freeCodeCamp durante un tiempo.
 
-Our staff team and community moderators teams are always looking for kind volunteers like you who help us make high quality translations available to the world.
+Nuestro equipo de personal y de moderadores de la comunidad buscan constantemente voluntarios amables como tú que nos ayuden a poner a disposición del mundo traducciones de alta calidad.
 
 > [!NOTE] Crowdin te permite aprobar tus propias traducciones. Sin embargo, en general suele ser mejor permitir que otro corrector revise tus traducciones propuestas como medida adicional para asegurarse que no hayan errores.
 
-## Creating a channel on Chat for a world language
+## Creando un canal en Chat para un idioma mundial
 
-For the most part we encourage you to use the [contributors chat](https://chat.freecodecamp.org/channel/contributors) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating additional break-out channel for the language.
+Mayormente, te recomendamos que utilices la sala de chat de [contribuidores](https://chat.freecodecamp.org/channel/contributors) para toda la correspondencia. Sin embargo, si el equipo de traductores voluntarios crece para un idioma determinado, podemos considerar la creación de un canal de escape adicional para el idioma.
 
-If you are already a proofreader and are interested in having a dedicated channel on our chat servers for a specific language, [fill out this form](https://forms.gle/XU5CyutrYCgDYaVZA).
+Si ya eres un revisor y estás interesado en tener un canal dedicado en nuestros servidores de chat para un idioma específico, [completa este formulario](https://forms.gle/XU5CyutrYCgDYaVZA).

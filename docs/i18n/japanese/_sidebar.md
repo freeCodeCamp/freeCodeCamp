@@ -1,7 +1,7 @@
-- **Getting Started**
-  - [Introduction](index.md "Contribute to the freeCodeCamp.org Community")
-  - [Frequently Asked Questions](FAQ.md)
-- **Code Contribution**
+- **はじめに**
+  - [イントロダクション](index.md "freeCodeCamp.org コミュニティに貢献する")
+  - [よくある質問](FAQ.md)
+- **コードのコントリビューション**
   - [Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md)
   - [Codebase best practices](codebase-best-practices.md)
   - [Open a pull request](how-to-open-a-pull-request.md)
@@ -10,9 +10,9 @@
   - [Work on the news theme](how-to-work-on-the-news-theme.md)
   - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
   - [Work on practice projects](how-to-work-on-practice-projects.md)
-- **Translation Contribution**
-  - [Work on translating resources](how-to-translate-files.md)
-  - [Work on proofreading translations](how-to-proofread-files.md)
+- **翻訳のコントリビューション**
+  - [リソースを翻訳する](how-to-translate-files.md)
+  - [翻訳を校正する](how-to-proofread-files.md)
 - **Optional Guides**
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
   - [Add Cypress tests](how-to-add-cypress-tests.md)
