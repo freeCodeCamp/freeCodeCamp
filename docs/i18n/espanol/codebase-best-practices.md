@@ -76,9 +76,9 @@ export const actionFunction = (
 ### Cómo reducir
 
 ```typescript
-// Acción del reductor de base sin carga útil
+// Base reducer action without payload
 type ReducerBase<T> = { type: T };
-// Lógica para manejar cargas útiles opcionales
+// Logic for handling optional payloads
 type ReducerPayload<T extends AppActionTypes> =
   T extends AppActionTypes.actionFunction
     ? ReducerBase<T> & {

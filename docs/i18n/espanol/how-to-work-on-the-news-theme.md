@@ -6,7 +6,7 @@ Las noticias del desarrollador también conocidas como el sitio [`/news`](https:
 
 Ghost utiliza un lenguaje de plantillas sencillo llamado [Handlebars](http://handlebarsjs.com/) para sus temas. El tema usado en `/news` se basa en el tema predeterminado [casper](https://github.com/TryGhost/Casper).
 
-The default theme is commented pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Una vez que te sientas cómodo con cómo funciona todo, Ghost también tiene una completa [documentación API de temas](https://themes.ghost.org) que explica todos los posibles ayudantes de Handlebars y plantillas.
+El tema por defecto está fuertemente comentado, por lo que debería ser bastante fácil averiguar lo que está pasando con solo leer el código y los comentarios. Una vez que te sientas cómodo con cómo funciona todo, Ghost también tiene una completa [documentación API de temas](https://themes.ghost.org) que explica todos los posibles ayudantes de Handlebars y plantillas.
 
 **Los archivos principales son:**
 
@@ -42,7 +42,7 @@ Un truco realmente bueno es que también puede crear plantillas personalizadas s
 
    Asegúrate de ejecutar los comandos de `ghost` desde el directorio `ghost-local-site`. Siga las instrucciones adicionales de la [documentación oficial de Ghost](https://docs.ghost.org) si no estás familiarizado con su interfaz.
 
-2. Fork and clone the repository in your theme directory (replacing `YOUR_USERNAME` with your GitHub username):
+2. Bifurca y clona el repositorio en tu directorio de temas (reemplazando `YOUR_USERNAME` con tu nombre de usuario de GitHub):
 
    ```sh
    cd content/themes/
