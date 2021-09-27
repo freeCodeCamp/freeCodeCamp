@@ -37,7 +37,7 @@ Intentemos agregar una imagen a nuestro sitio web:
 
 Dentro del elemento `main`, inserta un elemento `img` antes de los elementos `p` existentes.
 
-Ahora establece el atributo `src` para que apunte a la url `https://www.bit.ly/fcc-relaxing-cat`
+Ahora establece el atributo `src` para que apunte a la url `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`
 
 Finalmente, no olvides darle a tu elemento `img` un atributo `alt` con texto descriptivo.
 
@@ -52,7 +52,7 @@ assert($('img').length);
 Tu imagen debe tener un atributo `src` que apunte a la imagen del gatito.
 
 ```js
-assert(/^https:\/\/(www\.)?bit\.ly\/fcc-relaxing-cat$/i.test($('img').attr('src')));
+assert(/^https:\/\/cdn\.freecodecamp\.org\/curriculum\/cat-photo-app\/relaxing-cat\.jpg$/i.test($('img').attr('src')));
 ```
 
 El atributo `alt` de tu elemento imagen no debe estar vacío.
@@ -86,7 +86,7 @@ assert(
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>

@@ -15,6 +15,9 @@ Aqui está um exemplo de alteração da largura de uma imagem ao passar o cursor
 
 ```html
 <style>
+  img {
+    width: 30px;
+  }
   img:hover {
     animation-name: width;
     animation-duration: 500ms;
