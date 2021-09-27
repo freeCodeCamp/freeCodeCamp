@@ -14,7 +14,7 @@ The "version" branch contains the commits that will be loaded on each step of a 
 ## How to contribute
 
 ### Prerequisites
-Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`
+Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`. I've been having trouble with the latest version. If it doesn't work, downgrade to `0.7.0` with `npm install -g @coderoad/cli@0.7.0`
 
 ### Working on `main`
 You never need to modify the `tutorial.json` file directly. That will be created with the CLI tools.
@@ -23,27 +23,32 @@ You never need to modify the `tutorial.json` file directly. That will be created
 >
 > These changes will use the existing version branch. If they are substantial, feel free to add them to `CHANGELOG.md`. Most of the time, a good commit message should work
 
-**If you want to test your changes, follow all the steps below. If not, you only need to follow the numbered steps:**
+If you are making instructional fixes such as a typo, grammar fixes, or similar; you don't have to test your changes. Follow these instrustions to make a PR:
 
-1. Create a new branch off of `main`
-    - Change the `uri` in `coderoad.yaml` to your fork of the repo
-2. Make and commit your changes
-3. Run `coderoad build` to recreate the `tutorial.json` file
-    - Add and commit the file
-    - Push the changes to your fork
-    - Merge your branch into `main` on your fork
-    - Test your changes by using the `tutorial.json` file on your fork. This can be tested following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha)
-    - After testing, change the `uri` in `coderoad.yaml` back to the freeCodeCamp repo
-    - Add and commit the changes
-    - Run `coderoad build` again to create a new `tutorial.json` file
-4. Commit the changes with `update json` as the message
-5. Make a PR
+- Create a new branch off of `main`
+- Make and commit your changes. Reminder, you don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
+- Run `coderoad build` to recreate the `tutorial.json` file
+- Commit the changes with `update json` as the message
+- Make a PR
+
+### Testing changes
+If you want to test your changes to `main` after using the above instructions, follow these instuction:
+
+- Merge your branch with changes in to your local `main` branch with `git merge <branch_name>` while you are on `main`
+- Change the `uri` in `coderoad.yaml` to your fork of the repo
+- Add and commit the file
+- Run `coderoad build` to recreate the `tutorial.json` file
+- Add and commit the file
+- Push the changes to your fork
+- Test your changes by using the `tutorial.json` file on your fork. This can be tested following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha)
 
 ### Working on version branch
 
 > [!WARNING]
 >
 > Reminder. Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+
+There's no way to see exactly what changed between version branches since the git history will be rewritten. Accepting new branches to use will need to be done with careful consideration and testing. Follow these instructions to create a new version:
 
 - Checkout the latest version branch with `git checkout -b vX.X.X upstream/vX.X.X`
 - Create a new branch off of that, incrementing the version with `git checkout -b vX.X.Y`
