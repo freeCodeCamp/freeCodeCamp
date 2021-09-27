@@ -76,6 +76,7 @@ const CertChallenge = ({
   const [canClaim, setCanClaim] = useState({ status: false, result: '' });
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
+  const [userChecked, setUserChecked] = useState(false);
   const [stepState, setStepState] = useState({
     numberOfSteps: 0,
     completedCount: 0
@@ -90,6 +91,7 @@ const CertChallenge = ({
           const data = await getVerifyCanClaimCert(username, superBlock);
           const { status, result } = data?.response?.message;
           setCanClaim({ status, result });
+          setUserChecked(true);
         } catch (e) {
           // TODO: How do we handle errors...?
         }
@@ -146,15 +148,17 @@ const CertChallenge = ({
   };
   return (
     <div className='block'>
-      {userLoaded && isSignedIn && !isCertified && !canViewCert && (
-        <CertificationCard
-          i18nCertText={i18nCertText}
-          isProjectsCompleted={isProjectsCompleted}
-          steps={steps}
-          stepState={stepState}
-          superBlock={superBlock}
-        />
-      )}
+      {userLoaded &&
+        isSignedIn &&
+        (!isCertified || (!canViewCert && userChecked)) && (
+          <CertificationCard
+            i18nCertText={i18nCertText}
+            isProjectsCompleted={isProjectsCompleted}
+            steps={steps}
+            stepState={stepState}
+            superBlock={superBlock}
+          />
+        )}
       <Button
         block={true}
         bsStyle='primary'
