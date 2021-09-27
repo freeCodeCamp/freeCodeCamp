@@ -1,9 +1,9 @@
 ## How the tutorials work
-The freeCodeCamp tutorials that use CodeRoad each have their own repo under the freeCodeCamp GitHub organization. They are the ones that start with `learn-`. For example, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`. See a [full list here](https://github.com/orgs/freeCodeCamp/repositories?q=learn&type=&language=&sort=).
+The freeCodeCamp tutorials that use CodeRoad each have their own repo under the freeCodeCamp GitHub organization. They all start with `learn-`. For example, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
 
 Each tutorial repo has a `main` branch and a "version" branch, e.g. `v1.0.0`.
 
-The two main files on the `main` branch are the `TUTORIAL.md` and `coderoad.yaml` files. `TUTORIAL.md` contains all the instructions, hints, and titles, etc for users in the tutorial. `coderoad.yaml` contains instructions for CodeRoad; such as what commands to run and when, what files to watch for changes, and what version branch to use for the steps, among other things.
+The two main files on the `main` branch are the `TUTORIAL.md` and `coderoad.yaml` files. `TUTORIAL.md` contains all the instructions, hints, and titles, etc for the tutorial. `coderoad.yaml` contains instructions for CodeRoad. Such as what commands to run and when, what files to watch for changes, and what version branch to use for the steps.
 
 The "version" branch contains the commits that will be loaded on each step of a tutorial. The commit messages on this branch have to be specific. The first commit needs `INIT` for its message and contains all the files to load before the first lesson. Subsequent commit messages have to match the step number in `TUTORIAL.md` from the `main` branch. For example, the commit will message `10.1` will be loaded when a user goes to step `10.1`. In order to make changes to commits on this branch, you will need to rebase and edit the commit you want changed. This will rewrite the git history, so we cannot accept PR's to this branch. Once a version branch is on the freeCodeCamp repo, it should never change.
 
@@ -14,116 +14,90 @@ The "version" branch contains the commits that will be loaded on each step of a 
 ## How to contribute
 
 ### Prerequisites
-Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`. I've been having trouble with the latest version. If it doesn't work, downgrade to `0.7.0` with `npm install -g @coderoad/cli@0.7.0`
+Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`. I've been having trouble with the latest version. If `coderoad --version` doesn't work after installing, downgrade to `0.7.0` with `npm install -g @coderoad/cli@0.7.0`
 
 ### Working on `main`
-You never need to modify the `tutorial.json` file directly. That will be created with the CLI tools.
+Follow these instructions if you are only making changes to `main`. You never need to modify the `tutorial.json` file directly. That will be created with the CLI tools.
 
 > [!NOTE]
 >
 > These changes will use the existing version branch. If they are substantial, feel free to add them to `CHANGELOG.md`. Most of the time, a good commit message should work
 
-If you are making instructional fixes such as a typo, grammar fixes, or similar; you don't have to test your changes. Follow these instrustions to make a PR:
+If you are only making instructional fixes such as a typo, grammar fixes, or similar; you don't have to test your changes. Follow these instrustions to make a PR:
 
 - Create a new branch off of `main`
-- Make and commit your changes. Reminder, you don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
+- Make **and commit** your changes. Reminder, you don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
 - Run `coderoad build` to recreate the `tutorial.json` file
 - Commit the changes with `update json` as the message
 - Make a PR
 
-### Testing changes
+### Testing changes on `main`
 If you want to test your changes to `main` after using the above instructions, follow these instuction:
 
-- Merge your branch with changes in to your local `main` branch with `git merge <branch_name>` while you are on `main`
-- Change the `uri` in `coderoad.yaml` to your fork of the repo
-- Add and commit the file
-- Run `coderoad build` to recreate the `tutorial.json` file
-- Add and commit the file
-- Push the changes to your fork
-- Test your changes by using the `tutorial.json` file on your fork. This can be tested following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha)
+- Following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
+- Start the tutorial with your new changes by using the `tutorial.json` file on your new branch. You could also select the `File` option in CodeRoad and find the `tutorial.json` file locally (make sure you're still on the branch with the changes).
+
+### Reviewing PR's to `main`
+If reviewing a PR that only changes `main` with instructional or grammar changes as described in the above instructions, the changes in `TUTORIAL.md` should match the changes in `tutorial.json`. The `tutorial.json` file should not have changes to commit hashes, or step/level id's. Startup or level commands, or file watchers likely should not be changed either. There is exeptions to those if there's an issue, but they should be treated with more caution.
 
 ### Working on version branch
+> [!WARNING]
+>
+> Reminder. Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+
+There's no easy way to see exactly what changed between version branches since the git history will be rewritten. Accepting new branches to use will need to be done with careful consideration and testing. Follow these instructions to create a new version:
+
+- Checkout the **latest** version branch with `git checkout -b vX.X.X upstream/vX.X.X`
+- Create a new branch off of that, incrementing the version, with `git checkout -b vX.X.Y`
+- Make your changes to the version branch. See more info in the [CodeRoad Documentation](https://coderoad.github.io/docs/edit-tutorial) for how to work with tutorials
+- Push the new branch to your fork with `git push -u origin vX.X.Y`
+- Checkout the `main` branch
+- Create a new branch off `main`. e.g. `feat/version-X.X.Y`
+- Change the `uri` in `coderoad.yaml` to your fork of the repo. This is so you and reviewers can test it before pushing to the freeCodeCamp repo. Change the version to the new branch in the two spots of that file. Add your changes for the new version to `CHANGELOG.md`. Make any other changes you need.
+- Commit your changes with the message `feat: release version X.X.Y - <optional description>`
+- Run `coderoad build` to create a new `tutorial.json` file
+- Add and commit the file
+- Push the changes to your fork
+- Test your changes following the instructions below. Make any additional changes or, if you are satisfied, follow the rest of the instructions
+- Make a PR to `main` using your new `feat/version-X.X.Y` branch. Give it a title of `version X.X.Y ready for review`. This will not be merged, it is just to let reviewers know that there is a new version ready
+- Leave it here for reviewers
+
+### Testing changes to a version branch
+- Following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
+- Start the tutorial using the `tutorial.json` file on whatever fork the changes are on. Making sure to use the file on the `feat: version-X.X.Y` branch and not the `main` branch
+
+### Pushing a new version
+Before pushing a new version, view the new `feat/version-vX.X.Y` (will me merged to `main`) branch on the users fork and make sure there are additions to the `CHANGELOG.md` file that include the new changes, and the version in the two spots of `coderoad.yaml` matches the new version branch.
+
+If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG` and `coderoad.yaml` files, have tested the changes using the instructions above, and want to push a new version of a tutorial:
 
 > [!WARNING]
 >
 > Reminder. Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
 
-There's no way to see exactly what changed between version branches since the git history will be rewritten. Accepting new branches to use will need to be done with careful consideration and testing. Follow these instructions to create a new version:
-
-- Checkout the latest version branch with `git checkout -b vX.X.X upstream/vX.X.X`
-- Create a new branch off of that, incrementing the version with `git checkout -b vX.X.Y`
-- Make your changes to the version branch. See more info in the [CodeRoad Documentation](https://coderoad.github.io/docs/edit-tutorial) for how to work with tutorials
-- Push your new branch to your fork with `git push -u origin vX.X.Y`
-- Checkout the `main` branch
-- Make changes directly to the `main` branch. Change the `uri` in `coderoad.yaml` to your fork of the repo. This is so you can test it before pushing to the freeCodeCamp repo. Change the version to the new branch in the two spots of that file. Add your changes for the new version to `CHANGELOG.md`
-- Commit your changes with the message `test: vX.X.Y - <optional description>`
-- Run `coderoad build` to create a new `tutorial.json` file
-- Add and commit the file with the message `test: vX.X.Y - update json`
-- Push the changes to the `main` branch of your fork. If you have write access to the freeCodeCamp repo, be careful not to push to that
-- Test your changes by using the `tutorial.json` file on your fork. This can be tested following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha)
-
-
-### Pushing a new version
-If you have write access to the freeCodeCamp repo and are pushing your own changes:
-- Checkout the new version branch
-- Push it to freeCodeCamp - `git push -u upstream vX.X.Y` - It’s necessary to push the new branch before you update `main` to include the new `tutorial.json` file
-- Checkout the main branch
+- If you don't have a remote to where the new changes exist, create a remote to the users fork with `git remote add <users_fork>`
+- Delete any **local** branches that share a name with the new branches. Likely named either `vX.X.Y` or `feat/version-X.X.Y`
+- Checkout the new version branch with `git checkout -b vX.X.Y <remote>/vX.X.Y`
+- Push the new version branch to the freeCodeCamp repo with `git push -u upstream/vX.X.Y`. You need to push the new branch before you update `main` with the new `tutorial.json` file
+- Checkout the users branch that will be merged into `main` with `git checkout -b feat/version-X.X.Y <remote>/feat/version-X.X.Y`
 - Change the `uri` in `coderoad.yaml` back to the freeCodeCamp repo
-- Add and commit the changes with the message, `release vX.X.Y - <optional message>`
+- Add and commit the changes
 - Run `coderoad build` to create the new `tutorial.json` file
-- Add and commit the file with the message, `release vX.X.Y - update json`
-
-### Reviewing Changes
-Never push changes to an existing live, or previously live, version branch
-- View the changelog and the new commits on main of the users fork to see what they changed
-- Create a remote to the users fork
-- Create a local branch off of their version branch with `git checkout -b v#.#.# remote/v#.#.#`
-- If needed, delete your local `main` branch, then create a new one off the users fork `git checkout main remote/main`
-- Verify that the version in the two spots of coderoad.yaml matches the branch new branch name
-- Run `coderoad build`
-- Check your git status. There should be no new changes. This ensures that no changes were made to the version branch after the last time a `tutorial.json` was created
-- If needed, test the changes by following the instructions in the `RDBMS-alpha` repo. Use the `file` option with CodeRoad, inputting your local `tutorial.json` file, to load the local version of the tutorial
-- If everything looks good, change the uri in coderoad.yaml back to freeCodeCamp’s URL,
-- Commit your changes with a message that starts with `release: v#.#.# - <description>` using the version branch 
-- Run coderoad build to build a new tutorial.json file
-- Commit the new file with the message “update json”
-- Checkout the version branch and push it to the freeCodeCamp remote - `git push -u upstream v#.#.#`
-- Do not do this before the previous step - Push the `main` branch to the freeCodeCamp remote - `git push -f upstream main`.
-- The new changes are in place. Start the project using the tutorial.json file on the freeCodeCamp repo and complete a few steps to make sure it’s working
-
-After you have released a new version, or revert to a previous version, of a tutorial:
-- Open the tutorial, using the freeCodeCamp `tutorial.json` file, and go through at least a few lessons to make sure it’s loading properly
-
+- Add and commit the file
+- Push the changes to your fork with `git push -u origin/feat/version-X.X.Y`
+- Make a PR to `main` on the freeCodeCamp repo
+- If you are satisfied, merge it or leave it and ask for a review from someone
+- After the PR is merged, it's probably a good idea to open the tutorial, following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha), to make sure it's loading properly and you can get through a few steps
+- Finally, if any PR's for this version exist, close them
 
 ### How to revert to a previous version
-
-
-
-
-## Relational Databases Tutorials
-
-
-
-
-
-### Logs
-The `INIT` commit has a variety of files that are used to generate logs. Be it from the terminal, or when entering PSQL commands.
-This is how the tests run automatically. Log files are created, with the
-
-Each commit (step) adds a new file with a new test and comments out the previous test
-
-
-Bash
-
-
-
-PostgreSQL
-
-
-
-PSQL
-
-
-
-
-
+- Create a new branch off the latest main with `git checkout -b revert/to-vX.X.X`
+- Revert all commits on this branch until one commit before the version after you want to rever to. For example, you may have commits that look like this:
+```
+fix: typo
+release: version 1.0.1
+fix: typo
+release: version 1.0.0
+```
+If you want to revert to v1.0.0, revert all the commits from `release: version 1.0.1` and after
+- Create a PR
