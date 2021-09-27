@@ -1,9 +1,4 @@
-import type { AxiosError, AxiosResponse } from 'axios';
 import { has } from 'lodash-es';
-
-import { reportClientSideError } from './report-error';
-import reportedErrorMessage from './reported-error-message';
-import standardErrorMessage from './standard-error-message';
 
 interface ErrorData {
   type?: string;
@@ -37,72 +32,4 @@ export function wrapHandledError(
     redirectTo
   };
   return err as HandledError;
-}
-
-export function handle400Error(
-  e: AxiosError,
-  options: ErrorData = { redirectTo: '/' }
-): ErrorData {
-  const { status } = e.response as AxiosResponse;
-  const { redirectTo } = options;
-  const flash = { ...standardErrorMessage, redirectTo };
-
-  switch (status) {
-    case 401:
-    case 403: {
-      return {
-        ...flash,
-        type: 'warn',
-        message: 'flash.not-authorized'
-      };
-    }
-    case 404: {
-      return {
-        ...flash,
-        type: 'info',
-        message: 'flash.could-not-find'
-      };
-    }
-    default: {
-      return flash;
-    }
-  }
-}
-
-export function handle500Error(
-  e: AxiosError,
-  options: ErrorData = {
-    redirectTo: '/'
-  },
-  _reportClientSideError: (
-    e: Error,
-    message: string
-  ) => void = reportClientSideError
-): ErrorData {
-  const { redirectTo } = options;
-  _reportClientSideError(e, 'We just handled a 5** error on the client');
-  return { ...reportedErrorMessage, redirectTo };
-}
-
-export function handleAPIError(
-  e: AxiosError,
-  options: ErrorData,
-  _reportClientSideError: (
-    e: Error,
-    message: string
-  ) => void = reportClientSideError
-): ErrorData {
-  const { response: { status = 0 } = {} } = e;
-  if (status >= 400 && status < 500) {
-    return handle400Error(e, options);
-  }
-  if (status >= 500) {
-    return handle500Error(e, options, _reportClientSideError);
-  }
-  const { redirectTo } = options;
-  _reportClientSideError(
-    e,
-    'We just handled an api error on the client without an error status code'
-  );
-  return { ...reportedErrorMessage, redirectTo };
 }
