@@ -3,4 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row-reverse;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
