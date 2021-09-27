@@ -2,12 +2,12 @@
   "name": "Legacy Front End Certification",
   "isUpcomingChange": false,
   "dashedName": "legacy-front-end-certification",
-  "order": 1,
+  "order": 15,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certifications",
-  "superOrder": 12,
+  "superOrder": 0,
   "challengeOrder": [
     [
       "561add10cb82ac38a17513be",
