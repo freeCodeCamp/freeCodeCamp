@@ -32,20 +32,20 @@ If you are only making instructional fixes such as a typo, grammar fixes, or sim
 - Make a PR
 
 ### Testing changes on `main`
-If you want to test your changes to `main` after using the above instructions, follow these instuction:
+If you want to test your changes to `main` after using the above instructions, follow these instuctions:
 
 - Following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
-- Start the tutorial with your new changes by using the `tutorial.json` file on your new branch. You could also select the `File` option in CodeRoad and find the `tutorial.json` file locally (make sure you're still on the branch with the changes).
+- Start the tutorial using the `tutorial.json` file on the new branch
 
 ### Reviewing PR's to `main`
-If reviewing a PR that only changes `main` with instructional or grammar changes as described in the above instructions, the changes in `TUTORIAL.md` should match the changes in `tutorial.json`. The `tutorial.json` file should not have changes to commit hashes, or step/level id's. Startup or level commands, or file watchers likely should not be changed either. There is exeptions to those if there's an issue, but they should be treated with more caution.
+If reviewing a PR that only changes `main` with instructional or grammar changes as described above, the changes in `TUTORIAL.md` should match the changes in `tutorial.json`. The `tutorial.json` file should not have changes to commit hashes, or step/level id's. Startup or level commands, or file watchers likely should not be changed either. There is exeptions to those if there's an issue, but they should be treated with more caution.
 
 ### Working on version branch
 > [!WARNING]
 >
 > Reminder. Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
 
-There's no easy way to see exactly what changed between version branches since the git history will be rewritten. Accepting new branches to use will need to be done with careful consideration and testing. Follow these instructions to create a new version:
+There's no easy way to see exactly what changed between version branches since the git history will be rewritten. Accepting new version branches to use will need to be done with careful consideration and testing. Follow these instructions to create a new version:
 
 - Checkout the **latest** version branch with `git checkout -b vX.X.X upstream/vX.X.X`
 - Create a new branch off of that, incrementing the version, with `git checkout -b vX.X.Y`
@@ -58,7 +58,7 @@ There's no easy way to see exactly what changed between version branches since t
 - Run `coderoad build` to create a new `tutorial.json` file
 - Add and commit the file
 - Push the changes to your fork
-- Test your changes following the instructions below. Make any additional changes or, if you are satisfied, follow the rest of the instructions
+- Test your changes following the instructions below. Make any additional changes and commit them as you just did, or, if you are satisfied, follow the rest of the instructions
 - Make a PR to `main` using your new `feat/version-X.X.Y` branch. Give it a title of `version X.X.Y ready for review`. This will not be merged, it is just to let reviewers know that there is a new version ready
 - Leave it here for reviewers
 
@@ -91,7 +91,7 @@ If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG`
 - Finally, if any PR's for this version exist, close them
 
 ### How to revert to a previous version
-- Create a new branch off the latest main with `git checkout -b revert/to-vX.X.X`
+- Create a new branch off the latest main with `git checkout -b revert/to-version-X.X.X`
 - Revert all commits on this branch until one commit before the version after you want to rever to. For example, you may have commits that look like this:
 ```
 fix: typo
@@ -100,4 +100,4 @@ fix: typo
 release: version 1.0.0
 ```
 If you want to revert to v1.0.0, revert all the commits from `release: version 1.0.1` and after
-- Create a PR
+- Create a PR. Give it a title of `revert: to version X.X.X`
