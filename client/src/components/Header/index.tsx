@@ -44,6 +44,12 @@ export class Header extends React.Component<
       this.state.displayMenu &&
       this.menuButtonRef.current &&
       !this.menuButtonRef.current.contains(event.target) &&
+      // here we are making this check
+      // to know if the user is using the search bar or not
+      // and if he does we won't invoke the function
+      // becasue if we don't do this check
+      // clicking on the search bar will close the menu bar in small screens
+      // including the search bar itself as it was moved to the menu bar in small screens
       this.searchBarRef.current &&
       !this.searchBarRef.current.contains(event.target)
     ) {
