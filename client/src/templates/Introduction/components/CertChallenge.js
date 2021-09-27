@@ -71,7 +71,7 @@ const CertChallenge = ({
   title,
   fetchState,
   isSignedIn,
-  user: { isHonest, username }
+  user: { isHonest, username, name }
 }) => {
   const [canClaimCert, setCanClaimCert] = useState(false);
   const [certVerificationMessage, setCertVerificationMessage] = useState('');
@@ -120,6 +120,12 @@ const CertChallenge = ({
           certSlugTypeMap[cert.certSlug] === superBlockCertTypeMap[superBlock]
       )?.show ?? false
     );
+
+    if (!name) {
+      steps.isNameSet = false;
+    } else {
+      steps.isNameSet = true;
+    }
 
     const projectsCompleted =
       canClaimCert || certVerificationMessage === 'projects-completed';

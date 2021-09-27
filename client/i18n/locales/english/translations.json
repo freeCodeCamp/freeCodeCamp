@@ -571,7 +571,8 @@
     "intro": "Complete the following steps to claim and view your {{i18nCertText}}",
     "complete-project": "Complete {{i18nCertText}} Projects",
     "accept-honesty": "Accept our Academic Honesty Policy",
-    "set-name": "Set your name, and make it public",
+    "set-name-public": "Set your name settings to public",
+    "set-name": "Set your full name in account settings",
     "set-certs-public": "Set your certification settings to public",
     "set-profile-public": "Set your profile settings to public",
     "set-claim": "Claim and view your certification"
