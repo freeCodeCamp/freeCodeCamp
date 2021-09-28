@@ -8,7 +8,7 @@ dashedName: euler-method
 
 # --description--
 
-O método de Euler aproxima numericamente as soluções de equações diferenciais normais de primeira ordem (ODEs) com um dado valor inicial. É um método explícito para resolver problemas de valor inicial (IVPs), conforme descrito na [página da Wikipédia](https://en.wikipedia.org/wiki/Euler method "wp: Euler method").
+O método de Euler aproxima numericamente as soluções de equações diferenciais normais de primeira ordem (ODEs) com um dado valor inicial. É um método explícito para resolver problemas de valor inicial (IVPs), conforme descrito na [neste artigo](https://www.freecodecamp.org/news/eulers-method-explained-with-examples/ "news: Euler's Method Explained with Examples").
 
 O ODE deve ser fornecido da seguinte forma:
 

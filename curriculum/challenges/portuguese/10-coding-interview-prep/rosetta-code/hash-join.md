@@ -8,7 +8,7 @@ dashedName: hash-join
 
 # --description--
 
-Uma [inner join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join "wp: Join\_(SQL)#Inner_join") (união interna) é uma operação que combina duas tabelas de dados em uma tabela, com base em valores de coluna correspondentes. A maneira mais simples de implementar essa operação é o algoritmo de [união de laços aninhados](https://en.wikipedia.org/wiki/Nested loop join "wp: Nested loop join"), mas uma alternativa mais escalável é o algoritmo de [união de hashes](https://en.wikipedia.org/wiki/hash join "wp: hash join").
+Uma [inner join](https://www.freecodecamp.org/news/sql-join-types-inner-join-vs-outer-join-example/#how-to-use-an-inner-join-in-sql "news: SQL Join Types – Inner Join VS Outer Join Example#How to Use an INNER JOIN in SQL") (união interna) é uma operação que combina duas tabelas de dados em uma tabela, com base em valores de coluna correspondentes. A maneira mais simples de implementar essa operação é o algoritmo de [união de laços aninhados](https://en.wikipedia.org/wiki/Nested loop join "wp: Nested loop join"), mas uma alternativa mais escalável é o algoritmo de [união de hashes](https://en.wikipedia.org/wiki/hash join "wp: hash join").
 
 O algoritmo de união de hashes (ou "hash join") consiste em duas etapas:
 
