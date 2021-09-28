@@ -72,7 +72,6 @@ ${stepDescription}
 Test 1
 
 ${getCodeBlock('js')}
-
 # --seed--` +
     seedChallengeSection +
     seedHeadSection +
