@@ -81,6 +81,7 @@ describe('Responsive Web Design Superblock', () => {
       cy.contains('Ask me later').click();
       cy.get('.donation-modal').should('not.exist');
       // directed to claim-cert-block section
+      cy.contains('Claim Your Certification').should('be.visible');
       cy.url().should('include', '#claim-cert-block');
       cy.contains('Claim Certification').should('not.be.disabled').click();
       cy.contains('Show Certification').click();

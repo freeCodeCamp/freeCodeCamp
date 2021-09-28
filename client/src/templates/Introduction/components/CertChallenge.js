@@ -151,26 +151,28 @@ const CertChallenge = ({
       {userLoaded &&
         isSignedIn &&
         (!isCertified || (!canViewCert && userChecked)) && (
-          <CertificationCard
-            i18nCertText={i18nCertText}
-            isProjectsCompleted={isProjectsCompleted}
-            steps={steps}
-            stepState={stepState}
-            superBlock={superBlock}
-          />
+          <>
+            <CertificationCard
+              i18nCertText={i18nCertText}
+              isProjectsCompleted={isProjectsCompleted}
+              steps={steps}
+              stepState={stepState}
+              superBlock={superBlock}
+            />
+            <Button
+              block={true}
+              bsStyle='primary'
+              className='cert-btn'
+              disabled={!canClaim.status || (isCertified && !canViewCert)}
+              href={certLocation}
+              onClick={createClickHandler(certSlug)}
+            >
+              {isCertified && userLoaded
+                ? t('buttons.show-cert')
+                : t('buttons.claim-cert')}
+            </Button>
+          </>
         )}
-      <Button
-        block={true}
-        bsStyle='primary'
-        className='cert-btn'
-        disabled={!canClaim.status || (isCertified && !canViewCert)}
-        href={certLocation}
-        onClick={createClickHandler(certSlug)}
-      >
-        {isCertified && userLoaded
-          ? t('buttons.show-cert')
-          : t('buttons.claim-cert')}
-      </Button>
     </div>
   );
 };
