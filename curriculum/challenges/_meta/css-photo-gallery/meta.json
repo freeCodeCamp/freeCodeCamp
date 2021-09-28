@@ -1,0 +1,13 @@
+{
+  "name": "CSS Photo Gallery",
+  "isUpcomingChange": true,
+  "dashedName": "css-photo-gallery",
+  "order": 20,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [["61537485c4f2a624f18d7794", "Part 1"]]
+}
