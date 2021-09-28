@@ -23,7 +23,7 @@ Follow these instructions if you are only making changes to `main`. You never ne
 >
 > These changes will use the existing version branch. If they are substantial, feel free to add them to `CHANGELOG.md`. Most of the time, a good commit message should work
 
-If you are only making instructional fixes such as a typo, grammar fixes, or similar; you don't have to test your changes. Follow these instrustions to make a PR:
+If you are only making instructional fixes such as a typo, grammar fixes, or similar; you don't have to test your changes. Follow these instructions to make a PR:
 
 - Create a new branch off of `main`
 - Make **and commit** your changes. Reminder, you don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
