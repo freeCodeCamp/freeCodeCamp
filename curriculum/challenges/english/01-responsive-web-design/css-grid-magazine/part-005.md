@@ -7,7 +7,7 @@ dashedName: part-5
 
 # --description--
 
-Your image currently takes up a lot of space. In order to better see what you are working on, add a `width` attribute to the `img` element, with a value of `400`.
+Your image currently takes up a lot of space. To better see what you are working on, add a `width` attribute to the `img` element, with a value of `400`.
 
 You will remove this later on when you have worked on the CSS.
 

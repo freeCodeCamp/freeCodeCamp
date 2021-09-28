@@ -7,7 +7,7 @@ dashedName: part-41
 
 # --description--
 
-Before you write the CSS for your `.hero-img`, you should remove the temporary `width` attribute.
+You should remove the temporary `width` attribute before writing the CSS for your `.hero-img`.
 
 # --hints--
 

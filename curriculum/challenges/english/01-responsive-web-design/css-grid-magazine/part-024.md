@@ -7,7 +7,7 @@ dashedName: part-24
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` psuedo-selectors. Set the `padding` property and `margin` property both to `0`.
+To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` pseudo-selectors. Set the `padding` property and `margin` property both to `0`.
 
 # --hints--
 

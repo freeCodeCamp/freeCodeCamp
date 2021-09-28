@@ -9,7 +9,7 @@ dashedName: part-1
 
 Begin with your standard HTML boilerplate. Add a `DOCTYPE` declaration, an `html` element, a `head` element, and a `body` element.
 
-Within the `head` element, add a `meta` tag with the appropriate `charset`, and a `meta` tag for mobile responsiveness.
+Add a `meta` tag with the appropriate `charset` and a `meta` tag for mobile responsiveness within the `head` element.
 
 # --hints--
 

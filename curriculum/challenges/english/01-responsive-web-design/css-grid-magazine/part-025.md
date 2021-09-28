@@ -11,7 +11,7 @@ Create an `html` selector and give it a `font-size` property set to `62.5%`. Thi
 
 This will make it easier for you to work with `rem` units later, as `2rem` would be 20px.
 
-Also set the `box-sizing` property to `border-box`.
+Also, set the `box-sizing` property to `border-box`.
 
 # --hints--
 
