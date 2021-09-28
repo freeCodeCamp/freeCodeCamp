@@ -32,7 +32,7 @@ If you are only making instructional fixes such as a typo, grammar fixes, or sim
 - Make a PR
 
 ### Testing changes on `main`
-If you want to test your changes to `main` after using the above instructions, follow these instuctions:
+If you want to test your changes to `main` after using the above instructions, follow these instructions:
 
 - Following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
 - Start the tutorial using the `tutorial.json` file on the new branch
