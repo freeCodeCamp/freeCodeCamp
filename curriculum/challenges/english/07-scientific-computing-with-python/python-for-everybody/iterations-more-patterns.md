@@ -4,9 +4,9 @@ title: 'Iterations: More Patterns'
 challengeType: 11
 videoId: 9Wtqo6vha1M
 bilibiliIds:
-  aid: 334491369
-  bvid: BV1tw411R7Mm
-  cid: 376530765
+  aid: 674492981
+  bvid: BV1hU4y1H7tF
+  cid: 376531204
 dashedName: iterations-more-patterns
 ---
 
