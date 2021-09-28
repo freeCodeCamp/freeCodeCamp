@@ -85,7 +85,7 @@ This exercise is designed to illustrate the difference between how `var` and `le
 `var` should not exist in code.
 
 ```js
-(getUserInput) => assert(!code.match(/var/g));
+assert(!code.match(/var/g));
 ```
 
 The variable `i` declared in the `if` statement should equal the string `block scope`.
