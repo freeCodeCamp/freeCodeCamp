@@ -26,3 +26,7 @@ Test 1
 
 --fcc-editable-region--
 ```
+
+```css
+
+```

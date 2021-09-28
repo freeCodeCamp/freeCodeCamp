@@ -1,0 +1,47 @@
+---
+id: 61537c9eecea6a335db6da79
+title: Part 5
+challengeType: 0
+dashedName: part-5
+---
+
+# --description--
+
+Below your `.header` element, create a new `div` element with the `id` set to `gallery`.
+
+In that `#gallery` element, create ten `img` elements.
+
+# --hints--
+
+Test 1
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+--fcc-editable-region--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flex Photo Gallery</title>
+    <link rel="stylesheet" href="./css/style50.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>CSS FLEXBOX PHOTO GALLERY</h1>
+    </div>
+  </body>
+</html>
+--fcc-editable-region--
+```
+
+```css
+
+```
