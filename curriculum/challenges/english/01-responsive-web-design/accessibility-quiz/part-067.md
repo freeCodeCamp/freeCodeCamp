@@ -12,7 +12,7 @@ Finally, the navigation accessibility can be improved with providing keyboard sh
 The `accesskey` attribute accepts a space-separated list of access keys. For example:
 
 ```html
-<button type="submit" access-key="s">Submit</button>
+<button type="submit" accesskey="s">Submit</button>
 ```
 
 Give each of the navigation links a single-letter access key.
@@ -26,19 +26,19 @@ Well done. You have completed the _Accessibility Quiz_ practice project.
 You should give the first `a` element a single-letter `accesskey`.
 
 ```js
-assert.equal(document.querySelectorAll('a')?.[0]?.getAttribute('accessKey')?.length, 1);
+assert.equal(document.querySelectorAll('a')?.[0]?.getAttribute('accesskey')?.length, 1);
 ```
 
 You should give the second `a` element a single-letter `accesskey`.
 
 ```js
-assert.equal(document.querySelectorAll('a')?.[1]?.getAttribute('accessKey')?.length, 1);
+assert.equal(document.querySelectorAll('a')?.[1]?.getAttribute('accesskey')?.length, 1);
 ```
 
 You should give the third `a` element a single-letter `accesskey`.
 
 ```js
-assert.equal(document.querySelectorAll('a')?.[2]?.getAttribute('accessKey')?.length, 1);
+assert.equal(document.querySelectorAll('a')?.[2]?.getAttribute('accesskey')?.length, 1);
 ```
 
 # --seed--
@@ -164,7 +164,7 @@ assert.equal(document.querySelectorAll('a')?.[2]?.getAttribute('accessKey')?.len
     <footer>
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
-        San Fransisco<br />
+        San Francisco<br />
         California<br />
         USA
       </address>
@@ -485,7 +485,7 @@ Who is flexbox...
 	<footer>
 		<address>
 			<a href="https://www.freecodecamp.org">freeCodeCamp</a><br />
-			San Fransisco<br />
+			San Francisco<br />
 			California<br />
 			USA
 		</address>

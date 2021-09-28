@@ -165,7 +165,7 @@ assert(gs('.info input').isDeclaredAfter('.info label, .info input') || gs('.inf
     <footer>
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
-        San Fransisco<br />
+        San Francisco<br />
         California<br />
         USA
       </address>

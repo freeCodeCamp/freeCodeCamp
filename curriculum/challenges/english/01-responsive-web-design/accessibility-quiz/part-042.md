@@ -11,7 +11,7 @@ Within the `address` element, add the following:
 
 ```html
 freeCodeCamp<br />
-San Fransisco<br />
+San Francisco<br />
 California<br />
 USA
 ```
@@ -23,7 +23,7 @@ You can visit, but you might not find anything...
 You should add the above text including the `<br />` tags to the `address` element.
 
 ```js
-assert.equal(document.querySelector('address')?.innerText, 'freeCodeCamp\nSan Fransisco\nCalifornia\nUSA');
+assert.equal(document.querySelector('address')?.innerText, 'freeCodeCamp\nSan Francisco\nCalifornia\nUSA');
 ```
 
 # --seed--

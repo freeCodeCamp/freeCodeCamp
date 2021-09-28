@@ -190,7 +190,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('button')?.border, '3px so
     <footer>
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
-        San Fransisco<br />
+        San Francisco<br />
         California<br />
         USA
       </address>

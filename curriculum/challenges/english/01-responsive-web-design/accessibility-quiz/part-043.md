@@ -154,7 +154,7 @@ assert.equal(document.querySelector('address')?.innerHTML?.match(/freeCodeCamp/g
     <footer>
       <address>
         freeCodeCamp<br />
-        San Fransisco<br />
+        San Francisco<br />
         California<br />
         USA
       </address>

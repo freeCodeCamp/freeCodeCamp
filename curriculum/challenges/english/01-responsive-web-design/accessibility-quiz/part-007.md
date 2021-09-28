@@ -54,7 +54,7 @@ assert.equal(document.querySelector('img')?.id, 'logo');
 You should give the `h1` element the text `HTML/CSS Quiz`.
 
 ```js
-assert.equal(document.querySelector('h1')?.textContent?.toLowerCase(), 'html/css quiz');
+assert.include(document.querySelector('h1')?.innerText?.toLowerCase(), 'html/css quiz');
 ```
 
 # --seed--

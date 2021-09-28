@@ -171,7 +171,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('nav > ul')?.height, '100%
     <footer>
       <address>
         <a href="https://freecodecamp.org">freeCodeCamp</a><br />
-        San Fransisco<br />
+        San Francisco<br />
         California<br />
         USA
       </address>
