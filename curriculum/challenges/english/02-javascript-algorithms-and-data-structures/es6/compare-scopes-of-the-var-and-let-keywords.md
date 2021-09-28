@@ -91,8 +91,7 @@ This exercise is designed to illustrate the difference between how `var` and `le
 The variable `i` declared in the `if` statement should equal the string `block scope`.
 
 ```js
-  assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g)
-  );
+assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
 ```
 
 `checkScope()` should return the string `function scope`
