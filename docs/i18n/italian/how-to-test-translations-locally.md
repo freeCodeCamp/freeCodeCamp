@@ -126,12 +126,66 @@ CLIENT_LOCALE="dothraki"
 CURRICULUM_LOCALE="dothraki"
 ```
 
-## Caricare le traduzioni
+## Enabling Localized Videos
 
-Poiché la lingua non è ancora stata approvata per la produzione, i nostri script ancora non scaricheranno automaticamente le traduzioni. Solo lo staff ha accesso al download diretto delle traduzioni - sei il benvenuto a rivolgerti a noi attraverso la [chat room per i contributori](https://chat.freecodecamp.org/channel/contributors), o puoi tradurre i file markdown inglesi per le esigenze di test.
+For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
 
-Una volta che avrai i file, li dovrai mettere nelle cartelle giuste. Per le sfide del curriculum, dovresti mettere le cartelle dei certificati (ad esempio `01-responsive-web-design`) nella cartella `curriculum/challenges/{lang}`. Per la nostra traduzione in Dothraki, questo sarebbe `curriculum/challenges/dothraki`. I file `.json` con le traduzioni del client vanno nella cartella `client/i18n/locales/{lang}`.
+```tsx
+  query VideoChallenge($slug: String!) {
+    challengeNode(fields: { slug: { eq: $slug } }) {
+      videoId
+      videoLocaleIds {
+        espanol
+        italian
+        portuguese
+        dothraki
+      }
+      ...
+```
 
-Una volta che questi saranno in posizione, dovresti essere in grado di eseguire `npm run develop` per vedere la versione tradotta di freeCodeCamp.
+Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.js` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`.  The frontmatter should then look like this:
+
+```yml
+videoLocaleIds:
+  espanol: 3muQV-Im3Z0
+  italian: hiRTRAqNlpE
+  portuguese: AelGAcoMXbI
+  dothraki: new-id-here
+dashedName: introduction-why-program
+---
+```
+
+Update the `VideoLocaleIds` interface in `client/src/redux/prop-types` to include the new language.
+
+```ts
+export interface VideoLocaleIds {
+  espanol?: string;
+  italian?: string;
+  portuguese?: string;
+  dothraki?: string;
+}
+```
+
+And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
+
+```js
+videoLocaleIds: Joi.when('challengeType', {
+  is: challengeTypes.video,
+  then: Joi.object().keys({
+    espanol: Joi.string(),
+    italian: Joi.string(),
+    portuguese: Joi.string(),
+    dothraki: Joi.string()
+  })
+}),
+```
+
+## Loading Translations
+
+Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors), or you can translate the English markdown files locally for testing purposes.
+
+Once you have the files, you will need to place them in the correct directory. For the curriculum challenges, you should place the certification folders (i.e. `01-responsive-web-design`) within the `curriculum/challenges/{lang}` directory. For our Dothraki translations, this would be `curriculum/challenges/dothraki`. The client translation `.json` files will go in the `client/i18n/locales/{lang}` directory.
+
+Once these are in place, you should be able to run `npm run develop` to view your translated version of freeCodeCamp.
 
 > [!ATTENTION] Anche se puoi farei delle traduzioni localmente per i test, ricordiamo che le traduzioni _non_ devono essere inviate attraverso GitHub ma solo tramite Crowdin. Assicurati di resettare il tuo codebase locale dopo che avrai finito con i test.

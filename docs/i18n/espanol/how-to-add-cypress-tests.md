@@ -12,7 +12,7 @@ Para aprender como escribir pruebas de Cypress, o especificaciones, observa la [
 
 ## Como ejecutar pruebas
 
-> [!NOTE] If using GitPod, please see [Cypress-GitPod Setup](/how-to-add-cypress-tests#cypress-gitpod-setup)
+> [!NOTE] Si utilizas GitPod, por favor mira la [Configuración de Cypress-GitPod ](/how-to-add-cypress-tests#cypress-gitpod-setup)
 
 ### 1. Asegúrate de que MongoDB y la aplicación de cliente se estén ejecutando
 

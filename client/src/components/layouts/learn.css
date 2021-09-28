@@ -1,4 +1,6 @@
 #learn-app-wrapper .desktop-layout {
+  display: flex;
+  flex-direction: column;
   height: calc(
     100vh - var(--header-height, 0px) - var(--flash-message-height, 0px)
   );
