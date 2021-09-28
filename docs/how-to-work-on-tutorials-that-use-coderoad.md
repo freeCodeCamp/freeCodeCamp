@@ -53,7 +53,7 @@ There's no easy way to see exactly what changed between version branches since t
 - Push the new branch to your fork with `git push -u origin vX.X.Y`
 - Checkout the `main` branch
 - Create a new branch off `main`. e.g. `feat/version-X.X.Y`
-- Change the `uri` in `coderoad.yaml` to your fork of the repo. This is so you and reviewers can test it before pushing to the freeCodeCamp repo. Change the version to the new branch in the two spots of that file. Add your changes for the new version to `CHANGELOG.md`. Make any other changes you need.
+- Change the `uri` in `coderoad.yaml` to your fork of the repo. This is so you and reviewers can test it before pushing it to the freeCodeCamp repo. Change the version to the new branch in the two spots of that file. Add your changes for the new version to `CHANGELOG.md`. Make any other changes you need.
 - Commit your changes with the message `feat: release version X.X.Y - <optional description>`
 - Run `coderoad build` to create a new `tutorial.json` file
 - Add and commit the file
