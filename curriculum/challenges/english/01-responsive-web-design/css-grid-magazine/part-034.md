@@ -9,7 +9,7 @@ dashedName: part-34
 
 Your magazine will have three primary sections. You already set the overall layout in the `main` rule, but you can adjust the placement in the child rules.
 
-One option to do so is the `grid-column` property, which is shorthand for `grid-column-start` and `grid-column-end`. The `grid-column` property tells the grid item which grid line to start and end at.
+One option is the `grid-column` property, which is shorthand for `grid-column-start` and `grid-column-end`. The `grid-column` property tells the grid item which grid line to start and end at.
 
 Create a `.heading` rule and set the `grid-column` property to `2 / 3`. This will tell the `.heading` element to start at grid line 2 and end at grid line 3.
 
