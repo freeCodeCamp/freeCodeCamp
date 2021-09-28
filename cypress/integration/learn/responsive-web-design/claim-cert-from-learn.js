@@ -49,6 +49,7 @@ describe('Responsive Web Design Superblock', () => {
   });
   describe('After submitting all 5 projects', () => {
     before(() => {
+      cy.exec('npm run seed');
       cy.login();
       cy.toggleAll();
       const { superBlock, block, challenges } = projects;
@@ -81,8 +82,11 @@ describe('Responsive Web Design Superblock', () => {
       cy.contains('Ask me later').click();
       cy.get('.donation-modal').should('not.exist');
       // directed to claim-cert-block section
-      cy.contains('Claim Your Certification').should('be.visible');
       cy.url().should('include', '#claim-cert-block');
+      // make sure that the window has not snapped to the top (a weird bug that
+      // we never figured out and so could randomly reappear)
+      cy.window().its('scrollY').should('not.equal', 0);
+      cy.contains('Claim Your Certification');
       cy.contains('Claim Certification').should('not.be.disabled').click();
       cy.contains('Show Certification').click();
       cy.location().should(loc => {
