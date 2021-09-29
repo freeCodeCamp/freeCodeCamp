@@ -67,7 +67,7 @@ There's no easy way to see exactly what changed between version branches since t
 - Start the tutorial using the `tutorial.json` file on whatever fork the changes are on. Making sure to use the file on the `feat: version-X.X.Y` branch and not the `main` branch
 
 ### Pushing a new version
-Before pushing a new version, view the new `feat/version-vX.X.Y` (will be merged to `main`) branch on the user's fork and make sure there are additions to the `CHANGELOG.md` file that include the new changes, and the version in the two spots of `coderoad.yaml` matches the new version branch.
+Before pushing a new version, view the new `feat/version-vX.X.Y` (will be merged to `main`) branch on the user's fork. Make sure there are additions to the `CHANGELOG.md` file that include the new changes, and the version in the two spots of `coderoad.yaml` matches the new version branch.
 
 If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG` and `coderoad.yaml` files, have tested the changes using the instructions above, and want to push a new version of a tutorial:
 
