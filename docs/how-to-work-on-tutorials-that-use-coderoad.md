@@ -73,7 +73,7 @@ If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG`
 
 > [!WARNING]
 >
-> Reminder. Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+> Reminder: Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
 
 - If you don't have a remote to where the new changes exist, create a remote to the user's fork with `git remote add <users_fork>`
 - Delete any **local** branches that share a name with the new branches. Likely named either `vX.X.Y` or `feat/version-X.X.Y`
