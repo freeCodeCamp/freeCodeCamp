@@ -11,10 +11,16 @@ Normalize your box model by creating a `*` selector and setting the `box-sizing`
 
 # --hints--
 
-Test 1
+You should have a `*` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('*'));
+```
 
+Your `*` selector should have a `box-sizing` property set to `border-box`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('*')?.boxSizing === 'border-box');
 ```
 
 # --seed--

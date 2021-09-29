@@ -11,10 +11,31 @@ Within your `head` element, add a `title` element with the text set to `CSS Flex
 
 # --hints--
 
-Test 1
+Your `link` element should have an `href` attribute with the value `styles.css`.
 
 ```js
+assert.match(code, /<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/)
+```
 
+Your code should have a `title` element.
+
+```js
+const title = document.querySelector('title');
+assert.exists(title);
+```
+
+Your project should have a title of `CSS Grid Magazine`.
+
+```js
+const title = document.querySelector('title');
+assert.equal(title?.text?.trim()?.toLowerCase(), 'css grid magazine')
+```
+
+Remember, the casing and spelling matter for the title.
+
+```js
+const title = document.querySelector('title');
+assert.equal(title?.text?.trim(), 'CSS Grid Magazine');
 ```
 
 # --seed--

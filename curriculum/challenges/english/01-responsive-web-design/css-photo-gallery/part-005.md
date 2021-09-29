@@ -13,10 +13,28 @@ In that `#gallery` element, create ten `img` elements.
 
 # --hints--
 
-Test 1
+You should create a second `div` element in your `body` element.
 
 ```js
+assert(document.querySelector('body')?.querySelectorAll('div')?.length === 2);
+```
 
+Your new `div` element should come after your `.header` element.
+
+```js
+assert(document.querySelector('body')?.querySelectorAll('div')?.[0]?.classList?.contains('header'));
+```
+
+Your new `div` element should have an `id` set to `gallery`.
+
+```js
+assert(document.querySelector('body')?.querySelectorAll('div')?.[1]?.id === 'gallery');
+```
+
+Your `#gallery` element should have ten `img` elements.
+
+```js
+assert(document.querySelector('#gallery')?.querySelectorAll('img')?.length === 10);
 ```
 
 # --seed--

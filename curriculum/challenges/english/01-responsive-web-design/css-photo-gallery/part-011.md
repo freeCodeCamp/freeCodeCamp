@@ -13,10 +13,10 @@ Give your `#gallery` selector a `flex-direction` property set to `row`.
 
 # --hints--
 
-Test 1
+Your `#gallery` selector should have a `flex-direction` property set to `row`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.flexDirection === 'row');
 ```
 
 # --seed--

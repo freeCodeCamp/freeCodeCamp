@@ -13,10 +13,28 @@ Inside the `.header` element nest an `h1` element with the text `CSS FLEXBOX PHO
 
 # --hints--
 
-Test 1
+You should have a `div` element within your `body` element.
 
 ```js
+assert.exists(document.querySelector('body')?.querySelector('div'))
+```
 
+Your `div` element should have the `class` set to `header`.
+
+```js
+assert(document?.querySelector('body')?.querySelector('div')?.classList?.contains('header'))
+```
+
+Your `.header` element should have an `h1` element.
+
+```js
+assert.exists(document.querySelector('.header')?.querySelector('h1'));
+```
+
+Your `h1` should have the text `CSS FLEXBOX PHOTO GALLERY`. Remember that casing matters.
+
+```js
+assert(document?.querySelector('.header')?.querySelector('h1')?.innerText === 'CSS FLEXBOX PHOTO GALLERY')
 ```
 
 # --seed--

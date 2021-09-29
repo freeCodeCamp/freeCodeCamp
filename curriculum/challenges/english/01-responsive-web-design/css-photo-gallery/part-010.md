@@ -13,10 +13,16 @@ To set an element to use Flexbox, you give it a `display` property set to `flex`
 
 # --hints--
 
-Test 1
+You should have a `#gallery` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#gallery'));
+```
 
+Your `#gallery` selector should have a `display` property set to `flex`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.display === 'flex');
 ```
 
 # --seed--

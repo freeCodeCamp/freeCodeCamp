@@ -9,14 +9,14 @@ dashedName: part-17
 
 Notice how some of your images have become distorted. This is because the images have different aspect ratios. Rather than setting each aspect ratio individually, you can use the `object-fit` property to determine how images should behave.
 
-Give your `#gallery img` selectors the `object-fit` property and set it to `cover`. This will tell the image to fill the `img` container while maintaining aspect ratio, resulting in cropping to fit.
+Give your `#gallery img` selector the `object-fit` property and set it to `cover`. This will tell the image to fill the `img` container while maintaining aspect ratio, resulting in cropping to fit.
 
 # --hints--
 
-Test 1
+Your `#gallery img` selector should have an `object-fit` property set to `cover`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.objectFit === 'cover');
 ```
 
 # --seed--

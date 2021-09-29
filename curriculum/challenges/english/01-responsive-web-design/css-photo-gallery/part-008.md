@@ -11,10 +11,22 @@ Remove the margin from your `body` element, set the font to `Arial`, and give it
 
 # --hints--
 
-Test 1
+You should have a `body` selector.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('body'))
+```
 
+Your `body` selector should have a `font-family` property set to `Arial`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily === 'Arial');
+```
+
+Your `body` selector should have a `background-color` property set to `#EBE7E7`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor === 'rgb(235, 231, 231)');
 ```
 
 # --seed--

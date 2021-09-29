@@ -13,10 +13,16 @@ Give your `#gallery img` selector a `margin-top` property of `8px` and a `paddin
 
 # --hints--
 
-Test 1
+Your `#gallery img` selector should have a `margin-top` property of `8px`.
 
 ```js
+assert(new __helpers.CSSHelper(document).getStyle('#gallery img')?.marginTop === '8px');
+```
 
+Your `#gallery img` selector should have a `padding` property of `0 4px`.
+
+```js
+assert(new __helpers.CSSHelper(document).getStyle('#gallery img')?.padding === '0px 4px');
 ```
 
 # --seed--

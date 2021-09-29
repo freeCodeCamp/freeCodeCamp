@@ -11,10 +11,10 @@ Smooth out your images a bit by giving the `#gallery img` selector a `border-rad
 
 # --hints--
 
-Test 1
+Your `#gallery img` selector should have a `border-radius` property set to `10px`:
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.borderRadius === '10px');
 ```
 
 # --seed--

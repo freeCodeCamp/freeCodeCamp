@@ -11,10 +11,28 @@ Align your `.header` text in the center, give it a padding of `32px` on all side
 
 # --hints--
 
-Test 1
+You should have a `.header` selector.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('.header'));
+```
 
+Your `.header` selector should have a `text-align` property set to `center`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.header')?.textAlign === 'center');
+```
+
+Your `.header` selector should have a `padding` property set to `32px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.header')?.padding === '32px');
+```
+
+Your `.header` selector should have a `background` property set to `#E0DDDD`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.header')?.background === 'rgb(224, 221, 221)');
 ```
 
 # --seed--

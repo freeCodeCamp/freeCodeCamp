@@ -13,10 +13,10 @@ To vertically center your images, give your `#gallery` selector an `align-items`
 
 # --hints--
 
-Test 1
+Your `#gallery` selector should have an `align-items` property set to `center`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.alignItems === 'center');
 ```
 
 # --seed--

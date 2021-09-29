@@ -13,10 +13,10 @@ Give the `#gallery` selector a `flex-wrap` property set to `wrap`.
 
 # --hints--
 
-Test 1
+Your `#gallery` selector should have a `flex-wrap` property set to `wrap`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.flexWrap === 'wrap');
 ```
 
 # --seed--

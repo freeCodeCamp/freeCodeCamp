@@ -13,10 +13,10 @@ Give your `#gallery` selector a `justify-content` property set to `center`.
 
 # --hints--
 
-Test 1
+Your `#gallery` selector should have a `justify-content` property set to `center`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.justifyContent === 'center');
 ```
 
 # --seed--

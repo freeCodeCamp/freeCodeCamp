@@ -11,10 +11,31 @@ Create a media query for screens smaller than `800px` in width. In that media qu
 
 # --hints--
 
-Test 1
+You should add a new `@media` query.
 
 ```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.length === 1);
+```
 
+Your new `@media` query should have a `max-width` of `600px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === '(max-width: 600px)');
+```
+
+Your `@media` query should have a `#gallery img` rule.
+
+```js
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 600px)');
+assert(rules?.find(rule => rule.selectorText === '#gallery img'));
+```
+
+Your `#gallery img` rule should have a `width` property set to `50%`.
+
+```js
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 600px)');
+const imgRule = rules?.find(rule => rule.selectorText === '#gallery img');
+assert(imgRule?.style.width === '50%');
 ```
 
 # --seed--

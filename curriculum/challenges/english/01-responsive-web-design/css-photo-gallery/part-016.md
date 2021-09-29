@@ -13,10 +13,22 @@ Also set the `height` property to `300px` to keep your images a uniform size.
 
 # --hints--
 
-Test 1
+You should have a `#gallery img` selector.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('#gallery img'))
+```
 
+Your `#gallery img` selector should have a `width` property set to `25%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.width === '25%')
+```
+
+Your `#gallery img` selector should have a `height` property set to `300px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.height === '300px');
 ```
 
 # --seed--

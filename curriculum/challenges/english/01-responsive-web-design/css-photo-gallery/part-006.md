@@ -13,10 +13,65 @@ So your first `img` element would use `1.jpg`, your second would use `2.jpg`, an
 
 # --hints--
 
-Test 1
+All ten of your `img` elements should have a `src` attribute.
 
 ```js
+const images = [...document.querySelectorAll('img')];
+assert(images.every(image => image.getAttribute('src')));
+```
 
+Your first `img` element should have the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg`.
+
+```js
+assert(document.querySelectorAll('img')?.[0]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg');
+```
+
+Your second `img` element should have the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg`.
+
+```js
+assert(document.querySelectorAll('img')?.[1]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg');
+```
+
+Your third `img` element should have the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg`.
+
+```js
+assert(document.querySelectorAll('img')?.[2]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg');
+```
+
+Your fourth `img` element should have the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg`.
+
+```js
+assert(document.querySelectorAll('img')?.[3]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg');
+```
+
+Your fifth `img` element should have the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg`.
+
+```js
+assert(document.querySelectorAll('img')?.[4]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg');
+```
+
+Your sixth `img` element should have the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg`.
+
+```js
+assert(document.querySelectorAll('img')?.[5]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg');
+```
+
+Your seventh `img` element should have the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg`.
+
+```js
+assert(document.querySelectorAll('img')?.[6]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg');
+```
+
+Your eighth `img` element should have the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg`.
+
+```js
+assert(document.querySelectorAll('img')?.[7]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg');
+```
+
+Your ninth `img` element should have the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg`.
+
+```js
+assert(document.querySelectorAll('img')?.[8]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg');
 ```
 
 # --seed--
