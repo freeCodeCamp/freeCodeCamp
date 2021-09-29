@@ -830,7 +830,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       options: {
         isWholeLine: true,
         linesDecorationsClassName: 'myLineDecoration',
-        className: 'do-not-edit',
         stickiness
       }
     };
@@ -848,7 +847,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       options: {
         isWholeLine: true,
         linesDecorationsClassName: 'myLineDecoration',
-        className: 'do-not-edit',
         stickiness
       }
     };
@@ -866,7 +864,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       options: {
         isWholeLine: true,
         linesDecorationsClassName: 'myEditableLineDecoration',
-        className: 'do-not-edit',
         stickiness
       }
     };
@@ -884,7 +881,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       options: {
         isWholeLine: true,
         linesDecorationsClassName: 'myEditableLineDecoration',
-        className: 'do-not-edit',
         stickiness
       }
     };
