@@ -91,7 +91,7 @@ If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG`
 - Finally, if any PR's for this version exists, close them
 
 ### How to revert to a previous version
-- Create a new branch off the latest main with `git checkout -b revert/to-version-X.X.X`
+- Create a new branch off the latest `main` with `git checkout -b revert/to-version-X.X.X`
 - Revert all commits on this branch until one commit before the version after you want to rever to. For example, you may have commits that look like this:
 ```
 fix: typo
