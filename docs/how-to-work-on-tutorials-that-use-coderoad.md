@@ -18,7 +18,9 @@ In order to make changes to commits on a version branch, you would need to rebas
 ## How to contribute
 
 ### Prerequisites
-Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`. I've been having trouble with the latest version. If `coderoad --version` doesn't work after installing, downgrade to `0.7.0` with `npm install -g @coderoad/cli@0.7.0`
+Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`.
+
+There have been some issues with the latest version. If `coderoad --version` doesn't work after installing, downgrade to `0.7.0` with `npm install -g @coderoad/cli@0.7.0`.
 
 ### Working on `main`
 This set of instructions is for PR's that will only make changes on `main` to **existing lessons**. That mainly consists of typo, grammar, hint, and instuctional changes or fixes in the `TUTORIAL.md` file. For everything else, including adding or deleting lessons, follow the [working on a version branch instructions](#working-on-version-branch). You will not need to create a new version branch for this, you can create a PR following the instructions below.
