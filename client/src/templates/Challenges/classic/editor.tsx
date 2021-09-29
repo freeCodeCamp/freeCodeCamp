@@ -262,21 +262,17 @@ const Editor = (props: EditorProps): JSX.Element => {
         modeMap[challengeFile?.ext ?? 'html']
       );
     data.model = model;
-    const editableRegion = getEditableRegionFromRedux();
 
-    if (editableRegion.length === 2) {
-      initializeRegions(editableRegion);
-      addContentChangeListener();
-    }
     // TODO: do we need to return this?
     return { model };
   };
 
   // Updates the model if the contents has changed. This is only necessary for
   // changes coming from outside the editor (such as code resets).
+  // TODO: is this even necessary?
   const updateEditorValues = () => {
     const { challengeFiles, fileKey } = props;
-    const { model } = dataRef.current[fileKey];
+    const { model } = data;
 
     const newContents = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
@@ -293,6 +289,13 @@ const Editor = (props: EditorProps): JSX.Element => {
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
     data.editor = editor;
+
+    const editableRegionBoundaries = getEditableRegionFromRedux();
+
+    if (editableRegionBoundaries.length === 2) {
+      initializeRegions(editableRegionBoundaries);
+      addContentChangeListener();
+    }
 
     const storedAccessibilityMode = () => {
       const accessibility = store.get('accessibilityMode') as boolean;
@@ -371,9 +374,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
 
-    const editableBoundaries = getEditableRegionFromRedux();
-
-    if (editableBoundaries.length === 2) {
+    if (editableRegionBoundaries.length === 2) {
       const createWidget = (
         id: string,
         domNode: HTMLDivElement,
@@ -427,7 +428,254 @@ const Editor = (props: EditorProps): JSX.Element => {
         editor.layoutOverlayWidget(descriptionWidget);
         editor.layoutOverlayWidget(outputWidget);
       });
-      showEditableRegion(editableBoundaries);
+      showEditableRegion();
+    }
+
+    function initializeRegions(editableRegion: number[]) {
+      const { model } = data;
+      if (!model) return;
+      const forbiddenRegions: [number, number][] = [
+        [0, editableRegion[0]],
+        [editableRegion[1], model.getLineCount()]
+      ];
+
+      const editableRange = positionsToRange(model, [
+        editableRegion[0] + 1,
+        editableRegion[1] - 1
+      ]);
+
+      data.insideEditDecId = highlightEditableLines(
+        monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
+        model,
+        editableRange
+      )[0];
+
+      // if the forbidden range includes the top of the editor
+      // we simply don't add those decorations
+      if (forbiddenRegions[0][1] > 0) {
+        const forbiddenRange = positionsToRange(model, forbiddenRegions[0]);
+        // the first range should expand at the top
+        // TODO: Unsure what this should be - returns an array, so I added [0] @ojeytonwilliams
+        data.startEditDecId = highlightLines(
+          monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+          model,
+          forbiddenRange
+        )[0];
+
+        highlightText(
+          monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+          model,
+          forbiddenRange
+        );
+      }
+
+      const forbiddenRange = positionsToRange(model, forbiddenRegions[1]);
+      // TODO: handle the case the region covers the bottom of the editor
+      // the second range should expand at the bottom
+      data.endEditDecId = highlightLines(
+        monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
+        model,
+        forbiddenRange
+      )[0];
+
+      highlightText(
+        monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
+        model,
+        forbiddenRange
+      );
+    }
+
+    // TODO this listener needs to be replaced on reset.
+    function addContentChangeListener() {
+      const { model } = data;
+      if (!model) return;
+
+      model.onDidChangeContent(e => {
+        // TODO: it would be nice if undoing could remove the warning, but
+        // it's probably too hard to track. i.e. if they make two warned edits
+        // and then ctrl + z twice, it would realise they've removed their
+        // edits. However, what if they made a warned edit, then a normal
+        // edit, then a warned one.  Could it track that they need to make 3
+        // undos?
+        const deletedLine = getDeletedLine(e);
+
+        const deletedRange = {
+          startLineNumber: deletedLine,
+          endLineNumber: deletedLine,
+          startColumn: 1,
+          endColumn: 1
+        };
+
+        const redecorateEditableRegion = () => {
+          const coveringRange = getLinesCoveringEditableRegion();
+          if (coveringRange) {
+            data.insideEditDecId = highlightEditableLines(
+              monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
+              model,
+              coveringRange,
+              [data.insideEditDecId]
+            )[0];
+          }
+        };
+
+        redecorateEditableRegion();
+
+        if (e.isUndoing) {
+          // TODO: can we be more targeted? Only update when they could get out of
+          // sync
+          updateDescriptionZone();
+          updateOutputZone();
+          return;
+        }
+
+        const warnUser = (id: string) => {
+          const range = model.getDecorationRange(id);
+          if (range) {
+            const coveringRange = toStartOfLine(range);
+            e.changes.forEach(({ range }) => {
+              if (
+                monaco.Range.areIntersectingOrTouching(coveringRange, range)
+              ) {
+                console.log('OVERLAP!');
+              }
+            });
+          }
+        };
+
+        // TODO: can this be removed along with the rest of the forbidden region
+        // decorators?
+        const preventOverlap = (
+          id: string,
+          stickiness: number,
+          highlightFunction: typeof highlightLines
+        ) => {
+          // Even though the decoration covers the whole line, it has a
+          // startColumn that moves.  toStartOfLine ensures that the
+          // comparison detects if any change has occurred on that line
+          // NOTE: any change in the decoration has already happened by this point
+          // so this covers the *new* decoration range.
+          const range = model.getDecorationRange(id);
+          if (!range) {
+            return id;
+          }
+          const coveringRange = toStartOfLine(range);
+          const oldStartOfRange = translateRange(
+            coveringRange.collapseToStart(),
+            1
+          );
+          const newCoveringRange = coveringRange.setStartPosition(
+            oldStartOfRange?.startLineNumber ?? 1,
+            1
+          );
+
+          // TODO: this triggers both when you delete the first line of the
+          // decoration AND the second. To see this, consider a region on line 5
+          // If you delete 5, then the new start is 4 and the computed start is 5
+          // so they match.
+          // If you delete 6, then the start of the region stays at 5, so the
+          // computed start is 6 and they still match.
+          // Is there a way to tell these cases apart?
+          // This means that if you delete the second line it actually removes the
+          // grey background from the first line.
+          if (oldStartOfRange) {
+            const touchingDeleted = monaco.Range.areIntersectingOrTouching(
+              deletedRange,
+              oldStartOfRange
+            );
+
+            if (touchingDeleted) {
+              // TODO: if they undo this should be reversed
+              const decorations = highlightFunction(
+                stickiness,
+                model,
+                newCoveringRange,
+                [id]
+              );
+
+              updateOutputZone();
+              return decorations[0];
+            } else {
+              return id;
+            }
+          }
+          return id;
+        };
+
+        // we only need to handle the special case of the second region being
+        // pulled up, the first region already behaves correctly.
+
+        data.endEditDecId = preventOverlap(
+          data.endEditDecId,
+          monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+          highlightLines
+        );
+
+        // If the content has changed, the zones may need moving. Rather than
+        // working out if they have to for a particular content changed, we simply
+        // ask monaco to update regardless.
+        updateDescriptionZone();
+        updateOutputZone();
+
+        if (data.startEditDecId) {
+          warnUser(data.startEditDecId);
+        }
+        if (data.endEditDecId) {
+          warnUser(data.endEditDecId);
+        }
+      });
+      // The deleted line is always considered to be the one that has moved up.
+      // - if the user deletes at the end of line 5, line 6 is deleted and
+      // - if the user backspaces at the start of line 6, line 6 is deleted
+      // TODO: handle multiple simultaneous changes (multicursors do this)
+      function getDeletedLine(event: editor.IModelContentChangedEvent) {
+        const isDeleted =
+          event.changes[0].text === '' &&
+          event.changes[0].range.endColumn === 1;
+        return isDeleted ? event.changes[0].range.endLineNumber : 0;
+      }
+    }
+
+    // creates a range covering all the lines in 'positions'
+    // NOTE: positions is an array of [startLine, endLine]
+    function positionsToRange(
+      model: editor.ITextModel,
+      [start, end]: [number, number]
+    ) {
+      // convert to [startLine, startColumn, endLine, endColumn]
+      const range = new monaco.Range(start, 1, end, 1);
+
+      // Protect against ranges that extend outside the editor
+      const startLineNumber = Math.max(1, range.startLineNumber);
+      const endLineNumber = Math.min(model.getLineCount(), range.endLineNumber);
+      const endColumnText = model.getLineContent(endLineNumber);
+      // NOTE: the end column is incremented by 2 so that the dangerous range
+      // extends far enough to capture new text added to the end.
+      // NOTE: according to the spec, it should only need to be +1, but in
+      // practice that's not enough.
+      return range
+        .setStartPosition(startLineNumber, 1)
+        .setEndPosition(range.endLineNumber, endColumnText.length + 2);
+    }
+
+    function showEditableRegion() {
+      // TODO: The heuristic has been commented out for now because the cursor
+      // position is not saved at the moment, so it's redundant. I'm leaving it
+      // here for now, in case we decide to save it in future.
+      // this is a heuristic: if the cursor is at the start of the page, chances
+      // are the user has not edited yet. If so, move to the start of the editable
+      // region.
+      // if (
+      //  isEqual({ ..._editor.getPosition() }, { lineNumber: 1, column: 1 })
+      // ) {
+      editor.setPosition({
+        lineNumber: editableRegionBoundaries[0] + 1,
+        column: 1
+      });
+      editor.revealLinesInCenter(
+        editableRegionBoundaries[0],
+        editableRegionBoundaries[1]
+      );
+      // }
     }
   };
 
@@ -583,27 +831,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
 
-  function showEditableRegion(editableBoundaries: number[]) {
-    if (editableBoundaries.length !== 2) return;
-    const editor = data.editor;
-    if (!editor) return;
-    // TODO: The heuristic has been commented out for now because the cursor
-    // position is not saved at the moment, so it's redundant. I'm leaving it
-    // here for now, in case we decide to save it in future.
-    // this is a heuristic: if the cursor is at the start of the page, chances
-    // are the user has not edited yet. If so, move to the start of the editable
-    // region.
-    // if (
-    //  isEqual({ ..._editor.getPosition() }, { lineNumber: 1, column: 1 })
-    // ) {
-    editor.setPosition({
-      lineNumber: editableBoundaries[0] + 1,
-      column: 1
-    });
-    editor.revealLinesInCenter(editableBoundaries[0], editableBoundaries[1]);
-    // }
-  }
-
   function highlightLines(
     stickiness: number,
     target: editor.ITextModel,
@@ -706,236 +933,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       return null;
     }
   };
-
-  function initializeRegions(editableRegion: number[]) {
-    const { model } = data;
-    const monaco = monacoRef.current;
-    if (!model || !monaco) return;
-    const forbiddenRegions: [number, number][] = [
-      [0, editableRegion[0]],
-      [editableRegion[1], model.getLineCount()]
-    ];
-
-    const editableRange = positionsToRange(model, monaco, [
-      editableRegion[0] + 1,
-      editableRegion[1] - 1
-    ]);
-
-    data.insideEditDecId = highlightEditableLines(
-      monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-      model,
-      editableRange
-    )[0];
-
-    // if the forbidden range includes the top of the editor
-    // we simply don't add those decorations
-    if (forbiddenRegions[0][1] > 0) {
-      const forbiddenRange = positionsToRange(
-        model,
-        monaco,
-        forbiddenRegions[0]
-      );
-      // the first range should expand at the top
-      // TODO: Unsure what this should be - returns an array, so I added [0] @ojeytonwilliams
-      data.startEditDecId = highlightLines(
-        monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-        model,
-        forbiddenRange
-      )[0];
-
-      highlightText(
-        monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-        model,
-        forbiddenRange
-      );
-    }
-
-    const forbiddenRange = positionsToRange(model, monaco, forbiddenRegions[1]);
-    // TODO: handle the case the region covers the bottom of the editor
-    // the second range should expand at the bottom
-    data.endEditDecId = highlightLines(
-      monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
-      model,
-      forbiddenRange
-    )[0];
-
-    highlightText(
-      monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
-      model,
-      forbiddenRange
-    );
-  }
-
-  // TODO this listener needs to be replaced on reset.
-  function addContentChangeListener() {
-    const { model } = data;
-    const monaco = monacoRef.current;
-    if (!model || !monaco) return;
-
-    model.onDidChangeContent(e => {
-      // TODO: it would be nice if undoing could remove the warning, but
-      // it's probably too hard to track. i.e. if they make two warned edits
-      // and then ctrl + z twice, it would realise they've removed their
-      // edits. However, what if they made a warned edit, then a normal
-      // edit, then a warned one.  Could it track that they need to make 3
-      // undos?
-      const deletedLine = getDeletedLine(e);
-
-      const deletedRange = {
-        startLineNumber: deletedLine,
-        endLineNumber: deletedLine,
-        startColumn: 1,
-        endColumn: 1
-      };
-
-      const redecorateEditableRegion = () => {
-        const coveringRange = getLinesCoveringEditableRegion();
-        if (coveringRange) {
-          data.insideEditDecId = highlightEditableLines(
-            monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-            model,
-            coveringRange,
-            [data.insideEditDecId]
-          )[0];
-        }
-      };
-
-      redecorateEditableRegion();
-
-      if (e.isUndoing) {
-        // TODO: can we be more targeted? Only update when they could get out of
-        // sync
-        updateDescriptionZone();
-        updateOutputZone();
-        return;
-      }
-
-      const warnUser = (id: string) => {
-        const range = model.getDecorationRange(id);
-        if (range) {
-          const coveringRange = toStartOfLine(range);
-          e.changes.forEach(({ range }) => {
-            if (monaco.Range.areIntersectingOrTouching(coveringRange, range)) {
-              console.log('OVERLAP!');
-            }
-          });
-        }
-      };
-
-      // TODO: can this be removed along with the rest of the forbidden region
-      // decorators?
-      const preventOverlap = (
-        id: string,
-        stickiness: number,
-        highlightFunction: typeof highlightLines
-      ) => {
-        // Even though the decoration covers the whole line, it has a
-        // startColumn that moves.  toStartOfLine ensures that the
-        // comparison detects if any change has occurred on that line
-        // NOTE: any change in the decoration has already happened by this point
-        // so this covers the *new* decoration range.
-        const range = model.getDecorationRange(id);
-        if (!range) {
-          return id;
-        }
-        const coveringRange = toStartOfLine(range);
-        const oldStartOfRange = translateRange(
-          coveringRange.collapseToStart(),
-          1
-        );
-        const newCoveringRange = coveringRange.setStartPosition(
-          oldStartOfRange?.startLineNumber ?? 1,
-          1
-        );
-
-        // TODO: this triggers both when you delete the first line of the
-        // decoration AND the second. To see this, consider a region on line 5
-        // If you delete 5, then the new start is 4 and the computed start is 5
-        // so they match.
-        // If you delete 6, then the start of the region stays at 5, so the
-        // computed start is 6 and they still match.
-        // Is there a way to tell these cases apart?
-        // This means that if you delete the second line it actually removes the
-        // grey background from the first line.
-        if (oldStartOfRange) {
-          const touchingDeleted = monaco.Range.areIntersectingOrTouching(
-            deletedRange,
-            oldStartOfRange
-          );
-
-          if (touchingDeleted) {
-            // TODO: if they undo this should be reversed
-            const decorations = highlightFunction(
-              stickiness,
-              model,
-              newCoveringRange,
-              [id]
-            );
-
-            updateOutputZone();
-            return decorations[0];
-          } else {
-            return id;
-          }
-        }
-        return id;
-      };
-
-      // we only need to handle the special case of the second region being
-      // pulled up, the first region already behaves correctly.
-
-      data.endEditDecId = preventOverlap(
-        data.endEditDecId,
-        monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-        highlightLines
-      );
-
-      // If the content has changed, the zones may need moving. Rather than
-      // working out if they have to for a particular content changed, we simply
-      // ask monaco to update regardless.
-      updateDescriptionZone();
-      updateOutputZone();
-
-      if (data.startEditDecId) {
-        warnUser(data.startEditDecId);
-      }
-      if (data.endEditDecId) {
-        warnUser(data.endEditDecId);
-      }
-    });
-    // The deleted line is always considered to be the one that has moved up.
-    // - if the user deletes at the end of line 5, line 6 is deleted and
-    // - if the user backspaces at the start of line 6, line 6 is deleted
-    // TODO: handle multiple simultaneous changes (multicursors do this)
-    function getDeletedLine(event: editor.IModelContentChangedEvent) {
-      const isDeleted =
-        event.changes[0].text === '' && event.changes[0].range.endColumn === 1;
-      return isDeleted ? event.changes[0].range.endLineNumber : 0;
-    }
-  }
-
-  // creates a range covering all the lines in 'positions'
-  // NOTE: positions is an array of [startLine, endLine]
-  function positionsToRange(
-    model: editor.ITextModel,
-    monaco: typeof monacoEditor,
-    [start, end]: [number, number]
-  ) {
-    // convert to [startLine, startColumn, endLine, endColumn]
-    const range = new monaco.Range(start, 1, end, 1);
-
-    // Protect against ranges that extend outside the editor
-    const startLineNumber = Math.max(1, range.startLineNumber);
-    const endLineNumber = Math.min(model.getLineCount(), range.endLineNumber);
-    const endColumnText = model.getLineContent(endLineNumber);
-    // NOTE: the end column is incremented by 2 so that the dangerous range
-    // extends far enough to capture new text added to the end.
-    // NOTE: according to the spec, it should only need to be +1, but in
-    // practice that's not enough.
-    return range
-      .setStartPosition(startLineNumber, 1)
-      .setEndPosition(range.endLineNumber, endColumnText.length + 2);
-  }
 
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
