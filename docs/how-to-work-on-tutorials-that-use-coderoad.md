@@ -43,7 +43,7 @@ If reviewing a PR that only changes `main` with instructional or grammar issues 
 ### Working on version branch
 > [!WARNING]
 >
-> Reminder. Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+> Reminder: Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
 
 There's no easy way to see exactly what changed between version branches since the git history will be rewritten. Accepting new version branches to use will need to be done with careful consideration and testing. These instuctions are for changing anything on a "version" branch, such as tests, test text, reset files, adding and deleting steps, among other things. Follow these instructions to create a new version:
 
