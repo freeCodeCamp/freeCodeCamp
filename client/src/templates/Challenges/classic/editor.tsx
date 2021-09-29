@@ -264,8 +264,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     data.model = model;
     const editableRegion = getEditableRegionFromRedux();
 
-    if (editableRegion.length === 2) decorateForbiddenRanges(editableRegion);
-
+    if (editableRegion.length === 2) {
+      initializeRegions(editableRegion);
+      addContentChangeListener();
+    }
     // TODO: do we need to return this?
     return { model };
   };
@@ -705,7 +707,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
-  function decorateForbiddenRanges(editableRegion: number[]) {
+  function initializeRegions(editableRegion: number[]) {
     const { model } = data;
     const monaco = monacoRef.current;
     if (!model || !monaco) return;
@@ -762,18 +764,14 @@ const Editor = (props: EditorProps): JSX.Element => {
       model,
       forbiddenRange
     );
+  }
 
-    // The deleted line is always considered to be the one that has moved up.
-    // - if the user deletes at the end of line 5, line 6 is deleted and
-    // - if the user backspaces at the start of line 6, line 6 is deleted
-    // TODO: handle multiple simultaneous changes (multicursors do this)
-    function getDeletedLine(event: editor.IModelContentChangedEvent) {
-      const isDeleted =
-        event.changes[0].text === '' && event.changes[0].range.endColumn === 1;
-      return isDeleted ? event.changes[0].range.endLineNumber : 0;
-    }
+  // TODO this listener needs to be replaced on reset.
+  function addContentChangeListener() {
+    const { model } = data;
+    const monaco = monacoRef.current;
+    if (!model || !monaco) return;
 
-    // TODO this listener needs to be replaced on reset.
     model.onDidChangeContent(e => {
       // TODO: it would be nice if undoing could remove the warning, but
       // it's probably too hard to track. i.e. if they make two warned edits
@@ -905,6 +903,15 @@ const Editor = (props: EditorProps): JSX.Element => {
         warnUser(data.endEditDecId);
       }
     });
+    // The deleted line is always considered to be the one that has moved up.
+    // - if the user deletes at the end of line 5, line 6 is deleted and
+    // - if the user backspaces at the start of line 6, line 6 is deleted
+    // TODO: handle multiple simultaneous changes (multicursors do this)
+    function getDeletedLine(event: editor.IModelContentChangedEvent) {
+      const isDeleted =
+        event.changes[0].text === '' && event.changes[0].range.endColumn === 1;
+      return isDeleted ? event.changes[0].range.endLineNumber : 0;
+    }
   }
 
   // creates a range covering all the lines in 'positions'
