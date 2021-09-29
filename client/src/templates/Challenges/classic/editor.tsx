@@ -456,7 +456,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         const forbiddenRange = positionsToRange(model, forbiddenRegions[0]);
         // the first range should expand at the top
         // TODO: Unsure what this should be - returns an array, so I added [0] @ojeytonwilliams
-        data.startEditDecId = highlightLines(
+        data.startEditDecId = initializeForbiddenRegion(
           monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
           model,
           forbiddenRange
@@ -466,7 +466,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       const forbiddenRange = positionsToRange(model, forbiddenRegions[1]);
       // TODO: handle the case the region covers the bottom of the editor
       // the second range should expand at the bottom
-      data.endEditDecId = highlightLines(
+      data.endEditDecId = initializeForbiddenRegion(
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
         model,
         forbiddenRange
@@ -535,7 +535,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         const preventOverlap = (
           id: string,
           stickiness: number,
-          highlightFunction: typeof highlightLines
+          updateRegion: typeof updateForbiddenRegion
         ) => {
           // Even though the decoration covers the whole line, it has a
           // startColumn that moves.  toStartOfLine ensures that the
@@ -573,7 +573,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
             if (touchingDeleted) {
               // TODO: if they undo this should be reversed
-              const decorations = highlightFunction(
+              const decorations = updateRegion(
                 stickiness,
                 model,
                 newCoveringRange,
@@ -595,7 +595,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         data.endEditDecId = preventOverlap(
           data.endEditDecId,
           monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-          highlightLines
+          updateForbiddenRegion
         );
 
         // If the content has changed, the zones may need moving. Rather than
@@ -819,7 +819,25 @@ const Editor = (props: EditorProps): JSX.Element => {
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
 
-  function highlightLines(
+  // TODO DRY this and the update function
+  function initializeForbiddenRegion(
+    stickiness: number,
+    target: editor.ITextModel,
+    range: IRange
+  ) {
+    const lineDecoration = {
+      range,
+      options: {
+        isWholeLine: true,
+        linesDecorationsClassName: 'myLineDecoration',
+        className: 'do-not-edit',
+        stickiness
+      }
+    };
+    return target.deltaDecorations([], [lineDecoration]);
+  }
+
+  function updateForbiddenRegion(
     stickiness: number,
     target: editor.ITextModel,
     range: IRange,
