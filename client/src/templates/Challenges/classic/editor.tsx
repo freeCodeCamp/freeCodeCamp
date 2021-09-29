@@ -290,7 +290,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     editorRef.current = editor;
     data.editor = editor;
 
-    initializeProjectFeatures();
+    if (isProject()) {
+      initializeProjectFeatures();
+      addContentChangeListener();
+    }
 
     const storedAccessibilityMode = () => {
       const accessibility = store.get('accessibilityMode') as boolean;
@@ -641,13 +644,16 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   function initializeProjectFeatures() {
-    const editableRegionBoundaries = getEditableRegionFromRedux();
     const editor = data.editor;
-    if (editableRegionBoundaries.length === 2 && editor) {
-      initializeRegions(editableRegionBoundaries);
+    if (editor) {
+      initializeRegions(getEditableRegionFromRedux());
       addWidgetsToRegions(editor);
-      addContentChangeListener();
     }
+  }
+
+  function isProject() {
+    const editableRegionBoundaries = getEditableRegionFromRedux();
+    return editableRegionBoundaries.length === 2;
   }
 
   function initializeRegions(editableRegion: number[]) {
@@ -751,7 +757,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     showEditableRegion(editor);
   }
 
-  // TODO this listener needs to be replaced on reset.
   function addContentChangeListener() {
     const { model } = data;
     const monaco = monacoRef.current;
