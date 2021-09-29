@@ -444,7 +444,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         editableRegion[1] - 1
       ]);
 
-      data.insideEditDecId = highlightEditableLines(
+      data.insideEditDecId = initializeEditableRegion(
         monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
         model,
         editableRange
@@ -509,7 +509,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         const redecorateEditableRegion = () => {
           const coveringRange = getLinesCoveringEditableRegion();
           if (coveringRange) {
-            data.insideEditDecId = highlightEditableLines(
+            data.insideEditDecId = updateEditableRegion(
               monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
               model,
               coveringRange,
@@ -849,7 +849,25 @@ const Editor = (props: EditorProps): JSX.Element => {
     return target.deltaDecorations(oldIds, [lineDecoration]);
   }
 
-  function highlightEditableLines(
+  // TODO: DRY this and the update function
+  function initializeEditableRegion(
+    stickiness: number,
+    target: editor.ITextModel,
+    range: IRange
+  ) {
+    const lineDecoration = {
+      range,
+      options: {
+        isWholeLine: true,
+        linesDecorationsClassName: 'myEditableLineDecoration',
+        className: 'do-not-edit',
+        stickiness
+      }
+    };
+    return target.deltaDecorations([], [lineDecoration]);
+  }
+
+  function updateEditableRegion(
     stickiness: number,
     target: editor.ITextModel,
     range: IRange,
