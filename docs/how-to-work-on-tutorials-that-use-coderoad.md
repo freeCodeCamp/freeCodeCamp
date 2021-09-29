@@ -87,8 +87,8 @@ If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG`
 - Push the changes to your fork with `git push -u origin/feat/version-X.X.Y`
 - Make a PR to `main` on the freeCodeCamp repo
 - If you are satisfied, merge it or leave it and ask for a review from someone
-- After the PR is merged, it's probably a good idea to open the tutorial, following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha), to make sure it's loading properly and you can get through a few steps
-- Finally, if any PR's for this version exists, close them
+- After the PR is merged, open the tutorial by following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to make sure it's loading properly, and that you can get through a few steps
+- Finally, if any PRs for this version exists, close them
 
 ### How to revert to a previous version
 - Create a new branch off the latest `main` with `git checkout -b revert/to-version-X.X.X`
