@@ -1,4 +1,3 @@
-import { inspect } from 'util';
 import { isEmpty } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 
@@ -276,7 +275,6 @@ export const reducer = handleActions(
       challengeMeta: { ...payload }
     }),
     [actionTypes.resetChallenge]: state => {
-      console.log('before!!', inspect(state.challengeFiles));
       const challengeFilesReset = state.challengeFiles.map(challengeFile => ({
         ...challengeFile,
         contents: challengeFile.seed.slice(),
@@ -287,10 +285,9 @@ export const reducer = handleActions(
         editableRegionBoundaries:
           challengeFile.seedEditableRegionBoundaries.slice()
       }));
-      console.log('challengeFilesReset', inspect(challengeFilesReset));
       return {
         ...state,
-        // currentTab: 2,
+        currentTab: 2,
         challengeFiles: challengeFilesReset,
         challengeTests: state.challengeTests.map(({ text, testString }) => ({
           text,

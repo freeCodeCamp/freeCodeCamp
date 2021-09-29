@@ -269,7 +269,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // Updates the model if the contents has changed. This is only necessary for
   // changes coming from outside the editor (such as code resets).
-  // TODO: is this even necessary?
   const updateEditorValues = () => {
     const { challengeFiles, fileKey } = props;
     const { model } = data;
