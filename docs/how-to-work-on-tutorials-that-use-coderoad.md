@@ -63,8 +63,8 @@ There's no easy way to see exactly what changed between version branches since t
 - Leave it here for reviewers
 
 ### Testing changes to a version branch
-- Following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
-- Start the tutorial using the `tutorial.json` file on whatever fork the changes are on. Making sure to use the file on the `feat: version-X.X.Y` branch and not the `main` branch
+- Follow the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
+- Start the tutorial using the `tutorial.json` file on whatever fork the changes are on. Make sure to use the file on the `feat: version-X.X.Y` branch and not the `main` branch
 
 ### Pushing a new version
 Before pushing a new version, view the new `feat/version-vX.X.Y` (will be merged to `main`) branch on the user's fork. Make sure there are additions to the `CHANGELOG.md` file that include the new changes, and the version in the two spots of `coderoad.yaml` matches the new version branch.
