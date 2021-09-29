@@ -50,7 +50,11 @@ If you want to test your changes to `main` after using the above instructions, f
 - Start the tutorial using the `tutorial.json` file on the new branch
 
 ### Reviewing PR's to `main`
-If reviewing a PR that only changes `main` with instructional or grammar issues as described above, the changes in `TUTORIAL.md` should match the changes in `tutorial.json`. The `tutorial.json` file should not have changes to commit hashes, or step/level id's. Startup or level commands or file watchers likely should not be changed either. There are exceptions to those if there's an issue, but they should be treated with more caution. Also, keep in mind that instructions usually use the lessons around them for context, so make sure they make sense.
+If reviewing a PR that only changes `main` with instructional or grammar issues as described above, the changes in `TUTORIAL.md` should match the changes in `tutorial.json`.
+
+The `tutorial.json` file should not have changes to commit hashes, or step/level ids. Startup or level commands or file watchers likely should not be changed either. There are exceptions if there's an issue with a step, but they should be treated with more caution.
+
+Also, keep in mind that instructions usually use the lessons around them for context, so make sure they make sense.
 
 ### Working on version branch
 > [!WARNING]
