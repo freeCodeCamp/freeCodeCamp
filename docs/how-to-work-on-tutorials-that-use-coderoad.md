@@ -5,7 +5,11 @@ Each tutorial repo has a `main` branch and a "version" branch, e.g. `v1.0.0`.
 
 The two main files on the `main` branch are `TUTORIAL.md` and `coderoad.yaml`. `TUTORIAL.md` contains all the instructions, hints, titles, and so on, for the tutorial. `coderoad.yaml` contains instructions for CodeRoad, such as what commands to run and when, what files to watch for changes, and what version branch to use for the steps.
 
-The "version" branch contains the commits that will be loaded on each step of a tutorial. The commit messages on this branch have to be specific. The first commit needs `INIT` for its message and contains all the files to load before the first lesson. Subsequent commit messages have to match the step number in `TUTORIAL.md` from the `main` branch. For example, the commit will message `10.1` will be loaded when a user goes to step `10.1`. In order to make changes to commits on this branch, you will need to rebase and edit the commit you want changed. This will rewrite the git history, so we cannot accept PR's to this branch. Once a version branch is on the freeCodeCamp repo, it should never change.
+The "version" branch contains the commits that will be loaded on each step of a tutorial. The commit messages on this branch have to be specific. The first commit needs `INIT` for its message and contains all the files to load before the first lesson.
+
+Subsequent commit messages have to match the step number in `TUTORIAL.md` from the `main` branch. For example, the commit with the message `10.1` will be loaded when a user goes to step `10.1`.
+
+In order to make changes to commits on a version branch, you would need to rebase and edit the commits you want to change. This will rewrite the Git history, so we cannot accept PRs to these types of branches. Once a version branch is on the freeCodeCamp repo, it should never change.
 
 > [!WARNING]
 >
