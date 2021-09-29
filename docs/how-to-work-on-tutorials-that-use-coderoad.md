@@ -58,7 +58,7 @@ There's no easy way to see exactly what changed between version branches since t
 - Run `coderoad build` to create a new `tutorial.json` file
 - Add and commit the file
 - Push the changes to your fork
-- Test your changes following the [testing instructions below](###testing-changes-to-a-version-branch). Make any additional changes and commit them as you just did, or, if you are satisfied, follow the rest of the instructions
+- Test your changes following the [testing instructions below](#testing-changes-to-a-version-branch). Make any additional changes and commit them as you just did, or, if you are satisfied, follow the rest of the instructions
 - Make a PR to `main` using your new `feat/version-X.X.Y` branch. Give it a title of `version X.X.Y ready for review`. This will not be merged, it is just to let reviewers know that there is a new version ready
 - Leave it here for reviewers
 
