@@ -38,7 +38,7 @@ Follow these instructions to make a PR, keeping in mind that instructions usuall
 ### Testing changes on `main`
 If you want to test your changes to `main` after using the above instructions, follow these instructions:
 
-- Following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
+- Follow the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
 - Start the tutorial using the `tutorial.json` file on the new branch
 
 ### Reviewing PR's to `main`
