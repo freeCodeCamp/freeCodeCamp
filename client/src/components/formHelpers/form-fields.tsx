@@ -51,7 +51,7 @@ function FormFields(props: FormFieldsProps): JSX.Element {
         validationError = (err as { message?: string })?.message;
       }
     }
-    const validationWarning: string = composeValidators(
+    const validationWarning = composeValidators(
       name === 'githubLink' || isEditorLinkAllowed ? null : editorValidator,
       fCCValidator,
       httpValidator,
