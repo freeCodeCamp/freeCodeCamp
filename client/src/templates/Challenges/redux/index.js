@@ -1,3 +1,4 @@
+import { inspect } from 'util';
 import { isEmpty } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 
@@ -215,15 +216,22 @@ export const reducer = handleActions(
       state,
       { payload: { fileKey, editorValue, editableRegionBoundaries } }
     ) => {
+      const updates = {};
+      if (editableRegionBoundaries)
+        updates.editableRegionBoundaries = editableRegionBoundaries;
+      if (editorValue) updates.contents = editorValue;
+      if (editableRegionBoundaries && editorValue)
+        updates.editableContents = getLines(
+          editorValue,
+          editableRegionBoundaries
+        );
       return {
         ...state,
         challengeFiles: [
           ...state.challengeFiles.filter(x => x.fileKey !== fileKey),
           {
             ...state.challengeFiles.find(x => x.fileKey === fileKey),
-            contents: editorValue,
-            editableContents: getLines(editorValue, editableRegionBoundaries),
-            editableRegionBoundaries
+            ...updates
           }
         ]
       };
@@ -268,6 +276,7 @@ export const reducer = handleActions(
       challengeMeta: { ...payload }
     }),
     [actionTypes.resetChallenge]: state => {
+      console.log('before!!', inspect(state.challengeFiles));
       const challengeFilesReset = [
         ...state.challengeFiles.reduce(
           (challengeFiles, challengeFile) => ({
@@ -278,14 +287,16 @@ export const reducer = handleActions(
               challengeFile.seed,
               challengeFile.seedEditableRegionBoundaries
             ),
-            editableRegionBoundaries: challengeFile.seedEditableRegionBoundaries
+            editableRegionBoundaries:
+              challengeFile.seedEditableRegionBoundaries.slice()
           }),
           {}
         )
       ];
+      console.log('challengeFilesReset', inspect(challengeFilesReset));
       return {
         ...state,
-        currentTab: 2,
+        // currentTab: 2,
         challengeFiles: challengeFilesReset,
         challengeTests: state.challengeTests.map(({ text, testString }) => ({
           text,
