@@ -4,7 +4,7 @@ Nuestro contenido instructivo principal se encuentra dentro del directorio conve
 
 ## Terminología
 
-Hay algunos términos que usamos cuando hablamos del contenido de nuestro currículo.
+Hay algunos términos que utilizamos cuando hablamos del contenido de nuestro currículo.
 
 - `certification` : Cuando se hace referencia a una certificación en este caso, se está hablando del certificado real que los usuarios reclaman.  Que es independiente del nombre del súper bloque.
 - `superBlock` : Un súper bloque es la colección de desafíos del nivel superior. Cada súper bloque corresponde a una certificación en el currículo (p. ej. Diseño Web Responsivo).
@@ -46,9 +46,9 @@ Al renombrar una certificación, es probable que desees renombrar el súper bloq
 1. En `curriculum/challenges/english/12-certificate`, cambia el nombre de la carpeta `{superBlock}-certificate` y el archivo YAML dentro de ella, por el nuevo nombre.
 1. En el archivo YAML, cambia el `title` por el nuevo nombre.
 1. Renombra el archivo y la carpeta del paso 3 para el resto de los lenguajes del currículo.
-1. Actualiza `client/src/redux/index.ts` para que use el `title` correcto.
+1. Actualiza `client/src/redux/index.ts` para que utilice el `title` correcto.
 1. Como alternativa, actualiza el `certSlug` para el súper bloque en el mismo archivo.  **Ten en cuenta** que renombrar un `certSlug` cambiará el URL para las certificaciones y solo debe hacerse con consideración.
-1. Actualiza el `title` en `client/src/resources/cert-and-project-map.ts` por el nuevo valor. **Ten en cuenta que** cambiar el `title` aquí **romperá** la página del súper bloque asociada a la certificación. Depende del título del súper bloque en coincidir con el título de la certificación. Es probable que desees renombrar el súper bloque al mismo tiempo.
+1. Actualiza el `title` en `client/src/resources/cert-and-project-map.ts` por el nuevo valor. **Ten en cuenta que** cambiar el `title` aquí **romperá** la página del súper bloque asociada a la certificación. Depende del título del súper Bloque para que coincida con el título de la certificación. Es probable que desees renombrar el súper bloque al mismo tiempo.
 1. Si renombraste `certSlug` en el paso 7, cámbialo aquí para el "cert" y todos los valores de `projects` anidados.
 1. En `config/certification-settings.js`, actualiza el valor de `certTypeTitleMap` al nuevo nombre.
 1. Si renombraste el `certSlug` en el paso 7, actualiza la clave de `certSlugTypeMap` en el mismo archivo.
@@ -59,47 +59,47 @@ Al renombrar una certificación, es probable que desees renombrar el súper bloq
 
 > [!NOTE] Cuando renombras un súper bloque, el nuevo nombre de carpeta es usado como la ruta y debe considerarse el nombre "correcto". Todos los demás valores deben actualizarse para reflejar ese cambio.
 
-Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all shares a name. To rename only a superBlock you need to:
+Además, es probable que desees renombrar el certificado y el bloque  `{superBlock}-projects` cuando renombres un súper bloque, ya que todos comparten un nombre. Para renombrar solamente un súper bloque necesitas:
 
-1. Rename the superBlock folder in the `curriculum/challenges/english` directory.
-1. Rename the superBlock folder in *all* other `curriculum/challenges/{language}` directories.
-1. For each block within that superBlock, update the `superBlock` value in the `meta.json` file to its dashedName. You don't need to rename any folders here. Do that when renaming a block.
-1. Rename the superblock folder in `client/src/pages/learn`.
-1. Update the `index.md` file in the above folder, changing the `title` and `superBlock` values to the new name.
-1. For each block folder within the above, update the `index.md` to use the correct `superBlock` value.
-1. In the `client/src/resources/cert-and-project-map.ts` file, update the path for the cert at the top of the file, and the `title` value for that superBlock. **Note** that changing the `title` here **will break** the ability to view the actual certification for this superBlock. It relies on the superBlock title to match the certification title. You will likely want to rename the certification at the same time.
-1. Update the `superBlockCertTypeMap` key in `config/certification-settings.js` to the new superBlock name.
-1. Update the path value in `client/src/assets/icons/index.tsx`.
-1. For each language in `client/i18n/locales`, update the `intro.json` file to use the new superBlock `dashedName`. In the English file, also update the `title`.
-1. Check the `config/i18n/all-langs.js` file to see if the superBlock is enabled in i18n builds. Update all the values where it is used.
-1. Update the main `README.md` file to the new name.
+1. Renombrar la carpeta del super bloque en el directorio `curriculum/challenges/english`.
+1. Renombra la carpeta del súper bloque en *todos* los demás directorios `curriculum/challenges/{language}`.
+1. Para cada bloque dentro del súper bloque, actualice el valor `superBlock` en el archivo  `meta.json` a su nombre con guiones. No necesitas renombrar ninguna carpeta aquí. Hazlo cuando renombres un bloque.
+1. Renombra la carpeta súper bloque en `client/src/pages/learn`.
+1. Actualiza el archivo `index.md` en la carpeta superior, cambiado los valores de `title` y `superBlock` al nuevo nombre.
+1. Para cada carpeta de bloque dentro de la superior, actualiza el `index.md` para que utilice el valor de `superBlock` correcto.
+1. En el archivo `cliente/src/recursos/cert-and-project-map.ts`, actualiza la ruta para certificado en la parte superior del archivo y el valor `title` para ese súper bloque. **Ten en cuenta** que cambiar el `title` aquí **interrumpirá** la capacidad de ver la certificación real para este súper bloque. Depende del título del súper Bloque para que coincida con el título de la certificación. Es probable que desees renombrar la certificación al mismo tiempo.
+1. Actualiza la clave `superBlockCertTypeMap` en `config/certification-settings.js` al nuevo nombre del súper Bloque.
+1. Actualiza el valor de la ruta en `client/src/assets/icons/index.tsx`.
+1. Para cada idioma en `client/i18n/locales`, actualiza el archivo `intro.json` para que utilice el nuevo `dashedName` (nombre con guiones) del súper Bloque. En el archivo en inglés, actualiza también el `title`.
+1. Verifique el archivo `config/i18n/all-langs.js` para ver si el súper Bloque está habilitado en las compilaciones de i18n. Actualiza todos los valores donde sea usado.
+1. Actualiza el archivo principal `README.md` al nuevo nombre.
 
-### Renaming a Block
+### Renombrando un bloque
 
-When renaming a curriculum block, you need to:
+Cuando renombras un bloque del currículo, tienes que:
 
-1. Change the name of the block folder in the `curriculum/challenges/english/{superBlock}` directory.
-1. Change the name of the same block folder in *all* of the other language directories to match. These must all be the same as the English structure or the build will error out.
-1. Change the name of the block folder in the `_meta` directory.
-1. Update the `name` and `dashedName` property for that block's `meta.json` file.
-1. Update the `client/utils/help-category-map.json` to use the new block name as the key.
-1. Update the block folder in `client/src/pages/learn/{superBlock}`.
-1. In the `index.md` file of the above folder, update the `block` value in the frontmatter.
-1. In the `client/i18n/locales/{language}/intro.json` files, update the block name to the new name for all the languages. In the English `intro.json` file, update the `title` as well.
-1. Update the main `README.md` file to the new name.
+1. Cambiar el nombre de la carpeta del bloque en el directorio `curriculum/challenges/english/{superBlock}`.
+1. Cambiar el nombre de la misma carpeta de bloque en *todos* los directorios de los demás idiomas para que coincidan. Estos deben ser todos iguales a la estructura en inglés o se producirá un error en la compilación.
+1. Cambiar el nombre de la carpeta del bloque en el directorio `_meta`.
+1. Actualizar las propiedades `nombre` y `dashedName` (nombre con guiones) del archivo `meta.json` de ese bloque.
+1. Actualizar el `client/utils/help-category-map.json` para que utilice el nuevo nombre de bloque como clave.
+1. Actualizar la carpeta del bloque en `client/src/pages/learn/{superBlock}`.
+1. En el archivo `index.md` de la carpeta superior, actualizar el valor del `block` prematuramente.
+1. En los archivos `client/i18n/locales/{language}/intro.json`, actualizar el nombre del bloque al nuevo nombre para todos los idiomas. En el archivo `intro.json` en inglés, actualiza también el `title`.
+1. Actualizar el archivo principal `README.md` con el nuevo nombre.
 
-### Renaming a Challenge
+### Renombrando un desafío
 
-When renaming a single challenge file, you need to:
+Al renombras un solo archivo de desafío, tienes que:
 
-1. Change the name of the challenge file in the `curriculum/challenges/english` directory.
-1. Change the name of the `title` and `dashedName` within that file.
-1. Change the name of the file, and the `dashedName` in those files for *all* of the other language directories to match.
-1. Update the name of the challenge in the relevant `meta.json` file. The challenge names here are not used in the build, but provide a user-friendly way to identify the challenge order.
-1. If the challenge is a certificate project, update the YAML file in `curriculum/english/12-certificates/<superBlock>` to the new name.
-1. If the challenge is a certificate project, update the `title` and `link` in `client/src/resources/cert-and-project-map.ts`
-1. If the challenge is a certificate project, update the main `README.md` file to the new name.
+1. Cambiar el nombre del archivo del desafío en el directorio `curriculum/challenges/english`.
+1. Cambiar el nombre del `title` y de `dashedName` (nombre con guiones) dentro de ese archivo.
+1. Cambiar el nombre del archivo y el `dashedName` (nombre con guiones) en esos archivos para que *todos* los directorios de los otros idiomas coincidan.
+1. Actualizar el nombre del desafío en el archivo `meta.json` correspondiente. Los nombres de los desafíos aquí no se utilizan en la compilación, pero proveen una forma amigable al usuario de identificar el orden de los mismos.
+1. Si el desafío es un proyecto de certificado, actualizar el archivo YAML en `curriculum/english/12-certificates/<superBlock>` con el nuevo nombre.
+1. Si el desafío es un proyecto de certificado, actualizar el `title` y el `link` en `client/src/resources/cert-and-project-map.ts`
+1. Si el desafío es un proyecto de certificado, actualizar el archivo principal `README.md` con el nuevo nombre.
 
-## The `dashedName` Property
+## La propiedad `dashedName`
 
-The `dashedName` property is used to generate the URL path for the superblock, block, or challenge. These should generally match what the `/utils/dasherize.js` helper would output for the file name.
+La propiedad `dashedName` se usa para generar la ruta URL para el súper bloque, bloque o desafío. Por lo general, estos deben coincidir con los nombres que generaría el asistente `/utils/dasherize.js` para el nombre del archivo.
