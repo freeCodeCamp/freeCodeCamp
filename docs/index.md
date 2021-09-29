@@ -3,7 +3,7 @@ The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to
 > [!NOTE]
 > Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-Happy contributing.
+Happy contributing! ❤
 
 You are welcome to:
 
