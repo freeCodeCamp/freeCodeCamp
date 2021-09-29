@@ -92,6 +92,13 @@
           ""
         ]
       },
+      "accessibility-quiz": {
+        "title": "Accessibility Quiz",
+        "intro": [
+          "",
+          ""
+        ]
+      },
       "css-picasso-painting": {
         "title": "Pintura de Picasso em CSS",
         "intro": [
