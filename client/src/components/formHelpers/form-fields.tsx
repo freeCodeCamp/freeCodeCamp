@@ -98,7 +98,6 @@ function FormFields(props: FormFieldsProps): JSX.Element {
                       required={required.includes(name)}
                       rows={4}
                       type={type}
-                      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                       value={value}
                     />
                     {nullOrWarning(value, !pristine && error, isURL, name)}
