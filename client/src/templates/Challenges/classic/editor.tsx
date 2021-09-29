@@ -293,6 +293,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (isProject()) {
       initializeProjectFeatures();
       addContentChangeListener();
+      showEditableRegion(editor);
     }
 
     const storedAccessibilityMode = () => {
@@ -754,7 +755,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         editor.layoutOverlayWidget(data.descriptionWidget);
       if (data.outputWidget) editor.layoutOverlayWidget(data.outputWidget);
     });
-    showEditableRegion(editor);
   }
 
   function addContentChangeListener() {
