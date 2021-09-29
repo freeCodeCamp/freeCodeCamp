@@ -23,16 +23,13 @@ export const localhostValidator = (value: string): React.ReactElement | null =>
 export const httpValidator = (value: string): React.ReactElement | null =>
   httpRegex.test(value) ? <Trans>validation.http-url</Trans> : null;
 
-export function composeValidators(
-  ...validators: (((a: string) => void) | null)[]
-) {
-  return (value: string): string =>
-    // TODO: Fix the types according to the validator type and null condition
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+export type Validator = (value: string) => React.ReactElement | null;
+export function composeValidators(...validators: (Validator | null)[]) {
+  return (value: string): ReturnType<Validator> | null =>
     validators.reduce(
-      (error: string, validator: ((a: string) => void) | null) =>
-        error ?? validator?.(value),
+      (error: ReturnType<Validator>, validator) =>
+        error ?? (validator ? validator(value) : null),
       null
     );
 }
+
