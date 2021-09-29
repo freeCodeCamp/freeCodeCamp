@@ -26,7 +26,7 @@ This set of instructions is for PR's that will only make changes on `main` to **
 You never need to modify the `tutorial.json` file directly. That will be created with the CLI tools. If you are only making instructional fixes such as a typo, grammar fixes, or similar; you don't have to test your changes. Follow these instructions to make a PR, keeping in mind that instructions usually use the lessons around them for context.
 
 - Create a new branch off of `main`
-- Make **and commit** your changes. Reminder, you don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
+- Make **and commit** your changes. Reminder: You don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
 - Run `coderoad build` to recreate the `tutorial.json` file
 - Commit the changes with `update json` as the message
 - Make a PR
