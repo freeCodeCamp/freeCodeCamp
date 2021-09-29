@@ -461,12 +461,6 @@ const Editor = (props: EditorProps): JSX.Element => {
           model,
           forbiddenRange
         )[0];
-
-        highlightText(
-          monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-          model,
-          forbiddenRange
-        );
       }
 
       const forbiddenRange = positionsToRange(model, forbiddenRegions[1]);
@@ -477,12 +471,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         model,
         forbiddenRange
       )[0];
-
-      highlightText(
-        monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
-        model,
-        forbiddenRange
-      );
     }
 
     // TODO this listener needs to be replaced on reset.
@@ -883,23 +871,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       }
     };
     return target.deltaDecorations(oldIds, [lineDecoration]);
-  }
-
-  function highlightText(
-    stickiness: number,
-    target: editor.ITextModel,
-    range: IRange,
-    oldIds: string[] = []
-  ) {
-    const inlineDecoration = {
-      range,
-      options: {
-        inlineClassName: 'myInlineDecoration',
-        stickiness
-      }
-    };
-
-    return target.deltaDecorations(oldIds, [inlineDecoration]);
   }
 
   function getDescriptionZoneTop() {
