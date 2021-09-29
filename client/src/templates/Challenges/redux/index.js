@@ -277,22 +277,16 @@ export const reducer = handleActions(
     }),
     [actionTypes.resetChallenge]: state => {
       console.log('before!!', inspect(state.challengeFiles));
-      const challengeFilesReset = [
-        ...state.challengeFiles.reduce(
-          (challengeFiles, challengeFile) => ({
-            ...challengeFiles,
-            ...challengeFile,
-            contents: challengeFile.seed.slice(),
-            editableContents: getLines(
-              challengeFile.seed,
-              challengeFile.seedEditableRegionBoundaries
-            ),
-            editableRegionBoundaries:
-              challengeFile.seedEditableRegionBoundaries.slice()
-          }),
-          {}
-        )
-      ];
+      const challengeFilesReset = state.challengeFiles.map(challengeFile => ({
+        ...challengeFile,
+        contents: challengeFile.seed.slice(),
+        editableContents: getLines(
+          challengeFile.seed,
+          challengeFile.seedEditableRegionBoundaries
+        ),
+        editableRegionBoundaries:
+          challengeFile.seedEditableRegionBoundaries.slice()
+      }));
       console.log('challengeFilesReset', inspect(challengeFilesReset));
       return {
         ...state,
