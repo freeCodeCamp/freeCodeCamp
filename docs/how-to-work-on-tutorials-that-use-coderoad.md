@@ -17,13 +17,13 @@ The "version" branch contains the commits that will be loaded on each step of a 
 Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`. I've been having trouble with the latest version. If `coderoad --version` doesn't work after installing, downgrade to `0.7.0` with `npm install -g @coderoad/cli@0.7.0`
 
 ### Working on `main`
-Follow these instructions if you are only making changes to `main`. You never need to modify the `tutorial.json` file directly. That will be created with the CLI tools.
+This set of instructions is for PR's that will only make changes on `main` to **existing lessons**. That mainly consists of typo, grammar, hint, and instuctional changes or fixes in the `TUTORIAL.md` file. For everything else, including adding or deleting lessons, follow the [working on a version branch instructions](#working-on-version-branch). You will not need to create a new version branch for this, you can create a PR following the instructions below.
 
 > [!NOTE]
 >
 > These changes will use the existing version branch. If they are substantial, feel free to add them to `CHANGELOG.md`. Most of the time, a good commit message should work
 
-If you are only making instructional fixes such as a typo, grammar fixes, or similar; you don't have to test your changes. Follow these instructions to make a PR:
+You never need to modify the `tutorial.json` file directly. That will be created with the CLI tools. If you are only making instructional fixes such as a typo, grammar fixes, or similar; you don't have to test your changes. Follow these instructions to make a PR, keeping in mind that instructions usually use the lessons around them for context.
 
 - Create a new branch off of `main`
 - Make **and commit** your changes. Reminder, you don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
@@ -38,14 +38,14 @@ If you want to test your changes to `main` after using the above instructions, f
 - Start the tutorial using the `tutorial.json` file on the new branch
 
 ### Reviewing PR's to `main`
-If reviewing a PR that only changes `main` with instructional or grammar changes as described above, the changes in `TUTORIAL.md` should match the changes in `tutorial.json`. The `tutorial.json` file should not have changes to commit hashes, or step/level id's. Startup or level commands or file watchers likely should not be changed either. There are exceptions to those if there's an issue, but they should be treated with more caution.
+If reviewing a PR that only changes `main` with instructional or grammar issues as described above, the changes in `TUTORIAL.md` should match the changes in `tutorial.json`. The `tutorial.json` file should not have changes to commit hashes, or step/level id's. Startup or level commands or file watchers likely should not be changed either. There are exceptions to those if there's an issue, but they should be treated with more caution. Also, keep in mind that instructions usually use the lessons around them for context, so make sure they make sense.
 
 ### Working on version branch
 > [!WARNING]
 >
 > Reminder. Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
 
-There's no easy way to see exactly what changed between version branches since the git history will be rewritten. Accepting new version branches to use will need to be done with careful consideration and testing. Follow these instructions to create a new version:
+There's no easy way to see exactly what changed between version branches since the git history will be rewritten. Accepting new version branches to use will need to be done with careful consideration and testing. These instuctions are for changing anything on a "version" branch, such as tests, test text, reset files, adding and deleting steps, among other things. Follow these instructions to create a new version:
 
 - Checkout the **latest** version branch with `git checkout -b vX.X.X upstream/vX.X.X`
 - Create a new branch off of that, incrementing the version, with `git checkout -b vX.X.Y`
@@ -58,7 +58,7 @@ There's no easy way to see exactly what changed between version branches since t
 - Run `coderoad build` to create a new `tutorial.json` file
 - Add and commit the file
 - Push the changes to your fork
-- Test your changes following the instructions below. Make any additional changes and commit them as you just did, or, if you are satisfied, follow the rest of the instructions
+- Test your changes following the [testing instructions below](###testing-changes-to-a-version-branch). Make any additional changes and commit them as you just did, or, if you are satisfied, follow the rest of the instructions
 - Make a PR to `main` using your new `feat/version-X.X.Y` branch. Give it a title of `version X.X.Y ready for review`. This will not be merged, it is just to let reviewers know that there is a new version ready
 - Leave it here for reviewers
 
