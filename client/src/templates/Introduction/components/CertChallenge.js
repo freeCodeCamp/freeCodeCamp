@@ -73,15 +73,19 @@ const CertChallenge = ({
   isSignedIn,
   user: { isHonest, username }
 }) => {
-  const [canClaim, setCanClaim] = useState({ status: false, result: '' });
+  const [certIsClaimable, setCertIsClaimable] = useState({
+    isClaimable: false,
+    isClaimableMessage: ''
+  });
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
-  const [userChecked, setUserChecked] = useState(false);
+  const [verificationFetchState, SetVerificationFetchState] = useState(false);
   const [stepState, setStepState] = useState({
     numberOfSteps: 0,
     completedCount: 0
   });
-  const [canViewCert, setCanViewCert] = useState(false);
+  const [hasCompletedRequiredSteps, setHasCompletedRequiredSteps] =
+    useState(false);
   const [isProjectsCompleted, setIsProjectsCompleted] = useState(false);
 
   useEffect(() => {
@@ -90,8 +94,8 @@ const CertChallenge = ({
         try {
           const data = await getVerifyCanClaimCert(username, superBlock);
           const { status, result } = data?.response?.message;
-          setCanClaim({ status, result });
-          setUserChecked(true);
+          setCertIsClaimable({ status, result });
+          SetVerificationFetchState(true);
         } catch (e) {
           // TODO: How do we handle errors...?
         }
@@ -119,23 +123,28 @@ const CertChallenge = ({
     );
 
     const projectsCompleted =
-      canClaim.status || canClaim.result === 'projects-completed';
+      certIsClaimable.status || certIsClaimable.result === 'projects-completed';
     const completedCount =
       Object.values(steps).filter(
         stepVal => typeof stepVal === 'boolean' && stepVal
       ).length + projectsCompleted;
     const numberOfSteps = Object.keys(steps).length;
-    setCanViewCert(completedCount === numberOfSteps);
+    setHasCompletedRequiredSteps(completedCount === numberOfSteps);
     setStepState({ numberOfSteps, completedCount });
     setIsProjectsCompleted(projectsCompleted);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [steps, canClaim]);
+  }, [steps, certIsClaimable]);
 
   const certLocation = `/certification/${username}/${certSlug}`;
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nCertText = t(`intro:misc-text.certification`, {
     cert: i18nSuperBlock
   });
+
+  const showCertificationCard =
+    userLoaded &&
+    isSignedIn &&
+    (!isCertified || (!hasCompletedRequiredSteps && verificationFetchState));
 
   const createClickHandler = certSlug => e => {
     e.preventDefault();
@@ -148,24 +157,25 @@ const CertChallenge = ({
   };
   return (
     <div className='block'>
-      {userLoaded &&
-        isSignedIn &&
-        (!isCertified || (!canViewCert && userChecked)) && (
-          <CertificationCard
-            i18nCertText={i18nCertText}
-            isProjectsCompleted={isProjectsCompleted}
-            steps={steps}
-            stepState={stepState}
-            superBlock={superBlock}
-          />
-        )}
+      {showCertificationCard && (
+        <CertificationCard
+          i18nCertText={i18nCertText}
+          isProjectsCompleted={isProjectsCompleted}
+          steps={steps}
+          stepState={stepState}
+          superBlock={superBlock}
+        />
+      )}
       <>
         {isSignedIn && (
           <Button
             block={true}
             bsStyle='primary'
             className='cert-btn'
-            disabled={!canClaim.status || (isCertified && !canViewCert)}
+            disabled={
+              !certIsClaimable.status ||
+              (isCertified && !hasCompletedRequiredSteps)
+            }
             href={certLocation}
             onClick={createClickHandler(certSlug)}
           >
