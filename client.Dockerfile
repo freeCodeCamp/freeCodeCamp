@@ -1,4 +1,4 @@
-FROM node:14.18.0-buster AS builder
+FROM node:v14.18.0-buster AS builder
 
 # this is a bit clunky, perhaps there's a more concise way of passing in build
 # arguments
