@@ -91,7 +91,7 @@ assert(
         </p>
         <a href="https://www.freecodecamp.org/cat-photos"
           ><img
-            src="https://bit.ly/fcc-relaxing-cat"
+            src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
             alt="A cute orange cat lying on its back."
         /></a>
       </section>
@@ -148,7 +148,7 @@ var x = 'y';
         </p>
         <a href="https://www.freecodecamp.org/cat-photos"
           ><img
-            src="https://bit.ly/fcc-relaxing-cat"
+            src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
             alt="A cute orange cat lying on its back."
         /></a>
       </section>
