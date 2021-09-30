@@ -29,7 +29,7 @@ var ourMusic = [
 ];
 ```
 
-这是一个包含一个对象的数组。 该对象有关于专辑的各种元数据（<dfn>metadata</dfn>）。 它也有一个嵌套的 `formats` 数组。 可以将专辑添加到顶级数组来增加更多的专辑记录。 对象将数据以一种键 - 值对的形式保存。 在上面的示例中，`"artist": "Daft Punk"` 有一个键位 `artist` 值为 `Daft Punk` 的属性。 [JavaScript Object Notation](http://www.json.org/) 简称 `JSON` 是可以用于存储数据的数据交换格式。
+这是一个包含一个对象的数组。 该对象有关于专辑的各种元数据（<dfn>metadata</dfn>）。 它也有一个嵌套的 `formats` 数组。 可以将专辑添加到顶级数组来增加更多的专辑记录。 对象将数据以一种键 - 值对的形式保存。 在上面的示例中，`"artist": "Daft Punk"` 有一个键为 `artist` 值为 `Daft Punk` 的属性。 [JavaScript Object Notation](http://www.json.org/) 简称 `JSON` 是可以用于存储数据的数据交换格式。
 
 ```json
 {

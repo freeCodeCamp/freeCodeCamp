@@ -35,40 +35,66 @@ app.route('/login')
 
 # --hints--
 
-路由 /auth/github 应正确配置。
+路由 `/auth/github` 应该是正确的。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/routes.js').then(
-    (data) => {
+async (getUserInput) => {
+  try {
+    const res = await fetch(getUserInput('url') + '/_api/routes.js');
+    if (res.ok) {
+      const data = await res.text();
       assert.match(
-        data.replace(/\s/g, ''),
-        /('|")\/auth\/github\/?\1[^]*?get.*?passport.authenticate.*?github/gi,
-        'Route auth/github should only call passport.authenticate with github'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
+          data.replace(/\s/g, ''),
+          /passport.authenticate.*?github/g,
+          'Route auth/github should only call passport.authenticate with github'
+        );
+    } else {
+      throw new Error(res.statusText);
     }
-  );
+    const res2 = await fetch(getUserInput('url') + '/_api/app-stack');
+    if (res2.ok) {
+      const data2 = JSON.parse(await res2.json());
+      const dataLayer = data2.find(layer => layer?.route?.path === '/auth/github');
+      assert.deepInclude(dataLayer?.route, { methods: {get: true}, path: "/auth/github"});
+      assert.deepInclude(dataLayer?.route?.stack?.[0], {method: "get", name: "authenticate"});
+    } else {
+      throw new Error(res2.statusText);
+    }
+  } catch (err) {
+    throw new Error(err);
+  }
+}
 ```
 
-路由 /auth/github/callback 应正确配置。
+路由 `/auth/github/callback` 应该是正确的。
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/routes.js').then(
-    (data) => {
+async (getUserInput) => {
+  try {
+    const res = await fetch(getUserInput('url') + '/_api/routes.js');
+    if (res.ok) {
+      const data = await res.text();
       assert.match(
         data.replace(/\s/g, ''),
-        /('|")\/auth\/github\/callback\/?\1[^]*?get.*?passport.authenticate.*?github.*?failureRedirect:("|')\/\2/gi,
+        /failureRedirect:("|')\/\1/g,
         'Route auth/github/callback should accept a get request and call passport.authenticate for github with a failure redirect to home'
       );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
+    } else {
+      throw new Error(res.statusText);
     }
-  );
+    const res2 = await fetch(getUserInput('url') + '/_api/app-stack');
+    if (res2.ok) {
+      const data2 = JSON.parse(await res2.json());
+      const dataLayer = data2.find(layer => layer?.route?.path === '/auth/github/callback');
+      assert.deepInclude(dataLayer?.route, { methods: {get: true}, path: "/auth/github/callback"});
+      assert.deepInclude(dataLayer?.route?.stack?.[0], {method: "get", name: "authenticate"});
+    } else {
+      throw new Error(res2.statusText);
+    }
+  } catch (err) {
+    throw new Error(err);
+  }
+}
 ```
 
 # --solutions--
