@@ -73,13 +73,11 @@ const CertChallenge = ({
   isSignedIn,
   user: { isHonest, username }
 }) => {
-  const [certIsClaimable, setCertIsClaimable] = useState({
-    isClaimable: false,
-    isClaimableMessage: ''
-  });
+  const [canClaimCert, setCanClaimCert] = useState(false);
+  const [certVerificationMessage, setCertVerificationMessage] = useState('');
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
-  const [verificationFetchState, setVerificationFetchState] = useState(false);
+  const [verificationComplete, setVerificationComplete] = useState(false);
   const [stepState, setStepState] = useState({
     numberOfSteps: 0,
     completedCount: 0
@@ -94,8 +92,9 @@ const CertChallenge = ({
         try {
           const data = await getVerifyCanClaimCert(username, superBlock);
           const { status, result } = data?.response?.message;
-          setCertIsClaimable({ status, result });
-          setVerificationFetchState(true);
+          setCanClaimCert(status);
+          setCertVerificationMessage(result);
+          setVerificationComplete(true);
         } catch (e) {
           // TODO: How do we handle errors...?
         }
@@ -123,7 +122,7 @@ const CertChallenge = ({
     );
 
     const projectsCompleted =
-      certIsClaimable.status || certIsClaimable.result === 'projects-completed';
+      canClaimCert || certVerificationMessage === 'projects-completed';
     const completedCount =
       Object.values(steps).filter(
         stepVal => typeof stepVal === 'boolean' && stepVal
@@ -133,7 +132,7 @@ const CertChallenge = ({
     setStepState({ numberOfSteps, completedCount });
     setIsProjectsCompleted(projectsCompleted);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [steps, certIsClaimable]);
+  }, [steps, canClaimCert, certVerificationMessage]);
 
   const certLocation = `/certification/${username}/${certSlug}`;
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
@@ -144,7 +143,7 @@ const CertChallenge = ({
   const showCertificationCard =
     userLoaded &&
     isSignedIn &&
-    (!isCertified || (!hasCompletedRequiredSteps && verificationFetchState));
+    (!isCertified || (!hasCompletedRequiredSteps && verificationComplete));
 
   const createClickHandler = certSlug => e => {
     e.preventDefault();
@@ -173,8 +172,7 @@ const CertChallenge = ({
             bsStyle='primary'
             className='cert-btn'
             disabled={
-              !certIsClaimable.status ||
-              (isCertified && !hasCompletedRequiredSteps)
+              !canClaimCert || (isCertified && !hasCompletedRequiredSteps)
             }
             href={certLocation}
             onClick={createClickHandler(certSlug)}
