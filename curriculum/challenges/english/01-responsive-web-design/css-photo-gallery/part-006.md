@@ -86,7 +86,7 @@ assert(document.querySelectorAll('img')?.[8]?.getAttribute('src') === 'https://c
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Flex Photo Gallery</title>
-    <link rel="stylesheet" href="./css/style50.css">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <div class="header">

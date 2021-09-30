@@ -14,7 +14,7 @@ Normalize your box model by creating a `*` selector and setting the `box-sizing`
 You should have a `*` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('*'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('*'));
 ```
 
 Your `*` selector should have a `box-sizing` property set to `border-box`.
@@ -34,7 +34,7 @@ assert(new __helpers.CSSHelp(document).getStyle('*')?.boxSizing === 'border-box'
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Flex Photo Gallery</title>
-    <link rel="stylesheet" href="./css/style50.css">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <div class="header">

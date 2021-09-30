@@ -14,7 +14,7 @@ Give your `#gallery` selector a `padding` property set to `0 4px`.
 Your `#gallery` selector should have a `padding` property set to `0 4px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#document')?.padding === '0px 4px');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.padding === '0px 4px');
 ```
 
 # --seed--
@@ -28,7 +28,7 @@ assert(new __helpers.CSSHelp(document).getStyle('#document')?.padding === '0px 4
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Flex Photo Gallery</title>
-    <link rel="stylesheet" href="./css/style50.css">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <div class="header">

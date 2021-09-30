@@ -24,7 +24,7 @@ One `meta` element should have a `name` set to `viewport`, and `content` set to 
 
 ```js
 const meta = [...document.querySelectorAll('meta')];
-const target = meta?.find(m => m?.getAttribute('name') === 'viewport' && m?.getAttribute('content') === 'width=device-width, initial-scale=1.0' && !m?.getAttribute('charset'));
+const target = meta?.find(m => m?.getAttribute('name') === 'viewport' && m?.getAttribute('content').match(/width=device-width,\s?initial-scale=1(.0)?/) && !m?.getAttribute('charset'));
 assert.exists(target);
 ```
 

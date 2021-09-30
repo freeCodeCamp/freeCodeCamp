@@ -24,18 +24,18 @@ const title = document.querySelector('title');
 assert.exists(title);
 ```
 
-Your project should have a title of `CSS Grid Magazine`.
+Your project should have a title of `CSS Flexbox Photo Gallery`.
 
 ```js
 const title = document.querySelector('title');
-assert.equal(title?.text?.trim()?.toLowerCase(), 'css grid magazine')
+assert.equal(title?.text?.trim()?.toLowerCase(), 'css flexbox photo gallery')
 ```
 
 Remember, the casing and spelling matter for the title.
 
 ```js
 const title = document.querySelector('title');
-assert.equal(title?.text?.trim(), 'CSS Grid Magazine');
+assert.equal(title?.text?.trim(), 'CSS Flexbox Photo Gallery');
 ```
 
 # --seed--

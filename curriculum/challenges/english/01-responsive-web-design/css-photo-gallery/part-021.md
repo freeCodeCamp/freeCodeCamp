@@ -22,26 +22,26 @@ assert(new __helpers.CSSHelp(document).getCSSRules('media')?.length === 2);
 Your new `@media` query should come after your existing one.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === '(max-width: 600px)');
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === '(max-width: 800px)');
 ```
 
-Your new `@media` query should have a `min-width` of `600px`.
+Your new `@media` query should have a `max-width` of `600px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.media?.mediaText === '(min-width: 600px)');
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.media?.mediaText === '(max-width: 600px)');
 ```
 
 Your new `@media` query should have a `#gallery img` selector.
 
 ```js
-const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(min-width: 600px)');
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 600px)');
 assert(rules?.find(rule => rule?.selectorText === '#gallery img'));
 ```
 
 Your `#gallery img` rule should have a `width` property set to `100%`.
 
 ```js
-const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(min-width: 600px)');
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 600px)');
 const imgRule = rules?.find(rule => rule?.selectorText === '#gallery img');
 assert(imgRule?.style?.width === '100%');
 ```
@@ -57,7 +57,7 @@ assert(imgRule?.style?.width === '100%');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Flex Photo Gallery</title>
-    <link rel="stylesheet" href="./css/style50.css">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <div class="header">

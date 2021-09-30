@@ -29,10 +29,10 @@ Your `.header` selector should have a `padding` property set to `32px`.
 assert(new __helpers.CSSHelp(document).getStyle('.header')?.padding === '32px');
 ```
 
-Your `.header` selector should have a `background` property set to `#E0DDDD`.
+Your `.header` selector should have a `background-color` property set to `#E0DDDD`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.header')?.background === 'rgb(224, 221, 221)');
+assert(new __helpers.CSSHelp(document).getStyle('.header')?.backgroundColor === 'rgb(224, 221, 221)');
 ```
 
 # --seed--
@@ -46,7 +46,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.header')?.background === 'rgb(
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Flex Photo Gallery</title>
-    <link rel="stylesheet" href="./css/style50.css">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <div class="header">

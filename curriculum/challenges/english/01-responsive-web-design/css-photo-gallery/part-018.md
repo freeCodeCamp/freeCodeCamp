@@ -16,13 +16,13 @@ Give your `#gallery img` selector a `margin-top` property of `8px` and a `paddin
 Your `#gallery img` selector should have a `margin-top` property of `8px`.
 
 ```js
-assert(new __helpers.CSSHelper(document).getStyle('#gallery img')?.marginTop === '8px');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.marginTop === '8px');
 ```
 
 Your `#gallery img` selector should have a `padding` property of `0 4px`.
 
 ```js
-assert(new __helpers.CSSHelper(document).getStyle('#gallery img')?.padding === '0px 4px');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.padding === '0px 4px');
 ```
 
 # --seed--
@@ -36,7 +36,7 @@ assert(new __helpers.CSSHelper(document).getStyle('#gallery img')?.padding === '
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Flex Photo Gallery</title>
-    <link rel="stylesheet" href="./css/style50.css">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <div class="header">
