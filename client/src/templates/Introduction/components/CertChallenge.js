@@ -79,7 +79,7 @@ const CertChallenge = ({
   });
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
-  const [verificationFetchState, SetVerificationFetchState] = useState(false);
+  const [verificationFetchState, setVerificationFetchState] = useState(false);
   const [stepState, setStepState] = useState({
     numberOfSteps: 0,
     completedCount: 0
@@ -95,7 +95,7 @@ const CertChallenge = ({
           const data = await getVerifyCanClaimCert(username, superBlock);
           const { status, result } = data?.response?.message;
           setCertIsClaimable({ status, result });
-          SetVerificationFetchState(true);
+          setVerificationFetchState(true);
         } catch (e) {
           // TODO: How do we handle errors...?
         }
