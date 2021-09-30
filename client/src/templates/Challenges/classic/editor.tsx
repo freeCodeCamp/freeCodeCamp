@@ -954,11 +954,18 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
     // editor.
+    const { editor } = data;
+
     const hasChangedContents = updateEditorValues();
     if (hasChangedContents && isProject()) {
       initializeProjectFeatures();
       updateDescriptionZone();
       updateOutputZone();
+    }
+
+    editor?.focus();
+    if (isProject() && editor) {
+      showEditableRegion(editor);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles]);
