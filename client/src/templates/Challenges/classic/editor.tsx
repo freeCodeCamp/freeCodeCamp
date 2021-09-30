@@ -278,6 +278,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     )?.contents;
     if (model?.getValue() !== newContents) {
       model?.setValue(newContents ?? '');
+      return true;
+    } else {
+      return false;
     }
   };
 
@@ -951,8 +954,8 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
     // editor.
-    updateEditorValues();
-    if (isProject()) {
+    const hasChangedContents = updateEditorValues();
+    if (hasChangedContents && isProject()) {
       initializeProjectFeatures();
       updateDescriptionZone();
       updateOutputZone();
