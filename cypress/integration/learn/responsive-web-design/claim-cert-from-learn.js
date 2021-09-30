@@ -42,9 +42,9 @@ describe('Responsive Web Design Superblock', () => {
       cy.get('a.disabled').should('have.text', 'Claim Certification');
     });
 
-    it('should have an unordered list with class "map-challenges-ul" containing 6 items', () => {
+    it('should have an unordered list with class "map-challenges-ul" containing 4 items', () => {
       cy.get('[data-cy=claim-cert-steps]').should('be.visible');
-      cy.get('[data-cy=claim-cert-steps]').children().should('have.length', 6);
+      cy.get('[data-cy=claim-cert-steps]').children().should('have.length', 4);
     });
   });
   describe('After submitting all 5 projects', () => {
