@@ -216,10 +216,12 @@ export const reducer = handleActions(
       { payload: { fileKey, editorValue, editableRegionBoundaries } }
     ) => {
       const updates = {};
-      if (editableRegionBoundaries)
+      // if a given part of the payload is null, we leave that part of the state
+      // unchanged
+      if (editableRegionBoundaries !== null)
         updates.editableRegionBoundaries = editableRegionBoundaries;
-      if (editorValue) updates.contents = editorValue;
-      if (editableRegionBoundaries && editorValue)
+      if (editorValue !== null) updates.contents = editorValue;
+      if (editableRegionBoundaries !== null && editorValue !== null)
         updates.editableContents = getLines(
           editorValue,
           editableRegionBoundaries
