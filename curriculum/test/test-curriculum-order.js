@@ -95,7 +95,7 @@ describe('curriculumOrder', function () {
       });
     });
 
-    it('order numbers are expected to be contiguos for each superBlock', function () {
+    it('order numbers are expected to be contiguous for each superBlock', function () {
       Object.keys(superBlocks).forEach(key => {
         const orders = Object.keys(superBlocks[key]).map(toNumber);
         orders.sort((a, b) => a < b);
@@ -103,7 +103,7 @@ describe('curriculumOrder', function () {
         // expect(orders).to.deep.equal([...Array(orders.length).keys()]);
         for (let i = 1; i < orders.length; i++) {
           if (orders[i] !== orders[i - 1] + 1) {
-            console.warn(`orders for ${key} are not contiguos`);
+            console.warn(`orders for ${key} are not contiguous`);
             break;
           }
         }
