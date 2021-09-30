@@ -96,7 +96,6 @@
     "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio.",
     "data": "To see what data we hold on your account, click the \"Download your data\" button below",
     "disabled": "Your certifications will be disabled, if set to private.",
-    "private-name": "Your name will not appear on your certifications, if this is set to private.",
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
     "for": "Account Settings for {{username}}",
     "username": {
@@ -451,6 +450,7 @@
     "refresh-needed": "You can only use the PaymentRequest button once. Refresh the page to start over.",
     "username-not-found": "We could not find a user with the username \"{{username}}\"",
     "add-name": "This user needs to add their name to their account in order for others to be able to view their certification.",
+    "name-not-public": "This user has their name set to private in order to view their certificaton it needs to be set to public.",
     "not-eligible": "This user is not eligible for freeCodeCamp.org certifications at this time.",
     "profile-private": "{{username}} has chosen to make their portfolio private. They will need to make their portfolio public in order for others to be able to view their certification.",
     "certs-private": "{{username}} has chosen to make their certifications private. They will need to make their certifications public in order for others to be able to view them.",

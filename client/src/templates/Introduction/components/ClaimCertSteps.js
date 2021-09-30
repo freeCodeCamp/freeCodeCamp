@@ -29,13 +29,10 @@ const ClaimCertSteps = ({
       <GreenNotCompleted style={mapIconStyle} />
     );
   };
-  const settingsLink = '/settings';
   const privacySettingsLink = '/settings#privacy-settings';
   const honestyPolicyAnchor = '/settings#honesty-policy';
   const {
     isHonest = false,
-    isShowName = false,
-    isNameSet = false,
     isShowCerts = false,
     isShowProfile = false
   } = steps;
@@ -72,18 +69,6 @@ const ClaimCertSteps = ({
             {renderCheckMark(isShowCerts)}
           </span>
           {t('certification-card.set-certs-public')}
-        </Link>
-      </li>
-      <li className='map-challenge-title map-challenge-wrap'>
-        <Link to={settingsLink}>
-          <span className='badge map-badge'>{renderCheckMark(isNameSet)}</span>
-          {t('certification-card.set-name')}
-        </Link>
-      </li>
-      <li className='map-challenge-title map-challenge-wrap'>
-        <Link to={privacySettingsLink}>
-          <span className='badge map-badge'>{renderCheckMark(isShowName)}</span>
-          {t('certification-card.set-name-public')}
         </Link>
       </li>
     </ul>
