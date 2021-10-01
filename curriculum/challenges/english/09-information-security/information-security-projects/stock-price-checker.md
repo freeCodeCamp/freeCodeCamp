@@ -123,6 +123,11 @@ async (getUserInput) => {
 };
 ```
 
+# special note
+ Under EU General Data Protection Regulation (GDPR), IP addresses are considered [personal data](https://gdpr.eu/eu-gdpr-personal-data/). To comply with data privacy rules, we can anonymize IP addresses by truncating them. We can null the last two octaves of an IPv4 address.<br/>
+For Example: 172.16.254.120 --> 172.16.0.0 <br/>
+For an IPv6 address, the last 64 of the 128 bits can be set to zero. You can refer to [this](https://stackoverflow.com/a/6098698) in stackoverflow to know more about anonymizing an IPv6 address.
+
 # --solutions--
 
 ```js
