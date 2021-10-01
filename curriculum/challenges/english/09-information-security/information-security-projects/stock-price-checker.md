@@ -88,8 +88,7 @@ async (getUserInput) => {
   assert.typeOf(ticker.stock, 'string');
 };
 ```
-
-You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
+You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted. It is important to comply with the General Data Protection Regulation (GDPR) data privacy standards when processing personally identifiable information (PII). You may review the GDPR definition of PII on the GDPR website: [https://gdpr.eu/eu-gdpr-personal-data](https://gdpr.eu/eu-gdpr-personal-data/). IP addresses are categorized as PII by the GDPR. You can anonymize IP addresses by truncating the last octet of an IPv4 address, or the last chunk of an IPv6 address.
 
 ```js
 
