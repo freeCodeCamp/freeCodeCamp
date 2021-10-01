@@ -262,9 +262,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         modeMap[challengeFile?.ext ?? 'html']
       );
     data.model = model;
-    const editableRegion = getEditableRegionFromRedux();
-
-    if (editableRegion.length === 2) decorateForbiddenRanges(editableRegion);
 
     // TODO: do we need to return this?
     return { model };
@@ -274,13 +271,16 @@ const Editor = (props: EditorProps): JSX.Element => {
   // changes coming from outside the editor (such as code resets).
   const updateEditorValues = () => {
     const { challengeFiles, fileKey } = props;
-    const { model } = dataRef.current[fileKey];
+    const { model } = data;
 
     const newContents = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
     )?.contents;
     if (model?.getValue() !== newContents) {
       model?.setValue(newContents ?? '');
+      return true;
+    } else {
+      return false;
     }
   };
 
@@ -291,6 +291,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
     data.editor = editor;
+
+    if (isProject()) {
+      initializeProjectFeatures();
+      addContentChangeListener();
+      showEditableRegion(editor);
+    }
 
     const storedAccessibilityMode = () => {
       const accessibility = store.get('accessibilityMode') as boolean;
@@ -368,65 +374,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       }
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
-
-    const editableBoundaries = getEditableRegionFromRedux();
-
-    if (editableBoundaries.length === 2) {
-      const createWidget = (
-        id: string,
-        domNode: HTMLDivElement,
-        getTop: () => string
-      ) => {
-        const getId = () => id;
-        const getDomNode = () => domNode;
-        const getPosition = () => {
-          domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
-          domNode.style.top = getTop();
-
-          // must return null, so that Monaco knows the widget will position
-          // itself.
-          return null;
-        };
-        return {
-          getId,
-          getDomNode,
-          getPosition
-        };
-      };
-
-      const descriptionNode = createDescription(editor);
-
-      const outputNode = createOutputNode(editor);
-
-      const descriptionWidget = createWidget(
-        'description.widget',
-        descriptionNode,
-        getDescriptionZoneTop
-      );
-      data.descriptionWidget = descriptionWidget;
-      const outputWidget = createWidget(
-        'output.widget',
-        outputNode,
-        getOutputZoneTop
-      );
-      data.outputWidget = outputWidget;
-
-      editor.addOverlayWidget(descriptionWidget);
-
-      // TODO: order of insertion into the DOM probably matters, revisit once
-      // the tabs have been fixed!
-
-      editor.addOverlayWidget(outputWidget);
-
-      editor.changeViewZones(descriptionZoneCallback);
-      editor.changeViewZones(outputZoneCallback);
-
-      editor.onDidScrollChange(() => {
-        editor.layoutOverlayWidget(descriptionWidget);
-        editor.layoutOverlayWidget(outputWidget);
-      });
-      showEditableRegion(editableBoundaries);
-    }
   };
 
   const descriptionZoneCallback = (
@@ -581,28 +528,24 @@ const Editor = (props: EditorProps): JSX.Element => {
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
 
-  function showEditableRegion(editableBoundaries: number[]) {
-    if (editableBoundaries.length !== 2) return;
-    const editor = data.editor;
-    if (!editor) return;
-    // TODO: The heuristic has been commented out for now because the cursor
-    // position is not saved at the moment, so it's redundant. I'm leaving it
-    // here for now, in case we decide to save it in future.
-    // this is a heuristic: if the cursor is at the start of the page, chances
-    // are the user has not edited yet. If so, move to the start of the editable
-    // region.
-    // if (
-    //  isEqual({ ..._editor.getPosition() }, { lineNumber: 1, column: 1 })
-    // ) {
-    editor.setPosition({
-      lineNumber: editableBoundaries[0] + 1,
-      column: 1
-    });
-    editor.revealLinesInCenter(editableBoundaries[0], editableBoundaries[1]);
-    // }
+  // TODO DRY this and the update function
+  function initializeForbiddenRegion(
+    stickiness: number,
+    target: editor.ITextModel,
+    range: IRange
+  ) {
+    const lineDecoration = {
+      range,
+      options: {
+        isWholeLine: true,
+        linesDecorationsClassName: 'myLineDecoration',
+        stickiness
+      }
+    };
+    return target.deltaDecorations([], [lineDecoration]);
   }
 
-  function highlightLines(
+  function updateForbiddenRegion(
     stickiness: number,
     target: editor.ITextModel,
     range: IRange,
@@ -613,14 +556,30 @@ const Editor = (props: EditorProps): JSX.Element => {
       options: {
         isWholeLine: true,
         linesDecorationsClassName: 'myLineDecoration',
-        className: 'do-not-edit',
         stickiness
       }
     };
     return target.deltaDecorations(oldIds, [lineDecoration]);
   }
 
-  function highlightEditableLines(
+  // TODO: DRY this and the update function
+  function initializeEditableRegion(
+    stickiness: number,
+    target: editor.ITextModel,
+    range: IRange
+  ) {
+    const lineDecoration = {
+      range,
+      options: {
+        isWholeLine: true,
+        linesDecorationsClassName: 'myEditableLineDecoration',
+        stickiness
+      }
+    };
+    return target.deltaDecorations([], [lineDecoration]);
+  }
+
+  function updateEditableRegion(
     stickiness: number,
     target: editor.ITextModel,
     range: IRange,
@@ -631,28 +590,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       options: {
         isWholeLine: true,
         linesDecorationsClassName: 'myEditableLineDecoration',
-        className: 'do-not-edit',
         stickiness
       }
     };
     return target.deltaDecorations(oldIds, [lineDecoration]);
-  }
-
-  function highlightText(
-    stickiness: number,
-    target: editor.ITextModel,
-    range: IRange,
-    oldIds: string[] = []
-  ) {
-    const inlineDecoration = {
-      range,
-      options: {
-        inlineClassName: 'myInlineDecoration',
-        stickiness
-      }
-    };
-
-    return target.deltaDecorations(oldIds, [inlineDecoration]);
   }
 
   function getDescriptionZoneTop() {
@@ -705,7 +646,20 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
-  function decorateForbiddenRanges(editableRegion: number[]) {
+  function initializeProjectFeatures() {
+    const editor = data.editor;
+    if (editor) {
+      initializeRegions(getEditableRegionFromRedux());
+      addWidgetsToRegions(editor);
+    }
+  }
+
+  function isProject() {
+    const editableRegionBoundaries = getEditableRegionFromRedux();
+    return editableRegionBoundaries.length === 2;
+  }
+
+  function initializeRegions(editableRegion: number[]) {
     const { model } = data;
     const monaco = monacoRef.current;
     if (!model || !monaco) return;
@@ -714,12 +668,12 @@ const Editor = (props: EditorProps): JSX.Element => {
       [editableRegion[1], model.getLineCount()]
     ];
 
-    const editableRange = positionsToRange(model, monaco, [
+    const editableRange = positionsToRange(monaco, model, [
       editableRegion[0] + 1,
       editableRegion[1] - 1
     ]);
 
-    data.insideEditDecId = highlightEditableLines(
+    data.insideEditDecId = initializeEditableRegion(
       monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
       model,
       editableRange
@@ -729,51 +683,87 @@ const Editor = (props: EditorProps): JSX.Element => {
     // we simply don't add those decorations
     if (forbiddenRegions[0][1] > 0) {
       const forbiddenRange = positionsToRange(
-        model,
         monaco,
+        model,
         forbiddenRegions[0]
       );
       // the first range should expand at the top
       // TODO: Unsure what this should be - returns an array, so I added [0] @ojeytonwilliams
-      data.startEditDecId = highlightLines(
+      data.startEditDecId = initializeForbiddenRegion(
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
         model,
         forbiddenRange
       )[0];
-
-      highlightText(
-        monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-        model,
-        forbiddenRange
-      );
     }
 
-    const forbiddenRange = positionsToRange(model, monaco, forbiddenRegions[1]);
+    const forbiddenRange = positionsToRange(monaco, model, forbiddenRegions[1]);
     // TODO: handle the case the region covers the bottom of the editor
     // the second range should expand at the bottom
-    data.endEditDecId = highlightLines(
+    data.endEditDecId = initializeForbiddenRegion(
       monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
       model,
       forbiddenRange
     )[0];
+  }
 
-    highlightText(
-      monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
-      model,
-      forbiddenRange
-    );
+  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
+    const createWidget = (
+      id: string,
+      domNode: HTMLDivElement,
+      getTop: () => string
+    ) => {
+      const getId = () => id;
+      const getDomNode = () => domNode;
+      const getPosition = () => {
+        domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+        domNode.style.top = getTop();
 
-    // The deleted line is always considered to be the one that has moved up.
-    // - if the user deletes at the end of line 5, line 6 is deleted and
-    // - if the user backspaces at the start of line 6, line 6 is deleted
-    // TODO: handle multiple simultaneous changes (multicursors do this)
-    function getDeletedLine(event: editor.IModelContentChangedEvent) {
-      const isDeleted =
-        event.changes[0].text === '' && event.changes[0].range.endColumn === 1;
-      return isDeleted ? event.changes[0].range.endLineNumber : 0;
+        // must return null, so that Monaco knows the widget will position
+        // itself.
+        return null;
+      };
+      return {
+        getId,
+        getDomNode,
+        getPosition
+      };
+    };
+
+    const descriptionNode = createDescription(editor);
+
+    const outputNode = createOutputNode(editor);
+
+    if (!data.descriptionWidget) {
+      data.descriptionWidget = createWidget(
+        'description.widget',
+        descriptionNode,
+        getDescriptionZoneTop
+      );
+      editor.addOverlayWidget(data.descriptionWidget);
+      editor.changeViewZones(descriptionZoneCallback);
+    }
+    if (!data.outputWidget) {
+      data.outputWidget = createWidget(
+        'output.widget',
+        outputNode,
+        getOutputZoneTop
+      );
+      editor.addOverlayWidget(data.outputWidget);
+      editor.changeViewZones(outputZoneCallback);
     }
 
-    // TODO this listener needs to be replaced on reset.
+    editor.onDidScrollChange(() => {
+      if (data.descriptionWidget)
+        editor.layoutOverlayWidget(data.descriptionWidget);
+      if (data.outputWidget) editor.layoutOverlayWidget(data.outputWidget);
+    });
+  }
+
+  function addContentChangeListener() {
+    const { model } = data;
+    const monaco = monacoRef.current;
+    if (!model || !monaco) return;
+
     model.onDidChangeContent(e => {
       // TODO: it would be nice if undoing could remove the warning, but
       // it's probably too hard to track. i.e. if they make two warned edits
@@ -793,7 +783,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       const redecorateEditableRegion = () => {
         const coveringRange = getLinesCoveringEditableRegion();
         if (coveringRange) {
-          data.insideEditDecId = highlightEditableLines(
+          data.insideEditDecId = updateEditableRegion(
             monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
             model,
             coveringRange,
@@ -829,7 +819,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       const preventOverlap = (
         id: string,
         stickiness: number,
-        highlightFunction: typeof highlightLines
+        updateRegion: typeof updateForbiddenRegion
       ) => {
         // Even though the decoration covers the whole line, it has a
         // startColumn that moves.  toStartOfLine ensures that the
@@ -867,7 +857,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
           if (touchingDeleted) {
             // TODO: if they undo this should be reversed
-            const decorations = highlightFunction(
+            const decorations = updateRegion(
               stickiness,
               model,
               newCoveringRange,
@@ -889,7 +879,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       data.endEditDecId = preventOverlap(
         data.endEditDecId,
         monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-        highlightLines
+        updateForbiddenRegion
       );
 
       // If the content has changed, the zones may need moving. Rather than
@@ -905,13 +895,44 @@ const Editor = (props: EditorProps): JSX.Element => {
         warnUser(data.endEditDecId);
       }
     });
+    // The deleted line is always considered to be the one that has moved up.
+    // - if the user deletes at the end of line 5, line 6 is deleted and
+    // - if the user backspaces at the start of line 6, line 6 is deleted
+    // TODO: handle multiple simultaneous changes (multicursors do this)
+    function getDeletedLine(event: editor.IModelContentChangedEvent) {
+      const isDeleted =
+        event.changes[0].text === '' && event.changes[0].range.endColumn === 1;
+      return isDeleted ? event.changes[0].range.endLineNumber : 0;
+    }
+  }
+
+  function showEditableRegion(editor: editor.IStandaloneCodeEditor) {
+    const editableRegionBoundaries = getEditableRegionFromRedux();
+    // TODO: The heuristic has been commented out for now because the cursor
+    // position is not saved at the moment, so it's redundant. I'm leaving it
+    // here for now, in case we decide to save it in future.
+    // this is a heuristic: if the cursor is at the start of the page, chances
+    // are the user has not edited yet. If so, move to the start of the editable
+    // region.
+    // if (
+    //  isEqual({ ..._editor.getPosition() }, { lineNumber: 1, column: 1 })
+    // ) {
+    editor.setPosition({
+      lineNumber: editableRegionBoundaries[0] + 1,
+      column: 1
+    });
+    editor.revealLinesInCenter(
+      editableRegionBoundaries[0],
+      editableRegionBoundaries[1]
+    );
+    // }
   }
 
   // creates a range covering all the lines in 'positions'
   // NOTE: positions is an array of [startLine, endLine]
   function positionsToRange(
-    model: editor.ITextModel,
     monaco: typeof monacoEditor,
+    model: editor.ITextModel,
     [start, end]: [number, number]
   ) {
     // convert to [startLine, startColumn, endLine, endColumn]
@@ -933,7 +954,19 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
     // editor.
-    updateEditorValues();
+    const { editor } = data;
+
+    const hasChangedContents = updateEditorValues();
+    if (hasChangedContents && isProject()) {
+      initializeProjectFeatures();
+      updateDescriptionZone();
+      updateOutputZone();
+    }
+
+    editor?.focus();
+    if (isProject() && editor) {
+      showEditableRegion(editor);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles]);
   useEffect(() => {

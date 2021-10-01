@@ -215,15 +215,24 @@ export const reducer = handleActions(
       state,
       { payload: { fileKey, editorValue, editableRegionBoundaries } }
     ) => {
+      const updates = {};
+      // if a given part of the payload is null, we leave that part of the state
+      // unchanged
+      if (editableRegionBoundaries !== null)
+        updates.editableRegionBoundaries = editableRegionBoundaries;
+      if (editorValue !== null) updates.contents = editorValue;
+      if (editableRegionBoundaries !== null && editorValue !== null)
+        updates.editableContents = getLines(
+          editorValue,
+          editableRegionBoundaries
+        );
       return {
         ...state,
         challengeFiles: [
           ...state.challengeFiles.filter(x => x.fileKey !== fileKey),
           {
             ...state.challengeFiles.find(x => x.fileKey === fileKey),
-            contents: editorValue,
-            editableContents: getLines(editorValue, editableRegionBoundaries),
-            editableRegionBoundaries
+            ...updates
           }
         ]
       };
@@ -268,21 +277,16 @@ export const reducer = handleActions(
       challengeMeta: { ...payload }
     }),
     [actionTypes.resetChallenge]: state => {
-      const challengeFilesReset = [
-        ...state.challengeFiles.reduce(
-          (challengeFiles, challengeFile) => ({
-            ...challengeFiles,
-            ...challengeFile,
-            contents: challengeFile.seed.slice(),
-            editableContents: getLines(
-              challengeFile.seed,
-              challengeFile.seedEditableRegionBoundaries
-            ),
-            editableRegionBoundaries: challengeFile.seedEditableRegionBoundaries
-          }),
-          {}
-        )
-      ];
+      const challengeFilesReset = state.challengeFiles.map(challengeFile => ({
+        ...challengeFile,
+        contents: challengeFile.seed.slice(),
+        editableContents: getLines(
+          challengeFile.seed,
+          challengeFile.seedEditableRegionBoundaries
+        ),
+        editableRegionBoundaries:
+          challengeFile.seedEditableRegionBoundaries.slice()
+      }));
       return {
         ...state,
         currentTab: 2,
