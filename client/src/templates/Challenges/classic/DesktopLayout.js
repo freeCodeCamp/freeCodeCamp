@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import envData from '../../../../../config/env.json';
-import { toSortedArray } from '../../../../../utils/sort-files';
+import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import EditorTabs from './EditorTabs';
 import ActionRow from './action-row.tsx';
 
@@ -57,7 +57,7 @@ class DesktopLayout extends Component {
 
   getChallengeFile() {
     const { challengeFiles } = this.props;
-    return first(toSortedArray(challengeFiles));
+    return first(sortChallengeFiles(challengeFiles));
   }
 
   render() {
