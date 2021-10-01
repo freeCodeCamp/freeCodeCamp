@@ -292,8 +292,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     editorRef.current = editor;
     data.editor = editor;
 
-    if (isProject()) {
-      initializeProjectFeatures();
+    if (isProjectStep()) {
+      initializeProjectStepFeatures();
       addContentChangeListener();
       showEditableRegion(editor);
     }
@@ -646,7 +646,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
-  function initializeProjectFeatures() {
+  function initializeProjectStepFeatures() {
     const editor = data.editor;
     if (editor) {
       initializeRegions(getEditableRegionFromRedux());
@@ -654,7 +654,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }
 
-  function isProject() {
+  // The challenge object always has the editableRegionBoundaries array, but
+  // unless it is a step in the project based curriculum it will be an empty
+  // array. That's currently how we determine if we need the extra features
+  // (multiple editor tabs, embedded description, etc.) or not.
+  function isProjectStep() {
     const editableRegionBoundaries = getEditableRegionFromRedux();
     return editableRegionBoundaries.length === 2;
   }
@@ -957,14 +961,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { editor } = data;
 
     const hasChangedContents = updateEditorValues();
-    if (hasChangedContents && isProject()) {
-      initializeProjectFeatures();
+    if (hasChangedContents && isProjectStep()) {
+      initializeProjectStepFeatures();
       updateDescriptionZone();
       updateOutputZone();
     }
 
     editor?.focus();
-    if (isProject() && editor) {
+    if (isProjectStep() && editor) {
       showEditableRegion(editor);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
