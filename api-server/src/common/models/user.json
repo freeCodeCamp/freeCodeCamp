@@ -74,6 +74,9 @@
       },
       "require": true
     },
+    "usernameDisplay": {
+      "type": "string"
+    },
     "about": {
       "type": "string",
       "default": ""
@@ -276,9 +279,7 @@
       "default": {}
     },
     "donationEmails": {
-      "type": [
-        "string"
-      ]
+      "type": ["string"]
     },
     "isDonating": {
       "type": "boolean",
