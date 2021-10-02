@@ -57,7 +57,7 @@ const loggedInProps = {
   complete: true,
   isSignedIn: true,
   name: 'Development User',
-  navigate: () => {},
+  navigate: jest.fn(),
   pending: false,
   slug: '/',
   username: 'DevelopmentUser'
@@ -67,7 +67,7 @@ const loggedOutProps = {
   complete: true,
   isSignedIn: false,
   name: '',
-  navigate: () => {},
+  navigate: jest.fn(),
   pending: false,
   slug: '/',
   username: ''
