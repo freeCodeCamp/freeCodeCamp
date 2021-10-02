@@ -1,5 +1,4 @@
 import { Grid } from '@freecodecamp/react-bootstrap';
-import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -11,11 +10,10 @@ import Testimonials from './components/Testimonials';
 
 import './landing.css';
 
-const propTypes = {
-  page: PropTypes.string
-};
-
-export const Landing = ({ page = 'landing' }) => {
+interface Props {
+  page?: string;
+}
+export const Landing = ({ page = 'landing' }: Props): JSX.Element => {
   const { t } = useTranslation();
 
   return (
@@ -40,5 +38,5 @@ export const Landing = ({ page = 'landing' }) => {
 };
 
 Landing.displayName = 'Landing';
-Landing.propTypes = propTypes;
+
 export default Landing;
