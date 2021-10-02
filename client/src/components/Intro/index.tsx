@@ -14,7 +14,7 @@ interface Props {
   isSignedIn?: boolean;
   name?: string;
   pending?: boolean;
-  slug?: string;
+  slug: string;
   username?: string;
 }
 

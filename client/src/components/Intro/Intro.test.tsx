@@ -7,7 +7,7 @@ import Intro from './';
 
 jest.mock('../../analytics');
 
-function rendererCreateWithRedux(ui) {
+function rendererCreateWithRedux(ui: JSX.Element) {
   return renderer.create(<Provider store={createStore()}>{ui}</Provider>);
 }
 
