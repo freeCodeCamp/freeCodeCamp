@@ -2,7 +2,7 @@ import { Panel } from '@freecodecamp/react-bootstrap';
 import Prism from 'prismjs';
 import React from 'react';
 
-import { ChallengeFiles } from '../../redux/prop-types';
+import { ChallengeFiles, CompletedChallenge } from '../../redux/prop-types';
 
 const prismLang = {
   css: 'css',
@@ -13,7 +13,7 @@ const prismLang = {
 
 interface Props {
   challengeFiles: ChallengeFiles;
-  solution: string;
+  solution: CompletedChallenge['solution'];
 }
 
 const SolutionViewer = ({
