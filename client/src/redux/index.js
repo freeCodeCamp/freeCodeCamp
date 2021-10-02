@@ -226,8 +226,9 @@ export const shouldRequestDonationSelector = state => {
 
 export const userByNameSelector = username => state => {
   const { user } = state[ns];
-  // TODO: Why return a string or empty objet literal?
-  return username in user ? user[username] : {};
+  // do not initalize  empty object literal to prevent
+  // components from re-rendering unnecessarily
+  return user[username];
 };
 
 export const certificatesByNameSelector = username => state => {
