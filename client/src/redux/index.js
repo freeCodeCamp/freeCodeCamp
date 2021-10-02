@@ -226,9 +226,9 @@ export const shouldRequestDonationSelector = state => {
 
 export const userByNameSelector = username => state => {
   const { user } = state[ns];
-  // do not initalize  empty object literal to prevent
-  // components from re-rendering unnecessarily
-  return user[username];
+  // return initial state empty user empty object instead of empty
+  // object litteral to prevent components from re-rendering unnecessarily
+  return user[username] ?? initialState.user;
 };
 
 export const certificatesByNameSelector = username => state => {
