@@ -2,7 +2,7 @@ import { Panel } from '@freecodecamp/react-bootstrap';
 import Prism from 'prismjs';
 import React from 'react';
 
-import { ChallengeFile } from '../../redux/prop-types';
+import { ChallengeFiles } from '../../redux/prop-types';
 
 const prismLang = {
   css: 'css',
@@ -12,7 +12,7 @@ const prismLang = {
 };
 
 interface Props {
-  challengeFiles: ChallengeFile[];
+  challengeFiles: ChallengeFiles;
   solution: string;
 }
 
@@ -20,7 +20,7 @@ const SolutionViewer = ({
   challengeFiles,
   solution = '// The solution is not available for this project'
 }: Props): JSX.Element =>
-  challengeFiles?.length > 0 ? (
+  challengeFiles?.length ? (
     <>
       {challengeFiles.map(challengeFile => (
         <Panel
