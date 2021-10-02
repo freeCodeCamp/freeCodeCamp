@@ -1,19 +1,22 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { generateIconComponent } from '../../../assets/icons';
+import { generateIconComponent, SuperBlock } from '../../../assets/icons';
 import { Spacer } from '../../../components/helpers';
 
-const propTypes = {
-  superBlock: PropTypes.string
-};
+interface SuperBlockIntroProps {
+  superBlock: SuperBlock;
+}
 
-function SuperBlockIntro(props) {
+function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
   const { t } = useTranslation();
   const { superBlock } = props;
 
-  const superBlockIntroObj = t(`intro:${superBlock}`);
+  const superBlockIntroObj: {
+    title?: string;
+    intro?: string[];
+    note?: string[];
+  } = t(`intro:${superBlock}`);
   const {
     title: i18nSuperBlock,
     intro: superBlockIntroText,
@@ -26,9 +29,8 @@ function SuperBlockIntro(props) {
       <Spacer />
       {generateIconComponent(superBlock, 'cert-header-icon')}
       <Spacer />
-      {superBlockIntroText.map((str, i) => (
-        <p key={i}>{str}</p>
-      ))}
+      {superBlockIntroText &&
+        superBlockIntroText.map((str, i) => <p key={i}>{str}</p>)}
       {superBlockNoteText && (
         <div className='alert alert-info' style={{ marginTop: '2rem' }}>
           {superBlockNoteText}
@@ -39,6 +41,5 @@ function SuperBlockIntro(props) {
 }
 
 SuperBlockIntro.displayName = 'SuperBlockIntro';
-SuperBlockIntro.propTypes = propTypes;
 
 export default SuperBlockIntro;
