@@ -38,4 +38,10 @@ jobs:
                 pull_number: context.payload.pull_request.number,
                 state: "closed"
               });
+              await github.rest.issues.addLabels({
+                owner: context.payload.repository.owner.login,
+                repo: context.payload.repository.name,
+                issue_number: context.issue.number,
+                labels: ["invalid"]
+              });
             }

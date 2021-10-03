@@ -8,7 +8,7 @@ const removeCssComments = (str: string): string =>
   str.replace(/\/\*[\s\S]+?\*\//g, '');
 
 export const removeJSComments = (codeStr: string): string => {
-  // TODO: publish type declarations and reenable eslint
+  // TODO: publish type declarations and re-enable eslint
   try {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     return strip(codeStr) as string;
