@@ -6,7 +6,7 @@ import keys from '../../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
 
-const paypalverifyWebhookURL =
+const paypalVerifyWebhookURL =
   keys.paypal.verifyWebhookURL ||
   `https://api.sandbox.paypal.com/v1/notifications/verify-webhook-signature`;
 const paypalTokenURL =
@@ -49,7 +49,7 @@ export async function verifyWebHook(headers, body, token, webhookId) {
     webhook_event: webhookEventBody
   };
 
-  const response = await axios.post(paypalverifyWebhookURL, payload, {
+  const response = await axios.post(paypalVerifyWebhookURL, payload, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`
