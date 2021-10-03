@@ -427,6 +427,7 @@
     "wrong-updating": "更新你的賬號出了點問題。請檢查並重試。",
     "updated-preferences": "我們已更新你的偏好設置。",
     "email-invalid": "郵箱格式無效",
+    "email-valid": "Your email has successfully been changed, happy coding!",
     "bad-challengeId": "currentChallengeId 是無效的挑戰 ID",
     "theme-invalid": "主題無效",
     "theme-set": "主題已設置",
