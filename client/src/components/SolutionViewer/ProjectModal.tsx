@@ -1,11 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SolutionViewer from './SolutionViewer';
 
-const propTypes = {
-  challengeFiles: PropTypes.array,
+type projectmodalProps = {
+  challengeFiles: [];
   // TODO: removed once refactored to TS
   //   PropTypes.shape({
   //     contents: PropTypes.string,
@@ -15,20 +15,19 @@ const propTypes = {
   //     path: PropTypes.string
   //   })
   // ),
-  handleSolutionModalHide: PropTypes.func,
-  isOpen: PropTypes.bool,
-  projectTitle: PropTypes.string,
-  solution: PropTypes.string
+  handleSolutionModalHide: () => void;
+  isOpen: boolean;
+  projectTitle: string;
+  solution: string;
 };
 
-const ProjectModal = props => {
-  const {
-    isOpen,
-    projectTitle,
-    challengeFiles,
-    solution,
-    handleSolutionModalHide
-  } = props;
+const ProjectModal: React.FC<projectmodalProps> = ({
+  isOpen,
+  projectTitle,
+  challengeFiles,
+  solution,
+  handleSolutionModalHide
+}: projectmodalProps) => {
   const { t } = useTranslation();
   return (
     <Modal
@@ -54,7 +53,6 @@ const ProjectModal = props => {
   );
 };
 
-ProjectModal.propTypes = propTypes;
 ProjectModal.displayName = 'ProjectModal';
 
 export default ProjectModal;
