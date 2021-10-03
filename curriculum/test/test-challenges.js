@@ -347,7 +347,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
                 );
               }
 
-              /* 
+              /*
                * Then we compare the number of times each comment appears in the
                * translated text (commentMap) with the number of replacements
                * made during translation (challenge.__commentCounts). If they
