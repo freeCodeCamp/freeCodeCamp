@@ -16,11 +16,10 @@ interface Props {
   solution: CompletedChallenge['solution'];
 }
 
-const SolutionViewer = ({
-  challengeFiles,
-  solution = '// The solution is not available for this project'
-}: Props): JSX.Element =>
-  challengeFiles?.length ? (
+const SolutionViewer = ({ challengeFiles, solution }: Props): JSX.Element => {
+  const localSolution: string =
+    solution || '// The solution is not available for this project';
+  return challengeFiles?.length ? (
     <>
       {challengeFiles.map(challengeFile => (
         <Panel
@@ -50,7 +49,7 @@ const SolutionViewer = ({
     <Panel
       bsStyle='primary'
       className='solution-viewer'
-      key={solution.slice(0, 10)}
+      key={localSolution.slice(0, 10)}
     >
       <Panel.Heading>JS</Panel.Heading>
       <Panel.Body>
@@ -59,7 +58,7 @@ const SolutionViewer = ({
             className='language-markup'
             dangerouslySetInnerHTML={{
               __html: Prism.highlight(
-                solution.trim(),
+                localSolution.trim(),
                 Prism.languages.js,
                 'javascript'
               )
@@ -69,6 +68,7 @@ const SolutionViewer = ({
       </Panel.Body>
     </Panel>
   );
+};
 
 SolutionViewer.displayName = 'SolutionViewer';
 
