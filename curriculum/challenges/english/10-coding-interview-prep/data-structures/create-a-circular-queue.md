@@ -52,7 +52,7 @@ When you enqueue items to the queue, the write pointer should advance forward an
 
 Likewise, the read pointer should advance forward as you dequeue items. When you dequeue an item, that item should be returned. If you cannot dequeue an item, you should return `null`.
 
-The write pointer should not be allowed to move past the read pointer (our class won't let you overwrite data you haven't read yet) and the read pointer should not be able to advance past data you have written.
+The write pointer should not be allowed to move past the read pointer (our class won't let you overwrite the data you haven't read yet) and the read pointer should not be able to advance past data you have written.
 
 # --hints--
 
