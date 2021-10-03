@@ -14,6 +14,7 @@
 - [Japanese](/i18n/japanese/index.md)
 - [Portuguese](/i18n/portuguese/index.md)
 - [Italian](/i18n/italian/index.md)
+- [Korean](/i18n/korean/index.md)
 
 </div>
 
