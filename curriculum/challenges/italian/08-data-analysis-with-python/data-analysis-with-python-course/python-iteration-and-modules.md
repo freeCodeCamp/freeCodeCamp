@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c167
 title: Iterazione e moduli in Python
 challengeType: 11
 videoId: XzosGWLafrY
+bilibiliIds:
+  aid: 633068913
+  bvid: BV1db4y127M4
+  cid: 409024056
 dashedName: python-iteration-and-modules
 ---
 

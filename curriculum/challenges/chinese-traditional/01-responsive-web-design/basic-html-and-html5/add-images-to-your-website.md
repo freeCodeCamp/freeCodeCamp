@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08812
 title: 給網站添加圖片
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pVMPUv/c8EbJf2'
 forumTopicId: 16640
 dashedName: add-images-to-your-website
 ---

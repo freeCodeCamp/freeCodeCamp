@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08812
 title: Agrega imágenes a tu sitio web
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pVMPUv/c8EbJf2'
 forumTopicId: 16640
 dashedName: add-images-to-your-website
 ---

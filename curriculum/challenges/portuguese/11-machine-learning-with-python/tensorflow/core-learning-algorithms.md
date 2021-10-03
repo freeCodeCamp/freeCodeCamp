@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d89
 title: Algoritmos de aprendizagem principais
 challengeType: 11
 videoId: u5lZURgcWnU
+bilibiliIds:
+  aid: 763034025
+  bvid: BV1A64y1a7g4
+  cid: 409127051
 dashedName: core-learning-algorithms
 ---
 

@@ -2,7 +2,6 @@
 id: bad87fee1348bd9acdf08812
 title: Cambia el tamaño de tus imágenes
 challengeType: 0
-videoUrl: 'https://scrimba.com/c/cM9MmCP'
 forumTopicId: 18282
 dashedName: size-your-images
 ---

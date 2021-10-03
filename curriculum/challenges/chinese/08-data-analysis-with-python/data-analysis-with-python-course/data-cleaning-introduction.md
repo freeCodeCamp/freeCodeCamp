@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c15d
 title: 数据清理简介
 challengeType: 11
 videoId: ovYNhnltVxY
+bilibiliIds:
+  aid: 250574398
+  bvid: BV1Pv411A7GN
+  cid: 409018611
 dashedName: data-cleaning-introduction
 ---
 
