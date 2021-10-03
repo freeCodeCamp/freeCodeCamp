@@ -3,6 +3,10 @@ id: 5e9a0a8e09c5df3cc3600ed7
 title: Avvertenze sulla copia di array
 challengeType: 11
 videoId: iIoQ0_L0GvA
+bilibiliIds:
+  aid: 633008569
+  bvid: BV1Bb4y127fb
+  cid: 409026161
 dashedName: copying-arrays-warning
 ---
 

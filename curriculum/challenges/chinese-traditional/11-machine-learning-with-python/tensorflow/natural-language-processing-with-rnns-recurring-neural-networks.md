@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d9d
 title: '使用 RNN 進行自然語言處理：循環神經網絡'
 challengeType: 11
 videoId: bX5681NPOcA
+bilibiliIds:
+  aid: 335605808
+  bvid: BV1SR4y1H7ri
+  cid: 409135641
 dashedName: natural-language-processing-with-rnns-recurring-neural-networks
 ---
 

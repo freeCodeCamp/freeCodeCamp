@@ -1,6 +1,6 @@
 ---
 id: 5900f3fa1000cf542c50ff0d
-title: 'Problem 142: Perfect Square Collection'
+title: '問題 142：完全平方數合集'
 challengeType: 5
 forumTopicId: 301771
 dashedName: problem-142-perfect-square-collection
@@ -8,14 +8,14 @@ dashedName: problem-142-perfect-square-collection
 
 # --description--
 
-Find the smallest x + y + z with integers x > y > z > 0 such that x + y, x − y, x + z, x − z, y + z, y − z are all perfect squares.
+請找出最小的 $x + y + z$，其中整數 $x > y > z > 0$ 需要滿足 $x + y$、$x − y$、$x + z$、$x − z$、$y + z$、$y − z$ 均爲完全平方數。
 
 # --hints--
 
-`euler142()` should return 1006193.
+`perfectSquareCollection()` 應該返回 `1006193`。
 
 ```js
-assert.strictEqual(euler142(), 1006193);
+assert.strictEqual(perfectSquareCollection(), 1006193);
 ```
 
 # --seed--
@@ -23,12 +23,12 @@ assert.strictEqual(euler142(), 1006193);
 ## --seed-contents--
 
 ```js
-function euler142() {
+function perfectSquareCollection() {
 
   return true;
 }
 
-euler142();
+perfectSquareCollection();
 ```
 
 # --solutions--

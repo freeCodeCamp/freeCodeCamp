@@ -3,6 +3,10 @@ id: 5e7b9f170b6c005b0e76f08b
 title: 建立关系数据库
 challengeType: 11
 videoId: MQ5z4bdF92U
+bilibiliIds:
+  aid: 249380678
+  bvid: BV1vv411E76L
+  cid: 377531786
 dashedName: make-a-relational-database
 ---
 

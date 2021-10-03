@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c167
 title: Realizar a iteração em Python e módulos
 challengeType: 11
 videoId: XzosGWLafrY
+bilibiliIds:
+  aid: 633068913
+  bvid: BV1db4y127M4
+  cid: 409024056
 dashedName: python-iteration-and-modules
 ---
 

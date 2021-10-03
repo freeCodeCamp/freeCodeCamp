@@ -3,6 +3,10 @@ id: 5ea9997bbec2e9bc47e94db3
 title: 開發橫幅抓取器
 challengeType: 11
 videoId: CeGW761BIsA
+bilibiliIds:
+  aid: 633014533
+  bvid: BV1Sb4y127H9
+  cid: 409036288
 dashedName: developing-a-banner-grabber
 ---
 
