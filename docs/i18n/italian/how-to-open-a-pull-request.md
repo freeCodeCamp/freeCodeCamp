@@ -84,7 +84,7 @@ E come sempre, poni liberamente le tue domande nella [categoria 'Contributors' d
 
 I conflitti possono sorgere perché molti contributori lavorano sul repository e le modifiche possono interrompere la tua PR in attesa di una revisione e di un merge.
 
-Spesso non si può richiedere un rebase, perché schiacciamo tutti i commit, tuttavia se è richiesto un rebase qui è quello che dovresti fare.
+More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
 ### Per le solite correzioni di bug e funzionalità
 
