@@ -38,28 +38,29 @@ Here are our ten core certifications:
 
 #### 1. [Responsive Web Design Certification](https://www.freecodecamp.org/learn/responsive-web-design/)
 
-- [Basic HTML and HTML5](https://www.freecodecamp.org/learn/responsive-web-design/#basic-html-and-html5)
-- [Basic CSS](https://www.freecodecamp.org/learn/responsive-web-design/#basic-css)
 - [Applied Visual Design](https://www.freecodecamp.org/learn/responsive-web-design/#applied-visual-design)
 - [Applied Accessibility](https://www.freecodecamp.org/learn/responsive-web-design/#applied-accessibility)
-- [Responsive Web Design Principles](https://www.freecodecamp.org/learn/responsive-web-design/#responsive-web-design-principles)
+- [Basic HTML and HTML5](https://www.freecodecamp.org/learn/responsive-web-design/#basic-html-and-html5)
+- [Basic CSS](https://www.freecodecamp.org/learn/responsive-web-design/#basic-css)
 - [CSS Flexbox](https://www.freecodecamp.org/learn/responsive-web-design/#css-flexbox)
 - [CSS Grid](https://www.freecodecamp.org/learn/responsive-web-design/#css-grid)
+- [Responsive Web Design Principles](https://www.freecodecamp.org/learn/responsive-web-design/#responsive-web-design-principles)
+
   <br />
   <br />
   **Projects**: [Tribute Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page), [Survey Form](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form), [Product Landing Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page), [Technical Documentation Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page), [Personal Portfolio Webpage](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
 
 #### 2. [JavaScript Algorithms and Data Structures Certification](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
 
-- [Basic JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript)
-- [ES6](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#es6)
-- [Regular Expressions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#regular-expressions)
-- [Debugging](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#debugging)
 - [Basic Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-data-structures)
 - [Basic Algorithm Scripting](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-algorithm-scripting)
-- [Object-Oriented Programming](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#object-oriented-programming)
+- [Basic JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript)
+- [Debugging](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#debugging)
+- [ES6](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#es6)
 - [Functional Programming](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#functional-programming)
 - [Intermediate Algorithm Scripting](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#intermediate-algorithm-scripting)
+- [Object-Oriented Programming](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#object-oriented-programming)
+- [Regular Expressions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#regular-expressions)
   <br />
   <br />
   **Projects**: [Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker),[ Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter), [Caesar's Cipher](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher), [Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator), [Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register)
@@ -68,10 +69,10 @@ Here are our ten core certifications:
 
 - [Bootstrap](https://www.freecodecamp.org/learn/front-end-development-libraries/#bootstrap)
 - [jQuery](https://www.freecodecamp.org/learn/front-end-development-libraries/#jquery)
-- [Sass](https://www.freecodecamp.org/learn/front-end-development-libraries/#sass)
 - [React](https://www.freecodecamp.org/learn/front-end-development-libraries/#react)
 - [Redux](https://www.freecodecamp.org/learn/front-end-development-libraries/#redux)
 - [React and Redux](https://www.freecodecamp.org/learn/front-end-development-libraries/#react-and-redux)
+- [Sass](https://www.freecodecamp.org/learn/front-end-development-libraries/#sass)
   <br />
   <br />
   **Projects**: [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine), [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer), [Drum Machine](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine), [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator), [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock)
@@ -86,8 +87,8 @@ Here are our ten core certifications:
 
 #### 5. [APIs and Microservices Certification](https://www.freecodecamp.org/learn/back-end-development-and-apis/)
 
-- [Managing Packages with Npm](https://www.freecodecamp.org/learn/back-end-development-and-apis/#managing-packages-with-npm)
 - [Basic Node and Express](https://www.freecodecamp.org/learn/back-end-development-and-apis/#basic-node-and-express)
+- [Managing Packages with Npm](https://www.freecodecamp.org/learn/back-end-development-and-apis/#managing-packages-with-npm)
 - [MongoDB and Mongoose](https://www.freecodecamp.org/learn/back-end-development-and-apis/#mongodb-and-mongoose)
   <br />
   <br />
