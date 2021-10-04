@@ -7,7 +7,7 @@ type Props = {
   innerRef?: React.RefObject<HTMLDivElement>;
 };
 
-const SearchBarOptimized = ({ innerRef }: innerRefPrototype): JSX.Element => {
+const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
   const { t } = useTranslation();
   const placeholder = t('search.placeholder');
   const searchUrl = searchPageUrl;
