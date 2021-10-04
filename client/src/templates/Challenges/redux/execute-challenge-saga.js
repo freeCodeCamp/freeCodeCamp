@@ -134,8 +134,10 @@ function* takeEveryConsole(channel) {
 
 function* buildChallengeData(challengeData, options) {
   try {
+    // Think this needs to be Fork but will have to figure out tomorrow how to implement.
     return yield call(buildChallenge, challengeData, options);
   } catch (e) {
+    console.log(e);
     yield put(disableBuildOnError());
     throw e;
   }
@@ -185,22 +187,18 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
 // updates preview frame and the fcc console.
 function* previewChallengeSaga({ flushLogs = true } = {}) {
   yield delay(700);
-
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
   }
-
   const logProxy = yield channel();
   const proxyLogger = args => logProxy.put(args);
-
   try {
     if (flushLogs) {
       yield put(initLogs());
       yield put(initConsole(''));
     }
     yield fork(takeEveryConsole, logProxy);
-
     const challengeData = yield select(challengeDataSelector);
 
     if (canBuildChallenge(challengeData)) {
@@ -210,7 +208,6 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         preview: true,
         protect
       });
-      // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
         yield call(updatePreview, buildData, document, proxyLogger);
@@ -219,17 +216,15 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
           proxyLogger,
           removeComments: challengeMeta.removeComments
         });
-        // without a testString the testRunner just evaluates the user's code
         yield call(runUserCode, null, previewTimeout);
       }
     }
   } catch (err) {
-    if (err === 'timeout') {
+    if (err[0] === 'timeout') {
       // TODO: translate the error
       // eslint-disable-next-line no-ex-assign
-      err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
+      err[0] = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
     }
-    console.log(err);
     yield put(updateConsole(escape(err)));
   }
 }
