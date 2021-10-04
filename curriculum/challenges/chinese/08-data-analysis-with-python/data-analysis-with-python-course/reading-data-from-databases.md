@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c163
 title: 从数据库中读取数据
 challengeType: 11
 videoId: MtgXS1MofRw
+bilibiliIds:
+  aid: 890546354
+  bvid: BV1JP4y1h7gk
+  cid: 409020851
 dashedName: reading-data-from-databases
 ---
 
@@ -12,7 +16,7 @@ dashedName: reading-data-from-databases
 
 以下有更多的资料
 
--   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-11-reading-data-from-relational-databases/files)
+-   [在 GitHub 平台的 Notebooks](https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas)
 -   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--

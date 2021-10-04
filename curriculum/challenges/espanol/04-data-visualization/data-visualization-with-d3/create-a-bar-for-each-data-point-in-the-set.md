@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bcd
-title: Create a Bar for Each Data Point in the Set
+title: Crea una barra para cada punto de dato en el set
 challengeType: 6
 forumTopicId: 301482
 dashedName: create-a-bar-for-each-data-point-in-the-set
@@ -8,9 +8,9 @@ dashedName: create-a-bar-for-each-data-point-in-the-set
 
 # --description--
 
-The last challenge added only one rectangle to the `svg` element to represent a bar. Here, you'll combine what you've learned so far about `data()`, `enter()`, and SVG shapes to create and append a rectangle for each data point in `dataset`.
+El anterior desafío agrega solo un rectángulo al elemento `svg` para representar una barra. Ahora, combinarás lo que has aprendido hasta ahora sobre `data()`, `enter()`, y formas SVG para crear y añadir un rectángulo para cada punto de dato en `dataset`.
 
-A previous challenge showed the format for how to create and append a `div` for each item in `dataset`:
+Uno de los desafíos anteriores mostró el formato para cómo crear y añadir un `div` para cada elemento en `dataset`:
 
 ```js
 d3.select("body").selectAll("div")
@@ -19,33 +19,33 @@ d3.select("body").selectAll("div")
   .append("div")
 ```
 
-There are a few differences working with `rect` elements instead of `div` elements. The `rect` elements must be appended to an `svg` element, not directly to the `body`. Also, you need to tell D3 where to place each `rect` within the `svg` area. The bar placement will be covered in the next challenge.
+Hay algunas diferencias cuando trabajamos con elementos `rect` en lugar de elementos `div`. Los elementos `rect` deben ser añadidos a un elemento `svg`, no directamente al `body`. Además, necesitas decirle a D3 donde colocar cada `rect` dentro del área `svg`. El posicionamiento de la barra lo veremos en el siguiente desafío.
 
 # --instructions--
 
-Use the `data()`, `enter()`, and `append()` methods to create and append a `rect` for each item in `dataset`. The bars should display all on top of each other; this will be fixed in the next challenge.
+Usa los métodos `data()`, `enter()`, y `append()` para crear y agregar un `rect` por cada elemento en `dataset`. Las barras deben mostrarse una arriba de la otra, esto será arreglado en el siguiente desafío.
 
 # --hints--
 
-Your document should have 9 `rect` elements.
+Tu documento debe tener 9 elementos `rect`.
 
 ```js
 assert($('rect').length == 9);
 ```
 
-Your code should use the `data()` method.
+Tu código debe usar el método `data()`.
 
 ```js
 assert(code.match(/\.data/g));
 ```
 
-Your code should use the `enter()` method.
+Tu código debe usar el método `enter()`.
 
 ```js
 assert(code.match(/\.enter/g));
 ```
 
-Your code should use the `append()` method.
+Tu código debe usar el método `append()`.
 
 ```js
 assert(code.match(/\.append/g));
