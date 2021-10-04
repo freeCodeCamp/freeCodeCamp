@@ -6,7 +6,7 @@ Leia nosso ["Guia de como contribuir com código aberto"](https://github.com/fre
 
 Sim. Você pode contribuir com qualquer um dos mais de 30 idiomas disponíveis em nossa plataforma de tradução.
 
-Temos as traduções de chinês (中文) e espanhol (Español) no ar. Pretendemos traduzir o freeCodeCamp para vários idiomas. Você pode ler mais sobre isso em nosso [anúncio aqui](https://www.freecodecamp.org/news/world-language-translation-effort).
+We have user-contributed translations live in Chinese (中文) and Spanish (Español). Pretendemos traduzir o freeCodeCamp para vários idiomas. Você pode ler mais sobre isso em nosso [anúncio aqui](https://www.freecodecamp.org/news/world-language-translation-effort).
 
 Se você está interessado em contribuir com as traduções, certifique-se de [ler este guia](how-to-translate-files.md) primeiro.
 
@@ -24,7 +24,7 @@ Não crie issues no GitHub para problemas de segurança. Em vez disso, envie um 
 
 ### Eu sou estudante. Posso trabalhar em um recurso para créditos acadêmicos?
 
-Sim. Note, porém, que não podemos nos comprometer com nenhum cronograma ou documentação que possa ser um requisito da sua faculdade ou universidade. Recebemos muitos pull-requests e contribuições em código pelos desenvolvedores voluntários e respeitamos o tempo e esforço deles. Em respeito a todos os outros contribuidores, não daremos nenhuma prioridade especial a nenhum PR só por ser relacionado à escola.
+Sim. Note, porém, que não podemos nos comprometer com nenhum cronograma ou documentação que possa ser um requisito da sua faculdade ou universidade. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Em respeito a todos os outros contribuidores, não daremos nenhuma prioridade especial a nenhum PR só por ser relacionado à escola.
 
 Pedimos que você planeje com antecedência e que trabalhe em suas contribuições de código tendo isso em mente.
 

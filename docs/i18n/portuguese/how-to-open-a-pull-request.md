@@ -84,7 +84,7 @@ E como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do f
 
 Conflitos podem surgir porque muitos colaboradores trabalham no repositório, e as alterações podem afetar o seu PR, que está aguardando uma revisão e merge.
 
-Na maioria das vezes você pode não precisar de um rebase, porque nós comprimimos todos os commits. No entanto, se for solicitada uma rebase, é isso que você deve fazer.
+More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
 ### Para funcionalidades e correções de erros comuns
 

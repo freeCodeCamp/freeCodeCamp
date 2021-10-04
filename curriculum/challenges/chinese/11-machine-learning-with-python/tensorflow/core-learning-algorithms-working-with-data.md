@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d8a
 title: '核心学习算法：处理数据'
 challengeType: 11
 videoId: u85IOSsJsPI
+bilibiliIds:
+  aid: 675550447
+  bvid: BV1RU4y1w7up
+  cid: 409127383
 dashedName: core-learning-algorithms-working-with-data
 ---
 

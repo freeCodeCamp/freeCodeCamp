@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72da5
 title: 'Aprendizagem de reforço com Q-Learning: Exemplo'
 challengeType: 11
 videoId: RBBSNta234s
+bilibiliIds:
+  aid: 848073871
+  bvid: BV1uL4y187Eq
+  cid: 409139471
 dashedName: reinforcement-learning-with-q-learning-example
 ---
 

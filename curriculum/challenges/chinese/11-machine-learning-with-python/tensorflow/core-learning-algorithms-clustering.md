@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d8f
 title: '核心学习算法：聚类'
 challengeType: 11
 videoId: 8sqIaHc9Cz4
+bilibiliIds:
+  aid: 720567137
+  bvid: BV1BQ4y1r7UY
+  cid: 409129005
 dashedName: core-learning-algorithms-clustering
 ---
 

@@ -3,6 +3,10 @@ id: 5e7b9f070b6c005b0e76f05e
 title: '迭代：循环成语'
 challengeType: 11
 videoId: AelGAcoMXbI
+bilibiliIds:
+  aid: 334491369
+  bvid: BV1tw411R7Mm
+  cid: 376530765
 dashedName: iterations-loop-idioms
 ---
 

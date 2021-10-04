@@ -3,6 +3,10 @@ id: 5e7b9f150b6c005b0e76f080
 title: 'Servizi Web: limitazione delle richieste API e sicurezza'
 challengeType: 11
 videoId: pI-g0lI8ngs
+bilibiliIds:
+  aid: 249456172
+  bvid: BV1Sv411E7qa
+  cid: 377336269
 dashedName: web-services-api-rate-limiting-and-security
 ---
 

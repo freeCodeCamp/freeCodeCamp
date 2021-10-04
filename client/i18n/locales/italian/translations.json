@@ -427,6 +427,7 @@
     "wrong-updating": "Qualcosa è andato storto nell'aggiornamento del tuo account. Ti preghiamo di controllare e riprovare",
     "updated-preferences": "Abbiamo aggiornato le tue preferenze",
     "email-invalid": "Formato email non valido",
+    "email-valid": "Your email has successfully been changed, happy coding!",
     "bad-challengeId": "currentChallengeId non è un ID challenge valido",
     "theme-invalid": "Tema non valido",
     "theme-set": "Tema già impostato",

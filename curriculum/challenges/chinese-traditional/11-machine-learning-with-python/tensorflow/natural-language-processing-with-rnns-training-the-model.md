@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72da2
 title: '使用 RNN 進行自然語言處理：訓練模型'
 challengeType: 11
 videoId: hEUiK7j9UI8
+bilibiliIds:
+  aid: 250542136
+  bvid: BV19v411w7Fi
+  cid: 409138327
 dashedName: natural-language-processing-with-rnns-training-the-model
 ---
 
