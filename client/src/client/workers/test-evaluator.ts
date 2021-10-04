@@ -121,7 +121,7 @@ ${e.data.testString}`) as unknown;
         ((err as Error).message !== 'require is not defined' &&
           (err as Error).message !== 'exports is not defined')
       ) {
-        __utils.log(err);
+        __utils.log(err as Error);
       }
       // the tests may not require working code, so they are evaluated even if
       // the user code does not get executed.
@@ -141,7 +141,7 @@ ${e.data.testString}`) as unknown;
     __utils.toggleProxyLogger(false);
     // Report execution errors in case user code has errors that are only
     // uncovered during testing.
-    __utils.log(err);
+    __utils.log(err as Error);
     // postResult flushes the logs and must be called after logging is finished.
     __utils.postResult({
       err: {
