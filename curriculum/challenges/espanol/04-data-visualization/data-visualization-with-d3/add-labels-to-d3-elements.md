@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd2
-title: Add Labels to D3 Elements
+title: Agrega etiquetas a elementos D3
 challengeType: 6
 forumTopicId: 301476
 dashedName: add-labels-to-d3-elements
@@ -8,69 +8,69 @@ dashedName: add-labels-to-d3-elements
 
 # --description--
 
-D3 lets you label a graph element, such as a bar, using the SVG `text` element.
+D3 te permite etiquetar un elemento gráfico, como una barra, usando el elemento SVG `text`.
 
-Like the `rect` element, a `text` element needs to have `x` and `y` attributes, to place it on the SVG canvas. It also needs to access the data to display those values.
+Como el elemento `rect`, un elemento `text` necesita tener atributos `x` e `y`, para colocarlo en el lienzo SVG. También necesita acceso a los datos para mostrar los valores.
 
-D3 gives you a high level of control over how you label your bars.
+D3 te da un nivel de control alto sobre cómo etiquetas tus barras.
 
 # --instructions--
 
-The code in the editor already binds the data to each new `text` element. First, append `text` nodes to the `svg`. Next, add attributes for the `x` and `y` coordinates. They should be calculated the same way as the `rect` ones, except the `y` value for the `text` should make the label sit 3 units higher than the bar. Finally, use the D3 `text()` method to set the label equal to the data point value.
+El código en el editor ya vincula los datos a cada nuevo elemento `text`. Primero, añade nodos `text` a el `svg`. Luego, agrega atributos para las coordenadas `x` e `y`. Deben ser calculadas de la misma forma que las de `rect`, excepto el valor `y` para el `text`. Este debe hacer que la etiqueta se ubique 3 unidades más alto que la barra. Finalmente, usa el método de D3 `text()` para establecer la etiqueta igual al valor del punto de datos.
 
-**Note:** For the label to sit higher than the bar, decide if the `y` value for the `text` should be 3 greater or 3 less than the `y` value for the bar.
+**Nota:** Para que la etiqueta se ubique arriba de la barra, decide si el valor `y` para el `text` debe ser 3 más o 3 menos que el valor `y` de la barra.
 
 # --hints--
 
-The first `text` element should have a label of `12` and a `y` value of `61`.
+El primer elemento `text` debe tener una etiqueta de `12` y un valor `y` de `61`.
 
 ```js
 assert($('text').eq(0).text() == '12' && $('text').eq(0).attr('y') == '61');
 ```
 
-The second `text` element should have a label of `31` and a `y` value of `4`.
+El segundo elemento `text` debe tener una etiqueta de `31` y un valor `y` de `4`.
 
 ```js
 assert($('text').eq(1).text() == '31' && $('text').eq(1).attr('y') == '4');
 ```
 
-The third `text` element should have a label of `22` and a `y` value of `31`.
+El tercer elemento `text` debe tener una etiqueta de `22` y un valor `y` de `31`.
 
 ```js
 assert($('text').eq(2).text() == '22' && $('text').eq(2).attr('y') == '31');
 ```
 
-The fourth `text` element should have a label of `17` and a `y` value of `46`.
+El cuarto elemento `text` debe tener una etiqueta de `17` y un valor `y` de `46`.
 
 ```js
 assert($('text').eq(3).text() == '17' && $('text').eq(3).attr('y') == '46');
 ```
 
-The fifth `text` element should have a label of `25` and a `y` value of `22`.
+El quinto elemento `text` debe tener una etiqueta de `25` y un valor `y` de `22`.
 
 ```js
 assert($('text').eq(4).text() == '25' && $('text').eq(4).attr('y') == '22');
 ```
 
-The sixth `text` element should have a label of `18` and a `y` value of `43`.
+El sexto elemento `text` debe tener una etiqueta de `18` y un valor `y` de `43`.
 
 ```js
 assert($('text').eq(5).text() == '18' && $('text').eq(5).attr('y') == '43');
 ```
 
-The seventh `text` element should have a label of `29` and a `y` value of `10`.
+El séptimo elemento `text` debe tener una etiqueta de `29` y un valor `y` de `10`.
 
 ```js
 assert($('text').eq(6).text() == '29' && $('text').eq(6).attr('y') == '10');
 ```
 
-The eighth `text` element should have a label of `14` and a `y` value of `55`.
+El octavo elemento `text` debe tener una etiqueta de `14` y un valor `y` de `55`.
 
 ```js
 assert($('text').eq(7).text() == '14' && $('text').eq(7).attr('y') == '55');
 ```
 
-The ninth `text` element should have a label of `9` and a `y` value of `70`.
+El noveno elemento `text` debe tener una etiqueta de `9` y un valor `y` de `70`.
 
 ```js
 assert($('text').eq(8).text() == '9' && $('text').eq(8).attr('y') == '70');

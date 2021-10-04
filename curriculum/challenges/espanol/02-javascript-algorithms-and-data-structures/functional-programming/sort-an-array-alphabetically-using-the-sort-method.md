@@ -8,7 +8,7 @@ dashedName: sort-an-array-alphabetically-using-the-sort-method
 
 # --description--
 
-El método `sort` ordena los elementos de un arreglo de acuerdo a la función "callback".
+El método `sort` ordena los elementos de un arreglo de acuerdo a la función callback.
 
 Por ejemplo:
 
@@ -34,7 +34,7 @@ reverseAlpha(['l', 'h', 'z', 'b', 's']);
 
 Esto devolvería el valor de `['z', 's', 'l', 'h', 'b']`.
 
-Por defecto, JavaScript ordena basándose en el valor "Unicode" de la cadena de caracteres, lo cual puede dar resultados inesperados. Por lo tanto, se recomienda proporcionar una función "callback" para especificar cómo se deben ordenar los elementos del arreglo. Cuando se proporciona dicha función "callback", normalmente llamada `compareFunction`, los elementos del arreglo se ordenan de acuerdo al valor que devuelve la función `compareFunction`: Si `compareFunction(a,b)` devuelve un valor menor a 0 para dos elementos `a` y `b`, entonces `a` irá antes que `b`. Si `compareFunction(a,b)` devuelve un valor mayor a 0 para dos elementos `a` y `b`, entonces `b` irá antes que `a`. Si `compareFunction(a,b)` devuelve un valor igual a 0 para dos elementos `a` y `b`, entonces `a` y `b` se dejarán sin cambios.
+Por defecto, JavaScript ordena basándose en el valor "Unicode" de la cadena de caracteres, lo cual puede dar resultados inesperados. Por lo tanto, se recomienda proporcionar una función callback para especificar como se deben ordenar los elementos del arreglo. Cuando se proporciona dicha función callback, normalmente llamada `compareFunction`, los elementos del arreglo se ordenan de acuerdo al valor que devuelve la función `compareFunction`: Si `compareFunction(a,b)` devuelve un valor menor que 0 para dos elementos `a` y `b`, entonces `a` irá antes que `b`. Si `compareFunction(a,b)` devuelve un valor mayor a 0 para dos elementos `a` y `b`, entonces `b` irá antes que `a`. Si `compareFunction(a,b)` devuelve un valor igual a 0 para dos elementos `a` y `b`, entonces `a` y `b` se dejarán sin cambios.
 
 # --instructions--
 

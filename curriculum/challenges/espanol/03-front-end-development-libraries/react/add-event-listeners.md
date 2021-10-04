@@ -14,7 +14,7 @@ Ya has estado usando algunos de estos controladores de eventos sintéticos como 
 
 # --instructions--
 
-Agrega un detector de eventos en el método `componentDidMount()` para los eventos `keydown` y haz que estos eventos ejecuten el callback `handleKeyPress()`. Puedes usar `document.addEventListener()` el cual toma el evento (en comillas) como primer argumento y el callback como segundo argumento.
+Agrega un detector de eventos en el método `componentDidMount()` para los eventos `keydown` y haz que estos eventos ejecuten la función callback `handleKeyPress()`. Puedes usar `document.addEventListener()` el cual toma el evento (en comillas) como primer argumento y la función callback como segundo argumento.
 
 Posteriormente, en `componentWillUnmount()`, remueve este mismo detector de eventos. Puedes pasar los mismos argumentos al `document.removeEventListener()`. Es buena práctica usar este método del ciclo de vida para hacer cualquier limpieza en un componente de React antes de que estos sean desmontados y destruidos. Removiendo los detectores de eventos es un ejemplo de una limpieza de este tipo.
 

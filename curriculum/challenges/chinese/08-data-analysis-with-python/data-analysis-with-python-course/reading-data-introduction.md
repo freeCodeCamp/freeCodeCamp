@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c161
 title: 读取数据简介
 challengeType: 11
 videoId: cDnt02BcHng
+bilibiliIds:
+  aid: 548023524
+  bvid: BV1Nq4y1K7iV
+  cid: 409020187
 dashedName: reading-data-introduction
 ---
 
@@ -12,7 +16,7 @@ dashedName: reading-data-introduction
 
 以下有更多的资料：
 
--   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-1-reading-csv-and-txt-files/files)
+-   [在 GitHub 平台的 Notebooks](https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas)
 -   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
