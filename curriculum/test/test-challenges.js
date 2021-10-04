@@ -347,10 +347,12 @@ function populateTestsForLang({ lang, challenges, meta }) {
                 );
               }
 
-              // Then we compare the number of times each comment appears in the
-              // translated text (commentMap) with the number of replacements
-              // made during translation (challenge.__commentCounts). If they
-              // differ, the translation must have gone wrong
+              /*
+               * Then we compare the number of times each comment appears in the
+               * translated text (commentMap) with the number of replacements
+               * made during translation (challenge.__commentCounts). If they
+               * differ, the translation must have gone wrong
+               */
 
               const commentMap = new Map(Object.entries(comments));
 
