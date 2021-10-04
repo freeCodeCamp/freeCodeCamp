@@ -1,3 +1,5 @@
+This page describes how to contribute to the freeCodeCamp tutorials and projects that are completed using the CodeRoad VS Code extension.
+
 ## How the tutorials work
 The freeCodeCamp tutorials that use CodeRoad each have their own repo under the freeCodeCamp GitHub organization. They all start with `learn-`. For example, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
 
@@ -37,7 +39,8 @@ If you are only making minor changes like fixing a typo or grammatical error, yo
 
 Follow these instructions to make a PR, keeping in mind that instructions usually use the lessons around them for context:
 
-- Create a new branch off of `main`
+- Create a copy of the latest version branch with `git branch vX.X.X upstream/vX.X.X` - you do not need to check this branch out, it just needs to exist.
+- Create and checkout a new branch off of `main`
 - Make **and commit** your changes. Reminder: You don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
 - Run `coderoad build` to recreate the `tutorial.json` file
 - Commit the changes with `update json` as the message
