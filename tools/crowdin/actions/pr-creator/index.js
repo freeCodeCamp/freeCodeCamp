@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 /* eslint-disable camelcase */
 const core = require('@actions/core');
 const githubRoot = require('@actions/github');

@@ -2,6 +2,7 @@ import { withPrefix } from 'gatsby';
 import i18next from 'i18next';
 import psl from 'psl';
 import React from 'react';
+
 import env from '../../config/env.json';
 
 const { homeLocation } = env;
