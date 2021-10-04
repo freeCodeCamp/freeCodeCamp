@@ -70,8 +70,6 @@ class WebhookToken extends Component<WebhookTokenProps, WebhookTokenState> {
 
   render() {
     const { isSuperBlockPage = false, t, webhookToken = null } = this.props;
-    console.log('webhhookToken');
-    console.log(webhookToken);
 
     return isSuperBlockPage ? (
       <>
