@@ -655,7 +655,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   // Currently, only practice project parts have editable region markers
-  // This functions is used to enable multiple editor tabs, jaws, etc.
+  // This function is used to enable multiple editor tabs, jaws, etc.
   function isProjectStep() {
     const editableRegionBoundaries = getEditableRegionFromRedux();
     return editableRegionBoundaries.length === 2;
