@@ -292,8 +292,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     editorRef.current = editor;
     data.editor = editor;
 
-    if (isProject()) {
-      initializeProjectFeatures();
+    if (isProjectStep()) {
+      initializeProjectStepFeatures();
       addContentChangeListener();
       showEditableRegion(editor);
     }
@@ -646,7 +646,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
-  function initializeProjectFeatures() {
+  function initializeProjectStepFeatures() {
     const editor = data.editor;
     if (editor) {
       initializeRegions(getEditableRegionFromRedux());
@@ -654,7 +654,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }
 
-  function isProject() {
+  // Currently, only practice project parts have editable region markers
+  // This function is used to enable multiple editor tabs, jaws, etc.
+  function isProjectStep() {
     const editableRegionBoundaries = getEditableRegionFromRedux();
     return editableRegionBoundaries.length === 2;
   }
@@ -957,14 +959,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { editor } = data;
 
     const hasChangedContents = updateEditorValues();
-    if (hasChangedContents && isProject()) {
-      initializeProjectFeatures();
+    if (hasChangedContents && isProjectStep()) {
+      initializeProjectStepFeatures();
       updateDescriptionZone();
       updateOutputZone();
     }
 
     editor?.focus();
-    if (isProject() && editor) {
+    if (isProjectStep() && editor) {
       showEditableRegion(editor);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
