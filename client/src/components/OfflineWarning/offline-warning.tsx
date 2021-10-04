@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import './offline-warning.css';
 
@@ -25,7 +25,13 @@ function OfflineWarning({
     clearTimeout(id);
     if (showWarning) setShowWarning(false);
   } else {
-    message = !isOnline ? t('misc.offline') : t('misc.server-offline');
+    message = !isOnline ? (
+      t('misc.offline')
+    ) : (
+      <Trans i18nKey='misc.server-offline'>
+        <a href={'mailto:support@freecodecamp.org'}>placeholder</a>
+      </Trans>
+    );
     timeout();
   }
 
