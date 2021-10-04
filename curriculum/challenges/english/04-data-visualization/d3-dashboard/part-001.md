@@ -19,13 +19,6 @@ test-text
 assert(/<!DOCTYPE\s+html\s*>/gi.test(code));
 ```
 
-# --seed--
-
-## --seed-contents--
-
-```html
-```
-
 # --solutions--
 
 ```html
