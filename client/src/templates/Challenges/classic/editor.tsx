@@ -654,10 +654,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }
 
-  // The challenge object always has the editableRegionBoundaries array, but
-  // unless it is a step in the project based curriculum it will be an empty
-  // array. That's currently how we determine if we need the extra features
-  // (multiple editor tabs, embedded description, etc.) or not.
+  // Currently, only practice project parts have editable region markers
+  // This functions is used to enable multiple editor tabs, jaws, etc.
   function isProjectStep() {
     const editableRegionBoundaries = getEditableRegionFromRedux();
     return editableRegionBoundaries.length === 2;
