@@ -130,7 +130,7 @@
     "jest": "27.2.4",
     "js-yaml": "3.14.1",
     "lerna": "4.0.0",
-    "lint-staged": "11.1.2",
+    "lint-staged": "11.2.0",
     "lodash": "4.17.21",
     "markdownlint": "0.24.0",
     "mock-fs": "5.1.1",
