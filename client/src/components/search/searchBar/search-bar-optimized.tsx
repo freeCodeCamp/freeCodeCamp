@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Magnifier from '../../../assets/icons/Magnifier';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 
-type innerRefPrototype = {
+type Props = {
   innerRef?: React.RefObject<HTMLDivElement>;
 };
 
