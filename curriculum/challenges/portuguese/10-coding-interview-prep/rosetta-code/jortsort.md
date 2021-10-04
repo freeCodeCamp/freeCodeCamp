@@ -8,55 +8,55 @@ dashedName: jortsort
 
 # --description--
 
-jortSort is a sorting toolset that makes the user do the work and guarantees efficiency because you don't have to sort ever again. It was originally presented by Jenn "Moneydollars" Schiffer at the prestigious [JSConf](https://www.youtube.com/watch?v=pj4U_W0OFoE).
+jortSort é um conjunto de ferramentas de ordenação que faz com que o usuário faça o trabalho e garante a eficiência porque você não tem que organizar novamente. Ele foi apresentado originalmente por Jenn "Moneydollars" Schiffer na prestigiada conferência [JSConf](https://www.youtube.com/watch?v=pj4U_W0OFoE).
 
-jortSort should be a function that takes a single array of comparable objects as its argument. It then sorts the array in ascending order and compares the sorted array to the originally provided array. If the arrays match (i.e. the original array was already sorted), the function returns true. If the arrays do not match (i.e. the original array was not sorted), the function returns false.
+jortSort deve ser uma função que recebe um único array de objetos comparáveis como argumento. Ela ordena o array em ordem ascendente e compara o array ordenado ao array fornecido inicialmente. Se os arrays corresponderem (ou seja, se o array original já foi ordenado), a função retorna true. Se os arrays não corresponderem (ou seja, se o array original não estiver ordenado), a função retorna false.
 
 # --hints--
 
-`jortsort` should be a function.
+`jortsort` deve ser uma função.
 
 ```js
 assert(typeof jortsort == 'function');
 ```
 
-`jortsort([1,2,3,4,5])` should return a boolean.
+`jortsort([1,2,3,4,5])` deve retornar um booleano.
 
 ```js
 assert(typeof jortsort([1, 2, 3, 4, 5]) == 'boolean');
 ```
 
-`jortsort([1,2,3,4,5])` should return `true`.
+`jortsort([1,2,3,4,5])` deve retornar `true`.
 
 ```js
 assert.equal(jortsort([1, 2, 3, 4, 5]), true);
 ```
 
-`jortsort([1,2,13,4,5])` should return `false`.
+`jortsort([1,2,13,4,5])` deve retornar `false`.
 
 ```js
 assert.equal(jortsort([1, 2, 13, 4, 5]), false);
 ```
 
-`jortsort([12,4,51,2,4])` should return `false`.
+`jortsort([12,4,51,2,4])` deve retornar `false`.
 
 ```js
 assert.equal(jortsort([12, 4, 51, 2, 4]), false);
 ```
 
-`jortsort([1,2])` should return `true`.
+`jortsort([1,2])` deve retornar `true`.
 
 ```js
 assert.equal(jortsort([1, 2]), true);
 ```
 
-`jortsort([5,4,3,2,1])` should return `false`.
+`jortsort([5,4,3,2,1])` deve retornar `false`.
 
 ```js
 assert.equal(jortsort([5, 4, 3, 2, 1]), false);
 ```
 
-`jortsort([1,1,1,1,1])` should return `true`.
+`jortsort([1,1,1,1,1])` deve retornar `true`.
 
 ```js
 assert.equal(jortsort([1, 1, 1, 1, 1]), true);

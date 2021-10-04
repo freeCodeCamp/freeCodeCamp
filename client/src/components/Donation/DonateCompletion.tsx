@@ -11,6 +11,7 @@ type DonateCompletionProps = {
   redirecting: boolean;
   reset: () => unknown;
   success: boolean;
+  isSignedIn: boolean;
 };
 
 function DonateCompletion({
@@ -18,12 +19,14 @@ function DonateCompletion({
   reset,
   success,
   redirecting,
+  isSignedIn,
   error = null
 }: DonateCompletionProps): JSX.Element {
   /* eslint-disable no-nested-ternary */
   const { t } = useTranslation();
   const style =
     processing || redirecting ? 'info' : success ? 'success' : 'danger';
+
   const heading = redirecting
     ? `${t('donate.redirecting')}`
     : processing
@@ -31,6 +34,7 @@ function DonateCompletion({
     : success
     ? `${t('donate.thank-you')}`
     : `${t('donate.error')}`;
+
   return (
     <Alert bsStyle={style} className='donation-completion'>
       <h4>
@@ -48,7 +52,7 @@ function DonateCompletion({
         {success && (
           <div>
             <p>{t('donate.free-tech')}</p>
-            <p>{t('donate.no-halo')}</p>
+            {isSignedIn && <p>{t('donate.no-halo')}</p>}
           </div>
         )}
         {error && <p>{error}</p>}

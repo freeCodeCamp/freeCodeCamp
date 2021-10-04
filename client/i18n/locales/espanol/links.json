@@ -1,5 +1,6 @@
 {
   "help-translate-link-url": "https://contribute.freecodecamp.org/#/i18n/espanol/how-to-translate-files",
+  "top-contributors": "https://www.freecodecamp.org/news/freecodecamp-top-contributors/",
   "footer": {
     "about-url": "https://www.freecodecamp.org/espanol/news/acerca-de-freecodecamp-preguntas-frecuentes/",
     "shop-url": "https://www.freecodecamp.org/shop/",
@@ -17,5 +18,11 @@
   "nav": {
     "forum": "https://forum.freecodecamp.org/c/espanol/",
     "news": "https://freecodecamp.org/espanol/news/"
+  },
+  "help": {
+    "HTML-CSS": "Espanol/HTML-CSS",
+    "JavaScript": "Espanol/JavaScript",
+    "Python": "Espanol/Python",
+    "Relational Databases": "Espanol/Relational Databases"
   }
 }

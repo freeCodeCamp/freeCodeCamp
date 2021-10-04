@@ -7,7 +7,7 @@ import {
   backEndProject,
   frontEndProject,
   pythonProject
-} from '../../../../utils/challengeTypes';
+} from '../../../../utils/challenge-types';
 import { Form } from '../../../components/formHelpers';
 
 interface SubmitProps {

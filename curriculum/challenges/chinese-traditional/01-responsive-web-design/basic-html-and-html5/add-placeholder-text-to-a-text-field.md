@@ -17,7 +17,7 @@ dashedName: add-placeholder-text-to-a-text-field
 <input type="text" placeholder="this is placeholder text">
 ```
 
-**注意：**別忘了 `input` 元素是 "自閉和標籤"，即不需要結束標籤。
+**注意：** 別忘了 `input` 元素是 "自閉和標籤"，即不需要結束標籤。
 
 # --instructions--
 
@@ -64,7 +64,7 @@ assert($('input[type=text]').length > 0);
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -89,7 +89,7 @@ assert($('input[type=text]').length > 0);
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>

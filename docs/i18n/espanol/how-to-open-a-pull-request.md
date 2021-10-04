@@ -2,7 +2,7 @@
 
 Una pull request (PR) le permite enviar cambios desde su bifurcación en GitHub al repositorio principal de freeCodeCamp.org. Una vez que haya hecho cambios en el código, puede seguir estas pautas para abrir un PR.
 
-> [!NOTE] Tu PR debe ser en inglés. See [here](https://contribute.freecodecamp.org/#/index?id=translations) for how to contribute translations.
+> [!NOTE] Tu PR debe ser en inglés. Consulta [aquí](index.md#translations) para saber cómo contribuir con las traducciones.
 
 ## Prepara un buen título para tu PR
 
@@ -68,7 +68,7 @@ Algunos ejemplos de buenos títulos para PRs serían:
 
    - Esto es muy importante cuando se hagan cambios que no sean solo ediciones del contenido de texto como documentación o una descripción de un desafío. Ejemplos de los cambios que necesitan pruebas en el entorno local incluyen JavaScript, CSS o HTML que podrían cambiar la funcionalidad o el diseño de una página.
 
-   - Si tu PR afecta el comportamiento de una página, debe ir acompañada de la correspondiente [pruebas de integración de Cypress](/how-to-add-cypress-tests).
+   - Si tu PR afecta el comportamiento de una página, debe ir acompañada de la correspondiente [pruebas de integración de Cypress](how-to-add-cypress-tests.md).
 
 ## Comentarios sobre pull requests
 
@@ -78,13 +78,13 @@ Nuestros moderadores ahora echarán un vistazo y te dejarán tus comentarios. Po
 
 Y como siempre, siéntete libre de preguntar en la [categoría de 'Contribuidores' de nuestro foro](https://forum.freecodecamp.org/c/contributors) o [en la sala de chat de contribuidores](https://chat.freecodecamp.org/channel/contributors).
 
-> [!TIP] Si quieres contribuir con más PRs, te recomendamos que leas las directrices ["haciendo cambios y sincronizando"](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) para evitar la necesidad de borrar tu bifurcación.
+> [!TIP] Si vas a contribuir con más PRs, te recomendamos que leas las directrices ["haciendo cambios y sincronizando"](how-to-setup-freecodecamp-locally.md#making-changes-locally) para evitar la necesidad de borrar tu bifurcación.
 
 ## Conflicto en un pull request
 
 Los conflictos pueden surgir porque muchos colaboradores trabajan en el repositorio y los cambios pueden romper su PR que está pendiente de revisión y fusión.
 
-La mayoría de las veces no puede requerir una rebase, porque aplastamos todos los commits, Sin embargo, si se solicita una rebase aquí es lo que debe hacer.
+More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
 ### Para arreglos de errores y características habituales
 

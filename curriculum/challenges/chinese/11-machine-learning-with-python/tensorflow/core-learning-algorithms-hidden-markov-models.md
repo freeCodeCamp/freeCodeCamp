@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d90
 title: '核心学习算法：隐马尔可夫模型'
 challengeType: 11
 videoId: IZg24y4wEPY
+bilibiliIds:
+  aid: 633081400
+  bvid: BV1tb4y1y72V
+  cid: 409129376
 dashedName: core-learning-algorithms-hidden-markov-models
 ---
 

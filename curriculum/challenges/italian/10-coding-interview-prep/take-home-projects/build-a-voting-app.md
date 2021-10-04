@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443eddfaeb5bdef
-title: Build a Voting App
+title: Costruisci un'app per le votazioni
 challengeType: 4
 forumTopicId: 302359
 dashedName: build-a-voting-app
@@ -8,27 +8,27 @@ dashedName: build-a-voting-app
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://voting-app.freecodecamp.rocks/>. Use a site builder of your choice to complete the project.
+Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <https://voting-app.freecodecamp.rocks/>. Usare un costruttore di siti di tua scelta per completare il progetto.
 
-Here are the specific user stories you should implement for this project:
+Ecco le specifiche user story da implementare per questo progetto:
 
-**User Story:** As an authenticated user, you can keep my polls and come back later to access them.
+**User Story:** Come utente autenticato, puoi mantenere i miei sondaggi e tornare più tardi per accedervi.
 
-**User Story:** As an authenticated user, you can share my polls with my friends.
+**User Story:** Come utente autenticato, puoi condividere i miei sondaggi con i miei amici.
 
-**User Story:** As an authenticated user, you can see the aggregate results of my polls.
+**User Story:** Come utente autenticato, puoi vedere i risultati aggregati dei miei sondaggi.
 
-**User Story:** As an authenticated user, you can delete polls that I decide I don't want anymore.
+**User Story:** Come utente autenticato, puoi eliminare sondaggi che ho deciso di non volere più.
 
-**User Story:** As an authenticated user, you can create a poll with any number of possible items.
+**User Story:** Come utente autenticato, puoi creare un sondaggio con un qualsiasi numero di opzioni.
 
-**User Story:** As an unauthenticated or authenticated user, you can see and vote on everyone's polls.
+**User Story:** Come utente non autenticato o come utente autenticato, puoi vedere e votare sui sondaggi di chiunque.
 
-**User Story:** As an unauthenticated or authenticated user, you can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)
+**User Story:** Come utente non autenticato o come utente autenticato, puoi vedere i risultati dei sondaggi in forma di grafico. (Questo potrebbe essere implementato utilizzando Chart.js o Google Charts.)
 
-**User Story:** As an authenticated user, if you don't like the options on a poll, you can create a new option.
+**User Story:** Come utente autenticato, se non ti piacciono le opzioni su un sondaggio, puoi creare una nuova opzione.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
 
 # --solutions--
 

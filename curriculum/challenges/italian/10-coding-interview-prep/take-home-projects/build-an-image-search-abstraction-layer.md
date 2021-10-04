@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bdee
-title: Build an Image Search Abstraction Layer
+title: Crea un Livello di astrazione Ricerca Immagine
 challengeType: 4
 forumTopicId: 302361
 dashedName: build-an-image-search-abstraction-layer
@@ -8,17 +8,17 @@ dashedName: build-an-image-search-abstraction-layer
 
 # --description--
 
-Build a full stack JavaScript app that allows you to search for images like this: <https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10> and browse recent search queries like this: <https://image-search-abstraction-layer.freecodecamp.rocks/recent/>. Use a site builder of your choice to complete the project.
+Costruisci una app JavaScript full stack che ti permette di cercare immagini come questa: <https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10> e navigare tra ricerce recenti come questa: <https://image-search-abstraction-layer.freecodecamp.rocks/recent/>. Usa un costruttore di siti di tua scelta per completare il progetto.
 
-Here are the specific user stories you should implement for this project:
+Ecco le specifiche user story da implementare per questo progetto:
 
-**User Story:** You can get the image URLs, description and page URLs for a set of images relating to a given search string.
+**User Story:** Puoi ottenere le URL delle immagini, una descrizione e le URL delle pagine per un set di immagini relative ad una data stringa di ricerca.
 
-**User Story:** You can paginate through the responses by adding a `?page=2` parameter to the URL.
+**User Story:** Puoi navigare tra le pagine dei risultati aggiungendo un parametro `?page=2` all'URL.
 
-**User Story:** You can get a list of the most recently submitted search strings.
+**User Story:** Puoi ottenere una lista delle stringhe usate più di recente per la ricerca.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
 
 # --solutions--
 

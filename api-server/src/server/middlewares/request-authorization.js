@@ -24,6 +24,8 @@ const statusRE = /^\/status\/ping$/;
 const unsubscribedRE = /^\/unsubscribed\//;
 const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
 const updateHooksRE = /^\/hooks\/update-paypal$/;
+// note: this would be replaced by webhooks later
+const donateRE = /^\/donate\/charge-stripe$/;
 
 const _pathsAllowedREs = [
   authRE,
@@ -37,7 +39,8 @@ const _pathsAllowedREs = [
   statusRE,
   unsubscribedRE,
   unsubscribeRE,
-  updateHooksRE
+  updateHooksRE,
+  donateRE
 ];
 
 export function isAllowedPath(path, pathsAllowedREs = _pathsAllowedREs) {

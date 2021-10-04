@@ -39,7 +39,7 @@ Os projetos práticos tem algumas ferramentas adicionais para criar novos projet
 ---
 id: Identificador exclusivo (alfanumérico, MongoDB_id)
 title: 'Título do desafio'
-challengeType: Inteiro, definido em `client/utils/challengeTypes.js`
+challengeType: Inteiro, definido em `client/utils/challenge-types.js`
 videoUrl: 'url de explicação do vídeo'
 forumTopicId: 12345
 ---
@@ -479,7 +479,7 @@ Você também é capaz de testar um desafio individualmente seguindo as seguinte
    ```
    npm run test -- -g challenge-title-goes-here ```
 
-Quando você verificar que cada desafio modificado passou nos testes, [crie um pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
+Quando você verificou que cada desafio modificado passou nos testes, [crie um pull request](how-to-open-a-pull-request.md).
 
 > [!TIP] Você pode definir a variável de ambiente `LOCALE` no `.env` no idioma do(s) desafio(s) que precisa testar.
 > 
@@ -489,6 +489,6 @@ Quando você verificar que cada desafio modificado passou nos testes, [crie um p
 
 Criando e editando desafios:
 
-1. [Tipos do desafio](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challengeTypes.js#L1-L13) - o que significam os valores do tipo de desafio numérico (enum).
+1. [Tipos de desafio](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - o que significam os valores do tipo de desafio numérico (enum).
 
 2. [Contribuindo para o FreeCodeCamp - Escrevendo testes de desafio ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo com [Ethan Arrowood](https://twitter.com/ArrowoodTech) contribuindo para a versão antiga do currículo.

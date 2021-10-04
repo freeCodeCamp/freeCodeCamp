@@ -28,7 +28,7 @@
     "sign-out": "Encerrar sessão",
     "curriculum": "Currículo",
     "forum": "Fórum",
-    "radio": "Radio",
+    "radio": "Rádio",
     "profile": "Perfil",
     "news": "Notícias",
     "donate": "Doar",
@@ -286,8 +286,7 @@
       "preview": "Pré-visualizar"
     },
     "help-translate": "Ainda estamos traduzindo as certificações a seguir.",
-    "help-translate-link": "Ajude-nos a traduzir.",
-    "coder-survey": "<0>Faça o New Coder Survey</0> de 2021 (demora cerca de 10 minutos – faça isso pela ciência)"
+    "help-translate-link": "Ajude-nos a traduzir."
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -307,6 +306,8 @@
     "confirm-2": "Confirme a sua doação de US${{usd}}",
     "confirm-3": "Confirme a sua doação de US${{usd}}/mês",
     "confirm-4": "Confirme a sua doação de US${{usd}}/ano",
+    "wallet-label": "Doação de ${{usd}} para o freeCodeCamp",
+    "wallet-label-1": "Doação de ${{usd}}/mês para o freeCodeCamp",
     "your-donation": "Sua doação de US${{usd}} proporcionará {{hours}} horas de aprendizado para pessoas ao redor do mundo.",
     "your-donation-2": "Sua doação de US${{usd}} proporcionará {{hours}} horas mensais de aprendizado para pessoas ao redor do mundo.",
     "your-donation-3": "Sua doação de US${{usd}} proporcionará {{hours}} horas anuais de aprendizado para pessoas ao redor do mundo.",
@@ -317,6 +318,7 @@
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",
     "credit-card-2": "Ou doe com um cartão de crédito:",
+    "or-card": "Ou doe com cartão",
     "paypal": "com PayPal:",
     "need-email": "Precisamos de um endereço de e-mail válido para podermos enviar a sua NF-e de doação.",
     "went-wrong": "Algo deu errado ao processar sua doação. Não houve cobrança no seu cartão.",
@@ -425,6 +427,7 @@
     "wrong-updating": "Algo deu errado ao atualizar sua conta. Verifique e tente novamente",
     "updated-preferences": "Atualizamos as suas preferências",
     "email-invalid": "Formato de e-mail inválido",
+    "email-valid": "Seu e-mail foi alterado com sucesso. Feliz programação!",
     "bad-challengeId": "currentChallengeId não é um ID válido de desafio",
     "theme-invalid": "O tema é inválido",
     "theme-set": "Tema já definido",
@@ -444,6 +447,7 @@
     "cert-claim-success": "@{{username}}, você solicitou a certificação {{name}} com sucesso! Parabéns em nome da equipe do freeCodeCamp.org!",
     "wrong-name": "Algo deu errado com a verificação de {{name}}. Tente novamente. Se continuar a receber este erro, envie uma mensagem para support@freeCodeCamp.org para obter ajuda.",
     "error-claiming": "Erro ao solicitar {{certName}}",
+    "refresh-needed": "Você só pode usar o botão PaymentRequest uma vez. Atualize a página para começar de novo.",
     "username-not-found": "Não foi possível encontrar um usuário com o nome de usuário \"{{username}}\"",
     "add-name": "Este usuário precisa adicionar seu nome à sua conta para que outros possam visualizar sua certificação.",
     "not-eligible": "Este usuário não é elegível para certificações do freeCodeCamp.org no momento.",

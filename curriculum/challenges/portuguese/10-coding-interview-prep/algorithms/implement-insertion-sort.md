@@ -75,6 +75,12 @@ assert.sameMembers(
 );
 ```
 
+`insertionSort([5, 4, 33, 2, 8])` deve retornar `[2, 4, 5, 8, 33]`.
+
+```js
+assert.deepEqual(insertionSort([5, 4, 33, 2, 8]), [2, 4, 5, 8, 33])
+```
+
 `insertionSort` não deve usar o método `.sort()` integrado.
 
 ```js

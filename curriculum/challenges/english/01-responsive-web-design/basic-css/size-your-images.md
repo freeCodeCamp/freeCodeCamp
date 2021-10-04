@@ -2,7 +2,6 @@
 id: bad87fee1348bd9acdf08812
 title: Size Your Images
 challengeType: 0
-videoUrl: 'https://scrimba.com/c/cM9MmCP'
 forumTopicId: 18282
 dashedName: size-your-images
 ---
@@ -31,7 +30,7 @@ Your `img` element should have the class `smaller-image`.
 
 ```js
 assert(
-  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class')
+  $("img[src='https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg']").attr('class')
     .trim().split(/\s+/g).includes('smaller-image')
 );
 ```
@@ -70,7 +69,7 @@ assert(
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <div>
     <p>Things cats love:</p>
@@ -126,7 +125,7 @@ assert(
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
   
-  <a href="#"><img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
   
   <div>
     <p>Things cats love:</p>

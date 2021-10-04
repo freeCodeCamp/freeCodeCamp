@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d8b
 title: '核心学习算法：训练和测试数据'
 challengeType: 11
 videoId: wz9J1slsi7I
+bilibiliIds:
+  aid: 335509743
+  bvid: BV1rA411F7bG
+  cid: 409127635
 dashedName: core-learning-algorithms-training-and-testing-data
 ---
 

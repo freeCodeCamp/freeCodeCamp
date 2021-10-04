@@ -4,8 +4,6 @@ Al realizar cambios en JavaScript, CSS o HTML que podrían cambiar la funcionali
 
 Para aprender como escribir pruebas de Cypress, o especificaciones, observa la [documentación](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) oficial de Cypress.
 
-> Nota: Cuando escribimos pruebas para freeCodeCamp, recuerda agregar `/* global cy */` al inicio del archivo para evitar problemas con ESLint.
-
 ## Donde agregar una prueba
 
 - Las pruebas de Cypress están en el directorio `./cypress`.

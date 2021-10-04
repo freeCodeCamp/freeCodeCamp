@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e76
-title: Gamma function
+title: Função gama
 challengeType: 5
 forumTopicId: 302271
 dashedName: gamma-function
@@ -8,51 +8,51 @@ dashedName: gamma-function
 
 # --description--
 
-Implement one algorithm (or more) to compute the [Gamma](https://en.wikipedia.org/wiki/Gamma function) ($\\Gamma$) function (in the real field only).
+Implemente um algoritmo (ou mais) para calcular a função [Gama](https://en.wikipedia.org/wiki/Gamma function) ($\\Gamma$) (apenas no campo dos reais).
 
-The Gamma function can be defined as:
+A função Gama pode ser definida como:
 
 <div style='padding-left: 4em;'><big><big>$\Gamma(x) = \displaystyle\int_0^\infty t^{x-1}e^{-t} dt$</big></big></div>
 
 # --hints--
 
-`gamma` should be a function.
+`gamma` deve ser uma função.
 
 ```js
 assert(typeof gamma == 'function');
 ```
 
-`gamma(.1)` should return a number.
+`gamma(.1)` deve retornar um número.
 
 ```js
 assert(typeof gamma(0.1) == 'number');
 ```
 
-`gamma(.1)` should return `9.513507698668736`.
+`gamma(.1)` deve retornar `9.513507698668736`.
 
 ```js
 assert.equal(round(gamma(0.1)), round(9.513507698668736));
 ```
 
-`gamma(.2)` should return `4.590843711998803`.
+`gamma(.2)` deve retornar `4.590843711998803`.
 
 ```js
 assert.equal(round(gamma(0.2)), round(4.590843711998803));
 ```
 
-`gamma(.3)` should return `2.9915689876875904`.
+`gamma(.3)` deve retornar `2.9915689876875904`.
 
 ```js
 assert.equal(round(gamma(0.3)), round(2.9915689876875904));
 ```
 
-`gamma(.4)` should return `2.218159543757687`.
+`gamma(.4)` deve retornar `2.218159543757687`.
 
 ```js
 assert.equal(round(gamma(0.4)), round(2.218159543757687));
 ```
 
-`gamma(.5)` should return `1.7724538509055159`.
+`gamma(.5)` deve retornar `1.7724538509055159`.
 
 ```js
 assert.equal(round(gamma(0.5)), round(1.7724538509055159));

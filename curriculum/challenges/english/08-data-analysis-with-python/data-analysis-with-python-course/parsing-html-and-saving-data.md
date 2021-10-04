@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c164
 title: Parsing HTML and Saving Data
 challengeType: 11
 videoId: bJaqnTWQmb0
+bilibiliIds:
+  aid: 335522976
+  bvid: BV1RA411F7vi
+  cid: 409023170
 dashedName: parsing-html-and-saving-data
 ---
 
@@ -12,14 +16,14 @@ dashedName: parsing-html-and-saving-data
 
 More resources:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-17-reading-html-tables/files)
+-   [Notebooks on GitHub](https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas)
 -   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What Python library has the `.read_html()` method we can we use for parsing HTML documents and extracting tables?
+What Python library has the `.read_html()` method we can use for parsing HTML documents and extracting tables?
 
 ## --answers--
 

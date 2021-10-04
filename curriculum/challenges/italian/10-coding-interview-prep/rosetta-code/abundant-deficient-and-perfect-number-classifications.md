@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acd
-title: 'Abundant, deficient and perfect number classifications'
+title: 'Classificazione dei numeri abbondanti, carenti e perfetti'
 challengeType: 5
 forumTopicId: 302221
 dashedName: abundant-deficient-and-perfect-number-classifications
@@ -8,55 +8,55 @@ dashedName: abundant-deficient-and-perfect-number-classifications
 
 # --description--
 
-These define three classifications of positive integers based on their proper divisors.
+Queste definiscono tre classificazioni di numeri interi positivi basate sui loro divisori.
 
-Let $P(n)$ be the sum of the proper divisors of `n` where proper divisors are all positive integers `n` other than `n` itself.
+Sia $P(n)$ la somma dei divisori di `n` dove i divisori sono tutti interi positivi `n` diversi da `n` stesso.
 
-If `P(n) < n` then `n` is classed as `deficient`
+Se `P(n) < n` allora `n` è classificato come `deficient`
 
-If `P(n) === n` then `n` is classed as `perfect`
+Se `P(n) === n` allora `n` è classificato come `perfect`
 
-If `P(n) > n` then `n` is classed as `abundant`
+Se `P(n) > n` allora `n` è classificato come `abundant`
 
-**Example**: `6` has proper divisors of `1`, `2`, and `3`. `1 + 2 + 3 = 6`, so `6` is classed as a perfect number.
+**Esempio**: `6` ha i divisori `1`, `2` e `3`. `1 + 2 + 3 = 6`, quindi `6` è classificato come numero perfetto.
 
 # --instructions--
 
-Implement a function that calculates how many of the integers from `1` to `num` (inclusive) are in each of the three classes. Output the result as an array in the following format `[deficient, perfect, abundant]`.
+Implementa una funzione che calcola quanti numeri interi tra `1` e `num` (inclusi) sono in queste tre categorie. Restituisci il risultato come un array nel seguente formato `[deficient, perfect, abundant]`.
 
 # --hints--
 
-`getDPA` should be a function.
+`getDPA` dovrebbe essere una funzione.
 
 ```js
 assert(typeof getDPA === 'function');
 ```
 
-`getDPA(5000)` should return an array.
+`getDPA(5000)` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(getDPA(5000)));
 ```
 
-`getDPA(5000)` return array should have a length of `3`.
+`getDPA(5000)` dovrebbe restituire un array di lunghezza `3`.
 
 ```js
 assert(getDPA(5000).length === 3);
 ```
 
-`getDPA(5000)` should return `[3758, 3, 1239]`.
+`getDPA(5000)` dovrebbe restituire `[3758, 3, 1239]`.
 
 ```js
 assert.deepEqual(getDPA(5000), [3758, 3, 1239]);
 ```
 
-`getDPA(10000)` should return `[7508, 4, 2488]`.
+`getDPA(10000)` dovrebbe restituire `[7508, 4, 2488]`.
 
 ```js
 assert.deepEqual(getDPA(10000), [7508, 4, 2488]);
 ```
 
-`getDPA(20000)` should return `[15043, 4, 4953]`.
+`getDPA(20000)` dovrebbe restituire `[15043, 4, 4953]`.
 
 ```js
 assert.deepEqual(getDPA(20000), [15043, 4, 4953]);

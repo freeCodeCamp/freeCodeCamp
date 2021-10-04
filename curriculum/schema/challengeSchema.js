@@ -1,12 +1,12 @@
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
-const { challengeTypes } = require('../../client/utils/challengeTypes');
+const { challengeTypes } = require('../../client/utils/challenge-types');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 
 const fileJoi = Joi.object().keys({
-  key: Joi.string(),
+  fileKey: Joi.string(),
   ext: Joi.string(),
   name: Joi.string(),
   editableRegionBoundaries: [Joi.array().items(Joi.number())],
@@ -37,12 +37,7 @@ const schema = Joi.object()
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
-    files: Joi.object().keys({
-      indexcss: fileJoi,
-      indexhtml: fileJoi,
-      indexjs: fileJoi,
-      indexjsx: fileJoi
-    }),
+    challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     helpCategory: Joi.valid(
       'JavaScript',
@@ -63,6 +58,22 @@ const schema = Joi.object()
       is: challengeTypes.video,
       then: Joi.string().required()
     }),
+    videoLocaleIds: Joi.when('challengeType', {
+      is: challengeTypes.video,
+      then: Joi.object().keys({
+        espanol: Joi.string(),
+        italian: Joi.string(),
+        portuguese: Joi.string()
+      })
+    }),
+    bilibiliIds: Joi.when('challengeType', {
+      is: challengeTypes.video,
+      then: Joi.object().keys({
+        aid: Joi.number().required(),
+        bvid: Joi.string().required(),
+        cid: Joi.number().required()
+      })
+    }),
     question: Joi.object().keys({
       text: Joi.string().required(),
       answers: Joi.array().items(Joi.string()).required(),
@@ -76,15 +87,7 @@ const schema = Joi.object()
         crossDomain: Joi.bool()
       })
     ),
-    solutions: Joi.array().items(
-      Joi.object().keys({
-        indexcss: fileJoi,
-        indexhtml: fileJoi,
-        indexjs: fileJoi,
-        indexjsx: fileJoi,
-        indexpy: fileJoi
-      })
-    ),
+    solutions: Joi.array().items(Joi.array().items(fileJoi)),
     superBlock: Joi.string().regex(slugRE),
     superOrder: Joi.number(),
     suborder: Joi.number(),

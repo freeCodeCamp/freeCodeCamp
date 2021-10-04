@@ -1,5 +1,6 @@
 {
   "help-translate-link-url": "https://contribute.freecodecamp.org/#/how-to-translate-files",
+  "top-contributors": "https://www.freecodecamp.org/news/freecodecamp-top-contributors/",
   "footer": {
     "about-url": "https://www.freecodecamp.org/news/about/",
     "shop-url": "https://www.freecodecamp.org/shop/",
@@ -17,5 +18,11 @@
   "nav": {
     "forum": "https://forum.freecodecamp.org/",
     "news": "https://freecodecamp.org/news/"
+  },
+  "help": {
+    "HTML-CSS": "HTML-CSS",
+    "JavaScript": "JavaScript",
+    "Python": "Python",
+    "Relational Databases": "Relational Databases"
   }
 }

@@ -31,7 +31,7 @@ Test 1
 --fcc-editable-region--
 
 --fcc-editable-region--
-\`\`\``;
+\`\`\`\n`;
 
     const props = {
       challengeId: '60d4ebe4801158d1abe1b18f',

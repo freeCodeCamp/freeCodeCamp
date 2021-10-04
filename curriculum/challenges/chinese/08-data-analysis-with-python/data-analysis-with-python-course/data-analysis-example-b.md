@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c14e
 title: 数据分析 案例 B
 challengeType: 11
 videoId: 0kJz0q0pvgQ
+bilibiliIds:
+  aid: 505593432
+  bvid: BV1kg411c7M6
+  cid: 409003530
 dashedName: data-analysis-example-b
 ---
 

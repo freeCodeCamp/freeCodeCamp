@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c159
 title: Pandas 索引和條件選擇
 challengeType: 11
 videoId: '-ZOrgV_aA9A'
+bilibiliIds:
+  aid: 720604139
+  bvid: BV1FQ4y1k7tC
+  cid: 409013650
 dashedName: pandas-indexing-and-conditional-selection
 ---
 

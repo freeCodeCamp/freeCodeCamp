@@ -8,27 +8,25 @@ dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-c
 
 # --description--
 
-Você pode ter percebido que alguns dos desafios de JavaScript da freeCodeCamp incluem seu próprio console. Esse console se comporta um pouco diferente do console do navegador que você utilizou no último desafio.
+Você pode ter percebido que alguns dos desafios do freeCodeCamp incluem seu próprio console. Este console se comporta um pouco diferente do console do navegador.
 
-O desafio a seguir tem a finalidade de destacar a principal diferença entre o console do freeCodeCamp e do navegador.
-
-Quando você executa JavaScript comum, o console do navegado exibirá suas instruções `console.log()` a exata quantidade de vezes que é chamada.
-
-O console do freeCodeCamp irá imprimir suas instruções `console.log()` um curto período depois do editor detectar mudança no script, e também durante o teste.
-
-O console do freeCodeCamp é apagado antes de cada execução de testes e, para evitar spam, só imprime os logs durante o primeiro teste (veja a nota abaixo para exceções).
-
-Se você gostaria de ver todos os logs em todos os testes, execute os testes e abra o console do navegador. Se preferir usar o console do navegador e quiser que ele imite o console do freeCodeCamp, coloque `console.clear()` antes de qualquer outra chamada ao `console`, para apagar o console do navegador.
-
-**Observação:** `console.log` dentro de funções é impresso no console do freeCodeCamp toda vez que essas funções forem chamadas. Isso pode ajudar a depurar (ou debugar) funções que são chamadas durante os testes.
+Existem muitos métodos para usar no `console` para exibir mensagens. `log`, `warn` e `clear` são alguns deles. O console do freeCodeCamp só produzirá mensagens de `log`. Já o console do navegador mostrará todas as mensagens. Quando você fizer alterações em seu código, ele será executado e mostrará automaticamente os logs. O console do freeCodeCamp é limpo cada vez que o código é executado.
 
 # --instructions--
 
-Primeiro, use `console.log` para exibir a variável `output`. Em seguida, use `console.clear` para apagar o console do navegador.
+Primeiro, abra o console do navegador para poder ver os registros (logs). Para fazer isso, clique com o botão direito na barra de navegação do freeCodeCamp, na parte superior, e clique em `inspect` na maioria dos navegadores. Em seguida, encontre a aba `console` na janela que é aberta.
+
+Depois disso, use `console.log` para registrar a variável `output`. Veja os dois consoles para ver o log. Por fim, use `console.clear` depois do registro para limpar o console do navegador. Veja a diferença entre os dois consoles.
 
 # --hints--
 
-Você deve usar `console.clear()` para apagar o console do navegador.
+Você deve usar `console.log()` para imprimir a variável `output`.
+
+```js
+assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
+```
+
+Você deve usar `console.clear()` para limpar o console do navegador.
 
 ```js
 assert(
@@ -38,10 +36,14 @@ assert(
 );
 ```
 
-Você deve usar `console.log()` para imprimir a variável `output`.
+Você deve limpar o console após o registro (log).
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
+assert(
+  __helpers
+    .removeWhiteSpace(code)
+    .match(/console\.log\(output\)[\s\S]*console.clear\(\)/)
+);
 ```
 
 # --seed--
@@ -49,25 +51,15 @@ assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
 ## --seed-contents--
 
 ```js
-// Open your browser console.
-let output = "Get this to log once in the freeCodeCamp console and twice in the browser console";
-// Use console.log() to print the output variable.
+let output = "Get this to show once in the freeCodeCamp console and not at all in the browser console";
 
-// Run the tests to see the difference between the two consoles.
-
-// Now, add console.clear() before your console.log() to clear the browser console, and pass the tests.
 ```
 
 # --solutions--
 
 ```js
-// Open your browser console.
-let output = "Get this to log once in the freeCodeCamp console and twice in the browser console";
-// Use console.log() to print the output variable.
-console.clear();
+let output = "Get this to show once in the freeCodeCamp console and not at all in the browser console";
+
 console.log(output);
-
-// Run the tests to see the difference between the two consoles.
-
-// Now, add console.clear() before your console.log() to clear the browser console, and pass the tests.
+console.clear();
 ```

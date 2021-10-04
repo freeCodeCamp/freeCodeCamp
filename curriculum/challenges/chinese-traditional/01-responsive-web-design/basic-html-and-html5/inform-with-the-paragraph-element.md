@@ -21,7 +21,7 @@ dashedName: inform-with-the-paragraph-element
 
 在 `h2` 元素下方添加一個 `p` 元素，其內容是 `Hello Paragraph`。
 
-**注意：**按照慣例，所有 HTML 標籤都應該是小寫字母，例如應使用 `<p></p>`，而不會使用 `<P></P>`。
+**注意：** 按照慣例，所有 HTML 標籤都應該是小寫字母，例如應使用 `<p></p>`，而不會使用 `<P></P>`。
 
 # --hints--
 

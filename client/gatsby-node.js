@@ -53,6 +53,16 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
     }
   }
 
+  if (!env.stripePublicKey) {
+    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+      throw new Error('Stripe public key is required to start the client!');
+    } else {
+      reporter.info(
+        'Stripe public key is missing or invalid. Required for Stripe integration.'
+      );
+    }
+  }
+
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -234,17 +244,11 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
     type ChallengeNode implements Node {
-      files: ChallengeFile
+      challengeFiles: [FileContents]
       url: String
     }
-    type ChallengeFile {
-      indexcss: FileContents
-      indexhtml: FileContents
-      indexjs: FileContents
-      indexjsx: FileContents
-    }
     type FileContents {
-      key: String
+      fileKey: String
       ext: String
       name: String
       contents: String

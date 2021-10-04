@@ -15,6 +15,9 @@ Here's an example of changing the width of an image on hover:
 
 ```html
 <style>
+  img {
+    width: 30px;
+  }
   img:hover {
     animation-name: width;
     animation-duration: 500ms;
@@ -27,7 +30,7 @@ Here's an example of changing the width of an image on hover:
   }
 </style>
 
-<img src="https://bit.ly/smallgooglelogo" alt="Google's Logo" />
+<img src="https://cdn.freecodecamp.org/curriculum/applied-visual-design/google-logo.png" alt="Google's Logo" />
 ```
 
 # --instructions--

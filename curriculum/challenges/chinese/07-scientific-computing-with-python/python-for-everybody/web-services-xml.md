@@ -3,6 +3,10 @@ id: 5e7b9f0e0b6c005b0e76f07b
 title: 'Web 服务：XML'
 challengeType: 11
 videoId: _pZ0srbg7So
+bilibiliIds:
+  aid: 761920032
+  bvid: BV1n64y1x7KW
+  cid: 377332379
 dashedName: web-services-xml
 ---
 

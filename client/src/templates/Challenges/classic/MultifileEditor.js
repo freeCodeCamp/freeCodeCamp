@@ -20,7 +20,7 @@ import Editor from './editor';
 const propTypes = {
   canFocus: PropTypes.bool,
   // TODO: use shape
-  challengeFiles: PropTypes.object,
+  challengeFiles: PropTypes.array,
   containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
   description: PropTypes.string,
@@ -39,6 +39,7 @@ const propTypes = {
   saveEditorContent: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
+  // TODO: is this used?
   title: PropTypes.string,
   updateFile: PropTypes.func.isRequired,
   visibleEditors: PropTypes.shape({
@@ -97,9 +98,7 @@ class MultifileEditor extends Component {
     // editors.map(props => <EditorWrapper ...props>).join(<ReflexSplitter>)
     // ...probably! As long as we can put keys in the right places.
     const reflexProps = {
-      propagateDimensions: true,
-      renderOnResize: true,
-      renderOnResizeRate: 20
+      propagateDimensions: true
     };
 
     let splitterJSXRight, splitterHTMLRight, splitterCSSRight;

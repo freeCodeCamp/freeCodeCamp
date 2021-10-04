@@ -33,7 +33,11 @@ export const defaultDonationFormState = {
   redirecting: false,
   processing: false,
   success: false,
-  error: ''
+  error: '',
+  loading: {
+    stripe: true,
+    paypal: true
+  }
 };
 
 const initialState = {
@@ -124,6 +128,23 @@ export const addDonationComplete = createAction(
   actionTypes.addDonationComplete
 );
 export const addDonationError = createAction(actionTypes.addDonationError);
+
+export const postChargeStripe = createAction(actionTypes.postChargeStripe);
+export const postChargeStripeComplete = createAction(
+  actionTypes.postChargeStripeComplete
+);
+export const postChargeStripeError = createAction(
+  actionTypes.postChargeStripeError
+);
+export const postChargeStripeCard = createAction(
+  actionTypes.postChargeStripeCard
+);
+export const postChargeStripeCardComplete = createAction(
+  actionTypes.postChargeStripeCardComplete
+);
+export const postChargeStripeCardError = createAction(
+  actionTypes.postChargeStripeCardError
+);
 
 export const fetchProfileForUser = createAction(
   actionTypes.fetchProfileForUser
@@ -258,8 +279,8 @@ export const certificatesByNameSelector = username => state => {
       },
       {
         show: isFrontEndLibsCert,
-        title: 'Front End Libraries Certification',
-        certSlug: 'front-end-libraries'
+        title: 'Front End Development Libraries Certification',
+        certSlug: 'front-end-development-libraries'
       },
       {
         show: is2018DataVisCert,
@@ -268,8 +289,8 @@ export const certificatesByNameSelector = username => state => {
       },
       {
         show: isApisMicroservicesCert,
-        title: 'APIs and Microservices Certification',
-        certSlug: 'apis-and-microservices'
+        title: 'Back End Development and APIs Certification',
+        certSlug: 'back-end-development-and-apis'
       },
       {
         show: isQaCertV7,
@@ -412,6 +433,52 @@ export const reducer = handleActions(
       };
     },
     [actionTypes.addDonationError]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, error: payload }
+    }),
+    [actionTypes.postChargeStripe]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, processing: true }
+    }),
+    [actionTypes.postChargeStripeComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            isDonating: true
+          }
+        },
+
+        donationFormState: { ...defaultDonationFormState, success: true }
+      };
+    },
+    [actionTypes.postChargeStripeError]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, error: payload }
+    }),
+    [actionTypes.postChargeStripeCard]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, processing: true }
+    }),
+    [actionTypes.postChargeStripeCardComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            isDonating: true
+          }
+        },
+
+        donationFormState: { ...defaultDonationFormState, success: true }
+      };
+    },
+    [actionTypes.postChargeStripeCardError]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, error: payload }
     }),

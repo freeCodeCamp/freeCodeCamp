@@ -3,7 +3,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 import { getLines } from '../../../../../utils/get-lines';
 import { createPoly } from '../../../../../utils/polyvinyl';
-import { challengeTypes } from '../../../../utils/challengeTypes';
+import { challengeTypes } from '../../../../utils/challenge-types';
 import { completedChallengesSelector } from '../../../redux';
 import { getTargetEditor } from '../utils/getTargetEditor';
 import { actionTypes, ns } from './action-types';
@@ -19,7 +19,7 @@ export { ns };
 const initialState = {
   canFocusEditor: true,
   visibleEditors: {},
-  challengeFiles: {},
+  challengeFiles: [],
   challengeMeta: {
     superBlock: '',
     block: '',
@@ -60,24 +60,21 @@ export const sagas = [
 export const createFiles = createAction(
   actionTypes.createFiles,
   challengeFiles =>
-    Object.keys(challengeFiles)
-      .filter(key => challengeFiles[key])
-      .map(key => challengeFiles[key])
-      .reduce(
-        (challengeFiles, file) => ({
-          ...challengeFiles,
-          [file.key]: {
-            ...createPoly(file),
-            seed: file.contents.slice(),
-            editableContents: getLines(
-              file.contents,
-              file.editableRegionBoundaries
-            ),
-            seedEditableRegionBoundaries: file.editableRegionBoundaries.slice()
-          }
-        }),
-        {}
-      )
+    challengeFiles.reduce((challengeFiles, challengeFile) => {
+      return [
+        ...challengeFiles,
+        {
+          ...createPoly(challengeFile),
+          seed: challengeFile.contents.slice(),
+          editableContents: getLines(
+            challengeFile.contents,
+            challengeFile.editableRegionBoundaries
+          ),
+          seedEditableRegionBoundaries:
+            challengeFile.editableRegionBoundaries.slice()
+        }
+      ];
+    }, [])
 );
 
 export const createQuestion = createAction(actionTypes.createQuestion);
@@ -165,7 +162,7 @@ export const challengeDataSelector = state => {
   ) {
     challengeData = {
       ...challengeData,
-      files: challengeFilesSelector(state)
+      challengeFiles: challengeFilesSelector(state)
     };
   } else if (challengeType === challengeTypes.backend) {
     const { solution: url = {} } = projectFormValuesSelector(state);
@@ -196,7 +193,7 @@ export const challengeDataSelector = state => {
     const { required = [], template = '' } = challengeMetaSelector(state);
     challengeData = {
       ...challengeData,
-      files: challengeFilesSelector(state),
+      challengeFiles: challengeFilesSelector(state),
       required,
       template
     };
@@ -216,19 +213,30 @@ export const reducer = handleActions(
     }),
     [actionTypes.updateFile]: (
       state,
-      { payload: { key, editorValue, editableRegionBoundaries } }
-    ) => ({
-      ...state,
-      challengeFiles: {
-        ...state.challengeFiles,
-        [key]: {
-          ...state.challengeFiles[key],
-          contents: editorValue,
-          editableContents: getLines(editorValue, editableRegionBoundaries),
+      { payload: { fileKey, editorValue, editableRegionBoundaries } }
+    ) => {
+      const updates = {};
+      // if a given part of the payload is null, we leave that part of the state
+      // unchanged
+      if (editableRegionBoundaries !== null)
+        updates.editableRegionBoundaries = editableRegionBoundaries;
+      if (editorValue !== null) updates.contents = editorValue;
+      if (editableRegionBoundaries !== null && editorValue !== null)
+        updates.editableContents = getLines(
+          editorValue,
           editableRegionBoundaries
-        }
-      }
-    }),
+        );
+      return {
+        ...state,
+        challengeFiles: [
+          ...state.challengeFiles.filter(x => x.fileKey !== fileKey),
+          {
+            ...state.challengeFiles.find(x => x.fileKey === fileKey),
+            ...updates
+          }
+        ]
+      };
+    },
     [actionTypes.storedCodeFound]: (state, { payload }) => ({
       ...state,
       challengeFiles: payload
@@ -268,35 +276,28 @@ export const reducer = handleActions(
       ...state,
       challengeMeta: { ...payload }
     }),
-
-    [actionTypes.resetChallenge]: state => ({
-      ...state,
-      currentTab: 2,
-      challengeFiles: {
-        ...Object.keys(state.challengeFiles)
-          .map(key => state.challengeFiles[key])
-          .reduce(
-            (files, file) => ({
-              ...files,
-              [file.key]: {
-                ...file,
-                contents: file.seed.slice(),
-                editableContents: getLines(
-                  file.seed,
-                  file.seedEditableRegionBoundaries
-                ),
-                editableRegionBoundaries: file.seedEditableRegionBoundaries
-              }
-            }),
-            {}
-          )
-      },
-      challengeTests: state.challengeTests.map(({ text, testString }) => ({
-        text,
-        testString
-      })),
-      consoleOut: []
-    }),
+    [actionTypes.resetChallenge]: state => {
+      const challengeFilesReset = state.challengeFiles.map(challengeFile => ({
+        ...challengeFile,
+        contents: challengeFile.seed.slice(),
+        editableContents: getLines(
+          challengeFile.seed,
+          challengeFile.seedEditableRegionBoundaries
+        ),
+        editableRegionBoundaries:
+          challengeFile.seedEditableRegionBoundaries.slice()
+      }));
+      return {
+        ...state,
+        currentTab: 2,
+        challengeFiles: challengeFilesReset,
+        challengeTests: state.challengeTests.map(({ text, testString }) => ({
+          text,
+          testString
+        })),
+        consoleOut: []
+      };
+    },
     [actionTypes.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload

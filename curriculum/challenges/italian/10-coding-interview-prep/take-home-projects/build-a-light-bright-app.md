@@ -1,6 +1,6 @@
 ---
 id: 5a5d02bd919fcf9ca8cf46cb
-title: Build a Light-Bright App
+title: Costruisci un'app luminosa
 challengeType: 3
 forumTopicId: 302350
 dashedName: build-a-light-bright-app
@@ -8,27 +8,27 @@ dashedName: build-a-light-bright-app
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/eyLYXE>.
+**Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: <https://codepen.io/freeCodeCamp/full/eyLYXE>.
 
-**Rule #1:** Don't look at the example project's code. Figure it out for yourself.
+**Regola #1:** Non guardare il codice del progetto esempio. Arrivaci per conto tuo.
 
-**Rule #2:** Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+**Regola #2:** Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
-**User Story:** I can click or drag the mouse cursor to color the circles.
+**User Story:** Posso cliccare o trascinare il cursore del mouse per colorare i cerchi.
 
-**User Story:** I can double-click on a colored circle to remove the color.
+**User Story:** Posso fare doppio click su un cerchio colorato per rimuovere il colore.
 
-**User Story:** I can click on a colored circle to change its color.
+**User Story:** Posso cliccare su un cerchio colorato per cambiarne il colore.
 
-**User Story:** I should get a circle of different color on each click.
+**User Story:** Dovrei ottenere un cerchio di colore diverso ad ogni clic.
 
-**User Story:** I can click on the 'Reset' button to remove the recent color.
+**User Story:** Posso usare il pulsante "Reset" per rimuovere il colore recente.
 
-**User Story:** I can click on the 'Reset All' button to remove all the colors from the circles.
+**User Story:** Posso usare il bottone "Reset All" per rimuovere tutti i colori dai cerchi.
 
-When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+Quando hai finito, includi un link al tuo progetto su CodePen e clicca sul pulsante "Ho completato questa sfida".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul [forum di freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c15e
 title: Pulizia dati con DataFrames
 challengeType: 11
 videoId: sTMN_pdI6S0
+bilibiliIds:
+  aid: 505597026
+  bvid: BV1Yg411c7bx
+  cid: 409018948
 dashedName: data-cleaning-with-dataframes
 ---
 

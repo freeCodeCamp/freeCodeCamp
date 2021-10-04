@@ -2,7 +2,6 @@
 id: 567af2437cbaa8c51670a16c
 title: 測試對象的屬性
 challengeType: 1
-videoUrl: 'https://scrimba.com/c/c6Wz4ySr'
 forumTopicId: 18324
 dashedName: testing-objects-for-properties
 ---

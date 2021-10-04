@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-// Package Utilities
-import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+
+import { Col, Grid, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,27 +10,26 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-// Local Utilities
 import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
 import { isSignedInSelector } from '../../../../redux';
 import {
-  ChallengeNodeType,
   ChallengeMetaType,
-  TestType
+  ChallengeNodeType,
+  Test
 } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/Challenge-Description';
-import HelpModal from '../../components/HelpModal';
 import Hotkeys from '../../components/Hotkeys';
 import TestSuite from '../../components/Test-Suite';
 import ChallengeTitle from '../../components/challenge-title';
 import CompletionModal from '../../components/completion-modal';
+import HelpModal from '../../components/help-modal';
 import Output from '../../components/output';
 import {
-  executeChallenge,
   challengeMounted,
   challengeTestsSelector,
   consoleOutputSelector,
+  executeChallenge,
   initConsole,
   initTests,
   isChallengeCompletedSelector,
@@ -41,7 +40,6 @@ import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
 
-// Styles
 import '../../components/test-frame.css';
 
 // Redux Setup
@@ -52,7 +50,7 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   (
     output: string[],
-    tests: TestType[],
+    tests: Test[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean
   ) => ({
@@ -81,7 +79,7 @@ interface BackEndProps {
   forumTopicId: number;
   id: string;
   initConsole: () => void;
-  initTests: (tests: TestType[]) => void;
+  initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   output: string[];
@@ -89,7 +87,7 @@ interface BackEndProps {
     challengeMeta: ChallengeMetaType;
   };
   t: TFunction;
-  tests: TestType[];
+  tests: Test[];
   title: string;
   updateChallengeMeta: (arg0: ChallengeMetaType) => void;
   updateSolutionFormValues: () => void;
@@ -218,8 +216,6 @@ class BackEnd extends Component<BackEndProps> {
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
                 <Spacer />
                 <ChallengeTitle
                   block={block}
@@ -253,8 +249,6 @@ class BackEnd extends Component<BackEndProps> {
                   output={output}
                 />
                 <TestSuite tests={tests} />
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
                 <Spacer />
               </Col>
               <CompletionModal

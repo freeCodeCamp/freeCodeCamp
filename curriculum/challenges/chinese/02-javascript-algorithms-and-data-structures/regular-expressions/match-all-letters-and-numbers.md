@@ -10,7 +10,7 @@ dashedName: match-all-letters-and-numbers
 
 使用元字符，可以使用 `[a-z]` 搜寻字母表中的所有字母。 这种元字符是很常见的，它有一个缩写，但这个缩写也包含额外的字符。
 
-JavaScript 中与字母表匹配的最接近的元字符是`\w`。 这个缩写等同于`[A-Za-z0-9_]`。 此字符类匹配上面字母和小写字母以及数字。 注意，这个字符类也包含下划线字符 (`_`)。
+JavaScript 中与字母表匹配的最接近的元字符是`\w`。 这个缩写等同于`[A-Za-z0-9_]`。 此字符类匹配大写字母和小写字母以及数字。 注意，这个字符类也包含下划线字符 (`_`)。
 
 ```js
 let longHand = /[A-Za-z0-9_]+/;
@@ -45,7 +45,7 @@ assert(alphabetRegexV2.global);
 assert(/\\w/.test(alphabetRegexV2.source));
 ```
 
-你的正则表达式应该在 `The five boxing wizards jump quickly.` 中匹配到 31 个非字母数字字符。
+你的正则表达式应该在 `The five boxing wizards jump quickly.` 中匹配到 31 个字母数字字符。
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-你的正则表达式应该在 `Pack my box with five dozen liquor jugs.` 中匹配到 32 个非字母数字字符。
+你的正则表达式应该在 `Pack my box with five dozen liquor jugs.` 中匹配到 32 个字母数字字符。
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-你的正则表达式应该在 `How vexingly quick daft zebras jump!` 中匹配到 30 个非字母数字字符。
+你的正则表达式应该在 `How vexingly quick daft zebras jump!` 中匹配到 30 个字母数字字符。
 
 ```js
 assert(

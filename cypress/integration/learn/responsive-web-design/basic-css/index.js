@@ -1,5 +1,3 @@
-/* global cy */
-
 const selectors = {
   tableOfContents: '.intro-toc',
   warningMessage: '.flash-message-enter-active'

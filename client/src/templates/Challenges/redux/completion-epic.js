@@ -10,7 +10,7 @@ import {
   finalize
 } from 'rxjs/operators';
 
-import { challengeTypes, submitTypes } from '../../../../utils/challengeTypes';
+import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import {
   userSelector,
   isSignedInSelector,
@@ -63,11 +63,14 @@ function submitModern(type, state) {
 
     if (type === actionTypes.submitChallenge) {
       const { id } = challengeMetaSelector(state);
-      const files = challengeFilesSelector(state);
+      const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
       const challengeInfo = {
         id,
-        files
+        files: challengeFiles.reduce(
+          (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
+          []
+        )
       };
       const update = {
         endpoint: '/modern-challenge-completed',

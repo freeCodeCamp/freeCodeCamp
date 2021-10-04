@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad8
-title: Zig-zag matrix
+title: Matriz de zigue-zague
 challengeType: 5
 forumTopicId: 302348
 dashedName: zig-zag-matrix
@@ -8,9 +8,9 @@ dashedName: zig-zag-matrix
 
 # --description--
 
-A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's [anti-diagonals](https://en.wiktionary.org/wiki/antidiagonal).
+Uma matriz 'zig-zag' é um arranjo quadrado dos primeiros $N^2$ inteiros, onde os números crescem sequencialmente à medida que você percorre em zigue-zague ao longo das [antidiagonais](https://en.wiktionary.org/wiki/antidiagonal) da matriz.
 
-For example, for the input `5`, the following result should be produced:
+Por exemplo, para a entrada `5`, o seguinte resultado deve ser produzido:
 
 <pre>
  0  1  5  6 14
@@ -22,41 +22,41 @@ For example, for the input `5`, the following result should be produced:
 
 # --instructions--
 
-Write a function that takes the size of the zig-zag matrix, and returns the corresponding matrix as two-dimensional array.
+Escreva uma função que receba o tamanho da matriz em zigue-zague, e retorne a matriz correspondente como matriz bidimensional.
 
 # --hints--
 
-ZigZagMatrix should be a function.
+ZigZagMatrix deve ser uma função.
 
 ```js
 assert.equal(typeof ZigZagMatrix, 'function');
 ```
 
-ZigZagMatrix should return array.
+ZigZagMatrix deve retornar matriz.
 
 ```js
 assert.equal(typeof ZigZagMatrix(1), 'object');
 ```
 
-ZigZagMatrix should return an array of nested arrays.
+ZigZagMatrix deve retornar uma matriz de matrizes aninhadas.
 
 ```js
 assert.equal(typeof ZigZagMatrix(1)[0], 'object');
 ```
 
-ZigZagMatrix(1) should return \[[0]].
+ZigZagMatrix(1) deve retornar \[[0]].
 
 ```js
 assert.deepEqual(ZigZagMatrix(1), zm1);
 ```
 
-ZigZagMatrix(2) should return \[[0, 1], [2, 3]].
+ZigZagMatrix(2) deve retornar \[[0, 1], [2, 3]].
 
 ```js
 assert.deepEqual(ZigZagMatrix(2), zm2);
 ```
 
-ZigZagMatrix(5) should return specified matrix.
+ZigZagMatrix(5) deve retornar a matriz especificada.
 
 ```js
 assert.deepEqual(ZigZagMatrix(5), zm5);

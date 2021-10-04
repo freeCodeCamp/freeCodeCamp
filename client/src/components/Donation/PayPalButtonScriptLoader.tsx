@@ -2,12 +2,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import { Loader } from '../../components/helpers';
 import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
 
 import type { AddDonationData } from './PaypalButton';
 
 type PayPalButtonScriptLoaderProps = {
+  isMinimalForm: boolean | undefined;
   clientId: string;
   createOrder: (
     data: unknown,
@@ -32,9 +32,15 @@ type PayPalButtonScriptLoaderProps = {
     data: AddDonationData,
     actions?: { order: { capture: () => Promise<unknown> } }
   ) => unknown;
+  isPaypalLoading: boolean;
   onCancel: () => unknown;
   onError: () => unknown;
-  style: unknown;
+  onLoad: () => void;
+  style: {
+    color: string;
+    height: number;
+    tagline: boolean;
+  };
   planId: string | null;
 };
 
@@ -63,7 +69,10 @@ export class PayPalButtonScriptLoader extends Component<
   PayPalButtonScriptLoaderState
 > {
   // Lint says that paypal does not exist on window
-  state = { isSdkLoaded: window.paypal ? true : false, isSubscription: true };
+  state = {
+    isSdkLoaded: window.paypal ? true : false,
+    isSubscription: true
+  };
 
   static displayName = 'PayPalButtonScriptLoader';
 
@@ -79,18 +88,29 @@ export class PayPalButtonScriptLoader extends Component<
   }
 
   componentDidMount(): void {
-    if (!window.paypal) {
-      this.loadScript(this.props.isSubscription, false);
-    }
+    this.loadScript(this.props.isSubscription, true);
+  }
+
+  componentWillUnmount(): void {
+    scriptRemover('paypal-sdk');
   }
 
   componentDidUpdate(prevProps: {
     isSubscription: boolean;
-    style: unknown;
+    style: {
+      color: string;
+      height: number;
+      tagline: boolean;
+    };
+    isMinimalForm: boolean | undefined;
   }): void {
+    // We need to load a new script if any of the following changes.
     if (
       prevProps.isSubscription !== this.state.isSubscription ||
-      prevProps.style !== this.props.style
+      prevProps.style.color !== this.props.style.color ||
+      prevProps.style.tagline !== this.props.style.tagline ||
+      prevProps.style.height !== this.props.style.height ||
+      prevProps.isMinimalForm !== this.props.isMinimalForm
     ) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ isSdkLoaded: false });
@@ -100,7 +120,8 @@ export class PayPalButtonScriptLoader extends Component<
 
   loadScript(subscription: boolean, deleteScript: boolean | undefined): void {
     if (deleteScript) scriptRemover('paypal-sdk');
-    let queries = `?client-id=${this.props.clientId}&disable-funding=credit,bancontact,blik,eps,giropay,ideal,mybank,p24,sepa,sofort,venmo`;
+    const allowCardPayment = this.props.isMinimalForm ? 'card,' : '';
+    let queries = `?client-id=${this.props.clientId}&disable-funding=${allowCardPayment}credit,bancontact,blik,eps,giropay,ideal,mybank,p24,sepa,sofort,venmo`;
     if (subscription) queries += '&vault=true&intent=subscription';
 
     scriptLoader(
@@ -114,6 +135,7 @@ export class PayPalButtonScriptLoader extends Component<
 
   onScriptLoad = (): void => {
     this.setState({ isSdkLoaded: true });
+    this.props.onLoad();
   };
 
   captureOneTimePayment(
@@ -144,7 +166,7 @@ export class PayPalButtonScriptLoader extends Component<
       style
     } = this.props;
 
-    if (!isSdkLoaded) return <Loader />;
+    if (!isSdkLoaded) return <></>;
 
     // TODO: fill in the full list of props instead of any
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

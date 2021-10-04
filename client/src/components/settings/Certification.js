@@ -32,7 +32,7 @@ const propTypes = {
       githubLink: PropTypes.string,
       challengeType: PropTypes.number,
       completedDate: PropTypes.number,
-      files: PropTypes.array
+      challengeFiles: PropTypes.array
     })
   ),
   createFlashMessage: PropTypes.func.isRequired,
@@ -113,9 +113,9 @@ const isCertMapSelector = createSelector(
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
-    'Front End Libraries': isFrontEndLibsCert,
+    'Front End Development Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
-    'APIs and Microservices': isApisMicroservicesCert,
+    'Back End Development and APIs': isApisMicroservicesCert,
     'Quality Assurance': isQaCertV7,
     'Information Security': isInfosecCertV7,
     'Scientific Computing with Python': isSciCompPyCertV7,
@@ -136,7 +136,7 @@ const honestyInfoMessage = {
 const initialState = {
   solutionViewer: {
     projectTitle: '',
-    files: null,
+    challengeFiles: null,
     solution: null,
     isOpen: false
   }
@@ -167,22 +167,23 @@ export class CertificationSettings extends Component {
     if (!completedProject) {
       return null;
     }
-    const { solution, githubLink, files } = completedProject;
+    const { solution, githubLink, challengeFiles } = completedProject;
     const onClickHandler = () =>
       this.setState({
         solutionViewer: {
           projectTitle,
-          files,
+          challengeFiles,
           solution,
           isOpen: true
         }
       });
-    if (files && files.length) {
+    if (challengeFiles?.length) {
       return (
         <Button
           block={true}
           bsStyle='primary'
           className='btn-invert'
+          data-cy={projectTitle}
           id={`btn-for-${projectId}`}
           onClick={onClickHandler}
         >
@@ -373,9 +374,9 @@ export class CertificationSettings extends Component {
           <ul>
             <li>Responsive Web Design</li>
             <li>JavaScript Algorithms and Data Structures</li>
-            <li>Front End Libraries</li>
+            <li>Front End Development Libraries</li>
             <li>Data Visualization</li>
-            <li>APIs and Microservices</li>
+            <li>Back End Development and APIs</li>
             <li>Legacy Information Security and Quality Assurance</li>
           </ul>
         </div>
@@ -417,7 +418,7 @@ export class CertificationSettings extends Component {
 
   render() {
     const {
-      solutionViewer: { files, solution, isOpen, projectTitle }
+      solutionViewer: { challengeFiles, solution, isOpen, projectTitle }
     } = this.state;
 
     const { t } = this.props;
@@ -434,7 +435,7 @@ export class CertificationSettings extends Component {
         )}
         {isOpen ? (
           <ProjectModal
-            files={files}
+            challengeFiles={challengeFiles}
             handleSolutionModalHide={this.handleSolutionModalHide}
             isOpen={isOpen}
             projectTitle={projectTitle}

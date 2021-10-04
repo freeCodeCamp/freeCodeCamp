@@ -3,6 +3,10 @@ id: 5e7b9f070b6c005b0e76f05e
 title: 'Iterações: idiomas de loop'
 challengeType: 11
 videoId: AelGAcoMXbI
+bilibiliIds:
+  aid: 334491369
+  bvid: BV1tw411R7Mm
+  cid: 376530765
 dashedName: iterations-loop-idioms
 ---
 

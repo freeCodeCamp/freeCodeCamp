@@ -286,8 +286,7 @@
       "preview": "Preview"
     },
     "help-translate": "We are still translating the following certifications.",
-    "help-translate-link": "Help us translate.",
-    "coder-survey": "<0>Take the 2021 New Coder Survey</0> (it takes about 10 minutes – do it for science)"
+    "help-translate-link": "Help us translate."
   },
   "donate": {
     "title": "Support our nonprofit",
@@ -307,6 +306,8 @@
     "confirm-2": "Confirm your one-time donation of ${{usd}}",
     "confirm-3": "Confirm your donation of ${{usd}} / month",
     "confirm-4": "Confirm your donation of ${{usd}} / year",
+    "wallet-label": "${{usd}} donation to freeCodeCamp",
+    "wallet-label-1": "${{usd}} / month donation to freeCodeCamp",
     "your-donation": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world.",
     "your-donation-2": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each month.",
     "your-donation-3": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each year.",
@@ -317,6 +318,7 @@
     "nicely-done": "Nicely done. You just completed {{block}}.",
     "credit-card": "Credit Card",
     "credit-card-2": "Or donate with a credit card:",
+    "or-card": "Or donate with card", 
     "paypal": "with PayPal:",
     "need-email": "We need a valid email address to which we can send your donation tax receipt.",
     "went-wrong": "Something went wrong processing your donation. Your card has not been charged.",
@@ -425,6 +427,7 @@
     "wrong-updating": "Something went wrong updating your account. Please check and try again",
     "updated-preferences": "We have updated your preferences",
     "email-invalid": "Email format is invalid",
+    "email-valid": "Your email has successfully been changed, happy coding!",
     "bad-challengeId": "currentChallengeId is not a valid challenge ID",
     "theme-invalid": "Theme is invalid",
     "theme-set": "Theme already set",
@@ -444,6 +447,7 @@
     "cert-claim-success": "@{{username}}, you have successfully claimed the {{name}} Certification! Congratulations on behalf of the freeCodeCamp.org team!",
     "wrong-name": "Something went wrong with the verification of {{name}}, please try again. If you continue to receive this error, you can send a message to support@freeCodeCamp.org to get help.",
     "error-claiming": "Error claiming {{certName}}",
+    "refresh-needed": "You can only use the PaymentRequest button once. Refresh the page to start over.",
     "username-not-found": "We could not find a user with the username \"{{username}}\"",
     "add-name": "This user needs to add their name to their account in order for others to be able to view their certification.",
     "not-eligible": "This user is not eligible for freeCodeCamp.org certifications at this time.",

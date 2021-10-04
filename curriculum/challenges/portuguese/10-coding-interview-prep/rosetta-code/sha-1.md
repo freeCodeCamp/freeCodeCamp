@@ -8,59 +8,59 @@ dashedName: sha-1
 
 # --description--
 
-**SHA-1** or **SHA1** is a one-way hash function; it computes a 160-bit message digest.
+**SHA-1** ou **SHA1** é uma função hash de mão única; ela calcula um message digest de 160-bit.
 
-SHA-1 often appears in security protocols; for example, many HTTPS websites use RSA with SHA-1 to secure their connections.
+O SHA-1 aparece frequentemente em protocolos de segurança; por exemplo, muitos sites HTTPS usam RSA com SHA-1 para proteger suas conexões.
 
-BitTorrent uses SHA-1 to verify downloads.
+O BitTorrent usa SHA-1 para verificar downloads.
 
-Git and Mercurial use SHA-1 digests to identify commits.
+O Git e o Mercurial usam SHA-1 digests para identificar commits.
 
-A US government standard, [FIPS 180-1](https://rosettacode.org/wiki/SHA-1/FIPS-180-1), defines SHA-1.
+Um padrão do governo dos EUA, [FIPS 180-1](https://rosettacode.org/wiki/SHA-1/FIPS-180-1), define o SHA-1.
 
 # --instructions--
 
-Write a function that returns the SHA-1 message digest for a given string.
+Escreva uma função que retorne o SHA-1 message digest para uma determinada string.
 
 # --hints--
 
-`SHA1` should be a function.
+`SHA1` deve ser uma função.
 
 ```js
 assert(typeof SHA1 === 'function');
 ```
 
-`SHA1("abc")` should return a string.
+`SHA1("abc")` deve retornar uma string.
 
 ```js
 assert(typeof SHA1('abc') === 'string');
 ```
 
-`SHA1("abc")` should return `"a9993e364706816aba3e25717850c26c9cd0d89d"`.
+`SHA1("abc")` deve retornar `"a9993e364706816aba3e25717850c26c9cd0d89d"`.
 
 ```js
 assert.equal(SHA1('abc'), 'a9993e364706816aba3e25717850c26c9cd0d89d');
 ```
 
-`SHA1("Rosetta Code")` should return `"48c98f7e5a6e736d790ab740dfc3f51a61abe2b5"`.
+`SHA1("Rosetta Code")` deve retornar `"48c98f7e5a6e736d790ab740dfc3f51a61abe2b5"`.
 
 ```js
 assert.equal(SHA1('Rosetta Code'), '48c98f7e5a6e736d790ab740dfc3f51a61abe2b5');
 ```
 
-`SHA1("Hello world")` should return `"7b502c3a1f48c8609ae212cdfb639dee39673f5e"`.
+`SHA1("Hello world")` deve retornar `"7b502c3a1f48c8609ae212cdfb639dee39673f5e"`.
 
 ```js
 assert.equal(SHA1('Hello world'), '7b502c3a1f48c8609ae212cdfb639dee39673f5e');
 ```
 
-`SHA1("Programming")` should return `"d1a946bf8b2f2a7292c250063ee28989d742cd4b"`.
+`SHA1("Programming")` deve retornar `"d1a946bf8b2f2a7292c250063ee28989d742cd4b"`.
 
 ```js
 assert.equal(SHA1('Programming'), 'd1a946bf8b2f2a7292c250063ee28989d742cd4b');
 ```
 
-`SHA1("is Awesome")` should return `"6537205da59c72b57ed3881843c2d24103d683a3"`.
+`SHA1("is Awesome")` deve retornar `"6537205da59c72b57ed3881843c2d24103d683a3"`.
 
 ```js
 assert.equal(SHA1('is Awesome'), '6537205da59c72b57ed3881843c2d24103d683a3');

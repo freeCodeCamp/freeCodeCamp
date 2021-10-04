@@ -3,6 +3,10 @@ id: 5ea9997bbec2e9bc47e94db2
 title: Desenvolver um scanner de Nmap parte 2
 challengeType: 11
 videoId: a98PscnUsTg
+bilibiliIds:
+  aid: 505526943
+  bvid: BV1Hg411c7oE
+  cid: 409034761
 dashedName: developing-an-nmap-scanner-part-2
 ---
 
