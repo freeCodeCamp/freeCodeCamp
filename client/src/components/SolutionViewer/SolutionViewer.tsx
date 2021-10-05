@@ -6,7 +6,7 @@ import { ChallengeFile, ChallengeFiles } from '../../redux/prop-types';
 
 type SolutionViewerProps = {
   challengeFiles: ChallengeFiles;
-  solution: string | null | undefined;
+  solution: string;
 }
 
 function SolutionViewer({
