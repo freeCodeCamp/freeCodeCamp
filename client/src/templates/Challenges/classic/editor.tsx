@@ -968,6 +968,35 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor?.focus();
     if (isProjectStep() && editor) {
       showEditableRegion(editor);
+
+      // resetting test output
+      // TODO: DRY this - createOutputNode doesn't also need to set this up.
+      const testButton = document.getElementById('test-button');
+      if (testButton) {
+        testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
+        testButton.onclick = () => {
+          props.executeChallenge();
+        };
+      }
+      const testStatus = document.getElementById('test-status');
+      if (testStatus) {
+        testStatus.innerHTML = '';
+      }
+      const testOutput = document.getElementById('test-output');
+      if (testOutput) {
+        testOutput.innerHTML = '';
+      }
+      // resetting margin decorations
+      // TODO: this should be done via the decorator api, not by manipulating
+      // the DOM
+      const editableRegionDecorators = document.getElementsByClassName(
+        'myEditableLineDecoration'
+      );
+      if (editableRegionDecorators.length > 0) {
+        for (const i of editableRegionDecorators) {
+          i.classList.remove('tests-passed');
+        }
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles]);
@@ -990,6 +1019,8 @@ const Editor = (props: EditorProps): JSX.Element => {
           };
         }
 
+        // TODO: this should be done via the decorator api, not by manipulating
+        // the DOM
         const editableRegionDecorators = document.getElementsByClassName(
           'myEditableLineDecoration'
         );
