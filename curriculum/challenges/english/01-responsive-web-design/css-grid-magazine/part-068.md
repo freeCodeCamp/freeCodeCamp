@@ -27,6 +27,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.lists')?.marginTop === '2rem')
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid Magazine</title>
     <link
       href="https://fonts.googleapis.com/css?family=Anton|Baskervville|Raleway&display=swap"
       rel="stylesheet"
@@ -295,6 +296,7 @@ hr {
   font-size: 3rem;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   align-items: center;
 }
 

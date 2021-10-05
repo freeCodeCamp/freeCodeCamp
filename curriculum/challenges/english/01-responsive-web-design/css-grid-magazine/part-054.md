@@ -33,6 +33,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.text')?.letterSpacing === '0.6
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid Magazine</title>
     <link
       href="https://fonts.googleapis.com/css?family=Anton|Baskervville|Raleway&display=swap"
       rel="stylesheet"
@@ -295,6 +296,7 @@ img {
   font-size: 3rem;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   align-items: center;
 }
 ```
