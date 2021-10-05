@@ -10,12 +10,7 @@ dashedName: part-9
 Below your `.heading` element, create a new `section` element with the `class` set to `text`. Within that, create a `p` element with the `class` set to `first-paragraph` and the following text:
 
 ```
-Soon the freeCodeCamp curriculum will be 100% project-driven learning.
-Instead of a series of coding challenges, you'll learn through
-building projects - step by step. Before we get into the details, let
-me emphasize: we are not changing the certifications. All 6
-certifications will still have the same 5 required projects. We are
-only changing the optional coding challenges.
+Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
 ```
 
 # --hints--

@@ -10,11 +10,7 @@ dashedName: part-14
 Create a fifth `p` element at the end of your `.text` element, and give it the following text:
 
 ```
-The main design challenge is taking what is currently paragraphs of
-explanation and instructions and packing them into a single test
-description text. Each project will involve dozens of tests like this.
-People will be coding the entire time, rather than switching back and
-forth from "reading mode" to "coding mode".
+The main design challenge is taking what is currently paragraphs of explanation and instructions and packing them into a single test description text. Each project will involve dozens of tests like this. People will be coding the entire time, rather than switching back and forth from "reading mode" to "coding mode".
 ```
 
 # --hints--

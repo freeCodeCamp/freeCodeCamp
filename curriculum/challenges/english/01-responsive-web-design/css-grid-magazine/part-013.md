@@ -10,14 +10,7 @@ dashedName: part-13
 Below your `blockquote` element, add another `p` element with the following text:
 
 ```
-No more walls of explanatory text. No more walls of tests. Just one
-test at a time, as you build up a working project. Over the course of
-passing thousands of tests, you build up projects and your own
-understanding of coding fundamentals. There is no transition between
-lessons and projects, because the lessons themselves are baked into
-projects. And there's plenty of repetition to help you retain
-everything because - hey - building projects in real life has plenty
-of repetition.
+No more walls of explanatory text. No more walls of tests. Just one test at a time, as you build up a working project. Over the course of passing thousands of tests, you build up projects and your own understanding of coding fundamentals. There is no transition between lessons and projects, because the lessons themselves are baked into projects. And there's plenty of repetition to help you retain everything because - hey - building projects in real life has plenty of repetition.
 ```
 
 # --hints--
