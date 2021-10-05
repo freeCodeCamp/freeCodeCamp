@@ -1,8 +1,8 @@
 import React from 'react';
 
-function AsSeenInText(
+const AsSeenInText = (
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): React.ReactNode {
+): JSX.Element => {
   const fill = props.fill === 'dark' ? 'var(--gray-75)' : 'var(--gray-15)';
   return (
     <svg
@@ -116,7 +116,7 @@ function AsSeenInText(
       />
     </svg>
   );
-}
+};
 
 AsSeenInText.displayName = 'AsSeenInText';
 

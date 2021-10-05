@@ -10,7 +10,7 @@ dashedName: add-classes-with-d3
 
 Usar muchos estilos en línea en elementos HTML se vuelve difícil de administrar, incluso para aplicaciones más pequeñas. Es más fácil agregar una clase a los elementos y darle estilo a esa clase una vez usando las reglas CSS. D3 tiene el método `attr()` para agregar cualquier atributo HTML a un elemento, incluido un nombre de clase.
 
-El método `attr()` funciona de la misma manera que `style()`. Toma valores separados por comas y puede usar una función de devolución de llamada. A continuación, se muestra un ejemplo para agregar una clase de `container` a una selección:
+El método `attr()` funciona de la misma manera que `style()`. Toma valores separados por comas y puede usar una función callback. A continuación, se muestra un ejemplo para agregar una clase de `container` a una selección:
 
 ```js
 selection.attr("class", "container");

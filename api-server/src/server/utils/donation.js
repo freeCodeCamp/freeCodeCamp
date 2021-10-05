@@ -6,7 +6,7 @@ import keys from '../../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
 
-const paypalverifyWebhookURL =
+const paypalVerifyWebhookURL =
   keys.paypal.verifyWebhookURL ||
   `https://api.sandbox.paypal.com/v1/notifications/verify-webhook-signature`;
 const paypalTokenURL =
@@ -49,7 +49,7 @@ export async function verifyWebHook(headers, body, token, webhookId) {
     webhook_event: webhookEventBody
   };
 
-  const response = await axios.post(paypalverifyWebhookURL, payload, {
+  const response = await axios.post(paypalVerifyWebhookURL, payload, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`
@@ -60,6 +60,7 @@ export async function verifyWebHook(headers, body, token, webhookId) {
     return body;
   } else {
     throw {
+      // if verification fails, throw token verification error
       message: `Failed token verification.`,
       type: 'FailedPaypalTokenVerificationError'
     };
@@ -86,6 +87,7 @@ export function verifyWebHookType(req) {
 
 export const createAsyncUserDonation = (user, donation) => {
   log(`Creating donation:${donation.subscriptionId}`);
+  // log user donation
   user
     .createDonation(donation)
     .toPromise()
@@ -95,6 +97,7 @@ export const createAsyncUserDonation = (user, donation) => {
 };
 
 export function createDonationObj(body) {
+  // creates donation object
   const {
     resource: {
       id,
@@ -163,6 +166,7 @@ export async function cancelDonation(body, app) {
 export async function updateUser(body, app) {
   const { event_type } = body;
   if (event_type === 'BILLING.SUBSCRIPTION.ACTIVATED') {
+    // update user status based on new billing subscription events
     createDonation(body, app);
   } else if (event_type === 'BILLING.SUBSCRIPTION.CANCELLED') {
     cancelDonation(body, app);
@@ -191,6 +195,10 @@ export async function createStripeCardDonation(req, res, stripe) {
     };
   }
 
+  /*
+   * if user is already donating and the donation isn't one time only,
+   * throw error
+   */
   if (user.isDonating && duration !== 'onetime') {
     throw {
       message: `User already has active recurring donation(s).`,
@@ -213,10 +221,11 @@ export async function createStripeCardDonation(req, res, stripe) {
     };
   }
   log(`Stripe customer with id ${customerId} created`);
-
+  // log creation of Stripe customer event
   let subscriptionId;
   try {
     const subscription = await stripe.subscriptions.create({
+      // create Stripe subscription
       customer: customerId,
       items: [
         {

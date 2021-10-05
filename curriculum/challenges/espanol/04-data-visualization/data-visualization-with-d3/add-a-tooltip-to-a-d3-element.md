@@ -14,7 +14,7 @@ Un cuadro emergente muestra más información acerca de un elemento en la págin
 
 # --instructions--
 
-Añade un elemento `title` debajo de cada nodo `rect`. Luego llama al método `text()` con una función de devolución de llamada para que el texto muestre el valor de los datos.
+Añade un elemento `title` debajo de cada nodo `rect`. Luego llama al método `text()` con una función callback para que el texto muestre el valor de los datos.
 
 # --hints--
 
