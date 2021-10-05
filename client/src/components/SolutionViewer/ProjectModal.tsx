@@ -2,10 +2,11 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { ChallengeFiles } from '../../redux/prop-types';
 import SolutionViewer from './SolutionViewer';
 
-type projectmodalProps = {
-  challengeFiles: [];
+type ProjectModalProps = {
+  challengeFiles: ChallengeFiles;
   // TODO: removed once refactored to TS
   //   PropTypes.shape({
   //     contents: PropTypes.string,
@@ -18,16 +19,16 @@ type projectmodalProps = {
   handleSolutionModalHide: () => void;
   isOpen: boolean;
   projectTitle: string;
-  solution: string;
+  solution: string | null | undefined;
 };
 
-const ProjectModal: React.FC<projectmodalProps> = ({
+const ProjectModal: React.FC<ProjectModalProps> = ({
   isOpen,
   projectTitle,
   challengeFiles,
   solution,
   handleSolutionModalHide
-}: projectmodalProps) => {
+}: ProjectModalProps) => {
   const { t } = useTranslation();
   return (
     <Modal
