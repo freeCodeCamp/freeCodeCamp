@@ -56,10 +56,7 @@
     "import/no-unresolved": [
       2,
       {
-        "commonjs": true,
-        "ignore": [
-          ".json"
-        ]
+        "commonjs": true
       }
     ],
     "import/order": [
