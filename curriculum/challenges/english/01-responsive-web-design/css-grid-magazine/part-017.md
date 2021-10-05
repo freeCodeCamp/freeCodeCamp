@@ -7,7 +7,7 @@ dashedName: part-17
 
 # --description--
 
-Within your `article` element, create an `h3` element with the class set to `list-title` and the text of `A Brief History`. Below that, create a `p` element with the text `Of the Curriculum`. Then create a `ul` element with the class `lists`.
+Within your `article` element, create an `h3` element with the `class` set to `list-title` and the text of `A Brief History`. Below that, create a `p` element with the text `Of the Curriculum`. Then create a `ul` element with the class `lists`.
 
 # --hints--
 

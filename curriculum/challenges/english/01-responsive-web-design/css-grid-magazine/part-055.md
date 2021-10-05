@@ -7,7 +7,7 @@ dashedName: part-55
 
 # --description--
 
-Your `.text` element is not a CSS Grid, but you can create columns within an element without using Grid using the `column-width` property.
+Your `.text` element is not a CSS Grid, but you can create columns within an element without using Grid by using the `column-width` property.
 
 Give your `.text` selector a `column-width` property set to `25rem`.
 

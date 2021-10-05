@@ -33,7 +33,7 @@ Your `div` element should have the `class` set to `author`.
 assert(document.querySelector('div')?.className === 'author');
 ```
 
-You should create two new `p` element.
+You should create two new `p` elements.
 
 ```js
 assert(document.querySelectorAll('p')?.length === 3);
@@ -54,7 +54,7 @@ assert(document.querySelector('div')?.querySelector('p')?.className === 'author-
 Your first new `p` element should have the text `By freeCodeCamp`.
 
 ```js
-assert(document.querySelector('div')?.querySelector('p')?.textContent === 'By freeCodeCamp');
+assert(document.querySelector('div')?.querySelector('p')?.innerText === 'By freeCodeCamp');
 ```
 
 Your second new `p` element should have a `class` set to `publish-date`.
@@ -66,7 +66,7 @@ assert(document.querySelector('div')?.querySelectorAll('p')?.[1].className === '
 Your second new `p` element should have the text `March 7, 2019`.
 
 ```js
-assert(document.querySelector('div')?.querySelectorAll('p')?.[1].textContent === 'March 7, 2019');
+assert(document.querySelector('div')?.querySelectorAll('p')?.[1].innerText === 'March 7, 2019');
 ```
 
 You should create a new `a` element.

@@ -22,7 +22,7 @@ assert(code.match(/<link/g)?.length === 3);
 Your `link` elements should be self-closing elements.
 
 ```js
-assert(code.match(/<link.+\/>/ig)?.length === 3);
+assert(code.match(/<\/link>/i) === null);
 ```
 
 Your `link` elements should be within your `head` element.

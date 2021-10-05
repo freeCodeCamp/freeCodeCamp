@@ -46,7 +46,7 @@ assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.length ==
 Your first `a` element should have an `href` set to `https://www.facebook.com/freecodecamp`.
 
 ```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[0]?.getAttribute('href') === 'https://www.facebook.com/freecodecamp');
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[0]?.getAttribute('href').includes('https://www.facebook.com/freecodecamp'));
 ```
 
 Your second `a` element should have an `href` set to `https://twitter.com/freecodecamp`.
@@ -61,10 +61,10 @@ Your third `a` element should have an `href` set to `https://instagram.com/freec
 assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[2]?.getAttribute('href') === 'https://instagram.com/freecodecamp');
 ```
 
-Your fourth `a` element should have an `href` set to `https://www.linkedin.com/school/freecodecamp`.
+Your fourth `a` element should have an `href` set to `https://www.linkedin.com/school/free-code-camp`.
 
 ```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[3]?.getAttribute('href') === 'https://www.linkedin.com/school/freecodecamp');
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[3]?.getAttribute('href') === 'https://www.linkedin.com/school/free-code-camp');
 ```
 
 Your fifth `a` element should have an `href` set to `https://www.youtube.com/freecodecamp`.
