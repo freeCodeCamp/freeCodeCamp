@@ -63,8 +63,8 @@ assert(document.querySelectorAll('.cabin')?.length === 6);
 <html lang="en" >
   <head>
     <meta charset="UTF-8">
-    <title> Learn CSS Animations by Building a Ferris Wheel</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>CSS Ferris Wheel</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
 --fcc-editable-region--
   <body>

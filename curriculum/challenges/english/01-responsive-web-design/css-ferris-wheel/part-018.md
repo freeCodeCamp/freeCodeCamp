@@ -133,12 +133,12 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.
   top: 7%;
 }
 
+--fcc-editable-region--
 @keyframes wheel {
    0% {
      transform: rotate(0deg);
    }
---fcc-editable-region--
 
---fcc-editable-region--
 }
+--fcc-editable-region--
 ```

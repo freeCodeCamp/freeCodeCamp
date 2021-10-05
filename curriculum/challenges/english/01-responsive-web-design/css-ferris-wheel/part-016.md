@@ -129,9 +129,9 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.
   top: 7%;
 }
 
+--fcc-editable-region--
 @keyframes wheel {
---fcc-editable-region--
 
---fcc-editable-region--
 }
+--fcc-editable-region--
 ```
