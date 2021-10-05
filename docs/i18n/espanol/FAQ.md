@@ -6,7 +6,7 @@ Lee nuestra ["Guía de como contribuir a Open Source"](https://github.com/freeCo
 
 Si -  Puedes contribuir a cualquiera de los mas de 30 idiomas que hemos habilitado en nuestra plataforma de traducción.
 
-We have user-contributed translations live in Chinese (中文) and Spanish (Español). Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo sobre esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort).
+Tenemos las traducciones contribuidas por usuarios actualmente publicadas en chino (中文)  y español.  Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo sobre esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort).
 
 Si estas interesado en ayudar a traducir, por favor asegúrate de [leer esta guía](how-to-translate-files.md) primero.
 
@@ -24,7 +24,7 @@ Por favor, no crees temas en GitHub por problemas de seguridad. En su lugar, env
 
 ### Soy un estudiante. ¿Puedo trabajar en una funcionalidad para créditos académicos?
 
-Si. Por favor, ten en cuenta que no podemos encomendar ningún plazo o documentos que puedan ser requeridos por tu colegio o universidad. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Por respeto a todos nuestros otros colaboradores, nosotros no daremos ninguna prioridad especial a las relaciones públicas solo porque esté relacionado con una escuela.
+Si. Por favor, ten en cuenta que no podemos encomendar ningún plazo o documentos que puedan ser requeridos por tu colegio o universidad. Recibimos muchas pull-requests y contribuciones de código por parte de desarrolladores voluntarios, y respetamos su tiempo y esfuerzos. Por respeto a todos nuestros otros colaboradores, nosotros no daremos ninguna prioridad especial a las relaciones públicas solo porque esté relacionado con una escuela.
 
 Te solicitamos que planifiques con anticipación y trabajes contribuyendo en el código con esto en mente.
 
