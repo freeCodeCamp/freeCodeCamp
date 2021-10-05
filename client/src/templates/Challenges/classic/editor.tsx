@@ -343,7 +343,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       /* eslint-disable no-bitwise */
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
       // TODO: Discuss with Ahmad what should pop-up when a challenge is completed
-      run: () => props.executeChallenge(true)
+      run: () => props.executeChallenge(!isProjectStep())
     });
     editor.addAction({
       id: 'leave-editor',
