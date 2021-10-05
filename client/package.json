@@ -159,7 +159,7 @@
     "chokidar": "3.5.2",
     "copy-webpack-plugin": "9.0.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.25",
-    "jest-json-schema-extended": "1.0.0",
+    "jest-json-schema-extended": "1.0.1",
     "monaco-editor-webpack-plugin": "4.1.2",
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.3",
