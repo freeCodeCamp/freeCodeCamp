@@ -198,6 +198,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   });
 
   const data = dataRef.current[fileKey];
+  // since editorDidMount runs once with the initial props object, it keeps a
+  // reference to *those* props. If we want it to use the latest props, we can
+  // use a ref, since it will be updated on every render.
+  const testRef = useRef<Test[]>([]);
+  testRef.current = props.tests;
 
   // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
   // available files into that order.  i.e. if it's just one file it will
@@ -343,7 +348,17 @@ const Editor = (props: EditorProps): JSX.Element => {
       /* eslint-disable no-bitwise */
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
       // TODO: Discuss with Ahmad what should pop-up when a challenge is completed
-      run: () => props.executeChallenge(!isProjectStep())
+      run: () => {
+        if (isProjectStep()) {
+          if (challengeIsComplete()) {
+            props.submitChallenge();
+          } else {
+            props.executeChallenge();
+          }
+        } else {
+          props.executeChallenge(true);
+        }
+      }
     });
     editor.addAction({
       id: 'leave-editor',
@@ -955,6 +970,16 @@ const Editor = (props: EditorProps): JSX.Element => {
       .setEndPosition(range.endLineNumber, endColumnText.length + 2);
   }
 
+  function challengeIsComplete() {
+    const tests = testRef.current;
+    return tests.every(test => test.pass && !test.err);
+  }
+
+  function challengeHasErrors() {
+    const tests = testRef.current;
+    return tests.some(test => test.err);
+  }
+
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
     // editor.
@@ -1006,14 +1031,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles]);
   useEffect(() => {
-    const { output, tests } = props;
+    const { output } = props;
     const editableRegion = getEditableRegionFromRedux();
     if (editableRegion.length === 2) {
-      const challengeComplete = tests.every(test => test.pass && !test.err);
-      const chellengeHasErrors = tests.some(test => test.err);
       const testOutput = document.getElementById('test-output');
       const testStatus = document.getElementById('test-status');
-      if (challengeComplete) {
+      if (challengeIsComplete()) {
         const testButton = document.getElementById('test-button');
         if (testButton) {
           testButton.innerHTML =
@@ -1038,7 +1061,7 @@ const Editor = (props: EditorProps): JSX.Element => {
           testOutput.innerHTML = '';
           testStatus.innerHTML = '&#9989; Step completed.';
         }
-      } else if (chellengeHasErrors && testStatus && testOutput) {
+      } else if (challengeHasErrors() && testStatus && testOutput) {
         const wordsArray = [
           "Not quite. Here's a hint:",
           'Try again. This might help:',
