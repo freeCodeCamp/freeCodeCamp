@@ -45,7 +45,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <SolutionViewer challengeFiles={challengeFiles} solution={solution} />
+        <SolutionViewer challengeFiles={challengeFiles} solution={String(solution)} />
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={handleSolutionModalHide}>{t('buttons.close')}</Button>
