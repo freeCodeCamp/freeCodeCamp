@@ -45,7 +45,8 @@ export class Header extends React.Component<
       this.menuButtonRef.current &&
       !this.menuButtonRef.current.contains(event.target) &&
       this.searchBarRef.current &&
-      !this.searchBarRef.current.contains(event.target)
+      !this.searchBarRef.current.contains(event.target) &&
+      !(event.target instanceof HTMLSelectElement)
     ) {
       this.toggleDisplayMenu();
     }
