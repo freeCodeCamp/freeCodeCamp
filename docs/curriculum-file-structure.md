@@ -15,6 +15,7 @@ There are a few terms we use when discussing our curriculum content.
 
 Using those terms, here is how the file structure would be defined:
 
+<!-- prettier-ignore -->
 ```md
 
 curriculum/
@@ -64,7 +65,7 @@ When renaming a certification, you will likely want to rename the associated sup
 Also, you will likely want to rename the certificate and the `{superBlock}-projects` block when you rename a superBlock since they all shares a name. To rename only a superBlock you need to:
 
 1. Rename the superBlock folder in the `curriculum/challenges/english` directory.
-1. Rename the superBlock folder in *all* other `curriculum/challenges/{language}` directories.
+1. Rename the superBlock folder in _all_ other `curriculum/challenges/{language}` directories.
 1. For each block within that superBlock, update the `superBlock` value in the `meta.json` file to its dashedName. You don't need to rename any folders here. Do that when renaming a block.
 1. Rename the superblock folder in `client/src/pages/learn`.
 1. Update the `index.md` file in the above folder, changing the `title` and `superBlock` values to the new name.
@@ -81,7 +82,7 @@ Also, you will likely want to rename the certificate and the `{superBlock}-proje
 When renaming a curriculum block, you need to:
 
 1. Change the name of the block folder in the `curriculum/challenges/english/{superBlock}` directory.
-1. Change the name of the same block folder in *all* of the other language directories to match. These must all be the same as the English structure or the build will error out.
+1. Change the name of the same block folder in _all_ of the other language directories to match. These must all be the same as the English structure or the build will error out.
 1. Change the name of the block folder in the `_meta` directory.
 1. Update the `name` and `dashedName` property for that block's `meta.json` file.
 1. Update the `client/utils/help-category-map.json` to use the new block name as the key.
@@ -96,7 +97,7 @@ When renaming a single challenge file, you need to:
 
 1. Change the name of the challenge file in the `curriculum/challenges/english` directory.
 1. Change the name of the `title` and `dashedName` within that file.
-1. Change the name of the file, and the `dashedName` in those files for *all* of the other language directories to match.
+1. Change the name of the file, and the `dashedName` in those files for _all_ of the other language directories to match.
 1. Update the name of the challenge in the relevant `meta.json` file. The challenge names here are not used in the build, but provide a user-friendly way to identify the challenge order.
 1. If the challenge is a certificate project, update the YAML file in `curriculum/english/12-certificates/<superBlock>` to the new name.
 1. If the challenge is a certificate project, update the `title` and `link` in `client/src/resources/cert-and-project-map.ts`
