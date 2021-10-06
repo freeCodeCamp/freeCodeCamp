@@ -15,15 +15,17 @@ There are a few terms we use when discussing our curriculum content.
 
 Using those terms, here is how the file structure would be defined:
 
+<!-- prettier-ignore -->
 ```md
+
 curriculum/
-├─ \_meta/
-│ ├─ {block}/
-│ │ ├─ meta.json
+├─ _meta/
+│  ├─ {block}/
+│  │  ├─ meta.json
 ├─ {language}/
-│ ├─ {superBlock}/
-│ │ ├─ {block}/
-│ │ │ ├─ {challenge}.md
+│  ├─ {superBlock}/
+│  │  ├─ {block}/
+│  │  │  ├─ {challenge}.md
 ```
 
 ## The `_meta` Directory
