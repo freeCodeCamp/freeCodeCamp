@@ -16,7 +16,7 @@ Well, the `input` type `file` allows just that. Add a `label` with the text `Upl
 You should add a `label` with the text `Upload a profile picture: `.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(3) > label').innerText, 'Upload a profile picture: ');
+assert.match(document.querySelector('fieldset:nth-child(3) > label')?.innerText, /Upload a profile picture:/i);
 ```
 
 You should nest an `input` element inside the `label` element.

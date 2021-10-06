@@ -19,25 +19,25 @@ Add the following text to the `label` elements:
 The first `label` should have the text `Enter Your First Name:`.
 
 ```js
-assert.equal(document.querySelector('label').innerHTML, 'Enter Your First Name:');
+assert.match(document.querySelector('label')?.innerHTML, /Enter Your First Name:/i);
 ```
 
 The second `label` should have the text `Enter Your Last Name:`.
 
 ```js
-assert.equal(document.querySelector('fieldset > label:nth-child(2)').innerHTML, 'Enter Your Last Name:');
+assert.match(document.querySelector('fieldset > label:nth-child(2)')?.innerHTML, /Enter Your Last Name:/i);
 ```
 
 The third `label` should have the text `Enter Your Email:`.
 
 ```js
-assert.equal(document.querySelector('fieldset > label:nth-child(3)').innerHTML, 'Enter Your Email:');
+assert.match(document.querySelector('fieldset > label:nth-child(3)')?.innerHTML, /Enter Your Email:/i);
 ```
 
 The fourth `label` should have the text `Create a New Password:`.
 
 ```js
-assert.equal(document.querySelector('fieldset > label:nth-child(4)').innerHTML, 'Create a New Password:');
+assert.match(document.querySelector('fieldset > label:nth-child(4)')?.innerHTML, /Create a New Password:/i);
 ```
 
 # --seed--

@@ -26,7 +26,7 @@ assert.equal(document.querySelector('fieldset:nth-child(2) label:nth-child(3) in
 You should add a `required` attribute to the `input` element.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(2) label:nth-child(3) input').required, true);
+assert.equal(document.querySelector('fieldset:nth-child(2) label:nth-child(3) input')?.required, true);
 ```
 
 # --seed--

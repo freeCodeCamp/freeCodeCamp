@@ -18,19 +18,19 @@ The above is a regular expression which matches eight or more lowercase letters 
 You should give the password `input` element a `pattern` attribute.
 
 ```js
-assert.isNotEmpty(document.querySelector('input[type="password"]').pattern);
+assert.isNotEmpty(document.querySelector('input[type="password"]')?.pattern);
 ```
 
 You should give the `pattern` attribute a value of `[a-z0-5]{8,}`.
 
 ```js
-assert.equal(document.querySelector('input[type="password"]').pattern, '[a-z0-5]{8,}');
+assert.equal(document.querySelector('input[type="password"]')?.pattern, '[a-z0-5]{8,}');
 ```
 
 You should remove the `minlength` attribute from the password `input` element.
 
 ```js
-assert.equal(document.querySelector('input[type="password"]').minLength, -1);
+assert.equal(document.querySelector('input[type="password"]')?.minLength, -1);
 ```
 
 # --seed--

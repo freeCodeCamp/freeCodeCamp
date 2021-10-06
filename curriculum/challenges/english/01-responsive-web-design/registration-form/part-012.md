@@ -14,13 +14,13 @@ The first `fieldset` will hold name, email, and password fields. Start by adding
 You should add four `label` elements.
 
 ```js
-assert.equal(document.querySelectorAll('label').length, 4);
+assert.equal(document.querySelectorAll('label')?.length, 4);
 ```
 
 You should add the `label` elements to the first `fieldset`.
 
 ```js
-assert.equal(document.querySelector('fieldset').querySelectorAll('label').length, 4);
+assert.equal(document.querySelector('fieldset')?.querySelectorAll('label')?.length, 4);
 ```
 
 # --seed--

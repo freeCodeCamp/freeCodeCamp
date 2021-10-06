@@ -14,13 +14,13 @@ Nest an `input` element within each `label`. Be sure to add each `input` after t
 You should add four `input` elements to the `fieldset` element.
 
 ```js
-assert.equal(document.querySelectorAll('fieldset input').length, 4);
+assert.equal(document.querySelectorAll('fieldset input')?.length, 4);
 ```
 
 You should nest the `input` elements within the `label` elements.
 
 ```js
-assert.equal(document.querySelectorAll('label input').length, 4);
+assert.equal(document.querySelectorAll('label input')?.length, 4);
 ```
 
 You should add the first `input` after the `label` text `Enter Your First Name:`, and include a space after the colon.
