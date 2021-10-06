@@ -463,7 +463,8 @@
     "no-account": "No {{website}} account associated",
     "unlink-success": "You've successfully unlinked your {{website}}",
     "provide-username": "Check if you have provided a username and a report",
-    "report-sent": "A report was sent to the team with {{email}} in copy"
+    "report-sent": "A report was sent to the team with {{email}} in copy",
+    "certificate-missing": "The certification you tried to view does not exist"
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
