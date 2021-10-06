@@ -22,7 +22,7 @@ assert.exists(document.querySelector('fieldset:nth-child(3) > label:nth-child(4)
 You should give the `label` a text of `Provide a bio:`.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(3) > label:nth-child(4)').textContent, 'Provide a bio:');
+assert.match(document.querySelector('fieldset:nth-child(3) > label:nth-child(4)')?.innerText, /Provide a bio/);
 ```
 
 You should nest a `textarea` element within the `label`.
