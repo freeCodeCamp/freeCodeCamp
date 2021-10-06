@@ -108,7 +108,14 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
       console.log(
         'SHOW_UPCOMING_CHANGES value has changed, cleaning client cache.'
       );
-      spawn('npm', ['run', 'clean:client']);
+      const child = spawn('npm', ['run', 'clean:client']);
+      child.stdout.setEncoding('utf8');
+      child.stdout.on('data', function (data) {
+        console.log(data);
+      });
+      child.on('error', (err) => {
+        console.error(err);
+      });
     }
   }
 }
