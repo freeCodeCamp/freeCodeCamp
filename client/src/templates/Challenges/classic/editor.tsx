@@ -969,7 +969,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     editor?.focus();
     if (isProjectStep() && editor) {
-      showEditableRegion(editor);
+      if (hasChangedContents) showEditableRegion(editor);
 
       // resetting test output
       // TODO: DRY this - createOutputNode doesn't also need to set this up.
