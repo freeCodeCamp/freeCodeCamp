@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c164
 title: 解析 HTML 和保存数据
 challengeType: 11
 videoId: bJaqnTWQmb0
+bilibiliIds:
+  aid: 335522976
+  bvid: BV1RA411F7vi
+  cid: 409023170
 dashedName: parsing-html-and-saving-data
 ---
 
@@ -12,7 +16,7 @@ dashedName: parsing-html-and-saving-data
 
 更多资源：
 
--   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-17-reading-html-tables/files)
+-   [在 GitHub 平台的 Notebooks](https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas)
 -   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--

@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d95
 title: 'Reti neurali: creare un modello'
 challengeType: 11
 videoId: K8bz1bmOCTw
+bilibiliIds:
+  aid: 848109040
+  bvid: BV1EL4y1878f
+  cid: 409130886
 dashedName: neural-networks-creating-a-model
 ---
 

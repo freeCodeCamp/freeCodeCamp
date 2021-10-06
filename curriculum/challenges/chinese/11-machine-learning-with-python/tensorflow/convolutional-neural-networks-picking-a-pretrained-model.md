@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d9a
 title: '卷积神经网络：选择预训练模型'
 challengeType: 11
 videoId: h1XUt1AgIOI
+bilibiliIds:
+  aid: 463063633
+  bvid: BV1qL411x73q
+  cid: 409132626
 dashedName: convolutional-neural-networks-picking-a-pretrained-model
 ---
 

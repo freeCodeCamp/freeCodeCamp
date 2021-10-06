@@ -3,6 +3,10 @@ id: 5e7b9f0a0b6c005b0e76f06c
 title: A coleção de tuplas
 challengeType: 11
 videoId: 3Lxpladfh2k
+bilibiliIds:
+  aid: 334468209
+  bvid: BV1aw411R77G
+  cid: 376533308
 dashedName: the-tuples-collection
 ---
 

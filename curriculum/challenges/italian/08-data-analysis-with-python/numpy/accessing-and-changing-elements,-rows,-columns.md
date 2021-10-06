@@ -3,6 +3,10 @@ id: 5e9a0a8e09c5df3cc3600ed4
 title: 'Accedere e cambiare elementi, righe, colonne'
 challengeType: 11
 videoId: v-7Y7koJ_N0
+bilibiliIds:
+  aid: 590517748
+  bvid: BV1Eq4y1f7Fa
+  cid: 409025392
 dashedName: accessing-and-changing-elements-rows-columns
 ---
 

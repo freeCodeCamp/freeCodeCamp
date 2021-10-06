@@ -3,6 +3,10 @@ id: 5e7b9f090b6c005b0e76f067
 title: Dizionari in Python
 challengeType: 11
 videoId: dnzvfimrRMg
+bilibiliIds:
+  aid: 631893305
+  bvid: BV19b4y167kj
+  cid: 376386176
 dashedName: python-dictionaries
 ---
 

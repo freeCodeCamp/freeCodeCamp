@@ -1,6 +1,6 @@
 ---
 id: 587d7fa9367417b2b2512bd1
-title: Change the Color of an SVG Element
+title: Cambia el color de un elemento SVG
 challengeType: 6
 forumTopicId: 301480
 dashedName: change-the-color-of-an-svg-element
@@ -8,17 +8,17 @@ dashedName: change-the-color-of-an-svg-element
 
 # --description--
 
-The bars are in the right position, but they are all the same black color. SVG has a way to change the color of the bars.
+Las barras están en la posición correcta, pero todas son del mismo color negro. SVG tiene una manera de cambiar el color de las barras.
 
-In SVG, a `rect` shape is colored with the `fill` attribute. It supports hex codes, color names, and rgb values, as well as more complex options like gradients and transparency.
+En SVG una figura `rect` es coloreada con el atributo `fill`. Admite códigos hexadecimales, nombres de colores y valores rgb, así como opciones más complejas como degradados y transparencias.
 
 # --instructions--
 
-Add an `attr()` method to set the `fill` of all the bars to the color navy.
+Agrega un método `attr()` para establecer el `fill` (relleno) de todas las barras a un color azul marino.
 
 # --hints--
 
-The bars should all have a `fill` color of navy.
+Todas las barras deberían tener un color de `fill` azul marino.
 
 ```js
 assert($('rect').css('fill') == 'rgb(0, 0, 128)');

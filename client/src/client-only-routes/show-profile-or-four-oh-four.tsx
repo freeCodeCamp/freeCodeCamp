@@ -30,7 +30,7 @@ interface IShowProfileOrFourOhFourProps {
 const createRequestedUserSelector =
   () =>
   (state: unknown, { maybeUser = '' }) =>
-    userByNameSelector(maybeUser.toLowerCase())(state) as string;
+    userByNameSelector(maybeUser.toLowerCase())(state) as UserType;
 const createIsSessionUserSelector =
   () =>
   (state: unknown, { maybeUser = '' }) =>
@@ -44,10 +44,7 @@ const makeMapStateToProps =
       state
     ) as IShowProfileOrFourOhFourProps['fetchState'];
     return {
-      requestedUser: requestedUserSelector(
-        state,
-        props
-      ) as IShowProfileOrFourOhFourProps['requestedUser'],
+      requestedUser: requestedUserSelector(state, props),
       isSessionUser: isSessionUserSelector(state, props),
       showLoading: fetchState.pending,
       fetchState

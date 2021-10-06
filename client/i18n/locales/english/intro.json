@@ -84,6 +84,10 @@
         "intro": ["", ""]
       },
       "registration-form": { "title": "Registration Form", "intro": ["", ""] },
+      "accessibility-quiz": {
+        "title": "Accessibility Quiz",
+        "intro": ["", ""]
+      },
       "css-picasso-painting": {
         "title": "CSS Picasso Painting",
         "intro": [

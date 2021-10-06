@@ -1,6 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bd9
-title: Add Labels to Scatter Plot Circles
+title: Añade etiquetas a un diagrama de dispersión
 challengeType: 6
 forumTopicId: 301477
 dashedName: add-labels-to-scatter-plot-circles
@@ -8,25 +8,25 @@ dashedName: add-labels-to-scatter-plot-circles
 
 # --description--
 
-You can add text to create labels for the points in a scatter plot.
+Puedes agregar texto para crear etiquetas para los puntos en un diagrama de dispersión.
 
-The goal is to display the comma-separated values for the first (`x`) and second (`y`) fields of each item in `dataset`.
+El objetivo es mostrar los valores separados por coma del primer (`x`) y segundo (`y`) campo de cada elemento en `dataset`.
 
-The `text` nodes need `x` and `y` attributes to position it on the SVG canvas. In this challenge, the `y` value (which determines height) can use the same value that the `circle` uses for its `cy` attribute. The `x` value can be slightly larger than the `cx` value of the `circle`, so the label is visible. This will push the label to the right of the plotted point.
+Los nodos `text` necesitan atributos `x` e `y` para posicionarlo en el lienzo SVG. En este desafío, el valor `y` (que determina la altura) puede usar el mismo valor que el `circle` usa para su atributo `cy`. El valor `x` puede ser ligeramente mayor que el valor `cx` del `circle` para que la etiqueta sea visible. Esto empujará la etiqueta a la derecha del punto trazado.
 
 # --instructions--
 
-Label each point on the scatter plot using the `text` elements. The text of the label should be the two values separated by a comma and a space. For example, the label for the first point is `34, 78`. Set the `x` attribute so it's `5` units more than the value you used for the `cx` attribute on the `circle`. Set the `y` attribute the same way that's used for the `cy` value on the `circle`.
+Etiqueta cada punto en el diagrama de dispersión usando los elementos `text`. El texto de la etiqueta debe ser los valores separados por una coma y un espacio. Por ejemplo, la etiqueta para el primer punto es `34, 78`. Establece el atributo `x` para que sea `5` unidades mayor que el valor que utilizaste para el atributo `cx` en el `circle`. Establece el atributo `y` de la misma manera que se usa para el valor `cy` en el `circle`.
 
 # --hints--
 
-Your code should have 10 `text` elements.
+Tu código debe tener 10 elementos `text`.
 
 ```js
 assert($('text').length == 10);
 ```
 
-The first label should have text of `34, 78`, an `x` value of `39`, and a `y` value of `422`.
+La primera etiqueta debe tener como texto `34, 78`, un valor de `x` de `39`, y un valor de `y` de `422`.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-The second label should have text of `109, 280`, an `x` value of `114`, and a `y` value of `220`.
+La segunda etiqueta debe tener como texto `109, 280`, un valor de `x` de `114`, y un valor de `y` de `220`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-The third label should have text of `310, 120`, an `x` value of `315`, and a `y` value of `380`.
+La tercera etiqueta debe tener como texto `310, 120`, un valor de `x` de `315`, y un valor de `y` de `380`.
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-The fourth label should have text of `79, 411`, an `x` value of `84`, and a `y` value of `89`.
+La cuarta etiqueta debe tener como texto `79, 411`, un valor de `x` de `84`, y un valor de `y` de `89`.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-The fifth label should have text of `420, 220`, an `x` value of `425`, and a `y` value of `280`.
+La quinta etiqueta debe tener como texto `420, 220`, un valor de `x` de `425`, y un valor de `y` de `280`.
 
 ```js
 assert(
@@ -76,7 +76,7 @@ assert(
 );
 ```
 
-The sixth label should have text of `233, 145`, an `x` value of `238`, and a `y` value of `355`.
+La sexta etiqueta debe tener como texto `233, 145`, un valor de `x` de `238`, y un valor de `y` de `355`.
 
 ```js
 assert(
@@ -86,7 +86,7 @@ assert(
 );
 ```
 
-The seventh label should have text of `333, 96`, an `x` value of `338`, and a `y` value of `404`.
+La séptima etiqueta debe tener como texto `333, 96`, un valor de `x` de `338`, y un valor de `y` de `404`.
 
 ```js
 assert(
@@ -96,7 +96,7 @@ assert(
 );
 ```
 
-The eighth label should have text of `222, 333`, an `x` value of `227`, and a `y` value of `167`.
+La octava etiqueta debe tener como texto `222, 333`, un valor de `x` de `227`, y un valor de `y` de `167`.
 
 ```js
 assert(
@@ -106,7 +106,7 @@ assert(
 );
 ```
 
-The ninth label should have text of `78, 320`, an `x` value of `83`, and a `y` value of `180`.
+La novena etiqueta debe tener como texto `78, 320`, un valor de `x` de `83`, y un valor de `y` de `180`.
 
 ```js
 assert(
@@ -116,7 +116,7 @@ assert(
 );
 ```
 
-The tenth label should have text of `21, 123`, an `x` value of `26`, and a `y` value of `377`.
+La décima etiqueta debe tener como texto `21, 123`, un valor de `x` de `26`, y un valor de `y` de `377`.
 
 ```js
 assert(
