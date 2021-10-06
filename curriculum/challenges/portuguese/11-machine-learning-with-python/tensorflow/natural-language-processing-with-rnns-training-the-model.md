@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72da2
 title: 'Processamento de linguagem natural com RNNs: Treinando o modelo'
 challengeType: 11
 videoId: hEUiK7j9UI8
+bilibiliIds:
+  aid: 250542136
+  bvid: BV19v411w7Fi
+  cid: 409138327
 dashedName: natural-language-processing-with-rnns-training-the-model
 ---
 

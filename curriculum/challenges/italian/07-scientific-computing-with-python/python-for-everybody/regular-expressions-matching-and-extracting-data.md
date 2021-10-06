@@ -3,6 +3,10 @@ id: 5e7b9f0b0b6c005b0e76f06f
 title: 'Espressioni regolari: corrispondenza ed estrazione dei dati'
 challengeType: 11
 videoId: LaCZnTbQGkE
+bilibiliIds:
+  aid: 975629041
+  bvid: BV1i44y1b7hE
+  cid: 414167130
 dashedName: regular-expressions-matching-and-extracting-data
 ---
 

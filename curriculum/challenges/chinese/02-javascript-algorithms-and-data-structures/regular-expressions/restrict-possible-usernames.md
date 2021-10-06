@@ -29,78 +29,91 @@ dashedName: restrict-possible-usernames
 你的正则表达式应该匹配字符串 `JACK`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('JACK'));
 ```
 
 你的正则表达式不应匹配字符串 `J`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('J'));
 ```
 
 你的正则表达式应该匹配字符串 `Jo`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('Jo'));
 ```
 
 你的正则表达式应该匹配字符串 `Oceans11`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('Oceans11'));
 ```
 
 你的正则表达式应该匹配字符串 `RegexGuru`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('RegexGuru'));
 ```
 
 你的正则表达式不应匹配字符串 `007`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('007'));
 ```
 
 你的正则表达式不应匹配字符串 `9`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('9'));
 ```
 
 你的正则表达式不应匹配字符串 `A1`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('A1'));
 ```
 
 你的正则表达式不应匹配字符串 `BadUs3rnam3`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('BadUs3rnam3'));
 ```
 
 你的正则表达式应该匹配字符串 `Z97`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('Z97'));
 ```
 
 你的正则表达式不应匹配字符串 `c57bT3`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('c57bT3'));
 ```
 
 你的正则表达式应该匹配字符串 `AB1`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('AB1'));
 ```
 
 你的正则表达式不应匹配字符串 `J%4`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('J%4'))
 ```
 

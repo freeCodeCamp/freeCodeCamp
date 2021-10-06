@@ -14,7 +14,7 @@ Otra función útil de los arreglos es `Array.prototype.filter()` o simplemente 
 
 La función callback acepta tres argumentos. El primer argumento es el elemento actual que se está procesando. El segundo es el índice de ese elemento y el tercero es el arreglo sobre el que se llamó al método `filter`.
 
-A continuación se muestra un ejemplo en el que se utiliza el método `filter` en el arreglo `users` para devolver un nuevo arreglo que contiene sólo a los usuarios menores de 30 años. Para que sea más fácil, el ejemplo sólo utiliza el primer argumento del callback.
+A continuación se muestra un ejemplo en el que se utiliza el método `filter` en el arreglo `users` para devolver un nuevo arreglo que contiene sólo a los usuarios menores de 30 años. Para que sea más fácil, el ejemplo solo utiliza el primer argumento de la función callback.
 
 ```js
 const users = [

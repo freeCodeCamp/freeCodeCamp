@@ -38,7 +38,8 @@ const availableLangs = {
 const auditedCerts = {
   espanol: [
     'responsive-web-design',
-    'javascript-algorithms-and-data-structures'
+    'javascript-algorithms-and-data-structures',
+    'front-end-development-libraries'
   ],
   chinese: [
     'responsive-web-design',

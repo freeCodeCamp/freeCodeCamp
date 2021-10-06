@@ -43,12 +43,14 @@ assert(calRegex.flags == '');
 A regex deve capturar a string `Cal` no começo de uma string.
 
 ```js
+calRegex.lastIndex = 0;
 assert(calRegex.test('Cal and Ricky both like racing.'));
 ```
 
 A regex não deve capturar a string `Cal` no meio de uma string.
 
 ```js
+calRegex.lastIndex = 0;
 assert(!calRegex.test('Ricky and Cal both like racing.'));
 ```
 

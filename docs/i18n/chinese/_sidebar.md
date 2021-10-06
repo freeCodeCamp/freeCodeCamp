@@ -13,13 +13,14 @@
 - **翻译贡献**
   - [参与翻译](how-to-translate-files.md)
   - [参与校对](how-to-proofread-files.md)
-- **可选指南**
+- **Resources**
   - [在 Windows 上运行 freeCodeCamp（WSL）](how-to-setup-wsl.md)
   - [添加 Cypress 测试](how-to-add-cypress-tests.md)
   - [在本地运行客户端 web app](how-to-work-on-localized-client-webapp.md)
   - [本地接收电子邮件](how-to-catch-outgoing-emails-locally.md)
   - [测试本地翻译](how-to-test-translations-locally.md)
   - [了解文件结构课程](curriculum-file-structure.md)
+  - [Work on tutorials w/ CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
 
 ---
 

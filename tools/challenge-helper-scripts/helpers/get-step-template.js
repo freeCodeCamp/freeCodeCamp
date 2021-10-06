@@ -4,7 +4,7 @@ const { insertErms } = require('./insert-erms');
 function getCodeBlock(label, content) {
   return `\`\`\`${label}
 ${typeof content !== 'undefined' ? content : ''}
-\`\`\``;
+\`\`\`\n`;
 }
 
 // Builds a section
@@ -72,7 +72,6 @@ ${stepDescription}
 Test 1
 
 ${getCodeBlock('js')}
-
 # --seed--` +
     seedChallengeSection +
     seedHeadSection +

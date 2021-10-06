@@ -14,7 +14,7 @@ Un `circle` en SVG tiene tres atributos principales. Los atributos `cx` y `cy` s
 
 Al igual que la coordenada `rect` `y`, el atributo `cy` para un `circle` se mide desde la parte superior del lienzo SVG, no desde abajo.
 
-Los tres atributos pueden usar una función de devolución de llamada para establecer sus valores de forma dinámica. Recuerda que todos los métodos encadenados después de `data(dataset)` se ejecutan una vez por elemento en `dataset`. El parámetro `d` en la función de devolución de llamada se refiere al elemento actual en `dataset`, que es un arreglo para cada punto. Utiliza la notación de corchetes, como `d[0]`, para acceder a los valores de ese arreglo.
+Los tres atributos pueden usar una función callback para establecer sus valores de forma dinámica. Recuerda que todos los métodos encadenados después de `data(dataset)` se ejecutan una vez por elemento en `dataset`. El parámetro `d` en la función callback se refiere al elemento actual en `dataset`, que es un arreglo para cada punto. Utiliza la notación de corchetes, como `d[0]`, para acceder a los valores de ese arreglo.
 
 # --instructions--
 

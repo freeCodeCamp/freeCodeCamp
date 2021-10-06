@@ -13,13 +13,14 @@
 - **翻訳のコントリビューション**
   - [リソースを翻訳する](how-to-translate-files.md)
   - [翻訳を校正する](how-to-proofread-files.md)
-- **Optional Guides**
+- **Resources**
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
   - [Add Cypress tests](how-to-add-cypress-tests.md)
   - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
   - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Test translations locally](how-to-test-translations-locally.md)
   - [Understand the curriculum file structure](curriculum-file-structure.md)
+  - [Work on tutorials w/ CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
 
 ---
 

@@ -43,7 +43,7 @@ const testEvaluator =
 const { getLines } = require('../../utils/get-lines');
 const { isAuditedCert } = require('../../utils/is-audited');
 
-const { toSortedArray } = require('../../utils/sort-files');
+const { sortChallengeFiles } = require('../../utils/sort-challengefiles');
 const {
   getChallengesForLang,
   getMetaForBlock,
@@ -347,10 +347,12 @@ function populateTestsForLang({ lang, challenges, meta }) {
                 );
               }
 
-              // Then we compare the number of times each comment appears in the
-              // translated text (commentMap) with the number of replacements
-              // made during translation (challenge.__commentCounts). If they
-              // differ, the translation must have gone wrong
+              /*
+               * Then we compare the number of times each comment appears in the
+               * translated text (commentMap) with the number of replacements
+               * made during translation (challenge.__commentCounts). If they
+               * differ, the translation must have gone wrong
+               */
 
               const commentMap = new Map(Object.entries(comments));
 
@@ -471,7 +473,7 @@ ${inspect(commentMap)}
           // TODO: the no-solution filtering is a little convoluted:
           const noSolution = new RegExp('// solution required');
 
-          const solutionsAsArrays = solutions.map(toSortedArray);
+          const solutionsAsArrays = solutions.map(sortChallengeFiles);
 
           const filteredSolutions = solutionsAsArrays.filter(solution => {
             return !isEmpty(

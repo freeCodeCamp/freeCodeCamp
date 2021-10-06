@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c153
 title: Introdução ao NumPy B
 challengeType: 11
 videoId: YIqgrNLAZkA
+bilibiliIds:
+  aid: 250503382
+  bvid: BV1kv411w7vB
+  cid: 409010193
 dashedName: numpy-introduction-b
 ---
 

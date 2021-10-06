@@ -23,60 +23,70 @@ dashedName: ignore-case-while-matching
 你的正则表达式应该匹配 `freeCodeCamp`
 
 ```js
+fccRegex.lastIndex = 0; 
 assert(fccRegex.test('freeCodeCamp'));
 ```
 
 你的正则表达式应该匹配 `FreeCodeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCodeCamp'));
 ```
 
 你的正则表达式应该匹配 `FreecodeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreecodeCamp'));
 ```
 
 你的正则表达式应该匹配 `FreeCodecamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCodecamp'));
 ```
 
 你的正则表达式不应该匹配 `Free Code Camp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(!fccRegex.test('Free Code Camp'));
 ```
 
 您的正则表达式应该匹配字符串 `FreeCOdeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCOdeCamp'));
 ```
 
 你的正则表达式不应该匹配 `FCC`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(!fccRegex.test('FCC'));
 ```
 
 你的正则表达式应该匹配字符串 `FrEeCoDeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FrEeCoDeCamp'));
 ```
 
 你的正则表达式应该匹配字符串 `FrEeCodECamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FrEeCodECamp'));
 ```
 
 你的正则表达式应该匹配字符串 `FReeCodeCAmp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FReeCodeCAmp'));
 ```
 

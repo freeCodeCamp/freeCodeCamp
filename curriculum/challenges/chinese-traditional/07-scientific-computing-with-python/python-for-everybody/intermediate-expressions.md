@@ -3,6 +3,10 @@ id: 5e7b9f050b6c005b0e76f057
 title: 中間表達式
 challengeType: 11
 videoId: dKgUaIa5ATg
+bilibiliIds:
+  aid: 334428894
+  bvid: BV1uw411R7gH
+  cid: 376318468
 dashedName: intermediate-expressions
 ---
 

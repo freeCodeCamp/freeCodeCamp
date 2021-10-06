@@ -4,7 +4,7 @@ type CreateTypesType = {
 
 /**
  * Creates an object in which the `keys` represent the action names and the
- * `values` the action type.
+ * `values` represent the action type.
  * {
  *   action: actionType,
  *   ...

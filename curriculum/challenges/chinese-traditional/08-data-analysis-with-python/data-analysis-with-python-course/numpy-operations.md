@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c155
 title: Numpy 的運算
 challengeType: 11
 videoId: eqSVcJbaPdk
+bilibiliIds:
+  aid: 378057123
+  bvid: BV13f4y1w7od
+  cid: 409012507
 dashedName: numpy-operations
 ---
 

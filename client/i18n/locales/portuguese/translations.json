@@ -364,6 +364,7 @@
   },
   "misc": {
     "offline": "Você parece estar off-line, seu progresso pode não ser salvo",
+    "server-offline": "The server could not be reached and your progress may not be saved. Please contact support if this message persists",
     "unsubscribed": "Sua assinatura foi cancelada com sucesso",
     "keep-coding": "Seja o que for, continue programando!",
     "email-signup": "Inscrição via e-mail",
@@ -427,6 +428,7 @@
     "wrong-updating": "Algo deu errado ao atualizar sua conta. Verifique e tente novamente",
     "updated-preferences": "Atualizamos as suas preferências",
     "email-invalid": "Formato de e-mail inválido",
+    "email-valid": "Seu e-mail foi alterado com sucesso. Feliz programação!",
     "bad-challengeId": "currentChallengeId não é um ID válido de desafio",
     "theme-invalid": "O tema é inválido",
     "theme-set": "Tema já definido",

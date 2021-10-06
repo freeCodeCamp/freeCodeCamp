@@ -3,6 +3,10 @@ id: 5e7b9f060b6c005b0e76f05b
 title: 編寫你自己的函數
 challengeType: 11
 videoId: nLDychdBwUg
+bilibiliIds:
+  aid: 249487483
+  bvid: BV1Fv411J7bS
+  cid: 376340281
 dashedName: build-your-own-functions
 ---
 

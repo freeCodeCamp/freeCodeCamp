@@ -39,6 +39,7 @@ assert(ohRegex.source.match(/{.*?}/).length > 0);
 你的正則表達式不應匹配字符串 `Ohh no`
 
 ```js
+ohRegex.lastIndex = 0;
 assert(!ohRegex.test('Ohh no'));
 ```
 
@@ -69,6 +70,7 @@ assert('Ohhhhhh no'.match(ohRegex)[0].length === 10);
 你的正則表達式應該匹配字符串 `Ohhhhhhh no`
 
 ```js
+ohRegex.lastIndex = 0;
 assert(!ohRegex.test('Ohhhhhhh no'));
 ```
 

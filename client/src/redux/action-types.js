@@ -12,6 +12,7 @@ export const actionTypes = createTypes(
     'preventProgressDonationRequests',
     'openDonationModal',
     'onlineStatusChange',
+    'serverStatusChange',
     'resetUserData',
     'tryToShowDonationModal',
     'executeGA',

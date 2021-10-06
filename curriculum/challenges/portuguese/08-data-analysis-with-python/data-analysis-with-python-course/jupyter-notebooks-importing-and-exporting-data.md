@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c151
 title: Importar e exportar os dados dos Jupyter Notebooks
 challengeType: 11
 videoId: k1msxD3JIxE
+bilibiliIds:
+  aid: 975540688
+  bvid: BV1n44y1b7Gi
+  cid: 409006337
 dashedName: jupyter-notebooks-importing-and-exporting-data
 ---
 

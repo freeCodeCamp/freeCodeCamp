@@ -84,7 +84,7 @@ Y como siempre, siéntete libre de preguntar en la [categoría de 'Contribuidore
 
 Los conflictos pueden surgir porque muchos colaboradores trabajan en el repositorio y los cambios pueden romper su PR que está pendiente de revisión y fusión.
 
-La mayoría de las veces no puede requerir una rebase, porque aplastamos todos los commits, Sin embargo, si se solicita una rebase aquí es lo que debe hacer.
+La mayoría de las veces podrías no requerir un rebase porque juntamos todas las confirmaciones, sin embargo, si un rebase es solicitado, esto es lo que tienes que hacer.
 
 ### Para arreglos de errores y características habituales
 

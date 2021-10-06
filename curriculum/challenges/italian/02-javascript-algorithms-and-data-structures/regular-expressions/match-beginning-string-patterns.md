@@ -43,12 +43,14 @@ assert(calRegex.flags == '');
 La tua espressione regolare dovrebbe riconoscere `Cal` all'inizio della stringa.
 
 ```js
+calRegex.lastIndex = 0;
 assert(calRegex.test('Cal and Ricky both like racing.'));
 ```
 
 La tua espressione regolare non dovrebbe riconoscere `Cal` nel mezzo di una stringa.
 
 ```js
+calRegex.lastIndex = 0;
 assert(!calRegex.test('Ricky and Cal both like racing.'));
 ```
 

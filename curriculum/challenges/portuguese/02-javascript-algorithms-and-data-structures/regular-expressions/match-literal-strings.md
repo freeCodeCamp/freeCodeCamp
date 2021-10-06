@@ -38,12 +38,14 @@ Complete a regex `waldoRegex` para encontrar `"Waldo"` na string `waldoIsHiding`
 A regex `waldoRegex` deve encontrar a string `Waldo`
 
 ```js
+waldoRegex.lastIndex = 0;
 assert(waldoRegex.test(waldoIsHiding));
 ```
 
 A regex `waldoRegex` não deve buscar nada além disso.
 
 ```js
+waldoRegex.lastIndex = 0;
 assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 ```
 

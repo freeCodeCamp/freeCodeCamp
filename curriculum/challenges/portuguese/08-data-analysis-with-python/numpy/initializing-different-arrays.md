@@ -3,6 +3,10 @@ id: 5e9a0a8e09c5df3cc3600ed5
 title: Inicializar arrays diferentes
 challengeType: 11
 videoId: CEykdsKT4U4
+bilibiliIds:
+  aid: 718044756
+  bvid: BV1MQ4y1k7BB
+  cid: 409025638
 dashedName: initializing-different-arrays
 ---
 

@@ -25,42 +25,49 @@ dashedName: match-a-literal-string-with-different-possibilities
 對於字符串 `John has a pet dog.`，你的正則表達式`petRegex` 應該返回 `true`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('John has a pet dog.'));
 ```
 
 對於字符串 `Emma has a pet rock.`，你的正則表達式 `petRegex` 的應該返回 `false`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Emma has a pet rock.'));
 ```
 
 對於字符串 `Emma has a pet bird.`，你的正則表達式 `petRegex` 應該返回 `true`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Emma has a pet bird.'));
 ```
 
 對於字符串 `Liz has a pet cat.`，你的正則表達式 `petRegex` 應該返回 `true`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Liz has a pet cat.'));
 ```
 
 對於字符串 `Kara has a pet dolphin.`，你的正則表達式 `petRegex` 應該返回 `false`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Kara has a pet dolphin.'));
 ```
 
 對於字符串 `Alice has a pet fish.`，你的正則表達式 `petRegex` 應該返回 `true`。
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Alice has a pet fish.'));
 ```
 
 對於字符串 `Jimmy has a pet computer.`，你的正則表達式 `petRegex` 應該返回 `false`。
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Jimmy has a pet computer.'));
 ```
 

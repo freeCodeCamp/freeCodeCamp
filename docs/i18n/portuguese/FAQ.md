@@ -24,7 +24,7 @@ Não crie issues no GitHub para problemas de segurança. Em vez disso, envie um 
 
 ### Eu sou estudante. Posso trabalhar em um recurso para créditos acadêmicos?
 
-Sim. Note, porém, que não podemos nos comprometer com nenhum cronograma ou documentação que possa ser um requisito da sua faculdade ou universidade. Recebemos muitos pull-requests e contribuições em código pelos desenvolvedores voluntários e respeitamos o tempo e esforço deles. Em respeito a todos os outros contribuidores, não daremos nenhuma prioridade especial a nenhum PR só por ser relacionado à escola.
+Sim. Note, porém, que não podemos nos comprometer com nenhum cronograma ou documentação que possa ser um requisito da sua faculdade ou universidade. Recebemos muitos pull-requests e contribuições em código de desenvolvedores voluntários e respeitamos o tempo e esforço deles. Em respeito a todos os outros contribuidores, não daremos nenhuma prioridade especial a nenhum PR só por ser relacionado à escola.
 
 Pedimos que você planeje com antecedência e que trabalhe em suas contribuições de código tendo isso em mente.
 

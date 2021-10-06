@@ -3,6 +3,10 @@ id: 5e9a0a8e09c5df3cc3600eda
 title: 加载数据和高级索引
 challengeType: 11
 videoId: tUdBZ7pF8Jg
+bilibiliIds:
+  aid: 720524642
+  bvid: BV1xQ4y1r7mu
+  cid: 409027117
 dashedName: loading-data-and-advanced-indexing
 ---
 
