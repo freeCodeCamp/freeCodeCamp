@@ -5,10 +5,9 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { SuperBlock } from '../../../assets/icons';
 import Caret from '../../../assets/icons/caret';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
-// import { navigate } from 'gatsby';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Steps } from '../../../redux/prop-types';
-import ClaimCertSteps from './ClaimCertSteps';
+import ClaimCertSteps from './claim-cert-steps';
 
 interface CertificationCardProps {
   i18nCertText: string;
