@@ -41,12 +41,14 @@ assert(haRegex.source.match(/{.*?}/).length > 0);
 Your regex should not match the string `Hazzah`
 
 ```js
+haRegex.lastIndex = 0;
 assert(!haRegex.test('Hazzah'));
 ```
 
 Your regex should not match the string `Hazzzah`
 
 ```js
+haRegex.lastIndex = 0;
 assert(!haRegex.test('Hazzzah'));
 ```
 
