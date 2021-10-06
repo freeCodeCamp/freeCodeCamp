@@ -329,7 +329,6 @@ const hasAllAvailableLanguagesInDropdown = (component: JSX.Element) => {
     component,
     'language-dropdown'
   );
-  console.log('children', children.props.children);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   return children.props.children.every(
     ({ props }: { props: { value: string; children: string } }) =>

@@ -16,7 +16,6 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { navigate } from 'gatsby';
 import React, { Component, Fragment } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -25,6 +24,7 @@ import {
   availableLangs,
   langDisplayNames
 } from '../../../../../config/i18n/all-langs';
+import { hardGoTo as navigate } from '../../../redux';
 import { updateUserFlag } from '../../../redux/settings';
 import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
@@ -41,9 +41,11 @@ export interface NavLinksProps {
   toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement>;
   toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;
+  navigate?: (location: string) => void;
 }
 
 const mapDispatchToProps = {
+  navigate,
   toggleNightMode: (theme: unknown) => updateUserFlag({ theme })
 };
 
@@ -62,15 +64,15 @@ export class NavLinks extends Component<NavLinksProps, {}> {
   handleLanguageChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ): void => {
-    this.props.toggleDisplayMenu();
-    void navigate({
-      to: createLanguageRedirect({
-        clientLocale,
-        lang: event.target.value
-      })
+    const { toggleDisplayMenu, navigate } = this.props;
+    toggleDisplayMenu();
+
+    const path = createLanguageRedirect({
+      clientLocale,
+      lang: event.target.value
     });
 
-    return;
+    return navigate(path);
   };
 
   render() {
@@ -84,6 +86,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     }: NavLinksProps = this.props;
 
     const { pending } = fetchState;
+
     return pending ? (
       <div className='nav-skeleton' />
     ) : (
@@ -186,6 +189,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
         <div className='nav-link nav-link-header' key='lang-header'>
           {t('footer.language')}
         </div>
+
         <div className='nav-link' key='language-dropdown'>
           <select
             className='nav-link-lang-dropdown'
