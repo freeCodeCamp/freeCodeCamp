@@ -113,7 +113,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.top ==
 
 ```html
 <!DOCTYPE html>
-<html lang="en" >
+<html>
   <head>
     <meta charset="UTF-8">
     <title> Learn CSS Animations by Building a Ferris Wheel</title>

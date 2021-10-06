@@ -33,7 +33,7 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.
 
 ```html
 <!DOCTYPE html>
-<html lang="en" >
+<html>
   <head>
     <meta charset="UTF-8">
     <title> Learn CSS Animations by Building a Ferris Wheel</title>

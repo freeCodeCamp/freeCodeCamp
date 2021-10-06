@@ -23,7 +23,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.transformOrigin === '
 
 ```html
 <!DOCTYPE html>
-<html lang="en" >
+<html>
   <head>
     <meta charset="UTF-8">
     <title> Learn CSS Animations by Building a Ferris Wheel</title>
