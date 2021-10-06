@@ -21,7 +21,7 @@ import { verifyCert } from '../../../redux/settings';
 
 import { certMap } from '../../../resources/cert-and-project-map';
 import { getVerifyCanClaimCert } from '../../../utils/ajax';
-import CertificationCard from './CertificationCard';
+import CertificationCard from './certification-card';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,

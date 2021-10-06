@@ -1,26 +1,25 @@
-import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import ScrollableAnchor from 'react-scrollable-anchor';
+import { SuperBlock } from '../../../assets/icons';
 import Caret from '../../../assets/icons/caret';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 // import { navigate } from 'gatsby';
 import GreenPass from '../../../assets/icons/green-pass';
-import { StepsPropType } from '../../../redux/prop-types';
+import { Steps } from '../../../redux/prop-types';
 import ClaimCertSteps from './ClaimCertSteps';
 
-const propTypes = {
-  i18nCertText: PropTypes.string,
-  isProjectsCompleted: PropTypes.bool,
-  stepState: PropTypes.shape({
-    numberOfSteps: PropTypes.number,
-    completedCount: PropTypes.number
-  }),
-  steps: StepsPropType,
-  superBlock: PropTypes.string
-};
-
+interface CertificationCardProps {
+  i18nCertText: string;
+  isProjectsCompleted: boolean;
+  stepState: {
+    numberOfSteps: number;
+    completedCount: number;
+  };
+  steps: Steps;
+  superBlock: SuperBlock;
+}
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
 const CertificationCard = ({
@@ -29,7 +28,7 @@ const CertificationCard = ({
   i18nCertText,
   stepState: { completedCount, numberOfSteps },
   steps
-}) => {
+}: CertificationCardProps): JSX.Element => {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -41,6 +40,10 @@ const CertificationCard = ({
     expand: expandText,
     collapse: collapseText,
     courses: coursesText
+  }: {
+    expand: string;
+    collapse: string;
+    courses: string;
   } = t('intro:misc-text');
   return (
     <ScrollableAnchor id='claim-cert-block'>
@@ -90,6 +93,5 @@ const CertificationCard = ({
 };
 
 CertificationCard.displayName = 'CertStatus';
-CertificationCard.propTypes = propTypes;
 
 export default CertificationCard;

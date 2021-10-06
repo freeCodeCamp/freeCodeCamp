@@ -70,6 +70,14 @@ export const StepsPropType = PropTypes.shape({
   isShowProfile: PropTypes.bool
 });
 
+export type Steps = {
+  isHonest?: boolean;
+  currentCerts?: Array<CurrentCert>;
+  isShowCerts?: boolean;
+  isShowName?: boolean;
+  isShowProfile?: boolean;
+};
+
 export type CurrentCert = {
   show: boolean;
   title: string;
