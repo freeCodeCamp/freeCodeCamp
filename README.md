@@ -5,6 +5,9 @@
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 [![Rocket.Chat](https://chat.freecodecamp.org/api/v1/shield.svg?type=online&icon=false&name=Chat)](https://chat.freecodecamp.org/)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/freeCodeCamp?label=Follow%20freeCodeCamp)](https://twitter.com/freeCodeCamp)
+[![Subscribe on YouTube](https://img.shields.io/youtube/channel/subscribers/UC8butISFwT-Wl7EV0hUK0BQ?style=social)](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ)
+[![Follow on Reddit](https://img.shields.io/reddit/subreddit-subscribers/FreeCodeCamp?style=social)](https://www.reddit.com/r/FreeCodeCamp/)
 
 ## freeCodeCamp.org's open-source codebase and curriculum
 
