@@ -43,6 +43,7 @@ assert(lastRegex.flags == '');
 Você deve capturar `caboose` no fim da string `The last car on a train is the caboose`
 
 ```js
+lastRegex.lastIndex = 0;
 assert(lastRegex.test('The last car on a train is the caboose'));
 ```
 

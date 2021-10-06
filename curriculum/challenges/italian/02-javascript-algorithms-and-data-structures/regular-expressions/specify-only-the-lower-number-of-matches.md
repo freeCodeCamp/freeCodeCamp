@@ -41,12 +41,14 @@ assert(haRegex.source.match(/{.*?}/).length > 0);
 La tua espressione regolare non dovrebbe riconoscere la stringa `Hazzah`
 
 ```js
+haRegex.lastIndex = 0;
 assert(!haRegex.test('Hazzah'));
 ```
 
 La tua espressione regolare non dovrebbe riconoscere la stringa `Hazzzah`
 
 ```js
+haRegex.lastIndex = 0;
 assert(!haRegex.test('Hazzzah'));
 ```
 

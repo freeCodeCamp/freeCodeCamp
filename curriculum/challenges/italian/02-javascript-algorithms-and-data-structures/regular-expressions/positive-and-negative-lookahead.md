@@ -52,48 +52,56 @@ assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null);
 La tua espressione regolare non dovrebbe corrispondere alla stringa `astronaut`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('astronaut'));
 ```
 
 La tua espressione regolare non dovrebbe riconoscere la stringa `banan1`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('banan1'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `bana12`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('bana12'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `abc123`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('abc123'));
 ```
 
 La tua espressione regolare non dovrebbe riconoscere la stringa `12345`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('12345'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `8pass99`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('8pass99'));
 ```
 
 La tua espressione regolare non dovrebbe riconoscere la stringa `1a2bcde`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('1a2bcde'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `astr1on11aut`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('astr1on11aut'));
 ```
 

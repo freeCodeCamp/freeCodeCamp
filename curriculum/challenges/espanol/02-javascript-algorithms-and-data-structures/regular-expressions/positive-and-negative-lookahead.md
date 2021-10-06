@@ -52,48 +52,56 @@ assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null);
 Tu expresión regular no debe coincidir con la cadena `astronaut`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('astronaut'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `banan1`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('banan1'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `bana12`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('bana12'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `abc123`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('abc123'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `12345`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('12345'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `8pass99`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('8pass99'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `1a2bcde`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('1a2bcde'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `astr1on11aut`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('astr1on11aut'));
 ```
 
