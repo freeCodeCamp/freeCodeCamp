@@ -113,7 +113,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
       child.stdout.on('data', function (data) {
         console.log(data);
       });
-      child.on('error', (err) => {
+      child.on('error', err => {
         console.error(err);
       });
     }
