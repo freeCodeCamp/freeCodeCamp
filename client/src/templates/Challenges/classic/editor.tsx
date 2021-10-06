@@ -7,6 +7,7 @@ import type {
   Range as RangeType
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
+import { highlightAllUnder } from 'prismjs';
 import React, {
   useEffect,
   Suspense,
@@ -450,6 +451,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
+    highlightAllUnder(desc);
     // TODO: the solution is probably just to use an overlay that's forced to
     // follow the decorations.
     // TODO: this is enough for Firefox, but Chrome needs more before the
