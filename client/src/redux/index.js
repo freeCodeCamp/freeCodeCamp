@@ -60,6 +60,7 @@ const initialState = {
   sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
   isOnline: true,
+  isServerOnline: true,
   donationFormState: {
     ...defaultDonationFormState
   }
@@ -102,6 +103,7 @@ export const updateDonationFormState = createAction(
 );
 
 export const onlineStatusChange = createAction(actionTypes.onlineStatusChange);
+export const serverStatusChange = createAction(actionTypes.serverStatusChange);
 
 // TODO: re-evaluate this since /internal is no longer used.
 // `hardGoTo` is used to hit the API server directly
@@ -189,6 +191,7 @@ export const stepsToClaimSelector = state => {
 };
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[ns].isOnline;
+export const isServerOnlineSelector = state => state[ns].isServerOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
 export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
 export const recentlyClaimedBlockSelector = state =>
@@ -552,6 +555,10 @@ export const reducer = handleActions(
     [actionTypes.onlineStatusChange]: (state, { payload: isOnline }) => ({
       ...state,
       isOnline
+    }),
+    [actionTypes.serverStatusChange]: (state, { payload: isServerOnline }) => ({
+      ...state,
+      isServerOnline
     }),
     [actionTypes.closeDonationModal]: state => ({
       ...state,
