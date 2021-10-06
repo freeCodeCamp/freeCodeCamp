@@ -1,3 +1,4 @@
+const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -101,6 +102,15 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
 } else {
   checkClientLocale();
   checkCurriculumLocale();
+  if (fs.existsSync(`${globalConfigPath}/env.json`)) {
+    const { showUpcomingChanges } = require(`${globalConfigPath}/env.json`);
+    if (env['showUpcomingChanges'] !== showUpcomingChanges) {
+      console.log(
+        'SHOW_UPCOMING_CHANGES value has changed, cleaning client cache.'
+      );
+      spawn('npm', ['run', 'clean:client']);
+    }
+  }
 }
 
 fs.writeFileSync(`${globalConfigPath}/env.json`, JSON.stringify(env));
