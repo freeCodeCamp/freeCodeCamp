@@ -88,14 +88,6 @@
     "test-ui-components": "jest tools/ui-components",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "*.(js|ts|tsx)": [
-      "eslint --max-warnings 0 --cache --fix",
-      "prettier --write"
-    ],
-    "*.!(js|ts|tsx)": "prettier --ignore-unknown --write",
-    "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js"
-  },
   "dependencies": {
     "dotenv": "10.0.0",
     "invariant": "2.2.4"
