@@ -290,7 +290,7 @@ Desafios devem ter um número mínimo de testes necessários para verificar que 
 
 Nossa meta é comunicar o ponto que o desafio está tentando ensinar e testar se eles entenderam esse ponto.
 
-Os testes do desafio podem usar bibliotecas Node.js e Chai.js. Se necessário, o código gerado pro usuário pode ser acessado na variável `code` também.  Além disso, os objetos `__helpers` expõem várias funções que simplificam o processo de escrita dos testes.  As funções disponíveis estão definidas em _client/src/utils/curriculum-helpers.ts_.
+Os testes do desafio podem usar bibliotecas Node.js e Chai.js. Se necessário, o código gerado pro usuário pode ser acessado na variável `code` também. Além disso, os objetos `__helpers` expõem várias funções que simplificam o processo de escrita dos testes. As funções disponíveis estão definidas em _client/src/utils/curriculum-helpers.ts_.
 
 ## Formatação do código seed
 

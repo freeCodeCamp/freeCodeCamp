@@ -132,37 +132,37 @@ Cuando estás trabajando en características para nuestras próximas ramas del p
 
    a. Borra tu rama local después de realizar una copia de seguridad (si todavía la tienes localmente):
 
-      ```console
-      git checkout <pr-branch-name>
+   ```console
+   git checkout <pr-branch-name>
 
-      # ejemplo:
-      # git checkout feat/add-numpy-video-question
+   # example:
+   # git checkout feat/add-numpy-video-question
 
-      git checkout -b <backup-branch-name>
+   git checkout -b <backup-branch-name>
 
-      # ejemplo:
-      # git checkout -b backup-feat/add-numpy-video-question
+   # example:
+   #  git checkout -b backup-feat/add-numpy-video-question
 
-      git branch -D <pr-branch-name>
-      ```
+   git branch -D <pr-branch-name>
+   ```
 
    b. O simplemente una copia de seguridad de su rama pr (si no la tiene localmente):
 
-      ```console
-      git checkout -b <backup-branch-name> origin/<pr-branch-name>
+   ```console
+   git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # ejemplo:
-      # git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
-      ```
+   # example:
+   #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+   ```
 
-4. Empezar con una pizarra limpia:
+3. Empezar con una pizarra limpia:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Resuelve cualquier conflicto y limpia, instala pruebas de ejecución
+4. Resuelve cualquier conflicto y limpia, instala pruebas de ejecución
 
    ```console
    npm run clean
@@ -176,7 +176,7 @@ Cuando estás trabajando en características para nuestras próximas ramas del p
 
    ```
 
-6. Si todo se ve bien empuje hacia el PR
+5. Si todo se ve bien empuje hacia el PR
 
    ```console
    git push --force origin <pr-branch-name>

@@ -8,7 +8,6 @@ As páginas de desafio em vídeo são criadas por membros da equipe freeCodeCamp
 
 Você pode ajudar criando questões de múltipla escolha e adicionando-as aos arquivos 'markdown' para os desafios em vídeo.
 
-
 ## Modelo de desafio
 
 Abaixo está um modelo de arquivo markdown do desafio.
@@ -27,9 +26,7 @@ forumTopicId: 12345
 Challenge description text, in markdown
 
 ```html
-<div>
-  example code
-</div>
+<div>example code</div>
 ````
 
 # --question--
@@ -55,7 +52,6 @@ Mais respostas
 ## --video-solution--
 
 O número da resposta correta fica aqui.
-
 ````
 
 ## Criando perguntas para desafios em video
@@ -76,6 +72,7 @@ Escolha um arquivo dentre as opções acima.
 Primeiro, localize o videoId.
 
 Por exemplo, no código a seguir a partir do cabeçalho de um arquivo markdown de desafio de vídeo, o videoId é "nVAaxZ34khk". No GitHub, a informação deve estar contida em formato tabular.
+
 ````
 ---
 id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
@@ -83,12 +80,12 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Em seguida, acesse o vídeo no YouTube correspondente com aquele `videoId`. A URL do vídeo será:
-https://www.youtube.com/watch?v=[videoId]    (troque `videoId` na URL pelo ID do vídeo - sem colchetes)
+Em seguida, acesse o vídeo no YouTube correspondente com aquele `videoId`. The URL for the video will be:
+https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
 
-No exemplo acima, a URL seria https://www.youtube.com/watch?v=nVAaxZ34khk
+In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Assista ao vídeo no YouTube daquele videoId e pense em uma questão de múltipla escolha baseada em seu conteúdo.
+Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
 
 ### Adicione a pergunta ao arquivo markdown
 
@@ -120,12 +117,14 @@ Mais respostas
 1
 ```
 
-Adicione/atualize o texto da pergunta sob a parte que diz:
+Add/Update the question text under the part that shows:
+
 ```
 # --question--
 
 ## --text--
 ```
+
 Adicione/Atualize (`Answer 1`, `Answer 2`, e assim por diante) sob `## --answers--`. Confirme se o número sob  `## --video-solution--` seja o número da resposta correta. Você pode adicionar mais respostas possíveis usando o mesmo formato. Tanto a pergunta quanto as respostas podem estar entre aspas.
 
 ### Exemplos de perguntas
@@ -134,14 +133,16 @@ Adicione/Atualize (`Answer 1`, `Answer 2`, e assim por diante) sob `## --answers
 # --question--
 
 ## --text--
-O que esse código JavaScript mostra no console?
+
+What does this JavaScript code log to the console?
+
 ```js
 console.log('hello world');
 ````
 
 ## --answers--
 
-hello *world*
+hello _world_
 
 ---
 
@@ -154,16 +155,16 @@ hello world
 ---
 
 ## --video-solution--
+
 3
 ````
 
 ````md
-
 # --question--
 
 ## --text--
 
-O que aparecerá após executar esse código:
+What will print out after running this code:
 
 ```py
 width = 15
