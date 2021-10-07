@@ -132,37 +132,37 @@ Quando você estiver trabalhando em funcionalidades para nossas próximas branch
 
    a. Exclua sua branch local depois de ter feito um backup (se você ainda a tem localmente):
 
-      ```console
-      git checkout <pr-branch-name>
+   ```console
+   git checkout <pr-branch-name>
 
-      # exemplo:
-      # git checkout feat/add-numpy-video-question
+   # example:
+   # git checkout feat/add-numpy-video-question
 
-      git checkout -b <backup-branch-name>
+   git checkout -b <backup-branch-name>
 
-      # exemplo:
-      # git checkout -b backup-feat/add-numpy-video-question
+   # example:
+   #  git checkout -b backup-feat/add-numpy-video-question
 
-      git branch -D <pr-branch-name>
-      ```
+   git branch -D <pr-branch-name>
+   ```
 
    b. Ou apenas faça um backup da sua branch pr (se você não a tem localmente):
 
-      ```console
-      git checkout -b <backup-branch-name> origin/<pr-branch-name>
+   ```console
+   git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # exemplo:
-      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
-      ```
+   # example:
+   #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+   ```
 
-4. Comece do zero:
+3. Comece do zero:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Resolva quaisquer conflitos e limpe, instale testes
+4. Resolva quaisquer conflitos e limpe, instale testes
 
    ```console
    npm run clean
@@ -176,7 +176,7 @@ Quando você estiver trabalhando em funcionalidades para nossas próximas branch
 
    ```
 
-6. Se tudo estiver correto, faça um push ao PR
+5. Se tudo estiver correto, faça um push ao PR
 
    ```console
    git push --force origin <pr-branch-name>

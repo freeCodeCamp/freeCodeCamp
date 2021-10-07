@@ -15,6 +15,7 @@ Hay algunos términos que utilizamos cuando hablamos del contenido de nuestro cu
 
 Usando esos términos, así es como se definiría la estructura de archivos:
 
+<!-- prettier-ignore -->
 ```md
 
 curriculum/
@@ -62,7 +63,7 @@ Al renombrar una certificación, es probable que desees renombrar el súper bloq
 Además, es probable que desees renombrar el certificado y el bloque  `{superBlock}-projects` cuando renombres un súper bloque, ya que todos comparten un nombre. Para renombrar solamente un súper bloque necesitas:
 
 1. Renombrar la carpeta del super bloque en el directorio `curriculum/challenges/english`.
-1. Renombra la carpeta del súper bloque en *todos* los demás directorios `curriculum/challenges/{language}`.
+1. Rename the superBlock folder in _all_ other `curriculum/challenges/{language}` directories.
 1. Para cada bloque dentro del súper bloque, actualice el valor `superBlock` en el archivo  `meta.json` a su nombre con guiones. No necesitas renombrar ninguna carpeta aquí. Hazlo cuando renombres un bloque.
 1. Renombra la carpeta súper bloque en `client/src/pages/learn`.
 1. Actualiza el archivo `index.md` en la carpeta superior, cambiado los valores de `title` y `superBlock` al nuevo nombre.
@@ -79,7 +80,7 @@ Además, es probable que desees renombrar el certificado y el bloque  `{superBlo
 Cuando renombras un bloque del currículo, tienes que:
 
 1. Cambiar el nombre de la carpeta del bloque en el directorio `curriculum/challenges/english/{superBlock}`.
-1. Cambiar el nombre de la misma carpeta de bloque en *todos* los directorios de los demás idiomas para que coincidan. Estos deben ser todos iguales a la estructura en inglés o se producirá un error en la compilación.
+1. Change the name of the same block folder in _all_ of the other language directories to match. Estos deben ser todos iguales a la estructura en inglés o se producirá un error en la compilación.
 1. Cambiar el nombre de la carpeta del bloque en el directorio `_meta`.
 1. Actualizar las propiedades `nombre` y `dashedName` (nombre con guiones) del archivo `meta.json` de ese bloque.
 1. Actualizar el `client/utils/help-category-map.json` para que utilice el nuevo nombre de bloque como clave.
@@ -94,7 +95,7 @@ Al renombras un solo archivo de desafío, tienes que:
 
 1. Cambiar el nombre del archivo del desafío en el directorio `curriculum/challenges/english`.
 1. Cambiar el nombre del `title` y de `dashedName` (nombre con guiones) dentro de ese archivo.
-1. Cambiar el nombre del archivo y el `dashedName` (nombre con guiones) en esos archivos para que *todos* los directorios de los otros idiomas coincidan.
+1. Change the name of the file, and the `dashedName` in those files for _all_ of the other language directories to match.
 1. Actualizar el nombre del desafío en el archivo `meta.json` correspondiente. Los nombres de los desafíos aquí no se utilizan en la compilación, pero proveen una forma amigable al usuario de identificar el orden de los mismos.
 1. Si el desafío es un proyecto de certificado, actualizar el archivo YAML en `curriculum/english/12-certificates/<superBlock>` con el nuevo nombre.
 1. Si el desafío es un proyecto de certificado, actualizar el `title` y el `link` en `client/src/resources/cert-and-project-map.ts`
