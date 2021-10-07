@@ -65,7 +65,6 @@
     "lint:challenges": "cd ./curriculum && npm run lint",
     "lint:js": "eslint --max-warnings 0 .",
     "lint:ts": "tsc -p client && tsc -p tools/ui-components",
-    "lint:translations": "cd ./client && npm run lint",
     "lint:prettier": "prettier --list-different .",
     "postinstall": "npm run bootstrap",
     "seed": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
