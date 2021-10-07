@@ -7,6 +7,7 @@ import type {
   Range as RangeType
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
+import { highlightAllUnder } from 'prismjs';
 import React, {
   useEffect,
   Suspense,
@@ -450,6 +451,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
+    highlightAllUnder(desc);
     // TODO: the solution is probably just to use an overlay that's forced to
     // follow the decorations.
     // TODO: this is enough for Firefox, but Chrome needs more before the
@@ -967,7 +969,36 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     editor?.focus();
     if (isProjectStep() && editor) {
-      showEditableRegion(editor);
+      if (hasChangedContents) showEditableRegion(editor);
+
+      // resetting test output
+      // TODO: DRY this - createOutputNode doesn't also need to set this up.
+      const testButton = document.getElementById('test-button');
+      if (testButton) {
+        testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
+        testButton.onclick = () => {
+          props.executeChallenge();
+        };
+      }
+      const testStatus = document.getElementById('test-status');
+      if (testStatus) {
+        testStatus.innerHTML = '';
+      }
+      const testOutput = document.getElementById('test-output');
+      if (testOutput) {
+        testOutput.innerHTML = '';
+      }
+      // resetting margin decorations
+      // TODO: this should be done via the decorator api, not by manipulating
+      // the DOM
+      const editableRegionDecorators = document.getElementsByClassName(
+        'myEditableLineDecoration'
+      );
+      if (editableRegionDecorators.length > 0) {
+        for (const i of editableRegionDecorators) {
+          i.classList.remove('tests-passed');
+        }
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles]);
@@ -990,6 +1021,8 @@ const Editor = (props: EditorProps): JSX.Element => {
           };
         }
 
+        // TODO: this should be done via the decorator api, not by manipulating
+        // the DOM
         const editableRegionDecorators = document.getElementsByClassName(
           'myEditableLineDecoration'
         );

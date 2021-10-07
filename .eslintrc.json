@@ -10,15 +10,14 @@
   "root": true,
   "extends": [
     "./.eslintrc-base.json",
-    "plugin:prettier/recommended",
     "plugin:import/typescript",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "prettier"
   ],
   "plugins": [
     "react",
     "import",
     "prefer-object-spread",
-    "prettier",
     "react-hooks",
     "jsx-a11y",
     "jest-dom",
@@ -58,7 +57,10 @@
       "plugins": ["@typescript-eslint"]
     },
     {
-      "files": ["./tools/ui-components/**/*.test.[jt]s?(x)", "./client/**/*.test.[jt]s?(x)"],
+      "files": [
+        "./tools/ui-components/**/*.test.[jt]s?(x)",
+        "./client/**/*.test.[jt]s?(x)"
+      ],
       "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
     },
     {

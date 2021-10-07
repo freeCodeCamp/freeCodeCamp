@@ -52,12 +52,14 @@ assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 La tua espressione regolare dovrebbe riconoscere la stringa `42 42 42`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('42 42 42'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `100 100 100`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('100 100 100'));
 ```
 
@@ -76,18 +78,21 @@ assert.equal('42 42'.match(reRegex.source), null);
 La tua espressione regolare non dovrebbe riconoscere la stringa `101 102 103`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(!reRegex.test('101 102 103'));
 ```
 
 La tua espressione regolare non dovrebbe riconoscere la stringa `1 2 3`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(!reRegex.test('1 2 3'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `10 10 10`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('10 10 10'));
 ```
 

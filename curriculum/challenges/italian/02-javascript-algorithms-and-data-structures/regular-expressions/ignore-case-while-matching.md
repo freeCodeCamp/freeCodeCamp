@@ -23,60 +23,70 @@ Scrivi un'espressione regolare `fccRegex` per riconoscere `freeCodeCamp`, indipe
 La tua espressione regolare dovrebbe riconoscere la stringa `freeCodeCamp`
 
 ```js
+fccRegex.lastIndex = 0; 
 assert(fccRegex.test('freeCodeCamp'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `FreeCodeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCodeCamp'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `FreecodeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreecodeCamp'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `FreeCodecamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCodecamp'));
 ```
 
 La tua espressione regolare non dovrebbe riconoscere la stringa `Free Code Camp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(!fccRegex.test('Free Code Camp'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `FreeCOdeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCOdeCamp'));
 ```
 
 La tua espressione regolare non dovrebbe riconoscere la stringa `FCC`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(!fccRegex.test('FCC'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `FrEeCoDeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FrEeCoDeCamp'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `FrEeCodECamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FrEeCodECamp'));
 ```
 
 La tua espressione regolare dovrebbe riconoscere la stringa `FReeCodeCAmp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FReeCodeCAmp'));
 ```
 

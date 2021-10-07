@@ -37,7 +37,7 @@ export const UniversalNav = ({
 
   const search =
     typeof window !== `undefined` && isLanding(window.location.pathname) ? (
-      <SearchBarOptimized />
+      <SearchBarOptimized innerRef={searchBarRef} />
     ) : (
       <SearchBar innerRef={searchBarRef} />
     );

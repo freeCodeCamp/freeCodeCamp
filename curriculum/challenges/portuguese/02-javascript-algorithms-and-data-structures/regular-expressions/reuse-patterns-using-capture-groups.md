@@ -52,12 +52,14 @@ assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 A regex deve encontrar a string `42 42 42`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('42 42 42'));
 ```
 
 A regex deve encontrar a string `100 100 100`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('100 100 100'));
 ```
 
@@ -76,18 +78,21 @@ assert.equal('42 42'.match(reRegex.source), null);
 A regex não deve encontrar a string `101 102 103`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(!reRegex.test('101 102 103'));
 ```
 
 A regex não deve encontrar a string `1 2 3`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(!reRegex.test('1 2 3'));
 ```
 
 A regex deve encontrar a string `10 10 10`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('10 10 10'));
 ```
 

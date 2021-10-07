@@ -8,7 +8,6 @@ Las páginas de desafío de vídeo son creadas por miembros del equipo freeCodeC
 
 Puedes ayudar creando preguntas de selección múltiple relacionadas con las secciones de video y agregando las preguntas a los archivos markdown para los desafíos de video.
 
-
 ## Plantilla de desafío
 
 A continuación se muestra una plantilla de cómo se ven los archivos markdown de los desafíos.
@@ -27,9 +26,7 @@ forumTopicId: 12345
 Challenge description text, in markdown
 
 ```html
-<div>
-  example code
-</div>
+<div>example code</div>
 ````
 
 # --question--
@@ -55,7 +52,6 @@ Más respuestas
 ## --video-solution--
 
 El número para la respuesta correcta va aquí.
-
 ````
 
 ## Creando preguntas para los desafíos de video
@@ -76,6 +72,7 @@ Elige un archivo markdown de las opciones anteriores.
 Primero, encuentra la videoId (id del vídeo).
 
 Por ejemplo, en el siguiente código de la cabecera de un archivo markdown de desafío de video, el videoId es "nVAaxZ34khk". En GitHub, la información debe ser colocada en un formato de tabla.
+
 ````
 ---
 id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
@@ -83,12 +80,12 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-A continuación, accede al vídeo de YouTube con esa `videoId`. La URL del video será:
-https://www.youtube. om/watch?v=[videoId]    (reemplaza `videoId` en la URL con la ID del video sin los corchetes)
+A continuación, accede al vídeo de YouTube con esa `videoId`. The URL for the video will be:
+https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
 
-En el ejemplo anterior, la URL es https://www.youtube.com/watch?v=nVAaxZ34khk
+In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Dale un vistazo al video de YouTube con ese videoId y piensa en una pregunta de selección múltiple basada en el contenido del video.
+Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
 
 ### Añade la pregunta al archivo markdown
 
@@ -120,12 +117,14 @@ More answers
 1
 ```
 
-Añade/Actualiza el texto de la pregunta debajo de la parte que muestra:
+Add/Update the question text under the part that shows:
+
 ```
 # --question--
 
 ## --text--
 ```
+
 Añade/Actualiza las respuestas (`Answer 1`, `Answer 2`, y así) debajo de `## --answers--`. Asegúrate de actualizar el número debajo de ` ## --video-solution-- ` con el número de respuesta correcto. Puede añadir más respuestas posibles usando el mismo formato. La pregunta y las respuestas pueden estar rodeadas de comillas.
 
 ### Ejemplos de preguntas
@@ -134,14 +133,16 @@ Añade/Actualiza las respuestas (`Answer 1`, `Answer 2`, y así) debajo de `## -
 # --question--
 
 ## --text--
-¿Qué imprime este código de JavaScript en la consola?
+
+What does this JavaScript code log to the console?
+
 ```js
 console.log('hello world');
 ````
 
 ## --answers--
 
-hola *mundo*
+hello _world_
 
 ---
 
@@ -154,16 +155,16 @@ hola mundo
 ---
 
 ## --video-solution--
+
 3
 ````
 
 ````md
-
 # --question--
 
 ## --text--
 
-¿Qué se imprimirá después de ejecutar este código?:
+What will print out after running this code:
 
 ```py
 width = 15

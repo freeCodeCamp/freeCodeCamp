@@ -14,7 +14,11 @@
     },
     {
       "groupName": "Monaco Editor",
-      "matchPackageNames": ["monaco-editor", "monaco-editor-webpack-plugin", "react-monaco-editor"]
+      "matchPackageNames": [
+        "monaco-editor",
+        "monaco-editor-webpack-plugin",
+        "react-monaco-editor"
+      ]
     },
     {
       "matchPackageNames": ["normalize-url"],
@@ -22,9 +26,7 @@
     },
     {
       "groupName": "CodeSee",
-      "matchPackagePrefixes": [
-        "@codesee/"
-      ],
+      "matchPackagePrefixes": ["@codesee/"],
       "automerge": true
     }
   ],

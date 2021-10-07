@@ -26,7 +26,7 @@ var cat = {
 };
 ```
 
-In questo esempio, tutte le proprietà sono memorizzate come stringhe, come `name`, `legs` e `tails`. Per le proprietà puoi anche usare i numeri. Puoi anche omettere le virgolette per le proprietà di tipo stringa di una sola parola, come segue:
+In questo esempio, tutte le proprietà sono memorizzate come stringhe, come `name`, `legs`e `tails`. Per le proprietà puoi anche usare i numeri. Puoi anche omettere le virgolette per le proprietà di tipo stringa di una sola parola, come segue:
 
 ```js
 var anotherObject = {

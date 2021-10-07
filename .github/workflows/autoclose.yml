@@ -2,9 +2,9 @@ name: Autoclose
 on:
   pull_request_target:
     branches:
-      - "main"
+      - 'main'
     paths:
-      - ".gitignore"
+      - '.gitignore'
 
 jobs:
   autoclose:

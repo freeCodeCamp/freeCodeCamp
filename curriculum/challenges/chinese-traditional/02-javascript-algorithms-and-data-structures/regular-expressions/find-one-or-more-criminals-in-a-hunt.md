@@ -69,12 +69,14 @@ assert(
 你的正則表達式在`""`中不應該匹配到任何罪犯
 
 ```js
+reCriminals.lastIndex = 0;
 assert(!reCriminals.test(''));
 ```
 
 你的正則表達式在`P1P2P3`中不應該匹配到任何罪犯
 
 ```js
+reCriminals.lastIndex = 0;
 assert(!reCriminals.test('P1P2P3'));
 ```
 

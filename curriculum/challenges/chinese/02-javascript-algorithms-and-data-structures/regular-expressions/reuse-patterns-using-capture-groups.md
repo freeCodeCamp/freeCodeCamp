@@ -52,12 +52,14 @@ assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 你的正则表达式应该匹配字符串 `42 42 42`。
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('42 42 42'));
 ```
 
 你的正则表达式应该匹配字符串 `100 100 100`。
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('100 100 100'));
 ```
 
@@ -76,18 +78,21 @@ assert.equal('42 42'.match(reRegex.source), null);
 你的正则表达式不应该匹配字符串 `101 102 103`。
 
 ```js
+reRegex.lastIndex = 0;
 assert(!reRegex.test('101 102 103'));
 ```
 
 你的正则表达式不应匹配字符串 `1 2 3`。
 
 ```js
+reRegex.lastIndex = 0;
 assert(!reRegex.test('1 2 3'));
 ```
 
 你的正则表达式不应匹配字符串 `10 10 10`。
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('10 10 10'));
 ```
 

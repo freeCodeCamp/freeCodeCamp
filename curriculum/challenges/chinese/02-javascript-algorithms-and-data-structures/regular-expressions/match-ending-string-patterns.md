@@ -43,6 +43,7 @@ assert(lastRegex.flags == '');
 你应该在字符串 `The last car on a train is the caboose` 的末尾匹配 `caboose`。
 
 ```js
+lastRegex.lastIndex = 0;
 assert(lastRegex.test('The last car on a train is the caboose'));
 ```
 

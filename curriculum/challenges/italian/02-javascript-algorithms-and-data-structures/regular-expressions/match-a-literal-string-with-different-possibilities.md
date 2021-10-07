@@ -25,42 +25,49 @@ Completa l'espressione regolare `petRegex` per riconoscere gli animali domestici
 La tua espressione regolare `petRegex` dovrebbe restituire `true` per la stringa `John has a pet dog.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('John has a pet dog.'));
 ```
 
 La tua espressione regolare `petRegex` dovrebbe restituire `false` per la stringa `Emma has a pet rock.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Emma has a pet rock.'));
 ```
 
 La tua espressione regolare `petRegex` dovrebbe restituire `true` per la stringa `Emma has a pet bird.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Emma has a pet bird.'));
 ```
 
 La tua espressione regolare `petRegex` dovrebbe restituire `true` per la stringa `Liz has a pet cat.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Liz has a pet cat.'));
 ```
 
 La tua espressione regolare `petRegex` dovrebbe restituire `false` per la stringa `Kara has a pet dolphin.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Kara has a pet dolphin.'));
 ```
 
 La tua espressione regolare `petRegex` dovrebbe restituire `true` per la stringa `Alice has a pet fish.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Alice has a pet fish.'));
 ```
 
 La tua espressione regolare `petRegex` dovrebbe restituire `false` per la stringa `Jimmy has a pet computer.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Jimmy has a pet computer.'));
 ```
 
