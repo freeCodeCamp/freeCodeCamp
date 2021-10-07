@@ -1,0 +1,13 @@
+{
+  "name": "CSS Nutrition Label",
+  "isUpcomingChange": true,
+  "dashedName": "css-nutrition-label",
+  "order": 25,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [["615f2abbe7d18d49a1e0e1c8", "Part 1"]]
+}
