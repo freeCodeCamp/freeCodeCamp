@@ -9,5 +9,5 @@
     "moduleResolution": "node",
     "strict": true,
     "noEmit": true
-  },
+  }
 }

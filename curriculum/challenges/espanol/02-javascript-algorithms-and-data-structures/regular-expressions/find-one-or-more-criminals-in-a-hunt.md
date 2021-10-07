@@ -69,12 +69,14 @@ assert(
 Tu expresión regular no debe coincidir con ningún criminal en la cadena vacía `""`
 
 ```js
+reCriminals.lastIndex = 0;
 assert(!reCriminals.test(''));
 ```
 
 Tu regex no debe coincidir con ningún criminal en la cadena `P1P2P3`
 
 ```js
+reCriminals.lastIndex = 0;
 assert(!reCriminals.test('P1P2P3'));
 ```
 

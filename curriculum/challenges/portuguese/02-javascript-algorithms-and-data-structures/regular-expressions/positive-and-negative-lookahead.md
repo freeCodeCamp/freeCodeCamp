@@ -52,48 +52,56 @@ assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null);
 A regex não deve encontrar a string `astronaut`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('astronaut'));
 ```
 
 A regex não deve encontrar a string `banan1`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('banan1'));
 ```
 
 A regex deve encontrar a string `bana12`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('bana12'));
 ```
 
 A regex deve encontrar a string `abc123`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('abc123'));
 ```
 
 A regex não deve encontrar a string `12345`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('12345'));
 ```
 
 A regex deve encontrar a string `8pass99`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('8pass99'));
 ```
 
 A regex não deve encontrar a string `1a2bcde`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('1a2bcde'));
 ```
 
 A regex deve encontrar a string `astr1on11aut`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('astr1on11aut'));
 ```
 

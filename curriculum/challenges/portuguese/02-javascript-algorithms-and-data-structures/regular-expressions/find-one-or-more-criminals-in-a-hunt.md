@@ -69,12 +69,14 @@ assert(
 A regex não deve encontrar nenhum criminoso na string vazia `""`
 
 ```js
+reCriminals.lastIndex = 0;
 assert(!reCriminals.test(''));
 ```
 
 A regex não deve encontrar nenhum criminoso na string `P1P2P3`
 
 ```js
+reCriminals.lastIndex = 0;
 assert(!reCriminals.test('P1P2P3'));
 ```
 
