@@ -6,9 +6,9 @@
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 [![Rocket.Chat](https://chat.freecodecamp.org/api/v1/shield.svg?type=online&icon=false&name=Chat)](https://chat.freecodecamp.org/)
 
-## freeCodeCamp.org's open-source codebase and curriculum
+## The freeCodeCamp.org's open-source codebase and curriculum
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
+[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 50,000 people get their first developer job.
 
 Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
