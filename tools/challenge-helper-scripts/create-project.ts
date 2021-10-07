@@ -171,9 +171,11 @@ block: ${block}
 superBlock: Responsive Web Design
 isBeta: true
 ---
+
 ## Introduction to the ${title}
 
-This is a test for the new project-based curriculum.`;
+This is a test for the new project-based curriculum.
+`;
   const dirPath = path.resolve(
     __dirname,
     `../../client/src/pages/learn/${superBlock}/${block}/`
