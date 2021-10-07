@@ -364,7 +364,7 @@
   },
   "misc": {
     "offline": "Parece que no estás conectado, es posible que tu progreso no se guarde",
-    "server-offline": "The server could not be reached and your progress may not be saved. Please contact support if this message persists",
+    "server-offline": "The server could not be reached and your progress may not be saved. Please contact <0>support</0> if this message persists",
     "unsubscribed": "Haz cancelado tu subscripción exitosamente",
     "keep-coding": "Sea lo que sea que hagas, ¡sigue programando!",
     "email-signup": "Registrarse con Email",
@@ -463,7 +463,8 @@
     "no-account": "No hay cuenta de {{website}} asociada",
     "unlink-success": "Has desvinculado correctamente tu {{website}}",
     "provide-username": "Comprueba si has proporcionado un nombre de usuario y un reporte",
-    "report-sent": "Se envió un informe al equipo con {{email}} en copia"
+    "report-sent": "Se envió un informe al equipo con {{email}} en copia",
+    "certificate-missing": "The certification you tried to view does not exist"
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
