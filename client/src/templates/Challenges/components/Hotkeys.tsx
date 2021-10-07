@@ -5,18 +5,29 @@ import React from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { ChallengeFiles, Test } from '../../../redux/prop-types';
 
-import { canFocusEditorSelector, setEditorFocusability } from '../redux';
+import {
+  canFocusEditorSelector,
+  setEditorFocusability,
+  challengeFilesSelector,
+  submitChallenge,
+  challengeTestsSelector
+} from '../redux';
 import './hotkeys.css';
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
-  (canFocusEditor: boolean) => ({
-    canFocusEditor
+  challengeFilesSelector,
+  challengeTestsSelector,
+  (canFocusEditor: boolean, challengeFiles: ChallengeFiles, tests: Test[]) => ({
+    canFocusEditor,
+    challengeFiles,
+    tests
   })
 );
 
-const mapDispatchToProps = { setEditorFocusability };
+const mapDispatchToProps = { setEditorFocusability, submitChallenge };
 
 const keyMap = {
   NAVIGATION_MODE: 'escape',
@@ -29,19 +40,23 @@ const keyMap = {
 
 interface HotkeysProps {
   canFocusEditor: boolean;
+  challengeFiles: ChallengeFiles;
   children: React.ReactElement;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   editorRef?: React.Ref<HTMLElement> | any;
-  executeChallenge?: () => void;
+  executeChallenge: (isShouldCompletionModalOpen?: boolean) => void;
+  submitChallenge: () => void;
   innerRef: React.Ref<HTMLElement> | unknown;
   instructionsPanelRef?: React.RefObject<HTMLElement>;
   nextChallengePath: string;
   prevChallengePath: string;
   setEditorFocusability: (arg0: boolean) => void;
+  tests: Test[];
 }
 
 function Hotkeys({
   canFocusEditor,
+  challengeFiles,
   children,
   instructionsPanelRef,
   editorRef,
@@ -49,7 +64,9 @@ function Hotkeys({
   innerRef,
   nextChallengePath,
   prevChallengePath,
-  setEditorFocusability
+  setEditorFocusability,
+  submitChallenge,
+  tests
 }: HotkeysProps): JSX.Element {
   const handlers = {
     EXECUTE_CHALLENGE: (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -58,7 +75,18 @@ function Hotkeys({
       // TODO: 'enter' on its own also disables HotKeys, but default behaviour
       // should not be prevented in that case.
       e.preventDefault();
-      if (executeChallenge) executeChallenge();
+
+      // TODO: a lot of this is duplicated in editor.tsx, can we DRY this?
+      const editableRegion = challengeFiles?.find(
+        challengeFile => challengeFile.editableRegionBoundaries.length > 0
+      )?.editableRegionBoundaries;
+      const isProjectStep = editableRegion?.length === 2;
+      const testsArePassing = tests.every(test => test.pass && !test.err);
+
+      if (!testsArePassing && executeChallenge)
+        executeChallenge(!isProjectStep);
+
+      if (testsArePassing && isProjectStep) submitChallenge();
     },
     FOCUS_EDITOR: (e: React.KeyboardEvent) => {
       e.preventDefault();
