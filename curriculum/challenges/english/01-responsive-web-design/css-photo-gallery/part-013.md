@@ -1,5 +1,5 @@
 ---
-id: 6153938dce8b294ff8f5a4e9
+id: 615392916d83fa4f02f7e2cf
 title: Part 13
 challengeType: 0
 dashedName: part-13
@@ -7,16 +7,18 @@ dashedName: part-13
 
 # --description--
 
-The `justify-content` property determines how the items inside a flex container are positioned along the main axis, affecting their position and the space around them.
+You may have noticed that your images have all moved onto the same row, creating a horizontal scroll.
 
-Give your `#gallery` selector a `justify-content` property set to `center`.
+The `flex-wrap` property determines how your items should behave when the flex container is too small. Setting this property to `wrap` will allow your items to wrap to the next row/column (depending on your main axis), where `nowrap` will prevent your items from wrapping. When this is set to `nowrap`, items may either shrink to fit or overflow.
+
+Give the `#gallery` selector a `flex-wrap` property set to `wrap`. You should see your images take a four-column layout. This is because you set their `width` to `25%` in an earlier step.
 
 # --hints--
 
-Your `#gallery` selector should have a `justify-content` property set to `center`.
+Your `#gallery` selector should have a `flex-wrap` property set to `wrap`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.justifyContent === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.flexWrap === 'wrap');
 ```
 
 # --seed--
@@ -73,7 +75,11 @@ body {
 #gallery {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 }
 --fcc-editable-region--
+
+#gallery img {
+  width: 25%;
+  height: 300px;
+}
 ```

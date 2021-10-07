@@ -1,5 +1,5 @@
 ---
-id: 6153947986535e5117e60615
+id: 6153938dce8b294ff8f5a4e9
 title: Part 14
 challengeType: 0
 dashedName: part-14
@@ -7,16 +7,16 @@ dashedName: part-14
 
 # --description--
 
-The `align-items` property positions the flex content along the cross axis. In this case, with your `flex-direction` set to `row`, your cross axis would be vertical.
+The `justify-content` property determines how the items inside a flex container are positioned along the main axis, affecting their position and the space around them.
 
-To vertically center your images, give your `#gallery` selector an `align-items` property set to `center`.
+Give your `#gallery` selector a `justify-content` property set to `center`.
 
 # --hints--
 
-Your `#gallery` selector should have an `align-items` property set to `center`.
+Your `#gallery` selector should have a `justify-content` property set to `center`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.alignItems === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.justifyContent === 'center');
 ```
 
 # --seed--
@@ -74,7 +74,11 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
 }
 --fcc-editable-region--
+
+#gallery img {
+  width: 25%;
+  height: 300px;
+}
 ```

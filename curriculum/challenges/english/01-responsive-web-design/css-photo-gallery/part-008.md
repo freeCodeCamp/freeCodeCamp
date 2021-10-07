@@ -1,5 +1,5 @@
 ---
-id: 6153893900438b4643590367
+id: 615f171d05def3218035dc85
 title: Part 8
 challengeType: 0
 dashedName: part-8
@@ -7,26 +7,30 @@ dashedName: part-8
 
 # --description--
 
-Remove the margin from your `body` element, set the font to `Arial`, and give it a background color of `#EBE7E7`.
+Your images are currently too large, and you will not be able to see your CSS changes.
+
+Create a `#gallery img` selector to target your images. Give it a `width` property set to `25%`.
+
+Also set the `height` property to `300px` to keep your images a uniform size.
 
 # --hints--
 
-You should have a `body` selector.
+You should have a `#gallery img` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyle('body'))
+assert.exists(new __helpers.CSSHelp(document).getStyle('#gallery img'))
 ```
 
-Your `body` selector should have a `font-family` property set to `Arial`.
+Your `#gallery img` selector should have a `width` property set to `25%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily === 'Arial');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.width === '25%')
 ```
 
-Your `body` selector should have a `background-color` property set to `#EBE7E7`.
+Your `#gallery img` selector should have a `height` property set to `300px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor === 'rgb(235, 231, 231)');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.height === '300px');
 ```
 
 # --seed--

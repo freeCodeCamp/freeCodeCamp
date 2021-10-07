@@ -1,5 +1,5 @@
 ---
-id: 615392916d83fa4f02f7e2cf
+id: 6153908a366afb4d57185c8d
 title: Part 12
 challengeType: 0
 dashedName: part-12
@@ -7,16 +7,16 @@ dashedName: part-12
 
 # --description--
 
-The `flex-wrap` property determines how your items should behave when the flex container is too small. Setting this property to `wrap` will allow your items to wrap to the next row/column (depending on your main axis), where `nowrap` will prevent your items from wrapping. When this is set to `nowrap`, items may either shrink to fit or overflow.
+Flexbox can be thought of as having two axes, the main axis and the cross axis. The main axis is determined by the `flex-direction` property. If `flex-direction` is set to `row` or `row-reverse`, the main axis is horizontal. If `flex-direction` is set to `column` or `column-reverse`, the main axis is vertical.
 
-Give the `#gallery` selector a `flex-wrap` property set to `wrap`.
+Give your `#gallery` selector a `flex-direction` property set to `row`.
 
 # --hints--
 
-Your `#gallery` selector should have a `flex-wrap` property set to `wrap`.
+Your `#gallery` selector should have a `flex-direction` property set to `row`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.flexWrap === 'wrap');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.flexDirection === 'row');
 ```
 
 # --seed--
@@ -72,7 +72,11 @@ body {
 --fcc-editable-region--
 #gallery {
   display: flex;
-  flex-direction: row;
 }
 --fcc-editable-region--
+
+#gallery img {
+  width: 25%;
+  height: 300px;
+}
 ```

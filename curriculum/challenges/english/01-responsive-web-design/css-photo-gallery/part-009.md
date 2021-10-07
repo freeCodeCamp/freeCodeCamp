@@ -1,5 +1,5 @@
 ---
-id: 6153897c27f6334716ee5abe
+id: 6153893900438b4643590367
 title: Part 9
 challengeType: 0
 dashedName: part-9
@@ -7,32 +7,26 @@ dashedName: part-9
 
 # --description--
 
-Align your `.header` text in the center, give it a padding of `32px` on all sides, and set the background to `#E0DDDD`.
+Remove the margin from your `body` element, set the font to `Arial`, and give it a background color of `#EBE7E7`.
 
 # --hints--
 
-You should have a `.header` selector.
+You should have a `body` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyle('.header'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('body'))
 ```
 
-Your `.header` selector should have a `text-align` property set to `center`.
+Your `body` selector should have a `font-family` property set to `Arial`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.header')?.textAlign === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily === 'Arial');
 ```
 
-Your `.header` selector should have a `padding` property set to `32px`.
+Your `body` selector should have a `background-color` property set to `#EBE7E7`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.header')?.padding === '32px');
-```
-
-Your `.header` selector should have a `background-color` property set to `#E0DDDD`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.header')?.backgroundColor === 'rgb(224, 221, 221)');
+assert(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor === 'rgb(235, 231, 231)');
 ```
 
 # --seed--
@@ -73,13 +67,12 @@ assert(new __helpers.CSSHelp(document).getStyle('.header')?.backgroundColor === 
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #EBE7E7;
+--fcc-editable-region--
+
+--fcc-editable-region--
+
+#gallery img {
+  width: 25%;
+  height: 300px;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

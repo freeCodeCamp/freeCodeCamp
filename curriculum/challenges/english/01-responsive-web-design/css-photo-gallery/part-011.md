@@ -1,5 +1,5 @@
 ---
-id: 6153908a366afb4d57185c8d
+id: 615389bd81347947ea7ba896
 title: Part 11
 challengeType: 0
 dashedName: part-11
@@ -7,16 +7,22 @@ dashedName: part-11
 
 # --description--
 
-Flexbox can be thought of as having two axes, the main axis and the cross axis. The main axis is determined by the `flex-direction` property. If `flex-direction` is set to `row` or `row-reverse`, the main axis is horizontal. If `flex-direction` is set to `column` or `column-reverse`, the main axis is vertical.
+Flexbox is a one-dimensional CSS layout approach that focuses on the flow of content. It offers the ability to control the way items are spaced and aligned within a container.
 
-Give your `#gallery` selector a `flex-direction` property set to `row`.
+To set an element to use Flexbox, you give it a `display` property set to `flex`. Create a `#gallery` selector and give it that property.
 
 # --hints--
 
-Your `#gallery` selector should have a `flex-direction` property set to `row`.
+You should have a `#gallery` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.flexDirection === 'row');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery'));
+```
+
+Your `#gallery` selector should have a `display` property set to `flex`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.display === 'flex');
 ```
 
 # --seed--
@@ -70,8 +76,11 @@ body {
 }
 
 --fcc-editable-region--
-#gallery {
-  display: flex;
-}
+
 --fcc-editable-region--
+
+#gallery img {
+  width: 25%;
+  height: 300px;
+}
 ```

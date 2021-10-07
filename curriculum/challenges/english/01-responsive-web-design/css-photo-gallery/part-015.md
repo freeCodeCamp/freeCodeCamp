@@ -1,5 +1,5 @@
 ---
-id: 61539e07e7430b528fbffe21
+id: 6153947986535e5117e60615
 title: Part 15
 challengeType: 0
 dashedName: part-15
@@ -7,14 +7,16 @@ dashedName: part-15
 
 # --description--
 
-Give your `#gallery` selector a `padding` property set to `0 4px`.
+The `align-items` property positions the flex content along the cross axis. In this case, with your `flex-direction` set to `row`, your cross axis would be vertical.
+
+To vertically center your images, give your `#gallery` selector an `align-items` property set to `center`.
 
 # --hints--
 
-Your `#gallery` selector should have a `padding` property set to `0 4px`.
+Your `#gallery` selector should have an `align-items` property set to `center`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.padding === '0px 4px');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.alignItems === 'center');
 ```
 
 # --seed--
@@ -73,7 +75,11 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 --fcc-editable-region--
+
+#gallery img {
+  width: 25%;
+  height: 300px;
+}
 ```

@@ -1,5 +1,5 @@
 ---
-id: 615389bd81347947ea7ba896
+id: 6153897c27f6334716ee5abe
 title: Part 10
 challengeType: 0
 dashedName: part-10
@@ -7,22 +7,32 @@ dashedName: part-10
 
 # --description--
 
-Flexbox is a one-dimensional CSS layout approach that focuses on the flow of content. It offers the ability to control the way items are spaced and aligned within a container.
-
-To set an element to use Flexbox, you give it a `display` property set to `flex`. Create a `#gallery` selector and give it that property.
+Align your `.header` text in the center, give it a padding of `32px` on all sides, and set the background to `#E0DDDD`.
 
 # --hints--
 
-You should have a `#gallery` selector.
+You should have a `.header` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.header'));
 ```
 
-Your `#gallery` selector should have a `display` property set to `flex`.
+Your `.header` selector should have a `text-align` property set to `center`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.display === 'flex');
+assert(new __helpers.CSSHelp(document).getStyle('.header')?.textAlign === 'center');
+```
+
+Your `.header` selector should have a `padding` property set to `32px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.header')?.padding === '32px');
+```
+
+Your `.header` selector should have a `background-color` property set to `#E0DDDD`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.header')?.backgroundColor === 'rgb(224, 221, 221)');
 ```
 
 # --seed--
@@ -69,13 +79,12 @@ body {
   background: #EBE7E7;
 }
 
-.header {
-  text-align: center;
-  padding: 32px;
-  background: #E0DDDD;
+--fcc-editable-region--
+
+--fcc-editable-region--
+
+#gallery img {
+  width: 25%;
+  height: 300px;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

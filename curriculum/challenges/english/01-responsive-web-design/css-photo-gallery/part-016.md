@@ -1,5 +1,5 @@
 ---
-id: 61539f0aabfa22539645a99b
+id: 61539e07e7430b528fbffe21
 title: Part 16
 challengeType: 0
 dashedName: part-16
@@ -7,28 +7,14 @@ dashedName: part-16
 
 # --description--
 
-Create a `#gallery img` selector to target your images. Give it a `width` property set to `25%`. Because you are using Flexbox, this will display your images in a 4 column layout.
-
-Also set the `height` property to `300px` to keep your images a uniform size.
+Give your `#gallery` selector a `padding` property set to `0 4px`.
 
 # --hints--
 
-You should have a `#gallery img` selector.
+Your `#gallery` selector should have a `padding` property set to `0 4px`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyle('#gallery img'))
-```
-
-Your `#gallery img` selector should have a `width` property set to `25%`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.width === '25%')
-```
-
-Your `#gallery img` selector should have a `height` property set to `300px`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.height === '300px');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.padding === '0px 4px');
 ```
 
 # --seed--
@@ -81,16 +67,18 @@ body {
   background: #E0DDDD;
 }
 
+--fcc-editable-region--
 #gallery {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 0 4px;
 }
-
 --fcc-editable-region--
 
---fcc-editable-region--
+#gallery img {
+  width: 25%;
+  height: 300px;
+}
 ```
