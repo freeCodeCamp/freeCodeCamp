@@ -28,11 +28,11 @@ const target = meta?.find(m => m?.getAttribute('name') === 'viewport' && m?.getA
 assert.exists(target);
 ```
 
-The other `meta` element should have the `charset` attribute set to `UTF-8`.
+Your other `meta` element should have the `charset` attribute set to `UTF-8`.
 
 ```js
 const meta = [...document.querySelectorAll('meta')];
-const target = meta?.find(m => !m?.getAttribute('name') && !m?.getAttribute('content') && m?.getAttribute('charset') === 'UTF-8');
+const target = meta?.find(m => !m?.getAttribute('name') && !m?.getAttribute('content') && m?.getAttribute('charset')?.toLowerCase() === 'utf-8');
 assert.exists(target);
 ```
 

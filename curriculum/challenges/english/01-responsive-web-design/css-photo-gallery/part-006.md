@@ -74,12 +74,17 @@ Your ninth `img` element should have the `src` attribute set to `https://cdn.fre
 assert(document.querySelectorAll('img')?.[8]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg');
 ```
 
+Your tenth `img` element should have the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg`.
+
+```js
+assert(document.querySelectorAll('img')?.[9]?.getAttribute('src') === 'https://cdn.freecodecamp.org/curriculum/css-photo-gallery/10.jpg');
+```
+
 # --seed--
 
 ## --seed-contents--
 
 ```html
---fcc-editable-region--
 <!DOCTYPE html>
 <html>
   <head>
@@ -92,6 +97,7 @@ assert(document.querySelectorAll('img')?.[8]?.getAttribute('src') === 'https://c
     <div class="header">
       <h1>CSS FLEXBOX PHOTO GALLERY</h1>
     </div>
+--fcc-editable-region--
     <div id="gallery">
       <img />
       <img />
@@ -104,9 +110,9 @@ assert(document.querySelectorAll('img')?.[8]?.getAttribute('src') === 'https://c
       <img />
       <img />
     </div>
+--fcc-editable-region--
   </body>
 </html>
---fcc-editable-region--
 ```
 
 ```css
