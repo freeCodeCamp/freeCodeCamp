@@ -1,6 +1,7 @@
 This page describes how to contribute to the freeCodeCamp tutorials and projects that are completed using the CodeRoad VS Code extension.
 
 ## How the tutorials work
+
 The freeCodeCamp tutorials that use CodeRoad each have their own repo under the freeCodeCamp GitHub organization. They all start with `learn-`. For example, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
 
 Each tutorial repo has a `main` branch and a "version" branch, e.g. `v1.0.0`.
@@ -20,11 +21,13 @@ In order to make changes to commits on a version branch, you would need to rebas
 ## How to contribute
 
 ### Prerequisites
+
 Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`.
 
 There have been some issues with the latest version. If `coderoad --version` doesn't work after installing, downgrade to `0.7.0` with `npm install -g @coderoad/cli@0.7.0`.
 
 ### Working on `main`
+
 This set of instructions is for PRs that only make minor changes on `main` to **existing lessons**. That mainly consists of typo, grammar, hint, and instructional changes or fixes in the `TUTORIAL.md` file.
 
 For everything else, including adding or deleting lessons, follow the [working on a version branch instructions](#working-on-version-branch). You will not need to create a new version branch for this - you can create a PR following the instructions below.
@@ -47,12 +50,14 @@ Follow these instructions to make a PR, keeping in mind that instructions usuall
 - Make a PR
 
 ### Testing changes on `main`
+
 If you want to test your changes to `main` after using the above instructions, follow these instructions:
 
 - Follow the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
 - Start the tutorial using the `tutorial.json` file on the new branch
 
 ### Reviewing PR's to `main`
+
 If reviewing a PR that only changes `main` with instructional or grammar issues as described above, the changes in `TUTORIAL.md` should match the changes in `tutorial.json`.
 
 The `tutorial.json` file should not have changes to commit hashes, or step/level ids. Startup or level commands or file watchers likely should not be changed either. There are exceptions if there's an issue with a step, but they should be treated with more caution.
@@ -60,6 +65,7 @@ The `tutorial.json` file should not have changes to commit hashes, or step/level
 Also, keep in mind that instructions usually use the lessons around them for context, so make sure they make sense.
 
 ### Working on version branch
+
 > [!WARNING]
 > 
 > Reminder: Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
@@ -86,10 +92,12 @@ Follow these instructions to create a new version:
 - Leave it here for reviewers
 
 ### Testing changes to a version branch
+
 - Follow the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
 - Start the tutorial using the `tutorial.json` file on whatever fork the changes are on. Make sure to use the file on the `feat: version-X.X.Y` branch and not the `main` branch
 
 ### Pushing a new version
+
 Before pushing a new version, view the new `feat/version-vX.X.Y` (will be merged to `main`) branch on the user's fork. Make sure there are additions to the `CHANGELOG.md` file that include the new changes, and the version in the two spots of `coderoad.yaml` matches the new version branch.
 
 If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG` and `coderoad.yaml` files, have tested the changes using the instructions above, and want to push a new version of a tutorial:
@@ -114,13 +122,17 @@ If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG`
 - Finally, if any PRs for this version exists, close them
 
 ### How to revert to a previous version
+
 - Create a new branch off the latest `main` with `git checkout -b revert/to-version-X.X.X`
 - Revert all commits on this branch up to and including the commit of the version after the one you want to revert to. For example, you may have commits that look like this:
+
 ```
 fix: typo
 release: version 1.0.1
 fix: typo
 release: version 1.0.0
 ```
+
 If you want to revert to v1.0.0, revert all the commits from `release: version 1.0.1` and after
+
 - Create a PR. Give it a title of `revert: to version X.X.X`

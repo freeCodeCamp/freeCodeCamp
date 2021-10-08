@@ -50,7 +50,7 @@
     "@freecodecamp/strip-comments": "3.0.1",
     "@loadable/component": "5.15.0",
     "@reach/router": "1.3.4",
-    "@stripe/react-stripe-js": "1.5.0",
+    "@stripe/react-stripe-js": "1.6.0",
     "@stripe/stripe-js": "1.19.1",
     "@types/react-scrollable-anchor": "0.6.1",
     "algoliasearch": "4.10.5",
@@ -67,8 +67,8 @@
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
     "final-form": "4.20.4",
-    "gatsby": "3.14.1",
-    "gatsby-cli": "3.14.0",
+    "gatsby": "3.14.2",
+    "gatsby-cli": "3.14.1",
     "gatsby-plugin-advanced-sitemap": "1.6.0",
     "gatsby-plugin-create-client-paths": "3.14.0",
     "gatsby-plugin-manifest": "3.14.0",
@@ -83,7 +83,7 @@
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
     "monaco-editor": "0.27.0",
-    "nanoid": "3.1.28",
+    "nanoid": "3.1.29",
     "normalize-url": "4.5.1",
     "path-browserify": "1.0.1",
     "postcss": "8.3.9",
@@ -127,8 +127,8 @@
   },
   "devDependencies": {
     "@babel/types": "7.15.6",
-    "@codesee/babel-plugin-instrument": "0.105.0",
-    "@codesee/tracker": "0.105.0",
+    "@codesee/babel-plugin-instrument": "0.109.0",
+    "@codesee/tracker": "0.109.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.1.2",
     "@types/jest": "26.0.24",
@@ -160,7 +160,7 @@
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.3",
     "serve": "12.0.1",
-    "webpack": "5.57.1",
-    "webpack-cli": "4.8.0"
+    "webpack": "5.58.1",
+    "webpack-cli": "4.9.0"
   }
 }

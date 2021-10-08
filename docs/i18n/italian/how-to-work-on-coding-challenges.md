@@ -287,7 +287,7 @@ Le sfide dovrebbero avere il numero minimo di test per verificare che un camper 
 
 Il nostro obbiettivo è comunicare il singolo punto che la sfida sta cercando di insegnare, e testare che abbiano capito il punto.
 
-I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`.  In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test.  Le funzioni disponibili sono definite in _client/src/utils/curriculum-helpers.ts_.
+I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`. In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test. Le funzioni disponibili sono definite in _client/src/utils/curriculum-helpers.ts_.
 
 ## Formattare codice di seed
 

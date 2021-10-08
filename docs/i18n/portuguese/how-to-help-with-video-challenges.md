@@ -8,28 +8,25 @@ As páginas de desafio em vídeo são criadas por membros da equipe freeCodeCamp
 
 Você pode ajudar criando questões de múltipla escolha e adicionando-as aos arquivos 'markdown' para os desafios em vídeo.
 
-
 ## Modelo de desafio
 
 Abaixo está um modelo de arquivo markdown do desafio.
 
 ````md
 ---
-id: Unique identifier (alphanumerical, MongoDB_id)
-title: Challenge Title
+id: Identificador exclusivo (alfanumérico, MongoDB_id)
+title: Título do desafio
 challengeType: 11
-videoId: 'YouTube videoId for video challenge'
+videoId: 'videoId do desafio por vídeo no YouTube'
 forumTopicId: 12345
 ---
 
-# --description--
+# --descrição--
 
-Challenge description text, in markdown
+Texto de descrição do desafio, em markdown
 
 ```html
-<div>
-  example code
-</div>
+<div>código de exemplo</div>
 ````
 
 # --question--
@@ -55,7 +52,6 @@ Mais respostas
 ## --video-solution--
 
 O número da resposta correta fica aqui.
-
 ````
 
 ## Criando perguntas para desafios em video
@@ -76,6 +72,7 @@ Escolha um arquivo dentre as opções acima.
 Primeiro, localize o videoId.
 
 Por exemplo, no código a seguir a partir do cabeçalho de um arquivo markdown de desafio de vídeo, o videoId é "nVAaxZ34khk". No GitHub, a informação deve estar contida em formato tabular.
+
 ````
 ---
 id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
@@ -84,7 +81,7 @@ videoId: nVAaxZ34khk
 ```
 
 Em seguida, acesse o vídeo no YouTube correspondente com aquele `videoId`. A URL do vídeo será:
-https://www.youtube.com/watch?v=[videoId]    (troque `videoId` na URL pelo ID do vídeo - sem colchetes)
+https://www.youtube.com/watch?v=[videoId]  (troque `videoId` na URL pelo ID do vídeo - sem colchetes)
 
 No exemplo acima, a URL seria https://www.youtube.com/watch?v=nVAaxZ34khk
 
@@ -121,27 +118,31 @@ Mais respostas
 ```
 
 Adicione/atualize o texto da pergunta sob a parte que diz:
+
 ```
 # --question--
 
 ## --text--
 ```
+
 Adicione/Atualize (`Answer 1`, `Answer 2`, e assim por diante) sob `## --answers--`. Confirme se o número sob  `## --video-solution--` seja o número da resposta correta. Você pode adicionar mais respostas possíveis usando o mesmo formato. Tanto a pergunta quanto as respostas podem estar entre aspas.
 
 ### Exemplos de perguntas
 
 ````md
-# --question--
+# --pergunta--
 
-## --text--
+## --texto--
+
 O que esse código JavaScript mostra no console?
+
 ```js
 console.log('hello world');
 ````
 
 ## --answers--
 
-hello *world*
+hello _world_
 
 ---
 
@@ -154,14 +155,14 @@ hello world
 ---
 
 ## --video-solution--
+
 3
 ````
 
 ````md
+# --pergunta--
 
-# --question--
-
-## --text--
+## --texto--
 
 O que aparecerá após executar esse código:
 

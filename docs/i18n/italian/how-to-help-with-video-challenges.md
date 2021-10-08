@@ -8,7 +8,6 @@ Le pagine della sfida video sono create dai membri del team freeCodeCamp. Anche 
 
 Puoi aiutare creando domande a scelta multipla legate a sezioni del video e aggiungendo le domande ai file markdown per le sfide video.
 
-
 ## Template delle sfide
 
 Di seguito è riportato un modello di come appaiono i file markdown delle sfide.
@@ -27,9 +26,7 @@ forumTopicId: 12345
 Challenge description text, in markdown
 
 ```html
-<div>
-  example code
-</div>
+<div>example code</div>
 ````
 
 # --question--
@@ -55,7 +52,6 @@ Altre risposte
 ## --video-solution--
 
 Il numero della risposta corretta va qui.
-
 ````
 
 ## Creare domande per le sfide video
@@ -76,6 +72,7 @@ Scegli un file markdown dalle opzioni sopra.
 Come prima cosa, trova l'id del video.
 
 Ad esempio, nel seguente codice preso dall'intestazione di un file di markdown di una sfida video, il videoId è "nVAaxZ34khk". Su GitHub, le informazioni dovrebbero essere visibili in una tabella.
+
 ````
 ---
 id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
@@ -83,12 +80,12 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Come cosa successiva, accedi al video YouYube con quel `videoId`. L'URL del video sarà:
-https://www.youtube.com/watch?v=[videoId]    (sostituisci`videoId` nell'URL con l'ID del video, senza parentesi quadre)
+Come cosa successiva, accedi al video YouYube con quel `videoId`. The URL for the video will be:
+https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
 
-Nell'esempio precedente, l'URL è https://www.youtube.com/watch?v=nVAaxZ34khk
+In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Consulta velocemente il video YouTube con quel videoId e pensa a una domanda a scelta multipla basata sul contenuto del video.
+Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
 
 ### Aggiungere la domanda al file markdown
 
@@ -120,12 +117,14 @@ More answers
 1
 ```
 
-Aggiungi/Cambia il testo della domanda sotto la parte che dice:
+Add/Update the question text under the part that shows:
+
 ```
 # --question--
 
 ## --text--
 ```
+
 Add/Update answers (`Answer 1`, `Answer 2`, and so on) sotto `## --answers--`. Assicurati di aggiornare il numero sotto `## --video-solution--` con il numero della risposta corretta. Puoi aggiungere altre possibili domande seguendo lo stesso formato. Le domande e le risposte possono essere racchiuse tra virgolette.
 
 ### Esempi di domande
@@ -134,14 +133,16 @@ Add/Update answers (`Answer 1`, `Answer 2`, and so on) sotto `## --answers--`. A
 # --question--
 
 ## --text--
-Cosa visualizzerà questo codice JavaScript nella console?
+
+What does this JavaScript code log to the console?
+
 ```js
 console.log('hello world');
 ````
 
 ## --answers--
 
-hello *world*
+hello _world_
 
 ---
 
@@ -154,16 +155,16 @@ hello world
 ---
 
 ## --video-solution--
+
 3
 ````
 
 ````md
-
 # --question--
 
 ## --text--
 
-Cosa verrà visualizzato dopo l'esecuzione di questo codice:
+What will print out after running this code:
 
 ```py
 width = 15

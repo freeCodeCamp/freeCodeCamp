@@ -8,7 +8,7 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-Innanzitutto, aggiungi una nuova immagine sotto quella esistente. Imposta l'attributo `src` su `https://bit.ly/fcc-running-cats`.
+Innanzitutto, aggiungi una nuova immagine sotto quella esistente. Imposta l'attributo `src` su `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 Sarebbe bello se questa immagine potesse essere larga esattamente come lo schermo del nostro telefono.
 
@@ -34,10 +34,10 @@ La tua nuova immagine non dovrebbe avere la classe `smaller-image`.
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-La tua nuova immagine dovrebbe avere un `src` di `https://bit.ly/fcc-running-cats`.
+La tua nuova immagine dovrebbe avere un attributo `src` di `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 ```js
-assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
+assert($('img:eq(1)').attr('src') === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg');
 ```
 
 Il tuo nuovo elemento `img` dovrebbe avere una parentesi angolare di chiusura.
@@ -87,7 +87,7 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -148,8 +148,8 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive">
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive">
 
   <p>Things cats love:</p>
   <ul>

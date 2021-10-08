@@ -143,7 +143,7 @@ Per le sfide video, devi cambiare alcune cose. Come prima cosa aggiungi la nuova
       ...
 ```
 
-Quindi aggiungi un id per la nuova lingua ogni sfida video in un blocco verificato (`auditedCerts`). Per esempio, se `auditedCerts` in `all-langs.js` include `scientific-computing-with-python` per `dothraki`, allora devi aggiungere `dothraki` in `videoLocaleIds`.  Il frontespizio dovrebbe essere simile a questo:
+Quindi aggiungi un id per la nuova lingua ogni sfida video in un blocco verificato (`auditedCerts`). Per esempio, se `auditedCerts` in `all-langs.js` include `scientific-computing-with-python` per `dothraki`, allora devi aggiungere `dothraki` in `videoLocaleIds`. Il frontespizio dovrebbe essere simile a questo:
 
 ```yml
 videoLocaleIds:
