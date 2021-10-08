@@ -967,10 +967,13 @@ const Editor = (props: EditorProps): JSX.Element => {
       updateOutputZone();
     }
 
-    editor?.focus();
-    if (isProjectStep() && editor) {
-      if (hasChangedContents) showEditableRegion(editor);
+    if (hasChangedContents && !isProjectStep()) editor?.focus();
 
+    if (isProjectStep() && editor) {
+      if (hasChangedContents) {
+        editor.focus();
+        showEditableRegion(editor);
+      }
       // resetting test output
       // TODO: DRY this - createOutputNode doesn't also need to set this up.
       const testButton = document.getElementById('test-button');
