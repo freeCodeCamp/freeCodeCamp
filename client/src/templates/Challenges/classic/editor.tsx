@@ -1078,7 +1078,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     const editor = data.editor;
     editor?.layout();
-    if (data.startEditDecId) {
+    if (isProjectStep()) {
       updateDescriptionZone();
       updateOutputZone();
     }
