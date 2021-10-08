@@ -78,7 +78,6 @@ export class NavLinks extends Component<NavLinksProps, {}> {
   render() {
     const {
       displayMenu,
-      i18n,
       fetchState,
       t,
       toggleNightMode,
@@ -194,7 +193,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           <select
             className='nav-link-lang-dropdown'
             onChange={this.handleLanguageChange}
-            value={i18n.language as string}
+            value={clientLocale}
           >
             {locales.map(lang => (
               <option key={'lang-' + lang} value={lang}>
