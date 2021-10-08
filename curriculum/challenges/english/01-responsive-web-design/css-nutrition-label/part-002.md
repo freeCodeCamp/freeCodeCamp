@@ -1,15 +1,13 @@
 ---
-id: 615f2abbe7d18d49a1e0e1c8
-title: Part 1
+id: 615f2d4150fe0d4cbd0f2628
+title: Part 2
 challengeType: 0
-dashedName: part-1
+dashedName: part-2
 ---
 
 # --description--
 
-We've provided a basic HTML boilerplate for you.
-
-Create an `h1` element within your `body` element and give it the text `Nutrition Facts`.
+Below your `h1` element, add a `p` element with the text `8 servings per container`.
 
 # --hints--
 
@@ -32,6 +30,7 @@ Test 1
     <title>Nutrition Label</title>
   </head>
   <body>
+    <h1>Nutrition Facts</h1>
 
   </body>
 </html>

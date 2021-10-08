@@ -1,0 +1,58 @@
+---
+id: 615f39d7da41b15851fa3fb9
+title: Part 10
+challengeType: 0
+dashedName: part-10
+---
+
+# --description--
+
+Give your `.label` selector a `margin` property set to `20px auto`, and a `padding` property set to `0 7px`.
+
+# --hints--
+
+Test 1
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nutrition Label</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="label">
+      <h1>Nutrition Facts</h1>
+      <p>8 servings per container</p>
+      <p>Serving size 2/3 cup (55g)</p>
+    </div>
+  </body>
+</html>
+```
+
+```css
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+--fcc-editable-region--
+.label {
+  border: 2px solid black;
+  width: 270px;
+}
+--fcc-editable-region--
+```

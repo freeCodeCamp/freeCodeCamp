@@ -1,0 +1,68 @@
+---
+id: 615f3cafd794015aa9547a6d
+title: Part 12
+challengeType: 0
+dashedName: part-12
+---
+
+# --description--
+
+Remember that the use of `h1`, `h2`, and similar tags determine the semantic structure of your HTML. However, you can adjust the CSS of these elements to control the visual flow and heirarchy.
+
+Create an `h1` rule and set the `font-weight` property to `800`. This will make your `h1` text more bold.
+
+# --hints--
+
+Test 1
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nutrition Label</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="label">
+      <h1>Nutrition Facts</h1>
+      <p>8 servings per container</p>
+      <p>Serving size 2/3 cup (55g)</p>
+    </div>
+  </body>
+</html>
+```
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.label {
+  border: 2px solid black;
+  width: 270px;
+  margin: 20px auto;
+  padding: 0 7px;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+```

@@ -1,15 +1,13 @@
 ---
-id: 615f2abbe7d18d49a1e0e1c8
-title: Part 1
+id: 615f34948891834dd77655a6
+title: Part 3
 challengeType: 0
-dashedName: part-1
+dashedName: part-3
 ---
 
 # --description--
 
-We've provided a basic HTML boilerplate for you.
-
-Create an `h1` element within your `body` element and give it the text `Nutrition Facts`.
+Add a second `p` element with the text `Serving size 2/3 cup (55g)`.
 
 # --hints--
 
@@ -32,7 +30,9 @@ Test 1
     <title>Nutrition Label</title>
   </head>
   <body>
-
+    <h1>Nutrition Facts</h1>
+    <p>8 servings per container</p>
+    
   </body>
 </html>
 --fcc-editable-region--
