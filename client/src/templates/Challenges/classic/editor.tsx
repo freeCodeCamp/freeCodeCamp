@@ -53,7 +53,7 @@ interface EditorProps {
   description: string;
   dimensions: DimensionsType;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
-  executeChallenge: (isShouldCompletionModalOpen?: boolean) => void;
+  executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   ext: ExtTypes;
   fileKey: FileKeyTypes;
   initialEditorContent: string;
@@ -360,7 +360,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             props.executeChallenge();
           }
         } else {
-          props.executeChallenge(true);
+          props.executeChallenge({ showCompletionModal: true });
         }
       }
     });

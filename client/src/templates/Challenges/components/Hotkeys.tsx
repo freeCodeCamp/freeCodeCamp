@@ -44,7 +44,7 @@ interface HotkeysProps {
   children: React.ReactElement;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   editorRef?: React.Ref<HTMLElement> | any;
-  executeChallenge: (isShouldCompletionModalOpen?: boolean) => void;
+  executeChallenge?: (options: { showCompletionModal: boolean }) => void;
   submitChallenge: () => void;
   innerRef: React.Ref<HTMLElement> | unknown;
   instructionsPanelRef?: React.RefObject<HTMLElement>;
@@ -84,7 +84,7 @@ function Hotkeys({
       const testsArePassing = tests.every(test => test.pass && !test.err);
 
       if (!testsArePassing && executeChallenge)
-        executeChallenge(!isProjectStep);
+        executeChallenge({ showCompletionModal: !isProjectStep });
 
       if (testsArePassing && isProjectStep) submitChallenge();
     },

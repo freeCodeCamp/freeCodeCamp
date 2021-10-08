@@ -79,7 +79,7 @@ interface ShowClassicProps {
   challengeMounted: (arg0: string) => void;
   createFiles: (arg0: ChallengeFile[]) => void;
   data: { challengeNode: ChallengeNodeType };
-  executeChallenge: () => void;
+  executeChallenge: (options: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;

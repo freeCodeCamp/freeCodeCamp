@@ -11,7 +11,7 @@ import {
 import { Form } from '../../../components/formHelpers';
 
 interface SubmitProps {
-  isShouldCompletionModalOpen: boolean;
+  showCompletionModal: boolean;
 }
 
 interface FormProps extends WithTranslation {
@@ -43,9 +43,9 @@ export class SolutionForm extends Component<FormProps> {
       // updates values on store
       this.props.updateSolutionForm(validatedValues.values);
       if (validatedValues.invalidValues.length === 0) {
-        this.props.onSubmit({ isShouldCompletionModalOpen: true });
+        this.props.onSubmit({ showCompletionModal: true });
       } else {
-        this.props.onSubmit({ isShouldCompletionModalOpen: false });
+        this.props.onSubmit({ showCompletionModal: false });
       }
     }
   };
