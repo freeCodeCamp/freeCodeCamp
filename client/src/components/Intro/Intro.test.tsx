@@ -3,11 +3,11 @@ import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import { createStore } from '../../redux/createStore';
 
-import Intro from './';
+import Intro from '.';
 
 jest.mock('../../analytics');
 
-function rendererCreateWithRedux(ui) {
+function rendererCreateWithRedux(ui: JSX.Element) {
   return renderer.create(<Provider store={createStore()}>{ui}</Provider>);
 }
 
@@ -57,7 +57,7 @@ const loggedInProps = {
   complete: true,
   isSignedIn: true,
   name: 'Development User',
-  navigate: () => {},
+  navigate: () => jest.fn(),
   pending: false,
   slug: '/',
   username: 'DevelopmentUser'
@@ -67,7 +67,7 @@ const loggedOutProps = {
   complete: true,
   isSignedIn: false,
   name: '',
-  navigate: () => {},
+  navigate: () => jest.fn(),
   pending: false,
   slug: '/',
   username: ''
