@@ -59,7 +59,7 @@ export function* executeCancellablePreviewSaga() {
   previewTask = yield fork(previewChallengeSaga);
 }
 
-export function* executeChallengeSaga({ payload: { showCompletionModal } }) {
+export function* executeChallengeSaga({ payload }) {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
@@ -97,7 +97,7 @@ export function* executeChallengeSaga({ payload: { showCompletionModal } }) {
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
-    if (challengeComplete && showCompletionModal) {
+    if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
     }
 
