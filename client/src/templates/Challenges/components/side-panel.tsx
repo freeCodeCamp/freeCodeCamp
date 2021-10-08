@@ -74,7 +74,6 @@ export function SidePanel({
     >
       {challengeTitle}
       {challengeDescription}
-      {/* @ts-expect-error ToolPanel's redux props are being inferred here, but we don't need to provide them here */}
       {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}
       <TestSuite tests={tests} />
     </div>
