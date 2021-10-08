@@ -389,17 +389,6 @@ function createShowCert(app) {
         });
       }
 
-      if (!showName) {
-        return res.json({
-          messages: [
-            {
-              type: 'info',
-              message: 'flash.name-not-public'
-            }
-          ]
-        });
-      }
-
       if (user.isCheater) {
         return res.json({
           messages: [
@@ -476,6 +465,15 @@ function createShowCert(app) {
         }
 
         const { username, name } = user;
+
+        if (!showName) {
+          return res.json({
+            certTitle,
+            username,
+            date: completedDate,
+            completionTime
+          });
+        }
 
         return res.json({
           certTitle,
