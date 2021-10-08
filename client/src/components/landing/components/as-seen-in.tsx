@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AsSeenInText } from '../../../assets/images/components';
 
-const AsSeenIn = () => {
+const AsSeenIn = (): JSX.Element => {
   const { t } = useTranslation();
 
   return (

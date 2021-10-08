@@ -1,30 +1,29 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-responsive';
 import wideImg from '../../../assets/images/landing/wide-image.png';
 import { Spacer, ImageLoader } from '../../helpers';
 
-const propTypes = {
-  page: PropTypes.string
-};
+interface propTypes {
+  page: string;
+}
 
 const LARGE_SCREEN_SIZE = 1200;
 
-const imageConfig = {
+interface imageConfig {
   donate: {
-    spacerSize: 0,
-    height: 345,
-    width: 585
-  },
+    readonly spacerSize: 0;
+    readonly height: 345;
+    readonly width: 585;
+  };
   landing: {
-    spacerSize: 2,
-    height: 442,
-    width: 750
-  }
-};
+    readonly spacerSize: 2;
+    readonly height: 442;
+    readonly width: 750;
+  };
+}
 
-function CampersImage({ page }) {
+function CampersImage({ page }: propTypes): JSX.Element {
   const { t } = useTranslation();
   const { spacerSize, height, width } = imageConfig[page];
 
@@ -44,5 +43,4 @@ function CampersImage({ page }) {
 }
 
 CampersImage.displayName = 'CampersImage';
-CampersImage.propTypes = propTypes;
 export default CampersImage;

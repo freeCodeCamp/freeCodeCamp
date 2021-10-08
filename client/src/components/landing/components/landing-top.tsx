@@ -1,5 +1,4 @@
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import envData from '../../../../../config/env.json';
@@ -13,15 +12,14 @@ import {
   AlibabaLogo
 } from '../../../assets/images/components';
 import { Spacer } from '../../helpers';
-import BigCallToAction from './BigCallToAction';
-import CampersImage from './CampersImage';
+import BigCallToAction from './big-call-to-action';
+import CampersImage from './campers-image';
 
-const propTypes = {
-  page: PropTypes.string
-};
-
+interface propTypes {
+  page: string;
+}
 const { clientLocale } = envData;
-function LandingTop({ page }) {
+function LandingTop({ page }: propTypes): JSX.Element {
   const { t } = useTranslation();
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale
@@ -64,5 +62,4 @@ function LandingTop({ page }) {
 }
 
 LandingTop.displayName = 'LandingTop';
-LandingTop.propTypes = propTypes;
 export default LandingTop;

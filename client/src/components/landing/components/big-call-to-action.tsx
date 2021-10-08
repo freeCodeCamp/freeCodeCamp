@@ -1,13 +1,12 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Login from '../../Header/components/Login';
 
-const propTypes = {
-  page: PropTypes.string
-};
+interface propTypes {
+  page: string;
+}
 
-const BigCallToAction = ({ page }) => {
+const BigCallToAction = ({ page }: propTypes): JSX.Element => {
   const { t } = useTranslation();
 
   return (
@@ -20,5 +19,4 @@ const BigCallToAction = ({ page }) => {
 };
 
 BigCallToAction.displayName = 'BigCallToAction';
-BigCallToAction.propTypes = propTypes;
 export default BigCallToAction;

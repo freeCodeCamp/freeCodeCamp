@@ -16,7 +16,7 @@ import {
   DonationOptionsAlertText
 } from '../components/Donation/DonationTextComponents';
 import { Spacer, Loader } from '../components/helpers';
-import CampersImage from '../components/landing/components/CampersImage';
+import CampersImage from '../components/landing/components/campers-image';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 
 interface ExecuteGaArg {
