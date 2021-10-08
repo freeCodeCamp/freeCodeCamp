@@ -1,6 +1,6 @@
 # Manual de DevOps
 
-Esta guía te ayudará a comprender nuestra infraestructura y cómo le damos mantenimiento a nuestras plataformas. Si bien esta guía no contiene detalles exhaustivos de todas las operaciones, ésta podría utilizarse como referencia para tu comprensión de los sistemas.
+Esta guía te ayudará a comprender nuestra infraestructura y cómo le damos mantenimiento a nuestras plataformas. Si bien esta guía no contiene detalles exhaustivos de todas las operaciones, esta podría utilizarse como referencia para tu comprensión de los sistemas.
 
 Déjanos saber, si tienes algún comentario o consulta, y la aclararemos con mucho gusto.
 
