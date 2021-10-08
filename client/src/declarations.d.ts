@@ -9,6 +9,8 @@ declare module '*.svg' {
   const content: string;
   export default content;
 }
+
+declare module '*.png';
 declare namespace NodeJS {
   interface Global {
     MathJax: {

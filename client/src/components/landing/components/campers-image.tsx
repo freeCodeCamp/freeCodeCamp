@@ -4,28 +4,34 @@ import Media from 'react-responsive';
 import wideImg from '../../../assets/images/landing/wide-image.png';
 import { Spacer, ImageLoader } from '../../helpers';
 
-interface propTypes {
+const LARGE_SCREEN_SIZE = 1200;
+
+interface imageSize {
+  spacerSize: number;
+  height: number;
+  width: number;
+}
+
+interface pageNumber {
   page: string;
 }
 
-const LARGE_SCREEN_SIZE = 1200;
+const donateImageSize: imageSize = {
+  spacerSize: 0,
+  height: 345,
+  width: 585
+};
 
-interface imageConfig {
-  donate: {
-    readonly spacerSize: 0;
-    readonly height: 345;
-    readonly width: 585;
-  };
-  landing: {
-    readonly spacerSize: 2;
-    readonly height: 442;
-    readonly width: 750;
-  };
-}
-
-function CampersImage({ page }: propTypes): JSX.Element {
+const landingImageSize: imageSize = {
+  spacerSize: 2,
+  height: 442,
+  width: 750
+};
+function CampersImage({ page }: pageNumber): JSX.Element {
   const { t } = useTranslation();
-  const { spacerSize, height, width } = imageConfig[page];
+
+  const { spacerSize, height, width } =
+    page === 'donate' ? donateImageSize : landingImageSize;
 
   return (
     <Media minWidth={LARGE_SCREEN_SIZE}>
@@ -34,7 +40,7 @@ function CampersImage({ page }: propTypes): JSX.Element {
         alt={t('landing.hero-img-description')}
         className='landing-page-image'
         height={height}
-        src={wideImg}
+        src={wideImg as string}
         width={width}
       />
       <p className='text-center caption'>{t('landing.hero-img-description')}</p>
