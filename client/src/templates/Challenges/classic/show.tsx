@@ -315,7 +315,14 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   renderEditor() {
-    const { challengeFiles } = this.props;
+    const {
+      challengeFiles,
+      data: {
+        challengeNode: {
+          fields: { tests }
+        }
+      }
+    } = this.props;
     const { description, title } = this.getChallenge();
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
@@ -326,6 +333,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           description={description}
           editorRef={this.editorRef}
           hasEditableBoundries={this.hasEditableBoundries()}
+          initialTests={tests}
           resizeProps={this.resizeProps}
           title={title}
         />

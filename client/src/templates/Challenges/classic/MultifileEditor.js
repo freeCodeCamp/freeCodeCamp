@@ -31,6 +31,7 @@ const propTypes = {
   fileKey: PropTypes.string,
   initialEditorContent: PropTypes.string,
   initialExt: PropTypes.string,
+  initialTests: PropTypes.array,
   output: PropTypes.arrayOf(PropTypes.string),
   resizeProps: PropTypes.shape({
     onStopResize: PropTypes.func,
@@ -84,6 +85,7 @@ class MultifileEditor extends Component {
       containerRef,
       description,
       editorRef,
+      initialTests,
       theme,
       resizeProps,
       title,
@@ -139,6 +141,7 @@ class MultifileEditor extends Component {
                   description={targetEditor === 'indexjsx' ? description : null}
                   editorRef={editorRef}
                   fileKey='indexjsx'
+                  initialTests={initialTests}
                   key='indexjsx'
                   resizeProps={resizeProps}
                   theme={editorTheme}
@@ -159,6 +162,7 @@ class MultifileEditor extends Component {
                   }
                   editorRef={editorRef}
                   fileKey='indexhtml'
+                  initialTests={initialTests}
                   key='indexhtml'
                   resizeProps={resizeProps}
                   theme={editorTheme}
@@ -177,6 +181,7 @@ class MultifileEditor extends Component {
                   description={targetEditor === 'indexcss' ? description : null}
                   editorRef={editorRef}
                   fileKey='indexcss'
+                  initialTests={initialTests}
                   key='indexcss'
                   resizeProps={resizeProps}
                   theme={editorTheme}
@@ -196,6 +201,7 @@ class MultifileEditor extends Component {
                   description={targetEditor === 'indexjs' ? description : null}
                   editorRef={editorRef}
                   fileKey='indexjs'
+                  initialTests={initialTests}
                   key='indexjs'
                   resizeProps={resizeProps}
                   theme={editorTheme}

@@ -37,7 +37,8 @@ import {
   setEditorFocusability,
   updateFile,
   challengeTestsSelector,
-  submitChallenge
+  submitChallenge,
+  initTests
 } from '../redux';
 
 import './editor.css';
@@ -57,6 +58,8 @@ interface EditorProps {
   fileKey: FileKeyTypes;
   initialEditorContent: string;
   initialExt: string;
+  initTests: (tests: Test[]) => void;
+  initialTests: Test[];
   output: string[];
   resizeProps: ResizePropsType;
   saveEditorContent: () => void;
@@ -122,7 +125,8 @@ const mapDispatchToProps = {
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  submitChallenge
+  submitChallenge,
+  initTests
 };
 
 const modeMap = {
@@ -181,7 +185,7 @@ const initialData: EditorProperties = {
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
-  const { editorRef, fileKey } = props;
+  const { editorRef, fileKey, initTests } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -980,6 +984,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     return tests.some(test => test.err);
   }
 
+  // runs every update to the editor and when the challenge is reset
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
     // editor.
@@ -993,6 +998,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
 
     if (hasChangedContents && !hasEditableRegion()) editor?.focus();
+
+    if (props.initialTests) initTests(props.initialTests);
 
     if (hasEditableRegion() && editor) {
       if (hasChangedContents) {
