@@ -16,7 +16,7 @@ import AuthOrProfile from './components/auth-or-profile';
 import { NavLinks } from './components/nav-links';
 import { UniversalNav } from './components/universal-nav';
 
-const { apiLocation } = envData;
+const { apiLocation, clientLocale } = envData;
 
 jest.mock('../../analytics');
 
@@ -136,7 +136,6 @@ describe('<NavLinks />', () => {
   });
 
   it('has expected available languages in the language dropdown', () => {
-    const defaultLanguage = 'en';
     const landingPageProps = {
       fetchState: {
         pending: false
@@ -147,7 +146,7 @@ describe('<NavLinks />', () => {
         theme: 'default'
       },
       i18n: {
-        language: defaultLanguage
+        language: 'en'
       },
       t: t,
       toggleNightMode: (theme: string) => theme
@@ -158,8 +157,34 @@ describe('<NavLinks />', () => {
     expect(
       hasLanguageHeader(view) &&
         hasLanguageDropdown(view) &&
-        hasDefaultLanguageInLanguageDropdown(view, defaultLanguage) &&
         hasAllAvailableLanguagesInDropdown(view)
+    ).toBeTruthy();
+  });
+
+  it('has default language selected in language dropdown based on client config', () => {
+    const landingPageProps = {
+      fetchState: {
+        pending: false
+      },
+      user: {
+        isDonating: true,
+        username: 'moT01',
+        theme: 'default'
+      },
+      i18n: {
+        language: 'en'
+      },
+      t: t,
+      toggleNightMode: (theme: string) => theme
+    };
+    const utils = ShallowRenderer.createRenderer();
+    utils.render(<NavLinks {...landingPageProps} />);
+    const view = utils.getRenderOutput();
+    expect(
+      hasLanguageHeader(view) &&
+        hasLanguageDropdown(view) &&
+        hasAllAvailableLanguagesInDropdown(view) &&
+        hasDefaultLanguageInLanguageDropdown(view, clientLocale)
     ).toBeTruthy();
   });
 });
@@ -320,7 +345,6 @@ const hasDefaultLanguageInLanguageDropdown = (
   defaultLanguage: string
 ) => {
   const { children } = navigationLinks(component, 'language-dropdown');
-
   return children.props.value === defaultLanguage;
 };
 
