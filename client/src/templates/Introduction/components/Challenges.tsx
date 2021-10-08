@@ -1,22 +1,22 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, ReactNodeArray } from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { completedChallengesSelector, executeGA } from '../../../redux';
 
-const mapStateToProps = state => {
-  return createSelector(completedChallengesSelector, completedChallenges => ({
+const mapStateToProps = (state: any) => {
+  return createSelector(completedChallengesSelector, (completedChallenges: { id: number; }[]) => ({
     completedChallenges: completedChallenges.map(({ id }) => id)
   }))(state);
 };
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ executeGA }, dispatch);
 
 const propTypes = {
@@ -28,13 +28,15 @@ const propTypes = {
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
 export class Challenges extends Component {
+  static displayName: string;
+  static propTypes: { challengesWithCompleted: PropTypes.Requireable<Number[]>; executeGA: PropTypes.Requireable<(...args: any) => any>; isProjectBlock: PropTypes.Requireable<boolean>; };
   constructor(...props) {
     super(...props);
 
     this.handleChallengeClick = this.handleChallengeClick.bind(this);
   }
 
-  handleChallengeClick(slug) {
+  handleChallengeClick(slug: string) {
     return () => {
       return this.props.executeGA({
         type: 'event',
@@ -46,13 +48,14 @@ export class Challenges extends Component {
     };
   }
 
-  renderCheckMark(isCompleted) {
+  renderCheckMark(isCompleted: boolean) {
     return isCompleted ? (
       <GreenPass style={mapIconStyle} />
     ) : (
       <GreenNotCompleted style={mapIconStyle} />
     );
   }
+  
 
   render() {
     const { challengesWithCompleted, isProjectBlock } = this.props;
@@ -102,3 +105,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withTranslation()(Challenges));
+
