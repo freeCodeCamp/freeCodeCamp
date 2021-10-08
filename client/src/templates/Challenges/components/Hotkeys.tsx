@@ -44,7 +44,7 @@ interface HotkeysProps {
   children: React.ReactElement;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   editorRef?: React.Ref<HTMLElement> | any;
-  executeChallenge?: (options: { showCompletionModal: boolean }) => void;
+  executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
   submitChallenge: () => void;
   innerRef: React.Ref<HTMLElement> | unknown;
   instructionsPanelRef?: React.RefObject<HTMLElement>;
@@ -76,6 +76,8 @@ function Hotkeys({
       // should not be prevented in that case.
       e.preventDefault();
 
+      if (!executeChallenge) return;
+
       // TODO: a lot of this is duplicated in editor.tsx, can we DRY this?
       const editableRegion = challengeFiles?.find(
         challengeFile => challengeFile.editableRegionBoundaries.length > 0
@@ -83,10 +85,15 @@ function Hotkeys({
       const isProjectStep = editableRegion?.length === 2;
       const testsArePassing = tests.every(test => test.pass && !test.err);
 
-      if (!testsArePassing && executeChallenge)
-        executeChallenge({ showCompletionModal: !isProjectStep });
-
-      if (testsArePassing && isProjectStep) submitChallenge();
+      if (isProjectStep) {
+        if (testsArePassing) {
+          submitChallenge();
+        } else {
+          executeChallenge();
+        }
+      } else {
+        executeChallenge({ showCompletionModal: true });
+      }
     },
     FOCUS_EDITOR: (e: React.KeyboardEvent) => {
       e.preventDefault();
