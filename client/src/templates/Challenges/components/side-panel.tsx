@@ -4,7 +4,7 @@ import { createSelector } from 'reselect';
 
 import { mathJaxScriptLoader } from '../../../utils/script-loaders';
 import { challengeTestsSelector } from '../redux';
-import TestSuite from './Test-Suite';
+import TestSuite from './test-suite';
 import ToolPanel from './tool-panel';
 
 import './side-panel.css';
