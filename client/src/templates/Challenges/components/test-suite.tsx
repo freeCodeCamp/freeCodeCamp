@@ -5,7 +5,16 @@ import GreenPass from '../../../assets/icons/green-pass';
 import Initial from '../../../assets/icons/initial';
 
 import './test-suite.css';
-import { Test } from '../../../redux/prop-types';
+import { ChallengeTest, Test } from '../../../redux/prop-types';
+
+type TestSuiteTest = {
+  err?: string;
+  pass?: boolean;
+} & ChallengeTest;
+
+function isTestSuiteTest(test: Test): test is TestSuiteTest {
+  return 'text' in test;
+}
 
 interface TestSuiteProps {
   tests?: Test[];
@@ -27,9 +36,11 @@ function getAccessibleText(text: string, err?: string, pass?: boolean) {
 }
 
 function TestSuite({ tests }: TestSuiteProps): JSX.Element {
+  const testSuiteTests = tests?.filter(isTestSuiteTest) || [];
+
   return (
     <div className='challenge-test-suite'>
-      {tests?.map(({ err, pass = false, text = '' }, index) => {
+      {testSuiteTests.map(({ err, pass = false, text = '' }, index) => {
         const isInitial = !pass && !err;
         const statusIcon = pass && !err ? <GreenPass /> : <Fail />;
         return (

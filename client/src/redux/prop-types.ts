@@ -205,7 +205,7 @@ export type Test = {
   pass?: boolean;
   err?: string;
   text?: string;
-} & ChallengeTest;
+} & (ChallengeTest | CertTest);
 
 export type ChallengeTest = {
   text: string;
