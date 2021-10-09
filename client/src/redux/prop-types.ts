@@ -204,7 +204,8 @@ export type Dimensions = {
 export type Test = {
   pass?: boolean;
   err?: string;
-} & (ChallengeTest | CertTest);
+  text?: string;
+} & ChallengeTest;
 
 export type ChallengeTest = {
   text: string;
