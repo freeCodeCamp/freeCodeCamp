@@ -13,10 +13,28 @@ Wrap the text `2/3 cup (55g)` in a `span` element, and give it a `class` attribu
 
 # --hints--
 
-Test 1
+You should create a new `span` element.
 
 ```js
+assert(document.querySelector('span'));
+```
 
+Your new `span` element should have the `class` attribute set to `right`.
+
+```js
+assert(document.querySelector('span')?.classList?.contains('right'));
+```
+
+Your `.right` element should have the text `2/3 cup (55g)`.
+
+```js
+assert(document.querySelector('span')?.textContent === '2/3 cup (55g)');
+```
+
+Your `p` element should still have the text `Serving size 2/3 cup (55g)`.
+
+```js
+assert(document.querySelectorAll('p')?.[1]?.innerText === 'Serving size 2/3 cup (55g)');
 ```
 
 # --seed--
@@ -38,7 +56,7 @@ Test 1
       <h1 class="bold">Nutrition Facts</h1>
       <div class="divider"></div>
       <p>8 servings per container</p>
-      <p>Serving size 2/3 cup (55g)</p>
+      <p class="bold">Serving size 2/3 cup (55g)</p>
     </div>
 --fcc-editable-region--
   </body>

@@ -13,10 +13,10 @@ Give your `.label` selector a `width` property set to `270px`.
 
 # --hints--
 
-Test 1
+Your `.label` selector should have a `width` property set to `270px`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.label')?.width === '270px');
 ```
 
 # --seed--

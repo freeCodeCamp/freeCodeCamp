@@ -13,10 +13,28 @@ Create a `div` element below your `h1` element, and give it a `class` attribute 
 
 # --hints--
 
-Test 1
+You should create a new `div`.
 
 ```js
+assert(document.querySelectorAll('div')?.length === 2);
+```
 
+Your new `div` should have the `class` attribute set to `divider`.
+
+```js
+assert(document.querySelectorAll('div')?.[1]?.classList?.contains('divider'));
+```
+
+Your `.divider` element should be within your `.label` element.
+
+```js
+assert(document.querySelector('.label')?.querySelector('.divider'));
+```
+
+Your `.divider` element should come after your `h1` element.
+
+```js
+assert(document.querySelector('.divider')?.previousElementSibling?.localName === 'h1');
 ```
 
 # --seed--

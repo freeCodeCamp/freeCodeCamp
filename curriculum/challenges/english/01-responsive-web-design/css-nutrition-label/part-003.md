@@ -11,10 +11,28 @@ Add a second `p` element with the text `Serving size 2/3 cup (55g)`.
 
 # --hints--
 
-Test 1
+You should have a second `p` element.
 
 ```js
+assert(document.querySelectorAll('p')?.length === 2);
+```
 
+Your second `p` element should be within your `body` element.
+
+```js
+assert(document.querySelectorAll('p')?.[1]?.parentElement?.localName === 'body');
+```
+
+Your second `p` element should come after your existing `p` element.
+
+```js
+assert(document.querySelectorAll('p')?.[1]?.previousElementSibling?.localName === 'p');
+```
+
+Your second `p`` element should have the text `Serving size 2/3 cup (55g)`.
+
+```js
+assert(document.querySelectorAll('p')?.[1]?.innerText === 'Serving size 2/3 cup (55g)');
 ```
 
 # --seed--

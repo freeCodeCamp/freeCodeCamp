@@ -13,10 +13,16 @@ To solve this, reset the box model by creating a `*` selector and giving it a `b
 
 # --hints--
 
-Test 1
+You should create a `*` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('*'));
+```
 
+Your `*` selector should have a `box-sizing` property set to `border-box`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('*')?.boxSizing === 'border-box');
 ```
 
 # --seed--

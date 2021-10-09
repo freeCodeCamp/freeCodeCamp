@@ -11,10 +11,28 @@ Create a new `.lg` selector and give it a `height` property set to `10px`. Also 
 
 # --hints--
 
-Test 1
+You should have a new `.lg` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.lg'));
+```
 
+Your `.lg` selector should have a `height` property set to `10px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.lg')?.height === '10px');
+```
+
+You should have a new `.lg, .md` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.lg, .md'));
+```
+
+Your `.lg, .md` selector should have a `background-color` property set to `black`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.lg, .md')?.backgroundColor === 'black');
 ```
 
 # --seed--

@@ -13,10 +13,10 @@ Give your `h1` selector a `letter-spacing` property set to `0.15px` to space the
 
 # --hints--
 
-Test 1
+Your `h1` selector should have a `letter-spacing` property set to `0.15px`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.letterSpacing === '0.15px');
 ```
 
 # --seed--

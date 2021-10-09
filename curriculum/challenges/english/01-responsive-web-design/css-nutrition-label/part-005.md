@@ -13,10 +13,16 @@ Remember that fonts with spaces in the name must be wrapped in quotes for CSS.
 
 # --hints--
 
-Test 1
+You should have a `body` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('body'));
+```
 
+Your `body` selector should have a `font-family` property set to `"Open Sans", sans-serif`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily === '"Open Sans", sans-serif');
 ```
 
 # --seed--

@@ -11,10 +11,16 @@ Create a `p` selector and remove all margins.
 
 # --hints--
 
-Test 1
+You should create a `p` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('p'));
+```
 
+Your `p` selector should have a `margin` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('p')?.margin === '0px');
 ```
 
 # --seed--

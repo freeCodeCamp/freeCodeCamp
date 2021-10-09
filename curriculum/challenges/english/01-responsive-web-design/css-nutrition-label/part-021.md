@@ -11,10 +11,10 @@ Give your `h1` element a `class` attribute set to `bold`. This will make the tex
 
 # --hints--
 
-Test 1
+Your `h1` element should have a `class` attribute set to `bold`.
 
 ```js
-
+assert(document.querySelector('h1')?.classList?.contains('bold'));
 ```
 
 # --seed--
@@ -36,7 +36,7 @@ Test 1
       <h1>Nutrition Facts</h1>
       <div class="divider"></div>
       <p>8 servings per container</p>
-      <p>Serving size 2/3 cup (55g)</p>
+      <p class="bold">Serving size 2/3 cup (55g)</p>
     </div>
 --fcc-editable-region--
   </body>

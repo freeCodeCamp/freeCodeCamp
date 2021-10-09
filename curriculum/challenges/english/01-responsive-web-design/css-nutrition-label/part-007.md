@@ -11,10 +11,23 @@ Wrap your `h1` and `p` elements in a `div` element. Give that `div` a `class` at
 
 # --hints--
 
-Test 1
+You should create a new `div` element.
 
 ```js
+assert(document.querySelector('div'));
+```
 
+Your new `div` element should have the `class` attribute set to `label`.
+
+```js
+assert(document.querySelector('div')?.classList?.contains('label'));
+```
+
+Your `h1` and `p` elements should be within your new `.label` element.
+
+```js
+const children = [...document.querySelectorAll('h1'), ...document.querySelectorAll('p')];
+assert(children?.every(child => child?.parentElement?.classList?.contains('label')));
 ```
 
 # --seed--

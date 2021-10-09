@@ -11,10 +11,16 @@ The font is a bit small. Create an `html` selector and set the font to have a si
 
 # --hints--
 
-Test 1
+You should have an `html` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('html'));
+```
 
+Your `html` selector should have a `font-size` property set to `16px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('html')?.fontSize === '16px');
 ```
 
 # --seed--

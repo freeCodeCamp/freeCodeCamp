@@ -11,10 +11,23 @@ Within your `.calories-info` element, create a `p` element. Give that `p` elemen
 
 # --hints--
 
-Test 1
+You should create a new `p` element within your `.calories-info` element.
 
 ```js
+assert(document.querySelector('.calories-info')?.children?.[0]?.localName === 'p');
+```
 
+Your new `p` element should have a `class` attribute set to `bold sm-text`.
+
+```js
+assert(document.querySelector('.calories-info')?.children?.[0]?.classList.contains('bold'));
+assert(document.querySelector('.calories-info')?.children?.[0]?.classList.contains('sm-text'));
+```
+
+Your new `p` element should have the text `Amount per serving`.
+
+```js
+assert(document.querySelector('.calories-info')?.children?.[0]?.innerText === 'Amount per serving');
 ```
 
 # --seed--

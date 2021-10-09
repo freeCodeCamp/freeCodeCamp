@@ -11,10 +11,10 @@ Give your `.label` selector a `margin` property set to `20px auto`, and a `paddi
 
 # --hints--
 
-Test 1
+Your `.label` selector should have a `margin` property set to `0 7px`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.label')?.margin === '0px 7px');
 ```
 
 # --seed--

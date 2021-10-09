@@ -13,10 +13,16 @@ Create a new `.right` selector and set the `float` property to `right`.
 
 # --hints--
 
-Test 1
+You should create a new `.right` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.right'));
+```
 
+Your `.right` selector should have a `float` property set to `right`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.right')?.float === 'right');
 ```
 
 # --seed--

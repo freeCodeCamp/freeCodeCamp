@@ -13,10 +13,16 @@ Create a `.label` selector and give it a `border` set to `2px solid black`.
 
 # --hints--
 
-Test 1
+You should have a `.label` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.label'));
+```
 
+Your `.label` selector should have a `border` property set to `2px solid black`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.label')?.border === '2px solid black');
 ```
 
 # --seed--

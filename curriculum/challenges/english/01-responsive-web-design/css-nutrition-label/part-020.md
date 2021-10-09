@@ -13,10 +13,28 @@ Go ahead and remove the `font-weight` property from your `h1` selector as well.
 
 # --hints--
 
-Test 1
+You should have a `.bold` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.bold'));
+```
 
+Your `.bold` selector should have a `font-weight` property set to `800`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.bold')?.fontWeight === '800');
+```
+
+Your `h1` selector should not have a `font-weight` property.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.fontWeight === "");
+```
+
+You should not remove your `h1` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1'));
 ```
 
 # --seed--
@@ -37,7 +55,7 @@ Test 1
       <h1>Nutrition Facts</h1>
       <div class="divider"></div>
       <p>8 servings per container</p>
-      <p>Serving size 2/3 cup (55g)</p>
+      <p class="bold">Serving size 2/3 cup (55g)</p>
     </div>
   </body>
 </html>

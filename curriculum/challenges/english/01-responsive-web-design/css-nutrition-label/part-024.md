@@ -11,10 +11,26 @@ Wrap everything within the `.label` element in a new `header` element.
 
 # --hints--
 
-Test 1
+You should create a new `header` element.
 
 ```js
+assert(document.querySelector('header'));
+```
 
+Your `header` element should be within your `.label` element.
+
+```js
+assert(document.querySelector('header')?.parentElement?.classList?.contains('label'));
+```
+
+Your `h1`, `div`, and `p` elements should be within your new `header` element.
+
+```js
+const children = document.querySelector('header')?.children;
+assert(children?.[0]?.localName === 'h1');
+assert(children?.[1]?.localName === 'div');
+assert(children?.[2]?.localName === 'p');
+assert(children?.[3]?.localName === 'p');
 ```
 
 # --seed--

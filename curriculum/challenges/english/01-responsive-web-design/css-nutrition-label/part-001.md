@@ -13,10 +13,22 @@ Create an `h1` element within your `body` element and give it the text `Nutritio
 
 # --hints--
 
-Test 1
+You should add a new `h1` element.
 
 ```js
+assert.exists(document.querySelector('h1'));
+```
 
+Your `h1` element should be within your `body` element.
+
+```js
+assert(document.querySelector('h1')?.parentElement?.localName === 'body');
+```
+
+Your `h1` element should have the text `Nutrition Facts`.
+
+```js
+assert(document.querySelector('h1')?.innerText === 'Nutrition Facts');
 ```
 
 # --seed--

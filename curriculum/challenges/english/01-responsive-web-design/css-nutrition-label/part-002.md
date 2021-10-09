@@ -11,10 +11,28 @@ Below your `h1` element, add a `p` element with the text `8 servings per contain
 
 # --hints--
 
-Test 1
+You should add a new `p` element.
 
 ```js
+assert.exists(document.querySelector('p'));
+```
 
+Your `p` element should be within your `body` element.
+
+```js
+assert(document.querySelector('p')?.parentElement?.localName === 'body');
+```
+
+Your `p` element should come after your `h1` element.
+
+```js
+assert(document.querySelector('p')?.previousElementSibling?.localName === 'h1');
+```
+
+Your `p` element should have the text `8 servings per container`.
+
+```js
+assert(document.querySelector('p')?.innerText === '8 servings per container');
 ```
 
 # --seed--

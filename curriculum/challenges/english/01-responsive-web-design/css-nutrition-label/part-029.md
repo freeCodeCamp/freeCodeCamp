@@ -11,10 +11,22 @@ Create a new `div` below your `.lg` element and give it a `class` attribute set 
 
 # --hints--
 
-Test 1
+You should create another `div` element.
 
 ```js
+assert(document.querySelectorAll('div')?.length === 4);
+```
 
+Your new `div` should have a `class` attribute set to `calories-info`.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.classList?.contains('calories-info'));
+```
+
+Your new `div` should come after the `.lg` element.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.previousElementSibling?.classList?.contains('lg'));
 ```
 
 # --seed--

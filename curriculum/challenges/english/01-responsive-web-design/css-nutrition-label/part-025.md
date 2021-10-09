@@ -11,10 +11,25 @@ Now update your `h1` selector to be `header h1`, to specifically target your `h1
 
 # --hints--
 
-Test 1
+You should have a `header h1` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('header h1'));
+```
 
+You should not have an `h1` selector.
+
+```js
+assert.isNull(new __helpers.CSSHelp(document).getStyle('h1'));
+```
+
+You should not change any properties in the selector.
+
+```js
+const style = new __helpers.CSSHelp(document).getStyle('header h1');
+assert(style?.textAlign === 'center');
+assert(style?.margin === '-4px 0px');
+assert(style?.letterSpacing === '0.15px');
 ```
 
 # --seed--

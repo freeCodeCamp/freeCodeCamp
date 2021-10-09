@@ -7,14 +7,28 @@ dashedName: part-26
 
 # --description--
 
-Create a new `div` element below your `.label` element, and give it a `class` attribute set to `divider lg`.
+Create a new `div` element below your `header` element, and give it a `class` attribute set to `divider lg`.
 
 # --hints--
 
-Test 1
+You should create a new `div` element.
 
 ```js
+assert(document.querySelectorAll('div')?.length === 3);
+```
 
+Your new `div` element should come after your `header` element.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.localName === 'div');
+```
+
+Your new `div` element should have the `class` attribute set to `divider lg`.
+
+```js
+const div = document.querySelector('.label')?.lastElementChild;
+assert(div?.classList?.contains('divider'));
+assert(div?.classList?.contains('lg'));
 ```
 
 # --seed--

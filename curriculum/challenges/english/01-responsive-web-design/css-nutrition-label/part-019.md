@@ -13,10 +13,10 @@ Give your second `p` element a `class` attribute set to `bold`.
 
 # --hints--
 
-Test 1
+Your second `p` element should have a `class` attribute set to `bold`.
 
 ```js
-
+assert(document.querySelectorAll('p')?.[1]?.classList?.contains('bold'));
 ```
 
 # --seed--

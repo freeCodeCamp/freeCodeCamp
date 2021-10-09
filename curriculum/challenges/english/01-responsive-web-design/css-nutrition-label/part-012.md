@@ -13,10 +13,16 @@ Create an `h1` rule and set the `font-weight` property to `800`. This will make 
 
 # --hints--
 
-Test 1
+You should create an `h1` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('h1'));
+```
 
+Your `h1` selector should have a `font-weight` property set to `800`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.fontWeight === '800');
 ```
 
 # --seed--

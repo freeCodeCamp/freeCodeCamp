@@ -11,10 +11,10 @@ Give your `h1` selector a `text-align` property of `center`.
 
 # --hints--
 
-Test 1
+Your `h1` selector should have a `text-align` property set to `center`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.textAlign === 'center');
 ```
 
 # --seed--

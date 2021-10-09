@@ -11,10 +11,22 @@ Create a selector for your new `.divider` and set the `border-bottom` property t
 
 # --hints--
 
-Test 1
+You should create a `.divider` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.divider'));
+```
 
+Your `.divider` selector should have a `border-bottom` property set to `1px solid #888989`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.divider')?.borderBottom === '1px solid rgb(136, 137, 137)');
+```
+
+Your `.divider` selector should have a `margin` property set to `2px 0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.divider')?.margin === '2px 0px');
 ```
 
 # --seed--

@@ -11,10 +11,10 @@ Fine-tune the placement of your `h1` by giving it a top and bottom margin of `-4
 
 # --hints--
 
-Test 1
+Your `h1` selector should have a `margin` property set to `-4px 0`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.margin === '-4px 0px');
 ```
 
 # --seed--
