@@ -123,6 +123,20 @@ async (getUserInput) => {
 };
 ```
 
+# —-notes—-
+```js
+
+IP addresses are stored to the database in order to assess the number of likes.
+- GDPR regulations consider an IP address, even dynamic ones that most of us have, to be personal identifying information.
+- This project does not require storing other identifying information (such as an email or home address), that can be used with a person's IP address to identify them.
+However, you can still choose to anonymise your IP address in the following ways:
+1. Set the last octet of an IPv4 address to 0 (for example, 127.0.0.1 --> 127.0.0.0)
+2. Set the last 32 bits of an IPv6 address to 0:0 ( for example, 2001:db8:3333:4444:5555:6666:7777:8888 --> 2001:db8:3333:4444:5555:6666:0:0)
+3. Replacing your IP address with its SHA-1 hash (use an online SHA-1 hash generator tool, or look up SHA-1 hash on your browser to obtain this).
+
+```
+
+
 # --solutions--
 
 ```js
