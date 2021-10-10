@@ -327,13 +327,15 @@
   "relational-databases": {
     "title": "Bancos de dados relacionais",
     "intro": [
-      "placeholder"
+      "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos."
     ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Aprenda bancos de dados relacionais",
         "intro": [
-          "placeholder"
+          "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e manipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
+          "Depois, você aprenderá a criar e trabalhar com bancos de dados relacionados usando o PostgreSQL, um sistema de gerenciamento de banco de dados, e o SQL, a linguagem destes bancos de dados.",
+          "Por fim, você aprenderá o Git, um sistema de controle de versão, e o GitHub, um serviço de hospedagem e repositório de código - duas ferramentas essenciais para todo o desenvolvedor."
         ]
       }
     }

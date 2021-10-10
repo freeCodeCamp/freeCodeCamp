@@ -364,7 +364,7 @@
   },
   "misc": {
     "offline": "Você parece estar off-line, seu progresso pode não ser salvo",
-    "server-offline": "The server could not be reached and your progress may not be saved. Please contact <0>support</0> if this message persists",
+    "server-offline": "O servidor não pôde ser alcançado e seu progresso pode não ser salvo. Entre em contato com <0>suporte</0> se esta mensagem persistir",
     "unsubscribed": "Sua assinatura foi cancelada com sucesso",
     "keep-coding": "Seja o que for, continue programando!",
     "email-signup": "Inscrição via e-mail",
@@ -464,7 +464,7 @@
     "unlink-success": "Você desvinculou seu {{website}} com sucesso",
     "provide-username": "Verifique se você forneceu um nome de usuário e um relatório",
     "report-sent": "Um relatório foi enviado para a equipe com {{email}} em cópia",
-    "certificate-missing": "The certification you tried to view does not exist"
+    "certificate-missing": "A certificação que você tentou visualizar não existe"
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
