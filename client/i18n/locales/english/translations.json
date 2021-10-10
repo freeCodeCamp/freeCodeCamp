@@ -111,7 +111,7 @@
     },
     "labels": {
       "username": "Username",
-      "name": "Display Name",
+      "display-name": "Display Name",
       "location": "Location",
       "picture": "Picture",
       "about": "About",
@@ -124,7 +124,7 @@
       "solution": "Solution",
       "solution-for": "Solution for {{projectTitle}}",
       "my-profile": "My profile",
-      "display-name": "My Display Name",
+      "my-display-name": "My Display Name",
       "my-location": "My location",
       "my-about": "My about",
       "my-points": "My points",

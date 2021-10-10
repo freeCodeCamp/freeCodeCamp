@@ -88,7 +88,7 @@ class PrivacySettings extends Component<PrivacyProps> {
             {!isLocked && (
               <>
                 <ToggleSetting
-                  action={t('settings.labels.display-name')}
+                  action={t('settings.labels.my-display-name')}
                   explain={t('settings.private-name')}
                   flag={!showName}
                   flagName='name'
