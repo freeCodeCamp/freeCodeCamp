@@ -327,13 +327,15 @@
   "relational-databases": {
     "title": "Database relazionali",
     "intro": [
-      "segnaposto"
+      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects."
     ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Conosci i Database Relazionali",
         "intro": [
-          "segnaposto"
+          "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
+          "Next, you will learn how to create and work with relational databases using PostgreSQL, a database management system, and SQL, the language of these databases.",
+          "Finally, you will learn Git, the version control system, and GitHub, a code repository hosting service - two essential tools of every developer."
         ]
       }
     }
