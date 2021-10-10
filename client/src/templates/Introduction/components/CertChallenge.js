@@ -82,8 +82,11 @@ const CertChallenge = ({
     numberOfSteps: 0,
     completedCount: 0
   });
-  const [hasCompletedRequiredSteps, setHasCompletedRequiredSteps] =
+  const [hasCompletedStepsToClaim, setHasCompletedStepsToClaim] =
     useState(false);
+  const [hasCompletedStepsToShare, setHasCompletedStepsToShare] =
+    useState(false);
+  const [showCertificationCard, setShowCertificatonCard] = useState(false);
   const [isProjectsCompleted, setIsProjectsCompleted] = useState(false);
 
   useEffect(() => {
@@ -128,9 +131,24 @@ const CertChallenge = ({
         stepVal => typeof stepVal === 'boolean' && stepVal
       ).length + projectsCompleted;
     const numberOfSteps = Object.keys(steps).length;
-    setHasCompletedRequiredSteps(completedCount === numberOfSteps);
+
+    if (steps?.isHonest && isProjectsCompleted) {
+      setHasCompletedStepsToClaim(true);
+    }
+
+    if (steps?.isShowCerts && steps?.isShowProfile) {
+      setHasCompletedStepsToShare(true);
+    }
+
     setStepState({ numberOfSteps, completedCount });
     setIsProjectsCompleted(projectsCompleted);
+    setShowCertificatonCard(
+      userLoaded &&
+        isSignedIn &&
+        (!isCertified ||
+          !hasCompletedStepsToShare ||
+          (!hasCompletedStepsToClaim && verificationComplete))
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [steps, canClaimCert, certVerificationMessage]);
 
@@ -139,11 +157,6 @@ const CertChallenge = ({
   const i18nCertText = t(`intro:misc-text.certification`, {
     cert: i18nSuperBlock
   });
-
-  const showCertificationCard =
-    userLoaded &&
-    isSignedIn &&
-    (!isCertified || (!hasCompletedRequiredSteps && verificationComplete));
 
   const createClickHandler = certSlug => e => {
     e.preventDefault();
@@ -167,20 +180,32 @@ const CertChallenge = ({
       )}
       <>
         {isSignedIn && (
-          <Button
-            block={true}
-            bsStyle='primary'
-            className='cert-btn'
-            disabled={
-              !canClaimCert || (isCertified && !hasCompletedRequiredSteps)
-            }
-            href={certLocation}
-            onClick={createClickHandler(certSlug)}
-          >
-            {isCertified && userLoaded
-              ? t('buttons.show-cert')
-              : t('buttons.claim-cert')}
-          </Button>
+          <>
+            <Button
+              block={true}
+              bsStyle='primary'
+              className='cert-btn'
+              disabled={
+                !canClaimCert ||
+                isCertified ||
+                (isCertified && !hasCompletedStepsToClaim)
+              }
+              onClick={createClickHandler(certSlug)}
+            >
+              {isCertified && userLoaded
+                ? t('buttons.successfully-claimed-cert')
+                : t('buttons.claim-cert')}
+            </Button>
+            <Button
+              block={true}
+              bsStyle='primary'
+              className='cert-btn'
+              disabled={!hasCompletedStepsToShare}
+              href={certLocation}
+            >
+              {t('buttons.show-cert')}
+            </Button>
+          </>
         )}
       </>
     </div>
