@@ -9,9 +9,10 @@ const story = {
 
 const Template: Story<AlertProps> = args => <Alert {...args} />;
 
-export const Children = Template.bind({});
-Children.args = {
-  children: 'Hello, Alert!'
+export const Basic = Template.bind({});
+Basic.args = {
+  children: 'Hello, Alert!',
+  className: 'basic'
 };
 
 export default story;

@@ -19,4 +19,11 @@ describe('<Alert>', () => {
 
     expect(screen.getByText(expectedText)).toBeInTheDocument();
   });
+
+  it('appends className', () => {
+    const expectedClass = 'basic';
+    render(<Alert className={expectedClass}>Hello</Alert>);
+
+    expect(screen.getByRole('alert')).toHaveClass(expectedClass);
+  });
 });
