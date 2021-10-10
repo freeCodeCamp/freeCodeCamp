@@ -3,9 +3,11 @@ import React from 'react';
 type AlertVariant = 'success' | 'info' | 'warning' | 'danger';
 
 export interface AlertProps {
-  variant?: AlertVariant;
-  className?: string;
   children: React.ReactNode;
+  className?: string;
+  variant?: AlertVariant;
+  dismissText?: string;
+  onDismiss?: () => void;
 }
 
 const variants: Record<AlertVariant, string> = {
@@ -20,14 +22,28 @@ const variants: Record<AlertVariant, string> = {
  * Basic UI component that provides contextual feedback
  */
 export function Alert({
-  variant = 'info',
+  children,
   className,
-  children
+  variant = 'info',
+  dismissText = 'Close',
+  onDismiss
 }: AlertProps): JSX.Element {
   const classes = [variants[variant], className].join(' ');
 
+  const isDismissable = !!onDismiss;
+
   return (
     <div className={classes} role='alert'>
+      {isDismissable && (
+        <button
+          // TODO: label should be translated
+          aria-label={dismissText}
+          onClick={onDismiss}
+          type='button'
+        >
+          ×
+        </button>
+      )}
       {children}
     </div>
   );
