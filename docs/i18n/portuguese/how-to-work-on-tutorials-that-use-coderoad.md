@@ -1,55 +1,55 @@
-This page describes how to contribute to the freeCodeCamp tutorials and projects that are completed using the CodeRoad VS Code extension.
+Esta página descreve como contribuir para os tutoriais e projetos do freeCodeCamp que são concluídos usando a extensão CodeRoad do VS Code.
 
-## How the tutorials work
+## Como funcionam os tutoriais
 
-The freeCodeCamp tutorials that use CodeRoad each have their own repo under the freeCodeCamp GitHub organization. They all start with `learn-`. For example, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
+Os tutoriais do freeCodeCamp que usam o CodeRoad têm seu próprio repositório na organização do GitHub do freeCodeCamp. Todos eles começam com `learn-`. Por exemplo, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
 
-Each tutorial repo has a `main` branch and a "version" branch, e.g. `v1.0.0`.
+Cada repositório de tutorial tem um branch `main` e um branch de "versão", como `v1.0.0`, por exemplo.
 
-The two main files on the `main` branch are `TUTORIAL.md` and `coderoad.yaml`. `TUTORIAL.md` contains all the instructions, hints, titles, and so on, for the tutorial. `coderoad.yaml` contains instructions for CodeRoad, such as what commands to run and when, what files to watch for changes, and what version branch to use for the steps.
+Os dois arquivos principais do branch `main` são `TUTORIAL.md` e `coderoad.yaml`. `TUTORIAL.md` contém todas as instruções, dicas, títulos e outros detalhes do tutorial. `coderoad.yaml` contém as instruções para o CodeRoad, como os comandos a serem executados e quando fazê-lo, que arquivos devem ser observados para ver se há mudanças e qual branch de versão deve ser usado para as etapas.
 
-The "version" branch contains the commits that will be loaded on each step of a tutorial. The commit messages on this branch have to be specific. The first commit needs `INIT` for its message and contains all the files to load before the first lesson.
+O branch de "versão" contém os commits que serão carregados em cada etapa do tutorial. As mensagens de commit desse branch precisam ser específicas. O primeiro commit precisa de `INIT` em sua mensagem e contém todos os arquivos a serem carregados antes da primeira lição.
 
-Subsequent commit messages have to match the step number in `TUTORIAL.md` from the `main` branch. For example, the commit with the message `10.1` will be loaded when a user goes to step `10.1`.
+Mensagens de commits posteriores devem corresponder ao número da etapa em `TUTORIAL.md` do branch `main`. Por exemplo, o commit com a mensagem `10.1` será carregado quando um usuário passar para a etapa `10.1`.
 
-In order to make changes to commits on a version branch, you would need to rebase and edit the commits you want to change. This will rewrite the Git history, so we cannot accept PRs to these types of branches. Once a version branch is on the freeCodeCamp repo, it should never change.
+Para fazer mudanças nos commits de um branch de versão, você precisa fazer o rebase e editar os commits que deseja alterar. Isso reescreverá o histórico do Git, por isso não podemos aceitar PRs (pull requests) para esses tipos de branch. Assim que um branch de versão vai para o repositório do freeCodeCamp, ele jamais deve ser alterado.
 
 > [!WARNING]
 > 
-> Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+> Nunca faça ou envie mudanças para um branch de versão que estiver em um dos repositórios do freeCodeCamp. Sempre crie um novo.
 
-## How to contribute
+## Como contribuir
 
-### Prerequisites
+### Pré-requisitos
 
-Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`.
+Instale as [ferramentas da CLI do CodeRoad](https://www.npmjs.com/package/@coderoad/cli) com `npm install -g @coderoad/cli`.
 
-There have been some issues with the latest version. If `coderoad --version` doesn't work after installing, downgrade to `0.7.0` with `npm install -g @coderoad/cli@0.7.0`.
+Houve alguns problemas com a última versão. Se `coderoad --version` não funcionar após a instalação, faça um downgrade para a versão `0.7.0` com `npm install -g @coderoad/cli@0.7.0`.
 
-### Working on `main`
+### Trabalhando no branch `main`
 
-This set of instructions is for PRs that only make minor changes on `main` to **existing lessons**. That mainly consists of typo, grammar, hint, and instructional changes or fixes in the `TUTORIAL.md` file.
+Este conjunto de instruções é para PRs (pull requests) que façam apenas pequenas mudanças no branch `main` para **lições já existentes**. Isso consiste basicamente em erros de digitação, gramática, dicas e mudanças ou reparos nas instruções do arquivo `TUTORIAL.md`.
 
-For everything else, including adding or deleting lessons, follow the [working on a version branch instructions](#working-on-version-branch). You will not need to create a new version branch for this - you can create a PR following the instructions below.
+Para todo o resto, incluindo adicionar e excluir lições, siga as [instruções de Trabalhando em um branch de versão](#working-on-version-branch). Você não precisará criar um novo branch de versão para isso. Pode criar um PR seguindo as instruções abaixo.
 
 > [!NOTE]
 > 
-> These changes will use the existing version branch. If they are substantial, feel free to add them to `CHANGELOG.md`. Most of the time, a good commit message should work
+> Essas mudanças usarão o branch de versão existente. Se elas forem substanciais, aproveite para adicioná-las ao `CHANGELOG.md`. Na maioria das vezes, uma boa mensagem de commit deverá ser o suficiente.
 
-You never need to modify the `tutorial.json` file directly. That will be created with the CLI tools.
+Você nunca precisará modificar o arquivo `tutorial.json` diretamente. Ele será criado pelas ferramentas da CLI.
 
-If you are only making minor changes like fixing a typo or grammatical error, you don't have to test your changes.
+Se estiver fazendo somente mudanças pequenas, como corrigir um erro de digitação ou gramatical, não é necessário testar suas mudanças.
 
-Follow these instructions to make a PR, keeping in mind that instructions usually use the lessons around them for context:
+Siga essas instruções para fazer um PR, tendo em conta que as instruções geralmente usam as lições ao redor delas para obter contexto:
 
-- Create a copy of the latest version branch with `git branch vX.X.X upstream/vX.X.X` - you do not need to check this branch out, it just needs to exist.
-- Create and checkout a new branch off of `main`
-- Make **and commit** your changes. Reminder: You don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
-- Run `coderoad build` to recreate the `tutorial.json` file
-- Commit the changes with `update json` as the message
-- Make a PR
+- Crie uma cópia do branch de versão mais recente com `git branch vX.X.X upstream/vX.X.X`. Não é necessário fazer check out nesse branch. Ele só precisa existir.
+- Crie um novo branch a partir do `main` e faça check out nele.
+- Faça e **dê um commit** em suas mudanças. Lembrete: você não precisa fazer alterações no arquivo `tutorial.json`. Provavelmente, você só precisará modificar o `TUTORIAL.md`.
+- Execute `coderoad build` para recriar o arquivo `tutorial.json`.
+- Faça o commit das mudanças, com `update json` como mensagem.
+- Faça um pull request.
 
-### Testing changes on `main`
+### Testando as mudanças no branch `main`
 
 If you want to test your changes to `main` after using the above instructions, follow these instructions:
 
