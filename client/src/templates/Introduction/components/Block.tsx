@@ -12,7 +12,7 @@ import { isAuditedCert } from '../../../../../utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { Link } from '../../../components/helpers/';
+import { Link } from '../../../components/helpers';
 import { completedChallengesSelector, executeGA } from '../../../redux';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import Challenges from './Challenges';
@@ -200,9 +200,8 @@ export class Block extends Component {
           >
             <Caret />
             <h4 className='course-title'>
-              {`${
-                isExpanded ? collapseText : expandText
-              } ${coursesText.toLowerCase()}`}
+              {`${isExpanded ? collapseText : expandText
+                } ${coursesText.toLowerCase()}`}
             </h4>
             <div className='map-title-completed course-title'>
               {this.renderCheckMark(
