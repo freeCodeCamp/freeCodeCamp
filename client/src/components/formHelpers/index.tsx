@@ -1,5 +1,4 @@
 import normalizeUrl from 'normalize-url';
-import { ValidatedValues } from '../../templates/Challenges/projects/solution-form';
 import { FormOptions } from './form';
 import {
   localhostValidator,
@@ -18,14 +17,23 @@ const normalizeOptions = {
   stripWWW: false
 };
 
+type URLValuesType = {
+  [key: string]: string;
+};
+
+type validationErrorType = {
+  error: { message?: string };
+  value: string;
+};
+
 type validatedValuesType = {
-  errors: string[];
-  invalidValues: string[];
-  values: Record<string, unknown>;
+  values: URLValuesType;
+  errors: validationErrorType[];
+  invalidValues: (JSX.Element | null)[];
 };
 
 export function formatUrlValues(
-  values: ValidatedValues,
+  values: URLValuesType,
   options: FormOptions
 ): validatedValuesType {
   const { isEditorLinkAllowed, isLocalLinkAllowed, types } = options;
@@ -35,10 +43,8 @@ export function formatUrlValues(
     invalidValues: []
   };
   const urlValues = Object.keys(values).reduce((result, key) => {
-    // eslint-disable-next-line
-    //@ts-ignore
-    let value: string = values[key] as string;
-    const nullOrWarning: string = composeValidators(
+    let value: string = values[key];
+    const nullOrWarning: JSX.Element | null = composeValidators(
       fCCValidator,
       httpValidator,
       isLocalLinkAllowed ? null : localhostValidator,
@@ -50,11 +56,11 @@ export function formatUrlValues(
     if (value && types && types[key] === 'url') {
       try {
         value = normalizeUrl(value, normalizeOptions);
-      } catch (err) {
-        // Not a valid URL for testing or submission
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        validatedValues.errors.push({ error: err, value }); // eslint-disable-line  @typescript-eslint/no-unsafe-assignment
+      } catch (err: unknown) {
+        validatedValues.errors.push({
+          error: err as { message?: string },
+          value
+        });
       }
     }
     return { ...result, [key]: value };
