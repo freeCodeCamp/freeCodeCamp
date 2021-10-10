@@ -29,10 +29,26 @@ Your first radio button on your form should be checked by default.
 assert($('input[type="radio"]').prop('checked'));
 ```
 
+Radio input's attributes and text should be unchanged.
+
+```js
+assert.equal(document.querySelector('label[for="indoor"]')?.innerText?.trim(), 'Indoor');
+assert(document.getElementById("indoor").name == 'indoor-outdoor');
+assert(document.getElementById("indoor").value == 'indoor');
+```
+
 Your first checkbox on your form should be checked by default.
 
 ```js
 assert($('input[type="checkbox"]').prop('checked'));
+```
+
+Check input's attributes and text should be unchanged.
+
+```js
+assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), 'Loving');
+assert(document.getElementById("loving").name == 'personality');
+assert(document.getElementById("loving").value == 'loving');
 ```
 
 # --seed--
