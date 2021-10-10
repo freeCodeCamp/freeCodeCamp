@@ -200,7 +200,12 @@ const CertChallenge = ({
               block={true}
               bsStyle='primary'
               className='cert-btn'
-              disabled={!hasCompletedStepsToShare}
+              disabled={
+                !canClaimCert ||
+                !isCertified ||
+                !hasCompletedStepsToShare ||
+                (isCertified && !hasCompletedStepsToClaim)
+              }
               href={certLocation}
             >
               {t('buttons.show-cert')}
