@@ -6,32 +6,32 @@ import { Spacer, ImageLoader } from '../../helpers';
 
 const LARGE_SCREEN_SIZE = 1200;
 
-interface imageSize {
+interface pageProps {
+  pageName: string;
+}
+
+interface imageSizeProps {
   spacerSize: number;
   height: number;
   width: number;
 }
 
-interface pageNumber {
-  page: string;
-}
-
-const donateImageSize: imageSize = {
+const donateImageSize: imageSizeProps = {
   spacerSize: 0,
   height: 345,
   width: 585
 };
 
-const landingImageSize: imageSize = {
+const landingImageSize: imageSizeProps = {
   spacerSize: 2,
   height: 442,
   width: 750
 };
-function CampersImage({ page }: pageNumber): JSX.Element {
+function CampersImage({ pageName }: pageProps): JSX.Element {
   const { t } = useTranslation();
 
   const { spacerSize, height, width } =
-    page === 'donate' ? donateImageSize : landingImageSize;
+    pageName === 'donate' ? donateImageSize : landingImageSize;
 
   return (
     <Media minWidth={LARGE_SCREEN_SIZE}>

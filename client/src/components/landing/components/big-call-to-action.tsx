@@ -2,16 +2,16 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Login from '../../Header/components/Login';
 
-interface propTypes {
-  page: string;
+interface pageProps {
+  pageName: string;
 }
 
-const BigCallToAction = ({ page }: propTypes): JSX.Element => {
+const BigCallToAction = ({ pageName }: pageProps): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <Login block={true} data-test-label={`${page}-big-cta`}>
-      {page === 'landing'
+    <Login block={true} data-test-label={`${pageName}-big-cta`}>
+      {pageName === 'landing'
         ? t('buttons.logged-in-cta-btn')
         : t('buttons.logged-out-cta-btn')}
     </Login>

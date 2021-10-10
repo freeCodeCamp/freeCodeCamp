@@ -15,11 +15,12 @@ import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 import CampersImage from './campers-image';
 
-interface propTypes {
-  page: string;
+interface pageProps {
+  pageName: string;
 }
+
 const { clientLocale } = envData;
-function LandingTop({ page }: propTypes): JSX.Element {
+function LandingTop({ pageName }: pageProps): JSX.Element {
   const { t } = useTranslation();
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale
@@ -29,7 +30,7 @@ function LandingTop({ page }: propTypes): JSX.Element {
       <Row>
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-          <h1 className='big-heading' data-test-label={`${page}-header`}>
+          <h1 className='big-heading' data-test-label={`${pageName}-header`}>
             {t('landing.big-heading-1')}
           </h1>
           <p className='big-heading'>{t('landing.big-heading-2')}</p>
@@ -52,8 +53,8 @@ function LandingTop({ page }: propTypes): JSX.Element {
             )}
           </div>
           <Spacer />
-          <BigCallToAction page={page} />
-          <CampersImage page={page} />
+          <BigCallToAction pageName={pageName} />
+          <CampersImage pageName={pageName} />
           <Spacer />
         </Col>
       </Row>
