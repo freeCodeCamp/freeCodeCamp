@@ -6,7 +6,7 @@ import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 
 interface pageProps {
-  pageName: string;
+  pageName?: string;
 }
 
 const Certifications = ({ pageName = 'landing' }: pageProps): JSX.Element => {

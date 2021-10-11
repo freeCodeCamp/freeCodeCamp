@@ -7,7 +7,7 @@ import { Spacer, ImageLoader } from '../../helpers';
 const LARGE_SCREEN_SIZE = 1200;
 
 interface pageProps {
-  pageName: string;
+  pageName?: string;
 }
 
 interface imageSizeProps {
@@ -40,7 +40,7 @@ function CampersImage({ pageName }: pageProps): JSX.Element {
         alt={t('landing.hero-img-description')}
         className='landing-page-image'
         height={height}
-        src={wideImg as string}
+        src={wideImg}
         width={width}
       />
       <p className='text-center caption'>{t('landing.hero-img-description')}</p>

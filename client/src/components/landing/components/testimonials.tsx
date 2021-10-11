@@ -20,7 +20,7 @@ const Testimonials = (): JSX.Element => {
             <ImageLoader
               alt='Shawn Wang'
               className='testimonial-image'
-              src={shawnImg as string}
+              src={shawnImg}
             />
           </div>
 
@@ -47,7 +47,7 @@ const Testimonials = (): JSX.Element => {
             <ImageLoader
               alt='Sarah Chima'
               className='testimonial-image'
-              src={sarahImg as string}
+              src={sarahImg}
             />
           </div>
 
@@ -74,7 +74,7 @@ const Testimonials = (): JSX.Element => {
             <ImageLoader
               alt='Emma Bostian'
               className='testimonial-image'
-              src={emmaImg as string}
+              src={emmaImg}
             />
           </div>
 
