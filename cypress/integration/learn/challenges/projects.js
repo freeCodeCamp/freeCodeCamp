@@ -110,7 +110,7 @@ describe('project submission', () => {
           // TODO: if we write a test to check that the solution is visible
           // before reloading, we should include that here.
           cy.contains('Solution for');
-          cy.contains('Close').click();
+          cy.get('.close').click();
         });
 
         // Claim and view solutions on certification page
@@ -118,7 +118,7 @@ describe('project submission', () => {
         cy.toggleAll();
         cy.visit('/learn/javascript-algorithms-and-data-structures');
         cy.contains('Claim Certification').click();
-        cy.contains('Show Certification').click();
+        cy.contains('Share Certification').click();
 
         projectTitles.forEach(title => {
           cy.get(`[data-cy="${title} solution"]`).click();

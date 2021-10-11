@@ -88,7 +88,7 @@ describe('Responsive Web Design Superblock', () => {
       cy.window().its('scrollY').should('not.equal', 0);
       cy.contains('Claim Your Certification');
       cy.contains('Claim Certification').should('not.be.disabled').click();
-      cy.contains('Show Certification').click();
+      cy.contains('Share Your Certification').click();
       cy.location().should(loc => {
         expect(loc.pathname).to.eq(
           '/certification/developmentuser/responsive-web-design'
