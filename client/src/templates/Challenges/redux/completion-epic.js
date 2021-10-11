@@ -21,7 +21,7 @@ import {
 } from '../../../redux';
 
 import { getVerifyCanClaimCert } from '../../../utils/ajax';
-import postUpdate$ from '../utils/postUpdate$';
+import postUpdate$ from '../utils/post-update$';
 import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,

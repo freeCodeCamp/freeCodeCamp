@@ -13,7 +13,7 @@ import {
   visibleEditorsSelector,
   updateFile
 } from '../redux';
-import { getTargetEditor } from '../utils/getTargetEditor';
+import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
 import Editor from './editor';
 

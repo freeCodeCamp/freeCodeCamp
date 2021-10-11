@@ -5,7 +5,7 @@ import { getLines } from '../../../../../utils/get-lines';
 import { createPoly } from '../../../../../utils/polyvinyl';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import { completedChallengesSelector } from '../../../redux';
-import { getTargetEditor } from '../utils/getTargetEditor';
+import { getTargetEditor } from '../utils/get-target-editor';
 import { actionTypes, ns } from './action-types';
 import codeLockEpic from './code-lock-epic';
 import codeStorageEpic from './code-storage-epic';
