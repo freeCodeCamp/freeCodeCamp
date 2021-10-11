@@ -13,7 +13,7 @@ To strikethrough text, which is when a horizontal line cuts across the character
 
 # --instructions--
 
-Wrap the `s` tag around `Google` inside the `h4` tag (in the HTML section) and then add the word `Alphabet` beside it without the strikethrough formatting.
+Wrap the `s` tag around `Google` inside the `h4` tag and then add the word `Alphabet` beside it without the strikethrough formatting.
 
 # --hints--
 
