@@ -10,6 +10,7 @@ name: CodeSee Map
 jobs:
   test_map_action:
     runs-on: ubuntu-latest
+    if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
     continue-on-error: true
     name: Run CodeSee Map Analysis
     steps:
