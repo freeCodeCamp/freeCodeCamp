@@ -6,6 +6,7 @@ import {
   FormGroup,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
+import { useTranslation } from 'react-i18next';
 import { kebabCase } from 'lodash-es';
 import normalizeUrl from 'normalize-url';
 import PropTypes from 'prop-types';
@@ -43,6 +44,7 @@ function FormFields(props) {
     isEditorLinkAllowed = false,
     isLocalLinkAllowed = false
   } = options;
+  const { t } = useTranslation();
 
   const nullOrWarning = (value, error, isURL, name) => {
     let validationError;
