@@ -25,7 +25,7 @@ export const Landing = ({ page = 'landing' }) => {
       </Helmet>
       <main className='landing-page'>
         <Grid>
-          <LandingTop page={page} />
+          <LandingTop pageName={page} />
         </Grid>
         <Grid fluid={true}>
           <AsSeenIn />

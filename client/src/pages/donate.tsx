@@ -121,7 +121,7 @@ function DonatePage({
               </Row>
             </Col>
             <Col lg={6}>
-              <CampersImage page='donate' />
+              <CampersImage pageName='donate' />
             </Col>
           </>
         </Row>
