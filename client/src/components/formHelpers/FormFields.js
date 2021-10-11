@@ -62,7 +62,10 @@ function FormFields(props) {
     const message = error || validationError || validationWarning;
     return message ? (
       <HelpBlock>
-        <Alert bsStyle={error || validationError ? 'danger' : 'info'}>
+        <Alert
+          bsStyle={error || validationError ? 'danger' : 'info'}
+          closeLabel={t('Close Alert')}
+        >
           {message}
         </Alert>
       </HelpBlock>

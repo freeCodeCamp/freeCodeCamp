@@ -182,7 +182,11 @@ class EmailSettings extends Component<EmailProps, EmailState> {
         {isEmailVerified ? null : (
           <FullWidthRow>
             <HelpBlock>
-              <Alert bsStyle='info' className='text-center'>
+              <Alert
+                bsStyle='info'
+                className='text-center'
+                closeLabel={t('Close Alert')}
+              >
                 {t('settings.email.not-verified')}
                 <br />
                 <Trans i18nKey='settings.email.check'>
