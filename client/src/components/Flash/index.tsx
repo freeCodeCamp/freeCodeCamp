@@ -12,12 +12,19 @@ type FlashProps = {
     message: string;
     id: string;
     variables: Record<string, unknown>;
+    closeLabel?: string;
   };
   onClose: () => void;
 };
 
 function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
-  const { type, message, id, variables = {} } = flashMessage;
+  const {
+    type,
+    message,
+    id,
+    variables = {},
+    closeLabel = 'Close Alert'
+  } = flashMessage;
   const { t } = useTranslation();
   const [flashMessageHeight, setFlashMessageHeight] = useState(0);
 
@@ -44,6 +51,7 @@ function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
             bsStyle={type}
             className='flash-message'
             onDismiss={handleClose}
+            closeLabel={closeLabel}
           >
             {t(message, variables)}
           </Alert>
