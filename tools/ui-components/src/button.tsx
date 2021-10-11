@@ -9,7 +9,6 @@ import './button.css';
 export const Button: React.FC<ButtonProps> = ({
   primary,
   size = 'medium',
-  backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
@@ -22,9 +21,8 @@ export const Button: React.FC<ButtonProps> = ({
         'storybook-button',
         `storybook-button--${size}`,
         mode,
-        'fcc-style'
+        'button-default-style'
       ].join(' ')}
-      style={{ backgroundColor }}
       type='button'
       {...props}
     >
