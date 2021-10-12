@@ -10,7 +10,6 @@ const fileJoi = Joi.object().keys({
   ext: Joi.string(),
   name: Joi.string(),
   editableRegionBoundaries: [Joi.array().items(Joi.number())],
-  usesMultifileEditor: Joi.boolean(),
   path: Joi.string(),
   error: Joi.valid(null),
   head: Joi.string().allow(''),
@@ -112,7 +111,8 @@ const schema = Joi.object()
     url: Joi.when('challengeType', {
       is: challengeTypes.codeally,
       then: Joi.string().required()
-    })
+    }),
+    usesMultifileEditor: Joi.boolean()
   })
   .xor('helpCategory', 'isPrivate');
 
