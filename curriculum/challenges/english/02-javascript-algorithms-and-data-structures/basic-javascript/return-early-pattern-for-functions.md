@@ -17,7 +17,7 @@ When a `return` statement is reached, the execution of the current function stop
 function myFun() {
   console.log("Hello");
   return "World";
-  console.log("byebye")
+  console.log("byebye");
 }
 myFun();
 ```
