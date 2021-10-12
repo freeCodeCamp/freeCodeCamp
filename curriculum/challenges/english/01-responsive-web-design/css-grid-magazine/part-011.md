@@ -1,5 +1,5 @@
 ---
-id: 61439dfc811e12666b04be6f
+id: 61439dc084fa5f659cf75d7c
 title: Part 11
 challengeType: 0
 dashedName: part-11
@@ -7,24 +7,24 @@ dashedName: part-11
 
 # --description--
 
-Add a third `p` element at the end of your `.text` element, and give it the following text:
+Create another `p` element below your `.first-paragraph` element, and give it the following text:
 
 ```markup
-It wasn't as dramatic as Doc's revelation in Back to the Future. It just occurred to me while I was going for a run. The revelation: the entire curriculum should be a series of projects. Instead of individual coding challenges, we'll just have projects, each with their own seamless series of tests. Each test gives you just enough information to figure out how to get it to pass. (And you can view hints if that isn't enough.)
+After years - years - of pondering these two problems and how to solve them, I slipped, hit my head on the sink, and when I came to I had a revelation! A vision! A picture in my head! A picture of this! This is what makes time travel possible: the flux capacitor!
 ```
 
 # --hints--
 
-You should create a third `p` element in your `.text` element.
+You should create a second `p` element within your `.text` element.
 
 ```js
-assert(document.querySelectorAll('.text p')?.length === 3);
+assert(document.querySelectorAll('.text p')?.length === 2)
 ```
 
-Your third `p` element should have the provided text.
+Your second `p` element should have the provided text.
 
 ```js
-assert(document.querySelectorAll('.text p')?.[2]?.innerText === "It wasn't as dramatic as Doc's revelation in Back to the Future. It just occurred to me while I was going for a run. The revelation: the entire curriculum should be a series of projects. Instead of individual coding challenges, we'll just have projects, each with their own seamless series of tests. Each test gives you just enough information to figure out how to get it to pass. (And you can view hints if that isn't enough.)");
+assert(document.querySelectorAll('.text p')?.[1]?.innerText === 'After years - years - of pondering these two problems and how to solve them, I slipped, hit my head on the sink, and when I came to I had a revelation! A vision! A picture in my head! A picture of this! This is what makes time travel possible: the flux capacitor!')
 ```
 
 # --seed--
@@ -92,17 +92,13 @@ assert(document.querySelectorAll('.text p')?.[2]?.innerText === "It wasn't as dr
           </a>
         </div>
       </section>
+--fcc-editable-region--
       <section class="text">
         <p class="first-paragraph">
           Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
         </p>
-        <p>
-          After years - years - of pondering these two problems and how to solve them, I slipped, hit my head on the sink, and when I came to I had a revelation! A vision! A picture in my head! A picture of this! This is what makes time travel possible: the flux capacitor!
-        </p>
---fcc-editable-region--
-        
---fcc-editable-region--
       </section>
+--fcc-editable-region--
     </main>
   </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-id: 6148c5036ddad94692a66230
+id: 6148c434bd731d45617a76c6
 title: Part 52
 challengeType: 0
 dashedName: part-52
@@ -7,16 +7,18 @@ dashedName: part-52
 
 # --description--
 
-Now the auto-placement algorithm will kick in when you add a new icon element. However, the algorithm defaults the new column width to be `auto`, which will not match your current columns.
+If you wanted to add more social icons, but keep them on the same row, you would need to update `grid-template-columns` to create additional columns. As an alternative, you can use the `grid-auto-flow` property.
 
-You can override this with the `grid-auto-columns` property. Give the `.social-icons` selector a `grid-auto-columns` property set to `1fr`.
+This property takes either `row` or `column` as the first value, with an optional second value of `dense`. `grid-auto-flow` uses an auto-placement algorithm to adjust the grid layout. Setting it to `column` will tell the algorithm to create new columns for content as needed. The `dense` value allows the algorithm to backtrack and fill holes in the grid with smaller items, which can result in items appearing out of order.
+
+For your `.social-icons` selector, set the `grid-auto-flow` property to `column`.
 
 # --hints--
 
-Your `.social-icons` selector should have a `grid-auto-columns` property set to `1fr`.
+Your `.social-icons` selector should have a `grid-auto-flow` property set to `column`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridAutoColumns === '1fr');
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridAutoFlow === 'column');
 ```
 
 # --seed--
@@ -290,7 +292,6 @@ img {
   display: grid;
   font-size: 3rem;
   grid-template-columns: repeat(5, 1fr);
-  grid-auto-flow: column;
 }
 --fcc-editable-region--
 ```

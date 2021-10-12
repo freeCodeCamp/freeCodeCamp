@@ -1,5 +1,5 @@
 ---
-id: 6148e2dcdd60306dd77d41cc
+id: 6148e246146b646cf4255f0c
 title: Part 71
 challengeType: 0
 dashedName: part-71
@@ -7,22 +7,20 @@ dashedName: part-71
 
 # --description--
 
-Time to style the last section of the magazine - the images.
-
-The images are wrapped with an `aside` element using the `image-wrapper` class, so create an `.image-wrapper` selector. Set the `display` property to `grid`.
+Create a `.list-title, .list-subtitle` selector and set the `color` property to `#00beef`.
 
 # --hints--
 
-You should have an `.image-wrapper` selector.
+You should have a `.list-title, .list-subtitle` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper'));
+assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle'))
 ```
 
-Your `.image-wrapper` selector should have a `display` property set to `grid`.
+Your `.list-title, .list-subtitle` selector should have a `color` property set to `#00beef`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.display === 'grid');
+assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle')?.color === 'rgb(0, 190, 239)');
 ```
 
 # --seed--
@@ -344,10 +342,6 @@ hr {
 
 .lists li {
   margin-bottom: 1.5rem;
-}
-
-.list-title, .list-subtitle {
-  color: #00beef;
 }
 
 --fcc-editable-region--

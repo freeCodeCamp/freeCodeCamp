@@ -1,5 +1,5 @@
 ---
-id: 6144d66a5358db0c80628757
+id: 6143d2842b497779bad947de
 title: Part 25
 challengeType: 0
 dashedName: part-25
@@ -7,30 +7,26 @@ dashedName: part-25
 
 # --description--
 
-Create an `html` selector and give it a `font-size` property set to `62.5%`. This will set the default font size for your web page to 10px (the browser default is 16px).
-
-This will make it easier for you to work with `rem` units later, as `2rem` would be 20px.
-
-Also, set the `box-sizing` property to `border-box`.
+To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` pseudo-selectors. Set the `padding` property and `margin` property both to `0`.
 
 # --hints--
 
-You should create an `html` selector.
+You should have a `*, ::before, ::after` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('html'));
+assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after'));
 ```
 
-Your `html` selector should have a `font-size` property set to `62.5%`.
+Your `*, ::before, ::after` selector should have a `padding` property set to `0`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('html')?.fontSize === '62.5%');
+assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after')?.padding === '0px');
 ```
 
-Your `html` selector should have a `box-sizing` property set to `border-box`.
+Your `*, ::before, ::after` selector should have a `margin` property set to `0`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('html')?.boxSizing === 'border-box');
+assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after')?.margin === '0px');
 ```
 
 # --seed--
@@ -215,11 +211,6 @@ assert(new __helpers.CSSHelp(document).getStyle('html')?.boxSizing === 'border-b
 ```
 
 ```css
-*, ::before, ::after {
-  padding: 0;
-  margin: 0;
-}
-
 --fcc-editable-region--
 
 --fcc-editable-region--

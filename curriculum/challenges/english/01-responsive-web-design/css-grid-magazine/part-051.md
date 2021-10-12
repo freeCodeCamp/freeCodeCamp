@@ -1,5 +1,5 @@
 ---
-id: 6148c434bd731d45617a76c6
+id: 6148c224ecb157439bc5247c
 title: Part 51
 challengeType: 0
 dashedName: part-51
@@ -7,18 +7,14 @@ dashedName: part-51
 
 # --description--
 
-If you wanted to add more social icons, but keep them on the same row, you would need to update `grid-template-columns` to create additional columns. As an alternative, you can use the `grid-auto-flow` property.
-
-This property takes either `row` or `column` as the first value, with an optional second value of `dense`. `grid-auto-flow` uses an auto-placement algorithm to adjust the grid layout. Setting it to `column` will tell the algorithm to create new columns for content as needed. The `dense` value allows the algorithm to backtrack and fill holes in the grid with smaller items, which can result in items appearing out of order.
-
-For your `.social-icons` selector, set the `grid-auto-flow` property to `column`.
+The default settings for CSS Grid will create additional rows as needed, unlike Flexbox. Give the `.social-icons` selector a `grid-template-columns` property set to `repeat(5, 1fr)` to arrange the icons in a single row.
 
 # --hints--
 
-Your `.social-icons` selector should have a `grid-auto-flow` property set to `column`.
+Your `.social-icons` selector should have a `grid-template-columns` property set to `repeat(5, 1fr)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridAutoFlow === 'column');
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridTemplateColumns === 'repeat(5, 1fr)');
 ```
 
 # --seed--
@@ -291,7 +287,6 @@ img {
 .social-icons {
   display: grid;
   font-size: 3rem;
-  grid-template-columns: repeat(5, 1fr);
 }
 --fcc-editable-region--
 ```

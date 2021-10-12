@@ -1,26 +1,34 @@
 ---
-id: 6148d1bdf39c5b5186f5974b
-title: Part 60
+id: 6148f6f7d8914c78e93136ca
+title: Part 80
 challengeType: 0
-dashedName: part-60
+dashedName: part-80
 ---
 
 # --description--
 
-Create an `hr` selector, and give it a `margin` property set to `1.5rem 0`.
+Create one final `@media` query for `only screen` with a `max-width` of `420px`. Within, create a `.hero-title` selector with a `font-size` property set to `4.5rem`.
+
+Congratulations! Your magazine is now complete.
 
 # --hints--
 
-You should have an `hr` selector.
+You should have a new `@media` query for `only screen and (max-width: 420px)`. This should be the last query in the `@media` query list.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('hr'));
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.media?.mediaText === 'only screen and (max-width: 420px)');
 ```
 
-Your `hr` selector should have a `margin` property set to `1.5rem 0`.
+Your new `@media` query should have a `.hero-title` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('hr')?.margin === '1.5rem 0px');
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.cssRules?.[0]?.selectorText === '.hero-title');
+```
+
+Your `.hero-title` selector should have a `font-size` property set to `4.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.cssRules?.[0]?.style?.fontSize === '4.5rem');
 ```
 
 # --seed--
@@ -246,9 +254,9 @@ img {
   object-fit: cover;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+hr {
+  margin: 1.5rem 0;
+}
 
 .heading {
   grid-column: 2 / 3;
@@ -312,4 +320,88 @@ img {
   float: left;
   margin-right: 1rem;
 }
+
+.quote {
+  color: #00beef;
+  font-size: 2.4rem;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.quote::before {
+  content: '" ';
+}
+
+.quote::after {
+  content: ' "';
+}
+
+.text-with-images {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.lists {
+  list-style-type: none;
+  margin-top: 2rem;
+}
+
+.lists li {
+  margin-bottom: 1.5rem;
+}
+
+.list-title, .list-subtitle {
+  color: #00beef;
+}
+
+.image-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, min-content);
+  gap: 2rem;
+  place-items: center;
+}
+
+.image-1, .image-3 {
+  grid-column: 1 / -1;
+}
+
+@media only screen and (max-width: 720px) {
+  .image-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .text-with-images {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+  
+  .hero-subtitle,
+  .author,
+  .quote,
+  .list-header {
+    font-size: 1.8rem;
+  }
+  
+  .social-icons {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1.6rem;
+  } 
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```

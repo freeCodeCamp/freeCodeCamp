@@ -1,5 +1,5 @@
 ---
-id: 6148be82ca63c63daa8cca49
+id: 6148be3d605d6b3ca9425d11
 title: Part 46
 challengeType: 0
 dashedName: part-46
@@ -7,26 +7,32 @@ dashedName: part-46
 
 # --description--
 
-Create an `.author` selector and give it a `font-size` property set to `2rem` and a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+The subtitle also needs to be styled. Create a `.hero-subtitle` selector and give it a `font-size` property set to `2.4rem`, a `color` property set to `orangered`, and a `text-align` property set to `center`.
 
 # --hints--
 
-You should have an `.author` selector.
+You should have a `.hero-subtitle` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author'));
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle'));
 ```
 
-Your `.author` selector should have a `font-size` property set to `2rem`.
+Your `.hero-subtitle` selector should have a `font-size` property set to `2.4rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontSize === '2rem');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.fontSize === '2.4rem');
 ```
 
-Your `.author` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+Your `.hero-subtitle` selector should have a `color` property set to `orangered`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontFamily === 'Raleway, sans-serif');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.color === 'orangered');
+```
+
+Your `.hero-subtitle` selector should have a `text-align` property set to `center`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.textAlign === 'center');
 ```
 
 # --seed--
@@ -274,12 +280,6 @@ img {
   left: 15%;
   color: orangered;
   font-size: 8rem;
-}
-
-.hero-subtitle {
-  font-size: 2.4rem;
-  color: orangered;
-  text-align: center;
 }
 
 --fcc-editable-region--

@@ -1,5 +1,5 @@
 ---
-id: 6148bd62bbb8c83a5f1fc1b3
+id: 6148b59ef318e03875f35c4a
 title: Part 43
 challengeType: 0
 dashedName: part-43
@@ -7,32 +7,28 @@ dashedName: part-43
 
 # --description--
 
-Create a `.hero-title` selector and give it a `position` property set to `absolute`, a `top` property set to `10%`, and a `left` property set to `15%`.
+Create an `img` selector and give it a `width` property set to `100%`, and an `object-fit` property set to `cover`.
+
+The `object-fit` property tells the browser how to position the element within its container. In this case, `cover` will set the image to fill the container, cropping as needed to avoid changing the aspect ratio.
 
 # --hints--
 
-You should have a `.hero-title` selector.
+You should have an `img` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title'));
+assert(new __helpers.CSSHelp(document).getStyle('img'));
 ```
 
-Your `.hero-title` selector should have a `position` property set to `absolute`.
+Your `img` selector should have a `width` property set to `100%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.position === 'absolute');
+assert(new __helpers.CSSHelp(document).getStyle('img')?.width === '100%');
 ```
 
-Your `.hero-title` selector should have a `top` property set to `10%`.
+Your `img` selector should have an `object-fit` property set to `cover`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.top === '10%');
-```
-
-Your `.hero-title` selector should have a `left` property set to `15%`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.left === '15%');
+assert(new __helpers.CSSHelp(document).getStyle('img')?.objectFit === 'cover');
 ```
 
 # --seed--
@@ -253,10 +249,9 @@ main {
   row-gap: 3rem;
 }
 
-img {
-  width: 100%;
-  object-fit: cover;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .heading {
   grid-column: 2 / 3;
@@ -273,8 +268,4 @@ img {
   grid-column: 1 / -1;
   position: relative;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

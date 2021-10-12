@@ -1,5 +1,5 @@
 ---
-id: 6148cf094b3f2b4e8a032c63
+id: 6148ceaf5d897d4d8b3554b3
 title: Part 57
 challengeType: 0
 dashedName: part-57
@@ -7,28 +7,14 @@ dashedName: part-57
 
 # --description--
 
-The `::first-letter` pseudo-selector allows you to target the first letter in the text content of an element.
-
-Create a `.first-paragraph::first-letter` selector and set the `font-size` property to `6rem`. Also give it a `color` property set to `orangered` to make it stand out.
+Give the `.text` selector a `text-align` property set to `justify.`
 
 # --hints--
 
-You should have a `.first-paragraph::first-letter` selector.
+Your `.text` selector should have a `text-align` property set to `justify.`
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter'));
-```
-
-Your `.first-paragraph::first-letter` selector should have a `font-size` property set to `6rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.fontSize === '6rem');
-```
-
-Your `.first-paragraph::first-letter` selector should have a `color` property set to `orangered`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.color === 'orangered');
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.textAlign === 'justify');
 ```
 
 # --seed--
@@ -261,13 +247,14 @@ img {
   row-gap: 1.5rem;
 }
 
+--fcc-editable-region--
 .text {
   grid-column: 2 / 3;
   font-size: 1.8rem;
   letter-spacing: 0.6px;
   column-width: 25rem;
-  text-align: justify;
 }
+--fcc-editable-region--
 
 .hero {
   grid-column: 1 / -1;
@@ -309,8 +296,4 @@ img {
   grid-auto-columns: 1fr;
   align-items: center;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

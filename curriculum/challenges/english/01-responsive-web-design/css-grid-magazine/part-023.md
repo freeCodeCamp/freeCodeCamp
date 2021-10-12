@@ -1,5 +1,5 @@
 ---
-id: 6143d003ad9e9d76766293ec
+id: 6143cdf48b634a747de42104
 title: Part 23
 challengeType: 0
 dashedName: part-23
@@ -7,41 +7,44 @@ dashedName: part-23
 
 # --description--
 
-Within your `.image-quote` element, nest an `hr` element, a `p` element and a second `hr` element. Give the `p` element a `class` set to `quote` and the text `The millions of people who are learning to code through freeCodeCamp will have an even better resource to help them learn these fundamentals.`.
+Within your `.image-wrapper` element, give your third `img` element a `src` of `https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg`, an `alt` of `four people working on code`, a `loading` attribute of `lazy`, a `class` set to `image-3`, a `width` attribute set to `600`, and a `height` attribute set to `400`.
 
 # --hints--
 
-You should add two `hr` elements to your `.image-quote` element.
+Your third `img` element should have a `src` set to `https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg`.
 
 ```js
-assert(document.querySelectorAll('.image-quote hr')?.length === 2);
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('src') === 'https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg');
 ```
 
-You should add a `p` element to your `.image-quote` element.
+Your third `img` element should have an `alt` set to `four people working on code`.
 
 ```js
-assert(document.querySelectorAll('.image-quote p')?.length === 1);
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('alt') === 'four people working on code');
 ```
 
-Your `.image-quote` children should be in the correct order.
+Your third `img` element should have a `loading` attribute set to `lazy`.
 
 ```js
-const children = document.querySelector('.image-quote')?.children;
-assert(children?.[0]?.localName === 'hr');
-assert(children?.[1]?.localName === 'p');
-assert(children?.[2]?.localName === 'hr');
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('loading') === 'lazy');
 ```
 
-Your new `p` element should have a `class` set to `quote`.
+Your third `img` element should have a `class` set to `image-3`.
 
 ```js
-assert(document.querySelector('.image-quote p')?.classList.contains('quote'));
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.classList?.contains('image-3'));
 ```
 
-Your new `p` element should have the text `The millions of people who are learning to code through freeCodeCamp will have an even better resource to help them learn these fundamentals.`.
+Your third `img` element should have a `width` attribute set to `600`.
 
 ```js
-assert(document.querySelector('.image-quote p')?.innerText === 'The millions of people who are learning to code through freeCodeCamp will have an even better resource to help them learn these fundamentals.');
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('width') === '600');
+```
+
+Your third `img` element should have a `height` attribute set to `400`.
+
+```js
+assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('height') === '400');
 ```
 
 # --seed--
@@ -202,17 +205,8 @@ assert(document.querySelector('.image-quote p')?.innerText === 'The millions of 
             width="400"
             height="400"
           />
-          <blockquote class="image-quote">
-
-          </blockquote>
-          <img
-            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg"
-            alt="four people working on code"
-            loading="lazy"
-            class="image-3"
-            width="600"
-            height="400"
-          />
+          <blockquote class="image-quote"></blockquote>
+          <img />
         </aside>
 --fcc-editable-region--
       </section>

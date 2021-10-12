@@ -1,5 +1,5 @@
 ---
-id: 6148e62a6f768f71c4f04828
+id: 6148e5a204d99e70343a63e4
 title: Part 74
 challengeType: 0
 dashedName: part-74
@@ -7,16 +7,16 @@ dashedName: part-74
 
 # --description--
 
-The `place-items` property can be used to set the `align-items` and `justify-items` values at the same time. The `place-items` property takes one or two values. If one value is provided, it is used for both the `align-items` and `justify-items` properties. If two values are provided, the first value is used for the `align-items` property and the second value is used for the `justify-items` property.
+The `gap` property is a shorthand way to set the value of `column-gap` and `row-gap` at the same time. If given one value, it sets the `column-gap` and `row-gap` both to that value. If given two values, it sets the `row-gap` to the first value and the `column-gap` to the second.
 
-Give the `.image-wrapper` selector a `place-items` property set to `center`.
+Give the `.image-wrapper` selector a `gap` property set to `2rem`.
 
 # --hints--
 
-Your `.image-wrapper` selector should have a `place-items` property set to `center`.
+Your `.image-wrapper` element should have a `gap` property set to `2rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.placeItems === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gap === '2rem');
 ```
 
 # --seed--
@@ -349,7 +349,6 @@ hr {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, min-content);
-  gap: 2rem;
 }
 --fcc-editable-region--
 ```

@@ -1,5 +1,5 @@
 ---
-id: 614389f601bb4f611db98563
+id: 614387cbefeeba5f3654a291
 title: Part 7
 challengeType: 0
 dashedName: part-7
@@ -7,70 +7,104 @@ dashedName: part-7
 
 # --description--
 
-Below your `.author` element, create a new `div` element with the class `social-icons`.
+After your `header` element, create a `div` with the `class` set to `author`.
 
-Add five `a` elements within that new `div`, and give them the following `href` attributes.
+Within that `div`, create a `p` element with the `class` set to `author-name` and give it the text `By freeCodeCamp`. Wrap the `freeCodeCamp` portion in an `a` element with the `href` set to `https://freecodecamp.org`, and the `target` set to `_blank`.
 
-- The first `a` element should have an `href` set to `https://www.facebook.com/freecodecamp`.
-- The second `a` element should have an `href` set to `https://twitter.com/freecodecamp`.
-- The third `a` element should have an `href` set to `https://instagram.com/freecodecamp`.
-- The fourth `a` element should have an `href` set to `https://www.linkedin.com/school/freecodecamp`.
-- The fifth `a` element should have an `href` set to `https://www.youtube.com/freecodecamp`.
+The `Referer` HTTP header contains information about the address or URL of a page that a user might be visiting from. This information can be used in analytics to track how many users from your page visit freecodecamp.org, for example. Setting the `rel` attribute to `noreferrer` omits this information from the HTTP request. Give your new `a` element a `rel` attribute set to `noreferrer`.
+
+Below that, add a second `p` element with the class `publish-date` and the text `March 7, 2019`.
 
 # --hints--
 
 You should create a new `div` element.
 
 ```js
-assert(document.querySelectorAll('div')?.length === 2);
+assert.exists(document.querySelector('div'));
 ```
 
-Your new `div` element should come after your `.author` element.
+Your `div` element should come after your `header` element.
 
 ```js
-assert(document.querySelector('.author')?.nextElementSibling?.localName === 'div');
+assert(document.querySelector('div')?.previousElementSibling?.localName === 'header');
 ```
 
-Your new `div` element should have the class `social-icons`.
+Your `div` element should have the `class` set to `author`.
 
 ```js
-assert(document.querySelector('.author')?.nextElementSibling?.classList?.contains('social-icons'));
+assert(document.querySelector('div')?.className === 'author');
 ```
 
-Your `.social-icons` element should have five `a` elements.
+You should create two new `p` elements.
 
 ```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.length === 5);
+assert(document.querySelectorAll('p')?.length === 3);
 ```
 
-Your first `a` element should have an `href` set to `https://www.facebook.com/freecodecamp`.
+Your two new `p` elements should be within your `div` element.
 
 ```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[0]?.getAttribute('href')?.includes('https://www.facebook.com/freecodecamp'));
+assert.exists(document.querySelector('div')?.querySelectorAll('p')?.length === 2);
 ```
 
-Your second `a` element should have an `href` set to `https://twitter.com/freecodecamp`.
+Your first new `p` element should have a `class` set to `author-name`.
 
 ```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[1]?.getAttribute('href') === 'https://twitter.com/freecodecamp');
+assert(document.querySelector('div')?.querySelector('p')?.className === 'author-name');
 ```
 
-Your third `a` element should have an `href` set to `https://instagram.com/freecodecamp`.
+Your first new `p` element should have the text `By freeCodeCamp`.
 
 ```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[2]?.getAttribute('href') === 'https://instagram.com/freecodecamp');
+assert(document.querySelector('div')?.querySelector('p')?.innerText === 'By freeCodeCamp');
 ```
 
-Your fourth `a` element should have an `href` set to `https://www.linkedin.com/school/free-code-camp`.
+Your second new `p` element should have a `class` set to `publish-date`.
 
 ```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[3]?.getAttribute('href') === 'https://www.linkedin.com/school/free-code-camp');
+assert(document.querySelector('div')?.querySelectorAll('p')?.[1]?.className === 'publish-date');
 ```
 
-Your fifth `a` element should have an `href` set to `https://www.youtube.com/freecodecamp`.
+Your second new `p` element should have the text `March 7, 2019`.
 
 ```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[4]?.getAttribute('href') === 'https://www.youtube.com/freecodecamp');
+assert(document.querySelector('div')?.querySelectorAll('p')?.[1]?.innerText === 'March 7, 2019');
+```
+
+You should create a new `a` element.
+
+```js
+assert.exists(document.querySelector('a'));
+```
+
+Your `a` element should be within your first new `p` element.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.localName === 'a');
+```
+
+Your `a` element should have the `href` set to `https://freecodecamp.org`.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('href') === 'https://freecodecamp.org');
+```
+
+Your `a` element should have the `target` set to `_blank`.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('target') === '_blank');
+```
+
+Your `a` element should have the `rel` set to `noreferrer`.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('rel') === 'noreferrer');
+```
+
+Your `a` element should surround the text `freeCodeCamp`.
+
+```js
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.textContent === 'freeCodeCamp');
 ```
 
 # --seed--
@@ -111,20 +145,11 @@ assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[4]?.getA
             focus
           </p>
         </header>
-        <div class="author">
-          <p class="author-name">
-            By
-            <a href="https://freecodecamp.org" target="_blank" rel="noreferrer"
-              >freeCodeCamp</a
-            >
-          </p>
-          <p class="publish-date">March 7, 2019</p>
-        </div>
 --fcc-editable-region--
 
---fcc-editable-region--
       </section>
     </main>
+--fcc-editable-region--
   </body>
 </html>
 ```

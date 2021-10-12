@@ -1,5 +1,5 @@
 ---
-id: 6148d4d57b965358c9fa38bf
+id: 6148d3fff5186b57123d97e2
 title: Part 64
 challengeType: 0
 dashedName: part-64
@@ -7,22 +7,37 @@ dashedName: part-64
 
 # --description--
 
-Now to style your second `section`. Note that it has the `text` and `text-with-images` values for the `class` attribute, which means it is already inheriting the styles from your `.text` rule.
+A quote is not really a quote without proper quotation marks. You can add these with CSS pseudo selectors.
 
-Create a `.text-with-images` selector and set the `display` property to `grid`.
+Create a `.quote::before` selector and set the `content` property to `"` with a space following it.
+
+Also create a `.quote::after` selector and set the `content` property to `"` with a space preceding it.
 
 # --hints--
 
-You should have a `.text-with-images` selector.
+You should have a `.quote::before` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images'));
+assert(new __helpers.CSSHelp(document).getStyle('.quote::before'));
 ```
 
-Your `.text-with-images` selector should have a `display` property set to `grid`.
+Your `.quote::before` selector should have a `content` property set to `" `.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.display === 'grid');
+console.log(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content);
+assert(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content?.match(/\\?\"\s/));
+```
+
+You should have a `.quote::after` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote::after'));
+```
+
+Your `.quote::after` selector should have a `content` property set to ` "`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote::after')?.content?.match(/\s\\?\"/));
 ```
 
 # --seed--
@@ -320,14 +335,6 @@ hr {
   font-size: 2.4rem;
   text-align: center;
   font-family: "Raleway", sans-serif;
-}
-
-.quote::before {
-  content: '" ';
-}
-
-.quote::after {
-  content: ' "';
 }
 
 --fcc-editable-region--

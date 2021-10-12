@@ -1,5 +1,5 @@
 ---
-id: 6148d1bdf39c5b5186f5974b
+id: 6148d0b863d10d50544ace0e
 title: Part 59
 challengeType: 0
 dashedName: part-59
@@ -7,20 +7,20 @@ dashedName: part-59
 
 # --description--
 
-Create an `hr` selector, and give it a `margin` property set to `1.5rem 0`.
+The other text has been shifted out of place. Move it into position by giving the `.first-paragraph::first-letter` selector a `float` property set to `left` and a `margin-right` property set to `1rem`.
 
 # --hints--
 
-You should have an `hr` selector.
+Your `.first-paragraph::first-letter` selector should have a `float` property set to `left`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('hr'));
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.float === 'left');
 ```
 
-Your `hr` selector should have a `margin` property set to `1.5rem 0`.
+Your `.first-paragraph::first-letter` selector should have a `margin-right` property set to `1rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('hr')?.margin === '1.5rem 0px');
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.marginRight === '1rem');
 ```
 
 # --seed--
@@ -246,10 +246,6 @@ img {
   object-fit: cover;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 .heading {
   grid-column: 2 / 3;
   display: grid;
@@ -306,10 +302,10 @@ img {
   align-items: center;
 }
 
+--fcc-editable-region--
 .first-paragraph::first-letter {
   font-size: 6rem;
   color: orangered;
-  float: left;
-  margin-right: 1rem;
 }
+--fcc-editable-region--
 ```

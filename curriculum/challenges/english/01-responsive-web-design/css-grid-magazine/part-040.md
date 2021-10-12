@@ -1,5 +1,5 @@
 ---
-id: 6148b5623efa8f369f2c3643
+id: 6148b4b150434734143db6f2
 title: Part 40
 challengeType: 0
 dashedName: part-40
@@ -7,14 +7,22 @@ dashedName: part-40
 
 # --description--
 
-Give the `.hero` selector a `position` property set to `relative`.
+Remember that the `grid-column` property determines which columns an element starts and ends at. There may be times where you are unsure of how many columns your grid will have, but you want an element to stop at the last column. To do this, you can use `-1` for the end column.
+
+Create a `.hero` selector and give it a `grid-column` property set to `1 / -1`. This will tell the element to span the full width of the grid.
 
 # --hints--
 
-Your `.hero` selector should have a `position` property set to `relative`.
+You should have a `.hero` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero')?.position === 'relative');
+assert(new __helpers.CSSHelp(document).getStyle('.hero'));
+```
+
+Your `.hero` selector should have a `grid-column` property set to `1 / -1`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero')?.gridColumn === '1 / -1');
 ```
 
 # --seed--
@@ -248,8 +256,6 @@ main {
 }
 
 --fcc-editable-region--
-.hero {
-  grid-column: 1 / -1;
-}
+
 --fcc-editable-region--
 ```

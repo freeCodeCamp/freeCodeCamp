@@ -1,5 +1,5 @@
 ---
-id: 61438b5b66d76a6264430f2a
+id: 614389f601bb4f611db98563
 title: Part 8
 challengeType: 0
 dashedName: part-8
@@ -7,64 +7,70 @@ dashedName: part-8
 
 # --description--
 
-Within each of your new `a` elements, add an `i` element and give them the following classes:
+Below your `.author` element, create a new `div` element with the class `social-icons`.
 
-- Your first `i` element should have the class `fab fa-facebook-f`
-- Your second `i` element should have the class `fab fa-twitter`
-- Your third `i` element should have the class `fab fa-instagram`
-- Your fourth `i` element should have the class `fab fa-linkedin-in`
-- Your fifth `i` element should have the class `fab fa-youtube`
+Add five `a` elements within that new `div`, and give them the following `href` attributes.
+
+- The first `a` element should have an `href` set to `https://www.facebook.com/freecodecamp`.
+- The second `a` element should have an `href` set to `https://twitter.com/freecodecamp`.
+- The third `a` element should have an `href` set to `https://instagram.com/freecodecamp`.
+- The fourth `a` element should have an `href` set to `https://www.linkedin.com/school/freecodecamp`.
+- The fifth `a` element should have an `href` set to `https://www.youtube.com/freecodecamp`.
 
 # --hints--
 
-You should have five `i` elements.
+You should create a new `div` element.
 
 ```js
-assert(document.querySelectorAll('i')?.length === 5);
+assert(document.querySelectorAll('div')?.length === 2);
 ```
 
-Each `a` element should only have one `i` element.
+Your new `div` element should come after your `.author` element.
 
 ```js
-const aaaaa = [...document.querySelectorAll('.social-icons a')];
-assert(aaaaa?.every(a => a?.children?.length === 1 && a?.children?.[0]?.localName === 'i'));
+assert(document.querySelector('.author')?.nextElementSibling?.localName === 'div');
 ```
 
-Each `i` element should have a `class` attribute which includes `fab`.
+Your new `div` element should have the class `social-icons`.
 
 ```js
-const iiiii = [...document.querySelectorAll('i')];
-assert(iiiii?.every(i => i?.classList?.contains('fab')));
+assert(document.querySelector('.author')?.nextElementSibling?.classList?.contains('social-icons'));
 ```
 
-The first `i` element should have a `class` attribute which includes `fa-facebook-f`.
+Your `.social-icons` element should have five `a` elements.
 
 ```js
-assert(document.querySelectorAll('i')?.[0]?.classList?.contains('fa-facebook-f'));
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.length === 5);
 ```
 
-The second `i` element should have a `class` attribute which includes `fa-twitter`.
+Your first `a` element should have an `href` set to `https://www.facebook.com/freecodecamp`.
 
 ```js
-assert(document.querySelectorAll('i')?.[1]?.classList?.contains('fa-twitter'));
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[0]?.getAttribute('href')?.includes('https://www.facebook.com/freecodecamp'));
 ```
 
-The third `i` element should have a `class` attribute which includes `fa-instagram`.
+Your second `a` element should have an `href` set to `https://twitter.com/freecodecamp`.
 
 ```js
-assert(document.querySelectorAll('i')?.[2]?.classList?.contains('fa-instagram'));
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[1]?.getAttribute('href') === 'https://twitter.com/freecodecamp');
 ```
 
-The fourth `i` element should have a `class` attribute which includes `fa-linkedin-in`.
+Your third `a` element should have an `href` set to `https://instagram.com/freecodecamp`.
 
 ```js
-assert(document.querySelectorAll('i')?.[3]?.classList?.contains('fa-linkedin-in'));
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[2]?.getAttribute('href') === 'https://instagram.com/freecodecamp');
 ```
 
-The fifth `i` element should have a `class` attribute which includes `fa-youtube`.
+Your fourth `a` element should have an `href` set to `https://www.linkedin.com/school/free-code-camp`.
 
 ```js
-assert(document.querySelectorAll('i')?.[4]?.classList?.contains('fa-youtube'));
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[3]?.getAttribute('href') === 'https://www.linkedin.com/school/free-code-camp');
+```
+
+Your fifth `a` element should have an `href` set to `https://www.youtube.com/freecodecamp`.
+
+```js
+assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[4]?.getAttribute('href') === 'https://www.youtube.com/freecodecamp');
 ```
 
 # --seed--
@@ -115,18 +121,7 @@ assert(document.querySelectorAll('i')?.[4]?.classList?.contains('fa-youtube'));
           <p class="publish-date">March 7, 2019</p>
         </div>
 --fcc-editable-region--
-        <div class="social-icons">
-          <a href="https://www.facebook.com/freecodecamp/">
-          </a>
-          <a href="https://twitter.com/freecodecamp/">
-          </a>
-          <a href="https://instagram.com/freecodecamp">
-          </a>
-          <a href="https://www.linkedin.com/school/free-code-camp/">
-          </a>
-          <a href="https://www.youtube.com/freecodecamp">
-          </a>
-        </div>
+
 --fcc-editable-region--
       </section>
     </main>

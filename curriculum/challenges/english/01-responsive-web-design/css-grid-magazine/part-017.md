@@ -1,5 +1,5 @@
 ---
-id: 6143b97c06c3306d23d5da47
+id: 6143a83fcc32c26bcfae3efa
 title: Part 17
 challengeType: 0
 dashedName: part-17
@@ -7,59 +7,56 @@ dashedName: part-17
 
 # --description--
 
-Within your `article` element, create an `h3` element with the `class` set to `list-title` and the text of `A Brief History`. Below that, create a `p` element with the text `Of the Curriculum`. Then create a `ul` element with the class `lists`.
+Below your `.text` element, create a new `section` element and give it a `class` of `text text-with-images`. Within that, create an `article` element with a `class` set to `brief-history`, and an `aside` element with the `class` set to `image-wrapper`.
 
 # --hints--
 
-You should create an `h3` element within your `article` element.
+You should create a new `section` element.
 
 ```js
-assert.exists(document.querySelector('article h3'));
+assert(document.querySelectorAll('section')?.length === 3)
 ```
 
-You should create a `p` element within your `article` element.
+Your new `section` element should come after your `.text` element.
 
 ```js
-assert.exists(document.querySelector('article p'));
+assert(document.querySelectorAll('section')?.[2]?.previousElementSibling?.className === 'text')
 ```
 
-You should create a `ul` element within your `article` element.
+Your new `section` element should have the `class` set to `text text-with-images`.
 
 ```js
-assert.exists(document.querySelector('article ul'));
+assert(document.querySelectorAll('section')?.[2]?.className === 'text text-with-images')
 ```
 
-Your elements within the `article` element should be in the correct order.
+Your new `section` element should have an `article` element.
 
 ```js
-const children = document.querySelector('article')?.children;
-assert(children?.[0].localName === 'h3');
-assert(children?.[1].localName === 'p');
-assert(children?.[2].localName === 'ul');
+assert.exists(document.querySelector('.text-with-images article'));
 ```
 
-Your new `h3` element should have the `class` set to `list-title`.
+Your new `section` element should have an `aside` element.
 
 ```js
-assert(document.querySelector('article h3')?.className === 'list-title');
+assert.exists(document.querySelector('.text-with-images aside'));
 ```
 
-Your new `h3` element should have the text of `A Brief History`.
+The `article` element should come before the `aside` element.
 
 ```js
-assert(document.querySelector('article h3')?.innerText === 'A Brief History');
+assert(document.querySelector('.text-with-images article')?.nextElementSibling?.localName === 'aside');
 ```
 
-Your new `p` element should have the text of `Of the Curriculum`.
+Your `article` element should have the `class` set to `brief-history`.
 
 ```js
-assert(document.querySelector('article p')?.innerText === 'Of the Curriculum');
+assert(document.querySelector('.text-with-images article')?.className === 'brief-history');
 ```
 
-Your new `ul` element should have the `class` set to `lists`.
+Your `aside` element should have the `class` set to `image-wrapper`.
 
 ```js
-assert(document.querySelector('article ul')?.className === 'lists');
+assert(document.querySelector('.text-with-images aside')?.className === 'image-wrapper');
 ```
 
 # --seed--
@@ -156,14 +153,9 @@ assert(document.querySelector('article ul')?.className === 'lists');
           Instead of a series of coding challenges, people will be in their code editor passing one test after another, quickly building up a project. People will get into a real flow state, similar to what they experience when they build the required projects at the end of each certification. They'll get that sense of forward progress right from the beginning. And freeCodeCamp will be a much smoother experience.
         </p>
       </section>
-      <section class="text text-with-images">
 --fcc-editable-region--
-        <article class="brief-history">
 
-        </article>
 --fcc-editable-region--
-        <aside class="image-wrapper"></aside>
-      </section>
     </main>
   </body>
 </html>

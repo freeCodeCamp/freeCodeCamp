@@ -1,5 +1,5 @@
 ---
-id: 6143a778bffc206ac6b1dbe3
+id: 6143a73279ce6369de4b9bcc
 title: Part 15
 challengeType: 0
 dashedName: part-15
@@ -7,29 +7,24 @@ dashedName: part-15
 
 # --description--
 
-Create one final `p` element at the end of your `.text` element and give it the following text:
+Create a fifth `p` element at the end of your `.text` element, and give it the following text:
 
 ```markup
-Instead of a series of coding challenges, people will be in their code
-editor passing one test after another, quickly building up a project.
-People will get into a real flow state, similar to what they
-experience when they build the required projects at the end of each
-certification. They'll get that sense of forward progress right from
-the beginning. And freeCodeCamp will be a much smoother experience.
+The main design challenge is taking what is currently paragraphs of explanation and instructions and packing them into a single test description text. Each project will involve dozens of tests like this. People will be coding the entire time, rather than switching back and forth from "reading mode" to "coding mode".
 ```
 
 # --hints--
 
-You should add a sixth `p` element to the `.text` element.
+You should add a fifth `p` element.
 
 ```js
-assert(document.querySelectorAll('.text p')?.length === 7)
+assert(document.querySelectorAll('.text p')?.length === 6);
 ```
 
-Your sixth `p` element should have the provided text.
+Your new `p` element should have the provided text.
 
 ```js
-assert(document.querySelectorAll('.text p')?.[6]?.innerText === 'Instead of a series of coding challenges, people will be in their code editor passing one test after another, quickly building up a project. People will get into a real flow state, similar to what they experience when they build the required projects at the end of each certification. They\'ll get that sense of forward progress right from the beginning. And freeCodeCamp will be a much smoother experience.')
+assert(document.querySelectorAll('.text p')?.[5]?.innerText === 'The main design challenge is taking what is currently paragraphs of explanation and instructions and packing them into a single test description text. Each project will involve dozens of tests like this. People will be coding the entire time, rather than switching back and forth from "reading mode" to "coding mode".');
 ```
 
 # --seed--
@@ -119,9 +114,6 @@ assert(document.querySelectorAll('.text p')?.[6]?.innerText === 'Instead of a se
         <p>
           No more walls of explanatory text. No more walls of tests. Just one
           test at a time, as you build up a working project. Over the course of passing thousands of tests, you build up projects and your own understanding of coding fundamentals. There is no transition between lessons and projects, because the lessons themselves are baked into projects. And there's plenty of repetition to help you retain everything because - hey - building projects in real life has plenty of repetition.
-        </p>
-        <p>
-          The main design challenge is taking what is currently paragraphs of explanation and instructions and packing them into a single test description text. Each project will involve dozens of tests like this. People will be coding the entire time, rather than switching back and forth from "reading mode" to "coding mode".
         </p>
       </section>
 --fcc-editable-region--

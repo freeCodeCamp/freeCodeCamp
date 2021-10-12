@@ -1,5 +1,5 @@
 ---
-id: 6144ee46a9d6e614c598cc05
+id: 6144e1ba93e435127a7f516d
 title: Part 29
 challengeType: 0
 dashedName: part-29
@@ -7,26 +7,20 @@ dashedName: part-29
 
 # --description--
 
-Create an `a` selector, and give it a `text-decoration` property set to `none` and a `color` property set to `linen`.
+Create an `h2, h3, h4, h5, h6` selector. Give it a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 # --hints--
 
-You should have an `a` selector.
+You should have an `h2, h3, h4, h5, h6` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('a'));
+assert(new __helpers.CSSHelp(document).getStyle('h2, h3, h4, h5, h6'));
 ```
 
-Your `a` selector should have a `text-decoration` property set to `none`.
+Your `h2, h3, h4, h5, h6` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('a')?.textDecoration === 'none');
-```
-
-Your `a` selector should have a `color` property set to `linen`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('a')?.color === 'linen');
+assert(new __helpers.CSSHelp(document).getStyle('h2, h3, h4, h5, h6')?.fontFamily === 'Raleway, sans-serif');
 ```
 
 # --seed--
@@ -229,10 +223,6 @@ body {
 
 h1 {
   font-family: 'Anton', sans-serif;
-}
-
-h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
 }
 
 --fcc-editable-region--

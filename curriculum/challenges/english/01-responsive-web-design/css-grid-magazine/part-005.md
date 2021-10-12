@@ -1,5 +1,5 @@
 ---
-id: 614e0e588f0e8a772a8a81a6
+id: 6165d3b702a5d92ad970b30c
 title: Part 5
 challengeType: 0
 dashedName: part-5
@@ -7,16 +7,56 @@ dashedName: part-5
 
 # --description--
 
-Your image currently takes up a lot of space. To better see what you are working on, add a `width` attribute to the `img` element, with a value of `400`.
-
-You will remove this later on when you have worked on the CSS.
+After your `img` element, add an `h1` element with the `class` set to `hero-title` and the text set to `OUR NEW CURRICULUM`, followed by a `p` element with the `class` set to `hero-subtitle` and the text set to `Our efforts to restructure our curriculum with a more project-based focus`.
 
 # --hints--
 
-Your `img` element should have a `width` attribute set to `400`.
+You should create an `h1` element.
 
 ```js
-assert(document.querySelector('img')?.getAttribute('width') === '400');
+assert.exists(document.querySelector('h1'));
+```
+
+Your `h1` element should come after your `img` element.
+
+```js
+assert(document.querySelector('h1')?.previousElementSibling?.localName === 'img');
+```
+
+Your `h1` element should have the `class` set to `hero-title`.
+
+```js
+assert(document.querySelector('h1')?.className === 'hero-title');
+```
+
+Your `h1` element should have the text set to `OUR NEW CURRICULUM`.
+
+```js
+assert(document.querySelector('h1')?.textContent === 'OUR NEW CURRICULUM');
+```
+
+You should create a new `p` element.
+
+```js
+assert.exists(document.querySelector('p'));
+```
+
+Your `p` element should come after your `h1` element.
+
+```js
+assert(document.querySelector('p')?.previousElementSibling?.localName === 'h1');
+```
+
+Your `p` element should have the `class` set to `hero-subtitle`.
+
+```js
+assert(document.querySelector('p')?.className === 'hero-subtitle');
+```
+
+Your `p` element should have the text set to `Our efforts to restructure our curriculum with a more project-based focus`.
+
+```js
+assert(document.querySelector('p')?.textContent === 'Our efforts to restructure our curriculum with a more project-based focus');
 ```
 
 # --seed--
@@ -51,11 +91,6 @@ assert(document.querySelector('img')?.getAttribute('width') === '400');
             loading="lazy"
             class="hero-img"
           />
-          <h1 class="hero-title">OUR NEW CURRICULUM</h1>
-          <p class="hero-subtitle">
-            Our efforts to restructure our curriculum with a more project-based
-            focus
-          </p>
         </header>
       </section>
     </main>

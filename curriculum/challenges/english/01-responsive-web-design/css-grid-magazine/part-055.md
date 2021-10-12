@@ -1,5 +1,5 @@
 ---
-id: 6148c721e74ecd4c619ae51c
+id: 6148c6aa9981d74af202125e
 title: Part 55
 challengeType: 0
 dashedName: part-55
@@ -7,16 +7,20 @@ dashedName: part-55
 
 # --description--
 
-Your `.text` element is not a CSS Grid, but you can create columns within an element without using Grid by using the `column-width` property.
-
-Give your `.text` selector a `column-width` property set to `25rem`.
+Give the `.text` selector a `font-size` property set to `1.8rem` and a `letter-spacing` property set to `0.6px`.
 
 # --hints--
 
-Your `.text` selector should have a `column-width` property set to `25rem`.
+Your `.text` selector should have a `font-size` property set to `1.8rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text')?.columnWidth === '25rem');
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.fontSize === '1.8rem');
+```
+
+Your `.text` selector should have a `letter-spacing` property set to `0.6px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.letterSpacing === '0.6px');
 ```
 
 # --seed--
@@ -252,8 +256,6 @@ img {
 --fcc-editable-region--
 .text {
   grid-column: 2 / 3;
-  font-size: 1.8rem;
-  letter-spacing: 0.6px;
 }
 --fcc-editable-region--
 

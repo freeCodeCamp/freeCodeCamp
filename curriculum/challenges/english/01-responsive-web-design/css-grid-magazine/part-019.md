@@ -1,5 +1,5 @@
 ---
-id: 6143bb50e8e48c6f5ef9d8d5
+id: 6143b9e1f5035c6e5f2a8231
 title: Part 19
 challengeType: 0
 dashedName: part-19
@@ -7,36 +7,109 @@ dashedName: part-19
 
 # --description--
 
-Within your `aside` element, create two `img` elements, a `blockquote` element, and a third `img` element. Give the `blockquote` element a `class` set to `image-quote`.
+Within your `ul` element, create six `li` elements. Give them the following content. Add an `h4` element with a `class` set to `list-subtitle` and a `p` element to each of your `li` elements.
+
+Then give the `h4` and `p` elements the following text content, in order:
+
+- The first `h4` should have the text `V1 - 2014`, and the first `p` should have the text `We launched freeCodeCamp with a simple list of 15 resources, including Harvard's CS50 and Stanford's Database Class.`
+- The second `h4` should have the text `V2 - 2015`, and the second `p` should have the text `We added interactive algorithm challenges.`
+- The third `h4` should have the text `V3 - 2015`, and the third `p` should have the text `We added our own HTML+CSS challenges (before we'd been relying on General Assembly's Dash course for these).`
+- The fourth `h4` should have the text `V4 - 2016`, and the fourth `p` should have the text `We expanded the curriculum to 3 certifications, including Front End, Back End, and Data Visualization. They each had 10 required projects, but only the Front End section had its own challenges. For the other certs, we were still using external resources like Node School.`
+- The fifth `h4` should have the text `V5 - 2017`, and the fifth `p` should have the text `We added the back end and data visualization challenges.`
+- The sixth `h4` should have the text `V6 - 2018`, and the sixth `p` should have the text `We launched 6 new certifications to replace our old ones. This was the biggest curriculum improvement to date.`
 
 # --hints--
 
-You should create three `img` elements within your `aside` element.
+Your `ul` element should have six `li` elements.
 
 ```js
-assert(document.querySelectorAll('aside img')?.length === 3);
+assert(document.querySelectorAll('.lists li')?.length === 6);
 ```
 
-You should create a `blockquote` element within your `aside` element.
+Each of your new `li` elements should have an `h4` and `p` element.
 
 ```js
-assert.exists(document.querySelector('aside blockquote'));
+const lis = [...document.querySelectorAll('.lists li')];
+assert(lis?.every(li => li?.children?.[0]?.localName === 'h4' && li?.children?.[1]?.localName === 'p'));
 ```
 
-Your `blockquote` element should have a `class` set to `image-quote`.
+Your first `h4` should have the text `V1 - 2014`.
 
 ```js
-assert(document.querySelector('aside blockquote')?.classList?.contains('image-quote'));
+assert(document.querySelectorAll('.lists li h4')?.[0]?.innerText === 'V1 - 2014');
 ```
 
-Your new elements should be in the correct order.
+Your first `p` should have the text `We launched freeCodeCamp with a simple list of 15 resources, including Harvard's CS50 and Stanford's Database Class.`
 
 ```js
-const children = document.querySelector('aside')?.children;
-assert(children?.[0]?.localName === 'img');
-assert(children?.[1]?.localName === 'img');
-assert(children?.[2]?.localName === 'blockquote');
-assert(children?.[3]?.localName === 'img');
+assert(document.querySelectorAll('.lists li p')?.[0]?.innerText === 'We launched freeCodeCamp with a simple list of 15 resources, including Harvard\'s CS50 and Stanford\'s Database Class.');
+```
+
+Your second `h4` should have the text `V2 - 2015`.
+
+```js
+assert(document.querySelectorAll('.lists li h4')?.[1]?.innerText === 'V2 - 2015');
+```
+
+Your second `p` should have the text `We added interactive algorithm challenges.`
+
+```js
+assert(document.querySelectorAll('.lists li p')?.[1]?.innerText === 'We added interactive algorithm challenges.');
+```
+
+Your third `h4` should have the text `V3 - 2015`.
+
+```js
+assert(document.querySelectorAll('.lists li h4')?.[2]?.innerText === 'V3 - 2015');
+```
+
+Your third `p` should have the text `We added our own HTML+CSS challenges (before we'd been relying on General Assembly's Dash course for these).`
+
+```js
+assert(document.querySelectorAll('.lists li p')?.[2]?.innerText === 'We added our own HTML+CSS challenges (before we\'d been relying on General Assembly\'s Dash course for these).');
+```
+
+Your fourth `h4` should have the text `V4 - 2016`.
+
+```js
+assert(document.querySelectorAll('.lists li h4')?.[3]?.innerText === 'V4 - 2016');
+```
+
+Your fourth `p` should have the text `We expanded the curriculum to 3 certifications, including Front End, Back End, and Data Visualization. They each had 10 required projects, but only the Front End section had its own challenges. For the other certs, we were still using external resources like Node School`.
+
+```js
+assert(document.querySelectorAll('.lists li p')?.[3]?.innerText === 'We expanded the curriculum to 3 certifications, including Front End, Back End, and Data Visualization. They each had 10 required projects, but only the Front End section had its own challenges. For the other certs, we were still using external resources like Node School.');
+```
+
+Your fifth `h4` should have the text `V5 - 2017`.
+
+```js
+assert(document.querySelectorAll('.lists li h4')?.[4]?.innerText === 'V5 - 2017');
+```
+
+Your fifth `p` should have the text `We added the back end and data visualization challenges.`
+
+```js
+assert(document.querySelectorAll('.lists li p')?.[4]?.innerText === 'We added the back end and data visualization challenges.');
+```
+
+Your sixth `h4` should have the text `V6 - 2018`.
+
+```js
+assert(document.querySelectorAll('.lists li h4')?.[5]?.innerText === 'V6 - 2018');
+```
+
+Your sixth `p` should have the text `We launched 6 new certifications to replace our old ones. This was the biggest curriculum improvement to date.`
+
+```js
+assert(document.querySelectorAll('.lists li p')?.[5]?.innerText === 'We launched 6 new certifications to replace our old ones. This was the biggest curriculum improvement to date.');
+```
+
+Your six `h4` elements should each have the class `list-subtitle`.
+
+```js
+const h4s = [...document.querySelectorAll('.lists li h4')];
+assert(h4s?.every(h4 => h4?.classList?.contains('list-subtitle')));
 ```
 
 # --seed--
@@ -134,56 +207,16 @@ assert(children?.[3]?.localName === 'img');
         </p>
       </section>
       <section class="text text-with-images">
+--fcc-editable-region--
         <article class="brief-history">
           <h3 class="list-title">A Brief History</h3>
           <p>Of the Curriculum</p>
           <ul class="lists">
-            <li>
-              <h4 class="list-subtitle">V1 - 2014</h4>
-              <p>
-                We launched freeCodeCamp with a simple list of 15 resources,
-                including Harvard's CS50 and Stanford's Database Class.
-              </p>
-            </li>
-            <li>
-              <h4 class="list-subtitle">V2 - 2015</h4>
-              <p>We added interactive algorithm challenges.</p>
-            </li>
-            <li>
-              <h4 class="list-subtitle">V3 - 2015</h4>
-              <p>
-                We added our own HTML+CSS challenges (before we'd been relying
-                on General Assembly's Dash course for these).
-              </p>
-            </li>
-            <li>
-              <h4 class="list-subtitle">V4 - 2016</h4>
-              <p>
-                We expanded the curriculum to 3 certifications, including Front
-                End, Back End, and Data Visualization. They each had 10 required
-                projects, but only the Front End section had its own challenges.
-                For the other certs, we were still using external resources like
-                Node School.
-              </p>
-            </li>
-            <li>
-              <h4 class="list-subtitle">V5 - 2017</h4>
-              <p>We added the back end and data visualization challenges.</p>
-            </li>
-            <li>
-              <h4 class="list-subtitle">V6 - 2018</h4>
-              <p>
-                We launched 6 new certifications to replace our old ones. This
-                was the biggest curriculum improvement to date.
-              </p>
-            </li>
+          
           </ul>
         </article>
 --fcc-editable-region--
-        <aside class="image-wrapper">
-
-        </aside>
---fcc-editable-region--
+        <aside class="image-wrapper"></aside>
       </section>
     </main>
   </body>

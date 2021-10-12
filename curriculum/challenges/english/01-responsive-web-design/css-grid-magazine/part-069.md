@@ -1,5 +1,5 @@
 ---
-id: 6148e19c3e26436be0155690
+id: 6148e162e255676ae0da6a76
 title: Part 69
 challengeType: 0
 dashedName: part-69
@@ -7,20 +7,14 @@ dashedName: part-69
 
 # --description--
 
-Create a `.lists li` rule to target the list items within your `.lists` element. Give it a `margin-bottom` property set to `1.5rem`.
+Give the `.lists` selector a `margin-top` property set to `2rem`.
 
 # --hints--
 
-You should have a `.lists li` selector.
+Your `.lists` selector should have a `margin-top` property set to `2rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists li'));
-```
-
-Your `.lists li` selector should have a `margin-bottom` property set to `1.5rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists li')?.marginBottom === '1.5rem');
+assert(new __helpers.CSSHelp(document).getStyle('.lists')?.marginTop === '2rem');
 ```
 
 # --seed--
@@ -335,12 +329,9 @@ hr {
   margin-bottom: 3rem;
 }
 
+--fcc-editable-region--
 .lists {
   list-style-type: none;
-  margin-top: 2rem;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```
