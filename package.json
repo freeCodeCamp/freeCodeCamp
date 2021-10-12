@@ -134,6 +134,6 @@
     "shx": "0.3.3",
     "start-server-and-test": "1.14.0",
     "typescript": "4.4.3",
-    "webpack-bundle-analyzer": "4.4.2"
+    "webpack-bundle-analyzer": "4.5.0"
   }
 }
