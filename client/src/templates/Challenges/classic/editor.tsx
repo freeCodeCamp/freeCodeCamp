@@ -303,7 +303,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     data.editor = editor;
 
     if (hasEditableRegion()) {
-      initializeProjectStepFeatures();
+      initializeDescriptionAndOutputWidgets();
       addContentChangeListener();
       showEditableRegion(editor);
     }
@@ -667,7 +667,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
-  function initializeProjectStepFeatures() {
+  function initializeDescriptionAndOutputWidgets() {
     const editor = data.editor;
     if (editor) {
       initializeRegions(getEditableRegionFromRedux());
@@ -992,7 +992,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     const hasChangedContents = updateEditorValues();
     if (hasChangedContents && hasEditableRegion()) {
-      initializeProjectStepFeatures();
+      initializeDescriptionAndOutputWidgets();
       updateDescriptionZone();
       updateOutputZone();
     }
