@@ -1,6 +1,6 @@
 ---
 id: a3f503de51cf954ede28891d
-title: Find the Symmetric Difference
+title: 找到對稱差異
 challengeType: 5
 forumTopicId: 301611
 dashedName: find-the-symmetric-difference
@@ -8,77 +8,77 @@ dashedName: find-the-symmetric-difference
 
 # --description--
 
-The mathematical term <dfn>symmetric difference</dfn> (`△` or `⊕`) of two sets is the set of elements which are in either of the two sets but not in both. For example, for sets `A = {1, 2, 3}` and `B = {2, 3, 4}`, `A △ B = {1, 4}`.
+兩個集合的數學術語 <dfn>對稱差異</dfn> （`△` 或 `⊕`）是指存在於兩個集合中的任意一個集合，但不同時存在於兩個集合中的元素的集。 例如集合 `A = {1, 2, 3}` 和 `B = {2, 3, 4}`，那麼 `A △ B = {1, 4}`。
 
-Symmetric difference is a binary operation, which means it operates on only two elements. So to evaluate an expression involving symmetric differences among *three* elements (`A △ B △ C`), you must complete one operation at a time. Thus, for sets `A` and `B` above, and `C = {2, 3}`, `A △ B △ C = (A △ B) △ C = {1, 4} △ {2, 3} = {1, 2, 3, 4}`.
+對稱差異是一種二元操作，這意味着它只能在兩個元素上操作。 所以要評估一個涉及*三個*元素的表達式（`A △ B △ C`），你必須一次完成一個操作。 因此，對於上述 `A` 和 `B` 兩個集合，如果 `C = {2, 3}`，那麼 `A △ B △ C = (A △ B) △ C = {1, 4} △ {2, 3} = {1, 2, 3, 4}`。
 
 # --instructions--
 
-Create a function that takes two or more arrays and returns an array of their symmetric difference. The returned array must contain only unique values (*no duplicates*).
+創建一個接受兩個或更多數組的函數，並返回所提供數組的對稱差異。 結果數組必須僅包含唯一值（ *不重複* ）。
 
 # --hints--
 
-`sym([1, 2, 3], [5, 2, 1, 4])` should return `[3, 4, 5]`.
+`sym([1, 2, 3], [5, 2, 1, 4])` 應該返回 `[3, 4, 5]` 。
 
 ```js
 assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 4, 5]);
 ```
 
-`sym([1, 2, 3], [5, 2, 1, 4])` should contain only three elements.
+`sym([1, 2, 3], [5, 2, 1, 4])` 應該僅包含三個元素。
 
 ```js
 assert.equal(sym([1, 2, 3], [5, 2, 1, 4]).length, 3);
 ```
 
-`sym([1, 2, 3, 3], [5, 2, 1, 4])` should return `[3, 4, 5]`.
+`sym([1, 2, 3, 3], [5, 2, 1, 4])` 應返回 `[3, 4, 5]` 。
 
 ```js
 assert.sameMembers(sym([1, 2, 3, 3], [5, 2, 1, 4]), [3, 4, 5]);
 ```
 
-`sym([1, 2, 3, 3], [5, 2, 1, 4])` should contain only three elements.
+`sym([1, 2, 3, 3], [5, 2, 1, 4])` 應僅包含三個元素。
 
 ```js
 assert.equal(sym([1, 2, 3, 3], [5, 2, 1, 4]).length, 3);
 ```
 
-`sym([1, 2, 3], [5, 2, 1, 4, 5])` should return `[3, 4, 5]`.
+`sym([1, 2, 3], [5, 2, 1, 4, 5])` 應該返回 `[3, 4, 5]`。
 
 ```js
 assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4, 5]), [3, 4, 5]);
 ```
 
-`sym([1, 2, 3], [5, 2, 1, 4, 5])` should contain only three elements.
+`sym([1, 2, 3], [5, 2, 1, 4, 5])` 應僅包含三個元素。
 
 ```js
 assert.equal(sym([1, 2, 3], [5, 2, 1, 4, 5]).length, 3);
 ```
 
-`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` should return `[1, 4, 5]`
+`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` 應該返回 `[1, 4, 5]` 。
 
 ```js
 assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5]);
 ```
 
-`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` should contain only three elements.
+`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` 應僅包含三個元素。
 
 ```js
 assert.equal(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]).length, 3);
 ```
 
-`sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])` should return `[1, 4, 5]`.
+`sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])` 應該返回 `[1, 4, 5]`。
 
 ```js
 assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5]);
 ```
 
-`sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])` should contain only three elements.
+`sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])` 應僅包含三個元素。
 
 ```js
 assert.equal(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]).length, 3);
 ```
 
-`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])` should return `[2, 3, 4, 6, 7]`.
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])` 應該返回 `[2, 3, 4, 6, 7]` 。
 
 ```js
 assert.sameMembers(
@@ -87,7 +87,7 @@ assert.sameMembers(
 );
 ```
 
-`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])` should contain only five elements.
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])` 應該只包含五個元素。
 
 ```js
 assert.equal(
@@ -96,7 +96,7 @@ assert.equal(
 );
 ```
 
-`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])` should return `[1, 2, 4, 5, 6, 7, 8, 9]`.
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])`應返回`[1, 2, 4, 5, 6, 7, 8, 9]` 。
 
 ```js
 assert.sameMembers(
@@ -112,7 +112,7 @@ assert.sameMembers(
 );
 ```
 
-`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])` should contain only eight elements.
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])` 應僅包含八個元素。
 
 ```js
 assert.equal(

@@ -7,11 +7,27 @@ const story = {
   title: 'Example/Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' }
+    theme: {
+      options: ['dark', 'light'],
+      control: { type: 'radio' },
+      defaultValue: 'light'
+    }
   }
 };
 
-const Template: Story<ButtonProps> = args => <Button {...args} />;
+const Template: Story<ButtonProps> = args => {
+  return (
+    <div
+      className={`flex h-screen justify-center items-center ${
+        args.theme === 'dark'
+          ? 'dark bg-dark-theme-background'
+          : 'light bg-light-theme-background'
+      }`}
+    >
+      <Button {...args} />
+    </div>
+  );
+};
 
 export const Primary = Template.bind({});
 Primary.args = {
