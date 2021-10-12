@@ -19,11 +19,11 @@ interface SidePanelProps {
   block: string;
   challengeDescription: ReactElement;
   challengeTitle: ReactElement;
-  guideUrl?: string;
+  guideUrl: string;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   showToolPanel: boolean;
   tests?: Record<string, unknown>[];
-  videoUrl?: string;
+  videoUrl: string;
 }
 
 export function SidePanel({
