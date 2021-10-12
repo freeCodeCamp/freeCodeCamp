@@ -33,7 +33,7 @@ assert(new __helpers.CSSHelp(document).getStyle('*')?.boxSizing === 'border-box'
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Flex Photo Gallery</title>
+    <title>CSS Flexbox Photo Gallery</title>
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
