@@ -135,15 +135,15 @@ Quando você estiver trabalhando em funcionalidades para nossas próximas branch
    ```console
    git checkout <pr-branch-name>
 
-   # example:
-   # git checkout feat/add-numpy-video-question
+      # exemplo:
+      # git checkout feat/add-numpy-video-question
 
-   git checkout -b <backup-branch-name>
+      git checkout -b <backup-branch-name>
 
-   # example:
-   #  git checkout -b backup-feat/add-numpy-video-question
+      # exemplo:
+      # git checkout -b backup-feat/add-numpy-video-question
 
-   git branch -D <pr-branch-name>
+      git branch -D <pr-branch-name>
    ```
 
    b. Ou apenas faça um backup da sua branch pr (se você não a tem localmente):
@@ -151,8 +151,8 @@ Quando você estiver trabalhando em funcionalidades para nossas próximas branch
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-   # example:
-   #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+      # exemplo:
+      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
    ```
 
 3. Comece do zero:

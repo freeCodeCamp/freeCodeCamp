@@ -45,17 +45,17 @@ Se você tem uma instância `let duck = new Bird();` e você chamar `duck.eat()`
 
 # --instructions--
 
-Sobrescreva o método `fly()` para `Penguin` para que retorne a string `Alas, this is a flightless bird.(Alas, isto é um pássaro que não voa.)`
+Sobrescreva o método `fly()` para `Penguin` para que retorne a string `Alas, this is a flightless bird.` (Infelizmente, este pássaro não voa.)
 
 # --hints--
 
-`penguin.fly()` deve retornar a string `Alas, this is a flightless bird.(Infelizmente, este é um pássaro que não voa.)`
+`penguin.fly()` deve retornar a string `Alas, this is a flightless bird.` (Infelizmente, este pássaro não voa.)
 
 ```js
 assert(penguin.fly() === 'Alas, this is a flightless bird.');
 ```
 
-O método `bird.fly()` deve retornar a string `I am flying! (Eu estou voando)`
+O método `bird.fly()` deve retornar a string `I am flying!` (Eu estou voando!)
 
 ```js
 assert(new Bird().fly() === 'I am flying!');

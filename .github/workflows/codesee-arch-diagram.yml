@@ -2,21 +2,24 @@ on:
   push:
     branches:
       - main
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened]
 
 name: CodeSee Map
 
 jobs:
   test_map_action:
-    if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
     runs-on: ubuntu-latest
-    name: Run map action on action code
+    if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
+    continue-on-error: true
+    name: Run CodeSee Map Analysis
     steps:
       - name: checkout
         id: checkout
         uses: actions/checkout@v2
         with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
       # codesee-detect-languages has an output with id languages.
@@ -54,10 +57,26 @@ jobs:
 
       # CodeSee Maps Rust support uses a static binary so there's no setup step required.
 
-      - name: run
-        id: run
+      - name: Generate Map
+        id: generate-map
         uses: Codesee-io/codesee-map-action@latest
         with:
+          step: map
+          github_ref: ${{ github.ref }}
+          languages: ${{ steps.detect-languages.outputs.languages }}
+
+      - name: Upload Map
+        id: upload-map
+        uses: Codesee-io/codesee-map-action@latest
+        with:
+          step: mapUpload
           api_token: ${{ secrets.CODESEE_ARCH_DIAG_API_TOKEN }}
           github_ref: ${{ github.ref }}
-          support_typescript: true
+
+      - name: Insights
+        id: insights
+        uses: Codesee-io/codesee-map-action@latest
+        with:
+          step: insights
+          api_token: ${{ secrets.CODESEE_ARCH_DIAG_API_TOKEN }}
+          github_ref: ${{ github.ref }}
