@@ -3,7 +3,7 @@ USER node
 WORKDIR /home/node/build
 COPY --chown=node:node . .
 
-RUN npm ci
+RUN npm ci --no-progress
 RUN npm run build:curriculum
 RUN npm run build:server
 
@@ -13,9 +13,9 @@ WORKDIR /home/node/api
 # get and install deps
 COPY --from=builder --chown=node:node /home/node/build/package.json /home/node/build/package-lock.json ./
 COPY --from=builder --chown=node:node /home/node/build/api-server/package.json /home/node/build/api-server/package-lock.json api-server/
-RUN npm ci --production --ignore-scripts \
+RUN npm ci --production --ignore-scripts --no-progress \
   && cd api-server \
-  && npm ci --production \
+  && npm ci --production --no-progress \
   && npm cache clean --force
 COPY --from=builder --chown=node:node /home/node/build/api-server/lib/ api-server/lib/
 COPY --from=builder --chown=node:node /home/node/build/utils/ utils/
