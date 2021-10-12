@@ -8,7 +8,7 @@ import IntroDescription from './components/IntroDescription';
 
 import './intro.css';
 
-interface Props {
+interface IntroProps {
   complete?: boolean;
   completedChallengeCount?: number;
   isSignedIn?: boolean;
