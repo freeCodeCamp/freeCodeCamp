@@ -98,7 +98,6 @@ assert(document.querySelectorAll('.text p')?.[4]?.innerText === 'No more walls o
           </a>
         </div>
       </section>
---fcc-editable-region--
       <section class="text">
         <p class="first-paragraph">
           Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
@@ -117,8 +116,10 @@ assert(document.querySelectorAll('.text p')?.[4]?.innerText === 'No more walls o
           </p>
           <hr />
         </blockquote>
-      </section>
 --fcc-editable-region--
+        
+--fcc-editable-region--
+      </section>
     </main>
   </body>
 </html>

@@ -33,7 +33,7 @@ Your new `section` element should have the `class` set to `text`.
 assert(document.querySelectorAll('section')?.[1]?.className === 'text');
 ```
 
-You should create a new `p` element within your `text` element.
+You should create a new `p` element within your `.text` element.
 
 ```js
 assert(document.querySelector('.text')?.querySelectorAll('p')?.length === 1);

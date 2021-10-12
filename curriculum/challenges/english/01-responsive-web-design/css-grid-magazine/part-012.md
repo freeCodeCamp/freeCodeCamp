@@ -123,7 +123,6 @@ assert(document.querySelector('.text blockquote p')?.innerText === 'The entire c
           </a>
         </div>
       </section>
---fcc-editable-region--
       <section class="text">
         <p class="first-paragraph">
           Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
@@ -135,8 +134,10 @@ assert(document.querySelector('.text blockquote p')?.innerText === 'The entire c
           It wasn't as dramatic as Doc's revelation in Back to the Future. It
           just occurred to me while I was going for a run. The revelation: the entire curriculum should be a series of projects. Instead of individual coding challenges, we'll just have projects, each with their own seamless series of tests. Each test gives you just enough information to figure out how to get it to pass. (And you can view hints if that isn't enough.)
         </p>
-      </section>
 --fcc-editable-region--
+
+--fcc-editable-region--
+      </section>
     </main>
   </body>
 </html>

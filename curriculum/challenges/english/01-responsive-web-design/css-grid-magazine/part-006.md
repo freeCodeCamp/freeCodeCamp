@@ -60,13 +60,13 @@ assert(document.querySelector('div')?.querySelector('p')?.innerText === 'By free
 Your second new `p` element should have a `class` set to `publish-date`.
 
 ```js
-assert(document.querySelector('div')?.querySelectorAll('p')?.[1].className === 'publish-date');
+assert(document.querySelector('div')?.querySelectorAll('p')?.[1]?.className === 'publish-date');
 ```
 
 Your second new `p` element should have the text `March 7, 2019`.
 
 ```js
-assert(document.querySelector('div')?.querySelectorAll('p')?.[1].innerText === 'March 7, 2019');
+assert(document.querySelector('div')?.querySelectorAll('p')?.[1]?.innerText === 'March 7, 2019');
 ```
 
 You should create a new `a` element.
