@@ -3,7 +3,7 @@ USER node
 WORKDIR /home/node/build
 COPY --chown=node:node . .
 
-RUN npm ci
+RUN npm ci --no-progress
 RUN npm run build:curriculum
 RUN npm run build:server
 
