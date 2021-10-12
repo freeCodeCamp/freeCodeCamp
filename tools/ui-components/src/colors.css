@@ -33,37 +33,25 @@
   --red90: #850000;
 }
 
-:export {
-  --gray00: var(--gray00);
-  --gray05: var(--gray05);
-  --gray10: var(--gray10);
-  --gray15: var(--gray15);
-  --gray45: var(--gray45);
-  --gray75: var(--gray75);
-  --gray80: var(--gray80);
-  --gray85: var(--gray85);
-  --gray90: var(--gray90);
+html,
+div.light {
+  --default-foreground-primary: var(--gray90);
+  --default-foreground-secondary: var(--gray85);
+  --default-foreground-tertiary: var(--gray80);
+  --default-foreground-quaternary: var(--gray75);
+  --default-background-primary: var(--gray00);
+  --default-background-secondary: var(--gray05);
+  --default-background-tertiary: var(--gray10);
+  --default-background-quaternary: var(--gray15);
+}
 
-  --purple10: var(--purple10);
-  --purple50: var(--purple50);
-  --purple90: var(--purple90);
-
-  --yellow10: var(--yellow10);
-  --yellow20: var(--yellow20);
-  --yellow50: var(--yellow50);
-  --yellow90: var(--yellow90);
-
-  --blue10: var(--blue10);
-  --blue20: var(--blue20);
-  --blue30: var(--blue30);
-  --blue50: var(--blue50);
-  --blue90: var(--blue90);
-
-  --green10: var(--green10);
-  --green90: var(--green90);
-
-  --red10: var(--red10);
-  --red20: var(--red20);
-  --red80: var(--red80);
-  --red90: var(--red90);
+html.dark,
+div.dark {
+  --default-foreground-primary: var(--gray00);
+  --default-foreground-secondary: var(--gray05);
+  --default-foreground-quaternary: var(--gray15);
+  --default-background-primary: var(--gray90);
+  --default-background-secondary: var(--gray85);
+  --default-background-tertiary: var(--gray80);
+  --default-background-quaternary: var(--gray75);
 }
