@@ -9,7 +9,7 @@ dashedName: part-15
 
 Create one final `p` element at the end of your `.text` element and give it the following text:
 
-```
+```markup
 Instead of a series of coding challenges, people will be in their code
 editor passing one test after another, quickly building up a project.
 People will get into a real flow state, similar to what they
