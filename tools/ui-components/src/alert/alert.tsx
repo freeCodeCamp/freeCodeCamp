@@ -1,4 +1,5 @@
 import React from 'react';
+import './alert.css';
 
 type AlertVariant = 'success' | 'info' | 'warning' | 'danger';
 
@@ -11,11 +12,10 @@ export interface AlertProps {
 }
 
 const variants: Record<AlertVariant, string> = {
-  // TODO: Use FFC variant specific colors (success, info, etc.)
-  success: 'text-green-800 bg-green-100',
-  info: 'text-lightBlue-800 bg-lightBlue-100',
-  warning: 'text-yellow-800 bg-yellow-100',
-  danger: 'text-red-800 bg-red-100'
+  success: 'alert-success',
+  info: 'alert-info',
+  warning: 'alert-warning',
+  danger: 'alert-danger'
 };
 
 /**
@@ -28,16 +28,21 @@ export function Alert({
   dismissText = 'Close',
   onDismiss
 }: AlertProps): JSX.Element {
-  const classes = [variants[variant], className].join(' ');
-
   const isDismissable = !!onDismiss;
+
+  const classes = [
+    'alert',
+    variants[variant],
+    isDismissable ? 'alert-dismissable' : '',
+    className
+  ].join(' ');
 
   return (
     <div className={classes} role='alert'>
       {isDismissable && (
         <button
-          // TODO: label should be translated
           aria-label={dismissText}
+          className='close'
           onClick={onDismiss}
           type='button'
         >
