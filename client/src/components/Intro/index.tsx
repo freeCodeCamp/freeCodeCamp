@@ -25,7 +25,7 @@ const Intro = ({
   complete,
   completedChallengeCount,
   slug
-}: Props): JSX.Element => {
+}: IntroProps): JSX.Element => {
   const { t } = useTranslation();
   if (pending && !complete) {
     return (
