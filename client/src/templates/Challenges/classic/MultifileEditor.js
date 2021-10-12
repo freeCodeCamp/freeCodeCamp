@@ -43,6 +43,7 @@ const propTypes = {
   // TODO: is this used?
   title: PropTypes.string,
   updateFile: PropTypes.func.isRequired,
+  usesMultifileEditor: PropTypes.bool,
   visibleEditors: PropTypes.shape({
     indexjs: PropTypes.bool,
     indexjsx: PropTypes.bool,
@@ -89,7 +90,8 @@ class MultifileEditor extends Component {
       theme,
       resizeProps,
       title,
-      visibleEditors: { indexcss, indexhtml, indexjs, indexjsx }
+      visibleEditors: { indexcss, indexhtml, indexjs, indexjsx },
+      usesMultifileEditor
     } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     // TODO: the tabs mess up the rendering (scroll doesn't work properly and
@@ -146,6 +148,7 @@ class MultifileEditor extends Component {
                   resizeProps={resizeProps}
                   theme={editorTheme}
                   title={title}
+                  usesMultifileEditor={usesMultifileEditor}
                 />
               </ReflexElement>
             )}
@@ -167,6 +170,7 @@ class MultifileEditor extends Component {
                   resizeProps={resizeProps}
                   theme={editorTheme}
                   title={title}
+                  usesMultifileEditor={usesMultifileEditor}
                 />
               </ReflexElement>
             )}
@@ -186,6 +190,7 @@ class MultifileEditor extends Component {
                   resizeProps={resizeProps}
                   theme={editorTheme}
                   title={title}
+                  usesMultifileEditor={usesMultifileEditor}
                 />
               </ReflexElement>
             )}
@@ -206,6 +211,7 @@ class MultifileEditor extends Component {
                   resizeProps={resizeProps}
                   theme={editorTheme}
                   title={title}
+                  usesMultifileEditor={usesMultifileEditor}
                 />
               </ReflexElement>
             )}

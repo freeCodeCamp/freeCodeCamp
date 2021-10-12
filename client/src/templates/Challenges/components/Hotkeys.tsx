@@ -52,11 +52,11 @@ interface HotkeysProps {
   prevChallengePath: string;
   setEditorFocusability: (arg0: boolean) => void;
   tests: Test[];
+  usesMultifileEditor?: boolean;
 }
 
 function Hotkeys({
   canFocusEditor,
-  challengeFiles,
   children,
   instructionsPanelRef,
   editorRef,
@@ -66,7 +66,8 @@ function Hotkeys({
   prevChallengePath,
   setEditorFocusability,
   submitChallenge,
-  tests
+  tests,
+  usesMultifileEditor
 }: HotkeysProps): JSX.Element {
   const handlers = {
     EXECUTE_CHALLENGE: (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -78,14 +79,9 @@ function Hotkeys({
 
       if (!executeChallenge) return;
 
-      // TODO: a lot of this is duplicated in editor.tsx, can we DRY this?
-      const editableRegion = challengeFiles?.find(
-        challengeFile => challengeFile.editableRegionBoundaries.length > 0
-      )?.editableRegionBoundaries;
-      const isProjectStep = editableRegion?.length === 2;
       const testsArePassing = tests.every(test => test.pass && !test.err);
 
-      if (isProjectStep) {
+      if (usesMultifileEditor) {
         if (testsArePassing) {
           submitChallenge();
         } else {

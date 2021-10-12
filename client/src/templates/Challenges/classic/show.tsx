@@ -319,10 +319,12 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       challengeFiles,
       data: {
         challengeNode: {
-          fields: { tests }
+          fields: { tests },
+          usesMultifileEditor
         }
       }
     } = this.props;
+    console.log('show, usesMultifileEditor', usesMultifileEditor);
     const { description, title } = this.getChallenge();
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
@@ -336,6 +338,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           initialTests={tests}
           resizeProps={this.resizeProps}
           title={title}
+          usesMultifileEditor={usesMultifileEditor}
         />
       )
     );
@@ -376,7 +379,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       fields: { blockName },
       forumTopicId,
       superBlock,
-      title
+      title,
+      usesMultifileEditor
     } = this.getChallenge();
     const {
       executeChallenge,
@@ -395,6 +399,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         instructionsPanelRef={this.instructionsPanelRef}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
           <Helmet
@@ -482,6 +487,7 @@ export const query = graphql`
         link
         src
       }
+      usesMultifileEditor
       challengeFiles {
         fileKey
         ext

@@ -10,6 +10,7 @@ const fileJoi = Joi.object().keys({
   ext: Joi.string(),
   name: Joi.string(),
   editableRegionBoundaries: [Joi.array().items(Joi.number())],
+  usesMultifileEditor: Joi.boolean(),
   path: Joi.string(),
   error: Joi.valid(null),
   head: Joi.string().allow(''),

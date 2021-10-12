@@ -1,6 +1,7 @@
 {
   "name": "CSS Picasso Painting",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "css-picasso-painting",
   "order": 11,
   "time": "5 hours",
