@@ -14,7 +14,7 @@ Anytime you refer to a class component within itself, you use the `this` keyword
 
 # --instructions--
 
-Render an instance of the `ReturnTempPassword` component in the parent component `ResetPassword`. Here, give `ReturnTempPassword` a prop of `tempPassword` and assign it a value of a string that is at least 8 characters long. Within the child, `ReturnTempPassword`, access the `tempPassword` prop within the `strong` tags to make sure the user sees the temporary password.
+Render an instance of the `Welcome` component in the parent component `App`. Here, give `Welcome` a prop of `name` and assign it a value of a string that is at least 2 characters long. Within the child, `Welcome`, access the `name` prop within the `strong` tags.
 
 # --hints--
 
@@ -42,13 +42,13 @@ assert(
 );
 ```
 
-The `App` component should have a prop called `name`.
+The `Welcome` component should have a prop called `name`.
 
 ```js
 assert(
   (function () {
     const mockedComponent = Enzyme.mount(React.createElement(App));
-    return mockedComponent.find('App').props().name;
+    return mockedComponent.find('Welcome').props().name;
   })()
 );
 ```
@@ -136,7 +136,7 @@ class Welcome extends React.Component {
     return (
         <div>
           { /* Change code below this line */ }
-          <p>Hello, <strong>{this.props}</strong>!</p>
+          <p>Hello, <strong>{this.props.name}</strong>!</p>
           { /* Change code above this line */ }
         </div>
     );
@@ -151,7 +151,6 @@ class App extends React.Component {
   render() {
     return (
         <div>
-            <p>You joined the family!</p>
             { /* Change code below this line */ }
             <Welcome name="Quincy"/>
             { /* Change code above this line */ }
