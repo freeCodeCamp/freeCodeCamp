@@ -43,6 +43,7 @@ function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
           <Alert
             bsStyle={type}
             className='flash-message'
+            closeLabel={t('buttons.close')}
             onDismiss={handleClose}
           >
             {t(message, variables)}
