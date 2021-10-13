@@ -149,7 +149,6 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const { t } = this.props;
 
     if (!validating && error) {
-      console.log(error);
       return (
         <FullWidthRow>
           <Alert bsStyle='danger' closeLabel={t('buttons.close')}>
