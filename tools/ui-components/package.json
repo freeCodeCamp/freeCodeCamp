@@ -46,7 +46,7 @@
     "cross-env": "7.0.3",
     "postcss": "8.3.9",
     "postcss-import": "14.0.2",
-    "tailwindcss": "2.2.16",
+    "tailwindcss": "2.2.17",
     "rimraf": "3.0.2",
     "rollup": "2.58.0",
     "rollup-plugin-postcss": "4.0.1",
