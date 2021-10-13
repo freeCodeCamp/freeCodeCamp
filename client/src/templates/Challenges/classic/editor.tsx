@@ -293,7 +293,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     editorRef.current = editor;
     data.editor = editor;
 
-    if (isProjectStep()) {
+    if (hasEditableRegion()) {
       initializeProjectStepFeatures();
       addContentChangeListener();
       showEditableRegion(editor);
@@ -658,7 +658,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // Currently, only practice project parts have editable region markers
   // This function is used to enable multiple editor tabs, jaws, etc.
-  function isProjectStep() {
+  function hasEditableRegion() {
     const editableRegionBoundaries = getEditableRegionFromRedux();
     return editableRegionBoundaries.length === 2;
   }
@@ -961,15 +961,15 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { editor } = data;
 
     const hasChangedContents = updateEditorValues();
-    if (hasChangedContents && isProjectStep()) {
+    if (hasChangedContents && hasEditableRegion()) {
       initializeProjectStepFeatures();
       updateDescriptionZone();
       updateOutputZone();
     }
 
-    if (hasChangedContents && !isProjectStep()) editor?.focus();
+    if (hasChangedContents && !hasEditableRegion()) editor?.focus();
 
-    if (isProjectStep() && editor) {
+    if (hasEditableRegion() && editor) {
       if (hasChangedContents) {
         editor.focus();
         showEditableRegion(editor);
@@ -1078,7 +1078,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     const editor = data.editor;
     editor?.layout();
-    if (data.startEditDecId) {
+    if (hasEditableRegion()) {
       updateDescriptionZone();
       updateOutputZone();
     }
