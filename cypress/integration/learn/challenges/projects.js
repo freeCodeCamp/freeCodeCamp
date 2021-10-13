@@ -110,12 +110,16 @@ describe('project submission', () => {
           // TODO: if we write a test to check that the solution is visible
           // before reloading, we should include that here.
           cy.contains('Solution for');
-          cy.get('.close').click();
+          cy.get('Close').click();
         });
 
         // Claim and view solutions on certification page
 
         cy.toggleAll();
+        cy.visit('/settings');
+        cy.get('label[data-cy="isLocked-Public"]').click();
+        cy.get('label[data-cy="name-Public"]').click();
+        cy.get('label[data-cy="showCerts-Public"]').click();
         cy.visit('/learn/javascript-algorithms-and-data-structures');
         cy.contains('Claim Certification').click();
         cy.contains('Share Certification').click();

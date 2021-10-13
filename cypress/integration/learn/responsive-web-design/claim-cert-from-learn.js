@@ -37,11 +37,6 @@ describe('Responsive Web Design Superblock', () => {
       cy.get('a[href="#claim-cert-block"]').should('be.visible');
     });
 
-    it('should have an anchor element with the text "Claim Certification", and class "disabled"', () => {
-      cy.get('a.disabled').should('be.visible');
-      cy.get('a.disabled').should('have.text', 'Claim Certification');
-    });
-
     it('should have an unordered list with class "map-challenges-ul" containing 4 items', () => {
       cy.get('[data-cy=claim-cert-steps]').should('be.visible');
       cy.get('[data-cy=claim-cert-steps]').children().should('have.length', 4);
@@ -83,12 +78,16 @@ describe('Responsive Web Design Superblock', () => {
       cy.get('.donation-modal').should('not.exist');
       // directed to claim-cert-block section
       cy.url().should('include', '#claim-cert-block');
+      cy.visit('/settings');
+      cy.get('label[data-cy="isLocked-Public"]').click();
+      cy.get('label[data-cy="name-Public"]').click();
+      cy.get('label[data-cy="showCerts-Public"]').click();
+      cy.visit(`/learn/${projects.superBlock}/`);
       // make sure that the window has not snapped to the top (a weird bug that
       // we never figured out and so could randomly reappear)
       cy.window().its('scrollY').should('not.equal', 0);
-      cy.contains('Claim Your Certification');
       cy.contains('Claim Certification').should('not.be.disabled').click();
-      cy.contains('Share Your Certification').click();
+      cy.contains('Share Certification').should('not.be.disabled').click();
       cy.location().should(loc => {
         expect(loc.pathname).to.eq(
           '/certification/developmentuser/responsive-web-design'

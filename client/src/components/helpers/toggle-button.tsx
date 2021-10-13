@@ -41,6 +41,7 @@ export default function ToggleButton({
         bsSize='sm'
         bsStyle='primary'
         className={`toggle-${getActiveClass(value)}`}
+        data-cy={`${name}-${onLabel}`}
         disabled={value}
         type='radio'
         value={1}
@@ -56,6 +57,7 @@ export default function ToggleButton({
         bsSize='sm'
         bsStyle='primary'
         className={`toggle-${getActiveClass(!value)}`}
+        data-cy={`${name}-${offLabel}`}
         disabled={!value}
         type='radio'
         value={2}
