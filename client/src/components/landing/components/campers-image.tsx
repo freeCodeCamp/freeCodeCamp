@@ -6,7 +6,7 @@ import { Spacer, ImageLoader } from '../../helpers';
 
 const LARGE_SCREEN_SIZE = 1200;
 
-interface pageProps {
+interface asSeenInProps {
   pageName?: string;
 }
 
@@ -27,7 +27,7 @@ const landingImageSize: imageSizeProps = {
   height: 442,
   width: 750
 };
-function CampersImage({ pageName }: pageProps): JSX.Element {
+function CampersImage({ pageName }: asSeenInProps): JSX.Element {
   const { t } = useTranslation();
 
   const { spacerSize, height, width } =

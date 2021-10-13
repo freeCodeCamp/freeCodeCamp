@@ -5,11 +5,13 @@ import Map from '../../Map/index';
 import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 
-interface pageProps {
+interface certificationProps {
   pageName?: string;
 }
 
-const Certifications = ({ pageName = 'landing' }: pageProps): JSX.Element => {
+const Certifications = ({
+  pageName = 'landing'
+}: certificationProps): JSX.Element => {
   const { t } = useTranslation();
 
   return (

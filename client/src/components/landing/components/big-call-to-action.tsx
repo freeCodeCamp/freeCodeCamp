@@ -2,11 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Login from '../../Header/components/Login';
 
-interface pageProps {
+interface bigCallToActionProps {
   pageName?: string;
 }
 
-const BigCallToAction = ({ pageName }: pageProps): JSX.Element => {
+const BigCallToAction = ({ pageName }: bigCallToActionProps): JSX.Element => {
   const { t } = useTranslation();
 
   return (
