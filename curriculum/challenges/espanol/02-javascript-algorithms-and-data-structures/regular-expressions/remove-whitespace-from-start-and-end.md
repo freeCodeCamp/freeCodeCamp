@@ -36,6 +36,12 @@ La variable `result` no debe ser igual a una cadena
 assert(!code.match(/result\s*=\s*["'`].*?["'`]/));
 ```
 
+El valor de la variable `hello` no debe modificarse.
+
+```js
+assert(hello === '   Hello, World!  ');
+```
+
 # --seed--
 
 ## --seed-contents--

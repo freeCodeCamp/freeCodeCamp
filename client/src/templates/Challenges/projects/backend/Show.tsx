@@ -75,7 +75,7 @@ interface BackEndProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNodeType };
   description: string;
-  executeChallenge: (arg0: boolean) => void;
+  executeChallenge: (options: { showCompletionModal: boolean }) => void;
   forumTopicId: number;
   id: string;
   initConsole: () => void;
@@ -169,11 +169,13 @@ class BackEnd extends Component<BackEndProps> {
   }
 
   handleSubmit({
-    isShouldCompletionModalOpen
+    showCompletionModal
   }: {
-    isShouldCompletionModalOpen: boolean;
+    showCompletionModal: boolean;
   }): void {
-    this.props.executeChallenge(isShouldCompletionModalOpen);
+    this.props.executeChallenge({
+      showCompletionModal
+    });
   }
 
   render() {

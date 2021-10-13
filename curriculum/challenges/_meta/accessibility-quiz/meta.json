@@ -1,6 +1,7 @@
 {
   "name": "Accessibility Quiz",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "accessibility-quiz",
   "order": 42,
   "time": "5 hours",

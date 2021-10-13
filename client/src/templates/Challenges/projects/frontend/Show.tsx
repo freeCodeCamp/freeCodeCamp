@@ -120,11 +120,11 @@ class Project extends Component<ProjectProps> {
   }
 
   handleSubmit({
-    isShouldCompletionModalOpen
+    showCompletionModal
   }: {
-    isShouldCompletionModalOpen: boolean;
+    showCompletionModal: boolean;
   }): void {
-    if (isShouldCompletionModalOpen) {
+    if (showCompletionModal) {
       this.props.openCompletionModal();
     }
   }

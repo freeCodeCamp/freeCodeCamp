@@ -36,7 +36,11 @@ function DonateCompletion({
     : `${t('donate.error')}`;
 
   return (
-    <Alert bsStyle={style} className='donation-completion'>
+    <Alert
+      bsStyle={style}
+      className='donation-completion'
+      closeLabel={t('buttons.close')}
+    >
       <h4>
         <b>{heading}</b>
       </h4>
