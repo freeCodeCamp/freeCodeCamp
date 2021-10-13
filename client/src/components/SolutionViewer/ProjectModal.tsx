@@ -7,15 +7,6 @@ import SolutionViewer from './SolutionViewer';
 
 type ProjectModalProps = {
   challengeFiles: ChallengeFiles;
-  // TODO: removed once refactored to TS
-  //   PropTypes.shape({
-  //     contents: PropTypes.string,
-  //     ext: PropTypes.string,
-  //     key: PropTypes.string,
-  //     name: PropTypes.string,
-  //     path: PropTypes.string
-  //   })
-  // ),
   handleSolutionModalHide: () => void;
   isOpen: boolean;
   projectTitle: string;
