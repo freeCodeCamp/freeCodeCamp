@@ -111,7 +111,8 @@ const schema = Joi.object()
     url: Joi.when('challengeType', {
       is: challengeTypes.codeally,
       then: Joi.string().required()
-    })
+    }),
+    usesMultifileEditor: Joi.boolean()
   })
   .xor('helpCategory', 'isPrivate');
 

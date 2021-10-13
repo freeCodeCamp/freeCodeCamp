@@ -37,7 +37,8 @@ import {
   setEditorFocusability,
   updateFile,
   challengeTestsSelector,
-  submitChallenge
+  submitChallenge,
+  initTests
 } from '../redux';
 
 import './editor.css';
@@ -52,11 +53,14 @@ interface EditorProps {
   description: string;
   dimensions: DimensionsType;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
-  executeChallenge: (isShouldCompletionModalOpen?: boolean) => void;
+  executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   ext: ExtTypes;
   fileKey: FileKeyTypes;
   initialEditorContent: string;
   initialExt: string;
+  initTests: (tests: Test[]) => void;
+  initialTests: Test[];
+  isProjectStep: boolean;
   output: string[];
   resizeProps: ResizePropsType;
   saveEditorContent: () => void;
@@ -70,6 +74,7 @@ interface EditorProps {
     editorValue: string;
     editableRegionBoundaries: number[] | null;
   }) => void;
+  usesMultifileEditor: boolean;
 }
 
 interface EditorProperties {
@@ -122,7 +127,8 @@ const mapDispatchToProps = {
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  submitChallenge
+  submitChallenge,
+  initTests
 };
 
 const modeMap = {
@@ -181,7 +187,7 @@ const initialData: EditorProperties = {
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
-  const { editorRef, fileKey } = props;
+  const { editorRef, fileKey, initTests } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -198,6 +204,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   });
 
   const data = dataRef.current[fileKey];
+  // since editorDidMount runs once with the initial props object, it keeps a
+  // reference to *those* props. If we want it to use the latest props, we can
+  // use a ref, since it will be updated on every render.
+  const testRef = useRef<Test[]>([]);
+  testRef.current = props.tests;
 
   // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
   // available files into that order.  i.e. if it's just one file it will
@@ -294,7 +305,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     data.editor = editor;
 
     if (hasEditableRegion()) {
-      initializeProjectStepFeatures();
+      initializeDescriptionAndOutputWidgets();
       addContentChangeListener();
       showEditableRegion(editor);
     }
@@ -342,8 +353,17 @@ const Editor = (props: EditorProps): JSX.Element => {
       label: 'Run tests',
       /* eslint-disable no-bitwise */
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
-      // TODO: Discuss with Ahmad what should pop-up when a challenge is completed
-      run: () => props.executeChallenge(true)
+      run: () => {
+        if (props.usesMultifileEditor) {
+          if (challengeIsComplete()) {
+            props.submitChallenge();
+          } else {
+            props.executeChallenge();
+          }
+        } else {
+          props.executeChallenge({ showCompletionModal: true });
+        }
+      }
     });
     editor.addAction({
       id: 'leave-editor',
@@ -648,7 +668,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
-  function initializeProjectStepFeatures() {
+  function initializeDescriptionAndOutputWidgets() {
     const editor = data.editor;
     if (editor) {
       initializeRegions(getEditableRegionFromRedux());
@@ -955,6 +975,17 @@ const Editor = (props: EditorProps): JSX.Element => {
       .setEndPosition(range.endLineNumber, endColumnText.length + 2);
   }
 
+  function challengeIsComplete() {
+    const tests = testRef.current;
+    return tests.every(test => test.pass && !test.err);
+  }
+
+  function challengeHasErrors() {
+    const tests = testRef.current;
+    return tests.some(test => test.err);
+  }
+
+  // runs every update to the editor and when the challenge is reset
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
     // editor.
@@ -962,12 +993,14 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     const hasChangedContents = updateEditorValues();
     if (hasChangedContents && hasEditableRegion()) {
-      initializeProjectStepFeatures();
+      initializeDescriptionAndOutputWidgets();
       updateDescriptionZone();
       updateOutputZone();
     }
 
     if (hasChangedContents && !hasEditableRegion()) editor?.focus();
+
+    if (props.initialTests) initTests(props.initialTests);
 
     if (hasEditableRegion() && editor) {
       if (hasChangedContents) {
@@ -1006,14 +1039,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles]);
   useEffect(() => {
-    const { output, tests } = props;
+    const { output } = props;
     const editableRegion = getEditableRegionFromRedux();
     if (editableRegion.length === 2) {
-      const challengeComplete = tests.every(test => test.pass && !test.err);
-      const chellengeHasErrors = tests.some(test => test.err);
       const testOutput = document.getElementById('test-output');
       const testStatus = document.getElementById('test-status');
-      if (challengeComplete) {
+      if (challengeIsComplete()) {
         const testButton = document.getElementById('test-button');
         if (testButton) {
           testButton.innerHTML =
@@ -1038,7 +1069,7 @@ const Editor = (props: EditorProps): JSX.Element => {
           testOutput.innerHTML = '';
           testStatus.innerHTML = '&#9989; Step completed.';
         }
-      } else if (chellengeHasErrors && testStatus && testOutput) {
+      } else if (challengeHasErrors() && testStatus && testOutput) {
         const wordsArray = [
           "Not quite. Here's a hint:",
           'Try again. This might help:',

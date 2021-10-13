@@ -44,7 +44,7 @@ function ToolPanel({
   videoUrl
 }) {
   const handleRunTests = () => {
-    executeChallenge(true);
+    executeChallenge({ showCompletionModal: true });
   };
   const { t } = useTranslation();
   return (
