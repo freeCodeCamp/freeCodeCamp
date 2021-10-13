@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   );
 
 interface ToolPanelProps {
-  executeChallenge: (isShouldCompletionModalOpen?: boolean) => void;
+  executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   isMobile?: boolean;
   openHelpModal: () => void;
   openVideoModal: () => void;
