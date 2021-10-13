@@ -11,10 +11,38 @@ Create a new `div` element below your `.md` element. Give it a `class` attribute
 
 # --hints--
 
-Test 1
+You should create a new `div` element after your `.md` element.
 
 ```js
+assert(document.querySelector('.label')?.lastElementChild?.localName === 'div');
+assert(document.querySelector('.label')?.lastElementChild?.previousElementSibling?.classList?.contains('divider'));
+assert(document.querySelector('.label')?.lastElementChild?.previousElementSibling?.classList?.contains('md'));
+```
 
+Your new `div` should have a `class` attribute set to `daily-value sm-text`.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.classList?.contains('daily-value'));
+assert(document.querySelector('.label')?.lastElementChild?.classList?.contains('sm-text'));
+```
+
+Your new `div` element should have a `p` element.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.firstElementChild?.localName === 'p');
+```
+
+Your new `p` element should have the text `% Daily Value *`.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.firstElementChild?.textContent === '% Daily Value *');
+```
+
+Your new `p` element should have a `class` attribute set to `right bold`.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.firstElementChild?.classList?.contains('right'));
+assert(document.querySelector('.label')?.lastElementChild?.firstElementChild?.classList?.contains('bold'));
 ```
 
 # --seed--

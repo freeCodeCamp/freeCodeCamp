@@ -11,10 +11,22 @@ The `float` styling is causing the new `p` element to be outside of the label's 
 
 # --hints--
 
-Test 1
+You should create a new `div` within your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelectorAll('.daily-value.sm-text > div')?.length === 1)
+```
 
+Your new `div` should have the `class` attribute set to `divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text > div')?.classList?.contains('divider'))
+```
+
+Your new `div` should come after your `p` element.
+
+```js
+assert(document.querySelector('.daily-value.sm-text > div')?.previousElementSibling?.localName === 'p');
 ```
 
 # --seed--

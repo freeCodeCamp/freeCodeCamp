@@ -11,10 +11,16 @@ Create a new `.calories-info h1` selector and set the top and bottom margin to `
 
 # --hints--
 
-Test 1
+You should have a new `.calories-info h1` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info h1'));
+```
 
+Your new `.calories-info h1` selector should have a `margin` property set to `-5px 0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.margin === '-5px 0px');
 ```
 
 # --seed--

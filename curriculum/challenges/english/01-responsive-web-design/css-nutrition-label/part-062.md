@@ -11,10 +11,55 @@ Create another `p` element, give it the text `Calcium 260mg 20%`. Align `20%` to
 
 # --hints--
 
-Test 1
+You should create two new `p` elements at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'p');
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.localName === 'p');
+```
 
+Your first new `p` element should have the text `Calcium 260mg 20%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.innerText?.match(/Calcium 260mg[\s|\n]+20%/));
+```
+
+Your first new `p` element should have a `span` element.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.firstElementChild?.localName === 'span');
+```
+
+Your first `span` element should have the `class` attribute set to `right`. Remember, do not make it bold.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.firstElementChild?.classList?.contains('right'));
+assert(!document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.firstElementChild?.classList?.contains('bold'));
+```
+
+Your first `span` element should wrap the text `20%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.firstElementChild?.innerText === '20%');
+```
+
+Your second new `p` element should have the text `Iron 8mg 45%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerText?.match(/Iron 8mg[\s|\n]+45%/));
+```
+
+Your second new `p` element should have a `span` element.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.localName === 'span');
+```
+
+Your second `span` element should have the `class` attribute set to `right`. Remember, do not make it bold.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.classList?.contains('right'));
+assert(!document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.classList?.contains('bold'));
 ```
 
 # --seed--

@@ -11,10 +11,16 @@ Create another `.divider` after your last `p` element.
 
 # --hints--
 
-Test 1
+You should create a new `div` element at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'div');
+```
 
+Your new `div` element should have the `class` attribute set to `divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.classList?.contains('divider'));
 ```
 
 # --seed--

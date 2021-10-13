@@ -11,10 +11,16 @@ Create a `.daily-value p` selector to target all of your `p` elements in the `da
 
 # --hints--
 
-Test 1
+You should have a new `.daily-value p` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.daily-value p'));
+```
 
+Your `.daily-value p` selector should have a `border-bottom` property set to `1px solid #888989`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.daily-value p')?.borderBottom === '1px solid rgb(136, 137, 137)');
 ```
 
 # --seed--

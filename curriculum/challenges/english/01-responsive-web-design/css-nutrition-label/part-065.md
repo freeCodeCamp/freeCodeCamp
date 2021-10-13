@@ -11,10 +11,22 @@ Create a `.note` selector, and set the size of the font to `0.6rem`. Also set th
 
 # --hints--
 
-Test 1
+You should have a new `.note` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.note'));
+```
 
+Your `.note` selector should have a `font-size` property set to `0.6rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.note')?.fontSize === '0.6rem');
+```
+
+Your `.note` selector should have a `margin` property set to `5px 0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.note')?.margin === '5px 0px');
 ```
 
 # --seed--

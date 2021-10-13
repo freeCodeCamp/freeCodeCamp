@@ -11,10 +11,17 @@ Below your `.calories-info` element, add a `div` with the `class` attribute set 
 
 # --hints--
 
-Test 1
+You should create a new `div` within your `.label` element.
 
 ```js
+assert(document.querySelectorAll('.label > div')?.length === 3)
+```
 
+Your new `div` should have the `class` attribute set to `divider md`. This div should be the last element in your `.label` element.
+
+```js
+const div = document.querySelector('.label')?.lastElementChild;
+assert(div?.classList?.contains('divider') && div?.classList?.contains('md'));
 ```
 
 # --seed--

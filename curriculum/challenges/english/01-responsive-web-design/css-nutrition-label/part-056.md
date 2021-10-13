@@ -11,10 +11,30 @@ Create another `p` element after your last `.divider`, and give it the text `Tot
 
 # --hints--
 
-Test 1
+You should create a new `p` and `div` element at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.localName === 'p');
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'div');
+```
 
+Your new `p` element should have the text `Total Sugars 12g`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.innerText.match(/Total Sugars[\s|\n]+12g/));
+```
+
+Your new `p` element should have the `class` attribute set to `indent no-divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.classList?.contains('indent'));
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.classList?.contains('no-divider'));
+```
+
+Your new `div` should have the `class` attribute set to `divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.classList?.contains('divider'));
 ```
 
 # --seed--

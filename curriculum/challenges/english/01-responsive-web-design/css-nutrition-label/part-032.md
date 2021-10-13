@@ -11,10 +11,41 @@ Below your `.sm-text` element, create a new `h1` element with the text `Calories
 
 # --hints--
 
-Test 1
+You should have a new `h1` element within your `.calories-info` element.
 
 ```js
+assert(document.querySelector('.calories-info')?.querySelector('h1'))
+```
 
+Your `h1` element should come after your `.sm-text` element.
+
+```js
+assert(document.querySelector('.sm-text')?.nextElementSibling?.localName === 'h1');
+```
+
+Your `h1` element should have the text `Calories 230`.
+
+```js
+// the float: right property does weird things to the inner text.
+assert(document.querySelector('.calories-info')?.lastElementChild?.innerText.match(/Calories[\s|\n]*230/));
+```
+
+You should create a `span` element within your new `h1` element.
+
+```js
+assert(document.querySelector('.calories-info')?.lastElementChild?.querySelector('span'));
+```
+
+Your `span` element should have the `class` set to `right`.
+
+```js
+assert(document.querySelector('.calories-info')?.lastElementChild?.querySelector('span')?.classList?.contains('right'));
+```
+
+Your `span` element should have the text `230`.
+
+```js
+assert(document.querySelector('.calories-info')?.lastElementChild?.querySelector('span')?.innerText === '230');
 ```
 
 # --seed--

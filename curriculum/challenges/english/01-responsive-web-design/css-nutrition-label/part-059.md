@@ -13,10 +13,49 @@ Then create another divider after that `p` element.
 
 # --hints--
 
-Test 1
+You should create a new `p` and `div` element at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.localName === 'p');
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'div');
+```
 
+Your new `p` element should have the text `Includes 10g Added Sugars 20%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.innerText.match(/Includes 10g Added Sugars[\s|\n]+20%/));
+```
+
+Your new `p` element should have the `class` attribute set to `dbl-indent no-divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.classList?.contains('dbl-indent'));
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.classList?.contains('no-divider'));
+```
+
+Your new `p` element should have a `span` element.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.firstElementChild?.localName === 'span');
+```
+
+Your `span` element should have the `class` attribute set to `bold right`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.firstElementChild?.classList?.contains('bold'));
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.firstElementChild?.classList?.contains('right'));
+```
+
+Your `span` element should wrap the text `20%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type span')?.innerText === '20%');
+```
+
+Your new `div` should have the `class` attribute set to `divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.classList?.contains('divider'));
 ```
 
 # --seed--

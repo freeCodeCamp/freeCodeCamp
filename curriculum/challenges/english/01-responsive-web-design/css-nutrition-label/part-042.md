@@ -11,10 +11,46 @@ After your last `.divider` element, create a `p` element and give it the text `T
 
 # --hints--
 
-Test 1
+You should create a new `p` element at the end of your `.daily-value` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'p');
+```
 
+Your new `p` element should have the text `Total Fat 8g 10%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerText?.match(/Total Fat 8g[\s|\n]+10%/));
+```
+
+Your `p` element should have two `span` elements.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span').length === 2);
+```
+
+Your first `span` element should wrap the text `Total Fat`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelector('span')?.innerText === 'Total Fat');
+```
+
+Your first `span` element should have the `class` set to `bold`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelector('span')?.className === 'bold');
+```
+
+Your second `span` element should wrap the text `10%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')[1].innerText === '10%');
+```
+
+Your second `span` element should have the `class` set to `bold right`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')[1].className === 'bold right');
 ```
 
 # --seed--

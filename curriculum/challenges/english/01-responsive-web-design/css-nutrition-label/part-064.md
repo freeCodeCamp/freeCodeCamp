@@ -17,10 +17,35 @@ The % Daily Value (DV) tells you how much a nutrient in a serving of food contri
 
 # --hints--
 
-Test 1
+You should create a new `div` after your `.daily-value` element.
 
 ```js
+assert(document.querySelector('.daily-value').nextElementSibling?.localName === 'div');
+```
 
+Your new `div` should have the `class` set to `divider md`.
+
+```js
+assert(document.querySelector('.daily-value')?.nextElementSibling?.classList?.contains('divider'));
+assert(document.querySelector('.daily-value')?.nextElementSibling?.classList?.contains('md'));
+```
+
+You should create a `p` element after your new `div` element.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.localName === 'p');
+```
+
+Your new `p` element should have the `class` set to `note`.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.classList?.contains('note'));
+```
+
+Your new `p` element should have the provided text.
+
+```js
+assert(document.querySelector('.label')?.lastElementChild?.innerText === 'The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.');
 ```
 
 # --seed--

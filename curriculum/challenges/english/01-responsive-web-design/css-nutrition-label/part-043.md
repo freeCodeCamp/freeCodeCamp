@@ -11,10 +11,36 @@ Below your element with the `Total Fat` text, create a new `p` element with the 
 
 # --hints--
 
-Test 1
+You should create a new `p` element below your element with the `Total Fat` text.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'p');
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.innerText.match(/Total Fat 8g[\s|\n]+10%/));
+```
 
+Your new `p` element should have the text `Saturated Fat 1g 5%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerText.match(/Saturated Fat 1g[\s|\n]+5%/));
+```
+
+Your new `p` element should have a `span` element.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.localName === 'span');
+```
+
+Your `span` element should have the `class` attribute set to `bold right`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.classList?.contains('bold'));
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.classList?.contains('right'));
+```
+
+Your `span` element should wrap the `5%` text.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.innerText === "5%");
 ```
 
 # --seed--

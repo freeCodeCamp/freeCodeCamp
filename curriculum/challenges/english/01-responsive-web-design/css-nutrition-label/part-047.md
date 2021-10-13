@@ -7,14 +7,25 @@ dashedName: part-47
 
 # --description--
 
-The bottom borders under your `% Daily Value *` and `Saturated Fat 1g` elements do not extend the full width of the label. Add `no-divider` to the `class` for these two elements.
+The bottom borders under your `% Daily Value *` and `Saturated Fat 1g 5%` elements do not extend the full width of the label. Add `no-divider` to the `class` for these two elements.
 
 # --hints--
 
-Test 1
+Your `p` element with the text `% Daily Value *` should have `no-divider` added to the `class` attribute. Do not remove the existing classes.
 
 ```js
+const p = document.querySelector('.daily-value.sm-text')?.firstElementChild;
+assert(p?.classList?.contains('no-divider'));
+assert(p?.classList?.contains('bold'));
+assert(p?.classList?.contains('right'));
+```
 
+Your `p` element with the text `Saturated Fat 1g 5%` should have `no-divider` added to the `class` attribute. Do not remove the existing classes.
+
+```js
+const p = document.querySelector('.daily-value.sm-text')?.lastElementChild;
+assert(p?.classList?.contains('no-divider'));
+assert(p?.classList?.contains('indent'));
 ```
 
 # --seed--

@@ -11,10 +11,12 @@ The advantage to creating these dividers is that you can apply specific classes 
 
 # --hints--
 
-Test 1
+Your last `.divider` element should have `dbl-indent` added to the `class`. Do not remove the existing value.
 
 ```js
-
+const last = document.querySelector('.daily-value.sm-text')?.lastElementChild;
+assert(last?.classList?.contains('dbl-indent'));
+assert(last?.classList?.contains('divider'));
 ```
 
 # --seed--

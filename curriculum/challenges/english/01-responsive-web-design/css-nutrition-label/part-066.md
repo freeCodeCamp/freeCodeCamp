@@ -13,10 +13,16 @@ With these last changes, your nutrition label is complete!
 
 # --hints--
 
-Test 1
+Your `.note` selector should have a `padding` property set to `0 8px`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.note')?.padding === '0px 8px');
+```
 
+Your `.note` selector should have a `text-indent` property set to `-8px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.note')?.textIndent === '-8px');
 ```
 
 # --seed--

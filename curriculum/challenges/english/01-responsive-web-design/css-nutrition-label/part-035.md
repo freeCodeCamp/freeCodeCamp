@@ -11,10 +11,10 @@ The larger font size of the number `230` is causing it to overflow. Give the `.c
 
 # --hints--
 
-Test 1
+Your `.calories-info h1` selector should have an `overflow` property set to `hidden`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.overflow === 'hidden');
 ```
 
 # --seed--

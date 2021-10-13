@@ -11,10 +11,36 @@ After your last `.divider`, create another `p` element with the text `Trans Fat 
 
 # --hints--
 
-Test 1
+You should create a new `p` element at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'p');
+```
 
+Your new `p` element should have the text `Trans Fat 0g`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerText === 'Trans Fat 0g');
+```
+
+Your new `p` element should have the `class` attribute set to `indent no-divider`.
+
+```js
+const p = document.querySelector('.daily-value.sm-text')?.lastElementChild;
+assert(p?.classList?.contains('indent'));
+assert(p?.classList?.contains('no-divider'));
+```
+
+Your new `p` element should have an `i` element.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.localName === 'i');
+```
+
+Your `i` element should wrap the text `Trans`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.innerText === 'Trans');
 ```
 
 # --seed--

@@ -11,10 +11,35 @@ Create the final `p` element for your `.daily-value` section. Give it the text `
 
 # --hints--
 
-Test 1
+You should create a new `p` element at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'p');
+```
 
+Your new `p` element should have the `class` attribute set to `no-divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.classList?.contains('no-divider'));
+```
+
+Your new `p` element should have the text `Potassium 235mg 6%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerText?.match(/Potassium 235mg[\s|\n]+6%/));
+```
+
+Your new `p` element should have a `span` element.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')?.length === 1);
+```
+
+Your `span` element should have the `class` set to `right`. Remember you should not make it bold.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelector('span')?.classList?.contains('right'));
+assert(!document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelector('span')?.classList?.contains('bold'));
 ```
 
 # --seed--

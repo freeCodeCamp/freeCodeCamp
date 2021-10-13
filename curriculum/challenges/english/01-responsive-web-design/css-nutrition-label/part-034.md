@@ -11,10 +11,16 @@ Create a `.calories-info span` selector and set the `font-size` to `1.2em`.
 
 # --hints--
 
-Test 1
+You should create a `.calories-info span` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info span'));
+```
 
+Your `.calories-info span` selector should have a `font-size` property set to `1.2em`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info span')?.fontSize === '1.2em');
 ```
 
 # --seed--

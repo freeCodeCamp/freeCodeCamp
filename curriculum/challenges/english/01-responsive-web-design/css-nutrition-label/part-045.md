@@ -11,10 +11,16 @@ Create a new `.indent` selector and give it a `margin-left` property set to `1em
 
 # --hints--
 
-Test 1
+You should have a new `.indent` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.indent'));
+```
 
+Your new `.indent` selector should have a `margin-left` property set to `1em`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.indent')?.marginLeft === '1em');
 ```
 
 # --seed--

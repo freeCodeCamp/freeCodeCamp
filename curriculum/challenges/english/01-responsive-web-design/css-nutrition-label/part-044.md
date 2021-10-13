@@ -11,10 +11,10 @@ This new `p` element will need to be indented. Give it a `class` set to `indent`
 
 # --hints--
 
-Test 1
+Your `p` element with the text `Saturated Fat 1g 5%` should have a `class` attribute set to `indent`.
 
 ```js
-
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.classList?.contains('indent'));
 ```
 
 # --seed--

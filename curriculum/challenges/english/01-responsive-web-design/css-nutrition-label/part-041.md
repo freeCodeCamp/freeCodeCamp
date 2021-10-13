@@ -11,10 +11,10 @@ Give the `.divider` selector a `clear` property set to `right`. This will clear 
 
 # --hints--
 
-Test 1
+Your `.divider` selector should have a `clear` property set to `right`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.divider')?.clear === 'right');
 ```
 
 # --seed--

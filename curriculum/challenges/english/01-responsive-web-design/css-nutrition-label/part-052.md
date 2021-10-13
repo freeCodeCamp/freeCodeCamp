@@ -11,10 +11,47 @@ After your last `.divider`, create a new `p` element with the text `Cholesterol 
 
 # --hints--
 
-Test 1
+You should create a new `p` element at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'p');
+```
 
+Your new `p` element should have the text `Cholesterol 0mg 0%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerText?.match(/Cholesterol 0mg[\s|\n]+0%/));
+```
+
+Your new `p` element should have two `span` elements.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')?.length === 2);
+```
+
+Your first `span` element should have the `class` attribute set to `bold.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.classList?.contains('bold'));
+```
+
+Your first `span` element should wrap the text `Cholesterol`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.innerText === 'Cholesterol');
+```
+
+Your second `span` element should have the `class` attribute set to `bold right`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.classList?.contains('bold'));
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.classList?.contains('right'));
+```
+
+Your second `span` element should wrap the text `0%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.innerText === '0%');
 ```
 
 # --seed--

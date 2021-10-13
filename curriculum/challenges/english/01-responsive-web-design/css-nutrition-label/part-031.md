@@ -13,10 +13,16 @@ Create an `.sm-text` selector and set the `font-size` to `0.85rem`, which would 
 
 # --hints--
 
-Test 1
+You should have an `.sm-text` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.sm-text'));
+```
 
+Your `.sm-text` selector should have a `font-size` property set to `0.85rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.sm-text')?.fontSize === '0.85rem');
 ```
 
 # --seed--

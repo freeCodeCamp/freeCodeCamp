@@ -13,10 +13,16 @@ Your first `.no-divider` element has a `.divider` after it. Create another `.div
 
 # --hints--
 
-Test 1
+You should create a new `div` at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'div');
+```
 
+Your new `div` should have the `class` attribute set to `divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.classList?.contains('divider'));
 ```
 
 # --seed--

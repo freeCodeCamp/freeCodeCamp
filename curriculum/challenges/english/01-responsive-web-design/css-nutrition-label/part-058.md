@@ -11,10 +11,16 @@ Create a `.dbl-indent` selector and give it a left margin of `2em`.
 
 # --hints--
 
-Test 1
+You should have a new `.dbl-indent` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.dbl-indent'));
+```
 
+Your `.dbl-indent` selector should have a `margin-left` property set to `2em`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.dbl-indent')?.marginLeft === '2em');
 ```
 
 # --seed--

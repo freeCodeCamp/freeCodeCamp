@@ -11,10 +11,47 @@ Below your last `p` element, create another `p` element with the text `Sodium 16
 
 # --hints--
 
-Test 1
+You should create a new `p` element at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'p');
+```
 
+Your new `p` element should have the text `Sodium 160mg 7%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerText?.match(/Sodium 160mg[\s|\n]+7%/));
+```
+
+Your new `p` element should have two `span` elements.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')?.length === 2);
+```
+
+Your first `span` element should have the `class` attribute set to `bold`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.classList?.contains('bold'));
+```
+
+Your first `span` element should wrap the text `Sodium`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.innerText === 'Sodium');
+```
+
+Your second `span` element should have the `class` attribute set to `bold right`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.classList?.contains('bold'));
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.classList?.contains('right'));
+```
+
+Your second `span` element should wrap the text `7%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.innerText === '7%');
 ```
 
 # --seed--

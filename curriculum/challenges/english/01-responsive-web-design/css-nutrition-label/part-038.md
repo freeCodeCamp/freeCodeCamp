@@ -11,10 +11,16 @@ Create an `.md` selector and give it a `height` property of `5px`.
 
 # --hints--
 
-Test 1
+You should create an `.md` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.md'));
+```
 
+Your `.md` selector should have a `height` property set to `5px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.md')?.height === '5px');
 ```
 
 # --seed--

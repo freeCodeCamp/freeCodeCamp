@@ -7,14 +7,34 @@ dashedName: part-55
 
 # --description--
 
-Below your last `p` element, add another `p` element with the text `Dietary Fiber 4g`. Give the `p` element the `class` necessary to indent it and remove the dividing border. Then create a `.divider` below that `p` element.
+Below your last `p` element, add another `p` element with the text `Dietary Fiber 4g`. Give the `p` element the `class` necessary to indent it and remove the dividing border. Then create a divider below that `p` element.
 
 # --hints--
 
-Test 1
+You should create a new `p` and `div` element at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.localName === 'p');
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'div');
+```
 
+Your new `p` element should have the text `Dietary Fiber 4g`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.innerText.match(/Dietary Fiber[\s|\n]+4g/));
+```
+
+Your new `p` element should have the `class` attribute set to `indent no-divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.classList?.contains('indent'));
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.classList?.contains('no-divider'));
+```
+
+Your new `div` should have the `class` attribute set to `divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.classList?.contains('divider'));
 ```
 
 # --seed--

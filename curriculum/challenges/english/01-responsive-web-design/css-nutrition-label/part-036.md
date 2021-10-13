@@ -9,14 +9,14 @@ dashedName: part-36
 
 Typography is often more art than science. You may have to tweak things like alignment until it looks correct.
 
-Give your `.calories-info span` selector a `margin-top` set to `-7px`.
+Give your `.calories-info span` selector a `margin-top` set to `-7px`. This will shift your `230` text into place.
 
 # --hints--
 
-Test 1
+Your `.calories-info span` selector should have a `margin-top` set to `-7px`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info span')?.marginTop === '-7px');
 ```
 
 # --seed--

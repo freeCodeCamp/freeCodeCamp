@@ -13,10 +13,23 @@ Modify your `.daily-value p` selector to exclude the `.no-divider` elements.
 
 # --hints--
 
-Test 1
+You should have a `.daily-value p:not(.no-divider)` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.daily-value p:not(.no-divider)'));
+```
 
+You should not have a `.daily-value p` selector.
+
+```js
+assert(!new __helpers.CSSHelp(document).getStyle('.daily-value p'));
+```
+
+You should not change the properties in the `.daily-value p:not(.no-divider)` selector.
+
+```js
+const style = new __helpers.CSSHelp(document).getStyle('.daily-value p:not(.no-divider)');
+assert(style?.borderBottom === '1px solid rgb(136, 137, 137)');
 ```
 
 # --seed--

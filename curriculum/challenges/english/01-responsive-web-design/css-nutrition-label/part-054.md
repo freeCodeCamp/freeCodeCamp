@@ -11,10 +11,47 @@ Add another `p` element with the text `Total Carbohydrate 37g 13%`. Like before,
 
 # --hints--
 
-Test 1
+You should create a new `p` element at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'p');
+```
 
+Your new `p` element should have the text `Total Carbohydrate 37g 13%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerText?.match(/Total Carbohydrate 37g[\s|\n]+13%/));
+```
+
+Your new `p` element should have two `span` elements.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')?.length === 2);
+```
+
+Your first `span` element should have the `class` attribute set to `bold`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.classList?.contains('bold'));
+```
+
+Your first `span` element should wrap the text `Total Carbohydrate`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.firstElementChild?.innerText === 'Total Carbohydrate');
+```
+
+Your second `span` element should have the `class` attribute set to `bold right`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.classList?.contains('bold'));
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.classList?.contains('right'));
+```
+
+Your second `span` element should wrap the text `13%`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.lastElementChild?.innerText === '13%');
 ```
 
 # --seed--

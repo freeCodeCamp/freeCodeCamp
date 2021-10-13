@@ -13,10 +13,30 @@ Following this element, create a large divider.
 
 # --hints--
 
-Test 1
+You should create a new `p` and `div` element at the end of your `.daily-value.sm-text` element.
 
 ```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.localName === 'p');
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'div');
+```
 
+Your new `p` element should have the text `Protein 3g`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.innerText.match(/Protein[\s|\n]+3g/));
+```
+
+Your new `p` element should have the `class` attribute set to `no-divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text p:last-of-type')?.classList?.contains('no-divider'));
+```
+
+Your new `div` should have the `class` attribute set to `divider lg`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.classList?.contains('divider'));
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.classList?.contains('lg'));
 ```
 
 # --seed--
