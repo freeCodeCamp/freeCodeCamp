@@ -35,6 +35,18 @@ Tu primera casilla de verificación en tu formulario debe ser marcado por defect
 assert($('input[type="checkbox"]').prop('checked'));
 ```
 
+No debes cambiar el texto interno de la etiqueta `Indoor`.
+
+```js
+assert.equal(document.querySelector('label[for="indoor"]')?.innerText?.trim(), 'Indoor');
+```
+
+No debes cambiar el texto interno de la etiqueta `Loving`.
+
+```js
+assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), 'Loving');
+```
+
 # --seed--
 
 ## --seed-contents--
