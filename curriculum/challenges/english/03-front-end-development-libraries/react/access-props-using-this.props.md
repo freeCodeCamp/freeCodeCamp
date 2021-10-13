@@ -127,22 +127,6 @@ class Welcome extends React.Component {
 # --solutions--
 
 ```jsx
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
-  render() {
-    return (
-        <div>
-            { /* Change code below this line */ }
-            <Welcome name="Quincy"/>
-            { /* Change code above this line */ }
-        </div>
-    );
-  }
-};
-
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
@@ -154,6 +138,23 @@ class Welcome extends React.Component {
           { /* Change code below this line */ }
           <p>Hello, <strong>{this.props}</strong>!</p>
           { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            <p>You joined the family!</p>
+            { /* Change code below this line */ }
+            <Welcome name="Quincy"/>
+            { /* Change code above this line */ }
         </div>
     );
   }
