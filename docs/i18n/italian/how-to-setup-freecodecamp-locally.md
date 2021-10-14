@@ -167,20 +167,30 @@ Le chiavi API predefinite e le variabili d'ambiente sono memorizzate nel file `s
 
 ```console
 # Creare una copia del "sample.env" e denominarlo ".env".
-# Popolarlo con le necessarie chiavi API e secrets:
+# Populate it with the necessary API keys and secrets:
+```
 
-# macOS / Linux
-cp esempio. nv .env
+<!-- tabs:start -->
 
-# Windows
+#### **macOS/Linux**
+
+```console
+cp sample.env .env
+```
+
+#### **Windows**
+
+```console
 copy sample.env .env
 ```
+
+<!-- tabs:end -->
 
 _Non_ è necessario cambiare le chiavi nel file `.env` per eseguire l'applicazione localmente. Puoi lasciare i valori predefiniti copiati da `sample.env` così come sono.
 
 > [!TIP] Tieni a mente che se vuoi usare servizi come Auth0 o Algolia, dovrai ottenere delle API key per quei servizi per conto tuo e modificare il file `.env` di conseguenza.
 
-#### Passo 2: Installa le dipendenze
+#### Step 2: Install dependencies
 
 Questo passaggio installerà le dipendenze richieste per l'esecuzione dell'applicazione:
 
@@ -188,7 +198,7 @@ Questo passaggio installerà le dipendenze richieste per l'esecuzione dell'appli
 npm ci
 ```
 
-#### Passo 3: Avvia MongoDB e fai il seed del database
+#### Step 3: Start MongoDB and seed the database
 
 Prima di poter eseguire l'applicazione localmente, è necessario avviare il servizio MongoDB.
 
@@ -196,37 +206,43 @@ Prima di poter eseguire l'applicazione localmente, è necessario avviare il serv
 
 Avvia il server MongoDB in un terminale separato:
 
-- Su macOS & Ubuntu:
+  <!-- tabs:start -->
 
-  ```console
-  mongod
-  ```
+#### **macOS/Linux**
 
-- Su Windows, è necessario specificare il percorso completo dell'eseguibile `mongod`
+```console
+mongod
+```
 
-  ```console
-  "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-  ```
+#### **Windows**
 
-  Assicurati di sostituire `3.6` con la versione che hai installato
+- On Windows, you must specify the full path to the `mongod` binary
+
+```console
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+```
+
+  <!-- tabs:end -->
+
+Make sure to replace `3.6` with the version you have installed
 
 > [!TIP] Puoi evitare di dover avviare MongoDB ogni volta se lo installi come servizio in background. Puoi [saperne di più nella loro documentazione per il tuo sistema operativo](https://docs.mongodb.com/manual/administration/install-community/)
 
-Successivamente, facciamo il seed del database. In questo passaggio, eseguiamo il comando sottostante che popola il server MongoDB con alcuni set di dati iniziali richiesti dai servizi. Tra questi figurano alcuni schemi, tra le altre cose.
+Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
 ```console
 npm run seed
 ```
 
-#### Passo 4: Avviare l'applicazione client freeCodeCamp e il server API
+#### Step 4: Start the freeCodeCamp client application and API server
 
-Ora è possibile avviare il server API e le applicazioni client.
+You can now start up the API server and the client applications.
 
 ```console
 npm run develop
 ```
 
-Questo singolo comando attiverà tutti i servizi, compreso il server API e le applicazioni client disponibili su cui lavorare.
+This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
 > [!NOTE] Una volta pronto, apri un browser web e **visita <http://localhost:8000>**. Se l'app si carica, congratulazioni, sei a posto! Hai ora una copia dell'intera piattaforma di apprendimento di freeCodeCamp in esecuzione sul tuo computer.
 
@@ -236,26 +252,26 @@ Questo singolo comando attiverà tutti i servizi, compreso il server API e le ap
 
 ## Accedi con un utente locale
 
-La tua configurazione locale crea automaticamente un utente locale nel database. Facendo clic sul pulsante `Accedi` ti autenticherai automaticamente nell'applicazione locale.
+Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
 
-Tuttavia, accedere alla pagina del portfolio utente è un po' difficile. In fase di sviluppo, Gatsby si occupa di servire le pagine lato client e quindi otterrai una pagina `404` per il portfolio utente quando lavorerai localmente.
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
 
-Basta cliccare sul pulsante **"Preview Custom 404 Page"** per passare alla pagina corretta.
+Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
 <details>
    <summary>
-      Come accedere quando si lavora localmente (screenshot)
+      How to sign in when working locally (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Come accedere quando si lavora localmente" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
 </details>
 
 ## Apportare modifiche a livello locale
 
-Ora puoi apportare modifiche ai file e inviare le modifiche al clone locale del tuo fork.
+You can now make changes to files and commit your changes to your local clone of your fork.
 
-Segui questi passaggi:
+Follow these steps:
 
 1. Controlla di essere sul ramo `main`:
 
@@ -446,11 +462,11 @@ Segui questi passaggi:
 
 ## Proporre una Pull Request (PR)
 
-Dopo aver effettuato le modifiche, controlla qui [come aprire una Pull Request](how-to-open-a-pull-request.md).
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
 ## Comandi rapidi
 
-Un rapido riferimento ai comandi di cui avrai bisogno quando lavorerai localmente.
+A quick reference to the commands that you will need when working locally.
 
 | comando                                                        | descrizione                                                                         |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
@@ -472,11 +488,11 @@ Un rapido riferimento ai comandi di cui avrai bisogno quando lavorerai localment
 
 ### Problemi con l'installazione dei prerequisiti raccomandati
 
-Sviluppiamo regolarmente sui sistemi operativi più recenti o più popolari come macOS 10.15 o successivi, Ubuntu 18.04, e Windows 10 con WSL2.
+We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
 
-Ti raccomandiamo di fare ricerche sui tuoi problemi specifici usando risorse come Google, Stack Overflow, e Stack Exchange. C'è una buona probabilità che qualcuno abbia incontrato lo stesso problema e ci sia già una risposta alla tua domanda specifica.
+It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
-Se sei su un sistema operativo diverso e/o continui ad avere dei problemi, visita [ottenere aiuto](#getting-help).
+If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
 
 > [!WARNING]
 > 
@@ -484,7 +500,7 @@ Se sei su un sistema operativo diverso e/o continui ad avere dei problemi, visit
 
 ### Problemi con UI, Font, errori di build, ecc.
 
-Se incontri problemi con l'interfaccia utente, i caratteri o vedi errori di compilazione, potrebbe essere utile una pulizia:
+If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
 ```console
 npm run clean
@@ -493,17 +509,17 @@ npm run seed
 npm run develop
 ```
 
-O
+OR
 
-Usa il collegamento
+Use the shortcut
 
 ```
 npm run clean-and-develop
 ```
 
-Se continui ad incontrare problemi con la compilazione, ti consigliamo di ripulire lo spazio di lavoro.
+If you continue to face issues with the build, cleaning up the workspace is recommend.
 
-Usa `git clean` in modalità interattiva:
+Use `git clean` in interactive mode:
 
 ```
 git clean -ifdX
@@ -511,18 +527,20 @@ git clean -ifdX
 
 <details>
    <summary>
-      Come pulire i file git non tracciati (screenshot)
+      How to clean git untracked files (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Come pulire i file git non tracciati" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
 </details>
 
 ### Problemi con API, logic, invio delle sfide, ecc.
 
-Se non riesci ad accedere e invece vedi un banner con un messaggio di errore che il problema sarà segnalato a freeCodeCamp, ti preghiamo di controllare che la porta locale `3000` non sia usata da un programma diverso.
+If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-**Su Linux / macOS / WSL su Windows - dal terminale:**
+<!-- tabs:start -->
+
+#### **macOS/Linux/WSL on Windows - From Terminal:**
 
 ```console
 netstat -a | grep "3000"
@@ -530,7 +548,7 @@ netstat -a | grep "3000"
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**Su Windows - da PowerShell con privilegi elevati:**
+#### **On Windows - From Elevated PowerShell:**
 
 ```powershell
 netstat -ab | Select-String "3000"
@@ -538,16 +556,20 @@ netstat -ab | Select-String "3000"
 TCP    0.0.0.0:3000           DESKTOP      LISTENING
 ```
 
+<!-- tabs:end -->
+
+---
+
 ### Problemi nell'installazione delle dipendenze
 
-Se incontri degli errori durante l'installazione delle dipendenze, assicurati di non essere in una rete ristretta o che le impostazioni del tuo firewall non ti impediscono di accedere alle risorse.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-La prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete. Sii paziente, e se continui a rimanere bloccato ti raccomandiamo di usare GitPod invece di un setup offline.
+The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using GitPod instead of an offline setup.
 
 > [!NOTE] Se stai usando un device Apple con Chip M1 per eseguire l'applicazione in locale, suggeriamo di usare Node v14.7 o superiore. Altrimenti potresti avere problemi con dipendenze come Sharp.
 
 ## Ottenere Aiuto
 
-Se sei bloccato e hai bisogno di aiuto, poni liberamente le tue domande nella [categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://chat.freecodecamp.org/channel/contributors).
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
-Potrebbe esserci un errore nella console del browser o in Bash / Terminal / Linea di comando che ti aiuterà a identificare il problema. Fornisci questo messaggio di errore nella descrizione del problema in modo che gli altri possano identificalo più facilmente e aiutarti a risolverlo.
+There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.

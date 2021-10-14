@@ -79,7 +79,7 @@ interface ShowClassicProps {
   challengeMounted: (arg0: string) => void;
   createFiles: (arg0: ChallengeFile[]) => void;
   data: { challengeNode: ChallengeNodeType };
-  executeChallenge: () => void;
+  executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
@@ -315,7 +315,15 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   renderEditor() {
-    const { challengeFiles } = this.props;
+    const {
+      challengeFiles,
+      data: {
+        challengeNode: {
+          fields: { tests },
+          usesMultifileEditor
+        }
+      }
+    } = this.props;
     const { description, title } = this.getChallenge();
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
@@ -326,8 +334,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           description={description}
           editorRef={this.editorRef}
           hasEditableBoundries={this.hasEditableBoundries()}
+          initialTests={tests}
           resizeProps={this.resizeProps}
           title={title}
+          usesMultifileEditor={usesMultifileEditor}
         />
       )
     );
@@ -368,7 +378,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       fields: { blockName },
       forumTopicId,
       superBlock,
-      title
+      title,
+      usesMultifileEditor
     } = this.getChallenge();
     const {
       executeChallenge,
@@ -387,6 +398,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         instructionsPanelRef={this.instructionsPanelRef}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
           <Helmet
@@ -474,6 +486,7 @@ export const query = graphql`
         link
         src
       }
+      usesMultifileEditor
       challengeFiles {
         fileKey
         ext

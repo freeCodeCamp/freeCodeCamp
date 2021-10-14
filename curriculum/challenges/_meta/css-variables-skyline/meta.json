@@ -1,6 +1,7 @@
 {
   "name": "CSS Variables Skyline",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "css-variables-skyline",
   "order": 8,
   "time": "5 hours",

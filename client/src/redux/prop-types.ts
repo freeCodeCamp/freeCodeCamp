@@ -223,6 +223,7 @@ export type ChallengeNodeType = {
   title: string;
   translationPending: boolean;
   url: string;
+  usesMultifileEditor: boolean;
   videoId: string;
   videoLocaleIds?: VideoLocaleIds;
   bilibiliIds?: BilibiliIds;
@@ -436,6 +437,7 @@ export type ChallengeFile = {
   ext: ExtTypes;
   name: string;
   editableRegionBoundaries: number[];
+  usesMultifileEditor: boolean;
   path: string;
   error: null | string;
   head: string;
