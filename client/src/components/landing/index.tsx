@@ -1,6 +1,6 @@
 import { Grid } from '@freecodecamp/react-bootstrap';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
@@ -11,11 +11,15 @@ import Testimonials from './components/Testimonials';
 
 import './landing.css';
 
+type LandingIndexProps = {
+  page?: string
+}
+
 const propTypes = {
   page: PropTypes.string
 };
 
-export const Landing = ({ page = 'landing' }) => {
+export const Landing: FunctionComponent<LandingIndexProps> = ({ page = 'landing' }) => {
   const { t } = useTranslation();
 
   return (
