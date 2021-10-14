@@ -19,6 +19,12 @@ Your second `p` element should have a `class` attribute set to `bold`.
 assert(document.querySelectorAll('p')?.[1]?.classList?.contains('bold'));
 ```
 
+Your first `p` element should not have a `class` attribute set to `bold`.
+
+```js
+assert(!document.querySelector('p')?.classList?.contains('bold'));
+```
+
 # --seed--
 
 ## --seed-contents--
