@@ -46,7 +46,7 @@ describe('Responsive Web Design Superblock', () => {
     before(() => {
       cy.exec('npm run seed');
       cy.login();
-      cy.toggleAll();
+      cy.toggleAllActiveAndAcceptHonestyPolicy();
       const { superBlock, block, challenges } = projects;
       challenges.forEach(({ slug, solution }) => {
         const url = `/learn/${superBlock}/${block}/${slug}`;

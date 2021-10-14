@@ -44,12 +44,12 @@ Cypress.Commands.add('login', () => {
   cy.contains('Welcome back');
 });
 
-Cypress.Commands.add('toggleAll', () => {
+Cypress.Commands.add('toggleAllActiveAndAcceptHonestyPolicy', () => {
   cy.visit('/settings');
-  // cy.get('input[name="isLocked"]').click();
-  // cy.get('input[name="name"]').click();
+  cy.get('#privacy-settings').find('[data-cy=isLocked-Public]').click();
   cy.get('#privacy-settings')
-    .find('.toggle-not-active')
+    .find('[data-cy$=-Public]')
+    .filter('.toggle-not-active')
     .each(element => {
       return new Cypress.Promise(resolve => {
         cy.wrap(element).click().should('have.class', 'toggle-active');
