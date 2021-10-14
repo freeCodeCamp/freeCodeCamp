@@ -35,7 +35,7 @@
     "react": {
       "version": "16.4.2",
       "import/ignore": ["\\.json$"],
-      "import/extensions": [".js", ".jsx", ".tsx"]
+      "import/extensions": [".js", ".jsx", ".tsx", ".ts"]
     },
     "import/ignore": ["node_modules"]
   },
