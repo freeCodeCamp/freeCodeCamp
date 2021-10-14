@@ -488,3 +488,17 @@ export interface ChallengeSchema {
   translationPending: boolean;
   url?: string;
 }
+
+export interface UserFetchState {
+  pending: boolean;
+  complete: boolean;
+  errored: boolean;
+  error: string | null;
+}
+
+export interface FlashMessage {
+  type: string;
+  message: string;
+  id: string;
+  variables: Record<string, unknown>;
+}

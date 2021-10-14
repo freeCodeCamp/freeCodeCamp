@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
 import { createAction, handleActions } from 'redux-actions';
 
+import { FlashMessage } from '../../../redux/prop-types';
 import { createTypes } from '../../../utils/create-types';
 
 export const ns = 'flash';
@@ -22,9 +23,11 @@ export const createFlashMessage = createAction(
 );
 export const removeFlashMessage = createAction(types.removeFlashMessage);
 
-// TODO: Once state is typed, add here, remove disable.
+// TODO: Once state is typed, add here, remove disables.
 // eslint-disable-next-line
-export const flashMessageSelector = (state: any): string => state[ns].message;
+export const flashMessageSelector = (state: any): FlashMessage =>
+  // eslint-disable-next-line
+  state[ns].message;
 
 export const reducer = handleActions(
   {

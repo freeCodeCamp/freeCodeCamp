@@ -25,7 +25,7 @@ import {
   userByNameSelector,
   fetchProfileForUser
 } from '../redux';
-import { UserType } from '../redux/prop-types';
+import { UserFetchState, UserType } from '../redux/prop-types';
 import { certMap } from '../resources/cert-and-project-map';
 import certificateMissingMessage from '../utils/certificate-missing-message';
 import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
@@ -70,9 +70,7 @@ interface IShowCertificationProps {
   }) => void;
   signedInUserName: string;
   user: UserType;
-  userFetchState: {
-    complete: boolean;
-  };
+  userFetchState: UserFetchState;
   userFullName: string;
   username: string;
 }
@@ -95,7 +93,7 @@ const mapStateToProps = (state: unknown, props: IShowCertificationProps) => {
       cert: CertType,
       fetchState: IShowCertificationProps['fetchState'],
       signedInUserName: string,
-      userFetchState: IShowCertificationProps['userFetchState'],
+      userFetchState: UserFetchState,
       isDonating: boolean,
       user
     ) => ({

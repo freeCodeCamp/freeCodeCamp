@@ -22,6 +22,7 @@ import {
   userSelector,
   reportUser
 } from '../redux';
+import { UserFetchState } from '../redux/prop-types';
 
 interface IShowUserProps {
   email: string;
@@ -31,11 +32,7 @@ interface IShowUserProps {
     reportDescription: string;
   }) => void;
   t: TFunction;
-  userFetchState: {
-    pending: boolean;
-    complete: boolean;
-    errored: boolean;
-  };
+  userFetchState: UserFetchState;
   username: string;
 }
 
@@ -45,7 +42,7 @@ const mapStateToProps = createSelector(
   userSelector,
   (
     isSignedIn,
-    userFetchState: IShowUserProps['userFetchState'],
+    userFetchState: UserFetchState,
     { email }: { email: string }
   ) => ({
     isSignedIn,

@@ -4,15 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+import { FlashMessage } from '../../redux/prop-types';
+
 import './flash.css';
 
 type FlashProps = {
-  flashMessage: {
-    type: string;
-    message: string;
-    id: string;
-    variables: Record<string, unknown>;
-  };
+  flashMessage: FlashMessage;
   onClose: () => void;
 };
 
