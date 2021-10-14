@@ -4,10 +4,11 @@ import { createSelector } from 'reselect';
 
 import { mathJaxScriptLoader } from '../../../utils/script-loaders';
 import { challengeTestsSelector } from '../redux';
-import TestSuite from './Test-Suite';
+import TestSuite from './test-suite';
 import ToolPanel from './Tool-Panel';
 
 import './side-panel.css';
+import { Test } from '../../../redux/prop-types';
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
@@ -22,7 +23,7 @@ interface SidePanelProps {
   guideUrl?: string;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   showToolPanel: boolean;
-  tests?: Record<string, unknown>[];
+  tests?: Test[];
   videoUrl?: string;
 }
 

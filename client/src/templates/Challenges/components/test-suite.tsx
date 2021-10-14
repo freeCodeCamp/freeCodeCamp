@@ -1,17 +1,17 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import Fail from '../../../assets/icons/fail';
 import GreenPass from '../../../assets/icons/green-pass';
 import Initial from '../../../assets/icons/initial';
+import { ChallengeTest, Test } from '../../../redux/prop-types';
 
 import './test-suite.css';
 
-const propTypes = {
-  tests: PropTypes.arrayOf(PropTypes.object)
+interface Props {
+  tests?: (Test & ChallengeTest)[]
 };
 
-function getAccessibleText(err, pass, text) {
+function getAccessibleText(err: string | undefined, pass: boolean, text: string) {
   let accessibleText = 'Waiting';
   const cleanText = text.replace(/<\/?code>/g, '');
 
@@ -26,7 +26,7 @@ function getAccessibleText(err, pass, text) {
   return accessibleText + ' - ' + cleanText;
 }
 
-function TestSuite({ tests }) {
+function TestSuite({ tests = [] }: Props) {
   return (
     <div className='challenge-test-suite'>
       {tests.map(({ err, pass = false, text = '' }, index) => {
@@ -55,6 +55,5 @@ function TestSuite({ tests }) {
 }
 
 TestSuite.displayName = 'TestSuite';
-TestSuite.propTypes = propTypes;
 
 export default TestSuite;
