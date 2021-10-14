@@ -131,6 +131,7 @@
     "@codesee/tracker": "0.112.1",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.1.2",
+    "@types/chai": "^4.2.21",
     "@types/jest": "26.0.24",
     "@types/loadable__component": "5.13.4",
     "@types/lodash-es": "4.17.5",
