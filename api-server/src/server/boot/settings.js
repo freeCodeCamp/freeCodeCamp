@@ -195,7 +195,8 @@ function createUpdateMyUsername(app) {
       });
     }
 
-    const exists = await User.doesExist(username);
+    const exists =
+      username === user.username ? false : await User.doesExist(username);
 
     if (exists) {
       return res.json({
