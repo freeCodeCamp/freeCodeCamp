@@ -116,10 +116,6 @@ describe('project submission', () => {
         // Claim and view solutions on certification page
 
         cy.toggleAll();
-        cy.visit('/settings');
-        cy.get('label[data-cy="isLocked-Public"]').click();
-        cy.get('label[data-cy="name-Public"]').click();
-        cy.get('label[data-cy="showCerts-Public"]').click();
         cy.visit('/learn/javascript-algorithms-and-data-structures');
         cy.contains('Claim Certification').click();
         cy.contains('Share Certification').click();
