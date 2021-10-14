@@ -20,11 +20,11 @@ import {
 } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/Challenge-Description';
 import Hotkeys from '../../components/Hotkeys';
-import TestSuite from '../../components/Test-Suite';
 import ChallengeTitle from '../../components/challenge-title';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/help-modal';
 import Output from '../../components/output';
+import TestSuite from '../../components/test-suite';
 import {
   challengeMounted,
   challengeTestsSelector,
