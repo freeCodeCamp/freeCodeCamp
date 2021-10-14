@@ -23,10 +23,19 @@ Run the tests to see the expected output for each method. The methods that take 
 
 # --hints--
 
-`Object.keys(bob).length` should return 6.
+No properties should be added. `Object.keys(bob).length` should always return 6.
 
 ```js
-assert.deepEqual(Object.keys(bob).length, 6);
+assert.strictEqual(
+  Object.keys((function () {
+    let bob = new Person('Bob Ross');
+    bob.setFirstName('Haskell');
+    bob.setLastName('Curry');
+    bob.setFullName('John Smith');
+    return bob;
+  })()).length,
+  6
+ );
 ```
 
 `bob instanceof Person` should return `true`.
