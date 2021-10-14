@@ -7,7 +7,7 @@ dashedName: part-64
 
 # --description--
 
-Add a medium divider after your `.daily-value` element. Below that new divider, create a `p` element with the `class` attribute set to `note.
+Add a medium divider after your `.daily-value` element. Below that new divider, create a `p` element with the `class` attribute set to `note`.
 
 Give the `p` element the following text:
 
