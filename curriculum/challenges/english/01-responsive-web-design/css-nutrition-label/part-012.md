@@ -7,9 +7,9 @@ dashedName: part-12
 
 # --description--
 
-Remember that the use of `h1`, `h2`, and similar tags determine the semantic structure of your HTML. However, you can adjust the CSS of these elements to control the visual flow and heirarchy.
+Remember that the use of `h1`, `h2`, and similar tags determine the semantic structure of your HTML. However, you can adjust the CSS of these elements to control the visual flow and hierarchy.
 
-Create an `h1` rule and set the `font-weight` property to `800`. This will make your `h1` text more bold.
+Create an `h1` rule and set the `font-weight` property to `800`. This will make your `h1` text bolder.
 
 # --hints--
 
