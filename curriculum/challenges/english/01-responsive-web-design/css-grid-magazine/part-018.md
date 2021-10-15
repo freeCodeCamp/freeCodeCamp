@@ -33,9 +33,9 @@ Your elements within the `article` element should be in the correct order.
 
 ```js
 const children = document.querySelector('article')?.children;
-assert(children?.[0].localName === 'h3');
-assert(children?.[1].localName === 'p');
-assert(children?.[2].localName === 'ul');
+assert(children?.[0]?.localName === 'h3');
+assert(children?.[1]?.localName === 'p');
+assert(children?.[2]?.localName === 'ul');
 ```
 
 Your new `h3` element should have the `class` set to `list-title`.

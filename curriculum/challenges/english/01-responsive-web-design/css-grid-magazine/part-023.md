@@ -187,7 +187,6 @@ assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('heigh
             </li>
           </ul>
         </article>
---fcc-editable-region--
         <aside class="image-wrapper">
           <img
             src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
@@ -207,8 +206,10 @@ assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('heigh
           />
           <blockquote class="image-quote"></blockquote>
           <img />
-        </aside>
 --fcc-editable-region--
+
+--fcc-editable-region--
+        </aside>
       </section>
     </main>
   </body>

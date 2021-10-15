@@ -184,7 +184,6 @@ assert(document.querySelector('.image-quote p')?.innerText === 'The millions of 
             </li>
           </ul>
         </article>
---fcc-editable-region--
         <aside class="image-wrapper">
           <img
             src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
@@ -202,9 +201,11 @@ assert(document.querySelector('.image-quote p')?.innerText === 'The millions of 
             width="400"
             height="400"
           />
+--fcc-editable-region--
           <blockquote class="image-quote">
 
           </blockquote>
+--fcc-editable-region--
           <img
             src="https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg"
             alt="four people working on code"
@@ -214,7 +215,6 @@ assert(document.querySelector('.image-quote p')?.innerText === 'The millions of 
             height="400"
           />
         </aside>
---fcc-editable-region--
       </section>
     </main>
   </body>

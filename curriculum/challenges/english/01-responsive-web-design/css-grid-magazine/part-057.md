@@ -7,11 +7,11 @@ dashedName: part-57
 
 # --description--
 
-Give the `.text` selector a `text-align` property set to `justify.`
+Give the `.text` selector a `text-align` property set to `justify`.
 
 # --hints--
 
-Your `.text` selector should have a `text-align` property set to `justify.`
+Your `.text` selector should have a `text-align` property set to `justify`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.text')?.textAlign === 'justify');

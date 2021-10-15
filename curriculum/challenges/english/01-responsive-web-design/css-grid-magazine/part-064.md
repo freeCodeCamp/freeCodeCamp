@@ -11,7 +11,7 @@ A quote is not really a quote without proper quotation marks. You can add these 
 
 Create a `.quote::before` selector and set the `content` property to `"` with a space following it.
 
-Also create a `.quote::after` selector and set the `content` property to `"` with a space preceding it.
+Also, create a `.quote::after` selector and set the `content` property to `"` with a space preceding it.
 
 # --hints--
 
@@ -21,10 +21,9 @@ You should have a `.quote::before` selector.
 assert(new __helpers.CSSHelp(document).getStyle('.quote::before'));
 ```
 
-Your `.quote::before` selector should have a `content` property set to `" `.
+Your `.quote::before` selector should have a `content` property set to `'" '`.
 
 ```js
-console.log(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content);
 assert(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content?.match(/\\?\"\s/));
 ```
 
@@ -34,7 +33,7 @@ You should have a `.quote::after` selector.
 assert(new __helpers.CSSHelp(document).getStyle('.quote::after'));
 ```
 
-Your `.quote::after` selector should have a `content` property set to ` "`.
+Your `.quote::after` selector should have a `content` property set to `' "'`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.quote::after')?.content?.match(/\s\\?\"/));

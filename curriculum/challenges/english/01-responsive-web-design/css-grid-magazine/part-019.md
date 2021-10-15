@@ -11,12 +11,13 @@ Within your `ul` element, create six `li` elements. Give them the following cont
 
 Then give the `h4` and `p` elements the following text content, in order:
 
-- The first `h4` should have the text `V1 - 2014`, and the first `p` should have the text `We launched freeCodeCamp with a simple list of 15 resources, including Harvard's CS50 and Stanford's Database Class.`
-- The second `h4` should have the text `V2 - 2015`, and the second `p` should have the text `We added interactive algorithm challenges.`
-- The third `h4` should have the text `V3 - 2015`, and the third `p` should have the text `We added our own HTML+CSS challenges (before we'd been relying on General Assembly's Dash course for these).`
-- The fourth `h4` should have the text `V4 - 2016`, and the fourth `p` should have the text `We expanded the curriculum to 3 certifications, including Front End, Back End, and Data Visualization. They each had 10 required projects, but only the Front End section had its own challenges. For the other certs, we were still using external resources like Node School.`
-- The fifth `h4` should have the text `V5 - 2017`, and the fifth `p` should have the text `We added the back end and data visualization challenges.`
-- The sixth `h4` should have the text `V6 - 2018`, and the sixth `p` should have the text `We launched 6 new certifications to replace our old ones. This was the biggest curriculum improvement to date.`
+- `h4`: `p`
+- `V1 - 2014`: `We launched freeCodeCamp with a simple list of 15 resources, including Harvard's CS50 and Stanford's Database Class.`
+- `V2 - 2015`: `We added interactive algorithm challenges.`
+- `V3 - 2015`: `We added our own HTML+CSS challenges (before we'd been relying on General Assembly's Dash course for these).`
+- `V4 - 2016`: `We expanded the curriculum to 3 certifications, including Front End, Back End, and Data Visualization. They each had 10 required projects, but only the Front End section had its own challenges. For the other certs, we were still using external resources like Node School.`
+- `V5 - 2017`: `We added the back end and data visualization challenges.`
+- `V6 - 2018`: `We launched 6 new certifications to replace our old ones. This was the biggest curriculum improvement to date.`
 
 # --hints--
 
