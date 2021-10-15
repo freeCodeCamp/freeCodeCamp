@@ -27,7 +27,7 @@ const landingImageSize: imageSizeProps = {
   height: 442,
   width: 750
 };
-function CampersImage({ pageName }: asSeenInProps): JSX.Element {
+function CampersImage({ pageName }: campersImageProps): JSX.Element {
   const { t } = useTranslation();
 
   const { spacerSize, height, width } =
