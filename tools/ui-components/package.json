@@ -22,7 +22,7 @@
     "@babel/preset-typescript": "7.15.0",
     "@types/jest": "27.0.2",
     "@types/node": "16.9.6",
-    "@types/react": "17.0.29",
+    "@types/react": "17.0.30",
     "@types/react-dom": "17.0.9",
     "react": "16.14.0",
     "react-dom": "16.14.0",
