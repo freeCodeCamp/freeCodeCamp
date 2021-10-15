@@ -7,7 +7,9 @@ dashedName: part-57
 
 # --description--
 
-Give the `.text` selector a `text-align` property set to `justify`.
+Magazines often use justified text in their printed content to structure their layout and control the flow of their content. While this works in printed form, justified text on websites can be an accessibility concern, for example presenting challenges for folks with dyslexia.
+
+To make your project look like a printed magazine, give the `.text` selector a `text-align` property set to `justify`.
 
 # --hints--
 
