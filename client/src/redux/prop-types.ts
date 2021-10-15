@@ -153,7 +153,7 @@ export type MarkdownRemarkType = {
   frontmatter: {
     block: string;
     isBeta: boolean;
-    superBlock: string;
+    superBlock: SuperBlocks;
     title: string;
   };
   headings: [
@@ -217,7 +217,7 @@ export type ChallengeNodeType = {
   question: Question;
   required: Required[];
   superOrder: number;
-  superBlock: string;
+  superBlock: SuperBlocks;
   tail: string[];
   time: string;
   title: string;
@@ -339,7 +339,7 @@ export type ChallengeMetaType = {
   nextChallengePath: string;
   prevChallengePath: string;
   removeComments: boolean;
-  superBlock: string;
+  superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;
   helpCategory: string;
@@ -415,7 +415,7 @@ export type ChallengeNode = {
     [T in FileKeyTypes]: FileKeyChallengeType;
   };
   sourceInstanceName: string;
-  superBlock: string;
+  superBlock: SuperBlocks;
   superOrder: number;
   template: string;
   tests: Test[];
@@ -478,7 +478,7 @@ export interface ChallengeSchema {
   question: Question;
   required: Required[];
   solutions: ChallengeFile[][];
-  superBlock: string;
+  superBlock: SuperBlocks;
   superOrder: number;
   suborder: number;
   tests: Test[];
@@ -487,4 +487,19 @@ export interface ChallengeSchema {
   title: string;
   translationPending: boolean;
   url?: string;
+}
+
+export enum SuperBlocks {
+  RespWebDesign = 'responsive-web-design',
+  JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
+  FrontEndDevLibs = 'front-end-development-libraries',
+  DataVis = 'data-visualization',
+  RelationalDb = 'relational-databases',
+  BackEndDevApis = 'back-end-development-and-apis',
+  QualityAssurance = 'quality-assurance',
+  SciCompPy = 'scientific-computing-with-python',
+  DataAnalysisPy = 'data-analysis-with-python',
+  InfoSec = 'information-security',
+  MachineLearningPy = 'machine-learning-with-python',
+  CodingInterviewPrep = 'coding-interview-prep'
 }

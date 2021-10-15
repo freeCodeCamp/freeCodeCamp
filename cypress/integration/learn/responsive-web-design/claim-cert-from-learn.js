@@ -1,5 +1,5 @@
 const projects = {
-  superBlock: 'responsive-web-design',
+  superBlock: SuperBlocks.RespWebDesign,
   block: 'responsive-web-design-projects',
   challenges: [
     {

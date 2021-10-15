@@ -66,11 +66,11 @@ const certSlugTypeMap = {
   'full-stack': certTypes.fullStack,
 
   // modern
-  'responsive-web-design': certTypes.respWebDesign,
-  'javascript-algorithms-and-data-structures': certTypes.jsAlgoDataStruct,
-  'front-end-development-libraries': certTypes.frontEndDevLibs,
-  'data-visualization': certTypes.dataVis2018,
-  'back-end-development-and-apis': certTypes.apisMicroservices,
+  SuperBlocks.RespWebDesign: certTypes.respWebDesign,
+  SuperBlocks.JsAlgoDataStruct: certTypes.jsAlgoDataStruct,
+  SuperBlocks.FrontEndDevLibs: certTypes.frontEndDevLibs,
+  SuperBlocks.DataVis: certTypes.dataVis2018,
+  SuperBlocks.BackEndDevApis: certTypes.apisMicroservices,
   'quality-assurance-v7': certTypes.qaV7,
   'information-security-v7': certTypes.infosecV7,
   'scientific-computing-with-python-v7': certTypes.sciCompPyV7,
@@ -88,17 +88,17 @@ const superBlockCertTypeMap = {
   'full-stack': certTypes.fullStack,
 
   // modern
-  'responsive-web-design': certTypes.respWebDesign,
-  'javascript-algorithms-and-data-structures': certTypes.jsAlgoDataStruct,
-  'front-end-development-libraries': certTypes.frontEndDevLibs,
-  'data-visualization': certTypes.dataVis2018,
-  'back-end-development-and-apis': certTypes.apisMicroservices,
-  'quality-assurance': certTypes.qaV7,
-  'information-security': certTypes.infosecV7,
-  'scientific-computing-with-python': certTypes.sciCompPyV7,
-  'data-analysis-with-python': certTypes.dataAnalysisPyV7,
-  'machine-learning-with-python': certTypes.machineLearningPyV7,
-  'relational-databases': certTypes.relationalDatabasesV8
+  SuperBlocks.RespWebDesign: certTypes.respWebDesign,
+  SuperBlocks.JsAlgoDataStruct: certTypes.jsAlgoDataStruct,
+  SuperBlocks.FrontEndDevLibs: certTypes.frontEndDevLibs,
+  SuperBlocks.DataVis: certTypes.dataVis2018,
+  SuperBlocks.BackEndDevApis: certTypes.apisMicroservices,
+  SuperBlocks.QualityAssurance: certTypes.qaV7,
+  SuperBlocks.InfoSec: certTypes.infosecV7,
+  SuperBlocks.SciCompPy: certTypes.sciCompPyV7,
+  SuperBlocks.DataAnalysisPy: certTypes.dataAnalysisPyV7,
+  SuperBlocks.MachineLearningPy: certTypes.machineLearningPyV7,
+  SuperBlocks.RelationalDb: certTypes.relationalDatabasesV8
 };
 
 const certTypeIdMap = {

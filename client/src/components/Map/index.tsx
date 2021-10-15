@@ -4,9 +4,9 @@ import React from 'react';
 
 import envData from '../../../../config/env.json';
 import { isAuditedCert } from '../../../../utils/is-audited';
-import { generateIconComponent, SuperBlock } from '../../assets/icons';
+import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
-import { ChallengeNodeType } from '../../redux/prop-types';
+import { ChallengeNodeType, SuperBlocks } from '../../redux/prop-types';
 import { Link, Spacer } from '../helpers';
 
 import './map.css';
@@ -14,7 +14,7 @@ import './map.css';
 const { curriculumLocale } = envData;
 
 interface MapProps {
-  currentSuperBlock?: string;
+  currentSuperBlock?: SuperBlocks;
   forLanding?: boolean;
 }
 
@@ -24,9 +24,9 @@ interface MapData {
   };
 }
 
-function createSuperBlockTitle(superBlock: string) {
+function createSuperBlockTitle(superBlock: SuperBlocks) {
   const superBlockTitle = i18next.t(`intro:${superBlock}.title`);
-  return superBlock === 'coding-interview-prep'
+  return superBlock === SuperBlocks.CodingInterviewPrep
     ? i18next.t('learn.cert-map-estimates.coding-prep', {
         title: superBlockTitle
       })
@@ -40,7 +40,9 @@ const linkSpacingStyle = {
 };
 
 function renderLandingMap(nodes: ChallengeNodeType[]) {
-  nodes = nodes.filter(node => node.superBlock !== 'coding-interview-prep');
+  nodes = nodes.filter(
+    node => node.superBlock !== SuperBlocks.CodingInterviewPrep
+  );
   return (
     <ul data-test-label='certifications'>
       {nodes.map((node, i) => (
@@ -50,7 +52,7 @@ function renderLandingMap(nodes: ChallengeNodeType[]) {
             to={`/learn/${node.superBlock}/`}
           >
             <div style={linkSpacingStyle}>
-              {generateIconComponent(node.superBlock as SuperBlock, 'map-icon')}
+              {generateIconComponent(node.superBlock, 'map-icon')}
               {i18next.t(`intro:${node.superBlock}.title`)}
             </div>
             <LinkButton />
@@ -72,7 +74,7 @@ function renderLearnMap(nodes: ChallengeNodeType[], currentSuperBlock = '') {
             to={`/learn/${node.superBlock}/`}
           >
             <div style={linkSpacingStyle}>
-              {generateIconComponent(node.superBlock as SuperBlock, 'map-icon')}
+              {generateIconComponent(node.superBlock, 'map-icon')}
               {createSuperBlockTitle(node.superBlock)}
             </div>
           </Link>
@@ -90,10 +92,7 @@ function renderLearnMap(nodes: ChallengeNodeType[], currentSuperBlock = '') {
               to={`/learn/${node.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
-                {generateIconComponent(
-                  node.superBlock as SuperBlock,
-                  'map-icon'
-                )}
+                {generateIconComponent(node.superBlock, 'map-icon')}
                 {createSuperBlockTitle(node.superBlock)}
               </div>
             </Link>
@@ -120,10 +119,7 @@ function renderLearnMap(nodes: ChallengeNodeType[], currentSuperBlock = '') {
               to={`/learn/${node.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
-                {generateIconComponent(
-                  node.superBlock as SuperBlock,
-                  'map-icon'
-                )}
+                {generateIconComponent(node.superBlock, 'map-icon')}
                 {createSuperBlockTitle(node.superBlock)}
               </div>
             </Link>
@@ -135,7 +131,7 @@ function renderLearnMap(nodes: ChallengeNodeType[], currentSuperBlock = '') {
 
 export function Map({
   forLanding = false,
-  currentSuperBlock = ''
+  currentSuperBlock = SuperBlocks.RespWebDesign
 }: MapProps): React.ReactElement {
   /*
    * this query gets the first challenge from each block and the second block

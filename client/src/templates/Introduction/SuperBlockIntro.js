@@ -22,7 +22,12 @@ import {
   tryToShowDonationModal,
   userSelector
 } from '../../redux';
-import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
+import {
+  MarkdownRemark,
+  AllChallengeNode,
+  User,
+  SuperBlocks
+} from '../../redux/prop-types';
 import Block from './components/Block';
 import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';
@@ -163,7 +168,7 @@ const SuperBlockIntroductionPage = props => {
   const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nTitle =
-    superBlock === 'coding-interview-prep'
+    superBlock === SuperBlocks.CodingInterviewPrep
       ? i18nSuperBlock
       : t(`intro:misc-text.certification`, {
           cert: i18nSuperBlock
@@ -197,7 +202,7 @@ const SuperBlockIntroductionPage = props => {
                   {blockDashedName !== 'project-euler' ? <Spacer /> : null}
                 </Fragment>
               ))}
-              {superBlock !== 'coding-interview-prep' && (
+              {superBlock !== SuperBlocks.CodingInterviewPrep && (
                 <div>
                   <CertChallenge
                     superBlock={superBlock}

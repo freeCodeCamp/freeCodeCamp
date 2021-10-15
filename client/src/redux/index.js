@@ -13,6 +13,7 @@ import { createFetchUserSaga } from './fetch-user-saga';
 import { createGaSaga } from './ga-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
+import { SuperBlocks } from './prop-types';
 import { createReportUserSaga } from './report-user-saga';
 
 import { actionTypes as settingsTypes } from './settings/action-types';
@@ -272,27 +273,27 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
-        certSlug: 'responsive-web-design'
+        certSlug: SuperBlocks.RespWebDesign
       },
       {
         show: isJsAlgoDataStructCert,
         title: 'JavaScript Algorithms and Data Structures Certification',
-        certSlug: 'javascript-algorithms-and-data-structures'
+        certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         show: isFrontEndLibsCert,
         title: 'Front End Development Libraries Certification',
-        certSlug: 'front-end-development-libraries'
+        certSlug: SuperBlocks.FrontEndDevLibs
       },
       {
         show: is2018DataVisCert,
         title: 'Data Visualization Certification',
-        certSlug: 'data-visualization'
+        certSlug: SuperBlocks.DataVis
       },
       {
         show: isApisMicroservicesCert,
         title: 'Back End Development and APIs Certification',
-        certSlug: 'back-end-development-and-apis'
+        certSlug: SuperBlocks.BackEndDevApis
       },
       {
         show: isQaCertV7,
