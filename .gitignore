@@ -207,8 +207,3 @@ client/static/_redirects
 
 ### UI Components ###
 tools/ui-components/dist
-
-### Linters ###
-
-# eslint
-.eslintrc.* 
