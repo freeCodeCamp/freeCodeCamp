@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-onchange */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
@@ -9,7 +10,6 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 // @ts-nocheck
 import {
-  faCheck,
   faCheckSquare,
   faHeart,
   faSquare,
@@ -22,9 +22,9 @@ import { connect } from 'react-redux';
 import envData from '../../../../../config/env.json';
 import {
   availableLangs,
-  i18nextCodes,
   langDisplayNames
 } from '../../../../../config/i18n/all-langs';
+import { hardGoTo as navigate } from '../../../redux';
 import { updateUserFlag } from '../../../redux/settings';
 import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
@@ -41,30 +41,51 @@ export interface NavLinksProps {
   toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement>;
   toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;
+  navigate?: (location: string) => void;
 }
 
 const mapDispatchToProps = {
+  navigate,
   toggleNightMode: (theme: unknown) => updateUserFlag({ theme })
 };
 
 export class NavLinks extends Component<NavLinksProps, {}> {
   static displayName: string;
+
+  constructor(props: NavLinksProps) {
+    super(props);
+    this.handleLanguageChange = this.handleLanguageChange.bind(this);
+  }
+
   toggleTheme(currentTheme = 'default', toggleNightMode: any) {
     toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
   }
 
+  handleLanguageChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ): void => {
+    const { toggleDisplayMenu, navigate } = this.props;
+    toggleDisplayMenu();
+
+    const path = createLanguageRedirect({
+      clientLocale,
+      lang: event.target.value
+    });
+
+    return navigate(path);
+  };
+
   render() {
     const {
       displayMenu,
-      i18n,
       fetchState,
       t,
-      toggleDisplayMenu,
       toggleNightMode,
       user: { isDonating = false, username, theme }
     }: NavLinksProps = this.props;
 
     const { pending } = fetchState;
+
     return pending ? (
       <div className='nav-skeleton' />
     ) : (
@@ -167,32 +188,20 @@ export class NavLinks extends Component<NavLinksProps, {}> {
         <div className='nav-link nav-link-header' key='lang-header'>
           {t('footer.language')}
         </div>
-        {locales.map(lang =>
-          // current lang is a button that closes the menu
-          i18n.language === i18nextCodes[lang] ? (
-            <button
-              className='nav-link nav-link-lang nav-link-flex'
-              key={'lang-' + lang}
-              onClick={toggleDisplayMenu}
-            >
-              <span>{langDisplayNames[lang]}</span>
-              <FontAwesomeIcon icon={faCheck} />
-            </button>
-          ) : (
-            <Link
-              className='nav-link nav-link-lang nav-link-flex'
-              external={true}
-              // Todo: should treat other lang client application links as external??
-              key={'lang-' + lang}
-              to={createLanguageRedirect({
-                clientLocale,
-                lang
-              })}
-            >
-              {langDisplayNames[lang]}
-            </Link>
-          )
-        )}
+
+        <div className='nav-link' key='language-dropdown'>
+          <select
+            className='nav-link-lang-dropdown'
+            onChange={this.handleLanguageChange}
+            value={clientLocale}
+          >
+            {locales.map(lang => (
+              <option key={'lang-' + lang} value={lang}>
+                {langDisplayNames[lang]}
+              </option>
+            ))}
+          </select>
+        </div>
         {username && (
           <Fragment key='signout-frag'>
             <hr className='nav-line-2' />
