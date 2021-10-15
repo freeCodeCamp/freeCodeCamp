@@ -1,13 +1,14 @@
 import React from 'react';
 import { Form } from 'react-final-form';
 
-import { ValidatedValues } from '../../templates/Challenges/projects/solution-form';
 import {
+  URLValuesType,
+  validatedValuesType,
   FormFields,
   BlockSaveButton,
   BlockSaveWrapper,
   formatUrlValues
-} from '.';
+} from '../formHelpers/index';
 
 export type FormOptions = {
   ignored?: string[];
@@ -26,7 +27,7 @@ type FormProps = {
   id?: string;
   initialValues?: Record<string, unknown>;
   options: FormOptions;
-  submit: (values: ValidatedValues, ...args: unknown[]) => void;
+  submit: (values: validatedValuesType, ...args: unknown[]) => void;
 };
 
 function DynamicForm({
@@ -42,9 +43,10 @@ function DynamicForm({
   return (
     <Form
       initialValues={initialValues}
-      onSubmit={(values: ValidatedValues, ...args: unknown[]) =>
-        submit(formatUrlValues(values, options), ...args)
-      }
+      onSubmit={(values: URLValuesType, ...args: unknown[]) => {
+        console.log('🚀 ~ file: form.tsx ~ line 46 ~ values', values);
+        submit(formatUrlValues(values, options), ...args);
+      }}
     >
       {({ handleSubmit, pristine, error }) => (
         <form

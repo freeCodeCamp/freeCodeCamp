@@ -17,7 +17,7 @@ const normalizeOptions = {
   stripWWW: false
 };
 
-type URLValuesType = {
+export type URLValuesType = {
   [key: string]: string;
 };
 
@@ -26,7 +26,7 @@ type validationErrorType = {
   value: string;
 };
 
-type validatedValuesType = {
+export type validatedValuesType = {
   values: URLValuesType;
   errors: validationErrorType[];
   invalidValues: (JSX.Element | null)[];
@@ -42,7 +42,7 @@ export function formatUrlValues(
     errors: [],
     invalidValues: []
   };
-  const urlValues = Object.keys(values).reduce((result, key) => {
+  const urlValues = Object.keys(values).reduce((result, key: string) => {
     let value: string = values[key];
     const nullOrWarning: JSX.Element | null = composeValidators(
       fCCValidator,
