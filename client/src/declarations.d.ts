@@ -14,6 +14,7 @@ declare module '*.png' {
   const content: string;
   export default content;
 }
+
 declare namespace NodeJS {
   interface Global {
     MathJax: {
