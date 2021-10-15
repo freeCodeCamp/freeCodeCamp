@@ -1,0 +1,79 @@
+---
+id: 61a5c906ab73313316e342f0
+title: Step 65
+challengeType: 0
+dashedName: step-65
+---
+
+# --description--
+
+If no `gradientDirection` argument is provided to the `linear-gradient` function, it arranges colors from top to bottom, or along a 180 degree line, by default.
+
+Clean up your code a little more by removing the `gradientDirection` argument from both `linear-gradient` functions.
+
+# --hints--
+
+Test 1
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Color Markers</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1>CSS Color Markers</h1>
+    <div class="container">
+      <div class="marker red">
+      </div>
+      <div class="marker green">
+      </div>
+      <div class="marker blue">
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+```css
+h1 {
+  text-align: center;
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0;
+}
+
+.marker {
+  width: 200px;
+  height: 25px;
+  margin: 10px auto;
+}
+
+--fcc-editable-region--
+.red {
+  background: linear-gradient(180deg, rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27));
+}
+
+.green {
+  background: linear-gradient(180deg, #55680D, #71F53E, #116C31);
+}
+--fcc-editable-region--
+
+.blue {
+  background-color: hsl(240, 100%, 50%);
+}
+
+```

@@ -1,0 +1,62 @@
+---
+id: 616d4a84b756d9c4b8255093
+title: Step 11
+challengeType: 0
+dashedName: step-11
+---
+
+# --description--
+
+It's time to add some color to the page. Remember that one way to add color to an element is to use a <dfn>color keyword</dfn> like `black`, `cyan`, or `yellow`.
+
+Use a class selector to target `marker` and apply a background color to it. As a reminder, here's how to target the `class` `freecodecamp`:
+
+```css
+.freecodecamp {
+  
+}
+```
+
+Create a new CSS rule that targets the `marker` `class`, and set its `background-color` property to `red`.
+
+# --hints--
+
+Test 1
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Color Markers</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1>CSS Color Markers</h1>
+    <div class="container">
+      <div class="marker">
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+```css
+h1 {
+  text-align: center;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
+```

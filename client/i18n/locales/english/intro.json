@@ -66,11 +66,17 @@
       },
       "learn-html-by-building-a-cat-photo-app": {
         "title": "Learn HTML by Building a Cat Photo App",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
         "title": "Learn Basic CSS by Building a Cafe Menu",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
         "title": "Learn the CSS Box Model by Building a Rothko Painting",
@@ -81,12 +87,24 @@
       },
       "learn-css-variables-by-building-a-city-skyline": {
         "title": "Learn CSS Variables by Building a City Skyline",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
-      "learn-html-forms-by-building-a-registration-form": { "title": "Learn HTML Forms by Building a Registration Form", "intro": ["", ""] },
+      "learn-html-forms-by-building-a-registration-form": {
+        "title": "Learn HTML Forms by Building a Registration Form",
+        "intro": [
+          "",
+          ""
+        ]
+      },
       "learn-accessibility-by-building-a-quiz": {
         "title": "Learn Accessibility by Building a Quiz",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
         "title": "Learn Intermediate CSS by Building a Picasso Painting",
@@ -95,16 +113,44 @@
           "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
         ]
       },
-      "learn-responsive-web-design-by-building-a-piano": { "title": "Learn Responsive Web Design by Building a Piano", "intro": ["", ""] },
-      "learn-css-flexbox-by-building-a-photo-gallery": { "title": "Learn CSS Flexbox by Building a Photo Gallery", "intro": ["", ""] },
-      "learn-css-grid-by-building-a-magazine": { "title": "Learn CSS Grid by Building a Magazine", "intro": ["", ""] },
+      "learn-responsive-web-design-by-building-a-piano": {
+        "title": "Learn Responsive Web Design by Building a Piano",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-css-flexbox-by-building-a-photo-gallery": {
+        "title": "Learn CSS Flexbox by Building a Photo Gallery",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-css-grid-by-building-a-magazine": {
+        "title": "Learn CSS Grid by Building a Magazine",
+        "intro": [
+          "",
+          ""
+        ]
+      },
       "learn-typography-by-building-a-nutrition-label": {
         "title": "Learn Typography by Building a Nutrition Label",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-css-transforms-by-building-a-penguin": { "title": "Learn CSS Transforms by Building a Penguin", "intro": ["", ""] },
       "learn-css-animation-by-building-a-ferris-wheel": { "title": "Learn CSS Animation by Building a Ferris Wheel", "intro": ["", ""] },
-      "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": { "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet", "intro": ["", ""] }
+      "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": { "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet", "intro": ["", ""] },
+      "learn-css-colors-by-building-a-colored-markers-set": {
+        "title": "Learn CSS Colors by Building a Colored Markers Set",
+        "intro": [
+          "",
+          ""
+        ]
+      }
     }
   },
   "javascript-algorithms-and-data-structures": {
@@ -190,15 +236,24 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Basic JavaScript RPG Game",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Intermediate JavaScript Calorie Counter",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "functional-programming-spreadsheet": {
         "title": "Functional Programming Spreadsheet",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -298,7 +353,13 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": [
+          "",
+          ""
+        ]
+      }
     }
   },
   "relational-databases": {
