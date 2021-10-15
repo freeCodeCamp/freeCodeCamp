@@ -1,3 +1,5 @@
+/* eslint-disable */
+// @ts-nocheck Likely need to not use ShallowRenderer
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
