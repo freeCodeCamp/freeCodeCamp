@@ -1,5 +1,5 @@
 ---
-id: 6148e162e255676ae0da6a76
+id: 6148e19c3e26436be0155690
 title: Part 70
 challengeType: 0
 dashedName: part-70
@@ -7,14 +7,20 @@ dashedName: part-70
 
 # --description--
 
-Give the `.lists` selector a `margin-top` property set to `2rem`.
+Create a `.lists li` rule to target the list items within your `.lists` element. Give it a `margin-bottom` property set to `1.5rem`.
 
 # --hints--
 
-Your `.lists` selector should have a `margin-top` property set to `2rem`.
+You should have a `.lists li` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists')?.marginTop === '2rem');
+assert(new __helpers.CSSHelp(document).getStyle('.lists li'));
+```
+
+Your `.lists li` selector should have a `margin-bottom` property set to `1.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.lists li')?.marginBottom === '1.5rem');
 ```
 
 # --seed--
@@ -265,9 +271,7 @@ hr {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -329,9 +333,12 @@ hr {
   margin-bottom: 3rem;
 }
 
---fcc-editable-region--
 .lists {
   list-style-type: none;
+  margin-top: 2rem;
 }
+
+--fcc-editable-region--
+
 --fcc-editable-region--
 ```

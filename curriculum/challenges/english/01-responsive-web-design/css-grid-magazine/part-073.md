@@ -1,5 +1,5 @@
 ---
-id: 6148e2dcdd60306dd77d41cc
+id: 6148e4d6861a486f60681f36
 title: Part 73
 challengeType: 0
 dashedName: part-73
@@ -7,22 +7,22 @@ dashedName: part-73
 
 # --description--
 
-Time to style the last section of the magazine - the images.
+The images should be within a two column, three row layout.
 
-The images are wrapped with an `aside` element using the `image-wrapper` class, so create an `.image-wrapper` selector. Set the `display` property to `grid`.
+Give the `.image-wrapper` selector a `grid-template-columns` property set to `2fr 1fr` and a `grid-template-rows` property set to `repeat(3, min-content)`. This will give our grid rows that adjust in height based on the content, but columns that remain a fixed width based on the container.
 
 # --hints--
 
-You should have an `.image-wrapper` selector.
+Your `.image-wrapper` selector should have a `grid-template-columns` property set to `2fr 1fr`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper'));
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gridTemplateColumns === '2fr 1fr');
 ```
 
-Your `.image-wrapper` selector should have a `display` property set to `grid`.
+Your `.image-wrapper` selector should have a `grid-template-rows` property set to `repeat(3, min-content)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.display === 'grid');
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gridTemplateRows === 'repeat(3, min-content)');
 ```
 
 # --seed--
@@ -273,9 +273,7 @@ hr {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -351,6 +349,8 @@ hr {
 }
 
 --fcc-editable-region--
-
+.image-wrapper {
+  display: grid;
+}
 --fcc-editable-region--
 ```

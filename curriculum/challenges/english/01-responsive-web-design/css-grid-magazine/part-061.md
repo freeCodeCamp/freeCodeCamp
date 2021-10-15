@@ -1,5 +1,5 @@
 ---
-id: 6148d1bdf39c5b5186f5974b
+id: 6148d1f9eb63c252e1f8acc4
 title: Part 61
 challengeType: 0
 dashedName: part-61
@@ -7,20 +7,14 @@ dashedName: part-61
 
 # --description--
 
-Create an `hr` selector, and give it a `margin` property set to `1.5rem 0`.
+To give the `hr` a color, you need to adjust the `border` property. Give the `hr` selector a `border` property set to `1px solid rgba(120, 120, 120, 0.6)`.
 
 # --hints--
 
-You should have an `hr` selector.
+Your `hr` should have a `border` property set to `1px solid rgba(120, 120, 120, 0.6)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('hr'));
-```
-
-Your `hr` selector should have a `margin` property set to `1.5rem 0`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('hr')?.margin === '1.5rem 0px');
+assert(new __helpers.CSSHelp(document).getStyle('hr')?.border === '1px solid rgba(120, 120, 120, 0.6)');
 ```
 
 # --seed--
@@ -247,7 +241,9 @@ img {
 }
 
 --fcc-editable-region--
-
+hr {
+  margin: 1.5rem 0;
+}
 --fcc-editable-region--
 
 .heading {
@@ -271,9 +267,7 @@ img {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }

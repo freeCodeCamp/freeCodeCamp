@@ -1,5 +1,5 @@
 ---
-id: 6148d3fff5186b57123d97e2
+id: 6148d4d57b965358c9fa38bf
 title: Part 65
 challengeType: 0
 dashedName: part-65
@@ -7,36 +7,22 @@ dashedName: part-65
 
 # --description--
 
-A quote is not really a quote without proper quotation marks. You can add these with CSS pseudo selectors.
+Now to style your second `section`. Note that it has the `text` and `text-with-images` values for the `class` attribute, which means it is already inheriting the styles from your `.text` rule.
 
-Create a `.quote::before` selector and set the `content` property to `"` with a space following it.
-
-Also, create a `.quote::after` selector and set the `content` property to `"` with a space preceding it.
+Create a `.text-with-images` selector and set the `display` property to `grid`.
 
 # --hints--
 
-You should have a `.quote::before` selector.
+You should have a `.text-with-images` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::before'));
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images'));
 ```
 
-Your `.quote::before` selector should have a `content` property set to `'" '`.
+Your `.text-with-images` selector should have a `display` property set to `grid`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content?.match(/\\?\"\s/));
-```
-
-You should have a `.quote::after` selector.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::after'));
-```
-
-Your `.quote::after` selector should have a `content` property set to `' "'`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::after')?.content?.match(/\s\\?\"/));
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.display === 'grid');
 ```
 
 # --seed--
@@ -287,9 +273,7 @@ hr {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -334,6 +318,14 @@ hr {
   font-size: 2.4rem;
   text-align: center;
   font-family: "Raleway", sans-serif;
+}
+
+.quote::before {
+  content: '" ';
+}
+
+.quote::after {
+  content: ' "';
 }
 
 --fcc-editable-region--

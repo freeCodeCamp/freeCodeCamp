@@ -1,5 +1,5 @@
 ---
-id: 6148c004ffc8434252940dc3
+id: 6148c224ecb157439bc5247c
 title: Part 51
 challengeType: 0
 dashedName: part-51
@@ -7,26 +7,14 @@ dashedName: part-51
 
 # --description--
 
-Create a `.social-icons` selector. Give it a `display` property set to `grid`, and a `font-size` property set to `3rem.`
+The default settings for CSS Grid will create additional rows as needed, unlike Flexbox. Give the `.social-icons` selector a `grid-template-columns` property set to `repeat(5, 1fr)` to arrange the icons in a single row.
 
 # --hints--
 
-You should have a `.social-icons` selector.
+Your `.social-icons` selector should have a `grid-template-columns` property set to `repeat(5, 1fr)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons'));
-```
-
-Your `.social-icons` selector should have a `display` property set to `grid`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.display === 'grid');
-```
-
-Your `.social-icons` selector should have a `font-size` property set to `3rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.fontSize === '3rem');
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridTemplateColumns === 'repeat(5, 1fr)');
 ```
 
 # --seed--
@@ -269,9 +257,7 @@ img {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -296,6 +282,9 @@ img {
 }
 
 --fcc-editable-region--
-
+.social-icons {
+  display: grid;
+  font-size: 3rem;
+}
 --fcc-editable-region--
 ```

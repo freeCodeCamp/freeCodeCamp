@@ -7,7 +7,7 @@ dashedName: part-45
 
 # --description--
 
-Create a `.hero-title` selector and give it a `position` property set to `absolute`, a `top` property set to `10%`, and a `left` property set to `15%`.
+Create a `.hero-title` selector and give it a `text-align` property set to `center`, a `color` property set to `orangered` and a `font-size` property set to `8rem`.
 
 # --hints--
 
@@ -17,22 +17,22 @@ You should have a `.hero-title` selector.
 assert(new __helpers.CSSHelp(document).getStyle('.hero-title'));
 ```
 
-Your `.hero-title` selector should have a `position` property set to `absolute`.
+Your `.hero-title` selector should have a `text-align` property set to `center`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.position === 'absolute');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.textAlign === 'center');
 ```
 
-Your `.hero-title` selector should have a `top` property set to `10%`.
+Your `.hero-title` selector should have a `color` property set to `orangered`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.top === '10%');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.color === 'orangered');
 ```
 
-Your `.hero-title` selector should have a `left` property set to `15%`.
+Your `.hero-title` selector should have a `font-size` property set to `8rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.left === '15%');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.fontSize === '8rem');
 ```
 
 # --seed--

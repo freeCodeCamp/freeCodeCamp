@@ -1,5 +1,5 @@
 ---
-id: 6148bfc43df3bc40fe0e6405
+id: 6148c004ffc8434252940dc3
 title: Part 50
 challengeType: 0
 dashedName: part-50
@@ -7,20 +7,26 @@ dashedName: part-50
 
 # --description--
 
-Create a `.publish-date` selector and give it a `color` property of `rgba(255, 255, 255, 0.5)`.
+Create a `.social-icons` selector. Give it a `display` property set to `grid`, and a `font-size` property set to `3rem.`
 
 # --hints--
 
-You should have a `.publish-date` selector.
+You should have a `.social-icons` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.publish-date'));
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons'));
 ```
 
-Your `.publish-date` selector should have a `color` property set to `rgba(255, 255, 255, 0.5)`.
+Your `.social-icons` selector should have a `display` property set to `grid`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.publish-date')?.color === 'rgba(255, 255, 255, 0.5)');
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.display === 'grid');
+```
+
+Your `.social-icons` selector should have a `font-size` property set to `3rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.fontSize === '3rem');
 ```
 
 # --seed--
@@ -263,9 +269,7 @@ img {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -283,6 +287,10 @@ img {
 
 .author-name a:hover {
   background-color: #306203;
+}
+
+.publish-date {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 --fcc-editable-region--

@@ -1,5 +1,5 @@
 ---
-id: 6148bf49fcc7913f05dbf9b7
+id: 6148bfc43df3bc40fe0e6405
 title: Part 49
 challengeType: 0
 dashedName: part-49
@@ -7,22 +7,20 @@ dashedName: part-49
 
 # --description--
 
-Create a `.author-name a:hover` selector and give it a `background-color` property set to `#306203`.
-
-This will create a hover effect only for the `a` element within the `.author-name`, showing the original freeCodeCamp green in the background.
+Create a `.publish-date` selector and give it a `color` property of `rgba(255, 255, 255, 0.5)`.
 
 # --hints--
 
-You should have an `.author-name a:hover` selector.
+You should have a `.publish-date` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author-name a:hover'));
+assert(new __helpers.CSSHelp(document).getStyle('.publish-date'));
 ```
 
-Your `.author-name a:hover` selector should have a `background-color` property set to `#306203`.
+Your `.publish-date` selector should have a `color` property set to `rgba(255, 255, 255, 0.5)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author-name a:hover')?.backgroundColor === 'rgb(48, 98, 3)');
+assert(new __helpers.CSSHelp(document).getStyle('.publish-date')?.color === 'rgba(255, 255, 255, 0.5)');
 ```
 
 # --seed--
@@ -265,9 +263,7 @@ img {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -281,6 +277,10 @@ img {
 .author {
   font-size: 2rem;
   font-family: "Raleway", sans-serif;
+}
+
+.author-name a:hover {
+  background-color: #306203;
 }
 
 --fcc-editable-region--

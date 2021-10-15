@@ -1,5 +1,5 @@
 ---
-id: 6148cf094b3f2b4e8a032c63
+id: 6148d0b863d10d50544ace0e
 title: Part 59
 challengeType: 0
 dashedName: part-59
@@ -7,28 +7,20 @@ dashedName: part-59
 
 # --description--
 
-The `::first-letter` pseudo-selector allows you to target the first letter in the text content of an element.
-
-Create a `.first-paragraph::first-letter` selector and set the `font-size` property to `6rem`. Also give it a `color` property set to `orangered` to make it stand out.
+The other text has been shifted out of place. Move it into position by giving the `.first-paragraph::first-letter` selector a `float` property set to `left` and a `margin-right` property set to `1rem`.
 
 # --hints--
 
-You should have a `.first-paragraph::first-letter` selector.
+Your `.first-paragraph::first-letter` selector should have a `float` property set to `left`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter'));
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.float === 'left');
 ```
 
-Your `.first-paragraph::first-letter` selector should have a `font-size` property set to `6rem`.
+Your `.first-paragraph::first-letter` selector should have a `margin-right` property set to `1rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.fontSize === '6rem');
-```
-
-Your `.first-paragraph::first-letter` selector should have a `color` property set to `orangered`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.color === 'orangered');
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.marginRight === '1rem');
 ```
 
 # --seed--
@@ -275,9 +267,7 @@ img {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -311,6 +301,9 @@ img {
 }
 
 --fcc-editable-region--
-
+.first-paragraph::first-letter {
+  font-size: 6rem;
+  color: orangered;
+}
 --fcc-editable-region--
 ```

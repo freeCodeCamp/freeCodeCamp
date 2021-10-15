@@ -1,5 +1,5 @@
 ---
-id: 6148e246146b646cf4255f0c
+id: 6148e2dcdd60306dd77d41cc
 title: Part 72
 challengeType: 0
 dashedName: part-72
@@ -7,20 +7,22 @@ dashedName: part-72
 
 # --description--
 
-Create a `.list-title, .list-subtitle` selector and set the `color` property to `#00beef`.
+Time to style the last section of the magazine - the images.
+
+The images are wrapped with an `aside` element using the `image-wrapper` class, so create an `.image-wrapper` selector. Set the `display` property to `grid`.
 
 # --hints--
 
-You should have a `.list-title, .list-subtitle` selector.
+You should have an `.image-wrapper` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle'))
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper'));
 ```
 
-Your `.list-title, .list-subtitle` selector should have a `color` property set to `#00beef`.
+Your `.image-wrapper` selector should have a `display` property set to `grid`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle')?.color === 'rgb(0, 190, 239)');
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.display === 'grid');
 ```
 
 # --seed--
@@ -271,9 +273,7 @@ hr {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -342,6 +342,10 @@ hr {
 
 .lists li {
   margin-bottom: 1.5rem;
+}
+
+.list-title, .list-subtitle {
+  color: #00beef;
 }
 
 --fcc-editable-region--

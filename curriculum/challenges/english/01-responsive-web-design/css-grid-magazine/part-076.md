@@ -1,5 +1,5 @@
 ---
-id: 6148e62a6f768f71c4f04828
+id: 6148e789329dc9736ce59b85
 title: Part 76
 challengeType: 0
 dashedName: part-76
@@ -7,16 +7,20 @@ dashedName: part-76
 
 # --description--
 
-The `place-items` property can be used to set the `align-items` and `justify-items` values at the same time. The `place-items` property takes one or two values. If one value is provided, it is used for both the `align-items` and `justify-items` properties. If two values are provided, the first value is used for the `align-items` property and the second value is used for the `justify-items` property.
-
-Give the `.image-wrapper` selector a `place-items` property set to `center`.
+Create an `.image-1, .image-3` rule and give it a `grid-column` property set to `1 / -1`. This will allow the first and third images to span the full width of the grid.
 
 # --hints--
 
-Your `.image-wrapper` selector should have a `place-items` property set to `center`.
+You should have an `.image-1, .image-3` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.placeItems === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('.image-1, .image-3'));
+```
+
+Your `.image-1, .image-3` selector should have a `grid-column` property set to `1 / -1`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.image-1, .image-3')?.gridColumn === '1 / -1');
 ```
 
 # --seed--
@@ -267,9 +271,7 @@ hr {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -344,12 +346,15 @@ hr {
   color: #00beef;
 }
 
---fcc-editable-region--
 .image-wrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, min-content);
   gap: 2rem;
+  place-items: center;
 }
+
+--fcc-editable-region--
+
 --fcc-editable-region--
 ```

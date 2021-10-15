@@ -1,5 +1,5 @@
 ---
-id: 6148e19c3e26436be0155690
+id: 6148e246146b646cf4255f0c
 title: Part 71
 challengeType: 0
 dashedName: part-71
@@ -7,20 +7,20 @@ dashedName: part-71
 
 # --description--
 
-Create a `.lists li` rule to target the list items within your `.lists` element. Give it a `margin-bottom` property set to `1.5rem`.
+Create a `.list-title, .list-subtitle` selector and set the `color` property to `#00beef`.
 
 # --hints--
 
-You should have a `.lists li` selector.
+You should have a `.list-title, .list-subtitle` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists li'));
+assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle'))
 ```
 
-Your `.lists li` selector should have a `margin-bottom` property set to `1.5rem`.
+Your `.list-title, .list-subtitle` selector should have a `color` property set to `#00beef`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists li')?.marginBottom === '1.5rem');
+assert(new __helpers.CSSHelp(document).getStyle('.list-title, .list-subtitle')?.color === 'rgb(0, 190, 239)');
 ```
 
 # --seed--
@@ -271,9 +271,7 @@ hr {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -338,6 +336,10 @@ hr {
 .lists {
   list-style-type: none;
   margin-top: 2rem;
+}
+
+.lists li {
+  margin-bottom: 1.5rem;
 }
 
 --fcc-editable-region--

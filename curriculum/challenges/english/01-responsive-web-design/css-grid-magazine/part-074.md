@@ -1,5 +1,5 @@
 ---
-id: 6148e4d6861a486f60681f36
+id: 6148e5a204d99e70343a63e4
 title: Part 74
 challengeType: 0
 dashedName: part-74
@@ -7,22 +7,16 @@ dashedName: part-74
 
 # --description--
 
-The images should be within a two column, three row layout.
+The `gap` property is a shorthand way to set the value of `column-gap` and `row-gap` at the same time. If given one value, it sets the `column-gap` and `row-gap` both to that value. If given two values, it sets the `row-gap` to the first value and the `column-gap` to the second.
 
-Give the `.image-wrapper` selector a `grid-template-columns` property set to `2fr 1fr` and a `grid-template-rows` property set to `repeat(3, min-content)`. This will give our grid rows that adjust in height based on the content, but columns that remain a fixed width based on the container.
+Give the `.image-wrapper` selector a `gap` property set to `2rem`.
 
 # --hints--
 
-Your `.image-wrapper` selector should have a `grid-template-columns` property set to `2fr 1fr`.
+Your `.image-wrapper` element should have a `gap` property set to `2rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gridTemplateColumns === '2fr 1fr');
-```
-
-Your `.image-wrapper` selector should have a `grid-template-rows` property set to `repeat(3, min-content)`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gridTemplateRows === 'repeat(3, min-content)');
+assert(new __helpers.CSSHelp(document).getStyle('.image-wrapper')?.gap === '2rem');
 ```
 
 # --seed--
@@ -273,9 +267,7 @@ hr {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -353,6 +345,8 @@ hr {
 --fcc-editable-region--
 .image-wrapper {
   display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, min-content);
 }
 --fcc-editable-region--
 ```

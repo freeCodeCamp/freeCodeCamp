@@ -1,5 +1,5 @@
 ---
-id: 6148d9825b50a3698aeee644
+id: 6148e162e255676ae0da6a76
 title: Part 69
 challengeType: 0
 dashedName: part-69
@@ -7,20 +7,14 @@ dashedName: part-69
 
 # --description--
 
-Create a `.lists` selector and set the `list-style-type` property to `none`. This will get rid of the bullet points on the list items.
+Give the `.lists` selector a `margin-top` property set to `2rem`.
 
 # --hints--
 
-You should have a `.lists` selector.
+Your `.lists` selector should have a `margin-top` property set to `2rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists'));
-```
-
-Your `.lists` selector should have a `list-style-type` property set to `none`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.lists')?.listStyleType === 'none');
+assert(new __helpers.CSSHelp(document).getStyle('.lists')?.marginTop === '2rem');
 ```
 
 # --seed--
@@ -271,9 +265,7 @@ hr {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -336,6 +328,8 @@ hr {
 }
 
 --fcc-editable-region--
-
+.lists {
+  list-style-type: none;
+}
 --fcc-editable-region--
 ```

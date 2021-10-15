@@ -1,5 +1,5 @@
 ---
-id: 6148be3d605d6b3ca9425d11
+id: 6148be82ca63c63daa8cca49
 title: Part 47
 challengeType: 0
 dashedName: part-47
@@ -7,32 +7,26 @@ dashedName: part-47
 
 # --description--
 
-The subtitle also needs to be styled. Create a `.hero-subtitle` selector and give it a `font-size` property set to `2.4rem`, a `color` property set to `orangered`, and a `text-align` property set to `center`.
+Create an `.author` selector and give it a `font-size` property set to `2rem` and a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 # --hints--
 
-You should have a `.hero-subtitle` selector.
+You should have an `.author` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle'));
+assert(new __helpers.CSSHelp(document).getStyle('.author'));
 ```
 
-Your `.hero-subtitle` selector should have a `font-size` property set to `2.4rem`.
+Your `.author` selector should have a `font-size` property set to `2rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.fontSize === '2.4rem');
+assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontSize === '2rem');
 ```
 
-Your `.hero-subtitle` selector should have a `color` property set to `orangered`.
+Your `.author` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.color === 'orangered');
-```
-
-Your `.hero-subtitle` selector should have a `text-align` property set to `center`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.textAlign === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontFamily === 'Raleway, sans-serif');
 ```
 
 # --seed--
@@ -275,11 +269,15 @@ img {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
+}
+
+.hero-subtitle {
+  font-size: 2.4rem;
+  color: orangered;
+  text-align: center;
 }
 
 --fcc-editable-region--

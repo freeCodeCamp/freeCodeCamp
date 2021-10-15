@@ -1,5 +1,5 @@
 ---
-id: 6148ceaf5d897d4d8b3554b3
+id: 6148cf094b3f2b4e8a032c63
 title: Part 58
 challengeType: 0
 dashedName: part-58
@@ -7,16 +7,28 @@ dashedName: part-58
 
 # --description--
 
-Magazines often use justified text in their printed content to structure their layout and control the flow of their content. While this works in printed form, justified text on websites can be an accessibility concern, for example presenting challenges for folks with dyslexia.
+The `::first-letter` pseudo-selector allows you to target the first letter in the text content of an element.
 
-To make your project look like a printed magazine, give the `.text` selector a `text-align` property set to `justify`.
+Create a `.first-paragraph::first-letter` selector and set the `font-size` property to `6rem`. Also give it a `color` property set to `orangered` to make it stand out.
 
 # --hints--
 
-Your `.text` selector should have a `text-align` property set to `justify`.
+You should have a `.first-paragraph::first-letter` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text')?.textAlign === 'justify');
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter'));
+```
+
+Your `.first-paragraph::first-letter` selector should have a `font-size` property set to `6rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.fontSize === '6rem');
+```
+
+Your `.first-paragraph::first-letter` selector should have a `color` property set to `orangered`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.first-paragraph::first-letter')?.color === 'orangered');
 ```
 
 # --seed--
@@ -249,14 +261,13 @@ img {
   row-gap: 1.5rem;
 }
 
---fcc-editable-region--
 .text {
   grid-column: 2 / 3;
   font-size: 1.8rem;
   letter-spacing: 0.6px;
   column-width: 25rem;
+  text-align: justify;
 }
---fcc-editable-region--
 
 .hero {
   grid-column: 1 / -1;
@@ -264,9 +275,7 @@ img {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -298,4 +307,8 @@ img {
   grid-auto-columns: 1fr;
   align-items: center;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```

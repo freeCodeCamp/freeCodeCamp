@@ -1,5 +1,5 @@
 ---
-id: 6148be82ca63c63daa8cca49
+id: 6148bf49fcc7913f05dbf9b7
 title: Part 48
 challengeType: 0
 dashedName: part-48
@@ -7,26 +7,22 @@ dashedName: part-48
 
 # --description--
 
-Create an `.author` selector and give it a `font-size` property set to `2rem` and a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+Create a `.author-name a:hover` selector and give it a `background-color` property set to `#306203`.
+
+This will create a hover effect only for the `a` element within the `.author-name`, showing the original freeCodeCamp green in the background.
 
 # --hints--
 
-You should have an `.author` selector.
+You should have an `.author-name a:hover` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author'));
+assert(new __helpers.CSSHelp(document).getStyle('.author-name a:hover'));
 ```
 
-Your `.author` selector should have a `font-size` property set to `2rem`.
+Your `.author-name a:hover` selector should have a `background-color` property set to `#306203`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontSize === '2rem');
-```
-
-Your `.author` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontFamily === 'Raleway, sans-serif');
+assert(new __helpers.CSSHelp(document).getStyle('.author-name a:hover')?.backgroundColor === 'rgb(48, 98, 3)');
 ```
 
 # --seed--
@@ -269,9 +265,7 @@ img {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -280,6 +274,11 @@ img {
   font-size: 2.4rem;
   color: orangered;
   text-align: center;
+}
+
+.author {
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
 }
 
 --fcc-editable-region--

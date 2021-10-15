@@ -1,5 +1,5 @@
 ---
-id: 6148d7720f0db36775db868a
+id: 6148d94fdf6a5d6899f8ff15
 title: Part 67
 challengeType: 0
 dashedName: part-67
@@ -7,20 +7,14 @@ dashedName: part-67
 
 # --description--
 
-You will need to have a column for text and a column for images. Give the `.text-with-images` selector a `grid-template-columns` property set to `1fr 2fr`. Also set the `column-gap` property to `3rem` to provide more spacing between the columns.
+Give the `.text-with-images` selector a `margin-bottom` property set to `3rem`.
 
 # --hints--
 
-Your `.text-with-images` selector should have a `grid-template-columns` property set to `1fr 2fr`.
+Your `.text-with-images` selector should have a `margin-bottom` property set to `3rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.gridTemplateColumns === '1fr 2fr');
-```
-
-Your `.text-with-images` selector should have a `column-gap` property set to `3rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.columnGap === '3rem');
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.marginBottom === '3rem');
 ```
 
 # --seed--
@@ -271,9 +265,7 @@ hr {
 }
 
 .hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
+  text-align: center;
   color: orangered;
   font-size: 8rem;
 }
@@ -331,6 +323,8 @@ hr {
 --fcc-editable-region--
 .text-with-images {
   display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 3rem;
 }
 --fcc-editable-region--
 ```
