@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
@@ -120,6 +120,10 @@ const MultifileEditor = props => {
   // the in-editor description)
   const targetEditor = getTargetEditor(challengeFiles);
 
+  // Only one editor should be focused and that should happen once, after it has
+  // been mounted. This ref allows the editors to co-ordinate, without having to
+  // resort to redux.
+  const canFocusOnMountRef = useRef(true);
   return (
     <ReflexContainer
       orientation='horizontal'
@@ -132,6 +136,7 @@ const MultifileEditor = props => {
           {indexjsx && (
             <ReflexElement {...reflexProps} {...resizeProps}>
               <Editor
+                canFocusOnMountRef={canFocusOnMountRef}
                 challengeFiles={challengeFiles}
                 containerRef={containerRef}
                 description={targetEditor === 'indexjsx' ? description : null}
@@ -152,6 +157,7 @@ const MultifileEditor = props => {
           {indexhtml && (
             <ReflexElement {...reflexProps} {...resizeProps}>
               <Editor
+                canFocusOnMountRef={canFocusOnMountRef}
                 challengeFiles={challengeFiles}
                 containerRef={containerRef}
                 description={targetEditor === 'indexhtml' ? description : null}
@@ -172,6 +178,7 @@ const MultifileEditor = props => {
           {indexcss && (
             <ReflexElement {...reflexProps} {...resizeProps}>
               <Editor
+                canFocusOnMountRef={canFocusOnMountRef}
                 challengeFiles={challengeFiles}
                 containerRef={containerRef}
                 description={targetEditor === 'indexcss' ? description : null}
@@ -193,6 +200,7 @@ const MultifileEditor = props => {
           {indexjs && (
             <ReflexElement {...reflexProps} {...resizeProps}>
               <Editor
+                canFocusOnMountRef={canFocusOnMountRef}
                 challengeFiles={challengeFiles}
                 containerRef={containerRef}
                 description={targetEditor === 'indexjs' ? description : null}
