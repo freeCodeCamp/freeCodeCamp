@@ -44,20 +44,23 @@ Cypress.Commands.add('login', () => {
   cy.contains('Welcome back');
 });
 
-Cypress.Commands.add('toggleAllActiveAndAcceptHonestyPolicy', () => {
-  cy.visit('/settings');
-  cy.get('#privacy-settings').find('[data-cy=isLocked-Public]').click();
-  cy.get('#privacy-settings')
-    .find('[data-cy$=-Public]')
-    .filter('.toggle-not-active')
-    .each(element => {
-      return new Cypress.Promise(resolve => {
-        cy.wrap(element).click().should('have.class', 'toggle-active');
-        resolve();
+Cypress.Commands.add(
+  'togglePrivacySettingsToPublicAndAcceptHonestyPolicy',
+  () => {
+    cy.visit('/settings');
+    cy.get('#privacy-settings').find('[data-cy=isLocked-Public]').click();
+    cy.get('#privacy-settings')
+      .find('[data-cy$=-Public]')
+      .filter('.toggle-not-active')
+      .each(element => {
+        return new Cypress.Promise(resolve => {
+          cy.wrap(element).click().should('have.class', 'toggle-active');
+          resolve();
+        });
       });
-    });
-  cy.get('#honesty-policy').find('button').click().wait(300);
-});
+    cy.get('#honesty-policy').find('button').click().wait(300);
+  }
+);
 
 Cypress.Commands.add('resetUsername', () => {
   cy.login();
