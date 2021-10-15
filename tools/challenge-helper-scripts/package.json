@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@types/inquirer": "7.3.3",
+    "@types/prettier": "^2.4.1",
     "bson-objectid": "2.0.1",
     "cross-env": "7.0.3",
     "gray-matter": "4.0.3",
