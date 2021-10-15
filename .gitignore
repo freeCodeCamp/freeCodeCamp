@@ -1,5 +1,10 @@
 ### VisualStudioCode ###
 .vscode/*
+*.code-workspace
+
+### Sublime Text ###
+*.sublime-project
+*.sublime-workspace
 
 ### WebStorm ###
 .idea/*
@@ -202,3 +207,8 @@ client/static/_redirects
 
 ### UI Components ###
 tools/ui-components/dist
+
+### Linters ###
+
+# eslint
+.eslintrc.* 
