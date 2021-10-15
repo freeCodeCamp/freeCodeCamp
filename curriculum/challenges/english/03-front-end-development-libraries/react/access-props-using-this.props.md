@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-The `Welcome` component should display the password you create as the `name` prop within `strong` tags.
+The `Welcome` component should display the string you pass as the `name` prop within `strong` tags.
 
 ```js
 assert(
