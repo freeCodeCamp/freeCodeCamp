@@ -78,10 +78,6 @@ describe('Responsive Web Design Superblock', () => {
       cy.get('.donation-modal').should('not.exist');
       // directed to claim-cert-block section
       cy.url().should('include', '#claim-cert-block');
-      cy.visit('/settings');
-      cy.get('label[data-cy="isLocked-Public"]').click();
-      cy.get('label[data-cy="name-Public"]').click();
-      cy.get('label[data-cy="showCerts-Public"]').click();
       cy.visit(`/learn/${projects.superBlock}/`);
       // make sure that the window has not snapped to the top (a weird bug that
       // we never figured out and so could randomly reappear)
