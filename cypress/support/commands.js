@@ -49,6 +49,8 @@ Cypress.Commands.add(
   () => {
     cy.visit('/settings');
     cy.get('#privacy-settings').find('[data-cy=isLocked-Public]').click();
+    // check that the other settings are visible before starting to toggle them
+    cy.contains('My Display Name');
     cy.get('#privacy-settings')
       .find('[data-cy$=-Public]')
       .filter('.toggle-not-active')
