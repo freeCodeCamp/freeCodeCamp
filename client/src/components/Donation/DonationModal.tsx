@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   );
 
 type DonateModalProps = {
-  activeDonors: number;
+  activeDonors?: number;
   closeDonationModal: typeof closeDonationModal;
   executeGA: typeof executeGA;
   location: WindowLocation | undefined;

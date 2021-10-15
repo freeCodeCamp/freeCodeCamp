@@ -52,7 +52,7 @@ type SuperBlockPropType = {
   fetchState: FetchState;
   isSignedIn: boolean;
   signInLoading: boolean;
-  location: WindowLocation;
+  location: WindowLocation<{ breadcrumbBlockClick: string }>;
   resetExpansion: () => void;
   t: TFunction;
   toggleBlock: (arg0: boolean) => void;
@@ -125,9 +125,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockPropType) => {
       typeof location.state === 'object' &&
       location.state.hasOwnProperty('breadcrumbBlockClick')
     ) {
-      // location.state can be sting or object
-      /* eslint-disable-next-line @typescript-eslint/ban-ts-comment*/
-      /* @ts-ignore */
       return location.state.breadcrumbBlockClick;
     }
 
@@ -240,8 +237,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockPropType) => {
           </Col>
         </Row>
       </Grid>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-      /* @ts-ignore  */}
       <DonateModal location={props.location} />
     </>
   );
