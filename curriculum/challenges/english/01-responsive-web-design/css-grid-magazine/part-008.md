@@ -1,5 +1,5 @@
 ---
-id: 614389f601bb4f611db98563
+id: 6169cd8a558aa8434e0ad7f6
 title: Part 8
 challengeType: 0
 dashedName: part-8
@@ -7,70 +7,14 @@ dashedName: part-8
 
 # --description--
 
-Below your `.author` element, create a new `div` element with the class `social-icons`.
-
-Add five `a` elements within that new `div`, and give them the following `href` attributes.
-
-- The first `a` element should have an `href` set to `https://www.facebook.com/freecodecamp`.
-- The second `a` element should have an `href` set to `https://twitter.com/freecodecamp`.
-- The third `a` element should have an `href` set to `https://instagram.com/freecodecamp`.
-- The fourth `a` element should have an `href` set to `https://www.linkedin.com/school/freecodecamp`.
-- The fifth `a` element should have an `href` set to `https://www.youtube.com/freecodecamp`.
+The `Referer` HTTP header contains information about the address or URL of a page that a user might be visiting from. This information can be used in analytics to track how many users from your page visit freecodecamp.org, for example. Setting the `rel` attribute to `noreferrer` omits this information from the HTTP request. Give your `a` element a `rel` attribute set to `noreferrer`.
 
 # --hints--
 
-You should create a new `div` element.
+Your `a` element should have the `rel` set to `noreferrer`.
 
 ```js
-assert(document.querySelectorAll('div')?.length === 2);
-```
-
-Your new `div` element should come after your `.author` element.
-
-```js
-assert(document.querySelector('.author')?.nextElementSibling?.localName === 'div');
-```
-
-Your new `div` element should have the class `social-icons`.
-
-```js
-assert(document.querySelector('.author')?.nextElementSibling?.classList?.contains('social-icons'));
-```
-
-Your `.social-icons` element should have five `a` elements.
-
-```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.length === 5);
-```
-
-Your first `a` element should have an `href` set to `https://www.facebook.com/freecodecamp`.
-
-```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[0]?.getAttribute('href')?.includes('https://www.facebook.com/freecodecamp'));
-```
-
-Your second `a` element should have an `href` set to `https://twitter.com/freecodecamp`.
-
-```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[1]?.getAttribute('href') === 'https://twitter.com/freecodecamp');
-```
-
-Your third `a` element should have an `href` set to `https://instagram.com/freecodecamp`.
-
-```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[2]?.getAttribute('href') === 'https://instagram.com/freecodecamp');
-```
-
-Your fourth `a` element should have an `href` set to `https://www.linkedin.com/school/free-code-camp`.
-
-```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[3]?.getAttribute('href') === 'https://www.linkedin.com/school/free-code-camp');
-```
-
-Your fifth `a` element should have an `href` set to `https://www.youtube.com/freecodecamp`.
-
-```js
-assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[4]?.getAttribute('href') === 'https://www.youtube.com/freecodecamp');
+assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('rel') === 'noreferrer');
 ```
 
 # --seed--
@@ -111,20 +55,17 @@ assert(document.querySelector('.social-icons')?.querySelectorAll('a')?.[4]?.getA
             focus
           </p>
         </header>
-        <div class="author">
+--fcc-editable-region--
           <p class="author-name">
             By
-            <a href="https://freecodecamp.org" target="_blank" rel="noreferrer"
+            <a href="https://freecodecamp.org" target="_blank"
               >freeCodeCamp</a
             >
           </p>
           <p class="publish-date">March 7, 2019</p>
-        </div>
---fcc-editable-region--
-
---fcc-editable-region--
       </section>
     </main>
+--fcc-editable-region--
   </body>
 </html>
 ```

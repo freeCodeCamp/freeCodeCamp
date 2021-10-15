@@ -1,5 +1,5 @@
 ---
-id: 6143a1a228f7d068ab16a130
+id: 61439e33e4fb7967609e0c83
 title: Part 14
 challengeType: 0
 dashedName: part-14
@@ -7,30 +7,55 @@ dashedName: part-14
 
 # --description--
 
-Below your `blockquote` element, add another `p` element with the following text:
+After the three `p` elements within your `.text` element, create a `blockquote` element. Within that, add an `hr` element, a `p` element with the `class` set to `quote`, and a second `hr` element.
 
-```markup
-No more walls of explanatory text. No more walls of tests. Just one test at a time, as you build up a working project. Over the course of passing thousands of tests, you build up projects and your own understanding of coding fundamentals. There is no transition between lessons and projects, because the lessons themselves are baked into projects. And there's plenty of repetition to help you retain everything because - hey - building projects in real life has plenty of repetition.
-```
+Give the `.quote` element the text `The entire curriculum should be a series of projects`.
 
 # --hints--
 
-You should add a fourth `p` element to your `.text` element.
+You should create a new `blockquote` element within your `.text` element.
 
 ```js
-assert(document.querySelectorAll('.text p')?.length === 5);
+assert.exists(document.querySelector('.text blockquote'));
 ```
 
-Your new `p` element should come after your `blockquote` element.
+Your `blockquote` element should come after your three `p` elements.
 
 ```js
-assert(document.querySelectorAll('.text p')?.[4]?.previousElementSibling?.localName === 'blockquote');
+assert(document.querySelector('.text')?.children?.[3]?.localName === 'blockquote');
 ```
 
-Your new `p` element should have the provided text.
+Your `blockquote` element should have two `hr` elements.
 
 ```js
-assert(document.querySelectorAll('.text p')?.[4]?.innerText === 'No more walls of explanatory text. No more walls of tests. Just one test at a time, as you build up a working project. Over the course of passing thousands of tests, you build up projects and your own understanding of coding fundamentals. There is no transition between lessons and projects, because the lessons themselves are baked into projects. And there\'s plenty of repetition to help you retain everything because - hey - building projects in real life has plenty of repetition.');
+assert(document.querySelectorAll('.text blockquote hr')?.length === 2);
+```
+
+Your `blockquote` element should have a `p` element.
+
+```js
+assert.exists(document.querySelector('.text blockquote p'));
+```
+
+Your `blockquote` children should be in the correct order.
+
+```js
+const children = document.querySelector('.text blockquote')?.children;
+assert(children?.[0]?.localName === 'hr');
+assert(children?.[1]?.localName === 'p');
+assert(children?.[2]?.localName === 'hr');
+```
+
+Your new `p` element should have the `class` set to `quote`.
+
+```js
+assert(document.querySelector('.text blockquote p')?.className === 'quote');
+```
+
+Your new `p` element should have the text `The entire curriculum should be a series of projects`.
+
+```js
+assert(document.querySelector('.text blockquote p')?.innerText === 'The entire curriculum should be a series of projects');
 ```
 
 # --seed--
@@ -109,15 +134,8 @@ assert(document.querySelectorAll('.text p')?.[4]?.innerText === 'No more walls o
           It wasn't as dramatic as Doc's revelation in Back to the Future. It
           just occurred to me while I was going for a run. The revelation: the entire curriculum should be a series of projects. Instead of individual coding challenges, we'll just have projects, each with their own seamless series of tests. Each test gives you just enough information to figure out how to get it to pass. (And you can view hints if that isn't enough.)
         </p>
-        <blockquote>
-          <hr />
-          <p class="quote">
-            The entire curriculum should be a series of projects
-          </p>
-          <hr />
-        </blockquote>
 --fcc-editable-region--
-        
+
 --fcc-editable-region--
       </section>
     </main>

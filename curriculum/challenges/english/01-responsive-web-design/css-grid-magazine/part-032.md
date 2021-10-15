@@ -1,5 +1,5 @@
 ---
-id: 6144f1410990ea17187a722b
+id: 6144ee790af79815ad15a832
 title: Part 32
 challengeType: 0
 dashedName: part-32
@@ -7,16 +7,22 @@ dashedName: part-32
 
 # --description--
 
-Now you can style the layout of your grid. CSS Grid is similar to Flexbox in that it has a special property for both the parent and child elements. 
+Now you are ready to start putting together the grid layout. CSS Grid offers a two-dimensional grid-based layout, allowing you to center items horizontally and vertically while still retaining control to do things like overlap elements.
 
-In this case, your parent element is the `main` element. Set the content to have a three-column layout by adding a `grid-template-columns` property with a value of `1fr 94rem 1fr`. This will create three columns where the middle column is `94rem` wide, and the first and last columns are both 1 fraction of the remaining space in the grid container.
+Begin by creating a `main` selector and giving it a `display` property set to `grid`.
 
 # --hints--
 
-Your `main` section should have a `grid-template-columns` property set to `1fr 94rem 1fr`.
+You should have a `main` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('main')?.gridTemplateColumns === '1fr 94rem 1fr');
+assert(new __helpers.CSSHelp(document).getStyle('main'));
+```
+
+Your `main` selector should have a `display` property set to `grid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('main')?.display === 'grid');
 ```
 
 # --seed--
@@ -231,8 +237,6 @@ a {
 }
 
 --fcc-editable-region--
-main {
-  display: grid;
-}
+
 --fcc-editable-region--
 ```

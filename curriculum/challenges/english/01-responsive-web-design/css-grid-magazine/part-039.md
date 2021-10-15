@@ -1,5 +1,5 @@
 ---
-id: 6148b30464daf630848c21d4
+id: 6148b185ef37522f688316b0
 title: Part 39
 challengeType: 0
 dashedName: part-39
@@ -7,14 +7,18 @@ dashedName: part-39
 
 # --description--
 
-Give your `.heading` selector a `row-gap` property set to `1.5rem`.
+Now you can style the content of the `.heading` element with CSS Grid.
+
+The CSS `repeat()` function is used to repeat a value, rather than writing it out manually, and is helpful for grid layouts. For example, setting the `grid-template-columns` property to `repeat(20, 200px)` would create 20 columns each `200px` wide.
+
+Give your `.heading` element a `grid-template-columns` property set to `repeat(2, 1fr)` to create two columns of equal width.
 
 # --hints--
 
-Your `.heading` selector should have a `row-gap` property set to `1.5rem`.
+Your `.heading` selector should have a `grid-template-columns` property set to `repeat(2, 1fr)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.heading')?.rowGap === '1.5rem');
+assert(new __helpers.CSSHelp(document).getStyle('.heading')?.gridTemplateColumns === 'repeat(2, 1fr)');
 ```
 
 # --seed--
@@ -240,7 +244,6 @@ main {
 .heading {
   grid-column: 2 / 3;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
 }
 --fcc-editable-region--
 

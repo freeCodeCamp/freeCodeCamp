@@ -1,5 +1,5 @@
 ---
-id: 6148d33e31fccf558696c745
+id: 6148d2444d01ab541e64a1e4
 title: Part 63
 challengeType: 0
 dashedName: part-63
@@ -7,14 +7,32 @@ dashedName: part-63
 
 # --description--
 
-To make the quote text stand out more, give the `.quote` selector a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+Create a `.quote` selector. Give it a `color` property set to `#00beef`, a `font-size` property set to `2.4rem`, and a `text-align` property set to `center`.
 
 # --hints--
 
-Your `.quote` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+You should have a `.quote` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote')?.fontFamily === 'Raleway, sans-serif');
+assert(new __helpers.CSSHelp(document).getStyle('.quote'));
+```
+
+Your `.quote` selector should have a `color` property set to `#00beef`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.color === 'rgb(0, 190, 239)');
+```
+
+Your `.quote` selector should have a `font-size` property set to `2.4rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.fontSize === '2.4rem');
+```
+
+Your `.quote` selector should have a `text-align` property set to `center`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.textAlign === 'center');
 ```
 
 # --seed--
@@ -308,10 +326,6 @@ hr {
 }
 
 --fcc-editable-region--
-.quote {
-  color: #00beef;
-  font-size: 2.4rem;
-  text-align: center;
-}
+
 --fcc-editable-region--
 ```

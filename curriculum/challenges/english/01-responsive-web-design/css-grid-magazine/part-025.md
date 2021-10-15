@@ -1,5 +1,5 @@
 ---
-id: 6143d2842b497779bad947de
+id: 6143d003ad9e9d76766293ec
 title: Part 25
 challengeType: 0
 dashedName: part-25
@@ -7,26 +7,41 @@ dashedName: part-25
 
 # --description--
 
-To start your CSS, normalize the CSS rules by targeting all elements with `*`, including the `::before` and `::after` pseudo-selectors. Set the `padding` property and `margin` property both to `0`.
+Within your `.image-quote` element, nest an `hr` element, a `p` element and a second `hr` element. Give the `p` element a `class` set to `quote` and the text `The millions of people who are learning to code through freeCodeCamp will have an even better resource to help them learn these fundamentals.`.
 
 # --hints--
 
-You should have a `*, ::before, ::after` selector.
+You should add two `hr` elements to your `.image-quote` element.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after'));
+assert(document.querySelectorAll('.image-quote hr')?.length === 2);
 ```
 
-Your `*, ::before, ::after` selector should have a `padding` property set to `0`.
+You should add a `p` element to your `.image-quote` element.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after')?.padding === '0px');
+assert(document.querySelectorAll('.image-quote p')?.length === 1);
 ```
 
-Your `*, ::before, ::after` selector should have a `margin` property set to `0`.
+Your `.image-quote` children should be in the correct order.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after')?.margin === '0px');
+const children = document.querySelector('.image-quote')?.children;
+assert(children?.[0]?.localName === 'hr');
+assert(children?.[1]?.localName === 'p');
+assert(children?.[2]?.localName === 'hr');
+```
+
+Your new `p` element should have a `class` set to `quote`.
+
+```js
+assert(document.querySelector('.image-quote p')?.classList.contains('quote'));
+```
+
+Your new `p` element should have the text `The millions of people who are learning to code through freeCodeCamp will have an even better resource to help them learn these fundamentals.`.
+
+```js
+assert(document.querySelector('.image-quote p')?.innerText === 'The millions of people who are learning to code through freeCodeCamp will have an even better resource to help them learn these fundamentals.');
 ```
 
 # --seed--
@@ -186,15 +201,11 @@ assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after')?.margin 
             width="400"
             height="400"
           />
+--fcc-editable-region--
           <blockquote class="image-quote">
-            <hr />
-            <p class="quote">
-              The millions of people who are learning to code
-              through freeCodeCamp will have an even better resource to help
-              them learn these fundamentals.
-            </p>
-            <hr />
+
           </blockquote>
+--fcc-editable-region--
           <img
             src="https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg"
             alt="four people working on code"
@@ -211,7 +222,5 @@ assert(new __helpers.CSSHelp(document).getStyle('*, ::before, ::after')?.margin 
 ```
 
 ```css
---fcc-editable-region--
 
---fcc-editable-region--
 ```

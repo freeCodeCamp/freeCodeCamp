@@ -1,5 +1,5 @@
 ---
-id: 6144ee790af79815ad15a832
+id: 6144ee46a9d6e614c598cc05
 title: Part 31
 challengeType: 0
 dashedName: part-31
@@ -7,22 +7,26 @@ dashedName: part-31
 
 # --description--
 
-Now you are ready to start putting together the grid layout. CSS Grid offers a two-dimensional grid-based layout, allowing you to center items horizontally and vertically while still retaining control to do things like overlap elements.
-
-Begin by creating a `main` selector and giving it a `display` property set to `grid`.
+Create an `a` selector, and give it a `text-decoration` property set to `none` and a `color` property set to `linen`.
 
 # --hints--
 
-You should have a `main` selector.
+You should have an `a` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('main'));
+assert(new __helpers.CSSHelp(document).getStyle('a'));
 ```
 
-Your `main` selector should have a `display` property set to `grid`.
+Your `a` selector should have a `text-decoration` property set to `none`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('main')?.display === 'grid');
+assert(new __helpers.CSSHelp(document).getStyle('a')?.textDecoration === 'none');
+```
+
+Your `a` selector should have a `color` property set to `linen`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('a')?.color === 'linen');
 ```
 
 # --seed--
@@ -229,11 +233,6 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: linen;
 }
 
 --fcc-editable-region--

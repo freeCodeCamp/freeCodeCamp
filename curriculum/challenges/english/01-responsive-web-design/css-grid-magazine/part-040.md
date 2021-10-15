@@ -1,5 +1,5 @@
 ---
-id: 6148b4b150434734143db6f2
+id: 6148b30464daf630848c21d4
 title: Part 40
 challengeType: 0
 dashedName: part-40
@@ -7,22 +7,14 @@ dashedName: part-40
 
 # --description--
 
-Remember that the `grid-column` property determines which columns an element starts and ends at. There may be times where you are unsure of how many columns your grid will have, but you want an element to stop at the last column. To do this, you can use `-1` for the end column.
-
-Create a `.hero` selector and give it a `grid-column` property set to `1 / -1`. This will tell the element to span the full width of the grid.
+Give your `.heading` selector a `row-gap` property set to `1.5rem`.
 
 # --hints--
 
-You should have a `.hero` selector.
+Your `.heading` selector should have a `row-gap` property set to `1.5rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero'));
-```
-
-Your `.hero` selector should have a `grid-column` property set to `1 / -1`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero')?.gridColumn === '1 / -1');
+assert(new __helpers.CSSHelp(document).getStyle('.heading')?.rowGap === '1.5rem');
 ```
 
 # --seed--
@@ -244,18 +236,15 @@ main {
   row-gap: 3rem;
 }
 
+--fcc-editable-region--
 .heading {
   grid-column: 2 / 3;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 1.5rem;
 }
+--fcc-editable-region--
 
 .text {
   grid-column: 2 / 3;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

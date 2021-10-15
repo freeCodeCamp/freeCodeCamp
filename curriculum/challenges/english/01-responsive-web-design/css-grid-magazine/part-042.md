@@ -1,5 +1,5 @@
 ---
-id: 614e0e503b110f76d3ac2ff6
+id: 6148b5623efa8f369f2c3643
 title: Part 42
 challengeType: 0
 dashedName: part-42
@@ -7,14 +7,14 @@ dashedName: part-42
 
 # --description--
 
-You should remove the temporary `width` attribute before writing the CSS for your `.hero-img`.
+Give the `.hero` selector a `position` property set to `relative`.
 
 # --hints--
 
-Your `.hero-img` should not have a `width` attribute.
+Your `.hero` selector should have a `position` property set to `relative`.
 
 ```js
-assert.isNull(document.querySelector('.hero-img')?.getAttribute('width'));
+assert(new __helpers.CSSHelp(document).getStyle('.hero')?.position === 'relative');
 ```
 
 # --seed--
@@ -42,7 +42,6 @@ assert.isNull(document.querySelector('.hero-img')?.getAttribute('width'));
     <main>
       <section class="heading">
         <header class="hero">
---fcc-editable-region--
           <img
             src="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png"
             alt="freecodecamp logo"
@@ -55,7 +54,6 @@ assert.isNull(document.querySelector('.hero-img')?.getAttribute('width'));
             Our efforts to restructure our curriculum with a more project-based
             focus
           </p>
---fcc-editable-region--
         </header>
         <div class="author">
           <p class="author-name">
@@ -249,7 +247,9 @@ main {
   grid-column: 2 / 3;
 }
 
+--fcc-editable-region--
 .hero {
   grid-column: 1 / -1;
 }
+--fcc-editable-region--
 ```

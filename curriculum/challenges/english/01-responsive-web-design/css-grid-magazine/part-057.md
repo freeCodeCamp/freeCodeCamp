@@ -1,5 +1,5 @@
 ---
-id: 6148ceaf5d897d4d8b3554b3
+id: 6148c721e74ecd4c619ae51c
 title: Part 57
 challengeType: 0
 dashedName: part-57
@@ -7,16 +7,16 @@ dashedName: part-57
 
 # --description--
 
-Magazines often use justified text in their printed content to structure their layout and control the flow of their content. While this works in printed form, justified text on websites can be an accessibility concern, for example presenting challenges for folks with dyslexia.
+Your `.text` element is not a CSS Grid, but you can create columns within an element without using Grid by using the `column-width` property.
 
-To make your project look like a printed magazine, give the `.text` selector a `text-align` property set to `justify`.
+Give your `.text` selector a `column-width` property set to `25rem`.
 
 # --hints--
 
-Your `.text` selector should have a `text-align` property set to `justify`.
+Your `.text` selector should have a `column-width` property set to `25rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text')?.textAlign === 'justify');
+assert(new __helpers.CSSHelp(document).getStyle('.text')?.columnWidth === '25rem');
 ```
 
 # --seed--
@@ -254,7 +254,6 @@ img {
   grid-column: 2 / 3;
   font-size: 1.8rem;
   letter-spacing: 0.6px;
-  column-width: 25rem;
 }
 --fcc-editable-region--
 

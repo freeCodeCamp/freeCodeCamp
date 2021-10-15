@@ -1,5 +1,5 @@
 ---
-id: 6144e1ba93e435127a7f516d
+id: 6144de308591ec10e27d5383
 title: Part 29
 challengeType: 0
 dashedName: part-29
@@ -7,20 +7,20 @@ dashedName: part-29
 
 # --description--
 
-Create an `h2, h3, h4, h5, h6` selector. Give it a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+Create an `h1` selector, and set the `font-family` property to `Anton` with the fallback of `sans-serif`.
 
 # --hints--
 
-You should have an `h2, h3, h4, h5, h6` selector.
+You should have an `h1` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('h2, h3, h4, h5, h6'));
+assert(new __helpers.CSSHelp(document).getStyle('h1'));
 ```
 
-Your `h2, h3, h4, h5, h6` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
+Your `h1` selector should have a `font-family` property set to `Anton` with the fallback of `sans-serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('h2, h3, h4, h5, h6')?.fontFamily === 'Raleway, sans-serif');
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.fontFamily === 'Anton, sans-serif');
 ```
 
 # --seed--
@@ -219,10 +219,6 @@ body {
   font-family: 'Baskervville', serif;
   color: linen;
   background-color: rgb(20, 30, 40);
-}
-
-h1 {
-  font-family: 'Anton', sans-serif;
 }
 
 --fcc-editable-region--

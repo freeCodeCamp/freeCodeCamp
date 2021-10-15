@@ -1,5 +1,5 @@
 ---
-id: 6148f34ebedc2274bceeb99c
+id: 6148e789329dc9736ce59b85
 title: Part 77
 challengeType: 0
 dashedName: part-77
@@ -7,30 +7,20 @@ dashedName: part-77
 
 # --description--
 
-Now that the magazine layout is finished, you need to make it responsive.
-
-Start with a `@media` query for `only screen` with a `max-width` of `720px`. Inside, create an `.image-wrapper` selector and give it a `grid-template-columns` property of `1fr`.
-
-This will collapse the three images into one column on smaller screens.
+Create an `.image-1, .image-3` rule and give it a `grid-column` property set to `1 / -1`. This will allow the first and third images to span the full width of the grid.
 
 # --hints--
 
-You should have a new `@media` rule for `only screen and (max-width: 720px)`.
+You should have an `.image-1, .image-3` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === 'only screen and (max-width: 720px)');
+assert(new __helpers.CSSHelp(document).getStyle('.image-1, .image-3'));
 ```
 
-Your new `@media` rule should have an `.image-wrapper` selector.
+Your `.image-1, .image-3` selector should have a `grid-column` property set to `1 / -1`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.cssRules?.[0]?.selectorText === '.image-wrapper');
-```
-
-Your new `.image-wrapper` selector should have a `grid-template-columns` property of `1fr`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.cssRules?.[0]?.style?.gridTemplateColumns === '1fr');
+assert(new __helpers.CSSHelp(document).getStyle('.image-1, .image-3')?.gridColumn === '1 / -1');
 ```
 
 # --seed--
@@ -364,10 +354,6 @@ hr {
   grid-template-rows: repeat(3, min-content);
   gap: 2rem;
   place-items: center;
-}
-
-.image-1, .image-3 {
-  grid-column: 1 / -1;
 }
 
 --fcc-editable-region--

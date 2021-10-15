@@ -1,5 +1,5 @@
 ---
-id: 6148c58bace368497fb11bcf
+id: 6148c5036ddad94692a66230
 title: Part 54
 challengeType: 0
 dashedName: part-54
@@ -7,16 +7,16 @@ dashedName: part-54
 
 # --description--
 
-Much like Flexbox, with CSS Grid you can align the content of grid items with `align-items` and `justify-items`. `align-items` will align child elements along the column axis, and `justify-items` will align child elements along the row axis.
+Now the auto-placement algorithm will kick in when you add a new icon element. However, the algorithm defaults the new column width to be `auto`, which will not match your current columns.
 
-Give the `.social-icons` selector an `align-items` property set to `center`.
+You can override this with the `grid-auto-columns` property. Give the `.social-icons` selector a `grid-auto-columns` property set to `1fr`.
 
 # --hints--
 
-Your `.social-icons` selector should have an `align-items` property set to `center`.
+Your `.social-icons` selector should have a `grid-auto-columns` property set to `1fr`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.alignItems === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.gridAutoColumns === '1fr');
 ```
 
 # --seed--
@@ -291,7 +291,6 @@ img {
   font-size: 3rem;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-flow: column;
-  grid-auto-columns: 1fr;
 }
 --fcc-editable-region--
 ```

@@ -1,5 +1,5 @@
 ---
-id: 6144f42204c8c8195f1f3345
+id: 6144f3818bfbc51844152e36
 title: Part 34
 challengeType: 0
 dashedName: part-34
@@ -7,14 +7,16 @@ dashedName: part-34
 
 # --description--
 
-To add space between rows in the grid layout, you can use the `row-gap` property. Give the `main` selector a `row-gap` property of `3rem`.
+Use the `minmax` function to make your columns responsive on any device. The `minmax` function takes two arguments, the first being the minimum value and the second being the maximum. These values could be a length, percentage, `fr`, or even a keyword like `max-content`.
+
+Wrap each of your already defined values of the `grid-template-columns` property in a `minmax` function, using each value as the second argument. The first argument should be `2rem`, `min-content`, and `2rem` respectively.
 
 # --hints--
 
-Your `main` selector should have a `row-gap` property of `3rem`.
+Your `main` selector should have a `grid-template-columns` property set to `minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('main')?.rowGap === '3rem');
+assert(new __helpers.CSSHelp(document).getStyle('main')?.gridTemplateColumns === 'minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr)');
 ```
 
 # --seed--
@@ -231,7 +233,7 @@ a {
 --fcc-editable-region--
 main {
   display: grid;
-  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+  grid-template-columns: 1fr 94rem 1fr;
 }
 --fcc-editable-region--
 ```

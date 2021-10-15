@@ -1,5 +1,5 @@
 ---
-id: 61438ec09438696391076d6a
+id: 61438b5b66d76a6264430f2a
 title: Part 10
 challengeType: 0
 dashedName: part-10
@@ -7,48 +7,64 @@ dashedName: part-10
 
 # --description--
 
-Below your `.heading` element, create a new `section` element with the `class` set to `text`. Within that, create a `p` element with the `class` set to `first-paragraph` and the following text:
+Within each of your new `a` elements, add an `i` element and give them the following classes:
 
-```markup
-Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
-```
+- Your first `i` element should have the class `fab fa-facebook-f`
+- Your second `i` element should have the class `fab fa-twitter`
+- Your third `i` element should have the class `fab fa-instagram`
+- Your fourth `i` element should have the class `fab fa-linkedin-in`
+- Your fifth `i` element should have the class `fab fa-youtube`
 
 # --hints--
 
-You should create a new `section` element.
+You should have five `i` elements.
 
 ```js
-assert(document.querySelectorAll('section')?.length === 2);
+assert(document.querySelectorAll('i')?.length === 5);
 ```
 
-Your new `section` element should come after your `.heading` element.
+Each `a` element should only have one `i` element.
 
 ```js
-assert(document.querySelectorAll('section')?.[1]?.previousElementSibling?.className === 'heading');
+const aaaaa = [...document.querySelectorAll('.social-icons a')];
+assert(aaaaa?.every(a => a?.children?.length === 1 && a?.children?.[0]?.localName === 'i'));
 ```
 
-Your new `section` element should have the `class` set to `text`.
+Each `i` element should have a `class` attribute which includes `fab`.
 
 ```js
-assert(document.querySelectorAll('section')?.[1]?.className === 'text');
+const iiiii = [...document.querySelectorAll('i')];
+assert(iiiii?.every(i => i?.classList?.contains('fab')));
 ```
 
-You should create a new `p` element within your `.text` element.
+The first `i` element should have a `class` attribute which includes `fa-facebook-f`.
 
 ```js
-assert(document.querySelector('.text')?.querySelectorAll('p')?.length === 1);
+assert(document.querySelectorAll('i')?.[0]?.classList?.contains('fa-facebook-f'));
 ```
 
-Your new `p` element should have the `class` set to `first-paragraph`.
+The second `i` element should have a `class` attribute which includes `fa-twitter`.
 
 ```js
-assert(document.querySelector('.text p')?.className === 'first-paragraph');
+assert(document.querySelectorAll('i')?.[1]?.classList?.contains('fa-twitter'));
 ```
 
-Your new `p` element should have the provided text.
+The third `i` element should have a `class` attribute which includes `fa-instagram`.
 
 ```js
-assert(document.querySelector('.first-paragraph')?.innerText === 'Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you\'ll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.');
+assert(document.querySelectorAll('i')?.[2]?.classList?.contains('fa-instagram'));
+```
+
+The fourth `i` element should have a `class` attribute which includes `fa-linkedin-in`.
+
+```js
+assert(document.querySelectorAll('i')?.[3]?.classList?.contains('fa-linkedin-in'));
+```
+
+The fifth `i` element should have a `class` attribute which includes `fa-youtube`.
+
+```js
+assert(document.querySelectorAll('i')?.[4]?.classList?.contains('fa-youtube'));
 ```
 
 # --seed--
@@ -98,27 +114,21 @@ assert(document.querySelector('.first-paragraph')?.innerText === 'Soon the freeC
           </p>
           <p class="publish-date">March 7, 2019</p>
         </div>
+--fcc-editable-region--
         <div class="social-icons">
           <a href="https://www.facebook.com/freecodecamp/">
-            <i class="fab fa-facebook-f"></i>
           </a>
           <a href="https://twitter.com/freecodecamp/">
-            <i class="fab fa-twitter"></i>
           </a>
           <a href="https://instagram.com/freecodecamp">
-            <i class="fab fa-instagram"></i>
           </a>
           <a href="https://www.linkedin.com/school/free-code-camp/">
-            <i class="fab fa-linkedin-in"></i>
           </a>
           <a href="https://www.youtube.com/freecodecamp">
-            <i class="fab fa-youtube"></i>
           </a>
         </div>
+--fcc-editable-region--
       </section>
---fcc-editable-region--
-
---fcc-editable-region--
     </main>
   </body>
 </html>

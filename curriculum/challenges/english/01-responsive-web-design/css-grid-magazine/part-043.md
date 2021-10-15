@@ -1,5 +1,5 @@
 ---
-id: 6148b59ef318e03875f35c4a
+id: 614e0e503b110f76d3ac2ff6
 title: Part 43
 challengeType: 0
 dashedName: part-43
@@ -7,28 +7,14 @@ dashedName: part-43
 
 # --description--
 
-Create an `img` selector and give it a `width` property set to `100%`, and an `object-fit` property set to `cover`.
-
-The `object-fit` property tells the browser how to position the element within its container. In this case, `cover` will set the image to fill the container, cropping as needed to avoid changing the aspect ratio.
+You should remove the temporary `width` attribute before writing the CSS for your `.hero-img`.
 
 # --hints--
 
-You should have an `img` selector.
+Your `.hero-img` should not have a `width` attribute.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('img'));
-```
-
-Your `img` selector should have a `width` property set to `100%`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('img')?.width === '100%');
-```
-
-Your `img` selector should have an `object-fit` property set to `cover`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('img')?.objectFit === 'cover');
+assert.isNull(document.querySelector('.hero-img')?.getAttribute('width'));
 ```
 
 # --seed--
@@ -56,17 +42,20 @@ assert(new __helpers.CSSHelp(document).getStyle('img')?.objectFit === 'cover');
     <main>
       <section class="heading">
         <header class="hero">
+--fcc-editable-region--
           <img
             src="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png"
             alt="freecodecamp logo"
             loading="lazy"
             class="hero-img"
+            width="400"
           />
           <h1 class="hero-title">OUR NEW CURRICULUM</h1>
           <p class="hero-subtitle">
             Our efforts to restructure our curriculum with a more project-based
             focus
           </p>
+--fcc-editable-region--
         </header>
         <div class="author">
           <p class="author-name">
@@ -249,10 +238,6 @@ main {
   row-gap: 3rem;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 .heading {
   grid-column: 2 / 3;
   display: grid;
@@ -266,6 +251,5 @@ main {
 
 .hero {
   grid-column: 1 / -1;
-  position: relative;
 }
 ```

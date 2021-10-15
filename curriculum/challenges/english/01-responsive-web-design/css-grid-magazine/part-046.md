@@ -1,5 +1,5 @@
 ---
-id: 6148be3d605d6b3ca9425d11
+id: 6148bda8aa613f3b81ccf372
 title: Part 46
 challengeType: 0
 dashedName: part-46
@@ -7,32 +7,20 @@ dashedName: part-46
 
 # --description--
 
-The subtitle also needs to be styled. Create a `.hero-subtitle` selector and give it a `font-size` property set to `2.4rem`, a `color` property set to `orangered`, and a `text-align` property set to `center`.
+The title is still not quite right. Give the `.hero-title` selector a `color` property set to `orangered` and a `font-size` property set to `8rem`.
 
 # --hints--
 
-You should have a `.hero-subtitle` selector.
+Your `.hero-title` selector should have a `color` property set to `orangered`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle'));
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.color === 'orangered');
 ```
 
-Your `.hero-subtitle` selector should have a `font-size` property set to `2.4rem`.
+Your `.hero-title` selector should have a `font-size` property set to `8rem`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.fontSize === '2.4rem');
-```
-
-Your `.hero-subtitle` selector should have a `color` property set to `orangered`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.color === 'orangered');
-```
-
-Your `.hero-subtitle` selector should have a `text-align` property set to `center`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-subtitle')?.textAlign === 'center');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.fontSize === '8rem');
 ```
 
 # --seed--
@@ -274,15 +262,11 @@ img {
   position: relative;
 }
 
+--fcc-editable-region--
 .hero-title {
   position: absolute;
   top: 10%;
   left: 15%;
-  color: orangered;
-  font-size: 8rem;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

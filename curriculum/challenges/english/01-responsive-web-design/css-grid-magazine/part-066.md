@@ -1,5 +1,5 @@
 ---
-id: 6148d7720f0db36775db868a
+id: 6148d4d57b965358c9fa38bf
 title: Part 66
 challengeType: 0
 dashedName: part-66
@@ -7,20 +7,22 @@ dashedName: part-66
 
 # --description--
 
-You will need to have a column for text and a column for images. Give the `.text-with-images` selector a `grid-template-columns` property set to `1fr 2fr`. Also set the `column-gap` property to `3rem` to provide more spacing between the columns.
+Now to style your second `section`. Note that it has the `text` and `text-with-images` values for the `class` attribute, which means it is already inheriting the styles from your `.text` rule.
+
+Create a `.text-with-images` selector and set the `display` property to `grid`.
 
 # --hints--
 
-Your `.text-with-images` selector should have a `grid-template-columns` property set to `1fr 2fr`.
+You should have a `.text-with-images` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.gridTemplateColumns === '1fr 2fr');
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images'));
 ```
 
-Your `.text-with-images` selector should have a `column-gap` property set to `3rem`.
+Your `.text-with-images` selector should have a `display` property set to `grid`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.columnGap === '3rem');
+assert(new __helpers.CSSHelp(document).getStyle('.text-with-images')?.display === 'grid');
 ```
 
 # --seed--
@@ -329,8 +331,6 @@ hr {
 }
 
 --fcc-editable-region--
-.text-with-images {
-  display: grid;
-}
+
 --fcc-editable-region--
 ```

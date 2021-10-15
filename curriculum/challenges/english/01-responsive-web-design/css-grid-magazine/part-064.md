@@ -1,5 +1,5 @@
 ---
-id: 6148d3fff5186b57123d97e2
+id: 6148d33e31fccf558696c745
 title: Part 64
 challengeType: 0
 dashedName: part-64
@@ -7,36 +7,14 @@ dashedName: part-64
 
 # --description--
 
-A quote is not really a quote without proper quotation marks. You can add these with CSS pseudo selectors.
-
-Create a `.quote::before` selector and set the `content` property to `"` with a space following it.
-
-Also, create a `.quote::after` selector and set the `content` property to `"` with a space preceding it.
+To make the quote text stand out more, give the `.quote` selector a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 # --hints--
 
-You should have a `.quote::before` selector.
+Your `.quote` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::before'));
-```
-
-Your `.quote::before` selector should have a `content` property set to `'" '`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::before')?.content?.match(/\\?\"\s/));
-```
-
-You should have a `.quote::after` selector.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::after'));
-```
-
-Your `.quote::after` selector should have a `content` property set to `' "'`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote::after')?.content?.match(/\s\\?\"/));
+assert(new __helpers.CSSHelp(document).getStyle('.quote')?.fontFamily === 'Raleway, sans-serif');
 ```
 
 # --seed--
@@ -329,14 +307,11 @@ hr {
   margin-right: 1rem;
 }
 
+--fcc-editable-region--
 .quote {
   color: #00beef;
   font-size: 2.4rem;
   text-align: center;
-  font-family: "Raleway", sans-serif;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

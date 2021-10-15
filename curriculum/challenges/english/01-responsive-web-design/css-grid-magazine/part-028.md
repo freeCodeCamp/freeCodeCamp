@@ -1,5 +1,5 @@
 ---
-id: 6144de308591ec10e27d5383
+id: 6144d7dbdd3e580da730ff45
 title: Part 28
 challengeType: 0
 dashedName: part-28
@@ -7,20 +7,32 @@ dashedName: part-28
 
 # --description--
 
-Create an `h1` selector, and set the `font-family` property to `Anton` with the fallback of `sans-serif`.
+Create a `body` selector. Set the `font-family` property to `Baskervville`, with a fallback of `serif`. Set the `color` property to `linen` and the `background-color` property to `rgb(20, 30, 40)`.
 
 # --hints--
 
-You should have an `h1` selector.
+You should have a `body` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('h1'));
+assert(new __helpers.CSSHelp(document).getStyle('body'));
 ```
 
-Your `h1` selector should have a `font-family` property set to `Anton` with the fallback of `sans-serif`.
+Your `body` selector should have a `font-family` property set to `Baskerville`, with a fallback of `serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('h1')?.fontFamily === 'Anton, sans-serif');
+assert(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily === 'Baskervville, serif');
+```
+
+Your `body` selector should have a `color` property set to `linen`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.color === 'linen');
+```
+
+Your `body` selector should have a `background-color` property set to `rgb(20, 30, 40)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor === 'rgb(20, 30, 40)');
 ```
 
 # --seed--
@@ -213,12 +225,6 @@ assert(new __helpers.CSSHelp(document).getStyle('h1')?.fontFamily === 'Anton, sa
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-}
-
-body {
-  font-family: 'Baskervville', serif;
-  color: linen;
-  background-color: rgb(20, 30, 40);
 }
 
 --fcc-editable-region--

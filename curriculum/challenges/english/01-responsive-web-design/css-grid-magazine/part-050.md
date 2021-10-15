@@ -1,5 +1,5 @@
 ---
-id: 6148c004ffc8434252940dc3
+id: 6148bfc43df3bc40fe0e6405
 title: Part 50
 challengeType: 0
 dashedName: part-50
@@ -7,26 +7,20 @@ dashedName: part-50
 
 # --description--
 
-Create a `.social-icons` selector. Give it a `display` property set to `grid`, and a `font-size` property set to `3rem.`
+Create a `.publish-date` selector and give it a `color` property of `rgba(255, 255, 255, 0.5)`.
 
 # --hints--
 
-You should have a `.social-icons` selector.
+You should have a `.publish-date` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons'));
+assert(new __helpers.CSSHelp(document).getStyle('.publish-date'));
 ```
 
-Your `.social-icons` selector should have a `display` property set to `grid`.
+Your `.publish-date` selector should have a `color` property set to `rgba(255, 255, 255, 0.5)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.display === 'grid');
-```
-
-Your `.social-icons` selector should have a `font-size` property set to `3rem`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.social-icons')?.fontSize === '3rem');
+assert(new __helpers.CSSHelp(document).getStyle('.publish-date')?.color === 'rgba(255, 255, 255, 0.5)');
 ```
 
 # --seed--
@@ -289,10 +283,6 @@ img {
 
 .author-name a:hover {
   background-color: #306203;
-}
-
-.publish-date {
-  color: rgba(255, 255, 255, 0.5);
 }
 
 --fcc-editable-region--

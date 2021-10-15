@@ -1,5 +1,5 @@
 ---
-id: 6144d7dbdd3e580da730ff45
+id: 6144d66a5358db0c80628757
 title: Part 27
 challengeType: 0
 dashedName: part-27
@@ -7,32 +7,30 @@ dashedName: part-27
 
 # --description--
 
-Create a `body` selector. Set the `font-family` property to `Baskervville`, with a fallback of `serif`. Set the `color` property to `linen` and the `background-color` property to `rgb(20, 30, 40)`.
+Create an `html` selector and give it a `font-size` property set to `62.5%`. This will set the default font size for your web page to 10px (the browser default is 16px).
+
+This will make it easier for you to work with `rem` units later, as `2rem` would be 20px.
+
+Also, set the `box-sizing` property to `border-box`.
 
 # --hints--
 
-You should have a `body` selector.
+You should create an `html` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('body'));
+assert(new __helpers.CSSHelp(document).getStyle('html'));
 ```
 
-Your `body` selector should have a `font-family` property set to `Baskerville`, with a fallback of `serif`.
+Your `html` selector should have a `font-size` property set to `62.5%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily === 'Baskervville, serif');
+assert(new __helpers.CSSHelp(document).getStyle('html')?.fontSize === '62.5%');
 ```
 
-Your `body` selector should have a `color` property set to `linen`.
+Your `html` selector should have a `box-sizing` property set to `border-box`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('body')?.color === 'linen');
-```
-
-Your `body` selector should have a `background-color` property set to `rgb(20, 30, 40)`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor === 'rgb(20, 30, 40)');
+assert(new __helpers.CSSHelp(document).getStyle('html')?.boxSizing === 'border-box');
 ```
 
 # --seed--
@@ -220,11 +218,6 @@ assert(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor === 'rg
 *, ::before, ::after {
   padding: 0;
   margin: 0;
-}
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 --fcc-editable-region--

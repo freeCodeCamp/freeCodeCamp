@@ -1,5 +1,5 @@
 ---
-id: 6143b9e1f5035c6e5f2a8231
+id: 6143b97c06c3306d23d5da47
 title: Part 19
 challengeType: 0
 dashedName: part-19
@@ -7,110 +7,59 @@ dashedName: part-19
 
 # --description--
 
-Within your `ul` element, create six `li` elements. Give them the following content. Add an `h4` element with a `class` set to `list-subtitle` and a `p` element to each of your `li` elements.
-
-Then give the `h4` and `p` elements the following text content, in order:
-
-- `h4`: `p`
-- `V1 - 2014`: `We launched freeCodeCamp with a simple list of 15 resources, including Harvard's CS50 and Stanford's Database Class.`
-- `V2 - 2015`: `We added interactive algorithm challenges.`
-- `V3 - 2015`: `We added our own HTML+CSS challenges (before we'd been relying on General Assembly's Dash course for these).`
-- `V4 - 2016`: `We expanded the curriculum to 3 certifications, including Front End, Back End, and Data Visualization. They each had 10 required projects, but only the Front End section had its own challenges. For the other certs, we were still using external resources like Node School.`
-- `V5 - 2017`: `We added the back end and data visualization challenges.`
-- `V6 - 2018`: `We launched 6 new certifications to replace our old ones. This was the biggest curriculum improvement to date.`
+Within your `article` element, create an `h3` element with the `class` set to `list-title` and the text of `A Brief History`. Below that, create a `p` element with the text `Of the Curriculum`. Then create a `ul` element with the class `lists`.
 
 # --hints--
 
-Your `ul` element should have six `li` elements.
+You should create an `h3` element within your `article` element.
 
 ```js
-assert(document.querySelectorAll('.lists li')?.length === 6);
+assert.exists(document.querySelector('article h3'));
 ```
 
-Each of your new `li` elements should have an `h4` and `p` element.
+You should create a `p` element within your `article` element.
 
 ```js
-const lis = [...document.querySelectorAll('.lists li')];
-assert(lis?.every(li => li?.children?.[0]?.localName === 'h4' && li?.children?.[1]?.localName === 'p'));
+assert.exists(document.querySelector('article p'));
 ```
 
-Your first `h4` should have the text `V1 - 2014`.
+You should create a `ul` element within your `article` element.
 
 ```js
-assert(document.querySelectorAll('.lists li h4')?.[0]?.innerText === 'V1 - 2014');
+assert.exists(document.querySelector('article ul'));
 ```
 
-Your first `p` should have the text `We launched freeCodeCamp with a simple list of 15 resources, including Harvard's CS50 and Stanford's Database Class.`
+Your elements within the `article` element should be in the correct order.
 
 ```js
-assert(document.querySelectorAll('.lists li p')?.[0]?.innerText === 'We launched freeCodeCamp with a simple list of 15 resources, including Harvard\'s CS50 and Stanford\'s Database Class.');
+const children = document.querySelector('article')?.children;
+assert(children?.[0]?.localName === 'h3');
+assert(children?.[1]?.localName === 'p');
+assert(children?.[2]?.localName === 'ul');
 ```
 
-Your second `h4` should have the text `V2 - 2015`.
+Your new `h3` element should have the `class` set to `list-title`.
 
 ```js
-assert(document.querySelectorAll('.lists li h4')?.[1]?.innerText === 'V2 - 2015');
+assert(document.querySelector('article h3')?.className === 'list-title');
 ```
 
-Your second `p` should have the text `We added interactive algorithm challenges.`
+Your new `h3` element should have the text of `A Brief History`.
 
 ```js
-assert(document.querySelectorAll('.lists li p')?.[1]?.innerText === 'We added interactive algorithm challenges.');
+assert(document.querySelector('article h3')?.innerText === 'A Brief History');
 ```
 
-Your third `h4` should have the text `V3 - 2015`.
+Your new `p` element should have the text of `Of the Curriculum`.
 
 ```js
-assert(document.querySelectorAll('.lists li h4')?.[2]?.innerText === 'V3 - 2015');
+assert(document.querySelector('article p')?.innerText === 'Of the Curriculum');
 ```
 
-Your third `p` should have the text `We added our own HTML+CSS challenges (before we'd been relying on General Assembly's Dash course for these).`
+Your new `ul` element should have the `class` set to `lists`.
 
 ```js
-assert(document.querySelectorAll('.lists li p')?.[2]?.innerText === 'We added our own HTML+CSS challenges (before we\'d been relying on General Assembly\'s Dash course for these).');
-```
-
-Your fourth `h4` should have the text `V4 - 2016`.
-
-```js
-assert(document.querySelectorAll('.lists li h4')?.[3]?.innerText === 'V4 - 2016');
-```
-
-Your fourth `p` should have the text `We expanded the curriculum to 3 certifications, including Front End, Back End, and Data Visualization. They each had 10 required projects, but only the Front End section had its own challenges. For the other certs, we were still using external resources like Node School`.
-
-```js
-assert(document.querySelectorAll('.lists li p')?.[3]?.innerText === 'We expanded the curriculum to 3 certifications, including Front End, Back End, and Data Visualization. They each had 10 required projects, but only the Front End section had its own challenges. For the other certs, we were still using external resources like Node School.');
-```
-
-Your fifth `h4` should have the text `V5 - 2017`.
-
-```js
-assert(document.querySelectorAll('.lists li h4')?.[4]?.innerText === 'V5 - 2017');
-```
-
-Your fifth `p` should have the text `We added the back end and data visualization challenges.`
-
-```js
-assert(document.querySelectorAll('.lists li p')?.[4]?.innerText === 'We added the back end and data visualization challenges.');
-```
-
-Your sixth `h4` should have the text `V6 - 2018`.
-
-```js
-assert(document.querySelectorAll('.lists li h4')?.[5]?.innerText === 'V6 - 2018');
-```
-
-Your sixth `p` should have the text `We launched 6 new certifications to replace our old ones. This was the biggest curriculum improvement to date.`
-
-```js
-assert(document.querySelectorAll('.lists li p')?.[5]?.innerText === 'We launched 6 new certifications to replace our old ones. This was the biggest curriculum improvement to date.');
-```
-
-Your six `h4` elements should each have the class `list-subtitle`.
-
-```js
-const h4s = [...document.querySelectorAll('.lists li h4')];
-assert(h4s?.every(h4 => h4?.classList?.contains('list-subtitle')));
+assert(document.querySelector('article ul')?.className === 'lists');
 ```
 
 # --seed--
@@ -210,11 +159,7 @@ assert(h4s?.every(h4 => h4?.classList?.contains('list-subtitle')));
       <section class="text text-with-images">
 --fcc-editable-region--
         <article class="brief-history">
-          <h3 class="list-title">A Brief History</h3>
-          <p>Of the Curriculum</p>
-          <ul class="lists">
-          
-          </ul>
+
         </article>
 --fcc-editable-region--
         <aside class="image-wrapper"></aside>

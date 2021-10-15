@@ -11,7 +11,6 @@ After your `header` element, create a `div` with the `class` set to `author`.
 
 Within that `div`, create a `p` element with the `class` set to `author-name` and give it the text `By freeCodeCamp`. Wrap the `freeCodeCamp` portion in an `a` element with the `href` set to `https://freecodecamp.org`, and the `target` set to `_blank`.
 
-The `Referer` HTTP header contains information about the address or URL of a page that a user might be visiting from. This information can be used in analytics to track how many users from your page visit freecodecamp.org, for example. Setting the `rel` attribute to `noreferrer` omits this information from the HTTP request. Give your new `a` element a `rel` attribute set to `noreferrer`.
 
 Below that, add a second `p` element with the class `publish-date` and the text `March 7, 2019`.
 
@@ -93,12 +92,6 @@ Your `a` element should have the `target` set to `_blank`.
 
 ```js
 assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('target') === '_blank');
-```
-
-Your `a` element should have the `rel` set to `noreferrer`.
-
-```js
-assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.getAttribute('rel') === 'noreferrer');
 ```
 
 Your `a` element should surround the text `freeCodeCamp`.

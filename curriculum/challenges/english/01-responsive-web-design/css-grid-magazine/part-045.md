@@ -1,5 +1,5 @@
 ---
-id: 6148bda8aa613f3b81ccf372
+id: 6148bd62bbb8c83a5f1fc1b3
 title: Part 45
 challengeType: 0
 dashedName: part-45
@@ -7,20 +7,32 @@ dashedName: part-45
 
 # --description--
 
-The title is still not quite right. Give the `.hero-title` selector a `color` property set to `orangered` and a `font-size` property set to `8rem`.
+Create a `.hero-title` selector and give it a `position` property set to `absolute`, a `top` property set to `10%`, and a `left` property set to `15%`.
 
 # --hints--
 
-Your `.hero-title` selector should have a `color` property set to `orangered`.
+You should have a `.hero-title` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.color === 'orangered');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title'));
 ```
 
-Your `.hero-title` selector should have a `font-size` property set to `8rem`.
+Your `.hero-title` selector should have a `position` property set to `absolute`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.fontSize === '8rem');
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.position === 'absolute');
+```
+
+Your `.hero-title` selector should have a `top` property set to `10%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.top === '10%');
+```
+
+Your `.hero-title` selector should have a `left` property set to `15%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.hero-title')?.left === '15%');
 ```
 
 # --seed--
@@ -263,10 +275,6 @@ img {
 }
 
 --fcc-editable-region--
-.hero-title {
-  position: absolute;
-  top: 10%;
-  left: 15%;
-}
+
 --fcc-editable-region--
 ```
