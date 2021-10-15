@@ -54,7 +54,7 @@ assert(code.match(/<\/html\s*>/));
 Your `html` element should be below the `DOCTYPE` declaration.
 
 ```js
-assert(code.match(/(?<!<html\s*>)<!DOCTYPE\s+html\s*>/gi));
+assert(code.match(/^\s*<!DOCTYPE\s+html\s*>[\s\S]*<\s*html\s*>/gi));
 ```
 
 You should have an opening `head` tag.
@@ -97,6 +97,18 @@ The `body` element should be within the `html` element.
 
 ```js
 assert([...document.querySelector('html')?.children].some(x => x?.localName === 'body'));
+```
+
+Your code should have a `meta` element.
+
+```js
+const meta = document.querySelector('meta');
+assert.exists(meta);
+```
+
+Your `meta` element should have a `charset` attribute with the value `UTF-8`.
+```js
+assert.match(code, /<meta[\s\S]+?charset=('|"|`)UTF-8\1/)
 ```
 
 Your code should have a `title` element.

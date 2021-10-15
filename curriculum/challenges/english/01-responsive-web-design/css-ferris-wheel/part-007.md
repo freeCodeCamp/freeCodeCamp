@@ -16,7 +16,8 @@ Give the `.line` selector a `transform-origin` property of `0% 0%`. This will of
 Your `.line` selector should have a `transform-origin` property set to `0% 0%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.line')?.transformOrigin === '0% 0%');
+const transformOrigin = new __helpers.CSSHelp(document).getStyle('.line')?.transformOrigin;
+assert(transformOrigin === '0% 0%' || transformOrigin === '0% 0% 0px');
 ```
 
 # --seed--

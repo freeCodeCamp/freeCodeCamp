@@ -14,7 +14,8 @@ Set the `.cabin` to have a `transform-origin` property of `50% 0%`. This will se
 Your `.cabin` selector should have a `transform-origin` property set to `50% 0%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.transformOrigin === '50% 0%');
+const transformOrigin = new __helpers.CSSHelp(document).getStyle('.cabin')?.transformOrigin;
+assert(transformOrigin === '50% 0%' || transformOrigin === '50% 0% 0px');
 ```
 
 # --seed--

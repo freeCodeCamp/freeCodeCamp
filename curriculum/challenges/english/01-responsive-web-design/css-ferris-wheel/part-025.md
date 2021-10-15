@@ -16,20 +16,20 @@ With that, your Ferris wheel is complete!
 You should create a new `50%` selector in your `@keyframes cabins` rule.
 
 ```js
-const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1];
+const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules;
 assert(rules?.[0]?.keyText === '50%' || rules?.[1]?.keyText === '50%' || rules?.[2]?.keyText === '50%'); 
 ```
 
 Your `50%` selector should be between your `0%` and `100%` selectors.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.[1]?.keyText === '50%');
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.keyText === '50%');
 ```
 
 Your `50%` selector should have a `background-color` property set to `purple`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.[1]?.style?.backgroundColor === 'purple');
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.style?.backgroundColor === 'purple');
 ```
 
 # --seed--
