@@ -60,6 +60,8 @@ assert(
     if (typeof test.remove !== 'function') {
       return false;
     }
+    test.add(15);
+    test.add(30);
     return test.remove(100) == null;
   })()
 );
