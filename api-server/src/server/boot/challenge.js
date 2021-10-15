@@ -346,8 +346,7 @@ function createCoderoadChallengeCompleted(app) {
     const { 'coderoad-user-token': userWebhookToken = null } = req.headers;
     const { tutorialId = null } = req.body;
 
-    if (!tutorialId)
-      return res.send(`'tutorialId' not found in request body`);
+    if (!tutorialId) return res.send(`'tutorialId' not found in request body`);
 
     if (!userWebhookToken)
       return res.send(`'coderoad-user-token' not found in request headers`);
