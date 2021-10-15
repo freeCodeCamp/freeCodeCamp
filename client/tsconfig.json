@@ -1,6 +1,7 @@
 {
   "include": ["./i18n/**/*", "./plugins/**/*", "./src/**/*", "./utils/**/*"],
   "compilerOptions": {
+    "lib": ["WebWorker", "DOM", "DOM.Iterable"],
     "target": "es2020",
     "module": "es2020",
     "moduleResolution": "node",

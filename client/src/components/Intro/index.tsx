@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { randomQuote } from '../../utils/get-words';
@@ -9,24 +8,24 @@ import IntroDescription from './components/IntroDescription';
 
 import './intro.css';
 
-const propTypes = {
-  complete: PropTypes.bool,
-  completedChallengeCount: PropTypes.number,
-  isSignedIn: PropTypes.bool,
-  name: PropTypes.string,
-  pending: PropTypes.bool,
-  slug: PropTypes.string,
-  username: PropTypes.string
-};
+interface IntroProps {
+  complete?: boolean;
+  completedChallengeCount?: number;
+  isSignedIn?: boolean;
+  name?: string;
+  pending?: boolean;
+  slug?: string;
+  username?: string;
+}
 
-function Intro({
+const Intro = ({
   isSignedIn,
   name,
   pending,
   complete,
   completedChallengeCount,
   slug
-}) {
+}: IntroProps): JSX.Element => {
   const { t } = useTranslation();
   if (pending && !complete) {
     return (
@@ -48,7 +47,7 @@ function Intro({
         </h1>
         <Spacer />
         <FullWidthRow>
-          {completedChallengeCount > 0 ? (
+          {completedChallengeCount && completedChallengeCount > 0 ? (
             <CurrentChallengeLink isLargeBtn={true}>
               {t('buttons.current-challenge')}
             </CurrentChallengeLink>
@@ -67,7 +66,7 @@ function Intro({
             </span>
           </blockquote>
         </div>
-        {completedChallengeCount < 15 ? (
+        {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
             <Spacer />
             <p>
@@ -94,9 +93,8 @@ function Intro({
       </>
     );
   }
-}
+};
 
-Intro.propTypes = propTypes;
 Intro.displayName = 'Intro';
 
 export default Intro;

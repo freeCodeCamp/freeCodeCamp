@@ -32,11 +32,8 @@ import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
-// preload common fonts
-// eslint-disable-next-line max-len
-// eslint-disable-next-line max-len
-// eslint-disable-next-line max-len
 
+// preload common fonts
 import './fonts.css';
 import './global.css';
 import './variables.css';

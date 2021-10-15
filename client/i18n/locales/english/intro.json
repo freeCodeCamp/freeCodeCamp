@@ -83,6 +83,7 @@
         "title": "CSS Variables Skyline",
         "intro": ["", ""]
       },
+      "registration-form": { "title": "Registration Form", "intro": ["", ""] },
       "accessibility-quiz": {
         "title": "Accessibility Quiz",
         "intro": ["", ""]
