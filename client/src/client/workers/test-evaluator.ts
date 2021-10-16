@@ -6,13 +6,16 @@ import curriculumHelpers, {
 } from '../../utils/curriculum-helpers';
 import { format as __format } from '../../utils/format';
 
+const ctx: Worker & typeof globalThis = self as unknown as Worker &
+  typeof globalThis;
+
 const __utils = (() => {
   const MAX_LOGS_SIZE = 64 * 1024;
 
-  let logs = [];
+  let logs: string[] = [];
   function flushLogs() {
     if (logs.length) {
-      self.postMessage({
+      ctx.postMessage({
         type: 'LOG',
         data: logs.join('\n')
       });
@@ -20,8 +23,8 @@ const __utils = (() => {
     }
   }
 
-  const oldLog = self.console.log.bind(self.console);
-  function proxyLog(...args) {
+  const oldLog = ctx.console.log.bind(ctx.console);
+  function proxyLog(...args: string[]) {
     logs.push(args.map(arg => __format(arg)).join(' '));
     if (logs.join('\n').length > MAX_LOGS_SIZE) {
       flushLogs();
@@ -30,12 +33,12 @@ const __utils = (() => {
   }
 
   // unless data.type is truthy, this sends data out to the testRunner
-  function postResult(data) {
+  function postResult(data: unknown) {
     flushLogs();
-    self.postMessage(data);
+    ctx.postMessage(data);
   }
 
-  function log(...msgs) {
+  function log(...msgs: Error[]) {
     if (msgs && msgs[0] && !(msgs[0] instanceof chai.AssertionError)) {
       // discards the stack trace via toString as it only useful to debug the
       // site, not a specific challenge.
@@ -43,8 +46,8 @@ const __utils = (() => {
     }
   }
 
-  const toggleProxyLogger = on => {
-    self.console.log = on ? proxyLog : oldLog;
+  const toggleProxyLogger = (on: unknown) => {
+    ctx.console.log = on ? proxyLog : oldLog;
   };
 
   return {
@@ -55,9 +58,25 @@ const __utils = (() => {
   };
 })();
 
+interface TestEvaluatorEvent extends MessageEvent {
+  data: {
+    code: {
+      contents: string;
+      editableContents: string;
+    };
+    removeComments: boolean;
+    firstTest: unknown;
+    testString: string;
+    build: string;
+    sources: {
+      [fileName: string]: unknown;
+    };
+  };
+}
+
 /* Run the test if there is one.  If not just evaluate the user code */
-self.onmessage = async e => {
-  /* eslint-disable no-unused-vars */
+ctx.onmessage = async (e: TestEvaluatorEvent) => {
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   let code = (e.data?.code?.contents || '').slice();
   code = e.data?.removeComments ? removeJSComments(code) : code;
   let editableContents = (e.data?.code?.editableContents || '').slice();
@@ -68,13 +87,16 @@ self.onmessage = async e => {
   const assert = chai.assert;
   const __helpers = curriculumHelpers;
   // Fake Deep Equal dependency
-  const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  const DeepEqual = (a: unknown, b: unknown) =>
+    JSON.stringify(a) === JSON.stringify(b);
 
   // Build errors should be reported, but only once:
   __utils.toggleProxyLogger(e.data.firstTest);
-  /* eslint-enable no-unused-vars */
+  /* eslint-enable @typescript-eslint/no-unused-vars */
   try {
     let testResult;
+    // This can be reassigned by the eval inside the try block, so it should be declared as a let
+    // eslint-disable-next-line prefer-const
     let __userCodeWasExecuted = false;
     /* eslint-disable no-eval */
     try {
@@ -86,7 +108,7 @@ self.onmessage = async e => {
 __utils.flushLogs();
 __userCodeWasExecuted = true;
 __utils.toggleProxyLogger(true);
-${e.data.testString}`);
+${e.data.testString}`) as unknown;
     } catch (err) {
       if (__userCodeWasExecuted) {
         // rethrow error, since test failed.
@@ -95,19 +117,21 @@ ${e.data.testString}`);
       // log build errors unless they're related to import/export/require (there
       // are challenges that use them and they should not trigger warnings)
       if (
-        err.name !== 'ReferenceError' ||
-        (err.message !== 'require is not defined' &&
-          err.message !== 'exports is not defined')
+        (err as Error).name !== 'ReferenceError' ||
+        ((err as Error).message !== 'require is not defined' &&
+          (err as Error).message !== 'exports is not defined')
       ) {
-        __utils.log(err);
+        __utils.log(err as Error);
       }
       // the tests may not require working code, so they are evaluated even if
       // the user code does not get executed.
-      testResult = eval(e.data.testString);
+      testResult = eval(e.data.testString) as unknown;
     }
     /* eslint-enable no-eval */
     if (typeof testResult === 'function') {
-      await testResult(fileName => __toString(e.data.sources[fileName]));
+      await testResult((fileName: string) =>
+        __toString(e.data.sources[fileName])
+      );
     }
     __utils.postResult({
       pass: true
@@ -117,15 +141,15 @@ ${e.data.testString}`);
     __utils.toggleProxyLogger(false);
     // Report execution errors in case user code has errors that are only
     // uncovered during testing.
-    __utils.log(err);
+    __utils.log(err as Error);
     // postResult flushes the logs and must be called after logging is finished.
     __utils.postResult({
       err: {
-        message: err.message,
-        stack: err.stack
+        message: (err as Error).message,
+        stack: (err as Error).stack
       }
     });
   }
 };
 
-self.postMessage({ type: 'contentLoaded' });
+ctx.postMessage({ type: 'contentLoaded' });

@@ -32,6 +32,7 @@ import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
 
+// preload common fonts
 import './fonts.css';
 import './global.css';
 import './variables.css';
