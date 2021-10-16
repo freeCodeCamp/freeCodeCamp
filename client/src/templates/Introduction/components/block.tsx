@@ -16,7 +16,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 import { Link } from '../../../components/helpers';
 import { completedChallengesSelector, executeGA } from '../../../redux';
 import {
-  ChallengeNodeType,
+  ChallengeNode,
   CompletedChallenge
 } from '../../../redux/prop-types';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
@@ -42,13 +42,13 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 interface BlockProps {
   blockDashedName: string;
-  challenges: ChallengeNodeType[];
-  completedChallengeIds: string[];
-  executeGA: typeof executeGA;
-  isExpanded: boolean;
+  challenges: ChallengeNode[];
+  completedChallengeIds?: string[];
+  executeGA?: typeof executeGA;
+  isExpanded?: boolean;
   superBlock: string;
-  t: TFunction;
-  toggleBlock: typeof toggleBlock;
+  t?: TFunction;
+  toggleBlock?: typeof toggleBlock;
 }
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
@@ -73,14 +73,14 @@ export class Block extends Component<BlockProps> {
         player.autostart = playSound;
       });
     }
-    executeGA({
+    executeGA!({
       type: 'event',
       data: {
         category: 'Map Block Click',
         action: blockDashedName
       }
     });
-    return toggleBlock(blockDashedName);
+    return toggleBlock!(blockDashedName);
   }
 
   renderCheckMark(isCompleted: boolean): JSX.Element {
@@ -114,7 +114,7 @@ export class Block extends Component<BlockProps> {
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
-      const isCompleted = completedChallengeIds.some(
+      const isCompleted = completedChallengeIds!.some(
         (completedChallengeId: string) => completedChallengeId === id
       );
       if (isCompleted) {
@@ -140,7 +140,7 @@ export class Block extends Component<BlockProps> {
       );
     });
 
-    const blockIntroObj: { title?: string; intro: string[] } = t(
+    const blockIntroObj: { title?: string; intro: string[] } = t!(
       `intro:${superBlock}.blocks.${blockDashedName}`
     );
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
@@ -153,7 +153,7 @@ export class Block extends Component<BlockProps> {
       expand: string;
       collapse: string;
       courses: string;
-    } = t('intro:misc-text');
+    } = t!('intro:misc-text');
 
     return isProjectBlock ? (
       <ScrollableAnchor id={blockDashedName}>
@@ -169,9 +169,9 @@ export class Block extends Component<BlockProps> {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to={t('links:help-translate-link-url')}
+                  to={t!('links:help-translate-link-url')}
                 >
-                  {t('misc.translation-pending')}
+                  {t!('misc.translation-pending')}
                 </Link>
               </div>
             )}
@@ -197,9 +197,9 @@ export class Block extends Component<BlockProps> {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to={t('links:help-translate-link-url')}
+                  to={t!('links:help-translate-link-url')}
                 >
-                  {t('misc.translation-pending')}
+                  {t!('misc.translation-pending')}
                 </Link>
               </div>
             )}

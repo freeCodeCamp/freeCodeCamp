@@ -25,8 +25,8 @@ import {
   userSelector
 } from '../../redux';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
-import CertChallenge from './components/CertChallenge';
 import Block from './components/block';
+import CertChallenge from './components/cert-challenge';
 import SuperBlockIntro from './components/super-block-intro';
 import { resetExpansion, toggleBlock } from './redux';
 

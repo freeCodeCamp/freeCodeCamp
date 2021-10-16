@@ -5,7 +5,7 @@ import { generateIconComponent, SuperBlock } from '../../../assets/icons';
 import { Spacer } from '../../../components/helpers';
 
 interface SuperBlockIntroProps {
-  superBlock: SuperBlock;
+  superBlock: any;
 }
 
 function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
