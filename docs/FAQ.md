@@ -20,7 +20,7 @@ Please note that these GitHub issues are for codebase-related issues and discuss
 
 ### How can I report a security issue?
 
-Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+Please don't create GitHub issues for security issues. Instead, please send an email to [`security@freecodecamp.org`](mailto:security@freecodecamp.org) and we'll look into it immediately.
 
 ### I am a student. Can I work on a feature for academic credits?
 
@@ -84,4 +84,4 @@ If you have queries about the stack, architecture of the codebase, translations,
 | Shaun Hamilton        | [@sky020](https://forum.freecodecamp.org/u/sky020)                           |
 | Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
 
-**You can email our developer staff at: `dev[at]freecodecamp.org`**
+**You can email our developer staff at: [`dev[at]freecodecamp.org`](mailto:dev@freecodecamp.org)**
