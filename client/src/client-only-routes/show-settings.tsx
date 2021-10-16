@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import envData from '../../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import Certification from '../components/settings/Certification';
@@ -24,8 +23,6 @@ import {
 } from '../redux';
 import { UserType } from '../redux/prop-types';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
-
-const { apiLocation } = envData;
 
 // TODO: update types for actions
 interface IShowSettingsProps {
@@ -124,7 +121,7 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
   }
 
   if (!isSignedIn) {
-    if (!wasSignedIn.current) navigate(`${apiLocation}/signin`);
+    if (!wasSignedIn.current) navigate('/learn');
     return <Loader fullScreen={true} />;
   }
 
