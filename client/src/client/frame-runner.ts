@@ -1,9 +1,10 @@
 import type enzyme from 'enzyme';
+import type adapter16 from 'enzyme-adapter-react-16';
 import '@babel/polyfill';
-import jquery from 'jquery';
+import jQuery from 'jquery';
 import curriculumHelpers from '../utils/curriculum-helpers';
 
-window.$ = jquery;
+window.$ = jQuery;
 
 document.__initTestFrame = initTestFrame;
 
@@ -68,9 +69,9 @@ async function initTestFrame(e: TestFrameEvent = { code: {} }): Promise<void> {
 
   let Enzyme: typeof enzyme;
   if (e.loadEnzyme) {
-    let Adapter16;
+    let Adapter16: typeof adapter16;
     /* eslint-disable no-inline-comments */
-    /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, prefer-const */
+    /* eslint-disable-next-line prefer-const */
     [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
       import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
@@ -93,6 +94,7 @@ async function initTestFrame(e: TestFrameEvent = { code: {} }): Promise<void> {
       const testPromise = new Promise((resolve, reject) =>
         // To avoid race conditions, we have to run the test in a final
         // document ready:
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         $(() => {
           try {
             // eslint-disable-next-line no-eval, @typescript-eslint/no-unsafe-assignment
