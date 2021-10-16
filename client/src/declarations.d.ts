@@ -4,6 +4,9 @@ declare module '@freecodecamp/strip-comments';
 declare module '@types/react-redux';
 declare module '@types/validator';
 declare module '@types/lodash-es';
+declare module '@types/jquery';
+declare module 'enzyme';
+declare module 'enzyme-adapter-react-16';
 declare module 'react-lazy-load';
 declare module '*.svg' {
   const content: string;
@@ -24,4 +27,16 @@ declare namespace NodeJS {
       };
     };
   }
+}
+interface Window {
+  $: JQueryStatic;
+}
+interface Document {
+  __initTestFrame: () => void;
+  __runTest: (
+    testString: string
+  ) => Promise<
+    | { pass: boolean; err?: undefined }
+    | { err: Partial<Error>; pass?: undefined }
+  >;
 }

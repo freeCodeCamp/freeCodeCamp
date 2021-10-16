@@ -1,18 +1,30 @@
+import type enzyme from 'enzyme';
 import '@babel/polyfill';
-import jQuery from 'jquery';
+import jquery from 'jquery';
 import curriculumHelpers from '../utils/curriculum-helpers';
 
-window.$ = jQuery;
+window.$ = jquery;
 
 document.__initTestFrame = initTestFrame;
 
-async function initTestFrame(e = { code: {} }) {
+type Code = {
+  contents?: string;
+  editableContents?: string;
+};
+
+type TestFrameEvent = {
+  code: Code;
+  getUserInput?: () => void;
+  loadEnzyme?: () => void;
+};
+
+async function initTestFrame(e: TestFrameEvent = { code: {} }): Promise<void> {
   const code = (e.code.contents || '').slice();
   const editableContents = (e.code.editableContents || '').slice();
   // __testEditable allows test authors to run tests against a transitory dom
   // element built using only the code in the editable region.
-  // eslint-disable-next-line no-unused-vars
-  const __testEditable = cb => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const __testEditable = (cb: () => void) => {
     const div = document.createElement('div');
     div.id = 'editable-only';
     div.innerHTML = editableContents;
@@ -26,12 +38,14 @@ async function initTestFrame(e = { code: {} }) {
     e.getUserInput = () => code;
   }
 
-  /* eslint-disable no-unused-vars */
   // Fake Deep Equal dependency
-  const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const DeepEqual = (a: any, b: any) => JSON.stringify(a) === JSON.stringify(b);
 
   // Hardcode Deep Freeze dependency
-  const DeepFreeze = o => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const DeepFreeze = (o: Record<string, any>) => {
     Object.freeze(o);
     Object.getOwnPropertyNames(o).forEach(function (prop) {
       if (
@@ -52,17 +66,18 @@ async function initTestFrame(e = { code: {} }) {
   const __helpers = curriculumHelpers;
   /* eslint-enable no-unused-vars */
 
-  let Enzyme;
+  let Enzyme: typeof enzyme;
   if (e.loadEnzyme) {
     let Adapter16;
     /* eslint-disable no-inline-comments */
-
+    /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, prefer-const */
     [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
       import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
     ]);
     /* eslint-enable no-inline-comments */
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
     Enzyme.configure({ adapter: new Adapter16() });
   }
 
@@ -80,7 +95,7 @@ async function initTestFrame(e = { code: {} }) {
         // document ready:
         $(() => {
           try {
-            // eslint-disable-next-line no-eval
+            // eslint-disable-next-line no-eval, @typescript-eslint/no-unsafe-assignment
             const test = eval(testString);
             resolve(test);
           } catch (err) {
@@ -100,7 +115,7 @@ async function initTestFrame(e = { code: {} }) {
       // to provide useful debugging information when debugging the tests, we
       // have to extract the message and stack before returning
       return {
-        err: { message: err.message, stack: err.stack }
+        err: { message: (err as Error).message, stack: (err as Error).stack }
       };
     }
   };
