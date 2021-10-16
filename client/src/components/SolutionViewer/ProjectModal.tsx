@@ -13,13 +13,13 @@ type ProjectModalProps = {
   solution: string | null | undefined;
 };
 
-const ProjectModal: React.FC<ProjectModalProps> = ({
+const ProjectModal = ({
   isOpen,
   projectTitle,
   challengeFiles,
   solution,
   handleSolutionModalHide
-}: ProjectModalProps) => {
+}: ProjectModalProps): JSX.Element => {
   const { t } = useTranslation();
   return (
     <Modal
