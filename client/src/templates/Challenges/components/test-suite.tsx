@@ -24,7 +24,7 @@ function getAccessibleText(
   }
 
   // Append the text itself
-  return accessibleText + ' - ' + cleanText;
+  return `${accessibleText}  -  ${cleanText}`;
 }
 
 interface TestSuiteProps {
