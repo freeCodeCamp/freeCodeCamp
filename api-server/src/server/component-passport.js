@@ -1,8 +1,4 @@
-// eslint-disable-next-line
-import {
-  // prettier ignore
-  PassportConfigurator
-} from '@freecodecamp/loopback-component-passport';
+import { PassportConfigurator } from '@freecodecamp/loopback-component-passport';
 import dedent from 'dedent';
 import passport from 'passport';
 

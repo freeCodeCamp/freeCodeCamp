@@ -334,8 +334,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
     if (props.canFocus && !accessibilityMode) {
-      // TODO: only one Editor should be calling for focus at once.
-      editor.focus();
+      focusIfTargetEditor();
     } else focusOnHotkeys();
     // Removes keybind for intellisense
     // Private method - hopefully changes with future version
@@ -683,6 +682,17 @@ const Editor = (props: EditorProps): JSX.Element => {
     return editableRegionBoundaries.length === 2;
   }
 
+  function focusIfTargetEditor() {
+    const { editor } = data;
+    if (!editor) return;
+    if (!props.usesMultifileEditor) {
+      // Only one editor? Focus it.
+      editor.focus();
+    } else if (hasEditableRegion()) {
+      editor.focus();
+    }
+  }
+
   function initializeRegions(editableRegion: number[]) {
     const { model } = data;
     const monaco = monacoRef.current;
@@ -998,13 +1008,14 @@ const Editor = (props: EditorProps): JSX.Element => {
       updateOutputZone();
     }
 
-    if (hasChangedContents && !hasEditableRegion()) editor?.focus();
+    if (hasChangedContents) {
+      focusIfTargetEditor();
+    }
 
     if (props.initialTests) initTests(props.initialTests);
 
     if (hasEditableRegion() && editor) {
       if (hasChangedContents) {
-        editor.focus();
         showEditableRegion(editor);
       }
       // resetting test output
