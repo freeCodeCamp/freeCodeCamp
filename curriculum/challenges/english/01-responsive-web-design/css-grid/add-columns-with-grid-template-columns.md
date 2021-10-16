@@ -31,7 +31,7 @@ Give the grid container three columns that are each `100px` wide.
 ```js
 assert(
   code.match(
-    /.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi
+    /.container\s*{[\s\S]*grid-template-columns\s*:\s*100px\s+100px\s+100px\s*;[\s\S]*}/gi
   )
 );
 ```
