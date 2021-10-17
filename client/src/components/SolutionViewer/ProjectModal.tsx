@@ -36,10 +36,7 @@ const ProjectModal = ({
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <SolutionViewer
-          challengeFiles={challengeFiles}
-          solution={String(solution)}
-        />
+        <SolutionViewer challengeFiles={challengeFiles} solution={solution} />
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={handleSolutionModalHide}>{t('buttons.close')}</Button>
