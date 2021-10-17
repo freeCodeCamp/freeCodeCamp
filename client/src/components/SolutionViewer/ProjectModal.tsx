@@ -10,7 +10,7 @@ type ProjectModalProps = {
   handleSolutionModalHide: () => void;
   isOpen: boolean;
   projectTitle: string;
-  solution: string | null | undefined;
+  solution: string;
 };
 
 const ProjectModal = ({
