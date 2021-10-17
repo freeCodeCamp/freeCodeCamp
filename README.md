@@ -6,7 +6,7 @@
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 [![Rocket.Chat](https://chat.freecodecamp.org/api/v1/shield.svg?type=online&icon=false&name=Chat)](https://chat.freecodecamp.org/)
 
-## freeCodeCamp.org's open-source codebase and curriculum
+## freecodecamp.org's open-source codebase and curriculum
 
 [freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
@@ -24,9 +24,9 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ### Certifications
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
+freecodecamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
 
-Each of these 50 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
+Each of these 50 projects in the freecodecamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
 
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Replit - or even on your local computer's development environment.
 
@@ -147,7 +147,7 @@ We also have 4 legacy certifications dating back to our 2015 curriculum, which i
 
 ### The Learning Platform
 
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
+This code is running live at [freecodecamp.org](https://www.freecodecamp.org).
 
 Our community also has:
 
@@ -172,7 +172,7 @@ We appreciate any responsible disclosure of vulnerabilities that might impact th
 
 ### Contributing
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
+The freecodecamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
