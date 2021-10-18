@@ -78,3 +78,50 @@ Cypress.Commands.add('resetUsername', () => {
 
   cy.contains('Account Settings for developmentuser').should('be.visible');
 });
+
+Cypress.Commands.add('submitResponsiveWebDesignProjects', () => {
+  const superBlock = 'responsive-web-design';
+  const block = 'responsive-web-design-projects';
+  const challenges = [
+    {
+      slug: 'build-a-tribute-page',
+      solution: 'https://codepen.io/moT01/pen/ZpJpKp'
+    },
+    {
+      slug: 'build-a-survey-form',
+      solution: 'https://codepen.io/moT01/pen/LrrjGz?editors=1010'
+    },
+    {
+      slug: 'build-a-product-landing-page',
+      solution: 'https://codepen.io/moT01/full/qKyKYL/'
+    },
+    {
+      slug: 'build-a-technical-documentation-page',
+      solution: 'https://codepen.io/moT01/full/JBvzNL/'
+    },
+    {
+      slug: 'build-a-personal-portfolio-webpage',
+      solution: 'https://codepen.io/moT01/pen/vgOaoJ'
+    }
+  ];
+
+  cy.visit(`/learn/${superBlock}/${block}/${challenges[0].slug}`);
+  challenges.forEach(({ solution, slug }) => {
+    cy.location('pathname').should(
+      'eq',
+      `/learn/${superBlock}/${block}/${slug}`
+    );
+    cy.contains("I've completed this challenge")
+      .as('completedButton')
+      .should('be.disabled');
+    cy.get('#dynamic-front-end-form')
+      .get('#solution')
+      .type(solution, { delay: 0 });
+    cy.get('@completedButton').click();
+    cy.intercept('http://localhost:3000/project-completed').as(
+      'challengeCompleted'
+    );
+    cy.contains('Submit and go to next challenge').click();
+    cy.wait('@challengeCompleted').its('response.statusCode').should('eq', 200);
+  });
+});

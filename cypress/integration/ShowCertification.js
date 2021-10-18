@@ -1,30 +1,4 @@
 const certificationUrl = '/certification/developmentuser/responsive-web-design';
-const projects = {
-  superBlock: 'responsive-web-design',
-  block: 'responsive-web-design-projects',
-  challenges: [
-    {
-      slug: 'build-a-tribute-page',
-      solution: 'https://codepen.io/moT01/pen/ZpJpKp'
-    },
-    {
-      slug: 'build-a-survey-form',
-      solution: 'https://codepen.io/moT01/pen/LrrjGz?editors=1010'
-    },
-    {
-      slug: 'build-a-product-landing-page',
-      solution: 'https://codepen.io/moT01/full/qKyKYL/'
-    },
-    {
-      slug: 'build-a-technical-documentation-page',
-      solution: 'https://codepen.io/moT01/full/JBvzNL/'
-    },
-    {
-      slug: 'build-a-personal-portfolio-webpage',
-      solution: 'https://codepen.io/moT01/pen/vgOaoJ'
-    }
-  ]
-};
 
 describe('A certification,', function () {
   before(() => {
@@ -32,24 +6,14 @@ describe('A certification,', function () {
     cy.login();
 
     // submit projects for certificate
-    const { superBlock, block, challenges } = projects;
-    challenges.forEach(({ slug, solution }) => {
-      const url = `/learn/${superBlock}/${block}/${slug}`;
-      cy.visit(url);
-      cy.get('#dynamic-front-end-form')
-        .get('#solution')
-        .type(solution, { force: true, delay: 0 });
-      cy.contains("I've completed this challenge")
-        .should('not.be.disabled')
-        .click();
-      cy.contains('Submit and go to next challenge').click().wait(1000);
-    });
+    cy.submitResponsiveWebDesignProjects();
     cy.get('.donation-modal').should('be.visible');
     cy.visit('/settings');
 
     cy.togglePrivacySettingsToPublicAndAcceptHonestyPolicy();
 
     // claim certificate
+    // TODO: use data-cy rather than href.
     cy.get('a[href*="developmentuser/responsive-web-design"]').click({
       force: true
     });

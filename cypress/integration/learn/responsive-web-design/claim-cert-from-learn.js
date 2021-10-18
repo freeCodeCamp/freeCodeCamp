@@ -1,30 +1,3 @@
-const projects = {
-  superBlock: 'responsive-web-design',
-  block: 'responsive-web-design-projects',
-  challenges: [
-    {
-      slug: 'build-a-tribute-page',
-      solution: 'https://codepen.io/moT01/pen/ZpJpKp'
-    },
-    {
-      slug: 'build-a-survey-form',
-      solution: 'https://codepen.io/moT01/pen/LrrjGz?editors=1010'
-    },
-    {
-      slug: 'build-a-product-landing-page',
-      solution: 'https://codepen.io/moT01/full/qKyKYL/'
-    },
-    {
-      slug: 'build-a-technical-documentation-page',
-      solution: 'https://codepen.io/moT01/full/JBvzNL/'
-    },
-    {
-      slug: 'build-a-personal-portfolio-webpage',
-      solution: 'https://codepen.io/moT01/pen/vgOaoJ'
-    }
-  ]
-};
-
 describe('Responsive Web Design Superblock', () => {
   before(() => {
     cy.exec('npm run seed');
@@ -47,45 +20,23 @@ describe('Responsive Web Design Superblock', () => {
       cy.exec('npm run seed');
       cy.login();
       cy.togglePrivacySettingsToPublicAndAcceptHonestyPolicy();
-      const { superBlock, block, challenges } = projects;
-
-      cy.visit(`/learn/${superBlock}/${block}/${challenges[0].slug}`);
-      challenges.forEach(({ solution, slug }) => {
-        cy.location('pathname').should(
-          'eq',
-          `/learn/${superBlock}/${block}/${slug}`
-        );
-        cy.contains("I've completed this challenge")
-          .as('completedButton')
-          .should('be.disabled');
-        cy.get('#dynamic-front-end-form')
-          .get('#solution')
-          .type(solution, { delay: 0 });
-        cy.get('@completedButton').click();
-        cy.intercept('http://localhost:3000/project-completed').as(
-          'challengeCompleted'
-        );
-        cy.contains('Submit and go to next challenge').click();
-        cy.wait('@challengeCompleted')
-          .its('response.statusCode')
-          .should('eq', 200);
-      });
+      cy.submitResponsiveWebDesignProjects();
     });
     it('should be possible to claim and view certifications from the superBlock page', () => {
       cy.location().should(loc => {
-        expect(loc.pathname).to.eq(`/learn/${projects.superBlock}/`);
+        expect(loc.pathname).to.eq(`/learn/responsive-web-design/`);
       });
       cy.get('.donation-modal').should('be.visible');
       cy.contains('Ask me later').click();
       cy.get('.donation-modal').should('not.exist');
       // directed to claim-cert-block section
       cy.url().should('include', '#claim-cert-block');
-      cy.visit(`/learn/${projects.superBlock}/`);
+      cy.visit(`/learn/responsive-web-design`);
       // make sure that the window has not snapped to the top (a weird bug that
       // we never figured out and so could randomly reappear)
       cy.window().its('scrollY').should('not.equal', 0);
-      cy.contains('Claim Certification').should('not.be.disabled').click();
-      cy.contains('Share Certification').should('not.be.disabled').click();
+      cy.contains('Claim Certification').click();
+      cy.contains('Share Certification').click();
       cy.location().should(loc => {
         expect(loc.pathname).to.eq(
           '/certification/developmentuser/responsive-web-design'
