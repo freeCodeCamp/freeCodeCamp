@@ -8,7 +8,7 @@ dashedName: set-state-with-this-setstate
 
 # --description--
 
-前面的挑战涵盖了组件的 `state` 以及如何在 `constructor` 中初始化 state。 还有一种方法可以更改组件的 `state`， React 提供了 `setState` 方法来更新组件的 `state`。 在组件类中调用 `setState` 方法如下所示：`this.setState()`，传入键值对的对象， 其中键是 state 属性，值是更新后的 state 数据。 例如，如果我们在 state 中存储 `username`，并想要更新它，代码如下所示：
+前面的挑战涵盖了组件的 `state` 以及如何在 `constructor` 中初始化 state。 还有一种方法可以更改组件的 `state`。 React 提供了 `setState` 方法来更新组件的 `state`。 在组件类中调用 `setState` 方法如下所示：`this.setState()`，传入键值对的对象， 其中键是 state 属性，值是更新后的 state 数据。 例如，如果我们在 state 中存储 `username`，并想要更新它，代码如下所示：
 
 ```jsx
 this.setState({
@@ -16,11 +16,11 @@ this.setState({
 });
 ```
 
-React 要求永远不要直接修改 `state`，而是在 state 发生改变时始终使用 `this.setState()`。 此外，应该注意，React 可以批量处理多个 state 更新以提高性能。 这意味着通过 `setState` 方法进行的 state 更新可以是异步的。 `setState` 方法有一种替代语法可以解决异步问题， 虽然这很少用到，但是最好还是记住它！ 有关详细信息，请参阅[React 文档](https://facebook.github.io/react/docs/state-and-lifecycle.html)。
+React 要求永远不要直接修改 `state`，而是在 state 发生改变时始终使用 `this.setState()`。 此外，应该注意，React 可以批量处理多个 state 更新以提高性能。 这意味着通过 `setState` 方法进行的 state 更新可以是异步的。 `setState` 方法有一种替代语法可以解决异步问题， 虽然这很少用到，但是最好还是记住它！ 有关详细信息，请参阅[React 文档](https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous)。
 
 # --instructions--
 
-代码编辑器中有一个 `button` 元素，它有一个 `onClick()` 处理程序。 当 `button` 在浏览器中接收到单击事件时触发此处理程序，并运行 `MyComponent` 中定义的 `handleClick` 方法。 在 `handleClick` 方法中，使用 `this.setState()` 更新组件的 `state`。 设置 `state` 中的 `name` 属性为字符串 `React Rocks!`。
+代码编辑器中有一个 `button` 元素，它有一个 `onClick()` handler。 当 `button` 在浏览器中接收到单击事件时触发此 handler，并运行 `MyComponent` 中定义的 `handleClick` 方法。 在 `handleClick` 方法中，使用 `this.setState()` 更新组件的 `state`。 设置 `state` 中的 `name` 属性为字符串 `React Rocks!`。
 
 单击按钮查看渲染的 state 的更新。 如果不完全理解单击处理程序代码在此时的工作方式，请不要担心。 在接下来的挑战中会有讲述。
 

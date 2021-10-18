@@ -1,6 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc4
-title: Work with Data in D3
+title: Trabaja con datos en D3
 challengeType: 6
 forumTopicId: 301497
 dashedName: work-with-data-in-d3
@@ -8,15 +8,15 @@ dashedName: work-with-data-in-d3
 
 # --description--
 
-The D3 library focuses on a data-driven approach. When you have a set of data, you can apply D3 methods to display it on the page. Data comes in many formats, but this challenge uses a simple array of numbers.
+La biblioteca de D3 se centra en un acercamiento enfocado a los datos. Cuando tienes un conjunto de datos, puedes aplicar métodos D3 para mostrarlo en la página. Los datos vienen en muchos formatos, pero este desafío utiliza un simple arreglo de números.
 
-The first step is to make D3 aware of the data. The `data()` method is used on a selection of DOM elements to attach the data to those elements. The data set is passed as an argument to the method.
+El primer paso es hacer que D3 sea consciente de los datos. El método `data()` es usado en una selección de elementos DOM para adjuntar los datos a esos elementos. El conjunto de datos es pasado como argumento al método.
 
-A common workflow pattern is to create a new element in the document for each piece of data in the set. D3 has the `enter()` method for this purpose.
+Un patrón de flujo de trabajo común es crear un nuevo elemento en el documento para cada pieza de datos del conjunto. D3 tiene el método `enter()` para este propósito.
 
-When `enter()` is combined with the `data()` method, it looks at the selected elements from the page and compares them to the number of data items in the set. If there are fewer elements than data items, it creates the missing elements.
+Cuando `enter()` es combinado con el método `data()`, observa los elementos seleccionados de la página y los compara con la cantidad de artículos de datos en el conjunto. Si hay menos elementos que artículos de datos, crea los elementos restantes.
 
-Here is an example that selects a `ul` element and creates a new list item based on the number of entries in the array:
+Aquí hay un ejemplo que selecciona un elemento `ul` y crea un nuevo elemento de lista basado en la cantidad de entradas en el arreglo:
 
 ```html
 <body>
@@ -32,21 +32,21 @@ Here is an example that selects a `ul` element and creates a new list item based
 </body>
 ```
 
-It may seem confusing to select elements that don't exist yet. This code is telling D3 to first select the `ul` on the page. Next, select all list items, which returns an empty selection. Then the `data()` method reviews the dataset and runs the following code three times, once for each item in the array. The `enter()` method sees there are no `li` elements on the page, but it needs 3 (one for each piece of data in `dataset`). New `li` elements are appended to the `ul` and have the text `New item`.
+Puede parecer confuso seleccionar elementos que aún no existen. Este código le está diciendo a D3 que primero seleccione el `ul` en la página. A continuación, selecciona todos los artículos de la lista, lo cual devuelve una selección vacía. Entonces el método `data()` revisa el conjunto de datos y ejecuta el siguiente código tres veces, una vez por cada artículo en el arreglo. El método `enter()` observa que no hay elementos `li` en la página, pero necesita 3 (uno para cada pieza de datos en `dataset`). Se añaden nuevos elementos `li` al `ul` y tienen el texto `New item`.
 
 # --instructions--
 
-Select the `body` node, then select all `h2` elements. Have D3 create and append an `h2` tag for each item in the `dataset` array. The text in the `h2` should say `New Title`. Your code should use the `data()` and `enter()` methods.
+Selecciona el nodo `body`, luego selecciona todos los elementos `h2`. Haz que D3 cree y añada una etiqueta `h2` para cada artículo en el arreglo `dataset`. El texto en el `h2` debe decir `New Title`. Tu código debe usar los métodos `data()` y `enter()`.
 
 # --hints--
 
-Your document should have 9 `h2` elements.
+Tu documento debe tener 9 elementos `h2`.
 
 ```js
 assert($('h2').length == 9);
 ```
 
-The text in the `h2` elements should say `New Title`. The capitalization and spacing should match exactly.
+El texto en los elementos `h2` debe decir `New Title`. Las mayúsculas y los espacios deben coincidir exactamente.
 
 ```js
 assert(
@@ -56,13 +56,13 @@ assert(
 );
 ```
 
-Your code should use the `data()` method.
+Tu código debe usar el método `data()`.
 
 ```js
 assert(code.match(/\.data/g));
 ```
 
-Your code should use the `enter()` method.
+Tu código debe usar el método `enter()`.
 
 ```js
 assert(code.match(/\.enter/g));
