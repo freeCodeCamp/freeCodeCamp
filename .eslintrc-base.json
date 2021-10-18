@@ -136,10 +136,7 @@
     "radix": 2,
     "react/display-name": 2,
     "react/jsx-boolean-value": [2, "always"],
-    "react/jsx-closing-bracket-location": [
-      2,
-      { "selfClosing": "line-aligned", "nonEmpty": "props-aligned" }
-    ],
+    "react/jsx-closing-bracket-location": [2,{ "selfClosing": "line-aligned", "nonEmpty": "props-aligned" }],
     "react/jsx-no-undef": 2,
     "react/jsx-sort-props": [2, { "ignoreCase": true }],
     "react/jsx-uses-react": 2,
