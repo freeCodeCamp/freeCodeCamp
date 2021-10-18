@@ -68,39 +68,6 @@ button.close {
   color: inherit;
 }
 
-/* ====================================== */
-/* Never used */
-/* ====================================== */
-.alert .alert-link {
-  font-weight: bold;
-}
-
-.alert-success .alert-link {
-  color: #2b542c;
-}
-.alert-info .alert-link {
-  color: #245269;
-}
-.alert-warning .alert-link {
-  color: #66512c;
-}
-.alert-danger .alert-link {
-  color: #843534;
-}
-
-.alert-success hr {
-  border-top-color: #c9e2b3;
-}
-.alert-info hr {
-  border-top-color: #a6e1ec;
-}
-.alert-warning hr {
-  border-top-color: #f7e1b5;
-}
-.alert-danger hr {
-  border-top-color: #e4b9c0;
-}
-
 /* ============================================================================ */
 /* =============================== CUSTOM STYLES ============================== */
 /* ============================================================================ */
