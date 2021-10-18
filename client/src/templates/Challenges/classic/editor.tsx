@@ -38,7 +38,9 @@ import {
   updateFile,
   challengeTestsSelector,
   submitChallenge,
-  initTests
+  initTests,
+  isResettingSelector,
+  stopResetting
 } from '../redux';
 
 import './editor.css';
@@ -61,11 +63,13 @@ interface EditorProps {
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isProjectStep: boolean;
+  isResetting: boolean;
   output: string[];
   resizeProps: ResizePropsType;
   saveEditorContent: () => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
+  stopResetting: () => void;
   tests: Test[];
   theme: string;
   title: string;
@@ -104,16 +108,19 @@ const mapStateToProps = createSelector(
   canFocusEditorSelector,
   consoleOutputSelector,
   isDonationModalOpenSelector,
+  isResettingSelector,
   userSelector,
   challengeTestsSelector,
   (
     canFocus: boolean,
     output: string[],
     open,
+    isResetting: boolean,
     { theme = 'default' }: { theme: string },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
+    isResetting,
     output,
     theme,
     tests
@@ -128,7 +135,8 @@ const mapDispatchToProps = {
   setEditorFocusability,
   updateFile,
   submitChallenge,
-  initTests
+  initTests,
+  stopResetting
 };
 
 const modeMap = {
@@ -281,7 +289,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // Updates the model if the contents has changed. This is only necessary for
   // changes coming from outside the editor (such as code resets).
-  const updateEditorValues = () => {
+  const resetEditorValues = () => {
     const { challengeFiles, fileKey } = props;
     const { model } = data;
 
@@ -290,9 +298,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     )?.contents;
     if (model?.getValue() !== newContents) {
       model?.setValue(newContents ?? '');
-      return true;
-    } else {
-      return false;
     }
   };
 
@@ -1001,21 +1006,24 @@ const Editor = (props: EditorProps): JSX.Element => {
     // editor.
     const { editor } = data;
 
-    const hasChangedContents = updateEditorValues();
-    if (hasChangedContents && hasEditableRegion()) {
-      initializeDescriptionAndOutputWidgets();
-      updateDescriptionZone();
-      updateOutputZone();
-    }
-
-    if (hasChangedContents) {
+    if (props.isResetting) {
+      // NOTE: this looks a lot like a race condition, since stopResetting gets
+      // called in each editor and changes isResetting. However, all open editor
+      // are rendered in a batch (before stopResetting talks to redux), so they
+      // all get to this point. Also stopResetting is idempotent, so it doesn't
+      // matter that each editor calls it.
+      props.stopResetting();
+      resetEditorValues();
       focusIfTargetEditor();
     }
 
     if (props.initialTests) initTests(props.initialTests);
 
     if (hasEditableRegion() && editor) {
-      if (hasChangedContents) {
+      if (props.isResetting) {
+        initializeDescriptionAndOutputWidgets();
+        updateDescriptionZone();
+        updateOutputZone();
         showEditableRegion(editor);
       }
       // resetting test output
@@ -1048,7 +1056,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.challengeFiles]);
+  }, [props.challengeFiles, props.isResetting]);
   useEffect(() => {
     const { output } = props;
     const editableRegion = getEditableRegionFromRedux();
