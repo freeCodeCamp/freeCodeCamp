@@ -79,10 +79,10 @@
         ]
       },
       "css-box-model": {
-        "title": "CSS Box Model",
+        "title": "Modello a scatola di CSS",
         "intro": [
-          "Mark Rothko was known for his abstract style of painting. Rothko paintings commonly depicted rectangular regions of color in varying sizes.",
-          "In this lesson, you will be using CSS to create your own painting in Rothko's style. You will use many of the skills you have already been practicing, as well as new CSS tool such as blur and transform."
+          "Mark Rothko era noto per il suo stile astratto di pittura. I dipinti di Rothko raffiguravano comunemente regioni rettangolari di colore in varie dimensioni.",
+          "In questa lezione, userai CSS per creare il tuo dipinto nello stile di Rothko. Potrai utilizzare molte delle abilità che hai già praticato, così come i nuovi strumenti CSS tipo sfocatura e trasformazione."
         ]
       },
       "css-variables-skyline": {
@@ -92,22 +92,29 @@
           ""
         ]
       },
+      "registration-form": {
+        "title": "Modulo di Registrazione",
+        "intro": [
+          "",
+          ""
+        ]
+      },
       "accessibility-quiz": {
-        "title": "Accessibility Quiz",
+        "title": "Quiz Accessibilità",
         "intro": [
           "",
           ""
         ]
       },
       "css-picasso-painting": {
-        "title": "CSS Picasso Painting",
+        "title": "Dipinto Picasso in Css",
         "intro": [
-          "Pablo Picasso was known for his Cubism style of painting, a style recognized by representations of objects broken down and reassembled from multiple perspectives. Picasso's paintings are often highly abstract and thought provoking.",
-          "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
+          "Pablo Picasso era conosciuto per il suo stile cubista di pittura, uno stile riconosciuto dalle rappresentazioni di oggetti suddivisi e riassemblati da molteplici prospettive. I dipinti di Picasso sono spesso altamente astratti e stimolano il pensiero.",
+          "In questo corso, userai CSS per creare il tuo dipinto nello stile di Picasso. Imparerai le icone di FontAwesome SVG, il posizionamento CSS e rinforzerai le abilità che hai già imparato."
         ]
       },
       "css-piano": {
-        "title": "CSS Piano",
+        "title": "Piano CSS",
         "intro": [
           "",
           ""
@@ -327,15 +334,15 @@
   "relational-databases": {
     "title": "Database relazionali",
     "intro": [
-      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects."
+      "Per questi corsi, utilizzerai strumenti e software per veri sviluppatori tra cui VS Code, PostgreSQL, e la riga di comando Linux / Unix per completare i tutorial interattivi e costruire progetti."
     ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Conosci i Database Relazionali",
         "intro": [
-          "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
-          "Next, you will learn how to create and work with relational databases using PostgreSQL, a database management system, and SQL, the language of these databases.",
-          "Finally, you will learn Git, the version control system, and GitHub, a code repository hosting service - two essential tools of every developer."
+          "Questi corsi iniziano con i comandi Bash di base. Utilizzando il terminale, imparerai tutto dal navigare e manipolare un sistema di archiviazione, scripting in Bash, fino ad un utilizzo avanzato.",
+          "Successivamente, imparerai come creare e lavorare con i database relazionali utilizzando PostgreSQL, un sistema di gestione dei database e SQL, la lingua di questi database.",
+          "Infine, imparerai Git, il sistema di controllo delle versioni, e GitHub, un servizio di hosting di repository di codice - due strumenti essenziali di ogni sviluppatore."
         ]
       }
     }
