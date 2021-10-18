@@ -1,6 +1,6 @@
 ---
 id: a7bf700cd123b9a54eef01d5
-title: No Repeats Please
+title: 請不要重複
 challengeType: 5
 forumTopicId: 16037
 dashedName: no-repeats-please
@@ -8,67 +8,67 @@ dashedName: no-repeats-please
 
 # --description--
 
-Return the number of total permutations of the provided string that don't have repeated consecutive letters. Assume that all characters in the provided string are each unique.
+返回沒有重複連續字母的提供字符串的總排列數。 假設提供的字符串中的所有字符都是唯一的。
 
-For example, `aab` should return 2 because it has 6 total permutations (`aab`, `aab`, `aba`, `aba`, `baa`, `baa`), but only 2 of them (`aba` and `aba`) don't have the same letter (in this case `a`) repeating.
+例如，`aab` 應該返回 2，因爲它有 6 個排列（`aab`、`aab`、`aba`、`aba`、`baa` 和 `baa`），但其中只有 2 個（`aba` 和 `aba`）沒有重複相同字符（即 `a`）。
 
 # --hints--
 
-`permAlone("aab")` should return a number.
+`permAlone("aab")` 應返回 2。
 
 ```js
 assert.isNumber(permAlone('aab'));
 ```
 
-`permAlone("aab")` should return 2.
+`permAlone("aab")` 應該返回 2。
 
 ```js
 assert.strictEqual(permAlone('aab'), 2);
 ```
 
-`permAlone("aaa")` should return 0.
+`permAlone("aaa")` 應該返回 0。
 
 ```js
 assert.strictEqual(permAlone('aaa'), 0);
 ```
 
-`permAlone("aabb")` should return 8.
+`permAlone("aabb")`應返回 8。
 
 ```js
 assert.strictEqual(permAlone('aabb'), 8);
 ```
 
-`permAlone("abcdefa")` should return 3600.
+`permAlone("abcdefa")`應返回 3600。
 
 ```js
 assert.strictEqual(permAlone('abcdefa'), 3600);
 ```
 
-`permAlone("abfdefa")` should return 2640.
+`permAlone("abfdefa")`應該返回 2640。
 
 ```js
 assert.strictEqual(permAlone('abfdefa'), 2640);
 ```
 
-`permAlone("zzzzzzzz")` should return 0.
+`permAlone("zzzzzzzz")` 應返回 0。
 
 ```js
 assert.strictEqual(permAlone('zzzzzzzz'), 0);
 ```
 
-`permAlone("a")` should return 1.
+`permAlone("a")` 應該返回 1。
 
 ```js
 assert.strictEqual(permAlone('a'), 1);
 ```
 
-`permAlone("aaab")` should return 0.
+`permAlone("aaab")` 應該返回 0。
 
 ```js
 assert.strictEqual(permAlone('aaab'), 0);
 ```
 
-`permAlone("aaabb")` should return 12.
+`permAlone("aaabb")` 應返回 12.
 
 ```js
 assert.strictEqual(permAlone('aaabb'), 12);

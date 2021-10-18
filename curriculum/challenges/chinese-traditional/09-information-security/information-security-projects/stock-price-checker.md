@@ -27,7 +27,9 @@ dashedName: stock-price-checker
 3.  添加安全功能到 `server.js`。
 4.  在 `tests/2_functional-tests.js` 中創建所有的功能測試
 
-在 `tests/2_functional-tests.js` 中編寫下以下測試：
+**注意** 隱私考慮：由於每個 IP 只能接受一個贊（like），你必須保存 IP 地址。 必須遵守數據隱私法規，例如《通用數據保護條例》。 一個選項是獲得保存用戶數據的權限，但是匿名化則要簡單得多。 對於此挑戰，請記住在將 IP 地址保存到數據庫之前對其進行匿名化。 如果你想知道如何做到這一點，你可以選擇散列數據、截斷它、或將 IP 地址的一部分設置爲 0。
+
+在 `tests/2_functional-tests.js` 中編寫以下測試：
 
 -   查看股價：發送 GET 請求到 `/api/stock-prices/`
 -   查看一個股票並關注它：發送 GET 請求到 `/api/stock-prices/`
@@ -37,7 +39,7 @@ dashedName: stock-price-checker
 
 # --hints--
 
-提交自己的項目，而不是示例的 URL。
+提交你自己的項目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -74,7 +76,7 @@ async (getUserInput) => {
 };
 ```
 
-`stockData` 屬性包括字符串 `stock` 代碼、數字 `price`，以及數字 `likes`。
+`stockData` 屬性包括字符串 `stock`、數字 `price`，以及數字 `likes`。
 
 ```js
 async (getUserInput) => {
@@ -89,7 +91,7 @@ async (getUserInput) => {
 };
 ```
 
-你也可以用作爲 `true`（布爾值）來傳遞 `like` 字段，讓你的偏好添加到股票中。 每個 IP 應該只接受 1 個贊。
+你也可以將 `like` 字段作爲 `true`（布爾值）傳遞，讓你的偏好添加到股票中。 每個 IP 應該只接受 1 個贊（like）。
 
 ```js
 

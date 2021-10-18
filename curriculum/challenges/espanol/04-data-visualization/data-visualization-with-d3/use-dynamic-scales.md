@@ -1,6 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bdd
-title: Use Dynamic Scales
+title: Utiliza escalas dinámicas
 challengeType: 6
 forumTopicId: 301495
 dashedName: use-dynamic-scales
@@ -8,13 +8,13 @@ dashedName: use-dynamic-scales
 
 # --description--
 
-The D3 `min()` and `max()` methods are useful to help set the scale.
+Los métodos `min()` y `max()` de D3 son útiles para ayudar a establecer la escala.
 
-Given a complex data set, one priority is to set the scale so the visualization fits the SVG container's width and height. You want all the data plotted inside the SVG canvas so it's visible on the web page.
+Dado un conjunto de datos complejo, una de las prioridades es establecer la escala para que la visualización encaje la anchura y altura del contenedor SVG. Deseas que todos los datos estén trazados dentro del lienzo SVG para que sea visible en la página web.
 
-The example below sets the x-axis scale for scatter plot data. The `domain()` method passes information to the scale about the raw data values for the plot. The `range()` method gives it information about the actual space on the web page for the visualization.
+El siguiente ejemplo establece la escala del eje x para datos de un diagrama de dispersión. El método `domain()` envía información a la escala sobre los valores originales de los datos para el trazado. El método `range()` le proporciona información sobre el espacio actual en la página web para la visualización.
 
-In the example, the domain goes from 0 to the maximum in the set. It uses the `max()` method with a callback function based on the x values in the arrays. The range uses the SVG canvas' width (`w`), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG canvas.
+En el ejemplo, el dominio va de 0 al máximo en el conjunto. Utiliza el método `max()` con una función callback basada en los valores de x en los arreglos. El rango usa la anchura del lienzo SVG (`w`), pero incluye algo de padding (relleno), también. Esto pone espacio entre los puntos del diagrama de dispersión y el borde del lienzo SVG.
 
 ```js
 const dataset = [
@@ -38,29 +38,29 @@ const xScale = d3.scaleLinear()
   .range([padding, w - padding]);
 ```
 
-The padding may be confusing at first. Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG canvas). Including the padding in the `range()` method forces the plot to start at 30 along that line (instead of 0), and end at 470 (instead of 500).
+El padding (relleno) podría ser confuso en un principio. Imagínate el eje x como una línea horizontal de 0 a 500 (el valor del ancho del lienzo SVG). Incluir el padding en el método `range()` obliga al trazado a empezar en 30 a lo largo de esa línea (en lugar de 0), y terminar en 470 (en lugar de 500).
 
 # --instructions--
 
-Use the `yScale` variable to create a linear y-axis scale. The domain should start at zero and go to the maximum `y` value in the set. The range should use the SVG height (`h`) and include padding.
+Utiliza la variable `yScale` para crear una escala lineal para el eje y. El dominio debe comenzar en cero e ir hasta el máximo valor de `y` en el conjunto. El rango debe usar la altura de SVG (`h`) e incluir padding (relleno).
 
-**Note:** Remember to keep the plot right-side-up. When you set the range for the y coordinates, the higher value (height minus padding) is the first argument, and the lower value is the second argument.
+**Nota:** Recuerda mantener el trazado hacia arriba. Cuando estableces el rango para las coordenadas y, el valor más alto (altura menos el relleno) es el primer argumento, y el valor más bajo es el segundo argumento.
 
 # --hints--
 
-The text in the `h2` should be `30`.
+El texto en el `h2` debe ser `30`.
 
 ```js
 assert(output == 30 && $('h2').text() == '30');
 ```
 
-The `domain()` of yScale should be equivalent to `[0, 411]`.
+El `domain()` de yScale debe ser equivalente a `[0, 411]`.
 
 ```js
 assert(JSON.stringify(yScale.domain()) == JSON.stringify([0, 411]));
 ```
 
-The `range()` of yScale should be equivalent to `[470, 30]`.
+El `range()` de yScale debe ser equivalente a `[470, 30]`.
 
 ```js
 assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]));

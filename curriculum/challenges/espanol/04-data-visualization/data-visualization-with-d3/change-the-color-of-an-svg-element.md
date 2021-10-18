@@ -18,7 +18,7 @@ Agrega un método `attr()` para establecer el `fill` (relleno) de todas las barr
 
 # --hints--
 
-Todas las barras deberían tener un color de `fill` azul marino.
+Todas las barras deben tener un color de `fill` azul marino.
 
 ```js
 assert($('rect').css('fill') == 'rgb(0, 0, 128)');
