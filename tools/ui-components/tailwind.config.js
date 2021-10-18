@@ -14,18 +14,26 @@ module.exports = {
       'default-background-secondary': 'var(--default-background-secondary)',
       'default-background-tertiary': 'var(--default-background-tertiary)',
       'default-background-quaternary': 'var(--default-background-quaternary)',
-      'state-foreground-success': 'var(--state-foreground-success)',
-      'state-background-success': 'var(--state-background-success)',
-      'state-border-success': 'var(--state-border-success)',
-      'state-foreground-info': 'var(--state-foreground-info)',
-      'state-background-info': 'var(--state-background-info)',
-      'state-border-info': 'var(--state-border-info)',
-      'state-foreground-warning': 'var(--state-foreground-warning)',
-      'state-background-warning': 'var(--state-background-warning)',
-      'state-border-warning': 'var(--state-border-warning)',
-      'state-foreground-danger': 'var(--state-foreground-danger)',
-      'state-background-danger': 'var(--state-background-danger)',
-      'state-border-danger': 'var(--state-border-danger)'
+      success: {
+        100: 'var(--success-10)',
+        200: 'var(--success-20)',
+        900: 'var(--success-90)'
+      },
+      info: {
+        100: 'var(--info-10)',
+        200: 'var(--info-20)',
+        900: 'var(--info-90)'
+      },
+      warning: {
+        100: 'var(--warning-10)',
+        200: 'var(--warning-20)',
+        900: 'var(--warning-90)'
+      },
+      danger: {
+        100: 'var(--danger-10)',
+        200: 'var(--danger-20)',
+        900: 'var(--danger-90)'
+      }
     }
   },
   variants: {

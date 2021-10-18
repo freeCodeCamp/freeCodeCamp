@@ -12,13 +12,10 @@ export interface AlertProps {
 }
 
 const variantClasses: Record<AlertVariant, string> = {
-  success:
-    'text-state-foreground-success bg-state-background-success border-state-border-success',
-  info: 'text-state-foreground-info bg-state-background-info border-state-border-info',
-  warning:
-    'text-state-foreground-warning bg-state-background-warning border-state-border-warning',
-  danger:
-    'text-state-foreground-danger bg-state-background-danger border-state-border-danger'
+  success: 'text-success-900 bg-success-100 border-success-200',
+  info: 'text-info-900 bg-info-100 border-info-200',
+  warning: 'text-warning-900 bg-warning-100 border-warning-200',
+  danger: 'text-danger-900 bg-danger-100 border-danger-200'
 };
 
 /**

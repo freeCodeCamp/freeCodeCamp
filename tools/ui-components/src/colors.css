@@ -32,21 +32,21 @@
   --red80: #f82153;
   --red90: #850000;
 
-  --state-foreground-success: #3c763d;
-  --state-background-success: #dff0d8;
-  --state-border-success: #d6e9c6;
+  --success-10: #dff0d8;
+  --success-20: #d6e9c6;
+  --success-90: #3c763d;
 
-  --state-foreground-info: #31708f;
-  --state-background-info: #d9edf7;
-  --state-border-info: #bce8f1;
+  --info-10: #d9edf7;
+  --info-20: #bce8f1;
+  --info-90: #31708f;
 
-  --state-foreground-warning: #8a6d3b;
-  --state-background-warning: #fcf8e3;
-  --state-border-warning: #faebcc;
+  --warning-10: #fcf8e3;
+  --warning-20: #faebcc;
+  --warning-90: #8a6d3b;
 
-  --state-foreground-danger: #a94442;
-  --state-background-danger: #f2dede;
-  --state-border-danger: #ebccd1;
+  --danger-10: #f2dede;
+  --danger-20: #ebccd1;
+  --danger-90: #a94442;
 }
 
 html,
