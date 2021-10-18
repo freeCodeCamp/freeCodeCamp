@@ -1,5 +1,6 @@
 import React from 'react';
 import './alert.css';
+import { CloseButton } from '../close-button';
 
 type AlertVariant = 'success' | 'info' | 'warning' | 'danger';
 
@@ -11,7 +12,7 @@ export interface AlertProps {
   onDismiss?: () => void;
 }
 
-const variants: Record<AlertVariant, string> = {
+const variantClasses: Record<AlertVariant, string> = {
   success:
     'text-state-foreground-success bg-state-background-success border-state-border-success',
   info: 'text-state-foreground-info bg-state-background-info border-state-border-info',
@@ -32,25 +33,23 @@ export function Alert({
   onDismiss
 }: AlertProps): JSX.Element {
   const isDismissable = !!onDismiss;
+  const variantClass = variantClasses[variant];
 
   const classes = [
-    'p-4 mb-6 border border-transparent break-words',
-    variants[variant],
-    isDismissable ? 'alert-dismissable pr-10' : '',
+    'relative p-4 mb-6 border border-transparent break-words',
+    variantClass,
+    isDismissable ? 'pr-10' : '',
     className
   ].join(' ');
 
   return (
     <div className={classes} role='alert'>
       {isDismissable && (
-        <button
-          aria-label={dismissText}
-          className='close'
+        <CloseButton
+          className='absolute right-4'
+          label={dismissText}
           onClick={onDismiss}
-          type='button'
-        >
-          ×
-        </button>
+        />
       )}
       {children}
     </div>
