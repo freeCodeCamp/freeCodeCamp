@@ -47,7 +47,8 @@ export class Header extends React.Component<
       // since the search bar is part of the menu on small screens, clicks on
       // the search bar should not toggle the menu
       this.searchBarRef.current &&
-      !this.searchBarRef.current.contains(event.target)
+      !this.searchBarRef.current.contains(event.target) &&
+      !(event.target instanceof HTMLSelectElement)
     ) {
       this.toggleDisplayMenu();
     }

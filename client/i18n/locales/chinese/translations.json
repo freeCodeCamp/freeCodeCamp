@@ -356,7 +356,7 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 500+ 篇教程",
+    "placeholder": "搜索 600+ 篇教程",
     "see-results": "查看 {{searchQuery}} 的所有结果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？试试使用页面上的搜索框。",
@@ -364,7 +364,7 @@
   },
   "misc": {
     "offline": "你已离线，学习进度可能不会被保存",
-    "server-offline": "The server could not be reached and your progress may not be saved. Please contact <0>support</0> if this message persists",
+    "server-offline": "无法连接到服务器，你的进度可能无法保存。如果仍然出现此消息，请联系 <0>support</0>。",
     "unsubscribed": "你已成功取消订阅",
     "keep-coding": "无论你做什么，都要继续编程！",
     "email-signup": "邮件注册",
@@ -464,7 +464,7 @@
     "unlink-success": "你已成功取消 {{website}} 链接",
     "provide-username": "检查你是否提供用户名和报告",
     "report-sent": "已通过 {{email}} 向团队发送副本报告",
-    "certificate-missing": "The certification you tried to view does not exist"
+    "certificate-missing": "你尝试查看的认证不存在"
   },
   "validation": {
     "max-characters": "字符数最多为 288 个，你还可以输入 {{charsLeft}} 个字符",

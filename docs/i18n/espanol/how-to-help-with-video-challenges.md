@@ -4,7 +4,7 @@ Los retos en vídeo son un nuevo tipo de desafío en el currículo de freeCodeCa
 
 Un desafío de vídeo es una pequeña sección de un curso de vídeo completo sobre un tema en particular. Una página de desafío de vídeo inserta un vídeo de YouTube. Cada página de desafío tiene una única pregunta de selección múltiple relacionada con el vídeo. El usuario deberá responder correctamente la pregunta antes de avanzar al siguiente desafío de video en el curso.
 
-Las páginas de desafío de vídeo son creadas por miembros del equipo freeCodeCamp. Los vídeos de YouTube también son subidos por miembros del equipo freeCodeCamp. Muchos de los desafíos de video todavía no tienen preguntas asociadas con ellos.
+Las páginas de desafío de vídeo son creadas por miembros del equipo de freeCodeCamp. Los vídeos de YouTube también son subidos por miembros del equipo de freeCodeCamp. Muchos de los desafíos de video todavía no tienen preguntas asociadas a ellos.
 
 Puedes ayudar creando preguntas de selección múltiple relacionadas con las secciones de video y agregando las preguntas a los archivos markdown para los desafíos de video.
 
@@ -14,19 +14,19 @@ A continuación se muestra una plantilla de cómo se ven los archivos markdown d
 
 ````md
 ---
-id: Unique identifier (alphanumerical, MongoDB_id)
-title: Challenge Title
+id: Identificador único (alfanumérico, MongoDB_id)
+title: Título del desafío
 challengeType: 11
-videoId: 'YouTube videoId for video challenge'
+videoId: 'Id del video de YouTube del video desafío'
 forumTopicId: 12345
 ---
 
-# --description--
+# --descripción--
 
-Challenge description text, in markdown
+Texto de descripción del desafío, en markdown
 
-```html
-<div>example code</div>
+`` `html
+<div>código de ejemplo</div>
 ````
 
 # --question--
@@ -80,12 +80,8 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-A continuación, accede al vídeo de YouTube con esa `videoId`. The URL for the video will be:
-https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
-
-In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
-
-Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
+A continuación, accede al vídeo de YouTube con esa `videoId`. La URL del video será:
+https://www.youtube.com/watch?v=[videoId] (reemplaza `videoId` en la URL por el id del video, sin los corchetes).
 
 ### Añade la pregunta al archivo markdown
 
@@ -117,7 +113,7 @@ More answers
 1
 ```
 
-Add/Update the question text under the part that shows:
+Agrega/Actualiza el texto de la pregunta debajo de la parte que dice:
 
 ```
 # --question--
@@ -130,11 +126,11 @@ Añade/Actualiza las respuestas (`Answer 1`, `Answer 2`, y así) debajo de `## -
 ### Ejemplos de preguntas
 
 ````md
-# --question--
+# --pregunta--
 
-## --text--
+## --texto--
 
-What does this JavaScript code log to the console?
+Qué muestra este código JavaScript en la consola?
 
 ```js
 console.log('hello world');
@@ -142,7 +138,7 @@ console.log('hello world');
 
 ## --answers--
 
-hello _world_
+hola _mundo_
 
 ---
 
@@ -160,11 +156,11 @@ hola mundo
 ````
 
 ````md
-# --question--
+# --pregunta--
 
-## --text--
+## --texto--
 
-What will print out after running this code:
+¿Qué se imprimirá después de ejecutar este código?:
 
 ```py
 width = 15

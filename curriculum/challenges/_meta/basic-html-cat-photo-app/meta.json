@@ -1,6 +1,7 @@
 {
   "name": "Basic HTML Cat Photo App",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "basic-html-cat-photo-app",
   "order": 9,
   "time": "5 hours",

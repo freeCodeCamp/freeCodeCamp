@@ -8,11 +8,15 @@ import { create, ReactTestRendererJSON } from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 import envData from '../../../../config/env.json';
+import {
+  availableLangs,
+  langDisplayNames
+} from '../../../../config/i18n/all-langs';
 import AuthOrProfile from './components/auth-or-profile';
 import { NavLinks } from './components/nav-links';
 import { UniversalNav } from './components/universal-nav';
 
-const { apiLocation } = envData;
+const { apiLocation, clientLocale } = envData;
 
 jest.mock('../../analytics');
 
@@ -63,7 +67,9 @@ describe('<NavLinks />', () => {
         hasCurriculumNavItem(view) &&
         hasForumNavItem(view) &&
         hasNewsNavItem(view) &&
-        hasRadioNavItem(view)
+        hasRadioNavItem(view) &&
+        hasLanguageHeader(view) &&
+        hasLanguageDropdown(view)
     ).toBeTruthy();
   });
 
@@ -123,7 +129,62 @@ describe('<NavLinks />', () => {
         hasForumNavItem(view) &&
         hasNewsNavItem(view) &&
         hasRadioNavItem(view) &&
-        hasSignOutNavItem(view)
+        hasSignOutNavItem(view) &&
+        hasLanguageHeader(view) &&
+        hasLanguageDropdown(view)
+    ).toBeTruthy();
+  });
+
+  it('has expected available languages in the language dropdown', () => {
+    const landingPageProps = {
+      fetchState: {
+        pending: false
+      },
+      user: {
+        isDonating: true,
+        username: 'moT01',
+        theme: 'default'
+      },
+      i18n: {
+        language: 'en'
+      },
+      t: t,
+      toggleNightMode: (theme: string) => theme
+    };
+    const utils = ShallowRenderer.createRenderer();
+    utils.render(<NavLinks {...landingPageProps} />);
+    const view = utils.getRenderOutput();
+    expect(
+      hasLanguageHeader(view) &&
+        hasLanguageDropdown(view) &&
+        hasAllAvailableLanguagesInDropdown(view)
+    ).toBeTruthy();
+  });
+
+  it('has default language selected in language dropdown based on client config', () => {
+    const landingPageProps = {
+      fetchState: {
+        pending: false
+      },
+      user: {
+        isDonating: true,
+        username: 'moT01',
+        theme: 'default'
+      },
+      i18n: {
+        language: 'en'
+      },
+      t: t,
+      toggleNightMode: (theme: string) => theme
+    };
+    const utils = ShallowRenderer.createRenderer();
+    utils.render(<NavLinks {...landingPageProps} />);
+    const view = utils.getRenderOutput();
+    expect(
+      hasLanguageHeader(view) &&
+        hasLanguageDropdown(view) &&
+        hasAllAvailableLanguagesInDropdown(view) &&
+        hasDefaultLanguageInLanguageDropdown(view, clientLocale)
     ).toBeTruthy();
   });
 });
@@ -205,6 +266,7 @@ const navigationLinks = (component: JSX.Element, key: string) => {
   );
   return target.props;
 };
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const profileNavItem = (component: any) => component.children[0];
 
@@ -265,6 +327,38 @@ const hasRadioNavItem = (component: JSX.Element) => {
   return (
     children[0].props.children === 'buttons.radio' &&
     to === 'https://coderadio.freecodecamp.org'
+  );
+};
+
+const hasLanguageHeader = (component: JSX.Element) => {
+  const { children } = navigationLinks(component, 'lang-header');
+  return children === 'footer.language';
+};
+
+const hasLanguageDropdown = (component: JSX.Element) => {
+  const { children } = navigationLinks(component, 'language-dropdown');
+  return children.type === 'select';
+};
+
+const hasDefaultLanguageInLanguageDropdown = (
+  component: JSX.Element,
+  defaultLanguage: string
+) => {
+  const { children } = navigationLinks(component, 'language-dropdown');
+  return children.props.value === defaultLanguage;
+};
+
+const hasAllAvailableLanguagesInDropdown = (component: JSX.Element) => {
+  const { children }: { children: JSX.Element } = navigationLinks(
+    component,
+    'language-dropdown'
+  );
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  return children.props.children.every(
+    ({ props }: { props: { value: string; children: string } }) =>
+      availableLangs.client.includes(props.value) &&
+      (langDisplayNames as Record<string, string>)[props.value] ===
+        props.children
   );
 };
 

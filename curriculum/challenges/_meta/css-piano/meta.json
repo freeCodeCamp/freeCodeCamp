@@ -1,6 +1,7 @@
 {
   "name": "CSS Piano",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "css-piano",
   "order": 13,
   "time": "5 hours",

@@ -364,7 +364,7 @@
   },
   "misc": {
     "offline": "Sembra che tu sia offline, i tuoi progressi potrebbero non essere salvati",
-    "server-offline": "The server could not be reached and your progress may not be saved. Please contact <0>support</0> if this message persists",
+    "server-offline": "Il server non può essere raggiunto e i tuoi progressi potrebbero non essere salvati. Contatta il <0>supporto</0> se questo messaggio persiste",
     "unsubscribed": "Hai annullato correttamente l'iscrizione",
     "keep-coding": "Qualsiasi cosa tu abbia intenzione di fare, continua a programmare!",
     "email-signup": "Registrazione con email",
@@ -428,7 +428,7 @@
     "wrong-updating": "Qualcosa è andato storto nell'aggiornamento del tuo account. Ti preghiamo di controllare e riprovare",
     "updated-preferences": "Abbiamo aggiornato le tue preferenze",
     "email-invalid": "Formato email non valido",
-    "email-valid": "Your email has successfully been changed, happy coding!",
+    "email-valid": "La tua email è stata modificata con successo, happy coding!",
     "bad-challengeId": "currentChallengeId non è un ID challenge valido",
     "theme-invalid": "Tema non valido",
     "theme-set": "Tema già impostato",
@@ -464,7 +464,7 @@
     "unlink-success": "Hai scollegato correttamente il tuo {{website}}",
     "provide-username": "Spunta la casella se hai fornito un nome utente e un report",
     "report-sent": "Un report è stato inviato al team con {{email}} in copia",
-    "certificate-missing": "The certification you tried to view does not exist"
+    "certificate-missing": "La certificazione che hai cercato di visualizzare non esiste"
   },
   "validation": {
     "max-characters": "C'è un limite massimo di 288 caratteri, hai {{charsLeft}} rimanenti",

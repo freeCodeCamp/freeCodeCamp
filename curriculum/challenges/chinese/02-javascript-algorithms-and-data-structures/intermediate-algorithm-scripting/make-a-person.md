@@ -23,10 +23,19 @@ setFullName(firstAndLast)
 
 # --hints--
 
-`Object.keys(bob).length` 应返回 6。
+不应添加属性。 `Object.keys(bob).length` 应返回 6。
 
 ```js
-assert.deepEqual(Object.keys(bob).length, 6);
+assert.strictEqual(
+  Object.keys((function () {
+    let bob = new Person('Bob Ross');
+    bob.setFirstName('Haskell');
+    bob.setLastName('Curry');
+    bob.setFullName('John Smith');
+    return bob;
+  })()).length,
+  6
+ );
 ```
 
 `bob instanceof Person` 应返回 `true`。

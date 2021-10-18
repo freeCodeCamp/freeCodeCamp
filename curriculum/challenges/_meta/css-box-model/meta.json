@@ -1,6 +1,7 @@
 {
   "name": "CSS Box Model",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "css-box-model",
   "order": 12,
   "time": "5 hours",

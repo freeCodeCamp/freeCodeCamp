@@ -35,6 +35,18 @@ assert($('input[type="radio"]').prop('checked'));
 assert($('input[type="checkbox"]').prop('checked'));
 ```
 
+不應該更改 `Indoor` 標籤的內部文本。
+
+```js
+assert.equal(document.querySelector('label[for="indoor"]')?.innerText?.trim(), 'Indoor');
+```
+
+不應該更改 `Loving` 標籤的內部文本。
+
+```js
+assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), 'Loving');
+```
+
 # --seed--
 
 ## --seed-contents--

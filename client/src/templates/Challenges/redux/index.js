@@ -33,6 +33,7 @@ const initialState = {
   hasCompletedBlock: false,
   isCodeLocked: false,
   isBuildEnabled: true,
+  isResetting: false,
   logsOut: [],
   modal: {
     completion: false,
@@ -117,6 +118,7 @@ export const challengeMounted = createAction(actionTypes.challengeMounted);
 export const checkChallenge = createAction(actionTypes.checkChallenge);
 export const executeChallenge = createAction(actionTypes.executeChallenge);
 export const resetChallenge = createAction(actionTypes.resetChallenge);
+export const stopResetting = createAction(actionTypes.stopResetting);
 export const submitChallenge = createAction(actionTypes.submitChallenge);
 
 export const moveToTab = createAction(actionTypes.moveToTab);
@@ -146,6 +148,7 @@ export const isCompletionModalOpenSelector = state =>
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
+export const isResettingSelector = state => state[ns].isResetting;
 
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
@@ -295,9 +298,14 @@ export const reducer = handleActions(
           text,
           testString
         })),
-        consoleOut: []
+        consoleOut: [],
+        isResetting: true
       };
     },
+    [actionTypes.stopResetting]: state => ({
+      ...state,
+      isResetting: false
+    }),
     [actionTypes.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload

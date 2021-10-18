@@ -157,7 +157,9 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     if (this.state.isPictureUrlValid === false) {
       return (
         <HelpBlock>
-          <Alert bsStyle='info'>{t('validation.url-not-image')}</Alert>
+          <Alert bsStyle='info' closeLabel={t('buttons.close')}>
+            {t('validation.url-not-image')}
+          </Alert>
         </HelpBlock>
       );
     } else {

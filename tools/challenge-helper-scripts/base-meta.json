@@ -1,6 +1,7 @@
 {
   "name": "",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "",
   "order": 42,
   "time": "5 hours",

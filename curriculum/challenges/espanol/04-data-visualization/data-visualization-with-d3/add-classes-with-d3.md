@@ -16,7 +16,7 @@ El método `attr()` funciona de la misma manera que `style()`. Toma valores sepa
 selection.attr("class", "container");
 ```
 
-Tenga en cuenta que el parámetro `class` seguirá siendo el mismo siempre que necesite agregar una clase y solo cambiará el parámetro `container`.
+Ten en cuenta que el parámetro `class` seguirá siendo el mismo siempre que necesites agregar una clase y solo cambiará el parámetro `container`.
 
 # --instructions--
 

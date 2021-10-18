@@ -120,11 +120,11 @@ class Project extends Component<ProjectProps> {
   }
 
   handleSubmit({
-    isShouldCompletionModalOpen
+    showCompletionModal
   }: {
-    isShouldCompletionModalOpen: boolean;
+    showCompletionModal: boolean;
   }): void {
-    if (isShouldCompletionModalOpen) {
+    if (showCompletionModal) {
       this.props.openCompletionModal();
     }
   }
@@ -138,6 +138,7 @@ class Project extends Component<ProjectProps> {
           forumTopicId,
           title,
           description,
+          instructions,
           superBlock,
           block,
           translationPending
@@ -175,7 +176,10 @@ class Project extends Component<ProjectProps> {
                 >
                   {title}
                 </ChallengeTitle>
-                <ChallengeDescription description={description} />
+                <ChallengeDescription
+                  description={description}
+                  instructions={instructions}
+                />
                 <SolutionForm
                   challengeType={challengeType}
                   description={description}
@@ -216,6 +220,7 @@ export const query = graphql`
       forumTopicId
       title
       description
+      instructions
       challengeType
       helpCategory
       superBlock
