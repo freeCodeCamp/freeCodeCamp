@@ -10,7 +10,7 @@ dashedName: return-part-of-an-array-using-the-slice-method
 
 O método `slice` retorna uma fatia de elementos de um array. Ele pode receber dois argumentos, sendo o primeiro o índice de onde começar a fatiar e o segundo de onde terminar. O índice de fim não é inclusivo. Se os argumentos não forem providenciados, o padrão é começar pelo início e terminar no fim, ou seja, é uma forma simples de criar uma cópia do array inteiro. O método `slice` retorna um novo array sem modificar o original.
 
-Um exemplo:
+Exemplo:
 
 ```js
 var arr = ["Cat", "Dog", "Tiger", "Zebra"];

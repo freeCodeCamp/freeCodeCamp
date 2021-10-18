@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { Alert } from '@freecodecamp/react-bootstrap';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import './flash.css';
 
@@ -43,6 +43,7 @@ function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
           <Alert
             bsStyle={type}
             className='flash-message'
+            closeLabel={t('buttons.close')}
             onDismiss={handleClose}
           >
             {t(message, variables)}

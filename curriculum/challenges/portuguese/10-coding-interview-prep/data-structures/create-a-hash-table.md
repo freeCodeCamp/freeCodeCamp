@@ -1,6 +1,6 @@
 ---
 id: 587d825b367417b2b2512c8e
-title: Create a Hash Table
+title: Criar uma tabela hash
 challengeType: 1
 forumTopicId: 301627
 dashedName: create-a-hash-table
@@ -8,23 +8,23 @@ dashedName: create-a-hash-table
 
 # --description--
 
-In this challenge we will learn about hash tables. A Hash table is used to implement associative arrays, or mappings of key-value pairs, like the objects and Maps we have just been studying. A JavaScript object could be implemented as a hash table, for instance (its actual implementation will depend on the environment it's running in). The way a hash table works is that it takes a key input and hashes this key in a deterministic way to some numerical value. This numerical value is then used as the actual key the associated value is stored by. Then, if you try to access the same key again, the hashing function will process the key, return the same numerical result, which will then be used to look up the associated value. This provides very efficient O(1) lookup time on average.
+Neste desafio, aprenderemos sobre tabelas hash. Uma tabela hash é usada para implementar arrays associativos ou mapeamentos de pares chave-valor, como os objetos e mapas que temos estudado. Um objeto JavaScript pode ser implementado como uma tabela hash, por exemplo (a implementação de fato dependerá do ambiente em que estiver rodando). O modo como uma tabela hash funciona é recebendo uma entrada de chave e fazendo o hash dessa chave de modo determinístico para algum valor numérico. Este valor numérico é então usado como a chave real através da qual o valor associado é armazenado. Depois, se você tentar acessar a mesma chave novamente, a função de hashing processará a chave, retorna o mesmo resultado numérico e ele será usado para procurar o valor associado. Isto proporciona um tempo de pesquisa O(1) muito eficiente, em média.
 
-Hash tables can be implemented as arrays with hash functions producing array indices within a specified range. In this method, the choice of the array size is important, as is the hashing function. For instance, what if the hashing function produces the same value for two different keys? This is called a collision. One way to handle collisions is to just store both key-value pairs at that index. Then, upon lookup of either, you would have to iterate through the bucket of items to find the key you are looking for. A good hashing function will minimize collisions to maintain efficient search time.
+As tabelas hash podem ser implementadas como arrays com funções de hash produzindo índices de array dentro de um intervalo especificado. Nesse método, a escolha do tamanho do array é importante, assim como a função de hashing. Por exemplo, o que aconteceria se a função de hashing produzisse o mesmo valor para duas chaves diferentes? A isso chamamos de colisão. Uma maneira de lidar com colisões é apenas armazenar os dois pares chave-valor naquele índice. Então, ao consultar qualquer um, você teria que iterar através do grupo de itens para encontrar a chave que está procurando. Uma boa função de hashing minimizará colisões para manter o tempo de busca eficiente.
 
-Here, we won't be concerned with the details of hashing or hash table implementation, we will just try to get a general sense of how they work.
+Aqui, não nos preocuparemos com os detalhes da implementação do hashing e das tabelas hash. Tentaremos apenas ter uma noção geral de como funcionam.
 
 # --instructions--
 
-Let's create the basic functionality of a hash table. We've created a naive hashing function for you to use. You can pass a string value to the function `hash` and it will return a hashed value you can use as a key for storage. Store items based on this hashed value in the `this.collection` object. Create these three methods: `add`, `remove`, and `lookup`. The first should accept a key value pair to add to the hash table. The second should remove a key-value pair when passed a key. The third should accept a key and return the associated value or `null` if the key is not present.
+Vamos criar a funcionalidade básica de uma tabela hash. Criamos uma função de hashing simples para sua utilização. Você pode passar um valor de string para a função `hash` e ele retornará um valor de hash que você pode usar como chave para o armazenamento. Armazene itens baseados neste valor de hash no objeto `this.collection`. Crie esses três métodos: `add`, `remove` e `lookup`. O primeiro deve aceitar um par de chave-valor para adicionar à tabela hash. O segundo deve remover um par de chave-valor quando recebe uma chave. O terceiro deve aceitar uma chave e retornar o valor associado ou `null` se a chave não estiver presente.
 
-Be sure to write your code to account for collisions!
+Não se esqueça de escrever seu código para levar em conta as colisões!
 
-**Note:** The `remove` method tests won't pass until the `add` and `lookup` methods are correctly implemented.
+**Observação:** os testes do método `remove` não passarão até que os métodos `add` e `lookup` sejam corretamente implementados.
 
 # --hints--
 
-The HashTable data structure should exist.
+A estrutura de dados HashTable deve existir.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-The HashTable should have an add method.
+A HashTable deve ter um método add.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-The HashTable should have a lookup method.
+A HashTable deve ter um método lookup.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-The HashTable should have a remove method.
+A HashTable deve ter um método remove.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-The add method should add key value pairs and the lookup method should return the values associated with a given key.
+O método add deve adicionar pares chave-valor e o método lookup deve retornar os valores associados a uma determinada chave.
 
 ```js
 assert(
@@ -95,7 +95,7 @@ assert(
 );
 ```
 
-The remove method should accept a key as input and should remove the associated key value pair.
+O método remove deve aceitar uma chave como entrada e deve remover o par chave-valor associado.
 
 ```js
 assert(
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-The remove method should only remove the correct key value pair.
+O método remove só deve remover o par chave-valor correto.
 
 ```js
 assert(
@@ -139,7 +139,7 @@ assert(
 );
 ```
 
-Items should be added using the hash function.
+Os itens devem ser adicionados usando a função de hash.
 
 ```js
 assert(
@@ -157,7 +157,7 @@ assert(
 );
 ```
 
-The hash table should handle collisions.
+A tabela hash deve tratar de colisões.
 
 ```js
 assert(

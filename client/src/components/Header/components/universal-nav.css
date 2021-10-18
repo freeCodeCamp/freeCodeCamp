@@ -187,38 +187,26 @@
   outline-offset: -3px;
 }
 
-.navatar {
-  display: contents;
-}
-
-.navatar .avatar-nav-link {
+.avatar-nav-link {
+  display: block;
   height: 31px;
   width: 31px;
 }
 
-.navatar .avatar-nav-link:hover,
-.navatar .avatar-nav-link:focus {
+.avatar-nav-link:hover,
+.avatar-nav-link:focus {
   background-color: var(--theme-color);
 }
 
-.navatar .default-border {
-  border: none;
-}
-
-.navatar .avatar-container svg {
-  display: inline;
-  background: var(--secondary-background);
-}
-
-.navatar .avatar-container {
+.avatar-nav-link .avatar-container {
   height: 100%;
 }
 
-.navatar .avatar-container svg,
-.navatar .avatar-container img {
+.avatar-nav-link .avatar-container svg,
+.avatar-nav-link .avatar-container img {
+  height: 100%;
   object-fit: cover;
   width: 100%;
-  height: 100%;
 }
 
 .gold-border {
@@ -234,7 +222,7 @@
 }
 
 .default-border {
-  border: 2px solid transparent;
+  border: 2px solid var(--gray-15);
 }
 
 .expand-nav {
@@ -245,6 +233,14 @@
   display: inherit;
   text-align: left;
   margin-top: calc(-1 * var(--header-height));
+  max-height: calc(100vh - var(--header-height));
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.display-menu::-webkit-scrollbar {
+  display: none;
 }
 
 .toggle-button-nav {
@@ -334,6 +330,10 @@
 
   .ais-Hits {
     min-width: calc(100% - 30px);
+  }
+
+  .display-menu {
+    max-height: calc(100vh - var(--header-height) * 2);
   }
 }
 

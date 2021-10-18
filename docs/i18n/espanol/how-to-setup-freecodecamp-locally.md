@@ -14,7 +14,7 @@ Comience instalando el software de requisitos previos para su sistema operativo.
 
 Apoyamos principalmente el desarrollo en sistemas basados en Linux y Unix. Nuestro personal y los colaboradores de la comunidad trabajan regularmente con el código base utilizando herramientas instaladas en Ubuntu y macOS.
 
-También soportamos Windows 10 a través de WSL2, que puedes preparar [leyendo esta guía](/how-to-setup-wsl).
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
 
 Algunos miembros de la comunidad también desarrollan en Windows 10 nativamente con Git for Windows (Git Bash), y otras herramientas instaladas en Windows. No tenemos soporte oficial para dicha configuración en este momento, así que recomendamos usar WSL2 en su lugar.
 
@@ -167,14 +167,24 @@ The default API keys and environment variables are stored in the file `sample.en
 
 ```console
 # Crear una copia de la "sample.env" y nombrarla ".env".
-# Completelos con las credenciales de la API necesarias:
+# Populate it with the necessary API keys and secrets:
+```
 
-# macOS / Linux
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
 cp sample.env .env
+```
 
-# Windows
+#### **Windows**
+
+```console
 copy sample.env .env
 ```
+
+<!-- tabs:end -->
 
 The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
@@ -196,19 +206,25 @@ Before you can run the application locally, you will need to start the MongoDB s
 
 Start the MongoDB server in a separate terminal:
 
-- En macOS & Ubuntu:
+  <!-- tabs:start -->
 
-  ```console
-  mongod
-  ```
+#### **macOS/Linux**
 
-- En Windows, debe especificar la ruta completa al binario `mondios`
+```console
+mongod
+```
 
-  ```console
-  "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-  ```
+#### **Windows**
 
-  Asegúrate de reemplazar `3.6` con la versión instalada
+- On Windows, you must specify the full path to the `mongod` binary
+
+```console
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+```
+
+  <!-- tabs:end -->
+
+Make sure to replace `3.6` with the version you have installed
 
 > [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
@@ -522,7 +538,9 @@ git clean -ifdX
 
 If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-**On Linux / macOS / WSL on Windows - From Terminal:**
+<!-- tabs:start -->
+
+#### **macOS/Linux/WSL on Windows - From Terminal:**
 
 ```console
 netstat -a | grep "3000"
@@ -530,13 +548,17 @@ netstat -a | grep "3000"
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**On Windows - From Elevated PowerShell:**
+#### **On Windows - From Elevated PowerShell:**
 
 ```powershell
 netstat -ab | Select-String "3000"
 
 TCP    0.0.0.0:3000           DESKTOP      LISTENING
 ```
+
+<!-- tabs:end -->
+
+---
 
 ### Problemas instalando dependencias
 

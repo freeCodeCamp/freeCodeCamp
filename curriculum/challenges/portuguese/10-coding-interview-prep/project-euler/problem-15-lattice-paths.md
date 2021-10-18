@@ -1,6 +1,6 @@
 ---
 id: 5900f37b1000cf542c50fe8e
-title: 'Problem 15: Lattice paths'
+title: 'Problema 15: Caminhos em uma grade'
 challengeType: 5
 forumTopicId: 301780
 dashedName: problem-15-lattice-paths
@@ -8,33 +8,33 @@ dashedName: problem-15-lattice-paths
 
 # --description--
 
-Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
+Começando no canto superior esquerdo de uma grade 2×2, e sendo capaz de se mover para a direita e para baixo, existem exatamente 6 caminhos até o canto inferior direito.
 
-<img class="img-responsive center-block" alt="a diagram of 6 2 by 2 grids showing all the routes to the bottom right corner" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="um diagrama de 6 grades de 2x2 mostrando todas as rotas para o canto inferior direito" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
 
-How many such routes are there through a given `gridSize`?
+Quantas rotas existem no parâmetro `gridSize` fornecido à sua função?
 
 # --hints--
 
-`latticePaths(4)` should return a number.
+`latticePaths(4)` deve retornar um número.
 
 ```js
 assert(typeof latticePaths(4) === 'number');
 ```
 
-`latticePaths(4)` should return 70.
+`latticePaths(4)` deve retornar 70.
 
 ```js
 assert.strictEqual(latticePaths(4), 70);
 ```
 
-`latticePaths(9)` should return 48620.
+`latticePaths(9)` deve retornar 48620.
 
 ```js
 assert.strictEqual(latticePaths(9), 48620);
 ```
 
-`latticePaths(20)` should return 137846528820.
+`latticePaths(20)` deve retornar 137846528820.
 
 ```js
 assert.strictEqual(latticePaths(20), 137846528820);

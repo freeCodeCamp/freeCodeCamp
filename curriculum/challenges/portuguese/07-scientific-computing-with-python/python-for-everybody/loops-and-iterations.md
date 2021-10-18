@@ -1,8 +1,12 @@
 ---
 id: 5e7b9f060b6c005b0e76f05c
-title: Loops and Iterations
+title: Laços e iterações
 challengeType: 11
 videoId: dLA-szNRnUY
+bilibiliIds:
+  aid: 674492981
+  bvid: BV1hU4y1H7tF
+  cid: 376531204
 dashedName: loops-and-iterations
 ---
 
@@ -10,7 +14,7 @@ dashedName: loops-and-iterations
 
 ## --text--
 
-What will the following code print out?:
+O que será impresso pelo código a seguir?:
 
 ```python
 n = 0

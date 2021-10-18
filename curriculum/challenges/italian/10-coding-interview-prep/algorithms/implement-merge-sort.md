@@ -1,6 +1,6 @@
 ---
 id: 587d825c367417b2b2512c8f
-title: Implement Merge Sort
+title: Implementare Merge Sort
 challengeType: 1
 forumTopicId: 301614
 dashedName: implement-merge-sort
@@ -8,27 +8,27 @@ dashedName: implement-merge-sort
 
 # --description--
 
-Another common intermediate sorting algorithm is merge sort. Like quick sort, merge sort also uses a divide-and-conquer, recursive methodology to sort an array. It takes advantage of the fact that it is relatively easy to sort two arrays as long as each is sorted in the first place. But we'll start with only one array as input, so how do we get to two sorted arrays from that? Well, we can recursively divide the original input in two until we reach the base case of an array with one item. A single-item array is naturally sorted, so then we can start combining. This combination will unwind the recursive calls that split the original array, eventually producing a final sorted array of all the elements. The steps of merge sort, then, are:
+Un altro algoritmo di ordinamento intermedio comune è Merge Sort. Come Quick Sort, anche Merge Sort utilizza una metodologia ricorsiva divide-et-impera per ordinare un array. Esso si avvale del fatto che è relativamente semplice ordinare due array se ciascuno di essi è già ordinato. Ma inizieremo con un solo array come input, quindi come arriviamo a due array ordinati partendo da quello? Bene, possiamo dividere ricorsivamente a metà l'input originale fino a raggiungere il caso base di un array con un elemento. Un array con un singolo elemento è naturalmente ordinato, quindi possiamo iniziare a combinare. Questa combinazione darà il via alle chiamate ricorsive che dividono l'array originale, producendo alla fine un array finale ordinato di tutti gli elementi. I passi di Merge Sort, sono quindi:
 
-**1)** Recursively split the input array in half until a sub-array with only one element is produced.
+**1)** Dividi ricorsivamente l'array di input a metà finché non viene prodotto un sotto-array con un solo elemento.
 
-**2)** Merge each sorted sub-array together to produce the final sorted array.
+**2)** Unisci tutti i sottoarray ordinati per produrre l'array finale ordinato.
 
-Merge sort is an efficient sorting method, with time complexity of *O(nlog(n))*. This algorithm is popular because it is performant and relatively easy to implement.
+Il Merge Sort è un metodo di ordinamento efficiente, con complessità temporale di *O(nlog(n))*. Questo algoritmo è popolare perché è performante e relativamente facile da implementare.
 
-As an aside, this will be the last sorting algorithm we cover here. However, later in the section on tree data structures we will describe heap sort, another efficient sorting method that requires a binary heap in its implementation.
+A parte questo, questo sarà l'ultimo algoritmo di ordinamento che tratteremo qui. Tuttavia, più tardi nella sezione sulle strutture di dati ad albero descriveremo Heap Sort, un altro metodo di ordinamento efficiente che richiede un heap binario nella sua implementazione.
 
-**Instructions:** Write a function `mergeSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. A good way to implement this is to write one function, for instance `merge`, which is responsible for merging two sorted arrays, and another function, for instance `mergeSort`, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!
+**Istruzioni:** Scrivi una funzione `mergeSort` che prende un array di interi come input e restituisce un array di questi interi in ordine dal più piccolo al più grande. Un buon modo per implementarlo è quello di scrivere una funzione, per esempio `merge`, che si occupa dell'unione di due array, e un'altra funzione, per esempio `mergeSort`, che è responsabile della ricorsione e che produce array di elementi singoli da fornire a Merge. Buona fortuna!
 
 # --hints--
 
-`mergeSort` should be a function.
+`mergeSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof mergeSort == 'function');
 ```
 
-`mergeSort` should return a sorted array (least to greatest).
+`mergeSort` dovrebbe restituire un array ordinato (dal più piccolo al più grande).
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-`mergeSort` should return an array that is unchanged except for order.
+`mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` dovrebbe restituire un array invariato tranne che per l'ordine.
 
 ```js
 assert.sameMembers(
@@ -83,7 +83,7 @@ assert.sameMembers(
 );
 ```
 
-`mergeSort` should not use the built-in `.sort()` method.
+`mergeSort` non dovrebbe utilizzare il metodo integrato `.sort()`.
 
 ```js
 assert(isBuiltInSortUsed());
@@ -117,8 +117,6 @@ function mergeSort(array) {
   return array;
   // Only change code above this line
 }
-
-mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

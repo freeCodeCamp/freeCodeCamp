@@ -39,7 +39,7 @@ I progetti di pratica hanno degli strumenti addizionali per aiutare a creare i n
 ---
 id: Unique identifier (alphanumerical, MongoDB_id)
 title: 'Challenge Title'
-challengeType: Integer, defined in `client/utils/challengeTypes.js`
+challengeType: Integer, defined in `client/utils/challenge-types.js`
 videoUrl: 'url of video explanation'
 forumTopicId: 12345
 ---
@@ -287,7 +287,7 @@ Le sfide dovrebbero avere il numero minimo di test per verificare che un camper 
 
 Il nostro obbiettivo è comunicare il singolo punto che la sfida sta cercando di insegnare, e testare che abbiano capito il punto.
 
-I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`.  In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test.  Le funzioni disponibili sono definite in _client/src/utils/curriculum-helpers.ts_.
+I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`. In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test. Le funzioni disponibili sono definite in _client/src/utils/curriculum-helpers.ts_.
 
 ## Formattare codice di seed
 
@@ -476,7 +476,7 @@ Puoi anche testare una sfida singola con i seguenti step:
    ```
    npm run test -- -g challenge-title-goes-here ```
 
-Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, [per favore crea una pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-open-a-pull-request.md).
+Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, [per favore crea una pull request](how-to-open-a-pull-request.md).
 
 > [!TIP] Puoi impostare la variabile d'ambiente  `LOCALE` nel file `.env` alla lingua usata nelle sfide che devi testare.
 > 
@@ -486,6 +486,6 @@ Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, 
 
 Creare e modificare sfide:
 
-1. [Tipi di sfide](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challengeTypes.js#L1-L13) - cosa significa il valore numerico del tipo della sfida (challenge type) (enum).
+1. [Tipo della sfida (challenge type)](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - cosa significa il tipo di sfida numerico (enum).
 
 2. [Contribuire a FreeCodeCamp - Scrivere Test  per le sfide ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - un video che segue [Ethan Arrowood](https://twitter.com/ArrowoodTech) in quanto contributore della vecchia versione del curriculum.

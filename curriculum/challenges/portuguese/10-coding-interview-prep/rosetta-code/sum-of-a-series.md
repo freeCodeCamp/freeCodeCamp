@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8041
-title: Sum of a series
+title: Soma de uma série
 challengeType: 5
 forumTopicId: 302333
 dashedName: sum-of-a-series
@@ -8,51 +8,51 @@ dashedName: sum-of-a-series
 
 # --description--
 
-Compute the **n**<sup>th</sup> term of a [series](https://en.wikipedia.org/wiki/Series (mathematics)), i.e. the sum of the **n** first terms of the corresponding [sequence](https://en.wikipedia.org/wiki/sequence). Informally this value, or its limit when **n** tends to infinity, is also called the *sum of the series*, thus the title of this task. For this task, use: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
+Calcule o **n**<sup></sup>-ésimo termo de uma [série](https://en.wikipedia.org/wiki/Series (mathematics)), ou seja, a soma dos **n** primeiros termos da [sequência](https://en.wikipedia.org/wiki/sequence) correspondente. Informalmente, esse valor, ou seu limite quando **n** tende ao infinito, é também chamado de *soma da série*, razão do título desta tarefa. Para esta tarefa, use: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
 
 # --instructions--
 
-Write a function that take $a$ and $b$ as parameters and returns the sum of $a^{th}$ to $b^{th}$ members of the sequence.
+Escreva uma função que receba $a$ e $b$ como parâmetros e retorne a soma do $a$-ésimo ao $b$-ésimo termos da sequência.
 
 # --hints--
 
-`sum` should be a function.
+`sum` deve ser uma função.
 
 ```js
 assert(typeof sum == 'function');
 ```
 
-`sum(1, 100)` should return a number.
+`sum(1, 100)` deve retornar um número.
 
 ```js
 assert(typeof sum(1, 100) == 'number');
 ```
 
-`sum(1, 100)` should return `1.6349839001848923`.
+`sum(1, 100)` deve retornar `1.6349839001848923`.
 
 ```js
 assert.equal(sum(1, 100), 1.6349839001848923);
 ```
 
-`sum(33, 46)` should return `0.009262256361481223`.
+`sum(33, 46)` deve retornar `0.009262256361481223`.
 
 ```js
 assert.equal(sum(33, 46), 0.009262256361481223);
 ```
 
-`sum(21, 213)` should return `0.044086990748706555`.
+`sum(21, 213)` deve retornar `0.044086990748706555`.
 
 ```js
 assert.equal(sum(21, 213), 0.044086990748706555);
 ```
 
-`sum(11, 111)` should return `0.08619778593108679`.
+`sum(11, 111)` deve retornar `0.08619778593108679`.
 
 ```js
 assert.equal(sum(11, 111), 0.08619778593108679);
 ```
 
-`sum(1, 10)` should return `1.5497677311665408`.
+`sum(1, 10)` deve retornar `1.5497677311665408`.
 
 ```js
 assert.equal(sum(1, 10), 1.5497677311665408);

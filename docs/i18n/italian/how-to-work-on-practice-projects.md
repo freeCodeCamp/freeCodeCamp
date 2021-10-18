@@ -12,7 +12,7 @@ Se vuoi creare nuovi passi, i seguenti strumenti semplificano quel processo.
 
 Uno script eseguito una sola volta che aggiungerà automaticamente il prossimo passo basandosi sull'ultimo numerato come `part-xxx.md`, dove `xxx` rappresenta il numero a 3 cifre dell'ultimo passo. Il codice seed della sfida userà il codice seed di quella precedente, rimuovendo i marcatori delle regioni editabili (MRE).
 
-**Nota:** Questo script esegue anche [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
+**Nota:** Questo script esegue anche [reorder-steps](#reorder-steps).
 
 ### Come eseguire lo script:
 
@@ -27,7 +27,7 @@ npm run create-next-step
 
 Uno script eseguito una sola volta che aggiunge automaticamente un determinato  numero di passi a partire da un passo specifico. Il codice seed della sfida per tutti i passi creati sarà vuoto.
 
-**Nota:** Questo script esegue anche [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
+**Nota:** Questo script esegue anche [reorder-steps](#reorder-steps).
 
 ### Come eseguire lo script:
 
@@ -42,7 +42,7 @@ npm run create-empty-steps start=X num=Y # dove X è il numero del passo da cui 
 
 Uno script eseguito una sola volta che aggiunge automaticamente un passo in mezzo a due passi consecutivi già esistenti. Il codice seed della sfida userà il codice seed della sfida al passo di partenza già esistente, rimuovendo i marcatori delle regioni editabili (MRE).
 
-**Nota:** Questo script esegue anche [reorder-steps](how-to-work-on-practice-projects#reorder-steps).
+**Nota:** Questo script esegue anche [reorder-steps](#reorder-steps).
 
 ### Come eseguire lo script:
 
@@ -85,7 +85,7 @@ part-6.md
 
 A un certo punto decidi che hai bisogno di eliminare  `part-2.md`, perché quel passo non è più necessario. Inoltre, decidi di dividere `part-4.md` in tre passi invece di uno.
 
-Per ottenere questa ristrutturazione, avresti bisogno di eliminare  `part-2.md` e poi aggiungere un `part-4a.md` e un `part-5b.md`. La nuova struttura della cartella assomiglierà alla seguente:
+Per ottenere questa ristrutturazione, avresti bisogno di eliminare  `part-2.md` e poi aggiungere un `part-4a.md` e un `part-4b.md`. La nuova struttura della cartella assomiglierà alla seguente:
 
 ```bash
 part-001.md

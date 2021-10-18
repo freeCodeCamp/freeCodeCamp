@@ -52,48 +52,56 @@ assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null);
 您的正则表达式不应匹配字符串 `astronaut`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('astronaut'));
 ```
 
 你的正则表达式不应匹配字符串 `banan1`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('banan1'));
 ```
 
 你的正则表达式应该匹配字符串 `bana12`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('bana12'));
 ```
 
 你的正则表达式应该匹配字符串 `abc123`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('abc123'));
 ```
 
 你的正则表达式不应匹配字符串 `12345`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('12345'));
 ```
 
 你的正则表达式应该匹配字符串 `8pass99`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('8pass99'));
 ```
 
 你的正表达式不应匹配字符串 `1a2bcde`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(!pwRegex.test('1a2bcde'));
 ```
 
 你的正则表达式应该匹配字符串 `astr1on11aut`
 
 ```js
+pwRegex.lastIndex = 0;
 assert(pwRegex.test('astr1on11aut'));
 ```
 

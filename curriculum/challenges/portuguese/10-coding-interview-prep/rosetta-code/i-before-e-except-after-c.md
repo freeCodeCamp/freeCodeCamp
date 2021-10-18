@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7eb0
-title: I before E except after C
+title: I antes de E, exceto depois de C
 challengeType: 5
 forumTopicId: 302288
 dashedName: i-before-e-except-after-c
@@ -8,70 +8,70 @@ dashedName: i-before-e-except-after-c
 
 # --description--
 
-The phrase ["I before E, except after C"](https://en.wikipedia.org/wiki/I before E except after C) is a widely known mnemonic which is supposed to help when spelling English words.
+A frase [ "I antes de E, exceto depois de C" ](https://en.wikipedia.org/wiki/I before E except after C) é um mnemônico amplamente conhecido que deve ajudar ao soletrar palavras em inglês.
 
-Using the words provided, check if the two sub-clauses of the phrase are plausible individually:
+Usando as palavras fornecidas, verifique se as duas subcláusulas da frase são plausíveis individualmente:
 
 <ol>
   <li>
-    <i>"I before E when not preceded by C".</i>
+    <i>"I antes de E quando não for precedido por C".</i>
   </li>
   <li>
-    <i>"E before I when preceded by C".</i>
+    <i>"E antes de I quando for precedido por C".</i>
   </li>
 </ol>
 
-If both sub-phrases are plausible then the original phrase can be said to be plausible.
+Se ambas as subfrases forem plausíveis, então a frase original pode ser considerada plausível.
 
 # --instructions--
 
-Write a function that accepts a word and check if the word follows this rule. The function should return true if the word follows the rule and false if it does not.
+Escreva uma função que aceite uma palavra e verifique se a palavra segue esta regra. A função deve retornar verdadeiro se a palavra seguir a regra e falso se não seguir.
 
 # --hints--
 
-`IBeforeExceptC` should be a function.
+`IBeforeExceptC` deve ser uma função.
 
 ```js
 assert(typeof IBeforeExceptC == 'function');
 ```
 
-`IBeforeExceptC("receive")` should return a boolean.
+`IBeforeExceptC("receive")` deve retornar um booleano.
 
 ```js
 assert(typeof IBeforeExceptC('receive') == 'boolean');
 ```
 
-`IBeforeExceptC("receive")` should return `true`.
+`IBeforeExceptC("receive")` deve retornar `true`.
 
 ```js
 assert.equal(IBeforeExceptC('receive'), true);
 ```
 
-`IBeforeExceptC("science")` should return `false`.
+`IBeforeExceptC("science")` deve retornar `false`.
 
 ```js
 assert.equal(IBeforeExceptC('science'), false);
 ```
 
-`IBeforeExceptC("imperceivable")` should return `true`.
+`IBeforeExceptC("imperceivable")` deve retornar `true`.
 
 ```js
 assert.equal(IBeforeExceptC('imperceivable'), true);
 ```
 
-`IBeforeExceptC("inconceivable")` should return `true`.
+`IBeforeExceptC("inconcebível")` deve retornar `verdadeiro`.
 
 ```js
 assert.equal(IBeforeExceptC('inconceivable'), true);
 ```
 
-`IBeforeExceptC("insufficient")` should return `false`.
+`IBeforeExceptC("insuficiente")` deve retornar `falso`.
 
 ```js
 assert.equal(IBeforeExceptC('insufficient'), false);
 ```
 
-`IBeforeExceptC("omniscient")` should return `false`.
+`IBeforeExceptC("onisciente")` deve retornar `falso`.
 
 ```js
 assert.equal(IBeforeExceptC('omniscient'), false);

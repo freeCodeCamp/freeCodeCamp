@@ -12,7 +12,7 @@ Crie uma função que some dois argumentos juntos. Se apenas um argumento for fo
 
 Por exemplo, `addTogether(2, 3)` deve retornar `5` e `addTogether(2)` deve retornar uma função.
 
-Chamando essa função retornada com um argumento retornará a soma:
+Chamar essa função retornada com um argumento retornará a soma:
 
 ```js
 var sumTwoAnd = addTogether(2);
@@ -42,10 +42,10 @@ assert.deepEqual(addTogether(23, 30), 53);
 assert.deepEqual(addTogether(5)(7), 12);
 ```
 
-`addTogether("http://bit.ly/IqT6zt")` deve retornar `undefined`.
+`addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")` deve retornar `undefined`.
 
 ```js
-assert.isUndefined(addTogether('http://bit.ly/IqT6zt'));
+assert.isUndefined(addTogether('https://www.youtube.com/watch?v=dQw4w9WgXcQ'));
 ```
 
 `addTogether(2, "3")` deve retornar `undefined`.

@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d9e
 title: 'Elaborazione del linguaggio naturale con RNN: analisi del sentimento'
 challengeType: 11
 videoId: lYeLtu8Nq7c
+bilibiliIds:
+  aid: 933111408
+  bvid: BV1TM4y137VB
+  cid: 409135996
 dashedName: natural-language-processing-with-rnns-sentiment-analysis
 ---
 

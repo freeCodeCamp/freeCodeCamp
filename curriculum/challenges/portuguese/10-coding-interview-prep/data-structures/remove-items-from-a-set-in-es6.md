@@ -1,6 +1,6 @@
 ---
 id: 587d8254367417b2b2512c71
-title: Remove items from a set in ES6
+title: Remover itens de um conjunto na ES6
 challengeType: 1
 forumTopicId: 301713
 dashedName: remove-items-from-a-set-in-es6
@@ -8,15 +8,15 @@ dashedName: remove-items-from-a-set-in-es6
 
 # --description--
 
-Let's practice removing items from an ES6 Set using the `delete` method.
+Vamos praticar a remoção de itens de um conjunto da ES6 usando o método `delete`.
 
-First, create an ES6 Set:
+Primeiro, crie um conjunto (Set) da ES6:
 
 ```js
 var set = new Set([1,2,3]);
 ```
 
-Now remove an item from your Set with the `delete` method.
+Agora, remova um item do seu conjunto com o método `delete`.
 
 ```js
 set.delete(1);
@@ -25,13 +25,13 @@ console.log([...set]) // should return [ 2, 3 ]
 
 # --instructions--
 
-Now, create a set with the integers 1, 2, 3, 4, & 5.
+Crie um conjunto com os números inteiros 1, 2, 3, 4 e 5.
 
-Remove the values 2 and 5, and then return the set.
+Remova os valores 2 e 5. Então, retorne o conjunto.
 
 # --hints--
 
-Your Set should contain the values 1, 3, & 4
+O conjunto deve conter os valores 1, 3 e 4
 
 ```js
 assert(

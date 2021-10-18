@@ -8,24 +8,28 @@ dashedName: reuse-patterns-using-capture-groups
 
 # --description--
 
-Algunos patrones que busques aparecerán múltiples veces en una cadena. Es un desperdicio repetir manualmente esa expresión regular. Existe una mejor forma de especificar que tienes múltiples subcadenas repetidas en tu cadena.
-
-Puedes buscar subcadenas repetidas utilizando <dfn>grupos de captura</dfn>. Los paréntesis, `(` y `)`, son usados para encontrar subcadenas repetidas. Introduces la expresión regular del patrón que se repetirá entre los paréntesis.
-
-Para especificar donde aparecerá esa cadena repetida, utilizarás una barra invertida (`\`) y luego un número. Este número inicia en 1 e incrementa con cada grupo de captura adicional que utilices. Un ejemplo podría ser `\1` para coincidir con el primer grupo.
-
-El siguiente ejemplo encuentra cualquier palabra que ocurra dos veces separada por un espacio:
+Digamos que quieres hacer coincidir una palabra que aparece varias veces como la siguiente.
 
 ```js
-let repeatStr = "regex regex";
-let repeatRegex = /(\w+)\s\1/;
-repeatRegex.test(repeatStr);
-repeatStr.match(repeatRegex);
+let repeatStr = "row row row your boat";
 ```
 
-La llamada a la función `test` devolverá `true`, y la llamada a la función `match` devolverá `["regex regex", "regex"]`.
+Podrías usar `/row row row/`, pero ¿qué pasa si no conoces la palabra específica que se repite? <dfn>Los grupos de captura</dfn> pueden utilizarse para encontrar subcadenas repetidas.
 
-Utilizar el método `.match()` en una cadena devuelve un arreglo con la cadena que coincide, junto con su grupo de captura.
+Los grupos de captura se construyen encerrando entre paréntesis el patrón de expresión regular a capturar. En este caso, el objetivo es capturar una palabra formada por caracteres alfanuméricos, por lo que el grupo de captura será `\w+` encerrado entre paréntesis: `/(\w+)/`.
+
+La subcadena que coincide con el grupo se guarda en una "variable" temporal, a la que se puede acceder dentro de la misma expresión regular utilizando una barra invertida y el número del grupo de captura (por ejemplo, `\1`). Los grupos de captura se numeran automáticamente por la posición de sus paréntesis de apertura (de izquierda a derecha), empezando por el 1.
+
+El siguiente ejemplo encuentra cualquier palabra que aparezca tres veces separada por un espacio:
+
+```js
+let repeatRegex = /(\w+) \1 \1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["row row row", "row"]
+```
+
+El uso del método `.match()` en una cadena devolverá un arreglo con la subcadena coincidente, junto con sus grupos capturados.
+
 
 # --instructions--
 
@@ -48,12 +52,14 @@ assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 Tu expresión regular debe coincidir con la cadena `42 42 42`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('42 42 42'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `100 100 100`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('100 100 100'));
 ```
 
@@ -72,18 +78,21 @@ assert.equal('42 42'.match(reRegex.source), null);
 Tu expresión regular no debe coincidir con la cadena `101 102 103`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(!reRegex.test('101 102 103'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `1 2 3`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(!reRegex.test('1 2 3'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `10 10 10`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('10 10 10'));
 ```
 

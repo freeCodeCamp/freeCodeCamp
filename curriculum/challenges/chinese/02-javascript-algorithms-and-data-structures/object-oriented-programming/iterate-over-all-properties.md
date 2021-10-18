@@ -8,7 +8,7 @@ dashedName: iterate-over-all-properties
 
 # --description--
 
-现在你已经了解了两种属性: <dfn>自身属性</dfn>和 `prototype` 属性。 自身属性是直接在对象上定义的。 而 `prototype` 属性是定义在 `prototype` 上的。
+现在你已经了解了两种属性: <dfn>自身属性</dfn>和 `prototype` 属性。 自身属性是直接在对象上定义的。 而原型属性在 `prototype` 上定义。
 
 ```js
 function Bird(name) {

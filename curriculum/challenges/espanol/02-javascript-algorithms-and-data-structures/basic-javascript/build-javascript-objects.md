@@ -26,7 +26,7 @@ var cat = {
 };
 ```
 
-En este ejemplo, todas las propiedades se almacenan como cadenas, tales como: `name`, `legs` y `tails`. Sin embargo, también puedes utilizar números como propiedades. Incluso puedes omitir las comillas para las propiedades de cadenas de una sola palabra, de la siguiente manera:
+En este ejemplo, todas las propiedades se almacenan como cadenas, como `name`, `legs` y `tails`. Sin embargo, también puedes utilizar números como propiedades. Incluso puedes omitir las comillas para las propiedades de cadenas de una sola palabra, de la siguiente manera:
 
 ```js
 var anotherObject = {

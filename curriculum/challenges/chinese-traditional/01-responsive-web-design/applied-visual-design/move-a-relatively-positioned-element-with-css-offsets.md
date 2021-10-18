@@ -11,8 +11,6 @@ dashedName: move-a-relatively-positioned-element-with-css-offsets
 
 CSS 裏面的 `top`、`bottom`、`left` 和 `right` 定義了元素在相應方位的偏移距離。 元素將從當前位置向屬性相反的方向偏移。 就像你在上一個挑戰看到的，`top` 屬性使 `h2` 向下移動。 同樣，使用 `left` 將項目移動到右邊。
 
-<img src='https://i.imgur.com/eWWi3gZ.gif' alt='' />
-
 # --instructions--
 
 請通過 CSS 屬性把 `h2` 向上移動 10 像素，向右移動 15 像素。

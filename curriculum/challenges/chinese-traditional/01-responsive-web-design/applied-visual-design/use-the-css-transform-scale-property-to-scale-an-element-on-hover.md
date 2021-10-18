@@ -19,7 +19,7 @@ p:hover {
 }
 ```
 
-**注意：**給 `div` 元素添加 transform 也會影響這個 div 包裹的子元素。
+**注意：** 給 `div` 元素添加 transform 也會影響這個 div 包裹的子元素。
 
 # --instructions--
 

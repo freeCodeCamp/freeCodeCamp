@@ -1,0 +1,18 @@
+{
+  "name": "Information Security Certification",
+  "isUpcomingChange": false,
+  "dashedName": "information-security-v7-certification",
+  "order": 10,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "certifications",
+  "superOrder": 0,
+  "challengeOrder": [
+    [
+      "5e6021435ac9d0ecd8b94b00",
+      "Information Security Certification"
+    ]
+  ],
+  "isPrivate": true
+}

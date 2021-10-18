@@ -10,7 +10,7 @@ dashedName: use-the-reduce-method-to-analyze-data
 
 `Array.prototype.reduce()` o simplemente `reduce()` es la operación más común de todas para arreglos en JavaScript. Se puede resolver casi cualquier problema de procesamiento de arreglos utilizando el método `reduce`.
 
-El método `reduce` permite formas más generales de procesamiento de arreglos y es posible mostrar que tanto `filter` como `map` pueden derivarse como aplicaciones especiales de `reduce`. El método `reduce` itera sobre cada elemento del arreglo y devuelve un solo valor (por ejemplo una cadena, número, objeto, arreglo). Esto se consigue mediante una función de callback que se llama en cada iteración.
+El método `reduce` permite formas más generales de procesamiento de arreglos y es posible mostrar que tanto `filter` como `map` pueden derivarse como aplicaciones especiales de `reduce`. El método `reduce` itera sobre cada elemento del arreglo y devuelve un solo valor (por ejemplo una cadena, número, objeto, arreglo). Esto se consigue mediante una función callback que se llama en cada iteración.
 
 La función callback acepta cuatro argumentos. El primer argumento se conoce como acumulador, que recibe el valor retornado de la función callback de la iteración anterior, el segundo es el elemento actual que se está procesando, el tercero es el índice de ese elemento y el cuarto es el arreglo sobre el que se llama a la función `reduce`.
 

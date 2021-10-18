@@ -1,14 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-
 import {
   Button,
   DropdownButton,
   MenuItem
 } from '@freecodecamp/react-bootstrap';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import './tool-panel.css';
 import { openModal, executeChallenge } from '../redux';
@@ -45,7 +44,7 @@ function ToolPanel({
   videoUrl
 }) {
   const handleRunTests = () => {
-    executeChallenge(true);
+    executeChallenge({ showCompletionModal: true });
   };
   const { t } = useTranslation();
   return (
@@ -54,7 +53,12 @@ function ToolPanel({
         isMobile ? 'tool-panel-group-mobile' : ''
       }`}
     >
-      <Button block={true} bsStyle='primary' onClick={handleRunTests}>
+      <Button
+        aria-label='Run the tests use shortcut Ctrl+enter'
+        block={true}
+        bsStyle='primary'
+        onClick={handleRunTests}
+      >
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
       <Button

@@ -3,7 +3,7 @@
 A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
 > [!NOTE]
-> Your PR should be in English. See [here](https://contribute.freecodecamp.org/#/index?id=translations) for how to contribute translations.
+> Your PR should be in English. See [here](index.md#translations) for how to contribute translations.
 
 ## Prepare a good PR title
 
@@ -19,12 +19,12 @@ When opening a Pull Request(PR), you can use the below to determine the type, sc
 
 **Type:**
 
-| Type  | When to select                                                               |
-| :---- | :--------------------------------------------------------------------------- |
+| Type  | When to select                                                                   |
+| :---- | :------------------------------------------------------------------------------- |
 | fix   | Changed or updated/improved functionality, tests, the verbiage of a lesson, etc. |
-| feat  | Only if you are adding new functionality, tests, etc.                        |
-| chore | Changes that are not related to code, tests, or verbiage of a lesson.         |
-| docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
+| feat  | Only if you are adding new functionality, tests, etc.                            |
+| chore | Changes that are not related to code, tests, or verbiage of a lesson.            |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.                |
 
 **Scope:**
 
@@ -70,7 +70,7 @@ Some examples of good PRs titles would be:
 
    - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](/how-to-add-cypress-tests).
+   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
 
 ## Feedback on pull requests
 
@@ -81,13 +81,13 @@ Our moderators will now take a look and leave you feedback. Please be patient wi
 And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
 > [!TIP]
-> If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
+> If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
 
 ## Conflicts on a pull request
 
 Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-More often than not you may not require a rebase, because we squash all commits, however if a rebase is requested here is what you should do.
+More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
 ### For usual bug fixes and features
 
@@ -135,37 +135,37 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    a. Either delete your local branch after taking a backup (if you still have it locally):
 
-      ```console
-      git checkout <pr-branch-name>
+   ```console
+   git checkout <pr-branch-name>
 
-      # example:
-      # git checkout feat/add-numpy-video-question
+   # example:
+   # git checkout feat/add-numpy-video-question
 
-      git checkout -b <backup-branch-name>
+   git checkout -b <backup-branch-name>
 
-      # example:
-      #  git checkout -b backup-feat/add-numpy-video-question
+   # example:
+   #  git checkout -b backup-feat/add-numpy-video-question
 
-      git branch -D <pr-branch-name>
-      ```
+   git branch -D <pr-branch-name>
+   ```
 
    b. Or just a backup of your pr branch (if you do not have it locally):
 
-      ```console
-      git checkout -b <backup-branch-name> origin/<pr-branch-name>
+   ```console
+   git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # example:
-      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
-      ```
+   # example:
+   #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+   ```
 
-4. Start off with a clean slate:
+3. Start off with a clean slate:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Resolve any conflicts, and cleanup, install run tests
+4. Resolve any conflicts, and cleanup, install run tests
 
    ```console
    npm run clean
@@ -179,7 +179,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    ```
 
-6. If everything looks good push back to the PR
+5. If everything looks good push back to the PR
 
    ```console
    git push --force origin <pr-branch-name>

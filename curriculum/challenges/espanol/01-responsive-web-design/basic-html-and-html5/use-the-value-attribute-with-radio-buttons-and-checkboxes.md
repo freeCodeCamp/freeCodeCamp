@@ -27,7 +27,7 @@ Si omites el atributo `value`, los datos del formulario enviado utilizarán el v
 
 # --instructions--
 
-Agrega a cada una de los inputs de tipo `radio` y de tipo `checkbox` el atributo `value`. Usa el texto de input label (etiqueta), en minúsculas, como valor del atributo.
+Agrega a cada una de los inputs de tipo `radio` y de tipo `checkbox` el atributo `value`. No vayas a crear ningún nuevo elemento de tipo radio o tipo checkbox. Usa el texto de input label (etiqueta), en minúsculas, como valor del atributo.
 
 # --hints--
 
@@ -88,7 +88,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -121,7 +121,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>

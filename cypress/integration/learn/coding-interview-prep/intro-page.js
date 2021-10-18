@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('Certification intro page', () => {
   before(() => {
     cy.clearCookies();

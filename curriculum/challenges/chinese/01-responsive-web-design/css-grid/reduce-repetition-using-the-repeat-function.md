@@ -31,7 +31,7 @@ grid-template-columns: repeat(2, 1fr 50px) 20px;
 grid-template-columns: 1fr 50px 1fr 50px 20px;
 ```
 
-**注意：**`1fr 50px` 重复了两次，后面跟着 20px。
+**注意：** `1fr 50px` 重复了两次，后面跟着 20px。
 
 # --instructions--
 

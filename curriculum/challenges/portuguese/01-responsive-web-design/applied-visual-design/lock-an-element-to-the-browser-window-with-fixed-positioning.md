@@ -11,7 +11,7 @@ dashedName: lock-an-element-to-the-browser-window-with-fixed-positioning
 
 O próximo esquema de layout que o CSS oferece é a posição `fixed`, que é um tipo de posicionamento absoluto que prende um elemento em relação à janela do navegador. Semelhante ao posicionamento absoluto, ele é usado com as propriedades de deslocamento CSS e também remove o elemento do fluxo normal do documento. Outros itens não "percebem" onde ele está posicionado, o que pode exigir alguns ajustes em algum lugar do layout.
 
-Uma diferença chave entre os posicionamentos `fixed` e `absolute` é que o elemento com o posicionamento fixo não irá se mover quando o usuário rolar a página.
+Uma diferença chave entre os posicionamentos `fixed` e `absolute` é que o elemento com o posicionamento fixo não vai se mover quando o usuário rolar a página.
 
 # --instructions--
 

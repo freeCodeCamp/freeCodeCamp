@@ -1,6 +1,6 @@
 ---
 id: 5900f3b61000cf542c50fec8
-title: 'Problem 73: Counting fractions in a range'
+title: 'Problema 73: Contando frações em um intervalo'
 challengeType: 5
 forumTopicId: 302186
 dashedName: problem-73-counting-fractions-in-a-range
@@ -8,43 +8,43 @@ dashedName: problem-73-counting-fractions-in-a-range
 
 # --description--
 
-Consider the fraction, $\frac{n}{d}$, where `n` and `d` are positive integers. If `n` &lt; `d` and highest common factor, ${HCF}(n, d) = 1$, it is called a reduced proper fraction.
+Considere a fração $\frac{n}{d}$, onde `n` e `d` são números inteiros e positivos. Se `n` &lt; `d` e o maior divisor comum, ${HCF}(n, d) = 1$, ela é chamada de fração irredutível.
 
-If we list the set of reduced proper fractions for `d` ≤ 8 in ascending order of size, we get:
+Se nós listarmos o conjunto de frações irredutíveis onde `d` ≤ 8, em ordem ascendente, temos:
 
 $$\frac{1}{8}, \frac{1}{7}, \frac{1}{6}, \frac{1}{5}, \frac{1}{4}, \frac{2}{7}, \frac{1}{3}, \mathbf{\frac{3}{8}, \frac{2}{5}, \frac{3}{7}}, \frac{1}{2}, \frac{4}{7}, \frac{3}{5}, \frac{5}{8}, \frac{2}{3}, \frac{5}{7}, \frac{3}{4}, \frac{4}{5}, \frac{5}{6}, \frac{6}{7}, \frac{7}{8}$$
 
-It can be seen that there are `3` fractions between $\frac{1}{3}$ and $\frac{1}{2}$.
+Podemos notar que há `3` frações entre $\frac{1}{3}$ e $\frac{1}{2}$.
 
-How many fractions lie between $\frac{1}{3}$ and $\frac{1}{2}$ in the sorted set of reduced proper fractions for `d` ≤ `limit`?
+Quantas frações estão entre $\frac{1}{3}$ e $\frac{1}{2}$ no conjunto de frações irredutíveis, onde `d` ≤ `limit`?
 
 # --hints--
 
-`countingFractionsInARange(8)` should return a number.
+`countingFractionsInARange(8)` deve retornar um número.
 
 ```js
 assert(typeof countingFractionsInARange(8) === 'number');
 ```
 
-`countingFractionsInARange(8)` should return `3`.
+`countingFractionsInARange(8)` deve retornar `3`.
 
 ```js
 assert.strictEqual(countingFractionsInARange(8), 3);
 ```
 
-`countingFractionsInARange(1000)` should return `50695`.
+`countingFractionsInARange(1000)` deve retornar `50695`.
 
 ```js
 assert.strictEqual(countingFractionsInARange(1000), 50695);
 ```
 
-`countingFractionsInARange(6000)` should return `1823861`.
+`countingFractionsInARange(6000)` deve retornar `1823861`.
 
 ```js
 assert.strictEqual(countingFractionsInARange(6000), 1823861);
 ```
 
-`countingFractionsInARange(12000)` should return `7295372`.
+`countingFractionsInARange(12000)` deve retornar `7295372`.
 
 ```js
 assert.strictEqual(countingFractionsInARange(12000), 7295372);

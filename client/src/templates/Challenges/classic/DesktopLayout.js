@@ -1,10 +1,11 @@
+import { first } from 'lodash-es';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
-import PropTypes from 'prop-types';
-import { first } from 'lodash-es';
-import EditorTabs from './EditorTabs';
-import ActionRow from './ActionRow';
 import envData from '../../../../../config/env.json';
+import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
+import EditorTabs from './EditorTabs';
+import ActionRow from './action-row.tsx';
 
 const { showUpcomingChanges } = envData;
 
@@ -13,7 +14,8 @@ const paneType = {
 };
 
 const propTypes = {
-  challengeFiles: PropTypes.object,
+  block: PropTypes.string,
+  challengeFiles: PropTypes.array,
   editor: PropTypes.element,
   hasEditableBoundries: PropTypes.bool,
   hasPreview: PropTypes.bool,
@@ -30,13 +32,12 @@ const propTypes = {
     onStopResize: PropTypes.func,
     onResize: PropTypes.func
   }),
+  superBlock: PropTypes.string,
   testOutput: PropTypes.element
 };
 
 const reflexProps = {
-  propagateDimensions: true,
-  renderOnResize: true,
-  renderOnResizeRate: 20
+  propagateDimensions: true
 };
 
 class DesktopLayout extends Component {
@@ -56,7 +57,7 @@ class DesktopLayout extends Component {
 
   getChallengeFile() {
     const { challengeFiles } = this.props;
-    return first(Object.keys(challengeFiles).map(key => challengeFiles[key]));
+    return first(sortChallengeFiles(challengeFiles));
   }
 
   render() {
@@ -68,7 +69,9 @@ class DesktopLayout extends Component {
       hasPreview,
       layoutState,
       preview,
-      hasEditableBoundries
+      hasEditableBoundries,
+      superBlock,
+      block
     } = this.props;
 
     const { showPreview, showConsole } = this.state;
@@ -83,77 +86,80 @@ class DesktopLayout extends Component {
       layoutState;
 
     return (
-      <ReflexContainer className='desktop-layout' orientation='horizontal'>
+      <div className='desktop-layout'>
         {projectBasedChallenge && (
-          <ActionRow switchDisplayTab={this.switchDisplayTab} {...this.state} />
+          <ActionRow
+            block={block}
+            switchDisplayTab={this.switchDisplayTab}
+            {...this.state}
+            superBlock={superBlock}
+          />
         )}
-        <ReflexElement flex={8} {...reflexProps} {...resizeProps}>
-          <ReflexContainer orientation='vertical'>
-            {!projectBasedChallenge && (
-              <ReflexElement
-                flex={instructionPane.flex}
-                name='instructionPane'
-                {...resizeProps}
-              >
-                {instructions}
-              </ReflexElement>
-            )}
-            {!projectBasedChallenge && (
-              <ReflexSplitter propagate={true} {...resizeProps} />
-            )}
-
+        <ReflexContainer orientation='vertical'>
+          {!projectBasedChallenge && (
             <ReflexElement
-              flex={editorPane.flex}
-              name='editorPane'
+              flex={instructionPane.flex}
+              name='instructionPane'
               {...resizeProps}
             >
-              {challengeFile &&
-                showUpcomingChanges &&
-                !hasEditableBoundries && <EditorTabs />}
-              {challengeFile && (
-                <ReflexContainer
-                  key={challengeFile.key}
-                  orientation='horizontal'
+              {instructions}
+            </ReflexElement>
+          )}
+          {!projectBasedChallenge && (
+            <ReflexSplitter propagate={true} {...resizeProps} />
+          )}
+
+          <ReflexElement
+            flex={editorPane.flex}
+            name='editorPane'
+            {...resizeProps}
+          >
+            {challengeFile && showUpcomingChanges && !hasEditableBoundries && (
+              <EditorTabs />
+            )}
+            {challengeFile && (
+              <ReflexContainer
+                key={challengeFile.fileKey}
+                orientation='horizontal'
+              >
+                <ReflexElement
+                  flex={codePane.flex}
+                  name='codePane'
+                  {...reflexProps}
+                  {...resizeProps}
                 >
+                  {editor}
+                </ReflexElement>
+                {isConsoleDisplayable && (
+                  <ReflexSplitter propagate={true} {...resizeProps} />
+                )}
+                {isConsoleDisplayable && (
                   <ReflexElement
-                    flex={codePane.flex}
-                    name='codePane'
+                    flex={testsPane.flex}
+                    name='testsPane'
                     {...reflexProps}
                     {...resizeProps}
                   >
-                    {editor}
+                    {testOutput}
                   </ReflexElement>
-                  {isConsoleDisplayable && (
-                    <ReflexSplitter propagate={true} {...resizeProps} />
-                  )}
-                  {isConsoleDisplayable && (
-                    <ReflexElement
-                      flex={testsPane.flex}
-                      name='testsPane'
-                      {...reflexProps}
-                      {...resizeProps}
-                    >
-                      {testOutput}
-                    </ReflexElement>
-                  )}
-                </ReflexContainer>
-              )}
+                )}
+              </ReflexContainer>
+            )}
+          </ReflexElement>
+          {isPreviewDisplayable && (
+            <ReflexSplitter propagate={true} {...resizeProps} />
+          )}
+          {isPreviewDisplayable && (
+            <ReflexElement
+              flex={previewPane.flex}
+              name='previewPane'
+              {...resizeProps}
+            >
+              {preview}
             </ReflexElement>
-            {isPreviewDisplayable && (
-              <ReflexSplitter propagate={true} {...resizeProps} />
-            )}
-            {isPreviewDisplayable && (
-              <ReflexElement
-                flex={previewPane.flex}
-                name='previewPane'
-                {...resizeProps}
-              >
-                {preview}
-              </ReflexElement>
-            )}
-          </ReflexContainer>
-        </ReflexElement>
-      </ReflexContainer>
+          )}
+        </ReflexContainer>
+      </div>
     );
   }
 }

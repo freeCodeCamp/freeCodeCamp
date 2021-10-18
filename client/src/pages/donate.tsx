@@ -1,13 +1,13 @@
+import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
+import type { TFunction } from 'i18next';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
+import { withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
-import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
-import { TFunction, withTranslation } from 'react-i18next';
 
-import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
 import {
   DonationText,
@@ -15,8 +15,9 @@ import {
   DonationOptionsText,
   DonationOptionsAlertText
 } from '../components/Donation/DonationTextComponents';
-import { signInLoadingSelector, userSelector, executeGA } from '../redux';
+import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/CampersImage';
+import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 
 interface ExecuteGaArg {
   type: string;
@@ -84,10 +85,6 @@ function DonatePage({
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
       <Grid className='donate-page-wrapper'>
-        {/* 'Spacer' cannot be used as a JSX component. */}
-        {/* Its return type 'Element | Element[]' is not a valid JSX element. */}
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
         <Spacer />
         <Row>
           <>
@@ -99,20 +96,22 @@ function DonatePage({
                   ) : (
                     <h2>{t('donate.help-more')}</h2>
                   )}
-                  {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                  {/* @ts-ignore */}
                   <Spacer />
                 </Col>
               </Row>
               {isDonating ? (
-                <Alert>
+                <Alert closeLabel={t('buttons.close')}>
                   <p>{t('donate.thank-you-2')}</p>
                   <br />
                   <DonationOptionsAlertText />
                 </Alert>
               ) : null}
               <DonationText />
-              <DonateForm handleProcessing={handleProcessing} />
+              <Row>
+                <Col xs={12}>
+                  <DonateForm handleProcessing={handleProcessing} />
+                </Col>
+              </Row>
               <Row className='donate-support'>
                 <Col xs={12}>
                   <hr />
@@ -126,8 +125,6 @@ function DonatePage({
             </Col>
           </>
         </Row>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
         <Spacer />
       </Grid>
     </>

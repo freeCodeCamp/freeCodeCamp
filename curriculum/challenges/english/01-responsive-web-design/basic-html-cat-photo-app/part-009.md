@@ -48,7 +48,7 @@ assert(altText.match(/A cute orange cat lying on its back\.?$/i));
       <!-- TODO: Add link to cat photos -->
       <p>Click here to view more cat photos.</p>
 --fcc-editable-region--
-      <img src="https://bit.ly/fcc-relaxing-cat">
+      <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg">
 --fcc-editable-region--
     </main>
   </body>

@@ -4,10 +4,9 @@ Los retos en vídeo son un nuevo tipo de desafío en el currículo de freeCodeCa
 
 Un desafío de vídeo es una pequeña sección de un curso de vídeo completo sobre un tema en particular. Una página de desafío de vídeo inserta un vídeo de YouTube. Cada página de desafío tiene una única pregunta de selección múltiple relacionada con el vídeo. El usuario deberá responder correctamente la pregunta antes de avanzar al siguiente desafío de video en el curso.
 
-Las páginas de desafío de vídeo son creadas por miembros del equipo freeCodeCamp. Los vídeos de YouTube también son subidos por miembros del equipo freeCodeCamp. Muchos de los desafíos de video todavía no tienen preguntas asociadas con ellos.
+Las páginas de desafío de vídeo son creadas por miembros del equipo de freeCodeCamp. Los vídeos de YouTube también son subidos por miembros del equipo de freeCodeCamp. Muchos de los desafíos de video todavía no tienen preguntas asociadas a ellos.
 
 Puedes ayudar creando preguntas de selección múltiple relacionadas con las secciones de video y agregando las preguntas a los archivos markdown para los desafíos de video.
-
 
 ## Plantilla de desafío
 
@@ -15,21 +14,19 @@ A continuación se muestra una plantilla de cómo se ven los archivos markdown d
 
 ````md
 ---
-id: Unique identifier (alphanumerical, MongoDB_id)
-title: Challenge Title
+id: Identificador único (alfanumérico, MongoDB_id)
+title: Título del desafío
 challengeType: 11
-videoId: 'YouTube videoId for video challenge'
+videoId: 'Id del video de YouTube del video desafío'
 forumTopicId: 12345
 ---
 
-# --description--
+# --descripción--
 
-Challenge description text, in markdown
+Texto de descripción del desafío, en markdown
 
-```html
-<div>
-  example code
-</div>
+`` `html
+<div>código de ejemplo</div>
 ````
 
 # --question--
@@ -55,7 +52,6 @@ Más respuestas
 ## --video-solution--
 
 El número para la respuesta correcta va aquí.
-
 ````
 
 ## Creando preguntas para los desafíos de video
@@ -76,6 +72,7 @@ Elige un archivo markdown de las opciones anteriores.
 Primero, encuentra la videoId (id del vídeo).
 
 Por ejemplo, en el siguiente código de la cabecera de un archivo markdown de desafío de video, el videoId es "nVAaxZ34khk". En GitHub, la información debe ser colocada en un formato de tabla.
+
 ````
 ---
 id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
@@ -84,11 +81,7 @@ videoId: nVAaxZ34khk
 ```
 
 A continuación, accede al vídeo de YouTube con esa `videoId`. La URL del video será:
-https://www.youtube. om/watch?v=[videoId]    (reemplaza `videoId` en la URL con la ID del video sin los corchetes)
-
-En el ejemplo anterior, la URL es https://www.youtube.com/watch?v=nVAaxZ34khk
-
-Dale un vistazo al video de YouTube con ese videoId y piensa en una pregunta de selección múltiple basada en el contenido del video.
+https://www.youtube.com/watch?v=[videoId] (reemplaza `videoId` en la URL por el id del video, sin los corchetes).
 
 ### Añade la pregunta al archivo markdown
 
@@ -120,28 +113,32 @@ More answers
 1
 ```
 
-Añade/Actualiza el texto de la pregunta debajo de la parte que muestra:
+Agrega/Actualiza el texto de la pregunta debajo de la parte que dice:
+
 ```
 # --question--
 
 ## --text--
 ```
+
 Añade/Actualiza las respuestas (`Answer 1`, `Answer 2`, y así) debajo de `## --answers--`. Asegúrate de actualizar el número debajo de ` ## --video-solution-- ` con el número de respuesta correcto. Puede añadir más respuestas posibles usando el mismo formato. La pregunta y las respuestas pueden estar rodeadas de comillas.
 
 ### Ejemplos de preguntas
 
 ````md
-# --question--
+# --pregunta--
 
-## --text--
-¿Qué imprime este código de JavaScript en la consola?
+## --texto--
+
+Qué muestra este código JavaScript en la consola?
+
 ```js
 console.log('hello world');
 ````
 
 ## --answers--
 
-hola *mundo*
+hola _mundo_
 
 ---
 
@@ -154,14 +151,14 @@ hola mundo
 ---
 
 ## --video-solution--
+
 3
 ````
 
 ````md
+# --pregunta--
 
-# --question--
-
-## --text--
+## --texto--
 
 ¿Qué se imprimirá después de ejecutar este código?:
 

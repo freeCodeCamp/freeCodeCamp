@@ -44,7 +44,7 @@ Una volta che le modifiche sono inviate ai branch di rilascio protetti, una pipe
 
 La pipeline di build continua ad attivare una corrispondente pipeline di rilascio se completa un'esecuzione riuscita. Le pipeline di rilascio sono responsabili della raccolta degli artefatti di build, e di spostarli sui server di produzione.
 
-Lo stato delle build e delle release è [disponibile qui](#build-test-and-deployment-status).
+Lo stato delle build e delle release è [disponibile qui](#stato-di-build-test-e-distribuzione).
 
 ## Avviare un build, test e deploy
 
@@ -203,7 +203,7 @@ Il team di sviluppo fa un merge dei cambiamenti dal ramo `prod-staging` a `prod-
 
 Ci sono alcune limitazioni e compromessi noti quando si utilizza la versione beta della piattaforma.
 
-- #### Tutti i dati / progressi personali su queste piattaforme beta `NON saranno salvati o riportati` alla produzione.
+- #### Tutti i dati / progressi personali su queste piattaforme beta NON saranno salvati o importati in produzione.
 
   **Gli utenti nella versione beta avranno un account separato dalla produzione.** La versione beta utilizza un database fisicamente separato dalla produzione. Questo ci dà la possibilità di prevenire qualsiasi perdita accidentale di dati o modifiche. Il team di sviluppo può eliminare il database su questa versione beta se necessario.
 

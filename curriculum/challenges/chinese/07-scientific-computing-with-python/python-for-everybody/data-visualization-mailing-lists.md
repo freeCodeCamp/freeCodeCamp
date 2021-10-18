@@ -3,6 +3,10 @@ id: 5e7b9f6a0b6c005b0e76f097
 title: '数据可视化：邮件列表'
 challengeType: 11
 videoId: RYdW660KkaQ
+bilibiliIds:
+  aid: 334465586
+  bvid: BV18w411R7dD
+  cid: 377545473
 dashedName: data-visualization-mailing-lists
 ---
 

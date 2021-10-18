@@ -1,6 +1,6 @@
 ---
 id: 587d8251367417b2b2512c62
-title: Create a Linked List Class
+title: Criar uma classe de lista encadeada
 challengeType: 1
 forumTopicId: 301628
 dashedName: create-a-linked-list-class
@@ -8,25 +8,25 @@ dashedName: create-a-linked-list-class
 
 # --description--
 
-Let's create a `linked list` class. Every linked list should start out with a few basic properties: a `head` (the first item in your list) and a `length` (number of items in your list). Sometimes you'll see implementations of linked lists that incorporate a `tail` for the last element of the list, but for now we'll just stick with these two. Whenever we add an element to the linked list, our `length` property should be incremented by one.
+Vamos criar uma classe `linked list`. Cada lista encadeada deve começar com algumas propriedades básicas: uma `head` (o primeiro item da lista) e um `length` (o número de itens na lista). Às vezes, você verá implementações de listas encadeadas que incorporam uma `tail` para o último elemento da lista, mas, por enquanto, vamos nos manter com estes dois. Sempre que adicionarmos um elemento à lista encadeada, a propriedade `length` deve ser incrementada em mais uma.
 
-We'll want to have a way to add items to our linked list, so the first method we'll want to create is the `add` method.
+Queremos ter uma maneira de adicionar itens à nossa lista encadeada, então o primeiro método que devemos criar é o método `add`.
 
-If our list is empty, adding an element to our linked list is straightforward enough: we just wrap that element in a `Node` class, and we assign that node to the `head` of our linked list.
+Se a lista estiver vazia, adicionar um elemento nela é bastante direto: apenas encapsulamos esse elemento em uma classe `Node` e atribuímos esse nó à `head` de nossa lista encadeada.
 
-But what if our list already has one or more members? How do we add an element to the list? Recall that each node in a linked list has a `next` property. To add a node to the list, find the last node in the list, and point that last node's `next` property at our new node. (Hint: you know you've reached the end of a linked list when a node's `next` property is `null`.)
+Mas e se a lista já tiver um ou mais membros? Como adicionamos um elemento à lista? Lembre-se de que cada nó de uma lista encadeada tem uma propriedade `next`. Para adicionar um nó à lista, encontre o último nó na lista e aponte esse último nó para a propriedade `next` do novo nó. (Dica: você sabe que chegou ao final de uma lista vinculada quando a propriedade `next` de um nó é `null`.)
 
 # --instructions--
 
-Write an add method that assigns the first node you push to the linked list to the `head`; after that, whenever adding a node, every node should be referenced by the previous node's `next` property.
+Escreva um método add que atribui `head` ao primeiro nó que você insere na lista encadeada. Depois disso, sempre que adicionar um nó, cada nó deve ser referenciado pela propriedade `next` do nó anterior.
 
-Note
+Observação
 
-Your list's `length` should increase by one every time an element is added to the linked list.
+A propriedade `length` da lista encadeada deve aumentar de um em um sempre que um elemento for adicionado a ela.
 
 # --hints--
 
-Your `LinkedList` class should have a `add` method.
+A classe `LinkedList` deve ter o método `add`.
 
 ```js
 assert(
@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-Your `LinkedList` class should assign `head` to the first node added.
+A classe `LinkedList` deve atribuir `head` ao primeiro nó adicionado.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-The previous `node` in your `LinkedList` class should have reference to the newest node created.
+O `node` anterior na sua classe `LinkedList` deve ter referência ao nó criado mais recentemente.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-The  `size` of your `LinkedList` class should equal the amount of nodes in the linked list.
+O  `size` da sua classe `LinkedList` deve ser igual à quantidade de nós da lista encadeada.
 
 ```js
 assert(

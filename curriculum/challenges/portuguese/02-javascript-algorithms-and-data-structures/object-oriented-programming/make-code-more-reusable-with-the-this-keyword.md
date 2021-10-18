@@ -40,7 +40,7 @@ Modifique o método `dog.sayLegs` para remover qualquer referencia para `dog`. U
 assert(dog.sayLegs() === 'This dog has 4 legs.');
 ```
 
-Seu código deve utilizar a palavra-chave `this` para acessar a propriedade `numLegs` de `dog`.
+O código deve utilizar a palavra-chave `this` para acessar a propriedade `numLegs` de `dog`.
 
 ```js
 assert(code.match(/this\.numLegs/g));

@@ -1,8 +1,12 @@
 ---
 id: 5e7b9f0e0b6c005b0e76f07c
-title: 'Web Services: XML Schema'
+title: 'Serviços da web: Schema XML'
 challengeType: 11
 videoId: yWU9kTxW-nc
+bilibiliIds:
+  aid: 631951466
+  bvid: BV1Vb4y1r7m7
+  cid: 377332603
 dashedName: web-services-xml-schema
 ---
 
@@ -10,19 +14,19 @@ dashedName: web-services-xml-schema
 
 ## --text--
 
-What is XSD?
+O que é XSD?
 
 ## --answers--
 
-The W3C Schema specification for XML.
+A especificação do schema do W3C para XML.
 
 ---
 
-The standard JSON schema from MOZ.
+O schema padrão de JSON da MOZ.
 
 ---
 
-Extensible Situational Driver
+Driver situacional extensível
 
 ## --video-solution--
 

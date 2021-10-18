@@ -29,13 +29,13 @@ O elemento `form` precisa ter um elemento `button` dentro dele.
 assert($('form').children('button').length > 0);
 ```
 
-O botão enviar deve ter o atributo `type` definido como `submit`.
+O botão de envio deve ter o atributo `type` definido como `submit`.
 
 ```js
 assert($('button').attr('type') === 'submit');
 ```
 
-O botão enviar deve ter apenas o texto `Submit`.
+O botão de envio deve ter apenas o texto `Submit`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -91,7 +91,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>

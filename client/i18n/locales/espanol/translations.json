@@ -306,6 +306,8 @@
     "confirm-2": "Confirma tu donación única de ${{usd}}",
     "confirm-3": "Confirma tu donación de ${{usd}} / mes",
     "confirm-4": "Confirma tu donación de ${{usd}} / año",
+    "wallet-label": "${{usd}} donación a freeCodeCamp",
+    "wallet-label-1": "${{usd}} / donación mensual a freeCodeCamp",
     "your-donation": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo.",
     "your-donation-2": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada mes.",
     "your-donation-3": "Tu donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada año.",
@@ -316,6 +318,7 @@
     "nicely-done": "Bien hecho. Acabas de completar {{block}}.",
     "credit-card": "Tarjeta de crédito",
     "credit-card-2": "O dona con una tarjeta de crédito:",
+    "or-card": "O has una donación con tarjeta de crédito",
     "paypal": "con PayPal:",
     "need-email": "Necesitamos un correo electrónico válido al que podamos enviar tu recibo de impuestos de donación.",
     "went-wrong": "Algo salió mal al procesar tu donación. No se ha cobrado tu tarjeta.",
@@ -361,6 +364,7 @@
   },
   "misc": {
     "offline": "Parece que no estás conectado, es posible que tu progreso no se guarde",
+    "server-offline": "The server could not be reached and your progress may not be saved. Please contact <0>support</0> if this message persists",
     "unsubscribed": "Haz cancelado tu subscripción exitosamente",
     "keep-coding": "Sea lo que sea que hagas, ¡sigue programando!",
     "email-signup": "Registrarse con Email",
@@ -396,6 +400,7 @@
     "analytics": "Un gráfico de barras y un gráfico de líneas",
     "shield": "Un escudo con una marca de verificación",
     "tensorflow": "Icono de Tensorflow",
+    "database": "Icono de base de datos",
     "algorithm": "Nodos ramificados",
     "magnifier": "lupa"
   },
@@ -423,6 +428,7 @@
     "wrong-updating": "Se produjo un error al actualizar tu cuenta. Por favor revisa e intenta de nuevo",
     "updated-preferences": "Hemos actualizado tus preferencias",
     "email-invalid": "El formato del correo electrónico no es válido",
+    "email-valid": "Your email has successfully been changed, happy coding!",
     "bad-challengeId": "currentChallengeId no es un ID de desafío válido",
     "theme-invalid": "El tema no es válido",
     "theme-set": "Tema ya establecido",
@@ -442,6 +448,7 @@
     "cert-claim-success": "¡@{{username}}, has reclamado con éxito la certificación {{name}}! ¡Felicitaciones en nombre del equipo de freeCodeCamp.org!",
     "wrong-name": "Se produjo un error con la verificación de {{name}}. Por favor, inténtalo de nuevo. Si continúas recibiendo este error, puedes enviar un mensaje a support@freeCodeCamp.org para obtener ayuda.",
     "error-claiming": "Error al reclamar {{certName}}",
+    "refresh-needed": "Solamente puedes utilizar el botón de Pago una vez. Actualiza la página para empezar de nuevo.",
     "username-not-found": "No pudimos encontrar un usuario con el nombre de usuario \"{{username}}\"",
     "add-name": "Este usuario debe agregar su nombre a su cuenta para que otros puedan ver su certificación.",
     "not-eligible": "Este usuario no es elegible para las certificaciones de freeCodeCamp.org en este momento.",
@@ -456,7 +463,8 @@
     "no-account": "No hay cuenta de {{website}} asociada",
     "unlink-success": "Has desvinculado correctamente tu {{website}}",
     "provide-username": "Comprueba si has proporcionado un nombre de usuario y un reporte",
-    "report-sent": "Se envió un informe al equipo con {{email}} en copia"
+    "report-sent": "Se envió un informe al equipo con {{email}} en copia",
+    "certificate-missing": "The certification you tried to view does not exist"
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",

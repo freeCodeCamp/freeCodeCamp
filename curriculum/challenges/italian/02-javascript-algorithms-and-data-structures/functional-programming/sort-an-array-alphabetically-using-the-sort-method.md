@@ -38,7 +38,7 @@ Il metodo di ordinamento predefinito di JavaScript è in base ai valori Unicode 
 
 # --instructions--
 
-Usa il metodo `sort` nella funzione `alphabeticalOrder` per ordinare gli elementi di `arr` in ordine alfabetico.
+Usa il metodo `sort` nella funzione `alphabeticalOrder` per ordinare gli elementi di `arr` in ordine alfabetico. La funzione dovrebbe restituire l'array ordinato.
 
 # --hints--
 
@@ -83,7 +83,7 @@ assert(
 function alphabeticalOrder(arr) {
   // Only change code below this line
 
-
+  return arr
   // Only change code above this line
 }
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);

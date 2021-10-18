@@ -1,6 +1,6 @@
 ---
 id: 5900f3ad1000cf542c50fec0
-title: 'Problem 65: Convergents of e'
+title: 'Problema 65: Convergentes de e'
 challengeType: 5
 forumTopicId: 302177
 dashedName: problem-65-convergents-of-e
@@ -8,59 +8,59 @@ dashedName: problem-65-convergents-of-e
 
 # --description--
 
-The square root of 2 can be written as an infinite continued fraction.
+A raiz quadrada de 2 pode ser escrita como uma fração contínua e infinita.
 
 $\\sqrt{2} = 1 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2 + ...}}}}$
 
-The infinite continued fraction can be written, $\\sqrt{2} = \[1; (2)]$ indicates that 2 repeats *ad infinitum*. In a similar way, $\\sqrt{23} = \[4; (1, 3, 1, 8)]$. It turns out that the sequence of partial values of continued fractions for square roots provide the best rational approximations. Let us consider the convergents for $\\sqrt{2}$.
+Uma fração contínua e infinita pode ser representada por $\\sqrt{2} = \[1; (2)]$. Essa representação indica que 2 se repete *ad infinitum*. Da mesma forma, $\\sqrt{23} = \[4; (1, 3, 1, 8)]$. Acontece que a sequência de valores parciais de frações contínuas de raízes quadradas fornece as melhores aproximações racionais. Considere as convergências de $\\sqrt{2}$.
 
 $1 + \\dfrac{1}{2} = \\dfrac{3}{2}\\\\ 1 + \\dfrac{1}{2 + \\dfrac{1}{2}} = \\dfrac{7}{5}\\\\ 1 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2}}} = \\dfrac{17}{12}\\\\ 1 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2}}}} = \\dfrac{41}{29}$
 
-Hence the sequence of the first ten convergents for $\\sqrt{2}$ are:
+Assim, a sequência dos primeiros dez convergentes onde $\\sqrt{2}$ são:
 
 $1, \\dfrac{3}{2}, \\dfrac{7}{5}, \\dfrac{17}{12}, \\dfrac{41}{29}, \\dfrac{99}{70}, \\dfrac{239}{169}, \\dfrac{577}{408}, \\dfrac{1393}{985}, \\dfrac{3363}{2378}, ...$
 
-What is most surprising is that the important mathematical constant, $e = \[2; 1, 2, 1, 1, 4, 1, 1, 6, 1, ... , 1, 2k, 1, ...]$. The first ten terms in the sequence of convergents for `e` are:
+O que é mais surpreendente é a constante matemática, $e = \[2; 1, 2, 1, 1, 4, 1, 1, 6, 1, ... , 1, 2k, 1, ...]$. Os primeiros dez termos na sequência de convergentes para `e` são:
 
 $2, 3, \\dfrac{8}{3}, \\dfrac{11}{4}, \\dfrac{19}{7}, \\dfrac{87}{32}, \\dfrac{106}{39}, \\dfrac{193}{71}, \\dfrac{1264}{465}, \\dfrac{1457}{536}, ...$
 
-The sum of digits in the numerator of the 10<sup>th</sup> convergent is $1 + 4 + 5 + 7 = 17$.
+A soma de algarismos no numerador do 10<sup>o</sup> convergente é $1 + 4 + 5 + 7 = 17$.
 
-Find the sum of digits in the numerator of the `n`<sup>th</sup> convergent of the continued fraction for `e`.
+Calcule a soma dos dígitos no numerador do `n`<sup>o</sup> convergente da fração contínua para `e`.
 
 # --hints--
 
-`convergentsOfE(10)` should return a number.
+`convergentsOfE(10)` deve retornar um número.
 
 ```js
 assert(typeof convergentsOfE(10) === 'number');
 ```
 
-`convergentsOfE(10)` should return `17`.
+`convergentsOfE(10)` deve retornar `17`.
 
 ```js
 assert.strictEqual(convergentsOfE(10), 17);
 ```
 
-`convergentsOfE(30)` should return `53`.
+`convergentsOfE(30)` deve retornar `53`.
 
 ```js
 assert.strictEqual(convergentsOfE(30), 53);
 ```
 
-`convergentsOfE(50)` should return `91`.
+`convergentsOfE(50)` deve retornar `91`.
 
 ```js
 assert.strictEqual(convergentsOfE(50), 91);
 ```
 
-`convergentsOfE(70)` should return `169`.
+`convergentsOfE(70)` deve retornar `169`.
 
 ```js
 assert.strictEqual(convergentsOfE(70), 169);
 ```
 
-`convergentsOfE(100)` should return `272`.
+`convergentsOfE(100)` deve retornar `272`.
 
 ```js
 assert.strictEqual(convergentsOfE(100), 272);

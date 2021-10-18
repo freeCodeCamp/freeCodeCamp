@@ -3,26 +3,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
-import { getTargetEditor } from '../utils/getTargetEditor';
 import { isDonationModalOpenSelector, userSelector } from '../../../redux';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
   executeChallenge,
-  inAccessibilityModeSelector,
   saveEditorContent,
-  setAccessibilityMode,
   setEditorFocusability,
   visibleEditorsSelector,
   updateFile
 } from '../redux';
+import { getTargetEditor } from '../utils/getTargetEditor';
 import './editor.css';
 import Editor from './editor';
 
 const propTypes = {
   canFocus: PropTypes.bool,
   // TODO: use shape
-  challengeFiles: PropTypes.object,
+  challengeFiles: PropTypes.array,
   containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
   description: PropTypes.string,
@@ -31,19 +29,21 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
-  inAccessibilityMode: PropTypes.bool.isRequired,
   initialEditorContent: PropTypes.string,
   initialExt: PropTypes.string,
+  initialTests: PropTypes.array,
   output: PropTypes.arrayOf(PropTypes.string),
   resizeProps: PropTypes.shape({
     onStopResize: PropTypes.func,
     onResize: PropTypes.func
   }),
   saveEditorContent: PropTypes.func.isRequired,
-  setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
+  // TODO: is this used?
+  title: PropTypes.string,
   updateFile: PropTypes.func.isRequired,
+  usesMultifileEditor: PropTypes.bool,
   visibleEditors: PropTypes.shape({
     indexjs: PropTypes.bool,
     indexjsx: PropTypes.bool,
@@ -56,21 +56,12 @@ const mapStateToProps = createSelector(
   visibleEditorsSelector,
   canFocusEditorSelector,
   consoleOutputSelector,
-  inAccessibilityModeSelector,
   isDonationModalOpenSelector,
   userSelector,
-  (
-    visibleEditors,
-    canFocus,
-    output,
-    accessibilityMode,
-    open,
-    { theme = 'default' }
-  ) => ({
+  (visibleEditors, canFocus, output, open, { theme = 'default' }) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,
     output,
-    inAccessibilityMode: accessibilityMode,
     theme
   })
 );
@@ -78,7 +69,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   executeChallenge,
   saveEditorContent,
-  setAccessibilityMode,
   setEditorFocusability,
   updateFile
 };
@@ -96,9 +86,12 @@ class MultifileEditor extends Component {
       containerRef,
       description,
       editorRef,
+      initialTests,
       theme,
       resizeProps,
-      visibleEditors: { indexcss, indexhtml, indexjs, indexjsx }
+      title,
+      visibleEditors: { indexcss, indexhtml, indexjs, indexjsx },
+      usesMultifileEditor
     } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     // TODO: the tabs mess up the rendering (scroll doesn't work properly and
@@ -109,9 +102,7 @@ class MultifileEditor extends Component {
     // editors.map(props => <EditorWrapper ...props>).join(<ReflexSplitter>)
     // ...probably! As long as we can put keys in the right places.
     const reflexProps = {
-      propagateDimensions: true,
-      renderOnResize: true,
-      renderOnResizeRate: 20
+      propagateDimensions: true
     };
 
     let splitterJSXRight, splitterHTMLRight, splitterCSSRight;
@@ -152,9 +143,12 @@ class MultifileEditor extends Component {
                   description={targetEditor === 'indexjsx' ? description : null}
                   editorRef={editorRef}
                   fileKey='indexjsx'
+                  initialTests={initialTests}
                   key='indexjsx'
                   resizeProps={resizeProps}
                   theme={editorTheme}
+                  title={title}
+                  usesMultifileEditor={usesMultifileEditor}
                 />
               </ReflexElement>
             )}
@@ -171,9 +165,12 @@ class MultifileEditor extends Component {
                   }
                   editorRef={editorRef}
                   fileKey='indexhtml'
+                  initialTests={initialTests}
                   key='indexhtml'
                   resizeProps={resizeProps}
                   theme={editorTheme}
+                  title={title}
+                  usesMultifileEditor={usesMultifileEditor}
                 />
               </ReflexElement>
             )}
@@ -188,9 +185,12 @@ class MultifileEditor extends Component {
                   description={targetEditor === 'indexcss' ? description : null}
                   editorRef={editorRef}
                   fileKey='indexcss'
+                  initialTests={initialTests}
                   key='indexcss'
                   resizeProps={resizeProps}
                   theme={editorTheme}
+                  title={title}
+                  usesMultifileEditor={usesMultifileEditor}
                 />
               </ReflexElement>
             )}
@@ -206,9 +206,12 @@ class MultifileEditor extends Component {
                   description={targetEditor === 'indexjs' ? description : null}
                   editorRef={editorRef}
                   fileKey='indexjs'
+                  initialTests={initialTests}
                   key='indexjs'
                   resizeProps={resizeProps}
                   theme={editorTheme}
+                  title={title}
+                  usesMultifileEditor={usesMultifileEditor}
                 />
               </ReflexElement>
             )}

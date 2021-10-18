@@ -23,6 +23,7 @@ const {
   SHOW_LOCALE_DROPDOWN_MENU: showLocaleDropdownMenu,
   ALGOLIA_APP_ID: algoliaAppId,
   ALGOLIA_API_KEY: algoliaAPIKey,
+  STRIPE_PUBLIC_KEY: stripePublicKey,
   PAYPAL_CLIENT_ID: paypalClientId,
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges
@@ -46,12 +47,16 @@ module.exports = Object.assign(locations, {
   environment: process.env.FREECODECAMP_NODE_ENV || 'development',
   algoliaAppId:
     !algoliaAppId || algoliaAppId === 'app_id_from_algolia_dashboard'
-      ? null
+      ? ''
       : algoliaAppId,
   algoliaAPIKey:
     !algoliaAPIKey || algoliaAPIKey === 'api_key_from_algolia_dashboard'
-      ? null
+      ? ''
       : algoliaAPIKey,
+  stripePublicKey:
+    !stripePublicKey || stripePublicKey === 'pk_from_stripe_dashboard'
+      ? null
+      : stripePublicKey,
   paypalClientId:
     !paypalClientId || paypalClientId === 'id_from_paypal_dashboard'
       ? null

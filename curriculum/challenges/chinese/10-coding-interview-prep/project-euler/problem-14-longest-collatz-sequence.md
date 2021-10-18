@@ -1,6 +1,6 @@
 ---
 id: 5900f37a1000cf542c50fe8d
-title: 'Problem 14: Longest Collatz sequence'
+title: '问题 14：最长考拉兹序列'
 challengeType: 5
 forumTopicId: 301768
 dashedName: problem-14-longest-collatz-sequence
@@ -8,61 +8,61 @@ dashedName: problem-14-longest-collatz-sequence
 
 # --description--
 
-The following iterative sequence is defined for the set of positive integers:
+对正整数集定义如下迭代序列：
 
-<div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (<var>n</var> is even)</div>
+<div style='padding-left: 4em;'><var>n</var> → <var>n</var> / 2（<var>n</var> 为偶数）</div>
 
-<div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1 (<var>n</var> is odd)</div>
+<div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1（<var>n</var> 为奇数）</div>
 
-Using the rule above and starting with 13, we generate the following sequence:
+从 13 开始使用上述规则，我们可以得到如下序列：
 
 <div style='text-align: center;'>13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1</div>
 
-It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
+可以看出，该序列（从 13 开始到 1 结束）共包含 10 项。 虽然考拉兹猜想尚未得到证明，但是该猜想认为以任意数字开始，序列均到 1 结束。
 
-Which starting number, under the given `limit`, produces the longest chain?
+求出在小于 `limit` 的数中，哪个可以产生最长的考拉兹序列？
 
-**Note:** Once the chain starts the terms are allowed to go above one million.
+**注意：** 序列中数字的个数允许超过一百万。
 
 # --hints--
 
-`longestCollatzSequence(14)` should return a number.
+`longestCollatzSequence(14)` 应该返回一个数字。
 
 ```js
 assert(typeof longestCollatzSequence(14) === 'number');
 ```
 
-`longestCollatzSequence(14)` should return 9.
+`longestCollatzSequence(14)` 应该返回 9。
 
 ```js
 assert.strictEqual(longestCollatzSequence(14), 9);
 ```
 
-`longestCollatzSequence(5847)` should return 3711.
+`longestCollatzSequence(5847)` 应该返回 3711。
 
 ```js
 assert.strictEqual(longestCollatzSequence(5847), 3711);
 ```
 
-`longestCollatzSequence(46500)` should return 35655.
+`longestCollatzSequence(46500)` 应该返回 35655。
 
 ```js
 assert.strictEqual(longestCollatzSequence(46500), 35655);
 ```
 
-`longestCollatzSequence(54512)` should return 52527.
+`longestCollatzSequence(54512)` 应该返回 52527。
 
 ```js
 assert.strictEqual(longestCollatzSequence(54512), 52527);
 ```
 
-`longestCollatzSequence(100000)` should return 77031.
+`longestCollatzSequence(100000)` 应该返回 77031。
 
 ```js
 assert.strictEqual(longestCollatzSequence(100000), 77031);
 ```
 
-`longestCollatzSequence(1000000)` should return 837799.
+`longestCollatzSequence(1000000)` 应该返回 837799。
 
 ```js
 assert.strictEqual(longestCollatzSequence(1000000), 837799);

@@ -1,6 +1,7 @@
 {
   "name": "D3 Dashboard",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "d3-dashboard",
   "order": 4,
   "time": "5 hours",

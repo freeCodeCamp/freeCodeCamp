@@ -1,44 +1,48 @@
 ---
 id: 5e7b9f150b6c005b0e76f080
-title: 'Web Services: API Rate Limiting and Security'
+title: 'Serviços da web: Limitador de taxa de API e segurança'
 challengeType: 11
 videoId: pI-g0lI8ngs
+bilibiliIds:
+  aid: 249456172
+  bvid: BV1Sv411E7qa
+  cid: 377336269
 dashedName: web-services-api-rate-limiting-and-security
 ---
 
 # --description--
 
-More resources:
+Mais recursos:
 
-\- [Exercise: GeoJSON](https://www.youtube.com/watch?v=TJGJN0T8tak)
+\- [Exercício: GeoJSON](https://www.youtube.com/watch?v=TJGJN0T8tak)
 
-\- [Exercise: JSON](https://www.youtube.com/watch?v=vTmw5RtfGMY)
+\- [Exercício: JSON](https://www.youtube.com/watch?v=vTmw5RtfGMY)
 
-\- [Exercise: Twitter](https://www.youtube.com/watch?v=2c7YwhvpCro)
+\- [Exercício: Twitter](https://www.youtube.com/watch?v=2c7YwhvpCro)
 
-\- [Exercise: XML](https://www.youtube.com/watch?v=AopYOlDa-vY)
+\- [Exercício: XML](https://www.youtube.com/watch?v=AopYOlDa-vY)
 
 # --question--
 
 ## --text--
 
-When making a request from the Twitter API, what information must always be sent with the request?
+Ao fazer uma solicitação a partir da API do Twitter, quais informações devem ser sempre enviadas com ela?
 
 ## --answers--
 
-Twitter username
+Nome de usuário do Twitter
 
 ---
 
-date range
+intervalo de dados
 
 ---
 
-search term
+termo de pesquisa
 
 ---
 
-key
+chave
 
 ## --video-solution--
 

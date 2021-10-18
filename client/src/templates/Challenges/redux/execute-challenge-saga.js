@@ -1,3 +1,6 @@
+import i18next from 'i18next';
+import { escape } from 'lodash-es';
+import { channel } from 'redux-saga';
 import {
   delay,
   put,
@@ -10,10 +13,17 @@ import {
   take,
   cancel
 } from 'redux-saga/effects';
-import { channel } from 'redux-saga';
-import { escape } from 'lodash-es';
-import i18next from 'i18next';
 
+import {
+  buildChallenge,
+  canBuildChallenge,
+  getTestRunner,
+  challengeHasPreview,
+  updatePreview,
+  isJavaScriptChallenge,
+  isLoopProtected
+} from '../utils/build';
+import { actionTypes } from './action-types';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -26,19 +36,8 @@ import {
   updateTests,
   openModal,
   isBuildEnabledSelector,
-  disableBuildOnError,
-  types
+  disableBuildOnError
 } from './';
-
-import {
-  buildChallenge,
-  canBuildChallenge,
-  getTestRunner,
-  challengeHasPreview,
-  updatePreview,
-  isJavaScriptChallenge,
-  isLoopProtected
-} from '../utils/build';
 
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
@@ -48,11 +47,11 @@ export function* executeCancellableChallengeSaga(payload) {
   if (previewTask) {
     yield cancel(previewTask);
   }
-  // executeChallenge with payload containing isShouldCompletionModalOpen
+  // executeChallenge with payload containing {showCompletionModal}
   const task = yield fork(executeChallengeSaga, payload);
   previewTask = yield fork(previewChallengeSaga, { flushLogs: false });
 
-  yield take(types.cancelTests);
+  yield take(actionTypes.cancelTests);
   yield cancel(task);
 }
 
@@ -60,9 +59,7 @@ export function* executeCancellablePreviewSaga() {
   previewTask = yield fork(previewChallengeSaga);
 }
 
-export function* executeChallengeSaga({
-  payload: isShouldCompletionModalOpen
-}) {
+export function* executeChallengeSaga({ payload }) {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
@@ -100,7 +97,7 @@ export function* executeChallengeSaga({
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
-    if (challengeComplete && isShouldCompletionModalOpen) {
+    if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
     }
 

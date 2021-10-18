@@ -88,12 +88,12 @@ passport.use(new GitHubStrategy({
       );
       assert.match(
         data,
-        /process.env.GITHUB_CLIENT_SECRET/g,
+        /process\.env(\.GITHUB_CLIENT_SECRET|\[(?<q>"|')GITHUB_CLIENT_SECRET\k<q>\])/g,
         'You should use process.env.GITHUB_CLIENT_SECRET'
       );
       assert.match(
         data,
-        /process.env.GITHUB_CLIENT_ID/g,
+        /process\.env(\.GITHUB_CLIENT_ID|\[(?<q>"|')GITHUB_CLIENT_ID\k<q>\])/g,
         'You should use process.env.GITHUB_CLIENT_ID'
       );
     },
@@ -107,8 +107,8 @@ passport.use(new GitHubStrategy({
 
 ```js
 /**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
   Please check our contributing guidelines to learn more.
 */
 ```

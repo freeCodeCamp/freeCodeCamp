@@ -1,4 +1,3 @@
-/* global cy */
 describe('Email input field', () => {
   beforeEach(() => {
     cy.exec('npm run seed');

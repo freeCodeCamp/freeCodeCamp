@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { WithTranslation } from 'react-i18next';
 
-import { Form } from '../../../components/formHelpers';
 import {
   backend,
   backEndProject,
   frontEndProject,
   pythonProject
-} from '../../../../utils/challengeTypes';
+} from '../../../../utils/challenge-types';
+import { Form } from '../../../components/formHelpers';
 
 interface SubmitProps {
-  isShouldCompletionModalOpen: boolean;
+  showCompletionModal: boolean;
 }
 
 interface FormProps extends WithTranslation {
@@ -43,9 +43,9 @@ export class SolutionForm extends Component<FormProps> {
       // updates values on store
       this.props.updateSolutionForm(validatedValues.values);
       if (validatedValues.invalidValues.length === 0) {
-        this.props.onSubmit({ isShouldCompletionModalOpen: true });
+        this.props.onSubmit({ showCompletionModal: true });
       } else {
-        this.props.onSubmit({ isShouldCompletionModalOpen: false });
+        this.props.onSubmit({ showCompletionModal: false });
       }
     }
   };

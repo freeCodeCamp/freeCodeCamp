@@ -1,31 +1,32 @@
-import React, { Fragment, useEffect, memo } from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
-import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import React, { Fragment, useEffect, memo } from 'react';
+import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
+import { bindActionCreators } from 'redux';
+import { createSelector } from 'reselect';
 
+import DonateModal from '../../../../client/src/components/Donation/DonationModal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
-import CertChallenge from './components/CertChallenge';
-import SuperBlockIntro from './components/SuperBlockIntro';
-import Block from './components/Block';
-import DonateModal from '../../../../client/src/components/Donation/DonationModal';
 import { Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
+  signInLoadingSelector,
   isSignedInSelector,
   tryToShowDonationModal,
   userSelector
 } from '../../redux';
-import { resetExpansion, toggleBlock } from './redux';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
+import Block from './components/Block';
+import CertChallenge from './components/CertChallenge';
+import SuperBlockIntro from './components/SuperBlockIntro';
+import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
 
@@ -50,6 +51,7 @@ const propTypes = {
     })
   }),
   resetExpansion: PropTypes.func,
+  signInLoading: PropTypes.bool,
   t: PropTypes.func,
   toggleBlock: PropTypes.func,
   tryToShowDonationModal: PropTypes.func.isRequired,
@@ -62,11 +64,13 @@ const mapStateToProps = state => {
   return createSelector(
     currentChallengeIdSelector,
     isSignedInSelector,
+    signInLoadingSelector,
     userFetchStateSelector,
     userSelector,
-    (currentChallengeId, isSignedIn, fetchState, user) => ({
+    (currentChallengeId, isSignedIn, signInLoading, fetchState, user) => ({
       currentChallengeId,
       isSignedIn,
+      signInLoading,
       fetchState,
       user
     })
@@ -150,6 +154,7 @@ const SuperBlockIntroductionPage = props => {
       allChallengeNode: { edges }
     },
     isSignedIn,
+    signInLoading,
     t,
     user
   } = props;
@@ -202,7 +207,7 @@ const SuperBlockIntroductionPage = props => {
                 </div>
               )}
             </div>
-            {!isSignedIn && (
+            {!isSignedIn && !signInLoading && (
               <div>
                 <Spacer size={2} />
                 <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>

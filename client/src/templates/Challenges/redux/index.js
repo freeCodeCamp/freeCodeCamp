@@ -1,28 +1,25 @@
+import { isEmpty } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 
-import { createTypes } from '../../../../utils/stateManagement';
-
-import { createPoly } from '../../../../../utils/polyvinyl';
 import { getLines } from '../../../../../utils/get-lines';
-import completionEpic from './completion-epic';
-import codeLockEpic from './code-lock-epic';
-import createQuestionEpic from './create-question-epic';
-import codeStorageEpic from './code-storage-epic';
-
-import { createExecuteChallengeSaga } from './execute-challenge-saga';
-import { createCurrentChallengeSaga } from './current-challenge-saga';
-import { challengeTypes } from '../../../../utils/challengeTypes';
-import { getTargetEditor } from '../utils/getTargetEditor';
+import { createPoly } from '../../../../../utils/polyvinyl';
+import { challengeTypes } from '../../../../utils/challenge-types';
 import { completedChallengesSelector } from '../../../redux';
-import { isEmpty } from 'lodash-es';
+import { getTargetEditor } from '../utils/getTargetEditor';
+import { actionTypes, ns } from './action-types';
+import codeLockEpic from './code-lock-epic';
+import codeStorageEpic from './code-storage-epic';
+import completionEpic from './completion-epic';
+import createQuestionEpic from './create-question-epic';
+import { createCurrentChallengeSaga } from './current-challenge-saga';
+import { createExecuteChallengeSaga } from './execute-challenge-saga';
 
-export const ns = 'challenge';
-export const backendNS = 'backendChallenge';
+export { ns };
 
 const initialState = {
   canFocusEditor: true,
   visibleEditors: {},
-  challengeFiles: {},
+  challengeFiles: [],
   challengeMeta: {
     superBlock: '',
     block: '',
@@ -34,7 +31,6 @@ const initialState = {
   challengeTests: [],
   consoleOut: [],
   hasCompletedBlock: false,
-  inAccessibilityMode: false,
   isCodeLocked: false,
   isBuildEnabled: true,
   logsOut: [],
@@ -48,51 +44,6 @@ const initialState = {
   successMessage: 'Happy Coding!'
 };
 
-export const types = createTypes(
-  [
-    'createFiles',
-    'createQuestion',
-    'initTests',
-    'initConsole',
-    'initLogs',
-    'updateConsole',
-    'updateChallengeMeta',
-    'updateFile',
-    'updateJSEnabled',
-    'updateSolutionFormValues',
-    'updateSuccessMessage',
-    'updateTests',
-    'updateLogs',
-    'cancelTests',
-
-    'logsToConsole',
-
-    'lockCode',
-    'unlockCode',
-    'disableBuildOnError',
-    'storedCodeFound',
-    'noStoredCodeFound',
-    'saveEditorContent',
-
-    'closeModal',
-    'openModal',
-
-    'previewMounted',
-    'challengeMounted',
-    'checkChallenge',
-    'executeChallenge',
-    'resetChallenge',
-    'submitChallenge',
-
-    'moveToTab',
-
-    'setEditorFocusability',
-    'toggleVisibleEditor',
-    'setAccessibilityMode'
-  ],
-  ns
-);
-
 export const epics = [
   codeLockEpic,
   completionEpic,
@@ -101,73 +52,81 @@ export const epics = [
 ];
 
 export const sagas = [
-  ...createExecuteChallengeSaga(types),
-  ...createCurrentChallengeSaga(types)
+  ...createExecuteChallengeSaga(actionTypes),
+  ...createCurrentChallengeSaga(actionTypes)
 ];
 
 // TODO: can createPoly handle editable region, rather than separating it?
-export const createFiles = createAction(types.createFiles, challengeFiles =>
-  Object.keys(challengeFiles)
-    .filter(key => challengeFiles[key])
-    .map(key => challengeFiles[key])
-    .reduce(
-      (challengeFiles, file) => ({
+export const createFiles = createAction(
+  actionTypes.createFiles,
+  challengeFiles =>
+    challengeFiles.reduce((challengeFiles, challengeFile) => {
+      return [
         ...challengeFiles,
-        [file.key]: {
-          ...createPoly(file),
-          seed: file.contents.slice(),
+        {
+          ...createPoly(challengeFile),
+          seed: challengeFile.contents.slice(),
           editableContents: getLines(
-            file.contents,
-            file.editableRegionBoundaries
+            challengeFile.contents,
+            challengeFile.editableRegionBoundaries
           ),
-          seedEditableRegionBoundaries: file.editableRegionBoundaries.slice()
+          seedEditableRegionBoundaries:
+            challengeFile.editableRegionBoundaries.slice()
         }
-      }),
-      {}
-    )
+      ];
+    }, [])
 );
 
-export const createQuestion = createAction(types.createQuestion);
-export const initTests = createAction(types.initTests);
-export const updateTests = createAction(types.updateTests);
-export const cancelTests = createAction(types.cancelTests);
+export const createQuestion = createAction(actionTypes.createQuestion);
+export const initTests = createAction(actionTypes.initTests);
+export const updateTests = createAction(actionTypes.updateTests);
+export const cancelTests = createAction(actionTypes.cancelTests);
 
-export const initConsole = createAction(types.initConsole);
-export const initLogs = createAction(types.initLogs);
-export const updateChallengeMeta = createAction(types.updateChallengeMeta);
-export const updateFile = createAction(types.updateFile);
-export const updateConsole = createAction(types.updateConsole);
-export const updateLogs = createAction(types.updateLogs);
-export const updateJSEnabled = createAction(types.updateJSEnabled);
+export const initConsole = createAction(actionTypes.initConsole);
+export const initLogs = createAction(actionTypes.initLogs);
+export const updateChallengeMeta = createAction(
+  actionTypes.updateChallengeMeta
+);
+export const updateFile = createAction(actionTypes.updateFile);
+export const updateConsole = createAction(actionTypes.updateConsole);
+export const updateLogs = createAction(actionTypes.updateLogs);
+export const updateJSEnabled = createAction(actionTypes.updateJSEnabled);
 export const updateSolutionFormValues = createAction(
-  types.updateSolutionFormValues
+  actionTypes.updateSolutionFormValues
 );
-export const updateSuccessMessage = createAction(types.updateSuccessMessage);
+export const updateSuccessMessage = createAction(
+  actionTypes.updateSuccessMessage
+);
 
-export const logsToConsole = createAction(types.logsToConsole);
+export const logsToConsole = createAction(actionTypes.logsToConsole);
 
-export const lockCode = createAction(types.lockCode);
-export const unlockCode = createAction(types.unlockCode);
-export const disableBuildOnError = createAction(types.disableBuildOnError);
-export const storedCodeFound = createAction(types.storedCodeFound);
-export const noStoredCodeFound = createAction(types.noStoredCodeFound);
-export const saveEditorContent = createAction(types.saveEditorContent);
+export const lockCode = createAction(actionTypes.lockCode);
+export const unlockCode = createAction(actionTypes.unlockCode);
+export const disableBuildOnError = createAction(
+  actionTypes.disableBuildOnError
+);
+export const storedCodeFound = createAction(actionTypes.storedCodeFound);
+export const noStoredCodeFound = createAction(actionTypes.noStoredCodeFound);
+export const saveEditorContent = createAction(actionTypes.saveEditorContent);
 
-export const closeModal = createAction(types.closeModal);
-export const openModal = createAction(types.openModal);
+export const closeModal = createAction(actionTypes.closeModal);
+export const openModal = createAction(actionTypes.openModal);
 
-export const previewMounted = createAction(types.previewMounted);
-export const challengeMounted = createAction(types.challengeMounted);
-export const checkChallenge = createAction(types.checkChallenge);
-export const executeChallenge = createAction(types.executeChallenge);
-export const resetChallenge = createAction(types.resetChallenge);
-export const submitChallenge = createAction(types.submitChallenge);
+export const previewMounted = createAction(actionTypes.previewMounted);
+export const challengeMounted = createAction(actionTypes.challengeMounted);
+export const checkChallenge = createAction(actionTypes.checkChallenge);
+export const executeChallenge = createAction(actionTypes.executeChallenge);
+export const resetChallenge = createAction(actionTypes.resetChallenge);
+export const submitChallenge = createAction(actionTypes.submitChallenge);
 
-export const moveToTab = createAction(types.moveToTab);
+export const moveToTab = createAction(actionTypes.moveToTab);
 
-export const setEditorFocusability = createAction(types.setEditorFocusability);
-export const toggleVisibleEditor = createAction(types.toggleVisibleEditor);
-export const setAccessibilityMode = createAction(types.setAccessibilityMode);
+export const setEditorFocusability = createAction(
+  actionTypes.setEditorFocusability
+);
+export const toggleVisibleEditor = createAction(
+  actionTypes.toggleVisibleEditor
+);
 
 export const currentTabSelector = state => state[ns].currentTab;
 export const challengeFilesSelector = state => state[ns].challengeFiles;
@@ -203,7 +162,7 @@ export const challengeDataSelector = state => {
   ) {
     challengeData = {
       ...challengeData,
-      files: challengeFilesSelector(state)
+      challengeFiles: challengeFilesSelector(state)
     };
   } else if (challengeType === challengeTypes.backend) {
     const { solution: url = {} } = projectFormValuesSelector(state);
@@ -234,7 +193,7 @@ export const challengeDataSelector = state => {
     const { required = [], template = '' } = challengeMetaSelector(state);
     challengeData = {
       ...challengeData,
-      files: challengeFilesSelector(state),
+      challengeFiles: challengeFilesSelector(state),
       required,
       template
     };
@@ -245,149 +204,150 @@ export const challengeDataSelector = state => {
 export const canFocusEditorSelector = state => state[ns].canFocusEditor;
 export const visibleEditorsSelector = state => state[ns].visibleEditors;
 
-export const inAccessibilityModeSelector = state =>
-  state[ns].inAccessibilityMode;
-
 export const reducer = handleActions(
   {
-    [types.createFiles]: (state, { payload }) => ({
+    [actionTypes.createFiles]: (state, { payload }) => ({
       ...state,
       challengeFiles: payload,
       visibleEditors: { [getTargetEditor(payload)]: true }
     }),
-    [types.updateFile]: (
+    [actionTypes.updateFile]: (
       state,
-      { payload: { key, editorValue, editableRegionBoundaries } }
-    ) => ({
-      ...state,
-      challengeFiles: {
-        ...state.challengeFiles,
-        [key]: {
-          ...state.challengeFiles[key],
-          contents: editorValue,
-          editableContents: getLines(editorValue, editableRegionBoundaries),
+      { payload: { fileKey, editorValue, editableRegionBoundaries } }
+    ) => {
+      const updates = {};
+      // if a given part of the payload is null, we leave that part of the state
+      // unchanged
+      if (editableRegionBoundaries !== null)
+        updates.editableRegionBoundaries = editableRegionBoundaries;
+      if (editorValue !== null) updates.contents = editorValue;
+      if (editableRegionBoundaries !== null && editorValue !== null)
+        updates.editableContents = getLines(
+          editorValue,
           editableRegionBoundaries
-        }
-      }
-    }),
-    [types.storedCodeFound]: (state, { payload }) => ({
+        );
+      return {
+        ...state,
+        challengeFiles: [
+          ...state.challengeFiles.filter(x => x.fileKey !== fileKey),
+          {
+            ...state.challengeFiles.find(x => x.fileKey === fileKey),
+            ...updates
+          }
+        ]
+      };
+    },
+    [actionTypes.storedCodeFound]: (state, { payload }) => ({
       ...state,
       challengeFiles: payload
     }),
-    [types.initTests]: (state, { payload }) => ({
+    [actionTypes.initTests]: (state, { payload }) => ({
       ...state,
       challengeTests: payload
     }),
-    [types.updateTests]: (state, { payload }) => ({
+    [actionTypes.updateTests]: (state, { payload }) => ({
       ...state,
       challengeTests: payload
     }),
 
-    [types.initConsole]: (state, { payload }) => ({
+    [actionTypes.initConsole]: (state, { payload }) => ({
       ...state,
       consoleOut: payload ? [payload] : []
     }),
-    [types.updateConsole]: (state, { payload }) => ({
+    [actionTypes.updateConsole]: (state, { payload }) => ({
       ...state,
       consoleOut: state.consoleOut.concat(payload)
     }),
-    [types.initLogs]: state => ({
+    [actionTypes.initLogs]: state => ({
       ...state,
       logsOut: []
     }),
-    [types.updateLogs]: (state, { payload }) => ({
+    [actionTypes.updateLogs]: (state, { payload }) => ({
       ...state,
       logsOut: state.logsOut.concat(payload)
     }),
-    [types.logsToConsole]: (state, { payload }) => ({
+    [actionTypes.logsToConsole]: (state, { payload }) => ({
       ...state,
       consoleOut: isEmpty(state.logsOut)
         ? state.consoleOut
         : state.consoleOut.concat(payload, state.logsOut)
     }),
-    [types.updateChallengeMeta]: (state, { payload }) => ({
+    [actionTypes.updateChallengeMeta]: (state, { payload }) => ({
       ...state,
       challengeMeta: { ...payload }
     }),
-
-    [types.resetChallenge]: state => ({
-      ...state,
-      currentTab: 2,
-      challengeFiles: {
-        ...Object.keys(state.challengeFiles)
-          .map(key => state.challengeFiles[key])
-          .reduce(
-            (files, file) => ({
-              ...files,
-              [file.key]: {
-                ...file,
-                contents: file.seed.slice(),
-                editableContents: getLines(
-                  file.seed,
-                  file.seedEditableRegionBoundaries
-                ),
-                editableRegionBoundaries: file.seedEditableRegionBoundaries
-              }
-            }),
-            {}
-          )
-      },
-      challengeTests: state.challengeTests.map(({ text, testString }) => ({
-        text,
-        testString
-      })),
-      consoleOut: []
-    }),
-    [types.updateSolutionFormValues]: (state, { payload }) => ({
+    [actionTypes.resetChallenge]: state => {
+      const challengeFilesReset = state.challengeFiles.map(challengeFile => ({
+        ...challengeFile,
+        contents: challengeFile.seed.slice(),
+        editableContents: getLines(
+          challengeFile.seed,
+          challengeFile.seedEditableRegionBoundaries
+        ),
+        editableRegionBoundaries:
+          challengeFile.seedEditableRegionBoundaries.slice()
+      }));
+      return {
+        ...state,
+        currentTab: 2,
+        challengeFiles: challengeFilesReset,
+        challengeTests: state.challengeTests.map(({ text, testString }) => ({
+          text,
+          testString
+        })),
+        consoleOut: []
+      };
+    },
+    [actionTypes.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload
     }),
 
-    [types.lockCode]: state => ({
+    [actionTypes.lockCode]: state => ({
       ...state,
       isCodeLocked: true
     }),
-    [types.unlockCode]: state => ({
+    [actionTypes.unlockCode]: state => ({
       ...state,
       isBuildEnabled: true,
       isCodeLocked: false
     }),
-    [types.disableBuildOnError]: state => ({
+    [actionTypes.disableBuildOnError]: state => ({
       ...state,
       isBuildEnabled: false
     }),
 
-    [types.updateSuccessMessage]: (state, { payload }) => ({
+    [actionTypes.updateSuccessMessage]: (state, { payload }) => ({
       ...state,
       successMessage: payload
     }),
-    [types.closeModal]: (state, { payload }) => ({
+    [actionTypes.closeModal]: (state, { payload }) => ({
       ...state,
       modal: {
         ...state.modal,
         [payload]: false
       }
     }),
-    [types.openModal]: (state, { payload }) => ({
+    [actionTypes.openModal]: (state, { payload }) => ({
       ...state,
       modal: {
         ...state.modal,
         [payload]: true
       }
     }),
-    [types.moveToTab]: (state, { payload }) => ({
+    [actionTypes.moveToTab]: (state, { payload }) => ({
       ...state,
       currentTab: payload
     }),
-    [types.executeChallenge]: state => ({
+    [actionTypes.executeChallenge]: state => ({
       ...state,
       currentTab: 3
     }),
-    [types.setEditorFocusability]: (state, { payload }) => ({
+    [actionTypes.setEditorFocusability]: (state, { payload }) => ({
       ...state,
       canFocusEditor: payload
     }),
-    [types.toggleVisibleEditor]: (state, { payload }) => {
+    [actionTypes.toggleVisibleEditor]: (state, { payload }) => {
       return {
         ...state,
         visibleEditors: {
@@ -395,11 +355,7 @@ export const reducer = handleActions(
           [payload]: !state.visibleEditors[payload]
         }
       };
-    },
-    [types.setAccessibilityMode]: (state, { payload }) => ({
-      ...state,
-      inAccessibilityMode: payload
-    })
+    }
   },
   initialState
 );

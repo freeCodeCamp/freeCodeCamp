@@ -22,14 +22,14 @@ function myFun() {
 myFun();
 ```
 
-O código acima exibirá no console a string `Hello`, e retorna a string `World`. A string `byebye` nunca irá ser exibida no console, porque a função termina na instrução `return`.
+O código acima exibirá no console a string `Hello`, e retorna a string `World`. A string `byebye` nunca vai ser exibida no console, porque a função termina na instrução `return`.
 
 # --instructions--
 
 Modifique a função `abTest` para que se `a` ou `b` forem menores que `0` a função irá imediatamente terminar retornando o valor de `undefined`.
 
 **Dica**  
-Lembre-se que [`undefined` é uma palavra-chave](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables) e não uma string.
+Lembre-se de que [`undefined` é uma palavra-chave](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables) e não uma string.
 
 # --hints--
 

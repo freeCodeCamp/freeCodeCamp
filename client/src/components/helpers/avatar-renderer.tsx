@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
 import { Image } from '@freecodecamp/react-bootstrap';
-import DefaultAvatar from '../../assets/icons/default-avatar';
-import { defaultUserImage } from '../../../../config/misc';
-import { borderColorPicker } from '.';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { defaultUserImage } from '../../../../config/misc';
+import DefaultAvatar from '../../assets/icons/default-avatar';
+import { borderColorPicker } from '.';
 
 interface AvatarRendererProps {
   isDonating?: boolean;

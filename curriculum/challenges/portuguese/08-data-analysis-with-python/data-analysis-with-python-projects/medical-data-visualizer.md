@@ -1,6 +1,6 @@
 ---
 id: 5e46f7f8ac417301a38fb92a
-title: Medical Data Visualizer
+title: Visualizador de dados médicos
 challengeType: 10
 forumTopicId: 462368
 dashedName: medical-data-visualizer
@@ -8,17 +8,17 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-In this project, you will visualize and make calculations from medical examination data using matplotlib, seaborn, and pandas.
+Neste projeto, você vai visualizar e fazer cálculos a partir de dados dos exames médicos usando o matplotlib, o seaborn e o pandas.
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer).
+Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer).
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com base nas instruções do 'README.md', envie o link do seu projeto abaixo.
 
-We are still developing the interactive instructional part of the data analysis with Python curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo de análise de dados com Python. Por enquanto, você terá que usar outros recursos para aprender a vencer este desafio.
 
 # --hints--
 
-It should pass all Python tests.
+Ele deve passar em todos os testes do Python.
 
 ```js
 

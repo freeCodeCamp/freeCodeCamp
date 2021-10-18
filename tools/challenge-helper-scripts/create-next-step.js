@@ -1,7 +1,7 @@
-const { getProjectPath } = require('./helpers/get-project-path');
 const {
   getLastStepFileContent
 } = require('./helpers/get-last-step-file-content');
+const { getProjectPath } = require('./helpers/get-project-path');
 const { reorderSteps, createStepFile } = require('./utils');
 
 const projectPath = getProjectPath();

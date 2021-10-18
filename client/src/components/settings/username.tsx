@@ -1,27 +1,25 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import {
   ControlLabel,
   FormControl,
   Alert,
   FormGroup
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
 } from '@freecodecamp/react-bootstrap';
+import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
+import { createSelector } from 'reselect';
 
+import { isValidUsername } from '../../../../utils/validate';
 import {
   validateUsername,
   usernameValidationSelector,
   submitNewUsername
 } from '../../redux/settings';
-import FullWidthRow from '../helpers/full-width-row';
 import BlockSaveButton from '../helpers/form/block-save-button';
-import { isValidUsername } from '../../../../utils/validate';
+import FullWidthRow from '../helpers/full-width-row';
 
 type UsernameProps = {
   isValidUsername: boolean;
@@ -151,10 +149,9 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const { t } = this.props;
 
     if (!validating && error) {
-      console.log(error);
       return (
         <FullWidthRow>
-          <Alert bsStyle='danger'>
+          <Alert bsStyle='danger' closeLabel={t('buttons.close')}>
             {t(`settings.username.${error}`, {
               username: this.state.formValue
             })}
@@ -165,28 +162,38 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     if (!validating && !isValidUsername) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='warning'>{t('settings.username.unavailable')}</Alert>
+          <Alert bsStyle='warning' closeLabel={t('buttons.close')}>
+            {t('settings.username.unavailable')}
+          </Alert>
         </FullWidthRow>
       );
     }
     if (validating) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='info'>{t('settings.username.validating')}</Alert>
+          <Alert bsStyle='info' closeLabel={t('buttons.close')}>
+            {t('settings.username.validating')}
+          </Alert>
         </FullWidthRow>
       );
     }
     if (!validating && isValidUsername && this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success'>{t('settings.username.available')}</Alert>
+          <Alert bsStyle='success' closeLabel={t('buttons.close')}>
+            {t('settings.username.available')}
+          </Alert>
         </FullWidthRow>
       );
     } else if (!validating && isValidUsername && !this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success'>{t('settings.username.available')}</Alert>
-          <Alert bsStyle='info'>{t('settings.username.change')}</Alert>
+          <Alert bsStyle='success' closeLabel={t('buttons.close')}>
+            {t('settings.username.available')}
+          </Alert>
+          <Alert bsStyle='info' closeLabel={t('buttons.close')}>
+            {t('settings.username.change')}
+          </Alert>
         </FullWidthRow>
       );
     }

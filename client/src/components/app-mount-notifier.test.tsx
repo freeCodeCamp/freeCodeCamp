@@ -1,12 +1,12 @@
+import { render, waitFor } from '@testing-library/react';
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
-import { render, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 
 import { i18nextCodes } from '../../../config/i18n/all-langs';
-import AppMountNotifier from './app-mount-notifier';
-import { createStore } from '../redux/createStore';
 import i18nTestConfig from '../../i18n/configForTests';
+import { createStore } from '../redux/createStore';
+import AppMountNotifier from './app-mount-notifier';
 
 jest.mock('react-ga');
 jest.unmock('react-i18next');

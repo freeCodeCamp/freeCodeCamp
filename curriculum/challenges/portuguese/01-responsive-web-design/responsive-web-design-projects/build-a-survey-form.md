@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b03
-title: Crie um formulário de pesquisa
+title: Criar um formulário de pesquisa
 challengeType: 3
 forumTopicId: 301145
 dashedName: build-a-survey-form

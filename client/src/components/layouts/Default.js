@@ -1,41 +1,39 @@
-import React, { Component } from 'react';
+import fontawesome from '@fortawesome/fontawesome';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
-import Helmet from 'react-helmet';
-import fontawesome from '@fortawesome/fontawesome';
-import { withTranslation } from 'react-i18next';
 
+import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
+import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
+import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
+import robotoBoldURL from '../../../static/fonts/roboto-mono/RobotoMono-Bold.woff';
+import robotoItalicURL from '../../../static/fonts/roboto-mono/RobotoMono-Italic.woff';
+import robotoRegularURL from '../../../static/fonts/roboto-mono/RobotoMono-Regular.woff';
+import { isBrowser } from '../../../utils';
 import {
   fetchUser,
   isSignedInSelector,
   onlineStatusChange,
+  serverStatusChange,
   isOnlineSelector,
+  isServerOnlineSelector,
   userFetchStateSelector,
   userSelector,
   usernameSelector,
   executeGA
 } from '../../redux';
+import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
-import { isBrowser } from '../../../utils';
-
-import OfflineWarning from '../OfflineWarning';
-import Flash from '../Flash';
-import Header from '../Header';
 import Footer from '../Footer';
-// preload common fonts
-import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
-import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
-import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
-// eslint-disable-next-line max-len
-import robotoRegularURL from '../../../static/fonts/roboto-mono/RobotoMono-Regular.woff';
-// eslint-disable-next-line max-len
-import robotoBoldURL from '../../../static/fonts/roboto-mono/RobotoMono-Bold.woff';
-// eslint-disable-next-line max-len
-import robotoItalicURL from '../../../static/fonts/roboto-mono/RobotoMono-Italic.woff';
+import Header from '../Header';
+import OfflineWarning from '../OfflineWarning';
 
+// preload common fonts
 import './fonts.css';
 import './global.css';
 import './variables.css';
@@ -56,10 +54,12 @@ const propTypes = {
   }),
   hasMessage: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
+  isServerOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   onlineStatusChange: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
+  serverStatusChange: PropTypes.func.isRequired,
   showFooter: PropTypes.bool,
   signedInUserName: PropTypes.string,
   t: PropTypes.func.isRequired,
@@ -72,14 +72,16 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   flashMessageSelector,
   isOnlineSelector,
+  isServerOnlineSelector,
   userFetchStateSelector,
   userSelector,
   usernameSelector,
-  (isSignedIn, flashMessage, isOnline, fetchState, user) => ({
+  (isSignedIn, flashMessage, isOnline, isServerOnline, fetchState, user) => ({
     isSignedIn,
     flashMessage,
     hasMessage: !!flashMessage.message,
     isOnline,
+    isServerOnline,
     fetchState,
     theme: user.theme,
     user
@@ -88,7 +90,13 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { fetchUser, removeFlashMessage, onlineStatusChange, executeGA },
+    {
+      fetchUser,
+      removeFlashMessage,
+      onlineStatusChange,
+      serverStatusChange,
+      executeGA
+    },
     dispatch
   );
 
@@ -131,6 +139,7 @@ class DefaultLayout extends Component {
       fetchState,
       flashMessage,
       isOnline,
+      isServerOnline,
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
@@ -202,7 +211,11 @@ class DefaultLayout extends Component {
         </Helmet>
         <div className={`default-layout`}>
           <Header fetchState={fetchState} user={user} />
-          <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
+          <OfflineWarning
+            isOnline={isOnline}
+            isServerOnline={isServerOnline}
+            isSignedIn={isSignedIn}
+          />
           {hasMessage && flashMessage ? (
             <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
           ) : null}

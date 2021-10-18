@@ -1,8 +1,12 @@
 ---
 id: 5e7b9f180b6c005b0e76f08c
-title: Relational Database Design
+title: Design de banco de dados relacional
 challengeType: 11
 videoId: AqdfbrpkbHk
+bilibiliIds:
+  aid: 504388066
+  bvid: BV1Qg411j742
+  cid: 377532216
 dashedName: relational-database-design
 ---
 
@@ -10,7 +14,7 @@ dashedName: relational-database-design
 
 ## --text--
 
-What is the best practice for how many times a piece of string data should be stored in a database?
+Qual é a prática recomendada com relação ao número de vezes que um dado do tipo string pode ser armazenado em um banco de dados?
 
 ## --answers--
 

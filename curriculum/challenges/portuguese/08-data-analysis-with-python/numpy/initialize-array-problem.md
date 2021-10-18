@@ -1,8 +1,12 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed6
-title: Initialize Array Problem
+title: Inicializar problema de arrays
 challengeType: 11
 videoId: 0jGfH8BPfOk
+bilibiliIds:
+  aid: 763027834
+  bvid: BV1w64y1a7eo
+  cid: 409025878
 dashedName: initialize-array-problem
 ---
 
@@ -10,7 +14,7 @@ dashedName: initialize-array-problem
 
 ## --text--
 
-What is another way to produce the following array?
+Qual é a outra forma de produzir o array a seguir?
 
 ```py
 [[0. 0. 0. 0. 0. 0. 0.]

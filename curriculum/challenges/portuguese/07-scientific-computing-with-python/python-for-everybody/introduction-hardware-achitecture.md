@@ -1,8 +1,12 @@
 ---
 id: 5e6a54af58d3af90110a60a1
-title: 'Introduction: Hardware Architecture'
+title: 'Introdução: arquitetura de hardware'
 challengeType: 11
 videoId: H6qtjRTfSog
+bilibiliIds:
+  aid: 206977572
+  bvid: BV1zh411z7Ak
+  cid: 376199262
 dashedName: introduction-hardware-architecture
 ---
 
@@ -10,19 +14,19 @@ dashedName: introduction-hardware-architecture
 
 ## --text--
 
-Where are your programs stored when they are running?
+Onde seus programas são armazenados quando estão sendo executados?
 
 ## --answers--
 
-Hard Drive.
+Disco rígido.
 
 ---
 
-Memory.
+Memória.
 
 ---
 
-Central Processing Unit.
+Unidade de Processamento Central.
 
 ## --video-solution--
 

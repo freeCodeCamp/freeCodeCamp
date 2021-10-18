@@ -27,7 +27,7 @@ dashedName: use-the-value-attribute-with-radio-buttons-and-checkboxes
 
 # --instructions--
 
-给每一个 `radio` 和 `checkbox` 输入框添加 `value` 属性。 使用输入标签的文本，小写形式，作为属性的值。
+给每一个 `radio` 和 `checkbox` 输入框添加 `value` 属性。 不要创建任何新的 radio 或 checkbox 元素。 输入框标签文本使用小写字母作为属性值。
 
 # --hints--
 
@@ -88,7 +88,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -121,7 +121,7 @@ assert(
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>

@@ -12,17 +12,17 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
 
 # --instructions--
 
-在 `tests/2_functional-tests.js` 中，`'submit "surname" : "Vespucci" - write your e2e test...'` 測試（`// #6`），自動化填寫和提交表單：
+在 `tests/2_functional-tests.js` 中，在 `'Submit the surname "Vespucci" in the HTML form'` 測試（`// #5`），自動執行以下操作：
 
-1.  在表單中填寫 `Vespucci` 的 `surname`。
-2.  點擊 `'submit'` 按鈕提交表單
+1.  在表格中填寫姓氏 `Vespucci`。
+2.  點擊提交按鈕
 
-在回調中：
+在 `pressButton` 回調中：
 
-1.  斷言狀態是正常的 `200`
-2.  斷言元素 `span#name` 中的文本是 `'Amerigo'`
-3.  斷言元素 `span#surname` 元素中的文本是 `'Vespucci'`
-4.  斷言有 `span#dates` 元素，它們的計數是 `1`
+1.  斷言狀態是正常的 `200`。
+2.  斷言元素 `span#name` 中的文本是 `'Amerigo'`。
+3.  斷言元素 `span#surname` 元素中的文本是 `'Vespucci'`。
+4.  斷言有 `span#dates` 元素，它們的計數是 `1`。
 
 不要忘記刪除 `assert.fail()` 調用。
 
@@ -32,7 +32,7 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -46,7 +46,7 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'browser.success');
     },
@@ -56,11 +56,11 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
   );
 ```
 
-應斷言元素 “span#surname” 中的文本爲 “Vespucci”。
+應斷言元素 `span#name` 中的文本是 `'Amerigo'`。
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'browser.text');
       assert.match(data.assertions[1].args[0], /('|")span#name\1/);
@@ -72,11 +72,11 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
   );
 ```
 
-應斷言元素 “span#surname” 中的文本爲 “Vespucci”。
+應斷言元素 `span#surname` 中的文本是 `'Vespucci'`。
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
     (data) => {
       assert.equal(data.assertions[2].method, 'browser.text');
       assert.match(data.assertions[2].args[0], /('|")span#surname\1/);
@@ -88,11 +88,11 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
   );
 ```
 
-應該斷言元素 “span#dates” 存在，且它的值爲 1。
+應該斷言元素 `span#dates` 存在，且它的值爲 1。
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
     (data) => {
       assert.equal(data.assertions[3].method, 'browser.elements');
       assert.match(data.assertions[3].args[0], /('|")span#dates\1/);

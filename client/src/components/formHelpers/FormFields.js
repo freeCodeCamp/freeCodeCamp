@@ -1,7 +1,3 @@
-import React from 'react';
-import { kebabCase } from 'lodash-es';
-import normalizeUrl from 'normalize-url';
-import PropTypes from 'prop-types';
 import {
   Alert,
   Col,
@@ -10,7 +6,12 @@ import {
   FormGroup,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
+import { kebabCase } from 'lodash-es';
+import normalizeUrl from 'normalize-url';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { Field } from 'react-final-form';
+import { useTranslation } from 'react-i18next';
 import {
   editorValidator,
   localhostValidator,
@@ -34,6 +35,7 @@ const propTypes = {
 };
 
 function FormFields(props) {
+  const { t } = useTranslation();
   const { formFields, options = {} } = props;
   const {
     ignored = [],
@@ -62,7 +64,10 @@ function FormFields(props) {
     const message = error || validationError || validationWarning;
     return message ? (
       <HelpBlock>
-        <Alert bsStyle={error || validationError ? 'danger' : 'info'}>
+        <Alert
+          bsStyle={error || validationError ? 'danger' : 'info'}
+          closeLabel={t('buttons.close')}
+        >
           {message}
         </Alert>
       </HelpBlock>

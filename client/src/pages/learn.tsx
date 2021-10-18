@@ -1,15 +1,15 @@
-import React from 'react';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
-import { createSelector } from 'reselect';
 import { graphql } from 'gatsby';
+import React from 'react';
 import Helmet from 'react-helmet';
-import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
+import Intro from '../components/Intro';
+import Map from '../components/Map';
 import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
-import Map from '../components/Map';
-import Intro from '../components/Intro';
 import {
   userFetchStateSelector,
   isSignedInSelector,
@@ -82,8 +82,6 @@ function LearnPage({
               slug={slug}
             />
             <Map />
-            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-            {/* @ts-ignore */}
             <Spacer size={2} />
           </Col>
         </Row>

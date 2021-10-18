@@ -1,16 +1,14 @@
+import { isEqual } from 'lodash-es';
 import React, { Component } from 'react';
+import { HotKeys, ObserveKeys } from 'react-hotkeys';
+import { withTranslation } from 'react-i18next';
+import { Hit } from 'react-instantsearch-core';
+import { SearchBox } from 'react-instantsearch-dom';
 import { connect } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { SearchBox } from 'react-instantsearch-dom';
-import { HotKeys, ObserveKeys } from 'react-hotkeys';
-import { isEqual } from 'lodash-es';
-import { withTranslation } from 'react-i18next';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 
-import WithInstantSearch from '../WithInstantSearch';
-
-import { Hit } from 'react-instantsearch-core';
 import {
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
@@ -18,6 +16,8 @@ import {
   toggleSearchFocused,
   updateSearchQuery
 } from '../redux';
+import WithInstantSearch from '../with-instant-search';
+
 import SearchHits from './search-hits';
 
 import './searchbar-base.css';

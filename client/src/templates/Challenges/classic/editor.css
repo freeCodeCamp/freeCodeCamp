@@ -16,10 +16,7 @@
 
 .breadcrumbs-demo {
   font-size: 16px;
-}
-
-.breadcrumbs-demo span {
-  font-weight: bold;
+  margin: 0 0 1.2rem;
 }
 
 .tabs-row {
@@ -37,10 +34,6 @@
   background-color: var(--secondary-color);
   color: var(--secondary-background);
 }
-
-/* [widgetid='my.overlay.widget'] {
-  padding: 10px;
-} */
 
 .editor-upper-jaw,
 .editor-lower-jaw {

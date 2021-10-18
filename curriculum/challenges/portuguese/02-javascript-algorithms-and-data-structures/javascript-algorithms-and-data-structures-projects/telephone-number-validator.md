@@ -1,6 +1,6 @@
 ---
 id: aff0395860f5d3034dc0bfc9
-title: Validador de Número Telefônico
+title: Validador de número de telefone
 challengeType: 5
 forumTopicId: 16090
 dashedName: telephone-number-validator

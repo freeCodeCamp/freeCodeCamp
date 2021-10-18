@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
 
 // Package Utilities
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 
 // Local Utilities
@@ -15,7 +15,6 @@ import {
   ChallengeMetaType
 } from '../../../redux/prop-types';
 import { updateChallengeMeta, challengeMounted } from '../redux';
-
 // Redux
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -61,15 +60,10 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       <LearnLayout>
         <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
         <iframe
-          sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+          className='codeally-frame'
           // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+          sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
           src={`http://codeally.io/embed/?repoUrl=${url}`}
-          style={{
-            width: '100%',
-            height: 'calc(100vh - 38px)',
-            overflow: 'hidden',
-            border: 0
-          }}
           title='Editor'
         />
       </LearnLayout>

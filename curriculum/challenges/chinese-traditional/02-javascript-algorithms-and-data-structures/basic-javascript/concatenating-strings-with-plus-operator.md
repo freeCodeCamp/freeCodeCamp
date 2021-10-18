@@ -28,7 +28,7 @@ var ourStr = "I come first. " + "I come second.";
 字符串 `I come first. I come second.` 將顯示在控制檯中。
 # --instructions--
 
-使用 `+` 操作符連接字符串`This is the start.` 和 `This is the end.` 賦值給 `myStr` 。
+用字符串 `This is the start.` 和 `This is the end.` 通過 `+` 運算符創建 `myStr`。 確保在兩個字符串之間包含一個空格。
 
 # --hints--
 

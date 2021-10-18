@@ -16,67 +16,77 @@ Você pode encontrar ambas as caixas usando algo que chamamos de <dfn>flag</dfn>
 
 # --instructions--
 
-Escreva uma regex `fccRegex` que encontre `freeCodeCamp`, não importa em que caixa esteja. Sua regex não deve buscar abreviações ou variações com espaços.
+Escreva uma regex `fccRegex` que encontre `freeCodeCamp`, não importa em que caixa esteja. A regex não deve buscar abreviações ou variações com espaços.
 
 # --hints--
 
-Sua regex deve encontrar a string `freeCodeCamp`
+A regex deve encontrar a string `freeCodeCamp`
 
 ```js
+fccRegex.lastIndex = 0; 
 assert(fccRegex.test('freeCodeCamp'));
 ```
 
-Sua regex deve encontrar a string `FreeCodeCamp`
+A regex deve encontrar a string `FreeCodeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCodeCamp'));
 ```
 
-Sua regex deve encontrar a string `FreecodeCamp`
+A regex deve encontrar a string `FreecodeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreecodeCamp'));
 ```
 
-Sua regex deve encontrar a string `FreeCodecamp`
+A regex deve encontrar a string `FreeCodecamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCodecamp'));
 ```
 
-Sua regex não deve encontrar a string `Free Code Camp`
+A regex não deve encontrar a string `Free Code Camp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(!fccRegex.test('Free Code Camp'));
 ```
 
-Sua regex deve encontrar a string `FreeCOdeCamp`
+A regex deve encontrar a string `FreeCOdeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCOdeCamp'));
 ```
 
-Sua regex não deve encontrar a string `FCC`
+A regex não deve encontrar a string `FCC`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(!fccRegex.test('FCC'));
 ```
 
-Sua regex deve encontrar a string `FrEeCoDeCamp`
+A regex deve encontrar a string `FrEeCoDeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FrEeCoDeCamp'));
 ```
 
-Sua regex deve encontrar a string `FrEeCodECamp`
+A regex deve encontrar a string `FrEeCodECamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FrEeCodECamp'));
 ```
 
-Sua regex deve encontrar a string `FReeCodeCAmp`
+A regex deve encontrar a string `FReeCodeCAmp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FReeCodeCAmp'));
 ```
 

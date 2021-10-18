@@ -1,34 +1,38 @@
 ---
 id: 5e7b9f6a0b6c005b0e76f097
-title: 'Data Visualization: Mailing Lists'
+title: 'Visualização de dados: listas de e-mails'
 challengeType: 11
 videoId: RYdW660KkaQ
+bilibiliIds:
+  aid: 334465586
+  bvid: BV18w411R7dD
+  cid: 377545473
 dashedName: data-visualization-mailing-lists
 ---
 
 # --description--
 
-More resources:
+Mais recursos:
 
-\- [Exercise: Geodata](https://www.youtube.com/watch?v=KfhslNzopxo)
+\- [Exercício: Geodata](https://www.youtube.com/watch?v=KfhslNzopxo)
 
-\- [Exercise: Gmane Model](https://www.youtube.com/watch?v=wSpl1-7afAk)
+\- [Exercício: Gmane Model](https://www.youtube.com/watch?v=wSpl1-7afAk)
 
-\- [Exercise: Gmane Spider](https://www.youtube.com/watch?v=H3w4lOFBUOI)
+\- [Exercício: Gmane Spider](https://www.youtube.com/watch?v=H3w4lOFBUOI)
 
-\- [Exercise: Gmane Viz](https://www.youtube.com/watch?v=LRqVPMEXByw)
+\- [Exercício: Gmane Viz](https://www.youtube.com/watch?v=LRqVPMEXByw)
 
-\- [Exercise: Page Rank](https://www.youtube.com/watch?v=yFRAZBkBDBs)
+\- [Exercício: Ranking de páginas](https://www.youtube.com/watch?v=yFRAZBkBDBs)
 
-\- [Exercise: Page Spider](https://www.youtube.com/watch?v=sXedPQ_AnWA)
+\- [Exercício: Page Spider](https://www.youtube.com/watch?v=sXedPQ_AnWA)
 
-\- [Exercise: Page Viz](https://www.youtube.com/watch?v=Fm0hpkxsZoo)
+\- [Exercício: Page Viz](https://www.youtube.com/watch?v=Fm0hpkxsZoo)
 
 # --question--
 
 ## --text--
 
-Which is a common JavaScript visualization library?
+Qual das alternativas é uma biblioteca comum de visualização em JavaScript?
 
 ## --answers--
 

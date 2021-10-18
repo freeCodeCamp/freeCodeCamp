@@ -10,7 +10,7 @@ dashedName: reset-an-inherited-constructor-property
 
 Quando um objeto herda seu `protótipo` de outro objeto, ele também herda a propriedade construtora do supertipo.
 
-Aqui está um exemplo:
+Exemplo:
 
 ```js
 function Bird() { }

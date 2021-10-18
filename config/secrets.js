@@ -29,6 +29,9 @@ const {
 
   SENTRY_DSN,
 
+  STRIPE_PUBLIC_KEY,
+  STRIPE_SECRET_KEY,
+
   PAYPAL_CLIENT_ID,
   PAYPAL_SECRET,
   PAYPAL_VERIFY_WEBHOOK_URL,
@@ -90,6 +93,11 @@ module.exports = {
 
   sentry: {
     dns: SENTRY_DSN
+  },
+
+  stripe: {
+    public: STRIPE_PUBLIC_KEY,
+    secret: STRIPE_SECRET_KEY
   },
 
   paypal: {

@@ -22,45 +22,52 @@ Complete a regex `petRegex` para encontrar os pets `dog`, `cat`, `bird`, ou `fis
 
 # --hints--
 
-Sua regex `petRegex` deve retornar `true` para a string `John has a pet dog.`
+A regex `petRegex` deve retornar `true` para a string `John has a pet dog.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('John has a pet dog.'));
 ```
 
-Sua regex `petRegex` deve retornar `false` para a string `Emma has a pet rock.`
+A regex `petRegex` deve retornar `false` para a string `Emma has a pet rock.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Emma has a pet rock.'));
 ```
 
-Sua regex `petRegex` deve retornar `true` para a string `Emma has a pet bird.`
+A regex `petRegex` deve retornar `true` para a string `Emma has a pet bird.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Emma has a pet bird.'));
 ```
 
-Sua regex `petRegex` deve retornar `true` para a string `Liz has a pet cat.`
+A regex `petRegex` deve retornar `true` para a string `Liz has a pet cat.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Liz has a pet cat.'));
 ```
 
-Sua regex `petRegex` deve retornar `false` para a string `Kara has a pet dolphin.`
+A regex `petRegex` deve retornar `false` para a string `Kara has a pet dolphin.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Kara has a pet dolphin.'));
 ```
 
-Sua regex `petRegex` deve retornar `true` para a string `Alice has a pet fish.`
+A regex `petRegex` deve retornar `true` para a string `Alice has a pet fish.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Alice has a pet fish.'));
 ```
 
-Sua regex `petRegex` deve retornar `false` para a string `Jimmy has a pet computer.`
+A regex `petRegex` deve retornar `false` para a string `Jimmy has a pet computer.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Jimmy has a pet computer.'));
 ```
 

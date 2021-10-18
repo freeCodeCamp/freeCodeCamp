@@ -8,7 +8,7 @@ dashedName: iterate-over-all-properties
 
 # --description--
 
-Ora hai visto due tipi di proprietà: <dfn>proprietà proprie</dfn> e proprietà di prototipo (`prototype`). Le proprietà proprie sono definite direttamente nell'istanza dell'oggetto. E le proprietà di prototipo sono definite sul `prototype`.
+Ora hai visto due tipi di proprietà: <dfn>proprietà proprie</dfn> e proprietà di prototipo (`prototype`). Le proprietà proprie sono definite direttamente nell'istanza dell'oggetto. E le proprietà di prototipo sono definite nel `prototype`.
 
 ```js
 function Bird(name) {

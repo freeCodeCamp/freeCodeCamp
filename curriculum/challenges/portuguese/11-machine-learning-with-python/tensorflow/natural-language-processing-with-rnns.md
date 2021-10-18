@@ -1,8 +1,12 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9b
-title: Natural Language Processing With RNNs
+title: Processamento de linguagem natural com RNNs
 challengeType: 11
 videoId: ZyCaF5S-lKg
+bilibiliIds:
+  aid: 548105306
+  bvid: BV1nq4y1K7VU
+  cid: 409134745
 dashedName: natural-language-processing-with-rnns
 ---
 
@@ -10,19 +14,19 @@ dashedName: natural-language-processing-with-rnns
 
 ## --text--
 
-Natural Language Processing is a branch of artificial intelligence that...:
+Processamento de linguagem natural é um ramo da inteligência artificial que...:
 
 ## --answers--
 
-deals with how computers understand and process natural/human languages.
+lida com a maneira como os computadores entendem e processam idiomas naturais/humanos.
 
 ---
 
-translates image data into natural/human languages.
+traduz dados de imagem para idiomas naturais/humanos.
 
 ---
 
-is focused on translating computer languages into natural/human languages.
+tem como foco traduzir linguagens de computador para linguagens naturais/humanas.
 
 ## --video-solution--
 

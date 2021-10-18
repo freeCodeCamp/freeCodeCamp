@@ -1,6 +1,6 @@
 import React from 'react';
-import { Highlight } from 'react-instantsearch-dom';
 import { Hit } from 'react-instantsearch-core';
+import { Highlight } from 'react-instantsearch-dom';
 
 interface suggestionPropTypes {
   hit: Hit;

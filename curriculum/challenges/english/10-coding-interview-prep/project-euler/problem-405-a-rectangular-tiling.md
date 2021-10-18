@@ -10,22 +10,26 @@ dashedName: problem-405-a-rectangular-tiling
 
 We wish to tile a rectangle whose length is twice its width.
 
-Let T(0) be the tiling consisting of a single rectangle.
+Let $T(0)$ be the tiling consisting of a single rectangle.
 
-For n > 0, let T(n) be obtained from T(n-1) by replacing all tiles in the following manner:
+For $n > 0$, let $T(n)$ be obtained from $T( n- 1)$ by replacing all tiles in the following manner:
 
-The following animation demonstrates the tilings T(n) for n from 0 to 5:
+<img class="img-responsive center-block" alt="obtaining T(n) from T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px;">
 
-Let f(n) be the number of points where four tiles meet in T(n). For example, f(1) = 0, f(4) = 82 and f(109) mod 177 = 126897180.
+The following animation demonstrates the tilings $T(n)$ for $n$ from 0 to 5:
 
-Find f(10k) for k = 1018, give your answer modulo 177.
+<img class="img-responsive center-block" alt="animation with tilings T(n) for n from 0 to 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px;">
+
+Let $f(n)$ be the number of points where four tiles meet in $T(n)$. For example, $f(1) = 0$, $f(4) = 82$ and $f({10}^9)\bmod {17}^7 = 126\\,897\\,180$.
+
+Find $f({10}^k)$ for $k = {10}^{18}$, give your answer modulo ${17}^7$.
 
 # --hints--
 
-`euler405()` should return 237696125.
+`rectangularTiling()` should return `237696125`.
 
 ```js
-assert.strictEqual(euler405(), 237696125);
+assert.strictEqual(rectangularTiling(), 237696125);
 ```
 
 # --seed--
@@ -33,12 +37,12 @@ assert.strictEqual(euler405(), 237696125);
 ## --seed-contents--
 
 ```js
-function euler405() {
+function rectangularTiling() {
 
   return true;
 }
 
-euler405();
+rectangularTiling();
 ```
 
 # --solutions--

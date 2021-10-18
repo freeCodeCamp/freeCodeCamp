@@ -1,6 +1,6 @@
 ---
 id: 587d8255367417b2b2512c74
-title: Create a Priority Queue Class
+title: Criar uma classe de fila de prioridade
 challengeType: 1
 forumTopicId: 301630
 dashedName: create-a-priority-queue-class
@@ -8,27 +8,27 @@ dashedName: create-a-priority-queue-class
 
 # --description--
 
-In this challenge you will be creating a Priority Queue. A Priority Queue is a special type of Queue in which items may have additional information which specifies their priority. This could be simply represented with an integer. Item priority will override placement order in determining the sequence items are dequeued. If an item with a higher priority is enqueued after items with lower priority, the higher priority item will be dequeued before all the others.
+Neste desafio, você criará uma fila de prioridade. Uma fila de prioridade é um tipo especial de fila, na qual os itens podem ter informações adicionais que especificam a sua prioridade. Isto poderia ser representado simplesmente por um número inteiro. A prioridade do item substituirá a ordem de colocação ao determinar a sequência na qual os itens saem da fila. Se um item com maior prioridade for colocado na fila após itens com menor prioridade, o item de maior prioridade será removido da fila antes de todos os outros.
 
-For instance, let’s imagine we have a priority queue with three items:
+Por exemplo, vamos imaginar que temos uma fila de prioridade com três itens:
 
 ```js
 [['kitten', 2], ['dog', 2], ['rabbit', 2]]
 ```
 
-Here the second value (an integer) represents item priority. If we enqueue `['human', 1]` with a priority of `1` (assuming lower priorities are given precedence) it would then be the first item to be dequeued. The collection would look like this:
+Aqui o segundo valor (um inteiro) representa a prioridade do item. Se enfileirarmos `['human', 1]` com prioridade de `1` (assumindo que prioridades inferiores tenham precedência), ele seria então o primeiro item a ser colocado em fila. A coleção ficaria assim:
 
 ```js
 [['human', 1], ['kitten', 2], ['dog', 2], ['rabbit', 2]]
 ```
 
-We’ve started writing a `PriorityQueue` in the code editor. You will need to add an `enqueue` method for adding items with a priority, a `dequeue` method for removing and returning items, a `size` method to return the number of items in the queue, a `front` method to return the element at the front of the queue, and finally an `isEmpty` method that will return `true` if the queue is empty or `false` if it is not.
+Começamos a escrever uma `PriorityQueue` no editor de código. Você precisará adicionar um método `enqueue` para adicionar itens com uma prioridade, um método `dequeue` para remover e retornar itens, um método `size` para retornar o número de itens na fila, um método `front` para retornar o elemento na frente da fila, e, finalmente, um método `isEmpty` que retornará `true` se a fila estiver vazia ou `false` se não estiver.
 
-The `enqueue` should accept items with the format shown above (`['human', 1]`) where `1` represents the priority. `dequeue` and `front` should return only the item's name, not its priority.
+O método `enqueue` deve aceitar itens com o formato mostrado acima (`['human', 1]`), onde `1` representa a prioridade. `dequeue` e `front` devem retornar apenas o nome do item, não sua prioridade.
 
 # --hints--
 
-Your `PriorityQueue` class should have a `enqueue` method.
+A classe `PriorityQueue` deve ter o método `enqueue`.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have a `dequeue` method.
+A classe `PriorityQueue` deve ter o método `dequeue`.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have a `size` method.
+A classe `PriorityQueue` deve ter o método `size`.
 
 ```js
 assert(
@@ -61,7 +61,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have a `front` method.
+A classe `PriorityQueue` deve ter o método `front`.
 
 ```js
 assert(
@@ -72,7 +72,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should have an `isEmpty` method.
+A classe `PriorityQueue` deve ter o método `isEmpty`.
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-Your `PriorityQueue` class should correctly keep track of the current number of items using the `size` method as items are enqueued and dequeued.
+A classe `PriorityQueue` deve acompanhar corretamente o número atual dos itens usando o método `size` à medida que os itens são colocados na fila e removidos dela.
 
 ```js
 assert(
@@ -102,7 +102,7 @@ assert(
 );
 ```
 
-The `front` method should return the correct item at the front of the queue as items are enqueued and dequeued.
+O método `front` deve retornar o item correto na frente da fila à medida que os itens são colocados e retirados da fila.
 
 ```js
 assert(
@@ -129,7 +129,7 @@ assert(
 );
 ```
 
-The `isEmpty` method should return `true` when the queue is empty.
+O método `isEmpty` deve retornar `true` quando a fila estiver vazia.
 
 ```js
 assert(
@@ -145,7 +145,7 @@ assert(
 );
 ```
 
-The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.
+A fila de prioridade deve retornar os itens com uma prioridade maior antes dos itens com prioridade menor e retornar os itens na ordem First-in-First-out (o primeiro a entrar é o primeiro a sair) em todos os outros casos.
 
 ```js
 assert(

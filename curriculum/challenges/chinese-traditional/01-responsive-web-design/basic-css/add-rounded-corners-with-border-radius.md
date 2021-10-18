@@ -15,7 +15,7 @@ dashedName: add-rounded-corners-with-border-radius
 
 `border-radius` 的屬性值單位可以是 px（像素）。 請將貓咪圖片 `border-radius` 的屬性值設置爲 `10px`。
 
-**注意：**這個挑戰有多個解決方法。 例如，添加 `border-radius` 屬性到 `.thick-green-border` 或 `.smaller-image` 都是可行的。
+**注意：** 這個挑戰有多個解決方法。 例如，添加 `border-radius` 屬性到 `.thick-green-border` 或 `.smaller-image` 都是可行的。
 
 # --hints--
 
@@ -71,7 +71,7 @@ assert(
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <div>
     <p>Things cats love:</p>
@@ -134,7 +134,7 @@ assert(
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <div>
     <p>Things cats love:</p>

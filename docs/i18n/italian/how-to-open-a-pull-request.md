@@ -2,7 +2,7 @@
 
 Una pull request (PR) consente di inviare modifiche dal tuo fork su GitHub al repository principale di freeCodeCamp.org. Una volta che hai fatto delle modifiche al codice, puoi seguire queste linee guida per aprire una PR.
 
-> [!NOTE] La tua PR dovrebbe essere in inglese. Vedi [qui](https://contribute.freecodecamp.org/#/index?id=translations) per come contribuire alla traduzione.
+> [!NOTE] La tua PR dovrebbe essere in inglese. Vedi [qui](index.md#translations) per come contribuire alla traduzione.
 
 ## Preparare un buon titolo PR
 
@@ -68,7 +68,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 
    - Questo è molto importante quando si fanno cambiamenti che non sono solo modifiche a contenuto testuale come documentazione o descrizioni di sfide. Esempi di modifiche che hanno bisogno di essere testate localmente includono JavaScript, CSS o HTML che potrebbero cambiare funzionalità o layout di una pagina.
 
-   - Se la tua PR ha effetto sul comportamento di una pagina dovrebbe essere accompagnato da corrispondenti [test di integrazione di Cypress](/how-to-add-cypress-tests).
+   - Se la tua PR ha effetto sul comportamento di una pagina dovrebbe essere accompagnato da corrispondenti [test di integrazione di Cypress](how-to-add-cypress-tests.md).
 
 ## Feedback sulle pull request
 
@@ -78,13 +78,13 @@ I nostri moderatori ora daranno un'occhiata e ti lasceranno un feedback. Ti preg
 
 E come sempre, poni liberamente le tue domande nella [categoria 'Contributors' del nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://chat.freecodecamp.org/channel/contributors).
 
-> [!TIP] Se vuoi contribuire a più di una PR, ti raccomandiamo di leggere la [guida su fare modifiche e sincronizzare](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) per evitare di dover cancellare il tuo fork.
+> [!TIP] Se vuoi contribuire a più di una PR, ti raccomandiamo di leggere la [guida su fare modifiche e sincronizzare](how-to-setup-freecodecamp-locally.md#making-changes-locally) per evitare di dover cancellare il tuo fork.
 
 ## Conflitti su una pull request
 
 I conflitti possono sorgere perché molti contributori lavorano sul repository e le modifiche possono interrompere la tua PR in attesa di una revisione e di un merge.
 
-Spesso non si può richiedere un rebase, perché schiacciamo tutti i commit, tuttavia se è richiesto un rebase qui è quello che dovresti fare.
+More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
 
 ### Per le solite correzioni di bug e funzionalità
 
@@ -132,37 +132,37 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
 
    a. Elimina anche il ramo locale dopo aver effettuato un backup (se lo hai ancora localmente):
 
-      ```console
-      git checkout <pr-branch-name>
+   ```console
+   git checkout <pr-branch-name>
 
-      # example:
-      # git checkout feat/add-numpy-video-question
+   # example:
+   # git checkout feat/add-numpy-video-question
 
-      git checkout -b <backup-branch-name>
+   git checkout -b <backup-branch-name>
 
-      # example:
-      # git checkout -b backup-feat/add-numpy-video-question
+   # example:
+   #  git checkout -b backup-feat/add-numpy-video-question
 
-      git branch -D <pr-branch-name>
-      ```
+   git branch -D <pr-branch-name>
+   ```
 
    b. O solo un backup del ramo pr (se non lo hai localmente):
 
-      ```console
-      git checkout -b <backup-branch-name> origin/<pr-branch-name>
+   ```console
+   git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # esempio:
-      # git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
-      ```
+   # example:
+   #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+   ```
 
-4. Inizia con una slate pulita:
+3. Inizia con una slate pulita:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Risolvere eventuali conflitti e pulire, installare test di esecuzione
+4. Risolvere eventuali conflitti e pulire, installare test di esecuzione
 
    ```console
    npm run clean
@@ -176,7 +176,7 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
 
    ```
 
-6. Se tutto sembra funzionare fai un push alla PR
+5. Se tutto sembra funzionare fai un push alla PR
 
    ```console
    git push --force origin <pr-branch-name>

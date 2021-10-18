@@ -24,7 +24,7 @@ As duas chamadas a `test` retornam `true`.
 
 # --instructions--
 
-Complete a regex `unRegex` para que ela encontre as strings `run`, `sun`, `fun`, `pun`, `nun` e `bun`. Sua regex deve usar o caractere curinga.
+Complete a regex `unRegex` para que ela encontre as strings `run`, `sun`, `fun`, `pun`, `nun` e `bun`. A regex deve usar o caractere curinga.
 
 # --hints--
 
@@ -40,42 +40,42 @@ Você deve usar o caractere curinga na regex `unRegex`
 assert(/\./.test(unRegex.source));
 ```
 
-Sua regex `unRegex` deve encontrar `run` na string `Let us go on a run.`
+A regex `unRegex` deve encontrar `run` na string `Let us go on a run.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Let us go on a run.'));
 ```
 
-Sua regex `unRegex` deve encontrar `sun` na string `The sun is out today.`
+A regex `unRegex` deve encontrar `sun` na string `The sun is out today.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('The sun is out today.'));
 ```
 
-Sua regex `unRegex` deve encontrar `fun` na string `Coding is a lot of fun.`
+A regex `unRegex` deve encontrar `fun` na string `Coding is a lot of fun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Coding is a lot of fun.'));
 ```
 
-Sua regex `unRegex` deve encontrar `pun` na string `Seven days without a pun makes one weak.`
+A regex `unRegex` deve encontrar `pun` na string `Seven days without a pun makes one weak.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('Seven days without a pun makes one weak.'));
 ```
 
-Sua regex `unRegex` deve encontrar `nun` na string `One takes a vow to be a nun.`
+A regex `unRegex` deve encontrar `nun` na string `One takes a vow to be a nun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(unRegex.test('One takes a vow to be a nun.'));
 ```
 
-Sua regex `unRegex` deve encontrar `bun` na string `She got fired from the hot dog stand for putting her hair in a bun.`
+A regex `unRegex` deve encontrar `bun` na string `She got fired from the hot dog stand for putting her hair in a bun.`
 
 ```js
 unRegex.lastIndex = 0;
@@ -86,14 +86,14 @@ assert(
 );
 ```
 
-Sua regex `unRegex` não deve incluir a string `There is a bug in my code.` no resultado
+A regex `unRegex` não deve incluir a string `There is a bug in my code.` no resultado
 
 ```js
 unRegex.lastIndex = 0;
 assert(!unRegex.test('There is a bug in my code.'));
 ```
 
-Sua regex `unRegex` não deve incluir a string `Catch me if you can.` no resultado
+A regex `unRegex` não deve incluir a string `Catch me if you can.` no resultado
 
 ```js
 unRegex.lastIndex = 0;

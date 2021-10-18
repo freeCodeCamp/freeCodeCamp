@@ -1,17 +1,17 @@
+import { isEmpty } from 'lodash-es';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { isEmpty } from 'lodash-es';
 
+import { isBrowser } from '../../utils/index';
+import FourOhFour from '../components/FourOhFour';
 import Loader from '../components/helpers/loader';
+import Profile from '../components/profile/Profile';
 import {
   userByNameSelector,
   userProfileFetchStateSelector,
   fetchProfileForUser,
   usernameSelector
 } from '../redux';
-import FourOhFour from '../components/FourOhFour';
-import Profile from '../components/profile/Profile';
-import { isBrowser } from '../../utils/index';
 import { UserType } from '../redux/prop-types';
 
 interface IShowProfileOrFourOhFourProps {
@@ -30,7 +30,7 @@ interface IShowProfileOrFourOhFourProps {
 const createRequestedUserSelector =
   () =>
   (state: unknown, { maybeUser = '' }) =>
-    userByNameSelector(maybeUser.toLowerCase())(state) as string;
+    userByNameSelector(maybeUser.toLowerCase())(state) as UserType;
 const createIsSessionUserSelector =
   () =>
   (state: unknown, { maybeUser = '' }) =>
@@ -44,10 +44,7 @@ const makeMapStateToProps =
       state
     ) as IShowProfileOrFourOhFourProps['fetchState'];
     return {
-      requestedUser: requestedUserSelector(
-        state,
-        props
-      ) as IShowProfileOrFourOhFourProps['requestedUser'],
+      requestedUser: requestedUserSelector(state, props),
       isSessionUser: isSessionUserSelector(state, props),
       showLoading: fetchState.pending,
       fetchState

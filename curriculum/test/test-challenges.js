@@ -1,10 +1,20 @@
 /* eslint-disable no-loop-func */
 const path = require('path');
+const { inspect } = require('util');
+const vm = require('vm');
+const { assert, AssertionError } = require('chai');
+const jsdom = require('jsdom');
 const liveServer = require('live-server');
-const stringSimilarity = require('string-similarity');
-const { isAuditedCert } = require('../../utils/is-audited');
-
+const lodash = require('lodash');
+const Mocha = require('mocha');
+const mockRequire = require('mock-require');
 const spinner = require('ora')();
+const puppeteer = require('puppeteer');
+const stringSimilarity = require('string-similarity');
+
+// lodash-es can't easily be used in node environments, so we just mock it out
+// for the original lodash in testing.
+mockRequire('lodash-es', lodash);
 
 const clientPath = path.resolve(__dirname, '../../client');
 require('@babel/polyfill');
@@ -16,63 +26,40 @@ require('@babel/register')({
   ignore: [/node_modules/],
   only: [clientPath]
 });
-
-const mockRequire = require('mock-require');
-const lodash = require('lodash');
-
-// lodash-es can't easily be used in node environments, so we just mock it out
-// for the original lodash in testing.
-mockRequire('lodash-es', lodash);
-
-const createPseudoWorker = require('./utils/pseudo-worker');
+const {
+  buildDOMChallenge,
+  buildJSChallenge
+} = require('../../client/src/templates/Challenges/utils/build');
 const {
   default: createWorker
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
+const { challengeTypes } = require('../../client/utils/challenge-types');
+// the config files are created during the build, but not before linting
+/* eslint-disable import/no-unresolved */
+const testEvaluator =
+  require('../../config/client/test-evaluator.json').filename;
+/* eslint-enable import/no-unresolved */
 
-const { assert, AssertionError } = require('chai');
-const Mocha = require('mocha');
-
-const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 const { getLines } = require('../../utils/get-lines');
+const { isAuditedCert } = require('../../utils/is-audited');
 
-const jsdom = require('jsdom');
-
-const vm = require('vm');
-
-const puppeteer = require('puppeteer');
-
+const { sortChallengeFiles } = require('../../utils/sort-challengefiles');
 const {
   getChallengesForLang,
   getMetaForBlock,
   getTranslatableComments
 } = require('../getChallenges');
-
-const MongoIds = require('./utils/mongoIds');
-const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
-const { challengeTypes } = require('../../client/utils/challengeTypes');
-
-const { toSortedArray } = require('../../utils/sort-files');
-
 const { testedLang } = require('../utils');
-
-const {
-  buildDOMChallenge,
-  buildJSChallenge
-} = require('../../client/src/templates/Challenges/utils/build');
+const ChallengeTitles = require('./utils/challengeTitles');
+const MongoIds = require('./utils/mongoIds');
+const createPseudoWorker = require('./utils/pseudo-worker');
 
 const { sortChallenges } = require('./utils/sort-challenges');
 
 const TRANSLATABLE_COMMENTS = getTranslatableComments(
   path.resolve(__dirname, '..', 'dictionaries')
 );
-
-// the config files are created during the build, but not before linting
-/* eslint-disable import/no-unresolved */
-const testEvaluator =
-  require('../../config/client/test-evaluator.json').filename;
-/* eslint-enable import/no-unresolved */
-const { inspect } = require('util');
 
 const commentExtractors = {
   html: require('./utils/extract-html-comments'),
@@ -81,6 +68,8 @@ const commentExtractors = {
   css: require('./utils/extract-css-comments'),
   scriptJs: require('./utils/extract-script-js-comments')
 };
+
+const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 
 // rethrow unhandled rejections to make sure the tests exit with -1
 process.on('unhandledRejection', err => handleRejection(err));
@@ -318,16 +307,16 @@ function populateTestsForLang({ lang, challenges, meta }) {
               return;
             }
 
-            // If no .files, then no seed:
-            if (!challenge.files) return;
+            // If no .challengeFiles, then no seed:
+            if (!challenge.challengeFiles) return;
 
             // - None of the translatable comments should appear in the
             //   translations. While this is a crude check, no challenges
             //   currently have the text of a comment elsewhere. If that happens
             //   we can handle that challenge separately.
             TRANSLATABLE_COMMENTS.forEach(comment => {
-              Object.values(challenge.files).forEach(file => {
-                if (file.contents.includes(comment))
+              challenge.challengeFiles.forEach(challengeFile => {
+                if (challengeFile.contents.includes(comment))
                   throw Error(
                     `English comment '${comment}' should be replaced with its translation`
                   );
@@ -336,14 +325,16 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
             // - None of the translated comment texts should appear *outside* a
             //   comment
-            Object.values(challenge.files).forEach(file => {
+            challenge.challengeFiles.forEach(challengeFile => {
               let comments = {};
 
               // We get all the actual comments using the appropriate parsers
-              if (file.ext === 'html') {
+              if (challengeFile.ext === 'html') {
                 const commentTypes = ['css', 'html', 'scriptJs'];
                 for (let type of commentTypes) {
-                  const newComments = commentExtractors[type](file.contents);
+                  const newComments = commentExtractors[type](
+                    challengeFile.contents
+                  );
                   for (const [key, value] of Object.entries(newComments)) {
                     comments[key] = comments[key]
                       ? comments[key] + value
@@ -351,13 +342,17 @@ function populateTestsForLang({ lang, challenges, meta }) {
                   }
                 }
               } else {
-                comments = commentExtractors[file.ext](file.contents);
+                comments = commentExtractors[challengeFile.ext](
+                  challengeFile.contents
+                );
               }
 
-              // Then we compare the number of times each comment appears in the
-              // translated text (commentMap) with the number of replacements
-              // made during translation (challenge.__commentCounts). If they
-              // differ, the translation must have gone wrong
+              /*
+               * Then we compare the number of times each comment appears in the
+               * translated text (commentMap) with the number of replacements
+               * made during translation (challenge.__commentCounts). If they
+               * differ, the translation must have gone wrong
+               */
 
               const commentMap = new Map(Object.entries(comments));
 
@@ -420,7 +415,7 @@ ${inspect(commentMap)}
             try {
               testRunner = await createTestRunner(
                 challenge,
-                '',
+                [],
                 buildChallenge
               );
             } catch {
@@ -459,12 +454,13 @@ ${inspect(commentMap)}
             // TODO: can this be dried out, ideally by removing the redux
             // handler?
             if (nextChallenge) {
-              const solutionFiles = cloneDeep(nextChallenge.files);
-              Object.keys(solutionFiles).forEach(key => {
-                const file = solutionFiles[key];
-                file.editableContents = getLines(
-                  file.contents,
-                  challenge.files[key].editableRegionBoundaries
+              const solutionFiles = cloneDeep(nextChallenge.challengeFiles);
+              solutionFiles.forEach(challengeFile => {
+                challengeFile.editableContents = getLines(
+                  challengeFile.contents,
+                  challenge.challengeFiles.find(
+                    x => x.fileKey === challengeFile.fileKey
+                  ).editableRegionBoundaries
                 );
               });
               solutions = [solutionFiles];
@@ -477,11 +473,13 @@ ${inspect(commentMap)}
           // TODO: the no-solution filtering is a little convoluted:
           const noSolution = new RegExp('// solution required');
 
-          const solutionsAsArrays = solutions.map(toSortedArray);
+          const solutionsAsArrays = solutions.map(sortChallengeFiles);
 
           const filteredSolutions = solutionsAsArrays.filter(solution => {
             return !isEmpty(
-              solution.filter(file => !noSolution.test(file.contents))
+              solution.filter(
+                challengeFile => !noSolution.test(challengeFile.contents)
+              )
             );
           });
 
@@ -516,21 +514,23 @@ ${inspect(commentMap)}
 
 async function createTestRunner(
   challenge,
-  solution,
+  solutionFiles,
   buildChallenge,
   solutionFromNext
 ) {
   const { required = [], template, removeComments } = challenge;
   // we should avoid modifying challenge, as it gets reused:
-  const files = cloneDeep(challenge.files);
-
-  Object.keys(solution).forEach(key => {
-    files[key].contents = solution[key].contents;
-    files[key].editableContents = solution[key].editableContents;
+  const challengeFiles = cloneDeep(challenge.challengeFiles);
+  solutionFiles.forEach(solutionFile => {
+    const challengeFile = challengeFiles.find(
+      x => x.fileKey === solutionFile.fileKey
+    );
+    challengeFile.contents = solutionFile.contents;
+    challengeFile.editableContents = solutionFile.editableContents;
   });
 
   const { build, sources, loadEnzyme } = await buildChallenge({
-    files,
+    challengeFiles,
     required,
     template
   });

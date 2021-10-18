@@ -7,10 +7,10 @@ Happy contributing.
 Sei invitato a:
 
 - Creare, aggiornare e correggere bug nel nostro [curriculum](#curriculum).
-- Aiutarci a correggere i bug nella [piattaforma di apprendimento](#learning-platform) di freeCodeCamp.org.
-- [Aiutarci a tradurre](#translations) freeCodeCamp.org in tutte le lingue del mondo.
+- Aiutarci a correggere i bug nella [piattaforma di apprendimento](#piattaforma-di-apprendimento) di freeCodeCamp.org.
+- [Aiutarci a tradurre](#traduzioni) freeCodeCamp.org in tutte le lingue del mondo.
 
-Rispondiamo alle domande più comuni su come contribuire [nelle nostre FAQ per i contributori](/FAQ.md).
+Rispondiamo alle domande più comuni su come contribuire [nelle nostre FAQ per i contributori](FAQ.md).
 
 ## Curriculum
 

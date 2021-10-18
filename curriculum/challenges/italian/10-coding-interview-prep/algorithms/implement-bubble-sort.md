@@ -1,6 +1,6 @@
 ---
 id: 8d5123c8c441eddfaeb5bdef
-title: Implement Bubble Sort
+title: Implementare Bubble Sort
 challengeType: 1
 forumTopicId: 301612
 dashedName: implement-bubble-sort
@@ -8,23 +8,23 @@ dashedName: implement-bubble-sort
 
 # --description--
 
-This is the first of several challenges on sorting algorithms. Given an array of unsorted items, we want to be able to return a sorted array. We will see several different methods to do this and learn some tradeoffs between these different approaches. While most modern languages have built-in sorting methods for operations like this, it is still important to understand some of the common basic approaches and learn how they can be implemented.
+Questa è la prima di diverse sfide sugli algoritmi di ordinamento. Dato un array di elementi non ordinati, vogliamo essere in grado di restituire un array ordinato. Vedremo diversi metodi per farlo e impareremo alcuni compromessi tra questi diversi approcci. Mentre la maggior parte dei linguaggi moderni ha integrato metodi di ordinamento per operazioni come questa, è ancora importante comprendere alcuni degli approcci di base comuni e imparare come possono essere attuati.
 
-Here we will see bubble sort. The bubble sort method starts at the beginning of an unsorted array and 'bubbles up' unsorted values towards the end, iterating through the array until it is completely sorted. It does this by comparing adjacent items and swapping them if they are out of order. The method continues looping through the array until no swaps occur at which point the array is sorted.
+Qui vedremo il Bubble Sort. Il metodo di ordinamento Bubble Sort comincia all'inizio di un array non ordinato e 'porta a galla' i valori non ordinati verso la fine, iterando attraverso l'array fino a quando non è completamente ordinato. Lo fa confrontando gli elementi adiacenti e scambiandoli se sono fuori ordine. Il metodo continua a iterare attraverso l'array fino a quando non si verificano più scambi: a quel punto l'array è ordinato.
 
-This method requires multiple iterations through the array and for average and worst cases has quadratic time complexity. While simple, it is usually impractical in most situations.
+Questo metodo richiede iterazioni multiple attraverso l'array e per i casi medi e peggiori ha complessità di tempo quadratica. Per quanto semplice, è poco pratico nella maggior parte delle situazioni.
 
-**Instructions:** Write a function `bubbleSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
+**Istruzioni:** Scrivi una funzione `bubbleSort` che prende un array di interi come input e restituisce un array di questi interi in ordine dal più piccolo al più grande.
 
 # --hints--
 
-`bubbleSort` should be a function.
+`bubbleSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof bubbleSort == 'function');
 ```
 
-`bubbleSort` should return a sorted array (least to greatest).
+`bubbleSort` dovrebbe restituire un array ordinato (dal più piccolo al più grande).
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-`bubbleSort` should return an array that is unchanged except for order.
+`bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` dovrebbe restituire un array invariato tranne che per l'ordine.
 
 ```js
 assert.sameMembers(
@@ -79,7 +79,7 @@ assert.sameMembers(
 );
 ```
 
-`bubbleSort` should not use the built-in `.sort()` method.
+`bubbleSort` non dovrebbe usare il metodo integrato `.sort()`.
 
 ```js
 assert(isBuiltInSortUsed());
@@ -113,8 +113,6 @@ function bubbleSort(array) {
   return array;
   // Only change code above this line
 }
-
-bubbleSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

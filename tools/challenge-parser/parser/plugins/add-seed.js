@@ -1,14 +1,14 @@
+const { isEmpty } = require('lodash');
+const { root } = require('mdast-builder');
+const visitChildren = require('unist-util-visit-children');
 const getAllBetween = require('./utils/between-headings');
 // const visit = require('unist-util-visit');
-const visitChildren = require('unist-util-visit-children');
-const { root } = require('mdast-builder');
 const { getFileVisitor } = require('./utils/get-file-visitor');
-const { isEmpty } = require('lodash');
 
 const editableRegionMarker = '--fcc-editable-region--';
 
-function findRegionMarkers(file) {
-  const lines = file.contents.split('\n');
+function findRegionMarkers(challengeFile) {
+  const lines = challengeFile.contents.split('\n');
   const editableLines = lines
     .map((line, id) => (line.trim() === editableRegionMarker ? id : -1))
     .filter(id => id >= 0);
@@ -55,26 +55,33 @@ function addSeeds() {
     visitForContents(contentsTree);
     visitForHead(headTree);
     visitForTail(tailTree);
+    const seedVals = Object.values(seeds);
     file.data = {
       ...file.data,
-      files: seeds
+      challengeFiles: seedVals
     };
 
     // process region markers - remove them from content and add them to data
-    Object.keys(seeds).forEach(key => {
-      const fileData = seeds[key];
-      const editRegionMarkers = findRegionMarkers(fileData);
+    const challengeFiles = Object.values(seeds).map(data => {
+      const seed = { ...data };
+      const editRegionMarkers = findRegionMarkers(seed);
       if (editRegionMarkers) {
-        fileData.contents = removeLines(fileData.contents, editRegionMarkers);
+        seed.contents = removeLines(seed.contents, editRegionMarkers);
 
         if (editRegionMarkers[1] <= editRegionMarkers[0]) {
           throw Error('Editable region must be non zero');
         }
-        fileData.editableRegionBoundaries = editRegionMarkers;
+        seed.editableRegionBoundaries = editRegionMarkers;
       } else {
-        fileData.editableRegionBoundaries = [];
+        seed.editableRegionBoundaries = [];
       }
+      return seed;
     });
+
+    file.data = {
+      ...file.data,
+      challengeFiles
+    };
   }
 
   return transformer;

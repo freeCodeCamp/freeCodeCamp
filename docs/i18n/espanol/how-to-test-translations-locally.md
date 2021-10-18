@@ -1,26 +1,32 @@
-# How to Test Translations Locally
+# Cómo probar las traducciones localmente
 
-> [!NOTE] This process is not required, but documented in case you would like to preview what your translations will look like.
+> [!NOTE] Este proceso no es requerido, pero esta documentado en caso de que quieras previsualizar como lucirán tus traducciones.
 
-If you would like to test your translations on a local instance of the freeCodeCamp `/learn` site, first ensure you have [set up the codebase](how-to-setup-freecodecamp-locally.md).
+En caso de que quieras probar tus traducciones en una instancia local del sitio `/learn` de freeCodeCamp, primero asegúrate de haber [configurado la base de código](how-to-setup-freecodecamp-locally.md).
 
-## Enabling a Language
+## Habilitando un lenguage
 
-There are a few steps to take in order to allow the codebase to build in your desired language.
+Hay algunos pasos a seguir para permitirle a la base de código compilar en tu lenguaje deseado.
 
-First, visit the `config/i18n/all-langs.js` file to add the language to the available languages list and configure the values. There are four objects here.
+Primero, visita el archivo `config/i18n/all-langs.js` para añadir el lenguaje a la lista de lenguajes disponibles y configura los valores. Hay cuatro objetos aquí.
 
-- `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
-- `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
-- `langDisplayNames`: These are the display names for the language selector in the navigation menu.
-- `langCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
+- `avaliableLangs`: Tanto para el arreglo `client` como para el arreglo `curriculum`, añade el nombre en texto del lenguaje. Este es el valor que se utilizará en el archivo `.env` más tarde.
+- `i18nextCodes`: Estos son los codigos de idioma ISO para cada lenguaje. Necesitarás añadir el codigo ISO apropiado para el lenguaje que estas habilitando. Estos deben ser únicos para cada lenguaje.
+- `langDisplayNames`: Estos son los nombres exhibidos para el selector de lenguajes en el menú de navegación.
+- `langCodes`: Estos son los códigos de idioma utilizados para el formateo de fechas y números. Estos deberían ser códigos Unicode CLDR en lugar de códigos ISO.
 
-As an example, if you wanted to enable Dothraki as a language, your `all-langs.js` objects should look like this:
+Por ejemplo, si quisieras habilitar Dothraki como un lenguaje, tus objetos `all-langs.js` deberían verse así:
 
 ```js
 const availableLangs = {
   client: ['english', 'espanol', 'chinese', 'chinese-traditional', 'dothraki'],
-  curriculum: ['english', 'espanol', 'chinese', 'chinese-traditional', 'dothraki']
+  curriculum: [
+    'english',
+    'espanol',
+    'chinese',
+    'chinese-traditional',
+    'dothraki'
+  ]
 };
 
 const i18nextCodes = {
@@ -28,7 +34,7 @@ const i18nextCodes = {
   espanol: 'es',
   chinese: 'zh',
   'chinese-traditional': 'zh-Hant',
-  'dothraki': 'mis',
+  dothraki: 'mis'
 };
 
 const langDisplayNames = {
@@ -36,7 +42,7 @@ const langDisplayNames = {
   espanol: 'Español',
   chinese: '中文（简体字）',
   'chinese-traditional': '中文（繁體字）',
-  'dothraki': 'Dothraki',
+  dothraki: 'Dothraki'
 };
 
 const langCodes = {
@@ -44,11 +50,11 @@ const langCodes = {
   espanol: 'es-419',
   chinese: 'zh',
   'chinese-traditional': 'zh-Hant',
-  'dothraki': 'mis',
+  dothraki: 'mis'
 };
 ```
 
-Next, open the `client/src/utils/algolia-locale-setup.js` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
+Ahora, abre el archivo `client/src/utils/algolia-locale-setup.js`. Estos datos son utilizados por la barra de búsqueda que carga artículos de `/news` (noticias). While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
 
 Add an object for your language to the `algoliaIndices` object. You should use the values for the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
 
@@ -75,11 +81,11 @@ const algoliaIndices = {
   dothraki: {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
-  },
+  }
 };
 ```
 
-Next, you will need to tell the client which certifications are translated, and which are still in English. Open the `utils/is-audited.js` file. Within the `auditedCerts`, add a new key with your language's `availableLangs` value. Assign the value of that key to an array containing the *dashed names* for the certifications that have been translated. Refer to the existing data for those dashed names.
+Next, you will need to tell the client which certifications are translated, and which are still in English. Open the `utils/is-audited.js` file. Within the `auditedCerts`, add a new key with your language's `availableLangs` value. Assign the value of that key to an array containing the _dashed names_ for the certifications that have been translated. Refer to the existing data for those dashed names.
 
 Continuing the work to enable Dothraki - we have translated the first three certifications:
 
@@ -92,23 +98,23 @@ const auditedCerts = {
   chinese: [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries',
+    'front-end-development-libraries',
     'data-visualization',
-    'apis-and-microservices',
+    'back-end-development-and-apis',
     'quality-assurance'
   ],
   'chinese-traditional': [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries',
+    'front-end-development-libraries',
     'data-visualization',
-    'apis-and-microservices',
+    'back-end-development-and-apis',
     'quality-assurance'
   ],
-  'dothraki': [
+  dothraki: [
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
-    'front-end-libraries'
+    'front-end-development-libraries'
   ]
 };
 ```
@@ -120,6 +126,60 @@ CLIENT_LOCALE="dothraki"
 CURRICULUM_LOCALE="dothraki"
 ```
 
+## Enabling Localized Videos
+
+For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
+
+```tsx
+  query VideoChallenge($slug: String!) {
+    challengeNode(fields: { slug: { eq: $slug } }) {
+      videoId
+      videoLocaleIds {
+        espanol
+        italian
+        portuguese
+        dothraki
+      }
+      ...
+```
+
+Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.js` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
+
+```yml
+videoLocaleIds:
+  espanol: 3muQV-Im3Z0
+  italian: hiRTRAqNlpE
+  portuguese: AelGAcoMXbI
+  dothraki: new-id-here
+dashedName: introduction-why-program
+---
+```
+
+Update the `VideoLocaleIds` interface in `client/src/redux/prop-types` to include the new language.
+
+```ts
+export interface VideoLocaleIds {
+  espanol?: string;
+  italian?: string;
+  portuguese?: string;
+  dothraki?: string;
+}
+```
+
+And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
+
+```js
+videoLocaleIds: Joi.when('challengeType', {
+  is: challengeTypes.video,
+  then: Joi.object().keys({
+    espanol: Joi.string(),
+    italian: Joi.string(),
+    portuguese: Joi.string(),
+    dothraki: Joi.string()
+  })
+}),
+```
+
 ## Loading Translations
 
 Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors), or you can translate the English markdown files locally for testing purposes.
@@ -128,4 +188,4 @@ Once you have the files, you will need to place them in the correct directory. F
 
 Once these are in place, you should be able to run `npm run develop` to view your translated version of freeCodeCamp.
 
-> [!ATTENTION] While you may perform translations locally for the purpose of testing, we remind everyone that translations should *not* be submitted through GitHub and should only be done through Crowdin. Be sure to reset your local codebase after you are done testing.
+> [!ATTENTION] While you may perform translations locally for the purpose of testing, we remind everyone that translations should _not_ be submitted through GitHub and should only be done through Crowdin. Be sure to reset your local codebase after you are done testing.

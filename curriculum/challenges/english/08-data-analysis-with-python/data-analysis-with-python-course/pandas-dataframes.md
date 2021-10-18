@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c15a
 title: Pandas DataFrames
 challengeType: 11
 videoId: 7SgFBYXaiH0
+bilibiliIds:
+  aid: 890503235
+  bvid: BV1TP4y1h7qq
+  cid: 409014039
 dashedName: pandas-dataframes
 ---
 

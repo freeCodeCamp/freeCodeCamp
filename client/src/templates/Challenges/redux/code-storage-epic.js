@@ -1,22 +1,20 @@
+import { combineEpics, ofType } from 'redux-observable';
 import { of } from 'rxjs';
 import { filter, switchMap, map, tap, ignoreElements } from 'rxjs/operators';
-import { combineEpics, ofType } from 'redux-observable';
 import store from 'store';
 
+import { setContent, isPoly } from '../../../../../utils/polyvinyl';
+import { createFlashMessage } from '../../../components/Flash/redux';
+import { actionTypes as appTypes } from '../../../redux/action-types';
+
+import { actionTypes } from './action-types';
 import {
-  types,
   storedCodeFound,
   noStoredCodeFound,
   isCodeLockedSelector,
   challengeFilesSelector,
   challengeMetaSelector
 } from './';
-
-import { types as appTypes } from '../../../redux';
-
-import { setContent, isPoly } from '../../../../../utils/polyvinyl';
-
-import { createFlashMessage } from '../../../components/Flash/redux';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -49,22 +47,33 @@ function getLegacyCode(legacy) {
   }, null);
 }
 
-function legacyToFile(code, files, key) {
-  if (isFilesAllPoly(files)) {
-    return { [key]: setContent(code, files[key]) };
+function legacyToFile(code, challengeFiles, fileKey) {
+  if (isFilesAllPoly(challengeFiles)) {
+    return {
+      ...setContent(
+        code,
+        challengeFiles.find(x => x.fileKey === fileKey)
+      )
+    };
   }
   return false;
 }
 
-function isFilesAllPoly(files) {
-  return Object.keys(files)
-    .map(key => files[key])
-    .every(file => isPoly(file));
+function isFilesAllPoly(challengeFiles) {
+  if (Array.isArray(challengeFiles)) {
+    return challengeFiles?.every(file => isPoly(file));
+  } else {
+    // TODO: After sufficient time, remove parsing of old code-storage format
+    // This was pushed to production with https://github.com/freeCodeCamp/freeCodeCamp/pull/43023
+    return Object.keys(challengeFiles)
+      .map(key => challengeFiles[key])
+      .every(file => isPoly(file));
+  }
 }
 
 function clearCodeEpic(action$, state$) {
   return action$.pipe(
-    ofType(appTypes.submitComplete, types.resetChallenge),
+    ofType(appTypes.submitComplete, actionTypes.resetChallenge),
     tap(() => {
       const { id } = challengeMetaSelector(state$.value);
       store.remove(id);
@@ -75,19 +84,21 @@ function clearCodeEpic(action$, state$) {
 
 function saveCodeEpic(action$, state$) {
   return action$.pipe(
-    ofType(types.executeChallenge, types.saveEditorContent),
+    ofType(actionTypes.executeChallenge, actionTypes.saveEditorContent),
     // do not save challenge if code is locked
     filter(() => !isCodeLockedSelector(state$.value)),
     map(action => {
       const state = state$.value;
       const { id } = challengeMetaSelector(state);
-      const files = challengeFilesSelector(state);
+      const challengeFiles = challengeFilesSelector(state);
       try {
-        store.set(id, files);
-        // Possible fileType values: indexhtml indexjs indexjsx
-        // The files Object always has one of these as the first/only attribute
-        const fileType = Object.keys(files)[0];
-        if (store.get(id)[fileType].contents !== files[fileType].contents) {
+        store.set(id, challengeFiles);
+        const fileKey = challengeFiles[0].fileKey;
+        if (
+          store.get(id).find(challengeFile => challengeFile.fileKey === fileKey)
+            .contents !==
+          challengeFiles.find(challengeFile => challengeFile.fileKey).contents
+        ) {
           throw Error('Failed to save to localStorage');
         }
         return action;
@@ -95,7 +106,7 @@ function saveCodeEpic(action$, state$) {
         return { ...action, error: true };
       }
     }),
-    ofType(types.saveEditorContent),
+    ofType(actionTypes.saveEditorContent),
     switchMap(({ error }) =>
       of(
         createFlashMessage({
@@ -112,48 +123,46 @@ function saveCodeEpic(action$, state$) {
 
 function loadCodeEpic(action$, state$) {
   return action$.pipe(
-    ofType(types.challengeMounted),
+    ofType(actionTypes.challengeMounted),
     filter(() => {
-      const files = challengeFilesSelector(state$.value);
-      return Object.keys(files).length > 0;
+      const challengeFiles = challengeFilesSelector(state$.value);
+      return challengeFiles?.length > 0;
     }),
     switchMap(({ payload: id }) => {
       let finalFiles;
       const state = state$.value;
       const challenge = challengeMetaSelector(state);
-      const files = challengeFilesSelector(state);
-      const fileKeys = Object.keys(files);
+      const challengeFiles = challengeFilesSelector(state);
+      const fileKeys = challengeFiles.map(x => x.fileKey);
       const invalidForLegacy = fileKeys.length > 1;
       const { title: legacyKey } = challenge;
 
       const codeFound = getCode(id);
       if (codeFound && isFilesAllPoly(codeFound)) {
-        finalFiles = {
-          ...fileKeys
-            .map(key => files[key])
-            .reduce(
-              (files, file) => ({
-                ...files,
-                [file.key]: {
-                  ...file,
-                  contents: codeFound[file.key]
-                    ? codeFound[file.key].contents
-                    : file.contents,
-                  editableContents: codeFound[file.key]
-                    ? codeFound[file.key].editableContents
-                    : file.editableContents,
-                  editableRegionBoundaries: codeFound[file.key]
-                    ? codeFound[file.key].editableRegionBoundaries
-                    : file.editableRegionBoundaries
-                }
-              }),
-              {}
-            )
-        };
+        finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
+          let foundChallengeFile = {};
+          if (Array.isArray(codeFound)) {
+            foundChallengeFile = codeFound.find(
+              x => x.fileKey === challengeFile.fileKey
+            );
+          } else {
+            // TODO: After sufficient time, remove parsing of old code-storage format
+            // This was pushed to production with https://github.com/freeCodeCamp/freeCodeCamp/pull/43023
+            foundChallengeFile = codeFound[challengeFile.fileKey];
+          }
+          const isCodeFound = Object.keys(foundChallengeFile).length > 0;
+          return [
+            ...challengeFiles,
+            {
+              ...challengeFile,
+              ...(isCodeFound ? foundChallengeFile : {})
+            }
+          ];
+        }, []);
       } else {
         const legacyCode = getLegacyCode(legacyKey);
         if (legacyCode && !invalidForLegacy) {
-          finalFiles = legacyToFile(legacyCode, files, fileKeys[0]);
+          finalFiles = legacyToFile(legacyCode, challengeFiles, fileKeys[0]);
         }
       }
       if (finalFiles) {

@@ -12,11 +12,11 @@ Caso você ainda não tenha descoberto, o problema do desafio anterior é com a 
 
 Este é apenas um pequeno exemplo - você chama uma função e passa uma variável, array ou objeto a ela; a função modifica a variável ou alguma coisa no objeto.
 
-Um dos principais princípios da programação funcional é que não devemos alterar coisas. Alterações levam a bugs. É mais fácil prever bugs quando se sabe que as funções não mudam nada. Incluindo os seus argumentos e as variáveis globais.
+Um dos principais princípios da programação funcional é que não devemos alterar coisas. Alterações levam a bugs. É mais fácil prever bugs quando se sabe que as funções não mudam nada, nem mesmo os argumentos e as variáveis globais.
 
 No exemplo anterior não havia nenhuma operação complicada, mas o método `splice` modificou o array original e o resultado foi um bug.
 
-Lembre-se que, em programação funcional, modificar ou alterar coisas é chamado de <dfn>mutação</dfn> e a consequência é chamada de <dfn>efeito colateral</dfn>. Idealmente, uma função deveria ser uma <dfn>função pura</dfn>, que é uma função que não causa efeitos colaterais.
+Lembre-se de que, em programação funcional, modificar ou alterar coisas é chamado de <dfn>mutação</dfn> e a consequência é chamada de <dfn>efeito colateral</dfn>. Idealmente, uma função deveria ser uma <dfn>função pura</dfn>, que é uma função que não causa efeitos colaterais.
 
 Vamos tentar dominar esta disciplina e não alterar nenhuma variável ou objeto em nosso código.
 
@@ -26,21 +26,21 @@ Complete o código da função `incrementer` para que ela retorne o valor da var
 
 # --hints--
 
-Sua função `incrementer` não deve alterar o valor de `fixedValue` (que é `4`).
+A função `incrementer` não deve alterar o valor de `fixedValue` (que é `4`).
 
 ```js
 incrementer();
 assert(fixedValue === 4);
 ```
 
-Sua função `incrementer` deve retornar um valor que é maior que o valor `fixedValue`.
+A função `incrementer` deve retornar um valor que é maior que o valor `fixedValue`.
 
 ```js
 const __newValue = incrementer();
 assert(__newValue === 5);
 ```
 
-Sua função `incrementer` deve retornar um valor baseado no valor da variável global `fixedValue`.
+A função `incrementer` deve retornar um valor baseado no valor da variável global `fixedValue`.
 
 ```js
 (function () {

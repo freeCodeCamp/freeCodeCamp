@@ -1,9 +1,9 @@
+import { Button } from '@freecodecamp/react-bootstrap';
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 import Honesty from './honesty';
-import { Button } from '@freecodecamp/react-bootstrap';
 
 describe('<Honesty />', () => {
   const renderer = new ShallowRenderer();

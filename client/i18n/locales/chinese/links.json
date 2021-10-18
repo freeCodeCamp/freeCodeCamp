@@ -1,5 +1,6 @@
 {
   "help-translate-url": "https://contribute.freecodecamp.org/#/i18n/chinese/how-to-translate-files",
+  "top-contributors": "https://www.freecodecamp.org/news/freecodecamp-top-contributors/",
   "footer": {
     "about-url": "https://chinese.freecodecamp.org/news/about/",
     "shop-url": "https://www.freecodecamp.org/shop/",
@@ -13,5 +14,15 @@
   },
   "donate": {
     "other-ways-url": "https://chinese.freecodecamp.org/news/how-to-donate-to-free-code-camp/"
+  },
+  "nav": {
+    "forum": "https://chinese.freecodecamp.org/forum/",
+    "news": "https://chinese.freecodecamp.org/news/"
+  },
+  "help": {
+    "HTML-CSS": "front-end",
+    "JavaScript": "front-end",
+    "Python": "curriculum",
+    "Relational Databases": "curriculum"
   }
 }

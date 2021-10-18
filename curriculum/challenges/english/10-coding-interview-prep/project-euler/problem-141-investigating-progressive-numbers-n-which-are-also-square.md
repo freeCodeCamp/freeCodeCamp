@@ -16,7 +16,7 @@ We will call such numbers, $n$, progressive.
 
 Some progressive numbers, such as 9 and 10404 = ${102}^2$, also happen to be perfect squares. The sum of all progressive perfect squares below one hundred thousand is 124657.
 
-Find the sum of all progressive perfect squares below one trillion (${101}^2$).
+Find the sum of all progressive perfect squares below one trillion (${10}^{12}$).
 
 # --hints--
 

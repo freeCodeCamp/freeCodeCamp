@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be5
-title: Convert JSON Data to HTML
+title: Converter dados do JSON para HTML
 challengeType: 6
 forumTopicId: 16807
 dashedName: convert-json-data-to-html
@@ -8,15 +8,15 @@ dashedName: convert-json-data-to-html
 
 # --description--
 
-Now that you're getting data from a JSON API, you can display it in the HTML.
+Agora que você está recebendo dados de uma API de JSON, você pode exibir os dados no HTML.
 
-You can use a `forEach` method to loop through the data since the cat photo objects are held in an array. As you get to each item, you can modify the HTML elements.
+Você pode usar um método `forEach` para percorrer os dados, já que os objetos de foto de gatos são mantidos em um array. Ao percorrer cada item, você pode modificar os elementos do HTML.
 
-First, declare an html variable with `let html = "";`.
+Primeiro, declare uma variável html com `let html = "";`.
 
-Then, loop through the JSON, adding HTML to the variable that wraps the key names in `strong` tags, followed by the value. When the loop is finished, you render it.
+Em seguida, percorra o JSON por meio de um laço, adicionando HTML à variável que envolve os nomes das chaves em tags `strong`, seguidas pelo valor. Quando o laço estiver concluído, você o renderiza.
 
-Here's the code that does this:
+Aqui está o código para fazer isso:
 
 ```js
 let html = "";
@@ -30,13 +30,13 @@ json.forEach(function(val) {
 });
 ```
 
-**Note:** For this challenge, you need to add new HTML elements to the page, so you cannot rely on `textContent`. Instead, you need to use `innerHTML`, which can make a site vulnerable to cross-site scripting attacks.
+**Observação:** para este desafio, você precisa adicionar novos elementos HTML à página. Por isso, você não pode confiar em `textContent`. Em vez disso, você precisa usar `innerHTML`, o que pode tornar um site vulnerável a ataques de scripts entre sites.
 
 # --instructions--
 
-Add a `forEach` method to loop over the JSON data and create the HTML elements to display it.
+Adicione um método `forEach` para percorrer os dados do JSON e criar os elementos HTML para exibi-los.
 
-Here is some example JSON:
+Aqui está um exemplo de JSON:
 
 ```json
 [
@@ -52,19 +52,19 @@ Here is some example JSON:
 
 # --hints--
 
-Your code should store the data in the `html` variable
+O código deve armazenar os dados na variável `html`
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/html(\+=|=html\+)/g))
 ```
 
-Your code should use a `forEach` method to loop over the JSON data from the API.
+O código deve usar um método `forEach` para percorrer os dados do JSON da API.
 
 ```js
 assert(code.match(/json\.forEach/g));
 ```
 
-Your code should wrap the key names in `strong` tags.
+O código deve envolver os nomes das chaves em tags `strong`.
 
 ```js
 assert(code.match(/<strong>.+<\/strong>/g));

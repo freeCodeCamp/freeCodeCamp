@@ -3,6 +3,10 @@ id: 5e7b9f180b6c005b0e76f08d
 title: 在关系型数据库中表示关系
 challengeType: 11
 videoId: '-orenCNdC2Q'
+bilibiliIds:
+  aid: 931953070
+  bvid: BV1FM4y1N7hc
+  cid: 377532529
 dashedName: representing-relationships-in-a-relational-database
 ---
 

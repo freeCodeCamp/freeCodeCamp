@@ -43,12 +43,14 @@ assert(calRegex.flags == '');
 Tu expresión regular debe coincidir con la cadena `Cal` en el inicio de la cadena.
 
 ```js
+calRegex.lastIndex = 0;
 assert(calRegex.test('Cal and Ricky both like racing.'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `Cal` en medio de la cadena.
 
 ```js
+calRegex.lastIndex = 0;
 assert(!calRegex.test('Ricky and Cal both like racing.'));
 ```
 

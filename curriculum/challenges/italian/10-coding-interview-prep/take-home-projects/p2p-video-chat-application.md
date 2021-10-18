@@ -1,6 +1,6 @@
 ---
 id: bd7150d8c442eddfafb5bd1c
-title: P2P Video Chat Application
+title: Applicazione Video Chat P2P
 challengeType: 4
 forumTopicId: 302366
 dashedName: p2p-video-chat-application
@@ -8,31 +8,31 @@ dashedName: p2p-video-chat-application
 
 # --description--
 
-**Objective:** Build a [Replit](https://replit.com/) app that is functionally similar to this: <https://p2p-video-chat-application.freecodecamp.rocks/>.
+**Obiettivo:** Costruisci un'app [Replit](https://replit.com/) funzionalmente simile a questa: <https://p2p-video-chat-application.freecodecamp.rocks/>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
-**User Story:** Upon arriving, the browser will prompt me to access my camera and microphone.
+**User Story:** All'arrivo, il browser mi chiederà di accedere alla mia fotocamera e al mio microfono.
 
-**User Story:** After I give it permission, I am prompted to type in a room name.
+**User Story:** Dopo aver dato il permesso, mi viene chiesto di digitare il nome di una stanza.
 
-**User Story:** Once I type in the room name, a room will be created if no room of that name existed before.
+**User Story:** Una volta digitato il nome della stanza, se non esiste una stanza con quel nome ne verrà creata una.
 
-**User Story:** A friend of mine can subsequently go to the same website, type in the same room I entered, and join the same room, then enter into a video chat with me.
+**User Story:** Di conseguenza un amico potrà andare allo stesso sito web, digitare lo stesso nome per la stanza, unirsi alla stessa stanza e iniziare una chat video con me.
 
-**User Story:** If I type in a room name, and there are already two people in that room, I get a notification that the room is full.
+**User Story:** Se scrivo il nome della stanza, e ci sono già due persone all'interno di una stanza, ricevo una notifica che la stanza è piena.
 
-**User Story:** Anyone can create or join any room. And there can be any number of rooms, but all of them must have unique names.
+**User Story:** Chiunque può creare o unirsi ad una qualsiasi stanza. E ci può essere qualsiasi numero di stanze, ma ognuna deve avere un nome univoco.
 
-**User Story:** I can choose to not permit the site to access my microphone and webcam. If I choose not to do this, or if some other driver problem occurs, I see an error message saying these are required.
+**User Story:** Posso scegliere di non permettere al sito di usare il mio microfono e la mia webcam. Se scelgo di non farlo, o se si presenta qualche altro problema di driver, vedo un messaggio di errore che dice che sono richiesti.
 
-**User Story:** When I choose to cancel the room name input step, or if I type in no name, or just spaces, it should again ask me again to type in a valid room name.
+**User Story:** Quando scelgo di cancellare lo step di scrivere il nome di una stanza, o se non scrivo alcun nome, o se scrivo solo spazi, dovrei ricevere di nuovo la richiesta di scrivere un nome di stanza valido.
 
-**User Story:** If one of the two people in the room get disconnected, they can reconnect to the same room and continue chatting.
+**User Story:** Se una delle due persone in una stanza viene disconnessa, si può riconnettere alla stessa stanza e continuare a chattare.
 
-Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
+Una volta terminata l'implementazione di queste user story, scrivi l'URL della tua app live e, opzionalmente, il tuo repository GitHub. Quindi clicca sul pulsante "Ho completato questa sfida".
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul forum [freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 

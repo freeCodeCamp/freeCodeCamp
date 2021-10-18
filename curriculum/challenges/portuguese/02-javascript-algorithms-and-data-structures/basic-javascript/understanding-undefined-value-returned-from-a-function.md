@@ -9,7 +9,7 @@ dashedName: understanding-undefined-value-returned-from-a-function
 
 # --description--
 
-Uma função pode incluir a instrução `return` mas ela não precisa fazer isso. No caso de a função não ter uma instrução `return`, quando você chamá-la, a função processa o código interno, mas o valor retornado é `undefined`.
+Uma função pode incluir a instrução `return` mas ela não precisa fazer isso. No caso de a função não ter uma instrução `return`, quando você a chamar, a função processa o código interno, mas o valor retornado é `undefined`.
 
 **Exemplo**
 
@@ -21,11 +21,11 @@ function addSum(num) {
 addSum(3);
 ```
 
-`addSum` é uma função sem uma instrução `return`. A função irá alterar a variável global `sum`, mas o valor retornado da função é `undefined`.
+`addSum` é uma função sem uma instrução `return`. A função vai alterar a variável global `sum`, mas o valor retornado da função é `undefined`.
 
 # --instructions--
 
-Crie uma função `addFive` sem qualquer argumento. Essa função adiciona 5 à variável</code>sum`, mas o valor retornado é <code>undefined`.
+Crie uma função `addFive` sem qualquer argumento. Essa função adiciona 5 à variável`sum`, mas o valor retornado é `undefined`.
 
 # --hints--
 
@@ -35,24 +35,25 @@ Crie uma função `addFive` sem qualquer argumento. Essa função adiciona 5 à 
 assert(typeof addFive === 'function');
 ```
 
-Uma vez que ambas as funções são executadas, a `soma` deve ser igual a `8`.
+Uma vez que ambas as funções são executadas, a `sum` deve ser igual a `8`.
 
 ```js
 assert(sum === 8);
 ```
 
-Valor retornado de `addFive` deve ser `undefined`.
+O valor retornado de `addFive` deve ser `undefined`.
 
 ```js
 assert(addFive() === undefined);
 ```
 
-Dentro da função `addFive`, você deve adicionar `5` à variável `sum<code>.</p>
+Dentro da função `addFive`, você deve adicionar `5` à variável `sum`.
 
-<pre><code class="js">assert(
+```js
+assert(
   __helpers.removeWhiteSpace(addFive.toString()).match(/sum=sum\+5|sum\+=5/)
 );
-`</pre>
+```
 
 # --seed--
 
