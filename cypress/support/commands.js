@@ -50,10 +50,6 @@ Cypress.Commands.add(
     cy.visit('/settings');
     cy.get('#privacy-settings').find('[data-cy=isLocked-Public]').click();
     // check that the other settings are visible before starting to toggle them
-    cy.intercept('PUT', 'http://localhost:3000/update-my-profileui').as(
-      'profileUiUpdated'
-    );
-    cy.wait('@profileUiUpdated').its('response.statusCode').should('eq', 200);
     cy.contains('My Display Name');
     cy.get('#privacy-settings')
       .find('[data-cy$=-Public]')
@@ -61,9 +57,6 @@ Cypress.Commands.add(
       .each(element => {
         return new Cypress.Promise(resolve => {
           cy.wrap(element).click().should('have.class', 'toggle-active');
-          cy.wait('@profileUiUpdated')
-            .its('response.statusCode')
-            .should('eq', 200);
           resolve();
         });
       });

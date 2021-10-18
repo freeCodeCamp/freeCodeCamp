@@ -45,6 +45,7 @@ describe('A certification,', function () {
       cy.contains('Submit and go to next challenge').click().wait(1000);
     });
     cy.get('.donation-modal').should('be.visible');
+    cy.visit('/settings');
 
     cy.togglePrivacySettingsToPublicAndAcceptHonestyPolicy();
 
