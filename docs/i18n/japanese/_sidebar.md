@@ -2,7 +2,7 @@
   - [イントロダクション](index.md "freeCodeCamp.org コミュニティに貢献する")
   - [よくある質問](FAQ.md)
 - **コードのコントリビューション**
-  - [Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md)
+  - [freeCodeCamp をローカルでセットアップする](how-to-setup-freecodecamp-locally.md)
   - [Codebase best practices](codebase-best-practices.md)
   - [Open a pull request](how-to-open-a-pull-request.md)
   - [Work on coding challenges](how-to-work-on-coding-challenges.md)
