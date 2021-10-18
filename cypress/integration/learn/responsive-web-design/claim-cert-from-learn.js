@@ -48,15 +48,20 @@ describe('Responsive Web Design Superblock', () => {
       cy.login();
       cy.togglePrivacySettingsToPublicAndAcceptHonestyPolicy();
       const { superBlock, block, challenges } = projects;
-      challenges.forEach(({ slug, solution }) => {
-        const url = `/learn/${superBlock}/${block}/${slug}`;
-        cy.visit(url);
+
+      cy.visit(`/learn/${superBlock}/${block}/${challenges[0].slug}`);
+      challenges.forEach(({ solution, slug }) => {
+        cy.location('pathname').should(
+          'eq',
+          `/learn/${superBlock}/${block}/${slug}`
+        );
+        cy.contains("I've completed this challenge")
+          .as('completedButton')
+          .should('be.disabled');
         cy.get('#dynamic-front-end-form')
           .get('#solution')
-          .type(solution, { force: true, delay: 0 });
-        cy.contains("I've completed this challenge")
-          .should('not.be.disabled')
-          .click();
+          .type(solution, { delay: 0 });
+        cy.get('@completedButton').click();
         cy.intercept('http://localhost:3000/project-completed').as(
           'challengeCompleted'
         );
@@ -64,9 +69,6 @@ describe('Responsive Web Design Superblock', () => {
         cy.wait('@challengeCompleted')
           .its('response.statusCode')
           .should('eq', 200);
-        cy.location().should(loc => {
-          expect(loc.pathname).to.not.eq(url);
-        });
       });
     });
     it('should be possible to claim and view certifications from the superBlock page', () => {
