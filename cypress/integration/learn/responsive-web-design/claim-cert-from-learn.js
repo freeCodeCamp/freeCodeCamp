@@ -16,7 +16,7 @@ describe('Responsive Web Design Superblock', () => {
     });
   });
   describe('After submitting all 5 projects', () => {
-    before(() => {
+    beforeEach(() => {
       cy.exec('npm run seed');
       cy.login();
       cy.visit('/settings');
@@ -32,7 +32,6 @@ describe('Responsive Web Design Superblock', () => {
       cy.get('.donation-modal').should('not.exist');
       // directed to claim-cert-block section
       cy.url().should('include', '#claim-cert-block');
-      cy.visit(`/learn/responsive-web-design`);
       // make sure that the window has not snapped to the top (a weird bug that
       // we never figured out and so could randomly reappear)
       cy.window().its('scrollY').should('not.equal', 0);
