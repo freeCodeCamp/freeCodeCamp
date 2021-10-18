@@ -3,6 +3,7 @@ module.exports = {
   darkMode: 'class',
   theme: {
     colors: {
+      transparent: 'transparent',
       'dark-theme-background': 'var(--gray90)',
       'light-theme-background': 'var(--gray00)',
       'default-foreground-primary': 'var(--default-foreground-primary)',

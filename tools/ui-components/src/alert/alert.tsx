@@ -34,9 +34,9 @@ export function Alert({
   const isDismissable = !!onDismiss;
 
   const classes = [
-    'alert',
+    'p-4 mb-6 border border-transparent break-words',
     variants[variant],
-    isDismissable ? 'alert-dismissable' : '',
+    isDismissable ? 'alert-dismissable pr-10' : '',
     className
   ].join(' ');
 

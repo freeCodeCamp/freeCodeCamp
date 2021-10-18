@@ -3,16 +3,6 @@
 /* ============================================================================ */
 
 /* ====================================== */
-/* Alert container */
-/* ====================================== */
-.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
-/* ====================================== */
 /* Styles for alert children */
 /* ====================================== */
 .alert h4 {
@@ -56,10 +46,6 @@ button.close {
   border: 0;
 }
 
-.alert-dismissable,
-.alert-dismissible {
-  padding-right: 35px;
-}
 .alert-dismissable .close,
 .alert-dismissible .close {
   position: relative;
@@ -71,14 +57,6 @@ button.close {
 /* ============================================================================ */
 /* =============================== CUSTOM STYLES ============================== */
 /* ============================================================================ */
-
-/* ====================================== */
-/* Custom styles from layouts/global.css  */
-/* ====================================== */
-.alert {
-  border-radius: 0;
-  overflow-wrap: break-word;
-}
 
 /* ====================================== */
 /* Donation.css */
