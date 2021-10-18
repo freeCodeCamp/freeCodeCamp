@@ -1,23 +1,18 @@
 import { Alert } from '@freecodecamp/react-bootstrap';
-import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { FlashState } from '../../redux/types';
 
 import './flash.css';
 
 type FlashProps = {
-  flashMessage: {
-    type: string;
-    message: string;
-    id: string;
-    variables: Record<string, unknown>;
-  };
+  flashMessage: FlashState['message'];
   onClose: () => void;
 };
 
 function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
-  const { type, message, id, variables = {} } = flashMessage;
+  const { type, message, id, variables } = flashMessage;
   const { t } = useTranslation();
   const [flashMessageHeight, setFlashMessageHeight] = useState(0);
 
@@ -62,14 +57,5 @@ function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
 }
 
 Flash.displayName = 'FlashMessages';
-Flash.propTypes = {
-  flashMessage: PropTypes.shape({
-    id: PropTypes.string,
-    type: PropTypes.string,
-    message: PropTypes.string,
-    variables: PropTypes.object
-  }),
-  onClose: PropTypes.func.isRequired
-};
 
 export default Flash;

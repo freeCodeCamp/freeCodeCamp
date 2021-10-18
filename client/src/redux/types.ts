@@ -1,6 +1,6 @@
 import { FlashApp, FlashMessageArg } from '../components/Flash/redux';
-import { MainApp } from '.';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
+import { MainApp } from '.';
 
 export interface State {
   [FlashApp]: FlashState;
@@ -25,7 +25,7 @@ export interface State {
 }
 
 export interface FlashState {
-  message: ({ id: string } & FlashMessageArg) | Record<string, never>;
+  message: { id: string } & FlashMessageArg;
 }
 
 export interface DefaultFetchState {

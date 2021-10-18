@@ -4,7 +4,11 @@ import { FlashState, State } from '../../../redux/types';
 export const FlashApp = 'flash';
 
 const initialState = {
-  message: {}
+  message: {
+    id: '',
+    type: '',
+    message: ''
+  }
 };
 
 export const sagas = [];
@@ -19,7 +23,11 @@ enum FlashActionTypes {
   removeFlashMessage = 'removeFlashMessage'
 }
 
-export type FlashMessageArg = { type: string; message: string };
+export type FlashMessageArg = {
+  type: string;
+  message: string;
+  variables?: Record<string, unknown>;
+};
 
 export const createFlashMessage = (
   flash: FlashMessageArg
@@ -49,9 +57,10 @@ export const reducer = (
 ): State[typeof FlashApp] => {
   switch (action.type) {
     case FlashActionTypes.createFlashMessage:
+      console.log(action.payload, state);
       return { ...state, message: action.payload };
     case FlashActionTypes.removeFlashMessage:
-      return { ...state, message: {} };
+      return { ...state, message: initialState.message };
     default:
       return state;
   }
