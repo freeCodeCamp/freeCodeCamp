@@ -1,5 +1,4 @@
 import React from 'react';
-import './alert.css';
 import { CloseButton } from '../close-button';
 
 type AlertVariant = 'success' | 'info' | 'warning' | 'danger';
