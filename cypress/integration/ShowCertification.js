@@ -8,8 +8,8 @@ describe('A certification,', function () {
     // submit projects for certificate
     cy.submitResponsiveWebDesignProjects();
     cy.get('.donation-modal').should('be.visible');
-    cy.visit('/settings');
 
+    cy.visit('/settings');
     cy.togglePrivacySettingsToPublicAndAcceptHonestyPolicy();
 
     // claim certificate

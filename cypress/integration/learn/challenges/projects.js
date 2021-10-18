@@ -114,7 +114,7 @@ describe('project submission', () => {
         });
 
         // Claim and view solutions on certification page
-
+        cy.visit('/settings');
         cy.togglePrivacySettingsToPublicAndAcceptHonestyPolicy();
         cy.visit('/learn/javascript-algorithms-and-data-structures');
         cy.contains('Claim Certification').click();

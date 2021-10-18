@@ -47,7 +47,6 @@ Cypress.Commands.add('login', () => {
 Cypress.Commands.add(
   'togglePrivacySettingsToPublicAndAcceptHonestyPolicy',
   () => {
-    cy.visit('/settings');
     cy.get('#privacy-settings').find('[data-cy=isLocked-Public]').click();
     // check that the other settings are visible before starting to toggle them
     cy.contains('My Display Name');

@@ -19,6 +19,7 @@ describe('Responsive Web Design Superblock', () => {
     before(() => {
       cy.exec('npm run seed');
       cy.login();
+      cy.visit('/settings');
       cy.togglePrivacySettingsToPublicAndAcceptHonestyPolicy();
       cy.submitResponsiveWebDesignProjects();
     });
