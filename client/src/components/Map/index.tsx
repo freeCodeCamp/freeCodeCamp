@@ -2,11 +2,12 @@ import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
 import React from 'react';
 
+import { SuperBlocks } from '../../../../config/certification-settings';
 import envData from '../../../../config/env.json';
 import { isAuditedCert } from '../../../../utils/is-audited';
 import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
-import { ChallengeNodeType, SuperBlocks } from '../../redux/prop-types';
+import { ChallengeNodeType } from '../../redux/prop-types';
 import { Link, Spacer } from '../helpers';
 
 import './map.css';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SuperBlocks } from '../../redux/prop-types';
+import { SuperBlocks } from '../../../../config/certification-settings';
 import APIIcon from './API-icon';
 import D3Icon from './D3-icon';
 import DatabaseIcon from './Database-icon';

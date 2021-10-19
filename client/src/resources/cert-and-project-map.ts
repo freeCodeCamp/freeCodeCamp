@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../redux/prop-types';
+import { SuperBlocks } from '../../../config/certification-settings';
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';

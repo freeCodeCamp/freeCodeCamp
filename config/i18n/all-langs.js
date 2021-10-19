@@ -1,5 +1,6 @@
 // ---------------------------------------------------------------------------
-const SuperBlocks = require('../../client/src/redux/prop-types.ts');
+const SuperBlocks =
+  require('../../config/certification-settings.ts').SuperBlocks;
 /*
  * List of languages with localizations enabled for builds.
  *

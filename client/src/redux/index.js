@@ -2,6 +2,7 @@ import { uniqBy } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 import store from 'store';
 
+import { SuperBlocks } from '../../../config/certification-settings';
 import { actionTypes as challengeTypes } from '../templates/Challenges/redux/action-types';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 import { createAcceptTermsSaga } from './accept-terms-saga';
@@ -13,7 +14,6 @@ import { createFetchUserSaga } from './fetch-user-saga';
 import { createGaSaga } from './ga-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
-import { SuperBlocks } from './prop-types';
 import { createReportUserSaga } from './report-user-saga';
 
 import { actionTypes as settingsTypes } from './settings/action-types';

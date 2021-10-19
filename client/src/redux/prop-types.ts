@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
+import { SuperBlocks } from '../../../config/certification-settings';
 
 export const FileType = PropTypes.shape({
   key: PropTypes.string,
@@ -487,19 +488,4 @@ export interface ChallengeSchema {
   title: string;
   translationPending: boolean;
   url?: string;
-}
-
-export enum SuperBlocks {
-  RespWebDesign = 'responsive-web-design',
-  JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
-  FrontEndDevLibs = 'front-end-development-libraries',
-  DataVis = 'data-visualization',
-  RelationalDb = 'relational-databases',
-  BackEndDevApis = 'back-end-development-and-apis',
-  QualityAssurance = 'quality-assurance',
-  SciCompPy = 'scientific-computing-with-python',
-  DataAnalysisPy = 'data-analysis-with-python',
-  InfoSec = 'information-security',
-  MachineLearningPy = 'machine-learning-with-python',
-  CodingInterviewPrep = 'coding-interview-prep'
 }

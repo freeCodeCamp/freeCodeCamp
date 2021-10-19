@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 
 import DonateModal from '../../../../client/src/components/Donation/DonationModal';
+import { SuperBlocks } from '../../../../config/certification-settings';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
@@ -22,12 +23,7 @@ import {
   tryToShowDonationModal,
   userSelector
 } from '../../redux';
-import {
-  MarkdownRemark,
-  AllChallengeNode,
-  User,
-  SuperBlocks
-} from '../../redux/prop-types';
+import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 import Block from './components/Block';
 import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';

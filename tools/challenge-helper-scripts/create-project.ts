@@ -4,7 +4,7 @@ import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
 
-import { SuperBlocks } from '../../client/src/redux/prop-types';
+import { SuperBlocks } from '../../config/certification-settings';
 import { blockNameify } from '../../utils/block-nameify';
 import { createStepFile } from './utils.js';
 

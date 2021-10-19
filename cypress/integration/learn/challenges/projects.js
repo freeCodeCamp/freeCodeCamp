@@ -1,4 +1,5 @@
 /* global cy */
+import { SuperBlocks } from '../../../../config/certification-settings';
 
 const selectors = {
   editor: '.react-monaco-editor-container'

@@ -1,3 +1,5 @@
+import { SuperBlocks } from '../../../../config/certification-settings';
+
 const projects = {
   superBlock: SuperBlocks.RespWebDesign,
   block: 'responsive-web-design-projects',
