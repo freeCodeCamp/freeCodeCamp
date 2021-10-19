@@ -1,5 +1,5 @@
 {
-    "include": ["./certification-settings.ts"],
+    "include": ["./certification-settings.ts", "./i18n/**/*"],
     "compilerOptions": {
       "lib": ["WebWorker", "DOM", "DOM.Iterable"],
       "target": "es2020",

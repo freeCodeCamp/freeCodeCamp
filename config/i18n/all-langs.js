@@ -1,6 +1,8 @@
+"use strict";
+exports.__esModule = true;
+exports.langCodes = exports.langDisplayNames = exports.i18nextCodes = exports.auditedCerts = exports.availableLangs = void 0;
 // ---------------------------------------------------------------------------
-const SuperBlocks =
-  require('../../config/certification-settings.ts').SuperBlocks;
+var certification_settings_1 = require("../certification-settings");
 /*
  * List of languages with localizations enabled for builds.
  *
@@ -9,25 +11,24 @@ const SuperBlocks =
  * An error will be thrown if the CLIENT_LOCALE and CURRICULUM_LOCALE variables
  * from the .env file aren't found in their respective arrays below
  */
-const availableLangs = {
-  client: [
-    'english',
-    'espanol',
-    'chinese',
-    'chinese-traditional',
-    'italian',
-    'portuguese'
-  ],
-  curriculum: [
-    'english',
-    'espanol',
-    'chinese',
-    'chinese-traditional',
-    'italian',
-    'portuguese'
-  ]
+exports.availableLangs = {
+    client: [
+        'english',
+        'espanol',
+        'chinese',
+        'chinese-traditional',
+        'italian',
+        'portuguese'
+    ],
+    curriculum: [
+        'english',
+        'espanol',
+        'chinese',
+        'chinese-traditional',
+        'italian',
+        'portuguese'
+    ]
 };
-
 /*
  * List of certifications with localization enabled in their world language.
  *
@@ -36,104 +37,93 @@ const availableLangs = {
  * certifications which have not been audited & approved will fallback to
  * English equivalent.
  */
-const auditedCerts = {
-  espanol: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs
-  ],
-  chinese: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy
-  ],
-  'chinese-traditional': [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy
-  ],
-  italian: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy
-  ],
-  portuguese: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy
-  ]
+exports.auditedCerts = {
+    espanol: [
+        certification_settings_1.SuperBlocks.RespWebDesign,
+        certification_settings_1.SuperBlocks.JsAlgoDataStruct,
+        certification_settings_1.SuperBlocks.FrontEndDevLibs
+    ],
+    chinese: [
+        certification_settings_1.SuperBlocks.RespWebDesign,
+        certification_settings_1.SuperBlocks.JsAlgoDataStruct,
+        certification_settings_1.SuperBlocks.FrontEndDevLibs,
+        certification_settings_1.SuperBlocks.DataVis,
+        certification_settings_1.SuperBlocks.BackEndDevApis,
+        certification_settings_1.SuperBlocks.QualityAssurance,
+        certification_settings_1.SuperBlocks.SciCompPy,
+        certification_settings_1.SuperBlocks.DataAnalysisPy,
+        certification_settings_1.SuperBlocks.InfoSec,
+        certification_settings_1.SuperBlocks.MachineLearningPy
+    ],
+    'chinese-traditional': [
+        certification_settings_1.SuperBlocks.RespWebDesign,
+        certification_settings_1.SuperBlocks.JsAlgoDataStruct,
+        certification_settings_1.SuperBlocks.FrontEndDevLibs,
+        certification_settings_1.SuperBlocks.DataVis,
+        certification_settings_1.SuperBlocks.BackEndDevApis,
+        certification_settings_1.SuperBlocks.QualityAssurance,
+        certification_settings_1.SuperBlocks.SciCompPy,
+        certification_settings_1.SuperBlocks.DataAnalysisPy,
+        certification_settings_1.SuperBlocks.InfoSec,
+        certification_settings_1.SuperBlocks.MachineLearningPy
+    ],
+    italian: [
+        certification_settings_1.SuperBlocks.RespWebDesign,
+        certification_settings_1.SuperBlocks.JsAlgoDataStruct,
+        certification_settings_1.SuperBlocks.FrontEndDevLibs,
+        certification_settings_1.SuperBlocks.DataVis,
+        certification_settings_1.SuperBlocks.BackEndDevApis,
+        certification_settings_1.SuperBlocks.QualityAssurance,
+        certification_settings_1.SuperBlocks.SciCompPy,
+        certification_settings_1.SuperBlocks.DataAnalysisPy,
+        certification_settings_1.SuperBlocks.InfoSec,
+        certification_settings_1.SuperBlocks.MachineLearningPy
+    ],
+    portuguese: [
+        certification_settings_1.SuperBlocks.RespWebDesign,
+        certification_settings_1.SuperBlocks.JsAlgoDataStruct,
+        certification_settings_1.SuperBlocks.FrontEndDevLibs,
+        certification_settings_1.SuperBlocks.DataVis,
+        certification_settings_1.SuperBlocks.BackEndDevApis,
+        certification_settings_1.SuperBlocks.QualityAssurance,
+        certification_settings_1.SuperBlocks.SciCompPy,
+        certification_settings_1.SuperBlocks.DataAnalysisPy,
+        certification_settings_1.SuperBlocks.InfoSec,
+        certification_settings_1.SuperBlocks.MachineLearningPy
+    ]
 };
-
 // ---------------------------------------------------------------------------
-
 // Each client language needs an entry in the rest of the variables below
-
 /* These strings set the i18next language. It needs to be the two character
  * string for the language to take advantage of available functionality.
  * Use a 639-1 code here https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
  */
-const i18nextCodes = {
-  english: 'en',
-  espanol: 'es',
-  chinese: 'zh',
-  'chinese-traditional': 'zh-Hant',
-  italian: 'it',
-  portuguese: 'pt-BR'
+exports.i18nextCodes = {
+    english: 'en',
+    espanol: 'es',
+    chinese: 'zh',
+    'chinese-traditional': 'zh-Hant',
+    italian: 'it',
+    portuguese: 'pt-BR'
 };
-
 // These are for the language selector dropdown menu in the footer
-const langDisplayNames = {
-  english: 'English',
-  espanol: 'Español',
-  chinese: '中文（简体字）',
-  'chinese-traditional': '中文（繁體字）',
-  italian: 'Italiano',
-  portuguese: 'Português'
+exports.langDisplayNames = {
+    english: 'English',
+    espanol: 'Español',
+    chinese: '中文（简体字）',
+    'chinese-traditional': '中文（繁體字）',
+    italian: 'Italiano',
+    portuguese: 'Português'
 };
-
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
  * There's an example in profile/components/Camper.js
  * List: https://github.com/unicode-cldr/cldr-dates-modern/tree/master/main
  */
-const langCodes = {
-  english: 'en-US',
-  espanol: 'es-419',
-  chinese: 'zh',
-  'chinese-traditional': 'zh-Hant',
-  italian: 'it',
-  portuguese: 'pt-BR'
+exports.langCodes = {
+    english: 'en-US',
+    espanol: 'es-419',
+    chinese: 'zh',
+    'chinese-traditional': 'zh-Hant',
+    italian: 'it',
+    portuguese: 'pt-BR'
 };
-
-exports.availableLangs = availableLangs;
-exports.i18nextCodes = i18nextCodes;
-exports.langDisplayNames = langDisplayNames;
-exports.langCodes = langCodes;
-exports.auditedCerts = auditedCerts;

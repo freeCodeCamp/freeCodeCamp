@@ -1,0 +1,133 @@
+import { spawn } from 'child_process';
+import * as fs from 'fs';
+import * as path from 'path';
+
+import { availableLangs } from '../../../config/i18n/all-langs';
+
+// eslint-disable-next-line
+const env = require('../../../config/read-env.js');
+
+const globalConfigPath = path.resolve(__dirname, '../../../config');
+
+const { FREECODECAMP_NODE_ENV } = process.env;
+
+function checkClientLocale() {
+  // TODO: With @ts-ignore an error is thrown during build
+  if (!availableLangs.client.includes(process.env.CLIENT_LOCALE)) {
+    /* eslint-disable @typescript-eslint/restrict-template-expressions */
+    throw Error(`
+
+      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in config/i18n/all-langs.js
+
+      `);
+    /* eslint-enable @typescript-eslint/restrict-template-expressions */
+  }
+}
+
+function checkCurriculumLocale() {
+  if (!availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE)) {
+    /* eslint-disable @typescript-eslint/restrict-template-expressions */
+    throw Error(`
+
+      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in config/i18n/all-langs.js
+
+      `);
+    /* eslint-enable @typescript-eslint/restrict-template-expressions */
+  }
+}
+
+if (FREECODECAMP_NODE_ENV !== 'development') {
+  const locationKeys = [
+    'homeLocation',
+    'apiLocation',
+    'forumLocation',
+    'newsLocation',
+    'radioLocation'
+  ];
+  const deploymentKeys = [
+    'clientLocale',
+    'curriculumLocale',
+    'showLocaleDropdownMenu',
+    'deploymentEnv',
+    'environment',
+    'showUpcomingChanges'
+  ];
+  const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
+  const donationKeys = ['stripePublicKey', 'paypalClientId'];
+
+  const expectedVariables = locationKeys.concat(
+    deploymentKeys,
+    searchKeys,
+    donationKeys
+  );
+  const receivedvariables = Object.keys(env);
+  expectedVariables.sort();
+  receivedvariables.sort();
+  if (expectedVariables.length !== receivedvariables.length) {
+    /* eslint-disable @typescript-eslint/restrict-template-expressions */
+    throw Error(`
+
+    Env. variable validation failed. Make sure these keys are used and configured.
+
+    Mismatch:
+    ${expectedVariables
+      .filter(expected => !receivedvariables.includes(expected))
+      .concat(
+        receivedvariables.filter(
+          received => !expectedVariables.includes(received)
+        )
+      )}
+
+    `);
+    /* eslint-enable @typescript-eslint/restrict-template-expressions */
+  }
+
+  for (const key of expectedVariables) {
+    if (typeof env[key] === 'undefined' || env[key] === null) {
+      throw Error(`
+
+      Env. variable ${key} is missing, build cannot continue
+
+      `);
+    }
+  }
+
+  if (env['environment'] !== 'production')
+    throw Error(`
+
+    Production environment should be 'production'
+
+    `);
+
+  if (env['showUpcomingChanges'])
+    throw Error(`
+
+    SHOW_UPCOMING_CHANGES should never be 'true' in production
+
+    `);
+
+  checkClientLocale();
+  checkCurriculumLocale();
+} else {
+  checkClientLocale();
+  checkCurriculumLocale();
+  if (fs.existsSync(`${globalConfigPath}/env.json`)) {
+    // eslint-disable-next-line
+    const { showUpcomingChanges } = require(`${globalConfigPath}/env.json`);
+    if (env['showUpcomingChanges'] !== showUpcomingChanges) {
+      console.log(
+        'SHOW_UPCOMING_CHANGES value has changed, cleaning client cache.'
+      );
+      const child = spawn('npm', ['run', 'clean:client']);
+      child.stdout.setEncoding('utf8');
+      child.stdout.on('data', function (data) {
+        console.log(data);
+      });
+      child.on('error', err => {
+        console.error(err);
+      });
+    }
+  }
+}
+
+fs.writeFileSync(`${globalConfigPath}/env.json`, JSON.stringify(env));
