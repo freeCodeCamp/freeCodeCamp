@@ -36,6 +36,7 @@ export const actionTypes = createTypes(
     'checkChallenge',
     'executeChallenge',
     'resetChallenge',
+    'stopResetting',
     'submitChallenge',
 
     'moveToTab',

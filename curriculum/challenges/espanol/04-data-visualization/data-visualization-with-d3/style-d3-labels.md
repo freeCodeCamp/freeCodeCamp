@@ -1,6 +1,6 @@
 ---
 id: 587d7faa367417b2b2512bd3
-title: Style D3 Labels
+title: Estiliza etiquetas D3
 challengeType: 6
 forumTopicId: 301492
 dashedName: style-d3-labels
@@ -8,21 +8,21 @@ dashedName: style-d3-labels
 
 # --description--
 
-D3 methods can add styles to the bar labels. The `fill` attribute sets the color of the text for a `text` node. The `style()` method sets CSS rules for other styles, such as `font-family` or `font-size`.
+Los métodos D3 pueden agregar estilos a las etiquetas de barras. El atributo `fill` establece el color del texto para un nodo de texto `text`. El método `style()` establece reglas CSS para otros estilos, como por ejemplo `font-family` o `font-size`.
 
 # --instructions--
 
-Set the `font-size` of the `text` elements to `25px`, and the color of the text to red.
+Establece el `font-size` de los elementos `text` a `25px`, y el color del texto a rojo (red).
 
 # --hints--
 
-The labels should all have a `fill` color of red.
+Todas las etiquetas deben tener un `fill` de color rojo.
 
 ```js
 assert($('text').css('fill') == 'rgb(255, 0, 0)');
 ```
 
-The labels should all have a `font-size` of `25` pixels.
+Todas las etiquetas deben tener un `font-size` de `25` píxeles.
 
 ```js
 assert($('text').css('font-size') == '25px');

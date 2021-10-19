@@ -35,6 +35,18 @@ A primeira checkbox de seu formulário deve estar selecionada por padrão.
 assert($('input[type="checkbox"]').prop('checked'));
 ```
 
+Você não deve alterar o texto interno da etiqueta `Indoor`.
+
+```js
+assert.equal(document.querySelector('label[for="indoor"]')?.innerText?.trim(), 'Indoor');
+```
+
+Você não deve alterar o texto interno da etiqueta `Loving`.
+
+```js
+assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), 'Loving');
+```
+
 # --seed--
 
 ## --seed-contents--

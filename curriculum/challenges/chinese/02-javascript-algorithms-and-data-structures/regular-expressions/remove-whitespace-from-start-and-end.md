@@ -36,6 +36,12 @@ assert(!code.match(/\.?[\s\S]*?trim/));
 assert(!code.match(/result\s*=\s*["'`].*?["'`]/));
 ```
 
+`hello` 变量的值不应更改。
+
+```js
+assert(hello === '   Hello, World!  ');
+```
+
 # --seed--
 
 ## --seed-contents--

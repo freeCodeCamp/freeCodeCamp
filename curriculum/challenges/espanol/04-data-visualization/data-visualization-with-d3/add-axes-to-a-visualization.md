@@ -30,7 +30,7 @@ El código anterior coloca el eje "x" en la parte inferior del lienzo SVG. Luego
 
 # --instructions--
 
-El diagrama de dispersión ahora tiene un eje x. Crea un eje y en una variable denominada `yAxis` utilizando el método `axisLeft()`. Luego renderiza el eje usando un elemento `g`. Asegúrete de utilizar un atributo `transform` para trasladar el eje por la cantidad de unidades de relleno a la derecha y `0` unidades hacia abajo. Recuerda de `call()` al eje.
+El diagrama de dispersión ahora tiene un eje x. Crea un eje y en una variable denominada `yAxis` utilizando el método `axisLeft()`. Luego renderiza el eje usando un elemento `g`. Asegúrete de utilizar un atributo `transform` para trasladar el eje por la cantidad de unidades de relleno a la derecha y `0` unidades hacia abajo. Recuerda de llamar (`call()`) al eje.
 
 # --hints--
 

@@ -36,7 +36,7 @@ Solo te pedimos que entiendas lo siguiente:
 
    En la superficie puede no parecer lo complicado que es la pila técnica, pero cuesta bastante mantener los motores en funcionamiento. Esto incluye el aprovisionamiento de servidores adicionales y la dedicación de personal para cuidarlos.
 
-   freeCodeCamp.org se compromete a proporcionar estos de forma gratuita como siempre, sin embargo, tenemos que darle prioridad a los recursos para aquellos que más lo necesitan. Lo último que queremos es cerrar los servidores de un idioma si la actividad de traducción se apaga y las cosas se vuelven obsoletas.
+   freeCodeCamp.org is committed to providing these for free as always, however we need to prioritize resources for those who need them the most. Lo último que queremos es cerrar los servidores de un idioma si la actividad de traducción se apaga y las cosas se vuelven obsoletas.
 
    Una vez que un idioma alcance al menos algunas certificaciones en el plan de estudios, podemos comenzar a implementar el idioma en vivo en [`/learn`](https://www.freecodecamp.org/learn), mientras continúas traduciendo las certificaciones restantes.
 
