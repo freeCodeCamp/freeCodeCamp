@@ -53,19 +53,6 @@ assert(
 );
 ```
 
-The `name` prop of `Welcome` should be equal to a string of at least 2 characters.
-
-```js
-assert(
-  (function () {
-    const mockedComponent = Enzyme.mount(React.createElement(App));
-    const name = mockedComponent.find('Welcome').props()
-      .name;
-    return typeof name === 'string' && name.length >= 2;
-  })()
-);
-```
-
 The `Welcome` component should display the string you pass as the `name` prop within `strong` tags.
 
 ```js
