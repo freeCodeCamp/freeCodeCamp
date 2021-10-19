@@ -57,7 +57,7 @@ function getTemplateComponent(challengeType) {
 }
 
 exports.createChallengePages = function (createPage) {
-  return function ({ node }, index, thisArray) {
+  return function ({ node }, index, allChallenges) {
     const {
       superBlock,
       block,
@@ -65,11 +65,17 @@ exports.createChallengePages = function (createPage) {
       required = [],
       template,
       challengeType,
-      id
+      id,
+      challengeOrder
     } = node;
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
 
+    const challengesInBlock = allChallenges.filter(
+      ({ node }) => node.block === block
+    );
+    const allSolutionsToLastChallenge =
+      challengesInBlock[challengesInBlock.length - 1].node.solutions;
     createPage({
       path: slug,
       component: getTemplateComponent(challengeType),
@@ -79,9 +85,11 @@ exports.createChallengePages = function (createPage) {
           block,
           template,
           required,
-          nextChallengePath: getNextChallengePath(node, index, thisArray),
-          prevChallengePath: getPrevChallengePath(node, index, thisArray),
-          id
+          nextChallengePath: getNextChallengePath(node, index, allChallenges),
+          prevChallengePath: getPrevChallengePath(node, index, allChallenges),
+          id,
+          isFirstChallengeInBlock: challengeOrder === 0,
+          solutionToLastChallenge: allSolutionsToLastChallenge[0]
         },
         slug
       }

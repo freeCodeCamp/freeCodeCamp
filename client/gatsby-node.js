@@ -87,6 +87,10 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   src
                 }
                 challengeOrder
+                solutions {
+                  contents
+                  ext
+                }
                 superBlock
                 superOrder
                 template
