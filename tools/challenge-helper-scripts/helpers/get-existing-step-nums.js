@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 // Generates an array with the output of processing filenames with an expected
-// format (`part-###.md`).
-// ['part-001.md', 'part-002.md'] => [1, 2]
+// format (`step-###.md`).
+// ['step-001.md', 'step-002.md'] => [1, 2]
 function getExistingStepNums(projectPath) {
   return fs.readdirSync(projectPath).reduce((stepNums, fileName) => {
     if (
