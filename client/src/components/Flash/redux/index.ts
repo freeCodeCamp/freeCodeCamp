@@ -57,7 +57,6 @@ export const reducer = (
 ): State[typeof FlashApp] => {
   switch (action.type) {
     case FlashActionTypes.createFlashMessage:
-      console.log(action.payload, state);
       return { ...state, message: action.payload };
     case FlashActionTypes.removeFlashMessage:
       return { ...state, message: initialState.message };
@@ -65,22 +64,3 @@ export const reducer = (
       return state;
   }
 };
-
-// TODO: For more complex actions
-
-// interface FlashMessageGeneric<T> {
-//   (payload: FlashMessageArg): ReducerPayload<T>;
-// }
-
-// const flashMessageGeneric =
-//   <T extends ActionTypes>(action: T) =>
-//   (payload: FlashMessageArg): ReducerPayload<T> => ({
-//     type: action,
-//     payload: { message: payload, id: nanoid() }
-//   });
-
-// export const createFlashMessage: FlashMessageGeneric<ActionTypes.createFlashMessage> =
-// flashMessageGeneric(ActionTypes.createFlashMessage);
-
-// export const removeFlashMessage: FlashMessageGeneric<ActionTypes.removeFlashMessage> =
-// flashMessageGeneric(ActionTypes.removeFlashMessage);
