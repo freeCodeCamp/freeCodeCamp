@@ -92,6 +92,13 @@
           ""
         ]
       },
+      "registration-form": {
+        "title": "注册表单",
+        "intro": [
+          "",
+          ""
+        ]
+      },
       "accessibility-quiz": {
         "title": "无障碍测试",
         "intro": [
@@ -327,15 +334,15 @@
   "relational-databases": {
     "title": "关系型数据库",
     "intro": [
-      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects."
+      "对于这些课程，你将使用真正的开发者工具和软件，包括 VS Code、PostgreSQL 和 Linux / Unix 命令行，来完成交互式教程和构建项目。"
     ],
     "blocks": {
       "learn-relational-databases": {
         "title": "学习关系型数据库",
         "intro": [
-          "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
-          "Next, you will learn how to create and work with relational databases using PostgreSQL, a database management system, and SQL, the language of these databases.",
-          "Finally, you will learn Git, the version control system, and GitHub, a code repository hosting service - two essential tools of every developer."
+          "这些课程从基本的 Bash 命令开始。使用终端，你将学习从导航和操作一个文件系统、Bash 脚本到高级应用的所有内容。",
+          "接下来，你将学习如何使用数据库管理系统 PostgreSQL 和数据库语言 SQL 来创建和使用关系数据库。",
+          "最后，你将学习版本控制系统 Git 和代码库托管服务 GitHub——每个开发者的两个基本工具。"
         ]
       }
     }

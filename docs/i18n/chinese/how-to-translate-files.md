@@ -36,7 +36,7 @@
 
    表面上来看，技术栈可能看起来没那么复杂，但是实际上消耗了很多资源来让引擎跑起来。 这包括提供额外的服务器和专职人员来管理它们。
 
-   freeCodeCamp.org 一直承诺免费提供这些资源， 但是我们需要优先把资源提供给最需要它们的人们。 我们非常不想看到某种语言的翻译活动结束了，并且内容过时了，然后我们不得不关闭相应的服务器。
+   freeCodeCamp.org is committed to providing these for free as always, however we need to prioritize resources for those who need them the most. 我们非常不想看到某种语言的翻译活动结束了，并且内容过时了，然后我们不得不关闭相应的服务器。
 
    当某种语言的翻译团队完成了几个认证， 我们就可以开始将这种语言版本在[`/learn`](https://www.freecodecamp.org/learn)上线，然后你们可以继续翻译剩余的认证。
 

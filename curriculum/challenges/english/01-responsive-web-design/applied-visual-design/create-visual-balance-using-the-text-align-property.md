@@ -13,7 +13,7 @@ This section of the curriculum focuses on Applied Visual Design. The first group
 
 Text is often a large part of web content. CSS has several options for how to align it with the `text-align` property.
 
-`text-align: justify;` causes all lines of text except the last line to meet the left and right edges of the line box.
+`text-align: justify;` spaces the text so that each line has equal width.
 
 `text-align: center;` centers the text
 

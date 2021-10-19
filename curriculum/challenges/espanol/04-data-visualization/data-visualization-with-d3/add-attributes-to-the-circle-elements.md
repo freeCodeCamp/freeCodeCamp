@@ -10,7 +10,7 @@ dashedName: add-attributes-to-the-circle-elements
 
 El último desafío creó los elementos `circle` para cada punto en el `dataset` y los agregó al lienzo SVG. Pero D3 necesita más información sobre la posición y el tamaño de cada `circle` para mostrarlos correctamente.
 
-Un `circle` en SVG tiene tres atributos principales. Los atributos `cx` y `cy` son las coordenadas. Le dicen a D3 donde colocar el *center* de la forma en el lienzo SVG. El radio (`r` atributo) da el tamaño del `circle`.
+Un `circle` en SVG tiene tres atributos principales. Los atributos `cx` y `cy` son las coordenadas. Le dicen a D3 donde colocar el *center* de la forma en el lienzo SVG. El radio (atributo `r`) da el tamaño del `circle`.
 
 Al igual que la coordenada `rect` `y`, el atributo `cy` para un `circle` se mide desde la parte superior del lienzo SVG, no desde abajo.
 

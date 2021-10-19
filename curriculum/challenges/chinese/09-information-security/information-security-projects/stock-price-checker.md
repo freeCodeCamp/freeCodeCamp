@@ -27,7 +27,9 @@ dashedName: stock-price-checker
 3.  添加安全功能到 `server.js`。
 4.  在 `tests/2_functional-tests.js` 中创建所有的功能测试
 
-在 `tests/2_functional-tests.js` 中编写下以下测试：
+**注意** 隐私考虑：由于每个 IP 只能接受一个赞（like），你必须保存 IP 地址。 必须遵守数据隐私法规，例如《通用数据保护条例》。 一个选项是获得保存用户数据的权限，但是匿名化则要简单得多。 对于此挑战，请记住在将 IP 地址保存到数据库之前对其进行匿名化。 如果你想知道如何做到这一点，你可以选择散列数据、截断它、或将 IP 地址的一部分设置为 0。
+
+在 `tests/2_functional-tests.js` 中编写以下测试：
 
 -   查看股价：发送 GET 请求到 `/api/stock-prices/`
 -   查看一个股票并关注它：发送 GET 请求到 `/api/stock-prices/`
@@ -37,7 +39,7 @@ dashedName: stock-price-checker
 
 # --hints--
 
-提交自己的项目，而不是示例的 URL。
+提交你自己的项目，而不是示例的 URL。
 
 ```js
 (getUserInput) => {
@@ -74,7 +76,7 @@ async (getUserInput) => {
 };
 ```
 
-`stockData` 属性包括字符串 `stock` 代码、数字 `price`，以及数字 `likes`。
+`stockData` 属性包括字符串 `stock`、数字 `price`，以及数字 `likes`。
 
 ```js
 async (getUserInput) => {
@@ -89,7 +91,7 @@ async (getUserInput) => {
 };
 ```
 
-你也可以用作为 `true`（布尔值）来传递 `like` 字段，让你的偏好添加到股票中。 每个 IP 应该只接受 1 个赞。
+你也可以将 `like` 字段作为 `true`（布尔值）传递，让你的偏好添加到股票中。 每个 IP 应该只接受 1 个赞（like）。
 
 ```js
 

@@ -1,6 +1,6 @@
 ---
 id: 587d8257367417b2b2512c7b
-title: Add a New Element to a Binary Search Tree
+title: 將新元素添加到二叉搜索樹
 challengeType: 1
 forumTopicId: 301618
 dashedName: add-a-new-element-to-a-binary-search-tree
@@ -8,27 +8,27 @@ dashedName: add-a-new-element-to-a-binary-search-tree
 
 # --description--
 
-This series of challenges will introduce the tree data structure. Trees are an important and versatile data structure in computer science. Of course, their name comes from the fact that when visualized they look much like the trees we are familiar with in the natural world. A tree data structure begins with one node, typically referred to as the root, and from here branches out to additional nodes, each of which may have more child nodes, and so on and so forth. The data structure is usually visualized with the root node at the top; you can think of it as a natural tree flipped upside down.
+這一系列的挑戰將介紹樹形數據結構。 樹是計算機科學中一個重要的、通用的數據結構。 當然，它們的名稱來自這樣一個事實：當可視化時，它們看起來很像我們在自然界中熟悉的樹木。 樹數據結構從一個節點（通常稱爲根）開始，並從此處分支到其他節點，每個節點可能具有更多的子節點，依此類推。 數據結構通常以根節點爲頂點進行可視化；你可以把它想象成一棵倒過來的自然樹。
 
-First, let's describe some common terminology we will encounter with trees. The root node is the top of the tree. Data points in the tree are called nodes. Nodes with branches leading to other nodes are referred to as the parent of the node the branch leads to (the child). Other more complicated familial terms apply as you might expect. A subtree refers to all the descendants of a particular node, branches may be referred to as edges, and leaf nodes are nodes at the end of the tree that have no children. Finally, note that trees are inherently recursive data structures. That is, any children of a node are parents of their own subtree, and so on. The recursive nature of trees is important to understand when designing algorithms for common tree operations.
+首先，讓我們描述一下我們將遇到的關於樹的一些常見術語。 根節點（root）是樹的頂部。 樹中的數據點稱爲節點（node）。 分支通向其他節點的節點稱爲分支通向的節點（即子節點）的父節點。 如你所料，其他更復雜的家庭術語也適用。 子樹指的是某一特定節點的所有後代，分支可稱爲邊，而葉子節點是位於樹的末端的且沒有子節點的節點。 最後，請注意，樹本質上是遞歸的數據結構。 也就是說，一個節點的任何子節點都是其自己的子樹的父節點，依此類推。 在爲常見的樹操作設計算法時，樹的遞歸性質很重要。
 
-To begin, we will discuss a particular type of a tree, the binary tree. In fact, we will actually discuss a particular binary tree, a binary search tree. Let's describe what this means. While the tree data structure can have any number of branches at a single node, a binary tree can only have two branches for every node. Furthermore, a binary search tree is ordered with respect to the child subtrees, such that the value of each node in the left subtree is less than or equal to the value of the parent node, and the value of each node in the right subtree is greater than or equal to the value of the parent node. It's very helpful to visualize this relationship in order to understand it better:
+首先，我們將討論樹的一個特殊類型，即二叉樹。 實際上，我們將討論特定的二叉樹，即二叉搜索樹。 讓我們來看看這意味着什麼。 雖然樹形數據結構在一個節點上可以有任意數量的分支，但二叉樹每個節點只能有兩個分支。 此外，一個二叉搜索樹相對於其子子樹是有序的，即對於一個節點而言，其左子樹中每個節點的值都小於或等於該節點的值，而其右子樹中每個節點的值都大於或等於該節點的值。 爲了更好地理解這種關係，將這種關係形象化是非常有幫助的：
 
 <div style='width: 100%; display: flex; justify-content: center; align-items: center;'><img style='width: 100%; max-width: 350px; background-color: var(--gray-05);' src='https://user-images.githubusercontent.com/18563015/32136009-1e665d98-bbd6-11e7-9133-63184f9f9182.png'></div>
 
-Now this ordered relationship is very easy to see. Note that every value to the left of 8, the root node, is less than 8, and every value to the right is greater than 8. Also notice that this relationship applies to each of the subtrees as well. For example, the first left child is a subtree. 3 is the parent node, and it has exactly two child nodes — by the rules governing binary search trees, we know without even looking that the left child of this node (and any of its children) will be less than 3, and the right child (and any of its children) will be greater than 3 (but also less than the structure's root value), and so on.
+現在，這種有序的關係是非常容易看到的。 注意，根節點 8 左邊的每個值都小於 8，右邊的每個值都大於 8。 還要注意的是，這種關係也適用於每個子樹。 例如，第一個左孩子節點是一個子樹。 3 是父節點，它正好有兩個子節點——根據二進制搜索樹的規則，我們甚至不用看就知道這個節點的左子節點（以及它的任何子節點）都將小於 3，右子節點（以及它的任何子節點）都將大於 3（但也小於根結點的值），依此類推。
 
-Binary search trees are very common and useful data structures because they provide logarithmic time in the average case for several common operations such as lookup, insertion, and deletion.
+二叉搜索樹是非常常見且有用的數據結構，因爲它們在幾種常見操作（例如查找、插入和刪除）的平均情況下提供對數的時間複雜度。
 
 # --instructions--
 
-We'll start simple. We've defined the skeleton of a binary search tree structure here in addition to a function to create nodes for our tree. Observe that each node may have a left and right value. These will be assigned child subtrees if they exist. In our binary search tree, you will create a method to add new values to our binary search tree. The method should be called `add` and it should accept an integer value to add to the tree. Take care to maintain the invariant of a binary search tree: the value in each left child should be less than or equal to the parent value, and the value in each right child should be greater than or equal to the parent value. Here, let's make it so our tree cannot hold duplicate values. If we try to add a value that already exists, the method should return `null`. Otherwise, if the addition is successful, `undefined` should be returned.
+我們將從簡單的內容開始。 我們在這裏定義了一個二叉搜索樹結構的骨架，此外還有一個爲我們的樹創建節點的函數。 注意觀察每個節點可能有一個左值和右值。 如果子樹存在，它們將被分配給對應的子樹。 在我們的二叉搜索樹中，你將創建一個方法來向我們的二叉搜索樹添加新的值。 該方法應該被稱爲`add` ，它應該接受一個整數值來添加到樹中。 注意保持二叉搜索樹的不變量：每個左子項中的值應小於或等於父值，並且每個右子項中的值應大於或等於父值。 在這裏，讓我們確保我們的樹不會含有重複的值。 如果我們嘗試添加已存在的值，則該方法應返回`null` 。 否則，如果添加成功，則應返回`undefined` 。
 
-**Hint:** trees are naturally recursive data structures!
+**提示：** 樹是自然的遞歸數據結構！
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+存在 `BinarySearchTree` 的數據結構。
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `add`.
+二叉搜索樹應該有一個名爲 `add` 的方法。
 
 ```js
 assert(
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-The add method should add elements according to the binary search tree rules.
+添加的方法應該根據二叉搜索樹的規則來添加元素。
 
 ```js
 assert(
@@ -87,7 +87,7 @@ assert(
 );
 ```
 
-Adding an element that already exists should return `null`.
+添加一個已經存在的元素應該返回 `null`。
 
 ```js
 assert(
