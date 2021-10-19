@@ -3,6 +3,7 @@ import { Panel } from '@freecodecamp/react-bootstrap';
 import Prism from 'prismjs';
 import React from 'react';
 import { ChallengeFile, ChallengeFiles } from '../../redux/prop-types';
+import { ChallengeFile, ChallengeFiles } from '../../redux/prop-types';
 
 type SolutionViewerProps = {
   challengeFiles: ChallengeFiles;
