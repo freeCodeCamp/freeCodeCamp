@@ -3,15 +3,16 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { FlashState } from '../../redux/types';
+import { removeFlashMessage } from './redux';
 
 import './flash.css';
 
 type FlashProps = {
   flashMessage: FlashState['message'];
-  onClose: () => void;
+  removeFlashMessage: typeof removeFlashMessage;
 };
 
-function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
+function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   const { type, message, id, variables } = flashMessage;
   const { t } = useTranslation();
   const [flashMessageHeight, setFlashMessageHeight] = useState(0);
@@ -28,7 +29,7 @@ function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
 
   function handleClose() {
     document.documentElement.style.setProperty('--flash-message-height', '0px');
-    onClose();
+    removeFlashMessage();
   }
 
   return (
