@@ -1,8 +1,8 @@
 ---
 id: 5d708dd7066dac7142a6d79e
-title: Part 76
+title: Step 76
 challengeType: 0
-dashedName: part-76
+dashedName: step-76
 ---
 
 # --description--

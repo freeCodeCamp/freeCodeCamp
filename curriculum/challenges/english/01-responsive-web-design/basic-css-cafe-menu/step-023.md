@@ -1,9 +1,9 @@
 ---
 id: 5f356ed60a5decd94ab66986
-title: Part 23
+title: Step 23
 challengeType: 0
 removeComments: false
-dashedName: part-23
+dashedName: step-23
 ---
 
 # --description--

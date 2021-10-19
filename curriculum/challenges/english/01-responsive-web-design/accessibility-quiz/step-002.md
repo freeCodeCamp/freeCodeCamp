@@ -1,8 +1,8 @@
 ---
 id: 613297a923965e0703b64796
-title: Part 2
+title: Step 2
 challengeType: 0
-dashedName: part-2
+dashedName: step-2
 ---
 
 # --description--

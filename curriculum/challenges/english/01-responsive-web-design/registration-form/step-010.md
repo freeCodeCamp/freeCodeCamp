@@ -1,8 +1,8 @@
 ---
 id: 60f5c3e399ff1a05629964e4
-title: Part 10
+title: Step 10
 challengeType: 0
-dashedName: part-10
+dashedName: step-10
 ---
 
 # --description--

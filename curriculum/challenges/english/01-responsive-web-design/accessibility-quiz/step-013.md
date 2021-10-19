@@ -1,8 +1,8 @@
 ---
 id: 614090d5a22b6f0a5a6b464c
-title: Part 13
+title: Step 13
 challengeType: 0
-dashedName: part-13
+dashedName: step-13
 ---
 
 <!-- TODO: I purposefully added the `nav` styles without Camper input -->
