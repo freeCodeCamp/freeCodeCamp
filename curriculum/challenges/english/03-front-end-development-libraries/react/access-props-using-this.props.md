@@ -14,7 +14,7 @@ Anytime you refer to a class component within itself, you use the `this` keyword
 
 # --instructions--
 
-Render an instance of the `Welcome` component in the parent component `App`. Here, give `Welcome` a prop of `name` and assign it a value of a string that is at least 2 characters long. Within the child, `Welcome`, access the `name` prop within the `strong` tags.
+Render an instance of the `Welcome` component in the parent component `App`. Here, give `Welcome` a prop of `name` and assign it a value of a string. Within the child, `Welcome`, access the `name` prop within the `strong` tags.
 
 # --hints--
 
