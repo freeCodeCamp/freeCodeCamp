@@ -3,10 +3,10 @@ import { useStaticQuery } from 'gatsby';
 import React from 'react';
 
 import mockChallengeNodes from '../../__mocks__/challenge-nodes';
-import { Map } from './';
+import { Map } from '.';
 
 beforeEach(() => {
-  useStaticQuery.mockImplementationOnce(() => ({
+  (useStaticQuery as jest.Mock).mockImplementationOnce(() => ({
     allChallengeNode: {
       nodes: mockChallengeNodes
     }

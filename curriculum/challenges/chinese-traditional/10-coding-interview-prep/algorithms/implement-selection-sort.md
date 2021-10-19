@@ -1,6 +1,6 @@
 ---
 id: 587d8259367417b2b2512c85
-title: Implement Selection Sort
+title: 實現選擇排序
 challengeType: 1
 forumTopicId: 301616
 dashedName: implement-selection-sort
@@ -8,19 +8,19 @@ dashedName: implement-selection-sort
 
 # --description--
 
-Here we will implement selection sort. Selection sort works by selecting the minimum value in a list and swapping it with the first value in the list. It then starts at the second position, selects the smallest value in the remaining list, and swaps it with the second element. It continues iterating through the list and swapping elements until it reaches the end of the list. Now the list is sorted. Selection sort has quadratic time complexity in all cases.
+這裏我們將實現選擇排序。 選擇排序的工作原理是選擇列表中的最小值並與列表中的第一個值進行交換。 然後它從第二個位置開始，選擇剩餘列表中的最小值，並將其與第二個元素交換。 它繼續遍歷列表並交換元素，直到它到達列表的末尾。 現在列表已排序。 在所有情況下，選擇排序都具有二次方的時間複雜度。
 
-**Instructions**: Write a function `selectionSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
+**說明**：編寫一個 `selectionSort` 函數，它將一個整數數組作爲輸入，並按照從最小到最大的排序順序返回這些整數的數組。
 
 # --hints--
 
-`selectionSort` should be a function.
+`selectionSort` 應該是一個函數。
 
 ```js
 assert(typeof selectionSort == 'function');
 ```
 
-`selectionSort` should return a sorted array (least to greatest).
+`selectionSort` 應該返回一個排序的數組（從最小到最大）。
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`selectionSort` should return an array that is unchanged except for order.
+`selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` 應返回一個除順序外沒有變化的數組。
 
 ```js
 assert.sameMembers(
@@ -75,7 +75,7 @@ assert.sameMembers(
 );
 ```
 
-`selectionSort` should not use the built-in `.sort()` method.
+`selectionSort` 不應使用內置的 `.sort()` 方法。
 
 ```js
 assert(isBuiltInSortUsed());
@@ -109,9 +109,6 @@ function selectionSort(array) {
   return array;
   // Only change code above this line
 }
-
-
-selectionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

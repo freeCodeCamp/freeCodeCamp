@@ -13,7 +13,7 @@ dashedName: use-the-strong-tag-to-make-text-bold
 
 # --instructions--
 
-给 `p` 标签里的 `Stanford University` 内容文本添加 `strong` 标签。
+给 `p` 标签里的 `Stanford University` 内容文本外面添加 `strong` 标签（不包括句号）。
 
 # --hints--
 
