@@ -1,5 +1,4 @@
 import { FlashApp, FlashMessageArg } from '../components/Flash/redux';
-import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 import { MainApp } from '.';
 
 export interface State {
@@ -54,29 +53,4 @@ export const defaultDonationFormState = {
   processing: false,
   success: false,
   error: ''
-};
-
-export const initialState = {
-  appUsername: '',
-  recentlyClaimedBlock: null,
-  canRequestProgressDonation: true,
-  completionCount: 0,
-  currentChallengeId: store.get(CURRENT_CHALLENGE_KEY) as string,
-  showCert: {},
-  showCertFetchState: {
-    ...defaultFetchState
-  },
-  user: {},
-  userFetchState: {
-    ...defaultFetchState
-  },
-  userProfileFetchState: {
-    ...defaultFetchState
-  },
-  sessionMeta: { activeDonations: 0 },
-  showDonationModal: false,
-  isOnline: true,
-  donationFormState: {
-    ...defaultDonationFormState
-  }
 };
