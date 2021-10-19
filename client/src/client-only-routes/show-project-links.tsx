@@ -32,7 +32,7 @@ type SolutionStateType = {
 const initSolutionState: SolutionStateType = {
   projectTitle: '',
   challengeFiles: null,
-  solution: null,
+  solution: '',
   isOpen: false
 };
 

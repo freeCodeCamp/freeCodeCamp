@@ -308,7 +308,7 @@ export type isCertifiedTypes = {
 
 export type CompletedChallenge = {
   id: string;
-  solution?: string | null;
+  solution?: string;
   githubLink?: string;
   challengeType?: number;
   completedDate: number;
