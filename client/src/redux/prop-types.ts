@@ -183,6 +183,17 @@ type Required = {
   src: string;
   crossDomain?: boolean;
 };
+export interface BilibiliIds {
+  aid: string;
+  bvid: string;
+  cid: string;
+}
+
+export interface VideoLocaleIds {
+  espanol?: string;
+  italian?: string;
+  portuguese?: string;
+}
 
 export type ChallengeNodeType = {
   block: string;
@@ -212,7 +223,10 @@ export type ChallengeNodeType = {
   title: string;
   translationPending: boolean;
   url: string;
+  usesMultifileEditor: boolean;
   videoId: string;
+  videoLocaleIds?: VideoLocaleIds;
+  bilibiliIds?: BilibiliIds;
   videoUrl: string;
 };
 
@@ -423,6 +437,7 @@ export type ChallengeFile = {
   ext: ExtTypes;
   name: string;
   editableRegionBoundaries: number[];
+  usesMultifileEditor: boolean;
   path: string;
   error: null | string;
   head: string;

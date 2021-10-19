@@ -10,7 +10,7 @@ dashedName: problem-119-digit-power-sum
 
 O número 512 é interessante porque é igual à soma de seus algarismos elevado a alguma potência: $5 + 1 + 2 = 8$, e $8^3 = 512$. Outro exemplo de um número com essa propriedade é $614656 = 28^4$.
 
-Vamos definir um número para ser o $n-ésimo$ termo desta sequência e reforçar que um número deve conter pelo menos dois dígitos para ter uma soma.
+Vamos definir $a_n$ como o $n-ésimo$ termo desta sequência e reforçar que um número deve conter pelo menos dois dígitos para ter uma soma.
 
 Você já sabe que $a_2 = 512$ e $a_{10} = 614656$.
 

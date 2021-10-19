@@ -38,12 +38,14 @@ wrongRegex.test(testStr);
 你的正則表達式 `waldoRegex` 應該匹配到 `Waldo`。
 
 ```js
+waldoRegex.lastIndex = 0;
 assert(waldoRegex.test(waldoIsHiding));
 ```
 
 你的正則表達式 `waldoRegex` 不應該搜尋其他的任何內容。
 
 ```js
+waldoRegex.lastIndex = 0;
 assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 ```
 

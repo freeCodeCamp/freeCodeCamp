@@ -52,12 +52,14 @@ assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
 Tu expresión regular debe coincidir con la cadena `42 42 42`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('42 42 42'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `100 100 100`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('100 100 100'));
 ```
 
@@ -76,18 +78,21 @@ assert.equal('42 42'.match(reRegex.source), null);
 Tu expresión regular no debe coincidir con la cadena `101 102 103`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(!reRegex.test('101 102 103'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `1 2 3`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(!reRegex.test('1 2 3'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `10 10 10`.
 
 ```js
+reRegex.lastIndex = 0;
 assert(reRegex.test('10 10 10'));
 ```
 

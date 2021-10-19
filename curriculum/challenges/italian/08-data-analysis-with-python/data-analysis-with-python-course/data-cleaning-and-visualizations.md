@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c160
 title: Pulizia e visualizzazione dei dati
 challengeType: 11
 videoId: mHjxzFS5_Z0
+bilibiliIds:
+  aid: 933107558
+  bvid: BV1KM4y137Ny
+  cid: 409019632
 dashedName: data-cleaning-and-visualizations
 ---
 

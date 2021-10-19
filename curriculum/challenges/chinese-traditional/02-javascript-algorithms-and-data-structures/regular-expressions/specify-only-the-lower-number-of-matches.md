@@ -41,12 +41,14 @@ assert(haRegex.source.match(/{.*?}/).length > 0);
 你的正則表達式不應匹配字符串 `Hazzah`
 
 ```js
+haRegex.lastIndex = 0;
 assert(!haRegex.test('Hazzah'));
 ```
 
 你的正則表達式不應匹配字符串 `Hazzzah`
 
 ```js
+haRegex.lastIndex = 0;
 assert(!haRegex.test('Hazzzah'));
 ```
 

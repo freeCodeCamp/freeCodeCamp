@@ -37,7 +37,7 @@ We just ask that you understand the following:
 
    On the surface it might not seem how complicated the technical stack is, but it costs quite a lot to keep the engines running. This includes provisioning additional servers and dedicating staff to look after them.
 
-   freeCodeCamp.org is committed to providing these for free as always, however we need to prioritize resources for those who need it the most. The last thing we want is to shutdown servers for a language if the translation activity dies off & things become outdated.
+   freeCodeCamp.org is committed to providing these for free as always, however we need to prioritize resources for those who need them the most. The last thing we want is to shutdown servers for a language if the translation activity dies off & things become outdated.
 
    Once a language reaches at least a few certifications on the curriculum we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
 

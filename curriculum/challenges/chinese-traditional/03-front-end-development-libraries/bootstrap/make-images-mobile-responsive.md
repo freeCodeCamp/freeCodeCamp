@@ -8,7 +8,7 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-首先，在已有的圖片下面添加一張新的圖片。 設置其 `src` 屬性爲 `https://bit.ly/fcc-running-cats`。
+首先，在已有的圖片下面添加一張新的圖片。 將新圖片的 `src` 屬性設置爲 `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`。
 
 如果圖片的大小恰恰和我們手機屏幕尺寸大小一樣自然是最好的。
 
@@ -34,10 +34,10 @@ assert($('img:eq(1)').hasClass('img-responsive'));
 assert(!$('img:eq(1)').hasClass('smaller-image'));
 ```
 
-新圖片的 `src` 屬性值應該爲 `https://bit.ly/fcc-running-cats`。
+新圖片應該有一個值爲 `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg` 的 `src` 屬性。
 
 ```js
-assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
+assert($('img:eq(1)').attr('src') === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg');
 ```
 
 確保新的 `img` 元素有一個閉合的尖括號。
@@ -87,7 +87,7 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -148,8 +148,8 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive">
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive">
 
   <p>Things cats love:</p>
   <ul>

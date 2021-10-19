@@ -3,6 +3,10 @@ id: 5e7b9f0c0b6c005b0e76f073
 title: 'Redes: Escreva um navegador da Web'
 challengeType: 11
 videoId: zjyT9DaAjx4
+bilibiliIds:
+  aid: 761908574
+  bvid: BV1j64y1x7wx
+  cid: 377319579
 dashedName: networking-write-a-web-browser
 ---
 

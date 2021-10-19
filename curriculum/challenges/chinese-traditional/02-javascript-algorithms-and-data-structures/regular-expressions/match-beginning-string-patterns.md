@@ -43,12 +43,14 @@ assert(calRegex.flags == '');
 你的正則表達式應該匹配字符串 `Cal` 的開始位置。
 
 ```js
+calRegex.lastIndex = 0;
 assert(calRegex.test('Cal and Ricky both like racing.'));
 ```
 
 你的正則表達式不應該匹配中間包含 `Cal` 的字符串。
 
 ```js
+calRegex.lastIndex = 0;
 assert(!calRegex.test('Ricky and Cal both like racing.'));
 ```
 

@@ -13,7 +13,7 @@ To make text bold, you can use the `strong` tag. This is often used to draw atte
 
 # --instructions--
 
-Wrap a `strong` tag around `Stanford University` text inside the `p` tag (do not include the period).
+Wrap a `strong` tag around the text `Stanford University` inside the `p` tag (do not include the period).
 
 # --hints--
 

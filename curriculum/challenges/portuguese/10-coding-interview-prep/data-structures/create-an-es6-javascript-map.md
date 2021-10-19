@@ -39,5 +39,7 @@ assert(myMap.get('freeCodeCamp') === 'Awesome!');
 # --solutions--
 
 ```js
-// solution required
+const myMap = new Map();
+
+myMap.set("freeCodeCamp", "Awesome!");
 ```

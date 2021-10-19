@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c165
 title: Python Introduction
 challengeType: 11
 videoId: PrQV9JkLhb4
+bilibiliIds:
+  aid: 805597530
+  bvid: BV1634y1S7gD
+  cid: 409023550
 dashedName: python-introduction
 ---
 

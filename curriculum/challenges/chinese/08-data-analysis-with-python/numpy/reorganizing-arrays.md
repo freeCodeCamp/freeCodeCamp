@@ -3,6 +3,10 @@ id: 5e9a0a8e09c5df3cc3600ed9
 title: 重组数组
 challengeType: 11
 videoId: VNWAQbEM-C8
+bilibiliIds:
+  aid: 548035655
+  bvid: BV1fq4y1N7aC
+  cid: 409026755
 dashedName: reorganizing-arrays
 ---
 

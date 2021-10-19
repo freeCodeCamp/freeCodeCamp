@@ -85,7 +85,7 @@ console.log = function (msg) {
 assert.throws(() => beagle.eat(), 'nom nom nom');
 ```
 
-`beagle.bark()` deve mostrar no console a string `nom nom nom`
+`beagle.bark()` deve mostrar no console a string `Woof!`
 
 ```js
 console.log = function (msg) {

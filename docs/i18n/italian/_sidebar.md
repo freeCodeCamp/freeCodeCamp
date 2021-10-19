@@ -13,13 +13,14 @@
 - **Contribuire alla traduzione**
   - [Lavorare a tradurre le risorse](how-to-translate-files.md)
   - [Lavorare a correggere le risorse](how-to-proofread-files.md)
-- **Guide opzionali**
+- **Resources**
   - [Settare freeCodeCamp su Windows (WSL)](how-to-setup-wsl.md)
   - [Aggiungere test Cypress](how-to-add-cypress-tests.md)
   - [Lavorare sulla app web in locale](how-to-work-on-localized-client-webapp.md)
   - [Intercettare email in uscita localmente](how-to-catch-outgoing-emails-locally.md)
   - [Testare traduzioni in locale](how-to-test-translations-locally.md)
   - [Capire la struttura dei file del curriculum](curriculum-file-structure.md)
+  - [Work on tutorials w/ CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
 
 ---
 

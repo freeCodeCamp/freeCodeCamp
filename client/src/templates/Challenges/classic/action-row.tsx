@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import BreadCrumb from '../components/bread-crumb';
+import { resetChallenge } from '../redux';
 import EditorTabs from './EditorTabs';
 
 interface ActionRowProps {
@@ -9,18 +11,21 @@ interface ActionRowProps {
   showPreview: boolean;
   superBlock: string;
   switchDisplayTab: (displayTab: string) => void;
+  resetChallenge: () => void;
 }
+
+const mapDispatchToProps = {
+  resetChallenge
+};
 
 const ActionRow = ({
   switchDisplayTab,
   showPreview,
   showConsole,
   superBlock,
-  block
+  block,
+  resetChallenge
 }: ActionRowProps): JSX.Element => {
-  const restartStep = () => {
-    console.log('restart');
-  };
   return (
     <div className='action-row'>
       <div className='breadcrumbs-demo'>
@@ -30,7 +35,7 @@ const ActionRow = ({
         <EditorTabs />
         <button
           className='restart-step-tab'
-          onClick={() => restartStep()}
+          onClick={resetChallenge}
           role='tab'
         >
           Restart Step
@@ -57,4 +62,5 @@ const ActionRow = ({
 };
 
 ActionRow.displayName = 'ActionRow';
-export default ActionRow;
+
+export default connect(null, mapDispatchToProps)(ActionRow);

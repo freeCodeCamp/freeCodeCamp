@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c154
 title: Numpy 数组
 challengeType: 11
 videoId: VDYVFHBL1AM
+bilibiliIds:
+  aid: 890607366
+  bvid: BV1zP4y1h7FR
+  cid: 409011400
 dashedName: numpy-arrays
 ---
 

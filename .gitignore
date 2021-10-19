@@ -164,12 +164,32 @@ config/client/frame-runner.json
 config/client/test-evaluator.json
 config/curriculum.json
 
+### vim ###
+# Swap
+[._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+Sessionx.vim
+
+# Temporary
+.netrwhist
+*~
+# Auto-generated tag files
+tags
+# Persistent undo
+[._]*.un~
+
 ### Additional Files ###
 *.csv
 *.dat
 *.out
 *.gz
-*.swp
 curriculum/curricula.json
 client/static/js/frame-runner.js
 client/static/js/frame-runner.js.map

@@ -25,42 +25,49 @@ Completa la expresión regular `petRegex` para que coincida con las mascotas `do
 Tu expresión regular `petRegex` debe devolver `true` para la cadena `John has a pet dog.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('John has a pet dog.'));
 ```
 
 Tu expresión regular `petRegex` debe devolver `false` para la cadena `Emma has a pet rock.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Emma has a pet rock.'));
 ```
 
 Tu expresión regular `petRegex` debe devolver `true` para la cadena `Emma has a pet bird.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Emma has a pet bird.'));
 ```
 
 Tu expresión regular `petRegex` debe devolver `true` para la cadena `Liz has a pet cat.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Liz has a pet cat.'));
 ```
 
 Tu expresión regular `petRegex` debe devolver `false` para la cadena `Kara has a pet dolphin.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Kara has a pet dolphin.'));
 ```
 
 Tu expresión regular `petRegex` debe devolver `true` para la cadena `Alice has a pet fish.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(petRegex.test('Alice has a pet fish.'));
 ```
 
 Tu expresión regular `petRegex` debe devolver `false` para la cadena `Jimmy has a pet computer.`
 
 ```js
+petRegex.lastIndex = 0;
 assert(!petRegex.test('Jimmy has a pet computer.'));
 ```
 

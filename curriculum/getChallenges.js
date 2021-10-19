@@ -287,7 +287,8 @@ ${getFullPath('english')}
     isPrivate,
     required = [],
     template,
-    time
+    time,
+    usesMultifileEditor
   } = meta;
   challenge.block = dasherize(blockName);
   challenge.order = order;
@@ -302,6 +303,7 @@ ${getFullPath('english')}
     challenge.helpCategory || helpCategoryMap[challenge.block];
   challenge.translationPending =
     lang !== 'english' && !isAuditedCert(lang, superBlock);
+  challenge.usesMultifileEditor = !!usesMultifileEditor;
 
   return prepareChallenge(challenge);
 }

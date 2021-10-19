@@ -3,6 +3,10 @@ id: 5e7b9f0d0b6c005b0e76f076
 title: 'Networking: web scraping con Python'
 challengeType: 11
 videoId: Uyioq2q4cEg
+bilibiliIds:
+  aid: 674382625
+  bvid: BV1oU4y1n7zQ
+  cid: 377331774
 dashedName: networking-web-scraping-with-python
 ---
 

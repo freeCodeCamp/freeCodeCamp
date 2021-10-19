@@ -1,6 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc7
-title: Change Styles Based on Data
+title: Cambia estilos con base en los datos
 challengeType: 6
 forumTopicId: 301479
 dashedName: change-styles-based-on-data
@@ -8,9 +8,9 @@ dashedName: change-styles-based-on-data
 
 # --description--
 
-D3 is about visualization and presentation of data. It's likely you'll want to change the styling of elements based on the data. You can use a callback function in the `style()` method to change the styling for different elements.
+D3 se trata de la visualización y presentación de datos. Probablemente vayas a querer estilizar los elementos con base en los datos. Puedes usar una función callback en el método `style()` para cambiar el estilo a diferentes elementos.
 
-For example, you may want to color a data point blue if it has a value less than 20, and red otherwise. You can use a callback function in the `style()` method and include the conditional logic. The callback function uses the `d` parameter to represent the data point:
+Por ejemplo, podrías querer colorear un punto de dato a azul si tiene un valor menor a 20, y a rojo en caso contrario. Puedes usar una función callback en el método `style()` e incluir la lógica condicional. La función callback usa el parámetro `d` para representar el punto de dato:
 
 ```js
 selection.style("color", (d) => {
@@ -18,65 +18,65 @@ selection.style("color", (d) => {
 });
 ```
 
-The `style()` method is not limited to setting the `color` - it can be used with other CSS properties as well.
+El método `style()` no está limitado a configurar el `color` puede ser usado también con otras propiedades CSS.
 
 # --instructions--
 
-Add the `style()` method to the code in the editor to set the `color` of the `h2` elements conditionally. Write the callback function so if the data value is less than 20, it returns red, otherwise it returns green.
+Agrega el método `style()` al código en el editor para establecer el `color` de los elementos `h2` de manera condicional. Escribe la función callback para que si el valor del dato es menor a 20, retorne rojo, de lo contrario, retorna verde.
 
-**Note:** You can use if-else logic, or the ternary operator.
+**Nota:** Puedes usar lógica if-else, o el operador ternario.
 
 # --hints--
 
-The first `h2` should have a `color` of red.
+El primer `h2` debe tener un `color` rojo.
 
 ```js
 assert($('h2').eq(0).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The second `h2` should have a `color` of green.
+El segundo `h2` debe tener un `color` verde.
 
 ```js
 assert($('h2').eq(1).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The third `h2` should have a `color` of green.
+El tercer `h2` debe tener un `color` verde.
 
 ```js
 assert($('h2').eq(2).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The fourth `h2` should have a `color` of red.
+El cuarto `h2` debe tener un `color` rojo.
 
 ```js
 assert($('h2').eq(3).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The fifth `h2` should have a `color` of green.
+El quinto `h2` debe tener un `color` verde.
 
 ```js
 assert($('h2').eq(4).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The sixth `h2` should have a `color` of red.
+El sexto `h2` debe tener un `color` rojo.
 
 ```js
 assert($('h2').eq(5).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The seventh `h2` should have a `color` of green.
+El séptimo `h2` debe tener un `color` verde.
 
 ```js
 assert($('h2').eq(6).css('color') == 'rgb(0, 128, 0)');
 ```
 
-The eighth `h2` should have a `color` of red.
+El octavo `h2` debe tener un `color` rojo.
 
 ```js
 assert($('h2').eq(7).css('color') == 'rgb(255, 0, 0)');
 ```
 
-The ninth `h2` should have a `color` of red.
+El noveno `h2` debe tener un `color` rojo.
 
 ```js
 assert($('h2').eq(8).css('color') == 'rgb(255, 0, 0)');

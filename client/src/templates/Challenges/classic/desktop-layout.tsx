@@ -2,7 +2,12 @@ import { first } from 'lodash-es';
 import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import envData from '../../../../../config/env.json';
-import { ChallengeFiles, ResizePropsType } from '../../../redux/prop-types';
+import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
+import {
+  ChallengeFile,
+  ChallengeFiles,
+  ResizePropsType
+} from '../../../redux/prop-types';
 import EditorTabs from './EditorTabs';
 import ActionRow from './action-row';
 
@@ -31,14 +36,11 @@ interface DesktopLayoutProps {
 }
 
 const reflexProps = {
-  propagateDimensions: true,
-  renderOnResize: true,
-  renderOnResizeRate: 20
+  propagateDimensions: true
 };
 
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
-  // TODO: What is the point of this state?
-  // const [showNotes, setShowNotes] = useState(false);
+  const [showNotes, setShowNotes] = useState(false);
   const [showPreview, setShowPreview] = useState(true);
   const [showConsole, setShowConsole] = useState(false);
 
@@ -50,15 +52,19 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       case 'showConsole':
         setShowConsole(!showConsole);
         break;
+      case 'showNotes':
+        setShowNotes(!showNotes);
+        break;
       default:
         setShowConsole(false);
         setShowPreview(false);
+        setShowNotes(false);
     }
   };
 
   const getChallengeFile = () => {
     const { challengeFiles } = props;
-    return first(challengeFiles);
+    return first(sortChallengeFiles(challengeFiles)) as ChallengeFile | null;
   };
 
   const {
@@ -84,71 +90,68 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     layoutState;
 
   return (
-    <>
-      <ReflexContainer className='desktop-layout' orientation='horizontal'>
-        {projectBasedChallenge && (
-          <ActionRow
-            block={block}
-            showConsole={showConsole}
-            showPreview={showPreview}
-            superBlock={superBlock}
-            switchDisplayTab={switchDisplayTab}
-          />
+    <div className='desktop-layout'>
+      {projectBasedChallenge && (
+        <ActionRow
+          block={block}
+          showConsole={showConsole}
+          showNotes={showNotes}
+          showPreview={showPreview}
+          superBlock={superBlock}
+          switchDisplayTab={switchDisplayTab}
+        />
+      )}
+      <ReflexContainer orientation='vertical'>
+        {!projectBasedChallenge && (
+          <ReflexElement flex={instructionPane.flex} {...resizeProps}>
+            {instructions}
+          </ReflexElement>
         )}
-        <ReflexElement flex={8} {...reflexProps} {...resizeProps}>
-          <ReflexContainer orientation='vertical'>
-            {!projectBasedChallenge && (
-              <ReflexElement flex={instructionPane.flex} {...resizeProps}>
-                {instructions}
-              </ReflexElement>
-            )}
-            {!projectBasedChallenge && (
-              <ReflexSplitter propagate={true} {...resizeProps} />
-            )}
+        {!projectBasedChallenge && (
+          <ReflexSplitter propagate={true} {...resizeProps} />
+        )}
 
-            <ReflexElement flex={editorPane.flex} {...resizeProps}>
-              {challengeFile &&
-                showUpcomingChanges &&
-                !hasEditableBoundaries && <EditorTabs />}
-              {challengeFile && (
-                <ReflexContainer
-                  key={challengeFile.fileKey}
-                  orientation='horizontal'
-                >
-                  <ReflexElement
-                    flex={codePane.flex}
-                    {...reflexProps}
-                    {...resizeProps}
-                  >
-                    <>{editor}</>
-                  </ReflexElement>
-                  {isConsoleDisplayable && (
-                    <ReflexSplitter propagate={true} {...resizeProps} />
-                  )}
-                  {isConsoleDisplayable && (
-                    <ReflexElement
-                      flex={testsPane.flex}
-                      {...reflexProps}
-                      {...resizeProps}
-                    >
-                      {testOutput}
-                    </ReflexElement>
-                  )}
-                </ReflexContainer>
-              )}
-            </ReflexElement>
-            {isPreviewDisplayable && (
-              <ReflexSplitter propagate={true} {...resizeProps} />
-            )}
-            {isPreviewDisplayable && (
-              <ReflexElement flex={previewPane.flex} {...resizeProps}>
-                {preview}
+        <ReflexElement flex={editorPane.flex} {...resizeProps}>
+          {challengeFile && showUpcomingChanges && !hasEditableBoundaries && (
+            <EditorTabs />
+          )}
+          {challengeFile && (
+            <ReflexContainer
+              key={challengeFile.fileKey}
+              orientation='horizontal'
+            >
+              <ReflexElement
+                flex={codePane.flex}
+                {...reflexProps}
+                {...resizeProps}
+              >
+                {editor}
               </ReflexElement>
-            )}
-          </ReflexContainer>
+              {isConsoleDisplayable && (
+                <ReflexSplitter propagate={true} {...resizeProps} />
+              )}
+              {isConsoleDisplayable && (
+                <ReflexElement
+                  flex={testsPane.flex}
+                  {...reflexProps}
+                  {...resizeProps}
+                >
+                  {testOutput}
+                </ReflexElement>
+              )}
+            </ReflexContainer>
+          )}
         </ReflexElement>
+        {isPreviewDisplayable && (
+          <ReflexSplitter propagate={true} {...resizeProps} />
+        )}
+        {isPreviewDisplayable && (
+          <ReflexElement flex={previewPane.flex} {...resizeProps}>
+            {preview}
+          </ReflexElement>
+        )}
       </ReflexContainer>
-    </>
+    </div>
   );
 };
 

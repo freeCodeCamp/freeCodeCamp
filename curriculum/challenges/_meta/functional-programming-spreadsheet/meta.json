@@ -1,6 +1,7 @@
 {
   "name": "Functional Programming Spreadsheet",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "functional-programming-spreadsheet",
   "order": 13,
   "time": "2 hours",

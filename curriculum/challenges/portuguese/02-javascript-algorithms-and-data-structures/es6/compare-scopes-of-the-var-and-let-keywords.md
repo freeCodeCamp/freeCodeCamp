@@ -85,16 +85,13 @@ Este exercício foi projetado para ilustrar a diferença ente como as palavras-c
 `var` não deve existir no código.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert(!code.match(/var/g));
 ```
 
 A variável `i` declarada dentro do corpo do comando `if` deve ser igual a string `block scope`.
 
 ```js
-(getUserInput) =>
-  assert(
-    getUserInput('index').match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g)
-  );
+assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
 ```
 
 `checkScope()` deve retornar a string `function scope`

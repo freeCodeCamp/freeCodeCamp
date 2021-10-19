@@ -126,6 +126,60 @@ CLIENT_LOCALE="dothraki"
 CURRICULUM_LOCALE="dothraki"
 ```
 
+## Ativando vídeos localizados
+
+Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, adicione o novo idioma (locale) à consilta do GraphQL no arquivo `client/src/templates/Challenges/video/Show.tsx`. Por exemplo, para adicionar Dothraki à consulta:
+
+```tsx
+  query VideoChallenge($slug: String!) {
+    challengeNode(fields: { slug: { eq: $slug } }) {
+      videoId
+      videoLocaleIds {
+        espanol
+        italian
+        portuguese
+        dothraki
+      }
+      ...
+```
+
+Em seguida, adicione um id para o novo idioma para qualquer desafio em vídeo em um bloco auditado. Por exemplo, se `auditedCerts` em `all-langs.js` inclui `scientific-computing-with-python` para `dothraki`, você deve adicionar uma entrada em `dothraki` em `videoLocaleIds`. O frontmatter dever ter essa aparência:
+
+```yml
+videoLocaleIds:
+  espanol: 3muQV-Im3Z0
+  italian: hiRTRAqNlpE
+  portuguese: AelGAcoMXbI
+  dothraki: new-id-here
+nomeComTracos: introducao-por-que-programa
+---
+```
+
+Atualize a interface de `VideoLocaleIds` em `client/src/redux/prop-types` para que ela inclua o novo idioma.
+
+```ts
+export interface VideoLocaleIds {
+  espanol?: string;
+  italian?: string;
+  portuguese?: string;
+  dothraki?: string;
+}
+```
+
+Por fim, atualize o schema de desafios em `curriculum/schema/challengeSchema.js`.
+
+```js
+videoLocaleIds: Joi.when('challengeType', {
+  is: challengeTypes.video,
+  then: Joi.object().keys({
+    espanol: Joi.string(),
+    italian: Joi.string(),
+    portuguese: Joi.string(),
+    dothraki: Joi.string()
+  })
+}),
+```
+
 ## Carregando traduções
 
 Como o idioma ainda não foi aprovado para produção, nossos scripts ainda não estão baixando automaticamente as traduções. Somente membros da equipe têm acesso para baixar as traduções diretamente – entre em contato conosco quando quiser em nossa [sala de chat dos contribuidores](https://chat.freecodecamp.org/channel/contributors) ou traduza os arquivos de markdown em inglês localmente para fins de teste.

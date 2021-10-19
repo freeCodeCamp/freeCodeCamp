@@ -126,6 +126,60 @@ CLIENT_LOCALE="dothraki"
 CURRICULUM_LOCALE="dothraki"
 ```
 
+## Attivare video localizzati
+
+Per le sfide video, devi cambiare alcune cose. Come prima cosa aggiungi la nuova lingua alla query per GraphQL nel file `client/src/templates/Challenges/video/Show.tsx`. Per esempio, in questo modo aggiungeresti Dothraki alla query:
+
+```tsx
+  query VideoChallenge($slug: String!) {
+    challengeNode(fields: { slug: { eq: $slug } }) {
+      videoId
+      videoLocaleIds {
+        espanol
+        italian
+        portuguese
+        dothraki
+      }
+      ...
+```
+
+Quindi aggiungi un id per la nuova lingua ogni sfida video in un blocco verificato (`auditedCerts`). Per esempio, se `auditedCerts` in `all-langs.js` include `scientific-computing-with-python` per `dothraki`, allora devi aggiungere `dothraki` in `videoLocaleIds`. Il frontespizio dovrebbe essere simile a questo:
+
+```yml
+videoLocaleIds:
+  espanol: 3muQV-Im3Z0
+  italian: hiRTRAqNlpE
+  portuguese: AelGAcoMXbI
+  dothraki: nuovo-id-qui
+dashedName: introduction-why-program
+---
+```
+
+Aggiorna l'interfaccia `VideoLocaleIds` in `client/src/redux/prop-types` così che includa la nuova lingua.
+
+```ts
+export interface VideoLocaleIds {
+  espanol?: string;
+  italian?: string;
+  portuguese?: string;
+  dothraki?: string;
+}
+```
+
+Infine aggiorna lo schema delle sfide in `curriculum/schema/challengeSchema.js`.
+
+```js
+videoLocaleIds: Joi.when('challengeType', {
+  is: challengeTypes.video,
+  then: Joi.object().keys({
+    espanol: Joi.string(),
+    italian: Joi.string(),
+    portuguese: Joi.string(),
+    dothraki: Joi.string()
+  })
+}),
+```
+
 ## Caricare le traduzioni
 
 Poiché la lingua non è ancora stata approvata per la produzione, i nostri script ancora non scaricheranno automaticamente le traduzioni. Solo lo staff ha accesso al download diretto delle traduzioni - sei il benvenuto a rivolgerti a noi attraverso la [chat room per i contributori](https://chat.freecodecamp.org/channel/contributors), o puoi tradurre i file markdown inglesi per le esigenze di test.

@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d98
 title: 創建卷積神經網絡
 challengeType: 11
 videoId: kfv0K8MtkIc
+bilibiliIds:
+  aid: 420605824
+  bvid: BV1p341127wW
+  cid: 409131869
 dashedName: creating-a-convolutional-neural-network
 ---
 

@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash-es';
-import { toSortedArray } from '../../../../../utils/sort-files';
+import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 
 export function getTargetEditor(challengeFiles) {
   if (isEmpty(challengeFiles)) return null;
@@ -9,6 +9,6 @@ export function getTargetEditor(challengeFiles) {
     )?.fileKey;
 
     // fallback for when there is no editable region.
-    return targetEditor || toSortedArray(challengeFiles)[0].fileKey;
+    return targetEditor || sortChallengeFiles(challengeFiles)[0].fileKey;
   }
 }

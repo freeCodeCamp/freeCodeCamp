@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c156
 title: Array booleani di Numpy
 challengeType: 11
 videoId: N1ttsMmcVMM
+bilibiliIds:
+  aid: 208091324
+  bvid: BV1Qh411p7V8
+  cid: 409012711
 dashedName: numpy-boolean-arrays
 ---
 

@@ -286,8 +286,7 @@
       "preview": "Pré-visualizar"
     },
     "help-translate": "Ainda estamos traduzindo as certificações a seguir.",
-    "help-translate-link": "Ajude-nos a traduzir.",
-    "coder-survey": "<0>Faça o New Coder Survey</0> de 2021 (demora cerca de 10 minutos – faça isso pela ciência)"
+    "help-translate-link": "Ajude-nos a traduzir."
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -365,6 +364,7 @@
   },
   "misc": {
     "offline": "Você parece estar off-line, seu progresso pode não ser salvo",
+    "server-offline": "O servidor não pôde ser alcançado e seu progresso pode não ser salvo. Entre em contato com <0>suporte</0> se esta mensagem persistir",
     "unsubscribed": "Sua assinatura foi cancelada com sucesso",
     "keep-coding": "Seja o que for, continue programando!",
     "email-signup": "Inscrição via e-mail",
@@ -428,6 +428,7 @@
     "wrong-updating": "Algo deu errado ao atualizar sua conta. Verifique e tente novamente",
     "updated-preferences": "Atualizamos as suas preferências",
     "email-invalid": "Formato de e-mail inválido",
+    "email-valid": "Seu e-mail foi alterado com sucesso. Feliz programação!",
     "bad-challengeId": "currentChallengeId não é um ID válido de desafio",
     "theme-invalid": "O tema é inválido",
     "theme-set": "Tema já definido",
@@ -462,7 +463,8 @@
     "no-account": "Nenhuma conta de {{website}} associada",
     "unlink-success": "Você desvinculou seu {{website}} com sucesso",
     "provide-username": "Verifique se você forneceu um nome de usuário e um relatório",
-    "report-sent": "Um relatório foi enviado para a equipe com {{email}} em cópia"
+    "report-sent": "Um relatório foi enviado para a equipe com {{email}} em cópia",
+    "certificate-missing": "A certificação que você tentou visualizar não existe"
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
