@@ -1,26 +1,20 @@
 ---
-id: 615380dff67172357fcf0425
-title: Part 7
+id: 61539e07e7430b528fbffe21
+title: Step 16
 challengeType: 0
-dashedName: part-7
+dashedName: step-16
 ---
 
 # --description--
 
-Normalize your box model by creating a `*` selector and setting the `box-sizing` property to `border-box`.
+Give your `#gallery` selector a `padding` property set to `0 4px`.
 
 # --hints--
 
-You should have a `*` selector.
+Your `#gallery` selector should have a `padding` property set to `0 4px`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyle('*'));
-```
-
-Your `*` selector should have a `box-sizing` property set to `border-box`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('*')?.boxSizing === 'border-box');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.padding === '0px 4px');
 ```
 
 # --seed--
@@ -57,7 +51,34 @@ assert(new __helpers.CSSHelp(document).getStyle('*')?.boxSizing === 'border-box'
 ```
 
 ```css
---fcc-editable-region--
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #EBE7E7;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+  background: #E0DDDD;
+}
 
 --fcc-editable-region--
+#gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+--fcc-editable-region--
+
+#gallery img {
+  width: 25%;
+  height: 300px;
+}
 ```

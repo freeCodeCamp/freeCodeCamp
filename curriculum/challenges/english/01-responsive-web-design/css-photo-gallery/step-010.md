@@ -1,36 +1,38 @@
 ---
-id: 615f171d05def3218035dc85
-title: Part 8
+id: 6153897c27f6334716ee5abe
+title: Step 10
 challengeType: 0
-dashedName: part-8
+dashedName: step-10
 ---
 
 # --description--
 
-Your images are currently too large, and you will not be able to see your CSS changes.
-
-Create a `#gallery img` selector to target your images. Give it a `width` property set to `25%`.
-
-Also set the `height` property to `300px` to keep your images a uniform size.
+Align your `.header` text in the center, give it a padding of `32px` on all sides, and set the background to `#E0DDDD`.
 
 # --hints--
 
-You should have a `#gallery img` selector.
+You should have a `.header` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyle('#gallery img'))
+assert.exists(new __helpers.CSSHelp(document).getStyle('.header'));
 ```
 
-Your `#gallery img` selector should have a `width` property set to `25%`.
+Your `.header` selector should have a `text-align` property set to `center`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.width === '25%')
+assert(new __helpers.CSSHelp(document).getStyle('.header')?.textAlign === 'center');
 ```
 
-Your `#gallery img` selector should have a `height` property set to `300px`.
+Your `.header` selector should have a `padding` property set to `32px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.height === '300px');
+assert(new __helpers.CSSHelp(document).getStyle('.header')?.padding === '32px');
+```
+
+Your `.header` selector should have a `background-color` property set to `#E0DDDD`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.header')?.backgroundColor === 'rgb(224, 221, 221)');
 ```
 
 # --seed--
@@ -71,7 +73,18 @@ assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.height === '300
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #EBE7E7;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
+#gallery img {
+  width: 25%;
+  height: 300px;
+}
 ```

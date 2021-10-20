@@ -1,20 +1,36 @@
 ---
-id: 6153a3485f0b20591d26d2a1
-title: Part 19
+id: 615f171d05def3218035dc85
+title: Step 8
 challengeType: 0
-dashedName: part-19
+dashedName: step-8
 ---
 
 # --description--
 
-Smooth out your images a bit by giving the `#gallery img` selector a `border-radius` property of `10px`.
+Your images are currently too large, and you will not be able to see your CSS changes.
+
+Create a `#gallery img` selector to target your images. Give it a `width` property set to `25%`.
+
+Also set the `height` property to `300px` to keep your images a uniform size.
 
 # --hints--
 
-Your `#gallery img` selector should have a `border-radius` property set to `10px`:
+You should have a `#gallery img` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.borderRadius === '10px');
+assert.exists(new __helpers.CSSHelp(document).getStyle('#gallery img'))
+```
+
+Your `#gallery img` selector should have a `width` property set to `25%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.width === '25%')
+```
+
+Your `#gallery img` selector should have a `height` property set to `300px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.height === '300px');
 ```
 
 # --seed--
@@ -55,33 +71,7 @@ assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.borderRadius ==
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #EBE7E7;
-}
-
-.header {
-  text-align: center;
-  padding: 32px;
-  background: #E0DDDD;
-}
-
-#gallery {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
 --fcc-editable-region--
-#gallery img {
-  width: 25%;
-  height: 300px;
-  object-fit: cover;
-  margin-top: 8px;
-  padding: 0 4px;
-}
+
 --fcc-editable-region--
 ```

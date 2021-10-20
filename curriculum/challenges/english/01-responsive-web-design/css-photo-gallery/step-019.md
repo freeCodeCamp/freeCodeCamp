@@ -1,28 +1,20 @@
 ---
-id: 6153a04847abee57a3a406ac
-title: Part 18
+id: 6153a3485f0b20591d26d2a1
+title: Step 19
 challengeType: 0
-dashedName: part-18
+dashedName: step-19
 ---
 
 # --description--
 
-Your images need some space between them.
-
-Give your `#gallery img` selector a `margin-top` property of `8px` and a `padding` property of `0 4px`.
+Smooth out your images a bit by giving the `#gallery img` selector a `border-radius` property of `10px`.
 
 # --hints--
 
-Your `#gallery img` selector should have a `margin-top` property of `8px`.
+Your `#gallery img` selector should have a `border-radius` property set to `10px`:
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.marginTop === '8px');
-```
-
-Your `#gallery img` selector should have a `padding` property of `0 4px`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.padding === '0px 4px');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.borderRadius === '10px');
 ```
 
 # --seed--
@@ -88,6 +80,8 @@ body {
   width: 25%;
   height: 300px;
   object-fit: cover;
+  margin-top: 8px;
+  padding: 0 4px;
 }
 --fcc-editable-region--
 ```

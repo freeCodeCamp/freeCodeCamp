@@ -1,22 +1,28 @@
 ---
-id: 61539f32a206bd53ec116465
-title: Part 17
+id: 615389bd81347947ea7ba896
+title: Step 11
 challengeType: 0
-dashedName: part-17
+dashedName: step-11
 ---
 
 # --description--
 
-Notice how some of your images have become distorted. This is because the images have different aspect ratios. Rather than setting each aspect ratio individually, you can use the `object-fit` property to determine how images should behave.
+Flexbox is a one-dimensional CSS layout approach that focuses on the flow of content. It offers the ability to control the way items are spaced and aligned within a container.
 
-Give your `#gallery img` selector the `object-fit` property and set it to `cover`. This will tell the image to fill the `img` container while maintaining aspect ratio, resulting in cropping to fit.
+To set an element to use Flexbox, you give it a `display` property set to `flex`. Create a `#gallery` selector and give it that property.
 
 # --hints--
 
-Your `#gallery img` selector should have an `object-fit` property set to `cover`.
+You should have a `#gallery` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.objectFit === 'cover');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery'));
+```
+
+Your `#gallery` selector should have a `display` property set to `flex`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.display === 'flex');
 ```
 
 # --seed--
@@ -69,18 +75,12 @@ body {
   background: #E0DDDD;
 }
 
-#gallery {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
+--fcc-editable-region--
 
 --fcc-editable-region--
+
 #gallery img {
   width: 25%;
   height: 300px;
 }
---fcc-editable-region--
 ```

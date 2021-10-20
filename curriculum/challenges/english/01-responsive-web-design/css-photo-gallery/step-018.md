@@ -1,49 +1,28 @@
 ---
-id: 6153a3ebb4f7f05b8401b716
-title: Part 21
+id: 6153a04847abee57a3a406ac
+title: Step 18
 challengeType: 0
-dashedName: part-21
+dashedName: step-18
 ---
 
 # --description--
 
-Finally, create another media query for screens smaller than `600px` wide. In that media query, create a `#gallery img` rule and set the `width` property to `100%`. This will give your gallery a single-column layout.
+Your images need some space between them.
 
-Your CSS Flexbox Photo Gallery is now complete.
+Give your `#gallery img` selector a `margin-top` property of `8px` and a `padding` property of `0 4px`.
 
 # --hints--
 
-You should have a second `@media` query.
+Your `#gallery img` selector should have a `margin-top` property of `8px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.length === 2);
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.marginTop === '8px');
 ```
 
-Your new `@media` query should come after your existing one.
+Your `#gallery img` selector should have a `padding` property of `0 4px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === '(max-width: 800px)');
-```
-
-Your new `@media` query should have a `max-width` of `600px`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.media?.mediaText === '(max-width: 600px)');
-```
-
-Your new `@media` query should have a `#gallery img` selector.
-
-```js
-const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 600px)');
-assert(rules?.find(rule => rule?.selectorText === '#gallery img'));
-```
-
-Your `#gallery img` rule should have a `width` property set to `100%`.
-
-```js
-const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 600px)');
-const imgRule = rules?.find(rule => rule?.selectorText === '#gallery img');
-assert(imgRule?.style?.width === '100%');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.padding === '0px 4px');
 ```
 
 # --seed--
@@ -104,22 +83,11 @@ body {
   align-items: center;
 }
 
+--fcc-editable-region--
 #gallery img {
   width: 25%;
   height: 300px;
   object-fit: cover;
-  margin-top: 8px;
-  padding: 0 4px;
-  border-radius: 10px;
 }
-
-@media (max-width: 800px) {
-  #gallery img {
-    width: 50%;
-  }
-}
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

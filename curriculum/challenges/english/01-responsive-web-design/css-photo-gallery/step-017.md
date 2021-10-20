@@ -1,20 +1,22 @@
 ---
-id: 61539e07e7430b528fbffe21
-title: Part 16
+id: 61539f32a206bd53ec116465
+title: Step 17
 challengeType: 0
-dashedName: part-16
+dashedName: step-17
 ---
 
 # --description--
 
-Give your `#gallery` selector a `padding` property set to `0 4px`.
+Notice how some of your images have become distorted. This is because the images have different aspect ratios. Rather than setting each aspect ratio individually, you can use the `object-fit` property to determine how images should behave.
+
+Give your `#gallery img` selector the `object-fit` property and set it to `cover`. This will tell the image to fill the `img` container while maintaining aspect ratio, resulting in cropping to fit.
 
 # --hints--
 
-Your `#gallery` selector should have a `padding` property set to `0 4px`.
+Your `#gallery img` selector should have an `object-fit` property set to `cover`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.padding === '0px 4px');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery img')?.objectFit === 'cover');
 ```
 
 # --seed--
@@ -67,7 +69,6 @@ body {
   background: #E0DDDD;
 }
 
---fcc-editable-region--
 #gallery {
   display: flex;
   flex-direction: row;
@@ -75,10 +76,11 @@ body {
   justify-content: center;
   align-items: center;
 }
---fcc-editable-region--
 
+--fcc-editable-region--
 #gallery img {
   width: 25%;
   height: 300px;
 }
+--fcc-editable-region--
 ```

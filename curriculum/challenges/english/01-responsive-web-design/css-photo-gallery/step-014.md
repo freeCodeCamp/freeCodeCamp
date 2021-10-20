@@ -1,28 +1,22 @@
 ---
-id: 615389bd81347947ea7ba896
-title: Part 11
+id: 6153938dce8b294ff8f5a4e9
+title: Step 14
 challengeType: 0
-dashedName: part-11
+dashedName: step-14
 ---
 
 # --description--
 
-Flexbox is a one-dimensional CSS layout approach that focuses on the flow of content. It offers the ability to control the way items are spaced and aligned within a container.
+The `justify-content` property determines how the items inside a flex container are positioned along the main axis, affecting their position and the space around them.
 
-To set an element to use Flexbox, you give it a `display` property set to `flex`. Create a `#gallery` selector and give it that property.
+Give your `#gallery` selector a `justify-content` property set to `center`.
 
 # --hints--
 
-You should have a `#gallery` selector.
+Your `#gallery` selector should have a `justify-content` property set to `center`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery'));
-```
-
-Your `#gallery` selector should have a `display` property set to `flex`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.display === 'flex');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.justifyContent === 'center');
 ```
 
 # --seed--
@@ -76,7 +70,11 @@ body {
 }
 
 --fcc-editable-region--
-
+#gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 --fcc-editable-region--
 
 #gallery img {

@@ -1,24 +1,49 @@
 ---
-id: 615392916d83fa4f02f7e2cf
-title: Part 13
+id: 6153a3ebb4f7f05b8401b716
+title: Step 21
 challengeType: 0
-dashedName: part-13
+dashedName: step-21
 ---
 
 # --description--
 
-You may have noticed that your images have all moved onto the same row, creating a horizontal scroll.
+Finally, create another media query for screens smaller than `600px` wide. In that media query, create a `#gallery img` rule and set the `width` property to `100%`. This will give your gallery a single-column layout.
 
-The `flex-wrap` property determines how your items should behave when the flex container is too small. Setting this property to `wrap` will allow your items to wrap to the next row/column (depending on your main axis), where `nowrap` will prevent your items from wrapping. When this is set to `nowrap`, items may either shrink to fit or overflow.
-
-Give the `#gallery` selector a `flex-wrap` property set to `wrap`. You should see your images take a four-column layout. This is because you set their `width` to `25%` in an earlier step.
+Your CSS Flexbox Photo Gallery is now complete.
 
 # --hints--
 
-Your `#gallery` selector should have a `flex-wrap` property set to `wrap`.
+You should have a second `@media` query.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.flexWrap === 'wrap');
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.length === 2);
+```
+
+Your new `@media` query should come after your existing one.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === '(max-width: 800px)');
+```
+
+Your new `@media` query should have a `max-width` of `600px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.media?.mediaText === '(max-width: 600px)');
+```
+
+Your new `@media` query should have a `#gallery img` selector.
+
+```js
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 600px)');
+assert(rules?.find(rule => rule?.selectorText === '#gallery img'));
+```
+
+Your `#gallery img` rule should have a `width` property set to `100%`.
+
+```js
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 600px)');
+const imgRule = rules?.find(rule => rule?.selectorText === '#gallery img');
+assert(imgRule?.style?.width === '100%');
 ```
 
 # --seed--
@@ -71,15 +96,30 @@ body {
   background: #E0DDDD;
 }
 
---fcc-editable-region--
 #gallery {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
---fcc-editable-region--
 
 #gallery img {
   width: 25%;
   height: 300px;
+  object-fit: cover;
+  margin-top: 8px;
+  padding: 0 4px;
+  border-radius: 10px;
 }
+
+@media (max-width: 800px) {
+  #gallery img {
+    width: 50%;
+  }
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```

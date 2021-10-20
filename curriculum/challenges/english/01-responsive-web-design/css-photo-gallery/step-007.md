@@ -1,22 +1,26 @@
 ---
-id: 6153938dce8b294ff8f5a4e9
-title: Part 14
+id: 615380dff67172357fcf0425
+title: Step 7
 challengeType: 0
-dashedName: part-14
+dashedName: step-7
 ---
 
 # --description--
 
-The `justify-content` property determines how the items inside a flex container are positioned along the main axis, affecting their position and the space around them.
-
-Give your `#gallery` selector a `justify-content` property set to `center`.
+Normalize your box model by creating a `*` selector and setting the `box-sizing` property to `border-box`.
 
 # --hints--
 
-Your `#gallery` selector should have a `justify-content` property set to `center`.
+You should have a `*` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.justifyContent === 'center');
+assert.exists(new __helpers.CSSHelp(document).getStyle('*'));
+```
+
+Your `*` selector should have a `box-sizing` property set to `border-box`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('*')?.boxSizing === 'border-box');
 ```
 
 # --seed--
@@ -53,32 +57,7 @@ assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.justifyContent === 
 ```
 
 ```css
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #EBE7E7;
-}
-
-.header {
-  text-align: center;
-  padding: 32px;
-  background: #E0DDDD;
-}
-
---fcc-editable-region--
-#gallery {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 --fcc-editable-region--
 
-#gallery img {
-  width: 25%;
-  height: 300px;
-}
+--fcc-editable-region--
 ```

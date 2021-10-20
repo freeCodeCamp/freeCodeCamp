@@ -1,41 +1,22 @@
 ---
-id: 6153a3952facd25a83fe8083
-title: Part 20
+id: 6153947986535e5117e60615
+title: Step 15
 challengeType: 0
-dashedName: part-20
+dashedName: step-15
 ---
 
 # --description--
 
-Create a media query for screens smaller than `800px` in width. In that media query, create a `#gallery img` rule and set the `width` property to `50%`. This will convert your gallery to a two-column layout.
+The `align-items` property positions the flex content along the cross axis. In this case, with your `flex-direction` set to `row`, your cross axis would be vertical.
+
+To vertically center your images, give your `#gallery` selector an `align-items` property set to `center`.
 
 # --hints--
 
-You should add a new `@media` query.
+Your `#gallery` selector should have an `align-items` property set to `center`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.length === 1);
-```
-
-Your new `@media` query should have a `max-width` of `800px`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === '(max-width: 800px)');
-```
-
-Your `@media` query should have a `#gallery img` rule.
-
-```js
-const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 800px)');
-assert(rules?.find(rule => rule.selectorText === '#gallery img'));
-```
-
-Your `#gallery img` rule should have a `width` property set to `50%`.
-
-```js
-const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 800px)');
-const imgRule = rules?.find(rule => rule.selectorText === '#gallery img');
-assert(imgRule?.style.width === '50%');
+assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.alignItems === 'center');
 ```
 
 # --seed--
@@ -88,24 +69,17 @@ body {
   background: #E0DDDD;
 }
 
+--fcc-editable-region--
 #gallery {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
+--fcc-editable-region--
 
 #gallery img {
   width: 25%;
   height: 300px;
-  object-fit: cover;
-  margin-top: 8px;
-  padding: 0 4px;
-  border-radius: 10px;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
