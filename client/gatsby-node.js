@@ -87,6 +87,13 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   src
                 }
                 challengeOrder
+                challengeFiles {
+                  name
+                  ext
+                  contents
+                  head
+                  tail
+                }
                 solutions {
                   contents
                   ext

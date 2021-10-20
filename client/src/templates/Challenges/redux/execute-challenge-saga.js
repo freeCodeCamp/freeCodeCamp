@@ -236,6 +236,41 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   }
 }
 
+// TODO: DRY this and previewChallengeSaga
+// TODO: remove everything about proxyLogger here
+function* previewProjectSolutionSaga({ payload }) {
+  if (!payload) return;
+  const { isFirstChallengeInBlock, challengeData } = payload;
+  if (!isFirstChallengeInBlock) return;
+
+  const logProxy = yield channel();
+  const proxyLogger = args => logProxy.put(args);
+
+  try {
+    yield fork(takeEveryConsole, logProxy);
+    if (canBuildChallenge(challengeData)) {
+      const challengeMeta = yield select(challengeMetaSelector);
+      const protect = isLoopProtected(challengeMeta);
+      const buildData = yield buildChallengeData(challengeData, {
+        preview: true,
+        protect
+      });
+      if (challengeHasPreview(challengeData)) {
+        const document = yield getContext('document');
+        yield call(updatePreview, buildData, document, proxyLogger, true);
+      }
+    }
+  } catch (err) {
+    if (err === 'timeout') {
+      // TODO: translate the error
+      // eslint-disable-next-line no-ex-assign
+      err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
+    }
+    console.log(err);
+    yield put(updateConsole(escape(err)));
+  }
+}
+
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
@@ -247,6 +282,7 @@ export function createExecuteChallengeSaga(types) {
         types.resetChallenge
       ],
       executeCancellablePreviewSaga
-    )
+    ),
+    takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
 }

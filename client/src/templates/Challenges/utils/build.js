@@ -9,7 +9,8 @@ import { getTransformers } from '../rechallenge/transformers';
 import {
   createTestFramer,
   runTestInTestFrame,
-  createMainFramer
+  createMainPreviewFramer,
+  createProjectPreviewFramer
 } from './frame';
 import createWorker from './worker-executor';
 
@@ -197,13 +198,27 @@ export function buildBackendChallenge({ url }) {
   };
 }
 
-export async function updatePreview(buildData, document, proxyLogger) {
+// TODO: use fewer arguments (and no boolean ones!)
+export async function updatePreview(
+  buildData,
+  document,
+  proxyLogger,
+  previewProjectSolution
+) {
   const { challengeType } = buildData;
 
+  // TODO: no need to await here, nothing is waiting for the preview to be
+  // visible
   if (challengeType === challengeTypes.html) {
-    await new Promise(resolve =>
-      createMainFramer(document, resolve, proxyLogger)(buildData)
-    );
+    if (previewProjectSolution) {
+      await new Promise(resolve =>
+        createProjectPreviewFramer(document, resolve, proxyLogger)(buildData)
+      );
+    } else {
+      await new Promise(resolve =>
+        createMainPreviewFramer(document, resolve, proxyLogger)(buildData)
+      );
+    }
   } else {
     throw new Error(`Cannot show preview for challenge type ${challengeType}`);
   }
