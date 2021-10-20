@@ -54,7 +54,7 @@ type ReducerPayload<T extends FlashActionTypes> =
 export const reducer = (
   state: FlashState = initialState,
   action: ReducerPayload<FlashActionTypes>
-): State[typeof FlashApp] => {
+): FlashState => {
   switch (action.type) {
     case FlashActionTypes.createFlashMessage:
       return { ...state, message: action.payload };
