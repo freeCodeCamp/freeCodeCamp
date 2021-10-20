@@ -57,6 +57,7 @@ interface EditorProps {
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   ext: ExtTypes;
   fileKey: FileKeyTypes;
+  canFocusOnMountRef: MutableRefObject<boolean>;
   initialEditorContent: string;
   initialExt: string;
   initTests: (tests: Test[]) => void;
@@ -631,12 +632,15 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function focusIfTargetEditor() {
     const { editor } = dataRef.current;
-    if (!editor) return;
+    const { canFocusOnMountRef } = props;
+    if (!editor || !canFocusOnMountRef.current) return;
     if (!props.usesMultifileEditor) {
       // Only one editor? Focus it.
       editor.focus();
+      canFocusOnMountRef.current = false;
     } else if (hasEditableRegion()) {
       editor.focus();
+      canFocusOnMountRef.current = false;
     }
   }
 

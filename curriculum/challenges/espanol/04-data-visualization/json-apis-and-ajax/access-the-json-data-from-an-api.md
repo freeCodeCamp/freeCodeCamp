@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be4
-title: Access the JSON Data from an API
+title: Accede a los datos JSON desde una API
 challengeType: 6
 forumTopicId: 301499
 dashedName: access-the-json-data-from-an-api
@@ -8,37 +8,37 @@ dashedName: access-the-json-data-from-an-api
 
 # --description--
 
-In the previous challenge, you saw how to get JSON data from the freeCodeCamp Cat Photo API.
+En el desafío anterior, vimos cómo obtener datos JSON de la API de Cat Photo de freeCodeCamp.
 
-Now you'll take a closer look at the returned data to better understand the JSON format. Recall some notation in JavaScript:
+Ahora examinarás más de cerca los datos devueltos para comprender mejor el formato JSON. Recuerda algunas nociones en JavaScript:
 
-<blockquote>[ ] -> Square brackets represent an array<br>{ } -> Curly brackets represent an object<br>" " -> Double quotes represent a string. They are also used for key names in JSON</blockquote>
+<blockquote>[ ] -> Los corchetes cuadrados representan un arreglo<br>{ } -> Los corchetes rizados representan un objeto<br>" -> Las comillas dobles representan una cadena. También se utilizan para nombres de claves en JSON</blockquote>
 
-Understanding the structure of the data that an API returns is important because it influences how you retrieve the values you need.
+Entender la estructura de los datos que devuelve una API es importante porque influye en cómo recuperar los valores que necesitas.
 
-On the right, click the `Get Message` button to load the freeCodeCamp Cat Photo API JSON into the HTML.
+A la derecha, haz clic en el botón `Get Message` para cargar la API JSON de la foto del gato de freeCodeCamp en el HTML.
 
-The first and last character you see in the JSON data are square brackets `[ ]`. This means that the returned data is an array. The second character in the JSON data is a curly `{` bracket, which starts an object. Looking closely, you can see that there are three separate objects. The JSON data is an array of three objects, where each object contains information about a cat photo.
+El primer y último carácter que ves en los datos JSON son corchetes cuadrados `[ ]`. Esto significa que los datos devueltos son un arreglo. El segundo carácter en los datos JSON es un corchete rizado `{`, que inicia un objeto. Mirando de cerca, se puede ver que hay tres objetos separados. Los datos JSON son un arreglo de tres objetos, donde cada objeto contiene información sobre una foto de un gato.
 
-You learned earlier that objects contain "key-value pairs" that are separated by commas. In the Cat Photo example, the first object has `"id":0` where `id` is a key and `0` is its corresponding value. Similarly, there are keys for `imageLink`, `altText`, and `codeNames`. Each cat photo object has these same keys, but with different values.
+Aprendiste anteriormente que los objetos contienen "pares clave-valor" separados por comas. En el ejemplo de la foto del gato, el primer objeto tiene `"id":0` donde `id` es una clave y `0` es su valor correspondiente. De manera similar, hay claves para `imageLink`, `altText`, y `codeNames`. Cada objeto de la foto del gato tiene estas mismas claves, pero con valores diferentes.
 
-Another interesting "key-value pair" in the first object is `"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]`. Here `codeNames` is the key and its value is an array of three strings. It's possible to have arrays of objects as well as a key with an array as a value.
+Otro interesante "par clave-valor" en el primer objeto es `"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]`. Aquí `codeNames` es la clave y su valor es un arreglo de tres cadenas. Es posible tener arreglos de objetos así como una clave con un arreglo como un valor.
 
-Remember how to access data in arrays and objects. Arrays use bracket notation to access a specific index of an item. Objects use either bracket or dot notation to access the value of a given property. Here's an example that prints the `altText` property of the first cat photo - note that the parsed JSON data in the editor is saved in a variable called `json`:
+Recuerda cómo acceder a los datos en arreglos y objetos. Los arreglos usan notación de corchete para acceder a un índice específico de un elemento. Los objetos usan tanto la notación de corchete como la notación de puntos para acceder al valor de una propiedad determinada. Aquí hay un ejemplo que imprime la propiedad `altText` de la primera foto del gato - ten en cuenta que los datos JSON analizados en el editor se guardan en una variable llamada `json`:
 
 ```js
 console.log(json[0].altText);
 ```
 
-The console would display the string `A white cat wearing a green helmet shaped melon on its head.`.
+La consola muestra la cadena de texto`A white cat wearing a green helmet shaped melon on its head.`.
 
 # --instructions--
 
-For the cat with the `id` of 2, print to the console the second value in the `codeNames` array. You should use bracket and dot notation on the object (which is saved in the variable `json`) to access the value.
+Para el gato con el `id` de 2, imprime en la consola el segundo valor en el arreglo `codeNames`. Debes usar el corchete y la notación de puntos en el objeto (que se guarda en la variable `json`) para acceder al valor.
 
 # --hints--
 
-Your code should use bracket and dot notation to access the proper code name, and print `Loki` to the console.
+Tu código debe usar corchete y notación de puntos para acceder al nombre del código correcto e imprimir `Loki` en la consola.
 
 ```js
 assert(
