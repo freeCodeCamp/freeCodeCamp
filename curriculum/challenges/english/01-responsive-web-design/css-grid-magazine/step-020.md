@@ -7,11 +7,10 @@ dashedName: step-20
 
 # --description--
 
-Within your `ul` element, create six `li` elements. Give them the following content. Add an `h4` element with a `class` set to `list-subtitle` and a `p` element to each of your `li` elements.
+Within your `ul` element, create six `li` elements. Add an `h4` element with a `class` set to `list-subtitle` and a `p` element to each of your `li` elements.
 
-Then give the `h4` and `p` elements the following text content, in order:
+Then give the `h4` and `p` elements the following text content, in order, with each `h4` using what's on the left side of the colon, and each `p` using what's on the right:
 
-- `h4`: `p`
 - `V1 - 2014`: `We launched freeCodeCamp with a simple list of 15 resources, including Harvard's CS50 and Stanford's Database Class.`
 - `V2 - 2015`: `We added interactive algorithm challenges.`
 - `V3 - 2015`: `We added our own HTML+CSS challenges (before we'd been relying on General Assembly's Dash course for these).`

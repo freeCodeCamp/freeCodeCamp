@@ -56,6 +56,7 @@ assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.get
           </p>
         </header>
 --fcc-editable-region--
+        <div class="author">
           <p class="author-name">
             By
             <a href="https://freecodecamp.org" target="_blank"
@@ -63,6 +64,7 @@ assert(document.querySelector('div')?.querySelector('p')?.firstElementChild?.get
             >
           </p>
           <p class="publish-date">March 7, 2019</p>
+        </div>
       </section>
     </main>
 --fcc-editable-region--

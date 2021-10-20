@@ -20,7 +20,8 @@ assert(new __helpers.CSSHelp(document).getStyle('h2, h3, h4, h5, h6'));
 Your `h2, h3, h4, h5, h6` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('h2, h3, h4, h5, h6')?.fontFamily === 'Raleway, sans-serif');
+const fontFamily = new __helpers.CSSHelp(document).getStyle('h2, h3, h4, h5, h6')?.fontFamily;
+assert(fontFamily === 'Raleway, sans-serif' || fontFamily === `"Raleway", sans-serif`);
 ```
 
 # --seed--

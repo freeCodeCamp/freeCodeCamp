@@ -17,10 +17,11 @@ You should have a `body` selector.
 assert(new __helpers.CSSHelp(document).getStyle('body'));
 ```
 
-Your `body` selector should have a `font-family` property set to `Baskerville`, with a fallback of `serif`.
+Your `body` selector should have a `font-family` property set to `Baskervville`, with a fallback of `serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily === 'Baskervville, serif');
+const fontFamily = new __helpers.CSSHelp(document).getStyle('body')?.fontFamily;
+assert(fontFamily === 'Baskervville, serif' || fontFamily === `"Baskervville", serif`);
 ```
 
 Your `body` selector should have a `color` property set to `linen`.

@@ -14,7 +14,8 @@ To make the quote text stand out more, give the `.quote` selector a `font-family
 Your `.quote` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.quote')?.fontFamily === 'Raleway, sans-serif');
+const fontFamily = new __helpers.CSSHelp(document).getStyle('.quote')?.fontFamily;
+assert(fontFamily === 'Raleway, sans-serif' || fontFamily === `"Raleway", sans-serif`);
 ```
 
 # --seed--

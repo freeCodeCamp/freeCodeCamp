@@ -20,7 +20,8 @@ assert(new __helpers.CSSHelp(document).getStyle('h1'));
 Your `h1` selector should have a `font-family` property set to `Anton` with the fallback of `sans-serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('h1')?.fontFamily === 'Anton, sans-serif');
+const fontFamily = new __helpers.CSSHelp(document).getStyle('h1')?.fontFamily;
+assert(fontFamily === 'Anton, sans-serif' || fontFamily === `"Anton", sans-serif`);
 ```
 
 # --seed--

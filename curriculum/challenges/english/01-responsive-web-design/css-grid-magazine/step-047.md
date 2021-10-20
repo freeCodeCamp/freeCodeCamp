@@ -26,7 +26,8 @@ assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontSize === '2rem')
 Your `.author` selector should have a `font-family` property set to `Raleway` with a fallback of `sans-serif`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.author')?.fontFamily === 'Raleway, sans-serif');
+const fontFamily = new __helpers.CSSHelp(document).getStyle('.author')?.fontFamily;
+assert(fontFamily === 'Raleway, sans-serif' || fontFamily === `"Raleway", sans-serif`);
 ```
 
 # --seed--
