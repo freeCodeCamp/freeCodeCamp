@@ -3,9 +3,11 @@ import { format } from '../../../utils/format';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
-const mainId = 'fcc-main-frame';
+const mainPreviewId = 'fcc-main-frame';
 // the test frame is responsible for running the assert tests
 const testId = 'fcc-test-frame';
+// the project preview frame demos the finished project
+const projectPreviewId = 'fcc-project-preview-frame';
 
 // base tag here will force relative links
 // within iframe to point to '' instead of
@@ -16,7 +18,7 @@ const testId = 'fcc-test-frame';
 // window.onerror is added here to report any errors thrown during the building
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
-const createHeader = (id = mainId) => `
+const createHeader = (id = mainPreviewId) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
@@ -68,13 +70,15 @@ const createFrame = (document, id) => ctx => {
 
 const hiddenFrameClassName = 'hide-test-frame';
 const mountFrame =
-  document =>
+  (document, id) =>
   ({ element, ...rest }) => {
     const oldFrame = document.getElementById(element.id);
     if (oldFrame) {
       element.className = oldFrame.className || hiddenFrameClassName;
       oldFrame.parentNode.replaceChild(element, oldFrame);
-    } else {
+      // only test frames can be added (and hidden) here, other frames must be
+      // added by react
+    } else if (id === testId) {
       element.className = hiddenFrameClassName;
       document.body.appendChild(element);
     }
@@ -134,6 +138,11 @@ const initMainFrame = (frameReady, proxyLogger) => ctx => {
   return ctx;
 };
 
+const initPreviewFrame = frameReady => ctx => {
+  waitForFrame(ctx).then(() => frameReady());
+  return ctx;
+};
+
 const waitForFrame = ctx => {
   return new Promise(resolve => {
     if (ctx.document.readyState === 'loading') {
@@ -156,8 +165,17 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainFramer = (document, frameReady, proxyLogger) =>
-  createFramer(document, frameReady, proxyLogger, mainId, initMainFrame);
+export const createMainPreviewFramer = (document, frameReady, proxyLogger) =>
+  createFramer(document, frameReady, proxyLogger, mainPreviewId, initMainFrame);
+
+export const createProjectPreviewFramer = (document, frameReady, proxyLogger) =>
+  createFramer(
+    document,
+    frameReady,
+    proxyLogger,
+    projectPreviewId,
+    initPreviewFrame
+  );
 
 export const createTestFramer = (document, frameReady, proxyLogger) =>
   createFramer(document, frameReady, proxyLogger, testId, initTestFrame);
@@ -165,7 +183,7 @@ export const createTestFramer = (document, frameReady, proxyLogger) =>
 const createFramer = (document, frameReady, proxyLogger, id, init) =>
   flow(
     createFrame(document, id),
-    mountFrame(document),
+    mountFrame(document, id),
     buildProxyConsole(proxyLogger),
     writeContentToFrame,
     init(frameReady, proxyLogger)
