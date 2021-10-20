@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import {
   reducer as flash,
-  ns as flashNameSpace
+  FlashApp as flashNameSpace
 } from '../components/Flash/redux';
 import {
   reducer as search,
@@ -17,7 +17,7 @@ import {
   ns as curriculumMapNameSpace
 } from '../templates/Introduction/redux';
 import { reducer as settings, ns as settingsNameSpace } from './settings';
-import { reducer as app, ns as appNameSpace } from './';
+import { reducer as app, MainApp as appNameSpace } from './';
 
 export default combineReducers({
   [appNameSpace]: app,

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
@@ -73,154 +73,153 @@ const mapDispatchToProps = {
   updateFile
 };
 
-class MultifileEditor extends Component {
-  focusOnHotkeys() {
-    if (this.props.containerRef.current) {
-      this.props.containerRef.current.focus();
+const MultifileEditor = props => {
+  const {
+    challengeFiles,
+    containerRef,
+    description,
+    editorRef,
+    initialTests,
+    theme,
+    resizeProps,
+    title,
+    visibleEditors: { indexcss, indexhtml, indexjs, indexjsx },
+    usesMultifileEditor
+  } = props;
+  const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
+  // TODO: the tabs mess up the rendering (scroll doesn't work properly and
+  // the in-editor description)
+
+  // TODO: the splitters should appear between editors, so logically this
+  // would be best as
+  // editors.map(props => <EditorWrapper ...props>).join(<ReflexSplitter>)
+  // ...probably! As long as we can put keys in the right places.
+  const reflexProps = {
+    propagateDimensions: true
+  };
+
+  let splitterJSXRight, splitterHTMLRight, splitterCSSRight;
+  if (indexjsx) {
+    if (indexhtml || indexcss || indexjs) {
+      splitterJSXRight = true;
+    }
+  }
+  if (indexhtml) {
+    if (indexcss || indexjs) {
+      splitterHTMLRight = true;
+    }
+  }
+  if (indexcss) {
+    if (indexjs) {
+      splitterCSSRight = true;
     }
   }
 
-  render() {
-    const {
-      challengeFiles,
-      containerRef,
-      description,
-      editorRef,
-      initialTests,
-      theme,
-      resizeProps,
-      title,
-      visibleEditors: { indexcss, indexhtml, indexjs, indexjsx },
-      usesMultifileEditor
-    } = this.props;
-    const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
-    // TODO: the tabs mess up the rendering (scroll doesn't work properly and
-    // the in-editor description)
+  // TODO: tabs should be dynamically created from the challengeFiles
+  // TODO: the tabs mess up the rendering (scroll doesn't work properly and
+  // the in-editor description)
+  const targetEditor = getTargetEditor(challengeFiles);
 
-    // TODO: the splitters should appear between editors, so logically this
-    // would be best as
-    // editors.map(props => <EditorWrapper ...props>).join(<ReflexSplitter>)
-    // ...probably! As long as we can put keys in the right places.
-    const reflexProps = {
-      propagateDimensions: true
-    };
+  // Only one editor should be focused and that should happen once, after it has
+  // been mounted. This ref allows the editors to co-ordinate, without having to
+  // resort to redux.
+  const canFocusOnMountRef = useRef(true);
+  return (
+    <ReflexContainer
+      orientation='horizontal'
+      {...reflexProps}
+      {...resizeProps}
+      className='editor-container'
+    >
+      <ReflexElement flex={10} {...reflexProps} {...resizeProps}>
+        <ReflexContainer orientation='vertical'>
+          {indexjsx && (
+            <ReflexElement {...reflexProps} {...resizeProps}>
+              <Editor
+                canFocusOnMountRef={canFocusOnMountRef}
+                challengeFiles={challengeFiles}
+                containerRef={containerRef}
+                description={targetEditor === 'indexjsx' ? description : null}
+                editorRef={editorRef}
+                fileKey='indexjsx'
+                initialTests={initialTests}
+                key='indexjsx'
+                resizeProps={resizeProps}
+                theme={editorTheme}
+                title={title}
+                usesMultifileEditor={usesMultifileEditor}
+              />
+            </ReflexElement>
+          )}
+          {splitterJSXRight && (
+            <ReflexSplitter propagate={true} {...resizeProps} />
+          )}
+          {indexhtml && (
+            <ReflexElement {...reflexProps} {...resizeProps}>
+              <Editor
+                canFocusOnMountRef={canFocusOnMountRef}
+                challengeFiles={challengeFiles}
+                containerRef={containerRef}
+                description={targetEditor === 'indexhtml' ? description : null}
+                editorRef={editorRef}
+                fileKey='indexhtml'
+                initialTests={initialTests}
+                key='indexhtml'
+                resizeProps={resizeProps}
+                theme={editorTheme}
+                title={title}
+                usesMultifileEditor={usesMultifileEditor}
+              />
+            </ReflexElement>
+          )}
+          {splitterHTMLRight && (
+            <ReflexSplitter propagate={true} {...resizeProps} />
+          )}
+          {indexcss && (
+            <ReflexElement {...reflexProps} {...resizeProps}>
+              <Editor
+                canFocusOnMountRef={canFocusOnMountRef}
+                challengeFiles={challengeFiles}
+                containerRef={containerRef}
+                description={targetEditor === 'indexcss' ? description : null}
+                editorRef={editorRef}
+                fileKey='indexcss'
+                initialTests={initialTests}
+                key='indexcss'
+                resizeProps={resizeProps}
+                theme={editorTheme}
+                title={title}
+                usesMultifileEditor={usesMultifileEditor}
+              />
+            </ReflexElement>
+          )}
+          {splitterCSSRight && (
+            <ReflexSplitter propagate={true} {...resizeProps} />
+          )}
 
-    let splitterJSXRight, splitterHTMLRight, splitterCSSRight;
-    if (indexjsx) {
-      if (indexhtml || indexcss || indexjs) {
-        splitterJSXRight = true;
-      }
-    }
-    if (indexhtml) {
-      if (indexcss || indexjs) {
-        splitterHTMLRight = true;
-      }
-    }
-    if (indexcss) {
-      if (indexjs) {
-        splitterCSSRight = true;
-      }
-    }
-
-    // TODO: tabs should be dynamically created from the challengeFiles
-    // TODO: the tabs mess up the rendering (scroll doesn't work properly and
-    // the in-editor description)
-    const targetEditor = getTargetEditor(challengeFiles);
-    return (
-      <ReflexContainer
-        orientation='horizontal'
-        {...reflexProps}
-        {...resizeProps}
-        className='editor-container'
-      >
-        <ReflexElement flex={10} {...reflexProps} {...resizeProps}>
-          <ReflexContainer orientation='vertical'>
-            {indexjsx && (
-              <ReflexElement {...reflexProps} {...resizeProps}>
-                <Editor
-                  challengeFiles={challengeFiles}
-                  containerRef={containerRef}
-                  description={targetEditor === 'indexjsx' ? description : null}
-                  editorRef={editorRef}
-                  fileKey='indexjsx'
-                  initialTests={initialTests}
-                  key='indexjsx'
-                  resizeProps={resizeProps}
-                  theme={editorTheme}
-                  title={title}
-                  usesMultifileEditor={usesMultifileEditor}
-                />
-              </ReflexElement>
-            )}
-            {splitterJSXRight && (
-              <ReflexSplitter propagate={true} {...resizeProps} />
-            )}
-            {indexhtml && (
-              <ReflexElement {...reflexProps} {...resizeProps}>
-                <Editor
-                  challengeFiles={challengeFiles}
-                  containerRef={containerRef}
-                  description={
-                    targetEditor === 'indexhtml' ? description : null
-                  }
-                  editorRef={editorRef}
-                  fileKey='indexhtml'
-                  initialTests={initialTests}
-                  key='indexhtml'
-                  resizeProps={resizeProps}
-                  theme={editorTheme}
-                  title={title}
-                  usesMultifileEditor={usesMultifileEditor}
-                />
-              </ReflexElement>
-            )}
-            {splitterHTMLRight && (
-              <ReflexSplitter propagate={true} {...resizeProps} />
-            )}
-            {indexcss && (
-              <ReflexElement {...reflexProps} {...resizeProps}>
-                <Editor
-                  challengeFiles={challengeFiles}
-                  containerRef={containerRef}
-                  description={targetEditor === 'indexcss' ? description : null}
-                  editorRef={editorRef}
-                  fileKey='indexcss'
-                  initialTests={initialTests}
-                  key='indexcss'
-                  resizeProps={resizeProps}
-                  theme={editorTheme}
-                  title={title}
-                  usesMultifileEditor={usesMultifileEditor}
-                />
-              </ReflexElement>
-            )}
-            {splitterCSSRight && (
-              <ReflexSplitter propagate={true} {...resizeProps} />
-            )}
-
-            {indexjs && (
-              <ReflexElement {...reflexProps} {...resizeProps}>
-                <Editor
-                  challengeFiles={challengeFiles}
-                  containerRef={containerRef}
-                  description={targetEditor === 'indexjs' ? description : null}
-                  editorRef={editorRef}
-                  fileKey='indexjs'
-                  initialTests={initialTests}
-                  key='indexjs'
-                  resizeProps={resizeProps}
-                  theme={editorTheme}
-                  title={title}
-                  usesMultifileEditor={usesMultifileEditor}
-                />
-              </ReflexElement>
-            )}
-          </ReflexContainer>
-        </ReflexElement>
-      </ReflexContainer>
-    );
-  }
-}
+          {indexjs && (
+            <ReflexElement {...reflexProps} {...resizeProps}>
+              <Editor
+                canFocusOnMountRef={canFocusOnMountRef}
+                challengeFiles={challengeFiles}
+                containerRef={containerRef}
+                description={targetEditor === 'indexjs' ? description : null}
+                editorRef={editorRef}
+                fileKey='indexjs'
+                initialTests={initialTests}
+                key='indexjs'
+                resizeProps={resizeProps}
+                theme={editorTheme}
+                title={title}
+                usesMultifileEditor={usesMultifileEditor}
+              />
+            </ReflexElement>
+          )}
+        </ReflexContainer>
+      </ReflexElement>
+    </ReflexContainer>
+  );
+};
 
 MultifileEditor.displayName = 'MultifileEditor';
 MultifileEditor.propTypes = propTypes;

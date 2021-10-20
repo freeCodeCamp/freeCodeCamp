@@ -5,12 +5,8 @@ import React from 'react';
 import mockChallengeNodes from '../../__mocks__/challenge-nodes';
 import { Map } from '.';
 
-const mockedUseStaticQuery = useStaticQuery as jest.MockedFunction<
-  typeof useStaticQuery
->;
-
 beforeEach(() => {
-  mockedUseStaticQuery.mockImplementationOnce(() => ({
+  (useStaticQuery as jest.Mock).mockImplementationOnce(() => ({
     allChallengeNode: {
       nodes: mockChallengeNodes
     }
