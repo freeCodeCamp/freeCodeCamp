@@ -1,0 +1,34 @@
+{
+  "packages": [
+    "api-server",
+    "client",
+    "client/plugins/fcc-source-challenges",
+    "client/plugins/gatsby-remark-node-identity",
+    "curriculum",
+    "tools/challenge-helper-scripts",
+    "tools/challenge-parser",
+    "tools/contributor",
+    "tools/contributor/dashboard-app/client",
+    "tools/contributor/dashboard-app/server",
+    "tools/contributor/lib/",
+    "tools/contributor/one-off-scripts",
+    "tools/crowdin",
+    "tools/scripts/build",
+    "tools/scripts/seed",
+    "tools/ui-components"
+  ],
+  "command": {
+    "bootstrap": {
+      "ignore": [
+        "tools/contributor",
+        "tools/contributor/dashboard-app/client",
+        "tools/contributor/dashboard-app/server",
+        "tools/contributor/lib/",
+        "tools/contributor/one-off-scripts",
+        "tools/crowdin",
+        "tools/ui-components"
+      ]
+    }
+  },
+  "version": "independent"
+}

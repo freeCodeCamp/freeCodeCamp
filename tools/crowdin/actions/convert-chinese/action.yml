@@ -1,0 +1,5 @@
+name: 'Translate Simplified Chinese to Traditional'
+description: 'Converts Simplified Chinese characters to Traditional Chinese Characters'
+runs:
+  using: 'node12'
+  main: './index.js'

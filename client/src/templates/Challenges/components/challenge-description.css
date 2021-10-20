@@ -1,0 +1,18 @@
+.challenge-instructions blockquote {
+  background-color: var(--tertiary-background);
+  color: var(--tertiary-color);
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1.45rem;
+  font-size: 0.9rem;
+}
+
+#description p,
+#instructions p,
+#description ul,
+#instructions ul,
+#description ol,
+#instructions ol {
+  font-family: 'Lato', sans-serif;
+}

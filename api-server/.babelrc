@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": 10
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "babel-plugin-transform-function-bind",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-optional-chaining"
+  ]
+}

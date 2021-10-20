@@ -1,0 +1,37 @@
+name: 'Create Crowdin PRs'
+description: 'Creates a PR by camperbot for Crowdin translation downloads'
+runs:
+  using: 'node12'
+  main: './index.js'
+inputs:
+  github-token:
+    description: 'PAT with write access to create PRs'
+    required: true
+  branch:
+    description: 'Branch name to which commits are made'
+    required: true
+  owner-repo:
+    description: 'owner and repo name specified as ownerName/repoName'
+    required: true
+  base:
+    description: 'base branch name'
+    default: 'main'
+    required: true
+  title:
+    description: 'PR title'
+    required: true
+  body:
+    description: 'PR body text'
+    required: true
+  labels:
+    description: 'PR labels'
+    required: false
+  reviewers:
+    description: 'Requested PR reviewers'
+    required: false
+  team_reviewers:
+    # Note that this should be a slug, not a full tag
+    # So a requested review from @freeCodeCamp/dev-team
+    # Should be passed only as 'dev-team'
+    description: 'Requested organization team PR reviewers'
+    required: false

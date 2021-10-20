@@ -1,0 +1,25 @@
+.username,
+.name,
+.bio,
+.location {
+  overflow-wrap: break-word;
+}
+
+.avatar-camper {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-camper .avatar {
+  height: 180px;
+  width: 180px;
+  object-fit: cover;
+}
+
+.avatar-camper div {
+  height: 200px;
+}
+
+.avatar-camper .avatar-container {
+  border-width: 10px;
+}

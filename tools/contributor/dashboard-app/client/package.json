@@ -1,0 +1,43 @@
+{
+  "name": "@freecodecamp/dashboard-client",
+  "version": "0.0.1",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": "^6.14.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "none",
+  "scripts": {
+    "build": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts build",
+    "dev": "develop",
+    "develop": "cross-env REACT_APP_HOST=local SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "eject": "react-scripts eject",
+    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-scripts": "2.1.8",
+    "styled-components": "4.4.1"
+  },
+  "devDependencies": {
+    "cross-env": "5.2.1"
+  }
+}

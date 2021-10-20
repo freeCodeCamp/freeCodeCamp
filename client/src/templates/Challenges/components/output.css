@@ -1,0 +1,15 @@
+.output-text {
+  white-space: pre-wrap;
+  word-break: normal;
+  padding-top: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+pre.output-text code {
+  background-color: var(--quaternary-background);
+  color: var(--tertiary-color);
+  font-size: 90%;
+  padding: 2px 4px;
+}

@@ -1,0 +1,15 @@
+.questions > h4 {
+  font-size: 1.25rem;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-left: 0;
+}

@@ -1,0 +1,57 @@
+:root {
+  --gray00: #ffffff;
+  --gray05: #f5f6f7;
+  --gray10: #dfdfe2;
+  --gray15: #d0d0d5;
+  --gray45: #858591;
+  --gray75: #3b3b4f;
+  --gray80: #2a2a40;
+  --gray85: #1b1b32;
+  --gray90: #0a0a23;
+
+  --purple10: #dbb8ff;
+  --purple50: #9400d3;
+  --purple90: #5a01a7;
+
+  --yellow10: #ffc300;
+  --yellow20: #ffbf00;
+  --yellow50: #f1be32;
+  --yellow90: #4d3800;
+
+  --blue10: rgba(153, 201, 255, 0.3);
+  --blue20: rgba(0, 46, 173, 0.3);
+  --blue30: #99c9ff;
+  --blue50: #198eee;
+  --blue90: #002ead;
+
+  --green10: #acd157;
+  --green90: #00471b;
+
+  --red10: #ffadad;
+  --red20: #f8577c;
+  --red80: #f82153;
+  --red90: #850000;
+}
+
+html,
+div.light {
+  --default-foreground-primary: var(--gray90);
+  --default-foreground-secondary: var(--gray85);
+  --default-foreground-tertiary: var(--gray80);
+  --default-foreground-quaternary: var(--gray75);
+  --default-background-primary: var(--gray00);
+  --default-background-secondary: var(--gray05);
+  --default-background-tertiary: var(--gray10);
+  --default-background-quaternary: var(--gray15);
+}
+
+html.dark,
+div.dark {
+  --default-foreground-primary: var(--gray00);
+  --default-foreground-secondary: var(--gray05);
+  --default-foreground-quaternary: var(--gray15);
+  --default-background-primary: var(--gray90);
+  --default-background-secondary: var(--gray85);
+  --default-background-tertiary: var(--gray80);
+  --default-background-quaternary: var(--gray75);
+}

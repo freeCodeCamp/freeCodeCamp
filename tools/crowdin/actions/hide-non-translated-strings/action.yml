@@ -1,0 +1,5 @@
+name: 'Hide Non-Translated Strings'
+description: "Updates each file's non-translatable string to Hidden"
+runs:
+  using: 'node12'
+  main: './index.js'

@@ -1,0 +1,48 @@
+.notfound-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.notfound-page-wrapper img {
+  width: 380px;
+  margin-bottom: 1rem;
+}
+
+.quote-wrapper {
+  background-color: var(--tertiary-background);
+  padding: 20px 20px 20px 42px;
+  border-width: 0;
+  position: relative;
+  max-width: 980px;
+}
+
+.quote-wrapper .quote {
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 0.6em;
+  text-align: left;
+}
+
+.quote-wrapper span {
+  font-size: 50px;
+  font-weight: 700;
+  color: var(--tertiary-color);
+  font-family: 'Arial', sans-serif;
+  font-style: normal;
+  padding-left: 15px;
+  padding-top: 5px;
+  position: absolute;
+  border-radius: 0;
+  top: 0;
+  left: 0;
+}
+
+.quote-wrapper .author {
+  text-align: right;
+  margin: 0;
+}

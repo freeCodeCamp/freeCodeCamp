@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BlockSaveWrapper /> snapshot 1`] = `
+<div>
+  <div
+    style="padding: 0px 15px;"
+  />
+</div>
+`;

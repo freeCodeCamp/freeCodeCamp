@@ -1,0 +1,111 @@
+.challenge-title-wrap {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.challenge-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 16px;
+  height: fit-content;
+  margin: 20px 0px 15px;
+}
+
+.challenge-title-breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 16px;
+  border: 1px solid var(--quaternary-background);
+  height: 25px;
+  text-align: center;
+}
+
+.breadcrumb-left {
+  text-decoration: none;
+  min-width: 25px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 25px;
+  white-space: nowrap;
+  flex-grow: 1;
+  flex-shrink: 2;
+  background-color: var(--quaternary-background);
+  padding: 0px 3px;
+}
+
+.breadcrumb-center {
+  width: 0;
+  height: 0;
+  border-top: calc(25px / 2) solid transparent;
+  border-bottom: calc(23px / 2) solid transparent;
+  border-left: calc(23px / 2) solid var(--quaternary-background);
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.breadcrumb-right {
+  text-decoration: none;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  max-height: 25px;
+  min-width: 50px;
+  flex-grow: 2;
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0px 3px;
+}
+
+.breadcrumb-rule {
+  margin: 5px -10px;
+}
+
+.breadcrumb-left:hover {
+  text-decoration: underline;
+  background-color: var(--quaternary-background);
+}
+.breadcrumb-right:hover {
+  text-decoration: underline;
+  background-color: var(--secondary-background);
+}
+
+.title-text {
+  text-decoration: none;
+  min-width: 25px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: fit-content;
+  white-space: pre-line;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0px 3px;
+}
+
+.title-translation-cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 16px;
+  height: 25px;
+  text-decoration: none;
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
+  margin-bottom: 10px;
+}
+
+.title-translation-cta:hover,
+.title-translation-cta:focus {
+  text-decoration: none;
+  color: var(--highlight-background);
+  background-color: var(--highlight-color);
+}

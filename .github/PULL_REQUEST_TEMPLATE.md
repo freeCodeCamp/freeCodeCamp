@@ -1,32 +1,16 @@
-<!-- freeCodeCamp Pull Request Template -->
+<!-- Please note that low quality PRs and PRs that do not follow our contributing guidelines will be marked as invalid for Hacktoberfest. -->
 
-<!-- IMPORTANT Please review https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/CONTRIBUTING.md for detailed contributing guidelines -->
-<!-- Help with PRs can be found at https://gitter.im/FreeCodeCamp/Contributors -->
-<!-- Make sure that your PR is not a duplicate -->
+Checklist:
 
-#### Pre-Submission Checklist
-<!-- Go over all points below, and after creating the PR, tick all the checkboxes that apply. -->
-<!-- All points should be verified, otherwise, read the CONTRIBUTING guidelines from above-->
-<!-- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
-- [ ] Your pull request targets the `staging` branch of freeCodeCamp.
-- [ ] Branch starts with either `fix/`, `feature/`, or `translate/` (e.g. `fix/signin-issue`)
-- [ ] You have only one commit (if not, [squash](http://forum.freecodecamp.org/t/how-to-squash-multiple-commits-into-one-with-git/13231) them into one commit).
-- [ ] All new and existing tests pass the command `npm test`. Use `git commit --amend` to amend any fixes.
+<!-- Please follow this checklist and put an x in each of the boxes, like this: [x]. It will ensure that our team takes your pull request seriously. -->
 
-#### Type of Change
-<!-- What type of change does your code introduce? After creating the PR, tick the checkboxes that apply. -->
-- [ ] Small bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds new functionality)
-- [ ] Breaking change (fix or feature that would change existing functionality)
-- [ ] Add new translation (feature adding new translations)
+- [ ] I have read [freeCodeCamp's contribution guidelines](https://contribute.freecodecamp.org).
+- [ ] My pull request has a descriptive title (not a vague title like `Update index.md`)
+- [ ] My pull request targets the `main` branch of freeCodeCamp.
+- [ ] I have tested these changes either locally on my machine, or GitPod.
 
-#### Checklist:
-<!-- Go over all points below, and after creating the PR, tick the checkboxes that apply. -->
-<!-- If you're unsure about any of these, don't hesitate to ask in the Contributors room linked above. We're here to help! -->
-- [ ] Tested changes locally.
-- [ ] Addressed currently open issue (replace XXXXX with an issue no in next line)
+<!--If your pull request closes a GitHub issue, replace the XXXXX below with the issue number.-->
 
 Closes #XXXXX
 
-#### Description
-<!-- Describe your changes in detail -->
+<!-- Feel free to add any additional description of changes below this line -->
