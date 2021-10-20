@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Panel } from '@freecodecamp/react-bootstrap';
 import Prism from 'prismjs';
 import React from 'react';
