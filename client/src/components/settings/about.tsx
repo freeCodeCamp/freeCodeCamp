@@ -157,7 +157,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }));
   };
 
-  handleImageBlur = () => {
+  handlePictureBlur = () => {
     if (this.state.formValues.picture === '') {
       this.setState(state => ({
         isPictureUrlValid: true,
@@ -230,7 +230,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
                 <strong>{t('settings.labels.picture')}</strong>
               </ControlLabel>
               <FormControl
-                onBlur={this.handleImageBlur}
+                onBlur={this.handlePictureBlur}
                 onChange={this.handlePictureChange}
                 required={true}
                 type='url'
