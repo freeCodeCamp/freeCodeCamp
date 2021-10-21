@@ -51,6 +51,7 @@ export function ProjectPreviewModal({
 
   return (
     <Modal
+      data-cy='project-preview-modal'
       dialogClassName='project-preview-modal'
       onHide={() => {
         closeModal();
