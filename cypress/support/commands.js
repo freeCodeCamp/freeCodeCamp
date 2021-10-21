@@ -44,20 +44,30 @@ Cypress.Commands.add('login', () => {
   cy.contains('Welcome back');
 });
 
-Cypress.Commands.add('toggleAll', () => {
-  cy.visit('/settings');
-  // cy.get('input[name="isLocked"]').click();
-  // cy.get('input[name="name"]').click();
-  cy.get('#privacy-settings')
-    .find('.toggle-not-active')
-    .each(element => {
-      return new Cypress.Promise(resolve => {
-        cy.wrap(element).click().should('have.class', 'toggle-active');
-        resolve();
+Cypress.Commands.add(
+  'togglePrivacySettingsToPublicAndAcceptHonestyPolicy',
+  () => {
+    cy.visit('/settings');
+    cy.intercept('PUT', 'http://localhost:3000/update-my-profileui').as(
+      'profileUiUpdated'
+    );
+    cy.get('#privacy-settings').find('[data-cy=isLocked-Public]').click();
+    // check that the other settings are visible before starting to toggle them
+    cy.wait('@profileUiUpdated');
+    cy.contains('My Display Name');
+    cy.get('#privacy-settings')
+      .find('[data-cy$=-Public]')
+      .filter('.toggle-not-active')
+      .each(element => {
+        return new Cypress.Promise(resolve => {
+          cy.wrap(element).click().should('have.class', 'toggle-active');
+          cy.wait('@profileUiUpdated');
+          resolve();
+        });
       });
-    });
-  cy.get('#honesty-policy').find('button').click().wait(300);
-});
+    cy.get('#honesty-policy').find('button').click().wait(300);
+  }
+);
 
 Cypress.Commands.add('resetUsername', () => {
   cy.login();

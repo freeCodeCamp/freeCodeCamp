@@ -45,23 +45,8 @@ describe('A certification,', function () {
       cy.contains('Submit and go to next challenge').click().wait(1000);
     });
     cy.get('.donation-modal').should('be.visible');
-    cy.visit('/settings');
 
-    // set user settings to public to claim a cert
-    cy.get('label:contains(Public)>input').each(el => {
-      if (!/toggle-active/.test(el[0].parentElement.className)) {
-        cy.wrap(el).click({ force: true });
-        cy.wait(1000);
-      }
-    });
-
-    // if honest policy not accepted
-    cy.get('.honesty-policy button').then(btn => {
-      if (btn[0].innerText === 'Agree') {
-        btn[0].click({ force: true });
-        cy.wait(1000);
-      }
-    });
+    cy.togglePrivacySettingsToPublicAndAcceptHonestyPolicy();
 
     // claim certificate
     cy.get('a[href*="developmentuser/responsive-web-design"]').click({

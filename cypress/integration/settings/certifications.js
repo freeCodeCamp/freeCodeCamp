@@ -14,8 +14,8 @@ describe('Settings certifications area', () => {
       });
     });
 
-    it('Should render zero "Show Certification" buttons', () => {
-      cy.contains('Show Certification').should('not.exist');
+    it('Should render zero "Share Certification" buttons', () => {
+      cy.contains('Share Certification').should('not.exist');
     });
 
     it('Should render one "Agree" button', () => {

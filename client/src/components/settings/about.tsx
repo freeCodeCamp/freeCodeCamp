@@ -188,7 +188,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
           <form id='camper-identity' onSubmit={this.handleSubmit}>
             <FormGroup controlId='about-name'>
               <ControlLabel>
-                <strong>{t('settings.labels.name')}</strong>
+                <strong>{t('settings.labels.display-name')}</strong>
               </ControlLabel>
               <FormControl
                 onChange={this.handleNameChange}

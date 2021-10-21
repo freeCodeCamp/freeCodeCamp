@@ -182,7 +182,6 @@ export const stepsToClaimSelector = state => {
   return {
     currentCerts: currentCerts,
     isHonest: user?.isHonest,
-    isShowName: user?.profileUI?.showName,
     isShowCerts: user?.profileUI?.showCerts,
     isShowProfile: !user?.profileUI?.isLocked
   };
