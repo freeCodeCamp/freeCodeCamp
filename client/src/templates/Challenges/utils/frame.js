@@ -3,11 +3,11 @@ import { format } from '../../../utils/format';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
-const mainPreviewId = 'fcc-main-frame';
+export const mainPreviewId = 'fcc-main-frame';
 // the test frame is responsible for running the assert tests
 const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
-const projectPreviewId = 'fcc-project-preview-frame';
+export const projectPreviewId = 'fcc-project-preview-frame';
 
 // base tag here will force relative links
 // within iframe to point to '' instead of
