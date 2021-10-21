@@ -358,7 +358,7 @@ function createCoderoadChallengeCompleted(app) {
 
     // this allows any GH account to host the repo in development or staging
     // .org submissions should always be from repos hosted on the fCC GH org
-    if (!deploymentEnv === 'staging' && !environment === 'development') {
+    if (deploymentEnv !== 'staging' && environment !== 'development') {
       if (tutorialOrg !== 'freeCodeCamp')
         return res.send('Tutorial not hosted on freeCodeCamp GitHub account');
     }
