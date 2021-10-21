@@ -29,7 +29,7 @@ const createStepFile = ({
     stepNum
   });
 
-  fs.writeFileSync(`${projectPath}part-${finalStepNum}.md`, template);
+  fs.writeFileSync(`${projectPath}step-${finalStepNum}.md`, template);
 
   return challengeId;
 };
@@ -69,7 +69,7 @@ const reorderSteps = () => {
     const newStepNum = i + 1;
     const newFileName =
       fileName !== 'final.md'
-        ? `part-${padWithLeadingZeros(newStepNum)}.md`
+        ? `step-${padWithLeadingZeros(newStepNum)}.md`
         : 'final.md';
     return {
       oldFileName: fileName,
@@ -89,8 +89,8 @@ const reorderSteps = () => {
     const frontMatter = matter.read(filePath);
     const challengeID = frontMatter.data.id || ObjectID();
     const title =
-      newFileName === 'final.md' ? 'Final Prototype' : `Part ${newStepNum}`;
-    const dashedName = `part-${newStepNum}`;
+      newFileName === 'final.md' ? 'Final Prototype' : `Step ${newStepNum}`;
+    const dashedName = `step-${newStepNum}`;
     challengeOrder.push(['' + challengeID, title]);
     const newData = {
       ...frontMatter.data,

@@ -21,8 +21,8 @@ describe('getLastStepFileContent helper', () => {
   it('should throw if last step count does not match with numbers of steps', () => {
     mock({
       'mock-project/': {
-        'part-001.md': 'Lorem ipsum...',
-        'part-004.md': 'Lorem ipsum...',
+        'step-001.md': 'Lorem ipsum...',
+        'step-004.md': 'Lorem ipsum...',
         'final.md': 'Lorem ipsum...'
       }
     });
@@ -37,8 +37,8 @@ describe('getLastStepFileContent helper', () => {
   it('should return information if steps count is correct', () => {
     mock({
       'mock-project': {
-        'part-001.md': 'Lorem ipsum...',
-        'part-002.md': 'Lorem ipsum...',
+        'step-001.md': 'Lorem ipsum...',
+        'step-002.md': 'Lorem ipsum...',
         'final.md': 'Lorem ipsum...'
       }
     });
