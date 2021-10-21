@@ -62,21 +62,16 @@ export const sagas = [
 export const createFiles = createAction(
   actionTypes.createFiles,
   challengeFiles =>
-    challengeFiles.reduce((challengeFiles, challengeFile) => {
-      return [
-        ...challengeFiles,
-        {
-          ...createPoly(challengeFile),
-          seed: challengeFile.contents.slice(),
-          editableContents: getLines(
-            challengeFile.contents,
-            challengeFile.editableRegionBoundaries
-          ),
-          seedEditableRegionBoundaries:
-            challengeFile.editableRegionBoundaries.slice()
-        }
-      ];
-    }, [])
+    challengeFiles.map(challengeFile => ({
+      ...createPoly(challengeFile),
+      seed: challengeFile.contents.slice(),
+      editableContents: getLines(
+        challengeFile.contents,
+        challengeFile.editableRegionBoundaries
+      ),
+      seedEditableRegionBoundaries:
+        challengeFile.editableRegionBoundaries.slice()
+    }))
 );
 
 export const createQuestion = createAction(actionTypes.createQuestion);
