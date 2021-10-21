@@ -14,7 +14,7 @@ class ChallengeTitles {
     }
     // reassign titleToCheck if challenge is part of the project
     // based curriculum
-    const isProjectCurriculumChallenge = title.match(/^Part\s*\d+$/);
+    const isProjectCurriculumChallenge = title.match(/^Step\s*\d+$/);
     titleToCheck = isProjectCurriculumChallenge ? pathAndTitle : titleToCheck;
     const isKnown = this.knownTitles.includes(titleToCheck);
     if (isKnown) {

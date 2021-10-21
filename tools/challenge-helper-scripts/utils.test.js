@@ -57,8 +57,8 @@ describe('Challenge utils helper scripts', () => {
     it('should create next step and return its identifier', () => {
       mock({
         'project/': {
-          'part-001.md': 'Lorem ipsum...',
-          'part-002.md': 'Lorem ipsum...'
+          'step-001.md': 'Lorem ipsum...',
+          'step-002.md': 'Lorem ipsum...'
         }
       });
 
@@ -78,9 +78,9 @@ describe('Challenge utils helper scripts', () => {
       const files = glob.sync(`project/*.md`);
 
       expect(files).toEqual([
-        `project/part-001.md`,
-        `project/part-002.md`,
-        `project/part-003.md`
+        `project/step-001.md`,
+        `project/step-002.md`,
+        `project/step-003.md`
       ]);
 
       mock.restore();
@@ -94,9 +94,9 @@ describe('Challenge utils helper scripts', () => {
           'meta.json': 'Lorem ipsum meta content...'
         },
         'project/': {
-          'part-001.md': 'Lorem ipsum 1...',
-          'part-002.md': 'Lorem ipsum 2...',
-          'part-002b.md': 'Lorem ipsum 3...'
+          'step-001.md': 'Lorem ipsum 1...',
+          'step-002.md': 'Lorem ipsum 2...',
+          'step-002b.md': 'Lorem ipsum 3...'
         }
       });
 
@@ -106,9 +106,9 @@ describe('Challenge utils helper scripts', () => {
       const files = glob.sync(`project/*.md`);
 
       expect(files).toEqual([
-        'project/part-001.md',
-        'project/part-002.md',
-        'project/part-003.md'
+        'project/step-001.md',
+        'project/step-002.md',
+        'project/step-003.md'
       ]);
 
       const result = fs.readFileSync('_meta/project/meta.json', 'utf8');
@@ -118,15 +118,15 @@ describe('Challenge utils helper scripts', () => {
   "challengeOrder": [
     [
       "60d35cf3fe32df2ce8e31b03",
-      "Part 1"
+      "Step 1"
     ],
     [
       "60d35cf3fe32df2ce8e31b03",
-      "Part 2"
+      "Step 2"
     ],
     [
       "60d35cf3fe32df2ce8e31b03",
-      "Part 3"
+      "Step 3"
     ]
   ]
 }`;
