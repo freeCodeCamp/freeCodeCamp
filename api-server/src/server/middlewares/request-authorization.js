@@ -26,7 +26,7 @@ const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
 const updateHooksRE = /^\/hooks\/update-paypal$/;
 // note: this would be replaced by webhooks later
 const donateRE = /^\/donate\/charge-stripe$/;
-const submitCoderoadChallengeRE = /^\/coderoad-challenge-completed/;
+const submitCoderoadChallengeRE = /^\/coderoad-challenge-completed$/;
 
 const _pathsAllowedREs = [
   authRE,
