@@ -96,7 +96,7 @@ interface ShowClassicProps {
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
-    projectPreview: PreviewConfig & { isFirstChallengeInBlock: boolean };
+    projectPreview: PreviewConfig & { showProjectPreview: boolean };
   };
   t: TFunction;
   tests: Test[];
@@ -255,13 +255,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       },
       pageContext: {
         challengeMeta,
-        projectPreview: { isFirstChallengeInBlock }
+        projectPreview: { showProjectPreview }
       }
     } = this.props;
     initConsole('');
     createFiles(challengeFiles ?? []);
     initTests(tests);
-    if (isFirstChallengeInBlock) openModal('projectPreview');
+    if (showProjectPreview) openModal('projectPreview');
     updateChallengeMeta({
       ...challengeMeta,
       title,

@@ -101,6 +101,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                 superBlock
                 superOrder
                 template
+                usesMultifileEditor
               }
             }
           }

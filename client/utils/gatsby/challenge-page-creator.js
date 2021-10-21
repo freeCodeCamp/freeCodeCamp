@@ -100,7 +100,7 @@ exports.createChallengePages = function (createPage) {
 };
 
 function getProjectPreviewConfig(challenge, allChallengeEdges) {
-  const { block, challengeOrder } = challenge;
+  const { block, challengeOrder, usesMultifileEditor } = challenge;
 
   const challengesInBlock = allChallengeEdges
     .filter(({ node }) => node.block === block)
@@ -120,7 +120,7 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
   );
 
   return {
-    isFirstChallengeInBlock: challengeOrder === 0,
+    showProjectPreview: challengeOrder === 0 && usesMultifileEditor,
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles,

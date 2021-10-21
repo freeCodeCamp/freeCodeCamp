@@ -240,8 +240,8 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
 // TODO: remove everything about proxyLogger here
 function* previewProjectSolutionSaga({ payload }) {
   if (!payload) return;
-  const { isFirstChallengeInBlock, challengeData } = payload;
-  if (!isFirstChallengeInBlock) return;
+  const { showProjectPreview, challengeData } = payload;
+  if (!showProjectPreview) return;
 
   const logProxy = yield channel();
   const proxyLogger = args => logProxy.put(args);
