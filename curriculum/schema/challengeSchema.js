@@ -90,7 +90,7 @@ const schema = Joi.object()
         crossDomain: Joi.bool()
       })
     ),
-    solutions: Joi.array().items(Joi.array().items(fileJoi)),
+    solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
     superBlock: Joi.string().regex(slugRE),
     superOrder: Joi.number(),
     suborder: Joi.number(),
