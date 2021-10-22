@@ -20,21 +20,20 @@ const legacyFirstChallengeUrls = [
 
 describe('project preview', () => {
   if (Cypress.env('SHOW_UPCOMING_CHANGES') === 'true') {
-    // it('should appear on the first challenges of each practice project', () => {
-    //   practiceProjectUrls.forEach(url => {
-    //     cy.visit(url + 'part-1');
-    //     cy.contains('Complete project demo.');
-    //     cy.get('[data-cy="project-preview-modal"]').should('be.focused');
-    //   });
-    // });
+    it('should appear on the first challenges of each practice project', () => {
+      practiceProjectUrls.forEach(url => {
+        cy.visit(url + 'part-1');
+        cy.contains('Complete project demo.');
+        cy.get('[data-cy="project-preview-modal"]').should('be.focused');
+      });
+    });
 
-    // Tests for the absence of an element are tricky, if, as the case here, the
-    // element is not rendered initially. So, instead, we test for a side effect
-    // of not showing the modal: an editor is allowed to get focus.
+    // Tests for the absence of an element are tricky, if, as is the case here,
+    // the element is not rendered straight away. So, instead, we test for a
+    // side effect of not showing the modal: an editor is allowed to get focus.
     it('should NOT appear on the second challenges of each practice project', () => {
       practiceProjectUrls.forEach(url => {
         cy.visit(url + 'part-2');
-        // if no modals are showing, then the editor should have focus:
         cy.focused()
           .parents()
           .should('have.class', 'react-monaco-editor-container');
