@@ -367,10 +367,9 @@ function createCoderoadChallengeCompleted(app) {
     );
 
     // validate tutorial name is in codeRoadChallenges object
-    const tutorialInfo = codeRoadChallenges.find(tutorial => {
-      const re = new RegExp(`${tutorialRepoName}`);
-      if (re.test(tutorial.url)) return tutorial;
-    });
+    const tutorialInfo = codeRoadChallenges.find(tutorial =>
+      tutorial.url?.includes(tutorialRepoName)
+    );
 
     if (!tutorialInfo) return res.send('Tutorial name is not valid');
 
