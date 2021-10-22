@@ -3,7 +3,7 @@ const path = require('path');
 const { getChallengeSeeds } = require('../utils');
 const { getProjectPath } = require('./get-project-path');
 
-// Looks up the last file found with format `part-###.md` in a directory and
+// Looks up the last file found with format `step-###.md` in a directory and
 // returns associated information to it. At the same time validates that the
 // number of files match the names used to name these.
 function getLastStepFileContent() {

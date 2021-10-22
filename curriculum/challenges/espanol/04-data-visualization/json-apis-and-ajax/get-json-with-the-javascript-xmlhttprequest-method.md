@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be3
-title: Get JSON with the JavaScript XMLHttpRequest Method
+title: Obtén JSON con el método XMLHttpRequest JavaScript
 challengeType: 6
 forumTopicId: 301502
 dashedName: get-json-with-the-javascript-xmlhttprequest-method
@@ -8,19 +8,19 @@ dashedName: get-json-with-the-javascript-xmlhttprequest-method
 
 # --description--
 
-You can also request data from an external source. This is where APIs come into play.
+También puedes solicitar datos de una fuente externa. Aquí es donde entran en juego las API.
 
-Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another. You'll learn how to update HTML with the data we get from APIs using a technology called AJAX.
+Recuerda que las APIs - o Interfaces de Programación de Aplicaciones - son herramientas que las computadoras utilizan para comunicarse entre sí. Aprenderás cómo actualizar HTML con los datos que obtenemos de las APIs usando una tecnología llamada AJAX.
 
-Most web APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation.
+La mayoría de las API web transfieren datos en un formato llamado JSON. JSON significa Notación de Objetos JavaScript.
 
-JSON syntax looks very similar to JavaScript object literal notation. JSON has object properties and their current values, sandwiched between a `{` and a `}`.
+La sintaxis JSON se ve muy similar a un objeto de JavaScript. JSON tiene propiedades de objetos y sus valores actuales, enrollados entre un `{` y un `}`.
 
-These properties and their values are often referred to as "key-value pairs".
+Estas propiedades y sus valores a menudo son referidos como "pares clave-valor".
 
-However, JSON transmitted by APIs are sent as `bytes`, and your application receives it as a `string`. These can be converted into JavaScript objects, but they are not JavaScript objects by default. The `JSON.parse` method parses the string and constructs the JavaScript object described by it.
+Sin embargo, JSON transmitido por APIs se envía como `bytes`, y tu aplicación lo recibe como `string`. Estos pueden ser convertidos en objetos de JavaScript, pero no son objetos de JavaScript por defecto. El método `JSON.parse` analiza la cadena y construye el objeto JavaScript descrito por ella.
 
-You can request the JSON from freeCodeCamp's Cat Photo API. Here's the code you can put in your click event to do this:
+Tú puedes solicitar el JSON desde la API de foto del gato de freeCodeCamp. Este es el código que puedes poner en tu evento de clic para hacer esto:
 
 ```js
 const req = new XMLHttpRequest();
@@ -32,21 +32,21 @@ req.onload = function(){
 };
 ```
 
-Here's a review of what each piece is doing. The JavaScript `XMLHttpRequest` object has a number of properties and methods that are used to transfer data. First, an instance of the `XMLHttpRequest` object is created and saved in the `req` variable. Next, the `open` method initializes a request - this example is requesting data from an API, therefore is a `GET` request. The second argument for `open` is the URL of the API you are requesting data from. The third argument is a Boolean value where `true` makes it an asynchronous request. The `send` method sends the request. Finally, the `onload` event handler parses the returned data and applies the `JSON.stringify` method to convert the JavaScript object into a string. This string is then inserted as the message text.
+Aquí hay una revisión de lo que cada pieza está haciendo. El objeto `XMLHttpRequest` de JavaScript tiene un número de propiedades y métodos que se utilizan para transferir datos. Primero, se crea y guarda una instancia del objeto `XMLHttpRequest` en la variable `req`. A continuación, el método `open` inicializa una solicitud - este ejemplo está solicitando datos de una API, por lo tanto es una solicitud `GET`. El segundo argumento para `open` es la URL de la API de la que estás solicitando datos. El tercer argumento es un valor booleano donde `true` lo hace una solicitud asincrónica. El método `send` envía la solicitud. Finalmente, el manejador de eventos `onload` analiza los datos devueltos y aplica `JSON.stringify` para convertir el objeto de JavaScript en una cadena. Esta cadena es luego insertada como el texto del mensaje.
 
 # --instructions--
 
-Update the code to create and send a `GET` request to the freeCodeCamp Cat Photo API. Then click the `Get Message` button. Your AJAX function will replace the `The message will go here` text with the raw JSON output from the API.
+Actualiza el código para crear y enviar una solicitud `GET` a la API de foto del gato de freeCodeCamp. Luego haz clic en el botón `Get Message`. Tu función AJAX reemplazará el texto `The message will go here` con la salida JSON de la API.
 
 # --hints--
 
-Your code should create a new `XMLHttpRequest`.
+Tu código debe crear un nuevo `XMLHttpRequest`.
 
 ```js
 assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
 ```
 
-Your code should use the `open` method to initialize a `GET` request to the freeCodeCamp Cat Photo API.
+Tu código debe utilizar el método `open` para inicializar una solicitud `GET` a la API de foto del gato de freeCodeCamp.
 
 ```js
 assert(
@@ -56,13 +56,13 @@ assert(
 );
 ```
 
-Your code should use the `send` method to send the request.
+Tu código debe utilizar el método `send` para enviar la solicitud.
 
 ```js
 assert(code.match(/\.send\(\s*\)/g));
 ```
 
-Your code should have an `onload` event handler set to a function.
+Tu código debe tener un manejador de eventos `onload` establecido a una función.
 
 ```js
 assert(
@@ -70,13 +70,13 @@ assert(
 );
 ```
 
-Your code should use the `JSON.parse` method to parse the `responseText`.
+Tu código debe utilizar el método `JSON.parse` para analizar el `responseText`.
 
 ```js
 assert(code.match(/JSON\s*\.parse\(\s*.*\.responseText\s*\)/g));
 ```
 
-Your code should get the element with class `message` and change its inner HTML to the string of JSON data.
+Tu código debe obtener el elemento con id `message` y cambiar su HTML interno a la cadena de datos JSON.
 
 ```js
 assert(

@@ -58,9 +58,9 @@ function getStepTemplate({
   return (
     `---
 id: ${challengeId}
-title: Part ${stepNum}
+title: Step ${stepNum}
 challengeType: 0
-dashedName: part-${stepNum}
+dashedName: step-${stepNum}
 ---
 
 # --description--

@@ -24,7 +24,7 @@ if (!allStepsExist(existingSteps, [start, end])) {
 }
 
 const challengeSeeds = getChallengeSeeds(
-  `${projectPath}part-${padWithLeadingZeros(start)}.md`
+  `${projectPath}step-${padWithLeadingZeros(start)}.md`
 );
 createStepFile({
   stepNum: start,
