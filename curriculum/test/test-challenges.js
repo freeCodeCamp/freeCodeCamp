@@ -451,22 +451,26 @@ ${inspect(commentMap)}
             // This is expected to happen in the project based curriculum.
 
             const nextChallenge = challenges[id + 1];
-            // TODO: can this be dried out, ideally by removing the redux
-            // handler?
+
             if (nextChallenge) {
               const solutionFiles = cloneDeep(nextChallenge.challengeFiles);
-              solutionFiles.forEach(challengeFile => {
-                challengeFile.editableContents = getLines(
-                  challengeFile.contents,
-                  challenge.challengeFiles.find(
-                    x => x.fileKey === challengeFile.fileKey
-                  ).editableRegionBoundaries
-                );
-              });
-              solutions = [solutionFiles];
+              const solutionFilesWithEditableContents = solutionFiles.map(
+                file => ({
+                  ...file,
+                  editableContents: getLines(
+                    file.contents,
+                    file.editableRegionBoundaries
+                  )
+                })
+              );
+              // Since there is only one seed, there can only be one solution,
+              // but the tests assume solutions is an array.
+              solutions = [solutionFilesWithEditableContents];
               solutionFromNext = true;
             } else {
-              throw Error('solution omitted');
+              throw Error(
+                `solution omitted for ${challenge.superBlock} ${challenge.block} ${challenge.title}`
+              );
             }
           }
 
@@ -519,15 +523,11 @@ async function createTestRunner(
   solutionFromNext
 ) {
   const { required = [], template, removeComments } = challenge;
-  // we should avoid modifying challenge, as it gets reused:
-  const challengeFiles = cloneDeep(challenge.challengeFiles);
-  solutionFiles.forEach(solutionFile => {
-    const challengeFile = challengeFiles.find(
-      x => x.fileKey === solutionFile.fileKey
-    );
-    challengeFile.contents = solutionFile.contents;
-    challengeFile.editableContents = solutionFile.editableContents;
-  });
+
+  const challengeFiles = replaceChallengeFilesContentsWithSolutions(
+    challenge.challengeFiles,
+    solutionFiles
+  );
 
   const { build, sources, loadEnzyme } = await buildChallenge({
     challengeFiles,
@@ -565,6 +565,25 @@ async function createTestRunner(
       throw err;
     }
   };
+}
+
+function replaceChallengeFilesContentsWithSolutions(
+  challengeFiles,
+  solutionFiles
+) {
+  return challengeFiles.map(file => {
+    const matchingSolutionFile = solutionFiles.find(
+      ({ ext }) => ext === file.ext
+    );
+    if (!matchingSolutionFile) {
+      throw Error(`No matching solution file found`);
+    }
+    return {
+      ...file,
+      contents: matchingSolutionFile.contents,
+      editableContents: matchingSolutionFile.editableContents
+    };
+  });
 }
 
 async function getContextEvaluator(build, sources, code, loadEnzyme) {
