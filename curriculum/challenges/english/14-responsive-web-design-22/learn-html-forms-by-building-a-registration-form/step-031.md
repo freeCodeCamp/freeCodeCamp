@@ -31,10 +31,10 @@ You should give the second `option` element the text `freeCodeCamp News`.
 assert.equal(document.querySelectorAll('fieldset:nth-child(3) > label:nth-child(3) option')?.[1]?.textContent, 'freeCodeCamp News');
 ```
 
-You should give the third `option` element the text `freeCodeCamp YouTube`.
+You should give the third `option` element the text `freeCodeCamp YouTube Channel`.
 
 ```js
-assert.equal(document.querySelectorAll('fieldset:nth-child(3) > label:nth-child(3) option')?.[2]?.textContent, 'freeCodeCamp YouTube');
+assert.equal(document.querySelectorAll('fieldset:nth-child(3) > label:nth-child(3) option')?.[2]?.textContent, 'freeCodeCamp YouTube Channel');
 ```
 
 You should give the fourth `option` element the text `freeCodeCamp Forum`.

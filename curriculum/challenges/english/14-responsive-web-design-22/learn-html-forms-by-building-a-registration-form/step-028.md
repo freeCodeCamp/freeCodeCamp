@@ -24,7 +24,7 @@ assert.exists(document.querySelector('fieldset:nth-child(3) > label + label'));
 You should give the `label` the text `Input your age (years): `.
 
 ```js
-assert.equal(document.querySelector('fieldset:nth-child(3) > label:nth-child(2)')?.textContent, 'Input your age (years): ');
+assert.equal(document.querySelector('fieldset:nth-child(3) > label:nth-child(2)')?.textContent?.trim(), 'Input your age (years):');
 ```
 
 You should give the `label` an `input` with `type` of `number`.
