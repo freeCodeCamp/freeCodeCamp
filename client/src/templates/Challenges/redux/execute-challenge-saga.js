@@ -21,6 +21,7 @@ import {
   getTestRunner,
   challengeHasPreview,
   updatePreview,
+  updateProjectPreview,
   isJavaScriptChallenge,
   isLoopProtected
 } from '../utils/build';
@@ -236,38 +237,21 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   }
 }
 
-// TODO: DRY this and previewChallengeSaga
-// TODO: remove everything about proxyLogger here
 function* previewProjectSolutionSaga({ payload }) {
   if (!payload) return;
   const { showProjectPreview, challengeData } = payload;
   if (!showProjectPreview) return;
 
-  const logProxy = yield channel();
-  const proxyLogger = args => logProxy.put(args);
-
   try {
-    yield fork(takeEveryConsole, logProxy);
     if (canBuildChallenge(challengeData)) {
-      const challengeMeta = yield select(challengeMetaSelector);
-      const protect = isLoopProtected(challengeMeta);
-      const buildData = yield buildChallengeData(challengeData, {
-        preview: true,
-        protect
-      });
+      const buildData = yield buildChallengeData(challengeData);
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
-        yield call(updatePreview, buildData, document, proxyLogger, true);
+        yield call(updateProjectPreview, buildData, document);
       }
     }
   } catch (err) {
-    if (err === 'timeout') {
-      // TODO: translate the error
-      // eslint-disable-next-line no-ex-assign
-      err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
-    }
     console.log(err);
-    yield put(updateConsole(escape(err)));
   }
 }
 

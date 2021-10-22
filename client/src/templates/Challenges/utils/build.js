@@ -139,7 +139,7 @@ function getJSTestRunner({ build, sources }, { proxyLogger, removeComments }) {
 
 async function getDOMTestRunner(buildData, { proxyLogger }, document) {
   await new Promise(resolve =>
-    createTestFramer(document, resolve, proxyLogger)(buildData)
+    createTestFramer(document, proxyLogger, resolve)(buildData)
   );
   return (testString, testTimeout) =>
     runTestInTestFrame(document, testString, testTimeout);
@@ -198,29 +198,23 @@ export function buildBackendChallenge({ url }) {
   };
 }
 
-// TODO: use fewer arguments (and no boolean ones!)
-export async function updatePreview(
-  buildData,
-  document,
-  proxyLogger,
-  previewProjectSolution
-) {
-  const { challengeType } = buildData;
-
-  // TODO: no need to await here, nothing is waiting for the preview to be
-  // visible
-  if (challengeType === challengeTypes.html) {
-    if (previewProjectSolution) {
-      await new Promise(resolve =>
-        createProjectPreviewFramer(document, resolve, proxyLogger)(buildData)
-      );
-    } else {
-      await new Promise(resolve =>
-        createMainPreviewFramer(document, resolve, proxyLogger)(buildData)
-      );
-    }
+export function updatePreview(buildData, document, proxyLogger) {
+  if (buildData.challengeType === challengeTypes.html) {
+    createMainPreviewFramer(document, proxyLogger)(buildData);
   } else {
-    throw new Error(`Cannot show preview for challenge type ${challengeType}`);
+    throw new Error(
+      `Cannot show preview for challenge type ${buildData.challengeType}`
+    );
+  }
+}
+
+export function updateProjectPreview(buildData, document) {
+  if (buildData.challengeType === challengeTypes.html) {
+    createProjectPreviewFramer(document)(buildData);
+  } else {
+    throw new Error(
+      `Cannot show preview for challenge type ${buildData.challengeType}`
+    );
   }
 }
 

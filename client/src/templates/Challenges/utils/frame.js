@@ -91,11 +91,13 @@ const mountFrame =
   };
 
 const buildProxyConsole = proxyLogger => ctx => {
-  const oldLog = ctx.window.console.log.bind(ctx.window.console);
-  ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args.map(arg => format(arg)).join(' '));
-    return oldLog(...args);
-  };
+  if (proxyLogger) {
+    const oldLog = ctx.window.console.log.bind(ctx.window.console);
+    ctx.window.console.log = function proxyConsole(...args) {
+      proxyLogger(args.map(arg => format(arg)).join(' '));
+      return oldLog(...args);
+    };
+  }
   return ctx;
 };
 
@@ -116,7 +118,7 @@ const initTestFrame = frameReady => ctx => {
   return ctx;
 };
 
-const initMainFrame = (frameReady, proxyLogger) => ctx => {
+const initMainFrame = (_, proxyLogger) => ctx => {
   waitForFrame(ctx).then(() => {
     // Overwriting the onerror added by createHeader to catch any errors thrown
     // after the frame is ready. It has to be overwritten, as proxyLogger cannot
@@ -133,15 +135,11 @@ const initMainFrame = (frameReady, proxyLogger) => ctx => {
       // an error from a cross origin script just appears as 'Script error.'
       return false;
     };
-    frameReady();
   });
   return ctx;
 };
 
-const initPreviewFrame = frameReady => ctx => {
-  waitForFrame(ctx).then(() => frameReady());
-  return ctx;
-};
+const initPreviewFrame = () => ctx => ctx;
 
 const waitForFrame = ctx => {
   return new Promise(resolve => {
@@ -165,22 +163,16 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainPreviewFramer = (document, frameReady, proxyLogger) =>
-  createFramer(document, frameReady, proxyLogger, mainPreviewId, initMainFrame);
+export const createMainPreviewFramer = (document, proxyLogger) =>
+  createFramer(document, mainPreviewId, initMainFrame, proxyLogger);
 
-export const createProjectPreviewFramer = (document, frameReady, proxyLogger) =>
-  createFramer(
-    document,
-    frameReady,
-    proxyLogger,
-    projectPreviewId,
-    initPreviewFrame
-  );
+export const createProjectPreviewFramer = document =>
+  createFramer(document, projectPreviewId, initPreviewFrame);
 
-export const createTestFramer = (document, frameReady, proxyLogger) =>
-  createFramer(document, frameReady, proxyLogger, testId, initTestFrame);
+export const createTestFramer = (document, proxyLogger, frameReady) =>
+  createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
 
-const createFramer = (document, frameReady, proxyLogger, id, init) =>
+const createFramer = (document, id, init, proxyLogger, frameReady) =>
   flow(
     createFrame(document, id),
     mountFrame(document, id),
