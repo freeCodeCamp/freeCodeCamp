@@ -14,7 +14,6 @@ import isURL from 'validator/lib/isURL';
 
 import { environment, deploymentEnv } from '../../../../config/env.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
-import { coderoadTutorials } from '../utils/coderoad-tutorials';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUserSend } from '../utils/middleware';
 import {
@@ -363,10 +362,15 @@ function createCoderoadChallengeCompleted(app) {
         return res.send('Tutorial not hosted on freeCodeCamp GitHub account');
     }
 
-    // validate tutorial name is in coderoadTutorials object
-    const tutorialInfo = coderoadTutorials.find(
-      tutorial => tutorial.repoName === tutorialRepoName
+    const codeRoadChallenges = getChallenges().filter(
+      challenge => challenge.challengeType === 12
     );
+
+    // validate tutorial name is in codeRoadChallenges object
+    const tutorialInfo = codeRoadChallenges.find(tutorial => {
+      const re = new RegExp(`${tutorialRepoName}`);
+      if (re.test(tutorial.url)) return tutorial;
+    });
 
     if (!tutorialInfo) return res.send('Tutorial name is not valid');
 
