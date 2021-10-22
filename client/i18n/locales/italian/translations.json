@@ -16,8 +16,8 @@
     "save-progress": "Salva l'avanzamento",
     "accepted-honesty": "Hai accettato la nostra Politica di Onestà Accademica.",
     "agree": "Accetta",
-    "save-portfolio": "Salva questo elemento del portfolio",
-    "remove-portfolio": "Rimuovi questo elemento del portfolio",
+    "save-portfolio": "Salva questo elemento in portfolio",
+    "remove-portfolio": "Rimuovi questo elemento dal portfolio",
     "add-portfolio": "Aggiungi un nuovo elemento nel portfolio",
     "download-data": "Scarica i tuoi dati",
     "public": "Pubblico",
@@ -214,7 +214,7 @@
     "mission-statement": "La nostra missione: aiutare le persone a imparare a programmare gratuitamente. Lo facciamo creando migliaia di video, articoli e lezioni di programmazione interattive - tutti liberamente disponibili al pubblico. Abbiamo anche migliaia di gruppi di studio freeCodeCamp in tutto il mondo.",
     "donation-initiatives": "Le donazioni a freeCodeCamp vanno alle nostre iniziative educative e aiutano a pagare i server, i servizi e il personale.",
     "donate-text": "Puoi",
-    "donate-link": "fare una donazione deducibile dalle tasse qui",
+    "donate-link": "Fare una donazione deducibile dalle tasse qui",
     "trending-guides": "Guide Di Tendenza",
     "our-nonprofit": "Il nostro nonprofit",
     "links": {
@@ -567,7 +567,7 @@
     }
   },
   "certification-card": {
-    "title": "Richiedi la tua certificazione",
+    "title": "Richiedi la tua certificazione", 
     "intro": "Completa i seguenti passaggi per richiedere e visualizzare il tuo {{i18nCertText}}",
     "complete-project": "Completa i progetti {{i18nCertText}}",
     "accept-honesty": "Accetta la nostra politica di onestà accademica",
@@ -591,6 +591,6 @@
     "too-long-three": "Copia/incolla tutto il codice mostrato nell'editor della sfida da dove ti sei appena collegato.",
     "add-code-one": "Sostituisci queste due frasi con il codice copiato.",
     "add-code-two": "Si prega di lasciare la linea ``` sopra e la linea ``` sotto,",
-    "add-code-three": "perché consentono al codice di disporsi correttamente nel post."
+    "add-code-three": "Perché consentono al codice di disporsi correttamente nel post."
   }
 }
