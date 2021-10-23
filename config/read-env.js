@@ -4,12 +4,16 @@ const envPath = path.resolve(__dirname, '../.env');
 const { error } = require('dotenv').config({ path: envPath });
 
 if (error) {
-  if (process.env.FREECODECAMP_NODE_ENV === 'development') {
-    console.warn('.env not found, please copy sample.env to .env');
-  } else {
-    console.warn(`.env not found. If env vars are not being set another way,
-this could be a problem.`);
-  }
+  console.warn(`
+  ----------------------------------------------------
+  Warning: .env file not found.
+  ----------------------------------------------------
+  Please copy sample.env to .env
+
+  You can ignore this warning if using a different way
+  to setup this environment.
+  ----------------------------------------------------
+  `);
 }
 
 const {
