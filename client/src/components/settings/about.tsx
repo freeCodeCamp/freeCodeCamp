@@ -41,8 +41,6 @@ type AboutState = {
 };
 
 class AboutSettings extends Component<AboutProps, AboutState> {
-  DEFAULT_PICTURE =
-    'https://example.com/fcc01e9a350-6a41-4dbe-bb72-f43ecd26e207.png';
   validationImage: HTMLImageElement;
   static displayName: string;
   constructor(props: AboutProps) {
@@ -157,18 +155,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }));
   };
 
-  handlePictureBlur = () => {
-    if (this.state.formValues.picture === '') {
-      this.setState(state => ({
-        isPictureUrlValid: true,
-        formValues: {
-          ...state.formValues,
-          picture: this.DEFAULT_PICTURE
-        }
-      }));
-    }
-  };
-
   showImageValidationWarning = () => {
     const { t } = this.props;
     if (this.state.isPictureUrlValid === false) {
@@ -230,9 +216,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
                 <strong>{t('settings.labels.picture')}</strong>
               </ControlLabel>
               <FormControl
-                onBlur={this.handlePictureBlur}
                 onChange={this.handlePictureChange}
-                required={true}
                 type='url'
                 value={picture}
               />
