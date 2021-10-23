@@ -93,14 +93,14 @@
         ]
       },
       "registration-form": {
-        "title": "Registration Form",
+        "title": "Formulario de registro",
         "intro": [
           "",
           ""
         ]
       },
       "accessibility-quiz": {
-        "title": "Accessibility Quiz",
+        "title": "Prueba de accesibilidad",
         "intro": [
           "",
           ""
@@ -334,15 +334,15 @@
   "relational-databases": {
     "title": "Bases de Datos Relacionales",
     "intro": [
-      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects."
+      "Para estos cursos, utilizarás herramientas y software de desarrollador reales, incluyendo VS Code, PostgreSQL y la línea de comandos de Linux / Unix para completar tutoriales interactivos y crear proyectos."
     ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Aprender Bases de Datos Relacionales",
         "intro": [
-          "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
-          "Next, you will learn how to create and work with relational databases using PostgreSQL, a database management system, and SQL, the language of these databases.",
-          "Finally, you will learn Git, the version control system, and GitHub, a code repository hosting service - two essential tools of every developer."
+          "Estos cursos comienzan con comandos básicos de Bash. Usando el terminal, aprenderás todo, desde navegar y manipular un sistema de archivos, crear scripts en Bash, hasta el uso avanzado.",
+          "A continuación, aprenderás como crear y trabajar con bases de datos relacionales utilizando PostgreSQL, un sistema de administración de bases de datos, y SQL, el lenguaje de estas bases de datos.",
+          "Finalmente, aprenderás Git, el sistema de control de versiones, y GitHub, un servicio de alojamiento de repositorios de código, dos herramientas esenciales de todo desarrollador."
         ]
       }
     }
