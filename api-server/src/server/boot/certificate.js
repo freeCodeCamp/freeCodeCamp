@@ -64,6 +64,7 @@ export function getFallbackFullStackDate(completedChallenges, completedDate) {
     certTypeIdMap[certTypes.frontEndDevLibsId],
     certTypeIdMap[certTypes.dataVis],
     certTypeIdMap[certTypes.dataVis2018],
+    oldDataVizId,
     certTypeIdMap[certTypes.apisMicroservicesId],
     certTypeIdMap[certTypes.legacyInfosecQaId]
   ];
