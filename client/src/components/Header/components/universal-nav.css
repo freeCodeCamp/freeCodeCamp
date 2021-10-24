@@ -75,11 +75,11 @@
 }
 
 .universal-nav-right .theme-mode-changer.default::after {
-  left: 5px;
+  right: 5px;
 }
 
 .universal-nav-right .theme-mode-changer.night::after {
-  right: 5px;
+  left: 5px;
 }
 
 #universal-nav-logo {
@@ -407,7 +407,17 @@
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 400px) {
+  .universal-nav-right .theme-mode-changer.default svg:last-child,
+  .universal-nav-right .theme-mode-changer.night svg:first-child,
+  .universal-nav-right .theme-mode-changer::after {
+    display: none;
+  }
+  .universal-nav-right .theme-mode-changer svg {
+    margin: 0;
+  }
+}
+@media (max-width: 375px) {
   #universal-nav-logo {
     max-width: none;
     left: -170px;
