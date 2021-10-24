@@ -189,7 +189,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           {t('footer.language')}
         </div>
 
-        <div className='nav-link' key='language-dropdown'>
+        <div className='nav-link dropdown-nav-link' key='language-dropdown'>
           <select
             className='nav-link-lang-dropdown'
             onChange={this.handleLanguageChange}
