@@ -5,12 +5,16 @@
 // @ts-nocheck
 import Loadable from '@loadable/component';
 import React, { Ref } from 'react';
+import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
 import MenuButton from './menu-button';
 import NavLinks from './nav-links';
 import NavLogo from './nav-logo';
 import './universal-nav.css';
+import { updateUserFlag } from '../../../redux/settings';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
@@ -23,11 +27,18 @@ export interface UniversalNavProps {
   menuButtonRef?: Ref<HTMLButtonElement> | undefined;
   searchBarRef?: unknown;
   toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;
 }
+
+const mapDispatchToProps = {
+  toggleNightMode: (theme: unknown) => updateUserFlag({ theme })
+};
+
 export const UniversalNav = ({
   displayMenu,
   toggleDisplayMenu,
+  toggleNightMode,
   menuButtonRef,
   searchBarRef,
   user,
@@ -41,6 +52,10 @@ export const UniversalNav = ({
     ) : (
       <SearchBar innerRef={searchBarRef} />
     );
+
+  function toggleTheme(currentTheme = 'default', toggleNightMode: any) {
+    toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
+  }
 
   return (
     <nav
@@ -61,6 +76,13 @@ export const UniversalNav = ({
         </Link>
       </div>
       <div className='universal-nav-right main-nav'>
+        <div
+          className={`theme-mode-changer ${user.theme}`}
+          onClick={() => toggleTheme(String(user.theme), toggleNightMode)}
+        >
+          <FontAwesomeIcon icon={faSun} />
+          <FontAwesomeIcon icon={faMoon} />
+        </div>
         {pending ? (
           <div className='nav-skeleton'>
             <SkeletonSprite />
@@ -86,4 +108,4 @@ export const UniversalNav = ({
 };
 
 UniversalNav.displayName = 'UniversalNav';
-export default UniversalNav;
+export default connect(null, mapDispatchToProps)(UniversalNav);

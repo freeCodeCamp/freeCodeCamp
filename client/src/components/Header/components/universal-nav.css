@@ -51,6 +51,37 @@
   height: var(--header-height);
 }
 
+.universal-nav-right .theme-mode-changer {
+  border: 1px solid white;
+  border-radius: 14px;
+  margin: 0 10px;
+  position: relative;
+  cursor: pointer;
+  padding: 2px 5px;
+  height: 28px;
+}
+
+.universal-nav-right .theme-mode-changer svg {
+  margin: 2px;
+}
+
+.universal-nav-right .theme-mode-changer::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: white;
+}
+
+.universal-nav-right .theme-mode-changer.default::after {
+  left: 5px;
+}
+
+.universal-nav-right .theme-mode-changer.night::after {
+  right: 5px;
+}
+
 #universal-nav-logo {
   flex-shrink: 0;
   display: block;

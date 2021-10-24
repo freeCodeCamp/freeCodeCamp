@@ -9,12 +9,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 // @ts-nocheck
-import {
-  faCheckSquare,
-  faHeart,
-  faSquare,
-  faExternalLinkAlt
-} from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component, Fragment } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
@@ -25,7 +20,6 @@ import {
   langDisplayNames
 } from '../../../../../config/i18n/all-langs';
 import { hardGoTo as navigate } from '../../../redux';
-import { updateUserFlag } from '../../../redux/settings';
 import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
 
@@ -39,14 +33,12 @@ export interface NavLinksProps {
   i18n: Object;
   t: TFunction;
   toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement>;
-  toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;
   navigate?: (location: string) => void;
 }
 
 const mapDispatchToProps = {
-  navigate,
-  toggleNightMode: (theme: unknown) => updateUserFlag({ theme })
+  navigate
 };
 
 export class NavLinks extends Component<NavLinksProps, {}> {
@@ -55,10 +47,6 @@ export class NavLinks extends Component<NavLinksProps, {}> {
   constructor(props: NavLinksProps) {
     super(props);
     this.handleLanguageChange = this.handleLanguageChange.bind(this);
-  }
-
-  toggleTheme(currentTheme = 'default', toggleNightMode: any) {
-    toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
   }
 
   handleLanguageChange = (
@@ -80,8 +68,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
       displayMenu,
       fetchState,
       t,
-      toggleNightMode,
-      user: { isDonating = false, username, theme }
+      user: { isDonating = false, username }
     }: NavLinksProps = this.props;
 
     const { pending } = fetchState;
@@ -164,27 +151,6 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
         <hr className='nav-line' />
-        <button
-          className={
-            'nav-link nav-link-flex' + (!username ? ' nav-link-header' : '')
-          }
-          disabled={!username}
-          key='theme'
-          onClick={() => this.toggleTheme(String(theme), toggleNightMode)}
-        >
-          {username ? (
-            <>
-              <span>{t('settings.labels.night-mode')}</span>
-              {theme === 'night' ? (
-                <FontAwesomeIcon icon={faCheckSquare} />
-              ) : (
-                <FontAwesomeIcon icon={faSquare} />
-              )}
-            </>
-          ) : (
-            <span className='nav-link-dull'>{t('misc.change-theme')}</span>
-          )}
-        </button>
         <div className='nav-link nav-link-header' key='lang-header'>
           {t('footer.language')}
         </div>
