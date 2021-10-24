@@ -1,6 +1,6 @@
 ---
 id: 587d7fb5367417b2b2512c04
-title: Remove a Package from Your Dependencies
+title: Elimina un paquete de tus dependencias
 challengeType: 2
 forumTopicId: 301530
 dashedName: remove-a-package-from-your-dependencies
@@ -8,21 +8,21 @@ dashedName: remove-a-package-from-your-dependencies
 
 # --description--
 
-You have now tested a few ways you can manage dependencies of your project by using the package.json's dependencies section. You have also included external packages by adding them to the file and even told npm what types of versions you want, by using special characters such as the tilde or the caret.
+Ahora has probado algunas maneras en que puedes gestionar las dependencias de tu proyecto usando la sección de dependencias de package.json. También has incluido paquetes externos agregándolos al archivo e incluso le has dicho a npm los tipos de versiones que deseas, usando caracteres especiales como la tilde o el caret.
 
-But what if you want to remove an external package that you no longer need? You might already have guessed it, just remove the corresponding key-value pair for that package from your dependencies.
+Pero, ¿Qué pasa si deseas eliminar un paquete externo que ya no necesitas? Puede que ya lo hayas adivinado, simplemente elimina el par clave-valor correspondiente a ese paquete de tus dependencias.
 
-This same method applies to removing other fields in your package.json as well
+Este mismo método se aplica para eliminar otros campos de tu package.json
 
 # --instructions--
 
-Remove the moment package from your dependencies.
+Elimina el paquete moment de tus dependencias.
 
-**Note:** Make sure you have the right amount of commas after removing it.
+**Nota:** Asegúrate de que tienes la cantidad correcta de comas después de eliminarlo.
 
 # --hints--
 
-"dependencies" should not include "moment"
+Las "dependencies" no deben incluir "moment"
 
 ```js
 (getUserInput) =>
