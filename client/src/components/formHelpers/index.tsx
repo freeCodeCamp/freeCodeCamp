@@ -33,11 +33,11 @@ export type ValidatedValues = {
 };
 
 export function formatUrlValues(
-  values: URLValuesType,
+  values: URLValues,
   options: FormOptions
-): validatedValuesType {
+): ValidatedValues {
   const { isEditorLinkAllowed, isLocalLinkAllowed, types } = options;
-  const validatedValues: validatedValuesType = {
+  const validatedValues: ValidatedValues = {
     values: {},
     errors: [],
     invalidValues: []

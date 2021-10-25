@@ -55,7 +55,7 @@ type SuperBlockPropType = {
   location: WindowLocation<{ breadcrumbBlockClick: string }>;
   resetExpansion: () => void;
   t: TFunction;
-  toggleBlock: (arg0: boolean) => void;
+  toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
   user: UserType;
 };
@@ -110,7 +110,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockPropType) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getChosenBlock = (): string | unknown => {
+  const getChosenBlock = (): string => {
     const {
       data: {
         allChallengeNode: { edges }

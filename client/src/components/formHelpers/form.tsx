@@ -2,8 +2,8 @@ import React from 'react';
 import { Form } from 'react-final-form';
 
 import {
-  URLValuesType,
-  validatedValuesType,
+  URLValues,
+  ValidatedValues,
   FormFields,
   BlockSaveButton,
   BlockSaveWrapper,
@@ -27,7 +27,7 @@ type FormProps = {
   id?: string;
   initialValues?: Record<string, unknown>;
   options: FormOptions;
-  submit: (values: validatedValuesType, ...args: unknown[]) => void;
+  submit: (values: ValidatedValues, ...args: unknown[]) => void;
 };
 
 function DynamicForm({
@@ -43,7 +43,7 @@ function DynamicForm({
   return (
     <Form
       initialValues={initialValues}
-      onSubmit={(values: URLValuesType, ...args: unknown[]) => {
+      onSubmit={(values: URLValues, ...args: unknown[]) => {
         console.log('🚀 ~ file: form.tsx ~ line 46 ~ values', values);
         submit(formatUrlValues(values, options), ...args);
       }}

@@ -8,7 +8,7 @@ import {
   frontEndProject,
   pythonProject
 } from '../../../../utils/challenge-types';
-import { Form, validatedValuesType } from '../../../components/formHelpers';
+import { Form, ValidatedValues } from '../../../components/formHelpers';
 
 interface SubmitProps {
   showCompletionModal: boolean;
@@ -31,7 +31,7 @@ export class SolutionForm extends Component<FormProps> {
     this.props.updateSolutionForm({});
   }
 
-  handleSubmit = (validatedValues: validatedValuesType): void => {
+  handleSubmit = (validatedValues: ValidatedValues): void => {
     // Do not execute challenge, if errors
     if (validatedValues.errors.length === 0) {
       // updates values on store
