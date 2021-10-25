@@ -139,7 +139,10 @@ class AboutSettings extends Component<AboutProps, AboutState> {
   }
 
   loadEvent = () => this.setState({ isPictureUrlValid: true });
-  errorEvent = () => this.setState({ isPictureUrlValid: false });
+  errorEvent = () =>
+    this.setState(state => ({
+      isPictureUrlValid: state.formValues.picture === ''
+    }));
 
   handlePictureChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
@@ -214,7 +217,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
               </ControlLabel>
               <FormControl
                 onChange={this.handlePictureChange}
-                required={true}
                 type='url'
                 value={picture}
               />
