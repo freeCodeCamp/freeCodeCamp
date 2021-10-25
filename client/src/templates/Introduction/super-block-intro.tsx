@@ -40,7 +40,7 @@ type FetchState = {
   errored: boolean;
 };
 
-type SuperBlockPropType = {
+type SuperBlockProp = {
   currentChallengeId: string;
   data: {
     markdownRemark: MarkdownRemarkType;
@@ -95,7 +95,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-const SuperBlockIntroductionPage = (props: SuperBlockPropType) => {
+const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   useEffect(() => {
     initializeExpandedState();
     props.tryToShowDonationModal();
@@ -118,7 +118,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockPropType) => {
       isSignedIn,
       currentChallengeId,
       location
-    }: SuperBlockPropType = props;
+    }: SuperBlockProp = props;
 
     // if coming from breadcrumb click
     if (
