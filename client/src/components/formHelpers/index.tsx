@@ -17,7 +17,7 @@ const normalizeOptions = {
   stripWWW: false
 };
 
-export type URLValuesType = {
+export type URLValues = {
   [key: string]: string;
 };
 
