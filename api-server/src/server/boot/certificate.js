@@ -62,9 +62,7 @@ export function getFallbackFrontEndDate(completedChallenges, completedDate) {
     certTypeIdMap[certTypes.respWebDesign],
     certTypeIdMap[certTypes.jsAlgoDataStruct],
     certTypeIdMap[certTypes.frontEndDevLibsId],
-    certTypeIdMap[certTypes.dataVis],
     certTypeIdMap[certTypes.dataVis2018],
-    oldDataVizId,
     certTypeIdMap[certTypes.apisMicroservicesId],
     certTypeIdMap[certTypes.legacyInfosecQaId]
   ];
