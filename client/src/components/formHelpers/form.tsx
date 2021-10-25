@@ -44,7 +44,6 @@ function DynamicForm({
     <Form
       initialValues={initialValues}
       onSubmit={(values: URLValues, ...args: unknown[]) => {
-        console.log('🚀 ~ file: form.tsx ~ line 46 ~ values', values);
         submit(formatUrlValues(values, options), ...args);
       }}
     >
