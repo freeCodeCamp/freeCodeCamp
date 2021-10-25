@@ -57,7 +57,7 @@ export default function bootCertificate(app) {
   app.use(api);
 }
 
-export function getFallbackFrontEndDate(completedChallenges, completedDate) {
+export function getFallbackFullStackDate(completedChallenges, completedDate) {
   var chalIds = [
     certTypeIdMap[certTypes.respWebDesign],
     certTypeIdMap[certTypes.jsAlgoDataStruct],
@@ -465,7 +465,7 @@ function createShowCert(app) {
 
         // if fullcert is not found, return the latest completedDate
         if (certType === 'isFullStackCert' && !certChallenge) {
-          completedDate = getFallbackFrontEndDate(
+          completedDate = getFallbackFullStackDate(
             completedChallenges,
             completedDate
           );
