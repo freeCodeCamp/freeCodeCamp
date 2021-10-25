@@ -26,9 +26,9 @@ type validationErrorType = {
   value: string;
 };
 
-export type validatedValuesType = {
-  values: URLValuesType;
-  errors: validationErrorType[];
+export type ValidatedValues = {
+  values: URLValues;
+  errors: ValidationError[];
   invalidValues: (JSX.Element | null)[];
 };
 
