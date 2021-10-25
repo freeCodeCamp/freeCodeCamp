@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512bfe
-title: Add a License to Your package.json
+title: Agrega una licencia a tu package.json
 challengeType: 2
 forumTopicId: 301523
 dashedName: add-a-license-to-your-package-json
@@ -8,9 +8,9 @@ dashedName: add-a-license-to-your-package-json
 
 # --description--
 
-The `license` field is where you inform users of what they are allowed to do with your project.
+El campo `license` es donde se informa a los usuarios de lo que pueden hacer con tu proyecto.
 
-Some common licenses for open source projects include MIT and BSD. License information is not required, and copyright laws in most countries will give you ownership of what you create by default. However, it’s always a good practice to explicitly state what users can and can’t do. Here's an example of the license field:
+Algunas de las licencias comunes para proyectos de código abierto incluyen MIT y BSD. La información de la licencia no es requerida, y las leyes de derechos de autor en la mayoría de los países te darán la propiedad de lo que creas de manera predeterminada. Sin embargo, siempre es una buena práctica exponer explícitamente lo que los usuarios pueden y no pueden hacer. Aquí hay un ejemplo del campo de la licencia:
 
 ```json
 "license": "MIT",
@@ -18,11 +18,11 @@ Some common licenses for open source projects include MIT and BSD. License infor
 
 # --instructions--
 
-Fill the `license` field in the package.json file of your project as you find suitable.
+Rellena el campo `license` en el archivo package.json de tu proyecto según lo encuentres apropiado.
 
 # --hints--
 
-package.json should have a valid "license" key
+package.json debe tener una clave válida de "license"
 
 ```js
 (getUserInput) =>

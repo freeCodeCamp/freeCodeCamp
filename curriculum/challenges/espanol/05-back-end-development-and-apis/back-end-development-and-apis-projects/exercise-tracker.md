@@ -1,6 +1,6 @@
 ---
 id: 5a8b073d06fa14fcfde687aa
-title: Exercise Tracker
+title: Rastreador de ejercicios
 challengeType: 4
 forumTopicId: 301505
 dashedName: exercise-tracker
@@ -8,17 +8,59 @@ dashedName: exercise-tracker
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://exercise-tracker.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+Construye una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <https://exercise-tracker.freecodecamp.rocks/>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/) y completa tu proyecto localmente.
+-   Usa [nuestro proyecto de inicio en Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-exercisetracker) para completar tu proyecto.
+-   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+
+# --instructions--
+
+Tus respuestas deben tener las siguientes estructuras.
+
+Ejercicio:
+
+```js
+{
+  username: "fcc_test"
+  description: "test",
+  duration: 60,
+  date: "Mon Jan 01 1990",
+  _id: "5fb5853f734231456ccb3b05"
+}
+```
+
+Usuario:
+
+```js
+{
+  username: "fcc_test",
+  _id: "5fb5853f734231456ccb3b05"
+}
+```
+
+Log:
+
+```js
+{
+  username: "fcc_test",
+  count: 1,
+  _id: "5fb5853f734231456ccb3b05",
+  log: [{
+    description: "test",
+    duration: 60,
+    date: "Mon Jan 01 1990",
+  }]
+}
+```
+
+**Pista:** Para la propiedad `date`, el método `toDateString` de la API `Date` puede ser usado para conseguir el resultado esperado.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Debes proporcionar tu propio proyecto, no la URL de ejemplo.
 
 ```js
 (getUserInput) => {
@@ -29,7 +71,24 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can `POST` to `/api/users` with form data `username` to create a new user. The returned response will be an object with `username` and `_id` properties.
+Puedes hacer una petición `POST` a `/api/users` con los datos de formulario que tenga la propiedad `username` para crear un nuevo usuario.
+
+```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  });
+  assert.isTrue(res.ok);
+  if(!res.ok) {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
+};
+```
+
+La respuesta devuelta de `POST /api/users` con datos de formulario `username` será un objeto con propiedades `username` y `_id`.
 
 ```js
 async (getUserInput) => {
@@ -49,24 +108,89 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users` to get an array of all users. Each element in the array is an object containing a user's `username` and `_id`.
+Puedes hacer una petición `GET` a `/api/users` para obtener una lista con todos los usuarios.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users');
+  assert.isTrue(res.ok);
+  if(!res.ok) {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
+};
+```
+
+La petición `GET` a `/api/users` devuelve un arreglo.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users');
+  if(res.ok){
+    const users = await res.json();
+    assert.isArray(users);
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+Cada elemento en el arreglo devuelto desde `GET /api/users` es un literal de objeto que contiene el `username` y `_id`.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users');
+  if(res.ok){
+    const users = await res.json();
+    const user = users[0];
+    assert.exists(user);
+    assert.exists(user.username);
+    assert.exists(user._id);
+    assert.isString(user.username);
+    assert.isString(user._id);
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+Puedes hacer una petición `POST` a `/api/users/:_id/exercises` con datos de formulario `description`, `duration`, y opcionalmente `date`. Si no se proporciona ninguna fecha, se utilizará la fecha actual.
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
-  const res = await fetch(url + '/api/users');
+  const res = await fetch(url + '/api/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  });
   if (res.ok) {
-    const data = await res.json();
-    assert.isArray(data);
-    assert.isString(data[0].username);
-    assert.isString(data[0]._id);
+    const { _id, username } = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: 'Mon Jan 01 1990'
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
+    });
+  assert.isTrue(addRes.ok);
+  if(!addRes.ok) {
+    throw new Error(`${addRes.status} ${addRes.statusText}`)
+  };
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   }
 };
 ```
 
-You can `POST` to `/api/users/:_id/exercises` with form data `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used. The response returned will be the user object with the exercise fields added.
+La respuesta devuelta desde `POST /api/users/:_id/exercises` será el objeto de usuario con los campos de ejercicio añadidos.
 
 ```js
 async (getUserInput) => {
@@ -93,6 +217,9 @@ async (getUserInput) => {
     if (addRes.ok) {
       const actual = await addRes.json();
       assert.deepEqual(actual, expected);
+      assert.isString(actual.description);
+      assert.isNumber(actual.duration);
+      assert.isString(actual.date);
     } else {
       throw new Error(`${addRes.status} ${addRes.statusText}`);
     }
@@ -102,7 +229,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user. The returned response will be the user object with a `log` array of all the exercises added. Each log item has the `description`, `duration`, and `date` properties.
+Puedes hacer una petición `GET` a `/api/users/:_id/logs` para recuperar un log completo del ejercicio de cualquier usuario.
 
 ```js
 async (getUserInput) => {
@@ -128,13 +255,10 @@ async (getUserInput) => {
     });
     if (addRes.ok) {
       const logRes = await fetch(url + `/api/users/${_id}/logs`);
-      if (logRes.ok) {
-        const { log } = await logRes.json();
-        assert.isArray(log);
-        assert.equal(1, log.length);
-      } else {
-        throw new Error(`${logRes.status} ${logRes.statusText}`);
-      }
+    assert.isTrue(logRes.ok);
+    if(!logRes.ok) {
+      throw new Error(`${logRes.status} ${logRes.statusText}`)
+    };
     } else {
       throw new Error(`${addRes.status} ${addRes.statusText}`);
     }
@@ -144,7 +268,7 @@ async (getUserInput) => {
 };
 ```
 
-A request to a user's log (`/api/users/:_id/logs`) returns an object with a `count` property representing the number of exercises returned.
+Una solicitud al log de un usuario `GET /api/users/:_id/logs` devuelve un objeto de usuario con una propiedad `count` representando el número de ejercicios que pertenecen a ese usuario.
 
 ```js
 async (getUserInput) => {
@@ -185,7 +309,239 @@ async (getUserInput) => {
 };
 ```
 
-You can add `from`, `to` and `limit` parameters to a `/api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
+Una solicitud `GET` a `/api/users/:id/logs` devolverá el objeto de usuario con un arreglo `log` de todos los ejercicios añadidos.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  })
+  if(res.ok){
+    const {_id, username} = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok){
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
+      if(logRes.ok) {
+        const {log} = await logRes.json();
+        assert.isArray(log);
+        assert.equal(1, log.length);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
+};
+```
+
+Cada elemento en el arreglo `log` que es devuelto desde `GET /api/users/:id/logs` es un objeto que debe tener las propiedades `description`, `duration` y `date`.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + `/api/users`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+  });
+  if(res.ok) {
+    const {_id, username} = await res.json();
+     const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
+      if(logRes.ok) {
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.exists(exercise);
+        assert.exists(exercise.description);
+        assert.exists(exercise.duration);
+        assert.exists(exercise.date);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      };
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`)
+  };
+};
+```
+
+La propiedad `description` de cualquier objeto en el arreglo `log` que es devuelto desde `GET /api/users/:id/logs` debe ser una cadena.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+  });
+  if(res.ok) {
+    const {_id, username} = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
+      if(logRes.ok){
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.isString(exercise.description);
+        assert.equal(exercise.description, expected.description);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+La propiedad `duration` de cualquier objeto en el arreglo `log` que es devuelto desde `GET /api/users/:id/logs` debe ser un número.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+  });
+  if(res.ok) {
+    const {_id, username} = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
+      if(logRes.ok){
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.isNumber(exercise.duration);
+        assert.equal(exercise.duration, expected.duration);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+La propiedad `date` de cualquier objeto en el arrelgo `log` que es devuelto desde `GET /api/users/:id/logs` debe ser una cadena.. Utiliza el formato `dateString` de la API `Date`.
+
+```js
+async(getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/users/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `username=fcc_test_${Date.now()}`.substr(0,29)
+  });
+  if(res.ok) {
+    const {_id, username} = await res.json();
+    const expected = {
+      username,
+      description: 'test',
+      duration: 60,
+      _id,
+      date: new Date().toDateString()
+    };
+    const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `description=${expected.description}&duration=${expected.duration}`
+    });
+    if(addRes.ok) {
+      const logRes = await fetch(url + `/api/users/${_id}/logs`);
+      if(logRes.ok){
+        const {log} = await logRes.json();
+        const exercise = log[0];
+        assert.isString(exercise.date);
+        assert.equal(exercise.date, expected.date);
+      } else {
+        throw new Error(`${logRes.status} ${logRes.statusText}`);
+      }
+    } else {
+      throw new Error(`${addRes.status} ${addRes.statusText}`);
+    };
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  };
+};
+```
+
+Puedes añadir parámetros `from`, `to` y `limit` a una petición `GET /api/users/:_id/logs` para recuperar parte del log de cualquier usuario. `from` y `to` son fechas en formato `yyyy-mm-dd`. `limit` es un número entero de cuántos logs hay que devolver.
 
 ```js
 async (getUserInput) => {
