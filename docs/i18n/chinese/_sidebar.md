@@ -1,26 +1,26 @@
 - **准备开始**
   - [介绍](index.md "为 freeCodeCamp.org 社区贡献")
   - [常见问题](FAQ.md)
-- **代码贡献**
-  - [如何在本地系统中设置 freeCodeCamp 的编码环境](how-to-setup-freecodecamp-locally.md)
-  - [代码库最佳实践](codebase-best-practices.md)
-  - [拉取请求](how-to-open-a-pull-request.md)
-  - [参与编程挑战贡献](how-to-work-on-coding-challenges.md)
-  - [参与视频挑战贡献](how-to-help-with-video-challenges.md)
-  - [参与专栏贡献](how-to-work-on-the-news-theme.md)
-  - [参与文档贡献](how-to-work-on-the-docs-theme.md)
-  - [参与练习项目贡献](how-to-work-on-practice-projects.md)
-- **翻译贡献**
-  - [参与翻译](how-to-translate-files.md)
-  - [参与校对](how-to-proofread-files.md)
-- **Resources**
-  - [在 Windows 上运行 freeCodeCamp（WSL）](how-to-setup-wsl.md)
-  - [添加 Cypress 测试](how-to-add-cypress-tests.md)
-  - [在本地运行客户端 web app](how-to-work-on-localized-client-webapp.md)
-  - [本地接收电子邮件](how-to-catch-outgoing-emails-locally.md)
-  - [测试本地翻译](how-to-test-translations-locally.md)
-  - [了解文件结构课程](curriculum-file-structure.md)
-  - [Work on tutorials w/ CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
+- **Translation Contribution**
+  - [Work on translating resources](how-to-translate-files.md)
+  - [Work on proofreading translations](how-to-proofread-files.md)
+- **Code Contribution**
+  - [Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md)
+  - [Follow coding best practices](codebase-best-practices.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
+  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
+  - [Work on practice projects](how-to-work-on-practice-projects.md)
+  - [Work on tutorials with CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
+  - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
+  - [Work on Cypress tests](how-to-add-cypress-tests.md)
+  - [Work on video challenges](how-to-help-with-video-challenges.md)
+  - [Work on the news theme](how-to-work-on-the-news-theme.md)
+  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
+- **Additional Guides**
+  - [Test translations locally](how-to-test-translations-locally.md)
+  - [Understand the curriculum file structure](curriculum-file-structure.md)
+  - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
+  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
 
 ---
 
