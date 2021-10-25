@@ -10,7 +10,7 @@
   - [Open a pull request](how-to-open-a-pull-request.md)
   - [Work on coding challenges](how-to-work-on-coding-challenges.md)
   - [Work on practice projects](how-to-work-on-practice-projects.md)
-  - [Work on tutorials w/ CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
+  - [Work on tutorials with CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
   - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
   - [Work on Cypress tests](how-to-add-cypress-tests.md)
   - [Work on video challenges](how-to-help-with-video-challenges.md)
