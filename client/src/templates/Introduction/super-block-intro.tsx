@@ -72,6 +72,7 @@ const mapStateToProps = (state: unknown) => {
     (
       currentChallengeId: string,
       isSignedIn,
+      signInLoading: boolean,
       fetchState: FetchState,
       user: UserType
     ) => ({

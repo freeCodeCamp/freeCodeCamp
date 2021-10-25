@@ -76,6 +76,7 @@ function FormFields(props: FormFieldsProps): JSX.Element {
       {formFields
         .filter(formField => !ignored.includes(formField.name))
         .map(({ name, label }) => (
+          // TODO: verify if the value is always a string
           <Field key={`${kebabCase(name)}-field`} name={name}>
             {({ input: { value, onChange }, meta: { pristine, error } }) => {
               const key = kebabCase(name);
@@ -98,7 +99,7 @@ function FormFields(props: FormFieldsProps): JSX.Element {
                       required={required.includes(name)}
                       rows={4}
                       type={type}
-                      value={value}
+                      value={value as string}
                     />
                     {nullOrWarning(value, !pristine && error, isURL, name)}
                   </FormGroup>
