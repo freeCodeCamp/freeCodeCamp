@@ -31,7 +31,7 @@
     "@freecodecamp/loopback-component-passport": "^1.2.0",
     "@sentry/node": "^6.13.3",
     "accepts": "^1.3.7",
-    "axios": "^0.21.1",
+    "axios": "^0.23.0",
     "bad-words": "^3.0.4",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
