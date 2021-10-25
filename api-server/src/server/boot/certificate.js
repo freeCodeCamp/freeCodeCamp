@@ -58,7 +58,16 @@ export default function bootCertificate(app) {
 }
 
 export function getFallbackFrontEndDate(completedChallenges, completedDate) {
-  var chalIds = [...Object.values(certTypeIdMap), oldDataVizId];
+  var chalIds = [
+    certTypeIdMap[certTypes.respWebDesign],
+    certTypeIdMap[certTypes.jsAlgoDataStruct],
+    certTypeIdMap[certTypes.frontEndDevLibsId],
+    certTypeIdMap[certTypes.dataVis],
+    certTypeIdMap[certTypes.dataVis2018],
+    oldDataVizId,
+    certTypeIdMap[certTypes.apisMicroservicesId],
+    certTypeIdMap[certTypes.legacyInfosecQaId]
+  ];
 
   const latestCertDate = completedChallenges
     .filter(chal => chalIds.includes(chal.id))

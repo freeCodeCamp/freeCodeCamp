@@ -10,7 +10,7 @@ If you want to create new steps, the following tools simplify that process.
 
 ## create-next-step
 
-A one-off script that will automatically add the next step based on the last step numbered as `part-xxx.md` where `xxx` represents the 3-digit step number of the last step. The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
+A one-off script that will automatically add the next step based on the last step numbered as `step-xxx.md` where `xxx` represents the 3-digit step number of the last step. The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
 
 **Note:** This script also runs [reorder-steps](#reorder-steps).
 
@@ -75,40 +75,40 @@ A one-off script that automatically reorders the step files in a project's markd
 Let's say you start with the following project structure:
 
 ```bash
-part-1.md
-part-2.md
-part-3.md
-part-4.md
-part-5.md
-part-6.md
+step-001.md
+step-002.md
+step-003.md
+step-004.md
+step-005.md
+step-006.md
 ```
 
-At some point you decide you need to delete `part-2.md`, because that step is no longer needed. Also, you decide to break down `part-4.md` into three steps instead of just one.
+At some point you decide you need to delete `step-002.md`, because that step is no longer needed. Also, you decide to break down `step-004.md` into three steps instead of just one.
 
-To accomplish this restructure, you would need to delete `part-2.md` and then add a `part-4a.md` and a `part-4b.md`. The new folder structure would look like the following:
+To accomplish this restructure, you would need to delete `step-002.md` and then add a `step-004a.md` and a `step-004b.md`. The new folder structure would look like the following:
 
 ```bash
-part-001.md
-part-003.md
-part-004.md
-part-004a.md
-part-004b.md
-part-005.md
-part-006.md
+step-001.md
+step-003.md
+step-004.md
+step-004a.md
+step-004b.md
+step-005.md
+step-006.md
 ```
 
-You now need the file names to be `part-1.md` through `part-7.md`, because you removed one but gained two more for a net difference of one file. Also, the frontmatter of each file below a deleted step or added step will need to be modified by making the `title` key value match the new step number. For example, after renaming `part-3.md` to `part-2.md`, you would need to change `part-2.md`'s title from `Part 03` to `Part 02`.
+You now need the file names to be `step-001.md` through `step-007.md`, because you removed one but gained two more for a net difference of one file. Also, the frontmatter of each file below a deleted step or added step will need to be modified by making the `title` key value match the new step number. For example, after renaming `step-3.md` to `step-2.md`, you would need to change `step-2.md`'s title from `Step 03` to `Step 02`.
 
 See below for the actual project folder changes needed:
 
 ```bash
-part-001.md
-part-003.md renamed to part-002.md and title changes to "Part 2"
-part-004.md renames to part-003.md and title changes to "Part 3"
-part-004a.md renames to part-004.md and title changes to "Part 4"
-part-004b.md renames to part-005.md and title changes to "Part 5"
-part-005.md renames to part-006.md and title changes to "Part 6"
-part-006.md renames to part-007.md and title changes to "Part 7"
+step-001.md
+step-003.md renamed to step-002.md and title changes to "Step 2"
+step-004.md renames to step-003.md and title changes to "Step 3"
+step-004a.md renames to step-004.md and title changes to "Step 4"
+step-004b.md renames to step-005.md and title changes to "Step 5"
+step-005.md renames to step-006.md and title changes to "Step 6"
+step-006.md renames to step-007.md and title changes to "Step 7"
 ```
 
 Along with the above changes, the `challengeOrder` key in the project's `meta.json` file needs to reflect the new step order. This is needed because each step below a step deletion and/or step addition changes the `title` associated with each of the affected step's challenge `id`.
