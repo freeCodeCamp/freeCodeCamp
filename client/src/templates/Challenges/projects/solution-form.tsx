@@ -8,7 +8,7 @@ import {
   frontEndProject,
   pythonProject
 } from '../../../../utils/challenge-types';
-import { Form } from '../../../components/formHelpers';
+import { Form, ValidatedValues } from '../../../components/formHelpers';
 
 interface SubmitProps {
   showCompletionModal: boolean;
@@ -19,12 +19,6 @@ interface FormProps extends WithTranslation {
   description?: string;
   onSubmit: (arg0: SubmitProps) => void;
   updateSolutionForm: (arg0: Record<string, unknown>) => void;
-}
-
-interface ValidatedValues {
-  errors: string[];
-  invalidValues: string[];
-  values: Record<string, unknown>;
 }
 
 export class SolutionForm extends Component<FormProps> {

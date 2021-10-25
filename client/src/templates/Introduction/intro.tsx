@@ -1,6 +1,5 @@
 import { Grid, ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
 import { Link, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -8,18 +7,19 @@ import { useTranslation } from 'react-i18next';
 import ButtonSpacer from '../../components/helpers/button-spacer';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';
-import { MarkdownRemark, AllChallengeNode } from '../../redux/prop-types';
+import {
+  MarkdownRemarkType,
+  AllChallengeNodeType,
+  ChallengeNodeType
+} from '../../redux/prop-types';
 
 import './intro.css';
 
-const propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: MarkdownRemark,
-    allChallengeNode: AllChallengeNode
-  })
-};
-
-function renderMenuItems({ edges = [] }) {
+function renderMenuItems({
+  edges = []
+}: {
+  edges?: Array<{ node: ChallengeNodeType }>;
+}) {
   return edges
     .map(({ node }) => node)
     .map(({ title, fields: { slug } }) => (
@@ -29,7 +29,14 @@ function renderMenuItems({ edges = [] }) {
     ));
 }
 
-function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
+function IntroductionPage({
+  data: { markdownRemark, allChallengeNode }
+}: {
+  data: {
+    markdownRemark: MarkdownRemarkType;
+    allChallengeNode: AllChallengeNodeType;
+  };
+}): React.FunctionComponentElement<typeof LearnLayout> {
   const { t } = useTranslation();
   const {
     html,
@@ -78,7 +85,6 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
 }
 
 IntroductionPage.displayName = 'IntroductionPage';
-IntroductionPage.propTypes = propTypes;
 
 export default IntroductionPage;
 

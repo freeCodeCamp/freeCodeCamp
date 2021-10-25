@@ -8,35 +8,26 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { kebabCase } from 'lodash-es';
 import normalizeUrl from 'normalize-url';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Field } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
+import { FormOptions } from './form';
 import {
   editorValidator,
   localhostValidator,
   composeValidators,
   fCCValidator,
   httpValidator
-} from './FormValidators';
+} from './form-validators';
 
-const propTypes = {
-  formFields: PropTypes.arrayOf(
-    PropTypes.shape({ name: PropTypes.string, label: PropTypes.string })
-      .isRequired
-  ).isRequired,
-  options: PropTypes.shape({
-    ignored: PropTypes.arrayOf(PropTypes.string),
-    isEditorLinkAllowed: PropTypes.bool,
-    placeholders: PropTypes.objectOf(PropTypes.string),
-    required: PropTypes.arrayOf(PropTypes.string),
-    types: PropTypes.objectOf(PropTypes.string)
-  })
+type FormFieldsProps = {
+  formFields: { name: string; label: string }[];
+  options: FormOptions;
 };
 
-function FormFields(props) {
+function FormFields(props: FormFieldsProps): JSX.Element {
   const { t } = useTranslation();
-  const { formFields, options = {} } = props;
+  const { formFields, options = {} }: FormFieldsProps = props;
   const {
     ignored = [],
     placeholders = {},
@@ -46,13 +37,18 @@ function FormFields(props) {
     isLocalLinkAllowed = false
   } = options;
 
-  const nullOrWarning = (value, error, isURL, name) => {
-    let validationError;
+  const nullOrWarning = (
+    value: string,
+    error: unknown,
+    isURL: boolean,
+    name: string
+  ) => {
+    let validationError: string | undefined;
     if (value && isURL) {
       try {
         normalizeUrl(value, { stripWWW: false });
-      } catch (err) {
-        validationError = err.message;
+      } catch (err: unknown) {
+        validationError = (err as { message?: string })?.message;
       }
     }
     const validationWarning = composeValidators(
@@ -61,7 +57,9 @@ function FormFields(props) {
       httpValidator,
       isLocalLinkAllowed ? null : localhostValidator
     )(value);
-    const message = error || validationError || validationWarning;
+    const message: string = (error ||
+      validationError ||
+      validationWarning) as string;
     return message ? (
       <HelpBlock>
         <Alert
@@ -78,6 +76,7 @@ function FormFields(props) {
       {formFields
         .filter(formField => !ignored.includes(formField.name))
         .map(({ name, label }) => (
+          // TODO: verify if the value is always a string
           <Field key={`${kebabCase(name)}-field`} name={name}>
             {({ input: { value, onChange }, meta: { pristine, error } }) => {
               const key = kebabCase(name);
@@ -100,7 +99,7 @@ function FormFields(props) {
                       required={required.includes(name)}
                       rows={4}
                       type={type}
-                      value={value}
+                      value={value as string}
                     />
                     {nullOrWarning(value, !pristine && error, isURL, name)}
                   </FormGroup>
@@ -114,6 +113,5 @@ function FormFields(props) {
 }
 
 FormFields.displayName = 'FormFields';
-FormFields.propTypes = propTypes;
 
 export default FormFields;
