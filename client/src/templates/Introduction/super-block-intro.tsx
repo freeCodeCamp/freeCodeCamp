@@ -155,7 +155,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockPropType) => {
     const { resetExpansion, toggleBlock } = props;
 
     resetExpansion();
-    return toggleBlock(getChosenBlock() ? true : false);
+    return toggleBlock(getChosenBlock());
   };
 
   const {
