@@ -21,7 +21,7 @@ export type URLValues = {
   [key: string]: string;
 };
 
-type validationErrorType = {
+type ValidationError = {
   error: { message?: string };
   value: string;
 };
