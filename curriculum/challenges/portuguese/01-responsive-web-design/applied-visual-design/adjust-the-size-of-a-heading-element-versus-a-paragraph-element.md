@@ -1,23 +1,23 @@
 ---
 id: 587d781b367417b2b2512abd
-title: 調整標題與段落的大小
+title: Contrastar o tamanho de um título com o de um parágrafo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
-dashedName: adjust-the-size-of-a-header-versus-a-paragraph-tag
+dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 ---
 
 # --description--
 
-標題標籤的字體大小（從 `h1` 到 `h6`）一般應該大於段落標籤的字體大小。 這使用戶更容易在視覺上了解頁面上所有內容的佈局和重要程度。 你可以使用 `font-size` 屬性來設置元素內文字的大小。
+O tamanho da tipografia das tags de títulos (`h1` a `h6`) geralmente deve ser maior do que o tamanho da tipografia das tags de parágrafo. Isso torna mais fácil para o usuário entender visualmente o layout e o nível de importância de tudo na página. Você pode usar a propriedade `font-size` para ajustar o tamanho do texto de um elemento.
 
 # --instructions--
 
-把 `h4` 標籤的 `font-size` 的屬性值改成 27px，讓標題更醒目。
+Para tornar o título significativamente maior do que o parágrafo, altere a propriedade `font-size` da tag `h4` para 27 pixels.
 
 # --hints--
 
-應給 `h4` 元素添加一個 `font-size` 屬性並將屬性值設置爲 27px。
+Adicione ao elemento `h4` a propriedade `font-size` com o valor de 27 pixels.
 
 ```js
 assert($('h4').css('font-size') == '27px');

@@ -12,7 +12,7 @@ dashedName: multiple-identical-options-in-switch-statements
 If the `break` statement is omitted from a `switch` statement's `case`, the following `case` statement(s) are executed until a `break` is encountered. If you have multiple inputs with the same output, you can represent them in a `switch` statement like this:
 
 ```js
-var result = "";
+let result = "";
 switch(val) {
   case 1:
   case 2:
@@ -109,7 +109,7 @@ assert(code.match(/case/g).length === 9);
 
 ```js
 function sequentialSizes(val) {
-  var answer = "";
+  let answer = "";
   // Only change code below this line
 
 
@@ -125,7 +125,7 @@ sequentialSizes(1);
 
 ```js
 function sequentialSizes(val) {
-  var answer = "";
+  let answer = "";
 
   switch(val) {
     case 1:

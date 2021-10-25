@@ -1,23 +1,23 @@
 ---
 id: 587d781b367417b2b2512abd
-title: Contrastar o tamanho de um título com o de um parágrafo
+title: Regolare la dimensione di un'intestazione rispetto a quella di un paragrafo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
-dashedName: adjust-the-size-of-a-header-versus-a-paragraph-tag
+dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 ---
 
 # --description--
 
-O tamanho da tipografia das tags de títulos (`h1` a `h6`) geralmente deve ser maior do que o tamanho da tipografia das tags de parágrafo. Isso torna mais fácil para o usuário entender visualmente o layout e o nível de importância de tudo na página. Você pode usar a propriedade `font-size` para ajustar o tamanho do texto de um elemento.
+La dimensione del carattere dei tag di intestazione (da `h1` a `h6`) dovrebbe essere generalmente più grande della dimensione del carattere dei tag di paragrafo. Questo rende più facile per l'utente capire visivamente il layout e il livello di importanza di ogni elemento della pagina. Si utilizza la proprietà `font-size` per regolare la dimensione del testo in un elemento.
 
 # --instructions--
 
-Para tornar o título significativamente maior do que o parágrafo, altere a propriedade `font-size` da tag `h4` para 27 pixels.
+Per rendere l'intestazione significativamente più grande del paragrafo, porta `font-size` del tag `h4` a 27 pixel.
 
 # --hints--
 
-Adicione ao elemento `h4` a propriedade `font-size` com o valor de 27 pixels.
+Il tuo codice dovrebbe aggiungere una proprietà `font-size` all'elemento `h4`, impostata a 27 pixel.
 
 ```js
 assert($('h4').css('font-size') == '27px');

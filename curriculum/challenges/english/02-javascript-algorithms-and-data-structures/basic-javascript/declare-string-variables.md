@@ -9,13 +9,19 @@ dashedName: declare-string-variables
 
 # --description--
 
-Previously we have used the code
+Previously you used the following code to declare a variable:
+
+```js
+var myName;
+```
+
+But you can also declare a string variable like this:
 
 ```js
 var myName = "your name";
 ```
 
-`"your name"` is called a <dfn>string</dfn> <dfn>literal</dfn>. It is a string because it is a series of zero or more characters enclosed in single or double quotes.
+`"your name"` is called a <dfn>string</dfn> <dfn>literal</dfn>. A string literal, or string, is a series of zero or more characters enclosed in single or double quotes.
 
 # --instructions--
 

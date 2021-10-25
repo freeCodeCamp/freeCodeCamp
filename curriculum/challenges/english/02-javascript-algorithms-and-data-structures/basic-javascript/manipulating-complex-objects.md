@@ -14,7 +14,7 @@ Sometimes you may want to store data in a flexible <dfn>Data Structure</dfn>. A 
 Here's an example of a complex data structure:
 
 ```js
-var ourMusic = [
+const ourMusic = [
   {
     "artist": "Daft Punk",
     "title": "Homework",
@@ -135,7 +135,7 @@ myMusic.forEach(object => {
 ## --seed-contents--
 
 ```js
-var myMusic = [
+const myMusic = [
   {
     "artist": "Billy Joel",
     "title": "Piano Man",
@@ -153,7 +153,7 @@ var myMusic = [
 # --solutions--
 
 ```js
-var myMusic = [
+const myMusic = [
   {
     "artist": "Billy Joel",
     "title": "Piano Man",

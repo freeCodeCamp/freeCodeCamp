@@ -1,16 +1,16 @@
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
-import PropTypes from 'prop-types';
 import React, { Fragment, useEffect, memo } from 'react';
 import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import DonateModal from '../../../../client/src/components/Donation/DonationModal';
+import DonateModal from '../../components/Donation/DonationModal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
@@ -22,7 +22,11 @@ import {
   tryToShowDonationModal,
   userSelector
 } from '../../redux';
-import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
+import {
+  MarkdownRemarkType,
+  AllChallengeNodeType,
+  UserType
+} from '../../redux/prop-types';
 import Block from './components/Block';
 import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';
@@ -30,44 +34,48 @@ import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
 
-const propTypes = {
-  currentChallengeId: PropTypes.string,
-  data: PropTypes.shape({
-    markdownRemark: MarkdownRemark,
-    allChallengeNode: AllChallengeNode
-  }),
-  expandedState: PropTypes.object,
-  fetchState: PropTypes.shape({
-    pending: PropTypes.bool,
-    complete: PropTypes.bool,
-    errored: PropTypes.bool
-  }),
-  isSignedIn: PropTypes.bool,
-  location: PropTypes.shape({
-    hash: PropTypes.string,
-    // TODO: state is sometimes a string
-    state: PropTypes.shape({
-      breadcrumbBlockClick: PropTypes.string
-    })
-  }),
-  resetExpansion: PropTypes.func,
-  signInLoading: PropTypes.bool,
-  t: PropTypes.func,
-  toggleBlock: PropTypes.func,
-  tryToShowDonationModal: PropTypes.func.isRequired,
-  user: User
+type FetchState = {
+  pending: boolean;
+  complete: boolean;
+  errored: boolean;
+};
+
+type SuperBlockProp = {
+  currentChallengeId: string;
+  data: {
+    markdownRemark: MarkdownRemarkType;
+    allChallengeNode: AllChallengeNodeType;
+  };
+  expandedState: {
+    [key: string]: boolean;
+  };
+  fetchState: FetchState;
+  isSignedIn: boolean;
+  signInLoading: boolean;
+  location: WindowLocation<{ breadcrumbBlockClick: string }>;
+  resetExpansion: () => void;
+  t: TFunction;
+  toggleBlock: (arg0: string) => void;
+  tryToShowDonationModal: () => void;
+  user: UserType;
 };
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: unknown) => {
   return createSelector(
     currentChallengeIdSelector,
     isSignedInSelector,
     signInLoadingSelector,
     userFetchStateSelector,
     userSelector,
-    (currentChallengeId, isSignedIn, signInLoading, fetchState, user) => ({
+    (
+      currentChallengeId: string,
+      isSignedIn,
+      signInLoading: boolean,
+      fetchState: FetchState,
+      user: UserType
+    ) => ({
       currentChallengeId,
       isSignedIn,
       signInLoading,
@@ -77,7 +85,7 @@ const mapStateToProps = state => {
   )(state);
 };
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       tryToShowDonationModal,
@@ -87,7 +95,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-const SuperBlockIntroductionPage = props => {
+const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   useEffect(() => {
     initializeExpandedState();
     props.tryToShowDonationModal();
@@ -102,7 +110,7 @@ const SuperBlockIntroductionPage = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getChosenBlock = () => {
+  const getChosenBlock = (): string => {
     const {
       data: {
         allChallengeNode: { edges }
@@ -110,10 +118,14 @@ const SuperBlockIntroductionPage = props => {
       isSignedIn,
       currentChallengeId,
       location
-    } = props;
+    }: SuperBlockProp = props;
 
     // if coming from breadcrumb click
-    if (location.state && location.state.breadcrumbBlockClick) {
+    if (
+      location.state &&
+      typeof location.state === 'object' &&
+      location.state.hasOwnProperty('breadcrumbBlockClick')
+    ) {
       return location.state.breadcrumbBlockClick;
     }
 
@@ -123,7 +135,7 @@ const SuperBlockIntroductionPage = props => {
       return dashedBlock;
     }
 
-    let edge = edges[0];
+    const edge = edges[0];
 
     if (isSignedIn) {
       // see if currentChallenge is in this superBlock
@@ -232,7 +244,6 @@ const SuperBlockIntroductionPage = props => {
 };
 
 SuperBlockIntroductionPage.displayName = 'SuperBlockIntroductionPage';
-SuperBlockIntroductionPage.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
