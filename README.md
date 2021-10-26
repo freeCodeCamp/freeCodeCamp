@@ -172,12 +172,12 @@ We appreciate any responsible disclosure of vulnerabilities that might impact th
 
 ### Contributing
 
-Introduction
+### Introduction
 The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
 Before you proceed, please take a quick 2 minutes to read our Code of Conduct. We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-The freeCodeCamp Code of Conduct
+### The freeCodeCamp Code of Conduct
 freeCodeCamp is a friendly place to learn to code. We’re committed to keeping it that way.
 
 By using freeCodeCamp, you agree that you'll follow this code of conduct.
@@ -199,7 +199,7 @@ We answer the most common questions about contributing in our contributor FAQ.
 Happy contributing.
 
 
-Licensing Information
+### Licensing Information
 
 License – BSD 3-Clause License
 
@@ -215,7 +215,7 @@ Neither the name of the copyright holder nor the names of its contributors may b
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-README
+### README
 freeCodeCamp.org's open-source codebase and curriculum freeCodeCamp.org is a friendly community where you can learn to code for free. It is run by a donor-supported 501(c)(3) nonprofit to help millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
 Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
@@ -223,7 +223,7 @@ Our full-stack web development and machine learning curriculum is completely fre
 Read more at: https://github.com/freeCodeCamp/freeCodeCamp#readme
 
 
-How to Contribute
+### How to Contribute
 
 1. Contribute by answering coding questions
 There are a wide range of questions and topics on our site to contribute to. 
@@ -248,7 +248,7 @@ You can find all of freeCodeCamp.org's curricular content in the /curriculum/cha
 Read more at: https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges
 
 
-Help us translate freeCodeCamp.org's resources
+### Help us translate freeCodeCamp.org's resources
 
 We are localizing freeCodeCamp.org to major world languages.
 Certifications are already live in some major world languages like Chinese (中文), Spanish (Español), Italian (Italiano), Portuguese (Português). We encourage you to read the announcement here and share it with your friends to get them excited about this.
@@ -266,7 +266,8 @@ Proofreaders verify that the community contributed translations are uniform in t
 Read more at: https://contribute.freecodecamp.org/#/how-to-translate-files
 
 
-Contribute to the curriculum
+### Contribute to the curriculum
+
 Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
 You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
@@ -288,7 +289,7 @@ You can find all of freeCodeCamp.org's curricular content in the /curriculum/cha
 Read more at: https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges
 
 
-Set up the tooling for the curriculum
+### Set up the tooling for the curriculum
 Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
 
 •	You can set up freeCodeCamp locally. This is highly recommended for regular/repeat contributions. This setup allows you to work and test your changes.
