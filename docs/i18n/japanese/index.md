@@ -2,15 +2,13 @@ The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to
 
 > [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-Happy contributing.
-
-You are welcome to:
-
-- Create, update and fix bugs in our [curriculum](#curriculum).
-- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
-- [Help us translate](#translations) freeCodeCamp.org to world languages.
+You are welcome to create, update and fix bugs in our [curriculum](#curriculum), help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform), or [help us translate](#translations) freeCodeCamp.org to world languages.
 
 We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
+
+Happy contributing.
+
+---
 
 ## Curriculum
 
@@ -22,7 +20,9 @@ You can help expand and improve the curriculum. You can also update project user
 
 ## Translations
 
-We are localizing freeCodeCamp.org to major world languages. Some of the certifications are already live in [Chinese (中文)](https://chinese.freecodecamp.org/learn) and [Spanish (Español)](https://www.freecodecamp.org/espanol/learn/). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort) and share it your friends to get them excited about this.
+We are localizing freeCodeCamp.org to major world languages.
+
+Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn/), [Italian (Italiano)](https://www.freecodecamp.org/espanol/learn/), [Portuguese (Português)](https://www.freecodecamp.org/espanol/learn/). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort) and share it with your friends to get them excited about this.
 
 **If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
 
@@ -30,13 +30,7 @@ We are localizing freeCodeCamp.org to major world languages. Some of the certifi
 
 Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-Broadly, we use
-
-- a Node.js based API server
-- a set of React-based client applications
-- and testing scripts to evaluate camper-submitted curriculum projects.
-
-If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
+Broadly, we have a Node.js based API server, a set of React-based client applications, testing scripts to evaluate camper-submitted curriculum projects, and more. If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 
 If you want to help us improve our codebase...
 
