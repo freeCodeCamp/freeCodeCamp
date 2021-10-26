@@ -4,7 +4,7 @@ import envData from '../../../config/env.json';
 import type {
   ChallengeFile,
   CompletedChallenge,
-  UserType
+  User
 } from '../redux/prop-types';
 
 const { apiLocation } = envData;
@@ -55,7 +55,7 @@ async function request<T>(
 /** GET **/
 
 interface SessionUser {
-  user?: { [username: string]: UserType };
+  user?: { [username: string]: User };
   sessionMeta: { activeDonations: number };
 }
 
@@ -71,12 +71,12 @@ type ApiUser = {
   result?: string;
 };
 
-type ApiUserType = Omit<UserType, 'completedChallenges'> & {
+type ApiUserType = Omit<User, 'completedChallenges'> & {
   completedChallenges?: challengeFilesForFiles[];
 };
 
 type UserResponseType = {
-  user: { [username: string]: UserType } | Record<string, never>;
+  user: { [username: string]: User } | Record<string, never>;
   result: string | undefined;
 };
 
@@ -226,7 +226,7 @@ export function putUpdateMyUsername(username: string): Promise<void> {
 }
 
 export function putUpdateMyProfileUI(
-  profileUI: UserType['profileUI']
+  profileUI: User['profileUI']
 ): Promise<void> {
   return put('/update-my-profileui', { profileUI });
 }

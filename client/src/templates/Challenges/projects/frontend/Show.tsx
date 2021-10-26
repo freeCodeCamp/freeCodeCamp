@@ -12,10 +12,7 @@ import { createSelector } from 'reselect';
 
 import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
-import {
-  ChallengeNodeType,
-  ChallengeMetaType
-} from '../../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/Challenge-Description';
 import Hotkeys from '../../components/Hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
@@ -54,14 +51,14 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 // Types
 interface ProjectProps {
   challengeMounted: (arg0: string) => void;
-  data: { challengeNode: ChallengeNodeType };
+  data: { challengeNode: ChallengeNode };
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
   pageContext: {
-    challengeMeta: ChallengeMetaType;
+    challengeMeta: ChallengeMeta;
   };
   t: TFunction;
-  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+  updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
 }
 

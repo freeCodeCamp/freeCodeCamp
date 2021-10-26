@@ -14,10 +14,7 @@ import { createSelector } from 'reselect';
 import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
-import {
-  ChallengeNodeType,
-  ChallengeMetaType
-} from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/Challenge-Description';
 import Hotkeys from '../components/Hotkeys';
 import VideoPlayer from '../components/VideoPlayer';
@@ -56,15 +53,15 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 // Types
 interface ShowVideoProps {
   challengeMounted: (arg0: string) => void;
-  data: { challengeNode: ChallengeNodeType };
+  data: { challengeNode: ChallengeNode };
   description: string;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
   pageContext: {
-    challengeMeta: ChallengeMetaType;
+    challengeMeta: ChallengeMeta;
   };
   t: TFunction;
-  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+  updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
 }
 

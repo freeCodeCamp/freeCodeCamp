@@ -141,13 +141,13 @@ export const StepsType = PropTypes.shape({
 
 // TYPESCRIPT TYPES
 
-export type CurrentCertType = {
+export type CurrentCert = {
   show: boolean;
   title: string;
   certSlug: string;
 };
 
-export type MarkdownRemarkType = {
+export type MarkdownRemark = {
   fields: [{ component: string; nodeIdentity: string; slug: string }];
   fileAbsolutePath: string;
   frontmatter: {
@@ -195,7 +195,7 @@ export interface VideoLocaleIds {
   portuguese?: string;
 }
 
-export type ChallengeNodeType = {
+export type ChallengeNode = {
   block: string;
   challengeOrder: number;
   challengeType: number;
@@ -230,28 +230,28 @@ export type ChallengeNodeType = {
   videoUrl: string;
 };
 
-export type AllChallengeNodeType = {
+export type AllChallengeNode = {
   edges: [
     {
-      node: ChallengeNodeType;
+      node: ChallengeNode;
     }
   ];
 };
 
-export type AllMarkdownRemarkType = {
+export type AllMarkdownRemark = {
   edges: [
     {
-      node: MarkdownRemarkType;
+      node: MarkdownRemark;
     }
   ];
 };
 
-export type ResizePropsType = {
+export type ResizeProps = {
   onStopResize: (arg0: HandlerProps) => void;
   onResize: () => void;
 };
 
-export type DimensionsType = {
+export type Dimensions = {
   height: number;
   width: number;
 };
@@ -271,7 +271,7 @@ export type CertTest = {
   title: string;
 };
 
-export type UserType = {
+export type User = {
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
@@ -287,7 +287,7 @@ export type UserType = {
   name: string;
   picture: string;
   points: number;
-  portfolio: PortfolioType[];
+  portfolio: Portfolio[];
   profileUI: {
     isLocked: boolean;
     showCerts: boolean;
@@ -299,9 +299,9 @@ export type UserType = {
   twitter: string;
   username: string;
   website: string;
-} & isCertifiedTypes;
+} & isCertified;
 
-export type isCertifiedTypes = {
+export type isCertified = {
   is2018DataVisCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;
@@ -329,10 +329,10 @@ export type CompletedChallenge = {
   challengeFiles: ChallengeFiles;
 };
 
-export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
-export type FileKeyTypes = 'indexjs' | 'indexhtml' | 'indexcss';
+export type Ext = 'js' | 'html' | 'css' | 'jsx';
+export type FileKey = 'indexjs' | 'indexhtml' | 'indexcss';
 
-export type ChallengeMetaType = {
+export type ChallengeMeta = {
   block: string;
   id: string;
   introPath: string;
@@ -345,7 +345,7 @@ export type ChallengeMetaType = {
   helpCategory: string;
 };
 
-export type PortfolioType = {
+export type Portfolio = {
   id: string;
   title?: string;
   url?: string;
@@ -353,12 +353,12 @@ export type PortfolioType = {
   description?: string;
 };
 
-export type FileKeyChallengeType = {
+export type FileKeyChallenge = {
   contents: string;
-  ext: ExtTypes;
+  ext: Ext;
   head: string;
   id: string;
-  key: FileKeyTypes;
+  key: FileKey;
   name: string;
   tail: string;
 };
@@ -412,7 +412,7 @@ export type ChallengeNode = {
     }
   ];
   solutions: {
-    [T in FileKeyTypes]: FileKeyChallengeType;
+    [T in FileKey]: FileKeyChallenge;
   };
   sourceInstanceName: string;
   superBlock: string;
@@ -434,7 +434,7 @@ export type ChallengeNode = {
 
 export type ChallengeFile = {
   fileKey: string;
-  ext: ExtTypes;
+  ext: Ext;
   name: string;
   editableRegionBoundaries: number[];
   usesMultifileEditor: boolean;

@@ -10,10 +10,7 @@ import type { Dispatch } from 'redux';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
-import {
-  ChallengeNodeType,
-  ChallengeMetaType
-} from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import { updateChallengeMeta, challengeMounted } from '../redux';
 // Redux
 const mapStateToProps = () => ({});
@@ -28,11 +25,11 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 // Types
 interface ShowCodeAllyProps {
-  data: { challengeNode: ChallengeNodeType };
+  data: { challengeNode: ChallengeNode };
   pageContext: {
-    challengeMeta: ChallengeMetaType;
+    challengeMeta: ChallengeMeta;
   };
-  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+  updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
 
 // Component
