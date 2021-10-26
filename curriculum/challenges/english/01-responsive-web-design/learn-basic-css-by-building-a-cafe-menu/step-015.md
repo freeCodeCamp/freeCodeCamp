@@ -7,33 +7,40 @@ dashedName: step-15
 
 # --description--
 
-You have styled three elements by writing CSS inside the `style` tags. This works, but since there will many more styles, it's best to put all the styles in a separate file and link to it.
+You have styled three elements by writing CSS inside the `style` tags. This works, but since there will be many more styles, it's best to put all the styles in a separate file and link to it.
 
-We have created a separate `styles.css` file for you and switched the editor view to that file. You can change between files with the tabs at the top of the editor.
+We have created a separate `index.css` file for you and switched the editor view to that file. You can change between files with the tabs at the top of the editor.
 
-Start by rewriting the styles you have created into the `styles.css` file. Make sure to exclude the opening and closing `style` tags.
+Start by rewriting the styles you have created into the `index.css` file. Make sure to exclude the opening and closing `style` tags.
 
 # --hints--
 
-Your `styles.css` file should have the `h1, h2, p` type selector.
+Your `index.css` file should have the `h1, h2, p` type selector.
 
 ```js
-const css = code.split('<!DOCTYPE html>')[0];
-assert(__helpers.removeWhiteSpace(css).match(/(h1|h2|p),(h1|h2|p),(h1|h2|p){/))
+(getUserInput) => {
+  const css = getUserInput('editableContents');
+  assert(__helpers.removeWhiteSpace(css).match(/(h1|h2|p),(h1|h2|p),(h1|h2|p)\{/));
+}
 ```
 
 Your selector should set the `text-align` property to `center`.
 
 ```js
-const css = code.split('<!DOCTYPE html>')[0];
-assert(css.match(/text-align:\s*center;?/));
+(getUserInput) => {
+  const css = getUserInput('editableContents');
+  assert(css.match(/text-align:\s*center;?/));
+}
+
 ```
 
 You should only have one selector.
 
 ```js
-const css = code.split('<!DOCTYPE html>')[0];
-assert(css.match(/text-align:\s*center;?/).length === 1);
+(getUserInput) => {
+  const css = getUserInput('editableContents');
+  assert(css.match(/text-align:\s*center;?/)?.length === 1);
+}
 ```
 
 # --seed--

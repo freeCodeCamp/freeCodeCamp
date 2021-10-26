@@ -7,7 +7,7 @@ dashedName: step-16
 
 # --description--
 
-Now that you have the CSS in the `styles.css` file, go ahead and remove the `style` element and all its content. Once it is removed, the text that was centered will shift back to the left.
+Now that you have the CSS in the `index.css` file, go ahead and remove the `style` element and all its content. Once it is removed, the text that was centered will shift back to the left.
 
 # --hints--
 
@@ -20,9 +20,11 @@ assert(!code.match(/style/i));
 You should not have any CSS selectors in your HTML file.
 
 ```js
-const html = code.split('<!DOCTYPE html>')[1];
-assert(!html.includes('style'));
-assert(!html.includes('text-align'));
+(getUserInput) => {
+  const html = getUserInput('editableContents');
+  assert(!html.includes('style'));
+  assert(!html.includes('text-align'));
+}
 ```
 
 # --seed--
