@@ -7,7 +7,7 @@ dashedName: step-13
 
 # --description--
 
-You may have noticed that your images have all moved onto the same row, creating a horizontal scroll.
+You may have noticed that your images have all moved onto the same row.
 
 The `flex-wrap` property determines how your items should behave when the flex container is too small. Setting this property to `wrap` will allow your items to wrap to the next row/column (depending on your main axis), where `nowrap` will prevent your items from wrapping. When this is set to `nowrap`, items may either shrink to fit or overflow.
 

@@ -7,6 +7,8 @@ dashedName: step-21
 
 # --description--
 
+Resize the preview to see the layout change from your media query.
+
 Finally, create another media query for screens smaller than `600px` wide. In that media query, create a `#gallery img` rule and set the `width` property to `100%`. This will give your gallery a single-column layout.
 
 Your CSS Flexbox Photo Gallery is now complete.
