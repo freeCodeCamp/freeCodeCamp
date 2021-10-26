@@ -44,7 +44,7 @@ import {
   updateChallengeMeta
 } from '../redux';
 import { getGuideUrl } from '../utils';
-import MobileLayout from './MobileLayout';
+import MobileLayout from './Mobile-Layout';
 import MultifileEditor from './MultifileEditor';
 import DesktopLayout from './desktop-layout';
 
