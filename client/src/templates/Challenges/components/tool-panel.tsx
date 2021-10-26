@@ -3,17 +3,16 @@ import {
   DropdownButton,
   MenuItem
 } from '@freecodecamp/react-bootstrap';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 
 import './tool-panel.css';
 import { openModal, executeChallenge } from '../redux';
 
 const mapStateToProps = () => ({});
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       executeChallenge,
@@ -24,15 +23,15 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-const propTypes = {
-  executeChallenge: PropTypes.func.isRequired,
-  guideUrl: PropTypes.string,
-  isMobile: PropTypes.bool,
-  openHelpModal: PropTypes.func.isRequired,
-  openResetModal: PropTypes.func.isRequired,
-  openVideoModal: PropTypes.func.isRequired,
-  videoUrl: PropTypes.string
-};
+interface ToolPanelProps {
+  executeChallenge: (options?: { showCompletionModal: boolean }) => void;
+  isMobile?: boolean;
+  openHelpModal: () => void;
+  openVideoModal: () => void;
+  openResetModal: () => void;
+  guideUrl: string;
+  videoUrl: string;
+}
 
 function ToolPanel({
   executeChallenge,
@@ -42,7 +41,7 @@ function ToolPanel({
   openResetModal,
   guideUrl,
   videoUrl
-}) {
+}: ToolPanelProps) {
   const handleRunTests = () => {
     executeChallenge({ showCompletionModal: true });
   };
@@ -108,6 +107,5 @@ function ToolPanel({
 }
 
 ToolPanel.displayName = 'ToolPanel';
-ToolPanel.propTypes = propTypes;
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);
