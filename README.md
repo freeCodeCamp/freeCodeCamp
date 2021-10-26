@@ -225,8 +225,8 @@ Read more at: https://github.com/freeCodeCamp/freeCodeCamp#readme
 
 ### How to Contribute
 
-1. Contribute by answering coding questions
-There are a wide range of questions and topics on our site to contribute to. 
+### Contribute by answering coding questions
+1. There are a wide range of questions and topics on our site to contribute to. 
 Read more at: https://forum.freecodecamp.org/
 
 2. Give feedback on coding projects built by campers
