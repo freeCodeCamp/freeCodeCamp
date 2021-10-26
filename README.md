@@ -172,13 +172,92 @@ We appreciate any responsible disclosure of vulnerabilities that might impact th
 
 ### Contributing
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
+Introduction
+The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
+Before you proceed, please take a quick 2 minutes to read our Code of Conduct. We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
+The freeCodeCamp Code of Conduct
+freeCodeCamp is a friendly place to learn to code. We’re committed to keeping it that way.
+By using freeCodeCamp, you agree that you'll follow this code of conduct.
+In short: Be nice. No harassment, trolling, or spamming.
+•	Harassment includes sexual language and imagery, deliberate intimidation, stalking, name-calling, unwelcome attention, libel, and any malicious hacking or social engineering. freeCodeCamp should be a harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, national origin, or religion (or lack thereof).
+•	Trolling includes posting inflammatory comments to provoke an emotional response or disrupt discussions.
+•	Spamming includes posting off-topic messages to disrupt discussions, promote a product, solicit donations, advertise a job / internship / gig, or flooding discussions with files or text.
+If you see someone harass, troll, or spam anywhere in the freeCodeCamp community (forum, chat, YouTube, etc.), notify us in the  admin chat room – preferably with a screen shot and URL of the offense. The moderator team will take any action we deem appropriate, up to and including banning the offender from freeCodeCamp.
+Read the full Code of Conduct here: https://www.freecodecamp.org/news/code-of-conduct/
+You are welcome to create, update and fix bugs in our curriculum, help us fix bugs in freeCodeCamp.org's learning platform, or help us translate freeCodeCamp.org to world languages.
+We answer the most common questions about contributing in our contributor FAQ.
+Happy contributing.
+Licensing Information
+License – BSD 3-Clause License
+Copyright (c) 2021, freeCodeCamp. All rights reserved.
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-> #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
+README – freeCodeCamp.org's open-source codebase and curriculum freeCodeCamp.org is a friendly community where you can learn to code for free. It is run by a donor-supported 501(c)(3) nonprofit to help millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
+Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Read more at: https://github.com/freeCodeCamp/freeCodeCamp#readme
 
-### Platform, Build, and Deployment Status
+How to Contribute
+1. Contribute by answering coding questions
+There are a wide range of questions and topics on our site to contribute to. 
+Read more at: https://forum.freecodecamp.org/
 
-The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md).
+
+2. Give feedback on coding projects built by campers
+Our goal is to develop a fun and clear interactive learning experience.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
+Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward an entirely project-focused model with a lot more repetition.
+Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
+And as always, feel free to ask questions on the 'Contributors' category on our forum or the contributors chat room.
+With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+The content for each challenge is stored in its markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
+You can find all of freeCodeCamp.org's curricular content in the /curriculum/challenges directory.
+
+Read more at: https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges
+
+
+Help us translate freeCodeCamp.org's resources
+We are localizing freeCodeCamp.org to major world languages.
+Certifications are already live in some major world languages like Chinese (中文), Spanish (Español), Italian (Italiano), Portuguese (Português). We encourage you to read the announcement here and share it with your friends to get them excited about this.
+It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with Crowdin - A tool to help us localize our code-base.
+The translation workflow is split into two main activities:
+•	Translating curriculum files, documentation and UI elements like buttons, labels, etc.:
+As a translator you can sign up on our translation platform and contribute translations in any of the 30+ languages enabled in there.
+•	Proofreading the translations for all of the above.
+Proofreaders verify that the community contributed translations are uniform in tone and free of common issues like typos, etc. In short, they ensure that the quality of translations is high. Note that we do not use machine translations for a reason.
+Read more at: https://contribute.freecodecamp.org/#/how-to-translate-files
+
+
+
+
+
+
+
+Contribute to the curriculum
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
+Our goal is to develop a fun and clear interactive learning experience.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
+Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward an entirely project-focused model with a lot more repetition.
+Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
+And as always, feel free to ask questions on the 'Contributors' category on our forum or the contributors chat room.
+With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+The content for each challenge is stored in its markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
+You can find all of freeCodeCamp.org's curricular content in the /curriculum/challenges directory.
+Read more at: https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges
+
+Set up the tooling for the curriculum
+Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
+•	You can set up freeCodeCamp locally. This is highly recommended for regular/repeat contributions. This setup allows you to work and test your changes.
+•	Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
+•	Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is not recommended, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
+Read more at: https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges?id=set-up-the-tooling-for-the-curriculum
+
 
 ### License
 
