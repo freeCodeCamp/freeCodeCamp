@@ -14,7 +14,7 @@ Add five `a` elements within that new `div`, and give them the following `href` 
 - The first `a` element should have an `href` set to `https://www.facebook.com/freecodecamp`.
 - The second `a` element should have an `href` set to `https://twitter.com/freecodecamp`.
 - The third `a` element should have an `href` set to `https://instagram.com/freecodecamp`.
-- The fourth `a` element should have an `href` set to `https://www.linkedin.com/school/freecodecamp`.
+- The fourth `a` element should have an `href` set to `https://www.linkedin.com/school/free-code-camp`.
 - The fifth `a` element should have an `href` set to `https://www.youtube.com/freecodecamp`.
 
 # --hints--
