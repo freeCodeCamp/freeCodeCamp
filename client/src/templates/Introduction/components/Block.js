@@ -63,8 +63,7 @@ export class Block extends Component {
         const player = new tone.Player(
           'https://tonejs.github.io/audio/berklee/guitar_chord1.mp3'
         ).toDestination();
-        // eslint-disable-next-line no-unused-expressions
-        tone.context.state === 'running' ? null : tone.context.resume();
+        if (tone.context.state !== 'running') tone.context.resume();
         player.autostart = playSound;
       });
     }
