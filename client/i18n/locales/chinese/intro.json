@@ -143,7 +143,7 @@
         "intro": [
           "ECMAScript（ES）是 JavaScript 的标准。因为所有主流浏览器都遵循此规范，所以 ECMAScript 和 JavaScript 是可以互换的。",
           "截至目前你所学到的 JavaScript 大多是在 2009 年定稿的 ES5（ECMAScript5）。你仍然可以使用 ES5 编写程序。JavaScript 在不断迭代，每年都会发布新功能。",
-          "2015 年发布的 ES6 为该语言增加了许多强大的新功能。在这个课程中，你将学习这些新功能，包括 <code>let</code>、<code>const</code>、箭头函数、类、promises 和模块。"
+          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including arrow functions, destructuring, classes, promises, and modules."
         ]
       },
       "regular-expressions": {
