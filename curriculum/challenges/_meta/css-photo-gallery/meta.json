@@ -1,0 +1,98 @@
+{
+  "name": "CSS Photo Gallery",
+  "isUpcomingChange": true,
+  "dashedName": "css-photo-gallery",
+  "order": 20,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "61537485c4f2a624f18d7794",
+      "Step 1"
+    ],
+    [
+      "61537a8054753e2f1f2a1574",
+      "Step 2"
+    ],
+    [
+      "61537bb9b1a29430ac15ad38",
+      "Step 3"
+    ],
+    [
+      "61537c5f81f0cf325b4a854c",
+      "Step 4"
+    ],
+    [
+      "61537c9eecea6a335db6da79",
+      "Step 5"
+    ],
+    [
+      "61537d86bdc3dd343688fceb",
+      "Step 6"
+    ],
+    [
+      "615380dff67172357fcf0425",
+      "Step 7"
+    ],
+    [
+      "615f171d05def3218035dc85",
+      "Step 8"
+    ],
+    [
+      "6153893900438b4643590367",
+      "Step 9"
+    ],
+    [
+      "6153897c27f6334716ee5abe",
+      "Step 10"
+    ],
+    [
+      "615389bd81347947ea7ba896",
+      "Step 11"
+    ],
+    [
+      "6153908a366afb4d57185c8d",
+      "Step 12"
+    ],
+    [
+      "615392916d83fa4f02f7e2cf",
+      "Step 13"
+    ],
+    [
+      "6153938dce8b294ff8f5a4e9",
+      "Step 14"
+    ],
+    [
+      "6153947986535e5117e60615",
+      "Step 15"
+    ],
+    [
+      "61539e07e7430b528fbffe21",
+      "Step 16"
+    ],
+    [
+      "61539f32a206bd53ec116465",
+      "Step 17"
+    ],
+    [
+      "6153a04847abee57a3a406ac",
+      "Step 18"
+    ],
+    [
+      "6153a3485f0b20591d26d2a1",
+      "Step 19"
+    ],
+    [
+      "6153a3952facd25a83fe8083",
+      "Step 20"
+    ],
+    [
+      "6153a3ebb4f7f05b8401b716",
+      "Step 21"
+    ]
+  ]
+}
