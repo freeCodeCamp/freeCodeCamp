@@ -14,13 +14,14 @@ I cicli for non devono necessariamente iterare un numero alla volta. Modificando
 Inizieremo da `i = 0` e ripeteremo il ciclo finché `i < 10`. Incrementeremo `i` di 2 ad ogni ciclo con `i += 2`.
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 10; i += 2) {
+const ourArray = [];
+
+for (let i = 0; i < 10; i += 2) {
   ourArray.push(i);
 }
 ```
 
-`ourArray` ora conterrà `[0,2,4,6,8]`. Cambiamo la nostra `initialization` in modo da poter iterare sui numeri dispari.
+`ourArray` ora conterrà `[0, 2, 4, 6, 8]`. Cambiamo la nostra `initialization` in modo da poter iterare sui numeri dispari.
 
 # --instructions--
 
@@ -34,7 +35,7 @@ Dovresti usare un ciclo `for`.
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` dovrebbe essere uguale a `[1,3,5,7,9]`.
+`myArray` dovrebbe essere uguale a `[1, 3, 5, 7, 9]`.
 
 ```js
 assert.deepEqual(myArray, [1, 3, 5, 7, 9]);
@@ -52,16 +53,17 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 1; i < 10; i += 2) {
+const myArray = [];
+for (let i = 1; i < 10; i += 2) {
   myArray.push(i);
 }
 ```

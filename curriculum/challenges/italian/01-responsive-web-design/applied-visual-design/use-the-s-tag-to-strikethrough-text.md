@@ -13,7 +13,7 @@ Per barrare il testo, ovvero tracciare una linea orizzontale che tagli i caratte
 
 # --instructions--
 
-Avvolgi il tag `s` intorno a `Google` all'interno del tag `h4`, quindi aggiungi la parola `Alphabet` accanto ad esso, senza applicarle la formattazione barrata.
+Avvolgi le tag `s` attorno a `Google` dentro le tag `h4` e poi aggiungi la parola `Alphabet` affianco senza la formattazione barrata.
 
 # --hints--
 

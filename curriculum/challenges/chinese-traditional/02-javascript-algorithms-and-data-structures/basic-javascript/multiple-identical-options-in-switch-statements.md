@@ -12,7 +12,7 @@ dashedName: multiple-identical-options-in-switch-statements
 如果你忘了給 `switch` 的每一條 `case` 添加 `break`，那麼後續的 `case` 會一直執行，直到遇見 `break` 爲止。 如果你想爲 `switch` 中的多個不同的輸入設置相同的結果，可以這樣寫：
 
 ```js
-var result = "";
+let result = "";
 switch(val) {
   case 1:
   case 2:
@@ -109,7 +109,7 @@ assert(code.match(/case/g).length === 9);
 
 ```js
 function sequentialSizes(val) {
-  var answer = "";
+  let answer = "";
   // Only change code below this line
 
 
@@ -125,7 +125,7 @@ sequentialSizes(1);
 
 ```js
 function sequentialSizes(val) {
-  var answer = "";
+  let answer = "";
 
   switch(val) {
     case 1:

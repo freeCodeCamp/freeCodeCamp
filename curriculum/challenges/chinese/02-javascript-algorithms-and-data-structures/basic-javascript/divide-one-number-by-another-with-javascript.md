@@ -16,7 +16,7 @@ JavaScript 中使用 `/` 符号做除法运算。
 **示例**
 
 ```js
-myVar = 16 / 2;
+const myVar = 16 / 2;
 ```
 
 现在，变量 `myVar` 的值为 `8`。
@@ -49,11 +49,11 @@ assert(/\d+\s*\/\s*\d+/.test(code));
 ## --seed-contents--
 
 ```js
-var quotient = 66 / 0;
+const quotient = 66 / 0;
 ```
 
 # --solutions--
 
 ```js
-var quotient = 66 / 33;
+const quotient = 66 / 33;
 ```

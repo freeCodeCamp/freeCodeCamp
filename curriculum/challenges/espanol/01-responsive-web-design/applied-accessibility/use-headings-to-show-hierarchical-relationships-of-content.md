@@ -17,7 +17,7 @@ Si estuvieras escribiendo un documento con una introducción, un cuerpo y una co
 
 Los títulos con rango igual (o superior) comienzan nuevas secciones implícitas, los títulos con rango inferior comienzan subsecciones de la anterior.
 
-Como ejemplo, una página con un elemento `h2` seguido de varias subsecciones marcadas con etiquetas `h4` confundirá a un lector de pantalla. Con seis opciones, es tentador usar una etiqueta porque se ve mejor en un navegador, pero puede usar CSS para editar el tamaño relativo.
+Como un ejemplo, una página con un elemento `h2` seguido por varias subsecciones etiquetadas con elementos `h4` confundiría a un lector de pantalla. Con seis opciones, es tentador usar una etiqueta porque se ve mejor en un navegador, pero puede usar CSS para editar el tamaño relativo.
 
 Un punto final, cada página siempre debe tener un (y solo un) elemento `h1`, que es el tema principal de tu contenido. Este y los otros títulos son utilizados en parte por los motores de búsqueda para comprender el tema de la página.
 
@@ -27,7 +27,7 @@ Camper Cat quiere una página en su sitio dedicada a convertirse en un ninja. Ay
 
 # --hints--
 
-Tu código debe tener 6 etiquetas `h3`.
+Tu código debe tener 6 elementos `h3`.
 
 ```js
 assert($('h3').length === 6);
@@ -39,7 +39,7 @@ Tu código debe tener 6 etiquetas de cierre `h3`.
 assert((code.match(/\/h3/g) || []).length === 6);
 ```
 
-Tu código no debe tener ninguna etiqueta `h5`.
+Tu código no debe tener ningún elemento `h5`.
 
 ```js
 assert($('h5').length === 0);

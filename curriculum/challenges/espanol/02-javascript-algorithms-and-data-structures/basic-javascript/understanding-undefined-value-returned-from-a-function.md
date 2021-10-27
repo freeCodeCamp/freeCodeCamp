@@ -14,10 +14,12 @@ Una función puede incluir la declaración de devolución (`return`) pero no tie
 **Ejemplo**
 
 ```js
-var sum = 0;
+let sum = 0;
+
 function addSum(num) {
   sum = sum + num;
 }
+
 addSum(3);
 ```
 
@@ -61,7 +63,7 @@ assert(
 
 ```js
 // Setup
-var sum = 0;
+let sum = 0;
 
 function addThree() {
   sum = sum + 3;
@@ -79,7 +81,7 @@ addFive();
 # --solutions--
 
 ```js
-var sum = 0;
+let sum = 0;
 
 function addThree() {
   sum = sum + 3;

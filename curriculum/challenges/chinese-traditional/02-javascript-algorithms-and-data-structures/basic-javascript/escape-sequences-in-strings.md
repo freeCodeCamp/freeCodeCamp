@@ -89,11 +89,11 @@ console.log('myStr:\n' + myStr);}})();
 ## --seed-contents--
 
 ```js
-var myStr; // Change this line
+const myStr = ""; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
+const myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
 ```

@@ -57,9 +57,9 @@ assert(__newValue === 5);
 
 ```js
 // The global variable
-var fixedValue = 4;
+let fixedValue = 4;
 
-function incrementer () {
+function incrementer() {
   // Only change code below this line
 
 
@@ -70,7 +70,7 @@ function incrementer () {
 # --solutions--
 
 ```js
-var fixedValue = 4
+let fixedValue = 4
 
 function incrementer() {
   return fixedValue + 1

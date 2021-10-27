@@ -14,7 +14,7 @@ Cuando estás definiendo una cadena debes comenzar y terminar con una comilla si
 En JavaScript, puedes <dfn>escapar</dfn> una comilla de considerarse un final de cadena colocando una <dfn>barra invertida</dfn> (`\`) delante de la comilla.
 
 ```js
-var sampleStr = "Alan said, \"Peter is learning JavaScript\".";
+const sampleStr = "Alan said, \"Peter is learning JavaScript\".";
 ```
 
 Esto indica a JavaScript que la siguiente comilla no es el final de la cadena, sino que debería aparecer dentro de la cadena. Así que si imprimieras esto en la consola, obtendrías:
@@ -62,11 +62,11 @@ assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(mySt
 ## --seed-contents--
 
 ```js
-var myStr = ""; // Change this line
+const myStr = ""; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var myStr = "I am a \"double quoted\" string inside \"double quotes\".";
+const myStr = "I am a \"double quoted\" string inside \"double quotes\".";
 ```

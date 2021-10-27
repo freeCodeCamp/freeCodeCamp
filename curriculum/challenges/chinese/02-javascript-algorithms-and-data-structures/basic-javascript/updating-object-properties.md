@@ -14,7 +14,7 @@ dashedName: updating-object-properties
 举个例子，让我们看看 `ourDog`：
 
 ```js
-var ourDog = {
+const ourDog = {
   "name": "Camper",
   "legs": 4,
   "tails": 1,
@@ -54,7 +54,7 @@ assert(/"name": "Coder"/.test(code));
 
 ```js
 // Setup
-var myDog = {
+const myDog = {
   "name": "Coder",
   "legs": 4,
   "tails": 1,
@@ -62,12 +62,13 @@ var myDog = {
 };
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myDog = {
+const myDog = {
   "name": "Coder",
   "legs": 4,
   "tails": 1,

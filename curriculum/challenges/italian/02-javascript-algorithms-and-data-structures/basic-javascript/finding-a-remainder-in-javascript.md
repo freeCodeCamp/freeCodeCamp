@@ -31,7 +31,7 @@ Imposta `remainder` pari al resto di `11` diviso per `3` utilizzando l'operatore
 La variabile `remainder` dovrebbe essere inizializzata
 
 ```js
-assert(/var\s+?remainder/.test(code));
+assert(/(const|let|var)\s+?remainder/.test(code));
 ```
 
 Il valore di `remainder` dovrebbe essere `2`
@@ -57,13 +57,11 @@ assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
 ## --seed-contents--
 
 ```js
-// Only change code below this line
-
-var remainder;
+const remainder = 0;
 ```
 
 # --solutions--
 
 ```js
-var remainder =  11 % 3;
+const remainder = 11 % 3;
 ```

@@ -16,7 +16,7 @@ JavaScript 使用 `*` 符號表示兩數相乘。
 **示例**
 
 ```js
-myVar = 13 * 13;
+const myVar = 13 * 13;
 ```
 
 現在，變量 `myVar` 的值爲 `169`。
@@ -50,11 +50,11 @@ assert(/\*/.test(code));
 ## --seed-contents--
 
 ```js
-var product = 8 * 0;
+const product = 8 * 0;
 ```
 
 # --solutions--
 
 ```js
-var product = 8 * 10;
+const product = 8 * 10;
 ```

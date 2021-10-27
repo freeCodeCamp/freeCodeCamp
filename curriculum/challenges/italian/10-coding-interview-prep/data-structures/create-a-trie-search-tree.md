@@ -1,6 +1,6 @@
 ---
 id: 587d8259367417b2b2512c84
-title: Create a Trie Search Tree
+title: Crea un albero di ricerca Trie
 challengeType: 1
 forumTopicId: 301634
 dashedName: create-a-trie-search-tree
@@ -8,15 +8,15 @@ dashedName: create-a-trie-search-tree
 
 # --description--
 
-Here we will move on from binary search trees and take a look at another type of tree structure called a trie. A trie is an ordered search tree commonly used to hold strings, or more generically associative arrays or dynamic datasets in which the keys are strings. They are very good at storing sets of data when many keys will have overlapping prefixes, for example, all the words in a dictionary. Unlike a binary tree, nodes are not associated with actual values. Instead, the path to a node represents a specific key. For instance, if we wanted to store the string code in a trie, we would have four nodes, one for each letter: c — o — d — e. Following that path through all these nodes will then create code as a string — that path is the key we stored. Then, if we wanted to add the string coding, it would share the first three nodes of code before branching away after the d. In this way, large datasets can be stored very compactly. In addition, search can be very quick because it is effectively limited to the length of the string you are storing. Furthermore, unlike binary trees a node can store any number of child nodes. As you might have guessed from the above example, some metadata is commonly stored at nodes that hold the end of a key so that on later traversals that key can still be retrieved. For instance, if we added codes in our example above we would need some way to know that the e in code represents the end of a key that was previously entered. Otherwise, this information would effectively be lost when we add codes.
+Qui ci muoveremo dagli alberi di ricerca binari e daremo un'occhiata ad un altro tipo di struttura ad albero chiamato trie. Un trie è un albero di ricerca ordinato comunemente usato per contenere stringhe, o più generamente array associativi o dataset dinamici in cui le chiavi sono stringhe. Sono un ottimo modo per immagazzinare set di dati quando molte chiavi hanno prefissi che si sovrappongono, per esempio, tutte le parole in un dizionario. A differenza di un albero binario, i nodi non sono associati con valori. Invece, il percorso verso un nodo rappresenta una chiave specifica. Per esempio, se vogliamo salvare la stringa "code" in un trie, avremmo quattri nodi, uno per ogni lettera: c — o — d — e. Seguendo il percorso attraverso tutti questi nodi creerà la stringa "code" — quel percorso è la chiave che abbiamo immagazzinato. Quindi, se vogliamo aggiungere la stringa "coding", avrebbe in comune i primi tre nodi di "code" prima di seguire un altro ramo dopo la d. In questo modo, dataset ampi possono essere immagazzinati in maniera compatta. In aggiunta, una ricerca può essere molto veloce perché è effettivamente limitata alla lunghezza della stringa che stai immagazinnando. Inoltre, a differenza degli alberi binari un nodo può avere qualsiasi numero di nodi figli. Come potresti avere indovinato dall'esempio precedente, alcuni metadata sono comunemente salvati come nodi che contengono la fine della chiave cossicché in traversamenti succestivi la chiave può essere ancora recuperata. Per esempio, se avessimo aggiunto "codes" nell'esempio precedente, avremmo avuto bisogno di qualche modo per sapere che la e in "code" rappresenta la fine di una chiave che era stata inserita precedentemente. Altrimenti, questa informazione andrebbe persa quando aggiungiamo "codes".
 
 # --instructions--
 
-Let's create a trie to store words. It will accept words through an `add` method and store these in a trie data structure. It will also allow us to query if a given string is a word with an `isWord` method, and retrieve all the words entered into the trie with a `print` method. `isWord` should return a boolean value and print should return an array of all these words as string values. In order for us to verify that this data structure is implemented correctly, we've provided a `Node` structure for each node in the tree. Each node will be an object with a `keys` property which is a JavaScript Map object. This will hold the individual letters that are valid keys of each node. We've also created an `end` property on the nodes that can be set to `true` if the node represents the termination of a word.
+Creiamo un trie per memorizzare parole. Accetterà parole attraverso un metodo `add` e salverà queste parole in una struttura dati trie. Permetterà anche di chiedere se una certa stringa è una parola con un metodo `isWord`, e estrarre tutte le parole inserite nel trie con un metodo `print`. `isWord` dovrebbe restituire un valore booleano e print dovrebbe restituire un array di tutte queste parole come stringhe. Per poter verificare che la struttura dati è implementata correttamente, abbiamo provveduto una struttura `Node` per ogni nodo dell'albero. Ogni nodo sarà un oggetto con una proprietà `keys` che è un oggetto Map JavaScript. Questo conterrà le lettere individuali che sono chiavi valide per ogni nodo. Abbiamo anche creato una proprietà `end` nel nodo che può essere messa su `true` se il nodo rappresenta la terminazione di una parola.
 
 # --hints--
 
-The Trie should have an add method.
+Il Trie dovrebbe avere un metodo add.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-The Trie should have a print method.
+Il Trie dovrebbe avere un metodo print.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-The Trie should have an isWord method.
+Il Trie dovrebbe avere un metodo isWord.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-The print method should return all items added to the trie as strings in an array.
+Il metodo print dovrebbe restituire tutti gli elementi aggiunti al trie come stringhe in un array.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-The isWord method should return true only for words added to the trie and false for all other words.
+Il metodo isWord dovrebbe restituire vero solo per le parole aggiunte al trie e falso per tutte le altre parole.
 
 ```js
 assert(

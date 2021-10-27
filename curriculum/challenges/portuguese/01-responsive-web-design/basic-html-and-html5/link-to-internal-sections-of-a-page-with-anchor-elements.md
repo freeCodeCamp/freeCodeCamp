@@ -21,7 +21,7 @@ Abaixo, vemos um exemplo de um link vinculado a um elemento interno da página:
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-Quando os usuários clicam no link `Contacts`, eles são levados à seção da página que contem o texto **Contacts**.
+Quando os usuários clicam no link `Contacts`, eles são levados à seção da página que contem o elemento de título **Contacts**.
 
 # --instructions--
 

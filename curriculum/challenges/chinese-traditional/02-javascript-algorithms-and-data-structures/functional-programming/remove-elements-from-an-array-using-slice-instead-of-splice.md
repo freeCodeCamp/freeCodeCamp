@@ -11,7 +11,7 @@ dashedName: remove-elements-from-an-array-using-slice-instead-of-splice
 使用數組時經常遇到要刪除一些元素並保留數組剩餘部分的情況。 爲此，JavaScript 提供了 `splice` 方法，它接收兩個參數：從哪裏開始刪除項目的索引，和要刪除的項目數。 如果沒有提供第二個參數，默認情況下是移除一直到結尾的所有元素。 但 `splice` 方法會改變調用它的原始數組。 舉個例子：
 
 ```js
-var cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+const cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 cities.splice(3, 1);
 ```
 
@@ -69,7 +69,8 @@ function nonMutatingSplice(cities) {
 
   // Only change code above this line
 }
-var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+
+const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 nonMutatingSplice(inputCities);
 ```
 
@@ -77,10 +78,7 @@ nonMutatingSplice(inputCities);
 
 ```js
 function nonMutatingSplice(cities) {
-  // Only change code below this line
   return cities.slice(0,3);
-  // Only change code above this line
 }
-var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
-nonMutatingSplice(inputCities);
+const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 ```

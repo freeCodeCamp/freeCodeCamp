@@ -16,8 +16,8 @@ Un altro modo per cambiare i dati in un array è con la funzione `.pop()`.
 Qualsiasi tipo di elemento può essere estratto da un array - numeri, stringhe, anche array annidati.
 
 ```js
-var threeArr = [1, 4, 6];
-var oneDown = threeArr.pop();
+const threeArr = [1, 4, 6];
+const oneDown = threeArr.pop();
 console.log(oneDown);
 console.log(threeArr);
 ```
@@ -26,7 +26,7 @@ Il primo `console.log` mostrerà il valore `6`e il secondo mostrerà il valore `
 
 # --instructions--
 
-Utilizza la funzione `.pop()` per rimuovere l'ultimo elemento da `myArray`, assegnando il valore estratto a `removedFromMyArray`.
+Utilizza la funzione `.pop()` per rimuovere l'ultimo elemento da `myArray` e assegna il valore estratto a `removedFromMyArray`.
 
 # --hints--
 
@@ -69,22 +69,22 @@ assert(
 ## --after-user-code--
 
 ```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 ## --seed-contents--
 
 ```js
 // Setup
-var myArray = [["John", 23], ["cat", 2]];
+const myArray = [["John", 23], ["cat", 2]];
 
 // Only change code below this line
-var removedFromMyArray;
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["cat", 2]];
-var removedFromMyArray = myArray.pop();
+const myArray = [["John", 23], ["cat", 2]];
+const removedFromMyArray = myArray.pop();
 ```

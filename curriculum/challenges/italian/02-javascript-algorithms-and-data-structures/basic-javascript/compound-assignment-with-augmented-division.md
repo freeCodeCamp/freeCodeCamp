@@ -55,9 +55,9 @@ Non dovresti modificare il codice sopra il commento specificato.
 
 ```js
 assert(
-  /var a = 48;/.test(code) &&
-    /var b = 108;/.test(code) &&
-    /var c = 33;/.test(code)
+  /let a = 48;/.test(code) &&
+    /let b = 108;/.test(code) &&
+    /let c = 33;/.test(code)
 );
 ```
 
@@ -72,9 +72,9 @@ assert(
 ## --seed-contents--
 
 ```js
-var a = 48;
-var b = 108;
-var c = 33;
+let a = 48;
+let b = 108;
+let c = 33;
 
 // Only change code below this line
 a = a / 12;
@@ -85,9 +85,9 @@ c = c / 11;
 # --solutions--
 
 ```js
-var a = 48;
-var b = 108;
-var c = 33;
+let a = 48;
+let b = 108;
+let c = 33;
 
 a /= 12;
 b /= 4;

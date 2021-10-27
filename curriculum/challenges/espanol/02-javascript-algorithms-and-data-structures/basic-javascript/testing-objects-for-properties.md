@@ -13,10 +13,11 @@ A veces es útil comprobar si existe o no la propiedad de un objeto dado. Podemo
 **Por ejemplo**
 
 ```js
-var myObj = {
+const myObj = {
   top: "hat",
   bottom: "pants"
 };
+
 myObj.hasOwnProperty("top");
 myObj.hasOwnProperty("middle");
 ```

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb2367417b2b2512bf5
-title: Get Route Parameter Input from the Client
+title: Obtén la entrada de parámetros de ruta del cliente
 challengeType: 2
 forumTopicId: 301513
 dashedName: get-route-parameter-input-from-the-client
@@ -8,17 +8,17 @@ dashedName: get-route-parameter-input-from-the-client
 
 # --description--
 
-When building an API, we have to allow users to communicate to us what they want to get from our service. For example, if the client is requesting information about a user stored in the database, they need a way to let us know which user they're interested in. One possible way to achieve this result is by using route parameters. Route parameters are named segments of the URL, delimited by slashes (/). Each segment captures the value of the part of the URL which matches its position. The captured values can be found in the `req.params` object.
+Cuando construimos una API, tenemos que permitir que los usuarios nos comuniquen lo que quieren obtener de nuestro servicio. Por ejemplo, si el cliente solicita información sobre un usuario almacenado en la base de datos, necesitan una forma de hacernos saber en qué usuario están interesados. Una posible forma de lograr este resultado es utilizando parámetros de ruta. Los parámetros de ruta son segmentos con nombre de la URL, delimitados por barras (/). Cada segmento captura el valor de la parte de la URL que coincide con su posición. Los valores capturados pueden encontrarse en el objeto `req.params`.
 
 <blockquote>route_path: '/user/:userId/book/:bookId'<br>actual_request_URL: '/user/546/book/6754' <br>req.params: {userId: '546', bookId: '6754'}</blockquote>
 
 # --instructions--
 
-Build an echo server, mounted at the route `GET /:word/echo`. Respond with a JSON object, taking the structure `{echo: word}`. You can find the word to be repeated at `req.params.word`. You can test your route from your browser's address bar, visiting some matching routes, e.g. `your-app-rootpath/freecodecamp/echo`.
+Construye un servidor de eco, montado en la ruta `GET /:word/echo`. Responde con un documento JSON, tomando la estructura `{echo: word}`. Puedes encontrar la palabra que se repetirá en `req.params.word`. Puedes probar tu ruta desde la barra de direcciones de tu navegador, visitando algunas rutas coincidentes, por ejemplo, `your-app-rootpath/freecodecamp/echo`.
 
 # --hints--
 
-Test 1 : Your echo server should repeat words correctly
+Prueba 1: Tu servidor de eco debe repetir las palabras correctamente
 
 ```js
 (getUserInput) =>
@@ -36,7 +36,7 @@ Test 1 : Your echo server should repeat words correctly
   );
 ```
 
-Test 2 : Your echo server should repeat words correctly
+Prueba 2: Tu servidor de eco debe repetir las palabras correctamente
 
 ```js
 (getUserInput) =>

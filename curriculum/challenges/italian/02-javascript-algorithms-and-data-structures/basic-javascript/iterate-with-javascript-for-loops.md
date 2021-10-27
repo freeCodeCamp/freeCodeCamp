@@ -26,13 +26,14 @@ L'espressione finale è eseguita alla fine di ogni iterazione del ciclo, prima d
 Nell'esempio seguente inizializziamo con `i = 0` e iteriamo finché la nostra condizione `i < 5` è vera. Incrementeremo `i` di `1` ad ogni iterazione del ciclo con `i++` come espressione finale.
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 5; i++) {
+const ourArray = [];
+
+for (let i = 0; i < 5; i++) {
   ourArray.push(i);
 }
 ```
 
-`ourArray` ha ora il valore `[0,1,2,3,4]`.
+`ourArray` ha ora il valore `[0, 1, 2, 3, 4]`.
 
 # --instructions--
 
@@ -46,7 +47,7 @@ Dovresti usare un ciclo `for`.
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` dovrebbe essere uguale a `[1,2,3,4,5]`.
+`myArray` dovrebbe essere uguale a `[1, 2, 3, 4, 5]`.
 
 ```js
 assert.deepEqual(myArray, [1, 2, 3, 4, 5]);
@@ -64,16 +65,17 @@ if (typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 1; i < 6; i++) {
+const myArray = [];
+for (let i = 1; i < 6; i++) {
   myArray.push(i);
 }
 ```

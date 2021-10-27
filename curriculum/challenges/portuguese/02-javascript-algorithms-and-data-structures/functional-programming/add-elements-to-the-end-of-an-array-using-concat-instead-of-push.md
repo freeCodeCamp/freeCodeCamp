@@ -13,7 +13,7 @@ Programação funcional é basicamente criar e utilizar funções que não modif
 O último desafio mostrou como usar o método `concat` para criar um novo array a partir da combinação de outros sem modificar os originais. Compare os métodos `concat` e `push`. O `push` adiciona um item ao final do array à esquerda do `.`. Ele modifica o array. Exemplo:
 
 ```js
-var arr = [1, 2, 3];
+const arr = [1, 2, 3];
 arr.push([4, 5, 6]);
 ```
 
@@ -71,8 +71,9 @@ function nonMutatingPush(original, newItem) {
 
   // Only change code above this line
 }
-var first = [1, 2, 3];
-var second = [4, 5];
+
+const first = [1, 2, 3];
+const second = [4, 5];
 nonMutatingPush(first, second);
 ```
 
@@ -82,7 +83,6 @@ nonMutatingPush(first, second);
 function nonMutatingPush(original, newItem) {
   return original.concat(newItem);
 }
-var first = [1, 2, 3];
-var second = [4, 5];
-nonMutatingPush(first, second);
+const first = [1, 2, 3];
+const second = [4, 5];
 ```

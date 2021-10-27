@@ -12,8 +12,9 @@ dashedName: iterate-with-javascript-do---while-loops
 Il prossimo tipo di ciclo che vedremo si chiama `do...while`. Si chiama ciclo `do... while` perché prima eseguirà (`do`) un passaggio del codice all'interno del ciclo indipendentemente dalle condizioni, e poi continuerà ad eseguire il ciclo finché (`while`) la condizione specificata avrà valore `true`.
 
 ```js
-var ourArray = [];
-var i = 0;
+const ourArray = [];
+let i = 0;
+
 do {
   ourArray.push(i);
   i++;
@@ -23,8 +24,9 @@ do {
 L'esempio sopra si comporta come altri tipi di cicli, e l'array risultante sarà `[0, 1, 2, 3, 4]`. Tuttavia, ciò che rende il `do...while` diverso da altri cicli è come si comporta quando la condizione fallisce al primo controllo. Vediamolo in azione: ecco un normale ciclo `while` che eseguirà il codice nel ciclo finché `i < 5`:
 
 ```js
-var ourArray = []; 
-var i = 5;
+const ourArray = []; 
+let i = 5;
+
 while (i < 5) {
   ourArray.push(i);
   i++;
@@ -34,8 +36,9 @@ while (i < 5) {
 In questo esempio, inizializziamo il valore di `ourArray` a un array vuoto e il valore di `i` a 5. Quando eseguiamo il ciclo `while`, la condizione vale `false` perché `i` non è inferiore a 5, e in questo modo non eseguiremo il codice all'interno del ciclo. Il risultato è che `ourArray` finirà per non avere valori aggiunti, e sarà ancora simile a `[]` quando tutto il codice nell'esempio precedente sarà stato completato. Ora, dai un'occhiata a un ciclo `do...while`:
 
 ```js
-var ourArray = []; 
-var i = 5;
+const ourArray = []; 
+let i = 5;
+
 do {
   ourArray.push(i);
   i++;
@@ -80,8 +83,8 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
-var i = 10;
+const myArray = [];
+let i = 10;
 
 // Only change code below this line
 while (i < 5) {
@@ -93,8 +96,8 @@ while (i < 5) {
 # --solutions--
 
 ```js
-var myArray = [];
-var i = 10;
+const myArray = [];
+let i = 10;
 do {
   myArray.push(i);
   i++;
