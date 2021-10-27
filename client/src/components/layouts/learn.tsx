@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -52,48 +52,46 @@ type LearnLayoutProps = {
   children?: React.ReactNode;
 };
 
-class LearnLayout extends Component<LearnLayoutProps> {
-  static displayName = 'LearnLayout';
+function LearnLayout({
+  isSignedIn,
+  fetchState,
+  user,
+  tryToShowDonationModal,
+  children
+}: LearnLayoutProps): JSX.Element {
+  useEffect(() => {
+    tryToShowDonationModal();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  componentDidMount() {
-    this.props.tryToShowDonationModal();
+  useEffect(() => {
+    return () => {
+      const metaTag = document.querySelector(`meta[name="robots"]`);
+      if (metaTag) {
+        metaTag.remove();
+      }
+    };
+  }, []);
+
+  if (fetchState.pending && !fetchState.complete) {
+    return <Loader fullScreen={true} />;
   }
 
-  componentWillUnmount() {
-    const metaTag = document.querySelector(`meta[name="robots"]`);
-    if (metaTag) {
-      metaTag.remove();
-    }
+  if (isSignedIn && !user.acceptedPrivacyTerms) {
+    return <RedirectEmailSignUp />;
   }
 
-  render() {
-    const {
-      fetchState: { pending, complete },
-      isSignedIn,
-      user: { acceptedPrivacyTerms },
-      children
-    } = this.props;
-
-    if (pending && !complete) {
-      return <Loader fullScreen={true} />;
-    }
-
-    if (isSignedIn && !acceptedPrivacyTerms) {
-      return <RedirectEmailSignUp />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <meta content='noindex' name='robots' />
-        </Helmet>
-        <main id='learn-app-wrapper'>{children}</main>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-        /* @ts-ignore  */}
-        <DonateModal />
-      </>
-    );
-  }
+  return (
+    <>
+      <Helmet>
+        <meta content='noindex' name='robots' />
+      </Helmet>
+      <main id='learn-app-wrapper'>{children}</main>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+      /* @ts-ignore  */}
+      <DonateModal />
+    </>
+  );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LearnLayout);
