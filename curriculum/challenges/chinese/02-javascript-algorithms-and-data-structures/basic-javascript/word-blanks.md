@@ -16,7 +16,7 @@ dashedName: word-blanks
 思考一下这句话 - It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**。 这句话有三个缺失的部分 - 形容词、动词和副词，选择合适单词填入完成它。 然后将完成的句子赋值给变量，如下所示：
 
 ```js
-var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
+const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
 ```
 
 # --instructions--
@@ -84,24 +84,24 @@ const removeAssignments = str => str
 ## --seed-contents--
 
 ```js
-var myNoun = "dog";
-var myAdjective = "big";
-var myVerb = "ran";
-var myAdverb = "quickly";
+const myNoun = "dog";
+const myAdjective = "big";
+const myVerb = "ran";
+const myAdverb = "quickly";
 
 // Only change code below this line
-var wordBlanks = ""; // Change this line
+const wordBlanks = ""; // Change this line
 // Only change code above this line
 ```
 
 # --solutions--
 
 ```js
-var myNoun = "dog";
-var myAdjective = "big";
-var myVerb = "ran";
-var myAdverb = "quickly";
+const myNoun = "dog";
+const myAdjective = "big";
+const myVerb = "ran";
+const myAdverb = "quickly";
 
-var wordBlanks = "Once there was a " + myNoun + " which was very " + myAdjective + ". ";
+let wordBlanks = "Once there was a " + myNoun + " which was very " + myAdjective + ". ";
 wordBlanks += "It " + myVerb + " " + myAdverb + " around the yard.";
 ```

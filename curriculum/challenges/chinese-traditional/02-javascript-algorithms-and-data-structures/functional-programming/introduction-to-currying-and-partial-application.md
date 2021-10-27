@@ -35,7 +35,7 @@ curried(1)(2)
 柯里化在不能一次爲函數提供所有參數情況下很有用。 因爲它可以將每個函數的調用保存到一個變量中，該變量將保存返回的函數引用，該引用在下一個參數可用時接受該參數。 下面是使用柯里化函數的例子：
 
 ```js
-var funcForY = curried(1);
+const funcForY = curried(1);
 console.log(funcForY(2)); // 3
 ```
 
@@ -45,7 +45,8 @@ console.log(funcForY(2)); // 3
 function impartial(x, y, z) {
   return x + y + z;
 }
-var partialFn = impartial.bind(this, 1, 2);
+
+const partialFn = impartial.bind(this, 1, 2);
 partialFn(10); // 13
 ```
 
@@ -90,6 +91,7 @@ function add(x) {
 
   // Only change code above this line
 }
+
 add(10)(20)(30);
 ```
 

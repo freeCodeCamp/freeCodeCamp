@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abd
-title: Regolare la dimensione di un'intestazione rispetto a quella di un paragrafo
+title: Regolare la dimensione di un elemento di intestazione rispetto a quella di un elemento paragrafo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
@@ -9,11 +9,11 @@ dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 
 # --description--
 
-La dimensione del carattere dei tag di intestazione (da `h1` a `h6`) dovrebbe essere generalmente più grande della dimensione del carattere dei tag di paragrafo. Questo rende più facile per l'utente capire visivamente il layout e il livello di importanza di ogni elemento della pagina. Si utilizza la proprietà `font-size` per regolare la dimensione del testo in un elemento.
+La dimensione del carattere degli elementi di intestazione (da `h1` a `h6`) dovrebbe essere generalmente più grande della dimensione del carattere degli elementi di paragrafo. Questo rende più facile per l'utente capire visivamente il layout e il livello di importanza di ogni elemento della pagina. Si utilizza la proprietà `font-size` per regolare la dimensione del testo in un elemento.
 
 # --instructions--
 
-Per rendere l'intestazione significativamente più grande del paragrafo, porta `font-size` del tag `h4` a 27 pixel.
+Per rendere l'intestazione significativamente più grande del paragrafo, porta `font-size` dell'elemento `h4` a 27 pixel.
 
 # --hints--
 
@@ -116,3 +116,4 @@ assert($('h4').css('font-size') == '27px');
   </div>
 </div>
 ```
+

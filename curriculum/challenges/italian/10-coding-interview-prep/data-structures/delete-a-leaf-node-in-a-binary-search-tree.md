@@ -46,6 +46,25 @@ assert(
 );
 ```
 
+Tentare di rimuovere un elemento da un albero vuoto dovrebbe restituire `null`.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.remove !== 'function') {
+      return false;
+    }
+    return test.remove(100) == null;
+  })()
+);
+```
+
 Tentare di rimuovere un elemento che non esiste dovrebbe restituire `null`.
 
 ```js
@@ -60,6 +79,8 @@ assert(
     if (typeof test.remove !== 'function') {
       return false;
     }
+    test.add(15);
+    test.add(30);
     return test.remove(100) == null;
   })()
 );

@@ -13,7 +13,8 @@ dashedName: use-the-every-method-to-check-that-every-element-in-an-array-meets-a
 舉個例子，下面的代碼檢測數組 `numbers` 的所有元素是否都小於 10：
 
 ```js
-var numbers = [1, 5, 8, 0, 10, 11];
+const numbers = [1, 5, 8, 0, 10, 11];
+
 numbers.every(function(currentValue) {
   return currentValue < 10;
 });
@@ -62,6 +63,7 @@ function checkPositive(arr) {
 
   // Only change code above this line
 }
+
 checkPositive([1, 2, 3, -4, 5]);
 ```
 
@@ -69,9 +71,6 @@ checkPositive([1, 2, 3, -4, 5]);
 
 ```js
 function checkPositive(arr) {
-  // Only change code below this line
   return arr.every(num => num > 0);
-  // Only change code above this line
 }
-checkPositive([1, 2, 3, -4, 5]);
 ```

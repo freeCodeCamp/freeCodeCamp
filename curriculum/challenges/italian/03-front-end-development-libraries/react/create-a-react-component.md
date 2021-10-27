@@ -38,7 +38,7 @@ Il componente React dovrebbe restituire un elemento `div`.
 assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div');
 ```
 
-Il `div` restituito dovrebbe fare il render di un header `h1` al suo interno.
+Il `div` restituito dovrebbe fare il render di un elemento di intestazione `h1` al suo interno.
 
 ```js
 assert(

@@ -13,8 +13,8 @@ O método `join` é usado para juntar os elementos de um array, resultando em um
 Exemplo:
 
 ```js
-var arr = ["Hello", "World"];
-var str = arr.join(" ");
+const arr = ["Hello", "World"];
+const str = arr.join(" ");
 ```
 
 O valor de `str` é `Hello World`.
@@ -76,6 +76,7 @@ function sentensify(str) {
 
   // Only change code above this line
 }
+
 sentensify("May-the-force-be-with-you");
 ```
 
@@ -83,8 +84,6 @@ sentensify("May-the-force-be-with-you");
 
 ```js
 function sentensify(str) {
-  // Only change code below this line
   return str.split(/\W/).join(' ');
-  // Only change code above this line
 }
 ```

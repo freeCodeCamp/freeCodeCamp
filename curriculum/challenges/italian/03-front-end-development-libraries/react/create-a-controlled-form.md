@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-L'intestazione `h1` dovrebbe fare il render del valore del campo `submit` prendendolo dallo stato del componente.
+L'elemento di intestazione `h1` dovrebbe fare il render del valore del campo `submit` prendendolo dallo stato del componente.
 
 ```js
 (() => {

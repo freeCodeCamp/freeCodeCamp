@@ -18,6 +18,7 @@ function ascendingOrder(arr) {
     return a - b;
   });
 }
+
 ascendingOrder([1, 5, 2, 3, 4]);
 ```
 
@@ -29,6 +30,7 @@ function reverseAlpha(arr) {
     return a === b ? 0 : a < b ? 1 : -1;
   });
 }
+
 reverseAlpha(['l', 'h', 'z', 'b', 's']);
 ```
 
@@ -86,6 +88,7 @@ function alphabeticalOrder(arr) {
   return arr
   // Only change code above this line
 }
+
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```
 
@@ -93,9 +96,6 @@ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 
 ```js
 function alphabeticalOrder(arr) {
-  // Only change code below this line
   return arr.sort();
-  // Only change code above this line
 }
-alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```

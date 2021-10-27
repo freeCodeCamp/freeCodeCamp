@@ -108,7 +108,7 @@ const testObj = {
 };
 
 // Only change code below this line
-const playerNumber;       // Change this line
+const playerNumber = 42;  // Change this line
 const player = testObj;   // Change this line
 ```
 

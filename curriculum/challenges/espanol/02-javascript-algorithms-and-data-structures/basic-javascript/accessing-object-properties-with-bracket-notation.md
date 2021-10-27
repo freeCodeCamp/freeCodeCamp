@@ -16,11 +16,12 @@ Sin embargo, también puedes utilizar la notación de corchetes en las propiedad
 Aquí hay un ejemplo de cómo usar la notación de corchetes para leer la propiedad de un objeto:
 
 ```js
-var myObj = {
+const myObj = {
   "Space Name": "Kirk",
   "More Space": "Spock",
   "NoSpace": "USS Enterprise"
 };
+
 myObj["Space Name"];
 myObj['More Space'];
 myObj["NoSpace"];
@@ -78,26 +79,25 @@ assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 
 ```js
 // Setup
-var testObj = {
+const testObj = {
   "an entree": "hamburger",
   "my side": "veggies",
   "the drink": "water"
 };
 
 // Only change code below this line
-
-var entreeValue = testObj;   // Change this line
-var drinkValue = testObj;    // Change this line
+const entreeValue = testObj;   // Change this line
+const drinkValue = testObj;    // Change this line
 ```
 
 # --solutions--
 
 ```js
-var testObj = {
+const testObj = {
   "an entree": "hamburger",
   "my side": "veggies",
   "the drink": "water"
 };
-var entreeValue = testObj["an entree"];
-var drinkValue = testObj['the drink'];
+const entreeValue = testObj["an entree"];
+const drinkValue = testObj['the drink'];
 ```

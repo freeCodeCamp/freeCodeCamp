@@ -6,7 +6,7 @@ Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeC
 
 Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
 
-We have user-contributed translations live in Chinese (中文) and Spanish (Español). We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
+We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
 
 If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
 

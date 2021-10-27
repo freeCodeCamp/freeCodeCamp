@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abd
-title: Contrastar o tamanho de um título com o de um parágrafo
+title: Contrastar o tamanho de um elemento de título com o de um parágrafo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
@@ -9,11 +9,11 @@ dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 
 # --description--
 
-O tamanho da tipografia das tags de títulos (`h1` a `h6`) geralmente deve ser maior do que o tamanho da tipografia das tags de parágrafo. Isso torna mais fácil para o usuário entender visualmente o layout e o nível de importância de tudo na página. Você pode usar a propriedade `font-size` para ajustar o tamanho do texto de um elemento.
+O tamanho da tipografia dos elementos de título (`h1` a `h6`) geralmente deve ser maior do que o tamanho da tipografia dos elementos de parágrafo. Isso torna mais fácil para o usuário entender visualmente o layout e o nível de importância de tudo na página. Você pode usar a propriedade `font-size` para ajustar o tamanho do texto de um elemento.
 
 # --instructions--
 
-Para tornar o título significativamente maior do que o parágrafo, altere a propriedade `font-size` da tag `h4` para 27 pixels.
+Para tornar o título significativamente maior do que o parágrafo, altere a propriedade `font-size` do elemento `h4` para 27 pixels.
 
 # --hints--
 
@@ -116,3 +116,4 @@ assert($('h4').css('font-size') == '27px');
   </div>
 </div>
 ```
+

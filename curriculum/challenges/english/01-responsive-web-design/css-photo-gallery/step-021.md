@@ -1,0 +1,127 @@
+---
+id: 6153a3ebb4f7f05b8401b716
+title: Step 21
+challengeType: 0
+dashedName: step-21
+---
+
+# --description--
+
+Resize the preview to see the layout change from your media query.
+
+Finally, create another media query for screens smaller than `600px` wide. In that media query, create a `#gallery img` rule and set the `width` property to `100%`. This will give your gallery a single-column layout.
+
+Your CSS Flexbox Photo Gallery is now complete.
+
+# --hints--
+
+You should have a second `@media` query.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.length === 2);
+```
+
+Your new `@media` query should come after your existing one.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[0]?.media?.mediaText === '(max-width: 800px)');
+```
+
+Your new `@media` query should have a `max-width` of `600px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[1]?.media?.mediaText === '(max-width: 600px)');
+```
+
+Your new `@media` query should have a `#gallery img` selector.
+
+```js
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 600px)');
+assert(rules?.find(rule => rule?.selectorText === '#gallery img'));
+```
+
+Your `#gallery img` rule should have a `width` property set to `100%`.
+
+```js
+const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 600px)');
+const imgRule = rules?.find(rule => rule?.selectorText === '#gallery img');
+assert(imgRule?.style?.width === '100%');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox Photo Gallery</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>CSS FLEXBOX PHOTO GALLERY</h1>
+    </div>
+    <div id="gallery">
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/10.jpg"/>
+    </div>
+  </body>
+</html>
+```
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #EBE7E7;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+  background: #E0DDDD;
+}
+
+#gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#gallery img {
+  width: 25%;
+  height: 300px;
+  object-fit: cover;
+  margin-top: 8px;
+  padding: 0 4px;
+  border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  #gallery img {
+    width: 50%;
+  }
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+```

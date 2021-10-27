@@ -35,7 +35,7 @@ curried(1)(2)
 柯里化在不能一次为函数提供所有参数情况下很有用。 因为它可以将每个函数的调用保存到一个变量中，该变量将保存返回的函数引用，该引用在下一个参数可用时接受该参数。 下面是使用柯里化函数的例子：
 
 ```js
-var funcForY = curried(1);
+const funcForY = curried(1);
 console.log(funcForY(2)); // 3
 ```
 
@@ -45,7 +45,8 @@ console.log(funcForY(2)); // 3
 function impartial(x, y, z) {
   return x + y + z;
 }
-var partialFn = impartial.bind(this, 1, 2);
+
+const partialFn = impartial.bind(this, 1, 2);
 partialFn(10); // 13
 ```
 
@@ -90,6 +91,7 @@ function add(x) {
 
   // Only change code above this line
 }
+
 add(10)(20)(30);
 ```
 

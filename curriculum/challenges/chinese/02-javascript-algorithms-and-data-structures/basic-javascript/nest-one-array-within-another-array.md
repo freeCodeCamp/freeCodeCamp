@@ -12,7 +12,7 @@ dashedName: nest-one-array-within-another-array
 您也可以在其他数组中嵌套数组，如：
 
 ```js
-[["Bulls", 23], ["White Sox", 45]]
+const teams = [["Bulls", 23], ["White Sox", 45]];
 ```
 
 这也叫做多维数组（<dfn>multi-dimensional array</dfn>）。
@@ -41,11 +41,11 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Only change code below this line
-var myArray = [];
+const myArray = [];
 ```
 
 # --solutions--
 
 ```js
-var myArray = [[1,2,3]];
+const myArray = [[1, 2, 3]];
 ```

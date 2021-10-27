@@ -13,7 +13,7 @@ La programación funcional consiste en crear y utilizar funciones no mutantes.
 El último desafío introdujo el método `concat` como una forma de combinar arreglos en uno nuevo sin mutar los arreglos originales. Compara `concat` con el método `push`. `push` añade un elemento al final del arreglo desde el que se llama, lo cual muta ese arreglo. Aquí hay un ejemplo:
 
 ```js
-var arr = [1, 2, 3];
+const arr = [1, 2, 3];
 arr.push([4, 5, 6]);
 ```
 
@@ -71,8 +71,9 @@ function nonMutatingPush(original, newItem) {
 
   // Only change code above this line
 }
-var first = [1, 2, 3];
-var second = [4, 5];
+
+const first = [1, 2, 3];
+const second = [4, 5];
 nonMutatingPush(first, second);
 ```
 
@@ -82,7 +83,6 @@ nonMutatingPush(first, second);
 function nonMutatingPush(original, newItem) {
   return original.concat(newItem);
 }
-var first = [1, 2, 3];
-var second = [4, 5];
-nonMutatingPush(first, second);
+const first = [1, 2, 3];
+const second = [4, 5];
 ```

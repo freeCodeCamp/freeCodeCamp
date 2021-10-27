@@ -14,14 +14,14 @@ Em JavaScript, valores `String` são <dfn>imutáveis</dfn>, o que significa que 
 Por exemplo, o código a seguir:
 
 ```js
-var myStr = "Bob";
+let myStr = "Bob";
 myStr[0] = "J";
 ```
 
 não permite alterar o valor de `myStr` para `Job`, porque o conteúdo de `myStr` não pode ser alterado. Note que isso *não* significa que `myStr` não pode ser alterado, apenas que os caracteres individuais de uma <dfn>string literal</dfn> não podem ser alterados. A única forma de alterar `myStr` seria atribuindo a ela uma nova string, dessa forma:
 
 ```js
-var myStr = "Bob";
+let myStr = "Bob";
 myStr = "Job";
 ```
 
@@ -55,7 +55,7 @@ assert(/myStr = "Jello World"/.test(code));
 
 ```js
 // Setup
-var myStr = "Jello World";
+let myStr = "Jello World";
 
 // Only change code below this line
 myStr[0] = "H"; // Change this line
@@ -65,6 +65,6 @@ myStr[0] = "H"; // Change this line
 # --solutions--
 
 ```js
-var myStr = "Jello World";
+let myStr = "Jello World";
 myStr = "Hello World";
 ```

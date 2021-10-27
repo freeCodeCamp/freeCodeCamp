@@ -42,11 +42,11 @@ assert(/\*/.test(code));
 ## --seed-contents--
 
 ```js
-var product = 2.0 * 0.0;
+const product = 2.0 * 0.0;
 ```
 
 # --solutions--
 
 ```js
-var product = 2.0 * 2.5;
+const product = 2.0 * 2.5;
 ```

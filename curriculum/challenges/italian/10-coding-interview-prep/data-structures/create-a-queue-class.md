@@ -1,6 +1,6 @@
 ---
 id: 587d8250367417b2b2512c60
-title: Creare una classe Coda
+title: Creare una classe Queue
 challengeType: 1
 forumTopicId: 301631
 dashedName: create-a-queue-class

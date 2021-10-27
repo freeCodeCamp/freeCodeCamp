@@ -90,7 +90,8 @@ assert(golfScore(5, 9) === 'Go Home!');
 ## --seed-contents--
 
 ```js
-var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+
 function golfScore(par, strokes) {
   // Only change code below this line
 

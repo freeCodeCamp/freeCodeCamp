@@ -11,13 +11,13 @@ dashedName: global-scope-and-functions
 
 In JavaScript, lo <dfn>scope</dfn> (campo di applicazione o ambito di visibilità) si riferisce alla visibilità delle variabili. Le variabili che sono definite al di fuori del blocco di una funzione hanno un campo di applicazione <dfn>globale</dfn>. Questo significa che possono essere viste ovunque nel tuo codice JavaScript.
 
-Le variabili che vengono dichiarate senza la parola chiave `var` vengono create automaticamente nell'ambito `global`. Questo può dare delle conseguenze indesiderate da un'altra parte nel tuo codice o quando si esegue nuovamente la funzione. Dovresti sempre dichiarare le tue variabili con `var`.
+Le variabili che vengono dichiarate senza la parola chiave `let` o la parola chiave `const` vengono create automaticamente nell'ambito `global`. Questo può dare delle conseguenze indesiderate da un'altra parte nel tuo codice o quando si esegue nuovamente la funzione. Dovresti sempre dichiarare le tue variabili con `let` o `const`.
 
 # --instructions--
 
-Usando `var`, dichiara una variabile globale denominata `myGlobal` al di fuori di qualsiasi funzione. Inizializzala con un valore di `10`.
+Usando `let` o `const`, dichiara una variabile globale denominata `myGlobal` al di fuori di qualsiasi funzione. Inizializzala con un valore di `10`.
 
-All'interno della funzione `fun1`, assegna `5` a `oopsGlobal` ***senza*** utilizzare la parola chiave `var`.
+All'interno della funzione `fun1`, assegna `5` a `oopsGlobal` ***senza*** utilizzare le parole chiave `let` o `const`.
 
 # --hints--
 
@@ -33,10 +33,10 @@ assert(typeof myGlobal != 'undefined');
 assert(myGlobal === 10);
 ```
 
-`myGlobal` dovrebbe essere dichiarata usando la parola chiave `var`
+`myGlobal` dovrebbe essere dichiarata usando la parola chiave `let` o `const`
 
 ```js
-assert(/var\s+myGlobal/.test(code));
+assert(/(let|const)\s+myGlobal/.test(code));
 ```
 
 `oopsGlobal` dovrebbe essere una variabile globale e avere un valore di `5`
@@ -109,7 +109,7 @@ function fun2() {
 # --solutions--
 
 ```js
-var myGlobal = 10;
+const myGlobal = 10;
 
 function fun1() {
   oopsGlobal = 5;

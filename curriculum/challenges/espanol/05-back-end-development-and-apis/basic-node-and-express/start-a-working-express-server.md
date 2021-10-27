@@ -1,6 +1,6 @@
 ---
 id: 587d7fb0367417b2b2512bee
-title: Start a Working Express Server
+title: Inicia un servidor Express
 challengeType: 2
 forumTopicId: 301519
 dashedName: start-a-working-express-server
@@ -8,9 +8,9 @@ dashedName: start-a-working-express-server
 
 # --description--
 
-In the first two lines of the file `myApp.js`, you can see how easy it is to create an Express app object. This object has several methods, and you will learn many of them in these challenges. One fundamental method is `app.listen(port)`. It tells your server to listen on a given port, putting it in running state. For testing reasons, we need the app to be running in the background so we added this method in the `server.js` file for you.
+En las primeras dos líneas del archivo `myApp.js`, puedes ver lo fácil que es crear un objeto app Express. Este objeto tiene varios métodos, y aprenderás muchos de ellos en estos desafíos. Un método fundamental es `app.listen(port)`. Le dice a tu servidor que escuche en un puerto determinado, poniéndolo en estado de ejecución. Por razones de prueba, necesitamos que la aplicación se ejecute en segundo plano, así que añadimos este método en el archivo `server.js` para ti.
 
-Let’s serve our first string! In Express, routes takes the following structure: `app.METHOD(PATH, HANDLER)`. METHOD is an http method in lowercase. PATH is a relative path on the server (it can be a string, or even a regular expression). HANDLER is a function that Express calls when the route is matched. Handlers take the form `function(req, res) {...}`, where req is the request object, and res is the response object. For example, the handler
+¡Sirvamos nuestra primer cadena! En Express, las rutas toman la siguiente estructura: `app.METHOD(PATH, HANDLER)`. METHOD es un método http en minúsculas. PATH es una ruta relativa en el servidor (puede ser una cadena, o incluso una expresión regular). HANDLER es una función que Express llama cuando la ruta coincide. Los Handlers toman la forma `function(req, res) {...}`, donde req es el objeto de la solicitud, y res es el objeto de respuesta. Por ejemplo, el handler
 
 ```js
 function(req, res) {
@@ -18,17 +18,17 @@ function(req, res) {
 }
 ```
 
-will serve the string 'Response String'.
+servirá la cadena 'Response String'.
 
 # --instructions--
 
-Use the `app.get()` method to serve the string "Hello Express" to GET requests matching the `/` (root) path. Be sure that your code works by looking at the logs, then see the results in the preview if you are using Replit.
+Utiliza el método `app.get()` para servir la cadena "Hello Express" a las peticiones GET que coincidan con la ruta `/` (raíz). Asegúrate de que tu código funciona mirando los registros, luego ve los resultados en la vista previa si estás usando Replit.
 
-**Note:** All the code for these lessons should be added in between the few lines of code we have started you off with.
+**Nota:** Todo el código de estas lecciones debe añadirse entre las pocas líneas de código con las que hemos iniciado.
 
 # --hints--
 
-Your app should serve the string 'Hello Express'
+Tu aplicación debe mostrarte en consola la cadena 'Hello Express'
 
 ```js
 (getUserInput) =>

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb0367417b2b2512bef
-title: Serve an HTML File
+title: Sirve un archivo HTML
 challengeType: 2
 forumTopicId: 301516
 dashedName: serve-an-html-file
@@ -8,7 +8,7 @@ dashedName: serve-an-html-file
 
 # --description--
 
-You can respond to requests with a file using the `res.sendFile(path)` method. You can put it inside the `app.get('/', ...)` route handler. Behind the scenes, this method will set the appropriate headers to instruct your browser on how to handle the file you want to send, according to its type. Then it will read and send the file. This method needs an absolute file path. We recommend you to use the Node global variable `__dirname` to calculate the path like this:
+Puedes responder a peticiones con un archivo utilizando el método `res.sendFile(path)`. Puedes ponerlo dentro del gestor de rutas `app.get('/', ...)`. En segundo plano, este método establecerá las cabeceras apropiadas para indicar a tu navegador cómo manejar el archivo que se desea enviar, de acuerdo a su tipo. Entonces leerá y enviará el archivo. Este método necesita una ruta de archivo absoluta. Te recomendamos que uses la variable global de Node `__dirname` para calcular la ruta como esta:
 
 ```js
 absolutePath = __dirname + relativePath/file.ext
@@ -16,13 +16,13 @@ absolutePath = __dirname + relativePath/file.ext
 
 # --instructions--
 
-Send the `/views/index.html` file as a response to GET requests to the `/` path. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.
+Envía el archivo `/views/index.html` como respuesta a las solicitudes GET a la ruta `/`. Si ves tu aplicación en vivo, debes ver un gran encabezado HTML (y un formulario que usaremos más adelante…), sin ningún estilo aplicado.
 
-**Note:** You can edit the solution of the previous challenge or create a new one. If you create a new solution, keep in mind that Express evaluates routes from top to bottom, and executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string.
+**Nota:** Puedes editar la solución del desafío anterior o crear uno nuevo. Si creas una nueva solución, ten en cuenta que Express evalúa las rutas de arriba a abajo, y ejecuta el manejador para la primera coincidencia. Tienes que comentar la solución anterior, o el servidor seguirá respondiendo con una cadena.
 
 # --hints--
 
-Your app should serve the file views/index.html
+Tu app debe servir el archivo views/index.html
 
 ```js
 (getUserInput) =>

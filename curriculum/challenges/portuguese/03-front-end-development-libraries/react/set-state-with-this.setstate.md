@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-`MyComponent` deve retornar um título `h1`.
+`MyComponent` deve retornar um elemento de título `h1`.
 
 ```js
 assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1);
 ```
 
-O título `h1` renderizado deve conter apenas texto renderizado do estado do componente.
+O elemento de título `h1` renderizado deve conter apenas texto renderizado do estado do componente.
 
 ```js
 async () => {

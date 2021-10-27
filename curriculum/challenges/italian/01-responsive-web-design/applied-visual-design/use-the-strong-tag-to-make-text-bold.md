@@ -13,7 +13,7 @@ Per rendere il testo in grassetto, puoi usare il tag `strong`. Esso viene spesso
 
 # --instructions--
 
-Avvolgi un tag `strong` intorno al testo `Stanford University` all'interno del tag `p` (non includere il punto).
+Avvolgi le `strong` tag attorno al testo `Stanford University` dentro al tag `p` (non includere il punto!).
 
 # --hints--
 

@@ -148,7 +148,7 @@ if(bob){
 ## --seed-contents--
 
 ```js
-var Person = function(firstAndLast) {
+const Person = function(firstAndLast) {
   // Only change code below this line
   // Complete the method below and implement the others similarly
   this.getFullName = function() {
@@ -157,16 +157,16 @@ var Person = function(firstAndLast) {
   return firstAndLast;
 };
 
-var bob = new Person('Bob Ross');
+const bob = new Person('Bob Ross');
 bob.getFullName();
 ```
 
 # --solutions--
 
 ```js
-var Person = function(firstAndLast) {
+const Person = function(firstAndLast) {
 
-  var firstName, lastName;
+  let firstName, lastName;
 
   function updateName(str) {
     firstName = str.split(" ")[0];
@@ -201,6 +201,6 @@ var Person = function(firstAndLast) {
   };
 };
 
-var bob = new Person('Bob Ross');
+const bob = new Person('Bob Ross');
 bob.getFullName();
 ```

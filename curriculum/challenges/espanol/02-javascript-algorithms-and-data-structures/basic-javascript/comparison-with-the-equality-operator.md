@@ -16,7 +16,7 @@ El operador más básico es el de igualdad `==`. El operador de igualdad compara
 ```js
 function equalityTest(myVal) {
   if (myVal == 10) {
-     return "Equal";
+    return "Equal";
   }
   return "Not Equal";
 }

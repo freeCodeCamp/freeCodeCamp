@@ -22,7 +22,7 @@ Podemos ver que essa sequência (começando em 13 e terminando em 1) contém 10 
 
 Qual número inicial, sob o `limit` (limite) definido, produz a sequência mais longa?
 
-**Observação:** uma vez iniciada, os termos na sequência podem passar de um milhão.
+**Observação:** uma vez iniciada, os termos na sequência podem passar acima do `limit`.
 
 # --hints--
 

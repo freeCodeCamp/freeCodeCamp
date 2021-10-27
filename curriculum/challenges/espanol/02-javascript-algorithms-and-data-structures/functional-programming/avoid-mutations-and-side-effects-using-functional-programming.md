@@ -57,9 +57,9 @@ La función `incrementer` debe devolver un valor basado en el valor de la variab
 
 ```js
 // The global variable
-var fixedValue = 4;
+let fixedValue = 4;
 
-function incrementer () {
+function incrementer() {
   // Only change code below this line
 
 
@@ -70,7 +70,7 @@ function incrementer () {
 # --solutions--
 
 ```js
-var fixedValue = 4
+let fixedValue = 4
 
 function incrementer() {
   return fixedValue + 1

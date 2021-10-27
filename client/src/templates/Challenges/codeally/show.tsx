@@ -63,7 +63,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           className='codeally-frame'
           // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
-          src={`http://codeally.io/embed/?repoUrl=${url}`}
+          src={`https://codeally.io/embed/?repoUrl=${url}`}
           title='Editor'
         />
       </LearnLayout>

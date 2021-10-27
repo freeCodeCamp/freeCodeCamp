@@ -1,6 +1,6 @@
 ---
 id: 587d7fb2367417b2b2512bf8
-title: Get Data from POST Requests
+title: Obtén datos de las peticiones POST
 challengeType: 2
 forumTopicId: 301511
 dashedName: get-data-from-post-requests
@@ -8,27 +8,27 @@ dashedName: get-data-from-post-requests
 
 # --description--
 
-Mount a POST handler at the path `/name`. It’s the same path as before. We have prepared a form in the html frontpage. It will submit the same data of exercise 10 (Query string). If the body-parser is configured correctly, you should find the parameters in the object `req.body`. Have a look at the usual library example:
+Monta un manejador POST en la ruta `/name`. Es la misma ruta de antes. Hemos preparado un formulario en la página principal html. Se enviarán los mismos datos del ejercicio 10 (Query string). Si el "body-parser" está configurado correctamente, debe encontrar los parámetros en el objeto `req.body`. Echa un vistazo al ejemplo de la biblioteca:
 
 <blockquote>route: POST '/library'<br>urlencoded_body: userId=546&#x26;bookId=6754 <br>req.body: {userId: '546', bookId: '6754'}</blockquote>
 
-Respond with the same JSON object as before: `{name: 'firstname lastname'}`. Test if your endpoint works using the html form we provided in the app frontpage.
+Responde con el mismo objeto JSON que antes: `{name: 'firstname lastname'}`. Prueba si tu endpoint funciona usando el formulario html que proporcionamos en la página principal de la aplicación.
 
-Tip: There are several other http methods other than GET and POST. And by convention there is a correspondence between the http verb, and the operation you are going to execute on the server. The conventional mapping is:
+Nota: Hay varios métodos de http diferentes a GET y POST. Y por convención hay una correspondencia entre el verbo http y la operación que se va a ejecutar en el servidor. La asignación convencional es:
 
-POST (sometimes PUT) - Create a new resource using the information sent with the request,
+POST (a veces PUT): Crea un nuevo recurso usando la información enviada con la solicitud,
 
-GET - Read an existing resource without modifying it,
+GET: Lee un recurso existente sin modificarlo,
 
-PUT or PATCH (sometimes POST) - Update a resource using the data sent,
+PUT o PATCH (a veces POST): Actualiza un recurso usando los datos enviados,
 
-DELETE => Delete a resource.
+DELETE => Elimina un recurso.
 
-There are also a couple of other methods which are used to negotiate a connection with the server. Except from GET, all the other methods listed above can have a payload (i.e. the data into the request body). The body-parser middleware works with these methods as well.
+También hay un par de otros métodos que se utilizan para negociar una conexión con el servidor. A excepción de GET, todos los demás métodos mencionados anteriormente pueden tener un payload (es decir, los datos en el cuerpo de la solicitud). El middleware body-parser también funciona con estos métodos.
 
 # --hints--
 
-Test 1 : Your API endpoint should respond with the correct name
+Prueba 1: El endpoint de tu API debe responder con el nombre correcto
 
 ```js
 (getUserInput) =>
@@ -46,7 +46,7 @@ Test 1 : Your API endpoint should respond with the correct name
   );
 ```
 
-Test 2 : Your API endpoint should respond with the correct name
+Prueba 2: El endpoint de tu API debe responder con el nombre correcto
 
 ```js
 (getUserInput) =>

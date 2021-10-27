@@ -12,7 +12,7 @@ dashedName: multiple-identical-options-in-switch-statements
 Se a instrução `break` for omitida de uma instrução `case` de um `switch`, as instruções `case` seguintes serão executadas até que seja encontrado um `break`. Se você tem várias entradas com a mesma saída, você pode representá-las em uma instrução `switch` da seguinte forma:
 
 ```js
-var result = "";
+let result = "";
 switch(val) {
   case 1:
   case 2:
@@ -109,7 +109,7 @@ assert(code.match(/case/g).length === 9);
 
 ```js
 function sequentialSizes(val) {
-  var answer = "";
+  let answer = "";
   // Only change code below this line
 
 
@@ -125,7 +125,7 @@ sequentialSizes(1);
 
 ```js
 function sequentialSizes(val) {
-  var answer = "";
+  let answer = "";
 
   switch(val) {
     case 1:

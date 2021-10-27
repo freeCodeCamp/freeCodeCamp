@@ -11,13 +11,13 @@ dashedName: use-bracket-notation-to-find-the-last-character-in-a-string
 
 Al fine di ottenere l'ultima lettera di una stringa, è possibile sottrarre uno dalla lunghezza della stringa.
 
-Per esempio, se `var firstName = "Ada"`, puoi ottenere il valore dell'ultima lettera della stringa usando `firstName[firstName.length - 1]`.
+Per esempio, se `const firstName = "Ada"`, puoi ottenere il valore dell'ultima lettera della stringa usando `firstName[firstName.length - 1]`.
 
 Esempio:
 
 ```js
-var firstName = "Ada";
-var lastLetter = firstName[firstName.length - 1];
+const firstName = "Ada";
+const lastLetter = firstName[firstName.length - 1];
 ```
 
 `lastLetter` dovrebbe avere un valore stringa `a`.
@@ -54,15 +54,15 @@ assert(code.match(/\.length/g).length > 0);
 
 ```js
 // Setup
-var lastName = "Lovelace";
+const lastName = "Lovelace";
 
 // Only change code below this line
-var lastLetterOfLastName = lastName; // Change this line
+const lastLetterOfLastName = lastName; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var lastName = "Lovelace";
-var lastLetterOfLastName = lastName[lastName.length - 1];
+const lastName = "Lovelace";
+const lastLetterOfLastName = lastName[lastName.length - 1];
 ```

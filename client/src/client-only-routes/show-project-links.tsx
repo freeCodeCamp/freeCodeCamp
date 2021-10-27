@@ -32,7 +32,7 @@ type SolutionStateType = {
 const initSolutionState: SolutionStateType = {
   projectTitle: '',
   challengeFiles: null,
-  solution: null,
+  solution: '',
   isOpen: false
 };
 
@@ -156,10 +156,10 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
         </li>
       )
     );
-    /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-    /* eslint-disable @typescript-eslint/no-unsafe-call */
-    /* eslint-disable @typescript-eslint/no-unsafe-return */
-    /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+    /* eslint-enable @typescript-eslint/no-unsafe-assignment */
+    /* eslint-enable @typescript-eslint/no-unsafe-call */
+    /* eslint-enable @typescript-eslint/no-unsafe-return */
+    /* eslint-enable @typescript-eslint/no-unsafe-member-access */
   };
 
   const {
@@ -185,7 +185,9 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
           handleSolutionModalHide={handleSolutionModalHide}
           isOpen={isOpen}
           projectTitle={projectTitle}
-          solution={solution}
+          // 'solution' is theoretically never 'null', if it a JsAlgoData cert
+          // which is the only time we use the modal
+          solution={solution as undefined | string}
         />
       ) : null}
       <Trans i18nKey='certification.project.footnote'>

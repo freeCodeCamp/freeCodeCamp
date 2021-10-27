@@ -35,6 +35,18 @@ La prima casella di spunta del tuo modulo dovrebbe essere spuntata di default.
 assert($('input[type="checkbox"]').prop('checked'));
 ```
 
+Non dovresti cambiare il testo all'interno dell'etichetta `Indoor`.
+
+```js
+assert.equal(document.querySelector('label[for="indoor"]')?.innerText?.trim(), 'Indoor');
+```
+
+Non dovresti cambiare il testo all'interno dell'etichetta `Loving`.
+
+```js
+assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), 'Loving');
+```
+
 # --seed--
 
 ## --seed-contents--
