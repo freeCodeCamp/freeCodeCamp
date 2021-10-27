@@ -26,7 +26,7 @@ describe('extractJSComments', () => {
 
   it('should throw an informative error if the JS is invalid', () => {
     expect(() => extractJSComments(someInvalidJS)).toThrow(
-      `extract-js-comments could not parse the code below, this challenge have invalid syntax:
+      `extract-js-comments could not parse the code below, this challenge has invalid syntax:
 
 ${someInvalidJS}
 `
