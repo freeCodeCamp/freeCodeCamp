@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import store from 'store';
 import { FlashState, State } from '../../../redux/types';
 
 export const FlashApp = 'flash';
@@ -31,10 +32,32 @@ export type FlashMessageArg = {
 
 export const createFlashMessage = (
   flash: FlashMessageArg
-): ReducerPayload<FlashActionTypes.createFlashMessage> => ({
-  type: FlashActionTypes.createFlashMessage,
-  payload: { ...flash, id: nanoid() }
-});
+): ReducerPayload<FlashActionTypes.createFlashMessage> => {
+  const playSound = store.get('fcc-sound') as boolean | undefined;
+  if (playSound) {
+    void import('tone').then(tone => {
+      if (tone.context.state !== 'running') {
+        void tone.context.resume();
+      }
+      if (flash.message === 'flash.incomplete-steps') {
+        const player = new tone.Player(
+          'https://campfire-mode.freecodecamp.org/try-again.mp3'
+        ).toDestination();
+        player.autostart = playSound;
+      }
+      if (flash.message === 'flash.cert-claim-success') {
+        const player = new tone.Player(
+          'https://campfire-mode.freecodecamp.org/cert.mp3'
+        ).toDestination();
+        player.autostart = playSound;
+      }
+    });
+  }
+  return {
+    type: FlashActionTypes.createFlashMessage,
+    payload: { ...flash, id: nanoid() }
+  };
+};
 
 export const removeFlashMessage =
   (): ReducerPayload<FlashActionTypes.removeFlashMessage> => ({

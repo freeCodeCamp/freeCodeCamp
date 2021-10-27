@@ -251,6 +251,10 @@
       "type": "string",
       "default": "default"
     },
+    "sound": {
+      "type": "boolean",
+      "default": false
+    },
     "profileUI": {
       "type": "object",
       "default": {
