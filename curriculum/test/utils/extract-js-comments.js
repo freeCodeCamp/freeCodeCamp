@@ -9,7 +9,7 @@ function extractComments(js) {
   try {
     parser.parse(js, { onComment: comments, ecmaVersion: 2020 });
   } catch {
-    throw Error(`extract-js-comments could not parse the code below, this challenge have invalid syntax:
+    throw Error(`extract-js-comments could not parse the code below, this challenge has invalid syntax:
 
 ${js}
 `);
