@@ -6,8 +6,14 @@ const parser = acorn.Parser;
 function extractComments(js) {
   let comments = [];
   const file = { data: {} };
-  parser.parse(js, { onComment: comments, ecmaVersion: 2020 });
+  try {
+    parser.parse(js, { onComment: comments, ecmaVersion: 2020 });
+  } catch {
+    throw Error(`extract-js-comments could not parse the code below, this challenge have invalid syntax:
 
+${js}
+`);
+  }
   comments
     .map(({ value }) => value.trim())
     .forEach(comment => commentToData(file, comment));
