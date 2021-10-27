@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import store from 'store';
 import { FlashState, State } from '../../../redux/types';
 
 export const FlashApp = 'flash';
