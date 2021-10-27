@@ -44,6 +44,7 @@ module.exports = {
       files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
+        tsconfigRootDir: __dirname,
         project: [
           './client/tsconfig.json',
           './tools/challenge-helper-scripts/tsconfig.json',

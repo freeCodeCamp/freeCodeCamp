@@ -1,25 +1,22 @@
+import './intro.css';
+
 import { Grid, ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
-import { Link, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
+import { graphql, Link } from 'gatsby';
+import React, { FC } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
 import ButtonSpacer from '../../components/helpers/button-spacer';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';
-import { MarkdownRemark, AllChallengeNode } from '../../redux/prop-types';
+import {
+  AllChallengeNodeType,
+  MarkdownRemarkType
+} from '../../redux/prop-types';
 
-import './intro.css';
-
-const propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: MarkdownRemark,
-    allChallengeNode: AllChallengeNode
-  })
-};
-
-function renderMenuItems({ edges = [] }) {
+const renderMenuItems: (a: AllChallengeNodeType) => JSX.Element[] = ({
+  edges = []
+}) => {
   return edges
     .map(({ node }) => node)
     .map(({ title, fields: { slug } }) => (
@@ -27,9 +24,18 @@ function renderMenuItems({ edges = [] }) {
         <ListGroupItem>{title}</ListGroupItem>
       </Link>
     ));
-}
+};
 
-function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
+type IntroductionPageProps = {
+  data: {
+    markdownRemark: MarkdownRemarkType;
+    allChallengeNode: AllChallengeNodeType;
+  };
+};
+
+const IntroductionPage: FC<IntroductionPageProps> = ({
+  data: { markdownRemark, allChallengeNode }
+}) => {
   const { t } = useTranslation();
   const {
     html,
@@ -75,10 +81,9 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
       </Grid>
     </LearnLayout>
   );
-}
+};
 
 IntroductionPage.displayName = 'IntroductionPage';
-IntroductionPage.propTypes = propTypes;
 
 export default IntroductionPage;
 
