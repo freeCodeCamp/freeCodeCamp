@@ -12,21 +12,21 @@ dashedName: quoting-strings-with-single-quotes
 Valores de <dfn>string</dfn> em JavaScript podem ser escritas com aspas simples ou duplas, desde que você comece e termine com o mesmo tipo de aspas. Diferente de outras linguagens de programação, aspas simples e duplas funcionam da mesma forma em JavaScript.
 
 ```js
-doubleQuoteStr = "This is a string"; 
-singleQuoteStr = 'This is also a string';
+const doubleQuoteStr = "This is a string"; 
+const singleQuoteStr = 'This is also a string';
 ```
 
 O motivo pelo qual você pode querer usar um tipo de aspas no lugar da outra é se você vir a querer usar ambas em uma string. Isso pode acontecer se você quiser salvar uma conversa em uma string e ter a conversa entre aspas. Outro uso para isso seria salvar uma tag `<a>` com vários atributos em aspas, tudo dentro de uma string.
 
 ```js
-conversation = 'Finn exclaims to Jake, "Algebraic!"';
+const conversation = 'Finn exclaims to Jake, "Algebraic!"';
 ```
 
 Porém, isso se torna um problema se você precisar usar as aspas mais extremas dentro dela. Lembre-se, uma string tem o mesmo tipo de aspas no início e no final. Mas se você tem aquela mesma aspa em algum lugar no meio, a string vai terminar mais cedo e lançará um erro.
 
 ```js
-goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
-badStr = 'Finn responds, "Let's go!"';
+const goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
+const badStr = 'Finn responds, "Let's go!"';
 ```
 
 Aqui `badStr` lançará um erro.
@@ -71,11 +71,11 @@ assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);
 ## --seed-contents--
 
 ```js
-var myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
+const myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
 ```
 
 # --solutions--
 
 ```js
-var myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
+const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
 ```

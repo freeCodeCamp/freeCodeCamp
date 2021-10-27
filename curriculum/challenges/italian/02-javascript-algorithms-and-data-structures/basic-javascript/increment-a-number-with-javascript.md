@@ -39,7 +39,7 @@ Non dovresti utilizzare l'operatore di assegnazione.
 
 ```js
 assert(
-  /var\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2});/.test(code)
+  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2});/.test(code)
 );
 ```
 
@@ -52,7 +52,7 @@ assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
 Non dovresti cambiare il codice sopra il commento specificato.
 
 ```js
-assert(/var myVar = 87;/.test(code));
+assert(/let myVar = 87;/.test(code));
 ```
 
 # --seed--
@@ -66,7 +66,7 @@ assert(/var myVar = 87;/.test(code));
 ## --seed-contents--
 
 ```js
-var myVar = 87;
+let myVar = 87;
 
 // Only change code below this line
 myVar = myVar + 1;
@@ -75,6 +75,6 @@ myVar = myVar + 1;
 # --solutions--
 
 ```js
-var myVar = 87;
+let myVar = 87;
 myVar++;
 ```

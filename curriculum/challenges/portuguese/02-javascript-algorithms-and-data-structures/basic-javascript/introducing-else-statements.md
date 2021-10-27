@@ -64,7 +64,7 @@ assert(testElse(10) === 'Bigger than 5');
 Você não deve alterar o código acima ou abaixo dos comentários especificados.
 
 ```js
-assert(/var result = "";/.test(code) && /return result;/.test(code));
+assert(/let result = "";/.test(code) && /return result;/.test(code));
 ```
 
 # --seed--
@@ -73,7 +73,7 @@ assert(/var result = "";/.test(code) && /return result;/.test(code));
 
 ```js
 function testElse(val) {
-  var result = "";
+  let result = "";
   // Only change code below this line
 
   if (val > 5) {
@@ -95,7 +95,7 @@ testElse(4);
 
 ```js
 function testElse(val) {
-  var result = "";
+  let result = "";
   if(val > 5) {
     result = "Bigger than 5";
   } else {

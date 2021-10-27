@@ -1,6 +1,6 @@
 ---
 id: 587d7fb1367417b2b2512bf2
-title: Use the .env File
+title: Usa el archivo .env
 challengeType: 2
 forumTopicId: 301521
 dashedName: use-the--env-file
@@ -8,23 +8,25 @@ dashedName: use-the--env-file
 
 # --description--
 
-The `.env` file is a hidden file that is used to pass environment variables to your application. This file is secret, no one but you can access it, and it can be used to store data that you want to keep private or hidden. For example, you can store API keys from external services or your database URI. You can also use it to store configuration options. By setting configuration options, you can change the behavior of your application, without the need to rewrite some code.
+El archivo `.env` es un archivo oculto que se utiliza para pasar variables de entorno a la aplicación. Este archivo es secreto, solamente tú puedes acceder a él, y puede ser utilizado para almacenar datos que desees mantener privados u ocultos. Por ejemplo, puedes almacenar claves de APIs de servicios externos o la URI de tu base de datos. También puedes usarlo para guardar opciones de configuración. Modificando las opciones de configuración, puedes cambiar el comportamiento de tu aplicación, sin necesidad de reescribir código.
 
-The environment variables are accessible from the app as `process.env.VAR_NAME`. The `process.env` object is a global Node object, and variables are passed as strings. By convention, the variable names are all uppercase, with words separated by an underscore. The `.env` is a shell file, so you don’t need to wrap names or values in quotes. It is also important to note that there cannot be space around the equals sign when you are assigning values to your variables, e.g. `VAR_NAME=value`. Usually, you will put each variable definition on a separate line.
+Las variables de entorno son accesibles desde la aplicación como `process.env.VAR_NAME`. El objeto `process.env` es un objeto global de Node, y las variables son pasadas como cadenas de texto. Por convención, los nombres de las variables son en letras mayúsculas, con las palabras separadas por guión bajo. El archivo `.env` es un archivo shell, por lo que no es necesario incluir los nombres o valores entre comillas. También es importante tener en cuenta que no pueden haber espacios alrededor del signo de igual cuando se asignan valores a las variables, por ejemplo: `VAR_NAME=value`. Normalmente, usted pondrá cada definición de variable en una línea separada.
 
 # --instructions--
 
-Let's add an environment variable as a configuration option.
+Añadamos una variable de entorno como opción de configuración.
 
-Create a `.env` file in the root of your project directory, and store the variable `MESSAGE_STYLE=uppercase` in it.
+Crea un archivo `.env` en la raíz del directorio de tu proyecto y almacena la variable `MESSAGE_STYLE=uppercase` en él.
 
-Then, in the `/json` GET route handler you created in the last challenge, transform the response object's message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should either be `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`, depending on the `MESSAGE_STYLE` value.
+Luego, en el manejador de rutas `/json` GET creado en el último desafío, transforma el mensaje del objeto de respuesta a mayúsculas si `process.env.MESSAGE_STYLE` es igual a `uppercase`. El objeto de respuesta debe ser `{"message": "Hello json"}` o `{"message": "HELLO JSON"}`, dependiendo del valor `MESSAGE_STYLE`.
 
-**Note:** If you are using Replit, you cannot create a `.env` file. Instead, use the built-in <dfn>SECRETS</dfn> tab to add the variable.
+**Nota:** Si estás usando Replit, no puedes crear un archivo `.env`. En su lugar, utiliza la pestaña integrada <dfn>SECRETS</dfn> para añadir la variable.
+
+Si estás trabajando localmente, necesitarás el paquete `dotenv`. Carga variables de entorno desde tu archivo `.env` en `process.env`. Instálalo con `npm install dotenv`. Luego, en la parte superior de tu archivo `myApp.js`, importa y carga las variables con `require('dotenv').config()`.
 
 # --hints--
 
-The response of the endpoint `/json` should change according to the environment variable `MESSAGE_STYLE`
+La respuesta del endpoint `/json` debe cambiar de acuerdo a la variable de entorno `MESSAGE_STYLE`
 
 ```js
 (getUserInput) =>

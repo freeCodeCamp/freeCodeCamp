@@ -20,7 +20,7 @@ para sumar `5` a `myVar`. Dado que se trata de un patrón tan común, hay operad
 Uno de estos operadores es el operador `+=`.
 
 ```js
-var myVar = 1;
+let myVar = 1;
 myVar += 5;
 console.log(myVar);
 ```
@@ -61,9 +61,9 @@ No debes modificar el código por encima del comentario especificado.
 
 ```js
 assert(
-  /var a = 3;/.test(code) &&
-    /var b = 17;/.test(code) &&
-    /var c = 12;/.test(code)
+  /let a = 3;/.test(code) &&
+    /let b = 17;/.test(code) &&
+    /let c = 12;/.test(code)
 );
 ```
 
@@ -78,9 +78,9 @@ assert(
 ## --seed-contents--
 
 ```js
-var a = 3;
-var b = 17;
-var c = 12;
+let a = 3;
+let b = 17;
+let c = 12;
 
 // Only change code below this line
 a = a + 12;
@@ -91,9 +91,9 @@ c = c + 7;
 # --solutions--
 
 ```js
-var a = 3;
-var b = 17;
-var c = 12;
+let a = 3;
+let b = 17;
+let c = 12;
 
 a += 12;
 b += 9;

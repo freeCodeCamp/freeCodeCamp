@@ -16,11 +16,12 @@ Tuttavia, puoi ancora usare la notazione a parentesi sulle proprietà dell'ogget
 Ecco un esempio di come usare la notazione a parentesi per leggere la proprietà di un oggetto:
 
 ```js
-var myObj = {
+const myObj = {
   "Space Name": "Kirk",
   "More Space": "Spock",
   "NoSpace": "USS Enterprise"
 };
+
 myObj["Space Name"];
 myObj['More Space'];
 myObj["NoSpace"];
@@ -78,26 +79,25 @@ assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 
 ```js
 // Setup
-var testObj = {
+const testObj = {
   "an entree": "hamburger",
   "my side": "veggies",
   "the drink": "water"
 };
 
 // Only change code below this line
-
-var entreeValue = testObj;   // Change this line
-var drinkValue = testObj;    // Change this line
+const entreeValue = testObj;   // Change this line
+const drinkValue = testObj;    // Change this line
 ```
 
 # --solutions--
 
 ```js
-var testObj = {
+const testObj = {
   "an entree": "hamburger",
   "my side": "veggies",
   "the drink": "water"
 };
-var entreeValue = testObj["an entree"];
-var drinkValue = testObj['the drink'];
+const entreeValue = testObj["an entree"];
+const drinkValue = testObj['the drink'];
 ```

@@ -18,7 +18,7 @@ delete ourDog.bark;
 Exemplo:
 
 ```js
-var ourDog = {
+const ourDog = {
   "name": "Camper",
   "legs": 4,
   "tails": 1,
@@ -70,7 +70,7 @@ assert(code.match(/"tails": 1/g).length > 0);
 
 ```js
 // Setup
-var myDog = {
+const myDog = {
   "name": "Happy Coder",
   "legs": 4,
   "tails": 1,
@@ -79,12 +79,13 @@ var myDog = {
 };
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myDog = {
+const myDog = {
   "name": "Happy Coder",
   "legs": 4,
   "tails": 1,

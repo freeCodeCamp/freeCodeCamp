@@ -16,8 +16,8 @@ Lembre-se de que computadores começam contando do `0`. Então, o primeiro carac
 Exemplo:
 
 ```js
-var firstName = "Ada";
-var secondLetterOfFirstName = firstName[1];
+const firstName = "Ada";
+const secondLetterOfFirstName = firstName[1];
 ```
 
 `secondLetterOfFirstName` teria o valor da string `d`.
@@ -54,15 +54,15 @@ assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```js
 // Setup
-var lastName = "Lovelace";
+const lastName = "Lovelace";
 
 // Only change code below this line
-var thirdLetterOfLastName = lastName; // Change this line
+const thirdLetterOfLastName = lastName; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var lastName = "Lovelace";
-var thirdLetterOfLastName = lastName[2];
+const lastName = "Lovelace";
+const thirdLetterOfLastName = lastName[2];
 ```

@@ -16,7 +16,7 @@ JavaScript utiliza el símbolo `*` para multiplicar dos números.
 **Ejemplo**
 
 ```js
-myVar = 13 * 13;
+const myVar = 13 * 13;
 ```
 
 `myVar` ahora tendrá el valor `169`.
@@ -50,11 +50,11 @@ assert(/\*/.test(code));
 ## --seed-contents--
 
 ```js
-var product = 8 * 0;
+const product = 8 * 0;
 ```
 
 # --solutions--
 
 ```js
-var product = 8 * 10;
+const product = 8 * 10;
 ```

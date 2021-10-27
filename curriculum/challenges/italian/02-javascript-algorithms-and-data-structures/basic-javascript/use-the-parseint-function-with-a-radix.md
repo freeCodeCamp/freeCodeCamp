@@ -20,7 +20,7 @@ parseInt(string, radix);
 Ecco un esempio:
 
 ```js
-var a = parseInt("11", 2);
+const a = parseInt("11", 2);
 ```
 
 La variabile radix dice che `11` è nel sistema binario, o in base 2. Questo esempio converte la stringa `11` in un intero `3`.

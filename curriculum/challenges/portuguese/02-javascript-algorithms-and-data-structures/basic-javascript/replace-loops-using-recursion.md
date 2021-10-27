@@ -14,9 +14,9 @@ Recursão é o conceito de que uma função pode ser chamada por ela mesma. Para
 
 ```js
   function multiply(arr, n) {
-    var product = 1;
-    for (var i = 0; i < n; i++) {
-        product *= arr[i];
+    let product = 1;
+    for (let i = 0; i < n; i++) {
+      product *= arr[i];
     }
     return product;
   }

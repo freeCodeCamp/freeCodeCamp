@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-`MyComponent` dovrebbe presentare un'intestazione `h1` racchiusa in un singolo `div`.
+`MyComponent` dovrebbe presentare un elemento di intestazione `h1` racchiusa in un singolo `div`.
 
 ```js
 assert(

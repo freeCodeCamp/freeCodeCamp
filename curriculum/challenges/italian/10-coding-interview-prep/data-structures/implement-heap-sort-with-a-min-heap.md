@@ -1,6 +1,6 @@
 ---
 id: 587d825b367417b2b2512c8c
-title: Implement Heap Sort with a Min Heap
+title: Implementa un Heap Sort con un Min Heap
 challengeType: 1
 forumTopicId: 301643
 dashedName: implement-heap-sort-with-a-min-heap
@@ -8,17 +8,17 @@ dashedName: implement-heap-sort-with-a-min-heap
 
 # --description--
 
-Now that we can add and remove elements let's see some of the applications heaps can be used for. Heaps are commonly used to implement priority queues because they always store an item of greatest or least value in first position. In addition, they are used to implement a sorting algorithm called heap sort. We'll see how to do this here. Heap sort uses a min heap, the reverse of a max heap. A min heap always stores the element of least value in the root position.
+Ora che possiamo aggiungere e rimuovere elementi vediamo alcune applicazioni per cui gli heap possono essere usati. Gli heap sono comunemente usati per implementare file di priorità perché immagazzinano sempre un elemento di valore massimo o minimo nella prima posizione. In aggiunta, sono usati per implementare un algoritmo di ordinamento chiamato heap sort. Vedremo come farlo qui. Heap sort usa un min heap, l'opposto di un max heap. Un min heap ha sempre l'elemento di valore minore nella posizione root.
 
-Heap sort works by taking an unsorted array, adding each item in the array into a min heap, and then extracting every item out of the min heap into a new array. The min heap structure ensures that the new array will contain the original items in least to greatest order. This is one of the most efficient sorting algorithms with average and worst case performance of O(nlog(n)).
+Heap sort funziona prendendo un array non ordinato, aggiungendo ogni elemento dell'array in un min heap, e poi estraendo ogni elemento dal min heap in un array. La struttura min heap assicura che il nuovo array conterra gli elementi originali in ordine dal più piccolo al più grande. Questo è uno degli algoritmi per ordinare più efficienti con una performance media e nel peggiore dei casi di O(nlog(n)).
 
 # --instructions--
 
-Let's implement heap sort with a min heap. Feel free to adapt your max heap code here. Create an object `MinHeap` with `insert`, `remove`, and `sort` methods. The `sort` method should return an array of all the elements in the min heap sorted from smallest to largest.
+Implementa un heap sort con un min heap. Adatta liberamente il codice del tuo max heap qui. Crea un oggetto `MinHeap` con metodi `insert`, `remove`, e `sort`. Il metodo `sort` dovrebbe restituire un array degli elementi nel min heap ordinati dal più piccolo al più grande.
 
 # --hints--
 
-The MinHeap data structure should exist.
+La struttura dati MinHeap dovrebbe esistere.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-MinHeap should have a method called insert.
+MinHeap dovrebbe avere un metodo chiamato insert.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-MinHeap should have a method called remove.
+MinHeap dovrebbe avere un metodo chiamato remove.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-MinHeap should have a method called sort.
+MinHeap dovrebbe avere un metodo chiamato sort.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-The sort method should return an array containing all items added to the min heap in sorted order.
+Il metodo sort dovrebbe restituire un array che continuete tutto gli elementi aggiunti al min heap ordinati.
 
 ```js
 assert(

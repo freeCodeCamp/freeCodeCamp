@@ -16,13 +16,14 @@ Per decrementare di due ad ogni iterazione, dovremo cambiare la nostra inizializ
 Inizieremo da `i = 10` e ripeteremo finché `i > 0`. Diminuiremo `i` di 2 ad ogni ciclo con `i -= 2`.
 
 ```js
-var ourArray = [];
-for (var i = 10; i > 0; i -= 2) {
+const ourArray = [];
+
+for (let i = 10; i > 0; i -= 2) {
   ourArray.push(i);
 }
 ```
 
-`ourArray` adesso conterrà `[10,8,6,4,2]`. Cambiamo la nostra inizializzazione e espressione finale in modo da poter contare indietro di due per creare un array di numeri dispari discendenti.
+`ourArray` adesso conterrà `[10, 8, 6, 4, 2]`. Cambiamo la nostra inizializzazione e espressione finale in modo da poter contare indietro di due per creare un array di numeri dispari discendenti.
 
 # --instructions--
 
@@ -42,7 +43,7 @@ Dovresti usare il metodo array `push`.
 assert(code.match(/myArray.push/));
 ```
 
-`myArray` dovrebbe essere uguale a `[9,7,5,3,1]`.
+`myArray` dovrebbe essere uguale a `[9, 7, 5, 3, 1]`.
 
 ```js
 assert.deepEqual(myArray, [9, 7, 5, 3, 1]);
@@ -60,16 +61,17 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 9; i > 0; i -= 2) {
+const myArray = [];
+for (let i = 9; i > 0; i -= 2) {
   myArray.push(i);
 }
 ```

@@ -35,7 +35,7 @@ curried(1)(2)
 Questo sarà utile nel tuo programma se non sarai in grado di fornire tutti gli argomenti ad una funzione in una sola volta. Potrai salvare ogni chiamata di funzione in una variabile, che manterrà il riferimento alla funzione restituita, che prenderà l'argomento successivo quando sarà disponibile. Ecco un esempio usando la funzione curried dell'esempio visto sopra:
 
 ```js
-var funcForY = curried(1);
+const funcForY = curried(1);
 console.log(funcForY(2)); // 3
 ```
 
@@ -45,7 +45,8 @@ Allo stesso modo, <dfn>l'applicazione parziale</dfn> può essere descritta come 
 function impartial(x, y, z) {
   return x + y + z;
 }
-var partialFn = impartial.bind(this, 1, 2);
+
+const partialFn = impartial.bind(this, 1, 2);
 partialFn(10); // 13
 ```
 
@@ -90,6 +91,7 @@ function add(x) {
 
   // Only change code above this line
 }
+
 add(10)(20)(30);
 ```
 

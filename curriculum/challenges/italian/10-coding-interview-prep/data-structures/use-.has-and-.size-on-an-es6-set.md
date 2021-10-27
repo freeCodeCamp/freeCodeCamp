@@ -1,6 +1,6 @@
 ---
 id: 587d8255367417b2b2512c72
-title: Use .has and .size on an ES6 Set
+title: Usare .has e .size su un set ES6
 challengeType: 1
 forumTopicId: 301717
 dashedName: use--has-and--size-on-an-es6-set
@@ -8,21 +8,21 @@ dashedName: use--has-and--size-on-an-es6-set
 
 # --description--
 
-Let's look at the .has and .size methods available on the ES6 Set object.
+Diamo un'occhiata ai metodi .has e .size disponibili sull'oggetto Set ES6.
 
-First, create an ES6 Set
+Per prima cosa, crea un Set ES6
 
 ```js
 var set = new Set([1,2,3]);
 ```
 
-The .has method will check if the value is contained within the set.
+Il metodo .has controllerà se il valore è contenuto all'interno del set.
 
 ```js
 var hasTwo = set.has(2);
 ```
 
-The .size method will return an integer representing the size of the Set
+Il metodo .size restituirà un numero intero rappresentante la dimensione del Set
 
 ```js
 var howBig = set.size;
@@ -30,11 +30,11 @@ var howBig = set.size;
 
 # --instructions--
 
-In this exercise we will pass an array and a value to the checkSet() function. Your function should create an ES6 set from the array argument. Find if the set contains the value argument. Find the size of the set. And return those two values in an array.
+In questo esercizio passeremo un array e un valore alla funzione checkSet(). La tua funzione dovrebbe creare un set ES& dall'argomento array. Scopri se il set contiene il valore argomento. Trova la dimensione del set. E restituire questi due valori in un array.
 
 # --hints--
 
-`checkSet([4, 5, 6], 3)` should return [ false, 3 ]
+`checkSet([4, 5, 6], 3)` dovrebbe restituire [ false, 3 ]
 
 ```js
 assert(
