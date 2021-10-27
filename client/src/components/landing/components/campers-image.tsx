@@ -7,7 +7,7 @@ import { Spacer, ImageLoader } from '../../helpers';
 const LARGE_SCREEN_SIZE = 1200;
 
 interface campersImageProps {
-  pageName?: string;
+  pageName: string;
 }
 
 interface imageSizeProps {

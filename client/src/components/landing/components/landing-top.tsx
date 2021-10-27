@@ -16,7 +16,7 @@ import BigCallToAction from './big-call-to-action';
 import CampersImage from './campers-image';
 
 interface landingTopProps {
-  pageName?: string;
+  pageName: string;
 }
 
 const { clientLocale } = envData;
@@ -32,7 +32,7 @@ function LandingTop({ pageName }: landingTopProps): JSX.Element {
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <h1
             className='big-heading'
-            data-test-label={`${pageName ?? ''}-header`}
+            data-test-label={`${pageName}-header`}
           >
             {t('landing.big-heading-1')}
           </h1>
