@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import ScrollableAnchor from 'react-scrollable-anchor';
-import { SuperBlock } from '../../../assets/icons';
+import { SuperBlocks } from '../../../../../config/certification-settings';
 import Caret from '../../../assets/icons/caret';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -17,7 +17,7 @@ interface CertificationCardProps {
     completedCount: number;
   };
   steps: Steps;
-  superBlock: SuperBlock;
+  superBlock: SuperBlocks;
 }
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 

@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import React, { Component } from 'react';
 import { withTranslation, TFunction } from 'react-i18next';
@@ -15,10 +16,7 @@ import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Link } from '../../../components/helpers';
 import { completedChallengesSelector, executeGA } from '../../../redux';
-import {
-  ChallengeNode,
-  CompletedChallenge
-} from '../../../redux/prop-types';
+import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import Challenges from './Challenges';
 
@@ -32,7 +30,7 @@ const mapStateToProps = (state: unknown, ownProps: BlockProps) => {
     completedChallengesSelector,
     (isExpanded: boolean, completedChallenges: CompletedChallenge[]) => ({
       isExpanded,
-      completedChallengeIds: completedChallenges.map(({ id }) => id)
+      completedChallenges: completedChallenges.map(({ id }) => id)
     })
   )(state);
 };
@@ -43,7 +41,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface BlockProps {
   blockDashedName: string;
   challenges: ChallengeNode[];
-  completedChallengeIds?: string[];
+  completedChallenges?: string[];
   executeGA?: typeof executeGA;
   isExpanded?: boolean;
   superBlock: string;
@@ -61,17 +59,21 @@ export class Block extends Component<BlockProps> {
     this.handleBlockClick = this.handleBlockClick.bind(this);
   }
 
-  handleBlockClick(): any {
+  handleBlockClick(): void {
     const { blockDashedName, toggleBlock, executeGA } = this.props;
-    const playSound = store.get('fcc-sound');
+    const playSound = store.get('fcc-sound') as boolean;
     if (playSound) {
-      void import('tone').then(tone => {
+      void (async () => {
+        const tone = await import('tone');
+
         const player = new tone.Player(
           'https://tonejs.github.io/audio/berklee/guitar_chord1.mp3'
         ).toDestination();
-        if (tone.context.state !== 'running') tone.context.resume();
+        if (tone.context.state !== 'running') {
+          void tone.context.resume();
+        }
         player.autostart = playSound;
-      });
+      })();
     }
     executeGA!({
       type: 'event',
@@ -80,7 +82,7 @@ export class Block extends Component<BlockProps> {
         action: blockDashedName
       }
     });
-    return toggleBlock!(blockDashedName);
+    toggleBlock!(blockDashedName);
   }
 
   renderCheckMark(isCompleted: boolean): JSX.Element {
@@ -104,7 +106,7 @@ export class Block extends Component<BlockProps> {
   render(): JSX.Element {
     const {
       blockDashedName,
-      completedChallengeIds,
+      completedChallenges,
       challenges,
       isExpanded,
       superBlock,
@@ -114,7 +116,7 @@ export class Block extends Component<BlockProps> {
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
-      const isCompleted = completedChallengeIds!.some(
+      const isCompleted = completedChallenges!.some(
         (completedChallengeId: string) => completedChallengeId === id
       );
       if (isCompleted) {

@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
-import { SuperBlock } from '../../../assets/icons';
+import { SuperBlocks } from '../../../../../config/certification-settings';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Steps } from '../../../redux/prop-types';
@@ -12,7 +12,7 @@ interface ClaimCertStepsProps {
   i18nCertText: string;
   isProjectsCompleted: boolean;
   steps: Steps;
-  superBlock: SuperBlock;
+  superBlock: SuperBlocks;
 }
 
 const ClaimCertSteps = ({

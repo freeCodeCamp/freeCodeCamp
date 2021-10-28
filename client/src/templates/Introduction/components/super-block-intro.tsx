@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { generateIconComponent, SuperBlock } from '../../../assets/icons';
+import { generateIconComponent } from '../../../assets/icons';
 import { Spacer } from '../../../components/helpers';
 
 interface SuperBlockIntroProps {
