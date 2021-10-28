@@ -1,32 +1,37 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-responsive';
 import wideImg from '../../../assets/images/landing/wide-image.png';
 import { Spacer, ImageLoader } from '../../helpers';
 
-const propTypes = {
-  page: PropTypes.string
-};
-
 const LARGE_SCREEN_SIZE = 1200;
 
-const imageConfig = {
-  donate: {
-    spacerSize: 0,
-    height: 345,
-    width: 585
-  },
-  landing: {
-    spacerSize: 2,
-    height: 442,
-    width: 750
-  }
+interface campersImageProps {
+  pageName: string;
+}
+
+interface imageSizeProps {
+  spacerSize: number;
+  height: number;
+  width: number;
+}
+
+const donateImageSize: imageSizeProps = {
+  spacerSize: 0,
+  height: 345,
+  width: 585
 };
 
-function CampersImage({ page }) {
+const landingImageSize: imageSizeProps = {
+  spacerSize: 2,
+  height: 442,
+  width: 750
+};
+function CampersImage({ pageName }: campersImageProps): JSX.Element {
   const { t } = useTranslation();
-  const { spacerSize, height, width } = imageConfig[page];
+
+  const { spacerSize, height, width } =
+    pageName === 'donate' ? donateImageSize : landingImageSize;
 
   return (
     <Media minWidth={LARGE_SCREEN_SIZE}>
@@ -44,5 +49,4 @@ function CampersImage({ page }) {
 }
 
 CampersImage.displayName = 'CampersImage';
-CampersImage.propTypes = propTypes;
 export default CampersImage;
