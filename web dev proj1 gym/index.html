@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANDEY GYM</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Rubik+Beastly&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Rubik Beastly', cursive;
+        background: url("photo\ gym.jpg");
+        margin: 0;
+        padding: 0;
+        color: blanchedalmond;
+    }
+
+    .left {
+        /* border: 2px solid red;*/
+        display: inline-block;
+        position: absolute;
+        left: 40px;
+        top: 20px;
+    }
+
+    .mid {
+        display: block;
+        width: 50%;
+        margin: 20px auto;
+        /* border: 2px solid red; */
+    }
+
+    .right {
+        /* border: 2px solid red; */
+        display: inline-block;
+        position: absolute;
+        right: 34px;
+        top: 20px;
+    }
+
+    .navbar {
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .navbar li a {
+        color: white;
+        text-decoration: none;
+        padding: 12px 22px;
+    }
+
+   .navbar li a:hover,
+    .navbar li a.active {
+        text-decoration: underline;
+        color: grey;
+    }
+
+
+    .left img {
+        width: 121px;
+
+    }
+
+    .left div {
+        line-height: 10px;
+        padding: 0px 0px;
+    }
+
+    .btn {
+        font-family: 'Rubik Beastly', cursive;
+        margin: 0px 10px;
+        padding: 5px 9px;
+        border: 4px solid grey;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: grey;
+    }
+
+
+    .container {
+        border: 3px solid gray;
+        border-radius: 54px;
+        width: 34%;
+        display: block;
+        margin: 125px 74px;
+        padding: 77px 19px;
+        font-size: 14px;
+        font-family: 'Kanit', sans-serif;
+    }
+
+    .container h1 {
+        font-family: 'Kanit', sans-serif;
+        text-align: center;
+        padding: 0px 41px;
+    }
+
+    .formgroup input {
+        text-align: center;
+        display: block;
+        width: 350px;
+        margin: 7px auto;
+        font-size: 14px;
+        border-radius: 20px;
+        font-family: 'Kanit', sans-serif;
+
+    }
+
+    .container button {
+        display: block;
+
+        width: 30%;
+        margin: 18px auto;
+
+
+    }
+</style>
+
+
+<body>
+    <header>
+        <div class="left">
+            <img src="/logo gym (1).jpg" alt="">
+            <div>
+                Pandey Fitness
+            </div>
+        </div>
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="https://www.google.com/" class="active" target="_blank">HOME</a></li>
+                <li><a href="https://www.quora.com/feed/" target="_blank">ABOUT US</a></li>
+                <li><a href="https://www.youtube.com/" target="_blank">FITNESS CALCULATOR</a></li>
+                <li><a href="https://www.facebook.com/" target="_blank">CONTACT US</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn">CALL US</button>
+            <button class="btn">REGISTER NOW</button>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Join the best GYM of Lucknow</h1>
+        <form action="noaction.php">
+            <div class="formgroup">
+                <input type="text" name="" id="" placeholder="Enter your name">
+            </div>
+            <div class="formgroup">
+                <input type="text" name="" id="" placeholder="Enter your age">
+            </div>
+            <div class="formgroup">
+                <input type="text" name="" id="" placeholder="Enter your gender">
+            </div>
+            <div class="formgroup">
+                <input type="text" name="" id="" placeholder="Enter your address">
+            </div>
+            <div>
+                <button class="btn">submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
