@@ -14,9 +14,10 @@ Es posible tener variables <dfn>locales</dfn> y <dfn>globales</dfn> con el mismo
 En este ejemplo:
 
 ```js
-var someVar = "Hat";
+const someVar = "Hat";
+
 function myFun() {
-  var someVar = "Head";
+  const someVar = "Head";
   return someVar;
 }
 ```
@@ -53,12 +54,10 @@ assert(/return outerWear/.test(code));
 
 ```js
 // Setup
-var outerWear = "T-Shirt";
+const outerWear = "T-Shirt";
 
 function myOutfit() {
   // Only change code below this line
-
-
 
   // Only change code above this line
   return outerWear;
@@ -70,9 +69,9 @@ myOutfit();
 # --solutions--
 
 ```js
-var outerWear = "T-Shirt";
+const outerWear = "T-Shirt";
 function myOutfit() {
-  var outerWear = "sweater";
+  const outerWear = "sweater";
   return outerWear;
 }
 ```

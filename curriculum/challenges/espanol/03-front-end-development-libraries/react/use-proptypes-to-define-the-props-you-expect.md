@@ -16,7 +16,7 @@ Se considera una muy buena práctica definir los `propTypes` cuando conoces el t
 MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
 ```
 
-En el ejemplo anterior, la parte de `PropTypes.func` verifica que `handleClick` es una función. Añadir `isRequired` le dice a React que `handleClick` es una propiedad obligatoria para ese componente. Verás una advertencia si no se proporciona esa propiedad. También ten en cuenta que `func` representa `function`. Entre los siete tipos primitivos de JavaScript, `function` y `boolean` (escrito como `bool`) son los únicos dos que utilizan ortografía diferente. Además de los tipos primitivos, hay otros tipos disponibles. Por ejemplo, puedes validar si una prop es un elemento React. Por favor, consulta la [documentación](https://reactjs.org/docs/jsx-in-depth.html#specifying-the-react-element-type) para todas las opciones.
+En el ejemplo anterior, la parte de `PropTypes.func` verifica que `handleClick` es una función. Añadir `isRequired` le dice a React que `handleClick` es una propiedad obligatoria para ese componente. Verás una advertencia si no se proporciona esa propiedad. También ten en cuenta que `func` representa `function`. Entre los siete tipos primitivos de JavaScript, `function` y `boolean` (escrito como `bool`) son los únicos dos que utilizan ortografía diferente. Además de los tipos primitivos, hay otros tipos disponibles. Por ejemplo, puedes validar si una prop es un elemento React. Por favor, consulta la [documentación](https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes) para todas las opciones.
 
 **Nota:** A partir de React v15.5.0, `PropTypes` se importa de manera independiente de React, así: `import PropTypes from 'prop-types';`
 

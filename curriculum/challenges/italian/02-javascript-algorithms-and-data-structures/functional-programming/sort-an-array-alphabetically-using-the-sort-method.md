@@ -18,6 +18,7 @@ function ascendingOrder(arr) {
     return a - b;
   });
 }
+
 ascendingOrder([1, 5, 2, 3, 4]);
 ```
 
@@ -29,6 +30,7 @@ function reverseAlpha(arr) {
     return a === b ? 0 : a < b ? 1 : -1;
   });
 }
+
 reverseAlpha(['l', 'h', 'z', 'b', 's']);
 ```
 
@@ -38,7 +40,7 @@ Il metodo di ordinamento predefinito di JavaScript è in base ai valori Unicode 
 
 # --instructions--
 
-Usa il metodo `sort` nella funzione `alphabeticalOrder` per ordinare gli elementi di `arr` in ordine alfabetico.
+Usa il metodo `sort` nella funzione `alphabeticalOrder` per ordinare gli elementi di `arr` in ordine alfabetico. La funzione dovrebbe restituire l'array ordinato.
 
 # --hints--
 
@@ -83,9 +85,10 @@ assert(
 function alphabeticalOrder(arr) {
   // Only change code below this line
 
-
+  return arr
   // Only change code above this line
 }
+
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```
 
@@ -93,9 +96,6 @@ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 
 ```js
 function alphabeticalOrder(arr) {
-  // Only change code below this line
   return arr.sort();
-  // Only change code above this line
 }
-alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```

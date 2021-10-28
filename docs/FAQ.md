@@ -6,7 +6,7 @@ Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeC
 
 Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
 
-We have user-contributed translations live in Chinese (中文) and Spanish (Español). We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
+We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
 
 If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
 
@@ -81,7 +81,7 @@ If you have queries about the stack, architecture of the codebase, translations,
 | Nicholas Carrigan     | [@nhcarrigan](https://forum.freecodecamp.org/u/nhcarrigan)                   |
 | Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
 | Rafael D Hernandez    | [@RafaelHernandez](https://forum.freecodecamp.org/u/rafaelhernandez)         |
-| Shaun Hamilton        | [@sky020](https://forum.freecodecamp.org/u/sky020)                          |
+| Shaun Hamilton        | [@sky020](https://forum.freecodecamp.org/u/sky020)                           |
 | Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**

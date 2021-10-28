@@ -14,7 +14,7 @@ dashedName: accessing-nested-objects
 这是一个嵌套对象：
 
 ```js
-var ourStorage = {
+const ourStorage = {
   "desk": {
     "drawer": "stapler"
   },
@@ -26,6 +26,7 @@ var ourStorage = {
     "bottom drawer": "soda"
   }
 };
+
 ourStorage.cabinet["top drawer"].folder2;
 ourStorage.desk.drawer;
 ```
@@ -66,7 +67,7 @@ assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 ## --seed-contents--
 
 ```js
-var myStorage = {
+const myStorage = {
   "car": {
     "inside": {
       "glove box": "maps",
@@ -78,13 +79,13 @@ var myStorage = {
   }
 };
 
-var gloveBoxContents = undefined;
+const gloveBoxContents = undefined;
 ```
 
 # --solutions--
 
 ```js
-var myStorage = {
+const myStorage = {
   "car":{
     "inside":{
       "glove box":"maps",
@@ -95,5 +96,5 @@ var myStorage = {
     }
   }
 };
-var gloveBoxContents = myStorage.car.inside["glove box"];
+const gloveBoxContents = myStorage.car.inside["glove box"];
 ```

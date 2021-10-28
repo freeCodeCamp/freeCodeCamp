@@ -7,7 +7,7 @@ const style = {
 function BlockSaveWrapper({
   children
 }: {
-  children?: React.ReactElement;
+  children?: React.ReactElement | null;
 }): JSX.Element {
   return <div style={style}>{children}</div>;
 }

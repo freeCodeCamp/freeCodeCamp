@@ -14,7 +14,7 @@ Quando definisci una stringa devi cominciare e finire con una virgoletta singola
 In JavaScript, puoi fare l'<dfn>escape</dfn> di una virgoletta per distinguerla da quella usata per terminare la stringa posizionando una <dfn>barra rovesciata</dfn> (`\`) davanti alla virgoletta.
 
 ```js
-var sampleStr = "Alan said, \"Peter is learning JavaScript\".";
+const sampleStr = "Alan said, \"Peter is learning JavaScript\".";
 ```
 
 Questo segnala a JavaScript che la virgoletta seguente non è la fine della stringa, ma dovrebbe invece apparire dentro la stringa. Quindi se dovessi farla visualizzare nella console, otterresti:
@@ -62,11 +62,11 @@ assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(mySt
 ## --seed-contents--
 
 ```js
-var myStr = ""; // Change this line
+const myStr = ""; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var myStr = "I am a \"double quoted\" string inside \"double quotes\".";
+const myStr = "I am a \"double quoted\" string inside \"double quotes\".";
 ```

@@ -22,7 +22,7 @@ Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, Reac
 
 **Especificação de usuário nº 4:** quando insiro marcação do GitHub no elemento `#editor`, o texto é renderizado como HTML no elemento `#preview` enquanto eu escrevo (DICA: você não precisa analisar a marcação você mesmo - você pode importar a biblioteca Marked para isso: <https://cdnjs.com/libraries/marked>).
 
-**Especificação de usuário nº 5:** quando meu pré-visualizador de marcação carregar pela primeira vez, o texto padrão no campo `#editor` deve conter uma marcação válida que represente pelo menos um de cada um dos elementos a seguir: um header (tamanho H1), um subheader (tamanho H2), um link, um código em linha, um código de bloco, uma lista de item, um blockquote, uma imagem e um texto em negrito.
+**Especificação de usuário nº 5:** quando meu pré-visualizador de marcação carregar pela primeira vez, o texto padrão no campo `#editor` deve conter uma marcação válida que represente pelo menos um de cada um dos elementos a seguir: um elemento (tamanho H1), um subelemento de título (tamanho H2), um link, um código em linha, um código de bloco, uma lista de item, um blockquote, uma imagem e um texto em negrito.
 
 **Especificação de usuário nº 6:** quando meu pré-visualizador de marcação carregar pela primeira vez, a marcação padrão no campo `#editor` deve ser renderizada como HTML no elemento `#preview`.
 

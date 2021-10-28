@@ -14,7 +14,7 @@ Com as variáveis de `array` em JavaScript, podemos armazenar diversos dados em 
 Você começa uma declaração de um array com a abertura de um colchetes, terminando com o fechamento do colchetes e colocando vírgulas entre cada entrada, dessa forma:
 
 ```js
-var sandwich = ["peanut butter", "jelly", "bread"]
+const sandwich = ["peanut butter", "jelly", "bread"];
 ```
 
 # --instructions--
@@ -53,11 +53,11 @@ assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');
 
 ```js
 // Only change code below this line
-var myArray = [];
+const myArray = [];
 ```
 
 # --solutions--
 
 ```js
-var myArray = ["The Answer", 42];
+const myArray = ["The Answer", 42];
 ```

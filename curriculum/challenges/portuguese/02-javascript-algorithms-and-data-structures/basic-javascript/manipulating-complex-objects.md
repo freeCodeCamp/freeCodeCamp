@@ -14,7 +14,7 @@ dashedName: manipulating-complex-objects
 Aqui está um exemplo de estrutura de dados complexas:
 
 ```js
-var ourMusic = [
+const ourMusic = [
   {
     "artist": "Daft Punk",
     "title": "Homework",
@@ -135,7 +135,7 @@ myMusic.forEach(object => {
 ## --seed-contents--
 
 ```js
-var myMusic = [
+const myMusic = [
   {
     "artist": "Billy Joel",
     "title": "Piano Man",
@@ -153,7 +153,7 @@ var myMusic = [
 # --solutions--
 
 ```js
-var myMusic = [
+const myMusic = [
   {
     "artist": "Billy Joel",
     "title": "Piano Man",

@@ -41,12 +41,14 @@ assert(haRegex.source.match(/{.*?}/).length > 0);
 La expresión regular no debe coincidir con la cadena `Hazzah`
 
 ```js
+haRegex.lastIndex = 0;
 assert(!haRegex.test('Hazzah'));
 ```
 
 La expresión regular no debe coincidir con la cadena `Hazzzah`
 
 ```js
+haRegex.lastIndex = 0;
 assert(!haRegex.test('Hazzzah'));
 ```
 

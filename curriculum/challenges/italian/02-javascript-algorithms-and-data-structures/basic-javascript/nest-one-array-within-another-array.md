@@ -12,7 +12,7 @@ dashedName: nest-one-array-within-another-array
 È anche possibile nidificare array all'interno di altri array, come nell'esempio:
 
 ```js
-[["Bulls", 23], ["White Sox", 45]]
+const teams = [["Bulls", 23], ["White Sox", 45]];
 ```
 
 Questo viene anche chiamato un <dfn>array multidimensionale</dfn>.
@@ -41,11 +41,11 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Only change code below this line
-var myArray = [];
+const myArray = [];
 ```
 
 # --solutions--
 
 ```js
-var myArray = [[1,2,3]];
+const myArray = [[1, 2, 3]];
 ```

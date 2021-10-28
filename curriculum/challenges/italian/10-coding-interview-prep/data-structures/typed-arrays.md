@@ -1,6 +1,6 @@
 ---
 id: 587d8253367417b2b2512c6a
-title: Typed Arrays
+title: Array Digitati
 challengeType: 1
 forumTopicId: 301716
 dashedName: typed-arrays
@@ -8,21 +8,21 @@ dashedName: typed-arrays
 
 # --description--
 
-Arrays are JavaScript objects that can hold a lot of different elements.
+Gli array sono oggetti JavaScript che possono contenere molti elementi diversi.
 
 ```js
 var complexArr = [1, 5, "2", "Word", {"name": "James"}];
 ```
 
-Basically what happens in the background is that your browser will automatically give the right amount of memory space for that array. It will also change as needed if you add or remove data.
+Fondamentalmente ciò che accade in background è che il browser darà automaticamente la giusta quantità di spazio di memoria per quell'array. Cambierà anche al bisogno se si aggiungono o rimuovono i dati.
 
-However, in the world of high performance and different element types, sometimes you need to be more specific on how much memory is given to an array.
+Tuttavia, nel mondo delle alte prestazioni e dei diversi tipi di elementi, a volte è necessario essere più specifici su quanto memoria viene dato a un array.
 
-<dfn>Typed arrays</dfn> are the answer to this problem. You are now able to say how much memory you want to give an array. Below is a basic overview of the different types of arrays available and the size in bytes for each element in that array.
+<dfn>Gli array digitati</dfn> sono la risposta a questo problema. Ora sei in grado di dire quanta memoria vuoi allocare per un dato array. Di seguito una panoramica di base dei diversi tipi di array disponibili e la dimensione in byte per ogni elemento in quell'array.
 
-<table class='table table-striped'><tbody><tr><th>Type</th><th>Each element size in bytes</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></tbody></table>
+<table class='table table-striped'><tbody><tr><th>Tipo</th><th>La dimensione di ogni elemento in byte</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></tbody></table>
 
-There are two ways in creating these kind of arrays. One way is to create it directly. Below is how to create a 3 length `Int16Array`.
+Ci sono due modi per creare questi tipi di array. Un modo è di crearli direttamente. Di seguito è riportato come creare un `Int16Array` di lunghezza 3.
 
 ```js
 var i8 = new Int16Array(3);
@@ -30,8 +30,8 @@ console.log(i8);
 // Returns [0, 0, 0]
 ```
 
-You can also create a <dfn>buffer</dfn> to assign how much data (in bytes) you want the array to take up. **Note**  
-To create typed arrays using buffers, you need to assign the number of bytes to be a multiple of the bytes listed above.
+Puoi ache creare un <dfn>buffer</dfn> per assegnare quanti dati (in byte) vuoi che il tuo array occupi. **Nota**  
+Per creare array digitat usando buffer, devi assegnare il numero di byte come multiple dei byte elencati precedentemente.
 
 ```js
 // Create same Int16Array array differently
@@ -43,35 +43,35 @@ i8View.byteLength; // Returns 6
 console.log(i8View); // Returns [0, 0, 0]
 ```
 
-<dfn>Buffers</dfn> are general purpose objects that just carry data. You cannot access them normally. To access them, you need to first create a <dfn>view</dfn>.
+I <dfn>buffer</dfn> sono oggetti a scopo generico che contengono solo dati. Non puoi accedervi normalmente. Per accederci devi prima creare una <dfn>view</dfn>.
 
 ```js
 i8View[0] = 42;
 console.log(i8View); // Returns [42, 0, 0]
 ```
 
-**Note**  
-Typed arrays do not have some of the methods traditional arrays have such as `.pop()` or `.push()`. Typed arrays also fail `Array.isArray()` that checks if something is an array. Although simpler, this can be an advantage for less-sophisticated JavaScript engines to implement them.
+**Nota**  
+Array digitati non hanno alcuni dei metodi degli array tradizioni come `.pop()` o `.push()`. Gli array digitati fanno restituire false ad `Array.isArray()` che controlla se qualcosa è un array. Anche se più semplice, questo può essere un vantaggio per i motori JavaScript meno sofisticati per implementarli.
 
 # --instructions--
 
-First create a `buffer` that is 64-bytes. Then create a `Int32Array` typed array with a view of it called `i32View`.
+Come prima cosa crea un `buffer` che è 64 byte. Quindi crea un array digitato `Int32Array` con una view chiamata `i32View`.
 
 # --hints--
 
-Your `buffer` should be 64 bytes large.
+Il tuo `buffer` dovrebbe occupare 64 byte.
 
 ```js
 assert(buffer.byteLength === 64);
 ```
 
-Your `i32View` view of your buffer should be 64 bytes large.
+La tua view `i32View` del tuo buffer dovrebbe occupare 64 byte.
 
 ```js
 assert(i32View.byteLength === 64);
 ```
 
-Your `i32View` view of your buffer should be 16 elements long.
+La tua view `i32View` del tuo buffer dovrebbe avere 16 elementi.
 
 ```js
 assert(i32View.length === 16);

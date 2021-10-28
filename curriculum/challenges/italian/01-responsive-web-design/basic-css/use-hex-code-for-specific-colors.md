@@ -13,7 +13,7 @@ Lo sapevi che ci sono altri modi per rappresentare i colori in CSS? Uno di quest
 
 Di solito usiamo <dfn>i numeri decimali</dfn> (o numeri in base 10), che usano i simboli da 0 a 9 per ogni cifra. <dfn>Gli esadecimali</dfn> (o <dfn>hex</dfn>) sono numeri in base 16. Ciò significa che utilizzano sedici simboli distinti. Come per i i decimali, i simboli 0-9 rappresentano i valori da zero a nove. I successivi simboli A,B,C,D,E,F rappresentano i valori da dieci a quindici. Complessivamente, una cifra esadecimale può andare da 0 a F, dandoci 16 valori totali possibili. Qui puoi trovare ulteriori informazioni sul [sistema numerico esadecimale](https://it.wikipedia.org/wiki/Sistema_numerico_esadecimale).
 
-In CSS, possiamo usare 6 cifre esadecimali per rappresentare i colori, due ciascuna per le componenti rossa (R), verde (G) e blu (B). Ad esempio, `#000000` è nero ed è anche il valore più basso possibile. Qui puoi trovare maggiori informazioni sul [sistema di colori RGB](https://it.wikipedia.org/wiki/RGB).
+In CSS, possiamo usare 6 cifre esadecimali per rappresentare i colori, due ciascuna per le componenti rossa (R), verde (G) e blu (B). Ad esempio, `#000000` è nero ed è anche il valore più basso possibile. You can find more information about the [RGB color system here](https://www.freecodecamp.org/news/rgb-color-html-and-css-guide/#whatisthergbcolormodel).
 
 ```css
 body {

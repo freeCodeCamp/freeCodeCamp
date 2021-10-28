@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-O título `h1` deve renderizar o valor do campo `submit` do estado do componente.
+O elemento de título `h1` deve renderizar o valor do campo `submit` do estado do componente.
 
 ```js
 (() => {

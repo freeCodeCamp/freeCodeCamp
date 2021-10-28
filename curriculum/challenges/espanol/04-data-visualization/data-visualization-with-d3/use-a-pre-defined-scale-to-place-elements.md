@@ -1,6 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bde
-title: Use a Pre-Defined Scale to Place Elements
+title: Usa una escala predefinida para colocar elementos
 challengeType: 6
 forumTopicId: 301494
 dashedName: use-a-pre-defined-scale-to-place-elements
@@ -8,32 +8,32 @@ dashedName: use-a-pre-defined-scale-to-place-elements
 
 # --description--
 
-With the scales set up, it's time to map the scatter plot again. The scales are like processing functions that turn the `x` and `y` raw data into values that fit and render correctly on the SVG canvas. They keep the data within the screen's plotting area.
+Con las escalas configuradas, es tiempo de trazar el diagrama de dispersión nuevamente. Las escalas son como funciones procesadoras que transforman los datos iniciales de `x` e `y` a valores que encajan y se renderizan correctamente en el lienzo SVG. Mantienen los datos dentro del área de trazado de la pantalla.
 
-You set the coordinate attribute values for an SVG shape with the scaling function. This includes `x` and `y` attributes for `rect` or `text` elements, or `cx` and `cy` for `circles`. Here's an example:
+Establece los valores de los atributos de coordenada para una forma SVG con la función escaladora. Esto incluye los atributos `x` e `y` para `rect` o elementos `text`, o `cx` y `cy` para `circles`. He aquí un ejemplo:
 
 ```js
 shape
   .attr("x", (d) => xScale(d[0]))
 ```
 
-Scales set shape coordinate attributes to place the data points onto the SVG canvas. You don't need to apply scales when you display the actual data value, for example, in the `text()` method for a tooltip or label.
+Las escalas establecen atributos de coordenada de las formas para colocar los puntos de datos en el lienzo SVG. No necesitas aplicar escalas cuando muestras el valor del dato real, por ejemplo, en el método `text()` para una descripción o una etiqueta.
 
 # --instructions--
 
-Use `xScale` and `yScale` to position both the `circle` and `text` shapes onto the SVG canvas. For the `circles`, apply the scales to set the `cx` and `cy` attributes. Give them a radius of `5` units, too.
+Usa `xScale` e `yScale` para posicionar ambas formas `circle` y `text` en el lienzo SVG. Para los `circles`, aplica las escalas para establecer los atributos `cx` y `cy`. También, dales un radio de `5` unidades.
 
-For the `text` elements, apply the scales to set the `x` and `y` attributes. The labels should be offset to the right of the dots. To do this, add `10` units to the `x` data value before passing it to the `xScale`.
+Para los elementos `text`, aplica las escalas para establecer los atributos `x` e `y`. Las etiquetas deben ser desplazadas a la derecha de los puntos. Para ello, agrega `10` unidades al valor de datos `x` antes de pasarlo a `xScale`.
 
 # --hints--
 
-Your code should have 10 `circle` elements.
+Tu código debe tener 10 elementos `circle`.
 
 ```js
 assert($('circle').length == 10);
 ```
 
-The first `circle` element should have a `cx` value of approximately `91` and a `cy` value of approximately `368` after applying the scales. It should also have an `r` value of `5`.
+El primer elemento `circle` debe tener un valor `cx` de aproximadamente `91` y un valor `cy` de aproximadamente `368` luego de aplicar las escalas. También debe tener un valor `r` de `5`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-The second `circle` element should have a `cx` value of approximately `159` and a `cy` value of approximately `181` after applying the scales. It should also have an `r` value of `5`.
+El segundo elemento `circle` debe tener un valor `cx` de aproximadamente `159` y un valor `cy` de aproximadamente `181` luego de aplicar las escalas. También debe tener un valor `r` de `5`.
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-The third `circle` element should have a `cx` value of approximately `340` and a `cy` value of approximately `329` after applying the scales. It should also have an `r` value of `5`.
+El tercer elemento `circle` debe tener un valor `cx` de aproximadamente `340` y un valor `cy` de aproximadamente `329` luego de aplicar las escalas. También debe tener un valor `r` de `5`.
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-The fourth `circle` element should have a `cx` value of approximately `131` and a `cy` value of approximately `60` after applying the scales. It should also have an `r` value of `5`.
+El cuarto elemento `circle` debe tener un valor `cx` de aproximadamente `131` y un valor `cy` de aproximadamente `60` luego de aplicar las escalas. También debe tener un valor `r` de `5`.
 
 ```js
 assert(
@@ -73,7 +73,7 @@ assert(
 );
 ```
 
-The fifth `circle` element should have a `cx` value of approximately `440` and a `cy` value of approximately `237` after applying the scales. It should also have an `r` value of `5`.
+El quinto elemento `circle` debe tener un valor `cx` de aproximadamente `440` y un valor `cy` de aproximadamente `237` luego de aplicar las escalas. También debe tener un valor `r` de `5`.
 
 ```js
 assert(
@@ -83,7 +83,7 @@ assert(
 );
 ```
 
-The sixth `circle` element should have a `cx` value of approximately `271` and a `cy` value of approximately `306` after applying the scales. It should also have an `r` value of `5`.
+El sexto elemento `circle` debe tener un valor `cx` de aproximadamente `271` y un valor `cy` de aproximadamente `306` luego de aplicar las escalas. También debe tener un valor `r` de `5`.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-The seventh `circle` element should have a `cx` value of approximately `361` and a `cy` value of approximately `351` after applying the scales. It should also have an `r` value of `5`.
+El séptimo elemento `circle` debe tener un valor `cx` de aproximadamente `361` y un valor `cy` de aproximadamente `351` luego de aplicar las escalas. También debe tener un valor `r` de `5`.
 
 ```js
 assert(
@@ -103,7 +103,7 @@ assert(
 );
 ```
 
-The eighth `circle` element should have a `cx` value of approximately `261` and a `cy` value of approximately `132` after applying the scales. It should also have an `r` value of `5`.
+El octavo elemento `circle` debe tener un valor `cx` de aproximadamente `261` y un valor `cy` de aproximadamente `132` luego de aplicar las escalas. También debe tener un valor `r` de `5`.
 
 ```js
 assert(
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-The ninth `circle` element should have a `cx` value of approximately `131` and a `cy` value of approximately `144` after applying the scales. It should also have an `r` value of `5`.
+El noveno elemento `circle` debe tener un valor `cx` de aproximadamente `131` y un valor `cy` de aproximadamente `144` luego de aplicar las escalas. También debe tener un valor `r` de `5`.
 
 ```js
 assert(
@@ -123,7 +123,7 @@ assert(
 );
 ```
 
-The tenth `circle` element should have a `cx` value of approximately `79` and a `cy` value of approximately `326` after applying the scales. It should also have an `r` value of `5`.
+El décimo elemento `circle` debe tener un valor `cx` de aproximadamente `79` y un valor `cy` de aproximadamente `326` luego de aplicar las escalas. También debe tener un valor `r` de `5`.
 
 ```js
 assert(
@@ -133,13 +133,13 @@ assert(
 );
 ```
 
-Your code should have 10 `text` elements.
+Tu código debe tener 10 elementos `text`.
 
 ```js
 assert($('text').length == 10);
 ```
 
-The first label should have an `x` value of approximately `100` and a `y` value of approximately `368` after applying the scales.
+La primer etiqueta debe tener un valor `x` de aproximadamente `100` y un valor `y` de aproximadamente `368` luego de aplicar las escalas.
 
 ```js
 assert(
@@ -148,7 +148,7 @@ assert(
 );
 ```
 
-The second label should have an `x` value of approximately `168` and a `y` value of approximately `181` after applying the scales.
+La segunda etiqueta debe tener un valor `x` de aproximadamente `168` y un valor `y` de aproximadamente `181` luego de aplicar las escalas.
 
 ```js
 assert(
@@ -157,7 +157,7 @@ assert(
 );
 ```
 
-The third label should have an `x` value of approximately `350` and a `y` value of approximately `329` after applying the scales.
+La tercer etiqueta debe tener un valor `x` de aproximadamente `350` y un valor `y` de aproximadamente `329` luego de aplicar las escalas.
 
 ```js
 assert(
@@ -166,7 +166,7 @@ assert(
 );
 ```
 
-The fourth label should have an `x` value of approximately `141` and a `y` value of approximately `60` after applying the scales.
+La cuarta etiqueta debe tener un valor `x` de aproximadamente `141` y un valor `y` de aproximadamente `60` luego de aplicar las escalas.
 
 ```js
 assert(
@@ -175,7 +175,7 @@ assert(
 );
 ```
 
-The fifth label should have an `x` value of approximately `449` and a `y` value of approximately `237` after applying the scales.
+La quinta etiqueta debe tener un valor `x` de aproximadamente `449` y un valor `y` de aproximadamente `237` luego de aplicar las escalas.
 
 ```js
 assert(
@@ -184,7 +184,7 @@ assert(
 );
 ```
 
-The sixth label should have an `x` value of approximately `280` and a `y` value of approximately `306` after applying the scales.
+La sexta etiqueta debe tener un valor `x` de aproximadamente `280` y un valor `y` de aproximadamente `306` luego de aplicar las escalas.
 
 ```js
 assert(
@@ -193,7 +193,7 @@ assert(
 );
 ```
 
-The seventh label should have an `x` value of approximately `370` and a `y` value of approximately `351` after applying the scales.
+La séptima etiqueta debe tener un valor `x` de aproximadamente `370` y un valor `y` de aproximadamente `351` luego de aplicar las escalas.
 
 ```js
 assert(
@@ -202,7 +202,7 @@ assert(
 );
 ```
 
-The eighth label should have an `x` value of approximately `270` and a `y` value of approximately `132` after applying the scales.
+La octava etiqueta debe tener un valor `x` de aproximadamente `270` y un valor `y` de aproximadamente `132` luego de aplicar las escalas.
 
 ```js
 assert(
@@ -211,7 +211,7 @@ assert(
 );
 ```
 
-The ninth label should have an `x` value of approximately `140` and a `y` value of approximately `144` after applying the scales.
+La novena etiqueta debe tener un valor `x` de aproximadamente `140` y un valor `y` de aproximadamente `144` luego de aplicar las escalas.
 
 ```js
 assert(
@@ -220,7 +220,7 @@ assert(
 );
 ```
 
-The tenth label should have an `x` value of approximately `88` and a `y` value of approximately `326` after applying the scales.
+La décima etiqueta debe tener un valor `x` de aproximadamente `88` y un valor `y` de aproximadamente `326` luego de aplicar las escalas.
 
 ```js
 assert(

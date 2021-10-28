@@ -14,7 +14,7 @@ dashedName: accessing-nested-arrays
 下面是访问嵌套数组的例子：
 
 ```js
-var ourPets = [
+const ourPets = [
   {
     animalType: "cat",
     names: [
@@ -32,6 +32,7 @@ var ourPets = [
     ]
   }
 ];
+
 ourPets[0].names[1];
 ourPets[1].names[0];
 ```
@@ -72,7 +73,7 @@ assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 ## --seed-contents--
 
 ```js
-var myPlants = [
+const myPlants = [
   {
     type: "flowers",
     list: [
@@ -91,13 +92,13 @@ var myPlants = [
   }
 ];
 
-var secondTree = "";
+const secondTree = "";
 ```
 
 # --solutions--
 
 ```js
-var myPlants = [
+const myPlants = [
   {
     type: "flowers",
     list: [
@@ -116,5 +117,5 @@ var myPlants = [
   }
 ];
 
-var secondTree = myPlants[1].list[1];
+const secondTree = myPlants[1].list[1];
 ```

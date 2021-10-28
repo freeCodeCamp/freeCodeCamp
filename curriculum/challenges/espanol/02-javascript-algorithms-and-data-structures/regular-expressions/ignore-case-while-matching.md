@@ -23,60 +23,70 @@ Escribe una expresión regular `fccRegex` para que coincida con `freeCodeCamp` s
 Tu expresión regular debe coincidir con la cadena `freeCodeCamp`
 
 ```js
+fccRegex.lastIndex = 0; 
 assert(fccRegex.test('freeCodeCamp'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `FreeCodeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCodeCamp'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `FreecodeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreecodeCamp'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `FreeCodecamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCodecamp'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `Free Code Camp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(!fccRegex.test('Free Code Camp'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `FreeCOdeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCOdeCamp'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `FCC`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(!fccRegex.test('FCC'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `FrEeCoDeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FrEeCoDeCamp'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `FrEeCodECamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FrEeCodECamp'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `FReeCodeCAmp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FReeCodeCAmp'));
 ```
 

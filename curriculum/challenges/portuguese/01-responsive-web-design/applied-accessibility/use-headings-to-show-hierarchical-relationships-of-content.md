@@ -17,7 +17,7 @@ Se você estivesse escrevendo um artigo com uma introdução, um corpo e uma con
 
 Títulos com classificação igual (ou superior) iniciam novas seções, títulos com classificação inferior começam subseções dentro da seção pai.
 
-Por exemplo: uma página com um elemento `h2` seguido por várias subseções rotuladas com tags `h4` confundiria um usuário de leitor de tela. Como o HTML5 oferece 6 opções de títulos, pode ser tentador usar uma dessas tags apenas pelo tamanho da fonte que elas oferecem, mas você pode usar o CSS para alterar estes tamanhos.
+Por exemplo: uma página com um elemento `h2` seguido por várias subseções rotuladas com elementos `h4` confundiria um usuário de leitor de tela. Como o HTML5 oferece 6 opções de títulos, pode ser tentador usar uma dessas tags apenas pelo tamanho da fonte que elas oferecem, mas você pode usar o CSS para alterar estes tamanhos.
 
 Uma última observação, cada página deve sempre ter um (e apenas um) elemento `h1`, que é o assunto principal do seu conteúdo. Este e outros cabeçalhos são usados ​​em parte pelos mecanismos de pesquisa para entender o tópico da página.
 
@@ -27,7 +27,7 @@ O Camper Cat quer uma página no site dedicada a como se tornar um ninja. Ajude-
 
 # --hints--
 
-O código deve ter 6 tags `h3`.
+O código deve ter 6 elementos `h3`.
 
 ```js
 assert($('h3').length === 6);
@@ -39,7 +39,7 @@ O código deve ter 6 tags de fechamento `h3`.
 assert((code.match(/\/h3/g) || []).length === 6);
 ```
 
-O código não deve ter nenhuma tag `h5`.
+O código não deve ter nenhum elemento `h5`.
 
 ```js
 assert($('h5').length === 0);

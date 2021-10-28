@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be7
-title: Pre-filter JSON to Get the Data You Need
+title: Pre-filtra JSON para obtener los datos que necesitas
 challengeType: 6
 forumTopicId: 18257
 dashedName: pre-filter-json-to-get-the-data-you-need
@@ -8,11 +8,11 @@ dashedName: pre-filter-json-to-get-the-data-you-need
 
 # --description--
 
-If you don't want to render every cat photo you get from the freeCodeCamp Cat Photo API, you can pre-filter the JSON before looping through it.
+Si no quieres renderizar cada foto del gato que obtienes de la API de foto del gato de freeCodeCamp, tú puedes pre-filtrar el JSON antes de hacer un bucle a través de él.
 
-Given that the JSON data is stored in an array, you can use the `filter` method to filter out the cat whose `id` key has a value of `1`.
+Dado que los datos JSON se almacenan en un arreglo, puedes utilizar el método `filter` para filtrar el gato cuya clave `id` tiene un valor de `1`.
 
-Here's the code to do this:
+Este es el código que hace esto:
 
 ```js
 json = json.filter(function(val) {
@@ -22,11 +22,11 @@ json = json.filter(function(val) {
 
 # --instructions--
 
-Add code to `filter` the json data to remove the cat with the `id` value of `1`.
+Agrega código a `filter` los datos json para eliminar el gato con el valor `id` de `1`.
 
 # --hints--
 
-Your code should use the `filter` method.
+Tu código debe usar el método `filter`.
 
 ```js
 assert(code.match(/json\.filter/g));

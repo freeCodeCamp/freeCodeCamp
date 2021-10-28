@@ -33,43 +33,43 @@ Remember that [`undefined` is a keyword](https://www.freecodecamp.org/learn/java
 
 # --hints--
 
-`abTest(2,2)` should return a number
+`abTest(2, 2)` should return a number
 
 ```js
 assert(typeof abTest(2, 2) === 'number');
 ```
 
-`abTest(2,2)` should return `8`
+`abTest(2, 2)` should return `8`
 
 ```js
 assert(abTest(2, 2) === 8);
 ```
 
-`abTest(-2,2)` should return `undefined`
+`abTest(-2, 2)` should return `undefined`
 
 ```js
 assert(abTest(-2, 2) === undefined);
 ```
 
-`abTest(2,-2)` should return `undefined`
+`abTest(2, -2)` should return `undefined`
 
 ```js
 assert(abTest(2, -2) === undefined);
 ```
 
-`abTest(2,8)` should return `18`
+`abTest(2, 8)` should return `18`
 
 ```js
 assert(abTest(2, 8) === 18);
 ```
 
-`abTest(3,3)` should return `12`
+`abTest(3, 3)` should return `12`
 
 ```js
 assert(abTest(3, 3) === 12);
 ```
 
-`abTest(0,0)` should return `0`
+`abTest(0, 0)` should return `0`
 
 ```js
 assert(abTest(0, 0) === 0);

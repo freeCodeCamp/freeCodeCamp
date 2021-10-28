@@ -60,7 +60,7 @@ assert(
 );
 ```
 
-`footer` 元素的 `id` 屬性值應爲 `footer`。
+`a` 元素的文本應該是 “Jump to Bottom”。
 
 ```js
 assert(

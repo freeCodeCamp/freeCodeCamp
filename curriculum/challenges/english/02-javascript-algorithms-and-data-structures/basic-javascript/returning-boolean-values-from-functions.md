@@ -14,7 +14,7 @@ You may recall from [Comparison with the Equality Operator](/learn/javascript-al
 Sometimes people use an `if/else` statement to do a comparison, like this:
 
 ```js
-function isEqual(a,b) {
+function isEqual(a, b) {
   if (a === b) {
     return true;
   } else {
@@ -26,7 +26,7 @@ function isEqual(a,b) {
 But there's a better way to do this. Since `===` returns `true` or `false`, we can return the result of the comparison:
 
 ```js
-function isEqual(a,b) {
+function isEqual(a, b) {
   return a === b;
 }
 ```
@@ -37,13 +37,13 @@ Fix the function `isLess` to remove the `if/else` statements.
 
 # --hints--
 
-`isLess(10,15)` should return `true`
+`isLess(10, 15)` should return `true`
 
 ```js
 assert(isLess(10, 15) === true);
 ```
 
-`isLess(15,10)` should return `false`
+`isLess(15, 10)` should return `false`
 
 ```js
 assert(isLess(15, 10) === false);

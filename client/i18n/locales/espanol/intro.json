@@ -92,8 +92,15 @@
           ""
         ]
       },
+      "registration-form": {
+        "title": "Formulario de registro",
+        "intro": [
+          "",
+          ""
+        ]
+      },
       "accessibility-quiz": {
-        "title": "Accessibility Quiz",
+        "title": "Prueba de accesibilidad",
         "intro": [
           "",
           ""
@@ -136,7 +143,7 @@
         "intro": [
           "ECMAScript, o ES, es una versión estandarizada de JavaScript. Debido a que todos los principales navegadores siguen esta especificación, los términos ECMAScript y JavaScript son intercambiables.",
           "La mayoría del JavaScript que has aprendido hasta este punto estaba en ES5 (ECMAScript 5), el cual fue finalizado en 2009. Aunque puedes seguir escribiendo programas en ES5, JavaScript está evolucionando siempre, y cada año se lanzan nuevas funcionalidades.",
-          "ES6, lanzado en 2015, añadió muchas nuevas y potentes características al lenguaje. En este curso, aprenderás estas nuevas características, incluyendo <code>let</code> y <code>const</code>, funciones flecha, clases, promesas, y módulos."
+          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including arrow functions, destructuring, classes, promises, and modules."
         ]
       },
       "regular-expressions": {
@@ -223,7 +230,7 @@
     "title": "Librerías de desarrollo de la interfaz",
     "intro": [
       "Ahora que estás familiarizado con HTML, CSS y JavaScript, mejora tus habilidades aprendiendo algunas de las librerías de interfaz más populares en la industria.",
-      "En la certificación de librerías de la interfaz, aprenderás a darle estilo tu sitio rápidamente con Bootstrap. También aprenderás cómo añadir lógica a tus estilos CSS y extenderlos con Sass.",
+      "En la certificación de librerías de la interfaz, aprenderás a darle estilo a tu sitio rápidamente con Bootstrap. También aprenderás cómo añadir lógica a tus estilos CSS y extenderlos con Sass.",
       "Después, construirás un carrito de compras y otras aplicaciones para aprender a crear poderosas aplicaciones de página única (SPAs) con React y Redux."
     ],
     "note": "",
@@ -327,13 +334,15 @@
   "relational-databases": {
     "title": "Bases de Datos Relacionales",
     "intro": [
-      "marcador de posición"
+      "Para estos cursos, utilizarás herramientas y software de desarrollador reales, incluyendo VS Code, PostgreSQL y la línea de comandos de Linux / Unix para completar tutoriales interactivos y crear proyectos."
     ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Aprender Bases de Datos Relacionales",
         "intro": [
-          "marcador de posición"
+          "Estos cursos comienzan con comandos básicos de Bash. Usando el terminal, aprenderás todo, desde navegar y manipular un sistema de archivos, crear scripts en Bash, hasta el uso avanzado.",
+          "A continuación, aprenderás como crear y trabajar con bases de datos relacionales utilizando PostgreSQL, un sistema de administración de bases de datos, y SQL, el lenguaje de estas bases de datos.",
+          "Finalmente, aprenderás Git, el sistema de control de versiones, y GitHub, un servicio de alojamiento de repositorios de código, dos herramientas esenciales de todo desarrollador."
         ]
       }
     }

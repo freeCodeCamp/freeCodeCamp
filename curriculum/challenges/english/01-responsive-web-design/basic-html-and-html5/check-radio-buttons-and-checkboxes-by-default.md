@@ -35,6 +35,18 @@ Your first checkbox on your form should be checked by default.
 assert($('input[type="checkbox"]').prop('checked'));
 ```
 
+You should not change the inner text of the `Indoor` label.
+
+```js
+assert.equal(document.querySelector('label[for="indoor"]')?.innerText?.trim(), 'Indoor');
+```
+
+You should not change the inner text of the `Loving` label.
+
+```js
+assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), 'Loving');
+```
+
 # --seed--
 
 ## --seed-contents--

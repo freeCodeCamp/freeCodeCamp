@@ -1,6 +1,6 @@
 ---
 id: 587d7fae367417b2b2512be6
-title: Render Images from Data Sources
+title: Procesa imágenes desde fuentes de datos
 challengeType: 6
 forumTopicId: 18265
 dashedName: render-images-from-data-sources
@@ -8,11 +8,11 @@ dashedName: render-images-from-data-sources
 
 # --description--
 
-The last few challenges showed that each object in the JSON array contains an `imageLink` key with a value that is the URL of a cat's image.
+Los últimos desafíos mostraron que cada objeto en el arreglo JSON contiene una clave `imageLink` con un valor que es la URL de la imagen de un gato.
 
-When you're looping through these objects, you can use this `imageLink` property to display this image in an `img` element.
+Cuando estás iterando a través de estos objetos, puedes usar esta propiedad `imageLink` para mostrar esta imagen en un elemento `img`.
 
-Here's the code that does this:
+Este es el código que hace esto:
 
 ```js
 html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
@@ -20,17 +20,17 @@ html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
 
 # --instructions--
 
-Add code to use the `imageLink` and `altText` properties in an `img` tag.
+Agrega código para usar las propiedades `imageLink` y `altText` en una etiqueta `img`.
 
 # --hints--
 
-You should use the `imageLink` property to display the images.
+Debes usar la propiedad `imageLink` para mostrar las imágenes.
 
 ```js
 assert(code.match(/val\.imageLink/g));
 ```
 
-You should use the `altText` for the `alt` attribute values of the images.
+Debes utilizar el `altText` para los valores de atributo `alt` de las imágenes.
 
 ```js
 assert(code.match(/val\.altText/g));

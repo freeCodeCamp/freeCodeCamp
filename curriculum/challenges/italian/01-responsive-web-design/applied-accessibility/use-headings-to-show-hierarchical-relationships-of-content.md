@@ -17,7 +17,7 @@ Se stai scrivendo un articolo con un'introduzione, un corpo, e una conclusione, 
 
 Le intestazioni di rango uguale (o superiore) iniziano nuove sezioni implicite, intestazioni di rango minore iniziano sottosezioni di quella precedente.
 
-Ad esempio, una pagina con un elemento `h2` seguito da diverse sottosezioni etichettate con tag `h4` confonderebbe un utente di screen reader. Con sei scelte, è allettante utilizzare un tag perché appare meglio nel browser, ma ricorda che puoi utilizzare CSS per modificarne la dimensione.
+Ad esempio, una pagina con un elemento `h2` seguito da diverse sottosezioni etichettate con elementi `h4` confonderebbe un utente di screen reader. Con sei scelte, è allettante utilizzare un tag perché appare meglio nel browser, ma ricorda che puoi utilizzare CSS per modificarne la dimensione.
 
 Un ultimo punto: ogni pagina dovrebbe avere sempre uno (e uno solo) elemento `h1`, relativo al tema principale del tuo contenuto. Questa e le altre intestazioni sono utilizzate in parte dai motori di ricerca per capire l'argomento della pagina.
 
@@ -27,7 +27,7 @@ Camper Cat vuole una pagina sul suo sito dedicata a come diventare un ninja. Aiu
 
 # --hints--
 
-Il tuo codice dovrebbe avere 6 tag `h3`.
+Il tuo codice dovrebbe avere 6 elementi `h3`.
 
 ```js
 assert($('h3').length === 6);
@@ -39,7 +39,7 @@ Il tuo codice dovrebbe avere 6 tag di chiusura `h3`.
 assert((code.match(/\/h3/g) || []).length === 6);
 ```
 
-Il tuo codice non dovrebbe avere alcun tag `h5`.
+Il tuo codice non dovrebbe avere alcun elemento `h5`.
 
 ```js
 assert($('h5').length === 0);

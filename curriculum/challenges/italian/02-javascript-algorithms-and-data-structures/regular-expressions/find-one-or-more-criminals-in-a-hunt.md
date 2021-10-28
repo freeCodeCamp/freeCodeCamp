@@ -69,12 +69,14 @@ assert(
 La tua espressione regolare non dovrebbe riconoscere nessun criminale nella stringa vuota `""`
 
 ```js
+reCriminals.lastIndex = 0;
 assert(!reCriminals.test(''));
 ```
 
 La tua espressione regolare non dovrebbe riconoscere nessun criminale nella stringa `P1P2P3`
 
 ```js
+reCriminals.lastIndex = 0;
 assert(!reCriminals.test('P1P2P3'));
 ```
 

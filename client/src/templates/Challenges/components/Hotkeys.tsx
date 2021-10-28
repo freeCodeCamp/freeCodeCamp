@@ -5,18 +5,29 @@ import React from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { ChallengeFiles, Test } from '../../../redux/prop-types';
 
-import { canFocusEditorSelector, setEditorFocusability } from '../redux';
+import {
+  canFocusEditorSelector,
+  setEditorFocusability,
+  challengeFilesSelector,
+  submitChallenge,
+  challengeTestsSelector
+} from '../redux';
 import './hotkeys.css';
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
-  (canFocusEditor: boolean) => ({
-    canFocusEditor
+  challengeFilesSelector,
+  challengeTestsSelector,
+  (canFocusEditor: boolean, challengeFiles: ChallengeFiles, tests: Test[]) => ({
+    canFocusEditor,
+    challengeFiles,
+    tests
   })
 );
 
-const mapDispatchToProps = { setEditorFocusability };
+const mapDispatchToProps = { setEditorFocusability, submitChallenge };
 
 const keyMap = {
   NAVIGATION_MODE: 'escape',
@@ -29,15 +40,19 @@ const keyMap = {
 
 interface HotkeysProps {
   canFocusEditor: boolean;
+  challengeFiles: ChallengeFiles;
   children: React.ReactElement;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   editorRef?: React.Ref<HTMLElement> | any;
-  executeChallenge?: () => void;
+  executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
+  submitChallenge: () => void;
   innerRef: React.Ref<HTMLElement> | unknown;
   instructionsPanelRef?: React.RefObject<HTMLElement>;
   nextChallengePath: string;
   prevChallengePath: string;
   setEditorFocusability: (arg0: boolean) => void;
+  tests: Test[];
+  usesMultifileEditor?: boolean;
 }
 
 function Hotkeys({
@@ -49,7 +64,10 @@ function Hotkeys({
   innerRef,
   nextChallengePath,
   prevChallengePath,
-  setEditorFocusability
+  setEditorFocusability,
+  submitChallenge,
+  tests,
+  usesMultifileEditor
 }: HotkeysProps): JSX.Element {
   const handlers = {
     EXECUTE_CHALLENGE: (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -58,7 +76,20 @@ function Hotkeys({
       // TODO: 'enter' on its own also disables HotKeys, but default behaviour
       // should not be prevented in that case.
       e.preventDefault();
-      if (executeChallenge) executeChallenge();
+
+      if (!executeChallenge) return;
+
+      const testsArePassing = tests.every(test => test.pass && !test.err);
+
+      if (usesMultifileEditor) {
+        if (testsArePassing) {
+          submitChallenge();
+        } else {
+          executeChallenge();
+        }
+      } else {
+        executeChallenge({ showCompletionModal: true });
+      }
     },
     FOCUS_EDITOR: (e: React.KeyboardEvent) => {
       e.preventDefault();

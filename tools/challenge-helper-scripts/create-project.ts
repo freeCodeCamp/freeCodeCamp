@@ -151,7 +151,7 @@ async function createMetaJson(
   newMeta.order = order;
   newMeta.superOrder = superBlocks.indexOf(superBlock) + 1;
   newMeta.superBlock = superBlock;
-  newMeta.challengeOrder = [[challengeId, 'Part 1']];
+  newMeta.challengeOrder = [[challengeId, 'Step 1']];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
     await fs.mkdir(newMetaDir);
@@ -171,9 +171,11 @@ block: ${block}
 superBlock: Responsive Web Design
 isBeta: true
 ---
+
 ## Introduction to the ${title}
 
-This is a test for the new project-based curriculum.`;
+This is a test for the new project-based curriculum.
+`;
   const dirPath = path.resolve(
     __dirname,
     `../../client/src/pages/learn/${superBlock}/${block}/`

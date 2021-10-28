@@ -16,15 +16,17 @@ dashedName: accessing-object-properties-with-dot-notation
 这里是一个用点符号（`.`）读取对象属性的示例：
 
 ```js
-var myObj = {
+const myObj = {
   prop1: "val1",
   prop2: "val2"
 };
-var prop1val = myObj.prop1;
-var prop2val = myObj.prop2;
+
+const prop1val = myObj.prop1;
+const prop2val = myObj.prop2;
 ```
 
 `prop1val` 的值将为字符串 `val1`，并且`prop2val` 的值将为字符串 `val2`。
+
 # --instructions--
 
 使用点号读取 `testObj` 的属性值。 将变量 `hatValue` 的值设置为该对象的 `hat` 属性的值，并将变量 `shirtValue` 的值设置为该对象的 `shirt` 属性的值。
@@ -73,27 +75,26 @@ assert(code.match(/testObj\.\w+/g).length > 1);
 
 ```js
 // Setup
-var testObj = {
+const testObj = {
   "hat": "ballcap",
   "shirt": "jersey",
   "shoes": "cleats"
 };
 
 // Only change code below this line
-
-var hatValue = testObj;      // Change this line
-var shirtValue = testObj;    // Change this line
+const hatValue = testObj;      // Change this line
+const shirtValue = testObj;    // Change this line
 ```
 
 # --solutions--
 
 ```js
-var testObj = {
+const testObj = {
   "hat": "ballcap",
   "shirt": "jersey",
   "shoes": "cleats"
 };
 
-var hatValue = testObj.hat;
-var shirtValue = testObj.shirt;
+const hatValue = testObj.hat;
+const shirtValue = testObj.shirt;
 ```

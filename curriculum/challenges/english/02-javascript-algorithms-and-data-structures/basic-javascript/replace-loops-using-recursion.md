@@ -14,9 +14,9 @@ Recursion is the concept that a function can be expressed in terms of itself. To
 
 ```js
   function multiply(arr, n) {
-    var product = 1;
-    for (var i = 0; i < n; i++) {
-        product *= arr[i];
+    let product = 1;
+    for (let i = 0; i < n; i++) {
+      product *= arr[i];
     }
     return product;
   }

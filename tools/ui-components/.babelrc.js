@@ -1,15 +1,15 @@
 module.exports = {
-  "presets": [
-    "@babel/preset-react",
-    "@babel/preset-typescript",
+  presets: [
+    '@babel/preset-react',
+    '@babel/preset-typescript',
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
-        "targets": {
-          "browsers": [">0.25%", "not dead"]
+        targets: {
+          browsers: ['>0.25%', 'not dead']
         }
       }
     ]
   ],
-  "plugins": [["transform-react-remove-prop-types", { "removeImport": true }]]
-}
+  plugins: [['transform-react-remove-prop-types', { removeImport: true }]]
+};

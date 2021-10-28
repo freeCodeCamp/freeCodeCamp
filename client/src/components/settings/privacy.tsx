@@ -1,5 +1,5 @@
 import { Button, Form } from '@freecodecamp/react-bootstrap';
-import React, { Component } from 'react';
+import React from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -44,32 +44,36 @@ type PrivacyProps = {
   };
 };
 
-class PrivacySettings extends Component<PrivacyProps> {
-  static displayName: string;
+function PrivacySettings({
+  submitProfileUI,
+  t,
+  user
+}: PrivacyProps): JSX.Element {
+  function handleSubmit(e: React.FormEvent): void {
+    e.preventDefault();
+  }
 
-  handleSubmit = (e: React.FormEvent) => e.preventDefault();
+  function toggleFlag(flag: string): () => void {
+    return () => {
+      const privacyValues = { ...user.profileUI };
+      privacyValues[flag as keyof ProfileUIType] =
+        !privacyValues[flag as keyof ProfileUIType];
+      submitProfileUI(privacyValues);
+    };
+  }
 
-  toggleFlag = (flag: string) => () => {
-    const privacyValues = { ...this.props.user.profileUI };
-    privacyValues[flag as keyof ProfileUIType] =
-      !privacyValues[flag as keyof ProfileUIType];
-    this.props.submitProfileUI(privacyValues);
-  };
-
-  render() {
-    const { t, user } = this.props;
-    const {
-      isLocked = true,
-      showAbout = false,
-      showCerts = false,
-      showDonation = false,
-      showHeatMap = false,
-      showLocation = false,
-      showName = false,
-      showPoints = false,
-      showPortfolio = false,
-      showTimeLine = false
-    } = user.profileUI;
+  const {
+    isLocked = true,
+    showAbout = false,
+    showCerts = false,
+    showDonation = false,
+    showHeatMap = false,
+    showLocation = false,
+    showName = false,
+    showPoints = false,
+    showPortfolio = false,
+    showTimeLine = false
+  } = user.profileUI;
 
     return (
       <div className='privacy-settings' id='privacy-settings'>

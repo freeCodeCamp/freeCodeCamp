@@ -44,9 +44,9 @@ import {
   updateChallengeMeta
 } from '../redux';
 import { getGuideUrl } from '../utils';
-import DesktopLayout from './DesktopLayout';
 import MobileLayout from './MobileLayout';
 import MultifileEditor from './MultifileEditor';
+import DesktopLayout from './desktop-layout';
 
 import './classic.css';
 import '../components/test-frame.css';
@@ -79,7 +79,7 @@ interface ShowClassicProps {
   challengeMounted: (arg0: string) => void;
   createFiles: (arg0: ChallengeFile[]) => void;
   data: { challengeNode: ChallengeNodeType };
-  executeChallenge: () => void;
+  executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
@@ -94,7 +94,7 @@ interface ShowClassicProps {
 }
 
 interface ShowClassicState {
-  layout: ReflexLayout | string;
+  layout: ReflexLayout;
   resizing: boolean;
 }
 
@@ -143,9 +143,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     this.instructionsPanelRef = React.createRef();
   }
 
-  getLayoutState(): ReflexLayout | string {
+  getLayoutState(): ReflexLayout {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const reflexLayout: ReflexLayout | string = store.get(REFLEX_LAYOUT);
+    const reflexLayout: ReflexLayout = store.get(REFLEX_LAYOUT);
 
     // Validate if user has not done any resize of the panes
     if (!reflexLayout) return BASE_LAYOUT;
@@ -315,7 +315,15 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   renderEditor() {
-    const { challengeFiles } = this.props;
+    const {
+      challengeFiles,
+      data: {
+        challengeNode: {
+          fields: { tests },
+          usesMultifileEditor
+        }
+      }
+    } = this.props;
     const { description, title } = this.getChallenge();
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
@@ -325,9 +333,11 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           containerRef={this.containerRef}
           description={description}
           editorRef={this.editorRef}
-          hasEditableBoundries={this.hasEditableBoundries()}
+          hasEditableBoundaries={this.hasEditableBoundaries()}
+          initialTests={tests}
           resizeProps={this.resizeProps}
           title={title}
+          usesMultifileEditor={usesMultifileEditor}
         />
       )
     );
@@ -353,7 +363,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     );
   }
 
-  hasEditableBoundries() {
+  hasEditableBoundaries() {
     const { challengeFiles } = this.props;
     return (
       challengeFiles?.some(
@@ -368,7 +378,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       fields: { blockName },
       forumTopicId,
       superBlock,
-      title
+      title,
+      usesMultifileEditor
     } = this.getChallenge();
     const {
       executeChallenge,
@@ -387,6 +398,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         instructionsPanelRef={this.instructionsPanelRef}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
           <Helmet
@@ -412,7 +424,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               block={block}
               challengeFiles={challengeFiles}
               editor={this.renderEditor()}
-              hasEditableBoundries={this.hasEditableBoundries()}
+              hasEditableBoundaries={this.hasEditableBoundaries()}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
                 showToolPanel: true
@@ -474,6 +486,7 @@ export const query = graphql`
         link
         src
       }
+      usesMultifileEditor
       challengeFiles {
         fileKey
         ext

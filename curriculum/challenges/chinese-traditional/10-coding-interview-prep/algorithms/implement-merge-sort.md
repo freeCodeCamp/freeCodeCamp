@@ -1,6 +1,6 @@
 ---
 id: 587d825c367417b2b2512c8f
-title: Implement Merge Sort
+title: 實現歸併排序
 challengeType: 1
 forumTopicId: 301614
 dashedName: implement-merge-sort
@@ -8,27 +8,27 @@ dashedName: implement-merge-sort
 
 # --description--
 
-Another common intermediate sorting algorithm is merge sort. Like quick sort, merge sort also uses a divide-and-conquer, recursive methodology to sort an array. It takes advantage of the fact that it is relatively easy to sort two arrays as long as each is sorted in the first place. But we'll start with only one array as input, so how do we get to two sorted arrays from that? Well, we can recursively divide the original input in two until we reach the base case of an array with one item. A single-item array is naturally sorted, so then we can start combining. This combination will unwind the recursive calls that split the original array, eventually producing a final sorted array of all the elements. The steps of merge sort, then, are:
+另一種常見的中間排序算法是歸併排序。 像快速排序一樣，合併排序也使用分而治之的遞歸方法對數組進行排序。 它基於這樣一個事實：要將兩個已經排好序的數組排在一起，是相對容易的。 但是我們只從一個數組作爲輸入開始，那麼我們如何從中獲得兩個已排序的數組呢？ 好吧，我們可以遞歸地將原始輸入分成兩部分，直到我們到達每個數組只有一個元素的基本情況。 單項數組是自然排序的，因此我們可以開始組合。 這個組合將展開拆分原始數組的遞歸調用，最終生成所有元素的最終排序數組。 合併排序的步驟如下：
 
-**1)** Recursively split the input array in half until a sub-array with only one element is produced.
+**1)** 將輸入數組遞歸地分成兩部分，直到生成僅包含一個元素的子數組。
 
-**2)** Merge each sorted sub-array together to produce the final sorted array.
+**2)** 將每個已排序的子數組合並在一起以生成最終的排序的數組。
 
-Merge sort is an efficient sorting method, with time complexity of *O(nlog(n))*. This algorithm is popular because it is performant and relatively easy to implement.
+合併排序是一種有效的排序方法，時間複雜度爲 *O(nlog(n))* 。 該算法很受歡迎，因爲它性能高且易於實現。
 
-As an aside, this will be the last sorting algorithm we cover here. However, later in the section on tree data structures we will describe heap sort, another efficient sorting method that requires a binary heap in its implementation.
+順便說一句，這將是我們在此處介紹的最後一種排序算法。 但是，稍後在關於樹型數據結構的部分中，我們將描述堆排序，這是另一種在其實現中需要二進制堆的有效排序方法。
 
-**Instructions:** Write a function `mergeSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. A good way to implement this is to write one function, for instance `merge`, which is responsible for merging two sorted arrays, and another function, for instance `mergeSort`, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!
+**說明：** 編寫一個函數 `mergeSort`，它以整數數組作爲輸入，並按從最小到最大的排序順序返回這些整數的數組。 實現這一點的一個好方法是編寫一個函數，例如 `merge`，它負責合併兩個已排序的數組；以及另一個函數，例如 `mergeSort`，它負責遞歸，生成單項數組以提供給 merge。 祝你好運！
 
 # --hints--
 
-`mergeSort` should be a function.
+`mergeSort` 應該是一個函數。
 
 ```js
 assert(typeof mergeSort == 'function');
 ```
 
-`mergeSort` should return a sorted array (least to greatest).
+`mergeSort` 應該返回一個已排序的數組（從小到大）。
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-`mergeSort` should return an array that is unchanged except for order.
+`mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` 應返回一個除順序外沒有變化的數組。
 
 ```js
 assert.sameMembers(
@@ -83,7 +83,7 @@ assert.sameMembers(
 );
 ```
 
-`mergeSort` should not use the built-in `.sort()` method.
+`mergeSort` 不應使用內置的 `.sort()` 方法。
 
 ```js
 assert(isBuiltInSortUsed());
@@ -117,8 +117,6 @@ function mergeSort(array) {
   return array;
   // Only change code above this line
 }
-
-mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

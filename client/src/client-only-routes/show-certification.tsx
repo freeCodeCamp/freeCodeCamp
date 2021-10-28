@@ -27,6 +27,7 @@ import {
 } from '../redux';
 import { UserType } from '../redux/prop-types';
 import { certMap } from '../resources/cert-and-project-map';
+import certificateMissingMessage from '../utils/certificate-missing-message';
 import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
 import standardErrorMessage from '../utils/standard-error-message';
 
@@ -47,7 +48,7 @@ interface IShowCertificationProps {
   cert: CertType;
   certDashedName: string;
   certSlug: string;
-  createFlashMessage: (payload: typeof standardErrorMessage) => void;
+  createFlashMessage: typeof createFlashMessage;
   executeGA: (payload: Record<string, unknown>) => void;
   fetchProfileForUser: (username: string) => void;
   fetchState: {
@@ -205,7 +206,7 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
   } = props;
 
   if (!isValidCert) {
-    createFlashMessage(standardErrorMessage);
+    createFlashMessage(certificateMissingMessage);
     return <RedirectHome />;
   }
 

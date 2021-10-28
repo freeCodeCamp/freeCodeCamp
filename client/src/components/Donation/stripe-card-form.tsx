@@ -83,7 +83,10 @@ const StripeCardForm = ({
     style: {
       base: {
         fontSize: '18px',
-        color: `${theme === 'night' ? '#fff' : '#0a0a23'}`
+        color: `${theme === 'night' ? '#fff' : '#0a0a23'}`,
+        '::placeholder': {
+          color: `#858591`
+        }
       }
     }
   };

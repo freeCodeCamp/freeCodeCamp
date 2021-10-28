@@ -89,7 +89,6 @@ const WalletsButton = ({
       {canMakePayment && paymentRequest && (
         <PaymentRequestButtonElement
           onClick={() => {
-            console.log('click');
             if (token) {
               displayRefreshError();
             }

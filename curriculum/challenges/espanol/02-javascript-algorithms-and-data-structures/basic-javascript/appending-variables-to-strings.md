@@ -14,8 +14,8 @@ Al igual que podemos construir una cadena sobre múltiples líneas a partir de l
 Ejemplo:
 
 ```js
-var anAdjective = "awesome!";
-var ourStr = "freeCodeCamp is ";
+const anAdjective = "awesome!";
+let ourStr = "freeCodeCamp is ";
 ourStr += anAdjective;
 ```
 
@@ -64,15 +64,14 @@ assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
 
 ```js
 // Change code below this line
-
-var someAdjective;
-var myStr = "Learning to code is ";
+const someAdjective = "";
+let myStr = "Learning to code is ";
 ```
 
 # --solutions--
 
 ```js
-var someAdjective = "neat";
-var myStr = "Learning to code is ";
+const someAdjective = "neat";
+let myStr = "Learning to code is ";
 myStr += someAdjective;
 ```

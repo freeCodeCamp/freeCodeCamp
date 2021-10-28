@@ -1,5 +1,5 @@
 name: 'Hide Specific String'
-description: "Updates a specific string to be hidden"
+description: 'Updates a specific string to be hidden'
 runs:
   using: 'node12'
   main: './index.js'

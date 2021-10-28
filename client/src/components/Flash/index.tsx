@@ -1,23 +1,19 @@
 import { Alert } from '@freecodecamp/react-bootstrap';
-import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { FlashState } from '../../redux/types';
+import { removeFlashMessage } from './redux';
 
 import './flash.css';
 
 type FlashProps = {
-  flashMessage: {
-    type: string;
-    message: string;
-    id: string;
-    variables: Record<string, unknown>;
-  };
-  onClose: () => void;
+  flashMessage: FlashState['message'];
+  removeFlashMessage: typeof removeFlashMessage;
 };
 
-function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
-  const { type, message, id, variables = {} } = flashMessage;
+function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
+  const { type, message, id, variables } = flashMessage;
   const { t } = useTranslation();
   const [flashMessageHeight, setFlashMessageHeight] = useState(0);
 
@@ -33,7 +29,7 @@ function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
 
   function handleClose() {
     document.documentElement.style.setProperty('--flash-message-height', '0px');
-    onClose();
+    removeFlashMessage();
   }
 
   return (
@@ -43,6 +39,7 @@ function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
           <Alert
             bsStyle={type}
             className='flash-message'
+            closeLabel={t('buttons.close')}
             onDismiss={handleClose}
           >
             {t(message, variables)}
@@ -61,14 +58,5 @@ function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
 }
 
 Flash.displayName = 'FlashMessages';
-Flash.propTypes = {
-  flashMessage: PropTypes.shape({
-    id: PropTypes.string,
-    type: PropTypes.string,
-    message: PropTypes.string,
-    variables: PropTypes.object
-  }),
-  onClose: PropTypes.func.isRequired
-};
 
 export default Flash;
