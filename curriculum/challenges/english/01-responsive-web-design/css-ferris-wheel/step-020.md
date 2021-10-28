@@ -1,5 +1,5 @@
 ---
-id: 6140e0d875ec16262f26432b
+id: 6140df547f09402144e40b92
 title: Step 20
 challengeType: 0
 dashedName: step-20
@@ -7,22 +7,22 @@ dashedName: step-20
 
 # --description--
 
-The `animation-iteration-count` property sets how many times your animation should repeat. This can be set to a number, or to `infinite` to indefinitely repeat the animation. Your Ferris wheel should never stop, so set the `.wheel` selector to have an `animation-iteration-count` of `infinite`.
+The `animation-name` property is used to link a `@keyframes` rule to a CSS selector. The value of this property should match the name of the `@keyframes` rule. Give your `.wheel` selector an `animation-name` property set to `wheel`.
 
-The `animation-timing-function` property sets how the animation should progress over time. There are a few different values for this property, but you want the Ferris wheel animation to run at the same rate from start to finish. Set the `animation-timing-function` to `linear` in your `.wheel` selector.
+The `animation-duration` property is used to set how long the animation should sequence to complete. The time should be specified in either seconds (`s`) or milliseconds (`ms`). Set your `.wheel` selector to have an `animation-duration` property of `10s`.
 
 # --hints--
 
-Your `.wheel` selector should have an `animation-iteration-count` property set to `infinite`.
+Your `.wheel` selector should have an `animation-name` property set to `wheel`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationIterationCount === 'infinite');
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationName === 'wheel');
 ```
 
-Your `.wheel` selector should have an `animation-timing-function` property set to `linear`.
+Your `.wheel` selector should have an `animation-duration` property set to `10s`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationTimingFunction === 'linear');
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationDuration === '10s');
 ```
 
 # --seed--
@@ -64,10 +64,10 @@ assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationTimingFuncti
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
-  animation-name: wheel;
-  animation-duration: 10s;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 --fcc-editable-region--
 
@@ -99,8 +99,8 @@ assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationTimingFuncti
 
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;

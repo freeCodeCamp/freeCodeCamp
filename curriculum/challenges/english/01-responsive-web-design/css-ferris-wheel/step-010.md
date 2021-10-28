@@ -1,5 +1,5 @@
 ---
-id: 6140d263016325162fd076fe
+id: 6140d1a351e88f159ed54fca
 title: Step 10
 challengeType: 0
 dashedName: step-10
@@ -7,33 +7,60 @@ dashedName: step-10
 
 # --description--
 
-Create a `.cabin` selector. Set the `background-color` to `red`, the `width` to `80px`, and the `height` to `100px`.
+Using the same pattern, create a separate selector for the third `.line`, the fourth `.line`, the fifth `.line`, and the sixth `.line`.
+
+Set the `transform` property for the third `.line` to `rotate(120deg)`, the fourth to `rotate(180deg)`, the fifth to `rotate(240deg)`, and the sixth to `rotate(300deg)`.
 
 # --hints--
 
-You should have a `.cabin` selector.
+You should create a `.line:nth-of-type(3)` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin'));
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(3)'));
 ```
 
-Your `.cabin` selector should have a `background-color` property set to `red`.
+Your `.line:nth-of-type(3)` selector should have a `transform` property set to `rotate(120deg)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.backgroundColor === 'red');
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(3)')?.transform === 'rotate(120deg)');
 ```
 
-Your `.cabin` selector should have a `width` property set to `80px`.
+You should create a `.line:nth-of-type(4)` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.width === '80px');
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(4)'));
 ```
 
-Your `.cabin` selector should have a `height` property set to `100px`.
+Your `.line:nth-of-type(4)` selector should have a `transform` property set to `rotate(180deg)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.height === '100px');
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(4)')?.transform === 'rotate(180deg)');
 ```
+
+You should create a `.line:nth-of-type(5)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(5)'));
+```
+
+Your `.line:nth-of-type(5)` selector should have a `transform` property set to `rotate(240deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(5)')?.transform === 'rotate(240deg)');
+```
+
+You should create a `.line:nth-of-type(6)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(6)'));
+```
+
+Your `.line:nth-of-type(6)` selector should have a `transform` property set to `rotate(300deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(6)')?.transform === 'rotate(300deg)');
+```
+
 
 # --seed--
 
@@ -73,8 +100,10 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.height === '100px');
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .line {
@@ -89,18 +118,6 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.height === '100px');
 
 .line:nth-of-type(2) {
   transform: rotate(60deg);
-}
-.line:nth-of-type(3) {
-  transform: rotate(120deg);
-}
-.line:nth-of-type(4) {
-  transform: rotate(180deg);
-}
-.line:nth-of-type(5) {
-  transform: rotate(240deg);
-}
-.line:nth-of-type(6) {
-  transform: rotate(300deg);
 }
 
 --fcc-editable-region--

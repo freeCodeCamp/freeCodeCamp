@@ -1,5 +1,5 @@
 ---
-id: 6140d1a351e88f159ed54fca
+id: 6140d10d50636e14695013b2
 title: Step 9
 challengeType: 0
 dashedName: step-9
@@ -7,60 +7,23 @@ dashedName: step-9
 
 # --description--
 
-Using the same pattern, create a separate selector for the third `.line`, the fourth `.line`, the fifth `.line`, and the sixth `.line`.
+Create a selector to target your second `.line` element. Set the `transform` property to `rotate(60deg)`.
 
-Set the `transform` property for the third `.line` to `rotate(120deg)`, the fourth to `rotate(180deg)`, the fifth to `rotate(240deg)`, and the sixth to `rotate(300deg)`.
+Remember that the `transform` property allows you to manipulate the shape of an element. In this case, using the `rotate(60deg)` value will rotate the element around its `transform-origin` point by 60 degrees clockwise.
 
 # --hints--
 
-You should create a `.line:nth-of-type(3)` selector.
+You should create a `.line:nth-of-type(2)` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(3)'));
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(2)'));
 ```
 
-Your `.line:nth-of-type(3)` selector should have a `transform` property set to `rotate(120deg)`.
+Your `.line:nth-of-type(2)` selector should have a `transform` property set to `rotate(60deg)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(3)')?.transform === 'rotate(120deg)');
+assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(2)')?.transform === 'rotate(60deg)');
 ```
-
-You should create a `.line:nth-of-type(4)` selector.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(4)'));
-```
-
-Your `.line:nth-of-type(4)` selector should have a `transform` property set to `rotate(180deg)`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(4)')?.transform === 'rotate(180deg)');
-```
-
-You should create a `.line:nth-of-type(5)` selector.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(5)'));
-```
-
-Your `.line:nth-of-type(5)` selector should have a `transform` property set to `rotate(240deg)`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(5)')?.transform === 'rotate(240deg)');
-```
-
-You should create a `.line:nth-of-type(6)` selector.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(6)'));
-```
-
-Your `.line:nth-of-type(6)` selector should have a `transform` property set to `rotate(300deg)`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(6)')?.transform === 'rotate(300deg)');
-```
-
 
 # --seed--
 
@@ -100,8 +63,10 @@ assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(6)')?.transfo
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .line {
@@ -112,10 +77,6 @@ assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(6)')?.transfo
   top: 50%;
   left: 50%;
   transform-origin: 0% 0%;
-}
-
-.line:nth-of-type(2) {
-  transform: rotate(60deg);
 }
 
 --fcc-editable-region--

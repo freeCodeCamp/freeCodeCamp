@@ -1,5 +1,5 @@
 ---
-id: 6140d36b8b747718b50d4b7a
+id: 6140d2b687a2cd17bac5730c
 title: Step 12
 challengeType: 0
 dashedName: step-12
@@ -7,15 +7,20 @@ dashedName: step-12
 
 # --description--
 
-Set the `.cabin` to have a `transform-origin` property of `50% 0%`. This will set the origin point to be offset `50%` from the left and `0%` from the top, placing it in the middle of the top edge of the element.
+Give the `.cabin` a `position` of `absolute`, and a `border` of `2px solid`.
 
 # --hints--
 
-Your `.cabin` selector should have a `transform-origin` property set to `50% 0%`.
+Your `.cabin` selector should have a `position` property set to `absolute`.
 
 ```js
-const transformOrigin = new __helpers.CSSHelp(document).getStyle('.cabin')?.transformOrigin;
-assert(transformOrigin === '50% 0%' || transformOrigin === '50% 0% 0px');
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.position === 'absolute');
+```
+
+Your `.cabin` selector should have a `border` property set to `2px solid`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.border === '2px solid');
 ```
 
 # --seed--
@@ -56,8 +61,10 @@ assert(transformOrigin === '50% 0%' || transformOrigin === '50% 0% 0px');
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .line {
@@ -89,10 +96,8 @@ assert(transformOrigin === '50% 0%' || transformOrigin === '50% 0% 0px');
 --fcc-editable-region--
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
-  position: absolute;
-  border: 2px solid;
+  width: 20%;
+  height: 20%;
 }
 --fcc-editable-region--
 ```

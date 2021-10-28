@@ -1,5 +1,5 @@
 ---
-id: 6140df547f09402144e40b92
+id: 6140de31b1f5b420410728ff
 title: Step 19
 challengeType: 0
 dashedName: step-19
@@ -7,23 +7,29 @@ dashedName: step-19
 
 # --description--
 
-The `animation-name` property is used to link a `@keyframes` rule to a CSS selector. The value of this property should match the name of the `@keyframes` rule. Give your `.wheel` selector an `animation-name` property set to `wheel`.
-
-The `animation-duration` property is used to set how long the animation should sequence to complete. The time should be specified in either seconds (`s`) or milliseconds (`ms`). Set your `.wheel` selector to have an `animation-duration` property of `10s`.
+Now give the `@keyframes wheel` rule a `100%` selector. Within that, set the `transform` to `rotate(360deg)`. By doing this, your animation will now complete a full rotation.
 
 # --hints--
 
-Your `.wheel` selector should have an `animation-name` property set to `wheel`.
+Your `@keyframes wheel` rule should have a `100%` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationName === 'wheel');
+const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules
+assert(rules?.[0]?.keyText === '100%' || rules?.[1]?.keyText === '100%');
 ```
 
-Your `.wheel` selector should have an `animation-duration` property set to `10s`.
+Your `100%` selector should come after your `0%` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationDuration === '10s');
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[1]?.keyText === '100%')
 ```
+
+Your `100%` selector should have a `transform` property set to `rotate(360deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[1]?.style?.transform === 'rotate(360deg)')
+```
+
 
 # --seed--
 
@@ -58,16 +64,16 @@ assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationDuration ===
 ```
 
 ```css
---fcc-editable-region--
 .wheel {
   border: 2px solid black;
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
---fcc-editable-region--
 
 .line {
   background-color: black;
@@ -97,8 +103,8 @@ assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationDuration ===
 
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
@@ -129,12 +135,12 @@ assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationDuration ===
   top: 7%;
 }
 
+--fcc-editable-region--
 @keyframes wheel {
    0% {
      transform: rotate(0deg);
    }
-   100% {
-     transform: rotate(360deg);
-   }
+
 }
+--fcc-editable-region--
 ```

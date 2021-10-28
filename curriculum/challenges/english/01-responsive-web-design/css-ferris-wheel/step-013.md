@@ -1,5 +1,5 @@
 ---
-id: 6140d3dc359b371b1a21d783
+id: 6140d36b8b747718b50d4b7a
 title: Step 13
 challengeType: 0
 dashedName: step-13
@@ -7,26 +7,15 @@ dashedName: step-13
 
 # --description--
 
-Time to position the cabins around the wheel. Select the first `.cabin` element. Set the `right` property to `-8.5%` and the `top` property to `50%`.
+Set the `.cabin` to have a `transform-origin` property of `50% 0%`. This will set the origin point to be offset `50%` from the left and `0%` from the top, placing it in the middle of the top edge of the element.
 
 # --hints--
 
-You should have a `.cabin:nth-of-type(1)` selector.
+Your `.cabin` selector should have a `transform-origin` property set to `50% 0%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)'));
-```
-
-Your `.cabin:nth-of-type(1)` selector should have a `right` property set to `-8.5%`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)')?.right === '-8.5%');
-```
-
-Your `.cabin:nth-of-type(1)` selector should have a `top` property set to `50%`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)')?.top === '50%');
+const transformOrigin = new __helpers.CSSHelp(document).getStyle('.cabin')?.transformOrigin;
+assert(transformOrigin === '50% 0%' || transformOrigin === '50% 0% 0px');
 ```
 
 # --seed--
@@ -67,8 +56,10 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)')?.top ==
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .line {
@@ -97,16 +88,13 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)')?.top ==
   transform: rotate(300deg);
 }
 
+--fcc-editable-region--
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
-  transform-origin: 50% 0%;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

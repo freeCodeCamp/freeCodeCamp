@@ -1,5 +1,5 @@
 ---
-id: 6140cfc08ca9c5128c3e6478
+id: 6140cdebd39d6a101e747529
 title: Step 6
 challengeType: 0
 dashedName: step-6
@@ -7,26 +7,32 @@ dashedName: step-6
 
 # --description--
 
-Set the `.line` selector's `position` property to `absolute`, the `left` property to `50%`, and the `top` property to `50%`.
+Create a selector for your `.line` elements. Start by setting the `background-color` to `black`, the `width` to `50%`, and the `height` to `2px`.
 
 # --hints--
 
-Your `.line` selector should have a `position` property set to `absolute`.
+You should have a `.line` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.line')?.position === 'absolute');
+assert(new __helpers.CSSHelp(document).getStyle('.line'));
 ```
 
-Your `.line` selector should have a `left` property set to `50%`.
+Your `.line` selector should have a `background-color` property set to `black`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.line')?.left === '50%');
+assert(new __helpers.CSSHelp(document).getStyle('.line')?.backgroundColor === "black");
 ```
 
-Your `.line` selector should have a `top` property set to `50%`.
+Your `.line` selector should have a `width` property set to `50%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.line')?.top === '50%');
+assert(new __helpers.CSSHelp(document).getStyle('.line')?.width === "50%");
+```
+
+Your `.line` selector should have a `height` property set to `2px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line')?.height === "2px");
 ```
 
 # --seed--
@@ -67,15 +73,13 @@ assert(new __helpers.CSSHelp(document).getStyle('.line')?.top === '50%');
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 --fcc-editable-region--
-.line {
-  background-color: black;
-  width: 50%;
-  height: 2px;
-}
+
 --fcc-editable-region--
 ```

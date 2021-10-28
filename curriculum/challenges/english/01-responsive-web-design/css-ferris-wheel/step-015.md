@@ -1,5 +1,5 @@
 ---
-id: 6140d94b5fab7f1d73c9bedb
+id: 6140d4bc9db3c81c51a09ab7
 title: Step 15
 challengeType: 0
 dashedName: step-15
@@ -7,24 +7,104 @@ dashedName: step-15
 
 # --description--
 
-The `@keyframes` at-rule is used to define the flow of a CSS animation. Within the `@keyframes` rule, you can create selectors for specific points in the animation sequence, such as `0%` or `25%`, or use `from` and `to` to define the start and end of the sequence.
+Continuing the pattern, select the following `.cabin` elements and apply the specific rules to them:
 
-`@keyframes` rules require a name to be assigned to them, which you use in other rules to reference. For example, the `@keyframes freeCodeCamp { }` rule would be named `freeCodeCamp`.
-
-Time to start animating. Create a `@keyframes` rule named `wheel`.
+- The second `.cabin` should have the `right` property set to `17%` and the `top` property set to `93.5%`.
+- The third `.cabin` should have the `right` property set to `67%` and the `top` property set to `93.5%`.
+- The fourth `.cabin` should have the `left` property set to `-8.5%` and the `top` property set to `50%`.
+- The fifth `.cabin` should have the `left` property set to `17%` and the `top` property set to `7%`.
+- The sixth `.cabin` should have the `right` property set to `17%` and the `top` property set to `7%`.
 
 # --hints--
 
-You should have a `@keyframes` rule.
+You should have a `.cabin:nth-of-type(2)` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.length === 1);
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(2)'));
 ```
 
-Your new `@keyframes` rule should be named `wheel`.
+Your `.cabin:nth-of-type(2)` selector should have a `right` property set to `17%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === 'wheel');
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(2)')?.right === '17%');
+```
+
+Your `.cabin:nth-of-type(2)` selector should have a `top` property set to `93.5%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(2)')?.top === '93.5%');
+```
+
+You should have a `.cabin:nth-of-type(3)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(3)'));
+```
+
+Your `.cabin:nth-of-type(3)` selector should have a `right` property set to `67%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(3)')?.right === '67%');
+```
+
+Your `.cabin:nth-of-type(3)` selector should have a `top` property set to `93.5%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(3)')?.top === '93.5%');
+```
+
+You should have a `.cabin:nth-of-type(4)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(4)'));
+```
+
+Your `.cabin:nth-of-type(4)` selector should have a `left` property set to `-8.5%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(4)')?.left === '-8.5%');
+```
+
+Your `.cabin:nth-of-type(4)` selector should have a `top` property set to `50%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(4)')?.top === '50%');
+```
+
+You should have a `.cabin:nth-of-type(5)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(5)'));
+```
+
+Your `.cabin:nth-of-type(5)` selector should have a `left` property set to `17%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(5)')?.left === '17%');
+```
+
+Your `.cabin:nth-of-type(5)` selector should have a `top` property set to `7%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(5)')?.top === '7%');
+```
+
+You should have a `.cabin:nth-of-type(6)` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)'));
+```
+
+Your `.cabin:nth-of-type(6)` selector should have a `right` property set to `17%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.right === '17%');
+```
+
+Your `.cabin:nth-of-type(6)` selector should have a `top` property set to `7%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.top === '7%');
 ```
 
 # --seed--
@@ -65,8 +145,10 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === '
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .line {
@@ -97,8 +179,8 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === '
 
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
@@ -108,27 +190,6 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === '
   right: -8.5%;
   top: 50%;
 }
-.cabin:nth-of-type(2) {
-  right: 17%;
-  top: 93.5%;
-}
-.cabin:nth-of-type(3) {
-  right: 67%;
-  top: 93.5%;
-}
-.cabin:nth-of-type(4) {
-  left: -8.5%;
-  top: 50%;
-}
-.cabin:nth-of-type(5) {
-  left: 17%;
-  top: 7%;
-}
-.cabin:nth-of-type(6) {
-  right: 17%;
-  top: 7%;
-}
-
 --fcc-editable-region--
 
 --fcc-editable-region--

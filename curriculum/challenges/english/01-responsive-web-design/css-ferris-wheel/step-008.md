@@ -1,5 +1,5 @@
 ---
-id: 6140d10d50636e14695013b2
+id: 6140d0069049f5139d78da40
 title: Step 8
 challengeType: 0
 dashedName: step-8
@@ -7,22 +7,17 @@ dashedName: step-8
 
 # --description--
 
-Create a selector to target your second `.line` element. Set the `transform` property to `rotate(60deg)`.
+The `transform-origin` property is used to set the point around which a CSS transformation is applied. For example, when performing a `rotate` (which you will do later in this project), the `transform-origin` determines around which point the element is rotated.
 
-Remember that the `transform` property allows you to manipulate the shape of an element. In this case, using the `rotate(60deg)` value will rotate the element around its `transform-origin` point by 60 degrees clockwise.
+Give the `.line` selector a `transform-origin` property of `0% 0%`. This will offset the origin point by `0%` from the left and `0%` from the top, setting it to the top left corner of the element.
 
 # --hints--
 
-You should create a `.line:nth-of-type(2)` selector.
+Your `.line` selector should have a `transform-origin` property set to `0% 0%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(2)'));
-```
-
-Your `.line:nth-of-type(2)` selector should have a `transform` property set to `rotate(60deg)`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(2)')?.transform === 'rotate(60deg)');
+const transformOrigin = new __helpers.CSSHelp(document).getStyle('.line')?.transformOrigin;
+assert(transformOrigin === '0% 0%' || transformOrigin === '0% 0% 0px');
 ```
 
 # --seed--
@@ -63,10 +58,13 @@ assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(2)')?.transfo
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
+--fcc-editable-region--
 .line {
   background-color: black;
   width: 50%;
@@ -74,10 +72,6 @@ assert(new __helpers.CSSHelp(document).getStyle('.line:nth-of-type(2)')?.transfo
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: 0% 0%;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

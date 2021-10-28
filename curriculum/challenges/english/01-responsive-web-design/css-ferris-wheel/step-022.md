@@ -1,5 +1,5 @@
 ---
-id: 614100d7d335bb2a5ff74f1f
+id: 6140f4b5c1555a2960de1e5f
 title: Step 22
 challengeType: 0
 dashedName: step-22
@@ -7,17 +7,66 @@ dashedName: step-22
 
 # --description--
 
-With your `.wheel` selector, you created four different properties to control the animation. For your `.cabin` selector, you can use the `animation` property to set these all at once.
-
-Set the `animation` property of the `.cabin` rule to `cabins 10s linear infinite`. This will set the `animation-name`, `animation-duration`, `animation-timing-function`, and `animation-iteration-count` properties in that order.
+Create another `@keyframes` rule with the name `cabins`. Use the same properties as your `@keyframes wheel`, copying both the `0%` and `100%` rules, but set the `transform` property of the `100%` selector to `rotate(-360deg)`.
 
 # --hints--
 
-Your `.cabin` selector should have an `animation` property set to `cabins 10s linear infinite`.
+You should have a `@keyframes` rule.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.animation === '10s linear 0s infinite normal none running cabins');
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.length === 2);
 ```
+
+Your new `@keyframes` rule should be named `cabins`.
+
+```js
+const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes');
+assert(rules?.[0]?.name === 'cabins' || rules?.[1]?.name === 'cabins');
+```
+
+Your new `@keyframes` rule should come after your `@keyframes wheel` rule.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.name === 'cabins');
+```
+
+You should not change the name of your `@keyframes wheel` rule.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === 'wheel');
+```
+
+Your `@keyframes cabins` rule should have a `0%` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[0]?.keyText === '0%');
+```
+
+Your `0%` selector should have a `transform` property set to `rotate(0deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[0]?.style?.transform === 'rotate(0deg)');
+```
+
+Your `@keyframes cabins` rule should have a `100%` selector.
+
+```js
+const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules
+assert(rules?.[0]?.keyText === '100%' || rules?.[1]?.keyText === '100%');
+```
+
+Your `100%` selector should come after your `0%` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.keyText === '100%')
+```
+
+Your `100%` selector should have a `transform` property set to `rotate(-360deg)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.style?.transform === 'rotate(-360deg)')
+```
+
 
 # --seed--
 
@@ -57,8 +106,10 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.animation === '10s li
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
   animation-name: wheel;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -91,16 +142,14 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.animation === '10s li
   transform: rotate(300deg);
 }
 
---fcc-editable-region--
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
 }
---fcc-editable-region--
 
 .cabin:nth-of-type(1) {
   right: -8.5%;
@@ -136,12 +185,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.animation === '10s li
    }
 }
 
-@keyframes cabins {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```

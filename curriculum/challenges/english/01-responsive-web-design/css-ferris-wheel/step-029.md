@@ -1,30 +1,35 @@
 ---
-id: 6140d94b5fab7f1d73c9bedb
-title: Step 16
+id: 6169b284950e171d8d0bb16a
+title: Step 29
 challengeType: 0
-dashedName: step-16
+dashedName: step-29
 ---
 
 # --description--
 
-The `@keyframes` at-rule is used to define the flow of a CSS animation. Within the `@keyframes` rule, you can create selectors for specific points in the animation sequence, such as `0%` or `25%`, or use `from` and `to` to define the start and end of the sequence.
+Finally, create a new `75%` selector between your `50%` and `100%` selectors. Give this new selector a `background-color` property set to `yellow.`
 
-`@keyframes` rules require a name to be assigned to them, which you use in other rules to reference. For example, the `@keyframes freeCodeCamp { }` rule would be named `freeCodeCamp`.
-
-Time to start animating. Create a `@keyframes` rule named `wheel`.
+With that, your animation is much smoother and your Ferris wheel is complete.
 
 # --hints--
 
-You should have a `@keyframes` rule.
+You should create a new `75%` selector in your `@keyframes cabins` rule.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.length === 1);
+const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules;
+assert(rules?.[0]?.keyText === '75%' || rules?.[1]?.keyText === '75%' || rules?.[2]?.keyText === '75%' || rules?.[3]?.keyText === '75%' || rules?.[4]?.keyText === '75%');
 ```
 
-Your new `@keyframes` rule should be named `wheel`.
+Your `75%` selector should be between your `50%` and `100%` selectors.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === 'wheel');
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[3]?.keyText === '75%');
+```
+
+Your `75%` selector should have a `background-color` property set to `yellow`.
+
+```js
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[3]?.style?.backgroundColor === 'yellow');
 ```
 
 # --seed--
@@ -69,6 +74,10 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === '
   width: 55vw;
   max-width: 500px;
   max-height: 500px;
+  animation-name: wheel;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .line {
@@ -104,6 +113,7 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === '
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
+  animation: cabins 10s ease-in-out infinite;
 }
 
 .cabin:nth-of-type(1) {
@@ -131,7 +141,29 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === '
   top: 7%;
 }
 
---fcc-editable-region--
+@keyframes wheel {
+   0% {
+     transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
+}
 
+--fcc-editable-region--
+@keyframes cabins {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: purple;
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 --fcc-editable-region--
 ```

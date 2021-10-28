@@ -1,5 +1,5 @@
 ---
-id: 6141019eadec6d2c6c6f007b
+id: 61410126fa3a6d2b3cda502e
 title: Step 24
 challengeType: 0
 dashedName: step-24
@@ -7,15 +7,18 @@ dashedName: step-24
 
 # --description--
 
-You can use `@keyframes` rules to control more than just the transformation of an element. In the `0%` selector of your `@keyframes cabins`, set the `background-color` to `yellow`.
+To make your cabin animation seem more like a natural swinging motion, you can use the `ease-in-out` timing function. This setting will tell the animation to start and end at a slower pace, but move more quickly in the middle of the cycle.
+
+Replace `linear` to `ease-in-out` in the `.cabin` selector.
 
 # --hints--
 
-Your `0%` selector should have a `background-color` property set to `yellow`.
+Your `.cabin` selector should have an `animation` property set to `cabins 10s ease-in-out infinite`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[0]?.style?.backgroundColor === 'yellow');
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.animation === '10s ease-in-out 0s infinite normal none running cabins');
 ```
+
 
 # --seed--
 
@@ -55,8 +58,10 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
   animation-name: wheel;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -89,15 +94,17 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
   transform: rotate(300deg);
 }
 
+--fcc-editable-region--
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
-  animation: cabins 10s ease-in-out infinite;
+  animation: cabins 10s linear infinite;
 }
+--fcc-editable-region--
 
 .cabin:nth-of-type(1) {
   right: -8.5%;
@@ -133,7 +140,6 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
    }
 }
 
---fcc-editable-region--
 @keyframes cabins {
   0% {
     transform: rotate(0deg);
@@ -142,5 +148,4 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
     transform: rotate(-360deg);
   }
 }
---fcc-editable-region--
 ```

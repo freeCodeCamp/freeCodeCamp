@@ -1,5 +1,5 @@
 ---
-id: 6140d2b687a2cd17bac5730c
+id: 6140d263016325162fd076fe
 title: Step 11
 challengeType: 0
 dashedName: step-11
@@ -7,20 +7,32 @@ dashedName: step-11
 
 # --description--
 
-Give the `.cabin` a `position` of `absolute`, and a `border` of `2px solid`.
+Create a `.cabin` selector. Set the `background-color` to `red`, the `width` to `20%`, and the `height` to `20%`.
 
 # --hints--
 
-Your `.cabin` selector should have a `position` property set to `absolute`.
+You should have a `.cabin` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.position === 'absolute');
+assert(new __helpers.CSSHelp(document).getStyle('.cabin'));
 ```
 
-Your `.cabin` selector should have a `border` property set to `2px solid`.
+Your `.cabin` selector should have a `background-color` property set to `red`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.border === '2px solid');
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.backgroundColor === 'red');
+```
+
+Your `.cabin` selector should have a `width` property set to `20%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.width === '20%');
+```
+
+Your `.cabin` selector should have a `height` property set to `20%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.height === '20%');
 ```
 
 # --seed--
@@ -61,8 +73,10 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.border === '2px solid
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .line {
@@ -92,10 +106,6 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.border === '2px solid
 }
 
 --fcc-editable-region--
-.cabin {
-  background-color: red;
-  width: 80px;
-  height: 100px;
-}
+
 --fcc-editable-region--
 ```

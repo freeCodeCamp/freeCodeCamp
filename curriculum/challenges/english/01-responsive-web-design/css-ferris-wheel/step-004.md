@@ -7,7 +7,7 @@ dashedName: step-4
 
 # --description--
 
-Set the `position` property of the `.wheel` selector to `absolute`. Set the `height` and `width` both to `500px`.
+Set the `position` property of the `.wheel` selector to `absolute`. Set the `height` and `width` both to `55vw`.
 
 # --hints--
 
@@ -17,16 +17,16 @@ Your `.wheel` selector should have a `position` property set to `absolute`.
 assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.position === 'absolute');
 ```
 
-Your `.wheel` selector should have a `height` property set to `500px`.
+Your `.wheel` selector should have a `height` property set to `55vw`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.height === '500px');
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.height === '55vw');
 ```
 
-Your `.wheel` selector should have a `width` property set to `500px`.
+Your `.wheel` selector should have a `width` property set to `55vw`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.width === '500px');
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.width === '55vw');
 ```
 
 # --seed--

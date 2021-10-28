@@ -1,5 +1,5 @@
 ---
-id: 61410126fa3a6d2b3cda502e
+id: 614100d7d335bb2a5ff74f1f
 title: Step 23
 challengeType: 0
 dashedName: step-23
@@ -7,18 +7,17 @@ dashedName: step-23
 
 # --description--
 
-To make your cabin animation seem more like a natural swinging motion, you can use the `ease-in-out` timing function. This setting will tell the animation to start and end at a slower pace, but move more quickly in the middle of the cycle.
+With your `.wheel` selector, you created four different properties to control the animation. For your `.cabin` selector, you can use the `animation` property to set these all at once.
 
-Replace `linear` to `ease-in-out` in the `.cabin` selector.
+Set the `animation` property of the `.cabin` rule to `cabins 10s linear infinite`. This will set the `animation-name`, `animation-duration`, `animation-timing-function`, and `animation-iteration-count` properties in that order.
 
 # --hints--
 
-Your `.cabin` selector should have an `animation` property set to `cabins 10s ease-in-out infinite`.
+Your `.cabin` selector should have an `animation` property set to `cabins 10s linear infinite`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.animation === '10s ease-in-out 0s infinite normal none running cabins');
+assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.animation === '10s linear 0s infinite normal none running cabins');
 ```
-
 
 # --seed--
 
@@ -58,8 +57,10 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.animation === '10s ea
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
   animation-name: wheel;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -95,12 +96,11 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin')?.animation === '10s ea
 --fcc-editable-region--
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
-  animation: cabins 10s linear infinite;
 }
 --fcc-editable-region--
 

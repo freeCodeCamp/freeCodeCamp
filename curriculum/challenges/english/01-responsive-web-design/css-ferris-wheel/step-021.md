@@ -1,5 +1,5 @@
 ---
-id: 6140f4b5c1555a2960de1e5f
+id: 6140e0d875ec16262f26432b
 title: Step 21
 challengeType: 0
 dashedName: step-21
@@ -7,66 +7,23 @@ dashedName: step-21
 
 # --description--
 
-Create another `@keyframes` rule with the name `cabins`. Use the same properties as your `@keyframes wheel`, copying both the `0%` and `100%` rules, but set the `transform` property of the `100%` selector to `rotate(-360deg)`.
+The `animation-iteration-count` property sets how many times your animation should repeat. This can be set to a number, or to `infinite` to indefinitely repeat the animation. Your Ferris wheel should never stop, so set the `.wheel` selector to have an `animation-iteration-count` of `infinite`.
+
+The `animation-timing-function` property sets how the animation should progress over time. There are a few different values for this property, but you want the Ferris wheel animation to run at the same rate from start to finish. Set the `animation-timing-function` to `linear` in your `.wheel` selector.
 
 # --hints--
 
-You should have a `@keyframes` rule.
+Your `.wheel` selector should have an `animation-iteration-count` property set to `infinite`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.length === 2);
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationIterationCount === 'infinite');
 ```
 
-Your new `@keyframes` rule should be named `cabins`.
+Your `.wheel` selector should have an `animation-timing-function` property set to `linear`.
 
 ```js
-const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes');
-assert(rules?.[0]?.name === 'cabins' || rules?.[1]?.name === 'cabins');
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.animationTimingFunction === 'linear');
 ```
-
-Your new `@keyframes` rule should come after your `@keyframes wheel` rule.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.name === 'cabins');
-```
-
-You should not change the name of your `@keyframes wheel` rule.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name === 'wheel');
-```
-
-Your `@keyframes cabins` rule should have a `0%` selector.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[0]?.keyText === '0%');
-```
-
-Your `0%` selector should have a `transform` property set to `rotate(0deg)`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[0]?.style?.transform === 'rotate(0deg)');
-```
-
-Your `@keyframes cabins` rule should have a `100%` selector.
-
-```js
-const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules
-assert(rules?.[0]?.keyText === '100%' || rules?.[1]?.keyText === '100%');
-```
-
-Your `100%` selector should come after your `0%` selector.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.keyText === '100%')
-```
-
-Your `100%` selector should have a `transform` property set to `rotate(-360deg)`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.style?.transform === 'rotate(-360deg)')
-```
-
 
 # --seed--
 
@@ -101,18 +58,20 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
 ```
 
 ```css
+--fcc-editable-region--
 .wheel {
   border: 2px solid black;
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
   animation-name: wheel;
   animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
+--fcc-editable-region--
 
 .line {
   background-color: black;
@@ -142,8 +101,8 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
 
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
@@ -182,8 +141,4 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
      transform: rotate(360deg);
    }
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

@@ -1,5 +1,5 @@
 ---
-id: 6140dd77e0bc5a1f70bd7466
+id: 6140dc5e13d0c81e7496f182
 title: Step 17
 challengeType: 0
 dashedName: step-17
@@ -7,14 +7,24 @@ dashedName: step-17
 
 # --description--
 
-Give the `0%` rule a `transform` property set to `rotate(0deg)`. This will start the animation with no rotation.
+You now need to define how your animation should start. To do this, create a `0%` rule within your `@keyframes wheel` rule. The properties you set in this nested selector will apply at the beginning of your animation.
+
+As an example, this would be a `12%` rule:
+
+```css
+@keyframes freecodecamp {
+  12% {
+    color: green;
+  }
+}
+```
 
 # --hints--
 
-Your `0%` selector should have a `transform` property set to `rotate(0deg)`.
+Your `@keyframes wheel` rule should have a `0%` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[0]?.style?.transform === 'rotate(0deg)');
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[0]?.keyText === '0%');
 ```
 
 # --seed--
@@ -55,8 +65,10 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .line {
@@ -87,8 +99,8 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.
 
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
@@ -121,9 +133,7 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.
 
 --fcc-editable-region--
 @keyframes wheel {
-   0% {
 
-   }
 }
 --fcc-editable-region--
 ```

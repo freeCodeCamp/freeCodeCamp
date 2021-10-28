@@ -1,5 +1,5 @@
 ---
-id: 6169b1357fcb701bb5efc619
+id: 6169ab1aaeb4cd1174def700
 title: Step 27
 challengeType: 0
 dashedName: step-27
@@ -7,27 +7,16 @@ dashedName: step-27
 
 # --description--
 
-Create a new `25%` selector between your `0%` and `50%` selectors. Give this new selector the `background-color` property set to `yellow`.
+Because the animation is on an infinite loop and the start and end colors are not the same, the transition appears jerky when it switches back to yellow from red. 
+
+To start fixing this, remove the `background-color` from your `0%` selector.
 
 # --hints--
 
-You should create a new `25%` selector in your `@keyframes cabins` rule.
+Your `0%` selector should not have a `background-color` property.
 
 ```js
-const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules;
-assert(rules?.[0]?.keyText === '25%' || rules?.[1]?.keyText === '25%' || rules?.[2]?.keyText === '25%' || rules?.[3]?.keyText === '25%');
-```
-
-Your `25%` selector should be between your `0%` and `50%` selectors.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.keyText === '25%');
-```
-
-Your `25%` selector should have a `background-color` property set to `yellow`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.style?.backgroundColor === 'yellow');
+assert(!new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[0]?.style?.backgroundColor);
 ```
 
 # --seed--
@@ -68,8 +57,10 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
   animation-name: wheel;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -104,8 +95,8 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
 
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
@@ -150,6 +141,7 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
 @keyframes cabins {
   0% {
     transform: rotate(0deg);
+    background-color: yellow;
   }
   50% {
     background-color: purple;

@@ -1,5 +1,5 @@
 ---
-id: 6140d0069049f5139d78da40
+id: 6140cfc08ca9c5128c3e6478
 title: Step 7
 challengeType: 0
 dashedName: step-7
@@ -7,17 +7,26 @@ dashedName: step-7
 
 # --description--
 
-The `transform-origin` property is used to set the point around which a CSS transformation is applied. For example, when performing a `rotate` (which you will do later in this project), the `transform-origin` determines around which point the element is rotated.
-
-Give the `.line` selector a `transform-origin` property of `0% 0%`. This will offset the origin point by `0%` from the left and `0%` from the top, setting it to the top left corner of the element.
+Set the `.line` selector's `position` property to `absolute`, the `left` property to `50%`, and the `top` property to `50%`.
 
 # --hints--
 
-Your `.line` selector should have a `transform-origin` property set to `0% 0%`.
+Your `.line` selector should have a `position` property set to `absolute`.
 
 ```js
-const transformOrigin = new __helpers.CSSHelp(document).getStyle('.line')?.transformOrigin;
-assert(transformOrigin === '0% 0%' || transformOrigin === '0% 0% 0px');
+assert(new __helpers.CSSHelp(document).getStyle('.line')?.position === 'absolute');
+```
+
+Your `.line` selector should have a `left` property set to `50%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line')?.left === '50%');
+```
+
+Your `.line` selector should have a `top` property set to `50%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.line')?.top === '50%');
 ```
 
 # --seed--
@@ -58,8 +67,10 @@ assert(transformOrigin === '0% 0%' || transformOrigin === '0% 0% 0px');
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 --fcc-editable-region--
@@ -67,9 +78,6 @@ assert(transformOrigin === '0% 0%' || transformOrigin === '0% 0% 0px');
   background-color: black;
   width: 50%;
   height: 2px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
 }
 --fcc-editable-region--
 ```

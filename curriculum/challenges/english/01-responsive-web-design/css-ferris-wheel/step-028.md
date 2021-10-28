@@ -1,5 +1,5 @@
 ---
-id: 6169b284950e171d8d0bb16a
+id: 6169b1357fcb701bb5efc619
 title: Step 28
 challengeType: 0
 dashedName: step-28
@@ -7,29 +7,27 @@ dashedName: step-28
 
 # --description--
 
-Finally, create a new `75%` selector between your `50%` and `100%` selectors. Give this new selector a `background-color` property set to `yellow.`
-
-With that, your animation is much smoother and your Ferris wheel is complete.
+Create a new `25%` selector between your `0%` and `50%` selectors. Give this new selector the `background-color` property set to `yellow`.
 
 # --hints--
 
-You should create a new `75%` selector in your `@keyframes cabins` rule.
+You should create a new `25%` selector in your `@keyframes cabins` rule.
 
 ```js
 const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules;
-assert(rules?.[0]?.keyText === '75%' || rules?.[1]?.keyText === '75%' || rules?.[2]?.keyText === '75%' || rules?.[3]?.keyText === '75%' || rules?.[4]?.keyText === '75%');
+assert(rules?.[0]?.keyText === '25%' || rules?.[1]?.keyText === '25%' || rules?.[2]?.keyText === '25%' || rules?.[3]?.keyText === '25%');
 ```
 
-Your `75%` selector should be between your `50%` and `100%` selectors.
+Your `25%` selector should be between your `0%` and `50%` selectors.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[3]?.keyText === '75%');
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.keyText === '25%');
 ```
 
-Your `75%` selector should have a `background-color` property set to `yellow`.
+Your `25%` selector should have a `background-color` property set to `yellow`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[3]?.style?.backgroundColor === 'yellow');
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.style?.backgroundColor === 'yellow');
 ```
 
 # --seed--
@@ -70,8 +68,10 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
   animation-name: wheel;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -106,8 +106,8 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
 
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
@@ -152,9 +152,6 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
 @keyframes cabins {
   0% {
     transform: rotate(0deg);
-  }
-  25% {
-    background-color: yellow;
   }
   50% {
     background-color: purple;

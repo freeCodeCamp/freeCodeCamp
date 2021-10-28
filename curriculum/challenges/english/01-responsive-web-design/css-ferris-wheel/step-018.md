@@ -1,5 +1,5 @@
 ---
-id: 6140de31b1f5b420410728ff
+id: 6140dd77e0bc5a1f70bd7466
 title: Step 18
 challengeType: 0
 dashedName: step-18
@@ -7,29 +7,15 @@ dashedName: step-18
 
 # --description--
 
-Now give the `@keyframes wheel` rule a `100%` selector. Within that, set the `transform` to `rotate(360deg)`. By doing this, your animation will now complete a full rotation.
+Give the `0%` rule a `transform` property set to `rotate(0deg)`. This will start the animation with no rotation.
 
 # --hints--
 
-Your `@keyframes wheel` rule should have a `100%` selector.
+Your `0%` selector should have a `transform` property set to `rotate(0deg)`.
 
 ```js
-const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules
-assert(rules?.[0]?.keyText === '100%' || rules?.[1]?.keyText === '100%');
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[0]?.style?.transform === 'rotate(0deg)');
 ```
-
-Your `100%` selector should come after your `0%` selector.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[1]?.keyText === '100%')
-```
-
-Your `100%` selector should have a `transform` property set to `rotate(360deg)`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.[1]?.style?.transform === 'rotate(360deg)')
-```
-
 
 # --seed--
 
@@ -69,8 +55,10 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .line {
@@ -101,8 +89,8 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.
 
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
@@ -136,9 +124,8 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.cssRules?.
 --fcc-editable-region--
 @keyframes wheel {
    0% {
-     transform: rotate(0deg);
-   }
 
+   }
 }
 --fcc-editable-region--
 ```

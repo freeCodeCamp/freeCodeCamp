@@ -1,5 +1,5 @@
 ---
-id: 6140cdebd39d6a101e747529
+id: 617ace7d831f9c16a569b38a
 title: Step 5
 challengeType: 0
 dashedName: step-5
@@ -7,32 +7,20 @@ dashedName: step-5
 
 # --description--
 
-Create a selector for your `.line` elements. Start by setting the `background-color` to `black`, the `width` to `50%`, and the `height` to `2px`.
+Give your `.wheel` selector a `max-height` and `max-width` property both set to `500px`.
 
 # --hints--
 
-You should have a `.line` selector.
+Your `.wheel` selector should have a `max-height` property set to `500px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.line'));
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.maxHeight === '500px');
 ```
 
-Your `.line` selector should have a `background-color` property set to `black`.
+Your `.wheel` selector should have a `max-width` property set to `500px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.line')?.backgroundColor === "black");
-```
-
-Your `.line` selector should have a `width` property set to `50%`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.line')?.width === "50%");
-```
-
-Your `.line` selector should have a `height` property set to `2px`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.line')?.height === "2px");
+assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.maxWidth === '500px');
 ```
 
 # --seed--
@@ -68,16 +56,13 @@ assert(new __helpers.CSSHelp(document).getStyle('.line')?.height === "2px");
 ```
 
 ```css
+--fcc-editable-region--
 .wheel {
   border: 2px solid black;
   border-radius: 50%;
   margin-left: 50px;
-  position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```

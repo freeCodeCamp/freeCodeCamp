@@ -1,5 +1,5 @@
 ---
-id: 6141026ec9882f2d39dcf2b8
+id: 6141019eadec6d2c6c6f007b
 title: Step 25
 challengeType: 0
 dashedName: step-25
@@ -7,27 +7,14 @@ dashedName: step-25
 
 # --description--
 
-Between the `0%` and `100%` selectors, add a `50%` selector. This will apply in the middle of the animation cycle. Set the `background-color` to `purple`.
+You can use `@keyframes` rules to control more than just the transformation of an element. In the `0%` selector of your `@keyframes cabins`, set the `background-color` to `yellow`.
 
 # --hints--
 
-You should create a new `50%` selector in your `@keyframes cabins` rule.
+Your `0%` selector should have a `background-color` property set to `yellow`.
 
 ```js
-const rules = new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules;
-assert(rules?.[0]?.keyText === '50%' || rules?.[1]?.keyText === '50%' || rules?.[2]?.keyText === '50%'); 
-```
-
-Your `50%` selector should be between your `0%` and `100%` selectors.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.keyText === '50%');
-```
-
-Your `50%` selector should have a `background-color` property set to `purple`.
-
-```js
-assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[1]?.style?.backgroundColor === 'purple');
+assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.[0]?.style?.backgroundColor === 'yellow');
 ```
 
 # --seed--
@@ -68,8 +55,10 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
   border-radius: 50%;
   margin-left: 50px;
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
   animation-name: wheel;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -104,8 +93,8 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
 
 .cabin {
   background-color: red;
-  width: 80px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
@@ -150,7 +139,6 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
 @keyframes cabins {
   0% {
     transform: rotate(0deg);
-    background-color: yellow;
   }
   100% {
     transform: rotate(-360deg);
@@ -158,132 +146,3 @@ assert(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[1]?.cssRules?.
 }
 --fcc-editable-region--
 ```
-
-## --solutions--
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title> Learn CSS Animations by Building a Ferris Wheel</title>
-    <link rel="stylesheet" href="./styles.css">
-  </head>
-  <body>
-    <div class="wheel">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-
-      <div class="cabin"></div>
-      <div class="cabin"></div>
-      <div class="cabin"></div>
-      <div class="cabin"></div>
-      <div class="cabin"></div>
-      <div class="cabin"></div>
-    </div>
-  </body>
-</html>
-```
-
-```css
-.wheel {
-  border: 2px solid black;
-  border-radius: 50%;
-  margin-left: 50px;
-  position: absolute;
-  height: 500px;
-  width: 500px;
-  animation-name: wheel;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.line {
-  background-color: black;
-  width: 50%;
-  height: 2px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: 0% 0%;
-}
-
-.line:nth-of-type(2) {
-  transform: rotate(60deg);
-}
-.line:nth-of-type(3) {
-  transform: rotate(120deg);
-}
-.line:nth-of-type(4) {
-  transform: rotate(180deg);
-}
-.line:nth-of-type(5) {
-  transform: rotate(240deg);
-}
-.line:nth-of-type(6) {
-  transform: rotate(300deg);
-}
-
-.cabin {
-  background-color: red;
-  width: 80px;
-  height: 100px;
-  position: absolute;
-  border: 2px solid;
-  transform-origin: 50% 0%;
-  animation: cabins 10s ease-in-out infinite;
-}
-
-.cabin:nth-of-type(1) {
-  right: -8.5%;
-  top: 50%;
-}
-.cabin:nth-of-type(2) {
-  right: 17%;
-  top: 93.5%;
-}
-.cabin:nth-of-type(3) {
-  right: 67%;
-  top: 93.5%;
-}
-.cabin:nth-of-type(4) {
-  left: -8.5%;
-  top: 50%;
-}
-.cabin:nth-of-type(5) {
-  left: 17%;
-  top: 7%;
-}
-.cabin:nth-of-type(6) {
-  right: 17%;
-  top: 7%;
-}
-
-@keyframes wheel {
-   0% {
-     transform: rotate(0deg);
-   }
-   100% {
-     transform: rotate(360deg);
-   }
-}
-
-@keyframes cabins {
-  0% {
-    transform: rotate(0deg);
-    background-color: yellow;
-  }
-  50% {
-    background-color: purple;
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-```
-
