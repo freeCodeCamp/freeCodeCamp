@@ -22,7 +22,7 @@ En JavaScript, cuando el operador `+` se utiliza con un valor de cadena (`String
 Ejemplo:
 
 ```js
-var ourStr = "I come first. " + "I come second.";
+const ourStr = "I come first. " + "I come second.";
 ```
 
 La cadena `I come first. I come second.` se mostrará en la consola.
@@ -44,10 +44,10 @@ Debes usar el operador `+` para construir `myStr`.
 assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
-`myStr` debe ser creada usando la palabra clave `var`.
+`myStr` debe ser creada usando la palabra clave `const`.
 
 ```js
-assert(/var\s+myStr/.test(code));
+assert(/const\s+myStr/.test(code));
 ```
 
 Debes asignar el resultado a la variable `myStr`.
@@ -73,11 +73,11 @@ assert(/myStr\s*=/.test(code));
 ## --seed-contents--
 
 ```js
-var myStr; // Change this line
+const myStr = ""; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var myStr = "This is the start. " + "This is the end.";
+const myStr = "This is the start. " + "This is the end.";
 ```
