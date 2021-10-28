@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(217, 221, 240);
+}
+.container1{
+display: flex;
+justify-content: center;
+flex-direction: row;
+flex-wrap: wrap;
+}
+.card{
+    margin:18px 6px;
+}
