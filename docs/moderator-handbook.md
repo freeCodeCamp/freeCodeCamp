@@ -207,7 +207,7 @@ Thank you for understanding.
 
 If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
 
-Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. You should delete such posts, but not necessarily ban the person. Hopefully, the user will come to understand that what they posted, was inappropriate because the post was deleted.
+Sometimes people will post things that they think are funny. They don't realize that what they said or what they shared could be interpreted as offensive. You should delete such posts, but not necessarily ban the person. Hopefully, the user will come to understand that what they posted was inappropriate because the post was deleted.
 
 But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language. In that case, you should strongly consider blocking the member from the Facebook group.
 
@@ -529,7 +529,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thanks for opening this issue.
 
-This looks something that can be fixed by "first time" code contributors to this repository. Here are the files that you should be looking at to work on a fix:
+This looks like something that can be fixed by "first time" code contributors to this repository. Here are the files that you should be looking at to work on a fix:
 
 List of files:
 
@@ -539,7 +539,7 @@ List of files:
 
 Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
 
-Sometimes we may get more than one pull requests. We typically accept the most quality contribution followed by the one that is made first.
+Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
 
 Happy contributing.
 ```
