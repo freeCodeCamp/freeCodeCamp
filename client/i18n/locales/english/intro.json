@@ -96,7 +96,8 @@
         ]
       },
       "css-piano": { "title": "CSS Piano", "intro": ["", ""] },
-      "css-photo-gallery": { "title": "CSS Photo Gallery", "intro": ["", ""] }
+      "css-photo-gallery": { "title": "CSS Photo Gallery", "intro": ["", ""] },
+      "css-grid-magazine": { "title": "CSS Grid Magazine", "intro": ["", ""] }
     }
   },
   "javascript-algorithms-and-data-structures": {
