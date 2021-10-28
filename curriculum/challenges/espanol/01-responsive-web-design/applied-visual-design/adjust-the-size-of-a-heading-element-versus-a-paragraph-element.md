@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abd
-title: Ajusta el tamaño de un título contra una etiqueta de párrafo
+title: Ajustar el tamaño de un elemento de encabezado frente a un elemento de párrafo
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
@@ -9,11 +9,11 @@ dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 
 # --description--
 
-El tamaño de fuente de las etiquetas de encabezado (`h1` a `h6`) generalmente debería ser mayor que el tamaño de fuente de las etiquetas de párrafos. Esto hace que sea más sencillo para que el usuario entienda visualmente el diseño y el nivel de importancia de cada elemento en la página. Utiliza la propiedad `font-size` para ajustar el tamaño del texto en un elemento.
+El tamaño de fuente de las etiquetas de encabezado (`h1` a `h6`) generalmente debe ser mayor que el tamaño de fuente de las etiquetas de párrafos. Esto hace que sea más sencillo para que el usuario entienda visualmente el diseño y el nivel de importancia de cada elemento en la página. Utiliza la propiedad `font-size` para ajustar el tamaño del texto en un elemento.
 
 # --instructions--
 
-Para que el encabezado sea significativamente más grande que el párrafo, cambia la etiqueta `font-size` de la etiqueta `h4` a 27 píxeles.
+Para que el encabezado sea significativamente más grande que el párrafo, cambia el `font-size` del elemento `h4` a 27 píxeles.
 
 # --hints--
 
@@ -116,3 +116,4 @@ assert($('h4').css('font-size') == '27px');
   </div>
 </div>
 ```
+
