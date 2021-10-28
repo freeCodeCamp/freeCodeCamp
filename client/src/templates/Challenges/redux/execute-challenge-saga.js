@@ -13,6 +13,7 @@ import {
   take,
   cancel
 } from 'redux-saga/effects';
+import store from 'store';
 
 import {
   buildChallenge,
@@ -97,10 +98,21 @@ export function* executeChallengeSaga({ payload }) {
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
+    const playSound = store.get('fcc-sound');
+    let player;
+    if (playSound) {
+      void import('tone').then(tone => {
+        player = new tone.Player(
+          challengeComplete && payload?.showCompletionModal
+            ? 'https://campfire-mode.freecodecamp.org/chal-comp.mp3'
+            : 'https://campfire-mode.freecodecamp.org/try-again.mp3'
+        ).toDestination();
+        player.autostart = true;
+      });
+    }
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
     }
-
     yield put(updateConsole(i18next.t('learn.tests-completed')));
     yield put(logsToConsole(i18next.t('learn.console-output')));
   } catch (e) {

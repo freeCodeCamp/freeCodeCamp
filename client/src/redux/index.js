@@ -14,9 +14,9 @@ import { createGaSaga } from './ga-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
-
 import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
+import { createSoundModeSaga } from './sound-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
 
 export const MainApp = 'app';
@@ -74,7 +74,8 @@ export const sagas = [
   ...createGaSaga(actionTypes),
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
-  ...createReportUserSaga(actionTypes)
+  ...createReportUserSaga(actionTypes),
+  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes })
 ];
 
 export const appMount = createAction(actionTypes.appMount);

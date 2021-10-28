@@ -1,5 +1,4 @@
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import envData from '../../../../../config/env.json';
@@ -13,15 +12,15 @@ import {
   AlibabaLogo
 } from '../../../assets/images/components';
 import { Spacer } from '../../helpers';
-import BigCallToAction from './BigCallToAction';
-import CampersImage from './CampersImage';
+import BigCallToAction from './big-call-to-action';
+import CampersImage from './campers-image';
 
-const propTypes = {
-  page: PropTypes.string
-};
+interface landingTopProps {
+  pageName: string;
+}
 
 const { clientLocale } = envData;
-function LandingTop({ page }) {
+function LandingTop({ pageName }: landingTopProps): JSX.Element {
   const { t } = useTranslation();
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale
@@ -31,7 +30,7 @@ function LandingTop({ page }) {
       <Row>
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-          <h1 className='big-heading' data-test-label={`${page}-header`}>
+          <h1 className='big-heading' data-test-label={`${pageName}-header`}>
             {t('landing.big-heading-1')}
           </h1>
           <p className='big-heading'>{t('landing.big-heading-2')}</p>
@@ -54,8 +53,8 @@ function LandingTop({ page }) {
             )}
           </div>
           <Spacer />
-          <BigCallToAction page={page} />
-          <CampersImage page={page} />
+          <BigCallToAction pageName={pageName} />
+          <CampersImage pageName={pageName} />
           <Spacer />
         </Col>
       </Row>
@@ -64,5 +63,4 @@ function LandingTop({ page }) {
 }
 
 LandingTop.displayName = 'LandingTop';
-LandingTop.propTypes = propTypes;
 export default LandingTop;

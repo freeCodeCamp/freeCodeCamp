@@ -40,7 +40,7 @@
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/react": "6.3.12",
     "@testing-library/react": "12.1.2",
-    "autoprefixer": "10.3.7",
+    "autoprefixer": "10.4.0",
     "babel-loader": "8.2.3",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
