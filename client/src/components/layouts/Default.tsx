@@ -1,10 +1,9 @@
 import fontawesome from '@fortawesome/fontawesome';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
@@ -15,17 +14,18 @@ import robotoItalicURL from '../../../static/fonts/roboto-mono/RobotoMono-Italic
 import robotoRegularURL from '../../../static/fonts/roboto-mono/RobotoMono-Regular.woff';
 import { isBrowser } from '../../../utils';
 import {
+  executeGA,
   fetchUser,
+  isOnlineSelector,
+  isServerOnlineSelector,
   isSignedInSelector,
   onlineStatusChange,
   serverStatusChange,
-  isOnlineSelector,
-  isServerOnlineSelector,
   userFetchStateSelector,
-  userSelector,
   usernameSelector,
-  executeGA
+  userSelector
 } from '../../redux';
+import { UserFetchState, UserType } from '../../redux/prop-types';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -38,35 +38,7 @@ import './fonts.css';
 import './global.css';
 import './variables.css';
 
-fontawesome.config = {
-  autoAddCss: false
-};
-
-const propTypes = {
-  children: PropTypes.node.isRequired,
-  executeGA: PropTypes.func,
-  fetchState: PropTypes.shape({ pending: PropTypes.bool }),
-  fetchUser: PropTypes.func.isRequired,
-  flashMessage: PropTypes.shape({
-    id: PropTypes.string,
-    type: PropTypes.string,
-    message: PropTypes.string
-  }),
-  hasMessage: PropTypes.bool,
-  isOnline: PropTypes.bool.isRequired,
-  isServerOnline: PropTypes.bool.isRequired,
-  isSignedIn: PropTypes.bool,
-  onlineStatusChange: PropTypes.func.isRequired,
-  pathname: PropTypes.string.isRequired,
-  removeFlashMessage: PropTypes.func.isRequired,
-  serverStatusChange: PropTypes.func.isRequired,
-  showFooter: PropTypes.bool,
-  signedInUserName: PropTypes.string,
-  t: PropTypes.func.isRequired,
-  theme: PropTypes.string,
-  useTheme: PropTypes.bool,
-  user: PropTypes.object
-};
+fontawesome.config.autoAddCss = false;
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -76,7 +48,14 @@ const mapStateToProps = createSelector(
   userFetchStateSelector,
   userSelector,
   usernameSelector,
-  (isSignedIn, flashMessage, isOnline, isServerOnline, fetchState, user) => ({
+  (
+    isSignedIn,
+    flashMessage,
+    isOnline: boolean,
+    isServerOnline: boolean,
+    fetchState: UserFetchState,
+    user: UserType
+  ) => ({
     isSignedIn,
     flashMessage,
     hasMessage: !!flashMessage.message,
@@ -88,7 +67,7 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       fetchUser,
@@ -100,7 +79,19 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-class DefaultLayout extends Component {
+interface DefaultLayoutProps
+  extends ReturnType<typeof mapStateToProps>,
+    ReturnType<typeof mapDispatchToProps> {
+  children: ReactNode;
+  pathname: string;
+  useTheme?: boolean;
+
+  t(selector: string): string;
+
+  showFooter?: boolean;
+}
+
+class DefaultLayout extends Component<DefaultLayoutProps> {
   componentDidMount() {
     const { isSignedIn, fetchUser, pathname, executeGA } = this.props;
     if (!isSignedIn) {
@@ -112,7 +103,7 @@ class DefaultLayout extends Component {
     window.addEventListener('offline', this.updateOnlineStatus);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: DefaultLayoutProps) {
     const { pathname, executeGA } = this.props;
     const { pathname: prevPathname } = prevProps;
     if (pathname !== prevPathname) {
@@ -229,9 +220,6 @@ class DefaultLayout extends Component {
     );
   }
 }
-
-DefaultLayout.displayName = 'DefaultLayout';
-DefaultLayout.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
