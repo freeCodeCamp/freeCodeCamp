@@ -204,7 +204,7 @@ Obrigado(a) pela compreensão.
 
 Se você ver algo que pareça quebrar nosso [Código de Conduta](https://code-of-conduct.freecodecamp.org/), você deve excluí-lo imediatamente.
 
-Às vezes, as pessoas publicam coisas que acham engraçadas. Não percebem que o que disseram ou o que compartilharam pode ser interpretado como ofensivo. Você deve apagar esse tipo de postagem, mas não banir a pessoa. Talvez, o usuário entenderá que o que postou foi inapropriado, pois a postagem foi apagada.
+Às vezes, as pessoas publicam coisas que acham engraçadas. Não percebem que o que disseram ou o que compartilharam pode ser interpretado como ofensivo. Você deve apagar esse tipo de postagem, mas não banir a pessoa. Hopefully, the user will come to understand that what they posted was inappropriate because the post was deleted.
 
 Mas se é uma ofensa que não pode ser atribuída a uma diferença cultural ou um mal entendimento da língua inglesa. Nesse caso, você deve considerar bloquear o membro do grupo do Facebook.
 
@@ -524,7 +524,7 @@ Se você acha que cometemos um erro ao fechar essa issue, peça para que seja re
 ```markdown
 Obrigado(a) por abrir essa issue.
 
-Isso parece algo que pode ser corrigido por aqueles que contribuem com código pela primeira vez a esse repositório. Aqui estão os arquivos que você deve olhar para trabalhar em uma correção:
+This looks like something that can be fixed by "first time" code contributors to this repository. Aqui estão os arquivos que você deve olhar para trabalhar em uma correção:
 
 Lista de arquivos:
 
@@ -534,7 +534,7 @@ Lista de arquivos:
 
 Certifique-se de que você leu [nosso guia de contribuição](https://contribute.freecodecamp.org/#/), pois nós priorizamos contribuidores que seguiram as instruções em nossos guias. Junte-se a nós na [nossa sala de bate-papo](https://chat.freecodecamp.org/channel/contributors) ou [no fórum](https://forum.freecodecamp.org/c/contributors/3). Se você precisar de ajuda para contribuir, os moderadores vão te guiar.
 
-Algumas vezes, nós podemos receber mais de um pull-request. Nós tipicamente aceitamos a contribuição mais qualificada seguida pela que foi feita primeiro.
+Sometimes we may get more than one pull request. Nós tipicamente aceitamos a contribuição mais qualificada seguida pela que foi feita primeiro.
 
 Boas contribuições.
 ```
