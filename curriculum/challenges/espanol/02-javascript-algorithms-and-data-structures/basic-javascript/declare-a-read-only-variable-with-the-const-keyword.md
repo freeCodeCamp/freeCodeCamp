@@ -75,6 +75,7 @@ assert.match(code, /const\s+FCC/);
 var fCC = "freeCodeCamp";
 var fact = "is cool!";
 // Only change code above this line
+
 fact = "is awesome!";
 console.log(fCC, fact);
 ```
