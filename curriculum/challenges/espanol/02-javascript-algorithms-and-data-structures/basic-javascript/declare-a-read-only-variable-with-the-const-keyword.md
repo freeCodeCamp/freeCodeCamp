@@ -71,11 +71,12 @@ assert.match(code, /const\s+FCC/);
 ## --seed-contents--
 
 ```js
-var fCC = "freeCodeCamp"; //Cambia questa riga
-var fact = "is cool!"; //Cambia questa riga
-
+// Only change code below this line
+var fCC = "freeCodeCamp";
+var fact = "is cool!";
+// Only change code above this line
 fact = "is awesome!";
-console.log(fCC, fact); //Cambia questa riga
+console.log(fCC, fact);
 ```
 
 # --solutions--
