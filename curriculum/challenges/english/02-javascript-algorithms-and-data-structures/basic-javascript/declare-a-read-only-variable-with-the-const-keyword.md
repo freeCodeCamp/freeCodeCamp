@@ -72,9 +72,9 @@ assert.match(code, /const\s+FCC/);
 
 ```js
 var fCC = "freeCodeCamp"; // Change this line
-var fact = "is cool!"; // change this line
+var fact = "is cool!"; // Change this line
 fact = "is awesome!";
-console.log(fCC, fact); // change this line
+console.log(fCC, fact); // Change this line
 ```
 
 # --solutions--
