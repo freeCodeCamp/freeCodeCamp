@@ -19,51 +19,6 @@ export const MarkdownRemark = PropTypes.shape({
   })
 });
 
-export const ChallengeNode = PropTypes.shape({
-  block: PropTypes.string,
-  challengeOrder: PropTypes.number,
-  challengeType: PropTypes.number,
-  dashedName: PropTypes.string,
-  description: PropTypes.string,
-  challengeFiles: PropTypes.array,
-  fields: PropTypes.shape({
-    slug: PropTypes.string,
-    blockName: PropTypes.string
-  }),
-  forumTopicId: PropTypes.number,
-  guideUrl: PropTypes.string,
-  head: PropTypes.arrayOf(PropTypes.string),
-  helpCategory: PropTypes.string,
-  instructions: PropTypes.string,
-  isComingSoon: PropTypes.bool,
-  removeComments: PropTypes.bool,
-  isLocked: PropTypes.bool,
-  isPrivate: PropTypes.bool,
-  order: PropTypes.number,
-  required: PropTypes.arrayOf(
-    PropTypes.shape({
-      link: PropTypes.string,
-      raw: PropTypes.string,
-      src: PropTypes.string
-    })
-  ),
-  superOrder: PropTypes.number,
-  superBlock: PropTypes.string,
-  tail: PropTypes.arrayOf(PropTypes.string),
-  time: PropTypes.string,
-  title: PropTypes.string,
-  translationPending: PropTypes.bool,
-  videoUrl: PropTypes.string
-});
-
-export const AllChallengeNode = PropTypes.shape({
-  edges: PropTypes.arrayOf(
-    PropTypes.shape({
-      node: ChallengeNode
-    })
-  )
-});
-
 export const AllMarkdownRemark = PropTypes.shape({
   edges: PropTypes.arrayOf(
     PropTypes.shape({
@@ -210,15 +165,31 @@ export type ChallengeNode = {
   id: string;
   instructions: string;
   isComingSoon: boolean;
+  internal?: {
+    content: string;
+    contentDigest: string;
+    description: string;
+    fieldOwners: string[];
+    ignoreType: boolean | null;
+    mediaType: string;
+    owner: string;
+    type: string;
+  };
   removeComments: boolean;
   isLocked: boolean;
   isPrivate: boolean;
   order: number;
   question: Question;
   required: Required[];
+  solutions: {
+    [T in FileKey]: FileKeyChallenge;
+  };
+  sourceInstanceName: string;
   superOrder: number;
   superBlock: string;
   tail: string[];
+  template: string;
+  tests: Test[];
   time: string;
   title: string;
   translationPending: boolean;
@@ -361,73 +332,6 @@ export type FileKeyChallenge = {
   key: FileKey;
   name: string;
   tail: string;
-};
-
-// This looks redundant - same as ChallengeNodeType above?
-// TODO: @moT01 Yes, it is an almost duplicate because @ojeytonwilliams
-// does not allow us to add 'Type' at the end...
-// The below is more accurate, because it was built based on graphql's
-// interpretation of what we have. The props commented out are what we
-// think are on the node, but actually do not exist.
-export type ChallengeNode = {
-  block: string;
-  challengeFiles: ChallengeFiles;
-  challengeOrder: number;
-  challengeType: number;
-  dashedName: string;
-  description: string;
-  fields: {
-    slug: string;
-    blockName: string;
-    tests: Test[];
-  };
-  forumTopicId: number;
-  // guideUrl: string;
-  // head: string[];
-  helpCategory: string;
-  id: string;
-  instructions: string;
-  internal?: {
-    content: string;
-    contentDigest: string;
-    description: string;
-    fieldOwners: string[];
-    ignoreType: boolean | null;
-    mediaType: string;
-    owner: string;
-    type: string;
-  };
-  order: number;
-  question: {
-    answers: string[];
-    solution: number;
-    text: string;
-  } | null;
-  removeComments: boolean;
-  required: [
-    {
-      link: string;
-      raw: string;
-      src: string;
-    }
-  ];
-  solutions: {
-    [T in FileKey]: FileKeyChallenge;
-  };
-  sourceInstanceName: string;
-  superBlock: string;
-  superOrder: number;
-  template: string;
-  tests: Test[];
-  time: string;
-  title: string;
-  translationPending: boolean;
-  videoId?: string;
-  videoUrl?: string;
-  // isComingSoon: boolean;
-  // isLocked: boolean;
-  // isPrivate: boolean;
-  // tail: string[];
 };
 
 // Extra types built from challengeSchema
