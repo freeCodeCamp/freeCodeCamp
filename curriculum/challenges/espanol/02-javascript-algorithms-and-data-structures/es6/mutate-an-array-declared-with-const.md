@@ -8,11 +8,13 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-La declaración `const` tiene muchos casos de uso, en el actual JavaScript.
+Si no estás familiarizado con `const`, echa un vistazo a [este desafío](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword).
 
-Algunos desarrolladores, prefieren asignar todas sus variables utilizando `const` por defecto, salvo que sepan que necesitarán reasignar el valor. Sólo en ese caso, utilizan `let`.
+La declaración `const` tiene muchos casos de uso, en el JavaScript moderno.
 
-Sin embargo, es importante comprender que los objetos (incluyendo arreglos y funciones), asignados a una variable usando `const` siguen siendo mutables. Usar la declaración `const` sólo previene la reasignación del identificador de una variable.
+Algunos desarrolladores prefieren asignar todas sus variables utilizando `const` por defecto, a menos que sepan que necesitarán reasignar el valor. Solo en ese caso, utilizan `let`.
+
+Sin embargo, es importante comprender que los objetos (incluyendo arreglos y funciones), asignados a una variable usando `const` siguen siendo mutables. Usar la declaración `const` solo previene la reasignación del identificador de una variable.
 
 ```js
 const s = [5, 6, 7];
@@ -23,7 +25,7 @@ console.log(s);
 
 `s = [1, 2, 3]` resultará en un error. El `console.log` mostrará el valor `[5, 6, 45]`.
 
-Como puedes ver, puedes mutar el objeto `[5, 6, 7]` en sí mismo y la variable `s` seguirá apuntado al arreglo alterado `[5, 6, 45]`. Como en todos los arreglos, los elementos del arreglo en `s` son mutables, pero debido a que se utilizó `const`, no puedes utilizar el identificador de la variable `s` para apuntar a un arreglo diferente usando el operador de asignación.
+Como puedes ver, puedes mutar el objeto `[5, 6, 7]` en sí mismo y la variable `s` seguirá apuntado al arreglo alterado `[5, 6, 45]`. Como todos los arreglos, los elementos del arreglo en `s` son mutables, pero debido a que se utilizó `const`, no puedes utilizar el identificador de la variable `s` para apuntar a un arreglo diferente usando el operador de asignación.
 
 # --instructions--
 

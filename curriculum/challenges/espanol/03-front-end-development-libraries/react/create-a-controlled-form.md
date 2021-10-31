@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-El encabezado `h1` debe renderizar el valor del campo `submit` del estado del componente.
+El encabezado `h1` debe renderizar el valor del campo `submit` desde el estado del componente.
 
 ```js
 (() => {

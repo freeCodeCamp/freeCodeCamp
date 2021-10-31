@@ -16,7 +16,7 @@ No solo puedes desplazar (`shift`) elementos del comienzo de un arreglo, tambié
 Ejemplo:
 
 ```js
-var ourArray = ["Stimpson", "J", "cat"];
+const ourArray = ["Stimpson", "J", "cat"];
 ourArray.shift();
 ourArray.unshift("Happy");
 ```
@@ -25,7 +25,7 @@ Después del `shift`, `ourArray` tendrá el valor `["J", "cat"]`. Después del `
 
 # --instructions--
 
-Añade `["Paul",35]` al principio de la variable `myArray` usando `unshift()`.
+Agrega `["Paul", 35]` al principio de la variable `myArray` usando `unshift()`.
 
 # --hints--
 
@@ -63,16 +63,17 @@ assert(
 
 ```js
 // Setup
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 myArray.shift();
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 myArray.shift();
 myArray.unshift(["Paul", 35]);
 ```
