@@ -80,7 +80,7 @@ function* stripeCardErrorHandler(
   clientSecret,
   paymentMethodId
 ) {
-  if (error.type === 'UserAcitonRequired' && clientSecret) {
+  if (error.type === 'UserActionRequired' && clientSecret) {
     yield handleAuthentication(clientSecret, paymentMethodId)
       .then(result => {
         if (

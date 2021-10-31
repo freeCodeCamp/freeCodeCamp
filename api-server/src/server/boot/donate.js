@@ -32,7 +32,7 @@ export default function donateBoot(app, done) {
     return createStripeCardDonation(req, res, stripe, app).catch(err => {
       if (
         err.type === 'AlreadyDonatingError' ||
-        err.type === 'UserAcitonRequired' ||
+        err.type === 'UserActionRequired' ||
         err.type === 'PaymentMethodRequired'
       ) {
         return res.status(402).send({ error: err });

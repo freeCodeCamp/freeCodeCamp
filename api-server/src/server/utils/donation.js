@@ -242,7 +242,7 @@ export async function createStripeCardDonation(req, res, stripe) {
 
     if (intent_status === 'requires_source_action')
       throw {
-        type: 'UserAcitonRequired',
+        type: 'UserActionRequired',
         message: 'Payment requires user action',
         client_secret
       };
@@ -254,7 +254,7 @@ export async function createStripeCardDonation(req, res, stripe) {
     subscriptionId = subscription_id;
   } catch (err) {
     if (
-      err.type === 'UserAcitonRequired' ||
+      err.type === 'UserActionRequired' ||
       err.type === 'PaymentMethodRequired'
     )
       throw err;
