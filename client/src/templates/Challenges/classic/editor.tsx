@@ -558,7 +558,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     // Resetting margin decorations
     const range = model?.getDecorationRange(insideEditDecId);
-    if (range && model) {
+    if (range) {
       updateEditableRegion(range, { model });
     }
   }
@@ -624,14 +624,14 @@ const Editor = (props: EditorProps): JSX.Element => {
   function updateEditableRegion(
     range: IRange,
     modelContext: {
-      model: editor.ITextModel;
+      model?: editor.ITextModel;
     },
     options: editor.IModelDecorationOptions = {}
   ) {
     const { model } = modelContext;
     const { insideEditDecId } = dataRef.current;
 
-    const oldOptions = model.getDecorationOptions(insideEditDecId);
+    const oldOptions = model?.getDecorationOptions(insideEditDecId);
     const lineDecoration = {
       range,
       options: {
@@ -639,7 +639,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         ...options
       }
     };
-    return model.deltaDecorations([insideEditDecId], [lineDecoration]);
+    model?.deltaDecorations([insideEditDecId], [lineDecoration]);
   }
 
   function getDescriptionZoneTop() {
@@ -789,16 +789,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   function addContentChangeListener() {
     const { model } = dataRef.current;
     const monaco = monacoRef.current;
-    if (!model || !monaco) return;
+    if (!monaco) return;
 
-    model.onDidChangeContent(() => {
+    model?.onDidChangeContent(() => {
       const redecorateEditableRegion = () => {
         const coveringRange = getLinesCoveringEditableRegion();
         if (coveringRange) {
-          dataRef.current.insideEditDecId = updateEditableRegion(
-            coveringRange,
-            { model }
-          )[0];
+          updateEditableRegion(coveringRange, { model });
         }
       };
 
@@ -918,7 +915,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
 
         const range = model?.getDecorationRange(insideEditDecId);
-        if (range && model) {
+        if (range) {
           updateEditableRegion(
             range,
             { model },
