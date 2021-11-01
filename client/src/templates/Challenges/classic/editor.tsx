@@ -607,36 +607,46 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // TODO: DRY this and the update function
   function initializeEditableRegion(
-    stickiness: number,
-    target: editor.ITextModel,
-    range: IRange
+    range: IRange,
+    modelContext: {
+      monaco: typeof monacoEditor;
+      model: editor.ITextModel;
+    }
   ) {
+    const { monaco, model } = modelContext;
     const lineDecoration = {
       range,
       options: {
         isWholeLine: true,
         linesDecorationsClassName: 'myEditableLineDecoration',
-        stickiness
+        stickiness:
+          monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges
       }
     };
-    return target.deltaDecorations([], [lineDecoration]);
+    return model.deltaDecorations([], [lineDecoration]);
   }
 
   function updateEditableRegion(
-    stickiness: number,
-    target: editor.ITextModel,
     range: IRange,
-    oldIds: string[] = []
+    modelContext: {
+      monaco: typeof monacoEditor;
+      model: editor.ITextModel;
+    }
   ) {
+    const { monaco, model } = modelContext;
     const lineDecoration = {
       range,
       options: {
         isWholeLine: true,
         linesDecorationsClassName: 'myEditableLineDecoration',
-        stickiness
+        stickiness:
+          monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges
       }
     };
-    return target.deltaDecorations(oldIds, [lineDecoration]);
+    return model.deltaDecorations(
+      [dataRef.current.insideEditDecId],
+      [lineDecoration]
+    );
   }
 
   function getDescriptionZoneTop() {
@@ -723,11 +733,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       editableRegion[1] - 1
     ]);
 
-    dataRef.current.insideEditDecId = initializeEditableRegion(
-      monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-      model,
-      editableRange
-    )[0];
+    dataRef.current.insideEditDecId = initializeEditableRegion(editableRange, {
+      monaco,
+      model
+    })[0];
   }
 
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
@@ -794,10 +803,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         const coveringRange = getLinesCoveringEditableRegion();
         if (coveringRange) {
           dataRef.current.insideEditDecId = updateEditableRegion(
-            monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-            model,
             coveringRange,
-            [dataRef.current.insideEditDecId]
+            { monaco, model }
           )[0];
         }
       };
