@@ -10,13 +10,13 @@ Ten en cuenta que para la versión 7.0 del plan de estudios gratuito, estamos av
 
 La creación de estos desafíos requiere una inmensa creatividad y atención al detalle. Hay mucha ayuda disponible. Tendrás el apoyo de todo un equipo de colaboradores a los que podrás comentar tus ideas y demostrar tus desafíos.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+Y como siempre, siéntete libre de preguntar en la [ categoría de 'Contribuidores' de nuestro foro](https://forum.freecodecamp.org/c/contributors) o [en la sala de chat de contribuidores](https://chat.freecodecamp.org/channel/contributors).
 
-With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+Con tu ayuda, podemos diseñar un currículo de código interactivo que ayudará a millones de personas a aprender a programar en los próximos años.
 
-The content for each challenge is stored in its markdown file. Este archivo markdown se convierte más tarde en HTML utilizando nuestras herramientas para crear páginas web interactivas.
+El contenido para cada desafío está guardado en su archivo de lenguaje de marcado. Este archivo de lenguaje de marcado se convierte más tarde en HTML utilizando nuestras herramientas para crear páginas web interactivas.
 
-You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges) directory.
+Podrás encontrar todo el contenido curricular de freeCodeCamp.org en el directorio [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges).
 
 ## Configurar las herramientas para el plan de estudios
 
@@ -27,47 +27,51 @@ Antes de trabajar en el plan de estudios, necesitarás configurar algunas herram
 
   [![Abrir en Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Editar los archivos de la interfaz de GitHub haciendo clic en el icono del lápiz del archivo correspondiente. Aunque esta es la manera más rápida, **no se recomienda**, ya que no puedes probar tus cambios en GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
+- Editar los archivos de la interfaz de GitHub haciendo clic en el icono del lápiz del archivo correspondiente. Aunque esta es la manera más rápida, **no se recomienda**, ya que no puedes probar tus cambios en GitHub. Si nuestros administradores concluyen que los cambios que hiciste necesitan ser probados de forma local, entonces necesitarás seguir los métodos de encima.
 
-### How to work on practice projects
+### Cómo trabajar en proyectos de práctica
 
-The practice projects have some additional tooling to help create new projects and steps. To read more, see [these docs](how-to-work-on-practice-projects.md)
+Los proyectos de práctica tienen algunas herramientas adicionales para ayudar a crear nuevos proyectos y pasos. Para leer más, consulta [ estos documentos ](how-to-work-on-practice-projects.md)
 
 ## Plantilla de desafío
 
 ````md
+Esto no ha sido finalizado completamente, pero lo siguiente debería estar cerca de la estructura final:
+
+````mdx
+
 ---
-id: Unique identifier (alphanumerical, MongoDB_id)
-title: 'Challenge Title'
-challengeType: Integer, defined in `client/utils/challenge-types.js`
-videoUrl: 'url of video explanation'
+id: Identificador único (alfanumérico, MongoDB_id)
+title: 'Título del Desafío'
+challengeType: Integer, definido en `client/utils/challenge-types.js`
+videoUrl: 'url del video de explicación'
 forumTopicId: 12345
 ---
 
-# --description--
+# --descripción--
 
-Challenge description text, in markdown
+Texto de descripción, en lenguaje de marcado
 
 ```html
-<div>example code</div>
+<div>código de ejemplo</div>
 ````
 
 # --instructions--
 
-Challenge instruction text, in markdown
+Texto de instrucción de desafío, en lenguaje de marcado
 
 # --hints--
 
-Tests to run against user code, in pairs of markdown text and code block test code.
+Pruebas para ejecutar en el código del usuario, en pares de lenguaje de marcado y bloques de código de prueba.
 
 ```js
-Code for test one
+Código para prueba uno
 ```
 
-More instructions in markdown syntax
+Más instrucciones en la sintaxis de lenguaje de marcado
 
 ```js
-More code
+Más código
 ```
 
 # --seed--
@@ -75,7 +79,7 @@ More code
 ## --before-user-code--
 
 ```lang
-Code evaluated before the user’s code.
+Código evaluado antes del código del usuario.
 ```
 
 ## --after-user-code--
