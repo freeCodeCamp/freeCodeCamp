@@ -40,7 +40,8 @@ const auditedCerts = {
     'responsive-web-design',
     'javascript-algorithms-and-data-structures',
     'front-end-development-libraries',
-    'data-visualization'
+    'data-visualization',
+    'back-end-development-and-apis'
   ],
   chinese: [
     'responsive-web-design',
