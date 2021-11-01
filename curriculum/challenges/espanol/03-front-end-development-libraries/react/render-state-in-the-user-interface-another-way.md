@@ -44,7 +44,7 @@ La etiqueta `h1` renderizada debe incluir una referencia a `{name}`.
   assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput('index')));
 ```
 
-El encabezado `h1` renderizado debe contener texto renderizado desde el state del componente.
+El encabezado renderizado `h1` sólo debe contener texto renderizado del estado del componente.
 
 ```js
 async () => {

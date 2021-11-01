@@ -12,11 +12,12 @@ dashedName: nesting-for-loops
 Si tienes un arreglo multidimensional, puedes utilizar la misma lógica que aprendimos anteriormente para recorrer tanto el arreglo como cualquier sub-arreglo. Aquí hay un ejemplo:
 
 ```js
-var arr = [
-  [1,2], [3,4], [5,6]
+const arr = [
+  [1, 2], [3, 4], [5, 6]
 ];
-for (var i=0; i < arr.length; i++) {
-  for (var j=0; j < arr[i].length; j++) {
+
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < arr[i].length; j++) {
     console.log(arr[i][j]);
   }
 }
@@ -30,13 +31,13 @@ Modifica la función `multiplyAll` para que devuelva el producto de todos los n�
 
 # --hints--
 
-`multiplyAll([[1],[2],[3]])` debe devolver `6`
+`multiplyAll([[1], [2], [3]])` debe devolver `6`
 
 ```js
 assert(multiplyAll([[1], [2], [3]]) === 6);
 ```
 
-`multiplyAll([[1,2],[3,4],[5,6,7]])` debe devolver `5040`
+`multiplyAll([[1, 2], [3, 4], [5, 6, 7]])` debe devolver `5040`
 
 ```js
 assert(
@@ -48,7 +49,7 @@ assert(
 );
 ```
 
-`multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])` debe devolver `54`
+`multiplyAll([[5, 1], [0.2, 4, 0.5], [3, 9]])` debe devolver `54`
 
 ```js
 assert(
@@ -66,28 +67,26 @@ assert(
 
 ```js
 function multiplyAll(arr) {
-  var product = 1;
+  let product = 1;
   // Only change code below this line
 
   // Only change code above this line
   return product;
 }
 
-multiplyAll([[1,2],[3,4],[5,6,7]]);
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
 ```
 
 # --solutions--
 
 ```js
 function multiplyAll(arr) {
-  var product = 1;
-  for (var i = 0; i < arr.length; i++) {
-    for (var j = 0; j < arr[i].length; j++) {
+  let product = 1;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
       product *= arr[i][j];
     }
   }
   return product;
 }
-
-multiplyAll([[1,2],[3,4],[5,6,7]]);
 ```
