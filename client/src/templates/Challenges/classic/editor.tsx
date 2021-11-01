@@ -861,33 +861,36 @@ const Editor = (props: EditorProps): JSX.Element => {
         updateDescriptionZone();
         updateOutputZone();
         showEditableRegion(editor);
-      }
-      // resetting test output
-      // TODO: DRY this - createOutputNode doesn't also need to set this up.
-      const testButton = document.getElementById('test-button');
-      if (testButton) {
-        testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
-        testButton.onclick = () => {
-          props.executeChallenge();
-        };
-      }
-      const testStatus = document.getElementById('test-status');
-      if (testStatus) {
-        testStatus.innerHTML = '';
-      }
-      const testOutput = document.getElementById('test-output');
-      if (testOutput) {
-        testOutput.innerHTML = '';
-      }
-      // resetting margin decorations
-      // TODO: this should be done via the decorator api, not by manipulating
-      // the DOM
-      const editableRegionDecorators = document.getElementsByClassName(
-        'myEditableLineDecoration'
-      );
-      if (editableRegionDecorators.length > 0) {
-        for (const i of editableRegionDecorators) {
-          i.classList.remove('tests-passed');
+
+        // Resetting test output widget. This only happens when the step is
+        // restarted, so users that want to try different solutions will need to
+        // restart the step.
+        const testButton = document.getElementById('test-button');
+        if (testButton) {
+          testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
+          testButton.onclick = () => {
+            props.executeChallenge();
+          };
+        }
+        const testStatus = document.getElementById('test-status');
+        if (testStatus) {
+          testStatus.innerHTML = '';
+        }
+        const testOutput = document.getElementById('test-output');
+        if (testOutput) {
+          testOutput.innerHTML = '';
+        }
+
+        // Resetting margin decorations
+        // TODO: this should be done via the decorator api, not by manipulating
+        // the DOM
+        const editableRegionDecorators = document.getElementsByClassName(
+          'myEditableLineDecoration'
+        );
+        if (editableRegionDecorators.length > 0) {
+          for (const i of editableRegionDecorators) {
+            i.classList.remove('tests-passed');
+          }
         }
       }
     }
