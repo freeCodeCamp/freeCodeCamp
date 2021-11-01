@@ -14,9 +14,10 @@ Puedes ejecutar el mismo código múltiples veces usando un bucle.
 El primer tipo de bucle que aprenderemos se llama bucle `while` porque ejecuta una condición específica mientras esta sea verdadera, y se detiene una vez que esa condición ya no sea verdadera.
 
 ```js
-var ourArray = [];
-var i = 0;
-while(i < 5) {
+const ourArray = [];
+let i = 0;
+
+while (i < 5) {
   ourArray.push(i);
   i++;
 }
@@ -38,7 +39,7 @@ Debes utilizar un bucle `while` para esto.
 assert(code.match(/while/g));
 ```
 
-`myArray` debe ser igual a `[5,4,3,2,1,0]`.
+`myArray` debe ser igual a `[5, 4, 3, 2, 1, 0]`.
 
 ```js
 assert.deepEqual(myArray, [5, 4, 3, 2, 1, 0]);
@@ -56,17 +57,18 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-var i = 5;
-while(i >= 0) {
+const myArray = [];
+let i = 5;
+while (i >= 0) {
   myArray.push(i);
   i--;
 }

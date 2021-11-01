@@ -538,6 +538,31 @@ const Editor = (props: EditorProps): JSX.Element => {
     return outputNode;
   }
 
+  function resetOutputNode() {
+    const { model, insideEditDecId } = dataRef.current;
+    const testButton = document.getElementById('test-button');
+    if (testButton) {
+      testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
+      testButton.onclick = () => {
+        props.executeChallenge();
+      };
+    }
+    const testStatus = document.getElementById('test-status');
+    if (testStatus) {
+      testStatus.innerHTML = '';
+    }
+    const testOutput = document.getElementById('test-output');
+    if (testOutput) {
+      testOutput.innerHTML = '';
+    }
+
+    // Resetting margin decorations
+    const range = model?.getDecorationRange(insideEditDecId);
+    if (range) {
+      updateEditableRegion(range, { model });
+    }
+  }
+
   function focusOnHotkeys() {
     const currContainerRef = props.containerRef.current;
     if (currContainerRef) {
@@ -577,36 +602,44 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // TODO: DRY this and the update function
   function initializeEditableRegion(
-    stickiness: number,
-    target: editor.ITextModel,
-    range: IRange
+    range: IRange,
+    modelContext: {
+      monaco: typeof monacoEditor;
+      model: editor.ITextModel;
+    }
   ) {
+    const { monaco, model } = modelContext;
     const lineDecoration = {
       range,
       options: {
         isWholeLine: true,
         linesDecorationsClassName: 'myEditableLineDecoration',
-        stickiness
+        stickiness:
+          monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges
       }
     };
-    return target.deltaDecorations([], [lineDecoration]);
+    return model.deltaDecorations([], [lineDecoration]);
   }
 
   function updateEditableRegion(
-    stickiness: number,
-    target: editor.ITextModel,
     range: IRange,
-    oldIds: string[] = []
+    modelContext: {
+      model?: editor.ITextModel;
+    },
+    options: editor.IModelDecorationOptions = {}
   ) {
+    const { model } = modelContext;
+    const { insideEditDecId } = dataRef.current;
+
+    const oldOptions = model?.getDecorationOptions(insideEditDecId);
     const lineDecoration = {
       range,
       options: {
-        isWholeLine: true,
-        linesDecorationsClassName: 'myEditableLineDecoration',
-        stickiness
+        ...oldOptions,
+        ...options
       }
     };
-    return target.deltaDecorations(oldIds, [lineDecoration]);
+    model?.deltaDecorations([insideEditDecId], [lineDecoration]);
   }
 
   function getDescriptionZoneTop() {
@@ -693,11 +726,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       editableRegion[1] - 1
     ]);
 
-    dataRef.current.insideEditDecId = initializeEditableRegion(
-      monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-      model,
-      editableRange
-    )[0];
+    dataRef.current.insideEditDecId = initializeEditableRegion(editableRange, {
+      monaco,
+      model
+    })[0];
   }
 
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
@@ -757,18 +789,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   function addContentChangeListener() {
     const { model } = dataRef.current;
     const monaco = monacoRef.current;
-    if (!model || !monaco) return;
+    if (!monaco) return;
 
-    model.onDidChangeContent(() => {
+    model?.onDidChangeContent(() => {
       const redecorateEditableRegion = () => {
         const coveringRange = getLinesCoveringEditableRegion();
         if (coveringRange) {
-          dataRef.current.insideEditDecId = updateEditableRegion(
-            monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-            model,
-            coveringRange,
-            [dataRef.current.insideEditDecId]
-          )[0];
+          updateEditableRegion(coveringRange, { model });
         }
       };
 
@@ -861,40 +888,17 @@ const Editor = (props: EditorProps): JSX.Element => {
         updateDescriptionZone();
         updateOutputZone();
         showEditableRegion(editor);
-      }
-      // resetting test output
-      // TODO: DRY this - createOutputNode doesn't also need to set this up.
-      const testButton = document.getElementById('test-button');
-      if (testButton) {
-        testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
-        testButton.onclick = () => {
-          props.executeChallenge();
-        };
-      }
-      const testStatus = document.getElementById('test-status');
-      if (testStatus) {
-        testStatus.innerHTML = '';
-      }
-      const testOutput = document.getElementById('test-output');
-      if (testOutput) {
-        testOutput.innerHTML = '';
-      }
-      // resetting margin decorations
-      // TODO: this should be done via the decorator api, not by manipulating
-      // the DOM
-      const editableRegionDecorators = document.getElementsByClassName(
-        'myEditableLineDecoration'
-      );
-      if (editableRegionDecorators.length > 0) {
-        for (const i of editableRegionDecorators) {
-          i.classList.remove('tests-passed');
-        }
+
+        // Since the outputNode is only reset when the step is restarted, users
+        // that want to try different solutions will need to do that.
+        resetOutputNode();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles, props.isResetting]);
   useEffect(() => {
     const { output } = props;
+    const { model, insideEditDecId } = dataRef.current;
     const editableRegion = getEditableRegionFromRedux();
     if (editableRegion.length === 2) {
       const testOutput = document.getElementById('test-output');
@@ -910,16 +914,17 @@ const Editor = (props: EditorProps): JSX.Element => {
           };
         }
 
-        // TODO: this should be done via the decorator api, not by manipulating
-        // the DOM
-        const editableRegionDecorators = document.getElementsByClassName(
-          'myEditableLineDecoration'
-        );
-        if (editableRegionDecorators.length > 0) {
-          for (const i of editableRegionDecorators) {
-            i.classList.add('tests-passed');
-          }
+        const range = model?.getDecorationRange(insideEditDecId);
+        if (range) {
+          updateEditableRegion(
+            range,
+            { model },
+            {
+              linesDecorationsClassName: 'myEditableLineDecoration tests-passed'
+            }
+          );
         }
+
         if (testOutput && testStatus) {
           testOutput.innerHTML = '';
           testStatus.innerHTML = '&#9989; Step completed.';

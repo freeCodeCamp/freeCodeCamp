@@ -8,9 +8,11 @@ dashedName: compare-scopes-of-the-var-and-let-keywords
 
 # --description--
 
-Cuando declaras una variable con la palabra `var`, esta es declarada globalmente o localmente sí es declarada dentro de una función.
+Si no estás familiarizado con `let`, echa un vistazo a [este desafío](/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords).
 
-La palabra `let` se comporta de forma similar, pero con algunas funciones adicionales. Cuanto declaras una variable con la palabra `let` dentro de un bloque, una declaración o expresión. Su alcance está limitado a ese bloque, declaración o expresión.
+Cuando declaras una variable con la palabra clave `var`, esta es declarada globalmente o localmente sí es declarada dentro de una función.
+
+La palabra clave `let` se comporta de forma similar, pero con algunas características adicionales. Cuanto declaras una variable con la palabra clave `let` dentro de un bloque, una declaración o expresión. Su alcance está limitado a ese bloque, declaración o expresión.
 
 Por ejemplo:
 
@@ -25,7 +27,7 @@ console.log(i);
 
 Aquí la consola mostrará los valores `[0, 1, 2]` y `3`.
 
-Con la palabra clave `var`, `i` es declarada globalmente. Así, cuando se ejecuta la instrucción `i++`, la variable global es actualizada. Este código es similar al siguiente:
+Con la palabra clave `var`, `i` es declarada globalmente. Así, cuando `i++` es ejecutado, la variable global es actualizada. Este código es similar al siguiente:
 
 ```js
 var numArray = [];
@@ -55,7 +57,7 @@ console.log(printNumTwo());
 
 Aquí la consola mostrará el valor `3`.
 
-Como puedes ver, `printNumTwo()` imprime 3 y no 2. Esto se debe a que el valor asignado a `i` se actualizó y la función `printNumTwo()` devuelve el valor de la variable `i` global y no el valor que tenía `i` cuando la función fue creada en el bucle for. La palabra clave `let` no sigue este comportamiento:
+Como puedes ver, `printNumTwo()` imprime 3 y no 2. Esto es porque el valor asignado a `i` fue actualizado y la función `printNumTwo()` devuelve el global de `i` y no el valor que tenía `i` cuando la función fue creada en el bucle for. La palabra clave `let` no sigue este comportamiento:
 
 ```js
 let printNumTwo;
@@ -70,15 +72,15 @@ console.log(printNumTwo());
 console.log(i);
 ```
 
-Aquí la consola mostrará el valor `2` y el error `i is not defined`.
+Aquí la consola mostrará el valor `2` y el error que `i is not defined`.
 
-`i` no está definida, porque no ha sido declarada en el ámbito global. Solo ha sido declarada dentro de la instrucción de bucle `for`. `printNumTwo()` devolvió el valor correcto porque la palabra clave `let` creó tres variables `i` diferentes con valores únicos (0, 1 y 2) dentro de la declaración de bucle.
+`i` no está definida, porque no ha sido declarada en el ámbito global. Solo ha sido declarada dentro de la sentencia de bucle `for`. `printNumTwo()` devolvió el valor correcto, porque tres variables diferentes de `i` con valores únicos (0, 1 y 2) fueron creadas por la palabra clave `let` dentro de la sentencia del bucle.
 
 # --instructions--
 
-Corrige el código para que la variable `i`, declarado en la sentencia `if` sea una variable separada de la variable `i`, declarada en la primera línea de la función. Asegúrate de no utilizar la palabra clave `var` en ninguna parte de tu código.
+Corrige el código para que la variable `i`, declarada en la sentencia `if` sea una variable separada de la variable `i`, declarada en la primera línea de la función. Asegúrate de no utilizar la palabra clave `var` en ninguna parte de tu código.
 
-Este ejercicio está diseñado para ilustrar la diferencia entre cómo las palabras clave `var` y `let` asignan alcance a la variable declarada. Al programar una función similar a la utilizada en este ejercicio, suele ser mejor usar diferentes nombres de variable para evitar confusiones.
+Este ejercicio está diseñado para ilustrar la diferencia entre como las palabras claves `var` y `let` asignan ámbito a la variable declarada. Cuando programas una función similar a la que es usada en este ejercicio, es a menudo mejor usar diferentes nombres de variables para evitar confusión.
 
 # --hints--
 
@@ -88,7 +90,7 @@ Este ejercicio está diseñado para ilustrar la diferencia entre cómo las palab
 assert(!code.match(/var/g));
 ```
 
-La variable `i` declarada en la instrucción `if` debe ser igual a la cadena `block scope`.
+La variable `i` declarada en la sentencia `if` debe ser igual a la cadena `block scope`.
 
 ```js
 assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));

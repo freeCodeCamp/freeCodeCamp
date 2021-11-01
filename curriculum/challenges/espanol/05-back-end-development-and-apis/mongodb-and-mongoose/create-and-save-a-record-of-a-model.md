@@ -1,6 +1,6 @@
 ---
 id: 587d7fb6367417b2b2512c09
-title: Create and Save a Record of a Model
+title: Crea y guarda un registro de un modelo
 challengeType: 2
 forumTopicId: 301536
 dashedName: create-and-save-a-record-of-a-model
@@ -8,11 +8,11 @@ dashedName: create-and-save-a-record-of-a-model
 
 # --description--
 
-In this challenge you will have to create and save a record of a model.
+En este desafío tendrás que crear y guardar un registro de un modelo.
 
 # --instructions--
 
-Within the `createAndSavePerson` function, create a document instance using the `Person` model constructor you built before. Pass to the constructor an object having the fields `name`, `age`, and `favoriteFoods`. Their types must conform to the ones in the `personSchema`. Then, call the method `document.save()` on the returned document instance. Pass to it a callback using the Node convention. This is a common pattern; all the following CRUD methods take a callback function like this as the last argument.
+Dentro de la función `createAndSavePerson`, crea una instancia de documento usando el constructor del modelo `Person` que construiste antes. Pasa al constructor un objeto con los campos `name`, `age`y `favoriteFoods`. Sus tipos deben adaptarse a los del `personSchema`. Luego, llama al método `document.save()` en la instancia del documento devuelto. Pásale un callback usando la convención de Node. Este es un patrón común; todos los siguientes métodos CRUD toman una función de callback como este como el último argumento.
 
 ```js
 /* Example */
@@ -25,7 +25,7 @@ person.save(function(err, data) {
 
 # --hints--
 
-Creating and saving a db item should succeed
+La creación y guardado de un elemento debe ser exitoso
 
 ```js
 (getUserInput) =>

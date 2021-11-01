@@ -26,13 +26,14 @@ La expresión final se ejecuta al final de cada iteración del bucle, antes de l
 En el siguiente ejemplo inicializamos con `i = 0` e iteramos mientras nuestra condición `i < 5` es verdadera. Incrementaremos `i` por `1` en cada iteración de bucle con `i++` como nuestra expresión final.
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 5; i++) {
+const ourArray = [];
+
+for (let i = 0; i < 5; i++) {
   ourArray.push(i);
 }
 ```
 
-`ourArray` ahora tendrá el valor `[0,1,2,3,4]`.
+`ourArray` ahora tendrá el valor `[0, 1, 2, 3, 4]`.
 
 # --instructions--
 
@@ -46,7 +47,7 @@ Debes usar un bucle `for` para esto.
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` debe ser igual a `[1,2,3,4,5]`.
+`myArray` debe ser igual a `[1, 2, 3, 4, 5]`.
 
 ```js
 assert.deepEqual(myArray, [1, 2, 3, 4, 5]);
@@ -64,16 +65,17 @@ if (typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 1; i < 6; i++) {
+const myArray = [];
+for (let i = 1; i < 6; i++) {
   myArray.push(i);
 }
 ```

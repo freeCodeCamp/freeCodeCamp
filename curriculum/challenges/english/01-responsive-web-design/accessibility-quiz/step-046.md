@@ -9,7 +9,7 @@ dashedName: step-46
 
 To make the navigation buttons look more like typical buttons, remove the underline from the anchor tags.
 
-Then, create a new selector targetting the navigation list elements so that when the cursor hovers over them, the background color and text color are switched, and the cursor becomes a pointer.
+Then, create a new selector targeting the navigation list elements so that when the cursor hovers over them, the background color and text color are switched, and the cursor becomes a pointer.
 
 # --hints--
 
