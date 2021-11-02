@@ -13,7 +13,7 @@ on:
 
 jobs:
   has-translation:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/github-script@v5
         with:
