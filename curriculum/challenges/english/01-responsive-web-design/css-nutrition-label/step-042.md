@@ -44,7 +44,7 @@ assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySe
 Your second `span` element should wrap the text `10%`.
 
 ```js
-assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')[1].innerText === '10%');
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')?.[1]?.innerText === '10%');
 ```
 
 Your second `span` element should have the `class` set to `bold right`.
