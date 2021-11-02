@@ -11,8 +11,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import type {
   StripeCardNumberElementChangeEvent,
   StripeCardExpiryElementChangeEvent,
-  PaymentIntent,
-  StripeError
+  PaymentIntentResult
 } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 
@@ -21,32 +20,16 @@ import { AddDonationData } from './PaypalButton';
 
 const { stripePublicKey }: { stripePublicKey: string | null } = envData;
 
-export type handleAuthenticationType = (
+export type HandleAuthentication = (
   clientSecret: string,
   paymentMethod: string
-) =>
-  | Promise<
-      | {
-          paymentIntent: PaymentIntent;
-          error?: undefined;
-        }
-      | {
-          paymentIntent?: undefined;
-          error: StripeError;
-        }
-      | {
-          error: {
-            type: string;
-          };
-        }
-    >
-  | { error: { type: 'StripeNotLoaded' } };
+) => Promise<PaymentIntentResult | { error: { type: string } }>;
 
 interface FormPropTypes {
   onDonationStateChange: (donationState: AddDonationData) => void;
   postStripeCardDonation: (
     paymentMethodId: string,
-    handleAuthentication: handleAuthenticationType
+    handleAuthentication: HandleAuthentication
   ) => void;
   t: (label: string) => string;
   theme: string;

@@ -29,7 +29,7 @@ import Spacer from '../helpers/spacer';
 import DonateCompletion from './DonateCompletion';
 import type { AddDonationData } from './PaypalButton';
 import PaypalButton from './PaypalButton';
-import StripeCardForm, { handleAuthenticationType } from './stripe-card-form';
+import StripeCardForm, { HandleAuthentication } from './stripe-card-form';
 import WalletsWrapper from './walletsButton';
 
 import './Donation.css';
@@ -60,7 +60,7 @@ type DonateFormProps = {
     paymentMethodId: string;
     amount: number;
     duration: string;
-    handleAuthentication: handleAuthenticationType;
+    handleAuthentication: HandleAuthentication;
   }) => void;
   defaultTheme?: string;
   email: string;
@@ -224,7 +224,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
 
   postStripeCardDonation(
     paymentMethodId: string,
-    handleAuthentication: handleAuthenticationType
+    handleAuthentication: HandleAuthentication
   ) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
     this.props.handleProcessing(

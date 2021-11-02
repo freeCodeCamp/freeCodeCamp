@@ -260,7 +260,7 @@ export async function createStripeCardDonation(req, res, stripe) {
       throw err;
     else
       throw {
-        type: 'subscriptionCreationFailed',
+        type: 'SubscriptionCreationFailed',
         message: 'Failed to create stripe subscription'
       };
   }

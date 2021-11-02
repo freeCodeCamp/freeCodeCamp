@@ -83,10 +83,7 @@ function* stripeCardErrorHandler(
   if (error.type === 'UserActionRequired' && clientSecret) {
     yield handleAuthentication(clientSecret, paymentMethodId)
       .then(result => {
-        if (
-          !result.paymentIntent?.status ||
-          !result.paymentIntent.status === 'succeeded'
-        )
+        if (result?.paymentIntent?.status !== 'succeeded')
           throw result.error || { type: 'StripeAuthorizationFailed' };
       })
       .catch(error => {
