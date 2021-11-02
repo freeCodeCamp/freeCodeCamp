@@ -26,7 +26,7 @@ assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerTe
 Your `p` element should have two `span` elements.
 
 ```js
-assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span').length === 2);
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')?.length === 2);
 ```
 
 Your first `span` element should wrap the text `Total Fat`.
@@ -50,7 +50,7 @@ assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySe
 Your second `span` element should have the `class` set to `bold right`.
 
 ```js
-assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')[1].className === 'bold right');
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.querySelectorAll('span')?.[1]?.className === 'bold right');
 ```
 
 # --seed--

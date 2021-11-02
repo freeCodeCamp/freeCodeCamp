@@ -9,6 +9,14 @@ dashedName: step-48
 
 The `:not` pseudo-selector can be used to select all elements that do not match the given CSS rule. 
 
+```css
+div:not(#example) {
+  color: red;
+}
+```
+
+The above selects all `div` elements without an `id` of `example`.
+
 Modify your `.daily-value p` selector to exclude the `.no-divider` elements.
 
 # --hints--

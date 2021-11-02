@@ -60,8 +60,8 @@ assert(document.querySelector('.daily-value.sm-text > div')?.previousElementSibl
       <div class="daily-value sm-text">
         <p class="right bold">% Daily Value *</p>
 
---fcc-editable-region--
       </div>
+--fcc-editable-region--
     </div>
   </body>
 </html>

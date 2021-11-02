@@ -7,7 +7,7 @@ dashedName: step-33
 
 # --description--
 
-Create a new `.calories-info h1` selector and set the top and bottom margin to `-5px`.
+Create a new `.calories-info h1` selector setting the top and bottom margin to `-5px`, and removing the left and right margin.
 
 # --hints--
 

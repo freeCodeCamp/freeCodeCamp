@@ -47,14 +47,14 @@ assert(children?.[3]?.localName === 'p');
     <link href="./styles.css" rel="stylesheet">
   </head>
   <body>
-    <div class="label">
 --fcc-editable-region--
+    <div class="label">
       <h1 class="bold">Nutrition Facts</h1>
       <div class="divider"></div>
       <p>8 servings per container</p>
       <p class="bold">Serving size <span class="right">2/3 cup (55g)</span></p>
---fcc-editable-region--
     </div>
+--fcc-editable-region--
   </body>
 </html>
 ```

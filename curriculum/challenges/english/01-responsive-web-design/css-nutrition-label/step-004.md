@@ -18,19 +18,19 @@ Also add a `link` element to link your `styles.css` file.
 You should have two `link` elements.
 
 ```js
-assert(code.match(/<link/g).length === 2);
+assert(code.match(/<link/g)?.length === 2);
 ```
 
 Both of your `link` elements should have the `rel` attribute set to `stylesheet`.
 
 ```js
-assert(code.match(/<link[\s\S]*?rel=('|"|`)stylesheet\1/).length === 2);
+assert(code.match(/<link[\s\S]*?rel=('|"|`)stylesheet\1/)?.length === 2);
 ```
 
 One of your `link` elements should have an `href` attribute set to `./styles.css`.
 
 ```js
-assert(code.match(/<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/g).length === 1);
+assert(code.match(/<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/g)?.length === 1);
 ```
 
 One of your `link` elements should have an `href` attribute set to `https://fonts.googleapis.com/css?family=Open+Sans:400,700,800`.

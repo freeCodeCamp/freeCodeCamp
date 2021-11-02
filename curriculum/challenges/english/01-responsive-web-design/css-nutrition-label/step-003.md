@@ -29,7 +29,7 @@ Your second `p` element should come after your existing `p` element.
 assert(document.querySelectorAll('p')?.[1]?.previousElementSibling?.localName === 'p');
 ```
 
-Your second `p`` element should have the text `Serving size 2/3 cup (55g)`.
+Your second `p` element should have the text `Serving size 2/3 cup (55g)`.
 
 ```js
 assert(document.querySelectorAll('p')?.[1]?.innerText === 'Serving size 2/3 cup (55g)');
