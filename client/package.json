@@ -130,7 +130,7 @@
     "@babel/types": "7.16.0",
     "@codesee/babel-plugin-instrument": "0.133.0",
     "@codesee/tracker": "0.133.0",
-    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/jest-dom": "5.15.0",
     "@testing-library/react": "12.1.2",
     "@types/chai": "4.2.22",
     "@types/jest": "26.0.24",
