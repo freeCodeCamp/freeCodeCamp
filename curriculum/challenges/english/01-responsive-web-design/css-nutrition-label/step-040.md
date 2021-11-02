@@ -7,7 +7,7 @@ dashedName: step-40
 
 # --description--
 
-The `float` styling is causing the new `p` element to be outside of the label's border. Add a divider after the `p` element.
+The `float` styling is causing the new `p` element to be outside of the label's border. Use your existing `.divider` element as an example to add a new divider after the `p` element.
 
 # --hints--
 
