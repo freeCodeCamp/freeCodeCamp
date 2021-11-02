@@ -66,7 +66,7 @@ jobs:
             spec: cypress/integration/learn/challenges/projects.js
     services:
       mongodb:
-        image: mongo:3.6.19
+        image: mongo:4
         ports:
           - 27017:27017
       # We need mailhog to catch any emails the api tries to send.
