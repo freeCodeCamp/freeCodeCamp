@@ -205,7 +205,7 @@ export async function createStripeCardDonation(req, res, stripe) {
   let customerId;
   try {
     const customer = await stripe.customers.create({
-      email: 'test2@test.org',
+      email,
       payment_method: paymentMethodId,
       invoice_settings: { default_payment_method: paymentMethodId },
       ...(name && { name })
