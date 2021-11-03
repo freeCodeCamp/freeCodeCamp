@@ -1,32 +1,6 @@
 import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
 
-export const FilePropType = PropTypes.shape({
-  key: PropTypes.string,
-  ext: PropTypes.string,
-  name: PropTypes.string,
-  contents: PropTypes.string,
-  head: PropTypes.string,
-  tail: PropTypes.string
-});
-
-export const MarkdownRemarkPropType = PropTypes.shape({
-  html: PropTypes.string,
-  frontmatter: PropTypes.shape({
-    title: PropTypes.string,
-    block: PropTypes.string,
-    superBlock: PropTypes.string
-  })
-});
-
-export const AllMarkdownRemarkPropType = PropTypes.shape({
-  edges: PropTypes.arrayOf(
-    PropTypes.shape({
-      node: MarkdownRemarkPropType
-    })
-  )
-});
-
 export const UserPropType = PropTypes.shape({
   about: PropTypes.string,
   completedChallenges: PropTypes.arrayOf(
