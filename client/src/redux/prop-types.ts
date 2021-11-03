@@ -244,9 +244,9 @@ export type User = {
   twitter: string;
   username: string;
   website: string;
-} & isCertified;
+} & ClaimedCertifications;
 
-export type isCertified = {
+export type ClaimedCertifications = {
   is2018DataVisCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;
