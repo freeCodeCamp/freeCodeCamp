@@ -23,7 +23,7 @@ import CertificationIcon from '../../../assets/icons/certification-icon';
 import { ChallengeFiles } from '../../../redux/prop-types';
 import { maybeUrlRE } from '../../../utils';
 import { FullWidthRow, Link } from '../../helpers';
-import TimelinePagination from './TimelinePagination';
+import TimelinePagination from './timeline-pagination';
 
 import './timeline.css';
 
