@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
     dispatch
   );
 
-type searchBarPropType = {
+type SearchBarProps = {
   innerRef?: React.RefObject<HTMLDivElement>;
   toggleSearchDropdown: typeof toggleSearchDropdown;
   toggleSearchFocused: typeof toggleSearchFocused;
@@ -48,14 +48,14 @@ type searchBarPropType = {
   isSearchFocused?: boolean;
   t?: (label: string) => string;
 };
-type classState = {
+type SearchBarState = {
   index: number;
   hits: Array<Hit>;
 };
 
-export class SearchBar extends Component<searchBarPropType, classState> {
+export class SearchBar extends Component<SearchBarProps, SearchBarState> {
   static displayName: string;
-  constructor(props: searchBarPropType) {
+  constructor(props: SearchBarProps) {
     super(props);
 
     this.handleChange = this.handleChange.bind(this);
@@ -165,18 +165,18 @@ export class SearchBar extends Component<searchBarPropType, classState> {
   };
 
   keyMap = {
-    INDEX_UP: ['up'],
-    INDEX_DOWN: ['down']
+    indexUp: ['up'],
+    indexDown: ['down']
   };
 
   keyHandlers = {
-    INDEX_UP: (e: KeyboardEvent | undefined): void => {
+    indexUp: (e: KeyboardEvent | undefined): void => {
       e?.preventDefault();
       this.setState(({ index, hits }) => ({
         index: index === -1 ? hits.length - 1 : index - 1
       }));
     },
-    INDEX_DOWN: (e: KeyboardEvent | undefined): void => {
+    indexDown: (e: KeyboardEvent | undefined): void => {
       e?.preventDefault();
       this.setState(({ index, hits }) => ({
         index: index === hits.length - 1 ? -1 : index + 1
