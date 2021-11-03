@@ -121,14 +121,21 @@
         ]
       },
       "css-photo-gallery": {
-        "title": "CSS Photo Gallery",
+        "title": "Galería de fotos CSS",
         "intro": [
           "",
           ""
         ]
       },
       "css-grid-magazine": {
-        "title": "CSS Grid Magazine",
+        "title": "Revista CSS Grid",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-nutrition-label": {
+        "title": "CSS Nutrition Label",
         "intro": [
           "",
           ""
@@ -157,7 +164,7 @@
         "intro": [
           "ECMAScript, o ES, es una versión estandarizada de JavaScript. Debido a que todos los principales navegadores siguen esta especificación, los términos ECMAScript y JavaScript son intercambiables.",
           "La mayoría del JavaScript que has aprendido hasta este punto estaba en ES5 (ECMAScript 5), el cual fue finalizado en 2009. Aunque puedes seguir escribiendo programas en ES5, JavaScript está evolucionando siempre, y cada año se lanzan nuevas funcionalidades.",
-          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including arrow functions, destructuring, classes, promises, and modules."
+          "ES6, lanzado en 2015, agrego muchas nuevas y potentes características al lenguaje. En este curso, aprenderás estas nuevas características, incluyendo let y const, funciones flecha, clases, promesas, y módulos."
         ]
       },
       "regular-expressions": {
@@ -362,43 +369,43 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Certificado de Desarrollo Back End y APIs",
+    "title": "Desarrollo Back End y APIs",
     "intro": [
-      "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
-      "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
-      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "Hasta este punto, solo has usado JavaScript en la parte de front-end para agregar interactividad a una página, resolver los desafíos de algoritmos o construir un SPA. Pero JavaScript también se puede utilizar en el back-end, o servidor, para construir aplicaciones web completas.",
+      "Hoy en día, una de las formas populares para construir aplicaciones es a través de microservicios, que son pequeñas aplicaciones modulares que trabajan juntas para formar una aplicación más grande.",
+      "En la Certificación Desarrollo de Back End y APIs, aprenderás cómo escribir aplicaciones de back-end con Node.js y npm (Node Package Manager). También construirás aplicaciones web con el framework Express, y un microservicio \"People Finder\" con MongoDB y la biblioteca Mongoose."
     ],
     "note": "",
     "blocks": {
       "managing-packages-with-npm": {
-        "title": "Managing Packages with NPM",
+        "title": "Gestión de paquetes con NPM",
         "intro": [
-          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
-          "In this course, you'll learn the basics of using npm, including how to work with the <code>package.json</code> and how to manage your installed dependencies."
+          "npm (Gestor de Paquetes de Nodos), es una herramienta de línea de comandos para instalar, crear y compartir paquetes de código JavaScript escritos para Node.js. Hay muchos paquetes de código abierto disponibles en npm, así que antes de iniciar un proyecto, tómate algo de tiempo para explorar los diferentes paquetes, para que no termines reinventando la rueda para cosas comunes como trabajar con fechas y obtener datos de una API.",
+          "En este curso, aprenderás los conceptos básicos del uso de npm, incluyendo cómo trabajar con el <code>package.json</code> y cómo administrar las dependencias instaladas."
         ]
       },
       "basic-node-and-express": {
-        "title": "Basic Node and Express",
+        "title": "Node y Express Basico",
         "intro": [
-          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
-          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
-          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
-          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
+          "Node.js es un entorno de ejecución de JavaScript que permite a desarrolladores escribir programas de backend (lado del servidor) en JavaScript. Node.js viene con muchos módulos integrados — pequeños programas independientes — que ayudan en esto. Algunos de los módulos principales incluyen HTTP, que actúa como un servidor, y sistema de archivos, un módulo para leer y modificar archivos.",
+          "En el último conjunto de cursos aprendiste a instalar y administrar paquetes desde npm, que son colecciones de módulos más pequeños. Estos paquetes pueden ayudarte a construir aplicaciones más grandes y complejas.",
+          "Express es un framework de aplicaciones web ligero y es uno de los paquetes más populares de npm. Express hace mucho más fácil crear un servidor y manejar la ruta de tu aplicación, el cual maneja cosas como dirigir gente a la página correcta cuando visitan un determinado endpoint como <pre>/blog</pre>.",
+          "En este curso, aprenderás los fundamentos de Node y Express, incluyendo cómo crear un servidor, servir diferentes archivos y gestionar diferentes peticiones desde el navegador."
         ]
       },
       "mongodb-and-mongoose": {
-        "title": "MongoDB and Mongoose",
+        "title": "MongoDB y Mongoose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, Mongo is a non-relational or \"NoSQL\" database. This means Mongo stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
-          "Mongoose is a popular npm package that is often installed alongside Mongo. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with Mongo. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
-          "In the MongoDB and Mongoose courses, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
+          "MongoDB es una aplicación de base de datos que almacena documentos (o registros) JSON que puedes utilizar en tu aplicación. A diferencia de SQL, otro tipo de base de datos, Mongo es una base de datos no relacional o \"NoSQL\". Esto significa que Mongo almacena todos los datos asociados dentro de un registro, en lugar de almacenarlos en varias tablas predefinidas como en una base de datos SQL.",
+          "Mongoose es un popular paquete npm que a menudo se instala junto con Mongo. Con Mongoose, puedes utilizar objetos de JavaScript simples en lugar de JSON, lo que hace más fácil trabajar con Mongo. Además, te permite crear plantillas para tus documentos llamados esquemas, para que no guarde accidentalmente el tipo equivocado de datos y cause errores más tarde.",
+          "En los cursos de MongoDB y Mongoose, aprenderás los fundamentos para trabajar con datos persistentes, incluyendo cómo configurar un modelo, guardar, eliminar y encontrar documentos en la base de datos."
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Back End Development and APIs Projects",
+        "title": "Desarrollo Back End y Proyectos APIs",
         "intro": [
-          "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back End Development and APIs Certification, too."
+          "Ya has trabajado con APIs antes, pero ahora que sabes utilizar npm, Node, Express, MongoDB y Mongoose, es momento de construir la tuya. Haz uso de todo lo que aprendiste hasta ahora para crear 5 microservicios diferentes, los cuales son aplicaciones más pequeñas con ámbito limitado.",
+          "Después de crearlas, tendrás 5 interesantes APIs de microservicios que puedes mostrar a amigos, familiares y potenciales empleadores. Oh, y también tendrás una nueva y brillante certificación en Desarrollo de Back End y APIs."
         ]
       }
     }
