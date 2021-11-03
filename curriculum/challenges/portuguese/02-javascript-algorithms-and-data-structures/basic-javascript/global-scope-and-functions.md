@@ -15,9 +15,9 @@ Variáveis que são declaradas sem a palavra-chave `var` são automaticamente cr
 
 # --instructions--
 
-Usando `var`, declare uma variável global chamada `myGlobal` fora de qualquer função. Inicialize-a com o valor de `10`.
+Usando `let` ou `const`, declare uma variável global chamada `myGlobal` fora de qualquer função. Inicialize-a com o valor de `10`.
 
-Dentro da função `fun1`, atribua `5` para `oopsGlobal` ***sem*** usar a palavra-chave `var`.
+Dentro da função `fun1`, atribua `5` para `oopsGlobal` ***sem*** usar as palavras-chave `let` ou `const`.
 
 # --hints--
 
@@ -33,10 +33,10 @@ assert(typeof myGlobal != 'undefined');
 assert(myGlobal === 10);
 ```
 
-`myGlobal` deve ser declarada usando a palavra-chave `var`
+`myGlobal` deve ser declarada usando a palavra-chave `let` ou `const`
 
 ```js
-assert(/var\s+myGlobal/.test(code));
+assert(/(let|const)\s+myGlobal/.test(code));
 ```
 
 `oopsGlobal` deve ser uma variável global e ter o valor de `5`
@@ -109,7 +109,7 @@ function fun2() {
 # --solutions--
 
 ```js
-var myGlobal = 10;
+const myGlobal = 10;
 
 function fun1() {
   oopsGlobal = 5;
