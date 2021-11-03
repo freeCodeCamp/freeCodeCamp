@@ -29,6 +29,7 @@ import Spacer from '../helpers/spacer';
 import DonateCompletion from './DonateCompletion';
 import type { AddDonationData } from './PaypalButton';
 import PaypalButton from './PaypalButton';
+import PatreonButton from './patreon-button';
 import StripeCardForm, { HandleAuthentication } from './stripe-card-form';
 import WalletsWrapper from './walletsButton';
 
@@ -334,8 +335,9 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             isPaypalLoading={loading.paypal}
             isSignedIn={isSignedIn}
             onDonationStateChange={this.onDonationStateChange}
-            theme={defaultTheme ? defaultTheme : theme}
+            theme={priorityTheme}
           />
+          <PatreonButton />
           {isMinimalForm && (
             <>
               <div className='separator'>{t('donate.or-card')}</div>
@@ -344,7 +346,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
                 postStripeCardDonation={this.postStripeCardDonation}
                 processing={processing}
                 t={t}
-                theme={defaultTheme ? defaultTheme : theme}
+                theme={priorityTheme}
               />
             </>
           )}
