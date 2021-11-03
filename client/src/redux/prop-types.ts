@@ -95,8 +95,6 @@ export const StepsPropType = PropTypes.shape({
   isShowProfile: PropTypes.bool
 });
 
-// TYPESCRIPT TYPES
-
 export type CurrentCert = {
   show: boolean;
   title: string;
@@ -336,8 +334,6 @@ export type FileKeyChallenge = {
   tail: string;
 };
 
-// Extra types built from challengeSchema
-
 export type ChallengeFile = {
   fileKey: string;
   ext: Ext;
@@ -355,42 +351,3 @@ export type ChallengeFile = {
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;
-
-export interface ChallengeSchema {
-  block: string;
-  blockId: string;
-  challengeOrder: number;
-  removeComments: boolean;
-  // TODO: should be typed with possible values
-  challengeType: number;
-  checksum: number;
-  __commentCounts: Record<string, unknown>;
-  dashedName: string;
-  description: string;
-  challengeFiles: ChallengeFiles;
-  guideUrl: string;
-  // TODO: should be typed with possible values
-  helpCategory: string;
-  videoUrl: string;
-  forumTopicId: number;
-  id: string;
-  instructions: string;
-  isComingSoon: boolean;
-  // TODO: Do we still use this
-  isLocked: boolean;
-  isPrivate: boolean;
-  order: number;
-  videoId?: string;
-  question: Question;
-  required: Required[];
-  solutions: ChallengeFile[][];
-  superBlock: string;
-  superOrder: number;
-  suborder: number;
-  tests: Test[];
-  template: string;
-  time: string;
-  title: string;
-  translationPending: boolean;
-  url?: string;
-}
