@@ -5,10 +5,10 @@ import { TFunction, useTranslation } from 'react-i18next';
 
 import { CurrentChallengeLink, FullWidthRow, Link, Spacer } from '../helpers';
 import Certifications from './components/Certifications';
-import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
 import Camper from './components/camper';
 import HeatMap from './components/heat-map';
+import Portfolio from './components/portfolio';
 
 interface ProfileProps {
   isSessionUser: boolean;

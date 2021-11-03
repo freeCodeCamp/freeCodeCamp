@@ -6,7 +6,7 @@ import { FullWidthRow } from '../../helpers';
 
 import './portfolio.css';
 
-interface IPortfolioData {
+interface PortfolioData {
   description: string;
   id: string;
   image: string;
@@ -14,11 +14,11 @@ interface IPortfolioData {
   url: string;
 }
 
-interface IPortfolioProps {
-  portfolio: IPortfolioData[];
+interface PortfolioProps {
+  portfolio: PortfolioData[];
 }
 
-function Portfolio({ portfolio = [] }: IPortfolioProps): JSX.Element | null {
+function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
   const { t } = useTranslation();
   if (!portfolio.length) {
     return null;
