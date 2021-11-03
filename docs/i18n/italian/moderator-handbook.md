@@ -174,7 +174,7 @@ I moderatori del forum possono cancellare i post degli utenti. Dovresti farlo so
 
 Al primo post di spam di un utente, mandagli un messaggio spiegando il problema e rimuovi il link o il post come appropriato. Lascia una nota sul profilo dell'utente spiegando le azioni che hai intrapreso. Se il problema persiste, allora impedisci tranquillamente all'utente di postare (usando l'opzione silenzia sul pannello Amministratore Utente). Manda all'utente un avvertimento con il Codice di Condotta. Spunta la casella nel messaggio privato che indica che il tuo messaggio è un "ammonimento formale."
 
-You can ask questions and report incidents in the [staff forum section](https://forum.freecodecamp.com/c/staff).
+Puoi fare domande e riportare incidenti sulla [sezione staff del forum](https://forum.freecodecamp.com/c/staff).
 
 ### Affrontare conversazioni off-topic
 
@@ -205,7 +205,7 @@ Grazie per la comprensione.
 
 Se vedi qualcosa che sembra violare il nostro [Codice di Condotta](https://code-of-conduct.freecodecamp.org/), dovresti eliminarlo immediatamente.
 
-Alcune volte le persone posteranno cose che credono essere divertenti. Non realizzano che ciò che hanno detto o condiviso potrebbe essere interpretato come offensivo. Dovresti eliminare quei post, ma non necessariamente bannare la persona. Hopefully, the user will come to understand that what they posted was inappropriate because the post was deleted.
+Alcune volte le persone posteranno cose che credono essere divertenti. Non realizzano che ciò che hanno detto o condiviso potrebbe essere interpretato come offensivo. Dovresti eliminare quei post, ma non necessariamente bannare la persona. Si spera che l'utente capisca che ciò che ha postato era inappropriato e che quindi è stato cancellato.
 
 A meno che non sia un'offesa oltraggiosa che non può essere ragionevolmente attribuita a una differenza culturale o a un fraintendimento della lingua inglese. In tal caso, dovresti fortemente considerare di bloccare il membro dal gruppo Facebook.
 

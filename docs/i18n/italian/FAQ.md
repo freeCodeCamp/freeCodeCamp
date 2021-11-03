@@ -6,7 +6,7 @@ Leggi la nostra guida ["Come contribuire all'Open Source"](https://github.com/fr
 
 Sì, puoi contribuire a ognuna delle oltre 30 lingue abilitate sulla nostra piattaforma di traduzione.
 
-We have user-contributed translations live in some languages. Abbiamo intenzione di localizzare freeCodeCamp nelle lingue più usate nel mondo. Puoi leggere tutto su questo argomento nel nostro [annuncio](https://www.freecodecamp.org/news/world-language-translation-effort).
+Abbiamo le traduzioni fatte dagli utenti live in alcune lingue. Abbiamo intenzione di localizzare freeCodeCamp nelle lingue più usate nel mondo. Puoi leggere tutto su questo argomento nel nostro [annuncio](https://www.freecodecamp.org/news/world-language-translation-effort).
 
 Se sei interessato a contribuire alla traduzione per favore assicurati di [leggere questa guida](how-to-translate-files.md) come prima cosa.
 
@@ -24,7 +24,7 @@ Per favore non creare issue su GitHub per problemi di sicurezza. Invece invia un
 
 ### Io sono uno studente. Posso lavorare su una caratteristica ottenendo crediti accademici?
 
-Sì. Per favore nota che non siamo in grado di impegnarci in alcun modo per limiti di tempo o questioni burocratiche che possono essere richiesti dal tuo college o dalla tua università. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Per rispetto di tutti gli altri nostri contributori, non daremo ad alcuna PR priorità speciale solo perché è legata a impegni accademici.
+Sì. Per favore nota che non siamo in grado di impegnarci in alcun modo per limiti di tempo o questioni burocratiche che possono essere richiesti dal tuo college o dalla tua università. Riceviamo molte pull request e contributi al codice da sviluppatori volontari, e rispettiamo il loro tempo e i loro sforzi. Per rispetto di tutti gli altri nostri contributori, non daremo ad alcuna PR priorità speciale solo perché è legata a impegni accademici.
 
 Ti chiediamo di pianificare in anticipo e lavorare sui contributi al codice tenendolo a mente.
 

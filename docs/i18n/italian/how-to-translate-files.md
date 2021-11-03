@@ -36,7 +36,7 @@ Chiediamo solo che tu comprenda i seguenti punti:
 
    In superficie lo stack tecnico può non sembrare complicato, ma costa un sacco tenere i motori in funzione. Questo include mettere in piedi server aggiuntivi e dedicare personale a controllarli.
 
-   freeCodeCamp.org is committed to providing these for free as always, however we need to prioritize resources for those who need them the most. L'ultima cosa che vogliamo è dover disattivare i server per una lingua se l'attività di traduzione si ferma e il materiale diventa obsoleto.
+   freeCodeCamp.org si impegna a offrire queste cose gratuitamente come sempre, ma dobbiamo dare priorità alle risorse per chi ne ha più bisogno. L'ultima cosa che vogliamo è dover disattivare i server per una lingua se l'attività di traduzione si ferma e il materiale diventa obsoleto.
 
    Una volta che una lingua raggiunge almeno alcune certificazioni del curriculum possiamo iniziare a mettere la lingua live su [`/learn`](https://www.freecodecamp.org/learn), mentre continuate a tradurre le restanti certificazioni.
 

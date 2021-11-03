@@ -22,8 +22,8 @@ Algunos miembros de la comunidad también desarrollan en Windows 10 nativamente 
 
 | Prerrequisito                                                                                         | Versión | Notas                                                                                       |
 | ----------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                          | `14.x`  | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
-| npm (viene empaquetado con Node)                                                                      | `6.x`   | `npm` does not have LTS releases, we use the version bundled with Node.js Active LTS.       |
+| [Node.js](http://nodejs.org)                                                                          | `16.x`  | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
+| npm (viene empaquetado con Node)                                                                      | `8.x`   | We use the version bundled with Node.js Active LTS.                                         |
 | [Servidor de la comunidad MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | -                                                                                           |
 
 > [!ATTENTION] If you have a different version, please install the recommended version. Sólo podemos soportar problemas de instalación para las versiones recomendadas. Ver [resolución de problemas](#troubleshooting) para más detalles.

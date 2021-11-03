@@ -10,7 +10,7 @@ Se você quer criar novos passos, as ferramentas a seguir vão simplificar o pro
 
 ## create-next-step (criar próximo passo)
 
-A one-off script that will automatically add the next step based on the last step numbered as `step-xxx.md` where `xxx` represents the 3-digit step number of the last step. O código inicial de desafio usará o código inicial de desafio da etapa anterior com os marcadores de região editáveis ​​(ERMs) removidos.
+Um script único que automaticamente adiciona um novo passo baseado no último passo numerado como `step-xxx.md` onde `xxx` representa o número de 3 dígitos do último passo. O código inicial de desafio usará o código inicial de desafio da etapa anterior com os marcadores de região editáveis ​​(ERMs) removidos.
 
 **Observação:** esse script também executa  [reorder-steps](#reorder-steps).
 
@@ -83,9 +83,9 @@ step-005.md
 step-006.md
 ```
 
-At some point you decide you need to delete `step-002.md`, because that step is no longer needed. Also, you decide to break down `step-004.md` into three steps instead of just one.
+Em algum momento, você decide que precisa deletar `step-002.md`, porque os passos nele não são mais necessários. Você também decide que vai diluir as partes dentro de `step-004.md` em três passos ao invés de um.
 
-To accomplish this restructure, you would need to delete `step-002.md` and then add a `step-004a.md` and a `step-004b.md`. A nova estrutura da pasta deve ficar assim:
+Para completar essa reestruturação, você precisará excluir a `step-002.md` e então adicionar a `step-004a.md` e a `step-004b.md`. A nova estrutura da pasta deve ficar assim:
 
 ```bash
 step-001.md
@@ -97,18 +97,18 @@ step-005.md
 step-006.md
 ```
 
-You now need the file names to be `step-001.md` through `step-007.md`, because you removed one but gained two more for a net difference of one file. Além disso, o frontmatter de cada arquivo abaixo de um passo adicionado ou excluído precisará ser modificado, onde o valor chave do `title` tem que ser igual ao novo número do passo. For example, after renaming `step-3.md` to `step-2.md`, you would need to change `step-2.md`'s title from `Step 03` to `Step 02`.
+Você precisa agora que os nomes dos arquivos sejam `step-001.md` a `step-007.md`, porque você removeu um, mas ganhou dois arquivos novos, assim gerando somente um arquivo novo. Além disso, o frontmatter de cada arquivo abaixo de um passo adicionado ou excluído precisará ser modificado, onde o valor chave do `title` tem que ser igual ao novo número do passo. Por exemplo, depois de renomeaer `step-3.md` para `step-2.md`, você precisará alterar o título do `step-2.md` de `Step 03` para `Step 02`.
 
 Veja abaixo as mudanças necessárias na pasta do projeto:
 
 ```bash
 step-001.md
-step-003.md renamed to step-002.md and title changes to "Step 2"
-step-004.md renames to step-003.md and title changes to "Step 3"
-step-004a.md renames to step-004.md and title changes to "Step 4"
-step-004b.md renames to step-005.md and title changes to "Step 5"
-step-005.md renames to step-006.md and title changes to "Step 6"
-step-006.md renames to step-007.md and title changes to "Step 7"
+step-003.md renomeado para step-002.md e o título muda para "Step 2"
+step-004.md renomeado para step-003.md e o título muda para "Step 3"
+step-004a.md renomeado para step-004.md e o título muda para "Step 4"
+step-004b.md renomeado para step-005.md e o título muda para "Step 5"
+step-005.md renomeado para step-006.md e o título muda para "Step 6"
+step-006.md renomeado para step-007.md e o título muda para "Step 7"
 ```
 
 Junto com as mudanças acima, a chave `challengeOrder` no arquivo `meta.json` do projeto precisará refletir a nova ordem dos passos. Isso é necessário porque cada etapa abaixo de uma exclusão de etapa e/ou adição de etapa altera o `title` associado a cada um dos `id` do desafio da etapa afetada.
