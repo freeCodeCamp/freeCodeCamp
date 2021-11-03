@@ -16,7 +16,7 @@ import type {
 import React, { useState } from 'react';
 
 import envData from '../../../../config/env.json';
-import { AddDonationData } from './PaypalButton';
+import { AddDonationData } from './paypal-button';
 
 const { stripePublicKey }: { stripePublicKey: string | null } = envData;
 

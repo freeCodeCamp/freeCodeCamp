@@ -7,7 +7,7 @@ import { Stripe, loadStripe } from '@stripe/stripe-js';
 import type { Token, PaymentRequest } from '@stripe/stripe-js';
 import React, { useState, useEffect } from 'react';
 import envData from '../../../../config/env.json';
-import { AddDonationData } from './PaypalButton';
+import { AddDonationData } from './paypal-button';
 
 const { stripePublicKey }: { stripePublicKey: string | null } = envData;
 
