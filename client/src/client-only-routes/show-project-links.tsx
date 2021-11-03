@@ -12,27 +12,27 @@ import {
 
 import { maybeUrlRE } from '../utils';
 
-interface IShowProjectLinksProps {
+interface ShowProjectLinksProps {
   certName: string;
   name: string;
   user: User;
 }
 
-type SolutionStateType = {
+type SolutionState = {
   projectTitle: string;
   challengeFiles: ChallengeFiles;
   solution: CompletedChallenge['solution'];
   isOpen: boolean;
 };
 
-const initSolutionState: SolutionStateType = {
+const initSolutionState: SolutionState = {
   projectTitle: '',
   challengeFiles: null,
   solution: '',
   isOpen: false
 };
 
-const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
+const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const [solutionState, setSolutionState] = useState(initSolutionState);
 
   const handleSolutionModalHide = () => setSolutionState(initSolutionState);
