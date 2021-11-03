@@ -19,6 +19,7 @@ export default function SoundSettings({
     <Form inline={true} onSubmit={(e: React.FormEvent) => e.preventDefault()}>
       <ToggleSetting
         action={t('settings.labels.sound-mode')}
+        explain={t('settings.sound-mode')}
         flag={sound}
         flagName='sound'
         offLabel={t('buttons.off')}
