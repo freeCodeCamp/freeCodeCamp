@@ -36,7 +36,7 @@ import ShowProjectLinks from './show-project-links';
 const { clientLocale } = envData as { clientLocale: keyof typeof langCodes };
 
 const localeCode = langCodes[clientLocale];
-type CertType = {
+type Cert = {
   username: string;
   name: string;
   certName: string;
@@ -44,8 +44,8 @@ type CertType = {
   completionTime: number;
   date: number;
 };
-interface IShowCertificationProps {
-  cert: CertType;
+interface ShowCertificationProps {
+  cert: Cert;
   certDashedName: string;
   certSlug: string;
   createFlashMessage: typeof createFlashMessage;
@@ -82,7 +82,7 @@ const requestedUserSelector = (state: unknown, { username = '' }) =>
 
 const validCertSlugs = certMap.map(cert => cert.certSlug);
 
-const mapStateToProps = (state: unknown, props: IShowCertificationProps) => {
+const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
   const isValidCert = validCertSlugs.some(slug => slug === props.certSlug);
   return createSelector(
     showCertSelector,
@@ -92,10 +92,10 @@ const mapStateToProps = (state: unknown, props: IShowCertificationProps) => {
     isDonatingSelector,
     requestedUserSelector,
     (
-      cert: CertType,
-      fetchState: IShowCertificationProps['fetchState'],
+      cert: Cert,
+      fetchState: ShowCertificationProps['fetchState'],
       signedInUserName: string,
-      userFetchState: IShowCertificationProps['userFetchState'],
+      userFetchState: ShowCertificationProps['userFetchState'],
       isDonating: boolean,
       user
     ) => ({
@@ -116,7 +116,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
+const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const { t } = useTranslation();
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
   const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
