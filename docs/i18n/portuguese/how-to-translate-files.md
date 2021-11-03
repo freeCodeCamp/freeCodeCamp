@@ -36,7 +36,7 @@ Pedimos apenas que entenda os seguintes pontos:
 
    Na superfície, os componentes técnicos não parecem ser tão complicados, mas, para que os componentes continuem rodando, há um alto custo. Nisto está incluso o provisionamento adicional de servidores e uma equipe dedicada poder cuidar deles.
 
-   freeCodeCamp.org is committed to providing these for free as always, however we need to prioritize resources for those who need them the most. A última coisa que queremos é desligar os servidores para uma linguagem se a atividade de tradução encerrar e se tornar desatualizada.
+   O freeCodeCamp.org comprometeu-se em providenciar de forma gratuita como sempre. No entanto, precisamos priorizar os recursos para os que mais necessitam deles. A última coisa que queremos é desligar os servidores para uma linguagem se a atividade de tradução encerrar e se tornar desatualizada.
 
    Quando cada linguagem alcançar pelo menos algumas certificações no currículo, nós podemos começar a implantar a linguagem no [`/learn`](https://www.freecodecamp.org/learn) enquanto você continua a traduzir o restante das certificações.
 
