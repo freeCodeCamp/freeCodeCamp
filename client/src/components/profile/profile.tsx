@@ -4,13 +4,13 @@ import Helmet from 'react-helmet';
 import { TFunction, useTranslation } from 'react-i18next';
 
 import { CurrentChallengeLink, FullWidthRow, Link, Spacer } from '../helpers';
-import Camper from './components/Camper';
 import Certifications from './components/Certifications';
 import HeatMap from './components/HeatMap';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
+import Camper from './components/camper';
 
-interface IProfileProps {
+interface ProfileProps {
   isSessionUser: boolean;
   user: {
     profileUI: {
@@ -88,7 +88,7 @@ function renderMessage(
   );
 }
 
-function renderProfile(user: IProfileProps['user']): JSX.Element {
+function renderProfile(user: ProfileProps['user']): JSX.Element {
   const {
     profileUI: {
       showAbout = false,
@@ -156,7 +156,7 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
   );
 }
 
-function Profile({ user, isSessionUser }: IProfileProps): JSX.Element {
+function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   const { t } = useTranslation();
   const {
     profileUI: { isLocked = true },
