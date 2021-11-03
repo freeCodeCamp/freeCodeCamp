@@ -97,7 +97,11 @@
       },
       "css-piano": { "title": "CSS Piano", "intro": ["", ""] },
       "css-photo-gallery": { "title": "CSS Photo Gallery", "intro": ["", ""] },
-      "css-grid-magazine": { "title": "CSS Grid Magazine", "intro": ["", ""] }
+      "css-grid-magazine": { "title": "CSS Grid Magazine", "intro": ["", ""] },
+      "css-nutrition-label": {
+        "title": "CSS Nutrition Label",
+        "intro": ["", ""]
+      }
     }
   },
   "javascript-algorithms-and-data-structures": {
