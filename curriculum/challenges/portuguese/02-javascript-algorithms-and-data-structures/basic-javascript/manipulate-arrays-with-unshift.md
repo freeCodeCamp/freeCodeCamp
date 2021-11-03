@@ -16,7 +16,7 @@ Você pode não apenas usar `shift` para remover elementos do início de um arra
 Exemplo:
 
 ```js
-var ourArray = ["Stimpson", "J", "cat"];
+const ourArray = ["Stimpson", "J", "cat"];
 ourArray.shift();
 ourArray.unshift("Happy");
 ```
@@ -25,7 +25,7 @@ Após o `shift`, `ourArray` teria o valor `["J","cat"]`. Após o `unshift`, `our
 
 # --instructions--
 
-Adicione `["Paul",35]` ao início da variável `myArray` usando `unshift()`.
+Adicione `["Paul", 35]` ao início da variável `myArray` usando `unshift()`.
 
 # --hints--
 
@@ -63,16 +63,17 @@ assert(
 
 ```js
 // Setup
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 myArray.shift();
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 myArray.shift();
 myArray.unshift(["Paul", 35]);
 ```

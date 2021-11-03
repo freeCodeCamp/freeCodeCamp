@@ -26,13 +26,14 @@ A expressão final é executada no final de cada iteração do laço, antes da v
 No exemplo a seguir, inicializamos com `i = 0` e iteramos enquanto nossa condição `i < 5` for verdadeira. Nós incrementaremos `i` em `1` em cada iteração do laço com `i++` como nossa expressão final.
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 5; i++) {
+const ourArray = [];
+
+for (let i = 0; i < 5; i++) {
   ourArray.push(i);
 }
 ```
 
-`ourArray` agora terá o valor de `[0,1,2,3,4]`.
+`ourArray` agora terá o valor de `[0, 1, 2, 3, 4]`.
 
 # --instructions--
 
@@ -46,7 +47,7 @@ Você deve usar um laço `for` para isso.
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` deve ser igual a `[1,2,3,4,5]`.
+`myArray` deve ser igual a `[1, 2, 3, 4, 5]`.
 
 ```js
 assert.deepEqual(myArray, [1, 2, 3, 4, 5]);
@@ -64,16 +65,17 @@ if (typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 1; i < 6; i++) {
+const myArray = [];
+for (let i = 1; i < 6; i++) {
   myArray.push(i);
 }
 ```
