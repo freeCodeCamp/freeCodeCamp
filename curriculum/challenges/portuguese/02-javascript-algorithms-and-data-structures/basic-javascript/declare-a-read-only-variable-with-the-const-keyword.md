@@ -10,7 +10,7 @@ dashedName: declare-a-read-only-variable-with-the-const-keyword
 
 A palavra-chave `let` não é a única nova forma de declarar variáveis. Na versão ES6, você também pode declarar variáveis usando a palavra-chave `const`.
 
-`const` possui todos os recursos maravilhosos que `let` tem, com o bônus adicional que variáveis declaradas usando `const` são somente de leitura. Elas têm um valor constante, o que significa que a variável atribuída com `const` não pode ser atribuída novamente.
+`const` possui todos os recursos maravilhosos que `let` tem, com o bônus adicional que variáveis declaradas usando `const` são somente de leitura. Elas têm um valor constante, o que significa que a variável atribuída com `const` não pode ser atribuída novamente:
 
 ```js
 const FAV_PET = "Cats";
@@ -19,9 +19,11 @@ FAV_PET = "Dogs";
 
 O console vai exibir um erro devido à reatribuição do valor de `FAV_PET`.
 
-Como você pode ver, tentar reatribuir uma variável declarada com `const` lançará um erro. Você sempre deve nomear variáveis que você não quer reatribuir, usando a palavra-chave `const`. Isso ajuda quando você acidentalmente tenta reatribuir uma variável que deveria ser constante. Uma prática comum ao nomear constantes é colocar todas as letras em maiúsculas, com palavras separadas por sublinhado (underscore).
+Você sempre deve nomear variáveis que você não quer reatribuir, usando a palavra-chave `const`. Isso ajuda quando você acidentalmente tenta reatribuir uma variável que deveria ser constante.
 
-**Observação:** é comum que os desenvolvedores usem nomes de variáveis maiúsculas para valores imutáveis e minúsculas ou camelCase para valores mutáveis (objetos e arrays). Em um desafio posterior, você verá um exemplo de um nome de variável em minúsculo usado para um array.
+Uma prática comum ao nomear constantes é colocar todas as letras em maiúsculas, com palavras separadas por sublinhado (underscore).
+
+**Observação:** é comum que os desenvolvedores usem nomes de variáveis maiúsculas para valores imutáveis e minúsculas ou camelCase para valores mutáveis (objetos e arrays). Você aprenderá mais sobre objetos, arrays e valores imutáveis e mutáveis em desafios futuros. Em desafios posteriores, você também verá exemplos de identificadores de variáveis maiúsculas, minúsculas ou em camelCase.
 
 # --instructions--
 
@@ -35,23 +37,33 @@ Altere o código para que todas as variáveis sejam declaradas usando `let` ou `
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`SENTENCE` deve ser uma variável constante declarada com `const`.
+Você deve alterar `fCC` para uma string toda em letras maiúsculas.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(const SENTENCE)/g));
+(getUserInput) => {
+  assert(getUserInput('index').match(/(FCC)/));
+  assert(!getUserInput('index').match(/fCC/));
+}
 ```
 
-A variável `i` deve ser declarada com `let`.
+`FCC` deve ser uma variável constante declarada com `const`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(let i)/g));
+assert.equal(FCC, 'freeCodeCamp');
+assert.match(code, /const\s+FCC/);
 ```
 
-`console.log` deve ser alterado para imprimir a variável `SENTENCE`.
+A variável `fact` deve ser declarada com `let`.
+
+```js
+(getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
+```
+
+`console.log` deve ser alterado para imprimir as variáveis `FCC` e `fact`.
 
 ```js
 (getUserInput) =>
-  assert(getUserInput('index').match(/console\.log\(\s*SENTENCE\s*\)\s*;?/g));
+  assert(getUserInput('index').match(/console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g));
 ```
 
 # --seed--
@@ -59,31 +71,18 @@ A variável `i` deve ser declarada com `let`.
 ## --seed-contents--
 
 ```js
-function printManyTimes(str) {
-
-  // Only change code below this line
-
-  var sentence = str + " is cool!";
-  for (var i = 0; i < str.length; i+=2) {
-    console.log(sentence);
-  }
-
-  // Only change code above this line
-
-}
-printManyTimes("freeCodeCamp");
+var fCC = "freeCodeCamp"; // Change this line
+var fact = "is cool!"; // Change this line
+fact = "is awesome!";
+console.log(fCC, fact); // Change this line
 ```
 
 # --solutions--
 
 ```js
-function printManyTimes(str) {
+const FCC = "freeCodeCamp";
+let fact = "is cool!";
 
-  const SENTENCE = str + " is cool!";
-  for (let i = 0; i < str.length; i+=2) {
-    console.log(SENTENCE);
-  }
-
-}
-printManyTimes("freeCodeCamp");
+fact = "is awesome!";
+console.log(FCC, fact);
 ```

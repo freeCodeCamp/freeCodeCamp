@@ -10,7 +10,7 @@ dashedName: refactor-global-variables-out-of-functions
 
 Até agora vimos dois princípios diferentes de programação funcional:
 
-1) Não altere variáveis ou objetos: crie novas variáveis ou objetos e os retorne, caso necessário, de uma função. Dica: escrever algo como `var newArr = arrVar` onde `arrVar` é um array não o copiará para a nova a variável, e sim apenas criará uma nova referência ao mesmo objeto. Então mudar um valor em `newArr` também o muda em `arrVar`.
+1) Não altere variáveis ou objetos: crie novas variáveis ou objetos e os retorne, caso necessário, de uma função. Dica: escrever algo como `const newArr = arrVar` onde `arrVar` é um array não o copiará para a nova a variável, e sim apenas criará uma nova referência ao mesmo objeto. Então mudar um valor em `newArr` também o muda em `arrVar`.
 
 2) Declare parâmetros de funções: qualquer computação dentro de uma função depende apenas dos argumentos passados a ela; nunca de uma variável ou objeto global.
 
@@ -86,7 +86,7 @@ assert(
 
 ```js
 // The global variable
-var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
 // Change code below this line
 function add (bookName) {
@@ -99,7 +99,7 @@ function add (bookName) {
 
 // Change code below this line
 function remove (bookName) {
-  var book_index = bookList.indexOf(bookName);
+  const book_index = bookList.indexOf(bookName);
   if (book_index >= 0) {
 
     bookList.splice(book_index, 1);
@@ -109,9 +109,9 @@ function remove (bookName) {
     }
 }
 
-var newBookList = add(bookList, 'A Brief History of Time');
-var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
-var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+const newBookList = add(bookList, 'A Brief History of Time');
+const newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+const newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
 
 console.log(bookList);
 ```
@@ -120,13 +120,13 @@ console.log(bookList);
 
 ```js
 // The global variable
-var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
-function add (bookList, bookName) {
+function add(bookList, bookName) {
   return [...bookList, bookName];
 }
 
-function remove (bookList, bookName) {
+function remove(bookList, bookName) {
   const bookListCopy = [...bookList];
   const bookNameIndex = bookList.indexOf(bookName);
   if (bookNameIndex >= 0) {
@@ -135,7 +135,7 @@ function remove (bookList, bookName) {
   return bookListCopy;
 }
 
-var newBookList = add(bookList, 'A Brief History of Time');
-var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
-var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+const newBookList = add(bookList, 'A Brief History of Time');
+const newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+const newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
 ```

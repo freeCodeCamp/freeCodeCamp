@@ -135,12 +135,12 @@ Cuando estás trabajando en características para nuestras próximas ramas del p
    ```console
    git checkout <pr-branch-name>
 
-   # example:
+   # ejemplo:
    # git checkout feat/add-numpy-video-question
 
    git checkout -b <backup-branch-name>
 
-   # example:
+   # ejemplo:
    #  git checkout -b backup-feat/add-numpy-video-question
 
    git branch -D <pr-branch-name>
@@ -151,8 +151,9 @@ Cuando estás trabajando en características para nuestras próximas ramas del p
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-   # example:
+   # ejemplo:
    #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+
    ```
 
 3. Empezar con una pizarra limpia:

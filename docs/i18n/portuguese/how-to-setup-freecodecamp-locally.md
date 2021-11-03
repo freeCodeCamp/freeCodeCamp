@@ -22,8 +22,8 @@ Alguns membros da comunidade também desenvolvem no Windows 10 nativamente com G
 
 | Pré-requisito                                                                                       | Versão  | Observações                                                                                 |
 | --------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                        | `14.x`  | Usamos a versão "Active LTS". Consulte [Agenda LTS](https://nodejs.org/en/about/releases/). |
-| npm (vem junto com o Node)                                                                          | `6.x`   | O `npm` não tem lançamentos em LTS. Usamos a versão incluída na Active LTS do Node.js.      |
+| [Node.js](http://nodejs.org)                                                                        | `16.x`  | Usamos a versão "Active LTS". Consulte [Agenda LTS](https://nodejs.org/en/about/releases/). |
+| npm (vem junto com o Node)                                                                          | `8.x`   | We use the version bundled with Node.js Active LTS.                                         |
 | [Servidor da Comunidade MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | -                                                                                           |
 
 > [!ATTENTION] Se você tem uma versão diferente, instale a versão recomendada. Só podemos suportar problemas de instalação para versões recomendadas. Veja [solução de problemas](#troubleshooting) para detalhes.
@@ -167,7 +167,7 @@ As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `s
 
 ```console
 # Crie uma cópia da "sample.env" e a nomeie como ".env".
-# Populate it with the necessary API keys and secrets:
+# Preencher com as chaves e segredos de API necessários:
 ```
 
 <!-- tabs:start -->
@@ -190,7 +190,7 @@ As chaves no arquivo `.env` _ não _ precisam ser alteradas para executar o apli
 
 > [!TIP] Lembre-se: se quiser usar serviços como Auth0 ou Algolia, você terá que adquirir suas próprias chaves da API para estes serviços e editar as entradas no arquivo `.env`.
 
-#### Step 2: Install dependencies
+#### Etapa 2: Instalar as dependências
 
 Esta etapa vai instalar as dependências necessárias para a execução do aplicativo:
 
@@ -198,7 +198,7 @@ Esta etapa vai instalar as dependências necessárias para a execução do aplic
 npm ci
 ```
 
-#### Step 3: Start MongoDB and seed the database
+#### Etapa 3: Iniciar o MongoDB e criar o banco de dados
 
 Antes de executar o aplicativo localmente, você precisará iniciar o serviço MongoDB.
 
@@ -216,33 +216,33 @@ mongod
 
 #### **Windows**
 
-- On Windows, you must specify the full path to the `mongod` binary
+- No Windows, você deve especificar o caminho completo para o binário do `mongod`
 
 ```console
-"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+"C:\Arquivos de programa\MongoDB\Server\3.6\bin\mongod"
 ```
 
   <!-- tabs:end -->
 
-Make sure to replace `3.6` with the version you have installed
+Certifique-se de substituir `3.6` pela versão que você instalou
 
 > [!TIP] Você pode evitar ter que executar o MongoDB toda vez instalando-o como um serviço em segundo plano. Você pode [aprender mais sobre isso na documentação para seu OS](https://docs.mongodb.com/manual/administration/install-community/)
 
-Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
+Em seguida, vamos criar o banco de dados. Nesta etapa, executamos o comando abaixo que preenche o servidor MongoDB com alguns conjuntos de dados iniciais que são requeridos pelos serviços. Dentre outras coisas, incluem alguns esquemas.
 
 ```console
 npm run seed
 ```
 
-#### Step 4: Start the freeCodeCamp client application and API server
+#### Etapa 4: Iniciar o aplicativo client do freeCodeCamp e o servidor de API
 
-You can now start up the API server and the client applications.
+Agora você pode iniciar o servidor de API e os aplicativos do cliente.
 
 ```console
 npm run develop
 ```
 
-This single command will fire up all the services, including the API server and the client applications available for you to work on.
+Este único comando vai disparar todos os serviços, incluindo o servidor API e os aplicativos do cliente disponíveis para você trabalhar.
 
 > [!NOTE] Uma vez pronto, abra um navegador e **acesse <http://localhost:8000>**. Se o aplicativo carregar, parabéns - você está com tudo configurado! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira rodando em sua máquina local.
 
@@ -252,26 +252,26 @@ This single command will fire up all the services, including the API server and 
 
 ## Entre com um usuário local
 
-Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
+Sua configuração local preenche automaticamente um usuário local no banco de dados. Clicar no botão `Sign In` vai autenticá-lo automaticamente no aplicativo local.
 
-However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
+No entanto, acessar a página do portfólio do usuário é um pouco complicado. Em desenvolvimento, o Gatsby controla as páginas do lado do client e, portanto, você terá uma página `404` no portfólio do usuário quando estiver trabalhando localmente.
 
-Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
+Apenas clique em **"Visualizar página personalizada 404"** e você será redirecionado para a página correta.
 
 <details>
    <summary>
-      How to sign in when working locally (screenshot)
+      Como fazer login ao trabalhar localmente (captura de tela)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Como fazer login quando se está trabalhando localmente" />
 </details>
 
 ## Fazendo alterações localmente
 
-You can now make changes to files and commit your changes to your local clone of your fork.
+Agora você pode fazer alterações nos arquivos e fazer commit das suas alterações no seu clone local do seu fork.
 
-Follow these steps:
+Siga estes passos:
 
 1. Certifique-se que está no branch `main`:
 
@@ -462,11 +462,11 @@ Follow these steps:
 
 ## Propondo um Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Após ter feito as alterações, veja [como abrir um Pull Request](how-to-open-a-pull-request.md).
 
 ## Referência de comandos rápidos
 
-A quick reference to the commands that you will need when working locally.
+Uma rápida referência aos comandos que você precisará ao trabalhar localmente.
 
 | comando                                                        | descrição                                                                                       |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -488,11 +488,11 @@ A quick reference to the commands that you will need when working locally.
 
 ### Problemas com a instalação dos pré-requisitos recomendados
 
-We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
+Desenvolvemos regularmente nos sistemas mais recentes e populares, como o macOS 10.15, o Ubuntu 18.04 e o Windows 10 (com WSL2).
 
-It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
+É recomendado pesquisar seu issue específico em recursos como Google, Stack Overflow e Stack Exchange. É possível que alguém já tenha enfrentado o mesmo problema que o seu e já possua uma solução.
 
-If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
+Se você está em um sistema operacional diferente e/ou ainda está com problemas, veja [obtendo ajuda](#getting-help).
 
 > [!WARNING]
 > 
@@ -500,7 +500,7 @@ If you are on a different OS and/or are still running into issues, see [getting 
 
 ### Problemas com a Interface do Usuário, fontes, errors de build, etc.
 
-If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
+Se você enfrenta problemas com a interface do usuário, fontes ou erros de build, uma limpeza pode ser útil:
 
 ```console
 npm run clean
@@ -509,17 +509,17 @@ npm run seed
 npm run develop
 ```
 
-OR
+OU
 
-Use the shortcut
+Use o atalho
 
 ```
 npm run clean-and-develop
 ```
 
-If you continue to face issues with the build, cleaning up the workspace is recommend.
+Se você continua enfrentando problemas com a compilação, é recomendável limpar o espaço de trabalho.
 
-Use `git clean` in interactive mode:
+Use `git clean` no modo interativo:
 
 ```
 git clean -ifdX
@@ -527,20 +527,20 @@ git clean -ifdX
 
 <details>
    <summary>
-      How to clean git untracked files (screenshot)
+      Como limpar arquivos não rastreados do git (captura de tela)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Como limpar arquivos git não rastreados" />
 </details>
 
 ### Problemas com API, login, Envios de Desafios, etc.
 
-If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
+Se você não conseguir fazer o login e se vir um banner com uma mensagem de erro dizendo que isso será reportado ao freeCodeCamp, verifique novamente se a porta local `3000` não está em uso por um programa diferente.
 
 <!-- tabs:start -->
 
-#### **macOS/Linux/WSL on Windows - From Terminal:**
+#### **macOS/Linux/WSL no Windows - No Terminal:**
 
 ```console
 netstat -a | grep "3000"
@@ -548,7 +548,7 @@ netstat -a | grep "3000"
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **On Windows - From Elevated PowerShell:**
+#### **No Windows – no PowerShell com privilégios:**
 
 ```powershell
 netstat -ab | Select-String "3000"
@@ -562,14 +562,14 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ### Problemas ao instalar dependências
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
+Se você receber erros durante a instalação das dependências, por favor, certifique-se de que você não está em uma rede restrita ou suas configurações de firewall não impedem você de acessar os recursos.
 
-The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using GitPod instead of an offline setup.
+A primeira configuração pode demorar um pouco, dependendo da largura de banda da sua rede. Tenha paciência. Se você ainda tiver problemas, recomendamos usar o GitPod invés de uma configuração off-line.
 
 > [!NOTE] Se estiver usando dispositivos da Apple com o chip M1 para executar a aplicação localmente, sugerimos usar o Node v14.7 ou uma versão mais recente. Do contrário, você poderá ter problemas com dependências como o Sharp.
 
 ## Obtendo ajuda
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+Se você está com dificuldades e precisa de ajuda, fique à vontade em perguntar na categoria ['Contribuidores' em nosso fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat de contribuidores](https://chat.freecodecamp.org/channel/contributors).
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+Pode haver um erro no console do seu navegador ou no bash/terminal/linha de comando que ajudará a identificar o problema. Forneça esta mensagem de erro na descrição do seu problema para que outros possam identificá-lo mais facilmente e ajudá-lo a encontrar uma solução.

@@ -2,11 +2,11 @@ A comunidade do  [freeCodeCamp.org](https://freecodecamp.org) é possível graç
 
 > [!NOTE] Antes de continuar, reserve 2 minutinhos para ler o nosso [Código de Conduta](https://www.freecodecamp.org/code-of-conduct). Nós o aplicamos rigorosamente em toda a nossa comunidade para que contribuir com o freeCodeCamp.org seja uma experiência segura e inclusiva para todos.
 
-You are welcome to create, update and fix bugs in our [curriculum](#curriculum), help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform), or [help us translate](#translations) freeCodeCamp.org to world languages.
+Fique à vontade para criar, atualizar e corrigir bugs em nosso [currículo](#curriculum), ajude-nos a corrigir bugs na [plataforma de aprendizagem](#learning-platform) do no freeCodeCamp ou [ajude-nos a traduzir](#translations) o freeCodeCamp.org para idiomas do mundo inteiro.
 
-We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
+Respondemos às perguntas mais comuns sobre como contribuir [no nosso FAQ do colaborador](FAQ.md).
 
-Happy contributing.
+Boas contribuições.
 
 ---
 
@@ -20,17 +20,17 @@ Você pode ajudar a expandir e melhorar o currículo. Você também pode atualiz
 
 ## Traduções
 
-We are localizing freeCodeCamp.org to major world languages.
+Estamos traduzindo o freeCodeCamp.org para os principais idiomas do mundo.
 
-Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn/), [Italian (Italiano)](https://www.freecodecamp.org/espanol/learn/), [Portuguese (Português)](https://www.freecodecamp.org/espanol/learn/). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort) and share it with your friends to get them excited about this.
+Muitas certificações já estão prontas em alguns dos idiomas principais do mundo como o [chinês (中文),](https://chinese.freecodecamp.org/learn), o [espanhol (español)](https://www.freecodecamp.org/espanol/learn/), o [italiano](https://www.freecodecamp.org/espanol/learn/) e o [português](https://www.freecodecamp.org/espanol/learn/). Recomendamos a leitura do [anúncio aqui](https://www.freecodecamp.org/news/world-language-translation-effort) e o compartilhamento com seus amigos.
 
-**If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
+**Se você está interessado em traduzir, veja como traduzir os recursos do  [freeCodeCamp](how-to-translate-files.md).**
 
 ## Plataforma de aprendizado
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
+Nossa plataforma de aprendizado executa em uma stack de JavaScript moderna. Ela possui vários componentes, ferramentas e bibliotecas. Estes incluem Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack e mais.
 
-Broadly, we have a Node.js based API server, a set of React-based client applications, testing scripts to evaluate camper-submitted curriculum projects, and more. If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
+Geralmente, temos um servidor de API baseado em Node.js, um conjunto de aplicativos de client baseados em React, testes de scripts para avaliar projetos de currículo apresentados pelos campers e muito mais. Se você deseja contribuir produtivamente para nossa plataforma de aprendizado, recomendamos alguma familiaridade com estas ferramentas.
 
 Se você quer nos ajudar a melhorar nossa base de código...
 

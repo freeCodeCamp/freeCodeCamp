@@ -6,7 +6,7 @@ Lee nuestra ["Guía de como contribuir a Open Source"](https://github.com/freeCo
 
 Si -  Puedes contribuir a cualquiera de los mas de 30 idiomas que hemos habilitado en nuestra plataforma de traducción.
 
-We have user-contributed translations live in some languages. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo sobre esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort).
+Tenemos traducciones aportadas por los usuarios en vivo en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo sobre esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort).
 
 Si estas interesado en ayudar a traducir, por favor asegúrate de [leer esta guía](how-to-translate-files.md) primero.
 
