@@ -32,6 +32,7 @@ When the budget object is printed it should display:
 - A line displaying the category total.
 
 Here is an example of the output:
+
 ```py
 *************Food*************
 initial deposit        1000.00
