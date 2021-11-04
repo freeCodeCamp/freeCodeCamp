@@ -143,7 +143,10 @@ const modeMap = {
 };
 
 let monacoThemesDefined = false;
-const defineMonacoThemes = (monaco: typeof monacoEditor) => {
+const defineMonacoThemes = (
+  monaco: typeof monacoEditor,
+  options: { usesMultifileEditor: boolean }
+) => {
   if (monacoThemesDefined) {
     return;
   }
@@ -169,7 +172,7 @@ const defineMonacoThemes = (monaco: typeof monacoEditor) => {
     inherit: true,
     // TODO: Use actual color from style-guide
     colors: {
-      'editor.background': '#fff'
+      'editor.background': options.usesMultifileEditor ? '#eee' : '#fff'
     },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
   });
@@ -259,10 +262,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
-    const { challengeFiles, fileKey } = props;
+    const { challengeFiles, fileKey, usesMultifileEditor } = props;
+    console.log('editorWillMount', props);
 
     monacoRef.current = monaco;
-    defineMonacoThemes(monaco);
+    defineMonacoThemes(monaco, { usesMultifileEditor });
     // If a model is not provided, then the editor 'owns' the model it creates
     // and will dispose of that model if it is replaced. Since we intend to
     // swap and reuse models, we have to create our own models to prevent
@@ -613,6 +617,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       range,
       options: {
         isWholeLine: true,
+        className: 'editable-region',
         linesDecorationsClassName: 'myEditableLineDecoration',
         stickiness:
           monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges
