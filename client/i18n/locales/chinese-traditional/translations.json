@@ -99,6 +99,7 @@
     "private-name": "如果你將姓名設置爲私密，你的證書上不會顯示你的姓名。",
     "claim-legacy": "當你獲得下列 freeCodeCamp 認證之後，你可以申請 {{cert}}:",
     "for": "{{username}} 賬號設置",
+    "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
     "username": {
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",
