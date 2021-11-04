@@ -262,7 +262,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
     const { challengeFiles, fileKey, usesMultifileEditor } = props;
-    console.log('editorWillMount', props);
 
     monacoRef.current = monaco;
     defineMonacoThemes(monaco, { usesMultifileEditor });
