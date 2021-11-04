@@ -7,7 +7,7 @@ export interface AlertProps {
   children: React.ReactNode;
   className?: string;
   variant?: AlertVariant;
-  dismissText?: string;
+  dismissLabel?: string;
   onDismiss?: () => void;
 }
 
@@ -25,7 +25,7 @@ export function Alert({
   children,
   className,
   variant = 'info',
-  dismissText = 'Close',
+  dismissLabel = 'Close',
   onDismiss
 }: AlertProps): JSX.Element {
   const isDismissable = !!onDismiss;
@@ -43,7 +43,7 @@ export function Alert({
       {isDismissable && (
         <CloseButton
           className='absolute right-4'
-          label={dismissText}
+          label={dismissLabel}
           onClick={onDismiss}
         />
       )}
