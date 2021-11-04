@@ -32,7 +32,7 @@ When the budget object is printed it should display:
 - A line displaying the category total.
 
 Here is an example of the output:
-```
+```py
 *************Food*************
 initial deposit        1000.00
 groceries               -10.15
@@ -49,7 +49,7 @@ This function will be tested with up to four categories.
 
 Look at the example output below very closely and make sure the spacing of the output matches the example exactly.
 
-```
+```py
 Percentage spent by category
 100|          
  90|          
@@ -75,15 +75,15 @@ Percentage spent by category
 
 The unit tests for this project are in `test_module.py`.
 
-### Development
+## Development
 
 Write your code in `budget.py`. For development, you can use `main.py` to test your `Category` class. Click the "run" button and `main.py` will run.
 
-### Testing 
+## Testing 
 
 We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
 
-### Submitting
+## Submitting
 
 Copy your project's URL and submit it to freeCodeCamp.
 
