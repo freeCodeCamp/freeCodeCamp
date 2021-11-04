@@ -20,7 +20,7 @@ const PatreonButton = (): JSX.Element | null => {
   }
 
   const clientId = `&client_id=${patreonClientId}`;
-  const pledgeLevel = `$&min_cents=${String(patreonDefaultPledgeAmount)}`;
+  const pledgeLevel = `$&min_cents=${patreonDefaultPledgeAmount}`;
   const v2Params = '&scope=identity%20identity[email]';
   const redirectUri = `&redirect_uri=${donationUrls.successUrl}`;
   const href = `https://www.patreon.com/oauth2/become-patron?response_type=code${pledgeLevel}${clientId}${redirectUri}${v2Params}`;

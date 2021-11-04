@@ -29,7 +29,7 @@ const {
   ALGOLIA_API_KEY: algoliaAPIKey,
   STRIPE_PUBLIC_KEY: stripePublicKey,
   PAYPAL_CLIENT_ID: paypalClientId,
-  PATREON_CLINET_ID: patreonClientId,
+  PATREON_CLIENT_ID: patreonClientId,
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges
 } = process.env;
