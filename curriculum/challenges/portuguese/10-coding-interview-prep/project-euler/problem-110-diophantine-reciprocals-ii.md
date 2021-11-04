@@ -16,7 +16,7 @@ Pode ser verificado que, quando `n` = 1260, existem 113 soluções distintas e e
 
 Qual é o menor valor de `n` para o qual o número de soluções distintas excede quatro milhões?
 
-**Nota:** este problema é uma versão muito mais difícil do Problema 108 e, como está muito além das limitações de uma abordagem de força bruta, requer uma implementação inteligente.
+**Observação:** este problema é uma versão muito mais difícil do Problema 108 e, como está muito além das limitações de uma abordagem de força bruta, requer uma implementação inteligente.
 
 # --hints--
 
