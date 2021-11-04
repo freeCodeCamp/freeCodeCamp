@@ -76,6 +76,7 @@ function createReadSessionUser(app) {
           user: {
             [user.username]: {
               ...pick(user, userPropsForSession),
+              username: user.usernameDisplay || user.username,
               isEmailVerified: !!user.emailVerified,
               isGithub: !!user.githubProfile,
               isLinkedIn: !!user.linkedin,

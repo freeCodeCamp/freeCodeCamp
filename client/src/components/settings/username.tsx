@@ -131,7 +131,9 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
         submitClicked: false
       },
       () =>
-        this.state.isFormPristine || this.state.characterValidation.error
+        this.state.isFormPristine ||
+        this.state.characterValidation.error ||
+        username.toLowerCase().trim() === newValue.toLowerCase().trim()
           ? null
           : validateUsername(this.state.formValue)
     );
