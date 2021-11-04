@@ -65,7 +65,6 @@ interface EditorProps {
   initialExt: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
-  isProjectStep: boolean;
   isResetting: boolean;
   output: string[];
   resizeProps: ResizePropsType;
