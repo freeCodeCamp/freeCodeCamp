@@ -1,6 +1,6 @@
 ---
 id: 5900f3bd1000cf542c50fed0
-title: 'Problem 81: Path sum: two ways'
+title: 'Problema 81: Soma dos caminhos: duas formas'
 challengeType: 5
 forumTopicId: 302195
 dashedName: problem-81-path-sum-two-ways
@@ -8,27 +8,27 @@ dashedName: problem-81-path-sum-two-ways
 
 # --description--
 
-In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by **only moving to the right and down**, is indicated in bold red and is equal to `2427`.
+Na matriz de 5 por 5 abaixo, a soma do caminho mínimo do canto superior esquerdo até o canto inferior direito, **movendo-se somente para a direita e para baixo**, é indicado em vermelho e em negrito e é igual a `2427`.
 
   $$\begin{pmatrix} \color{red}{131} & 673 & 234 & 103 & 18\\\\ \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\ 630 & 803 & \color{red}{746} & \color{red}{422} & 111\\\\ 537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
 
-Find the minimal path sum from the top left to the bottom right by only moving right and down in `matrix`, a 2D array representing a matrix. The maximum matrix size used in the tests will be 80 by 80.
+Encontre a soma do caminho mínimo, do canto superior esquerdo para o canto inferior direito, movendo-se apenas para a direita e para baixo, na `matrix`, um array bidimensional que representa uma matriz. O tamanho máximo da matriz utilizado nos testes será de 80 por 80.
 
 # --hints--
 
-`pathSumTwoWays(testMatrix1)` should return a number.
+`pathSumTwoWays(testMatrix1)` deve retornar um número.
 
 ```js
 assert(typeof pathSumTwoWays(_testMatrix1) === 'number');
 ```
 
-`pathSumTwoWays(testMatrix1)` should return `2427`.
+`pathSumTwoWays(testMatrix1)` deve retornar `2427`.
 
 ```js
 assert.strictEqual(pathSumTwoWays(_testMatrix1), 2427);
 ```
 
-`pathSumTwoWays(testMatrix2)` should return `427337`.
+`pathSumTwoWays(testMatrix2)` deve retornar `427337`.
 
 ```js
 assert.strictEqual(pathSumTwoWays(_testMatrix2), 427337);

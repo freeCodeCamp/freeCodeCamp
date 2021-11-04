@@ -29,11 +29,7 @@ Assegna al contenitore della griglia tre colonne di larghezza `100px` ciascuna.
 La classe `container` dovrebbe avere una proprietà `grid-template-columns` con tre unità di `100px`.
 
 ```js
-assert(
-  code.match(
-    /.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi
-  )
-);
+assert(new __helpers.CSSHelp(document).getStyle('.container')?.gridTemplateColumns === '100px 100px 100px');
 ```
 
 # --seed--

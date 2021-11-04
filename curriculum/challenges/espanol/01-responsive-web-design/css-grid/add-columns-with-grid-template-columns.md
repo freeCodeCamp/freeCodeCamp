@@ -29,11 +29,7 @@ Haz que el contenedor de la cuadrícula tenga tres columnas con un ancho de `100
 La clase `container` debe tener la propiedad `grid-template-columns` con tres unidades de `100px`.
 
 ```js
-assert(
-  code.match(
-    /.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi
-  )
-);
+assert(new __helpers.CSSHelp(document).getStyle('.container')?.gridTemplateColumns === '100px 100px 100px');
 ```
 
 # --seed--
