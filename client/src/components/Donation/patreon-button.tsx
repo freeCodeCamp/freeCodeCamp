@@ -30,6 +30,7 @@ const PatreonButton = (): JSX.Element | null => {
       className='patreon-button link-button'
       data-patreon-widget-type='become-patron-button'
       href={href}
+      rel='noreferrer'
       target='_blank'
     >
       <PatreonLogo />
