@@ -3,10 +3,10 @@ import Loadable from '@loadable/component';
 import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
 import type {
   IRange,
-  editor,
-  Range as RangeType
+  editor
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
+import { highlightAllUnder } from 'prismjs';
 import React, {
   useEffect,
   Suspense,
@@ -17,6 +17,7 @@ import React, {
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
+
 import { Loader } from '../../../components/helpers';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import {
@@ -27,7 +28,8 @@ import {
   ResizePropsType,
   Test
 } from '../../../redux/prop-types';
-
+import { editorToneOptions } from '../../../utils/tone/editor-config';
+import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
@@ -36,11 +38,15 @@ import {
   setEditorFocusability,
   updateFile,
   challengeTestsSelector,
-  submitChallenge
+  submitChallenge,
+  initTests,
+  isResettingSelector,
+  stopResetting
 } from '../redux';
 
 import './editor.css';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
@@ -51,16 +57,22 @@ interface EditorProps {
   description: string;
   dimensions: DimensionsType;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
-  executeChallenge: (isShouldCompletionModalOpen?: boolean) => void;
+  executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   ext: ExtTypes;
   fileKey: FileKeyTypes;
+  canFocusOnMountRef: MutableRefObject<boolean>;
   initialEditorContent: string;
   initialExt: string;
+  initTests: (tests: Test[]) => void;
+  initialTests: Test[];
+  isProjectStep: boolean;
+  isResetting: boolean;
   output: string[];
   resizeProps: ResizePropsType;
   saveEditorContent: () => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
+  stopResetting: () => void;
   tests: Test[];
   theme: string;
   title: string;
@@ -69,45 +81,42 @@ interface EditorProps {
     editorValue: string;
     editableRegionBoundaries: number[] | null;
   }) => void;
+  usesMultifileEditor: boolean;
 }
 
+// TODO: this is grab bag of unrelated properties.  There's no need for them to
+// all be in the same object.
 interface EditorProperties {
   editor?: editor.IStandaloneCodeEditor;
   model?: editor.ITextModel;
-  viewZoneId: string;
-  startEditDecId: string;
-  endEditDecId: string;
+  descriptionZoneId: string;
   insideEditDecId: string;
-  viewZoneHeight: number;
-  outputZoneHeight: number;
+  descriptionZoneTop: number;
+  outputZoneTop: number;
   outputZoneId: string;
   descriptionNode?: HTMLDivElement;
   outputNode?: HTMLDivElement;
-  overlayWidget?: editor.IOverlayWidget;
+  descriptionWidget?: editor.IOverlayWidget;
   outputWidget?: editor.IOverlayWidget;
-}
-
-interface EditorPropertyStore {
-  indexcss: EditorProperties;
-  indexhtml: EditorProperties;
-  indexjs: EditorProperties;
-  indexjsx: EditorProperties;
 }
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
   consoleOutputSelector,
   isDonationModalOpenSelector,
+  isResettingSelector,
   userSelector,
   challengeTestsSelector,
   (
     canFocus: boolean,
     output: string[],
     open,
+    isResetting: boolean,
     { theme = 'default' }: { theme: string },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
+    isResetting,
     output,
     theme,
     tests
@@ -121,7 +130,9 @@ const mapDispatchToProps = {
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  submitChallenge
+  submitChallenge,
+  initTests,
+  stopResetting
 };
 
 const modeMap = {
@@ -164,27 +175,16 @@ const defineMonacoThemes = (monaco: typeof monacoEditor) => {
   });
 };
 
-const toStartOfLine = (range: RangeType) => {
-  return range.setStartPosition(range.startLineNumber, 1);
-};
-
-const toLastLine = (range: RangeType) => {
-  return range.setStartPosition(range.endLineNumber, 1);
-};
-
-// TODO: properly initialise data with values not null
 const initialData: EditorProperties = {
-  viewZoneId: '',
-  startEditDecId: '',
-  endEditDecId: '',
+  descriptionZoneId: '',
   insideEditDecId: '',
-  viewZoneHeight: 0,
+  descriptionZoneTop: 0,
   outputZoneId: '',
-  outputZoneHeight: 0
+  outputZoneTop: 0
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
-  const { editorRef, fileKey } = props;
+  const { editorRef, initTests } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -193,29 +193,39 @@ const Editor = (props: EditorProps): JSX.Element => {
   // unecessary object creation.
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
-  const dataRef = useRef<EditorPropertyStore>({
-    indexcss: { ...initialData },
-    indexhtml: { ...initialData },
-    indexjs: { ...initialData },
-    indexjsx: { ...initialData }
+  const dataRef = useRef<EditorProperties>({ ...initialData });
+  const player = useRef<{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    sampler: any;
+    noteIndex: number;
+    shouldPlay: boolean | undefined;
+  }>({
+    // eslint-disable-next-line no-undefined
+    sampler: undefined,
+    noteIndex: 0,
+    shouldPlay: store.get('fcc-sound') as boolean | undefined
   });
 
-  const data = dataRef.current[fileKey];
+  // since editorDidMount runs once with the initial props object, it keeps a
+  // reference to *those* props. If we want it to use the latest props, we can
+  // use a ref, since it will be updated on every render.
+  const testRef = useRef<Test[]>([]);
+  testRef.current = props.tests;
 
   // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
   // available files into that order.  i.e. if it's just one file it will
   // automatically be first, but  if there's jsx and js (for some reason) it
   //  will be [jsx, js].
 
-  // NOTE: the ARIA state is controlled by fileKey, so changes to it must
-  // trigger a re-render.  Hence state:
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
     scrollBeyondLastLine: false,
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    renderIndentGuides: false,
+    guides: {
+      indentation: false
+    },
     minimap: {
       enabled: false
     },
@@ -240,7 +250,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     suggestOnTriggerCharacters: false
   };
 
-  const getEditableRegion = () => {
+  const getEditableRegionFromRedux = () => {
     const { challengeFiles, fileKey } = props;
     const edRegBounds = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
@@ -262,15 +272,20 @@ const Editor = (props: EditorProps): JSX.Element => {
       challengeFile => challengeFile.fileKey === fileKey
     );
     const model =
-      data.model ||
+      dataRef.current.model ||
       monaco.editor.createModel(
         challengeFile?.contents ?? '',
         modeMap[challengeFile?.ext ?? 'html']
       );
-    data.model = model;
-    const editableRegion = getEditableRegion();
+    dataRef.current.model = model;
 
-    if (editableRegion.length === 2) decorateForbiddenRanges(editableRegion);
+    if (player.current.shouldPlay && !player.current.sampler) {
+      void import('tone').then(tone => {
+        player.current.sampler = new tone.Sampler(
+          editorToneOptions
+        ).toDestination();
+      });
+    }
 
     // TODO: do we need to return this?
     return { model };
@@ -278,9 +293,9 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // Updates the model if the contents has changed. This is only necessary for
   // changes coming from outside the editor (such as code resets).
-  const updateEditorValues = () => {
+  const resetEditorValues = () => {
     const { challengeFiles, fileKey } = props;
-    const { model } = dataRef.current[fileKey];
+    const { model } = dataRef.current;
 
     const newContents = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
@@ -296,7 +311,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   ) => {
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
-    data.editor = editor;
+    dataRef.current.editor = editor;
+
+    if (hasEditableRegion()) {
+      initializeDescriptionAndOutputWidgets();
+      addContentChangeListener();
+      showEditableRegion(editor);
+    }
 
     const storedAccessibilityMode = () => {
       const accessibility = store.get('accessibilityMode') as boolean;
@@ -322,8 +343,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
     if (props.canFocus && !accessibilityMode) {
-      // TODO: only one Editor should be calling for focus at once.
-      editor.focus();
+      focusIfTargetEditor();
     } else focusOnHotkeys();
     // Removes keybind for intellisense
     // Private method - hopefully changes with future version
@@ -341,8 +361,17 @@ const Editor = (props: EditorProps): JSX.Element => {
       label: 'Run tests',
       /* eslint-disable no-bitwise */
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
-      // TODO: Discuss with Ahmad what should pop-up when a challenge is completed
-      run: () => props.executeChallenge(true)
+      run: () => {
+        if (props.usesMultifileEditor) {
+          if (challengeIsComplete()) {
+            props.submitChallenge();
+          } else {
+            props.executeChallenge();
+          }
+        } else {
+          props.executeChallenge({ showCompletionModal: true });
+        }
+      }
     });
     editor.addAction({
       id: 'leave-editor',
@@ -374,138 +403,75 @@ const Editor = (props: EditorProps): JSX.Element => {
       }
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
-
-    const editableBoundaries = getEditableRegion();
-
-    if (editableBoundaries.length === 2) {
-      const createWidget = (
-        id: string,
-        domNode: HTMLDivElement,
-        getTop: () => string
-      ) => {
-        const getId = () => id;
-        const getDomNode = () => domNode;
-        const getPosition = () => {
-          domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
-          domNode.style.top = getTop();
-
-          // must return null, so that Monaco knows the widget will position
-          // itself.
-          return null;
-        };
-        return {
-          getId,
-          getDomNode,
-          getPosition
-        };
-      };
-
-      const domNode = createDescription(editor);
-
-      const outputNode = createOutputNode(editor);
-
-      const overlayWidget = createWidget(
-        'my.overlay.widget',
-        domNode,
-        getViewZoneTop
-      );
-      data.overlayWidget = overlayWidget;
-      const outputWidget = createWidget(
-        'my.output.widget',
-        outputNode,
-        getOutputZoneTop
-      );
-      data.outputWidget = outputWidget;
-
-      editor.addOverlayWidget(overlayWidget);
-
-      // TODO: order of insertion into the DOM probably matters, revisit once
-      // the tabs have been fixed!
-
-      editor.addOverlayWidget(outputWidget);
-
-      editor.changeViewZones(viewZoneCallback);
-      editor.changeViewZones(outputZoneCallback);
-
-      editor.onDidScrollChange(() => {
-        editor.layoutOverlayWidget(overlayWidget);
-        editor.layoutOverlayWidget(outputWidget);
-      });
-      showEditableRegion(editableBoundaries);
-    }
   };
 
-  const viewZoneCallback = (changeAccessor: editor.IViewZoneChangeAccessor) => {
-    const editor = data.editor;
+  const descriptionZoneCallback = (
+    changeAccessor: editor.IViewZoneChangeAccessor
+  ) => {
+    const editor = dataRef.current.editor;
     if (!editor) return;
-    // TODO: is there any point creating this here? I know it's cached, but
-    // would it not be better just sourced from the overlayWidget?
     const domNode = createDescription(editor);
 
     // make sure the overlayWidget has resized before using it to set the height
 
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
-    // TODO: set via onComputedHeight?
-    data.viewZoneHeight = domNode.offsetHeight;
-
-    const background = document.createElement('div');
-    // background.style.background = 'lightgreen';
-
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
-      afterLineNumber: getLineAfterViewZone() - 1,
+      afterLineNumber: getLineBeforeEditableRegion(),
       heightInPx: domNode.offsetHeight,
-      domNode: background,
+      domNode: document.createElement('div'),
       onComputedHeight: () =>
-        data.overlayWidget && editor.layoutOverlayWidget(data.overlayWidget)
+        dataRef.current.descriptionWidget &&
+        editor.layoutOverlayWidget(dataRef.current.descriptionWidget),
+      onDomNodeTop: (top: number) => {
+        dataRef.current.descriptionZoneTop = top;
+        if (dataRef.current.descriptionWidget)
+          editor.layoutOverlayWidget(dataRef.current.descriptionWidget);
+      }
     };
 
-    data.viewZoneId = changeAccessor.addZone(viewZone);
+    dataRef.current.descriptionZoneId = changeAccessor.addZone(viewZone);
   };
 
-  // TODO: this is basically the same as viewZoneCallback, so DRY them out.
   const outputZoneCallback = (
     changeAccessor: editor.IViewZoneChangeAccessor
   ) => {
-    const editor = data.editor;
+    const editor = dataRef.current.editor;
     if (!editor) return;
-    // TODO: is there any point creating this here? I know it's cached, but
-    // would it not be better just sourced from the overlayWidget?
     const outputNode = createOutputNode(editor);
 
     // make sure the overlayWidget has resized before using it to set the height
 
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
-    // TODO: set via onComputedHeight?
-    data.outputZoneHeight = outputNode.offsetHeight;
-
-    const background = document.createElement('div');
-    // background.style.background = 'lightpink';
-
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
-      afterLineNumber: getLineAfterEditableRegion() - 1,
+      afterLineNumber: getLastLineOfEditableRegion(),
       heightInPx: outputNode.offsetHeight,
-      domNode: background,
+      domNode: document.createElement('div'),
       onComputedHeight: () =>
-        data.outputWidget && editor.layoutOverlayWidget(data.outputWidget)
+        dataRef.current.outputWidget &&
+        editor.layoutOverlayWidget(dataRef.current.outputWidget),
+      onDomNodeTop: (top: number) => {
+        dataRef.current.outputZoneTop = top;
+        if (dataRef.current.outputWidget)
+          editor.layoutOverlayWidget(dataRef.current.outputWidget);
+      }
     };
 
-    data.outputZoneId = changeAccessor.addZone(viewZone);
+    dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
   };
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
-    if (data.descriptionNode) return data.descriptionNode;
+    if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
     const { description, title } = props;
     const jawHeading = document.createElement('h3');
     jawHeading.innerText = title;
-    // TODO: var was used here. Should it?
     const domNode = document.createElement('div');
     const desc = document.createElement('div');
     const descContainer = document.createElement('div');
@@ -515,8 +481,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
-    // desc.style.background = 'white';
-    // domNode.style.background = 'lightgreen';
+    highlightAllUnder(desc);
     // TODO: the solution is probably just to use an overlay that's forced to
     // follow the decorations.
     // TODO: this is enough for Firefox, but Chrome needs more before the
@@ -526,18 +491,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.style.zIndex = '10';
 
     domNode.setAttribute('aria-hidden', 'true');
-
-    // domNode.style.background = 'lightYellow';
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
-    domNode.style.top = getViewZoneTop();
-    data.descriptionNode = domNode;
+    domNode.style.top = getDescriptionZoneTop();
+    dataRef.current.descriptionNode = domNode;
     return domNode;
   }
 
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
-    if (data.outputNode) return data.outputNode;
+    if (dataRef.current.outputNode) return dataRef.current.outputNode;
     const outputNode = document.createElement('div');
     const statusNode = document.createElement('div');
     const hintNode = document.createElement('div');
@@ -570,9 +533,34 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     outputNode.style.top = getOutputZoneTop();
 
-    data.outputNode = outputNode;
+    dataRef.current.outputNode = outputNode;
 
     return outputNode;
+  }
+
+  function resetOutputNode() {
+    const { model, insideEditDecId } = dataRef.current;
+    const testButton = document.getElementById('test-button');
+    if (testButton) {
+      testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
+      testButton.onclick = () => {
+        props.executeChallenge();
+      };
+    }
+    const testStatus = document.getElementById('test-status');
+    if (testStatus) {
+      testStatus.innerHTML = '';
+    }
+    const testOutput = document.getElementById('test-output');
+    if (testOutput) {
+      testOutput.innerHTML = '';
+    }
+
+    // Resetting margin decorations
+    const range = model?.getDecorationRange(insideEditDecId);
+    if (range) {
+      updateEditableRegion(range, { model });
+    }
   }
 
   function focusOnHotkeys() {
@@ -589,18 +577,239 @@ const Editor = (props: EditorProps): JSX.Element => {
     // those imply that the positions have changed (i.e. if the content height
     // has changed or if content is dragged between regions)
 
-    const editableRegion = getCurrentEditableRegion();
-    const editableRegionBoundaries = editableRegion && [
-      editableRegion.startLineNumber - 1,
-      editableRegion.endLineNumber + 1
+    const coveringRange = getLinesCoveringEditableRegion();
+    const editableRegionBoundaries = coveringRange && [
+      coveringRange.startLineNumber - 1,
+      coveringRange.endLineNumber + 1
     ];
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    if (player.current.sampler?.loaded && player.current.shouldPlay) {
+      void import('tone').then(tone => {
+        if (tone.context.state !== 'running') void tone.context.resume();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+        player.current.sampler?.triggerAttack(
+          editorNotes[player.current.noteIndex]
+        );
+        player.current.noteIndex++;
+        if (player.current.noteIndex >= editorNotes.length) {
+          player.current.noteIndex = 0;
+        }
+      });
+    }
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
 
-  function showEditableRegion(editableBoundaries: number[]) {
-    if (editableBoundaries.length !== 2) return;
-    const editor = data.editor;
-    if (!editor) return;
+  // TODO: DRY this and the update function
+  function initializeEditableRegion(
+    range: IRange,
+    modelContext: {
+      monaco: typeof monacoEditor;
+      model: editor.ITextModel;
+    }
+  ) {
+    const { monaco, model } = modelContext;
+    const lineDecoration = {
+      range,
+      options: {
+        isWholeLine: true,
+        linesDecorationsClassName: 'myEditableLineDecoration',
+        stickiness:
+          monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges
+      }
+    };
+    return model.deltaDecorations([], [lineDecoration]);
+  }
+
+  function updateEditableRegion(
+    range: IRange,
+    modelContext: {
+      model?: editor.ITextModel;
+    },
+    options: editor.IModelDecorationOptions = {}
+  ) {
+    const { model } = modelContext;
+    const { insideEditDecId } = dataRef.current;
+
+    const oldOptions = model?.getDecorationOptions(insideEditDecId);
+    const lineDecoration = {
+      range,
+      options: {
+        ...oldOptions,
+        ...options
+      }
+    };
+    model?.deltaDecorations([insideEditDecId], [lineDecoration]);
+  }
+
+  function getDescriptionZoneTop() {
+    return `${dataRef.current.descriptionZoneTop}px`;
+  }
+
+  function getOutputZoneTop() {
+    return `${dataRef.current.outputZoneTop}px`;
+  }
+
+  function getLineBeforeEditableRegion() {
+    const range = dataRef.current.model?.getDecorationRange(
+      dataRef.current.insideEditDecId
+    );
+    return range ? range.startLineNumber - 1 : 1;
+  }
+
+  function getLastLineOfEditableRegion() {
+    const range = dataRef.current.model?.getDecorationRange(
+      dataRef.current.insideEditDecId
+    );
+    return range ? range.endLineNumber : 1;
+  }
+
+  // This Range covers all the text in the editable region,
+  const getLinesCoveringEditableRegion = () => {
+    const monaco = monacoRef.current;
+    const { model, insideEditDecId } = dataRef.current;
+    // TODO: this is a little low-level, but we should bail if there is no
+    // editable region defined.
+    if (!insideEditDecId || !model || !monaco) {
+      return null;
+    } else {
+      const currentRange = model.getDecorationRange(insideEditDecId);
+
+      if (currentRange) {
+        return new monaco.Range(
+          currentRange.startLineNumber,
+          1,
+          currentRange.endLineNumber,
+          model.getLineLength(currentRange.endLineNumber) + 1
+        );
+      }
+      return null;
+    }
+  };
+
+  function initializeDescriptionAndOutputWidgets() {
+    const editor = dataRef.current.editor;
+    if (editor) {
+      initializeRegions(getEditableRegionFromRedux());
+      addWidgetsToRegions(editor);
+    }
+  }
+
+  // Currently, only practice project parts have editable region markers
+  // This function is used to enable multiple editor tabs, jaws, etc.
+  function hasEditableRegion() {
+    const editableRegionBoundaries = getEditableRegionFromRedux();
+    return editableRegionBoundaries.length === 2;
+  }
+
+  function focusIfTargetEditor() {
+    const { editor } = dataRef.current;
+    const { canFocusOnMountRef } = props;
+    if (!editor || !canFocusOnMountRef.current) return;
+    if (!props.usesMultifileEditor) {
+      // Only one editor? Focus it.
+      editor.focus();
+      canFocusOnMountRef.current = false;
+    } else if (hasEditableRegion()) {
+      editor.focus();
+      canFocusOnMountRef.current = false;
+    }
+  }
+
+  function initializeRegions(editableRegion: number[]) {
+    const { model } = dataRef.current;
+    const monaco = monacoRef.current;
+    if (!model || !monaco) return;
+
+    const editableRange = positionsToRange(monaco, model, [
+      editableRegion[0] + 1,
+      editableRegion[1] - 1
+    ]);
+
+    dataRef.current.insideEditDecId = initializeEditableRegion(editableRange, {
+      monaco,
+      model
+    })[0];
+  }
+
+  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
+    const createWidget = (
+      id: string,
+      domNode: HTMLDivElement,
+      getTop: () => string
+    ) => {
+      const getId = () => id;
+      const getDomNode = () => domNode;
+      const getPosition = () => {
+        domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+        domNode.style.top = getTop();
+
+        // must return null, so that Monaco knows the widget will position
+        // itself.
+        return null;
+      };
+      return {
+        getId,
+        getDomNode,
+        getPosition
+      };
+    };
+
+    const descriptionNode = createDescription(editor);
+
+    const outputNode = createOutputNode(editor);
+
+    if (!dataRef.current.descriptionWidget) {
+      dataRef.current.descriptionWidget = createWidget(
+        'description.widget',
+        descriptionNode,
+        getDescriptionZoneTop
+      );
+      editor.addOverlayWidget(dataRef.current.descriptionWidget);
+      editor.changeViewZones(descriptionZoneCallback);
+    }
+    if (!dataRef.current.outputWidget) {
+      dataRef.current.outputWidget = createWidget(
+        'output.widget',
+        outputNode,
+        getOutputZoneTop
+      );
+      editor.addOverlayWidget(dataRef.current.outputWidget);
+      editor.changeViewZones(outputZoneCallback);
+    }
+
+    editor.onDidScrollChange(() => {
+      if (dataRef.current.descriptionWidget)
+        editor.layoutOverlayWidget(dataRef.current.descriptionWidget);
+      if (dataRef.current.outputWidget)
+        editor.layoutOverlayWidget(dataRef.current.outputWidget);
+    });
+  }
+
+  function addContentChangeListener() {
+    const { model } = dataRef.current;
+    const monaco = monacoRef.current;
+    if (!monaco) return;
+
+    model?.onDidChangeContent(() => {
+      const redecorateEditableRegion = () => {
+        const coveringRange = getLinesCoveringEditableRegion();
+        if (coveringRange) {
+          updateEditableRegion(coveringRange, { model });
+        }
+      };
+
+      // If the content has changed, the zones may need moving. Rather than
+      // working out if they have to for a particular content change, we simply
+      // ask monaco to update regardless.
+      redecorateEditableRegion();
+      updateDescriptionZone();
+      updateOutputZone();
+    });
+  }
+
+  function showEditableRegion(editor: editor.IStandaloneCodeEditor) {
+    const editableRegionBoundaries = getEditableRegionFromRedux();
     // TODO: The heuristic has been commented out for now because the cursor
     // position is not saved at the moment, so it's redundant. I'm leaving it
     // here for now, in case we decide to save it in future.
@@ -611,416 +820,21 @@ const Editor = (props: EditorProps): JSX.Element => {
     //  isEqual({ ..._editor.getPosition() }, { lineNumber: 1, column: 1 })
     // ) {
     editor.setPosition({
-      lineNumber: editableBoundaries[0] + 1,
+      lineNumber: editableRegionBoundaries[0] + 1,
       column: 1
     });
-    editor.revealLinesInCenter(editableBoundaries[0], editableBoundaries[1]);
+    editor.revealLinesInCenter(
+      editableRegionBoundaries[0],
+      editableRegionBoundaries[1]
+    );
     // }
-  }
-
-  function highlightLines(
-    stickiness: number,
-    target: editor.ITextModel,
-    range: IRange,
-    oldIds: string[] = []
-  ) {
-    const lineDecoration = {
-      range,
-      options: {
-        isWholeLine: true,
-        linesDecorationsClassName: 'myLineDecoration',
-        className: 'do-not-edit',
-        stickiness
-      }
-    };
-    return target.deltaDecorations(oldIds, [lineDecoration]);
-  }
-
-  function highlightEditableLines(
-    stickiness: number,
-    target: editor.ITextModel,
-    range: IRange,
-    oldIds: string[] = []
-  ) {
-    const lineDecoration = {
-      range,
-      options: {
-        isWholeLine: true,
-        linesDecorationsClassName: 'myEditableLineDecoration',
-        className: 'do-not-edit',
-        stickiness
-      }
-    };
-    return target.deltaDecorations(oldIds, [lineDecoration]);
-  }
-
-  function highlightText(
-    stickiness: number,
-    target: editor.ITextModel,
-    range: IRange,
-    oldIds: string[] = []
-  ) {
-    const inlineDecoration = {
-      range,
-      options: {
-        inlineClassName: 'myInlineDecoration',
-        stickiness
-      }
-    };
-
-    return target.deltaDecorations(oldIds, [inlineDecoration]);
-  }
-
-  // NOTE: this is where the view zone *should* be, not necessarily were it
-  // currently is. (see getLineAfterViewZone)
-  // TODO: DRY this and getOutputZoneTop out.
-  function getViewZoneTop() {
-    const editor = data.editor;
-    const heightDelta = data.viewZoneHeight;
-    if (editor) {
-      const top = `${
-        editor.getTopForLineNumber(getLineAfterViewZone()) -
-        heightDelta -
-        editor.getScrollTop()
-      }px`;
-
-      return top;
-    }
-    return '0';
-  }
-
-  function getOutputZoneTop() {
-    const editor = data.editor;
-    const heightDelta = data.outputZoneHeight;
-    if (editor) {
-      const top = `${
-        editor.getTopForLineNumber(getLineAfterEditableRegion()) -
-        heightDelta -
-        editor.getScrollTop()
-      }px`;
-      return top;
-    }
-    return '0';
-  }
-
-  // It's not possible to directly access the current view zone so we track
-  // the region it should cover instead.
-  // TODO: DRY
-  function getLineAfterViewZone() {
-    // TODO: abstract away the data, ids etc.
-    const range = data.model?.getDecorationRange(data.startEditDecId);
-    // if the first decoration is missing, this implies the region reaches the
-    // start of the editor.
-    return range ? range.endLineNumber + 1 : 1;
-  }
-
-  function getLineAfterEditableRegion() {
-    // TODO: handle the case that the editable region reaches the bottom of the
-    // editor
-    return (
-      data.model?.getDecorationRange(data.endEditDecId)?.startLineNumber ?? 1
-    );
-  }
-
-  const translateRange = (range: IRange, lineDelta: number) => {
-    const iRange = {
-      ...range,
-      startLineNumber: range.startLineNumber + lineDelta,
-      endLineNumber: range.endLineNumber + lineDelta
-    };
-    return monacoRef.current?.Range.lift(iRange);
-  };
-
-  // TODO: TESTS!
-  // Make 100% sure this is inclusive.
-  const getLinesBetweenRanges = (
-    firstRange: RangeType,
-    secondRange: RangeType
-  ) => {
-    const startRange = translateRange(toLastLine(firstRange), 1);
-    const endRange = translateRange(
-      toStartOfLine(secondRange),
-      -1
-    )?.collapseToStart();
-
-    return {
-      startLineNumber: startRange?.startLineNumber ?? 1,
-      endLineNumber: endRange?.endLineNumber ?? 2
-    };
-  };
-
-  const getCurrentEditableRegion = () => {
-    const monaco = monacoRef.current;
-    const { model, startEditDecId, endEditDecId } = data;
-    // TODO: this is a little low-level, but we should bail if there is no
-    // editable region defined.
-    // NOTE: if a decoration is missing, there is still an editable region - it
-    // just extends to the edge of the editor. However, no decorations means no
-    // editable region.
-    if ((!startEditDecId && !endEditDecId) || !model || !monaco) {
-      return null;
-    } else {
-      const firstRange = startEditDecId
-        ? model.getDecorationRange(startEditDecId)
-        : getStartOfEditor();
-      // TODO: handle the case that the editable region reaches the bottom of the
-      // editor
-      const secondRange = model.getDecorationRange(endEditDecId);
-      if (firstRange && secondRange) {
-        const editableRegion = getLinesBetweenRanges(firstRange, secondRange);
-        const startLineNumber = editableRegion.startLineNumber;
-
-        let endLineNumber = editableRegion.endLineNumber;
-
-        // TODO: this prevents the editor from crashing, but it's still possible
-        // for the editable region to become empty and for the editable
-        // decorations to get out of sync with the jaw locations.
-        endLineNumber = Math.max(endLineNumber, startLineNumber + 1);
-        endLineNumber = Math.min(endLineNumber, model.getLineCount());
-
-        const endColumn = model.getLineLength(endLineNumber) + 1;
-        return new monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
-      }
-      return null;
-    }
-  };
-
-  // TODO: do this once after _monaco has been created.
-  const getStartOfEditor = () =>
-    monacoRef.current?.Range.lift({
-      startLineNumber: 1,
-      endLineNumber: 1,
-      startColumn: 1,
-      endColumn: 1
-    });
-
-  function decorateForbiddenRanges(editableRegion: number[]) {
-    const { model } = data;
-    const monaco = monacoRef.current;
-    if (!model || !monaco) return;
-    const forbiddenRegions: [number, number][] = [
-      [0, editableRegion[0]],
-      [editableRegion[1], model.getLineCount()]
-    ];
-
-    const editableRange = positionsToRange(model, monaco, [
-      editableRegion[0] + 1,
-      editableRegion[1] - 1
-    ]);
-
-    data.insideEditDecId = highlightEditableLines(
-      monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-      model,
-      editableRange
-    )[0];
-
-    // if the forbidden range includes the top of the editor
-    // we simply don't add those decorations
-    if (forbiddenRegions[0][1] > 0) {
-      const forbiddenRange = positionsToRange(
-        model,
-        monaco,
-        forbiddenRegions[0]
-      );
-      // the first range should expand at the top
-      // TODO: Unsure what this should be - returns an array, so I added [0] @ojeytonwilliams
-      data.startEditDecId = highlightLines(
-        monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-        model,
-        forbiddenRange
-      )[0];
-
-      highlightText(
-        monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-        model,
-        forbiddenRange
-      );
-    }
-
-    const forbiddenRange = positionsToRange(model, monaco, forbiddenRegions[1]);
-    // TODO: handle the case the region covers the bottom of the editor
-    // the second range should expand at the bottom
-    data.endEditDecId = highlightLines(
-      monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
-      model,
-      forbiddenRange
-    )[0];
-
-    highlightText(
-      monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
-      model,
-      forbiddenRange
-    );
-
-    // The deleted line is always considered to be the one that has moved up.
-    // - if the user deletes at the end of line 5, line 6 is deleted and
-    // - if the user backspaces at the start of line 6, line 6 is deleted
-    // TODO: handle multiple simultaneous changes (multicursors do this)
-    function getDeletedLine(event: editor.IModelContentChangedEvent) {
-      const isDeleted =
-        event.changes[0].text === '' && event.changes[0].range.endColumn === 1;
-      return isDeleted ? event.changes[0].range.endLineNumber : 0;
-    }
-
-    function getNewLineRanges(event: editor.IModelContentChangedEvent) {
-      const newLines = event.changes.filter(
-        ({ text }) => text[0] === event.eol
-      );
-      return newLines.map(({ range }) => range);
-    }
-
-    // TODO refactor this mess
-    // TODO this listener needs to be replaced on reset.
-    model.onDidChangeContent(e => {
-      // TODO: it would be nice if undoing could remove the warning, but
-      // it's probably too hard to track. i.e. if they make two warned edits
-      // and then ctrl + z twice, it would realise they've removed their
-      // edits. However, what if they made a warned edit, then a normal
-      // edit, then a warned one.  Could it track that they need to make 3
-      // undos?
-      const newLineRanges = getNewLineRanges(e).map(range => {
-        return toStartOfLine(monaco.Range.lift(range));
-      });
-      const deletedLine = getDeletedLine(e);
-
-      const deletedRange = {
-        startLineNumber: deletedLine,
-        endLineNumber: deletedLine,
-        startColumn: 1,
-        endColumn: 1
-      };
-
-      if (e.isUndoing) {
-        // TODO: can we be more targeted? Only update when they could get out of
-        // sync
-        updateViewZone();
-        updateOutputZone();
-        return;
-      }
-
-      const warnUser = (id: string) => {
-        const range = model.getDecorationRange(id);
-        if (range) {
-          const coveringRange = toStartOfLine(range);
-          e.changes.forEach(({ range }) => {
-            if (monaco.Range.areIntersectingOrTouching(coveringRange, range)) {
-              console.log('OVERLAP!');
-            }
-          });
-        }
-      };
-
-      // Make sure the zone tracks the decoration (i.e. the region), which might
-      // have changed if a line has been added or removed
-      const handleHintsZoneChange = () => {
-        if (newLineRanges.length > 0 || deletedLine > 0) {
-          updateOutputZone();
-        }
-      };
-
-      // Make sure the zone tracks the decoration (i.e. the region), which might
-      // have changed if a line has been added or removed
-      const handleDescriptionZoneChange = () => {
-        if (newLineRanges.length > 0 || deletedLine > 0) {
-          updateViewZone();
-        }
-      };
-
-      // Stops the greyed out region from covering the editable region. Does not
-      // change the font decoration.
-      const preventOverlap = (
-        id: string,
-        stickiness: number,
-        highlightFunction: typeof highlightLines
-      ) => {
-        // Even though the decoration covers the whole line, it has a
-        // startColumn that moves.  toStartOfLine ensures that the
-        // comparison detects if any change has occurred on that line
-        // NOTE: any change in the decoration has already happened by this point
-        // so this covers the *new* decoration range.
-        const range = model.getDecorationRange(id);
-        if (!range) {
-          return id;
-        }
-        const coveringRange = toStartOfLine(range);
-        const oldStartOfRange = translateRange(
-          coveringRange.collapseToStart(),
-          1
-        );
-        const newCoveringRange = coveringRange.setStartPosition(
-          oldStartOfRange?.startLineNumber ?? 1,
-          1
-        );
-
-        // TODO: this triggers both when you delete the first line of the
-        // decoration AND the second. To see this, consider a region on line 5
-        // If you delete 5, then the new start is 4 and the computed start is 5
-        // so they match.
-        // If you delete 6, then the start of the region stays at 5, so the
-        // computed start is 6 and they still match.
-        // Is there a way to tell these cases apart?
-        // This means that if you delete the second line it actually removes the
-        // grey background from the first line.
-        if (oldStartOfRange) {
-          const touchingDeleted = monaco.Range.areIntersectingOrTouching(
-            deletedRange,
-            oldStartOfRange
-          );
-
-          if (touchingDeleted) {
-            // TODO: if they undo this should be reversed
-            const decorations = highlightFunction(
-              stickiness,
-              model,
-              newCoveringRange,
-              [id]
-            );
-
-            updateOutputZone();
-            return decorations[0];
-          } else {
-            return id;
-          }
-        }
-        return id;
-      };
-
-      // we only need to handle the special case of the second region being
-      // pulled up, the first region already behaves correctly.
-
-      data.endEditDecId = preventOverlap(
-        data.endEditDecId,
-        monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-        highlightLines
-      );
-
-      data.insideEditDecId = preventOverlap(
-        data.insideEditDecId,
-        monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-        highlightEditableLines
-      );
-
-      // TODO: do the same for the description widget
-      // this has to be handle differently, because we care about the END
-      // of the zone, not the START
-      // if the editable region includes the first line, the first decoration
-      // will be missing.
-      if (data.startEditDecId) {
-        handleDescriptionZoneChange();
-        warnUser(data.startEditDecId);
-      }
-      handleHintsZoneChange();
-      if (data.endEditDecId) {
-        warnUser(data.endEditDecId);
-      }
-    });
   }
 
   // creates a range covering all the lines in 'positions'
   // NOTE: positions is an array of [startLine, endLine]
   function positionsToRange(
-    model: editor.ITextModel,
     monaco: typeof monacoEditor,
+    model: editor.ITextModel,
     [start, end]: [number, number]
   ) {
     // convert to [startLine, startColumn, endLine, endColumn]
@@ -1039,21 +853,57 @@ const Editor = (props: EditorProps): JSX.Element => {
       .setEndPosition(range.endLineNumber, endColumnText.length + 2);
   }
 
+  function challengeIsComplete() {
+    const tests = testRef.current;
+    return tests.every(test => test.pass && !test.err);
+  }
+
+  function challengeHasErrors() {
+    const tests = testRef.current;
+    return tests.some(test => test.err);
+  }
+
+  // runs every update to the editor and when the challenge is reset
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
     // editor.
-    updateEditorValues();
+    const { editor } = dataRef.current;
+
+    if (props.isResetting) {
+      // NOTE: this looks a lot like a race condition, since stopResetting gets
+      // called in each editor and changes isResetting. However, all open editor
+      // are rendered in a batch (before stopResetting talks to redux), so they
+      // all get to this point. Also stopResetting is idempotent, so it doesn't
+      // matter that each editor calls it.
+      props.stopResetting();
+      resetEditorValues();
+      focusIfTargetEditor();
+    }
+
+    if (props.initialTests) initTests(props.initialTests);
+
+    if (hasEditableRegion() && editor) {
+      if (props.isResetting) {
+        initializeDescriptionAndOutputWidgets();
+        updateDescriptionZone();
+        updateOutputZone();
+        showEditableRegion(editor);
+
+        // Since the outputNode is only reset when the step is restarted, users
+        // that want to try different solutions will need to do that.
+        resetOutputNode();
+      }
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.challengeFiles]);
+  }, [props.challengeFiles, props.isResetting]);
   useEffect(() => {
-    const { output, tests } = props;
-    const editableRegion = getEditableRegion();
+    const { output } = props;
+    const { model, insideEditDecId } = dataRef.current;
+    const editableRegion = getEditableRegionFromRedux();
     if (editableRegion.length === 2) {
-      const challengeComplete = tests.every(test => test.pass && !test.err);
-      const chellengeHasErrors = tests.some(test => test.err);
       const testOutput = document.getElementById('test-output');
       const testStatus = document.getElementById('test-status');
-      if (challengeComplete) {
+      if (challengeIsComplete()) {
         const testButton = document.getElementById('test-button');
         if (testButton) {
           testButton.innerHTML =
@@ -1064,19 +914,22 @@ const Editor = (props: EditorProps): JSX.Element => {
           };
         }
 
-        const editableRegionDecorators = document.getElementsByClassName(
-          'myEditableLineDecoration'
-        );
-        if (editableRegionDecorators.length > 0) {
-          for (const i of editableRegionDecorators) {
-            i.classList.add('tests-passed');
-          }
+        const range = model?.getDecorationRange(insideEditDecId);
+        if (range) {
+          updateEditableRegion(
+            range,
+            { model },
+            {
+              linesDecorationsClassName: 'myEditableLineDecoration tests-passed'
+            }
+          );
         }
+
         if (testOutput && testStatus) {
           testOutput.innerHTML = '';
           testStatus.innerHTML = '&#9989; Step completed.';
         }
-      } else if (chellengeHasErrors && testStatus && testOutput) {
+      } else if (challengeHasErrors() && testStatus && testOutput) {
         const wordsArray = [
           "Not quite. Here's a hint:",
           'Try again. This might help:',
@@ -1096,17 +949,14 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     const { output } = props;
     // TODO: do we need this condition?  What happens if the ref is empty?
-    if (data.outputNode) {
+    if (dataRef.current.outputNode) {
       // TODO: output gets wiped when the preview gets updated, keeping the
       // display is an anti-pattern (the render should not ignore props!).
       // The correct solution is probably to create a new redux variable
       // (shownHint,maybe) and have that persist through previews.  But, for
       // now:
       if (output) {
-        // if either id exists, the editable region exists
-        // TODO: add a layer of abstraction: we should be interacting with
-        // the editable region, not the ids
-        if (data.startEditDecId || data.endEditDecId) {
+        if (hasEditableRegion()) {
           updateOutputZone();
         }
       }
@@ -1114,10 +964,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.output]);
   useEffect(() => {
-    const editor = data.editor;
+    const editor = dataRef.current.editor;
     editor?.layout();
-    if (data.startEditDecId) {
-      updateViewZone();
+    if (hasEditableRegion()) {
+      updateDescriptionZone();
       updateOutputZone();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1125,18 +975,18 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // TODO: DRY (there's going to be a lot of that)
   function updateOutputZone() {
-    const editor = data.editor;
+    const editor = dataRef.current.editor;
     editor?.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(data.outputZoneId);
+      changeAccessor.removeZone(dataRef.current.outputZoneId);
       outputZoneCallback(changeAccessor);
     });
   }
 
-  function updateViewZone() {
-    const editor = data.editor;
+  function updateDescriptionZone() {
+    const editor = dataRef.current.editor;
     editor?.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(data.viewZoneId);
-      viewZoneCallback(changeAccessor);
+      changeAccessor.removeZone(dataRef.current.descriptionZoneId);
+      descriptionZoneCallback(changeAccessor);
     });
   }
 

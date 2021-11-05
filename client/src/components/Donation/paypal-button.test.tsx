@@ -12,7 +12,8 @@ const commonProps = {
   isPaypalLoading: true,
   t: jest.fn(),
   theme: 'night',
-  handlePaymentButtonLoad: jest.fn()
+  handlePaymentButtonLoad: jest.fn(),
+  isMinimalForm: true
 };
 
 const donationData = {

@@ -41,7 +41,7 @@ El `store.subscribe` debe recibir una función.
 (getUserInput) => assert(getUserInput('index').match(/(\s*function\s*)|(\s*\(\s*\)\s*=>)/gm)) 
 ```
 
-El callback a `store.subscribe` también debe incrementar la variable global `count` a medida que se actualiza el almacén.
+La función callback a `store.subscribe` también debe incrementar la variable global `count` a medida que se actualiza el almacén.
 
 ```js
 assert(store.getState() === count);

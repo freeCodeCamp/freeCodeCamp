@@ -18,7 +18,7 @@ Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. CSS è r
 
 **User Story #2:** Dovrei vedere un elemento con un corrispondente `id="title"`che contiene una stringa (cioè un testo) che descrive l'oggetto della pagina di tributo (ad esempio "Dr. Norman Borlaug").
 
-**User story #3:** Dovrei vedere un elemento `div` con un corrispondente `id="img-div"`.
+**User story #3:** Dovrei vedere un elemento `figure` oppure un elemento `div` con un corrispondente `id="img-div"`.
 
 **User story #4:** All'interno dell'elemento `img-div`, dovrei vedere un elemento `img` con un corrispondente `id="image"`.
 

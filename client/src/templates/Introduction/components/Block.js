@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
+import store from 'store';
 
 import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
@@ -56,6 +57,16 @@ export class Block extends Component {
 
   handleBlockClick() {
     const { blockDashedName, toggleBlock, executeGA } = this.props;
+    const playSound = store.get('fcc-sound');
+    if (playSound) {
+      void import('tone').then(tone => {
+        const player = new tone.Player(
+          'https://tonejs.github.io/audio/berklee/guitar_chord1.mp3'
+        ).toDestination();
+        if (tone.context.state !== 'running') tone.context.resume();
+        player.autostart = playSound;
+      });
+    }
     executeGA({
       type: 'event',
       data: {

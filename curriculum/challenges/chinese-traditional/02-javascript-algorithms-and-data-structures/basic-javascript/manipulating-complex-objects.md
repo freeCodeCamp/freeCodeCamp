@@ -14,7 +14,7 @@ dashedName: manipulating-complex-objects
 這是一個複雜數據結構的示例：
 
 ```js
-var ourMusic = [
+const ourMusic = [
   {
     "artist": "Daft Punk",
     "title": "Homework",
@@ -29,7 +29,7 @@ var ourMusic = [
 ];
 ```
 
-這是一個包含一個對象的數組。 該對象有關於專輯的各種元數據（<dfn>metadata</dfn>）。 它也有一個嵌套的 `formats` 數組。 可以將專輯添加到頂級數組來增加更多的專輯記錄。 對象將數據以一種鍵 - 值對的形式保存。 在上面的示例中，`"artist": "Daft Punk"` 有一個鍵位 `artist` 值爲 `Daft Punk` 的屬性。 [JavaScript Object Notation](http://www.json.org/) 簡稱 `JSON` 是可以用於存儲數據的數據交換格式。
+這是一個包含一個對象的數組。 該對象有關於專輯的各種元數據（<dfn>metadata</dfn>）。 它也有一個嵌套的 `formats` 數組。 可以將專輯添加到頂級數組來增加更多的專輯記錄。 對象將數據以一種鍵 - 值對的形式保存。 在上面的示例中，`"artist": "Daft Punk"` 有一個鍵爲 `artist` 值爲 `Daft Punk` 的屬性。 [JavaScript Object Notation](http://www.json.org/) 簡稱 `JSON` 是可以用於存儲數據的數據交換格式。
 
 ```json
 {
@@ -135,7 +135,7 @@ myMusic.forEach(object => {
 ## --seed-contents--
 
 ```js
-var myMusic = [
+const myMusic = [
   {
     "artist": "Billy Joel",
     "title": "Piano Man",
@@ -153,7 +153,7 @@ var myMusic = [
 # --solutions--
 
 ```js
-var myMusic = [
+const myMusic = [
   {
     "artist": "Billy Joel",
     "title": "Piano Man",

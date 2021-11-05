@@ -1,6 +1,6 @@
 ---
 id: 5900f3cc1000cf542c50fedf
-title: 'Problem 96: Su Doku'
+title: '問題 96：數獨'
 challengeType: 5
 forumTopicId: 302213
 dashedName: problem-96-su-doku
@@ -8,7 +8,7 @@ dashedName: problem-96-su-doku
 
 # --description--
 
-Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+數獨（日語含義爲*數字位置*）是一個非常流行的解密遊戲。 它的起源尚不清楚，但必須歸功於萊昂哈德·歐拉（Leonhard Euler），他發明了一種類似的，但更加困難的解密遊戲，名叫拉丁方塊（Latin Squares）。 數獨的目標是用數字替換 9X9 網格中的空白（或零），使得每行，每列和每個 3X3 小網格中都只包含 1 到 9 這 9 個數字。 下面是一個示例，包含一個經典的謎題及其對應解。
 
 <div style="margin: auto; background-color: white; padding: 10px; width: 80%; text-align: center;">
   <table border="0" cellpadding="0" cellspacing="0" align="center">
@@ -100,27 +100,27 @@ Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle 
   </table>
 </div>
 
-A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
+一個構造良好的數獨謎題應該只有一個唯一的解，可以通過邏輯解出，雖然可能需要採用“猜測和測試”方法來排除選項（對此有很多爭議的意見）。 搜索的複雜性決定了謎題的難度；上面的示例很簡單，因此可以通過直接的邏輯推理來解出答案。
 
-The `puzzlesArr` array contains different Su Doku puzzle strings ranging in difficulty, but all with unique solutions.
+`puzzlesArr` 數組裏有若干個數獨謎題字符串，難度不一，但是每個謎題的解都是唯一的。
 
-By solving all puzzles in `puzzlesArr`, find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
+通過解出 `puzzlesArr` 數組中所有謎題，返回所有解左上角三位數字之和；舉個例子，483 就是上述例子中左上角的三位數字。
 
 # --hints--
 
-`suDoku(testPuzzles1)` should return a number.
+`suDoku(testPuzzles1)` 應該返回一個數字。
 
 ```js
 assert(typeof suDoku(_testPuzzles1) === 'number');
 ```
 
-`suDoku(testPuzzles1)` should return `1190`.
+`suDoku(testPuzzles1)` 應該返回 `1190`。
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles1), 1190);
 ```
 
-`suDoku(testPuzzles2)` should return `24702`.
+`suDoku(testPuzzles2)` 應該返回 `24702`。
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles2), 24702);

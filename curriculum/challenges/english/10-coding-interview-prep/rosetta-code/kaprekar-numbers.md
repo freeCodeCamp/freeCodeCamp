@@ -15,9 +15,9 @@ A positive integer is a [Kaprekar number](<https://en.wikipedia.org/wiki/Kapreka
   <li>The decimal representation of its square may be split once into two parts consisting of positive integers which sum to the original number. </li>
 </ul>
 
-Note that a split resulting in a part consisting purely of 0s is not valid, as 0 is not considered positive.Example
+Note that a split resulting in a part consisting purely of 0s is not valid, as 0 is not considered positive.
 
-Kaprekar numbers:
+Example Kaprekar numbers:
 
 <ul>
   <li><code>2223</code> is a Kaprekar number, as <code>2223 * 2223 = 4941729</code>, <code>4941729</code> may be split to <code>494</code> and <code>1729</code>, and <code>494 + 1729 = 2223</code></li>

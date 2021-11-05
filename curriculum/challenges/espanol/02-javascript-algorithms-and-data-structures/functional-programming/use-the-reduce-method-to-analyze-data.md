@@ -10,7 +10,7 @@ dashedName: use-the-reduce-method-to-analyze-data
 
 `Array.prototype.reduce()` o simplemente `reduce()` es la operación más común de todas para arreglos en JavaScript. Se puede resolver casi cualquier problema de procesamiento de arreglos utilizando el método `reduce`.
 
-El método `reduce` permite formas más generales de procesamiento de arreglos y es posible mostrar que tanto `filter` como `map` pueden derivarse como aplicaciones especiales de `reduce`. El método `reduce` itera sobre cada elemento del arreglo y devuelve un solo valor (por ejemplo una cadena, número, objeto, arreglo). Esto se consigue mediante una función de callback que se llama en cada iteración.
+El método `reduce` permite formas más generales de procesamiento de arreglos y es posible mostrar que tanto `filter` como `map` pueden derivarse como aplicaciones especiales de `reduce`. El método `reduce` itera sobre cada elemento del arreglo y devuelve un solo valor (por ejemplo una cadena, número, objeto, arreglo). Esto se consigue mediante una función callback que se llama en cada iteración.
 
 La función callback acepta cuatro argumentos. El primer argumento se conoce como acumulador, que recibe el valor retornado de la función callback de la iteración anterior, el segundo es el elemento actual que se está procesando, el tercero es el índice de ese elemento y el cuarto es el arreglo sobre el que se llama a la función `reduce`.
 
@@ -93,7 +93,7 @@ assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);
 
 ```js
 // The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -206,22 +206,22 @@ var watchList = [
   }
 ];
 
-function getRating(watchList){
+function getRating(watchList) {
   // Only change code below this line
-  var averageRating;
+  let averageRating;
 
 
   // Only change code above this line
   return averageRating;
 }
+
 console.log(getRating(watchList));
 ```
 
 # --solutions--
 
 ```js
-// The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -334,8 +334,8 @@ var watchList = [
   }
 ];
 
-function getRating(watchList){
-  var averageRating;
+function getRating(watchList) {
+  let averageRating;
   const rating = watchList
     .filter(obj => obj.Director === "Christopher Nolan")
     .map(obj => Number(obj.imdbRating));

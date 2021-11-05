@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bcb
-title: Learn About SVG in D3
+title: Aprende sobre SVG en D3
 challengeType: 6
 forumTopicId: 301489
 dashedName: learn-about-svg-in-d3
@@ -8,35 +8,35 @@ dashedName: learn-about-svg-in-d3
 
 # --description--
 
-<dfn>SVG</dfn> stands for <dfn>Scalable Vector Graphics</dfn>.
+<dfn>SVG</dfn> significa <dfn>Scalable Vector Graphics</dfn> (Gráficos vectoriales escalables).
 
-Here "scalable" means that, if you zoom in or out on an object, it would not appear pixelated. It scales with the display system, whether it's on a small mobile screen or a large TV monitor.
+Aquí "escalable" significa que, si te acercas o alejas a un objeto, no se vería pixelado. El objeto escala con la pantalla, ya sea en una pequeña pantalla de teléfono o en un gran monitor de TV.
 
-SVG is used to make common geometric shapes. Since D3 maps data into a visual representation, it uses SVG to create the shapes for the visualization. SVG shapes for a web page must go within an HTML `svg` tag.
+SVG se utiliza para crear formas geométricas comunes. Ya que D3 traza datos en una representación visual, utiliza SVG para crear las formas para la visualización. Las formas SVG para una página web deben ir dentro de una etiqueta HTML llamada `svg`.
 
-CSS can be scalable when styles use relative units (such as `vh`, `vw`, or percentages), but using SVG is more flexible to build data visualizations.
+CSS puede ser escalable cuando los estilos usan medidas relativas (como por ejemplo `vh`, `vw` o porcentajes), pero usar SVG es más flexible para construir visualizaciones de datos.
 
 # --instructions--
 
-Add an `svg` node to the `body` using `append()`. Give it a `width` attribute set to the provided `w` constant and a `height` attribute set to the provided `h` constant using the `attr()` or `style()` methods for each. You'll see it in the output because there's a `background-color` of pink applied to it in the `style` tag.
+Agrega un nodo `svg` al `body` utilizando `append()`. Dale un atributo `width` con el valor de la constante `w` proporcionada, y un atributo `height` con el valor de la constante `h` proporcionado, utilizando los métodos `attr()` o `style()` para cada uno de ellos. Lo verás en la salida porque hay un `background-color` (color de fondo) rosa aplicado en la etiqueta `style`.
 
-**Note:** When using `attr()` width and height attributes do not have units. This is the building block of scaling - the element will always have a 5:1 width to height ratio, no matter what the zoom level is.
+**Nota:** Al utilizar `attr()` los atributos width (ancho) y height (alto) no llevan unidades. Este es el bloque de construcción de la escala: el elemento siempre tendrá una relación ancho a alto de 5:1, sin importar el nivel de zoom.
 
 # --hints--
 
-Your document should have 1 `svg` element.
+Tu documento debe tener 1 elemento `svg`.
 
 ```js
 assert($('svg').length == 1);
 ```
 
-The `svg` element should have a `width` attribute set to `500` or styled to have a width of `500px`.
+El elemento `svg` debe tener un atributo `width` establecido en `500` o estilizado para tener un ancho de `500px`.
 
 ```js
 assert($('svg').attr('width') == '500' || $('svg').css('width') == '500px');
 ```
 
-The `svg` element should have a `height` attribute set to `100` or styled to have a height of `100px`.
+El elemento `svg` debe tener un atributo `height` establecido en `100` o estilizado para tener una altura de `100px`.
 
 ```js
 assert($('svg').attr('height') == '100' || $('svg').css('height') == '100px');

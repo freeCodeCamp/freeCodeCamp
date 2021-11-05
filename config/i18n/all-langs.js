@@ -38,7 +38,10 @@ const availableLangs = {
 const auditedCerts = {
   espanol: [
     'responsive-web-design',
-    'javascript-algorithms-and-data-structures'
+    'javascript-algorithms-and-data-structures',
+    'front-end-development-libraries',
+    'data-visualization',
+    'back-end-development-and-apis'
   ],
   chinese: [
     'responsive-web-design',
@@ -49,7 +52,8 @@ const auditedCerts = {
     'quality-assurance',
     'scientific-computing-with-python',
     'data-analysis-with-python',
-    'information-security'
+    'information-security',
+    'machine-learning-with-python'
   ],
   'chinese-traditional': [
     'responsive-web-design',
@@ -60,7 +64,8 @@ const auditedCerts = {
     'quality-assurance',
     'scientific-computing-with-python',
     'data-analysis-with-python',
-    'information-security'
+    'information-security',
+    'machine-learning-with-python'
   ],
   italian: [
     'responsive-web-design',
@@ -76,7 +81,15 @@ const auditedCerts = {
   ],
   portuguese: [
     'responsive-web-design',
-    'javascript-algorithms-and-data-structures'
+    'javascript-algorithms-and-data-structures',
+    'front-end-development-libraries',
+    'data-visualization',
+    'back-end-development-and-apis',
+    'quality-assurance',
+    'scientific-computing-with-python',
+    'data-analysis-with-python',
+    'information-security',
+    'machine-learning-with-python'
   ]
 };
 

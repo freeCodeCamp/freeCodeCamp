@@ -35,6 +35,18 @@ Your first checkbox on your form should be checked by default.
 assert($('input[type="checkbox"]').prop('checked'));
 ```
 
+You should not change the inner text of the `Indoor` label.
+
+```js
+assert.equal(document.querySelector('label[for="indoor"]')?.innerText?.trim(), 'Indoor');
+```
+
+You should not change the inner text of the `Loving` label.
+
+```js
+assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), 'Loving');
+```
+
 # --seed--
 
 ## --seed-contents--
@@ -44,7 +56,7 @@ assert($('input[type="checkbox"]').prop('checked'));
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -77,7 +89,7 @@ assert($('input[type="checkbox"]').prop('checked'));
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>

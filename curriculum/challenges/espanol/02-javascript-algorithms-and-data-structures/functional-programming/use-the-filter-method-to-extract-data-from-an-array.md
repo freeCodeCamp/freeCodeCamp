@@ -14,7 +14,7 @@ Otra función útil de los arreglos es `Array.prototype.filter()` o simplemente 
 
 La función callback acepta tres argumentos. El primer argumento es el elemento actual que se está procesando. El segundo es el índice de ese elemento y el tercero es el arreglo sobre el que se llamó al método `filter`.
 
-A continuación se muestra un ejemplo en el que se utiliza el método `filter` en el arreglo `users` para devolver un nuevo arreglo que contiene sólo a los usuarios menores de 30 años. Para que sea más fácil, el ejemplo sólo utiliza el primer argumento del callback.
+A continuación se muestra un ejemplo en el que se utiliza el método `filter` en el arreglo `users` para devolver un nuevo arreglo que contiene sólo a los usuarios menores de 30 años. Para que sea más fácil, el ejemplo solo utiliza el primer argumento de la función callback.
 
 ```js
 const users = [
@@ -55,7 +55,7 @@ El código no debe utilizar el bucle `for`.
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-`filteredList` debe ser igual a `[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]`.
+`filteredList` debe ser igual a `[{"title": "Inception", "rating": "8.8"}, {"title": "Interstellar", "rating": "8.6"}, {"title": "The Dark Knight", "rating": "9.0"}, {"title": "Batman Begins", "rating": "8.3"}]`.
 
 ```js
 assert.deepEqual(filteredList, [
@@ -72,7 +72,7 @@ assert.deepEqual(filteredList, [
 
 ```js
 // The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -187,7 +187,7 @@ var watchList = [
 
 // Only change code below this line
 
-var filteredList;
+const filteredList = "";
 
 // Only change code above this line
 
@@ -197,8 +197,7 @@ console.log(filteredList);
 # --solutions--
 
 ```js
-// The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -311,7 +310,5 @@ var watchList = [
   }
 ];
 
-// Only change code below this line
-let filteredList = watchList.filter(e => e.imdbRating >= 8).map( ({Title: title, imdbRating: rating}) => ({title, rating}) );
-// Only change code above this line
+const filteredList = watchList.filter(e => e.imdbRating >= 8).map( ({Title: title, imdbRating: rating}) => ({title, rating}) );
 ```

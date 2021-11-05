@@ -18,7 +18,7 @@ MyComponent 的 state 中包含一个 `boolean`（布尔值），用于跟踪是
 
 # --hints--
 
-`MyComponent` 应该存在并被渲染。
+`MyComponent` 应该存在并渲染。
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 );
 ```
 
-当 `display` 被设置为 `true` 时，`div`、`button` 和 `h1` 标签应该被渲染。
+当 `display` 被设置为 `true` 时，`div`、`button` 和 `h1` 标签应该渲染。
 
 ```js
 async () => {
@@ -50,7 +50,7 @@ async () => {
 };
 ```
 
-当 `display` 被设置为 `false` 时，只有 `div` 和 `button` 应该被渲染。
+当 `display` 被设置为 `false` 时，只有 `div` 和 `button` 应该渲染。
 
 ```js
 async () => {

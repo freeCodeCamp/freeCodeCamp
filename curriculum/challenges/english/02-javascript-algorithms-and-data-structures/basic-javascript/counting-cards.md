@@ -160,7 +160,7 @@ assert(
 ## --seed-contents--
 
 ```js
-var count = 0;
+let count = 0;
 
 function cc(card) {
   // Only change code below this line
@@ -176,7 +176,7 @@ cc(2); cc(3); cc(7); cc('K'); cc('A');
 # --solutions--
 
 ```js
-var count = 0;
+let count = 0;
 function cc(card) {
   switch(card) {
     case 2:

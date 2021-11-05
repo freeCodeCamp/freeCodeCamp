@@ -28,7 +28,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --hints--
 
-“dependencies”應該包含“moment”
+“dependencies”字段應該包含“moment”
 
 ```js
 (getUserInput) =>

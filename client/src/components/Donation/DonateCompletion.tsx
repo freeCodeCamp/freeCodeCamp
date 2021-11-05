@@ -11,6 +11,7 @@ type DonateCompletionProps = {
   redirecting: boolean;
   reset: () => unknown;
   success: boolean;
+  isSignedIn: boolean;
 };
 
 function DonateCompletion({
@@ -18,6 +19,7 @@ function DonateCompletion({
   reset,
   success,
   redirecting,
+  isSignedIn,
   error = null
 }: DonateCompletionProps): JSX.Element {
   /* eslint-disable no-nested-ternary */
@@ -34,7 +36,11 @@ function DonateCompletion({
     : `${t('donate.error')}`;
 
   return (
-    <Alert bsStyle={style} className='donation-completion'>
+    <Alert
+      bsStyle={style}
+      className='donation-completion'
+      closeLabel={t('buttons.close')}
+    >
       <h4>
         <b>{heading}</b>
       </h4>
@@ -50,7 +56,7 @@ function DonateCompletion({
         {success && (
           <div>
             <p>{t('donate.free-tech')}</p>
-            <p>{t('donate.no-halo')}</p>
+            {isSignedIn && <p>{t('donate.no-halo')}</p>}
           </div>
         )}
         {error && <p>{error}</p>}

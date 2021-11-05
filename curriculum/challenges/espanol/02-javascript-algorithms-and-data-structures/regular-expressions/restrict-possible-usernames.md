@@ -29,78 +29,91 @@ Cambia la expresión regular `userCheck` para que se ajuste a las restricciones 
 Tu expresión regular debe coincidir con la cadena `JACK`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('JACK'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `J`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('J'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `Jo`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('Jo'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `Oceans11`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('Oceans11'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `RegexGuru`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('RegexGuru'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `007`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('007'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `9`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('9'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `A1`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('A1'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `BadUs3rnam3`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('BadUs3rnam3'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `Z97`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('Z97'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `c57bT3`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('c57bT3'));
 ```
 
 Tu expresión regular debe coincidir con la cadena `AB1`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('AB1'));
 ```
 
 Tu expresión regular no debe coincidir con la cadena `J%4`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('J%4'))
 ```
 

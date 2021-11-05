@@ -1,0 +1,62 @@
+---
+id: 61537c5f81f0cf325b4a854c
+title: Step 4
+challengeType: 0
+dashedName: step-4
+---
+
+# --description--
+
+Within the `body` element, create a `div` with the `class` set to `header`.
+
+Inside the `.header` element nest an `h1` element with the text `CSS FLEXBOX PHOTO GALLERY`.
+
+# --hints--
+
+You should have a `div` element within your `body` element.
+
+```js
+assert.exists(document.querySelector('body')?.querySelector('div'))
+```
+
+Your `div` element should have the `class` set to `header`.
+
+```js
+assert(document?.querySelector('body')?.querySelector('div')?.classList?.contains('header'))
+```
+
+Your `.header` element should have an `h1` element.
+
+```js
+assert.exists(document.querySelector('.header')?.querySelector('h1'));
+```
+
+Your `h1` should have the text `CSS FLEXBOX PHOTO GALLERY`. Remember that casing matters.
+
+```js
+assert(document?.querySelector('.header')?.querySelector('h1')?.innerText === 'CSS FLEXBOX PHOTO GALLERY')
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+--fcc-editable-region--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox Photo Gallery</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+  </body>
+</html>
+--fcc-editable-region--
+```
+
+```css
+
+```

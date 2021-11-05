@@ -1,6 +1,6 @@
 ---
 id: 587d7fb0367417b2b2512bed
-title: Meet the Node console
+title: Bienvenido a la consola de Node
 challengeType: 2
 forumTopicId: 301515
 dashedName: meet-the-node-console
@@ -8,29 +8,27 @@ dashedName: meet-the-node-console
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+Trabajar en estos desafíos implica escribir tu código usando uno de los siguientes métodos:
 
-- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-express/) and complete these challenges locally.
-- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-express) to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+- Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-express/) y completa estos desafíos localmente.
+- Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-express) para completar estos desafíos.
+- Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. A continuación, envía la URL en el campo `Solution Link`.
 
-During the development process, it is important to be able to check what’s going on in your code.
+Durante el proceso de desarrollo, es importante poder comprobar lo que está pasando en tu código.
 
-Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see console output in a terminal. On Replit, a terminal is open in the right pane by default.
+Node es sólo un entorno JavaScript. Al igual que JavaScript en el lado del cliente, puedes usar la consola para mostrar información útil de depuración. En tu máquina local, verías la salida de la consola en una terminal. En Replit, una terminal está abierta por defecto en el panel derecho.
 
-We recommend to keep the terminal open while working at these challenges. By reading the output in the terminal, you can see any errors that may occur.
+Recomendamos mantener la terminal abierta mientras trabajamos en estos desafíos. Al leer la salida en la terminal, puedes ver cualquier error que pueda ocurrir.
 
 # --instructions--
 
-If you have not already done so, please read the instructions in [the introduction](/learn/back-end-development-and-apis/basic-node-and-express/) and start a new project on Repl.it using [this link](https://repl.it/github/freeCodeCamp/boilerplate-express).
-
-Modify the `myApp.js` file to log "Hello World" to the console.
+Modifica el archivo `myApp.js` para escribir "Hello World" en la consola.
 
 # --hints--
 
-`"Hello World"` should be in the console
+`"Hello World"` debe estar en la consola
 
 ```js
 (getUserInput) =>

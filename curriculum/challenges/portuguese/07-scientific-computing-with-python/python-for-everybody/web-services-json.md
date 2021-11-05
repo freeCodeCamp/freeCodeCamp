@@ -3,6 +3,10 @@ id: 5e7b9f140b6c005b0e76f07d
 title: 'Serviços da web: JSON'
 challengeType: 11
 videoId: ZJE-U56BppM
+bilibiliIds:
+  aid: 419491911
+  bvid: BV1r3411672w
+  cid: 377332928
 dashedName: web-services-json
 ---
 

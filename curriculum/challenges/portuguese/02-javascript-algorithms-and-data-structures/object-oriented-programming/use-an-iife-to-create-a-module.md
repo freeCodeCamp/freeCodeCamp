@@ -8,7 +8,7 @@ dashedName: use-an-iife-to-create-a-module
 
 # --description--
 
-Uma expressão de função imediatamente invocada (IIFE) é frequentemente utilizado para agrupar funcionalidades relacionadas para um único objeto ou <dfn>módulo</dfn>. Por exemplo, um desafio anterior definiu dois mixins:
+Uma expressão de função imediatamente invocada (IIFE) é frequentemente utilizada para agrupar funcionalidades relacionadas para um único objeto ou <dfn>módulo</dfn>. Por exemplo, um desafio anterior definiu dois mixins:
 
 ```js
 function glideMixin(obj) {
@@ -23,7 +23,7 @@ function flyMixin(obj) {
 }
 ```
 
-Nos podemos agrupar esses mixins em um módulo como o seguinte:
+Podemos agrupar esses mixins em um módulo como o seguinte:
 
 ```js
 let motionModule = (function () {

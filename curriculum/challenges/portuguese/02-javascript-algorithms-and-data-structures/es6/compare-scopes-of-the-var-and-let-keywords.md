@@ -8,6 +8,8 @@ dashedName: compare-scopes-of-the-var-and-let-keywords
 
 # --description--
 
+Se você não estiver familiarizado com `let`, confira [este desafio](/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords).
+
 Quando você declara uma variável com a palavra-chave `var`, ela é declarada globalmente, ou localmente se declarada dentro de uma função.
 
 A palavra-chave `let` se comporta de forma similar, mas com alguns recursos extras. Quando você declara a variável com a palavra-chave `let` dentro de um bloco, declaração, ou expressão, seu escopo é limitado ao bloco, declaração, ou expressão.
@@ -85,16 +87,13 @@ Este exercício foi projetado para ilustrar a diferença ente como as palavras-c
 `var` não deve existir no código.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert(!code.match(/var/g));
 ```
 
 A variável `i` declarada dentro do corpo do comando `if` deve ser igual a string `block scope`.
 
 ```js
-(getUserInput) =>
-  assert(
-    getUserInput('index').match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g)
-  );
+assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
 ```
 
 `checkScope()` deve retornar a string `function scope`

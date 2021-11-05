@@ -78,6 +78,13 @@
           ""
         ]
       },
+      "css-box-model": {
+        "title": "Modelo da caixa do CSS",
+        "intro": [
+          "Mark Rothko era conhecido por seu estilo abstrato de pintura. As pinturas de Rothko comumente retratavam regiões retangulares coloridas em tamanhos variados.",
+          "Nesta lição, você usará o CSS para criar sua própria pintura no estilo de Rothko. Você usará muitas das habilidades que você já está praticando, bem como novas ferramentas do CSS como o desfoque (blur) e a transformação (transform)."
+        ]
+      },
       "css-variables-skyline": {
         "title": "Horizonte com variáveis de CSS",
         "intro": [
@@ -85,11 +92,53 @@
           ""
         ]
       },
-      "css-picasso-painting": {
-        "title": "CSS Picasso Painting",
+      "registration-form": {
+        "title": "Formulário de inscrição",
         "intro": [
-          "Pablo Picasso was known for his Cubism style of painting, a style recognized by representations of objects broken down and reassembled from multiple perspectives. Picasso's paintings are often highly abstract and thought provoking.",
-          "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
+          "",
+          ""
+        ]
+      },
+      "accessibility-quiz": {
+        "title": "Teste de acessibilidade",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-picasso-painting": {
+        "title": "Pintura de Picasso em CSS",
+        "intro": [
+          "Pablo Picasso era conhecido pelo seu estilo de pintura, o Cubismo, um estilo reconhecido pelas representações de objetos quebrados e remontados a partir de múltiplas perspectivas. As pinturas de Picasso são muitas vezes muito abstratas e fazem pensar.",
+          "Neste curso, você usará o CSS para criar sua própria pintura ao estilo de Picasso. Você aprenderá sobre os ícones SVG FontAwesome, posicionamento em CSS e reforçará as habilidades que você já está aprendendo."
+        ]
+      },
+      "css-piano": {
+        "title": "Piano em CSS",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-photo-gallery": {
+        "title": "Galeria de fotos em CSS",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-grid-magazine": {
+        "title": "Revista em CSS Grid",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-nutrition-label": {
+        "title": "Rótulo nutricional em CSS",
+        "intro": [
+          "",
+          ""
         ]
       }
     }
@@ -115,7 +164,7 @@
         "intro": [
           "ECMAScript, ou ES, é uma versão padronizada do JavaScript. Como todos os principais navegadores seguem essa especificação, os termos ECMAScript e JavaScript são intercambiáveis.",
           "A maior parte do JavaScript que você aprendeu até este momento estava na ES5 (ECMAScript 5), que foi finalizada em 2009. Mesmo que você ainda possa escrever programas em ES5, saiba que o JavaScript está constantemente em evolução e, por isso, novas funcionalidades são lançadas todos os anos.",
-          "O ES6, lançado em 2015, adicionou muitos recursos novos e poderosos à linguagem. Neste curso, você aprenderá quais são eles, incluindo <code>let</code> e <code>const</code>, arrow functions, classes, promises e módulos."
+          "O ES6, lançado em 2015, adicionou muitos recursos novos e poderosos à linguagem. Neste curso, você aprenderá quais são eles, incluindo arrow functions, desestruturação, classes, promises e módulos."
         ]
       },
       "regular-expressions": {
@@ -306,13 +355,15 @@
   "relational-databases": {
     "title": "Bancos de dados relacionais",
     "intro": [
-      "placeholder"
+      "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos."
     ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Aprenda bancos de dados relacionais",
         "intro": [
-          "placeholder"
+          "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e manipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
+          "Depois, você aprenderá a criar e trabalhar com bancos de dados relacionados usando o PostgreSQL, um sistema de gerenciamento de banco de dados, e o SQL, a linguagem destes bancos de dados.",
+          "Por fim, você aprenderá o Git, um sistema de controle de versão, e o GitHub, um serviço de hospedagem e repositório de código - duas ferramentas essenciais para todo o desenvolvedor."
         ]
       }
     }

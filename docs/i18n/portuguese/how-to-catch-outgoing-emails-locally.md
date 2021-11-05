@@ -29,11 +29,13 @@ docker stop mailhog
 
 para para-lo.
 
-Quando a instalação for concluída, você pode começar a [usar o MailHog](#using-mailhog). </details>
+Quando a instalação for concluída, você pode começar a [usar o MailHog](#using-mailhog).
+
+</details>
 
 <details><summary>Instalando o MailHog no macOS</summary>
 
-Instale o MailHog no macOS com o [Homebrew](https://brew.sh/):
+Instale o MailHog no macOS com [Homebrew](https://brew.sh/):
 
 ```bash
 brew install mailhog
@@ -42,7 +44,9 @@ brew services start mailhog
 
 Os comandos acima iniciarão um serviço do mailhog em segundo plano.
 
-Quando a instalação for concluída, você pode começar a [usar o MailHog](#using-mailhog). </details>
+Quando a instalação for concluída, você pode começar a [usar o MailHog](#using-mailhog).
+
+</details>
 
 <details><summary>Instalando o MailHog no Windows</summary>
 
@@ -52,7 +56,9 @@ Quando o download terminar, clique para abrir o arquivo. Uma notificação de fi
 
 Feche o MailHog fechando a janela do prompt. Para iniciar o MailHog novamente, clique no executável do MailHog (.exe) arquivo que foi baixado inicialmente - não é necessário baixar um novo arquivo de instalação do MailHog.
 
-Comece a [usar o MailHog](#using-mailhog). </details>
+Comece a [usar o MailHog](#using-mailhog).
+
+</details>
 
 <details><summary>Instalando o MailHog no Linux</summary>
 
@@ -92,7 +98,9 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-Comece a [usar o MailHog](#using-mailhog). </details>
+Comece a [usar o MailHog](#using-mailhog).
+
+</details>
 
 ## Usando o MailHog
 
@@ -102,11 +110,11 @@ Abra uma nova guia ou janela do navegador e navegue até [http://localhost:8025]
 
 E-mails enviados pela instalação do seu freeCodeCamp aparecerão assim
 
-![Captura de tela MailHog 2](https://contribute.freecodecamp.org/images/mailhog/2.jpg)
+![Captura de tela do MailHog 2](https://contribute.freecodecamp.org/images/mailhog/2.jpg)
 
 Duas guias que permitem que você veja texto simples ou conteúdo fonte estarão disponíveis quando você abrir um determinado e-mail. Certifique-se de que a aba de texto simples esteja selecionada como abaixo.
 
-![Captura de tela MailHog 3](https://contribute.freecodecamp.org/images/mailhog/3.jpg)
+![Captura de tela do MailHog 3](https://contribute.freecodecamp.org/images/mailhog/3.jpg)
 
 Todos os links no e-mail devem ser clicáveis e redirecionar para a URL deles.
 

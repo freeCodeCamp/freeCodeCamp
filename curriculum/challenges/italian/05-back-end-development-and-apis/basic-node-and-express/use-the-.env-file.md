@@ -22,6 +22,8 @@ Poi, nel gestore della rotta GET `/json` che hai creato nell'ultima sfida, trasf
 
 **Nota:** Se stai usando Replit, non puoi creare un file `.env`. Utilizza invece la scheda <dfn>SECRETS</dfn> integrata per aggiungere la variabile.
 
+Se stai lavorando in locale, avrai bisogno del pacchetto `dotenv`. Carica le variabili ambientali dal tuo file `.env` in `process.env`. Installalo con `npm install dotenv`. Quindi, in cima al tuo file `myApp.js`, importa e carica le variabili con `require('dotenv').config()`.
+
 # --hints--
 
 La risposta dell'endpoint `/json` dovrebbe cambiare in base alla variabile d'ambiente `MESSAGE_STYLE`

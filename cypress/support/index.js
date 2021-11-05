@@ -18,3 +18,14 @@ import './commands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.on('uncaught:exception', err => {
+  // Rapidly cy.visiting pages seems to cause an uncaught exception. This seems
+  // to be a testing artifact, since users can't click fast enough to cause this
+  // (to our knowledge).
+  if (err.name === 'ChunkLoadError') {
+    return false;
+  }
+  // We are still interested in other errors.
+  return true;
+});

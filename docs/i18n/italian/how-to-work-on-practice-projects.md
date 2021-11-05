@@ -10,7 +10,7 @@ Se vuoi creare nuovi passi, i seguenti strumenti semplificano quel processo.
 
 ## create-next-step
 
-Uno script eseguito una sola volta che aggiungerà automaticamente il prossimo passo basandosi sull'ultimo numerato come `part-xxx.md`, dove `xxx` rappresenta il numero a 3 cifre dell'ultimo passo. Il codice seed della sfida userà il codice seed di quella precedente, rimuovendo i marcatori delle regioni editabili (MRE).
+Uno script eseguito una sola volta che aggiungerà automaticamente il prossimo passo basandosi sull'ultimo numerato come `step-xxx.md`, dove `xxx` rappresenta il numero a 3 cifre dell'ultimo passo. Il codice seed della sfida userà il codice seed di quella precedente, rimuovendo i marcatori delle regioni editabili (MRE).
 
 **Nota:** Questo script esegue anche [reorder-steps](#reorder-steps).
 
@@ -75,40 +75,40 @@ Uno script eseguito una sola volta che riordina automaticamente i file dei passi
 Diciamo che inizi con la seguente struttura:
 
 ```bash
-part-1.md
-part-2.md
-part-3.md
-part-4.md
-part-5.md
-part-6.md
+step-001.md
+step-002.md
+step-003.md
+step-004.md
+step-005.md
+step-006.md
 ```
 
-A un certo punto decidi che hai bisogno di eliminare  `part-2.md`, perché quel passo non è più necessario. Inoltre, decidi di dividere `part-4.md` in tre passi invece di uno.
+A un certo punto decidi che hai bisogno di eliminare  `part-002.md`, perché quel passo non è più necessario. Inoltre, decidi di dividere `step-004.md` in tre passi invece di uno.
 
-Per ottenere questa ristrutturazione, avresti bisogno di eliminare  `part-2.md` e poi aggiungere un `part-4a.md` e un `part-4b.md`. La nuova struttura della cartella assomiglierà alla seguente:
+Per ottenere questa ristrutturazione, avresti bisogno di eliminare  `step-002.md` e poi aggiungere un `step-4a.md` e un `step-4b.md`. La nuova struttura della cartella assomiglierà alla seguente:
 
 ```bash
-part-001.md
-part-003.md
-part-004.md
-part-004a.md
-part-004b.md
-part-005.md
-part-006.md
+step-001.md
+step-003.md
+step-004.md
+step-004a.md
+step-004b.md
+step-005.md
+step-006.md
 ```
 
-Adesso serve che i nomi dei file vadano da `part-1.md` a `part-7.md`, poiché ne hai rimosso uno ma ne hai aggiunti due, con una differenza netta di un file. Inoltre, la presentazione di ogni file sotto un passo rimosso o aggiunto dovrà essere modificata rendendo il valore della chiave `title` uguale al nuovo numero del passo. Ad esempio, dopo aver rinominato `part-3.md` in `part-2.md`, dovrai cambiare il titolo di `part-2.md` da `Part 03` a `Part 02`.
+Adesso serve che i nomi dei file vadano da `step-001.md` a `step-007.md`, poiché ne hai rimosso uno ma ne hai aggiunti due, con una differenza netta di un file. Inoltre, la presentazione di ogni file sotto un passo rimosso o aggiunto dovrà essere modificata rendendo il valore della chiave `title` uguale al nuovo numero del passo. Ad esempio, dopo aver rinominato `part-3.md` in `step-2.md`, dovrai cambiare il titolo di `step-2.md` da `Step 03` a `Step 02`.
 
 Vedi qui sotto per gli effettivi cambiamenti necessari alla cartella del progetto:
 
 ```bash
-part-001.md
-part-003.md rinominato in part-002.md e titolo cambiato in "Part 2"
-part-004.md rinominato in part-003.md e titolo cambiato in "Part 3"
-part-004a.md rinominato in part-004.md e titolo cambiato in "Part 4"
-part-004b.md rinominato in part-005.md e titolo cambiato in "Part 5"
-part-005.md rinominato in part-006.md e titolo cambiato in "Part 6"
-part-006.md rinominato in part-007.md e titolo cambiato in "Part 7"
+step-001.md
+step-003.md rinominato a step-002.md e titolo cambiato a "Step 2"
+step-004.md rinominato a step-003.md e titolo cambiato a "Step 3"
+step-004a.md rinominato a step-004.md e titolo cambiato a "Step 4"
+step-004b.md rinominato a step-005.md e titolo cambiato a"Step 5"
+step-005.md rinominato a step-006.md e titolo cambiato a "Step 6"
+step-006.md rinominato a step-007.md e titolo cambiato a "Step 7"
 ```
 
 Insieme ai cambi qui sopra, la chiave `challengeOrder` nel file `meta.json` del progetto deve riflettere il nuovo ordine dei passi. Questo è necessario perché ogni passo sotto la cancellazione e/o l'aggiunta di un passo cambia il `title` associato ad ognuno degli `id` delle sfide ai passi interessati.

@@ -13,13 +13,13 @@ dashedName: use-bracket-notation-to-find-the-first-character-in-a-string
 
 La maggior parte dei moderni linguaggi di programmazione, come JavaScript, non inizia a contare da 1 come gli esseri umani. Loro iniziano dallo 0. Questo è indicato come indicizzazione <dfn>Zero-based</dfn>.
 
-Ad esempio, il carattere all'indice 0 nella parola `Charles` è `C`. Quindi, se `var firstName = "Charles"`, è possibile ottenere il valore della prima lettera della stringa utilizzando `firstName[0]`.
+Ad esempio, il carattere all'indice 0 nella parola `Charles` è `C`. Quindi, se `const firstName = "Charles"`, è possibile ottenere il valore della prima lettera della stringa utilizzando `firstName[0]`.
 
 Esempio:
 
 ```js
-var firstName = "Charles";
-var firstLetter = firstName[0];
+const firstName = "Charles";
+const firstLetter = firstName[0];
 ```
 
 `firstLetter` dovrebbe avere un valore stringa `C`.
@@ -56,8 +56,8 @@ assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```js
 // Setup
-var firstLetterOfLastName = "";
-var lastName = "Lovelace";
+let firstLetterOfLastName = "";
+const lastName = "Lovelace";
 
 // Only change code below this line
 firstLetterOfLastName = lastName; // Change this line
@@ -66,8 +66,8 @@ firstLetterOfLastName = lastName; // Change this line
 # --solutions--
 
 ```js
-var firstLetterOfLastName = "";
-var lastName = "Lovelace";
+let firstLetterOfLastName = "";
+const lastName = "Lovelace";
 
 // Only change code below this line
 firstLetterOfLastName = lastName[0];

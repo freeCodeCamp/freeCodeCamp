@@ -45,7 +45,7 @@ assert(alphabetRegexV2.global);
 assert(/\\w/.test(alphabetRegexV2.source));
 ```
 
-你的正則表達式應該在 `The five boxing wizards jump quickly.` 中匹配到 31 個非字母數字字符。
+你的正則表達式應該在 `The five boxing wizards jump quickly.` 中匹配到 31 個字母數字字符。
 
 ```js
 assert(
@@ -53,7 +53,7 @@ assert(
 );
 ```
 
-你的正則表達式應該在 `Pack my box with five dozen liquor jugs.` 中匹配到 32 個非字母數字字符。
+你的正則表達式應該在 `Pack my box with five dozen liquor jugs.` 中匹配到 32 個字母數字字符。
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-你的正則表達式應該在 `How vexingly quick daft zebras jump!` 中匹配到 30 個非字母數字字符。
+你的正則表達式應該在 `How vexingly quick daft zebras jump!` 中匹配到 30 個字母數字字符。
 
 ```js
 assert(

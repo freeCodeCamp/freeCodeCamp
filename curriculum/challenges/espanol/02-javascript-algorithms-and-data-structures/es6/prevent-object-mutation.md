@@ -10,7 +10,7 @@ dashedName: prevent-object-mutation
 
 Como se vio en el desafío anterior, la declaración `const` por sí sola no protege la información de la mutación. Para asegurar que tu información no cambie, JavaScript provee una función `Object.freeze` para prevenir la mutación de datos.
 
-Una vez que el objeto está congelado, ya no puedes agregar, actualizar o borrar propiedades alojadas en él. Cualquier intento de cambiar el objeto será rechazado sin ningún error.
+Cualquier intento de cambiar el objeto será rechazado, lanzando un error si el script se ejecuta en modo estricto (strict mode).
 
 ```js
 let obj = {
@@ -23,7 +23,7 @@ obj.newProp = "Test";
 console.log(obj); 
 ```
 
-Las asignaciones `obj.review` y `obj.newProp` provocarán errores y la consola mostrará el valor `{ name: "FreeCodeCamp", review: "Awesome" }`.
+Las asignaciones `obj.review` y `obj.newProp` provocarán errores, porque nuestro editor se ejecuta en modo estricto por defecto, y la consola mostrará el valor `{ name: "FreeCodeCamp", review: "Awesome" }`.
 
 # --instructions--
 

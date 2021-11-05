@@ -22,8 +22,8 @@ Alguns membros da comunidade também desenvolvem no Windows 10 nativamente com G
 
 | Pré-requisito                                                                                       | Versão  | Observações                                                                                 |
 | --------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                        | `14.x`  | Usamos a versão "Active LTS". Consulte [Agenda LTS](https://nodejs.org/en/about/releases/). |
-| npm (vem junto com o Node)                                                                          | `6.x`   | O `npm` não tem lançamentos em LTS. Usamos a versão incluída na Active LTS do Node.js.      |
+| [Node.js](http://nodejs.org)                                                                        | `16.x`  | Usamos a versão "Active LTS". Consulte [Agenda LTS](https://nodejs.org/en/about/releases/). |
+| npm (vem junto com o Node)                                                                          | `8.x`   | Usamos a versão que vem com o Node.js Active LTS.                                           |
 | [Servidor da Comunidade MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | -                                                                                           |
 
 > [!ATTENTION] Se você tem uma versão diferente, instale a versão recomendada. Só podemos suportar problemas de instalação para versões recomendadas. Veja [solução de problemas](#troubleshooting) para detalhes.
@@ -167,20 +167,30 @@ As chaves de API padrão e variáveis de ambiente são armazenadas no arquivo `s
 
 ```console
 # Crie uma cópia da "sample.env" e a nomeie como ".env".
-# Preencha com as chaves secretas da API necessárias:
+# Preencher com as chaves e segredos de API necessários:
+```
 
-# macOS / Linux
+<!-- tabs:start -->
+
+#### **macOS/Linux**
+
+```console
 cp sample.env .env
+```
 
-# Windows
+#### **Windows**
+
+```console
 copy sample.env .env
 ```
+
+<!-- tabs:end -->
 
 As chaves no arquivo `.env` _ não _ precisam ser alteradas para executar o aplicativo localmente. Você pode deixar os valores padrão copiados de `sample.env` como estão.
 
 > [!TIP] Lembre-se: se quiser usar serviços como Auth0 ou Algolia, você terá que adquirir suas próprias chaves da API para estes serviços e editar as entradas no arquivo `.env`.
 
-#### Etapa 2: Instale as dependências
+#### Etapa 2: Instalar as dependências
 
 Esta etapa vai instalar as dependências necessárias para a execução do aplicativo:
 
@@ -188,7 +198,7 @@ Esta etapa vai instalar as dependências necessárias para a execução do aplic
 npm ci
 ```
 
-#### Etapa 3: Inicie o MongoDB e crie o banco de dados
+#### Etapa 3: Iniciar o MongoDB e criar o banco de dados
 
 Antes de executar o aplicativo localmente, você precisará iniciar o serviço MongoDB.
 
@@ -196,19 +206,25 @@ Antes de executar o aplicativo localmente, você precisará iniciar o serviço M
 
 Inicie o servidor do MongoDB em um terminal separado:
 
-- No macOS e no Ubuntu:
+  <!-- tabs:start -->
 
-  ```console
-  mongod
-  ```
+#### **macOS/Linux**
+
+```console
+mongod
+```
+
+#### **Windows**
 
 - No Windows, você deve especificar o caminho completo para o binário do `mongod`
 
-  ```console
-  "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-  ```
+```console
+"C:\Arquivos de programa\MongoDB\Server\3.6\bin\mongod"
+```
 
-  Certifique-se de substituir `3.6` pela versão que você instalou
+  <!-- tabs:end -->
+
+Certifique-se de substituir `3.6` pela versão que você instalou
 
 > [!TIP] Você pode evitar ter que executar o MongoDB toda vez instalando-o como um serviço em segundo plano. Você pode [aprender mais sobre isso na documentação para seu OS](https://docs.mongodb.com/manual/administration/install-community/)
 
@@ -218,9 +234,9 @@ Em seguida, vamos criar o banco de dados. Nesta etapa, executamos o comando abai
 npm run seed
 ```
 
-#### Passo 4: Inicie o aplicativo de client do freeCodeCamp e o servidor de API
+#### Etapa 4: Iniciar o aplicativo client do freeCodeCamp e o servidor de API
 
-Agora você pode iniciar o servidor de API e os aplicativos do client.
+Agora você pode iniciar o servidor de API e os aplicativos do cliente.
 
 ```console
 npm run develop
@@ -248,7 +264,7 @@ Apenas clique em **"Visualizar página personalizada 404"** e você será redire
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Como fazer login ao trabalhar localmente" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Como fazer login quando se está trabalhando localmente" />
 </details>
 
 ## Fazendo alterações localmente
@@ -515,14 +531,16 @@ git clean -ifdX
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Como limpar arquivos não rastreados do git" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Como limpar arquivos git não rastreados" />
 </details>
 
 ### Problemas com API, login, Envios de Desafios, etc.
 
 Se você não conseguir fazer o login e se vir um banner com uma mensagem de erro dizendo que isso será reportado ao freeCodeCamp, verifique novamente se a porta local `3000` não está em uso por um programa diferente.
 
-**No Linux/macOS/WSL no Windows – no terminal:**
+<!-- tabs:start -->
+
+#### **macOS/Linux/WSL no Windows - No Terminal:**
 
 ```console
 netstat -a | grep "3000"
@@ -530,7 +548,7 @@ netstat -a | grep "3000"
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**No Windows – no PowerShell com privilégios:**
+#### **No Windows – no PowerShell com privilégios:**
 
 ```powershell
 netstat -ab | Select-String "3000"
@@ -538,9 +556,13 @@ netstat -ab | Select-String "3000"
 TCP    0.0.0.0:3000           DESKTOP      LISTENING
 ```
 
+<!-- tabs:end -->
+
+---
+
 ### Problemas ao instalar dependências
 
-Se você receber erros durante a instalação das dependências, certifique-se de que você não está em uma rede restrita ou suas configurações de firewall não impedem você de acessar os recursos.
+Se você receber erros durante a instalação das dependências, por favor, certifique-se de que você não está em uma rede restrita ou suas configurações de firewall não impedem você de acessar os recursos.
 
 A primeira configuração pode demorar um pouco, dependendo da largura de banda da sua rede. Tenha paciência. Se você ainda tiver problemas, recomendamos usar o GitPod invés de uma configuração off-line.
 

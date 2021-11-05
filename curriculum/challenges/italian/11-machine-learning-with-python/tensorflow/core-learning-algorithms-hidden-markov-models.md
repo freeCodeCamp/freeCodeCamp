@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d90
 title: 'Algoritmi di apprendimento principali: Modelli di Markov a stati nascosti'
 challengeType: 11
 videoId: IZg24y4wEPY
+bilibiliIds:
+  aid: 633081400
+  bvid: BV1tb4y1y72V
+  cid: 409129376
 dashedName: core-learning-algorithms-hidden-markov-models
 ---
 

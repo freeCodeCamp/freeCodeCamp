@@ -16,7 +16,7 @@ this.setState({
 });
 ```
 
-React espera que nunca modifiques `state` directamente. En su lugar, siempre usa `this.setState()` cuando ocurran cambios de estado. Además, ten en cuenta que React puede agrupar múltiples actualizaciones de estado con el fin de mejorar el rendimiento. Esto significa que las actualizaciones de estado a través del método `setState` pueden ser asíncronas. Existe una sintaxis alternativa para el método `setState` que proporciona una forma de evitar ese problema. Esto es raramente necesario, ¡pero es bueno tenerlo en cuenta! Por favor, consulte la [documentación de React](https://facebook.github.io/react/docs/state-and-lifecycle.html) para más información.
+React espera que nunca modifiques `state` directamente. En su lugar, siempre usa `this.setState()` cuando ocurran cambios de estado. Además, ten en cuenta que React puede agrupar múltiples actualizaciones de estado con el fin de mejorar el rendimiento. Esto significa que las actualizaciones de estado a través del método `setState` pueden ser asíncronas. Existe una sintaxis alternativa para el método `setState` que proporciona una forma de evitar ese problema. Esto es raramente necesario, ¡pero es bueno tenerlo en cuenta! Por favor, consulta la [documentación de React](https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous) para más información.
 
 # --instructions--
 
@@ -41,7 +41,7 @@ assert(
 assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1);
 ```
 
-El encabezado `h1` renderizado debe contener texto renderizado desde el estado del componente.
+El encabezado renderizado `h1` sólo debe contener texto renderizado del estado del componente.
 
 ```js
 async () => {

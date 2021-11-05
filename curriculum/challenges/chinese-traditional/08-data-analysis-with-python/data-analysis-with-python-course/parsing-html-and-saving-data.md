@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c164
 title: 解析 HTML 和保存數據
 challengeType: 11
 videoId: bJaqnTWQmb0
+bilibiliIds:
+  aid: 335522976
+  bvid: BV1RA411F7vi
+  cid: 409023170
 dashedName: parsing-html-and-saving-data
 ---
 
@@ -12,14 +16,14 @@ dashedName: parsing-html-and-saving-data
 
 更多資源：
 
--   [在 GitHub 平臺的 Notebooks](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-17-reading-html-tables/files)
+-   [在 GitHub 平臺的 Notebooks](https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas)
 -   [如何使用 Google Colab 來打開 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-爲了解析 HTML 文本和提取表格，`.read_html()` 位於哪個 Python 的庫？
+哪個 Python 庫有 `.read_html()` 方法，我們可以用於解析 HTML 文檔和提取表格？
 
 ## --answers--
 

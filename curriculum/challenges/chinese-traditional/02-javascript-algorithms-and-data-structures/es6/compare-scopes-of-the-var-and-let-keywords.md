@@ -85,16 +85,13 @@ console.log(i);
 代碼中不應該出現 `var`。
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert(!code.match(/var/g));
 ```
 
 `if` 語句中聲明的變量 `i` 應該等於字符串 `block scope`。
 
 ```js
-(getUserInput) =>
-  assert(
-    getUserInput('index').match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g)
-  );
+assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
 ```
 
 `checkScope()` 應該返回字符串 `function scope`。

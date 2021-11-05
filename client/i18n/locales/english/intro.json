@@ -72,8 +72,20 @@
         "title": "Basic CSS Cafe Menu",
         "intro": ["", ""]
       },
+      "css-box-model": {
+        "title": "CSS Box Model",
+        "intro": [
+          "Mark Rothko was known for his abstract style of painting. Rothko paintings commonly depicted rectangular regions of color in varying sizes.",
+          "In this lesson, you will be using CSS to create your own painting in Rothko's style. You will use many of the skills you have already been practicing, as well as new CSS tool such as blur and transform."
+        ]
+      },
       "css-variables-skyline": {
         "title": "CSS Variables Skyline",
+        "intro": ["", ""]
+      },
+      "registration-form": { "title": "Registration Form", "intro": ["", ""] },
+      "accessibility-quiz": {
+        "title": "Accessibility Quiz",
         "intro": ["", ""]
       },
       "css-picasso-painting": {
@@ -82,6 +94,13 @@
           "Pablo Picasso was known for his Cubism style of painting, a style recognized by representations of objects broken down and reassembled from multiple perspectives. Picasso's paintings are often highly abstract and thought provoking.",
           "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
         ]
+      },
+      "css-piano": { "title": "CSS Piano", "intro": ["", ""] },
+      "css-photo-gallery": { "title": "CSS Photo Gallery", "intro": ["", ""] },
+      "css-grid-magazine": { "title": "CSS Grid Magazine", "intro": ["", ""] },
+      "css-nutrition-label": {
+        "title": "CSS Nutrition Label",
+        "intro": ["", ""]
       }
     }
   },
@@ -106,7 +125,7 @@
         "intro": [
           "ECMAScript, or ES, is a standardized version of JavaScript. Because all major browsers follow this specification, the terms ECMAScript and JavaScript are interchangeable.",
           "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is constantly evolving, and new features are released every year.",
-          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including <code>let</code> and <code>const</code>, arrow functions, classes, promises, and modules."
+          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including arrow functions, destructuring, classes, promises, and modules."
         ]
       },
       "regular-expressions": {
@@ -276,19 +295,22 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": {
-        "title": "D3 Dashboard",
-        "intro": ["", ""]
-      }
+      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
     }
   },
   "relational-databases": {
     "title": "Relational Databases",
-    "intro": ["placeholder"],
+    "intro": [
+      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects."
+    ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Learn Relational Databases",
-        "intro": ["placeholder"]
+        "intro": [
+          "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
+          "Next, you will learn how to create and work with relational databases using PostgreSQL, a database management system, and SQL, the language of these databases.",
+          "Finally, you will learn Git, the version control system, and GitHub, a code repository hosting service - two essential tools of every developer."
+        ]
       }
     }
   },

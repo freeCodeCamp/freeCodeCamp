@@ -2,7 +2,6 @@
 id: 567af2437cbaa8c51670a16c
 title: Testing Objects for Properties
 challengeType: 1
-videoUrl: 'https://scrimba.com/c/c6Wz4ySr'
 forumTopicId: 18324
 dashedName: testing-objects-for-properties
 ---
@@ -14,10 +13,11 @@ Sometimes it is useful to check if the property of a given object exists or not.
 **Example**
 
 ```js
-var myObj = {
+const myObj = {
   top: "hat",
   bottom: "pants"
 };
+
 myObj.hasOwnProperty("top");
 myObj.hasOwnProperty("middle");
 ```

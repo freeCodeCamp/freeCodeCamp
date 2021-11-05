@@ -11,13 +11,13 @@ dashedName: use-bracket-notation-to-find-the-nth-to-last-character-in-a-string
 
 Você pode usar o mesmo princípio que nós acabamos de usar para recuperar o último caractere em uma string, para recuperar o enésimo caractere antes do último caractere.
 
-Por exemplo, você pode pegar o valor da antepenúltima letra da string `var firstName = "Augusta"` usando `firstName[firstName.length - 3]`
+Por exemplo, você pode pegar o valor da antepenúltima letra da string `const firstName = "Augusta"` usando `firstName[firstName.length - 3]`
 
 Exemplo:
 
 ```js
-var firstName = "Augusta";
-var thirdToLastLetter = firstName[firstName.length - 3];
+const firstName = "Augusta";
+const thirdToLastLetter = firstName[firstName.length - 3];
 ```
 
 `thirdToLastLetter` teria o valor da string `s`.
@@ -54,15 +54,15 @@ assert(code.match(/\.length/g).length > 0);
 
 ```js
 // Setup
-var lastName = "Lovelace";
+const lastName = "Lovelace";
 
 // Only change code below this line
-var secondToLastLetterOfLastName = lastName; // Change this line
+const secondToLastLetterOfLastName = lastName; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var lastName = "Lovelace";
-var secondToLastLetterOfLastName = lastName[lastName.length - 2];
+const lastName = "Lovelace";
+const secondToLastLetterOfLastName = lastName[lastName.length - 2];
 ```

@@ -12,7 +12,7 @@ Bootstrap 有着豐富的預定義按鈕顏色。 淺藍色的 `btn-info` class 
 
 在 `Like` 按鈕下方創建包含文本 `Info` 的塊級 Bootstrap 按鈕，然後爲該按鈕添加 Bootstrap 的 `btn-info` 和 `btn-block` classes。
 
-注意：這些按鈕仍然需要 `btn` 和 `btn-block` classes。
+注意：這些按鈕仍然需要 `btn` 和 `btn-block` class。
 
 # --hints--
 
@@ -81,9 +81,9 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <button class="btn btn-block btn-primary">Like</button>
   <p>Things cats love:</p>
   <ul>
@@ -144,9 +144,9 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <button class="btn btn-block btn-primary">Like</button>
   <button class="btn btn-block btn-info">Info</button>
 

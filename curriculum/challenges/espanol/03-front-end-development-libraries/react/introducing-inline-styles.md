@@ -31,7 +31,6 @@ Los elementos JSX usan el atributo `style`, pero debido a la forma en que JSX es
 Agrega un atributo `style` al `div` en el editor de código para darle al texto un color rojo y un tamaño de fuente de `72px`.
 
 Ten en cuenta que puedes establecer opcionalmente el tamaño de la fuente para que sea un número, omitiendo las unidades `px`, o escribirlo como `72px`.
-
 # --hints--
 
 El componente debe renderizar un elemento `div`.

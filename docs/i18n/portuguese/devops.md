@@ -917,3 +917,20 @@ Nós usamos [uma ferramenta de linha de comando](https://github.com/freecodecamp
 6. Execute a ferramenta para enviar os e-mails, seguindo a [documentação](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
 
 7. Quando o disparo de email estiver completo, verifique se nenhum e-mail falhou antes de destruir os droplets.
+
+# Manual de Voo - adicionando instâncias de notícias aos novos idiomas
+
+### Alterações nos temas
+
+Usamos um [tema personalizado](https://github.com/freeCodeCamp/news-theme) para nossa publicação de notícias. Adicionar as seguintes alterações ao tema permite a inserção de novos idiomas.
+
+1. Inclua a instrução else if para o novo [código de idioma ISO](https://www.loc.gov/standards/iso639-2/php/code_list.php) em [setup-local.js](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
+2. Crie uma pasta inicial de configuração duplicando a pasta [assets/config/en](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) e alterando seu nome para o novo código de idioma. (en—> es para o espanhol)
+3. Dentro da pasta do novo idioma, altere os nomes das variáveis no main.js e no footer.js para o código curto de idioma relevante (enMain —> esMain para o espanhol)
+4. Duplique o [locals/en.json](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) e renomeie-o para o código do novo idioma.
+5. Em [partials/i18n.hbs](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), adicione scripts para arquivos de configuração recém-criados.
+6. Adicionar o script day.js do idioma relacionado [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) ao [freecodecamp cdn](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
+
+### Alterações do painel do Ghost
+
+Atualize os recursos de publicação indo nas > configurações > do painel do Ghost, em General, e faça o upload do [ícone](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), do [logotipo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png) e da [capa](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png) da publicação.

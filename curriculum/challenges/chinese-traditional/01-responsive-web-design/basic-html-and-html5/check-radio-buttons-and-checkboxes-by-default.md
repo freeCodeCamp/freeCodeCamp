@@ -23,7 +23,7 @@ dashedName: check-radio-buttons-and-checkboxes-by-default
 
 # --hints--
 
-表單的第一個多選按鈕應被默認選中。
+表單的第一個單選按鈕應被默認選中。
 
 ```js
 assert($('input[type="radio"]').prop('checked'));
@@ -35,6 +35,18 @@ assert($('input[type="radio"]').prop('checked'));
 assert($('input[type="checkbox"]').prop('checked'));
 ```
 
+不應該更改 `Indoor` 標籤的內部文本。
+
+```js
+assert.equal(document.querySelector('label[for="indoor"]')?.innerText?.trim(), 'Indoor');
+```
+
+不應該更改 `Loving` 標籤的內部文本。
+
+```js
+assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), 'Loving');
+```
+
 # --seed--
 
 ## --seed-contents--
@@ -44,7 +56,7 @@ assert($('input[type="checkbox"]').prop('checked'));
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -77,7 +89,7 @@ assert($('input[type="checkbox"]').prop('checked'));
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>

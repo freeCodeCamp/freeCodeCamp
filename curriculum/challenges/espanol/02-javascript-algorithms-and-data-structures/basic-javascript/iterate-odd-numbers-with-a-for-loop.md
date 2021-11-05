@@ -14,13 +14,14 @@ Los bucles "for" no tienen que iterar de uno en uno a la vez. Al cambiar nuestra
 Empezaremos en `i = 0` y realizaremos el bucle mientras `i < 10`. Incrementaremos `i` en 2 cada bucle utilizando `i += 2`.
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 10; i += 2) {
+const ourArray = [];
+
+for (let i = 0; i < 10; i += 2) {
   ourArray.push(i);
 }
 ```
 
-`ourArray` ahora contendrá `[0,2,4,6,8]`. Cambiemos nuestra `initialization` (inicialización) para que podamos contar por números impares.
+`ourArray` ahora contendrá `[0, 2, 4, 6, 8]`. Cambiemos nuestra `initialization` (inicialización) para que podamos contar por números impares.
 
 # --instructions--
 
@@ -34,7 +35,7 @@ Debes utilizar un bucle `for` para esto.
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` debe ser igual a `[1,3,5,7,9]`.
+`myArray` debe ser igual a `[1, 3, 5, 7, 9]`.
 
 ```js
 assert.deepEqual(myArray, [1, 3, 5, 7, 9]);
@@ -52,16 +53,17 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 1; i < 10; i += 2) {
+const myArray = [];
+for (let i = 1; i < 10; i += 2) {
   myArray.push(i);
 }
 ```

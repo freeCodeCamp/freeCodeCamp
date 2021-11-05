@@ -18,7 +18,9 @@ import {
   fetchUser,
   isSignedInSelector,
   onlineStatusChange,
+  serverStatusChange,
   isOnlineSelector,
+  isServerOnlineSelector,
   userFetchStateSelector,
   userSelector,
   usernameSelector,
@@ -30,11 +32,8 @@ import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
-// preload common fonts
-// eslint-disable-next-line max-len
-// eslint-disable-next-line max-len
-// eslint-disable-next-line max-len
 
+// preload common fonts
 import './fonts.css';
 import './global.css';
 import './variables.css';
@@ -55,10 +54,12 @@ const propTypes = {
   }),
   hasMessage: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
+  isServerOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   onlineStatusChange: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
+  serverStatusChange: PropTypes.func.isRequired,
   showFooter: PropTypes.bool,
   signedInUserName: PropTypes.string,
   t: PropTypes.func.isRequired,
@@ -71,14 +72,16 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   flashMessageSelector,
   isOnlineSelector,
+  isServerOnlineSelector,
   userFetchStateSelector,
   userSelector,
   usernameSelector,
-  (isSignedIn, flashMessage, isOnline, fetchState, user) => ({
+  (isSignedIn, flashMessage, isOnline, isServerOnline, fetchState, user) => ({
     isSignedIn,
     flashMessage,
     hasMessage: !!flashMessage.message,
     isOnline,
+    isServerOnline,
     fetchState,
     theme: user.theme,
     user
@@ -87,7 +90,13 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { fetchUser, removeFlashMessage, onlineStatusChange, executeGA },
+    {
+      fetchUser,
+      removeFlashMessage,
+      onlineStatusChange,
+      serverStatusChange,
+      executeGA
+    },
     dispatch
   );
 
@@ -130,6 +139,7 @@ class DefaultLayout extends Component {
       fetchState,
       flashMessage,
       isOnline,
+      isServerOnline,
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
@@ -201,9 +211,16 @@ class DefaultLayout extends Component {
         </Helmet>
         <div className={`default-layout`}>
           <Header fetchState={fetchState} user={user} />
-          <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
+          <OfflineWarning
+            isOnline={isOnline}
+            isServerOnline={isServerOnline}
+            isSignedIn={isSignedIn}
+          />
           {hasMessage && flashMessage ? (
-            <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
+            <Flash
+              flashMessage={flashMessage}
+              removeFlashMessage={removeFlashMessage}
+            />
           ) : null}
           {children}
         </div>

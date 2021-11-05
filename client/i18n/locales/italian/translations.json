@@ -99,6 +99,7 @@
     "private-name": "Il tuo nome non apparirà sulle certificazioni, se impostato su privato.",
     "claim-legacy": "Una volta che avrai ottenuto le seguenti certificazioni gratuite di freeCodeCamp, sarai in grado di richiedere la {{cert}}:",
     "for": "Impostazioni Account per {{username}}",
+    "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
     "username": {
       "contains invalid characters": "Il nome utente \"{{username}}\" contiene caratteri non validi",
       "is too short": "Il nome utente \"{{username}}\" è troppo corto",
@@ -133,7 +134,8 @@
       "my-portfolio": "Il mio portfolio",
       "my-timeline": "La mia cronologia",
       "my-donations": "Le mie donazioni",
-      "night-mode": "Modalità Notturna"
+      "night-mode": "Modalità Notturna",
+      "sound-mode": "Campfire Mode"
     },
     "headings": {
       "certs": "Certificazioni",
@@ -286,8 +288,7 @@
       "preview": "Anteprima"
     },
     "help-translate": "Stiamo ancora traducendo le seguenti certificazioni.",
-    "help-translate-link": "Aiutaci con le traduzioni...",
-    "coder-survey": "<0>Partecipa al Sondaggio 2021 per nuovi programmatori</0> (ci vogliono circa 10 minuti - fallo per la scienza)"
+    "help-translate-link": "Aiutaci con le traduzioni..."
   },
   "donate": {
     "title": "Supporta il nostro no profit",
@@ -319,6 +320,7 @@
     "nicely-done": "Ben fatto. Hai appena completato {{block}}.",
     "credit-card": "Carta di credito",
     "credit-card-2": "O dona con una carta di credito:",
+    "or-card": "O dona con una carta",
     "paypal": "con PayPal:",
     "need-email": "Abbiamo bisogno di un indirizzo email valido a cui possiamo inviare la tua ricevuta fiscale della donazione.",
     "went-wrong": "Qualcosa è andato storto nell'elaborazione della tua donazione. La tua carta non è stata addebitata.",
@@ -364,6 +366,7 @@
   },
   "misc": {
     "offline": "Sembra che tu sia offline, i tuoi progressi potrebbero non essere salvati",
+    "server-offline": "Il server non può essere raggiunto e i tuoi progressi potrebbero non essere salvati. Contatta il <0>supporto</0> se questo messaggio persiste",
     "unsubscribed": "Hai annullato correttamente l'iscrizione",
     "keep-coding": "Qualsiasi cosa tu abbia intenzione di fare, continua a programmare!",
     "email-signup": "Registrazione con email",
@@ -427,6 +430,7 @@
     "wrong-updating": "Qualcosa è andato storto nell'aggiornamento del tuo account. Ti preghiamo di controllare e riprovare",
     "updated-preferences": "Abbiamo aggiornato le tue preferenze",
     "email-invalid": "Formato email non valido",
+    "email-valid": "La tua email è stata modificata con successo, happy coding!",
     "bad-challengeId": "currentChallengeId non è un ID challenge valido",
     "theme-invalid": "Tema non valido",
     "theme-set": "Tema già impostato",
@@ -461,7 +465,8 @@
     "no-account": "Nessun account {{website}} associato",
     "unlink-success": "Hai scollegato correttamente il tuo {{website}}",
     "provide-username": "Spunta la casella se hai fornito un nome utente e un report",
-    "report-sent": "Un report è stato inviato al team con {{email}} in copia"
+    "report-sent": "Un report è stato inviato al team con {{email}} in copia",
+    "certificate-missing": "La certificazione che hai cercato di visualizzare non esiste"
   },
   "validation": {
     "max-characters": "C'è un limite massimo di 288 caratteri, hai {{charsLeft}} rimanenti",

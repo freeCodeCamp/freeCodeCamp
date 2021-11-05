@@ -12,6 +12,7 @@ export const actionTypes = createTypes(
     'preventProgressDonationRequests',
     'openDonationModal',
     'onlineStatusChange',
+    'serverStatusChange',
     'resetUserData',
     'tryToShowDonationModal',
     'executeGA',
@@ -28,7 +29,7 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('acceptTerms'),
     ...createAsyncTypes('showCert'),
     ...createAsyncTypes('reportUser'),
-    ...createAsyncTypes('postChargeStripe')
+    ...createAsyncTypes('postChargeStripeCard')
   ],
   ns
 );

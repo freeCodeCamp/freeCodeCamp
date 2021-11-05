@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c15c
 title: Criar colunas com o Pandas
 challengeType: 11
 videoId: _sSo2XZoB3E
+bilibiliIds:
+  aid: 975568901
+  bvid: BV1b44y1b7Cg
+  cid: 409018052
 dashedName: pandas-creating-columns
 ---
 

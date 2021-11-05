@@ -14,9 +14,10 @@ dashedName: iterate-with-javascript-while-loops
 Il primo tipo di ciclo che vedremo è chiamato un ciclo `while` perché viene eseguito finché (while) una condizione specificata è vera e si arresta una volta che la condizione non è più vera.
 
 ```js
-var ourArray = [];
-var i = 0;
-while(i < 5) {
+const ourArray = [];
+let i = 0;
+
+while (i < 5) {
   ourArray.push(i);
   i++;
 }
@@ -38,7 +39,7 @@ Dovresti usare un ciclo `while`.
 assert(code.match(/while/g));
 ```
 
-`myArray` dovrebbe essere uguale a `[5,4,3,2,1,0]`.
+`myArray` dovrebbe essere uguale a `[5, 4, 3, 2, 1, 0]`.
 
 ```js
 assert.deepEqual(myArray, [5, 4, 3, 2, 1, 0]);
@@ -56,17 +57,18 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-var i = 5;
-while(i >= 0) {
+const myArray = [];
+let i = 5;
+while (i >= 0) {
   myArray.push(i);
   i--;
 }

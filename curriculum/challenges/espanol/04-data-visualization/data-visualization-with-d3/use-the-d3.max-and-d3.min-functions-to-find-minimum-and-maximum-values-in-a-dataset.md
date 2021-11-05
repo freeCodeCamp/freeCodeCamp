@@ -1,7 +1,7 @@
 ---
 id: 587d7fac367417b2b2512bdc
 title: >-
-  Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
+  Utiliza las funciones d3.max y d3.min para encontrar valores mínimos y máximos en un conjunto de datos
 challengeType: 6
 forumTopicId: 301496
 dashedName: >-
@@ -10,11 +10,11 @@ dashedName: >-
 
 # --description--
 
-The D3 methods `domain()` and `range()` set that information for your scale based on the data. There are a couple methods to make that easier.
+Los métodos D3 `domain()` y `range()` establecen esa información para tu escala basada en los datos. Hay algunos métodos para hacerlo más fácil.
 
-Often when you set the domain, you'll want to use the minimum and maximum values within the data set. Trying to find these values manually, especially in a large data set, may cause errors.
+A menudo cuando estableces el dominio, querrás utilizar los valores mínimo y máximo dentro del conjunto de datos. Intentar buscar estos valores manualmente, especialmente en un conjunto de datos grande, puede causar errores.
 
-D3 has two methods - `min()` and `max()` to return this information. Here's an example:
+D3 tiene dos métodos: `min()` y `max()` para devolver esta información. He aquí un ejemplo:
 
 ```js
 const exampleData = [34, 234, 73, 90, 6, 52];
@@ -22,28 +22,28 @@ d3.min(exampleData)
 d3.max(exampleData)
 ```
 
-A dataset may have nested arrays, like the `[x, y]` coordinate pairs that were in the scatter plot example. In that case, you need to tell D3 how to calculate the maximum and minimum. Fortunately, both the `min()` and `max()` methods take a callback function. In this example, the callback function's argument `d` is for the current inner array. The callback needs to return the element from the inner array (the `x` or `y` value) over which you want to compute the maximum or minimum. Here's an example for how to find the min and max values with an array of arrays:
+Un conjunto de datos podría tener arreglos anidados, como lo estaban el par de coordenada `[x, y]` en el ejemplo del diagrama de dispersión. En ese caso, necesitas decirle a D3 cómo calcular el máximo y el mínimo. Afortunadamente, ambos métodos `min()` y `max()` toman una función callback. En este ejemplo, el argumento de la función callback `d` es para el arreglo interno actual. El callback necesita retornar el elemento desde el arreglo interno (el valor de `x` o de `y`) sobre el cual quieres computar el máximo o el mínimo. Aquí hay un ejemplo de cómo encontrar los valores mínimo y máximo con un arreglo de arreglos:
 
 ```js
 const locationData = [[1, 7],[6, 3],[8, 3]];
 const minX = d3.min(locationData, (d) => d[0]);
 ```
 
-`minX` would have the value `1`.
+`minX` tendría el valor `1`.
 
 # --instructions--
 
-The `positionData` array holds sub arrays of x, y, and z coordinates. Use a D3 method to find the maximum value of the z coordinate (the third value) from the arrays and save it in the `output` variable.
+El arreglo `positionData` contiene sub-arreglos de las coordenadas x, y, y z. Utiliza un método D3 para hallar el valor máximo de la coordenada z (el tercer valor) de los arreglos y guárdalo en la variable `output`.
 
 # --hints--
 
-The text in the `h2` should be `8`.
+El texto en el `h2` debe ser `8`.
 
 ```js
 assert(output == 8 && $('h2').text() == '8');
 ```
 
-Your code should use the `max()` method.
+Tu código debe usar el método `max()`.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 587d8255367417b2b2512c75
-title: Create a Circular Queue
+title: Creare una coda circolare
 challengeType: 1
 forumTopicId: 301625
 dashedName: create-a-circular-queue
@@ -8,9 +8,9 @@ dashedName: create-a-circular-queue
 
 # --description--
 
-In this challenge you will be creating a Circular Queue. A circular queue is a queue that writes to the end of a collection then begins overwriting itself at the beginning of the collection. This type of data structure is useful in certain situations. For example, a circular queue can be used for streaming media. Once the queue is full, new media data will overwrite old data.
+In questa sfida creerai una coda circolare. Una coda circolare è una coda che scrive alla fine di una collezione, poi inizia a sovrascrivere sè stessa all'inizio della collezione. Questo tipo di struttura dati è utile in determinate situazioni. Ad esempio, una coda circolare può essere utilizzata per lo streaming media. Una volta che la coda è piena, i nuovi dati multimediali sovrascriveranno i vecchi dati.
 
-A good way to illustrate this concept is with an array of length `5`:
+Un buon modo per illustrare questo concetto è con un array di lunghezza `5`:
 
 ```js
 [null, null, null, null, null]
@@ -18,7 +18,7 @@ A good way to illustrate this concept is with an array of length `5`:
  ^Write @ 0
 ```
 
-Here the read and write are both at position `0`. Now the queue gets 3 new records `a`, `b`, and `c`. Our queue now looks like:
+Qui la lettura e la scrittura sono entrambe in posizione `0`. Ora la coda ottiene 3 nuovi record `a`, `b`e `c`. La nostra coda ora assomiglia a:
 
 ```js
 [a, b, c, null, null]
@@ -26,7 +26,7 @@ Here the read and write are both at position `0`. Now the queue gets 3 new recor
           ^Write @ 3
 ```
 
-As the read head reads, it can remove values or keep them:
+Come la testa di lettura legge, può remove valori o conservarli:
 
 ```js
 [null, null, null, null, null]
@@ -34,7 +34,7 @@ As the read head reads, it can remove values or keep them:
                    ^Write @ 3
 ```
 
-Now we write the values `d`, `e`, and `f` to the queue. Once the write reaches the end of the array it loops back to the beginning:
+Ora scriviamo i valori `d`, `e` e `f` nella coda. Una volta che la scrittura raggiunge la fine dell'array si riprende dall'inizio:
 
 ```js
 [f, null, null, d, e]
@@ -42,21 +42,21 @@ Now we write the values `d`, `e`, and `f` to the queue. Once the write reaches t
     ^Write @ 1
 ```
 
-This approach requires a constant amount of memory but allows files of a much larger size to be processed.
+Questo approccio richiede una quantità costante di memoria, ma consente di elaborare file di dimensioni molto più grandi.
 
 # --instructions--
 
-In this challenge we will implement a circular queue. The circular queue should provide `enqueue` and `dequeue` methods which allow you to read from and write to the queue. The class itself should also accept an integer argument which you can use to specify the size of the queue when created. We've written the starting version of this class for you in the code editor.
+In questa sfida implementeremo una coda circolare. La coda circolare dovrebbe fornire i metodi `enqueue` e `dequeue` che ti consentono di leggere e scrivere nella coda. La classe stessa dovrebbe anche accettare un argomento intero che puoi usare per specificare la dimensione della coda quando viene creata. Abbiamo scritto per te la versione iniziale di questa classe nell'editor di codice.
 
-When you enqueue items to the queue, the write pointer should advance forward and loop back to the beginning once it reaches the end of the queue. The `enqueue` method should return the item you enqueued if it is successful; otherwise it will return `null`.
+Quando accodi gli elementi alla coda, il puntatore di scrittura dovrebbe andare in avanti e tornare all'inizio una volta che ha raggiunto la fine della coda. Il metodo `enqueue` dovrebbe restituire l'elemento che hai accodato se ha avuto successo; altrimenti restituirà `null`.
 
-Likewise, the read pointer should advance forward as you dequeue items. When you dequeue an item, that item should be returned. If you cannot dequeue an item, you should return `null`.
+Allo stesso modo, il puntatore di lettura dovrebbe avanzare come rimuovi oggetti dalla coda. Quando rimuovi un oggetto dalla coda, quell'oggetto dovrebbe essere restituito. Se non puoi rimuovere un oggetto dalla coda, dovresti restituire `null`.
 
-The write pointer should not be allowed to move past the read pointer (our class won't let you overwrite data you haven't read yet) and the read pointer should not be able to advance past data you have written.
+Al puntatore di scrittura non dovrebbe essere permesso di muovere oltre il puntatore di lettura (la nostra classe non ti permetterà di sovrascrivere dati che non sono ancora stati letti) e il puntatore di lettura non dovrebbe eessere in grado di andare oltre i dati che hai scritto.
 
 # --hints--
 
-The `enqueue` method should add items to the circular queue.
+Il metodo `enqueue` dovrebbe aggiungere elementi alla coda circolare.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-You should not enqueue items past the read pointer.
+Non dovresti accodare gli elementi oltre il puntatore di lettura.
 
 ```js
 assert(
@@ -89,7 +89,7 @@ assert(
 );
 ```
 
-The `dequeue` method should dequeue items from the queue.
+Il metodo `dequeue` dovrebbe rimuovere elementi dalla coda.
 
 ```js
 assert(
@@ -105,7 +105,7 @@ assert(
 );
 ```
 
-After an item is dequeued, its position in the queue should be reset to `null`.
+Dopo che un elemento è stato rimosso dalla coda, la sua posizione nella coda dovrebbe essere resettata su `null`.
 
 ```js
 assert(
@@ -122,7 +122,7 @@ assert(
 );
 ```
 
-Trying to dequeue past the write pointer should return `null` and does not advance the write pointer.
+Tentare di rimuovere oggetti dalla coda oltre il puntatore di scrittura dovrebbe restituire `null` e non far avanzare il puntatore di scrittura.
 
 ```js
 assert(

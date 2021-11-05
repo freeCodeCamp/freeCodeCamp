@@ -1,6 +1,6 @@
 ---
 id: 587d8251367417b2b2512c64
-title: Search within a Linked List
+title: Cercare in una lista concatenata
 challengeType: 1
 forumTopicId: 301715
 dashedName: search-within-a-linked-list
@@ -8,19 +8,19 @@ dashedName: search-within-a-linked-list
 
 # --description--
 
-Let's add a few more useful methods to our linked list class. Wouldn't it be useful if we could tell if our list was empty or not, as with our `Stack` and `Queue` classes?
+Aggiungiamo alcuni altri metodi utili alla nostra classe di lista concatenata. Non sarebbe utile se potessimo dire se la nostra lista sia vuota o no, come con le nostre classi `Stack` e `Queue`?
 
-We should also be able to find specific elements in our linked list. Traversing through data structures is something you'll want to get a lot of practice with! Let's create an `indexOf` method that takes an `element` as an argument, and returns that element's `index` in the linked list. If the element is not found in the linked list, return `-1`.
+Dovremmo anche essere in grado di trovare elementi specifici nella nostra lista concatenata. Traversare strutture di dati è qualcosa con cui vorrai fare un sacco di pratica! Creiamo un metodo `indexOf` che prende `element` coem argomento, e restituisce l'`index` di quell'elemento nella lista concatenata. Se l'elemento non è trovato nella lista collegata, restituisci `-1`.
 
-Let's also implement a method that does the opposite: an `elementAt` method that takes an `index` as an argument and returns the `element` at the given `index`. If no `element` is found, return `undefined`.
+Implementiamo pure un metodo che fa l'opposto: un metodo `elementAt` che accetta un `index` come argomento e restituisce `element` al dato `index`. Se nessun elemento `element` è trovato, restituisci `undefined`.
 
 # --instructions--
 
-Write an `isEmpty` method that checks if the linked list is empty, an `indexOf` method that returns the `index` of a given element, and an `elementAt` that returns an `element` at a given `index.`
+Scrivi un metodo `isEmpty` che verifica se la lista concatenata è vuota, un metodo `indexOf` che restituisce l'`index` di un dato elemento, e un metodo `elementAt` che restituisce l'`element` al dato `index.`
 
 # --hints--
 
-Your `LinkedList` class should have an `isEmpty` method.
+La tua classe `LinkedList` dovrebbe avere un metodo `isEmpty`.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-Your `isEmpty` method should return `false` when there is at least one element in linked list.
+Il tuo metodo `isEmpty` dovrebbe restituire `false` quando c'è almeno un elemento nella lista concatenata.
 
 ```js
 assert(
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-Your `isEmpty` method should return `true` when there are no elements in linked list.
+Il tuo metodo `isEmpty` dovrebbe restituire `true` quando non ci sono elementi nella lista concatenata.
 
 ```js
 assert(
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-Your `LinkedList` class should have an `indexOf` method.
+La tua classe `LinkedList` dovrebbe avere un metodo `indexOf`.
 
 ```js
 assert(
@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-Your `indexOf` method should return the index of a given element found in linked list.
+Il tuo metodo `indexOf` dovrebbe restituire l'indice di un dato elemento trovato nella lista concatenata.
 
 ```js
 assert(
@@ -81,7 +81,7 @@ assert(
 );
 ```
 
-Your `indexOf` method should return `-1` if the given element is not found in linked list
+Il tuo metodo `indexOf` dovrebbe restituire `-1` se l'elemento dato non è trovato nella lista concatenata
 
 ```js
 assert(
@@ -95,7 +95,7 @@ assert(
 );
 ```
 
-Your `LinkedList` class should have an `elementAt` method.
+La tua classe `LinkedList` dovrebbe avere un metodo `elementAt`.
 
 ```js
 assert(
@@ -106,7 +106,7 @@ assert(
 );
 ```
 
-Your `elementAt` method should return the element found at a given index in linked list.
+Il tuo metodo `elementAt` dovrebbe restituire l'elemento trovato in un dato indice nella lista concatenata.
 
 ```js
 assert(
@@ -120,7 +120,7 @@ assert(
 );
 ```
 
-Your `elementAt` method should return `undefined` if the given element is not found at a given index in linked list.
+Il tuo `elementAt` metodo dovrebbe restituire `undefined` se l'elemento dato non è trovato in un dato indice nella lista concatenata.
 
 ```js
 assert(

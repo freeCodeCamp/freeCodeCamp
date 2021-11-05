@@ -8,7 +8,7 @@ dashedName: use-advanced-javascript-in-react-render-method
 
 # --description--
 
-在之前的挑战中，学习了如何使用大括号 `{ }` 将 JavaScript 代码插入到 JSX 代码中，用于访问 props、传递 props、访问 state、在代码中插入注释以及最近学习的定制组件样式等任务。 这些都是将 JavaScript 放在 JSX 中的常见用例，但是在 React 组件中使用 JavaScript 代码还有其他方式。
+在之前的挑战中，你学习了如何使用大括号 `{ }` 将 JavaScript 代码插入到 JSX 代码中，用于访问 props、传递 props、访问 state、在代码中插入注释以及最近学习的定制组件样式等任务。 这些都是将 JavaScript 放在 JSX 中的常见用例，但是在 React 组件中使用 JavaScript 代码还有其他方式。
 
 在 `render` 方法中编写 JavaScript，可以把 JavaScript 直接放在 `return` 语句之前，而***不必***将其插入大括号中。 这是因为它还不在 JSX 代码中。 如果之后想在 `return` 语句中的 JSX 代码*里面*使用变量时，可以将变量名放在大括号中。
 

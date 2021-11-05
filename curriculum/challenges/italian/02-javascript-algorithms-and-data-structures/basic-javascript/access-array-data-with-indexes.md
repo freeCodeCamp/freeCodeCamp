@@ -18,9 +18,9 @@ Gli indici degli array sono scritti nella stessa notazione tra parentesi usata d
 **Esempio**
 
 ```js
-var array = [50,60,70];
+const array = [50, 60, 70];
 array[0];
-var data = array[1];
+const data = array[1];
 ```
 
 `array[0]` ora è `50` e `data` ha il valore `60`.
@@ -76,7 +76,7 @@ if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,
 ## --seed-contents--
 
 ```js
-var myArray = [50,60,70];
+const myArray = [50, 60, 70];
 
 
 ```
@@ -84,6 +84,6 @@ var myArray = [50,60,70];
 # --solutions--
 
 ```js
-var myArray = [50,60,70];
-var myData = myArray[0];
+const myArray = [50, 60, 70];
+const myData = myArray[0];
 ```

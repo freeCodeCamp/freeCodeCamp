@@ -16,7 +16,7 @@ dashedName: use-each-to-map-over-items-in-a-list
 }
 ```
 
-map 的语法略有不同。 这是一个例子：
+map 的语法略有不同。 这是一个示例：
 
 ```scss
 $colors: (color1: blue, color2: red, color3: green);

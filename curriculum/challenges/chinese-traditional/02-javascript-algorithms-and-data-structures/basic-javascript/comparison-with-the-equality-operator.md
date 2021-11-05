@@ -16,7 +16,7 @@ dashedName: comparison-with-the-equality-operator
 ```js
 function equalityTest(myVal) {
   if (myVal == 10) {
-     return "Equal";
+    return "Equal";
   }
   return "Not Equal";
 }

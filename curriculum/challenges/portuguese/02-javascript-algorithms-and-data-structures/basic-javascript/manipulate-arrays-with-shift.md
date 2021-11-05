@@ -16,15 +16,15 @@ dashedName: manipulate-arrays-with-shift
 Exemplo:
 
 ```js
-var ourArray = ["Stimpson", "J", ["cat"]];
-var removedFromOurArray = ourArray.shift();
+const ourArray = ["Stimpson", "J", ["cat"]];
+const removedFromOurArray = ourArray.shift();
 ```
 
 `removedFromOurArray` teria o valor da string `Stimpson` e `ourArray` teria o valor de `["J", ["cat"]]`.
 
 # --instructions--
 
-Use a função `.shift()` para remover o primeiro item de `myArray`, atribuindo o valor "removido" para `removedFromMyArray`.
+Use a função `.shift()` para remover o primeiro item de `myArray` e atribuir o valor removido para uma nova variável, `removedFromMyArray`.
 
 # --hints--
 
@@ -65,24 +65,24 @@ assert(
 ## --after-user-code--
 
 ```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 ## --seed-contents--
 
 ```js
 // Setup
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 
 // Only change code below this line
-var removedFromMyArray;
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 
 // Only change code below this line
-var removedFromMyArray = myArray.shift();
+const removedFromMyArray = myArray.shift();
 ```

@@ -22,8 +22,8 @@ Alcuni membri della comunità sviluppano anche su Windows 10 nativamente con Git
 
 | Prerequisito                                                                                  | Versione | Note                                                                                         |
 | --------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                  | `14.x`   | Usiamo la versione "Active LTS", Vedi [LTS Schedule](https://nodejs.org/en/about/releases/). |
-| npm (viene fornito in bundle con node)                                                        | `6.x`    | `npm` non ha una versione LTS, usiamo la versione in bundle con Node.js Active LTS.          |
+| [Node.js](http://nodejs.org)                                                                  | `16.x`   | Usiamo la versione "Active LTS", Vedi [LTS Schedule](https://nodejs.org/en/about/releases/). |
+| npm (viene fornito in bundle con node)                                                        | `8.x`    | Usiamo la versione in bundle con Node.js Active LTS.                                         |
 | [Server Community MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x`  | -                                                                                            |
 
 > [!ATTENTION] Se hai una versione diversa, per favore installa la versione raccomandata. Possiamo supportare solo i problemi di installazione per le versioni consigliate. Vedi [risoluzione dei problemi](#troubleshooting) per i dettagli.
@@ -167,14 +167,24 @@ Le chiavi API predefinite e le variabili d'ambiente sono memorizzate nel file `s
 
 ```console
 # Creare una copia del "sample.env" e denominarlo ".env".
-# Popolarlo con le necessarie chiavi API e secrets:
+# Popolalo con le chiavi API e i segreti necessari:
+```
 
-# macOS / Linux
-cp esempio. nv .env
+<!-- tabs:start -->
 
-# Windows
+#### **macOS/Linux**
+
+```console
+cp sample.env .env
+```
+
+#### **Windows**
+
+```console
 copy sample.env .env
 ```
+
+<!-- tabs:end -->
 
 _Non_ è necessario cambiare le chiavi nel file `.env` per eseguire l'applicazione localmente. Puoi lasciare i valori predefiniti copiati da `sample.env` così come sono.
 
@@ -196,19 +206,25 @@ Prima di poter eseguire l'applicazione localmente, è necessario avviare il serv
 
 Avvia il server MongoDB in un terminale separato:
 
-- Su macOS & Ubuntu:
+  <!-- tabs:start -->
 
-  ```console
-  mongod
-  ```
+#### **macOS/Linux**
+
+```console
+mongod
+```
+
+#### **Windows**
 
 - Su Windows, è necessario specificare il percorso completo dell'eseguibile `mongod`
 
-  ```console
-  "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-  ```
+```console
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+```
 
-  Assicurati di sostituire `3.6` con la versione che hai installato
+  <!-- tabs:end -->
+
+Assicurati di sostituire `3.6` con la versione che hai installato
 
 > [!TIP] Puoi evitare di dover avviare MongoDB ogni volta se lo installi come servizio in background. Puoi [saperne di più nella loro documentazione per il tuo sistema operativo](https://docs.mongodb.com/manual/administration/install-community/)
 
@@ -472,7 +488,7 @@ Un rapido riferimento ai comandi di cui avrai bisogno quando lavorerai localment
 
 ### Problemi con l'installazione dei prerequisiti raccomandati
 
-Sviluppiamo regolarmente sui sistemi operativi più recenti o più popolari come macOS 10.15 o successivi, Ubuntu 18.04, e Windows 10 con WSL2.
+Sviluppiamo regolarmente sui sistemi operativi più nuovi o più popolari come macOS 10.15 o successivi, Ubuntu 18.04 o successivo, e Windows 10 con WSL2.
 
 Ti raccomandiamo di fare ricerche sui tuoi problemi specifici usando risorse come Google, Stack Overflow, e Stack Exchange. C'è una buona probabilità che qualcuno abbia incontrato lo stesso problema e ci sia già una risposta alla tua domanda specifica.
 
@@ -484,7 +500,7 @@ Se sei su un sistema operativo diverso e/o continui ad avere dei problemi, visit
 
 ### Problemi con UI, Font, errori di build, ecc.
 
-Se incontri problemi con l'interfaccia utente, i caratteri o vedi errori di compilazione, potrebbe essere utile una pulizia:
+Se si verificano problemi con l'interfaccia utente, i caratteri o vedi errori di compilazione, una pulizia potrebbe essere utile:
 
 ```console
 npm run clean
@@ -520,9 +536,11 @@ git clean -ifdX
 
 ### Problemi con API, logic, invio delle sfide, ecc.
 
-Se non riesci ad accedere e invece vedi un banner con un messaggio di errore che il problema sarà segnalato a freeCodeCamp, ti preghiamo di controllare che la porta locale `3000` non sia usata da un programma diverso.
+Se non riesci ad accedere e invece vedi un banner con un messaggio di errore che verrà segnalato a freeCodeCamp, ti preghiamo di controllare che la porta locale `3000` non sia utilizzata da un programma diverso.
 
-**Su Linux / macOS / WSL su Windows - dal terminale:**
+<!-- tabs:start -->
+
+#### **macOS/Linux/WSL su Windows - dal terminale:**
 
 ```console
 netstat -a | grep "3000"
@@ -530,17 +548,21 @@ netstat -a | grep "3000"
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**Su Windows - da PowerShell con privilegi elevati:**
+#### **Su Windows - PowerShell con privilegi elevati:**
 
 ```powershell
-netstat -ab | Select-String "3000"
+netstat -ab <unk> Select-String "3000"
 
-TCP    0.0.0.0:3000           DESKTOP      LISTENING
+TCP 0.0.0:3000 DESKTOP LISTENING
 ```
+
+<!-- tabs:end -->
+
+---
 
 ### Problemi nell'installazione delle dipendenze
 
-Se incontri degli errori durante l'installazione delle dipendenze, assicurati di non essere in una rete ristretta o che le impostazioni del tuo firewall non ti impediscono di accedere alle risorse.
+Se incontri degli errori durante l'installazione delle dipendenze, assicurati di non essere in una rete ristretta o che le impostazioni del tuo firewall non ti impediscano di accedere alle risorse.
 
 La prima configurazione può richiedere un po' di tempo a seconda della larghezza di banda della rete. Sii paziente, e se continui a rimanere bloccato ti raccomandiamo di usare GitPod invece di un setup offline.
 
@@ -550,4 +572,4 @@ La prima configurazione può richiedere un po' di tempo a seconda della larghezz
 
 Se sei bloccato e hai bisogno di aiuto, poni liberamente le tue domande nella [categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://chat.freecodecamp.org/channel/contributors).
 
-Potrebbe esserci un errore nella console del browser o in Bash / Terminal / Linea di comando che ti aiuterà a identificare il problema. Fornisci questo messaggio di errore nella descrizione del problema in modo che gli altri possano identificalo più facilmente e aiutarti a risolverlo.
+Potrebbe esserci un errore nella console del browser o in Bash / Terminale / Linea di comando che ti aiuterà a identificare il problema. Fornisci questo messaggio di errore nella descrizione del problema in modo che gli altri possano identificare più facilmente il problema e aiutarti a risolverlo.

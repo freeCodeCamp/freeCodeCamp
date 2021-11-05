@@ -1,6 +1,6 @@
 ---
 id: 587d825b367417b2b2512c8b
-title: Remove an Element from a Max Heap
+title: Rimuovere un elemento da una max-heap
 challengeType: 1
 forumTopicId: 301710
 dashedName: remove-an-element-from-a-max-heap
@@ -8,21 +8,21 @@ dashedName: remove-an-element-from-a-max-heap
 
 # --description--
 
-Now that we can add elements to our heap let's see how we can remove elements. Removing and inserting elements both require similar logic. In a max heap you will usually want to remove the greatest value, so this involves simply extracting it from the root of our tree. This will break the heap property of our tree, so we must reestablish it in some way. Typically, for a max heap this is done in the following way:
+Ora che possiamo aggiungere elementi al nostro heap vediamo come possiamo rimuovere gli elementi. La rimozione e l'inserimento di elementi richiedono una logica simile. In un max-heap di solito si vuole rimuovere il valore maggiore, quindi questo implica semplicemente estrarlo dalla radice del nostro albero. Questo negherà la proprietà heap del nostro albero, quindi dovremo ristabilirla in qualche modo. Tipicamente, per un max-heap questo viene fatto nel modo seguente:
 
 <ol>
-  <li>Move the last element in the heap into the root position.</li>
-  <li>If either child of the root is greater than it, swap the root with the child of greater value.</li>
-  <li>Continue swapping until the parent is greater than both children or you reach the last level in the tree.</li>
+  <li>Sposta l'ultimo elemento nell'heap alla posizione root.</li>
+  <li>Se uno dei figli della radice è maggiore di essa, scambiare la radice con il figlio di valore maggiore.</li>
+  <li>Continuare a scambiare fino a quando il genitore è maggiore di entrambi i figli o si raggiunge l'ultimo livello nell'albero.</li>
 </ol>
 
 # --instructions--
 
-Instructions: Add a method to our max heap called `remove`. This method should return the greatest value that has been added to our max heap and remove it from the heap. It should also reorder the heap so the heap property is maintained. After removing an element, the next greatest element remaining in the heap should become the root.
+Istruzioni: Aggiungere un metodo al nostro max-heap chiamato `remove`. Questo metodo dovrebbe restituire il massimo valore che è stato aggiunto al nostro max heap e rimuoverlo dal mucchio. Dovrebbe anche riordinare il mucchio in modo che la proprietà heap sia mantenuta. Dopo aver rimosso un elemento, il prossimo elemento più grande che rimane nel heap dovrebbe diventare la radice.
 
 # --hints--
 
-The MaxHeap data structure should exist.
+La struttura dati MaxHeap dovrebbe esistere.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called print.
+MaxHeap dovrebbe avere un metodo chiamato print.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called insert.
+MaxHeap dovrebbe avere un metodo chiamato insert.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called remove.
+MaxHeap dovrebbe avere un metodo chiamato remove.
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 );
 ```
 
-The remove method should remove the greatest element from the max heap while maintaining the max heap property.
+Il metodo remove dovrebbe rimuovere l'elemento più grande dal max heap mantenendo la proprietà max heap.
 
 ```js
 assert(
@@ -114,21 +114,29 @@ assert(
 ## --seed-contents--
 
 ```js
-var MaxHeap = function() {
-  this.heap = [null];
-  this.insert = (ele) => {
-    var index = this.heap.length;
-    var arr = [...this.heap];
-    arr.push(ele);
-    while (ele > arr[Math.floor(index / 2)] && index > 1) {
-      arr[index] = arr[Math.floor(index / 2)];
-      arr[Math.floor(index / 2)] = ele;
-      index = arr[Math.floor(index / 2)];
+var MaxHeap = function () {
+  this.heap = [];
+  this.parent = index => {
+    return Math.floor((index - 1) / 2);
+  }
+  this.insert = element => {
+    this.heap.push(element);
+    this.heapifyUp(this.heap.length - 1);
+  }
+  this.heapifyUp = index => {
+    let currentIndex = index,
+    parentIndex = this.parent(currentIndex);
+    while (currentIndex > 0 && this.heap[currentIndex] > this.heap[parentIndex]) {
+      this.swap(currentIndex, parentIndex);
+      currentIndex = parentIndex;
+      parentIndex = this.parent(parentIndex);
     }
-    this.heap = arr;
+  }
+  this.swap = (index1, index2) => {
+    [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
   }
   this.print = () => {
-    return this.heap.slice(1);
+    return this.heap;
   }
   // Only change code below this line
 

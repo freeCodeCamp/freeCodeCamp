@@ -18,7 +18,7 @@ JavaScript utiliza o símbolo `+` como um operador de adição quando colocado e
 **Exemplo:**
 
 ```js
-myVar = 5 + 10;
+const myVar = 5 + 10;
 ```
 
 `myVar` agora tem o valor de `15`.
@@ -52,11 +52,11 @@ assert(/\+/.test(code));
 ## --seed-contents--
 
 ```js
-var sum = 10 + 0;
+const sum = 10 + 0;
 ```
 
 # --solutions--
 
 ```js
-var sum = 10 + 10;
+const sum = 10 + 10;
 ```

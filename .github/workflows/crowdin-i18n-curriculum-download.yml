@@ -8,7 +8,7 @@ on:
 jobs:
   i18n-download-curriculum-translations:
     name: Curriculum
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout Source Files
@@ -55,7 +55,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
 
       # Convert Simplified Chinese to Traditional #
       - name: Generate Translations

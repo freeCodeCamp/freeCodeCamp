@@ -22,7 +22,7 @@ if (!stepExists(existingSteps, num)) {
   throw `Step # ${num} not deleted because it does not exist.`;
 }
 
-const stepFileToDelete = `${projectPath}part-${padWithLeadingZeros(num)}.md`;
+const stepFileToDelete = `${projectPath}step-${padWithLeadingZeros(num)}.md`;
 try {
   fs.unlinkSync(stepFileToDelete);
   console.log(`Sucessfully deleted step #${num}`);

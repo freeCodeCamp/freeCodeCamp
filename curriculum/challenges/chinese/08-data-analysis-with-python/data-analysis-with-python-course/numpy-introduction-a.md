@@ -3,6 +3,10 @@ id: 5e9a093a74c4063ca6f7c152
 title: Numpy 简介 A
 challengeType: 11
 videoId: P-JjV6GBCmk
+bilibiliIds:
+  aid: 718079611
+  bvid: BV18Q4y1k7om
+  cid: 409007080
 dashedName: numpy-introduction-a
 ---
 

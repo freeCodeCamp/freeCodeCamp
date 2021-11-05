@@ -33,7 +33,7 @@ $("button").addClass("animated bounce");
 assert($('button').hasClass('animated') && $('button').hasClass('bounce'));
 ```
 
-應該僅用 jQuery 給元素添加 class。
+應該僅用 jQuery 給標籤添加 class。
 
 ```js
 assert(!code.match(/class.*animated/g));

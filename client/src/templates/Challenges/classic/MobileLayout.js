@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import envData from '../../../../../config/env.json';
-import ToolPanel from '../components/Tool-Panel';
+import ToolPanel from '../components/tool-panel';
 import { currentTabSelector, moveToTab } from '../redux';
 import EditorTabs from './EditorTabs';
 

@@ -7,7 +7,12 @@ import {
   call,
   take
 } from 'redux-saga/effects';
-import { addDonation, postChargeStripe } from '../utils/ajax';
+
+import {
+  addDonation,
+  postChargeStripe,
+  postChargeStripeCard
+} from '../utils/ajax';
 import { actionTypes as appTypes } from './action-types';
 
 import {
@@ -19,10 +24,12 @@ import {
   addDonationComplete,
   addDonationError,
   postChargeStripeComplete,
-  postChargeStripeError
+  postChargeStripeError,
+  postChargeStripeCardComplete,
+  postChargeStripeCardError
 } from './';
 
-const defaultDonationError = `Something is not right. Please contact donors@freecodecamp.org`;
+const defaultDonationErrorMessage = `Something is not right. Please contact donors@freecodecamp.org`;
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
@@ -48,7 +55,7 @@ function* addDonationSaga({ payload }) {
       error.response && error.response.data
         ? error.response.data
         : {
-            message: defaultDonationError
+            message: defaultDonationErrorMessage
           };
     yield put(addDonationError(data.message));
   }
@@ -62,8 +69,51 @@ function* postChargeStripeSaga({ payload }) {
     const err =
       error.response && error.response.data
         ? error.response.data.error
-        : defaultDonationError;
+        : defaultDonationErrorMessage;
     yield put(postChargeStripeError(err));
+  }
+}
+
+function* stripeCardErrorHandler(
+  error,
+  handleAuthentication,
+  clientSecret,
+  paymentMethodId
+) {
+  if (error.type === 'UserActionRequired' && clientSecret) {
+    yield handleAuthentication(clientSecret, paymentMethodId)
+      .then(result => {
+        if (result?.paymentIntent?.status !== 'succeeded')
+          throw result.error || { type: 'StripeAuthorizationFailed' };
+      })
+      .catch(error => {
+        throw error;
+      });
+  } else {
+    throw error;
+  }
+}
+
+function* postChargeStripeCardSaga({
+  payload: { paymentMethodId, amount, duration, handleAuthentication }
+}) {
+  try {
+    const optimizedPayload = { paymentMethodId, amount, duration };
+    const { error } = yield call(postChargeStripeCard, optimizedPayload);
+    if (error) {
+      yield stripeCardErrorHandler(
+        error,
+        handleAuthentication,
+        error.client_secret,
+        paymentMethodId,
+        optimizedPayload
+      );
+    }
+    yield call(addDonation, optimizedPayload);
+    yield put(postChargeStripeCardComplete());
+  } catch (error) {
+    const errorMessage = error.message || defaultDonationErrorMessage;
+    yield put(postChargeStripeCardError(errorMessage));
   }
 }
 
@@ -71,6 +121,7 @@ export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
     takeEvery(types.addDonation, addDonationSaga),
-    takeLeading(types.postChargeStripe, postChargeStripeSaga)
+    takeLeading(types.postChargeStripe, postChargeStripeSaga),
+    takeLeading(types.postChargeStripeCard, postChargeStripeCardSaga)
   ];
 }

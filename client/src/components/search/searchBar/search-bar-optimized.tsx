@@ -3,7 +3,11 @@ import { useTranslation } from 'react-i18next';
 import Magnifier from '../../../assets/icons/Magnifier';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 
-const SearchBarOptimized = (): JSX.Element => {
+type Props = {
+  innerRef?: React.RefObject<HTMLDivElement>;
+};
+
+const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
   const { t } = useTranslation();
   const placeholder = t('search.placeholder');
   const searchUrl = searchPageUrl;
@@ -18,7 +22,7 @@ const SearchBarOptimized = (): JSX.Element => {
   };
 
   return (
-    <div className='fcc_searchBar' data-testid='fcc_searchBar'>
+    <div className='fcc_searchBar' data-testid='fcc_searchBar' ref={innerRef}>
       <div className='fcc_search_wrapper'>
         <div className='ais-SearchBox' data-cy='ais-SearchBox'>
           <form

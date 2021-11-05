@@ -29,78 +29,91 @@ Change the regex `userCheck` to fit the constraints listed above.
 Your regex should match the string `JACK`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('JACK'));
 ```
 
 Your regex should not match the string `J`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('J'));
 ```
 
 Your regex should match the string `Jo`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('Jo'));
 ```
 
 Your regex should match the string `Oceans11`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('Oceans11'));
 ```
 
 Your regex should match the string `RegexGuru`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('RegexGuru'));
 ```
 
 Your regex should not match the string `007`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('007'));
 ```
 
 Your regex should not match the string `9`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('9'));
 ```
 
 Your regex should not match the string `A1`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('A1'));
 ```
 
 Your regex should not match the string `BadUs3rnam3`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('BadUs3rnam3'));
 ```
 
 Your regex should match the string `Z97`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('Z97'));
 ```
 
 Your regex should not match the string `c57bT3`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('c57bT3'));
 ```
 
 Your regex should match the string `AB1`
 
 ```js
+userCheck.lastIndex = 0;
 assert(userCheck.test('AB1'));
 ```
 
 Your regex should not match the string `J%4`
 
 ```js
+userCheck.lastIndex = 0;
 assert(!userCheck.test('J%4'))
 ```
 

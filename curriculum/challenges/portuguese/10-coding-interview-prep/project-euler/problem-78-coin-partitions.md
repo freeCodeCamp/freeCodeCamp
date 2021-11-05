@@ -1,6 +1,6 @@
 ---
 id: 5900f3ba1000cf542c50fecd
-title: 'Problem 78: Coin partitions'
+title: 'Problema 78: Partições de moedas'
 challengeType: 5
 forumTopicId: 302191
 dashedName: problem-78-coin-partitions
@@ -8,51 +8,51 @@ dashedName: problem-78-coin-partitions
 
 # --description--
 
-Let ${p}(n)$ represent the number of different ways in which `n` coins can be separated into piles. For example, five coins can be separated into piles in exactly seven different ways, so ${p}(5) = 7$.
+Consideremos que ${p}(n)$ representa o número de diferentes maneiras pelas quais `n` moedas podem ser separadas em pilhas. Por exemplo, cinco moedas podem ser separadas em pilhas de exatamente sete maneiras diferentes, então ${p}(5) = 7$.
 
 <div style='text-align: center;'>
 
-| Coin piles        |
+| Pilhas de moedas        |
 | ----------------- |
 | OOOOO             |
-| OOOO   O          |
-| OOO   OO          |
-| OOO   O   O       |
-| OO   OO   O       |
-| OO   O   O   O    |
-| O   O   O   O   O |
+| OOOO   O          |
+| OOO   OO          |
+| OOO   O   O       |
+| OO   OO   O       |
+| OO   O   O   O    |
+| O   O   O   O   O |
 
 </div><br>
 
-Find the least value of `n` for which ${p}(n)$ is divisible by `divisor`.
+Encontre o menor valor de `n` para o qual ${p}(n)$ é divisível pelo `divisor`.
 
 # --hints--
 
-`coinPartitions(7)` should return a number.
+`coinPartitions(7)` deve retornar um número.
 
 ```js
 assert(typeof coinPartitions(7) === 'number');
 ```
 
-`coinPartitions(7)` should return `5`.
+`coinPartitions(7)` deve retornar `5`.
 
 ```js
 assert.strictEqual(coinPartitions(7), 5);
 ```
 
-`coinPartitions(10000)` should return `599`.
+`coinPartitions(10000)` deve retornar `599`.
 
 ```js
 assert.strictEqual(coinPartitions(10000), 599);
 ```
 
-`coinPartitions(100000)` should return `11224`.
+`coinPartitions(100000)` deve retornar `11224`.
 
 ```js
 assert.strictEqual(coinPartitions(100000), 11224);
 ```
 
-`coinPartitions(1000000)` should return `55374`.
+`coinPartitions(1000000)` deve retornar `55374`.
 
 ```js
 assert.strictEqual(coinPartitions(1000000), 55374);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3bb1000cf542c50fece
-title: 'Problem 79: Passcode derivation'
+title: 'Problema 79: Derivação de senha'
 challengeType: 5
 forumTopicId: 302192
 dashedName: problem-79-passcode-derivation
@@ -8,33 +8,33 @@ dashedName: problem-79-passcode-derivation
 
 # --description--
 
-A common security method used for online banking is to ask the user for three random characters from a passcode. For example, if the passcode was `531278`, they may ask for the 2nd, 3rd, and 5th characters; the expected reply would be: `317`.
+Um método comum de segurança usado pelos serviços bancários on-line é pedir ao usuário três caracteres aleatórios de uma senha. Por exemplo, se a senha for `531278`, eles podem pedir o segundo, o terceiro e o quinto caracteres. A resposta esperada seria: `317`.
 
-The arrays, `keylog1`, `keylog2`, and `keylog3`, contains fifty successful login attempts.
+Os arrays, `keylog1`, `keylog2` e `keylog3`, contém cinquenta tentativas de login bem-sucedidas.
 
-Given that the three characters are always asked for in order, analyze the array so as to determine the shortest possible secret passcode of unknown length.
+Dado que os três caracteres são sempre solicitados em ordem, analise o array para determinar a senha secreta mais curta possível de tamanho desconhecido.
 
 # --hints--
 
-`passcodeDerivation(keylog1)` should return a number.
+`passcodeDerivation(keylog1)` deve retornar um número.
 
 ```js
 assert(typeof passcodeDerivation(_keylog1) === 'number');
 ```
 
-`passcodeDerivation(keylog1)` should return `531278`.
+`passcodeDerivation(keylog1)` deve retornar `531278`.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog1), 531278);
 ```
 
-`passcodeDerivation(keylog2)` should return `1230567`.
+`passcodeDerivation(keylog2)` deve retornar `1230567`.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog2), 1230567);
 ```
 
-`passcodeDerivation(keylog3)` should return `73162890`.
+`passcodeDerivation(keylog3)` deve retornar `73162890`.
 
 ```js
 assert.strictEqual(passcodeDerivation(_keylog3), 73162890);

@@ -16,7 +16,7 @@ Esto también significa que cada vez que cualquier pieza de tu aplicación quier
 
 # --instructions--
 
-El `store` de Redux es un objeto que guarda y gestiona el `state` de la aplicación. Hay un método llamado `createStore()` en el objeto Redux, que se utiliza para crear el `store` Redux. Este método toma una función `reducer` como argumento obligatorio. La función `reducer` se trata en un desafío posterior, y ya está definida para ti en el editor de código. Simplemente toma `state` como argumento y devuelve `state`.
+El `store` (almacén) de Redux es un objeto que guarda y gestiona el `state` (estado) de la aplicación. Hay un método llamado `createStore()` en el objeto Redux, que se utiliza para crear el `store` Redux. Este método toma una función `reducer` como argumento obligatorio. La función `reducer` se trata en un desafío posterior, y ya está definida para ti en el editor de código. Simplemente toma `state` como argumento y devuelve `state`.
 
 Declara una variable `store` y asígnala al método `createStore()`, pasando el `reducer` como argumento.
 

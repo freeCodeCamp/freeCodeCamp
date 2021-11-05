@@ -12,8 +12,9 @@ dashedName: iterate-through-an-array-with-a-for-loop
 A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a `for` loop. This code will output each element of the array `arr` to the console:
 
 ```js
-var arr = [10, 9, 8, 7, 6];
-for (var i = 0; i < arr.length; i++) {
+const arr = [10, 9, 8, 7, 6];
+
+for (let i = 0; i < arr.length; i++) {
    console.log(arr[i]);
 }
 ```
@@ -62,18 +63,19 @@ assert(!__helpers.removeWhiteSpace(code).match(/total[=+-]0*[1-9]+/gm));
 
 ```js
 // Setup
-var myArr = [ 2, 3, 4, 5, 6];
+const myArr = [2, 3, 4, 5, 6];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArr = [ 2, 3, 4, 5, 6];
-var total = 0;
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
 
-for (var i = 0; i < myArr.length; i++) {
+for (let i = 0; i < myArr.length; i++) {
   total += myArr[i];
 }
 ```

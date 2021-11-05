@@ -18,7 +18,7 @@ Empecemos con algunas funciones de arreglos simples, que son métodos en el prot
 
 El método `map` iterará sobre cada elemento de un arreglo y devuelve un nuevo arreglo que contiene los resultados de llamar a la función callback en cada elemento. Esto lo hace sin mutar el arreglo original.
 
-Cuando se utiliza el callback, se pasan tres argumentos. El primer argumento es el elemento actual que se está procesando. El segundo es el índice de ese elemento y el tercero es el arreglo al que se llamó el método `map`.
+Cuando se utiliza la función callback, se pasan tres argumentos. El primer argumento es el elemento actual que se está procesando. El segundo es el índice de ese elemento y el tercero es el arreglo al que se llamó el método `map`.
 
 A continuación se muestra un ejemplo con el método `map` en el arreglo `users` para devolver un nuevo arreglo que contiene solo los nombres de los usuarios como elementos. Para que sea más fácil, el ejemplo solo utiliza el primer argumento del callback.
 
@@ -61,7 +61,7 @@ Tu código debe usar el método `map`.
 assert(code.match(/\.map/g));
 ```
 
-`ratings` debe ser igual a `[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]`.
+`ratings` debe ser igual a `[{"title": "Inception", "rating": "8.8"}, {"title": "Interstellar", "rating": "8.6"}, {"title": "The Dark Knight", "rating": "9.0"},{"title": "Batman Begins", "rating": "8.3"}, {"title": "Avatar", "rating": "7.9"}]`.
 
 ```js
 assert.deepEqual(ratings, [
@@ -79,7 +79,7 @@ assert.deepEqual(ratings, [
 
 ```js
 // The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -194,9 +194,9 @@ var watchList = [
 
 // Only change code below this line
 
-var ratings = [];
-for(var i=0; i < watchList.length; i++){
-  ratings.push({title: watchList[i]["Title"],  rating: watchList[i]["imdbRating"]});
+const ratings = [];
+for (let i = 0; i < watchList.length; i++) {
+  ratings.push({title: watchList[i]["Title"], rating: watchList[i]["imdbRating"]});
 }
 
 // Only change code above this line
@@ -207,8 +207,7 @@ console.log(JSON.stringify(ratings));
 # --solutions--
 
 ```js
-// The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -321,7 +320,7 @@ var watchList = [
   }
 ];
 
-var ratings = watchList.map(function(movie) {
+const ratings = watchList.map(function(movie) {
   return {
     title: movie["Title"],
     rating: movie["imdbRating"]

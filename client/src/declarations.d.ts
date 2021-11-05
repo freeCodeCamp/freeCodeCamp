@@ -9,3 +9,25 @@ declare module '*.svg' {
   const content: string;
   export default content;
 }
+
+declare module '*.png' {
+  const content: string;
+  export default content;
+}
+
+declare namespace NodeJS {
+  interface Global {
+    MathJax: {
+      Hub: {
+        Config: (attributes: {
+          tex2jax: {
+            inlineMath: Array<string[]>;
+            processEscapes: boolean;
+            processClass: string;
+          };
+        }) => void;
+        Queue: (attributes: unknown[]) => void;
+      };
+    };
+  }
+}

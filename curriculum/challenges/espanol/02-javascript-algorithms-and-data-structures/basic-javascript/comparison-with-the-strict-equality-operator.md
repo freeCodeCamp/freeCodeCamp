@@ -26,7 +26,7 @@ En el segundo ejemplo, `3` es de tipo `Number` (número) y `'3'` es de tipo `Str
 
 # --instructions--
 
-Usa el operador de estricta igualdad en la sentencia `if` para que la función devuelva la cadena `Equal` cuando `val` sea estrictamente igual a `7`
+Usa el operador de estricta igualdad en la sentencia `if` para que la función devuelva la cadena `Equal` cuando `val` sea estrictamente igual a `7`.
 
 # --hints--
 

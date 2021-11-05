@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-// Package Utilities
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
@@ -11,7 +10,6 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-// Local Utilities
 import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
 import {
@@ -19,10 +17,10 @@ import {
   ChallengeMetaType
 } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/Challenge-Description';
-import HelpModal from '../../components/HelpModal';
 import Hotkeys from '../../components/Hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
 import CompletionModal from '../../components/completion-modal';
+import HelpModal from '../../components/help-modal';
 import {
   challengeMounted,
   isChallengeCompletedSelector,
@@ -122,11 +120,11 @@ class Project extends Component<ProjectProps> {
   }
 
   handleSubmit({
-    isShouldCompletionModalOpen
+    showCompletionModal
   }: {
-    isShouldCompletionModalOpen: boolean;
+    showCompletionModal: boolean;
   }): void {
-    if (isShouldCompletionModalOpen) {
+    if (showCompletionModal) {
       this.props.openCompletionModal();
     }
   }
@@ -140,6 +138,7 @@ class Project extends Component<ProjectProps> {
           forumTopicId,
           title,
           description,
+          instructions,
           superBlock,
           block,
           translationPending
@@ -177,7 +176,10 @@ class Project extends Component<ProjectProps> {
                 >
                   {title}
                 </ChallengeTitle>
-                <ChallengeDescription description={description} />
+                <ChallengeDescription
+                  description={description}
+                  instructions={instructions}
+                />
                 <SolutionForm
                   challengeType={challengeType}
                   description={description}
@@ -218,6 +220,7 @@ export const query = graphql`
       forumTopicId
       title
       description
+      instructions
       challengeType
       helpCategory
       superBlock

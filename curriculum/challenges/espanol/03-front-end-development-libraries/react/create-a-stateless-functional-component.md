@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036162
-title: Crear un componente funcional sin estado
+title: Crea un componente funcional sin estado
 challengeType: 6
 forumTopicId: 301392
 dashedName: create-a-stateless-functional-component
@@ -34,7 +34,7 @@ El editor de código tiene una función llamada `MyComponent`. Completa esta fun
 
 # --hints--
 
-`MyComponent` debe retornar JSX.
+`MyComponent` debe devolver JSX.
 
 ```js
 assert(

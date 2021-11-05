@@ -13,7 +13,7 @@ La programmazione funzionale riguarda la creazione e l'utilizzo di funzioni non 
 L'ultima sfida ha introdotto il metodo `concat` come modo per combinare degli array in uno nuovo senza mutare gli array originali. Confronta `concat` con il metodo `push`. `push` aggiunge un elemento alla fine dello stesso array sul quale viene richiamato, mutando quello stesso array. Ecco un esempio:
 
 ```js
-var arr = [1, 2, 3];
+const arr = [1, 2, 3];
 arr.push([4, 5, 6]);
 ```
 
@@ -71,8 +71,9 @@ function nonMutatingPush(original, newItem) {
 
   // Only change code above this line
 }
-var first = [1, 2, 3];
-var second = [4, 5];
+
+const first = [1, 2, 3];
+const second = [4, 5];
 nonMutatingPush(first, second);
 ```
 
@@ -82,7 +83,6 @@ nonMutatingPush(first, second);
 function nonMutatingPush(original, newItem) {
   return original.concat(newItem);
 }
-var first = [1, 2, 3];
-var second = [4, 5];
-nonMutatingPush(first, second);
+const first = [1, 2, 3];
+const second = [4, 5];
 ```

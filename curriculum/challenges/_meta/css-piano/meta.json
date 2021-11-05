@@ -1,0 +1,147 @@
+{
+  "name": "CSS Piano",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "css-piano",
+  "order": 13,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "612e6afc009b450a437940a1",
+      "Step 1"
+    ],
+    [
+      "612e77aba7ca691f598feb02",
+      "Step 2"
+    ],
+    [
+      "612e78af05201622d4bab8aa",
+      "Step 3"
+    ],
+    [
+      "612e7d1c29fb872d6384379c",
+      "Step 4"
+    ],
+    [
+      "612e804c54d5e7308d7ebe56",
+      "Step 5"
+    ],
+    [
+      "612e813b3ba67633222cbe54",
+      "Step 6"
+    ],
+    [
+      "612e8279827a28352ce83a72",
+      "Step 7"
+    ],
+    [
+      "612e83ec2eca1e370f830511",
+      "Step 8"
+    ],
+    [
+      "612e89562043183c86df287c",
+      "Step 9"
+    ],
+    [
+      "612e89d254fe5d3df7d6693d",
+      "Step 10"
+    ],
+    [
+      "612e8eebe3a6dc3fcc33a66f",
+      "Step 11"
+    ],
+    [
+      "612e95ef2e4bdf41f69067f9",
+      "Step 12"
+    ],
+    [
+      "612e96fc87fe8e44f69f7ec5",
+      "Step 13"
+    ],
+    [
+      "612e98f3245c98475e49cfc6",
+      "Step 14"
+    ],
+    [
+      "612e9a21381a1949327512e6",
+      "Step 15"
+    ],
+    [
+      "612e9d142affc44a453655db",
+      "Step 16"
+    ],
+    [
+      "612e9f1e7e5ccd4fa9ada0be",
+      "Step 17"
+    ],
+    [
+      "612ea4c4993aba52ab4aa32e",
+      "Step 18"
+    ],
+    [
+      "612ea97df5742154772f312e",
+      "Step 19"
+    ],
+    [
+      "612ead8788d28655ef8db056",
+      "Step 20"
+    ],
+    [
+      "612eaf56b7ba3257fdbfb0db",
+      "Step 21"
+    ],
+    [
+      "612eb4893b63c75bb9251ddf",
+      "Step 22"
+    ],
+    [
+      "612eb75153591b5e3b1ab65e",
+      "Step 23"
+    ],
+    [
+      "612eb7ca8c275d5f89c73333",
+      "Step 24"
+    ],
+    [
+      "612eb8e984cd73677a92b7e9",
+      "Step 25"
+    ],
+    [
+      "612eb934f64a4d6890a45518",
+      "Step 26"
+    ],
+    [
+      "612ebcba99bfa46a15370b11",
+      "Step 27"
+    ],
+    [
+      "612ebe7fe6d07e6b76d1cae2",
+      "Step 28"
+    ],
+    [
+      "612ebedec97e096c8bf64999",
+      "Step 29"
+    ],
+    [
+      "612ebf9a210f2b6d77001e68",
+      "Step 30"
+    ],
+    [
+      "612ec0490ae8626e9adf82e4",
+      "Step 31"
+    ],
+    [
+      "612ec19d5268da7074941f84",
+      "Step 32"
+    ],
+    [
+      "612ec29c84b9a6718b1f5cec",
+      "Step 33"
+    ]
+  ]
+}

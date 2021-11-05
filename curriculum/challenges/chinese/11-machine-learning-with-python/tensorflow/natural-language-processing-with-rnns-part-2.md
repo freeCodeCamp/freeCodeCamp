@@ -3,6 +3,10 @@ id: 5e8f2f13c4cdbe86b5c72d9c
 title: '使用 RNN 进行自然语言处理：第 2 部分'
 challengeType: 11
 videoId: mUU9YXOFbZg
+bilibiliIds:
+  aid: 975558435
+  bvid: BV1L44y1b7Lp
+  cid: 409135242
 dashedName: natural-language-processing-with-rnns-part-2
 ---
 

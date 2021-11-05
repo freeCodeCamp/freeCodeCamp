@@ -33,6 +33,7 @@ const initialState = {
   hasCompletedBlock: false,
   isCodeLocked: false,
   isBuildEnabled: true,
+  isResetting: false,
   logsOut: [],
   modal: {
     completion: false,
@@ -117,6 +118,7 @@ export const challengeMounted = createAction(actionTypes.challengeMounted);
 export const checkChallenge = createAction(actionTypes.checkChallenge);
 export const executeChallenge = createAction(actionTypes.executeChallenge);
 export const resetChallenge = createAction(actionTypes.resetChallenge);
+export const stopResetting = createAction(actionTypes.stopResetting);
 export const submitChallenge = createAction(actionTypes.submitChallenge);
 
 export const moveToTab = createAction(actionTypes.moveToTab);
@@ -146,6 +148,7 @@ export const isCompletionModalOpenSelector = state =>
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
+export const isResettingSelector = state => state[ns].isResetting;
 
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
@@ -215,15 +218,24 @@ export const reducer = handleActions(
       state,
       { payload: { fileKey, editorValue, editableRegionBoundaries } }
     ) => {
+      const updates = {};
+      // if a given part of the payload is null, we leave that part of the state
+      // unchanged
+      if (editableRegionBoundaries !== null)
+        updates.editableRegionBoundaries = editableRegionBoundaries;
+      if (editorValue !== null) updates.contents = editorValue;
+      if (editableRegionBoundaries !== null && editorValue !== null)
+        updates.editableContents = getLines(
+          editorValue,
+          editableRegionBoundaries
+        );
       return {
         ...state,
         challengeFiles: [
           ...state.challengeFiles.filter(x => x.fileKey !== fileKey),
           {
             ...state.challengeFiles.find(x => x.fileKey === fileKey),
-            contents: editorValue,
-            editableContents: getLines(editorValue, editableRegionBoundaries),
-            editableRegionBoundaries
+            ...updates
           }
         ]
       };
@@ -268,21 +280,16 @@ export const reducer = handleActions(
       challengeMeta: { ...payload }
     }),
     [actionTypes.resetChallenge]: state => {
-      const challengeFilesReset = [
-        ...state.challengeFiles.reduce(
-          (challengeFiles, challengeFile) => ({
-            ...challengeFiles,
-            ...challengeFile,
-            contents: challengeFile.seed.slice(),
-            editableContents: getLines(
-              challengeFile.seed,
-              challengeFile.seedEditableRegionBoundaries
-            ),
-            editableRegionBoundaries: challengeFile.seedEditableRegionBoundaries
-          }),
-          {}
-        )
-      ];
+      const challengeFilesReset = state.challengeFiles.map(challengeFile => ({
+        ...challengeFile,
+        contents: challengeFile.seed.slice(),
+        editableContents: getLines(
+          challengeFile.seed,
+          challengeFile.seedEditableRegionBoundaries
+        ),
+        editableRegionBoundaries:
+          challengeFile.seedEditableRegionBoundaries.slice()
+      }));
       return {
         ...state,
         currentTab: 2,
@@ -291,9 +298,14 @@ export const reducer = handleActions(
           text,
           testString
         })),
-        consoleOut: []
+        consoleOut: [],
+        isResetting: true
       };
     },
+    [actionTypes.stopResetting]: state => ({
+      ...state,
+      isResetting: false
+    }),
     [actionTypes.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload

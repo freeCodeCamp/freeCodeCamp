@@ -13,7 +13,8 @@ The `some` method works with arrays to check if *any* element passes a particula
 For example, the following code would check if any element in the `numbers` array is less than 10:
 
 ```js
-var numbers = [10, 50, 8, 220, 110, 11];
+const numbers = [10, 50, 8, 220, 110, 11];
+
 numbers.some(function(currentValue) {
   return currentValue < 10;
 });
@@ -62,6 +63,7 @@ function checkPositive(arr) {
 
   // Only change code above this line
 }
+
 checkPositive([1, 2, 3, -4, 5]);
 ```
 
@@ -69,9 +71,6 @@ checkPositive([1, 2, 3, -4, 5]);
 
 ```js
 function checkPositive(arr) {
-  // Only change code below this line
   return arr.some(elem => elem > 0);
-  // Only change code above this line
 }
-checkPositive([1, 2, 3, -4, 5]);
 ```

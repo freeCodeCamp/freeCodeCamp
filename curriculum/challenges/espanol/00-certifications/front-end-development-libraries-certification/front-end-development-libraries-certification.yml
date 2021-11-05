@@ -1,21 +1,21 @@
 ---
 id: 561acd10cb82ac38a17513bc
-title: Front End Libraries Certification
+title: Certificación en Librerías de Desarrollo Front End
 challengeType: 7
 isPrivate: true
 tests:
   - 
     id: bd7158d8c442eddfaeb5bd13
-    title: Build a Random Quote Machine
+    title: Construye una Máquina de Frases Aleatorias
   - 
     id: bd7157d8c242eddfaeb5bd13
-    title: Build a Markdown Previewer
+    title: Construye un Previsualizador de Markdown
   - 
     id: 587d7dbc367417b2b2512bae
-    title: Build a Drum Machine
+    title: Construye una Caja de Ritmos
   - 
     id: bd7158d8c442eddfaeb5bd17
-    title: Build a JavaScript Calculator
+    title: Construye una Calculadora JavaScript
   - 
     id: bd7158d8c442eddfaeb5bd0f
-    title: Build a 25 + 5 Clock
+    title: Construye un Reloj 25 + 5

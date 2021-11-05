@@ -1,21 +1,21 @@
 ---
 id: 606243f50267e718b1e755f4
-title: Relational Databases Certification
+title: Certificación en Base de Datos Relacionales
 challengeType: 7
 isPrivate: true
 tests:
   - 
     id: 5f1a4ef5d5d6b5ab580fc6ae
-    title: Celestial Bodies Database
+    title: Base de Datos de Cuerpos Celestes
   - 
     id: 5f9771307d4d22b9d2b75a94
-    title: World Cup Database
+    title: Base de datos de la Copa del Mundo
   - 
     id: 5f87ac112ae598023a42df1a
-    title: Salon Appointment Scheduler
+    title: Planificador de Turnos de Salón
   - 
     id: 602d9ff222201c65d2a019f2
-    title: Periodic Table Database
+    title: Base de datos de la Tabla Periódica
   - 
     id: 602da04c22201c65d2a019f4
-    title: Final Boss
+    title: Juego de Adivinanza de Números

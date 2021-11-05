@@ -2,7 +2,7 @@
 
 Una pull request (PR) le permite enviar cambios desde su bifurcación en GitHub al repositorio principal de freeCodeCamp.org. Una vez que haya hecho cambios en el código, puede seguir estas pautas para abrir un PR.
 
-> [!NOTE] Tu PR debe ser en inglés. See [here](index.md#translations) for how to contribute translations.
+> [!NOTE] Tu PR debe ser en inglés. Consulta [aquí](index.md#translations) para saber cómo contribuir con las traducciones.
 
 ## Prepara un buen título para tu PR
 
@@ -68,7 +68,7 @@ Algunos ejemplos de buenos títulos para PRs serían:
 
    - Esto es muy importante cuando se hagan cambios que no sean solo ediciones del contenido de texto como documentación o una descripción de un desafío. Ejemplos de los cambios que necesitan pruebas en el entorno local incluyen JavaScript, CSS o HTML que podrían cambiar la funcionalidad o el diseño de una página.
 
-   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
+   - Si tu PR afecta el comportamiento de una página, debe ir acompañada de la correspondiente [pruebas de integración de Cypress](how-to-add-cypress-tests.md).
 
 ## Comentarios sobre pull requests
 
@@ -78,13 +78,13 @@ Nuestros moderadores ahora echarán un vistazo y te dejarán tus comentarios. Po
 
 Y como siempre, siéntete libre de preguntar en la [categoría de 'Contribuidores' de nuestro foro](https://forum.freecodecamp.org/c/contributors) o [en la sala de chat de contribuidores](https://chat.freecodecamp.org/channel/contributors).
 
-> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
+> [!TIP] Si vas a contribuir con más PRs, te recomendamos que leas las directrices ["haciendo cambios y sincronizando"](how-to-setup-freecodecamp-locally.md#making-changes-locally) para evitar la necesidad de borrar tu bifurcación.
 
 ## Conflicto en un pull request
 
 Los conflictos pueden surgir porque muchos colaboradores trabajan en el repositorio y los cambios pueden romper su PR que está pendiente de revisión y fusión.
 
-La mayoría de las veces no puede requerir una rebase, porque aplastamos todos los commits, Sin embargo, si se solicita una rebase aquí es lo que debe hacer.
+La mayoría de las veces podrías no requerir un rebase porque juntamos todas las confirmaciones, sin embargo, si un rebase es solicitado, esto es lo que tienes que hacer.
 
 ### Para arreglos de errores y características habituales
 
@@ -132,37 +132,38 @@ Cuando estás trabajando en características para nuestras próximas ramas del p
 
    a. Borra tu rama local después de realizar una copia de seguridad (si todavía la tienes localmente):
 
-      ```console
-      git checkout <pr-branch-name>
+   ```console
+   git checkout <pr-branch-name>
 
-      # ejemplo:
-      # git checkout feat/add-numpy-video-question
+   # ejemplo:
+   # git checkout feat/add-numpy-video-question
 
-      git checkout -b <backup-branch-name>
+   git checkout -b <backup-branch-name>
 
-      # ejemplo:
-      # git checkout -b backup-feat/add-numpy-video-question
+   # ejemplo:
+   #  git checkout -b backup-feat/add-numpy-video-question
 
-      git branch -D <pr-branch-name>
-      ```
+   git branch -D <pr-branch-name>
+   ```
 
    b. O simplemente una copia de seguridad de su rama pr (si no la tiene localmente):
 
-      ```console
-      git checkout -b <backup-branch-name> origin/<pr-branch-name>
+   ```console
+   git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # ejemplo:
-      # git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
-      ```
+   # ejemplo:
+   #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
 
-4. Empezar con una pizarra limpia:
+   ```
+
+3. Empezar con una pizarra limpia:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Resuelve cualquier conflicto y limpia, instala pruebas de ejecución
+4. Resuelve cualquier conflicto y limpia, instala pruebas de ejecución
 
    ```console
    npm run clean
@@ -176,7 +177,7 @@ Cuando estás trabajando en características para nuestras próximas ramas del p
 
    ```
 
-6. Si todo se ve bien empuje hacia el PR
+5. Si todo se ve bien empuje hacia el PR
 
    ```console
    git push --force origin <pr-branch-name>

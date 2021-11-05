@@ -39,7 +39,7 @@ assert(
 assert(code.match(/\:even/g));
 ```
 
-應該僅用 jQuery 給元素添加 class。
+應該僅用 jQuery 給標籤添加 class。
 
 ```js
 assert(

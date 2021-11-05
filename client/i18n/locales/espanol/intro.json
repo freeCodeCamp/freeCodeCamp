@@ -9,7 +9,7 @@
     "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o extensiones de modo oscuro pueden interferir con las pruebas. Si tienes algun problema, te recomendamos deshabilitar las extensiones que modifiquen el contenido de la página, mientras tomas el curso.",
     "blocks": {
       "basic-html-and-html5": {
-        "title": "HTML y HTML 5 básico",
+        "title": "HTML básico y HTML5",
         "intro": [
           "HTML es un lenguaje de marcado que usa una sintaxis o notación especial para describir la estructura de una página web al navegador. Los elementos HTML generalmente tienen etiquetas de apertura y cierre que rodean y dan sentido al contenido. Por ejemplo, diferentes elementos pueden describir el texto como un título, párrafo o elemento de lista.",
           "En este curso, crearás una aplicación de fotos para gatos para aprender algunos de los elementos HTML más comunes, los bloques básicos de cualquier página web."
@@ -78,6 +78,13 @@
           ""
         ]
       },
+      "css-box-model": {
+        "title": "Modelo de Caja de CSS",
+        "intro": [
+          "Mark Rothko fue conocido por el arte abstracto de su pintura. Los cuadros de Rothko suelen representar regiones rectangulares de color en tamaños variables.",
+          "En esta lección, usarás CSS para crear tu propia pintura al estilo de Rothko. Utilizarás muchas de las habilidades que ya has estado practicando, así como nuevas herramientas CSS como el desenfoque y la transformación."
+        ]
+      },
       "css-variables-skyline": {
         "title": "Skyline variables de CSS",
         "intro": [
@@ -85,11 +92,53 @@
           ""
         ]
       },
-      "css-picasso-painting": {
-        "title": "CSS Picasso Painting",
+      "registration-form": {
+        "title": "Formulario de registro",
         "intro": [
-          "Pablo Picasso was known for his Cubism style of painting, a style recognized by representations of objects broken down and reassembled from multiple perspectives. Picasso's paintings are often highly abstract and thought provoking.",
-          "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
+          "",
+          ""
+        ]
+      },
+      "accessibility-quiz": {
+        "title": "Prueba de accesibilidad",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-picasso-painting": {
+        "title": "Pintura de Picasso en CSS",
+        "intro": [
+          "Pablo Picasso era conocido por su estilo de pintura cubista, un estilo reconocido por representaciones de objetos descompuestos y reensamblados desde múltiples perspectivas. Las pinturas de Picasso a menudo son muy abstractas y provocadoras de pensamiento.",
+          "En este curso, usarás CSS para crear tu propia pintura en el estilo de Picasso. Aprenderás sobre los iconos SVG de FontAwesome, posicionamiento CSS, y reforzarás las habilidades que ya has estado aprendiendo."
+        ]
+      },
+      "css-piano": {
+        "title": "Piano CSS",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-photo-gallery": {
+        "title": "Galería de fotos CSS",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-grid-magazine": {
+        "title": "Revista CSS Grid",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "css-nutrition-label": {
+        "title": "Etiqueta de nutrición CSS",
+        "intro": [
+          "",
+          ""
         ]
       }
     }
@@ -99,9 +148,9 @@
     "intro": [
       "Mientras HTML y CSS controlan el contenido y el estilo de una página, JavaScript se utiliza para hacerlo interactivo. En la certificación Algoritmos de JavaScript y Estructuras de Datos, aprenderás los fundamentos de JavaScript incluyendo variables, arreglos, objetos, bucles y funciones.",
       "Una vez que tengas los fundamentos, aplicarás ese conocimiento creando algoritmos para manipular cadenas, factorizar números e incluso calcular la órbita de la Estación Espacial Internacional.",
-      "Along the way, you'll also learn two important programming styles or paradigms: Object Oriented Programming (OOP) and Functional Programming (FP)."
+      "A lo largo del camino, también aprenderás dos estilos o paradigmas importantes de programación: la Programación Orientada a Objetos (OOP), y la Programación Funcional (FP)."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
+    "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o bloqueadores de scripts pueden interferir con las pruebas. Si se te presentan problemas, te recomendamos deshabilitar las extensiones que modifiquen o bloqueen el contenido de la página, mientras tomas el curso.",
     "blocks": {
       "basic-javascript": {
         "title": "JavaScript básico",
@@ -114,8 +163,8 @@
         "title": "ES6",
         "intro": [
           "ECMAScript, o ES, es una versión estandarizada de JavaScript. Debido a que todos los principales navegadores siguen esta especificación, los términos ECMAScript y JavaScript son intercambiables.",
-          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is constantly evolving, and new features are released every year.",
-          "ES6, lanzado en 2015, añadió muchas nuevas y potentes características al lenguaje. En este curso, aprenderás estas nuevas características, incluyendo <code>let</code> y <code>const</code>, funciones flecha, clases, promesas, y módulos."
+          "La mayoría del JavaScript que has aprendido hasta este punto estaba en ES5 (ECMAScript 5), el cual fue finalizado en 2009. Aunque puedes seguir escribiendo programas en ES5, JavaScript está evolucionando siempre, y cada año se lanzan nuevas funcionalidades.",
+          "ES6, lanzado en 2015, agrego muchas nuevas y potentes características al lenguaje. En este curso, aprenderás estas nuevas características, incluyendo let y const, funciones flecha, clases, promesas, y módulos."
         ]
       },
       "regular-expressions": {
@@ -144,15 +193,15 @@
         "title": "Programación de algoritmos básicos",
         "intro": [
           "Un algoritmo es una serie de instrucciones paso a paso que describen cómo hacer algo.",
-          "To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code.",
+          "Para escribir un algoritmo eficaz, ayuda el dividir un problema en partes más pequeñas y pensar cuidadosamente cómo resolver cada parte con código.",
           "En este curso, aprenderás los fundamentos del pensamiento algorítmico mediante la escritura de algoritmos que hacen de todo, desde la conversión de temperaturas hasta el manejo de arreglos 2D complejos."
         ]
       },
       "object-oriented-programming": {
         "title": "Programación orientada a objetos",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes organize code to describe things and what they can do.",
-          "In this course, you'll learn the basic principles of OOP in JavaScript, including the <code>this</code> keyword, prototype chains, constructors, and inheritance."
+          "OOP, o programación orientada a objetos, es uno de los principales enfoques del proceso de desarrollo de software. En OOP, los objetos y las clases son utilizadas para organizar código y para describir lo que pueden hacer.",
+          "En este curso, aprenderás los principios básicos de OOP en JavaScript incluyendo la palabra clave <code>this</code>, cadenas prototipo, constructores, y herencias."
         ]
       },
       "functional-programming": {
@@ -199,64 +248,64 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Front End Development Libraries",
+    "title": "Librerías de desarrollo de la interfaz",
     "intro": [
-      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front end libraries in the industry.",
-      "In the Front End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass.",
-      "Later, you'll build a shopping cart and other applications to learn how to create powerful Single Page Applications (SPAs) with React and Redux."
+      "Ahora que estás familiarizado con HTML, CSS y JavaScript, mejora tus habilidades aprendiendo algunas de las librerías de interfaz más populares en la industria.",
+      "En la certificación de librerías de la interfaz, aprenderás a darle estilo a tu sitio rápidamente con Bootstrap. También aprenderás cómo añadir lógica a tus estilos CSS y extenderlos con Sass.",
+      "Después, construirás un carrito de compras y otras aplicaciones para aprender a crear poderosas aplicaciones de página única (SPAs) con React y Redux."
     ],
     "note": "",
     "blocks": {
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a front end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
-          "In this course, you'll learn how to build responsive websites with Bootstrap, and use its included classes to style buttons, images, forms, navigation, and other common elements."
+          "Bootstrap es un framework de la interfaz utilizado para diseñar páginas y aplicaciones web. Tiene un enfoque de desarrollo web centrado en los dispositivos móviles e incluye estilos y clases CSS pre-configurados, además de algunas funciones de JavaScript.",
+          "En este curso, aprenderás cómo crear sitios web responsivos con Bootstrap, y utilizarás sus clases incluidas para estilizar botones, imágenes, formularios, navegación y otros elementos."
         ]
       },
       "jquery": {
         "title": "jQuery",
         "intro": [
-          "jQuery is one of the most widely used JavaScript libraries in the world.",
-          "In 2006 when it was released, all major browsers handled JavaScript slightly differently. jQuery simplified the process of writing client-side JavaScript, and also ensured that your code worked the same way in all browsers.",
-          "In this course, you'll learn how to use jQuery to select, remove, clone, and modify different elements on the page."
+          "jQuery es una de las librerías de JavaScript más utilizadas en el mundo.",
+          "En 2006, cuando se lanzó, los principales navegadores manejaban JavaScript de forma ligeramente diferente. jQuery simplificó el proceso de escribir JavaScript del lado del cliente, y también garantizó que tu código funcionara de la misma manera en todos los navegadores.",
+          "En este curso, aprenderás a usar jQuery para seleccionar, eliminar, copiar y modificar diferentes elementos de la página."
         ]
       },
       "sass": {
         "title": "SASS",
         "intro": [
-          "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available in basic CSS, which make it easier for you to simplify and maintain the style sheets for your projects.",
-          "In this Sass course, you'll learn how to store data in variables, nest CSS, create reusable styles with mixins, add logic and loops to your styles, and more."
+          "Sass, o \"Syntactically Awesome StyleSheets\", es una extensión del lenguaje CSS. Añade características que no están disponibles en el CSS básico, lo que facilita la simplificación y el mantenimiento de las hojas de estilo de tus proyectos.",
+          "En este curso de Sass, aprenderás cómo almacenar datos en variables, anidar CSS, crear estilos reutilizables con mixins, añadir lógica y bucles a tus estilos, y más."
         ]
       },
       "react": {
-        "title": "React",
+        "title": "React js",
         "intro": [
-          "React is a popular JavaScript library for building reusable, component-driven user interfaces for web pages or applications.",
-          "React combines HTML with JavaScript functionality into its own markup language called JSX. React also makes it easy to manage the flow of data throughout the application.",
-          "In this course, you'll learn how to create different React components, manage data in the form of state props, use different lifecycle methods like <code>componentDidMount</code>, and much more."
+          "React es una librería muy popular de JavaScript para construir interfaces de usuario reutilizables controladas por componentes, para páginas web o aplicaciones.",
+          "React combina HTML con la funcionalidad de JavaScript para crear su propio lenguaje de marcado llamado JSX. Además, facilita la administración del flujo de datos a través de la aplicación.",
+          "En este curso, aprenderás cómo crear diferentes componentes de React, administrar las propiedades de estado de los datos, usar diferentes métodos de ciclo de vida como <code>componentDidMount</code> y mucho más."
         ]
       },
       "redux": {
         "title": "Redux",
         "intro": [
-          "As applications grow in size and scope, managing shared data becomes much more difficult. Redux is defined as a \"predictable state container for JavaScript apps\" that helps ensure your apps work predictably, and are easier to test.",
-          "While you can use Redux with any view library, we introduce Redux here before combining it with React in the next set of courses.",
-          "In this course, you'll learn the fundamentals of Redux stores, actions, reducers and middleware to manage data throughout your application."
+          "A medida que las aplicaciones crecen en tamaño y alcance, la gestión de datos compartidos se vuelve mucho más difícil. Redux se define como un \"contenedor de estado predecible para aplicaciones de JavaScript\" que ayuda a asegurar que tus aplicaciones funcionen de manera predecible, y sean más fáciles de probar.",
+          "Aunque puedes usar Redux con cualquier librería de vistas, aquí introducimos Redux antes de combinarlo con React en los siguientes capítulos del curso.",
+          "En este curso, aprenderás los fundamentos de almacenamiento en Redux, así como de las acciones, reductores e intermediarios para administrar datos a lo largo de tu aplicación."
         ]
       },
       "react-and-redux": {
-        "title": "React and Redux",
+        "title": "React y Redux",
         "intro": [
-          "React and Redux are often mentioned together, and with good reason. The developer who created Redux was a React developer who wanted to make it easier to share data across different components.",
-          "Now that you know how to manage the flow of shared data with Redux, it's time to combine that knowledge with React. In the React and Redux courses, you'll build a React component and learn how to manage state locally at the component level, and throughout the entire application with Redux."
+          "React y Redux se mencionan a menudo juntos, y con razón. El desarrollador que creó Redux era un desarrollador de React que quería hacer más fácil compartir datos a través de diferentes componentes.",
+          "Ahora que sabes cómo administrar el flujo de datos compartidos con Redux, es hora de combinar ese conocimiento con React. En los cursos de React y Redux, construirás un componente de React y aprenderás cómo administrar el estado localmente a un nivel de componentes, y a lo largo de toda la aplicación con Redux."
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Front End Development Libraries Projects",
+        "title": "Proyectos de librerías de desarrollo de la interfaz",
         "intro": [
-          "It's time to put your front end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
-          "Complete all 5 projects, and you'll earn the Front End Development Libraries certification."
+          "Es hora de poner a prueba tus habilidades con las librerías de desarrollo de la interfaz. Usa Bootstrap, jQuery, Sass, React, y Redux para construir 5 proyectos que probarán todo lo que has aprendido hasta este punto.",
+          "Completa los 5 proyectos y obtendrás la certificación librerías de desarrollo de la interfaz."
         ]
       }
     }
@@ -306,55 +355,57 @@
   "relational-databases": {
     "title": "Bases de Datos Relacionales",
     "intro": [
-      "marcador de posición"
+      "Para estos cursos, utilizarás herramientas y software de desarrollador reales, incluyendo VS Code, PostgreSQL y la línea de comandos de Linux / Unix para completar tutoriales interactivos y crear proyectos."
     ],
     "blocks": {
       "learn-relational-databases": {
         "title": "Aprender Bases de Datos Relacionales",
         "intro": [
-          "marcador de posición"
+          "Estos cursos comienzan con comandos básicos de Bash. Usando el terminal, aprenderás todo, desde navegar y manipular un sistema de archivos, crear scripts en Bash, hasta el uso avanzado.",
+          "A continuación, aprenderás como crear y trabajar con bases de datos relacionales utilizando PostgreSQL, un sistema de administración de bases de datos, y SQL, el lenguaje de estas bases de datos.",
+          "Finalmente, aprenderás Git, el sistema de control de versiones, y GitHub, un servicio de alojamiento de repositorios de código, dos herramientas esenciales de todo desarrollador."
         ]
       }
     }
   },
   "back-end-development-and-apis": {
-    "title": "Back End Development and APIs",
+    "title": "Desarrollo Back End y APIs",
     "intro": [
-      "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
-      "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
-      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "Hasta este punto, solo has usado JavaScript en la parte de front-end para agregar interactividad a una página, resolver los desafíos de algoritmos o construir un SPA. Pero JavaScript también se puede utilizar en el back-end, o servidor, para construir aplicaciones web completas.",
+      "Hoy en día, una de las formas populares para construir aplicaciones es a través de microservicios, que son pequeñas aplicaciones modulares que trabajan juntas para formar una aplicación más grande.",
+      "En la Certificación Desarrollo de Back End y APIs, aprenderás cómo escribir aplicaciones de back-end con Node.js y npm (Node Package Manager). También construirás aplicaciones web con el framework Express, y un microservicio \"People Finder\" con MongoDB y la biblioteca Mongoose."
     ],
     "note": "",
     "blocks": {
       "managing-packages-with-npm": {
-        "title": "Managing Packages with NPM",
+        "title": "Gestión de paquetes con NPM",
         "intro": [
-          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
-          "In this course, you'll learn the basics of using npm, including how to work with the <code>package.json</code> and how to manage your installed dependencies."
+          "npm (Gestor de Paquetes de Nodos), es una herramienta de línea de comandos para instalar, crear y compartir paquetes de código JavaScript escritos para Node.js. Hay muchos paquetes de código abierto disponibles en npm, así que antes de iniciar un proyecto, tómate algo de tiempo para explorar los diferentes paquetes, para que no termines reinventando la rueda para cosas comunes como trabajar con fechas y obtener datos de una API.",
+          "En este curso, aprenderás los conceptos básicos del uso de npm, incluyendo cómo trabajar con el <code>package.json</code> y cómo administrar las dependencias instaladas."
         ]
       },
       "basic-node-and-express": {
-        "title": "Basic Node and Express",
+        "title": "Node y Express Basico",
         "intro": [
-          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
-          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
-          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
-          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
+          "Node.js es un entorno de ejecución de JavaScript que permite a desarrolladores escribir programas de backend (lado del servidor) en JavaScript. Node.js viene con muchos módulos integrados — pequeños programas independientes — que ayudan en esto. Algunos de los módulos principales incluyen HTTP, que actúa como un servidor, y sistema de archivos, un módulo para leer y modificar archivos.",
+          "En el último conjunto de cursos aprendiste a instalar y administrar paquetes desde npm, que son colecciones de módulos más pequeños. Estos paquetes pueden ayudarte a construir aplicaciones más grandes y complejas.",
+          "Express es un framework de aplicaciones web ligero y es uno de los paquetes más populares de npm. Express hace mucho más fácil crear un servidor y manejar la ruta de tu aplicación, el cual maneja cosas como dirigir gente a la página correcta cuando visitan un determinado endpoint como <pre>/blog</pre>.",
+          "En este curso, aprenderás los fundamentos de Node y Express, incluyendo cómo crear un servidor, servir diferentes archivos y gestionar diferentes peticiones desde el navegador."
         ]
       },
       "mongodb-and-mongoose": {
-        "title": "MongoDB and Mongoose",
+        "title": "MongoDB y Mongoose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, Mongo is a non-relational or \"NoSQL\" database. This means Mongo stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
-          "Mongoose is a popular npm package that is often installed alongside Mongo. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with Mongo. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
-          "In the MongoDB and Mongoose courses, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
+          "MongoDB es una aplicación de base de datos que almacena documentos (o registros) JSON que puedes utilizar en tu aplicación. A diferencia de SQL, otro tipo de base de datos, Mongo es una base de datos no relacional o \"NoSQL\". Esto significa que Mongo almacena todos los datos asociados dentro de un registro, en lugar de almacenarlos en varias tablas predefinidas como en una base de datos SQL.",
+          "Mongoose es un popular paquete npm que a menudo se instala junto con Mongo. Con Mongoose, puedes utilizar objetos de JavaScript simples en lugar de JSON, lo que hace más fácil trabajar con Mongo. Además, te permite crear plantillas para tus documentos llamados esquemas, para que no guarde accidentalmente el tipo equivocado de datos y cause errores más tarde.",
+          "En los cursos de MongoDB y Mongoose, aprenderás los fundamentos para trabajar con datos persistentes, incluyendo cómo configurar un modelo, guardar, eliminar y encontrar documentos en la base de datos."
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Back End Development and APIs Projects",
+        "title": "Desarrollo Back End y Proyectos APIs",
         "intro": [
-          "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back End Development and APIs Certification, too."
+          "Ya has trabajado con APIs antes, pero ahora que sabes utilizar npm, Node, Express, MongoDB y Mongoose, es momento de construir la tuya. Haz uso de todo lo que aprendiste hasta ahora para crear 5 microservicios diferentes, los cuales son aplicaciones más pequeñas con ámbito limitado.",
+          "Después de crearlas, tendrás 5 interesantes APIs de microservicios que puedes mostrar a amigos, familiares y potenciales empleadores. Oh, y también tendrás una nueva y brillante certificación en Desarrollo de Back End y APIs."
         ]
       }
     }

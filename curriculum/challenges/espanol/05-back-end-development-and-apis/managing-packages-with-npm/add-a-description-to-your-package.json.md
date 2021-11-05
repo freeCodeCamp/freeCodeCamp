@@ -1,6 +1,6 @@
 ---
 id: 587d7fb3367417b2b2512bfc
-title: Add a Description to Your package.json
+title: Agrega una descripción a tu package.json
 challengeType: 2
 forumTopicId: 301522
 dashedName: add-a-description-to-your-package-json
@@ -8,11 +8,11 @@ dashedName: add-a-description-to-your-package-json
 
 # --description--
 
-The next part of a good package.json file is the `description` field; where a short, but informative description about your project belongs.
+La siguiente parte de un buen archivo package.json es el campo `description`; donde pertenece una descripción corta, pero informativa de tu proyecto.
 
-If you some day plan to publish a package to npm, this is the string that should sell your idea to the user when they decide whether to install your package or not. However, that’s not the only use case for the description, it’s a great way to summarize what a project does. It’s just as important in any Node.js project to help other developers, future maintainers or even your future self understand the project quickly.
+Si algún día planeas publicar un paquete a npm, esta es la cadena que debería vender su idea al usuario cuando decida si instalar o no el paquete. Sin embargo, ese no es el único caso de uso para la descripción, es una buena manera de resumir lo que hace un proyecto. Es igual de importante en cualquier proyecto Node.js para ayudar a otros desarrolladores, futuros mantenedores o incluso a tu yo del futuro a entender el proyecto rápidamente.
 
-Regardless of what you plan for your project, a description is definitely recommended. Here's an example:
+Independientemente de lo que planees para tu proyecto, definitivamente se recomienda una descripción. He aquí un ejemplo:
 
 ```json
 "description": "A project that does something awesome",
@@ -20,13 +20,13 @@ Regardless of what you plan for your project, a description is definitely recomm
 
 # --instructions--
 
-Add a `description` to the package.json file of your project.
+Añade una `description` al archivo package.json de tu proyecto.
 
-**Note:** Remember to use double-quotes for field-names (") and commas (,) to separate fields.
+**Nota:** Recuerda usar comillas dobles para nombres de campos (") y comas (,) para separar campos.
 
 # --hints--
 
-package.json should have a valid "description" key
+el archivo package.json debe tener una clave de "description" válida
 
 ```js
 (getUserInput) =>

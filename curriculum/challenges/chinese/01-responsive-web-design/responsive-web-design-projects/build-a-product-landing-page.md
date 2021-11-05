@@ -14,7 +14,7 @@ dashedName: build-a-product-landing-page
 
 你可以使用 HTML、JavaScript 以及 CSS 来完成项目。 由于目前你只学到了 CSS 课程，所以我们建议你只使用 CSS 来完成这个项目，同时巩固一下你之前所学的内容。 你也可以使用 Bootstrap 或者 SASS。 我们不推荐你在这个项目中使用其他技术（比如 jQuery、React、Angular 或 Vue）。 在后续的其他项目中，你将有机会使用像是 React 等其他技术栈。 我们会接受并尝试修复你在使用推荐技术栈创建项目时报告的问题。 祝你编码愉快！
 
-**需求 1：** 产品登陆页应存在 `id="header"` 的 `header` 元素。
+**需求 1：** 产品登录页应存在 `id="header"` 的 `header` 元素。
 
 **需求 2：** 在 `header` 元素内应存在 `id="header-img"` 的图像， 这里通常用来放置公司的 logo。
 

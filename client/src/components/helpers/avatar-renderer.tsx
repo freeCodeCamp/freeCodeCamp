@@ -33,7 +33,7 @@ function AvatarRenderer({
 
   const isPlaceHolderImage =
     !isPictureValid ||
-    /example.com|identicon.org/.test(picture) ||
+    /example.com|identicon.org|^$/.test(picture) ||
     picture === defaultUserImage;
 
   return (

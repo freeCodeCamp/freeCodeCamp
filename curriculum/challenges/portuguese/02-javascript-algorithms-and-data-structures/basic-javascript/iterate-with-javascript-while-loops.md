@@ -14,9 +14,10 @@ Você pode rodar o mesmo código várias vezes usando um laço.
 O primeiro tipo de laço que aprenderemos é chamado de laço `while` porque ele rodará enquanto uma condição específica for verdadeira e vai parar uma vez que a condição não for mais verdadeira.
 
 ```js
-var ourArray = [];
-var i = 0;
-while(i < 5) {
+const ourArray = [];
+let i = 0;
+
+while (i < 5) {
   ourArray.push(i);
   i++;
 }
@@ -38,7 +39,7 @@ Você deve usar um laço `while` para isso.
 assert(code.match(/while/g));
 ```
 
-`myArray` deve ser igual a `[5,4,3,2,1,0]`.
+`myArray` deve ser igual a `[5, 4, 3, 2, 1, 0]`.
 
 ```js
 assert.deepEqual(myArray, [5, 4, 3, 2, 1, 0]);
@@ -56,17 +57,18 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-var i = 5;
-while(i >= 0) {
+const myArray = [];
+let i = 5;
+while (i >= 0) {
   myArray.push(i);
   i--;
 }

@@ -1,6 +1,6 @@
 ---
 id: 587d7fb7367417b2b2512c0a
-title: Create Many Records with model.create()
+title: Crea muchos registros con model.create()
 challengeType: 2
 forumTopicId: 301537
 dashedName: create-many-records-with-model-create
@@ -8,17 +8,17 @@ dashedName: create-many-records-with-model-create
 
 # --description--
 
-Sometimes you need to create many instances of your models, e.g. when seeding a database with initial data. `Model.create()` takes an array of objects like `[{name: 'John', ...}, {...}, ...]` as the first argument, and saves them all in the db.
+A veces necesitas crear muchas instancias de tus modelos, por ejemplo, al sembrar una base de datos con datos iniciales. `Model.create()` toma un arreglo de objetos como `[{name: 'John', ...}, {...}, ...]` como primer argumento y los guarda todos en la base de datos.
 
 # --instructions--
 
-Modify the `createManyPeople` function to create many people using `Model.create()` with the argument `arrayOfPeople`.
+Modifica la función `createManyPeople` para crear muchas personas usando `Model.create()` con el argumento `arrayOfPeople`.
 
-**Note:** You can reuse the model you instantiated in the previous exercise.
+**Nota:** Puedes reutilizar el modelo que has instanciado en el ejercicio anterior.
 
 # --hints--
 
-Creating many db items at once should succeed
+La creación de muchos elementos de la base de datos a la vez debe ser exitoso
 
 ```js
 (getUserInput) =>

@@ -2,7 +2,6 @@
 id: 567af2437cbaa8c51670a16c
 title: Verificare la presenza delle proprietà degli oggetti
 challengeType: 1
-videoUrl: 'https://scrimba.com/c/c6Wz4ySr'
 forumTopicId: 18324
 dashedName: testing-objects-for-properties
 ---
@@ -14,10 +13,11 @@ A volte è utile verificare se la proprietà di un dato oggetto esiste o meno. P
 **Esempio**
 
 ```js
-var myObj = {
+const myObj = {
   top: "hat",
   bottom: "pants"
 };
+
 myObj.hasOwnProperty("top");
 myObj.hasOwnProperty("middle");
 ```

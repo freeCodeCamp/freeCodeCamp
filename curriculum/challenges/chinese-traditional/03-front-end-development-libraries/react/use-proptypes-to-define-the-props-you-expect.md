@@ -16,7 +16,7 @@ React 提供了有用的類型檢查特性，以驗證組件是否接收了正�
 MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
 ```
 
-在上面的示例中，`PropTypes.func` 部分檢查 `handleClick` 是否爲函數。 添加 `isRequired`，告訴 React `handleClick` 是該組件的必需屬性。 如果沒有那個屬性，將出現警告。 還要注意 `func` 代表 `function` 。 在 7 種 JavaScript 原語類型中， `function` 和 `boolean` （寫爲 `bool` ）是唯一使用異常拼寫的兩種類型。 除了原始類型，還有其他類型可用。 例如，你可以檢查 prop 是否爲 React 元素。 請參閱[文檔](https://reactjs.org/docs/jsx-in-depth.html#specifying-the-react-element-type)以獲取所有選項。
+在上面的示例中，`PropTypes.func` 部分檢查 `handleClick` 是否爲函數。 添加 `isRequired`，告訴 React `handleClick` 是該組件的必需屬性。 如果沒有那個屬性，將出現警告。 還要注意 `func` 代表 `function` 。 在 7 種 JavaScript 原語類型中， `function` 和 `boolean` （寫爲 `bool` ）是唯一使用異常拼寫的兩種類型。 除了原始類型，還有其他類型可用。 例如，你可以檢查 prop 是否爲 React 元素。 請參閱[文檔](https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes)以獲取所有選項。
 
 **注意：**在 React v15.5.0 中, `PropTypes` 可以從 React 中單獨引入，例如：`import PropTypes from 'prop-types';`。
 

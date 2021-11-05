@@ -4,10 +4,10 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-import AsSeenIn from './components/AsSeenIn';
-import Certifications from './components/Certifications';
-import LandingTop from './components/LandingTop';
-import Testimonials from './components/Testimonials';
+import AsSeenIn from './components/as-seen-in';
+import Certifications from './components/certifications';
+import LandingTop from './components/landing-top';
+import Testimonials from './components/testimonials';
 
 import './landing.css';
 
@@ -25,7 +25,7 @@ export const Landing = ({ page = 'landing' }) => {
       </Helmet>
       <main className='landing-page'>
         <Grid>
-          <LandingTop page={page} />
+          <LandingTop pageName={page} />
         </Grid>
         <Grid fluid={true}>
           <AsSeenIn />
