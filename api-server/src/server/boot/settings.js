@@ -173,11 +173,14 @@ function updateMyAbout(req, res, next) {
 function createUpdateMyUsername(app) {
   const { User } = app.models;
   return async function updateMyUsername(req, res, next) {
-    const {
-      user,
-      body: { username }
-    } = req;
-    if (username === user.username) {
+    const { user, body } = req;
+    const usernameDisplay = body.username.trim();
+    const username = usernameDisplay.toLowerCase();
+    if (
+      username === user.username &&
+      user.usernameDisplay &&
+      usernameDisplay === user.usernameDisplay
+    ) {
       return res.json({
         type: 'info',
         message: 'flash.username-used'
@@ -192,7 +195,8 @@ function createUpdateMyUsername(app) {
       });
     }
 
-    const exists = await User.doesExist(username);
+    const exists =
+      username === user.username ? false : await User.doesExist(username);
 
     if (exists) {
       return res.json({
@@ -201,7 +205,7 @@ function createUpdateMyUsername(app) {
       });
     }
 
-    return user.updateAttribute('username', username, err => {
+    return user.updateAttributes({ username, usernameDisplay }, err => {
       if (err) {
         res.status(500).json(standardErrorMessage);
         return next(err);
@@ -210,7 +214,7 @@ function createUpdateMyUsername(app) {
       return res.status(200).json({
         type: 'success',
         message: `flash.username-updated`,
-        variables: { username: username }
+        variables: { username: usernameDisplay }
       });
     });
   };
