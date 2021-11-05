@@ -20,7 +20,7 @@ As you can see, you are successively halving an array, which gives your the log(
 
 **Instructions:** Write a function `binarySearch` that implements the binary search algorithm on an array, recording the path you took (each middle value comparison) to find the target.
 
-The function takes a sorted array of integers and a target value as input. It returns an array containing (in-order) the middle value you found at each halving of the original array until you found the target value.
+The function takes a sorted array of integers and a target value as input. It returns an array containing (in-order) the middle value you found at each halving of the original array until you found the target value. If value not found, return "Value Not Found"
 
 For example, binarySearch([1,2,3,4,5,6,7], 5) would return [4,6,5].
 
@@ -37,7 +37,53 @@ assert(typeof binarySearch == 'function');
 `binarySearch` should return x, y, z.
 
 ```js
-assert.sameMembers(binarySearch([1, 2, 4, 6, 8, 10, 12], 10), [6, 10]);
+let searchList = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
+let testArray = [
+  [13, 5, 2, 0],
+  [13, 5, 2, 0, 1],
+  [13, 5, 2],
+  [13, 5, 2, 3],
+  [13, 5, 2, 3, 4],
+  [13, 5],
+  'Value Not Found',
+  'Value Not Found',
+  [13, 5, 10, 8],
+  [13, 5, 10, 8, 9],
+  [13, 5, 10],
+  [13, 5, 10, 11],
+  [13, 5, 10, 11, 12],
+  [13],
+  [13, 19, 16, 14]
+];
+
+for (let i = 0; i < 15; i++) {
+  let pass = true;
+
+  //user algo did not find value
+  if (binarySearch(searchList, i) == 'Value Not Found') {
+    if (testArray[i] == 'Value Not Found') {
+    } else {
+      assert.fail();
+    }
+    continue;
+  }
+  //user algo found value
+  for (let j = 0; j < testArray[i].length; j++) {
+    if (binarySearch(searchList, i)[j] != testArray[i][j]) {
+      pass = false;
+      assert.fail(
+        '***ERROR***',
+        binarySearch(searchList, i),
+        '!=',
+        testArray[i]
+      );
+      break;
+    }
+  }
+}
 ```
 
 # --seed--
@@ -49,7 +95,9 @@ assert.sameMembers(binarySearch([1, 2, 4, 6, 8, 10, 12], 10), [6, 10]);
 ```js
 function binarySearch(searchList, value) {
   let arrayPath = [];
+
   // Only change code below this line
+
   return arrayPath;
   // Only change code above this line
 }
@@ -65,6 +113,12 @@ let binarySearch = (searchList, value) => {
   let left = 0;
   let right = searchList.length - 1;
   let middle = Math.floor(right / 2);
+
+  //if first comparison finds value
+  if (searchList[middle] == value) {
+    arrayPath.push(searchList[middle]);
+    return arrayPath;
+  }
 
   while (searchList[middle] !== value) {
     //add to output array
