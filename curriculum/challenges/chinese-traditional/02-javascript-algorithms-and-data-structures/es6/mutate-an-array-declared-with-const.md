@@ -8,11 +8,13 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-在現代的 JavaScript 裏，`const` 聲明有很多用法。
+如果你不熟悉 `const`，請查看[這個挑戰](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword)。
 
-一些開發者傾向於默認使用 `const` 來聲明所有變量，除非他們打算後續重新給變量賦值， 那麼他們在聲明的時候就會用 `let`。
+`const` 聲明在現代 JavaScript 中有很多用例。
 
-然而，你要注意，對象（包括數組和函數）在使用 `const` 聲明的時候依然是可變的。 使用 `const` 來聲明只會保證變量不會被重新賦值。
+默認情況下，一些開發人員更喜歡使用 `const` 分配所有變量，除非他們知道需要重新分配值。 只有在這種情況下，他們才使用 `let`。
+
+但是，重要的是要了解使用 `const` 分配給變量的對象（包括數組和函數）仍然是可變的。 使用 `const` 聲明只能防止變量標識符的重新分配。
 
 ```js
 const s = [5, 6, 7];
@@ -21,13 +23,13 @@ s[2] = 45;
 console.log(s);
 ```
 
-`s = [1, 2, 3]` 會導致一個錯誤。 `console.log` 會顯示值 `[5, 6, 45]`。
+`s = [1, 2, 3]` 將導致錯誤。 `console.log` 將顯示值 `[5, 6, 45]`。
 
-可以發現，你可以改變對象 `[5, 6, 7]` 本身，而變量 `s` 會指向改變後的數組 `[5, 6, 45]`。 和所有數組一樣，數組 `s` 中的元素是可以被改變的，但是因爲使用了 `const` 關鍵字，你不能使用賦值操作符將變量標識 `s` 指向另外一個數組。
+如你所見，你可以改變對象 `[5, 6, 7]` 本身，變量 `s` 仍將指向更改後的數組 `[5, 6, 45]`。 像所有數組一樣，`s` 中的數組元素是可變的，但是因爲使用了 `const`，所以不能使用變量標識符 `s` 來指向一個使用賦值運算符的不同數組。
 
 # --instructions--
 
-這裏有一個使用 `const s = [5, 7, 2]` 聲明的數組。 使用對各元素賦值的方法將數組改成 `[2, 5, 7]`。
+數組聲明爲 `const s = [5, 7, 2]`。 使用對各元素賦值的方法將數組改成 `[2, 5, 7]`。
 
 # --hints--
 
@@ -37,7 +39,7 @@ console.log(s);
 (getUserInput) => assert(getUserInput('index').match(/const/g));
 ```
 
-`s` 應該爲常量（使用 `const`）。
+`s` 應該是一個常量變量（通過使用 `const`）。
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+s/g));

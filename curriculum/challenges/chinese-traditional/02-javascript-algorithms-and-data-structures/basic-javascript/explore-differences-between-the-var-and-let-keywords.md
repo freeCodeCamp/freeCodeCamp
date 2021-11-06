@@ -8,55 +8,53 @@ dashedName: explore-differences-between-the-var-and-let-keywords
 
 # --description--
 
-使用 `var` 關鍵字來聲明變量，會出現重複聲明導致變量被覆蓋卻不會報錯的問題。
+使用 `var` 關鍵字聲明變量的最大問題之一是你可以輕鬆覆蓋變量聲明：
 
 ```js
-var camper = 'James';
-var camper = 'David';
+var camper = "James";
+var camper = "David";
 console.log(camper);
 ```
 
-這裏控制檯將顯示字符串 `David`。
+在上面的代碼中，`camper` 變量最初聲明爲 `James`，然後被覆蓋爲 `David`。 然後控制檯顯示字符串 `David`。
 
-在上面的代碼中，`camper` 變量的初始值爲 `James`，然後又被覆蓋成了 `David`。 在小型的應用中，你可能不會遇到這樣的問題。但是當你的代碼規模變得更加龐大的時候，就可能會在不經意間覆蓋了之前定義的變量。 因爲這樣的情況不會報錯，所以搜索和修復 bug 會變得非常困難。  
-在 ES6 中引入了新的關鍵字 `let` 來解決 `var` 關鍵字帶來的潛在問題。 如果你在上面的代碼中使用 `let` 關鍵字來代替 `var` 關鍵字，結果會是一個報錯。
+在小型應用程序中，你可能不會遇到此類問題。 但是隨着你的代碼庫變大，你可能會意外地覆蓋一個你不打算覆蓋的變量。 由於此行爲不會引發錯誤，因此搜索和修復錯誤變得更加困難。
 
-```js
-let camper = 'James';
-let camper = 'David';
-```
+ES6 中引入了一個名爲 `let` 的關鍵字，這是對 JavaScript 的一次重大更新，以解決與 `var` 關鍵字有關的潛在問題。 你將在後面的挑戰中瞭解其他 ES6 特性。
 
-你可以在瀏覽器的控制檯裏看見這個錯誤。 與 `var` 不同的是，當使用 `let` 的時候，同一名字的變量只能被聲明一次。 請注意 `"use strict"`。 這代表着開啓了嚴格模式，用於檢測常見的代碼錯誤以及“不安全”的行爲， 例如：
+如果將上面代碼中的 `var` 替換爲 `let` ，則會導致錯誤：
 
 ```js
-"use strict";
-x = 3.14;
+let camper = "James";
+let camper = "David";
 ```
 
-這將顯示一個錯誤 `x is not defined`。
+該錯誤可以在你的瀏覽器控制檯中看到。
+
+所以不像 `var`，當你使用 `let` 時，同名的變量只能聲明一次。
 
 # --instructions--
 
-請更新這段代碼，只使用 `let` 關鍵字。
+更新代碼，使其僅使用 `let` 關鍵字。
 
 # --hints--
 
-代碼中不應有 `var`
+`var` 不應存在於代碼中。
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`catName` 變量的值應該爲 `Oliver`
+`catName` 應該是字符串 `Oliver`。
 
 ```js
 assert(catName === 'Oliver');
 ```
 
-`quote` 變量的值應該爲 `Oliver says Meow!`
+`catSound` 應該是字符串 `Meow!`
 
 ```js
-assert(quote === 'Oliver says Meow!');
+assert(catSound === 'Meow!');
 ```
 
 # --seed--
@@ -64,28 +62,13 @@ assert(quote === 'Oliver says Meow!');
 ## --seed-contents--
 
 ```js
-var catName;
-var quote;
-function catTalk() {
-  "use strict";
-
-  catName = "Oliver";
-  quote = catName + " says Meow!";
-
-}
-catTalk();
+var catName = "Oliver";
+var catSound = "Meow!";
 ```
 
 # --solutions--
 
 ```js
-let catName;
-let quote;
-function catTalk() {
-  'use strict';
-
-  catName = 'Oliver';
-  quote = catName + ' says Meow!';
-}
-catTalk();
+let catName = "Oliver";
+let catSound = "Meow!";
 ```
