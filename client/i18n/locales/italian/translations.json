@@ -99,7 +99,7 @@
     "private-name": "Il tuo nome non apparirà sulle certificazioni, se impostato su privato.",
     "claim-legacy": "Una volta che avrai ottenuto le seguenti certificazioni gratuite di freeCodeCamp, sarai in grado di richiedere la {{cert}}:",
     "for": "Impostazioni Account per {{username}}",
-    "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
+    "sound-mode": "Questo aggiunge i piacevoli suoni di una chitarra acustica nel sito. Suonerà mentre scrivi nell'editor, completi sfide, ottieni certificazioni, e altro.",
     "username": {
       "contains invalid characters": "Il nome utente \"{{username}}\" contiene caratteri non validi",
       "is too short": "Il nome utente \"{{username}}\" è troppo corto",
@@ -135,7 +135,7 @@
       "my-timeline": "La mia cronologia",
       "my-donations": "Le mie donazioni",
       "night-mode": "Modalità Notturna",
-      "sound-mode": "Campfire Mode"
+      "sound-mode": "Modalità Campfire"
     },
     "headings": {
       "certs": "Certificazioni",
