@@ -12,11 +12,12 @@ dashedName: nesting-for-loops
 如果你有一个二维数组，可以使用相同的逻辑，先遍历外面的数组，再遍历里面的子数组。 下面是一个例子：
 
 ```js
-var arr = [
-  [1,2], [3,4], [5,6]
+const arr = [
+  [1, 2], [3, 4], [5, 6]
 ];
-for (var i=0; i < arr.length; i++) {
-  for (var j=0; j < arr[i].length; j++) {
+
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < arr[i].length; j++) {
     console.log(arr[i][j]);
   }
 }
@@ -30,13 +31,13 @@ for (var i=0; i < arr.length; i++) {
 
 # --hints--
 
-`multiplyAll([[1],[2],[3]])` 应该返回 `6`
+`multiplyAll([[1], [2], [3]])` 应该返回 `6`
 
 ```js
 assert(multiplyAll([[1], [2], [3]]) === 6);
 ```
 
-`multiplyAll([[1,2],[3,4],[5,6,7]])` 应该返回 `5040`
+`multiplyAll([[1, 2], [3, 4], [5, 6, 7]])` 应该返回 `5040`
 
 ```js
 assert(
@@ -48,7 +49,7 @@ assert(
 );
 ```
 
-`multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])` 应该返回 `54`
+`multiplyAll([[5, 1], [0.2, 4, 0.5], [3, 9]])` 应该返回 `54`
 
 ```js
 assert(
@@ -66,28 +67,26 @@ assert(
 
 ```js
 function multiplyAll(arr) {
-  var product = 1;
+  let product = 1;
   // Only change code below this line
 
   // Only change code above this line
   return product;
 }
 
-multiplyAll([[1,2],[3,4],[5,6,7]]);
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
 ```
 
 # --solutions--
 
 ```js
 function multiplyAll(arr) {
-  var product = 1;
-  for (var i = 0; i < arr.length; i++) {
-    for (var j = 0; j < arr[i].length; j++) {
+  let product = 1;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
       product *= arr[i][j];
     }
   }
   return product;
 }
-
-multiplyAll([[1,2],[3,4],[5,6,7]]);
 ```

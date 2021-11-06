@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b41
-title: 用 const 關鍵字聲明只讀變量
+title: 使用 const 關鍵字聲明只讀變量
 challengeType: 1
 forumTopicId: 301201
 dashedName: declare-a-read-only-variable-with-the-const-keyword
@@ -8,50 +8,62 @@ dashedName: declare-a-read-only-variable-with-the-const-keyword
 
 # --description--
 
-`let` 並不是唯一的新的聲明變量的方式。 在 ES6 裏面，你還可以使用 `const` 關鍵字來聲明變量。
+關鍵字 `let` 並不是聲明變量的唯一新方法。 在 ES6 中，你還可以使用 `const` 關鍵字聲明變量。
 
-`const` 擁有 `let` 的所有優點，不同的是，通過 `const` 聲明的變量是隻讀的。 這意味着通過 `const` 聲明的變量只能被賦值一次，而不能被再次賦值。
+`const` 具有 `let` 的所有出色功能，另外還有一個額外的好處，即使用 `const` 聲明的變量是隻讀的。 它們是一個常量值，這意味着一旦一個變量被賦值爲 `const`，它就不能被重新賦值：
 
 ```js
 const FAV_PET = "Cats";
 FAV_PET = "Dogs";
 ```
 
-控制檯將由於給 `FAV_PET` 重新賦值而顯示錯誤。
+由於重新分配 `FAV_PET` 的值，控制檯將顯示錯誤。
 
-可見，嘗試給用 `const` 聲明的變量重新賦值會報錯。 你應該使用 `const` 關鍵字來聲明所有不打算再次賦值的變量。 這有助於避免給一個常量進行額外的再次賦值。 一個最佳實踐是對所有常量的命名採用全大寫字母，並在單詞之間使用下劃線進行分隔。
+你應該始終使用 `const` 關鍵字命名不想重新分配的變量。 這有助於避免給一個常量進行額外的再次賦值。
 
-**注意：**通常，開發者會用大寫字母作爲常量標識符，用小寫字母或者駝峯命名作爲變量（對象或數組）標識符。 後面的挑戰會涉及到在數組中使用小寫變量標識符。
+命名常量的常見做法是全部使用大寫字母，單詞之間用下劃線分隔。
+
+**注意：** 對於不可變值，開發人員通常使用大寫變量標識符，對可變值（對象和數組）使用小寫或駝峯式標識符。 你將在後面的挑戰中瞭解有關對象、數組以及不可變和可變值的更多信息。 同樣在後面的挑戰中，你將看到大寫、小寫或駝峯式變量標識符的示例。
 
 # --instructions--
 
-改變以下代碼，使得所有的變量都使用 `let` 或 `const` 關鍵詞來聲明。 當變量將會改變的時候使用 `let` 關鍵字，當變量要保持常量的時候使用 `const` 關鍵字。 同時，對使用 `const` 聲明的變量按照最佳實踐重命名，變量名中的字母應該都是大寫的。
+更改代碼，以便使用 `let` 或 `const` 聲明所有變量。 當你希望變量改變時使用 `let`，而當你希望變量保持不變時使用 `const`。 此外，重命名用 `const` 聲明的變量以符合常見做法，這意味着常量應該全部大寫。
 
 # --hints--
 
-代碼中不應有 `var`。
+`var` 不應存在於你的代碼中。
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`SENTENCE` 應該是使用 `const` 聲明的常量。
+你應該將 `fCC` 更改爲全部大寫。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(const SENTENCE)/g));
+(getUserInput) => {
+  assert(getUserInput('index').match(/(FCC)/));
+  assert(!getUserInput('index').match(/fCC/));
+}
 ```
 
-`i` 應該是使用 `let`聲明的。
+`FCC` 應該是一個用 `const` 聲明的常量變量。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(let i)/g));
+assert.equal(FCC, 'freeCodeCamp');
+assert.match(code, /const\s+FCC/);
 ```
 
-`console.log` 應該修改爲用於打印 `SENTENCE` 變量。
+`fact` 應該用 `let` 聲明。
+
+```js
+(getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
+```
+
+`console.log` 應該更改爲打印 `FCC` 和 `fact` 變量。
 
 ```js
 (getUserInput) =>
-  assert(getUserInput('index').match(/console\.log\(\s*SENTENCE\s*\)\s*;?/g));
+  assert(getUserInput('index').match(/console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g));
 ```
 
 # --seed--
@@ -59,31 +71,18 @@ FAV_PET = "Dogs";
 ## --seed-contents--
 
 ```js
-function printManyTimes(str) {
-
-  // Only change code below this line
-
-  var sentence = str + " is cool!";
-  for (var i = 0; i < str.length; i+=2) {
-    console.log(sentence);
-  }
-
-  // Only change code above this line
-
-}
-printManyTimes("freeCodeCamp");
+var fCC = "freeCodeCamp"; // Change this line
+var fact = "is cool!"; // Change this line
+fact = "is awesome!";
+console.log(fCC, fact); // Change this line
 ```
 
 # --solutions--
 
 ```js
-function printManyTimes(str) {
+const FCC = "freeCodeCamp";
+let fact = "is cool!";
 
-  const SENTENCE = str + " is cool!";
-  for (let i = 0; i < str.length; i+=2) {
-    console.log(SENTENCE);
-  }
-
-}
-printManyTimes("freeCodeCamp");
+fact = "is awesome!";
+console.log(FCC, fact);
 ```

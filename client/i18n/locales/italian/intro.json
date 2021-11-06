@@ -121,21 +121,21 @@
         ]
       },
       "css-photo-gallery": {
-        "title": "CSS Photo Gallery",
+        "title": "Galleria Fotografica con CSS",
         "intro": [
           "",
           ""
         ]
       },
       "css-grid-magazine": {
-        "title": "CSS Grid Magazine",
+        "title": "Rivista con CSS Grid",
         "intro": [
           "",
           ""
         ]
       },
       "css-nutrition-label": {
-        "title": "CSS Nutrition Label",
+        "title": "Etichetta nutrizionale CSS",
         "intro": [
           "",
           ""
@@ -164,7 +164,7 @@
         "intro": [
           "ECMAScript o ES è una versione standardizzata di JavaScript. Dato che tutti i maggiori browser seguono queste specifiche, i termini ECMAScript e JavaScript sono intercambiabili.",
           "La maggior parte del JavaScript che hai appreso finora era in ES5 (ECMAScript 5), che fu definito nel 2009. Anche se puoi ancora scrivere programmi in ES5, JavaScript è in costante evoluzione, e vengono rilasciate ogni anno nuove funzionalità.",
-          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including arrow functions, destructuring, classes, promises, and modules."
+          "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, inclusi funzioni freccia, destrutturazione, classi, promise e moduli."
         ]
       },
       "regular-expressions": {
