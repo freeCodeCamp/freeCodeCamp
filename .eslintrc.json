@@ -44,13 +44,7 @@
       "files": ["**/*.ts?(x)"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
-        "project": [
-          "./client/tsconfig.json",
-          "./tools/challenge-helper-scripts/tsconfig.json",
-          "./tools/ui-components/tsconfig.json",
-          "./config/tsconfig.json",
-          "./tools/scripts/tsconfig.json"
-        ]
+        "project": ["./tsconfig.json", "./tools/ui-components/tsconfig.json"]
       },
       "extends": [
         "plugin:@typescript-eslint/recommended",
