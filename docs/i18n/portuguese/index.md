@@ -2,7 +2,7 @@ A comunidade do  [freeCodeCamp.org](https://freecodecamp.org) é possível graç
 
 > [!NOTE] Antes de continuar, reserve 2 minutinhos para ler o nosso [Código de Conduta](https://www.freecodecamp.org/code-of-conduct). Nós o aplicamos rigorosamente em toda a nossa comunidade para que contribuir com o freeCodeCamp.org seja uma experiência segura e inclusiva para todos.
 
-Fique à vontade para criar, atualizar e corrigir bugs em nosso [currículo](#curriculum), ajude-nos a corrigir bugs na [plataforma de aprendizagem](#learning-platform) do no freeCodeCamp ou [ajude-nos a traduzir](#translations) o freeCodeCamp.org para idiomas do mundo inteiro.
+Fique à vontade para criar, atualizar e corrigir bugs em nosso [currículo](#curriculum), ajude-nos a corrigir bugs na [plataforma de aprendizagem](#learning-platform) do freeCodeCamp ou [ajude-nos a traduzir](#translations) o freeCodeCamp.org para idiomas do mundo inteiro.
 
 Respondemos às perguntas mais comuns sobre como contribuir [no nosso FAQ do colaborador](FAQ.md).
 
@@ -26,11 +26,11 @@ Muitas certificações já estão prontas em alguns dos idiomas principais do mu
 
 **Se você está interessado em traduzir, veja como traduzir os recursos do  [freeCodeCamp](how-to-translate-files.md).**
 
-## Plataforma de aprendizado
+## Plataforma de aprendizagem
 
-Nossa plataforma de aprendizado executa em uma stack de JavaScript moderna. Ela possui vários componentes, ferramentas e bibliotecas. Estes incluem Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack e mais.
+Nossa plataforma de aprendizagem executa em uma stack de JavaScript moderna. Ela possui vários componentes, ferramentas e bibliotecas. Estes incluem Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack e mais.
 
-Geralmente, temos um servidor de API baseado em Node.js, um conjunto de aplicativos de client baseados em React, testes de scripts para avaliar projetos de currículo apresentados pelos campers e muito mais. Se você deseja contribuir produtivamente para nossa plataforma de aprendizado, recomendamos alguma familiaridade com estas ferramentas.
+Geralmente, temos um servidor de API baseado em Node.js, um conjunto de aplicativos de client baseados em React, testes de scripts para avaliar projetos de currículo apresentados pelos campers e muito mais. Se você deseja contribuir produtivamente para nossa plataforma de aprendizagem, recomendamos alguma familiaridade com estas ferramentas.
 
 Se você quer nos ajudar a melhorar nossa base de código...
 
