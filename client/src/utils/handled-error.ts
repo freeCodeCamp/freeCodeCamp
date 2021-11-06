@@ -1,6 +1,6 @@
 import { has } from 'lodash-es';
 
-interface ErrorData {
+export interface ErrorData {
   type?: string;
   message?: string;
   redirectTo?: string | null;
