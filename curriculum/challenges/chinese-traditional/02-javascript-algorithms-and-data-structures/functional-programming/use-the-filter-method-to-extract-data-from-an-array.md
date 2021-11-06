@@ -55,7 +55,7 @@ assert(code.match(/\s*\.\s*filter/g));
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-`filteredList` 應等於 `[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]`。
+`filteredList` 應該等於 `[{"title": "Inception", "rating": "8.8"}, {"title": "Interstellar", "rating": "8.6"}, {"title": "The Dark Knight", "rating": "9.0"}, {"title": "Batman Begins", "rating": "8.3"}]`。
 
 ```js
 assert.deepEqual(filteredList, [
@@ -72,7 +72,7 @@ assert.deepEqual(filteredList, [
 
 ```js
 // The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -187,7 +187,7 @@ var watchList = [
 
 // Only change code below this line
 
-var filteredList;
+const filteredList = "";
 
 // Only change code above this line
 
@@ -197,8 +197,7 @@ console.log(filteredList);
 # --solutions--
 
 ```js
-// The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -311,7 +310,5 @@ var watchList = [
   }
 ];
 
-// Only change code below this line
-let filteredList = watchList.filter(e => e.imdbRating >= 8).map( ({Title: title, imdbRating: rating}) => ({title, rating}) );
-// Only change code above this line
+const filteredList = watchList.filter(e => e.imdbRating >= 8).map( ({Title: title, imdbRating: rating}) => ({title, rating}) );
 ```

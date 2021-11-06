@@ -11,13 +11,13 @@ dashedName: global-scope-and-functions
 
 在 JavaScript 中，<dfn>作用域</dfn>涉及到变量的作用范围。 在函数外定义的变量具有 <dfn>全局</dfn> 作用域。 这意味着，具有全局作用域的变量可以在代码的任何地方被调用。
 
-这些没有使用 `var` 关键字定义的变量，会被自动创建在 `global` 作用域中，形成全局变量。 当在代码其他地方无意间定义了一个变量，刚好变量名与全局变量相同，这时会产生意想不到的后果。 因此你应该总是使用 `var` 关键字来声明你的变量。
+未使用 `let` 或 `const` 关键字声明的变量会在 `global` 范围内自动创建。 当在代码其他地方无意间定义了一个变量，刚好变量名与全局变量相同，这时会产生意想不到的后果。 你应该总是用 `let` 或 `const` 声明你的变量。
 
 # --instructions--
 
-使用 `var`，在函数外声明一个全局变量 `myGlobal`， 并给它一个初始值 `10`。
+使用 `let` 或 `const`，在任何函数之外声明一个名为 `myGlobal` 的全局变量。 并给它一个初始值 `10`。
 
-在函数 `fun1` 的内部，***不***使用 `var` 关键字，声明 `oopsGlobal`，并给它赋值为 `5`。
+在函数 `fun1` 中，***不要*** 使用 `let` 或 `const` 关键字，将 `5` 分配给 `oopsGlobal` 。
 
 # --hints--
 
@@ -33,10 +33,10 @@ assert(typeof myGlobal != 'undefined');
 assert(myGlobal === 10);
 ```
 
-应使用 `var` 关键字定义 `myGlobal`。
+`myGlobal` 应该使用 `let` 或 `const` 关键字声明
 
 ```js
-assert(/var\s+myGlobal/.test(code));
+assert(/(let|const)\s+myGlobal/.test(code));
 ```
 
 `oopsGlobal` 应为全局变量，值为 `5`。
@@ -109,7 +109,7 @@ function fun2() {
 # --solutions--
 
 ```js
-var myGlobal = 10;
+const myGlobal = 10;
 
 function fun1() {
   oopsGlobal = 5;

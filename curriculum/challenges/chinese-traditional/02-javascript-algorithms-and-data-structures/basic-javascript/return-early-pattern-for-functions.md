@@ -33,43 +33,43 @@ myFun();
 
 # --hints--
 
-`abTest(2,2)` 應該返回一個數字
+`abTest(2, 2)` 應該返回一個數字
 
 ```js
 assert(typeof abTest(2, 2) === 'number');
 ```
 
-`abTest(2,2)` 應該返回 `8`
+`abTest(2, 2)` 應該返回 `8`
 
 ```js
 assert(abTest(2, 2) === 8);
 ```
 
-`abTest(-2,2)` 應該返回 `undefined`
+`abTest(-2, 2)` 應該返回 `undefined`
 
 ```js
 assert(abTest(-2, 2) === undefined);
 ```
 
-`abTest(2,-2)` 應該返回 `undefined`
+`abTest(2, -2)` 應該返回 `undefined`
 
 ```js
 assert(abTest(2, -2) === undefined);
 ```
 
-`abTest(2,8)` 應該返回 `18`
+`abTest(2, 8)` 應該返回 `18`
 
 ```js
 assert(abTest(2, 8) === 18);
 ```
 
-`abTest(3,3)` 應該返回 `12`
+`abTest(3, 3)` 應該返回 `12`
 
 ```js
 assert(abTest(3, 3) === 12);
 ```
 
-`abTest(0,0)` 應該返回 `0`
+`abTest(0, 0)` 應該返回 `0`
 
 ```js
 assert(abTest(0, 0) === 0);

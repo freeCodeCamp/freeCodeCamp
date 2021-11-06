@@ -9,7 +9,7 @@ dashedName: use-conditional-logic-with-if-statements
 
 # --description--
 
-`If` 語句用於在代碼中做條件判斷。 關鍵字 `if` 告訴 JavaScript 在小括號中的條件爲真的情況下去執行定義在大括號裏面的代碼。 這種條件被稱爲 `Boolean` 條件，因爲他們只可能是 `true`（真）或 `false`（假）。
+`if` 語句用於在代碼中做出決定。 關鍵字 `if` 告訴 JavaScript 在小括號中的條件爲真的情況下去執行定義在大括號裏面的代碼。 這種條件被稱爲 `Boolean` 條件，因爲他們只可能是 `true`（真）或 `false`（假）。
 
 當條件的計算結果爲 `true`，程序執行大括號內的語句。 當布爾條件的計算結果爲 `false`，大括號內的代碼將不會執行。
 
@@ -22,10 +22,11 @@ dashedName: use-conditional-logic-with-if-statements
 ```js
 function test (myCondition) {
   if (myCondition) {
-     return "It was true";
+    return "It was true";
   }
   return "It was false";
 }
+
 test(true);
 test(false);
 ```

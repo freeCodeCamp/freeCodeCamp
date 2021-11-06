@@ -9,21 +9,27 @@ dashedName: declare-string-variables
 
 # --description--
 
-之前我們寫過這樣的代碼：
+之前，你使用以下代碼聲明變量：
+
+```js
+var myName;
+```
+
+但是你也可以像這樣聲明一個字符串變量：
 
 ```js
 var myName = "your name";
 ```
 
-`"your name"` 被稱作<dfn>字符串</dfn><dfn>字面量</dfn>。 這是一個字符串，因爲它是一系列包含在單引號或雙引號中的零或多個字符。
+`"your name"` 被稱爲 <dfn>string</dfn> <dfn>literal</dfn>。 字符串文字或字符串是用單引號或雙引號括起來的一系列零個或多個字符。
 
 # --instructions--
 
-創建兩個新的字符串變量：`myFirstName` 和 `myLastName`，並用你的姓和名分別爲它們賦值。
+創建兩個新的字符串變量：`myFirstName` 和 `myLastName`，並分別爲它們分配你的名字和姓氏的值。
 
 # --hints--
 
-`myFirstName` 應該是一個字符串，至少包含一個字符。
+`myFirstName` 應該是一個至少包含一個字符的字符串。
 
 ```js
 assert(
@@ -41,7 +47,7 @@ assert(
 );
 ```
 
-`myLastName` 應該是一個字符串，至少包含一個字符。
+`myLastName` 應該是一個至少包含一個字符的字符串。
 
 ```js
 assert(

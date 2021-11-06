@@ -25,7 +25,7 @@ dashedName: comparison-with-the-inequality-operator
 
 # --instructions--
 
-在 `if` 語句中，添加不相等運算符 `!=`，這樣函數在當 `val` 不等於 `99` 的時候，會返回 `Not Equal`。
+在 `if` 語句中添加不等運算符 `!=` 以便函數在 `val` 不等於 `99` 時返回字符串 `Not Equal`。
 
 # --hints--
 
