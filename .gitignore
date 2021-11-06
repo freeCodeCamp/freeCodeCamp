@@ -163,6 +163,10 @@ config/client/sass-compile.json
 config/client/frame-runner.json
 config/client/test-evaluator.json
 config/curriculum.json
+config/i18n/all-langs.js
+config/certification-settings.ts
+
+tools/scripts/build/ensure-env.js
 
 ### vim ###
 # Swap
@@ -202,3 +206,4 @@ client/static/_redirects
 
 ### UI Components ###
 tools/ui-components/dist
+
