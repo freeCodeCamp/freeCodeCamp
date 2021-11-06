@@ -10,9 +10,7 @@ dashedName: subleq
 
 [Subleq](https://rosettacode.org/wiki/eso:Subleq) is an example of a [One-Instruction Set Computer (OISC)](https://en.wikipedia.org/wiki/One_instruction_set_computer).
 
-It is named after its only instruction, which is **SU**btract and **B**ranch if **L**ess than or **EQ**ual
-
-to zero.
+It is named after its only instruction, which is **SU**btract and **B**ranch if **L**ess than or **EQ**ual to zero.
 
 Your task is to create an interpreter which emulates such a machine.
 
