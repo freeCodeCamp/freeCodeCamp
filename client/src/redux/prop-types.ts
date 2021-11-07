@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
 
-export const FileType = PropTypes.shape({
+export const FilePropType = PropTypes.shape({
   key: PropTypes.string,
   ext: PropTypes.string,
   name: PropTypes.string,
@@ -10,7 +10,7 @@ export const FileType = PropTypes.shape({
   tail: PropTypes.string
 });
 
-export const MarkdownRemark = PropTypes.shape({
+export const MarkdownRemarkPropType = PropTypes.shape({
   html: PropTypes.string,
   frontmatter: PropTypes.shape({
     title: PropTypes.string,
@@ -19,15 +19,15 @@ export const MarkdownRemark = PropTypes.shape({
   })
 });
 
-export const AllMarkdownRemark = PropTypes.shape({
+export const AllMarkdownRemarkPropType = PropTypes.shape({
   edges: PropTypes.arrayOf(
     PropTypes.shape({
-      node: MarkdownRemark
+      node: MarkdownRemarkPropType
     })
   )
 });
 
-export const User = PropTypes.shape({
+export const UserPropType = PropTypes.shape({
   about: PropTypes.string,
   completedChallenges: PropTypes.arrayOf(
     PropTypes.shape({
@@ -79,7 +79,7 @@ export const User = PropTypes.shape({
   website: PropTypes.string
 });
 
-export const CurrentCertsType = PropTypes.arrayOf(
+export const CurrentCertsPropType = PropTypes.arrayOf(
   PropTypes.shape({
     show: PropTypes.bool,
     title: PropTypes.string,
@@ -87,8 +87,8 @@ export const CurrentCertsType = PropTypes.arrayOf(
   })
 );
 
-export const StepsType = PropTypes.shape({
-  currentCerts: CurrentCertsType,
+export const StepsPropType = PropTypes.shape({
+  currentCerts: CurrentCertsPropType,
   isShowCerts: PropTypes.bool,
   isShowName: PropTypes.bool,
   isShowProfile: PropTypes.bool
