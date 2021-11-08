@@ -1,6 +1,6 @@
 ---
 id: 5900f3e91000cf542c50fefc
-title: 'Problem 125: Palindromic sums'
+title: 'Problema 125: Somas de palíndromo'
 challengeType: 5
 forumTopicId: 301752
 dashedName: problem-125-palindromic-sums
@@ -8,18 +8,18 @@ dashedName: problem-125-palindromic-sums
 
 # --description--
 
-The palindromic number 595 is interesting because it can be written as the sum of consecutive squares: 62 + 72 + 82 + 92 + 102 + 112 + 122.
+O número palíndromo 595 é interessante, porque ele pode ser escrito como a soma dos quadrados consecutivos: $6^2 + 7^2 + 8^2 + 9^2 + 9^2 + 10^2 + 11^2 + 12^2$.
 
-There are exactly eleven palindromes below one-thousand that can be written as consecutive square sums, and the sum of these palindromes is 4164. Note that 1 = 02 + 12 has not been included as this problem is concerned with the squares of positive integers.
+Existem exatamente onze palíndromos abaixo de mil que podem ser escritos como somas quadradas consecutivas. A soma destes palíndromos é 4164. Observe que $1 = 0^2 + 1^2$ não foi incluído pois este problema está interessado nos quadrados de inteiros positivos.
 
-Find the sum of all the numbers less than 108 that are both palindromic and can be written as the sum of consecutive squares.
+Calcule a soma de todos os números menores que $10^8$ que são palíndromos e podem ser escritos como a soma de quadrados consecutivos.
 
 # --hints--
 
-`euler125()` should return 2906969179.
+`palindromicSums()` deve retornar `2906969179`.
 
 ```js
-assert.strictEqual(euler125(), 2906969179);
+assert.strictEqual(palindromicSums(), 2906969179);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler125(), 2906969179);
 ## --seed-contents--
 
 ```js
-function euler125() {
+function palindromicSums() {
 
   return true;
 }
 
-euler125();
+palindromicSums();
 ```
 
 # --solutions--

@@ -16,15 +16,17 @@ Notação de ponto é o que você utiliza quando você sabe o nome da propriedad
 Aqui está um exemplo usando notação de ponto (`.`) para ler uma propriedade do objeto:
 
 ```js
-var myObj = {
+const myObj = {
   prop1: "val1",
   prop2: "val2"
 };
-var prop1val = myObj.prop1;
-var prop2val = myObj.prop2;
+
+const prop1val = myObj.prop1;
+const prop2val = myObj.prop2;
 ```
 
 `prop1val` teria o valor `val1` e `prop2val` teria o valor `val2`.
+
 # --instructions--
 
 Leia os valores de propriedade de `testObj` usando a notação de ponto. Defina a variável `hatValue` igual à propriedade `hat` do objeto e defina a variável `shirtValue` igual à propriedade `shirt` do objeto.
@@ -73,27 +75,26 @@ assert(code.match(/testObj\.\w+/g).length > 1);
 
 ```js
 // Setup
-var testObj = {
+const testObj = {
   "hat": "ballcap",
   "shirt": "jersey",
   "shoes": "cleats"
 };
 
 // Only change code below this line
-
-var hatValue = testObj;      // Change this line
-var shirtValue = testObj;    // Change this line
+const hatValue = testObj;      // Change this line
+const shirtValue = testObj;    // Change this line
 ```
 
 # --solutions--
 
 ```js
-var testObj = {
+const testObj = {
   "hat": "ballcap",
   "shirt": "jersey",
   "shoes": "cleats"
 };
 
-var hatValue = testObj.hat;
-var shirtValue = testObj.shirt;
+const hatValue = testObj.hat;
+const shirtValue = testObj.shirt;
 ```

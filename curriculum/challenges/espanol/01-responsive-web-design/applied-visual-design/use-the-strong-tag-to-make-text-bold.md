@@ -13,7 +13,7 @@ Para poner el texto en negrita, puedes usar la etiqueta `strong`. Esto se usa a 
 
 # --instructions--
 
-Envuelve una etiqueta `strong` alrededor del texto de `Stanford University` dentro de la etiqueta `p` (no incluyas el punto).
+Envuelve una etiqueta `strong` alrededor del texto `Stanford University` dentro de la etiqueta `p` (no incluyas el punto).
 
 # --hints--
 

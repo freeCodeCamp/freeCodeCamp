@@ -7,7 +7,7 @@ import EditorTabs from './EditorTabs';
 interface ActionRowProps {
   block: string;
   showConsole: boolean;
-  showNotes: boolean;
+  showNotes?: boolean;
   showPreview: boolean;
   superBlock: string;
   switchDisplayTab: (displayTab: string) => void;

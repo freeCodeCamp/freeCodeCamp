@@ -1,6 +1,6 @@
 ---
 id: 5900f4021000cf542c50ff14
-title: 'Problem 148: Exploring Pascal''s triangle'
+title: 'Problema 148: Explorando o triângulo de Pascal'
 challengeType: 5
 forumTopicId: 301777
 dashedName: problem-148-exploring-pascals-triangle
@@ -8,9 +8,9 @@ dashedName: problem-148-exploring-pascals-triangle
 
 # --description--
 
-We can easily verify that none of the entries in the first seven rows of Pascal's triangle are divisible by 7:
+Podemos facilmente verificar que nenhuma das entradas das primeiras sete linhas do triângulo Pascal é divisível por 7:
 
-<pre>
+```
             1
           1   1
         1   2   1
@@ -18,20 +18,20 @@ We can easily verify that none of the entries in the first seven rows of Pascal'
     1   4   6   4   1
   1   5   10  10  5   1
 1   6   15  20  15  6   1
-</pre>
+```
 
-However, if we check the first one hundred rows, we will find that only 2361 of the 5050 entries are not divisible by 7.
+No entanto, se verificarmos as primeiras cem linhas, descobriremos que apenas 2361 das 5050 entradas não são divisíveis por 7.
 
 # --instructions--
 
-Find the number of entries which are not divisible by 7 in the first one billion (10<sup>9</sup>) rows of Pascal's triangle.
+Encontre o número de entradas que não são divisíveis por 7 no primeiro bilhão (${10}^9$) de linhas do triângulo de Pascal.
 
 # --hints--
 
-`euler148()` should return 2129970655314432.
+`entriesOfPascalsTriangle()` deve retornar `2129970655314432`.
 
 ```js
-assert.strictEqual(euler148(), 2129970655314432);
+assert.strictEqual(entriesOfPascalsTriangle(), 2129970655314432);
 ```
 
 # --seed--
@@ -39,12 +39,12 @@ assert.strictEqual(euler148(), 2129970655314432);
 ## --seed-contents--
 
 ```js
-function euler148() {
+function entriesOfPascalsTriangle() {
 
   return true;
 }
 
-euler148();
+entriesOfPascalsTriangle();
 ```
 
 # --solutions--

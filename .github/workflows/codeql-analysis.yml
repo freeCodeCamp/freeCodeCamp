@@ -9,7 +9,7 @@ on:
 jobs:
   analyse:
     name: Analyse
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: github.actor != 'renovate[bot]'
     strategy:
       fail-fast: false

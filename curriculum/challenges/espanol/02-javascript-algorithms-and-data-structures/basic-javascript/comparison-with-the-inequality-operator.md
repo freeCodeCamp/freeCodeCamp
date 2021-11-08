@@ -25,7 +25,7 @@ En orden, estas expresiones se evaluarían como `true`, `false`, `false`, `false
 
 # --instructions--
 
-Agrega el operador de desigualdad `!=` en la sentencia `if` para que la función devuelva la cadena `Not Equal` cuando `val` no sea equivalente a `99`
+Agrega el operador de desigualdad `!=` en la sentencia `if` para que la función devuelva la cadena `Not Equal` cuando `val` no sea equivalente a `99`.
 
 # --hints--
 

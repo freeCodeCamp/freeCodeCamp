@@ -179,16 +179,12 @@ export async function updateUser(body, app) {
 
 export async function createStripeCardDonation(req, res, stripe) {
   const {
-    body: {
-      token: { id: tokenId },
-      amount,
-      duration
-    },
+    body: { paymentMethodId, amount, duration },
     user: { name, id: userId, email },
     user
   } = req;
 
-  if (!tokenId || !amount || !duration || !userId || !email) {
+  if (!paymentMethodId || !amount || !duration || !userId || !email) {
     throw {
       message: 'Request is not valid',
       type: 'InvalidRequest'
@@ -210,7 +206,8 @@ export async function createStripeCardDonation(req, res, stripe) {
   try {
     const customer = await stripe.customers.create({
       email,
-      card: tokenId,
+      payment_method: paymentMethodId,
+      invoice_settings: { default_payment_method: paymentMethodId },
       ...(name && { name })
     });
     customerId = customer?.id;
@@ -221,26 +218,51 @@ export async function createStripeCardDonation(req, res, stripe) {
     };
   }
   log(`Stripe customer with id ${customerId} created`);
-  // log creation of Stripe customer event
+
   let subscriptionId;
   try {
-    const subscription = await stripe.subscriptions.create({
+    const {
+      id: subscription_id,
+      latest_invoice: {
+        payment_intent: { client_secret, status: intent_status }
+      }
+    } = await stripe.subscriptions.create({
       // create Stripe subscription
       customer: customerId,
+      payment_behavior: 'allow_incomplete',
       items: [
         {
           plan: `${donationSubscriptionConfig.duration[
             duration
           ].toLowerCase()}-donation-${amount}`
         }
-      ]
+      ],
+      expand: ['latest_invoice.payment_intent']
     });
-    subscriptionId = subscription?.id;
-  } catch {
-    throw {
-      type: 'subscriptionCreationFailed',
-      message: 'Failed to create stripe subscription'
-    };
+
+    if (intent_status === 'requires_source_action')
+      throw {
+        type: 'UserActionRequired',
+        message: 'Payment requires user action',
+        client_secret
+      };
+    else if (intent_status === 'requires_source')
+      throw {
+        type: 'PaymentMethodRequired',
+        message: 'Card has been declined'
+      };
+    subscriptionId = subscription_id;
+  } catch (err) {
+    if (
+      err.type === 'UserActionRequired' ||
+      err.type === 'PaymentMethodRequired'
+    )
+      throw err;
+    else
+      throw {
+        type: 'SubscriptionCreationFailed',
+        message: 'Failed to create stripe subscription'
+      };
   }
   log(`Stripe subscription with id ${subscriptionId} created`);
 

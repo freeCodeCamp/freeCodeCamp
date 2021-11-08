@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bdef
-title: Timestamp Microservice
+title: Microservicio de marca de tiempo
 challengeType: 4
 forumTopicId: 301508
 dashedName: timestamp-microservice
@@ -8,17 +8,17 @@ dashedName: timestamp-microservice
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://timestamp-microservice.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+Construye una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <https://timestamp-microservice.freecodecamp.rocks/>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-timestamp/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-project-timestamp/) y completa tu proyecto localmente.
+-   Usa [nuestro proyecto de inicio en Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp) para completar tu proyecto.
+-   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
+Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Debes proporcionar tu propio proyecto, no la URL de ejemplo.
 
 ```js
 (getUserInput) => {
@@ -28,7 +28,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-A request to `/api/:date?` with a valid date should return a JSON object with a `unix` key that is a Unix timestamp of the input date in milliseconds
+Una solicitud para `/api/:date?` con una fecha válida debe devolver un objeto JSON con una clave `unix` que es una marca de tiempo Unix de la fecha de entrada en milisegundos
 
 ```js
 (getUserInput) =>
@@ -46,7 +46,7 @@ A request to `/api/:date?` with a valid date should return a JSON object with a 
   );
 ```
 
-A request to `/api/:date?` with a valid date should return a JSON object with a `utc` key that is a string of the input date in the format: `Thu, 01 Jan 1970 00:00:00 GMT`
+Una petición para `/api/:date?` con una fecha válida debe devolver un objeto JSON con una clave `utc` que es una cadena de la fecha de entrada en el formato: `Thu, 01 Jan 1970 00:00:00 GMT`
 
 ```js
 (getUserInput) =>
@@ -64,7 +64,7 @@ A request to `/api/:date?` with a valid date should return a JSON object with a 
   );
 ```
 
-A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
+Una petición a `/api/1451001600000` debe devolver `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
 
 ```js
 (getUserInput) =>
@@ -81,7 +81,7 @@ A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fr
   );
 ```
 
-Your project can handle dates that can be successfully parsed by `new Date(date_string)`
+Tu proyecto puede manejar fechas que pueden ser analizadas con éxito por `new Date(date_string)`
 
 ```js
 (getUserInput) =>
@@ -98,7 +98,7 @@ Your project can handle dates that can be successfully parsed by `new Date(date_
   );
 ```
 
-If the input date string is invalid, the api returns an object having the structure `{ error : "Invalid Date" }`
+Si la fecha de entrada no es válida, la api devuelve un objeto con la estructura `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
@@ -112,7 +112,7 @@ If the input date string is invalid, the api returns an object having the struct
   );
 ```
 
-An empty date parameter should return the current time in a JSON object with a `unix` key
+Un parámetro de fecha vacío debe devolver la hora actual en un objeto JSON con una clave `unix`
 
 ```js
 (getUserInput) =>
@@ -127,7 +127,7 @@ An empty date parameter should return the current time in a JSON object with a `
   );
 ```
 
-An empty date parameter should return the current time in a JSON object with a `utc` key
+Un parámetro de fecha vacío debe devolver la hora actual en un objeto JSON con una clave `utc`
 
 ```js
 (getUserInput) =>

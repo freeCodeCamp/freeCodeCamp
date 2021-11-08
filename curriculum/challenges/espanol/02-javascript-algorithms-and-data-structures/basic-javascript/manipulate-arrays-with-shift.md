@@ -16,15 +16,15 @@ Ahí es donde entra `.shift()`. Funciona igual que `.pop()`, excepto que elimina
 Ejemplo:
 
 ```js
-var ourArray = ["Stimpson", "J", ["cat"]];
-var removedFromOurArray = ourArray.shift();
+const ourArray = ["Stimpson", "J", ["cat"]];
+const removedFromOurArray = ourArray.shift();
 ```
 
 `removedFromOurArray` tendrá una cadena con valor `Stimpson` y `ourArray` tendrá `["J", ["cat"]]`.
 
 # --instructions--
 
-Utiliza la función `.shift()` para eliminar el primer elemento de `myArray`, asignando el valor "desplazado" a `removedFromMyArray`.
+Utiliza la función `.shift()` para eliminar el primer elemento de `myArray`, y asigna el valor "desplazado" a un variable nuevo `removedFromMyArray`.
 
 # --hints--
 
@@ -65,24 +65,24 @@ assert(
 ## --after-user-code--
 
 ```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 ## --seed-contents--
 
 ```js
 // Setup
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 
 // Only change code below this line
-var removedFromMyArray;
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 
 // Only change code below this line
-var removedFromMyArray = myArray.shift();
+const removedFromMyArray = myArray.shift();
 ```

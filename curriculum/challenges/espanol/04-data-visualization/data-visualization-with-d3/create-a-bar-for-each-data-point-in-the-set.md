@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bcd
-title: Crea una barra para cada punto de dato en el set
+title: Crea una barra para cada punto de dato en el conjunto
 challengeType: 6
 forumTopicId: 301482
 dashedName: create-a-bar-for-each-data-point-in-the-set

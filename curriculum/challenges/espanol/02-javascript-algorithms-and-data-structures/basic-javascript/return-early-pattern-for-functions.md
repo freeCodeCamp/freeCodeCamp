@@ -33,43 +33,43 @@ Recuerda que [`undefined` es una palabra clave](https://www.freecodecamp.org/lea
 
 # --hints--
 
-`abTest(2,2)` debe devolver un número
+`abTest(2, 2)` debe devolver un número
 
 ```js
 assert(typeof abTest(2, 2) === 'number');
 ```
 
-`abTest(2,2)` debe devolver `8`
+`abTest(2, 2)` debe devolver `8`
 
 ```js
 assert(abTest(2, 2) === 8);
 ```
 
-`abTest(-2,2)` debe devolver `undefined`
+`abTest(-2, 2)` debe devolver `undefined`
 
 ```js
 assert(abTest(-2, 2) === undefined);
 ```
 
-`abTest(2,-2)` debe devolver `undefined`
+`abTest(2, -2)` debe devolver `undefined`
 
 ```js
 assert(abTest(2, -2) === undefined);
 ```
 
-`abTest(2,8)` debe devolver `18`
+`abTest(2, 8)` debe devolver `18`
 
 ```js
 assert(abTest(2, 8) === 18);
 ```
 
-`abTest(3,3)` debe devolver `12`
+`abTest(3, 3)` debe devolver `12`
 
 ```js
 assert(abTest(3, 3) === 12);
 ```
 
-`abTest(0,0)` debe devolver `0`
+`abTest(0, 0)` debe devolver `0`
 
 ```js
 assert(abTest(0, 0) === 0);

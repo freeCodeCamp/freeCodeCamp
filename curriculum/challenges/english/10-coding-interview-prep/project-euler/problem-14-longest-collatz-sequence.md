@@ -22,7 +22,7 @@ It can be seen that this sequence (starting at 13 and finishing at 1) contains 1
 
 Which starting number, under the given `limit`, produces the longest chain?
 
-**Note:** Once the chain starts the terms are allowed to go above one million.
+**Note:** Once the chain starts the terms are allowed to go above `limit`.
 
 # --hints--
 

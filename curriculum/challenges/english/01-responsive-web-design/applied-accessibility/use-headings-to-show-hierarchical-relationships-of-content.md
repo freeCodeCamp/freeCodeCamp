@@ -17,7 +17,7 @@ If you were writing a paper with an introduction, a body, and a conclusion, it w
 
 Headings with equal (or higher) rank start new implied sections, headings with lower rank start subsections of the previous one.
 
-As an example, a page with an `h2` element followed by several subsections labeled with `h4` tags would confuse a screen reader user. With six choices, it's tempting to use a tag because it looks better in a browser, but you can use CSS to edit the relative sizing.
+As an example, a page with an `h2` element followed by several subsections labeled with `h4` elements would confuse a screen reader user. With six choices, it's tempting to use a tag because it looks better in a browser, but you can use CSS to edit the relative sizing.
 
 One final point, each page should always have one (and only one) `h1` element, which is the main subject of your content. This and the other headings are used in part by search engines to understand the topic of the page.
 
@@ -27,7 +27,7 @@ Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix 
 
 # --hints--
 
-Your code should have 6 `h3` tags.
+Your code should have 6 `h3` elements.
 
 ```js
 assert($('h3').length === 6);
@@ -39,7 +39,7 @@ Your code should have 6 `h3` closing tags.
 assert((code.match(/\/h3/g) || []).length === 6);
 ```
 
-Your code should not have any `h5` tags.
+Your code should not have any `h5` elements.
 
 ```js
 assert($('h5').length === 0);

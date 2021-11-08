@@ -1,6 +1,6 @@
 ---
 id: 587d8251367417b2b2512c61
-title: Work with Nodes in a Linked List
+title: Lavorare con i nodi in una lista concatenata
 challengeType: 1
 forumTopicId: 301721
 dashedName: work-with-nodes-in-a-linked-list
@@ -8,25 +8,25 @@ dashedName: work-with-nodes-in-a-linked-list
 
 # --description--
 
-Another common data structure you'll run into in computer science is the <dfn>linked list</dfn>. A linked list is a linear collection of data elements, called 'nodes', each of which points to the next. Each <dfn>node</dfn> in a linked list contains two key pieces of information: the `element` itself, and a reference to the next `node`.
+Un'altra struttura dati che incontrerai in computer science è la <dfn>lista concatenata</dfn>. Una lista concatenata è una collezione lineare di elementi di dati, chiamati nodi, ognuno dei quali fa riferimento al successivo. Ogni <dfn>nodo</dfn> in una lista concatenata contiene due informazioni fondamentali: l'elemento stesso, e un riferimento al nodo successivo.
 
-Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line: they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.
+Immagina di essere in un trenino. Hai le mani sulle spalle della persona davanti a te in fila, e la persona dietro di te ha le mani sulle tue spalle. Puoi vedere la persona direttamente di fronte a te, ma stanno bloccando la vista delle altre persone più in la nel trenino. Un nodo è proprio come una persona in un trenino: sanno chi sono e possono vedere solo la persona successiva nella fila, ma non sono a conoscenza delle altre persone davanti o dietro di loro.
 
 # --instructions--
 
-In our code editor, we've created two nodes, `Kitten` and `Puppy`, and we've manually connected the `Kitten` node to the `Puppy` node.
+Nel nostro editor di codice, abbiamo creato due noti, `Kitten` e `Puppy`, e abbiamo connesso il nodo `Kitten` al nodo`Puppy`.
 
-Create a `Cat` and `Dog` node and manually add them to the line.
+Crea dei nodi `Cat` e `Dog` e aggiungili manualmente alla lista.
 
 # --hints--
 
-Your `Puppy` node should have a reference to a `Cat` node.
+Il tuo nodo `Puppy` dovrebbe avere un riferimento a un nodo `Cat`.
 
 ```js
 assert(Puppy.next.element === 'Cat');
 ```
 
-Your `Cat` node should have a reference to a `Dog` node.
+Il tuo nodo `Cat` dovrebbe avere un riferimento a un nodo `Dog`.
 
 ```js
 assert(Cat.next.element === 'Dog');

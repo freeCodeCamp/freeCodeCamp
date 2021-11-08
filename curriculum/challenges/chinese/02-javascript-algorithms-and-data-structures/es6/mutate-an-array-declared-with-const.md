@@ -8,11 +8,13 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-在现代的 JavaScript 里，`const` 声明有很多用法。
+如果你不熟悉 `const`，请查看[这个挑战](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword)。
 
-一些开发者倾向于默认使用 `const` 来声明所有变量，除非他们打算后续重新给变量赋值， 那么他们在声明的时候就会用 `let`。
+`const` 声明在现代 JavaScript 中有很多用例。
 
-然而，你要注意，对象（包括数组和函数）在使用 `const` 声明的时候依然是可变的。 使用 `const` 来声明只会保证变量不会被重新赋值。
+默认情况下，一些开发人员更喜欢使用 `const` 分配所有变量，除非他们知道需要重新分配值。 只有在这种情况下，他们才使用 `let`。
+
+但是，重要的是要了解使用 `const` 分配给变量的对象（包括数组和函数）仍然是可变的。 使用 `const` 声明只能防止变量标识符的重新分配。
 
 ```js
 const s = [5, 6, 7];
@@ -21,13 +23,13 @@ s[2] = 45;
 console.log(s);
 ```
 
-`s = [1, 2, 3]` 会导致一个错误。 `console.log` 会显示值 `[5, 6, 45]`。
+`s = [1, 2, 3]` 将导致错误。 `console.log` 将显示值 `[5, 6, 45]`。
 
-可以发现，你可以改变对象 `[5, 6, 7]` 本身，而变量 `s` 会指向改变后的数组 `[5, 6, 45]`。 和所有数组一样，数组 `s` 中的元素是可以被改变的，但是因为使用了 `const` 关键字，你不能使用赋值操作符将变量标识 `s` 指向另外一个数组。
+如你所见，你可以改变对象 `[5, 6, 7]` 本身，变量 `s` 仍将指向更改后的数组 `[5, 6, 45]`。 像所有数组一样，`s` 中的数组元素是可变的，但是因为使用了 `const`，所以不能使用变量标识符 `s` 来指向一个使用赋值运算符的不同数组。
 
 # --instructions--
 
-这里有一个使用 `const s = [5, 7, 2]` 声明的数组。 使用对各元素赋值的方法将数组改成 `[2, 5, 7]`。
+数组声明为 `const s = [5, 7, 2]`。 使用对各元素赋值的方法将数组改成 `[2, 5, 7]`。
 
 # --hints--
 
@@ -37,7 +39,7 @@ console.log(s);
 (getUserInput) => assert(getUserInput('index').match(/const/g));
 ```
 
-`s` 应该为常量（使用 `const`）。
+`s` 应该是一个常量变量（通过使用 `const`）。
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/const\s+s/g));

@@ -29,7 +29,8 @@ import Spacer from '../helpers/spacer';
 import DonateCompletion from './DonateCompletion';
 import type { AddDonationData } from './PaypalButton';
 import PaypalButton from './PaypalButton';
-import StripeCardForm from './stripe-card-form';
+import PatreonButton from './patreon-button';
+import StripeCardForm, { HandleAuthentication } from './stripe-card-form';
 import WalletsWrapper from './walletsButton';
 
 import './Donation.css';
@@ -57,9 +58,10 @@ type DonateFormProps = {
   addDonation: (data: unknown) => unknown;
   postChargeStripe: (data: unknown) => unknown;
   postChargeStripeCard: (data: {
-    token: Token;
+    paymentMethodId: string;
     amount: number;
     duration: string;
+    handleAuthentication: HandleAuthentication;
   }) => void;
   defaultTheme?: string;
   email: string;
@@ -221,7 +223,10 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     });
   }
 
-  postStripeCardDonation(token: Token) {
+  postStripeCardDonation(
+    paymentMethodId: string,
+    handleAuthentication: HandleAuthentication
+  ) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
     this.props.handleProcessing(
       duration,
@@ -229,9 +234,10 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       'Stripe card payment submission'
     );
     this.props.postChargeStripeCard({
-      token,
+      paymentMethodId,
       amount,
-      duration
+      duration,
+      handleAuthentication
     });
   }
 
@@ -329,8 +335,9 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             isPaypalLoading={loading.paypal}
             isSignedIn={isSignedIn}
             onDonationStateChange={this.onDonationStateChange}
-            theme={defaultTheme ? defaultTheme : theme}
+            theme={priorityTheme}
           />
+          <PatreonButton />
           {isMinimalForm && (
             <>
               <div className='separator'>{t('donate.or-card')}</div>
@@ -339,7 +346,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
                 postStripeCardDonation={this.postStripeCardDonation}
                 processing={processing}
                 t={t}
-                theme={defaultTheme ? defaultTheme : theme}
+                theme={priorityTheme}
               />
             </>
           )}

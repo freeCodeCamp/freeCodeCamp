@@ -1,6 +1,6 @@
 ---
 id: 587d8259367417b2b2512c86
-title: Implement Insertion Sort
+title: 實現插入排序
 challengeType: 1
 forumTopicId: 301613
 dashedName: implement-insertion-sort
@@ -8,19 +8,19 @@ dashedName: implement-insertion-sort
 
 # --description--
 
-The next sorting method we'll look at is insertion sort. This method works by building up a sorted array at the beginning of the list. It begins the sorted array with the first element. Then it inspects the next element and swaps it backwards into the sorted array until it is in sorted position. It continues iterating through the list and swapping new items backwards into the sorted portion until it reaches the end. This algorithm has quadratic time complexity in the average and worst cases.
+我們將要研究的下一個排序方法是插入排序。 此方法的工作原理是通過在數組的開頭構建排序數組。 它從第一個元素開始排序數組。 然後，它檢查下一個元素並將其向後交換到已排序的數組中，直到它處於已排序的位置爲止。 它繼續遍歷列表，並將新項目向後交換到已排序的部分中，直到到達末尾爲止。 這種算法在平均和最壞的情況下都有二次方的時間複雜性。
 
-**Instructions:** Write a function `insertionSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
+**說明：** 編寫一個函數`insertionSort` ，它將一個整數數組作爲輸入，並按照從最小到最大的排序順序返回這些整數的數組。
 
 # --hints--
 
-`insertionSort` should be a function.
+`insertionSort` 應該是一個函數。
 
 ```js
 assert(typeof insertionSort == 'function');
 ```
 
-`insertionSort` should return a sorted array (least to greatest).
+`insertionSort` 應該返回一個排序的數組（從最小到最大）。
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`insertionSort` should return an array that is unchanged except for order.
+`insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` 應返回一個除順序外沒有變化的數組。
 
 ```js
 assert.sameMembers(
@@ -75,7 +75,13 @@ assert.sameMembers(
 );
 ```
 
-`insertionSort` should not use the built-in `.sort()` method.
+`insertionSort([5, 4, 33, 2, 8])` 應返回 `[2, 4, 5, 8, 33]`。
+
+```js
+assert.deepEqual(insertionSort([5, 4, 33, 2, 8]), [2, 4, 5, 8, 33])
+```
+
+`insertionSort` 不應使用內置的 `.sort()` 方法。
 
 ```js
 assert(isBuiltInSortUsed());
@@ -109,8 +115,6 @@ function insertionSort(array) {
   return array;
   // Only change code above this line
 }
-
-insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

@@ -78,7 +78,7 @@ assert(code.match(/break/g).length > 2);
 
 ```js
 function caseInSwitch(val) {
-  var answer = "";
+  let answer = "";
   // Only change code below this line
 
 
@@ -94,7 +94,7 @@ caseInSwitch(1);
 
 ```js
 function caseInSwitch(val) {
-  var answer = "";
+  let answer = "";
 
   switch(val) {
     case 1:

@@ -1,6 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bcc
-title: Mostrar formas con SVG
+title: Muestra formas con SVG
 challengeType: 6
 forumTopicId: 301485
 dashedName: display-shapes-with-svg

@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 import { mathJaxScriptLoader } from '../../../utils/script-loaders';
 import { challengeTestsSelector } from '../redux';
 import TestSuite from './Test-Suite';
-import ToolPanel from './Tool-Panel';
+import ToolPanel from './tool-panel';
 
 import './side-panel.css';
 
@@ -19,11 +19,11 @@ interface SidePanelProps {
   block: string;
   challengeDescription: ReactElement;
   challengeTitle: ReactElement;
-  guideUrl?: string;
+  guideUrl: string;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   showToolPanel: boolean;
   tests?: Record<string, unknown>[];
-  videoUrl?: string;
+  videoUrl: string;
 }
 
 export function SidePanel({
@@ -74,7 +74,6 @@ export function SidePanel({
     >
       {challengeTitle}
       {challengeDescription}
-      {/* @ts-expect-error ToolPanel's redux props are being inferred here, but we don't need to provide them here */}
       {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}
       <TestSuite tests={tests} />
     </div>

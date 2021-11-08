@@ -6,7 +6,7 @@ import { SuperBlocks } from '../../../config/certification-settings';
 import { actionTypes as challengeTypes } from '../templates/Challenges/redux/action-types';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 import { createAcceptTermsSaga } from './accept-terms-saga';
-import { actionTypes, ns } from './action-types';
+import { actionTypes } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
 import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
@@ -15,12 +15,12 @@ import { createGaSaga } from './ga-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
-
 import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
+import { createSoundModeSaga } from './sound-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
 
-export { ns };
+export const MainApp = 'app';
 
 export const defaultFetchState = {
   pending: true,
@@ -75,7 +75,8 @@ export const sagas = [
   ...createGaSaga(actionTypes),
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
-  ...createReportUserSaga(actionTypes)
+  ...createReportUserSaga(actionTypes),
+  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes })
 ];
 
 export const appMount = createAction(actionTypes.appMount);
@@ -173,8 +174,9 @@ export const updateCurrentChallengeId = createAction(
 
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
-export const completionCountSelector = state => state[ns].completionCount;
-export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
+export const completionCountSelector = state => state[MainApp].completionCount;
+export const currentChallengeIdSelector = state =>
+  state[MainApp].currentChallengeId;
 export const stepsToClaimSelector = state => {
   const user = userSelector(state);
   const currentCerts = certificatesByNameSelector(user.username)(
@@ -189,21 +191,24 @@ export const stepsToClaimSelector = state => {
   };
 };
 export const isDonatingSelector = state => userSelector(state).isDonating;
-export const isOnlineSelector = state => state[ns].isOnline;
-export const isServerOnlineSelector = state => state[ns].isServerOnline;
-export const isSignedInSelector = state => !!state[ns].appUsername;
-export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
+export const isOnlineSelector = state => state[MainApp].isOnline;
+export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
+export const isSignedInSelector = state => !!state[MainApp].appUsername;
+export const isDonationModalOpenSelector = state =>
+  state[MainApp].showDonationModal;
 export const recentlyClaimedBlockSelector = state =>
-  state[ns].recentlyClaimedBlock;
-export const donationFormStateSelector = state => state[ns].donationFormState;
+  state[MainApp].recentlyClaimedBlock;
+export const donationFormStateSelector = state =>
+  state[MainApp].donationFormState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
-export const showCertSelector = state => state[ns].showCert;
-export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
+export const showCertSelector = state => state[MainApp].showCert;
+export const showCertFetchStateSelector = state =>
+  state[MainApp].showCertFetchState;
 export const shouldRequestDonationSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const completionCount = completionCountSelector(state);
-  const canRequestProgressDonation = state[ns].canRequestProgressDonation;
+  const canRequestProgressDonation = state[MainApp].canRequestProgressDonation;
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
 
@@ -227,7 +232,7 @@ export const shouldRequestDonationSelector = state => {
 };
 
 export const userByNameSelector = username => state => {
-  const { user } = state[ns];
+  const { user } = state[MainApp];
   // return initial state empty user empty object instead of empty
   // object litteral to prevent components from re-rendering unnecessarily
   return user[username] ?? initialState.user;
@@ -358,17 +363,17 @@ export const certificatesByNameSelector = username => state => {
   };
 };
 
-export const userFetchStateSelector = state => state[ns].userFetchState;
+export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const userProfileFetchStateSelector = state =>
-  state[ns].userProfileFetchState;
-export const usernameSelector = state => state[ns].appUsername;
+  state[MainApp].userProfileFetchState;
+export const usernameSelector = state => state[MainApp].appUsername;
 export const userSelector = state => {
   const username = usernameSelector(state);
 
-  return state[ns].user[username] || {};
+  return state[MainApp].user[username] || {};
 };
 
-export const sessionMetaSelector = state => state[ns].sessionMeta;
+export const sessionMetaSelector = state => state[MainApp].sessionMeta;
 
 function spreadThePayloadOnUser(state, payload) {
   return {

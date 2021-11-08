@@ -5,8 +5,8 @@
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "private": true,
   "engines": {
-    "node": ">= 14.0.0",
-    "npm": "^6.14.12"
+    "node": ">=16",
+    "npm": ">=8"
   },
   "repository": {
     "type": "git",
@@ -29,11 +29,11 @@
     "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
   },
   "devDependencies": {
-    "@babel/core": "7.15.8",
+    "@babel/core": "7.16.0",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.15.8",
-    "@babel/preset-typescript": "7.15.0",
-    "@babel/register": "7.15.3",
+    "@babel/preset-env": "7.16.0",
+    "@babel/preset-typescript": "7.16.0",
+    "@babel/register": "7.16.0",
     "acorn": "8.5.0",
     "acorn-jsx": "5.3.2",
     "babel-plugin-dynamic-import-node": "2.3.3",

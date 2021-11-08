@@ -74,6 +74,9 @@
       },
       "require": true
     },
+    "usernameDisplay": {
+      "type": "string"
+    },
     "about": {
       "type": "string",
       "default": ""
@@ -250,6 +253,10 @@
     "theme": {
       "type": "string",
       "default": "default"
+    },
+    "sound": {
+      "type": "boolean",
+      "default": false
     },
     "profileUI": {
       "type": "object",

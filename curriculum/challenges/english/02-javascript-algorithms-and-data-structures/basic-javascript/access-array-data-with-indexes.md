@@ -18,9 +18,9 @@ Array indexes are written in the same bracket notation that strings use, except 
 **Example**
 
 ```js
-var array = [50,60,70];
+const array = [50, 60, 70];
 array[0];
-var data = array[1];
+const data = array[1];
 ```
 
 `array[0]` is now `50`, and `data` has the value `60`.
@@ -76,7 +76,7 @@ if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,
 ## --seed-contents--
 
 ```js
-var myArray = [50,60,70];
+const myArray = [50, 60, 70];
 
 
 ```
@@ -84,6 +84,6 @@ var myArray = [50,60,70];
 # --solutions--
 
 ```js
-var myArray = [50,60,70];
-var myData = myArray[0];
+const myArray = [50, 60, 70];
+const myData = myArray[0];
 ```

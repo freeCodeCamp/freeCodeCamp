@@ -34,16 +34,16 @@ assert(!code.match(/\.?[\s\S]*?filter/g));
 
 ```js
 // The global variable
-var s = [23, 65, 98, 5];
+const s = [23, 65, 98, 5];
 
 Array.prototype.myFilter = function(callback) {
   // Only change code below this line
-  var newArray = [];
+  const newArray = [];
   // Only change code above this line
   return newArray;
 };
 
-var new_s = s.myFilter(function(item) {
+const new_s = s.myFilter(function(item) {
   return item % 2 === 1;
 });
 ```
@@ -51,20 +51,17 @@ var new_s = s.myFilter(function(item) {
 # --solutions--
 
 ```js
-// the global Array
-var s = [23, 65, 98, 5];
+const s = [23, 65, 98, 5];
 
 Array.prototype.myFilter = function(callback) {
-  var newArray = [];
-  // Only change code below this line
+  const newArray = [];
   for (let i = 0; i < this.length; i++) {
     if (callback(this[i])) newArray.push(this[i]);
   }
-  // Only change code above this line
   return newArray;
 };
 
-var new_s = s.myFilter(function(item) {
+const new_s = s.myFilter(function(item) {
   return item % 2 === 1;
 });
 ```

@@ -5,8 +5,8 @@
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "private": true,
   "engines": {
-    "node": ">= 14.0.0",
-    "npm": "^6.14.12"
+    "node": ">=16",
+    "npm": ">=8"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
     "gray-matter": "4.0.3",
     "inquirer": "8.1.2",
     "prettier": "2.4.1",
-    "ts-node": "10.3.0",
+    "ts-node": "10.4.0",
     "typescript": "4.4.4"
   }
 }

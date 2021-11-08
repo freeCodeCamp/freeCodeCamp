@@ -1,6 +1,6 @@
 ---
 id: 5900f3c11000cf542c50fed3
-title: 'Problem 84: Monopoly odds'
+title: 'Problem 84: Probabilidades no Monopoly'
 challengeType: 5
 forumTopicId: 302198
 dashedName: problem-84-monopoly-odds
@@ -8,7 +8,7 @@ dashedName: problem-84-monopoly-odds
 
 # --description--
 
-In the game, *Monopoly*, the standard board is set up in the following way:
+No jogo, *Monopoly*, o tabuleiro padrão é configurado da seguinte maneira:
 
 <div style="text-align: center;">
   <table cellspacing="1" cellpadding="5" border="0" style="background-color: black; color: black;" align="center">
@@ -88,69 +88,69 @@ In the game, *Monopoly*, the standard board is set up in the following way:
   </table>
 </div><br>
 
-A player starts on the GO square and adds the scores on two 6-sided dice to determine the number of squares they advance in a clockwise direction. Without any further rules we would expect to visit each square with equal probability: 2.5%. However, landing on G2J (Go To Jail), CC (community chest), and CH (chance) changes this distribution.
+Um jogador começa no quadrado GO e adiciona as pontuações de dois dados de 6 lados para determinar o número de quadrados que ele avança no sentido horário. Sem adicionarmos outras regras, esperaríamos visitar cada quadrado com igual probabilidade: 2,5%. No entanto, cair em G2J (Go To Jail), CC (Community Chest) e CH (Chance) altera esta distribuição.
 
-In addition to G2J, and one card from each of CC and CH, that orders the player to go directly to jail, if a player rolls three consecutive doubles, they do not advance the result of their 3rd roll. Instead they proceed directly to jail.
+Além de G2J, e de uma carta de cada, CC e CH, que ordena ao jogador que vá diretamente para a prisão, se um jogador rolar o mesmo número nos dois dados três vezes seguidas, eles não avançam o resultado da terceira jogada. Em vez disso, eles vão para a prisão diretamente.
 
-At the beginning of the game, the CC and CH cards are shuffled. When a player lands on CC or CH they take a card from the top of the respective pile and, after following the instructions, it is returned to the bottom of the pile. There are sixteen cards in each pile, but for the purpose of this problem we are only concerned with cards that order a movement; any instruction not concerned with movement will be ignored and the player will remain on the CC/CH square.
+No início do jogo, as cartas de CC e de CH são embaralhadas. Quando um jogador cai em CC ou em CH, ele tira uma carta do topo da pilha respectiva, e, após seguir as instruções, ela é retornada para o fim da pilha. Existem dezesseis cartas em cada pilha, mas, para efeito deste problema, nos preocupamos apenas com as cartas que ordenam um movimento; qualquer instrução que não tenha a ver com movimento será ignorada e o jogador permanecerá no quadrado CC/CH.
 
 <ul>
-  <li>Community Chest (2/16 cards):</li>
+  <li>Community Chest (2 cartas em 16):</li>
   <ol>
-    <li>Advance to GO</li>
-    <li>Go to JAIL</li>
+    <li>Avançar para o GO</li>
+    <li>Ir para JAIL (prisão)</li>
   </ol>
 
-  <li>Chance (10/16 cards):</li>
+  <li>Chance (10 cartas de 16):</li>
   <ol>
-    <li>Advance to GO</li>
-    <li>Go to JAIL</li>
-    <li>Go to C1</li>
-    <li>Go to E3</li>
-    <li>Go to H2</li>
-    <li>Go to R1</li>
-    <li>Go to next R (railway company)</li>
-    <li>Go to next R</li>
-    <li>Go to next U (utility company)</li>
-    <li>Go back 3 squares.</li>
+    <li>Avançar para o GO</li>
+    <li>Ir para JAIL (prisão)</li>
+    <li>Ir para C1</li>
+    <li>Ir para E3</li>
+    <li>Ir para H2</li>
+    <li>Ir para R1</li>
+    <li>Ir para a próxima R (companhia ferroviária)</li>
+    <li>Ir para a próxima R</li>
+    <li>Ir para a próxima U (empresa de serviços)</li>
+    <li>Voltar 3 quadrados.</li>
   </ol>
 </ul>
 
-The heart of this problem concerns the likelihood of visiting a particular square. That is, the probability of finishing at that square after a roll. For this reason it should be clear that, with the exception of G2J for which the probability of finishing on it is zero, the CH squares will have the lowest probabilities, as 5/8 request a movement to another square, and it is the final square that the player finishes at on each roll that we are interested in. We shall make no distinction between "Just Visiting" and being sent to JAIL, and we shall also ignore the rule about requiring a double to "get out of jail", assuming that they pay to get out on their next turn.
+O centro deste problema diz respeito à possibilidade de visitar um determinado quadrado. Ou seja, a probabilidade de terminar naquele quadrado depois de uma jogada dos dados. Por esta razão, deveria ficar claro que, com a exceção da G2J, para a qual a probabilidade de terminar em cima dela é zero, os quadrados em CH terão as menores probabilidades, já que 5 a cada 8 solicitam um movimento para outro quadrado, e é o último quadrado em que o jogador fica em cada jogada que nos interessa. Não estabeleceremos qualquer distinção entre o "Just Visiting" (estar só de passagem) e ser enviado para JAIL (prisão), e também ignoraremos a regra sobre a exigência de uma rolada de dois números iguais nos dados para "sair da cadeia", assumindo que eles pagam para sair no próximo turno.
 
-By starting at GO and numbering the squares sequentially from 00 to 39 we can concatenate these two-digit numbers to produce strings that correspond with sets of squares.
+Começando em GO e numerando os quadrados sequencialmente, de 00 a 39, podemos concatenar esses números de dois algarismos para produzir strings que correspondem a conjuntos de quadrados.
 
-Statistically it can be shown that the three most popular squares, in order, are JAIL (6.24%) = Square 10, E3 (3.18%) = Square 24, and GO (3.09%) = Square 00. So these three most popular squares can be listed with the six-digit modal string `102400`.
+Estatisticamente, pode ser mostrado que os três quadrados mais populares, em ordem, são JAIL (6,24%) = Quadrado 10, E3 (3,18%) = Quadrado 24 e GO (3,09%) = Quadrado 00. Então, esses três quadrados mais populares podem ser listados com a string modal de seis dígitos `102400`.
 
-If, instead of using two 6-sided dice, two `n`-sided dice are used, find the six-digit modal string.
+Se, ao invés de usar dois dados de 6 lados, dois dados de `n` lados forem usados, encontre a string modal de 6 dígitos.
 
 # --hints--
 
-`monopolyOdds(8)` should return a string.
+`monopolyOdds(8)` deve retornar uma string.
 
 ```js
 assert(typeof monopolyOdds(8) === 'string');
 ```
 
-`monopolyOdds(8)` should return string `102400`.
+`monopolyOdds(8)` deve retornar a string `102400`.
 
 ```js
 assert.strictEqual(monopolyOdds(8), '102400');
 ```
 
-`monopolyOdds(10)` should return string `100024`.
+`monopolyOdds(10)` deve retornar a string `100024`.
 
 ```js
 assert.strictEqual(monopolyOdds(10), '100024');
 ```
 
-`monopolyOdds(20)` should return string `100005`.
+`monopolyOdds(20)` deve retornar a string `100005`.
 
 ```js
 assert.strictEqual(monopolyOdds(20), '100005');
 ```
 
-`monopolyOdds(4)` should return string `101524`.
+`monopolyOdds(4)` deve retornar a string `101524`.
 
 ```js
 assert.strictEqual(monopolyOdds(4), '101524');

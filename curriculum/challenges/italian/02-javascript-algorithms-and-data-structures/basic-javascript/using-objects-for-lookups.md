@@ -14,7 +14,7 @@ Gli oggetti possono essere pensati come una memorizzazione di coppie chiave / va
 Ecco l'esempio di una semplice ricerca in un alfabeto inverso:
 
 ```js
-var alpha = {
+const alpha = {
   1:"Z",
   2:"Y",
   3:"X",
@@ -24,10 +24,11 @@ var alpha = {
   25:"B",
   26:"A"
 };
+
 alpha[2];
 alpha[24];
 
-var value = 2;
+const value = 2;
 alpha[value];
 ```
 
@@ -102,7 +103,7 @@ assert(
 ```js
 // Setup
 function phoneticLookup(val) {
-  var result = "";
+  let result = "";
 
   // Only change code below this line
   switch(val) {
@@ -136,9 +137,9 @@ phoneticLookup("charlie");
 
 ```js
 function phoneticLookup(val) {
-  var result = "";
+  let result = "";
 
-  var lookup = {
+  const lookup = {
     alpha: "Adams",
     bravo: "Boston",
     charlie: "Chicago",

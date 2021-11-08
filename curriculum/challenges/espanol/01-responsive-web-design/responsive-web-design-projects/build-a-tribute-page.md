@@ -18,7 +18,7 @@ Puedes usar HTML, JavaScript y CSS para completar este proyecto. Se recomienda u
 
 **Historia de Usuario #2:** Debería ver un elemento con un respectivo `id="title"`, que contiene una cadena que describe el tema de la página tributo (p. ej. "Dr. Norman Borlaug").
 
-**Historia de Usuario #3:** Debería ver un elemento `div` con un respectivo `id="img-div"`.
+**Historia de Usuario #3:** Debe ver un elemento `figure` o `div` con su respectivo `id="img-div"`.
 
 **Historia de Usuario #4:** Dentro del elemento `img-div`, debería ver un elemento `img` con un respectivo `id="image"`.
 

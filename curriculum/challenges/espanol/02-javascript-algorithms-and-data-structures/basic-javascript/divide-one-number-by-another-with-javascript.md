@@ -16,7 +16,7 @@ JavaScript utiliza el símbolo `/` para la división.
 **Ejemplo**
 
 ```js
-myVar = 16 / 2;
+const myVar = 16 / 2;
 ```
 
 `myVar` ahora tiene el valor `8`.
@@ -49,11 +49,11 @@ assert(/\d+\s*\/\s*\d+/.test(code));
 ## --seed-contents--
 
 ```js
-var quotient = 66 / 0;
+const quotient = 66 / 0;
 ```
 
 # --solutions--
 
 ```js
-var quotient = 66 / 33;
+const quotient = 66 / 33;
 ```

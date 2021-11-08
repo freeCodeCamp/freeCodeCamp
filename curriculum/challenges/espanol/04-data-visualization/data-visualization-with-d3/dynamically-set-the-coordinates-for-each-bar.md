@@ -1,6 +1,6 @@
 ---
 id: 587d7fa9367417b2b2512bce
-title: Dynamically Set the Coordinates for Each Bar
+title: Establece dinámicamente las coordenadas para cada barra
 challengeType: 6
 forumTopicId: 301487
 dashedName: dynamically-set-the-coordinates-for-each-bar
@@ -8,13 +8,13 @@ dashedName: dynamically-set-the-coordinates-for-each-bar
 
 # --description--
 
-The last challenge created and appended a rectangle to the `svg` element for each point in `dataset` to represent a bar. Unfortunately, they were all stacked on top of each other.
+El último desafío crea un rectángulo adjunto al elemento `svg` por cada punto en `dataset` para representar una barra. Desafortunadamente, todas estaban apiladas una arriba de la otra.
 
-The placement of a rectangle is handled by the `x` and `y` attributes. They tell D3 where to start drawing the shape in the `svg` area. The last challenge set them each to 0, so every bar was placed in the upper-left corner.
+La posición de un rectángulo es manejada por los atributos `x` e `y`. Le dicen a D3 dónde empezar a dibujar la figura en el área de `svg`. El último desafío los puso cada uno a 0, por lo que cada barra se colocó en la esquina superior izquierda.
 
-For a bar chart, all of the bars should sit on the same vertical level, which means the `y` value stays the same (at 0) for all bars. The `x` value, however, needs to change as you add new bars. Remember that larger `x` values push items farther to the right. As you go through the array elements in `dataset`, the `x` value should increase.
+Para un gráfico de barras, todas las barras deben asentarse en el mismo nivel vertical, lo que significa que el valor `y` permanece igual (en 0) para todas las barras. Sin embargo, el valor `x` necesita cambiar a medida que se añaden nuevas barras. Recuerda que los valores de `x` más grandes empujan los elementos más a la derecha. A medida que recorres los elementos del arreglo en `dataset`, el valor `x` debería aumentar.
 
-The `attr()` method in D3 accepts a callback function to dynamically set that attribute. The callback function takes two arguments, one for the data point itself (usually `d`) and one for the index of the data point in the array. The second argument for the index is optional. Here's the format:
+El método `attr()` en D3 acepta una función callback para establecer dinámicamente ese atributo. La función callback toma dos argumentos, uno para el punto de datos en sí (generalmente `d`) y otro para el índice del punto de datos en el arreglo. El segundo argumento para el índice es opcional. Este es el formato:
 
 ```js
 selection.attr("property", (d, i) => {
@@ -22,65 +22,65 @@ selection.attr("property", (d, i) => {
 })
 ```
 
-It's important to note that you do NOT need to write a `for` loop or use `forEach()` to iterate over the items in the data set. Recall that the `data()` method parses the data set, and any method that's chained after `data()` is run once for each item in the data set.
+Es importante tener en cuenta que NO necesitas escribir un bucle `for` o usar `forEach()` para iterar sobre los elementos en el conjunto de datos. Recuerda que el método `data()` analiza el conjunto de datos, y cualquier método que vaya después de `data()` se ejecuta una vez por cada elemento del conjunto de datos.
 
 # --instructions--
 
-Change the `x` attribute callback function so it returns the index times 30.
+Cambia la función callback de atributo `x` para que devuelva el índice multiplicado por 30.
 
-**Note:** Each bar has a width of 25, so increasing each `x` value by 30 adds some space between the bars. Any value greater than 25 would work in this example.
+**Nota:** Cada barra tiene un ancho de 25, por lo que cada valor `x` añade algo de espacio entre las barras. Cualquier valor mayor a 25 funcionaría en este ejemplo.
 
 # --hints--
 
-The first `rect` should have an `x` value of `0`.
+El primer `rect` debe tener un valor `x` de `0`.
 
 ```js
 assert($('rect').eq(0).attr('x') == '0');
 ```
 
-The second `rect` should have an `x` value of `30`.
+El segundo `rect` debe tener un valor `x` de `30`.
 
 ```js
 assert($('rect').eq(1).attr('x') == '30');
 ```
 
-The third `rect` should have an `x` value of `60`.
+El tercer `rect` debe tener un valor `x` de `60`.
 
 ```js
 assert($('rect').eq(2).attr('x') == '60');
 ```
 
-The fourth `rect` should have an `x` value of `90`.
+El cuarto `rect` debe tener un valor `x` de `90`.
 
 ```js
 assert($('rect').eq(3).attr('x') == '90');
 ```
 
-The fifth `rect` should have an `x` value of `120`.
+El quinto `rect` debe tener un valor `x` de `120`.
 
 ```js
 assert($('rect').eq(4).attr('x') == '120');
 ```
 
-The sixth `rect` should have an `x` value of `150`.
+El sexto `rect` debe un valor `x` de `150`.
 
 ```js
 assert($('rect').eq(5).attr('x') == '150');
 ```
 
-The seventh `rect` should have an `x` value of `180`.
+El séptimo `rect` debe tener un valor `x` de `180`.
 
 ```js
 assert($('rect').eq(6).attr('x') == '180');
 ```
 
-The eighth `rect` should have an `x` value of `210`.
+El octavo `rect` debe tener un valor `x` de `210`.
 
 ```js
 assert($('rect').eq(7).attr('x') == '210');
 ```
 
-The ninth `rect` should have an `x` value of `240`.
+El noveno `rect` debe tener un valor `x` de `240`.
 
 ```js
 assert($('rect').eq(8).attr('x') == '240');

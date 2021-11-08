@@ -108,12 +108,13 @@ function isTheSame(val1, val2) {
 
 function getAboutProfile({
   username,
+  usernameDisplay,
   githubProfile: github,
   progressTimestamps = [],
   bio
 }) {
   return {
-    username,
+    username: usernameDisplay || username,
     github,
     browniePoints: progressTimestamps.length,
     bio
@@ -127,7 +128,8 @@ function nextTick(fn) {
 const getRandomNumber = () => Math.random();
 
 function populateRequiredFields(user) {
-  user.username = user.username.trim().toLowerCase();
+  user.usernameDisplay = user.username.trim();
+  user.username = user.usernameDisplay.toLowerCase();
   user.email =
     typeof user.email === 'string'
       ? user.email.trim().toLowerCase()
@@ -722,42 +724,6 @@ export default function initializeUser(User) {
         Your privacy settings have been updated.
       `
     );
-  };
-
-  User.prototype.updateMyUsername = function updateMyUsername(newUsername) {
-    return Observable.defer(() => {
-      const isOwnUsername = isTheSame(newUsername, this.username);
-      if (isOwnUsername) {
-        return Observable.of(dedent`
-          ${newUsername} is already associated with this account.
-          `);
-      }
-      return Observable.fromPromise(User.doesExist(newUsername));
-    }).flatMap(boolOrMessage => {
-      if (typeof boolOrMessage === 'string') {
-        return Observable.of(boolOrMessage);
-      }
-      if (boolOrMessage) {
-        return Observable.of(dedent`
-        ${newUsername} is already associated with a different account.
-        `);
-      }
-
-      const usernameUpdate = new Promise((resolve, reject) =>
-        this.updateAttribute('username', newUsername, err => {
-          if (err) {
-            return reject(err);
-          }
-          return resolve();
-        })
-      );
-
-      return Observable.fromPromise(usernameUpdate).map(
-        () => dedent`
-        Your username has been updated successfully.
-        `
-      );
-    });
   };
 
   function prepUserForPublish(user, profileUI) {

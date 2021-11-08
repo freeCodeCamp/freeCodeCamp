@@ -22,6 +22,8 @@ Then, in the `/json` GET route handler you created in the last challenge, transf
 
 **Note:** If you are using Replit, you cannot create a `.env` file. Instead, use the built-in <dfn>SECRETS</dfn> tab to add the variable.
 
+If you are working locally, you will need the `dotenv` package. It loads environment variables from your `.env` file into `process.env`. Install it with `npm install dotenv`. Then, at the top of your `myApp.js` file, import and load the variables with `require('dotenv').config()`.
+
 # --hints--
 
 The response of the endpoint `/json` should change according to the environment variable `MESSAGE_STYLE`

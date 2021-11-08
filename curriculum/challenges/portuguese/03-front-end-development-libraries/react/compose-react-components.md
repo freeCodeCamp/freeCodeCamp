@@ -14,7 +14,7 @@ Enquanto os desafios continuam a usar composições mais complexas com component
 
 No editor de código, o componente `TypesOfFood` já está renderizando um componente chamado `Vegetables`. Além disso, há o componente `Fruits` do último desafio.
 
-Aninhe dois componentes dentro de `Fruits` — primeiro `NonCitrus`, e depois `Citrus`. Ambos os componentes são fornecidos nos bastidores. Em seguida, aninhe o componente de classe `Fruits` dentro do componente `TypesOfFood`, abaixo do cabeçalho `h1` e acima de `Vegetables`. O resultado deve ser uma série de componentes aninhados, que usa dois tipos de componentes diferentes.
+Aninhe dois componentes dentro de `Fruits` — primeiro `NonCitrus`, e depois `Citrus`. Ambos os componentes são fornecidos nos bastidores. Em seguida, aninhe o componente de classe `Fruits` dentro do componente `TypesOfFood`, abaixo do elemento de título `h1` e acima de `Vegetables`. O resultado deve ser uma série de componentes aninhados, que usa dois tipos de componentes diferentes.
 
 # --hints--
 

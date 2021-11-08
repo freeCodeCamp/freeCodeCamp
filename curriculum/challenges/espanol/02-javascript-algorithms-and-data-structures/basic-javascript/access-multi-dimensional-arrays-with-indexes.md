@@ -14,12 +14,13 @@ Se puede pensar que un arreglo <dfn>multidimensional</dfn> es como un *arreglo d
 **Ejemplo**
 
 ```js
-var arr = [
-  [1,2,3],
-  [4,5,6],
-  [7,8,9],
-  [[10,11,12], 13, 14]
+const arr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14]
 ];
+
 arr[3];
 arr[3][0];
 arr[3][0][1];
@@ -58,14 +59,19 @@ if(typeof myArray !== "undefined"){(function(){return "myData: " + myData + " my
 ## --seed-contents--
 
 ```js
-var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];
+const myArray = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14],
+];
 
-var myData = myArray[0][0];
+const myData = myArray[0][0];
 ```
 
 # --solutions--
 
 ```js
-var myArray = [[1,2,3],[4,5,6], [7,8,9], [[10,11,12], 13, 14]];
-var myData = myArray[2][1];
+const myArray = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [[10, 11, 12], 13, 14]];
+const myData = myArray[2][1];
 ```

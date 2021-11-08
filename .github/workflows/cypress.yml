@@ -8,7 +8,7 @@ on:
 jobs:
   build-client:
     name: Build
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout Source Files
@@ -20,10 +20,10 @@ jobs:
           repository: freeCodeCamp/client-config
           path: client-config
 
-      - name: Use Node.js 14.x
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 16.x
           cache: 'npm'
 
       - name: Set freeCodeCamp Environment Variables
@@ -55,18 +55,18 @@ jobs:
 
   cypress-run:
     name: Test
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     needs: build-client
     strategy:
       matrix:
         browsers: [chrome, firefox, electron]
-        node-version: [14.x]
+        node-version: [16.x]
         include:
           - browsers: electron
             spec: cypress/integration/learn/challenges/projects.js
     services:
       mongodb:
-        image: mongo:3.6.19
+        image: mongo:4
         ports:
           - 27017:27017
       # We need mailhog to catch any emails the api tries to send.

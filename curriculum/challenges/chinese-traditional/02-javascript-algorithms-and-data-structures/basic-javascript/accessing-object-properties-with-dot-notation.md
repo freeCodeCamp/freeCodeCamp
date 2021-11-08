@@ -16,15 +16,17 @@ dashedName: accessing-object-properties-with-dot-notation
 這裏是一個用點符號（`.`）讀取對象屬性的示例：
 
 ```js
-var myObj = {
+const myObj = {
   prop1: "val1",
   prop2: "val2"
 };
-var prop1val = myObj.prop1;
-var prop2val = myObj.prop2;
+
+const prop1val = myObj.prop1;
+const prop2val = myObj.prop2;
 ```
 
 `prop1val` 的值將爲字符串 `val1`，並且`prop2val` 的值將爲字符串 `val2`。
+
 # --instructions--
 
 使用點號讀取 `testObj` 的屬性值。 將變量 `hatValue` 的值設置爲該對象的 `hat` 屬性的值，並將變量 `shirtValue` 的值設置爲該對象的 `shirt` 屬性的值。
@@ -73,27 +75,26 @@ assert(code.match(/testObj\.\w+/g).length > 1);
 
 ```js
 // Setup
-var testObj = {
+const testObj = {
   "hat": "ballcap",
   "shirt": "jersey",
   "shoes": "cleats"
 };
 
 // Only change code below this line
-
-var hatValue = testObj;      // Change this line
-var shirtValue = testObj;    // Change this line
+const hatValue = testObj;      // Change this line
+const shirtValue = testObj;    // Change this line
 ```
 
 # --solutions--
 
 ```js
-var testObj = {
+const testObj = {
   "hat": "ballcap",
   "shirt": "jersey",
   "shoes": "cleats"
 };
 
-var hatValue = testObj.hat;
-var shirtValue = testObj.shirt;
+const hatValue = testObj.hat;
+const shirtValue = testObj.shirt;
 ```

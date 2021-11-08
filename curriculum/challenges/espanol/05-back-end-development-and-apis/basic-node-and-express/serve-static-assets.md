@@ -1,6 +1,6 @@
 ---
 id: 587d7fb0367417b2b2512bf0
-title: Serve Static Assets
+title: Sirve recursos estáticos
 challengeType: 2
 forumTopicId: 301518
 dashedName: serve-static-assets
@@ -8,21 +8,21 @@ dashedName: serve-static-assets
 
 # --description--
 
-An HTML server usually has one or more directories that are accessible by the user. You can place there the static assets needed by your application (stylesheets, scripts, images).
+Un servidor HTML normalmente tiene uno o más directorios a los que el usuario puede acceder. Puedes colocar allí los recursos estáticos que necesite tu aplicación (hojas de estilo, scripts, imágenes).
 
-In Express, you can put in place this functionality using the middleware `express.static(path)`, where the `path` parameter is the absolute path of the folder containing the assets.
+En Express, puedes poner en marcha esta funcionalidad utilizando el middleware `express.static(path)`, donde el parámetro `path` es la ruta absoluta de la carpeta que contiene los recursos.
 
-If you don’t know what middleware is... don’t worry, we will discuss in detail later. Basically, middleware are functions that intercept route handlers, adding some kind of information. A middleware needs to be mounted using the method `app.use(path, middlewareFunction)`. The first `path` argument is optional. If you don’t pass it, the middleware will be executed for all requests.
+Si no sabes qué es middleware... no te preocupes, hablaremos en detalle más adelante. Básicamente, middleware son funciones que interceptan los manejadores de rutas, añadiendo algún tipo de información. Un middleware necesita ser montado usando el método `app.use(path, middlewareFunction)`. El primer argumento de `path` es opcional. Si no lo pasas, el middleware se ejecutará para todas las peticiones.
 
 # --instructions--
 
-Mount the `express.static()` middleware to the path `/public` with `app.use()`. The absolute path to the assets folder is `__dirname + /public`.
+Monta el middleware `express.static()` a la ruta `/public` con `app.use()`. La ruta absoluta a la carpeta de recursos es `__dirname + /public`.
 
-Now your app should be able to serve a CSS stylesheet. Note that the `/public/style.css` file is referenced in the `/views/index.html` in the project boilerplate. Your front-page should look a little better now!
+Ahora tu aplicación debe ser capaz de servir una hoja de estilos CSS. Ten en cuenta que el archivo `/public/style.css` está referenciado en el archivo `/views/index.html` en el plantilla del proyecto. ¡Tu página principal debería verse un poco mejor ahora!
 
 # --hints--
 
-Your app should serve asset files from the `/public` directory to the `/public` path
+Tu aplicación debe servir archivos de recursos desde el directorio `/public` a la ruta `/public`
 
 ```js
 (getUserInput) =>

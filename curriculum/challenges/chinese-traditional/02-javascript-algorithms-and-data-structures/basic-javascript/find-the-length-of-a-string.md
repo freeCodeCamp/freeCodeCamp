@@ -17,7 +17,7 @@ console.log("Alan Peter".length);
 
 字符串 `10` 將會出現在控制檯中。
 
-例如，如果我們創建了一個變量 `var firstName = "Ada"`，我們就可以通過使用 `firstName.length` 屬性來獲得字符串 `Ada` 的長度。
+例如，如果我們創建了一個變量 `const firstName = "Ada"`，我們可以通過使用 `firstName.length` 找出字符串 `Ada` 的長度屬性。
 
 # --instructions--
 
@@ -29,8 +29,8 @@ console.log("Alan Peter".length);
 
 ```js
 assert(
-  code.match(/var lastNameLength = 0;/) &&
-    code.match(/var lastName = "Lovelace";/)
+  code.match(/let lastNameLength = 0;/) &&
+    code.match(/const lastName = "Lovelace";/)
 );
 ```
 
@@ -52,18 +52,17 @@ assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
 
 ```js
 // Setup
-var lastNameLength = 0;
-var lastName = "Lovelace";
+let lastNameLength = 0;
+const lastName = "Lovelace";
 
 // Only change code below this line
-
 lastNameLength = lastName;
 ```
 
 # --solutions--
 
 ```js
-var lastNameLength = 0;
-var lastName = "Lovelace";
+let lastNameLength = 0;
+const lastName = "Lovelace";
 lastNameLength = lastName.length;
 ```

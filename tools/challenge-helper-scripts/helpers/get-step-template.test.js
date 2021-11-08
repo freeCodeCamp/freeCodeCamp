@@ -6,9 +6,9 @@ describe('getStepTemplate util', () => {
   it('should be able to create a markdown', () => {
     const baseOutput = `---
 id: 60d4ebe4801158d1abe1b18f
-title: Part 5
+title: Step 5
 challengeType: 0
-dashedName: part-5
+dashedName: step-5
 ---
 
 # --description--

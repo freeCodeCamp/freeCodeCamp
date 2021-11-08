@@ -48,7 +48,7 @@ El cuarto elemento `title` debe tener un cuadro emergente de texto de `17`.
 assert($('title').eq(3).text() == '17');
 ```
 
-El quinto elemento `title` debe tener uncuadro emergente de texto de `25`.
+El quinto elemento `title` debe tener un cuadro emergente de texto de `25`.
 
 ```js
 assert($('title').eq(4).text() == '25');
