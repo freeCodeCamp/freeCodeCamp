@@ -6,7 +6,7 @@ import envData from '../../../../config/env.json';
 import { isAuditedCert } from '../../../../utils/is-audited';
 import { generateIconComponent, SuperBlock } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
-import { ChallengeNodeType } from '../../redux/prop-types';
+import { ChallengeNode } from '../../redux/prop-types';
 import { Link, Spacer } from '../helpers';
 
 import './map.css';
@@ -20,7 +20,7 @@ interface MapProps {
 
 interface MapData {
   allChallengeNode: {
-    nodes: ChallengeNodeType[];
+    nodes: ChallengeNode[];
   };
 }
 
@@ -39,7 +39,7 @@ const linkSpacingStyle = {
   alignItems: 'center'
 };
 
-function renderLandingMap(nodes: ChallengeNodeType[]) {
+function renderLandingMap(nodes: ChallengeNode[]) {
   nodes = nodes.filter(node => node.superBlock !== 'coding-interview-prep');
   return (
     <ul data-test-label='certifications'>
@@ -61,7 +61,7 @@ function renderLandingMap(nodes: ChallengeNodeType[]) {
   );
 }
 
-function renderLearnMap(nodes: ChallengeNodeType[], currentSuperBlock = '') {
+function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
   nodes = nodes.filter(node => node.superBlock !== currentSuperBlock);
   return curriculumLocale === 'english' ? (
     <ul data-test-label='learn-curriculum-map'>

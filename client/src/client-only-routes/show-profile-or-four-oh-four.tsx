@@ -12,7 +12,7 @@ import {
   fetchProfileForUser,
   usernameSelector
 } from '../redux';
-import { UserType } from '../redux/prop-types';
+import { User } from '../redux/prop-types';
 
 interface IShowProfileOrFourOhFourProps {
   fetchProfileForUser: (username: string) => void;
@@ -23,14 +23,14 @@ interface IShowProfileOrFourOhFourProps {
   };
   isSessionUser: boolean;
   maybeUser: string;
-  requestedUser: UserType;
+  requestedUser: User;
   showLoading: boolean;
 }
 
 const createRequestedUserSelector =
   () =>
   (state: unknown, { maybeUser = '' }) =>
-    userByNameSelector(maybeUser.toLowerCase())(state) as UserType;
+    userByNameSelector(maybeUser.toLowerCase())(state) as User;
 const createIsSessionUserSelector =
   () =>
   (state: unknown, { maybeUser = '' }) =>

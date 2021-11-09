@@ -10,28 +10,20 @@ dashedName: subleq
 
 [Subleq](https://rosettacode.org/wiki/eso:Subleq) is an example of a [One-Instruction Set Computer (OISC)](https://en.wikipedia.org/wiki/One_instruction_set_computer).
 
-It is named after its only instruction, which is **SU**btract and **B**ranch if **L**ess than or **EQ**ual
-
-to zero.
+It is named after its only instruction, which is **SU**btract and **B**ranch if **L**ess than or **EQ**ual to zero.
 
 Your task is to create an interpreter which emulates such a machine.
 
-The machine's memory consists of an array of signed integers. Any reasonable word size is fine, but the memory must be
-
-able to hold negative as well as positive numbers.
+The machine's memory consists of an array of signed integers. Any reasonable word size is fine, but the memory must be able to hold negative as well as positive numbers.
 
 Execution begins with the instruction pointer aimed at the first word, which is address 0. It proceeds as follows:
 
 <ol>
   <li>Let A, B, and C be the value stored in the three consecutive words in memory starting at the instruction pointer.</li>
   <li>Advance the instruction pointer 3 words to point at the address after the one containing C.</li>
-  <li>If A is -1, then a character is read from standard input and its code point stored in the address given by B. C
-    is unused.</li>
-  <li>If B is -1, then the number contained in the address given by A is interpreted as a code point and the
-    corresponding character output. C is again unused.</li>
-  <li>Otherwise, both A and B are treated as the addresses of memory locations. The number contained in the address
-    given by A is subtracted from the number at the address given by B (and the result stored back in address B). If
-    the result is zero or negative, the value C becomes the new instruction pointer.</li>
+  <li>If A is -1, then a character is read from standard input and its code point stored in the address given by B. C is unused.</li>
+  <li>If B is -1, then the number contained in the address given by A is interpreted as a code point and the corresponding character output. C is again unused.</li>
+  <li>Otherwise, both A and B are treated as the addresses of memory locations. The number contained in the address given by A is subtracted from the number at the address given by B (and the result stored back in address B). If the result is zero or negative, the value C becomes the new instruction pointer.</li>
   <li>If the instruction pointer becomes negative, execution halts.</li>
 </ol>
 
@@ -39,15 +31,7 @@ Other negative addresses besides -1 may be treated as equivalent to -1, or gener
 
 Your solution should accept a program to execute on the machine, separately from the input fed to the program itself.
 
-This program should be in raw subleq "machine code" - whitespace-separated decimal numbers, with no symbolic names or
-
-other assembly-level extensions, to be loaded into memory starting at address 0. Show the output of your solution when
-
-fed this "Hello, world!" program. (Note that the example assumes ASCII or a superset of it, such as any of the Latin-N
-
-character sets or Unicode. You may translate it into another character set if your implementation is on a
-
-non-ASCiI-compatible environment.)
+This program should be in raw subleq "machine code" - whitespace-separated decimal numbers, with no symbolic names or other assembly-level extensions, to be loaded into memory starting at address 0. Show the output of your solution when fed this "Hello, world!" program. (Note that the example assumes ASCII or a superset of it, such as any of the Latin-N character sets or Unicode. You may translate it into another character set if your implementation is on a non-ASCiI-compatible environment.)
 
 <pre>15 17 -1 17 -1 -1 16 1 -1 16 3 -1 15 15 0 0 -1 72 101 108 108 111 44 32 119 111 114 108 100 33 10 0</pre>
 
@@ -66,9 +50,7 @@ message: "Hello, world!\n\0"
 
 # --instructions--
 
-Write a function that takes an array of integers as a parameter. This represents the memory elements. The function
-
-should interpret the sequence and return the output string. For this task, assume that there is no standard input.
+Write a function that takes an array of integers as a parameter. This represents the memory elements. The function should interpret the sequence and return the output string. For this task, assume that there is no standard input.
 
 # --hints--
 

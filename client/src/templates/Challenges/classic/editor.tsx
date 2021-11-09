@@ -22,10 +22,10 @@ import { Loader } from '../../../components/helpers';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import {
   ChallengeFiles,
-  DimensionsType,
-  ExtTypes,
-  FileKeyTypes,
-  ResizePropsType,
+  Dimensions,
+  Ext,
+  FileKey,
+  ResizeProps,
   Test
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
@@ -55,11 +55,11 @@ interface EditorProps {
   containerRef: RefObject<HTMLElement>;
   contents: string;
   description: string;
-  dimensions: DimensionsType;
+  dimensions: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  ext: ExtTypes;
-  fileKey: FileKeyTypes;
+  ext: Ext;
+  fileKey: FileKey;
   canFocusOnMountRef: MutableRefObject<boolean>;
   initialEditorContent: string;
   initialExt: string;
@@ -67,7 +67,7 @@ interface EditorProps {
   initialTests: Test[];
   isResetting: boolean;
   output: string[];
-  resizeProps: ResizePropsType;
+  resizeProps: ResizeProps;
   saveEditorContent: () => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
@@ -76,7 +76,7 @@ interface EditorProps {
   theme: string;
   title: string;
   updateFile: (object: {
-    fileKey: FileKeyTypes;
+    fileKey: FileKey;
     editorValue: string;
     editableRegionBoundaries: number[] | null;
   }) => void;

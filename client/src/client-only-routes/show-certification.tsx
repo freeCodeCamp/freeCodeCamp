@@ -25,7 +25,7 @@ import {
   userByNameSelector,
   fetchProfileForUser
 } from '../redux';
-import { UserType } from '../redux/prop-types';
+import { User } from '../redux/prop-types';
 import { certMap } from '../resources/cert-and-project-map';
 import certificateMissingMessage from '../utils/certificate-missing-message';
 import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
@@ -69,7 +69,7 @@ interface IShowCertificationProps {
     certSlug: string;
   }) => void;
   signedInUserName: string;
-  user: UserType;
+  user: User;
   userFetchState: {
     complete: boolean;
   };
@@ -78,7 +78,7 @@ interface IShowCertificationProps {
 }
 
 const requestedUserSelector = (state: unknown, { username = '' }) =>
-  userByNameSelector(username.toLowerCase())(state) as UserType;
+  userByNameSelector(username.toLowerCase())(state) as User;
 
 const validCertSlugs = certMap.map(cert => cert.certSlug);
 
