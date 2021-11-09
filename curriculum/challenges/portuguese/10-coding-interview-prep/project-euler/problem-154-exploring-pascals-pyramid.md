@@ -1,6 +1,6 @@
 ---
 id: 5900f4071000cf542c50ff19
-title: 'Problem 154: Exploring Pascal''s pyramid'
+title: 'Problema 154: Explorando o triângulo de Pascal'
 challengeType: 5
 forumTopicId: 301785
 dashedName: problem-154-exploring-pascals-pyramid
@@ -8,16 +8,22 @@ dashedName: problem-154-exploring-pascals-pyramid
 
 # --description--
 
-A triangular pyramid is constructed using spherical balls so that each ball rests on exactly three balls of the next lower level.
+Uma pirâmide triangular é construída usando bolas esféricas de modo que cada bola fique exatamente sobre três bolas do próximo nível.
 
-Then, we calculate the number of paths leading from the apex to each position: A path starts at the apex and progresses downwards to any of the three spheres directly below the current position. Consequently, the number of paths to reach a certain position is the sum of the numbers immediately above it (depending on the position, there are up to three numbers above it). The result is Pascal's pyramid and the numbers at each level n are the coefficients of the trinomial expansion (x + y + z)n. How many coefficients in the expansion of (x + y + z)200000 are multiples of 1012?
+<img class="img-responsive center-block" alt="pirâmide triangular de quatro níveis construída usando bolas esféricas" src="https://cdn.freecodecamp.org/curriculum/project-euler/exploring-pascals-pyramid.png" style="background-color: white; padding: 10px;" />
+
+Então, calculamos o número de caminhos que levam a partir do ápice para cada posição: um caminho começa no ápice e avança para baixo para qualquer uma das três esferas diretamente abaixo da posição atual. Consequentemente, o número de caminhos para chegar a uma determinada posição é a soma dos números imediatamente acima dele (dependendo da posição, há até três números acima dele).
+
+O resultado é a pirâmide de Pascal e os números de cada nível são os coeficientes da expansão trinomial ${(x + y + z)}^n$.
+
+Quantos coeficientes na expansão de ${(x + y + z)}^{200000}$ são múltiplos de ${10}^{12}$?
 
 # --hints--
 
-`euler154()` should return 479742450.
+`pascalsPyramid()` deve retornar `479742450`.
 
 ```js
-assert.strictEqual(euler154(), 479742450);
+assert.strictEqual(pascalsPyramid(), 479742450);
 ```
 
 # --seed--
@@ -25,12 +31,12 @@ assert.strictEqual(euler154(), 479742450);
 ## --seed-contents--
 
 ```js
-function euler154() {
+function pascalsPyramid() {
 
   return true;
 }
 
-euler154();
+pascalsPyramid();
 ```
 
 # --solutions--
