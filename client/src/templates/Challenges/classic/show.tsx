@@ -14,9 +14,9 @@ import LearnLayout from '../../../components/layouts/learn';
 import {
   ChallengeFile,
   ChallengeFiles,
-  ChallengeMetaType,
-  ChallengeNodeType,
-  ResizePropsType,
+  ChallengeMeta,
+  ChallengeNode,
+  ResizeProps,
   Test
 } from '../../../redux/prop-types';
 import { isContained } from '../../../utils/is-contained';
@@ -78,7 +78,7 @@ interface ShowClassicProps {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
   createFiles: (arg0: ChallengeFile[]) => void;
-  data: { challengeNode: ChallengeNodeType };
+  data: { challengeNode: ChallengeNode };
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
@@ -86,11 +86,11 @@ interface ShowClassicProps {
   isChallengeCompleted: boolean;
   output: string[];
   pageContext: {
-    challengeMeta: ChallengeMetaType;
+    challengeMeta: ChallengeMeta;
   };
   t: TFunction;
   tests: Test[];
-  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+  updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
 
 interface ShowClassicState {
@@ -122,7 +122,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   containerRef: React.RefObject<unknown>;
   editorRef: React.RefObject<unknown>;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
-  resizeProps: ResizePropsType;
+  resizeProps: ResizeProps;
 
   constructor(props: ShowClassicProps) {
     super(props);
