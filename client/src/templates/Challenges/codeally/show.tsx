@@ -11,8 +11,8 @@ import { createSelector } from 'reselect';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import { webhookTokenSelector } from '../../../redux';
+import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import { updateChallengeMeta, challengeMounted } from '../redux';
 // Redux
 
