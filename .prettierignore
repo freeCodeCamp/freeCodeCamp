@@ -7,3 +7,4 @@ curriculum/challenges/**/*
 config/**/*.json
 client/i18n/**/*.json
 docs/i18n
+**/package-lock.json
