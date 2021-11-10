@@ -1,10 +1,9 @@
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import envData from '../../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
@@ -17,27 +16,26 @@ const mapStateToProps = createStructuredSelector({
   currentTab: currentTabSelector
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       moveToTab
     },
     dispatch
   );
-
-const propTypes = {
-  currentTab: PropTypes.number,
-  editor: PropTypes.element,
-  guideUrl: PropTypes.string,
-  hasPreview: PropTypes.bool,
-  instructions: PropTypes.element,
-  moveToTab: PropTypes.func,
-  preview: PropTypes.element,
-  testOutput: PropTypes.element,
-  videoUrl: PropTypes.string
-};
-
-class MobileLayout extends Component {
+interface MobileLayoutProps {
+  currentTab: number;
+  editor: JSX.Element | null;
+  guideUrl: string;
+  hasPreview: boolean;
+  instructions: JSX.Element;
+  moveToTab: typeof moveToTab;
+  preview: JSX.Element;
+  testOutput: JSX.Element;
+  videoUrl: string;
+}
+class MobileLayout extends Component<MobileLayoutProps> {
+  static displayName: string;
   componentDidMount() {
     if (this.props.currentTab !== 1) this.props.moveToTab(1);
   }
@@ -101,6 +99,5 @@ class MobileLayout extends Component {
 }
 
 MobileLayout.displayName = 'MobileLayout';
-MobileLayout.propTypes = propTypes;
 
 export default connect(mapStateToProps, mapDispatchToProps)(MobileLayout);
