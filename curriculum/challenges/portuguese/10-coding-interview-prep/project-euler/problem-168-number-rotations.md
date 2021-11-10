@@ -1,6 +1,6 @@
 ---
 id: 5900f4151000cf542c50ff27
-title: 'Problem 168: Number Rotations'
+title: 'Problema 168: Rotações de números'
 challengeType: 5
 forumTopicId: 301802
 dashedName: problem-168-number-rotations
@@ -8,20 +8,20 @@ dashedName: problem-168-number-rotations
 
 # --description--
 
-Consider the number 142857. We can right-rotate this number by moving the last digit (7) to the front of it, giving us 714285.
+Considere o número 142857. Podemos girar esse número para a direita movendo o último algarismo (7) para a frente dele, nos dando 714285.
 
-It can be verified that 714285=5×142857.
+Pode-se ver que $714285 = 5 × 142857$.
 
-This demonstrates an unusual property of 142857: it is a divisor of its right-rotation.
+Isto demonstra uma propriedade incomum de 142857: ele é um divisor de sua rotação à direita.
 
-Find the last 5 digits of the sum of all integers n, 10 &lt; n &lt; 10100, that have this property.
+Encontre os últimos 5 dígitos da soma de todos os números inteiros $n$, sendo que $10 &lt; n &lt; 10100$, que têm essa propriedade.
 
 # --hints--
 
-`euler168()` should return 59206.
+`numberRotations()` deve retornar `59206`.
 
 ```js
-assert.strictEqual(euler168(), 59206);
+assert.strictEqual(numberRotations(), 59206);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler168(), 59206);
 ## --seed-contents--
 
 ```js
-function euler168() {
+function numberRotations() {
 
   return true;
 }
 
-euler168();
+numberRotations();
 ```
 
 # --solutions--
