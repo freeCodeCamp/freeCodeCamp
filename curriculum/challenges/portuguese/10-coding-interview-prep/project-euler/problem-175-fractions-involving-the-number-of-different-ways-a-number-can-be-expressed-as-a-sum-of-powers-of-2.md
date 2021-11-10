@@ -1,7 +1,7 @@
 ---
 id: 5900f41c1000cf542c50ff2e
 title: >-
-  Problem 175: Fractions involving the number of different ways a number can be expressed as a sum of powers of 2
+  Problema 175: Frações envolvendo o número de maneiras diferentes pelas quais um número pode ser expresso como uma soma de potências de 2
 challengeType: 5
 forumTopicId: 301810
 dashedName: >-
@@ -10,18 +10,36 @@ dashedName: >-
 
 # --description--
 
-Define f(0)=1 and f(n) to be the number of ways to write n as a sum of powers of 2 where no power occurs more than twice.
+Defina $f(0) = 1$ e $f(n)$ como o número de formas de escrever $n$ como uma soma de potências de 2 onde nenhuma potência ocorra mais de duas vezes.
 
-For example, f(10)=5 since there are five different ways to express 10:10 = 8+2 = 8+1+1 = 4+4+2 = 4+2+2+1+1 = 4+4+1+1
+Por exemplo, $f(10) = 5$ já que há cinco maneiras diferentes de expressar 10:
 
-It can be shown that for every fraction p/q (p>0, q>0) there exists at least one integer n such that f(n)/f(n-1)=p/q. For instance, the smallest n for which f(n)/f(n-1)=13/17 is 241. The binary expansion of 241 is 11110001. Reading this binary number from the most significant bit to the least significant bit there are 4 one's, 3 zeroes and 1 one. We shall call the string 4,3,1 the Shortened Binary Expansion of 241. Find the Shortened Binary Expansion of the smallest n for which f(n)/f(n-1)=123456789/987654321. Give your answer as comma separated integers, without any whitespaces.
+$$10 = 8 + 2 = 8 + 1 + 1 = 4 + 4 + 2 = 4 + 2 + 2 + 1 + 1 = 4 + 4 + 1 + 1$$
+
+Pode-se mostrar que, para cada fração $\frac{p}{q}\\; (p>0, q>0)$ existe pelo menos um número inteiro $n$ de modo que $\frac{f(n)}{f(n - 1)} = \frac{p}{q}$.
+
+Por exemplo, o menor $n$ para o qual $\frac{f(n)}{f(n - 1)} = \frac{13}{17}$ é 241. A expansão binária de 241 é 11110001.
+
+Ao ler este número binário, a partir do bit mais significativo até o bit menos significativo, que há 4 números um, 3 zeros e um 1. Chamaremos a string 4,3,1 de expansão binária reduzida de 241.
+
+Encontre a expansão binária reduzida do menor $n$ para o qual
+
+$$\frac{f(n)}{f(n - 1)} = \frac{123456789}{987654321}$$
+
+Dê sua resposta como uma string com inteiros separados por vírgula, sem nenhum espaço em branco.
 
 # --hints--
 
-`euler175()` should return 1, 13717420, 8.
+`shortenedBinaryExpansionOfNumber()` deve retornar uma string.
 
 ```js
-assert.strictEqual(euler175(), 1, 13717420, 8);
+assert(typeof shortenedBinaryExpansionOfNumber() === 'string');
+```
+
+`shortenedBinaryExpansionOfNumber()` deve retornar a string `1,13717420,8`.
+
+```js
+assert.strictEqual(shortenedBinaryExpansionOfNumber(), '1,13717420,8');
 ```
 
 # --seed--
@@ -29,12 +47,12 @@ assert.strictEqual(euler175(), 1, 13717420, 8);
 ## --seed-contents--
 
 ```js
-function euler175() {
+function shortenedBinaryExpansionOfNumber() {
 
   return true;
 }
 
-euler175();
+shortenedBinaryExpansionOfNumber();
 ```
 
 # --solutions--
