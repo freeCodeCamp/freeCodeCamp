@@ -8,8 +8,8 @@ import {
   ChallengeFiles,
   ResizeProps
 } from '../../../redux/prop-types';
-import EditorTabs from './EditorTabs';
 import ActionRow from './action-row';
+import EditorTabs from './editor-tabs';
 
 const { showUpcomingChanges } = envData;
 
