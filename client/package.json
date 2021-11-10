@@ -51,7 +51,7 @@
     "@loadable/component": "5.15.0",
     "@reach/router": "1.3.4",
     "@stripe/react-stripe-js": "1.6.0",
-    "@stripe/stripe-js": "1.21.0",
+    "@stripe/stripe-js": "1.21.1",
     "@types/react-scrollable-anchor": "0.6.1",
     "algoliasearch": "4.11.0",
     "assert": "2.0.0",
