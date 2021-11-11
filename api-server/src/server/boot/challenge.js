@@ -342,8 +342,8 @@ function createCoderoadChallengeCompleted(app) {
   const { WebhookToken, User } = app.models;
 
   return async function coderoadChallengeCompleted(req, res) {
-    const { 'coderoad-user-token': userWebhookToken = null } = req.headers;
-    const { tutorialId = null } = req.body;
+    const { 'coderoad-user-token': userWebhookToken } = req.headers;
+    const { tutorialId } = req.body;
 
     if (!tutorialId) return res.send(`'tutorialId' not found in request body`);
 
