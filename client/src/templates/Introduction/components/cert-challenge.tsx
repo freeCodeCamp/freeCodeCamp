@@ -8,7 +8,8 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   certSlugTypeMap,
-  superBlockCertTypeMap
+  superBlockCertTypeMap,
+  SuperBlocks
 } from '../../../../../config/certification-settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
@@ -16,7 +17,6 @@ import {
   stepsToClaimSelector,
   isSignedInSelector
 } from '../../../redux';
-
 import { User, Steps } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings';
 import { certMap } from '../../../resources/cert-and-project-map';
@@ -32,7 +32,7 @@ interface CertChallengeProps {
   };
   isSignedIn: boolean;
   steps: Steps;
-  superBlock: any;
+  superBlock: SuperBlocks;
   t: TFunction;
   title?: string;
   user: User;

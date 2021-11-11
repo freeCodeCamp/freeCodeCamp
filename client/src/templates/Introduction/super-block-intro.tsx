@@ -200,7 +200,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
             <div className='block-ui'>
               {blockDashedNames.map(blockDashedName => (
                 <Fragment key={blockDashedName}>
-                  {/* @ts-expect-error TODO: Does not recognise connection to store? */}
                   <Block
                     blockDashedName={blockDashedName}
                     challenges={nodesForSuperBlock.filter(

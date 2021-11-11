@@ -63,13 +63,6 @@ export const CurrentCertsPropType = PropTypes.arrayOf(
   })
 );
 
-export const StepsPropType = PropTypes.shape({
-  currentCerts: CurrentCertsPropType,
-  isShowCerts: PropTypes.bool,
-  isShowName: PropTypes.bool,
-  isShowProfile: PropTypes.bool
-});
-
 export type Steps = {
   isHonest?: boolean;
   currentCerts?: Array<CurrentCert>;
