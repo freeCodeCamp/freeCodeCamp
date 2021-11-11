@@ -23,7 +23,7 @@ import {
   reportUser
 } from '../redux';
 
-interface IShowUserProps {
+interface ShowUserProps {
   email: string;
   isSignedIn: boolean;
   reportUser: (payload: {
@@ -45,7 +45,7 @@ const mapStateToProps = createSelector(
   userSelector,
   (
     isSignedIn,
-    userFetchState: IShowUserProps['userFetchState'],
+    userFetchState: ShowUserProps['userFetchState'],
     { email }: { email: string }
   ) => ({
     isSignedIn,
@@ -65,7 +65,7 @@ function ShowUser({
   t,
   userFetchState,
   username
-}: IShowUserProps) {
+}: ShowUserProps) {
   const [textarea, setTextarea] = useState('');
 
   function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {

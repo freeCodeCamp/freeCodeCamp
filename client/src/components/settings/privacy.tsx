@@ -7,6 +7,7 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { userSelector } from '../../redux';
+import type { ProfileUI } from '../../redux/prop-types';
 import { submitProfileUI } from '../../redux/settings';
 
 import FullWidthRow from '../helpers/full-width-row';
@@ -22,24 +23,11 @@ const mapStateToProps = createSelector(userSelector, user => ({
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ submitProfileUI }, dispatch);
 
-type ProfileUIType = {
-  isLocked: boolean;
-  showAbout: boolean;
-  showCerts: boolean;
-  showDonation: boolean;
-  showHeatMap: boolean;
-  showLocation: boolean;
-  showName: boolean;
-  showPoints: boolean;
-  showPortfolio: boolean;
-  showTimeLine: boolean;
-};
-
 type PrivacyProps = {
-  submitProfileUI: (profileUI: ProfileUIType) => void;
+  submitProfileUI: (profileUI: ProfileUI) => void;
   t: TFunction;
   user: {
-    profileUI: ProfileUIType;
+    profileUI: ProfileUI;
     username: string;
   };
 };
@@ -56,8 +44,8 @@ function PrivacySettings({
   function toggleFlag(flag: string): () => void {
     return () => {
       const privacyValues = { ...user.profileUI };
-      privacyValues[flag as keyof ProfileUIType] =
-        !privacyValues[flag as keyof ProfileUIType];
+      privacyValues[flag as keyof ProfileUI] =
+        !privacyValues[flag as keyof ProfileUI];
       submitProfileUI(privacyValues);
     };
   }

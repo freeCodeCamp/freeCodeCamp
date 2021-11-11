@@ -10,7 +10,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './social-icons.css';
 
-interface ISocialIconsProps {
+interface SocialIconsProps {
   email?: string;
   githubProfile: string;
   isGithub: boolean;
@@ -80,7 +80,7 @@ function TwitterIcon(handle: string, username: string): JSX.Element {
   );
 }
 
-function SocialIcons(props: ISocialIconsProps): JSX.Element | null {
+function SocialIcons(props: SocialIconsProps): JSX.Element | null {
   const {
     githubProfile,
     isLinkedIn,

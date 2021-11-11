@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-interface ITimelinePaginationProps {
+interface TimelinePaginationProps {
   firstPage: () => void;
   lastPage: () => void;
   nextPage: () => void;
@@ -11,7 +11,7 @@ interface ITimelinePaginationProps {
   totalPages: number;
 }
 
-const TimelinePagination = (props: ITimelinePaginationProps): JSX.Element => {
+const TimelinePagination = (props: TimelinePaginationProps): JSX.Element => {
   const { pageNo, totalPages, firstPage, prevPage, nextPage, lastPage } = props;
   const { t } = useTranslation();
 

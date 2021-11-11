@@ -38,8 +38,10 @@ function createQuestionEpic(action$, state$, { window }) {
         challengeMetaSelector(state);
       const {
         navigator: { userAgent },
-        location: { href }
+        location: { pathname, origin }
       } = window;
+      // Removes query params
+      const challengeUrl = new URL(pathname, origin).href;
       const projectFormValues = Object.entries(
         projectFormValuesSelector(state)
       );
@@ -51,7 +53,7 @@ function createQuestionEpic(action$, state$, { window }) {
           'forum-help.challenge'
         )} ${challengeTitle}\n\n${i18next.t(
           'forum-help.challenge-link'
-        )}\n${href}`
+        )}\n${challengeUrl}`
       );
 
       let textMessage = dedent(`${i18next.t(

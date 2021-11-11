@@ -12,7 +12,7 @@ import envData from '../../../../../config/env.json';
 import { langCodes } from '../../../../../config/i18n/all-langs';
 import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
-import SocialIcons from './SocialIcons';
+import SocialIcons from './social-icons';
 
 import './camper.css';
 
@@ -22,7 +22,7 @@ const { clientLocale } = envData;
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const localeCode = langCodes[clientLocale];
 
-interface ICamperProps {
+interface CamperProps {
   about: string;
   githubProfile: string;
   isDonating: boolean;
@@ -83,7 +83,7 @@ function Camper({
   linkedin,
   twitter,
   website
-}: ICamperProps): JSX.Element {
+}: CamperProps): JSX.Element {
   const { t } = useTranslation();
 
   return (

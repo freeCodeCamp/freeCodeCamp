@@ -13,7 +13,7 @@ import {
 } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
 import { signInLoadingSelector, userSelector } from '../../redux';
-import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
+import PayPalButtonScriptLoader from './paypal-button-script-loader';
 
 type PaypalButtonProps = {
   addDonation: (data: AddDonationData) => void;
@@ -138,7 +138,7 @@ export class PaypalButton extends Component<
 
     return (
       <div className={'paypal-buttons-container'}>
-        {/* help needed */}
+        {/* eslint-disable @typescript-eslint/naming-convention */}
         <PayPalButtonScriptLoader
           clientId={paypalClientId}
           createOrder={(
@@ -207,6 +207,7 @@ export class PaypalButton extends Component<
             color: buttonColor
           }}
         />
+        {/* eslint-enable @typescript-eslint/naming-convention */}
       </div>
     );
   }

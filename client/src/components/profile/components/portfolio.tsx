@@ -2,23 +2,16 @@ import { Media } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import type { Portfolio as PortfolioData } from '../../../redux/prop-types';
 import { FullWidthRow } from '../../helpers';
 
 import './portfolio.css';
 
-interface IPortfolioData {
-  description: string;
-  id: string;
-  image: string;
-  title: string;
-  url: string;
+interface PortfolioProps {
+  portfolio: PortfolioData[];
 }
 
-interface IPortfolioProps {
-  portfolio: IPortfolioData[];
-}
-
-function Portfolio({ portfolio = [] }: IPortfolioProps): JSX.Element | null {
+function Portfolio({ portfolio = [] }: PortfolioProps): JSX.Element | null {
   const { t } = useTranslation();
   if (!portfolio.length) {
     return null;

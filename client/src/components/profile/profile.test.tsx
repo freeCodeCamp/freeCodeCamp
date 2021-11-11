@@ -1,12 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import Profile from './Profile';
+import Profile from './profile';
 
 jest.mock('../../analytics');
 
 const userProps = {
   user: {
+    acceptedPrivacyTerms: true,
+    currentChallengeId: 'string',
+    email: 'string',
+    emailVerified: true,
     profileUI: {
       isLocked: false,
       showAbout: false,
@@ -26,8 +30,12 @@ const userProps = {
     },
     completedChallenges: [],
     portfolio: [],
+    progressTimestamps: [],
     about: 'string',
     githubProfile: 'string',
+    isBanned: false,
+    isCheater: true,
+    isHonest: true,
     isGithub: true,
     isLinkedIn: true,
     isTwitter: true,
@@ -38,11 +46,30 @@ const userProps = {
     name: 'string',
     picture: 'string',
     points: 1,
+    sendQuincyEmail: true,
+    sound: true,
+    theme: 'string',
     twitter: 'string',
     username: 'string',
     website: 'string',
     yearsTopContributor: [],
-    isDonating: false
+    isDonating: false,
+    is2018DataVisCert: true,
+    isApisMicroservicesCert: true,
+    isBackEndCert: true,
+    isDataVisCert: true,
+    isEmailVerified: true,
+    isFrontEndCert: true,
+    isFrontEndLibsCert: true,
+    isFullStackCert: true,
+    isInfosecQaCert: true,
+    isQaCertV7: true,
+    isInfosecCertV7: true,
+    isJsAlgoDataStructCert: true,
+    isRespWebDesignCert: true,
+    isSciCompPyCertV7: true,
+    isDataAnalysisPyCertV7: true,
+    isMachineLearningPyCertV7: true
   },
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   navigate: () => {}

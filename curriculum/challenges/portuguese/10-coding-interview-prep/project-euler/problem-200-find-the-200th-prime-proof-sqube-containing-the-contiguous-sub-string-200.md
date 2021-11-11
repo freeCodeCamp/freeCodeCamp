@@ -1,7 +1,7 @@
 ---
 id: 5900f4351000cf542c50ff47
 title: >-
-  Problem 200: Find the 200th prime-proof sqube containing the contiguous sub-string "200"
+  Problema 200: Encontre o 200º sqube à prova de primos contendo a substring contígua "200"
 challengeType: 5
 forumTopicId: 301840
 dashedName: >-
@@ -10,22 +10,22 @@ dashedName: >-
 
 # --description--
 
-We shall define a sqube to be a number of the form, p2q3, where p and q are distinct primes.
+Definiremos um sqube como um número na forma ${p^2}{q^3}$, onde $p$ e $q$ são números primos distintos.
 
-For example, 200 = 5223 or 120072949 = 232613.
+Por exemplo, $200 = {5^2}{2^3}$ ou $120072949 = {{23}^2}{{61}^3}$.
 
-The first five squbes are 72, 108, 200, 392, and 500.
+Os primeiros cinco squbes são 72, 108, 200, 392 e 500.
 
-Interestingly, 200 is also the first number for which you cannot change any single digit to make a prime; we shall call such numbers, prime-proof. The next prime-proof sqube which contains the contiguous sub-string "200" is 1992008.
+Curiosamente, 200 também é o primeiro número para o qual não se pode alterar qualquer algarismo para torná-lo um número primo. Chamaremos esses números de à prova de primos. O próximo sqube a prova de primos que contém a substring contígua `200` é 1992008.
 
-Find the 200th prime-proof sqube containing the contiguous sub-string "200".
+Encontre o 200º sqube à prova de primos contendo a substring contígua `200`.
 
 # --hints--
 
-`euler200()` should return 229161792008.
+`primeProofSqubeWithSubString()` deve retornar `229161792008`.
 
 ```js
-assert.strictEqual(euler200(), 229161792008);
+assert.strictEqual(primeProofSqubeWithSubString(), 229161792008);
 ```
 
 # --seed--
@@ -33,12 +33,12 @@ assert.strictEqual(euler200(), 229161792008);
 ## --seed-contents--
 
 ```js
-function euler200() {
+function primeProofSqubeWithSubString() {
 
   return true;
 }
 
-euler200();
+primeProofSqubeWithSubString();
 ```
 
 # --solutions--

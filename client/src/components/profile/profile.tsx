@@ -4,52 +4,16 @@ import Helmet from 'react-helmet';
 import { TFunction, useTranslation } from 'react-i18next';
 
 import { CurrentChallengeLink, FullWidthRow, Link, Spacer } from '../helpers';
-import Camper from './components/Camper';
-import Certifications from './components/Certifications';
-import HeatMap from './components/HeatMap';
-import Portfolio from './components/Portfolio';
+import { User } from './../../redux/prop-types';
 import Timeline from './components/TimeLine';
+import Camper from './components/camper';
+import Certifications from './components/certifications';
+import HeatMap from './components/heat-map';
+import Portfolio from './components/portfolio';
 
-interface IProfileProps {
+interface ProfileProps {
   isSessionUser: boolean;
-  user: {
-    profileUI: {
-      isLocked: boolean;
-      showAbout: boolean;
-      showCerts: boolean;
-      showDonation: boolean;
-      showHeatMap: boolean;
-      showLocation: boolean;
-      showName: boolean;
-      showPoints: boolean;
-      showPortfolio: boolean;
-      showTimeLine: boolean;
-    };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    calendar: any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    completedChallenges: any[];
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    portfolio: any[];
-    about: string;
-    githubProfile: string;
-    isGithub: boolean;
-    isLinkedIn: boolean;
-    isTwitter: boolean;
-    isWebsite: boolean;
-    joinDate: string;
-    linkedin: string;
-    location: string;
-    name: string;
-    picture: string;
-    points: number;
-    twitter: string;
-    username: string;
-    website: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    yearsTopContributor: any[];
-    isDonating: boolean;
-  };
+  user: User;
 }
 
 function renderMessage(
@@ -88,7 +52,7 @@ function renderMessage(
   );
 }
 
-function renderProfile(user: IProfileProps['user']): JSX.Element {
+function renderProfile(user: ProfileProps['user']): JSX.Element {
   const {
     profileUI: {
       showAbout = false,
@@ -156,7 +120,7 @@ function renderProfile(user: IProfileProps['user']): JSX.Element {
   );
 }
 
-function Profile({ user, isSessionUser }: IProfileProps): JSX.Element {
+function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   const { t } = useTranslation();
   const {
     profileUI: { isLocked = true },

@@ -11,12 +11,11 @@ import NoResults from './no-results';
 
 import './search-page-hits.css';
 
-type allHitType = {
+type AllHitsProps = {
   handleClick?: EventHandler<SyntheticEvent>;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const AllHits: React.ComponentClass<AutocompleteExposed & allHitType, any> =
+const AllHits: React.ComponentClass<AutocompleteExposed & AllHitsProps> =
   connectAutoComplete(({ hits, currentRefinement }) => {
     const isHitsEmpty = !hits.length;
 
