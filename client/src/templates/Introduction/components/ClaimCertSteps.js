@@ -4,14 +4,14 @@ import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { StepsType } from '../../../redux/prop-types';
+import { StepsPropType } from '../../../redux/prop-types';
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
 const propTypes = {
   i18nCertText: PropTypes.string,
   isProjectsCompleted: PropTypes.bool,
-  steps: StepsType,
+  steps: StepsPropType,
   superBlock: PropTypes.string
 };
 

@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom';
 
 import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
 
-import type { AddDonationData } from './PaypalButton';
+import type { AddDonationData } from './paypal-button';
 
+/* eslint-disable @typescript-eslint/naming-convention */
 type PayPalButtonScriptLoaderProps = {
   isMinimalForm: boolean | undefined;
   clientId: string;
@@ -43,6 +44,7 @@ type PayPalButtonScriptLoaderProps = {
   };
   planId: string | null;
 };
+/* eslint-enable @typescript-eslint/naming-convention */
 
 type PayPalButtonScriptLoaderState = {
   isSdkLoaded: boolean;

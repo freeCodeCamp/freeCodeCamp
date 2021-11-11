@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import { PaypalButton } from './PaypalButton';
+import { PaypalButton } from './paypal-button';
 
 const commonProps = {
   donationAmount: 500,

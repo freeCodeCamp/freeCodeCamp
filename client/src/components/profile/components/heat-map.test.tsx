@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import HeatMap from './HeatMap';
+import HeatMap from './heat-map';
 
 // offset is used to shift the dates so that the calendar renders (for testing
 // purposes only) the same way in each timezone.

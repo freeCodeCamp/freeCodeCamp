@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { isBrowser } from '../../utils/index';
 import FourOhFour from '../components/FourOhFour';
 import Loader from '../components/helpers/loader';
-import Profile from '../components/profile/Profile';
+import Profile from '../components/profile/profile';
 import {
   userByNameSelector,
   userProfileFetchStateSelector,
@@ -14,7 +14,7 @@ import {
 } from '../redux';
 import { User } from '../redux/prop-types';
 
-interface IShowProfileOrFourOhFourProps {
+interface ShowProfileOrFourOhFourProps {
   fetchProfileForUser: (username: string) => void;
   fetchState: {
     pending: boolean;
@@ -37,12 +37,12 @@ const createIsSessionUserSelector =
     maybeUser.toLowerCase() === usernameSelector(state);
 
 const makeMapStateToProps =
-  () => (state: unknown, props: IShowProfileOrFourOhFourProps) => {
+  () => (state: unknown, props: ShowProfileOrFourOhFourProps) => {
     const requestedUserSelector = createRequestedUserSelector();
     const isSessionUserSelector = createIsSessionUserSelector();
     const fetchState = userProfileFetchStateSelector(
       state
-    ) as IShowProfileOrFourOhFourProps['fetchState'];
+    ) as ShowProfileOrFourOhFourProps['fetchState'];
     return {
       requestedUser: requestedUserSelector(state, props),
       isSessionUser: isSessionUserSelector(state, props),
@@ -52,12 +52,12 @@ const makeMapStateToProps =
   };
 
 const mapDispatchToProps: {
-  fetchProfileForUser: IShowProfileOrFourOhFourProps['fetchProfileForUser'];
+  fetchProfileForUser: ShowProfileOrFourOhFourProps['fetchProfileForUser'];
 } = {
   fetchProfileForUser
 };
 
-class ShowProfileOrFourOhFour extends Component<IShowProfileOrFourOhFourProps> {
+class ShowProfileOrFourOhFour extends Component<ShowProfileOrFourOhFourProps> {
   componentDidMount() {
     const { requestedUser, maybeUser, fetchProfileForUser } = this.props;
     if (isEmpty(requestedUser)) {

@@ -28,36 +28,36 @@ const { clientLocale } = envData;
 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
 const localeCode = langCodes[clientLocale];
 
-interface IHeatMapProps {
+interface HeatMapProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   calendar: any;
 }
 
-interface IPageData {
+interface PageData {
   startOfCalendar: Date;
   endOfCalendar: Date;
 }
 
-interface ICalendarData {
+interface CalendarData {
   date: Date;
   count: number;
 }
 
-interface IHeatMapInnerProps {
-  calendarData: ICalendarData[];
+interface HeatMapInnerProps {
+  calendarData: CalendarData[];
   currentStreak: number;
   longestStreak: number;
-  pages: IPageData[];
+  pages: PageData[];
   points?: number;
   t: TFunction;
 }
 
-interface IHeatMapInnerState {
+interface HeatMapInnerState {
   pageIndex: number;
 }
 
-class HeatMapInner extends Component<IHeatMapInnerProps, IHeatMapInnerState> {
-  constructor(props: IHeatMapInnerProps) {
+class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
+  constructor(props: HeatMapInnerProps) {
     super(props);
 
     this.state = {
@@ -184,7 +184,7 @@ class HeatMapInner extends Component<IHeatMapInnerProps, IHeatMapInnerState> {
   }
 }
 
-const HeatMap = (props: IHeatMapProps): JSX.Element => {
+const HeatMap = (props: HeatMapProps): JSX.Element => {
   const { t } = useTranslation();
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { calendar } = props;
@@ -202,7 +202,7 @@ const HeatMap = (props: IHeatMapProps): JSX.Element => {
   let startOfCalendar;
 
   // creates pages for heatmap
-  const pages: IPageData[] = [];
+  const pages: PageData[] = [];
 
   do {
     startOfCalendar = addDays(addMonths(endOfCalendar, -6), 1);
@@ -219,7 +219,7 @@ const HeatMap = (props: IHeatMapProps): JSX.Element => {
 
   pages.reverse();
 
-  const calendarData: ICalendarData[] = [];
+  const calendarData: CalendarData[] = [];
   let dayCounter = pages[0].startOfCalendar;
 
   // create an object for each day of the calendar period

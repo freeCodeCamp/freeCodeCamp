@@ -59,34 +59,32 @@ interface SessionUser {
   sessionMeta: { activeDonations: number };
 }
 
-type challengeFilesForFiles = {
+type ChallengeFilesForFiles = {
   files: Array<Omit<ChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<CompletedChallenge, 'challengeFiles'>;
 
 type ApiSessionResponse = Omit<SessionUser, 'user'>;
 type ApiUser = {
   user: {
-    [username: string]: ApiUserType;
+    [username: string]: Omit<User, 'completedChallenges'> & {
+      completedChallenges?: ChallengeFilesForFiles[];
+    };
   };
   result?: string;
 };
 
-type ApiUserType = Omit<User, 'completedChallenges'> & {
-  completedChallenges?: challengeFilesForFiles[];
-};
-
-type UserResponseType = {
+type UserResponse = {
   user: { [username: string]: User } | Record<string, never>;
   result: string | undefined;
 };
 
-function parseApiResponseToClientUser(data: ApiUser): UserResponseType {
+function parseApiResponseToClientUser(data: ApiUser): UserResponse {
   const userData = data.user?.[data?.result ?? ''];
   let completedChallenges: CompletedChallenge[] = [];
   if (userData) {
     completedChallenges =
       userData.completedChallenges?.reduce(
-        (acc: CompletedChallenge[], curr: challengeFilesForFiles) => {
+        (acc: CompletedChallenge[], curr: ChallengeFilesForFiles) => {
           return [
             ...acc,
             {
@@ -123,7 +121,7 @@ export function getSessionUser(): Promise<SessionUser> {
 }
 
 type UserProfileResponse = {
-  entities: Omit<UserResponseType, 'result'>;
+  entities: Omit<UserResponse, 'result'>;
   result: string | undefined;
 };
 export function getUserProfile(username: string): Promise<UserProfileResponse> {

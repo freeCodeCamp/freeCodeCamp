@@ -1,32 +1,6 @@
 import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
 
-export const FilePropType = PropTypes.shape({
-  key: PropTypes.string,
-  ext: PropTypes.string,
-  name: PropTypes.string,
-  contents: PropTypes.string,
-  head: PropTypes.string,
-  tail: PropTypes.string
-});
-
-export const MarkdownRemarkPropType = PropTypes.shape({
-  html: PropTypes.string,
-  frontmatter: PropTypes.shape({
-    title: PropTypes.string,
-    block: PropTypes.string,
-    superBlock: PropTypes.string
-  })
-});
-
-export const AllMarkdownRemarkPropType = PropTypes.shape({
-  edges: PropTypes.arrayOf(
-    PropTypes.shape({
-      node: MarkdownRemarkPropType
-    })
-  )
-});
-
 export const UserPropType = PropTypes.shape({
   about: PropTypes.string,
   completedChallenges: PropTypes.arrayOf(
@@ -94,8 +68,6 @@ export const StepsPropType = PropTypes.shape({
   isShowName: PropTypes.bool,
   isShowProfile: PropTypes.bool
 });
-
-// TYPESCRIPT TYPES
 
 export type CurrentCert = {
   show: boolean;
@@ -244,6 +216,7 @@ export type CertTest = {
 };
 
 export type User = {
+  calendar: unknown;
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
@@ -253,18 +226,20 @@ export type User = {
   githubProfile: string;
   isBanned: boolean;
   isCheater: boolean;
+  isDonating: boolean;
   isHonest: boolean;
+  isGithub: boolean;
+  isLinkedIn: boolean;
+  isTwitter: boolean;
+  isWebsite: boolean;
+  joinDate: string;
   linkedin: string;
   location: string;
   name: string;
   picture: string;
   points: number;
   portfolio: Portfolio[];
-  profileUI: {
-    isLocked: boolean;
-    showCerts: boolean;
-    showName: boolean;
-  };
+  profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   sendQuincyEmail: boolean;
   sound: boolean;
@@ -272,9 +247,24 @@ export type User = {
   twitter: string;
   username: string;
   website: string;
-} & isCertified;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  yearsTopContributor: any[];
+} & ClaimedCertifications;
 
-export type isCertified = {
+export type ProfileUI = {
+  isLocked: boolean;
+  showAbout: boolean;
+  showCerts: boolean;
+  showDonation: boolean;
+  showHeatMap: boolean;
+  showLocation: boolean;
+  showName: boolean;
+  showPoints: boolean;
+  showPortfolio: boolean;
+  showTimeLine: boolean;
+};
+
+export type ClaimedCertifications = {
   is2018DataVisCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;
@@ -336,8 +326,6 @@ export type FileKeyChallenge = {
   tail: string;
 };
 
-// Extra types built from challengeSchema
-
 export type ChallengeFile = {
   fileKey: string;
   ext: Ext;
@@ -355,42 +343,3 @@ export type ChallengeFile = {
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;
-
-export interface ChallengeSchema {
-  block: string;
-  blockId: string;
-  challengeOrder: number;
-  removeComments: boolean;
-  // TODO: should be typed with possible values
-  challengeType: number;
-  checksum: number;
-  __commentCounts: Record<string, unknown>;
-  dashedName: string;
-  description: string;
-  challengeFiles: ChallengeFiles;
-  guideUrl: string;
-  // TODO: should be typed with possible values
-  helpCategory: string;
-  videoUrl: string;
-  forumTopicId: number;
-  id: string;
-  instructions: string;
-  isComingSoon: boolean;
-  // TODO: Do we still use this
-  isLocked: boolean;
-  isPrivate: boolean;
-  order: number;
-  videoId?: string;
-  question: Question;
-  required: Required[];
-  solutions: ChallengeFile[][];
-  superBlock: string;
-  superOrder: number;
-  suborder: number;
-  tests: Test[];
-  template: string;
-  time: string;
-  title: string;
-  translationPending: boolean;
-  url?: string;
-}

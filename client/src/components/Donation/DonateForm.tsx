@@ -27,9 +27,9 @@ import {
 } from '../../redux';
 import Spacer from '../helpers/spacer';
 import DonateCompletion from './DonateCompletion';
-import type { AddDonationData } from './PaypalButton';
-import PaypalButton from './PaypalButton';
 import PatreonButton from './patreon-button';
+import type { AddDonationData } from './paypal-button';
+import PaypalButton from './paypal-button';
 import StripeCardForm, { HandleAuthentication } from './stripe-card-form';
 import WalletsWrapper from './walletsButton';
 

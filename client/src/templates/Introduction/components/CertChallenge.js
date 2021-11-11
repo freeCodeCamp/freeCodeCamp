@@ -16,7 +16,7 @@ import {
   isSignedInSelector
 } from '../../../redux';
 
-import { StepsType, User } from '../../../redux/prop-types';
+import { StepsPropType, UserPropType } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings';
 
 import { certMap } from '../../../resources/cert-and-project-map';
@@ -31,11 +31,11 @@ const propTypes = {
     errored: PropTypes.bool
   }),
   isSignedIn: PropTypes.bool,
-  steps: StepsType,
+  steps: StepsPropType,
   superBlock: PropTypes.string,
   t: PropTypes.func,
   title: PropTypes.string,
-  user: User,
+  user: UserPropType,
   verifyCert: PropTypes.func.isRequired
 };
 

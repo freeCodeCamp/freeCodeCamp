@@ -28,7 +28,7 @@ import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 const { apiLocation } = envData;
 
 // TODO: update types for actions
-interface IShowSettingsProps {
+interface ShowSettingsProps {
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
   navigate: (location: string) => void;
@@ -70,7 +70,7 @@ const mapDispatchToProps = {
   verifyCert
 };
 
-export function ShowSettings(props: IShowSettingsProps): JSX.Element {
+export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const { t } = useTranslation();
   const {
     createFlashMessage,
