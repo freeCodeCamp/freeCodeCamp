@@ -43,17 +43,9 @@ interface TimelineProps {
   username: string;
 }
 
-interface SortedTimeline {
-  id: string;
-  completedDate: number;
-  challengeFiles: ChallengeFiles;
-  githubLink: string;
-  solution: string;
-}
-
 interface TimelineInnerProps extends TimelineProps {
   idToNameMap: Map<string, string>;
-  sortedTimeline: SortedTimeline[];
+  sortedTimeline: CompletedChallenge[];
   totalPages: number;
 }
 
@@ -74,12 +66,12 @@ function TimelineInner({
 
   function viewSolution(
     id: string,
-    solution_: string,
+    solution_: string | undefined | null,
     challengeFiles_: ChallengeFiles
   ): void {
     setSolutionToView(id);
     setSolutionOpen(true);
-    setSolution(solution_);
+    setSolution(solution_ ?? '');
     setChallengeFiles(challengeFiles_);
   }
 
@@ -106,8 +98,8 @@ function TimelineInner({
   function renderViewButton(
     id: string,
     challengeFiles: ChallengeFiles,
-    githubLink: string,
-    solution: string
+    githubLink?: string,
+    solution?: string | null
   ): React.ReactNode {
     if (challengeFiles?.length) {
       return (
@@ -150,7 +142,7 @@ function TimelineInner({
           </DropdownButton>
         </div>
       );
-    } else if (maybeUrlRE.test(solution)) {
+    } else if (solution && maybeUrlRE.test(solution)) {
       return (
         <Button
           block={true}
@@ -169,7 +161,7 @@ function TimelineInner({
     }
   }
 
-  function renderCompletion(completed: SortedTimeline): JSX.Element {
+  function renderCompletion(completed: CompletedChallenge): JSX.Element {
     const { id, challengeFiles, githubLink, solution } = completed;
     const completedDate = new Date(completed.completedDate);
     // @ts-expect-error idToNameMap is not a <string, string> Map...
