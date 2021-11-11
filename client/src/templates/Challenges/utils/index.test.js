@@ -1,13 +1,8 @@
 import envData from '../../../../../config/env.json';
 
-const { forumLocation, homeLocation } = envData;
+const { forumLocation } = envData;
 
-const { getGuideUrl, removeUrlParameters } = require('./');
-
-const exampleUrls = {
-  plainLesson: `${homeLocation}/learn/back-end-development-and-apis/mongodb-and-mongoose/install-and-set-up-mongoose`,
-  paramLesson: `${homeLocation}/learn/back-end-development-and-apis/mongodb-and-mongoose/install-and-set-up-mongoose?messages=success%5B0%5D%3Dflash.signin-success`
-};
+const { getGuideUrl } = require('./');
 
 describe('index', () => {
   describe('getGuideUrl', () => {
@@ -26,16 +21,6 @@ describe('index', () => {
       expect(value).toEqual(
         `${forumLocation}/search?q=%26%20a%20sample%20title%3F%20in%3Atitle%20order%3Aviews`
       );
-    });
-  });
-  describe('removeUrlParameters', () => {
-    it('should not change a url without parameters', () => {
-      const value = removeUrlParameters(exampleUrls.plainLesson);
-      expect(value).toEqual(exampleUrls.plainLesson);
-    });
-    it('should remove only url parameters', () => {
-      const value = removeUrlParameters(exampleUrls.paramLesson);
-      expect(value).toEqual(exampleUrls.plainLesson);
     });
   });
 });

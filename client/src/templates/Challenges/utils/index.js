@@ -25,7 +25,3 @@ export function transformEditorLink(url) {
       '//glitch.com/edit/#!/$<projectname>'
     );
 }
-
-export function removeUrlParameters(url) {
-  return url.replace(/\?.+/, '');
-}

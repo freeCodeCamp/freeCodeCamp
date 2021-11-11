@@ -9,7 +9,7 @@ import {
   challengeMetaSelector,
   projectFormValuesSelector
 } from '../redux';
-import { transformEditorLink, removeUrlParameters } from '../utils';
+import { transformEditorLink } from '../utils';
 import { actionTypes } from './action-types';
 
 const { forumLocation } = envData;
@@ -38,9 +38,10 @@ function createQuestionEpic(action$, state$, { window }) {
         challengeMetaSelector(state);
       const {
         navigator: { userAgent },
-        location: { href }
+        location: { pathname, origin }
       } = window;
-      const challengeUrl = removeUrlParameters(href);
+      // Removes query params
+      const challengeUrl = new URL(pathname, origin).href;
       const projectFormValues = Object.entries(
         projectFormValuesSelector(state)
       );
