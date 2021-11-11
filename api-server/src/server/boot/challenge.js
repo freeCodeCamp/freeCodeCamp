@@ -383,7 +383,7 @@ function createCoderoadChallengeCompleted(app) {
 
       if (!tokenInfo) return res.send('User webhook token not found');
 
-      const { userId = null } = tokenInfo;
+      const { userId } = tokenInfo;
 
       // check if user exists for webhook token
       const user = await User.findOne({
