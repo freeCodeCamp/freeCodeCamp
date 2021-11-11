@@ -9,7 +9,7 @@ import {
   challengeMetaSelector,
   projectFormValuesSelector
 } from '../redux';
-import { transformEditorLink } from '../utils';
+import { transformEditorLink, removeUrlParameters } from '../utils';
 import { actionTypes } from './action-types';
 
 const { forumLocation } = envData;
@@ -40,6 +40,7 @@ function createQuestionEpic(action$, state$, { window }) {
         navigator: { userAgent },
         location: { href }
       } = window;
+      const challengeUrl = removeUrlParameters(href);
       const projectFormValues = Object.entries(
         projectFormValuesSelector(state)
       );
@@ -51,7 +52,7 @@ function createQuestionEpic(action$, state$, { window }) {
           'forum-help.challenge'
         )} ${challengeTitle}\n\n${i18next.t(
           'forum-help.challenge-link'
-        )}\n${href}`
+        )}\n${challengeUrl}`
       );
 
       let textMessage = dedent(`${i18next.t(
