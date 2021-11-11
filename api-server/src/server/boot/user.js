@@ -90,7 +90,6 @@ function createReadSessionUser(app) {
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
 
-    // This seems to work, not sure if it's the best approach
     const webhookTokenArr = await queryUser.webhookTokens({
       userId: queryUser.id
     });
