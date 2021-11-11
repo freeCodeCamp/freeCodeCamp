@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { certificatesByNameSelector } from '../../../redux';
+import type { CurrentCert } from '../../../redux/prop-types';
 import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
 
@@ -32,21 +33,15 @@ const mapStateToProps = (state: any, props: CertificationProps) =>
     // @ts-ignore
   )(state, props);
 
-interface Cert {
-  show: boolean;
-  title: string;
-  certSlug: string;
-}
-
 interface CertificationProps {
-  currentCerts?: Cert[];
+  currentCerts?: CurrentCert[];
   hasLegacyCert?: boolean;
   hasModernCert?: boolean;
-  legacyCerts?: Cert[];
+  legacyCerts?: CurrentCert[];
   username: string;
 }
 
-function renderCertShow(username: string, cert: Cert): React.ReactNode {
+function renderCertShow(username: string, cert: CurrentCert): React.ReactNode {
   return cert.show ? (
     <Fragment key={cert.title}>
       <Row>

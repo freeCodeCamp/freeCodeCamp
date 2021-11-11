@@ -20,7 +20,7 @@ import {
   getTitleFromId
 } from '../../../../../utils';
 import CertificationIcon from '../../../assets/icons/certification-icon';
-import { ChallengeFiles } from '../../../redux/prop-types';
+import { ChallengeFiles, CompletedChallenge } from '../../../redux/prop-types';
 import { maybeUrlRE } from '../../../utils';
 import { FullWidthRow, Link } from '../../helpers';
 import TimelinePagination from './timeline-pagination';
@@ -37,17 +37,8 @@ const localeCode = langCodes[clientLocale];
 // Items per page in timeline.
 const ITEMS_PER_PAGE = 15;
 
-interface CompletedMap {
-  id: string;
-  completedDate: number;
-  challengeType: number;
-  solution: string;
-  challengeFiles: ChallengeFiles;
-  githubLink: string;
-}
-
 interface TimelineProps {
-  completedMap: CompletedMap[];
+  completedMap: CompletedChallenge[];
   t: TFunction;
   username: string;
 }

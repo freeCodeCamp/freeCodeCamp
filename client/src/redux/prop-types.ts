@@ -216,6 +216,7 @@ export type CertTest = {
 };
 
 export type User = {
+  calendar: unknown;
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
@@ -225,18 +226,20 @@ export type User = {
   githubProfile: string;
   isBanned: boolean;
   isCheater: boolean;
+  isDonating: boolean;
   isHonest: boolean;
+  isGithub: boolean;
+  isLinkedIn: boolean;
+  isTwitter: boolean;
+  isWebsite: boolean;
+  joinDate: string;
   linkedin: string;
   location: string;
   name: string;
   picture: string;
   points: number;
   portfolio: Portfolio[];
-  profileUI: {
-    isLocked: boolean;
-    showCerts: boolean;
-    showName: boolean;
-  };
+  profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   sendQuincyEmail: boolean;
   sound: boolean;
@@ -244,7 +247,22 @@ export type User = {
   twitter: string;
   username: string;
   website: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  yearsTopContributor: any[];
 } & ClaimedCertifications;
+
+export type ProfileUI = {
+  isLocked: boolean;
+  showAbout: boolean;
+  showCerts: boolean;
+  showDonation: boolean;
+  showHeatMap: boolean;
+  showLocation: boolean;
+  showName: boolean;
+  showPoints: boolean;
+  showPortfolio: boolean;
+  showTimeLine: boolean;
+};
 
 export type ClaimedCertifications = {
   is2018DataVisCert: boolean;

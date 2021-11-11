@@ -1,7 +1,7 @@
 import { isEqual } from 'lodash-es';
 import React, { Component } from 'react';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { Hit } from 'react-instantsearch-core';
 import { SearchBox } from 'react-instantsearch-dom';
 import { connect } from 'react-redux';
@@ -46,7 +46,7 @@ type SearchBarProps = {
   updateSearchQuery: typeof updateSearchQuery;
   isDropdownEnabled?: boolean;
   isSearchFocused?: boolean;
-  t?: (label: string) => string;
+  t?: TFunction;
 };
 type SearchBarState = {
   index: number;
