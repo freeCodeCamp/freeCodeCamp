@@ -1,6 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff43
-title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
+title: 'Problema 195: Círculos inscritos de triângulos com um ângulo de 60 graus'
 challengeType: 5
 forumTopicId: 301833
 dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degrees
@@ -8,24 +8,22 @@ dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degr
 
 # --description--
 
-Let's call an integer sided triangle with exactly one angle of 60 degrees a 60-degree triangle.
+Vamos chamar um triângulo de lado inteiro com exatamente um ângulo de 60° de um triângulo de 60°.
 
-Let r be the radius of the inscribed circle of such a 60-degree triangle.
+Considere $r$ o raio do círculo inscrito de um triângulo de 60°.
 
-There are 1234 60-degree triangles for which r ≤ 100.
+Há 1234 triângulos de 60° para os quais $r ≤ 100$.
 
-Let T(n) be the number of 60-degree triangles for which r ≤ n, so
+Considere $T(n)$ o número de triângulos de 60° para os quais $r ≤ n$. Assim, $T(100) = 1234$, $T(1000) = 22767$ e $T(10000) = 359912$.
 
-T(100) = 1234, T(1000) = 22767, and T(10000) = 359912.
-
-Find T(1053779).
+Encontre $T(1053779)$.
 
 # --hints--
 
-`euler195()` should return 75085391.
+`inscribedCirclesOfTriangles()` deve retornar `75085391`.
 
 ```js
-assert.strictEqual(euler195(), 75085391);
+assert.strictEqual(inscribedCirclesOfTriangles(), 75085391);
 ```
 
 # --seed--
@@ -33,12 +31,12 @@ assert.strictEqual(euler195(), 75085391);
 ## --seed-contents--
 
 ```js
-function euler195() {
+function inscribedCirclesOfTriangles() {
 
   return true;
 }
 
-euler195();
+inscribedCirclesOfTriangles();
 ```
 
 # --solutions--

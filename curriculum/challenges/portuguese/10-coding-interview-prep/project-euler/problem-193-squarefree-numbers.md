@@ -1,6 +1,6 @@
 ---
 id: 5900f42f1000cf542c50ff41
-title: 'Problem 193: Squarefree Numbers'
+title: 'Problema 193: Números livres de raízes quadradas'
 challengeType: 5
 forumTopicId: 301831
 dashedName: problem-193-squarefree-numbers
@@ -8,16 +8,16 @@ dashedName: problem-193-squarefree-numbers
 
 # --description--
 
-A positive integer n is called squarefree, if no square of a prime divides n, thus 1, 2, 3, 5, 6, 7, 10, 11 are squarefree, but not 4, 8, 9, 12.
+Um número inteiro positivo $n$ é chamado de livre de raiz quadrada, se nenhum quadrado de um número primo dividir $n$. Assim, 1, 2, 3, 5, 6, 7, 10, 11 são livres de raiz quadrada, mas 4, 8, 9, 12 não são.
 
-How many squarefree numbers are there below 250?
+Quantos números livres de raiz quadrada existem abaixo de $2^{50}$?
 
 # --hints--
 
-`euler193()` should return 684465067343069.
+`squarefreeNumbers()` deve retornar `684465067343069`.
 
 ```js
-assert.strictEqual(euler193(), 684465067343069);
+assert.strictEqual(squarefreeNumbers(), 684465067343069);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler193(), 684465067343069);
 ## --seed-contents--
 
 ```js
-function euler193() {
+function squarefreeNumbers() {
 
   return true;
 }
 
-euler193();
+squarefreeNumbers();
 ```
 
 # --solutions--
