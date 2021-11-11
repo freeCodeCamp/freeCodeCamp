@@ -9,7 +9,7 @@ import Timeline from './components/TimeLine';
 import Camper from './components/camper';
 import Certifications from './components/certifications';
 import HeatMap from './components/heat-map';
-import PortfolioData from './components/portfolio';
+import Portfolio from './components/portfolio';
 
 interface ProfileProps {
   isSessionUser: boolean;
@@ -111,7 +111,7 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
       {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
-      {showPortfolio ? <PortfolioData portfolio={portfolio} /> : null}
+      {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}
