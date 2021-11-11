@@ -94,7 +94,7 @@ function createReadSessionUser(app) {
     const webhookTokenArr = await queryUser.webhookTokens({
       userId: queryUser.id
     });
-    const webhookToken = webhookTokenArr[0]?.id || null;
+    const webhookToken = webhookTokenArr[0]?.id;
 
     const source =
       queryUser &&
