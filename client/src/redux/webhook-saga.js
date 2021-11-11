@@ -44,7 +44,7 @@ function* deleteWebhookTokenSaga() {
     if (response?.message) {
       yield put(createFlashMessage(response));
     } else {
-      yield put(deleteWebhookTokenComplete(response));
+      yield put(deleteWebhookTokenComplete());
       yield put(createFlashMessage(message.deleted));
     }
   } catch (e) {

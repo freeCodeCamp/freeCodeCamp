@@ -648,9 +648,6 @@ export const reducer = handleActions(
         }
       };
     },
-    [actionTypes.postWebhookToken]: state => {
-      return { ...state };
-    },
     [actionTypes.postWebhookTokenComplete]: (state, { payload }) => {
       const { appUsername } = state;
       return {
@@ -664,10 +661,7 @@ export const reducer = handleActions(
         }
       };
     },
-    [actionTypes.deleteWebhookToken]: state => {
-      return { ...state };
-    },
-    [actionTypes.deleteWebhookTokenComplete]: (state, { payload }) => {
+    [actionTypes.deleteWebhookTokenComplete]: state => {
       const { appUsername } = state;
       return {
         ...state,
@@ -675,7 +669,7 @@ export const reducer = handleActions(
           ...state.user,
           [appUsername]: {
             ...state.user[appUsername],
-            webhookToken: payload
+            webhookToken: null
           }
         }
       };
