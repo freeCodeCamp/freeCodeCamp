@@ -12,11 +12,11 @@
     "./.eslintrc-base.json",
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "prettier"
   ],
   "plugins": [
-    "react",
     "import",
     "prefer-object-spread",
     "react-hooks",
