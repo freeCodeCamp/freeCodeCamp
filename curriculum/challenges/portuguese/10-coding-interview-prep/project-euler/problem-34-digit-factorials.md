@@ -8,7 +8,7 @@ dashedName: problem-34-digit-factorials
 
 # --description--
 
-145 é um número curioso, pois 1! + 4! + 5! = 1 + 24 + 120 = 145.
+145 é um número curioso, já que 1! + 4! + 5! = 1 + 24 + 120 = 145.
 
 Calcule os números e a soma dos números que são iguais à soma do fatorial de seus dígitos.
 

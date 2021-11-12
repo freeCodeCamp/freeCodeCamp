@@ -1,6 +1,6 @@
 ---
 id: 5900f4371000cf542c50ff49
-title: 'Problem 202: Laserbeam'
+title: 'Problema 202: Raio laser'
 challengeType: 5
 forumTopicId: 301843
 dashedName: problem-202-laserbeam
@@ -8,20 +8,22 @@ dashedName: problem-202-laserbeam
 
 # --description--
 
-Three mirrors are arranged in the shape of an equilateral triangle, with their reflective surfaces pointing inwards. There is an infinitesimal gap at each vertex of the triangle through which a laser beam may pass.
+Três espelhos são organizados na forma de um triângulo equilátero, com suas superfícies reflexivas apontando para dentro. Há uma lacuna infinitesimal em cada vértice do triângulo através da qual um raio laser pode passar.
 
-Label the vertices A, B and C. There are 2 ways in which a laser beam may enter vertex C, bounce off 11 surfaces, then exit through the same vertex: one way is shown below; the other is the reverse of that.
+Rotule os vértices $A$, $B$ e $C$. Existem 2 maneiras pelas quais um raio laser pode entrar no vértice $C$, ricochetear 11 vezes nas superfícies e depois sair pelo mesmo vértice: uma maneira é mostrada abaixo; a outra é fazendo o caminho inverso.
 
-There are 80840 ways in which a laser beam may enter vertex C, bounce off 1000001 surfaces, then exit through the same vertex.
+<img class="img-responsive center-block" alt="uma forma pela qual um raio laser pode entrar em um vértice, ricochetear 11 vezes nas superfícies e depois sair pelo mesmo vértice" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
 
-In how many ways can a laser beam enter at vertex C, bounce off 12017639147 surfaces, then exit through the same vertex?
+Há 80.840 maneiras pelas quais um raio laser pode entrar em um vértice $C$, ricochetear 1.000.001 vezes nas superfícies e depois sair pelo mesmo vértice.
+
+Quantas maneiras existem pelas quais um raio laser pode entrar em um vértice $C$, ricochetear 12.017.639.147 vezes nas superfícies e depois sair pelo mesmo vértice?
 
 # --hints--
 
-`euler202()` should return 1209002624.
+`laserbeam()` deve retornar `1209002624`.
 
 ```js
-assert.strictEqual(euler202(), 1209002624);
+assert.strictEqual(laserbeam(), 1209002624);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler202(), 1209002624);
 ## --seed-contents--
 
 ```js
-function euler202() {
+function laserbeam() {
 
   return true;
 }
 
-euler202();
+laserbeam();
 ```
 
 # --solutions--

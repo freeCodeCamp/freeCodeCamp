@@ -1,6 +1,6 @@
 ---
 id: 5900f4461000cf542c50ff58
-title: 'Problem 217: Balanced Numbers'
+title: 'Problema 217: Números balanceados'
 challengeType: 5
 forumTopicId: 301859
 dashedName: problem-217-balanced-numbers
@@ -8,22 +8,22 @@ dashedName: problem-217-balanced-numbers
 
 # --description--
 
-A positive integer with k (decimal) digits is called balanced if its first ⌈k/2⌉ digits sum to the same value as its last ⌈k/2⌉ digits, where ⌈x⌉, pronounced ceiling of x, is the smallest integer ≥ x, thus ⌈π⌉ = 4 and ⌈5⌉ = 5.
+Um número inteiro positivo com $k$ casas (decimais) é chamado de balanceado se os seus primeiros $⌈\frac{k}{2}⌉$ algarismos têm a soma igual aos seus últimos $⌈\frac{k}{2}⌉$ algarismos, onde $⌈x⌉$, o teto pronunciado de $x$, é o menor inteiro, sendo $≥ x$, portanto $⌈π⌉ = 4$ e $⌈5⌉ = 5$.
 
-So, for example, all palindromes are balanced, as is 13722.
+Então, por exemplo, todos os palíndromos são balanceados, assim como 13722.
 
-Let T(n) be the sum of all balanced numbers less than 10n.
+Considere $T(n)$ como sendo a soma de todos os números balanceados menores que $10^n$.
 
-Thus: T(1) = 45, T(2) = 540 and T(5) = 334795890.
+Assim: $T(1) = 45$, $T(2) = 540$ e $T(5) = 334.795.890$.
 
-Find T(47) mod 315
+Encontre $T(47)\\,mod\\,3^{15}$
 
 # --hints--
 
-`euler217()` should return 6273134.
+`balancedNumbers()` deve retornar `6273134`.
 
 ```js
-assert.strictEqual(euler217(), 6273134);
+assert.strictEqual(balancedNumbers(), 6273134);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler217(), 6273134);
 ## --seed-contents--
 
 ```js
-function euler217() {
+function balancedNumbers() {
 
   return true;
 }
 
-euler217();
+balancedNumbers();
 ```
 
 # --solutions--
