@@ -7,7 +7,7 @@ import {
   Col,
   Row
 } from '@freecodecamp/react-bootstrap';
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';

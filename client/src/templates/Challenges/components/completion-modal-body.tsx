@@ -1,5 +1,5 @@
 import BezierEasing from 'bezier-easing';
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import GreenPass from '../../../assets/icons/green-pass';
 

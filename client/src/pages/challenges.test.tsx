@@ -5,7 +5,6 @@ import {
 } from '@reach/router';
 import { render } from '@testing-library/react';
 import { navigate, withPrefix } from 'gatsby';
-import React from 'react';
 
 import Challenges from './challenges';
 

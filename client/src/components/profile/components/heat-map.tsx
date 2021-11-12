@@ -6,7 +6,7 @@ import addDays from 'date-fns/addDays';
 import addMonths from 'date-fns/addMonths';
 import isEqual from 'date-fns/isEqual';
 import startOfDay from 'date-fns/startOfDay';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { TFunction, useTranslation } from 'react-i18next';
 import ReactTooltip from 'react-tooltip';
 

@@ -1,5 +1,5 @@
 import { isEqual } from 'lodash-es';
-import React, { Component, RefObject, SyntheticEvent, FocusEvent } from 'react';
+import { Component, RefObject, SyntheticEvent, FocusEvent } from 'react';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
 import { TFunction, withTranslation } from 'react-i18next';
 import { Hit } from 'react-instantsearch-core';

@@ -1,6 +1,6 @@
 import { Col, Row } from '@freecodecamp/react-bootstrap';
 import { curry } from 'lodash-es';
-import React, { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';

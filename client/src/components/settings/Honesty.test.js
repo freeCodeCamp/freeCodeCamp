@@ -1,5 +1,4 @@
 import { Button } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';
 

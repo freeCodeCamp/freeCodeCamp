@@ -1,5 +1,5 @@
 import { Button } from '@freecodecamp/react-bootstrap';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
 function BlockSaveButton({

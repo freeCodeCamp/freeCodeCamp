@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import Fail from '../../../assets/icons/fail';
 import GreenPass from '../../../assets/icons/green-pass';

@@ -4,7 +4,6 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 
 import Spacer from '../helpers/spacer';
 

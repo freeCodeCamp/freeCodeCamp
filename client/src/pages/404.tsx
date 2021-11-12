@@ -1,6 +1,5 @@
 import { Router } from '@reach/router';
 import { withPrefix } from 'gatsby';
-import React from 'react';
 
 /* eslint-disable max-len */
 import ShowProfileOrFourOhFour from '../client-only-routes/show-profile-or-four-oh-four';

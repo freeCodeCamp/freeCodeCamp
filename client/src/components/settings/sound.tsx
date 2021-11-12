@@ -1,5 +1,5 @@
 import { Form } from '@freecodecamp/react-bootstrap';
-import React, { FormEvent } from 'react';
+import { FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import ToggleSetting from './toggle-setting';

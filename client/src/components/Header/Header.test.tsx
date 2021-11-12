@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
-import React, { Ref } from 'react';
+import { Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import { create, ReactTestRendererJSON } from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';

@@ -1,5 +1,4 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';

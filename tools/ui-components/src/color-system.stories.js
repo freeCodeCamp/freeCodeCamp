@@ -1,4 +1,3 @@
-import React from 'react';
 import { AllPalettes } from './color-system';
 
 const story = {

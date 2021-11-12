@@ -1,4 +1,4 @@
-import React, { SVGProps } from 'react';
+import { SVGProps } from 'react';
 import { useTranslation } from 'react-i18next';
 
 function D3Icon(

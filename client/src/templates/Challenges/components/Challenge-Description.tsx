@@ -1,5 +1,3 @@
-import React from 'react';
-
 import PrismFormatted from './prism-formatted';
 import './challenge-description.css';
 

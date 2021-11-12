@@ -1,5 +1,5 @@
 import Prism from 'prismjs';
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 interface PrismFormattedProps {
   className?: string;

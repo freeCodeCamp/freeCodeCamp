@@ -1,5 +1,4 @@
 import { Button } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';

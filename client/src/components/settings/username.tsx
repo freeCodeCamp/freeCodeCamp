@@ -5,7 +5,7 @@ import {
   Alert,
   FormGroup
 } from '@freecodecamp/react-bootstrap';
-import React, { Component, FormEvent } from 'react';
+import { Component, FormEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

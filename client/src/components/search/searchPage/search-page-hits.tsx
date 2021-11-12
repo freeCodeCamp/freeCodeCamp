@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash-es';
-import React, { ComponentClass, EventHandler, SyntheticEvent } from 'react';
+import { ComponentClass, EventHandler, SyntheticEvent } from 'react';
 import { AutocompleteExposed, SearchState } from 'react-instantsearch-core';
 import {
   Highlight,

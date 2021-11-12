@@ -2,7 +2,7 @@
 
 // Package Utilities
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

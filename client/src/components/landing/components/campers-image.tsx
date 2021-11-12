@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-responsive';
 import wideImg from '../../../assets/images/landing/wide-image.png';

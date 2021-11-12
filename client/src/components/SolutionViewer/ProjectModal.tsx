@@ -1,5 +1,4 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChallengeFiles } from '../../redux/prop-types';
 import SolutionViewer from './SolutionViewer';

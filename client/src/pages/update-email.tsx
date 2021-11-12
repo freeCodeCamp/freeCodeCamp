@@ -10,7 +10,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';

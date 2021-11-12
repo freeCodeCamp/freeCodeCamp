@@ -3,7 +3,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Link } from 'gatsby';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';

@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash-es';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { isBrowser } from '../../utils/index';

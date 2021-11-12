@@ -1,6 +1,6 @@
 import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
 import type { TFunction } from 'i18next';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';

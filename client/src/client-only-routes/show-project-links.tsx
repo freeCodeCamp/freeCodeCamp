@@ -1,5 +1,5 @@
 import { find, first } from 'lodash-es';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../components/layouts/project-links.css';
 import { Trans, useTranslation } from 'react-i18next';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';

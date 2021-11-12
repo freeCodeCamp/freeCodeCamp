@@ -5,7 +5,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 import { TFunction, useTranslation } from 'react-i18next';
 
 import envData from '../../../../../config/env.json';

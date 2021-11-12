@@ -1,5 +1,5 @@
 import { first } from 'lodash-es';
-import React, { useState, ReactElement } from 'react';
+import { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import envData from '../../../../../config/env.json';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';

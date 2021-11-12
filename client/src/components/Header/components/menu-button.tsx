@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, RefObject } from 'react';
+import { MouseEventHandler, RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
 import AuthOrProfile from './auth-or-profile';
 

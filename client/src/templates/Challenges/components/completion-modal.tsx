@@ -3,7 +3,7 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
 import { noop } from 'lodash-es';
-import React, { Component, KeyboardEvent } from 'react';
+import { Component, KeyboardEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';

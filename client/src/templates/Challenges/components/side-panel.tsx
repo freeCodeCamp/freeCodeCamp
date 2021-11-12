@@ -1,4 +1,4 @@
-import React, { useEffect, ReactElement, RefObject } from 'react';
+import { useEffect, ReactElement, RefObject } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 

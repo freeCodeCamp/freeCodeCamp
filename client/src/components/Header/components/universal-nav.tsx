@@ -4,7 +4,7 @@
 /* eslint-disable react/prop-types */
 // @ts-nocheck
 import Loadable from '@loadable/component';
-import React, { MouseEventHandler, Ref } from 'react';
+import { MouseEventHandler, Ref } from 'react';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
 import MenuButton from './menu-button';

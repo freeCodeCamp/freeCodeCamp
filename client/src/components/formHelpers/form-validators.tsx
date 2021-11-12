@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { Trans } from 'react-i18next';
 
 // Matches editor links for: Replit, Glitch, CodeSandbox, GitHub

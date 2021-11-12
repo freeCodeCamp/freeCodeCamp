@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 
 interface NoHitsSuggestionProps {
   handleMouseEnter: (e: ChangeEvent<HTMLElement>) => void;

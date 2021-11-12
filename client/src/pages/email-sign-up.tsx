@@ -1,5 +1,5 @@
 import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';

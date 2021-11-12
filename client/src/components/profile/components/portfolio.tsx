@@ -1,5 +1,4 @@
 import { Media } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import type { Portfolio as PortfolioData } from '../../../redux/prop-types';

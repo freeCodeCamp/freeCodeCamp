@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
-import React from 'react';
 
 import mockChallengeNodes from '../../__mocks__/challenge-nodes';
 import { Map } from '.';

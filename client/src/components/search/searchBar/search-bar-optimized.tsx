@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, RefObject, useState } from 'react';
+import { ChangeEvent, FormEvent, RefObject, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Magnifier from '../../../assets/icons/Magnifier';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';

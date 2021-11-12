@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Caret(): JSX.Element {
   return (
     <svg viewBox='0 0 100 100' width='25px'>

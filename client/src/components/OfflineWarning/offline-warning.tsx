@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import './offline-warning.css';
@@ -18,7 +18,7 @@ function OfflineWarning({
   isSignedIn
 }: OfflineWarningProps): JSX.Element | null {
   const { t } = useTranslation();
-  const [showWarning, setShowWarning] = React.useState(false);
+  const [showWarning, setShowWarning] = useState(false);
   let message;
 
   if (!isSignedIn || (isOnline && isServerOnline)) {

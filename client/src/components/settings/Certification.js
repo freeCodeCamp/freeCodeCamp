@@ -7,7 +7,7 @@ import {
 import { Link, navigate } from 'gatsby';
 import { find, first } from 'lodash-es';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 

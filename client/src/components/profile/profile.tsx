@@ -1,5 +1,4 @@
 import { Grid, Row } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, useTranslation } from 'react-i18next';
 

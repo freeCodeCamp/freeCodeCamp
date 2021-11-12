@@ -13,7 +13,7 @@ import type {
   StripeCardExpiryElementChangeEvent,
   PaymentIntentResult
 } from '@stripe/stripe-js';
-import React, { FormEvent, useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 import envData from '../../../../config/env.json';
 import { AddDonationData } from './paypal-button';

@@ -1,5 +1,8 @@
 /* eslint-disable camelcase */
-import React, { Component, ComponentType } from 'react';
+import { Component, ComponentType } from 'react';
+// TODO: this is the only place we need to import all of React.  Can we use a
+// dynamic import instead?
+import * as React from 'react';
 import ReactDOM from 'react-dom';
 
 import { scriptLoader, scriptRemover } from '../../utils/script-loaders';

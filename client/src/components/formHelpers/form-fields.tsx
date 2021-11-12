@@ -8,7 +8,6 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { kebabCase } from 'lodash-es';
 import normalizeUrl from 'normalize-url';
-import React from 'react';
 import { Field } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
 import { FormOptions } from './form';

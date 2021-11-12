@@ -1,5 +1,5 @@
 import { Button, Form } from '@freecodecamp/react-bootstrap';
-import React, { FormEvent } from 'react';
+import { FormEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

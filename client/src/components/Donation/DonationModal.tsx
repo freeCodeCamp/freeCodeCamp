@@ -1,6 +1,6 @@
 import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
 import { WindowLocation } from '@reach/router';
-import React, { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { goToAnchor } from 'react-scrollable-anchor';
@@ -57,7 +57,7 @@ function DonateModal({
   location,
   recentlyClaimedBlock
 }: DonateModalProps): JSX.Element {
-  const [closeLabel, setCloseLabel] = React.useState(false);
+  const [closeLabel, setCloseLabel] = useState(false);
   const { t } = useTranslation();
   const handleProcessing = (
     duration: string,

@@ -5,7 +5,7 @@ import {
   HelpBlock,
   Alert
 } from '@freecodecamp/react-bootstrap';
-import React, { Component, FormEvent } from 'react';
+import { Component, FormEvent } from 'react';
 
 import { TFunction, withTranslation } from 'react-i18next';
 import { FullWidthRow, Spacer } from '../helpers';

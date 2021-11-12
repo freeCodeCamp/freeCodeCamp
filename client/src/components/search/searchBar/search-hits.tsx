@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash-es';
-import React, { SyntheticEvent, useEffect } from 'react';
+import { SyntheticEvent, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SearchState, Hit } from 'react-instantsearch-core';
 import { connectStateResults, connectHits } from 'react-instantsearch-dom';

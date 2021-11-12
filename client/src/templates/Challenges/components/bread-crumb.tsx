@@ -1,5 +1,4 @@
 import i18next from 'i18next';
-import React from 'react';
 import { Link } from '../../../components/helpers/index';
 
 import './challenge-title.css';

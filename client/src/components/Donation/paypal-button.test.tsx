@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import React from 'react';
+import { createRef } from 'react';
 
 import { PaypalButton } from './paypal-button';
 
@@ -27,7 +27,7 @@ jest.mock('../../analytics');
 
 describe('<Paypal Button/>', () => {
   it('does not call addDonate api on payment approval when user is not signed ', () => {
-    const ref = React.createRef<PaypalButton>();
+    const ref = createRef<PaypalButton>();
     const isSubscription = true;
     const addDonation = jest.fn();
     render(
@@ -43,7 +43,7 @@ describe('<Paypal Button/>', () => {
     expect(addDonation).toBeCalledTimes(0);
   });
   it('calls addDonate api on payment approval when user is signed in', () => {
-    const ref = React.createRef<PaypalButton>();
+    const ref = createRef<PaypalButton>();
     const isSubscription = true;
     const addDonation = jest.fn();
     render(

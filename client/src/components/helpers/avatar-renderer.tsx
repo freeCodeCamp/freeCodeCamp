@@ -1,5 +1,5 @@
 import { Image } from '@freecodecamp/react-bootstrap';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { defaultUserImage } from '../../../../config/misc';
 import DefaultAvatar from '../../assets/icons/default-avatar';

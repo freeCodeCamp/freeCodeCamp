@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, AvatarRenderer } from '../../helpers';
 import Login from './Login';

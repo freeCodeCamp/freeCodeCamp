@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import { SyntheticEvent } from 'react';
 import { Hit } from 'react-instantsearch-core';
 import { Highlight } from 'react-instantsearch-dom';
 

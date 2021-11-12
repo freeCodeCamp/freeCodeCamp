@@ -1,5 +1,4 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { ButtonSpacer } from '../helpers';

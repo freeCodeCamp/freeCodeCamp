@@ -1,6 +1,5 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';

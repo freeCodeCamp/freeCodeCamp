@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { render, screen } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
-import React from 'react';
 import TimeLine from './TimeLine';
 
 beforeEach(() => {

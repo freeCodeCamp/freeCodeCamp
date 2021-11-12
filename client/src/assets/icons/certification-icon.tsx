@@ -1,5 +1,3 @@
-import React from 'react';
-
 function CertificationIcon(): JSX.Element {
   return (
     <svg

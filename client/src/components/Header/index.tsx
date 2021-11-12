@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/unbound-method */
-import React, { Component, RefObject } from 'react';
+import { createRef, Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
 
 import UniversalNav from './components/universal-nav';
@@ -22,8 +22,8 @@ export class Header extends Component<HeaderProps, { displayMenu: boolean }> {
     this.state = {
       displayMenu: false
     };
-    this.menuButtonRef = React.createRef();
-    this.searchBarRef = React.createRef();
+    this.menuButtonRef = createRef();
+    this.searchBarRef = createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.toggleDisplayMenu = this.toggleDisplayMenu.bind(this);
   }

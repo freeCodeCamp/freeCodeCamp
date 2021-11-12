@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 
 export const DonationSupportText = (): JSX.Element => {

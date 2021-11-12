@@ -1,7 +1,7 @@
 // Package Utilities
 import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { ChangeEvent, Component } from 'react';
+import { ChangeEvent, Component } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import { TFunction, withTranslation } from 'react-i18next';

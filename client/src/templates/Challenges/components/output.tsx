@@ -1,5 +1,4 @@
 import { isEmpty } from 'lodash-es';
-import React from 'react';
 import sanitizeHtml from 'sanitize-html';
 
 import './output.css';

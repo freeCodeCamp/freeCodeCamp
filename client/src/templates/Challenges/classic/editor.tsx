@@ -7,7 +7,7 @@ import type {
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
 import { highlightAllUnder } from 'prismjs';
-import React, {
+import {
   useEffect,
   Suspense,
   RefObject,

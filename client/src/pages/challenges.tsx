@@ -3,7 +3,6 @@
 
 import { Router, RouteComponentProps } from '@reach/router';
 import { navigate, withPrefix } from 'gatsby';
-import React from 'react';
 
 import toLearnPath from '../utils/to-learn-path';
 

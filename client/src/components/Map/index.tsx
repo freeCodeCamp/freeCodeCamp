@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 import envData from '../../../../config/env.json';
 import { isAuditedCert } from '../../../../utils/is-audited';

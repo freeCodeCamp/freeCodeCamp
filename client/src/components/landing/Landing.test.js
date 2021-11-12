@@ -1,4 +1,3 @@
-import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 import mockChallengeNodes from '../../__mocks__/challenge-nodes';

@@ -1,6 +1,5 @@
 import { Router } from '@reach/router';
 import { withPrefix } from 'gatsby';
-import React from 'react';
 
 import ShowSettings from '../client-only-routes/show-settings';
 import RedirectHome from '../components/redirect-home';

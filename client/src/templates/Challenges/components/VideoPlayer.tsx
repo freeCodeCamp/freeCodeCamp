@@ -1,4 +1,3 @@
-import React from 'react';
 import YouTube from 'react-youtube';
 import envData from '../../../../../config/env.json';
 import type { BilibiliIds, VideoLocaleIds } from '../../../redux/prop-types';

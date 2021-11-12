@@ -3,7 +3,7 @@ import type { WindowLocation } from '@reach/router';
 import algoliasearch from 'algoliasearch/lite';
 import { navigate } from 'gatsby';
 import qs from 'query-string';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { connect } from 'react-redux';

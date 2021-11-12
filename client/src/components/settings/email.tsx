@@ -7,7 +7,7 @@ import {
   Button
 } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { TFunction, Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

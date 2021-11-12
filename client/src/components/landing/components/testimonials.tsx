@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Trans, useTranslation } from 'react-i18next';
 import emmaImg from '../../../assets/images/landing/Emma.png';
 import sarahImg from '../../../assets/images/landing/Sarah.png';

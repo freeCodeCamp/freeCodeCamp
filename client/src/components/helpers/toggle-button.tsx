@@ -2,7 +2,6 @@ import {
   ToggleButtonGroup as BSBG,
   ToggleButton as TB
 } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 
 import './toggle-button.css';
 import Spacer from '../../assets/icons/spacer';

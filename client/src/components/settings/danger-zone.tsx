@@ -1,5 +1,5 @@
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

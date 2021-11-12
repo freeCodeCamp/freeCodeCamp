@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { Component, RefObject } from 'react';
+import { createRef, Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -138,9 +138,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       resizing: false
     };
 
-    this.containerRef = React.createRef();
-    this.editorRef = React.createRef();
-    this.instructionsPanelRef = React.createRef();
+    this.containerRef = createRef();
+    this.editorRef = createRef();
+    this.instructionsPanelRef = createRef();
   }
 
   getLayoutState(): ReflexLayout {

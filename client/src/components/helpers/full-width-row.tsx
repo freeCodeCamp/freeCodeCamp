@@ -1,5 +1,5 @@
 import { Row, Col } from '@freecodecamp/react-bootstrap';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 function FullWidthRow({
   children,

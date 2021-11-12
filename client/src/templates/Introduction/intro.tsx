@@ -1,6 +1,6 @@
 import { Grid, ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
 import { Link, graphql } from 'gatsby';
-import React, { FunctionComponentElement } from 'react';
+import { FunctionComponentElement } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 

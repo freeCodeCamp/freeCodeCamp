@@ -1,5 +1,3 @@
-import React from 'react';
-
 import envData from '../../../../config/env.json';
 
 interface EnvData {

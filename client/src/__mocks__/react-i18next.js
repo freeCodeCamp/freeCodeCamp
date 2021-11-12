@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/display-name */
-import React from 'react';
+import { isValidElement, cloneElement } from 'react';
 
 const reactI18next = jest.genMockFromModule('react-i18next');
 
@@ -18,14 +18,14 @@ const renderNodes = reactNodes => {
 
   return Object.keys(reactNodes).map((key, i) => {
     const child = reactNodes[key];
-    const isElement = React.isValidElement(child);
+    const isElement = isValidElement(child);
 
     if (typeof child === 'string') {
       return child;
     }
     if (hasChildren(child)) {
       const inner = renderNodes(getChildren(child));
-      return React.cloneElement(child, { ...child.props, key: i }, inner);
+      return cloneElement(child, { ...child.props, key: i }, inner);
     }
     if (typeof child === 'object' && !isElement) {
       return Object.keys(child).reduce(

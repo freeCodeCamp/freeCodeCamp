@@ -1,5 +1,4 @@
 import { Button } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 function BlockSaveButton(props?: Record<string, unknown>): JSX.Element {

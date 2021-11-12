@@ -3,7 +3,6 @@ import {
   ControlLabel,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 
 import { ButtonSpacer } from '../helpers';
 import TB from '../helpers/toggle-button';

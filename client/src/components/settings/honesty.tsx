@@ -1,5 +1,4 @@
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import HonestyPolicy from '../../resources/honesty-policy';

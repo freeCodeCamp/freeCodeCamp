@@ -16,12 +16,7 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, {
-  Component,
-  Fragment,
-  MouseEventHandler,
-  ChangeEvent
-} from 'react';
+import { Component, Fragment, MouseEventHandler, ChangeEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import envData from '../../../../../config/env.json';

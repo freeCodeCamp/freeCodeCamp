@@ -9,7 +9,7 @@ import {
 import Loadable from '@loadable/component';
 import { useStaticQuery, graphql } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
-import React, { ReactNode, useMemo, useState } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 
 import envData from '../../../../../config/env.json';

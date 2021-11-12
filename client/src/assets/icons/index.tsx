@@ -1,4 +1,3 @@
-import React from 'react';
 import APIIcon from './API-icon';
 import D3Icon from './D3-icon';
 import DatabaseIcon from './Database-icon';

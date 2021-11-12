@@ -1,6 +1,6 @@
 import fontawesome from '@fortawesome/fontawesome';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
