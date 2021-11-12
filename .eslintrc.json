@@ -33,11 +33,15 @@
   },
   "settings": {
     "react": {
-      "version": "16.4.2",
+      "version": "17",
       "import/ignore": ["\\.json$"],
       "import/extensions": [".js", ".jsx", ".tsx", ".ts"]
     },
     "import/ignore": ["node_modules"]
+  },
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "overrides": [
     {
