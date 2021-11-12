@@ -24,8 +24,8 @@
     "@types/node": "16.11.6",
     "@types/react": "17.0.33",
     "@types/react-dom": "17.0.11",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "typescript": "4.4.4"
   },
   "devDependencies": {
@@ -46,11 +46,11 @@
     "cross-env": "7.0.3",
     "postcss": "8.3.11",
     "postcss-import": "14.0.2",
-    "tailwindcss": "2.2.19",
     "rimraf": "3.0.2",
     "rollup": "2.60.0",
     "rollup-plugin-postcss": "4.0.1",
-    "rollup-plugin-terser": "7.0.2"
+    "rollup-plugin-terser": "7.0.2",
+    "tailwindcss": "2.2.19"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
