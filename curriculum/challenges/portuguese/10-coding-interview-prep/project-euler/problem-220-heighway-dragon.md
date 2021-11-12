@@ -1,6 +1,6 @@
 ---
 id: 5900f4481000cf542c50ff5b
-title: 'Problem 220: Heighway Dragon'
+title: 'Problema 220: Dragão de Heighway'
 challengeType: 5
 forumTopicId: 301863
 dashedName: problem-220-heighway-dragon
@@ -8,24 +8,33 @@ dashedName: problem-220-heighway-dragon
 
 # --description--
 
-Let D0 be the two-letter string "Fa". For n≥1, derive Dn from Dn-1 by the string-rewriting rules:
+Considere $D_0$ como sendo a string de duas letras "Fa". Para $n ≥ 1$, derive $D_n$ de $D_{n - 1}$ pelas regras de reescrita da string:
 
-"a" → "aRbFR" "b" → "LFaLb"
+- "a" → "aRbFR"
+- "b" → "LFaLb"
 
-Thus, D0 = "Fa", D1 = "FaRbFR", D2 = "FaRbFRRLFaLbFR", and so on.
+Assim, $D_0$ = "Fa", $D_1$ = "FaRbFR", $D_2$ = "FaRbFRRLFaLbFR" e assim por diante.
 
-These strings can be interpreted as instructions to a computer graphics program, with "F" meaning "draw forward one unit", "L" meaning "turn left 90 degrees", "R" meaning "turn right 90 degrees", and "a" and "b" being ignored. The initial position of the computer cursor is (0,0), pointing up towards (0,1).
+Essas strings podem ser interpretadas como instruções para um programa gráfico do computador, com "F" significando "desenhar uma unidade", "L" significando "virar 90 graus à esquerda", "R" significando "virar 90 graus à direita " e "a" e "b" sendo ignorados. A posição inicial do cursor do computador é (0,0), apontando na direção de (0,1).
 
-Then Dn is an exotic drawing known as the Heighway Dragon of order n. For example, D10 is shown below; counting each "F" as one step, the highlighted spot at (18,16) is the position reached after 500 steps.
+Então $D_n$ é um desenho exótico conhecido como Dragão de Heighway da ordem $n$. Por exemplo, $D_{10}$ é mostrado abaixo. Contando cada "F" como uma etapa, o local destacado em (18,16) é a posição alcançada após 500 etapas.
 
-What is the position of the cursor after 1012 steps in D50 ? Give your answer in the form x,y with no spaces.
+<img class="img-responsive center-block" alt="desenho do Dragão de Heighway após 500 etapas" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px;" />
+
+Qual é a posição do cursor depois de ${10}^{12}$ etapas em $D_{50}$? Dê sua resposta como uma string na forma `x,y` sem espaços.
 
 # --hints--
 
-`euler220()` should return 139776, 963904.
+`heighwayDragon()` deve retornar uma string.
 
 ```js
-assert.strictEqual(euler220(), 139776, 963904);
+assert(typeof heighwayDragon() === 'string');
+```
+
+`heighwayDragon()` deve retornar a string `139776,963904`.
+
+```js
+assert.strictEqual(heighwayDragon(), '139776,963904');
 ```
 
 # --seed--
@@ -33,12 +42,12 @@ assert.strictEqual(euler220(), 139776, 963904);
 ## --seed-contents--
 
 ```js
-function euler220() {
+function heighwayDragon() {
 
   return true;
 }
 
-euler220();
+heighwayDragon();
 ```
 
 # --solutions--
