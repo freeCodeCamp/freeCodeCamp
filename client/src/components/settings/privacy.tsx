@@ -1,5 +1,5 @@
 import { Button, Form } from '@freecodecamp/react-bootstrap';
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -37,7 +37,7 @@ function PrivacySettings({
   t,
   user
 }: PrivacyProps): JSX.Element {
-  function handleSubmit(e: React.FormEvent): void {
+  function handleSubmit(e: FormEvent): void {
     e.preventDefault();
   }
 

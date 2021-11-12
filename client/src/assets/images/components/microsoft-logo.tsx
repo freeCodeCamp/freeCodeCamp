@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { SVGProps } from 'react';
 
 const MicrosoftLogo = (
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
 ): JSX.Element => (
   <svg
     id='microsoft-logo'

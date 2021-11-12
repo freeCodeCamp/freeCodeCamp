@@ -7,7 +7,7 @@ import {
   Button
 } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
-import React, { useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { TFunction, Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -58,14 +58,14 @@ function EmailSettings({
     isPristine: true
   });
 
-  function handleSubmit(e: React.FormEvent): void {
+  function handleSubmit(e: FormEvent): void {
     e.preventDefault();
     updateMyEmail(emailForm.newEmail);
   }
 
   function createHandleEmailFormChange(
     key: 'newEmail' | 'confirmNewEmail'
-  ): (e: React.ChangeEvent<HTMLInputElement>) => void {
+  ): (e: ChangeEvent<HTMLInputElement>) => void {
     return e => {
       e.preventDefault();
       const userInput = e.target.value.slice();

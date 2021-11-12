@@ -1,11 +1,11 @@
 import { Row, Col } from '@freecodecamp/react-bootstrap';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 function FullWidthRow({
   children,
   className
 }: {
-  children?: React.ReactNode;
+  children?: ReactNode;
   className?: string;
 }): JSX.Element {
   return (

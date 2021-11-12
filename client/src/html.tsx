@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 interface HTMLProps {
   body: string;
   bodyAttributes?: Record<string, unknown>;
-  headComponents?: React.ReactNode[];
+  headComponents?: ReactNode[];
   htmlAttributes?: Record<string, unknown>;
-  postBodyComponents?: React.ReactNode[];
-  preBodyComponents?: React.ReactNode[];
+  postBodyComponents?: ReactNode[];
+  preBodyComponents?: ReactNode[];
 }
 
 export default function HTML({

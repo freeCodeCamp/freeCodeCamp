@@ -1,6 +1,6 @@
 import { Col, Row } from '@freecodecamp/react-bootstrap';
 import { curry } from 'lodash-es';
-import React, { Fragment } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -41,7 +41,7 @@ interface CertificationProps {
   username: string;
 }
 
-function renderCertShow(username: string, cert: CurrentCert): React.ReactNode {
+function renderCertShow(username: string, cert: CurrentCert): ReactNode {
   return cert.show ? (
     <Fragment key={cert.title}>
       <Row>

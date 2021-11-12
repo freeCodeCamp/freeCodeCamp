@@ -7,7 +7,7 @@ import {
   Col,
   Row
 } from '@freecodecamp/react-bootstrap';
-import React, { useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -68,11 +68,11 @@ function ShowUser({
 }: ShowUserProps) {
   const [textarea, setTextarea] = useState('');
 
-  function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+  function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
     setTextarea(e.target.value.slice());
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault();
     reportUser({ username, reportDescription: textarea });
   }

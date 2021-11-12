@@ -6,7 +6,7 @@ import {
   FormGroup,
   ControlLabel
 } from '@freecodecamp/react-bootstrap';
-import React, { Component } from 'react';
+import React, { Component, FormEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 
@@ -95,8 +95,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
   }
 
   createHandleChange =
-    (key: keyof InternetFormValues) =>
-    (e: React.FormEvent<HTMLInputElement>) => {
+    (key: keyof InternetFormValues) => (e: FormEvent<HTMLInputElement>) => {
       const value = (e.target as HTMLInputElement).value.slice(0);
       return this.setState(state => ({
         formValues: {
@@ -137,7 +136,7 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     );
   };
 
-  handleSubmit = (e: React.FormEvent) => {
+  handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!this.isFormPristine() && this.isFormValid()) {
       // // Only submit the form if is has changed, and if it is valid

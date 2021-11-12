@@ -70,7 +70,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   createOnChangeHandler =
     (id: string, key: 'description' | 'image' | 'title' | 'url') =>
-    (e: React.FormEvent<HTMLInputElement>) => {
+    (e: FormEvent<HTMLInputElement>) => {
       e.preventDefault();
       const userInput = (e.target as HTMLInputElement).value.slice();
       return this.setState(state => {
@@ -87,7 +87,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       });
     };
 
-  handleSubmit = (e: React.FormEvent) => {
+  handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const { updatePortfolio } = this.props;
     const { portfolio } = this.state;

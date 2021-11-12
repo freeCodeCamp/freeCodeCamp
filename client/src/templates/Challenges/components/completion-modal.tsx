@@ -3,7 +3,7 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
 import { noop } from 'lodash-es';
-import React, { Component } from 'react';
+import React, { Component, KeyboardEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
@@ -167,7 +167,7 @@ export class CompletionModalInner extends Component<
     return { downloadURL: newURL, completedPercent: completedPercent };
   }
 
-  handleKeypress(e: React.KeyboardEvent): void {
+  handleKeypress(e: KeyboardEvent): void {
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
       // Since Hotkeys also listens to Ctrl + Enter we have to stop this event

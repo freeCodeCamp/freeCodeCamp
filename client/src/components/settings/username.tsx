@@ -5,7 +5,7 @@ import {
   Alert,
   FormGroup
 } from '@freecodecamp/react-bootstrap';
-import React, { Component } from 'react';
+import React, { Component, FormEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -106,7 +106,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     return null;
   }
 
-  handleSubmit(e: React.FormEvent) {
+  handleSubmit(e: FormEvent) {
     e.preventDefault();
     const { submitNewUsername } = this.props;
     const {
@@ -119,7 +119,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     );
   }
 
-  handleChange(e: React.FormEvent<HTMLInputElement>) {
+  handleChange(e: FormEvent<HTMLInputElement>) {
     e.preventDefault();
     const { username, validateUsername } = this.props;
     const newValue = (e.target as HTMLInputElement).value;

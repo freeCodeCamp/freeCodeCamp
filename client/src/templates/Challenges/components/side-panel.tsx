@@ -1,4 +1,4 @@
-import React, { useEffect, ReactElement } from 'react';
+import React, { useEffect, ReactElement, RefObject } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -20,7 +20,7 @@ interface SidePanelProps {
   challengeDescription: ReactElement;
   challengeTitle: ReactElement;
   guideUrl: string;
-  instructionsPanelRef: React.RefObject<HTMLDivElement>;
+  instructionsPanelRef: RefObject<HTMLDivElement>;
   showToolPanel: boolean;
   tests?: Record<string, unknown>[];
   videoUrl: string;

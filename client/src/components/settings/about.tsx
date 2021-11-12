@@ -5,7 +5,7 @@ import {
   HelpBlock,
   Alert
 } from '@freecodecamp/react-bootstrap';
-import React, { Component } from 'react';
+import React, { Component, FormEvent } from 'react';
 
 import { TFunction, withTranslation } from 'react-i18next';
 import { FullWidthRow, Spacer } from '../helpers';
@@ -98,7 +98,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     );
   };
 
-  handleSubmit = (e: React.FormEvent) => {
+  handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
@@ -111,7 +111,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }
   };
 
-  handleNameChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handleNameChange = (e: FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
@@ -121,7 +121,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }));
   };
 
-  handleLocationChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handleLocationChange = (e: FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
@@ -147,7 +147,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       isPictureUrlValid: state.formValues.picture === ''
     }));
 
-  handlePictureChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handlePictureChange = (e: FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     this.validationImage.src = value;
     return this.setState(state => ({
@@ -173,7 +173,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }
   };
 
-  handleAboutChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handleAboutChange = (e: FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Trans } from 'react-i18next';
 
 // Matches editor links for: Replit, Glitch, CodeSandbox, GitHub
@@ -9,21 +9,21 @@ const fCCRegex =
 const localhostRegex = /localhost:/;
 const httpRegex = /http(?!s|([^s]+?localhost))/;
 
-export const editorValidator = (value: string): React.ReactElement | null =>
+export const editorValidator = (value: string): ReactElement | null =>
   editorRegex.test(value) ? <Trans>validation.editor-url</Trans> : null;
 
-export const fCCValidator = (value: string): React.ReactElement | null =>
+export const fCCValidator = (value: string): ReactElement | null =>
   fCCRegex.test(value) ? <Trans>validation.own-work-url</Trans> : null;
 
-export const localhostValidator = (value: string): React.ReactElement | null =>
+export const localhostValidator = (value: string): ReactElement | null =>
   localhostRegex.test(value) ? (
     <Trans>validation.publicly-visible-url</Trans>
   ) : null;
 
-export const httpValidator = (value: string): React.ReactElement | null =>
+export const httpValidator = (value: string): ReactElement | null =>
   httpRegex.test(value) ? <Trans>validation.http-url</Trans> : null;
 
-export type Validator = (value: string) => React.ReactElement | null;
+export type Validator = (value: string) => ReactElement | null;
 export function composeValidators(...validators: (Validator | null)[]) {
   return (value: string): ReturnType<Validator> | null =>
     validators.reduce(

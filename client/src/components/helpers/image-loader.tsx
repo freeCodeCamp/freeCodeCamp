@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { CSSProperties, useState } from 'react';
 
 import './image-loader.css';
 import LazyLoad from 'react-lazy-load';
@@ -11,7 +11,7 @@ interface ImageLoaderProps {
   loadingClassName?: string;
   offsetVertical?: number;
   src?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   width?: number;
 }
 

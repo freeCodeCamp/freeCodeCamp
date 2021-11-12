@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash-es';
-import React, { EventHandler, SyntheticEvent } from 'react';
+import React, { ComponentClass, EventHandler, SyntheticEvent } from 'react';
 import { AutocompleteExposed, SearchState } from 'react-instantsearch-core';
 import {
   Highlight,
@@ -15,7 +15,7 @@ type AllHitsProps = {
   handleClick?: EventHandler<SyntheticEvent>;
 };
 
-const AllHits: React.ComponentClass<AutocompleteExposed & AllHitsProps> =
+const AllHits: ComponentClass<AutocompleteExposed & AllHitsProps> =
   connectAutoComplete(({ hits, currentRefinement }) => {
     const isHitsEmpty = !hits.length;
 

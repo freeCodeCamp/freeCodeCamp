@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import envData from '../../../../config/env.json';
 import { isAuditedCert } from '../../../../utils/is-audited';
@@ -136,7 +136,7 @@ function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
 export function Map({
   forLanding = false,
   currentSuperBlock = ''
-}: MapProps): React.ReactElement {
+}: MapProps): ReactElement {
   /*
    * this query gets the first challenge from each block and the second block
    * from each superblock, leaving you with one challenge from each

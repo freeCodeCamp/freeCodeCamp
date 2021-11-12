@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { SVGProps } from 'react';
 import { useTranslation } from 'react-i18next';
 
 function TensorflowIcon(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
 ): JSX.Element {
   const { t } = useTranslation();
 

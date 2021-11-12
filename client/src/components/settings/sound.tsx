@@ -1,5 +1,5 @@
 import { Form } from '@freecodecamp/react-bootstrap';
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import ToggleSetting from './toggle-setting';
@@ -16,7 +16,7 @@ export default function SoundSettings({
   const { t } = useTranslation();
 
   return (
-    <Form inline={true} onSubmit={(e: React.FormEvent) => e.preventDefault()}>
+    <Form inline={true} onSubmit={(e: FormEvent) => e.preventDefault()}>
       <ToggleSetting
         action={t('settings.labels.sound-mode')}
         explain={t('settings.sound-mode')}

@@ -1,7 +1,7 @@
 // Package Utilities
 import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { ChangeEvent, Component } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import { TFunction, withTranslation } from 'react-i18next';
@@ -150,9 +150,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     }
   }
 
-  handleOptionChange = (
-    changeEvent: React.ChangeEvent<HTMLInputElement>
-  ): void => {
+  handleOptionChange = (changeEvent: ChangeEvent<HTMLInputElement>): void => {
     this.setState({
       showWrong: false,
       selectedOption: parseInt(changeEvent.target.value, 10)

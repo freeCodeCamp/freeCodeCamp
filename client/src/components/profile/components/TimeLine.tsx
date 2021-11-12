@@ -9,7 +9,7 @@ import {
 import Loadable from '@loadable/component';
 import { useStaticQuery, graphql } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
-import React, { useMemo, useState } from 'react';
+import React, { ReactNode, useMemo, useState } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 
 import envData from '../../../../../config/env.json';
@@ -100,7 +100,7 @@ function TimelineInner({
     challengeFiles: ChallengeFiles,
     githubLink?: string,
     solution?: string | null
-  ): React.ReactNode {
+  ): ReactNode {
     if (challengeFiles?.length) {
       return (
         <Button

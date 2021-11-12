@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import { Hit } from 'react-instantsearch-core';
 import { Highlight } from 'react-instantsearch-dom';
 
 interface SuggestionProps {
   hit: Hit;
-  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
-  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseEnter: (e: SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseLeave: (e: SyntheticEvent<HTMLElement, Event>) => void;
 }
 
 const Suggestion = ({

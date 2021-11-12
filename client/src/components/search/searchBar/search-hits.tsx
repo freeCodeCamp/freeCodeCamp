@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash-es';
-import React, { useEffect } from 'react';
+import React, { SyntheticEvent, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SearchState, Hit } from 'react-instantsearch-core';
 import { connectStateResults, connectHits } from 'react-instantsearch-dom';
@@ -12,15 +12,15 @@ interface CustomHitsProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   hits: Array<any>;
   searchQuery: string;
-  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
-  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseEnter: (e: SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseLeave: (e: SyntheticEvent<HTMLElement, Event>) => void;
   selectedIndex: number;
   handleHits: (currHits: Array<Hit>) => void;
 }
 interface SearchHitsProps {
   searchState: SearchState;
-  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
-  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseEnter: (e: SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseLeave: (e: SyntheticEvent<HTMLElement, Event>) => void;
   selectedIndex: number;
   handleHits: (currHits: Array<Hit>) => void;
 }

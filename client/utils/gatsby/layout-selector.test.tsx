@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import React from 'react';
+import React, { JSXElementConstructor } from 'react';
 import { Provider } from 'react-redux';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
@@ -18,7 +18,7 @@ interface NameAndProps {
   name: string;
 }
 function getComponentNameAndProps(
-  elementType: React.JSXElementConstructor<never>,
+  elementType: JSXElementConstructor<never>,
   pathname: string
 ): NameAndProps {
   // eslint-disable-next-line testing-library/render-result-naming-convention

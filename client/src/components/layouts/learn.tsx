@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -49,7 +49,7 @@ type LearnLayoutProps = {
   fetchState: FetchState;
   user: User;
   tryToShowDonationModal: () => void;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 function LearnLayout({

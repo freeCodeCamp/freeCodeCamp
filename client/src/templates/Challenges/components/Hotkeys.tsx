@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { navigate } from 'gatsby';
-import React from 'react';
+import React, { KeyboardEvent, ReactElement, Ref, RefObject } from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -41,13 +41,13 @@ const keyMap = {
 interface HotkeysProps {
   canFocusEditor: boolean;
   challengeFiles: ChallengeFiles;
-  children: React.ReactElement;
+  children: ReactElement;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  editorRef?: React.Ref<HTMLElement> | any;
+  editorRef?: Ref<HTMLElement> | any;
   executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
   submitChallenge: () => void;
-  innerRef: React.Ref<HTMLElement> | unknown;
-  instructionsPanelRef?: React.RefObject<HTMLElement>;
+  innerRef: Ref<HTMLElement> | unknown;
+  instructionsPanelRef?: RefObject<HTMLElement>;
   nextChallengePath: string;
   prevChallengePath: string;
   setEditorFocusability: (arg0: boolean) => void;
@@ -70,7 +70,7 @@ function Hotkeys({
   usesMultifileEditor
 }: HotkeysProps): JSX.Element {
   const handlers = {
-    executeChallenge: (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    executeChallenge: (e: KeyboardEvent<HTMLButtonElement>) => {
       // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
       // needs to be prevented.
       // TODO: 'enter' on its own also disables HotKeys, but default behaviour
@@ -91,7 +91,7 @@ function Hotkeys({
         executeChallenge({ showCompletionModal: true });
       }
     },
-    focusEditor: (e: React.KeyboardEvent) => {
+    focusEditor: (e: KeyboardEvent) => {
       e.preventDefault();
       if (editorRef && editorRef.current) {
         editorRef.current.focus();

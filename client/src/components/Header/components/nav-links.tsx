@@ -16,7 +16,12 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { Component, Fragment } from 'react';
+import React, {
+  Component,
+  Fragment,
+  MouseEventHandler,
+  ChangeEvent
+} from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import envData from '../../../../../config/env.json';
@@ -38,7 +43,7 @@ export interface NavLinksProps {
   fetchState?: { pending: boolean };
   i18n: Object;
   t: TFunction;
-  toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement>;
+  toggleDisplayMenu?: MouseEventHandler<HTMLButtonElement>;
   toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;
   navigate?: (location: string) => void;
@@ -61,9 +66,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
   }
 
-  handleLanguageChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ): void => {
+  handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>): void => {
     const { toggleDisplayMenu, navigate } = this.props;
     toggleDisplayMenu();
 

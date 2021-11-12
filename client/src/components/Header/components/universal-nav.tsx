@@ -4,7 +4,7 @@
 /* eslint-disable react/prop-types */
 // @ts-nocheck
 import Loadable from '@loadable/component';
-import React, { Ref } from 'react';
+import React, { MouseEventHandler, Ref } from 'react';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
 import MenuButton from './menu-button';
@@ -22,7 +22,7 @@ export interface UniversalNavProps {
   fetchState?: { pending: boolean };
   menuButtonRef?: Ref<HTMLButtonElement> | undefined;
   searchBarRef?: unknown;
-  toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  toggleDisplayMenu?: MouseEventHandler<HTMLButtonElement> | undefined;
   user?: Record<string, unknown>;
 }
 export const UniversalNav = ({

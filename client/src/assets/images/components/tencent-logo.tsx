@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { SVGProps } from 'react';
 
 const TencentLogo = (
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
 ): JSX.Element => (
   <svg
     height='75'

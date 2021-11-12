@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React, { Component } from 'react';
+import React, { Component, ComponentType } from 'react';
 import ReactDOM from 'react-dom';
 
 import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
@@ -172,14 +172,14 @@ export class PayPalButtonScriptLoader extends Component<
 
     // TODO: fill in the full list of props instead of any
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const Button: React.ComponentType<any> = window.paypal.Buttons.driver(
+    const Button: ComponentType<any> = window.paypal.Buttons.driver(
       'react',
       {
         React,
         ReactDOM
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ) as React.ComponentType<any>;
+    ) as ComponentType<any>;
 
     return (
       <Button

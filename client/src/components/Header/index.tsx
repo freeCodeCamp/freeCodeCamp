@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/unbound-method */
-import React from 'react';
+import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
 
 import UniversalNav from './components/universal-nav';
@@ -13,12 +13,9 @@ export interface HeaderProps {
   fetchState: { pending: boolean };
   user: Record<string, any>;
 }
-export class Header extends React.Component<
-  HeaderProps,
-  { displayMenu: boolean }
-> {
-  menuButtonRef: React.RefObject<any>;
-  searchBarRef: React.RefObject<any>;
+export class Header extends Component<HeaderProps, { displayMenu: boolean }> {
+  menuButtonRef: RefObject<any>;
+  searchBarRef: RefObject<any>;
   static displayName: string;
   constructor(props: HeaderProps) {
     super(props);

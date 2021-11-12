@@ -1,5 +1,5 @@
 import { isEqual } from 'lodash-es';
-import React, { Component } from 'react';
+import React, { Component, RefObject, SyntheticEvent, FocusEvent } from 'react';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
 import { TFunction, withTranslation } from 'react-i18next';
 import { Hit } from 'react-instantsearch-core';
@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   );
 
 type SearchBarProps = {
-  innerRef?: React.RefObject<HTMLDivElement>;
+  innerRef?: RefObject<HTMLDivElement>;
   toggleSearchDropdown: typeof toggleSearchDropdown;
   toggleSearchFocused: typeof toggleSearchFocused;
   updateSearchQuery: typeof updateSearchQuery;
@@ -89,7 +89,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     });
   };
 
-  handleFocus = (e: React.FocusEvent<Node> | Event): AnyAction | void => {
+  handleFocus = (e: FocusEvent<Node> | Event): AnyAction | void => {
     const { toggleSearchFocused } = this.props;
     const isSearchFocused = this.props.innerRef?.current?.contains(
       e.target as HTMLElement
@@ -103,7 +103,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
   };
 
   handleSearch = (
-    e: React.SyntheticEvent<HTMLFormElement, Event>,
+    e: SyntheticEvent<HTMLFormElement, Event>,
     query?: string
   ): boolean | void => {
     e.preventDefault();
@@ -135,7 +135,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
       : false;
   };
 
-  handleMouseEnter = (e: React.SyntheticEvent<HTMLElement, Event>): void => {
+  handleMouseEnter = (e: SyntheticEvent<HTMLElement, Event>): void => {
     e.persist();
     const hoveredText = e.currentTarget.innerText;
 

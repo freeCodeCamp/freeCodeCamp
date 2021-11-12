@@ -1,6 +1,6 @@
 import { Grid, ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
 import { Link, graphql } from 'gatsby';
-import React from 'react';
+import React, { FunctionComponentElement } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
@@ -36,7 +36,7 @@ function IntroductionPage({
     markdownRemark: MarkdownRemark;
     allChallengeNode: AllChallengeNode;
   };
-}): React.FunctionComponentElement<typeof LearnLayout> {
+}): FunctionComponentElement<typeof LearnLayout> {
   const { t } = useTranslation();
   const {
     html,

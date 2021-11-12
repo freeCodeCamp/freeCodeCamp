@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { Component, RefObject } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -119,9 +119,9 @@ const BASE_LAYOUT = {
 // Component
 class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   static displayName: string;
-  containerRef: React.RefObject<unknown>;
-  editorRef: React.RefObject<unknown>;
-  instructionsPanelRef: React.RefObject<HTMLDivElement>;
+  containerRef: RefObject<unknown>;
+  editorRef: RefObject<unknown>;
+  instructionsPanelRef: RefObject<HTMLDivElement>;
   resizeProps: ResizeProps;
 
   constructor(props: ShowClassicProps) {

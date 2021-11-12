@@ -1,5 +1,5 @@
 import { Form } from '@freecodecamp/react-bootstrap';
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import store from 'store';
 
@@ -17,10 +17,7 @@ export default function ThemeSettings({
   const { t } = useTranslation();
 
   return (
-    <Form
-      inline={true}
-      onSubmit={(e: React.FormEvent): void => e.preventDefault()}
-    >
+    <Form inline={true} onSubmit={(e: FormEvent): void => e.preventDefault()}>
       <ToggleSetting
         action={t('settings.labels.night-mode')}
         flag={currentTheme === 'night'}

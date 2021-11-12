@@ -13,7 +13,7 @@ import type {
   StripeCardExpiryElementChangeEvent,
   PaymentIntentResult
 } from '@stripe/stripe-js';
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 
 import envData from '../../../../config/env.json';
 import { AddDonationData } from './paypal-button';
@@ -100,7 +100,7 @@ const StripeCardForm = ({
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!isPaymentInfoValid) return setSubmissionValidity(false);
     else setSubmissionValidity(true);

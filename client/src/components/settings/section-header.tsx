@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 
 import FullWidthRow from '../helpers/full-width-row';
 
 type SectionHeaderProps = {
-  children: string | React.ReactNode | React.ReactElement;
+  children: string | ReactNode | ReactElement;
 };
 
 function SectionHeader({ children }: SectionHeaderProps): JSX.Element {

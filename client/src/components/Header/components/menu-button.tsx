@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react';
+import React, { MouseEventHandler, RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
 import AuthOrProfile from './auth-or-profile';
 
@@ -6,7 +6,7 @@ export interface MenuButtonProps {
   className?: string;
   displayMenu?: boolean;
   innerRef?: RefObject<HTMLButtonElement>;
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
   user?: Record<string, unknown>;
 }
 

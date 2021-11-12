@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 const style = {
   padding: '0 15px'
@@ -8,7 +8,7 @@ function BlockSaveWrapper({
   children,
   ...restProps
 }: {
-  children?: React.ReactNode;
+  children?: ReactNode;
 }): JSX.Element {
   return (
     <div style={style} {...restProps}>

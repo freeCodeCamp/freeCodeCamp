@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FormEvent, RefObject, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Magnifier from '../../../assets/icons/Magnifier';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 
 type Props = {
-  innerRef?: React.RefObject<HTMLDivElement>;
+  innerRef?: RefObject<HTMLDivElement>;
 };
 
 const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
@@ -12,9 +12,9 @@ const SearchBarOptimized = ({ innerRef }: Props): JSX.Element => {
   const placeholder = t('search.placeholder');
   const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+  const onChange = (event: ChangeEvent<HTMLInputElement>) =>
     setValue(event.target.value);
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (value && value.length > 1) {
       window.open(`${searchUrl}?query=${encodeURIComponent(value)}`, '_blank');

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { SVGProps } from 'react';
 
 const PatreonLogo = (
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
 ): JSX.Element => (
   <svg
     id='patreon-logo'
