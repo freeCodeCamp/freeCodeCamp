@@ -18,7 +18,7 @@ const config = {
       '@babel/preset-react',
       {
         useBuiltIns: true,
-        pragma: 'React.createElement'
+        runtime: 'automatic'
       }
     ],
     '@babel/preset-typescript'
