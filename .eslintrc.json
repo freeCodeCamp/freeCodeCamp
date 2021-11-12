@@ -12,6 +12,7 @@
     "./.eslintrc-base.json",
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
+    "plugin:react/jsx-runtime",
     "prettier"
   ],
   "plugins": [
@@ -38,10 +39,6 @@
       "import/extensions": [".js", ".jsx", ".tsx", ".ts"]
     },
     "import/ignore": ["node_modules"]
-  },
-  "rules": {
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
   },
   "overrides": [
     {

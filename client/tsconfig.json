@@ -6,7 +6,7 @@
     "module": "es2020",
     "moduleResolution": "node",
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
