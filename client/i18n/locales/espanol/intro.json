@@ -142,7 +142,7 @@
         ]
       },
       "css-ferris-wheel": {
-        "title": "CSS Ferris Wheel",
+        "title": "Rueda de la fortuna CSS",
         "intro": [
           "",
           ""
@@ -443,7 +443,7 @@
         ]
       },
       "quality-assurance-projects": {
-        "title": "Quality Assurance Projects",
+        "title": "Proyectos de control de calidad",
         "intro": [
           "Ahora que estas versado tanto en el front end como en el back end, es tiempo de aplicar todas tus nuevas habilidades y los conceptos que has aprendido hasta el momento. Construirás 5 aplicaciones web diferentes y escribirás pruebas para cada una de ellas, para estar seguro de que funcionarán y que tus aplicaciones pueden manejar diferentes casos extremos.",
           "Después de completar estos proyectos de Control de Calidad, tendrás 5 proyectos más en tu currículum, y una nueva certificación para mostrar en tu portafolio."
@@ -460,7 +460,7 @@
     "note": "",
     "blocks": {
       "python-for-everybody": {
-        "title": "Python for Everybody",
+        "title": "Python para todos",
         "intro": [
           "Python para todos, es una serie de videocursos gratuitos, que enseña los conceptos básicos del uso de Python 3.",
           "Los cursos fueron creados por el Dr. Charles Severance (también conocido como Dr. Chuck). El es un Profesor de Clínica en la Escuela de Información de la Universidad de Michigan, donde él enseña varios cursos orientados a tecnología, diseño de bases de datos y desarrollo web."
