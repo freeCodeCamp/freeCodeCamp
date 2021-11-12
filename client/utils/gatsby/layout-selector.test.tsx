@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import React, { JSXElementConstructor } from 'react';
+import { JSXElementConstructor } from 'react';
 import { Provider } from 'react-redux';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
