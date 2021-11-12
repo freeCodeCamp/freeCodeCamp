@@ -99,7 +99,7 @@
     "private-name": "Tu nombre no aparecerá en tus certificaciones, si está establecido como privado.",
     "claim-legacy": "Una vez que hayas obtenido las siguientes certificaciones de FreeCodeCamp, podrás reclamar la {{cert}}:",
     "for": "Ajustes de cuenta de {{username}}",
-    "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
+    "sound-mode": "Esto agrega un placentero sonido de guitarra acústica en todo el sitio web. Obtendrás reacciones musicales a medida que escribas en el editor, completes desafíos, obtengas certificados y mucho más.",
     "username": {
       "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
@@ -358,7 +358,7 @@
   },
   "search": {
     "label": "Buscar",
-    "placeholder": "Search 8,000+ tutorials",
+    "placeholder": "Buscar 200+ tutoriales",
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",
