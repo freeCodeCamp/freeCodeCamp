@@ -18,9 +18,9 @@ Considere $C(n)$ o número de triângulos cujos vértices estão em $P_n$ e que 
 
 Exemplos:
 
-$$\start{align} & C(8) = 20 \\\\ & C(600) = 8\\,950\\,634 \\\\ & C(40\\,000) = 2\\,66610\\,948\\,988 \end{align}$$
+$$\start{align} & C(8) = 20 \\\\ & C(600) = 8.950.634 \\\\ & C(40.000) = 266.610.948.988 \end{align}$$
 
-Encontre $C(2\\,000\\,000)$.
+Encontre $C(2.000.000)$.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f43c1000cf542c50ff4e
-title: 'Problem 207: Integer partition equations'
+title: 'Problema 207: Equações de partições inteiras'
 challengeType: 5
 forumTopicId: 301848
 dashedName: problem-207-integer-partition-equations
@@ -8,24 +8,28 @@ dashedName: problem-207-integer-partition-equations
 
 # --description--
 
-For some positive integers k, there exists an integer partition of the form 4t = 2t + k,
+Para alguns números inteiros positivos $k$, existe uma partição inteira de forma $4^t = 2^t + k$,
 
-where 4t, 2t, and k are all positive integers and t is a real number.
+onde $4^t$, $2^t$ e $k$ são todos números inteiros positivos e $t$ é um número real.
 
-The first two such partitions are 41 = 21 + 2 and 41.5849625... = 21.5849625... + 6.
+As duas primeiras partições desse tipo são $4^1 = 2^1 + 2$ e $4^{1.584\\,962\\,5\ldots} = 2^{1.584\\,962\\,5\ldots} + 6$.
 
-Partitions where t is also an integer are called perfect. For any m ≥ 1 let P(m) be the proportion of such partitions that are perfect with k ≤ m. Thus P(6) = 1/2.
+As partições onde $t$ é também um número inteiro são chamadas de perfeitas. Para qualquer $m ≥ 1$, considere $P(m)$ como sendo a proporção de tais partições que são perfeitas com $k ≤ m$.
 
-In the following table are listed some values of P(m) P(5) = 1/1 P(10) = 1/2 P(15) = 2/3 P(20) = 1/2 P(25) = 1/2 P(30) = 2/5 ... P(180) = 1/4 P(185) = 3/13
+Assim, $P(6) = \frac{1}{2}$.
 
-Find the smallest m for which P(m) &lt; 1/12345
+Na tabela a seguir estão listados alguns valores de $P(m)$
+
+$$\begin{align} & P(5) = \frac{1}{1}    \\\\ & P(10) = \frac{1}{2}   \\\\ & P(15) = \frac{2}{3}   \\\\ & P(20) = \frac{1}{2}   \\\\ & P(25) = \frac{1}{2}   \\\\ & P(30) = \frac{2}{5}   \\\\ & \ldots                \\\\ & P(180) = \frac{1}{4}  \\\\ & P(185) = \frac{3}{13} \end{align}$$
+
+Encontre o menor $m$ para o qual $P(m) &lt; \frac{1}{12.345}$
 
 # --hints--
 
-`euler207()` should return 44043947822.
+`integerPartitionEquations()` deve retornar `44043947822`.
 
 ```js
-assert.strictEqual(euler207(), 44043947822);
+assert.strictEqual(integerPartitionEquations(), 44043947822);
 ```
 
 # --seed--
@@ -33,12 +37,12 @@ assert.strictEqual(euler207(), 44043947822);
 ## --seed-contents--
 
 ```js
-function euler207() {
+function integerPartitionEquations() {
 
   return true;
 }
 
-euler207();
+integerPartitionEquations();
 ```
 
 # --solutions--
