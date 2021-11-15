@@ -1,6 +1,6 @@
 ---
 id: 5900f44f1000cf542c50ff61
-title: 'Problem 227: The Chase'
+title: 'Problema 227: A caçada'
 challengeType: 5
 forumTopicId: 301870
 dashedName: problem-227-the-chase
@@ -8,18 +8,26 @@ dashedName: problem-227-the-chase
 
 # --description--
 
-"The Chase" is a game played with two dice and an even number of players.
+"A caçada" é um jogo que consiste em dois dados e um número par de jogadores.
 
-The players sit around a table; the game begins with two opposite players having one die each. On each turn, the two players with a die roll it. If a player rolls a 1, he passes the die to his neighbour on the left; if he rolls a 6, he passes the die to his neighbour on the right; otherwise, he keeps the die for the next turn. The game ends when one player has both dice after they have been rolled and passed; that player has then lost.
+Os jogadores sentam-se ao redor de uma mesa. O jogo começa com dois jogadores opostos tendo um dado cada. A cada turno, os dois jogadores que têm o dado o rolam.
 
-In a game with 100 players, what is the expected number of turns the game lasts? Give your answer rounded to ten significant digits.
+Se o jogador rolar um 1, ele passa o dado ao vizinho à esquerda.
+
+Se o jogador rolar um 6, ele passa o dado ao vizinho à direita.
+
+Caso contrário, ele mantém o dado no próximo turno.
+
+O jogo termina quando um jogador tem os dois dados depois que eles forem rolados e passados. Aquele jogador perdeu.
+
+Em um jogo com 100 jogadores, qual é o número esperado de turnos que dure o jogo? Dê sua resposta arredondada para dez algarismos significativos (total de casas somando antes e depois da vírgula).
 
 # --hints--
 
-`euler227()` should return 3780.618622.
+`theChase()` deve retornar `3780.618622`.
 
 ```js
-assert.strictEqual(euler227(), 3780.618622);
+assert.strictEqual(theChase(), 0.618622);
 ```
 
 # --seed--
@@ -27,12 +35,12 @@ assert.strictEqual(euler227(), 3780.618622);
 ## --seed-contents--
 
 ```js
-function euler227() {
+function theChase() {
 
   return true;
 }
 
-euler227();
+theChase();
 ```
 
 # --solutions--
