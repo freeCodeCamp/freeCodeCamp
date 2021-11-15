@@ -10,13 +10,13 @@ const { patreonClientId }: { patreonClientId: string | null } = envData as {
   patreonClientId: string | null;
 };
 
-interface PatreonButtonPropTypes {
+interface PatreonButtonProps {
   postPatreonRedirect: () => void;
 }
 
 const PatreonButton = ({
   postPatreonRedirect
-}: PatreonButtonPropTypes): JSX.Element | null => {
+}: PatreonButtonProps): JSX.Element | null => {
   if (
     !patreonClientId ||
     !patreonDefaultPledgeAmount ||
@@ -36,7 +36,7 @@ const PatreonButton = ({
       className='patreon-button link-button'
       data-patreon-widget-type='become-patron-button'
       href={href}
-      onClick={() => postPatreonRedirect()}
+      onClick={postPatreonRedirect}
       rel='noreferrer'
       target='_blank'
     >
