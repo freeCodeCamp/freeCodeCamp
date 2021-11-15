@@ -1,4 +1,4 @@
-type CreateTypesType = {
+type ActionTypes = {
   [action: string]: string;
 };
 
@@ -13,7 +13,7 @@ type CreateTypesType = {
  * @param {string} ns Name of the namespace.
  * @returns {object} Object with action types.
  */
-export function createTypes(types: string[], ns: string): CreateTypesType {
+export function createTypes(types: string[], ns: string): ActionTypes {
   return types.reduce(
     (types, action: string) => ({
       ...types,

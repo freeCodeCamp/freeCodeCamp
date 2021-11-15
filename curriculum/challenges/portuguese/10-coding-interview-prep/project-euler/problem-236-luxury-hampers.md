@@ -1,6 +1,6 @@
 ---
 id: 5900f4591000cf542c50ff6b
-title: 'Problem 236: Luxury Hampers'
+title: 'Problema 236: Cestos de luxo'
 challengeType: 5
 forumTopicId: 301881
 dashedName: problem-236-luxury-hampers
@@ -8,24 +8,41 @@ dashedName: problem-236-luxury-hampers
 
 # --description--
 
-Suppliers 'A' and 'B' provided the following numbers of products for the luxury hamper market:
+Os fornecedores "A" e "B" forneceram os seguintes números de produtos para o mercado de cestos de luxo:
 
-Product'A''B'Beluga Caviar5248640Christmas Cake13121888Gammon Joint26243776Vintage Port57603776Champagne Truffles39365664
+| Produto             | 'A'  | 'B'  |
+| ------------------- | ---- | ---- |
+| Caviar Beluga       | 5248 | 640  |
+| Bolo de Natal       | 1312 | 1888 |
+| Carne de cervo      | 2624 | 3776 |
+| Vinho do Porto      | 5760 | 3776 |
+| Trufas no champanhe | 3936 | 5664 |
 
-Although the suppliers try very hard to ship their goods in perfect condition, there is inevitably some spoilage - i.e. products gone bad.
+Embora os fornecedores se esforcem muito por transportar seus produtos em condições perfeitas, há inevitavelmente alguns estragos, ou seja, os produtos que se perdem.
 
-The suppliers compare their performance using two types of statistic:The five per-product spoilage rates for each supplier are equal to the number of products gone bad divided by the number of products supplied, for each of the five products in turn. The overall spoilage rate for each supplier is equal to the total number of products gone bad divided by the total number of products provided by that supplier.To their surprise, the suppliers found that each of the five per-product spoilage rates was worse (higher) for 'B' than for 'A' by the same factor (ratio of spoilage rates), m>1; and yet, paradoxically, the overall spoilage rate was worse for 'A' than for 'B', also by a factor of m.
+Os fornecedores comparam seu desempenho usando dois tipos de estatística:
 
-There are thirty-five m>1 for which this surprising result could have occurred, the smallest of which is 1476/1475.
+- As cinco taxas de desperdício por produto para cada fornecedor são iguais ao número de produtos que se perderam dividido pelo número de produtos fornecidos para cada um dos cinco produtos separadamente.
+- A taxa de perda geral para cada fornecedor é igual ao número total de produtos que se perdeu dividido pelo número total de produtos fornecidos por esse fornecedor.
 
-What's the largest possible value of m? Give your answer as a fraction reduced to its lowest terms, in the form u/v.
+Para a surpresa deles, os fornecedores descobriram que cada uma das taxas de desperdício por produto era pior (superior) para 'B' do que para 'A' pelo mesmo fator (proporção de taxas de desperdício), $m > 1$; e, no entanto, paradoxalmente, a taxa geral de desperdício foi pior para o "A" do que para o "B", também por um fator de $m$.
+
+Há trinta e cinco $m > 1$ para os quais esse resultado surpreendente poderia ter ocorrido, sendo o menor deles $\frac{1476}{1475}$.
+
+Qual é o maior valor possível de $m$? Dê sua resposta como uma string com uma fração reduzida aos termos mais baixos, na forma `u/v`.
 
 # --hints--
 
-`euler236()` should return 123 / 59.
+`luxuryHampers()` deve retornar uma string.
 
 ```js
-assert.strictEqual(euler236(), 123 / 59);
+assert(typeof luxuryHampers() === 'string');
+```
+
+`luxuryHampers()` deve retornar a string `123/59`.
+
+```js
+assert.strictEqual(luxuryHampers(), '123/59');
 ```
 
 # --seed--
@@ -33,12 +50,12 @@ assert.strictEqual(euler236(), 123 / 59);
 ## --seed-contents--
 
 ```js
-function euler236() {
+function luxuryHampers() {
 
   return true;
 }
 
-euler236();
+luxuryHampers();
 ```
 
 # --solutions--

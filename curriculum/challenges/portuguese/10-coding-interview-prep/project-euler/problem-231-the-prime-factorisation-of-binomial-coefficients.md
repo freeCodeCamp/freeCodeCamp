@@ -1,6 +1,6 @@
 ---
 id: 5900f4531000cf542c50ff66
-title: 'Problem 231: The prime factorisation of binomial coefficients'
+title: 'Problema 231: Fatoração de números primos de coeficientes binomiais'
 challengeType: 5
 forumTopicId: 301875
 dashedName: problem-231-the-prime-factorisation-of-binomial-coefficients
@@ -8,20 +8,20 @@ dashedName: problem-231-the-prime-factorisation-of-binomial-coefficients
 
 # --description--
 
-The binomial coefficient 10C3 = 120.
+O coeficiente binomial $\displaystyle\binom{10}{3} = 120$.
 
-120 = 23 × 3 × 5 = 2 × 2 × 2 × 3 × 5, and 2 + 2 + 2 + 3 + 5 = 14.
+$120 = 2^3 × 3 × 5 = 2 × 2 × 2 × 3 × 5$, and $2 + 2 + 2 + 3 + 5 = 14$.
 
-So the sum of the terms in the prime factorisation of 10C3 is 14.
+Portanto, a soma dos termos na fatoração de números primos de $\displaystyle\binom{10}{3}$ é $14$.
 
-Find the sum of the terms in the prime factorisation of 20000000C15000000.
+Encontre a soma dos termos na fatoração de números primos de $\binom{20.000.000}{15.000.000}$.
 
 # --hints--
 
-`euler231()` should return 7526965179680.
+`primeFactorisation()` deve retornar `7526965179680`.
 
 ```js
-assert.strictEqual(euler231(), 7526965179680);
+assert.strictEqual(primeFactorisation(), 7526965179680);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler231(), 7526965179680);
 ## --seed-contents--
 
 ```js
-function euler231() {
+function primeFactorisation() {
 
   return true;
 }
 
-euler231();
+primeFactorisation();
 ```
 
 # --solutions--

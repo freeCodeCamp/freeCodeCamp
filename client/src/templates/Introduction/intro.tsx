@@ -8,9 +8,9 @@ import ButtonSpacer from '../../components/helpers/button-spacer';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';
 import {
-  MarkdownRemarkType,
-  AllChallengeNodeType,
-  ChallengeNodeType
+  MarkdownRemark,
+  AllChallengeNode,
+  ChallengeNode
 } from '../../redux/prop-types';
 
 import './intro.css';
@@ -18,7 +18,7 @@ import './intro.css';
 function renderMenuItems({
   edges = []
 }: {
-  edges?: Array<{ node: ChallengeNodeType }>;
+  edges?: Array<{ node: ChallengeNode }>;
 }) {
   return edges
     .map(({ node }) => node)
@@ -33,8 +33,8 @@ function IntroductionPage({
   data: { markdownRemark, allChallengeNode }
 }: {
   data: {
-    markdownRemark: MarkdownRemarkType;
-    allChallengeNode: AllChallengeNodeType;
+    markdownRemark: MarkdownRemark;
+    allChallengeNode: AllChallengeNode;
   };
 }): React.FunctionComponentElement<typeof LearnLayout> {
   const { t } = useTranslation();

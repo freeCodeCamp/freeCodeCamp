@@ -4,7 +4,7 @@ import envData from '../../../config/env.json';
 import type {
   ChallengeFile,
   CompletedChallenge,
-  UserType
+  User
 } from '../redux/prop-types';
 
 const { apiLocation } = envData;
@@ -55,38 +55,36 @@ async function request<T>(
 /** GET **/
 
 interface SessionUser {
-  user?: { [username: string]: UserType };
+  user?: { [username: string]: User };
   sessionMeta: { activeDonations: number };
 }
 
-type challengeFilesForFiles = {
+type ChallengeFilesForFiles = {
   files: Array<Omit<ChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<CompletedChallenge, 'challengeFiles'>;
 
 type ApiSessionResponse = Omit<SessionUser, 'user'>;
 type ApiUser = {
   user: {
-    [username: string]: ApiUserType;
+    [username: string]: Omit<User, 'completedChallenges'> & {
+      completedChallenges?: ChallengeFilesForFiles[];
+    };
   };
   result?: string;
 };
 
-type ApiUserType = Omit<UserType, 'completedChallenges'> & {
-  completedChallenges?: challengeFilesForFiles[];
-};
-
-type UserResponseType = {
-  user: { [username: string]: UserType } | Record<string, never>;
+type UserResponse = {
+  user: { [username: string]: User } | Record<string, never>;
   result: string | undefined;
 };
 
-function parseApiResponseToClientUser(data: ApiUser): UserResponseType {
+function parseApiResponseToClientUser(data: ApiUser): UserResponse {
   const userData = data.user?.[data?.result ?? ''];
   let completedChallenges: CompletedChallenge[] = [];
   if (userData) {
     completedChallenges =
       userData.completedChallenges?.reduce(
-        (acc: CompletedChallenge[], curr: challengeFilesForFiles) => {
+        (acc: CompletedChallenge[], curr: ChallengeFilesForFiles) => {
           return [
             ...acc,
             {
@@ -123,7 +121,7 @@ export function getSessionUser(): Promise<SessionUser> {
 }
 
 type UserProfileResponse = {
-  entities: Omit<UserResponseType, 'result'>;
+  entities: Omit<UserResponse, 'result'>;
   result: string | undefined;
 };
 export function getUserProfile(username: string): Promise<UserProfileResponse> {
@@ -226,7 +224,7 @@ export function putUpdateMyUsername(username: string): Promise<void> {
 }
 
 export function putUpdateMyProfileUI(
-  profileUI: UserType['profileUI']
+  profileUI: User['profileUI']
 ): Promise<void> {
   return put('/update-my-profileui', { profileUI });
 }

@@ -15,7 +15,7 @@ Considere $n$ um inteiro positivo. Um trio de números inteiros ($a$, $b$, $c$) 
 
 Defina $f(n)$ como $a + b + c$ para o trio da fatoração ($a$, $b$, $c$) de $n$ que minimiza $\frac{c}{a}$. Podemos mostrar que esse trio é único.
 
-Por exemplo, $f(165) = 19$, $f(100\\,100) = 142$ e $f(20!) = 4\\,034\\,872$.
+Por exemplo, $f(165) = 19$, $f(100.100) = 142$ e $f(20!) = 4.034.872$.
 
 Encontre $f(43!)$.
 

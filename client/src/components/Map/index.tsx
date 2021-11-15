@@ -7,7 +7,7 @@ import envData from '../../../../config/env.json';
 import { isAuditedCert } from '../../../../utils/is-audited';
 import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
-import { ChallengeNodeType } from '../../redux/prop-types';
+import { ChallengeNode } from '../../redux/prop-types';
 import { Link, Spacer } from '../helpers';
 
 import './map.css';
@@ -21,13 +21,13 @@ interface MapProps {
 
 interface MapData {
   allChallengeNode: {
-    nodes: ChallengeNodeType[];
+    nodes: ChallengeNode[];
   };
 }
 
 function createSuperBlockTitle(superBlock: SuperBlocks) {
   const superBlockTitle = i18next.t(`intro:${superBlock}.title`);
-  return superBlock === SuperBlocks.CodingInterviewPrep
+  return superBlock === 'coding-interview-prep'
     ? i18next.t('learn.cert-map-estimates.coding-prep', {
         title: superBlockTitle
       })
@@ -40,10 +40,8 @@ const linkSpacingStyle = {
   alignItems: 'center'
 };
 
-function renderLandingMap(nodes: ChallengeNodeType[]) {
-  nodes = nodes.filter(
-    node => node.superBlock !== SuperBlocks.CodingInterviewPrep
-  );
+function renderLandingMap(nodes: ChallengeNode[]) {
+  nodes = nodes.filter(node => node.superBlock !== SuperBlocks.CodingInterviewPrep);
   return (
     <ul data-test-label='certifications'>
       {nodes.map((node, i) => (
@@ -64,7 +62,7 @@ function renderLandingMap(nodes: ChallengeNodeType[]) {
   );
 }
 
-function renderLearnMap(nodes: ChallengeNodeType[], currentSuperBlock = '') {
+function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
   nodes = nodes.filter(node => node.superBlock !== currentSuperBlock);
   return curriculumLocale === 'english' ? (
     <ul data-test-label='learn-curriculum-map'>
@@ -93,7 +91,10 @@ function renderLearnMap(nodes: ChallengeNodeType[], currentSuperBlock = '') {
               to={`/learn/${node.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
-                {generateIconComponent(node.superBlock, 'map-icon')}
+                {generateIconComponent(
+                  node.superBlock,
+                  'map-icon'
+                )}
                 {createSuperBlockTitle(node.superBlock)}
               </div>
             </Link>
@@ -120,7 +121,10 @@ function renderLearnMap(nodes: ChallengeNodeType[], currentSuperBlock = '') {
               to={`/learn/${node.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
-                {generateIconComponent(node.superBlock, 'map-icon')}
+                {generateIconComponent(
+                  node.superBlock,
+                  'map-icon'
+                )}
                 {createSuperBlockTitle(node.superBlock)}
               </div>
             </Link>

@@ -1,6 +1,6 @@
 ---
 id: 5900f42f1000cf542c50ff40
-title: 'Problem 194: Coloured Configurations'
+title: 'Problema 194: Configurações colorizadas'
 challengeType: 5
 forumTopicId: 301832
 dashedName: problem-194-coloured-configurations
@@ -8,24 +8,22 @@ dashedName: problem-194-coloured-configurations
 
 # --description--
 
-Consider graphs built with the units A:
+Considere gráficos construídos com as unidades A:
+<img class="img-responsive" alt="gráfico da unidade A" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-1.png" style="display: inline-block; background-color: white; padding: 10px;" />
+ e B: <img class="img-responsive" alt="gráfico da unidade B" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-2.png" style="display: inline-block; background-color: white; padding: 10px;" />, onde as unidades são grudadas ao longo das arestas verticais, como no desenho <img class="img-responsive" alt="gráfico com quatro unidades grudadas ao longo das arestas verticais" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-3.png" style="display: inline-block; background-color: white; padding: 10px;" />.
 
-and B: , where the units are glued along
+Uma configuração do tipo $(a,b,c)$ é um gráfico que faz parte de $a$ unidades A e $b$ unidades B, onde os vértices do gráfico são colorizados usando até $c$ cores, de modo que nenhum dois vértices adjacentes tenham a mesma cor. O gráfico composto acima é um exemplo de configuração do tipo $(2,2,6)$. De fato, é do tipo $(2,2,c)$ para todos os $c ≥ 4$
 
-the vertical edges as in the graph .
+Considere $N(a,b,c)$ o número de configurações do tipo $(a,b,c)$. Por exemplo, $N(1,0,3) = 24$, $N(0,2,4) = 92928$ e $N(2,2,3) = 20736$.
 
-A configuration of type (a,b,c) is a graph thus built of a units A and b units B, where the graph's vertices are coloured using up to c colours, so that no two adjacent vertices have the same colour. The compound graph above is an example of a configuration of type (2,2,6), in fact of type (2,2,c) for all c ≥ 4.
-
-Let N(a,b,c) be the number of configurations of type (a,b,c). For example, N(1,0,3) = 24, N(0,2,4) = 92928 and N(2,2,3) = 20736.
-
-Find the last 8 digits of N(25,75,1984).
+Encontre os últimos 8 dígitos de $N(25,75,1984)$.
 
 # --hints--
 
-`euler194()` should return 61190912.
+`coloredConfigurations()` deve retornar `61190912`.
 
 ```js
-assert.strictEqual(euler194(), 61190912);
+assert.strictEqual(coloredConfigurations(), 61190912);
 ```
 
 # --seed--
@@ -33,12 +31,12 @@ assert.strictEqual(euler194(), 61190912);
 ## --seed-contents--
 
 ```js
-function euler194() {
+function coloredConfigurations() {
 
   return true;
 }
 
-euler194();
+coloredConfigurations();
 ```
 
 # --solutions--

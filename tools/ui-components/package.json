@@ -21,9 +21,9 @@
   "dependencies": {
     "@babel/preset-typescript": "7.16.0",
     "@types/jest": "27.0.2",
-    "@types/node": "16.11.6",
+    "@types/node": "16.11.7",
     "@types/react": "17.0.33",
-    "@types/react-dom": "17.0.10",
+    "@types/react-dom": "17.0.11",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "typescript": "4.4.4"
@@ -48,7 +48,7 @@
     "postcss-import": "14.0.2",
     "tailwindcss": "2.2.19",
     "rimraf": "3.0.2",
-    "rollup": "2.59.0",
+    "rollup": "2.60.0",
     "rollup-plugin-postcss": "4.0.1",
     "rollup-plugin-terser": "7.0.2"
   },

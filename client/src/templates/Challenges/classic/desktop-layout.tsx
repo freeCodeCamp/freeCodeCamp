@@ -6,10 +6,10 @@ import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import {
   ChallengeFile,
   ChallengeFiles,
-  ResizePropsType
+  ResizeProps
 } from '../../../redux/prop-types';
-import EditorTabs from './EditorTabs';
 import ActionRow from './action-row';
+import EditorTabs from './editor-tabs';
 
 const { showUpcomingChanges } = envData;
 
@@ -30,7 +30,7 @@ interface DesktopLayoutProps {
     testsPane: Pane;
   };
   preview: ReactElement;
-  resizeProps: ResizePropsType;
+  resizeProps: ResizeProps;
   superBlock: string;
   testOutput: ReactElement;
 }

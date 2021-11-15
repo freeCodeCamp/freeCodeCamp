@@ -15,12 +15,12 @@ import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 import CampersImage from './campers-image';
 
-interface landingTopProps {
+interface LandingTopProps {
   pageName: string;
 }
 
 const { clientLocale } = envData;
-function LandingTop({ pageName }: landingTopProps): JSX.Element {
+function LandingTop({ pageName }: LandingTopProps): JSX.Element {
   const { t } = useTranslation();
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale

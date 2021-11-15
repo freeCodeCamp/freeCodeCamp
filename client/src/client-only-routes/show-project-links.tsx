@@ -4,11 +4,7 @@ import '../components/layouts/project-links.css';
 import { Trans, useTranslation } from 'react-i18next';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { Spacer, Link } from '../components/helpers';
-import {
-  ChallengeFiles,
-  CompletedChallenge,
-  UserType
-} from '../redux/prop-types';
+import { ChallengeFiles, CompletedChallenge, User } from '../redux/prop-types';
 import {
   projectMap,
   legacyProjectMap
@@ -16,27 +12,27 @@ import {
 
 import { maybeUrlRE } from '../utils';
 
-interface IShowProjectLinksProps {
+interface ShowProjectLinksProps {
   certName: string;
   name: string;
-  user: UserType;
+  user: User;
 }
 
-type SolutionStateType = {
+type SolutionState = {
   projectTitle: string;
   challengeFiles: ChallengeFiles;
   solution: CompletedChallenge['solution'];
   isOpen: boolean;
 };
 
-const initSolutionState: SolutionStateType = {
+const initSolutionState: SolutionState = {
   projectTitle: '',
   challengeFiles: null,
   solution: '',
   isOpen: false
 };
 
-const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
+const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const [solutionState, setSolutionState] = useState(initSolutionState);
 
   const handleSolutionModalHide = () => setSolutionState(initSolutionState);

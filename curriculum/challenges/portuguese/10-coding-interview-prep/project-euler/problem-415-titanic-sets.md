@@ -14,7 +14,7 @@ Um exemplo de um conjunto titânico é $S = \\{(0, 0), (0, 1), (0, 2), (1, 1), (
 
 Por outro lado, o conjunto {(0, 0), (1, 1), (2, 2), (4, 4)} não é um conjunto titânico, já que a linha que passa por dois pontos quaisquer no conjunto também passa pelos outros dois.
 
-Para qualquer inteiro positivo $N$, consideremos que $T(N)$ é o número de conjuntos titânicos $S$ em que cada ponto ($x$, $y$) satisfaz $0 ≤ x$, $y ≤ N$. Pode-se verificar que $T(1) = 11$, $T(2) = 494$, $T(4) = 33\\,554\\,178$, $T(111)\bmod {10}^8 = 13\\,500\\,401$ e $T({10}^5)\bmod {10}^8 = 63\\,259\\,062$.
+Para qualquer inteiro positivo $N$, consideremos que $T(N)$ é o número de conjuntos titânicos $S$ em que cada ponto ($x$, $y$) satisfaz $0 ≤ x$, $y ≤ N$. Pode-se verificar que $T(1) = 11$, $T(2) = 494$, $T(4) = 33.554.178$, $T(111)\bmod {10}^8 = 13.500.401$ e $T({10}^5)\bmod {10}^8 = 63.259.062$.
 
 Encontre $T({10}^{11})\bmod {10}^8$.
 

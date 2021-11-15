@@ -1,0 +1,130 @@
+{
+  "name": "CSS Ferris Wheel",
+  "isUpcomingChange": true,
+  "dashedName": "css-ferris-wheel",
+  "order": 15,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "6140c7e645d8e905819f1dd4",
+      "Step 1"
+    ],
+    [
+      "6140c9d35015ae0ba0c250e8",
+      "Step 2"
+    ],
+    [
+      "6140cbeec34e970dfe75e710",
+      "Step 3"
+    ],
+    [
+      "6140cd32d018ed0f600eefce",
+      "Step 4"
+    ],
+    [
+      "617ace7d831f9c16a569b38a",
+      "Step 5"
+    ],
+    [
+      "6140cdebd39d6a101e747529",
+      "Step 6"
+    ],
+    [
+      "6140cfc08ca9c5128c3e6478",
+      "Step 7"
+    ],
+    [
+      "6140d0069049f5139d78da40",
+      "Step 8"
+    ],
+    [
+      "6140d10d50636e14695013b2",
+      "Step 9"
+    ],
+    [
+      "6140d1a351e88f159ed54fca",
+      "Step 10"
+    ],
+    [
+      "6140d263016325162fd076fe",
+      "Step 11"
+    ],
+    [
+      "6140d2b687a2cd17bac5730c",
+      "Step 12"
+    ],
+    [
+      "6140d36b8b747718b50d4b7a",
+      "Step 13"
+    ],
+    [
+      "6140d3dc359b371b1a21d783",
+      "Step 14"
+    ],
+    [
+      "6140d4bc9db3c81c51a09ab7",
+      "Step 15"
+    ],
+    [
+      "6140d94b5fab7f1d73c9bedb",
+      "Step 16"
+    ],
+    [
+      "6140dc5e13d0c81e7496f182",
+      "Step 17"
+    ],
+    [
+      "6140dd77e0bc5a1f70bd7466",
+      "Step 18"
+    ],
+    [
+      "6140de31b1f5b420410728ff",
+      "Step 19"
+    ],
+    [
+      "6140df547f09402144e40b92",
+      "Step 20"
+    ],
+    [
+      "6140e0d875ec16262f26432b",
+      "Step 21"
+    ],
+    [
+      "6140f4b5c1555a2960de1e5f",
+      "Step 22"
+    ],
+    [
+      "614100d7d335bb2a5ff74f1f",
+      "Step 23"
+    ],
+    [
+      "61410126fa3a6d2b3cda502e",
+      "Step 24"
+    ],
+    [
+      "6141019eadec6d2c6c6f007b",
+      "Step 25"
+    ],
+    [
+      "6141026ec9882f2d39dcf2b8",
+      "Step 26"
+    ],
+    [
+      "6169ab1aaeb4cd1174def700",
+      "Step 27"
+    ],
+    [
+      "6169b1357fcb701bb5efc619",
+      "Step 28"
+    ],
+    [
+      "6169b284950e171d8d0bb16a",
+      "Step 29"
+    ]
+  ]
+}

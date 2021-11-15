@@ -438,9 +438,8 @@ a.patreon-button {
   background-color: #ff424d;
   min-height: 42px;
   border: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
 }
 a.patreon-button svg {
   max-height: 12px;

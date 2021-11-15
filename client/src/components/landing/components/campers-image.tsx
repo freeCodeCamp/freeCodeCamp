@@ -6,28 +6,22 @@ import { Spacer, ImageLoader } from '../../helpers';
 
 const LARGE_SCREEN_SIZE = 1200;
 
-interface campersImageProps {
+interface CampersImageProps {
   pageName: string;
 }
 
-interface imageSizeProps {
-  spacerSize: number;
-  height: number;
-  width: number;
-}
-
-const donateImageSize: imageSizeProps = {
+const donateImageSize = {
   spacerSize: 0,
   height: 345,
   width: 585
 };
 
-const landingImageSize: imageSizeProps = {
+const landingImageSize = {
   spacerSize: 2,
   height: 442,
   width: 750
 };
-function CampersImage({ pageName }: campersImageProps): JSX.Element {
+function CampersImage({ pageName }: CampersImageProps): JSX.Element {
   const { t } = useTranslation();
 
   const { spacerSize, height, width } =

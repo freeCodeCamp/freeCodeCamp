@@ -1,6 +1,6 @@
 ---
 id: 5900f4331000cf542c50ff45
-title: 'Problem 198: Ambiguous Numbers'
+title: 'Problema 198: Números ambíguos'
 challengeType: 5
 forumTopicId: 301836
 dashedName: problem-198-ambiguous-numbers
@@ -8,18 +8,18 @@ dashedName: problem-198-ambiguous-numbers
 
 # --description--
 
-A best approximation to a real number x for the denominator bound d is a rational number r/s (in reduced form) with s ≤ d, so that any rational number p/q which is closer to x than r/s has q > d.
+Uma melhor aproximação de um número real $x$ para o denominador vinculado $d$ é um número racional $\frac{r}{s}$ (na forma reduzida), com $s ≤ d$, tal que qualquer número racional $\frac{p}{q}$ que esteja mais próximo de $x$ do que de $\frac{r}{s}$ tenha $q > d$.
 
-Usually the best approximation to a real number is uniquely determined for all denominator bounds. However, there are some exceptions, e.g. 9/40 has the two best approximations 1/4 and 1/5 for the denominator bound 6. We shall call a real number x ambiguous, if there is at least one denominator bound for which x possesses two best approximations. Clearly, an ambiguous number is necessarily rational.
+Geralmente, a melhor aproximação de um número real é determinada exclusivamente para todos os denominadores vinculados. No entanto, há algumas exceções. Por exemplo, $\frac{9}{40}$ tem as duas melhores aproximações $\frac{1}{4}$ e $\frac{1}{5}$ para o denominador vinculado $6$. Chamaremos um número real $x$ de ambíguo se houver pelo menos um denominador vinculado para o qual $x$ possui duas melhores aproximações. Claramente, um número ambíguo é necessariamente racional.
 
-How many ambiguous numbers x = p/q, 0 &lt; x &lt; 1/100, are there whose denominator q does not exceed 108?
+Quantos números ambíguos $x = \frac{p}{q}$, $0 &lt; x &lt; \frac{1}{100}$, existem cujo denominador $q$ não exceda ${10}^8$?
 
 # --hints--
 
-`euler198()` should return 52374425.
+`ambiguousNumbers()` deve retornar `52374425`.
 
 ```js
-assert.strictEqual(euler198(), 52374425);
+assert.strictEqual(ambiguousNumbers(), 52374425);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler198(), 52374425);
 ## --seed-contents--
 
 ```js
-function euler198() {
+function ambiguousNumbers() {
 
   return true;
 }
 
-euler198();
+ambiguousNumbers();
 ```
 
 # --solutions--

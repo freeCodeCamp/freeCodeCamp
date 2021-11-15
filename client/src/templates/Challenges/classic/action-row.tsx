@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import BreadCrumb from '../components/bread-crumb';
 import { resetChallenge } from '../redux';
-import EditorTabs from './EditorTabs';
+import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
   block: string;

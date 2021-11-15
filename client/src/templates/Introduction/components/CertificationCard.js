@@ -7,7 +7,7 @@ import Caret from '../../../assets/icons/caret';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 // import { navigate } from 'gatsby';
 import GreenPass from '../../../assets/icons/green-pass';
-import { StepsType } from '../../../redux/prop-types';
+import { StepsPropType } from '../../../redux/prop-types';
 import ClaimCertSteps from './ClaimCertSteps';
 
 const propTypes = {
@@ -17,7 +17,7 @@ const propTypes = {
     numberOfSteps: PropTypes.number,
     completedCount: PropTypes.number
   }),
-  steps: StepsType,
+  steps: StepsPropType,
   superBlock: PropTypes.string
 };
 

@@ -22,13 +22,13 @@ import {
   isSignedInSelector,
   hardGoTo as navigate
 } from '../redux';
-import { UserType } from '../redux/prop-types';
+import { User } from '../redux/prop-types';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 
 const { apiLocation } = envData;
 
 // TODO: update types for actions
-interface IShowSettingsProps {
+interface ShowSettingsProps {
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
   navigate: (location: string) => void;
@@ -40,7 +40,7 @@ interface IShowSettingsProps {
   updateIsHonest: () => void;
   updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
-  user: UserType;
+  user: User;
   verifyCert: () => void;
   path?: string;
 }
@@ -49,7 +49,7 @@ const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  (showLoading: boolean, user: UserType, isSignedIn) => ({
+  (showLoading: boolean, user: User, isSignedIn) => ({
     showLoading,
     user,
     isSignedIn
@@ -70,7 +70,7 @@ const mapDispatchToProps = {
   verifyCert
 };
 
-export function ShowSettings(props: IShowSettingsProps): JSX.Element {
+export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const { t } = useTranslation();
   const {
     createFlashMessage,

@@ -23,11 +23,7 @@ import {
   tryToShowDonationModal,
   userSelector
 } from '../../redux';
-import {
-  MarkdownRemarkType,
-  AllChallengeNodeType,
-  UserType
-} from '../../redux/prop-types';
+import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 import Block from './components/Block';
 import CertChallenge from './components/CertChallenge';
 import SuperBlockIntro from './components/SuperBlockIntro';
@@ -44,8 +40,8 @@ type FetchState = {
 type SuperBlockProp = {
   currentChallengeId: string;
   data: {
-    markdownRemark: MarkdownRemarkType;
-    allChallengeNode: AllChallengeNodeType;
+    markdownRemark: MarkdownRemark;
+    allChallengeNode: AllChallengeNode;
   };
   expandedState: {
     [key: string]: boolean;
@@ -58,7 +54,7 @@ type SuperBlockProp = {
   t: TFunction;
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
-  user: UserType;
+  user: User;
 };
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
@@ -75,7 +71,7 @@ const mapStateToProps = (state: unknown) => {
       isSignedIn,
       signInLoading: boolean,
       fetchState: FetchState,
-      user: UserType
+      user: User
     ) => ({
       currentChallengeId,
       isSignedIn,

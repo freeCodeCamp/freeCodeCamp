@@ -26,7 +26,7 @@ Ajuda ler os dígitos em voz alta:
 
 ...
 
-Defina $A(n)$, $B(n)$ e $C(n)$ como o número de uns, dois e três no $n$'ésimo elemento da sequência, respectivamente. Podemos verificar se $A(40) = 31\\,254$, $B(40) = 20\\,259$ e $C(40) = 11\\,625$.
+Defina $A(n)$, $B(n)$ e $C(n)$ como o número de uns, dois e três no $n$'ésimo elemento da sequência, respectivamente. Podemos verificar se $A(40) = 31.254$, $B(40) = 20.259$ e $C(40) = 11.625$.
 
 Calcule $A(n)$, $B(n)$ e $C(n)$ para $n = {10}^{12}$. Dê o modulo $2^{30}$ de sua respostas como uma string e separe seus valores para $A$, $B$ e $C$ por uma vírgula. Ex: para $n = 40$, a resposta seria `31254,20259,11625`.
 

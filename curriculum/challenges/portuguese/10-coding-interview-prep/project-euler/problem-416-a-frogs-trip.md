@@ -12,7 +12,7 @@ Uma fileira de $n$ quadrados contém um sapo no quadrado mais à esquerda. Em su
 
 Considere que $F(m, n)$ é o número de maneiras pelas quais o sapo pode viajar, sendo que, no máximo, um quadrado pode permanecer sem ser visitado.
 
-Por exemplo, $F(1, 3) = 4$, $F(1, 4) = 15$, $F(1, 5) = 46$, $F(2, 3) = 16$ e $F(2, 100)\bmod {10}^9 = 429\\,619\\,151$.
+Por exemplo, $F(1, 3) = 4$, $F(1, 4) = 15$, $F(1, 5) = 46$, $F(2, 3) = 16$ e $F(2, 100)\bmod {10}^9 = 429.619.151$.
 
 Encontre os últimos 9 dígitos de $F(10, {10}^{12})$.
 

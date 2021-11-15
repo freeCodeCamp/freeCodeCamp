@@ -2,78 +2,7 @@ import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../config/certification-settings';
 
-export const FileType = PropTypes.shape({
-  key: PropTypes.string,
-  ext: PropTypes.string,
-  name: PropTypes.string,
-  contents: PropTypes.string,
-  head: PropTypes.string,
-  tail: PropTypes.string
-});
-
-export const MarkdownRemark = PropTypes.shape({
-  html: PropTypes.string,
-  frontmatter: PropTypes.shape({
-    title: PropTypes.string,
-    block: PropTypes.string,
-    superBlock: PropTypes.string
-  })
-});
-
-export const ChallengeNode = PropTypes.shape({
-  block: PropTypes.string,
-  challengeOrder: PropTypes.number,
-  challengeType: PropTypes.number,
-  dashedName: PropTypes.string,
-  description: PropTypes.string,
-  challengeFiles: PropTypes.array,
-  fields: PropTypes.shape({
-    slug: PropTypes.string,
-    blockName: PropTypes.string
-  }),
-  forumTopicId: PropTypes.number,
-  guideUrl: PropTypes.string,
-  head: PropTypes.arrayOf(PropTypes.string),
-  helpCategory: PropTypes.string,
-  instructions: PropTypes.string,
-  isComingSoon: PropTypes.bool,
-  removeComments: PropTypes.bool,
-  isLocked: PropTypes.bool,
-  isPrivate: PropTypes.bool,
-  order: PropTypes.number,
-  required: PropTypes.arrayOf(
-    PropTypes.shape({
-      link: PropTypes.string,
-      raw: PropTypes.string,
-      src: PropTypes.string
-    })
-  ),
-  superOrder: PropTypes.number,
-  superBlock: PropTypes.string,
-  tail: PropTypes.arrayOf(PropTypes.string),
-  time: PropTypes.string,
-  title: PropTypes.string,
-  translationPending: PropTypes.bool,
-  videoUrl: PropTypes.string
-});
-
-export const AllChallengeNode = PropTypes.shape({
-  edges: PropTypes.arrayOf(
-    PropTypes.shape({
-      node: ChallengeNode
-    })
-  )
-});
-
-export const AllMarkdownRemark = PropTypes.shape({
-  edges: PropTypes.arrayOf(
-    PropTypes.shape({
-      node: MarkdownRemark
-    })
-  )
-});
-
-export const User = PropTypes.shape({
+export const UserPropType = PropTypes.shape({
   about: PropTypes.string,
   completedChallenges: PropTypes.arrayOf(
     PropTypes.shape({
@@ -126,7 +55,7 @@ export const User = PropTypes.shape({
   website: PropTypes.string
 });
 
-export const CurrentCertsType = PropTypes.arrayOf(
+export const CurrentCertsPropType = PropTypes.arrayOf(
   PropTypes.shape({
     show: PropTypes.bool,
     title: PropTypes.string,
@@ -134,22 +63,20 @@ export const CurrentCertsType = PropTypes.arrayOf(
   })
 );
 
-export const StepsType = PropTypes.shape({
-  currentCerts: CurrentCertsType,
+export const StepsPropType = PropTypes.shape({
+  currentCerts: CurrentCertsPropType,
   isShowCerts: PropTypes.bool,
   isShowName: PropTypes.bool,
   isShowProfile: PropTypes.bool
 });
 
-// TYPESCRIPT TYPES
-
-export type CurrentCertType = {
+export type CurrentCert = {
   show: boolean;
   title: string;
   certSlug: string;
 };
 
-export type MarkdownRemarkType = {
+export type MarkdownRemark = {
   fields: [{ component: string; nodeIdentity: string; slug: string }];
   fileAbsolutePath: string;
   frontmatter: {
@@ -197,7 +124,7 @@ export interface VideoLocaleIds {
   portuguese?: string;
 }
 
-export type ChallengeNodeType = {
+export type ChallengeNode = {
   block: string;
   challengeOrder: number;
   challengeType: number;
@@ -212,15 +139,31 @@ export type ChallengeNodeType = {
   id: string;
   instructions: string;
   isComingSoon: boolean;
+  internal?: {
+    content: string;
+    contentDigest: string;
+    description: string;
+    fieldOwners: string[];
+    ignoreType: boolean | null;
+    mediaType: string;
+    owner: string;
+    type: string;
+  };
   removeComments: boolean;
   isLocked: boolean;
   isPrivate: boolean;
   order: number;
   question: Question;
   required: Required[];
+  solutions: {
+    [T in FileKey]: FileKeyChallenge;
+  };
+  sourceInstanceName: string;
   superOrder: number;
   superBlock: SuperBlocks;
   tail: string[];
+  template: string;
+  tests: Test[];
   time: string;
   title: string;
   translationPending: boolean;
@@ -232,28 +175,28 @@ export type ChallengeNodeType = {
   videoUrl: string;
 };
 
-export type AllChallengeNodeType = {
+export type AllChallengeNode = {
   edges: [
     {
-      node: ChallengeNodeType;
+      node: ChallengeNode;
     }
   ];
 };
 
-export type AllMarkdownRemarkType = {
+export type AllMarkdownRemark = {
   edges: [
     {
-      node: MarkdownRemarkType;
+      node: MarkdownRemark;
     }
   ];
 };
 
-export type ResizePropsType = {
+export type ResizeProps = {
   onStopResize: (arg0: HandlerProps) => void;
   onResize: () => void;
 };
 
-export type DimensionsType = {
+export type Dimensions = {
   height: number;
   width: number;
 };
@@ -273,7 +216,8 @@ export type CertTest = {
   title: string;
 };
 
-export type UserType = {
+export type User = {
+  calendar: unknown;
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
@@ -283,18 +227,20 @@ export type UserType = {
   githubProfile: string;
   isBanned: boolean;
   isCheater: boolean;
+  isDonating: boolean;
   isHonest: boolean;
+  isGithub: boolean;
+  isLinkedIn: boolean;
+  isTwitter: boolean;
+  isWebsite: boolean;
+  joinDate: string;
   linkedin: string;
   location: string;
   name: string;
   picture: string;
   points: number;
-  portfolio: PortfolioType[];
-  profileUI: {
-    isLocked: boolean;
-    showCerts: boolean;
-    showName: boolean;
-  };
+  portfolio: Portfolio[];
+  profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   sendQuincyEmail: boolean;
   sound: boolean;
@@ -302,9 +248,24 @@ export type UserType = {
   twitter: string;
   username: string;
   website: string;
-} & isCertifiedTypes;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  yearsTopContributor: any[];
+} & ClaimedCertifications;
 
-export type isCertifiedTypes = {
+export type ProfileUI = {
+  isLocked: boolean;
+  showAbout: boolean;
+  showCerts: boolean;
+  showDonation: boolean;
+  showHeatMap: boolean;
+  showLocation: boolean;
+  showName: boolean;
+  showPoints: boolean;
+  showPortfolio: boolean;
+  showTimeLine: boolean;
+};
+
+export type ClaimedCertifications = {
   is2018DataVisCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;
@@ -332,10 +293,10 @@ export type CompletedChallenge = {
   challengeFiles: ChallengeFiles;
 };
 
-export type ExtTypes = 'js' | 'html' | 'css' | 'jsx';
-export type FileKeyTypes = 'indexjs' | 'indexhtml' | 'indexcss';
+export type Ext = 'js' | 'html' | 'css' | 'jsx';
+export type FileKey = 'indexjs' | 'indexhtml' | 'indexcss';
 
-export type ChallengeMetaType = {
+export type ChallengeMeta = {
   block: string;
   id: string;
   introPath: string;
@@ -348,7 +309,7 @@ export type ChallengeMetaType = {
   helpCategory: string;
 };
 
-export type PortfolioType = {
+export type Portfolio = {
   id: string;
   title?: string;
   url?: string;
@@ -356,88 +317,19 @@ export type PortfolioType = {
   description?: string;
 };
 
-export type FileKeyChallengeType = {
+export type FileKeyChallenge = {
   contents: string;
-  ext: ExtTypes;
+  ext: Ext;
   head: string;
   id: string;
-  key: FileKeyTypes;
+  key: FileKey;
   name: string;
   tail: string;
 };
 
-// This looks redundant - same as ChallengeNodeType above?
-// TODO: @moT01 Yes, it is an almost duplicate because @ojeytonwilliams
-// does not allow us to add 'Type' at the end...
-// The below is more accurate, because it was built based on graphql's
-// interpretation of what we have. The props commented out are what we
-// think are on the node, but actually do not exist.
-export type ChallengeNode = {
-  block: string;
-  challengeFiles: ChallengeFiles;
-  challengeOrder: number;
-  challengeType: number;
-  dashedName: string;
-  description: string;
-  fields: {
-    slug: string;
-    blockName: string;
-    tests: Test[];
-  };
-  forumTopicId: number;
-  // guideUrl: string;
-  // head: string[];
-  helpCategory: string;
-  id: string;
-  instructions: string;
-  internal?: {
-    content: string;
-    contentDigest: string;
-    description: string;
-    fieldOwners: string[];
-    ignoreType: boolean | null;
-    mediaType: string;
-    owner: string;
-    type: string;
-  };
-  order: number;
-  question: {
-    answers: string[];
-    solution: number;
-    text: string;
-  } | null;
-  removeComments: boolean;
-  required: [
-    {
-      link: string;
-      raw: string;
-      src: string;
-    }
-  ];
-  solutions: {
-    [T in FileKeyTypes]: FileKeyChallengeType;
-  };
-  sourceInstanceName: string;
-  superBlock: SuperBlocks;
-  superOrder: number;
-  template: string;
-  tests: Test[];
-  time: string;
-  title: string;
-  translationPending: boolean;
-  videoId?: string;
-  videoUrl?: string;
-  // isComingSoon: boolean;
-  // isLocked: boolean;
-  // isPrivate: boolean;
-  // tail: string[];
-};
-
-// Extra types built from challengeSchema
-
 export type ChallengeFile = {
   fileKey: string;
-  ext: ExtTypes;
+  ext: Ext;
   name: string;
   editableRegionBoundaries: number[];
   usesMultifileEditor: boolean;
@@ -452,42 +344,3 @@ export type ChallengeFile = {
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;
-
-export interface ChallengeSchema {
-  block: string;
-  blockId: string;
-  challengeOrder: number;
-  removeComments: boolean;
-  // TODO: should be typed with possible values
-  challengeType: number;
-  checksum: number;
-  __commentCounts: Record<string, unknown>;
-  dashedName: string;
-  description: string;
-  challengeFiles: ChallengeFiles;
-  guideUrl: string;
-  // TODO: should be typed with possible values
-  helpCategory: string;
-  videoUrl: string;
-  forumTopicId: number;
-  id: string;
-  instructions: string;
-  isComingSoon: boolean;
-  // TODO: Do we still use this
-  isLocked: boolean;
-  isPrivate: boolean;
-  order: number;
-  videoId?: string;
-  question: Question;
-  required: Required[];
-  solutions: ChallengeFile[][];
-  superBlock: SuperBlocks;
-  superOrder: number;
-  suborder: number;
-  tests: Test[];
-  template: string;
-  time: string;
-  title: string;
-  translationPending: boolean;
-  url?: string;
-}

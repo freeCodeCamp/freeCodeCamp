@@ -1,6 +1,6 @@
 ---
 id: 5900f4131000cf542c50ff25
-title: 'Problem 166: Criss Cross'
+title: 'Problema 166: Cruzamentos'
 challengeType: 5
 forumTopicId: 301800
 dashedName: problem-166-criss-cross
@@ -8,22 +8,22 @@ dashedName: problem-166-criss-cross
 
 # --description--
 
-A 4x4 grid is filled with digits d, 0 ≤ d ≤ 9.
+Uma grade de 4x4 é preenchida por algarismos $d$, sendo que $0 ≤ d ≤ 9$.
 
-It can be seen that in the grid
+Pode-se ver que na grade
 
-6 3 3 0 5 0 4 3 0 7 1 4 1 2 4 5
+$$\begin{array}{} 6 & 3 & 3 & 0 \\\\ 5 & 0 & 4 & 3 \\\\ 0 & 7 & 1 & 4 \\\\ 1 & 2 & 4 & 5 \end{array}$$
 
-the sum of each row and each column has the value 12. Moreover the sum of each diagonal is also 12.
+a soma de cada linha e de cada coluna tem o valor 12. Além disso, a soma de cada diagonal também é 12.
 
-In how many ways can you fill a 4x4 grid with the digits d, 0 ≤ d ≤ 9 so that each row, each column, and both diagonals have the same sum?
+De quantas maneiras você pode preencher uma grade 4x4 com os dígitos $d$, sendo que $0 ≤ d ≤ 9$, de modo que cada linha, cada coluna e as duas diagonais tenham a mesma soma?
 
 # --hints--
 
-`euler166()` should return 7130034.
+`crissCross()` deve retornar `7130034`.
 
 ```js
-assert.strictEqual(euler166(), 7130034);
+assert.strictEqual(crissCross(), 7130034);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler166(), 7130034);
 ## --seed-contents--
 
 ```js
-function euler166() {
+function crissCross() {
 
   return true;
 }
 
-euler166();
+crissCross();
 ```
 
 # --solutions--

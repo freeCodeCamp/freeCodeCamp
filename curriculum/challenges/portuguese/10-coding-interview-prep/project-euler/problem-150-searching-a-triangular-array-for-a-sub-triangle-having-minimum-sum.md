@@ -1,7 +1,7 @@
 ---
 id: 5900f4031000cf542c50ff15
 title: >-
-  Problem 150: Searching a triangular array for a sub-triangle having minimum-sum
+  Problema 150: Procura de uma matriz triangular para um subtriângulo com a soma mínima
 challengeType: 5
 forumTopicId: 301781
 dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum
@@ -9,32 +9,34 @@ dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-m
 
 # --description--
 
-In a triangular array of positive and negative integers, we wish to find a sub-triangle such that the sum of the numbers it contains is the smallest possible.
+Em uma matriz triangular de números inteiros positivos e negativos, queremos encontrar um subtriângulo onde a soma dos números nele contidos seja a menor possível.
 
-In the example below, it can be easily verified that the marked triangle satisfies this condition having a sum of −42.
+No exemplo abaixo, pode ser facilmente verificado que o triângulo marcado satisfaz esta condição tendo uma soma de -42.
 
-We wish to make such a triangular array with one thousand rows, so we generate 500500 pseudo-random numbers sk in the range ±219, using a type of random number generator (known as a Linear Congruential Generator) as follows: t := 0
+<img class="img-responsive center-block" alt="matriz triangular, com subtriângulo marcado, somando -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;" />
 
-for k = 1 up to k = 500500:
+Queremos fazer uma matriz triangular desse tipo com mil fileiras. Então, geramos 500500 números pseudoaleatórios $s_k$ no intervalo $±2^{19}$, usando um tipo de gerador de número aleatório (conhecido como gerador congruente linear), da seguinte forma:
 
-t := (615949\*t + 797807) modulo 220 sk := t−219 Thus: s1 = 273519, s2 = −153582, s3 = 450905 etc Our triangular array is then formed using the pseudo-random numbers thus:
+$$\begin{align} t := & \\ 0\\\\ \text{for}\\ & k = 1\\ \text{up to}\\ k = 500500:\\\\ & t := (615949 × t + 797807)\\ \text{modulo}\\ 2^{20}\\\\ & s_k := t − 219\\\\ \end{align}$$
 
-s1 s2 s3 s4 s5 s6
+Assim: $s_1 = 273519$, $s_2 = −153582$, $s_3 = 450905$ e assim por diante.
 
-s7 s8 s9 s10 ...
+Nossa matriz triangular é então formada usando os pseudonúmeros aleatórios, ou seja:
 
-Sub-triangles can start at any element of the array and extend down as far as we like (taking-in the two elements directly below it from the next row, the three elements directly below from the row after that, and so on).
+$$ s_1 \\\\ s_2\\;s_3 \\\\ s_4\\; s_5\\; s_6 \\\\ s_7\\; s_8\\; s_9\\; s_{10} \\\\ \ldots $$
 
-The "sum of a sub-triangle" is defined as the sum of all the elements it contains.
+Os subtriângulos podem começar em qualquer elemento da matriz e se estender até onde quisermos (pegando os dois elementos diretamente abaixo dele na próxima fileira, sendo os três elementos diretamente abaixo da linha depois disso e assim por diante).
 
-Find the smallest possible sub-triangle sum.
+A "soma de um subtriângulo" é definida como a soma de todos os elementos que o contêm.
+
+Encontre o subtriângulo de menor soma de elementos possível.
 
 # --hints--
 
-`euler150()` should return -271248680.
+`smallestSubTriangleSum()` deve retornar `-271248680`.
 
 ```js
-assert.strictEqual(euler150(), -271248680);
+assert.strictEqual(smallestSubTriangleSum(), -271248680);
 ```
 
 # --seed--
@@ -42,12 +44,12 @@ assert.strictEqual(euler150(), -271248680);
 ## --seed-contents--
 
 ```js
-function euler150() {
+function smallestSubTriangleSum() {
 
   return true;
 }
 
-euler150();
+smallestSubTriangleSum();
 ```
 
 # --solutions--

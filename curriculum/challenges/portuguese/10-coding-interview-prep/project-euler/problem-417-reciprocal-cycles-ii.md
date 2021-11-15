@@ -16,9 +16,9 @@ A expressão $0.1(6)$ significa $0.16666666\dots$, e tem um ciclo recorrente de 
 
 Frações unitárias cujo denominador não tem outros fatores primos além de 2 e/ou 5 não são consideradas como tendo um ciclo recorrente. Definimos 0 como o comprimento do ciclo recorrente dessas frações unitárias.
 
-Considere que $L(n)$ denota o comprimento do ciclo recorrente de $\frac{1}{n}$. Você recebe a informação de que $\sum L(n)$ por $3 ≤ n ≤ 1\\,000\\,000$ é igual a $55\\,535\\,191\\,115$.
+Considere que $L(n)$ denota o comprimento do ciclo recorrente de $\frac{1}{n}$. Você recebe a informação de que $\sum L(n)$ por $3 ≤ n ≤ 1.000.000$ é igual a $55.535.191.115$.
 
-Calcule $\sum L(n)$ por $3 ≤ n ≤ 100\\,000\\,000$.
+Calcule $\sum L(n)$ por $3 ≤ n ≤ 100.000.000$.
 
 # --hints--
 

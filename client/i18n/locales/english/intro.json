@@ -101,7 +101,8 @@
       "css-nutrition-label": {
         "title": "CSS Nutrition Label",
         "intro": ["", ""]
-      }
+      },
+      "css-ferris-wheel": { "title": "CSS Ferris Wheel", "intro": ["", ""] }
     }
   },
   "javascript-algorithms-and-data-structures": {
