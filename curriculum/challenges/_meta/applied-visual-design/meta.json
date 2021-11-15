@@ -2,11 +2,12 @@
   "name": "Applied Visual Design",
   "isUpcomingChange": false,
   "dashedName": "applied-visual-design",
-  "order": 2,
+  "order": 18,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
+  "isLegacy": true,
   "challengeOrder": [
     [
       "587d7791367417b2b2512ab3",

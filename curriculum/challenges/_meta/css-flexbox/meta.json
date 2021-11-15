@@ -2,11 +2,12 @@
   "name": "CSS Flexbox",
   "isUpcomingChange": false,
   "dashedName": "css-flexbox",
-  "order": 5,
+  "order": 21,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
+  "isLegacy": true,
   "challengeOrder": [
     [
       "587d78ab367417b2b2512af0",

@@ -52,6 +52,7 @@ const schema = Joi.object()
     instructions: Joi.string().allow(''),
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
+    isLegacy: Joi.bool(),
     isPrivate: Joi.bool(),
     notes: Joi.string().allow(''),
     order: Joi.number(),

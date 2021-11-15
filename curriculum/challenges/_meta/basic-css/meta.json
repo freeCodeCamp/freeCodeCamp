@@ -2,11 +2,12 @@
   "name": "Basic CSS",
   "isUpcomingChange": false,
   "dashedName": "basic-css",
-  "order": 1,
+  "order": 17,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
+  "isLegacy": true,
   "challengeOrder": [
     [
       "bad87fee1348bd9aedf08803",

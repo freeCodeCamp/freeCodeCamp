@@ -156,6 +156,7 @@ export type ChallengeNode = {
     };
     notes: string;
     removeComments: boolean;
+    isLegacy: boolean;
     isLocked: boolean;
     isPrivate: boolean;
     order: number;

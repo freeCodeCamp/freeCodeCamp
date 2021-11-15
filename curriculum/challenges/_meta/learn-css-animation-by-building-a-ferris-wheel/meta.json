@@ -4,12 +4,11 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-css-animation-by-building-a-ferris-wheel",
-  "order": 15,
+  "order": 18,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "isBeta": true,
   "challengeOrder": [
     [
       "6140c7e645d8e905819f1dd4",

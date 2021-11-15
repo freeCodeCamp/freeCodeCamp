@@ -302,7 +302,8 @@ ${getFullPath('english')}
     required = [],
     template,
     time,
-    usesMultifileEditor
+    usesMultifileEditor,
+    isLegacy
   } = meta;
   challenge.block = dasherize(blockName);
   challenge.hasEditableBoundaries = !!hasEditableBoundaries;
@@ -320,6 +321,7 @@ ${getFullPath('english')}
   challenge.translationPending =
     lang !== 'english' && !isAuditedCert(lang, superBlock);
   challenge.usesMultifileEditor = !!usesMultifileEditor;
+  challenge.isLegacy = !!isLegacy;
 
   return prepareChallenge(challenge);
 }

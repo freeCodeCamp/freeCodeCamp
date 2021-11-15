@@ -2,11 +2,12 @@
   "name": "Basic HTML and HTML5",
   "isUpcomingChange": false,
   "dashedName": "basic-html-and-html5",
-  "order": 0,
+  "order": 16,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
+  "isLegacy": true,
   "challengeOrder": [
     [
       "bd7123c8c441eddfaeb5bdef",
