@@ -1,4 +1,17 @@
-const certTypes = {
+'use strict';
+var _a, _b, _c, _d, _e;
+exports.__esModule = true;
+exports.oldDataVizId =
+  exports.certTypeTitleMap =
+  exports.certTypeIdMap =
+  exports.superBlockCertTypeMap =
+  exports.certSlugTypeMap =
+  exports.completionHours =
+  exports.certIds =
+  exports.SuperBlocks =
+  exports.certTypes =
+    void 0;
+exports.certTypes = {
   frontEnd: 'isFrontEndCert',
   backEnd: 'isBackEndCert',
   dataVis: 'isDataVisCert',
@@ -16,8 +29,22 @@ const certTypes = {
   fullStack: 'isFullStackCert',
   relationalDatabasesV8: 'isRelationalDatabasesCertV8'
 };
-
-const certIds = {
+var SuperBlocks;
+(function (SuperBlocks) {
+  SuperBlocks['RespWebDesign'] = 'responsive-web-design';
+  SuperBlocks['JsAlgoDataStruct'] = 'javascript-algorithms-and-data-structures';
+  SuperBlocks['FrontEndDevLibs'] = 'front-end-development-libraries';
+  SuperBlocks['DataVis'] = 'data-visualization';
+  SuperBlocks['RelationalDb'] = 'relational-databases';
+  SuperBlocks['BackEndDevApis'] = 'back-end-development-and-apis';
+  SuperBlocks['QualityAssurance'] = 'quality-assurance';
+  SuperBlocks['SciCompPy'] = 'scientific-computing-with-python';
+  SuperBlocks['DataAnalysisPy'] = 'data-analysis-with-python';
+  SuperBlocks['InfoSec'] = 'information-security';
+  SuperBlocks['MachineLearningPy'] = 'machine-learning-with-python';
+  SuperBlocks['CodingInterviewPrep'] = 'coding-interview-prep';
+})((SuperBlocks = exports.SuperBlocks || (exports.SuperBlocks = {})));
+exports.certIds = {
   legacyFrontEndChallengeId: '561add10cb82ac38a17513be',
   legacyBackEndChallengeId: '660add10cb82ac38a17513be',
   legacyDataVisId: '561add10cb82ac39a17513bc',
@@ -35,115 +62,113 @@ const certIds = {
   machineLearningPyV7Id: '5e46fc95ac417301a38fb935',
   relationalDatabasesV8Id: '606243f50267e718b1e755f4'
 };
-
-const completionHours = {
-  [certTypes.frontEnd]: 400,
-  [certTypes.backEnd]: 400,
-  [certTypes.dataVis]: 400,
-  [certTypes.infosecQa]: 300,
-  [certTypes.fullStack]: 1800,
-  [certTypes.respWebDesign]: 300,
-  [certTypes.frontEndDevLibs]: 300,
-  [certTypes.jsAlgoDataStruct]: 300,
-  [certTypes.dataVis2018]: 300,
-  [certTypes.apisMicroservices]: 300,
-  [certTypes.qaV7]: 300,
-  [certTypes.infosecV7]: 300,
-  [certTypes.sciCompPyV7]: 300,
-  [certTypes.dataAnalysisPyV7]: 300,
-  [certTypes.machineLearningPyV7]: 300,
-  [certTypes.relationalDatabasesV8]: 300
-};
-
-const certSlugTypeMap = {
-  // legacy
-  'legacy-front-end': certTypes.frontEnd,
-  'legacy-back-end': certTypes.backEnd,
-  'legacy-data-visualization': certTypes.dataVis,
-  // Keep these slugs the same so we don't
-  // break existing links
-  'information-security-and-quality-assurance': certTypes.infosecQa,
-  'full-stack': certTypes.fullStack,
-
+exports.completionHours =
+  ((_a = {}),
+  (_a[exports.certTypes.frontEnd] = 400),
+  (_a[exports.certTypes.backEnd] = 400),
+  (_a[exports.certTypes.dataVis] = 400),
+  (_a[exports.certTypes.infosecQa] = 300),
+  (_a[exports.certTypes.fullStack] = 1800),
+  (_a[exports.certTypes.respWebDesign] = 300),
+  (_a[exports.certTypes.frontEndDevLibs] = 300),
+  (_a[exports.certTypes.jsAlgoDataStruct] = 300),
+  (_a[exports.certTypes.dataVis2018] = 300),
+  (_a[exports.certTypes.apisMicroservices] = 300),
+  (_a[exports.certTypes.qaV7] = 300),
+  (_a[exports.certTypes.infosecV7] = 300),
+  (_a[exports.certTypes.sciCompPyV7] = 300),
+  (_a[exports.certTypes.dataAnalysisPyV7] = 300),
+  (_a[exports.certTypes.machineLearningPyV7] = 300),
+  (_a[exports.certTypes.relationalDatabasesV8] = 300),
+  _a);
+exports.certSlugTypeMap =
+  ((_b = {
+    // legacy
+    'legacy-front-end': exports.certTypes.frontEnd,
+    'legacy-back-end': exports.certTypes.backEnd,
+    'legacy-data-visualization': exports.certTypes.dataVis,
+    // Keep these slugs the same so we don't
+    // break existing links
+    'information-security-and-quality-assurance': exports.certTypes.infosecQa,
+    'full-stack': exports.certTypes.fullStack
+  }),
   // modern
-  'responsive-web-design': certTypes.respWebDesign,
-  'javascript-algorithms-and-data-structures': certTypes.jsAlgoDataStruct,
-  'front-end-development-libraries': certTypes.frontEndDevLibs,
-  'data-visualization': certTypes.dataVis2018,
-  'back-end-development-and-apis': certTypes.apisMicroservices,
-  'quality-assurance-v7': certTypes.qaV7,
-  'information-security-v7': certTypes.infosecV7,
-  'scientific-computing-with-python-v7': certTypes.sciCompPyV7,
-  'data-analysis-with-python-v7': certTypes.dataAnalysisPyV7,
-  'machine-learning-with-python-v7': certTypes.machineLearningPyV7,
-  'relational-databases-v8': certTypes.relationalDatabasesV8
-};
-
-const superBlockCertTypeMap = {
-  // legacy
-  'legacy-front-end': certTypes.frontEnd,
-  'legacy-back-end': certTypes.backEnd,
-  'legacy-data-visualization': certTypes.dataVis,
-  'information-security-and-quality-assurance': certTypes.infosecQa,
-  'full-stack': certTypes.fullStack,
-
+  (_b[SuperBlocks.RespWebDesign] = exports.certTypes.respWebDesign),
+  (_b[SuperBlocks.JsAlgoDataStruct] = exports.certTypes.jsAlgoDataStruct),
+  (_b[SuperBlocks.FrontEndDevLibs] = exports.certTypes.frontEndDevLibs),
+  (_b[SuperBlocks.DataVis] = exports.certTypes.dataVis2018),
+  (_b[SuperBlocks.BackEndDevApis] = exports.certTypes.apisMicroservices),
+  (_b['quality-assurance-v7'] = exports.certTypes.qaV7),
+  (_b['information-security-v7'] = exports.certTypes.infosecV7),
+  (_b['scientific-computing-with-python-v7'] = exports.certTypes.sciCompPyV7),
+  (_b['data-analysis-with-python-v7'] = exports.certTypes.dataAnalysisPyV7),
+  (_b['machine-learning-with-python-v7'] =
+    exports.certTypes.machineLearningPyV7),
+  (_b['relational-databases-v8'] = exports.certTypes.relationalDatabasesV8),
+  _b);
+exports.superBlockCertTypeMap =
+  ((_c = {
+    // legacy
+    'legacy-front-end': exports.certTypes.frontEnd,
+    'legacy-back-end': exports.certTypes.backEnd,
+    'legacy-data-visualization': exports.certTypes.dataVis,
+    'information-security-and-quality-assurance': exports.certTypes.infosecQa,
+    'full-stack': exports.certTypes.fullStack
+  }),
   // modern
-  'responsive-web-design': certTypes.respWebDesign,
-  'javascript-algorithms-and-data-structures': certTypes.jsAlgoDataStruct,
-  'front-end-development-libraries': certTypes.frontEndDevLibs,
-  'data-visualization': certTypes.dataVis2018,
-  'back-end-development-and-apis': certTypes.apisMicroservices,
-  'quality-assurance': certTypes.qaV7,
-  'information-security': certTypes.infosecV7,
-  'scientific-computing-with-python': certTypes.sciCompPyV7,
-  'data-analysis-with-python': certTypes.dataAnalysisPyV7,
-  'machine-learning-with-python': certTypes.machineLearningPyV7,
-  'relational-databases': certTypes.relationalDatabasesV8
-};
-
-const certTypeIdMap = {
-  [certTypes.frontEnd]: certIds.legacyFrontEndChallengeId,
-  [certTypes.backEnd]: certIds.legacyBackEndChallengeId,
-  [certTypes.dataVis]: certIds.legacyDataVisId,
-  [certTypes.infosecQa]: certIds.legacyInfosecQaId,
-  [certTypes.fullStack]: certIds.legacyFullStackId,
-  [certTypes.respWebDesign]: certIds.respWebDesignId,
-  [certTypes.frontEndDevLibs]: certIds.frontEndDevLibsId,
-  [certTypes.jsAlgoDataStruct]: certIds.jsAlgoDataStructId,
-  [certTypes.dataVis2018]: certIds.dataVis2018Id,
-  [certTypes.apisMicroservices]: certIds.apisMicroservicesId,
-  [certTypes.qaV7]: certIds.qaV7Id,
-  [certTypes.infosecV7]: certIds.infosecV7Id,
-  [certTypes.sciCompPyV7]: certIds.sciCompPyV7Id,
-  [certTypes.dataAnalysisPyV7]: certIds.dataAnalysisPyV7Id,
-  [certTypes.machineLearningPyV7]: certIds.machineLearningPyV7Id,
-  [certTypes.relationalDatabasesV8]: certIds.relationalDatabasesV8Id
-};
-
-const certTypeTitleMap = {
-  [certTypes.frontEnd]: 'Legacy Front End',
-  [certTypes.backEnd]: 'Legacy Back End',
-  [certTypes.dataVis]: 'Legacy Data Visualization',
-  [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
-  [certTypes.fullStack]: 'Legacy Full Stack',
-  [certTypes.respWebDesign]: 'Responsive Web Design',
-  [certTypes.frontEndDevLibs]: 'Front End Development Libraries',
-  [certTypes.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures',
-  [certTypes.dataVis2018]: 'Data Visualization',
-  [certTypes.apisMicroservices]: 'Back End Development and APIs',
-  [certTypes.qaV7]: 'Quality Assurance',
-  [certTypes.infosecV7]: 'Information Security',
-  [certTypes.sciCompPyV7]: 'Scientific Computing with Python',
-  [certTypes.dataAnalysisPyV7]: 'Data Analysis with Python',
-  [certTypes.machineLearningPyV7]: 'Machine Learning with Python',
-  [certTypes.relationalDatabasesV8]: 'Relational Databases'
-};
-
+  (_c[SuperBlocks.RespWebDesign] = exports.certTypes.respWebDesign),
+  (_c[SuperBlocks.JsAlgoDataStruct] = exports.certTypes.jsAlgoDataStruct),
+  (_c[SuperBlocks.FrontEndDevLibs] = exports.certTypes.frontEndDevLibs),
+  (_c[SuperBlocks.DataVis] = exports.certTypes.dataVis2018),
+  (_c[SuperBlocks.BackEndDevApis] = exports.certTypes.apisMicroservices),
+  (_c[SuperBlocks.QualityAssurance] = exports.certTypes.qaV7),
+  (_c[SuperBlocks.InfoSec] = exports.certTypes.infosecV7),
+  (_c[SuperBlocks.SciCompPy] = exports.certTypes.sciCompPyV7),
+  (_c[SuperBlocks.DataAnalysisPy] = exports.certTypes.dataAnalysisPyV7),
+  (_c[SuperBlocks.MachineLearningPy] = exports.certTypes.machineLearningPyV7),
+  (_c[SuperBlocks.RelationalDb] = exports.certTypes.relationalDatabasesV8),
+  _c);
+exports.certTypeIdMap =
+  ((_d = {}),
+  (_d[exports.certTypes.frontEnd] = exports.certIds.legacyFrontEndChallengeId),
+  (_d[exports.certTypes.backEnd] = exports.certIds.legacyBackEndChallengeId),
+  (_d[exports.certTypes.dataVis] = exports.certIds.legacyDataVisId),
+  (_d[exports.certTypes.infosecQa] = exports.certIds.legacyInfosecQaId),
+  (_d[exports.certTypes.fullStack] = exports.certIds.legacyFullStackId),
+  (_d[exports.certTypes.respWebDesign] = exports.certIds.respWebDesignId),
+  (_d[exports.certTypes.frontEndDevLibs] = exports.certIds.frontEndDevLibsId),
+  (_d[exports.certTypes.jsAlgoDataStruct] = exports.certIds.jsAlgoDataStructId),
+  (_d[exports.certTypes.dataVis2018] = exports.certIds.dataVis2018Id),
+  (_d[exports.certTypes.apisMicroservices] =
+    exports.certIds.apisMicroservicesId),
+  (_d[exports.certTypes.qaV7] = exports.certIds.qaV7Id),
+  (_d[exports.certTypes.infosecV7] = exports.certIds.infosecV7Id),
+  (_d[exports.certTypes.sciCompPyV7] = exports.certIds.sciCompPyV7Id),
+  (_d[exports.certTypes.dataAnalysisPyV7] = exports.certIds.dataAnalysisPyV7Id),
+  (_d[exports.certTypes.machineLearningPyV7] =
+    exports.certIds.machineLearningPyV7Id),
+  (_d[exports.certTypes.relationalDatabasesV8] =
+    exports.certIds.relationalDatabasesV8Id),
+  _d);
+exports.certTypeTitleMap =
+  ((_e = {}),
+  (_e[exports.certTypes.frontEnd] = 'Legacy Front End'),
+  (_e[exports.certTypes.backEnd] = 'Legacy Back End'),
+  (_e[exports.certTypes.dataVis] = 'Legacy Data Visualization'),
+  (_e[exports.certTypes.infosecQa] =
+    'Legacy Information Security and Quality Assurance'),
+  (_e[exports.certTypes.fullStack] = 'Legacy Full Stack'),
+  (_e[exports.certTypes.respWebDesign] = 'Responsive Web Design'),
+  (_e[exports.certTypes.frontEndDevLibs] = 'Front End Development Libraries'),
+  (_e[exports.certTypes.jsAlgoDataStruct] =
+    'JavaScript Algorithms and Data Structures'),
+  (_e[exports.certTypes.dataVis2018] = 'Data Visualization'),
+  (_e[exports.certTypes.apisMicroservices] = 'Back End Development and APIs'),
+  (_e[exports.certTypes.qaV7] = 'Quality Assurance'),
+  (_e[exports.certTypes.infosecV7] = 'Information Security'),
+  (_e[exports.certTypes.sciCompPyV7] = 'Scientific Computing with Python'),
+  (_e[exports.certTypes.dataAnalysisPyV7] = 'Data Analysis with Python'),
+  (_e[exports.certTypes.machineLearningPyV7] = 'Machine Learning with Python'),
+  (_e[exports.certTypes.relationalDatabasesV8] = 'Relational Databases'),
+  _e);
 exports.oldDataVizId = '561add10cb82ac38a17513b3';
-exports.completionHours = completionHours;
-exports.certTypes = certTypes;
-exports.superBlockCertTypeMap = superBlockCertTypeMap;
-exports.certSlugTypeMap = certSlugTypeMap;
-exports.certIds = certIds;
-exports.certTypeIdMap = certTypeIdMap;
-exports.certTypeTitleMap = certTypeTitleMap;
