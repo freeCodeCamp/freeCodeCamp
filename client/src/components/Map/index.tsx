@@ -15,7 +15,7 @@ import './map.css';
 const { curriculumLocale } = envData;
 
 interface MapProps {
-  currentSuperBlock?: SuperBlocks;
+  currentSuperBlock?: SuperBlocks | null;
   forLanding?: boolean;
 }
 
@@ -64,7 +64,10 @@ function renderLandingMap(nodes: ChallengeNode[]) {
   );
 }
 
-function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
+function renderLearnMap(
+  nodes: ChallengeNode[],
+  currentSuperBlock: MapProps['currentSuperBlock']
+) {
   nodes = nodes.filter(node => node.superBlock !== currentSuperBlock);
   return curriculumLocale === 'english' ? (
     <ul data-test-label='learn-curriculum-map'>
@@ -132,7 +135,7 @@ function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
 
 export function Map({
   forLanding = false,
-  currentSuperBlock = SuperBlocks.RespWebDesign
+  currentSuperBlock = null
 }: MapProps): React.ReactElement {
   /*
    * this query gets the first challenge from each block and the second block
