@@ -12,8 +12,7 @@ const globalConfigPath = path.resolve(__dirname, '../../../config');
 const { FREECODECAMP_NODE_ENV } = process.env;
 
 function checkClientLocale() {
-  // TODO: With @ts-ignore an error is thrown during build
-  if (!availableLangs.client.includes(process.env.CLIENT_LOCALE)) {
+  if (!availableLangs.client.includes(process.env.CLIENT_LOCALE as string)) {
     /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
@@ -25,7 +24,9 @@ function checkClientLocale() {
 }
 
 function checkCurriculumLocale() {
-  if (!availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE)) {
+  if (
+    !availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE as string)
+  ) {
     /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
@@ -83,28 +84,29 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   }
 
   for (const key of expectedVariables) {
+    /* eslint-disable @typescript-eslint/no-unsafe-member-access */
     if (typeof env[key] === 'undefined' || env[key] === null) {
       throw Error(`
-
+      
       Env. variable ${key} is missing, build cannot continue
-
+      
       `);
     }
   }
 
   if (env['environment'] !== 'production')
     throw Error(`
-
-    Production environment should be 'production'
-
-    `);
+  
+  Production environment should be 'production'
+  
+  `);
 
   if (env['showUpcomingChanges'])
     throw Error(`
-
-    SHOW_UPCOMING_CHANGES should never be 'true' in production
-
-    `);
+  
+  SHOW_UPCOMING_CHANGES should never be 'true' in production
+  
+  `);
 
   checkClientLocale();
   checkCurriculumLocale();
@@ -115,6 +117,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     // eslint-disable-next-line
     const { showUpcomingChanges } = require(`${globalConfigPath}/env.json`);
     if (env['showUpcomingChanges'] !== showUpcomingChanges) {
+      /* eslint-enable @typescript-eslint/no-unsafe-member-access */
       console.log(
         'SHOW_UPCOMING_CHANGES value has changed, cleaning client cache.'
       );
