@@ -1,6 +1,6 @@
 ---
 id: 5900f3fd1000cf542c50ff10
-title: 'Problem 145: How many reversible numbers are there below one-billion?'
+title: '問題 145：有多少個小於十億的可逆數？'
 challengeType: 5
 forumTopicId: 301774
 dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
@@ -8,18 +8,18 @@ dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
 
 # --description--
 
-Some positive integers n have the property that the sum \[ n + reverse(n) ] consists entirely of odd (decimal) digits. For instance, 36 + 63 = 99 and 409 + 904 = 1313. We will call such numbers reversible; so 36, 63, 409, and 904 are reversible. Leading zeroes are not allowed in either n or reverse(n).
+一些正整數 $n$ 滿足如下性質：該數與其逆序數之和 [ $n + reverse(n)$ ] 全部由奇數（十進制）組成。 例如，$36 + 63 = 99$ 和 $409 + 904 = 1313$。 我們稱這些數字是可逆的；所以 36、63、409 和 904 均爲可逆的。 無論是 $n$ 還是 $reverse(n)$ 均不允許出現前導零。
 
-There are 120 reversible numbers below one-thousand.
+小於一千的可逆數有 120 個。
 
-How many reversible numbers are there below one-billion (109)?
+請求出有多少個小於十億（${10}^9$）的可逆數？
 
 # --hints--
 
-`euler145()` should return 608720.
+`reversibleNumbers()` 應該返回 `608720`。
 
 ```js
-assert.strictEqual(euler145(), 608720);
+assert.strictEqual(reversibleNumbers(), 608720);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler145(), 608720);
 ## --seed-contents--
 
 ```js
-function euler145() {
+function reversibleNumbers() {
 
   return true;
 }
 
-euler145();
+reversibleNumbers();
 ```
 
 # --solutions--

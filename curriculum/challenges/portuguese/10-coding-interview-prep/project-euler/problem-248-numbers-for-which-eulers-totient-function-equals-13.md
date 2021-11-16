@@ -1,6 +1,6 @@
 ---
 id: 5900f4651000cf542c50ff77
-title: 'Problem 248: Numbers for which Euler’s totient function equals 13!'
+title: 'Problema 248: Números para os quais a função tociente de Euler é igual a 13!'
 challengeType: 5
 forumTopicId: 301895
 dashedName: problem-248-numbers-for-which-eulers-totient-function-equals-13
@@ -8,16 +8,16 @@ dashedName: problem-248-numbers-for-which-eulers-totient-function-equals-13
 
 # --description--
 
-The first number n for which φ(n)=13! is 6227180929.
+O primeiro número $n$ para o qual $φ(n) = 13!$ é $6.227.180.929$.
 
-Find the 150,000th such number.
+Encontre o ${150.000}^{\text{o}}$ número desse tipo.
 
 # --hints--
 
-`euler248()` should return 23507044290.
+`eulersTotientFunctionEquals()` deve retornar `23507044290`.
 
 ```js
-assert.strictEqual(euler248(), 23507044290);
+assert.strictEqual(eulersTotientFunctionEquals(), 23507044290);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler248(), 23507044290);
 ## --seed-contents--
 
 ```js
-function euler248() {
+function eulersTotientFunctionEquals() {
 
   return true;
 }
 
-euler248();
+eulersTotientFunctionEquals();
 ```
 
 # --solutions--
