@@ -41,7 +41,9 @@ const linkSpacingStyle = {
 };
 
 function renderLandingMap(nodes: ChallengeNode[]) {
-  nodes = nodes.filter(node => node.superBlock !== SuperBlocks.CodingInterviewPrep);
+  nodes = nodes.filter(
+    node => node.superBlock !== SuperBlocks.CodingInterviewPrep
+  );
   return (
     <ul data-test-label='certifications'>
       {nodes.map((node, i) => (
@@ -91,10 +93,7 @@ function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
               to={`/learn/${node.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
-                {generateIconComponent(
-                  node.superBlock,
-                  'map-icon'
-                )}
+                {generateIconComponent(node.superBlock, 'map-icon')}
                 {createSuperBlockTitle(node.superBlock)}
               </div>
             </Link>
@@ -121,10 +120,7 @@ function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
               to={`/learn/${node.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
-                {generateIconComponent(
-                  node.superBlock,
-                  'map-icon'
-                )}
+                {generateIconComponent(node.superBlock, 'map-icon')}
                 {createSuperBlockTitle(node.superBlock)}
               </div>
             </Link>
