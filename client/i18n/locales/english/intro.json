@@ -102,7 +102,8 @@
         "title": "Learn Typography by Building a Nutrition Label",
         "intro": ["", ""]
       },
-      "learn-css-animation-by-building-a-ferris-wheel": { "title": "Learn CSS Animation by Building a Ferris Wheel", "intro": ["", ""] }
+      "learn-css-animation-by-building-a-ferris-wheel": { "title": "Learn CSS Animation by Building a Ferris Wheel", "intro": ["", ""] },
+      "css-balance-sheet": { "title": "CSS Balance Sheet", "intro": ["", ""] }
     }
   },
   "javascript-algorithms-and-data-structures": {

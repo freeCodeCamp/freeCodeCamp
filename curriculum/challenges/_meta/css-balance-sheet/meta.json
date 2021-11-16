@@ -1,0 +1,14 @@
+{
+  "name": "CSS Balance Sheet",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "css-balance-sheet",
+  "order": 43,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [["6193d8081ec2531581ea7b98", "Step 1"]]
+}
