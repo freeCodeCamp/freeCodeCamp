@@ -58,5 +58,9 @@
   "User": {
     "dataSource": "db",
     "public": false
+  },
+  "WebhookToken": {
+    "dataSource": "db",
+    "public": false
   }
 }

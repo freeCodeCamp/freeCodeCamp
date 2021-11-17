@@ -24,6 +24,8 @@ function bootUser(app) {
   const getSessionUser = createReadSessionUser(app);
   const postReportUserProfile = createPostReportUserProfile(app);
   const postDeleteAccount = createPostDeleteAccount(app);
+  const postWebhookToken = createPostWebhookToken(app);
+  const deleteWebhookToken = createDeleteWebhookToken(app);
 
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
@@ -31,6 +33,7 @@ function bootUser(app) {
 
   api.post('/account/delete', ifNoUser401, postDeleteAccount);
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
+  api.post('/user/webhook-token', postWebhookToken);
   api.post(
     '/user/report-user/',
     ifNoUser401,
@@ -38,14 +41,60 @@ function bootUser(app) {
     postReportUserProfile
   );
 
+  api.delete('/user/webhook-token', deleteWebhookToken);
+
   app.use(api);
+}
+
+function createPostWebhookToken(app) {
+  const { WebhookToken } = app.models;
+
+  return async function postWebhookToken(req, res) {
+    const ttl = 900 * 24 * 60 * 60 * 1000;
+    let newToken;
+
+    try {
+      await WebhookToken.destroyAll({ userId: req.user.id });
+      newToken = await WebhookToken.create({ ttl, userId: req.user.id });
+    } catch (e) {
+      return res.status(500).json({
+        type: 'danger',
+        message: 'flash.create-token-err'
+      });
+    }
+
+    return res.json(newToken?.id);
+  };
+}
+
+function createDeleteWebhookToken(app) {
+  const { WebhookToken } = app.models;
+
+  return async function deleteWebhookToken(req, res) {
+    try {
+      await WebhookToken.destroyAll({ userId: req.user.id });
+    } catch (e) {
+      return res.status(500).json({
+        type: 'danger',
+        message: 'flash.delete-token-err'
+      });
+    }
+
+    return res.json(null);
+  };
 }
 
 function createReadSessionUser(app) {
   const { Donation } = app.models;
 
-  return function getSessionUser(req, res, next) {
+  return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
+
+    const webhookTokenArr = await queryUser.webhookTokens({
+      userId: queryUser.id
+    });
+    const webhookToken = webhookTokenArr[0]?.id;
+
     const source =
       queryUser &&
       Observable.forkJoin(
@@ -83,7 +132,8 @@ function createReadSessionUser(app) {
               isTwitter: !!user.twitter,
               isWebsite: !!user.website,
               ...normaliseUserFields(user),
-              joinDate: user.id.getTimestamp()
+              joinDate: user.id.getTimestamp(),
+              webhookToken
             }
           },
           sessionMeta,
@@ -192,8 +242,20 @@ function postResetProgress(req, res, next) {
 }
 
 function createPostDeleteAccount(app) {
-  const { User } = app.models;
-  return function postDeleteAccount(req, res, next) {
+  const { User, WebhookToken } = app.models;
+  return async function postDeleteAccount(req, res, next) {
+    const {
+      user: { id: userId }
+    } = req;
+
+    try {
+      await WebhookToken.destroyAll({ userId });
+    } catch (err) {
+      log(
+        `An error occurred deleting webhook tokens for user with id ${userId} when they tried to delete their account`
+      );
+    }
+
     return User.destroyById(req.user.id, function (err) {
       if (err) {
         return next(err);

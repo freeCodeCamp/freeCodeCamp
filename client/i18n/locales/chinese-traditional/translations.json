@@ -466,7 +466,11 @@
     "unlink-success": "你已成功取消 {{website}} 鏈接",
     "provide-username": "檢查你是否提供用戶名和報告",
     "report-sent": "已通過 {{email}} 向團隊發送副本報告",
-    "certificate-missing": "你嘗試查看的認證不存在"
+    "certificate-missing": "你嘗試查看的認證不存在",
+    "create-token-err": "An error occurred trying to create a token",
+    "delete-token-err": "An error occurred trying to delete your token",
+    "token-created": "You have successfully created a new token.",
+    "token-deleted": "Your token has been deleted."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
@@ -594,5 +598,18 @@
     "add-code-one": "用你的複製代碼替換這兩句。",
     "add-code-two": "請保留上方的 ``` 行和下方的 ``` 行",
     "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。"
+  },
+  "webhook-token": {
+    "title": "Webhook Token",
+    "create": "Create a new token",
+    "create-p1": "It looks like you don't have a webhook token. Create one to save your progress on this section",
+    "create-p2": "Create a webhook token to save your progress on the curriculum sections that use a virtual machine.",
+    "delete": "Delete my token",
+    "delete-title": "Delete My Webhook Token",
+    "delete-p1": "Your webhook token below is used to save your progress on the curriculum sections that use a virtual machine.",
+    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
+    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
+    "no-thanks": "No thanks, I would like to keep my token",
+    "yes-please": "Yes please, I would like to delete my token"
   }
 }
