@@ -1,7 +1,7 @@
 ---
 id: 5900f4881000cf542c50ff9a
 title: >-
-  Problem 283: Integer sided triangles for which the area * perimeter ratio is integral
+  Problema 283: Triângulos com lados de números inteiros para os quais a proporção de área * perímetro é um número inteiro
 challengeType: 5
 forumTopicId: 301934
 dashedName: >-
@@ -10,22 +10,22 @@ dashedName: >-
 
 # --description--
 
-Consider the triangle with sides 6, 8 and 10. It can be seen that the perimeter and the area are both equal to 24.
+Considere o triângulo com os lados 6, 8 e 10. Podemos ver que o perímetro e a área são ambos equivalentes a 24.
 
-So the area/perimeter ratio is equal to 1.
+Portanto, a proporção $\frac{\text{área}}{\text{perímetro}}$ é igual a 1.
 
-Consider also the triangle with sides 13, 14 and 15. The perimeter equals 42 while the area is equal to 84.
+Considere o triângulo com os lados 13, 14 e 15. O perímetro é igual a 42, enquanto a área é igual a 84.
 
-So for this triangle the area/perimeter ratio is equal to 2.
+Assim, para esse triângulo, a proporção $\frac{\text{área}}{\text{perímetro}}$ é igual a 2.
 
-Find the sum of the perimeters of all integer sided triangles for which the area/perimeter ratios are equal to positive integers not exceeding 1000.
+Encontre a soma dos perímetros de todos os triângulos com os lados de números inteiros para os quais as proporções da área/perímetro são iguais a números inteiros positivos que não excedem 1000.
 
 # --hints--
 
-`euler283()` should return 28038042525570324.
+`integralAreaPerimeterRatio()` deve retornar `28038042525570324`.
 
 ```js
-assert.strictEqual(euler283(), 28038042525570324);
+assert.strictEqual(integralAreaPerimeterRatio(), 28038042525570324);
 ```
 
 # --seed--
@@ -33,12 +33,12 @@ assert.strictEqual(euler283(), 28038042525570324);
 ## --seed-contents--
 
 ```js
-function euler283() {
+function integralAreaPerimeterRatio() {
 
   return true;
 }
 
-euler283();
+integralAreaPerimeterRatio();
 ```
 
 # --solutions--
