@@ -6,8 +6,7 @@
     "client/utils/**/*",
     "tools/challenge-helper-scripts/**/*",
     "config/certification-settings.ts",
-    "config/i18n/**/*",
-    "tools/scripts/**/*"
+    "config/i18n/**/*"
   ],
   "compilerOptions": {
     "lib": ["WebWorker", "DOM", "DOM.Iterable"],
