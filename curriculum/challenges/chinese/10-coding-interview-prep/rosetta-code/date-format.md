@@ -1,6 +1,6 @@
 ---
 id: 59669d08d75b60482359409f
-title: Date format
+title: 日期格式
 challengeType: 5
 forumTopicId: 302243
 dashedName: date-format
@@ -8,15 +8,15 @@ dashedName: date-format
 
 # --description--
 
-Return an array with two date strings of the current date with the following specifications:
+返回一个包含两个当前日期字符串的数组，要求如下：
 
-- The first string's date order should be the year number, month number, and day number separated by dashes (`-`).
-- The first string's year should be four digits in length.
-- The first string's month and day should not contain any leading zeros.
-- The second string's weekday and month names should not be abbreviated.
-- The second string's day should not contain any leading zeros.
+- 第一个字符串的日期顺序为年、月、日，中间用破折号 (`-`) 隔开。
+- 第一个字符串的年份长度为四位数。
+- 第一个字符串的月份和日期不能包含任何前导零。
+- 第二个字符串的星期名称和月份名称不能缩写。
+- 第二个字符串的日期不能包含任何前导零。
 
-Example outputs:
+示例输出：
 
 ```js
 ['2007-11-23', 'Friday, November 23, 2007']
@@ -25,25 +25,25 @@ Example outputs:
 
 # --hints--
 
-`getDateFormats` should be a function.
+`getDateFormats` 应该是一个函数。
 
 ```js
 assert(typeof getDateFormats === 'function');
 ```
 
-`getDateFormats` should return an object.
+`getDateFormats` 应该返回一个对象。
 
 ```js
 assert(typeof getDateFormats() === 'object');
 ```
 
-`getDateFormats` should return an array with 2 elements.
+`getDateFormats` 应该返回一个包含两个元素的数组。
 
 ```js
 assert(getDateFormats().length === 2);
 ```
 
-`getDateFormats` should return the correct date in the right format
+`getDateFormats` 应该返回格式无误的正确日期。
 
 ```js
 assert.deepEqual(getDateFormats(), dates, equalsMessage);

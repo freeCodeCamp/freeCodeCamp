@@ -131,6 +131,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     this.resetDonation = this.resetDonation.bind(this);
     this.postStripeDonation = this.postStripeDonation.bind(this);
     this.postStripeCardDonation = this.postStripeCardDonation.bind(this);
+    this.postPatreonRedirect = this.postPatreonRedirect.bind(this);
     this.handlePaymentButtonLoad = this.handlePaymentButtonLoad.bind(this);
   }
 
@@ -241,6 +242,15 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     });
   }
 
+  postPatreonRedirect() {
+    const { donationAmount: amount, donationDuration: duration } = this.state;
+    this.props.handleProcessing(
+      duration,
+      amount,
+      'Patreon payment redirection'
+    );
+  }
+
   handleSelectAmount(donationAmount: number) {
     this.setState({ donationAmount });
   }
@@ -337,7 +347,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             onDonationStateChange={this.onDonationStateChange}
             theme={priorityTheme}
           />
-          <PatreonButton />
+          <PatreonButton postPatreonRedirect={this.postPatreonRedirect} />
           {isMinimalForm && (
             <>
               <div className='separator'>{t('donate.or-card')}</div>

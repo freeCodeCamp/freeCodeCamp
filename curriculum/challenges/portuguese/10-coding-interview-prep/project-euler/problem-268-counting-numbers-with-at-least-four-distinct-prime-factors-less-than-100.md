@@ -1,7 +1,7 @@
 ---
 id: 5900f4791000cf542c50ff8b
 title: >-
-  Problem 268: Counting numbers with at least four distinct prime factors less than 100
+  Problema 268: Contagem de números com pelo menos quatro divisores primos distintos menores que 100
 challengeType: 5
 forumTopicId: 301917
 dashedName: >-
@@ -10,16 +10,16 @@ dashedName: >-
 
 # --description--
 
-It can be verified that there are 23 positive integers less than 1000 that are divisible by at least four distinct primes less than 100.
+É possível verificar que há 23 números inteiros positivos inferiores a 1000 que são divisíveis por, pelo menos, quatro números primos distintos inferiores a 100.
 
-Find how many positive integers less than 1016 are divisible by at least four distinct primes less than 100.
+Encontre quantos números inteiros positivos inferiores a ${10}^{16}$ que são divisíveis por, pelo menos, quatro números primos distintos inferiores a 100.
 
 # --hints--
 
-`euler268()` should return 785478606870985.
+`fourDistinctPrimeFactors()` deve retornar `785478606870985`.
 
 ```js
-assert.strictEqual(euler268(), 785478606870985);
+assert.strictEqual(fourDistinctPrimeFactors(), 785478606870985);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler268(), 785478606870985);
 ## --seed-contents--
 
 ```js
-function euler268() {
+function fourDistinctPrimeFactors() {
 
   return true;
 }
 
-euler268();
+fourDistinctPrimeFactors();
 ```
 
 # --solutions--

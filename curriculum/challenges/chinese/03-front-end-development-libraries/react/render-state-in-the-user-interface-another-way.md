@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-`MyComponent` 应该在 `div` 中渲染一个 `h1` 标题。
+`MyComponent` 应该在 `div` 中渲染一个 `h1` 标题元素。
 
 ```js
 assert(
@@ -44,7 +44,7 @@ assert(
   assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput('index')));
 ```
 
-渲染的 `h1` 标题中应该包含一段文本，这段文本是从组件的 state 中渲染出来的。
+渲染的 `h1` 标题元素应包含从组件状态渲染的文本。
 
 ```js
 async () => {

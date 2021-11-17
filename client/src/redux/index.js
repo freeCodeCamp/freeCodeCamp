@@ -19,6 +19,7 @@ import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
 import { createSoundModeSaga } from './sound-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
+import { createWebhookSaga } from './webhook-saga';
 
 export const MainApp = 'app';
 
@@ -76,7 +77,8 @@ export const sagas = [
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
-  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes })
+  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes }),
+  ...createWebhookSaga(actionTypes)
 ];
 
 export const appMount = createAction(actionTypes.appMount);
@@ -168,6 +170,15 @@ export const showCert = createAction(actionTypes.showCert);
 export const showCertComplete = createAction(actionTypes.showCertComplete);
 export const showCertError = createAction(actionTypes.showCertError);
 
+export const postWebhookToken = createAction(actionTypes.postWebhookToken);
+export const postWebhookTokenComplete = createAction(
+  actionTypes.postWebhookTokenComplete
+);
+export const deleteWebhookToken = createAction(actionTypes.deleteWebhookToken);
+export const deleteWebhookTokenComplete = createAction(
+  actionTypes.deleteWebhookTokenComplete
+);
+
 export const updateCurrentChallengeId = createAction(
   actionTypes.updateCurrentChallengeId
 );
@@ -229,6 +240,10 @@ export const shouldRequestDonationSelector = state => {
   // this will mean we have completed 3 or more challenges this browser session
   // and enough challenges overall to not be new
   return completionCount >= 3;
+};
+
+export const webhookTokenSelector = state => {
+  return userSelector(state).webhookToken;
 };
 
 export const userByNameSelector = username => state => {
@@ -630,6 +645,32 @@ export const reducer = handleActions(
               ],
               'id'
             )
+          }
+        }
+      };
+    },
+    [actionTypes.postWebhookTokenComplete]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            webhookToken: payload
+          }
+        }
+      };
+    },
+    [actionTypes.deleteWebhookTokenComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            webhookToken: null
           }
         }
       };

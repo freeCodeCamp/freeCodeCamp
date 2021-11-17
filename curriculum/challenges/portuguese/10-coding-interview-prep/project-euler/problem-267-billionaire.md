@@ -1,6 +1,6 @@
 ---
 id: 5900f4771000cf542c50ff8a
-title: 'Problem 267: Billionaire'
+title: 'Problema 267: Bilionário'
 challengeType: 5
 forumTopicId: 301916
 dashedName: problem-267-billionaire
@@ -8,24 +8,24 @@ dashedName: problem-267-billionaire
 
 # --description--
 
-You are given a unique investment opportunity.
+Você recebe uma oportunidade única de investimento.
 
-Starting with £1 of capital, you can choose a fixed proportion, f, of your capital to bet on a fair coin toss repeatedly for 1000 tosses.
+Começando com £1 do capital, você pode escolher uma proporção fixa, $f$, do seu capital para apostar em uma moeda justa repetidamente por 1000 lançamentos.
 
-Your return is double your bet for heads and you lose your bet for tails.
+Seu retorno é o dobro da sua aposta para cara e você perde a aposta para coroa.
 
-For example, if f = 1/4, for the first toss you bet £0.25, and if heads comes up you win £0.5 and so then have £1.5. You then bet £0.375 and if the second toss is tails, you have £1.125.
+Por exemplo, se $f = \frac{1}{4}$, para o primeiro lançamento, você aposta £0,25. Se cara aparecer, você ganha £0,5 e passa a ter £1,5. Você aposta £0,375 e, se o segundo lançamento for coroa, terá £1,125.
 
-Choosing f to maximize your chances of having at least £1,000,000,000 after 1,000 flips, what is the chance that you become a billionaire?
+Escolhendo $f$ para maximizar suas chances de ter pelo menos £1.000.000.000 depois de 1.000 lançamentos da moeda, qual é a chance de você se tornar um bilionário?
 
-All computations are assumed to be exact (no rounding), but give your answer rounded to 12 digits behind the decimal point in the form 0.abcdefghijkl.
+Todos os cálculos devem ser exatos (sem arredondamento), mas sua resposta deve ser arredondada para 12 algarismos depois da vírgula na forma 0.abcdefghijkl.
 
 # --hints--
 
-`euler267()` should return 0.999992836187.
+`billionaire()` deve retornar `0.999992836187`.
 
 ```js
-assert.strictEqual(euler267(), 0.999992836187);
+assert.strictEqual(billionaire(), 0.999992836187);
 ```
 
 # --seed--
@@ -33,12 +33,12 @@ assert.strictEqual(euler267(), 0.999992836187);
 ## --seed-contents--
 
 ```js
-function euler267() {
+function billionaire() {
 
   return true;
 }
 
-euler267();
+billionaire();
 ```
 
 # --solutions--

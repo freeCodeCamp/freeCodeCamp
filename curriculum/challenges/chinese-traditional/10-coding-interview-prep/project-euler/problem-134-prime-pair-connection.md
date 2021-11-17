@@ -1,6 +1,6 @@
 ---
 id: 5900f3f21000cf542c50ff05
-title: 'Problem 134: Prime pair connection'
+title: '問題 134：素數對連接'
 challengeType: 5
 forumTopicId: 301762
 dashedName: problem-134-prime-pair-connection
@@ -8,18 +8,18 @@ dashedName: problem-134-prime-pair-connection
 
 # --description--
 
-Consider the consecutive primes p1 = 19 and p2 = 23. It can be verified that 1219 is the smallest number such that the last digits are formed by p1 whilst also being divisible by p2.
+考慮連續的素數 $p_1 = 19$ 和 $p_2 = 23$。 可以驗證 1219 是最小的以數字 $p_1$ 形成低位部分，而又能夠被 $p_2$ 整除的數字。
 
-In fact, with the exception of p1 = 3 and p2 = 5, for every pair of consecutive primes, p2 > p1, there exist values of n for which the last digits are formed by p1 and n is divisible by p2. Let S be the smallest of these values of n.
+事實上，除了 $p_1 = 3$ 和 $p_2 = 5$ 之外，對於每對連續的素數，$p_2 > p_1$，都存在 $n$ 的值，其最後一位數字由 $p_1$ 組成而 $n$ 可以被 $p_2$ 整除。 記 $S$ 爲這種 $n$ 中的最小值。
 
-Find ∑ S for every pair of consecutive primes with 5 ≤ p1 ≤ 1000000.
+對連續素數對 $5 ≤ p_1 ≤ 1000000$ 求 $\sum{S}$。
 
 # --hints--
 
-`euler134()` should return 18613426663617120.
+`primePairConnection()` 應得 `18613426663617120`。
 
 ```js
-assert.strictEqual(euler134(), 18613426663617120);
+assert.strictEqual(primePairConnection(), 18613426663617120);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler134(), 18613426663617120);
 ## --seed-contents--
 
 ```js
-function euler134() {
+function primePairConnection() {
 
   return true;
 }
 
-euler134();
+primePairConnection();
 ```
 
 # --solutions--
