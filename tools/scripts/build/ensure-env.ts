@@ -12,7 +12,7 @@ const globalConfigPath = path.resolve(__dirname, '../../../config');
 const { FREECODECAMP_NODE_ENV } = process.env;
 
 function checkClientLocale() {
-  if (!availableLangs.client.includes(process.env.CLIENT_LOCALE as string)) {
+  if (!availableLangs.client.includes(process.env.CLIENT_LOCALE)) {
     /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
@@ -24,9 +24,7 @@ function checkClientLocale() {
 }
 
 function checkCurriculumLocale() {
-  if (
-    !availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE as string)
-  ) {
+  if (!availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE)) {
     /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
@@ -87,25 +85,25 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     /* eslint-disable @typescript-eslint/no-unsafe-member-access */
     if (typeof env[key] === 'undefined' || env[key] === null) {
       throw Error(`
-      
+
       Env. variable ${key} is missing, build cannot continue
-      
+
       `);
     }
   }
 
   if (env['environment'] !== 'production')
     throw Error(`
-  
+
   Production environment should be 'production'
-  
+
   `);
 
   if (env['showUpcomingChanges'])
     throw Error(`
-  
+
   SHOW_UPCOMING_CHANGES should never be 'true' in production
-  
+
   `);
 
   checkClientLocale();
