@@ -152,7 +152,7 @@
     "@types/redux-actions": "2.6.2",
     "@types/sanitize-html": "2.5.0",
     "@types/store": "2.0.2",
-    "@types/validator": "13.6.6",
+    "@types/validator": "13.7.0",
     "autoprefixer": "10.4.0",
     "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.2",
