@@ -10,13 +10,10 @@ export function emailToAVariant(email: string): {
 } {
   // turn the email into a number
   const hash: string = sha1(email);
-  const hashInt = parseInt(hash, 16);
+  const hashInt = parseInt(hash.slice(0,3), 16);
 
   // turn the number to A or B variant
-  const maxhash = 16 ** 40;
-  const maxDivisor = maxhash / 100;
-  const simplifiedInt = Number((hashInt / maxDivisor).toFixed());
-  const isAVriant = simplifiedInt % 2 === 0;
+  const isAVriant = hashInt % 2 === 0;
 
   return {
     hash,
