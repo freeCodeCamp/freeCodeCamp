@@ -7,7 +7,7 @@ dashedName: step-32
 
 # --description--
 
-Now you need to align the text content of your sheet so that it appears in columns. Start with a `.row` selector to target all of your elements which have the balance values in them. Give this selector a `display` property set to `flex`, and a `justify-content` property set to `flex-end`.
+Now you need to align the text content of your sheet so that it appears in columns. Start with a `.row` selector to target all of your elements that have the balance values in them. Give this selector a `display` property set to `flex`, and a `justify-content` property set to `flex-end`.
 
 # --hints--
 

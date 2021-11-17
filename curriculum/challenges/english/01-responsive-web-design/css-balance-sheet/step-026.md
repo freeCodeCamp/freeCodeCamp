@@ -7,7 +7,7 @@ dashedName: step-26
 
 # --description--
 
-Now that you have all of the finance data in place, you need to style your balance sheet so it looks visually appealing.
+Now that you have all of the financial data in place, you need to style your balance sheet so it looks visually appealing.
 
 Start by creating a `body` selector, and give it a `text-align` property set to `center`.
 

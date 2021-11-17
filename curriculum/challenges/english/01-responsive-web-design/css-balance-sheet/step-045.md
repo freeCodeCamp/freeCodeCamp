@@ -7,7 +7,7 @@ dashedName: step-45
 
 # --description--
 
-The `[attribute]` selector allows you to target elements which have *any* value set for the given attribute. Create a `.row[tabindex]:hover` selector to target your `.row` elements which have a specific `tabindex` value. Give that selector a `background-color` property of `#99c9ff`.
+The `[attribute]` selector allows you to target elements that have *any* value set for the given attribute. Create a `.row[tabindex]:hover` selector to target your `.row` elements which have a specific `tabindex` value. Give that selector a `background-color` property of `#99c9ff`.
 
 # --hints--
 
