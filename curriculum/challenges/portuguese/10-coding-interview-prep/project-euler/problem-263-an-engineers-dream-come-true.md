@@ -1,6 +1,6 @@
 ---
 id: 5900f4741000cf542c50ff86
-title: 'Problem 263: An engineers'' dream come true'
+title: 'Problema 263: O sonho de um engenheiro se torna realidade'
 challengeType: 5
 forumTopicId: 301912
 dashedName: problem-263-an-engineers-dream-come-true
@@ -8,30 +8,33 @@ dashedName: problem-263-an-engineers-dream-come-true
 
 # --description--
 
-Consider the number 6. The divisors of 6 are: 1,2,3 and 6.
+Considere o número 6. Os divisores de 6 são: 1, 2, 3 e 6.
 
-Every number from 1 up to and including 6 can be written as a sum of distinct divisors of 6:
+Cada número de 1 até 6 pode ser escrito como uma soma de divisores distintos de 6:
 
-1=1, 2=2, 3=1+2, 4=1+3, 5=2+3, 6=6.
+$1 = 1$, $2 = 2$, $3 = 1 + 2$, $4 = 1 + 3$, $5 = 2 + 3$, $6 = 6$.
 
-A number n is called a practical number if every number from 1 up to and including n can be expressed as a sum of distinct divisors of n.
+Um número $n$ é chamado de número prático se cada número de 1 até $n$ puder ser expresso como uma soma dos divisores distintos de $n$.
 
-A pair of consecutive prime numbers with a difference of six is called a sexy pair (since "sex" is the Latin word for "six"). The first sexy pair is (23, 29).
+Um par de números primos consecutivos com uma diferença de seis é chamado de par sexy (já que "sex" é a palavra latina para "seis"). O primeiro par sexy é (23, 29).
 
-We may occasionally find a triple-pair, which means three consecutive sexy prime pairs, such that the second member of each pair is the first member of the next pair.
+Podemos ocasionalmente encontrar um trio de pares, o que significa três pares sexy de números primos consecutivos, de modo que o segundo membro de cada par seja o primeiro membro do próximo par.
 
-We shall call a number n such that : (n-9, n-3), (n-3,n+3), (n+3, n+9) form a triple-pair, and the numbers n-8, n-4, n, n+4 and n+8 are all practical,
+Chamaremos um número $n$ com as seguintes configurações:
 
-an engineers’ paradise.
+- ($n - 9$, $n - 3$), ($n - 3$, $n + 3$), ($n + 3$, $n + 9$) formam um trio de pares, e
+- os números $n - 8$, $n - 4$, $n$, $n + 4$ e $n + 8$ sejam todos práticos,
 
-Find the sum of the first four engineers’ paradises.
+de paraíso do engenheiro.
+
+Encontre a soma dos primeiros quatro paraísos do engenheiro.
 
 # --hints--
 
-`euler263()` should return 2039506520.
+`engineersDreamComeTrue()` deve retornar `2039506520`.
 
 ```js
-assert.strictEqual(euler263(), 2039506520);
+assert.strictEqual(engineersDreamComeTrue(), 2039506520);
 ```
 
 # --seed--
@@ -39,12 +42,12 @@ assert.strictEqual(euler263(), 2039506520);
 ## --seed-contents--
 
 ```js
-function euler263() {
+function engineersDreamComeTrue() {
 
   return true;
 }
 
-euler263();
+engineersDreamComeTrue();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5900f4701000cf542c50ff83
-title: 'Problem 260: Stone Game'
+title: 'Problema 260: Jogo da pedra'
 challengeType: 5
 forumTopicId: 301909
 dashedName: problem-260-stone-game
@@ -8,26 +8,36 @@ dashedName: problem-260-stone-game
 
 # --description--
 
-A game is played with three piles of stones and two players.
+Uma partida é jogada com três pilhas de pedras e dois jogadores.
 
-At her turn, a player removes one or more stones from the piles. However, if she takes stones from more than one pile, she must remove the same number of stones from each of the selected piles.
+No turno de cada jogador, ele remove uma ou mais pedras das pilhas. No entanto, se o jogador recebe pedras de mais de uma pilha, o mesmo número de pedras deve ser removido de cada uma das pilhas selecionadas.
 
-In other words, the player chooses some N>0 and removes: N stones from any single pile; or N stones from each of any two piles (2N total); or N stones from each of the three piles (3N total). The player taking the last stone(s) wins the game.
+Em outras palavras, o jogador escolhe algumas $N > 0$ e as remove:
 
-A winning configuration is one where the first player can force a win. For example, (0,0,13), (0,11,11) and (5,5,5) are winning configurations because the first player can immediately remove all stones.
+- $N$ pedras de qualquer pilha; ou
+- $N$ pedras de duas pilhas (total de $2N$); ou
+- $N$ pedras de três pilhas (total de $3N$).
 
-A losing configuration is one where the second player can force a win, no matter what the first player does. For example, (0,1,2) and (1,3,3) are losing configurations: any legal move leaves a winning configuration for the second player.
+O jogador que ficar com a(s) última(s) pedra(s) ganha o jogo.
 
-Consider all losing configurations (xi,yi,zi) where xi ≤ yi ≤ zi ≤ 100. We can verify that Σ(xi+yi+zi) = 173895 for these.
+Uma configuração vencedora é aquela onde o primeiro jogador pode forçar uma vitória.
 
-Find Σ(xi+yi+zi) where (xi,yi,zi) ranges over the losing configurations with xi ≤ yi ≤ zi ≤ 1000.
+Por exemplo, (0,0,13), (0,11,11) e (5,5,5) são configurações vencedores porque o primeiro jogador pode remover imediatamente todas as pedras.
+
+Uma configuração perdedora é aquela onde o segundo jogador pode forçar uma vitória, não importa o que o primeiro jogador faça.
+
+Por exemplo, (0,1,2) e (1,3,3) são configurações perdedoras: qualquer movimento legal deixa uma configuração vencedora para o segundo jogador.
+
+Considere todas as configurações perdedoras ($x_i$,$y_i$,$z_i$) onde $x_i ≤ y_i ≤ z_i ≤ 100$. Podemos verificar que $\sum (x_i + y_i + z_i) = 173.895$ para elas.
+
+Encontre $\sum (x_i + y_i + z_i)$ onde ($x_i$,$y_i$,$z_i$) passa pelas configurações perdedoras com $x_i ≤ y_i ≤ z_i ≤ 1000$.
 
 # --hints--
 
-`euler260()` should return 167542057.
+`stoneGame()` deve retornar `167542057`.
 
 ```js
-assert.strictEqual(euler260(), 167542057);
+assert.strictEqual(stoneGame(), 167542057);
 ```
 
 # --seed--
@@ -35,12 +45,12 @@ assert.strictEqual(euler260(), 167542057);
 ## --seed-contents--
 
 ```js
-function euler260() {
+function stoneGame() {
 
   return true;
 }
 
-euler260();
+stoneGame();
 ```
 
 # --solutions--

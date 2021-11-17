@@ -1,6 +1,6 @@
 ---
 id: 5900f3f21000cf542c50ff04
-title: 'Problem 133: Repunit nonfactors'
+title: '問題 133：純元數非因子'
 challengeType: 5
 forumTopicId: 301761
 dashedName: problem-133-repunit-nonfactors
@@ -8,20 +8,20 @@ dashedName: problem-133-repunit-nonfactors
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define R(k) to be a repunit of length k; for example, R(6) = 111111.
+完全由 1 組成的數字稱爲純元數。 定義 $R(k)$ 爲長度爲 $k$ 的純元數；例如，$R(6) = 111111$。
 
-Let us consider repunits of the form R(10n).
+讓我們考慮形式爲 $R({10}^n)$ 的純元數。
 
-Although R(10), R(100), or R(1000) are not divisible by 17, R(10000) is divisible by 17. Yet there is no value of n for which R(10n) will divide by 19. In fact, it is remarkable that 11, 17, 41, and 73 are the only four primes below one-hundred that can be a factor of R(10n).
+儘管 $R(10)$、$R(100)$ 或 $R(1000)$ 不能被 17 整除，但 $R(10000)$ 可以被 17 整除。 然而沒有 $R({10}^n)$ 可以被 19 整除。 值得注意的是，11、17、41 和 73 是僅有的四個小於 100 的質數可以是 $R({10}^n)$ 的因數。
 
-Find the sum of all the primes below one-hundred thousand that will never be a factor of R(10n).
+求十萬以內不能成爲 $R({10}^n)$ 因子的素數的和。
 
 # --hints--
 
-`euler133()` should return 453647705.
+`repunitNonfactors()` 應該返回 `453647705`。
 
 ```js
-assert.strictEqual(euler133(), 453647705);
+assert.strictEqual(repunitNonfactors(), 453647705);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler133(), 453647705);
 ## --seed-contents--
 
 ```js
-function euler133() {
+function repunitNonfactors() {
 
   return true;
 }
 
-euler133();
+repunitNonfactors();
 ```
 
 # --solutions--
