@@ -121,6 +121,8 @@ function countOnline(usersObj) {
 
   // Only change code above this line
 }
+
+console.log(countOnline({ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }));
 ```
 
 # --solutions--
