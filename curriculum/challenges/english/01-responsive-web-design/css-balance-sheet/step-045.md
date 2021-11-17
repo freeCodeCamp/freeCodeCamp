@@ -11,10 +11,16 @@ The `[attribute]` selector allows you to target elements that have *any* value s
 
 # --hints--
 
-Test 1
+You should have a new `.row[tabindex]:hover` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.row[tabindex]:hover'));
+```
 
+Your `.row[tabindex]:hover` selector should have a `background-color` property set to `#99c9ff`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.row[tabindex]:hover')?.backgroundColor === 'rgb(153, 201, 255)');
 ```
 
 # --seed--

@@ -11,10 +11,28 @@ Below your `h2` element, create a `p` element with the `class` set to `row`. In 
 
 # --hints--
 
-Test 1
+You should create a new `p` element within your `#header` element.
 
 ```js
+assert(document.querySelectorAll('#header > p')?.length === 1);
+```
 
+Your `p` element should come after your `h2` element.
+
+```js
+assert(document.querySelector('#header > h2')?.nextElementSibling?.localName === 'p');
+```
+
+Your new `p` element should have a `class` attribute set to `row`.
+
+```js
+assert(document.querySelector('#header > p')?.classList?.contains('row'));
+```
+
+Your `.row` element should have 3 `span` elements.
+
+```js
+assert(document.querySelectorAll('#header > .row > span')?.length === 3);
 ```
 
 # --seed--

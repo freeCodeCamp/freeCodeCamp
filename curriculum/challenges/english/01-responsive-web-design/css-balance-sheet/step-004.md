@@ -11,10 +11,34 @@ In your `#header` element, create an `h1` element with the text `Balance Sheet` 
 
 # --hints--
 
-Test 1
+You should create a new `h1` element within your `#header` element.
 
 ```js
+assert(document.querySelectorAll('#header > h1')?.length === 1);
+```
 
+Your new `h1` element should have the text `Balance Sheet`.
+
+```js
+assert(document.querySelector('#header > h1')?.textContent === 'Balance Sheet');
+```
+
+You should create a new `h2` element within your `#header` element.
+
+```js
+assert(document.querySelectorAll('#header > h2')?.length === 1);
+```
+
+Your new `h2` element should have the text `freeCodeCamp`.
+
+```js
+assert(document.querySelector('#header > h2')?.textContent === 'freeCodeCamp');
+```
+
+Your `h1` element should come before your `h2` element.
+
+```js
+assert(document.querySelector('#header > h1')?.nextElementSibling?.localName === 'h2');
 ```
 
 # --seed--

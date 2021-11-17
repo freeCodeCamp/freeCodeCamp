@@ -11,10 +11,10 @@ Your sheet has shifted back to the left side of the page, because you applied a 
 
 # --hints--
 
-Test 1
+Your `#sheet` selector should have a `margin` property set to `auto`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('#sheet')?.margin === 'auto');
 ```
 
 # --seed--

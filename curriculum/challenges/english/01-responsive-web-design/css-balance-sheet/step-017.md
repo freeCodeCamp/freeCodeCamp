@@ -11,10 +11,39 @@ Now you can start filling in the data. In your first `.row` element, give the `s
 
 # --hints--
 
-Test 1
+The first `span` element should have the text `Cash`.
 
 ```js
+const row = document.querySelectorAll('.section > .row')?.[0];
+assert(row?.querySelectorAll('span')?.[0]?.textContent === 'Cash');
+```
 
+The second `span` element should have the text `$25`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[0];
+assert(row?.querySelectorAll('span')?.[1]?.textContent === '$25');
+```
+
+The third `span` element should have the text `$30`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[0];
+assert(row?.querySelectorAll('span')?.[2]?.textContent === '$30');
+```
+
+The fourth `span` element should have the text `$28`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[0];
+assert(row?.querySelectorAll('span')?.[3]?.textContent === '$28');
+```
+
+Your first `.notes` element should have the text `This is the cash we currently have on hand.`.
+
+```js
+const notes = document.querySelectorAll('.section > .notes')?.[0];
+assert(notes?.textContent === 'This is the cash we currently have on hand.');
 ```
 
 # --seed--

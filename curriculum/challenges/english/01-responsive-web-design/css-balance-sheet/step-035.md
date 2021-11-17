@@ -11,10 +11,10 @@ The text does not look quite right. Typically, in an accounting sheet, the numer
 
 # --hints--
 
-Test 1
+Your `span:not(.name)` selector should have a `text-align` property set to `right`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('span:not(.name)')?.textAlign === 'right');
 ```
 
 # --seed--

@@ -11,10 +11,16 @@ CSS has an `[attribute=value]` selector which allows you to target any element w
 
 # --hints--
 
-Test 1
+You should have a new `span[class="current"]` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('span[class="current"]'));
+```
 
+Your `span[class="current"]` selector should have a `font-style` property set to `italic`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('span[class="current"]')?.fontStyle === 'italic');
 ```
 
 # --seed--

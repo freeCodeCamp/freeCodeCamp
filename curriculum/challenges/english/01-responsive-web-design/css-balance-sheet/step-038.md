@@ -11,10 +11,10 @@ The new border is very close to the text in your rows. Give your `.row` selector
 
 # --hints--
 
-Test 1
+Your `.row` selector should have a `padding` property set to `4px`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.row')?.padding === '4px');
 ```
 
 # --seed--

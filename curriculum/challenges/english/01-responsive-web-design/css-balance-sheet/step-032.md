@@ -11,10 +11,22 @@ Now you need to align the text content of your sheet so that it appears in colum
 
 # --hints--
 
-Test 1
+You should have a new `.row` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.row'));
+```
 
+Your `.row` selector should have a `display` property set to `flex`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.row')?.display === 'flex');
+```
+
+Your `.row` selector should have a `justify-content` property set to `flex-end`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.row')?.justifyContent === 'flex-end');
 ```
 
 # --seed--

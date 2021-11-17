@@ -13,10 +13,16 @@ Create a `div > h2` rule to target all of your `h2` elements that are a direct c
 
 # --hints--
 
-Test 1
+You should have a new `div > h2` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('div > h2'));
+```
 
+Your `div > h2` selector should have a `background-color` property set to `#99c9ff`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('div > h2')?.backgroundColor === 'rgb(153, 201, 255)');
 ```
 
 # --seed--

@@ -11,10 +11,16 @@ Finally, the `elem1 + elem2` selector will target each `elem2` element that come
 
 # --hints--
 
-Test 1
+You should have a new `p + span` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('p + span'));
+```
 
+Your `p + span` selector should have a `font-size` property set to `0.8em`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('p + span')?.fontSize === '0.8em');
 ```
 
 # --seed--

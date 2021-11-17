@@ -11,10 +11,16 @@ The browser defaults for font and color are not ideal. Give your `body` selector
 
 # --hints--
 
-Test 1
+Your `body` selector should have a `font-family` property set to `Tahoma`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily === 'Tahoma');
+```
 
+Your `body` selector should have a `color` property set to `#0a0a23`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.color === 'rgb(10, 10, 35)');
 ```
 
 # --seed--

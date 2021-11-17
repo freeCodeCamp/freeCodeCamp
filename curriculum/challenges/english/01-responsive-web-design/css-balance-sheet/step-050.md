@@ -13,10 +13,16 @@ Create a `div ~ h2` selector to target all of your `h2` elements except the firs
 
 # --hints--
 
-Test 1
+You should have a new `div ~ h2` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('div ~ h2'));
+```
 
+Your `div ~ h2` selector should have a `font-weight` property set to `normal`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('div ~ h2')?.fontWeight === 'normal');
 ```
 
 # --seed--

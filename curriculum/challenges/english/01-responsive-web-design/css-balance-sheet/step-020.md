@@ -11,10 +11,32 @@ In your first `.row total` element, give the `span` elements within the followin
 
 # --hints--
 
-Test 1
+The first `span` element should have the text `Total`.
 
 ```js
+const row = document.querySelectorAll('.section > .row')?.[3];
+assert(row?.querySelectorAll('span')?.[0]?.textContent === 'Total');
+```
 
+The second `span` element should have the text `$579`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[3];
+assert(row?.querySelectorAll('span')?.[1]?.textContent === '$579');
+```
+
+The third `span` element should have the text `$736`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[3];
+assert(row?.querySelectorAll('span')?.[2]?.textContent === '$736');
+```
+
+The fourth `span` element should have the text `$809`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[3];
+assert(row?.querySelectorAll('span')?.[3]?.textContent === '$809');
 ```
 
 # --seed--

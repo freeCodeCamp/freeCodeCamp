@@ -11,10 +11,39 @@ Now move on to your second `.section` element. In the first `.row` there, give t
 
 # --hints--
 
-Test 1
+The first `span` element should have the text `Loans`.
 
 ```js
+const row = document.querySelectorAll('.section > .row')?.[4];
+assert(row?.querySelectorAll('span')?.[0]?.textContent === 'Loans');
+```
 
+The second `span` element should have the text `$500`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[4];
+assert(row?.querySelectorAll('span')?.[1]?.textContent === '$500');
+```
+
+The third `span` element should have the text `$250`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[4];
+assert(row?.querySelectorAll('span')?.[2]?.textContent === '$250');
+```
+
+The fourth `span` element should have the text `$0`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[4];
+assert(row?.querySelectorAll('span')?.[3]?.textContent === '$0');
+```
+
+Your fourth `.notes` element should have the text `The outstanding balance on our startup loan.`.
+
+```js
+const notes = document.querySelectorAll('.section > .notes')?.[3];
+assert(notes?.textContent === 'The outstanding balance on our startup loan.');
 ```
 
 # --seed--

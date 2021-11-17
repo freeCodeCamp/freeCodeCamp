@@ -11,10 +11,46 @@ Within your `body` element, create a `div` element with the `id` set to `sheet`.
 
 # --hints--
 
-Test 1
+You should create a new `div` element.
 
 ```js
+assert(document.querySelectorAll('div')?.length === 1);
+```
 
+Your new `div` element should be within your `body` element.
+
+```js
+assert(document.querySelector('div')?.parentElement?.localName === 'body');
+```
+
+Your new `div` element should have an `id` attribute set to `sheet`.
+
+```js
+assert(document.querySelector('div')?.getAttribute('id') === 'sheet');
+```
+
+You should create a new `footer` element.
+
+```js
+assert(document.querySelectorAll('footer')?.length === 1);
+```
+
+Your new `footer` element should be within your `body` element.
+
+```js
+assert(document?.querySelector('footer')?.parentElement?.localName === 'body');
+```
+
+Your `footer` element should come after your `div` element.
+
+```js
+assert(document.querySelector('footer')?.previousElementSibling?.localName === 'div');
+```
+
+Your `footer` element should have the text `Last Updated: August 2021`.
+
+```js
+assert(document.querySelector('footer')?.textContent === 'Last Updated: August 2021');
 ```
 
 # --seed--

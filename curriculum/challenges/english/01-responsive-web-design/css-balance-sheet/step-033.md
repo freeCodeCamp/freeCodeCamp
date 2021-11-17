@@ -7,16 +7,28 @@ dashedName: step-33
 
 # --description--
 
-The `flex-end` setting has also brought your row's description text to the right of the element. To fix this, create a `.name` selector and give it a `.width` property of `100%`, and a `text-align` property of `left`.
+The `flex-end` setting has also brought your row's description text to the right of the element. To fix this, create a `.name` selector and give it a `width` property of `100%`, and a `text-align` property of `left`.
 
 Because you're using `flex`, this tells your `.name` elements to take up 100% of the remaining available width, which allows the text to move to the left.
 
 # --hints--
 
-Test 1
+You should have a new `.name` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.name'));
+```
 
+Your `.name` selector should have a `width` property set to `100%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.name')?.width === '100%');
+```
+
+Your `.name` selector should have a `text-align` property set to `left`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.name')?.textAlign === 'left');
 ```
 
 # --seed--

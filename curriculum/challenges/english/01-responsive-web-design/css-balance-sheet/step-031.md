@@ -11,10 +11,16 @@ The `freeCodeCamp` text should be a bit smaller. Create a `#header h2` selector 
 
 # --hints--
 
-Test 1
+You should have a new `header h2` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#header h2'));
+```
 
+Your `header h2` selector should have a `font-size` property set to `1.3em`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#header h2')?.fontSize === '1.3em');
 ```
 
 # --seed--

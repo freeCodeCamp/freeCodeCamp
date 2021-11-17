@@ -13,10 +13,16 @@ This may seem the same as using the `.total` class selector. However, CSS is par
 
 # --hints--
 
-Test 1
+You should have a new `p[class~="total"]` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('p[class~="total"]'));
+```
 
+Your `p[class~="total"]` selector should have a `border-bottom` property set to `4px double #0a0a23`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('p[class~="total"]')?.borderBottom === '4px double rgb(10, 10, 35)');
 ```
 
 # --seed--

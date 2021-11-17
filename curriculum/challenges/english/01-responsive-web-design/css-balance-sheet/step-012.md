@@ -7,14 +7,35 @@ dashedName: step-12
 
 # --description--
 
-Copy the four `span` elements within your `.row` element, and paste them into your other three `.row` elements. 
+Copy the four `span` elements within your `.row` element, and paste them into your other three `.row` elements within your `.section` element. 
 
 # --hints--
 
-Test 1
+Your second `.row` element should have the four `span` elements.
 
 ```js
+const target = document.querySelectorAll('.section > .row')[1];
+assert(target?.querySelectorAll('span')?.length === 4);
+assert(target?.querySelectorAll('span')?.[0]?.classList?.contains('name'));
+assert(target?.querySelectorAll('span')?.[3]?.classList?.contains('current'));
+```
 
+Your third `.row` element should have the four `span` elements.
+
+```js
+const target = document.querySelectorAll('.section > .row')[2];
+assert(target?.querySelectorAll('span')?.length === 4);
+assert(target?.querySelectorAll('span')?.[0]?.classList?.contains('name'));
+assert(target?.querySelectorAll('span')?.[3]?.classList?.contains('current'));
+```
+
+Your fourth `.row` element (your `.row total` element) should have the four `span` elements.
+
+```js
+const target = document.querySelectorAll('.section > .row')[3];
+assert(target?.querySelectorAll('span')?.length === 4);
+assert(target?.querySelectorAll('span')?.[0]?.classList?.contains('name'));
+assert(target?.querySelectorAll('span')?.[3]?.classList?.contains('current'));
 ```
 
 # --seed--

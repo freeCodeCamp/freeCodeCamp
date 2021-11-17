@@ -11,10 +11,22 @@ Give the first `span` element the text `2019`, the second the text `2020`, and t
 
 # --hints--
 
-Test 1
+Your first `span` element should have the text `2019`.
 
 ```js
+assert(document.querySelectorAll('#header > .row > span')?.[0]?.textContent === '2019');
+```
 
+Your second `span` element should have the text `2020`.
+
+```js
+assert(document.querySelectorAll('#header > .row > span')?.[1]?.textContent === '2020');
+```
+
+Your third `span` element should have the text `2021`.
+
+```js
+assert(document.querySelectorAll('#header > .row > span')?.[2]?.textContent === '2021');
 ```
 
 # --seed--

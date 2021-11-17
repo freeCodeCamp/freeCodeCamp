@@ -11,10 +11,40 @@ Below your `#header` element, create an `h2` element with the text `Assets`, fol
 
 # --hints--
 
-Test 1
+You should create a new `h2` element within your `#sheet` element.
 
 ```js
+assert(document.querySelectorAll('#sheet > h2')?.length === 1);
+```
 
+Your new `h2` element should come after your `#header` element.
+
+```js
+assert(document.querySelector('#sheet > h2')?.previousElementSibling?.localName === 'div');
+```
+
+Your new `h2` element should have the text `Assets`.
+
+```js
+assert(document.querySelector('#sheet > h2')?.textContent === 'Assets');
+```
+
+You should create a new `div` element within your `#sheet` element.
+
+```js
+assert(document.querySelectorAll('#sheet > div')?.length === 2);
+```
+
+Your new `div` element should have a `class` attribute set to `section`.
+
+```js
+assert(document.querySelectorAll('#sheet > div')?.[1]?.classList?.contains('section'));
+```
+
+Your new `div` element should come after your new `h2` element.
+
+```js
+assert(document.querySelector('#sheet > .section')?.previousElementSibling?.localName === 'h2');
 ```
 
 # --seed--

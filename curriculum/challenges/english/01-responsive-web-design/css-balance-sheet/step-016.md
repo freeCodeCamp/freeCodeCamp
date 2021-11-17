@@ -11,10 +11,23 @@ Copy one of your `.row total` elements, with its contents, and paste that into y
 
 # --hints--
 
-Test 1
+Your third `.section` element should have a `.row total` element.
 
 ```js
+assert(document.querySelectorAll('.section')?.[2]?.querySelector('.row.total'));
+```
 
+Your new `.row total` element should match the other `.row total` elements.
+
+```js
+assert.deepEqual(document.querySelectorAll('.row.total')?.[0]?.innerHTML, document.querySelectorAll('.row.total')?.[2]?.innerHTML);
+```
+
+Your third `.section` element should not have any other elements within it.
+
+```js
+assert(document.querySelectorAll('.section')?.[2]?.querySelector('.row.total')?.previousElementSibling === null);
+assert(document.querySelectorAll('.section')?.[2]?.querySelector('.row.total')?.nextElementSibling === null);
 ```
 
 # --seed--

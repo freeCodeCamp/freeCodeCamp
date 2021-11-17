@@ -13,10 +13,16 @@ Start by creating a `body` selector, and give it a `text-align` property set to 
 
 # --hints--
 
-Test 1
+You should create a `body` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('body'));
+```
 
+Your `body` selector should have a `text-align` property set to `center`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.textAlign === 'center');
 ```
 
 # --seed--

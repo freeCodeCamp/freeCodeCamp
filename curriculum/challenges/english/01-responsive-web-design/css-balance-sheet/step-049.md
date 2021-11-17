@@ -11,10 +11,16 @@ Your row headers still need a bit of adjustment. Give your `div > h2` selector a
 
 # --hints--
 
-Test 1
+Your `div > h2` selector should have a `font-size` property set to `1.3em`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('div > h2')?.fontSize === '1.3em');
+```
 
+Your `div > h2` selector should have a `padding` property set to `0 4px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('div > h2')?.padding === '0px 4px');
 ```
 
 # --seed--

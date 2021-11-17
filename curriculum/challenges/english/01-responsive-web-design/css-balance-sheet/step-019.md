@@ -11,10 +11,39 @@ In your third `.row` element, give the `span` elements the following text values
 
 # --hints--
 
-Test 1
+The first `span` element should have the text `Savings`.
 
 ```js
+const row = document.querySelectorAll('.section > .row')?.[2];
+assert(row?.querySelectorAll('span')?.[0]?.textContent === 'Savings');
+```
 
+The second `span` element should have the text `$500`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[2];
+assert(row?.querySelectorAll('span')?.[1]?.textContent === '$500');
+```
+
+The third `span` element should have the text `$650`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[2];
+assert(row?.querySelectorAll('span')?.[2]?.textContent === '$650');
+```
+
+The fourth `span` element should have the text `$728`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[2];
+assert(row?.querySelectorAll('span')?.[3]?.textContent === '$728');
+```
+
+Your third `.notes` element should have the text `Funds set aside for emergencies`.
+
+```js
+const notes = document.querySelectorAll('.section > .notes')?.[2];
+assert(notes?.textContent === 'Funds set aside for emergencies.');
 ```
 
 # --seed--

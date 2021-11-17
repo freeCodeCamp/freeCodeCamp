@@ -11,10 +11,28 @@ Below your second `.section` element, create another `h2` element with the text 
 
 # --hints--
 
-Test 1
+You should create a new `h2` element below your second `.section` element.
 
 ```js
+assert(document.querySelectorAll('.section')?.[1]?.nextElementSibling?.localName === 'h2');
+```
 
+Your new `h2` element should have the text `Net Worth`.
+
+```js
+assert(document.querySelectorAll('.section')?.[1]?.nextElementSibling?.textContent === 'Net Worth');
+```
+
+You should create a new `div` element within your `#sheet` element.
+
+```js
+assert(document.querySelector('#sheet')?.lastElementChild?.localName === 'div');
+```
+
+Your new `div` element should have a `class` attribute set to `section`.
+
+```js
+assert(document.querySelector('#sheet')?.lastElementChild?.classList?.contains('section'));
 ```
 
 # --seed--

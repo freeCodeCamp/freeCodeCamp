@@ -13,10 +13,16 @@ The `:nth-child()` selector allows you to target elements based on their positio
 
 # --hints--
 
-Test 1
+You should have a new `.row:nth-child(odd)` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.row:nth-child(2n+1)'));
+```
 
+Your `.row:nth-child(odd)` selector should have a `background-color` property set to `#dfdfe2`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.row:nth-child(2n+1)')?.backgroundColor === 'rgb(223, 223, 226)');
 ```
 
 # --seed--

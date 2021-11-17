@@ -13,10 +13,22 @@ Create a `span:not(.name)` selector to target all of your `span` elements except
 
 # --hints--
 
-Test 1
+You should have a new `span:not(.name)` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('span:not(.name)'));
+```
 
+Your `span:not(.name)` selector should have a `margin-left` property set to `10px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('span:not(.name)')?.marginLeft === '10px');
+```
+
+Your `span:not(.name)` selector should have a `min-width` property set to `15%`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('span:not(.name)')?.minWidth === '15%');
 ```
 
 # --seed--

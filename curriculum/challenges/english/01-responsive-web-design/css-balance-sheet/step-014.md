@@ -11,10 +11,10 @@ Copy the entire contents of your first `.section` element and paste them into yo
 
 # --hints--
 
-Test 1
+Your second `.section` element should have the same contents as your first `.section` element.
 
 ```js
-
+assert.deepEqual(document.querySelectorAll('.section')?.[0]?.innerHTML, document.querySelectorAll('.section')?.[1]?.innerHTML);
 ```
 
 # --seed--

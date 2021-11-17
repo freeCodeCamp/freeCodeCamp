@@ -11,10 +11,22 @@ The content within your balance sheet should be left-justified, while the sheet 
 
 # --hints--
 
-Test 1
+You should create a new `#sheet` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#sheet'));
+```
 
+Your `#sheet` selector should have a `text-align` property set to `left`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#sheet')?.textAlign === 'left');
+```
+
+Your `#sheet` selector should have a `max-width` property set to `500px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#sheet')?.maxWidth === '500px');
 ```
 
 # --seed--

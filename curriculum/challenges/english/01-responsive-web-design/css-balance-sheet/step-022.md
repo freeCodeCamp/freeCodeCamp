@@ -11,10 +11,39 @@ Give the `span` elements within your sixth `.row` element the following text, in
 
 # --hints--
 
-Test 1
+The first `span` element should have the text `Expenses`.
 
 ```js
+const row = document.querySelectorAll('.section > .row')?.[5];
+assert(row?.querySelectorAll('span')?.[0]?.textContent === 'Expenses');
+```
 
+The second `span` element should have the text `$200`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[5];
+assert(row?.querySelectorAll('span')?.[1]?.textContent === '$200');
+```
+
+The third `span` element should have the text `$300`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[5];
+assert(row?.querySelectorAll('span')?.[2]?.textContent === '$300');
+```
+
+The fourth `span` element should have the text `$400`.
+
+```js
+const row = document.querySelectorAll('.section > .row')?.[5];
+assert(row?.querySelectorAll('span')?.[3]?.textContent === '$400');
+```
+
+Your fifth `.notes` element should have the text `Annual anticipated expenses, such as payroll.`.
+
+```js
+const notes = document.querySelectorAll('.section > .notes')?.[4];
+assert(notes?.textContent === 'Annual anticipated expenses, such as payroll.');
 ```
 
 # --seed--

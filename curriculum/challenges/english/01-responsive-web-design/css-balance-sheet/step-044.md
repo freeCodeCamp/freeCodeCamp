@@ -13,10 +13,18 @@ It is important to note here that adjusting the `tabindex` value in this way can
 
 # --hints--
 
-Test 1
+Each of your `.row total` elements should have a `tabindex` attribute set to `1`.
 
 ```js
+const rows = [...document.querySelectorAll('.row.total')];
+assert(rows?.every(row => row.getAttribute('tabindex') === '1'));
+```
 
+You should not set the `tabindex` on any other elements.
+
+```js
+const elements = [...document.querySelectorAll('*[tabindex]')];
+assert(elements?.every(element => element.classList.contains('row') && element.classList.contains('total')));
 ```
 
 # --seed--

@@ -13,10 +13,22 @@ Create a `.row[tabindex]:focus` selector, and give it a `background-color` prope
 
 # --hints--
 
-Test 1
+You should have a new `.row[tabindex]:focus` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.row[tabindex]:focus'));
+```
 
+Your `.row[tabindex]:focus` selector should have a `background-color` property set to `#198eee`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.row[tabindex]:focus')?.backgroundColor === 'rgb(25, 142, 238)');
+```
+
+Your `.row[tabindex]:focus` selector should have a `color` property set to `white`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.row[tabindex]:focus')?.color === 'white');
 ```
 
 # --seed--

@@ -11,10 +11,34 @@ Within the `.section` element, create a `p` element with the `class` set to `row
 
 # --hints--
 
-Test 1
+You should create a new `p` element within your `.section` element.
 
 ```js
+assert(document.querySelectorAll('.section > p')?.length === 1);
+```
 
+Your new `p` element should have a `class` attribute set to `row`.
+
+```js
+assert(document.querySelector('.section > p')?.classList?.contains('row'));
+```
+
+You should create a new `span` element within your `.section` element.
+
+```js
+assert(document.querySelectorAll('.section > span')?.length === 1);
+```
+
+Your new `span` element should have a `class` attribute set to `notes`.
+
+```js
+assert(document.querySelector('.section > span')?.classList?.contains('notes'));
+```
+
+Your `p` element should come before your `span` element.
+
+```js
+assert(document.querySelector('.section > p')?.nextElementSibling?.localName === 'span');
 ```
 
 # --seed--

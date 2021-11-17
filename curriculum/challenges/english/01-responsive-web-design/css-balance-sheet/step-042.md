@@ -13,10 +13,22 @@ Create a `.row:last-child` selector and give it a `background-color` property se
 
 # --hints--
 
-Test 1
+You should have a new `.row:last-child` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.row:last-child'));
+```
 
+Your `.row:last-child` selector should have a `background-color` property set to `transparent`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.row:last-child')?.backgroundColor === 'transparent');
+```
+
+Your `.row:last-child` selector should have a `margin-bottom` property set to `30px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.row:last-child')?.marginBottom === '30px');
 ```
 
 # --seed--

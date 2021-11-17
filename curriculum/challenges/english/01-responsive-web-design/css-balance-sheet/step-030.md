@@ -11,10 +11,16 @@ To make your sheet stand out from the page, you'll want to give it a border. Giv
 
 # --hints--
 
-Test 1
+Your `#sheet` selector should have a `padding` property set to `10px`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#sheet')?.padding === '10px');
+```
 
+Your `#sheet` selector should have a `border` property set to `2px solid #d0d0d5`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#sheet')?.border === '2px solid rgb(208, 208, 213)');
 ```
 
 # --seed--

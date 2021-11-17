@@ -7,14 +7,20 @@ dashedName: step-41
 
 # --description--
 
-Now target your even `.row` elements using the same `:nth-of-type()` selector, and give them a `background-color` property set to `#d0d0d5`.
+Now target your even `.row` elements using another `:nth-of-type()` selector, and give them a `background-color` property set to `#d0d0d5`.
 
 # --hints--
 
-Test 1
+You should have a new `.row:nth-of-type(even)` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.row:nth-of-type(2n)'));
+```
 
+Your `.row:nth-of-type(even)` selector should have a `background-color` property set to `#d0d0d5`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.row:nth-of-type(2n)')?.backgroundColor === 'rgb(208, 208, 213)');
 ```
 
 # --seed--

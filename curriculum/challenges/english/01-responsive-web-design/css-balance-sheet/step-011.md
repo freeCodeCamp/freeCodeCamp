@@ -11,10 +11,22 @@ Within your first `.row` element, create four `span` elements. Give the first `s
 
 # --hints--
 
-Test 1
+Your first `.row` element (in your `.section` element) should have four `span` elements.
 
 ```js
+assert(document.querySelectorAll('.section > .row > span')?.length === 4);
+```
 
+Your first new `span` element should have a `class` attribute set to `name`.
+
+```js
+assert(document.querySelectorAll('.section > .row > span')?.[0]?.classList?.contains('name'));
+```
+
+Your last new `span` element should have a `class` attribute set to `current`.
+
+```js
+assert(document.querySelectorAll('.section > .row > span')?.[3]?.classList?.contains('current'));
 ```
 
 # --seed--

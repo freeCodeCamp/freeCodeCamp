@@ -13,10 +13,16 @@ With that, you have successfully completed your balance sheet.
 
 # --hints--
 
-Test 1
+Your `p + span` selector should have a `font-style` property set to `italic`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('p + span')?.fontStyle === 'italic');
+```
 
+Your `p + span` selector should have a `color` property set to `#3b3b4f`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('p + span')?.color === 'rgb(59, 59, 79)');
 ```
 
 # --seed--

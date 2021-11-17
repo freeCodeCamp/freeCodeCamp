@@ -7,14 +7,45 @@ dashedName: step-9
 
 # --description--
 
-Copy the `.row` and `.notes` elements and paste two more sets, so that your `.row` has three of each.
+Copy the `.row` and `.notes` elements and paste two more sets, so that your `.section` has three of each.
 
 # --hints--
 
-Test 1
+You should have three `.row` elements.
 
 ```js
+assert(document.querySelectorAll('.row').length === 4);
+```
 
+You should have three `.notes` elements.
+
+```js
+assert(document.querySelectorAll('.notes').length === 3);
+```
+
+Your `.row` elements should all be within your `.section` element.
+
+```js
+assert(document.querySelectorAll('.section > .row').length === 3);
+```
+
+Your `.notes` elements should all be within your `.section` element.
+
+```js
+assert(document.querySelectorAll('.section > .notes').length === 3);
+```
+
+Your `.row` and `.notes` elements should be in the correct order.
+
+```js
+const children = document.querySelector('.section')?.children;
+assert(children?.length === 6);
+assert(children?.[0]?.classList?.contains('row'));
+assert(children?.[1]?.classList?.contains('notes'));
+assert(children?.[2]?.classList?.contains('row'));
+assert(children?.[3]?.classList?.contains('notes'));
+assert(children?.[4]?.classList?.contains('row'));
+assert(children?.[5]?.classList?.contains('notes'));
 ```
 
 # --seed--

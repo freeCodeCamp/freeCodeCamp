@@ -11,10 +11,23 @@ Below the final `.notes` element, create a `p` element with the `class` set to `
 
 # --hints--
 
-Test 1
+You should create a new `p` element within your `.section` element.
 
 ```js
+assert(document.querySelectorAll('.section > p')?.length === 4);
+```
 
+Your new `p` element should have a `class` attribute set to `row total`.
+
+```js
+assert(document.querySelectorAll('.section > p')?.[3]?.classList?.contains('row'));
+assert(document.querySelectorAll('.section > p')?.[3]?.classList?.contains('total'));
+```
+
+Your new `p` element should be the last element in the `.section` element.
+
+```js
+assert(document.querySelectorAll('.section > p')?.[3]?.nextElementSibling === null);
 ```
 
 # --seed--

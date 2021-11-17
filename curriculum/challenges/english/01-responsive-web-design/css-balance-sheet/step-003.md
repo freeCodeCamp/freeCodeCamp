@@ -11,10 +11,16 @@ Within your `#sheet` element, create a new `div` and give it an `id` set to `hea
 
 # --hints--
 
-Test 1
+You should create a new `div` element within your `#sheet` element.
 
 ```js
+assert(document.querySelectorAll('#sheet > div')?.length === 1);
+```
 
+Your new `div` element should have an `id` attribute set to `header`.
+
+```js
+assert(document.querySelector('#sheet > div')?.getAttribute('id') === 'header');
 ```
 
 # --seed--

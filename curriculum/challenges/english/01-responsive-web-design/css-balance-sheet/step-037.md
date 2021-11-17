@@ -13,10 +13,10 @@ Start by giving your `.row` selector a `border-bottom` property set to `1px soli
 
 # --hints--
 
-Test 1
+Your `.row` selector should have a `border-bottom` property set to `1px solid #0a0a23`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.row')?.borderBottom === '1px solid rgb(10, 10, 35)');
 ```
 
 # --seed--
