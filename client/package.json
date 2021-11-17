@@ -19,11 +19,11 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
-    "prebuild": "node ../tools/scripts/build/ensure-env.js && npm run build:workers -- --env production",
+    "prebuild": "tsc ../tools/scripts/build/ensure-env.ts && node ../tools/scripts/build/ensure-env.js && npm run build:workers -- --env production",
     "build": "node --max_old_space_size=7168 node_modules/gatsby-cli build --prefix-paths",
     "build:workers": "node --max_old_space_size=7168 node_modules/webpack-cli/bin/cli --config ./webpack-workers.js",
     "clean": "gatsby clean",
-    "predevelop": "node ../tools/scripts/build/ensure-env.js && npm run build:workers -- --env development",
+    "predevelop": "tsc ../tools/scripts/build/ensure-env.ts && node ../tools/scripts/build/ensure-env.js && npm run build:workers -- --env development",
     "develop": "node --max_old_space_size=4000 node_modules/gatsby-cli develop --inspect=9230",
     "lint": "node ./i18n/schema-validation.js",
     "serve": "gatsby serve -p 8000",
