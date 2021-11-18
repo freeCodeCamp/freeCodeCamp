@@ -79,8 +79,8 @@
           "In this lesson, you will be using CSS to create your own painting in Rothko's style. You will use many of the skills you have already been practicing, as well as new CSS tool such as blur and transform."
         ]
       },
-      "css-variables-skyline": {
-        "title": "CSS Variables Skyline",
+      "learn-css-variables-by-building-a-city-skyline": {
+        "title": "Learn CSS Variables By Building A City Skyline",
         "intro": ["", ""]
       },
       "registration-form": { "title": "Registration Form", "intro": ["", ""] },
