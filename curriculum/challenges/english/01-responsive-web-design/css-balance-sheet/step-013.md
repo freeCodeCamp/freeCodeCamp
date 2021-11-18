@@ -7,7 +7,7 @@ dashedName: step-13
 
 # --description--
 
-Below your `.section` element, create another `h2` element with the text `Liabilities`. Following that, create another `div` with the `class` set to `.section`.
+Below your `.section` element, create another `h2` element with the text `Liabilities`. Following that, create another `div` with the `class` set to `section`.
 
 # --hints--
 
