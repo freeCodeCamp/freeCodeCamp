@@ -133,7 +133,7 @@
     "process": "0.11.10",
     "shx": "0.3.3",
     "start-server-and-test": "1.14.0",
-    "typescript": "4.4.4",
+    "typescript": "4.5.2",
     "webpack-bundle-analyzer": "4.5.0"
   }
 }
