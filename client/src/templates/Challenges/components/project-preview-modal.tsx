@@ -13,6 +13,8 @@ import {
 import { projectPreviewId } from '../utils/frame';
 import Preview from './preview';
 
+import './project-preview-modal.css';
+
 export interface PreviewConfig {
   challengeType: boolean;
   challengeFiles: ChallengeFile[];
