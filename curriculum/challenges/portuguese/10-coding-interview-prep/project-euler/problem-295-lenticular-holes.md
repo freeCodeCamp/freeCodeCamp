@@ -1,6 +1,6 @@
 ---
 id: 5900f4931000cf542c50ffa6
-title: 'Problem 295: Lenticular holes'
+title: 'Problema 295: Orifícios lenticulares'
 challengeType: 5
 forumTopicId: 301947
 dashedName: problem-295-lenticular-holes
@@ -8,32 +8,34 @@ dashedName: problem-295-lenticular-holes
 
 # --description--
 
-We call the convex area enclosed by two circles a lenticular hole if:
+Chamamos a área convexa criada no cruzamento de dois círculos de um orifício lenticular se:
 
-The centres of both circles are on lattice points.
+- Os centros de ambos os círculos estão em pontos da rede.
+- Os dois círculos se cruzam em dois pontos de da rede distintos.
+- O interior da área convexa criada pelos dois os círculos não contém pontos da rede.
 
-The two circles intersect at two distinct lattice points.
+Considere os círculos:
 
-The interior of the convex area enclosed by both circles does not contain any lattice points.
+$$\begin{align} & C_0: x^2 + y^2 = 25 \\\\ & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
 
-Consider the circles: C0: x2+y2=25 C1: (x+4)2+(y-4)2=1 C2: (x-12)2+(y-4)2=65
+Os círculos $C_0$, $C_1$ e $C_2$ estão desenhados na imagem abaixo.
 
-The circles C0, C1 and C2 are drawn in the picture below.
+<img class="img-responsive center-block" alt="círculos C_0, C_1 e C_2" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
 
-C0 and C1 form a lenticular hole, as well as C0 and C2.
+$C_0$ e $C_1$ formam um orifício lenticular, assim como $C_0$ e $C_2$.
 
-We call an ordered pair of positive real numbers (r1, r2) a lenticular pair if there exist two circles with radii r1 and r2 that form a lenticular hole. We can verify that (1, 5) and (5, √65) are the lenticular pairs of the example above.
+Chamamos de par ordenado de números reais positivos ($r_1$, $r_2$) um par lenticular se existirem dois círculos com raio $r_1$ e $r_2$ que formem um orifício lenticular. Podemos verificar que ($1$, $5$) e ($5$, $\sqrt{65}$) são os pares lenticulares do exemplo acima.
 
-Let L(N) be the number of distinct lenticular pairs (r1, r2) for which 0 &lt; r1 ≤ r2 ≤ N. We can verify that L(10) = 30 and L(100) = 3442.
+Considere $L(N)$ como o número de pares lenticulares distintos ($r_1$, $r_2$) para os quais $0 &lt; r_1 ≤ r_2 ≤ N$. Podemos verificar que $L(10) = 30$ e $L(100) = 3442$.
 
-Find L(100 000).
+Encontre $L(100.000)$.
 
 # --hints--
 
-`euler295()` should return 4884650818.
+`lenticularHoles()` deve retornar `4884650818`.
 
 ```js
-assert.strictEqual(euler295(), 4884650818);
+assert.strictEqual(lenticularHoles(), 4884650818);
 ```
 
 # --seed--
@@ -41,12 +43,12 @@ assert.strictEqual(euler295(), 4884650818);
 ## --seed-contents--
 
 ```js
-function euler295() {
+function lenticularHoles() {
 
   return true;
 }
 
-euler295();
+lenticularHoles();
 ```
 
 # --solutions--
