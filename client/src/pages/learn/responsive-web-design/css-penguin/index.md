@@ -1,10 +1,10 @@
 ---
-title: Introduction to the CSS Penguin
-block: css-penguin
+title: Introduction to the Learn CSS Transforms by Building a Penguin
+block: learn-css-transforms-by-building-a-penguin
 superBlock: Responsive Web Design
 isBeta: true
 ---
 
-## Introduction to the CSS Penguin
+## Introduction to the Learn CSS Transforms by Building a Penguin
 
 This is a test for the new project-based curriculum.

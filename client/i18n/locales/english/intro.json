@@ -103,7 +103,7 @@
         "intro": ["", ""]
       },
       "css-ferris-wheel": { "title": "CSS Ferris Wheel", "intro": ["", ""] },
-      "css-penguin": { "title": "CSS Penguin", "intro": ["", ""] }
+      "learn-css-transforms-by-building-a-penguin": { "title": "Learn CSS Transforms by Building a Penguin", "intro": ["", ""] }
     }
   },
   "javascript-algorithms-and-data-structures": {
