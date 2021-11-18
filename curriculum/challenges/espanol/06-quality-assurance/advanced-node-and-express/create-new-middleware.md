@@ -1,6 +1,6 @@
 ---
 id: 5895f70df9fc0f352b528e6a
-title: Create New Middleware
+title: Crea nuevo Middleware
 challengeType: 2
 forumTopicId: 301551
 dashedName: create-new-middleware
@@ -8,9 +8,9 @@ dashedName: create-new-middleware
 
 # --description--
 
-As is, any user can just go to `/profile` whether they have authenticated or not, by typing in the url. We want to prevent this, by checking if the user is authenticated first before rendering the profile page. This is the perfect example of when to create a middleware.
+Tal como está, cualquier usuario puede ir a `/profile` si se ha autentificado o no, escribiendo la url. Queremos evitar esto, comprobando si el usuario está autentificado primero antes de mostrar la página de perfil. Este es el ejemplo perfecto de cuándo crear un middleware.
 
-The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling passport's `isAuthenticated` method on the `request` which, in turn, checks if `req.user` is defined. If it is, then `next()` should be called, otherwise, we can just respond to the request with a redirect to our homepage to login. An implementation of this middleware is:
+El desafío aquí es crear la función middleware `ensureAuthenticated(req, res, next)`, el cual comprobará si un usuario está autentificado llamando al método `isAuthenticated` del pasaporte en la `request` que, a su vez, comprueba si `req.user` está definido. Si lo es, entonces se debe llamar a `next()`, de lo contrario, podemos simplemente responder a la solicitud con una redirección a nuestra página de inicio para iniciar sesión. Una implementación de este middleware es:
 
 ```js
 function ensureAuthenticated(req, res, next) {
@@ -21,7 +21,7 @@ function ensureAuthenticated(req, res, next) {
 };
 ```
 
-Now add *ensureAuthenticated* as a middleware to the request for the profile page before the argument to the get request containing the function that renders the page.
+Ahora añade *ensureAuthenticated* como middleware a la petición de la página de perfil antes del argumento de la petición get que contiene la función que renderiza la página.
 
 ```js
 app
@@ -31,11 +31,11 @@ app
  });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959).
 
 # --hints--
 
-Middleware ensureAuthenticated should be implemented and on our /profile route.
+El Middleware ensureAuthenticated debe ser implementado y en nuestra ruta /profile.
 
 ```js
 (getUserInput) =>
@@ -58,7 +58,7 @@ Middleware ensureAuthenticated should be implemented and on our /profile route.
   );
 ```
 
-A Get request to /profile should correctly redirect to / since we are not authenticated.
+Una petición Get a /profile debe redirigir correctamente a / ya que no estamos autentificados.
 
 ```js
 (getUserInput) =>

@@ -35,8 +35,12 @@ function put<T = void>(path: string, body: unknown): Promise<T> {
   return request('PUT', path, body);
 }
 
+function deleteRequest<T = void>(path: string, body: unknown): Promise<T> {
+  return request('DELETE', path, body);
+}
+
 async function request<T>(
-  method: 'POST' | 'PUT',
+  method: 'POST' | 'PUT' | 'DELETE',
   path: string,
   body: unknown
 ): Promise<T> {
@@ -207,6 +211,10 @@ export function postResetProgress(): Promise<void> {
   return post('/account/reset-progress', {});
 }
 
+export function postWebhookToken(): Promise<void> {
+  return post('/user/webhook-token', {});
+}
+
 /** PUT **/
 
 interface MyAbout {
@@ -248,4 +256,9 @@ export function putUserUpdateEmail(email: string): Promise<void> {
 
 export function putVerifyCert(certSlug: string): Promise<void> {
   return put('/certificate/verify', { certSlug });
+}
+
+/** DELETE **/
+export function deleteWebhookToken(): Promise<void> {
+  return deleteRequest('/user/webhook-token', {});
 }

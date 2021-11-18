@@ -13,5 +13,6 @@
   "sciCompPyV7": "isSciCompPyCertV7",
   "dataAnalysisPyV7": "isDataAnalysisPyCertV7",
   "machineLearningPyV7": "isMachineLearningPyCertV7",
-  "fullStack": "isFullStackCert"
+  "fullStack": "isFullStackCert",
+  "relationalDatabasesV8": "isRelationalDatabasesV8"
 }

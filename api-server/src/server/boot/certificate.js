@@ -36,7 +36,8 @@ const {
   infosecV7Id,
   sciCompPyV7Id,
   dataAnalysisPyV7Id,
-  machineLearningPyV7Id
+  machineLearningPyV7Id,
+  relationalDatabasesV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -111,6 +112,10 @@ function createCertTypeIds(allChallenges) {
     ),
     [certTypes.machineLearningPyV7]: getCertById(
       machineLearningPyV7Id,
+      allChallenges
+    ),
+    [certTypes.relationalDatabasesV8]: getCertById(
+      relationalDatabasesV8Id,
       allChallenges
     )
   };

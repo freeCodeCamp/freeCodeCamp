@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-mixin 应该有一个 `@else if` 语句来检查 `$val` 是否等于 `heavy`，并设置 `border` 为 `3px solid black`。
+mixin 应该有一个 `@else if` 语句来检查 `$val` 是否等于 `heavy`，并设置 `border` 为 `6px solid black`。
 
 ```js
 assert(

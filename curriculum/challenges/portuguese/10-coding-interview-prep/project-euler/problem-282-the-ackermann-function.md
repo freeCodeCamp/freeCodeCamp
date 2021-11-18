@@ -1,6 +1,6 @@
 ---
 id: 5900f4861000cf542c50ff99
-title: 'Problem 282: The Ackermann function'
+title: 'Problema 282: A função de Ackermann'
 challengeType: 5
 forumTopicId: 301933
 dashedName: problem-282-the-ackermann-function
@@ -8,18 +8,20 @@ dashedName: problem-282-the-ackermann-function
 
 # --description--
 
-For non-negative integers m, n, the Ackermann function A(m, n) is defined as follows:
+Para números inteiros não negativos $m$, $n$, a função de Ackermann $A(m, n)$ é definida da seguinte forma:
 
-For example A(1, 0) = 2, A(2, 2) = 7 and A(3, 4) = 125.
+$$A(m, n) = \begin{cases} n + 1                 & \text{if $m = 0$}             \\\\ A(m - 1, 1)           & \text{if $m > 0$ and $n = 0$} \\\\ A(m - 1, A(m, n - 1)) & \text{if $m > 0$ and $n > 0$} \end{cases}$$
 
-Find A(n, n) and give your answer mod 148.
+Por exemplo $A(1, 0) = 2$, $A(2, 2) = 7$ e $A(3, 4) = 125$.
+
+Encontre $\displaystyle\sum_{n = 0}^6 A(n, n)$ e dê sua resposta mod ${14}^8$.
 
 # --hints--
 
-`euler282()` should return 1098988351.
+`ackermanFunction()` deve retornar `1098988351`.
 
 ```js
-assert.strictEqual(euler282(), 1098988351);
+assert.strictEqual(ackermanFunction(), 1098988351);
 ```
 
 # --seed--
@@ -27,12 +29,12 @@ assert.strictEqual(euler282(), 1098988351);
 ## --seed-contents--
 
 ```js
-function euler282() {
+function ackermanFunction() {
 
   return true;
 }
 
-euler282();
+ackermanFunction();
 ```
 
 # --solutions--

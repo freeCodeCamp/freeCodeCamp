@@ -14,6 +14,7 @@ import DonateModal from '../../components/Donation/DonationModal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
+import WebhookToken from '../../components/settings/webhook-token';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
@@ -187,6 +188,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size={2} />
             <SuperBlockIntro superBlock={superBlock} />
+            {superBlock === 'relational-databases' && isSignedIn && (
+              <WebhookToken isSuperBlockPage={true} />
+            )}
             <Spacer size={2} />
             <h2 className='text-center big-subheading'>
               {t(`intro:misc-text.courses`)}

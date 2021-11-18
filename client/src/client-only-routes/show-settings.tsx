@@ -16,6 +16,7 @@ import Honesty from '../components/settings/honesty';
 import Internet from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
+import WebhookToken from '../components/settings/webhook-token';
 import {
   signInLoadingSelector,
   userSelector,
@@ -25,7 +26,7 @@ import {
 import { User } from '../redux/prop-types';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 
-const { apiLocation } = envData;
+const { apiLocation, showUpcomingChanges } = envData;
 
 // TODO: update types for actions
 interface ShowSettingsProps {
@@ -198,6 +199,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             username={username}
             verifyCert={verifyCert}
           />
+          {showUpcomingChanges && <Spacer />}
+          {showUpcomingChanges && <WebhookToken />}
           <Spacer />
           <DangerZone />
         </main>

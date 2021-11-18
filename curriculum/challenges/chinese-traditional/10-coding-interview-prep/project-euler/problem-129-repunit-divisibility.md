@@ -1,6 +1,6 @@
 ---
 id: 5900f3ef1000cf542c50ff01
-title: 'Problem 129: Repunit divisibility'
+title: '問題 129：純元數可分性'
 challengeType: 5
 forumTopicId: 301756
 dashedName: problem-129-repunit-divisibility
@@ -8,20 +8,20 @@ dashedName: problem-129-repunit-divisibility
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define R(k) to be a repunit of length k; for example, R(6) = 111111.
+完全由 1 組成的數字稱爲純元數（repunit）。 我們定義 $R(k)$ 爲長度爲 $k$ 的純元數；例如，$R(6) = 111111$。
 
-Given that n is a positive integer and GCD(n, 10) = 1, it can be shown that there always exists a value, k, for which R(k) is divisible by n, and let A(n) be the least such value of k; for example, A(7) = 6 and A(41) = 5.
+定義正整數 $n$ 滿足 $GCD(n, 10) = 1$，可以證明總是存在 $k$，使 $R(k)$ 可以被 $n$ 整除，記 $A(n)$ 爲滿足條件的 $k$ 的最小值；例如，$A(7) = 6$ 而 $A(41) = 5$。
 
-The least value of n for which A(n) first exceeds ten is 17.
+使得 $A(n)$ 第一次超過 10 的 $n$ 的值是 17。
 
-Find the least value of n for which A(n) first exceeds one-million.
+找到使得 $A(n)$ 第一次超過 100 萬的 $n$ 的值。
 
 # --hints--
 
-`euler129()` should return 1000023.
+`repunitDivisibility()` 應該返回 `1000023`。
 
 ```js
-assert.strictEqual(euler129(), 1000023);
+assert.strictEqual(repunitDivisibility(), 1000023);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler129(), 1000023);
 ## --seed-contents--
 
 ```js
-function euler129() {
+function repunitDivisibility() {
 
   return true;
 }
 
-euler129();
+repunitDivisibility();
 ```
 
 # --solutions--

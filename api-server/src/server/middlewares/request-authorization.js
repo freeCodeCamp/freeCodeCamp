@@ -26,6 +26,7 @@ const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
 const updateHooksRE = /^\/hooks\/update-paypal$/;
 // note: this would be replaced by webhooks later
 const donateRE = /^\/donate\/charge-stripe$/;
+const submitCoderoadChallengeRE = /^\/coderoad-challenge-completed$/;
 
 const _pathsAllowedREs = [
   authRE,
@@ -40,7 +41,8 @@ const _pathsAllowedREs = [
   unsubscribedRE,
   unsubscribeRE,
   updateHooksRE,
-  donateRE
+  donateRE,
+  submitCoderoadChallengeRE
 ];
 
 export function isAllowedPath(path, pathsAllowedREs = _pathsAllowedREs) {
