@@ -84,8 +84,8 @@
         "intro": ["", ""]
       },
       "registration-form": { "title": "Registration Form", "intro": ["", ""] },
-      "accessibility-quiz": {
-        "title": "Accessibility Quiz",
+      "learn-accessibility-by-building-a-quiz": {
+        "title": "Learn Accessibility By Building A Quiz",
         "intro": ["", ""]
       },
       "css-picasso-painting": {
