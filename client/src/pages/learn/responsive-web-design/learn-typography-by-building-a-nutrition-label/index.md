@@ -1,10 +1,10 @@
 ---
-title: Introduction to the CSS Nutrition Label
-block: css-nutrition-label
+title: Introduction to the Learn Typography By Building A Nutrition Label
+block: learn-typography-by-building-a-nutrition-label
 superBlock: Responsive Web Design
 isBeta: true
 ---
 
-## Introduction to the CSS Nutrition Label
+## Introduction to the Learn Typography By Building A Nutrition Label
 
 This is a test for the new project-based curriculum.

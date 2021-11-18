@@ -98,8 +98,8 @@
       "css-piano": { "title": "CSS Piano", "intro": ["", ""] },
       "css-photo-gallery": { "title": "CSS Photo Gallery", "intro": ["", ""] },
       "css-grid-magazine": { "title": "CSS Grid Magazine", "intro": ["", ""] },
-      "css-nutrition-label": {
-        "title": "CSS Nutrition Label",
+      "learn-typography-by-building-a-nutrition-label": {
+        "title": "Learn Typography By Building A Nutrition Label",
         "intro": ["", ""]
       },
       "css-ferris-wheel": { "title": "CSS Ferris Wheel", "intro": ["", ""] }
