@@ -1,10 +1,10 @@
 ---
-title: Introduction to the CSS Ferris Wheel
-block: css-ferris-wheel
+title: Introduction to the Learn CSS Animation By Building A Ferris Wheel
+block: learn-css-animation-by-building-a-ferris-wheel
 superBlock: Responsive Web Design
 isBeta: true
 ---
 
-## Introduction to the CSS Ferris Wheel
+## Introduction to the Learn CSS Animation By Building A Ferris Wheel
 
 This is a test for the new project-based curriculum.

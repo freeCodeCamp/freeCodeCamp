@@ -102,7 +102,7 @@
         "title": "CSS Nutrition Label",
         "intro": ["", ""]
       },
-      "css-ferris-wheel": { "title": "CSS Ferris Wheel", "intro": ["", ""] }
+      "learn-css-animation-by-building-a-ferris-wheel": { "title": "Learn CSS Animation By Building A Ferris Wheel", "intro": ["", ""] }
     }
   },
   "javascript-algorithms-and-data-structures": {
