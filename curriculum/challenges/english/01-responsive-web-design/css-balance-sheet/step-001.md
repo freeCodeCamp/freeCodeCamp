@@ -22,25 +22,25 @@ assert(code.match(/<!DOCTYPE html>/i));
 Your code should have an `html` element.
 
 ```js
-assert(document.querySelectorAll('html').length === 1);
+assert(document.querySelectorAll('html')?.length === 1);
 ```
 
 Your code should have a `head` element within the `html` element.
 
 ```js
-assert(document.querySelectorAll('head').length === 1);
+assert(document.querySelectorAll('head')?.length === 1);
 ```
 
 Your code should have a `body` element within the `html` element.
 
 ```js
-assert(document.querySelectorAll('body').length === 1);
+assert(document.querySelectorAll('body')?.length === 1);
 ```
 
 Your `head` element should come before your `body` element.
 
 ```js
-assert(document.querySelector('body').previousElementSibling.tagName === 'HEAD');
+assert(document.querySelector('body')?.previousElementSibling?.tagName === 'HEAD');
 ```
 
 You should have two `meta` elements.
@@ -108,7 +108,7 @@ assert(/rel\s*=\s*('|")\s*stylesheet\s*\1/.test(code));
 Your `link` element should have `href="./styles.css"` and `rel="stylesheet"` attributes
 
 ```js
-assert(/<\s*link(\s+href\s*=\s*("|')(\.\/)?styles\.css\2\s*rel=('|")\s*stylesheet\s*\4|\s+rel\s*=\s*('|")\s*stylesheet\s*\5\s*href\s*=\s*("|')(\.\/)?styles\.css\6)\s*\/?>/.test(code));
+assert(/<*link(\s+href\s*=\s*("|')(\.\/)?styles\.css\2\s*rel=('|")\s*stylesheet\s*\4|\s+rel\s*=\s*('|")\s*stylesheet\s*\5\s*href\s*=\s*("|')(\.\/)?styles\.css\6)\s*\/?>/.test(code));
 ```
 
 # --seed--
