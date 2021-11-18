@@ -1,0 +1,57 @@
+---
+id: 619692ff79f5770fc6d8c0b4
+title: Step 8
+challengeType: 0
+dashedName: step-8
+---
+
+# --description--
+
+Above the `.ground` element, add a `div` with a `class` of `penguin`. This `div` will contain Flappy Penguin.
+
+# --hints--
+
+Test 1
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>CSS Penguin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+--fcc-editable-region--
+  <body>
+
+    <div class="ground"></div>
+  </body>
+--fcc-editable-region--
+</html>
+```
+
+```css
+body {
+  background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
+  margin: 0;
+  padding: 0;
+  overflow: clip;
+}
+
+.ground {
+  width: 100vw;
+  height: 400px;
+  background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+}
+```

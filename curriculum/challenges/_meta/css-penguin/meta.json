@@ -1,0 +1,83 @@
+{
+  "name": "CSS Penguin",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "css-penguin",
+  "order": 47,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "619665c9abd72906f3ad30f9",
+      "Step 1"
+    ],
+    [
+      "61967e74a8e3690ab6292daa",
+      "Step 2"
+    ],
+    [
+      "61968df2acd5550bf1616c34",
+      "Step 3"
+    ],
+    [
+      "61968e9243a4090cc805531c",
+      "Step 4"
+    ],
+    [
+      "61968f8877c6720d6d61aaf5",
+      "Step 5"
+    ],
+    [
+      "619691693bc14b0e528f5a20",
+      "Step 6"
+    ],
+    [
+      "6196928658b6010f28c39484",
+      "Step 7"
+    ],
+    [
+      "619692ff79f5770fc6d8c0b4",
+      "Step 8"
+    ],
+    [
+      "6196990f966e8f10a40094f6",
+      "Step 9"
+    ],
+    [
+      "619699c10a0f6e11591d73c4",
+      "Step 10"
+    ],
+    [
+      "61969aa6acef5b12200f672e",
+      "Step 11"
+    ],
+    [
+      "61969c487ced6f12db8fef94",
+      "Step 12"
+    ],
+    [
+      "61969d66cfcdba137d021558",
+      "Step 13"
+    ],
+    [
+      "61969e7451455614217e901b",
+      "Step 14"
+    ],
+    [
+      "6196adc17f77a714d51485f2",
+      "Step 15"
+    ],
+    [
+      "6196aead7ac7bf1584b17a7f",
+      "Step 16"
+    ],
+    [
+      "619665c9abd72906f3bd30f9",
+      "Final Prototype"
+    ]
+  ]
+}
