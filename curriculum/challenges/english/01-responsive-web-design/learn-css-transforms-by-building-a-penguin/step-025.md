@@ -1,0 +1,97 @@
+---
+id: 6196d41d40bf9b2aaea5d520
+title: Step 25
+challengeType: 0
+dashedName: step-25
+---
+
+# --description--
+
+Some might say it unrealistic the sun is in front of the mountains. Remedy this by positioning it in the top right corner of the screen such that `75px` of its top and right edges are off screen.
+
+# --hints--
+
+Test 1
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>CSS Penguin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="left-mountain"></div>
+    <div class="back-mountain"></div>
+    <div class="sun"></div>
+    <div class="penguin"></div>
+    <div class="ground"></div>
+  </body>
+</html>
+```
+
+```css
+body {
+  background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
+  margin: 0;
+  padding: 0;
+  overflow: clip;
+}
+
+.left-mountain {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
+  position: absolute;
+  transform: skew(0deg, 44deg);
+  z-index: -1;
+  margin-top: 100px;
+}
+
+.back-mountain {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
+  position: absolute;
+  z-index: -2;
+  transform: rotate(45deg);
+  left: 110px;
+  top: 225px;
+}
+
+--fcc-editable-region--
+.sun {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  position: absolute;
+  border-radius: 50%;
+
+}
+--fcc-editable-region--
+
+.penguin {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-top: 75px;
+}
+
+.ground {
+  width: 100vw;
+  height: 400px;
+  background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  margin-top: -58px;
+}
+```
