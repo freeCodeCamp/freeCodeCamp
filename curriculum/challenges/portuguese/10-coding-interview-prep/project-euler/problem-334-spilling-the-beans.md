@@ -1,6 +1,6 @@
 ---
 id: 5900f4ba1000cf542c50ffcd
-title: 'Problem 334: Spilling the beans'
+title: 'Problema 334: Derramando feijões'
 challengeType: 5
 forumTopicId: 301992
 dashedName: problem-334-spilling-the-beans
@@ -8,24 +8,26 @@ dashedName: problem-334-spilling-the-beans
 
 # --description--
 
-In Plato's heaven, there exist an infinite number of bowls in a straight line. Each bowl either contains some or none of a finite number of beans. A child plays a game, which allows only one kind of move: removing two beans from any bowl, and putting one in each of the two adjacent bowls. The game ends when each bowl contains either one or no beans.
+No céu de Platão, existe um número infinito de tigelas em linha reta. Cada tigela contém alguns ou nenhum de um número finito de feijões. Uma criança joga um jogo, que permite apenas um tipo de movimento: remover dois feijões de qualquer tigela, e colocando um em cada uma das duas tigelas adjacentes. O jogo termina quando cada tigela contém um ou nenhum feijão.
 
-For example, consider two adjacent bowls containing 2 and 3 beans respectively, all other bowls being empty. The following eight moves will finish the game:
+Por exemplo, considere duas tigelas adjacentes contendo 2 e 3 feijões, respectivamente. Todas as outras estão vazias. Os oito movimentos seguintes terminarão o jogo:
 
-<!-- TODO Use MathJax and re-write from projecteuler.net -->
+<img class="img-responsive center-block" alt="animação do jogo quando duas tigelas adjacentes contêm 2 e 3 feijões, respectivamente" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;" />
 
-You are given the following sequences: t0 = 123456. ti = ti-12, if ti-1 is even ti-12 926252, if ti-1 is odd where ⌊x⌋ is the floor function and is the bitwise XOR operator. bi = ( ti mod 211) + 1.
+Você recebe as seguintes sequências:
 
-The first two terms of the last sequence are b1 = 289 and b2 = 145. If we start with b1 and b2 beans in two adjacent bowls, 3419100 moves would be required to finish the game.
+$$\begin{align} & t_0 = 123456, \\\\ & t_i = \begin{cases} \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ é par} \\\\ \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{if $t_{i - 1}$ é ímpar} \end{cases} \\\\ & \qquad \text{onde $⌊x⌋$ é a função de base e $\oplus$ é o operador bitwise XOR.} \\\\ & b_i = (t_i\bmod 2^{11}) + 1. \end{align}$$
 
-Consider now 1500 adjacent bowls containing b1, b2,..., b1500 beans respectively, all other bowls being empty. Find how many moves it takes before the game ends.
+Os dois primeiros termos da última sequência são $b_1 = 289$ e $b_2 = 145$. Se começarmos com $b_1$ e $b_2$ feijões em duas tigelas adjacentes, 3419100 movimentos seriam necessários para terminar o jogo.
+
+Considere agora 1500 tigelas adjacentes contendo $b_1, b_2, \ldots, b_{1500}$ feijões, respectivamente. Todas as outras tigelas estão vazias. Descubra quantos movimentos são necessários antes de o jogo terminar.
 
 # --hints--
 
-`euler334()` should return 150320021261690850.
+`spillingTheBeans()` deve retornar `150320021261690850`.
 
 ```js
-assert.strictEqual(euler334(), 150320021261690850);
+assert.strictEqual(spillingTheBeans(), 150320021261690850);
 ```
 
 # --seed--
@@ -33,12 +35,12 @@ assert.strictEqual(euler334(), 150320021261690850);
 ## --seed-contents--
 
 ```js
-function euler334() {
+function spillingTheBeans() {
 
   return true;
 }
 
-euler334();
+spillingTheBeans();
 ```
 
 # --solutions--
