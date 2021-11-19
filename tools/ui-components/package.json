@@ -20,7 +20,6 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "dependencies": {
     "@babel/preset-typescript": "7.16.0",
-    "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
     "@types/react": "17.0.33",
     "@types/react-dom": "17.0.11",
@@ -39,18 +38,20 @@
     "@storybook/addon-links": "6.3.12",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/react": "6.3.12",
+    "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "12.1.2",
+    "@types/jest": "^27.0.2",
     "autoprefixer": "10.4.0",
     "babel-loader": "8.2.3",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
     "postcss": "8.3.11",
     "postcss-import": "14.0.2",
-    "tailwindcss": "2.2.19",
     "rimraf": "3.0.2",
     "rollup": "2.60.0",
     "rollup-plugin-postcss": "4.0.1",
-    "rollup-plugin-terser": "7.0.2"
+    "rollup-plugin-terser": "7.0.2",
+    "tailwindcss": "2.2.19"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

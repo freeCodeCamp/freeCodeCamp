@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-
+import { SuperBlocks } from '../certification-settings';
 /*
  * List of languages with localizations enabled for builds.
  *
@@ -8,7 +8,7 @@
  * An error will be thrown if the CLIENT_LOCALE and CURRICULUM_LOCALE variables
  * from the .env file aren't found in their respective arrays below
  */
-const availableLangs = {
+export const availableLangs = {
   client: [
     'english',
     'espanol',
@@ -35,61 +35,61 @@ const availableLangs = {
  * certifications which have not been audited & approved will fallback to
  * English equivalent.
  */
-const auditedCerts = {
+export const auditedCerts = {
   espanol: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis'
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis
   ],
   chinese: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis',
-    'quality-assurance',
-    'scientific-computing-with-python',
-    'data-analysis-with-python',
-    'information-security',
-    'machine-learning-with-python'
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy
   ],
   'chinese-traditional': [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis',
-    'quality-assurance',
-    'scientific-computing-with-python',
-    'data-analysis-with-python',
-    'information-security',
-    'machine-learning-with-python'
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy
   ],
   italian: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis',
-    'quality-assurance',
-    'scientific-computing-with-python',
-    'data-analysis-with-python',
-    'information-security',
-    'machine-learning-with-python'
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy
   ],
   portuguese: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis',
-    'quality-assurance',
-    'scientific-computing-with-python',
-    'data-analysis-with-python',
-    'information-security',
-    'machine-learning-with-python'
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy
   ]
 };
 
@@ -101,7 +101,7 @@ const auditedCerts = {
  * string for the language to take advantage of available functionality.
  * Use a 639-1 code here https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
  */
-const i18nextCodes = {
+export const i18nextCodes = {
   english: 'en',
   espanol: 'es',
   chinese: 'zh',
@@ -111,7 +111,7 @@ const i18nextCodes = {
 };
 
 // These are for the language selector dropdown menu in the footer
-const langDisplayNames = {
+export const langDisplayNames = {
   english: 'English',
   espanol: 'Español',
   chinese: '中文（简体字）',
@@ -124,7 +124,7 @@ const langDisplayNames = {
  * There's an example in profile/components/Camper.js
  * List: https://github.com/unicode-cldr/cldr-dates-modern/tree/master/main
  */
-const langCodes = {
+export const langCodes = {
   english: 'en-US',
   espanol: 'es-419',
   chinese: 'zh',
@@ -132,9 +132,3 @@ const langCodes = {
   italian: 'it',
   portuguese: 'pt-BR'
 };
-
-exports.availableLangs = availableLangs;
-exports.i18nextCodes = i18nextCodes;
-exports.langDisplayNames = langDisplayNames;
-exports.langCodes = langCodes;
-exports.auditedCerts = auditedCerts;
