@@ -1,5 +1,5 @@
 ---
-id: 6196d41d40bf9b2aaea5d520
+id: 6196d32d1340d829f0f6f57d
 title: Step 25
 challengeType: 0
 dashedName: step-25
@@ -7,7 +7,7 @@ dashedName: step-25
 
 # --description--
 
-Some might say it unrealistic the sun is in front of the mountains. Remedy this by positioning it in the top right corner of the screen such that `75px` of its top and right edges are off screen.
+Set the `position` property of the sun to prevent it from taking up space in the page layout, and set the `border-radius` such that the sun's shape is a circle.
 
 # --hints--
 
@@ -55,7 +55,7 @@ body {
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
   position: absolute;
   transform: skew(0deg, 44deg);
-  z-index: -1;
+  z-index: 2;
   margin-top: 100px;
 }
 
@@ -64,7 +64,7 @@ body {
   height: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
   position: absolute;
-  z-index: -2;
+  z-index: 1;
   transform: rotate(45deg);
   left: 110px;
   top: 225px;
@@ -75,8 +75,6 @@ body {
   width: 200px;
   height: 200px;
   background-color: yellow;
-  position: absolute;
-  border-radius: 50%;
 
 }
 --fcc-editable-region--
@@ -92,6 +90,7 @@ body {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
   margin-top: -58px;
 }
 ```

@@ -1,5 +1,5 @@
 ---
-id: 619692ff79f5770fc6d8c0b4
+id: 6197f667297bb30a552ce017
 title: Step 8
 challengeType: 0
 dashedName: step-8
@@ -7,7 +7,7 @@ dashedName: step-8
 
 # --description--
 
-Above the `.ground` element, add a `div` with a `class` of `penguin`. This `div` will contain Flappy Penguin.
+As the `.ground` element will be third in the stacking context of the page layout, set its `z-index` to `3`.
 
 # --hints--
 
@@ -32,12 +32,9 @@ Test 1
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
---fcc-editable-region--
   <body>
-
     <div class="ground"></div>
   </body>
---fcc-editable-region--
 </html>
 ```
 
@@ -49,9 +46,12 @@ body {
   overflow: clip;
 }
 
+--fcc-editable-region--
 .ground {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+
 }
+--fcc-editable-region--
 ```

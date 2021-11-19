@@ -1,5 +1,5 @@
 ---
-id: 6196aead7ac7bf1584b17a7f
+id: 6196adc17f77a714d51485f2
 title: Step 16
 challengeType: 0
 dashedName: step-16
@@ -7,11 +7,23 @@ dashedName: step-16
 
 # --description--
 
-To overlap the mountain and `.ground` elements better, give the mountain a `margin-top` of `100px`, and the `.ground` element a `margin-top` of `-58px`.
+Change the stack level of the mountain element such that it appears behind the `.ground` element.
 
 # --hints--
 
-Test 1
+You should use the `z-index` property to change the stack level.
+
+```js
+
+```
+
+You should set the `z-index` property to `2`.
+
+```js
+
+```
+
+You should not change the `z-index` of the `.ground` element.
 
 ```js
 
@@ -55,9 +67,9 @@ body {
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
   position: absolute;
   transform: skew(0deg, 44deg);
-  z-index: -1;
 
 }
+--fcc-editable-region--
 
 .penguin {
   width: 300px;
@@ -70,7 +82,6 @@ body {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
-  
+  z-index: 3;
 }
---fcc-editable-region--
 ```

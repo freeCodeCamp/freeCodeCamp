@@ -1,5 +1,5 @@
 ---
-id: 6196d213d99f16287bff22ae
+id: 6196d1ac33c68d27dcda5796
 title: Step 22
 challengeType: 0
 dashedName: step-22
@@ -7,7 +7,7 @@ dashedName: step-22
 
 # --description--
 
-To finish the background, add a sun, by creating a new `div` element immediately after the `.back-mountain` element, and give it the class of `sun`.
+Rotate the `.back-mountain` element by `45deg` clockwise. Then, give it a `left` property of `110px`, and a `top` property of `225px`.
 
 # --hints--
 
@@ -31,15 +31,12 @@ Test 1
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
---fcc-editable-region--
   <body>
     <div class="left-mountain"></div>
     <div class="back-mountain"></div>
-
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
---fcc-editable-region--
 </html>
 ```
 
@@ -57,20 +54,20 @@ body {
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
   position: absolute;
   transform: skew(0deg, 44deg);
-  z-index: -1;
+  z-index: 2;
   margin-top: 100px;
 }
 
+--fcc-editable-region--
 .back-mountain {
   width: 300px;
   height: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
   position: absolute;
-  z-index: -2;
-  transform: rotate(45deg);
-  left: 110px;
-  top: 225px;
+  z-index: 1;
+
 }
+--fcc-editable-region--
 
 .penguin {
   width: 300px;
@@ -83,6 +80,7 @@ body {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
   margin-top: -58px;
 }
 ```

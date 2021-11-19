@@ -1,5 +1,5 @@
 ---
-id: 6196ce0415498d2463989e84
+id: 6196aead7ac7bf1584b17a7f
 title: Step 17
 challengeType: 0
 dashedName: step-17
@@ -7,7 +7,7 @@ dashedName: step-17
 
 # --description--
 
-To give the effect of a mountain range, add another mountain, by creating a new `div` immediately after `.left-mountain`, and give the new `div` the `class` of `back-mountain`.
+To overlap the mountain and `.ground` elements better, give the mountain a `margin-top` of `100px`, and the `.ground` element a `margin-top` of `-58px`.
 
 # --hints--
 
@@ -24,6 +24,7 @@ Test 1
 ```html
 <!DOCTYPE html>
 <html>
+  
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./styles.css" />
@@ -31,14 +32,11 @@ Test 1
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
---fcc-editable-region--
   <body>
     <div class="left-mountain"></div>
-
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
---fcc-editable-region--
 </html>
 ```
 
@@ -50,14 +48,15 @@ body {
   overflow: clip;
 }
 
+--fcc-editable-region--
 .left-mountain {
   width: 300px;
   height: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
   position: absolute;
   transform: skew(0deg, 44deg);
-  z-index: -1;
-  margin-top: 100px;
+  z-index: 2;
+
 }
 
 .penguin {
@@ -71,6 +70,8 @@ body {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
-  margin-top: -58px;
+  z-index: 3;
+  
 }
+--fcc-editable-region--
 ```

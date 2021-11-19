@@ -1,29 +1,19 @@
 ---
-id: 6196d0cda039d026f7f78d1e
-title: Step 21
+id: 6197cff995d03905b0cca8ad
+title: Step 27
 challengeType: 0
-dashedName: step-21
+dashedName: step-27
 ---
 
 # --description--
 
-Change the stack level of the `.back-mountain` element such that it appears behind the `.left-mountain` element.
+Your penguin will consist of two main sections: the head, and the body.
+
+Within `.penguin`, add two new `div` elements. The first with a `class` of `penguin-head`, and the second with a `class` of `penguin-body`.
 
 # --hints--
 
-You should use the `z-index` property to change the stack level.
-
-```js
-
-```
-
-You should set the `z-index` property to `1`.
-
-```js
-
-```
-
-You should not change the `z-index` of the `.left-mountain` element.
+Test 1
 
 ```js
 
@@ -46,7 +36,12 @@ You should not change the `z-index` of the `.left-mountain` element.
   <body>
     <div class="left-mountain"></div>
     <div class="back-mountain"></div>
-    <div class="penguin"></div>
+    <div class="sun"></div>
+--fcc-editable-region--
+    <div class="penguin">
+
+    </div>
+--fcc-editable-region--
     <div class="ground"></div>
   </body>
 </html>
@@ -70,15 +65,26 @@ body {
   margin-top: 100px;
 }
 
---fcc-editable-region--
 .back-mountain {
   width: 300px;
   height: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
   position: absolute;
-
+  z-index: 1;
+  transform: rotate(45deg);
+  left: 110px;
+  top: 225px;
 }
---fcc-editable-region--
+
+.sun {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  position: absolute;
+  border-radius: 50%;
+  top: -75px;
+  right: -75px;
+}
 
 .penguin {
   width: 300px;

@@ -1,5 +1,5 @@
 ---
-id: 61969c487ced6f12db8fef94
+id: 61969aa6acef5b12200f672e
 title: Step 12
 challengeType: 0
 dashedName: step-12
@@ -7,7 +7,9 @@ dashedName: step-12
 
 # --description--
 
-Target the `.left-mountain` element, and set its `width` and `height` to `300px`. Then, set the `background` to a linear gradient starting at `rgb(203, 241, 228)` and ending at `rgb(80, 183, 255)`.
+To create some scenery in the background, you will add two mountains.
+
+Above the `.penguin` element, add a `div` with a `class` of `left-mountain`.
 
 # --hints--
 
@@ -32,11 +34,13 @@ Test 1
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
+--fcc-editable-region--
   <body>
-    <div class="left-mountain"></div>
+
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
+--fcc-editable-region--
 </html>
 ```
 
@@ -47,10 +51,6 @@ body {
   padding: 0;
   overflow: clip;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin {
   width: 300px;
@@ -63,5 +63,6 @@ body {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
 }
 ```

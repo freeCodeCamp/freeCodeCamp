@@ -1,5 +1,5 @@
 ---
-id: 6196990f966e8f10a40094f6
+id: 619692ff79f5770fc6d8c0b4
 title: Step 9
 challengeType: 0
 dashedName: step-9
@@ -7,7 +7,7 @@ dashedName: step-9
 
 # --description--
 
-Target the `.penguin` element, and set its `width` and `height` to `300px`.
+Above the `.ground` element, add a `div` with a `class` of `penguin`. This `div` will contain Flappy Penguin.
 
 # --hints--
 
@@ -32,10 +32,12 @@ Test 1
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
+--fcc-editable-region--
   <body>
-    <div class="penguin"></div>
+
     <div class="ground"></div>
   </body>
+--fcc-editable-region--
 </html>
 ```
 
@@ -47,13 +49,10 @@ body {
   overflow: clip;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 .ground {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
 }
 ```

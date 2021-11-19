@@ -1,5 +1,5 @@
 ---
-id: 6196cee94c6da1253809dff9
+id: 6196ce0415498d2463989e84
 title: Step 18
 challengeType: 0
 dashedName: step-18
@@ -7,7 +7,7 @@ dashedName: step-18
 
 # --description--
 
-Target the `.back-mountain` element, and set its `width` and `height` to `300px`. Then, set the `background` to a linear gradient starting at `rgb(203, 241, 228)` and ending at `rgb(47, 170, 255)`.
+To give the effect of a mountain range, add another mountain, by creating a new `div` immediately after `.left-mountain`, and give the new `div` the `class` of `back-mountain`.
 
 # --hints--
 
@@ -31,12 +31,14 @@ Test 1
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
+--fcc-editable-region--
   <body>
     <div class="left-mountain"></div>
-    <div class="back-mountain"></div>
+
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
+--fcc-editable-region--
 </html>
 ```
 
@@ -54,13 +56,9 @@ body {
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
   position: absolute;
   transform: skew(0deg, 44deg);
-  z-index: -1;
+  z-index: 2;
   margin-top: 100px;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin {
   width: 300px;
@@ -73,6 +71,7 @@ body {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
   margin-top: -58px;
 }
 ```

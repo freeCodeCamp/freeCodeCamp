@@ -1,5 +1,5 @@
 ---
-id: 6196d0cda039d026f7f78d1e
+id: 6196d00a5d7292262bc02f4c
 title: Step 20
 challengeType: 0
 dashedName: step-20
@@ -7,23 +7,11 @@ dashedName: step-20
 
 # --description--
 
-Change the stack level of the `.back-mountain` element such that it appears behind the `.left-mountain` element.
+Set the `position` property of the `.back-mountain` to prevent it from taking up space in the page layout.
 
 # --hints--
 
-You should use the `z-index` property to change the stack level.
-
-```js
-
-```
-
-You should set the `z-index` property to `-2`.
-
-```js
-
-```
-
-You should not change the `z-index` of the `.left-mountain` element.
+Test 1
 
 ```js
 
@@ -66,7 +54,7 @@ body {
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
   position: absolute;
   transform: skew(0deg, 44deg);
-  z-index: -1;
+  z-index: 2;
   margin-top: 100px;
 }
 
@@ -75,7 +63,6 @@ body {
   width: 300px;
   height: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
-  position: absolute;
 
 }
 --fcc-editable-region--
@@ -91,6 +78,7 @@ body {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
   margin-top: -58px;
 }
 ```

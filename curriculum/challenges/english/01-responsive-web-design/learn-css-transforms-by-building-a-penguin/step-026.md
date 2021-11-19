@@ -1,29 +1,17 @@
 ---
-id: 6196d0cda039d026f7f78d1e
-title: Step 21
+id: 6196d41d40bf9b2aaea5d520
+title: Step 26
 challengeType: 0
-dashedName: step-21
+dashedName: step-26
 ---
 
 # --description--
 
-Change the stack level of the `.back-mountain` element such that it appears behind the `.left-mountain` element.
+Some might say it unrealistic the sun is in front of the mountains. Remedy this by positioning it in the top right corner of the screen such that `75px` of its top and right edges are off screen.
 
 # --hints--
 
-You should use the `z-index` property to change the stack level.
-
-```js
-
-```
-
-You should set the `z-index` property to `1`.
-
-```js
-
-```
-
-You should not change the `z-index` of the `.left-mountain` element.
+Test 1
 
 ```js
 
@@ -46,6 +34,7 @@ You should not change the `z-index` of the `.left-mountain` element.
   <body>
     <div class="left-mountain"></div>
     <div class="back-mountain"></div>
+    <div class="sun"></div>
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
@@ -70,12 +59,24 @@ body {
   margin-top: 100px;
 }
 
---fcc-editable-region--
 .back-mountain {
   width: 300px;
   height: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
   position: absolute;
+  z-index: 1;
+  transform: rotate(45deg);
+  left: 110px;
+  top: 225px;
+}
+
+--fcc-editable-region--
+.sun {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  position: absolute;
+  border-radius: 50%;
 
 }
 --fcc-editable-region--

@@ -1,5 +1,5 @@
 ---
-id: 619699c10a0f6e11591d73c4
+id: 6196990f966e8f10a40094f6
 title: Step 10
 challengeType: 0
 dashedName: step-10
@@ -7,7 +7,7 @@ dashedName: step-10
 
 # --description--
 
-Use the `margin` property to horizontally center the `.penguin` element, and set the `margin-top` to `75px`.
+Target the `.penguin` element, and set its `width` and `height` to `300px`.
 
 # --hints--
 
@@ -48,16 +48,13 @@ body {
 }
 
 --fcc-editable-region--
-.penguin {
-  width: 300px;
-  height: 300px;
 
-}
 --fcc-editable-region--
 
 .ground {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
 }
 ```
