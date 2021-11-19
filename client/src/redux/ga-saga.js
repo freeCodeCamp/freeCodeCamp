@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { takeEvery, call, all, select } from 'redux-saga/effects';
-import { ABTestConfig } from '../../../config/donation-settings';
+import { aBTestConfig } from '../../../config/donation-settings';
 import ga from '../analytics';
 import {
   isSignedInSelector,
@@ -16,7 +16,7 @@ function* callGaType({ payload: { type, data } }) {
   if (
     type === 'event' &&
     data.category.includes('Donation') &&
-    ABTestConfig.isTesting
+    aBTestConfig.isTesting
   ) {
     const isSignedIn = yield select(isSignedInSelector);
     if (isSignedIn) {
@@ -25,7 +25,7 @@ function* callGaType({ payload: { type, data } }) {
       const completedChallengeSession = yield select(completionCountSelector);
       const customDimensions = {
         Test_Variation: emailToABVariant(email) ? 'A' : 'B',
-        Test_Type: ABTestConfig.type,
+        Test_Type: aBTestConfig.type,
         Challenges_Completed_Session: completedChallengeSession,
         Challenges_Completed_Total: completedChallengeTotal.length,
         URL: window.location.href

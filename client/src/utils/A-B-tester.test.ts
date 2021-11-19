@@ -15,10 +15,13 @@ describe('client/src is-email-variation-a', () => {
     let A = 0;
     let B = 0;
     const sampleSize = 100000;
+    faker.seed(123);
+
     for (let i = 0; i < sampleSize; i++) {
       if (emailToAVariant(faker.internet.email()).isAVariant) A++;
       else B++;
     }
+
     const isBucketWellDistributed = (variant: number): boolean =>
       variant > 0.99 * (sampleSize / 2);
 
