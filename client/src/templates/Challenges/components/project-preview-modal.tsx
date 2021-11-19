@@ -77,6 +77,8 @@ export function ProjectPreviewModal({
             projectPreviewMounted(previewConfig);
           }}
         />
+      </Modal.Body>
+      <Modal.Footer>
         <Button
           block={true}
           bsSize='lg'
@@ -88,7 +90,7 @@ export function ProjectPreviewModal({
         >
           {t('buttons.hide-project-preview')}
         </Button>
-      </Modal.Body>
+      </Modal.Footer>
     </Modal>
   );
 }
