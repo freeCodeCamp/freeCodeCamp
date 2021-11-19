@@ -38,7 +38,7 @@
     "@storybook/addon-links": "6.3.12",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/react": "6.3.12",
-    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/jest-dom": "5.15.0",
     "@testing-library/react": "12.1.2",
     "@types/jest": "^27.0.2",
     "autoprefixer": "10.4.0",
