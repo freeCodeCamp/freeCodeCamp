@@ -31,6 +31,6 @@
     "inquirer": "8.1.2",
     "prettier": "2.4.1",
     "ts-node": "10.4.0",
-    "typescript": "4.4.4"
+    "typescript": "4.5.2"
   }
 }
