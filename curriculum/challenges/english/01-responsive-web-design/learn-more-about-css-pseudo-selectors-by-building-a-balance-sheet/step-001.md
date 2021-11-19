@@ -108,7 +108,7 @@ assert(/rel\s*=\s*('|")\s*stylesheet\s*\1/.test(code));
 Your `link` element should have `href="./styles.css"` and `rel="stylesheet"` attributes
 
 ```js
-assert(/<*link(\s+href\s*=\s*("|')(\.\/)?styles\.css\2\s*rel=('|")\s*stylesheet\s*\4|\s+rel\s*=\s*('|")\s*stylesheet\s*\5\s*href\s*=\s*("|')(\.\/)?styles\.css\6)\s*\/?>/.test(code));
+assert(/<link(\s+href\s*=\s*("|')(\.\/)?styles\.css\2\s*rel=('|")\s*stylesheet\s*\4|\s+rel\s*=\s*('|")\s*stylesheet\s*\5\s*href\s*=\s*("|')(\.\/)?styles\.css\6)\s*\/?>/.test(code));
 ```
 
 # --seed--
