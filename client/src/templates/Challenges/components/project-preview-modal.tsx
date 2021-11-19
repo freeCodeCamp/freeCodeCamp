@@ -53,6 +53,7 @@ export function ProjectPreviewModal({
 
   return (
     <Modal
+      bsSize='lg'
       data-cy='project-preview-modal'
       dialogClassName='project-preview-modal'
       onHide={() => {
