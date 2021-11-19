@@ -3,7 +3,7 @@ import sha1 from 'sha-1';
 // This function turns an email to a hash and decides if it should be
 // an A or B variant for A/B testing
 
-export function emailToAVariant(email: string): {
+export function emailToABVariant(email: string): {
   hash: string;
   isAVariant: boolean;
   hashInt: number;

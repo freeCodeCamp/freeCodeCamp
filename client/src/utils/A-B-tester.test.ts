@@ -1,5 +1,5 @@
 import faker from 'faker';
-import { emailToAVariant } from './A-B-tester';
+import { emailToABVariant } from './A-B-tester';
 
 describe('client/src is-email-variation-a', () => {
   it('Consistently returns the same result for the same input', () => {
@@ -8,7 +8,7 @@ describe('client/src is-email-variation-a', () => {
       isAVariant: true,
       hashInt: 2
     };
-    const result = emailToAVariant('foo@freecodecamp.org');
+    const result = emailToABVariant('foo@freecodecamp.org');
     expect(result).toEqual(preSavedResult);
   });
   it('Distributes A and B variations equaly for 100K random emails', () => {
@@ -18,7 +18,7 @@ describe('client/src is-email-variation-a', () => {
     faker.seed(123);
 
     for (let i = 0; i < sampleSize; i++) {
-      if (emailToAVariant(faker.internet.email()).isAVariant) A++;
+      if (emailToABVariant(faker.internet.email()).isAVariant) A++;
       else B++;
     }
 
