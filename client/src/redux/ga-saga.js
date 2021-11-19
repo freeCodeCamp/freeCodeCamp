@@ -8,7 +8,7 @@ import {
   completionCountSelector,
   completedChallengesSelector
 } from '../redux';
-import { emailToAVariant } from '../utils/A-B-tester';
+import { emailToABVariant } from '../utils/A-B-tester';
 
 const GaTypes = { event: ga.event, page: ga.pageview, modal: ga.modalview };
 
@@ -23,14 +23,14 @@ function* callGaType({ payload: { type, data } }) {
       const email = yield select(emailSelector);
       const completedChallengeTotal = yield select(completedChallengesSelector);
       const completedChallengeSession = yield select(completionCountSelector);
-      const customDimentions = {
+      const customDimensions = {
         Test_Variation: emailToAVariant(email) ? 'A' : 'B',
         Test_Type: ABTestConfig.type,
         Challenges_Completed_Session: completedChallengeSession,
         Challenges_Completed_Total: completedChallengeTotal.length,
         URL: window.location.href
       };
-      data = { ...data, ...customDimentions };
+      data = { ...data, ...customDimensions };
     }
   }
 

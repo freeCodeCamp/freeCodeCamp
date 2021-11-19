@@ -5,7 +5,7 @@ describe('client/src is-email-variation-a', () => {
   it('Consistently returns the same result for the same input', () => {
     const preSavedResult = {
       hash: '23e3cacb302b0c759531faa8b414b23709c26029',
-      isAVriant: true,
+      isAVariant: true,
       hashInt: 2
     };
     const result = emailToAVariant('foo@freecodecamp.org');

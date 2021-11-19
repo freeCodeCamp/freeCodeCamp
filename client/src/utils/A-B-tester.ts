@@ -5,17 +5,17 @@ import sha1 from 'sha-1';
 
 export function emailToAVariant(email: string): {
   hash: string;
-  isAVriant: boolean;
+  isAVariant: boolean;
   hashInt: number;
 } {
   // turn the email into a number
   const hash: string = sha1(email);
   const hashInt = parseInt(hash.slice(0, 1), 16);
   // turn the number to A or B variant
-  const isAVriant = hashInt % 2 === 0;
+  const isAVariant = hashInt % 2 === 0;
   return {
     hash,
-    isAVriant,
+    isAVariant,
     hashInt
   };
 }
