@@ -202,4 +202,3 @@ client/static/_redirects
 
 ### UI Components ###
 tools/ui-components/dist
-/client/.idea/
