@@ -1,6 +1,6 @@
 ---
 id: 5900f49b1000cf542c50ffad
-title: 'Problem 302: Strong Achilles Numbers'
+title: 'Problema 302: Números de Aquiles fortes'
 challengeType: 5
 forumTopicId: 301956
 dashedName: problem-302-strong-achilles-numbers
@@ -8,26 +8,26 @@ dashedName: problem-302-strong-achilles-numbers
 
 # --description--
 
-A positive integer n is powerful if p2 is a divisor of n for every prime factor p in n.
+Um número inteiro positivo $n$ é poderoso se $p^2$ é um divisor de $n$ para cada fator primo $p$ em $n$.
 
-A positive integer n is a perfect power if n can be expressed as a power of another positive integer.
+Um número inteiro positivo $n$ é uma potência perfeita se $n$ puder ser expresso como uma potência de outro número inteiro positivo.
 
-A positive integer n is an Achilles number if n is powerful but not a perfect power. For example, 864 and 1800 are Achilles numbers: 864 = 25·33 and 1800 = 23·32·52.
+Um número inteiro positivo $n$ é um número de Aquiles se $n$ for poderoso mas não for uma potência perfeita. Por exemplo, 864 e 1800 são números de Aquiles: $864 = 2^5 \times 3^3$ e $1800 = 2^3 \times 3^2 \times 5^2$.
 
-We shall call a positive integer S a Strong Achilles number if both S and φ(S) are Achilles numbers.1 For example, 864 is a Strong Achilles number: φ(864) = 288 = 25·32. However, 1800 isn't a Strong Achilles number because: φ(1800) = 480 = 25·31·51.
+Vamos chamar um número inteiro positivo $S$ de número de Aquiles forte se $S$ e $φ(S)$ forem números de Aquiles. $φ$ é a função totiente de Euler.
 
-There are 7 Strong Achilles numbers below 104 and 656 below 108.
+Por exemplo, 864 é um número de Aquiles forte: $φ(864) = 288 = 2^5 \times 3^2$. No entanto, 1800 não é um número de Aquiles forte porque: $φ(1800) = 480 = 2^5 \times 3^1 \times 5^1$.
 
-How many Strong Achilles numbers are there below 1018?
+Há 7 números de Aquiles fortes abaixo de ${10}^4$ e 656 abaixo de ${10}^8$.
 
-1 φ denotes Euler's totient function.
+Quantos números de Aquiles fortes existem abaixo de ${10}^{18}$?
 
 # --hints--
 
-`euler302()` should return 1170060.
+`strongAchillesNumbers()` deve retornar `1170060`.
 
 ```js
-assert.strictEqual(euler302(), 1170060);
+assert.strictEqual(strongAchillesNumbers(), 1170060);
 ```
 
 # --seed--
@@ -35,12 +35,12 @@ assert.strictEqual(euler302(), 1170060);
 ## --seed-contents--
 
 ```js
-function euler302() {
+function strongAchillesNumbers() {
 
   return true;
 }
 
-euler302();
+strongAchillesNumbers();
 ```
 
 # --solutions--

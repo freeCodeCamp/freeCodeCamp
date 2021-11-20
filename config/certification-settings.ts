@@ -1,4 +1,4 @@
-const certTypes = {
+export const certTypes = {
   frontEnd: 'isFrontEndCert',
   backEnd: 'isBackEndCert',
   dataVis: 'isDataVisCert',
@@ -17,7 +17,22 @@ const certTypes = {
   relationalDatabasesV8: 'isRelationalDatabasesCertV8'
 };
 
-const certIds = {
+export enum SuperBlocks {
+  RespWebDesign = 'responsive-web-design',
+  JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
+  FrontEndDevLibs = 'front-end-development-libraries',
+  DataVis = 'data-visualization',
+  RelationalDb = 'relational-databases',
+  BackEndDevApis = 'back-end-development-and-apis',
+  QualityAssurance = 'quality-assurance',
+  SciCompPy = 'scientific-computing-with-python',
+  DataAnalysisPy = 'data-analysis-with-python',
+  InfoSec = 'information-security',
+  MachineLearningPy = 'machine-learning-with-python',
+  CodingInterviewPrep = 'coding-interview-prep'
+}
+
+export const certIds = {
   legacyFrontEndChallengeId: '561add10cb82ac38a17513be',
   legacyBackEndChallengeId: '660add10cb82ac38a17513be',
   legacyDataVisId: '561add10cb82ac39a17513bc',
@@ -36,7 +51,7 @@ const certIds = {
   relationalDatabasesV8Id: '606243f50267e718b1e755f4'
 };
 
-const completionHours = {
+export const completionHours = {
   [certTypes.frontEnd]: 400,
   [certTypes.backEnd]: 400,
   [certTypes.dataVis]: 400,
@@ -55,7 +70,7 @@ const completionHours = {
   [certTypes.relationalDatabasesV8]: 300
 };
 
-const certSlugTypeMap = {
+export const certSlugTypeMap = {
   // legacy
   'legacy-front-end': certTypes.frontEnd,
   'legacy-back-end': certTypes.backEnd,
@@ -66,11 +81,11 @@ const certSlugTypeMap = {
   'full-stack': certTypes.fullStack,
 
   // modern
-  'responsive-web-design': certTypes.respWebDesign,
-  'javascript-algorithms-and-data-structures': certTypes.jsAlgoDataStruct,
-  'front-end-development-libraries': certTypes.frontEndDevLibs,
-  'data-visualization': certTypes.dataVis2018,
-  'back-end-development-and-apis': certTypes.apisMicroservices,
+  [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
+  [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
+  [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
+  [SuperBlocks.DataVis]: certTypes.dataVis2018,
+  [SuperBlocks.BackEndDevApis]: certTypes.apisMicroservices,
   'quality-assurance-v7': certTypes.qaV7,
   'information-security-v7': certTypes.infosecV7,
   'scientific-computing-with-python-v7': certTypes.sciCompPyV7,
@@ -79,7 +94,7 @@ const certSlugTypeMap = {
   'relational-databases-v8': certTypes.relationalDatabasesV8
 };
 
-const superBlockCertTypeMap = {
+export const superBlockCertTypeMap = {
   // legacy
   'legacy-front-end': certTypes.frontEnd,
   'legacy-back-end': certTypes.backEnd,
@@ -88,20 +103,20 @@ const superBlockCertTypeMap = {
   'full-stack': certTypes.fullStack,
 
   // modern
-  'responsive-web-design': certTypes.respWebDesign,
-  'javascript-algorithms-and-data-structures': certTypes.jsAlgoDataStruct,
-  'front-end-development-libraries': certTypes.frontEndDevLibs,
-  'data-visualization': certTypes.dataVis2018,
-  'back-end-development-and-apis': certTypes.apisMicroservices,
-  'quality-assurance': certTypes.qaV7,
-  'information-security': certTypes.infosecV7,
-  'scientific-computing-with-python': certTypes.sciCompPyV7,
-  'data-analysis-with-python': certTypes.dataAnalysisPyV7,
-  'machine-learning-with-python': certTypes.machineLearningPyV7,
-  'relational-databases': certTypes.relationalDatabasesV8
+  [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
+  [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
+  [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
+  [SuperBlocks.DataVis]: certTypes.dataVis2018,
+  [SuperBlocks.BackEndDevApis]: certTypes.apisMicroservices,
+  [SuperBlocks.QualityAssurance]: certTypes.qaV7,
+  [SuperBlocks.InfoSec]: certTypes.infosecV7,
+  [SuperBlocks.SciCompPy]: certTypes.sciCompPyV7,
+  [SuperBlocks.DataAnalysisPy]: certTypes.dataAnalysisPyV7,
+  [SuperBlocks.MachineLearningPy]: certTypes.machineLearningPyV7,
+  [SuperBlocks.RelationalDb]: certTypes.relationalDatabasesV8
 };
 
-const certTypeIdMap = {
+export const certTypeIdMap = {
   [certTypes.frontEnd]: certIds.legacyFrontEndChallengeId,
   [certTypes.backEnd]: certIds.legacyBackEndChallengeId,
   [certTypes.dataVis]: certIds.legacyDataVisId,
@@ -120,7 +135,7 @@ const certTypeIdMap = {
   [certTypes.relationalDatabasesV8]: certIds.relationalDatabasesV8Id
 };
 
-const certTypeTitleMap = {
+export const certTypeTitleMap = {
   [certTypes.frontEnd]: 'Legacy Front End',
   [certTypes.backEnd]: 'Legacy Back End',
   [certTypes.dataVis]: 'Legacy Data Visualization',
@@ -139,11 +154,4 @@ const certTypeTitleMap = {
   [certTypes.relationalDatabasesV8]: 'Relational Databases'
 };
 
-exports.oldDataVizId = '561add10cb82ac38a17513b3';
-exports.completionHours = completionHours;
-exports.certTypes = certTypes;
-exports.superBlockCertTypeMap = superBlockCertTypeMap;
-exports.certSlugTypeMap = certSlugTypeMap;
-exports.certIds = certIds;
-exports.certTypeIdMap = certTypeIdMap;
-exports.certTypeTitleMap = certTypeTitleMap;
+export const oldDataVizId = '561add10cb82ac38a17513b3';

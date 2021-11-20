@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
+import { SuperBlocks } from '../../../config/certification-settings';
 
 export const UserPropType = PropTypes.shape({
   about: PropTypes.string,
@@ -81,7 +82,7 @@ export type MarkdownRemark = {
   frontmatter: {
     block: string;
     isBeta: boolean;
-    superBlock: string;
+    superBlock: SuperBlocks;
     title: string;
   };
   headings: [
@@ -159,7 +160,7 @@ export type ChallengeNode = {
   };
   sourceInstanceName: string;
   superOrder: number;
-  superBlock: string;
+  superBlock: SuperBlocks;
   tail: string[];
   template: string;
   tests: Test[];
@@ -302,7 +303,7 @@ export type ChallengeMeta = {
   nextChallengePath: string;
   prevChallengePath: string;
   removeComments: boolean;
-  superBlock: string;
+  superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;
   helpCategory: string;

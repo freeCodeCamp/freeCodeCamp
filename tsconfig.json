@@ -1,5 +1,13 @@
 {
-  "include": ["./i18n/**/*", "./plugins/**/*", "./src/**/*", "./utils/**/*"],
+  "include": [
+    "client/i18n/**/*",
+    "client/plugins/**/*",
+    "client/src/**/*",
+    "client/utils/**/*",
+    "tools/challenge-helper-scripts/**/*",
+    "config/certification-settings.ts",
+    "config/i18n/**/*"
+  ],
   "compilerOptions": {
     "lib": ["WebWorker", "DOM", "DOM.Iterable"],
     "target": "es2020",

@@ -1,6 +1,6 @@
 ---
 id: 5900f4b51000cf542c50ffc8
-title: 'Problem 329: Prime Frog'
+title: 'Problema 329: Sapo primo'
 challengeType: 5
 forumTopicId: 301986
 dashedName: problem-329-prime-frog
@@ -8,24 +8,30 @@ dashedName: problem-329-prime-frog
 
 # --description--
 
-Susan has a prime frog.
+Susan tem um sapo primo.
 
-Her frog is jumping around over 500 squares numbered 1 to 500.
+Seu sapo está pulando por mais de 500 quadrados numerados de 1 a 500.
 
-He can only jump one square to the left or to the right, with equal probability, and he cannot jump outside the range \[1;500].(if it lands at either end, it automatically jumps to the only available square on the next move.)
+Ele só pode pular um quadrado para a esquerda ou para a direita, com igual probabilidade, e não pode pular fora do intervalo [1;500]. Se ele cair em qualquer uma das extremidades, ele pula automaticamente para o único quadrado disponível na próxima vez.
 
-When he is on a square with a prime number on it, he croaks 'P' (PRIME) with probability 2/3 or 'N' (NOT PRIME) with probability 1/3 just before jumping to the next square. When he is on a square with a number on it that is not a prime he croaks 'P' with probability 1/3 or 'N' with probability 2/3 just before jumping to the next square.
+Quando ele está em um quadrado que tem um número primo, ele coaxa 'P' (PRIMO) com probabilidade $\frac{2}{3}$ ou 'N' (NÃO PRIMO) com probabilidade $\frac{1}{3}$ antes de pular para o próximo quadrado. Quando ele está em um quadrado que tem um número não primo, ele coaxa 'P' com probabilidade $\frac{1}{3}$ ou 'N' com probabilidade $\frac{2}{3}$ antes de pular para o próximo quadrado.
 
-Given that the frog's starting position is random with the same probability for every square, and given that she listens to his first 15 croaks, what is the probability that she hears the sequence PPPPNNPPPNPPNPN?
+Dado que a posição inicial do sapo é aleatória com a mesma probabilidade para cada quadrado, e tendo em conta que Susan ouve seus primeiros 15 coaxos, qual é a probabilidade de ouvir a sequência PPPPNNPPPNPPNPN?
 
-Give your answer as a fraction p/q in reduced form.
+Dê sua resposta como uma string de uma fração `p/q` na forma reduzida.
 
 # --hints--
 
-`euler329()` should return 199740353 / 29386561536000.
+`primeFrog()` deve retornar uma string.
 
 ```js
-assert.strictEqual(euler329(), 199740353 / 29386561536000);
+assert(typeof primeFrog() === 'string');
+```
+
+`primeFrog()` deve retornar a string `199740353/29386561536000`.
+
+```js
+assert.strictEqual(primeFrog(), '199740353/29386561536000');
 ```
 
 # --seed--
@@ -33,12 +39,12 @@ assert.strictEqual(euler329(), 199740353 / 29386561536000);
 ## --seed-contents--
 
 ```js
-function euler329() {
+function primeFrog() {
 
   return true;
 }
 
-euler329();
+primeFrog();
 ```
 
 # --solutions--

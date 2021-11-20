@@ -1,6 +1,6 @@
 ---
 id: 5900f49d1000cf542c50ffb0
-title: 'Problem 305: Reflexive Position'
+title: 'Problema 305: Posição reflexiva'
 challengeType: 5
 forumTopicId: 301959
 dashedName: problem-305-reflexive-position
@@ -8,22 +8,22 @@ dashedName: problem-305-reflexive-position
 
 # --description--
 
-Let's call S the (infinite) string that is made by concatenating the consecutive positive integers (starting from 1) written down in base 10.
+Vamos chamar de $S$ a string (infinita) que é feita concatenando os números inteiros positivos consecutivos (começando de 1) escrita na base 10.
 
-Thus, S = 1234567891011121314151617181920212223242...
+Assim, $S = 1234567891011121314151617181920212223242\ldots$
 
-It's easy to see that any number will show up an infinite number of times in S.
+É fácil ver que qualquer número vai aparecer um número infinito de vezes em $S$.
 
-Let's call f(n) the starting position of the nth occurrence of n in S. For example, f(1)=1, f(5)=81, f(12)=271 and f(7780)=111111365.
+Vamos chamar de $f(n)$ na posição inicial da $n^{\text{-ésima}}$ ocorrência de $n$ em $S$. Por exemplo, $f(1) = 1$, $f(5) = 81$, $f(12) = 271$ e $f(7780) = 111.111.365$.
 
-Find ∑f(3k) for 1≤k≤13.
+Encontre $\sum f(3^k) para 1 ≤ k ≤ 13$.
 
 # --hints--
 
-`euler305()` should return 18174995535140.
+`reflexivePosition()` deve retornar `18174995535140`.
 
 ```js
-assert.strictEqual(euler305(), 18174995535140);
+assert.strictEqual(reflexivePosition(), 18174995535140);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler305(), 18174995535140);
 ## --seed-contents--
 
 ```js
-function euler305() {
+function reflexivePosition() {
 
   return true;
 }
 
-euler305();
+reflexivePosition();
 ```
 
 # --solutions--
