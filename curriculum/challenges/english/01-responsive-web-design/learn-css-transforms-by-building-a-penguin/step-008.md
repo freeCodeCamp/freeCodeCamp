@@ -7,7 +7,7 @@ dashedName: step-8
 
 # --description--
 
-As the `.ground` element will be third in the stacking context of the page layout, set its `z-index` to `3`.
+As the `.ground` element will be third in the stacking context of the page layout, set its `z-index` to `3`, and `position` to `absolute`.
 
 # --hints--
 

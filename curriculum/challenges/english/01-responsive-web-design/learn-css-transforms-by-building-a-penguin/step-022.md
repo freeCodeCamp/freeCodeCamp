@@ -81,6 +81,7 @@ body {
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
   z-index: 3;
+  position: absolute;
   margin-top: -58px;
 }
 ```
