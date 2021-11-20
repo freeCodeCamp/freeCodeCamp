@@ -1,23 +1,17 @@
 ---
-id: 6197f40a16afea068c7e60c8
-title: Step 28
+id: 61993dbb35adf30b10d49e38
+title: Step 31
 challengeType: 0
-dashedName: step-28
+dashedName: step-31
 ---
 
 # --description--
 
-Change the stack level of the `.penguin` element such that it appears in front of the `.ground` element.
+Target the `.penguin-body` element, and give it a `width` of `53%`, and a `height` of `45%`. Then, set the `background` to a linear gradient at `45deg`, `rgb(134, 133, 133)` from `0%`, `rgb(234, 231, 231)` from `25%`, and `white` from `67%`.
 
 # --hints--
 
-You should use the `z-index` property to change the stack level.
-
-```js
-
-```
-
-You should give the `.penguin` element a `z-index` of `4`.
+Test 1
 
 ```js
 
@@ -90,14 +84,27 @@ body {
   right: -75px;
 }
 
---fcc-editable-region--
 .penguin {
   width: 300px;
   height: 300px;
   margin: auto;
   margin-top: 75px;
-
+  z-index: 4;
 }
+
+.penguin-head {
+  width: 50%;
+	height: 45%;
+  background: linear-gradient(
+    45deg,
+	  gray,
+		rgb(239, 240, 228)
+	);
+	border-radius: 70% 70% 65% 65%;
+}
+
+--fcc-editable-region--
+
 --fcc-editable-region--
 
 .ground {

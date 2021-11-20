@@ -1,23 +1,19 @@
 ---
-id: 6197f40a16afea068c7e60c8
-title: Step 28
+id: 61993e9adc9e9a0bb4d28fff
+title: Step 32
 challengeType: 0
-dashedName: step-28
+dashedName: step-32
 ---
 
 # --description--
 
-Change the stack level of the `.penguin` element such that it appears in front of the `.ground` element.
+Another interesting fact about penguins is that they do not have square bodies.
+
+Use the `border-radius` property with a value of `80% 80% 100% 100%`, to give the penguin a slightly rounded body.
 
 # --hints--
 
-You should use the `z-index` property to change the stack level.
-
-```js
-
-```
-
-You should give the `.penguin` element a `z-index` of `4`.
+Test 1
 
 ```js
 
@@ -90,12 +86,35 @@ body {
   right: -75px;
 }
 
---fcc-editable-region--
 .penguin {
   width: 300px;
   height: 300px;
   margin: auto;
   margin-top: 75px;
+  z-index: 4;
+}
+
+.penguin-head {
+  width: 50%;
+	height: 45%;
+  background: linear-gradient(
+    45deg,
+		gray,
+		rgb(239, 240, 228)
+	);
+	border-radius: 70% 70% 65% 65%;
+}
+
+--fcc-editable-region--
+.penguin-body {
+  width: 53%;
+  height: 45%;
+  background: linear-gradient(
+		45deg,
+		rgb(134, 133, 133) 0%,
+		rgb(234, 231, 231) 25%,
+		white 67%
+	);
 
 }
 --fcc-editable-region--
