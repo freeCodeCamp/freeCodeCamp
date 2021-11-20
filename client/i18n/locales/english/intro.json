@@ -72,8 +72,8 @@
         "title": "Basic CSS Cafe Menu",
         "intro": ["", ""]
       },
-      "css-box-model": {
-        "title": "CSS Box Model",
+      "learn-the-css-box-model-by-building-a-rothko-painting": {
+        "title": "Learn the CSS Box Model by Building a Rothko Painting",
         "intro": [
           "Mark Rothko was known for his abstract style of painting. Rothko paintings commonly depicted rectangular regions of color in varying sizes.",
           "In this lesson, you will be using CSS to create your own painting in Rothko's style. You will use many of the skills you have already been practicing, as well as new CSS tool such as blur and transform."
