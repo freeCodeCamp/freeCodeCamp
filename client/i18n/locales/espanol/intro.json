@@ -64,7 +64,7 @@
           "Completa los cinco proyectos de programación web de abajo para obtener tu certificación de diseño web responsivo."
         ]
       },
-      "basic-html-cat-photo-app": {
+      "learn-html-by-building-a-cat-photo-app": {
         "title": "Aplicación básica de fotos de gato HTML",
         "intro": [
           "",
@@ -78,7 +78,7 @@
           ""
         ]
       },
-      "css-box-model": {
+      "learn-the-css-box-model-by-building-a-rothko-painting": {
         "title": "Modelo de Caja de CSS",
         "intro": [
           "Mark Rothko fue conocido por el arte abstracto de su pintura. Los cuadros de Rothko suelen representar regiones rectangulares de color en tamaños variables.",
@@ -92,7 +92,7 @@
           ""
         ]
       },
-      "registration-form": {
+      "learn-html-forms-by-building-a-registration-form": {
         "title": "Formulario de registro",
         "intro": [
           "",
@@ -113,7 +113,7 @@
           "En este curso, usarás CSS para crear tu propia pintura en el estilo de Picasso. Aprenderás sobre los iconos SVG de FontAwesome, posicionamiento CSS, y reforzarás las habilidades que ya has estado aprendiendo."
         ]
       },
-      "css-piano": {
+      "learn-responsive-web-design-by-building-a-piano": {
         "title": "Piano CSS",
         "intro": [
           "",
@@ -127,7 +127,7 @@
           ""
         ]
       },
-      "css-grid-magazine": {
+      "learn-css-grid-by-building-a-magazine": {
         "title": "Revista CSS Grid",
         "intro": [
           "",
@@ -141,7 +141,7 @@
           ""
         ]
       },
-      "css-ferris-wheel": {
+      "learn-css-animation-by-building-a-ferris-wheel": {
         "title": "Rueda de la fortuna CSS",
         "intro": [
           "",

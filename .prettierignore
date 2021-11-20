@@ -5,6 +5,9 @@ client/static
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 config/**/*.json
+config/i18n/all-langs.js
+config/certification-settings.js
 client/i18n/**/*.json
 docs/i18n
 **/package-lock.json
+tools/scripts/build/ensure-env.js

@@ -64,7 +64,7 @@
           "完成下面的五個網頁編程項目，獲得響應式網頁設計認證。"
         ]
       },
-      "basic-html-cat-photo-app": {
+      "learn-html-by-building-a-cat-photo-app": {
         "title": "基礎 HTML 貓圖應用",
         "intro": [
           "",
@@ -78,7 +78,7 @@
           ""
         ]
       },
-      "css-box-model": {
+      "learn-the-css-box-model-by-building-a-rothko-painting": {
         "title": "CSS 盒模型",
         "intro": [
           "馬克·羅斯科以他抽象的繪畫風格著稱。他的繪畫通常描繪不同尺寸的長方形區域顏色。",
@@ -92,7 +92,7 @@
           ""
         ]
       },
-      "registration-form": {
+      "learn-html-forms-by-building-a-registration-form": {
         "title": "註冊表單",
         "intro": [
           "",
@@ -113,7 +113,7 @@
           "在這個課程中，你將使用 CSS 來創建你自己的畢加索風格的畫。你將學習 FontAwesome SVG 圖標、CSS 定位，並增強你已經學習過的技能。"
         ]
       },
-      "css-piano": {
+      "learn-responsive-web-design-by-building-a-piano": {
         "title": "CSS 鋼琴",
         "intro": [
           "",
@@ -127,8 +127,8 @@
           ""
         ]
       },
-      "css-grid-magazine": {
-        "title": "CSS Grid Magazine",
+      "learn-css-grid-by-building-a-magazine": {
+        "title": "Learn CSS Grid by Building a Magazine",
         "intro": [
           "",
           ""
@@ -141,8 +141,8 @@
           ""
         ]
       },
-      "css-ferris-wheel": {
-        "title": "CSS Ferris Wheel",
+      "learn-css-animation-by-building-a-ferris-wheel": {
+        "title": "Learn CSS Animation by Building a Ferris Wheel",
         "intro": [
           "",
           ""

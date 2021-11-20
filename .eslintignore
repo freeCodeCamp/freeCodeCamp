@@ -4,3 +4,6 @@ client/public/**
 api-server/src/public/**
 api-server/lib/**
 tools/contributor/**
+tools/scripts/build/ensure-env.js
+config/i18n/all-langs.js
+config/certification-settings.js

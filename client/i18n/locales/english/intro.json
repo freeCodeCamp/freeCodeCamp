@@ -64,16 +64,16 @@
           "Complete the five web programming projects below to earn your Responsive Web Design certification."
         ]
       },
-      "basic-html-cat-photo-app": {
-        "title": "Basic HTML Cat Photo App",
+      "learn-html-by-building-a-cat-photo-app": {
+        "title": "Learn HTML by Building a Cat Photo App",
         "intro": ["", ""]
       },
       "basic-css-cafe-menu": {
         "title": "Basic CSS Cafe Menu",
         "intro": ["", ""]
       },
-      "css-box-model": {
-        "title": "CSS Box Model",
+      "learn-the-css-box-model-by-building-a-rothko-painting": {
+        "title": "Learn the CSS Box Model by Building a Rothko Painting",
         "intro": [
           "Mark Rothko was known for his abstract style of painting. Rothko paintings commonly depicted rectangular regions of color in varying sizes.",
           "In this lesson, you will be using CSS to create your own painting in Rothko's style. You will use many of the skills you have already been practicing, as well as new CSS tool such as blur and transform."
@@ -83,7 +83,7 @@
         "title": "CSS Variables Skyline",
         "intro": ["", ""]
       },
-      "registration-form": { "title": "Registration Form", "intro": ["", ""] },
+      "learn-html-forms-by-building-a-registration-form": { "title": "Learn HTML Forms by Building a Registration Form", "intro": ["", ""] },
       "learn-accessibility-by-building-a-quiz": {
         "title": "Learn Accessibility by Building a Quiz",
         "intro": ["", ""]
@@ -95,14 +95,14 @@
           "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
         ]
       },
-      "css-piano": { "title": "CSS Piano", "intro": ["", ""] },
+      "learn-responsive-web-design-by-building-a-piano": { "title": "Learn Responsive Web Design by Building a Piano", "intro": ["", ""] },
       "css-photo-gallery": { "title": "CSS Photo Gallery", "intro": ["", ""] },
-      "css-grid-magazine": { "title": "CSS Grid Magazine", "intro": ["", ""] },
+      "learn-css-grid-by-building-a-magazine": { "title": "Learn CSS Grid by Building a Magazine", "intro": ["", ""] },
       "css-nutrition-label": {
         "title": "CSS Nutrition Label",
         "intro": ["", ""]
       },
-      "css-ferris-wheel": { "title": "CSS Ferris Wheel", "intro": ["", ""] }
+      "learn-css-animation-by-building-a-ferris-wheel": { "title": "Learn CSS Animation by Building a Ferris Wheel", "intro": ["", ""] }
     }
   },
   "javascript-algorithms-and-data-structures": {
