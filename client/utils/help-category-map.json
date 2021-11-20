@@ -57,7 +57,7 @@
   "data-analysis-with-python-course": "Python",
   "python-for-penetration-testing": "Python",
   "learn-html-by-building-a-cat-photo-app": "HTML-CSS",
-  "basic-css-cafe-menu": "HTML-CSS",
+  "learn-basic-css-by-building-a-cafe-menu": "HTML-CSS",
   "css-variables-skyline": "HTML-CSS",
   "basic-javascript-rpg-game": "JavaScript",
   "functional-programming-spreadsheet": "JavaScript",
@@ -82,6 +82,6 @@
   "learn-html-forms-by-building-a-registration-form": "HTML-CSS",
   "css-photo-gallery": "HTML-CSS",
   "learn-css-grid-by-building-a-magazine": "HTML-CSS",
-  "css-nutrition-label": "HTML-CSS",
+  "learn-typography-by-building-a-nutrition-label": "HTML-CSS",
   "learn-css-animation-by-building-a-ferris-wheel": "HTML-CSS"
 }
