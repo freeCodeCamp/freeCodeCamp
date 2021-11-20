@@ -1,6 +1,6 @@
 ---
 id: 5900f4a31000cf542c50ffb6
-title: 'Problem 311: Biclinic Integral Quadrilaterals'
+title: 'Problema 311: Quadriláteros inteiros biclínicos'
 challengeType: 5
 forumTopicId: 301967
 dashedName: problem-311-biclinic-integral-quadrilaterals
@@ -8,24 +8,26 @@ dashedName: problem-311-biclinic-integral-quadrilaterals
 
 # --description--
 
-ABCD is a convex, integer sided quadrilateral with 1 ≤ AB &lt; BC &lt; CD &lt; AD.
+$ABCD$ é um quadrilátero de lados expressos em números inteiros e convexo, com $1 ≤ AB &lt; BC &lt; CD &lt; AD$.
 
-BD has integer length. O is the midpoint of BD. AO has integer length.
+$BD$ tem comprimento inteiro. $O$ é o ponto central de $BD$. $AO$ tem comprimento inteiro.
 
-We'll call ABCD a biclinic integral quadrilateral if AO = CO ≤ BO = DO.
+Vamos chamar $ABCD$ de um quadrilátero integral biclínico se $AO = CO ≤ BO = DO$.
 
-For example, the following quadrilateral is a biclinic integral quadrilateral: AB = 19, BC = 29, CD = 37, AD = 43, BD = 48 and AO = CO = 23.
+Por exemplo, o quadrilátero a seguir é um quadrilátero integral biclínico: $AB = 19$, $BC = 29$, $CD = 37$, $AD = 43$, $BD = 48$ e $AO = CO = 23$.
 
-Let B(N) be the number of distinct biclinic integral quadrilaterals ABCD that satisfy AB2+BC2+CD2+AD2 ≤ N. We can verify that B(10 000) = 49 and B(1 000 000) = 38239.
+<img class="img-responsive center-block" alt="quadrilátero ABCD, com ponto O, um ponto médio de BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
 
-Find B(10 000 000 000).
+Considere $B(N)$ como o número de quadriláteros integrais biclínicos distintos $ABCD$ que satisfazem ${AB}^2 + {BC}^2 + {CD}^2 + {AD}^2 ≤ N$. Podemos verificar que $B(10.000) = 49$ e $B(1.000.000) = 38239$.
+
+Encontre $B(10.000.000.000)$.
 
 # --hints--
 
-`euler311()` should return 2466018557.
+`biclinicIntegralQuadrilaterals()` deve retornar `2466018557`.
 
 ```js
-assert.strictEqual(euler311(), 2466018557);
+assert.strictEqual(biclinicIntegralQuadrilaterals(), 2466018557);
 ```
 
 # --seed--
@@ -33,12 +35,12 @@ assert.strictEqual(euler311(), 2466018557);
 ## --seed-contents--
 
 ```js
-function euler311() {
+function biclinicIntegralQuadrilaterals() {
 
   return true;
 }
 
-euler311();
+biclinicIntegralQuadrilaterals();
 ```
 
 # --solutions--

@@ -333,7 +333,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           containerRef={this.containerRef}
           description={description}
           editorRef={this.editorRef}
-          hasEditableBoundaries={this.hasEditableBoundaries()}
           initialTests={tests}
           resizeProps={this.resizeProps}
           title={title}
