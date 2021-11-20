@@ -64,7 +64,7 @@
           "完成下面的五个网页编程项目，获得响应式网页设计认证。"
         ]
       },
-      "basic-html-cat-photo-app": {
+      "learn-html-by-building-a-cat-photo-app": {
         "title": "基础 HTML 猫图应用",
         "intro": [
           "",
@@ -78,7 +78,7 @@
           ""
         ]
       },
-      "css-box-model": {
+      "learn-the-css-box-model-by-building-a-rothko-painting": {
         "title": "CSS 盒模型",
         "intro": [
           "马克·罗斯科以他抽象的绘画风格著称。他的绘画通常描绘不同尺寸的长方形区域颜色。",
@@ -92,7 +92,7 @@
           ""
         ]
       },
-      "registration-form": {
+      "learn-html-forms-by-building-a-registration-form": {
         "title": "注册表单",
         "intro": [
           "",
@@ -113,7 +113,7 @@
           "在这个课程中，你将使用 CSS 来创建你自己的毕加索风格的画。你将学习 FontAwesome SVG 图标、CSS 定位，并增强你已经学习过的技能。"
         ]
       },
-      "css-piano": {
+      "learn-responsive-web-design-by-building-a-piano": {
         "title": "CSS 钢琴",
         "intro": [
           "",
@@ -127,8 +127,8 @@
           ""
         ]
       },
-      "css-grid-magazine": {
-        "title": "CSS Grid Magazine",
+      "learn-css-grid-by-building-a-magazine": {
+        "title": "Learn CSS Grid by Building a Magazine",
         "intro": [
           "",
           ""
@@ -141,8 +141,8 @@
           ""
         ]
       },
-      "css-ferris-wheel": {
-        "title": "CSS Ferris Wheel",
+      "learn-css-animation-by-building-a-ferris-wheel": {
+        "title": "Learn CSS Animation by Building a Ferris Wheel",
         "intro": [
           "",
           ""

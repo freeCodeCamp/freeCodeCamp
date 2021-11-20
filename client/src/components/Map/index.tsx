@@ -2,9 +2,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
 import React from 'react';
 
+import { SuperBlocks } from '../../../../config/certification-settings';
 import envData from '../../../../config/env.json';
 import { isAuditedCert } from '../../../../utils/is-audited';
-import { generateIconComponent, SuperBlock } from '../../assets/icons';
+import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
 import { ChallengeNode } from '../../redux/prop-types';
 import { Link, Spacer } from '../helpers';
@@ -14,7 +15,7 @@ import './map.css';
 const { curriculumLocale } = envData;
 
 interface MapProps {
-  currentSuperBlock?: string;
+  currentSuperBlock?: SuperBlocks | null;
   forLanding?: boolean;
 }
 
@@ -24,7 +25,7 @@ interface MapData {
   };
 }
 
-function createSuperBlockTitle(superBlock: string) {
+function createSuperBlockTitle(superBlock: SuperBlocks) {
   const superBlockTitle = i18next.t(`intro:${superBlock}.title`);
   return superBlock === 'coding-interview-prep'
     ? i18next.t('learn.cert-map-estimates.coding-prep', {
@@ -40,7 +41,9 @@ const linkSpacingStyle = {
 };
 
 function renderLandingMap(nodes: ChallengeNode[]) {
-  nodes = nodes.filter(node => node.superBlock !== 'coding-interview-prep');
+  nodes = nodes.filter(
+    node => node.superBlock !== SuperBlocks.CodingInterviewPrep
+  );
   return (
     <ul data-test-label='certifications'>
       {nodes.map((node, i) => (
@@ -50,7 +53,7 @@ function renderLandingMap(nodes: ChallengeNode[]) {
             to={`/learn/${node.superBlock}/`}
           >
             <div style={linkSpacingStyle}>
-              {generateIconComponent(node.superBlock as SuperBlock, 'map-icon')}
+              {generateIconComponent(node.superBlock, 'map-icon')}
               {i18next.t(`intro:${node.superBlock}.title`)}
             </div>
             <LinkButton />
@@ -61,7 +64,10 @@ function renderLandingMap(nodes: ChallengeNode[]) {
   );
 }
 
-function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
+function renderLearnMap(
+  nodes: ChallengeNode[],
+  currentSuperBlock: MapProps['currentSuperBlock']
+) {
   nodes = nodes.filter(node => node.superBlock !== currentSuperBlock);
   return curriculumLocale === 'english' ? (
     <ul data-test-label='learn-curriculum-map'>
@@ -72,7 +78,7 @@ function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
             to={`/learn/${node.superBlock}/`}
           >
             <div style={linkSpacingStyle}>
-              {generateIconComponent(node.superBlock as SuperBlock, 'map-icon')}
+              {generateIconComponent(node.superBlock, 'map-icon')}
               {createSuperBlockTitle(node.superBlock)}
             </div>
           </Link>
@@ -90,10 +96,7 @@ function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
               to={`/learn/${node.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
-                {generateIconComponent(
-                  node.superBlock as SuperBlock,
-                  'map-icon'
-                )}
+                {generateIconComponent(node.superBlock, 'map-icon')}
                 {createSuperBlockTitle(node.superBlock)}
               </div>
             </Link>
@@ -120,10 +123,7 @@ function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
               to={`/learn/${node.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
-                {generateIconComponent(
-                  node.superBlock as SuperBlock,
-                  'map-icon'
-                )}
+                {generateIconComponent(node.superBlock, 'map-icon')}
                 {createSuperBlockTitle(node.superBlock)}
               </div>
             </Link>
@@ -135,7 +135,7 @@ function renderLearnMap(nodes: ChallengeNode[], currentSuperBlock = '') {
 
 export function Map({
   forLanding = false,
-  currentSuperBlock = ''
+  currentSuperBlock = null
 }: MapProps): React.ReactElement {
   /*
    * this query gets the first challenge from each block and the second block

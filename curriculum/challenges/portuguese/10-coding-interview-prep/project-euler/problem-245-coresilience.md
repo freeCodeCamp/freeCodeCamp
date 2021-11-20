@@ -12,7 +12,7 @@ Chamaremos uma fração que não pode ser anulada de uma fração resiliente.
 
 Além disso, definiremos a resiliência de um denominador, $R(d)$, como a razão entre suas frações adequadas que são resilientes; por exemplo, $R(12) = \frac{4}{11}$.
 
-A resiliência de um número $d > 1$ é então $\frac{φ(d)}{d − 1}$, onde $φ$ é a função tociente de Euler.
+A resiliência de um número $d > 1$ é então $\frac{φ(d)}{d − 1}$, onde $φ$ é a função totiente de Euler.
 
 Também definiremos a corresiliência de um número $n > 1$ como $C(n) = \frac{n − φ(n)}{n − 1}$.
 

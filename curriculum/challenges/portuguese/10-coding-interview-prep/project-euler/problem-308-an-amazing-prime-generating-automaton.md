@@ -1,6 +1,6 @@
 ---
 id: 5900f4a11000cf542c50ffb3
-title: 'Problem 308: An amazing Prime-generating Automaton'
+title: 'Problema 308: Um incrível autômato gerador de números primos'
 challengeType: 5
 forumTopicId: 301962
 dashedName: problem-308-an-amazing-prime-generating-automaton
@@ -8,22 +8,30 @@ dashedName: problem-308-an-amazing-prime-generating-automaton
 
 # --description--
 
-A program written in the programming language Fractran consists of a list of fractions.
+Um programa escrito na linguagem de programação Fractran consiste em uma lista de frações.
 
-The internal state of the Fractran Virtual Machine is a positive integer, which is initially set to a seed value. Each iteration of a Fractran program multiplies the state integer by the first fraction in the list which will leave it an integer.
+O estado interno da Máquina Virtual do Fractran é um número inteiro positivo, que é inicialmente definido como um valor de seed. Cada iteração de um programa em Fractran multiplica o inteiro do estado pela primeira fração da lista que o tornará um número inteiro.
 
-For example, one of the Fractran programs that John Horton Conway wrote for prime-generation consists of the following 14 fractions:1791 , 7885 , 1951 , 2338 , 2933 , 7729 , 9523 , 7719 , 117 , 1113 , 1311 , 152 , 17 , 551 . Starting with the seed integer 2, successive iterations of the program produce the sequence: 15, 825, 725, 1925, 2275, 425, ..., 68, 4, 30, ..., 136, 8, 60, ..., 544, 32, 240, ...
+Por exemplo, um dos programas em Fractran que John Horton Conway escreveu para a geração de números primos consiste nas seguintes 14 frações:
 
-The powers of 2 that appear in this sequence are 22, 23, 25, ... It can be shown that all the powers of 2 in this sequence have prime exponents and that all the primes appear as exponents of powers of 2, in proper order!
+$$\frac{17}{91}, \frac{78}{85}, \frac{19}{51}, \frac{23}{38}, \frac{29}{33}, \frac{77}{29}, \frac{95}{23}, \frac{77}{19}, \frac{1}{17}, \frac{11}{13}, \frac{13}{11}, \frac{15}{2}, \frac{1}{7}, \frac{55}{1}$$
 
-If someone uses the above Fractran program to solve Project Euler Problem 7 (find the 10001st prime), how many iterations would be needed until the program produces 210001st prime ?
+Começando pela seed do número inteiro 2, as iterações sucessivas do programa produzem a sequência:
+
+$$15, 825, 725, 1925, 2275, 425, \ldots, 68, \mathbf{4}, 30, \ldots, 136, \mathbf{8}, 60, \ldots, 544, \mathbf{32}, 240, \ldots$$
+
+As potências de 2 que aparecem nessa sequência são $2^2, 2^3, 2^5, \ldots$.
+
+É possível mostrar que todas as potências de 2 nesta sequência têm expoentes de números primos e que todos os números primos aparecem como expoentes de potência 2, em uma ordem adequada!
+
+Se alguém usar o programa em Fractran acima para resolver o problema 7 do Projeto Euler (encontrar o ${10001}^{\text{o}}$ número primo), quantas iterações seriam necessárias até o programa produzir o $2^{10001^{\text{o}}\text{ número primo}}$?
 
 # --hints--
 
-`euler308()` should return 1539669807660924.
+`primeGeneratingAutomation()` deve retornar `1539669807660924`.
 
 ```js
-assert.strictEqual(euler308(), 1539669807660924);
+assert.strictEqual(primeGeneratingAutomation(), 1539669807660924);
 ```
 
 # --seed--
@@ -31,12 +39,12 @@ assert.strictEqual(euler308(), 1539669807660924);
 ## --seed-contents--
 
 ```js
-function euler308() {
+function primeGeneratingAutomation() {
 
   return true;
 }
 
-euler308();
+primeGeneratingAutomation();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5900f4be1000cf542c50ffd1
-title: 'Problem 338: Cutting Rectangular Grid Paper'
+title: 'Problema 338: Corte de papel de grade retangular'
 challengeType: 5
 forumTopicId: 301996
 dashedName: problem-338-cutting-rectangular-grid-paper
@@ -8,26 +8,28 @@ dashedName: problem-338-cutting-rectangular-grid-paper
 
 # --description--
 
-A rectangular sheet of grid paper with integer dimensions w × h is given. Its grid spacing is 1.
+Você recebe uma folha retangular de papel de grade com dimensões em números inteiros $w$ × $h$. O espaçamento da grade é de 1.
 
-When we cut the sheet along the grid lines into two pieces and rearrange those pieces without overlap, we can make new rectangles with different dimensions.
+Quando cortamos as folhas ao longo das linhas da grade em duas partes e reorganizamos essas peças sem sobreposição, podemos criar novos retângulos com dimensões diferentes.
 
-For example, from a sheet with dimensions 9 × 4 , we can make rectangles with dimensions 18 × 2, 12 × 3 and 6 × 6 by cutting and rearranging as below:
+Por exemplo, a partir de uma folha com dimensões 9 × 4, podemos fazer retângulos com dimensões 18 × 2, 12 × 3 e 6 × 6 cortando e reorganizando como vemos abaixo:
 
-Similarly, from a sheet with dimensions 9 × 8 , we can make rectangles with dimensions 18 × 4 and 12 × 6 .
+<img class="img-responsive center-block" alt="folha com dimensões 9 x 4 cortada em três maneiras diferentes para criar retângulos com dimensões 18 x 2, 12 x 3 e 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
 
-For a pair w and h, let F(w,h) be the number of distinct rectangles that can be made from a sheet with dimensions w × h . For example, F(2,1) = 0, F(2,2) = 1, F(9,4) = 3 and F(9,8) = 2. Note that rectangles congruent to the initial one are not counted in F(w,h). Note also that rectangles with dimensions w × h and dimensions h × w are not considered distinct.
+Da mesma forma, a partir de uma folha com dimensões 9 × 8, podemos fazer retângulos com dimensões 18 × 4 e 12 × 6.
 
-For an integer N, let G(N) be the sum of F(w,h) for all pairs w and h which satisfy 0 &lt; h ≤ w ≤ N. We can verify that G(10) = 55, G(103) = 971745 and G(105) = 9992617687.
+Para um par $w$ e $h$, considere $F(w, h)$ como o número de retângulos distintos que podem ser feitos a partir de uma folha com dimensões $w$ × $h$. Por exemplo, $F(2, 1) = 0$, $F(2, 2) = 1$, $F(9, 4) = 3$ e $F(9, 8) = 2$. Observe que os retângulos congruentes com o inicial não são contados em $F(w, h)$. Observe também que os retângulos com dimensões $w$ × $h$ e as dimensões $h$ × $w$ não são considerados distintos.
 
-Find G(1012). Give your answer modulo 108.
+Para um número inteiro $N$, considere $G(N)$ como a soma de $F(w, h)$ para todos os pares $w$ e $h$ que satisfazem $0 &lt; h ≤ w ≤ N$. Podemos verificar que $G(10) = 55$, $G({10}^3) = 971.745$ e $G({10}^5) = 9.992.617.687$.
+
+Encontre $G({10}^{12})$. Dê sua resposta modulo ${10}^8$.
 
 # --hints--
 
-`euler338()` should return 15614292.
+`cuttingRectangularGridPaper()` deve retornar `15614292`.
 
 ```js
-assert.strictEqual(euler338(), 15614292);
+assert.strictEqual(cuttingRectangularGridPaper(), 15614292);
 ```
 
 # --seed--
@@ -35,12 +37,12 @@ assert.strictEqual(euler338(), 15614292);
 ## --seed-contents--
 
 ```js
-function euler338() {
+function cuttingRectangularGridPaper() {
 
   return true;
 }
 
-euler338();
+cuttingRectangularGridPaper();
 ```
 
 # --solutions--

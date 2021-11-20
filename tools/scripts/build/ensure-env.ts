@@ -1,9 +1,11 @@
-const { spawn } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+import { spawn } from 'child_process';
+import * as fs from 'fs';
+import * as path from 'path';
 
-const { availableLangs } = require('../../../config/i18n/all-langs');
-const env = require('../../../config/read-env');
+import { availableLangs } from '../../../config/i18n/all-langs';
+
+// eslint-disable-next-line
+const env = require('../../../config/read-env.js');
 
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
@@ -11,21 +13,25 @@ const { FREECODECAMP_NODE_ENV } = process.env;
 
 function checkClientLocale() {
   if (!availableLangs.client.includes(process.env.CLIENT_LOCALE)) {
+    /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
       CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in config/i18n/all-langs.js
 
       `);
+    /* eslint-enable @typescript-eslint/restrict-template-expressions */
   }
 }
 
 function checkCurriculumLocale() {
   if (!availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE)) {
+    /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
       CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in config/i18n/all-langs.js
 
       `);
+    /* eslint-enable @typescript-eslint/restrict-template-expressions */
   }
 }
 
@@ -57,6 +63,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   expectedVariables.sort();
   receivedvariables.sort();
   if (expectedVariables.length !== receivedvariables.length) {
+    /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
     Env. variable validation failed. Make sure these keys are used and configured.
@@ -71,9 +78,11 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
       )}
 
     `);
+    /* eslint-enable @typescript-eslint/restrict-template-expressions */
   }
 
   for (const key of expectedVariables) {
+    /* eslint-disable @typescript-eslint/no-unsafe-member-access */
     if (typeof env[key] === 'undefined' || env[key] === null) {
       throw Error(`
 
@@ -86,16 +95,16 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   if (env['environment'] !== 'production')
     throw Error(`
 
-    Production environment should be 'production'
+  Production environment should be 'production'
 
-    `);
+  `);
 
   if (env['showUpcomingChanges'])
     throw Error(`
 
-    SHOW_UPCOMING_CHANGES should never be 'true' in production
+  SHOW_UPCOMING_CHANGES should never be 'true' in production
 
-    `);
+  `);
 
   checkClientLocale();
   checkCurriculumLocale();
@@ -103,8 +112,10 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   checkClientLocale();
   checkCurriculumLocale();
   if (fs.existsSync(`${globalConfigPath}/env.json`)) {
+    // eslint-disable-next-line
     const { showUpcomingChanges } = require(`${globalConfigPath}/env.json`);
     if (env['showUpcomingChanges'] !== showUpcomingChanges) {
+      /* eslint-enable @typescript-eslint/no-unsafe-member-access */
       console.log(
         'SHOW_UPCOMING_CHANGES value has changed, cleaning client cache.'
       );

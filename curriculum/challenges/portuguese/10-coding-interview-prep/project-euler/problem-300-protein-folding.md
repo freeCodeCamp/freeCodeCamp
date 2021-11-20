@@ -1,6 +1,6 @@
 ---
 id: 5900f49a1000cf542c50ffac
-title: 'Problem 300: Protein folding'
+title: 'Problema 300: Enovelamento de proteínas'
 challengeType: 5
 forumTopicId: 301954
 dashedName: problem-300-protein-folding
@@ -8,26 +8,32 @@ dashedName: problem-300-protein-folding
 
 # --description--
 
-In a very simplified form, we can consider proteins as strings consisting of hydrophobic (H) and polar (P) elements, e.g. HHPPHHHPHHPH.
+De maneiras muito simplificada, podemos considerar as proteínas como strings consistindo em elementos hidrofóbicos (H) e polares (P), por exemplo, HHPPHHHPHHPH.
 
-For this problem, the orientation of a protein is important; e.g. HPP is considered distinct from PPH. Thus, there are 2n distinct proteins consisting of n elements.
+Para este problema, a orientação de uma proteína é importante; por exemplo, HPP é considerado diferente de PPH. Portanto, existem $2^n$ proteínas distintas compostas por $n$ elementos.
 
-When one encounters these strings in nature, they are always folded in such a way that the number of H-H contact points is as large as possible, since this is energetically advantageous. As a result, the H-elements tend to accumulate in the inner part, with the P-elements on the outside. Natural proteins are folded in three dimensions of course, but we will only consider protein folding in two dimensions.
+Quando alguém encontra essas strings na natureza, elas estão sempre enoveladas de modo que o número de pontos de contato de H-H é tão grande quanto possível, pois isso é energeticamente vantajoso.
 
-The figure below shows two possible ways that our example protein could be folded (H-H contact points are shown with red dots).
+Como resultado, os elementos H tendem a se acumular na parte interna, com os elementos P ficando do lado de fora.
 
-The folding on the left has only six H-H contact points, thus it would never occur naturally. On the other hand, the folding on the right has nine H-H contact points, which is optimal for this string.
+As proteínas naturais são enoveladas em três dimensões, é claro, mas só vamos considerar um enovelamento proteico em <u>duas dimensões</u>.
 
-Assuming that H and P elements are equally likely to occur in any position along the string, the average number of H-H contact points in an optimal folding of a random protein string of length 8 turns out to be 850 / 28=3.3203125.
+A figura abaixo mostra duas maneiras possíveis de o nosso exemplo de proteína poder ser enovelado (pontos de contato H-H são mostrados como pontos vermelhos).
 
-What is the average number of H-H contact points in an optimal folding of a random protein string of length 15? Give your answer using as many decimal places as necessary for an exact result.
+<img class="img-responsive center-block" alt="duas maneiras possíveis de exemplo de enovelamento de proteínas" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px;" />
+
+O enovelamento da esquerda tem apenas seis pontos de contato H-H e, por isso, nunca ocorreria naturalmente. Por outro lado, o enovelamento à direita tem nove pontos de contato H-H, o que é ideal para esta string.
+
+Assumindo que os elementos H e P têm igual probabilidade de ocorrer em qualquer posição ao longo da string, o número médio de pontos de contato de H-H em um enovelamento ideal de uma string de proteína aleatória de comprimento 8 acaba sendo $\frac{850}{2^8} = 3.3203125$.
+
+Qual é o número médio de pontos de contato de H-H em um enovelamento ideal de uma string de proteína aleatória de comprimento 15? Dê sua resposta usando tantas casas decimais quantas for necessário para um resultado exato.
 
 # --hints--
 
-`euler300()` should return 8.0540771484375.
+`proteinFolding()` deve retornar `8.0540771484375`.
 
 ```js
-assert.strictEqual(euler300(), 8.0540771484375);
+assert.strictEqual(proteinFolding(), 8.0540771484375);
 ```
 
 # --seed--
@@ -35,12 +41,12 @@ assert.strictEqual(euler300(), 8.0540771484375);
 ## --seed-contents--
 
 ```js
-function euler300() {
+function proteinFolding() {
 
   return true;
 }
 
-euler300();
+proteinFolding();
 ```
 
 # --solutions--
