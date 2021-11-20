@@ -64,7 +64,7 @@
           "Completa i cinque progetti di sviluppo web che seguono per guadagnare la tua certificazione Web Design Responsivo."
         ]
       },
-      "basic-html-cat-photo-app": {
+      "learn-html-by-building-a-cat-photo-app": {
         "title": "HTML base: App per Foto di Gatti",
         "intro": [
           "",
@@ -78,7 +78,7 @@
           ""
         ]
       },
-      "css-box-model": {
+      "learn-the-css-box-model-by-building-a-rothko-painting": {
         "title": "Modello a scatola di CSS",
         "intro": [
           "Mark Rothko era noto per il suo stile astratto di pittura. I dipinti di Rothko raffiguravano comunemente regioni rettangolari di colore in varie dimensioni.",
@@ -92,7 +92,7 @@
           ""
         ]
       },
-      "registration-form": {
+      "learn-html-forms-by-building-a-registration-form": {
         "title": "Modulo di Registrazione",
         "intro": [
           "",
@@ -113,7 +113,7 @@
           "In questo corso, userai CSS per creare il tuo dipinto nello stile di Picasso. Imparerai le icone di FontAwesome SVG, il posizionamento CSS e rinforzerai le abilità che hai già imparato."
         ]
       },
-      "css-piano": {
+      "learn-responsive-web-design-by-building-a-piano": {
         "title": "Piano CSS",
         "intro": [
           "",
@@ -127,7 +127,7 @@
           ""
         ]
       },
-      "css-grid-magazine": {
+      "learn-css-grid-by-building-a-magazine": {
         "title": "Rivista con CSS Grid",
         "intro": [
           "",
@@ -141,8 +141,8 @@
           ""
         ]
       },
-      "css-ferris-wheel": {
-        "title": "CSS Ferris Wheel",
+      "learn-css-animation-by-building-a-ferris-wheel": {
+        "title": "Learn CSS Animation by Building a Ferris Wheel",
         "intro": [
           "",
           ""
