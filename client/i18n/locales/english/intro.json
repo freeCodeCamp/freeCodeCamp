@@ -95,7 +95,7 @@
           "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
         ]
       },
-      "css-piano": { "title": "CSS Piano", "intro": ["", ""] },
+      "learn-responsive-web-design-by-building-a-piano": { "title": "Learn Responsive Web Design by Building a Piano", "intro": ["", ""] },
       "css-photo-gallery": { "title": "CSS Photo Gallery", "intro": ["", ""] },
       "learn-css-grid-by-building-a-magazine": { "title": "Learn CSS Grid by Building a Magazine", "intro": ["", ""] },
       "css-nutrition-label": {
