@@ -97,7 +97,7 @@
       },
       "css-piano": { "title": "CSS Piano", "intro": ["", ""] },
       "css-photo-gallery": { "title": "CSS Photo Gallery", "intro": ["", ""] },
-      "css-grid-magazine": { "title": "CSS Grid Magazine", "intro": ["", ""] },
+      "learn-css-grid-by-building-a-magazine": { "title": "Learn CSS Grid by Building a Magazine", "intro": ["", ""] },
       "css-nutrition-label": {
         "title": "CSS Nutrition Label",
         "intro": ["", ""]
