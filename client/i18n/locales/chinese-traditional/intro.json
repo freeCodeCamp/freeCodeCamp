@@ -64,7 +64,7 @@
           "完成下面的五個網頁編程項目，獲得響應式網頁設計認證。"
         ]
       },
-      "basic-html-cat-photo-app": {
+      "learn-html-by-building-a-cat-photo-app": {
         "title": "基礎 HTML 貓圖應用",
         "intro": [
           "",
@@ -78,7 +78,7 @@
           ""
         ]
       },
-      "css-box-model": {
+      "learn-the-css-box-model-by-building-a-rothko-painting": {
         "title": "CSS 盒模型",
         "intro": [
           "馬克·羅斯科以他抽象的繪畫風格著稱。他的繪畫通常描繪不同尺寸的長方形區域顏色。",
@@ -92,7 +92,7 @@
           ""
         ]
       },
-      "registration-form": {
+      "learn-html-forms-by-building-a-registration-form": {
         "title": "註冊表單",
         "intro": [
           "",
@@ -127,8 +127,8 @@
           ""
         ]
       },
-      "css-grid-magazine": {
-        "title": "CSS Grid Magazine",
+      "learn-css-grid-by-building-a-magazine": {
+        "title": "Learn CSS Grid by Building a Magazine",
         "intro": [
           "",
           ""
@@ -141,8 +141,8 @@
           ""
         ]
       },
-      "css-ferris-wheel": {
-        "title": "CSS Ferris Wheel",
+      "learn-css-animation-by-building-a-ferris-wheel": {
+        "title": "Learn CSS Animation by Building a Ferris Wheel",
         "intro": [
           "",
           ""
