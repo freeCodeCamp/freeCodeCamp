@@ -8,6 +8,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "strict": true,
-    "noEmit": true
+    "noEmit": true,
+    "typeRoots": ["./node_modules/@types"]
   }
 }

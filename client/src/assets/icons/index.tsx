@@ -1,4 +1,5 @@
 import React from 'react';
+import { SuperBlocks } from '../../../../config/certification-settings';
 import APIIcon from './API-icon';
 import D3Icon from './D3-icon';
 import DatabaseIcon from './Database-icon';
@@ -13,24 +14,22 @@ import ResponsiveDesign from './responsive-design';
 import Shield from './shield';
 
 const iconMap = {
-  'responsive-web-design': ResponsiveDesign,
-  'javascript-algorithms-and-data-structures': JavaScriptIcon,
-  'front-end-development-libraries': ReactIcon,
-  'data-visualization': D3Icon,
-  'back-end-development-and-apis': APIIcon,
-  'relational-databases': DatabaseIcon,
-  'quality-assurance': Clipboard,
-  'scientific-computing-with-python': PythonIcon,
-  'data-analysis-with-python': Analytics,
-  'information-security': Shield,
-  'machine-learning-with-python': TensorflowIcon,
-  'coding-interview-prep': Algorithm
+  [SuperBlocks.RespWebDesign]: ResponsiveDesign,
+  [SuperBlocks.JsAlgoDataStruct]: JavaScriptIcon,
+  [SuperBlocks.FrontEndDevLibs]: ReactIcon,
+  [SuperBlocks.DataVis]: D3Icon,
+  [SuperBlocks.BackEndDevApis]: APIIcon,
+  [SuperBlocks.RelationalDb]: DatabaseIcon,
+  [SuperBlocks.QualityAssurance]: Clipboard,
+  [SuperBlocks.SciCompPy]: PythonIcon,
+  [SuperBlocks.DataAnalysisPy]: Analytics,
+  [SuperBlocks.InfoSec]: Shield,
+  [SuperBlocks.MachineLearningPy]: TensorflowIcon,
+  [SuperBlocks.CodingInterviewPrep]: Algorithm
 };
 
-type SuperBlock = keyof typeof iconMap;
-
 const generateIconComponent = (
-  superBlock: SuperBlock,
+  superBlock: SuperBlocks,
   className: string
 ): JSX.Element => {
   // fallback in case super block doesn't exist and for tests
@@ -39,4 +38,4 @@ const generateIconComponent = (
   return <Icon className={className} />;
 };
 
-export { generateIconComponent, SuperBlock };
+export { generateIconComponent };

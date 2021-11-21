@@ -20,8 +20,8 @@ export const flashMessageSelector = (state: State): FlashState['message'] =>
 // ACTION DEFINITIONS
 
 enum FlashActionTypes {
-  createFlashMessage = 'createFlashMessage',
-  removeFlashMessage = 'removeFlashMessage'
+  CreateFlashMessage = 'createFlashMessage',
+  RemoveFlashMessage = 'removeFlashMessage'
 }
 
 export type FlashMessageArg = {
@@ -32,7 +32,7 @@ export type FlashMessageArg = {
 
 export const createFlashMessage = (
   flash: FlashMessageArg
-): ReducerPayload<FlashActionTypes.createFlashMessage> => {
+): ReducerPayload<FlashActionTypes.CreateFlashMessage> => {
   const playSound = store.get('fcc-sound') as boolean | undefined;
   if (playSound) {
     void import('tone').then(tone => {
@@ -54,20 +54,20 @@ export const createFlashMessage = (
     });
   }
   return {
-    type: FlashActionTypes.createFlashMessage,
+    type: FlashActionTypes.CreateFlashMessage,
     payload: { ...flash, id: nanoid() }
   };
 };
 
 export const removeFlashMessage =
-  (): ReducerPayload<FlashActionTypes.removeFlashMessage> => ({
-    type: FlashActionTypes.removeFlashMessage
+  (): ReducerPayload<FlashActionTypes.RemoveFlashMessage> => ({
+    type: FlashActionTypes.RemoveFlashMessage
   });
 
 // REDUCER
 type ReducerBase<T> = { type: T };
 type ReducerPayload<T extends FlashActionTypes> =
-  T extends FlashActionTypes.createFlashMessage
+  T extends FlashActionTypes.CreateFlashMessage
     ? ReducerBase<T> & {
         payload: FlashState['message'];
       }
@@ -79,9 +79,9 @@ export const reducer = (
   action: ReducerPayload<FlashActionTypes>
 ): FlashState => {
   switch (action.type) {
-    case FlashActionTypes.createFlashMessage:
+    case FlashActionTypes.CreateFlashMessage:
       return { ...state, message: action.payload };
-    case FlashActionTypes.removeFlashMessage:
+    case FlashActionTypes.RemoveFlashMessage:
       return { ...state, message: initialState.message };
     default:
       return state;

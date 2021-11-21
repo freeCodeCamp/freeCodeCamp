@@ -64,84 +64,84 @@
           "Completa los cinco proyectos de programación web de abajo para obtener tu certificación de diseño web responsivo."
         ]
       },
-      "basic-html-cat-photo-app": {
+      "learn-html-by-building-a-cat-photo-app": {
         "title": "Aplicación básica de fotos de gato HTML",
         "intro": [
           "",
           ""
         ]
       },
-      "basic-css-cafe-menu": {
+      "learn-basic-css-by-building-a-cafe-menu": {
         "title": "Menú básico de café CSS",
         "intro": [
           "",
           ""
         ]
       },
-      "css-box-model": {
+      "learn-the-css-box-model-by-building-a-rothko-painting": {
         "title": "Modelo de Caja de CSS",
         "intro": [
           "Mark Rothko fue conocido por el arte abstracto de su pintura. Los cuadros de Rothko suelen representar regiones rectangulares de color en tamaños variables.",
           "En esta lección, usarás CSS para crear tu propia pintura al estilo de Rothko. Utilizarás muchas de las habilidades que ya has estado practicando, así como nuevas herramientas CSS como el desenfoque y la transformación."
         ]
       },
-      "css-variables-skyline": {
+      "learn-css-variables-by-building-a-city-skyline": {
         "title": "Skyline variables de CSS",
         "intro": [
           "",
           ""
         ]
       },
-      "registration-form": {
+      "learn-html-forms-by-building-a-registration-form": {
         "title": "Formulario de registro",
         "intro": [
           "",
           ""
         ]
       },
-      "accessibility-quiz": {
+      "learn-accessibility-by-building-a-quiz": {
         "title": "Prueba de accesibilidad",
         "intro": [
           "",
           ""
         ]
       },
-      "css-picasso-painting": {
+      "learn-intermediate-css-by-building-a-picasso-painting": {
         "title": "Pintura de Picasso en CSS",
         "intro": [
           "Pablo Picasso era conocido por su estilo de pintura cubista, un estilo reconocido por representaciones de objetos descompuestos y reensamblados desde múltiples perspectivas. Las pinturas de Picasso a menudo son muy abstractas y provocadoras de pensamiento.",
           "En este curso, usarás CSS para crear tu propia pintura en el estilo de Picasso. Aprenderás sobre los iconos SVG de FontAwesome, posicionamiento CSS, y reforzarás las habilidades que ya has estado aprendiendo."
         ]
       },
-      "css-piano": {
+      "learn-responsive-web-design-by-building-a-piano": {
         "title": "Piano CSS",
         "intro": [
           "",
           ""
         ]
       },
-      "css-photo-gallery": {
+      "learn-css-flexbox-by-building-a-photo-gallery": {
         "title": "Galería de fotos CSS",
         "intro": [
           "",
           ""
         ]
       },
-      "css-grid-magazine": {
+      "learn-css-grid-by-building-a-magazine": {
         "title": "Revista CSS Grid",
         "intro": [
           "",
           ""
         ]
       },
-      "css-nutrition-label": {
+      "learn-typography-by-building-a-nutrition-label": {
         "title": "Etiqueta de nutrición CSS",
         "intro": [
           "",
           ""
         ]
       },
-      "css-ferris-wheel": {
+      "learn-css-animation-by-building-a-ferris-wheel": {
         "title": "Rueda de la fortuna CSS",
         "intro": [
           "",
