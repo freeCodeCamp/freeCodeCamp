@@ -6,5 +6,4 @@ export interface ButtonProps {
   label: string;
   customKey?: string;
   onClick: () => void;
-  theme?: 'light' | 'dark';
 }
