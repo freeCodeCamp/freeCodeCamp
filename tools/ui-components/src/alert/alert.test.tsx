@@ -5,7 +5,7 @@ import { Alert } from './alert';
 
 describe('<Alert>', () => {
   it('should have an "alert" role', () => {
-    render(<Alert>Hello</Alert>);
+    render(<Alert variant='info'>Hello</Alert>);
 
     expect(screen.getByRole('alert')).toBeInTheDocument();
   });
@@ -13,7 +13,7 @@ describe('<Alert>', () => {
   it('renders children', () => {
     const expectedText = 'Hello';
     render(
-      <Alert>
+      <Alert variant='info'>
         <p>{expectedText}</p>
       </Alert>
     );
@@ -23,14 +23,22 @@ describe('<Alert>', () => {
 
   it('appends className', () => {
     const expectedClass = 'basic';
-    render(<Alert className={expectedClass}>Hello</Alert>);
+    render(
+      <Alert className={expectedClass} variant='info'>
+        Hello
+      </Alert>
+    );
 
     expect(screen.getByRole('alert')).toHaveClass(expectedClass);
   });
 
   it(`renders a button when "onDismiss" prop is present, and calls "onDismiss" when the button is clicked`, () => {
     const onDismiss = jest.fn();
-    render(<Alert onDismiss={onDismiss}>Hello</Alert>);
+    render(
+      <Alert onDismiss={onDismiss} variant='info'>
+        Hello
+      </Alert>
+    );
     const closeButton = screen.getByRole('button');
 
     expect(screen.getByRole('alert')).toBeInTheDocument();
@@ -42,7 +50,7 @@ describe('<Alert>', () => {
   });
 
   it('does NOT render a close button, when "onDismiss" prop is NOT used', () => {
-    render(<Alert>Hello</Alert>);
+    render(<Alert variant='info'>Hello</Alert>);
 
     expect(screen.getByRole('alert')).toBeInTheDocument();
     expect(screen.queryByRole('button')).not.toBeInTheDocument();
@@ -51,7 +59,7 @@ describe('<Alert>', () => {
   it('sets "aria-label" of close button to "dismissText" prop', () => {
     const expectedLabel = 'custom dismiss alert message';
     render(
-      <Alert dismissText={expectedLabel} onDismiss={jest.fn()}>
+      <Alert dismissLabel={expectedLabel} onDismiss={jest.fn()} variant='info'>
         Hello
       </Alert>
     );
