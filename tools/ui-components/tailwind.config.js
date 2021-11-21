@@ -14,25 +14,38 @@ module.exports = {
       'default-background-secondary': 'var(--default-background-secondary)',
       'default-background-tertiary': 'var(--default-background-tertiary)',
       'default-background-quaternary': 'var(--default-background-quaternary)',
-      success: {
-        100: 'var(--success-10)',
-        200: 'var(--success-20)',
-        900: 'var(--success-90)'
+      green: {
+        50: 'var(--green05)',
+        100: 'var(--green10)',
+        400: 'var(--green40)',
+        700: 'var(--green70)',
+        900: 'var(--green90)'
       },
-      info: {
-        100: 'var(--info-10)',
-        200: 'var(--info-20)',
-        900: 'var(--info-90)'
+      blue: {
+        50: 'var(--blue05)',
+        100: 'var(--blue10)',
+        300: 'var(--blue30)',
+        500: 'var(--blue50)',
+        700: 'var(--blue70)',
+        900: 'var(--blue90)'
       },
-      warning: {
-        100: 'var(--warning-10)',
-        200: 'var(--warning-20)',
-        900: 'var(--warning-90)'
+      yellow: {
+        50: 'var(--yellow05)',
+        100: 'var(--yellow10)',
+        400: 'var(--yellow40)',
+        450: 'var(--yellow45)',
+        500: 'var(--yellow50)',
+        700: 'var(--yellow70)',
+        900: 'var(--yellow90)'
       },
-      danger: {
-        100: 'var(--danger-10)',
-        200: 'var(--danger-20)',
-        900: 'var(--danger-90)'
+      red: {
+        50: 'var(--red05)',
+        100: 'var(--red10)',
+        150: 'var(--red15)',
+        300: 'var(--red30)',
+        700: 'var(--red70)',
+        800: 'var(--red80)',
+        900: 'var(--red90)'
       }
     }
   },

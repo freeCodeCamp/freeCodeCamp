@@ -6,16 +6,16 @@ type AlertVariant = 'success' | 'info' | 'warning' | 'danger';
 export interface AlertProps {
   children: React.ReactNode;
   className?: string;
-  variant?: AlertVariant;
+  variant: AlertVariant;
   dismissLabel?: string;
   onDismiss?: () => void;
 }
 
 const variantClasses: Record<AlertVariant, string> = {
-  success: 'text-success-900 bg-success-100 border-success-200',
-  info: 'text-info-900 bg-info-100 border-info-200',
-  warning: 'text-warning-900 bg-warning-100 border-warning-200',
-  danger: 'text-danger-900 bg-danger-100 border-danger-200'
+  success: 'text-green-700 bg-green-50 border-green-100',
+  info: 'text-blue-700 bg-blue-50 border-blue-100',
+  warning: 'text-yellow-700 bg-yellow-50 border-yellow-100',
+  danger: 'text-red-700 bg-red-50 border-red-100'
 };
 
 /**
@@ -24,7 +24,7 @@ const variantClasses: Record<AlertVariant, string> = {
 export function Alert({
   children,
   className,
-  variant = 'info',
+  variant,
   dismissLabel = 'Close',
   onDismiss
 }: AlertProps): JSX.Element {
