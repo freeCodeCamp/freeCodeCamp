@@ -147,7 +147,7 @@
     "jest": "27.3.1",
     "js-yaml": "3.14.1",
     "lerna": "4.0.0",
-    "lint-staged": "11.2.6",
+    "lint-staged": "12.1.2",
     "lodash": "4.17.21",
     "markdownlint": "0.24.0",
     "mock-fs": "5.1.2",
