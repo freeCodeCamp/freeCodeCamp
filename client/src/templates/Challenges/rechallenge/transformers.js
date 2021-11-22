@@ -209,36 +209,15 @@ async function transformScript(contentDocument) {
 // the link or script exists we remove those elements since those files don't
 // exist on the site, only in the editor
 const addImportedFiles = async function (fileP) {
-  // we use iframe here since file.contents is destined to be be inserted into
-  // the root of an iframe.
-  const frame = document.createElement('iframe');
-  frame.style = 'display: none';
   const file = await fileP;
-  let contents = file.contents;
-  const importedFiles = [];
-  try {
-    // the frame needs to be inserted into the document to create the html
-    // element
-    document.body.appendChild(frame);
-    // replace the root element with user code
-    frame.contentDocument.documentElement.innerHTML = contents;
-    // grab the contents now, in case the transformation fails
-    contents = frame.contentDocument.documentElement.innerHTML;
-
+  const transform = frame => {
+    const documentElement = frame.contentDocument.documentElement;
     const link =
-      frame.contentDocument.documentElement.querySelector(
-        'link[href="styles.css"]'
-      ) ??
-      frame.contentDocument.documentElement.querySelector(
-        'link[href="./styles.css"]'
-      );
+      documentElement.querySelector('link[href="styles.css"]') ??
+      documentElement.querySelector('link[href="./styles.css"]');
     const script =
-      frame.contentDocument.documentElement.querySelector(
-        'script[src="script.js"]'
-      ) ??
-      frame.contentDocument.documentElement.querySelector(
-        'script[src="./script.js"]'
-      );
+      documentElement.querySelector('script[src="script.js"]') ??
+      documentElement.querySelector('script[src="./script.js"]');
     const importedFiles = [];
     if (link) {
       importedFiles.push('styles.css');
@@ -248,10 +227,16 @@ const addImportedFiles = async function (fileP) {
       importedFiles.push('script.js');
       script.remove();
     }
-    contents = frame.contentDocument.documentElement.innerHTML;
-  } finally {
-    document.body.removeChild(frame);
-  }
+    return {
+      contents: documentElement.innerHTML,
+      importedFiles
+    };
+  };
+
+  const { importedFiles, contents } = await transformWithFrame(
+    transform,
+    file.contents
+  );
 
   return flow(
     partial(setImportedFiles, importedFiles),
@@ -259,12 +244,12 @@ const addImportedFiles = async function (fileP) {
   )(file);
 };
 
-const transformHtml = async function (file) {
+const transformWithFrame = async function (transform, contents) {
   // we use iframe here since file.contents is destined to be be inserted into
   // the root of an iframe.
   const frame = document.createElement('iframe');
   frame.style = 'display: none';
-  let contents = file.contents;
+  let out = { contents };
   try {
     // the frame needs to be inserted into the document to create the html
     // element
@@ -272,15 +257,24 @@ const transformHtml = async function (file) {
     // replace the root element with user code
     frame.contentDocument.documentElement.innerHTML = contents;
     // grab the contents now, in case the transformation fails
-    contents = frame.contentDocument.documentElement.innerHTML;
+    out = { contents: frame.contentDocument.documentElement.innerHTML };
+    out = await transform(frame);
+  } finally {
+    document.body.removeChild(frame);
+  }
+  return out;
+};
+
+const transformHtml = async function (file) {
+  const transform = async frame => {
     await Promise.all([
       transformSASS(frame.contentDocument),
       transformScript(frame.contentDocument)
     ]);
-    contents = frame.contentDocument.documentElement.innerHTML;
-  } finally {
-    document.body.removeChild(frame);
-  }
+    return { contents: frame.contentDocument.documentElement.innerHTML };
+  };
+
+  const { contents } = await transformWithFrame(transform, file.contents);
   return transformContents(() => contents, file);
 };
 
