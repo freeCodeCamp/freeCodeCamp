@@ -1,6 +1,6 @@
 ---
 id: 5895f70ef9fc0f352b528e6b
-title: How to Put a Profile Together
+title: Cómo elaborar un perfil
 challengeType: 2
 forumTopicId: 301554
 dashedName: how-to-put-a-profile-together
@@ -8,27 +8,27 @@ dashedName: how-to-put-a-profile-together
 
 # --description--
 
-Now that we can ensure the user accessing the `/profile` is authenticated, we can use the information contained in `req.user` on our page!
+Ahora que podemos asegurarnos de que el usuario que accede al `/profile` está autenticado, ¡podemos utilizar la información contenida en `req.user` en nuestra página!
 
-Pass an object containing the property `username` and value of `req.user.username` as the second argument for the render method of the profile view. Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
+Pasa un objeto que contenga la propiedad `username` y el valor de `req.user.username` como segundo argumento para el método render de la vista de perfil. Luego, ve a tu perfil `profile.pug` y agrega la siguiente línea debajo del elemento existente `h1` y al mismo nivel de indentación:
 
 ```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
-This creates an `h2` element with the class '`center`' and id '`welcome`' containing the text '`Welcome,`' followed by the username.
+Esto crea un elemento `h2` con la clase '`center`' e id '`welcome`' conteniendo el texto '`Welcome,`' seguido por el nombre de usuario.
 
-Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user.
+Además, en `profile.pug`, añade un enlace que haga referencia a la ruta `/logout`, que alojará la lógica para des-autentificar a un usuario.
 
 ```pug
 a(href='/logout') Logout
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
 
 # --hints--
 
-You should correctly add a Pug render variable to /profile.
+Debes agregar correctamente una variable de renderizado Pug a /profile.
 
 ```js
 (getUserInput) =>
