@@ -65,56 +65,56 @@
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "基础 HTML 猫图应用",
+        "title": "Learn HTML by Building a Cat Photo App",
         "intro": [
           "",
           ""
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "基础 CSS 咖啡菜单",
+        "title": "Learn Basic CSS by Building a Cafe Menu",
         "intro": [
           "",
           ""
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "CSS 盒模型",
+        "title": "Learn the CSS Box Model by Building a Rothko Painting",
         "intro": [
-          "马克·罗斯科以他抽象的绘画风格著称。他的绘画通常描绘不同尺寸的长方形区域颜色。",
-          "在这个课程中，你将使用 CSS 以 Rothko 的风格创作自己的画。你将使用你已经实践过的许多技能，以及新的 CSS 工具，如模糊和变换。"
+          "Mark Rothko was known for his abstract style of painting. Rothko paintings commonly depicted rectangular regions of color in varying sizes.",
+          "In this lesson, you will be using CSS to create your own painting in Rothko's style. You will use many of the skills you have already been practicing, as well as new CSS tool such as blur and transform."
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "CSS 变量 Skyline",
+        "title": "Learn CSS Variables by Building a City Skyline",
         "intro": [
           "",
           ""
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "注册表单",
+        "title": "Learn HTML Forms by Building a Registration Form",
         "intro": [
           "",
           ""
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "无障碍测试",
+        "title": "Learn Accessibility by Building a Quiz",
         "intro": [
           "",
           ""
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "CSS 毕加索绘画",
+        "title": "Learn Intermediate CSS by Building a Picasso Painting",
         "intro": [
-          "巴勃罗·毕加索以立体主义绘画著称。这种风格从多视角分解并重新组装以呈现物体。毕加索的绘画往往非常抽象，发人深思。",
-          "在这个课程中，你将使用 CSS 来创建你自己的毕加索风格的画。你将学习 FontAwesome SVG 图标、CSS 定位，并增强你已经学习过的技能。"
+          "Pablo Picasso was known for his Cubism style of painting, a style recognized by representations of objects broken down and reassembled from multiple perspectives. Picasso's paintings are often highly abstract and thought provoking.",
+          "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "CSS 钢琴",
+        "title": "Learn Responsive Web Design by Building a Piano",
         "intro": [
           "",
           ""
