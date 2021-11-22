@@ -65,77 +65,77 @@
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "HTML base: App per Foto di Gatti",
+        "title": "Learn HTML by Building a Cat Photo App",
         "intro": [
           "",
           ""
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "CSS base: Menu Caffetteria",
+        "title": "Learn Basic CSS by Building a Cafe Menu",
         "intro": [
           "",
           ""
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Modello a scatola di CSS",
+        "title": "Learn the CSS Box Model by Building a Rothko Painting",
         "intro": [
-          "Mark Rothko era noto per il suo stile astratto di pittura. I dipinti di Rothko raffiguravano comunemente regioni rettangolari di colore in varie dimensioni.",
-          "In questa lezione, userai CSS per creare il tuo dipinto nello stile di Rothko. Potrai utilizzare molte delle abilità che hai già praticato, così come i nuovi strumenti CSS tipo sfocatura e trasformazione."
+          "Mark Rothko was known for his abstract style of painting. Rothko paintings commonly depicted rectangular regions of color in varying sizes.",
+          "In this lesson, you will be using CSS to create your own painting in Rothko's style. You will use many of the skills you have already been practicing, as well as new CSS tool such as blur and transform."
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "Variabili CSS: Skyline",
+        "title": "Learn CSS Variables by Building a City Skyline",
         "intro": [
           "",
           ""
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "Modulo di Registrazione",
+        "title": "Learn HTML Forms by Building a Registration Form",
         "intro": [
           "",
           ""
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "Quiz Accessibilità",
+        "title": "Learn Accessibility by Building a Quiz",
         "intro": [
           "",
           ""
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "Dipinto Picasso in Css",
+        "title": "Learn Intermediate CSS by Building a Picasso Painting",
         "intro": [
-          "Pablo Picasso era conosciuto per il suo stile cubista di pittura, uno stile riconosciuto dalle rappresentazioni di oggetti suddivisi e riassemblati da molteplici prospettive. I dipinti di Picasso sono spesso altamente astratti e stimolano il pensiero.",
-          "In questo corso, userai CSS per creare il tuo dipinto nello stile di Picasso. Imparerai le icone di FontAwesome SVG, il posizionamento CSS e rinforzerai le abilità che hai già imparato."
+          "Pablo Picasso was known for his Cubism style of painting, a style recognized by representations of objects broken down and reassembled from multiple perspectives. Picasso's paintings are often highly abstract and thought provoking.",
+          "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Piano CSS",
+        "title": "Learn Responsive Web Design by Building a Piano",
         "intro": [
           "",
           ""
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "Galleria Fotografica con CSS",
+        "title": "Learn CSS Flexbox by Building a Photo Gallery",
         "intro": [
           "",
           ""
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Rivista con CSS Grid",
+        "title": "Learn CSS Grid by Building a Magazine",
         "intro": [
           "",
           ""
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "Etichetta nutrizionale CSS",
+        "title": "Learn Typography by Building a Nutrition Label",
         "intro": [
           "",
           ""
