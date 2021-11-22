@@ -24,7 +24,7 @@ function* callGaType({ payload: { type, data } }) {
       const completedChallengeTotal = yield select(completedChallengesSelector);
       const completedChallengeSession = yield select(completionCountSelector);
       const customDimensions = {
-        Test_Variation: emailToABVariant(email) ? 'A' : 'B',
+        Test_Variation: emailToABVariant(email).isAVariant ? 'A' : 'B',
         Test_Type: aBTestConfig.type,
         Challenges_Completed_Session: completedChallengeSession,
         Challenges_Completed_Total: completedChallengeTotal.length,
