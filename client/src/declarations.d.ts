@@ -15,6 +15,10 @@ declare module '*.png' {
   export default content;
 }
 
+declare module 'sha-1' {
+  export default function sha1(str: string): string;
+}
+
 // This has to be declared as var, not let or const, to be added to globalThis
 // eslint-disable-next-line no-var
 declare var MathJax: {

@@ -201,6 +201,7 @@ export const stepsToClaimSelector = state => {
     isShowProfile: !user?.profileUI?.isLocked
   };
 };
+export const emailSelector = state => userSelector(state).email;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
