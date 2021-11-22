@@ -119,7 +119,7 @@
     "rxjs": "6.6.7",
     "sanitize-html": "2.5.3",
     "sass.js": "0.11.1",
-    "sha-1": "^1.0.0",
+    "sha-1": "1.0.0",
     "store": "2.0.12",
     "stream-browserify": "3.0.0",
     "tone": "14.7.77",
