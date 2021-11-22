@@ -209,28 +209,53 @@ async function transformScript(contentDocument) {
 // the link or script exists we remove those elements since those files don't
 // exist on the site, only in the editor
 const addImportedFiles = async function (fileP) {
+  // we use iframe here since file.contents is destined to be be inserted into
+  // the root of an iframe.
+  const frame = document.createElement('iframe');
+  frame.style = 'display: none';
   const file = await fileP;
-  const div = document.createElement('div');
-  div.innerHTML = file.contents;
-  const link =
-    div.querySelector('link[href="styles.css"]') ??
-    div.querySelector('link[href="./styles.css"]');
-  const script =
-    div.querySelector('script[src="script.js"]') ??
-    div.querySelector('script[src="./script.js"]');
+  let contents = file.contents;
   const importedFiles = [];
-  if (link) {
-    importedFiles.push('styles.css');
-    link.remove();
-  }
-  if (script) {
-    importedFiles.push('script.js');
-    script.remove();
+  try {
+    // the frame needs to be inserted into the document to create the html
+    // element
+    document.body.appendChild(frame);
+    // replace the root element with user code
+    frame.contentDocument.documentElement.innerHTML = contents;
+    // grab the contents now, in case the transformation fails
+    contents = frame.contentDocument.documentElement.innerHTML;
+
+    const link =
+      frame.contentDocument.documentElement.querySelector(
+        'link[href="styles.css"]'
+      ) ??
+      frame.contentDocument.documentElement.querySelector(
+        'link[href="./styles.css"]'
+      );
+    const script =
+      frame.contentDocument.documentElement.querySelector(
+        'script[src="script.js"]'
+      ) ??
+      frame.contentDocument.documentElement.querySelector(
+        'script[src="./script.js"]'
+      );
+    const importedFiles = [];
+    if (link) {
+      importedFiles.push('styles.css');
+      link.remove();
+    }
+    if (script) {
+      importedFiles.push('script.js');
+      script.remove();
+    }
+    contents = frame.contentDocument.documentElement.innerHTML;
+  } finally {
+    document.body.removeChild(frame);
   }
 
   return flow(
     partial(setImportedFiles, importedFiles),
-    partial(transformContents, () => div.innerHTML)
+    partial(transformContents, () => contents)
   )(file);
 };
 
