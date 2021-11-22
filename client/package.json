@@ -98,7 +98,7 @@
     "react-ga": "3.3.0",
     "react-helmet": "6.1.0",
     "react-hotkeys": "2.0.0",
-    "react-i18next": "11.14.2",
+    "react-i18next": "11.14.3",
     "react-instantsearch-dom": "6.15.0",
     "react-lazy-load": "3.1.13",
     "react-monaco-editor": "0.46.0",
@@ -119,6 +119,7 @@
     "rxjs": "6.6.7",
     "sanitize-html": "2.5.3",
     "sass.js": "0.11.1",
+    "sha-1": "1.0.0",
     "store": "2.0.12",
     "stream-browserify": "3.0.0",
     "tone": "14.7.77",
@@ -142,7 +143,7 @@
     "react-test-renderer": "16.14.0",
     "redux-mock-store": "1.5.4",
     "redux-saga-test-plan": "4.0.4",
-    "serve": "12.0.1",
+    "serve": "13.0.2",
     "webpack": "5.64.2",
     "webpack-cli": "4.9.1"
   }

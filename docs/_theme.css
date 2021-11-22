@@ -5,6 +5,10 @@
   --text-color-base: #2e2e46;
   --text-color-secondary: #646473;
   --text-color-tertiary: #81818e;
+
+  --line-height: 2rem;
+  --bg-color: #ffffff;
+  --size: 1.5rem;
 }
 
 body {
@@ -38,7 +42,7 @@ body .content {
 }
 
 .universal-nav a.translations-link {
-  color: #ffffff;
+  color: var(--bg-color);
   position: fixed;
   right: 50px;
   line-height: 24px;
@@ -72,7 +76,7 @@ section.cover {
   padding-bottom: 112px;
   height: auto;
   min-height: 100vh;
-  background: #ffffff !important;
+  background: var(--bg-color) !important;
   color: var(--theme-color);
 }
 
@@ -118,8 +122,8 @@ section.cover a.anchor {
 }
 
 section.cover ul {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: var(--size);
+  line-height: var(--line-height);
   display: grid;
   text-align: left;
   grid-column-gap: 16px;
@@ -130,17 +134,17 @@ section.cover ul {
 }
 
 section.cover .cover-main > p:last-child a:last-child {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: var(--size);
+  line-height: var(--line-height);
   background-color: var(--theme-color);
-  color: #fff;
+  color: var(--bg-color);
 }
 
 section.cover .cover-main > p:last-child a:last-child:hover {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: var(--size);
+  line-height: var(--line-height);
   background-color: var(--theme-color-dark);
-  color: #fff;
+  color: var(--bg-color);
   opacity: 1;
 }
 
@@ -198,11 +202,11 @@ section.cover.show ~ .sidebar-toggle {
 
 body .sidebar-toggle {
   background: none;
-  top: 1.5rem;
+  top: var(--size);
   left: calc(300px + 1.5rem);
   cursor: pointer;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--size);
+  height: var(--size);
   padding: 0;
   transition: left 0.25s ease-out;
 }
@@ -210,7 +214,7 @@ body .sidebar-toggle {
 body .sidebar-toggle span {
   background-color: var(--theme-color);
   height: 0.2rem;
-  width: 1.5rem;
+  width: var(--size);
   position: absolute;
   left: 0;
   margin: 0;
@@ -220,9 +224,9 @@ body .sidebar-toggle span {
 
 body.close .sidebar-toggle {
   transition: left 0.25s ease-out;
-  width: 1.5rem;
-  height: 1.5rem;
-  left: 1.5rem;
+  width: var(--size);
+  height: var(--size);
+  left: var(--size);
 }
 
 body.close .sidebar-toggle span {
