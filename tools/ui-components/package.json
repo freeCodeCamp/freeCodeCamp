@@ -21,7 +21,7 @@
   "dependencies": {
     "@babel/preset-typescript": "7.16.0",
     "@types/node": "16.11.9",
-    "@types/react": "17.0.35",
+    "@types/react": "17.0.36",
     "@types/react-dom": "17.0.11",
     "react": "16.14.0",
     "react-dom": "16.14.0",
