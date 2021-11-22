@@ -27,7 +27,7 @@ Em um jogo com 100 jogadores, qual é o número esperado de turnos que dure o jo
 `theChase()` deve retornar `3780.618622`.
 
 ```js
-assert.strictEqual(theChase(), 0.618622);
+assert.strictEqual(theChase(), 3780.618622);
 ```
 
 # --seed--

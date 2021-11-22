@@ -1,6 +1,6 @@
 ---
 id: 5900f4ca1000cf542c50ffdc
-title: 'Problem 349: Langton''s ant'
+title: 'Problema 349: Formiga de Langton'
 challengeType: 5
 forumTopicId: 302008
 dashedName: problem-349-langtons-ant
@@ -8,22 +8,21 @@ dashedName: problem-349-langtons-ant
 
 # --description--
 
-An ant moves on a regular grid of squares that are coloured either black or white.
+Uma formiga se move em uma grade regular de quadrados coloridos em preto ou branco.
 
-The ant is always oriented in one of the cardinal directions (left, right, up or down) and moves from square to adjacent square according to the following rules:
+A formiga está sempre orientada em uma das direções cardeais (esquerda, direita, para cima ou para baixo) e se move do quadrado para um quadrado adjacente de acordo com as seguintes regras:
 
-\- if it is on a black square, it flips the color of the square to white, rotates 90 degrees counterclockwise and moves forward one square.
+- se estiver em um quadrado preto, ela transforma a cor do quadrado para branco, gira 90° no sentido anti-horário e avança um quadrado.
+- se estiver em um quadrado branco, ela transforma a cor do quadrado para preto, gira 90° no sentido horário e avança um quadrado.
 
-\- if it is on a white square, it flips the color of the square to black, rotates 90 degrees clockwise and moves forward one square.
-
-Starting with a grid that is entirely white, how many squares are black after 10<sup>18</sup> moves of the ant?
+Começando com uma grade que é inteiramente branca, quantos quadrados são pretos após ${10}^{18}$ movimentos da formiga?
 
 # --hints--
 
-`euler349()` should return 115384615384614940.
+`langtonsAnt()` deve retornar `115384615384614940`.
 
 ```js
-assert.strictEqual(euler349(), 115384615384614940);
+assert.strictEqual(langtonsAnt(), 115384615384614940);
 ```
 
 # --seed--
@@ -31,12 +30,12 @@ assert.strictEqual(euler349(), 115384615384614940);
 ## --seed-contents--
 
 ```js
-function euler349() {
+function langtonsAnt() {
 
   return true;
 }
 
-euler349();
+langtonsAnt();
 ```
 
 # --solutions--
