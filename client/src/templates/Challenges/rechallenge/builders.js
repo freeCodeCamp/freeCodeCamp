@@ -18,15 +18,6 @@ const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';
 const cssCatch = '\n/*fcc*/\n';
 
-const defaultTemplate = ({ source }) => {
-  return `
-  <body id='display-body'style='margin:8px;'>
-    <!-- fcc-start-source -->
-      ${source}
-    <!-- fcc-end-source -->
-  </body>`;
-};
-
 const wrapInScript = partial(
   transformContents,
   content => `${htmlCatch}<script>${content}${jsCatch}</script>`
@@ -75,7 +66,7 @@ export function concatHtml({
   template,
   challengeFiles = []
 } = {}) {
-  const createBody = template ? _template(template) : defaultTemplate;
+  const embedSource = template ? _template(template) : ({ source }) => source;
   const head = required
     .map(({ link, src }) => {
       if (link && src) {
@@ -107,5 +98,5 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
     }
   }, '');
 
-  return `<head>${head}</head>${createBody({ source })}`;
+  return `<head>${head}</head>${embedSource({ source })}`;
 }
