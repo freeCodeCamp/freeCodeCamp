@@ -92,6 +92,8 @@ const handleRejection = err => {
     // first error and that starts shutting down the browser and the server.
     console.error(err);
   } else {
+    console.error('Unhandled exception:', err.message);
+    console.error(err.stack);
     throw err;
   }
 };
