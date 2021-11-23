@@ -23,7 +23,7 @@ function* callGaType({ payload: { type, data } }) {
       const email = yield select(emailSelector);
       const completedChallengeTotal = yield select(completedChallengesSelector);
       const completedChallengeSession = yield select(completionCountSelector);
-      const CustomDimensions = {
+      const customDimensions = {
         // URL;
         dimension1: window.location.href,
         // Challenges_Completed_Session
@@ -35,7 +35,7 @@ function* callGaType({ payload: { type, data } }) {
         // Test_Variation
         dimension5: emailToABVariant(email).isAVariant ? 'A' : 'B'
       };
-      ga.set(CustomDimensions);
+      ga.set(customDimensions);
     }
   }
 
