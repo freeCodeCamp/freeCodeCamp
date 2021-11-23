@@ -385,8 +385,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
-      challengeFiles,
-      t
+      challengeFiles
     } = this.props;
 
     return (
@@ -400,11 +399,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
-          <Helmet
-            title={`${t(
-              'learn.learn'
-            )} ${this.getBlockNameTitle()} | freeCodeCamp.org`}
-          />
+          <Helmet title={`${this.getBlockNameTitle()} | freeCodeCamp.org`} />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
               editor={this.renderEditor()}
