@@ -1,13 +1,13 @@
 ---
-id: 6199442866286d0ff421a4fc
-title: Step 37
+id: 619d0503e03a790a4179d463
+title: Step 52
 challengeType: 0
-dashedName: step-37
+dashedName: step-52
 ---
 
 # --description--
 
-To give the penguin body a crest, create a pseudo-element that is the first child of the `.penguin-body` element. Set the `content` property of the pseudo-element to an empty string.
+Position the `.chin` element such that it is `25%` from the top, and `5%` from the left of its parent. Then, give the top corners a radius of `70%`, and the bottom corners a radius of `100%`.
 
 # --hints--
 
@@ -36,7 +36,11 @@ Test 1
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
-      <div class="penguin-head"></div>
+      <div class="penguin-head">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="chin"></div>
+      </div>
       <div class="penguin-body"></div>
     </div>
 
@@ -110,6 +114,31 @@ body {
   z-index: 1;
 }
 
+.face {
+  width: 60%;
+  height: 70%;
+  background-color: white;
+  border-radius: 70% 70% 60% 60%;
+  top: 15%;
+}
+
+.face.left {
+  left: 5%;
+}
+
+.face.right {
+  right: 5%;
+}
+
+--fcc-editable-region--
+.chin {
+  width: 90%;
+  height: 70%;
+  background-color: white;
+
+}
+--fcc-editable-region--
+
 .penguin-body {
   width: 53%;
   height: 45%;
@@ -124,9 +153,17 @@ body {
   left: 23.5%;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+.penguin-body::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  background-color: gray;
+  top: 10%;
+  left: 25%;
+  border-radius: 0% 0% 100% 100%;
+  opacity: 70%;
+}
 
 .ground {
   width: 100vw;

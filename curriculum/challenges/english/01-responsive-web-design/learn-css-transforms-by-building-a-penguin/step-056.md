@@ -1,13 +1,13 @@
 ---
-id: 6199442866286d0ff421a4fc
-title: Step 37
+id: 619d0b51ca42ed0d74582186
+title: Step 56
 challengeType: 0
-dashedName: step-37
+dashedName: step-56
 ---
 
 # --description--
 
-To give the penguin body a crest, create a pseudo-element that is the first child of the `.penguin-body` element. Set the `content` property of the pseudo-element to an empty string.
+Target the `.eye` elements, and give them a `width` of `15%`, height of `17%`, and `background-color` of `black`.
 
 # --hints--
 
@@ -36,7 +36,13 @@ Test 1
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
-      <div class="penguin-head"></div>
+      <div class="penguin-head">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="chin"></div>
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+      </div>
       <div class="penguin-body"></div>
     </div>
 
@@ -46,6 +52,10 @@ Test 1
 ```
 
 ```css
+:root {
+  --penguin-face: white;
+}
+
 body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
@@ -110,6 +120,35 @@ body {
   z-index: 1;
 }
 
+.face {
+  width: 60%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  border-radius: 70% 70% 60% 60%;
+  top: 15%;
+}
+
+.face.left {
+  left: 5%;
+}
+
+.face.right {
+  right: 5%;
+}
+
+.chin {
+  width: 90%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: 5%;
+  border-radius: 70% 70% 100% 100%;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 .penguin-body {
   width: 53%;
   height: 45%;
@@ -124,9 +163,17 @@ body {
   left: 23.5%;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+.penguin-body::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  background-color: gray;
+  top: 10%;
+  left: 25%;
+  border-radius: 0% 0% 100% 100%;
+  opacity: 70%;
+}
 
 .ground {
   width: 100vw;

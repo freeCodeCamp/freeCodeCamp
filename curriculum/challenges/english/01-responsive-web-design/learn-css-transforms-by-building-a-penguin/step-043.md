@@ -1,13 +1,13 @@
 ---
-id: 6199442866286d0ff421a4fc
-title: Step 37
+id: 619be946958c6009844f1dee
+title: Step 43
 challengeType: 0
-dashedName: step-37
+dashedName: step-43
 ---
 
 # --description--
 
-To give the penguin body a crest, create a pseudo-element that is the first child of the `.penguin-body` element. Set the `content` property of the pseudo-element to an empty string.
+Start the penguin's face, by adding two `div` elements within `.penguin-head`, and giving them both a `class` of `face`.
 
 # --hints--
 
@@ -36,7 +36,11 @@ Test 1
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
-      <div class="penguin-head"></div>
+--fcc-editable-region--
+      <div class="penguin-head">
+
+      </div>
+--fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -124,9 +128,17 @@ body {
   left: 23.5%;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+.penguin-body::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  background-color: gray;
+  top: 10%;
+  left: 25%;
+  border-radius: 0% 0% 100% 100%;
+  opacity: 70%;
+}
 
 .ground {
   width: 100vw;

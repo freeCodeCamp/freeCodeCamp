@@ -1,13 +1,13 @@
 ---
-id: 6199442866286d0ff421a4fc
-title: Step 37
+id: 619be7af7b0bf60770f5d2a4
+title: Step 40
 challengeType: 0
-dashedName: step-37
+dashedName: step-40
 ---
 
 # --description--
 
-To give the penguin body a crest, create a pseudo-element that is the first child of the `.penguin-body` element. Set the `content` property of the pseudo-element to an empty string.
+Position the pseudo-element `10%` from the top and `25%` from the left of its parent.
 
 # --hints--
 
@@ -125,7 +125,14 @@ body {
 }
 
 --fcc-editable-region--
+.penguin-body::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  background-color: gray;
 
+}
 --fcc-editable-region--
 
 .ground {
