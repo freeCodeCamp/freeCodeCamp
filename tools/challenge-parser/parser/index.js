@@ -1,17 +1,18 @@
-const directive = require('remark-directive');
-const frontmatter = require('remark-frontmatter');
-const remark = require('remark-parse');
-const { readSync } = require('to-vfile');
-const unified = require('unified');
 const addFrontmatter = require('./plugins/add-frontmatter');
 const addSeed = require('./plugins/add-seed');
 const addSolution = require('./plugins/add-solution');
+const addSolutionNote = require('./plugins/add-solution-note');
 const addTests = require('./plugins/add-tests');
 const addText = require('./plugins/add-text');
 const addVideoQuestion = require('./plugins/add-video-question');
 const replaceImports = require('./plugins/replace-imports');
 const restoreDirectives = require('./plugins/restore-directives');
 const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
+const directive = require('remark-directive');
+const frontmatter = require('remark-frontmatter');
+const remark = require('remark-parse');
+const { readSync } = require('to-vfile');
+const unified = require('unified');
 
 // by convention, anything that adds to file.data has the name add<name>.
 const processor = unified()
@@ -45,12 +46,19 @@ const processor = unified()
   .use(restoreDirectives)
   .use(addVideoQuestion)
   .use(addTests)
-  .use(addText, ['description', 'instructions']);
+  .use(addText, ['description', 'instructions', 'notes'])
+  .use(addSolutionNote);
 
 exports.parseMD = function parseMD(filename) {
   return new Promise((resolve, reject) => {
     const file = readSync(filename);
     const tree = processor.parse(file);
+
+    /* console.log('[][][][][][][]file')
+    console.log(file);
+    console.log('$$$$$$$$$$$$$$$');
+    console.log(tree);*/
+
     processor.run(tree, file, function (err, node, file) {
       if (!err) {
         resolve(file.data);

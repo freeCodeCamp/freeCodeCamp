@@ -287,7 +287,8 @@
       "info": "信息",
       "code": "编程",
       "tests": "测试",
-      "preview": "预览"
+      "preview": "预览",
+      "notes": "Notes"
     },
     "help-translate": "我们仍然在翻译以下证书。",
     "help-translate-link": "帮助我们翻译。",

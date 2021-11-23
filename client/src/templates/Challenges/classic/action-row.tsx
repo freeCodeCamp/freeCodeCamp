@@ -6,8 +6,9 @@ import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
   block: string;
+  hasNotes: boolean;
   showConsole: boolean;
-  showNotes?: boolean;
+  showNotes: boolean;
   showPreview: boolean;
   superBlock: string;
   switchDisplayTab: (displayTab: string) => void;
@@ -19,7 +20,9 @@ const mapDispatchToProps = {
 };
 
 const ActionRow = ({
+  hasNotes,
   switchDisplayTab,
+  showNotes,
   showPreview,
   showConsole,
   superBlock,
@@ -48,12 +51,21 @@ const ActionRow = ({
           >
             JS Console
           </button>
+          {hasNotes && (
+            <button
+              className={showNotes ? 'active-tab' : ''}
+              onClick={() => switchDisplayTab('showNotes')}
+              role='tab'
+            >
+              {showNotes ? 'Hide Notes' : 'Show Notes'}
+            </button>
+          )}
           <button
             className={showPreview ? 'active-tab' : ''}
             onClick={() => switchDisplayTab('showPreview')}
             role='tab'
           >
-            Show Preview
+            {showPreview ? 'Hide Preview' : 'Show Preview'}
           </button>
         </div>
       </div>

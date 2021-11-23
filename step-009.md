@@ -22,7 +22,9 @@ assert(new __helpers.CSSHelp(document).getStyle('html'));
 Your `html` selector should have the `box-sizing` property set to `border-box`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('html')?.boxSizing === 'border-box');
+assert(
+  new __helpers.CSSHelp(document).getStyle('html')?.boxSizing === 'border-box'
+);
 ```
 
 # --seed--
@@ -36,7 +38,7 @@ assert(new __helpers.CSSHelp(document).getStyle('html')?.boxSizing === 'border-b
     <meta charset="UTF-8" />
     <title>Responsive Web Design Piano</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div id="piano">
@@ -79,3 +81,19 @@ assert(new __helpers.CSSHelp(document).getStyle('html')?.boxSizing === 'border-b
 # --notes--
 
 The `HTML` element is great!
+
+Here's an example:
+
+```css
+selector {
+  property: value;
+}
+```
+
+# --solution-for-notes--
+
+```css
+html {
+  box-sizing: border-box;
+}
+```
