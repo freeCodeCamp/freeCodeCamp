@@ -451,6 +451,19 @@ a.patreon-button:hover {
   background-color: #e13d47;
 }
 
+.dark-palette a.patreon-button {
+  background-color: white;
+}
+
+.dark-palette a.patreon-button svg {
+  fill: #ff424d;
+}
+.dark-palette a.patreon-button:active,
+.dark-palette a.patreon-button:active:focus,
+.dark-palette a.patreon-button:hover {
+  background-color: #efefef;
+}
+
 .hide {
   display: none;
 }
