@@ -16,7 +16,7 @@ Por exemplo, considere duas tigelas adjacentes contendo 2 e 3 feijões, respecti
 
 Você recebe as seguintes sequências:
 
-$$\begin{align} & t_0 = 123456, \\\\ & t_i = \begin{cases} \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ é par} \\\\ \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{if $t_{i - 1}$ é ímpar} \end{cases} \\\\ & \qquad \text{onde $⌊x⌋$ é a função de base e $\oplus$ é o operador bitwise XOR.} \\\\ & b_i = (t_i\bmod 2^{11}) + 1. \end{align}$$
+$$\begin{align} & t_0 = 123456, \\\\ & t_i = \begin{cases} \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ é par} \\\\ \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{if $t_{i - 1}$ é ímpar} \end{cases} \\\\ & \qquad \text{onde $⌊x⌋$ é a função piso e $\oplus$ é o operador bitwise XOR.} \\\\ & b_i = (t_i\bmod 2^{11}) + 1. \end{align}$$
 
 Os dois primeiros termos da última sequência são $b_1 = 289$ e $b_2 = 145$. Se começarmos com $b_1$ e $b_2$ feijões em duas tigelas adjacentes, 3419100 movimentos seriam necessários para terminar o jogo.
 

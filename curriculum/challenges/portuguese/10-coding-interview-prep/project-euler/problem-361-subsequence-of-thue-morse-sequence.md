@@ -1,6 +1,6 @@
 ---
 id: 5900f4d51000cf542c50ffe8
-title: 'Problem 361: Subsequence of Thue-Morse sequence'
+title: 'Problema 361: Subsequência da sequência de Thue-Morse'
 challengeType: 5
 forumTopicId: 302022
 dashedName: problem-361-subsequence-of-thue-morse-sequence
@@ -8,30 +8,30 @@ dashedName: problem-361-subsequence-of-thue-morse-sequence
 
 # --description--
 
-The Thue-Morse sequence {Tn} is a binary sequence satisfying:
+A sequência Thue-Morse $\\{T_n\\}$ é uma sequência binária satisfatória:
 
-T0 = 0
+- $T_0 = 0$
+- $T_{2n} = T_n$
+- $T_{2n + 1} = 1 - T_n$
 
-T2n = Tn
+Os primeiros termos de $\\{T_n\\}$ são atribuídos da seguinte forma: $01101001\color{red}{10010}1101001011001101001\ldots$.
 
-T2n+1 = 1 - Tn
+Definimos $\\{A_n\\}$ como uma sequência ordenada de inteiros, de forma que a expressão binária de cada elemento apareça como uma subsequência em $\\{T_n\\}$. Por exemplo, o número decimal 18 é expresso como 10010 em binário. 10010 aparece em $\\{T_n\\}$ ($T_8$ a $T_{12}$), portanto 18 é um elemento de $\\{A_n\\}$. O número decimal 14 é expresso como 1110 no binário. 1110 nunca aparece em $\\{T_n\\}$, portanto 14 não é um elemento de $\\{A_n\\}$.
 
-The first several terms of {Tn} are given as follows: 01101001100101101001011001101001....
+Os primeiros termos de $A_n$ são atribuídos da seguinte forma:
 
-We define {An} as the sorted sequence of integers such that the binary expression of each element appears as a subsequence in {Tn}. For example, the decimal number 18 is expressed as 10010 in binary. 10010 appears in {Tn} (T8 to T12), so 18 is an element of {An}. The decimal number 14 is expressed as 1110 in binary. 1110 never appears in {Tn}, so 14 is not an element of {An}.
+$$\begin{array}{cr} n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\ A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots \end{array}$$
 
-The first several terms of An are given as follows: n0123456789101112…An012345691011121318…
+Também podemos verificar que $A_{100} = 3251$ e $A_{1000} = 80.852.364.498$.
 
-We can also verify that A100 = 3251 and A1000 = 80852364498.
-
-Find the last 9 digits of .
+Encontre os últimos 9 dígitos de $\displaystyle\sum_{k = 1}^{18} A_{{10}^k}$.
 
 # --hints--
 
-`euler361()` should return 178476944.
+`subsequenceOfThueMorseSequence()` deve retornar `178476944`.
 
 ```js
-assert.strictEqual(euler361(), 178476944);
+assert.strictEqual(subsequenceOfThueMorseSequence(), 178476944);
 ```
 
 # --seed--
@@ -39,12 +39,12 @@ assert.strictEqual(euler361(), 178476944);
 ## --seed-contents--
 
 ```js
-function euler361() {
+function subsequenceOfThueMorseSequence() {
 
   return true;
 }
 
-euler361();
+subsequenceOfThueMorseSequence();
 ```
 
 # --solutions--

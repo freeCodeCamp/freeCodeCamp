@@ -28,7 +28,7 @@ etc. e vemos que $g(535) = 1008$.
 
 Dado que $\displaystyle\sum_{n = 2}^{999} g\left(\left\lfloor\frac{{10}^6}{n}\right\rfloor\right) = 27280188$, find $\displaystyle\sum_{n = 2}^{999.999} g\left(\left\lfloor\frac{{10}^{16}}{n}\right\rfloor\right)$.
 
-**Observação:** $\lfloor x\rfloor$ representa a função de base.
+**Observação:** $\lfloor x\rfloor$ representa a função piso.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4dd1000cf542c50ffef
-title: 'Problem 368: A Kempner-like series'
+title: 'Problema 368: Uma série semelhante à de Kempner'
 challengeType: 5
 forumTopicId: 302029
 dashedName: problem-368-a-kempner-like-series
@@ -8,22 +8,26 @@ dashedName: problem-368-a-kempner-like-series
 
 # --description--
 
-The harmonic series $1 + \\dfrac{1}{2} + \\dfrac{1}{3} + \\dfrac{1}{4} + ...$ is well known to be divergent.
+A série harmônica $1 + \dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + \ldots$ é conhecido por ser divergente.
 
-If we however omit from this series every term where the denominator has a 9 in it, the series remarkably enough converges to approximately 22.9206766193. This modified harmonic series is called the Kempner series.
+No entanto, se omitirmos desta série todos os termos em que o denominador tem um 9, a série converge consideravelmente para aproximadamente 22,9206766193. Esta série harmônica modificada é chamada de série de Kempner.
 
-Let us now consider another modified harmonic series by omitting from the harmonic series every term where the denominator has 3 or more equal consecutive digits. One can verify that out of the first 1200 terms of the harmonic series, only 20 terms will be omitted. These 20 omitted terms are: $$\\dfrac{1}{111}, \\dfrac{1}{222}, \\dfrac{1}{333}, \\dfrac{1}{444}, \\dfrac{1}{555}, \\dfrac{1}{666}, \\dfrac{1}{777}, \\dfrac{1}{888}, \\dfrac{1}{999}, \\dfrac{1}{1000}, \\dfrac{1}{1110}, \\\\ \\dfrac{1}{1111}, \\dfrac{1}{1112}, \\dfrac{1}{1113}, \\dfrac{1}{1114}, \\dfrac{1}{1115}, \\dfrac{1}{1116}, \\dfrac{1}{1117}, \\dfrac{1}{1118}, \\dfrac{1}{1119}$$
+Consideremos agora outra série harmônica modificada, omitindo da série harmônica todos os termos em que o denominador tem 3 ou mais algarismos iguais consecutivos. Pode-se verificar que, dos primeiros 1200 termos da série harmônica, apenas 20 termos serão omitidos.
 
-This series converges as well.
+Estes 20 termos omitidos são:
 
-Find the value the series converges to. Give your answer rounded to 10 digits behind the decimal point.
+$$\dfrac{1}{111}, \dfrac{1}{222}, \dfrac{1}{333}, \dfrac{1}{444}, \dfrac{1}{555}, \dfrac{1}{666}, \dfrac{1}{777}, \dfrac{1}{888}, \dfrac{1}{999}, \dfrac{1}{1000}, \dfrac{1}{1110}, \\\\ \dfrac{1}{1111}, \dfrac{1}{1112}, \dfrac{1}{1113}, \dfrac{1}{1114}, \dfrac{1}{1115}, \dfrac{1}{1116}, \dfrac{1}{1117}, \dfrac{1}{1118}, \dfrac{1}{1119}$$
+
+Esta série também converge.
+
+Encontre o valor para o qual a série converge. Dê sua resposta arredondada para 10 casas depois da vírgula.
 
 # --hints--
 
-`euler368()` should return 253.6135092068.
+`kempnerLikeSeries()` deve retornar `253.6135092068`.
 
 ```js
-assert.strictEqual(euler368(), 253.6135092068);
+assert.strictEqual(kempnerLikeSeries(), 253.6135092068);
 ```
 
 # --seed--
@@ -31,12 +35,12 @@ assert.strictEqual(euler368(), 253.6135092068);
 ## --seed-contents--
 
 ```js
-function euler368() {
+function kempnerLikeSeries() {
 
   return true;
 }
 
-euler368();
+kempnerLikeSeries();
 ```
 
 # --solutions--
