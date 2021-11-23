@@ -73,14 +73,6 @@ const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 
 // rethrow unhandled rejections to make sure the tests exit with -1
 process.on('unhandledRejection', err => handleRejection(err));
-// If an uncaught exception gets here, then mocha is in an unexpected state. All
-// we can do is log the exception and exit with a non-zero code.
-process.on('uncaughtException', err => {
-  console.error('Uncaught exception:', err.message);
-  console.error(err.stack);
-  // eslint-disable-next-line no-process-exit
-  process.exit(1);
-});
 
 const handleRejection = err => {
   // setting the error code because node does not (yet) exit with a non-zero
@@ -92,18 +84,12 @@ const handleRejection = err => {
     // first error and that starts shutting down the browser and the server.
     console.error(err);
   } else {
-    console.error('Unhandled exception:', err.message);
-    console.error(err.stack);
     throw err;
   }
 };
 
-const resetDOM = () => {
-  if (global.window) global.window.close();
-  global.window = new jsdom.JSDOM('').window;
-  global.document = window.document;
-};
-resetDOM();
+const dom = new jsdom.JSDOM('');
+global.document = dom.window.document;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function (test, err) {
@@ -559,7 +545,7 @@ ${inspect(commentMap)}
               it(`Solution ${
                 index + 1
               } must pass the tests`, async function () {
-                this.timeout(10000 * tests.length + 2000);
+                this.timeout(5000 * tests.length + 2000);
                 const testRunner = await createTestRunner(
                   challenge,
                   solution,
@@ -599,8 +585,6 @@ async function createTestRunner(
     },
     { usesTestRunner: true }
   );
-
-  resetDOM();
 
   const code = {
     contents: sources.index,
@@ -681,20 +665,7 @@ async function getWorkerEvaluator(build, sources, code, removeComments) {
 }
 
 async function initializeTestRunner(build, sources, code, loadEnzyme) {
-  await page.close();
-  await browser.close();
-  browser = await puppeteer.launch({
-    args: [
-      // Required for Docker version of Puppeteer
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      // This will write shared memory files into /tmp instead of /dev/shm,
-      // because Docker’s default for /dev/shm is 64MB
-      '--disable-dev-shm-usage'
-      // dumpio: true
-    ]
-  });
-  page = await newPageContext(browser);
+  await page.reload();
   await page.setContent(build);
   await page.evaluate(
     async (code, sources, loadEnzyme) => {
