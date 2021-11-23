@@ -26,14 +26,14 @@ import {
   postChargeStripeCard
 } from '../../redux';
 import Spacer from '../helpers/spacer';
-import DonateCompletion from './DonateCompletion';
+import DonateCompletion from './donate-completion';
 import PatreonButton from './patreon-button';
 import type { AddDonationData } from './paypal-button';
 import PaypalButton from './paypal-button';
 import StripeCardForm, { HandleAuthentication } from './stripe-card-form';
 import WalletsWrapper from './walletsButton';
 
-import './Donation.css';
+import './donation.css';
 
 const numToCommas = (num: number): string =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');

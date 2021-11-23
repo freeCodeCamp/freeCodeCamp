@@ -19,9 +19,7 @@ import {
 } from '../../redux';
 import { isLocationSuperBlock } from '../../utils/path-parsers';
 import { Spacer } from '../helpers';
-import DonateForm from './DonateForm';
-
-import './Donation.css';
+import DonateForm from './donate-form';
 
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
