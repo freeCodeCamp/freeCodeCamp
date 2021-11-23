@@ -649,15 +649,10 @@ async function getContextEvaluator(build, sources, code, loadEnzyme) {
   await initializeTestRunner(build, sources, code, loadEnzyme);
 
   return {
-    evaluate: async (testString, timeout) =>
-      Promise.race([
-        new Promise((_, reject) =>
-          setTimeout(() => reject('timeout'), timeout)
-        ),
-        await page.evaluate(async testString => {
-          return await document.__runTest(testString);
-        }, testString)
-      ])
+    evaluate: async testString =>
+      await page.evaluate(async testString => {
+        return await document.__runTest(testString);
+      }, testString)
   };
 }
 
