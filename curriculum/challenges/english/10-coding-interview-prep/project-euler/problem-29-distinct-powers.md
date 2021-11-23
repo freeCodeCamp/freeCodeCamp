@@ -8,7 +8,7 @@ dashedName: problem-29-distinct-powers
 
 # --description--
 
-Consider all integer combinations of ab for 2 ≤ a ≤ 5 and 2 ≤ b ≤ 5:
+Consider all integer combinations of a ^ b for 2 ≤ a ≤ 5 and 2 ≤ b ≤ 5:
 
 <div style='padding-left: 4em;'>
   2<sup>2</sup>=4, 2<sup>3</sup>=8, 2<sup>4</sup>=16, 2<sup>5</sup>=32 <br>
