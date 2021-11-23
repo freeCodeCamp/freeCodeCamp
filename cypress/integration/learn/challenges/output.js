@@ -27,8 +27,7 @@ describe('Classic challenge', function () {
   it('renders the default output text', () => {
     cy.title().should(
       'eq',
-      'Learn Basic HTML and HTML5: Say Hello to HTML Elements |' +
-        ' freeCodeCamp.org'
+      'Basic HTML and HTML5: Say Hello to HTML Elements |' + ' freeCodeCamp.org'
     );
     cy.get(selectors.defaultOutput).contains(defaultOutput);
   });
