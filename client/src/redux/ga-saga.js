@@ -23,14 +23,19 @@ function* callGaType({ payload: { type, data } }) {
       const email = yield select(emailSelector);
       const completedChallengeTotal = yield select(completedChallengesSelector);
       const completedChallengeSession = yield select(completionCountSelector);
-      const customDimensions = {
-        Test_Variation: emailToABVariant(email).isAVariant ? 'A' : 'B',
-        Test_Type: aBTestConfig.type,
-        Challenges_Completed_Session: completedChallengeSession,
-        Challenges_Completed_Total: completedChallengeTotal.length,
-        URL: window.location.href
+      const CustomDimensions = {
+        // URL;
+        dimension1: window.location.href,
+        // Challenges_Completed_Session
+        dimension2: completedChallengeSession,
+        // Challenges_Completed_Total
+        dimension3: completedChallengeTotal.length,
+        // Test_Type
+        dimension4: aBTestConfig.type,
+        // Test_Variation
+        dimension5: emailToABVariant(email).isAVariant ? 'A' : 'B'
       };
-      data = { ...data, ...customDimensions };
+      ga.set(CustomDimensions);
     }
   }
 
