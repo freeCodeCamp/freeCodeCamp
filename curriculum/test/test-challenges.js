@@ -553,7 +553,7 @@ ${inspect(commentMap)}
               it(`Solution ${
                 index + 1
               } must pass the tests`, async function () {
-                this.timeout(5000 * tests.length + 2000);
+                this.timeout(10000 * tests.length + 2000);
                 const testRunner = await createTestRunner(
                   challenge,
                   solution,
