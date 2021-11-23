@@ -13,7 +13,7 @@ import EditorTabs from './editor-tabs';
 const { showUpcomingChanges } = envData;
 
 const mapStateToProps = createStructuredSelector({
-  currentTab: currentTabSelector
+  currentTab: currentTabSelector as (state: unknown) => number
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
