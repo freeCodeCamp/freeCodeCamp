@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import BreadCrumb from '../components/bread-crumb';
 import { resetChallenge } from '../redux';
@@ -29,6 +30,7 @@ const ActionRow = ({
   block,
   resetChallenge
 }: ActionRowProps): JSX.Element => {
+  const { t } = useTranslation();
   return (
     <div className='action-row'>
       <div className='breadcrumbs-demo'>
@@ -41,7 +43,7 @@ const ActionRow = ({
           onClick={resetChallenge}
           role='tab'
         >
-          Restart Step
+          {t('learn.editor-tabs.restart-step')}
         </button>
         <div className='panel-display-tabs'>
           <button
@@ -49,7 +51,7 @@ const ActionRow = ({
             onClick={() => switchDisplayTab('showConsole')}
             role='tab'
           >
-            JS Console
+            {t('learn.editor-tabs.console')}
           </button>
           {hasNotes && (
             <button
@@ -57,7 +59,7 @@ const ActionRow = ({
               onClick={() => switchDisplayTab('showNotes')}
               role='tab'
             >
-              {showNotes ? 'Hide Notes' : 'Show Notes'}
+              {t('learn.editor-tabs.notes')}
             </button>
           )}
           <button
@@ -65,7 +67,7 @@ const ActionRow = ({
             onClick={() => switchDisplayTab('showPreview')}
             role='tab'
           >
-            {showPreview ? 'Hide Preview' : 'Show Preview'}
+            {t('learn.editor-tabs.preview')}
           </button>
         </div>
       </div>
