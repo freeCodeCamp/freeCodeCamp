@@ -73,6 +73,14 @@ const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 
 // rethrow unhandled rejections to make sure the tests exit with -1
 process.on('unhandledRejection', err => handleRejection(err));
+// If an uncaught exception gets here, then mocha is in an unexpected state. All
+// we can do is log the exception and exit with a non-zero code.
+process.on('uncaughtException', err => {
+  console.error('Uncaught exception:', err.message);
+  console.error(err.stack);
+  // eslint-disable-next-line no-process-exit
+  process.exit(1);
+});
 
 const handleRejection = err => {
   // setting the error code because node does not (yet) exit with a non-zero
