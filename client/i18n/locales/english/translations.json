@@ -287,6 +287,8 @@
       "info": "Info",
       "code": "Code",
       "tests": "Tests",
+      "restart": "Restart",
+      "restart-step": "Restart Step",
       "console": "Console",
       "notes": "Notes",
       "preview": "Preview"
