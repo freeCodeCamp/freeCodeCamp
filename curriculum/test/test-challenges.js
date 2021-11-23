@@ -96,8 +96,12 @@ const handleRejection = err => {
   }
 };
 
-const dom = new jsdom.JSDOM('');
-global.document = dom.window.document;
+const resetDOM = () => {
+  if (global.window) global.window.close();
+  global.window = new jsdom.JSDOM('').window;
+  global.document = window.document;
+};
+resetDOM();
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function (test, err) {
@@ -594,6 +598,8 @@ async function createTestRunner(
     { usesTestRunner: true }
   );
 
+  resetDOM();
+
   const code = {
     contents: sources.index,
     editableContents: sources.editableContents
@@ -668,7 +674,20 @@ async function getWorkerEvaluator(build, sources, code, removeComments) {
 }
 
 async function initializeTestRunner(build, sources, code, loadEnzyme) {
-  await page.reload();
+  await page.close();
+  await browser.close();
+  browser = await puppeteer.launch({
+    args: [
+      // Required for Docker version of Puppeteer
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      // This will write shared memory files into /tmp instead of /dev/shm,
+      // because Docker’s default for /dev/shm is 64MB
+      '--disable-dev-shm-usage'
+      // dumpio: true
+    ]
+  });
+  page = await newPageContext(browser);
   await page.setContent(build);
   await page.evaluate(
     async (code, sources, loadEnzyme) => {
