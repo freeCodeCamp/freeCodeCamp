@@ -287,8 +287,9 @@
       "info": "信息",
       "code": "編程",
       "tests": "測試",
-      "preview": "預覽",
-      "notes": "Notes"
+      "console": "Console",
+      "notes": "Notes",
+      "preview": "預覽"
     },
     "help-translate": "我們仍然在翻譯以下證書。",
     "help-translate-link": "幫助我們翻譯。",

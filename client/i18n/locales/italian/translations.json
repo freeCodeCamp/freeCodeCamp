@@ -287,8 +287,9 @@
       "info": "Informazioni",
       "code": "Codice",
       "tests": "Test",
-      "preview": "Anteprima",
-      "notes": "Notes"
+      "console": "Console",
+      "notes": "Notes",
+      "preview": "Anteprima"
     },
     "help-translate": "Stiamo ancora traducendo le seguenti certificazioni.",
     "help-translate-link": "Aiutaci con le traduzioni...",
