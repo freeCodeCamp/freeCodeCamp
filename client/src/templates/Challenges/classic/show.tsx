@@ -433,10 +433,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             <MobileLayout
               editor={this.renderEditor()}
               guideUrl={getGuideUrl({ forumTopicId, title })}
+              hasEditableBoundaries={this.hasEditableBoundaries()}
+              hasNotes={!!notes}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
                 showToolPanel: false
               })}
+              notes={this.renderNotes(notes)}
               preview={this.renderPreview()}
               testOutput={this.renderTestOutput()}
               usesMultifileEditor={usesMultifileEditor}

@@ -1,16 +1,13 @@
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
-import React, { Component } from 'react';
+import React, { Component, ReactElement } from 'react';
 import { connect } from 'react-redux';
 
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import envData from '../../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import { currentTabSelector, moveToTab } from '../redux';
 import EditorTabs from './editor-tabs';
-
-const { showUpcomingChanges } = envData;
 
 const mapStateToProps = createStructuredSelector({
   currentTab: currentTabSelector as (state: unknown) => number
@@ -27,9 +24,12 @@ interface MobileLayoutProps {
   currentTab: number;
   editor: JSX.Element | null;
   guideUrl: string;
+  hasEditableBoundaries: boolean;
+  hasNotes: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
   moveToTab: typeof moveToTab;
+  notes: ReactElement;
   preview: JSX.Element;
   testOutput: JSX.Element;
   videoUrl: string;
@@ -44,10 +44,13 @@ class MobileLayout extends Component<MobileLayoutProps> {
     const {
       currentTab,
       moveToTab,
+      hasEditableBoundaries,
       instructions,
       editor,
       testOutput,
+      hasNotes,
       hasPreview,
+      notes,
       preview,
       guideUrl,
       videoUrl,
@@ -63,6 +66,8 @@ class MobileLayout extends Component<MobileLayoutProps> {
     // but still needs a way to switch between the different tabs.
     const displayEditorTabs = showUpcomingChanges && usesMultifileEditor;
 
+    const eventKeys = [1, 2, 3, 4, 5];
+
     return (
       <>
         <Tabs
@@ -71,11 +76,16 @@ class MobileLayout extends Component<MobileLayoutProps> {
           id='challenge-page-tabs'
           onSelect={moveToTab}
         >
-          <TabPane eventKey={1} title={i18next.t('learn.editor-tabs.info')}>
-            {instructions}
-          </TabPane>
+          {!hasEditableBoundaries && (
+            <TabPane
+              eventKey={eventKeys.shift()}
+              title={i18next.t('learn.editor-tabs.info')}
+            >
+              {instructions}
+            </TabPane>
+          )}
           <TabPane
-            eventKey={2}
+            eventKey={eventKeys.shift()}
             title={i18next.t('learn.editor-tabs.code')}
             {...editorTabPaneProps}
           >
@@ -83,15 +93,23 @@ class MobileLayout extends Component<MobileLayoutProps> {
             {editor}
           </TabPane>
           <TabPane
-            eventKey={3}
+            eventKey={eventKeys.shift()}
             title={i18next.t('learn.editor-tabs.tests')}
             {...editorTabPaneProps}
           >
             {testOutput}
           </TabPane>
+          {hasNotes && (
+            <TabPane
+              eventKey={eventKeys.shift()}
+              title={i18next.t('learn.editor-tabs.notes')}
+            >
+              {notes}
+            </TabPane>
+          )}
           {hasPreview && (
             <TabPane
-              eventKey={4}
+              eventKey={eventKeys.shift()}
               title={i18next.t('learn.editor-tabs.preview')}
             >
               {preview}

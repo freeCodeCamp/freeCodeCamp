@@ -1,8 +1,8 @@
 import { first } from 'lodash-es';
 import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
-import envData from '../../../../../config/env.json';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
+import envData from '../../../../../config/env.json';
 import {
   ChallengeFile,
   ChallengeFiles,
@@ -104,7 +104,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout'>
-      {projectBasedChallenge && (
+      {hasEditableBoundaries && (
         <ActionRow
           block={block}
           hasNotes={hasNotes}
@@ -116,12 +116,12 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         />
       )}
       <ReflexContainer orientation='vertical'>
-        {!projectBasedChallenge && (
+        {!hasEditableBoundaries && (
           <ReflexElement flex={instructionPane.flex} {...resizeProps}>
             {instructions}
           </ReflexElement>
         )}
-        {!projectBasedChallenge && (
+        {!hasEditableBoundaries && (
           <ReflexSplitter propagate={true} {...resizeProps} />
         )}
 
