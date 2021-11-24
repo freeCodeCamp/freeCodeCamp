@@ -27,7 +27,7 @@ import {
 import { User } from '../redux/prop-types';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 
-const { apiLocation, showUpcomingChanges } = envData;
+const { apiLocation, deploymentEnv } = envData;
 
 // TODO: update types for actions
 interface ShowSettingsProps {
@@ -98,6 +98,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isSciCompPyCertV7,
       isDataAnalysisPyCertV7,
       isMachineLearningPyCertV7,
+      isRelationalDatabaseCertV8,
       isEmailVerified,
       isHonest,
       sendQuincyEmail,
@@ -195,13 +196,14 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isJsAlgoDataStructCert={isJsAlgoDataStructCert}
             isMachineLearningPyCertV7={isMachineLearningPyCertV7}
             isQaCertV7={isQaCertV7}
+            isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
             isRespWebDesignCert={isRespWebDesignCert}
             isSciCompPyCertV7={isSciCompPyCertV7}
             username={username}
             verifyCert={verifyCert}
           />
-          {showUpcomingChanges && <Spacer />}
-          {showUpcomingChanges && <WebhookToken />}
+          {deploymentEnv == 'staging' && <Spacer />}
+          {deploymentEnv == 'staging' && <WebhookToken />}
           <Spacer />
           <DangerZone />
         </main>

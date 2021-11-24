@@ -1,22 +1,22 @@
 ---
 id: 606243f50267e718b1e755f4
-title: 关系数据库认证
-certification: relational-databases
+title: 關係數據庫認證
+certification: relational-database
 challengeType: 7
 isPrivate: true
 tests:
   - 
     id: 5f1a4ef5d5d6b5ab580fc6ae
-    title: 天体数据库
+    title: 天體數據庫
   - 
     id: 5f9771307d4d22b9d2b75a94
-    title: 世界杯数据库
+    title: 世界盃數據庫
   - 
     id: 5f87ac112ae598023a42df1a
-    title: 沙龙预约计划
+    title: 沙龍預約計劃
   - 
     id: 602d9ff222201c65d2a019f2
-    title: 元素周期表数据库
+    title: 元素週期表數據庫
   - 
     id: 602da04c22201c65d2a019f4
-    title: 猜数字游戏
+    title: 猜數字遊戲

@@ -425,7 +425,7 @@
       }
     }
   },
-  "relational-databases": {
+  "relational-database": {
     "title": "Database relazionali",
     "intro": [
       "Per questi corsi, utilizzerai strumenti e software per veri sviluppatori tra cui VS Code, PostgreSQL, e la riga di comando Linux / Unix per completare i tutorial interattivi e costruire progetti.",

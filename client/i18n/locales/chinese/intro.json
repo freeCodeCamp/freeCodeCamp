@@ -425,7 +425,7 @@
       }
     }
   },
-  "relational-databases": {
+  "relational-database": {
     "title": "关系型数据库",
     "intro": [
       "对于这些课程，你将使用真正的开发者工具和软件，包括 VS Code、PostgreSQL 和 Linux / Unix 命令行，来完成交互式教程和构建项目。",

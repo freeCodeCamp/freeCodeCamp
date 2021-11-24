@@ -1,10 +1,10 @@
 ---
-title: Relational Databases
-superBlock: relational-databases
-certification: relational-databases
+title: Relational Database
+superBlock: relational-database
+certification: relational-database
 ---
 
-## Introduction to Relational Databases
+## Introduction to Relational Database
 
 This introduction is a stub
 

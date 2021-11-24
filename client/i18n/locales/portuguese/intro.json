@@ -425,7 +425,7 @@
       }
     }
   },
-  "relational-databases": {
+  "relational-database": {
     "title": "Bancos de dados relacionais",
     "intro": [
       "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos.",
