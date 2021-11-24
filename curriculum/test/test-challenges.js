@@ -88,7 +88,7 @@ const handleRejection = err => {
   }
 };
 
-const dom = new jsdom.JSDOM('');
+const dom = new jsdom.JSDOM('', { resources: 'usable' });
 global.document = dom.window.document;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
