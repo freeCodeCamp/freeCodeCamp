@@ -220,7 +220,7 @@ export type CertTest = {
 };
 
 export type User = {
-  calendar: unknown;
+  calendar: Record<string, number>;
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];

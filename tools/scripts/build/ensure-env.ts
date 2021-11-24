@@ -59,7 +59,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     searchKeys,
     donationKeys
   );
-  const receivedvariables = Object.keys(env);
+  const receivedvariables = Object.keys(env as Record<string, unknown>);
   expectedVariables.sort();
   receivedvariables.sort();
   if (expectedVariables.length !== receivedvariables.length) {

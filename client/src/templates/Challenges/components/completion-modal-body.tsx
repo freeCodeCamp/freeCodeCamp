@@ -13,7 +13,7 @@ interface CompletionModalBodyProps {
 interface CompletionModalBodyState {
   // This type was driving me nuts - seems like `NodeJS.Timeout | null;` should work
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  progressInterval: any;
+  progressInterval: number | null;
   shownPercent: number;
 }
 
@@ -45,7 +45,7 @@ export class CompletionModalBody extends PureComponent<
     const amountPerInterval = completedPercent / intervalsToFinish;
     let percent = 0;
 
-    const myInterval = setInterval(() => {
+    const myInterval = window.setInterval(() => {
       percent += amountPerInterval;
 
       if (percent > completedPercent) percent = completedPercent;
@@ -65,7 +65,8 @@ export class CompletionModalBody extends PureComponent<
   }
 
   componentWillUnmount(): void {
-    clearInterval(this.state.progressInterval);
+    if (this.state.progressInterval !== null)
+      clearInterval(this.state.progressInterval);
   }
 
   render(): JSX.Element {

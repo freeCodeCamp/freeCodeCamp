@@ -17,6 +17,7 @@ import './heatmap.css';
 // @ts-ignore
 import envData from '../../../../../config/env.json';
 import { langCodes } from '../../../../../config/i18n/all-langs';
+import { User } from '../../../redux/prop-types';
 import FullWidthRow from '../../helpers/full-width-row';
 import Spacer from '../../helpers/spacer';
 
@@ -29,8 +30,7 @@ const { clientLocale } = envData;
 const localeCode = langCodes[clientLocale];
 
 interface HeatMapProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  calendar: any;
+  calendar: User['calendar'];
 }
 
 interface PageData {
@@ -186,7 +186,6 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
 
 const HeatMap = (props: HeatMapProps): JSX.Element => {
   const { t } = useTranslation();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { calendar } = props;
 
   /**
@@ -195,8 +194,9 @@ const HeatMap = (props: HeatMapProps): JSX.Element => {
    */
 
   // create array of timestamps and turn into milliseconds
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const timestamps = Object.keys(calendar).map((stamp: any) => stamp * 1000);
+  const timestamps = Object.keys(calendar).map(
+    stamp => Number.parseInt(stamp, 10) * 1000
+  );
   const startOfTimestamps = startOfDay(new Date(timestamps[0]));
   let endOfCalendar = startOfDay(Date.now());
   let startOfCalendar;

@@ -35,6 +35,14 @@ type Meta = {
   challengeOrder: string[][];
 };
 
+interface CreateProjectArgs {
+  superBlock: SuperBlocks;
+  block: string;
+  helpCategory: string;
+  order: number;
+  title?: string;
+}
+
 async function createProject(
   superBlock: SuperBlocks,
   block: string,
@@ -264,8 +272,9 @@ prompt([
     }
   }
 ])
-  .then(({ superBlock, block, title, helpCategory, order }) =>
-    createProject(superBlock, block, helpCategory, order, title)
+  .then(
+    ({ superBlock, block, title, helpCategory, order }: CreateProjectArgs) =>
+      createProject(superBlock, block, helpCategory, order, title)
   )
   .then(() =>
     console.log(
