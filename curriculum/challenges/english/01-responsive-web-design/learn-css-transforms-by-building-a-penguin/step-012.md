@@ -13,10 +13,22 @@ Above the `.penguin` element, add a `div` with a `class` of `left-mountain`.
 
 # --hints--
 
-Test 1
+You should add a new `div` within `body`.
 
 ```js
+assert.equal(document.querySelectorAll('body > div')?.length, 3);
+```
 
+You should give the `div` a `class` of `left-mountain`.
+
+```js
+assert.include(document.querySelector('body > div:not(.ground, .penguin)')?.className, 'left-mountain');
+```
+
+You should place `.left-mountain` before `.penguin`.
+
+```js
+assert.strictEqual(document.querySelector('.penguin')?.previousElementSibling, document.querySelector('.left-mountain'));
 ```
 
 # --seed--

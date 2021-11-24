@@ -7,26 +7,26 @@ dashedName: step-16
 
 # --description--
 
-Change the stack level of the mountain element such that it appears behind the `.ground` element.
+Set the stack level of the mountain element such that it remains directly behind the `.ground` element.
 
 # --hints--
 
 You should use the `z-index` property to change the stack level.
 
 ```js
-
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.zIndex);
 ```
 
 You should set the `z-index` property to `2`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.zIndex, '2');
 ```
 
 You should not change the `z-index` of the `.ground` element.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.zIndex, '3');
 ```
 
 # --seed--

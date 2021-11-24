@@ -11,10 +11,10 @@ Set the `position` property of the `.back-mountain` to prevent it from taking up
 
 # --hints--
 
-Test 1
+You should give `.back-mountain` a `position` of `absolute`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.position, 'absolute');
 ```
 
 # --seed--

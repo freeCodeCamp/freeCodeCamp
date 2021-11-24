@@ -13,10 +13,22 @@ Use the `transform` property to skew the mountain by `0deg` in the x-axis and `4
 
 # --hints--
 
-Test 1
+You should give `.left-mountain` a `transform` property.
 
 ```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.transform);
+```
 
+You should use the `skew` function on `transform`.
+
+```js
+assert.include(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.transform, 'skew');
+```
+
+You should give `.left-mountain` a `transform` of `skew(0deg, 44deg)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.getPropVal('transform', true), 'skew(0deg,44deg)');
 ```
 
 # --seed--

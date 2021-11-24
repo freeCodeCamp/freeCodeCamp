@@ -11,10 +11,16 @@ To overlap the mountain and `.ground` elements better, give the mountain a `marg
 
 # --hints--
 
-Test 1
+You should give `.left-mountain` a `margin-top` of `100px`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.marginTop, '100px');
+```
 
+You should give `.ground` a `margin-top` of `-58px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.marginTop, '-58px');
 ```
 
 # --seed--

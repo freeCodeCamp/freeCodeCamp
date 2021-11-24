@@ -7,14 +7,14 @@ dashedName: step-7
 
 # --description--
 
-Give the `body` element a `background` with a linear gradient angled 90 degrees clockwise, starting at `rgb(88, 175, 236)` and ending at `rgb(182, 255, 255)`.
+Give the `.ground` element a `background` with a linear gradient angled 90 degrees clockwise, starting at `rgb(88, 175, 236)` and ending at `rgb(182, 255, 255)`.
 
 # --hints--
 
-Test 1
+You should give `.ground` a `background` of `linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255))`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.getPropVal('background', true), 'linear-gradient(90deg,rgb(88,175,236),rgb(182,255,255))');
 ```
 
 # --seed--

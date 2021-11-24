@@ -11,10 +11,22 @@ Target the `.ground` element, and set its `width` to take up the full width of t
 
 # --hints--
 
-Test 1
+You should use the `.ground` selector.
 
 ```js
+assert.match(code, /\.ground\s*\{/);
+```
 
+You should give the `.ground` element a `width` of `100vw`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.width, '100vw');
+```
+
+You should give the `.ground` element a `height` of `400px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.height, '400px');
 ```
 
 # --seed--

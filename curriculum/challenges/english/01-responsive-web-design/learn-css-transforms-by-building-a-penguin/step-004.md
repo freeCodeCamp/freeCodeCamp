@@ -11,10 +11,10 @@ Remove both the horizontal and vertical scrollbars, and prevent programmatic scr
 
 # --hints--
 
-Test 1
+You should give `body` an `overflow` of `clip`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.overflow, 'clip');
 ```
 
 # --seed--

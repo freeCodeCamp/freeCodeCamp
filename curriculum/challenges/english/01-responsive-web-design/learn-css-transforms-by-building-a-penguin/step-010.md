@@ -11,10 +11,22 @@ Target the `.penguin` element, and set its `width` and `height` to `300px`.
 
 # --hints--
 
-Test 1
+You should use the `.penguin` selector.
 
 ```js
+assert.match(code, /\.penguin\s*\{/);
+```
 
+You should give `.penguin` a `width` of `300px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.width, '300px');
+```
+
+You should give `.penguin` a `height` of `300px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.height, '300px');
 ```
 
 # --seed--

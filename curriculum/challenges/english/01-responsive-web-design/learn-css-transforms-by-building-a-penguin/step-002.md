@@ -7,14 +7,26 @@ dashedName: step-2
 
 # --description--
 
-Target the `body` element to set the `background` to a linear gradient angled 45 degrees clockwise, starting at `rgb(118, 201, 255)` and ending at `rgb(24, 255, 222)`.
+Target the `body` element to set the `background` to a linear gradient angled 45 degrees clockwise, starting at `rgb(118, 201, 255)` and ending at `rgb(247, 255, 222)`.
 
 # --hints--
 
-Test 1
+You should use the `body` element selector.
 
 ```js
+assert.match(code, /body\s*\{/);
+```
 
+You should use the `background` property in the `body` selector.
+
+```js
+assert.isTrue(new __helpers.CSSHelp(document).isPropertyUsed('background'));
+```
+
+You should set `background` to `linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222))`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.getPropVal('background', true), 'linear-gradient(45deg,rgb(118,201,255),rgb(247,255,222))');
 ```
 
 # --seed--

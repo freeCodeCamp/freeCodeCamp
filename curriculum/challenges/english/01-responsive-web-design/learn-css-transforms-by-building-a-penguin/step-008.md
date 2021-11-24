@@ -11,10 +11,16 @@ As the `.ground` element will be third in the stacking context of the page layou
 
 # --hints--
 
-Test 1
+You should give `.ground` a `z-index` of `3`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.zIndex, '3');
+```
 
+You should give `.ground` a `position` of `absolute`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.position, 'absolute');
 ```
 
 # --seed--

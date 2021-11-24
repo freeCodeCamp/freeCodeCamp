@@ -11,10 +11,22 @@ Above the `.ground` element, add a `div` with a `class` of `penguin`. This `div`
 
 # --hints--
 
-Test 1
+You should add a new `div` within the `body`.
 
 ```js
+assert.equal(document.querySelectorAll('body > div')?.length, 2);
+```
 
+You should give the `div` a `class` of `penguin`.
+
+```js
+assert.include(document.querySelector('body > div:not(.ground)')?.className, 'penguin');
+```
+
+You should place `div.penguin` before `div.ground`.
+
+```js
+assert.strictEqual(document.querySelector('.ground')?.previousElementSibling, document.querySelector('.penguin'));
 ```
 
 # --seed--

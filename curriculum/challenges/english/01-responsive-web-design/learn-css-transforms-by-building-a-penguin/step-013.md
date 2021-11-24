@@ -11,10 +11,28 @@ Target the `.left-mountain` element, and set its `width` and `height` to `300px`
 
 # --hints--
 
-Test 1
+You should use the `.left-mountain` selector.
 
 ```js
+assert.match(code, /\.left-mountain\s*\{/);
+```
 
+You should give `.left-mountain` a `width` of `300px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.width, '300px');
+```
+
+You should give `.left-mountain` a `height` of `300px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.height, '300px');
+```
+
+You should give `.left-mountain` a `background` of `linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255))`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.getPropVal('background', true), 'linear-gradient(rgb(203,241,228),rgb(80,183,255))');
 ```
 
 # --seed--

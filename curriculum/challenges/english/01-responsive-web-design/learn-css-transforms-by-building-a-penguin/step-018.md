@@ -11,10 +11,22 @@ To give the effect of a mountain range, add another mountain, by creating a new 
 
 # --hints--
 
-Test 1
+You should add a new `div` within `body`.
 
 ```js
+assert.equal(document.querySelectorAll('body > div')?.length, 4);
+```
 
+You should give the `div` a `class` of `back-mountain`.
+
+```js
+assert.include(document.querySelector('div:not(.left-mountain, .ground, .penguin)')?.className, 'back-mountain');
+```
+
+You should place `.back-mountain` after `.left-mountain`.
+
+```js
+assert.strictEqual(document.querySelector('.left-mountain')?.nextElementSibling, document.querySelector('.back-mountain'));
 ```
 
 # --seed--

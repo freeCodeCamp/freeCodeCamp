@@ -11,10 +11,16 @@ Normalise your page's sizing, by removing the `body` element's `margin` and `pad
 
 # --hints--
 
-Test 1
+You should give `body` a `margin` of `0`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.margin, '0px');
+```
 
+You should give `body` a `padding` of `0`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.padding, '0px');
 ```
 
 # --seed--

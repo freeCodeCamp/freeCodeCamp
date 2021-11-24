@@ -22,32 +22,32 @@ assert(code.match(/<!DOCTYPE html>/i));
 Your code should have an `html` element.
 
 ```js
-assert(document.querySelectorAll('html')?.length === 1);
+assert.equal(document.querySelectorAll('html')?.length, 1);
 ```
 
 Your code should have a `head` element within the `html` element.
 
 ```js
-assert(document.querySelectorAll('head')?.length === 1);
+assert.equal(document.querySelectorAll('head')?.length, 1);
 ```
 
 Your code should have a `body` element within the `html` element.
 
 ```js
-assert(document.querySelectorAll('body')?.length === 1);
+assert.equal(document.querySelectorAll('body')?.length, 1);
 ```
 
 Your `head` element should come before your `body` element.
 
 ```js
-assert(document.querySelector('body')?.previousElementSibling?.tagName === 'HEAD');
+assert.equal(document.querySelector('body')?.previousElementSibling?.tagName, 'HEAD');
 ```
 
 You should have two `meta` elements.
 
 ```js
 const meta = document.querySelectorAll('meta');
-assert(meta?.length === 2);
+assert.equal(meta?.length, 2);
 ```
 
 One `meta` element should have a `name` set to `viewport`, and `content` set to `width=device-width, initial-scale=1.0`.
@@ -76,6 +76,7 @@ assert.exists(title);
 Your `title` should have some text.
 
 ```js
+const title = document.querySelector('title');
 assert.isAtLeast(title?.textContent?.length, 1);
 ```
 

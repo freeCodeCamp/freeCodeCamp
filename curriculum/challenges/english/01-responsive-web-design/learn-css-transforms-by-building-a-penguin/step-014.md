@@ -11,10 +11,10 @@ To prevent the mountain from pushing the `.ground` element, adjust its `position
 
 # --hints--
 
-Test 1
+You should give `.left-mountain` a `position` of `absolute`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.position, 'absolute');
 ```
 
 # --seed--

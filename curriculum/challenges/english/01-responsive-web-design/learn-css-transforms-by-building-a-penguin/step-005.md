@@ -11,10 +11,22 @@ Within the `body`, add a `div` with a `class` of `ground`.
 
 # --hints--
 
-Test 1
+You should add a new `div`.
 
 ```js
+assert.exists(document.querySelector('div'));
+```
 
+You should give the `div` a `class` of `ground`.
+
+```js
+assert.include(document.querySelector('div')?.className, 'ground');
+```
+
+You should place the `div` within the `body`.
+
+```js
+assert.exists(document.querySelector('body > div.ground'));
 ```
 
 # --seed--

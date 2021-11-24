@@ -11,10 +11,28 @@ Target the `.back-mountain` element, and set its `width` and `height` to `300px`
 
 # --hints--
 
-Test 1
+You should use the `.back-mountain` selector.
 
 ```js
+assert.match(code, /\.back-mountain\s*\{/);
+```
 
+You should give `.back-mountain` a `width` of `300px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.width, '300px');
+```
+
+You should give `.back-mountain` a `height` of `300px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.height, '300px');
+```
+
+You should give `.back-mountain` a `background` of `linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255))`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.getPropVal('background', true), 'linear-gradient(rgb(203,241,228),rgb(47,170,255))');
 ```
 
 # --seed--
