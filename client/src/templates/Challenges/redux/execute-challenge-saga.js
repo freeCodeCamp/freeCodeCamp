@@ -244,9 +244,7 @@ function* previewProjectSolutionSaga({ payload }) {
 
   try {
     if (canBuildChallenge(challengeData)) {
-      const buildData = yield buildChallengeData(challengeData, {
-        useDemoTemplate: true
-      });
+      const buildData = yield buildChallengeData(challengeData);
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
         yield call(updateProjectPreview, buildData, document);

@@ -27,16 +27,6 @@ const defaultTemplate = ({ source }) => {
   </body>`;
 };
 
-// for demo/preview modal of a finished project
-const demoTemplate = ({ source }) => {
-  return `
-  <body id='display-body'>
-    <!-- fcc-start-source -->
-      ${source}
-    <!-- fcc-end-source -->
-  </body>`;
-};
-
 const wrapInScript = partial(
   transformContents,
   content => `${htmlCatch}<script>${content}${jsCatch}</script>`
@@ -83,11 +73,9 @@ function wasHtmlFile(challengeFile) {
 export function concatHtml({
   required = [],
   template,
-  challengeFiles = [],
-  useDemoTemplate = false
+  challengeFiles = []
 } = {}) {
-  const templateToUse = useDemoTemplate ? demoTemplate : defaultTemplate;
-  const createBody = template ? _template(template) : templateToUse;
+  const createBody = template ? _template(template) : defaultTemplate;
   const head = required
     .map(({ link, src }) => {
       if (link && src) {

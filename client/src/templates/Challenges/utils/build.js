@@ -99,7 +99,6 @@ export async function buildChallenge(challengeData, options) {
   const { challengeType } = challengeData;
   let build = buildFunctions[challengeType];
   if (build) {
-    if (options?.useDemoTemplate) challengeData.useDemoTemplate = true;
     return build(challengeData, options);
   }
   throw new Error(`Cannot build challenge of type ${challengeType}`);
@@ -149,8 +148,7 @@ async function getDOMTestRunner(buildData, { proxyLogger }, document) {
 export function buildDOMChallenge({
   challengeFiles,
   required = [],
-  template = '',
-  useDemoTemplate = false
+  template = ''
 }) {
   const finalRequires = [...globalRequires, ...required, ...frameRunner];
   const loadEnzyme = challengeFiles.some(
@@ -163,12 +161,7 @@ export function buildDOMChallenge({
     .then(checkFilesErrors)
     .then(challengeFiles => ({
       challengeType: challengeTypes.html,
-      build: concatHtml({
-        required: finalRequires,
-        template,
-        challengeFiles,
-        useDemoTemplate
-      }),
+      build: concatHtml({ required: finalRequires, template, challengeFiles }),
       sources: buildSourceMap(challengeFiles),
       loadEnzyme
     }));
