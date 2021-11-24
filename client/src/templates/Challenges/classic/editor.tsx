@@ -226,9 +226,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    guides: {
-      indentation: false
-    },
+    renderIndentGuides: false,
     minimap: {
       enabled: false
     },
