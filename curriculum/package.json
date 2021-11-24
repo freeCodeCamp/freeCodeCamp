@@ -34,7 +34,7 @@
     "@babel/preset-env": "7.16.4",
     "@babel/preset-typescript": "7.16.0",
     "@babel/register": "7.16.0",
-    "acorn": "8.5.0",
+    "acorn": "8.6.0",
     "acorn-jsx": "5.3.2",
     "babel-plugin-dynamic-import-node": "2.3.3",
     "babel-plugin-lodash": "3.3.4",
