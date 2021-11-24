@@ -11,10 +11,28 @@ Target the `.penguin-head` element, and give it a `width` half of its parent's, 
 
 # --hints--
 
-Test 1
+You should use the `.penguin-head` selector.
 
 ```js
+assert.match(code, /\.penguin-head\s*\{/);
+```
 
+You should give `.penguin-head` a `width` of `50%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.width, '50%');
+```
+
+You should give `.penguin-head` a `height` of `45%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.height, '45%');
+```
+
+You should give `.penguin-head` a `background` of `linear-gradient(45deg, gray, rgb(239, 240, 228))`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.getPropVal('background', true), 'linear-gradient(45deg,gray,rgb(239,240,228))');
 ```
 
 # --seed--

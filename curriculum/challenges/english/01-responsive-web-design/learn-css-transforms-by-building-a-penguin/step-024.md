@@ -11,10 +11,28 @@ Give the `.sun` element a `width` and `height` of `200px`, and a `background-col
 
 # --hints--
 
-Test 1
+You should use the `.sun` selector.
 
 ```js
+assert.match(code, /\.sun\s*\{/);
+```
 
+You should give `.sun` a `width` of `200px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.width, '200px');
+```
+
+You should give `.sun` a `height` of `200px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.height, '200px');
+```
+
+You should give `.sun` a `background-color` of `yellow`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.backgroundColor, 'yellow');
 ```
 
 # --seed--

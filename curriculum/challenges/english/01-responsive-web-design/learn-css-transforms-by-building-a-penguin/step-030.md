@@ -9,14 +9,15 @@ dashedName: step-30
 
 _Most_ penguins do not have a square head.
 
-To give the penguin a slightly oval head, use the `border-radius` property with a value of `70% 70% 65% 65%`.
+Give the penguin a slightly oval head by setting the radius of the top corners to `70%` and the radius of the bottom corners to `65%`.
 
 # --hints--
 
-Test 1
+You should give `.penguin-head` a `border-radius` of `70% 70% 65% 65%`.
 
 ```js
-
+// Maybe check for individual border-radius properties?
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.borderRadius, '70% 70% 65% 65%');
 ```
 
 # --seed--

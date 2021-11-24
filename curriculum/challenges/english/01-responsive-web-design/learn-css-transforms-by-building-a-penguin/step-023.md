@@ -11,10 +11,22 @@ To finish the background, add a sun, by creating a new `div` element immediately
 
 # --hints--
 
-Test 1
+You should add a new `div` element to `body`.
 
 ```js
+assert.equal(document.querySelectorAll('body > div')?.length, 5);
+```
 
+You should give the new `div` element the class of `sun`.
+
+```js
+assert.include(document.querySelector('div:not(.back-mountain, .left-mountain, .penguin, .ground)')?.className, 'sun');
+```
+
+You should place the new `div` element immediately after the `.back-mountain` element.
+
+```js
+assert.strictEqual(document.querySelector('div.back-mountain')?.nextElementSibling, document.querySelector('div.sun'));
 ```
 
 # --seed--

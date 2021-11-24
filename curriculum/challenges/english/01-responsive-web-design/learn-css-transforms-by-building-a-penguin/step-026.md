@@ -11,10 +11,16 @@ Some might say it unrealistic the sun is in front of the mountains. Remedy this 
 
 # --hints--
 
-Test 1
+You should give `.sun` a `top` of `-75px`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.top, '-75px');
+```
 
+You should give `.sun` a `right` of `-75px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.right, '-75px');
 ```
 
 # --seed--

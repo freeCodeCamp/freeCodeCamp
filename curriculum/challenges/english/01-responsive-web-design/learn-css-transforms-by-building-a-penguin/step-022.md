@@ -11,10 +11,28 @@ Rotate the `.back-mountain` element by `45deg` clockwise. Then, give it a `left`
 
 # --hints--
 
-Test 1
+You should use the `transform` property to rotate the element.
 
 ```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.transform);
+```
 
+You should give `.back-mountain` a `position` of `rotate(45deg)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.transform, 'rotate(45deg)');
+```
+
+You should give `.back-mountain` a `left` property of `110px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.left, '110px');
+```
+
+You should give `.back-mountain` a `top` property of `225px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.top, '225px');
 ```
 
 # --seed--

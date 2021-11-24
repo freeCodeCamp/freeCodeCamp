@@ -14,19 +14,19 @@ Change the stack level of the `.back-mountain` element such that it appears behi
 You should use the `z-index` property to change the stack level.
 
 ```js
-
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.zIndex);
 ```
 
 You should set the `z-index` property to `1`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.zIndex, '1');
 ```
 
 You should not change the `z-index` of the `.left-mountain` element.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.zIndex, '2');
 ```
 
 # --seed--

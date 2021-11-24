@@ -14,13 +14,13 @@ Change the stack level of the `.penguin` element such that it appears in front o
 You should use the `z-index` property to change the stack level.
 
 ```js
-
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.penguin')?.zIndex);
 ```
 
 You should give the `.penguin` element a `z-index` of `4`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.zIndex, '4');
 ```
 
 # --seed--

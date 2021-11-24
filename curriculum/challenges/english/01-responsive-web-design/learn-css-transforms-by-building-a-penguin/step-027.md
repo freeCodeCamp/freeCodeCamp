@@ -13,10 +13,22 @@ Within `.penguin`, add two new `div` elements. The first with a `class` of `peng
 
 # --hints--
 
-Test 1
+You should add two new `div` elements to `.penguin`.
 
 ```js
+assert.equal(document.querySelectorAll('.penguin > div')?.length, 2);
+```
 
+You should give the first `div` a `class` of `penguin-head`.
+
+```js
+assert.include(document.querySelector('.penguin > div:nth-of-type(1)')?.className, 'penguin-head');
+```
+
+You should give the second `div` a `class` of `penguin-body`.
+
+```js
+assert.include(document.querySelector('.penguin > div:nth-of-type(2)')?.className, 'penguin-body');
 ```
 
 # --seed--
