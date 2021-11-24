@@ -856,7 +856,7 @@ nvm uninstall <version>
 >
 > If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
 
-Get the uninstall instructions/commands with `unstartup` command and use the output to remove the systemctl services
+Get the uninstall instructions/commands with the `unstartup` command and use the output to remove the systemctl services
 
 ```console
 pm2 unstartup
