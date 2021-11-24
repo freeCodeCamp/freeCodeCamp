@@ -116,14 +116,10 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         { title: 'Data Visualization' },
         { title: 'Back End Development and APIs' },
         { title: 'Legacy Information Security and Quality Assurance' }
-      ];
+      ] as const;
       return legacyCerts.map((cert, ind) => {
-        /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-        /* eslint-disable @typescript-eslint/no-unsafe-call */
-        /* eslint-disable @typescript-eslint/no-unsafe-return */
-        /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-        // @ts-expect-error Error expected until projectMap is typed
-        const mapToUse = projectMap[cert.title] || legacyProjectMap[cert.title];
+        const mapToUse = (projectMap[cert.title] ||
+          legacyProjectMap[cert.title]) as { certSlug: string }[];
         const { certSlug } = first(mapToUse) as { certSlug: string };
         const certLocation = `/certification/${username}/${certSlug}`;
         return (
@@ -141,17 +137,19 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       });
     }
     // @ts-expect-error Error expected until projectMap is typed
-    return (projectMap[certName] || legacyProjectMap[certName]).map(
-      // @ts-expect-error Error expected until projectMap is typed
-      ({ link, title, id }) => (
-        <li key={id}>
-          <Link className='project-link' to={link}>
-            {t(`certification.project.title.${title as string}`, title)}
-          </Link>
-          : {getProjectSolution(id, title)}
-        </li>
-      )
-    );
+    const project = (projectMap[certName] || legacyProjectMap[certName]) as {
+      link: string;
+      title: string;
+      id: string;
+    }[];
+    return project.map(({ link, title, id }) => (
+      <li key={id}>
+        <Link className='project-link' to={link}>
+          {t(`certification.project.title.${title}`, title)}
+        </Link>
+        : {getProjectSolution(id, title)}
+      </li>
+    ));
     /* eslint-enable @typescript-eslint/no-unsafe-assignment */
     /* eslint-enable @typescript-eslint/no-unsafe-call */
     /* eslint-enable @typescript-eslint/no-unsafe-return */

@@ -64,7 +64,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const getChallengeFile = () => {
     const { challengeFiles } = props;
-    return first(sortChallengeFiles(challengeFiles)) as ChallengeFile | null;
+    return first(sortChallengeFiles(challengeFiles) as ChallengeFile[]);
   };
 
   const {

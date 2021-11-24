@@ -101,7 +101,12 @@ function FormFields(props: FormFieldsProps): JSX.Element {
                       type={type}
                       value={value as string}
                     />
-                    {nullOrWarning(value, !pristine && error, isURL, name)}
+                    {nullOrWarning(
+                      value as string,
+                      !pristine && error,
+                      isURL,
+                      name
+                    )}
                   </FormGroup>
                 </Col>
               );
