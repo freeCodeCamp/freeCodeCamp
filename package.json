@@ -48,7 +48,7 @@
     "predevelop": "npm run ensure-env",
     "develop": "npm-run-all build:curriculum -p develop:*",
     "develop:client": "cd ./client && npm run develop",
-    "develop:server": "cd ./api-server && npm run develop",
+    "develop:server": "npm run predevelop && cd ./api-server && npm run develop",
     "docs:serve": "docsify serve ./docs -o --port 3200",
     "e2e": "npm run e2e:dev:run",
     "e2e:dev:run": "start-test develop ':3000/status/ping|8000' cypress:dev:run",
