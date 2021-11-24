@@ -1,6 +1,6 @@
 ---
 id: 5900f4db1000cf542c50ffee
-title: 'Problem 367: Bozo sort'
+title: 'Problema 367: Ordenação do Bozo'
 challengeType: 5
 forumTopicId: 302028
 dashedName: problem-367-bozo-sort
@@ -8,20 +8,32 @@ dashedName: problem-367-bozo-sort
 
 # --description--
 
-Bozo sort, not to be confused with the slightly less efficient bogo sort, consists out of checking if the input sequence is sorted and if not swapping randomly two elements. This is repeated until eventually the sequence is sorted.
+A ordenação do Bozo – não confunda com a ordenação Bogo, ligeiramente menos eficiente – consiste em verificar se a sequência de entrada está ordenada e, se não estiver, trocar aleatoriamente dois elementos. Isso é repetido até que a sequência esteja ordenada.
 
-If we consider all permutations of the first 4 natural numbers as input the expectation value of the number of swaps, averaged over all 4! input sequences is 24.75. The already sorted sequence takes 0 steps.
+Se considerarmos todas as permutações dos primeiros 4 números naturais como entrada, o valor da expectativa do número de trocas, na média sobre todas as sequências de entrada $4!$, é $24,75$.
 
-In this problem we consider the following variant on bozo sort. If the sequence is not in order we pick three elements at random and shuffle these three elements randomly. All 3!=6 permutations of those three elements are equally likely. The already sorted sequence will take 0 steps. If we consider all permutations of the first 4 natural numbers as input the expectation value of the number of shuffles, averaged over all 4! input sequences is 27.5. Consider as input sequences the permutations of the first 11 natural numbers. Averaged over all 11! input sequences, what is the expected number of shuffles this sorting algorithm will perform?
+A sequência já classificada leva 0 etapas.
 
-Give your answer rounded to the nearest integer.
+Neste problema, consideramos a seguinte variante na ordenação do Bozo.
+
+Se a sequência não estiver em ordem, selecionamos três elementos aleatoriamente e embaralhamos esses três elementos aleatoriamente.
+
+Todas as permutações $3! = 6$ desses três elementos são igualmente prováveis.
+
+A sequência já classificada levará 0 etapas.
+
+Se considerarmos todas as permutações dos primeiros 4 números naturais como entrada, o valor da expectativa do número de embaralhamentos, na média sobre todas as sequências de entrada $4!$, é $27,5$.
+
+Considere como sequências de entrada as permutações dos primeiros 11 números naturais.
+
+Com a média sobre todas as sequências de entrada $11!$, qual é o número esperado de embaralhamentos que este algoritmo de ordenação executará? Dê a sua resposta arredondada para o número inteiro mais próximo.
 
 # --hints--
 
-`euler367()` should return 48271207.
+`bozoSort()` deve retornar `48271207`.
 
 ```js
-assert.strictEqual(euler367(), 48271207);
+assert.strictEqual(bozoSort(), 48271207);
 ```
 
 # --seed--
@@ -29,12 +41,12 @@ assert.strictEqual(euler367(), 48271207);
 ## --seed-contents--
 
 ```js
-function euler367() {
+function bozoSort() {
 
   return true;
 }
 
-euler367();
+bozoSort();
 ```
 
 # --solutions--

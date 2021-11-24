@@ -36,7 +36,7 @@ O número de iterações necessárias ao usar este método é surpreendentemente
 
 Usando o procedimento descrito acima, qual é o número médio de iterações necessárias para encontrar a raiz quadrada arredondada de um número de 14 algarismos (${10}^{13} ≤ n &lt; {10}^{14}$)? Dê sua resposta arredondada para 10 casas decimais.
 
-**Observação:** os símbolos $⌊x⌋$ e $⌈x⌉$ representam a função floor (piso) e ceiling (teto), respectivamente.
+**Observação:** os símbolos $⌊x⌋$ e $⌈x⌉$ representam as funções piso e teto, respectivamente.
 
 # --hints--
 

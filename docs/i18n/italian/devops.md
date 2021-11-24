@@ -918,19 +918,19 @@ Usiamo uno [strumento CLI](https://github.com/freecodecamp/sendgrid-email-blast)
 
 7. Quando il email blast è completato, verifica che nessuna email abbia fallito prima di distruggere i droplet.
 
-# Manuale di Volo - Aggiunta di istanze della pubblicazione per nuove lingue
+# Flight Manual - Adding news instances for new languages
 
 ### Modifiche al tema
 
 Utilizziamo un [tema](https://github.com/freeCodeCamp/news-theme) personalizzato per la nostra pubblicazione. L'aggiunta delle seguenti modifiche al tema consente l'aggiunta di nuove lingue.
 
-1. Includere una espressione else if per il nuovo [codice ISO della lingua](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [setup-local.js](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
-2. Crea una cartella di configurazione iniziale duplicando la cartella [assets/config/en](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) e cambiando il suo nome con il codice della nuova lingua. (en—> es per spagnolo)
-3. Dentro la nuova cartella, cambia i nomi delle variabili in main.js e footer.js con il codice della nuova lingua (enMain —> esMain per spagnolo)
-4. Duplica [locals/en.json](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) e rinominalo con il codice della nuova lingua.
-5. In [partials/i18n.hbs](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), aggiungi gli script per i file config appena creati.
-6. Aggiungi lo script day.js della lingua da [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) a [freecodecamp cdn](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
+1. Include an `else if` statement for the new [ISO language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
+2. Create an initial config folder by duplicating the [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) folder and changing its name to the new language code. (`en` —> `es` for Spanish)
+3. Inside the new language folder, change the variable names in `main.js` and `footer.js` to the relevant language short code (`enMain` —> `esMain` for Spanish)
+4. Duplicate the [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) and rename it to the new language code.
+5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), add scripts for the newly created config files.
+6. Add the related language `day.js` script from [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) to the [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
 
 ### Modifiche alla dashboard di Ghost
 
-Cambia gli asset della pubblicazione andando alla dashboard di ghost > settings > general e caricando l'[icona](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), il [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png), e la [copertina](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png) della pubblicazione.
+Update the publication assets by going to the Ghost dashboard > settings > general and uploading the publications's [icon](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png), and [cover](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png).

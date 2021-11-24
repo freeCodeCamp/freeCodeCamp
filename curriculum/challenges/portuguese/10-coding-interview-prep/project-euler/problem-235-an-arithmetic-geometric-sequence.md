@@ -14,7 +14,7 @@ Considere $s(n) = \sum_{k=1 \ldots n} u(k)$.
 
 Encontre o valor de $r$ para o qual $s(5000) = -600.000.000.000$.
 
-Dê sua resposta arredondada para 12 casas antes da vírgula.
+Dê sua resposta arredondada para 12 casas depois da vírgula.
 
 # --hints--
 

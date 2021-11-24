@@ -14,7 +14,7 @@ Por exemplo, $a_2 = 3.86619826\ldots$
 
 Encontre os oito últimos algarismos de $\displaystyle\sum_{i = 1}^{30} \lfloor {a_i}^{987654321}\rfloor$.
 
-**Observação:** $\lfloor a\rfloor$ representa a função de base.
+**Observação:** $\lfloor a\rfloor$ representa a função piso.
 
 # --hints--
 
