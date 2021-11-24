@@ -851,8 +851,22 @@ nvm alias default 16
 nvm uninstall <version>
 ```
 
-> [!WARNING]
+> [!ATTENTION]
+> For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
+>
 > If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
+
+Get the uninstall instructions/commands with `unstartup` command and use the output to remove the systemctl services
+
+```console
+pm2 unstartup
+```
+
+Get the install instructions/commands with the `startup` command and use the output to add the systemctl services
+
+```console
+pm2 startup
+```
 
 Quick commands for PM2 to list, resurrect saved processes, etc.
 
@@ -871,9 +885,6 @@ pm2 save
 ```console
 pm2 logs
 ```
-
-> [!ATTENTION]
-> For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
 
 ## Installing and Updating Azure Pipeline Agents
 
