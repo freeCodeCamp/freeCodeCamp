@@ -22,6 +22,7 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "incremental": true
   }
 }
