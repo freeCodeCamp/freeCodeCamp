@@ -1,6 +1,6 @@
 ---
 id: 5900f4e11000cf542c50fff3
-title: 'Problem 372: Pencils of rays'
+title: 'Problema 372: Feixe de raios'
 challengeType: 5
 forumTopicId: 302034
 dashedName: problem-372-pencils-of-rays
@@ -8,16 +8,20 @@ dashedName: problem-372-pencils-of-rays
 
 # --description--
 
-Let R(M, N) be the number of lattice points (x, y) which satisfy M
+Considere $R(M, N)$ como o número de pontos da rede($x$, $y$) que satisfaz $M \lt x \le N$, $M \lt y \le N$ e que $\left\lfloor\frac{y^2}{x^2}\right\rfloor$ é ímpar.
 
-Note: represents the floor function.
+Podemos verificar que $R(0, 100) = 3.019$ e $R(100, 10.000) = 29.750.422$.
+
+Encontre $R(2 \times {10}^6, {10}^9)$.
+
+**Observação:** $\lfloor x\rfloor$ representa a função piso.
 
 # --hints--
 
-`euler372()` should return 301450082318807040.
+`pencilsOfRays()` deve retornar `301450082318807040`.
 
 ```js
-assert.strictEqual(euler372(), 301450082318807040);
+assert.strictEqual(pencilsOfRays(), 301450082318807040);
 ```
 
 # --seed--
@@ -25,12 +29,12 @@ assert.strictEqual(euler372(), 301450082318807040);
 ## --seed-contents--
 
 ```js
-function euler372() {
+function pencilsOfRays() {
 
   return true;
 }
 
-euler372();
+pencilsOfRays();
 ```
 
 # --solutions--

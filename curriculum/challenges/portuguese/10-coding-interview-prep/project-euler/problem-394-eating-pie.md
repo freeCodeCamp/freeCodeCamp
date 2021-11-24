@@ -1,6 +1,6 @@
 ---
 id: 5900f4f71000cf542c510009
-title: 'Problem 394: Eating pie'
+title: 'Problema 394: Comendo tortas'
 challengeType: 5
 forumTopicId: 302059
 dashedName: problem-394-eating-pie
@@ -8,28 +8,29 @@ dashedName: problem-394-eating-pie
 
 # --description--
 
-Jeff eats a pie in an unusual way.
+Jeff come uma torta de maneira incomum.
 
-The pie is circular. He starts with slicing an initial cut in the pie along a radius.
+A torta é circular. Ele começa cortando uma fatia inicial da torta ao longo de seu raio.
 
-While there is at least a given fraction F of pie left, he performs the following procedure:
+Enquanto houver ao menos uma fração $F$ determinada da torta restando, ele realiza o seguinte procedimento:
 
-\- He makes two slices from the pie centre to any point of what is remaining of the pie border, any point on the remaining pie border equally likely. This will divide the remaining pie into three pieces.
+- Ele faz duas fatias a partir do centro da torta até qualquer ponto do que resta da borda, qualquer ponto na borda restante da torta sendo igualmente provável. Isso dividirá o restante da torta em três pedaços.
+- Indo no sentido anti-horário a partir do corte inicial, ele pega os dois primeiros pedaços da torta e os come.
 
-\- Going counterclockwise from the initial cut, he takes the first two pie pieces and eats them.
+Quando menos que uma fração $F$ da torta restar, ele para de repetir esse procedimento. Em vez disso, ele come toda a torta que resta.
 
-When less than a fraction F of pie remains, he does not repeat this procedure. Instead, he eats all of the remaining pie.
+<img class="img-responsive center-block" alt="animação do procedimento do corte da torta em fatias" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
 
-For x ≥ 1, let E(x) be the expected number of times Jeff repeats the procedure above with F = 1/x. It can be verified that E(1) = 1, E(2) ≈ 1.2676536759, and E(7.5) ≈ 2.1215732071.
+Para $x ≥ 1$, considere $E(x)$ como o número esperado de vezes que Jeff repetirá o procedimento acima com $F = \frac{1}{x}$. Pode-se verificar que $E(1) = 1$, $E(2) ≈ 1,2676536759$, e $E(7,5) ≈ 2,1215732071$.
 
-Find E(40) rounded to 10 decimal places behind the decimal point.
+Encontre $E(40)$ arredondado para 10 casas decimais depois da vírgula.
 
 # --hints--
 
-`euler394()` should return 3.2370342194.
+`eatingPie()` deve retornar `3.2370342194`.
 
 ```js
-assert.strictEqual(euler394(), 3.2370342194);
+assert.strictEqual(eatingPie(), 3.2370342194);
 ```
 
 # --seed--
@@ -37,12 +38,12 @@ assert.strictEqual(euler394(), 3.2370342194);
 ## --seed-contents--
 
 ```js
-function euler394() {
+function eatingPie() {
 
   return true;
 }
 
-euler394();
+eatingPie();
 ```
 
 # --solutions--

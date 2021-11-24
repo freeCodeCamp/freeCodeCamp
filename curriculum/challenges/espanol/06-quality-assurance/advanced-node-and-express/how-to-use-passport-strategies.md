@@ -1,6 +1,6 @@
 ---
 id: 5895f70df9fc0f352b528e69
-title: How to Use Passport Strategies
+title: Cómo utilizar las estrategias de Passport
 challengeType: 2
 forumTopicId: 301555
 dashedName: how-to-use-passport-strategies
@@ -8,21 +8,21 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-In the `index.pug` file supplied, there is actually a login form. It has previously been hidden because of the inline JavaScript `if showLogin` with the form indented after it. Before `showLogin` as a variable was never defined, so it never rendered the code block containing the form. Go ahead and on the `res.render` for that page add a new variable to the object `showLogin: true`. When you refresh your page, you should then see the form! This form is set up to **POST** on `/login`, so this is where we should set up to accept the POST and authenticate the user.
+En el archivo `index.pug` proporcionado, hay realmente un formulario de inicio de sesión. Anteriormente ha estado oculto debido al JavaScript inline `if showLogin` con el formulario indentado después de él. Antes `showLogin` como variable nunca se definía, por lo que nunca renderizaba el bloque de código que contenía el formulario. Sigue adelante y en el `res.render` de esa página añade una nueva variable al objeto `showLogin: true`. Cuando actualices la página, ¡deberías ver el formulario! Este formulario está configurado para hacer una petición **POST** en `/login`, así que aquí es donde debemos configurar para aceptar el POST y autentificar al usuario.
 
-For this challenge you should add the route `/login` to accept a POST request. To authenticate on this route, you need to add a middleware to do so before then sending a response. This is done by just passing another argument with the middleware before your `function(req,res)` with your response! The middleware to use is `passport.authenticate('local')`.
+Para este desafío debes añadir la ruta `/login` para aceptar una petición POST. Para autentificarse en esta ruta, es necesario añadir un middleware para hacerlo antes de enviar una respuesta. ¡Esto se hace simplemente pasando otro argumento con el middleware antes de tu `function(req,res)` con tu respuesta! El middleware a usar es `passport.authenticate('local')`.
 
-`passport.authenticate` can also take some options as an argument such as: `{ failureRedirect: '/' }` which is incredibly useful, so be sure to add that in as well. The response after using the middleware (which will only be called if the authentication middleware passes) should be to redirect the user to `/profile` and that route should render the view `profile.pug`.
+`passport.authenticate` también puede tomar algunas opciones como un argumento como: `{ failureRedirect: '/' }` que es increíblemente útil, así que asegúrate de añadirlo también. La respuesta después de usar el middleware (que sólo se llamará si el middleware de autentificación pasa) debe ser redirigir al usuario a `/profile` y esa ruta debe renderizar el perfil `profile.pug`.
 
-If the authentication was successful, the user object will be saved in `req.user`.
+Si la autentificación fue exitosa, el user object se guardará en `req.user`.
 
-At this point, if you enter a username and password in the form, it should redirect to the home page `/`, and the console of your server should display `'User {USERNAME} attempted to log in.'`, since we currently cannot login a user who isn't registered.
+En este punto, si introduces un nombre de usuario y una contraseña en el formulario, debe redirigirse a la página de inicio `/`, y la consola de tu servidor debe mostrar `'User {USERNAME} attempted to log in.'`, ya que actualmente no podemos iniciar la sesión de un usuario que no está registrado.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9).
 
 # --hints--
 
-All steps should be correctly implemented in the server.js.
+Todos los pasos deben ser correctamente implementados en el server.js.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ All steps should be correctly implemented in the server.js.
   );
 ```
 
-A POST request to /login should correctly redirect to /.
+Una solicitud POST a /login debe redirigir correctamente a /.
 
 ```js
 (getUserInput) =>

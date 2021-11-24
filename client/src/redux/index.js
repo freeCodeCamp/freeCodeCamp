@@ -2,6 +2,7 @@ import { uniqBy } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 import store from 'store';
 
+import { SuperBlocks } from '../../../config/certification-settings';
 import { actionTypes as challengeTypes } from '../templates/Challenges/redux/action-types';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 import { createAcceptTermsSaga } from './accept-terms-saga';
@@ -200,6 +201,7 @@ export const stepsToClaimSelector = state => {
     isShowProfile: !user?.profileUI?.isLocked
   };
 };
+export const emailSelector = state => userSelector(state).email;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
@@ -292,27 +294,27 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
-        certSlug: 'responsive-web-design'
+        certSlug: SuperBlocks.RespWebDesign
       },
       {
         show: isJsAlgoDataStructCert,
         title: 'JavaScript Algorithms and Data Structures Certification',
-        certSlug: 'javascript-algorithms-and-data-structures'
+        certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         show: isFrontEndLibsCert,
         title: 'Front End Development Libraries Certification',
-        certSlug: 'front-end-development-libraries'
+        certSlug: SuperBlocks.FrontEndDevLibs
       },
       {
         show: is2018DataVisCert,
         title: 'Data Visualization Certification',
-        certSlug: 'data-visualization'
+        certSlug: SuperBlocks.DataVis
       },
       {
         show: isApisMicroservicesCert,
         title: 'Back End Development and APIs Certification',
-        certSlug: 'back-end-development-and-apis'
+        certSlug: SuperBlocks.BackEndDevApis
       },
       {
         show: isQaCertV7,

@@ -92,6 +92,11 @@ const donationUrls = {
 
 const patreonDefaultPledgeAmount = 500;
 
+const aBTestConfig = {
+  isTesting: true,
+  type: 'DistributionTest'
+};
+
 module.exports = {
   durationsConfig,
   amountsConfig,
@@ -105,5 +110,6 @@ module.exports = {
   paypalConfigTypes,
   paypalConfigurator,
   donationUrls,
-  patreonDefaultPledgeAmount
+  patreonDefaultPledgeAmount,
+  aBTestConfig
 };

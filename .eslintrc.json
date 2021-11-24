@@ -45,9 +45,9 @@
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "project": [
-          "./client/tsconfig.json",
-          "./tools/challenge-helper-scripts/tsconfig.json",
-          "./tools/ui-components/tsconfig.json"
+          "./tsconfig.json",
+          "./tools/ui-components/tsconfig.json",
+          "./tools/scripts/build/tsconfig.json"
         ]
       },
       "extends": [
@@ -91,6 +91,10 @@
           {
             "selector": "function",
             "format": ["camelCase", "PascalCase"]
+          },
+          {
+            "selector": "enumMember",
+            "format": ["PascalCase"]
           }
         ]
       }

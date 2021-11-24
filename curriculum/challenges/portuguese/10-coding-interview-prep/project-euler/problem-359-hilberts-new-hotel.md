@@ -1,6 +1,6 @@
 ---
 id: 5900f4d31000cf542c50ffe6
-title: 'Problem 359: Hilbert''s New Hotel'
+title: 'Problema 359: O novo hotel Hilbert'
 challengeType: 5
 forumTopicId: 302019
 dashedName: problem-359-hilberts-new-hotel
@@ -8,24 +8,35 @@ dashedName: problem-359-hilberts-new-hotel
 
 # --description--
 
-An infinite number of people (numbered 1, 2, 3, etc.) are lined up to get a room at Hilbert's newest infinite hotel. The hotel contains an infinite number of floors (numbered 1, 2, 3, etc.), and each floor contains an infinite number of rooms (numbered 1, 2, 3, etc.).
+Um número infinito de pessoas (numeradas 1, 2, 3, etc.) está alinhado para conseguir um quarto no novíssimo hotel infinito Hilbert. O hotel contém um número infinito de andares (numerados 1, 2, 3, etc.). Cada andar contém um número infinito de quartos (numerados 1, 2, 3, etc.).
 
-Initially the hotel is empty. Hilbert declares a rule on how the nth person is assigned a room: person n gets the first vacant room in the lowest numbered floor satisfying either of the following: the floor is empty the floor is not empty, and if the latest person taking a room in that floor is person m, then m + n is a perfect square
+Inicialmente, o hotel está vazio. Hilbert declara uma regra sobre como a $n^{\text{a}}$ pessoa é atribuída a um quarto: a pessoa $n$ obtém o primeiro quarto vago no andar de numeração mais baixa satisfazendo qualquer um dos seguintes:
 
-Person 1 gets room 1 in floor 1 since floor 1 is empty. Person 2 does not get room 2 in floor 1 since 1 + 2 = 3 is not a perfect square. Person 2 instead gets room 1 in floor 2 since floor 2 is empty. Person 3 gets room 2 in floor 1 since 1 + 3 = 4 is a perfect square.
+- o andar está vazio
+- o andar não está vazio, e se a última pessoa que está pegando um quarto nesse andar é a pessoa $m$, então $m + n$ é um quadrado perfeito
 
-Eventually, every person in the line gets a room in the hotel.
+A pessoa 1 pega o quarto 1 no andar 1, já que o andar 1 está vazio.
 
-Define P(f, r) to be n if person n occupies room r in floor f, and 0 if no person occupies the room. Here are a few examples: P(1, 1) = 1 P(1, 2) = 3 P(2, 1) = 2 P(10, 20) = 440 P(25, 75) = 4863 P(99, 100) = 19454
+A pessoa 2 não consegue o quarto 2 no andar 1, já que 1 + 2 = 3 não é um quadrado perfeito.
 
-Find the sum of all P(f, r) for all positive f and r such that f × r = 71328803586048 and give the last 8 digits as your answer.
+A pessoa 2, em vez disso, pega o quarto 1 no andar 2, já que o andar 2 está vazio.
+
+A pessoa 3 consegue o quarto 2 no andar 1, já que 1 + 3 = 4 é um quadrado perfeito.
+
+No fim, cada pessoa na fila pegará um quarto no hotel.
+
+Defina $P(f, r)$ como $n$ se a pessoa $n$ ocupar o quarto $r$ no andar $f$, e 0 se ninguém ocupar o quarto. Aqui estão alguns exemplos:
+
+$$\begin{align} & P(1, 1) = 1 \\\\ & P(1, 2) = 3 \\\\ & P(2, 1) = 2 \\\\ & P(10, 20) = 440 \\\\ & P(25, 75) = 4863 \\\\ & P(99, 100) = 19454 \end{align}$$
+
+Encontre a soma de todos os $P(f, r)$ para todos os números positivos $f$ e $r$, tal que $f × r = 71.328.803.586.048$ e dê os últimos 8 algarismos como resposta.
 
 # --hints--
 
-`euler359()` should return 40632119.
+`hilbertsNewHotel()` deve retornar `40632119`.
 
 ```js
-assert.strictEqual(euler359(), 40632119);
+assert.strictEqual(hilbertsNewHotel(), 40632119);
 ```
 
 # --seed--
@@ -33,12 +44,12 @@ assert.strictEqual(euler359(), 40632119);
 ## --seed-contents--
 
 ```js
-function euler359() {
+function hilbertsNewHotel() {
 
   return true;
 }
 
-euler359();
+hilbertsNewHotel();
 ```
 
 # --solutions--

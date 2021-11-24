@@ -1,6 +1,6 @@
 ---
 id: 5900f3fe1000cf542c50ff11
-title: 'Problem 146: Investigating a Prime Pattern'
+title: '問題 146：素數模式的研究'
 challengeType: 5
 forumTopicId: 301775
 dashedName: problem-146-investigating-a-prime-pattern
@@ -8,16 +8,16 @@ dashedName: problem-146-investigating-a-prime-pattern
 
 # --description--
 
-The smallest positive integer n for which the numbers n2+1, n2+3, n2+7, n2+9, n2+13, and n2+27 are consecutive primes is 10. The sum of all such integers n below one-million is 1242490.
+使得數字 $n^2 + 1$、$n^2 + 3$、$n^2 + 7$、$n^2 + 9$、$n^2 + 13$ 及 $n^2 + 27$ 爲連續素數的最小正整數 $n$ 是 10。 在小於一百萬的整數中，所有滿足該條件的整數 $n$ 之和爲 1242490。
 
-What is the sum of all such integers n below 150 million?
+請求出在小於一億五千萬的整數中，所有滿足該條件的整數 $n$ 之和是多少？
 
 # --hints--
 
-`euler146()` should return 676333270.
+`primePattern()` 應該返回 `676333270`。
 
 ```js
-assert.strictEqual(euler146(), 676333270);
+assert.strictEqual(primePattern(), 676333270);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler146(), 676333270);
 ## --seed-contents--
 
 ```js
-function euler146() {
+function primePattern() {
 
   return true;
 }
 
-euler146();
+primePattern();
 ```
 
 # --solutions--

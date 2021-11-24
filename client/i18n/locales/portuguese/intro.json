@@ -64,85 +64,85 @@
           "Conclua os cinco projetos de programação web abaixo para ganhar a sua Certificação de Design responsivo para a web."
         ]
       },
-      "basic-html-cat-photo-app": {
-        "title": "Aplicativo básico de fotos de gatos em HTML",
+      "learn-html-by-building-a-cat-photo-app": {
+        "title": "Aprenda HTML criando um aplicativo de fotos de gatos",
         "intro": [
           "",
           ""
         ]
       },
-      "basic-css-cafe-menu": {
-        "title": "Menu de uma cafeteria em CSS básico",
+      "learn-basic-css-by-building-a-cafe-menu": {
+        "title": "Aprenda CSS básico criando um menu de restaurante",
         "intro": [
           "",
           ""
         ]
       },
-      "css-box-model": {
-        "title": "Modelo da caixa do CSS",
+      "learn-the-css-box-model-by-building-a-rothko-painting": {
+        "title": "Aprenda o box model do CSS criando uma pintura de Rothko",
         "intro": [
-          "Mark Rothko era conhecido por seu estilo abstrato de pintura. As pinturas de Rothko comumente retratavam regiões retangulares coloridas em tamanhos variados.",
+          "Mark Rothko era conhecido por seu estilo abstrato de pintura. As pinturas de Rothko geralmente retratavam regiões retangulares coloridas em tamanhos variados.",
           "Nesta lição, você usará o CSS para criar sua própria pintura no estilo de Rothko. Você usará muitas das habilidades que você já está praticando, bem como novas ferramentas do CSS como o desfoque (blur) e a transformação (transform)."
         ]
       },
-      "css-variables-skyline": {
-        "title": "Horizonte com variáveis de CSS",
+      "learn-css-variables-by-building-a-city-skyline": {
+        "title": "Aprenda variáveis em CSS criando o horizonte em uma cidade",
         "intro": [
           "",
           ""
         ]
       },
-      "registration-form": {
-        "title": "Formulário de inscrição",
+      "learn-html-forms-by-building-a-registration-form": {
+        "title": "Aprenda formulários em HTML criando um formulário de registro",
         "intro": [
           "",
           ""
         ]
       },
-      "accessibility-quiz": {
-        "title": "Teste de acessibilidade",
+      "learn-accessibility-by-building-a-quiz": {
+        "title": "Aprenda acessibilidade criando um questionário",
         "intro": [
           "",
           ""
         ]
       },
-      "css-picasso-painting": {
-        "title": "Pintura de Picasso em CSS",
+      "learn-intermediate-css-by-building-a-picasso-painting": {
+        "title": "Aprenda CSS intermediário criando uma pintura de Picasso",
         "intro": [
-          "Pablo Picasso era conhecido pelo seu estilo de pintura, o Cubismo, um estilo reconhecido pelas representações de objetos quebrados e remontados a partir de múltiplas perspectivas. As pinturas de Picasso são muitas vezes muito abstratas e fazem pensar.",
-          "Neste curso, você usará o CSS para criar sua própria pintura ao estilo de Picasso. Você aprenderá sobre os ícones SVG FontAwesome, posicionamento em CSS e reforçará as habilidades que você já está aprendendo."
+          "Pablo Picasso era conhecido pelo seu estilo de pintura, o Cubismo, um estilo reconhecido por representações de objetos divididos e remontados a partir de múltiplas perspectivas. As pinturas de Picasso costumam ser altamente abstratas e instigantes.",
+          "Neste curso, você usará o CSS para criar sua própria pintura no estilo de Picasso. Você aprenderá sobre os ícones SVG do FontAwesome, posicionamento em CSS e reforçará as habilidades que você já aprendeu."
         ]
       },
-      "css-piano": {
-        "title": "Piano em CSS",
-        "intro": [
-          "",
-          ""
-        ]
-      },
-      "css-photo-gallery": {
-        "title": "Galeria de fotos em CSS",
+      "learn-responsive-web-design-by-building-a-piano": {
+        "title": "Aprenda design responsivo para a web criando um piano",
         "intro": [
           "",
           ""
         ]
       },
-      "css-grid-magazine": {
-        "title": "Revista em CSS Grid",
+      "learn-css-flexbox-by-building-a-photo-gallery": {
+        "title": "Aprenda CSS Flexbox criando uma galeria de fotos",
         "intro": [
           "",
           ""
         ]
       },
-      "css-nutrition-label": {
-        "title": "Rótulo nutricional em CSS",
+      "learn-css-grid-by-building-a-magazine": {
+        "title": "Aprenda sobre CSS Grid criando uma revista",
         "intro": [
           "",
           ""
         ]
       },
-      "css-ferris-wheel": {
-        "title": "Roda gigante em CSS",
+      "learn-typography-by-building-a-nutrition-label": {
+        "title": "Aprenda tipografia criando um rótulo nutricional",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-css-animation-by-building-a-ferris-wheel": {
+        "title": "Aprenda animação em CSS construindo uma roda gigante",
         "intro": [
           "",
           ""

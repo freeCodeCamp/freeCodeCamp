@@ -27,7 +27,7 @@ In a game with 100 players, what is the expected number of turns the game lasts?
 `theChase()` should return `3780.618622`.
 
 ```js
-assert.strictEqual(theChase(), 0.618622);
+assert.strictEqual(theChase(), 3780.618622);
 ```
 
 # --seed--
