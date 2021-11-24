@@ -653,7 +653,6 @@ body {
   transform: rotate(-80deg);
 }
 
---fcc-editable-region--
 .ground {
   width: 100vw;
   height: calc(100vh - 300px);
