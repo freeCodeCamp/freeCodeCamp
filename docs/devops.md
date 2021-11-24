@@ -455,7 +455,7 @@ Provisioning VMs with the Code
 2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
-   npm i -g npm@6
+   npm i -g npm@8
    npm i -g pm2
    pm2 install pm2-logrotate
    pm2 startup
@@ -830,7 +830,7 @@ nvm ls
 Install the latest Node.js LTS, and reinstall any global packages
 
 ```console
-nvm install 'lts/*' --reinstall-packages-from=default
+nvm install --lts --reinstall-packages-from=default
 ```
 
 Verify installed packages
@@ -839,10 +839,10 @@ Verify installed packages
 npm ls -g --depth=0
 ```
 
-Alias the `default` Node.js version to the current LTS
+Alias the `default` Node.js version to the current LTS (pinned to latest major version)
 
 ```console
-nvm alias default lts/*
+nvm alias default 16
 ```
 
 (Optional) Uninstall old versions
