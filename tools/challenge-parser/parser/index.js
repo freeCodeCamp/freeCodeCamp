@@ -1,7 +1,6 @@
 const addFrontmatter = require('./plugins/add-frontmatter');
 const addSeed = require('./plugins/add-seed');
 const addSolution = require('./plugins/add-solution');
-const addSolutionNote = require('./plugins/add-solution-note');
 const addTests = require('./plugins/add-tests');
 const addText = require('./plugins/add-text');
 const addVideoQuestion = require('./plugins/add-video-question');
@@ -46,8 +45,7 @@ const processor = unified()
   .use(restoreDirectives)
   .use(addVideoQuestion)
   .use(addTests)
-  .use(addText, ['description', 'instructions', 'notes'])
-  .use(addSolutionNote);
+  .use(addText, ['description', 'instructions', 'notes']);
 
 exports.parseMD = function parseMD(filename) {
   return new Promise((resolve, reject) => {

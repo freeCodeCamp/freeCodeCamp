@@ -75,7 +75,3 @@ assert(new __helpers.CSSHelp(document).getStyle('html')?.boxSizing === 'border-b
 
 --fcc-editable-region--
 ```
-
-# --notes--
-
-The `HTML` element is great!
