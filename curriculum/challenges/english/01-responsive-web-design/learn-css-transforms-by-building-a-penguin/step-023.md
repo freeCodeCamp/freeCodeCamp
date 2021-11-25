@@ -11,13 +11,13 @@ To finish the background, add a sun, by creating a new `div` element immediately
 
 # --hints--
 
-You should add a new `div` element to `body`.
+You should add a new `div` element to `body`. Expected `--fcc-expected--` `div` elements, but found `--fcc-actual--`.
 
 ```js
 assert.equal(document.querySelectorAll('body > div')?.length, 5);
 ```
 
-You should give the new `div` element the class of `sun`.
+You should give the new `div` element a `class` of `sun`.
 
 ```js
 assert.include(document.querySelector('div:not(.back-mountain, .left-mountain, .penguin, .ground)')?.className, 'sun');

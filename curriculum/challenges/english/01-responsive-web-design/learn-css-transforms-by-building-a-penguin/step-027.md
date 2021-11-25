@@ -13,7 +13,7 @@ Within `.penguin`, add two new `div` elements. The first with a `class` of `peng
 
 # --hints--
 
-You should add two new `div` elements to `.penguin`.
+You should add two new `div` elements to `.penguin`. Expected `--fcc-expected--` `.penguin > div` elements, but found `--fcc-actual--`.
 
 ```js
 assert.equal(document.querySelectorAll('.penguin > div')?.length, 2);

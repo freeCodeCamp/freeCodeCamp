@@ -7,17 +7,17 @@ dashedName: step-26
 
 # --description--
 
-Some might say it unrealistic the sun is in front of the mountains. Remedy this by positioning it in the top right corner of the screen such that `75px` of its top and right edges are off screen.
+Position the sun in the top right corner of the screen such that `75px` of its top and right edges are off screen.
 
 # --hints--
 
-You should give `.sun` a `top` of `-75px`.
+You should give `.sun` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.top, '-75px');
 ```
 
-You should give `.sun` a `right` of `-75px`.
+You should give `.sun` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.right, '-75px');

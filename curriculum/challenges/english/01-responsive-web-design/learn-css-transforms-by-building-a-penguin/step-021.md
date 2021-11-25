@@ -7,7 +7,7 @@ dashedName: step-21
 
 # --description--
 
-Change the stack level of the `.back-mountain` element such that it appears behind the `.left-mountain` element.
+Change the stack level of the `.back-mountain` element such that it is directly behind the `.left-mountain` element.
 
 # --hints--
 

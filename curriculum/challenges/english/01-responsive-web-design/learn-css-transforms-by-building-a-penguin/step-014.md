@@ -11,7 +11,7 @@ To prevent the mountain from pushing the `.ground` element, adjust its `position
 
 # --hints--
 
-You should give `.left-mountain` a `position` of `absolute`.
+You should give `.left-mountain` a `position` of `absolute`. Found `--fcc-actual--` instead of `--fcc-expected--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.position, 'absolute');

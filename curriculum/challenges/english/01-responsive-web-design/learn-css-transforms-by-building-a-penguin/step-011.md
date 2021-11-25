@@ -11,7 +11,7 @@ Use the `margin` property to horizontally center the `.penguin` element, and set
 
 # --hints--
 
-You should give `.penguin` a `margin` of `auto`.
+You should give `.penguin` a `margin` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginRight, 'auto');
@@ -19,7 +19,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginLeft, '
 assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginBottom, 'auto');
 ```
 
-You should give `.penguin` a `margin-top` of `75px`.
+You should give `.penguin` a `margin-top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginTop, '75px');

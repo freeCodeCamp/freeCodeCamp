@@ -7,7 +7,7 @@ dashedName: step-28
 
 # --description--
 
-Change the stack level of the `.penguin` element such that it appears in front of the `.ground` element.
+Change the stack level of the `.penguin` element such that it appears in front of the `.ground` element, and give it a `position` of `relative`.
 
 # --hints--
 
@@ -21,6 +21,18 @@ You should give the `.penguin` element a `z-index` of `4`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.zIndex, '4');
+```
+
+You should give `.penguin` a `position` property.
+
+```js
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin')?.position);
+```
+
+You should give `.penguin` a `position` of `relative`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.position, 'relative');
 ```
 
 # --seed--

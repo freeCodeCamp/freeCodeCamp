@@ -17,19 +17,31 @@ You should use the `transform` property to rotate the element.
 assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.transform);
 ```
 
-You should give `.back-mountain` a `position` of `rotate(45deg)`.
+You should give `.back-mountain` a `transform` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.transform, 'rotate(45deg)');
 ```
 
-You should give `.back-mountain` a `left` property of `110px`.
+You should give `.back-mountain` a `left` property.
+
+```js
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.left);
+```
+
+You should give `.back-mountain` a `left` property of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.left, '110px');
 ```
 
-You should give `.back-mountain` a `top` property of `225px`.
+You should give `.back-mountain` a `top` property.
+
+```js
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.top);
+```
+
+You should give `.back-mountain` a `top` property of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.top, '225px');

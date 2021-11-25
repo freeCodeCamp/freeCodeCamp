@@ -17,13 +17,13 @@ You should use the `.left-mountain` selector.
 assert.match(code, /\.left-mountain\s*\{/);
 ```
 
-You should give `.left-mountain` a `width` of `300px`.
+You should give `.left-mountain` a `width` of `300px`. Expected `--fcc-actual--` to be `--fcc-expected--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.width, '300px');
 ```
 
-You should give `.left-mountain` a `height` of `300px`.
+You should give `.left-mountain` a `height` of `300px`. Expected `--fcc-actual--` to be `--fcc-expected--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.height, '300px');
