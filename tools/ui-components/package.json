@@ -21,7 +21,7 @@
   "dependencies": {
     "@babel/preset-typescript": "7.16.0",
     "@types/node": "16.11.10",
-    "@types/react": "17.0.36",
+    "@types/react": "17.0.37",
     "@types/react-dom": "17.0.11",
     "react": "16.14.0",
     "react-dom": "16.14.0",
@@ -45,7 +45,7 @@
     "babel-loader": "8.2.3",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
-    "postcss": "8.3.11",
+    "postcss": "8.4.1",
     "postcss-import": "14.0.2",
     "rimraf": "3.0.2",
     "rollup": "2.60.1",
