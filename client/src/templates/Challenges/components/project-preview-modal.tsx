@@ -23,7 +23,7 @@ export interface PreviewConfig {
 }
 
 interface Props {
-  closeModal: () => void;
+  closeModal: (arg: string) => void;
   isOpen: boolean;
   projectPreviewMounted: (previewConfig: PreviewConfig) => void;
   previewConfig: PreviewConfig;
