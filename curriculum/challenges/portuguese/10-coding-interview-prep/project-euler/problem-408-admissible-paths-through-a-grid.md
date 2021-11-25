@@ -1,6 +1,6 @@
 ---
 id: 5900f5091000cf542c51001b
-title: 'Problem 408: Admissible paths through a grid'
+title: 'Problema 408: Caminhos admissíveis através de uma grade'
 challengeType: 5
 forumTopicId: 302076
 dashedName: problem-408-admissible-paths-through-a-grid
@@ -8,22 +8,22 @@ dashedName: problem-408-admissible-paths-through-a-grid
 
 # --description--
 
-Let's call a lattice point (x, y) inadmissible if x, y and x + y are all positive perfect squares.
+Vamos chamar um ponto da rede ($x$, $y$) de inadmissível se $x$, $y$ e $x + y$ forem todos quadrados positivos perfeitos.
 
-For example, (9, 16) is inadmissible, while (0, 4), (3, 1) and (9, 4) are not.
+Por exemplo, (9, 16) é inadmissível, mas (0, 4), (3, 1) e (9, 4) não são.
 
-Consider a path from point (x1, y1) to point (x2, y2) using only unit steps north or east. Let's call such a path admissible if none of its intermediate points are inadmissible.
+Considere um caminho do ponto ($x_1$, $y_1$) ao ponto ($x_2$, $y_2$) usando apenas movimentos unitários para o norte e para o leste. Chamaremos esse caminho de admissível se nenhum de seus pontos intermediários for inadmissível.
 
-Let P(n) be the number of admissible paths from (0, 0) to (n, n). It can be verified that P(5) = 252, P(16) = 596994440 and P(1000) mod 1 000 000 007 = 341920854.
+Considere $P(n)$ como o número de caminhos admissíveis de (0, 0) a ($n$, $n$). Pode-se verificar que $P(5) = 252$, $P(16) = 596.994.440$ e $P(1.000)\bmod 1.000.000.007 = 341.920.854$.
 
-Find P(10 000 000) mod 1 000 000 007.
+Encontre $P(10.000.000)\bmod 1.000.000.007$.
 
 # --hints--
 
-`euler408()` should return 299742733.
+`admissiblePaths()` deve retornar `299742733`.
 
 ```js
-assert.strictEqual(euler408(), 299742733);
+assert.strictEqual(admissiblePaths(), 299742733);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler408(), 299742733);
 ## --seed-contents--
 
 ```js
-function euler408() {
+function admissiblePaths() {
 
   return true;
 }
 
-euler408();
+admissiblePaths();
 ```
 
 # --solutions--

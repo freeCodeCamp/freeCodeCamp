@@ -1,6 +1,6 @@
 ---
 id: 5900f4fd1000cf542c51000f
-title: 'Problem 401: Sum of squares of divisors'
+title: 'Problema 401: Soma dos quadrados dos divisores'
 challengeType: 5
 forumTopicId: 302069
 dashedName: problem-401-sum-of-squares-of-divisors
@@ -8,22 +8,22 @@ dashedName: problem-401-sum-of-squares-of-divisors
 
 # --description--
 
-The divisors of 6 are 1,2,3 and 6.
+Os divisores de 6 são: 1, 2, 3 e 6.
 
-The sum of the squares of these numbers is 1+4+9+36=50.
+A soma dos quadrados desses números é $1 + 4 + 9 + 36 = 50$.
 
-Let sigma2(n) represent the sum of the squares of the divisors of n. Thus sigma2(6)=50.
+Considere $\sigma_2(n)$ como representante da soma dos quadrados dos divisores de $n$. Assim, $\sigma_2(6) = 50$.
 
-Let SIGMA2 represent the summatory function of sigma2, that is SIGMA2(n)=∑sigma2(i) for i=1 to n. The first 6 values of SIGMA2 are: 1,6,16,37,63 and 113.
+Considere $\Sigma_2$ como representando a função somatória de $\sigma_2$, ou seja, $\Sigma_2(n) = \sum \sigma_2(i)$ para $i=1$ a $n$. Os primeiros 6 valores de $\Sigma_2$ são: 1, 6, 16, 37, 63 e 113.
 
-Find SIGMA2(1015) modulo 109.
+Encontre $\Sigma_2({10}^{15})$ modulo ${10}^9$.
 
 # --hints--
 
-`euler401()` should return 281632621.
+`sumOfSquaresDivisors()` deve retornar `281632621`.
 
 ```js
-assert.strictEqual(euler401(), 281632621);
+assert.strictEqual(sumOfSquaresDivisors(), 281632621);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler401(), 281632621);
 ## --seed-contents--
 
 ```js
-function euler401() {
+function sumOfSquaresDivisors() {
 
   return true;
 }
 
-euler401();
+sumOfSquaresDivisors();
 ```
 
 # --solutions--

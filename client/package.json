@@ -86,7 +86,7 @@
     "nanoid": "3.1.30",
     "normalize-url": "4.5.1",
     "path-browserify": "1.0.1",
-    "postcss": "8.3.11",
+    "postcss": "8.4.1",
     "prismjs": "1.25.0",
     "process": "0.11.10",
     "prop-types": "15.7.2",
@@ -129,8 +129,8 @@
   },
   "devDependencies": {
     "@babel/types": "7.16.0",
-    "@codesee/babel-plugin-instrument": "0.144.0",
-    "@codesee/tracker": "0.144.0",
+    "@codesee/babel-plugin-instrument": "0.145.0",
+    "@codesee/tracker": "0.145.0",
     "@testing-library/jest-dom": "5.15.1",
     "@testing-library/react": "12.1.2",
     "autoprefixer": "10.4.0",
@@ -144,7 +144,7 @@
     "redux-mock-store": "1.5.4",
     "redux-saga-test-plan": "4.0.4",
     "serve": "13.0.2",
-    "webpack": "5.64.2",
+    "webpack": "5.64.3",
     "webpack-cli": "4.9.1"
   }
 }
