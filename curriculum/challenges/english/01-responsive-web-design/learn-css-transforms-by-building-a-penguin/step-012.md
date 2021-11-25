@@ -13,7 +13,7 @@ Above the `.penguin` element, add a `div` with a `class` of `left-mountain`.
 
 # --hints--
 
-You should add a new `div` within `body`.
+You should add a new `div` within `body`. Expected to see `--fcc-expected--` `div` elements, but found `--fcc-actual--`.
 
 ```js
 assert.equal(document.querySelectorAll('body > div')?.length, 3);
