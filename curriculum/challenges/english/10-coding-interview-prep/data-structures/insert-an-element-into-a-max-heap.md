@@ -110,8 +110,9 @@ assert(
     test.insert(700);
     test.insert(32);
     test.insert(51);
+    test.insert(800);
     let result = test.print();
-    return result.length == 5 ? result[0] == 700 : result[1] == 700;
+    return result.length == 6 ? result[0] == 800 : result[1] == 800;
   })()
 );
 ```
