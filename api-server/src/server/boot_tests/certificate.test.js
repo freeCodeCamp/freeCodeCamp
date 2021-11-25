@@ -1,10 +1,10 @@
-import { getFallbackFrontEndDate } from '../boot/certificate';
+import { getFallbackFullStackDate } from '../boot/certificate';
 import { fullStackChallenges } from './fixtures';
 
 describe('boot/certificate', () => {
-  describe('getFallbackFrontEndDate', () => {
+  describe('getFallbackFullStackDate', () => {
     it('should return the date of the latest completed challenge', () => {
-      expect(getFallbackFrontEndDate(fullStackChallenges)).toBe(1685210952511);
+      expect(getFallbackFullStackDate(fullStackChallenges)).toBe(1685210952511);
     });
   });
 });

@@ -58,8 +58,15 @@ export default function bootCertificate(app) {
   app.use(api);
 }
 
-export function getFallbackFrontEndDate(completedChallenges, completedDate) {
-  var chalIds = [...Object.values(certTypeIdMap), oldDataVizId];
+export function getFallbackFullStackDate(completedChallenges, completedDate) {
+  var chalIds = [
+    certTypeIdMap[certTypes.respWebDesign],
+    certTypeIdMap[certTypes.jsAlgoDataStruct],
+    certTypeIdMap[certTypes.frontEndDevLibsId],
+    certTypeIdMap[certTypes.dataVis2018],
+    certTypeIdMap[certTypes.apisMicroservicesId],
+    certTypeIdMap[certTypes.legacyInfosecQaId]
+  ];
 
   const latestCertDate = completedChallenges
     .filter(chal => chalIds.includes(chal.id))
@@ -463,7 +470,7 @@ function createShowCert(app) {
 
         // if fullcert is not found, return the latest completedDate
         if (certType === 'isFullStackCert' && !certChallenge) {
-          completedDate = getFallbackFrontEndDate(
+          completedDate = getFallbackFullStackDate(
             completedChallenges,
             completedDate
           );
