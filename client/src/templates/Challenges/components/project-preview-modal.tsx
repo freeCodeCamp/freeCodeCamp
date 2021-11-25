@@ -89,7 +89,7 @@ export function ProjectPreviewModal({
             setEditorFocusability(true);
           }}
         >
-          {t('buttons.hide-project-preview')}
+          {t('buttons.start-coding')}
         </Button>
       </Modal.Footer>
     </Modal>
