@@ -114,6 +114,7 @@ body {
   margin: auto;
   margin-top: 75px;
   z-index: 4;
+  position: relative;
 }
 
 .penguin * {

@@ -11,10 +11,28 @@ Target the `.penguin-body` element, and give it a `width` of `53%`, and a `heigh
 
 # --hints--
 
-Test 1
+You should use the `.penguin-body` selector.
 
 ```js
+assert.match(code, /\.penguin-body\s*\{/);
+```
 
+You should give `.penguin-body` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.width, '53%');
+```
+
+You should give `.penguin-body` a `height` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.height, '45%');
+```
+
+You should give `.penguin-body` a `background` of `linear-gradient(45deg, rgb(134, 133, 133) 0%, rgb(234, 231, 231) 25%, white 67%)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.getPropVal('background', true), 'linear-gradient(45deg,rgb(134,133,133)0%,rgb(234,231,231)25%,white67%)');
 ```
 
 # --seed--
@@ -90,6 +108,7 @@ body {
   margin: auto;
   margin-top: 75px;
   z-index: 4;
+  position: relative;
 }
 
 .penguin-head {

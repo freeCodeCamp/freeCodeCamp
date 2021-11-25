@@ -13,7 +13,7 @@ Use the `border-radius` property with a value of `80% 80% 100% 100%`, to give th
 
 # --hints--
 
-Test 1
+
 
 ```js
 
@@ -92,6 +92,7 @@ body {
   margin: auto;
   margin-top: 75px;
   z-index: 4;
+  position: relative;
 }
 
 .penguin-head {
