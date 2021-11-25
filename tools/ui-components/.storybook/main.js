@@ -3,7 +3,14 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-postcss'
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss')
+        }
+      }
+    }
   ],
   typescript: {
     check: false,
@@ -14,5 +21,8 @@ module.exports = {
       propFilter: prop =>
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
     }
+  },
+  core: {
+    builder: 'webpack5'
   }
 };
