@@ -52,11 +52,6 @@ exports.parseMD = function parseMD(filename) {
     const file = readSync(filename);
     const tree = processor.parse(file);
 
-    /* console.log('[][][][][][][]file')
-    console.log(file);
-    console.log('$$$$$$$$$$$$$$$');
-    console.log(tree);*/
-
     processor.run(tree, file, function (err, node, file) {
       if (!err) {
         resolve(file.data);
