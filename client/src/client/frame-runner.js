@@ -98,9 +98,15 @@ async function initTestFrame(e = { code: {} }) {
         console.error(err);
       }
       // to provide useful debugging information when debugging the tests, we
-      // have to extract the message and stack before returning
+      // have to extract the message, stack and, if they exist, expected and
+      // actual before returning
       return {
-        err: { message: err.message, stack: err.stack }
+        err: {
+          message: err.message,
+          stack: err.stack,
+          expected: err.expected,
+          actual: err.actual
+        }
       };
     }
   };
