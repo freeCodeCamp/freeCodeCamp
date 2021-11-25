@@ -16,7 +16,7 @@ function checkClientLocale() {
     /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
-      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in config/i18n/all-langs.js
+      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in config/i18n/all-langs.ts
 
       `);
     /* eslint-enable @typescript-eslint/restrict-template-expressions */
@@ -28,7 +28,7 @@ function checkCurriculumLocale() {
     /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
-      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in config/i18n/all-langs.js
+      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in config/i18n/all-langs.ts
 
       `);
     /* eslint-enable @typescript-eslint/restrict-template-expressions */
