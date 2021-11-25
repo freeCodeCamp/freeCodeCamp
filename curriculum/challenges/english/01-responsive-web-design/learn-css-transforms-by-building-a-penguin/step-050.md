@@ -11,10 +11,22 @@ Below the `.face.right` element, add a `div` element with a `class` of `chin`.
 
 # --hints--
 
-Test 1
+You should add one `div` element within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 3);
+```
 
+You should give the `div` a `class` of `chin`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.chin'));
+```
+
+You should place the `div` element below the `.face.right` element.
+
+```js
+assert.exists(document.querySelector('.face.right + .chin'));
 ```
 
 # --seed--

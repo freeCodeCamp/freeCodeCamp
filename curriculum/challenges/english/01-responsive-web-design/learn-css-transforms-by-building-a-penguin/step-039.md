@@ -11,10 +11,22 @@ Give the pseudo-element a `width` half that of its parent, a `height` of `40%`, 
 
 # --hints--
 
-Test 1
+You should give `.penguin-body::before` a `width` of `50%`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.width, '50%');
+```
 
+You should give `.penguin-body::before` a `height` of `40%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.height, '40%');
+```
+
+You should give `.penguin-body::before` a `background-color` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.backgroundColor, 'gray');
 ```
 
 # --seed--

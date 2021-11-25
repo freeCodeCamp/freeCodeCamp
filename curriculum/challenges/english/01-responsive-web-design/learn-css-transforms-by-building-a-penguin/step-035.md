@@ -11,10 +11,28 @@ Position the `.penguin-body` element `40%` from the top, and `23.5%` from the le
 
 # --hints--
 
-Test 1
+You should give `.penguin-body` a `top` property.
 
 ```js
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.top);
+```
 
+You should give `.penguin-body` a `top` property of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.top, '40%');
+```
+
+You should give `.penguin-body` a `left` property.
+
+```js
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.left);
+```
+
+You should give `.penguin-body` a `left` property of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.left, '23.5%');
 ```
 
 # --seed--

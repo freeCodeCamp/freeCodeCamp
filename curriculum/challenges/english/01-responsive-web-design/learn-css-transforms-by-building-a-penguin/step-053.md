@@ -13,10 +13,22 @@ Create a custom CSS property called `--penguin-face`, and set it to `white`.
 
 # --hints--
 
-Test 1
+You should use the `:root` selector.
 
 ```js
+assert.match(code, /:root\s*\{/);
+```
 
+You should give `:root` a `--penguin-face` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--penguin-face'));
+```
+
+You should give `:root` a `--penguin-face` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropVal('--penguin-face', true), 'white');
 ```
 
 # --seed--

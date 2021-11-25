@@ -11,10 +11,46 @@ Below the `.chin` element, add two `div` elements each with a `class` of `eye`. 
 
 # --hints--
 
-Test 1
+You should add two `div` elements within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 5);
+```
 
+You should give the first new `div` a `class` of `eye`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.eye'));
+```
+
+You should give the second new `div` a `class` of `eye`.
+
+```js
+assert.equal(document.querySelectorAll('.penguin-head > div.eye')?.length, 2);
+```
+
+You should give the first new `div` a `class` of `left`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.eye.left'));
+```
+
+You should give the second new `div` a `class` of `right`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.eye.right'));
+```
+
+You should place `div.eye.left` after `div.chin`.
+
+```js
+assert.exists(document.querySelector('.chin + .eye.left'));
+```
+
+You should place `div.eye.right` after `div.eye.left`.
+
+```js
+assert.exists(document.querySelector('.eye.left + .eye.right'));
 ```
 
 # --seed--

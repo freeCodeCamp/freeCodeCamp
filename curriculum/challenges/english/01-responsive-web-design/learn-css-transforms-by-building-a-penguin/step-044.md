@@ -11,10 +11,46 @@ Give the `.face` elements a `width` of `60%`, a `height` of `70%`, and a `backgr
 
 # --hints--
 
-Test 1
+You should use the `.face` selector.
 
 ```js
+assert.match(code, /\.face\s*\{/);
+```
 
+You should give `.face` a `width` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.width);
+```
+
+You should give `.face` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.width, '60%');
+```
+
+You should give `.face` a `height` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.height);
+```
+
+You should give `.face` a `height` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.height, '70%');
+```
+
+You should give `.face` a `background-color` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.backgroundColor);
+```
+
+You should give `.face` a `background-color` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.backgroundColor, 'white');
 ```
 
 # --seed--

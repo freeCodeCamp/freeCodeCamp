@@ -14,7 +14,7 @@ Increase the psuedo-element's transparency by `30%`.
 You should give `.penguin-body::before` an `opacity` of `70%`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.opacity, '0.7');
 ```
 
 # --seed--

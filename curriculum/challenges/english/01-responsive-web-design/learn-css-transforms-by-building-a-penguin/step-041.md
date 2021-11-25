@@ -7,14 +7,23 @@ dashedName: step-41
 
 # --description--
 
-Round off the crest, by giving the pseudo-element bottom -left and -right corners a radius of `100%`, leaving the top corners at `0%`.
+Round off the crest, by giving the pseudo-element bottom corners a radius of `100%`, leaving the top corners at `0%`.
 
 # --hints--
 
-Test 1
+You should use the `border-radius` property to round off the crest.
 
 ```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderRadius);
+```
 
+You should give `.penguin-body::before` a `border-radius` of `0% 0% 100% 100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderBottomLeftRadius, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderBottomRightRadius, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderTopLeftRadius, '0%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderTopRightRadius, '0%');
 ```
 
 # --seed--

@@ -14,13 +14,13 @@ Change the stack level of the `.penguin-head` element such that it appears in fr
 You should use the `z-index` property to change the stack level.
 
 ```js
-
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.zIndex);
 ```
 
 You should give the `.penguin-head` element a `z-index` of `1`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.zIndex, '1');
 ```
 
 # --seed--

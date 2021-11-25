@@ -11,10 +11,13 @@ Make the top corners of the `.face` elements have a radius of `70%`, and the bot
 
 # --hints--
 
-Test 1
+You should give `.face` a `border-radius` of `70% 70% 60% 60%`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderTopLeftRadius, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderTopRightRadius, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderBottomLeftRadius, '60%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderBottomRightRadius, '60%');
 ```
 
 # --seed--

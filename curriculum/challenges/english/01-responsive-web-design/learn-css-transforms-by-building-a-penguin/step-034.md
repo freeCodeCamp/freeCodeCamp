@@ -11,10 +11,28 @@ Position the `.penguin-head` element `10%` from the top, and `25%` from the left
 
 # --hints--
 
-Test 1
+You should give `.penguin-head` a `top` property.
 
 ```js
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.top);
+```
 
+You should give `.penguin-head` a `top` property of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.top, '10%');
+```
+
+You should give `.penguin-head` a `left` property.
+
+```js
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.left);
+```
+
+You should give `.penguin-head` a `left` property of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.left, '25%');
 ```
 
 # --seed--

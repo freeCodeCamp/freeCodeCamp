@@ -11,10 +11,22 @@ Start the penguin's face, by adding two `div` elements within `.penguin-head`, a
 
 # --hints--
 
-Test 1
+You should add `--fcc-expected--` `div` elements to `.penguin-head`, but found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 2);
+```
 
+You should give the first `div` a `class` of `face`, but found `--fcc-actual--`.
+
+```js
+assert.include(document.querySelector('.penguin-head > div:nth-of-type(1)')?.className, 'face');
+```
+
+You should give the second `div` a `class` of `face`, but found `--fcc-actual--`.
+
+```js
+assert.include(document.querySelector('.penguin-head > div:nth-of-type(2)')?.className, 'face');
 ```
 
 # --seed--

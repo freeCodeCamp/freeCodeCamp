@@ -11,10 +11,22 @@ Target the `.face` element with the `right` class, and position it `5%` right of
 
 # --hints--
 
-Test 1
+You should use the `.face.right` selector.
 
 ```js
+assert.match(code, /\.face\.right\s*\{/);
+```
 
+You should give `.face.right` a `right` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face.right')?.right);
+```
+
+You should give `.face.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face.right')?.right, '5%');
 ```
 
 # --seed--

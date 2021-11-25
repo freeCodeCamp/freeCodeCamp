@@ -13,10 +13,10 @@ Use the `border-radius` property with a value of `80% 80% 100% 100%`, to give th
 
 # --hints--
 
-
+You should give `.penguin-body` a `border-radius` of `80% 80% 100% 100%`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.borderRadius, '80% 80% 100% 100%');
 ```
 
 # --seed--

@@ -11,10 +11,16 @@ To give the penguin body a crest, create a pseudo-element that is the first chil
 
 # --hints--
 
-Test 1
+You should use the `.penguin-body::before` selector.
 
 ```js
+assert.match(code, /\.penguin-body::before\s*\{/);
+```
 
+You should give `.penguin-body::before` a `content` of `""`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.content, '""');
 ```
 
 # --seed--

@@ -7,14 +7,20 @@ dashedName: step-33
 
 # --description--
 
-Target all descendent elements of the `.penguin` elements, and give then a `position` of `absolute`.
+Target all descendent elements of the `.penguin` element, and give them a `position` of `absolute`.
 
 # --hints--
 
 You should use the `.penguin *` selector.
 
 ```js
+assert.match(code, /\.penguin\s*\*\s*\{/);
+```
 
+You should give `.penguin *` a `position` of `absolute`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin *')?.position, 'absolute');
 ```
 
 # --seed--

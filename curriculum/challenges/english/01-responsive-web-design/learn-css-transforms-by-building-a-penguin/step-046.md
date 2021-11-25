@@ -11,10 +11,16 @@ Position the `.face` elements so that they are `15%` from the top.
 
 # --hints--
 
-Test 1
+You should give `.face` a `top` property.
 
 ```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.top);
+```
 
+You should give `.face` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.top, '15%');
 ```
 
 # --seed--

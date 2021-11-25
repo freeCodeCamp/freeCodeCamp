@@ -11,10 +11,37 @@ Position the `.chin` element such that it is `25%` from the top, and `5%` from t
 
 # --hints--
 
-Test 1
+You should give `.chin` a `top` property.
 
 ```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.chin')?.top);
+```
 
+You should give `.chin` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.top, '25%');
+```
+
+You should give `.chin` a `left` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.chin')?.left);
+```
+
+You should give `.chin` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.left, '5%');
+```
+
+You should give `.chin` a `border-radius` of `70% 70% 100% 100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.borderTopLeftRadius, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.borderTopRightRadius, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.borderBottomRightRadius, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.borderBottomLeftRadius, '100%');
 ```
 
 # --seed--

@@ -11,10 +11,22 @@ Where relevant, replace property values with your `--penguin-face` variable.
 
 # --hints--
 
-Test 1
+You should give `.face` a `background-color` of `var(--penguin-face)`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.getPropVal('background-color', true), 'var(--penguin-face)');
+```
 
+You should give `.chin` a `background-color` of `var(--penguin-face)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.getPropVal('background-color', true), 'var(--penguin-face)');
+```
+
+You should not use `var(--penguin-face)` in the `.penguin-body` selector.
+
+```js
+assert.notInclude(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.getPropVal('background-color', true), 'var(--penguin-face)');
 ```
 
 # --seed--

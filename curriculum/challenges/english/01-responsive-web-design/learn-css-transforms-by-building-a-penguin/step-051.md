@@ -11,10 +11,46 @@ Target the `.chin` element, and give it a `width` of `90%`, height of `70%`, and
 
 # --hints--
 
-Test 1
+You should use the `.chin` selector.
 
 ```js
+assert.match(code, /\.chin\s*\{/);
+```
 
+You should give `.chin` a `width` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.chin')?.width);
+```
+
+You should give `.chin` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.width, '90%');
+```
+
+You should give `.chin` a `height` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.chin')?.height);
+```
+
+You should give `.chin` a `height` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.height, '70%');
+```
+
+You should give `.chin` a `background-color` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.chin')?.backgroundColor);
+```
+
+You should give `.chin` a `background-color` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.backgroundColor, 'white');
 ```
 
 # --seed--

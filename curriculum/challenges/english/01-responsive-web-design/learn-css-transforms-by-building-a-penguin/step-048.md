@@ -11,10 +11,22 @@ Target the `.face` element with the `left` class, and position it `5%` left of i
 
 # --hints--
 
-Test 1
+You should use the `.face.left` selector.
 
 ```js
+assert.match(code, /\.face\.left\s*\{/);
+```
 
+You should give `.face.left` a `left` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face.left')?.left);
+```
+
+You should give `.face.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face.left')?.left, '5%');
 ```
 
 # --seed--

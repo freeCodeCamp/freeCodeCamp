@@ -9,14 +9,20 @@ dashedName: step-47
 
 Currently, the two `.face` elements are on top of each other.
 
-Fix this, by adding a `left` class to the first `.face` element, and a `right` class to the second `.face` element.
+Fix this, by adding a `class` of `left` to the first `.face` element, and a `class` of `right` to the second `.face` element.
 
 # --hints--
 
-Test 1
+You should give a `class` of `left` to the first `.face` element.
 
 ```js
+assert.include(document.querySelector('.face:nth-of-type(1)').className, 'left');
+```
 
+You should give a `class` of `right` to the second `.face` element.
+
+```js
+assert.include(document.querySelector('.face:nth-of-type(2)').className, 'right');
 ```
 
 # --seed--
