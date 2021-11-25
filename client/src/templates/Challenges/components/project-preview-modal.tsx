@@ -34,7 +34,7 @@ const mapStateToProps = (state: unknown) => ({
   isOpen: isProjectPreviewModalOpenSelector(state) as boolean
 });
 const mapDispatchToProps = {
-  closeModal: () => closeModal('projectPreview'),
+  closeModal,
   setEditorFocusability,
   projectPreviewMounted
 };
@@ -57,7 +57,7 @@ export function ProjectPreviewModal({
       data-cy='project-preview-modal'
       dialogClassName='project-preview-modal'
       onHide={() => {
-        closeModal();
+        closeModal('projectPreview');
         setEditorFocusability(true);
       }}
       show={isOpen}
@@ -85,7 +85,7 @@ export function ProjectPreviewModal({
           bsSize='lg'
           bsStyle='primary'
           onClick={() => {
-            closeModal();
+            closeModal('projectPreview');
             setEditorFocusability(true);
           }}
         >
