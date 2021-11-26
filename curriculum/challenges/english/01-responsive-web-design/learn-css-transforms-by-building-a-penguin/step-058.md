@@ -23,6 +23,12 @@ You should give `.eye.left` a `left` of `--fcc-expected--`, but found `--fcc-act
 assert.equal(new __helpers.CSSHelp(document).getStyle('.eye.left')?.left, '25%');
 ```
 
+You should use the `.eye.right` selector.
+
+```js
+assert.match(code, /\.eye\.right\s*\{/);
+```
+
 You should give `.eye.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js

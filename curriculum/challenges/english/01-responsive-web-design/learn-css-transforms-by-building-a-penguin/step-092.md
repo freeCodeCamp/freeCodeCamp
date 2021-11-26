@@ -9,17 +9,17 @@ dashedName: step-92
 
 Fun fact: Most, if not all, flippers are not naturally rectangles.
 
-Give the `.arm` elements top -left, -right, and bottom-left corners a radius of `30%`, and the bottom-right corner a radius of `120%`.
+Give the `.arm` elements top -left, -right, and bottom-right corners a radius of `30%`, and the bottom-left corner a radius of `120%`.
 
 # --hints--
 
-You should give `.arm` a `border-radius` of `30% 30% 30% 120%`.
+You should give `.arm` a `border-radius` of `30% 30% 120% 30%`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderTopLeftRadius, '30%');
 assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderTopRightRadius, '30%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderBottomLeftRadius, '30%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderBottomRightRadius, '120%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderBottomRightRadius, '30%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderBottomLeftRadius, '120%');
 ```
 
 # --seed--

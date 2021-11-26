@@ -14,8 +14,7 @@ Within the first waypoint, rotate to `110deg`, and retain the scaling of the lef
 You should give the `10%` waypoint a `transform` of `rotate(110deg) scaleX(-1)`.
 
 ```js
-console.log([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '10%'));
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '10%')?.style?.transform?.trim() === 'rotate(110deg)scaleX(-1)');
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '10%')?.style?.transform?.replace(/\s+/g, '') === 'rotate(110deg)scaleX(-1)');
 ```
 
 # --seed--

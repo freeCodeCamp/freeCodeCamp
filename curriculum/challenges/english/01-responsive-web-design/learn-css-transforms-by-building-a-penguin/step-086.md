@@ -29,10 +29,10 @@ You should give `.arm` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
 assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.height, '60%');
 ```
 
-You should give `.arm` a `background-color` of `linear-gradient(90deg, gray, rgb(209, 210, 199))`.
+You should give `.arm` a `background` of `linear-gradient(90deg, gray, rgb(209, 210, 199))`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('background-color', true), 'linear-gradient(90deg,gray,rgb(209,210,199))');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('background', true), 'linear-gradient(90deg,gray,rgb(209,210,199))');
 ```
 
 # --seed--

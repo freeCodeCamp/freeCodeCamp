@@ -14,13 +14,13 @@ For the third and fourth waypoints, repeat the `transform` pattern once more.
 You should give the `30%` waypoint a `transform` of `rotate(110deg) scaleX(-1)`.
 
 ```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '30%')?.style?.transform?.trim() === 'rotate(110deg)scaleX(-1)');
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '30%')?.style?.transform?.replace(/\s+/g, '') === 'rotate(110deg)scaleX(-1)');
 ```
 
 You should give the `40%` waypoint a `transform` of `rotate(130deg) scaleX(-1)`.
 
 ```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '40%')?.style?.transform?.trim() === 'rotate(130deg)scaleX(-1)');
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '40%')?.style?.transform?.replace(/\s+/g, '') === 'rotate(130deg)scaleX(-1)');
 ```
 
 # --seed--

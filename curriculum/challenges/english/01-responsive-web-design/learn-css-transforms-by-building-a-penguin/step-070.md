@@ -7,7 +7,7 @@ dashedName: step-70
 
 # --description--
 
-The penguin's body looks a bit plain. Spruce him up by adding a `div` element with a `class` of `shirt`, immediately after the `.penguin-body` element.
+The penguin's body looks a bit plain. Spruce him up by adding a `div` element with a `class` of `shirt`, immediately before the `.penguin-body` element.
 
 # --hints--
 
@@ -23,10 +23,10 @@ You should give the new `div` a `class` of `shirt`.
 assert.exists(document.querySelector('.penguin > div.shirt'));
 ```
 
-You should place the new `div` after `.penguin-body`.
+You should place the new `div` before `.penguin-body`.
 
 ```js
-assert.exists(document.querySelector('.penguin-body + .shirt'));
+assert.exists(document.querySelector('.shirt + .penguin-body'));
 ```
 
 # --seed--

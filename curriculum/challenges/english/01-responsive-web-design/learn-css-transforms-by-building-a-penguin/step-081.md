@@ -31,10 +31,10 @@ You should give `.beak` a `background-color` of `var(--penguin-picorna)`, but fo
 assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.getPropVal('background-color', true), 'var(--penguin-picorna)');
 ```
 
-You should give `.feet` a `background-color` of `var(--penguin-picorna)`, but found `--fcc-actual--`.
+You should give `.foot` a `background-color` of `var(--penguin-picorna)`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.feet')?.getPropVal('background-color', true), 'var(--penguin-picorna)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.getPropVal('background-color', true), 'var(--penguin-picorna)');
 ```
 
 # --seed--

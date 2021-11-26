@@ -14,25 +14,25 @@ Give `wave` four waypoints starting at `10%`, and incrementing by `10%`.
 You should add a `10%` waypoint for `@keyframes wave`.
 
 ```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].any(css => css?.keyText === '10%'));
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '10%'));
 ```
 
 You should add a `20%` waypoint for `@keyframes wave`.
 
 ```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].any(css => css?.keyText === '20%'));
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '20%'));
 ```
 
 You should add a `30%` waypoint for `@keyframes wave`.
 
 ```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].any(css => css?.keyText === '30%'));
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '30%'));
 ```
 
 You should add a `40%` waypoint for `@keyframes wave`.
 
 ```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].any(css => css?.keyText === '40%'));
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '40%'));
 ```
 
 # --seed--
