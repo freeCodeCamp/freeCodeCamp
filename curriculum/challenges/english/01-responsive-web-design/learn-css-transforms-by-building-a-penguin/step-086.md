@@ -7,7 +7,7 @@ dashedName: step-86
 
 # --description--
 
-Target the `.arm` elements, and give them a `width` of `30%`, a `height` of `60%`, and a linear gradient at `90deg` from clockwise, starting at `gray`, and ending at `rgb(209, 210, 199)`.
+Target the `.arm` elements, and give them a `width` of `30%`, a `height` of `60%`, and a `background` of linear gradient at `90deg` from clockwise, starting at `gray`, and ending at `rgb(209, 210, 199)`.
 
 # --hints--
 

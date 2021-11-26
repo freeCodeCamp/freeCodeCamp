@@ -7,7 +7,7 @@ dashedName: step-56
 
 # --description--
 
-Target the `.eye` elements, and give them a `width` of `15%`, height of `17%`, and `background-color` of `black`.
+Target the `.eye` elements, and give them a `width` of `15%`, `height` of `17%`, and `background-color` of `black`.
 
 # --hints--
 
