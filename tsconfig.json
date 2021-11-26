@@ -5,6 +5,7 @@
     "client/src/**/*",
     "client/utils/**/*",
     "tools/challenge-helper-scripts/**/*",
+    "tools/scripts/lint/validate-keys.ts",
     "config/certification-settings.ts",
     "config/i18n/**/*"
   ],
