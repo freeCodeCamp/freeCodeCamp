@@ -431,6 +431,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               })}
               preview={this.renderPreview()}
               testOutput={this.renderTestOutput()}
+              usesMultifileEditor={usesMultifileEditor}
               videoUrl={this.getVideoUrl()}
             />
           </Media>
