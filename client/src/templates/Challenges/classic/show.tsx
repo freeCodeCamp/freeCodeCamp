@@ -449,6 +449,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               resizeProps={this.resizeProps}
               superBlock={superBlock}
               testOutput={this.renderTestOutput()}
+              usesMultifileEditor={usesMultifileEditor}
             />
           </Media>
           <CompletionModal

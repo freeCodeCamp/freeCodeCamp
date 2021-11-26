@@ -33,6 +33,7 @@ interface DesktopLayoutProps {
   resizeProps: ResizeProps;
   superBlock: string;
   testOutput: ReactElement;
+  usesMultifileEditor: boolean;
 }
 
 const reflexProps = {
@@ -77,17 +78,24 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     layoutState,
     preview,
     hasEditableBoundaries,
-    superBlock
+    superBlock,
+    usesMultifileEditor
   } = props;
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = showUpcomingChanges && hasEditableBoundaries;
-  const isPreviewDisplayable = projectBasedChallenge
+  const displayPreview = projectBasedChallenge
     ? showPreview && hasPreview
     : hasPreview;
-  const isConsoleDisplayable = projectBasedChallenge ? showConsole : true;
+  const displayConsole = projectBasedChallenge ? showConsole : true;
   const { codePane, editorPane, instructionPane, previewPane, testsPane } =
     layoutState;
+
+  const displayEditorTabs =
+    challengeFile &&
+    showUpcomingChanges &&
+    !hasEditableBoundaries &&
+    usesMultifileEditor;
 
   return (
     <div className='desktop-layout'>
@@ -112,9 +120,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
 
         <ReflexElement flex={editorPane.flex} {...resizeProps}>
-          {challengeFile && showUpcomingChanges && !hasEditableBoundaries && (
-            <EditorTabs />
-          )}
+          {displayEditorTabs && <EditorTabs />}
           {challengeFile && (
             <ReflexContainer
               key={challengeFile.fileKey}
@@ -127,10 +133,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               >
                 {editor}
               </ReflexElement>
-              {isConsoleDisplayable && (
+              {displayConsole && (
                 <ReflexSplitter propagate={true} {...resizeProps} />
               )}
-              {isConsoleDisplayable && (
+              {displayConsole && (
                 <ReflexElement
                   flex={testsPane.flex}
                   {...reflexProps}
@@ -142,10 +148,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
             </ReflexContainer>
           )}
         </ReflexElement>
-        {isPreviewDisplayable && (
-          <ReflexSplitter propagate={true} {...resizeProps} />
-        )}
-        {isPreviewDisplayable && (
+        {displayPreview && <ReflexSplitter propagate={true} {...resizeProps} />}
+        {displayPreview && (
           <ReflexElement flex={previewPane.flex} {...resizeProps}>
             {preview}
           </ReflexElement>
