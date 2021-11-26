@@ -116,7 +116,7 @@ assert(
     const solutionWithoutNull = JSON.stringify([800,51,700,32,50,100]);
 
     return (result.length == 6) ? (JSON.stringify(result) == solutionWithoutNull) : (JSON.stringify(result) == solution);
-  })().
+  })()
 );
 ```
 
