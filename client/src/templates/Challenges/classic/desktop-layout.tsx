@@ -91,7 +91,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     : hasPreview;
   const displayNotes = projectBasedChallenge
     ? showNotes && hasNotes
-    : hasNotes;
+    : false;
   const displayConsole = projectBasedChallenge ? showConsole : true;
   const {
     codePane,
