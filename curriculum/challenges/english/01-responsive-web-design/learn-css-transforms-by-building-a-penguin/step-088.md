@@ -35,10 +35,10 @@ You should use the `.arm.right` selector.
 assert.match(code, /\.arm\.right\s*\{/);
 ```
 
-You should give `.arm.right` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.arm.right` a `top` of `0%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.right')?.top, '0%');
+assert.include(['0%', '0', '0px'], new __helpers.CSSHelp(document).getStyle('.arm.right')?.top);
 ```
 
 You should give `.arm.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
