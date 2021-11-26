@@ -11,10 +11,22 @@ The penguin's body looks a bit plain. Spruce him up by adding a `div` element wi
 
 # --hints--
 
-Test 1
+You should add a `div` element within `.penguin`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.penguin > div')?.length, 3);
+```
 
+You should give the new `div` a `class` of `shirt`.
+
+```js
+assert.exists(document.querySelector('.penguin > div.shirt'));
+```
+
+You should place the new `div` after `.penguin-body`.
+
+```js
+assert.exists(document.querySelector('.penguin-body + .shirt'));
 ```
 
 # --seed--

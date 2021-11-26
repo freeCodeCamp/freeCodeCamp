@@ -11,10 +11,16 @@ Position the `.eye` elements `45%` from the top of their parent, and give all co
 
 # --hints--
 
-Test 1
+You should give `.eye` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.top, '45%');
+```
 
+You should give `.eye` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.borderRadius, '50%');
 ```
 
 # --seed--

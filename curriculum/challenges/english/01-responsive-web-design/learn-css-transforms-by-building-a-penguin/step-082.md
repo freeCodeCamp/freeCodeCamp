@@ -11,10 +11,28 @@ Target the `.foot` element with a `class` of `left`, and position it `25%` left 
 
 # --hints--
 
-Test 1
+You should use the `.foot.left` selector.
 
 ```js
+assert.match(code, /\.foot\.left\s*\{/);
+```
 
+You should give `.foot.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.left')?.left, '25%');
+```
+
+You should use the `.foot.right` selector.
+
+```js
+assert.match(code, /\.foot\.right\s*\{/);
+```
+
+You should give `.foot.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.right')?.right, '25%');
 ```
 
 # --seed--

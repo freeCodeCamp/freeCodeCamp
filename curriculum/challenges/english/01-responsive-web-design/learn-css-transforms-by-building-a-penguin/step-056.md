@@ -11,10 +11,28 @@ Target the `.eye` elements, and give them a `width` of `15%`, height of `17%`, a
 
 # --hints--
 
-Test 1
+You should use the `.eye` selector.
 
 ```js
+assert.match(code, /\.eye\s*\{/);
+```
 
+You should give `.eye` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.width, '15%');
+```
+
+You should give `.eye` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.height, '17%');
+```
+
+You should give `.eye` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.backgroundColor, 'black');
 ```
 
 # --seed--

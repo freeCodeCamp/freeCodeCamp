@@ -13,10 +13,16 @@ Define a new `@keyframes` named `wave`.
 
 # --hints--
 
-Test 1
+You should defined a new `@keyframes` rule.
 
 ```js
+assert.notEmpty(new __helpers.CSSHelp(document).getCSSRules('keyframes'));
+```
 
+You should give the `@keyframes` rule a `name` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name, 'wave');
 ```
 
 # --seed--

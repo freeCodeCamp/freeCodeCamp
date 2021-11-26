@@ -11,10 +11,28 @@ Target the `.blush` element with a `class` of `left`, and position it `15%` left
 
 # --hints--
 
-Test 1
+You should use the `.blush.left` selector.
 
 ```js
+assert.match(code, /\.blush\.left\s*\{/);
+```
 
+You should give `.blush.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush.left')?.left, '15%');
+```
+
+You should use the `.blush.right` selector.
+
+```js
+assert.match(code, /\.blush\.right\s*\{/);
+```
+
+You should give `.blush.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush.right')?.right, '15%');
 ```
 
 # --seed--

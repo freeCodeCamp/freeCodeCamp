@@ -11,10 +11,16 @@ Within the `.shirt` element, add a `div` with the following emoji as content: �
 
 # --hints--
 
-Test 1
+You should add a `div` element within `div.shirt`. Expected `--fcc-expected--` `div` element, found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.shirt > div')?.length, 1);
+```
 
+You should give the new `div` a content of `💜`, but found `--fcc-actual--`.
+
+```js
+assert.equal(document.querySelector('.shirt > div')?.textContent, '💜');
 ```
 
 # --seed--

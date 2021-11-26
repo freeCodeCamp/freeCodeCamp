@@ -11,10 +11,16 @@ Position the `.foot` elements `85%` from the top of their parent, and give all c
 
 # --hints--
 
-Test 1
+You should give `.foot` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.top, '85%');
+```
 
+You should give `.foot` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.borderRadius, '50%');
 ```
 
 # --seed--

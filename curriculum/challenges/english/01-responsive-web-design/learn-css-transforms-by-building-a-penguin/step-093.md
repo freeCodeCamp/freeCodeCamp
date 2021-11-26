@@ -11,10 +11,10 @@ Change the `.arm` elements' stacking order such that they appear behind the `.pe
 
 # --hints--
 
-You should give `.arm` a `z-index` of `-1`.
+You should give `.arm` a `z-index` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.zIndex, '-1');
 ```
 
 # --seed--

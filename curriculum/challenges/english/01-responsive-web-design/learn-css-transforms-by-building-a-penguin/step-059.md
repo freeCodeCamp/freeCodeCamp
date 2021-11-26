@@ -11,10 +11,28 @@ Within each `.eye` element, add a `div` with a `class` of `eye-lid`.
 
 # --hints--
 
-Test 1
+You should add one `div` element within `.eye.left`, but found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.eye.left > div')?.length ?? 0, 1);
+```
 
+You should add one `div` element within `.eye.right`, but found `--fcc-actual--`.
+
+```js
+assert.equal(document.querySelectorAll('.eye.right > div')?.length ?? 0, 1);
+```
+
+You should give the first new `div` a `class` of `eye-lid`.
+
+```js
+assert.exists(document.querySelector('.eye.left > div.eye-lid'));
+```
+
+You should give the second new `div` a `class` of `eye-lid`.
+
+```js
+assert.exists(document.querySelector('.eye.right > div.eye-lid'));
 ```
 
 # --seed--

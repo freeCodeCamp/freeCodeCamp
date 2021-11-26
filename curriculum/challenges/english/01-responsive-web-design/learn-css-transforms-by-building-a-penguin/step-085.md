@@ -13,10 +13,40 @@ Within `.penguin-body`, before the `.foot` elements, add two `div` elements each
 
 # --hints--
 
-Test 1
+You should add two `div` elements within `.penguin-body`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.penguin-body > div')?.length, 4);
+```
 
+You should give the first new `div` a `class` of `arm`.
+
+```js
+assert.exists(document.querySelector('.penguin-body > div.arm'));
+```
+
+You should give the second new `div` a `class` of `arm`.
+
+```js
+assert.equal(document.querySelectorAll('.penguin-body > div.arm')?.length, 2);
+```
+
+You should give one `div` a `class` of `left`.
+
+```js
+assert.exists(document.querySelector('.penguin-body > div.arm.left'));
+```
+
+You should give the other `div` a `class` of `right`.
+
+```js
+assert.exists(document.querySelector('.penguin-body > div.arm.right'));
+```
+
+You should place `.arm.right` after `.arm.left`.
+
+```js
+assert.exists(document.querySelector('.arm.left + .arm.right'));
 ```
 
 # --seed--

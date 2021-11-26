@@ -11,10 +11,46 @@ Below the `.blush.right` element, add two `div` elements each with a `class` of 
 
 # --hints--
 
-Test 1
+You should add two `div` elements within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 9);
+```
 
+You should give the first new `div` a `class` of `beak`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.beak'));
+```
+
+You should give the second new `div` a `class` of `beak`.
+
+```js
+assert.equal(document.querySelectorAll('.penguin-head > div.beak')?.length, 2);
+```
+
+You should give the first new `div` a `class` of `top`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.beak.top'));
+```
+
+You should give the second new `div` a `class` of `bottom`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.beak.bottom'));
+```
+
+You should place `div.beak.top` after `div.blush.right`.
+
+```js
+assert.exists(document.querySelector('.blush.right + .beak.top'));
+```
+
+You should place `div.beak.bottom` after `div.beak.top`.
+
+```js
+assert.exists(document.querySelector('.beak.top + .beak.bottom'));
 ```
 
 # --seed--

@@ -11,10 +11,16 @@ Target the `.penguin` element when it is active, and increase its size by `50%` 
 
 # --hints--
 
-Test 1
+You should use the `.penguin:active` selector.
 
 ```js
+assert.match(code, /\.penguin:active\s*\{/);
+```
 
+You should give `.penguin:active` a `transform` of `scale(1.5)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin:active')?.getPropVal('transform', true), 'scale(1.5)');
 ```
 
 # --seed--

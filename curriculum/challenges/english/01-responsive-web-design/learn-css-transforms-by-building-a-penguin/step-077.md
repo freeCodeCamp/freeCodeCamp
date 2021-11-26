@@ -11,10 +11,10 @@ For the shirt's final touch, set the `color` to `#6a6969`.
 
 # --hints--
 
-Test 1
+You should give `.shirt` a `color` of `#6a6969`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(documnet).getStyle('.shirt')?.color, 'rgb(106, 105, 105)');
 ```
 
 # --seed--

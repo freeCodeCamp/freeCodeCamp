@@ -11,10 +11,16 @@ To make the penguin's feet look more _penguiny_, rotate the left foot by `80deg`
 
 # --hints--
 
-Test 1
+You should give `.foot.left` a `transform` of `rotate(80deg)`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.left').getPropVal('transform', true), 'rotate(80deg)');
+```
 
+You should give `.foot.right` a `transform` of `rotate(-80deg)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.right').getPropVal('transform', true), 'rotate(-80deg)');
 ```
 
 # --seed--

@@ -11,10 +11,22 @@ Position the `.eye-lid` elements `25%` from the top, and `-23%` from the left of
 
 # --hints--
 
-Test 1
+You should give `.eye-lid` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.top, '25%');
+```
 
+You should give `.eye-lid` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.left, '-23%');
+```
+
+You should give `.eye-lid` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.borderRadius, '50%');
 ```
 
 # --seed--

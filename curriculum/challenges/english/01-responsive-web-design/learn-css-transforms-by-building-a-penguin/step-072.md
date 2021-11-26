@@ -11,10 +11,16 @@ Within `.shirt`, after the `div` element, add a `p` element with the following c
 
 # --hints--
 
-Test 1
+You should add one `p` element within `.shirt`, but found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.shirt > p')?.length, 1);
+```
 
+You should give the `p` element the content `I CSS`, but found `--fcc-actual--`.
+
+```js
+assert.equal(document.querySelector('.shirt > p')?.textContent, 'I CSS');
 ```
 
 # --seed--

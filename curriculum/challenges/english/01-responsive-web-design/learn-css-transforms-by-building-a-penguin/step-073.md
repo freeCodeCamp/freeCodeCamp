@@ -11,10 +11,28 @@ Target the `.shirt` element, and set its `font-size` to `25px`, `font-family` to
 
 # --hints--
 
-Test 1
+You should use the `.shirt` selector.
 
 ```js
+assert.match(code, /\.shirt\s*\{/);
+```
 
+You should give `.shirt` a `font-size` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.fontSize, '25px');
+```
+
+You should give `.shirt` a `font-family` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.fontFamily, 'Helvetica, sans-serif');
+```
+
+You should give `.shirt` a `font-weight` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.fontWeight, 'bold');
 ```
 
 # --seed--

@@ -11,10 +11,40 @@ Target the `.arm` element with a `class` of `left`, and position it `35%` from t
 
 # --hints--
 
-Test 1
+You should use the `.arm.left` selector.
 
 ```js
+assert.match(code, /\.arm\.left\s*\{/);
+```
 
+You should give `.arm.left` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.top, '35%');
+```
+
+You should give `.arm.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.left, '5%');
+```
+
+You should use the `.arm.right` selector.
+
+```js
+assert.match(code, /\.arm\.right\s*\{/);
+```
+
+You should give `.arm.right` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.right')?.top, '0%');
+```
+
+You should give `.arm.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.right')?.right, '-5%');
 ```
 
 # --seed--

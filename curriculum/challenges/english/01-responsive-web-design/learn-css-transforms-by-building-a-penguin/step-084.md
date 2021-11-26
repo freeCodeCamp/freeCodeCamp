@@ -11,10 +11,10 @@ Change the stacking order of the `.foot` elements such that they appear beneath 
 
 # --hints--
 
-You should give `.foot` a `z-index` of `-1`.
+You should give `.foot` a `z-index` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.zIndex, '-1');
 ```
 
 # --seed--

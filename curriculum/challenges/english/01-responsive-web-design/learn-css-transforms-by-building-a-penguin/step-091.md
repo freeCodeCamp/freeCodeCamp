@@ -11,10 +11,10 @@ Rotate the right arm by `45deg` counterclockwise.
 
 # --hints--
 
-Test 1
+You should give `.arm.right` a `transform` of `rotate(-45deg)`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.right')?.getPropVal('transform', true), 'rotate(-45deg)');
 ```
 
 # --seed--

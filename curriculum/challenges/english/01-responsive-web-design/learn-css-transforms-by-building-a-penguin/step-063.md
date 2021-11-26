@@ -11,10 +11,28 @@ Target the `.blush` elements, and give them a `width` of `15%`, `height` of `10%
 
 # --hints--
 
-Test 1
+You should use the `.blush` selector.
 
 ```js
+assert.match(code, /\.blush\s*\{/);
+```
 
+You should give `.blush` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.width, '15%');
+```
+
+You should give `.blush` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.height, '10%');
+```
+
+You should give `.blush` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.backgroundColor, 'pink');
 ```
 
 # --seed--

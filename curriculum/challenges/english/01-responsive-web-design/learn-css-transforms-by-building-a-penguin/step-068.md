@@ -11,10 +11,28 @@ Target the `.beak` element with a `class` of `top`, give it a `width` of `20%`, 
 
 # --hints--
 
-Test 1
+You should use the `.beak.top` selector.
 
 ```js
+assert.match(code, /\.beak\.top\s*\{/);
+```
 
+You should give `.beak.top` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.top')?.width, '20%');
+```
+
+You should give `.beak.top` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.top')?.top, '60%');
+```
+
+You should give `.beak.top` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.top')?.left, '40%');
 ```
 
 # --seed--

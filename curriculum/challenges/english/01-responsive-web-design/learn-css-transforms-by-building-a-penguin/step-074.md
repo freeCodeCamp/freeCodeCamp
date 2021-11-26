@@ -16,13 +16,13 @@ Fix this, by targetting the `div` with the heart emoji, and setting its `font-we
 You should use the `.shirt div` selector to target the `div` with the heart emoji.
 
 ```js
-
+assert.match(code, /\.shirt div\s*\{/);
 ```
 
 You should give the `.shirt div` a `font-weight` of `initial` or `normal`.
 
 ```js
-
+assert.include(['normal', 'initial'], new __helpers.CSSHelp(document).getStyle('.shirt div')?.fontWeight);
 ```
 
 # --seed--

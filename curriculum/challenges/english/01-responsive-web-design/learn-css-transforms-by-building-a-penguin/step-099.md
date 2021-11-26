@@ -11,10 +11,28 @@ Use the `wave` animation on the left arm. Have the animation last `3s`, infinite
 
 # --hints--
 
-Test 1
+You should give `.arm.left` an `animation-name` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationName, 'wave');
+```
 
+You should give `.arm.left` an `animation-duration` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationDuration, '3s');
+```
+
+You should give `.arm.left` an `animation-iteration-count` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationIterationCount, 'infinite');
+```
+
+You should give `.arm.left` an `animation-timing-function` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationTimingFunction, 'linear');
 ```
 
 # --seed--

@@ -7,20 +7,20 @@ dashedName: step-89
 
 # --description--
 
-Within the `.arm.left` element, alter the origin of the `transform` function to be the top left corner of its parent.
+Within the `.arm.left` selector, alter the origin of the `transform` function to be the top left corner of its parent.
 
 # --hints--
 
 You should use the `transform-origin` property to do this.
 
 ```js
-
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.arm.left')?.transformOrigin);
 ```
 
 You should give `.arm.left` a `transform-origin` of `0% 0%` or `top left`.
 
 ```js
-
+assert.include(['0% 0%', 'top left'], new __helpers.CSSHelp(document).getStyle('.arm.left')?.transformOrigin);
 ```
 
 # --seed--

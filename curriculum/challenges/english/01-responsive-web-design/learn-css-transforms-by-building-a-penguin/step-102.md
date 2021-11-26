@@ -11,10 +11,22 @@ Change the `.penguin` element's `transition` behaviour during transformation to 
 
 # --hints--
 
-Test 1
+You should give `.penguin` a `transition-duration` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.transitionDuration, '1s');
+```
 
+You should give `.penguin` a `transition-timing-function` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.transitionTimingFunction, 'ease-in-out');
+```
+
+You should give `.penguin` a `transition-delay` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.transitionDelay, '0ms');
 ```
 
 # --seed--

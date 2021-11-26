@@ -11,10 +11,28 @@ Target the `.eye-lid` elements, and give them a `width` of `150%`, `height` of `
 
 # --hints--
 
-Test 1
+You should use the `.eye-lid` selector.
 
 ```js
+assert.match(code, /\.eye-lid\s*\{/);
+```
 
+You should give `.eye-lid` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.width, '150%');
+```
+
+You should give `.eye-lid` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.height, '100%');
+```
+
+You should give `.eye-lid` a `background-color` of `var(--penguin-face)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.getPropVal('background-color', true), 'var(--penguin-face)');
 ```
 
 # --seed--

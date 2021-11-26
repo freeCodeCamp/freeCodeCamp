@@ -11,10 +11,16 @@ Position the `.blush` elements `65%` from the top of their parent, and give all 
 
 # --hints--
 
-Test 1
+You should give `.blush` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.top, '65%');
+```
 
+You should give `.blush` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.borderRadius, '50%');
 ```
 
 # --seed--

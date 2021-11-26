@@ -11,10 +11,40 @@ Below the `.eye.right` element, add two `div` elements each with a `class` of `b
 
 # --hints--
 
-Test 1
+You should add two `div` elements within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 7);
+```
 
+You should give the first new `div` a `class` of `blush`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.blush'));
+```
+
+You should give the second new `div` a `class` of `blush`.
+
+```js
+assert.equal(document.querySelectorAll('.penguin-head > div.blush')?.length, 2);
+```
+
+You should give the first new `div` a `class` of `left`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.blush.left'));
+```
+
+You should give the second new `div` a `class` of `right`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.blush.right'));
+```
+
+You should place `.blush.right` after `.blush.left`.
+
+```js
+assert.exists(document.querySelector('.blush.left + .blush.right'));
 ```
 
 # --seed--

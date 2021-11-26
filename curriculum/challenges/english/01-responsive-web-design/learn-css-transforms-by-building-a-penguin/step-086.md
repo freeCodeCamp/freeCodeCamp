@@ -11,10 +11,28 @@ Target the `.arm` elements, and give them a `width` of `30%`, a `height` of `60%
 
 # --hints--
 
-Test 1
+You should use the `.arm` selector.
 
 ```js
+assert.match(code, /\.arm\s*\{/);
+```
 
+You should give `.arm` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.width, '30%');
+```
+
+You should give `.arm` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.height, '60%');
+```
+
+You should give `.arm` a `background-color` of `linear-gradient(90deg, gray, rgb(209, 210, 199))`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('background-color', true), 'linear-gradient(90deg,gray,rgb(209,210,199))');
 ```
 
 # --seed--

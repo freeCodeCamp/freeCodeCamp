@@ -11,10 +11,28 @@ Target the `.beak` elements, and give them a `height` of `10%`, `background-colo
 
 # --hints--
 
-Test 1
+You should use the `.beak` selector.
 
 ```js
+assert.match(code, /\.beak\s*\{/);
+```
 
+You should give `.beak` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.height, '10%');
+```
+
+You should give `.beak` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.backgroundColor, 'orange');
+```
+
+You should give `.beak` a `border-radius` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.borderRadius, '50%');
 ```
 
 # --seed--

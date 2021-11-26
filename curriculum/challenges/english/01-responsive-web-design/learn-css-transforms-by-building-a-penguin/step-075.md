@@ -11,10 +11,16 @@ Position the `div` with the heart emoji `11.5px` from the top, and `12px` from t
 
 # --hints--
 
-Test 1
+You should give `.shirt div` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt div')?.top, '11.5px');
+```
 
+You should give `.shirt div` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt div')?.left, '12px');
 ```
 
 # --seed--

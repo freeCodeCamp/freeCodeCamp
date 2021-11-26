@@ -14,7 +14,7 @@ To keep the linear gradient on the correct side of the penguin's left arm, first
 You should give `.arm.left` a `transform` of `rotate(130deg) scaleX(-1)`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left').getPropVal('transform', true), 'rotate(130deg)scaleX(-1)');
 ```
 
 # --seed--

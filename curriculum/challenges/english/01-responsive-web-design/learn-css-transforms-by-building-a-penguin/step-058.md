@@ -7,14 +7,26 @@ dashedName: step-58
 
 # --description--
 
-Target the `.eye` element with the `left` class, and position it `25%` left of its parent. Then, target the `.eye` element with the `right` class, and position it `25%` right of its parent.
+Target the `.eye` element with the `left` class, and position it `25%` from the left of its parent. Then, target the `.eye` element with the `right` class, and position it `25%` from the right of its parent.
 
 # --hints--
 
-Test 1
+You should use the `.eye.left` selector.
 
 ```js
+assert.match(code, /\.eye\.left\s*\{/);
+```
 
+You should give `.eye.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye.left')?.left, '25%');
+```
+
+You should give `.eye.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye.right')?.right, '25%');
 ```
 
 # --seed--

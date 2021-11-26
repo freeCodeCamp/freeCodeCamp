@@ -7,16 +7,46 @@ dashedName: step-78
 
 # --description--
 
-Fun fact: penguins cannot stand without at least two feet.
+Fun fact: Penguins cannot stand without at least two feet.
 
 Within the `.penguin-body` element, add two `div` elements each with a `class` of `foot`. Give the first `.foot` a `class` of `left`, and the second `.foot` a `class` of `right`.
 
 # --hints--
 
-Test 1
+You should add two `div` elements within `.penguin-body`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
+assert.equal(document.querySelectorAll('.penguin-body > div')?.length, 2);
+```
 
+You should give the first new `div` a `class` of `foot`.
+
+```js
+assert.exists(document.querySelector('.penguin-body > div.foot'));
+```
+
+You should give the second new `div` a `class` of `foot`.
+
+```js
+assert.equal(document.querySelectorAll('.penguin-body > div.foot')?.length, 2);
+```
+
+You should give one `div` a `class` of `left`.
+
+```js
+assert.exists(document.querySelector('.penguin-body > div.foot.left'));
+```
+
+You should give the other `div` a `class` of `right`.
+
+```js
+assert.exists(document.querySelector('.penguin-body > div.foot.right'));
+```
+
+You should place `.foot.right` after `.foot.left`.
+
+```js
+assert.exists(document.querySelector('.foot.left + .foot.right'));
 ```
 
 # --seed--

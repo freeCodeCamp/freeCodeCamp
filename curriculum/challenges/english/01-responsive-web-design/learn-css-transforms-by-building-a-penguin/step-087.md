@@ -11,10 +11,34 @@ Create a custom CSS variable named `--penguin-skin`, and set it to `gray`. Then,
 
 # --hints--
 
-Test 1
+You should give `:root` a `--penguin-skin` property.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyle(':root').getPropertyValue('--penguin-skin'));
+```
 
+You should give `--penguin-skin` a value of `gray`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root').getPropVal('--penguin-skin', true), 'gray');
+```
+
+You should give `.penguin-head` a `background` of `linear-gradient(45deg, var(--penguin-skin), rgb(239, 240, 228))`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.getPropVal('background', true), 'linear-gradient(45deg,var(--penguin-skin),rgb(239,240,228))');
+```
+
+You should give `.penguin-body:before` a `background-color` of `var(--penguin-skin)`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body:before')?.getPropVal('background-color', true), 'var(--penguin-skin)');
+```
+
+You should give `.arm` a `background` of `linear-gradient(90deg, var(--penguin-skin), rgb(209, 210, 199))`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('background', true), 'linear-gradient(90deg,var(--penguin-skin),rgb(209,210,199))');
 ```
 
 # --seed--

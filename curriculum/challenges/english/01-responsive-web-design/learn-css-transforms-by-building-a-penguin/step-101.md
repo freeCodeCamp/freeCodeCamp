@@ -13,10 +13,10 @@ Indicate this to users, by giving the active element a `cursor` property of `not
 
 # --hints--
 
-Test 1
+You should give `.penguin:active` a `cursor` property of `not-allowed`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin:active')?.cursor, 'not-allowed');
 ```
 
 # --seed--

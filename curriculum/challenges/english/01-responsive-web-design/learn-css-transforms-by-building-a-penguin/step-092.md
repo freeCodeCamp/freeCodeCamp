@@ -13,10 +13,13 @@ Give the `.arm` elements top -left, -right, and bottom-left corners a radius of 
 
 # --hints--
 
-Test 1
+You should give `.arm` a `border-radius` of `30% 30% 30% 120%`.
 
 ```js
-
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderTopLeftRadius, '30%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderTopRightRadius, '30%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderBottomLeftRadius, '30%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderBottomRightRadius, '120%');
 ```
 
 # --seed--

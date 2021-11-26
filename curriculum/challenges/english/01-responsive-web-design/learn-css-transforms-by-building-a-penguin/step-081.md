@@ -13,10 +13,28 @@ Create a new custom CSS variable named `--penguin-picorna`, and replace all rela
 
 # --hints--
 
-Test 1
+You should give `:root` a `--penguin-picorna` property.
 
 ```js
+assert.exists(new __helpers.CSSHelp(document).getStyle(':root').getPropertyValue('--penguin-picorna'));
+```
 
+You should give `--penguin-picorna` a value of `orange`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root').getPropVal('--penguin-picorna', true), 'orange');
+```
+
+You should give `.beak` a `background-color` of `var(--penguin-picorna)`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.getPropVal('background-color', true), 'var(--penguin-picorna)');
+```
+
+You should give `.feet` a `background-color` of `var(--penguin-picorna)`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.feet')?.getPropVal('background-color', true), 'var(--penguin-picorna)');
 ```
 
 # --seed--
