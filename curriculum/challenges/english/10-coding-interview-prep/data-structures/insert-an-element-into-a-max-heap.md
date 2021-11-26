@@ -111,8 +111,11 @@ assert(
     test.insert(32);
     test.insert(51);
     test.insert(800);
-    let result = test.print();
-    return result.length == 6 ? result[0] == 800 : result[1] == 800;
+    let result = JSON.stringify(test.print());
+    let solution = JSON.stringify([null,800,51,700,32,50,100]);
+    let solutionWithoutNull = JSON.stringify([800,51,700,32,50,100]);
+
+    return (result.length == 6) ? (result == solution) : (result == solutionWithoutNull);
   })()
 );
 ```
