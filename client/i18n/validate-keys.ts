@@ -12,7 +12,10 @@ import trendingObject from './locales/english/trending.json';
  * our translation flow, the `namespace` value is used to create the
  * property chains that are used in the i18n replacement scripts.
  */
-const flattenAnObject = (obj: Record<string, unknown>, namespace = ''): Record<string, unknown> => {
+const flattenAnObject = (
+  obj: Record<string, unknown>,
+  namespace = ''
+): Record<string, unknown> => {
   const flattened: Record<string, unknown> = {};
   Object.keys(obj).forEach((key: string) => {
     if (Array.isArray(obj[key])) {
@@ -20,7 +23,10 @@ const flattenAnObject = (obj: Record<string, unknown>, namespace = ''): Record<s
     } else if (typeof obj[key] === 'object') {
       Object.assign(
         flattened,
-        flattenAnObject(obj[key] as Record<string, unknown>, namespace ? `${namespace}.${key}` : key)
+        flattenAnObject(
+          obj[key] as Record<string, unknown>,
+          namespace ? `${namespace}.${key}` : key
+        )
       );
     } else {
       flattened[namespace ? `${namespace}.${key}` : key] = obj[key];
@@ -29,7 +35,9 @@ const flattenAnObject = (obj: Record<string, unknown>, namespace = ''): Record<s
   return flattened;
 };
 
-const translationKeys: string[] = Object.keys(flattenAnObject(translationsObject));
+const translationKeys: string[] = Object.keys(
+  flattenAnObject(translationsObject)
+);
 const metaKeys: string[] = Object.keys(flattenAnObject(metaObject));
 const motivationKeys: string[] = Object.keys(flattenAnObject(motivationObject));
 const introKeys: string[] = Object.keys(flattenAnObject(introObject));
@@ -58,7 +66,9 @@ const readComponentCode = (filePath: string): string => {
   return code;
 };
 
-const clientCodebase: string = readComponentCode(path.join(process.cwd() + '/src'));
+const clientCodebase: string = readComponentCode(
+  path.join(process.cwd() + '/src')
+);
 const serverCodebase: string = readComponentCode(
   path.join(process.cwd() + '/../api-server/src/server')
 );
