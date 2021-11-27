@@ -64,10 +64,13 @@ Testes para executar o código do usuário, em par com o markdown e bloco de có
 Código para o teste um
 ```
 
-Mais instruções em sintaxe markdown
+If you want dynamic output based on the user's code, --fcc-expected-- and --fcc-actual-- will be replaced with the expected and actual values of the test's assertion. Take care if you have multiple assertions since the first failing assertion will determine the values of --fcc-expected-- and --fcc-actual--.
 
 ```js
-Mais código
+assert.equal(
+  'isso substituirá --fcc-actual--',
+  'isso substituirá --fcc-expected--'
+);
 ```
 
 # --seed--
