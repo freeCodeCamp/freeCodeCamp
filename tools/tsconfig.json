@@ -1,0 +1,14 @@
+{
+  "include": [
+    "./scripts/lint/validate-keys.ts",
+    "./scripts/build/ensure-env.ts"
+  ],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["../node_modules/@types"],
+    "types": ["node"]
+  }
+}

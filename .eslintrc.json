@@ -47,7 +47,7 @@
         "project": [
           "./tsconfig.json",
           "./tools/ui-components/tsconfig.json",
-          "./tools/scripts/build/tsconfig.json"
+          "./tools/tsconfig.json"
         ]
       },
       "extends": [
