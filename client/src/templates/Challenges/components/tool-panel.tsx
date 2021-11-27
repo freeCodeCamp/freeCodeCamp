@@ -30,7 +30,7 @@ interface ToolPanelProps {
   openVideoModal: () => void;
   openResetModal: () => void;
   guideUrl: string;
-  videoUrl?: string;
+  videoUrl: string;
 }
 
 function ToolPanel({

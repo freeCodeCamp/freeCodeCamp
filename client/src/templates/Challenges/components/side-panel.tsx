@@ -23,8 +23,8 @@ interface SidePanelProps {
   guideUrl: string;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   showToolPanel: boolean;
-  tests?: Test[];
-  videoUrl?: string;
+  tests: Test[];
+  videoUrl: string;
 }
 
 export function SidePanel({

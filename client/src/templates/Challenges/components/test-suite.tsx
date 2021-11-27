@@ -17,7 +17,7 @@ function isTestSuiteTest(test: Test): test is TestSuiteTest {
 }
 
 interface TestSuiteProps {
-  tests?: Test[];
+  tests: Test[];
 }
 
 function getAccessibleText(text: string, err?: string, pass?: boolean) {
@@ -36,7 +36,7 @@ function getAccessibleText(text: string, err?: string, pass?: boolean) {
 }
 
 function TestSuite({ tests }: TestSuiteProps): JSX.Element {
-  const testSuiteTests = tests?.filter(isTestSuiteTest) || [];
+  const testSuiteTests = tests.filter(isTestSuiteTest);
 
   return (
     <div className='challenge-test-suite'>
