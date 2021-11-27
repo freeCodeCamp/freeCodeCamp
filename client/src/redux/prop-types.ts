@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../config/certification-settings';
+import { certMap } from '../resources/cert-and-project-map';
 
 export const UserPropType = PropTypes.shape({
   about: PropTypes.string,
@@ -84,7 +85,7 @@ export type MarkdownRemark = {
     block: string;
     isBeta: boolean;
     superBlock: SuperBlocks;
-    title: string;
+    title: typeof certMap[number]['title'];
   };
   headings: [
     {

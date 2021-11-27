@@ -13,9 +13,9 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
   const { superBlock } = props;
 
   const superBlockIntroObj: {
-    title?: string;
-    intro?: string[];
-    note?: string[];
+    title: string;
+    intro: string[];
+    note: string[];
   } = t(`intro:${superBlock}`);
   const {
     title: i18nSuperBlock,
@@ -29,8 +29,9 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
       <Spacer />
       {generateIconComponent(superBlock, 'cert-header-icon')}
       <Spacer />
-      {superBlockIntroText &&
-        superBlockIntroText.map((str, i) => <p key={i}>{str}</p>)}
+      {superBlockIntroText.map((str, i) => (
+        <p key={i}>{str}</p>
+      ))}
       {superBlockNoteText && (
         <div className='alert alert-info' style={{ marginTop: '2rem' }}>
           {superBlockNoteText}

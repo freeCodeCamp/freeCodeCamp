@@ -3,6 +3,7 @@ import envData from '../../../config/env.json';
 
 import type {
   ChallengeFile,
+  ClaimedCertifications,
   CompletedChallenge,
   User
 } from '../redux/prop-types';
@@ -158,11 +159,25 @@ export function getUsernameExists(username: string): Promise<boolean> {
   return get(`/api/users/exists?username=${username}`);
 }
 
-// TODO: Does a GET return a bolean?
+export interface GetVerifyCanClaimCert {
+  response: {
+    type: string;
+    message: {
+      status: boolean;
+      result: string;
+    };
+    variables: {
+      name: string;
+    };
+  };
+  isCertMap: ClaimedCertifications;
+  completedChallenges: CompletedChallenge[];
+}
+
 export function getVerifyCanClaimCert(
   username: string,
   superBlock: string
-): Promise<boolean> {
+): Promise<GetVerifyCanClaimCert> {
   return get(
     `/certificate/verify-can-claim-cert?username=${username}&superBlock=${superBlock}`
   );

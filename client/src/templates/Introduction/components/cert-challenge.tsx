@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
 import { Button } from '@freecodecamp/react-bootstrap';
 import { navigate } from 'gatsby-link';
 import React, { useState, useEffect } from 'react';
@@ -29,12 +27,13 @@ interface CertChallengeProps {
     pending: boolean;
     complete: boolean;
     errored: boolean;
+    error: null | string;
   };
   isSignedIn: boolean;
   steps: Steps;
   superBlock: SuperBlocks;
   t: TFunction;
-  title?: string;
+  title: typeof certMap[number]['title'];
   user: User;
   verifyCert: typeof verifyCert;
 }
@@ -49,7 +48,7 @@ const mapStateToProps = (state: unknown) => {
     stepsToClaimSelector,
     userFetchStateSelector,
     isSignedInSelector,
-    (steps, fetchState, isSignedIn) => ({
+    (steps, fetchState: CertChallengeProps['fetchState'], isSignedIn) => ({
       steps,
       fetchState,
       isSignedIn
@@ -88,12 +87,9 @@ const CertChallenge = ({
 
   useEffect(() => {
     if (username) {
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      (async () => {
+      void (async () => {
         try {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const data: any = await getVerifyCanClaimCert(username, superBlock);
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          const data = await getVerifyCanClaimCert(username, superBlock);
           const { status, result } = data?.response?.message;
           setCanClaimCert(status);
           setCertVerificationMessage(result);
@@ -106,9 +102,8 @@ const CertChallenge = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [username]);
 
-  const certSlug: string | undefined = certMap.find(
-    x => x.title === title
-  )?.certSlug;
+  // @ts-expect-error Typescript is confused
+  const certSlug = certMap.find(x => x.title === title).certSlug;
 
   useEffect(() => {
     const { pending, complete } = fetchState;
@@ -145,7 +140,6 @@ const CertChallenge = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [steps, canClaimCert, certVerificationMessage]);
 
-  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   const certLocation = `/certification/${username}/${certSlug}`;
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nCertText = t(`intro:misc-text.certification`, {
@@ -163,7 +157,6 @@ const CertChallenge = ({
       if (isCertified) {
         return navigate(certLocation);
       }
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return isHonest
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);

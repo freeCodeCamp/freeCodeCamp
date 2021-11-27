@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-
 import React, { Component } from 'react';
 import { withTranslation, TFunction } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -21,7 +19,10 @@ import Challenges from './Challenges';
 
 const { curriculumLocale } = envData;
 
-const mapStateToProps = (state: unknown, ownProps: BlockProps) => {
+const mapStateToProps = (
+  state: unknown,
+  ownProps: { blockDashedName: string } & unknown
+) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
 
   return createSelector(
@@ -29,7 +30,7 @@ const mapStateToProps = (state: unknown, ownProps: BlockProps) => {
     completedChallengesSelector,
     (isExpanded: boolean, completedChallenges: CompletedChallenge[]) => ({
       isExpanded,
-      completedChallenges: completedChallenges.map(({ id }) => id)
+      completedChallengeIds: completedChallenges.map(({ id }) => id)
     })
   )(state);
 };
@@ -40,12 +41,12 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface BlockProps {
   blockDashedName: string;
   challenges: ChallengeNode[];
-  completedChallenges?: string[];
-  executeGA?: typeof executeGA;
-  isExpanded?: boolean;
+  completedChallengeIds: string[];
+  executeGA: typeof executeGA;
+  isExpanded: boolean;
   superBlock: string;
-  t?: TFunction;
-  toggleBlock?: typeof toggleBlock;
+  t: TFunction;
+  toggleBlock: typeof toggleBlock;
 }
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
@@ -74,14 +75,14 @@ export class Block extends Component<BlockProps> {
         player.autostart = playSound;
       })();
     }
-    executeGA!({
+    executeGA({
       type: 'event',
       data: {
         category: 'Map Block Click',
         action: blockDashedName
       }
     });
-    toggleBlock!(blockDashedName);
+    toggleBlock(blockDashedName);
   }
 
   renderCheckMark(isCompleted: boolean): JSX.Element {
@@ -105,7 +106,7 @@ export class Block extends Component<BlockProps> {
   render(): JSX.Element {
     const {
       blockDashedName,
-      completedChallenges,
+      completedChallengeIds,
       challenges,
       isExpanded,
       superBlock,
@@ -115,7 +116,7 @@ export class Block extends Component<BlockProps> {
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
-      const isCompleted = completedChallenges!.some(
+      const isCompleted = completedChallengeIds.some(
         (completedChallengeId: string) => completedChallengeId === id
       );
       if (isCompleted) {
@@ -141,7 +142,7 @@ export class Block extends Component<BlockProps> {
       );
     });
 
-    const blockIntroObj: { title?: string; intro: string[] } = t!(
+    const blockIntroObj: { title?: string; intro: string[] } = t(
       `intro:${superBlock}.blocks.${blockDashedName}`
     );
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
@@ -154,7 +155,7 @@ export class Block extends Component<BlockProps> {
       expand: string;
       collapse: string;
       courses: string;
-    } = t!('intro:misc-text');
+    } = t('intro:misc-text');
 
     return isProjectBlock ? (
       <ScrollableAnchor id={blockDashedName}>
@@ -170,9 +171,9 @@ export class Block extends Component<BlockProps> {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to={t!('links:help-translate-link-url')}
+                  to={t('links:help-translate-link-url')}
                 >
-                  {t!('misc.translation-pending')}
+                  {t('misc.translation-pending')}
                 </Link>
               </div>
             )}
@@ -198,9 +199,9 @@ export class Block extends Component<BlockProps> {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to={t!('links:help-translate-link-url')}
+                  to={t('links:help-translate-link-url')}
                 >
-                  {t!('misc.translation-pending')}
+                  {t('misc.translation-pending')}
                 </Link>
               </div>
             )}
