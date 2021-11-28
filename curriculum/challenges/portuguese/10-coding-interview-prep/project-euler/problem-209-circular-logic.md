@@ -8,7 +8,7 @@ dashedName: problem-209-circular-logic
 
 # --description--
 
-Uma tabela verdade binária de $k$ entradas é um mapa de $k$ bits de entrada (dígitos binários, 0 [false] ou 1 [true]) para 1 bit de saída. Por exemplo, as tabelas verdade binárias de $2$ entradas para as funções lógicas de $AND$ e $XOR$ são:
+Uma tabela verdade binária de $k$ entradas é um mapa de $k$ bits de entrada (algarismos binários, 0 [false] ou 1 [true]) para 1 bit de saída. Por exemplo, as tabelas verdade binárias de $2$ entradas para as funções lógicas de $AND$ e $XOR$ são:
 
 | x | y | x AND y |
 | - | - | ------- |

@@ -1,6 +1,6 @@
 ---
 id: 5900f5231000cf542c510034
-title: 'Problem 438: Integer part of polynomial equation''s solutions'
+title: 'Problema 438: Parte inteira das soluções da equação polinomial'
 challengeType: 5
 forumTopicId: 302109
 dashedName: problem-438-integer-part-of-polynomial-equations-solutions
@@ -8,20 +8,27 @@ dashedName: problem-438-integer-part-of-polynomial-equations-solutions
 
 # --description--
 
-For an n-tuple of integers t = (a1, ..., an), let (x1, ..., xn) be the solutions of the polynomial equation xn + a1xn-1 + a2xn-2 + ... + an-1x + an = 0.
+Para uma tupla $n$ de números inteiros $t = (a_1, \ldots, a_n)$, considere $(x_1, \ldots, x_n)$ como as soluções da equação polinomial $x^n + a_1x^{n - 1} + a_2x^{n - 2} + \ldots + a_{n - 1}x + a_n = 0$.
 
-Consider the following two conditions: x1, ..., xn are all real. If x1, ..., xn are sorted, ⌊xi⌋ = i for 1 ≤ i ≤ n. (⌊·⌋: floor function.)
+Considere as duas condições a seguir:
 
-In the case of n = 4, there are 12 n-tuples of integers which satisfy both conditions. We define S(t) as the sum of the absolute values of the integers in t. For n = 4 we can verify that ∑S(t) = 2087 for all n-tuples t which satisfy both conditions.
+- $x_1, \ldots, x_n$ são todos reais.
+- Se $x_1, ..., x_n$ estiverem ordenados, $⌊x_i⌋ = i$ para $1 ≤ i ≤ n$. ($⌊·⌋:$ função de piso.)
 
-Find ∑S(t) for n = 7.
+No caso de $n = 4$, há 12 tuplas $n$ de números inteiros que satisfazem ambas as condições.
+
+Definimos $S(t)$ como a soma de valores absolutos dos números inteiros em $t$.
+
+Para $n = 4$ podemos verificar que $\sum S(t) = 2087$ para todas as tuplas $n$ t que satisfazem ambas as condições.
+
+Encontre a $\sum S(t)$ para $n = 7$.
 
 # --hints--
 
-`euler438()` should return 2046409616809.
+`polynomialIntegerPart()` deve retornar `2046409616809`.
 
 ```js
-assert.strictEqual(euler438(), 2046409616809);
+assert.strictEqual(polynomialIntegerPart(), 2046409616809);
 ```
 
 # --seed--
@@ -29,12 +36,12 @@ assert.strictEqual(euler438(), 2046409616809);
 ## --seed-contents--
 
 ```js
-function euler438() {
+function polynomialIntegerPart() {
 
   return true;
 }
 
-euler438();
+polynomialIntegerPart();
 ```
 
 # --solutions--

@@ -26,7 +26,7 @@ até $x_{k + 1} = x_k$.
 
 Como exemplo, vamos encontrar a raiz quadrada arredondada de $n = 4321$.
 
-$n$ tem 4 dígitos, então $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
+$n$ tem 4 algarismos, então $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
 
 $$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\ x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
 

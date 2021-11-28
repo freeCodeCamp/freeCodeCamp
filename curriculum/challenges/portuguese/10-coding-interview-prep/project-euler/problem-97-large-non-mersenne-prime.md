@@ -8,11 +8,11 @@ dashedName: problem-97-large-non-mersenne-prime
 
 # --description--
 
-O primeiro número primo descoberto que excedia um milhão de algarismos foi descoberto em 1999. Ele é um primo de Mersenne no formato $2^{6972593} - 1$ e contém exatamente 2.098.960 algarismos. Depois disso, outros primos de Mersenne, no formato $2^p - 1$, foram encontrados e contendo mais dígitos.
+O primeiro número primo descoberto que excedia um milhão de algarismos foi descoberto em 1999. Ele é um primo de Mersenne no formato $2^{6972593} - 1$ e contém exatamente 2.098.960 algarismos. Depois disso, outros primos de Mersenne, no formato $2^p - 1$, foram encontrados e contendo mais algarismos.
 
 No entanto, em 2004, foi encontrado um número primo enorme e não sendo um primo de Mersenne que contém 2.357.207 algarismos: $28433 × 2^{7830457} + 1$.
 
-Encontre os últimos dez dígitos daquele primo que não seja de Mersenne na forma $multiplicador × 2^{potência} + 1$.
+Encontre os últimos dez algarismos daquele primo que não seja de Mersenne na forma $multiplicador × 2^{potência} + 1$.
 
 # --hints--
 

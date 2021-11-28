@@ -1,6 +1,6 @@
 ---
 id: 5900f52d1000cf542c510040
-title: 'Problem 449: Chocolate covered candy'
+title: 'Problema 449: Doce coberto de chocolate'
 challengeType: 5
 forumTopicId: 302121
 dashedName: problem-449-chocolate-covered-candy
@@ -8,24 +8,22 @@ dashedName: problem-449-chocolate-covered-candy
 
 # --description--
 
-Phil the confectioner is making a new batch of chocolate covered candy. Each candy centre is shaped like an ellipsoid of revolution defined by the equation: b2x2 + b2y2 + a2z2 = a2b2.
+Phil, o doceiro, está fazendo um novo lote de doce coberto de chocolate. Cada centro dos doces tem o formato de um elipsoide de revolução definido pela equação: $b^2x^2 + b^2y^2 + a^2z^2 = a^2b^2$.
 
-Phil wants to know how much chocolate is needed to cover one candy centre with a uniform coat of chocolate one millimeter thick. If a=1 mm and b=1 mm, the amount of chocolate required is
+Phil quer saber quanto chocolate é necessário para cobrir um centro de doces com uma cobertura uniforme de chocolate com um milímetro de espessura.
 
-283 π mm3
+Se $a = 1$ mm e $b = 1$ mm, a quantidade de chocolate necessária é $\frac{28}{3} \pi$ mm<sup>3</sup>
 
-<!-- TODO Use MathJax -->
+Se $a = 2$ mm e $b = 1$ mm, a quantidade de chocolate necessária é de aproximadamente 60,35475635 mm<sup>3</sup>.
 
-If a=2 mm and b=1 mm, the amount of chocolate required is approximately 60.35475635 mm3.
-
-Find the amount of chocolate in mm3 required if a=3 mm and b=1 mm. Give your answer as the number rounded to 8 decimal places behind the decimal point.
+Encontre a quantidade de chocolate em mm<sup>3</sup> necessária se $a = 3$ mm e $b = 1$ mm. Dê sua resposta como o número arredondado para 8 casas depois da vírgula.
 
 # --hints--
 
-`euler449()` should return 103.37870096.
+`chocolateCoveredCandy()` deve retornar `103.37870096`.
 
 ```js
-assert.strictEqual(euler449(), 103.37870096);
+assert.strictEqual(chocolateCoveredCandy(), 103.37870096);
 ```
 
 # --seed--
@@ -33,12 +31,12 @@ assert.strictEqual(euler449(), 103.37870096);
 ## --seed-contents--
 
 ```js
-function euler449() {
+function chocolateCoveredCandy() {
 
   return true;
 }
 
-euler449();
+chocolateCoveredCandy();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5900f51b1000cf542c51002e
-title: 'Problem 431: Square Space Silo'
+title: 'Problema 431: Silo de espaço quadrado'
 challengeType: 5
 forumTopicId: 302102
 dashedName: problem-431-square-space-silo
@@ -8,22 +8,24 @@ dashedName: problem-431-square-space-silo
 
 # --description--
 
-Fred the farmer arranges to have a new storage silo installed on his farm and having an obsession for all things square he is absolutely devastated when he discovers that it is circular. Quentin, the representative from the company that installed the silo, explains that they only manufacture cylindrical silos, but he points out that it is resting on a square base. Fred is not amused and insists that it is removed from his property.
+Fred, o agricultor, organiza a instalação de um novo silo de armazenamento na sua fazenda e tem uma obsessão por tudo o que é quadrado. Ele fica absolutamente deprimido quando descobre que o silo é circular. Quentin, o representante da empresa que instalou o silo, explica que eles apenas fabricam silos cilíndricos, mas chama a atenção para o fato de que eles estão sobre uma base quadrada. Fred não fica feliz e insiste que seja removido da sua propriedade.
 
-Quick thinking Quentin explains that when granular materials are delivered from above a conical slope is formed and the natural angle made with the horizontal is called the angle of repose. For example if the angle of repose, $\\alpha = 30$ degrees, and grain is delivered at the centre of the silo then a perfect cone will form towards the top of the cylinder. In the case of this silo, which has a diameter of 6m, the amount of space wasted would be approximately 32.648388556 m3. However, if grain is delivered at a point on the top which has a horizontal distance of $x$ metres from the centre then a cone with a strangely curved and sloping base is formed. He shows Fred a picture.
+Pensando rápido, Quentin explica que, quando os materiais dos grãos são entregues por cima, uma inclinação cônica é formada. O ângulo natural feito com a horizontal é chamado de ângulo de repouso. Por exemplo, se o ângulo de repouso, $\alpha = 30°$, e se os grãos forem entregues no centro do silo, então um cone perfeito se formará em direção ao topo do cilindro. No caso deste silo, que tem um diâmetro de 6 m, a quantidade de espaço desperdiçado seria de aproximadamente 32,648388556 m<sup>3</sup>. No entanto, se o grão for entregue em um ponto na parte superior que tem uma distância horizontal de $x$ metros do centro, então um cone com uma base estranhamente curvada e inclinada é formado. Ele mostra uma foto para Fred.
 
-We shall let the amount of space wasted in cubic metres be given by $V(x)$. If $x = 1.114785284$, which happens to have three squared decimal places, then the amount of space wasted, $V(1.114785284) \\approx 36$. Given the range of possible solutions to this problem there is exactly one other option: $V(2.511167869) \\approx 49$. It would be like knowing that the square is king of the silo, sitting in splendid glory on top of your grain.
+<img class="img-responsive center-block" alt="imagem apresentando a formação do cone perfeito na direção do topo do cilindro" src="https://cdn.freecodecamp.org/curriculum/project-euler/square-space-silo.png" style="background-color: white; padding: 10px;" />
 
-Fred's eyes light up with delight at this elegant resolution, but on closer inspection of Quentin's drawings and calculations his happiness turns to despondency once more. Fred points out to Quentin that it's the radius of the silo that is 6 metres, not the diameter, and the angle of repose for his grain is 40 degrees. However, if Quentin can find a set of solutions for this particular silo then he will be more than happy to keep it.
+Vamos considerar a quantidade de espaço desperdiçada em metros cúbicos como $V(x)$. Se $x = 1.114.785.284$, que tem três casas decimais quadradas, a quantidade de espaço desperdiçada, $V(1.114.785.284) \approx 36$. Dada a amplitude de soluções possíveis para este problema, há exatamente uma outra opção: $V(2.511.167.869) \approx 49$. Seria como se soubéssemos que o quadrado é o rei do silo, sentado em glória esplêndida em cima de seus grãos.
 
-If Quick thinking Quentin is to satisfy frustratingly fussy Fred the farmer's appetite for all things square then determine the values of $x$ for all possible square space wastage options and calculate $\\sum x$ correct to 9 decimal places.
+Os olhos de Fred iluminam-se de prazer com esta resolução elegante, mas na inspeção mais atenta dos desenhos e cálculos de Quentin, sua felicidade virou desânimo mais uma vez. Fred aponta para Quentin que é o raio do silo que é 6 metros, não o diâmetro, e o ângulo de repouso para seus grãos é de 40°. No entanto, se Quentin conseguir encontrar uma série de soluções para este silo em particular, ele manterá o silo com prazer.
+
+Se Quentin pensar rápido e quiser satisfazer Fred, o fazendeiro frustrado com paixão por todas as coisas quadradas, ele precisa determinar os valores de $x$ para todas as opções de desperdício de espaço quadrado e calcular $\sum x$ corretamente para 9 casas decimais.
 
 # --hints--
 
-`euler431()` should return 23.386029052.
+`squareSpaceSilo()` deve retornar `23.386029052`.
 
 ```js
-assert.strictEqual(euler431(), 23.386029052);
+assert.strictEqual(squareSpaceSilo(), 23.386029052);
 ```
 
 # --seed--
@@ -31,12 +33,12 @@ assert.strictEqual(euler431(), 23.386029052);
 ## --seed-contents--
 
 ```js
-function euler431() {
+function squareSpaceSilo() {
 
   return true;
 }
 
-euler431();
+squareSpaceSilo();
 ```
 
 # --solutions--

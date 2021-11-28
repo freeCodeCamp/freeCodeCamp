@@ -14,7 +14,7 @@ Considere que $F(m, n)$ é o número de maneiras pelas quais o sapo pode viajar,
 
 Por exemplo, $F(1, 3) = 4$, $F(1, 4) = 15$, $F(1, 5) = 46$, $F(2, 3) = 16$ e $F(2, 100)\bmod {10}^9 = 429.619.151$.
 
-Encontre os últimos 9 dígitos de $F(10, {10}^{12})$.
+Encontre os últimos 9 algarismos de $F(10, {10}^{12})$.
 
 # --hints--
 

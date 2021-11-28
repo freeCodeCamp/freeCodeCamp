@@ -1,6 +1,6 @@
 ---
 id: 5900f4181000cf542c50ff2b
-title: 'Problema 172: Investigação dos números com poucos dígitos repetidos'
+title: 'Problema 172: Investigação dos números com poucos algarismos repetidos'
 challengeType: 5
 forumTopicId: 301807
 dashedName: problem-172-investigating-numbers-with-few-repeated-digits

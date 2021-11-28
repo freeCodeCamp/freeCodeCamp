@@ -14,7 +14,7 @@ Uma fração decimal irracional é criada concatenando os números inteiros posi
 
 Podemos notar que o 12º algarismo da parte fracionária é 1.
 
-Se *d<sub>n</sub>* representa o *n*-ésimo dígito da parte fracionária, encontre o valor da expressão a seguir:
+Se *d<sub>n</sub>* representa o *n*-ésimo algarismo da parte fracionária, encontre o valor da expressão a seguir:
 
 d<sub>1</sub> × d<sub>10</sub> × d<sub>100</sub> × d<sub>1000</sub> × d<sub>10000</sub> × d<sub>100000</sub> × d<sub>1000000</sub>
 
