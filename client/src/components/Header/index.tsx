@@ -10,8 +10,8 @@ import UniversalNav from './components/universal-nav';
 import './header.css';
 
 export interface HeaderProps {
-  fetchState: { pending: boolean };
-  user: Record<string, any>;
+  fetchState?: { pending: boolean };
+  user?: Record<string, any>;
 }
 export class Header extends React.Component<
   HeaderProps,

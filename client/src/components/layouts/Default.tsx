@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import fontawesome from '@fortawesome/fontawesome';
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
+import { WithTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { Action, AnyAction, bindActionCreators, Dispatch } from 'redux';
+import { ActionFunctionAny } from 'redux-actions';
 import { createSelector } from 'reselect';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
@@ -40,33 +41,28 @@ import './variables.css';
 
 fontawesome.config = {
   autoAddCss: false
-};
+} as fontawesome.Config;
 
-const propTypes = {
-  children: PropTypes.node.isRequired,
-  executeGA: PropTypes.func,
-  fetchState: PropTypes.shape({ pending: PropTypes.bool }),
-  fetchUser: PropTypes.func.isRequired,
-  flashMessage: PropTypes.shape({
-    id: PropTypes.string,
-    type: PropTypes.string,
-    message: PropTypes.string
-  }),
-  hasMessage: PropTypes.bool,
-  isOnline: PropTypes.bool.isRequired,
-  isServerOnline: PropTypes.bool.isRequired,
-  isSignedIn: PropTypes.bool,
-  onlineStatusChange: PropTypes.func.isRequired,
-  pathname: PropTypes.string.isRequired,
-  removeFlashMessage: PropTypes.func.isRequired,
-  serverStatusChange: PropTypes.func.isRequired,
-  showFooter: PropTypes.bool,
-  signedInUserName: PropTypes.string,
-  t: PropTypes.func.isRequired,
-  theme: PropTypes.string,
-  useTheme: PropTypes.bool,
-  user: PropTypes.object
-};
+interface DefaultLayoutProps extends WithTranslation {
+  children: React.ReactNode;
+  executeGA?: ({ type, data }: { type: string; data: string }) => void;
+  fetchState?: { pending: boolean };
+  fetchUser: () => void;
+  flashMessage?: { id: string; type: string; message: string };
+  hasMessage?: boolean;
+  isOnline: boolean;
+  isServerOnline: boolean;
+  isSignedIn?: boolean;
+  onlineStatusChange: ActionFunctionAny<Action<string>>;
+  pathname: string;
+  removeFlashMessage: typeof removeFlashMessage;
+  serverStatusChange: typeof serverStatusChange;
+  showFooter?: boolean;
+  signedInUserName?: string;
+  theme?: string;
+  useTheme?: boolean;
+  user?: Record<string, unknown>;
+}
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -76,19 +72,26 @@ const mapStateToProps = createSelector(
   userFetchStateSelector,
   userSelector,
   usernameSelector,
-  (isSignedIn, flashMessage, isOnline, isServerOnline, fetchState, user) => ({
+  (
+    isSignedIn: boolean | undefined,
+    flashMessage: { id: string; type: string; message: string } | undefined,
+    isOnline: boolean,
+    isServerOnline: boolean,
+    fetchState: { pending: boolean } | undefined,
+    user: Record<string, unknown> | undefined
+  ) => ({
     isSignedIn,
     flashMessage,
-    hasMessage: !!flashMessage.message,
+    hasMessage: !!flashMessage?.message,
     isOnline,
     isServerOnline,
     fetchState,
-    theme: user.theme,
+    theme: user?.theme as string,
     user
   })
 );
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators(
     {
       fetchUser,
@@ -100,24 +103,23 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-class DefaultLayout extends Component {
+class DefaultLayout extends Component<DefaultLayoutProps> {
+  static displayName = 'DefaultLayout';
+
   componentDidMount() {
     const { isSignedIn, fetchUser, pathname, executeGA } = this.props;
-    if (!isSignedIn) {
-      fetchUser();
-    }
-    executeGA({ type: 'page', data: pathname });
+    if (!isSignedIn) fetchUser();
+    executeGA?.({ type: 'page', data: pathname });
 
     window.addEventListener('online', this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: DefaultLayoutProps) {
     const { pathname, executeGA } = this.props;
     const { pathname: prevPathname } = prevProps;
-    if (pathname !== prevPathname) {
-      executeGA({ type: 'page', data: pathname });
-    }
+    if (pathname !== prevPathname)
+      executeGA?.({ type: 'page', data: pathname });
   }
 
   componentWillUnmount() {
@@ -214,7 +216,7 @@ class DefaultLayout extends Component {
           <OfflineWarning
             isOnline={isOnline}
             isServerOnline={isServerOnline}
-            isSignedIn={isSignedIn}
+            isSignedIn={!!isSignedIn}
           />
           {hasMessage && flashMessage ? (
             <Flash
@@ -229,9 +231,6 @@ class DefaultLayout extends Component {
     );
   }
 }
-
-DefaultLayout.displayName = 'DefaultLayout';
-DefaultLayout.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
