@@ -4,7 +4,6 @@
     "./scripts/build/ensure-env.ts"
   ],
   "compilerOptions": {
-    // "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
