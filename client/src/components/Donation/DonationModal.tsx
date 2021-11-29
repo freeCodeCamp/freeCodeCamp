@@ -78,7 +78,7 @@ function DonateModal({
 
   useEffect(() => {
     if (show) {
-      void playTone('dontation');
+      void playTone('donation');
       executeGA({ type: 'modal', data: '/donation-modal' });
       executeGA({
         type: 'event',
