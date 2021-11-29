@@ -9,7 +9,7 @@ dashedName: step-1
 
 A balance sheet is used to track the state of an organization's finances. You'll be building a mock balance sheet for freeCodeCamp to explore the use of various CSS selectors.
 
-Begin with your basic HTML boilerplate. Include the `DOCTYPE` declaration, the appropriate `meta` tags, a `head`, `body`, and `title` element, and `link` your stylesheet.
+Begin with your basic HTML boilerplate. Include the `DOCTYPE` declaration, the appropriate `meta` tags, a `head`, `body`, and `title` element, and `link` your stylesheet. Give the `title` element the text `freeCodeCamp Balance Sheet`.
 
 # --hints--
 

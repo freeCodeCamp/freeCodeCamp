@@ -7,7 +7,7 @@ dashedName: step-16
 
 # --description--
 
-Copy one of your `.row total` elements, with its contents, and paste that into your third `.section` element. Do not copy the other elements - your third `.section` should only have the `.row total`.
+Copy one of your `.row total` elements, with its contents, and paste that into your third `.section` element. Do not copy the other elements.
 
 # --hints--
 
