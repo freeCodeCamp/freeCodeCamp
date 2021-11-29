@@ -16,6 +16,7 @@ import Honesty from '../components/settings/honesty';
 import Internet from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
+import { Themes } from '../components/settings/theme';
 import WebhookToken from '../components/settings/webhook-token';
 import {
   signInLoadingSelector,
@@ -35,7 +36,7 @@ interface ShowSettingsProps {
   navigate: (location: string) => void;
   showLoading: boolean;
   submitNewAbout: () => void;
-  toggleNightMode: (theme: string) => void;
+  toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   updateInternetSettings: () => void;
   updateIsHonest: () => void;
@@ -61,7 +62,7 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: (theme: string) => updateUserFlag({ theme }),
+  toggleNightMode: (theme: Themes) => updateUserFlag({ theme }),
   toggleSoundMode: (sound: boolean) => updateUserFlag({ sound }),
   updateInternetSettings: updateUserFlag,
   updateIsHonest: updateUserFlag,

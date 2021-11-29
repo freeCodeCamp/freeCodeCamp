@@ -11,7 +11,7 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SoundSettings from './sound';
-import ThemeSettings from './theme';
+import ThemeSettings, { Themes } from './theme';
 import UsernameSettings from './username';
 
 type FormValues = {
@@ -23,7 +23,7 @@ type FormValues = {
 
 type AboutProps = {
   about: string;
-  currentTheme: string;
+  currentTheme: Themes;
   location: string;
   name: string;
   picture: string;
@@ -31,7 +31,7 @@ type AboutProps = {
   sound: boolean;
   submitNewAbout: (formValues: FormValues) => void;
   t: TFunction;
-  toggleNightMode: (theme: string) => void;
+  toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   username: string;
 };
