@@ -1,3 +1,4 @@
+import store from 'store';
 import { FlashMessageArg } from '../../components/Flash/redux';
 import { Themes } from '../../components/settings/theme';
 
