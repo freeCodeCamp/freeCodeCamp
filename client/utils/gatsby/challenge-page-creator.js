@@ -1,6 +1,7 @@
 const path = require('path');
+const { createPoly } = require('../../../utils/polyvinyl');
 const { dasherize } = require('../../../utils/slugs');
-
+const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
 const { viewTypes } = require('../challenge-types');
 
 const backend = path.resolve(
@@ -57,7 +58,7 @@ function getTemplateComponent(challengeType) {
 }
 
 exports.createChallengePages = function (createPage) {
-  return function ({ node }, index, thisArray) {
+  return function ({ node: challenge }, index, allChallengeEdges) {
     const {
       superBlock,
       block,
@@ -66,7 +67,7 @@ exports.createChallengePages = function (createPage) {
       template,
       challengeType,
       id
-    } = node;
+    } = challenge;
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
 
@@ -79,15 +80,55 @@ exports.createChallengePages = function (createPage) {
           block,
           template,
           required,
-          nextChallengePath: getNextChallengePath(node, index, thisArray),
-          prevChallengePath: getPrevChallengePath(node, index, thisArray),
+          nextChallengePath: getNextChallengePath(
+            challenge,
+            index,
+            allChallengeEdges
+          ),
+          prevChallengePath: getPrevChallengePath(
+            challenge,
+            index,
+            allChallengeEdges
+          ),
           id
         },
+        projectPreview: getProjectPreviewConfig(challenge, allChallengeEdges),
         slug
       }
     });
   };
 };
+
+function getProjectPreviewConfig(challenge, allChallengeEdges) {
+  const { block, challengeOrder, usesMultifileEditor } = challenge;
+
+  const challengesInBlock = allChallengeEdges
+    .filter(({ node }) => node.block === block)
+    .map(({ node }) => node);
+  const lastChallenge = challengesInBlock[challengesInBlock.length - 1];
+  const solutionToLastChallenge = sortChallengeFiles(
+    lastChallenge.solutions[0] ?? []
+  );
+  const lastChallengeFiles = sortChallengeFiles(
+    lastChallenge.challengeFiles ?? []
+  );
+  const projectPreviewChallengeFiles = lastChallengeFiles.map((file, id) =>
+    createPoly({
+      ...file,
+      contents: solutionToLastChallenge[id]?.contents ?? file.contents
+    })
+  );
+
+  return {
+    showProjectPreview: challengeOrder === 0 && usesMultifileEditor,
+    challengeData: {
+      challengeType: lastChallenge.challengeType,
+      challengeFiles: projectPreviewChallengeFiles,
+      required: lastChallenge.required,
+      template: lastChallenge.template
+    }
+  };
+}
 
 exports.createBlockIntroPages = function (createPage) {
   return function (edge) {

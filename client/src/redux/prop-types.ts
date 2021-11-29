@@ -106,7 +106,7 @@ export type MarkdownRemark = {
 
 type Question = { text: string; answers: string[]; solution: number };
 type Fields = { slug: string; blockName: string; tests: Test[] };
-type Required = {
+export type Required = {
   link: string;
   raw: boolean;
   src: string;
