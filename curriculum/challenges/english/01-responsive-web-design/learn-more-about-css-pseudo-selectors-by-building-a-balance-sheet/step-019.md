@@ -39,7 +39,7 @@ const row = document.querySelectorAll('.section > .row')?.[2];
 assert(row?.querySelectorAll('span')?.[3]?.textContent === '$728');
 ```
 
-Your third `.notes` element should have the text `Funds set aside for emergencies`.
+Your third `.notes` element should have the text `Funds set aside for emergencies.`.
 
 ```js
 const notes = document.querySelectorAll('.section > .notes')?.[2];

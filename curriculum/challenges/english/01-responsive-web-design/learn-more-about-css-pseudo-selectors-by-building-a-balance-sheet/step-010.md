@@ -7,7 +7,7 @@ dashedName: step-10
 
 # --description--
 
-Below the final `.notes` element, create a `p` element with the `class` set to `row total`.
+Below the final `.notes` element, create a `p` element with a `class` of `row` and `total`.
 
 # --hints--
 

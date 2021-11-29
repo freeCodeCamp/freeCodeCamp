@@ -7,7 +7,7 @@ dashedName: step-15
 
 # --description--
 
-Below your second `.section` element, create another `h2` element with the text `Net Worth`. Follow that with a `div` element with the `class` set to `.section`.
+Below your second `.section` element, create another `h2` element with the text `Net Worth`. Follow that with a `div` element with the `class` set to `section`.
 
 # --hints--
 
