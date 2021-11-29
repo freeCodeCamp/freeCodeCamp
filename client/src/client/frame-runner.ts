@@ -133,8 +133,8 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         err: {
           message: (err as Error).message,
           stack: (err as Error).stack,
-          expected: err.expected,
-          actual: err.actual
+          expected: (err as { expected?: string }).expected,
+          actual: (err as { actual?: string }).actual
         }
       };
     }
