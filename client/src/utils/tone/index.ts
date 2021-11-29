@@ -52,7 +52,7 @@ export async function playTone(
         ).toDestination();
         player.autostart = playSound;
         break;
-      case 'tests-complete':
+      case 'tests-completed':
         player = new tone.Player(
           'https://campfire-mode.freecodecamp.org/chal-comp.mp3'
         ).toDestination();
@@ -77,10 +77,6 @@ export async function playTone(
         player.autostart = playSound;
         break;
       default:
-        player = new tone.Player(
-          'https://tonejs.github.io/audio/berklee/guitar_chord1.mp3'
-        ).toDestination();
-        player.autostart = playSound;
         break;
     }
   }

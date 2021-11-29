@@ -6,8 +6,8 @@ import { playTone } from '../../utils/tone';
 import ToggleSetting from './toggle-setting';
 
 export enum Themes {
-  Night,
-  Default
+  Night = 'night',
+  Default = 'default'
 }
 
 type ThemeProps = {
