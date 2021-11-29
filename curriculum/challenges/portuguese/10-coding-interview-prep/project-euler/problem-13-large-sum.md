@@ -8,7 +8,7 @@ dashedName: problem-13-large-sum
 
 # --description--
 
-Abaixo está um número de 150 dígitos. Após somar este número, retorne os 10 primeiros dígitos.
+Abaixo está um número de 150 algarismos. Após somar este número, retorne os 10 primeiros algarismos.
 
 <div style='padding-left: 4em;'>
   37107287533902102798797998220837590246510135740250<br>

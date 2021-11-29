@@ -1,6 +1,6 @@
 ---
 id: 5900f3bc1000cf542c50fecf
-title: 'Problema 80: Expansão de dígitos da raiz quadrada'
+title: 'Problema 80: Expansão de algarismos da raiz quadrada'
 challengeType: 5
 forumTopicId: 302194
 dashedName: problem-80-square-root-digital-expansion
@@ -10,9 +10,9 @@ dashedName: problem-80-square-root-digital-expansion
 
 É do conhecimento geral que se a raiz quadrada de um número natural não é um número inteiro, então é irracional. A expansão decimal de tais raízes quadradas é infinita sem qualquer tipo de padrão de repetição.
 
-A raiz quadrada de dois é `1.41421356237309504880...`. A soma dos dígitos das primeiras cem casas decimais é `475`.
+A raiz quadrada de dois é `1.41421356237309504880...`. A soma dos algarismos das primeiras cem casas decimais é `475`.
 
-Para os primeiros `n` números naturais, encontre o total das somas dos dígitos das primeiras cem casas decimais para todas as raízes quadradas irracionais.
+Para os primeiros `n` números naturais, encontre o total das somas dos algarismos das primeiras cem casas decimais para todas as raízes quadradas irracionais.
 
 # --hints--
 

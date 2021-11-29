@@ -1,6 +1,6 @@
 ---
 id: 5900f53d1000cf542c51004f
-title: 'Problem 464: Möbius function and intervals'
+title: 'Problema 464: Função de Möbius e intervalos'
 challengeType: 5
 forumTopicId: 302139
 dashedName: problem-464-mbius-function-and-intervals
@@ -8,26 +8,33 @@ dashedName: problem-464-mbius-function-and-intervals
 
 # --description--
 
-The Möbius function, denoted μ(n), is defined as:
+A função de Möbius, denotada por $μ(n)$, é definida como:
 
-μ(n) = (-1)ω(n) if n is squarefree (where ω(n) is the number of distinct prime factors of n)
+- $μ(n) = (-1)^{ω(n)}$ se $n$ não tiver quadrados (onde $ω(n)$ é o número de fatores primos distintos de $n$)
+- $μ(n) = 0$ se $n$ não for sem quadrados.
 
-μ(n) = 0 if n is not squarefree.
+Considere $P(a, b)$ como a quantidade de números inteiros $n$ no intervalo $[a, b]$, tal que $μ(n) = 1$.
 
-Let P(a,b) be the number of integers n in the interval \[a,b] such that μ(n) = 1. Let N(a,b) be the number of integers n in the interval \[a,b] such that μ(n) = -1. For example, P(2,10) = 2 and N(2,10) = 4.
+Considere $N(a, b)$ como a quantidade de números inteiros $n$ no intervalo $[a, b]$, tal que $μ(n) = -1$.
 
-Let C(n) be the number of integer pairs (a,b) such that: 1 ≤ a ≤ b ≤ n, 99·N(a,b) ≤ 100·P(a,b), and 99·P(a,b) ≤ 100·N(a,b).
+Por exemplo, $P(2, 10) = 2$ e $N(2, 10) = 4$.
 
-For example, C(10) = 13, C(500) = 16676 and C(10 000) = 20155319.
+Considere $C(n)$ como a quantidade de pares de números inteiros $(a, b)$, tal que:
 
-Find C(20 000 000).
+- $1 ≤ a ≤ b ≤ n$,
+- $99 \times N(a, b) ≤ 100 \times P(a, b)$, e
+- $99 \times P(a, b) ≤ 100 \times N(a, b)$.
+
+Por exemplo, $C(10) = 13$, $C(500) = 16.676$ e $C(10.000) = 20.155.319$.
+
+Encontre $C(20.000.000)$.
 
 # --hints--
 
-`euler464()` should return 198775297232878.
+`mobiusFunctionAndIntervals()` deve retornar `198775297232878`.
 
 ```js
-assert.strictEqual(euler464(), 198775297232878);
+assert.strictEqual(mobiusFunctionAndIntervals(), 198775297232878);
 ```
 
 # --seed--
@@ -35,12 +42,12 @@ assert.strictEqual(euler464(), 198775297232878);
 ## --seed-contents--
 
 ```js
-function euler464() {
+function mobiusFunctionAndIntervals() {
 
   return true;
 }
 
-euler464();
+mobiusFunctionAndIntervals();
 ```
 
 # --solutions--

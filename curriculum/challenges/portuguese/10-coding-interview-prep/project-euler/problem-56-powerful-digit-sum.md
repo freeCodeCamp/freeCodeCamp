@@ -1,6 +1,6 @@
 ---
 id: 5900f3a41000cf542c50feb7
-title: 'Problema 56: Poderosa soma de dígitos'
+title: 'Problema 56: Poderosa soma de algarismos'
 challengeType: 5
 forumTopicId: 302167
 dashedName: problem-56-powerful-digit-sum
@@ -10,7 +10,7 @@ dashedName: problem-56-powerful-digit-sum
 
 Um googol ($10^{100}$) é um número absurdamente enorme: um seguido por cem zeros. Já $100^{100}$ é quase inimaginavelmente grande: um seguido por duzentos zeros. Apesar do seu tamanho, a soma dos algarismos em cada número é de apenas 1.
 
-Considerando os números naturais da fórmula $a^b$, onde `a`, `b` &lt; `n`, qual é a soma máxima dos dígitos?
+Considerando os números naturais da fórmula $a^b$, onde `a`, `b` &lt; `n`, qual é a soma máxima dos algarismos?
 
 # --hints--
 

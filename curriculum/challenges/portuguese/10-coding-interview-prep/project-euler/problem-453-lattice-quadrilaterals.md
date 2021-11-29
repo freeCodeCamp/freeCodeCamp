@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510044
-title: 'Problem 453: Lattice Quadrilaterals'
+title: 'Problema 453: Quadriláteros da rede'
 challengeType: 5
 forumTopicId: 302126
 dashedName: problem-453-lattice-quadrilaterals
@@ -8,22 +8,24 @@ dashedName: problem-453-lattice-quadrilaterals
 
 # --description--
 
-A simple quadrilateral is a polygon that has four distinct vertices, has no straight angles and does not self-intersect.
+Um quadrilátero simples é um polígono que tem quatro vértices distintos, não tem ângulos retos e não cruza a si mesmo.
 
-Let Q(m, n) be the number of simple quadrilaterals whose vertices are lattice points with coordinates (x,y) satisfying 0 ≤ x ≤ m and 0 ≤ y ≤ n.
+Considere $Q(m, n)$ como o número de quadriláteros simples cujos vértices são pontos da rede com coordenadas ($x$, $y$) satisfazendo $0 ≤ x ≤ m$ e $0 ≤ y ≤ n$.
 
-For example, Q(2, 2) = 94 as can be seen below:
+Por exemplo, $Q(2, 2) = 94$ pode ser visto abaixo:
 
-It can also be verified that Q(3, 7) = 39590, Q(12, 3) = 309000 and Q(123, 45) = 70542215894646.
+<img class="img-responsive center-block" alt="94 quadriláteros cujos vértices são pontos da rede com coordenadas (x, y) satisfazendo 0 &le; x &le; m e 0 &le; y &le; n" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
 
-Find Q(12345, 6789) mod 135707531.
+Também é possível verificar que $Q(3, 7) = 39.590$, $Q(12, 3) = 309.000$ e $Q(123, 45) = 70.542.215.894.646$.
+
+Encontre $Q(12.345, 6.789)\bmod 135.707.531$.
 
 # --hints--
 
-`euler453()` should return 104354107.
+`latticeQuadrilaterals()` deve retornar `104354107`.
 
 ```js
-assert.strictEqual(euler453(), 104354107);
+assert.strictEqual(latticeQuadrilaterals(), 104354107);
 ```
 
 # --seed--
@@ -31,12 +33,12 @@ assert.strictEqual(euler453(), 104354107);
 ## --seed-contents--
 
 ```js
-function euler453() {
+function latticeQuadrilaterals() {
 
   return true;
 }
 
-euler453();
+latticeQuadrilaterals();
 ```
 
 # --solutions--
