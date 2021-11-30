@@ -36,7 +36,7 @@ const Intro = ({
   const buttonVariation = (email: string | undefined): string => {
     if (!email || emailToABVariant(email).isAVariant)
       return t('buttons.donate');
-    return t('buttons.support-out-nonprofit');
+    return t('buttons.support-our-nonprofit');
   };
   if (pending && !complete) {
     return (
