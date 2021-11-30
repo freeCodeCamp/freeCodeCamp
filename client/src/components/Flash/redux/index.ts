@@ -4,14 +4,6 @@ import { playTone } from '../../../utils/tone';
 
 export const FlashApp = 'flash';
 
-const initialState = {
-  message: {
-    id: '',
-    type: '',
-    message: ''
-  }
-};
-
 export const sagas = [];
 
 export const flashMessageSelector = (state: State): FlashState['message'] =>
@@ -24,10 +16,54 @@ enum FlashActionTypes {
   RemoveFlashMessage = 'removeFlashMessage'
 }
 
+export enum FlashMessages {
+  IncompleteSteps = 'flash.incomplete-steps',
+  CertClaimSuccess = 'flash.cert-claim-success',
+  SigninSuccess = 'flash.signin-success',
+  EmailValid = 'flash.email-valid',
+  AlreadyClaimed = 'flash.already-claimed',
+  WrongName = 'flash.wrong-name',
+  NameNeeded = 'flash.name-needed',
+  UsernameNotFound = 'flash.username-not-found',
+  AddNameSuccess = 'flash.add-name',
+  NotEligible = 'flash.not-eligible',
+  ProfilePrivate = 'flash.profile-private',
+  CertsPrivate = 'flash.certs-private',
+  NotHonest = 'flash.not-honest',
+  UserNotCertified = 'flash.user-not-certified',
+  WrongUpdating = 'flash.wrong-updating',
+  UpdatedPreferences = 'flash.updated-preferences',
+  UsernameUsed = 'flash.username-used',
+  UsernameTaken = 'flash.username-taken',
+  UsernameUpdated = 'flash.username-updated',
+  CreateTokenErr = 'flash.create-token-err',
+  DeleteTokenErr = 'flash.delete-token-err',
+  ProvideUsername = 'flash.provide-username',
+  ReportSent = 'flash.report-sent',
+  HonestFirst = 'flash.honest-first',
+  TokenCreated = 'flash.token-created',
+  TokenDeleted = 'flash.token-deleted',
+  AccountDeleted = 'flash.account-deleted',
+  ProgressReset = 'flash.progress-reset',
+  CertificateMissing = 'flash.certificate-missing',
+  ReallyWeird = 'flash.really-weird',
+  NotRight = 'flash.not-right',
+  WentWrong = 'flash.went-wrong',
+  None = ''
+}
+
 export type FlashMessageArg = {
   type: string;
-  message: string;
+  message: FlashMessages;
   variables?: Record<string, unknown>;
+};
+
+const initialState = {
+  message: {
+    id: '',
+    type: '',
+    message: FlashMessages.None
+  }
 };
 
 export const createFlashMessage = (

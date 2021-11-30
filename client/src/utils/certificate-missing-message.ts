@@ -1,6 +1,8 @@
+import { FlashMessages } from '../components/Flash/redux';
+
 const certificateMissingErrorMessage = {
   type: 'danger',
-  message: 'flash.certificate-missing'
+  message: FlashMessages.CertificateMissing
 };
 
 export default certificateMissingErrorMessage;

@@ -9,7 +9,10 @@ import {
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../../config/certification-settings';
-import { createFlashMessage } from '../../../components/Flash/redux';
+import {
+  createFlashMessage,
+  FlashMessages
+} from '../../../components/Flash/redux';
 import {
   userFetchStateSelector,
   stepsToClaimSelector,
@@ -41,7 +44,7 @@ const propTypes = {
 
 const honestyInfoMessage = {
   type: 'info',
-  message: 'flash.honest-first'
+  message: FlashMessages.HonestFirst
 };
 
 const mapStateToProps = state => {
