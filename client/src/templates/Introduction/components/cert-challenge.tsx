@@ -53,7 +53,7 @@ const mapStateToProps = (state: unknown) => {
       fetchState,
       isSignedIn
     })
-  )(state);
+  )(state as Record<string, unknown>);
 };
 
 const mapDispatchToProps = {
