@@ -167,7 +167,8 @@ config/i18n/all-langs.js
 config/certification-settings.js
 
 tools/scripts/build/ensure-env.js
-tools/scripts/build/tsconfig.tsbuildinfo
+tools/tsconfig.tsbuildinfo
+tools/scripts/lint/validate-keys.js
 
 ### vim ###
 # Swap
