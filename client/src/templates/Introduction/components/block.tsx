@@ -32,7 +32,7 @@ const mapStateToProps = (
       isExpanded,
       completedChallengeIds: completedChallenges.map(({ id }) => id)
     })
-  )(state);
+  )(state as Record<string, unknown>);
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
