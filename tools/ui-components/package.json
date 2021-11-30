@@ -20,7 +20,7 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "dependencies": {
     "@babel/preset-typescript": "7.16.0",
-    "@types/node": "16.11.10",
+    "@types/node": "16.11.11",
     "@types/react": "17.0.37",
     "@types/react-dom": "17.0.11",
     "react": "16.14.0",
