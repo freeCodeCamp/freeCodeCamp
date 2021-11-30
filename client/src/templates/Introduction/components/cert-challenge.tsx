@@ -1,13 +1,13 @@
 import { Button } from '@freecodecamp/react-bootstrap';
 import { navigate } from 'gatsby-link';
-import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   certSlugTypeMap,
-  superBlockCertTypeMap
+  superBlockCertTypeMap,
+  SuperBlocks
 } from '../../../../../config/certification-settings';
 import {
   createFlashMessage,
@@ -18,41 +18,40 @@ import {
   stepsToClaimSelector,
   isSignedInSelector
 } from '../../../redux';
-
-import { StepsPropType, UserPropType } from '../../../redux/prop-types';
+import { User, Steps } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings';
-
 import { certMap } from '../../../resources/cert-and-project-map';
 import { getVerifyCanClaimCert } from '../../../utils/ajax';
-import CertificationCard from './CertificationCard';
+import CertificationCard from './certification-card';
 
-const propTypes = {
-  createFlashMessage: PropTypes.func.isRequired,
-  fetchState: PropTypes.shape({
-    pending: PropTypes.bool,
-    complete: PropTypes.bool,
-    errored: PropTypes.bool
-  }),
-  isSignedIn: PropTypes.bool,
-  steps: StepsPropType,
-  superBlock: PropTypes.string,
-  t: PropTypes.func,
-  title: PropTypes.string,
-  user: UserPropType,
-  verifyCert: PropTypes.func.isRequired
-};
+interface CertChallengeProps {
+  createFlashMessage: typeof createFlashMessage;
+  fetchState: {
+    pending: boolean;
+    complete: boolean;
+    errored: boolean;
+    error: null | string;
+  };
+  isSignedIn: boolean;
+  steps: Steps;
+  superBlock: SuperBlocks;
+  t: TFunction;
+  title: typeof certMap[number]['title'];
+  user: User;
+  verifyCert: typeof verifyCert;
+}
 
 const honestyInfoMessage = {
   type: 'info',
   message: FlashMessages.HonestFirst
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: unknown) => {
   return createSelector(
     stepsToClaimSelector,
     userFetchStateSelector,
     isSignedInSelector,
-    (steps, fetchState, isSignedIn) => ({
+    (steps, fetchState: CertChallengeProps['fetchState'], isSignedIn) => ({
       steps,
       fetchState,
       isSignedIn
@@ -75,7 +74,7 @@ const CertChallenge = ({
   fetchState,
   isSignedIn,
   user: { isHonest, username }
-}) => {
+}: CertChallengeProps): JSX.Element => {
   const [canClaimCert, setCanClaimCert] = useState(false);
   const [certVerificationMessage, setCertVerificationMessage] = useState('');
   const [isCertified, setIsCertified] = useState(false);
@@ -91,7 +90,7 @@ const CertChallenge = ({
 
   useEffect(() => {
     if (username) {
-      (async () => {
+      void (async () => {
         try {
           const data = await getVerifyCanClaimCert(username, superBlock);
           const { status, result } = data?.response?.message;
@@ -106,7 +105,8 @@ const CertChallenge = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [username]);
 
-  const { certSlug } = certMap.find(x => x.title === title);
+  // @ts-expect-error Typescript is confused
+  const certSlug = certMap.find(x => x.title === title).certSlug;
 
   useEffect(() => {
     const { pending, complete } = fetchState;
@@ -116,20 +116,26 @@ const CertChallenge = ({
     }
   }, [fetchState]);
 
+  const certSlugTypeMapTyped: { [key: string]: string } = certSlugTypeMap;
+  const superBlockCertTypeMapTyped: { [key: string]: string } =
+    superBlockCertTypeMap;
+
   useEffect(() => {
     setIsCertified(
       steps?.currentCerts?.find(
-        cert =>
-          certSlugTypeMap[cert.certSlug] === superBlockCertTypeMap[superBlock]
+        (cert: { certSlug: string }) =>
+          certSlugTypeMapTyped[cert.certSlug] ===
+          superBlockCertTypeMapTyped[superBlock]
       )?.show ?? false
     );
 
     const projectsCompleted =
       canClaimCert || certVerificationMessage === 'projects-completed';
+    const projectsCompletedNumber = projectsCompleted ? 1 : 0;
     const completedCount =
       Object.values(steps).filter(
         stepVal => typeof stepVal === 'boolean' && stepVal
-      ).length + projectsCompleted;
+      ).length + projectsCompletedNumber;
     const numberOfSteps = Object.keys(steps).length;
     setHasCompletedRequiredSteps(completedCount === numberOfSteps);
     setStepState({ numberOfSteps, completedCount });
@@ -148,15 +154,16 @@ const CertChallenge = ({
     isSignedIn &&
     (!isCertified || (!hasCompletedRequiredSteps && verificationComplete));
 
-  const createClickHandler = certSlug => e => {
-    e.preventDefault();
-    if (isCertified) {
-      return navigate(certLocation);
-    }
-    return isHonest
-      ? verifyCert(certSlug)
-      : createFlashMessage(honestyInfoMessage);
-  };
+  const createClickHandler =
+    (certSlug: string | undefined) => (e: { preventDefault: () => void }) => {
+      e.preventDefault();
+      if (isCertified) {
+        return navigate(certLocation);
+      }
+      return isHonest
+        ? verifyCert(certSlug)
+        : createFlashMessage(honestyInfoMessage);
+    };
   return (
     <div className='block'>
       {showCertificationCard && (
@@ -191,7 +198,6 @@ const CertChallenge = ({
 };
 
 CertChallenge.displayName = 'CertChallenge';
-CertChallenge.propTypes = propTypes;
 
 export { CertChallenge };
 

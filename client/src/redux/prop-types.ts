@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../config/certification-settings';
 import { Themes } from '../components/settings/theme';
+import { certMap } from '../resources/cert-and-project-map';
 
 export const UserPropType = PropTypes.shape({
   about: PropTypes.string,
@@ -64,12 +65,13 @@ export const CurrentCertsPropType = PropTypes.arrayOf(
   })
 );
 
-export const StepsPropType = PropTypes.shape({
-  currentCerts: CurrentCertsPropType,
-  isShowCerts: PropTypes.bool,
-  isShowName: PropTypes.bool,
-  isShowProfile: PropTypes.bool
-});
+export type Steps = {
+  isHonest?: boolean;
+  currentCerts?: Array<CurrentCert>;
+  isShowCerts?: boolean;
+  isShowName?: boolean;
+  isShowProfile?: boolean;
+};
 
 export type CurrentCert = {
   show: boolean;
@@ -84,7 +86,7 @@ export type MarkdownRemark = {
     block: string;
     isBeta: boolean;
     superBlock: SuperBlocks;
-    title: string;
+    title: typeof certMap[number]['title'];
   };
   headings: [
     {

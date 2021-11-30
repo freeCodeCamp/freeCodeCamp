@@ -4,6 +4,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import Intro from '../components/Intro';
@@ -13,7 +14,8 @@ import LearnLayout from '../components/layouts/learn';
 import {
   userFetchStateSelector,
   isSignedInSelector,
-  userSelector
+  userSelector,
+  executeGA
 } from '../redux';
 
 interface FetchState {
@@ -23,6 +25,7 @@ interface FetchState {
 }
 
 interface User {
+  email: string;
   name: string;
   username: string;
   completedChallengeCount: number;
@@ -53,12 +56,18 @@ interface LearnPageProps {
       fields: Slug;
     };
   };
+  executeGA: (payload: Record<string, unknown>) => void;
 }
+
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators({ executeGA }, dispatch);
 
 function LearnPage({
   isSignedIn,
+  user,
   fetchState: { pending, complete },
   user: { name = '', completedChallengeCount = 0 },
+  executeGA,
   data: {
     challengeNode: {
       fields: { slug }
@@ -66,6 +75,16 @@ function LearnPage({
   }
 }: LearnPageProps) {
   const { t } = useTranslation();
+
+  const onAlertClick = () => {
+    executeGA({
+      type: 'event',
+      data: {
+        category: 'Donation Related',
+        action: `learn donation alert click`
+      }
+    });
+  };
 
   return (
     <LearnLayout>
@@ -76,8 +95,10 @@ function LearnPage({
             <Intro
               complete={complete}
               completedChallengeCount={completedChallengeCount}
+              email={user.email}
               isSignedIn={isSignedIn}
               name={name}
+              onAlertClick={onAlertClick}
               pending={pending}
               slug={slug}
             />
@@ -92,7 +113,7 @@ function LearnPage({
 
 LearnPage.displayName = 'LearnPage';
 
-export default connect(mapStateToProps)(LearnPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LearnPage);
 
 export const query = graphql`
   query FirstChallenge {
