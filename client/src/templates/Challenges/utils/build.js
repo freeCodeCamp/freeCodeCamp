@@ -145,12 +145,13 @@ async function getDOMTestRunner(buildData, { proxyLogger }, document) {
     runTestInTestFrame(document, testString, testTimeout);
 }
 
-export function buildDOMChallenge({
-  challengeFiles,
-  required = [],
-  template = ''
-}) {
-  const finalRequires = [...globalRequires, ...required, ...frameRunner];
+export function buildDOMChallenge(
+  { challengeFiles, required = [], template = '' },
+  { usesTestRunner }
+) {
+  const finalRequires = [...globalRequires, ...required];
+  if (usesTestRunner) finalRequires.push(...frameRunner);
+
   const loadEnzyme = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
