@@ -48,7 +48,7 @@
     "postcss": "8.4.4",
     "postcss-import": "14.0.2",
     "rimraf": "3.0.2",
-    "rollup": "2.60.1",
+    "rollup": "2.60.2",
     "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-terser": "7.0.2",
     "tailwindcss": "2.2.19"
