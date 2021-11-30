@@ -1,10 +1,10 @@
 ---
-title: Introduction to the Learn CSS Flexbox by Building a Photo Gallery
-block: learn-css-flexbox-by-building-a-photo-gallery
+title: Introduction to the Learn CSS Flexbox by Building a Photo Gallery Project
+block: Learn CSS Flexbox by Building a Photo Gallery
 superBlock: Responsive Web Design
 isBeta: true
 ---
 
-## Introduction to the Learn CSS Flexbox by Building a Photo Gallery
+## Introduction to the Learn CSS Flexbox by Building a Photo Gallery Project
 
 This is a test for the new project-based curriculum.
