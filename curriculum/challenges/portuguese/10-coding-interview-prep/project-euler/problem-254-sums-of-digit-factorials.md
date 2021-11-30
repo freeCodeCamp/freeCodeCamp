@@ -1,6 +1,6 @@
 ---
 id: 5900f46b1000cf542c50ff7d
-title: 'Problema 254: Soma de dígitos fatoriais'
+title: 'Problema 254: Soma de algarismos fatoriais'
 challengeType: 5
 forumTopicId: 301902
 dashedName: problem-254-sums-of-digit-factorials

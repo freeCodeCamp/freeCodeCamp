@@ -1,6 +1,6 @@
 ---
 id: 5900f5331000cf542c510046
-title: 'Problem 455: Powers With Trailing Digits'
+title: 'Problema 455: Potências com algarismos à direita'
 challengeType: 5
 forumTopicId: 302129
 dashedName: problem-455-powers-with-trailing-digits
@@ -8,18 +8,20 @@ dashedName: problem-455-powers-with-trailing-digits
 
 # --description--
 
-Let f(n) be the largest positive integer x less than 109 such that the last 9 digits of nx form the number x (including leading zeros), or zero if no such integer exists.
+Considere $f(n)$ como o maior número inteiro positivo $x$ inferior a ${10}^9$, tal que os últimos 9 algarismos de $n^x$ formam o número $x$ (incluindo zeros à esquerda) ou zero, se nenhum número inteiro desse tipo existir.
 
-For example:
+Por exemplo:
 
-f(4) = 411728896 (4411728896 = ...490411728896) f(10) = 0 f(157) = 743757 (157743757 = ...567000743757) Σf(n), 2 ≤ n ≤ 103 = 442530011399 Find Σf(n), 2 ≤ n ≤ 106.
+$$\begin{align} & f(4) = 411.728.896 (4^{411.728.896} = ...490\underline{411728896}) \\\\ & f(10) = 0 \\\\ & f(157) = 743.757 (157^{743.757} = ...567\underline{000743757}) \\\\ & Σf(n), 2 ≤ n ≤ 103 = 442.530.011.399 \end{align}$$
+
+Encontre $\sum f(n)$, $2 ≤ n ≤ {10}^6$.
 
 # --hints--
 
-`euler455()` should return 450186511399999.
+`powersWithTrailingDigits()` deve retornar `450186511399999`.
 
 ```js
-assert.strictEqual(euler455(), 450186511399999);
+assert.strictEqual(powersWithTrailingDigits(), 450186511399999);
 ```
 
 # --seed--
@@ -27,12 +29,12 @@ assert.strictEqual(euler455(), 450186511399999);
 ## --seed-contents--
 
 ```js
-function euler455() {
+function powersWithTrailingDigits() {
 
   return true;
 }
 
-euler455();
+powersWithTrailingDigits();
 ```
 
 # --solutions--

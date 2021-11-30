@@ -8,11 +8,11 @@ dashedName: problem-49-prime-permutations
 
 # --description--
 
-A sequência aritmética, 1487, 4817, 8147, em que cada um dos termos aumenta em 3330, é incomum por dois motivos: (i) todos os três números são primos, e, (ii) cada um dos números de 4 dígitos são permutações um do outro.
+A sequência aritmética, 1487, 4817, 8147, em que cada um dos termos aumenta em 3330, é incomum por dois motivos: (i) todos os três números são primos, e, (ii) cada um dos números de 4 algarismos são permutações um do outro.
 
-Não existem sequências aritméticas de números primos de 1, 2 ou 3 dígitos que possuem essas mesmas propriedades. Mas existe outra sequência crescente de 4 dígitos.
+Não existem sequências aritméticas de números primos de 1, 2 ou 3 dígitos que possuem essas mesmas propriedades. Mas existe outra sequência crescente de 4 algarismos.
 
-Qual número de 12 dígitos você forma ao concatenar os três termos nessa sequência?
+Qual número de 12 algarismos você forma ao concatenar os três termos nessa sequência?
 
 # --hints--
 

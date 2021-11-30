@@ -1,6 +1,6 @@
 ---
 id: 5900f5151000cf542c510028
-title: 'Problem 425: Prime connection'
+title: 'Problema 425: Conexão de números primos'
 challengeType: 5
 forumTopicId: 302095
 dashedName: problem-425-prime-connection
@@ -8,26 +8,29 @@ dashedName: problem-425-prime-connection
 
 # --description--
 
-Two positive numbers A and B are said to be connected (denoted by "A ↔ B") if one of these conditions holds:
+Dois números positivos $A$ e $B$ devem ser conectados (denotado por "$A ↔ B$") se uma destas condições se mantiver:
 
-(1) A and B have the same length and differ in exactly one digit; for example, 123 ↔ 173.
+1. $A$ e $B$ têm o mesmo comprimento e diferem em exatamente um algarismo; por exemplo, $123 ↔ 173$.
+2. Adicionar um algarismo à esquerda de $A$ (ou $B$) gera $B$ (ou $A$); por exemplo, $23 ↔ 223$ e $123 ↔ 23$.
 
-(2) Adding one digit to the left of A (or B) makes B (or A); for example, 23 ↔ 223 and 123 ↔ 23.
+Chamamos um número primo $P$ um parente de 2 se existir uma cadeia de primos conectados entre 2 e $P$ e se nenhum primo na cadeia exceder $P$.
 
-We call a prime P a 2's relative if there exists a chain of connected primes between 2 and P and no prime in the chain exceeds P.
+Por exemplo, 127 é um parente de 2. Uma das cadeias possíveis é mostrada abaixo:
 
-For example, 127 is a 2's relative. One of the possible chains is shown below: 2 ↔ 3 ↔ 13 ↔ 113 ↔ 103 ↔ 107 ↔ 127 However, 11 and 103 are not 2's relatives.
+$$2 ↔ 3 ↔ 13 ↔ 113 ↔ 103 ↔ 107 ↔ 127$$
 
-Let F(N) be the sum of the primes ≤ N which are not 2's relatives. We can verify that F(103) = 431 and F(104) = 78728.
+No entanto, 11 e 103 não são parentes de 2.
 
-Find F(107).
+Considere $F(N)$ como a soma dos primos $≤ N$ que não são parentes de 2. Pode-se verificar que $F({10}^3) = 431$ e que $F({10}^4) = 78.728.$.
+
+Encontre $F({10}^7)$.
 
 # --hints--
 
-`euler425()` should return 46479497324.
+`primeConnection()` deve retornar `46479497324`.
 
 ```js
-assert.strictEqual(euler425(), 46479497324);
+assert.strictEqual(primeConnection(), 46479497324);
 ```
 
 # --seed--
@@ -35,12 +38,12 @@ assert.strictEqual(euler425(), 46479497324);
 ## --seed-contents--
 
 ```js
-function euler425() {
+function primeConnection() {
 
   return true;
 }
 
-euler425();
+primeConnection();
 ```
 
 # --solutions--

@@ -19,7 +19,7 @@ interface IntroProps {
   slug?: string;
   username?: string;
   email?: string;
-  onAlertClick: () => void;
+  onAlertClick?: () => void;
 }
 
 const Intro = ({

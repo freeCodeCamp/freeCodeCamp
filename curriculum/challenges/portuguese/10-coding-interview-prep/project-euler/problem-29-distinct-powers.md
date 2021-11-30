@@ -8,7 +8,7 @@ dashedName: problem-29-distinct-powers
 
 # --description--
 
-Considere todas as combinações de ab onde 2 ≤ a ≤ 5 e 2 ≤ b ≤ 5:
+Considere todas as combinações de números inteiros de $a^b$ para 2 ≤ a ≤ 5 e 2 ≤ b ≤ 5:
 
 <div style='padding-left: 4em;'>
   2<sup>2</sup>=4, 2<sup>3</sup>=8, 2<sup>4</sup>=16, 2<sup>5</sup>=32 <br>
@@ -23,7 +23,7 @@ Se eles forem colocados em ordem numérica, com quaisquer repetições removidas
   4, 8, 9, 16, 25, 27, 32, 64, 81, 125, 243, 256, 625, 1024, 3125
 </div>
 
-Quantos termos distintos existem na sequência `ab` onde 2 ≤ `a` ≤ `n` and 2 ≤ `b` ≤ `n`?
+Quantos termos distintos estão na sequência gerada por $a^b$ para 2 ≤ `a` ≤ `n` e 2 ≤ `b` ≤ `n`?
 
 # --hints--
 

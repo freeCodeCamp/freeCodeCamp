@@ -105,4 +105,4 @@ When renaming a single challenge file, you need to:
 
 ## The `dashedName` Property
 
-The `dashedName` property is used to generate the URL path for the superblock, block, or challenge. These should generally match what the `/utils/dasherize.js` helper would output for the file name.
+The `dashedName` property is used to generate the URL path for the superblock, block, or challenge. These should generally match what the `/utils/slugs.js` helper would output for the file name.

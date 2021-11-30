@@ -1,30 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { withTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
+import { useTranslation } from 'react-i18next';
 
-import { previewMounted } from '../redux';
+import { mainPreviewId } from '../utils/frame';
 
 import './preview.css';
-
-const mainId = 'fcc-main-frame';
-
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(
-    {
-      previewMounted
-    },
-    dispatch
-  );
 
 interface PreviewProps {
   className?: string;
   disableIframe?: boolean;
   previewMounted: () => void;
-  t: (text: string) => string;
+  previewId?: string;
 }
 
-function Preview({ disableIframe, previewMounted, t }: PreviewProps) {
+function Preview({
+  disableIframe,
+  previewMounted,
+  previewId
+}: PreviewProps): JSX.Element {
+  const { t } = useTranslation();
   const [iframeStatus, setIframeStatus] = useState<boolean | undefined>(false);
   const iframeToggle = iframeStatus ? 'disable' : 'enable';
 
@@ -36,11 +29,14 @@ function Preview({ disableIframe, previewMounted, t }: PreviewProps) {
     setIframeStatus(disableIframe);
   }, [disableIframe]);
 
+  // TODO: remove type assertion once frame.js has been migrated.
+  const id: string = previewId ?? (mainPreviewId as string);
+
   return (
     <div className={`notranslate challenge-preview ${iframeToggle}-iframe`}>
       <iframe
         className={'challenge-preview-frame'}
-        id={mainId}
+        id={id}
         title={t('learn.chal-preview')}
       />
     </div>
@@ -49,4 +45,4 @@ function Preview({ disableIframe, previewMounted, t }: PreviewProps) {
 
 Preview.displayName = 'Preview';
 
-export default connect(null, mapDispatchToProps)(withTranslation()(Preview));
+export default Preview;

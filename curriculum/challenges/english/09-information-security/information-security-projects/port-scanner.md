@@ -32,7 +32,7 @@ get_open_ports("www.stackoverflow.com", [79, 82])
 
 The function should return a list of open ports in the given range.
 
-The `get_open_ports` function should also take an optional third argument of `True` to indicate "Verbose" mode. If this is set to true, the function shourd return a descriptive string instead of a list of ports.
+The `get_open_ports` function should also take an optional third argument of `True` to indicate "Verbose" mode. If this is set to true, the function should return a descriptive string instead of a list of ports.
 
 Here is the format of the string that should be returned in verbose mode (text inside `{}` indicates the information that should appear):
 

@@ -28,6 +28,9 @@ import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Output from '../components/output';
 import Preview from '../components/preview';
+import ProjectPreviewModal, {
+  PreviewConfig
+} from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
@@ -41,7 +44,10 @@ import {
   initConsole,
   initTests,
   isChallengeCompletedSelector,
-  updateChallengeMeta
+  previewMounted,
+  updateChallengeMeta,
+  openModal,
+  setEditorFocusability
 } from '../redux';
 import { getGuideUrl } from '../utils';
 import MultifileEditor from './MultifileEditor';
@@ -68,7 +74,10 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       executeChallenge,
-      cancelTests
+      cancelTests,
+      previewMounted,
+      openModal,
+      setEditorFocusability
     },
     dispatch
   );
@@ -87,10 +96,13 @@ interface ShowClassicProps {
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
+    projectPreview: PreviewConfig & { showProjectPreview: boolean };
   };
   t: TFunction;
   tests: Test[];
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
+  openModal: (modal: string) => void;
+  setEditorFocusability: (canFocus: boolean) => void;
 }
 
 interface ShowClassicState {
@@ -231,6 +243,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       initConsole,
       initTests,
       updateChallengeMeta,
+      openModal,
       data: {
         challengeNode: {
           challengeFiles,
@@ -240,11 +253,15 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           helpCategory
         }
       },
-      pageContext: { challengeMeta }
+      pageContext: {
+        challengeMeta,
+        projectPreview: { showProjectPreview }
+      }
     } = this.props;
     initConsole('');
     createFiles(challengeFiles ?? []);
     initTests(tests);
+    if (showProjectPreview) openModal('projectPreview');
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -358,7 +375,11 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   renderPreview() {
     return (
-      <Preview className='full-height' disableIframe={this.state.resizing} />
+      <Preview
+        className='full-height'
+        disableIframe={this.state.resizing}
+        previewMounted={previewMounted}
+      />
     );
   }
 
@@ -383,7 +404,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const {
       executeChallenge,
       pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath },
+        projectPreview
       },
       challengeFiles,
       t
@@ -443,6 +465,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
+          <ProjectPreviewModal previewConfig={projectPreview} />
         </LearnLayout>
       </Hotkeys>
     );
@@ -456,9 +479,6 @@ export default connect(
   mapDispatchToProps
 )(withTranslation()(ShowClassic));
 
-// TODO: handle jsx (not sure why it doesn't get an editableRegion) EDIT:
-// probably because the dummy challenge didn't include it, so Gatsby couldn't
-// infer it.
 export const query = graphql`
   query ClassicChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {

@@ -1,7 +1,7 @@
 ---
 id: 5900f4881000cf542c50ff9a
 title: >-
-  Problema 283: Triângulos com lados de números inteiros para os quais a proporção de área * perímetro é um número inteiro
+  Problema 283: Triângulos com lados de números inteiros para os quais a proporção de área / perímetro é um número inteiro
 challengeType: 5
 forumTopicId: 301934
 dashedName: >-
