@@ -24,7 +24,7 @@ Considere $f(k)$ como o número de movimentos vencedores do primeiro jogador (ou
 
 Por exemplo, $f(5) = 1$ e $f(10) = 17$.
 
-Encontre $f(10000)$. Dê os últimos 18 dígitos da sua resposta.
+Encontre $f(10000)$. Dê os últimos 18 algarismos da sua resposta.
 
 # --hints--
 

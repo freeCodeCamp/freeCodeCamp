@@ -11,7 +11,7 @@ dashedName: problem-20-factorial-digit-sum
 `n`! significa `n` × (`n` - 1) × ... × 3 × 2 × 1
 
 Por exemplo: 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800.   
-E a soma dos dígitos no número 10! é 3 + 6 + 2 + 8 + 8 + 0 + 0 + 0 = 27.
+E a soma dos algarismos no número 10! é 3 + 6 + 2 + 8 + 8 + 0 + 0 + 0 = 27.
 
 Encontre a soma dos algarismos de `n`!
 

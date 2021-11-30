@@ -16,7 +16,7 @@ $$\begin{array}{} 6 & 3 & 3 & 0 \\\\ 5 & 0 & 4 & 3 \\\\ 0 & 7 & 1 & 4 \\\\ 1 & 2
 
 a soma de cada linha e de cada coluna tem o valor 12. Além disso, a soma de cada diagonal também é 12.
 
-De quantas maneiras você pode preencher uma grade 4x4 com os dígitos $d$, sendo que $0 ≤ d ≤ 9$, de modo que cada linha, cada coluna e as duas diagonais tenham a mesma soma?
+De quantas maneiras você pode preencher uma grade 4x4 com os algarismos $d$, sendo que $0 ≤ d ≤ 9$, de modo que cada linha, cada coluna e as duas diagonais tenham a mesma soma?
 
 # --hints--
 

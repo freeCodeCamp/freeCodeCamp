@@ -39,7 +39,8 @@ const initialState = {
     completion: false,
     help: false,
     video: false,
-    reset: false
+    reset: false,
+    projectPreview: false
   },
   projectFormValues: {},
   successMessage: 'Happy Coding!'
@@ -61,21 +62,16 @@ export const sagas = [
 export const createFiles = createAction(
   actionTypes.createFiles,
   challengeFiles =>
-    challengeFiles.reduce((challengeFiles, challengeFile) => {
-      return [
-        ...challengeFiles,
-        {
-          ...createPoly(challengeFile),
-          seed: challengeFile.contents.slice(),
-          editableContents: getLines(
-            challengeFile.contents,
-            challengeFile.editableRegionBoundaries
-          ),
-          seedEditableRegionBoundaries:
-            challengeFile.editableRegionBoundaries.slice()
-        }
-      ];
-    }, [])
+    challengeFiles.map(challengeFile => ({
+      ...createPoly(challengeFile),
+      seed: challengeFile.contents.slice(),
+      editableContents: getLines(
+        challengeFile.contents,
+        challengeFile.editableRegionBoundaries
+      ),
+      seedEditableRegionBoundaries:
+        challengeFile.editableRegionBoundaries.slice()
+    }))
 );
 
 export const createQuestion = createAction(actionTypes.createQuestion);
@@ -114,6 +110,9 @@ export const closeModal = createAction(actionTypes.closeModal);
 export const openModal = createAction(actionTypes.openModal);
 
 export const previewMounted = createAction(actionTypes.previewMounted);
+export const projectPreviewMounted = createAction(
+  actionTypes.projectPreviewMounted
+);
 export const challengeMounted = createAction(actionTypes.challengeMounted);
 export const checkChallenge = createAction(actionTypes.checkChallenge);
 export const executeChallenge = createAction(actionTypes.executeChallenge);
@@ -148,6 +147,8 @@ export const isCompletionModalOpenSelector = state =>
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
+export const isProjectPreviewModalOpenSelector = state =>
+  state[ns].modal.projectPreview;
 export const isResettingSelector = state => state[ns].isResetting;
 
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;

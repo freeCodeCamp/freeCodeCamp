@@ -14,7 +14,7 @@ Pode-se ver que $714285 = 5 × 142857$.
 
 Isto demonstra uma propriedade incomum de 142857: ele é um divisor de sua rotação à direita.
 
-Encontre os últimos 5 dígitos da soma de todos os números inteiros $n$, sendo que $10 &lt; n &lt; 10100$, que têm essa propriedade.
+Encontre os últimos 5 algarismos da soma de todos os números inteiros $n$, sendo que $10 &lt; n &lt; 10100$, que têm essa propriedade.
 
 # --hints--
 

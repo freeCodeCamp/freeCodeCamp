@@ -9,7 +9,8 @@ import { getTransformers } from '../rechallenge/transformers';
 import {
   createTestFramer,
   runTestInTestFrame,
-  createMainFramer
+  createMainPreviewFramer,
+  createProjectPreviewFramer
 } from './frame';
 import createWorker from './worker-executor';
 
@@ -138,7 +139,7 @@ function getJSTestRunner({ build, sources }, { proxyLogger, removeComments }) {
 
 async function getDOMTestRunner(buildData, { proxyLogger }, document) {
   await new Promise(resolve =>
-    createTestFramer(document, resolve, proxyLogger)(buildData)
+    createTestFramer(document, proxyLogger, resolve)(buildData)
   );
   return (testString, testTimeout) =>
     runTestInTestFrame(document, testString, testTimeout);
@@ -197,15 +198,23 @@ export function buildBackendChallenge({ url }) {
   };
 }
 
-export async function updatePreview(buildData, document, proxyLogger) {
-  const { challengeType } = buildData;
-
-  if (challengeType === challengeTypes.html) {
-    await new Promise(resolve =>
-      createMainFramer(document, resolve, proxyLogger)(buildData)
-    );
+export function updatePreview(buildData, document, proxyLogger) {
+  if (buildData.challengeType === challengeTypes.html) {
+    createMainPreviewFramer(document, proxyLogger)(buildData);
   } else {
-    throw new Error(`Cannot show preview for challenge type ${challengeType}`);
+    throw new Error(
+      `Cannot show preview for challenge type ${buildData.challengeType}`
+    );
+  }
+}
+
+export function updateProjectPreview(buildData, document) {
+  if (buildData.challengeType === challengeTypes.html) {
+    createProjectPreviewFramer(document)(buildData);
+  } else {
+    throw new Error(
+      `Cannot show preview for challenge type ${buildData.challengeType}`
+    );
   }
 }
 

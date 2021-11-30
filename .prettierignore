@@ -11,3 +11,4 @@ client/i18n/**/*.json
 docs/i18n
 **/package-lock.json
 tools/scripts/build/ensure-env.js
+tools/scripts/lint/validate-keys.js

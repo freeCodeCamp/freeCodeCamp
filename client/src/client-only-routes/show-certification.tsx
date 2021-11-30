@@ -9,7 +9,7 @@ import { createSelector } from 'reselect';
 import envData from '../../../config/env.json';
 import { langCodes } from '../../../config/i18n/all-langs';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
-import DonateForm from '../components/Donation/DonateForm';
+import DonateForm from '../components/Donation/donate-form';
 
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';

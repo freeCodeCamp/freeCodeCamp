@@ -20,7 +20,7 @@ const cssCatch = '\n/*fcc*/\n';
 
 const defaultTemplate = ({ source }) => {
   return `
-  <body id='display-body'style='margin:8px;'>
+  <body id='display-body'>
     <!-- fcc-start-source -->
       ${source}
     <!-- fcc-end-source -->

@@ -62,7 +62,8 @@
     "verify-email": "Verificar correo electrónico",
     "submit-and-go": "Enviar y pasar al siguiente desafío",
     "go-to-next": "Ir al próximo desafío",
-    "ask-later": "Pregúntame luego"
+    "ask-later": "Pregúntame luego",
+    "start-coding": "Start coding!"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -288,7 +289,8 @@
       "preview": "Vista"
     },
     "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
-    "help-translate-link": "Ayúdanos a traducir."
+    "help-translate-link": "Ayúdanos a traducir.",
+    "project-preview-title": "Here's a preview of what you will build"
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",

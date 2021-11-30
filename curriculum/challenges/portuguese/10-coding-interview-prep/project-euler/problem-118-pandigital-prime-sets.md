@@ -8,7 +8,7 @@ dashedName: problem-118-pandigital-prime-sets
 
 # --description--
 
-Usando todos os dígitos de 1 a 9 e concatenando-os livremente para formar números inteiros decimais, diferentes conjuntos podem ser formados. É interessante que, com o conjunto $\\{2, 5, 47, 89, 631\\}$, todos os elementos pertencentes a ele são primos.
+Usando todos os algarismos de 1 a 9 e concatenando-os livremente para formar números inteiros decimais, diferentes conjuntos podem ser formados. É interessante que, com o conjunto $\\{2, 5, 47, 89, 631\\}$, todos os elementos pertencentes a ele são primos.
 
 Quantos conjuntos distintos, contendo cada um dos algarismos de um a nove exatamente uma vez, são compostos apenas por elementos primos?
 

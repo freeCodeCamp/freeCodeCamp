@@ -110,8 +110,12 @@ assert(
     test.insert(700);
     test.insert(32);
     test.insert(51);
-    let result = test.print();
-    return result.length == 5 ? result[0] == 700 : result[1] == 700;
+    test.insert(800);
+    const result = test.print();
+    const solution = JSON.stringify([null,800,51,700,32,50,100]);
+    const solutionWithoutNull = JSON.stringify([800,51,700,32,50,100]);
+
+    return (result.length == 6) ? (JSON.stringify(result) == solutionWithoutNull) : (JSON.stringify(result) == solution);
   })()
 );
 ```

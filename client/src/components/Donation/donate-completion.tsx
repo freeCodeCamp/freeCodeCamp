@@ -3,8 +3,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
 
-import './Donation.css';
-
 type DonateCompletionProps = {
   error: string | null;
   processing: boolean;
