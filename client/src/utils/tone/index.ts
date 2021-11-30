@@ -3,23 +3,20 @@ import { FlashMessages } from '../../components/Flash/redux';
 import { Themes } from '../../components/settings/theme';
 
 const toneUrls = {
-  tryAgain: 'https://campfire-mode.freecodecamp.org/try-again.mp3',
-  cert: 'https://campfire-mode.freecodecamp.org/cert.mp3',
-  day: 'https://campfire-mode.freecodecamp.org/day.mp3',
-  night: 'https://campfire-mode.freecodecamp.org/night.mp3',
-  donate: 'https://campfire-mode.freecodecamp.org/donate.mp3',
-  chalComp: 'https://campfire-mode.freecodecamp.org/chal-comp.mp3',
-  guitarChordOne: 'https://campfire-mode.freecodecamp.org/guitar_chord1.mp3'
-};
+  [FlashMessages.IncompleteSteps]:
+    'https://campfire-mode.freecodecamp.org/try-again.mp3',
+  [FlashMessages.CertClaimSuccess]:
+    'https://campfire-mode.freecodecamp.org/cert.mp3',
+  [Themes.Default]: 'https://campfire-mode.freecodecamp.org/day.mp3',
+  [Themes.Night]: 'https://campfire-mode.freecodecamp.org/night.mp3',
+  donation: 'https://campfire-mode.freecodecamp.org/donate.mp3',
+  'tests-completed': 'https://campfire-mode.freecodecamp.org/chal-comp.mp3',
+  'block-toggle': 'https://campfire-mode.freecodecamp.org/guitar_chord1.mp3',
+  'tests-failed': 'https://campfire-mode.freecodecamp.org/try-again.mp3',
+  completion: 'https://campfire-mode.freecodecamp.org/chal-comp.mp3'
+} as const;
 
-type ToneStates =
-  | FlashMessages
-  | Themes
-  | 'donation'
-  | 'tests-completed'
-  | 'tests-failed'
-  | 'block-toggle'
-  | 'completion';
+type ToneStates = keyof typeof toneUrls;
 
 export async function playTone(state: ToneStates): Promise<void> {
   const playSound = !!store.get('fcc-sound');
@@ -31,24 +28,8 @@ export async function playTone(state: ToneStates): Promise<void> {
       });
     }
 
-    const switcher = {
-      [FlashMessages.IncompleteSteps]: () => playSample(toneUrls.tryAgain),
-      [FlashMessages.CertClaimSuccess]: () => playSample(toneUrls.cert),
-      donation: () => playSample(toneUrls.donate),
-      'tests-completed': () => playSample(toneUrls.chalComp),
-      'tests-failed': () => playSample(toneUrls.tryAgain),
-      'block-toggle': () => playSample(toneUrls.guitarChordOne),
-      completion: () => playSample(toneUrls.chalComp),
-      [Themes.Night]: () => playSample(toneUrls.night),
-      [Themes.Default]: () => playSample(toneUrls.day)
-    };
-    // Slight hack, until we decide what to do with other flashes
-    switcher[state as keyof typeof switcher]?.();
-
-    // TODO: Think about using URL as type
-    // eslint-disable-next-line no-inner-declarations
-    function playSample(url: string): void {
-      const player = new tone.Player(url).toDestination();
+    if (toneUrls[state]) {
+      const player = new tone.Player(toneUrls[state]).toDestination();
       player.autostart = true;
     }
   }
