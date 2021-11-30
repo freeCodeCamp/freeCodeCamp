@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { withTranslation } from 'react-i18next';
+import { withTranslation, TFunction } from 'react-i18next';
 import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
@@ -12,60 +11,69 @@ import { isAuditedCert } from '../../../../../utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { Link } from '../../../components/helpers/';
+import { Link } from '../../../components/helpers';
 import { completedChallengesSelector, executeGA } from '../../../redux';
+import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import Challenges from './Challenges';
 
 const { curriculumLocale } = envData;
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (
+  state: unknown,
+  ownProps: { blockDashedName: string } & unknown
+) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
 
   return createSelector(
     expandedSelector,
     completedChallengesSelector,
-    (isExpanded, completedChallenges) => ({
+    (isExpanded: boolean, completedChallenges: CompletedChallenge[]) => ({
       isExpanded,
-      completedChallenges: completedChallenges.map(({ id }) => id)
+      completedChallengeIds: completedChallenges.map(({ id }) => id)
     })
   )(state);
 };
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ toggleBlock, executeGA }, dispatch);
 
-const propTypes = {
-  blockDashedName: PropTypes.string,
-  challenges: PropTypes.array,
-  completedChallenges: PropTypes.arrayOf(PropTypes.string),
-  executeGA: PropTypes.func,
-  isExpanded: PropTypes.bool,
-  superBlock: PropTypes.string,
-  t: PropTypes.func,
-  toggleBlock: PropTypes.func.isRequired
-};
+interface BlockProps {
+  blockDashedName: string;
+  challenges: ChallengeNode[];
+  completedChallengeIds: string[];
+  executeGA: typeof executeGA;
+  isExpanded: boolean;
+  superBlock: string;
+  t: TFunction;
+  toggleBlock: typeof toggleBlock;
+}
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
-export class Block extends Component {
-  constructor(...props) {
-    super(...props);
+export class Block extends Component<BlockProps> {
+  static displayName: string;
+  constructor(props: BlockProps) {
+    super(props);
 
     this.handleBlockClick = this.handleBlockClick.bind(this);
   }
 
-  handleBlockClick() {
+  handleBlockClick(): void {
     const { blockDashedName, toggleBlock, executeGA } = this.props;
-    const playSound = store.get('fcc-sound');
+    const playSound = store.get('fcc-sound') as boolean;
     if (playSound) {
-      void import('tone').then(tone => {
+      void (async () => {
+        const tone = await import('tone');
+
         const player = new tone.Player(
           'https://tonejs.github.io/audio/berklee/guitar_chord1.mp3'
         ).toDestination();
-        if (tone.context.state !== 'running') tone.context.resume();
+        if (tone.context.state !== 'running') {
+          void tone.context.resume();
+        }
         player.autostart = playSound;
-      });
+      })();
     }
     executeGA({
       type: 'event',
@@ -74,10 +82,10 @@ export class Block extends Component {
         action: blockDashedName
       }
     });
-    return toggleBlock(blockDashedName);
+    toggleBlock(blockDashedName);
   }
 
-  renderCheckMark(isCompleted) {
+  renderCheckMark(isCompleted: boolean): JSX.Element {
     return isCompleted ? (
       <GreenPass style={mapIconStyle} />
     ) : (
@@ -85,7 +93,7 @@ export class Block extends Component {
     );
   }
 
-  renderBlockIntros(arr) {
+  renderBlockIntros(arr: string[]): JSX.Element {
     return (
       <div className='block-description'>
         {arr.map((str, i) => (
@@ -95,10 +103,10 @@ export class Block extends Component {
     );
   }
 
-  render() {
+  render(): JSX.Element {
     const {
       blockDashedName,
-      completedChallenges,
+      completedChallengeIds,
       challenges,
       isExpanded,
       superBlock,
@@ -108,8 +116,8 @@ export class Block extends Component {
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
-      const isCompleted = completedChallenges.some(
-        completedId => id === completedId
+      const isCompleted = completedChallengeIds.some(
+        (completedChallengeId: string) => completedChallengeId === id
       );
       if (isCompleted) {
         completedCount++;
@@ -134,13 +142,19 @@ export class Block extends Component {
       );
     });
 
-    const blockIntroObj = t(`intro:${superBlock}.blocks.${blockDashedName}`);
+    const blockIntroObj: { title?: string; intro: string[] } = t(
+      `intro:${superBlock}.blocks.${blockDashedName}`
+    );
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
     const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
     const {
       expand: expandText,
       collapse: collapseText,
       courses: coursesText
+    }: {
+      expand: string;
+      collapse: string;
+      courses: string;
     } = t('intro:misc-text');
 
     return isProjectBlock ? (
@@ -196,7 +210,9 @@ export class Block extends Component {
           <button
             aria-expanded={isExpanded}
             className='map-title'
-            onClick={this.handleBlockClick}
+            onClick={() => {
+              this.handleBlockClick();
+            }}
           >
             <Caret />
             <h4 className='course-title'>
@@ -224,7 +240,6 @@ export class Block extends Component {
 }
 
 Block.displayName = 'Block';
-Block.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
