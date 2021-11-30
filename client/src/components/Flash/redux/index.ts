@@ -69,7 +69,10 @@ const initialState = {
 export const createFlashMessage = (
   flash: FlashMessageArg
 ): ReducerPayload<FlashActionTypes.CreateFlashMessage> => {
-  void playTone(flash.message);
+  // Do not play tone if flash comes from Nightmode toggle
+  if (flash.message !== FlashMessages.None && !flash.variables?.theme) {
+    void playTone(flash.message);
+  }
   return {
     type: FlashActionTypes.CreateFlashMessage,
     payload: { ...flash, id: nanoid() }

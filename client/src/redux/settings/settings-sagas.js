@@ -48,6 +48,7 @@ function* submitProfileUISaga({ payload }) {
   try {
     const response = yield call(putUpdateMyProfileUI, payload);
     yield put(submitProfileUIComplete({ ...response, payload }));
+    console.log(payload, response);
     yield put(createFlashMessage(response));
   } catch (e) {
     yield put(submitProfileUIError);
@@ -57,8 +58,12 @@ function* submitProfileUISaga({ payload }) {
 function* updateUserFlagSaga({ payload: update }) {
   try {
     const response = yield call(putUpdateUserFlag, update);
+    // { theme: 'default' }
+    console.log(update, response);
     yield put(updateUserFlagComplete({ ...response, payload: update }));
-    yield put(createFlashMessage(response));
+    yield put(
+      createFlashMessage({ ...response, varaibles: { theme: update.theme } })
+    );
   } catch (e) {
     yield put(updateUserFlagError(e));
   }

@@ -1,5 +1,5 @@
 import store from 'store';
-import { FlashMessages } from '../../components/Flash/redux';
+import { FlashMessages } from '../../components/Flash/redux/index';
 import { Themes } from '../../components/settings/theme';
 
 const TRY_AGAIN = 'https://campfire-mode.freecodecamp.org/try-again.mp3';
@@ -26,7 +26,7 @@ const toneUrls = {
   [FlashMessages.HonestFirst]: TRY_AGAIN,
   [FlashMessages.IncompleteSteps]: TRY_AGAIN,
   [FlashMessages.NameNeeded]: TRY_AGAIN,
-  [FlashMessages.None]: '',
+  // [FlashMessages.None]: '',
   [FlashMessages.NotEligible]: TRY_AGAIN,
   [FlashMessages.NotHonest]: TRY_AGAIN,
   [FlashMessages.NotRight]: TRY_AGAIN,
@@ -52,18 +52,16 @@ const toneUrls = {
 type ToneStates = keyof typeof toneUrls;
 
 export async function playTone(state: ToneStates): Promise<void> {
+  console.log(state, toneUrls, toneUrls[state]);
   const playSound = !!store.get('fcc-sound');
-  if (playSound) {
+  if (playSound && toneUrls[state]) {
     const tone = await import('tone');
     if (tone.context.state !== 'running') {
       tone.context.resume().catch(err => {
         console.error('Error resuming audio context', err);
       });
     }
-
-    if (toneUrls[state]) {
-      const player = new tone.Player(toneUrls[state]).toDestination();
-      player.autostart = true;
-    }
+    const player = new tone.Player(toneUrls[state]).toDestination();
+    player.autostart = true;
   }
 }
