@@ -147,7 +147,7 @@ async function getDOMTestRunner(buildData, { proxyLogger }, document) {
 
 export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' },
-  { usesTestRunner }
+  { usesTestRunner } = { usesTestRunner: false }
 ) {
   const finalRequires = [...globalRequires, ...required];
   if (usesTestRunner) finalRequires.push(...frameRunner);
