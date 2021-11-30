@@ -30,7 +30,7 @@
     "serve-ci": "serve -l 8000 -c ../serve.json public",
     "prestand-alone": "npm run prebuild",
     "stand-alone": "gatsby develop",
-    "validate-keys": "tsc ../tools/ && node ../tools/scripts/lint/validate-keys.js"
+    "validate-keys": "tsc -p ../tools/ && node ../tools/scripts/lint/validate-keys.js"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "7.16.0",
