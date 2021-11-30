@@ -60,7 +60,7 @@ type SuperBlockProp = {
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
 
-const mapStateToProps = (state: unknown) => {
+const mapStateToProps = (state: Record<string, unknown>) => {
   return createSelector(
     currentChallengeIdSelector,
     isSignedInSelector,
