@@ -589,6 +589,32 @@ blockquote .small {
   overflow-wrap: break-word;
 }
 
+.alert .btn {
+  background-color: #d9edf7;
+  color: #31708f;
+  border-color: #31708f;
+}
+.alert .btn:hover,
+.alert .btn:focus {
+  background-color: #31708f;
+  color: #d9edf7;
+  border-color: #31708f;
+}
+
+.annual-donation-alert {
+  background: linear-gradient(
+      -10deg,
+      rgba(217, 237, 247, 1) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(255 215 224) 100%
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 202, 225, 1) 0%,
+      rgba(218, 234, 252, 1) 100%
+    );
+}
+
 /* gatsby 404 */
 #search {
   background-color: var(--quaternary-background);
