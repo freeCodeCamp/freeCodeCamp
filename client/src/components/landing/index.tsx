@@ -1,5 +1,4 @@
 import { Grid } from '@freecodecamp/react-bootstrap';
-import PropTypes from 'prop-types';
 import React, { FunctionComponent } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -12,14 +11,12 @@ import Testimonials from './components/testimonials';
 import './landing.css';
 
 type LandingIndexProps = {
-  page?: string
-}
-
-const propTypes = {
-  page: PropTypes.string
+  page?: string;
 };
 
-export const Landing: FunctionComponent<LandingIndexProps> = ({ page = 'landing' }) => {
+export const Landing: FunctionComponent<LandingIndexProps> = ({
+  page = 'landing'
+}) => {
   const { t } = useTranslation();
 
   return (
@@ -44,5 +41,5 @@ export const Landing: FunctionComponent<LandingIndexProps> = ({ page = 'landing'
 };
 
 Landing.displayName = 'Landing';
-Landing.propTypes = propTypes;
+
 export default Landing;
