@@ -13,7 +13,7 @@ You will be [working on this project with our Replit starter code](https://repli
 We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
 - [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 hours)
+- [Learning Python: From Zero to Hero](https://www.freecodecamp.org/news/learning-python-from-zero-to-hero-120ea540b567/) (10 hours)
 
 # --instructions--
 
