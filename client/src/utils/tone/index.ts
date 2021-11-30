@@ -11,7 +11,7 @@ const toneUrls = {
   [Themes.Night]: 'https://campfire-mode.freecodecamp.org/night.mp3',
   donation: 'https://campfire-mode.freecodecamp.org/donate.mp3',
   'tests-completed': 'https://campfire-mode.freecodecamp.org/chal-comp.mp3',
-  'block-toggle': 'https://campfire-mode.freecodecamp.org/guitar_chord1.mp3',
+  'block-toggle': 'https://tonejs.github.io/audio/berklee/guitar_chord1.mp3',
   'tests-failed': 'https://campfire-mode.freecodecamp.org/try-again.mp3',
   completion: 'https://campfire-mode.freecodecamp.org/chal-comp.mp3'
 } as const;
