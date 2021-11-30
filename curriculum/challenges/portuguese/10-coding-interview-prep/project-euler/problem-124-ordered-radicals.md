@@ -8,7 +8,7 @@ dashedName: problem-124-ordered-radicals
 
 # --description--
 
-O radical de $n, rad(n)$, é o produto dos fatores primos distintos de $n$. Por exemplo, $504 = 2^3 × 3^2 × 7$, então $rad(504) = 2 × 3 × 7 = 42$.
+O radical de $n$, $rad(n)$, é o produto dos fatores primos distintos de $n$. Por exemplo, $504 = 2^3 × 3^2 × 7$, então $rad(504) = 2 × 3 × 7 = 42$.
 
 Se calcularmos $rad(n)$ para $1 ≤ n ≤ 10$ e, em seguida, ordená-los em $rad(n)$, e ordená-los novamente em $n$ se os valores dos radicais forem iguais, obtemos:
 
