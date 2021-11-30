@@ -62,7 +62,8 @@
     "verify-email": "確認郵箱",
     "submit-and-go": "提交併訪問下一個挑戰",
     "go-to-next": "訪問下一個挑戰",
-    "ask-later": "稍後問我"
+    "ask-later": "稍後問我",
+    "start-coding": "Start coding!"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -288,7 +289,8 @@
       "preview": "預覽"
     },
     "help-translate": "我們仍然在翻譯以下證書。",
-    "help-translate-link": "幫助我們翻譯。"
+    "help-translate-link": "幫助我們翻譯。",
+    "project-preview-title": "Here's a preview of what you will build"
   },
   "donate": {
     "title": "支持我們的非營利組織",

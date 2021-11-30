@@ -62,7 +62,8 @@
     "verify-email": "确认邮箱",
     "submit-and-go": "提交并访问下一个挑战",
     "go-to-next": "访问下一个挑战",
-    "ask-later": "稍后问我"
+    "ask-later": "稍后问我",
+    "start-coding": "Start coding!"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -288,7 +289,8 @@
       "preview": "预览"
     },
     "help-translate": "我们仍然在翻译以下证书。",
-    "help-translate-link": "帮助我们翻译。"
+    "help-translate-link": "帮助我们翻译。",
+    "project-preview-title": "Here's a preview of what you will build"
   },
   "donate": {
     "title": "支持我们的非营利组织",
