@@ -77,7 +77,6 @@ function LearnPage({
   const { t } = useTranslation();
 
   const onAlertClick = () => {
-    console.log('click');
     executeGA({
       type: 'event',
       data: {
