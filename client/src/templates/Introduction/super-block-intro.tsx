@@ -11,7 +11,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { SuperBlocks } from '../../../../config/certification-settings';
-import DonateModal from '../../components/Donation/DonationModal';
+import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
@@ -60,7 +60,7 @@ type SuperBlockProp = {
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
 
-const mapStateToProps = (state: unknown) => {
+const mapStateToProps = (state: Record<string, unknown>) => {
   return createSelector(
     currentChallengeIdSelector,
     isSignedInSelector,

@@ -1,6 +1,6 @@
 ---
 id: 58965611f9fc0f352b528e6c
-title: Logging a User Out
+title: Cierra la sesión de un usuario
 challengeType: 2
 forumTopicId: 301560
 dashedName: logging-a-user-out
@@ -8,9 +8,9 @@ dashedName: logging-a-user-out
 
 # --description--
 
-Creating the logout logic is easy. The route should just unauthenticate the user and redirect to the home page instead of rendering any view.
+Crear la lógica de cierre de sesión es fácil. La ruta sólo debe desautentificar al usuario y redirigir a la página principal en lugar de mostrar cualquier vista.
 
-In passport, unauthenticating a user is as easy as just calling `req.logout();` before redirecting.
+En passport, desautentificar un usuario es tan fácil como llamar a `req.logout();` antes de redireccionar.
 
 ```js
 app.route('/logout')
@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-You may have noticed that we're not handling missing pages (404). The common way to handle this in Node is with the following middleware. Go ahead and add this in after all your other routes:
+Puede que hayas notado que no estamos manejando páginas faltantes (404). La forma común de manejar esto en Node es con el siguiente middleware. Sigue adelante y añade esto después de todas tus rutas:
 
 ```js
 app.use((req, res, next) => {
@@ -30,11 +30,11 @@ app.use((req, res, next) => {
 });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
 
 # --hints--
 
-`req.Logout` should be called in your `/logout` route.
+`req.Logout` debe ser llamado en la ruta `/logout`.
 
 ```js
 (getUserInput) =>
@@ -52,7 +52,7 @@ Submit your page when you think you've got it right. If you're running into erro
   );
 ```
 
-Logout should redirect to the home page.
+Cerrar sesión debe redirigir a la página de inicio.
 
 ```js
 (getUserInput) =>

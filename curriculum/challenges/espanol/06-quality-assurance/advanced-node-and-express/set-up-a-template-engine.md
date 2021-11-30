@@ -1,6 +1,6 @@
 ---
 id: 5895f700f9fc0f352b528e63
-title: Set up a Template Engine
+title: Configura un motor de plantillas
 challengeType: 2
 forumTopicId: 301564
 dashedName: set-up-a-template-engine
@@ -8,31 +8,31 @@ dashedName: set-up-a-template-engine
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+Trabajar en estos desafíos implica escribir tu código usando uno de los siguientes métodos:
 
-- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-advancednode/) and complete these challenges locally.
-- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-advancednode) to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+- Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-advancednode/) y completa estos desafíos localmente.
+- Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-advancednode) para completar estos desafíos.
+- Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
+Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`.
 
-A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
+Un motor de plantillas te permite usar plantillas estáticas (como las escritas en *Pug*) en tu aplicación. En tiempo de ejecución, el motor de plantillas reemplaza variables en un archivo de plantilla con valores reales que pueden ser suministrados por tu servidor. Luego transforma la plantilla en un archivo HTML estático que se envía al cliente. Este enfoque hace más fácil el diseño de una página HTML y permite mostrar variables en la página sin necesidad de hacer una llamada API desde el cliente.
 
-Add `pug@~3.0.0` as a dependency in your `package.json` file.
+Añade `pug@~3.0.0` como una dependencia en tu archivo `package.json`.
 
-Express needs to know which template engine you are using. We will use the `set` method to assign `pug` as the `view engine` property's value: `app.set('view engine', 'pug')`
+Express necesita saber qué motor de plantillas está utilizando. Utilizaremos el método `set` para asignar `pug` como el valor de `view engine` de la propiedad: `app.set('view engine', 'pug')`
 
-Your page will not load until you correctly render the index file in the `views/pug` directory.
+La página no se cargará hasta que procese correctamente el archivo de índice en el directorio `views/pug`.
 
-Change the argument of the `res.render()` declaration in the `/` route to be the file path to the `views/pug` directory. The path can be a relative path (relative to views), or an absolute path, and does not require a file extension.
+Cambia el argumento de la sentencia `res.render()` en la ruta `/` para que sea la ruta del archivo al directorio `views/pug`. La ruta puede ser una ruta relativa (relativa a las vistas), o una ruta absoluta, y no requiere una extensión de archivo.
 
-If all went as planned, your app home page will stop showing the message "`Pug template is not defined.`" and will now display a message indicating you've successfully rendered the Pug template!
+Si todo ha ido según lo previsto, ¡la página de inicio de tu aplicación dejará de mostrar el mensaje "`Pug template is not defined.`" y ahora mostrará un mensaje indicando que has renderizado con éxito la plantilla Pug!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
 
 # --hints--
 
-Pug should be a dependency.
+Pug debe ser una dependencia.
 
 ```js
 (getUserInput) =>
@@ -51,7 +51,7 @@ Pug should be a dependency.
   );
 ```
 
-View engine should be Pug.
+El motor de vistas debe ser Pug.
 
 ```js
 (getUserInput) =>
@@ -69,7 +69,7 @@ View engine should be Pug.
   );
 ```
 
-Use the correct ExpressJS method to render the index page from the response.
+Utiliza el método de ExpressJS correcto para renderizar la página de índice de la respuesta.
 
 ```js
 (getUserInput) =>
@@ -87,7 +87,7 @@ Use the correct ExpressJS method to render the index page from the response.
   );
 ```
 
-Pug should be working.
+Pug debe estar funcionando.
 
 ```js
 (getUserInput) =>
