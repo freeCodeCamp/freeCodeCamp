@@ -385,7 +385,7 @@ body {
 # --solutions--
 
 ```html
-// TODO: Add solution once step 070 is fixed!
+// TODO: Add solution once steps 029 and 070 is fixed!
 ```
 
 ```css

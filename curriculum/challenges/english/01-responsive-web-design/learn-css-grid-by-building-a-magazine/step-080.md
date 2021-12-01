@@ -16,7 +16,7 @@ Congratulations! Your magazine is now complete.
 You should have a new `@media` query for `only screen and (max-width: 420px)`. This should be the last query in the `@media` query list.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.media?.mediaText === 'only screen and (max-width: 420px)');
+assert.equal(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.media?.mediaText, 'only screen and (max-width: 420px)');
 ```
 
 Your new `@media` query should have a `.hero-title` selector.

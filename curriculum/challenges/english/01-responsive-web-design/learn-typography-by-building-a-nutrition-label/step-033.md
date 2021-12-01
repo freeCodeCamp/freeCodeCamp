@@ -20,7 +20,11 @@ assert(new __helpers.CSSHelp(document).getStyle('.calories-info h1'));
 Your new `.calories-info h1` selector should have a `margin` property set to `-5px 0`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.margin === '-5px 0px');
+// @nhcarrigan The next step uses `-5px -2px`
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginTop, '-5px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginBottom, '-5px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginLeft, '0px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginRight, '0px');
 ```
 
 # --seed--
