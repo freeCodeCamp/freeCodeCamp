@@ -14,7 +14,9 @@ To give the `hr` a color, you need to adjust the `border` property. Give the `hr
 Your `hr` should have a `border` property set to `1px solid rgba(120, 120, 120, 0.6)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('hr')?.border === '1px solid rgba(120, 120, 120, 0.6)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('hr')?.borderWidth, '1px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('hr')?.borderStyle, 'solid');
+assert.equal(new __helpers.CSSHelp(document).getStyle('hr')?.borderColor, 'rgba(120, 120, 120, 0.6)');
 ```
 
 # --seed--
