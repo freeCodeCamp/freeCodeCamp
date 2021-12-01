@@ -1,5 +1,5 @@
 import store from 'store';
-import { FlashMessages } from '../../components/Flash/redux/index';
+import { FlashMessages } from '../../components/Flash/redux/flash-messages';
 import { Themes } from '../../components/settings/theme';
 
 const TRY_AGAIN = 'https://campfire-mode.freecodecamp.org/try-again.mp3';

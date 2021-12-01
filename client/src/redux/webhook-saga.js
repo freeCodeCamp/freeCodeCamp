@@ -1,5 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { createFlashMessage, FlashMessages } from '../components/Flash/redux';
+import { createFlashMessage } from '../components/Flash/redux';
+import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import { postWebhookToken, deleteWebhookToken } from '../utils/ajax';
 import { postWebhookTokenComplete, deleteWebhookTokenComplete } from '.';
 

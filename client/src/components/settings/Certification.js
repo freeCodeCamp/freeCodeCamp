@@ -17,7 +17,7 @@ import {
 } from '../../resources/cert-and-project-map';
 
 import { maybeUrlRE } from '../../utils';
-import { FlashMessages } from '../Flash/redux';
+import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
 

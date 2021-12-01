@@ -62,7 +62,7 @@ function* updateUserFlagSaga({ payload: update }) {
     console.log(update, response);
     yield put(updateUserFlagComplete({ ...response, payload: update }));
     yield put(
-      createFlashMessage({ ...response, varaibles: { theme: update.theme } })
+      createFlashMessage({ ...response, variables: { theme: update.theme } })
     );
   } catch (e) {
     yield put(updateUserFlagError(e));
