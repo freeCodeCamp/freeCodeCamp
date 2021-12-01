@@ -9,19 +9,13 @@
   "parser": "babel-eslint",
   "root": true,
   "extends": [
-    "./.eslintrc-base.json",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     "prettier"
-  ],
-  "plugins": [
-    "react",
-    "prefer-object-spread",
-    "react-hooks",
-    "jsx-a11y",
-    "jest-dom",
-    "testing-library"
   ],
   "globals": {
     "Promise": true,
