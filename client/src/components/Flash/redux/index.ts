@@ -2,6 +2,7 @@ import { nanoid } from 'nanoid';
 
 import { FlashState, State } from '../../../redux/types';
 import { playTone } from '../../../utils/tone';
+import { Themes } from '../../settings/theme';
 import { FlashMessages } from './flash-messages';
 
 export const FlashApp = 'flash';
@@ -35,9 +36,10 @@ const initialState = {
 export const createFlashMessage = (
   flash: FlashMessageArg
 ): ReducerPayload<FlashActionTypes.CreateFlashMessage> => {
-  // Do not play tone if flash comes from Nightmode toggle
-  console.log('flash, aaah', flash);
-  if (flash.message !== FlashMessages.None && !flash.variables?.theme) {
+  // Nightmode theme has special tones
+  if (flash.variables?.theme) {
+    void playTone(flash.variables.theme as Themes);
+  } else if (flash.message !== FlashMessages.None) {
     void playTone(flash.message);
   }
   return {

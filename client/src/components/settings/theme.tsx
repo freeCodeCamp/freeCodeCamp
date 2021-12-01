@@ -1,7 +1,6 @@
 import { Form } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { playTone } from '../../utils/tone';
 
 import ToggleSetting from './toggle-setting';
 
@@ -33,7 +32,6 @@ export default function ThemeSettings({
         offLabel={t('buttons.off')}
         onLabel={t('buttons.on')}
         toggleFlag={() => {
-          void playTone(currentTheme);
           toggleNightMode(
             currentTheme === Themes.Night ? Themes.Default : Themes.Night
           );

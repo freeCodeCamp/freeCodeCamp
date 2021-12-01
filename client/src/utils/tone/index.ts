@@ -52,7 +52,6 @@ const toneUrls = {
 type ToneStates = keyof typeof toneUrls;
 
 export async function playTone(state: ToneStates): Promise<void> {
-  console.log(state, toneUrls, toneUrls[state]);
   const playSound = !!store.get('fcc-sound');
   if (playSound && toneUrls[state]) {
     const tone = await import('tone');
