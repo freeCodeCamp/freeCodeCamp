@@ -11,7 +11,7 @@ module.exports = (env = {}) => {
     cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',
     entry: {
-      'frame-runner': './src/client/frame-runner.js',
+      'frame-runner': './src/client/frame-runner.ts',
       'sass-compile': './src/client/workers/sass-compile.ts',
       'test-evaluator': './src/client/workers/test-evaluator.ts'
     },
