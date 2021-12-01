@@ -1,4 +1,3 @@
-/* global cy */
 import { SuperBlocks } from '../../../../config/certification-settings';
 
 const selectors = {

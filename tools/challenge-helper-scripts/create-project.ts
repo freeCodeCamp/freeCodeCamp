@@ -230,7 +230,7 @@ prompt([
       if (!block.length) {
         return 'please enter a short name';
       }
-      if (/[^a-z0-9\-]/.test(block)) {
+      if (/[^a-z0-9-]/.test(block)) {
         return 'please use alphanumerical characters and kebab case';
       }
       return true;
