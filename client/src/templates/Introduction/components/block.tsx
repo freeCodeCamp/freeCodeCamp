@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import store from 'store';
 
 import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
@@ -14,6 +13,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 import { Link } from '../../../components/helpers';
 import { completedChallengesSelector, executeGA } from '../../../redux';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
+import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import Challenges from './Challenges';
 
@@ -61,20 +61,7 @@ export class Block extends Component<BlockProps> {
 
   handleBlockClick(): void {
     const { blockDashedName, toggleBlock, executeGA } = this.props;
-    const playSound = store.get('fcc-sound') as boolean;
-    if (playSound) {
-      void (async () => {
-        const tone = await import('tone');
-
-        const player = new tone.Player(
-          'https://tonejs.github.io/audio/berklee/guitar_chord1.mp3'
-        ).toDestination();
-        if (tone.context.state !== 'running') {
-          void tone.context.resume();
-        }
-        player.autostart = playSound;
-      })();
-    }
+    void playTone('block-toggle');
     executeGA({
       type: 'event',
       data: {

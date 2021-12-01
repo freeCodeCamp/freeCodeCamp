@@ -10,6 +10,7 @@ import {
   SuperBlocks
 } from '../../../../../config/certification-settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
+import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
   userFetchStateSelector,
   stepsToClaimSelector,
@@ -40,7 +41,7 @@ interface CertChallengeProps {
 
 const honestyInfoMessage = {
   type: 'info',
-  message: 'flash.honest-first'
+  message: FlashMessages.HonestFirst
 };
 
 const mapStateToProps = (state: unknown) => {

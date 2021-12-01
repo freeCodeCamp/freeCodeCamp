@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import { Themes } from '../settings/theme';
 
 import Profile from './profile';
 
@@ -48,7 +49,7 @@ const userProps = {
     points: 1,
     sendQuincyEmail: true,
     sound: true,
-    theme: 'string',
+    theme: Themes.Default,
     twitter: 'string',
     username: 'string',
     website: 'string',

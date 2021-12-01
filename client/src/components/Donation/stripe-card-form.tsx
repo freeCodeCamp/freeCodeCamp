@@ -16,6 +16,7 @@ import type {
 import React, { useState } from 'react';
 
 import envData from '../../../../config/env.json';
+import { Themes } from '../settings/theme';
 import { AddDonationData } from './paypal-button';
 
 const { stripePublicKey }: { stripePublicKey: string | null } = envData;
@@ -32,7 +33,7 @@ interface FormPropTypes {
     handleAuthentication: HandleAuthentication
   ) => void;
   t: (label: string) => string;
-  theme: string;
+  theme: Themes;
   processing: boolean;
 }
 
@@ -92,7 +93,7 @@ const StripeCardForm = ({
     style: {
       base: {
         fontSize: '18px',
-        color: `${theme === 'night' ? '#fff' : '#0a0a23'}`,
+        color: `${theme === Themes.Night ? '#fff' : '#0a0a23'}`,
         '::placeholder': {
           color: `#858591`
         }

@@ -12,6 +12,7 @@ import {
   availableLangs,
   langDisplayNames
 } from '../../../../config/i18n/all-langs';
+import { Themes } from '../settings/theme';
 import AuthOrProfile from './components/auth-or-profile';
 import { NavLinks } from './components/nav-links';
 import { UniversalNav } from './components/universal-nav';
@@ -50,12 +51,12 @@ describe('<NavLinks />', () => {
       user: {
         isDonating: false,
         username: null,
-        theme: 'default'
+        theme: Themes.Default
       },
       i18n: {
         language: 'en'
       },
-      toggleNightMode: (theme: string) => theme,
+      toggleNightMode: (theme: Themes) => theme,
       t: t
     };
     const utils = ShallowRenderer.createRenderer();
@@ -81,13 +82,13 @@ describe('<NavLinks />', () => {
       user: {
         isDonating: false,
         username: 'nhcarrigan',
-        theme: 'default'
+        theme: Themes.Default
       },
       i18n: {
         language: 'en'
       },
       t: t,
-      toggleNightMode: (theme: string) => theme
+      toggleNightMode: (theme: Themes) => theme
     };
     const utils = ShallowRenderer.createRenderer();
     utils.render(<NavLinks {...landingPageProps} />);
@@ -111,13 +112,13 @@ describe('<NavLinks />', () => {
       user: {
         isDonating: true,
         username: 'moT01',
-        theme: 'default'
+        theme: Themes.Default
       },
       i18n: {
         language: 'en'
       },
       t: t,
-      toggleNightMode: (theme: string) => theme
+      toggleNightMode: (theme: Themes) => theme
     };
     const utils = ShallowRenderer.createRenderer();
     utils.render(<NavLinks {...landingPageProps} />);
@@ -143,13 +144,13 @@ describe('<NavLinks />', () => {
       user: {
         isDonating: true,
         username: 'moT01',
-        theme: 'default'
+        theme: Themes.Default
       },
       i18n: {
         language: 'en'
       },
       t: t,
-      toggleNightMode: (theme: string) => theme
+      toggleNightMode: (theme: Themes) => theme
     };
     const utils = ShallowRenderer.createRenderer();
     utils.render(<NavLinks {...landingPageProps} />);
@@ -169,13 +170,13 @@ describe('<NavLinks />', () => {
       user: {
         isDonating: true,
         username: 'moT01',
-        theme: 'default'
+        theme: Themes.Default
       },
       i18n: {
         language: 'en'
       },
       t: t,
-      toggleNightMode: (theme: string) => theme
+      toggleNightMode: (theme: Themes) => theme
     };
     const utils = ShallowRenderer.createRenderer();
     utils.render(<NavLinks {...landingPageProps} />);

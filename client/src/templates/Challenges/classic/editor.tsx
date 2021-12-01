@@ -19,6 +19,7 @@ import { createSelector } from 'reselect';
 import store from 'store';
 
 import { Loader } from '../../../components/helpers';
+import { Themes } from '../../../components/settings/theme';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import {
   ChallengeFiles,
@@ -73,7 +74,7 @@ interface EditorProps {
   submitChallenge: () => void;
   stopResetting: () => void;
   tests: Test[];
-  theme: string;
+  theme: Themes;
   title: string;
   updateFile: (object: {
     fileKey: FileKey;
@@ -111,7 +112,7 @@ const mapStateToProps = createSelector(
     output: string[],
     open,
     isResetting: boolean,
-    { theme = 'default' }: { theme: string },
+    { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
@@ -994,7 +995,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const { theme } = props;
-  const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
+  const editorTheme = theme === Themes.Night ? 'vs-dark-custom' : 'vs-custom';
   return (
     <Suspense fallback={<Loader timeout={600} />}>
       <span className='notranslate'>

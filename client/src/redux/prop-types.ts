@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../config/certification-settings';
+import { Themes } from '../components/settings/theme';
 import { certMap } from '../resources/cert-and-project-map';
 
 export const UserPropType = PropTypes.shape({
@@ -246,7 +247,7 @@ export type User = {
   progressTimestamps: Array<unknown>;
   sendQuincyEmail: boolean;
   sound: boolean;
-  theme: string;
+  theme: Themes;
   twitter: string;
   username: string;
   website: string;
