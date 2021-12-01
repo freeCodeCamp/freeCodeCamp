@@ -103,6 +103,7 @@ interface ShowClassicProps {
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
+  previewMounted: () => void;
 }
 
 interface ShowClassicState {
@@ -375,7 +376,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       <Preview
         className='full-height'
         disableIframe={this.state.resizing}
-        previewMounted={previewMounted}
+        previewMounted={this.props.previewMounted}
       />
     );
   }
