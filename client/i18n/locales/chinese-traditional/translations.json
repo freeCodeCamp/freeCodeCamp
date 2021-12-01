@@ -32,6 +32,7 @@
     "profile": "個人資料",
     "news": "專欄",
     "donate": "捐款",
+    "support-our-nonprofit": "Support our non-profit",
     "update-settings": "更新我的賬號設置",
     "sign-me-out": "退出登錄 freeCodeCamp",
     "flag-user": "標記該用戶的賬號爲濫用",
@@ -290,6 +291,8 @@
     },
     "help-translate": "我們仍然在翻譯以下證書。",
     "help-translate-link": "幫助我們翻譯。",
+    "season-greetings": "Season's Greetings to you and your family.",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
     "project-preview-title": "Here's a preview of what you will build"
   },
   "donate": {
