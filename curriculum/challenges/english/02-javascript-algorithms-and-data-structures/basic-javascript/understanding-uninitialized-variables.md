@@ -17,10 +17,10 @@ Initialize the three variables `a`, `b`, and `c` with `5`, `10`, and `"I am a"` 
 
 # --hints--
 
-`a` should be defined and evaluated to have the value of `6`.
+`a` should be defined and evaluated to have the value of `5`.
 
 ```js
-assert(typeof a === 'number' && a === 6);
+assert(typeof a === 'number' && a === 5);
 ```
 
 `b` should be defined and evaluated to have the value of `15`.
