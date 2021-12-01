@@ -61,6 +61,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.wheel')?.maxWidth === '500px')
   border: 2px solid black;
   border-radius: 50%;
   margin-left: 50px;
+  position: absolute;
   height: 55vw;
   width: 55vw;
 }
