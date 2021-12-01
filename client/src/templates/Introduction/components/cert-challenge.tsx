@@ -9,10 +9,8 @@ import {
   superBlockCertTypeMap,
   SuperBlocks
 } from '../../../../../config/certification-settings';
-import {
-  createFlashMessage,
-  FlashMessages
-} from '../../../components/Flash/redux';
+import { createFlashMessage } from '../../../components/Flash/redux';
+import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
   userFetchStateSelector,
   stepsToClaimSelector,

@@ -2,10 +2,8 @@ import { navigate } from 'gatsby';
 import { call, put, takeEvery, take } from 'redux-saga/effects';
 
 import { resetUserData, fetchUser } from '../';
-import {
-  createFlashMessage,
-  FlashMessages
-} from '../../components/Flash/redux';
+import { createFlashMessage } from '../../components/Flash/redux';
+import { FlashMessages } from '../../components/Flash/redux/flash-messages';
 import { postResetProgress, postDeleteAccount } from '../../utils/ajax';
 import { actionTypes as appTypes } from '../action-types';
 import { deleteAccountError, resetProgressError } from './';

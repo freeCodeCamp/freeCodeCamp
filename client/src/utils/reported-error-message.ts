@@ -1,4 +1,4 @@
-import { FlashMessages } from '../components/Flash/redux';
+import { FlashMessages } from '../components/Flash/redux/flash-messages';
 
 const reportedErrorMessage = {
   type: 'danger',
