@@ -280,12 +280,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   getChallenge = () => this.props.data.challengeNode;
 
-  getBlockNameTitle() {
-    const {
-      fields: { blockName },
-      title
-    } = this.getChallenge();
-    return `${blockName}: ${title}`;
+  getBlockNameTitle(t: TFunction) {
+    const { block, superBlock, title } = this.getChallenge();
+    return `${t(`intro:${superBlock}.blocks.${block}.title`)}: ${title}`;
   }
 
   getVideoUrl = () => this.getChallenge().videoUrl;
@@ -422,11 +419,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
-          <Helmet
-            title={`${t(
-              'learn.learn'
-            )} ${this.getBlockNameTitle()} | freeCodeCamp.org`}
-          />
+          <Helmet title={`${this.getBlockNameTitle(t)} | freeCodeCamp.org`} />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
               editor={this.renderEditor()}
