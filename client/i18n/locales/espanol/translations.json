@@ -32,6 +32,7 @@
     "profile": "Perfil",
     "news": "Noticias",
     "donate": "Donar",
+    "support-our-nonprofit": "Support our non-profit",
     "update-settings": "Actualizar los ajustes de mi cuenta",
     "sign-me-out": "Cerrar sesión en freeCodeCamp",
     "flag-user": "Marcar la cuenta de este usuario por abuso",
@@ -290,6 +291,8 @@
     },
     "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
     "help-translate-link": "Ayúdanos a traducir.",
+    "season-greetings": "Season's Greetings to you and your family.",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
     "project-preview-title": "Here's a preview of what you will build"
   },
   "donate": {
