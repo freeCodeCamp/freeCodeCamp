@@ -44,6 +44,7 @@ assert(img?.getAttribute('src') === 'https://cdn.freecodecamp.org/platform/unive
 Your `img` element should have an `alt` attribute set to `freeCodeCamp Logo`.
 
 ```js
+// @nhcarrigan The next steps do not have this
 assert(document.querySelector('img')?.getAttribute('alt')?.toLowerCase() === 'freecodecamp logo');
 ```
 
