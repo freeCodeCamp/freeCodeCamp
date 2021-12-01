@@ -14,6 +14,7 @@ Give the `eyes-div` a `z-index` of `3`.
 Your `#eyes-div` selector should have a `z-index` property set to `3`.
 
 ```js
+// @nhcarrigan The next step does not include this
 assert(new __helpers.CSSHelp(document).getStyle('#eyes-div')?.zIndex === '3');
 ```
 
