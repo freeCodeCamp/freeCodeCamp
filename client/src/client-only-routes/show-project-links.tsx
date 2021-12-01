@@ -150,10 +150,6 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         : {getProjectSolution(id, title)}
       </li>
     ));
-    /* eslint-enable @typescript-eslint/no-unsafe-assignment */
-    /* eslint-enable @typescript-eslint/no-unsafe-call */
-    /* eslint-enable @typescript-eslint/no-unsafe-return */
-    /* eslint-enable @typescript-eslint/no-unsafe-member-access */
   };
 
   const {
