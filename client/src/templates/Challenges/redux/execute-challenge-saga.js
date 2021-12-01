@@ -99,7 +99,7 @@ export function* executeChallengeSaga({ payload }) {
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
-    if (challengeComplete && payload?.showCompletionModal) {
+    if (challengeComplete) {
       playTone('tests-completed');
     } else {
       playTone('tests-failed');
