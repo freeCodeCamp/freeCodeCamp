@@ -1,6 +1,6 @@
 ---
 id: 5900f39f1000cf542c50feb2
-title: 'Problema 51: Substituição de dígitos primos'
+title: 'Problema 51: Substituição de algarismos primos'
 challengeType: 5
 forumTopicId: 302162
 dashedName: problem-51-prime-digit-replacements
@@ -10,9 +10,9 @@ dashedName: problem-51-prime-digit-replacements
 
 Ao substituir o primeiro algarismo do número de dois algarismos, \*3, seis dos nove valores possíveis (13, 23, 43, 53, 73 e 83) são todos primos.
 
-Ao substituir o terceiro e o quarto dígitos do número 56\*\*3 pelo mesmo dígito, este número de 5 dígitos é o primeiro exemplo com sete primos entre os dez números gerados, criando a sequência de termos: 56003, 56113, 56333, 56443, 56663, 56773 e 56993. O número 56003, por ser o primeiro termo desta sequência, é o menor primo com essa propriedade.
+Ao substituir o terceiro e o quarto algarismos do número 56\*\*3 pelo mesmo algarismo, este número de 5 algarismos é o primeiro exemplo com sete primos entre os dez números gerados, criando a sequência de termos: 56003, 56113, 56333, 56443, 56663, 56773 e 56993. O número 56003, por ser o primeiro termo desta sequência, é o menor primo com essa propriedade.
 
-Encontre o menor número primo que, ao substituir parte do número (não necessariamente dígitos adjacentes) pelo mesmo algarismo, é parte de uma sequência de `n` termos.
+Encontre o menor número primo que, ao substituir parte do número (não necessariamente algarismos adjacentes) pelo mesmo algarismo, é parte de uma sequência de `n` termos.
 
 # --hints--
 

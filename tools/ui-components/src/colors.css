@@ -13,22 +13,32 @@
   --purple50: #9400d3;
   --purple90: #5a01a7;
 
-  --yellow10: #ffc300;
-  --yellow20: #ffbf00;
+  --yellow05: #fcf8e3;
+  --yellow10: #faebcc;
+  --yellow40: #ffc300;
+  --yellow45: #ffbf00;
   --yellow50: #f1be32;
+  --yellow70: #8a6d3b;
   --yellow90: #4d3800;
 
-  --blue10: rgba(153, 201, 255, 0.3);
-  --blue20: rgba(0, 46, 173, 0.3);
+  --blue05: #d9edf7;
+  --blue10: #bce8f1;
   --blue30: #99c9ff;
   --blue50: #198eee;
+  --blue70: #31708f;
   --blue90: #002ead;
 
-  --green10: #acd157;
+  --green05: #dff0d8;
+  --green10: #d6e9c6;
+  --green40: #acd157;
+  --green70: #3c763d;
   --green90: #00471b;
 
-  --red10: #ffadad;
-  --red20: #f8577c;
+  --red05: #f2dede;
+  --red10: #ebccd1;
+  --red15: #ffadad;
+  --red30: #f8577c;
+  --red70: #a94442;
   --red80: #f82153;
   --red90: #850000;
 }

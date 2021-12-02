@@ -1,6 +1,6 @@
 ---
 id: 5900f5081000cf542c51001a
-title: 'Problem 412: Gnomon numbering'
+title: 'Problema 412: Númeração de Gnomon'
 challengeType: 5
 forumTopicId: 302081
 dashedName: problem-412-gnomon-numbering
@@ -8,24 +8,28 @@ dashedName: problem-412-gnomon-numbering
 
 # --description--
 
-For integers m, n (0 ≤ n &lt; m), let L(m, n) be an m×m grid with the top-right n×n grid removed.
+Para números inteiros $m$, $n$ ($0 ≤ n &lt; m$), considere $L(m, n)$ como uma grade $m×m$ grid com a parte superior direita $n×n$ da grade removida.
 
-For example, L(5, 3) looks like this:
+Por exemplo, $L(5, 3)$ terá essa aparência:
 
-We want to number each cell of L(m, n) with consecutive integers 1, 2, 3, ... such that the number in every cell is smaller than the number below it and to the left of it.
+<img class="img-responsive center-block" alt="grade 5x5, com a grade 3x3 do canto superior direito removida" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-1.png" style="background-color: white; padding: 10px;" />
 
-For example, here are two valid numberings of L(5, 3):
+Queremos numerar cada célula de $L(m, n)$ com números inteiros consecutivos 1, 2, 3, ... tal que o número em cada célula seja menor que o número abaixo e à esquerda dele.
 
-Let LC(m, n) be the number of valid numberings of L(m, n). It can be verified that LC(3, 0) = 42, LC(5, 3) = 250250, LC(6, 3) = 406029023400 and LC(10, 5) mod 76543217 = 61251715.
+Por exemplo, aqui temos duas numerações válidas de $L(5, 3)$:
 
-Find LC(10000, 5000) mod 76543217.
+<img class="img-responsive center-block" alt="duas numerações válidas de L(5, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-2.png" style="background-color: white; padding: 10px;" />
+
+Considere $LC(m, n)$ como a quantidade de numerações válidas de $L(m, n)$. Pode-se verificar que $LC(3, 0) = 42$, $LC(5, 3) = 250.250$, $LC(6, 3) = 406.029.023.400$ e $LC(10, 5)\bmod 76.543.217 = 61.251.715$.
+
+Encontre $LC(10.000, 5.000)\bmod 76.543.217$.
 
 # --hints--
 
-`euler412()` should return 38788800.
+`gnomonNumbering()` deve retornar `38788800`.
 
 ```js
-assert.strictEqual(euler412(), 38788800);
+assert.strictEqual(gnomonNumbering(), 38788800);
 ```
 
 # --seed--
@@ -33,12 +37,12 @@ assert.strictEqual(euler412(), 38788800);
 ## --seed-contents--
 
 ```js
-function euler412() {
+function gnomonNumbering() {
 
   return true;
 }
 
-euler412();
+gnomonNumbering();
 ```
 
 # --solutions--

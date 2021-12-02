@@ -8,7 +8,7 @@ dashedName: problem-160-factorial-trailing-digits
 
 # --description--
 
-Para qualquer $N$, considere $f(N)$ como os últimos cinco dígitos antes dos zeros à direita em $N!$.
+Para qualquer $N$, considere $f(N)$ como os últimos cinco algarismos antes dos zeros à direita em $N!$.
 
 Por exemplo:
 

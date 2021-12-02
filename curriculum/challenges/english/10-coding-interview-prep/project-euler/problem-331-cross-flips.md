@@ -18,7 +18,7 @@ It can be proven that 3 is the minimal number of turns to finish this game.
 
 The bottom left disk on the $N×N$ board has coordinates (0, 0); the bottom right disk has coordinates ($N - 1$,$0$) and the top left disk has coordinates ($0$,$N - 1$).
 
-Let $C_N$ be the following configuration of a board with $N × N$disks: A disk at ($x$, $y$) satisfying $N - 1 \le \sqrt{x^2 + y^2} \lt N$, shows its black side; otherwise, it shows its white side. $C_5$ is shown above.
+Let $C_N$ be the following configuration of a board with $N × N$ disks: A disk at ($x$, $y$) satisfying $N - 1 \le \sqrt{x^2 + y^2} \lt N$, shows its black side; otherwise, it shows its white side. $C_5$ is shown above.
 
 Let $T(N)$ be the minimal number of turns to finish a game starting from configuration $C_N$ or 0 if configuration $C_N$ is unsolvable. We have shown that $T(5) = 3$. You are also given that $T(10) = 29$ and $T(1\\,000) = 395\\,253$.
 

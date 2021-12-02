@@ -8,7 +8,7 @@ dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
 
 # --description--
 
-Alguns números inteiros positivos $n$ têm a propriedade de que a soma [ $n + reverse(n)$ ] consiste inteiramente de dígitos ímpares (decimais). Por exemplo, $36 + 63 = 99$ e $409 + 904 = 1313$. Chamaremos esses números de reversíveis. Portanto, 36, 63, 409 e 904 são reversíveis. Zeros à esquerda não são permitidos em $n$ ou em $reverse(n)$.
+Alguns números inteiros positivos $n$ têm a propriedade de que a soma [ $n + reverse(n)$ ] consiste inteiramente de algarismos ímpares (decimais). Por exemplo, $36 + 63 = 99$ e $409 + 904 = 1313$. Chamaremos esses números de reversíveis. Portanto, 36, 63, 409 e 904 são reversíveis. Zeros à esquerda não são permitidos em $n$ ou em $reverse(n)$.
 
 Há 120 números reversíveis abaixo de mil.
 

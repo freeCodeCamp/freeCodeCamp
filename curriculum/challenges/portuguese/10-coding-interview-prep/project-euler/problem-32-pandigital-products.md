@@ -8,7 +8,7 @@ dashedName: problem-32-pandigital-products
 
 # --description--
 
-Dizemos que um número de `n` algarismos é pandigital se ele usar todos os dígitos de 1 a `n` uma única vez. Por exemplo, o número 15234 é pandigital pois possui 5 algarismos e utiliza todos os algarismos entre 1 e 5.
+Dizemos que um número de `n` algarismos é pandigital se ele usar todos os algarismos de 1 a `n` uma única vez. Por exemplo, o número 15234 é pandigital pois possui 5 algarismos e utiliza todos os algarismos entre 1 e 5.
 
 Considere o produto 39 x 186 = 7254. O multiplicando (39), multiplicador (186) e o produto (7254) possuem, no total, nove algarismos e nenhum deles se repetem.
 

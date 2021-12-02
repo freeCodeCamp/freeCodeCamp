@@ -24,7 +24,7 @@ $$\begin{array}{cr} n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12
 
 Também podemos verificar que $A_{100} = 3251$ e $A_{1000} = 80.852.364.498$.
 
-Encontre os últimos 9 dígitos de $\displaystyle\sum_{k = 1}^{18} A_{{10}^k}$.
+Encontre os últimos 9 algarismos de $\displaystyle\sum_{k = 1}^{18} A_{{10}^k}$.
 
 # --hints--
 

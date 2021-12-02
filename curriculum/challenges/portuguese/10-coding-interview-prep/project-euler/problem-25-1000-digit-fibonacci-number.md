@@ -1,6 +1,6 @@
 ---
 id: 5900f3851000cf542c50fe98
-title: 'Problema 25: Número Fibonacci de 1000 dígitos'
+title: 'Problema 25: Número Fibonacci de 1000 algarismos'
 challengeType: 5
 forumTopicId: 301897
 dashedName: problem-25-1000-digit-fibonacci-number
@@ -16,9 +16,9 @@ Portanto, os primeiros 12 termos serão:
 
 <div style='padding-left: 4em; display: inline-grid; grid-template-rows: auto; row-gap: 7px;'><div>F<sub>1</sub> = 1</div><div>F<sub>2</sub> = 1</div><div>F<sub>3</sub> = 2</div><div>F<sub>4</sub> = 3</div><div>F<sub>5</sub> = 5</div><div>F<sub>6</sub> = 8</div><div>F<sub>7</sub> = 13</div><div>F<sub>8</sub> = 21</div><div>F<sub>9</sub> = 34</div><div>F<sub>10</sub> = 55</div><div>F<sub>11</sub> = 89</div><div>F<sub>12</sub> = 144</div></div>
 
-O 12º termo, F<sub>12</sub>, é o primeiro termo a conter três dígitos.
+O 12º termo, F<sub>12</sub>, é o primeiro termo a conter três algarismos.
 
-Qual é o índice do primeiro termo na sequência de Fibonacci a conter `n` dígitos?
+Qual é o índice do primeiro termo na sequência de Fibonacci a conter `n` algarismos?
 
 # --hints--
 

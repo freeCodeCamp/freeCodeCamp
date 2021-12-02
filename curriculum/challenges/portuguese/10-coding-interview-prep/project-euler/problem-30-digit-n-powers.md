@@ -8,7 +8,7 @@ dashedName: problem-30-digit-n-powers
 
 # --description--
 
-Surpreendentemente, há apenas três números que são iguais à soma de seus dígitos elevados a 4:
+Surpreendentemente, há apenas três números que são iguais à soma de seus algarismos elevados a 4:
 
 <div style='margin-left: 4em;'>
   1634 = 1<sup>4</sup> + 6<sup>4</sup> + 3<sup>4</sup> + 4<sup>4</sup><br>
@@ -20,7 +20,7 @@ Como 1 = 1<sup>4</sup> não é uma soma, ele não deve ser incluído.
 
 A soma destes números é 1634 + 8208 + 9474 = 19316.
 
-Encontre a soma de todos os números que são iguais à soma de seus dígitos elevados a `n`.
+Encontre a soma de todos os números que são iguais à soma de seus algarismos elevados a `n`.
 
 # --hints--
 

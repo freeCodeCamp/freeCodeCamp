@@ -432,7 +432,7 @@ Fare il provisioning delle VM con il codice
 2. Aggiorna `npm` e installa PM2 e fai il setup di `logrotate` e avvio all'accensione
 
    ```console
-   npm i -g npm@6
+   npm i -g npm@8
    npm i -g pm2
    pm2 install pm2-logrotate
    pm2 startup
@@ -794,7 +794,7 @@ nvm ls
 Installa l'ultima versione di Node.js LTC, e reinstalla i pacchetti globali
 
 ```console
-nvm install 'lts/*' --reinstall-packages-from=default
+nvm install --lts --reinstall-packages-from=default
 ```
 
 Verifica i pacchetti installati
@@ -803,10 +803,10 @@ Verifica i pacchetti installati
 npm ls -g --depth=0
 ```
 
-Usa l'alias `default` della versione di Node.js all'attuale LTS
+Alias the `default` Node.js version to the current LTS (pinned to latest major version)
 
 ```console
-nvm alias default lts/*
+nvm alias default 16
 ```
 
 (Facoltativo) Disinstalla vecchie versioni
@@ -815,9 +815,23 @@ nvm alias default lts/*
 nvm uninstall <version>
 ```
 
-> [!WARNING] Se usi PM2 per i processi avrai anche bisogno di vedere le applicazioni e salvare la lista dei processi per il recovery automatico al riavvio.
+> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
+> 
+> If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
 
-Comandi veloci per PM2 per elencare, far ripartire processi salvati, ecc.
+Get the uninstall instructions/commands with the `unstartup` command and use the output to remove the systemctl services
+
+```console
+pm2 unstartup
+```
+
+Get the install instructions/commands with the `startup` command and use the output to add the systemctl services
+
+```console
+pm2 startup
+```
+
+Quick commands for PM2 to list, resurrect saved processes, etc.
 
 ```console
 pm2 ls
@@ -835,23 +849,21 @@ pm2 save
 pm2 logs
 ```
 
-> [!ATTENTION] Per applicazioni client, lo script della shell non può essere fatto risorgere tra versioni di Node.js con `pm2 resurrect`. Fai il deploy dei processi da zero. Questo dovrebbe migliorare quando useremo un setup basato su docker.
-
 ## Installare e aggiornare Azure Pipeline Agent
 
-Vedi: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops e segui le istruzioni per arrestare, rimuovere e reinstallare gli agenti. Approssimativamente puoi seguire gli step elencati qui.
+See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
 
-Avrai bisogno di un PAT, che puoi ottenere da: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
+You would need a PAT, that you can grab from here: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
 ### Installare agenti su target di deployment
 
-Vai su [Azure Devops](https://dev.azure.com/freeCodeCamp-org) e registra l'agente dall'inizio nei requisiti [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
+Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register the agent from scratch in the requisite [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
 
-> [!NOTE] Dovresti eseguire gli script nella home directory, e assicurati che nessun'altra directory `azagent` esista.
+> [!NOTE] You should run the scripts in the home directory, and make sure no other `azagent` directory exists.
 
 ### Aggiornare gli agent
 
-Attualmente aggiornare gli agent richiede che siano rimossi e riconfigurati. Questo è richiesto perché possano ottenere valori `PATH` e altre variabili d'ambiente di sistema. Dobbiame farlo per aggiornare Node.js sulle VM target di deployment.
+Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables. We need to do this for instance updating Node.js on our deployment target VMs.
 
 1. Naviga e controlla lo status del servizio
 
@@ -885,11 +897,11 @@ Attualmente aggiornare gli agent richiede che siano rimossi e riconfigurati. Que
    rm -rf ~/azagent
    ```
 
-Una volta completati gli step precedenti potrai ripetere gli stesi passi per installare l'agente.
+Once You have completed the steps above, you can repeat the same steps as installing the agent.
 
 # Manuale di volo - Email Blast
 
-Usiamo uno [strumento CLI](https://github.com/freecodecamp/sendgrid-email-blast) per inviare la nostra newsletter settimanale. Per avviare e iniziare il processo:
+We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to send out the weekly newsletter. To spin this up and begin the process:
 
 1. Entra in DigitalOcean e avvia nuovi droplet sotto il progetto `Sendgrid`. Usa lo snapshot di Ubuntu Sendgrid con la data più recente. Questo viene pre-caricato con lo strumento CLI e lo script per ottenere le email dal database. Con il volume corrente, tre droplet sono sufficienti per mandare le email in un tempo decente.
 
@@ -922,7 +934,7 @@ Usiamo uno [strumento CLI](https://github.com/freecodecamp/sendgrid-email-blast)
 
 ### Modifiche al tema
 
-Utilizziamo un [tema](https://github.com/freeCodeCamp/news-theme) personalizzato per la nostra pubblicazione. L'aggiunta delle seguenti modifiche al tema consente l'aggiunta di nuove lingue.
+We use a custom [theme](https://github.com/freeCodeCamp/news-theme) for our news publication. Adding the following changes to the theme enables the addition of new languages.
 
 1. Include an `else if` statement for the new [ISO language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
 2. Create an initial config folder by duplicating the [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) folder and changing its name to the new language code. (`en` —> `es` for Spanish)

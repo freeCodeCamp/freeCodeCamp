@@ -1,6 +1,6 @@
 ---
 id: 5900f5201000cf542c510032
-title: 'Problem 435: Polynomials of Fibonacci numbers'
+title: 'Problema 435: Polinômios dos números de Fibonacci'
 challengeType: 5
 forumTopicId: 302106
 dashedName: problem-435-polynomials-of-fibonacci-numbers
@@ -8,20 +8,20 @@ dashedName: problem-435-polynomials-of-fibonacci-numbers
 
 # --description--
 
-The Fibonacci numbers {fn, n ≥ 0} are defined recursively as fn = fn-1 + fn-2 with base cases f0 = 0 and f1 = 1.
+Os números de Fibonacci $\\{f_n, n ≥ 0\\}$ são definidos recursivamente como $f_n = f_{n - 1} + f_{n - 2}$ com casos de base $f_0 = 0$ e $f_1 = 1$.
 
-Define the polynomials {Fn, n ≥ 0} as Fn(x) = ∑fixi for 0 ≤ i ≤ n.
+Defina os polinômios $\\{F_n, n ≥ 0\\}$ como $F_n(x) = \displaystyle\sum_{i = 0}^n f_ix^i$.
 
-For example, F7(x) = x + x2 + 2x3 + 3x4 + 5x5 + 8x6 + 13x7, and F7(11) = 268357683.
+Por exemplo, $F_7(x) = x + x^2 + 2x^3 + 3x^4 + 5x^5 + 8x^6 + 13x^7$ e $F_7(11) = 268.357.683$.
 
-Let n = 1015. Find the sum \[∑0≤x≤100 Fn(x)] mod 1307674368000 (= 15!).
+Considere $n = {10}^{15}$. Encontre a soma $\displaystyle\sum_{x = 0}^{100} F_n(x)$ e dê sua resposta modulo $1.307.674.368.000 \\, (= 15!)$.
 
 # --hints--
 
-`euler435()` should return 252541322550.
+`polynomialsOfFibonacciNumbers()` deve retornar `252541322550`.
 
 ```js
-assert.strictEqual(euler435(), 252541322550);
+assert.strictEqual(polynomialsOfFibonacciNumbers(), 252541322550);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler435(), 252541322550);
 ## --seed-contents--
 
 ```js
-function euler435() {
+function polynomialsOfFibonacciNumbers() {
 
   return true;
 }
 
-euler435();
+polynomialsOfFibonacciNumbers();
 ```
 
 # --solutions--

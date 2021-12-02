@@ -62,7 +62,8 @@
     "verify-email": "Verify Email",
     "submit-and-go": "Submit and go to next challenge",
     "go-to-next": "Go to next challenge",
-    "ask-later": "Ask me later"
+    "ask-later": "Ask me later",
+    "start-coding": "Start coding!"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -288,7 +289,8 @@
       "preview": "Preview"
     },
     "help-translate": "We are still translating the following certifications.",
-    "help-translate-link": "Help us translate."
+    "help-translate-link": "Help us translate.",
+    "project-preview-title": "Here's a preview of what you will build"
   },
   "donate": {
     "title": "Support our nonprofit",

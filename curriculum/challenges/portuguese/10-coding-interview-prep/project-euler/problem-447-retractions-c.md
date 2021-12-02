@@ -1,6 +1,6 @@
 ---
 id: 5900f52c1000cf542c51003e
-title: 'Problem 447: Retractions C'
+title: 'Problema 447: Retrações C'
 challengeType: 5
 forumTopicId: 302119
 dashedName: problem-447-retractions-c
@@ -8,20 +8,26 @@ dashedName: problem-447-retractions-c
 
 # --description--
 
-For every integer n>1, the family of functions fn,a,b is defined
+Para cada número inteiro $n > 1$, a família de funções $f_{n, a, b}$ é definida por:
 
-by fn,a,b(x)≡ax+b mod n for a,b,x integer and 0
+$f_{n, a, b}(x) ≡ ax + b\bmod n$ para $a, b, x$ sendo números inteiros e $0 \lt a \lt n$, $0 \le b \lt n$, $0 \le x \lt n$.
 
-F(N)=∑R(n) for 2≤n≤N. F(107)≡638042271 (mod 1 000 000 007).
+Chamaremos $f_{n, a, b}$ de retração se $f_{n, a, b}(f_{n, a, b}(x)) \equiv f_{n, a, b}(x)\bmod n$ para cada $0 \le x \lt n$.
 
-Find F(1014) (mod 1 000 000 007).
+Considere $R(n)$ como o número de retrações para $n$.
+
+$F(N) = \displaystyle\sum_{n = 2}^N R(n)$.
+
+$F({10}^7) ≡ 638.042.271\bmod 1.000.000.007$.
+
+Encontre $F({10}^{14})$. Dê a sua resposta modulo $1.000.000.007$.
 
 # --hints--
 
-`euler447()` should return 530553372.
+`retractionsC()` deve retornar `530553372`.
 
 ```js
-assert.strictEqual(euler447(), 530553372);
+assert.strictEqual(retractionsC(), 530553372);
 ```
 
 # --seed--
@@ -29,12 +35,12 @@ assert.strictEqual(euler447(), 530553372);
 ## --seed-contents--
 
 ```js
-function euler447() {
+function retractionsC() {
 
   return true;
 }
 
-euler447();
+retractionsC();
 ```
 
 # --solutions--

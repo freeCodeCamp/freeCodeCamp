@@ -26,7 +26,7 @@ $2, 3, \\dfrac{8}{3}, \\dfrac{11}{4}, \\dfrac{19}{7}, \\dfrac{87}{32}, \\dfrac{1
 
 A soma de algarismos no numerador do 10<sup>o</sup> convergente é $1 + 4 + 5 + 7 = 17$.
 
-Calcule a soma dos dígitos no numerador do `n`<sup>o</sup> convergente da fração contínua para `e`.
+Calcule a soma dos algarismos no numerador do `n`<sup>o</sup> convergente da fração contínua para `e`.
 
 # --hints--
 

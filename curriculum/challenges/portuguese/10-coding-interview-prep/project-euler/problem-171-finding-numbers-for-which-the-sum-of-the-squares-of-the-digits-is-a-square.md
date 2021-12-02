@@ -14,7 +14,7 @@ Para um número inteiro positivo $n$, considere $f(n)$ como a soma dos quadrados
 
 $$\begin{align} & f(3) = 3^2 = 9 \\\\ & f(25) = 2^2 + 5^2 = 4 + 25 = 29 \\\\ & f(442) = 4^2 + 4^2 + 2^2 = 16 + 16 + 4 = 36 \\\\ \end{align}$$
 
-Encontre os últimos nove dígitos da soma de todos os $n$, sendo que $0 &lt; n &lt; {10}^{20}$, de modo que $f(n)$ seja um quadrado perfeito.
+Encontre os últimos nove algarismos da soma de todos os $n$, sendo que $0 &lt; n &lt; {10}^{20}$, de modo que $f(n)$ seja um quadrado perfeito.
 
 # --hints--
 

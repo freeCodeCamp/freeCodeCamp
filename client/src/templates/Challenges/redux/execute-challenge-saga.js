@@ -21,6 +21,7 @@ import {
   getTestRunner,
   challengeHasPreview,
   updatePreview,
+  updateProjectPreview,
   isJavaScriptChallenge,
   isLoopProtected
 } from '../utils/build';
@@ -240,6 +241,24 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   }
 }
 
+function* previewProjectSolutionSaga({ payload }) {
+  if (!payload) return;
+  const { showProjectPreview, challengeData } = payload;
+  if (!showProjectPreview) return;
+
+  try {
+    if (canBuildChallenge(challengeData)) {
+      const buildData = yield buildChallengeData(challengeData);
+      if (challengeHasPreview(challengeData)) {
+        const document = yield getContext('document');
+        yield call(updateProjectPreview, buildData, document);
+      }
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
@@ -251,6 +270,7 @@ export function createExecuteChallengeSaga(types) {
         types.resetChallenge
       ],
       executeCancellablePreviewSaga
-    )
+    ),
+    takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
 }
