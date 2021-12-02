@@ -35,6 +35,14 @@ type Meta = {
   challengeOrder: string[][];
 };
 
+interface CreateProjectArgs {
+  superBlock: SuperBlocks;
+  block: string;
+  helpCategory: string;
+  order: number;
+  title?: string;
+}
+
 async function createProject(
   superBlock: SuperBlocks,
   block: string,
@@ -230,7 +238,7 @@ prompt([
       if (!block.length) {
         return 'please enter a short name';
       }
-      if (/[^a-z0-9\-]/.test(block)) {
+      if (/[^a-z0-9-]/.test(block)) {
         return 'please use alphanumerical characters and kebab case';
       }
       return true;
@@ -264,8 +272,9 @@ prompt([
     }
   }
 ])
-  .then(({ superBlock, block, title, helpCategory, order }) =>
-    createProject(superBlock, block, helpCategory, order, title)
+  .then(
+    ({ superBlock, block, title, helpCategory, order }: CreateProjectArgs) =>
+      createProject(superBlock, block, helpCategory, order, title)
   )
   .then(() =>
     console.log(

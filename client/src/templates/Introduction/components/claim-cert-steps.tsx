@@ -1,28 +1,28 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
+import { SuperBlocks } from '../../../../../config/certification-settings';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { StepsPropType } from '../../../redux/prop-types';
+import { Steps } from '../../../redux/prop-types';
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
-const propTypes = {
-  i18nCertText: PropTypes.string,
-  isProjectsCompleted: PropTypes.bool,
-  steps: StepsPropType,
-  superBlock: PropTypes.string
-};
+interface ClaimCertStepsProps {
+  i18nCertText: string;
+  isProjectsCompleted: boolean;
+  steps: Steps;
+  superBlock: SuperBlocks;
+}
 
 const ClaimCertSteps = ({
   isProjectsCompleted,
   i18nCertText,
   steps,
   superBlock
-}) => {
+}: ClaimCertStepsProps): JSX.Element => {
   const { t } = useTranslation();
-  const renderCheckMark = isCompleted => {
+  const renderCheckMark = (isCompleted: boolean) => {
     return isCompleted ? (
       <GreenPass style={mapIconStyle} />
     ) : (
@@ -84,6 +84,5 @@ const ClaimCertSteps = ({
 };
 
 ClaimCertSteps.displayName = 'ClaimCertSteps';
-ClaimCertSteps.propTypes = propTypes;
 
 export default withTranslation()(ClaimCertSteps);

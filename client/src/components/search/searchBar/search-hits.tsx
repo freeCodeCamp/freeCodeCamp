@@ -57,6 +57,7 @@ const CustomHits = connectHits(
     ];
     const allHits = hits.slice(0, 8).concat(footer);
     useEffect(() => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       handleHits(allHits);
     });
 

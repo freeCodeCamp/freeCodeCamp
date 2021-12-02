@@ -16,6 +16,8 @@ Build a full stack JavaScript app that is functionally similar to this: <https:/
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 
+**Note:** Time zones conversion is not a purpose of this project, so assume all sent valid dates will be parsed with `new Date()` as GMT dates. 
+
 # --hints--
 
 You should provide your own project, not the example URL.
@@ -85,7 +87,7 @@ Your project can handle dates that can be successfully parsed by `new Date(date_
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/05 October 2011').then(
+  $.get(getUserInput('url') + '/api/05 October 2011, GMT').then(
     (data) => {
       assert(
         data.unix === 1317772800000 &&

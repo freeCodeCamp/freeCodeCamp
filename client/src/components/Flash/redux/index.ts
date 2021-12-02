@@ -1,16 +1,11 @@
 import { nanoid } from 'nanoid';
-import store from 'store';
+
 import { FlashState, State } from '../../../redux/types';
+import { playTone } from '../../../utils/tone';
+import { Themes } from '../../settings/theme';
+import { FlashMessages } from './flash-messages';
 
 export const FlashApp = 'flash';
-
-const initialState = {
-  message: {
-    id: '',
-    type: '',
-    message: ''
-  }
-};
 
 export const sagas = [];
 
@@ -26,32 +21,26 @@ enum FlashActionTypes {
 
 export type FlashMessageArg = {
   type: string;
-  message: string;
+  message: FlashMessages;
   variables?: Record<string, unknown>;
+};
+
+const initialState = {
+  message: {
+    id: '',
+    type: '',
+    message: FlashMessages.None
+  }
 };
 
 export const createFlashMessage = (
   flash: FlashMessageArg
 ): ReducerPayload<FlashActionTypes.CreateFlashMessage> => {
-  const playSound = store.get('fcc-sound') as boolean | undefined;
-  if (playSound) {
-    void import('tone').then(tone => {
-      if (tone.context.state !== 'running') {
-        void tone.context.resume();
-      }
-      if (flash.message === 'flash.incomplete-steps') {
-        const player = new tone.Player(
-          'https://campfire-mode.freecodecamp.org/try-again.mp3'
-        ).toDestination();
-        player.autostart = playSound;
-      }
-      if (flash.message === 'flash.cert-claim-success') {
-        const player = new tone.Player(
-          'https://campfire-mode.freecodecamp.org/cert.mp3'
-        ).toDestination();
-        player.autostart = playSound;
-      }
-    });
+  // Nightmode theme has special tones
+  if (flash.variables?.theme) {
+    void playTone(flash.variables.theme as Themes);
+  } else if (flash.message !== FlashMessages.None) {
+    void playTone(flash.message);
   }
   return {
     type: FlashActionTypes.CreateFlashMessage,

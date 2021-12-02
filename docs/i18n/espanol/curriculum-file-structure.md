@@ -103,4 +103,4 @@ Al renombras un solo archivo de desafío, tienes que:
 
 ## La propiedad `dashedName`
 
-La propiedad `dashedName` se usa para generar la ruta URL para el súper bloque, bloque o desafío. Por lo general, estos deben coincidir con los nombres que generaría el asistente `/utils/dasherize.js` para el nombre del archivo.
+The `dashedName` property is used to generate the URL path for the superblock, block, or challenge. These should generally match what the `/utils/slugs.js` helper would output for the file name.

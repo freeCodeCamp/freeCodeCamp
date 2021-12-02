@@ -26,14 +26,15 @@ import {
   postChargeStripeCard
 } from '../../redux';
 import Spacer from '../helpers/spacer';
-import DonateCompletion from './DonateCompletion';
+import { Themes } from '../settings/theme';
+import DonateCompletion from './donate-completion';
 import PatreonButton from './patreon-button';
 import type { AddDonationData } from './paypal-button';
 import PaypalButton from './paypal-button';
 import StripeCardForm, { HandleAuthentication } from './stripe-card-form';
 import WalletsWrapper from './walletsButton';
 
-import './Donation.css';
+import './donation.css';
 
 const numToCommas = (num: number): string =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
@@ -63,7 +64,7 @@ type DonateFormProps = {
     duration: string;
     handleAuthentication: HandleAuthentication;
   }) => void;
-  defaultTheme?: string;
+  defaultTheme?: Themes;
   email: string;
   handleProcessing: (duration: string, amount: number, action: string) => void;
   donationFormState: DonateFormState;
@@ -74,7 +75,7 @@ type DonateFormProps = {
     label: string,
     { usd, hours }?: { usd?: string | number; hours?: string }
   ) => string;
-  theme: string;
+  theme: Themes;
   updateDonationFormState: (state: AddDonationData) => unknown;
 };
 
@@ -87,7 +88,7 @@ const mapStateToProps = createSelector(
     showLoading: DonateFormProps['showLoading'],
     isSignedIn: DonateFormProps['isSignedIn'],
     donationFormState: DonateFormState,
-    { email, theme }: { email: string; theme: string }
+    { email, theme }: { email: string; theme: Themes }
   ) => ({
     isSignedIn,
     showLoading,

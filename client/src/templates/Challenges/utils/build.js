@@ -92,7 +92,7 @@ const buildFunctions = {
 
 export function canBuildChallenge(challengeData) {
   const { challengeType } = challengeData;
-  return buildFunctions.hasOwnProperty(challengeType);
+  return Object.prototype.hasOwnProperty.call(buildFunctions, challengeType);
 }
 
 export async function buildChallenge(challengeData, options) {

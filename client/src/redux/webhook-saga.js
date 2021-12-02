@@ -1,24 +1,25 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { createFlashMessage } from '../components/Flash/redux';
+import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import { postWebhookToken, deleteWebhookToken } from '../utils/ajax';
 import { postWebhookTokenComplete, deleteWebhookTokenComplete } from '.';
 
 const message = {
   created: {
     type: 'success',
-    message: 'flash.token-created'
+    message: FlashMessages.TokenCreated
   },
   createErr: {
     type: 'danger',
-    message: 'flash.create-token-err'
+    message: FlashMessages.CreateTokenErr
   },
   deleted: {
     type: 'info',
-    message: 'flash.token-deleted'
+    message: FlashMessages.TokenDeleted
   },
   deleteErr: {
     type: 'danger',
-    message: 'flash.delete-token-err'
+    message: FlashMessages.DeleteTokenErr
   }
 };
 

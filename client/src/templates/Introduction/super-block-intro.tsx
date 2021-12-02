@@ -11,7 +11,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { SuperBlocks } from '../../../../config/certification-settings';
-import DonateModal from '../../components/Donation/DonationModal';
+import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
@@ -25,9 +25,9 @@ import {
   userSelector
 } from '../../redux';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
-import Block from './components/Block';
-import CertChallenge from './components/CertChallenge';
-import SuperBlockIntro from './components/SuperBlockIntro';
+import Block from './components/block';
+import CertChallenge from './components/cert-challenge';
+import SuperBlockIntro from './components/super-block-intro';
 import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
@@ -60,7 +60,7 @@ type SuperBlockProp = {
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
 
-const mapStateToProps = (state: unknown) => {
+const mapStateToProps = (state: Record<string, unknown>) => {
   return createSelector(
     currentChallengeIdSelector,
     isSignedInSelector,
@@ -122,7 +122,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     if (
       location.state &&
       typeof location.state === 'object' &&
-      location.state.hasOwnProperty('breadcrumbBlockClick')
+      Object.prototype.hasOwnProperty.call(
+        location.state,
+        'breadcrumbBlockClick'
+      )
     ) {
       return location.state.breadcrumbBlockClick;
     }

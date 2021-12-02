@@ -19,7 +19,7 @@ describe('Backend challenge', function () {
 
     cy.title().should(
       'eq',
-      'Managing Packages with Npm - How to Use package.json, the Core of Any' +
+      'Managing Packages with NPM - How to Use package.json, the Core of Any' +
         ' Node.js Project or npm Package | Learn | freeCodeCamp.org'
     );
   });

@@ -8,6 +8,7 @@ interface LinkProps {
   sameTab?: boolean;
   state?: Record<string, unknown>;
   to: string;
+  onClick?: () => void;
 }
 
 const Link = ({

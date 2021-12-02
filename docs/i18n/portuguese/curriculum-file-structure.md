@@ -103,4 +103,4 @@ Faça o seguinte para renomear um único arquivo de desafio:
 
 ## A propriedade `dashedName`
 
-A propriedade `dashedName` é usada para gerar o caminho do URL para o superbloco, bloco, ou desafio. Ela deve corresponder em geral ao que o assistente `/utils/dasherize.js` daria como resultado para o nome do arquivo.
+A propriedade `dashedName` é usada para gerar o caminho do URL para o superbloco, bloco, ou desafio. Ela deve corresponder em geral ao que o assistente `/utils/slugs.js` daria como resultado para o nome do arquivo.
