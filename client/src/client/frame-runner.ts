@@ -67,6 +67,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
         !Object.isFrozen(o[prop])
       ) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         DeepFreeze(o[prop]);
       }
     });
