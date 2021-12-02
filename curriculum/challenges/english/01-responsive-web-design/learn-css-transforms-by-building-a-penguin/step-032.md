@@ -32,7 +32,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.height, 
 You should give `.penguin-body` a `background` of `linear-gradient(45deg, rgb(134, 133, 133) 0%, rgb(234, 231, 231) 25%, white 67%)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.getPropVal('background', true), 'linear-gradient(45deg,rgb(134,133,133)0%,rgb(234,231,231)25%,white67%)');
+assert.include(['linear-gradient(45deg,rgb(134,133,133)0%,rgb(234,231,231)25%,white67%)', 'rgba(0,0,0,0)linear-gradient(45deg,rgb(134,133,133)0%,rgb(234,231,231)25%,white67%)repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.penguin-body')?.getPropVal('background', true));
 ```
 
 # --seed--

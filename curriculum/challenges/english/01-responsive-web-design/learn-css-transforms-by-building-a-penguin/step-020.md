@@ -32,7 +32,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.height,
 You should give `.back-mountain` a `background` of `linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255))`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.getPropVal('background', true), 'linear-gradient(rgb(203,241,228),rgb(47,170,255))');
+assert.include(['linear-gradient(rgb(203,241,228),rgb(47,170,255))', 'rgba(0,0,0,0)linear-gradient(rgb(203,241,228),rgb(47,170,255))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.back-mountain')?.getPropVal('background', true));
 ```
 
 # --seed--

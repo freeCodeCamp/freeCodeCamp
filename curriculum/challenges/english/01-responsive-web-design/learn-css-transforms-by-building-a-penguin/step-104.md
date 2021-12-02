@@ -16,7 +16,7 @@ Congratulations! You have completed the Responsive Web Design certification.
 You should give `.ground` a `height` of `calc(100vh - 300px)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.getPropVal('height', true), 'calc(100vh-300px)');
+assert.include(['(100vh-300px)', 'calc(-300px+100vh)'], new __helpers.CSSHelp(document).getStyle('.ground')?.getPropVal('height', true));
 ```
 
 # --seed--

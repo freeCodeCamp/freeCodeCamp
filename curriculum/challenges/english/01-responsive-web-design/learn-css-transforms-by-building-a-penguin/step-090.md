@@ -20,7 +20,7 @@ assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.arm.left')?.transform
 You should give `.arm.left` a `transform-origin` of `0% 0%` or `top left`.
 
 ```js
-assert.include(['0% 0%', 'left top'], new __helpers.CSSHelp(document).getStyle('.arm.left')?.transformOrigin);
+assert.include(['0% 0%', 'left top', '0% 0% 0px', 'left top 0px'], new __helpers.CSSHelp(document).getStyle('.arm.left')?.transformOrigin);
 ```
 
 # --seed--

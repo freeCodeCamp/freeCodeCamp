@@ -26,7 +26,7 @@ assert.isTrue(new __helpers.CSSHelp(document).isPropertyUsed('background'));
 You should set `background` to `linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222))`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.getPropVal('background', true), 'linear-gradient(45deg,rgb(118,201,255),rgb(247,255,222))');
+assert.include(['linear-gradient(45deg,rgb(118,201,255),rgb(247,255,222))', 'rgba(0,0,0,0)linear-gradient(45deg,rgb(118,201,255),rgb(247,255,222))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('body')?.getPropVal('background', true));
 ```
 
 # --seed--

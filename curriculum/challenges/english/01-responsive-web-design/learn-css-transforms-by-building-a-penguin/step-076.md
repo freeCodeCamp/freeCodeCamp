@@ -231,7 +231,7 @@ body {
 }
 
 .shirt div {
-  font-weight:  initial;
+  font-weight: initial;
 
 }
 --fcc-editable-region--

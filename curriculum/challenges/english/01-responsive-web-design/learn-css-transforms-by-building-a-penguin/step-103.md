@@ -7,7 +7,7 @@ dashedName: step-103
 
 # --description--
 
-Change the `.penguin` element's `transition` behaviour during transformation to have a duration of `1s`, a timing function of `ease-in-out`, and a delay of `0ms`.
+Change the `.penguin` element's `transition` behavior during transformation to have a duration of `1s`, a timing function of `ease-in-out`, and a delay of `0ms`.
 
 # --hints--
 

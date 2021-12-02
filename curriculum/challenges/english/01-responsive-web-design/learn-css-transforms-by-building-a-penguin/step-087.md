@@ -32,7 +32,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.height, '60%');
 You should give `.arm` a `background` of `linear-gradient(90deg, gray, rgb(209, 210, 199))`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('background', true), 'linear-gradient(90deg,gray,rgb(209,210,199))');
+assert.include(['linear-gradient(90deg,gray,rgb(209,210,199))', 'rgba(0,0,0,0)linear-gradient(90deg,gray,rgb(209,210,199))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('background', true));
 ```
 
 # --seed--
