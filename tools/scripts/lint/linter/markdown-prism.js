@@ -16,7 +16,7 @@ module.exports = {
         if (baseLang && !lang) {
           onError({
             lineNumber: codeBlock.lineNumber,
-            detail: `\'${baseLang}\' is not recognised.`
+            detail: `'${baseLang}' is not recognised.`
           });
         }
       });

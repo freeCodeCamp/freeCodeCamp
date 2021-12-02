@@ -9,19 +9,13 @@
   "parser": "babel-eslint",
   "root": true,
   "extends": [
-    "./.eslintrc-base.json",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     "prettier"
-  ],
-  "plugins": [
-    "react",
-    "import",
-    "prefer-object-spread",
-    "react-hooks",
-    "jsx-a11y",
-    "jest-dom",
-    "testing-library"
   ],
   "globals": {
     "Promise": true,
@@ -33,11 +27,13 @@
   },
   "settings": {
     "react": {
-      "version": "16.4.2",
-      "import/ignore": ["\\.json$"],
-      "import/extensions": [".js", ".jsx", ".tsx", ".ts"]
-    },
-    "import/ignore": ["node_modules"]
+      "version": "16.4.2"
+    }
+  },
+  "rules": {
+    "import/named": 2,
+    "import/no-named-as-default": 0,
+    "import/no-named-as-default-member": 0
   },
   "overrides": [
     {
@@ -56,6 +52,7 @@
       ],
       "plugins": ["@typescript-eslint"],
       "rules": {
+        "import/named": 0,
         "@typescript-eslint/naming-convention": [
           "error",
           {
@@ -104,7 +101,11 @@
         "./tools/ui-components/**/*.test.[jt]s?(x)",
         "./client/**/*.test.[jt]s?(x)"
       ],
-      "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
+      "extends": [
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended"
+      ],
+      "rules": { "import/named": 2 }
     },
     {
       "files": ["cypress/**/*.js"],
