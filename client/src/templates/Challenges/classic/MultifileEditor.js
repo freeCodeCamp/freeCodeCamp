@@ -89,7 +89,6 @@ const MultifileEditor = props => {
   // TODO: the tabs mess up the rendering (scroll doesn't work properly and
   // the in-editor description)
 
-  console.log('MultifileEditor', props);
   const reflexProps = {
     propagateDimensions: true
   };
