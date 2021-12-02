@@ -2,12 +2,12 @@
   "name": "Legacy Data Visualization Certification",
   "isUpcomingChange": false,
   "dashedName": "legacy-data-visualization-certification",
-  "order": 1,
+  "order": 14,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certifications",
-  "superOrder": 12,
+  "superOrder": 0,
   "challengeOrder": [
     [
       "561add10cb82ac39a17513bc",

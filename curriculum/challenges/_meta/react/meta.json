@@ -2,7 +2,7 @@
   "name": "React",
   "isUpcomingChange": false,
   "dashedName": "react",
-  "order": 5,
+  "order": 4,
   "time": "5 hours",
   "template": "<body><div id='root'></div><div id='challenge-node'></div>${ source || '' }</body>",
   "required": [
