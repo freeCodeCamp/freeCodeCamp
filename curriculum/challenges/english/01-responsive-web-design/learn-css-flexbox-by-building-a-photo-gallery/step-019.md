@@ -73,6 +73,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 --fcc-editable-region--

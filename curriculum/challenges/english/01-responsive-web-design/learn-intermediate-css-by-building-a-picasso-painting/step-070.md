@@ -14,7 +14,6 @@ Give the `eyes-div` a `z-index` of `3`.
 Your `#eyes-div` selector should have a `z-index` property set to `3`.
 
 ```js
-// @nhcarrigan The next step does not include this
 assert(new __helpers.CSSHelp(document).getStyle('#eyes-div')?.zIndex === '3');
 ```
 
@@ -179,6 +178,7 @@ body {
   width: 10px;
   height: 10px;
   background-color: rgb(45, 31, 19);
+  border-radius: 50%;
   display: block;
   margin: auto;
   margin-top: 65%;

@@ -14,7 +14,6 @@ Give your `#gallery` selector a `padding` property set to `0 4px`.
 Your `#gallery` selector should have a `padding` property set to `0 4px`.
 
 ```js
-// @nhcarrigan The following steps do not have this
 assert.equal(new __helpers.CSSHelp(document).getStyle('#gallery')?.paddingTop, '0px');
 assert.equal(new __helpers.CSSHelp(document).getStyle('#gallery')?.paddingBottom, '0px');
 assert.equal(new __helpers.CSSHelp(document).getStyle('#gallery')?.paddingLeft, '4px');

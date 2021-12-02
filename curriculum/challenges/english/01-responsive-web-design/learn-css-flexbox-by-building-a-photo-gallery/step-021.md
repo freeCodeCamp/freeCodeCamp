@@ -104,6 +104,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 #gallery img {
@@ -180,6 +181,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 #gallery img {
