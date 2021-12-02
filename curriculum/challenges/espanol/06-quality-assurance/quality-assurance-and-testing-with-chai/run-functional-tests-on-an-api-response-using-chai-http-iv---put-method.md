@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c5b
-title: Run Functional Tests on an API Response using Chai-HTTP IV - PUT method
+title: Ejecutar pruebas funcionales en la respuesta de un API usando Chai-HTTP IV - método PUT
 challengeType: 2
 forumTopicId: 301591
 dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-method
@@ -8,15 +8,17 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/). This exercise is similar to the preceding one. Look at it for the details.
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Repl.it](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-Now that you have seen how it is done, it is your turn to do it from scratch.
+Este ejercicio es similar al anterior.
+
+Ahora que sabes cómo comprobar una petición `PUT`, es tu turno de hacerlo desde cero.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'send {surname: "da Verrazzano"}'` test (`// #4`):
+Dentro de `tests/2_functional-tests.js`, modifica la prueba `'Send {surname: "da Verrazzano"}'` (`// #4`), usa los métodos `put` y `send` para probar el endpoint `'/travellers'`.
 
-Send the following JSON response as a payload to the `/travellers` route:
+Envia el siguiente objeto JSON con tu solicitud PUT:
 
 ```json
 {
@@ -24,18 +26,18 @@ Send the following JSON response as a payload to the `/travellers` route:
 }
 ```
 
-Check for the following, within a `request.end` callback:
+Compruebe lo siguiente dentro del callback `request.end`:
 
-1.  `status`
-2.  `type`
-3.  `body.name`
-4.  `body.surname`
+1.  El `status` debe ser `200`
+2.  El `type` debe ser `application/json`
+3.  El `body.name` debe ser `Giovanni`
+4.  El `body.surname` debe ser `da Verrazzano`
 
-Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
+Sigue el orden de las aserciones de arriba - nos basamos en esto. Además, asegúrese de eliminar `assert.fail()` una vez completado.
 
 # --hints--
 
-All tests should pass
+Todas las pruebas deben pasar
 
 ```js
 (getUserInput) =>
@@ -49,7 +51,7 @@ All tests should pass
   );
 ```
 
-You should test for 'res.status' to be 200
+Debes comprobar que `res.status` sea 200
 
 ```js
 (getUserInput) =>
@@ -65,7 +67,7 @@ You should test for 'res.status' to be 200
   );
 ```
 
-You should test for 'res.type' to be 'application/json'
+Debes comprobar que `res.type` sea `'application/json'`
 
 ```js
 (getUserInput) =>
@@ -81,7 +83,7 @@ You should test for 'res.type' to be 'application/json'
   );
 ```
 
-You should test for 'res.body.name' to be 'Giovanni'
+Debes comprobar que `res.body.name` sea `'Giovanni'`
 
 ```js
 (getUserInput) =>
@@ -97,7 +99,7 @@ You should test for 'res.body.name' to be 'Giovanni'
   );
 ```
 
-You should test for 'res.body.surname' to be 'da Verrazzano'
+Debes comprobar que `res.body.surname` sea `'da Verrazzano'`
 
 ```js
 (getUserInput) =>
