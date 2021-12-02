@@ -7,7 +7,7 @@ dashedName: step-75
 
 # --description--
 
-You might have noticed the _heart_ emoji lost its color. This is because some of the character's properties were overridden by the `font-weight` style of `bold`.
+If you look closely, the _heart_ emoji is slightly different. This is because some of the character's properties were overridden by the `font-weight` style of `bold`.
 
 Fix this, by targetting the `div` with the heart emoji, and setting its `font-weight` to its original value.
 
