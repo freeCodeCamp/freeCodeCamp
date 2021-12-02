@@ -59,9 +59,8 @@ class MobileLayout extends Component<MobileLayoutProps> {
       unmountOnExit: true
     };
 
-    // This is not the same logic as the desktop version since the mobile
-    // version does not have an ActionRow, but does need a way to switch between
-    // the different tabs.
+    // Unlike the desktop layout the mobile version does not have an ActionRow,
+    // but still needs a way to switch between the different tabs.
     const displayEditorTabs = showUpcomingChanges && usesMultifileEditor;
 
     return (
