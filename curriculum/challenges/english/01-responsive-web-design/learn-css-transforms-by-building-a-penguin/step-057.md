@@ -1,5 +1,5 @@
 ---
-id: 619d0bc9cb05360e1bf549c3
+id: 619d0b51ca42ed0d74582186
 title: Step 57
 challengeType: 0
 dashedName: step-57
@@ -7,20 +7,32 @@ dashedName: step-57
 
 # --description--
 
-Position the `.eye` elements `45%` from the top of their parent, and give all corners a radius of `50%`.
+Target the `.eye` elements, and give them a `width` of `15%`, `height` of `17%`, and `background-color` of `black`.
 
 # --hints--
 
-You should give `.eye` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should use the `.eye` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.top, '45%');
+assert.match(code, /\.eye\s*\{/);
 ```
 
-You should give `.eye` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.eye` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.borderRadius, '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.width, '15%');
+```
+
+You should give `.eye` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.height, '17%');
+```
+
+You should give `.eye` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.backgroundColor, 'black');
 ```
 
 # --seed--
@@ -66,6 +78,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -153,12 +167,7 @@ body {
 }
 
 --fcc-editable-region--
-.eye {
-  width: 15%;
-  height: 17%;
-  background-color: black;
 
-}
 --fcc-editable-region--
 
 .penguin-body {

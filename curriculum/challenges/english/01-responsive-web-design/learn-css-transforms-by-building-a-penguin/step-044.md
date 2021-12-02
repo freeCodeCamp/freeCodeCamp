@@ -1,5 +1,5 @@
 ---
-id: 619c155df0063a0a3fec0e32
+id: 619be946958c6009844f1dee
 title: Step 44
 challengeType: 0
 dashedName: step-44
@@ -7,50 +7,26 @@ dashedName: step-44
 
 # --description--
 
-Give the `.face` elements a `width` of `60%`, a `height` of `70%`, and a `background-color` of `white`.
+Start the penguin's face, by adding two `div` elements within `.penguin-head`, and giving them both a `class` of `face`.
 
 # --hints--
 
-You should use the `.face` selector.
+You should add `--fcc-expected--` `div` elements to `.penguin-head`, but found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.face\s*\{/);
+assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 2);
 ```
 
-You should give `.face` a `width` property.
+You should give the first `div` a `class` of `face`, but found `--fcc-actual--`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.width);
+assert.include(document.querySelector('.penguin-head > div:nth-of-type(1)')?.className, 'face');
 ```
 
-You should give `.face` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give the second `div` a `class` of `face`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.width, '60%');
-```
-
-You should give `.face` a `height` property.
-
-```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.height);
-```
-
-You should give `.face` a `height` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.height, '70%');
-```
-
-You should give `.face` a `background-color` property.
-
-```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.backgroundColor);
-```
-
-You should give `.face` a `background-color` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.backgroundColor, 'white');
+assert.include(document.querySelector('.penguin-head > div:nth-of-type(2)')?.className, 'face');
 ```
 
 # --seed--
@@ -72,10 +48,11 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.backgroundColor,
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
+--fcc-editable-region--
       <div class="penguin-head">
-        <div class="face"></div>
-        <div class="face"></div>
+
       </div>
+--fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -89,6 +66,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -149,10 +128,6 @@ body {
   left: 25%;
   z-index: 1;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin-body {
   width: 53%;

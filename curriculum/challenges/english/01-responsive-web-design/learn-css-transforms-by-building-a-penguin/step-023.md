@@ -1,5 +1,5 @@
 ---
-id: 6196d213d99f16287bff22ae
+id: 6196d1ac33c68d27dcda5796
 title: Step 23
 challengeType: 0
 dashedName: step-23
@@ -7,26 +7,44 @@ dashedName: step-23
 
 # --description--
 
-To finish the background, add a sun, by creating a new `div` element immediately after the `.back-mountain` element, and give it the class of `sun`.
+Rotate the `.back-mountain` element by `45deg` clockwise. Then, give it a `left` property of `110px`, and a `top` property of `225px`.
 
 # --hints--
 
-You should add a new `div` element to `body`. Expected `--fcc-expected--` `div` elements, but found `--fcc-actual--`.
+You should use the `transform` property to rotate the element.
 
 ```js
-assert.equal(document.querySelectorAll('body > div')?.length, 5);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.transform);
 ```
 
-You should give the new `div` element a `class` of `sun`.
+You should give `.back-mountain` a `transform` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.include(document.querySelector('div:not(.back-mountain, .left-mountain, .penguin, .ground)')?.className, 'sun');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.transform, 'rotate(45deg)');
 ```
 
-You should place the new `div` element immediately after the `.back-mountain` element.
+You should give `.back-mountain` a `left` property.
 
 ```js
-assert.strictEqual(document.querySelector('div.back-mountain')?.nextElementSibling, document.querySelector('div.sun'));
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.left);
+```
+
+You should give `.back-mountain` a `left` property of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.left, '110px');
+```
+
+You should give `.back-mountain` a `top` property.
+
+```js
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.top);
+```
+
+You should give `.back-mountain` a `top` property of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.top, '225px');
 ```
 
 # --seed--
@@ -43,15 +61,12 @@ assert.strictEqual(document.querySelector('div.back-mountain')?.nextElementSibli
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
---fcc-editable-region--
   <body>
     <div class="left-mountain"></div>
     <div class="back-mountain"></div>
-
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
---fcc-editable-region--
 </html>
 ```
 
@@ -60,6 +75,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -73,16 +90,16 @@ body {
   margin-top: 100px;
 }
 
+--fcc-editable-region--
 .back-mountain {
   width: 300px;
   height: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
   position: absolute;
   z-index: 1;
-  transform: rotate(45deg);
-  left: 110px;
-  top: 225px;
+
 }
+--fcc-editable-region--
 
 .penguin {
   width: 300px;

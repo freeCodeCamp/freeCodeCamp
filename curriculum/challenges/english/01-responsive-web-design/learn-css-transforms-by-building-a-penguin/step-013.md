@@ -1,5 +1,5 @@
 ---
-id: 61969c487ced6f12db8fef94
+id: 61969aa6acef5b12200f672e
 title: Step 13
 challengeType: 0
 dashedName: step-13
@@ -7,32 +7,28 @@ dashedName: step-13
 
 # --description--
 
-Target the `.left-mountain` element, and set its `width` and `height` to `300px`. Then, set the `background` to a linear gradient starting at `rgb(203, 241, 228)` and ending at `rgb(80, 183, 255)`.
+To create some scenery in the background, you will add two mountains.
+
+Above the `.penguin` element, add a `div` with a `class` of `left-mountain`.
 
 # --hints--
 
-You should use the `.left-mountain` selector.
+You should add a new `div` within `body`. Expected to see `--fcc-expected--` `div` elements, but found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.left-mountain\s*\{/);
+assert.equal(document.querySelectorAll('body > div')?.length, 3);
 ```
 
-You should give `.left-mountain` a `width` of `300px`. Expected `--fcc-actual--` to be `--fcc-expected--`.
+You should give the `div` a `class` of `left-mountain`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.width, '300px');
+assert.include(document.querySelector('body > div:not(.ground, .penguin)')?.className, 'left-mountain');
 ```
 
-You should give `.left-mountain` a `height` of `300px`. Expected `--fcc-actual--` to be `--fcc-expected--`.
+You should place `.left-mountain` before `.penguin`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.height, '300px');
-```
-
-You should give `.left-mountain` a `background` of `linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255))`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.getPropVal('background', true), 'linear-gradient(rgb(203,241,228),rgb(80,183,255))');
+assert.strictEqual(document.querySelector('.penguin')?.previousElementSibling, document.querySelector('.left-mountain'));
 ```
 
 # --seed--
@@ -50,11 +46,13 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.getProp
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
+--fcc-editable-region--
   <body>
-    <div class="left-mountain"></div>
+
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
+--fcc-editable-region--
 </html>
 ```
 
@@ -63,12 +61,10 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin {
   width: 300px;

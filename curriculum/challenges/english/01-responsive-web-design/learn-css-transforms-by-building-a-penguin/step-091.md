@@ -1,5 +1,5 @@
 ---
-id: 619d2ebc81ba81271460850d
+id: 619d2d4e80400325ff89664a
 title: Step 91
 challengeType: 0
 dashedName: step-91
@@ -7,14 +7,14 @@ dashedName: step-91
 
 # --description--
 
-Rotate the right arm by `45deg` counterclockwise.
+To keep the linear gradient on the correct side of the penguin's left arm, first rotate it by `130deg`, then invert the x-axis.
 
 # --hints--
 
-You should give `.arm.right` a `transform` of `rotate(-45deg)`.
+You should give `.arm.left` a `transform` of `rotate(130deg) scaleX(-1)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.right')?.getPropVal('transform', true), 'rotate(-45deg)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left').getPropVal('transform', true), 'rotate(130deg)scaleX(-1)');
 ```
 
 # --seed--
@@ -79,6 +79,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -274,20 +276,19 @@ body {
   );
 }
 
+--fcc-editable-region--
 .arm.left {
   top: 35%;
   left: 5%;
   transform-origin: top left; 
-  transform: rotate(130deg) scaleX(-1);
-}
 
+}
 --fcc-editable-region--
+
 .arm.right {
   top: 0%;
   right: -5%;
-
 }
---fcc-editable-region--
 
 .foot {
   width:  15%;

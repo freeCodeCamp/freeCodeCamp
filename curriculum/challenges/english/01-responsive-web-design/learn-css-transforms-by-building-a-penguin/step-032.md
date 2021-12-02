@@ -1,5 +1,5 @@
 ---
-id: 61993e9adc9e9a0bb4d28fff
+id: 61993dbb35adf30b10d49e38
 title: Step 32
 challengeType: 0
 dashedName: step-32
@@ -7,16 +7,32 @@ dashedName: step-32
 
 # --description--
 
-Another interesting fact about penguins is that they do not have square bodies.
-
-Use the `border-radius` property with a value of `80% 80% 100% 100%`, to give the penguin a slightly rounded body.
+Target the `.penguin-body` element, and give it a `width` of `53%`, and a `height` of `45%`. Then, set the `background` to a linear gradient at `45deg`, `rgb(134, 133, 133)` from `0%`, `rgb(234, 231, 231)` from `25%`, and `white` from `67%`.
 
 # --hints--
 
-You should give `.penguin-body` a `border-radius` of `80% 80% 100% 100%`.
+You should use the `.penguin-body` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.borderRadius, '80% 80% 100% 100%');
+assert.match(code, /\.penguin-body\s*\{/);
+```
+
+You should give `.penguin-body` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.width, '53%');
+```
+
+You should give `.penguin-body` a `height` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.height, '45%');
+```
+
+You should give `.penguin-body` a `background` of `linear-gradient(45deg, rgb(134, 133, 133) 0%, rgb(234, 231, 231) 25%, white 67%)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.getPropVal('background', true), 'linear-gradient(45deg,rgb(134,133,133)0%,rgb(234,231,231)25%,white67%)');
 ```
 
 # --seed--
@@ -52,6 +68,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -100,24 +118,14 @@ body {
 	height: 45%;
   background: linear-gradient(
     45deg,
-		gray,
+	  gray,
 		rgb(239, 240, 228)
 	);
 	border-radius: 70% 70% 65% 65%;
 }
 
 --fcc-editable-region--
-.penguin-body {
-  width: 53%;
-  height: 45%;
-  background: linear-gradient(
-		45deg,
-		rgb(134, 133, 133) 0%,
-		rgb(234, 231, 231) 25%,
-		white 67%
-	);
 
-}
 --fcc-editable-region--
 
 .ground {

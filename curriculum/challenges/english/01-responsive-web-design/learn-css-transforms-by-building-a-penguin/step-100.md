@@ -1,5 +1,5 @@
 ---
-id: 619d3482f505452d861d0f62
+id: 619d33c51140292cc5a21742
 title: Step 100
 challengeType: 0
 dashedName: step-100
@@ -7,20 +7,32 @@ dashedName: step-100
 
 # --description--
 
-Target the `.penguin` element when it is active, and increase its size by `50%` in both dimensions.
+Use the `wave` animation on the left arm. Have the animation last `3s`, infinitely iterate, and have a linear timing function.
 
 # --hints--
 
-You should use the `.penguin:active` selector.
+You should give `.arm.left` an `animation-name` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.penguin:active\s*\{/);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationName, 'wave');
 ```
 
-You should give `.penguin:active` a `transform` of `scale(1.5)`.
+You should give `.arm.left` an `animation-duration` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin:active')?.getPropVal('transform', true), 'scale(1.5)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationDuration, '3s');
+```
+
+You should give `.arm.left` an `animation-iteration-count` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationIterationCount, 'infinite');
+```
+
+You should give `.arm.left` an `animation-timing-function` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationTimingFunction, 'linear');
 ```
 
 # --seed--
@@ -85,6 +97,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -131,10 +145,6 @@ body {
 .penguin * {
   position: absolute;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin-head {
   width: 50%;
@@ -286,13 +296,15 @@ body {
   z-index: -1;
 }
 
+--fcc-editable-region--
 .arm.left {
   top: 35%;
   left: 5%;
   transform-origin: top left; 
   transform: rotate(130deg) scaleX(-1);
-  animation: 3s linear infinite wave;
+
 }
+--fcc-editable-region--
 
 .arm.right {
   top: 0%;

@@ -1,5 +1,5 @@
 ---
-id: 619d204bd73ae51e743b8e94
+id: 619d1fb5d244c31db8a7fdb7
 title: Step 80
 challengeType: 0
 dashedName: step-80
@@ -7,20 +7,32 @@ dashedName: step-80
 
 # --description--
 
-Position the `.foot` elements `85%` from the top of their parent, and give all corners a radius of `50%`.
+Target the `.foot` elements, and give them a `width` of `15%`, `height` of `30%`, and `background-color` of `orange`.
 
 # --hints--
 
-You should give `.foot` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should use the `.foot` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.top, '85%');
+assert.match(code, /\.foot\s*\{/);
 ```
 
-You should give `.foot` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.foot` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.borderRadius, '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.width, '15%');
+```
+
+You should give `.foot` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.height, '30%');
+```
+
+You should give `.foot` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.backgroundColor, 'orange');
 ```
 
 # --seed--
@@ -81,6 +93,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -267,12 +281,7 @@ body {
 }
 
 --fcc-editable-region--
-.foot {
-  width:  15%;
-  height: 30%;
-  background-color: orange;
-  
-}
+
 --fcc-editable-region--
 
 .ground {

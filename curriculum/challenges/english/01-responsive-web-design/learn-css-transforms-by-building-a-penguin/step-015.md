@@ -1,5 +1,5 @@
 ---
-id: 61969e7451455614217e901b
+id: 61969d66cfcdba137d021558
 title: Step 15
 challengeType: 0
 dashedName: step-15
@@ -7,28 +7,14 @@ dashedName: step-15
 
 # --description--
 
-To make the mountain look more like a mountain, you can use the `skew` transform function, which takes two arguments. The first being an angle to shear the x-axis by, and the second being an angle to shear the y-axis by.
-
-Use the `transform` property to skew the mountain by `0deg` in the x-axis and `44deg` in the y-axis.
+To prevent the mountain from pushing the `.ground` element, adjust its `position` to prevent it from taking up space in the page layout.
 
 # --hints--
 
-You should give `.left-mountain` a `transform` property.
+You should give `.left-mountain` a `position` of `absolute`. Found `--fcc-actual--` instead of `--fcc-expected--`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.transform);
-```
-
-You should use the `skew` function on `transform`.
-
-```js
-assert.include(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.transform, 'skew');
-```
-
-You should give `.left-mountain` a `transform` of `skew(0deg, 44deg)`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.getPropVal('transform', true), 'skew(0deg,44deg)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.position, 'absolute');
 ```
 
 # --seed--
@@ -59,6 +45,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -67,7 +55,6 @@ body {
   width: 300px;
   height: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
-  position: absolute;
 
 }
 --fcc-editable-region--

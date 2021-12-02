@@ -1,5 +1,5 @@
 ---
-id: 619cfdf2e63ddf05feab86ad
+id: 619c16debd0c270b01c5ce38
 title: Step 46
 challengeType: 0
 dashedName: step-46
@@ -7,20 +7,17 @@ dashedName: step-46
 
 # --description--
 
-Position the `.face` elements so that they are `15%` from the top.
+Make the top corners of the `.face` elements have a radius of `70%`, and the bottom corners have a radius of `60%`.
 
 # --hints--
 
-You should give `.face` a `top` property.
+You should give `.face` a `border-radius` of `70% 70% 60% 60%`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.top);
-```
-
-You should give `.face` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.top, '15%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderTopLeftRadius, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderTopRightRadius, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderBottomLeftRadius, '60%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderBottomRightRadius, '60%');
 ```
 
 # --seed--
@@ -59,6 +56,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -125,7 +124,6 @@ body {
   width: 60%;
   height: 70%;
   background-color: white;
-  border-radius: 70% 70% 60% 60%;
 
 }
 --fcc-editable-region--

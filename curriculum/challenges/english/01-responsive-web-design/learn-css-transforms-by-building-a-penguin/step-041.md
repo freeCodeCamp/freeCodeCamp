@@ -1,5 +1,5 @@
 ---
-id: 619be80062551a080e32c821
+id: 619be7af7b0bf60770f5d2a4
 title: Step 41
 challengeType: 0
 dashedName: step-41
@@ -7,23 +7,20 @@ dashedName: step-41
 
 # --description--
 
-Round off the crest, by giving the pseudo-element bottom corners a radius of `100%`, leaving the top corners at `0%`.
+Position the pseudo-element `10%` from the top and `25%` from the left of its parent.
 
 # --hints--
 
-You should use the `border-radius` property to round off the crest.
+You should give `.penguin-body::before` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderRadius);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.top, '10%');
 ```
 
-You should give `.penguin-body::before` a `border-radius` of `0% 0% 100% 100%`.
+You should give `.penguin-body::before` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderBottomLeftRadius, '100%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderBottomRightRadius, '100%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderTopLeftRadius, '0%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderTopRightRadius, '0%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.left, '25%');
 ```
 
 # --seed--
@@ -59,6 +56,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -141,8 +140,6 @@ body {
   width: 50%;
   height: 45%;
   background-color: gray;
-  top: 10%;
-  left: 25%;
 
 }
 --fcc-editable-region--

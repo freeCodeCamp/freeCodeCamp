@@ -1,5 +1,5 @@
 ---
-id: 619d324f5915c929f36ae91d
+id: 619d30350883802921bfcccc
 title: Step 95
 challengeType: 0
 dashedName: step-95
@@ -7,32 +7,22 @@ dashedName: step-95
 
 # --description--
 
-Give `wave` four waypoints starting at `10%`, and incrementing by `10%`.
+Now, you are going to use CSS animations to make the penguin wave.
+
+Define a new `@keyframes` named `wave`.
 
 # --hints--
 
-You should add a `10%` waypoint for `@keyframes wave`.
+You should defined a new `@keyframes` rule.
 
 ```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '10%'));
+assert.notEmpty(new __helpers.CSSHelp(document).getCSSRules('keyframes'));
 ```
 
-You should add a `20%` waypoint for `@keyframes wave`.
+You should give the `@keyframes` rule a `name` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '20%'));
-```
-
-You should add a `30%` waypoint for `@keyframes wave`.
-
-```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '30%'));
-```
-
-You should add a `40%` waypoint for `@keyframes wave`.
-
-```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '40%'));
+assert.equal(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name, 'wave');
 ```
 
 # --seed--
@@ -97,6 +87,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -308,9 +300,7 @@ body {
 }
 
 --fcc-editable-region--
-@keyframes wave {
 
-}
 --fcc-editable-region--
 
 .foot {

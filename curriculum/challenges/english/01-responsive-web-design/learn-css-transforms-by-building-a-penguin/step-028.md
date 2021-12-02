@@ -1,5 +1,5 @@
 ---
-id: 6197f40a16afea068c7e60c8
+id: 6197cff995d03905b0cca8ad
 title: Step 28
 challengeType: 0
 dashedName: step-28
@@ -7,32 +7,28 @@ dashedName: step-28
 
 # --description--
 
-Change the stack level of the `.penguin` element such that it appears in front of the `.ground` element, and give it a `position` of `relative`.
+Your penguin will consist of two main sections: the head, and the body.
+
+Within `.penguin`, add two new `div` elements. The first with a `class` of `penguin-head`, and the second with a `class` of `penguin-body`.
 
 # --hints--
 
-You should use the `z-index` property to change the stack level.
+You should add two new `div` elements to `.penguin`. Expected `--fcc-expected--` `.penguin > div` elements, but found `--fcc-actual--`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.penguin')?.zIndex);
+assert.equal(document.querySelectorAll('.penguin > div')?.length, 2);
 ```
 
-You should give the `.penguin` element a `z-index` of `4`.
+You should give the first `div` a `class` of `penguin-head`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.zIndex, '4');
+assert.include(document.querySelector('.penguin > div:nth-of-type(1)')?.className, 'penguin-head');
 ```
 
-You should give `.penguin` a `position` property.
+You should give the second `div` a `class` of `penguin-body`.
 
 ```js
-assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin')?.position);
-```
-
-You should give `.penguin` a `position` of `relative`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.position, 'relative');
+assert.include(document.querySelector('.penguin > div:nth-of-type(2)')?.className, 'penguin-body');
 ```
 
 # --seed--
@@ -53,11 +49,11 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.position, 're
     <div class="left-mountain"></div>
     <div class="back-mountain"></div>
     <div class="sun"></div>
+--fcc-editable-region--
     <div class="penguin">
-      <div class="penguin-head"></div>
-      <div class="penguin-body"></div>
-    </div>
 
+    </div>
+--fcc-editable-region--
     <div class="ground"></div>
   </body>
 </html>
@@ -68,6 +64,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -102,15 +100,12 @@ body {
   right: -75px;
 }
 
---fcc-editable-region--
 .penguin {
   width: 300px;
   height: 300px;
   margin: auto;
   margin-top: 75px;
-
 }
---fcc-editable-region--
 
 .ground {
   width: 100vw;

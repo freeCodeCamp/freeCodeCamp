@@ -1,5 +1,5 @@
 ---
-id: 6197f667297bb30a552ce017
+id: 6196928658b6010f28c39484
 title: Step 8
 challengeType: 0
 dashedName: step-8
@@ -7,20 +7,14 @@ dashedName: step-8
 
 # --description--
 
-As the `.ground` element will be third in the stacking context of the page layout, set its `z-index` to `3`, and `position` to `absolute`.
+Give the `.ground` element a `background` with a linear gradient angled 90 degrees clockwise, starting at `rgb(88, 175, 236)` and ending at `rgb(182, 255, 255)`.
 
 # --hints--
 
-You should give `.ground` a `z-index` of `3`.
+You should give `.ground` a `background` of `linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255))`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.zIndex, '3');
-```
-
-You should give `.ground` a `position` of `absolute`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.position, 'absolute');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.getPropVal('background', true), 'linear-gradient(90deg,rgb(88,175,236),rgb(182,255,255))');
 ```
 
 # --seed--
@@ -49,6 +43,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -56,7 +52,6 @@ body {
 .ground {
   width: 100vw;
   height: 400px;
-  background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
 
 }
 --fcc-editable-region--

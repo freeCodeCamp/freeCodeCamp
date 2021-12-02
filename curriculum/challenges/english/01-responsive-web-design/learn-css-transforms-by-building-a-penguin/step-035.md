@@ -1,5 +1,5 @@
 ---
-id: 619943285a41720e6370d985
+id: 6199429802b7c10dc79ff871
 title: Step 35
 challengeType: 0
 dashedName: step-35
@@ -7,32 +7,32 @@ dashedName: step-35
 
 # --description--
 
-Position the `.penguin-body` element `40%` from the top, and `23.5%` from the left of its parent.
+Position the `.penguin-head` element `10%` from the top, and `25%` from the left of its parent.
 
 # --hints--
 
-You should give `.penguin-body` a `top` property.
+You should give `.penguin-head` a `top` property.
 
 ```js
-assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.top);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.top);
 ```
 
-You should give `.penguin-body` a `top` property of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.penguin-head` a `top` property of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.top, '40%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.top, '10%');
 ```
 
-You should give `.penguin-body` a `left` property.
+You should give `.penguin-head` a `left` property.
 
 ```js
-assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.left);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.left);
 ```
 
-You should give `.penguin-body` a `left` property of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.penguin-head` a `left` property of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.left, '23.5%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.left, '25%');
 ```
 
 # --seed--
@@ -68,6 +68,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -115,6 +117,7 @@ body {
   position: absolute;
 }
 
+--fcc-editable-region--
 .penguin-head {
   width: 50%;
 	height: 45%;
@@ -124,24 +127,21 @@ body {
 		rgb(239, 240, 228)
 	);
 	border-radius: 70% 70% 65% 65%;
-  top: 10%;
-  left: 25%;
-}
 
+}
 --fcc-editable-region--
+
 .penguin-body {
   width: 53%;
   height: 45%;
   background: linear-gradient(
-    45deg,
+		45deg,
 		rgb(134, 133, 133) 0%,
 		rgb(234, 231, 231) 25%,
 		white 67%
 	);
   border-radius: 80% 80% 100% 100%;
-  
 }
---fcc-editable-region--
 
 .ground {
   width: 100vw;

@@ -1,5 +1,5 @@
 ---
-id: 6199409834ccaf0d10736596
+id: 61993e9adc9e9a0bb4d28fff
 title: Step 33
 challengeType: 0
 dashedName: step-33
@@ -7,20 +7,16 @@ dashedName: step-33
 
 # --description--
 
-Target all descendent elements of the `.penguin` element, and give them a `position` of `absolute`.
+Another interesting fact about penguins is that they do not have square bodies.
+
+Use the `border-radius` property with a value of `80% 80% 100% 100%`, to give the penguin a slightly rounded body.
 
 # --hints--
 
-You should use the `.penguin *` selector.
+You should give `.penguin-body` a `border-radius` of `80% 80% 100% 100%`.
 
 ```js
-assert.match(code, /\.penguin\s*\*\s*\{/);
-```
-
-You should give `.penguin *` a `position` of `absolute`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin *')?.position, 'absolute');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.borderRadius, '80% 80% 100% 100%');
 ```
 
 # --seed--
@@ -56,6 +52,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -99,10 +97,6 @@ body {
   position: relative;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 .penguin-head {
   width: 50%;
 	height: 45%;
@@ -114,6 +108,7 @@ body {
 	border-radius: 70% 70% 65% 65%;
 }
 
+--fcc-editable-region--
 .penguin-body {
   width: 53%;
   height: 45%;
@@ -123,8 +118,9 @@ body {
 		rgb(234, 231, 231) 25%,
 		white 67%
 	);
-  border-radius: 80% 80% 100% 100%;
+
 }
+--fcc-editable-region--
 
 .ground {
   width: 100vw;

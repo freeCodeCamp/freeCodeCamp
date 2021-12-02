@@ -1,5 +1,5 @@
 ---
-id: 6199429802b7c10dc79ff871
+id: 6199409834ccaf0d10736596
 title: Step 34
 challengeType: 0
 dashedName: step-34
@@ -7,32 +7,20 @@ dashedName: step-34
 
 # --description--
 
-Position the `.penguin-head` element `10%` from the top, and `25%` from the left of its parent.
+Target all descendent elements of the `.penguin` element, and give them a `position` of `absolute`.
 
 # --hints--
 
-You should give `.penguin-head` a `top` property.
+You should use the `.penguin *` selector.
 
 ```js
-assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.top);
+assert.match(code, /\.penguin\s*\*\s*\{/);
 ```
 
-You should give `.penguin-head` a `top` property of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.penguin *` a `position` of `absolute`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.top, '10%');
-```
-
-You should give `.penguin-head` a `left` property.
-
-```js
-assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.left);
-```
-
-You should give `.penguin-head` a `left` property of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.left, '25%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin *')?.position, 'absolute');
 ```
 
 # --seed--
@@ -68,6 +56,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -111,11 +101,10 @@ body {
   position: relative;
 }
 
-.penguin * {
-  position: absolute;
-}
+--fcc-editable-region--
 
 --fcc-editable-region--
+
 .penguin-head {
   width: 50%;
 	height: 45%;
@@ -125,9 +114,7 @@ body {
 		rgb(239, 240, 228)
 	);
 	border-radius: 70% 70% 65% 65%;
-
 }
---fcc-editable-region--
 
 .penguin-body {
   width: 53%;

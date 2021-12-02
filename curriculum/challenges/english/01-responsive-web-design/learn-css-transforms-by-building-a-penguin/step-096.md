@@ -1,5 +1,5 @@
 ---
-id: 619d32c7fa21f32aaa91d499
+id: 619d324f5915c929f36ae91d
 title: Step 96
 challengeType: 0
 dashedName: step-96
@@ -7,14 +7,32 @@ dashedName: step-96
 
 # --description--
 
-Within the first waypoint, rotate to `110deg`, and retain the scaling of the left arm.
+Give `wave` four waypoints starting at `10%`, and incrementing by `10%`.
 
 # --hints--
 
-You should give the `10%` waypoint a `transform` of `rotate(110deg) scaleX(-1)`.
+You should add a `10%` waypoint for `@keyframes wave`.
 
 ```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '10%')?.style?.transform?.replace(/\s+/g, '') === 'rotate(110deg)scaleX(-1)');
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '10%'));
+```
+
+You should add a `20%` waypoint for `@keyframes wave`.
+
+```js
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '20%'));
+```
+
+You should add a `30%` waypoint for `@keyframes wave`.
+
+```js
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '30%'));
+```
+
+You should add a `40%` waypoint for `@keyframes wave`.
+
+```js
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].some(css => css?.keyText === '40%'));
 ```
 
 # --seed--
@@ -79,6 +97,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -291,18 +311,7 @@ body {
 
 --fcc-editable-region--
 @keyframes wave {
-  10% {
 
-  }
-  20% {
-
-  }
-  30% {
-
-  }
-  40% {
-
-  }
 }
 --fcc-editable-region--
 

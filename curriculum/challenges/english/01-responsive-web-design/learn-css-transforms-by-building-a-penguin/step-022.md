@@ -1,5 +1,5 @@
 ---
-id: 6196d1ac33c68d27dcda5796
+id: 6196d0cda039d026f7f78d1e
 title: Step 22
 challengeType: 0
 dashedName: step-22
@@ -7,44 +7,26 @@ dashedName: step-22
 
 # --description--
 
-Rotate the `.back-mountain` element by `45deg` clockwise. Then, give it a `left` property of `110px`, and a `top` property of `225px`.
+Change the stack level of the `.back-mountain` element such that it is directly behind the `.left-mountain` element.
 
 # --hints--
 
-You should use the `transform` property to rotate the element.
+You should use the `z-index` property to change the stack level.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.transform);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.zIndex);
 ```
 
-You should give `.back-mountain` a `transform` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should set the `z-index` property to `1`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.transform, 'rotate(45deg)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.zIndex, '1');
 ```
 
-You should give `.back-mountain` a `left` property.
+You should not change the `z-index` of the `.left-mountain` element.
 
 ```js
-assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.left);
-```
-
-You should give `.back-mountain` a `left` property of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.left, '110px');
-```
-
-You should give `.back-mountain` a `top` property.
-
-```js
-assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.top);
-```
-
-You should give `.back-mountain` a `top` property of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.top, '225px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.zIndex, '2');
 ```
 
 # --seed--
@@ -75,6 +57,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -94,7 +78,6 @@ body {
   height: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
   position: absolute;
-  z-index: 1;
 
 }
 --fcc-editable-region--

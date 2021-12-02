@@ -1,5 +1,5 @@
 ---
-id: 619d05c54dabca0b10058235
+id: 619d0503e03a790a4179d463
 title: Step 53
 challengeType: 0
 dashedName: step-53
@@ -7,28 +7,41 @@ dashedName: step-53
 
 # --description--
 
-So far, the `.face` and `.chin` elements have the same `background-color`.
-
-Create a custom CSS property called `--penguin-face`, and set it to `white`.
+Position the `.chin` element such that it is `25%` from the top, and `5%` from the left of its parent. Then, give the top corners a radius of `70%`, and the bottom corners a radius of `100%`.
 
 # --hints--
 
-You should use the `:root` selector.
+You should give `.chin` a `top` property.
 
 ```js
-assert.match(code, /:root\s*\{/);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.chin')?.top);
 ```
 
-You should give `:root` a `--penguin-face` property.
+You should give `.chin` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--penguin-face'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.top, '25%');
 ```
 
-You should give `:root` a `--penguin-face` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.chin` a `left` property.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropVal('--penguin-face', true), 'white');
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.chin')?.left);
+```
+
+You should give `.chin` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.left, '5%');
+```
+
+You should give `.chin` a `border-radius` of `70% 70% 100% 100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.borderTopLeftRadius, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.borderTopRightRadius, '70%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.borderBottomRightRadius, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.borderBottomLeftRadius, '100%');
 ```
 
 # --seed--
@@ -64,14 +77,12 @@ assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropVal('--pe
 ```
 
 ```css
---fcc-editable-region--
-
---fcc-editable-region--
-
 body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -149,14 +160,14 @@ body {
   right: 5%;
 }
 
+--fcc-editable-region--
 .chin {
   width: 90%;
   height: 70%;
   background-color: white;
-  top: 25%;
-  left: 5%;
-  border-radius: 70% 70% 100% 100%;
+
 }
+--fcc-editable-region--
 
 .penguin-body {
   width: 53%;

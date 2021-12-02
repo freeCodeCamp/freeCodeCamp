@@ -1,5 +1,5 @@
 ---
-id: 619d1fb5d244c31db8a7fdb7
+id: 619d1ed33c9a071cf657a0d6
 title: Step 79
 challengeType: 0
 dashedName: step-79
@@ -7,32 +7,46 @@ dashedName: step-79
 
 # --description--
 
-Target the `.foot` elements, and give them a `width` of `15%`, `height` of `30%`, and `background-color` of `orange`.
+Fun fact: Penguins cannot stand without at least two feet.
+
+Within the `.penguin-body` element, add two `div` elements each with a `class` of `foot`. Give the first `.foot` a `class` of `left`, and the second `.foot` a `class` of `right`.
 
 # --hints--
 
-You should use the `.foot` selector.
+You should add two `div` elements within `.penguin-body`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.foot\s*\{/);
+assert.equal(document.querySelectorAll('.penguin-body > div')?.length, 2);
 ```
 
-You should give `.foot` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the first new `div` a `class` of `foot`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.width, '15%');
+assert.exists(document.querySelector('.penguin-body > div.foot'));
 ```
 
-You should give `.foot` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the second new `div` a `class` of `foot`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.height, '30%');
+assert.equal(document.querySelectorAll('.penguin-body > div.foot')?.length, 2);
 ```
 
-You should give `.foot` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give one `div` a `class` of `left`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.backgroundColor, 'orange');
+assert.exists(document.querySelector('.penguin-body > div.foot.left'));
+```
+
+You should give the other `div` a `class` of `right`.
+
+```js
+assert.exists(document.querySelector('.penguin-body > div.foot.right'));
+```
+
+You should place `.foot.right` after `.foot.left`.
+
+```js
+assert.exists(document.querySelector('.foot.left + .foot.right'));
 ```
 
 # --seed--
@@ -73,10 +87,11 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.backgroundColor,
         <div>💜</div>
         <p>I CSS</p>
       </div> 
+--fcc-editable-region--
       <div class="penguin-body">
-        <div class="foot left"></div>
-        <div class="foot right"></div>
+
       </div>
+--fcc-editable-region--
     </div>
 
     <div class="ground"></div>
@@ -93,6 +108,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -277,10 +294,6 @@ body {
   border-radius: 0% 0% 100% 100%;
   opacity: 70%;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .ground {
   width: 100vw;

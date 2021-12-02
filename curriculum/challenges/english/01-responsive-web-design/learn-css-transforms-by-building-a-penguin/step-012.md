@@ -1,5 +1,5 @@
 ---
-id: 61969aa6acef5b12200f672e
+id: 619699c10a0f6e11591d73c4
 title: Step 12
 challengeType: 0
 dashedName: step-12
@@ -7,28 +7,22 @@ dashedName: step-12
 
 # --description--
 
-To create some scenery in the background, you will add two mountains.
-
-Above the `.penguin` element, add a `div` with a `class` of `left-mountain`.
+Use the `margin` property to horizontally center the `.penguin` element, and set the `margin-top` to `75px`.
 
 # --hints--
 
-You should add a new `div` within `body`. Expected to see `--fcc-expected--` `div` elements, but found `--fcc-actual--`.
+You should give `.penguin` a `margin` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(document.querySelectorAll('body > div')?.length, 3);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginRight, 'auto');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginLeft, 'auto');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginBottom, 'auto');
 ```
 
-You should give the `div` a `class` of `left-mountain`.
+You should give `.penguin` a `margin-top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.include(document.querySelector('body > div:not(.ground, .penguin)')?.className, 'left-mountain');
-```
-
-You should place `.left-mountain` before `.penguin`.
-
-```js
-assert.strictEqual(document.querySelector('.penguin')?.previousElementSibling, document.querySelector('.left-mountain'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginTop, '75px');
 ```
 
 # --seed--
@@ -46,13 +40,10 @@ assert.strictEqual(document.querySelector('.penguin')?.previousElementSibling, d
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
---fcc-editable-region--
   <body>
-
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
---fcc-editable-region--
 </html>
 ```
 
@@ -61,15 +52,18 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
+--fcc-editable-region--
 .penguin {
   width: 300px;
   height: 300px;
-  margin: auto;
-  margin-top: 75px;
+
 }
+--fcc-editable-region--
 
 .ground {
   width: 100vw;

@@ -1,5 +1,5 @@
 ---
-id: 619d2f0e9440bc27caee1cec
+id: 619d2ebc81ba81271460850d
 title: Step 92
 challengeType: 0
 dashedName: step-92
@@ -7,19 +7,14 @@ dashedName: step-92
 
 # --description--
 
-Fun fact: Most, if not all, flippers are not naturally rectangles.
-
-Give the `.arm` elements top -left, -right, and bottom-right corners a radius of `30%`, and the bottom-left corner a radius of `120%`.
+Rotate the right arm by `45deg` counterclockwise.
 
 # --hints--
 
-You should give `.arm` a `border-radius` of `30% 30% 120% 30%`.
+You should give `.arm.right` a `transform` of `rotate(-45deg)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderTopLeftRadius, '30%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderTopRightRadius, '30%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderBottomRightRadius, '30%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderBottomLeftRadius, '120%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.right')?.getPropVal('transform', true), 'rotate(-45deg)');
 ```
 
 # --seed--
@@ -84,6 +79,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -269,7 +266,6 @@ body {
   opacity: 70%;
 }
 
---fcc-editable-region--
 .arm {
   width: 30%;
   height: 60%;
@@ -278,9 +274,7 @@ body {
     var(--penguin-skin),
     rgb(209, 210, 199)
   );
-
 }
---fcc-editable-region--
 
 .arm.left {
   top: 35%;
@@ -289,11 +283,13 @@ body {
   transform: rotate(130deg) scaleX(-1);
 }
 
+--fcc-editable-region--
 .arm.right {
   top: 0%;
   right: -5%;
-  transform: rotate(-45deg);
+
 }
+--fcc-editable-region--
 
 .foot {
   width:  15%;

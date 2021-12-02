@@ -1,5 +1,5 @@
 ---
-id: 61968e9243a4090cc805531c
+id: 61a8fe15a6a31306e60d1e89
 title: Step 4
 challengeType: 0
 dashedName: step-4
@@ -7,14 +7,20 @@ dashedName: step-4
 
 # --description--
 
-Remove both the horizontal and vertical scrollbars, and prevent programmatic scrolling, using only one property.
+Normalise your page, by setting the `width` to `100%`, and `height` to `100vh`.
 
 # --hints--
 
-You should give `body` an `overflow` of `clip`.
+You should give `body` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.overflow, 'clip');
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.width, '100%');
+```
+
+You should give `body` a `height` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.height, '100vh');
 ```
 
 # --seed--

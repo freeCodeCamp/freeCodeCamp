@@ -1,5 +1,5 @@
 ---
-id: 619d1c5fc9f8941a400955da
+id: 619d1629a8adc61960ca8b40
 title: Step 74
 challengeType: 0
 dashedName: step-74
@@ -7,22 +7,32 @@ dashedName: step-74
 
 # --description--
 
-You might have noticed the _heart_ emoji lost its color. This is because some of the character's properties were overridden by the `font-weight` style of `bold`.
-
-Fix this, by targetting the `div` with the heart emoji, and setting its `font-weight` to its original value.
+Target the `.shirt` element, and set its `font-size` to `25px`, `font-family` to `Helvetica` with a fallback of `sans-serif`, and `font-weight` to `bold`.
 
 # --hints--
 
-You should use the `.shirt div` selector to target the `div` with the heart emoji.
+You should use the `.shirt` selector.
 
 ```js
-assert.match(code, /\.shirt div\s*\{/);
+assert.match(code, /\.shirt\s*\{/);
 ```
 
-You should give the `.shirt div` a `font-weight` of `initial` or `normal`.
+You should give `.shirt` a `font-size` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.include(['normal', 'initial'], new __helpers.CSSHelp(document).getStyle('.shirt div')?.fontWeight);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.fontSize, '25px');
+```
+
+You should give `.shirt` a `font-family` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.fontFamily, 'Helvetica, sans-serif');
+```
+
+You should give `.shirt` a `font-weight` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.fontWeight, 'bold');
 ```
 
 # --seed--
@@ -80,6 +90,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -226,10 +238,6 @@ body {
 }
 
 --fcc-editable-region--
-.shirt {
-  font: bold 25px Helvetica, sans-serif;
-}
-
 
 --fcc-editable-region--
 

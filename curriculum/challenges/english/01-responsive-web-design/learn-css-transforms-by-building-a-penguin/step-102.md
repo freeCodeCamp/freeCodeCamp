@@ -1,5 +1,5 @@
 ---
-id: 619d36103839c82efa95dd34
+id: 619d3561a951bf2e41a24f10
 title: Step 102
 challengeType: 0
 dashedName: step-102
@@ -7,26 +7,16 @@ dashedName: step-102
 
 # --description--
 
-Change the `.penguin` element's `transition` behaviour during transformation to have a duration of `1s`, a timing function of `ease-in-out`, and a delay of `0ms`.
+When you activate the `.penguin` element, it might look as though you can drag it around. This is not true.
+
+Indicate this to users, by giving the active element a `cursor` property of `not-allowed`.
 
 # --hints--
 
-You should give `.penguin` a `transition-duration` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.penguin:active` a `cursor` property of `not-allowed`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.transitionDuration, '1s');
-```
-
-You should give `.penguin` a `transition-timing-function` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.transitionTimingFunction, 'ease-in-out');
-```
-
-You should give `.penguin` a `transition-delay` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.transitionDelay, '0ms');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin:active')?.cursor, 'not-allowed');
 ```
 
 # --seed--
@@ -91,6 +81,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -125,7 +117,6 @@ body {
   right: -75px;
 }
 
---fcc-editable-region--
 .penguin {
   width: 300px;
   height: 300px;
@@ -133,18 +124,18 @@ body {
   margin-top: 75px;
   z-index: 4;
   position: relative;
-
 }
---fcc-editable-region--
 
 .penguin * {
   position: absolute;
 }
 
+--fcc-editable-region--
 .penguin:active {
   transform: scale(1.5);
-  cursor: not-allowed;
+
 }
+--fcc-editable-region--
 
 .penguin-head {
   width: 50%;

@@ -1,5 +1,5 @@
 ---
-id: 6196d2c0f22ca0293107c048
+id: 6196d213d99f16287bff22ae
 title: Step 24
 challengeType: 0
 dashedName: step-24
@@ -7,32 +7,26 @@ dashedName: step-24
 
 # --description--
 
-Give the `.sun` element a `width` and `height` of `200px`, and a `background-color` of `yellow`.
+To finish the background, add a sun, by creating a new `div` element immediately after the `.back-mountain` element, and give it the class of `sun`.
 
 # --hints--
 
-You should use the `.sun` selector.
+You should add a new `div` element to `body`. Expected `--fcc-expected--` `div` elements, but found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.sun\s*\{/);
+assert.equal(document.querySelectorAll('body > div')?.length, 5);
 ```
 
-You should give `.sun` a `width` of `200px`.
+You should give the new `div` element a `class` of `sun`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.width, '200px');
+assert.include(document.querySelector('div:not(.back-mountain, .left-mountain, .penguin, .ground)')?.className, 'sun');
 ```
 
-You should give `.sun` a `height` of `200px`.
+You should place the new `div` element immediately after the `.back-mountain` element.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.height, '200px');
-```
-
-You should give `.sun` a `background-color` of `yellow`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.backgroundColor, 'yellow');
+assert.strictEqual(document.querySelector('div.back-mountain')?.nextElementSibling, document.querySelector('div.sun'));
 ```
 
 # --seed--
@@ -49,13 +43,15 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.backgroundColor, 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
+--fcc-editable-region--
   <body>
     <div class="left-mountain"></div>
     <div class="back-mountain"></div>
-    <div class="sun"></div>
+
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
+--fcc-editable-region--
 </html>
 ```
 
@@ -64,6 +60,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -87,10 +85,6 @@ body {
   left: 110px;
   top: 225px;
 }
-
---fcc-editable-region--
-    
---fcc-editable-region--
 
 .penguin {
   width: 300px;

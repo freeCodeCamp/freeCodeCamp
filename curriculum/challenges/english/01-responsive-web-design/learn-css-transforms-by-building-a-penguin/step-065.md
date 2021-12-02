@@ -1,5 +1,5 @@
 ---
-id: 619d107edf7ddf13cc77106a
+id: 619d102d786c3d13124c37c6
 title: Step 65
 challengeType: 0
 dashedName: step-65
@@ -7,32 +7,20 @@ dashedName: step-65
 
 # --description--
 
-Target the `.blush` element with a `class` of `left`, and position it `15%` left of its parent. Then, target the `.blush` element with a `class` of `right`, and position it `15%` right of its parent.
+Position the `.blush` elements `65%` from the top of their parent, and give all corners a radius of `50%`.
 
 # --hints--
 
-You should use the `.blush.left` selector.
+You should give `.blush` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.blush\.left\s*\{/);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.top, '65%');
 ```
 
-You should give `.blush.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.blush` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.blush.left')?.left, '15%');
-```
-
-You should use the `.blush.right` selector.
-
-```js
-assert.match(code, /\.blush\.right\s*\{/);
-```
-
-You should give `.blush.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.blush.right')?.right, '15%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.borderRadius, '50%');
 ```
 
 # --seed--
@@ -84,6 +72,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -195,16 +185,13 @@ body {
   border-radius: 50%;
 }
 
+--fcc-editable-region--
 .blush {
   width: 15%;
   height: 10%;
   background-color: pink;
-  top: 65%;
-  border-radius: 50%;
+
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 
 .penguin-body {

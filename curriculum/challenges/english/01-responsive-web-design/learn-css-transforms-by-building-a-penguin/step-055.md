@@ -1,5 +1,5 @@
 ---
-id: 619d090cd8d6db0c93dc5087
+id: 619d0882f54bf40bdc4671ed
 title: Step 55
 challengeType: 0
 dashedName: step-55
@@ -7,50 +7,26 @@ dashedName: step-55
 
 # --description--
 
-Below the `.chin` element, add two `div` elements each with a `class` of `eye`. Also, give the first `.eye` element a `class` of `left`, and the second `.eye` element a `class` of `right`.
+Where relevant, replace property values with your `--penguin-face` variable.
 
 # --hints--
 
-You should add two `div` elements within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
+You should give `.face` a `background-color` of `var(--penguin-face)`.
 
 ```js
-assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 5);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.getPropVal('background-color', true), 'var(--penguin-face)');
 ```
 
-You should give the first new `div` a `class` of `eye`.
+You should give `.chin` a `background-color` of `var(--penguin-face)`.
 
 ```js
-assert.exists(document.querySelector('.penguin-head > div.eye'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.getPropVal('background-color', true), 'var(--penguin-face)');
 ```
 
-You should give the second new `div` a `class` of `eye`.
+You should not use `var(--penguin-face)` in the `.penguin-body` selector.
 
 ```js
-assert.equal(document.querySelectorAll('.penguin-head > div.eye')?.length, 2);
-```
-
-You should give the first new `div` a `class` of `left`.
-
-```js
-assert.exists(document.querySelector('.penguin-head > div.eye.left'));
-```
-
-You should give the second new `div` a `class` of `right`.
-
-```js
-assert.exists(document.querySelector('.penguin-head > div.eye.right'));
-```
-
-You should place `div.eye.left` after `div.chin`.
-
-```js
-assert.exists(document.querySelector('.chin + .eye.left'));
-```
-
-You should place `div.eye.right` after `div.eye.left`.
-
-```js
-assert.exists(document.querySelector('.eye.left + .eye.right'));
+assert.notInclude(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.getPropVal('background-color', true), 'var(--penguin-face)');
 ```
 
 # --seed--
@@ -72,14 +48,11 @@ assert.exists(document.querySelector('.eye.left + .eye.right'));
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
---fcc-editable-region--
       <div class="penguin-head">
         <div class="face left"></div>
         <div class="face right"></div>
         <div class="chin"></div>
-
       </div>
---fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -89,6 +62,7 @@ assert.exists(document.querySelector('.eye.left + .eye.right'));
 ```
 
 ```css
+--fcc-editable-region--
 :root {
   --penguin-face: white;
 }
@@ -97,6 +71,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -161,7 +137,7 @@ body {
 .face {
   width: 60%;
   height: 70%;
-  background-color: var(--penguin-face);
+  background-color: white;
   border-radius: 70% 70% 60% 60%;
   top: 15%;
 }
@@ -177,7 +153,7 @@ body {
 .chin {
   width: 90%;
   height: 70%;
-  background-color: var(--penguin-face);
+  background-color: white;
   top: 25%;
   left: 5%;
   border-radius: 70% 70% 100% 100%;
@@ -217,4 +193,5 @@ body {
   position: absolute;
   margin-top: -58px;
 }
+--fcc-editable-region--
 ```

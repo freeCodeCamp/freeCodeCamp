@@ -1,5 +1,5 @@
 ---
-id: 619691693bc14b0e528f5a20
+id: 61968f8877c6720d6d61aaf5
 title: Step 6
 challengeType: 0
 dashedName: step-6
@@ -7,26 +7,26 @@ dashedName: step-6
 
 # --description--
 
-Target the `.ground` element, and set its `width` to take up the full width of the viewport. Then, set the `height` to `400px`.
+Within the `body`, add a `div` with a `class` of `ground`.
 
 # --hints--
 
-You should use the `.ground` selector.
+You should add a new `div`.
 
 ```js
-assert.match(code, /\.ground\s*\{/);
+assert.exists(document.querySelector('div'));
 ```
 
-You should give the `.ground` element a `width` of `100vw`.
+You should give the `div` a `class` of `ground`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.width, '100vw');
+assert.include(document.querySelector('div')?.className, 'ground');
 ```
 
-You should give the `.ground` element a `height` of `400px`.
+You should place the `div` within the `body`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.height, '400px');
+assert.exists(document.querySelector('body > div.ground'));
 ```
 
 # --seed--
@@ -44,9 +44,11 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.height, '400px
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
+--fcc-editable-region--
   <body>
-    <div class="ground"></div>
+
   </body>
+--fcc-editable-region--
 </html>
 ```
 
@@ -55,10 +57,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

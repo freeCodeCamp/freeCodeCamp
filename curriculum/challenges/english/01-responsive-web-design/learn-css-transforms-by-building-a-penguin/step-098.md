@@ -1,5 +1,5 @@
 ---
-id: 619d337765b9f02c10e93722
+id: 619d333b738e3c2b5d58b095
 title: Step 98
 challengeType: 0
 dashedName: step-98
@@ -7,20 +7,14 @@ dashedName: step-98
 
 # --description--
 
-For the third and fourth waypoints, repeat the `transform` pattern once more.
+Within the second waypoint, rotate to `130deg`, and retain the scaling of the left arm.
 
 # --hints--
 
-You should give the `30%` waypoint a `transform` of `rotate(110deg) scaleX(-1)`.
+You should give the `20%` waypoint a `transform` of `rotate(130deg) scaleX(-1)`.
 
 ```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '30%')?.style?.transform?.replace(/\s+/g, '') === 'rotate(110deg)scaleX(-1)');
-```
-
-You should give the `40%` waypoint a `transform` of `rotate(130deg) scaleX(-1)`.
-
-```js
-assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '40%')?.style?.transform?.replace(/\s+/g, '') === 'rotate(130deg)scaleX(-1)');
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '20%')?.style?.transform?.replace(/\s+/g, '') === 'rotate(130deg)scaleX(-1)');
 ```
 
 # --seed--
@@ -85,6 +79,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -301,7 +297,7 @@ body {
     transform: rotate(110deg) scaleX(-1);
   }
   20% {
-    transform: rotate(130deg) scaleX(-1);
+
   }
   30% {
 

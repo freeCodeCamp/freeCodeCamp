@@ -1,5 +1,5 @@
 ---
-id: 619be7af7b0bf60770f5d2a4
+id: 619be73b3c806006ccc00bb0
 title: Step 40
 challengeType: 0
 dashedName: step-40
@@ -7,20 +7,26 @@ dashedName: step-40
 
 # --description--
 
-Position the pseudo-element `10%` from the top and `25%` from the left of its parent.
+Give the pseudo-element a `width` half that of its parent, a `height` of `40%`, and a `background-color` of `gray`.
 
 # --hints--
 
-You should give `.penguin-body::before` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.penguin-body::before` a `width` of `50%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.top, '10%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.width, '50%');
 ```
 
-You should give `.penguin-body::before` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.penguin-body::before` a `height` of `40%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.left, '25%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.height, '40%');
+```
+
+You should give `.penguin-body::before` a `background-color` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.backgroundColor, 'gray');
 ```
 
 # --seed--
@@ -56,6 +62,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -135,9 +143,6 @@ body {
 .penguin-body::before {
   content: "";
   position: absolute;
-  width: 50%;
-  height: 45%;
-  background-color: gray;
 
 }
 --fcc-editable-region--

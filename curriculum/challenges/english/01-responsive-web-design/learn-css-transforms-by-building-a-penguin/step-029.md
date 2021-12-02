@@ -1,5 +1,5 @@
 ---
-id: 61993b72e874e709b8dfd666
+id: 6197f40a16afea068c7e60c8
 title: Step 29
 challengeType: 0
 dashedName: step-29
@@ -7,32 +7,32 @@ dashedName: step-29
 
 # --description--
 
-Target the `.penguin-head` element, and give it a `width` half of its parent's, and a `height` of `45%`. Then, set the `background` to a linear gradient at `45deg` starting at `gray`, and ending at `rgb(239, 240, 228)`.
+Change the stack level of the `.penguin` element such that it appears in front of the `.ground` element, and give it a `position` of `relative`.
 
 # --hints--
 
-You should use the `.penguin-head` selector.
+You should use the `z-index` property to change the stack level.
 
 ```js
-assert.match(code, /\.penguin-head\s*\{/);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.penguin')?.zIndex);
 ```
 
-You should give `.penguin-head` a `width` of `50%`.
+You should give the `.penguin` element a `z-index` of `4`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.width, '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.zIndex, '4');
 ```
 
-You should give `.penguin-head` a `height` of `45%`.
+You should give `.penguin` a `position` property.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.height, '45%');
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.penguin')?.position);
 ```
 
-You should give `.penguin-head` a `background` of `linear-gradient(45deg, gray, rgb(239, 240, 228))`.
+You should give `.penguin` a `position` of `relative`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.getPropVal('background', true), 'linear-gradient(45deg,gray,rgb(239,240,228))');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.position, 'relative');
 ```
 
 # --seed--
@@ -68,6 +68,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -102,17 +104,14 @@ body {
   right: -75px;
 }
 
+--fcc-editable-region--
 .penguin {
   width: 300px;
   height: 300px;
   margin: auto;
   margin-top: 75px;
-  z-index: 4;
-  position: relative;
+
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 
 .ground {

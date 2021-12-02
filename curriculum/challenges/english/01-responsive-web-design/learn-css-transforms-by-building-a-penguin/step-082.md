@@ -1,5 +1,5 @@
 ---
-id: 619d21fe6a3f9b2016be9d9d
+id: 619d20b12996101f430920fb
 title: Step 82
 challengeType: 0
 dashedName: step-82
@@ -7,32 +7,34 @@ dashedName: step-82
 
 # --description--
 
-Target the `.foot` element with a `class` of `left`, and position it `25%` left of its parent. Then, target the `.foot` element with a `class` of `right`, and position it `25%` right of its parent.
+The penguin's beak and feet share the same `color`.
+
+Create a new custom CSS variable named `--penguin-picorna`, and replace all relavant property values with it.
 
 # --hints--
 
-You should use the `.foot.left` selector.
+You should give `:root` a `--penguin-picorna` property.
 
 ```js
-assert.match(code, /\.foot\.left\s*\{/);
+assert.exists(new __helpers.CSSHelp(document).getStyle(':root').getPropertyValue('--penguin-picorna'));
 ```
 
-You should give `.foot.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `--penguin-picorna` a value of `orange`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.left')?.left, '25%');
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root').getPropVal('--penguin-picorna', true), 'orange');
 ```
 
-You should use the `.foot.right` selector.
+You should give `.beak` a `background-color` of `var(--penguin-picorna)`, but found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.foot\.right\s*\{/);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.getPropVal('background-color', true), 'var(--penguin-picorna)');
 ```
 
-You should give `.foot.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.foot` a `background-color` of `var(--penguin-picorna)`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.right')?.right, '25%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.getPropVal('background-color', true), 'var(--penguin-picorna)');
 ```
 
 # --seed--
@@ -85,15 +87,18 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.right')?.right, '25
 ```
 
 ```css
+--fcc-editable-region--
 :root {
   --penguin-face: white;
-  --penguin-picorna: orange;
+  
 }
 
 body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -223,7 +228,7 @@ body {
 
 .beak {
   height: 10%;
-  background-color: var(--penguin-picorna);
+  background-color: orange;
   border-radius: 50%;
 }
 
@@ -279,16 +284,13 @@ body {
   opacity: 70%;
 }
 
---fcc-editable-region--
 .foot {
   width:  15%;
   height: 30%;
-  background-color: var(--penguin-picorna);
+  background-color: orange;
   top: 85%;
   border-radius: 50%;
 }
-
-
 --fcc-editable-region--
 
 .ground {

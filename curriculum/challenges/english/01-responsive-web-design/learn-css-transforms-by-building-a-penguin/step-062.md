@@ -1,5 +1,5 @@
 ---
-id: 619d0eec0ac40611b41e2ccc
+id: 619d0e56f9ca9710fcb974e3
 title: Step 62
 challengeType: 0
 dashedName: step-62
@@ -7,44 +7,26 @@ dashedName: step-62
 
 # --description--
 
-Below the `.eye.right` element, add two `div` elements each with a `class` of `blush`. Also, give the first `.blush` element a `class` of `left`, and the second `.blush` element a `class` of `right`.
+Position the `.eye-lid` elements `25%` from the top, and `-23%` from the left of their parents. Then, give all corners a radius of `50%`.
 
 # --hints--
 
-You should add two `div` elements within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
+You should give `.eye-lid` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 7);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.top, '25%');
 ```
 
-You should give the first new `div` a `class` of `blush`.
+You should give `.eye-lid` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.exists(document.querySelector('.penguin-head > div.blush'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.left, '-23%');
 ```
 
-You should give the second new `div` a `class` of `blush`.
+You should give `.eye-lid` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(document.querySelectorAll('.penguin-head > div.blush')?.length, 2);
-```
-
-You should give the first new `div` a `class` of `left`.
-
-```js
-assert.exists(document.querySelector('.penguin-head > div.blush.left'));
-```
-
-You should give the second new `div` a `class` of `right`.
-
-```js
-assert.exists(document.querySelector('.penguin-head > div.blush.right'));
-```
-
-You should place `.blush.right` after `.blush.left`.
-
-```js
-assert.exists(document.querySelector('.blush.left + .blush.right'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.borderRadius, '50%');
 ```
 
 # --seed--
@@ -76,9 +58,6 @@ assert.exists(document.querySelector('.blush.left + .blush.right'));
         <div class="eye right">
           <div class="eye-lid"></div>
         </div>
---fcc-editable-region--
-
---fcc-editable-region--
       </div>
       <div class="penguin-body"></div>
     </div>
@@ -97,6 +76,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -199,14 +180,14 @@ body {
   right: 25%;
 }
 
+--fcc-editable-region--
 .eye-lid {
   width: 150%;
   height: 100%;
   background-color: var(--penguin-face);
-  top: 25%;
-  left: -23%;
-  border-radius: 50%;
+
 }
+--fcc-editable-region--
 
 .penguin-body {
   width: 53%;

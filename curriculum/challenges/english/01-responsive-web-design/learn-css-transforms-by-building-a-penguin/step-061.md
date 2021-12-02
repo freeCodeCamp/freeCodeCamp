@@ -1,5 +1,5 @@
 ---
-id: 619d0e56f9ca9710fcb974e3
+id: 619d0daf214542102739b0da
 title: Step 61
 challengeType: 0
 dashedName: step-61
@@ -7,26 +7,32 @@ dashedName: step-61
 
 # --description--
 
-Position the `.eye-lid` elements `25%` from the top, and `-23%` from the left of their parents. Then, give all corners a radius of `50%`.
+Target the `.eye-lid` elements, and give them a `width` of `150%`, `height` of `100%`, and `background-color` of `--penguin-face`.
 
 # --hints--
 
-You should give `.eye-lid` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should use the `.eye-lid` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.top, '25%');
+assert.match(code, /\.eye-lid\s*\{/);
 ```
 
-You should give `.eye-lid` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.eye-lid` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.left, '-23%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.width, '150%');
 ```
 
-You should give `.eye-lid` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.eye-lid` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.borderRadius, '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.height, '100%');
+```
+
+You should give `.eye-lid` a `background-color` of `var(--penguin-face)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye-lid')?.getPropVal('background-color', true), 'var(--penguin-face)');
 ```
 
 # --seed--
@@ -76,6 +82,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -179,12 +187,7 @@ body {
 }
 
 --fcc-editable-region--
-.eye-lid {
-  width: 150%;
-  height: 100%;
-  background-color: var(--penguin-face);
 
-}
 --fcc-editable-region--
 
 .penguin-body {

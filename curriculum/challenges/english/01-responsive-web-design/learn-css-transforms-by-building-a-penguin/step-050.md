@@ -1,5 +1,5 @@
 ---
-id: 619d033915012509031f309a
+id: 619d02c7bc95bf0827a5d296
 title: Step 50
 challengeType: 0
 dashedName: step-50
@@ -7,26 +7,26 @@ dashedName: step-50
 
 # --description--
 
-Below the `.face.right` element, add a `div` element with a `class` of `chin`.
+Target the `.face` element with the `right` class, and position it `5%` right of its parent.
 
 # --hints--
 
-You should add one `div` element within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
+You should use the `.face.right` selector.
 
 ```js
-assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 3);
+assert.match(code, /\.face\.right\s*\{/);
 ```
 
-You should give the `div` a `class` of `chin`.
+You should give `.face.right` a `right` property.
 
 ```js
-assert.exists(document.querySelector('.penguin-head > div.chin'));
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face.right')?.right);
 ```
 
-You should place the `div` element below the `.face.right` element.
+You should give `.face.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.exists(document.querySelector('.face.right + .chin'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face.right')?.right, '5%');
 ```
 
 # --seed--
@@ -48,13 +48,10 @@ assert.exists(document.querySelector('.face.right + .chin'));
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
---fcc-editable-region--
       <div class="penguin-head">
         <div class="face left"></div>
         <div class="face right"></div>
-
       </div>
---fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -68,6 +65,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -137,13 +136,13 @@ body {
   top: 15%;
 }
 
+--fcc-editable-region--
 .face.left {
   left: 5%;
 }
 
-.face.right {
-  right: 5%;
-}
+
+--fcc-editable-region--
 
 .penguin-body {
   width: 53%;

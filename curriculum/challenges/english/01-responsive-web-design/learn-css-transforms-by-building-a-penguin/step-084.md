@@ -1,5 +1,5 @@
 ---
-id: 619d23089e787e216a7043d6
+id: 619d229b0e542520cd91c685
 title: Step 84
 challengeType: 0
 dashedName: step-84
@@ -7,14 +7,20 @@ dashedName: step-84
 
 # --description--
 
-Change the stacking order of the `.foot` elements such that they appear beneath the `.penguin-body` element.
+To make the penguin's feet look more _penguiny_, rotate the left foot by `80deg`, and the right by `-80deg`.
 
 # --hints--
 
-You should give `.foot` a `z-index` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.foot.left` a `transform` of `rotate(80deg)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.zIndex, '-1');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.left').getPropVal('transform', true), 'rotate(80deg)');
+```
+
+You should give `.foot.right` a `transform` of `rotate(-80deg)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.right').getPropVal('transform', true), 'rotate(-80deg)');
 ```
 
 # --seed--
@@ -76,6 +82,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -261,26 +269,25 @@ body {
   opacity: 70%;
 }
 
---fcc-editable-region--
 .foot {
   width:  15%;
   height: 30%;
   background-color: var(--penguin-picorna);
   top: 85%;
   border-radius: 50%;
-
 }
---fcc-editable-region--
 
+--fcc-editable-region--
 .foot.left {
   left: 25%;
-  transform: rotate(80deg);
+
 }
 
 .foot.right {
   right: 25%;
-  transform: rotate(-80deg);
+
 }
+--fcc-editable-region--
 
 .ground {
   width: 100vw;

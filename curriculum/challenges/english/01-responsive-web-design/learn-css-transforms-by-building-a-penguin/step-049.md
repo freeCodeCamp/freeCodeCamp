@@ -1,5 +1,5 @@
 ---
-id: 619d02c7bc95bf0827a5d296
+id: 619d022dc8400c0763829a17
 title: Step 49
 challengeType: 0
 dashedName: step-49
@@ -7,26 +7,26 @@ dashedName: step-49
 
 # --description--
 
-Target the `.face` element with the `right` class, and position it `5%` right of its parent.
+Target the `.face` element with the `left` class, and position it `5%` left of its parent.
 
 # --hints--
 
-You should use the `.face.right` selector.
+You should use the `.face.left` selector.
 
 ```js
-assert.match(code, /\.face\.right\s*\{/);
+assert.match(code, /\.face\.left\s*\{/);
 ```
 
-You should give `.face.right` a `right` property.
+You should give `.face.left` a `left` property.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face.right')?.right);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face.left')?.left);
 ```
 
-You should give `.face.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.face.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face.right')?.right, '5%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face.left')?.left, '5%');
 ```
 
 # --seed--
@@ -65,6 +65,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -135,10 +137,6 @@ body {
 }
 
 --fcc-editable-region--
-.face.left {
-  left: 5%;
-}
-
 
 --fcc-editable-region--
 

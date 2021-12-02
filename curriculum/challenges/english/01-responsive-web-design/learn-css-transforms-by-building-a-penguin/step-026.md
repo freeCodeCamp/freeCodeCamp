@@ -1,5 +1,5 @@
 ---
-id: 6196d41d40bf9b2aaea5d520
+id: 6196d32d1340d829f0f6f57d
 title: Step 26
 challengeType: 0
 dashedName: step-26
@@ -7,20 +7,20 @@ dashedName: step-26
 
 # --description--
 
-Position the sun in the top right corner of the screen such that `75px` of its top and right edges are off screen.
+Set the `position` property of the sun to prevent it from taking up space in the page layout, and set the `border-radius` such that the sun's shape is a circle.
 
 # --hints--
 
-You should give `.sun` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.sun` a `position` of `absolute`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.top, '-75px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.position, 'absolute');
 ```
 
-You should give `.sun` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.sun` a `border-radius` of `50%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.right, '-75px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.borderRadius, '50%');
 ```
 
 # --seed--
@@ -52,6 +52,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -81,8 +83,6 @@ body {
   width: 200px;
   height: 200px;
   background-color: yellow;
-  position: absolute;
-  border-radius: 50%;
 
 }
 --fcc-editable-region--

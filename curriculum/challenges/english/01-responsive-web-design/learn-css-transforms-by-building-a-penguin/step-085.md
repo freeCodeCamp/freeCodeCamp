@@ -1,5 +1,5 @@
 ---
-id: 619d237a107c10221ed743fa
+id: 619d23089e787e216a7043d6
 title: Step 85
 challengeType: 0
 dashedName: step-85
@@ -7,46 +7,14 @@ dashedName: step-85
 
 # --description--
 
-Fun fact: Penguins cannot fly without wings.
-
-Within `.penguin-body`, before the `.foot` elements, add two `div` elements each with a `class` of `arm`. Give the first `.arm` a `class` of `left`, and the second `.arm` a `class` of `right`.
+Change the stacking order of the `.foot` elements such that they appear beneath the `.penguin-body` element.
 
 # --hints--
 
-You should add two `div` elements within `.penguin-body`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
+You should give `.foot` a `z-index` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(document.querySelectorAll('.penguin-body > div')?.length, 4);
-```
-
-You should give the first new `div` a `class` of `arm`.
-
-```js
-assert.exists(document.querySelector('.penguin-body > div.arm'));
-```
-
-You should give the second new `div` a `class` of `arm`.
-
-```js
-assert.equal(document.querySelectorAll('.penguin-body > div.arm')?.length, 2);
-```
-
-You should give one `div` a `class` of `left`.
-
-```js
-assert.exists(document.querySelector('.penguin-body > div.arm.left'));
-```
-
-You should give the other `div` a `class` of `right`.
-
-```js
-assert.exists(document.querySelector('.penguin-body > div.arm.right'));
-```
-
-You should place `.arm.right` after `.arm.left`.
-
-```js
-assert.exists(document.querySelector('.arm.left + .arm.right'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.zIndex, '-1');
 ```
 
 # --seed--
@@ -87,13 +55,10 @@ assert.exists(document.querySelector('.arm.left + .arm.right'));
         <div>💜</div>
         <p>I CSS</p>
       </div> 
---fcc-editable-region--
       <div class="penguin-body">
-
         <div class="foot left"></div>
         <div class="foot right"></div>
       </div>
---fcc-editable-region--
     </div>
 
     <div class="ground"></div>
@@ -111,6 +76,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -296,14 +263,16 @@ body {
   opacity: 70%;
 }
 
+--fcc-editable-region--
 .foot {
   width:  15%;
   height: 30%;
   background-color: var(--penguin-picorna);
   top: 85%;
   border-radius: 50%;
-  z-index: -1;
+
 }
+--fcc-editable-region--
 
 .foot.left {
   left: 25%;

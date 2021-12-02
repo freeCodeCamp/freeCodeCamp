@@ -1,5 +1,5 @@
 ---
-id: 619d26b12e651022d80cd017
+id: 619d237a107c10221ed743fa
 title: Step 86
 challengeType: 0
 dashedName: step-86
@@ -7,32 +7,46 @@ dashedName: step-86
 
 # --description--
 
-Target the `.arm` elements, and give them a `width` of `30%`, a `height` of `60%`, and a `background` of linear gradient at `90deg` from clockwise, starting at `gray`, and ending at `rgb(209, 210, 199)`.
+Fun fact: Penguins cannot fly without wings.
+
+Within `.penguin-body`, before the `.foot` elements, add two `div` elements each with a `class` of `arm`. Give the first `.arm` a `class` of `left`, and the second `.arm` a `class` of `right`.
 
 # --hints--
 
-You should use the `.arm` selector.
+You should add two `div` elements within `.penguin-body`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.arm\s*\{/);
+assert.equal(document.querySelectorAll('.penguin-body > div')?.length, 4);
 ```
 
-You should give `.arm` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the first new `div` a `class` of `arm`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.width, '30%');
+assert.exists(document.querySelector('.penguin-body > div.arm'));
 ```
 
-You should give `.arm` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the second new `div` a `class` of `arm`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.height, '60%');
+assert.equal(document.querySelectorAll('.penguin-body > div.arm')?.length, 2);
 ```
 
-You should give `.arm` a `background` of `linear-gradient(90deg, gray, rgb(209, 210, 199))`.
+You should give one `div` a `class` of `left`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('background', true), 'linear-gradient(90deg,gray,rgb(209,210,199))');
+assert.exists(document.querySelector('.penguin-body > div.arm.left'));
+```
+
+You should give the other `div` a `class` of `right`.
+
+```js
+assert.exists(document.querySelector('.penguin-body > div.arm.right'));
+```
+
+You should place `.arm.right` after `.arm.left`.
+
+```js
+assert.exists(document.querySelector('.arm.left + .arm.right'));
 ```
 
 # --seed--
@@ -73,12 +87,13 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('backg
         <div>💜</div>
         <p>I CSS</p>
       </div> 
+--fcc-editable-region--
       <div class="penguin-body">
-        <div class="arm left"></div>
-        <div class="arm right"></div>
+
         <div class="foot left"></div>
         <div class="foot right"></div>
       </div>
+--fcc-editable-region--
     </div>
 
     <div class="ground"></div>
@@ -96,6 +111,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -280,10 +297,6 @@ body {
   border-radius: 0% 0% 100% 100%;
   opacity: 70%;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .foot {
   width:  15%;

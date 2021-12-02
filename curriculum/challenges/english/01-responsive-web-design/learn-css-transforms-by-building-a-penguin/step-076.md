@@ -1,5 +1,5 @@
 ---
-id: 619d1deb8b04811b8839ffe4
+id: 619d1dab9ff3421ae1976991
 title: Step 76
 challengeType: 0
 dashedName: step-76
@@ -7,26 +7,20 @@ dashedName: step-76
 
 # --description--
 
-Position the `.shirt` element `165px` from the top, and `127.5px` from the left of its parent. Then, increase its stacking order such that it appears above the `.penguin-body` element.
+Position the `div` with the heart emoji `11.5px` from the top, and `12px` from the left of its parent.
 
 # --hints--
 
-You should give `.shirt` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.shirt div` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.top, '165px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt div')?.top, '11.5px');
 ```
 
-You should give `.shirt` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.shirt div` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.left, '127.5px');
-```
-
-You should give the `.shirt` element a `z-index` of `1`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.zIndex, '1');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt div')?.left, '12px');
 ```
 
 # --seed--
@@ -84,6 +78,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -232,13 +228,11 @@ body {
 --fcc-editable-region--
 .shirt {
   font: bold 25px Helvetica, sans-serif;
-
 }
 
 .shirt div {
   font-weight:  initial;
-  top: 22.5px;
-  left: 12px;
+
 }
 --fcc-editable-region--
 

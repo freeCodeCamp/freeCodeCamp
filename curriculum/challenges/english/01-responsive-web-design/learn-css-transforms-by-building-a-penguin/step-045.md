@@ -1,5 +1,5 @@
 ---
-id: 619c16debd0c270b01c5ce38
+id: 619c155df0063a0a3fec0e32
 title: Step 45
 challengeType: 0
 dashedName: step-45
@@ -7,17 +7,50 @@ dashedName: step-45
 
 # --description--
 
-Make the top corners of the `.face` elements have a radius of `70%`, and the bottom corners have a radius of `60%`.
+Give the `.face` elements a `width` of `60%`, a `height` of `70%`, and a `background-color` of `white`.
 
 # --hints--
 
-You should give `.face` a `border-radius` of `70% 70% 60% 60%`.
+You should use the `.face` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderTopLeftRadius, '70%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderTopRightRadius, '70%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderBottomLeftRadius, '60%');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.borderBottomRightRadius, '60%');
+assert.match(code, /\.face\s*\{/);
+```
+
+You should give `.face` a `width` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.width);
+```
+
+You should give `.face` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.width, '60%');
+```
+
+You should give `.face` a `height` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.height);
+```
+
+You should give `.face` a `height` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.height, '70%');
+```
+
+You should give `.face` a `background-color` property.
+
+```js
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.backgroundColor);
+```
+
+You should give `.face` a `background-color` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.backgroundColor, 'white');
 ```
 
 # --seed--
@@ -56,6 +89,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -118,12 +153,7 @@ body {
 }
 
 --fcc-editable-region--
-.face {
-  width: 60%;
-  height: 70%;
-  background-color: white;
 
-}
 --fcc-editable-region--
 
 .penguin-body {

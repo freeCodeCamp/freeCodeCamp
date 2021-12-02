@@ -1,5 +1,5 @@
 ---
-id: 619d1ed33c9a071cf657a0d6
+id: 619d1e7a8e81a61c5a819dc4
 title: Step 78
 challengeType: 0
 dashedName: step-78
@@ -7,46 +7,14 @@ dashedName: step-78
 
 # --description--
 
-Fun fact: Penguins cannot stand without at least two feet.
-
-Within the `.penguin-body` element, add two `div` elements each with a `class` of `foot`. Give the first `.foot` a `class` of `left`, and the second `.foot` a `class` of `right`.
+For the shirt's final touch, set the `color` to `#6a6969`.
 
 # --hints--
 
-You should add two `div` elements within `.penguin-body`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
+You should give `.shirt` a `color` of `#6a6969`.
 
 ```js
-assert.equal(document.querySelectorAll('.penguin-body > div')?.length, 2);
-```
-
-You should give the first new `div` a `class` of `foot`.
-
-```js
-assert.exists(document.querySelector('.penguin-body > div.foot'));
-```
-
-You should give the second new `div` a `class` of `foot`.
-
-```js
-assert.equal(document.querySelectorAll('.penguin-body > div.foot')?.length, 2);
-```
-
-You should give one `div` a `class` of `left`.
-
-```js
-assert.exists(document.querySelector('.penguin-body > div.foot.left'));
-```
-
-You should give the other `div` a `class` of `right`.
-
-```js
-assert.exists(document.querySelector('.penguin-body > div.foot.right'));
-```
-
-You should place `.foot.right` after `.foot.left`.
-
-```js
-assert.exists(document.querySelector('.foot.left + .foot.right'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.color, 'rgb(106, 105, 105)');
 ```
 
 # --seed--
@@ -87,11 +55,7 @@ assert.exists(document.querySelector('.foot.left + .foot.right'));
         <div>💜</div>
         <p>I CSS</p>
       </div> 
---fcc-editable-region--
-      <div class="penguin-body">
-
-      </div>
---fcc-editable-region--
+      <div class="penguin-body"></div>
     </div>
 
     <div class="ground"></div>
@@ -108,6 +72,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -253,12 +219,13 @@ body {
   left: 42%;
 }
 
+--fcc-editable-region--
 .shirt {
   font: bold 25px Helvetica, sans-serif;
   top: 165px;
   left: 127.5px;
   z-index: 1;
-  color: #6a6969;
+
 }
 
 .shirt div {
@@ -266,6 +233,7 @@ body {
   top: 22.5px;
   left: 12px;
 }
+--fcc-editable-region--
 
 .penguin-body {
   width: 53%;

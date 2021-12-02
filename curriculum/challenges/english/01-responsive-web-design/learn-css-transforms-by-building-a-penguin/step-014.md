@@ -1,5 +1,5 @@
 ---
-id: 61969d66cfcdba137d021558
+id: 61969c487ced6f12db8fef94
 title: Step 14
 challengeType: 0
 dashedName: step-14
@@ -7,14 +7,32 @@ dashedName: step-14
 
 # --description--
 
-To prevent the mountain from pushing the `.ground` element, adjust its `position` to prevent it from taking up space in the page layout.
+Target the `.left-mountain` element, and set its `width` and `height` to `300px`. Then, set the `background` to a linear gradient starting at `rgb(203, 241, 228)` and ending at `rgb(80, 183, 255)`.
 
 # --hints--
 
-You should give `.left-mountain` a `position` of `absolute`. Found `--fcc-actual--` instead of `--fcc-expected--`.
+You should use the `.left-mountain` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.position, 'absolute');
+assert.match(code, /\.left-mountain\s*\{/);
+```
+
+You should give `.left-mountain` a `width` of `300px`. Expected `--fcc-actual--` to be `--fcc-expected--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.width, '300px');
+```
+
+You should give `.left-mountain` a `height` of `300px`. Expected `--fcc-actual--` to be `--fcc-expected--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.height, '300px');
+```
+
+You should give `.left-mountain` a `background` of `linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255))`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.getPropVal('background', true), 'linear-gradient(rgb(203,241,228),rgb(80,183,255))');
 ```
 
 # --seed--
@@ -45,16 +63,13 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
 --fcc-editable-region--
-.left-mountain {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
 
-}
 --fcc-editable-region--
 
 .penguin {

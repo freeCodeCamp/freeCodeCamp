@@ -1,5 +1,5 @@
 ---
-id: 619d0fc9825c271253df28d4
+id: 619d0eec0ac40611b41e2ccc
 title: Step 63
 challengeType: 0
 dashedName: step-63
@@ -7,32 +7,44 @@ dashedName: step-63
 
 # --description--
 
-Target the `.blush` elements, and give them a `width` of `15%`, `height` of `10%`, and `background-color` of `pink`.
+Below the `.eye.right` element, add two `div` elements each with a `class` of `blush`. Also, give the first `.blush` element a `class` of `left`, and the second `.blush` element a `class` of `right`.
 
 # --hints--
 
-You should use the `.blush` selector.
+You should add two `div` elements within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.blush\s*\{/);
+assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 7);
 ```
 
-You should give `.blush` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the first new `div` a `class` of `blush`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.width, '15%');
+assert.exists(document.querySelector('.penguin-head > div.blush'));
 ```
 
-You should give `.blush` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the second new `div` a `class` of `blush`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.height, '10%');
+assert.equal(document.querySelectorAll('.penguin-head > div.blush')?.length, 2);
 ```
 
-You should give `.blush` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the first new `div` a `class` of `left`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.backgroundColor, 'pink');
+assert.exists(document.querySelector('.penguin-head > div.blush.left'));
+```
+
+You should give the second new `div` a `class` of `right`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.blush.right'));
+```
+
+You should place `.blush.right` after `.blush.left`.
+
+```js
+assert.exists(document.querySelector('.blush.left + .blush.right'));
 ```
 
 # --seed--
@@ -64,8 +76,9 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.backgroundColor
         <div class="eye right">
           <div class="eye-lid"></div>
         </div>
-        <div class="blush left"></div>
-        <div class="blush right"></div>
+--fcc-editable-region--
+
+--fcc-editable-region--
       </div>
       <div class="penguin-body"></div>
     </div>
@@ -84,6 +97,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -194,10 +209,6 @@ body {
   left: -23%;
   border-radius: 50%;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin-body {
   width: 53%;

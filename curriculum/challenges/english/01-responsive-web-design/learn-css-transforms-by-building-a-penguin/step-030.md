@@ -1,5 +1,5 @@
 ---
-id: 61993cf26a8e0f0a553db223
+id: 61993b72e874e709b8dfd666
 title: Step 30
 challengeType: 0
 dashedName: step-30
@@ -7,17 +7,32 @@ dashedName: step-30
 
 # --description--
 
-_Most_ penguins do not have a square head.
-
-Give the penguin a slightly oval head by setting the radius of the top corners to `70%` and the radius of the bottom corners to `65%`.
+Target the `.penguin-head` element, and give it a `width` half of its parent's, and a `height` of `45%`. Then, set the `background` to a linear gradient at `45deg` starting at `gray`, and ending at `rgb(239, 240, 228)`.
 
 # --hints--
 
-You should give `.penguin-head` a `border-radius` of `70% 70% 65% 65%`.
+You should use the `.penguin-head` selector.
 
 ```js
-// Maybe check for individual border-radius properties?
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.borderRadius, '70% 70% 65% 65%');
+assert.match(code, /\.penguin-head\s*\{/);
+```
+
+You should give `.penguin-head` a `width` of `50%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.width, '50%');
+```
+
+You should give `.penguin-head` a `height` of `45%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.height, '45%');
+```
+
+You should give `.penguin-head` a `background` of `linear-gradient(45deg, gray, rgb(239, 240, 228))`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.getPropVal('background', true), 'linear-gradient(45deg,gray,rgb(239,240,228))');
 ```
 
 # --seed--
@@ -53,6 +68,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -97,16 +114,7 @@ body {
 }
 
 --fcc-editable-region--
-.penguin-head {
-  width: 50%;
-	height: 45%;
-  background: linear-gradient(
-		45deg,
-		gray,
-		rgb(239, 240, 228)
-	);
-	
-}
+
 --fcc-editable-region--
 
 .ground {

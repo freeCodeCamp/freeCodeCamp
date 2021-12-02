@@ -1,5 +1,5 @@
 ---
-id: 619d2712853306238f41828e
+id: 619d26b12e651022d80cd017
 title: Step 87
 challengeType: 0
 dashedName: step-87
@@ -7,38 +7,32 @@ dashedName: step-87
 
 # --description--
 
-Create a custom CSS variable named `--penguin-skin`, and set it to `gray`. Then, replace all relevant property values with it.
+Target the `.arm` elements, and give them a `width` of `30%`, a `height` of `60%`, and a `background` of linear gradient at `90deg` from clockwise, starting at `gray`, and ending at `rgb(209, 210, 199)`.
 
 # --hints--
 
-You should give `:root` a `--penguin-skin` property.
+You should use the `.arm` selector.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyle(':root').getPropertyValue('--penguin-skin'));
+assert.match(code, /\.arm\s*\{/);
 ```
 
-You should give `--penguin-skin` a value of `gray`, but found `--fcc-actual--`.
+You should give `.arm` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(':root').getPropVal('--penguin-skin', true), 'gray');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.width, '30%');
 ```
 
-You should give `.penguin-head` a `background` of `linear-gradient(45deg, var(--penguin-skin), rgb(239, 240, 228))`.
+You should give `.arm` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.getPropVal('background', true), 'linear-gradient(45deg,var(--penguin-skin),rgb(239,240,228))');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.height, '60%');
 ```
 
-You should give `.penguin-body::before` a `background-color` of `var(--penguin-skin)`, but found `--fcc-actual--`.
+You should give `.arm` a `background` of `linear-gradient(90deg, gray, rgb(209, 210, 199))`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.getPropVal('background-color', true), 'var(--penguin-skin)');
-```
-
-You should give `.arm` a `background` of `linear-gradient(90deg, var(--penguin-skin), rgb(209, 210, 199))`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('background', true), 'linear-gradient(90deg,var(--penguin-skin),rgb(209,210,199))');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('background', true), 'linear-gradient(90deg,gray,rgb(209,210,199))');
 ```
 
 # --seed--
@@ -93,17 +87,17 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.getPropVal('backg
 ```
 
 ```css
---fcc-editable-region--
 :root {
   --penguin-face: white;
   --penguin-picorna: orange;
-
 }
 
 body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -289,15 +283,8 @@ body {
   opacity: 70%;
 }
 
-.arm {
-  width: 30%;
-  height: 60%;
-  background: linear-gradient(
-    90deg,
-    gray,
-    rgb(209, 210, 199)
-  );
-}
+--fcc-editable-region--
+
 --fcc-editable-region--
 
 .foot {

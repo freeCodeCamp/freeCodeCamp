@@ -1,5 +1,5 @@
 ---
-id: 619d03dadadb6509a16f4f5f
+id: 619d033915012509031f309a
 title: Step 51
 challengeType: 0
 dashedName: step-51
@@ -7,50 +7,26 @@ dashedName: step-51
 
 # --description--
 
-Target the `.chin` element, and give it a `width` of `90%`, height of `70%`, and `background-color` of `white`.
+Below the `.face.right` element, add a `div` element with a `class` of `chin`.
 
 # --hints--
 
-You should use the `.chin` selector.
+You should add one `div` element within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.chin\s*\{/);
+assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 3);
 ```
 
-You should give `.chin` a `width` property.
+You should give the `div` a `class` of `chin`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.chin')?.width);
+assert.exists(document.querySelector('.penguin-head > div.chin'));
 ```
 
-You should give `.chin` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should place the `div` element below the `.face.right` element.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.width, '90%');
-```
-
-You should give `.chin` a `height` property.
-
-```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.chin')?.height);
-```
-
-You should give `.chin` a `height` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.height, '70%');
-```
-
-You should give `.chin` a `background-color` property.
-
-```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.chin')?.backgroundColor);
-```
-
-You should give `.chin` a `background-color` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.backgroundColor, 'white');
+assert.exists(document.querySelector('.face.right + .chin'));
 ```
 
 # --seed--
@@ -72,11 +48,13 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.backgroundColor,
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
+--fcc-editable-region--
       <div class="penguin-head">
         <div class="face left"></div>
         <div class="face right"></div>
-        <div class="chin"></div>
+
       </div>
+--fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -90,6 +68,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -166,10 +146,6 @@ body {
 .face.right {
   right: 5%;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin-body {
   width: 53%;

@@ -1,5 +1,5 @@
 ---
-id: 619d15d955d9d418c4487bbc
+id: 619d15797b580c1828b05426
 title: Step 72
 challengeType: 0
 dashedName: step-72
@@ -7,20 +7,20 @@ dashedName: step-72
 
 # --description--
 
-Within `.shirt`, after the `div` element, add a `p` element with the following content: `I CSS`
+Within the `.shirt` element, add a `div` with the following emoji as content: 💜
 
 # --hints--
 
-You should add one `p` element within `.shirt`, but found `--fcc-actual--`.
+You should add a `div` element within `div.shirt`. Expected `--fcc-expected--` `div` element, found `--fcc-actual--`.
 
 ```js
-assert.equal(document.querySelectorAll('.shirt > p')?.length, 1);
+assert.equal(document.querySelectorAll('.shirt > div')?.length, 1);
 ```
 
-You should give the `p` element the content `I CSS`, but found `--fcc-actual--`.
+You should give the new `div` a content of `💜`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(document.querySelector('.shirt > p')?.textContent, 'I CSS');
+assert.equal(document.querySelector('.shirt > div')?.textContent, '💜');
 ```
 
 # --seed--
@@ -59,7 +59,6 @@ assert.equal(document.querySelector('.shirt > p')?.textContent, 'I CSS');
       </div>
 --fcc-editable-region--
       <div class="shirt">
-        <div>💜</div>
 
       </div>
 --fcc-editable-region--
@@ -80,6 +79,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 

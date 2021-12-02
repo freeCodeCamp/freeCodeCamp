@@ -1,5 +1,5 @@
 ---
-id: 619be73b3c806006ccc00bb0
+id: 619bcf239fc15905ecd66fce
 title: Step 39
 challengeType: 0
 dashedName: step-39
@@ -7,26 +7,14 @@ dashedName: step-39
 
 # --description--
 
-Give the pseudo-element a `width` half that of its parent, a `height` of `40%`, and a `background-color` of `gray`.
+Position the pseudo-element relative to its closest positioned ancestor.
 
 # --hints--
 
-You should give `.penguin-body::before` a `width` of `50%`.
+You should give `.penguin-body::before` a `position` of `absolute`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.width, '50%');
-```
-
-You should give `.penguin-body::before` a `height` of `40%`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.height, '40%');
-```
-
-You should give `.penguin-body::before` a `background-color` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.backgroundColor, 'gray');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.position, 'absolute');
 ```
 
 # --seed--
@@ -62,6 +50,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -140,7 +130,6 @@ body {
 --fcc-editable-region--
 .penguin-body::before {
   content: "";
-  position: absolute;
 
 }
 --fcc-editable-region--

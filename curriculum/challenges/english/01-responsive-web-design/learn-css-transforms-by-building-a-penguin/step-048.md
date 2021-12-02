@@ -1,5 +1,5 @@
 ---
-id: 619d022dc8400c0763829a17
+id: 619d019488f98c06acbbb71a
 title: Step 48
 challengeType: 0
 dashedName: step-48
@@ -7,26 +7,22 @@ dashedName: step-48
 
 # --description--
 
-Target the `.face` element with the `left` class, and position it `5%` left of its parent.
+Currently, the two `.face` elements are on top of each other.
+
+Fix this, by adding a `class` of `left` to the first `.face` element, and a `class` of `right` to the second `.face` element.
 
 # --hints--
 
-You should use the `.face.left` selector.
+You should give a `class` of `left` to the first `.face` element.
 
 ```js
-assert.match(code, /\.face\.left\s*\{/);
+assert.include(document.querySelector('.face:nth-of-type(1)').className, 'left');
 ```
 
-You should give `.face.left` a `left` property.
+You should give a `class` of `right` to the second `.face` element.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face.left')?.left);
-```
-
-You should give `.face.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face.left')?.left, '5%');
+assert.include(document.querySelector('.face:nth-of-type(2)').className, 'right');
 ```
 
 # --seed--
@@ -48,10 +44,12 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.face.left')?.left, '5%')
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
+--fcc-editable-region--
       <div class="penguin-head">
-        <div class="face left"></div>
-        <div class="face right"></div>
+        <div class="face"></div>
+        <div class="face"></div>
       </div>
+--fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -65,6 +63,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -133,10 +133,6 @@ body {
   border-radius: 70% 70% 60% 60%;
   top: 15%;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin-body {
   width: 53%;

@@ -1,5 +1,5 @@
 ---
-id: 619d1340361095175f4b5115
+id: 619d129a417d0716a94de913
 title: Step 70
 challengeType: 0
 dashedName: step-70
@@ -7,26 +7,32 @@ dashedName: step-70
 
 # --description--
 
-The penguin's body looks a bit plain. Spruce him up by adding a `div` element with a `class` of `shirt`, immediately before the `.penguin-body` element.
+Target the `.beak` element with a `class` of `bottom`, and give it a `width` `4%` smaller than `.beak.top`, `5%` further from the top, and `2%` further from the left of its parent than `.beak.top`.
 
 # --hints--
 
-You should add a `div` element within `.penguin`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
+You should use the `.beak.bottom` selector.
 
 ```js
-assert.equal(document.querySelectorAll('.penguin > div')?.length, 3);
+assert.match(code, /\.beak\.bottom\s*\{/);
 ```
 
-You should give the new `div` a `class` of `shirt`.
+You should give `.beak.bottom` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.exists(document.querySelector('.penguin > div.shirt'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.bottom')?.width, '16%');
 ```
 
-You should place the new `div` before `.penguin-body`.
+You should give `.beak.bottom` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.exists(document.querySelector('.shirt + .penguin-body'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.bottom')?.top, '65%');
+```
+
+You should give `.beak.bottom` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.bottom')?.left, '42%');
 ```
 
 # --seed--
@@ -63,9 +69,6 @@ assert.exists(document.querySelector('.shirt + .penguin-body'));
         <div class="beak top"></div>
         <div class="beak bottom"></div>
       </div>
---fcc-editable-region--
-
---fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -83,6 +86,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -216,17 +221,14 @@ body {
   border-radius: 50%;
 }
 
+--fcc-editable-region--
 .beak.top {
 	width: 20%;
 	top: 60%;
 	left: 40%;
 }
 
-.beak.bottom {
-  width: 16%;
-  top: 65%;
-  left: 42%;
-}
+--fcc-editable-region--
 
 .penguin-body {
   width: 53%;

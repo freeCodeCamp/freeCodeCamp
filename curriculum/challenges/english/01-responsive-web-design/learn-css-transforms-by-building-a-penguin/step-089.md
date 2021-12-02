@@ -1,5 +1,5 @@
 ---
-id: 619d2bd9c1d43c2526e96f1f
+id: 619d2b7a84e78b246f2d17a2
 title: Step 89
 challengeType: 0
 dashedName: step-89
@@ -7,20 +7,44 @@ dashedName: step-89
 
 # --description--
 
-Within the `.arm.left` selector, alter the origin of the `transform` function to be the top left corner of its parent.
+Target the `.arm` element with a `class` of `left`, and position it `35%` from the top, and `5%` from the left of its parent. Then, target the `.arm` element with a `class` of `right`, and position it `0%` from the top, and `-5%` from the right of its parent.
 
 # --hints--
 
-You should use the `transform-origin` property to do this.
+You should use the `.arm.left` selector.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.arm.left')?.transformOrigin);
+assert.match(code, /\.arm\.left\s*\{/);
 ```
 
-You should give `.arm.left` a `transform-origin` of `0% 0%` or `top left`.
+You should give `.arm.left` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.include(['0% 0%', 'left top'], new __helpers.CSSHelp(document).getStyle('.arm.left')?.transformOrigin);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.top, '35%');
+```
+
+You should give `.arm.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.left, '5%');
+```
+
+You should use the `.arm.right` selector.
+
+```js
+assert.match(code, /\.arm\.right\s*\{/);
+```
+
+You should give `.arm.right` a `top` of `0%`.
+
+```js
+assert.include(['0%', '0', '0px'], new __helpers.CSSHelp(document).getStyle('.arm.right')?.top);
+```
+
+You should give `.arm.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.right')?.right, '-5%');
 ```
 
 # --seed--
@@ -85,6 +109,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -281,16 +307,7 @@ body {
 }
 
 --fcc-editable-region--
-.arm.left {
-  top: 35%;
-  left: 5%;
-  
-}
 
-.arm.right {
-  top: 0%;
-  right: -5%;
-}
 --fcc-editable-region--
 
 .foot {

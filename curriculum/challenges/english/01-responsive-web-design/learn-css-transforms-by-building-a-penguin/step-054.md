@@ -1,5 +1,5 @@
 ---
-id: 619d0882f54bf40bdc4671ed
+id: 619d05c54dabca0b10058235
 title: Step 54
 challengeType: 0
 dashedName: step-54
@@ -7,26 +7,28 @@ dashedName: step-54
 
 # --description--
 
-Where relevant, replace property values with your `--penguin-face` variable.
+So far, the `.face` and `.chin` elements have the same `background-color`.
+
+Create a custom CSS property called `--penguin-face`, and set it to `white`.
 
 # --hints--
 
-You should give `.face` a `background-color` of `var(--penguin-face)`.
+You should use the `:root` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.getPropVal('background-color', true), 'var(--penguin-face)');
+assert.match(code, /:root\s*\{/);
 ```
 
-You should give `.chin` a `background-color` of `var(--penguin-face)`.
+You should give `:root` a `--penguin-face` property.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.getPropVal('background-color', true), 'var(--penguin-face)');
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle(':root')?.getPropertyValue('--penguin-face'));
 ```
 
-You should not use `var(--penguin-face)` in the `.penguin-body` selector.
+You should give `:root` a `--penguin-face` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.notInclude(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.getPropVal('background-color', true), 'var(--penguin-face)');
+assert.equal(new __helpers.CSSHelp(document).getStyle(':root')?.getPropVal('--penguin-face', true), 'white');
 ```
 
 # --seed--
@@ -63,14 +65,15 @@ assert.notInclude(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.get
 
 ```css
 --fcc-editable-region--
-:root {
-  --penguin-face: white;
-}
+
+--fcc-editable-region--
 
 body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -191,5 +194,4 @@ body {
   position: absolute;
   margin-top: -58px;
 }
---fcc-editable-region--
 ```

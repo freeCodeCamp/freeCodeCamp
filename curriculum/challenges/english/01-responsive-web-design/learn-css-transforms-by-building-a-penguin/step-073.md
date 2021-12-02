@@ -1,5 +1,5 @@
 ---
-id: 619d1629a8adc61960ca8b40
+id: 619d15d955d9d418c4487bbc
 title: Step 73
 challengeType: 0
 dashedName: step-73
@@ -7,32 +7,20 @@ dashedName: step-73
 
 # --description--
 
-Target the `.shirt` element, and set its `font-size` to `25px`, `font-family` to `Helvetica` with a fallback of `sans-serif`, and `font-weight` to `bold`.
+Within `.shirt`, after the `div` element, add a `p` element with the following content: `I CSS`
 
 # --hints--
 
-You should use the `.shirt` selector.
+You should add one `p` element within `.shirt`, but found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.shirt\s*\{/);
+assert.equal(document.querySelectorAll('.shirt > p')?.length, 1);
 ```
 
-You should give `.shirt` a `font-size` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give the `p` element the content `I CSS`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.fontSize, '25px');
-```
-
-You should give `.shirt` a `font-family` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.fontFamily, 'Helvetica, sans-serif');
-```
-
-You should give `.shirt` a `font-weight` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.fontWeight, 'bold');
+assert.equal(document.querySelector('.shirt > p')?.textContent, 'I CSS');
 ```
 
 # --seed--
@@ -69,10 +57,12 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.fontWeight, 'bo
         <div class="beak top"></div>
         <div class="beak bottom"></div>
       </div>
+--fcc-editable-region--
       <div class="shirt">
         <div>💜</div>
-        <p>I CSS</p>
-      </div> 
+
+      </div>
+--fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -90,6 +80,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -224,7 +216,7 @@ body {
 }
 
 .beak.top {
-  width: 20%;
+	width: 20%;
 	top: 60%;
 	left: 40%;
 }
@@ -234,10 +226,6 @@ body {
   top: 65%;
   left: 42%;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin-body {
   width: 53%;

@@ -1,5 +1,5 @@
 ---
-id: 619d115e2adcd71538e82ebb
+id: 619d10cc98145f14820399c5
 title: Step 67
 challengeType: 0
 dashedName: step-67
@@ -7,32 +7,50 @@ dashedName: step-67
 
 # --description--
 
-Target the `.beak` elements, and give them a `height` of `10%`, `background-color` of `orange`, and give all corners a radius of `50%`.
+Below the `.blush.right` element, add two `div` elements each with a `class` of `beak`. Also, give the first `.beak` element a `class` of `top`, and the second `.beak` element a `class` of `bottom`.
 
 # --hints--
 
-You should use the `.beak` selector.
+You should add two `div` elements within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.beak\s*\{/);
+assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 9);
 ```
 
-You should give `.beak` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the first new `div` a `class` of `beak`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.height, '10%');
+assert.exists(document.querySelector('.penguin-head > div.beak'));
 ```
 
-You should give `.beak` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the second new `div` a `class` of `beak`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.backgroundColor, 'orange');
+assert.equal(document.querySelectorAll('.penguin-head > div.beak')?.length, 2);
 ```
 
-You should give `.beak` a `border-radius` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the first new `div` a `class` of `top`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.borderRadius, '50%');
+assert.exists(document.querySelector('.penguin-head > div.beak.top'));
+```
+
+You should give the second new `div` a `class` of `bottom`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.beak.bottom'));
+```
+
+You should place `div.beak.top` after `div.blush.right`.
+
+```js
+assert.exists(document.querySelector('.blush.right + .beak.top'));
+```
+
+You should place `div.beak.bottom` after `div.beak.top`.
+
+```js
+assert.exists(document.querySelector('.beak.top + .beak.bottom'));
 ```
 
 # --seed--
@@ -66,8 +84,9 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.borderRadius, '5
         </div>
         <div class="blush left"></div>
         <div class="blush right"></div>
-        <div class="beak top"></div>
-        <div class="beak bottom"></div>
+--fcc-editable-region--
+
+--fcc-editable-region--
       </div>
       <div class="penguin-body"></div>
     </div>
@@ -86,6 +105,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -212,10 +233,6 @@ body {
 .blush.right {
   right: 15%;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin-body {
   width: 53%;

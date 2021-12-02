@@ -1,5 +1,5 @@
 ---
-id: 6196aead7ac7bf1584b17a7f
+id: 6196adc17f77a714d51485f2
 title: Step 17
 challengeType: 0
 dashedName: step-17
@@ -7,20 +7,26 @@ dashedName: step-17
 
 # --description--
 
-To overlap the mountain and `.ground` elements better, give the mountain a `margin-top` of `100px`, and the `.ground` element a `margin-top` of `-58px`.
+Set the stack level of the mountain element such that it remains directly behind the `.ground` element.
 
 # --hints--
 
-You should give `.left-mountain` a `margin-top` of `100px`.
+You should use the `z-index` property to change the stack level.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.marginTop, '100px');
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.zIndex);
 ```
 
-You should give `.ground` a `margin-top` of `-58px`.
+You should set the `z-index` property to `2`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.marginTop, '-58px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.zIndex, '2');
+```
+
+You should not change the `z-index` of the `.ground` element.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.zIndex, '3');
 ```
 
 # --seed--
@@ -51,6 +57,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -61,9 +69,9 @@ body {
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
   position: absolute;
   transform: skew(0deg, 44deg);
-  z-index: 2;
 
 }
+--fcc-editable-region--
 
 .penguin {
   width: 300px;
@@ -78,7 +86,5 @@ body {
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
   z-index: 3;
   position: absolute;
-  
 }
---fcc-editable-region--
 ```

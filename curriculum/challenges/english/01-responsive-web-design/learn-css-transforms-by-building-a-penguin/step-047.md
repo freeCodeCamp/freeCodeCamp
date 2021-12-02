@@ -1,5 +1,5 @@
 ---
-id: 619d019488f98c06acbbb71a
+id: 619cfdf2e63ddf05feab86ad
 title: Step 47
 challengeType: 0
 dashedName: step-47
@@ -7,22 +7,20 @@ dashedName: step-47
 
 # --description--
 
-Currently, the two `.face` elements are on top of each other.
-
-Fix this, by adding a `class` of `left` to the first `.face` element, and a `class` of `right` to the second `.face` element.
+Position the `.face` elements so that they are `15%` from the top.
 
 # --hints--
 
-You should give a `class` of `left` to the first `.face` element.
+You should give `.face` a `top` property.
 
 ```js
-assert.include(document.querySelector('.face:nth-of-type(1)').className, 'left');
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.top);
 ```
 
-You should give a `class` of `right` to the second `.face` element.
+You should give `.face` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.include(document.querySelector('.face:nth-of-type(2)').className, 'right');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.top, '15%');
 ```
 
 # --seed--
@@ -44,12 +42,10 @@ assert.include(document.querySelector('.face:nth-of-type(2)').className, 'right'
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
---fcc-editable-region--
       <div class="penguin-head">
         <div class="face"></div>
         <div class="face"></div>
       </div>
---fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -63,6 +59,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -124,13 +122,15 @@ body {
   z-index: 1;
 }
 
+--fcc-editable-region--
 .face {
   width: 60%;
   height: 70%;
   background-color: white;
   border-radius: 70% 70% 60% 60%;
-  top: 15%;
+
 }
+--fcc-editable-region--
 
 .penguin-body {
   width: 53%;

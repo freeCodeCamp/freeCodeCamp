@@ -1,5 +1,5 @@
 ---
-id: 619d229b0e542520cd91c685
+id: 619d21fe6a3f9b2016be9d9d
 title: Step 83
 challengeType: 0
 dashedName: step-83
@@ -7,20 +7,32 @@ dashedName: step-83
 
 # --description--
 
-To make the penguin's feet look more _penguiny_, rotate the left foot by `80deg`, and the right by `-80deg`.
+Target the `.foot` element with a `class` of `left`, and position it `25%` left of its parent. Then, target the `.foot` element with a `class` of `right`, and position it `25%` right of its parent.
 
 # --hints--
 
-You should give `.foot.left` a `transform` of `rotate(80deg)`.
+You should use the `.foot.left` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.left').getPropVal('transform', true), 'rotate(80deg)');
+assert.match(code, /\.foot\.left\s*\{/);
 ```
 
-You should give `.foot.right` a `transform` of `rotate(-80deg)`.
+You should give `.foot.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.right').getPropVal('transform', true), 'rotate(-80deg)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.left')?.left, '25%');
+```
+
+You should use the `.foot.right` selector.
+
+```js
+assert.match(code, /\.foot\.right\s*\{/);
+```
+
+You should give `.foot.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot.right')?.right, '25%');
 ```
 
 # --seed--
@@ -82,6 +94,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -267,6 +281,7 @@ body {
   opacity: 70%;
 }
 
+--fcc-editable-region--
 .foot {
   width:  15%;
   height: 30%;
@@ -275,16 +290,7 @@ body {
   border-radius: 50%;
 }
 
---fcc-editable-region--
-.foot.left {
-  left: 25%;
 
-}
-
-.foot.right {
-  right: 25%;
-
-}
 --fcc-editable-region--
 
 .ground {

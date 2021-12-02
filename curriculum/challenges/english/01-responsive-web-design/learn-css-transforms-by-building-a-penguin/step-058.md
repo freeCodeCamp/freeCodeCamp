@@ -1,5 +1,5 @@
 ---
-id: 619d0c1594c38c0ebae75878
+id: 619d0bc9cb05360e1bf549c3
 title: Step 58
 challengeType: 0
 dashedName: step-58
@@ -7,32 +7,20 @@ dashedName: step-58
 
 # --description--
 
-Target the `.eye` element with the `left` class, and position it `25%` from the left of its parent. Then, target the `.eye` element with the `right` class, and position it `25%` from the right of its parent.
+Position the `.eye` elements `45%` from the top of their parent, and give all corners a radius of `50%`.
 
 # --hints--
 
-You should use the `.eye.left` selector.
+You should give `.eye` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.eye\.left\s*\{/);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.top, '45%');
 ```
 
-You should give `.eye.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.eye` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.eye.left')?.left, '25%');
-```
-
-You should use the `.eye.right` selector.
-
-```js
-assert.match(code, /\.eye\.right\s*\{/);
-```
-
-You should give `.eye.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.eye.right')?.right, '25%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.borderRadius, '50%');
 ```
 
 # --seed--
@@ -78,6 +66,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -164,16 +154,13 @@ body {
   border-radius: 70% 70% 100% 100%;
 }
 
+--fcc-editable-region--
 .eye {
   width: 15%;
   height: 17%;
   background-color: black;
-  top: 45%;
-  border-radius: 50%;
+
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 
 .penguin-body {

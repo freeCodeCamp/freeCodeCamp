@@ -1,5 +1,5 @@
 ---
-id: 619d33c51140292cc5a21742
+id: 619d337765b9f02c10e93722
 title: Step 99
 challengeType: 0
 dashedName: step-99
@@ -7,32 +7,20 @@ dashedName: step-99
 
 # --description--
 
-Use the `wave` animation on the left arm. Have the animation last `3s`, infinitely iterate, and have a linear timing function.
+For the third and fourth waypoints, repeat the `transform` pattern once more.
 
 # --hints--
 
-You should give `.arm.left` an `animation-name` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give the `30%` waypoint a `transform` of `rotate(110deg) scaleX(-1)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationName, 'wave');
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '30%')?.style?.transform?.replace(/\s+/g, '') === 'rotate(110deg)scaleX(-1)');
 ```
 
-You should give `.arm.left` an `animation-duration` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give the `40%` waypoint a `transform` of `rotate(130deg) scaleX(-1)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationDuration, '3s');
-```
-
-You should give `.arm.left` an `animation-iteration-count` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationIterationCount, 'infinite');
-```
-
-You should give `.arm.left` an `animation-timing-function` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left')?.animationTimingFunction, 'linear');
+assert([...[...new __helpers.CSSHelp(document).getCSSRules('keyframes')].find(rule => rule?.name === 'wave')?.cssRules].find(css => css?.keyText === '40%')?.style?.transform?.replace(/\s+/g, '') === 'rotate(130deg)scaleX(-1)');
 ```
 
 # --seed--
@@ -97,6 +85,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -294,15 +284,12 @@ body {
   z-index: -1;
 }
 
---fcc-editable-region--
 .arm.left {
   top: 35%;
   left: 5%;
   transform-origin: top left; 
   transform: rotate(130deg) scaleX(-1);
-
 }
---fcc-editable-region--
 
 .arm.right {
   top: 0%;
@@ -310,6 +297,7 @@ body {
   transform: rotate(-45deg);
 }
 
+--fcc-editable-region--
 @keyframes wave {
   10% {
     transform: rotate(110deg) scaleX(-1);
@@ -318,12 +306,13 @@ body {
     transform: rotate(130deg) scaleX(-1);
   }
   30% {
-    transform: rotate(110deg) scaleX(-1);
+
   }
   40% {
-    transform: rotate(130deg) scaleX(-1);
+
   }
 }
+--fcc-editable-region--
 
 .foot {
   width:  15%;

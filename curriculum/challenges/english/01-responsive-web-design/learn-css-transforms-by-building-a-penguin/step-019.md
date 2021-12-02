@@ -1,5 +1,5 @@
 ---
-id: 6196cee94c6da1253809dff9
+id: 6196ce0415498d2463989e84
 title: Step 19
 challengeType: 0
 dashedName: step-19
@@ -7,32 +7,26 @@ dashedName: step-19
 
 # --description--
 
-Target the `.back-mountain` element, and set its `width` and `height` to `300px`. Then, set the `background` to a linear gradient starting at `rgb(203, 241, 228)` and ending at `rgb(47, 170, 255)`.
+To give the effect of a mountain range, add another mountain, by creating a new `div` immediately after `.left-mountain`, and give the new `div` the `class` of `back-mountain`.
 
 # --hints--
 
-You should use the `.back-mountain` selector.
+You should add a new `div` within `body`.
 
 ```js
-assert.match(code, /\.back-mountain\s*\{/);
+assert.equal(document.querySelectorAll('body > div')?.length, 4);
 ```
 
-You should give `.back-mountain` a `width` of `300px`.
+You should give the `div` a `class` of `back-mountain`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.width, '300px');
+assert.include(document.querySelector('div:not(.left-mountain, .ground, .penguin)')?.className, 'back-mountain');
 ```
 
-You should give `.back-mountain` a `height` of `300px`.
+You should place `.back-mountain` after `.left-mountain`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.height, '300px');
-```
-
-You should give `.back-mountain` a `background` of `linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255))`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.getPropVal('background', true), 'linear-gradient(rgb(203,241,228),rgb(47,170,255))');
+assert.strictEqual(document.querySelector('.left-mountain')?.nextElementSibling, document.querySelector('.back-mountain'));
 ```
 
 # --seed--
@@ -49,12 +43,14 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.back-mountain')?.getProp
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
+--fcc-editable-region--
   <body>
     <div class="left-mountain"></div>
-    <div class="back-mountain"></div>
+
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
+--fcc-editable-region--
 </html>
 ```
 
@@ -63,6 +59,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -75,10 +73,6 @@ body {
   z-index: 2;
   margin-top: 100px;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin {
   width: 300px;

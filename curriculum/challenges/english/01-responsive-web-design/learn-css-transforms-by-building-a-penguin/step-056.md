@@ -1,5 +1,5 @@
 ---
-id: 619d0b51ca42ed0d74582186
+id: 619d090cd8d6db0c93dc5087
 title: Step 56
 challengeType: 0
 dashedName: step-56
@@ -7,32 +7,50 @@ dashedName: step-56
 
 # --description--
 
-Target the `.eye` elements, and give them a `width` of `15%`, `height` of `17%`, and `background-color` of `black`.
+Below the `.chin` element, add two `div` elements each with a `class` of `eye`. Also, give the first `.eye` element a `class` of `left`, and the second `.eye` element a `class` of `right`.
 
 # --hints--
 
-You should use the `.eye` selector.
+You should add two `div` elements within `.penguin-head`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
-assert.match(code, /\.eye\s*\{/);
+assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 5);
 ```
 
-You should give `.eye` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the first new `div` a `class` of `eye`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.width, '15%');
+assert.exists(document.querySelector('.penguin-head > div.eye'));
 ```
 
-You should give `.eye` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the second new `div` a `class` of `eye`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.height, '17%');
+assert.equal(document.querySelectorAll('.penguin-head > div.eye')?.length, 2);
 ```
 
-You should give `.eye` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
+You should give the first new `div` a `class` of `left`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.backgroundColor, 'black');
+assert.exists(document.querySelector('.penguin-head > div.eye.left'));
+```
+
+You should give the second new `div` a `class` of `right`.
+
+```js
+assert.exists(document.querySelector('.penguin-head > div.eye.right'));
+```
+
+You should place `div.eye.left` after `div.chin`.
+
+```js
+assert.exists(document.querySelector('.chin + .eye.left'));
+```
+
+You should place `div.eye.right` after `div.eye.left`.
+
+```js
+assert.exists(document.querySelector('.eye.left + .eye.right'));
 ```
 
 # --seed--
@@ -54,13 +72,14 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.eye')?.backgroundColor, 
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
+--fcc-editable-region--
       <div class="penguin-head">
         <div class="face left"></div>
         <div class="face right"></div>
         <div class="chin"></div>
-        <div class="eye left"></div>
-        <div class="eye right"></div>
+
       </div>
+--fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -78,6 +97,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -163,10 +184,6 @@ body {
   left: 5%;
   border-radius: 70% 70% 100% 100%;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .penguin-body {
   width: 53%;

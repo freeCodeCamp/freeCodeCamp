@@ -1,5 +1,5 @@
 ---
-id: 6196ce0415498d2463989e84
+id: 6196aead7ac7bf1584b17a7f
 title: Step 18
 challengeType: 0
 dashedName: step-18
@@ -7,26 +7,20 @@ dashedName: step-18
 
 # --description--
 
-To give the effect of a mountain range, add another mountain, by creating a new `div` immediately after `.left-mountain`, and give the new `div` the `class` of `back-mountain`.
+To overlap the mountain and `.ground` elements better, give the mountain a `margin-top` of `100px`, and the `.ground` element a `margin-top` of `-58px`.
 
 # --hints--
 
-You should add a new `div` within `body`.
+You should give `.left-mountain` a `margin-top` of `100px`.
 
 ```js
-assert.equal(document.querySelectorAll('body > div')?.length, 4);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.marginTop, '100px');
 ```
 
-You should give the `div` a `class` of `back-mountain`.
+You should give `.ground` a `margin-top` of `-58px`.
 
 ```js
-assert.include(document.querySelector('div:not(.left-mountain, .ground, .penguin)')?.className, 'back-mountain');
-```
-
-You should place `.back-mountain` after `.left-mountain`.
-
-```js
-assert.strictEqual(document.querySelector('.left-mountain')?.nextElementSibling, document.querySelector('.back-mountain'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.marginTop, '-58px');
 ```
 
 # --seed--
@@ -36,6 +30,7 @@ assert.strictEqual(document.querySelector('.left-mountain')?.nextElementSibling,
 ```html
 <!DOCTYPE html>
 <html>
+  
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./styles.css" />
@@ -43,14 +38,11 @@ assert.strictEqual(document.querySelector('.left-mountain')?.nextElementSibling,
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
---fcc-editable-region--
   <body>
     <div class="left-mountain"></div>
-
     <div class="penguin"></div>
     <div class="ground"></div>
   </body>
---fcc-editable-region--
 </html>
 ```
 
@@ -59,9 +51,12 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
+--fcc-editable-region--
 .left-mountain {
   width: 300px;
   height: 300px;
@@ -69,7 +64,7 @@ body {
   position: absolute;
   transform: skew(0deg, 44deg);
   z-index: 2;
-  margin-top: 100px;
+
 }
 
 .penguin {
@@ -85,6 +80,7 @@ body {
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
   z-index: 3;
   position: absolute;
-  margin-top: -58px;
+  
 }
+--fcc-editable-region--
 ```

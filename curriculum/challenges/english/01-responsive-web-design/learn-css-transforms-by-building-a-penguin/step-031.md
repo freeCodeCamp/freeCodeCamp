@@ -1,5 +1,5 @@
 ---
-id: 61993dbb35adf30b10d49e38
+id: 61993cf26a8e0f0a553db223
 title: Step 31
 challengeType: 0
 dashedName: step-31
@@ -7,32 +7,17 @@ dashedName: step-31
 
 # --description--
 
-Target the `.penguin-body` element, and give it a `width` of `53%`, and a `height` of `45%`. Then, set the `background` to a linear gradient at `45deg`, `rgb(134, 133, 133)` from `0%`, `rgb(234, 231, 231)` from `25%`, and `white` from `67%`.
+_Most_ penguins do not have a square head.
+
+Give the penguin a slightly oval head by setting the radius of the top corners to `70%` and the radius of the bottom corners to `65%`.
 
 # --hints--
 
-You should use the `.penguin-body` selector.
+You should give `.penguin-head` a `border-radius` of `70% 70% 65% 65%`.
 
 ```js
-assert.match(code, /\.penguin-body\s*\{/);
-```
-
-You should give `.penguin-body` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.width, '53%');
-```
-
-You should give `.penguin-body` a `height` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.height, '45%');
-```
-
-You should give `.penguin-body` a `background` of `linear-gradient(45deg, rgb(134, 133, 133) 0%, rgb(234, 231, 231) 25%, white 67%)`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body')?.getPropVal('background', true), 'linear-gradient(45deg,rgb(134,133,133)0%,rgb(234,231,231)25%,white67%)');
+// Maybe check for individual border-radius properties?
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.borderRadius, '70% 70% 65% 65%');
 ```
 
 # --seed--
@@ -68,6 +53,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -111,19 +98,17 @@ body {
   position: relative;
 }
 
+--fcc-editable-region--
 .penguin-head {
   width: 50%;
 	height: 45%;
   background: linear-gradient(
-    45deg,
-	  gray,
+		45deg,
+		gray,
 		rgb(239, 240, 228)
 	);
-	border-radius: 70% 70% 65% 65%;
+	
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 
 .ground {

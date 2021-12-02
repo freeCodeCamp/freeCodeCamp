@@ -1,5 +1,5 @@
 ---
-id: 6196adc17f77a714d51485f2
+id: 61969e7451455614217e901b
 title: Step 16
 challengeType: 0
 dashedName: step-16
@@ -7,26 +7,28 @@ dashedName: step-16
 
 # --description--
 
-Set the stack level of the mountain element such that it remains directly behind the `.ground` element.
+To make the mountain look more like a mountain, you can use the `skew` transform function, which takes two arguments. The first being an angle to shear the x-axis by, and the second being an angle to shear the y-axis by.
+
+Use the `transform` property to skew the mountain by `0deg` in the x-axis and `44deg` in the y-axis.
 
 # --hints--
 
-You should use the `z-index` property to change the stack level.
+You should give `.left-mountain` a `transform` property.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.zIndex);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.transform);
 ```
 
-You should set the `z-index` property to `2`.
+You should use the `skew` function on `transform`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.zIndex, '2');
+assert.include(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.transform, 'skew');
 ```
 
-You should not change the `z-index` of the `.ground` element.
+You should give `.left-mountain` a `transform` of `skew(0deg, 44deg)`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.zIndex, '3');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.getPropVal('transform', true), 'skew(0deg,44deg)');
 ```
 
 # --seed--
@@ -57,6 +59,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -66,7 +70,6 @@ body {
   height: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
   position: absolute;
-  transform: skew(0deg, 44deg);
 
 }
 --fcc-editable-region--

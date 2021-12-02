@@ -1,5 +1,5 @@
 ---
-id: 6196d32d1340d829f0f6f57d
+id: 6196d2c0f22ca0293107c048
 title: Step 25
 challengeType: 0
 dashedName: step-25
@@ -7,20 +7,32 @@ dashedName: step-25
 
 # --description--
 
-Set the `position` property of the sun to prevent it from taking up space in the page layout, and set the `border-radius` such that the sun's shape is a circle.
+Give the `.sun` element a `width` and `height` of `200px`, and a `background-color` of `yellow`.
 
 # --hints--
 
-You should give `.sun` a `position` of `absolute`.
+You should use the `.sun` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.position, 'absolute');
+assert.match(code, /\.sun\s*\{/);
 ```
 
-You should give `.sun` a `border-radius` of `50%`.
+You should give `.sun` a `width` of `200px`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.borderRadius, '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.width, '200px');
+```
+
+You should give `.sun` a `height` of `200px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.height, '200px');
+```
+
+You should give `.sun` a `background-color` of `yellow`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.backgroundColor, 'yellow');
 ```
 
 # --seed--
@@ -52,6 +64,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -77,12 +91,7 @@ body {
 }
 
 --fcc-editable-region--
-.sun {
-  width: 200px;
-  height: 200px;
-  background-color: yellow;
-
-}
+    
 --fcc-editable-region--
 
 .penguin {

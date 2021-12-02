@@ -1,5 +1,5 @@
 ---
-id: 619d129a417d0716a94de913
+id: 619d11e6d5ef9515d2a16033
 title: Step 69
 challengeType: 0
 dashedName: step-69
@@ -7,32 +7,32 @@ dashedName: step-69
 
 # --description--
 
-Target the `.beak` element with a `class` of `bottom`, and give it a `width` `4%` smaller than `.beak.top`, `5%` further from the top, and `2%` further from the left of its parent than `.beak.top`.
+Target the `.beak` element with a `class` of `top`, give it a `width` of `20%`, and position it `60%` from the top, and `40%` from the left of its parent.
 
 # --hints--
 
-You should use the `.beak.bottom` selector.
+You should use the `.beak.top` selector.
 
 ```js
-assert.match(code, /\.beak\.bottom\s*\{/);
+assert.match(code, /\.beak\.top\s*\{/);
 ```
 
-You should give `.beak.bottom` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.beak.top` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.bottom')?.width, '16%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.top')?.width, '20%');
 ```
 
-You should give `.beak.bottom` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.beak.top` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.bottom')?.top, '65%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.top')?.top, '60%');
 ```
 
-You should give `.beak.bottom` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.beak.top` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.bottom')?.left, '42%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.top')?.left, '40%');
 ```
 
 # --seed--
@@ -86,6 +86,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -220,11 +222,6 @@ body {
 }
 
 --fcc-editable-region--
-.beak.top {
-	width: 20%;
-	top: 60%;
-	left: 40%;
-}
 
 --fcc-editable-region--
 

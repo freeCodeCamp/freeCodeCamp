@@ -1,5 +1,5 @@
 ---
-id: 619d0d18ca99870f884a7bff
+id: 619d0c1594c38c0ebae75878
 title: Step 59
 challengeType: 0
 dashedName: step-59
@@ -7,32 +7,32 @@ dashedName: step-59
 
 # --description--
 
-Within each `.eye` element, add a `div` with a `class` of `eye-lid`.
+Target the `.eye` element with the `left` class, and position it `25%` from the left of its parent. Then, target the `.eye` element with the `right` class, and position it `25%` from the right of its parent.
 
 # --hints--
 
-You should add one `div` element within `.eye.left`, but found `--fcc-actual--`.
+You should use the `.eye.left` selector.
 
 ```js
-assert.equal(document.querySelectorAll('.eye.left > div')?.length ?? 0, 1);
+assert.match(code, /\.eye\.left\s*\{/);
 ```
 
-You should add one `div` element within `.eye.right`, but found `--fcc-actual--`.
+You should give `.eye.left` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(document.querySelectorAll('.eye.right > div')?.length ?? 0, 1);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye.left')?.left, '25%');
 ```
 
-You should give the first new `div` a `class` of `eye-lid`.
+You should use the `.eye.right` selector.
 
 ```js
-assert.exists(document.querySelector('.eye.left > div.eye-lid'));
+assert.match(code, /\.eye\.right\s*\{/);
 ```
 
-You should give the second new `div` a `class` of `eye-lid`.
+You should give `.eye.right` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.exists(document.querySelector('.eye.right > div.eye-lid'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.eye.right')?.right, '25%');
 ```
 
 # --seed--
@@ -54,19 +54,13 @@ assert.exists(document.querySelector('.eye.right > div.eye-lid'));
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
---fcc-editable-region--
       <div class="penguin-head">
         <div class="face left"></div>
         <div class="face right"></div>
         <div class="chin"></div>
-        <div class="eye left">
-
-        </div>
-        <div class="eye right">
-          
-        </div>
+        <div class="eye left"></div>
+        <div class="eye right"></div>
       </div>
---fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
 
@@ -84,6 +78,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -178,13 +174,9 @@ body {
   border-radius: 50%;
 }
 
-.eye.left {
-  left: 25%;
-}
+--fcc-editable-region--
 
-.eye.right {
-  right: 25%;
-}
+--fcc-editable-region--
 
 .penguin-body {
   width: 53%;

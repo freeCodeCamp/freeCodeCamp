@@ -1,5 +1,5 @@
 ---
-id: 6197cff995d03905b0cca8ad
+id: 6196d41d40bf9b2aaea5d520
 title: Step 27
 challengeType: 0
 dashedName: step-27
@@ -7,28 +7,20 @@ dashedName: step-27
 
 # --description--
 
-Your penguin will consist of two main sections: the head, and the body.
-
-Within `.penguin`, add two new `div` elements. The first with a `class` of `penguin-head`, and the second with a `class` of `penguin-body`.
+Position the sun in the top right corner of the screen such that `75px` of its top and right edges are off screen.
 
 # --hints--
 
-You should add two new `div` elements to `.penguin`. Expected `--fcc-expected--` `.penguin > div` elements, but found `--fcc-actual--`.
+You should give `.sun` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(document.querySelectorAll('.penguin > div')?.length, 2);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.top, '-75px');
 ```
 
-You should give the first `div` a `class` of `penguin-head`.
+You should give `.sun` a `right` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.include(document.querySelector('.penguin > div:nth-of-type(1)')?.className, 'penguin-head');
-```
-
-You should give the second `div` a `class` of `penguin-body`.
-
-```js
-assert.include(document.querySelector('.penguin > div:nth-of-type(2)')?.className, 'penguin-body');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.right, '-75px');
 ```
 
 # --seed--
@@ -49,11 +41,7 @@ assert.include(document.querySelector('.penguin > div:nth-of-type(2)')?.classNam
     <div class="left-mountain"></div>
     <div class="back-mountain"></div>
     <div class="sun"></div>
---fcc-editable-region--
-    <div class="penguin">
-
-    </div>
---fcc-editable-region--
+    <div class="penguin"></div>
     <div class="ground"></div>
   </body>
 </html>
@@ -64,6 +52,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -88,15 +78,16 @@ body {
   top: 225px;
 }
 
+--fcc-editable-region--
 .sun {
   width: 200px;
   height: 200px;
   background-color: yellow;
   position: absolute;
   border-radius: 50%;
-  top: -75px;
-  right: -75px;
+
 }
+--fcc-editable-region--
 
 .penguin {
   width: 300px;

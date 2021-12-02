@@ -1,5 +1,5 @@
 ---
-id: 6199442866286d0ff421a4fc
+id: 619943876b706d0f35c01dbc
 title: Step 37
 challengeType: 0
 dashedName: step-37
@@ -7,20 +7,20 @@ dashedName: step-37
 
 # --description--
 
-To give the penguin body a crest, create a pseudo-element that is the first child of the `.penguin-body` element. Set the `content` property of the pseudo-element to an empty string.
+Change the stack level of the `.penguin-head` element such that it appears in front of the `.penguin-body` element.
 
 # --hints--
 
-You should use the `.penguin-body::before` selector.
+You should use the `z-index` property to change the stack level.
 
 ```js
-assert.match(code, /\.penguin-body::before\s*\{/);
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.zIndex);
 ```
 
-You should give `.penguin-body::before` a `content` of `""`.
+You should give the `.penguin-head` element a `z-index` of `1`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.content, '""');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-head')?.zIndex, '1');
 ```
 
 # --seed--
@@ -56,6 +56,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -103,6 +105,7 @@ body {
   position: absolute;
 }
 
+--fcc-editable-region--
 .penguin-head {
   width: 50%;
 	height: 45%;
@@ -114,8 +117,9 @@ body {
 	border-radius: 70% 70% 65% 65%;
   top: 10%;
   left: 25%;
-  z-index: 1;
+
 }
+--fcc-editable-region--
 
 .penguin-body {
   width: 53%;
@@ -130,10 +134,6 @@ body {
   top: 40%;
   left: 23.5%;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .ground {
   width: 100vw;

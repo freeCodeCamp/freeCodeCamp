@@ -1,5 +1,5 @@
 ---
-id: 619bcf239fc15905ecd66fce
+id: 6199442866286d0ff421a4fc
 title: Step 38
 challengeType: 0
 dashedName: step-38
@@ -7,14 +7,20 @@ dashedName: step-38
 
 # --description--
 
-Position the pseudo-element relative to its closest positioned ancestor.
+To give the penguin body a crest, create a pseudo-element that is the first child of the `.penguin-body` element. Set the `content` property of the pseudo-element to an empty string.
 
 # --hints--
 
-You should give `.penguin-body::before` a `position` of `absolute`.
+You should use the `.penguin-body::before` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.position, 'absolute');
+assert.match(code, /\.penguin-body::before\s*\{/);
+```
+
+You should give `.penguin-body::before` a `content` of `""`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.content, '""');
 ```
 
 # --seed--
@@ -50,6 +56,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -126,10 +134,7 @@ body {
 }
 
 --fcc-editable-region--
-.penguin-body::before {
-  content: "";
 
-}
 --fcc-editable-region--
 
 .ground {

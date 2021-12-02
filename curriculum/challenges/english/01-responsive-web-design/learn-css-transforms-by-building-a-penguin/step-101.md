@@ -1,5 +1,5 @@
 ---
-id: 619d3561a951bf2e41a24f10
+id: 619d3482f505452d861d0f62
 title: Step 101
 challengeType: 0
 dashedName: step-101
@@ -7,16 +7,20 @@ dashedName: step-101
 
 # --description--
 
-When you activate the `.penguin` element, it might look as though you can drag it around. This is not true.
-
-Indicate this to users, by giving the active element a `cursor` property of `not-allowed`.
+Target the `.penguin` element when it is active, and increase its size by `50%` in both dimensions.
 
 # --hints--
 
-You should give `.penguin:active` a `cursor` property of `not-allowed`.
+You should use the `.penguin:active` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin:active')?.cursor, 'not-allowed');
+assert.match(code, /\.penguin:active\s*\{/);
+```
+
+You should give `.penguin:active` a `transform` of `scale(1.5)`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin:active')?.getPropVal('transform', true), 'scale(1.5)');
 ```
 
 # --seed--
@@ -81,6 +85,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -129,10 +135,7 @@ body {
 }
 
 --fcc-editable-region--
-.penguin:active {
-  transform: scale(1.5);
 
-}
 --fcc-editable-region--
 
 .penguin-head {

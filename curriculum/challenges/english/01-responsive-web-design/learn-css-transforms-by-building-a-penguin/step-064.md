@@ -1,5 +1,5 @@
 ---
-id: 619d102d786c3d13124c37c6
+id: 619d0fc9825c271253df28d4
 title: Step 64
 challengeType: 0
 dashedName: step-64
@@ -7,20 +7,32 @@ dashedName: step-64
 
 # --description--
 
-Position the `.blush` elements `65%` from the top of their parent, and give all corners a radius of `50%`.
+Target the `.blush` elements, and give them a `width` of `15%`, `height` of `10%`, and `background-color` of `pink`.
 
 # --hints--
 
-You should give `.blush` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should use the `.blush` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.top, '65%');
+assert.match(code, /\.blush\s*\{/);
 ```
 
-You should give `.blush` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.blush` a `width` of `--fcc-expected--`, found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.borderRadius, '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.width, '15%');
+```
+
+You should give `.blush` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.height, '10%');
+```
+
+You should give `.blush` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.blush')?.backgroundColor, 'pink');
 ```
 
 # --seed--
@@ -72,6 +84,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -184,12 +198,7 @@ body {
 }
 
 --fcc-editable-region--
-.blush {
-  width: 15%;
-  height: 10%;
-  background-color: pink;
 
-}
 --fcc-editable-region--
 
 .penguin-body {

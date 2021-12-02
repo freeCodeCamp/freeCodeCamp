@@ -1,5 +1,5 @@
 ---
-id: 619be946958c6009844f1dee
+id: 619be8ce4ea49008c5bfbc30
 title: Step 43
 challengeType: 0
 dashedName: step-43
@@ -7,26 +7,14 @@ dashedName: step-43
 
 # --description--
 
-Start the penguin's face, by adding two `div` elements within `.penguin-head`, and giving them both a `class` of `face`.
+Increase the psuedo-element's transparency by `30%`.
 
 # --hints--
 
-You should add `--fcc-expected--` `div` elements to `.penguin-head`, but found `--fcc-actual--`.
+You should give `.penguin-body::before` an `opacity` of `70%`.
 
 ```js
-assert.equal(document.querySelectorAll('.penguin-head > div')?.length, 2);
-```
-
-You should give the first `div` a `class` of `face`, but found `--fcc-actual--`.
-
-```js
-assert.include(document.querySelector('.penguin-head > div:nth-of-type(1)')?.className, 'face');
-```
-
-You should give the second `div` a `class` of `face`, but found `--fcc-actual--`.
-
-```js
-assert.include(document.querySelector('.penguin-head > div:nth-of-type(2)')?.className, 'face');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.opacity, '0.7');
 ```
 
 # --seed--
@@ -48,11 +36,7 @@ assert.include(document.querySelector('.penguin-head > div:nth-of-type(2)')?.cla
     <div class="back-mountain"></div>
     <div class="sun"></div>
     <div class="penguin">
---fcc-editable-region--
-      <div class="penguin-head">
-
-      </div>
---fcc-editable-region--
+      <div class="penguin-head"></div>
       <div class="penguin-body"></div>
     </div>
 
@@ -66,6 +50,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -141,6 +127,7 @@ body {
   left: 23.5%;
 }
 
+--fcc-editable-region--
 .penguin-body::before {
   content: "";
   position: absolute;
@@ -150,8 +137,9 @@ body {
   top: 10%;
   left: 25%;
   border-radius: 0% 0% 100% 100%;
-  opacity: 70%;
+
 }
+--fcc-editable-region--
 
 .ground {
   width: 100vw;

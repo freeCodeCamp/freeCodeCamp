@@ -1,5 +1,5 @@
 ---
-id: 619d15797b580c1828b05426
+id: 619d1340361095175f4b5115
 title: Step 71
 challengeType: 0
 dashedName: step-71
@@ -7,20 +7,26 @@ dashedName: step-71
 
 # --description--
 
-Within the `.shirt` element, add a `div` with the following emoji as content: 💜
+The penguin's body looks a bit plain. Spruce him up by adding a `div` element with a `class` of `shirt`, immediately before the `.penguin-body` element.
 
 # --hints--
 
-You should add a `div` element within `div.shirt`. Expected `--fcc-expected--` `div` element, found `--fcc-actual--`.
+You should add a `div` element within `.penguin`. Expected `--fcc-expected--` `div` elements, found `--fcc-actual--`.
 
 ```js
-assert.equal(document.querySelectorAll('.shirt > div')?.length, 1);
+assert.equal(document.querySelectorAll('.penguin > div')?.length, 3);
 ```
 
-You should give the new `div` a content of `💜`, but found `--fcc-actual--`.
+You should give the new `div` a `class` of `shirt`.
 
 ```js
-assert.equal(document.querySelector('.shirt > div')?.textContent, '💜');
+assert.exists(document.querySelector('.penguin > div.shirt'));
+```
+
+You should place the new `div` before `.penguin-body`.
+
+```js
+assert.exists(document.querySelector('.shirt + .penguin-body'));
 ```
 
 # --seed--
@@ -58,9 +64,7 @@ assert.equal(document.querySelector('.shirt > div')?.textContent, '💜');
         <div class="beak bottom"></div>
       </div>
 --fcc-editable-region--
-      <div class="shirt">
 
-      </div>
 --fcc-editable-region--
       <div class="penguin-body"></div>
     </div>
@@ -79,6 +83,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 

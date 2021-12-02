@@ -1,5 +1,5 @@
 ---
-id: 619d2d4e80400325ff89664a
+id: 619d2bd9c1d43c2526e96f1f
 title: Step 90
 challengeType: 0
 dashedName: step-90
@@ -7,14 +7,20 @@ dashedName: step-90
 
 # --description--
 
-To keep the linear gradient on the correct side of the penguin's left arm, first rotate it by `130deg`, then invert the x-axis.
+Within the `.arm.left` selector, alter the origin of the `transform` function to be the top left corner of its parent.
 
 # --hints--
 
-You should give `.arm.left` a `transform` of `rotate(130deg) scaleX(-1)`.
+You should use the `transform-origin` property to do this.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm.left').getPropVal('transform', true), 'rotate(130deg)scaleX(-1)');
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.arm.left')?.transformOrigin);
+```
+
+You should give `.arm.left` a `transform-origin` of `0% 0%` or `top left`.
+
+```js
+assert.include(['0% 0%', 'left top'], new __helpers.CSSHelp(document).getStyle('.arm.left')?.transformOrigin);
 ```
 
 # --seed--
@@ -79,6 +85,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -278,15 +286,14 @@ body {
 .arm.left {
   top: 35%;
   left: 5%;
-  transform-origin: top left; 
-
+  
 }
---fcc-editable-region--
 
 .arm.right {
   top: 0%;
   right: -5%;
 }
+--fcc-editable-region--
 
 .foot {
   width:  15%;

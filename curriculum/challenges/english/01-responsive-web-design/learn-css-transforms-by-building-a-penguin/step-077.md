@@ -1,5 +1,5 @@
 ---
-id: 619d1e7a8e81a61c5a819dc4
+id: 619d1deb8b04811b8839ffe4
 title: Step 77
 challengeType: 0
 dashedName: step-77
@@ -7,14 +7,26 @@ dashedName: step-77
 
 # --description--
 
-For the shirt's final touch, set the `color` to `#6a6969`.
+Position the `.shirt` element `165px` from the top, and `127.5px` from the left of its parent. Then, increase its stacking order such that it appears above the `.penguin-body` element.
 
 # --hints--
 
-You should give `.shirt` a `color` of `#6a6969`.
+You should give `.shirt` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.color, 'rgb(106, 105, 105)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.top, '165px');
+```
+
+You should give `.shirt` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.left, '127.5px');
+```
+
+You should give the `.shirt` element a `z-index` of `1`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt')?.zIndex, '1');
 ```
 
 # --seed--
@@ -72,6 +84,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -220,9 +234,6 @@ body {
 --fcc-editable-region--
 .shirt {
   font: bold 25px Helvetica, sans-serif;
-  top: 165px;
-  left: 127.5px;
-  z-index: 1;
 
 }
 

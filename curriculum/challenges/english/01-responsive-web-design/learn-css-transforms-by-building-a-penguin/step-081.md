@@ -1,5 +1,5 @@
 ---
-id: 619d20b12996101f430920fb
+id: 619d204bd73ae51e743b8e94
 title: Step 81
 challengeType: 0
 dashedName: step-81
@@ -7,34 +7,20 @@ dashedName: step-81
 
 # --description--
 
-The penguin's beak and feet share the same `color`.
-
-Create a new custom CSS variable named `--penguin-picorna`, and replace all relavant property values with it.
+Position the `.foot` elements `85%` from the top of their parent, and give all corners a radius of `50%`.
 
 # --hints--
 
-You should give `:root` a `--penguin-picorna` property.
+You should give `.foot` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.exists(new __helpers.CSSHelp(document).getStyle(':root').getPropertyValue('--penguin-picorna'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.top, '85%');
 ```
 
-You should give `--penguin-picorna` a value of `orange`, but found `--fcc-actual--`.
+You should give `.foot` a `border-radius` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle(':root').getPropVal('--penguin-picorna', true), 'orange');
-```
-
-You should give `.beak` a `background-color` of `var(--penguin-picorna)`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.getPropVal('background-color', true), 'var(--penguin-picorna)');
-```
-
-You should give `.foot` a `background-color` of `var(--penguin-picorna)`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.getPropVal('background-color', true), 'var(--penguin-picorna)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.borderRadius, '50%');
 ```
 
 # --seed--
@@ -87,16 +73,16 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.foot')?.getPropVal('back
 ```
 
 ```css
---fcc-editable-region--
 :root {
   --penguin-face: white;
-  
 }
 
 body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -282,12 +268,12 @@ body {
   opacity: 70%;
 }
 
+--fcc-editable-region--
 .foot {
   width:  15%;
   height: 30%;
   background-color: orange;
-  top: 85%;
-  border-radius: 50%;
+  
 }
 --fcc-editable-region--
 

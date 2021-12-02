@@ -1,5 +1,5 @@
 ---
-id: 619d30350883802921bfcccc
+id: 619d2fd3ff4f772882e3d998
 title: Step 94
 challengeType: 0
 dashedName: step-94
@@ -7,22 +7,14 @@ dashedName: step-94
 
 # --description--
 
-Now, you are going to use CSS animations to make the penguin wave.
-
-Define a new `@keyframes` named `wave`.
+Change the `.arm` elements' stacking order such that they appear behind the `.penguin-body` element.
 
 # --hints--
 
-You should defined a new `@keyframes` rule.
+You should give `.arm` a `z-index` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.notEmpty(new __helpers.CSSHelp(document).getCSSRules('keyframes'));
-```
-
-You should give the `@keyframes` rule a `name` of `--fcc-expected--`, but found `--fcc-actual--`.
-
-```js
-assert.equal(new __helpers.CSSHelp(document).getCSSRules('keyframes')?.[0]?.name, 'wave');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.zIndex, '-1');
 ```
 
 # --seed--
@@ -87,6 +79,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -272,6 +266,7 @@ body {
   opacity: 70%;
 }
 
+--fcc-editable-region--
 .arm {
   width: 30%;
   height: 60%;
@@ -281,8 +276,9 @@ body {
     rgb(209, 210, 199)
   );
   border-radius: 30% 30% 30% 120%;
-  z-index: -1;
+
 }
+--fcc-editable-region--
 
 .arm.left {
   top: 35%;
@@ -296,10 +292,6 @@ body {
   right: -5%;
   transform: rotate(-45deg);
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .foot {
   width:  15%;

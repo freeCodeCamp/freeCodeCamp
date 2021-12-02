@@ -1,5 +1,5 @@
 ---
-id: 619692ff79f5770fc6d8c0b4
+id: 6197f667297bb30a552ce017
 title: Step 9
 challengeType: 0
 dashedName: step-9
@@ -7,26 +7,20 @@ dashedName: step-9
 
 # --description--
 
-Above the `.ground` element, add a `div` with a `class` of `penguin`. This `div` will contain Flappy Penguin.
+As the `.ground` element will be third in the stacking context of the page layout, set its `z-index` to `3`, and `position` to `absolute`.
 
 # --hints--
 
-You should add a new `div` within the `body`.
+You should give `.ground` a `z-index` of `3`.
 
 ```js
-assert.equal(document.querySelectorAll('body > div')?.length, 2);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.zIndex, '3');
 ```
 
-You should give the `div` a `class` of `penguin`.
+You should give `.ground` a `position` of `absolute`.
 
 ```js
-assert.include(document.querySelector('body > div:not(.ground)')?.className, 'penguin');
-```
-
-You should place `div.penguin` before `div.ground`.
-
-```js
-assert.strictEqual(document.querySelector('.ground')?.previousElementSibling, document.querySelector('.penguin'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('.ground')?.position, 'absolute');
 ```
 
 # --seed--
@@ -44,12 +38,9 @@ assert.strictEqual(document.querySelector('.ground')?.previousElementSibling, do
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
---fcc-editable-region--
   <body>
-
     <div class="ground"></div>
   </body>
---fcc-editable-region--
 </html>
 ```
 
@@ -58,14 +49,17 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
+--fcc-editable-region--
 .ground {
   width: 100vw;
   height: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
-  z-index: 3;
-  position: absolute;
+
 }
+--fcc-editable-region--
 ```

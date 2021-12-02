@@ -1,5 +1,5 @@
 ---
-id: 619d11e6d5ef9515d2a16033
+id: 619d115e2adcd71538e82ebb
 title: Step 68
 challengeType: 0
 dashedName: step-68
@@ -7,32 +7,32 @@ dashedName: step-68
 
 # --description--
 
-Target the `.beak` element with a `class` of `top`, give it a `width` of `20%`, and position it `60%` from the top, and `40%` from the left of its parent.
+Target the `.beak` elements, and give them a `height` of `10%`, `background-color` of `orange`, and give all corners a radius of `50%`.
 
 # --hints--
 
-You should use the `.beak.top` selector.
+You should use the `.beak` selector.
 
 ```js
-assert.match(code, /\.beak\.top\s*\{/);
+assert.match(code, /\.beak\s*\{/);
 ```
 
-You should give `.beak.top` a `width` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.beak` a `height` of `--fcc-expected--`, found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.top')?.width, '20%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.height, '10%');
 ```
 
-You should give `.beak.top` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.beak` a `background-color` of `--fcc-expected--`, found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.top')?.top, '60%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.backgroundColor, 'orange');
 ```
 
-You should give `.beak.top` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.beak` a `border-radius` of `--fcc-expected--`, found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.beak.top')?.left, '40%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.beak')?.borderRadius, '50%');
 ```
 
 # --seed--
@@ -86,6 +86,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -211,12 +213,6 @@ body {
 
 .blush.right {
   right: 15%;
-}
-
-.beak {
-  height: 10%;
-  background-color: orange;
-  border-radius: 50%;
 }
 
 --fcc-editable-region--

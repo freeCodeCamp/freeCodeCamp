@@ -1,5 +1,5 @@
 ---
-id: 619d2fd3ff4f772882e3d998
+id: 619d2f0e9440bc27caee1cec
 title: Step 93
 challengeType: 0
 dashedName: step-93
@@ -7,14 +7,19 @@ dashedName: step-93
 
 # --description--
 
-Change the `.arm` elements' stacking order such that they appear behind the `.penguin-body` element.
+Fun fact: Most, if not all, flippers are not naturally rectangles.
+
+Give the `.arm` elements top -left, -right, and bottom-right corners a radius of `30%`, and the bottom-left corner a radius of `120%`.
 
 # --hints--
 
-You should give `.arm` a `z-index` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.arm` a `border-radius` of `30% 30% 120% 30%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.zIndex, '-1');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderTopLeftRadius, '30%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderTopRightRadius, '30%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderBottomRightRadius, '30%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderBottomLeftRadius, '120%');
 ```
 
 # --seed--
@@ -79,6 +84,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -273,7 +280,6 @@ body {
     var(--penguin-skin),
     rgb(209, 210, 199)
   );
-  border-radius: 30% 30% 30% 120%;
 
 }
 --fcc-editable-region--

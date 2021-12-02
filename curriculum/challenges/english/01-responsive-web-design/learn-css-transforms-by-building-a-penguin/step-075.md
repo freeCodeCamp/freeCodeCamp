@@ -1,5 +1,5 @@
 ---
-id: 619d1dab9ff3421ae1976991
+id: 619d1c5fc9f8941a400955da
 title: Step 75
 challengeType: 0
 dashedName: step-75
@@ -7,20 +7,22 @@ dashedName: step-75
 
 # --description--
 
-Position the `div` with the heart emoji `11.5px` from the top, and `12px` from the left of its parent.
+You might have noticed the _heart_ emoji lost its color. This is because some of the character's properties were overridden by the `font-weight` style of `bold`.
+
+Fix this, by targetting the `div` with the heart emoji, and setting its `font-weight` to its original value.
 
 # --hints--
 
-You should give `.shirt div` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should use the `.shirt div` selector to target the `div` with the heart emoji.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt div')?.top, '11.5px');
+assert.match(code, /\.shirt div\s*\{/);
 ```
 
-You should give `.shirt div` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give the `.shirt div` a `font-weight` of `initial` or `normal`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt div')?.left, '12px');
+assert.include(['normal', 'initial'], new __helpers.CSSHelp(document).getStyle('.shirt div')?.fontWeight);
 ```
 
 # --seed--
@@ -78,6 +80,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -228,10 +232,7 @@ body {
   font: bold 25px Helvetica, sans-serif;
 }
 
-.shirt div {
-  font-weight:  initial;
 
-}
 --fcc-editable-region--
 
 .penguin-body {

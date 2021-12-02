@@ -1,5 +1,5 @@
 ---
-id: 619be8ce4ea49008c5bfbc30
+id: 619be80062551a080e32c821
 title: Step 42
 challengeType: 0
 dashedName: step-42
@@ -7,14 +7,23 @@ dashedName: step-42
 
 # --description--
 
-Increase the psuedo-element's transparency by `30%`.
+Round off the crest, by giving the pseudo-element bottom corners a radius of `100%`, leaving the top corners at `0%`.
 
 # --hints--
 
-You should give `.penguin-body::before` an `opacity` of `70%`.
+You should use the `border-radius` property to round off the crest.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.opacity, '0.7');
+assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderRadius);
+```
+
+You should give `.penguin-body::before` a `border-radius` of `0% 0% 100% 100%`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderBottomLeftRadius, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderBottomRightRadius, '100%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderTopLeftRadius, '0%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.borderTopRightRadius, '0%');
 ```
 
 # --seed--
@@ -50,6 +59,8 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
@@ -134,7 +145,6 @@ body {
   background-color: gray;
   top: 10%;
   left: 25%;
-  border-radius: 0% 0% 100% 100%;
 
 }
 --fcc-editable-region--

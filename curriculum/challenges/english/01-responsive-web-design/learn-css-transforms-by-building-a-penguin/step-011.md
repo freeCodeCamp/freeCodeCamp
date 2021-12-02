@@ -1,5 +1,5 @@
 ---
-id: 619699c10a0f6e11591d73c4
+id: 6196990f966e8f10a40094f6
 title: Step 11
 challengeType: 0
 dashedName: step-11
@@ -7,22 +7,26 @@ dashedName: step-11
 
 # --description--
 
-Use the `margin` property to horizontally center the `.penguin` element, and set the `margin-top` to `75px`.
+Target the `.penguin` element, and set its `width` and `height` to `300px`.
 
 # --hints--
 
-You should give `.penguin` a `margin` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should use the `.penguin` selector.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginRight, 'auto');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginLeft, 'auto');
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginBottom, 'auto');
+assert.match(code, /\.penguin\s*\{/);
 ```
 
-You should give `.penguin` a `margin-top` of `--fcc-expected--`, but found `--fcc-actual--`.
+You should give `.penguin` a `width` of `300px`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.marginTop, '75px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.width, '300px');
+```
+
+You should give `.penguin` a `height` of `300px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.height, '300px');
 ```
 
 # --seed--
@@ -52,15 +56,13 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   overflow: clip;
 }
 
 --fcc-editable-region--
-.penguin {
-  width: 300px;
-  height: 300px;
 
-}
 --fcc-editable-region--
 
 .ground {
