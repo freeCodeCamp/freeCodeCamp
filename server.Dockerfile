@@ -1,4 +1,4 @@
-FROM node:14.18.1-alpine as builder
+FROM node:14.18.2-alpine as builder
 USER node
 WORKDIR /home/node/build
 COPY --chown=node:node . .
@@ -7,7 +7,7 @@ RUN npm ci --no-progress
 RUN npm run build:curriculum
 RUN npm run build:server
 
-FROM node:14.18.1-alpine
+FROM node:14.18.2-alpine
 USER node
 WORKDIR /home/node/api
 # get and install deps
