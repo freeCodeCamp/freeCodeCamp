@@ -42,15 +42,13 @@ describe('add-seed plugin', () => {
   });
 
   it('adds test objects to the challengeFiles array following a schema', () => {
-    expect.assertions(17);
+    expect.assertions(15);
     plugin(simpleAST, file);
     const {
       data: { challengeFiles }
     } = file;
-    const testObject = challengeFiles.find(x => x.fileKey === 'indexjs');
-    expect(Object.keys(testObject).length).toEqual(8);
-    expect(testObject).toHaveProperty('fileKey');
-    expect(typeof testObject['fileKey']).toBe('string');
+    const testObject = challengeFiles.find(x => x.ext === 'js');
+    expect(Object.keys(testObject).length).toEqual(7);
     expect(testObject).toHaveProperty('ext');
     expect(typeof testObject['ext']).toBe('string');
     expect(testObject).toHaveProperty('name');
@@ -73,16 +71,16 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
-    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
-    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
+    const scriptjs = challengeFiles.find(x => x.ext === 'js');
+    const indexhtml = challengeFiles.find(x => x.ext === 'html');
+    const stylescss = challengeFiles.find(x => x.ext === 'css');
 
-    expect(indexjs.contents).toBe(`var x = 'y';`);
+    expect(scriptjs.contents).toBe(`var x = 'y';`);
     expect(indexhtml.contents).toBe(`<html>
   <body>
   </body>
 </html>`);
-    expect(indexcss.contents).toBe(`body {
+    expect(stylescss.contents).toBe(`body {
   background: green;
 }`);
   });
@@ -93,10 +91,10 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
+    const stylescss = challengeFiles.find(x => x.ext === 'css');
 
-    expect(indexcss.contents).not.toMatch('--fcc-editable-region--');
-    expect(indexcss.editableRegionBoundaries).toEqual([1, 4]);
+    expect(stylescss.contents).not.toMatch('--fcc-editable-region--');
+    expect(stylescss.editableRegionBoundaries).toEqual([1, 4]);
   });
 
   // TODO: can we reuse 'name'? It's always 'index', I think, which suggests
@@ -107,13 +105,13 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
-    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
-    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
+    const scriptjs = challengeFiles.find(x => x.ext === 'js');
+    const indexhtml = challengeFiles.find(x => x.ext === 'html');
+    const stylescss = challengeFiles.find(x => x.ext === 'css');
 
     expect(indexhtml.id).toBe('');
-    expect(indexcss.id).toBe('key-for-css');
-    expect(indexjs.id).toBe('key-for-js');
+    expect(stylescss.id).toBe('key-for-css');
+    expect(scriptjs.id).toBe('key-for-js');
   });
 
   it('throws if an id is anywhere except directly before a code node', () => {
@@ -140,13 +138,13 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
-    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
-    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
+    const scriptjs = challengeFiles.find(x => x.ext === 'js');
+    const indexhtml = challengeFiles.find(x => x.ext === 'html');
+    const stylescss = challengeFiles.find(x => x.ext === 'css');
 
-    expect(indexjs.head).toBe('');
+    expect(scriptjs.head).toBe('');
     expect(indexhtml.head).toBe(`<!-- comment -->`);
-    expect(indexcss.head).toBe(`body {
+    expect(stylescss.head).toBe(`body {
   etc: ''
 }`);
   });
@@ -157,15 +155,15 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
-    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
-    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
+    const scriptjs = challengeFiles.find(x => x.ext === 'js');
+    const indexhtml = challengeFiles.find(x => x.ext === 'html');
+    const stylescss = challengeFiles.find(x => x.ext === 'css');
 
-    expect(indexjs.tail).toBe(`function teardown(params) {
+    expect(scriptjs.tail).toBe(`function teardown(params) {
   // after
 }`);
     expect(indexhtml.tail).toBe('');
-    expect(indexcss.tail).toBe(`body {
+    expect(stylescss.tail).toBe(`body {
   background: blue;
 }`);
   });
@@ -194,16 +192,16 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
-    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
-    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
+    const scriptjs = challengeFiles.find(x => x.ext === 'js');
+    const indexhtml = challengeFiles.find(x => x.ext === 'html');
+    const stylescss = challengeFiles.find(x => x.ext === 'css');
 
-    expect(indexjs.head).toBe('');
-    expect(indexjs.tail).toBe('function teardown(params) {\n  // after\n}');
+    expect(scriptjs.head).toBe('');
+    expect(scriptjs.tail).toBe('function teardown(params) {\n  // after\n}');
     expect(indexhtml.head).toBe('');
     expect(indexhtml.tail).toBe('');
-    expect(indexcss.head).toBe('');
-    expect(indexcss.tail).toBe('body {\n  background: blue;\n}');
+    expect(stylescss.head).toBe('');
+    expect(stylescss.tail).toBe('body {\n  background: blue;\n}');
   });
 
   it('quietly ignores empty after sections', () => {
@@ -212,16 +210,16 @@ describe('add-seed plugin', () => {
     const {
       data: { challengeFiles }
     } = file;
-    const indexjs = challengeFiles.find(x => x.fileKey === 'indexjs');
-    const indexhtml = challengeFiles.find(x => x.fileKey === 'indexhtml');
-    const indexcss = challengeFiles.find(x => x.fileKey === 'indexcss');
+    const scriptjs = challengeFiles.find(x => x.ext === 'js');
+    const indexhtml = challengeFiles.find(x => x.ext === 'html');
+    const stylescss = challengeFiles.find(x => x.ext === 'css');
 
-    expect(indexjs.head).toBe('');
-    expect(indexjs.tail).toBe('');
+    expect(scriptjs.head).toBe('');
+    expect(scriptjs.tail).toBe('');
     expect(indexhtml.head).toBe('<!-- comment -->');
     expect(indexhtml.tail).toBe('');
-    expect(indexcss.head).toBe("body {\n  etc: ''\n}");
-    expect(indexcss.tail).toBe('');
+    expect(stylescss.head).toBe("body {\n  etc: ''\n}");
+    expect(stylescss.tail).toBe('');
   });
 
   it('throws an error (with line number) if 2 markers appear on 1 line', () => {
@@ -239,12 +237,12 @@ describe('add-seed plugin', () => {
   });
 
   it('handles jsx', () => {
-    expect.assertions(4);
+    expect.assertions(3);
     plugin(jsxSeedAST, file);
     const {
       data: { challengeFiles }
     } = file;
-    const indexjsx = challengeFiles.find(x => x.fileKey === 'indexjsx');
+    const indexjsx = challengeFiles.find(x => x.ext === 'jsx');
 
     expect(indexjsx.head).toBe(`function setup() {}`);
     expect(indexjsx.tail).toBe(`function teardown(params) {
@@ -256,7 +254,6 @@ describe('add-seed plugin', () => {
 const Button = () => {
   return <button> {/* another comment! */} text </button>;
 };`);
-    expect(indexjsx.fileKey).toBe(`indexjsx`);
   });
 
   it('combines all the code of a specific language into a single file', () => {

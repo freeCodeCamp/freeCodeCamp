@@ -17,7 +17,7 @@ describe('sort-files', () => {
     it('should sort the objects into html, css, jsx, js order', () => {
       const sorted = sortChallengeFiles(challengeFiles);
       const sortedKeys = sorted.map(({ fileKey }) => fileKey);
-      const expected = ['indexhtml', 'indexcss', 'indexjsx', 'indexjs'];
+      const expected = ['indexhtml', 'stylescss', 'indexjsx', 'scriptjs'];
       expect(sortedKeys).toStrictEqual(expected);
     });
   });
