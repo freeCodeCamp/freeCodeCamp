@@ -1,0 +1,138 @@
+---
+id: 615f5486b8fd4b71633f69b0
+title: Step 32
+challengeType: 0
+dashedName: step-32
+---
+
+# --description--
+
+Below your `.sm-text` element, create a new `h1` element with the text `Calories 230`. Wrap the `230` portion of the text in a `span` element with the `class` set to `right`.
+
+# --hints--
+
+You should have a new `h1` element within your `.calories-info` element.
+
+```js
+assert(document.querySelector('.calories-info')?.querySelector('h1'))
+```
+
+Your `h1` element should come after your `.sm-text` element.
+
+```js
+assert(document.querySelector('.sm-text')?.nextElementSibling?.localName === 'h1');
+```
+
+Your `h1` element should have the text `Calories 230`.
+
+```js
+// the float: right property does weird things to the inner text.
+assert(document.querySelector('.calories-info')?.lastElementChild?.innerText.match(/Calories[\s|\n]*230/));
+```
+
+You should create a `span` element within your new `h1` element.
+
+```js
+assert(document.querySelector('.calories-info')?.lastElementChild?.querySelector('span'));
+```
+
+Your `span` element should have the `class` set to `right`.
+
+```js
+assert(document.querySelector('.calories-info')?.lastElementChild?.querySelector('span')?.classList?.contains('right'));
+```
+
+Your `span` element should have the text `230`.
+
+```js
+assert(document.querySelector('.calories-info')?.lastElementChild?.querySelector('span')?.innerText === '230');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nutrition Label</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="label">
+      <header>
+        <h1 class="bold">Nutrition Facts</h1>
+        <div class="divider"></div>
+        <p>8 servings per container</p>
+        <p class="bold">Serving size <span class="right">2/3 cup (55g)</span></p>
+      </header>
+      <div class="divider lg"></div>
+--fcc-editable-region--
+      <div class="calories-info">
+        <p class="bold sm-text">Amount per serving</p>
+      </div>
+--fcc-editable-region--
+    </div>
+  </body>
+</html>
+```
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.label {
+  border: 2px solid black;
+  width: 270px;
+  margin: 20px auto;
+  padding: 0 7px;
+}
+
+header h1 {
+  text-align: center;
+  margin: -4px 0;
+  letter-spacing: 0.15px
+}
+
+p {
+  margin: 0;
+}
+
+.divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.right {
+  float: right;
+}
+
+.lg {
+  height: 10px;
+}
+
+.lg, .md {
+  background-color: black;
+  border: 0;
+}
+
+.sm-text {
+  font-size: 0.85rem;
+}
+```

@@ -1,6 +1,6 @@
 ---
 id: 5900f3ee1000cf542c50ff00
-title: 'Problem 130: Composites with prime repunit property'
+title: '問題 130：具有素數純元數特性的合數'
 challengeType: 5
 forumTopicId: 301758
 dashedName: problem-130-composites-with-prime-repunit-property
@@ -8,22 +8,22 @@ dashedName: problem-130-composites-with-prime-repunit-property
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define R(k) to be a repunit of length k; for example, R(6) = 111111.
+完全由 1 組成的數字稱爲純元數（repunit）。 我們定義 $R(k)$ 爲長度爲 $k$ 的純元數；例如, $R(6) = 111111$。
 
-Given that n is a positive integer and GCD(n, 10) = 1, it can be shown that there always exists a value, k, for which R(k) is divisible by n, and let A(n) be the least such value of k; for example, A(7) = 6 and A(41) = 5.
+定義正整數 $n$ 滿足 $GCD(n, 10) = 1$，可以證明總是存在 $k$，使 $R(k)$ 可以被 $n$ 整除，記 $A(n)$ 爲滿足條件的 $k$ 的最小值；例如，$A(7) = 6$ 而 $A(41) = 5$。
 
-You are given that for all primes, p > 5, that p − 1 is divisible by A(p). For example, when p = 41, A(41) = 5, and 40 is divisible by 5.
+已知，對於所有的素數 $p > 5$，$p − 1$ 可以被 $A(p)$ 整除。 例如，當 $p = 41, A(41) = 5$，而 40 可以被 5 整除。
 
-However, there are rare composite values for which this is also true; the first five examples being 91, 259, 451, 481, and 703.
+然而，也有一些罕見的複合值也是如此。前五個示例是 91、259、451、481 和 703。
 
-Find the sum of the first twenty-five composite values of n for whichGCD(n, 10) = 1 and n − 1 is divisible by A(n).
+找出 $n$ 的前 25 個複合值的總和，其中 $GCD(n, 10) = 1$ 且 $n − 1$ 可被 $A(n)$ 整除。
 
 # --hints--
 
-`euler130()` should return 149253.
+`compositeRepunit()` 應該返回 `149253`。
 
 ```js
-assert.strictEqual(euler130(), 149253);
+assert.strictEqual(compositeRepunit(), 149253);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler130(), 149253);
 ## --seed-contents--
 
 ```js
-function euler130() {
+function compositeRepunit() {
 
   return true;
 }
 
-euler130();
+compositeRepunit();
 ```
 
 # --solutions--

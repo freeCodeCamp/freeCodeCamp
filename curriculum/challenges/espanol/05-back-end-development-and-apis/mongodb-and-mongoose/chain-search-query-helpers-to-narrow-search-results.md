@@ -1,6 +1,6 @@
 ---
 id: 587d7fb9367417b2b2512c12
-title: Chain Search Query Helpers to Narrow Search Results
+title: Auxiliares de consulta de búsqueda en cadena para restringir los resultados de búsqueda
 challengeType: 2
 forumTopicId: 301533
 dashedName: chain-search-query-helpers-to-narrow-search-results
@@ -8,15 +8,15 @@ dashedName: chain-search-query-helpers-to-narrow-search-results
 
 # --description--
 
-If you don’t pass the callback as the last argument to `Model.find()` (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method `.exec()`. You always need to pass your callback to this last method. There are many query helpers, here we'll use the most commonly used.
+Si no pasas la función callback como el último argumento para `Model.find()` (o hacia otro método de búsqueda), la consulta no se ejecuta. Puedes almacenar la consulta en una variable para su posterior uso. Este tipo de objeto te permite construir la consulta usando sintaxis de encadenamiento. La búsqueda real en la base de datos se ejecuta cuando finalmente encadena el método `.exec()`. Siempre necesitas pasar tu función callback a este último método. Hay muchas ayudas de consulta, aquí usaremos el método comúnmente usado.
 
 # --instructions--
 
-Modify the `queryChain` function to find people who like the food specified by the variable named `foodToSearch`. Sort them by `name`, limit the results to two documents, and hide their age. Chain `.find()`, `.sort()`, `.limit()`, `.select()`, and then `.exec()`. Pass the `done(err, data)` callback to `exec()`.
+Modifica la función `queryChain` para encontrar a gente que le gusta la comida especificada por la variable denominada `foodToSearch`. Ordénalos por `name`, limita los resultados para dos documentos, y oculta su edad. Encadena `.find()`, `.sort()`, `.limit()`, `.select()`, y entonces `.exec()`. Pasa la función callback `done(err, data)` a `exec()`.
 
 # --hints--
 
-Chaining query helpers should succeed
+Las ayudas de consulta de encadenamiento deben tener éxito
 
 ```js
 (getUserInput) =>

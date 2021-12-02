@@ -29,11 +29,7 @@ dashedName: add-columns-with-grid-template-columns
 class 爲 `container` 的元素應具有 `grid-template-columns` 屬性，該屬性應有三個屬性值，均爲 `100px`。
 
 ```js
-assert(
-  code.match(
-    /.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi
-  )
-);
+assert(new __helpers.CSSHelp(document).getStyle('.container')?.gridTemplateColumns === '100px 100px 100px');
 ```
 
 # --seed--

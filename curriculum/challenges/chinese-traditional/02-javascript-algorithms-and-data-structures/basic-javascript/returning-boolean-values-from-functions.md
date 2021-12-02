@@ -14,7 +14,7 @@ dashedName: returning-boolean-values-from-functions
 有時人們通過 `if/else` 語句來做比較，像這樣。
 
 ```js
-function isEqual(a,b) {
+function isEqual(a, b) {
   if (a === b) {
     return true;
   } else {
@@ -26,7 +26,7 @@ function isEqual(a,b) {
 但有更好的方式來達到相同的效果。 既然 `===` 返回 `true` 或 `false` 我們可以直接返回比較結果：
 
 ```js
-function isEqual(a,b) {
+function isEqual(a, b) {
   return a === b;
 }
 ```
@@ -37,13 +37,13 @@ function isEqual(a,b) {
 
 # --hints--
 
-`isLess(10,15)` 應該返回 `true`
+`isLess(10, 15)` 應該返回 `true`
 
 ```js
 assert(isLess(10, 15) === true);
 ```
 
-`isLess(15,10)` 應該返回 `false`
+`isLess(15, 10)` 應該返回 `false`
 
 ```js
 assert(isLess(15, 10) === false);

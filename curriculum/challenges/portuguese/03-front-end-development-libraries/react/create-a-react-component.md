@@ -38,7 +38,7 @@ O componente React deve retornar um elemento `div`.
 assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div');
 ```
 
-A `div` retornada deve renderizar um título `h1` dentro dele.
+A `div` retornada deve renderizar um elemento de título `h1` dentro dele.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-O título `h1` deve conter a string `Hello React!`.
+O elemento de título `h1` deve conter a string `Hello React!`.
 
 ```js
 assert(

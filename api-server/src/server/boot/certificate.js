@@ -36,7 +36,8 @@ const {
   infosecV7Id,
   sciCompPyV7Id,
   dataAnalysisPyV7Id,
-  machineLearningPyV7Id
+  machineLearningPyV7Id,
+  relationalDatabasesV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -57,8 +58,15 @@ export default function bootCertificate(app) {
   app.use(api);
 }
 
-export function getFallbackFrontEndDate(completedChallenges, completedDate) {
-  var chalIds = [...Object.values(certTypeIdMap), oldDataVizId];
+export function getFallbackFullStackDate(completedChallenges, completedDate) {
+  var chalIds = [
+    certTypeIdMap[certTypes.respWebDesign],
+    certTypeIdMap[certTypes.jsAlgoDataStruct],
+    certTypeIdMap[certTypes.frontEndDevLibsId],
+    certTypeIdMap[certTypes.dataVis2018],
+    certTypeIdMap[certTypes.apisMicroservicesId],
+    certTypeIdMap[certTypes.legacyInfosecQaId]
+  ];
 
   const latestCertDate = completedChallenges
     .filter(chal => chalIds.includes(chal.id))
@@ -111,6 +119,10 @@ function createCertTypeIds(allChallenges) {
     ),
     [certTypes.machineLearningPyV7]: getCertById(
       machineLearningPyV7Id,
+      allChallenges
+    ),
+    [certTypes.relationalDatabasesV8]: getCertById(
+      relationalDatabasesV8Id,
       allChallenges
     )
   };
@@ -458,7 +470,7 @@ function createShowCert(app) {
 
         // if fullcert is not found, return the latest completedDate
         if (certType === 'isFullStackCert' && !certChallenge) {
-          completedDate = getFallbackFrontEndDate(
+          completedDate = getFallbackFullStackDate(
             completedChallenges,
             completedDate
           );

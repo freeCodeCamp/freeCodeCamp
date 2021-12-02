@@ -8,17 +8,17 @@ dashedName: problem-162-hexadecimal-numbers
 
 # --description--
 
-Os números do sistema de números hexadecimais são representados usando 16 dígitos diferentes:
+Os números do sistema de números hexadecimais são representados usando 16 algarismos diferentes:
 
 $$0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F$$
 
 O número hexadecimal AF quando escrito no sistema de números decimais é igual a $10 \times 16 + 15 = 175$.
 
-Nos números hexadecimais de 3 dígitos 10A, 1A0, A10 e A01 os algarismos 0,1 e A estão todos presentes.
+Nos números hexadecimais de 3 algarismos 10A, 1A0, A10 e A01, os algarismos 0,1 e A estão todos presentes.
 
 Como números escritos na base dez, escrevemos números hexadecimais sem zeros à frente.
 
-Quantos números hexadecimais, contendo no máximo dezesseis dígitos hexadecimais, existem com os dígitos 0,1 e A presentes pelo menos uma vez?
+Quantos números hexadecimais, contendo no máximo dezesseis algarismos hexadecimais, existem com os algarismos 0,1 e A presentes pelo menos uma vez?
 
 Dê sua resposta com um número hexadecimal como uma string.
 

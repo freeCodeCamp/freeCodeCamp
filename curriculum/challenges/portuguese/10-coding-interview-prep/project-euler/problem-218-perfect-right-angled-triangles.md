@@ -1,6 +1,6 @@
 ---
 id: 5900f4461000cf542c50ff59
-title: 'Problem 218: Perfect right-angled triangles'
+title: 'Problema 218: Triângulos retos perfeitos'
 challengeType: 5
 forumTopicId: 301860
 dashedName: problem-218-perfect-right-angled-triangles
@@ -8,26 +8,32 @@ dashedName: problem-218-perfect-right-angled-triangles
 
 # --description--
 
-Consider the right angled triangle with sides a=7, b=24 and c=25.
+Considere o triângulo reto com lados $a=7$, $b=24$ e $c=25$.
 
-The area of this triangle is 84, which is divisible by the perfect numbers 6 and 28.
+A área deste triângulo é 84, que é divisível pelos números perfeitos 6 e 28.
 
-Moreover it is a primitive right angled triangle as gcd(a,b)=1 and gcd(b,c)=1.
+Além disso, ele é um triângulo reto primitivo, já que tem os maiores divisores comuns $gcd(a,b) = 1$ e $gcd(b,c) = 1$.
 
-Also c is a perfect square.
+Por fim, $c$ é um quadrado perfeito.
 
-We will call a right angled triangle perfect if -it is a primitive right angled triangle -its hypotenuse is a perfect square
+Chamaremos um triângulo de triângulo reto perfeito se:
 
-We will call a right angled triangle super-perfect if -it is a perfect right angled triangle and -its area is a multiple of the perfect numbers 6 and 28.
+- for um triângulo reto primitivo
+- sua hipotenusa for um quadrado perfeito
 
-How many perfect right-angled triangles with c≤1016 exist that are not super-perfect?
+Chamaremos um triângulo de triângulo reto superperfeito se:
+
+- for um triângulo reto perfeito
+- sua área for um múltiplo dos números perfeitos 6 e 28.
+
+Quantos triângulos retos perfeitos com $c ≤ {10}^{16}$ existem que não são superperfeitos?
 
 # --hints--
 
-`euler218()` should return 0.
+`perfectRightAngledTriangles()` deve retornar `0`.
 
 ```js
-assert.strictEqual(euler218(), 0);
+assert.strictEqual(perfectRightAngledTriangles(), 0);
 ```
 
 # --seed--
@@ -35,12 +41,12 @@ assert.strictEqual(euler218(), 0);
 ## --seed-contents--
 
 ```js
-function euler218() {
+function perfectRightAngledTriangles() {
 
   return true;
 }
 
-euler218();
+perfectRightAngledTriangles();
 ```
 
 # --solutions--

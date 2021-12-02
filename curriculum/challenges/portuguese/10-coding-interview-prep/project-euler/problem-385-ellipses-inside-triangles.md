@@ -1,6 +1,6 @@
 ---
 id: 5900f4ee1000cf542c510000
-title: 'Problem 385: Ellipses inside triangles'
+title: 'Problema 385: Elipses dentro de triângulos'
 challengeType: 5
 forumTopicId: 302049
 dashedName: problem-385-ellipses-inside-triangles
@@ -8,29 +8,31 @@ dashedName: problem-385-ellipses-inside-triangles
 
 # --description--
 
-For any triangle T in the plane, it can be shown that there is a unique ellipse with largest area that is completely inside T.
+Para qualquer triângulo $T$ no plano, pode-se mostrar que há uma elipse única com a maior área completamente dentro de $T$.
 
-For a given n, consider triangles T such that:
+<img class="img-responsive center-block" alt="elipse totalmente interna ao triângulo" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
 
--   the vertices of T have integer coordinates with absolute value ≤ n, and
--   the foci1 of the largest-area ellipse inside T are (√13,0) and (-√13,0).
+Para um $n$ dado, considere os triângulos $T$, tal que:
 
-Let A(n) be the sum of the areas of all such triangles.
+-   os vértices de $T$ têm coordenadas em números inteiros, com valor absoluto $≤ n$, e
+-   os focos<sup>1</sup> da elipse de maior área dentro de $T$ são $(\sqrt{13}, 0)$ e $(-\sqrt{13}, 0)$.
 
-For example, if n = 8, there are two such triangles. Their vertices are (-4,-3),(-4,3),(8,0) and (4,3),(4,-3),(-8,0), and the area of each triangle is 36. Thus A(8) = 36 + 36 = 72.
+Considere $A(n)$ como a soma das áreas de todos esses triângulos.
 
-It can be verified that A(10) = 252, A(100) = 34632 and A(1000) = 3529008.
+Por exemplo, se $n = 8$, existem dois triângulos desse tipo. Seus vértices são (-4,-3), (-4,3), (8,0) e (4,3), (4,-3), (-8,0). A área de cada triângulo é 36. Portanto, $A(8) = 36 + 36 = 72$.
 
-Find A(1 000 000 000).
+Pode-se verificar que $A(10) = 252$, $A(100) = 34.632$ e $A(1000) = 3.529.008$.
 
-1The foci (plural of focus) of an ellipse are two points A and B such that for every point P on the boundary of the ellipse, AP + PB is constant.
+Encontre $A(1.000.000.000)$.
+
+<sup>1</sup>Os focos de uma elipse são dois pontos $A$ e $B$, tal que, para qualquer ponto $P$ no limite da elipse, $AP + PB$ é constante.
 
 # --hints--
 
-`euler385()` should return 3776957309612154000.
+`ellipsesInsideTriangles()` deve retornar `3776957309612154000`.
 
 ```js
-assert.strictEqual(euler385(), 3776957309612154000);
+assert.strictEqual(ellipsesInsideTriangles(), 3776957309612154000);
 ```
 
 # --seed--
@@ -38,12 +40,12 @@ assert.strictEqual(euler385(), 3776957309612154000);
 ## --seed-contents--
 
 ```js
-function euler385() {
+function ellipsesInsideTriangles() {
 
   return true;
 }
 
-euler385();
+ellipsesInsideTriangles();
 ```
 
 # --solutions--

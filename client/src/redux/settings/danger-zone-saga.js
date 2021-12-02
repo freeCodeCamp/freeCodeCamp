@@ -3,6 +3,7 @@ import { call, put, takeEvery, take } from 'redux-saga/effects';
 
 import { resetUserData, fetchUser } from '../';
 import { createFlashMessage } from '../../components/Flash/redux';
+import { FlashMessages } from '../../components/Flash/redux/flash-messages';
 import { postResetProgress, postDeleteAccount } from '../../utils/ajax';
 import { actionTypes as appTypes } from '../action-types';
 import { deleteAccountError, resetProgressError } from './';
@@ -13,7 +14,7 @@ function* deleteAccountSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'flash.account-deleted'
+        message: FlashMessages.AccountDeleted
       })
     );
     // remove current user information from application state
@@ -30,7 +31,7 @@ function* resetProgressSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'flash.progress-reset'
+        message: FlashMessages.ProgressReset
       })
     );
     // refresh current user data in application state

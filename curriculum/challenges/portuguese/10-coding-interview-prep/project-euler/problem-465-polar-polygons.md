@@ -1,6 +1,6 @@
 ---
 id: 5900f53d1000cf542c510050
-title: 'Problem 465: Polar polygons'
+title: 'Problema 465: Polígonos polares'
 challengeType: 5
 forumTopicId: 302140
 dashedName: problem-465-polar-polygons
@@ -8,28 +8,30 @@ dashedName: problem-465-polar-polygons
 
 # --description--
 
-The kernel of a polygon is defined by the set of points from which the entire polygon's boundary is visible. We define a polar polygon as a polygon for which the origin is strictly contained inside its kernel.
+O núcleo de um polígono é definido pelo conjunto de pontos a partir dos quais todo o limite do polígono é visível. Definimos um polígono polar como um polígono para o qual a origem está estritamente contida no seu núcleo.
 
-For this problem, a polygon can have collinear consecutive vertices. However, a polygon still cannot have self-intersection and cannot have zero area.
+Para este problema, um polígono pode ter vértices consecutivos colineares. No entanto, um polígono ainda não pode ter autointerseções e não pode ter uma área igual a zero.
 
-For example, only the first of the following is a polar polygon (the kernels of the second, third, and fourth do not strictly contain the origin, and the fifth does not have a kernel at all):
+Por exemplo, apenas o primeiro dos polígonos a seguir é um polígono polar (os núcleos do segundo, terceiro, e quarto não contêm estritamente a origem e o quinto nem sequer tem um núcleo):
 
-Notice that the first polygon has three consecutive collinear vertices.
+<img class="img-responsive center-block" alt="cinco exemplos de polígonos" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;" />
 
-Let P(n) be the number of polar polygons such that the vertices (x, y) have integer coordinates whose absolute values are not greater than n.
+Observe que o primeiro polígono tem três vértices colineares consecutivos.
 
-Note that polygons should be counted as different if they have different set of edges, even if they enclose the same area. For example, the polygon with vertices \[(0,0),(0,3),(1,1),(3,0)] is distinct from the polygon with vertices \[(0,0),(0,3),(1,1),(3,0),(1,0)].
+Considere $P(n)$ como o número de polígonos polares, tal que os vértices $(x, y)$ têm coordenadas em números inteiros, cujos valores absolutos não são maiores do que $n$.
 
-For example, P(1) = 131, P(2) = 1648531, P(3) = 1099461296175 and P(343) mod 1 000 000 007 = 937293740.
+Observe que os polígonos devem ser contados como diferentes se tiverem um grupo de arestas diferentes, mesmo que envolvam a mesma área. Por exemplo, o polígono com vértices [(0,0), (0,3), (1,1), (3,0)] é diferente do polígono com vértices [(0,0), (0,3), (1,1), (3,0), (1,0)].
 
-Find P(713) mod 1 000 000 007.
+Por exemplo, $P(1) = 131$, $P(2) = 1.648.531$, $P(3) = 1.099.461.296.175$ e $P(343)\bmod 1.000.000.007 = 937.293.740$.
+
+Encontre $P(7^{13})\bmod 1.000.000.007$.
 
 # --hints--
 
-`euler465()` should return 585965659.
+`polarPolygons()` deve retornar `585965659`.
 
 ```js
-assert.strictEqual(euler465(), 585965659);
+assert.strictEqual(polarPolygons(), 585965659);
 ```
 
 # --seed--
@@ -37,12 +39,12 @@ assert.strictEqual(euler465(), 585965659);
 ## --seed-contents--
 
 ```js
-function euler465() {
+function polarPolygons() {
 
   return true;
 }
 
-euler465();
+polarPolygons();
 ```
 
 # --solutions--

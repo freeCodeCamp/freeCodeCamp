@@ -30,8 +30,13 @@ export default function donateBoot(app, done) {
 
   async function handleStripeCardDonation(req, res) {
     return createStripeCardDonation(req, res, stripe, app).catch(err => {
-      if (err.type === 'AlreadyDonatingError')
+      if (
+        err.type === 'AlreadyDonatingError' ||
+        err.type === 'UserActionRequired' ||
+        err.type === 'PaymentMethodRequired'
+      ) {
         return res.status(402).send({ error: err });
+      }
       if (err.type === 'InvalidRequest')
         return res.status(400).send({ error: err });
       return res.status(500).send({

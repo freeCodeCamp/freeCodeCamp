@@ -1,6 +1,6 @@
 ---
 id: 5900f4241000cf542c50ff37
-title: 'Problem 184: Triangles containing the origin'
+title: 'Problema 184: Triângulos contendo a origem'
 challengeType: 5
 forumTopicId: 301820
 dashedName: problem-184-triangles-containing-the-origin
@@ -8,20 +8,22 @@ dashedName: problem-184-triangles-containing-the-origin
 
 # --description--
 
-Consider the set Ir of points (x,y) with integer coordinates in the interior of the circle with radius r, centered at the origin, i.e. x2 + y2 &lt; r2.
+Considere o conjunto $I_r$ de pontos $(x,y)$ com coordenadas inteiras no interior do círculo com raio $r$, centralizado na origem, ou seja, $x^2 + y^2 &lt; r^2$.
 
-For a radius of 2, I2 contains the nine points (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) and (1,-1). There are eight triangles having all three vertices in I2 which contain the origin in the interior. Two of them are shown below, the others are obtained from these by rotation.
+Para um raio de 2, $I_2$ contém os nove pontos (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) e (1,-1). Há oito triângulos com todos os três vértices em $I_2$ que contêm a origem no interior. Dois deles são mostrados abaixo. Os outros são obtidos por rotação.
 
-For a radius of 3, there are 360 triangles containing the origin in the interior and having all vertices in I3 and for I5 the number is 10600.
+<img class="img-responsive center-block" alt="círculo com raio 2, centralizado na origem, com nove pontos marcados e dois triângulos - (-1,0), (0,1), (1,-1) e (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px;" />
 
-How many triangles are there containing the origin in the interior and having all three vertices in I105?
+Para um raio de 3, há 360 triângulos contendo a origem no interior e tendo todos os vértices em $I_3$. Para $I_5$, o número é 10600.
+
+Quantos triângulos há contendo a origem no interior e tendo todos os três vértices em $I_{105}$?
 
 # --hints--
 
-`euler184()` should return 1725323624056.
+`trianglesConttainingOrigin()` deve retornar `1725323624056`.
 
 ```js
-assert.strictEqual(euler184(), 1725323624056);
+assert.strictEqual(trianglesConttainingOrigin(), 1725323624056);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler184(), 1725323624056);
 ## --seed-contents--
 
 ```js
-function euler184() {
+function trianglesContainingOrigin() {
 
   return true;
 }
 
-euler184();
+trianglesContainingOrigin();
 ```
 
 # --solutions--

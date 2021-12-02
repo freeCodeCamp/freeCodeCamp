@@ -1,6 +1,6 @@
 ---
 id: 5900f4551000cf542c50ff67
-title: 'Problem 232: The Race'
+title: 'Problema 232: A corrida'
 challengeType: 5
 forumTopicId: 301876
 dashedName: problem-232-the-race
@@ -8,20 +8,26 @@ dashedName: problem-232-the-race
 
 # --description--
 
-Two players share an unbiased coin and take it in turns to play "The Race". On Player 1's turn, he tosses the coin once: if it comes up Heads, he scores one point; if it comes up Tails, he scores nothing. On Player 2's turn, she chooses a positive integer T and tosses the coin T times: if it comes up all Heads, she scores 2T-1 points; otherwise, she scores nothing. Player 1 goes first. The winner is the first to 100 or more points.
+Dois jogadores compartilham uma moeda não viesada e a usam, cada um na sua vez, para jogar "A Corrida".
 
-On each turn Player 2 selects the number, T, of coin tosses that maximises the probability of her winning.
+No turno do Jogador 1, ele joga uma vez a moeda: se der Cara, ele marca um ponto; se der Coroa, ele não marca nada.
 
-What is the probability that Player 2 wins?
+Na vez do Jogador 2, ela escolhe um número inteiro positivo $T$ e joga a moeda $T$ vezes: se der Cara sempre, ele faz $2^{T - 1}$ pontos. Caso contrário, ele não pontua.
 
-Give your answer rounded to eight decimal places in the form 0.abcdefgh .
+O jogador 1 joga primeiro. O vencedor é o primeiro a chegar a 100 pontos ou mais.
+
+Em cada turno, o Jogador 2 seleciona o número, $T$, de lançamentos da moeda que maximizam a probabilidade de sua vitória.
+
+Qual é a probabilidade de o Jogador 2 vencer?
+
+Arredonde sua resposta para até oito casas decimais usando o formato 0.abcdefgh.
 
 # --hints--
 
-`euler232()` should return 0.83648556.
+`theRace()` deve retornar `0.83648556`.
 
 ```js
-assert.strictEqual(euler232(), 0.83648556);
+assert.strictEqual(theRace(), 0.83648556);
 ```
 
 # --seed--
@@ -29,12 +35,12 @@ assert.strictEqual(euler232(), 0.83648556);
 ## --seed-contents--
 
 ```js
-function euler232() {
+function theRace() {
 
   return true;
 }
 
-euler232();
+theRace();
 ```
 
 # --solutions--

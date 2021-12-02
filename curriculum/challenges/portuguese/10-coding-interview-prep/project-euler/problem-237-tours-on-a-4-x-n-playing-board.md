@@ -1,6 +1,6 @@
 ---
 id: 5900f4591000cf542c50ff6c
-title: 'Problem 237: Tours on a 4 x n playing board'
+title: 'Problema 237: Passeios por um tabuleiro de 4 x n'
 challengeType: 5
 forumTopicId: 301882
 dashedName: problem-237-tours-on-a-4-x-n-playing-board
@@ -8,26 +8,25 @@ dashedName: problem-237-tours-on-a-4-x-n-playing-board
 
 # --description--
 
-Let T(n) be the number of tours over a 4 × n playing board such that:
+Considere $T(n)$ como o número de passeios sobre um tabuleiro de 4 × $n$, tal que:
 
-The tour starts in the top left corner.
+- O passeio começa no canto superior esquerdo.
+- O passeio consiste em movimentos para cima, para baixo, para esquerda ou para direita de um quadrado.
+- O passeio visita cada quadrado exatamente uma vez.
+- O passeio termina no canto inferior esquerdo.
 
-The tour consists of moves that are up, down, left, or right one square.
+O diagrama mostra um passeio sobre um tabuleiro de 4 × 10:
 
-The tour visits each square exactly once.
+<img class="img-responsive center-block" alt="um passeio sobre o tabuleiro de 4 x 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;" />
 
-The tour ends in the bottom left corner.
-
-The diagram shows one tour over a 4 × 10 board:
-
-T(10) is 2329. What is T(1012) modulo 108?
+$T(10)$ é 2329. Qual é $T({10}^{12})$ modulo ${10}^8$?
 
 # --hints--
 
-`euler237()` should return 15836928.
+`toursOnPlayingBoard()` deve retornar `15836928`.
 
 ```js
-assert.strictEqual(euler237(), 15836928);
+assert.strictEqual(toursOnPlayingBoard(), 15836928);
 ```
 
 # --seed--
@@ -35,12 +34,12 @@ assert.strictEqual(euler237(), 15836928);
 ## --seed-contents--
 
 ```js
-function euler237() {
+function toursOnPlayingBoard() {
 
   return true;
 }
 
-euler237();
+toursOnPlayingBoard();
 ```
 
 # --solutions--

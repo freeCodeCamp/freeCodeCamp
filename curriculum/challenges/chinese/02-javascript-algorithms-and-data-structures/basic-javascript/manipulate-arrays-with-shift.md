@@ -16,15 +16,15 @@ dashedName: manipulate-arrays-with-shift
 示例：
 
 ```js
-var ourArray = ["Stimpson", "J", ["cat"]];
-var removedFromOurArray = ourArray.shift();
+const ourArray = ["Stimpson", "J", ["cat"]];
+const removedFromOurArray = ourArray.shift();
 ```
 
 `removedFromOurArray` 值为 `Stimpson`，`ourArray` 值为 `["J", ["cat"]]`
 
 # --instructions--
 
-使用 `.shift()` 函数移除 `myArray` 中的第一项，并把移出的值赋给 `removedFromMyArray`。
+使用 `.shift()` 函数从 `myArray` 中删除第一项，并将“移除的值”值分配给新变量 `removedFromMyArray`。
 
 # --hints--
 
@@ -65,24 +65,24 @@ assert(
 ## --after-user-code--
 
 ```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 ## --seed-contents--
 
 ```js
 // Setup
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 
 // Only change code below this line
-var removedFromMyArray;
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 
 // Only change code below this line
-var removedFromMyArray = myArray.shift();
+const removedFromMyArray = myArray.shift();
 ```

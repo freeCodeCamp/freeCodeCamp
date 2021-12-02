@@ -7,6 +7,7 @@ import {
   call,
   take
 } from 'redux-saga/effects';
+
 import {
   addDonation,
   postChargeStripe,
@@ -73,10 +74,42 @@ function* postChargeStripeSaga({ payload }) {
   }
 }
 
-function* postChargeStripeCardSaga({ payload }) {
+function* stripeCardErrorHandler(
+  error,
+  handleAuthentication,
+  clientSecret,
+  paymentMethodId
+) {
+  if (error.type === 'UserActionRequired' && clientSecret) {
+    yield handleAuthentication(clientSecret, paymentMethodId)
+      .then(result => {
+        if (result?.paymentIntent?.status !== 'succeeded')
+          throw result.error || { type: 'StripeAuthorizationFailed' };
+      })
+      .catch(error => {
+        throw error;
+      });
+  } else {
+    throw error;
+  }
+}
+
+function* postChargeStripeCardSaga({
+  payload: { paymentMethodId, amount, duration, handleAuthentication }
+}) {
   try {
-    const { error } = yield call(postChargeStripeCard, payload);
-    if (error) throw error;
+    const optimizedPayload = { paymentMethodId, amount, duration };
+    const { error } = yield call(postChargeStripeCard, optimizedPayload);
+    if (error) {
+      yield stripeCardErrorHandler(
+        error,
+        handleAuthentication,
+        error.client_secret,
+        paymentMethodId,
+        optimizedPayload
+      );
+    }
+    yield call(addDonation, optimizedPayload);
     yield put(postChargeStripeCardComplete());
   } catch (error) {
     const errorMessage = error.message || defaultDonationErrorMessage;

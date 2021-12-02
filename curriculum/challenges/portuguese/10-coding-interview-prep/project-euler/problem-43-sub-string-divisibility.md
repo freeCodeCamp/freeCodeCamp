@@ -8,9 +8,9 @@ dashedName: problem-43-sub-string-divisibility
 
 # --description--
 
-O número 1406357289 é um número pandigital de 0 a 9 porque é composto por cada um dos dígitos de 0 a 9, mas tem também uma propriedade de divisão de suas substrings bastante interessante.
+O número 1406357289 é um número pandigital de 0 a 9 porque é composto por cada um dos algarismos de 0 a 9, mas tem também uma propriedade de divisão de suas substrings bastante interessante.
 
-Considere que $d_1$ seja o 1º dígito, $d_2$ seja o 2º dígito, e assim por diante. Desta forma, podemos perceber o seguinte:
+Considere que $d_1$ seja o 1º algarismo, $d_2$ seja o 2º algarismo, e assim por diante. Desta forma, podemos perceber o seguinte:
 
 - ${d_2}{d_3}{d_4} = 406$ é divisível por 2
 - ${d_3}{d_4}{d_5} = 063$ é divisível por 3

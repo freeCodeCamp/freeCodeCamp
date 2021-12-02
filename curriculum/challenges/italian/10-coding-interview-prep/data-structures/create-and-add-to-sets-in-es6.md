@@ -1,6 +1,6 @@
 ---
 id: 587d8254367417b2b2512c70
-title: Create and Add to Sets in ES6
+title: Creare e aggiungere ai set in ES6
 challengeType: 1
 forumTopicId: 301636
 dashedName: create-and-add-to-sets-in-es6
@@ -8,34 +8,34 @@ dashedName: create-and-add-to-sets-in-es6
 
 # --description--
 
-Now that you have worked through ES5, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure `Set` so many of the operations you wrote by hand are now included for you. Let's take a look:
+Ora che avete lavorato su ES5, state per eseguire qualcosa di simile in ES6. Questo sarà molto più facile. ES6 contiene una struttura di dati integrata `Set` quindi molte delle operazioni che hai scritto a mano sono ora incluse per te. Diamo un'occhiata:
 
-To create a new empty set:
+Per creare un nuovo set vuoto:
 
 ```js
 var set = new Set();
 ```
 
-You can create a set with a value:
+È possibile creare un set con un valore:
 
 ```js
 var set = new Set(1);
 ```
 
-You can create a set with an array:
+È possibile creare un set con un array:
 
 ```js
 var set = new Set([1, 2, 3]);
 ```
 
-Once you have created a set, you can add the values you wish using the `add` method:
+Una volta creato un set, puoi aggiungere i valori che desideri utilizzando il metodo `add`:
 
 ```js
 var set = new Set([1, 2, 3]);
 set.add([4, 5, 6]);
 ```
 
-As a reminder, a set is a data structure that cannot contain duplicate values:
+Come promemoria, un insieme è una struttura di dati che non può contenere valori duplicati:
 
 ```js
 var set = new Set([1, 2, 3, 1, 2, 3]);
@@ -44,11 +44,11 @@ var set = new Set([1, 2, 3, 1, 2, 3]);
 
 # --instructions--
 
-For this exercise, return a set with the following values: `1, 2, 3, 'Taco', 'Cat', 'Awesome'`
+Per questo esercizio, restituisci un set con i seguenti valori: `1, 2, 3, 'Taco', 'Cat', 'Awesome'`
 
 # --hints--
 
-Your `Set` should only contain the values `1, 2, 3, Taco, Cat, Awesome`.
+Il tuo `Set` deve contenere solo i valori `1, 2, 3, Taco, Cat, Awesome`.
 
 ```js
 assert(

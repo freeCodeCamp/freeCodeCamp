@@ -1,15 +1,11 @@
 import { nanoid } from 'nanoid';
+
 import { FlashState, State } from '../../../redux/types';
+import { playTone } from '../../../utils/tone';
+import { Themes } from '../../settings/theme';
+import { FlashMessages } from './flash-messages';
 
 export const FlashApp = 'flash';
-
-const initialState = {
-  message: {
-    id: '',
-    type: '',
-    message: ''
-  }
-};
 
 export const sagas = [];
 
@@ -19,32 +15,48 @@ export const flashMessageSelector = (state: State): FlashState['message'] =>
 // ACTION DEFINITIONS
 
 enum FlashActionTypes {
-  createFlashMessage = 'createFlashMessage',
-  removeFlashMessage = 'removeFlashMessage'
+  CreateFlashMessage = 'createFlashMessage',
+  RemoveFlashMessage = 'removeFlashMessage'
 }
 
 export type FlashMessageArg = {
   type: string;
-  message: string;
+  message: FlashMessages;
   variables?: Record<string, unknown>;
+};
+
+const initialState = {
+  message: {
+    id: '',
+    type: '',
+    message: FlashMessages.None
+  }
 };
 
 export const createFlashMessage = (
   flash: FlashMessageArg
-): ReducerPayload<FlashActionTypes.createFlashMessage> => ({
-  type: FlashActionTypes.createFlashMessage,
-  payload: { ...flash, id: nanoid() }
-});
+): ReducerPayload<FlashActionTypes.CreateFlashMessage> => {
+  // Nightmode theme has special tones
+  if (flash.variables?.theme) {
+    void playTone(flash.variables.theme as Themes);
+  } else if (flash.message !== FlashMessages.None) {
+    void playTone(flash.message);
+  }
+  return {
+    type: FlashActionTypes.CreateFlashMessage,
+    payload: { ...flash, id: nanoid() }
+  };
+};
 
 export const removeFlashMessage =
-  (): ReducerPayload<FlashActionTypes.removeFlashMessage> => ({
-    type: FlashActionTypes.removeFlashMessage
+  (): ReducerPayload<FlashActionTypes.RemoveFlashMessage> => ({
+    type: FlashActionTypes.RemoveFlashMessage
   });
 
 // REDUCER
 type ReducerBase<T> = { type: T };
 type ReducerPayload<T extends FlashActionTypes> =
-  T extends FlashActionTypes.createFlashMessage
+  T extends FlashActionTypes.CreateFlashMessage
     ? ReducerBase<T> & {
         payload: FlashState['message'];
       }
@@ -56,9 +68,9 @@ export const reducer = (
   action: ReducerPayload<FlashActionTypes>
 ): FlashState => {
   switch (action.type) {
-    case FlashActionTypes.createFlashMessage:
+    case FlashActionTypes.CreateFlashMessage:
       return { ...state, message: action.payload };
-    case FlashActionTypes.removeFlashMessage:
+    case FlashActionTypes.RemoveFlashMessage:
       return { ...state, message: initialState.message };
     default:
       return state;

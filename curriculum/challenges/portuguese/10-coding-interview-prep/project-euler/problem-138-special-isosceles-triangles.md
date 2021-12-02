@@ -1,6 +1,6 @@
 ---
 id: 5900f3f61000cf542c50ff09
-title: 'Problem 138: Special isosceles triangles'
+title: 'Problema 138: Triângulos isósceles especiais'
 challengeType: 5
 forumTopicId: 301766
 dashedName: problem-138-special-isosceles-triangles
@@ -8,16 +8,22 @@ dashedName: problem-138-special-isosceles-triangles
 
 # --description--
 
-Consider the isosceles triangle with base length, b = 16, and legs, L = 17.
+Considere o triângulo isósceles com o comprimento de base, $b = 16$, e os lados iguais, $L = 17$.
 
-By using the Pythagorean theorem it can be seen that the height of the triangle, h = √(172 − 82) = 15, which is one less than the base length. With b = 272 and L = 305, we get h = 273, which is one more than the base length, and this is the second smallest isosceles triangle with the property that h = b ± 1. Find ∑ L for the twelve smallest isosceles triangles for which h = b ± 1 and b, L are positive integers.
+<img class="img-responsive center-block" alt="triângulo isósceles com lados chamados de L - dois lados com o mesmo comprimento e a base do triângulo chamada de b. A altura do triângulo é chamada de h e vai da base do triângulo ao ângulo entre os lados L" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
+
+Usando o teorema de Pitágoras, pode ser visto que a altura do triângulo, $h = \sqrt{{17}^2 - 8^2} = 15$, que é uma unidade menor que o comprimento da base.
+
+Com $b = 272$ e $L = 305$, obtemos $h = 273$, que é um a mais do que o comprimento da base, e este é o segundo menor triângulo isósceles com a propriedade $h = b ± 1$.
+
+Encontre $\sum{L}$ para os doze menores triângulos isósceles para os quais $h = b ± 1$ e $b$, $L$ são números inteiros positivos.
 
 # --hints--
 
-`euler138()` should return 1118049290473932.
+`isoscelesTriangles()` deve retornar `1118049290473932`.
 
 ```js
-assert.strictEqual(euler138(), 1118049290473932);
+assert.strictEqual(isoscelesTriangles(), 1118049290473932);
 ```
 
 # --seed--
@@ -25,12 +31,12 @@ assert.strictEqual(euler138(), 1118049290473932);
 ## --seed-contents--
 
 ```js
-function euler138() {
+function isoscelesTriangles() {
 
   return true;
 }
 
-euler138();
+isoscelesTriangles();
 ```
 
 # --solutions--

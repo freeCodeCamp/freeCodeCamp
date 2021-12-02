@@ -14,12 +14,14 @@ import {
   cancel
 } from 'redux-saga/effects';
 
+import { playTone } from '../../../utils/tone';
 import {
   buildChallenge,
   canBuildChallenge,
   getTestRunner,
   challengeHasPreview,
   updatePreview,
+  updateProjectPreview,
   isJavaScriptChallenge,
   isLoopProtected
 } from '../utils/build';
@@ -97,10 +99,14 @@ export function* executeChallengeSaga({ payload }) {
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
+    if (challengeComplete) {
+      playTone('tests-completed');
+    } else {
+      playTone('tests-failed');
+    }
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
     }
-
     yield put(updateConsole(i18next.t('learn.tests-completed')));
     yield put(logsToConsole(i18next.t('learn.console-output')));
   } catch (e) {
@@ -155,7 +161,11 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         throw err;
       }
     } catch (err) {
-      newTest.message = text;
+      const { actual, expected } = err;
+
+      newTest.message = text
+        .replace('--fcc-expected--', expected)
+        .replace('--fcc-actual--', actual);
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
@@ -224,6 +234,24 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   }
 }
 
+function* previewProjectSolutionSaga({ payload }) {
+  if (!payload) return;
+  const { showProjectPreview, challengeData } = payload;
+  if (!showProjectPreview) return;
+
+  try {
+    if (canBuildChallenge(challengeData)) {
+      const buildData = yield buildChallengeData(challengeData);
+      if (challengeHasPreview(challengeData)) {
+        const document = yield getContext('document');
+        yield call(updateProjectPreview, buildData, document);
+      }
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
@@ -235,6 +263,7 @@ export function createExecuteChallengeSaga(types) {
         types.resetChallenge
       ],
       executeCancellablePreviewSaga
-    )
+    ),
+    takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
 }

@@ -16,7 +16,7 @@ Também podemos usar o operador `+=` para <dfn>concatenar</dfn> uma string no fi
 Exemplo:
 
 ```js
-var ourStr = "I come first. ";
+let ourStr = "I come first. ";
 ourStr += "I come second.";
 ```
 
@@ -57,14 +57,12 @@ assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
 ## --seed-contents--
 
 ```js
-// Only change code below this line
-
-var myStr;
+let myStr;
 ```
 
 # --solutions--
 
 ```js
-var myStr = "This is the first sentence. ";
+let myStr = "This is the first sentence. ";
 myStr += "This is the second sentence.";
 ```

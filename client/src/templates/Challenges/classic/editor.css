@@ -67,3 +67,8 @@
 .myEditableLineDecoration.tests-passed {
   background-color: #4caf50;
 }
+
+.editable-region {
+  background-color: var(--primary-background);
+  z-index: -1;
+}

@@ -16,7 +16,7 @@
     "save-progress": "Guardar progreso",
     "accepted-honesty": "Has aceptado nuestra Política de Honestidad Académica.",
     "agree": "Aceptar",
-    "save-portfolio": "Guardar este elemento de portafalio",
+    "save-portfolio": "Guardar este elemento de portafolio",
     "remove-portfolio": "Eliminar este elemento de portafolio",
     "add-portfolio": "Agregar un nuevo elemento de portafolio",
     "download-data": "Descarga tus datos",
@@ -32,6 +32,7 @@
     "profile": "Perfil",
     "news": "Noticias",
     "donate": "Donar",
+    "support-our-nonprofit": "Support our non-profit",
     "update-settings": "Actualizar los ajustes de mi cuenta",
     "sign-me-out": "Cerrar sesión en freeCodeCamp",
     "flag-user": "Marcar la cuenta de este usuario por abuso",
@@ -62,7 +63,8 @@
     "verify-email": "Verificar correo electrónico",
     "submit-and-go": "Enviar y pasar al siguiente desafío",
     "go-to-next": "Ir al próximo desafío",
-    "ask-later": "Pregúntame luego"
+    "ask-later": "Pregúntame luego",
+    "start-coding": "Start coding!"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -99,6 +101,7 @@
     "private-name": "Tu nombre no aparecerá en tus certificaciones, si está establecido como privado.",
     "claim-legacy": "Una vez que hayas obtenido las siguientes certificaciones de FreeCodeCamp, podrás reclamar la {{cert}}:",
     "for": "Ajustes de cuenta de {{username}}",
+    "sound-mode": "Esto agrega un placentero sonido de guitarra acústica en todo el sitio web. Obtendrás reacciones musicales a medida que escribas en el editor, completes desafíos, obtengas certificados y mucho más.",
     "username": {
       "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
@@ -133,7 +136,8 @@
       "my-portfolio": "Mi portafolio",
       "my-timeline": "Mi cronología",
       "my-donations": "Mis donaciones",
-      "night-mode": "Modo nocturno"
+      "night-mode": "Modo nocturno",
+      "sound-mode": "Modo de fogata"
     },
     "headings": {
       "certs": "Certificaciones",
@@ -273,7 +277,7 @@
     "reset": "¿Restablecer esta lección?",
     "reset-warn": "¿Estás seguro de que deseas restablecer esta lección? Los editores y las pruebas se restablecerán.",
     "reset-warn-2": "Esto no se puede deshacer",
-    "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haz clic y arrastra para moverlo. Además, siéntate libre de detener y editar el código en el video en cualquier momento.",
+    "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haz clic y arrastra para moverlo. Además, siéntete libre de detener y editar el código en el video en cualquier momento.",
     "chal-preview": "Vista previa del desafío",
     "cert-map-estimates": {
       "certs": "Certificación {{title}} (300 horas)",
@@ -286,7 +290,10 @@
       "preview": "Vista"
     },
     "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
-    "help-translate-link": "Ayúdanos a traducir."
+    "help-translate-link": "Ayúdanos a traducir.",
+    "season-greetings": "Season's Greetings to you and your family.",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "project-preview-title": "Here's a preview of what you will build"
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -367,7 +374,7 @@
     "server-offline": "No se pudo acceder al servidor y es posible que tu progreso no se guarde. Ponte en contacto con <0>soporte</0> si este mensaje persiste",
     "unsubscribed": "Haz cancelado tu subscripción exitosamente",
     "keep-coding": "Sea lo que sea que hagas, ¡sigue programando!",
-    "email-signup": "Registrarse con Email",
+    "email-signup": "Registrarse con un correo electrónico",
     "quincy": "- Quincy Larson, el profesor que fundó freeCodeCamp.org",
     "email-blast": "Por cierto, cada viernes envío un correo electrónico con 5 enlaces sobre programación e informática. Los envío a unos 4 millones de personas. ¿Quieres que te envíe esto también?",
     "update-email-1": "Actualiza tu correo electrónico",
@@ -443,7 +450,7 @@
     "signin-success": "¡Éxito! Has iniciado sesión en tu cuenta. ¡Feliz día programando!",
     "social-auth-gone": "Nos estamos alejando de la autenticación social por razones de privacidad. La próxima vez, te recomendamos que utilices tu dirección de correo electrónico: {{email}} para iniciar sesión.",
     "name-needed": "Necesitamos tu nombre para poder incluirlo en tu certificación. Agrega tu nombre a los ajustes de tu cuenta y haz clic en el botón Guardar. Entonces podremos emitir tu certificación.",
-    "incomplete-steps": "Parece que no haz completado los pasos necesarios. Por favor, completa los proyectos requeridos para reclamar la certificación {{name}}.",
+    "incomplete-steps": "Parece que no has completado los pasos necesarios. Por favor, completa los proyectos requeridos para reclamar la certificación {{name}}.",
     "already-claimed": "Parece que ya has reclamado la certificación {{name}}",
     "cert-claim-success": "¡@{{username}}, has reclamado con éxito la certificación {{name}}! ¡Felicitaciones en nombre del equipo de freeCodeCamp.org!",
     "wrong-name": "Se produjo un error con la verificación de {{name}}. Por favor, inténtalo de nuevo. Si continúas recibiendo este error, puedes enviar un mensaje a support@freeCodeCamp.org para obtener ayuda.",
@@ -464,7 +471,11 @@
     "unlink-success": "Has desvinculado correctamente tu {{website}}",
     "provide-username": "Comprueba si has proporcionado un nombre de usuario y un reporte",
     "report-sent": "Se envió un informe al equipo con {{email}} en copia",
-    "certificate-missing": "La certificación que intentaste ver no existe"
+    "certificate-missing": "La certificación que intentaste ver no existe",
+    "create-token-err": "An error occurred trying to create a token",
+    "delete-token-err": "An error occurred trying to delete your token",
+    "token-created": "You have successfully created a new token.",
+    "token-deleted": "Your token has been deleted."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
@@ -592,5 +603,18 @@
     "add-code-one": "Reemplaza estas dos oraciones con tu código copiado.",
     "add-code-two": "Por favor, deja la línea ``` arriba y la línea ``` abajo,",
     "add-code-three": "porque permiten que tu código formatee correctamente en el post."
+  },
+  "webhook-token": {
+    "title": "Webhook Token",
+    "create": "Create a new token",
+    "create-p1": "It looks like you don't have a webhook token. Create one to save your progress on this section",
+    "create-p2": "Create a webhook token to save your progress on the curriculum sections that use a virtual machine.",
+    "delete": "Delete my token",
+    "delete-title": "Delete My Webhook Token",
+    "delete-p1": "Your webhook token below is used to save your progress on the curriculum sections that use a virtual machine.",
+    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
+    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
+    "no-thanks": "No thanks, I would like to keep my token",
+    "yes-please": "Yes please, I would like to delete my token"
   }
 }

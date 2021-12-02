@@ -9,22 +9,74 @@ dashedName: port-scanner
 
 # --description--
 
+Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-port-scanner).
+
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
+
+- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
+
+- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+
+# --instructions--
+
 Crie um scanner de portas usando Python.
 
-Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-port-scanner).
+No arquivo `port_scanner.py`, crie uma função chamada `get_open_ports` que recebe um argumento `target` e um argumento `port_range`. `target` pode ser um URL ou um endereço IP. `port_range` é uma lista de dois números indicando o primeiro e último números do intervalo de portas a serem verificadas.
 
-Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com base nas instruções do 'README.md', envie o link do seu projeto abaixo.
+Aqui estão exemplos de como a função pode ser chamada:
 
-Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão um pouco sobre as habilidades em Python de que você precisa este projeto:
+```py
+get_open_ports("209.216.230.240", [440, 445])
+get_open_ports("www.stackoverflow.com", [79, 82])
+```
 
-<ul>
-  <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Curso de Python em vídeo para todos</a> (14 horas)
-  </li>
-  <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Curso em vídeo Aprenda Python</a> (2 horas)
-  </li>
-</ul>
+A função deve retornar uma lista de portas abertas no intervalo informado.
+
+A função `get_open_ports` também deve receber um terceiro argumento opcional `True` para indicar o modo "Verbose". Se definido como True, a função deve retornar uma string descritiva ao invés de uma lista de portas.
+
+Aqui está o formato da string que deve ser retornada no modo Verbose (o texto dentro de `{}` indica a informação que deve aparecer):
+
+```bash
+Open ports for {URL} ({IP address})
+PORT     SERVICE
+{port}   {service name}
+{port}   {service name}
+```
+
+Você pode usar o dicionário em `common_ports.py` para obter o nome de serviço correto para cada porta.
+
+Por exemplo, se a função é chamada assim:
+
+```py
+port_scanner.get_open_ports("scanme.nmap.org", [20, 80], True)
+```
+
+Ela deve devolver o seguinte:
+
+```bash
+Open ports for scanme.nmap.org (45.33.32.156)
+PORT     SERVICE
+22       ssh
+80       http
+```
+
+Certifique-se de incluir o espaçamento adequado e caracteres de nova linha.
+
+Se o URL passado para a função `get_open_ports` for inválido, a função deve retornar a string: "Error: Invalid hostname".
+
+Se o endereço IP passado para a função `get_open_ports` for inválido, a função deve retornar a string: "Error: Invalid IP address".
+
+## Desenvolvimento
+
+Escreva seu código em `port_scanner.py`. Para o desenvolvimento, você pode usar `main.py` para testar seu código. Clique no botão "Run" e `main.py` será executado.
+
+## Testes
+
+Os testes unitários para este projeto estão em `test_module.py`. Importamos os testes de `test_module.py` em `main.py` para a sua conveniência. Os testes serão executados automaticamente sempre que você clicar no botão "Run".
+
+## Envio
+
+Copie o URL do seu projeto e envie-o para o freeCodeCamp.
 
 # --hints--
 

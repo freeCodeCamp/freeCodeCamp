@@ -9,21 +9,31 @@ import {
 } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import type {
-  Token,
   StripeCardNumberElementChangeEvent,
-  StripeCardExpiryElementChangeEvent
+  StripeCardExpiryElementChangeEvent,
+  PaymentIntentResult
 } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 
 import envData from '../../../../config/env.json';
-import { AddDonationData } from './PaypalButton';
+import { Themes } from '../settings/theme';
+import { AddDonationData } from './paypal-button';
 
 const { stripePublicKey }: { stripePublicKey: string | null } = envData;
+
+export type HandleAuthentication = (
+  clientSecret: string,
+  paymentMethod: string
+) => Promise<PaymentIntentResult | { error: { type: string } }>;
+
 interface FormPropTypes {
   onDonationStateChange: (donationState: AddDonationData) => void;
-  postStripeCardDonation: (token: Token) => void;
+  postStripeCardDonation: (
+    paymentMethodId: string,
+    handleAuthentication: HandleAuthentication
+  ) => void;
   t: (label: string) => string;
-  theme: string;
+  theme: Themes;
   processing: boolean;
 }
 
@@ -83,7 +93,7 @@ const StripeCardForm = ({
     style: {
       base: {
         fontSize: '18px',
-        color: `${theme === 'night' ? '#fff' : '#0a0a23'}`,
+        color: `${theme === Themes.Night ? '#fff' : '#0a0a23'}`,
         '::placeholder': {
           color: `#858591`
         }
@@ -100,7 +110,10 @@ const StripeCardForm = ({
       const cardElement = elements.getElement(CardNumberElement);
       if (cardElement) {
         setTokenizing(true);
-        const { error, token } = await stripe.createToken(cardElement);
+        const { paymentMethod, error } = await stripe.createPaymentMethod({
+          type: 'card',
+          card: cardElement
+        });
         if (error) {
           onDonationStateChange({
             redirecting: false,
@@ -108,10 +121,23 @@ const StripeCardForm = ({
             success: false,
             error: t('donate.went-wrong')
           });
-        } else if (token) postStripeCardDonation(token);
+        } else if (paymentMethod)
+          postStripeCardDonation(paymentMethod.id, handleAuthentication);
       }
     }
     return setTokenizing(false);
+  };
+  const handleAuthentication = async (
+    clientSecret: string,
+    paymentMethod: string
+  ) => {
+    if (stripe) {
+      return stripe.confirmCardPayment(clientSecret, {
+        // eslint-disable-next-line camelcase, @typescript-eslint/naming-convention
+        payment_method: paymentMethod
+      });
+    }
+    return { error: { type: 'StripeNotLoaded' } };
   };
 
   return (

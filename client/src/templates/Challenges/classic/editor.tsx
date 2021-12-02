@@ -17,17 +17,20 @@ import React, {
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
+
 import { Loader } from '../../../components/helpers';
+import { Themes } from '../../../components/settings/theme';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import {
   ChallengeFiles,
-  DimensionsType,
-  ExtTypes,
-  FileKeyTypes,
-  ResizePropsType,
+  Dimensions,
+  Ext,
+  FileKey,
+  ResizeProps,
   Test
 } from '../../../redux/prop-types';
-
+import { editorToneOptions } from '../../../utils/tone/editor-config';
+import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
@@ -44,6 +47,7 @@ import {
 
 import './editor.css';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
@@ -52,29 +56,28 @@ interface EditorProps {
   containerRef: RefObject<HTMLElement>;
   contents: string;
   description: string;
-  dimensions: DimensionsType;
+  dimensions: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  ext: ExtTypes;
-  fileKey: FileKeyTypes;
+  ext: Ext;
+  fileKey: FileKey;
   canFocusOnMountRef: MutableRefObject<boolean>;
   initialEditorContent: string;
   initialExt: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
-  isProjectStep: boolean;
   isResetting: boolean;
   output: string[];
-  resizeProps: ResizePropsType;
+  resizeProps: ResizeProps;
   saveEditorContent: () => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
   stopResetting: () => void;
   tests: Test[];
-  theme: string;
+  theme: Themes;
   title: string;
   updateFile: (object: {
-    fileKey: FileKeyTypes;
+    fileKey: FileKey;
     editorValue: string;
     editableRegionBoundaries: number[] | null;
   }) => void;
@@ -109,7 +112,7 @@ const mapStateToProps = createSelector(
     output: string[],
     open,
     isResetting: boolean,
-    { theme = 'default' }: { theme: string },
+    { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
@@ -140,7 +143,10 @@ const modeMap = {
 };
 
 let monacoThemesDefined = false;
-const defineMonacoThemes = (monaco: typeof monacoEditor) => {
+const defineMonacoThemes = (
+  monaco: typeof monacoEditor,
+  options: { usesMultifileEditor: boolean }
+) => {
   if (monacoThemesDefined) {
     return;
   }
@@ -166,7 +172,7 @@ const defineMonacoThemes = (monaco: typeof monacoEditor) => {
     inherit: true,
     // TODO: Use actual color from style-guide
     colors: {
-      'editor.background': '#fff'
+      'editor.background': options.usesMultifileEditor ? '#eee' : '#fff'
     },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
   });
@@ -191,6 +197,17 @@ const Editor = (props: EditorProps): JSX.Element => {
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorProperties>({ ...initialData });
+  const player = useRef<{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    sampler: any;
+    noteIndex: number;
+    shouldPlay: boolean | undefined;
+  }>({
+    // eslint-disable-next-line no-undefined
+    sampler: undefined,
+    noteIndex: 0,
+    shouldPlay: store.get('fcc-sound') as boolean | undefined
+  });
 
   // since editorDidMount runs once with the initial props object, it keeps a
   // reference to *those* props. If we want it to use the latest props, we can
@@ -243,10 +260,10 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
-    const { challengeFiles, fileKey } = props;
+    const { challengeFiles, fileKey, usesMultifileEditor } = props;
 
     monacoRef.current = monaco;
-    defineMonacoThemes(monaco);
+    defineMonacoThemes(monaco, { usesMultifileEditor });
     // If a model is not provided, then the editor 'owns' the model it creates
     // and will dispose of that model if it is replaced. Since we intend to
     // swap and reuse models, we have to create our own models to prevent
@@ -262,6 +279,14 @@ const Editor = (props: EditorProps): JSX.Element => {
         modeMap[challengeFile?.ext ?? 'html']
       );
     dataRef.current.model = model;
+
+    if (player.current.shouldPlay && !player.current.sampler) {
+      void import('tone').then(tone => {
+        player.current.sampler = new tone.Sampler(
+          editorToneOptions
+        ).toDestination();
+      });
+    }
 
     // TODO: do we need to return this?
     return { model };
@@ -514,6 +539,31 @@ const Editor = (props: EditorProps): JSX.Element => {
     return outputNode;
   }
 
+  function resetOutputNode() {
+    const { model, insideEditDecId } = dataRef.current;
+    const testButton = document.getElementById('test-button');
+    if (testButton) {
+      testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
+      testButton.onclick = () => {
+        props.executeChallenge();
+      };
+    }
+    const testStatus = document.getElementById('test-status');
+    if (testStatus) {
+      testStatus.innerHTML = '';
+    }
+    const testOutput = document.getElementById('test-output');
+    if (testOutput) {
+      testOutput.innerHTML = '';
+    }
+
+    // Resetting margin decorations
+    const range = model?.getDecorationRange(insideEditDecId);
+    if (range) {
+      updateEditableRegion(range, { model });
+    }
+  }
+
   function focusOnHotkeys() {
     const currContainerRef = props.containerRef.current;
     if (currContainerRef) {
@@ -533,41 +583,65 @@ const Editor = (props: EditorProps): JSX.Element => {
       coveringRange.startLineNumber - 1,
       coveringRange.endLineNumber + 1
     ];
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    if (player.current.sampler?.loaded && player.current.shouldPlay) {
+      void import('tone').then(tone => {
+        if (tone.context.state !== 'running') void tone.context.resume();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+        player.current.sampler?.triggerAttack(
+          editorNotes[player.current.noteIndex]
+        );
+        player.current.noteIndex++;
+        if (player.current.noteIndex >= editorNotes.length) {
+          player.current.noteIndex = 0;
+        }
+      });
+    }
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
 
   // TODO: DRY this and the update function
   function initializeEditableRegion(
-    stickiness: number,
-    target: editor.ITextModel,
-    range: IRange
+    range: IRange,
+    modelContext: {
+      monaco: typeof monacoEditor;
+      model: editor.ITextModel;
+    }
   ) {
+    const { monaco, model } = modelContext;
     const lineDecoration = {
       range,
       options: {
         isWholeLine: true,
+        className: 'editable-region',
         linesDecorationsClassName: 'myEditableLineDecoration',
-        stickiness
+        stickiness:
+          monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges
       }
     };
-    return target.deltaDecorations([], [lineDecoration]);
+    return model.deltaDecorations([], [lineDecoration]);
   }
 
   function updateEditableRegion(
-    stickiness: number,
-    target: editor.ITextModel,
     range: IRange,
-    oldIds: string[] = []
+    modelContext: {
+      model?: editor.ITextModel;
+    },
+    options: editor.IModelDecorationOptions = {}
   ) {
+    const { model } = modelContext;
+    const { insideEditDecId } = dataRef.current;
+
+    const oldOptions = model?.getDecorationOptions(insideEditDecId);
     const lineDecoration = {
       range,
       options: {
-        isWholeLine: true,
-        linesDecorationsClassName: 'myEditableLineDecoration',
-        stickiness
+        ...oldOptions,
+        ...options
       }
     };
-    return target.deltaDecorations(oldIds, [lineDecoration]);
+    model?.deltaDecorations([insideEditDecId], [lineDecoration]);
   }
 
   function getDescriptionZoneTop() {
@@ -654,11 +728,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       editableRegion[1] - 1
     ]);
 
-    dataRef.current.insideEditDecId = initializeEditableRegion(
-      monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-      model,
-      editableRange
-    )[0];
+    dataRef.current.insideEditDecId = initializeEditableRegion(editableRange, {
+      monaco,
+      model
+    })[0];
   }
 
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
@@ -718,18 +791,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   function addContentChangeListener() {
     const { model } = dataRef.current;
     const monaco = monacoRef.current;
-    if (!model || !monaco) return;
+    if (!monaco) return;
 
-    model.onDidChangeContent(() => {
+    model?.onDidChangeContent(() => {
       const redecorateEditableRegion = () => {
         const coveringRange = getLinesCoveringEditableRegion();
         if (coveringRange) {
-          dataRef.current.insideEditDecId = updateEditableRegion(
-            monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges,
-            model,
-            coveringRange,
-            [dataRef.current.insideEditDecId]
-          )[0];
+          updateEditableRegion(coveringRange, { model });
         }
       };
 
@@ -822,40 +890,17 @@ const Editor = (props: EditorProps): JSX.Element => {
         updateDescriptionZone();
         updateOutputZone();
         showEditableRegion(editor);
-      }
-      // resetting test output
-      // TODO: DRY this - createOutputNode doesn't also need to set this up.
-      const testButton = document.getElementById('test-button');
-      if (testButton) {
-        testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
-        testButton.onclick = () => {
-          props.executeChallenge();
-        };
-      }
-      const testStatus = document.getElementById('test-status');
-      if (testStatus) {
-        testStatus.innerHTML = '';
-      }
-      const testOutput = document.getElementById('test-output');
-      if (testOutput) {
-        testOutput.innerHTML = '';
-      }
-      // resetting margin decorations
-      // TODO: this should be done via the decorator api, not by manipulating
-      // the DOM
-      const editableRegionDecorators = document.getElementsByClassName(
-        'myEditableLineDecoration'
-      );
-      if (editableRegionDecorators.length > 0) {
-        for (const i of editableRegionDecorators) {
-          i.classList.remove('tests-passed');
-        }
+
+        // Since the outputNode is only reset when the step is restarted, users
+        // that want to try different solutions will need to do that.
+        resetOutputNode();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles, props.isResetting]);
   useEffect(() => {
     const { output } = props;
+    const { model, insideEditDecId } = dataRef.current;
     const editableRegion = getEditableRegionFromRedux();
     if (editableRegion.length === 2) {
       const testOutput = document.getElementById('test-output');
@@ -871,16 +916,17 @@ const Editor = (props: EditorProps): JSX.Element => {
           };
         }
 
-        // TODO: this should be done via the decorator api, not by manipulating
-        // the DOM
-        const editableRegionDecorators = document.getElementsByClassName(
-          'myEditableLineDecoration'
-        );
-        if (editableRegionDecorators.length > 0) {
-          for (const i of editableRegionDecorators) {
-            i.classList.add('tests-passed');
-          }
+        const range = model?.getDecorationRange(insideEditDecId);
+        if (range) {
+          updateEditableRegion(
+            range,
+            { model },
+            {
+              linesDecorationsClassName: 'myEditableLineDecoration tests-passed'
+            }
+          );
         }
+
         if (testOutput && testStatus) {
           testOutput.innerHTML = '';
           testStatus.innerHTML = '&#9989; Step completed.';
@@ -947,7 +993,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const { theme } = props;
-  const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
+  const editorTheme = theme === Themes.Night ? 'vs-dark-custom' : 'vs-custom';
   return (
     <Suspense fallback={<Loader timeout={600} />}>
       <span className='notranslate'>

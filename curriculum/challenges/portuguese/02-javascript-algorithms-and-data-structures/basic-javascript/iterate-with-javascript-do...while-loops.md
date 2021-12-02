@@ -12,8 +12,9 @@ dashedName: iterate-with-javascript-do---while-loops
 O próximo tipo de laço que você aprenderá é chamado de laço `do...while`. O laço `do...while` é chamado assim porque primeiro fará algo (`do`) ou executará algo uma vez dentro do bloco de código, não importando o que acontecer. Em seguida, continuará a executar o laço enquanto (`while`) a condição for `true`.
 
 ```js
-var ourArray = [];
-var i = 0;
+const ourArray = [];
+let i = 0;
+
 do {
   ourArray.push(i);
   i++;
@@ -23,8 +24,9 @@ do {
 O exemplo acima se comporta de forma similar a outros tipos de laços, e o array resultante se parecerá com `[0,1,2,3,4]`. No entanto, o que torna o laço `do...while` diferente de outros laços é como ele se comporta quando uma condição falha na primeira verificação. Vamos ver isso na prática: Aqui está um laço comum `while` que rodará o código no laço enquanto `i < 5`:
 
 ```js
-var ourArray = []; 
-var i = 5;
+const ourArray = []; 
+let i = 5;
+
 while (i < 5) {
   ourArray.push(i);
   i++;
@@ -34,8 +36,9 @@ while (i < 5) {
 Nesse exemplo, inicializamos o valor de `ourArray` como um array vazio e o valor de `i` sendo 5. Quando executamos o laço `while`, a condição é igual a `false` porque `i` não é menor que 5, portanto nós não executamos o código dentro do laço. O resultado é que `ourArray` terminará sem valores adicionados a ele, e ainda se parecerá com `[]` quando todas as linhas do código no exemplo acima forem completamente executadas. Agora, dê uma olhada no laço `do...while`:
 
 ```js
-var ourArray = []; 
-var i = 5;
+const ourArray = []; 
+let i = 5;
+
 do {
   ourArray.push(i);
   i++;
@@ -80,8 +83,8 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
-var i = 10;
+const myArray = [];
+let i = 10;
 
 // Only change code below this line
 while (i < 5) {
@@ -93,8 +96,8 @@ while (i < 5) {
 # --solutions--
 
 ```js
-var myArray = [];
-var i = 10;
+const myArray = [];
+let i = 10;
 do {
   myArray.push(i);
   i++;

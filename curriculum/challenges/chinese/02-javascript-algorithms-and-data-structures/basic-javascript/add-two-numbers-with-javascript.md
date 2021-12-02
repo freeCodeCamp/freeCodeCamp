@@ -18,7 +18,7 @@ JavaScript 中，我们通过符号 `+` 来进行加法运算。
 **代码示例:**
 
 ```js
-myVar = 5 + 10;
+const myVar = 5 + 10;
 ```
 
 现在，变量 `myVar` 的值为 `15`。
@@ -52,11 +52,11 @@ assert(/\+/.test(code));
 ## --seed-contents--
 
 ```js
-var sum = 10 + 0;
+const sum = 10 + 0;
 ```
 
 # --solutions--
 
 ```js
-var sum = 10 + 10;
+const sum = 10 + 10;
 ```

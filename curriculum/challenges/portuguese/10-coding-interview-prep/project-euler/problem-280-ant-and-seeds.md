@@ -1,6 +1,6 @@
 ---
 id: 5900f4841000cf542c50ff97
-title: 'Problem 280: Ant and seeds'
+title: 'Problema 280: Formiga e sementes'
 challengeType: 5
 forumTopicId: 301931
 dashedName: problem-280-ant-and-seeds
@@ -8,18 +8,18 @@ dashedName: problem-280-ant-and-seeds
 
 # --description--
 
-A laborious ant walks randomly on a 5x5 grid. The walk starts from the central square. At each step, the ant moves to an adjacent square at random, without leaving the grid; thus there are 2, 3 or 4 possible moves at each step depending on the ant's position.
+Uma formiga trabalhadora anda aleatoriamente em uma grade de 5x5. A caminhada começa do quadrado central. Em cada etapa, a formiga se move aleatoriamente para um quadrado adjacente, sem sair da grade; assim, há 2, 3 ou 4 movimentos possíveis para cada passo, dependendo da posição da formiga.
 
-At the start of the walk, a seed is placed on each square of the lower row. When the ant isn't carrying a seed and reaches a square of the lower row containing a seed, it will start to carry the seed. The ant will drop the seed on the first empty square of the upper row it eventually reaches.
+No início da caminhada, uma semente é colocada em cada quadrado da linha inferior. Quando a formiga não estiver carregando uma semente e atingir um quadrado da linha inferior que contém uma semente, começará a carregar a semente. A formiga soltará a semente no primeiro quadrado vazio da linha superior que ela eventualmente alcance.
 
-What's the expected number of steps until all seeds have been dropped in the top row? Give your answer rounded to 6 decimal places.
+Qual é o número esperado de passos até que todas as sementes sejam largadas na linha superior? Dê sua resposta arredondada para 6 casas decimais.
 
 # --hints--
 
-`euler280()` should return 430.088247.
+`antAndSeeds()` deve retornar `430.088247`.
 
 ```js
-assert.strictEqual(euler280(), 430.088247);
+assert.strictEqual(antAndSeeds(), 430.088247);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler280(), 430.088247);
 ## --seed-contents--
 
 ```js
-function euler280() {
+function antAndSeeds() {
 
   return true;
 }
 
-euler280();
+antAndSeeds();
 ```
 
 # --solutions--

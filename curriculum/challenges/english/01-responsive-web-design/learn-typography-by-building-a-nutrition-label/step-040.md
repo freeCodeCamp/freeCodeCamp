@@ -1,0 +1,139 @@
+---
+id: 615f6823d0815b7a991f2a75
+title: Step 40
+challengeType: 0
+dashedName: step-40
+---
+
+# --description--
+
+The `float` styling is causing the new `p` element to be outside of the label's border. Use your existing `.divider` element as an example to add a new divider after the `p` element.
+
+# --hints--
+
+You should create a new `div` within your `.daily-value.sm-text` element.
+
+```js
+assert(document.querySelectorAll('.daily-value.sm-text > div')?.length === 1)
+```
+
+Your new `div` should have the `class` attribute set to `divider`.
+
+```js
+assert(document.querySelector('.daily-value.sm-text > div')?.classList?.contains('divider'))
+```
+
+Your new `div` should come after your `p` element.
+
+```js
+assert(document.querySelector('.daily-value.sm-text > div')?.previousElementSibling?.localName === 'p');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nutrition Label</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="label">
+      <header>
+        <h1 class="bold">Nutrition Facts</h1>
+        <div class="divider"></div>
+        <p>8 servings per container</p>
+        <p class="bold">Serving size <span class="right">2/3 cup (55g)</span></p>
+      </header>
+      <div class="divider lg"></div>
+      <div class="calories-info">
+        <p class="bold sm-text">Amount per serving</p>
+        <h1>Calories <span class="right">230</span></h1>
+      </div>
+      <div class="divider md"></div>
+--fcc-editable-region--
+      <div class="daily-value sm-text">
+        <p class="right bold">% Daily Value *</p>
+
+      </div>
+--fcc-editable-region--
+    </div>
+  </body>
+</html>
+```
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.label {
+  border: 2px solid black;
+  width: 270px;
+  margin: 20px auto;
+  padding: 0 7px;
+}
+
+header h1 {
+  text-align: center;
+  margin: -4px 0;
+  letter-spacing: 0.15px
+}
+
+p {
+  margin: 0;
+}
+
+.divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.right {
+  float: right;
+}
+
+.lg {
+  height: 10px;
+}
+
+.lg, .md {
+  background-color: black;
+  border: 0;
+}
+
+.md {
+  height: 5px;
+}
+
+.sm-text {
+  font-size: 0.85rem;
+}
+
+.calories-info h1 {
+  margin: -5px -2px;
+  overflow: hidden;
+}
+
+.calories-info span {
+  font-size: 1.2em;
+  margin-top: -7px;
+}
+```

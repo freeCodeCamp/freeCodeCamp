@@ -11,13 +11,13 @@ dashedName: use-bracket-notation-to-find-the-nth-to-last-character-in-a-string
 
 我們既可以獲取字符串的最後一個字符，也可以用獲取字符串的倒數第 N 個字符。
 
-例如，你可以通過 `firstName[firstName.length - 3]` 來獲得 `var firstName = "Augusta"` 字符串中的倒數第三個字符。
+例如，你可以使用 `firstName[firstName.length - 3]` 獲取 `const firstName = "Augusta"` 字符串的倒數第三個字母的值
 
 例如：
 
 ```js
-var firstName = "Augusta";
-var thirdToLastLetter = firstName[firstName.length - 3];
+const firstName = "Augusta";
+const thirdToLastLetter = firstName[firstName.length - 3];
 ```
 
 `thirdToLastLetter` 的值應該爲字符串 `s`。
@@ -54,15 +54,15 @@ assert(code.match(/\.length/g).length > 0);
 
 ```js
 // Setup
-var lastName = "Lovelace";
+const lastName = "Lovelace";
 
 // Only change code below this line
-var secondToLastLetterOfLastName = lastName; // Change this line
+const secondToLastLetterOfLastName = lastName; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var lastName = "Lovelace";
-var secondToLastLetterOfLastName = lastName[lastName.length - 2];
+const lastName = "Lovelace";
+const secondToLastLetterOfLastName = lastName[lastName.length - 2];
 ```

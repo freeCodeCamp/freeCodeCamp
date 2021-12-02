@@ -17,7 +17,7 @@ dashedName: assignment-with-a-returned-value
 ourSum = sum(5, 12);
 ```
 
-将会调用函数 `sum`，函数返回值 `17`，然后将该值赋给变量 `ourSum`。
+将调用 `sum` 函数，该函数返回 `17` 的值并将其分配给 `ourSum` 变量。
 
 # --instructions--
 
@@ -49,13 +49,14 @@ assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
 
 ```js
 // Setup
-var processed = 0;
+let processed = 0;
 
 function processArg(num) {
   return (num + 3) / 5;
 }
 
 // Only change code below this line
+
 ```
 
 # --solutions--

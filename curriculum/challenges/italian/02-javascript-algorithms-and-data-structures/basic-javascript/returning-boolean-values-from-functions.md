@@ -14,7 +14,7 @@ dashedName: returning-boolean-values-from-functions
 A volte le persone usano un'istruzione `if/else` per fare un confronto, in questo modo:
 
 ```js
-function isEqual(a,b) {
+function isEqual(a, b) {
   if (a === b) {
     return true;
   } else {
@@ -26,7 +26,7 @@ function isEqual(a,b) {
 Ma c'è un modo migliore per farlo. Dal momento che `===` restituisce `true` o `false`, possiamo restituire il risultato del confronto:
 
 ```js
-function isEqual(a,b) {
+function isEqual(a, b) {
   return a === b;
 }
 ```
@@ -37,13 +37,13 @@ Correggi la funzione `isLess` per rimuovere le istruzioni `if/else`.
 
 # --hints--
 
-`isLess(10,15)` dovrebbe restituire `true`
+`isLess(10, 15)` dovrebbe restituire `true`
 
 ```js
 assert(isLess(10, 15) === true);
 ```
 
-`isLess(15,10)` dovrebbe restituire `false`
+`isLess(15, 10)` dovrebbe restituire `false`
 
 ```js
 assert(isLess(15, 10) === false);

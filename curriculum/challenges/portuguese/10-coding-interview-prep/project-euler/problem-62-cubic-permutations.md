@@ -8,9 +8,9 @@ dashedName: problem-62-cubic-permutations
 
 # --description--
 
-O número 41063625 é o resultado do cubo ($345^3$). Esse número pode ser permutado para produzir dois outros números que também são resultados de um cubo: 56623104 ($384^3$) e 66430125 ($405^3$). 41063625 é o menor número que tem exatamente três permutações dos seus dígitos e essas permutações também são o resultado de um cubo.
+O número 41063625 é o resultado do cubo ($345^3$). Esse número pode ser permutado para produzir dois outros números que também são resultados de um cubo: 56623104 ($384^3$) e 66430125 ($405^3$). 41063625 é o menor número que tem exatamente três permutações dos seus algarismos e essas permutações também são o resultado de um cubo.
 
-Encontre o menor cubo onde `n` permutações de seus dígitos são cubos.
+Encontre o menor cubo onde `n` permutações de seus algarismos são cubos.
 
 # --hints--
 

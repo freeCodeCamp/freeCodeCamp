@@ -1,6 +1,6 @@
 ---
 id: 587d8257367417b2b2512c7e
-title: Use Depth First Search in a Binary Search Tree
+title: Usa la ricerca in profondità in un alvero di ricerca binario
 challengeType: 1
 forumTopicId: 301719
 dashedName: use-depth-first-search-in-a-binary-search-tree
@@ -8,15 +8,15 @@ dashedName: use-depth-first-search-in-a-binary-search-tree
 
 # --description--
 
-We know how to search a binary search tree for a specific value. But what if we just want to explore the entire tree? Or what if we don't have an ordered tree and we need to just search for a value? Here we will introduce some tree traversal methods which can be used to explore tree data structures. First up is depth-first search. In depth-first search, a given subtree is explored as deeply as possible before the search continues on to another subtree. There are three ways this can be done: In-order: Begin the search at the left-most node and end at the right-most node. Pre-order: Explore all the roots before the leaves. Post-order: Explore all the leaves before the roots. As you may guess, you may choose different search methods depending on what type of data your tree is storing and what you are looking for. For a binary search tree, an inorder traversal returns the nodes in sorted order.
+Sappiamo come cercare un albero di ricerca binario per un valore specifico. Ma cosa succede se vogliamo solo esplorare l'intero albero? O cosa succede se non abbiamo un albero ordinato e dobbiamo solo cercare un valore? Qui introdurremo alcuni metodi di per traversare l'alvero che possono essere utilizzati per esplorare strutture dati ad albero. Il primo è la prima ricerca in profondità. Nella ricerca in profondità, un dato sotto-albero è esplorato il più profondamente possibile prima che la ricerca continui su un altro sotto-albero. Ci sono tre modi per farlo: In ordine: Iniziare la ricerca al nodo più a sinistra e terminare al nodo più a destra. Pre-ordine: Esplora tutte le radici prima delle foglie. Post-order: Esplora tutte le foglie prima delle radici. Come si può immaginare, è possibile scegliere diversi metodi di ricerca a seconda del tipo di dati che l'albero sta memorizzando e quello che stai cercando. Per un albero di ricerca binario, un attraversamento in ordine restituisce i nodi ordinati.
 
 # --instructions--
 
-Here we will create these three search methods on our binary search tree. Depth-first search is an inherently recursive operation which continues to explore further subtrees so long as child nodes are present. Once you understand this basic concept, you can simply rearrange the order in which you explore the nodes and subtrees to produce any of the three searches above. For example, in post-order search we would want to recurse all the way to a leaf node before we begin to return any of the nodes themselves, whereas in pre-order search we would want to return the nodes first, and then continue recursing down the tree. Define `inorder`, `preorder`, and `postorder` methods on our tree. Each of these methods should return an array of items which represent the tree traversal. Be sure to return the integer values at each node in the array, not the nodes themselves. Finally, return `null` if the tree is empty.
+Qui creeremo questi tre metodi di ricerca sul nostro albero di ricerca binario. La ricerca di profondità prima è un'operazione intrinsecamente ricorsiva che continua ad esplorare ulteriori sottalberi, a condizione che siano presenti nodi figli. Una volta che capisci questo concetto fondamentale, si può semplicemente riorganizzare l'ordine in cui si esplorano i nodi e sotto-alberi per produrre una delle tre ricerche sopra. Ad esempio, nella ricerca post-ordine vorremmo arrivare ad un nodo foglia prima di iniziare a restituire uno dei nodi stessi, mentre in pre-ordine di ricerca vorremmo restituire i nodi prima, e poi continuare a ricorsare giù l'albero. Definisci i metodi `inorder`, `preorder`e `postorder` sul nostro albero. Ognuno di questi metodi dovrebbe restituire una serie di oggetti che rappresentano il traversale ad albero. Assicurati di restituire i valori interi ad ogni nodo dell'array, non i nodi stessi. Infine, restituisci `null` se l'albero è vuoto.
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+La struttura dati `BinarySearchTree` dovrebbe esistere.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `inorder`.
+L'albero di ricerca binario dovrebbe avere un metodo chiamato `inorder`.
 
 ```js
 assert(
@@ -46,7 +46,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `preorder`.
+L'albero di ricerca binario dovrebbe avere un metodo chiamato `preorder`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `postorder`.
+L'albero di ricerca binario dovrebbe avere un metodo chiamato `postorder`.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-The `inorder` method should return an array of the node values that result from an inorder traversal.
+Il metodo `inorder` dovrebbe restituire un array dei valori del nodo che risultano da un traversamento inorder.
 
 ```js
 assert(
@@ -108,7 +108,7 @@ assert(
 );
 ```
 
-The `preorder` method should return an array of the node values that result from a preorder traversal.
+Il metodo `preorder` dovrebbe restituire un array dei valori del nodo che risultano da un attraversamento preorder.
 
 ```js
 assert(
@@ -138,7 +138,7 @@ assert(
 );
 ```
 
-The `postorder` method should return an array of the node values that result from a postorder traversal.
+Il metodo `postorder` dovrebbe restituire un array dei valori del nodo che risultano da un traversamento postordine.
 
 ```js
 assert(
@@ -168,7 +168,7 @@ assert(
 );
 ```
 
-The `inorder` method should return `null` for an empty tree.
+Il metodo `inorder` dovrebbe restituire `null` per un albero vuoto.
 
 ```js
 assert(
@@ -187,7 +187,7 @@ assert(
 );
 ```
 
-The `preorder` method should return `null` for an empty tree.
+Il metodo `preorder` dovrebbe restituire `null` per un albero vuoto.
 
 ```js
 assert(
@@ -206,7 +206,7 @@ assert(
 );
 ```
 
-The `postorder` method should return `null` for an empty tree.
+Il metodo `postorder` dovrebbe restituire `null` per un albero vuoto.
 
 ```js
 assert(

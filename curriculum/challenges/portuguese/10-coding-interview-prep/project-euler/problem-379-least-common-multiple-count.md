@@ -1,6 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffa
-title: 'Problem 379: Least common multiple count'
+title: 'Problema 379: Contagem de mínimos múltiplos comuns'
 challengeType: 5
 forumTopicId: 302041
 dashedName: problem-379-least-common-multiple-count
@@ -8,20 +8,20 @@ dashedName: problem-379-least-common-multiple-count
 
 # --description--
 
-Let f(n) be the number of couples (x,y) with x and y positive integers, x ≤ y and the least common multiple of x and y equal to n.
+Considere $f(n)$ como o número de pares ($x$, $y$) com $x$ e $y$ sendo números inteiros positivos, $x ≤ y$ e o mínimo múltiplo comum de $x$ e $y$ sendo igual a $n$.
 
-Let g be the summatory function of f, i.e.: g(n) = ∑ f(i) for 1 ≤ i ≤ n.
+Considere $g$ como a função somatória de $f$, ou seja, $g(n) = \sum f(i)$ para $1 ≤ i ≤ n$.
 
-You are given that g(106) = 37429395.
+Você é informado de que $g({10}^6) = 37.429.395$.
 
-Find g(1012).
+Encontre $g({10}^{12})$.
 
 # --hints--
 
-`euler379()` should return 132314136838185.
+`leastCommonMultipleCount()` deve retornar `132314136838185`.
 
 ```js
-assert.strictEqual(euler379(), 132314136838185);
+assert.strictEqual(leastCommonMultipleCount(), 132314136838185);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler379(), 132314136838185);
 ## --seed-contents--
 
 ```js
-function euler379() {
+function leastCommonMultipleCount() {
 
   return true;
 }
 
-euler379();
+leastCommonMultipleCount();
 ```
 
 # --solutions--

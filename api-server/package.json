@@ -5,8 +5,8 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">= 14.0.0",
-    "npm": "^6.14.12"
+    "node": ">=16",
+    "npm": ">=8"
   },
   "repository": {
     "type": "git",
@@ -70,7 +70,7 @@
     "rx": "^4.1.0",
     "stripe": "^8.184.0",
     "uuid": "^3.4.0",
-    "validator": "^9.4.1"
+    "validator": "^13.6.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",

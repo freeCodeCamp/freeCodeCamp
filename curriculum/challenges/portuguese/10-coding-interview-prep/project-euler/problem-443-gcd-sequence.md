@@ -1,6 +1,6 @@
 ---
 id: 5900f5271000cf542c51003a
-title: 'Problem 443: GCD sequence'
+title: 'Problema 443: Sequencias de máximos divisores comuns'
 challengeType: 5
 forumTopicId: 302115
 dashedName: problem-443-gcd-sequence
@@ -8,24 +8,24 @@ dashedName: problem-443-gcd-sequence
 
 # --description--
 
-Let g(n) be a sequence defined as follows: g(4) = 13, g(n) = g(n-1) + gcd(n, g(n-1)) for n > 4.
+Considere $g(n)$ como uma sequência definida assim:
 
-The first few values are:
+$$\begin{align} & g(4) = 13, \\\\ & g(n) = g(n-1) + gcd(n, g(n - 1)) \text{ para } n > 4. \end{align}$$
 
-n 4567891011121314151617181920... g(n) 1314161718272829303132333451545560...
+Seus primeiros valores são:
 
-<!-- TODO Use MathJax -->
+$$\begin{array}{l} n    & 4  & 5  & 6  & 7  & 8  & 9  & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & \ldots \\\\ g(n) & 13 & 14 & 16 & 17 & 18 & 27 & 28 & 29 & 30 & 31 & 32 & 33 & 34 & 51 & 54 & 55 & 60 & \ldots \end{array}$$
 
-You are given that g(1 000) = 2524 and g(1 000 000) = 2624152.
+Você é informado de que $g(1.000) = 2.524$ e $g(1.000.000) = 2.624.152$.
 
-Find g(1015).
+Encontre $g({10}^{15})$.
 
 # --hints--
 
-`euler443()` should return 2744233049300770.
+`gcdSequence()` deve retornar `2744233049300770`.
 
 ```js
-assert.strictEqual(euler443(), 2744233049300770);
+assert.strictEqual(gcdSequence(), 2744233049300770);
 ```
 
 # --seed--
@@ -33,12 +33,12 @@ assert.strictEqual(euler443(), 2744233049300770);
 ## --seed-contents--
 
 ```js
-function euler443() {
+function gcdSequence() {
 
   return true;
 }
 
-euler443();
+gcdSequence();
 ```
 
 # --solutions--

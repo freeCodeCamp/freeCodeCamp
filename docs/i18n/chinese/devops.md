@@ -432,7 +432,7 @@ Provisioning VMs with the Code
 2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
 
    ```console
-   npm i -g npm@6
+   npm i -g npm@8
    npm i -g pm2
    pm2 install pm2-logrotate
    pm2 startup
@@ -794,7 +794,7 @@ nvm ls
 Install the latest Node.js LTS, and reinstall any global packages
 
 ```console
-nvm install 'lts/*' --reinstall-packages-from=default
+nvm install --lts --reinstall-packages-from=default
 ```
 
 Verify installed packages
@@ -803,10 +803,10 @@ Verify installed packages
 npm ls -g --depth=0
 ```
 
-Alias the `default` Node.js version to the current LTS
+Alias the `default` Node.js version to the current LTS (pinned to latest major version)
 
 ```console
-nvm alias default lts/*
+nvm alias default 16
 ```
 
 (Optional) Uninstall old versions
@@ -815,7 +815,21 @@ nvm alias default lts/*
 nvm uninstall <version>
 ```
 
-> [!WARNING] If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
+> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
+> 
+> If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
+
+Get the uninstall instructions/commands with the `unstartup` command and use the output to remove the systemctl services
+
+```console
+pm2 unstartup
+```
+
+Get the install instructions/commands with the `startup` command and use the output to add the systemctl services
+
+```console
+pm2 startup
+```
 
 Quick commands for PM2 to list, resurrect saved processes, etc.
 
@@ -834,8 +848,6 @@ pm2 save
 ```console
 pm2 logs
 ```
-
-> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
 
 ## Installing and Updating Azure Pipeline Agents
 
@@ -917,3 +929,20 @@ We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to sen
 6. Run the tool to send the emails, following the [usage documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
 
 7. When the email blast is complete, verify that no emails have failed before destroying the droplets.
+
+# Flight Manual - Adding news instances for new languages
+
+### Theme Changes
+
+We use a custom [theme](https://github.com/freeCodeCamp/news-theme) for our news publication. Adding the following changes to the theme enables the addition of new languages.
+
+1. Include an `else if` statement for the new [ISO language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
+2. Create an initial config folder by duplicating the [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) folder and changing its name to the new language code. (`en` —> `es` for Spanish)
+3. Inside the new language folder, change the variable names in `main.js` and `footer.js` to the relevant language short code (`enMain` —> `esMain` for Spanish)
+4. Duplicate the [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) and rename it to the new language code.
+5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), add scripts for the newly created config files.
+6. Add the related language `day.js` script from [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) to the [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
+
+### Ghost Dashboard Changes
+
+Update the publication assets by going to the Ghost dashboard > settings > general and uploading the publications's [icon](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png), and [cover](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png).

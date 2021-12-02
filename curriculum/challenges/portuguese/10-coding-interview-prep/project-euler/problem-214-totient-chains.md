@@ -1,6 +1,6 @@
 ---
 id: 5900f4421000cf542c50ff55
-title: 'Problem 214: Totient Chains'
+title: 'Problema 214: Cadeias de totientes'
 challengeType: 5
 forumTopicId: 301856
 dashedName: problem-214-totient-chains
@@ -8,24 +8,22 @@ dashedName: problem-214-totient-chains
 
 # --description--
 
-Let φ be Euler's totient function, i.e. for a natural number n,
+Considere $φ$ como sendo a função totiente de Euler, ou seja, para um número natural $n$, $φ(n)$ é o número de $k$, $1 ≤ k ≤ n$, para os quais o máximo divisor comum é $gcd(k,n) = 1$.
 
-φ(n) is the number of k, 1 ≤ k ≤ n, for which gcd(k,n) = 1.
+Ao iterar por $φ$, cada número inteiro positivo gera uma cadeia decrescente de números terminando em 1. Ex: se começarmos com 5 a sequência 5,4,2,1 é gerada. Aqui está uma lista de todas as cadeias com comprimento 4:
 
-By iterating φ, each positive integer generates a decreasing chain of numbers ending in 1. E.g. if we start with 5 the sequence 5,4,2,1 is generated. Here is a listing of all chains with length 4:
+$$\begin{align} 5,4,2,1 & \\\\ 7,6,2,1 & \\\\ 8,4,2,1 & \\\\ 9,6,2,1 & \\\\ 10,4,2,1 & \\\\ 12,4,2,1 & \\\\ 14,6,2,1 & \\\\ 18,6,2,1 & \end{align}$$
 
-5,4,2,1 7,6,2,1 8,4,2,1 9,6,2,1 10,4,2,1 12,4,2,1 14,6,2,1 18,6,2,1
+Apenas duas dessas cadeias começam com um número primo e sua soma é 12.
 
-Only two of these chains start with a prime, their sum is 12.
-
-What is the sum of all primes less than 40000000 which generate a chain of length 25?
+Qual é a soma de todos os números primos menores do que $40.000.000$ que gera uma cadeia de comprimento 25?
 
 # --hints--
 
-`euler214()` should return 1677366278943.
+`totientChains()` deve retornar `1677366278943`.
 
 ```js
-assert.strictEqual(euler214(), 1677366278943);
+assert.strictEqual(totientChains(), 1677366278943);
 ```
 
 # --seed--
@@ -33,12 +31,12 @@ assert.strictEqual(euler214(), 1677366278943);
 ## --seed-contents--
 
 ```js
-function euler214() {
+function totientChains() {
 
   return true;
 }
 
-euler214();
+totientChains();
 ```
 
 # --solutions--

@@ -14,13 +14,14 @@ Laços for não tem de iterar um de cada vez. Ao alterar nossa `final-expression
 Começaremos em `i = 0` e um laço while `i < 10`. Incrementaremos `i` em 2 a cada iteração com `i += 2`.
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 10; i += 2) {
+const ourArray = [];
+
+for (let i = 0; i < 10; i += 2) {
   ourArray.push(i);
 }
 ```
 
-`ourArray` agora conterá `[0,2,4,6,8]`. Vamos mudar nossa `initialization` para que possamos contar por números ímpares.
+`ourArray` agora conterá `[0, 2, 4, 6, 8]`. Vamos mudar nossa `initialization` para que possamos contar por números ímpares.
 
 # --instructions--
 
@@ -34,7 +35,7 @@ Você deve estar usando um laço `for` para isso.
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` deve ser igual a `[1,3,5,7,9]`.
+`myArray` deve ser igual a `[1, 3, 5, 7, 9]`.
 
 ```js
 assert.deepEqual(myArray, [1, 3, 5, 7, 9]);
@@ -52,16 +53,17 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 1; i < 10; i += 2) {
+const myArray = [];
+for (let i = 1; i < 10; i += 2) {
   myArray.push(i);
 }
 ```

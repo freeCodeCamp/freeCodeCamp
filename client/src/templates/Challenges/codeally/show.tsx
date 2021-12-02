@@ -7,16 +7,22 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
+import { createSelector } from 'reselect';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
-import {
-  ChallengeNodeType,
-  ChallengeMetaType
-} from '../../../redux/prop-types';
+import { webhookTokenSelector } from '../../../redux';
+import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import { updateChallengeMeta, challengeMounted } from '../redux';
 // Redux
-const mapStateToProps = () => ({});
+
+const mapStateToProps = createSelector(
+  webhookTokenSelector,
+  (webhookToken: string | null) => ({
+    webhookToken
+  })
+);
+
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
@@ -28,11 +34,12 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 // Types
 interface ShowCodeAllyProps {
-  data: { challengeNode: ChallengeNodeType };
+  data: { challengeNode: ChallengeNode };
   pageContext: {
-    challengeMeta: ChallengeMetaType;
+    challengeMeta: ChallengeMeta;
   };
-  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+  updateChallengeMeta: (arg0: ChallengeMeta) => void;
+  webhookToken: string | null;
 }
 
 // Component
@@ -51,10 +58,19 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
 
   render() {
     const {
-      title,
-      fields: { blockName },
-      url
-    } = this.props.data.challengeNode;
+      data: {
+        challengeNode: {
+          title,
+          fields: { blockName },
+          url
+        }
+      },
+      webhookToken = null
+    } = this.props;
+
+    const envVariables = webhookToken
+      ? `&envVariables=CODEROAD_WEBHOOK_TOKEN=${webhookToken}`
+      : '';
 
     return (
       <LearnLayout>
@@ -63,7 +79,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           className='codeally-frame'
           // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
-          src={`http://codeally.io/embed/?repoUrl=${url}`}
+          src={`https://codeally.io/embed/?repoUrl=${url}${envVariables}`}
           title='Editor'
         />
       </LearnLayout>

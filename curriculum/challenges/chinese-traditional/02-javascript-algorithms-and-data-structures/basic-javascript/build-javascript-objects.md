@@ -18,7 +18,7 @@ dashedName: build-javascript-objects
 這裏是一個貓對象的樣本：
 
 ```js
-var cat = {
+const cat = {
   "name": "Whiskers",
   "legs": 4,
   "tails": 1,
@@ -29,7 +29,7 @@ var cat = {
 在此示例中，所有屬性都存儲爲字符串，例如 `name`、`legs` 和 `tails`。 然而，你也可以使用數字作爲屬性。 你甚至可以省略單字字符串屬性中的引號，如下所示：
 
 ```js
-var anotherObject = {
+const anotherObject = {
   make: "Ford",
   5: "five",
   "model": "focus"
@@ -139,18 +139,18 @@ assert(
 ## --seed-contents--
 
 ```js
-var myDog = {
-// Only change code below this line
+const myDog = {
+  // Only change code below this line
 
 
-// Only change code above this line
+  // Only change code above this line
 };
 ```
 
 # --solutions--
 
 ```js
-var myDog = {
+const myDog = {
   "name": "Camper",
   "legs": 4,
   "tails": 1,

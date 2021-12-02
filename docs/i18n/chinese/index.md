@@ -2,15 +2,13 @@
 
 > [!NOTE] 在你继续之前，请花 2 分钟时间快速地阅读我们的[行为守则](https://chinese.freecodecamp.org/news/code-of-conduct/)。 我们在社区中严格执行行为规范，为 freeCodeCamp.org 的所有贡献者营造安全、包容的氛围。
 
-贡献愉快！
-
-欢迎你：
-
-- 创建、更新[课程](#curriculum)，并修复其中的 bug。
-- 帮助我们修复 freeCodeCamp.org 的[学习平台](#learning-platform)中的 bug 。
-- [帮助我们翻译](#translations) freeCodeCamp.org 的内容为各种语言。
+You are welcome to create, update and fix bugs in our [curriculum](#curriculum), help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform), or [help us translate](#translations) freeCodeCamp.org to world languages.
 
 We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
+
+Happy contributing.
+
+---
 
 ## 课程
 
@@ -22,21 +20,17 @@ We answer the most common questions about contributing [in our contributor FAQ](
 
 ## 翻译
 
-我们正在将 freeCodeCamp.org 翻译为世界主要语言。 一些认证已经上线，如 [中文](https://chinese.freecodecamp.org/learn) 和 [西班牙语](https://www.freecodecamp.org/espanol/learn/)。 我们鼓励你阅读[公告](https://www.freecodecamp.org/news/world-language-translation-effort)并分享给你的朋友，让他们对此感到兴奋。
+We are localizing freeCodeCamp.org to major world languages.
 
-**如果你对翻译感兴趣，请阅读[如何翻译 freeCodeCamp 的资源](how-to-translate-files.md)。**
+Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn/), [Italian (Italiano)](https://www.freecodecamp.org/espanol/learn/), [Portuguese (Português)](https://www.freecodecamp.org/espanol/learn/). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort) and share it with your friends to get them excited about this.
+
+**If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
 
 ## 学习平台
 
-我们的学习平台运行于一个现代化的 JavaScript 技术栈上。 上面有许多的组件、工具与库。 它包括 Node.js、MongoDB、OAuth 2.0、React、Gatsby、Webpack，等等。
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-此外，我们还使用
-
-- 基于 Node.js 的 API 服务器
-- 基于 React 的客户端应用程序
-- 和用来评估学习者提交的课程项目的测试脚本。
-
-如果你想对学习平台做出有效的贡献，我们建议对这些工具有一定的熟悉度。
+Broadly, we have a Node.js based API server, a set of React-based client applications, testing scripts to evaluate camper-submitted curriculum projects, and more. If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 
 如果你想帮助我们改进我们的基础代码的话……
 

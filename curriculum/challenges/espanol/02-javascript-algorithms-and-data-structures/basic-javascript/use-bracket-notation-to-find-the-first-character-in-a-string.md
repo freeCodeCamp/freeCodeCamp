@@ -13,13 +13,13 @@ La <dfn>notación de corchetes</dfn> es una forma de obtener un carácter en un 
 
 La mayoría de lenguajes de programación modernos, como JavaScript, no empiezan a contar desde 1 como lo hacen los humanos. Empiezan desde 0. Esto se conoce como indexación <dfn>basada en cero</dfn>.
 
-Por ejemplo, el carácter en el índice 0 de la palabra `Charles` es `C`. Así que si declaramos `var firstName = "Charles"`, puedes obtener el valor de la primera letra de la cadena usando `firstName[0]`.
+Por ejemplo, el carácter en el índice 0 de la palabra `Charles` es `C`. Así que si declaramos `const firstName = "Charles"`, puedes obtener el valor de la primera letra de la cadena usando `firstName[0]`.
 
 Ejemplo:
 
 ```js
-var firstName = "Charles";
-var firstLetter = firstName[0];
+const firstName = "Charles";
+const firstLetter = firstName[0];
 ```
 
 `firstLetter` tendrá una cadena con valor `C`.
@@ -56,8 +56,8 @@ assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```js
 // Setup
-var firstLetterOfLastName = "";
-var lastName = "Lovelace";
+let firstLetterOfLastName = "";
+const lastName = "Lovelace";
 
 // Only change code below this line
 firstLetterOfLastName = lastName; // Change this line
@@ -66,8 +66,8 @@ firstLetterOfLastName = lastName; // Change this line
 # --solutions--
 
 ```js
-var firstLetterOfLastName = "";
-var lastName = "Lovelace";
+let firstLetterOfLastName = "";
+const lastName = "Lovelace";
 
 // Only change code below this line
 firstLetterOfLastName = lastName[0];

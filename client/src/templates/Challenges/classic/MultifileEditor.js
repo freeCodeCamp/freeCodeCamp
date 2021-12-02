@@ -90,40 +90,32 @@ const MultifileEditor = props => {
   // TODO: the tabs mess up the rendering (scroll doesn't work properly and
   // the in-editor description)
 
-  // TODO: the splitters should appear between editors, so logically this
-  // would be best as
-  // editors.map(props => <EditorWrapper ...props>).join(<ReflexSplitter>)
-  // ...probably! As long as we can put keys in the right places.
   const reflexProps = {
     propagateDimensions: true
   };
 
-  let splitterJSXRight, splitterHTMLRight, splitterCSSRight;
-  if (indexjsx) {
-    if (indexhtml || indexcss || indexjs) {
-      splitterJSXRight = true;
-    }
-  }
-  if (indexhtml) {
-    if (indexcss || indexjs) {
-      splitterHTMLRight = true;
-    }
-  }
-  if (indexcss) {
-    if (indexjs) {
-      splitterCSSRight = true;
-    }
-  }
-
-  // TODO: tabs should be dynamically created from the challengeFiles
-  // TODO: the tabs mess up the rendering (scroll doesn't work properly and
-  // the in-editor description)
   const targetEditor = getTargetEditor(challengeFiles);
 
   // Only one editor should be focused and that should happen once, after it has
   // been mounted. This ref allows the editors to co-ordinate, without having to
   // resort to redux.
   const canFocusOnMountRef = useRef(true);
+
+  const editorKeys = [];
+
+  if (indexjsx) editorKeys.push('indexjsx');
+  if (indexhtml) editorKeys.push('indexhtml');
+  if (indexcss) editorKeys.push('indexcss');
+  if (indexjs) editorKeys.push('indexjs');
+
+  const editorAndSplitterKeys = editorKeys.reduce((acc, key) => {
+    if (acc.length === 0) {
+      return [key];
+    } else {
+      return [...acc, `${key}-splitter`, key];
+    }
+  }, []);
+
   return (
     <ReflexContainer
       orientation='horizontal'
@@ -133,88 +125,32 @@ const MultifileEditor = props => {
     >
       <ReflexElement flex={10} {...reflexProps} {...resizeProps}>
         <ReflexContainer orientation='vertical'>
-          {indexjsx && (
-            <ReflexElement {...reflexProps} {...resizeProps}>
-              <Editor
-                canFocusOnMountRef={canFocusOnMountRef}
-                challengeFiles={challengeFiles}
-                containerRef={containerRef}
-                description={targetEditor === 'indexjsx' ? description : null}
-                editorRef={editorRef}
-                fileKey='indexjsx'
-                initialTests={initialTests}
-                key='indexjsx'
-                resizeProps={resizeProps}
-                theme={editorTheme}
-                title={title}
-                usesMultifileEditor={usesMultifileEditor}
-              />
-            </ReflexElement>
-          )}
-          {splitterJSXRight && (
-            <ReflexSplitter propagate={true} {...resizeProps} />
-          )}
-          {indexhtml && (
-            <ReflexElement {...reflexProps} {...resizeProps}>
-              <Editor
-                canFocusOnMountRef={canFocusOnMountRef}
-                challengeFiles={challengeFiles}
-                containerRef={containerRef}
-                description={targetEditor === 'indexhtml' ? description : null}
-                editorRef={editorRef}
-                fileKey='indexhtml'
-                initialTests={initialTests}
-                key='indexhtml'
-                resizeProps={resizeProps}
-                theme={editorTheme}
-                title={title}
-                usesMultifileEditor={usesMultifileEditor}
-              />
-            </ReflexElement>
-          )}
-          {splitterHTMLRight && (
-            <ReflexSplitter propagate={true} {...resizeProps} />
-          )}
-          {indexcss && (
-            <ReflexElement {...reflexProps} {...resizeProps}>
-              <Editor
-                canFocusOnMountRef={canFocusOnMountRef}
-                challengeFiles={challengeFiles}
-                containerRef={containerRef}
-                description={targetEditor === 'indexcss' ? description : null}
-                editorRef={editorRef}
-                fileKey='indexcss'
-                initialTests={initialTests}
-                key='indexcss'
-                resizeProps={resizeProps}
-                theme={editorTheme}
-                title={title}
-                usesMultifileEditor={usesMultifileEditor}
-              />
-            </ReflexElement>
-          )}
-          {splitterCSSRight && (
-            <ReflexSplitter propagate={true} {...resizeProps} />
-          )}
-
-          {indexjs && (
-            <ReflexElement {...reflexProps} {...resizeProps}>
-              <Editor
-                canFocusOnMountRef={canFocusOnMountRef}
-                challengeFiles={challengeFiles}
-                containerRef={containerRef}
-                description={targetEditor === 'indexjs' ? description : null}
-                editorRef={editorRef}
-                fileKey='indexjs'
-                initialTests={initialTests}
-                key='indexjs'
-                resizeProps={resizeProps}
-                theme={editorTheme}
-                title={title}
-                usesMultifileEditor={usesMultifileEditor}
-              />
-            </ReflexElement>
-          )}
+          {editorAndSplitterKeys.map(key => {
+            const isSplitter = key.endsWith('-splitter');
+            if (isSplitter) {
+              return (
+                <ReflexSplitter propagate={true} {...resizeProps} key={key} />
+              );
+            } else {
+              return (
+                <ReflexElement {...reflexProps} {...resizeProps} key={key}>
+                  <Editor
+                    canFocusOnMountRef={canFocusOnMountRef}
+                    challengeFiles={challengeFiles}
+                    containerRef={containerRef}
+                    description={targetEditor === key ? description : null}
+                    editorRef={editorRef}
+                    fileKey={key}
+                    initialTests={initialTests}
+                    resizeProps={resizeProps}
+                    theme={editorTheme}
+                    title={title}
+                    usesMultifileEditor={usesMultifileEditor}
+                  />
+                </ReflexElement>
+              );
+            }
+          })}
         </ReflexContainer>
       </ReflexElement>
     </ReflexContainer>
@@ -224,8 +160,4 @@ const MultifileEditor = props => {
 MultifileEditor.displayName = 'MultifileEditor';
 MultifileEditor.propTypes = propTypes;
 
-// NOTE: withRef gets replaced by forwardRef in react-redux 6,
-// https://github.com/reduxjs/react-redux/releases/tag/v6.0.0
-export default connect(mapStateToProps, mapDispatchToProps, null, {
-  withRef: true
-})(MultifileEditor);
+export default connect(mapStateToProps, mapDispatchToProps)(MultifileEditor);

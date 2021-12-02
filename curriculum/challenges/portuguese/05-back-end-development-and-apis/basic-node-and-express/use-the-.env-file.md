@@ -22,6 +22,8 @@ Em seguida, no manipulador de rota `/json` do GET que você criou no último des
 
 **Observação:** se você estiver usando o Replit, você não poderá criar um arquivo `.env`. Em vez disso, use a aba embutida <dfn>SECRETS</dfn> para adicionar a variável.
 
+Se você estiver trabalhando localmente, precisará do pacote `dotenv`. Ele carrega as variáveis de ambiente do seu arquivo `.env` em `process.env`. Instale-o com `npm install dotenv`. Em seguida, na parte superior do seu arquivo `myApp.js`, importe e carregue as variáveis com `require('dotenv').config()`.
+
 # --hints--
 
 A resposta do endpoint `/json` deve ser alterada de acordo com a variável de ambiente `MESSAGE_STYLE`

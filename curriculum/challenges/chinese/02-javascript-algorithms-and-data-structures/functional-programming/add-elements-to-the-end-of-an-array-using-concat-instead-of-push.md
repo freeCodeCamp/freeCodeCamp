@@ -13,7 +13,7 @@ dashedName: add-elements-to-the-end-of-an-array-using-concat-instead-of-push
 上一个挑战介绍了 `concat` 方法，这是一种在不改变原始数组的前提下，将数组组合成新数组的方法。 将 `concat` 方法与 `push` 方法做比较。 `push` 将元素添加到调用它的数组的末尾，这样会改变该数组。 举个例子：
 
 ```js
-var arr = [1, 2, 3];
+const arr = [1, 2, 3];
 arr.push([4, 5, 6]);
 ```
 
@@ -71,8 +71,9 @@ function nonMutatingPush(original, newItem) {
 
   // Only change code above this line
 }
-var first = [1, 2, 3];
-var second = [4, 5];
+
+const first = [1, 2, 3];
+const second = [4, 5];
 nonMutatingPush(first, second);
 ```
 
@@ -82,7 +83,6 @@ nonMutatingPush(first, second);
 function nonMutatingPush(original, newItem) {
   return original.concat(newItem);
 }
-var first = [1, 2, 3];
-var second = [4, 5];
-nonMutatingPush(first, second);
+const first = [1, 2, 3];
+const second = [4, 5];
 ```

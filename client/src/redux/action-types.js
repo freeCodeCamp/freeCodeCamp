@@ -29,7 +29,9 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('acceptTerms'),
     ...createAsyncTypes('showCert'),
     ...createAsyncTypes('reportUser'),
-    ...createAsyncTypes('postChargeStripeCard')
+    ...createAsyncTypes('postChargeStripeCard'),
+    ...createAsyncTypes('postWebhookToken'),
+    ...createAsyncTypes('deleteWebhookToken')
   ],
   ns
 );

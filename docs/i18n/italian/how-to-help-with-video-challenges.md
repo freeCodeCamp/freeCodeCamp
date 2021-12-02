@@ -80,12 +80,13 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Come cosa successiva, accedi al video YouYube con quel `videoId`. The URL for the video will be:
-https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
+Come cosa successiva, accedi al video YouYube con quel `videoId`. L'URL di quel video sarà:
+https://www.youtube.com/watch?v=[videoId] (sostisci `videoId` nell'URL con l'ID del video - senza parentesi quadre)
 
-In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
+Nell'esempio sopra, l'URL è 
+https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
+Guarda velocemente il video YouTube con quel videoId e pensa a una domanda a crocette basata sul contenuto del video.
 
 ### Aggiungere la domanda al file markdown
 
@@ -117,7 +118,7 @@ More answers
 1
 ```
 
-Add/Update the question text under the part that shows:
+Aggiungi/Cambia il testo della domanda sotto la parte che dice:
 
 ```
 # --question--
@@ -164,7 +165,7 @@ hello world
 
 ## --text--
 
-What will print out after running this code:
+Cosa verrà visualizzato dopo l'esecuzione di questo codice:
 
 ```py
 width = 15

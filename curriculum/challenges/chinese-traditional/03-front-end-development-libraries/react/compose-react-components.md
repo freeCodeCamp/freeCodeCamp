@@ -14,7 +14,7 @@ dashedName: compose-react-components
 
 在代碼編輯器中，`TypesOfFood` 組件已經渲染了一個名爲 `Vegetables` 的組件。 此外，還有上次挑戰中的 `Fruits` 組件。
 
-在 `Fruits` 中嵌套兩個組件，首先 `NonCitrus`，然後是 `Citrus`， 這兩個組件都已經引入。 接下來，將 `Fruits` 類組件嵌到 `TypesOfFood` 組件中，位於 `h1` 標題下方和 `Vegetables` 上方。 結果應該是一系列嵌套的組件，它們使用兩種不同的組件類型。
+在 `Fruits` 中嵌套兩個組件，首先 `NonCitrus`，然後是 `Citrus`， 這兩個組件都已經引入。 接下來，將 `Fruits` 類組件嵌套到 `TypesOfFood` 組件中，位於 `h1` 標題元素下方和 `Vegetables` 上方。 結果應該是一系列嵌套的組件，它們使用兩種不同的組件類型。
 
 # --hints--
 

@@ -14,11 +14,14 @@ dashedName: accessing-object-properties-with-variables
 以下是一個使用變量來訪問屬性的例子：
 
 ```js
-var dogs = {
-  Fido: "Mutt",  Hunter: "Doberman",  Snoopie: "Beagle"
+const dogs = {
+  Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"
 };
-var myDog = "Hunter";
-var myBreed = dogs[myDog];
+
+const myDog = "Hunter";
+const myBreed = dogs[myDog];
 console.log(myBreed);
 ```
 
@@ -27,14 +30,16 @@ console.log(myBreed);
 使用這一概念的另一種情況是：屬性的名字是在程序運行期間動態收集得到的。如下所示：
 
 ```js
-var someObj = {
+const someObj = {
   propName: "John"
 };
+
 function propPrefix(str) {
-  var s = "prop";
+  const s = "prop";
   return s + str;
 }
-var someProp = propPrefix("Name");
+
+const someProp = propPrefix("Name");
 console.log(someObj[someProp]);
 ```
 
@@ -96,26 +101,25 @@ if(typeof player !== "undefined"){(function(v){return v;})(player);}
 
 ```js
 // Setup
-var testObj = {
+const testObj = {
   12: "Namath",
   16: "Montana",
   19: "Unitas"
 };
 
 // Only change code below this line
-
-var playerNumber;       // Change this line
-var player = testObj;   // Change this line
+const playerNumber = 42;  // Change this line
+const player = testObj;   // Change this line
 ```
 
 # --solutions--
 
 ```js
-var testObj = {
+const testObj = {
   12: "Namath",
   16: "Montana",
   19: "Unitas"
 };
-var playerNumber = 16;
-var player = testObj[playerNumber];
+const playerNumber = 16;
+const player = testObj[playerNumber];
 ```

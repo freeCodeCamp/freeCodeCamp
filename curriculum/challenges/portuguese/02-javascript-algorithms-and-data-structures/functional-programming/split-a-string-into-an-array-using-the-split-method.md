@@ -13,11 +13,11 @@ O método `split` divide uma string em um array de strings. Ela recebe um delimi
 Abaixo há dois exemplos de uso de split, um separando uma string por espaços, e outro por dígitos usando uma expressão regular:
 
 ```js
-var str = "Hello World";
-var bySpace = str.split(" ");
+const str = "Hello World";
+const bySpace = str.split(" ");
 
-var otherString = "How9are7you2today";
-var byDigits = otherString.split(/\d/);
+const otherString = "How9are7you2today";
+const byDigits = otherString.split(/\d/);
 ```
 
 `bySpace` terá o valor `["Hello", "World"]` e `byDigits` terá o valor `["How", "are", "you", "today"]`.
@@ -74,6 +74,7 @@ function splitify(str) {
 
   // Only change code above this line
 }
+
 splitify("Hello World,I-am code");
 ```
 
@@ -81,8 +82,6 @@ splitify("Hello World,I-am code");
 
 ```js
 function splitify(str) {
-  // Only change code below this line
   return str.split(/\W/);
-  // Only change code above this line
 }
 ```

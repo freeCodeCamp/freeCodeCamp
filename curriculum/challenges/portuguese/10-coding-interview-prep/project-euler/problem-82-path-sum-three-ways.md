@@ -1,6 +1,6 @@
 ---
 id: 5900f3be1000cf542c50fed1
-title: 'Problem 82: Path sum: three ways'
+title: 'Problema 82: Soma dos caminhos: três formas'
 challengeType: 5
 forumTopicId: 302196
 dashedName: problem-82-path-sum-three-ways
@@ -8,29 +8,29 @@ dashedName: problem-82-path-sum-three-ways
 
 # --description--
 
-**Note:** This problem is a more challenging version of Problem 81.
+**Observação:** este problema é uma versão mais difícil do Problema 81.
 
-The minimal path sum in the 5 by 5 matrix below, by starting in any cell in the left column and finishing in any cell in the right column, and only moving up, down, and right, is indicated in red and bold; the sum is equal to `994`.
+A soma do caminho mínimo da matriz de 5 por 5 abaixo, iniciando em qualquer célula na coluna da esquerda e terminando em qualquer célula na coluna da direita, e apenas se movendo para cima, para baixo e para a direita, é indicado em vermelho e em negrito. A soma é igual a `994`.
 
   $$\begin{pmatrix} 131 & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\ \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\ 630 & 803 & 746 & 422 & 111\\\\ 537 & 699 & 497 & 121 & 956\\\\ 805 & 732 & 524 & 37 & 331 \end{pmatrix}$$
 
-Find the minimal path sum from the left column to the right column in `matrix`, a 2D array representing a matrix. The maximum matrix size used in tests will be 80 by 80.
+Encontre a soma do caminho mínimo, da coluna da esquerda para a coluna da direita, na `matrix`, um array bidimensional que representa uma matriz. O tamanho máximo da matriz utilizado nos testes será de 80 por 80.
 
 # --hints--
 
-`pathSumThreeWays(testMatrix1)` should return a number.
+`pathSumThreeWays(testMatrix1)` deve retornar um número.
 
 ```js
 assert(typeof pathSumThreeWays(_testMatrix1) === 'number');
 ```
 
-`pathSumThreeWays(testMatrix1)` should return `994`.
+`pathSumThreeWays(testMatrix1)` deve retornar `994`.
 
 ```js
 assert.strictEqual(pathSumThreeWays(_testMatrix1), 994);
 ```
 
-`pathSumThreeWays(testMatrix2)` should return `260324`.
+`pathSumThreeWays(testMatrix2)` deve retornar `260324`.
 
 ```js
 assert.strictEqual(pathSumThreeWays(_testMatrix2), 260324);

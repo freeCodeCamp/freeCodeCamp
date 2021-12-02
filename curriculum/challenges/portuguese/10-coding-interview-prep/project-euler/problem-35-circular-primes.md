@@ -8,7 +8,7 @@ dashedName: problem-35-circular-primes
 
 # --description--
 
-O número 197 é chamado de primo circular porque todas as rotações dos dígitos: 197, 971 e 719 formam números primos.
+O número 197 é chamado de primo circular porque todas as rotações dos algarismos: 197, 971 e 719 formam números primos.
 
 Há treze números primos menores que 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79 e 97.
 

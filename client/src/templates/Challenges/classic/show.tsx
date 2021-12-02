@@ -14,9 +14,9 @@ import LearnLayout from '../../../components/layouts/learn';
 import {
   ChallengeFile,
   ChallengeFiles,
-  ChallengeMetaType,
-  ChallengeNodeType,
-  ResizePropsType,
+  ChallengeMeta,
+  ChallengeNode,
+  ResizeProps,
   Test
 } from '../../../redux/prop-types';
 import { isContained } from '../../../utils/is-contained';
@@ -28,6 +28,9 @@ import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Output from '../components/output';
 import Preview from '../components/preview';
+import ProjectPreviewModal, {
+  PreviewConfig
+} from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
@@ -41,12 +44,15 @@ import {
   initConsole,
   initTests,
   isChallengeCompletedSelector,
-  updateChallengeMeta
+  previewMounted,
+  updateChallengeMeta,
+  openModal,
+  setEditorFocusability
 } from '../redux';
 import { getGuideUrl } from '../utils';
-import MobileLayout from './MobileLayout';
 import MultifileEditor from './MultifileEditor';
 import DesktopLayout from './desktop-layout';
+import MobileLayout from './mobile-layout';
 
 import './classic.css';
 import '../components/test-frame.css';
@@ -68,7 +74,10 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       executeChallenge,
-      cancelTests
+      cancelTests,
+      previewMounted,
+      openModal,
+      setEditorFocusability
     },
     dispatch
   );
@@ -78,7 +87,7 @@ interface ShowClassicProps {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
   createFiles: (arg0: ChallengeFile[]) => void;
-  data: { challengeNode: ChallengeNodeType };
+  data: { challengeNode: ChallengeNode };
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
@@ -86,11 +95,15 @@ interface ShowClassicProps {
   isChallengeCompleted: boolean;
   output: string[];
   pageContext: {
-    challengeMeta: ChallengeMetaType;
+    challengeMeta: ChallengeMeta;
+    projectPreview: PreviewConfig & { showProjectPreview: boolean };
   };
   t: TFunction;
   tests: Test[];
-  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+  updateChallengeMeta: (arg0: ChallengeMeta) => void;
+  openModal: (modal: string) => void;
+  setEditorFocusability: (canFocus: boolean) => void;
+  previewMounted: () => void;
 }
 
 interface ShowClassicState {
@@ -122,7 +135,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   containerRef: React.RefObject<unknown>;
   editorRef: React.RefObject<unknown>;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
-  resizeProps: ResizePropsType;
+  resizeProps: ResizeProps;
 
   constructor(props: ShowClassicProps) {
     super(props);
@@ -231,6 +244,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       initConsole,
       initTests,
       updateChallengeMeta,
+      openModal,
       data: {
         challengeNode: {
           challengeFiles,
@@ -240,11 +254,15 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           helpCategory
         }
       },
-      pageContext: { challengeMeta }
+      pageContext: {
+        challengeMeta,
+        projectPreview: { showProjectPreview }
+      }
     } = this.props;
     initConsole('');
     createFiles(challengeFiles ?? []);
     initTests(tests);
+    if (showProjectPreview) openModal('projectPreview');
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -263,12 +281,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   getChallenge = () => this.props.data.challengeNode;
 
-  getBlockNameTitle() {
-    const {
-      fields: { blockName },
-      title
-    } = this.getChallenge();
-    return `${blockName}: ${title}`;
+  getBlockNameTitle(t: TFunction) {
+    const { block, superBlock, title } = this.getChallenge();
+    return `${t(`intro:${superBlock}.blocks.${block}.title`)}: ${title}`;
   }
 
   getVideoUrl = () => this.getChallenge().videoUrl;
@@ -333,7 +348,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           containerRef={this.containerRef}
           description={description}
           editorRef={this.editorRef}
-          hasEditableBoundaries={this.hasEditableBoundaries()}
           initialTests={tests}
           resizeProps={this.resizeProps}
           title={title}
@@ -359,7 +373,11 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   renderPreview() {
     return (
-      <Preview className='full-height' disableIframe={this.state.resizing} />
+      <Preview
+        className='full-height'
+        disableIframe={this.state.resizing}
+        previewMounted={this.props.previewMounted}
+      />
     );
   }
 
@@ -384,7 +402,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const {
       executeChallenge,
       pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath },
+        projectPreview
       },
       challengeFiles,
       t
@@ -401,11 +420,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
-          <Helmet
-            title={`${t(
-              'learn.learn'
-            )} ${this.getBlockNameTitle()} | freeCodeCamp.org`}
-          />
+          <Helmet title={`${this.getBlockNameTitle(t)} | freeCodeCamp.org`} />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
               editor={this.renderEditor()}
@@ -444,6 +459,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
+          <ProjectPreviewModal previewConfig={projectPreview} />
         </LearnLayout>
       </Hotkeys>
     );
@@ -457,9 +473,6 @@ export default connect(
   mapDispatchToProps
 )(withTranslation()(ShowClassic));
 
-// TODO: handle jsx (not sure why it doesn't get an editableRegion) EDIT:
-// probably because the dummy challenge didn't include it, so Gatsby couldn't
-// infer it.
 export const query = graphql`
   query ClassicChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {

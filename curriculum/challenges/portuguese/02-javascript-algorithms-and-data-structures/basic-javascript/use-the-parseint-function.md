@@ -12,7 +12,7 @@ dashedName: use-the-parseint-function
 A função `parseInt()` analisa uma string e retorna um inteiro. Exemplo:
 
 ```js
-var a = parseInt("007");
+const a = parseInt("007");
 ```
 
 A função acima converte a string `007` para o inteiro `7`. Se o primeiro caractere na string não pode ser convertido em um número, então ele retorna `NaN`.

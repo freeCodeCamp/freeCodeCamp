@@ -13,7 +13,8 @@ Il metodo `some` funziona con gli array per verificare se *un qualunque* element
 Ad esempio, il seguente codice controllerà se almeno un elemento nell'array `numbers` è inferiore a 10:
 
 ```js
-var numbers = [10, 50, 8, 220, 110, 11];
+const numbers = [10, 50, 8, 220, 110, 11];
+
 numbers.some(function(currentValue) {
   return currentValue < 10;
 });
@@ -62,6 +63,7 @@ function checkPositive(arr) {
 
   // Only change code above this line
 }
+
 checkPositive([1, 2, 3, -4, 5]);
 ```
 
@@ -69,9 +71,6 @@ checkPositive([1, 2, 3, -4, 5]);
 
 ```js
 function checkPositive(arr) {
-  // Only change code below this line
   return arr.some(elem => elem > 0);
-  // Only change code above this line
 }
-checkPositive([1, 2, 3, -4, 5]);
 ```

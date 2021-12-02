@@ -12,11 +12,11 @@ Pegue o número 192 e multiplique-o por cada um entre 1, 2 e 3:
 
 $$\begin{align} 192 × 1 = 192\\\\ 192 × 2 = 384\\\\ 192 × 3 = 576\\\\ \end{align}$$
 
-Ao concatenar cada produto, chegamos ao total 192384576. Esse resultado possui 9 dígitos e usa todos os número de 1 a 9 pelo menos uma vez. Chamaremos 192384576 o produto concatenado de 192 e (1, 2, 3).
+Ao concatenar cada produto, chegamos ao total 192384576. Esse resultado possui 9 algarismos e usa todos os números de 1 a 9 pelo menos uma vez. Chamaremos 192384576 o produto concatenado de 192 e (1, 2, 3).
 
 O mesmo pode ser alcançado começando por 9 e multiplicando por 1, 2, 3, 4 e 5. O resultado é o pandigital 918273645, que é o produto concatenado de 9 e (1, 2, 3, 4, 5).
 
-Qual é o maior número pandigital de 1 a `k` com `k` dígitos que pode ser formado como o produto concatenado de um inteiro com (1, 2, ..., `n`) onde `n` > 1?
+Qual é o maior número pandigital de 1 a `k` com `k` algarismos que pode ser formado como o produto concatenado de um inteiro com (1, 2, ..., `n`) onde `n` > 1?
 
 # --hints--
 

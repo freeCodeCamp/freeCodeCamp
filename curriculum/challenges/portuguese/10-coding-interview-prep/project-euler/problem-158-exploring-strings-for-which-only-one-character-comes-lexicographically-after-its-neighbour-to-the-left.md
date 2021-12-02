@@ -1,7 +1,7 @@
 ---
 id: 5900f40a1000cf542c50ff1d
 title: >-
-  Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left
+  Problema 158: Explorar strings para as quais apenas um caractere vem lexicograficamente após seu vizinho à esquerda
 challengeType: 5
 forumTopicId: 301789
 dashedName: >-
@@ -10,28 +10,28 @@ dashedName: >-
 
 # --description--
 
-Taking three different letters from the 26 letters of the alphabet, character strings of length three can be formed.
+Levando em conta três letras diferentes das 26 letras do alfabeto, strings de comprimento três podem ser formadas.
 
-Examples are 'abc', 'hat' and 'zyx'.
+Exemplos são 'abc', 'hat' e 'zyx'.
 
-When we study these three examples we see that for 'abc' two characters come lexicographically after its neighbour to the left.
+Quando analisamos estes três exemplos, verificamos que, para "abc", dois caracteres vêm lexicograficamente depois do vizinho à esquerda.
 
-For 'hat' there is exactly one character that comes lexicographically after its neighbour to the left. For 'zyx' there are zero characters that come lexicographically after its neighbour to the left.
+Para "hat", há exatamente um caractere que vem lexicograficamente depois de seu vizinho à esquerda. Para "zyx", não há caracteres que venham lexicograficamente depois de seu vizinho à esquerda.
 
-In all there are 10400 strings of length 3 for which exactly one character comes lexicographically after its neighbour to the left.
+Ao todo, há 10.400 strings de tamanho 3 para as quais apenas um caractere vem lexicograficamente após seu vizinho à esquerda.
 
-We now consider strings of n ≤ 26 different characters from the alphabet.
+Consideremos agora strings de $n ≤ 26$ caracteres diferentes do alfabeto.
 
-For every n, p(n) is the number of strings of length n for which exactly one character comes lexicographically after its neighbour to the left.
+Para cada $n$, $p(n)$ é o número de strings de comprimento $n$ para as quais exatamente um caractere vem lexicograficamente depois de seu vizinho à esquerda.
 
-What is the maximum value of p(n)?
+Qual é o valor máximo de $p(n)$?
 
 # --hints--
 
-`euler158()` should return 409511334375.
+`lexicographicNeighbours()` deve retornar `409511334375`.
 
 ```js
-assert.strictEqual(euler158(), 409511334375);
+assert.strictEqual(lexicographicNeighbours(), 409511334375);
 ```
 
 # --seed--
@@ -39,12 +39,12 @@ assert.strictEqual(euler158(), 409511334375);
 ## --seed-contents--
 
 ```js
-function euler158() {
+function lexicographicNeighbours() {
 
   return true;
 }
 
-euler158();
+lexicographicNeighbours();
 ```
 
 # --solutions--

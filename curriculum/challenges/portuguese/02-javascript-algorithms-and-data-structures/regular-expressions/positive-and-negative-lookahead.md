@@ -39,7 +39,7 @@ checkPass.test(password);
 
 # --instructions--
 
-Faça com que `pwRegex` capture senhas que têm 5 ou mais caracteres e dois dígitos consecutivos usando lookaheads.
+Use os lookaheads na `pwRegex` para que correspondam a senhas de mais de 5 caracteres e que tenham dois algarismos consecutivos.
 
 # --hints--
 

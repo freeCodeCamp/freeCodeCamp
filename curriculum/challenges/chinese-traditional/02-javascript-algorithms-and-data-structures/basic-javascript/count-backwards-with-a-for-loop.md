@@ -16,13 +16,14 @@ dashedName: count-backwards-with-a-for-loop
 設置 `i = 10`，並且當 `i > 0` 的時候才繼續循環。 我們使用 `i -= 2` 來讓 `i` 每次循環遞減 2。
 
 ```js
-var ourArray = [];
-for (var i = 10; i > 0; i -= 2) {
+const ourArray = [];
+
+for (let i = 10; i > 0; i -= 2) {
   ourArray.push(i);
 }
 ```
 
-循環結束後，`ourArray` 的值爲 `[10,8,6,4,2]`。 讓我們改變初始值和最後的表達式，這樣我們就可以按照奇數從後往前兩兩倒着數。
+`ourArray` 現在將包含 `[10, 8, 6, 4, 2]`。 讓我們改變初始值和最後的表達式，這樣我們就可以按照奇數從後往前兩兩倒着數。
 
 # --instructions--
 
@@ -42,7 +43,7 @@ assert(/for\s*\([^)]+?\)/.test(code));
 assert(code.match(/myArray.push/));
 ```
 
-`myArray` 應該等於 `[9,7,5,3,1]`。
+`myArray` 應該等於 `[9, 7, 5, 3, 1]`。
 
 ```js
 assert.deepEqual(myArray, [9, 7, 5, 3, 1]);
@@ -60,16 +61,17 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 9; i > 0; i -= 2) {
+const myArray = [];
+for (let i = 9; i > 0; i -= 2) {
   myArray.push(i);
 }
 ```

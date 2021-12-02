@@ -12,21 +12,21 @@ dashedName: quoting-strings-with-single-quotes
 I valori <dfn>Stringa</dfn> in JavaScript possono essere scritti con virgolette singole o doppie, purché si inizi e si termini con lo stesso tipo di virgolette. A differenza di alcuni altri linguaggi di programmazione, le virgolette singole e doppie funzionano allo stesso modo in JavaScript.
 
 ```js
-doubleQuoteStr = "This is a string"; 
-singleQuoteStr = 'This is also a string';
+const doubleQuoteStr = "This is a string"; 
+const singleQuoteStr = 'This is also a string';
 ```
 
 Il motivo per cui potresti voler usare un tipo di virgolette piuttosto dell'altro è se volessi usare entrambi in una stringa. Questo potrebbe accadere volendo salvare una conversazione in una stringa e avendo la conversazione tra virgolette. Un altro uso sarebbe salvare un tag `<a>` con vari attributi tra virgolette, tutto all'interno di una stringa.
 
 ```js
-conversation = 'Finn exclaims to Jake, "Algebraic!"';
+const conversation = 'Finn exclaims to Jake, "Algebraic!"';
 ```
 
 Tuttavia, questo diventa un problema se è necessario utilizzare le virgolette più esterne al suo interno. Ricorda, una stringa ha lo stesso tipo di virgolette all'inizio e alla fine. Ma se hai la stessa virgoletta da qualche parte nel mezzo, la stringa si fermerà anzitempo e lancerà un errore.
 
 ```js
-goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
-badStr = 'Finn responds, "Let's go!"';
+const goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
+const badStr = 'Finn responds, "Let's go!"';
 ```
 
 Qui `badStr` genererà un errore.
@@ -71,11 +71,11 @@ assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);
 ## --seed-contents--
 
 ```js
-var myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
+const myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
 ```
 
 # --solutions--
 
 ```js
-var myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
+const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
 ```

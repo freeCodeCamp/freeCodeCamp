@@ -18,7 +18,7 @@ Gli oggetti sono utili per archiviare i dati in modo strutturato e possono rappr
 Ecco un esempio di oggetto gatto (cat):
 
 ```js
-var cat = {
+const cat = {
   "name": "Whiskers",
   "legs": 4,
   "tails": 1,
@@ -29,7 +29,7 @@ var cat = {
 In questo esempio, tutte le proprietà sono memorizzate come stringhe, come `name`, `legs`e `tails`. Per le proprietà puoi anche usare i numeri. Puoi anche omettere le virgolette per le proprietà di tipo stringa di una sola parola, come segue:
 
 ```js
-var anotherObject = {
+const anotherObject = {
   make: "Ford",
   5: "five",
   "model": "focus"
@@ -139,18 +139,18 @@ assert(
 ## --seed-contents--
 
 ```js
-var myDog = {
-// Only change code below this line
+const myDog = {
+  // Only change code below this line
 
 
-// Only change code above this line
+  // Only change code above this line
 };
 ```
 
 # --solutions--
 
 ```js
-var myDog = {
+const myDog = {
   "name": "Camper",
   "legs": 4,
   "tails": 1,

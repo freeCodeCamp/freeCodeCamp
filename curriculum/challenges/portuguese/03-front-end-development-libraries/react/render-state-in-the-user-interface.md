@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-`MyComponent` deve renderizar um título `h1` que está dentro de um único `div`.
+`MyComponent` deve renderizar um elemento de título `h1` que está dentro de um único `div`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-O título `h1` renderizado deve conter apenas texto renderizado do estado do componente.
+O elemento de título `h1` renderizado deve conter apenas texto renderizado do estado do componente.
 
 ```js
 async () => {

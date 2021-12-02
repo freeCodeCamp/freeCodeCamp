@@ -1,6 +1,6 @@
 ---
 id: 58a25c98f9fc0f352b528e7f
-title: Hashing Your Passwords
+title: Hashing de contraseñas
 challengeType: 2
 forumTopicId: 301553
 dashedName: hashing-your-passwords
@@ -8,13 +8,13 @@ dashedName: hashing-your-passwords
 
 # --description--
 
-Going back to the information security section, you may remember that storing plaintext passwords is *never* okay. Now it is time to implement BCrypt to solve this issue.
+Volviendo a la sección de seguridad de la información, puedes recordar que almacenar contraseñas en texto plano *nunca* está bien. Ahora es el momento de implementar BCrypt para resolver este problema.
 
-Add `bcrypt@~5.0.0` as a dependency, and require it in your server. You will need to handle hashing in 2 key areas: where you handle registering/saving a new account, and when you check to see that a password is correct on login.
+Agrega `bcrypt@~5.0.0` como dependencia, y requiérelo en tu servidor. Necesitarás manejar el hashing en 2 áreas clave: donde manejas el registro/guardado de una nueva cuenta, y cuando compruebas que una contraseña es correcta al iniciar sesión.
 
-Currently on our registration route, you insert a user's password into the database like so: `password: req.body.password`. An easy way to implement saving a hash instead is to add the following before your database logic `const hash = bcrypt.hashSync(req.body.password, 12);`, and replacing the `req.body.password` in the database saving with just `password: hash`.
+Actualmente en nuestra ruta de registro, se inserta la contraseña de un usuario en la base de datos así: `password: req.body.password`. Una forma sencilla de implementar el guardado de un hash en su lugar es agregar lo siguiente antes de tu lógica de base de datos `const hash = bcrypt.hashSync(req.body.password, 12);`, y sustituir el `req.body.password` en el guardado de la base de datos por sólo `password: hash`.
 
-Finally, on our authentication strategy, we check for the following in our code before completing the process: `if (password !== user.password) { return done(null, false); }`. After making the previous changes, now `user.password` is a hash. Before making a change to the existing code, notice how the statement is checking if the password is **not** equal then return non-authenticated. With this in mind, your code could look as follows to properly check the password entered against the hash:
+Finalmente, en nuestra estrategia de autenticación, comprobamos lo siguiente en nuestro código antes de completar el proceso: `if (password !== user.password) { return done(null, false); }`. Después de realizar los cambios anteriores, ahora `user.password` es un hash. Antes de hacer un cambio en el código existente, nota que la sentencia está comprobando si la contraseña **no** es igual entonces devuelve no autenticado. Con esto en mente, tu código podría verse como se muestra a continuación para verificar correctamente la contraseña introducida contra el hash:
 
 ```js
 if (!bcrypt.compareSync(password, user.password)) { 
@@ -22,13 +22,13 @@ if (!bcrypt.compareSync(password, user.password)) {
 }
 ```
 
-That is all it takes to implement one of the most important security features when you have to store passwords!
+¡Eso es todo lo que se necesita para implementar una de las características de seguridad más importantes cuando tienes que almacenar contraseñas!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564).
 
 # --hints--
 
-BCrypt should be a dependency.
+BCrypt debe ser una dependencia.
 
 ```js
 (getUserInput) =>
@@ -47,7 +47,7 @@ BCrypt should be a dependency.
   );
 ```
 
-BCrypt should be correctly required and implemented.
+BCrypt debe ser correctamente requerido e implementado.
 
 ```js
 (getUserInput) =>

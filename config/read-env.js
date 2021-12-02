@@ -29,6 +29,7 @@ const {
   ALGOLIA_API_KEY: algoliaAPIKey,
   STRIPE_PUBLIC_KEY: stripePublicKey,
   PAYPAL_CLIENT_ID: paypalClientId,
+  PATREON_CLIENT_ID: patreonClientId,
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges
 } = process.env;
@@ -65,5 +66,9 @@ module.exports = Object.assign(locations, {
     !paypalClientId || paypalClientId === 'id_from_paypal_dashboard'
       ? null
       : paypalClientId,
+  patreonClientId:
+    !patreonClientId || patreonClientId === 'id_from_patreon_dashboard'
+      ? null
+      : patreonClientId,
   showUpcomingChanges: showUpcomingChanges === 'true'
 });

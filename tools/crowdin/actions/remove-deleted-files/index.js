@@ -35,7 +35,12 @@ const removeDeletedFiles = async projectId => {
         return { ...obj, [filename]: 1 };
       }, {});
       for (let { fileId, path: crowdinFilePath } of crowdinFiles) {
-        if (!curriculumLookup.hasOwnProperty(crowdinFilePath)) {
+        if (
+          !Object.prototype.hasOwnProperty.call(
+            curriculumLookup,
+            crowdinFilePath
+          )
+        ) {
           await deleteFile(projectId, fileId, crowdinFilePath);
         }
       }

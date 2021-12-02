@@ -14,14 +14,14 @@ dashedName: understand-string-immutability
 例如，下面的代码：
 
 ```js
-var myStr = "Bob";
+let myStr = "Bob";
 myStr[0] = "J";
 ```
 
 是不会把变量 `myStr` 的值改变成 `Job` 的，因为变量 `myStr` 是不可变的。 注意，这*并不*意味着 `myStr` 永远不能被改变，只是字符串字面量 <dfn>string literal</dfn> 的各个字符不能被改变。 改变 `myStr` 的唯一方法是重新给它赋一个值，例如：
 
 ```js
-var myStr = "Bob";
+let myStr = "Bob";
 myStr = "Job";
 ```
 
@@ -55,7 +55,7 @@ assert(/myStr = "Jello World"/.test(code));
 
 ```js
 // Setup
-var myStr = "Jello World";
+let myStr = "Jello World";
 
 // Only change code below this line
 myStr[0] = "H"; // Change this line
@@ -65,6 +65,6 @@ myStr[0] = "H"; // Change this line
 # --solutions--
 
 ```js
-var myStr = "Jello World";
+let myStr = "Jello World";
 myStr = "Hello World";
 ```

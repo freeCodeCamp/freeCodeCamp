@@ -22,7 +22,7 @@ Puoi utilizzare qualsiasi mix di HTML, JavaScript, CSS, Bootstrap, SASS, React, 
 
 **User Story #4:** Quando inserisco markdown in stile GitHub nell'elemento `#editor`, il testo viene presentato come HTML nell'elemento `#preview` mentre digito (SUGGERIMENTO: Non è necessario che analizzi tu stesso il Markdown - puoi importare la libreria Marked per questo: [https://cdnjs. om/libraries/marked](https://cdnjs.com/libraries/marked)).
 
-**User Story #5:** Quando il mio visualizzatore di markdown viene caricato inizialmente, il testo predefinito nel campo `#editor` dovrebbe contenere markdown valido che rappresenti almeno uno dei seguenti elementi: un'intestazione (dimensione H1), una sotto-intestazione (formato H2), un collegamento, del codice in linea, un blocco di codice, un elemento lista, un blockquote, un'immagine e un testo in grassetto.
+**User Story #5:** Quando il mio visualizzatore di markdown viene caricato inizialmente, il testo predefinito nel campo `#editor` dovrebbe contenere del markdown valido che rappresenti almeno uno dei seguenti elementi: un'intestazione (dimensione H1), una sotto-intestazione (formato H2), un collegamento, del codice in linea, un blocco di codice, un elemento di lista, un blockquote, un'immagine e un testo in grassetto.
 
 **User Story #6:** Quando il mio visualizzatore di markdown viene caricato inizialmente, il markdown predefinito nel campo `#editor` dovrebbe essere presentato come HTML nell'elemento `#preview`.
 

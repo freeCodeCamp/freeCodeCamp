@@ -13,11 +13,11 @@ Il metodo `split` divide una stringa in un array di stringhe. Esso richiede un a
 Ecco un esempio che divide una stringa in base agli spazi, poi un altro in base alle cifre facendo uso di un'espressione regolare:
 
 ```js
-var str = "Hello World";
-var bySpace = str.split(" ");
+const str = "Hello World";
+const bySpace = str.split(" ");
 
-var otherString = "How9are7you2today";
-var byDigits = otherString.split(/\d/);
+const otherString = "How9are7you2today";
+const byDigits = otherString.split(/\d/);
 ```
 
 `bySpace` avrà il valore `["Hello", "World"]` e `byDigits` avrà il valore `["How", "are", "you", "today"]`.
@@ -74,6 +74,7 @@ function splitify(str) {
 
   // Only change code above this line
 }
+
 splitify("Hello World,I-am code");
 ```
 
@@ -81,8 +82,6 @@ splitify("Hello World,I-am code");
 
 ```js
 function splitify(str) {
-  // Only change code below this line
   return str.split(/\W/);
-  // Only change code above this line
 }
 ```

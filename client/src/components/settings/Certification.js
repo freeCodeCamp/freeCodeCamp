@@ -17,6 +17,7 @@ import {
 } from '../../resources/cert-and-project-map';
 
 import { maybeUrlRE } from '../../utils';
+import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
 
@@ -130,7 +131,7 @@ const isCertMapSelector = createSelector(
 
 const honestyInfoMessage = {
   type: 'info',
-  message: 'flash.honest-first'
+  message: FlashMessages.HonestFirst
 };
 
 const initialState = {

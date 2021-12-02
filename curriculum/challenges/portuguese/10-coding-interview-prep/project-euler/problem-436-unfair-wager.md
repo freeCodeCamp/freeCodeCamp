@@ -1,6 +1,6 @@
 ---
 id: 5900f5221000cf542c510033
-title: 'Problem 436: Unfair wager'
+title: 'Problema 436: Aposta injusta'
 challengeType: 5
 forumTopicId: 302107
 dashedName: problem-436-unfair-wager
@@ -8,30 +8,32 @@ dashedName: problem-436-unfair-wager
 
 # --description--
 
-Julie proposes the following wager to her sister Louise.
+Julie propõe a seguinte aposta à sua irmã Louise.
 
-She suggests they play a game of chance to determine who will wash the dishes.
+Ela sugere que joguem um jogo de azar para determinar quem lavará a louça.
 
-For this game, they shall use a generator of independent random numbers uniformly distributed between 0 and 1.
+Para esse jogo, elas usarão um gerador de números aleatórios independentes distribuídos uniformemente entre 0 e 1.
 
-The game starts with S = 0.
+O jogo começa com $S = 0$.
 
-The first player, Louise, adds to S different random numbers from the generator until S > 1 and records her last random number 'x'.
+O primeiro jogador, Louise, adiciona a $S$ números aleatórios diferentes do gerador até $S > 1$ e registra seu último número aleatório '$x$'.
 
-The second player, Julie, continues adding to S different random numbers from the generator until S > 2 and records her last random number 'y'.
+O segundo jogador, Julie, continua a adicionar a $S$ números aleatórios diferentes do gerador até $S > 2$ e registra seu último número aleatório '$y$'.
 
-The player with the highest number wins and the loser washes the dishes, i.e. if y > x the second player wins.
+O jogador com o maior número ganha e o perdedor lava a louça, ou seja, se $y > x$ o segundo jogador vence.
 
-For example, if the first player draws 0.62 and 0.44, the first player turn ends since 0.62+0.44 > 1 and x = 0.44. If the second players draws 0.1, 0.27 and 0.91, the second player turn ends since 0.62+0.44+0.1+0.27+0.91 > 2 and y = 0.91. Since y > x, the second player wins.
+Por exemplo, se o primeiro jogador tem 0,62 e 0,44, a vez do primeiro jogador termina, já que $0,62 + 0,44 > 1$ e $x = 0,44$. Se o segundo jogador tem 0,1, 0,27 e 0,91, a vez do segundo jogador termina, já que $0,62 + 0,44 + 0,1 + 0,27 + 0,91 > 2$ e $y = 0,91$. Como $y > x$, o segundo jogador vence.
 
-Louise thinks about it for a second, and objects: "That's not fair". What is the probability that the second player wins? Give your answer rounded to 10 places behind the decimal point in the form 0.abcdefghij
+Louise pensa por uns instantes e declara: "Isso não é justo".
+
+Qual é a probabilidade de o segundo jogador vencer? Arredonde sua resposta para até 10 casas decimais usando o formato 0.abcdefghij
 
 # --hints--
 
-`euler436()` should return 0.5276662759.
+`unfairWager()` deve retornar `0.5276662759`.
 
 ```js
-assert.strictEqual(euler436(), 0.5276662759);
+assert.strictEqual(unfairWager(), 0.5276662759);
 ```
 
 # --seed--
@@ -39,12 +41,12 @@ assert.strictEqual(euler436(), 0.5276662759);
 ## --seed-contents--
 
 ```js
-function euler436() {
+function unfairWager() {
 
   return true;
 }
 
-euler436();
+unfairWager();
 ```
 
 # --solutions--

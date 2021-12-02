@@ -35,7 +35,7 @@ curried(1)(2)
 Isso é útil em seu programa quando você não pode fornecer todos os argumentos para uma função de uma só vez. Você pode salvar cada chamada de função em uma variável, que será uma referência à função retornada que recebe o próximo argumento quando ele estiver disponível. Um exemplo usando a função do exemplo acima:
 
 ```js
-var funcForY = curried(1);
+const funcForY = curried(1);
 console.log(funcForY(2)); // 3
 ```
 
@@ -45,7 +45,8 @@ Da mesma forma, <dfn>aplicação parcial</dfn> pode ser descrita como a aplicaç
 function impartial(x, y, z) {
   return x + y + z;
 }
-var partialFn = impartial.bind(this, 1, 2);
+
+const partialFn = impartial.bind(this, 1, 2);
 partialFn(10); // 13
 ```
 
@@ -90,6 +91,7 @@ function add(x) {
 
   // Only change code above this line
 }
+
 add(10)(20)(30);
 ```
 

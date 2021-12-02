@@ -12,7 +12,7 @@ dashedName: use-the-parseint-function
 La función `parseInt()` analiza una cadena y devuelve un entero. A continuación, te presentamos un ejemplo:
 
 ```js
-var a = parseInt("007");
+const a = parseInt("007");
 ```
 
 La función anterior convierte la cadena `007` al entero `7`. Si el primer carácter de la cadena no puede ser convertido en un número, entonces devuelve `NaN`.

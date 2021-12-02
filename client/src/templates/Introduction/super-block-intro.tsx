@@ -10,10 +10,12 @@ import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import DonateModal from '../../components/Donation/DonationModal';
+import { SuperBlocks } from '../../../../config/certification-settings';
+import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
+import WebhookToken from '../../components/settings/webhook-token';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
@@ -22,14 +24,10 @@ import {
   tryToShowDonationModal,
   userSelector
 } from '../../redux';
-import {
-  MarkdownRemarkType,
-  AllChallengeNodeType,
-  UserType
-} from '../../redux/prop-types';
-import Block from './components/Block';
-import CertChallenge from './components/CertChallenge';
-import SuperBlockIntro from './components/SuperBlockIntro';
+import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
+import Block from './components/block';
+import CertChallenge from './components/cert-challenge';
+import SuperBlockIntro from './components/super-block-intro';
 import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
@@ -43,8 +41,8 @@ type FetchState = {
 type SuperBlockProp = {
   currentChallengeId: string;
   data: {
-    markdownRemark: MarkdownRemarkType;
-    allChallengeNode: AllChallengeNodeType;
+    markdownRemark: MarkdownRemark;
+    allChallengeNode: AllChallengeNode;
   };
   expandedState: {
     [key: string]: boolean;
@@ -57,12 +55,12 @@ type SuperBlockProp = {
   t: TFunction;
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
-  user: UserType;
+  user: User;
 };
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
 
-const mapStateToProps = (state: unknown) => {
+const mapStateToProps = (state: Record<string, unknown>) => {
   return createSelector(
     currentChallengeIdSelector,
     isSignedInSelector,
@@ -74,7 +72,7 @@ const mapStateToProps = (state: unknown) => {
       isSignedIn,
       signInLoading: boolean,
       fetchState: FetchState,
-      user: UserType
+      user: User
     ) => ({
       currentChallengeId,
       isSignedIn,
@@ -124,7 +122,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     if (
       location.state &&
       typeof location.state === 'object' &&
-      location.state.hasOwnProperty('breadcrumbBlockClick')
+      Object.prototype.hasOwnProperty.call(
+        location.state,
+        'breadcrumbBlockClick'
+      )
     ) {
       return location.state.breadcrumbBlockClick;
     }
@@ -175,7 +176,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nTitle =
-    superBlock === 'coding-interview-prep'
+    superBlock === SuperBlocks.CodingInterviewPrep
       ? i18nSuperBlock
       : t(`intro:misc-text.certification`, {
           cert: i18nSuperBlock
@@ -191,6 +192,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size={2} />
             <SuperBlockIntro superBlock={superBlock} />
+            {superBlock === 'relational-databases' && isSignedIn && (
+              <WebhookToken isSuperBlockPage={true} />
+            )}
             <Spacer size={2} />
             <h2 className='text-center big-subheading'>
               {t(`intro:misc-text.courses`)}
@@ -209,7 +213,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                   {blockDashedName !== 'project-euler' ? <Spacer /> : null}
                 </Fragment>
               ))}
-              {superBlock !== 'coding-interview-prep' && (
+              {superBlock !== SuperBlocks.CodingInterviewPrep && (
                 <div>
                   <CertChallenge
                     superBlock={superBlock}

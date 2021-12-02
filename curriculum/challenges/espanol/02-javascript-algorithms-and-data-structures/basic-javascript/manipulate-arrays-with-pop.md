@@ -16,8 +16,8 @@ Otra manera de cambiar los datos en un arreglo es con la función `.pop()`.
 Cualquier tipo de entrada puede ser sacada de un arreglo: números, cadenas, incluso arreglos anidados.
 
 ```js
-var threeArr = [1, 4, 6];
-var oneDown = threeArr.pop();
+const threeArr = [1, 4, 6];
+const oneDown = threeArr.pop();
 console.log(oneDown);
 console.log(threeArr);
 ```
@@ -26,7 +26,7 @@ El primer `console.log` mostrará el valor `6` y el segundo mostrará el valor `
 
 # --instructions--
 
-Utiliza la función `.pop()` para eliminar el último elemento de `myArray`, asignando el valor sacado a `removedFromMyArray`.
+Utiliza la función `.pop()` para eliminar el último elemento de `myArray`, y asigna el valor sacado a un variable nuevo `removedFromMyArray`.
 
 # --hints--
 
@@ -69,22 +69,22 @@ assert(
 ## --after-user-code--
 
 ```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 ## --seed-contents--
 
 ```js
 // Setup
-var myArray = [["John", 23], ["cat", 2]];
+const myArray = [["John", 23], ["cat", 2]];
 
 // Only change code below this line
-var removedFromMyArray;
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["cat", 2]];
-var removedFromMyArray = myArray.pop();
+const myArray = [["John", 23], ["cat", 2]];
+const removedFromMyArray = myArray.pop();
 ```

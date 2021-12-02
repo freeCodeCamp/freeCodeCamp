@@ -16,7 +16,7 @@ dashedName: manipulate-arrays-with-unshift
 示例：
 
 ```js
-var ourArray = ["Stimpson", "J", "cat"];
+const ourArray = ["Stimpson", "J", "cat"];
 ourArray.shift();
 ourArray.unshift("Happy");
 ```
@@ -25,7 +25,7 @@ ourArray.unshift("Happy");
 
 # --instructions--
 
-使用 `unshift()` 函数把 `["Paul",35]` 加入到 `myArray` 的头部。
+使用 `unshift()` 将 `["Paul", 35]` 添加到 `myArray` 变量的开头。
 
 # --hints--
 
@@ -63,16 +63,17 @@ assert(
 
 ```js
 // Setup
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 myArray.shift();
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["dog", 3]];
+const myArray = [["John", 23], ["dog", 3]];
 myArray.shift();
 myArray.unshift(["Paul", 35]);
 ```

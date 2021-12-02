@@ -16,7 +16,7 @@ In un gioco "Mad Libs" ti vengono fornite frasi con alcune parole mancanti, come
 Considera questa frase: It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**. Questa frase ha tre parti mancanti - un aggettivo, un verbo e un avverbio, e possiamo aggiungere parole di nostra scelta per completarla. Possiamo quindi assegnare la frase completata a una variabile come segue:
 
 ```js
-var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
+const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
 ```
 
 # --instructions--
@@ -84,24 +84,24 @@ const removeAssignments = str => str
 ## --seed-contents--
 
 ```js
-var myNoun = "dog";
-var myAdjective = "big";
-var myVerb = "ran";
-var myAdverb = "quickly";
+const myNoun = "dog";
+const myAdjective = "big";
+const myVerb = "ran";
+const myAdverb = "quickly";
 
 // Only change code below this line
-var wordBlanks = ""; // Change this line
+const wordBlanks = ""; // Change this line
 // Only change code above this line
 ```
 
 # --solutions--
 
 ```js
-var myNoun = "dog";
-var myAdjective = "big";
-var myVerb = "ran";
-var myAdverb = "quickly";
+const myNoun = "dog";
+const myAdjective = "big";
+const myVerb = "ran";
+const myAdverb = "quickly";
 
-var wordBlanks = "Once there was a " + myNoun + " which was very " + myAdjective + ". ";
+let wordBlanks = "Once there was a " + myNoun + " which was very " + myAdjective + ". ";
 wordBlanks += "It " + myVerb + " " + myAdverb + " around the yard.";
 ```

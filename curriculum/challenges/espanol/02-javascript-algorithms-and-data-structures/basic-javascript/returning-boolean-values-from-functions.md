@@ -14,7 +14,7 @@ Podrás recordar que en [Comparación con el operador de igualdad](/learn/javasc
 A veces la gente usa una sentencia `if/else` para hacer una comparación, como esta:
 
 ```js
-function isEqual(a,b) {
+function isEqual(a, b) {
   if (a === b) {
     return true;
   } else {
@@ -26,7 +26,7 @@ function isEqual(a,b) {
 Pero hay una mejor manera de hacer esto. Puesto que `===` devuelve `true` o `false`, podemos devolver el resultado de la comparación:
 
 ```js
-function isEqual(a,b) {
+function isEqual(a, b) {
   return a === b;
 }
 ```
@@ -37,13 +37,13 @@ Corrige la función `isLess` para eliminar las sentencias `if/else`.
 
 # --hints--
 
-`isLess(10,15)` debe devolver `true`
+`isLess(10, 15)` debe devolver `true`
 
 ```js
 assert(isLess(10, 15) === true);
 ```
 
-`isLess(15,10)` debe devolver `false`
+`isLess(15, 10)` debe devolver `false`
 
 ```js
 assert(isLess(15, 10) === false);

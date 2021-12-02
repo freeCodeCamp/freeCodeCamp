@@ -1,6 +1,6 @@
 ---
 id: 5900f47f1000cf542c50ff91
-title: 'Problem 274: Divisibility Multipliers'
+title: 'Problema 274: Multiplicadores de divisibilidade'
 challengeType: 5
 forumTopicId: 301924
 dashedName: problem-274-divisibility-multipliers
@@ -8,26 +8,28 @@ dashedName: problem-274-divisibility-multipliers
 
 # --description--
 
-For each integer p > 1 coprime to 10 there is a positive divisibility multiplier m &lt; p which preserves divisibility by p for the following function on any positive integer, n:
+Para cada número inteiro $p > 1$ coprimo de 10, há um multiplicador positivo de divisibilidade $m &lt; p$ que preserva a divisibilidade por $p$ para a seguinte função em qualquer número inteiro positivo, $n$:
 
-f(n) = (all but the last digit of n) + (the last digit of n) \* m
+$f(n) = (\text{todos exceto o último algarismo de} \\; n) + (\text{o último algarismo de} \\; n) \times m$
 
-That is, if m is the divisibility multiplier for p, then f(n) is divisible by p if and only if n is divisible by p.
+Ou seja, se $m$ for o multiplicador de divisibilidade para $p$, então $f(n)$ é divisível por $p$ se e somente se $n$ for divisível por $p$.
 
-(When n is much larger than p, f(n) will be less than n and repeated application of f provides a multiplicative divisibility test for p.)
+Quando $n$ for muito maior que $p$, $f(n)$ será menor que $n$ e a aplicação repetida de $f$ fornecerá um teste de multiplicador de divisibilidade para $p$.
 
-For example, the divisibility multiplier for 113 is 34.
+Por exemplo, o multiplicador de divisibilidade para 113 é 34.
 
-f(76275) = 7627 + 5 *34 = 7797 : 76275 and 7797 are both divisible by 113f(12345) = 1234 + 5* 34 = 1404 : 12345 and 1404 are both not divisible by 113
+$f(76275) = 7627 + 5 \times 34 = 7797$: 76275 e 7797 são divisíveis por 113
 
-The sum of the divisibility multipliers for the primes that are coprime to 10 and less than 1000 is 39517. What is the sum of the divisibility multipliers for the primes that are coprime to 10 and less than 107?
+$f(12345) = 1234 + 5 \times 34 = 1404$: 12345 e 1404 não são divisíveis por 113
+
+A soma dos multiplicadores de divisibilidade dos números primos que são coprimos de 10 e menores que 1000 é 39517. Qual é a soma dos multiplicadores de divisibilidade dos números primos que são coprimos de 10 e menores que ${10}^7$?
 
 # --hints--
 
-`euler274()` should return 1601912348822.
+`divisibilityMultipliers()` deve retornar `1601912348822`.
 
 ```js
-assert.strictEqual(euler274(), 1601912348822);
+assert.strictEqual(divisibilityMultipliers(), 1601912348822);
 ```
 
 # --seed--
@@ -35,12 +37,12 @@ assert.strictEqual(euler274(), 1601912348822);
 ## --seed-contents--
 
 ```js
-function euler274() {
+function divisibilityMultipliers() {
 
   return true;
 }
 
-euler274();
+divisibilityMultipliers();
 ```
 
 # --solutions--

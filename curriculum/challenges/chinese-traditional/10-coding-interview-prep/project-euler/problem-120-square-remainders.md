@@ -1,6 +1,6 @@
 ---
 id: 5900f3e41000cf542c50fef7
-title: 'Problem 120: Square remainders'
+title: '問題 120：平方餘數'
 challengeType: 5
 forumTopicId: 301747
 dashedName: problem-120-square-remainders
@@ -8,15 +8,15 @@ dashedName: problem-120-square-remainders
 
 # --description--
 
-Let `r` be the remainder when ${(a − 1)}^n + {(a + 1)}^n$ is divided by $a^2$.
+將 `r` 記爲當 ${(a − 1)}^n + {(a + 1)}^n$ 除以 $a^2$ 的餘數。
 
-For example, if $a = 7$ and $n = 3$, then $r = 42: 6^3 + 8^3 = 728 ≡ 42 \\ \text{mod}\\ 49$. And as `n` varies, so too will `r`, but for $a = 7$ it turns out that $r_{max} = 42$.
+例如，如果 $a = 7$ 且 $n = 3$，則 $r = 42: 6^3 + 8^3 = 728 ≡ 42 \\ \text{mod}\\ 49$。 `r` 會隨着 `n` 的變化而變化，但對於 $a = 7$，會有 $r_{max} = 42$。
 
-For $3 ≤ a ≤ 1000$, find $\sum{r}_{max}$.
+對於 $3 ≤ a ≤ 1000$，求 $\sum{r}_{max}$。
 
 # --hints--
 
-`squareRemainders()` should return `333082500`.
+`squareRemainders()` 應該返回 `333082500`。
 
 ```js
 assert.strictEqual(squareRemainders(), 333082500);
