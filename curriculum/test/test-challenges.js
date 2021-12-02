@@ -196,6 +196,7 @@ async function setup() {
   }
 
   const meta = {};
+  const fullMeta = {};
   for (const challenge of challenges) {
     const dashedBlockName = challenge.block;
     if (!meta[dashedBlockName]) {
@@ -203,9 +204,13 @@ async function setup() {
         await getMetaForBlock(dashedBlockName)
       ).challengeOrder;
     }
+    if (!fullMeta[dashedBlockName]) {
+      fullMeta[dashedBlockName] = await getMetaForBlock(dashedBlockName);
+    }
   }
   return {
     meta,
+    fullMeta,
     challenges,
     lang
   };
@@ -248,10 +253,43 @@ async function getChallenges(lang) {
   return sortChallenges(challenges);
 }
 
-function populateTestsForLang({ lang, challenges, meta }) {
+function populateTestsForLang({ lang, challenges, meta, fullMeta }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
+
+  describe('Assert meta order', function () {
+    // This array can be used to skip a superblock - we'll use this
+    // when we are working on the new project-based curriculum for
+    // a superblock (because keeping those challenges in order is
+    // tricky and needs cleaning up before deploying).
+    const superBlocksUnderDevelopment = ['responsive-web-design'];
+    const superBlocks = new Set([
+      ...Object.values(fullMeta)
+        .map(el => el.superBlock)
+        .filter(el => !superBlocksUnderDevelopment.includes(el))
+    ]);
+    superBlocks.forEach(superBlock => {
+      const filteredMeta = Object.values(fullMeta)
+        .filter(el => el.superBlock === superBlock)
+        .sort((a, b) => a.order - b.order);
+      if (!filteredMeta.length) {
+        return;
+      }
+      it(`${superBlock} should have the same order in every meta`, function () {
+        const firstOrder = filteredMeta[0].superOrder;
+        assert.isTrue(
+          filteredMeta.every(el => el.superOrder === firstOrder),
+          'The superOrder properties are mismatched.'
+        );
+      });
+      filteredMeta.forEach((meta, index) => {
+        it(`${meta.superBlock} ${meta.name} must be in order`, function () {
+          assert.equal(meta.order, index + 1);
+        });
+      });
+    });
+  });
 
   describe(`Check challenges (${lang})`, function () {
     this.timeout(5000);
