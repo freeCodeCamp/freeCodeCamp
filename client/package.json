@@ -137,7 +137,7 @@
     "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.2",
     "copy-webpack-plugin": "9.1.0",
-    "core-js": "^2.6.12",
+    "core-js": "2.6.12",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.26",
     "jest-json-schema-extended": "1.0.1",
     "monaco-editor-webpack-plugin": "4.2.0",
