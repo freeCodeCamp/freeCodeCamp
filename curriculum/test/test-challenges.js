@@ -259,11 +259,17 @@ function populateTestsForLang({ lang, challenges, meta, fullMeta }) {
   const validateChallenge = challengeSchemaValidator();
 
   describe('Assert meta order', function () {
-    // This array can be used to skip a superblock - we'll use this
-    // when we are working on the new project-based curriculum for
-    // a superblock (because keeping those challenges in order is
-    // tricky and needs cleaning up before deploying).
-    const superBlocksUnderDevelopment = ['responsive-web-design'];
+    /** This array can be used to skip a superblock - we'll use this
+     * when we are working on the new project-based curriculum for
+     * a superblock (because keeping those challenges in order is
+     * tricky and needs cleaning up before deploying).
+     * TODO: determine approach for new certifications being upcoming changes,
+     * thereby breaking the tests.
+     */
+    const superBlocksUnderDevelopment = [
+      'certifications',
+      'responsive-web-design'
+    ];
     const superBlocks = new Set([
       ...Object.values(fullMeta)
         .map(el => el.superBlock)
