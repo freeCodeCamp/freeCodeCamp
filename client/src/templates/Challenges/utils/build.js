@@ -51,17 +51,10 @@ const composeFunctions = (...fns) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
 function buildSourceMap(challengeFiles) {
-  // TODO: concatenating the source/contents is a quick hack for multi-file
-  // editing. It is used because all the files (js, html and css) end up with
-  // the same name 'index'. This made the last file the only file to  appear in
-  // sources.
-  // A better solution is to store and handle them separately. Perhaps never
-  // setting the name to 'index'. Use 'contents' instead?
-  // TODO: is file.source ever defined?
+  // TODO: rename sources.index to sources.contents.
   const source = challengeFiles.reduce(
     (sources, challengeFile) => {
-      sources[challengeFile.name] +=
-        challengeFile.source || challengeFile.contents;
+      sources.index += challengeFile.source || challengeFile.contents;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },

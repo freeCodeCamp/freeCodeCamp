@@ -14,12 +14,20 @@ function defaultFile(lang, id) {
   return {
     fileKey: `index${lang}`,
     ext: lang,
-    name: 'index',
+    name: getFilenames(lang),
     contents: '',
     head: '',
     tail: '',
     id
   };
+}
+
+function getFilenames(lang) {
+  const langToFilename = {
+    js: 'script',
+    css: 'styles'
+  };
+  return langToFilename[lang] ?? 'index';
 }
 
 function getFileVisitor(seeds, seedKey, validate) {
