@@ -9,7 +9,6 @@ import {
   ResizeProps
 } from '../../../redux/prop-types';
 import ActionRow from './action-row';
-import EditorTabs from './editor-tabs';
 
 const { showUpcomingChanges } = envData;
 
@@ -33,7 +32,6 @@ interface DesktopLayoutProps {
   resizeProps: ResizeProps;
   superBlock: string;
   testOutput: ReactElement;
-  usesMultifileEditor: boolean;
 }
 
 const reflexProps = {
@@ -78,8 +76,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     layoutState,
     preview,
     hasEditableBoundaries,
-    superBlock,
-    usesMultifileEditor
+    superBlock
   } = props;
 
   const challengeFile = getChallengeFile();
@@ -90,12 +87,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const displayConsole = projectBasedChallenge ? showConsole : true;
   const { codePane, editorPane, instructionPane, previewPane, testsPane } =
     layoutState;
-
-  const displayEditorTabs =
-    challengeFile &&
-    showUpcomingChanges &&
-    !hasEditableBoundaries &&
-    usesMultifileEditor;
 
   return (
     <div className='desktop-layout'>
@@ -120,7 +111,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
 
         <ReflexElement flex={editorPane.flex} {...resizeProps}>
-          {displayEditorTabs && <EditorTabs />}
           {challengeFile && (
             <ReflexContainer
               key={challengeFile.fileKey}
