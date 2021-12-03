@@ -86,22 +86,28 @@ Your code should have a `link` element.
 assert(/<link/.test(code))
 ```
 
-Your `href` attribute should have the value `./styles.css`.
+Your `link` element should be within your `head` element.
 
 ```js
-assert(/href\s*=\s*('|")(\.\/)?styles\.css\1/.test(code));
+assert(code.match(/<head>[\w\W\s]*<link[\w\W\s]*\/>[\w\W\s]*<\/head>/i))
 ```
 
-Your `rel` attribute should have the value `stylesheet`.
+Your `link` element should have a `rel` attribute with the value `stylesheet`.
 
 ```js
-assert(/rel\s*=\s*('|")\s*stylesheet\s*\1/.test(code));
+assert.match(code, /<link[\s\S]*?rel=('|"|`)stylesheet\1/)
 ```
 
-Your `link` element should have `href="./styles.css"` and `rel="stylesheet"` attributes.
+Your `link` element should have a `type` attribute with the value `text/css`.
 
 ```js
-assert(/<link(\s+href\s*=\s*("|')(\.\/)?styles\.css\2\s*rel=('|")\s*stylesheet\s*\4|\s+rel\s*=\s*('|")\s*stylesheet\s*\5\s*href\s*=\s*("|')(\.\/)?styles\.css\6)\s*\/?>/.test(code));
+assert.match(code, /<link[\s\S]*?type=('|"|`)text\/css\1/)
+```
+
+Your `link` element should have an `href` attribute with the value `styles.css`.
+
+```js
+assert.match(code, /<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/)
 ```
 
 # --seed--
