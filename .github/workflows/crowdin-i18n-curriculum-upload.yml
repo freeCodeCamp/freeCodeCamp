@@ -15,10 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install Dependencies
-        working-directory: ./tools
-        run: |
-          cd ./crowdin
-          npm ci
+        run: npm ci -w=tools/crowdin --ignore-scripts
 
       - name: Crowdin Upload
         uses: crowdin/github-action@master
