@@ -196,21 +196,14 @@ async function setup() {
   }
 
   const meta = {};
-  const fullMeta = {};
   for (const challenge of challenges) {
     const dashedBlockName = challenge.block;
     if (!meta[dashedBlockName]) {
-      meta[dashedBlockName] = (
-        await getMetaForBlock(dashedBlockName)
-      ).challengeOrder;
-    }
-    if (!fullMeta[dashedBlockName]) {
-      fullMeta[dashedBlockName] = await getMetaForBlock(dashedBlockName);
+      meta[dashedBlockName] = await getMetaForBlock(dashedBlockName);
     }
   }
   return {
     meta,
-    fullMeta,
     challenges,
     lang
   };
@@ -253,7 +246,7 @@ async function getChallenges(lang) {
   return sortChallenges(challenges);
 }
 
-function populateTestsForLang({ lang, challenges, meta, fullMeta }) {
+function populateTestsForLang({ lang, challenges, meta }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
@@ -271,12 +264,12 @@ function populateTestsForLang({ lang, challenges, meta, fullMeta }) {
       'responsive-web-design'
     ];
     const superBlocks = new Set([
-      ...Object.values(fullMeta)
+      ...Object.values(meta)
         .map(el => el.superBlock)
         .filter(el => !superBlocksUnderDevelopment.includes(el))
     ]);
     superBlocks.forEach(superBlock => {
-      const filteredMeta = Object.values(fullMeta)
+      const filteredMeta = Object.values(meta)
         .filter(el => el.superBlock === superBlock)
         .sort((a, b) => a.order - b.order);
       if (!filteredMeta.length) {
@@ -306,7 +299,7 @@ function populateTestsForLang({ lang, challenges, meta, fullMeta }) {
           // Note: the title in meta.json are purely for human readability and
           // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function () {
-            const index = meta[dashedBlockName].findIndex(
+            const index = meta[dashedBlockName].challengeOrder.findIndex(
               arr => arr[0] === challenge.id
             );
 
