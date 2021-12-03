@@ -63,7 +63,7 @@ assert(document.querySelector('footer')?.textContent === 'Last Updated: August 2
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>freeCodeCamp Balance Sheet</title>
+    <title>AcmeWidgetCorp Balance Sheet</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
 --fcc-editable-region--

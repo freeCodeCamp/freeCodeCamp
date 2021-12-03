@@ -7,9 +7,9 @@ dashedName: step-1
 
 # --description--
 
-A balance sheet is used to track the state of an organization's finances. You'll be building a mock balance sheet for freeCodeCamp to explore the use of various CSS selectors.
+A balance sheet is used to track the state of an organization's finances. You'll be building a mock balance sheet for AcmeWidgetCorp to explore the use of various CSS selectors.
 
-Begin with your basic HTML boilerplate. Include the `DOCTYPE` declaration, an `html` element, the appropriate `meta` tags, a `head`, `body`, and `title` element, and `link` your stylesheet. Give the `title` element the text `freeCodeCamp Balance Sheet`.
+Begin with your basic HTML boilerplate. Include the `DOCTYPE` declaration, an `html` element, the appropriate `meta` tags, a `head`, `body`, and `title` element, and `link` your stylesheet. Give the `title` element the text `AcmeWidgetCorp Balance Sheet`.
 
 # --hints--
 
@@ -73,18 +73,18 @@ const title = document.querySelector('title');
 assert.exists(title);
 ```
 
-Your project should have a title of `freeCodeCamp Balance Sheet`.
+Your project should have a title of `AcmeWidgetCorp Balance Sheet`.
 
 ```js
 const title = document.querySelector('title');
-assert.equal(title?.text?.trim()?.toLowerCase(), 'freecodecamp balance sheet')
+assert.equal(title?.text?.trim()?.toLowerCase(), 'acmewidgetcorp balance sheet')
 ```
 
 Remember, the casing and spelling matter for the title.
 
 ```js
 const title = document.querySelector('title');
-assert.equal(title?.text?.trim(), 'freeCodeCamp Balance Sheet');
+assert.equal(title?.text?.trim(), 'AcmeWidgetCorp Balance Sheet');
 ```
 
 Your code should have a `link` element.

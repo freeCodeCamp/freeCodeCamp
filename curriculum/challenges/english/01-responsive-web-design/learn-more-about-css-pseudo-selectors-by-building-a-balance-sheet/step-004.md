@@ -7,7 +7,7 @@ dashedName: step-4
 
 # --description--
 
-In your `#header` element, create an `h1` element with the text `Balance Sheet` and an `h2` element with the text `freeCodeCamp`.
+In your `#header` element, create an `h1` element with the text `Balance Sheet` and an `h2` element with the text `AcmeWidgetCorp`.
 
 # --hints--
 
@@ -29,10 +29,10 @@ You should create a new `h2` element within your `#header` element.
 assert(document.querySelectorAll('#header > h2')?.length === 1);
 ```
 
-Your new `h2` element should have the text `freeCodeCamp`.
+Your new `h2` element should have the text `AcmeWidgetCorp`.
 
 ```js
-assert(document.querySelector('#header > h2')?.textContent === 'freeCodeCamp');
+assert(document.querySelector('#header > h2')?.textContent === 'AcmeWidgetCorp');
 ```
 
 Your `h1` element should come before your `h2` element.
@@ -51,7 +51,7 @@ assert(document.querySelector('#header > h1')?.nextElementSibling?.localName ===
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>freeCodeCamp Balance Sheet</title>
+    <title>AcmeWidgetCorp Balance Sheet</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body>

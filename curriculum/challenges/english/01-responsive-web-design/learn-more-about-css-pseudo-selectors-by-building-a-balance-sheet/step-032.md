@@ -39,14 +39,14 @@ assert(new __helpers.CSSHelp(document).getStyle('.row')?.justifyContent === 'fle
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>freeCodeCamp Balance Sheet</title>
+    <title>AcmeWidgetCorp Balance Sheet</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body>
     <div id="sheet">
       <div id="header">
         <h1>Balance Sheet</h1>
-        <h2>freeCodeCamp</h2>
+        <h2>AcmeWidgetCorp</h2>
         <p class="row">
           <span>2019</span>
           <span>2020</span>

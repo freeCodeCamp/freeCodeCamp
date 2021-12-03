@@ -39,7 +39,7 @@ assert(document.querySelectorAll('#header > .row > span')?.[2]?.textContent === 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>freeCodeCamp Balance Sheet</title>
+    <title>AcmeWidgetCorp Balance Sheet</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body>
@@ -47,7 +47,7 @@ assert(document.querySelectorAll('#header > .row > span')?.[2]?.textContent === 
       <div id="header">
 --fcc-editable-region--
         <h1>Balance Sheet</h1>
-        <h2>freeCodeCamp</h2>
+        <h2>AcmeWidgetCorp</h2>
         <p class="row">
           <span></span>
           <span></span>
