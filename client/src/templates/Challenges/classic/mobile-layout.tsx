@@ -5,9 +5,12 @@ import { connect } from 'react-redux';
 
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
+import envData from '../../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import { currentTabSelector, moveToTab } from '../redux';
 import EditorTabs from './editor-tabs';
+
+const { showUpcomingChanges } = envData;
 
 const mapStateToProps = createStructuredSelector({
   currentTab: currentTabSelector as (state: unknown) => number

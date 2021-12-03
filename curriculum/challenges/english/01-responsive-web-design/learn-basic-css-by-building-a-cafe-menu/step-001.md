@@ -41,3 +41,7 @@ assert(code.match(/<\/html>/i));
 --fcc-editable-region--
 
 ```
+
+# --notes-- 
+
+The `HTML` element is great
