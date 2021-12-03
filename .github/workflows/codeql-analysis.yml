@@ -10,7 +10,7 @@ jobs:
   analyse:
     name: Analyse
     runs-on: ubuntu-20.04
-    if: github.actor != 'renovate[bot]'
+    if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
     strategy:
       fail-fast: false
       matrix:

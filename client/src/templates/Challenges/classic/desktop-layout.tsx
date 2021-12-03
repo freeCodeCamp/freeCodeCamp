@@ -9,7 +9,6 @@ import {
   ResizeProps
 } from '../../../redux/prop-types';
 import ActionRow from './action-row';
-import EditorTabs from './editor-tabs';
 
 const { showUpcomingChanges } = envData;
 
@@ -82,10 +81,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = showUpcomingChanges && hasEditableBoundaries;
-  const isPreviewDisplayable = projectBasedChallenge
+  const displayPreview = projectBasedChallenge
     ? showPreview && hasPreview
     : hasPreview;
-  const isConsoleDisplayable = projectBasedChallenge ? showConsole : true;
+  const displayConsole = projectBasedChallenge ? showConsole : true;
   const { codePane, editorPane, instructionPane, previewPane, testsPane } =
     layoutState;
 
@@ -112,9 +111,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
 
         <ReflexElement flex={editorPane.flex} {...resizeProps}>
-          {challengeFile && showUpcomingChanges && !hasEditableBoundaries && (
-            <EditorTabs />
-          )}
           {challengeFile && (
             <ReflexContainer
               key={challengeFile.fileKey}
@@ -127,10 +123,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               >
                 {editor}
               </ReflexElement>
-              {isConsoleDisplayable && (
+              {displayConsole && (
                 <ReflexSplitter propagate={true} {...resizeProps} />
               )}
-              {isConsoleDisplayable && (
+              {displayConsole && (
                 <ReflexElement
                   flex={testsPane.flex}
                   {...reflexProps}
@@ -142,10 +138,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
             </ReflexContainer>
           )}
         </ReflexElement>
-        {isPreviewDisplayable && (
-          <ReflexSplitter propagate={true} {...resizeProps} />
-        )}
-        {isPreviewDisplayable && (
+        {displayPreview && <ReflexSplitter propagate={true} {...resizeProps} />}
+        {displayPreview && (
           <ReflexElement flex={previewPane.flex} {...resizeProps}>
             {preview}
           </ReflexElement>

@@ -10,7 +10,7 @@ dashedName: problem-199-iterative-circle-packing
 
 Três círculos de raio igual são colocados dentro de um círculo maior, de tal forma que cada par de círculos é tangente entre si e os círculos internos não se sobrepõem. Há quatro "lacunas" descobertas que devem ser preenchidas iterativamente com mais círculos tangentes.
 
-<img class="img-responsive center-block" alt="um diagrama de círculos concêntricos não sobrepostos" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="um diagrama de círculos não sobrepostos" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
 
 A cada iteração, um círculo de tamanho máximo é colocado em cada lacuna, o que cria mais lacunas para a próxima iteração. Após 3 iterações (na figura), há 108 lacunas e a fração da área que não é coberta pelos círculos é de 0, 6790342, arredondado para oito casas decimais.
 

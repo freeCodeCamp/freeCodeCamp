@@ -1,7 +1,0 @@
-# Contributing
-
-Todo
-
-## Usage
-
-Todo

@@ -1,6 +1,7 @@
 {
   "name": "Learn HTML Forms by Building a Registration Form",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "learn-html-forms-by-building-a-registration-form",
   "order": 23,
   "time": "5 hours",

@@ -30,10 +30,5 @@
       "automerge": true
     }
   ],
-  "ignorePaths": [
-    "api-server",
-    "tools/contributor",
-    "tools/contributor/dashboard-app/client",
-    "tools/contributor/dashboard-app/server"
-  ]
+  "ignorePaths": ["api-server"]
 }

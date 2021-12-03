@@ -1,6 +1,5 @@
 module.exports = {
-  // TODO: remove /tools/dashboard when the tests are configured correctly
-  testPathIgnorePatterns: ['/node_modules/', '/tools/dashboard'],
+  testPathIgnorePatterns: ['/node_modules/'],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg|woff|woff2)$':
       '<rootDir>/client/src/__mocks__/fileMock.js',
