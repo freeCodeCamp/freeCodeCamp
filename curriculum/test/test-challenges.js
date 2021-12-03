@@ -256,13 +256,8 @@ function populateTestsForLang({ lang, challenges, meta }) {
      * when we are working on the new project-based curriculum for
      * a superblock (because keeping those challenges in order is
      * tricky and needs cleaning up before deploying).
-     * TODO: determine approach for new certifications being upcoming changes,
-     * thereby breaking the tests.
      */
-    const superBlocksUnderDevelopment = [
-      'certifications',
-      'responsive-web-design'
-    ];
+    const superBlocksUnderDevelopment = ['responsive-web-design'];
     const superBlocks = new Set([
       ...Object.values(meta)
         .map(el => el.superBlock)
@@ -270,7 +265,11 @@ function populateTestsForLang({ lang, challenges, meta }) {
     ]);
     superBlocks.forEach(superBlock => {
       const filteredMeta = Object.values(meta)
-        .filter(el => el.superBlock === superBlock)
+        /**
+         * Exclude any meta which doesn't have a superOrder, as these shouldn't
+         * appear on the learn map and thus don't need to be validated.
+         */
+        .filter(el => el.superBlock === superBlock && el.superOrder)
         .sort((a, b) => a.order - b.order);
       if (!filteredMeta.length) {
         return;
