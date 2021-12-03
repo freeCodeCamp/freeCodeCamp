@@ -89,9 +89,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const displayPreview = projectBasedChallenge
     ? showPreview && hasPreview
     : hasPreview;
-  const displayNotes = projectBasedChallenge
-    ? showNotes && hasNotes
-    : false;
+  const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
   const displayConsole = projectBasedChallenge ? showConsole : true;
   const {
     codePane,
@@ -153,9 +151,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
             </ReflexContainer>
           )}
         </ReflexElement>
-        {displayNotes && (
-          <ReflexSplitter propagate={true} {...resizeProps} />
-        )}
+        {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
         {displayNotes && (
           <ReflexElement flex={notesPane.flex} {...resizeProps}>
             {notes}
