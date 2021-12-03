@@ -125,7 +125,7 @@ assert(new __helpers.CSSHelp(document).getStyle('span:not(.name)')?.minWidth ===
         </p>
       </div>
     </div>
-    <footer>Last Updated: August 2021</footer>
+    <footer>Last Updated: December 2021</footer>
   </body>
 </html>
 ```

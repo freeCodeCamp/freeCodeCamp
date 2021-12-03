@@ -123,7 +123,7 @@ assert(document.querySelector('#sheet')?.lastElementChild?.classList?.contains('
 
 --fcc-editable-region--
     </div>
-    <footer>Last Updated: August 2021</footer>
+    <footer>Last Updated: December 2021</footer>
   </body>
 </html>
 ```

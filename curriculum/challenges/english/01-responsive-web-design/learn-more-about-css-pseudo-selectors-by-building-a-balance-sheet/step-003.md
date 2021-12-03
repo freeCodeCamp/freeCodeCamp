@@ -41,7 +41,7 @@ assert(document.querySelector('#sheet > div')?.getAttribute('id') === 'header');
     <div id="sheet">
     </div>
 --fcc-editable-region--
-    <footer>Last Updated: August 2021</footer>
+    <footer>Last Updated: December 2021</footer>
   </body>
 </html>
 ```

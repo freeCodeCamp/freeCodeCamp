@@ -7,7 +7,7 @@ dashedName: step-2
 
 # --description--
 
-Within your `body` element, create a `div` element with the `id` set to `sheet`. Below that, create a `footer` element with the text set to `Last Updated: August 2021`.
+Within your `body` element, create a `div` element with the `id` set to `sheet`. Below that, create a `footer` element with the text set to `Last Updated: December 2021`.
 
 # --hints--
 
@@ -47,10 +47,10 @@ Your `footer` element should come after your `div` element.
 assert(document.querySelector('footer')?.previousElementSibling?.localName === 'div');
 ```
 
-Your `footer` element should have the text `Last Updated: August 2021`.
+Your `footer` element should have the text `Last Updated: December 2021`.
 
 ```js
-assert(document.querySelector('footer')?.textContent === 'Last Updated: August 2021');
+assert(document.querySelector('footer')?.textContent === 'Last Updated: December 2021');
 ```
 
 # --seed--

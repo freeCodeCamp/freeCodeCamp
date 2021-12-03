@@ -117,7 +117,7 @@ assert(new __helpers.CSSHelp(document).getStyle('#header h2')?.fontSize === '1.3
         </p>
       </div>
     </div>
-    <footer>Last Updated: August 2021</footer>
+    <footer>Last Updated: December 2021</footer>
   </body>
 </html>
 ```

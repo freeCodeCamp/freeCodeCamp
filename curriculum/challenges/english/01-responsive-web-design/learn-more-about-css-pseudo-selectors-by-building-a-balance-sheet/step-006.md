@@ -56,7 +56,7 @@ assert(document.querySelectorAll('#header > .row > span')?.[2]?.textContent === 
 --fcc-editable-region--
       </div>
     </div>
-    <footer>Last Updated: August 2021</footer>
+    <footer>Last Updated: December 2021</footer>
   </body>
 </html>
 ```

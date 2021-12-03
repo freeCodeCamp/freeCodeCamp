@@ -57,7 +57,7 @@ assert(document.querySelectorAll('#header > .row > span')?.length === 3);
       </div>
 --fcc-editable-region--
     </div>
-    <footer>Last Updated: August 2021</footer>
+    <footer>Last Updated: December 2021</footer>
   </body>
 </html>
 ```

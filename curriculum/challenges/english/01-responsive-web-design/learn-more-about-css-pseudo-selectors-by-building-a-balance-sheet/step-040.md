@@ -125,7 +125,7 @@ assert(new __helpers.CSSHelp(document).getStyle('.row:nth-of-type(2n+1)')?.backg
         </p>
       </div>
     </div>
-    <footer>Last Updated: August 2021</footer>
+    <footer>Last Updated: December 2021</footer>
   </body>
 </html>
 ```

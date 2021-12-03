@@ -121,7 +121,7 @@ assert(document.querySelectorAll('.section')?.[2]?.querySelector('.row.total')?.
       </div>
 --fcc-editable-region--
     </div>
-    <footer>Last Updated: August 2021</footer>
+    <footer>Last Updated: December 2021</footer>
   </body>
 </html>
 ```

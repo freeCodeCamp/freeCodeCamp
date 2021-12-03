@@ -135,7 +135,7 @@ assert(row?.querySelectorAll('span')?.[3]?.textContent === '$334');
 --fcc-editable-region--
       </div>
     </div>
-    <footer>Last Updated: August 2021</footer>
+    <footer>Last Updated: December 2021</footer>
   </body>
 </html>
 ```
