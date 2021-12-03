@@ -17,10 +17,7 @@ jobs:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
       - name: Install Dependencies
-        working-directory: ./tools
-        run: |
-          cd ./crowdin
-          npm ci
+        run: npm ci -w=tools/crowdin --ignore-scripts
 
       ##### Download Chinese #####
       - name: Crowdin Download Chinese Translations
