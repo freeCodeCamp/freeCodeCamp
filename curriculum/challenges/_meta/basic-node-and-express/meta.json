@@ -2,10 +2,10 @@
   "name": "Basic Node and Express",
   "isUpcomingChange": false,
   "dashedName": "basic-node-and-express",
-  "order": 2,
+  "order": 1,
   "time": "5 hours",
   "superBlock": "back-end-development-and-apis",
-  "superOrder": 6,
+  "superOrder": 5,
   "challengeOrder": [
     [
       "587d7fb0367417b2b2512bed",

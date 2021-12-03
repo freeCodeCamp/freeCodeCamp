@@ -153,7 +153,7 @@ export function buildChallengeUrl(challenge) {
 export function getFirstChallenge(allChallenges) {
   const first = allChallenges.find(
     ({ challengeOrder, superOrder, order }) =>
-      challengeOrder === 0 && superOrder === 1 && order === 0
+      challengeOrder === 0 && superOrder === 0 && order === 0
   );
 
   return first ? buildChallengeUrl(first) : '/learn';

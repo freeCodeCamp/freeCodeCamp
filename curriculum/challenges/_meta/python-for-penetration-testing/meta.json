@@ -2,12 +2,12 @@
   "name": "Python for Penetration Testing",
   "isUpcomingChange": false,
   "dashedName": "python-for-penetration-testing",
-  "order": 2,
+  "order": 1,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "information-security",
-  "superOrder": 10,
+  "superOrder": 9,
   "challengeOrder": [
     [
       "5ea9997bbec2e9bc47e94dae",

@@ -2,12 +2,12 @@
   "name": "Data Analysis with Python Course",
   "isUpcomingChange": false,
   "dashedName": "data-analysis-with-python-course",
-  "order": 1,
+  "order": 0,
   "time": "15 hours",
   "template": "",
   "required": [],
   "superBlock": "data-analysis-with-python",
-  "superOrder": 9,
+  "superOrder": 8,
   "challengeOrder": [
     [
       "5e9a093a74c4063ca6f7c14c",

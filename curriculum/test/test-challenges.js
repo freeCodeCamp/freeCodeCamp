@@ -269,7 +269,10 @@ function populateTestsForLang({ lang, challenges, meta }) {
          * Exclude any meta which doesn't have a superOrder, as these shouldn't
          * appear on the learn map and thus don't need to be validated.
          */
-        .filter(el => el.superBlock === superBlock && el.superOrder)
+        .filter(
+          el =>
+            el.superBlock === superBlock && typeof el.superOrder !== 'undefined'
+        )
         .sort((a, b) => a.order - b.order);
       if (!filteredMeta.length) {
         return;
@@ -283,7 +286,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
       });
       filteredMeta.forEach((meta, index) => {
         it(`${meta.superBlock} ${meta.name} must be in order`, function () {
-          assert.equal(meta.order, index + 1);
+          assert.equal(meta.order, index);
         });
       });
     });

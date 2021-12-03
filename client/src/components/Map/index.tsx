@@ -146,7 +146,7 @@ export function Map({
     query SuperBlockNodes {
       allChallengeNode(
         sort: { fields: [superOrder] }
-        filter: { order: { eq: 1 }, challengeOrder: { eq: 1 } }
+        filter: { order: { eq: 0 }, challengeOrder: { eq: 0 } }
       ) {
         nodes {
           superBlock
