@@ -64,7 +64,7 @@
     "submit-and-go": "提交併訪問下一個挑戰",
     "go-to-next": "訪問下一個挑戰",
     "ask-later": "稍後問我",
-    "start-coding": "Start coding!"
+    "start-coding": "開始編碼！"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -101,7 +101,7 @@
     "private-name": "如果你將姓名設置爲私密，你的證書上不會顯示你的姓名。",
     "claim-legacy": "當你獲得下列 freeCodeCamp 認證之後，你可以申請 {{cert}}:",
     "for": "{{username}} 賬號設置",
-    "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
+    "sound-mode": "爲整個網站添加做令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，您將獲得音樂反饋。",
     "username": {
       "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
       "is too short": "用戶名 \"{{username}}\" 太短",
@@ -137,7 +137,7 @@
       "my-timeline": "我的時間線",
       "my-donations": "我的捐款",
       "night-mode": "夜間模式",
-      "sound-mode": "Campfire Mode"
+      "sound-mode": "篝火模式"
     },
     "headings": {
       "certs": "認證",
@@ -293,7 +293,7 @@
     "help-translate-link": "幫助我們翻譯。",
     "season-greetings": "Season's Greetings to you and your family.",
     "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
-    "project-preview-title": "Here's a preview of what you will build"
+    "project-preview-title": "下面是你將構建的項目的預覽"
   },
   "donate": {
     "title": "支持我們的非營利組織",
@@ -363,7 +363,7 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "Search 8,000+ tutorials",
+    "placeholder": "搜索 8000 多種教程",
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
@@ -472,10 +472,10 @@
     "provide-username": "檢查你是否提供用戶名和報告",
     "report-sent": "已通過 {{email}} 向團隊發送副本報告",
     "certificate-missing": "你嘗試查看的認證不存在",
-    "create-token-err": "An error occurred trying to create a token",
-    "delete-token-err": "An error occurred trying to delete your token",
-    "token-created": "You have successfully created a new token.",
-    "token-deleted": "Your token has been deleted."
+    "create-token-err": "嘗試創建令牌時出錯",
+    "delete-token-err": "嘗試刪除令牌時出錯",
+    "token-created": "你已成功創建了一個新令牌。",
+    "token-deleted": "你的令牌已被刪除。"
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
@@ -605,16 +605,16 @@
     "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。"
   },
   "webhook-token": {
-    "title": "Webhook Token",
-    "create": "Create a new token",
-    "create-p1": "It looks like you don't have a webhook token. Create one to save your progress on this section",
-    "create-p2": "Create a webhook token to save your progress on the curriculum sections that use a virtual machine.",
-    "delete": "Delete my token",
-    "delete-title": "Delete My Webhook Token",
-    "delete-p1": "Your webhook token below is used to save your progress on the curriculum sections that use a virtual machine.",
-    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
-    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
-    "no-thanks": "No thanks, I would like to keep my token",
-    "yes-please": "Yes please, I would like to delete my token"
+    "title": "Webhook 令牌",
+    "create": "創建一個新令牌",
+    "create-p1": "看起來你沒有 webhook 令牌。創建一個令牌來保存你在這個部分的進度",
+    "create-p2": "創建一個 webhook 令牌來保存你使用虛擬機器的課程部分的進度。",
+    "delete": "刪除我的令牌",
+    "delete-title": "刪除我的 Webhook 令牌",
+    "delete-p1": "你在下面的 webhook 令牌用於在使用虛擬機器的課程部分保存你的進度。",
+    "delete-p2": "如果你懷疑你的令牌已被盜用，你可以刪除它，以使它無法使用。以前提交的課程的進度將不會丟失。",
+    "delete-p3": "你將需要創建一個新令牌來保存使用虛擬機器的課程部分的未來進度。",
+    "no-thanks": "不，謝謝，我想保留我的令牌",
+    "yes-please": "是的，請刪除我的令牌"
   }
 }
