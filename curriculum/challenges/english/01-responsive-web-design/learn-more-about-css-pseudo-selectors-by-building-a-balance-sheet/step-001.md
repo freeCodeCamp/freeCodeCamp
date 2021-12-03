@@ -9,7 +9,7 @@ dashedName: step-1
 
 A balance sheet is used to track the state of an organization's finances. You'll be building a mock balance sheet for freeCodeCamp to explore the use of various CSS selectors.
 
-Begin with your basic HTML boilerplate. Include the `DOCTYPE` declaration, the appropriate `meta` tags, a `head`, `body`, and `title` element, and `link` your stylesheet. Give the `title` element the text `freeCodeCamp Balance Sheet`.
+Begin with your basic HTML boilerplate. Include the `DOCTYPE` declaration, an `html` element, the appropriate `meta` tags, a `head`, `body`, and `title` element, and `link` your stylesheet. Give the `title` element the text `freeCodeCamp Balance Sheet`.
 
 # --hints--
 
@@ -105,10 +105,16 @@ Your `rel` attribute should have the value `stylesheet`.
 assert(/rel\s*=\s*('|")\s*stylesheet\s*\1/.test(code));
 ```
 
-Your `link` element should have `href="./styles.css"` and `rel="stylesheet"` attributes
+Your `type` attribute should have the value `text/css`.
 
 ```js
-assert(/<link(\s+href\s*=\s*("|')(\.\/)?styles\.css\2\s*rel=('|")\s*stylesheet\s*\4|\s+rel\s*=\s*('|")\s*stylesheet\s*\5\s*href\s*=\s*("|')(\.\/)?styles\.css\6)\s*\/?>/.test(code));
+assert(/type\s*=\s*('|")\s*text\/css\s*\1/.test(code));
+```
+
+Your `link` element should have `href="./styles.css"`, `rel="stylesheet"`, and `type="text/css"` attributes
+
+```js
+assert(/<link\s+(href\s*=\s*("|')(\.\/)?styles\.css\2\s*(rel\s*=\s*('|")\s*stylesheet\s*\5\s*type\s*=\s*("|')text\/css\6|type\s*=\s*("|')text\/css\7\s*rel\s*=\s*('|")\s*stylesheet\s*\8)|rel\s*=\s*('|")\s*stylesheet\s*\9\s*(href\s*=\s*("|')(\.\/)?styles\.css\11\s*type\s*=\s*("|')text\/css\13|type\s*=\s*("|')text\/css\14\s*href\s*=\s*("|')(\.\/)?styles\.css\15)|type\s*=\s*("|')text\/css\17\s*(href\s*=\s*("|')(\.\/)?styles\.css\19\s*rel\s*=\s*('|")\s*stylesheet\s*\21|rel\s*=\s*('|")\s*stylesheet\s*\22\s*href\s*=\s*("|')(\.\/)?styles\.css\23))\s*\/?>/.test(code));
 ```
 
 # --seed--

@@ -20,7 +20,7 @@ assert(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p')?.length
 Your second `.section` element should have three `p` elements with the class set to `row`.
 
 ```js
-const ps = document.querySelectorAll('.section')?.[1]?.querySelectorAll('p');
+const ps = Array.from(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p'));
 assert(ps?.filter?.(p => p?.classList?.contains('row') && !p?.classList?.contains('total'))?.length === 3);
 ```
 
@@ -33,21 +33,21 @@ assert(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row.total
 Your `.row` elements should each have four `span` elements.
 
 ```js
-const rows = document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row');
+const rows = Array.from(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row'));
 assert(rows?.every?.(row => row?.querySelectorAll('span')?.length === 4));
 ```
 
 Within each `.row` element, your first `span` element should have the class set to `name`.
 
 ```js
-const rows = document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row');
+const rows = Array.from(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row'));
 assert(rows?.every?.(row => row?.querySelectorAll('span')?.[0]?.classList?.contains('name')));
 ```
 
 Within each `.row` element, your last `span` element should have the class set to `current`.
 
 ```js
-const rows = document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row');
+const rows = Array.from(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row'));
 assert(rows?.every?.(row => row?.querySelectorAll('span')?.[3]?.classList?.contains('current')));
 ```
 
