@@ -33,6 +33,7 @@ interface MobileLayoutProps {
   preview: JSX.Element;
   testOutput: JSX.Element;
   videoUrl: string;
+  usesMultifileEditor: boolean;
 }
 class MobileLayout extends Component<MobileLayoutProps> {
   static displayName: string;
@@ -49,13 +50,18 @@ class MobileLayout extends Component<MobileLayoutProps> {
       hasPreview,
       preview,
       guideUrl,
-      videoUrl
+      videoUrl,
+      usesMultifileEditor
     } = this.props;
 
     const editorTabPaneProps = {
       mountOnEnter: true,
       unmountOnExit: true
     };
+
+    // Unlike the desktop layout the mobile version does not have an ActionRow,
+    // but still needs a way to switch between the different tabs.
+    const displayEditorTabs = showUpcomingChanges && usesMultifileEditor;
 
     return (
       <>
@@ -73,7 +79,7 @@ class MobileLayout extends Component<MobileLayoutProps> {
             title={i18next.t('learn.editor-tabs.code')}
             {...editorTabPaneProps}
           >
-            {showUpcomingChanges && <EditorTabs />}
+            {displayEditorTabs && <EditorTabs />}
             {editor}
           </TabPane>
           <TabPane

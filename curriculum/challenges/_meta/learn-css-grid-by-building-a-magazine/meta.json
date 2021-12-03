@@ -1,6 +1,7 @@
 {
   "name": "Learn CSS Grid by Building a Magazine",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
   "dashedName": "learn-css-grid-by-building-a-magazine",
   "order": 16,
   "time": "5 hours",

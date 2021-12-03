@@ -122,7 +122,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     if (
       location.state &&
       typeof location.state === 'object' &&
-      location.state.hasOwnProperty('breadcrumbBlockClick')
+      Object.prototype.hasOwnProperty.call(
+        location.state,
+        'breadcrumbBlockClick'
+      )
     ) {
       return location.state.breadcrumbBlockClick;
     }

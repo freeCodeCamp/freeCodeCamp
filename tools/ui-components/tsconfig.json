@@ -9,6 +9,6 @@
     "moduleResolution": "node",
     "strict": true,
     "noEmit": true,
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": ["../../node_modules/@types"]
   }
 }

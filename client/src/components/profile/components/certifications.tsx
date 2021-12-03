@@ -10,8 +10,10 @@ import type { CurrentCert } from '../../../redux/prop-types';
 import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const mapStateToProps = (state: any, props: CertificationProps) =>
+const mapStateToProps = (
+  state: Record<string, unknown>,
+  props: CertificationProps
+) =>
   createSelector(
     certificatesByNameSelector(props.username),
     ({
@@ -28,10 +30,7 @@ const mapStateToProps = (state: any, props: CertificationProps) =>
       currentCerts,
       legacyCerts
     })
-
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-  )(state, props);
+  )(state);
 
 interface CertificationProps {
   currentCerts?: CurrentCert[];

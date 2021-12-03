@@ -94,8 +94,8 @@ const Intro = ({
             <b>{t('learn.season-greetings')}</b>
           </p>
           <p>{t('learn.if-getting-value')}</p>
+          <hr />
           <p className={'text-center'}>
-            <hr />
             <Link
               className='btn'
               key='donate'
