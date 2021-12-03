@@ -14,7 +14,7 @@ You may have noticed that this affected your `AcmeWidgetCorp` text as well, beca
 Your `#header h2` selector should have a `background` property set to `transparent`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#header h2')?.background === 'transparent');
+assert(new __helpers.CSSHelp(document).getStyle('#header h2')?.backgroundColor === 'transparent');
 ```
 
 # --seed--
