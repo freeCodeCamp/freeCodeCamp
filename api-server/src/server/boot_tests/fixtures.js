@@ -17,7 +17,7 @@ export const mockFirstChallenge = {
   superBlock: 'the',
   dashedName: 'challenge',
   challengeOrder: 0,
-  superOrder: 1,
+  superOrder: 0,
   order: 0
 };
 
