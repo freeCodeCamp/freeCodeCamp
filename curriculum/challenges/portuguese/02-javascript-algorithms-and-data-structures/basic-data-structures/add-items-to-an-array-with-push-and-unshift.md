@@ -29,7 +29,7 @@ romanNumerals.push(twentyThree);
 
 # --instructions--
 
-Definimos uma função, `mixedNumbers`, na qual estamos passando o array como um argumento. Modifique a função usando `push()` e `unshift()` para adicionar `'1', 2, 'three'` no início do array e `7, 'VIII', 9` ao final para que o array retornado contenha a representação dos números de 1 a 9 em ordem.
+Definimos uma função, `mixedNumbers`, na qual estamos passando o array como um argumento. Modifique a função usando `push()` e `unshift()` para adicionar `'I', 2, 'three'` no início do array e `7, 'VIII', 9` ao final para que o array retornado contenha a representação dos números de 1 a 9 em ordem.
 
 # --hints--
 
