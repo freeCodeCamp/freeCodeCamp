@@ -11,13 +11,20 @@ import { createSelector } from 'reselect';
 import DonateForm from '../components/Donation/donate-form';
 import {
   DonationText,
+  DonationOptionsAlertText,
   DonationSupportText,
   DonationOptionsText,
-  DonationOptionsAlertText
+  DonationFaqText
 } from '../components/Donation/donation-text-components';
+
 import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
-import { signInLoadingSelector, userSelector, executeGA } from '../redux';
+import {
+  signInLoadingSelector,
+  userSelector,
+  executeGA,
+  isAvariantSelector
+} from '../redux';
 
 interface ExecuteGaArg {
   type: string;
@@ -33,15 +40,22 @@ interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
+  isAvarient: boolean;
   t: TFunction;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
-  ({ isDonating }: { isDonating: boolean }, showLoading: boolean) => ({
+  isAvariantSelector,
+  (
+    { isDonating }: { isDonating: boolean },
+    showLoading: boolean,
+    isAvarient: boolean
+  ) => ({
     isDonating,
-    showLoading
+    showLoading,
+    isAvarient
   })
 );
 
@@ -53,6 +67,7 @@ function DonatePage({
   executeGA = () => {},
   isDonating = false,
   showLoading,
+  isAvarient,
   t
 }: DonatePageProps) {
   useEffect(() => {
@@ -78,6 +93,34 @@ function DonatePage({
       }
     });
   }
+
+  const donationSupport = (
+    <>
+      <Row className='donate-support'>
+        <Col xs={12}>
+          <hr />
+          <DonationOptionsText />
+          <DonationSupportText />
+        </Col>
+      </Row>
+    </>
+  );
+
+  const donationFaq = (
+    <>
+      <Spacer size={3} />
+      <Row className='donate-support' id='FAQ'>
+        <Col className={'text-center'} xs={12}>
+          <hr />
+          <h2>{t('donate.faq')}</h2>
+          <Spacer />
+        </Col>
+        <Col xs={12}>
+          <DonationFaqText />
+        </Col>
+      </Row>
+    </>
+  );
 
   return showLoading ? (
     <Loader fullScreen={true} />
@@ -112,13 +155,7 @@ function DonatePage({
                   <DonateForm handleProcessing={handleProcessing} />
                 </Col>
               </Row>
-              <Row className='donate-support'>
-                <Col xs={12}>
-                  <hr />
-                  <DonationOptionsText />
-                  <DonationSupportText />
-                </Col>
-              </Row>
+              {isAvarient ? donationSupport : donationFaq}
             </Col>
             <Col lg={6}>
               <CampersImage pageName='donate' />
