@@ -67,7 +67,7 @@ class MobileLayout extends Component<MobileLayoutProps> {
 
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
-    const displayEditorTabs = showUpcomingChanges && usesMultifileEditor;
+    const projectBasedChallenge = showUpcomingChanges && usesMultifileEditor;
 
     const eventKeys = [1, 2, 3, 4, 5];
 
@@ -92,7 +92,7 @@ class MobileLayout extends Component<MobileLayoutProps> {
             title={i18next.t('learn.editor-tabs.code')}
             {...editorTabPaneProps}
           >
-            {displayEditorTabs && <EditorTabs />}
+            {projectBasedChallenge && <EditorTabs />}
             {editor}
           </TabPane>
           <TabPane
@@ -102,7 +102,7 @@ class MobileLayout extends Component<MobileLayoutProps> {
           >
             {testOutput}
           </TabPane>
-          {hasNotes && (
+          {hasNotes && projectBasedChallenge && (
             <TabPane
               eventKey={eventKeys.shift()}
               title={i18next.t('learn.editor-tabs.notes')}
