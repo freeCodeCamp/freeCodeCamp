@@ -34,7 +34,7 @@ For this challenge, when halving, you MUST use Math.floor() when doing division:
 assert(typeof binarySearch == 'function');
 ```
 
-`binarySearch` should return x, y, z.
+`binarySearch` should return X, Y, Z.
 
 ```js
 let searchList = [
