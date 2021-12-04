@@ -8,23 +8,28 @@ dashedName: Implement-Binary-Search-Method
 
 # --description--
 
-The binary search method is an an **O(log(n))** efficient algorithm for searching a sorted array. It operates using the following steps, which can be done iteratively or recursively:
+The binary search method is an **O(log(n))** efficient algorithm for searching a sorted array. It operates using the following steps, which can be done iteratively or recursively:
 
 **1)** find the middle value of a sorted array. If value == target return (found it!).
 
-**2)** if middle value < target, search left half of array next compare.
+**2)** if middle value < target, search right half of array next compare.
 
-**3)** if middle value > target, search right half of array next compare.
+**3)** if middle value > target, search left half of array next compare.
 
 As you can see, you are successively halving an array, which gives your the log(n) efficiency. For this challenge, we want you to show your work - how you got to the target value... the path you took!
 
 **Instructions:** Write a function `binarySearch` that implements the binary search algorithm on an array, recording the path you took (each middle value comparison) to find the target.
 
-The function takes a sorted array of integers and a target value as input. It returns an array containing (in-order) the middle value you found at each halving of the original array until you found the target value. If value not found, return "Value Not Found"
+The function takes a sorted array of integers and a target value as input. It returns an array containing (in-order) the middle value you found at each halving of the original array until you found the target value. The target value should be the last element of the returned array. If value not is found, return "Value Not Found"
 
 For example, binarySearch([1,2,3,4,5,6,7], 5) would return [4,6,5].
 
 For this challenge, when halving, you MUST use Math.floor() when doing division: Math.floor(x/2). This will give a consistent, testable path.
+
+**For the below tests:** let testArray = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+]
 
 # --hints--
 
@@ -34,57 +39,126 @@ For this challenge, when halving, you MUST use Math.floor() when doing division:
 assert(typeof binarySearch == 'function');
 ```
 
-`binarySearch` should return X, Y, Z.
+`binarySearch(testArray, 0)` should return [13, 5, 2, 0].
+
+```js
+
+let searchList = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
+
+let testArray = [13, 5, 2, 0];
+
+//user algo found value
+for (let j = 0; j < testArray.length; j++) {
+  if (binarySearch(searchList, 0)[j] != testArray[j]) {
+    
+    assert.fail();
+    break;
+  }
+}
+
+```
+
+`binarySearch(testArray, 1)` should return [13, 5, 2, 0, 1].
 
 ```js
 let searchList = [
   0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
   23, 49, 70
 ];
-let testArray = [
-  [13, 5, 2, 0],
-  [13, 5, 2, 0, 1],
-  [13, 5, 2],
-  [13, 5, 2, 3],
-  [13, 5, 2, 3, 4],
-  [13, 5],
-  'Value Not Found',
-  'Value Not Found',
-  [13, 5, 10, 8],
-  [13, 5, 10, 8, 9],
-  [13, 5, 10],
-  [13, 5, 10, 11],
-  [13, 5, 10, 11, 12],
-  [13],
-  [13, 19, 16, 14]
-];
+let testArray = [13, 5, 2, 0, 1];
 
-for (let i = 0; i < 15; i++) {
-  let pass = true;
-
-  //user algo did not find value
-  if (binarySearch(searchList, i) == 'Value Not Found') {
-    if (testArray[i] == 'Value Not Found') {
-    } else {
-      assert.fail();
-    }
-    continue;
-  }
-  //user algo found value
-  for (let j = 0; j < testArray[i].length; j++) {
-    if (binarySearch(searchList, i)[j] != testArray[i][j]) {
-      pass = false;
-      assert.fail(
-        '***ERROR***',
-        binarySearch(searchList, i),
-        '!=',
-        testArray[i]
-      );
-      break;
-    }
+//user algo found value
+for (let j = 0; j < testArray.length; j++) {
+  if (binarySearch(searchList, 1)[j] != testArray[j]) {
+    
+    assert.fail();
+    break;
   }
 }
+
 ```
+
+`binarySearch(testArray, 2)` should return [13, 5, 2].
+
+```js
+let searchList = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
+let testArray = [13, 5, 2];
+
+//user algo found value
+for (let j = 0; j < testArray.length; j++) {
+  if (binarySearch(searchList, 2)[j] != testArray[j]) {
+    
+    assert.fail();
+    break;
+  }
+}
+
+```
+
+`binarySearch(testArray, 6)` should return 'Value Not Found'.
+
+```js
+
+let searchList = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
+ 
+if (binarySearch(searchList, 6) != 'Value Not Found') {
+  assert.fail();
+}
+
+```
+
+`binarySearch(testArray, 11)` should return [13, 5, 10, 11].
+
+```js
+
+let searchList = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
+
+let testArray = [13, 5, 10, 11];
+
+//user algo found value
+for (let j = 0; j < testArray.length; j++) {
+  if (binarySearch(searchList, 11)[j] != testArray[j]) {
+    
+    assert.fail();
+    break;
+  }
+}
+
+```
+
+`binarySearch(testArray, 13)` should return [13].
+
+```js
+let searchList = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
+
+let testArray = [13];
+
+//user algo found value
+for (let j = 0; j < testArray.length; j++) {
+  if (binarySearch(searchList, 13)[j] != testArray[j]) {
+    
+    assert.fail();
+    break;
+  }
+}
+
+```
+
 
 # --seed--
 
@@ -102,6 +176,8 @@ function binarySearch(searchList, value) {
   // Only change code above this line
 }
 ```
+
+
 
 # --solutions--
 
