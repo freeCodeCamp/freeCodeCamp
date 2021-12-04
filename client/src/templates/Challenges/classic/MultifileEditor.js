@@ -40,14 +40,13 @@ const propTypes = {
   saveEditorContent: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
-  // TODO: is this used?
   title: PropTypes.string,
   updateFile: PropTypes.func.isRequired,
   usesMultifileEditor: PropTypes.bool,
   visibleEditors: PropTypes.shape({
-    indexjs: PropTypes.bool,
+    scriptjs: PropTypes.bool,
     indexjsx: PropTypes.bool,
-    indexcss: PropTypes.bool,
+    stylescss: PropTypes.bool,
     indexhtml: PropTypes.bool
   })
 };
@@ -83,7 +82,7 @@ const MultifileEditor = props => {
     theme,
     resizeProps,
     title,
-    visibleEditors: { indexcss, indexhtml, indexjs, indexjsx },
+    visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx },
     usesMultifileEditor
   } = props;
   const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
@@ -105,8 +104,8 @@ const MultifileEditor = props => {
 
   if (indexjsx) editorKeys.push('indexjsx');
   if (indexhtml) editorKeys.push('indexhtml');
-  if (indexcss) editorKeys.push('indexcss');
-  if (indexjs) editorKeys.push('indexjs');
+  if (stylescss) editorKeys.push('stylescss');
+  if (scriptjs) editorKeys.push('scriptjs');
 
   const editorAndSplitterKeys = editorKeys.reduce((acc, key) => {
     if (acc.length === 0) {

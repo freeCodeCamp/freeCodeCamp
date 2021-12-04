@@ -3,7 +3,6 @@ client/static/**
 client/public/**
 api-server/src/public/**
 api-server/lib/**
-tools/contributor/**
 tools/scripts/build/ensure-env.js
 tools/scripts/lint/validate-keys.js
 tools/scripts/build/tsconfig.tsbuildinfo

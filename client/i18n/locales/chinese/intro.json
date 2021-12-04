@@ -65,84 +65,84 @@
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "Learn HTML by Building a Cat Photo App",
+        "title": "通过创建一个展示猫咪图片的应用学习 HTML",
         "intro": [
           "",
           ""
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "Learn Basic CSS by Building a Cafe Menu",
+        "title": "通过创建一个咖啡菜单学习基础 CSS",
         "intro": [
           "",
           ""
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Learn the CSS Box Model by Building a Rothko Painting",
+        "title": "通过构建罗斯科绘画学习 CSS 盒模型",
         "intro": [
-          "Mark Rothko was known for his abstract style of painting. Rothko paintings commonly depicted rectangular regions of color in varying sizes.",
-          "In this lesson, you will be using CSS to create your own painting in Rothko's style. You will use many of the skills you have already been practicing, as well as new CSS tool such as blur and transform."
+          "马克·罗斯科以他的抽象的绘画风格著称。他的绘画通常描绘不同尺寸的长方形区域颜色。",
+          "在这个课程中，你将使用 CSS 以罗斯科的风格创作自己的画。你将使用你已经实践过的许多技能，以及新的 CSS 工具，如模糊和变换。"
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "Learn CSS Variables by Building a City Skyline",
+        "title": "通过构建城市天际线来学习 CSS 变量",
         "intro": [
           "",
           ""
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "Learn HTML Forms by Building a Registration Form",
+        "title": "通过创建注册表单来学习 HTML 表单",
         "intro": [
           "",
           ""
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "Learn Accessibility by Building a Quiz",
+        "title": "通过构建测验来学习无障碍",
         "intro": [
           "",
           ""
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "Learn Intermediate CSS by Building a Picasso Painting",
+        "title": "通过构建毕加索绘画来学习中级 CSS",
         "intro": [
-          "Pablo Picasso was known for his Cubism style of painting, a style recognized by representations of objects broken down and reassembled from multiple perspectives. Picasso's paintings are often highly abstract and thought provoking.",
-          "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
+          "巴勃罗·毕加索以立体主义绘画著称。这种风格从多视角分解并重新组装以呈现物体。毕加索的绘画往往非常抽象，发人深思。",
+          "在这个课程中，你将使用 CSS 来创建你自己的毕加索风格的画。你将学习 FontAwesome SVG 图标、CSS 定位，并增强你已经学习过的技能。"
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Learn Responsive Web Design by Building a Piano",
+        "title": "通过构建钢琴来学习响应式网页设计",
         "intro": [
           "",
           ""
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "Learn CSS Flexbox by Building a Photo Gallery",
+        "title": "通过构建照片集来学习 CSS 弹性盒子",
         "intro": [
           "",
           ""
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Learn CSS Grid by Building a Magazine",
+        "title": "通过创建杂志学习 CSS 网格",
         "intro": [
           "",
           ""
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "Learn Typography by Building a Nutrition Label",
+        "title": "通过构建营养标签学习排版",
         "intro": [
           "",
           ""
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
-        "title": "Learn CSS Animation by Building a Ferris Wheel",
+        "title": "通过构建摩天轮来学习 CSS 动画",
         "intro": [
           "",
           ""
@@ -171,7 +171,7 @@
         "intro": [
           "ECMAScript（ES）是 JavaScript 的标准。因为所有主流浏览器都遵循此规范，所以 ECMAScript 和 JavaScript 是可以互换的。",
           "截至目前你所学到的 JavaScript 大多是在 2009 年定稿的 ES5（ECMAScript5）。你仍然可以使用 ES5 编写程序。JavaScript 在不断迭代，每年都会发布新功能。",
-          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including arrow functions, destructuring, classes, promises, and modules."
+          "2015 年发布的 ES6 为该语言添加了许多强大的新功能。在本课程中，你将学习这些新特性，包括箭头函数、解构、类、promise 和模块。"
         ]
       },
       "regular-expressions": {

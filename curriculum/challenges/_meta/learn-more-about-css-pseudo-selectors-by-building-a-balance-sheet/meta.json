@@ -1,0 +1,223 @@
+{
+  "name": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet",
+  "order": 43,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "6193d8081ec2531581ea7b98",
+      "Step 1"
+    ],
+    [
+      "6193da99ca92051a07fb8a13",
+      "Step 2"
+    ],
+    [
+      "6193dbfec896f21aed7d8114",
+      "Step 3"
+    ],
+    [
+      "6193dc549cb4031bc3a9c4e1",
+      "Step 4"
+    ],
+    [
+      "6193de38b3294e1e378f5bc3",
+      "Step 5"
+    ],
+    [
+      "6193de63d0fcab1f0b4112a0",
+      "Step 6"
+    ],
+    [
+      "6193ded40c51662155758987",
+      "Step 7"
+    ],
+    [
+      "6193df854916a52292a23aa9",
+      "Step 8"
+    ],
+    [
+      "6193dfd113955a238da1cc05",
+      "Step 9"
+    ],
+    [
+      "6193e2baa04690265435e25f",
+      "Step 10"
+    ],
+    [
+      "6193e2f62a56dc26fd594b77",
+      "Step 11"
+    ],
+    [
+      "6193e3a4916fdb281b791892",
+      "Step 12"
+    ],
+    [
+      "6193e40e67d94029468e6b2d",
+      "Step 13"
+    ],
+    [
+      "6193e5280857e72be1efc99d",
+      "Step 14"
+    ],
+    [
+      "6193e55d97150c2ca7c9458a",
+      "Step 15"
+    ],
+    [
+      "6193e5946b7ea12d8ce7b1c2",
+      "Step 16"
+    ],
+    [
+      "6193e5d66b67e32e5f0f930e",
+      "Step 17"
+    ],
+    [
+      "6193e7150dc89231b01a3515",
+      "Step 18"
+    ],
+    [
+      "6193e8957e614d3b8eeb770f",
+      "Step 19"
+    ],
+    [
+      "6193e8eba043903cf68598cd",
+      "Step 20"
+    ],
+    [
+      "6193e9f7a92e7e3e1810b2f4",
+      "Step 21"
+    ],
+    [
+      "6193ea793e49253eee1452d1",
+      "Step 22"
+    ],
+    [
+      "6193ece0b46e03423cd66e78",
+      "Step 23"
+    ],
+    [
+      "6193ed97ae313e4331c9078a",
+      "Step 24"
+    ],
+    [
+      "6193ededc017a2443f10429b",
+      "Step 25"
+    ],
+    [
+      "6193ee19d10be144d6bc9c46",
+      "Step 26"
+    ],
+    [
+      "6193f5169cdc684f60317783",
+      "Step 27"
+    ],
+    [
+      "6193f6615b1bd85076fc5ef2",
+      "Step 28"
+    ],
+    [
+      "6193f7074ca69153347fbc3a",
+      "Step 29"
+    ],
+    [
+      "6193f74b982e4c5449f51a47",
+      "Step 30"
+    ],
+    [
+      "6193f7904dc7ee554d12571f",
+      "Step 31"
+    ],
+    [
+      "6193f85ab1de4356da678090",
+      "Step 32"
+    ],
+    [
+      "6193fa3224d7465850407d3d",
+      "Step 33"
+    ],
+    [
+      "6193fb8bef24145b57fbed00",
+      "Step 34"
+    ],
+    [
+      "6193fd22d907385efadb59c9",
+      "Step 35"
+    ],
+    [
+      "6193fe24beedd361f34f8e96",
+      "Step 36"
+    ],
+    [
+      "6193febd52ffb76345956072",
+      "Step 37"
+    ],
+    [
+      "6193ff2b1198596496b81450",
+      "Step 38"
+    ],
+    [
+      "6193ff6c2a6138658b4ce2af",
+      "Step 39"
+    ],
+    [
+      "6194034278b71f6940a50d91",
+      "Step 40"
+    ],
+    [
+      "619403dacf51db6a79b47b52",
+      "Step 41"
+    ],
+    [
+      "6194079d7cbf586eba9539ff",
+      "Step 42"
+    ],
+    [
+      "619409a3b1ec0b727ac2ab30",
+      "Step 43"
+    ],
+    [
+      "61940bfdc4e2a874af766567",
+      "Step 44"
+    ],
+    [
+      "61940e95c95cff77d0b2a310",
+      "Step 45"
+    ],
+    [
+      "61940f551fa4db7967451be9",
+      "Step 46"
+    ],
+    [
+      "6194108c6951ca7cae9596bd",
+      "Step 47"
+    ],
+    [
+      "619410f7040d427d9c782db7",
+      "Step 48"
+    ],
+    [
+      "6194114534b4547e5177cb2a",
+      "Step 49"
+    ],
+    [
+      "619412990eaf9c80415b280d",
+      "Step 50"
+    ],
+    [
+      "6194135942d5e08174b8bab1",
+      "Step 51"
+    ],
+    [
+      "619413f5c1218b82b7b56a60",
+      "Step 52"
+    ]
+  ]
+}

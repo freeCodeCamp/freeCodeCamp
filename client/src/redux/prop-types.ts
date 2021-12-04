@@ -297,7 +297,7 @@ export type CompletedChallenge = {
 };
 
 export type Ext = 'js' | 'html' | 'css' | 'jsx';
-export type FileKey = 'indexjs' | 'indexhtml' | 'indexcss';
+export type FileKey = 'scriptjs' | 'indexhtml' | 'stylescss';
 
 export type ChallengeMeta = {
   block: string;

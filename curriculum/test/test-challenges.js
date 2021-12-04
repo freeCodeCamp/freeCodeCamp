@@ -459,7 +459,9 @@ ${inspect(commentMap)}
                 challengeFile.editableContents = getLines(
                   challengeFile.contents,
                   challenge.challengeFiles.find(
-                    x => x.fileKey === challengeFile.fileKey
+                    x =>
+                      x.ext === challengeFile.ext &&
+                      x.name === challengeFile.name
                   ).editableRegionBoundaries
                 );
               });
@@ -523,7 +525,7 @@ async function createTestRunner(
   const challengeFiles = cloneDeep(challenge.challengeFiles);
   solutionFiles.forEach(solutionFile => {
     const challengeFile = challengeFiles.find(
-      x => x.fileKey === solutionFile.fileKey
+      x => x.ext === solutionFile.ext && x.name === solutionFile.name
     );
     challengeFile.contents = solutionFile.contents;
     challengeFile.editableContents = solutionFile.editableContents;

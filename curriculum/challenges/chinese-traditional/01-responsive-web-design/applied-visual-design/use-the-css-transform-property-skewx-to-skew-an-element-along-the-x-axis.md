@@ -9,9 +9,9 @@ dashedName: use-the-css-transform-property-skewx-to-skew-an-element-along-the-x-
 
 # --description--
 
-接下來要介紹的 `transform` 屬性是 `skewX()`：它使選擇的元素沿着 X 軸（橫向）翻轉指定的角度。
+接下來要介紹的 `transform` 屬性是 `skewX()`：它使選擇的元素沿着 X 軸（橫向）傾斜指定的角度。
 
-下面的代碼沿着 X 軸翻轉段落元素 -32 度。
+下面的代碼沿着 X 軸傾斜段落元素 -32 度。
 
 ```css
 p {
@@ -21,11 +21,11 @@ p {
 
 # --instructions--
 
-使用 `transform` 屬性沿 X 軸翻轉 id 爲 `bottom` 的元素 24 度。
+使用 `transform` 屬性沿 X 軸傾斜 id 爲 `bottom` 的元素 24 度。
 
 # --hints--
 
-id 爲 `bottom` 的元素應該沿着 X 軸翻轉 24 度。
+id 爲 `bottom` 的元素應該沿着 X 軸傾斜 24 度。
 
 ```js
 assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));

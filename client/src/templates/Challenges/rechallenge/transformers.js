@@ -227,11 +227,11 @@ const transformIncludes = async function (fileP) {
     div.querySelector('script[src="./script.js"]');
   const importedFiles = [];
   if (link) {
-    importedFiles.push('index.css');
+    importedFiles.push('styles.css');
     link.remove();
   }
   if (script) {
-    importedFiles.push('index.js');
+    importedFiles.push('script.js');
     script.remove();
   }
 
