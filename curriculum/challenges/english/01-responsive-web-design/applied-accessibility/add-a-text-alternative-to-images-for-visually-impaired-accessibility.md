@@ -44,7 +44,3 @@ assert($('img').attr('alt'));
 ```html
 <img src="doingKarateWow.jpeg" alt="Someone doing karate">
 ```
-
-# --notes--
-
-The `HTML` element is great
