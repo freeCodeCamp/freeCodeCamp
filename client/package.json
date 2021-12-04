@@ -131,7 +131,7 @@
     "@babel/types": "7.16.0",
     "@codesee/babel-plugin-instrument": "0.149.0",
     "@codesee/tracker": "0.149.0",
-    "@testing-library/jest-dom": "5.15.1",
+    "@testing-library/jest-dom": "5.16.0",
     "@testing-library/react": "12.1.2",
     "autoprefixer": "10.4.0",
     "babel-plugin-transform-imports": "2.0.0",
