@@ -16,7 +16,9 @@ Binary search is an **O(log(n))** efficient algorithm for searching a sorted arr
 
 As you can see, you are successively halving an array, which gives your the log(n) efficiency. For this challenge, we want you to show your work - how you got to the target value... the path you took!
 
-**Instructions:** Write a function `binarySearch` that implements the binary search algorithm on an array, returning the path you took (each middle value comparison) to find the target in an array.
+# --instructions--
+
+Write a function `binarySearch` that implements the binary search algorithm on an array, returning the path you took (each middle value comparison) to find the target in an array.
 
 The function takes a sorted array of integers and a target value as input. It returns an array containing (in-order) the middle value you found at each halving of the original array until you found the target value. The target value should be the last element of the returned array. If value not is found, return "Value Not Found"
 
