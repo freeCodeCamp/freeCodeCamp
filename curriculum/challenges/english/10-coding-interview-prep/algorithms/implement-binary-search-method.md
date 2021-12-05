@@ -68,21 +68,7 @@ for (let j = 0; j < testArray.length; j++) {
 `binarySearch(testArray, 1)` should return [13, 5, 2, 0, 1].
 
 ```js
-let searchList = [
-  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-  23, 49, 70
-];
-let testArray = [13, 5, 2, 0, 1];
-
-//user algo found value
-for (let j = 0; j < testArray.length; j++) {
-  if (binarySearch(searchList, 1)[j] != testArray[j]) {
-    
-    assert.fail();
-    break;
-  }
-}
-
+assert.deepEqual(binarySearch(_testArray, 1), [13, 5, 2, 0, 1]);
 ```
 
 `binarySearch(testArray, 2)` should return [13, 5, 2].
