@@ -26,10 +26,14 @@ For example, `binarySearch([1,2,3,4,5,6,7], 5)` would return `[4,6,5]`.
 
 For this challenge, when halving, you MUST use `Math.floor()` when doing division: `Math.floor(x/2)`. This will give a consistent, testable path.
 
-**For the below tests:** let `testArray` = [
+**Note:** The following array will be used in tests:
+
+```js
+const testArray = [
   0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
   23, 49, 70
-]
+];
+```
 
 # --hints--
 
