@@ -151,7 +151,7 @@ let binarySearch = (searchList, value) => {
     // add to output array
     arrayPath.push(searchList[middle]);
 
-    //not found
+    // not found
     if (right < left) {
       return 'Value Not Found';
     }
