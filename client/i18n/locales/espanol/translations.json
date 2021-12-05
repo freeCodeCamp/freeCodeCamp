@@ -32,7 +32,7 @@
     "profile": "Perfil",
     "news": "Noticias",
     "donate": "Donar",
-    "support-our-nonprofit": "Support our non-profit",
+    "support-our-nonprofit": "Apoya a nuestra organización sin fines de lucro",
     "update-settings": "Actualizar los ajustes de mi cuenta",
     "sign-me-out": "Cerrar sesión en freeCodeCamp",
     "flag-user": "Marcar la cuenta de este usuario por abuso",
@@ -64,7 +64,7 @@
     "submit-and-go": "Enviar y pasar al siguiente desafío",
     "go-to-next": "Ir al próximo desafío",
     "ask-later": "Pregúntame luego",
-    "start-coding": "Start coding!"
+    "start-coding": "¡Empieza a programar!"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -291,9 +291,9 @@
     },
     "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
     "help-translate-link": "Ayúdanos a traducir.",
-    "season-greetings": "Season's Greetings to you and your family.",
-    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
-    "project-preview-title": "Here's a preview of what you will build"
+    "season-greetings": "Deseamos felices festividades a ti y a tu familia.",
+    "if-getting-value": "Si estás obteniendo mucho de freeCodeCamp, ahora es un buen momento para donar para apoyar nuestra misión sin fines de lucro.",
+    "project-preview-title": "Aquí hay una vista previa de lo que construirás"
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -472,10 +472,10 @@
     "provide-username": "Comprueba si has proporcionado un nombre de usuario y un reporte",
     "report-sent": "Se envió un informe al equipo con {{email}} en copia",
     "certificate-missing": "La certificación que intentaste ver no existe",
-    "create-token-err": "An error occurred trying to create a token",
-    "delete-token-err": "An error occurred trying to delete your token",
-    "token-created": "You have successfully created a new token.",
-    "token-deleted": "Your token has been deleted."
+    "create-token-err": "Ocurrió un error al intentar crear un token",
+    "delete-token-err": "Ocurrió un error al intentar eliminar tu token",
+    "token-created": "Has creado con éxito un nuevo token.",
+    "token-deleted": "Tu token ha sido eliminado."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
@@ -605,16 +605,16 @@
     "add-code-three": "porque permiten que tu código formatee correctamente en el post."
   },
   "webhook-token": {
-    "title": "Webhook Token",
-    "create": "Create a new token",
-    "create-p1": "It looks like you don't have a webhook token. Create one to save your progress on this section",
-    "create-p2": "Create a webhook token to save your progress on the curriculum sections that use a virtual machine.",
-    "delete": "Delete my token",
-    "delete-title": "Delete My Webhook Token",
-    "delete-p1": "Your webhook token below is used to save your progress on the curriculum sections that use a virtual machine.",
-    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
-    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
-    "no-thanks": "No thanks, I would like to keep my token",
-    "yes-please": "Yes please, I would like to delete my token"
+    "title": "Token de anclaje",
+    "create": "Crea un nuevo token",
+    "create-p1": "Parece que no tiene un token de anclaje. Crea uno para guardar tu proyecto en esta sección",
+    "create-p2": "Crea un nuevo token de anclaje para guardar tu progreso en las secciones del currículo que usa una máquina virtual.",
+    "delete": "Eliminar mi token",
+    "delete-title": "Borra mi token de anclaje",
+    "delete-p1": "Tu token de anclaje inferior es usado para guardar tu progreso en las secciones del currículo que usa una máquina virtual.",
+    "delete-p2": "Si sospechas que tu token está comprometido, puedes borrarlo para que no pueda ser utilizado. El progreso sometido en las lecciones anteriores no se perderá.",
+    "delete-p3": "Necesitas crear un nuevo token para guardar tus futuros progresos en las secciones del currículo que usa esta máquina virtual.",
+    "no-thanks": "No gracias, me prefiero guardar mi token",
+    "yes-please": "Si por favor, deseo borrar mi token"
   }
 }
