@@ -43,7 +43,7 @@ const testArray = [
 assert(typeof binarySearch == 'function');
 ```
 
-`binarySearch(testArray, 0)` should return [13, 5, 2, 0].
+`binarySearch(testArray, 0)` should return `[13, 5, 2, 0]`.
 
 ```js
 
