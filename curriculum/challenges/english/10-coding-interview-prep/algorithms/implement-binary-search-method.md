@@ -165,7 +165,7 @@ let binarySearch = (searchList, value) => {
       middle = left + Math.floor((right - left) / 2);
     }
 
-    //if found update output array and exit
+    // if found update output array and exit
     if (searchList[middle] == value) {
       arrayPath.push(searchList[middle]);
 
