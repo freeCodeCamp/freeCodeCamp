@@ -8,7 +8,7 @@ dashedName: implement-binary-search
 
 # --description--
 
-Binary search is an **O(log(n))** efficient algorithm for searching a sorted array to find an element. It operates using the following steps:
+Binary search is an **O(log(n))** efficiency algorithm for searching a sorted array to find an element. It operates using the following steps:
 
 1. Find the middle `value` of a sorted array. If `value == target` return (found it!).
 1. If middle `value < target`, search right half of array in next compare.
