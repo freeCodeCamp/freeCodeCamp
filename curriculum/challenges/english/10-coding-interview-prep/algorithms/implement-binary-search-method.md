@@ -108,16 +108,7 @@ for (let j = 0; j < testArray.length; j++) {
 `binarySearch(testArray, 6)` should return 'Value Not Found'.
 
 ```js
-
-let searchList = [
-  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-  23, 49, 70
-];
- 
-if (binarySearch(searchList, 6) != 'Value Not Found') {
-  assert.fail();
-}
-
+assert.strictEqual(binarySearch(_testArray, 6), 'Value Not Found');
 ```
 
 `binarySearch(testArray, 11)` should return [13, 5, 10, 11].
