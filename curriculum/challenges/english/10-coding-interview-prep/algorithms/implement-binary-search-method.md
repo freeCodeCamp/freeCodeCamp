@@ -148,7 +148,7 @@ let binarySearch = (searchList, value) => {
   }
 
   while (searchList[middle] !== value) {
-    //add to output array
+    // add to output array
     arrayPath.push(searchList[middle]);
 
     //not found
