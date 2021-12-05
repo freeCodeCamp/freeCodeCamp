@@ -99,7 +99,7 @@ let searchList = [
 
 let testArray = [13];
 
-//user algo found value
+// user algo found value
 for (let j = 0; j < testArray.length; j++) {
   if (binarySearch(searchList, 13)[j] != testArray[j]) {
     
