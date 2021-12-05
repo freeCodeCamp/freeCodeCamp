@@ -10,11 +10,9 @@ dashedName: implement-binary-search
 
 Binary search is an **O(log(n))** efficient algorithm for searching a sorted array to find an element. It operates using the following steps:
 
-**1)** find the middle value of a sorted array. If value == target return (found it!).
-
-**2)** if middle value < target, search right half of array next compare.
-
-**3)** if middle value > target, search left half of array next compare.
+1. Find the middle `value` of a sorted array. If `value == target` return (found it!).
+1. If middle `value < target`, search right half of array in next compare.
+1. If middle `value > target`, search left half of array in next compare.
 
 As you can see, you are successively halving an array, which gives your the log(n) efficiency. For this challenge, we want you to show your work - how you got to the target value... the path you took!
 
