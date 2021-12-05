@@ -136,7 +136,7 @@ function binarySearch(searchList, value) {
 let binarySearch = (searchList, value) => {
   let arrayPath = [];
 
-  //set initial L - M - R
+  // set initial L - M - R
   let left = 0;
   let right = searchList.length - 1;
   let middle = Math.floor(right / 2);
