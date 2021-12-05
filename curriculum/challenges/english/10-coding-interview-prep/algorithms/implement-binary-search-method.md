@@ -141,7 +141,7 @@ let binarySearch = (searchList, value) => {
   let right = searchList.length - 1;
   let middle = Math.floor(right / 2);
 
-  //if first comparison finds value
+  // if first comparison finds value
   if (searchList[middle] == value) {
     arrayPath.push(searchList[middle]);
     return arrayPath;
