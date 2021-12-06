@@ -65,98 +65,98 @@
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "Learn HTML by Building a Cat Photo App",
+        "title": "Aprende HTML construyendo una aplicación de fotos de gato",
         "intro": [
           "",
           ""
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "Learn Basic CSS by Building a Cafe Menu",
+        "title": "Aprende CSS básico construyendo un menú de cafetería",
         "intro": [
           "",
           ""
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Learn the CSS Box Model by Building a Rothko Painting",
+        "title": "Aprende el modelo de caja CSS construyendo una pintura de Rothko",
         "intro": [
-          "Mark Rothko was known for his abstract style of painting. Rothko paintings commonly depicted rectangular regions of color in varying sizes.",
-          "In this lesson, you will be using CSS to create your own painting in Rothko's style. You will use many of the skills you have already been practicing, as well as new CSS tool such as blur and transform."
+          "Mark Rothko fue conocido por el arte abstracto de su pintura. Los cuadros de Rothko suelen representar regiones rectangulares de color en tamaños variables.",
+          "En esta lección, usarás CSS para crear tu propia pintura al estilo de Rothko. Utilizarás muchas de las habilidades que ya has estado practicando, así como nuevas herramientas CSS como el desenfoque y la transformación."
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "Learn CSS Variables by Building a City Skyline",
+        "title": "Aprende variables CSS construyendo un cielo de la ciudad",
         "intro": [
           "",
           ""
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "Learn HTML Forms by Building a Registration Form",
+        "title": "Aprende formularios HTML construyendo un formulario de registro",
         "intro": [
           "",
           ""
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "Learn Accessibility by Building a Quiz",
+        "title": "Aprende accesibilidad construyendo un cuestionario",
         "intro": [
           "",
           ""
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "Learn Intermediate CSS by Building a Picasso Painting",
+        "title": "Aprende CSS intermedio construyendo una Pintura Picasso",
         "intro": [
-          "Pablo Picasso was known for his Cubism style of painting, a style recognized by representations of objects broken down and reassembled from multiple perspectives. Picasso's paintings are often highly abstract and thought provoking.",
-          "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
+          "Pablo Picasso era conocido por su estilo de pintura cubista, un estilo reconocido por representaciones de objetos descompuestos y reensamblados desde múltiples perspectivas. Las pinturas de Picasso a menudo son muy abstractas y provocadoras de pensamiento.",
+          "En este curso, usarás CSS para crear tu propia pintura en el estilo de Picasso. Aprenderás sobre los iconos SVG de FontAwesome, posicionamiento CSS, y reforzarás las habilidades que ya has estado aprendiendo."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Learn Responsive Web Design by Building a Piano",
+        "title": "Aprende a diseñar web responsivo construyendo un Piano",
         "intro": [
           "",
           ""
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "Learn CSS Flexbox by Building a Photo Gallery",
+        "title": "Aprende CSS Flexbox construyendo una galería de fotos",
         "intro": [
           "",
           ""
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Learn CSS Grid by Building a Magazine",
+        "title": "Aprende CSS Grid construyendo una revista",
         "intro": [
           "",
           ""
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "Learn Typography by Building a Nutrition Label",
+        "title": "Aprende tipografía construyendo una etiqueta de nutrición",
         "intro": [
           "",
           ""
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
-        "title": "Learn CSS Transforms by Building a Penguin",
+        "title": "Aprende transformaciones CSS construyendo un pingüino",
         "intro": [
           "",
           ""
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
-        "title": "Learn CSS Animation by Building a Ferris Wheel",
+        "title": "Aprende la animación CSS construyendo una rueda de la fortuna",
         "intro": [
           "",
           ""
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
+        "title": "Aprende más acerca de los Pseudo Selectores de CSS construyendo una hoja estados financieros",
         "intro": [
           "",
           ""
@@ -481,7 +481,7 @@
         ]
       },
       "scientific-computing-with-python-projects": {
-        "title": "Scientific Computing with Python Projects",
+        "title": "Proyectos de cálculo científico con Python",
         "intro": [
           "Es momento de poner a prueba tus habilidades con Python. Al completar estos proyectos, demostrarás que tienes el conocimiento fundamental de Python y que calificas para la Certificación de cálculo científico con Python."
         ]
@@ -491,30 +491,30 @@
   "data-analysis-with-python": {
     "title": "Análisis de Datos con Python",
     "intro": [
-      "Data Analysis has been around for a long time. But up until a few years ago, developers practiced it using expensive, closed-source tools like Tableau. But recently, Python, SQL, and other open libraries have changed Data Analysis forever.",
-      "In the Data Analysis with Python Certification, you'll learn the fundamentals of data analysis with Python. By the end of this certification, you'll know how to read data from sources like CSVs and SQL, and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data."
+      "El análisis de datos ha existido durante mucho tiempo. Pero hasta hace apenas pocos años, los desarrolladores lo practicaban utilizando herramientas costosas de código cerrado como Tableau. Sin embargo recientemente, Python, SQL y otras librerías abiertas han cambiado el Análisis de Datos para siempre.",
+      "En la Certificación de Análisis de Datos con Python, aprenderás los fundamentos del análisis de datos con Python. Al terminar la certificación, sabrás como leer datos de fuentes como CSV y SQL, y como usar librerías tales como Numpy, Pandas, Matplotlib y Seaborn para procesar y visualizar datos."
     ],
     "note": "",
     "blocks": {
       "data-analysis-with-python-course": {
-        "title": "Data Analysis with Python",
+        "title": "Análisis de datos con Python",
         "intro": [
-          "In these comprehensive video courses, created by Santiago Basulto, you will learn the whole process of data analysis. You'll be reading data from multiple sources (CSV, SQL, Excel), process that data using NumPy and Pandas, and visualize it using Matplotlib and Seaborn,",
-          "Additionally, we've included a thorough Jupyter Notebook course, and a quick Python reference to refresh your programming skills."
+          "En esta serie de video cursos, creados por Santiago Basulto, aprenderás todo el proceso de análisis de datos. Leerás datos de múltiples fuentes (CSV, SQL, Excel), procesarás los datos usando NumPy, Pandas y los visualizarás usando Matplotlib y Seaborn,",
+          "Además, hemos incluido un curso completo de Jupyter Notebook, y una referencia rápida de Python para actualizar tus habilidades de programación."
         ]
       },
       "numpy": {
         "title": "Numpy",
         "intro": [
-          "Learn the basics of the NumPy library in the following video course created by Keith Galli.",
-          "In this course, you'll learn how NumPy works and how it compares to Python's built-in lists. You'll also learn how to write code with NumPy, indexing, reshaping, applied statistics, and much more."
+          "Aprende los fundamentos de la librería NumPy en el siguiente video curso creado por Keith Galli.",
+          "En este curso aprenderás como trabaja NumPy y como se compara con las listas integradas en Python. Aprenderás también como escribir código con NumPy, indexación, remodelar, estadística aplicada y mucho más."
         ]
       },
       "data-analysis-with-python-projects": {
-        "title": "Data Analysis with Python Projects",
+        "title": "Proyectos de análisis de datos con Python",
         "intro": [
-          "There are many ways to analyze data with Python. By completing these projects, you will demonstrate that you have a good foundational knowledge of data analysis with Python.",
-          "Finish them all to claim your Data Analysis with Python certification."
+          "Hay muchas formas de analizar datos con Python. Al completar estos proyectos, demostrarás que tienes los conocimientos fundamentales del análisis de datos con Python.",
+          "Termina todos los proyectos para reclamar tu Certificación de Análisis de Datos con Python."
         ]
       }
     }
@@ -522,8 +522,8 @@
   "information-security": {
     "title": "Seguridad de la Información",
     "intro": [
-      "With everything we do online, there's a vast amount of sensitive information at risk: email addresses, passwords, phone numbers, and much more.",
-      "With the Information Security Certification, you'll build a secure web app with HelmetJS to learn the fundamentals of protecting people's information online.",
+      "Con todo lo que hacemos en línea, hay una gran cantidad de información sensible en riesgo: direcciones de correo electrónico, contraseñas, números de teléfono y mucho más.",
+      "Con la Certificación de Seguridad de Información, construirás aplicaciones web seguras con HelmetJS para aprender los fundamentos de la protección de la información en línea de la gente.",
       "You'll also build a TCP client, and an Nmap and port scanner in Python. This will help you learn the basics of penetration testing — an important component of good information security."
     ],
     "note": "",
