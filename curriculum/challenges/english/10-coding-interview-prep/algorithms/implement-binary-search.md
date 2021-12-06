@@ -56,7 +56,7 @@ assert.deepEqual(binarySearch(_testArray, 1), [13, 5, 2, 0, 1]);
 ```
 
 
-`binarySearch(testArray, 2)` should return [13, 5, 2].
+`binarySearch(testArray, 2)` should return `[13, 5, 2]`.
 
 ```js
 assert.deepEqual(binarySearch(_testArray, 2), [13, 5, 2]);
