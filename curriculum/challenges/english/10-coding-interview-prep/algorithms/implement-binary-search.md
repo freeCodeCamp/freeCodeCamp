@@ -62,7 +62,7 @@ assert.deepEqual(binarySearch(_testArray, 1), [13, 5, 2, 0, 1]);
 assert.deepEqual(binarySearch(_testArray, 2), [13, 5, 2]);
 ```
 
-`binarySearch(testArray, 6)` should return 'Value Not Found'.
+`binarySearch(testArray, 6)` should return the string `Value Not Found`.
 
 ```js
 assert.strictEqual(binarySearch(_testArray, 6), 'Value Not Found');
