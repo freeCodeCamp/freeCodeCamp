@@ -79,13 +79,7 @@ let searchList = [
 let testArray = [13, 5, 10, 11];
 
 // user algo found value
-for (let j = 0; j < testArray.length; j++) {
-  if (binarySearch(searchList, 11)[j] != testArray[j]) {
-    
-    assert.fail();
-    break;
-  }
-}
+assert.deepEqual(binarySearch(searchList, 11), testArray)
 
 ```
 
