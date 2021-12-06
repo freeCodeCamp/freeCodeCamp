@@ -102,7 +102,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout'>
-      {hasEditableBoundaries && (
+      {projectBasedChallenge && (
         <ActionRow
           block={block}
           hasNotes={hasNotes}
@@ -114,12 +114,12 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         />
       )}
       <ReflexContainer orientation='vertical'>
-        {!hasEditableBoundaries && (
+        {!projectBasedChallenge && (
           <ReflexElement flex={instructionPane.flex} {...resizeProps}>
             {instructions}
           </ReflexElement>
         )}
-        {!hasEditableBoundaries && (
+        {!projectBasedChallenge && (
           <ReflexSplitter propagate={true} {...resizeProps} />
         )}
 
