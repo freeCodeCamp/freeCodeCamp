@@ -59,12 +59,7 @@ assert.deepEqual(binarySearch(_testArray, 1), [13, 5, 2, 0, 1]);
 `binarySearch(testArray, 2)` should return [13, 5, 2].
 
 ```js
-let searchList = [
-  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-  23, 49, 70
-];
-
-assert.deepEqual(binarySearch(searchList, 2), [13, 5, 2]);
+assert.deepEqual(binarySearch(_testArray, 2), [13, 5, 2]);
 ```
 
 `binarySearch(testArray, 6)` should return 'Value Not Found'.
