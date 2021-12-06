@@ -49,7 +49,7 @@ assert(typeof binarySearch == 'function');
 assert.deepEqual(binarySearch(_testArray, 0), [13, 5, 2, 0]);
 ```
 
-`binarySearch(testArray, 1)` should return [13, 5, 2, 0, 1].
+`binarySearch(testArray, 1)` should return `[13, 5, 2, 0, 1]`.
 
 ```js
 let searchList = [
