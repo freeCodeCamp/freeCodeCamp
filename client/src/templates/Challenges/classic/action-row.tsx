@@ -12,7 +12,7 @@ interface ActionRowProps {
   showNotes: boolean;
   showPreview: boolean;
   superBlock: string;
-  switchDisplayTab: (displayTab: string) => void;
+  togglePane: (pane: string) => void;
   resetChallenge: () => void;
 }
 
@@ -22,7 +22,7 @@ const mapDispatchToProps = {
 
 const ActionRow = ({
   hasNotes,
-  switchDisplayTab,
+  togglePane,
   showNotes,
   showPreview,
   showConsole,
@@ -48,7 +48,7 @@ const ActionRow = ({
         <div className='panel-display-tabs'>
           <button
             className={showConsole ? 'active-tab' : ''}
-            onClick={() => switchDisplayTab('showConsole')}
+            onClick={() => togglePane('showConsole')}
             role='tab'
           >
             {t('learn.editor-tabs.console')}
@@ -56,7 +56,7 @@ const ActionRow = ({
           {hasNotes && (
             <button
               className={showNotes ? 'active-tab' : ''}
-              onClick={() => switchDisplayTab('showNotes')}
+              onClick={() => togglePane('showNotes')}
               role='tab'
             >
               {t('learn.editor-tabs.notes')}
@@ -64,7 +64,7 @@ const ActionRow = ({
           )}
           <button
             className={showPreview ? 'active-tab' : ''}
-            onClick={() => switchDisplayTab('showPreview')}
+            onClick={() => togglePane('showPreview')}
             role='tab'
           >
             {t('learn.editor-tabs.preview')}

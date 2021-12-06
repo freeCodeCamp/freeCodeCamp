@@ -46,8 +46,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const [showPreview, setShowPreview] = useState(true);
   const [showConsole, setShowConsole] = useState(false);
 
-  const switchDisplayTab = (displayTab: string): void => {
-    switch (displayTab) {
+  const togglePane = (pane: string): void => {
+    switch (pane) {
       case 'showPreview':
         setShowPreview(!showPreview);
         break;
@@ -110,7 +110,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showNotes={showNotes}
           showPreview={showPreview}
           superBlock={superBlock}
-          switchDisplayTab={switchDisplayTab}
+          togglePane={togglePane}
         />
       )}
       <ReflexContainer orientation='vertical'>
