@@ -2,12 +2,12 @@
   "name": "Data Visualization Projects",
   "isUpcomingChange": false,
   "dashedName": "data-visualization-projects",
-  "order": 3,
+  "order": 2,
   "time": "150 hours",
   "template": "",
   "required": [],
   "superBlock": "data-visualization",
-  "superOrder": 4,
+  "superOrder": 3,
   "challengeOrder": [
     [
       "bd7168d8c242eddfaeb5bd13",

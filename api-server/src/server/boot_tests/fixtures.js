@@ -17,7 +17,7 @@ export const mockFirstChallenge = {
   superBlock: 'the',
   dashedName: 'challenge',
   challengeOrder: 0,
-  superOrder: 1,
+  superOrder: 0,
   order: 0
 };
 
@@ -161,11 +161,6 @@ export const matchSubscriptionIdQuery = {
 };
 export const matchUserIdQuery = {
   where: { id: mockUser.id }
-};
-
-export const firstChallengeQuery = {
-  // first challenge of the first block of the first superBlock
-  where: { challengeOrder: 0, superOrder: 1, order: 0 }
 };
 
 export const fullStackChallenges = [

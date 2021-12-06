@@ -2,7 +2,7 @@
   "name": "jQuery",
   "isUpcomingChange": false,
   "dashedName": "jquery",
-  "order": 3,
+  "order": 1,
   "time": "3 hours",
   "template": "",
   "required": [
@@ -11,7 +11,7 @@
     }
   ],
   "superBlock": "front-end-development-libraries",
-  "superOrder": 3,
+  "superOrder": 2,
   "challengeOrder": [
     [
       "bad87fee1348bd9acdd08826",

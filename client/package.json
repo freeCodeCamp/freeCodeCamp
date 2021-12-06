@@ -66,7 +66,7 @@
     "dedent": "0.7.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
-    "final-form": "4.20.4",
+    "final-form": "4.20.6",
     "gatsby": "3.14.6",
     "gatsby-cli": "3.14.2",
     "gatsby-plugin-advanced-sitemap": "2.0.0",
@@ -131,7 +131,7 @@
     "@babel/types": "7.16.0",
     "@codesee/babel-plugin-instrument": "0.149.0",
     "@codesee/tracker": "0.149.0",
-    "@testing-library/jest-dom": "5.16.0",
+    "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
     "autoprefixer": "10.4.0",
     "babel-plugin-transform-imports": "2.0.0",
@@ -145,7 +145,7 @@
     "redux-mock-store": "1.5.4",
     "redux-saga-test-plan": "4.0.4",
     "serve": "13.0.2",
-    "webpack": "5.64.4",
+    "webpack": "5.65.0",
     "webpack-cli": "4.9.1"
   }
 }

@@ -2,12 +2,12 @@
   "name": "Front End Development Libraries Projects",
   "isUpcomingChange": false,
   "dashedName": "front-end-development-libraries-projects",
-  "order": 8,
+  "order": 6,
   "time": "150 hours",
   "template": "",
   "required": [],
   "superBlock": "front-end-development-libraries",
-  "superOrder": 3,
+  "superOrder": 2,
   "challengeOrder": [
     [
       "bd7158d8c442eddfaeb5bd13",

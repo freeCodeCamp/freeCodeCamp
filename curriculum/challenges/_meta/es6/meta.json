@@ -2,12 +2,12 @@
   "name": "ES6",
   "isUpcomingChange": false,
   "dashedName": "es6",
-  "order": 2,
+  "order": 1,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2,
+  "superOrder": 1,
   "challengeOrder": [
     [
       "587d7b87367417b2b2512b40",

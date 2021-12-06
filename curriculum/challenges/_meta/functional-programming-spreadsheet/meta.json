@@ -3,12 +3,12 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "functional-programming-spreadsheet",
-  "order": 13,
+  "order": 12,
   "time": "2 hours",
   "template": "",
   "required": [],
   "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2,
+  "superOrder": 1,
   "isBeta": true,
   "challengeOrder": [
     [

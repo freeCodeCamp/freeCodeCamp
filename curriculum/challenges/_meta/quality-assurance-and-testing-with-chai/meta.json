@@ -2,12 +2,12 @@
   "name": "Quality Assurance and Testing with Chai",
   "isUpcomingChange": false,
   "dashedName": "quality-assurance-and-testing-with-chai",
-  "order": 1,
+  "order": 0,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "quality-assurance",
-  "superOrder": 7,
+  "superOrder": 6,
   "challengeOrder": [
     [
       "587d824a367417b2b2512c46",

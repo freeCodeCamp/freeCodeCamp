@@ -138,7 +138,7 @@ export function Map({
   currentSuperBlock = null
 }: MapProps): React.ReactElement {
   /*
-   * this query gets the first challenge from each block and the second block
+   * this query gets the first challenge from each block and the first block
    * from each superblock, leaving you with one challenge from each
    * superblock
    */
@@ -146,7 +146,7 @@ export function Map({
     query SuperBlockNodes {
       allChallengeNode(
         sort: { fields: [superOrder] }
-        filter: { order: { eq: 2 }, challengeOrder: { eq: 1 } }
+        filter: { order: { eq: 0 }, challengeOrder: { eq: 0 } }
       ) {
         nodes {
           superBlock

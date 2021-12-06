@@ -2,12 +2,12 @@
   "name": "Advanced Node and Express",
   "isUpcomingChange": false,
   "dashedName": "advanced-node-and-express",
-  "order": 2,
+  "order": 1,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "quality-assurance",
-  "superOrder": 7,
+  "superOrder": 6,
   "challengeOrder": [
     [
       "5895f700f9fc0f352b528e63",

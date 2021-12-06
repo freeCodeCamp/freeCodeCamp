@@ -141,8 +141,22 @@
           ""
         ]
       },
+      "learn-css-transforms-by-building-a-penguin": {
+        "title": "Learn CSS Transforms by Building a Penguin",
+        "intro": [
+          "",
+          ""
+        ]
+      },
       "learn-css-animation-by-building-a-ferris-wheel": {
         "title": "通过构建摩天轮来学习 CSS 动画",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
+        "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
         "intro": [
           "",
           ""

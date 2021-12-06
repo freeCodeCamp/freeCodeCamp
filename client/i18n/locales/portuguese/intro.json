@@ -141,8 +141,22 @@
           ""
         ]
       },
+      "learn-css-transforms-by-building-a-penguin": {
+        "title": "Aprenda transformações em CSS criando um pinguim",
+        "intro": [
+          "",
+          ""
+        ]
+      },
       "learn-css-animation-by-building-a-ferris-wheel": {
         "title": "Aprenda animação em CSS construindo uma roda gigante",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
+        "title": "Saiba mais sobre os pseudosseletores em CSS criando uma folha de saldo",
         "intro": [
           "",
           ""
