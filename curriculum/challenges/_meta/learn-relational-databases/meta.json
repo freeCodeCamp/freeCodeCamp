@@ -2,12 +2,12 @@
   "name": "Learn Relational Databases",
   "isUpcomingChange": true,
   "dashedName": "learn-relational-databases",
-  "order": 2,
+  "order": 0,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "relational-databases",
-  "superOrder": 5,
+  "superOrder": 4,
   "challengeOrder": [
     [
       "5ea8adfab628f68d805bfc5e",

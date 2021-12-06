@@ -199,9 +199,7 @@ async function setup() {
   for (const challenge of challenges) {
     const dashedBlockName = challenge.block;
     if (!meta[dashedBlockName]) {
-      meta[dashedBlockName] = (
-        await getMetaForBlock(dashedBlockName)
-      ).challengeOrder;
+      meta[dashedBlockName] = await getMetaForBlock(dashedBlockName);
     }
   }
   return {
@@ -253,6 +251,47 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
+  describe('Assert meta order', function () {
+    /** This array can be used to skip a superblock - we'll use this
+     * when we are working on the new project-based curriculum for
+     * a superblock (because keeping those challenges in order is
+     * tricky and needs cleaning up before deploying).
+     */
+    const superBlocksUnderDevelopment = ['responsive-web-design'];
+    const superBlocks = new Set([
+      ...Object.values(meta)
+        .map(el => el.superBlock)
+        .filter(el => !superBlocksUnderDevelopment.includes(el))
+    ]);
+    superBlocks.forEach(superBlock => {
+      const filteredMeta = Object.values(meta)
+        /**
+         * Exclude any meta which doesn't have a superOrder, as these shouldn't
+         * appear on the learn map and thus don't need to be validated.
+         */
+        .filter(
+          el =>
+            el.superBlock === superBlock && typeof el.superOrder !== 'undefined'
+        )
+        .sort((a, b) => a.order - b.order);
+      if (!filteredMeta.length) {
+        return;
+      }
+      it(`${superBlock} should have the same order in every meta`, function () {
+        const firstOrder = filteredMeta[0].superOrder;
+        assert.isTrue(
+          filteredMeta.every(el => el.superOrder === firstOrder),
+          'The superOrder properties are mismatched.'
+        );
+      });
+      filteredMeta.forEach((meta, index) => {
+        it(`${meta.superBlock} ${meta.name} must be in order`, function () {
+          assert.equal(meta.order, index);
+        });
+      });
+    });
+  });
+
   describe(`Check challenges (${lang})`, function () {
     this.timeout(5000);
     challenges.forEach((challenge, id) => {
@@ -262,7 +301,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
           // Note: the title in meta.json are purely for human readability and
           // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function () {
-            const index = meta[dashedBlockName].findIndex(
+            const index = meta[dashedBlockName].challengeOrder.findIndex(
               arr => arr[0] === challenge.id
             );
 

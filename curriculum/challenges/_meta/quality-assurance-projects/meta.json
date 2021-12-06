@@ -2,12 +2,12 @@
   "name": "Quality Assurance Projects",
   "isUpcomingChange": false,
   "dashedName": "quality-assurance-projects",
-  "order": 3,
+  "order": 2,
   "time": "150 hours",
   "template": "",
   "required": [],
   "superBlock": "quality-assurance",
-  "superOrder": 7,
+  "superOrder": 6,
   "challengeOrder": [
     [
       "587d8249367417b2b2512c41",

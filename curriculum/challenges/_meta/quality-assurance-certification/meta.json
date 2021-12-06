@@ -2,12 +2,11 @@
   "name": "Quality Assurance Certification",
   "isUpcomingChange": false,
   "dashedName": "quality-assurance-v7-certification",
-  "order": 7,
+  "order": 6,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certifications",
-  "superOrder": 0,
   "challengeOrder": [
     [
       "5e611829481575a52dc59c0e",

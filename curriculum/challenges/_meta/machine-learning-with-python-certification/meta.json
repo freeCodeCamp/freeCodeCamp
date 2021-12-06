@@ -2,12 +2,11 @@
   "name": "Machine Learning with Python Certification",
   "isUpcomingChange": false,
   "dashedName": "machine-learning-with-python-v7-certification",
-  "order": 11,
+  "order": 10,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certifications",
-  "superOrder": 0,
   "challengeOrder": [
     [
       "5e46fc95ac417301a38fb935",

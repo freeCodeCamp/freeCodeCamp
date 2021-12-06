@@ -2,12 +2,11 @@
   "name": "Responsive Web Design Certification",
   "isUpcomingChange": false,
   "dashedName": "responsive-web-design-certification",
-  "order": 1,
+  "order": 0,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certifications",
-  "superOrder": 0,
   "challengeOrder": [
     [
       "561add10cb82ac38a17513bc",

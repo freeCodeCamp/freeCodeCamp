@@ -2,12 +2,11 @@
   "name": "Relational Databases Certification",
   "isUpcomingChange": true,
   "dashedName": "relational-databases-v8-certification",
-  "order": 5,
+  "order": 4,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certifications",
-  "superOrder": 0,
   "challengeOrder": [
     [
       "606243f50267e718b1e755f4",

@@ -2,12 +2,12 @@
   "name": "Information Security Projects",
   "isUpcomingChange": false,
   "dashedName": "information-security-projects",
-  "order": 3,
+  "order": 2,
   "time": "150 hours",
   "template": "",
   "required": [],
   "superBlock": "information-security",
-  "superOrder": 10,
+  "superOrder": 9,
   "challengeOrder": [
     [
       "587d824a367417b2b2512c44",

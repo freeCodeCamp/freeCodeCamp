@@ -2,12 +2,11 @@
   "name": "Data Visualization Certification",
   "isUpcomingChange": false,
   "dashedName": "data-visualization-certification",
-  "order": 4,
+  "order": 3,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certifications",
-  "superOrder": 0,
   "challengeOrder": [
     [
       "5a553ca864b52e1d8bceea14",

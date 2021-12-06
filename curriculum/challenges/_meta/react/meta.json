@@ -2,7 +2,7 @@
   "name": "React",
   "isUpcomingChange": false,
   "dashedName": "react",
-  "order": 5,
+  "order": 3,
   "time": "5 hours",
   "template": "<body><div id='root'></div><div id='challenge-node'></div>${ source || '' }</body>",
   "required": [
@@ -14,7 +14,7 @@
     }
   ],
   "superBlock": "front-end-development-libraries",
-  "superOrder": 3,
+  "superOrder": 2,
   "challengeOrder": [
     [
       "587d7dbc367417b2b2512bb1",

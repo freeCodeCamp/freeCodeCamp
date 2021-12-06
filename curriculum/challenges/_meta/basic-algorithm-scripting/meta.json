@@ -2,12 +2,12 @@
   "name": "Basic Algorithm Scripting",
   "isUpcomingChange": false,
   "dashedName": "basic-algorithm-scripting",
-  "order": 6,
+  "order": 5,
   "time": "50 hours",
   "template": "",
   "required": [],
   "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2,
+  "superOrder": 1,
   "challengeOrder": [
     [
       "56533eb9ac21ba0edf2244b3",
