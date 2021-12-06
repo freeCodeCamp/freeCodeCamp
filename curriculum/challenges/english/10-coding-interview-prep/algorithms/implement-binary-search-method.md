@@ -121,10 +121,7 @@ for (let j = 0; j < testArray.length; j++) {
 function binarySearch(searchList, value) {
   
   let arrayPath = [];
-  // Only change code below this line
-
   return arrayPath;
-  // Only change code above this line
 }
 ```
 
