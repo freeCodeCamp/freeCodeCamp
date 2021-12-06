@@ -163,11 +163,6 @@ export const matchUserIdQuery = {
   where: { id: mockUser.id }
 };
 
-export const firstChallengeQuery = {
-  // first challenge of the first block of the first superBlock
-  where: { challengeOrder: 0, superOrder: 1, order: 0 }
-};
-
 export const fullStackChallenges = [
   {
     completedDate: 1585210952511,
