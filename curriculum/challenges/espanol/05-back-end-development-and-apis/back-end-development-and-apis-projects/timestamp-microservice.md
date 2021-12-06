@@ -16,9 +16,11 @@ Construye una aplicación full stack de JavaScript que sea funcionalmente simila
 
 Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
 
+**Nota:** El propósito de este proyecto no es la versión de zonas horarias, por lo que asume que todas las fechas válidas enviadas serán analizadas con `new Date()` como fechas GMT.
+
 # --hints--
 
-Debes proporcionar tu propio proyecto, no la URL de ejemplo.
+Debes proporcionar tu propio proyecto, no la URL del ejemplo.
 
 ```js
 (getUserInput) => {
@@ -64,7 +66,7 @@ Una petición para `/api/:date?` con una fecha válida debe devolver un objeto J
   );
 ```
 
-Una petición a `/api/1451001600000` debe devolver `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
+Una solicitud a `/api/1451001600000` debe devolver `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
 
 ```js
 (getUserInput) =>
@@ -85,7 +87,7 @@ Tu proyecto puede manejar fechas que pueden ser analizadas con éxito por `new D
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/05 October 2011').then(
+  $.get(getUserInput('url') + '/api/05 October 2011, GMT').then(
     (data) => {
       assert(
         data.unix === 1317772800000 &&
@@ -98,7 +100,7 @@ Tu proyecto puede manejar fechas que pueden ser analizadas con éxito por `new D
   );
 ```
 
-Si la fecha de entrada no es válida, la api devuelve un objeto con la estructura `{ error : "Invalid Date" }`
+Si la fecha de entrada es inválida, la api devuelve un objeto con la estructura `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
