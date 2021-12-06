@@ -14,7 +14,7 @@ Binary search is an **O(log(n))** efficiency algorithm for searching a sorted ar
 1. If middle `value < target`, search right half of array in next compare.
 1. If middle `value > target`, search left half of array in next compare.
 
-As you can see, you are successively halving an array, which gives your the log(n) efficiency. For this challenge, we want you to show your work - how you got to the target value... the path you took!
+As you can see, you are successively halving an array, which gives you the log(n) efficiency. For this challenge, we want you to show your work - how you got to the target value... the path you took!
 
 # --instructions--
 
@@ -46,40 +46,57 @@ assert(typeof binarySearch == 'function');
 `binarySearch(testArray, 0)` should return `[13, 5, 2, 0]`.
 
 ```js
-assert.deepEqual(binarySearch(_testArray, 0), [13, 5, 2, 0]);
-```
-
-`binarySearch(testArray, 1)` should return [13, 5, 2, 0, 1].
-
-```js
-assert.deepEqual(binarySearch(_testArray, 1), [13, 5, 2, 0, 1]);
-```
-
-`binarySearch(testArray, 2)` should return [13, 5, 2].
-
-```js
-assert.deepEqual(binarySearch(_testArray, 2), [13, 5, 2]);
-```
-
-`binarySearch(testArray, 6)` should return 'Value Not Found'.
-
-```js
-assert.strictEqual(binarySearch(_testArray, 6), 'Value Not Found');
-```
-
-`binarySearch(testArray, 11)` should return [13, 5, 10, 11].
-
-```js
-
 let searchList = [
   0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
   23, 49, 70
 ];
 
-let testArray = [13, 5, 10, 11];
+assert.deepEqual(binarySearch(searchList, 0), [13, 5, 2, 0]);
+```
 
-// user algo found value
-assert.deepEqual(binarySearch(searchList, 11), testArray)
+`binarySearch(testArray, 1)` should return [13, 5, 2, 0, 1].
+
+```js
+let searchList = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
+
+assert.deepEqual(binarySearch(searchList, 1), [13, 5, 2, 0, 1]);
+```
+
+
+`binarySearch(testArray, 2)` should return [13, 5, 2].
+
+```js
+let searchList = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
+
+assert.deepEqual(binarySearch(searchList, 2), [13, 5, 2]);
+```
+
+`binarySearch(testArray, 6)` should return 'Value Not Found'.
+
+```js
+let searchList = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
+
+assert.strictEqual(binarySearch(searchList, 6), 'Value Not Found');
+```
+
+`binarySearch(testArray, 11)` should return [13, 5, 10, 11].
+
+```js
+let searchList = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
+
+assert.deepEqual(binarySearch(searchList, 11), [13, 5, 10, 11])
 
 ```
 
@@ -91,10 +108,7 @@ let searchList = [
   23, 49, 70
 ];
 
-let testArray = [13];
-
-assert.deepEqual(binarySearch(searchList, 13), testArray);
-
+assert.deepEqual(binarySearch(searchList, 13), [13]);
 ```
 
 
