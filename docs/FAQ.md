@@ -71,12 +71,7 @@ We typically do not assign issues to anyone other than long-time contributors. I
 
 ### How can I help review pull requests that are ready for quality assurance and approval?
 
-You can review PRs that need to be checked for quality assurance using [this page](https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Aopen+is%3Apr+-label%3A%22status%3A+blocked%22+-label%3A%22status%3A+merge+conflict%22+status%3Asuccess+draft%3Afalse), which will have the following filters applied:
-
-- ready for review (not-draft)
-- do not have a merge conflict
-- are not blocked
-- have all status checks in green
+You can review PRs that need to be checked for quality assurance using [this page](https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Aopen+is%3Apr+-label%3A%22status%3A+blocked%22+-label%3A%22status%3A+merge+conflict%22+status%3Asuccess+draft%3Afalse), which will have the following filters applied: - ready for review (not-draft) - do not have a merge conflict - are not blocked - have all status checks in green
 
 ### I am stuck on something that is not included in this documentation.
 
