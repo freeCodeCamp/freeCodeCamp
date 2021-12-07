@@ -3,12 +3,11 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet",
-  "order": 43,
+  "order": 10,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "isBeta": true,
   "challengeOrder": [
     [
       "6193d8081ec2531581ea7b98",
