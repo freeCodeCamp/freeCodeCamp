@@ -57,6 +57,7 @@ assert(
     var test = new LinkedList();
     test.add('cat');
     test.add('dog');
+    test.add('fish');
     return test.head().next.element === 'dog';
   })()
 );
