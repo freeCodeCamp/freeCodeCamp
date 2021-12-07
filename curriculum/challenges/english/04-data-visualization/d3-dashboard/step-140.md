@@ -16,8 +16,7 @@ Go back to the top of the function and use `d3.select` to select the `.dashboard
 test-text
 
 ```js
-const script = $('.dashboard').siblings('script')[1].innerHTML;
-assert(/d3\.select\(('|"|`)\.dashboard\1\)\.html\(('|"|`)\2\)/g.test(script));
+assert.match(code, /d3\.select\(('|"|`)\.dashboard\1\)\.html\(('|"|`)\2\)/g);
 ```
 
 # --seed--

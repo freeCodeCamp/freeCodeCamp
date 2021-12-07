@@ -23,14 +23,6 @@ const frameRunner = [
   }
 ];
 
-const globalRequires = [
-  {
-    link:
-      'https://cdnjs.cloudflare.com/' +
-      'ajax/libs/normalize/4.2.0/normalize.min.css'
-  }
-];
-
 const applyFunction = fn =>
   async function (file) {
     try {
@@ -142,7 +134,7 @@ export function buildDOMChallenge(
   { challengeFiles, required = [], template = '' },
   { usesTestRunner } = { usesTestRunner: false }
 ) {
-  const finalRequires = [...globalRequires, ...required];
+  const finalRequires = [...required];
   if (usesTestRunner) finalRequires.push(...frameRunner);
 
   const loadEnzyme = challengeFiles.some(
