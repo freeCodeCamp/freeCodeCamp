@@ -91,7 +91,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       }
       return '';
     })
-    .reduce((head, element) => head.concat(element));
+    .reduce((head, element) => head.concat(element), []);
 
   const indexHtml = findIndexHtml(challengeFiles);
 
