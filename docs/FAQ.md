@@ -2,6 +2,10 @@
 
 Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
+### What do I need to know to contribute to the codebase?
+
+freeCodeCamp runs on a modern Javascript stack. If you're interested in contributing to our codebase, you will need some familiarity with Javascript and some of the technologies we use like Node.js, MongoDB, OAuth 2.0, React, Gatsby, and Webpack.
+
 ### Can I translate freeCodeCamp's resources?
 
 Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
@@ -9,6 +13,14 @@ Yes - You can contribute to any of the 30+ languages we have enabled on our tran
 We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
 
 If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
+
+### Can I contribute articles to freeCodeCamp News or videos to freeCodeCamp's YouTube channel?
+
+Yes - you can contribute to our publication blog and YouTube channel.
+
+To write articles for freeCodeCamp news, you can follow the [publication guide here](https://www.freecodecamp.org/news/developer-news-style-guide/).
+
+To help us caption, translate, or make educational videos for our YouTube channel, you can follow the [YouTube channel guide here](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/).
 
 ### How can I report a new bug?
 
@@ -56,6 +68,15 @@ We typically do not assign issues to anyone other than long-time contributors. I
 3. Finally, we give priority to pull requests which follow our recommended guidelines.
    - Did you follow the pull request checklist?
    - Did you give your pull request a meaningful title?
+
+### How can I help review pull requests that are ready for quality assurance and approval?
+
+You can review PRs that need to be checked for quality assurance using [this page](https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Aopen+is%3Apr+-label%3A%22status%3A+blocked%22+-label%3A%22status%3A+merge+conflict%22+status%3Asuccess+draft%3Afalse), which will have the following filters applied:
+
+- ready for review (not-draft)
+- do not have a merge conflict
+- are not blocked
+- have all status checks in green
 
 ### I am stuck on something that is not included in this documentation.
 
