@@ -815,6 +815,20 @@ deployed on each instance like so:
 
    Select yes (y) to remove everything that is not in use. This will remove all stopped containers, all networks and volumes not used by at least one container, and all dangling images and build caches.
 
+## Work on Contributor Tools
+
+### Deploy updates
+
+ssh into the VM (hosted on Digital Ocean).
+
+```console
+cd tools
+git pull origin master
+npm ci
+npm run build
+pm2 restart contribute-app
+```
+
 ## Updating Node.js versions on VMs
 
 List currently installed node & npm versions
