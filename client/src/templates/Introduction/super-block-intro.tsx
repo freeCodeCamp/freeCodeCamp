@@ -11,6 +11,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { SuperBlocks } from '../../../../config/certification-settings';
+import { showNewCurriculum } from '../../../../config/env.json';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
@@ -191,6 +192,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
           cert: i18nSuperBlock
         });
 
+  // When there aren't any legacy challenges, that means there isn't a new curriculum to show.
+  // So all of the existing challenges would be in `blockDashedNames`.
+  const loadNewCurriculum =
+    !!showNewCurriculum && legacyBlockDashedNames.length;
+  const defaultCurriculumNames = legacyBlockDashedNames.length
+    ? legacyBlockDashedNames
+    : blockDashedNames;
+
   return (
     <>
       <Helmet>
@@ -209,50 +218,79 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               {t(`intro:misc-text.courses`)}
             </h2>
             <Spacer />
-            <div className='block-ui'>
-              {blockDashedNames.map(blockDashedName => (
-                <Fragment key={blockDashedName}>
-                  <Block
-                    blockDashedName={blockDashedName}
-                    challenges={nodesForSuperBlock.filter(
-                      node =>
-                        node.challenge.block === blockDashedName &&
-                        !node.challenge.isLegacy
-                    )}
-                    superBlock={superBlock}
-                  />
-                  {blockDashedName !== 'project-euler' ? <Spacer /> : null}
-                </Fragment>
-              ))}
-              {superBlock !== SuperBlocks.CodingInterviewPrep && (
-                <div>
-                  <CertChallenge
-                    superBlock={superBlock}
-                    title={title}
-                    user={user}
-                  />
-                </div>
-              )}
-              <Spacer />
-              <h2 className='text-center big-subheading'>
-                {t(`intro:misc-text.legacy-header`)}
-              </h2>
-              <p>{t('intro:misc-text.legacy-desc')}</p>
-              {legacyBlockDashedNames.map(blockDashedName => (
-                <Fragment key={blockDashedName}>
-                  <Block
-                    blockDashedName={blockDashedName}
-                    challenges={nodesForSuperBlock.filter(
-                      node =>
-                        node.challenge.block === blockDashedName &&
-                        node.challenge.isLegacy
-                    )}
-                    superBlock={superBlock}
-                  />
-                  {blockDashedName !== 'project-euler' ? <Spacer /> : null}
-                </Fragment>
-              ))}
-            </div>
+            {!loadNewCurriculum && (
+              <div className='block-ui'>
+                {defaultCurriculumNames.map(blockDashedName => (
+                  <Fragment key={blockDashedName}>
+                    <Block
+                      blockDashedName={blockDashedName}
+                      challenges={nodesForSuperBlock.filter(
+                        node =>
+                          node.challenge.block === blockDashedName &&
+                          !node.challenge.isLegacy
+                      )}
+                      superBlock={superBlock}
+                    />
+                    {blockDashedName !== 'project-euler' ? <Spacer /> : null}
+                  </Fragment>
+                ))}
+                {superBlock !== SuperBlocks.CodingInterviewPrep && (
+                  <div>
+                    <CertChallenge
+                      superBlock={superBlock}
+                      title={title}
+                      user={user}
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+            {loadNewCurriculum && (
+              <div className='block-ui'>
+                {blockDashedNames.map(blockDashedName => (
+                  <Fragment key={blockDashedName}>
+                    <Block
+                      blockDashedName={blockDashedName}
+                      challenges={nodesForSuperBlock.filter(
+                        node =>
+                          node.challenge.block === blockDashedName &&
+                          !node.challenge.isLegacy
+                      )}
+                      superBlock={superBlock}
+                    />
+                    {blockDashedName !== 'project-euler' ? <Spacer /> : null}
+                  </Fragment>
+                ))}
+                {superBlock !== SuperBlocks.CodingInterviewPrep && (
+                  <div>
+                    <CertChallenge
+                      superBlock={superBlock}
+                      title={title}
+                      user={user}
+                    />
+                  </div>
+                )}
+                <Spacer />
+                <h2 className='text-center big-subheading'>
+                  {t(`intro:misc-text.legacy-header`)}
+                </h2>
+                <p>{t('intro:misc-text.legacy-desc')}</p>
+                {legacyBlockDashedNames.map(blockDashedName => (
+                  <Fragment key={blockDashedName}>
+                    <Block
+                      blockDashedName={blockDashedName}
+                      challenges={nodesForSuperBlock.filter(
+                        node =>
+                          node.challenge.block === blockDashedName &&
+                          node.challenge.isLegacy
+                      )}
+                      superBlock={superBlock}
+                    />
+                    {blockDashedName !== 'project-euler' ? <Spacer /> : null}
+                  </Fragment>
+                ))}
+              </div>
+            )}
             {!isSignedIn && !signInLoading && (
               <div>
                 <Spacer size={2} />
