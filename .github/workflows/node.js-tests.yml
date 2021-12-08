@@ -1,13 +1,9 @@
 name: Node.js CI
 on:
   push:
-    paths:
-      - '!docs/**'
     branches-ignore:
       - 'renovate/**'
   pull_request:
-    paths:
-      - '!docs/**'
 jobs:
   lint:
     name: Lint
