@@ -8,12 +8,12 @@
 
 <div class='i18n-lang-list'>
 
-- [Chinese](/i18n/chinese/index.md)
-- [English](/index.md)
-- [Español](/i18n/espanol/index.md)
-- [Japanese](/i18n/japanese/index.md)
-- [Portuguese](/i18n/portuguese/index.md)
-- [Italian](/i18n/italian/index.md)
+- [Chinese](/docs/i18n/chinese/index.md)
+- [English](/docs/index.md)
+- [Español](/docs/i18n/espanol/index.md)
+- [Japanese](/docs/i18n/japanese/index.md)
+- [Portuguese](/docs/i18n/portuguese/index.md)
+- [Italian](/docs/i18n/italian/index.md)
 
 </div>
 
