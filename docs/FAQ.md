@@ -18,7 +18,7 @@ If you are interested in contributing to translations please makes sure you [rea
 
 Yes - you can contribute to our publication blog and YouTube channel.
 
-If you're interested in writing articles for freeCodeCamp News, please visit this[publication guide](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/). In addition, please read our[style guide](https://www.freecodecamp.org/news/developer-news-style-guide/) as this will help you write stronger and more effective articles.
+If you're interested in writing articles for freeCodeCamp News, please visit this [publication guide](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/). In addition, please read our [style guide](https://www.freecodecamp.org/news/developer-news-style-guide/) as this will help you write stronger and more effective articles.
 
 To help us make educational videos for our YouTube channel, you can follow the [YouTube channel guide here](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/).
 
