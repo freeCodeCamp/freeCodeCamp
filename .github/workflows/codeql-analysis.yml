@@ -3,12 +3,12 @@ name: 'CodeQL'
 on:
   push:
     branches: [main]
-    paths:
-      - '!docs/**'
+    paths-ignore:
+      - 'docs/**'
   pull_request:
     branches: [main]
-    paths:
-      - '!docs/**'
+    paths-ignore:
+      - 'docs/**'
 
 jobs:
   analyse:
