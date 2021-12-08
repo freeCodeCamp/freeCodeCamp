@@ -779,9 +779,23 @@ Le modifiche di configurazione alle nostre istanze NGINX sono mantenute su GitHu
 
    Seleziona yes (y) per rimuovere tutto quello che non è in uso. Questo rimuoverà tutti i contenitori che sono stati arrestati, tutti i network e volumi che non sono utilizzati da almeno un container, e le cache di immagini e build scollegate.
 
-## Aggiornare la versione di Node.js sulle VM
+## Work on Contributor Tools
 
-Visualizza le versioni installate di node & npm
+### Deploy updates
+
+ssh into the VM (hosted on Digital Ocean).
+
+```console
+cd tools
+git pull origin master
+npm ci
+npm run build
+pm2 restart contribute-app
+```
+
+## Updating Node.js versions on VMs
+
+List currently installed node & npm versions
 
 ```console
 nvm -v
@@ -791,13 +805,13 @@ npm -v
 nvm ls
 ```
 
-Installa l'ultima versione di Node.js LTC, e reinstalla i pacchetti globali
+Install the latest Node.js LTS, and reinstall any global packages
 
 ```console
 nvm install --lts --reinstall-packages-from=default
 ```
 
-Verifica i pacchetti installati
+Verify installed packages
 
 ```console
 npm ls -g --depth=0
@@ -809,7 +823,7 @@ Alias the `default` Node.js version to the current LTS (pinned to latest major v
 nvm alias default 16
 ```
 
-(Facoltativo) Disinstalla vecchie versioni
+(Optional) Uninstall old versions
 
 ```console
 nvm uninstall <version>
@@ -849,19 +863,19 @@ pm2 save
 pm2 logs
 ```
 
-## Installare e aggiornare Azure Pipeline Agent
+## Installing and Updating Azure Pipeline Agents
 
 See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
 
 You would need a PAT, that you can grab from here: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
-### Installare agenti su target di deployment
+### Installing agents on Deployment targets
 
 Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register the agent from scratch in the requisite [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
 
 > [!NOTE] You should run the scripts in the home directory, and make sure no other `azagent` directory exists.
 
-### Aggiornare gli agent
+### Updating agents
 
 Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables. We need to do this for instance updating Node.js on our deployment target VMs.
 
@@ -932,7 +946,7 @@ We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to sen
 
 # Flight Manual - Adding news instances for new languages
 
-### Modifiche al tema
+### Theme Changes
 
 We use a custom [theme](https://github.com/freeCodeCamp/news-theme) for our news publication. Adding the following changes to the theme enables the addition of new languages.
 
@@ -943,6 +957,6 @@ We use a custom [theme](https://github.com/freeCodeCamp/news-theme) for our news
 5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), add scripts for the newly created config files.
 6. Add the related language `day.js` script from [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) to the [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
 
-### Modifiche alla dashboard di Ghost
+### Ghost Dashboard Changes
 
 Update the publication assets by going to the Ghost dashboard > settings > general and uploading the publications's [icon](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png), and [cover](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png).

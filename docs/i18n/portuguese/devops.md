@@ -779,6 +779,20 @@ As alterações na configuração das nossas instâncias NGINX são mantidas no 
 
    Selecione sim (y) para remover tudo que não está sendo usado. Isso vai remover todos os containers parados, todas as redes e volumes não usados por pelo menos um container e imagens pendentes e caches de compilação.
 
+## Trabalho com as ferramentas do colaborador
+
+### Implantar atualizações
+
+ssh na VM (hospedada na Digital Ocean).
+
+```console
+cd tools
+git pull origin master
+npm ci
+npm run build
+pm2 restart contribute-app
+```
+
 ## Atualize as versões do Node.js nas MVs
 
 Liste as versões do node e do npm instaladas
@@ -831,7 +845,7 @@ Obtenha as instruções/comandos de instalação com o comando `startup` e use a
 pm2 startup
 ```
 
-Comandos rápidos para PM2 para listar, reviver processos salvos etc.
+Comandos rápidos PM2 para listar, reviver processos salvos, etc.
 
 ```console
 pm2 ls
@@ -851,7 +865,7 @@ pm2 logs
 
 ## Instalando e atualizando agentes do Azure Pipeline
 
-Veja: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops e siga as instruções para parar, remover e reinstalar agentes. Em resumo, você pode seguir as etapas listadas aqui.
+Veja: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops e siga as instruções para parar, remover e reinstalar os agentes. Em resumo, você pode seguir as etapas listadas aqui.
 
 Você vai precisar de um PAT, que você pode pegar nesse link: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
@@ -897,7 +911,7 @@ Atualmente, atualizar os agentes requer que sejam removidos e reconfigurados. Is
    rm -rf ~/azagent
    ```
 
-Uma vez que você completar as etapas acima, você pode repetir as mesmas etapas na instalação do agente.
+Quando você completar as etapas acima, você pode repetir as mesmas etapas na instalação do agente.
 
 # Manual de Vôo - Disparo de e-mail
 
