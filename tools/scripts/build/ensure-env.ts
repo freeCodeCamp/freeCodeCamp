@@ -49,7 +49,8 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     'showLocaleDropdownMenu',
     'deploymentEnv',
     'environment',
-    'showUpcomingChanges'
+    'showUpcomingChanges',
+    'showMobileAd'
   ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
   const donationKeys = ['stripePublicKey', 'paypalClientId', 'patreonClientId'];

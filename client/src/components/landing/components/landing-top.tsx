@@ -11,7 +11,7 @@ import {
   TencentLogo,
   AlibabaLogo
 } from '../../../assets/images/components';
-// import MobileAd from '../../MobileAd/mobile-ad-modal';
+import MobileAd from '../../MobileAd/mobile-ad-modal';
 import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 import CampersImage from './campers-image';
@@ -20,21 +20,21 @@ interface LandingTopProps {
   pageName: string;
 }
 
-const { clientLocale } = envData;
+const { clientLocale, showMobileAd } = envData;
 function LandingTop({ pageName }: LandingTopProps): JSX.Element {
   const { t } = useTranslation();
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale
   );
-  // function isFirstTime() {
-  //   if (typeof window !== 'undefined') {
-  //     return localStorage.getItem('firstTime') === null;
-  //   }
-  //   return false;
-  // }
+  function isFirstTime() {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('firstTime') === null && showMobileAd;
+    }
+    return false;
+  }
   return (
     <div className='landing-top'>
-      {/* {isFirstTime() && <MobileAd />} */}
+      {isFirstTime() && <MobileAd />}
       <Row>
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
