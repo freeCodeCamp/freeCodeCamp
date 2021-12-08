@@ -347,3 +347,10 @@ export type ChallengeFile = {
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;
+
+export interface UserFetchState {
+  pending: boolean;
+  complete: boolean;
+  errored: boolean;
+  error: string | null;
+}

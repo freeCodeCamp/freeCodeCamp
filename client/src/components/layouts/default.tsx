@@ -1,10 +1,9 @@
 import fontawesome from '@fortawesome/fontawesome';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
@@ -23,9 +22,9 @@ import {
   isServerOnlineSelector,
   userFetchStateSelector,
   userSelector,
-  usernameSelector,
   executeGA
 } from '../../redux';
+import { UserFetchState, User } from '../../redux/prop-types';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -38,35 +37,7 @@ import './fonts.css';
 import './global.css';
 import './variables.css';
 
-fontawesome.config = {
-  autoAddCss: false
-};
-
-const propTypes = {
-  children: PropTypes.node.isRequired,
-  executeGA: PropTypes.func,
-  fetchState: PropTypes.shape({ pending: PropTypes.bool }),
-  fetchUser: PropTypes.func.isRequired,
-  flashMessage: PropTypes.shape({
-    id: PropTypes.string,
-    type: PropTypes.string,
-    message: PropTypes.string
-  }),
-  hasMessage: PropTypes.bool,
-  isOnline: PropTypes.bool.isRequired,
-  isServerOnline: PropTypes.bool.isRequired,
-  isSignedIn: PropTypes.bool,
-  onlineStatusChange: PropTypes.func.isRequired,
-  pathname: PropTypes.string.isRequired,
-  removeFlashMessage: PropTypes.func.isRequired,
-  serverStatusChange: PropTypes.func.isRequired,
-  showFooter: PropTypes.bool,
-  signedInUserName: PropTypes.string,
-  t: PropTypes.func.isRequired,
-  theme: PropTypes.string,
-  useTheme: PropTypes.bool,
-  user: PropTypes.object
-};
+fontawesome.config.autoAddCss = false;
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -75,8 +46,14 @@ const mapStateToProps = createSelector(
   isServerOnlineSelector,
   userFetchStateSelector,
   userSelector,
-  usernameSelector,
-  (isSignedIn, flashMessage, isOnline, isServerOnline, fetchState, user) => ({
+  (
+    isSignedIn,
+    flashMessage,
+    isOnline: boolean,
+    isServerOnline: boolean,
+    fetchState: UserFetchState,
+    user: User
+  ) => ({
     isSignedIn,
     flashMessage,
     hasMessage: !!flashMessage.message,
@@ -88,7 +65,9 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = dispatch =>
+type StateProps = ReturnType<typeof mapStateToProps>;
+
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       fetchUser,
@@ -100,7 +79,19 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-class DefaultLayout extends Component {
+type DispatchProps = ReturnType<typeof mapDispatchToProps>;
+
+interface DefaultLayoutProps extends StateProps, DispatchProps {
+  children: ReactNode;
+  pathname: string;
+  showFooter?: boolean;
+  t: TFunction;
+  useTheme?: boolean;
+}
+
+class DefaultLayout extends Component<DefaultLayoutProps> {
+  static displayName = 'DefaultLayout';
+
   componentDidMount() {
     const { isSignedIn, fetchUser, pathname, executeGA } = this.props;
     if (!isSignedIn) {
@@ -112,7 +103,7 @@ class DefaultLayout extends Component {
     window.addEventListener('offline', this.updateOnlineStatus);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: DefaultLayoutProps) {
     const { pathname, executeGA } = this.props;
     const { pathname: prevPathname } = prevProps;
     if (pathname !== prevPathname) {
@@ -229,9 +220,6 @@ class DefaultLayout extends Component {
     );
   }
 }
-
-DefaultLayout.displayName = 'DefaultLayout';
-DefaultLayout.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,

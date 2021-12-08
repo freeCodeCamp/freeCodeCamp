@@ -9,6 +9,10 @@ declare module '*.svg' {
   const content: string;
   export default content;
 }
+declare module '*.woff' {
+  const url: string;
+  export default url;
+}
 
 declare module '*.png' {
   const content: string;
