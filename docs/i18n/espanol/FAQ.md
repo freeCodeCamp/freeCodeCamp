@@ -70,18 +70,6 @@ Gracias de antemano por ser amable y paciente. Recuerda, esta comunidad es manej
 
 ### Asistencia adicional
 
-Si tiene preguntas sobre el stack, la arquitectura del código base, las traducciones o cualquier otra cosa, no dude en comunicarse con nuestro personal.
-
-| Personal              | Enviar mensaje en el Foro                                                    |
-|:--------------------- |:---------------------------------------------------------------------------- |
-| Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
-| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
-| Miya Liu              | [@miyaliu](https://chinese.freecodecamp.org/forum/u/miyaliu)                 |
-| Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
-| Nicholas Carrigan     | [@nhcarrigan](https://forum.freecodecamp.org/u/nhcarrigan)                   |
-| Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
-| Rafael D Hernandez    | [@RafaelHernandez](https://forum.freecodecamp.org/u/rafaelhernandez)         |
-| Shaun Hamilton        | [@sky020](https://forum.freecodecamp.org/u/sky020)                           |
-| Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
+If you have queries about the stack, architecture of the codebase, translations, or anything else feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 
 **Puedes enviar un correo electrónico a nuestro equipo de desarrolladores en: `dev[at]freecodecamp.org`**

@@ -779,9 +779,23 @@ Los cambios de configuración a nuestras instancias NGINX se mantienen en GitHub
 
    Selecciona sí (y) para eliminar todo lo que no esté en uso. Esto eliminará todos los contenedores detenidos, todas las redes y volúmenes no utilizados por al menos un contenedor, y todas las imágenes colgantes y cachés de compilación.
 
-## Actualizando las versiones de Node.js en las MVs
+## Work on Contributor Tools
 
-Listar las versiones instaladas actualmente de node & versiones npm
+### Deploy updates
+
+ssh into the VM (hosted on Digital Ocean).
+
+```console
+cd tools
+git pull origin master
+npm ci
+npm run build
+pm2 restart contribute-app
+```
+
+## Updating Node.js versions on VMs
+
+List currently installed node & npm versions
 
 ```console
 nvm -v
@@ -791,13 +805,13 @@ npm -v
 nvm ls
 ```
 
-Instala la última versión de Node.js LTS y reinstala los paquetes globales
+Install the latest Node.js LTS, and reinstall any global packages
 
 ```console
 nvm install --lts --reinstall-packages-from=default
 ```
 
-Verifica los paquetes instalados
+Verify installed packages
 
 ```console
 npm ls -g --depth=0
@@ -809,10 +823,10 @@ Alias the `default` Node.js version to the current LTS (pinned to latest major v
 nvm alias default 16
 ```
 
-(Opcional) Desinstala las versiones antiguas
+(Optional) Uninstall old versions
 
 ```console
-nvm uninstall <versión>
+nvm uninstall <version>
 ```
 
 > [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
@@ -849,19 +863,19 @@ pm2 save
 pm2 logs
 ```
 
-## Instalando y actualizando los agentes de canalización de Azure
+## Installing and Updating Azure Pipeline Agents
 
 See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
 
 You would need a PAT, that you can grab from here: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
-### Instalando los agentes en destinos de implementación
+### Installing agents on Deployment targets
 
 Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register the agent from scratch in the requisite [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
 
 > [!NOTE] You should run the scripts in the home directory, and make sure no other `azagent` directory exists.
 
-### Actualizando los Agentes
+### Updating agents
 
 Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables. We need to do this for instance updating Node.js on our deployment target VMs.
 
