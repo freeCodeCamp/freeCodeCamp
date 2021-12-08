@@ -26,7 +26,7 @@ Do NOT include quotes (single or double) in the output.
 
 # --hints--
 
-Cards Sequence 2, 3, 4, 5, 6 should return `5 Bet`
+Cards Sequence 2, 3, 4, 5, 6 should return the string `5 Bet`
 
 ```js
 assert(

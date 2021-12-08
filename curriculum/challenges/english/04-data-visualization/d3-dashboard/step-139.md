@@ -20,12 +20,9 @@ So now, when you hover a label, the function will be called with the year that i
 test-text
 
 ```js
-const script = $('.dashboard').siblings('script')[1].innerHTML;
-assert(
-  /\.on\(('|"|`)mouseover\1, function \(d\) \{\s*return drawDashboard\(d\);\s*\}\)/g.test(
-    script
-  )
-);
+assert.match(code,
+  /\.on\('mouseover', d => drawDashboard\(d\)\)/g
+  );
 ```
 
 # --seed--

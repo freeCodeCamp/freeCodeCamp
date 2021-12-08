@@ -111,7 +111,7 @@ La sessione e il segreto di sessione dovrebbero essere impostate correttamente.
     (data) => {
       assert.match(
         data,
-        /secret:( |)process\.env(\.SESSION_SECRET|\[(?<q>"|')SESSION_SECRET\k<q>\])/g,
+        /secret *: *process\.env(\.SESSION_SECRET|\[(?<q>"|')SESSION_SECRET\k<q>\])/g,
         'Your express app should have express-session set up with your secret as process.env.SESSION_SECRET'
       );
     },

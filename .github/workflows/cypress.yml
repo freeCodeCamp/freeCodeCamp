@@ -1,9 +1,13 @@
 name: Cypress
 on:
   push:
+    paths-ignore:
+      - 'docs/**'
     branches-ignore:
       - 'renovate/**'
   pull_request:
+    paths-ignore:
+      - 'docs/**'
 
 jobs:
   build-client:

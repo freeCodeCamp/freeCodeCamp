@@ -4,8 +4,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { emailToABVariant } from '../../utils/A-B-tester';
 import { randomQuote } from '../../utils/get-words';
 import Login from '../Header/components/Login';
-import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
-import CurrentChallengeLink from '../helpers/current-challenge-link';
+import { Link, Spacer, Loader } from '../helpers';
 import IntroDescription from './components/IntroDescription';
 
 import './intro.css';
@@ -56,16 +55,6 @@ const Intro = ({
             ? `${t('learn.welcome-1', { name: name })}`
             : `${t('learn.welcome-2')}`}
         </h1>
-        <Spacer />
-        <FullWidthRow>
-          {completedChallengeCount && completedChallengeCount > 0 ? (
-            <CurrentChallengeLink isLargeBtn={true}>
-              {t('buttons.current-challenge')}
-            </CurrentChallengeLink>
-          ) : (
-            ''
-          )}
-        </FullWidthRow>
         <Spacer />
         <div className='text-center quote-partial'>
           <blockquote className='blockquote'>
