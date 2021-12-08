@@ -1,6 +1,6 @@
 ---
 id: 5900f5021000cf542c510015
-title: 'Problem 406: Guessing Game'
+title: 'Problema 406: Jogo de adivinhação'
 challengeType: 5
 forumTopicId: 302074
 dashedName: problem-406-guessing-game
@@ -8,32 +8,42 @@ dashedName: problem-406-guessing-game
 
 # --description--
 
-We are trying to find a hidden number selected from the set of integers {1, 2, ..., n} by asking questions.
+Estamos tentando encontrar um número oculto selecionado do conjunto de inteiros {1, 2, ..., $n$} fazendo perguntas. Cada número (pergunta) que perguntamos, recebemos uma das três possíveis respostas:
 
-Each number (question) we ask, we get one of three possible answers: "Your guess is lower than the hidden number" (and you incur a cost of a), or
+- "Seu palpite é menor que o número oculto" (e você tem um custo de a) ou
+- "Seu palpite é maior que o número oculto" (e você tem um custo de b), ou
+- "Sim, é esse!" (e o jogo acaba).
 
-"Your guess is higher than the hidden number" (and you incur a cost of b), or
+Dado o valor de $n$, $a$, e $b$, uma estratégia ideal minimiza o custo total <u>para o pior caso possível</u>.
 
-"Yes, that's it!" (and the game ends).
+Por exemplo, se $n = 5$, $a = 2$, e $b = 3$, podemos começar perguntando "<strong>2</strong>" como a nossa primeira pergunta.
 
-Given the value of n, a, and b, an optimal strategy minimizes the total cost for the worst possible case.
+Se nos disserem que 2 é maior que o número oculto (para um custo de $b = 3$), então temos certeza de que "<strong>1</strong>" é o número oculto (para um custo total de <strong><span style="color: blue;">3</span></strong>).
 
-For example, if n = 5, a = 2, and b = 3, then we may begin by asking "2" as our first question.
+Se nos for dito que 2 é menor que o número oculto (para um custo de $a = 2$), então nossa próxima pergunta será <strong>4</strong>".
 
-If we are told that 2 is higher than the hidden number (for a cost of b=3), then we are sure that "1" is the hidden number (for a total cost of 3). If we are told that 2 is lower than the hidden number (for a cost of a=2), then our next question will be "4". If we are told that 4 is higher than the hidden number (for a cost of b=3), then we are sure that "3" is the hidden number (for a total cost of 2+3=5). If we are told that 4 is lower than the hidden number (for a cost of a=2), then we are sure that "5" is the hidden number (for a total cost of 2+2=4). Thus, the worst-case cost achieved by this strategy is 5. It can also be shown that this is the lowest worst-case cost that can be achieved. So, in fact, we have just described an optimal strategy for the given values of n, a, and b.
+Se nos for dito que 4 é maior que o número oculto (para um custo de $b = 3$), então temos certeza de que "<strong>3</strong>" é o número oculto (para um custo total de $2 + 3 = \color{blue}{\mathbf{5}}$).
 
-Let C(n, a, b) be the worst-case cost achieved by an optimal strategy for the given values of n, a, and b.
+Se nos for dito que 4 é menor que o número oculto (para um custo de $a = 2$), então temos a certeza de que "<strong>5</strong>" é o número oculto (para um custo total de $2 + 2 = \cor{blue}{\mathbf{4}}$).
 
-Here are a few examples: C(5, 2, 3) = 5 C(500, √2, √3) = 13.22073197... C(20000, 5, 7) = 82 C(2000000, √5, √7) = 49.63755955...
+Assim, o pior custo de caso alcançado por esta estratégia é <strong><span style="color: red">5</span></strong>. Também se pode demonstrar que este é o pior custo possível que pode ser alcançado. Então, de fato, acabamos de descrever uma estratégia ideal para os valores indicados de $n$, $a$e $b$.
 
-Let Fk be the Fibonacci numbers: Fk = Fk-1 + Fk-2 with base cases F1 = F2 = 1.Find ∑1≤k≤30 C(1012, √k, √Fk), and give your answer rounded to 8 decimal places behind the decimal point.
+Considere $C(n, a, b)$ como o pior caso de custo obtido por uma estratégia ideal para os valores dados de $n$, $a$, e $b$.
+
+Aqui estão alguns exemplos:
+
+$$\begin{align} & C(5, 2, 3) = 5 \\\\ & C(500, \sqrt{2}, \sqrt{3}) = 13.220\\,731\\,97\ldots \\\\ & C(20.000, 5, 7) = 82 \\\\ & C(2.000.000, √5, √7) = 49.637\\,559\\,55\ldots \\\\ \end{align}$$
+
+Considere $F_k$ como sendo os números de Fibonacci: $F_k = F_{k - 1} + F_{k - 2}$ com casos base $F_1 = F_2 = 1$.
+
+Encontre $\displaystyle\sum_{k = 1}^{30} C({10}^{12}, \sqrt{k}, \sqrt{F_k})$ e dê sua resposta arredondada para 8 casas decimais após o ponto decimal.
 
 # --hints--
 
-`euler406()` should return 36813.12757207.
+`guessingGame()` deve retornar `36813.12757207`.
 
 ```js
-assert.strictEqual(euler406(), 36813.12757207);
+assert.strictEqual(guessingGame(), 36813.12757207);
 ```
 
 # --seed--
@@ -41,12 +51,12 @@ assert.strictEqual(euler406(), 36813.12757207);
 ## --seed-contents--
 
 ```js
-function euler406() {
+function guessingGame() {
 
   return true;
 }
 
-euler406();
+guessingGame();
 ```
 
 # --solutions--

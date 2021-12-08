@@ -280,10 +280,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
                 !title ||
                 !isURL(url, {
                   protocols: ['http', 'https'],
-                  /* eslint-disable camelcase */
+                  /* eslint-disable camelcase, @typescript-eslint/naming-convention */
                   require_tld: true,
                   require_protocol: true
-                  /* eslint-enable camelcase */
+                  /* eslint-enable camelcase, @typescript-eslint/naming-convention */
                 })
               }
             >

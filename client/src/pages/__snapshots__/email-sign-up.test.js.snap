@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EmailSignUp /> Authenticated user "accepted terms and condition" it should render correctly 1`] = `null`;
+
+exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and condition" it should render correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
+    >
+      <div
+        className="spacer"
+        style={
+          Object {
+            "height": "1px",
+            "padding": "15px 0",
+          }
+        }
+      />
+      <div
+        className="intro-description"
+      >
+        <strong>
+          learn.read-this.heading
+        </strong>
+        <div
+          className="spacer"
+          style={
+            Object {
+              "height": "1px",
+              "padding": "15px 0",
+            }
+          }
+        />
+        <p>
+          learn.read-this.p1
+        </p>
+        <p>
+          learn.read-this.p2
+        </p>
+        <p>
+          learn.read-this.p3
+        </p>
+        <p>
+          learn.read-this.p4
+        </p>
+        <p>
+          learn.read-this.p5
+        </p>
+        <p>
+          learn.read-this.p6
+        </p>
+        <p>
+          learn.read-this.p7
+        </p>
+        <p>
+          learn.read-this.p8
+        </p>
+        <p>
+          <a
+            className="inline"
+            href="https://youtube.com/freecodecamp"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </p>
+        <p>
+          learn.read-this.p10
+        </p>
+        <p>
+          <a
+            className="inline"
+            href="https://forum.freecodecamp.org"
+            rel="noopener noreferrer"
+            target="_blank"
+          />
+        </p>
+        <p>
+          learn.read-this.p12
+        </p>
+      </div>
+      <hr />
+    </div>
+  </div>
+  <div
+    className="email-sign-up row"
+    data-cy="email-sign-up"
+  >
+    <div
+      className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
+    >
+      <strong>
+        misc.quincy
+      </strong>
+      <div
+        className="spacer"
+        style={
+          Object {
+            "height": "1px",
+            "padding": "15px 0",
+          }
+        }
+      />
+      <p>
+        misc.email-blast
+      </p>
+      <div
+        className="spacer"
+        style={
+          Object {
+            "height": "1px",
+            "padding": "15px 0",
+          }
+        }
+      />
+    </div>
+    <div
+      className="col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1 col-xs-12"
+    >
+      <button
+        className="big-cta-btn btn btn-lg btn-primary btn-block"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        buttons.yes-please
+      </button>
+      <div
+        className="button-spacer"
+        style={
+          Object {
+            "padding": "5px 0",
+          }
+        }
+      />
+    </div>
+    <div
+      className="col-md-4 col-sm-5 col-xs-12"
+    >
+      <button
+        className="big-cta-btn btn btn-lg btn-primary btn-block"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        buttons.no-thanks
+      </button>
+      <div
+        className="button-spacer"
+        style={
+          Object {
+            "padding": "5px 0",
+          }
+        }
+      />
+    </div>
+    <div
+      className="col-xs-12"
+    >
+      <div
+        className="spacer"
+        style={
+          Object {
+            "height": "1px",
+            "padding": "15px 0",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

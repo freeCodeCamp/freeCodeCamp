@@ -1,6 +1,6 @@
 ---
 id: 5900f51d1000cf542c51002f
-title: 'Problem 433: Steps in Euclid''s algorithm'
+title: 'Problema 433: Etapas no algoritmo de Euclides'
 challengeType: 5
 forumTopicId: 302104
 dashedName: problem-433-steps-in-euclids-algorithm
@@ -8,22 +8,26 @@ dashedName: problem-433-steps-in-euclids-algorithm
 
 # --description--
 
-Let E(x0, y0) be the number of steps it takes to determine the greatest common divisor of x0 and y0 with Euclid's algorithm. More formally:x1 = y0, y1 = x0 mod y0xn = yn-1, yn = xn-1 mod yn-1
+Considere $E(x_0, y_0)$ como o número de etapas necessárias para determinar o máximo divisor comum de $x_0$ e $y_0$ com o algoritmo de Euclides. Mais formalmente:
 
-E(x0, y0) is the smallest n such that yn = 0.
+$$\begin{align} & x_1 = y_0, y_1 = x_0\bmod y_0 \\\\ & x_n = y_{n - 1}, y_n = x_{n - 1}\bmod y_{n - 1} \end{align}$$
 
-We have E(1,1) = 1, E(10,6) = 3 and E(6,10) = 4.
+$E(x_0, y_0)$ é o menor $n$, tal que $y_n = 0$.
 
-Define S(N) as the sum of E(x,y) for 1 ≤ x,y ≤ N. We have S(1) = 1, S(10) = 221 and S(100) = 39826.
+Temos $E(1, 1) = 1$, $E(10, 6) = 3$ e $E(6, 10) = 4$.
 
-Find S(5·106).
+Defina $S(N)$ como a soma de $E(x, y)$ para $1 ≤ x$, $y ≤ N$.
+
+Temos $S(1) = 1$, $S(10) = 221$ e $S(100) = 39.826$.
+
+Encontre $S(5 \times {10}^6)$.
 
 # --hints--
 
-`euler433()` should return 326624372659664.
+`stepsInEuclidsAlgorithm()` deve retornar `326624372659664`.
 
 ```js
-assert.strictEqual(euler433(), 326624372659664);
+assert.strictEqual(stepsInEuclidsAlgorithm(), 326624372659664);
 ```
 
 # --seed--
@@ -31,12 +35,12 @@ assert.strictEqual(euler433(), 326624372659664);
 ## --seed-contents--
 
 ```js
-function euler433() {
+function stepsInEuclidsAlgorithm() {
 
   return true;
 }
 
-euler433();
+stepsInEuclidsAlgorithm();
 ```
 
 # --solutions--

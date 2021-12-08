@@ -84,7 +84,7 @@ E come sempre, poni liberamente le tue domande nella [categoria 'Contributors' d
 
 I conflitti possono sorgere perché molti contributori lavorano sul repository e le modifiche possono interrompere la tua PR in attesa di una revisione e di un merge.
 
-More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
+Spesso potresti non aver bisogno di un rebase, perché schiacciamo tutti i commit, tuttavia se è richiesto un rebase, qui è quello che dovresti fare.
 
 ### Per le solite correzioni di bug e funzionalità
 
@@ -135,12 +135,12 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
    ```console
    git checkout <pr-branch-name>
 
-   # example:
+   # esempio:
    # git checkout feat/add-numpy-video-question
 
    git checkout -b <backup-branch-name>
 
-   # example:
+   # esempio:
    #  git checkout -b backup-feat/add-numpy-video-question
 
    git branch -D <pr-branch-name>
@@ -151,7 +151,7 @@ Quando stai lavorando su funzionalità dei rami `next-*` del nuovo curriculum, d
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-   # example:
+   # esempio:
    #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
    ```
 

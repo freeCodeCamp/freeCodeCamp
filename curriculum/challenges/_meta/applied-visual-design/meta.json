@@ -7,7 +7,7 @@
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "superOrder": 1,
+  "superOrder": 0,
   "challengeOrder": [
     [
       "587d7791367417b2b2512ab3",
@@ -47,7 +47,7 @@
     ],
     [
       "587d781b367417b2b2512abd",
-      "Adjust the Size of a Header Versus a Paragraph Tag"
+      "Adjust the Size of a Heading Element Versus a Paragraph Element"
     ],
     [
       "587d781b367417b2b2512abe",

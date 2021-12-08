@@ -17,7 +17,7 @@ dashedName: assignment-with-a-returned-value
 ourSum = sum(5, 12);
 ```
 
-將會調用函數 `sum`，函數返回值 `17`，然後將該值賦給變量 `ourSum`。
+將調用 `sum` 函數，該函數返回 `17` 的值並將其分配給 `ourSum` 變量。
 
 # --instructions--
 
@@ -49,13 +49,14 @@ assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
 
 ```js
 // Setup
-var processed = 0;
+let processed = 0;
 
 function processArg(num) {
   return (num + 3) / 5;
 }
 
 // Only change code below this line
+
 ```
 
 # --solutions--

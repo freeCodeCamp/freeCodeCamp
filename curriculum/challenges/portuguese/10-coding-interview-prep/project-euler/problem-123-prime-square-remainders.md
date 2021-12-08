@@ -1,6 +1,6 @@
 ---
 id: 5900f3e71000cf542c50fefa
-title: 'Problem 123: Prime square remainders'
+title: 'Problema 123: Resto dos quadrados dos primos'
 challengeType: 5
 forumTopicId: 301750
 dashedName: problem-123-prime-square-remainders
@@ -8,20 +8,20 @@ dashedName: problem-123-prime-square-remainders
 
 # --description--
 
-Let pn be the nth prime: 2, 3, 5, 7, 11, ..., and let r be the remainder when (pn−1)n + (pn+1)n is divided by pn2.
+Considere $p_n$ o $n$-ésimo número primo: 2, 3, 5, 7, 11, ..., e $r$ o resto da divisão quando ${(p_n−1)}^n + {(p_n+1)}^n$ é dividido por ${p_n}^2$.
 
-For example, when n = 3, p3 = 5, and 43 + 63 = 280 ≡ 5 mod 25.
+Por exemplo, quando $n = 3, p_3 = 5$ e $4^3 + 6^3 = 280 ≡ 5\\ mod\\ 25$.
 
-The least value of n for which the remainder first exceeds 109 is 7037.
+O menor valor de $n$ para o qual o resto excede $10^9$ é 7037.
 
-Find the least value of n for which the remainder first exceeds 1010.
+Encontre o menor valor de $n$ para o qual o resto excede $10^{10}$.
 
 # --hints--
 
-`euler123()` should return 21035.
+`primeSquareRemainders()` deve retornar `21035`.
 
 ```js
-assert.strictEqual(euler123(), 21035);
+assert.strictEqual(primeSquareRemainders(), 21035);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler123(), 21035);
 ## --seed-contents--
 
 ```js
-function euler123() {
+function primeSquareRemainders() {
 
   return true;
 }
 
-euler123();
+primeSquareRemainders();
 ```
 
 # --solutions--

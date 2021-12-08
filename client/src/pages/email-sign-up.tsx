@@ -9,7 +9,6 @@ import { createSelector } from 'reselect';
 import IntroDescription from '../components/Intro/components/IntroDescription';
 import createRedirect from '../components/create-redirect';
 import { ButtonSpacer, Spacer } from '../components/helpers';
-import SectionHeader from '../components/settings/section-header';
 
 import { acceptTerms, userSelector } from '../redux';
 
@@ -67,20 +66,21 @@ function AcceptPrivacyTerms({
       <Helmet>
         <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid
-        className='default-page-wrapper email-sign-up'
-        data-cy='email-sign-up'
-      >
-        <SectionHeader>{t('misc.email-signup')}</SectionHeader>
+      <Grid>
         <Row>
-          <IntroDescription />
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+            <Spacer />
+            <IntroDescription />
+            <hr />
+          </Col>
+        </Row>
+        <Row className='email-sign-up' data-cy='email-sign-up'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <strong>{t('misc.quincy')}</strong>
             <Spacer />
             <p>{t('misc.email-blast')}</p>
             <Spacer />
           </Col>
-
           <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
             <Button
               block={true}

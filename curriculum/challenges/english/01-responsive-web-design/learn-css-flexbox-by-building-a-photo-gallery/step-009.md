@@ -1,0 +1,78 @@
+---
+id: 6153893900438b4643590367
+title: Step 9
+challengeType: 0
+dashedName: step-9
+---
+
+# --description--
+
+Remove the margin from your `body` element, set the font to `Arial`, and give it a background color of `#EBE7E7`.
+
+# --hints--
+
+You should have a `body` selector.
+
+```js
+assert.exists(new __helpers.CSSHelp(document).getStyle('body'))
+```
+
+Your `body` selector should have a `font-family` property set to `Arial`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily === 'Arial');
+```
+
+Your `body` selector should have a `background-color` property set to `#EBE7E7`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.backgroundColor === 'rgb(235, 231, 231)');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox Photo Gallery</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>CSS FLEXBOX PHOTO GALLERY</h1>
+    </div>
+    <div id="gallery">
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg"/>
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/10.jpg"/>
+    </div>
+  </body>
+</html>
+```
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
+#gallery img {
+  width: 25%;
+  height: 300px;
+}
+```

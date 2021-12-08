@@ -1,6 +1,6 @@
 ---
 id: 5900f4f11000cf542c510002
-title: 'Problem 388: Distinct Lines'
+title: 'Problema 388: Linhas distintas'
 challengeType: 5
 forumTopicId: 302052
 dashedName: problem-388-distinct-lines
@@ -8,20 +8,20 @@ dashedName: problem-388-distinct-lines
 
 # --description--
 
-Consider all lattice points (a,b,c) with 0 ≤ a,b,c ≤ N.
+Considere todos os pontos da rede ($a$, $b$, $c$) com $0 ≤ a, b, c ≤ N$.
 
-From the origin O(0,0,0) all lines are drawn to the other lattice points. Let D(N) be the number of distinct such lines.
+A partir da origem $O(0, 0, 0)$ todas as linhas são desenhadas até outros pontos da rede. Considere $D(N)$ como o número de linhas distintas feitas dessa forma.
 
-You are given that D(1 000 000) = 831909254469114121.
+Você é informado de que $D(1.000.000) = 831.909.254.469.114.121$.
 
-Find D(1010). Give as your answer the first nine digits followed by the last nine digits.
+Encontre $D({10}^{10})$. Dê como resposta os primeiros nove algarismos seguidos pelos últimos nove algarismos.
 
 # --hints--
 
-`euler388()` should return 831907372805130000.
+`distinctLines()` deve retornar `831907372805130000`.
 
 ```js
-assert.strictEqual(euler388(), 831907372805130000);
+assert.strictEqual(distinctLines(), 831907372805130000);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler388(), 831907372805130000);
 ## --seed-contents--
 
 ```js
-function euler388() {
+function distinctLines() {
 
   return true;
 }
 
-euler388();
+distinctLines();
 ```
 
 # --solutions--

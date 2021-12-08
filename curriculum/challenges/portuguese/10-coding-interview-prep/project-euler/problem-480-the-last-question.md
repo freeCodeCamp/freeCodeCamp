@@ -1,6 +1,6 @@
 ---
 id: 5900f54c1000cf542c51005f
-title: 'Problem 480: The Last Question'
+title: 'Problema 480: A última pergunta'
 challengeType: 5
 forumTopicId: 302158
 dashedName: problem-480-the-last-question
@@ -8,90 +8,42 @@ dashedName: problem-480-the-last-question
 
 # --description--
 
-Consider all the words which can be formed by selecting letters, in any order, from the phrase:
+Considere todas as palavras que podem ser formadas selecionando letras, em qualquer ordem, a partir da frase:
 
-thereisasyetinsufficientdataforameaningfulanswer
+$$\mathbf{\text{thereisasyetinsufficientdataforameaningfulanswer}}$$
 
-Suppose those with 15 letters or less are listed in alphabetical order and numbered sequentially starting at 1.
+Suponha que aquelas com 15 letras ou menos estão listadas em ordem alfabética e numeradas sequencialmente a partir de 1.
 
-The list would include:
+A lista incluiria:
 
-1 : a
+$$\begin{align} & 1: \text{a} \\\\ & 2: \text{aa} \\\\ & 3: \text{aaa} \\\\ & 4: \text{aaaa} \\\\ & 5: \text{aaaaa} \\\\ & 6: \text{aaaaaa} \\\\ & 7: \text{aaaaaac} \\\\ & 8: \text{aaaaaacd} \\\\ & 9: \text{aaaaaacde} \\\\ & 10: \text{aaaaaacdee} \\\\ & 11: \text{aaaaaacdeee} \\\\ & 12: \text{aaaaaacdeeee} \\\\ & 13: \text{aaaaaacdeeeee} \\\\ & 14: \text{aaaaaacdeeeeee} \\\\ & 15: \text{aaaaaacdeeeeeef} \\\\ & 16: \text{aaaaaacdeeeeeeg} \\\\ & 17: \text{aaaaaacdeeeeeeh} \\\\ & \ldots \\\\ & 28: \text{aaaaaacdeeeeeey} \\\\ & 29: \text{aaaaaacdeeeeef} \\\\ & 30: \text{aaaaaacdeeeeefe} \\\\ & \ldots \\\\ & 115246685191495242: \text{euleoywuttttsss} \\\\ & 115246685191495243: \text{euler} \\\\ & 115246685191495244: \text{eulera} \\\\ & ... \\\\ & 525069350231428029: \text{ywuuttttssssrrr} \\\\ \end{align}$$
 
-2 : aa
+Defina $P(w)$ como a posição da palavra $w$.
 
-3 : aaa
+Defina $W(p)$ como a palavra na posição $p$.
 
-4 : aaaa
+Podemos ver que $P(w)$ e $W(p)$ são inversos: $P(W(p)) = p$ e $W(P(w)) = w$.
 
-5 : aaaaa
+Exemplos:
 
-6 : aaaaaa
+$$\begin{align} & W(10) = \text{ aaaaaacdee} \\\\ & P(\text{aaaaaacdee}) = 10 \\\\ & W(115246685191495243) = \text{ euler} \\\\ & P(\text{euler}) = 115246685191495243 \\\\ \end{align}$$
 
-7 : aaaaaac
+Encontre $$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
 
-8 : aaaaaacd
-
-9 : aaaaaacde
-
-10 : aaaaaacdee
-
-11 : aaaaaacdeee
-
-12 : aaaaaacdeeee
-
-13 : aaaaaacdeeeee
-
-14 : aaaaaacdeeeeee
-
-15 : aaaaaacdeeeeeef
-
-16 : aaaaaacdeeeeeeg
-
-17 : aaaaaacdeeeeeeh
-
-...
-
-28 : aaaaaacdeeeeeey
-
-29 : aaaaaacdeeeeef
-
-30 : aaaaaacdeeeeefe
-
-...
-
-115246685191495242: euleoywuttttsss
-
-115246685191495243: euler
-
-115246685191495244: eulera
-
-...
-
-525069350231428029: ywuuttttssssrrrDefine P(w) as the position of the word w.
-
-Define W(p) as the word in position p.
-
-We can see that P(w) and W(p) are inverses: P(W(p)) = p and W(P(w)) = w.
-
-Examples:
-
-W(10) = aaaaaacdee
-
-P(aaaaaacdee) = 10
-
-W(115246685191495243) = euler
-
-P(euler) = 115246685191495243Find W(P(legionary) + P(calorimeters) - P(annihilate) + P(orchestrated) - P(fluttering)).
-
-Give your answer using lowercase characters (no punctuation or space).
+Dê sua resposta usando caracteres em minúsculas (sem pontuação nem espaço).
 
 # --hints--
 
-`euler480()` should return turnthestarson.
+`euler480()` deve retornar uma string.
 
 ```js
-assert.strictEqual(euler480(), turnthestarson);
+assert(typeof euler480() === 'string');
+```
+
+`euler480()` deve retornar a string `turnthestarson`.
+
+```js
+assert.strictEqual(euler480(), 'turnthestarson');
 ```
 
 # --seed--

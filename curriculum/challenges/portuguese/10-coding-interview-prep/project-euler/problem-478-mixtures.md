@@ -1,6 +1,6 @@
 ---
 id: 5900f54c1000cf542c51005e
-title: 'Problem 478: Mixtures'
+title: 'Problema 478: Misturas'
 challengeType: 5
 forumTopicId: 302155
 dashedName: problem-478-mixtures
@@ -8,26 +8,32 @@ dashedName: problem-478-mixtures
 
 # --description--
 
-Let us consider mixtures of three substances: A, B and C. A mixture can be described by a ratio of the amounts of A, B, and C in it, i.e., (a : b : c). For example, a mixture described by the ratio (2 : 3 : 5) contains 20% A, 30% B and 50% C.
+Considere as misturas de três substâncias: $A$, $B$ e $C$. Uma mistura pode ser descrita pela proporção da quantidade de $A$, $B$, e $C$ nela, ou seja, $(a : b : c)$. Por exemplo, uma mistura descrita pela proporção (2 : 3 : 5) contém 20% de $A$, 30% de $B$ e 50% de $C$.
 
-For the purposes of this problem, we cannot separate the individual components from a mixture. However, we can combine different amounts of different mixtures to form mixtures with new ratios.
+Para efeitos deste problema, não podemos separar os componentes individuais de uma mistura. No entanto, podemos combinar diferentes quantidades de diferentes misturas para formar misturas com novas proporções.
 
-For example, say we have three mixtures with ratios (3 : 0 : 2), (3 : 6 : 11) and (3 : 3 : 4). By mixing 10 units of the first, 20 units of the second and 30 units of the third, we get a new mixture with ratio (6 : 5 : 9), since: (10·3/5 + 20·3/20 + 30·3/10 : 10·0/5 + 20·6/20 + 30·3/10 : 10·2/5 + 20·11/20 + 30·4/10) = (18 : 15 : 27) = (6 : 5 : 9)
+Por exemplo, digamos que temos três misturas com proporções (3 : 0 : 2), (3 : 6 : 11) e (3 : 3 : 4). Ao misturar 10 unidades da primeira, 20 unidades da segunda e 30 unidades da terceira, temos uma nova mistura com proporção (6 : 5 : 9), pois: ($10 \times \frac{3}{5} + 20 \times \frac{3}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{0}{5} + 20 \times \frac{6}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{2}{5} + 20 \times \frac{11}{20} + 30 \times \frac{4}{10}$) = (18 : 15 : 27) = (6 : 5 : 9)
 
-However, with the same three mixtures, it is impossible to form the ratio (3 : 2 : 1), since the amount of B is always less than the amount of C.
+No entanto, com as mesmas três misturas, é impossível formar a proporção (3 : 2 : 1), já que o valor de $B$ é sempre menor que o valor de $C$.
 
-Let n be a positive integer. Suppose that for every triple of integers (a, b, c) with 0 ≤ a, b, c ≤ n and gcd(a, b, c) = 1, we have a mixture with ratio (a : b : c). Let M(n) be the set of all such mixtures.
+Considere $n$ um inteiro positivo. Suponha que para cada trio de números inteiros $(a, b, c)$ com $0 ≤ a, b, c ≤ n$ e $gcd(a, b, c) = 1$ (máximo divisor comum), temos uma mistura com proporção $(a : b : c)$. Considere $M(n)$ como o conjunto dessas misturas.
 
-For example, M(2) contains the 19 mixtures with the following ratios: {(0 : 0 : 1), (0 : 1 : 0), (0 : 1 : 1), (0 : 1 : 2), (0 : 2 : 1), (1 : 0 : 0), (1 : 0 : 1), (1 : 0 : 2), (1 : 1 : 0), (1 : 1 : 1), (1 : 1 : 2), (1 : 2 : 0), (1 : 2 : 1), (1 : 2 : 2), (2 : 0 : 1), (2 : 1 : 0), (2 : 1 : 1), (2 : 1 : 2), (2 : 2 : 1)}.
+Por exemplo, $M(2)$ contém as 19 misturas com as seguintes proporções:
 
-Let E(n) be the number of subsets of M(n) which can produce the mixture with ratio (1 : 1 : 1), i.e., the mixture with equal parts A, B and C. We can verify that E(1) = 103, E(2) = 520447, E(10) mod 118 = 82608406 and E(500) mod 118 = 13801403. Find E(10 000 000) mod 118.
+{(0 : 0 : 1), (0 : 1 : 0), (0 : 1 : 1), (0 : 1 : 2), (0 : 2 : 1), (1 : 0 : 0), (1 : 0 : 1), (1 : 0 : 2), (1 : 1 : 0), (1 : 1 : 1), (1 : 1 : 2), (1 : 2 : 0), (1 : 2 : 1), (1 : 2 : 2), (2 : 0 : 1), (2 : 1 : 0), (2 : 1 : 1), (2 : 1 : 2), (2 : 2 : 1)}.
+
+Considere $E(n)$ como o número de subconjuntos de $M(n)$ que podem produzir a mistura com proporção (1 : 1 : 1), ou seja, a mistura com partes iguais de $A$, $B$ e $C$.
+
+Podemos verificar que $E(1) = 103$, $E(2) = 520.447$, $E(10)\bmod {11}^8 = 82.608.406$ e $E(500)\bmod {11}^8 = 13.801.403$.
+
+Encontre $E(10.000.000)\bmod {11}^8$.
 
 # --hints--
 
-`euler478()` should return 59510340.
+`mixtures()` deve retornar `59510340`.
 
 ```js
-assert.strictEqual(euler478(), 59510340);
+assert.strictEqual(mixtures(), 59510340);
 ```
 
 # --seed--
@@ -35,12 +41,12 @@ assert.strictEqual(euler478(), 59510340);
 ## --seed-contents--
 
 ```js
-function euler478() {
+function mixtures() {
 
   return true;
 }
 
-euler478();
+mixtures();
 ```
 
 # --solutions--

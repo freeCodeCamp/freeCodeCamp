@@ -3,14 +3,18 @@ name: 'CodeQL'
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'docs/**'
   pull_request:
     branches: [main]
+    paths-ignore:
+      - 'docs/**'
 
 jobs:
   analyse:
     name: Analyse
-    runs-on: ubuntu-latest
-    if: github.actor != 'renovate[bot]'
+    runs-on: ubuntu-20.04
+    if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
     strategy:
       fail-fast: false
       matrix:

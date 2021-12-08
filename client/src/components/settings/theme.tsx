@@ -4,9 +4,14 @@ import { useTranslation } from 'react-i18next';
 
 import ToggleSetting from './toggle-setting';
 
+export enum Themes {
+  Night = 'night',
+  Default = 'default'
+}
+
 type ThemeProps = {
-  currentTheme: string;
-  toggleNightMode: (theme: 'default' | 'night') => void;
+  currentTheme: Themes;
+  toggleNightMode: (theme: Themes) => void;
 };
 
 export default function ThemeSettings({
@@ -22,13 +27,15 @@ export default function ThemeSettings({
     >
       <ToggleSetting
         action={t('settings.labels.night-mode')}
-        flag={currentTheme === 'night'}
+        flag={currentTheme === Themes.Night}
         flagName='currentTheme'
         offLabel={t('buttons.off')}
         onLabel={t('buttons.on')}
-        toggleFlag={() =>
-          toggleNightMode(currentTheme === 'night' ? 'default' : 'night')
-        }
+        toggleFlag={() => {
+          toggleNightMode(
+            currentTheme === Themes.Night ? Themes.Default : Themes.Night
+          );
+        }}
       />
     </Form>
   );

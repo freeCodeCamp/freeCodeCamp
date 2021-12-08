@@ -1,6 +1,6 @@
 ---
 id: 5900f41c1000cf542c50ff2f
-title: 'Problem 176: Right-angled triangles that share a cathetus'
+title: 'Problema 176: Triângulos retos que compartilham um cateto'
 challengeType: 5
 forumTopicId: 301811
 dashedName: problem-176-right-angled-triangles-that-share-a-cathetus
@@ -8,16 +8,16 @@ dashedName: problem-176-right-angled-triangles-that-share-a-cathetus
 
 # --description--
 
-The four right-angled triangles with sides (9,12,15), (12,16,20), (5,12,13) and (12,35,37) all have one of the shorter sides (catheti) equal to 12. It can be shown that no other integer sided right-angled triangle exists with one of the catheti equal to 12.
+Os quatro triângulos retos com lados (9,12,15), (12,16,20), (5,12,13) e (12,35,37) têm um dos lados menores (catetos) igual a 12. Pode-se mostrar que nenhum outro triângulo reto existe com um dos catetos igual a 12.
 
-Find the smallest integer that can be the length of a cathetus of exactly 47547 different integer sided right-angled triangles.
+Encontre o menor número inteiro que pode ser o comprimento de um cateto de exatamente 47547 triângulos retos de lados diferentes de números inteiros.
 
 # --hints--
 
-`euler176()` should return 96818198400000.
+`trianglesSharingCathetus()` deve retornar `96818198400000`.
 
 ```js
-assert.strictEqual(euler176(), 96818198400000);
+assert.strictEqual(trianglesSharingCathetus(), 96818198400000);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler176(), 96818198400000);
 ## --seed-contents--
 
 ```js
-function euler176() {
+function trianglesSharingCathetus() {
 
   return true;
 }
 
-euler176();
+trianglesSharingCathetus();
 ```
 
 # --solutions--

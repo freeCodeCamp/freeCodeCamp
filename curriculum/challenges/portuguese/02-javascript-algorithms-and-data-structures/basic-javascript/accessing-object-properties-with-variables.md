@@ -14,11 +14,14 @@ Outro uso de notação de colchetes em objetos é para acessar a propriedade a q
 Aqui está um exemplo de usar uma variável para acessar uma propriedade:
 
 ```js
-var dogs = {
-  Fido: "Mutt",  Hunter: "Doberman",  Snoopie: "Beagle"
+const dogs = {
+  Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"
 };
-var myDog = "Hunter";
-var myBreed = dogs[myDog];
+
+const myDog = "Hunter";
+const myBreed = dogs[myDog];
 console.log(myBreed);
 ```
 
@@ -27,14 +30,16 @@ A string `Doberman` seria exibida no console.
 Outra forma de você usar esse conceito é quando o nome da propriedade é coletado dinamicamente, durante a execução do programa, da seguinte forma:
 
 ```js
-var someObj = {
+const someObj = {
   propName: "John"
 };
+
 function propPrefix(str) {
-  var s = "prop";
+  const s = "prop";
   return s + str;
 }
-var someProp = propPrefix("Name");
+
+const someProp = propPrefix("Name");
 console.log(someObj[someProp]);
 ```
 
@@ -96,26 +101,25 @@ if(typeof player !== "undefined"){(function(v){return v;})(player);}
 
 ```js
 // Setup
-var testObj = {
+const testObj = {
   12: "Namath",
   16: "Montana",
   19: "Unitas"
 };
 
 // Only change code below this line
-
-var playerNumber;       // Change this line
-var player = testObj;   // Change this line
+const playerNumber = 42;  // Change this line
+const player = testObj;   // Change this line
 ```
 
 # --solutions--
 
 ```js
-var testObj = {
+const testObj = {
   12: "Namath",
   16: "Montana",
   19: "Unitas"
 };
-var playerNumber = 16;
-var player = testObj[playerNumber];
+const playerNumber = 16;
+const player = testObj[playerNumber];
 ```

@@ -16,7 +16,7 @@ L'operatore di base è l'operatore di uguaglianza `==`. L'operatore di uguaglian
 ```js
 function equalityTest(myVal) {
   if (myVal == 10) {
-     return "Equal";
+    return "Equal";
   }
   return "Not Equal";
 }

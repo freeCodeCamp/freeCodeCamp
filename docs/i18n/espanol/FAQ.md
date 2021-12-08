@@ -6,7 +6,7 @@ Lee nuestra ["Guía de como contribuir a Open Source"](https://github.com/freeCo
 
 Si -  Puedes contribuir a cualquiera de los mas de 30 idiomas que hemos habilitado en nuestra plataforma de traducción.
 
-Tenemos las traducciones contribuidas por usuarios actualmente publicadas en chino (中文)  y español.  Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo sobre esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort).
+Tenemos traducciones aportadas por los usuarios en vivo en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo sobre esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort).
 
 Si estas interesado en ayudar a traducir, por favor asegúrate de [leer esta guía](how-to-translate-files.md) primero.
 
@@ -70,18 +70,6 @@ Gracias de antemano por ser amable y paciente. Recuerda, esta comunidad es manej
 
 ### Asistencia adicional
 
-Si tiene preguntas sobre el stack, la arquitectura del código base, las traducciones o cualquier otra cosa, no dude en comunicarse con nuestro personal.
-
-| Personal              | Enviar mensaje en el Foro                                                    |
-|:--------------------- |:---------------------------------------------------------------------------- |
-| Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
-| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
-| Miya Liu              | [@miyaliu](https://chinese.freecodecamp.org/forum/u/miyaliu)                 |
-| Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
-| Nicholas Carrigan     | [@nhcarrigan](https://forum.freecodecamp.org/u/nhcarrigan)                   |
-| Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
-| Rafael D Hernandez    | [@RafaelHernandez](https://forum.freecodecamp.org/u/rafaelhernandez)         |
-| Shaun Hamilton        | [@sky020](https://forum.freecodecamp.org/u/sky020)                           |
-| Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
+If you have queries about the stack, architecture of the codebase, translations, or anything else feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 
 **Puedes enviar un correo electrónico a nuestro equipo de desarrolladores en: `dev[at]freecodecamp.org`**

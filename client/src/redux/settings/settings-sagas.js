@@ -58,7 +58,9 @@ function* updateUserFlagSaga({ payload: update }) {
   try {
     const response = yield call(putUpdateUserFlag, update);
     yield put(updateUserFlagComplete({ ...response, payload: update }));
-    yield put(createFlashMessage(response));
+    yield put(
+      createFlashMessage({ ...response, variables: { theme: update.theme } })
+    );
   } catch (e) {
     yield put(updateUserFlagError(e));
   }

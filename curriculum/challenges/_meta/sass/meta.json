@@ -2,12 +2,12 @@
   "name": "Sass",
   "isUpcomingChange": false,
   "dashedName": "sass",
-  "order": 4,
+  "order": 2,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "front-end-development-libraries",
-  "superOrder": 3,
+  "superOrder": 2,
   "challengeOrder": [
     [
       "587d7dbd367417b2b2512bb4",

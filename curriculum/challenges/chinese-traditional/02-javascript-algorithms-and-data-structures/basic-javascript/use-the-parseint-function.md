@@ -12,7 +12,7 @@ dashedName: use-the-parseint-function
 `parseInt()` 函數解析一個字符串返回一個整數。 下面是一個示例：
 
 ```js
-var a = parseInt("007");
+const a = parseInt("007");
 ```
 
 上述函數將字符串 `007` 轉換爲整數 `7`。 如果字符串中的第一個字符不能轉換爲數字，則返回 `NaN`。

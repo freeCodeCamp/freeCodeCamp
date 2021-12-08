@@ -14,7 +14,7 @@ Con le variabili `array` di JavaScript, possiamo memorizzare diversi dati in un 
 La dichiarazione di un array inizia con una parentesi quadra di apertura, e termina con una parentesi quadra di chiusura, con gli elementi separati da virgole, in questo modo:
 
 ```js
-var sandwich = ["peanut butter", "jelly", "bread"]
+const sandwich = ["peanut butter", "jelly", "bread"];
 ```
 
 # --instructions--
@@ -53,11 +53,11 @@ assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');
 
 ```js
 // Only change code below this line
-var myArray = [];
+const myArray = [];
 ```
 
 # --solutions--
 
 ```js
-var myArray = ["The Answer", 42];
+const myArray = ["The Answer", 42];
 ```

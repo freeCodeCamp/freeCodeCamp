@@ -13,13 +13,13 @@ dashedName: use-bracket-notation-to-find-the-first-character-in-a-string
 
 大多数现代编程语言，如 JavaScript，不同于人类从 1 开始计数。 它们是从 0 开始计数。 这被称为基于零（<dfn>Zero-based</dfn>）的索引。
 
-例如，单词 `Charles` 的索引 0 的字符是 `C`。 所以在 `var firstName = "Charles"` 中，你可以使用 `firstName[0]` 来获得第一个位置上的字符。
+例如，单词 `Charles` 的索引 0 的字符是 `C`。 所以如果 `const firstName = "Charles"`，你可以通过 `firstName[0]` 得到字符串第一个字母的值。
 
 示例：
 
 ```js
-var firstName = "Charles";
-var firstLetter = firstName[0];
+const firstName = "Charles";
+const firstLetter = firstName[0];
 ```
 
 `firstLetter` 值为字符串 `C` 。
@@ -56,8 +56,8 @@ assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```js
 // Setup
-var firstLetterOfLastName = "";
-var lastName = "Lovelace";
+let firstLetterOfLastName = "";
+const lastName = "Lovelace";
 
 // Only change code below this line
 firstLetterOfLastName = lastName; // Change this line
@@ -66,8 +66,8 @@ firstLetterOfLastName = lastName; // Change this line
 # --solutions--
 
 ```js
-var firstLetterOfLastName = "";
-var lastName = "Lovelace";
+let firstLetterOfLastName = "";
+const lastName = "Lovelace";
 
 // Only change code below this line
 firstLetterOfLastName = lastName[0];

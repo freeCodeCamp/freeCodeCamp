@@ -1,6 +1,6 @@
 ---
 id: 5900f38d1000cf542c50fea0
-title: 'Problema 33: Frações com cancelamento de dígitos'
+title: 'Problema 33: Frações com cancelamento de algarismos'
 challengeType: 5
 forumTopicId: 301987
 dashedName: problem-33-digit-cancelling-fractions
@@ -8,11 +8,11 @@ dashedName: problem-33-digit-cancelling-fractions
 
 # --description--
 
-A fração <sup>49</sup>/<sub>98</sub> é uma fração curiosa, já que um matemático inexperiente, na tentativa de simplificá-la, pode acreditar, erroneamente, que <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub> pelo cancelamento dos dígitos 9. Embora o resultado esteja correto, o raciocínio não está.
+A fração <sup>49</sup>/<sub>98</sub> é uma fração curiosa, já que um matemático inexperiente, na tentativa de simplificá-la, pode acreditar, erroneamente, que <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub> pelo cancelamento dos algarismos 9. Embora o resultado esteja correto, o raciocínio não está.
 
 Devemos considerar frações como, por exemplo, <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub>, como exemplos triviais.
 
-Existem exatamente quatro exemplos não triviais desse tipo de fração, com resultado inferior a 1 e que contêm dois dígitos no numerador e no denominador.
+Existem exatamente quatro exemplos não triviais desse tipo de fração, com resultado inferior a 1 e que contêm dois algarismos no numerador e no denominador.
 
 Se o produto dessas quatro frações é dado por seus mínimos divisores comuns, encontre o valor do denominador.
 

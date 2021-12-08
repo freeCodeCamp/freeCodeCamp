@@ -20,11 +20,13 @@ dashedName: use-the--env-file
 
 当向 `/json` 发 GET 请求时，如果 `process.env.MESSAGE_STYLE` 的值为 `uppercase`，那么上一次挑战中的路由处理程序返回的对象的消息则应该大写。 响应对象应该是 `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`，取决于 `MESSAGE_STYLE` 的值。
 
-**注意：**如果你正在使用 Replit，你无法创建一个 `.env` 文件。 相反，使用内置的 <dfn>SECRETS</dfn> 标签添加变量。
+**注意：** 如果你正在使用 Replit，你无法创建一个 `.env` 文件。 相反，使用内置的 <dfn>SECRETS</dfn> 标签添加变量。
+
+如果你在本地工作，你将需要 `dotenv` 包。 它将环境变量从你的 `.env` 文件加载到 `process.env` 中。 使用 `npm install dotenv` 安装它。 然后，在 `myApp.js` 文件的顶部，使用 `require('dotenv').config()` 导入和加载变量。
 
 # --hints--
 
-端口 `/json` 响应的值，应该随着环境变量 `MESSAGE_STYLE` 的变化而改变。
+端点 `/json` 的响应应该根据环境变量 `MESSAGE_STYLE` 改变
 
 ```js
 (getUserInput) =>

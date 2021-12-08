@@ -1,6 +1,6 @@
 ---
 id: 5900f5241000cf542c510037
-title: 'Problem 440: GCD and Tiling'
+title: 'Problema 440: Máximo divisor comum e ladrilhamento'
 challengeType: 5
 forumTopicId: 302112
 dashedName: problem-440-gcd-and-tiling
@@ -8,24 +8,32 @@ dashedName: problem-440-gcd-and-tiling
 
 # --description--
 
-We want to tile a board of length n and height 1 completely, with either 1 × 2 blocks or 1 × 1 blocks with a single decimal digit on top:
+Queremos preencher com ladrilhos um tabuleiro de comprimento $n$ e altura 1 completamente, com blocos de 1 × 2 ou 1 × 1 com um único algarismo decimal no topo:
 
-For example, here are some of the ways to tile a board of length n = 8:
+<img class="img-responsive center-block" alt="dez blocos 1x1 com um único algarismo decimal no topo e um bloco 1x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px;" />
 
-Let T(n) be the number of ways to tile a board of length n as described above.
+Por exemplo, aqui temos algumas maneiras de ladrilhar um tabuleiro de comprimento $n = 8$:
 
-For example, T(1) = 10 and T(2) = 101.
+<img class="img-responsive center-block" alt="exemplos de maneiras de ladrilhar um tabuleiro de comprimento n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px;" />
 
-Let S(L) be the triple sum ∑a,b,c gcd(T(ca), T(cb)) for 1 ≤ a, b, c ≤ L. For example: S(2) = 10444 S(3) = 1292115238446807016106539989 S(4) mod 987 898 789 = 670616280.
+Considere $T(n)$ como o número de maneiras de ladrilhar um tabuleiro de comprimento $n$, como descrito acima.
 
-Find S(2000) mod 987 898 789.
+Por exemplo, $T(1) = 10$ e $T(2) = 101$.
+
+Considere $S(L)$ como a soma tripla $\sum_{a, b, c} gcd(T(c^a), T(c^b))$ para $1 ≤ a, b, c ≤ L$.
+
+Por exemplo:
+
+$$\begin{align} & S(2) = 10.444 \\\\ & S(3) = 1.292.115.238.446.807.016.106.539.989 \\\\ & S(4)\bmod 987.898.789 = 670.616.280. \end{align}$$
+
+Encontre $S(2000)\bmod 987.898.789$.
 
 # --hints--
 
-`euler440()` should return 970746056.
+`gcdAndTiling()` deve retornar `970746056`.
 
 ```js
-assert.strictEqual(euler440(), 970746056);
+assert.strictEqual(gcdAndTiling(), 970746056);
 ```
 
 # --seed--
@@ -33,12 +41,12 @@ assert.strictEqual(euler440(), 970746056);
 ## --seed-contents--
 
 ```js
-function euler440() {
+function gcdAndTiling() {
 
   return true;
 }
 
-euler440();
+gcdAndTiling();
 ```
 
 # --solutions--

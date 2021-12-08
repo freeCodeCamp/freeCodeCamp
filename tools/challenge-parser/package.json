@@ -5,8 +5,8 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">= 14.0.0",
-    "npm": "^6.14.12"
+    "node": ">=16",
+    "npm": ">=8"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,10 @@
     "js-yaml": "3.14.1",
     "lodash": "4.17.21",
     "mdast-builder": "1.1.1",
+    "mdast-util-from-markdown": "0.8.5",
     "mdast-util-gfm": "0.1.2",
+    "mdast-util-gfm-strikethrough": "0.2.3",
+    "mdast-util-gfm-table": "0.1.6",
     "mdast-util-to-hast": "9.1.2",
     "micromark-extension-gfm-strikethrough": "0.6.5",
     "micromark-extension-gfm-table": "0.4.3",

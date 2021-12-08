@@ -1,6 +1,6 @@
 ---
 id: 5900f5331000cf542c510045
-title: 'Problem 454: Diophantine reciprocals III'
+title: 'Problema 454: Diofantinos recíprocos III'
 challengeType: 5
 forumTopicId: 302127
 dashedName: problem-454-diophantine-reciprocals-iii
@@ -8,20 +8,22 @@ dashedName: problem-454-diophantine-reciprocals-iii
 
 # --description--
 
-In the following equation x, y, and n are positive integers. 1/x + 1/y= 1/n
+Na equação a seguir, $x$, $y$, e $n$ são números inteiros positivos.
 
-<!-- TODO Use MathJax -->
+$$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
-For a limit L we define F(L) as the number of solutions which satisfy x &lt; y ≤ L.
+Para um limite $L$, definimos $F(L)$ como o número de soluções que satisfazem $x &lt; y ≤ L$.
 
-We can verify that F(15) = 4 and F(1000) = 1069. Find F(1012).
+Podemos verificar que $F(15) = 4$ e $F(1000) = 1069$.
+
+Encontre $F({10}^{12})$.
 
 # --hints--
 
-`euler454()` should return 5435004633092.
+`diophantineReciprocalsThree()` deve retornar `5435004633092`.
 
 ```js
-assert.strictEqual(euler454(), 5435004633092);
+assert.strictEqual(diophantineReciprocalsThree(), 5435004633092);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler454(), 5435004633092);
 ## --seed-contents--
 
 ```js
-function euler454() {
+function diophantineReciprocalsThree() {
 
   return true;
 }
 
-euler454();
+diophantineReciprocalsThree();
 ```
 
 # --solutions--

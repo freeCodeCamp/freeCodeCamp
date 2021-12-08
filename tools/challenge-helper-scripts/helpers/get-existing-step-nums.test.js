@@ -10,8 +10,8 @@ describe('getExistingStepNums helper', () => {
   it('should return the number portion of the project paths', () => {
     mock({
       'mock-project': {
-        'part-001.md': 'Lorem ipsum...',
-        'part-002.md': 'Lorem ipsum...'
+        'step-001.md': 'Lorem ipsum...',
+        'step-002.md': 'Lorem ipsum...'
       }
     });
 
@@ -26,7 +26,7 @@ describe('getExistingStepNums helper', () => {
     mock({
       'mock-project': {
         'final.md': 'Lorem ipsum...',
-        'part-001.md': 'Lorem ipsum...'
+        'step-001.md': 'Lorem ipsum...'
       }
     });
 
@@ -40,9 +40,9 @@ describe('getExistingStepNums helper', () => {
   it('should throw if file names do not follow naming convention', () => {
     mock({
       'mock-project': {
-        'part-001.md': 'Lorem ipsum...',
-        'part-002.md': 'Lorem ipsum...',
-        'part002.md': 'Lorem ipsum...'
+        'step-001.md': 'Lorem ipsum...',
+        'step-002.md': 'Lorem ipsum...',
+        'step002.md': 'Lorem ipsum...'
       }
     });
 
@@ -56,8 +56,8 @@ describe('getExistingStepNums helper', () => {
   it('should return empty array if there are no markdown files', () => {
     mock({
       'mock-project': {
-        'part-001.js': 'Lorem ipsum...',
-        'part-002.css': 'Lorem ipsum...'
+        'step-001.js': 'Lorem ipsum...',
+        'step-002.css': 'Lorem ipsum...'
       }
     });
 

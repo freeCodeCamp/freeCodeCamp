@@ -41,7 +41,7 @@ assert(
 assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1);
 ```
 
-El encabezado `h1` renderizado debe contener texto renderizado desde el state del componente.
+El encabezado renderizado `h1` sólo debe contener texto renderizado del estado del componente.
 
 ```js
 async () => {

@@ -2,10 +2,10 @@
   "name": "Scientific Computing with Python Projects",
   "isUpcomingChange": false,
   "dashedName": "scientific-computing-with-python-projects",
-  "order": 2,
+  "order": 1,
   "time": "150 hours",
   "superBlock": "scientific-computing-with-python",
-  "superOrder": 8,
+  "superOrder": 7,
   "challengeOrder": [
     [
       "5e44412c903586ffb414c94c",

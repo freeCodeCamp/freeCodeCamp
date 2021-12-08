@@ -3,9 +3,11 @@ import { format } from '../../../utils/format';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
-const mainId = 'fcc-main-frame';
+export const mainPreviewId = 'fcc-main-frame';
 // the test frame is responsible for running the assert tests
 const testId = 'fcc-test-frame';
+// the project preview frame demos the finished project
+export const projectPreviewId = 'fcc-project-preview-frame';
 
 // base tag here will force relative links
 // within iframe to point to '' instead of
@@ -16,7 +18,7 @@ const testId = 'fcc-test-frame';
 // window.onerror is added here to report any errors thrown during the building
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
-const createHeader = (id = mainId) => `
+const createHeader = (id = mainPreviewId) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
@@ -68,13 +70,15 @@ const createFrame = (document, id) => ctx => {
 
 const hiddenFrameClassName = 'hide-test-frame';
 const mountFrame =
-  document =>
+  (document, id) =>
   ({ element, ...rest }) => {
     const oldFrame = document.getElementById(element.id);
     if (oldFrame) {
       element.className = oldFrame.className || hiddenFrameClassName;
       oldFrame.parentNode.replaceChild(element, oldFrame);
-    } else {
+      // only test frames can be added (and hidden) here, other frames must be
+      // added by react
+    } else if (id === testId) {
       element.className = hiddenFrameClassName;
       document.body.appendChild(element);
     }
@@ -87,11 +91,13 @@ const mountFrame =
   };
 
 const buildProxyConsole = proxyLogger => ctx => {
-  const oldLog = ctx.window.console.log.bind(ctx.window.console);
-  ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args.map(arg => format(arg)).join(' '));
-    return oldLog(...args);
-  };
+  if (proxyLogger) {
+    const oldLog = ctx.window.console.log.bind(ctx.window.console);
+    ctx.window.console.log = function proxyConsole(...args) {
+      proxyLogger(args.map(arg => format(arg)).join(' '));
+      return oldLog(...args);
+    };
+  }
   return ctx;
 };
 
@@ -112,7 +118,7 @@ const initTestFrame = frameReady => ctx => {
   return ctx;
 };
 
-const initMainFrame = (frameReady, proxyLogger) => ctx => {
+const initMainFrame = (_, proxyLogger) => ctx => {
   waitForFrame(ctx).then(() => {
     // Overwriting the onerror added by createHeader to catch any errors thrown
     // after the frame is ready. It has to be overwritten, as proxyLogger cannot
@@ -129,10 +135,11 @@ const initMainFrame = (frameReady, proxyLogger) => ctx => {
       // an error from a cross origin script just appears as 'Script error.'
       return false;
     };
-    frameReady();
   });
   return ctx;
 };
+
+const initPreviewFrame = () => ctx => ctx;
 
 const waitForFrame = ctx => {
   return new Promise(resolve => {
@@ -156,16 +163,19 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainFramer = (document, frameReady, proxyLogger) =>
-  createFramer(document, frameReady, proxyLogger, mainId, initMainFrame);
+export const createMainPreviewFramer = (document, proxyLogger) =>
+  createFramer(document, mainPreviewId, initMainFrame, proxyLogger);
 
-export const createTestFramer = (document, frameReady, proxyLogger) =>
-  createFramer(document, frameReady, proxyLogger, testId, initTestFrame);
+export const createProjectPreviewFramer = document =>
+  createFramer(document, projectPreviewId, initPreviewFrame);
 
-const createFramer = (document, frameReady, proxyLogger, id, init) =>
+export const createTestFramer = (document, proxyLogger, frameReady) =>
+  createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
+
+const createFramer = (document, id, init, proxyLogger, frameReady) =>
   flow(
     createFrame(document, id),
-    mountFrame(document),
+    mountFrame(document, id),
     buildProxyConsole(proxyLogger),
     writeContentToFrame,
     init(frameReady, proxyLogger)

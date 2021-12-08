@@ -12,7 +12,7 @@ Em uma fração unitária, o numerador é 1. A representação decimal das fraç
 
 <div style='padding-left: 4em; display: inline-grid; grid-template-rows: auto; row-gap: 7px;'><div><sup>1</sup>/<sub>2</sub> = 0.5</div><div><sup>1</sup>/<sub>3</sub> = 0.(3)</div><div><sup>1</sup>/<sub>4</sub> = 0.25</div><div><sup>1</sup>/<sub>5</sub> = 0.2</div><div><sup>1</sup>/<sub>6</sub> = 0.1(6)</div><div><sup>1</sup>/<sub>7</sub> = 0.(142857)</div><div><sup>1</sup>/<sub>8</sub> = 0.125</div><div><sup>1</sup>/<sub>9</sub> = 0.(1)</div><div><sup>1</sup>/<sub>10</sub> = 0.1</div></div>
 
-A expressão 0.1(6) significa 0.16666666... e tem um ciclo recorrente (que se repete) de 1 algarismo. Podemos notar que <sup>1</sup>/<sub>7</sub> tem um ciclo recorrente de 6 dígitos.
+A expressão 0.1(6) significa 0.16666666... e tem um ciclo recorrente (que se repete) de 1 algarismo. Podemos notar que <sup>1</sup>/<sub>7</sub> tem um ciclo recorrente de 6 algarismos.
 
 Calcule o valor de `d` &lt; `n` onde <sup>1</sup>/<sub>d</sub> contém o ciclo recorrente mais longo na parte decimal.
 

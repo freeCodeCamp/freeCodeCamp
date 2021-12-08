@@ -10,7 +10,7 @@ Se você quer criar novos passos, as ferramentas a seguir vão simplificar o pro
 
 ## create-next-step (criar próximo passo)
 
-Um script único que automaticamente adiciona um novo passo baseado no último passo numerado como `part-xxx.md` onde `xxx` representa o número de 3 dígitos do último passo. O código inicial de desafio usará o código inicial de desafio da etapa anterior com os marcadores de região editáveis ​​(ERMs) removidos.
+Um script único que automaticamente adiciona um novo passo baseado no último passo numerado como `step-xxx.md` onde `xxx` representa o número de 3 dígitos do último passo. O código inicial de desafio usará o código inicial de desafio da etapa anterior com os marcadores de região editáveis ​​(ERMs) removidos.
 
 **Observação:** esse script também executa  [reorder-steps](#reorder-steps).
 
@@ -75,40 +75,40 @@ Um script único que automaticamente reordena os aquivos de passos em arquivos m
 Digamos que você começa com a estrutura de projeto a seguir:
 
 ```bash
-part-1.md
-part-2.md
-part-3.md
-part-4.md
-part-5.md
-part-6.md
+step-001.md
+step-002.md
+step-003.md
+step-004.md
+step-005.md
+step-006.md
 ```
 
-Em algum momento, você decide que precisa deletar `part-2.md`, porque os passos nele não são mais necessários. Você também decide que vai diluir as partes dentro de `part-4.md` em três passos ao invés de um.
+Em algum momento, você decide que precisa deletar `step-002.md`, porque os passos nele não são mais necessários. Você também decide que vai diluir as partes dentro de `step-004.md` em três passos ao invés de um.
 
-Para completar essa reestruturação, você precisará excluir a `part-2.md` e então adicionar a `part-4a.md` e a `part-4b.md`. A nova estrutura da pasta deve ficar assim:
+Para completar essa reestruturação, você precisará excluir a `step-002.md` e então adicionar a `step-004a.md` e a `step-004b.md`. A nova estrutura da pasta deve ficar assim:
 
 ```bash
-part-001.md
-part-003.md
-part-004.md
-part-004a.md
-part-004b.md
-part-005.md
-part-006.md
+step-001.md
+step-003.md
+step-004.md
+step-004a.md
+step-004b.md
+step-005.md
+step-006.md
 ```
 
-Você precisa agora que os nomes dos arquivos sejam `part-1.md` a `part-7.md`, porque você removeu um, mas ganhou dois arquivos novos, assim gerando somente um arquivo novo. Além disso, o frontmatter de cada arquivo abaixo de um passo adicionado ou excluído precisará ser modificado, onde o valor chave do `title` tem que ser igual ao novo número do passo. Por exemplo, depois de renomeaer `part-3.md` para `part-2.md`, você precisará alterar o título do `part-2.md` de `Part 03` para `Part 02`.
+Você precisa agora que os nomes dos arquivos sejam `step-001.md` a `step-007.md`, porque você removeu um, mas ganhou dois arquivos novos, assim gerando somente um arquivo novo. Além disso, o frontmatter de cada arquivo abaixo de um passo adicionado ou excluído precisará ser modificado, onde o valor chave do `title` tem que ser igual ao novo número do passo. Por exemplo, depois de renomeaer `step-3.md` para `step-2.md`, você precisará alterar o título do `step-2.md` de `Step 03` para `Step 02`.
 
 Veja abaixo as mudanças necessárias na pasta do projeto:
 
 ```bash
-part-001.md
-part-003.md renamed to part-002.md and title changes to "Part 2"
-part-004.md renames to part-003.md and title changes to "Part 3"
-part-004a.md renames to part-004.md and title changes to "Part 4"
-part-004b.md renames to part-005.md and title changes to "Part 5"
-part-005.md renames to part-006.md and title changes to "Part 6"
-part-006.md renames to part-007.md and title changes to "Part 7"
+step-001.md
+step-003.md renomeado para step-002.md e o título muda para "Step 2"
+step-004.md renomeado para step-003.md e o título muda para "Step 3"
+step-004a.md renomeado para step-004.md e o título muda para "Step 4"
+step-004b.md renomeado para step-005.md e o título muda para "Step 5"
+step-005.md renomeado para step-006.md e o título muda para "Step 6"
+step-006.md renomeado para step-007.md e o título muda para "Step 7"
 ```
 
 Junto com as mudanças acima, a chave `challengeOrder` no arquivo `meta.json` do projeto precisará refletir a nova ordem dos passos. Isso é necessário porque cada etapa abaixo de uma exclusão de etapa e/ou adição de etapa altera o `title` associado a cada um dos `id` do desafio da etapa afetada.

@@ -1,6 +1,6 @@
 ---
 id: 5900f3f91000cf542c50ff0b
-title: 'Problem 141: Investigating progressive numbers, n, which are also square'
+title: 'Problema 141: Investigação de números progressivos, n, que também são quadrados'
 challengeType: 5
 forumTopicId: 301770
 dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-square
@@ -8,22 +8,22 @@ dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-squar
 
 # --description--
 
-A positive integer, n, is divided by d and the quotient and remainder are q and r respectively. In addition d, q, and r are consecutive positive integer terms in a geometric sequence, but not necessarily in that order.
+Um número inteiro positivo, $n$, é dividido por $d$ e o quociente e resto são $q$ e $r$, respectivamente. Além disso, $d$, $q$ e $r$ são termos inteiros positivos consecutivos em uma sequência geométrica, mas não necessariamente nessa ordem.
 
-For example, 58 divided by 6 has quotient 9 and remainder 4. It can also be seen that 4, 6, 9 are consecutive terms in a geometric sequence (common ratio 3/2).
+Por exemplo, 58 dividido por 6 têm um quociente de 9 e um resto de 4. Também pode-se ver que 4, 6 e 9 são termos consecutivos em uma sequência geométrica (razão comum $\frac{3}{2}$).
 
-We will call such numbers, n, progressive.
+Chamaremos esses números, $n$, de progressivos.
 
-Some progressive numbers, such as 9 and 10404 = 1022, happen to also be perfect squares. The sum of all progressive perfect squares below one hundred thousand is 124657.
+Alguns números progressivos, como 9 e 10404 = ${102}^2$, também são quadrados perfeitos. A soma de todos os quadrados perfeitos progressivos abaixo de cem mil é 124657.
 
-Find the sum of all progressive perfect squares below one trillion (1012).
+Encontre a soma de todos os quadrados perfeitos progressivos abaixo de um trilhão (${10}^{12}$).
 
 # --hints--
 
-`euler141()` should return 878454337159.
+`progressivePerfectSquares()` deve retornar `878454337159`.
 
 ```js
-assert.strictEqual(euler141(), 878454337159);
+assert.strictEqual(progressivePerfectSquares(), 878454337159);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler141(), 878454337159);
 ## --seed-contents--
 
 ```js
-function euler141() {
+function progressivePerfectSquares() {
 
   return true;
 }
 
-euler141();
+progressivePerfectSquares();
 ```
 
 # --solutions--

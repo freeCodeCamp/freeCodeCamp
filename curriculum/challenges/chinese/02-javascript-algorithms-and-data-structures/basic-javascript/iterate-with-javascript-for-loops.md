@@ -15,7 +15,7 @@ JavaScript 中最常见的循环就是 `for`，它可以循环指定次数。
 
 for 循环中的可选三个表达式用分号隔开：
 
-`for (a; b; c)`，其中 `a` 为初始化语句，`b` 是循环条件语句，`c` 是终止循环条件表达式。
+`for (a; b; c)`，其中`a`为初始化语句，`b`为条件语句，`c` 是最终的表达式。
 
 初始化语句只会在执行循环开始之前执行一次。 它通常用于定义和设置你的循环变量。
 
@@ -26,13 +26,14 @@ for 循环中的可选三个表达式用分号隔开：
 在下面的例子中，先初始化 `i = 0`，条件 `i < 5` 为 true 时，进入循环。 每次循环后 `i` 的值增加 `1`，然后执行终止循环条件表达式 `i++`。
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 5; i++) {
+const ourArray = [];
+
+for (let i = 0; i < 5; i++) {
   ourArray.push(i);
 }
 ```
 
-最终 `ourArray` 的值为 `[0,1,2,3,4]`.
+`ourArray` 现在的值为 `[0, 1, 2, 3, 4]`。
 
 # --instructions--
 
@@ -46,7 +47,7 @@ for (var i = 0; i < 5; i++) {
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` 应该等于 `[1,2,3,4,5]`。
+`myArray` 应该等于 `[1, 2, 3, 4, 5]`。
 
 ```js
 assert.deepEqual(myArray, [1, 2, 3, 4, 5]);
@@ -64,16 +65,17 @@ if (typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 1; i < 6; i++) {
+const myArray = [];
+for (let i = 1; i < 6; i++) {
   myArray.push(i);
 }
 ```

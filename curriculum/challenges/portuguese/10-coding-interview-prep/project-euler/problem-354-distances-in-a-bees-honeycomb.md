@@ -1,6 +1,6 @@
 ---
 id: 5900f4cf1000cf542c50ffe1
-title: 'Problem 354: Distances in a bee''s honeycomb'
+title: 'Problema 354: Distâncias em uma colmeia de abelhas'
 challengeType: 5
 forumTopicId: 302014
 dashedName: problem-354-distances-in-a-bees-honeycomb
@@ -8,18 +8,22 @@ dashedName: problem-354-distances-in-a-bees-honeycomb
 
 # --description--
 
-Consider a honey bee's honeycomb where each cell is a perfect regular hexagon with side length 1.
+Considere uma colmeia de abelhas onde cada célula é um hexágono regular perfeito com o comprimento de lado 1.
 
-One particular cell is occupied by the queen bee. For a positive real number L, let B(L) count the cells with distance L from the queen bee cell (all distances are measured from centre to centre); you may assume that the honeycomb is large enough to accommodate for any distance we wish to consider. For example, B(√3) = 6, B(√21) = 12 and B(111 111 111) = 54.
+<img class="img-responsive center-block" alt="colmeia de hexágonos com comprimento de lado 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px;" />
 
-Find the number of L ≤ 5·1011 such that B(L) = 450.
+Uma célula específica é ocupada pela abelha rainha. Para um número positivo real $L$, considere $B(L)$ como a contagem das células com distância $L$ da célula da abelha rainha (todas as distâncias são medidas do centro ao centro); você pode presumir que a colmeia é suficientemente grande para acomodar qualquer distância que queiramos considerar.
+
+Por exemplo, $B(\sqrt{3}) = 6$, $B(\sqrt{21}) = 12$ e $B(111.111.111) = 54$.
+
+Encontre o número de $L ≤ 5 \times {10}^{11}$, tal que $B(L) = 450$.
 
 # --hints--
 
-`euler354()` should return 58065134.
+`distancesInHoneycomb()` deve retornar `58065134`.
 
 ```js
-assert.strictEqual(euler354(), 58065134);
+assert.strictEqual(distancesInHoneycomb(), 58065134);
 ```
 
 # --seed--
@@ -27,12 +31,12 @@ assert.strictEqual(euler354(), 58065134);
 ## --seed-contents--
 
 ```js
-function euler354() {
+function distancesInHoneycomb() {
 
   return true;
 }
 
-euler354();
+distancesInHoneycomb();
 ```
 
 # --solutions--

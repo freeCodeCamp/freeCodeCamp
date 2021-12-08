@@ -2,12 +2,12 @@
   "name": "Learn Relational Databases",
   "isUpcomingChange": true,
   "dashedName": "learn-relational-databases",
-  "order": 2,
+  "order": 0,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "relational-databases",
-  "superOrder": 5,
+  "superOrder": 4,
   "challengeOrder": [
     [
       "5ea8adfab628f68d805bfc5e",
@@ -27,7 +27,11 @@
     ],
     [
       "602da0c222201c65d2a019f5",
-      "Learn SQL by Building a Student Database"
+      "Learn SQL by Building a Student Database: Part 1"
+    ],
+    [
+      "618590adb0730ca724e37672",
+      "Learn SQL by Building a Student Database: Part 2"
     ],
     [
       "5f9771307d4d22b9d2b75a94",

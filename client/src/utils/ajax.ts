@@ -3,8 +3,9 @@ import envData from '../../../config/env.json';
 
 import type {
   ChallengeFile,
+  ClaimedCertifications,
   CompletedChallenge,
-  UserType
+  User
 } from '../redux/prop-types';
 
 const { apiLocation } = envData;
@@ -35,8 +36,12 @@ function put<T = void>(path: string, body: unknown): Promise<T> {
   return request('PUT', path, body);
 }
 
+function deleteRequest<T = void>(path: string, body: unknown): Promise<T> {
+  return request('DELETE', path, body);
+}
+
 async function request<T>(
-  method: 'POST' | 'PUT',
+  method: 'POST' | 'PUT' | 'DELETE',
   path: string,
   body: unknown
 ): Promise<T> {
@@ -55,38 +60,36 @@ async function request<T>(
 /** GET **/
 
 interface SessionUser {
-  user?: { [username: string]: UserType };
+  user?: { [username: string]: User };
   sessionMeta: { activeDonations: number };
 }
 
-type challengeFilesForFiles = {
+type ChallengeFilesForFiles = {
   files: Array<Omit<ChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<CompletedChallenge, 'challengeFiles'>;
 
 type ApiSessionResponse = Omit<SessionUser, 'user'>;
 type ApiUser = {
   user: {
-    [username: string]: ApiUserType;
+    [username: string]: Omit<User, 'completedChallenges'> & {
+      completedChallenges?: ChallengeFilesForFiles[];
+    };
   };
   result?: string;
 };
 
-type ApiUserType = Omit<UserType, 'completedChallenges'> & {
-  completedChallenges?: challengeFilesForFiles[];
-};
-
-type UserResponseType = {
-  user: { [username: string]: UserType } | Record<string, never>;
+type UserResponse = {
+  user: { [username: string]: User } | Record<string, never>;
   result: string | undefined;
 };
 
-function parseApiResponseToClientUser(data: ApiUser): UserResponseType {
+function parseApiResponseToClientUser(data: ApiUser): UserResponse {
   const userData = data.user?.[data?.result ?? ''];
   let completedChallenges: CompletedChallenge[] = [];
   if (userData) {
     completedChallenges =
       userData.completedChallenges?.reduce(
-        (acc: CompletedChallenge[], curr: challengeFilesForFiles) => {
+        (acc: CompletedChallenge[], curr: ChallengeFilesForFiles) => {
           return [
             ...acc,
             {
@@ -123,7 +126,7 @@ export function getSessionUser(): Promise<SessionUser> {
 }
 
 type UserProfileResponse = {
-  entities: Omit<UserResponseType, 'result'>;
+  entities: Omit<UserResponse, 'result'>;
   result: string | undefined;
 };
 export function getUserProfile(username: string): Promise<UserProfileResponse> {
@@ -156,11 +159,25 @@ export function getUsernameExists(username: string): Promise<boolean> {
   return get(`/api/users/exists?username=${username}`);
 }
 
-// TODO: Does a GET return a bolean?
+export interface GetVerifyCanClaimCert {
+  response: {
+    type: string;
+    message: {
+      status: boolean;
+      result: string;
+    };
+    variables: {
+      name: string;
+    };
+  };
+  isCertMap: ClaimedCertifications;
+  completedChallenges: CompletedChallenge[];
+}
+
 export function getVerifyCanClaimCert(
   username: string,
   superBlock: string
-): Promise<boolean> {
+): Promise<GetVerifyCanClaimCert> {
   return get(
     `/certificate/verify-can-claim-cert?username=${username}&superBlock=${superBlock}`
   );
@@ -209,6 +226,10 @@ export function postResetProgress(): Promise<void> {
   return post('/account/reset-progress', {});
 }
 
+export function postWebhookToken(): Promise<void> {
+  return post('/user/webhook-token', {});
+}
+
 /** PUT **/
 
 interface MyAbout {
@@ -226,7 +247,7 @@ export function putUpdateMyUsername(username: string): Promise<void> {
 }
 
 export function putUpdateMyProfileUI(
-  profileUI: UserType['profileUI']
+  profileUI: User['profileUI']
 ): Promise<void> {
   return put('/update-my-profileui', { profileUI });
 }
@@ -250,4 +271,9 @@ export function putUserUpdateEmail(email: string): Promise<void> {
 
 export function putVerifyCert(certSlug: string): Promise<void> {
   return put('/certificate/verify', { certSlug });
+}
+
+/** DELETE **/
+export function deleteWebhookToken(): Promise<void> {
+  return deleteRequest('/user/webhook-token', {});
 }

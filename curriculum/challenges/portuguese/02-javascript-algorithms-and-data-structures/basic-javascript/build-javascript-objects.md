@@ -18,7 +18,7 @@ Objetos são úteis para armazenar dados de forma estruturada e podem representa
 Aqui está um exemplo de objeto gato:
 
 ```js
-var cat = {
+const cat = {
   "name": "Whiskers",
   "legs": 4,
   "tails": 1,
@@ -29,7 +29,7 @@ var cat = {
 Neste exemplo, todas as propriedades são armazenadas como strings, como `name`, `legs` e `tails`. Porém, você também pode usar números como propriedades. Você pode até omitir as aspas para propriedades de string com uma única palavra, da seguinte forma:
 
 ```js
-var anotherObject = {
+const anotherObject = {
   make: "Ford",
   5: "five",
   "model": "focus"
@@ -139,18 +139,18 @@ assert(
 ## --seed-contents--
 
 ```js
-var myDog = {
-// Only change code below this line
+const myDog = {
+  // Only change code below this line
 
 
-// Only change code above this line
+  // Only change code above this line
 };
 ```
 
 # --solutions--
 
 ```js
-var myDog = {
+const myDog = {
   "name": "Camper",
   "legs": 4,
   "tails": 1,

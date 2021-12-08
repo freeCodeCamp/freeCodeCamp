@@ -11,7 +11,7 @@ dashedName: remove-elements-from-an-array-using-slice-instead-of-splice
 É comum precisar remover alguns itens de um array e manter o resto. O JavaScript oferece o método `splice`, que recebe uma posição de onde começar a remover e o número de elementos para remover como argumentos para isso. Se o segundo argumento for omitido, o padrão é remover todos os itens até o final. No entanto, o método `splice` modifica o array original em que é chamado. Exemplo:
 
 ```js
-var cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+const cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 cities.splice(3, 1);
 ```
 
@@ -69,7 +69,8 @@ function nonMutatingSplice(cities) {
 
   // Only change code above this line
 }
-var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+
+const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 nonMutatingSplice(inputCities);
 ```
 
@@ -77,10 +78,7 @@ nonMutatingSplice(inputCities);
 
 ```js
 function nonMutatingSplice(cities) {
-  // Only change code below this line
   return cities.slice(0,3);
-  // Only change code above this line
 }
-var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
-nonMutatingSplice(inputCities);
+const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 ```

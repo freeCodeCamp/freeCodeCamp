@@ -1,6 +1,6 @@
 ---
 id: 5900f41e1000cf542c50ff31
-title: 'Problem 178: Step Numbers'
+title: 'Problema 178: Números com passos'
 challengeType: 5
 forumTopicId: 301813
 dashedName: problem-178-step-numbers
@@ -8,22 +8,22 @@ dashedName: problem-178-step-numbers
 
 # --description--
 
-Consider the number 45656.
+Considere o número 45656.
 
-It can be seen that each pair of consecutive digits of 45656 has a difference of one.
+Podemos ver que cada par de algarismos consecutivos de 45656 tem uma diferença de um.
 
-A number for which every pair of consecutive digits has a difference of one is called a step number.
+Um número para o qual cada par de algarismos consecutivos tem uma diferença de um é chamado de um número com passos.
 
-A pandigital number contains every decimal digit from 0 to 9 at least once.
+Um número pandigital contém todos os algarismos decimais de 0 a 9 pelo menos uma vez.
 
-How many pandigital step numbers less than 1040 are there?
+Quantos números com passos pandigitais menores que ${10}^{40}$ existem?
 
 # --hints--
 
-`euler178()` should return 126461847755.
+`stepNumbers()` deve retornar `126461847755`.
 
 ```js
-assert.strictEqual(euler178(), 126461847755);
+assert.strictEqual(stepNumbers(), 126461847755);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler178(), 126461847755);
 ## --seed-contents--
 
 ```js
-function euler178() {
+function stepNumbers() {
 
   return true;
 }
 
-euler178();
+stepNumbers();
 ```
 
 # --solutions--

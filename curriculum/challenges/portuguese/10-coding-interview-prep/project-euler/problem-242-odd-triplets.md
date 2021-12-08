@@ -1,6 +1,6 @@
 ---
 id: 5900f45f1000cf542c50ff71
-title: 'Problem 242: Odd Triplets'
+title: 'Problema 242: Trios de números ímpares'
 challengeType: 5
 forumTopicId: 301889
 dashedName: problem-242-odd-triplets
@@ -8,20 +8,20 @@ dashedName: problem-242-odd-triplets
 
 # --description--
 
-Given the set {1,2,...,n}, we define f(n,k) as the number of its k-element subsets with an odd sum of elements. For example, f(5,3) = 4, since the set {1,2,3,4,5} has four 3-element subsets having an odd sum of elements, i.e.: {1,2,4}, {1,3,5}, {2,3,4} and {2,4,5}.
+Dado o conjunto {1,2,..., $n$}, definimos $f(n, k)$ como o número de seus subconjuntos de $k$ elementos com uma soma ímpar de elementos. Por exemplo, $f(5,3) = 4$, já que o conjunto {1,2,3,4,5} tem quatro subconjuntos de 3 elementos com uma soma ímpar de elementos, sejam eles: {1,2,4}, {1,3,5}, {2,3,4} e {2,4,5}.
 
-When all three values n, k and f(n,k) are odd, we say that they make an odd-triplet \[n,k,f(n,k)].
+Quando todos os três valores de $n$, $k$ e $f(n, k)$ são ímpares, dizemos que eles fazem um trio de ímpares $[n, k, f(n, k)]$.
 
-There are exactly five odd-triplets with n ≤ 10, namely: \[1,1,f(1,1) = 1], \[5,1,f(5,1) = 3], \[5,5,f(5,5) = 1], \[9,1,f(9,1) = 5] and \[9,9,f(9,9) = 1].
+Há exatamente cinco trios de ímpares com $n ≤ 10$. São eles: $[1, 1, f(1, 1) = 1]$, $[5, 1, f(5, 1) = 3]$, $[5, 5, f(5, 5) = 1]$, $[9, 1, f(9, 1) = 5]$ e $[9, 9, f(9, 9) = 1]$.
 
-How many odd-triplets are there with n ≤ 1012 ?
+Quantos trios de ímpares existem com $n ≤ {10}^{12}$?
 
 # --hints--
 
-`euler242()` should return 997104142249036700.
+`oddTriplets()` deve retornar `997104142249036700`.
 
 ```js
-assert.strictEqual(euler242(), 997104142249036700);
+assert.strictEqual(oddTriplets(), 997104142249036700);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler242(), 997104142249036700);
 ## --seed-contents--
 
 ```js
-function euler242() {
+function oddTriplets() {
 
   return true;
 }
 
-euler242();
+oddTriplets();
 ```
 
 # --solutions--

@@ -17,7 +17,8 @@ dashedName: return-a-value-from-a-function-with-return
 function plusThree(num) {
   return num + 3;
 }
-var answer = plusThree(5);
+
+const answer = plusThree(5);
 ```
 
 `answer` 的值为 `8`。

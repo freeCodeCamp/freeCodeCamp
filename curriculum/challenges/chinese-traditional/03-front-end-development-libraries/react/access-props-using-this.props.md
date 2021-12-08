@@ -14,67 +14,54 @@ dashedName: access-props-using-this-props
 
 # --instructions--
 
-在父組件 `ResetPassword` 中渲染 `ReturnTempPassword` 組件的一個實例。 在這裏，爲 `ReturnTempPassword` 提供一個 `tempPassword` prop，並賦值一個長度至少爲 8 個字符的字符串。 在子組件 `ReturnTempPassword` 中，訪問 `strong` 標籤中的 `tempPassword` prop，以確保用戶看到臨時密碼。
+在父組件 `App` 中渲染 `Welcome` 組件的一個實例。 在這裏，給 `Welcome` 一個 `name` 的 prop，並給它賦值一個字符串。 在 `Welcome` 的子節點裏，訪問 `strong` 標籤內的 `name` prop。
 
 # --hints--
 
-`ResetPassword` 組件應該返回單個 `div` 元素。
+`App` 組件應返回單個 `div` 元素。
 
 ```js
 assert(
   (function () {
-    const mockedComponent = Enzyme.mount(React.createElement(ResetPassword));
+    const mockedComponent = Enzyme.mount(React.createElement(App));
     return mockedComponent.children().type() === 'div';
   })()
 );
 ```
 
-`ResetPassword` 的第四個子組件應該是 `ReturnTempPassword` 組件。
+`App` 的子組件應該是 `Welcome` 組件。
 
 ```js
 assert(
   (function () {
-    const mockedComponent = Enzyme.mount(React.createElement(ResetPassword));
+    const mockedComponent = Enzyme.mount(React.createElement(App));
     return (
-      mockedComponent.children().childAt(3).name() === 'ReturnTempPassword'
+      mockedComponent.children().childAt(0).name() === 'Welcome'
     );
   })()
 );
 ```
 
-`ReturnTempPassword` 組件應該有一個名爲 `tempPassword` 的屬性。
+`Welcome` 組件應該有一個名爲 `name` 的 prop。
 
 ```js
 assert(
   (function () {
-    const mockedComponent = Enzyme.mount(React.createElement(ResetPassword));
-    return mockedComponent.find('ReturnTempPassword').props().tempPassword;
+    const mockedComponent = Enzyme.mount(React.createElement(App));
+    return mockedComponent.find('Welcome').props().name;
   })()
 );
 ```
 
-`ReturnTempPassword` 組件的 `tempPassword` prop 值應該是一個字符串，至少爲 8 個字符。
+`Welcome` 組件應顯示你在 `strong` 標籤中作爲 `name` 屬性傳遞的字符串。
 
 ```js
 assert(
   (function () {
-    const mockedComponent = Enzyme.mount(React.createElement(ResetPassword));
-    const temp = mockedComponent.find('ReturnTempPassword').props()
-      .tempPassword;
-    return typeof temp === 'string' && temp.length >= 8;
-  })()
-);
-```
-
-`ReturnTempPassword` 組件應該顯示作爲 `tempPassword` prop 創建的密碼，並且密碼被包裹在 `strong` 標籤中。
-
-```js
-assert(
-  (function () {
-    const mockedComponent = Enzyme.mount(React.createElement(ResetPassword));
+    const mockedComponent = Enzyme.mount(React.createElement(App));
     return (
       mockedComponent.find('strong').text() ===
-      mockedComponent.find('ReturnTempPassword').props().tempPassword
+      mockedComponent.find('Welcome').props().name
     );
   })()
 );
@@ -85,13 +72,13 @@ assert(
 ## --after-user-code--
 
 ```jsx
-ReactDOM.render(<ResetPassword />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 ## --seed-contents--
 
 ```jsx
-class ReturnTempPassword extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -100,14 +87,14 @@ class ReturnTempPassword extends React.Component {
     return (
         <div>
             { /* Change code below this line */ }
-            <p>Your temporary password is: <strong></strong></p>
+            <Welcome />
             { /* Change code above this line */ }
         </div>
     );
   }
 };
 
-class ResetPassword extends React.Component {
+class Welcome extends React.Component {
   constructor(props) {
     super(props);
 
@@ -115,11 +102,8 @@ class ResetPassword extends React.Component {
   render() {
     return (
         <div>
-          <h2>Reset Password</h2>
-          <h3>We've generated a new temporary password for you.</h3>
-          <h3>Please reset this password from your account settings ASAP.</h3>
           { /* Change code below this line */ }
-
+          <p>Hello, <strong></strong>!</p>
           { /* Change code above this line */ }
         </div>
     );
@@ -130,7 +114,7 @@ class ResetPassword extends React.Component {
 # --solutions--
 
 ```jsx
-class ReturnTempPassword extends React.Component {
+class Welcome extends React.Component {
   constructor(props) {
     super(props);
 
@@ -138,13 +122,15 @@ class ReturnTempPassword extends React.Component {
   render() {
     return (
         <div>
-            <p>Your temporary password is: <strong>{this.props.tempPassword}</strong></p>
+          { /* Change code below this line */ }
+          <p>Hello, <strong>{this.props.name}</strong>!</p>
+          { /* Change code above this line */ }
         </div>
     );
   }
 };
 
-class ResetPassword extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -152,12 +138,9 @@ class ResetPassword extends React.Component {
   render() {
     return (
         <div>
-          <h2>Reset Password</h2>
-          <h3>We've generated a new temporary password for you.</h3>
-          <h3>Please reset this password from your account settings ASAP.</h3>
-          { /* Change code below this line */ }
-          <ReturnTempPassword tempPassword="serrPbqrPnzc" />
-          { /* Change code above this line */ }
+            { /* Change code below this line */ }
+            <Welcome name="Quincy"/>
+            { /* Change code above this line */ }
         </div>
     );
   }

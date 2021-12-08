@@ -9,11 +9,12 @@ import { createSelector } from 'reselect';
 import envData from '../../../config/env.json';
 import { langCodes } from '../../../config/i18n/all-langs';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
-import DonateForm from '../components/Donation/DonateForm';
+import DonateForm from '../components/Donation/donate-form';
 
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
+import { Themes } from '../components/settings/theme';
 import {
   showCertSelector,
   showCertFetchStateSelector,
@@ -25,7 +26,7 @@ import {
   userByNameSelector,
   fetchProfileForUser
 } from '../redux';
-import { UserFetchState, UserType } from '../redux/prop-types';
+import { UserFetchState, User } from '../redux/prop-types';
 import { certMap } from '../resources/cert-and-project-map';
 import certificateMissingMessage from '../utils/certificate-missing-message';
 import reallyWeirdErrorMessage from '../utils/really-weird-error-message';
@@ -36,7 +37,7 @@ import ShowProjectLinks from './show-project-links';
 const { clientLocale } = envData as { clientLocale: keyof typeof langCodes };
 
 const localeCode = langCodes[clientLocale];
-type CertType = {
+type Cert = {
   username: string;
   name: string;
   certName: string;
@@ -44,11 +45,11 @@ type CertType = {
   completionTime: number;
   date: number;
 };
-interface IShowCertificationProps {
-  cert: CertType;
+interface ShowCertificationProps {
+  cert: Cert;
   certDashedName: string;
   certSlug: string;
-  createFlashMessage: (payload: typeof standardErrorMessage) => void;
+  createFlashMessage: typeof createFlashMessage;
   executeGA: (payload: Record<string, unknown>) => void;
   fetchProfileForUser: (username: string) => void;
   fetchState: {
@@ -69,18 +70,18 @@ interface IShowCertificationProps {
     certSlug: string;
   }) => void;
   signedInUserName: string;
-  user: UserType;
+  user: User;
   userFetchState: UserFetchState;
   userFullName: string;
   username: string;
 }
 
 const requestedUserSelector = (state: unknown, { username = '' }) =>
-  userByNameSelector(username.toLowerCase())(state) as UserType;
+  userByNameSelector(username.toLowerCase())(state) as User;
 
 const validCertSlugs = certMap.map(cert => cert.certSlug);
 
-const mapStateToProps = (state: unknown, props: IShowCertificationProps) => {
+const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
   const isValidCert = validCertSlugs.some(slug => slug === props.certSlug);
   return createSelector(
     showCertSelector,
@@ -90,8 +91,8 @@ const mapStateToProps = (state: unknown, props: IShowCertificationProps) => {
     isDonatingSelector,
     requestedUserSelector,
     (
-      cert: CertType,
-      fetchState: IShowCertificationProps['fetchState'],
+      cert: Cert,
+      fetchState: ShowCertificationProps['fetchState'],
       signedInUserName: string,
       userFetchState: UserFetchState,
       isDonating: boolean,
@@ -114,7 +115,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
+const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const { t } = useTranslation();
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
   const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
@@ -266,7 +267,7 @@ const ShowCertification = (props: IShowCertificationProps): JSX.Element => {
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <DonateForm
-            defaultTheme='default'
+            defaultTheme={Themes.Default}
             handleProcessing={handleProcessing}
             isMinimalForm={true}
           />

@@ -1,6 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bdb
-title: Set a Domain and a Range on a Scale
+title: Establece un dominio y un rango en una escala
 challengeType: 6
 forumTopicId: 301491
 dashedName: set-a-domain-and-a-range-on-a-scale
@@ -8,13 +8,13 @@ dashedName: set-a-domain-and-a-range-on-a-scale
 
 # --description--
 
-By default, scales use the identity relationship. This means the input value maps to the output value. However, scales can be much more flexible and interesting.
+Por defecto, las escalas usan la relación de identidad. Esto significa que el valor de entrada se asigna al valor de salida. Sin embargo, las escalas pueden ser mucho más flexibles e interesantes.
 
-Say a dataset has values ranging from 50 to 480. This is the input information for a scale, also known as the <dfn>domain</dfn>.
+Digamos que un conjunto de datos tiene valores entre 50 y 480. Esta es la información de entrada para una escala, también conocido como el <dfn>dominio</dfn>.
 
-You want to map those points along the `x` axis on the SVG canvas, between 10 units and 500 units. This is the output information, also known as the <dfn>range</dfn>.
+Quieres trazar esos puntos a lo largo del eje `x` en el lienzo SVG, entre 10 unidades y 500 unidades. Esta es la información de salida, también conocida como el <dfn>rango</dfn>.
 
-The `domain()` and `range()` methods set these values for the scale. Both methods take an array of at least two elements as an argument. Here's an example:
+Los métodos `domain()` y `range()` establecen estos valores para la escala. Ambos métodos toman un arreglo de al menos dos elementos como argumento. Aquí un ejemplo:
 
 ```js
 scale.domain([50, 480]);
@@ -26,43 +26,43 @@ scale(750)
 d3.scaleLinear()
 ```
 
-In order, the following values would be displayed in the console: `10`, `500`, `323.37`, and `807.67`.
+En orden, los siguientes valores se mostrarían en la consola: `10`, `500`, `323.37`, y `807.67`.
 
-Notice that the scale uses the linear relationship between the domain and range values to figure out what the output should be for a given number. The minimum value in the domain (50) maps to the minimum value (10) in the range.
+Observa que la escala usa la relación lineal entre los valores del dominio y del rango para averiguar cuál debe ser la salida para un número dado. El valor mínimo en el dominio (50) se asigna al valor mínimo (10) en el rango.
 
 # --instructions--
 
-Create a scale and set its domain to `[250, 500]` and range to `[10, 150]`.
+Crea una escala y establece su dominio a `[250, 500]` y su rango a `[10, 150]`.
 
-**Note:** You can chain the `domain()` and `range()` methods onto the `scale` variable.
+**Nota:** Puedes encadenar los métodos `domain()` y `range()` a la variable `scale`.
 
 # --hints--
 
-Your code should use the `domain()` method.
+Tu código debe usar el método `domain()`.
 
 ```js
 assert(code.match(/\.domain/g));
 ```
 
-The `domain()` of the `scale` should be set to `[250, 500]`.
+El `domain()` de `scale` (escala) debe ser establecido a `[250, 500]`.
 
 ```js
 assert(JSON.stringify(scale.domain()) == JSON.stringify([250, 500]));
 ```
 
-Your code should use the `range()` method.
+Tu código debe usar el método `range()`.
 
 ```js
 assert(code.match(/\.range/g));
 ```
 
-The `range()` of the `scale` should be set to `[10, 150]`.
+El `range()` de `scale` (escala) debe ser establecido a `[10, 150]`.
 
 ```js
 assert(JSON.stringify(scale.range()) == JSON.stringify([10, 150]));
 ```
 
-The text in the `h2` should be `-102`.
+El texto en el `h2` debe ser `-102`.
 
 ```js
 assert($('h2').text() == '-102');

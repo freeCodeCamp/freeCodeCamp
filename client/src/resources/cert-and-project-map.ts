@@ -1,3 +1,5 @@
+import { SuperBlocks } from '../../../config/certification-settings';
+
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
 const jsAlgoBase =
@@ -289,228 +291,228 @@ const certMap = [
   {
     id: '561add10cb82ac38a17513bc',
     title: 'Responsive Web Design',
-    certSlug: 'responsive-web-design',
+    certSlug: SuperBlocks.RespWebDesign,
     flag: 'isRespWebDesignCert',
     projects: [
       {
         id: 'bd7158d8c442eddfaeb5bd18',
         title: 'Build a Tribute Page',
         link: `${responsiveWebBase}/build-a-tribute-page`,
-        certSlug: 'responsive-web-design'
+        certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: '587d78af367417b2b2512b03',
         title: 'Build a Survey Form',
         link: `${responsiveWebBase}/build-a-survey-form`,
-        certSlug: 'responsive-web-design'
+        certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: '587d78af367417b2b2512b04',
         title: 'Build a Product Landing Page',
         link: `${responsiveWebBase}/build-a-product-landing-page`,
-        certSlug: 'responsive-web-design'
+        certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: '587d78b0367417b2b2512b05',
         title: 'Build a Technical Documentation Page',
         link: `${responsiveWebBase}/build-a-technical-documentation-page`,
-        certSlug: 'responsive-web-design'
+        certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: 'bd7158d8c242eddfaeb5bd13',
         title: 'Build a Personal Portfolio Webpage',
         link: `${responsiveWebBase}/build-a-personal-portfolio-webpage`,
-        certSlug: 'responsive-web-design'
+        certSlug: SuperBlocks.RespWebDesign
       }
     ]
   },
   {
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',
-    certSlug: 'javascript-algorithms-and-data-structures',
+    certSlug: SuperBlocks.JsAlgoDataStruct,
     flag: 'isJsAlgoDataStructCert',
     projects: [
       {
         id: 'aaa48de84e1ecc7c742e1124',
         title: 'Palindrome Checker',
         link: `${jsAlgoBase}/palindrome-checker`,
-        certSlug: 'javascript-algorithms-and-data-structures'
+        certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         id: 'a7f4d8f2483413a6ce226cac',
         title: 'Roman Numeral Converter',
         link: `${jsAlgoBase}/roman-numeral-converter`,
-        certSlug: 'javascript-algorithms-and-data-structures'
+        certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         id: '56533eb9ac21ba0edf2244e2',
         title: 'Caesars Cipher',
         link: `${jsAlgoBase}/caesars-cipher`,
-        certSlug: 'javascript-algorithms-and-data-structures'
+        certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         id: 'aff0395860f5d3034dc0bfc9',
         title: 'Telephone Number Validator',
         link: `${jsAlgoBase}/telephone-number-validator`,
-        certSlug: 'javascript-algorithms-and-data-structures'
+        certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         id: 'aa2e6f85cab2ab736c9a9b24',
         title: 'Cash Register',
         link: `${jsAlgoBase}/cash-register`,
-        certSlug: 'javascript-algorithms-and-data-structures'
+        certSlug: SuperBlocks.JsAlgoDataStruct
       }
     ]
   },
   {
     id: '561acd10cb82ac38a17513bc',
     title: 'Front End Development Libraries',
-    certSlug: 'front-end-development-libraries',
+    certSlug: SuperBlocks.FrontEndDevLibs,
     flag: 'isFrontEndLibsCert',
     projects: [
       {
         id: 'bd7158d8c442eddfaeb5bd13',
         title: 'Build a Random Quote Machine',
         link: `${feLibsBase}/build-a-random-quote-machine`,
-        certSlug: 'front-end-development-libraries'
+        certSlug: SuperBlocks.FrontEndDevLibs
       },
       {
         id: 'bd7157d8c242eddfaeb5bd13',
         title: 'Build a Markdown Previewer',
         link: `${feLibsBase}/build-a-markdown-previewer`,
-        certSlug: 'front-end-development-libraries'
+        certSlug: SuperBlocks.FrontEndDevLibs
       },
       {
         id: '587d7dbc367417b2b2512bae',
         title: 'Build a Drum Machine',
         link: `${feLibsBase}/build-a-drum-machine`,
-        certSlug: 'front-end-development-libraries'
+        certSlug: SuperBlocks.FrontEndDevLibs
       },
       {
         id: 'bd7158d8c442eddfaeb5bd17',
         title: 'Build a JavaScript Calculator',
         link: `${feLibsBase}/build-a-javascript-calculator`,
-        certSlug: 'front-end-development-libraries'
+        certSlug: SuperBlocks.FrontEndDevLibs
       },
       {
         id: 'bd7158d8c442eddfaeb5bd0f',
         title: 'Build a 25 + 5 Clock',
         link: `${feLibsBase}/build-a-25--5-clock`,
-        certSlug: 'front-end-development-libraries'
+        certSlug: SuperBlocks.FrontEndDevLibs
       }
     ]
   },
   {
     id: '5a553ca864b52e1d8bceea14',
     title: 'Data Visualization',
-    certSlug: 'data-visualization',
+    certSlug: SuperBlocks.DataVis,
     flag: 'is2018DataVisCert',
     projects: [
       {
         id: 'bd7168d8c242eddfaeb5bd13',
         title: 'Visualize Data with a Bar Chart',
         link: `${dataVisBase}/visualize-data-with-a-bar-chart`,
-        certSlug: 'data-visualization'
+        certSlug: SuperBlocks.DataVis
       },
       {
         id: 'bd7178d8c242eddfaeb5bd13',
         title: 'Visualize Data with a Scatterplot Graph',
         link: `${dataVisBase}/visualize-data-with-a-scatterplot-graph`,
-        certSlug: 'data-visualization'
+        certSlug: SuperBlocks.DataVis
       },
       {
         id: 'bd7188d8c242eddfaeb5bd13',
         title: 'Visualize Data with a Heat Map',
         link: `${dataVisBase}/visualize-data-with-a-heat-map`,
-        certSlug: 'data-visualization'
+        certSlug: SuperBlocks.DataVis
       },
       {
         id: '587d7fa6367417b2b2512bbf',
         title: 'Visualize Data with a Choropleth Map',
         link: `${dataVisBase}/visualize-data-with-a-choropleth-map`,
-        certSlug: 'data-visualization'
+        certSlug: SuperBlocks.DataVis
       },
       {
         id: '587d7fa6367417b2b2512bc0',
         title: 'Visualize Data with a Treemap Diagram',
         link: `${dataVisBase}/visualize-data-with-a-treemap-diagram`,
-        certSlug: 'data-visualization'
+        certSlug: SuperBlocks.DataVis
       }
     ]
   },
   {
     id: '606243f50267e718b1e755f4',
     title: 'Relational Databases',
-    certSlug: 'relational-databases',
+    certSlug: SuperBlocks.RelationalDb,
     flag: 'isRelationalDatabasesCert',
     projects: [
       {
         id: '5f1a4ef5d5d6b5ab580fc6ae',
         title: 'Celestial Bodies Database',
         link: `${relationalDatabasesBase}/celestial-bodies-database`,
-        superBlock: 'relational-databases'
+        superBlock: SuperBlocks.RelationalDb
       },
       {
         id: '5f87ac112ae598023a42df1a',
         title: 'Salon Appointment Scheduler',
         link: `${relationalDatabasesBase}/salon-appointment-scheduler`,
-        superBlock: 'relational-databases'
+        superBlock: SuperBlocks.RelationalDb
       },
       {
         id: '5f9771307d4d22b9d2b75a94',
         title: 'World Cup Database',
         link: `${relationalDatabasesBase}/world-cup-database`,
-        superBlock: 'relational-databases'
+        superBlock: SuperBlocks.RelationalDb
       },
       {
         id: '602d9ff222201c65d2a019f2',
         title: 'Periodic Table Database',
         link: `${relationalDatabasesBase}/periodic-table-database`,
-        superBlock: 'relational-databases'
+        superBlock: SuperBlocks.RelationalDb
       },
       {
         id: '602da04c22201c65d2a019f4',
         title: 'Number Guessing Game',
         link: `${relationalDatabasesBase}/number-guessing-game`,
-        superBlock: 'relational-databases'
+        superBlock: SuperBlocks.RelationalDb
       }
     ]
   },
   {
     id: '561add10cb82ac38a17523bc',
     title: 'Back End Development and APIs',
-    certSlug: 'back-end-development-and-apis',
+    certSlug: SuperBlocks.BackEndDevApis,
     flag: 'isApisMicroservicesCert',
     projects: [
       {
         id: 'bd7158d8c443edefaeb5bdef',
         title: 'Timestamp Microservice',
         link: `${apiMicroBase}/timestamp-microservice`,
-        certSlug: 'back-end-development-and-apis'
+        certSlug: SuperBlocks.BackEndDevApis
       },
       {
         id: 'bd7158d8c443edefaeb5bdff',
         title: 'Request Header Parser Microservice',
         link: `${apiMicroBase}/request-header-parser-microservice`,
-        certSlug: 'back-end-development-and-apis'
+        certSlug: SuperBlocks.BackEndDevApis
       },
       {
         id: 'bd7158d8c443edefaeb5bd0e',
         title: 'URL Shortener Microservice',
         link: `${apiMicroBase}/url-shortener-microservice`,
-        certSlug: 'back-end-development-and-apis'
+        certSlug: SuperBlocks.BackEndDevApis
       },
       {
         id: '5a8b073d06fa14fcfde687aa',
         title: 'Exercise Tracker',
         link: `${apiMicroBase}/exercise-tracker`,
-        certSlug: 'back-end-development-and-apis'
+        certSlug: SuperBlocks.BackEndDevApis
       },
       {
         id: 'bd7158d8c443edefaeb5bd0f',
         title: 'File Metadata Microservice',
         link: `${apiMicroBase}/file-metadata-microservice`,
-        certSlug: 'back-end-development-and-apis'
+        certSlug: SuperBlocks.BackEndDevApis
       }
     ]
   },

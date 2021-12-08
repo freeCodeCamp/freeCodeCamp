@@ -1,7 +1,8 @@
 import { render } from '@testing-library/react';
 import React from 'react';
+import { Themes } from '../settings/theme';
 
-import { PaypalButton } from './PaypalButton';
+import { PaypalButton } from './paypal-button';
 
 const commonProps = {
   donationAmount: 500,
@@ -11,7 +12,7 @@ const commonProps = {
   onDonationStateChange: () => null,
   isPaypalLoading: true,
   t: jest.fn(),
-  theme: 'night',
+  theme: Themes.Night,
   handlePaymentButtonLoad: jest.fn(),
   isMinimalForm: true
 };

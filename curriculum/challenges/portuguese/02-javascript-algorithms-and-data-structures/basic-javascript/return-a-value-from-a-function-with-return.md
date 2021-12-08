@@ -17,7 +17,8 @@ Nós podemos passar valores para uma função com <dfn>argumentos</dfn>. Você p
 function plusThree(num) {
   return num + 3;
 }
-var answer = plusThree(5);
+
+const answer = plusThree(5);
 ```
 
 `answer` tem o valor de `8`.

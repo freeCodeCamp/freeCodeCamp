@@ -1,11 +1,11 @@
-/* global cy */
+import { SuperBlocks } from '../../../../config/certification-settings';
 
 const selectors = {
   editor: '.react-monaco-editor-container'
 };
 
 const pythonProjects = {
-  superBlock: 'machine-learning-with-python',
+  superBlock: SuperBlocks.MachineLearningPy,
   block: 'machine-learning-with-python-projects',
   challenges: [
     {
@@ -64,7 +64,7 @@ describe('project submission', () => {
       cy.login();
       cy.fixture('../../config/curriculum.json').then(curriculum => {
         const { challenges, meta } =
-          curriculum['javascript-algorithms-and-data-structures'].blocks[
+          curriculum[SuperBlocks.JsAlgoDataStruct].blocks[
             'javascript-algorithms-and-data-structures-projects'
           ];
 

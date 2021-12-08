@@ -16,8 +16,8 @@ dashedName: manipulate-arrays-with-pop
 數組中任何類型的元素（數值，字符串，甚至是數組）都可以被彈出來 。
 
 ```js
-var threeArr = [1, 4, 6];
-var oneDown = threeArr.pop();
+const threeArr = [1, 4, 6];
+const oneDown = threeArr.pop();
 console.log(oneDown);
 console.log(threeArr);
 ```
@@ -26,7 +26,7 @@ console.log(threeArr);
 
 # --instructions--
 
-使用 `.pop()` 函數移除 `myArray` 中的最後一個元素，並且把彈出的值賦給 `removedFromMyArray`。
+使用 `.pop()` 函數從 `myArray` 中刪除最後一項，並將取出的值分配給新變量 `removedFromMyArray`。
 
 # --hints--
 
@@ -69,22 +69,22 @@ assert(
 ## --after-user-code--
 
 ```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 ## --seed-contents--
 
 ```js
 // Setup
-var myArray = [["John", 23], ["cat", 2]];
+const myArray = [["John", 23], ["cat", 2]];
 
 // Only change code below this line
-var removedFromMyArray;
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["cat", 2]];
-var removedFromMyArray = myArray.pop();
+const myArray = [["John", 23], ["cat", 2]];
+const removedFromMyArray = myArray.pop();
 ```

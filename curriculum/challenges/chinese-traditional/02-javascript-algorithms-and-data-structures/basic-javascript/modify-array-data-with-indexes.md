@@ -9,12 +9,12 @@ dashedName: modify-array-data-with-indexes
 
 # --description--
 
-與字符串的數據不可變不同，數組的數據是可變的（ <dfn>mutable</dfn>），可以自由地改變。
+與字符串不同，數組的條目是 <dfn>可變的</dfn> 並且可以自由更改，即使數組是用 `const` 聲明的。
 
 **示例**
 
 ```js
-var ourArray = [50,40,30];
+const ourArray = [50, 40, 30];
 ourArray[0] = 15;
 ```
 
@@ -28,7 +28,7 @@ ourArray[0] = 15;
 
 # --hints--
 
-`myArray` 應該等於 `[45,64,99]`。
+`myArray` 現在應該是 `[45, 64, 99]`。
 
 ```js
 assert(
@@ -73,14 +73,15 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [18,64,99];
+const myArray = [18, 64, 99];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [18,64,99];
+const myArray = [18, 64, 99];
 myArray[0] = 45;
 ```

@@ -20,7 +20,7 @@ parseInt(string, radix);
 這是一個示例：
 
 ```js
-var a = parseInt("11", 2);
+const a = parseInt("11", 2);
 ```
 
 變量 radix 表示 `11` 是在二進制系統中。 這個示例將字符串 `11` 轉換爲整數 `3`。

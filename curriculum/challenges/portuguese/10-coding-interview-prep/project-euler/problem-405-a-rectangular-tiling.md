@@ -1,6 +1,6 @@
 ---
 id: 5900f5021000cf542c510014
-title: 'Problem 405: A rectangular tiling'
+title: 'Problema 405: Colocação retangular de ladrilhos'
 challengeType: 5
 forumTopicId: 302073
 dashedName: problem-405-a-rectangular-tiling
@@ -8,24 +8,28 @@ dashedName: problem-405-a-rectangular-tiling
 
 # --description--
 
-We wish to tile a rectangle whose length is twice its width.
+Queremos preencher com ladrilhos um retângulo cujo comprimento é o dobro de sua largura.
 
-Let T(0) be the tiling consisting of a single rectangle.
+Considere $T(0)$ como a área a ser ladrilhada, consistindo em um único retângulo.
 
-For n > 0, let T(n) be obtained from T(n-1) by replacing all tiles in the following manner:
+Para $n > 0$, considere $T(n)$ como tendo sido obtido a partir de $T( n- 1)$ substituindo todos os ladrilhos da seguinte maneira:
 
-The following animation demonstrates the tilings T(n) for n from 0 to 5:
+<img class="img-responsive center-block" alt="obtendo T(n) a partir de T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px;" />
 
-Let f(n) be the number of points where four tiles meet in T(n). For example, f(1) = 0, f(4) = 82 and f(109) mod 177 = 126897180.
+A animação a seguir demonstra o preenchimento com ladrilhos de $T(n)$ para $n$ de 0 a 5:
 
-Find f(10k) for k = 1018, give your answer modulo 177.
+<img class="img-responsive center-block" alt="animação do ladrilhamento de T(n) para n de 0 a 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px;" />
+
+Considere $f(n)$ como o número de pontos em que quatro ladrilhos se encontram em $T(n)$. Por exemplo, $f(1) = 0$, $f(4) = 82$ e $f({10}^9)\bmod {17}^7 = 126.897.180$.
+
+Encontre $f({10}^k)$ para $k = {10}^{18}$ e dê sua resposta modulo ${17}^7$.
 
 # --hints--
 
-`euler405()` should return 237696125.
+`rectangularTiling()` deve retornar `237696125`.
 
 ```js
-assert.strictEqual(euler405(), 237696125);
+assert.strictEqual(rectangularTiling(), 237696125);
 ```
 
 # --seed--
@@ -33,12 +37,12 @@ assert.strictEqual(euler405(), 237696125);
 ## --seed-contents--
 
 ```js
-function euler405() {
+function rectangularTiling() {
 
   return true;
 }
 
-euler405();
+rectangularTiling();
 ```
 
 # --solutions--

@@ -28,7 +28,7 @@ Ora quando valuteremo `ourDog.bark`, otterremo il suo abbaiare, `bow-wow`.
 Esempio:
 
 ```js
-var ourDog = {
+const ourDog = {
   "name": "Camper",
   "legs": 4,
   "tails": 1,
@@ -67,7 +67,7 @@ assert(!/bark[^\n]:/.test(code));
 ## --seed-contents--
 
 ```js
-var myDog = {
+const myDog = {
   "name": "Happy Coder",
   "legs": 4,
   "tails": 1,
@@ -80,7 +80,7 @@ var myDog = {
 # --solutions--
 
 ```js
-var myDog = {
+const myDog = {
   "name": "Happy Coder",
   "legs": 4,
   "tails": 1,

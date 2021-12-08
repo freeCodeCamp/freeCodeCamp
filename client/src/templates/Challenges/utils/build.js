@@ -9,7 +9,8 @@ import { getTransformers } from '../rechallenge/transformers';
 import {
   createTestFramer,
   runTestInTestFrame,
-  createMainFramer
+  createMainPreviewFramer,
+  createProjectPreviewFramer
 } from './frame';
 import createWorker from './worker-executor';
 
@@ -19,14 +20,6 @@ const { filename: testEvaluator } = testEvaluatorData;
 const frameRunner = [
   {
     src: `/js/${runner}.js`
-  }
-];
-
-const globalRequires = [
-  {
-    link:
-      'https://cdnjs.cloudflare.com/' +
-      'ajax/libs/normalize/4.2.0/normalize.min.css'
   }
 ];
 
@@ -50,17 +43,10 @@ const composeFunctions = (...fns) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
 function buildSourceMap(challengeFiles) {
-  // TODO: concatenating the source/contents is a quick hack for multi-file
-  // editing. It is used because all the files (js, html and css) end up with
-  // the same name 'index'. This made the last file the only file to  appear in
-  // sources.
-  // A better solution is to store and handle them separately. Perhaps never
-  // setting the name to 'index'. Use 'contents' instead?
-  // TODO: is file.source ever defined?
+  // TODO: rename sources.index to sources.contents.
   const source = challengeFiles.reduce(
     (sources, challengeFile) => {
-      sources[challengeFile.name] +=
-        challengeFile.source || challengeFile.contents;
+      sources.index += challengeFile.source || challengeFile.contents;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
@@ -91,7 +77,7 @@ const buildFunctions = {
 
 export function canBuildChallenge(challengeData) {
   const { challengeType } = challengeData;
-  return buildFunctions.hasOwnProperty(challengeType);
+  return Object.prototype.hasOwnProperty.call(buildFunctions, challengeType);
 }
 
 export async function buildChallenge(challengeData, options) {
@@ -138,18 +124,19 @@ function getJSTestRunner({ build, sources }, { proxyLogger, removeComments }) {
 
 async function getDOMTestRunner(buildData, { proxyLogger }, document) {
   await new Promise(resolve =>
-    createTestFramer(document, resolve, proxyLogger)(buildData)
+    createTestFramer(document, proxyLogger, resolve)(buildData)
   );
   return (testString, testTimeout) =>
     runTestInTestFrame(document, testString, testTimeout);
 }
 
-export function buildDOMChallenge({
-  challengeFiles,
-  required = [],
-  template = ''
-}) {
-  const finalRequires = [...globalRequires, ...required, ...frameRunner];
+export function buildDOMChallenge(
+  { challengeFiles, required = [], template = '' },
+  { usesTestRunner } = { usesTestRunner: false }
+) {
+  const finalRequires = [...required];
+  if (usesTestRunner) finalRequires.push(...frameRunner);
+
   const loadEnzyme = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
@@ -197,15 +184,23 @@ export function buildBackendChallenge({ url }) {
   };
 }
 
-export async function updatePreview(buildData, document, proxyLogger) {
-  const { challengeType } = buildData;
-
-  if (challengeType === challengeTypes.html) {
-    await new Promise(resolve =>
-      createMainFramer(document, resolve, proxyLogger)(buildData)
-    );
+export function updatePreview(buildData, document, proxyLogger) {
+  if (buildData.challengeType === challengeTypes.html) {
+    createMainPreviewFramer(document, proxyLogger)(buildData);
   } else {
-    throw new Error(`Cannot show preview for challenge type ${challengeType}`);
+    throw new Error(
+      `Cannot show preview for challenge type ${buildData.challengeType}`
+    );
+  }
+}
+
+export function updateProjectPreview(buildData, document) {
+  if (buildData.challengeType === challengeTypes.html) {
+    createProjectPreviewFramer(document)(buildData);
+  } else {
+    throw new Error(
+      `Cannot show preview for challenge type ${buildData.challengeType}`
+    );
   }
 }
 

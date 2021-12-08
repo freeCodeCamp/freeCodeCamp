@@ -11,13 +11,13 @@ dashedName: global-scope-and-functions
 
 En JavaScript, el <dfn>ámbito</dfn> se refiere a la visibilidad de las variables. Las variables definidas fuera de un bloque de función tienen un ámbito <dfn>Global</dfn>. Esto significa que pueden ser observadas desde cualquier lugar en tu código JavaScript.
 
-Las variables que se usan sin la palabra clave `var` se crean automáticamente en el ámbito `global`. Esto puede crear consecuencias no intencionadas en cualquier lugar de tu código o al volver a ejecutar una función. Siempre debes declarar tus variables con `var`.
+Las variables que se declaran sin las palabras clave `let` o `const` se crean automáticamente en el ámbito `global`. Esto puede crear consecuencias no intencionadas en cualquier lugar de tu código o al volver a ejecutar una función. Siempre debes declarar tus variables con `let` o `const`.
 
 # --instructions--
 
-Usando `var`, declara una variable global llamada `myGlobal` fuera de cualquier función. Inicialízala con un valor de `10`.
+Usando `let` o `const`, declara una variable global llamada `myGlobal` fuera de cualquier función. Inicialízala con un valor de `10`.
 
-Dentro de la función `fun1`, asigna `5` a `oopsGlobal` ***sin*** usar la palabra clave `var`.
+Dentro de la función `fun1`, asigna `5` a `oopsGlobal` ***sin*** usar las palabras clave `let` o `const`.
 
 # --hints--
 
@@ -33,10 +33,10 @@ assert(typeof myGlobal != 'undefined');
 assert(myGlobal === 10);
 ```
 
-`myGlobal` debe declararse usando la palabra clave `var`
+`myGlobal` debe declararse usando las palabras clave `let` o `const`
 
 ```js
-assert(/var\s+myGlobal/.test(code));
+assert(/(let|const)\s+myGlobal/.test(code));
 ```
 
 `oopsGlobal` debe ser una variable global y tener un valor de `5`
@@ -109,7 +109,7 @@ function fun2() {
 # --solutions--
 
 ```js
-var myGlobal = 10;
+const myGlobal = 10;
 
 function fun1() {
   oopsGlobal = 5;

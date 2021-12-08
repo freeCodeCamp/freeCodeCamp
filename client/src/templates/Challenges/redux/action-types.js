@@ -32,10 +32,12 @@ export const actionTypes = createTypes(
     'openModal',
 
     'previewMounted',
+    'projectPreviewMounted',
     'challengeMounted',
     'checkChallenge',
     'executeChallenge',
     'resetChallenge',
+    'stopResetting',
     'submitChallenge',
 
     'moveToTab',

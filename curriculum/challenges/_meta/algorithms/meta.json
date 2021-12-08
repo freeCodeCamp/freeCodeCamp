@@ -2,12 +2,12 @@
   "name": "Algorithms",
   "isUpcomingChange": false,
   "dashedName": "algorithms",
-  "order": 1,
+  "order": 0,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "coding-interview-prep",
-  "superOrder": 12,
+  "superOrder": 11,
   "challengeOrder": [
     [
       "a3f503de51cf954ede28891d",

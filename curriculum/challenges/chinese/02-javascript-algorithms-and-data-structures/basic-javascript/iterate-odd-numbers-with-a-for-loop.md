@@ -14,13 +14,14 @@ dashedName: iterate-odd-numbers-with-a-for-loop
 初始化 `i = 0`，当 `i < 10` 的时候继续循环。 `i += 2` 让 `i` 每次循环之后增加 2。
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 10; i += 2) {
+const ourArray = [];
+
+for (let i = 0; i < 10; i += 2) {
   ourArray.push(i);
 }
 ```
 
-循环结束后，`ourArray` 的值为 `[0,2,4,6,8]`。 改变计数器（`initialization`） ，这样我们可以用奇数来递增。
+`ourArray` 现在将包含 `[0, 2, 4, 6, 8]`。 改变计数器（`initialization`） ，这样我们可以用奇数来递增。
 
 # --instructions--
 
@@ -34,7 +35,7 @@ for (var i = 0; i < 10; i += 2) {
 assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-`myArray` 应该等于 `[1,3,5,7,9]`
+`myArray` 应该等于 `[1, 3, 5, 7, 9]`。
 
 ```js
 assert.deepEqual(myArray, [1, 3, 5, 7, 9]);
@@ -52,16 +53,17 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-for (var i = 1; i < 10; i += 2) {
+const myArray = [];
+for (let i = 1; i < 10; i += 2) {
   myArray.push(i);
 }
 ```

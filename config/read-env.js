@@ -4,12 +4,16 @@ const envPath = path.resolve(__dirname, '../.env');
 const { error } = require('dotenv').config({ path: envPath });
 
 if (error) {
-  if (process.env.FREECODECAMP_NODE_ENV === 'development') {
-    console.warn('.env not found, please copy sample.env to .env');
-  } else {
-    console.warn(`.env not found. If env vars are not being set another way,
-this could be a problem.`);
-  }
+  console.warn(`
+  ----------------------------------------------------
+  Warning: .env file not found.
+  ----------------------------------------------------
+  Please copy sample.env to .env
+
+  You can ignore this warning if using a different way
+  to setup this environment.
+  ----------------------------------------------------
+  `);
 }
 
 const {
@@ -25,6 +29,7 @@ const {
   ALGOLIA_API_KEY: algoliaAPIKey,
   STRIPE_PUBLIC_KEY: stripePublicKey,
   PAYPAL_CLIENT_ID: paypalClientId,
+  PATREON_CLIENT_ID: patreonClientId,
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges
 } = process.env;
@@ -61,5 +66,9 @@ module.exports = Object.assign(locations, {
     !paypalClientId || paypalClientId === 'id_from_paypal_dashboard'
       ? null
       : paypalClientId,
+  patreonClientId:
+    !patreonClientId || patreonClientId === 'id_from_patreon_dashboard'
+      ? null
+      : patreonClientId,
   showUpcomingChanges: showUpcomingChanges === 'true'
 });

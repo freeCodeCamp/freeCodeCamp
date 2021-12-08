@@ -12,8 +12,9 @@ dashedName: iterate-through-an-array-with-a-for-loop
 JavaScript 中的一个常见任务是遍历数组的内容。 一种方法是使用 `for` 循环。 下面的代码将输出数组 `arr` 的每个元素到控制台：
 
 ```js
-var arr = [10, 9, 8, 7, 6];
-for (var i = 0; i < arr.length; i++) {
+const arr = [10, 9, 8, 7, 6];
+
+for (let i = 0; i < arr.length; i++) {
    console.log(arr[i]);
 }
 ```
@@ -62,18 +63,19 @@ assert(!__helpers.removeWhiteSpace(code).match(/total[=+-]0*[1-9]+/gm));
 
 ```js
 // Setup
-var myArr = [ 2, 3, 4, 5, 6];
+const myArr = [2, 3, 4, 5, 6];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArr = [ 2, 3, 4, 5, 6];
-var total = 0;
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
 
-for (var i = 0; i < myArr.length; i++) {
+for (let i = 0; i < myArr.length; i++) {
   total += myArr[i];
 }
 ```

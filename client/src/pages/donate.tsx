@@ -8,15 +8,15 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import DonateForm from '../components/Donation/DonateForm';
+import DonateForm from '../components/Donation/donate-form';
 import {
   DonationText,
   DonationSupportText,
   DonationOptionsText,
   DonationOptionsAlertText
-} from '../components/Donation/DonationTextComponents';
+} from '../components/Donation/donation-text-components';
 import { Spacer, Loader } from '../components/helpers';
-import CampersImage from '../components/landing/components/CampersImage';
+import CampersImage from '../components/landing/components/campers-image';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 
 interface ExecuteGaArg {
@@ -121,7 +121,7 @@ function DonatePage({
               </Row>
             </Col>
             <Col lg={6}>
-              <CampersImage page='donate' />
+              <CampersImage pageName='donate' />
             </Col>
           </>
         </Row>

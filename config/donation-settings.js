@@ -85,10 +85,16 @@ const paypalConfigurator = (donationAmount, donationDuration, paypalConfig) => {
   };
 };
 
-//
 const donationUrls = {
   successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
   cancelUrl: 'https://freecodecamp.org/donate'
+};
+
+const patreonDefaultPledgeAmount = 500;
+
+const aBTestConfig = {
+  isTesting: true,
+  type: 'LearnAlertCTA'
 };
 
 module.exports = {
@@ -103,5 +109,7 @@ module.exports = {
   onetimeSKUConfig,
   paypalConfigTypes,
   paypalConfigurator,
-  donationUrls
+  donationUrls,
+  patreonDefaultPledgeAmount,
+  aBTestConfig
 };

@@ -1,6 +1,6 @@
 ---
 id: 5900f52c1000cf542c51003d
-title: 'Problem 446: Retractions B'
+title: 'Problema 446: Retrações B'
 challengeType: 5
 forumTopicId: 302118
 dashedName: problem-446-retractions-b
@@ -8,20 +8,26 @@ dashedName: problem-446-retractions-b
 
 # --description--
 
-For every integer n>1, the family of functions fn,a,b is defined
+Para cada número inteiro $n > 1$, a família de funções $f_{n, a, b}$ é definida por:
 
-by fn,a,b(x)≡ax+b mod n for a,b,x integer and 0
+$f_{n, a, b}(x) ≡ ax + b\bmod n$ para $a, b, x$ sendo números inteiros e $0 \lt a \lt n$, $0 \le b \lt n$, $0 \le x \lt n$.
 
-F(N)=∑R(n4+4) for 1≤n≤N. F(1024)=77532377300600.
+Chamaremos $f_{n, a, b}$ de retração se $f_{n, a, b}(f_{n, a, b}(x)) \equiv f_{n, a, b}(x)\bmod n$ para cada $0 \le x \lt n$.
 
-Find F(107) (mod 1 000 000 007)
+Considere $R(n)$ como o número de retrações para $n$.
+
+$F(N) = \displaystyle\sum_{n = 1}^N R(n^4 + 4)$.
+
+$F(1024) = 77.532.377.300.600$.
+
+Encontre $F({10}^7)$. Dê a sua resposta modulo $1.000.000.007$.
 
 # --hints--
 
-`euler446()` should return 907803852.
+`retractionsB()` deve retornar `907803852`.
 
 ```js
-assert.strictEqual(euler446(), 907803852);
+assert.strictEqual(retractionsB(), 907803852);
 ```
 
 # --seed--
@@ -29,12 +35,12 @@ assert.strictEqual(euler446(), 907803852);
 ## --seed-contents--
 
 ```js
-function euler446() {
+function retractionsB() {
 
   return true;
 }
 
-euler446();
+retractionsB();
 ```
 
 # --solutions--

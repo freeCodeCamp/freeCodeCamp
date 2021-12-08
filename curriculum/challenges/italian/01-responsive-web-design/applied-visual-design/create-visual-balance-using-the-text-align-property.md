@@ -13,7 +13,7 @@ Questa sezione del curriculum si concentra sul Visual Design applicato. Il primo
 
 Il testo è spesso una buona parte del contenuto web. Il CSS ha diverse opzioni su come allinearlo con la proprietà `text-align`.
 
-`text-align: justify;` fa sì che tutte le righe di testo tranne l'ultima riga incontrino i bordi sinistro e destro della riga.
+`text-align: justify;` spazia il testo in modo che ogni riga abbia la stessa lunghezza.
 
 `text-align: center;` centra il testo
 

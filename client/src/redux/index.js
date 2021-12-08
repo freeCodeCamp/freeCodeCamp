@@ -2,10 +2,11 @@ import { uniqBy } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 import store from 'store';
 
+import { SuperBlocks } from '../../../config/certification-settings';
 import { actionTypes as challengeTypes } from '../templates/Challenges/redux/action-types';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 import { createAcceptTermsSaga } from './accept-terms-saga';
-import { actionTypes, ns } from './action-types';
+import { actionTypes } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
 import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
@@ -14,12 +15,13 @@ import { createGaSaga } from './ga-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
-
 import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
+import { createSoundModeSaga } from './sound-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
+import { createWebhookSaga } from './webhook-saga';
 
-export { ns };
+export const MainApp = 'app';
 
 export const defaultFetchState = {
   pending: true,
@@ -74,7 +76,9 @@ export const sagas = [
   ...createGaSaga(actionTypes),
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
-  ...createReportUserSaga(actionTypes)
+  ...createReportUserSaga(actionTypes),
+  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes }),
+  ...createWebhookSaga(actionTypes)
 ];
 
 export const appMount = createAction(actionTypes.appMount);
@@ -166,14 +170,24 @@ export const showCert = createAction(actionTypes.showCert);
 export const showCertComplete = createAction(actionTypes.showCertComplete);
 export const showCertError = createAction(actionTypes.showCertError);
 
+export const postWebhookToken = createAction(actionTypes.postWebhookToken);
+export const postWebhookTokenComplete = createAction(
+  actionTypes.postWebhookTokenComplete
+);
+export const deleteWebhookToken = createAction(actionTypes.deleteWebhookToken);
+export const deleteWebhookTokenComplete = createAction(
+  actionTypes.deleteWebhookTokenComplete
+);
+
 export const updateCurrentChallengeId = createAction(
   actionTypes.updateCurrentChallengeId
 );
 
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
-export const completionCountSelector = state => state[ns].completionCount;
-export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
+export const completionCountSelector = state => state[MainApp].completionCount;
+export const currentChallengeIdSelector = state =>
+  state[MainApp].currentChallengeId;
 export const stepsToClaimSelector = state => {
   const user = userSelector(state);
   const currentCerts = certificatesByNameSelector(user.username)(
@@ -187,22 +201,26 @@ export const stepsToClaimSelector = state => {
     isShowProfile: !user?.profileUI?.isLocked
   };
 };
+export const emailSelector = state => userSelector(state).email;
 export const isDonatingSelector = state => userSelector(state).isDonating;
-export const isOnlineSelector = state => state[ns].isOnline;
-export const isServerOnlineSelector = state => state[ns].isServerOnline;
-export const isSignedInSelector = state => !!state[ns].appUsername;
-export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
+export const isOnlineSelector = state => state[MainApp].isOnline;
+export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
+export const isSignedInSelector = state => !!state[MainApp].appUsername;
+export const isDonationModalOpenSelector = state =>
+  state[MainApp].showDonationModal;
 export const recentlyClaimedBlockSelector = state =>
-  state[ns].recentlyClaimedBlock;
-export const donationFormStateSelector = state => state[ns].donationFormState;
+  state[MainApp].recentlyClaimedBlock;
+export const donationFormStateSelector = state =>
+  state[MainApp].donationFormState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
-export const showCertSelector = state => state[ns].showCert;
-export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
+export const showCertSelector = state => state[MainApp].showCert;
+export const showCertFetchStateSelector = state =>
+  state[MainApp].showCertFetchState;
 export const shouldRequestDonationSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const completionCount = completionCountSelector(state);
-  const canRequestProgressDonation = state[ns].canRequestProgressDonation;
+  const canRequestProgressDonation = state[MainApp].canRequestProgressDonation;
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
 
@@ -225,8 +243,12 @@ export const shouldRequestDonationSelector = state => {
   return completionCount >= 3;
 };
 
+export const webhookTokenSelector = state => {
+  return userSelector(state).webhookToken;
+};
+
 export const userByNameSelector = username => state => {
-  const { user } = state[ns];
+  const { user } = state[MainApp];
   // return initial state empty user empty object instead of empty
   // object litteral to prevent components from re-rendering unnecessarily
   return user[username] ?? initialState.user;
@@ -272,27 +294,27 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
-        certSlug: 'responsive-web-design'
+        certSlug: SuperBlocks.RespWebDesign
       },
       {
         show: isJsAlgoDataStructCert,
         title: 'JavaScript Algorithms and Data Structures Certification',
-        certSlug: 'javascript-algorithms-and-data-structures'
+        certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         show: isFrontEndLibsCert,
         title: 'Front End Development Libraries Certification',
-        certSlug: 'front-end-development-libraries'
+        certSlug: SuperBlocks.FrontEndDevLibs
       },
       {
         show: is2018DataVisCert,
         title: 'Data Visualization Certification',
-        certSlug: 'data-visualization'
+        certSlug: SuperBlocks.DataVis
       },
       {
         show: isApisMicroservicesCert,
         title: 'Back End Development and APIs Certification',
-        certSlug: 'back-end-development-and-apis'
+        certSlug: SuperBlocks.BackEndDevApis
       },
       {
         show: isQaCertV7,
@@ -357,17 +379,17 @@ export const certificatesByNameSelector = username => state => {
   };
 };
 
-export const userFetchStateSelector = state => state[ns].userFetchState;
+export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const userProfileFetchStateSelector = state =>
-  state[ns].userProfileFetchState;
-export const usernameSelector = state => state[ns].appUsername;
+  state[MainApp].userProfileFetchState;
+export const usernameSelector = state => state[MainApp].appUsername;
 export const userSelector = state => {
   const username = usernameSelector(state);
 
-  return state[ns].user[username] || {};
+  return state[MainApp].user[username] || {};
 };
 
-export const sessionMetaSelector = state => state[ns].sessionMeta;
+export const sessionMetaSelector = state => state[MainApp].sessionMeta;
 
 function spreadThePayloadOnUser(state, payload) {
   return {
@@ -624,6 +646,32 @@ export const reducer = handleActions(
               ],
               'id'
             )
+          }
+        }
+      };
+    },
+    [actionTypes.postWebhookTokenComplete]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            webhookToken: payload
+          }
+        }
+      };
+    },
+    [actionTypes.deleteWebhookTokenComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            webhookToken: null
           }
         }
       };

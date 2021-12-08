@@ -1,6 +1,6 @@
 ---
 id: 5900f4ea1000cf542c50fffc
-title: 'Problem 381: (prime-k) factorial'
+title: 'Problema 381: Fatorial (k-primo)'
 challengeType: 5
 forumTopicId: 302045
 dashedName: problem-381-prime-k-factorial
@@ -8,20 +8,24 @@ dashedName: problem-381-prime-k-factorial
 
 # --description--
 
-For a prime p let S(p) = (∑(p-k)!) mod(p) for 1 ≤ k ≤ 5.
+Para um número primo $p$, considere $S(p) = (\sum (p - k)!)\bmod (p)$ para $1 ≤ k ≤ 5$.
 
-For example, if p=7, (7-1)! + (7-2)! + (7-3)! + (7-4)! + (7-5)! = 6! + 5! + 4! + 3! + 2! = 720+120+24+6+2 = 872. As 872 mod(7) = 4, S(7) = 4.
+Por exemplo, se $p = 7$,
 
-It can be verified that ∑S(p) = 480 for 5 ≤ p &lt; 100.
+$$(7 - 1)! + (7 - 2)! + (7 - 3)! + (7 - 4)! + (7 - 5)! = 6! + 5! + 4! + 3! + 2! = 720 + 120 + 24 + 6 + 2 = 872$$
 
-Find ∑S(p) for 5 ≤ p &lt; 108.
+Como $872\bmod (7) = 4$, $S(7) = 4$.
+
+Pode-se verificar que $\sum S(p) = 480$ para $5 ≤ p &lt; 100$.
+
+Encontre a $\sum S(p)$ para $5 ≤ p &lt; {10}^8$.
 
 # --hints--
 
-`euler381()` should return 139602943319822.
+`primeKFactorial()` deve retornar `139602943319822`.
 
 ```js
-assert.strictEqual(euler381(), 139602943319822);
+assert.strictEqual(primeKFactorial(), 139602943319822);
 ```
 
 # --seed--
@@ -29,12 +33,12 @@ assert.strictEqual(euler381(), 139602943319822);
 ## --seed-contents--
 
 ```js
-function euler381() {
+function primeKFactorial() {
 
   return true;
 }
 
-euler381();
+primeKFactorial();
 ```
 
 # --solutions--

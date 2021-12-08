@@ -208,7 +208,10 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
             isSignedIn={isSignedIn}
           />
           {hasMessage && flashMessage ? (
-            <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
+            <Flash
+              flashMessage={flashMessage}
+              removeFlashMessage={removeFlashMessage}
+            />
           ) : null}
           {children}
         </div>

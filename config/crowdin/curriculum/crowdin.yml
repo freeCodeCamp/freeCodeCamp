@@ -10,7 +10,7 @@ files:
     {
       'source': '/curriculum/challenges/english/**/*.md',
       'translation': '/curriculum/challenges/%language%/**/%original_file_name%',
-      'ignore': ['/**/part-[0-9][0-9][0-9].md']
+      'ignore': ['/**/part-[0-9][0-9][0-9].md', '/**/step-[0-9][0-9][0-9].md']
     },
     {
       'source': '/curriculum/challenges/english/00-certifications/**/*.yml',

@@ -1,17 +1,18 @@
 import React, { useEffect, ReactElement } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Test } from '../../../redux/prop-types';
 
 import { mathJaxScriptLoader } from '../../../utils/script-loaders';
 import { challengeTestsSelector } from '../redux';
-import TestSuite from './Test-Suite';
-import ToolPanel from './Tool-Panel';
+import TestSuite from './test-suite';
+import ToolPanel from './tool-panel';
 
 import './side-panel.css';
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
-  (tests: Record<string, unknown>[]) => ({
+  (tests: Test[]) => ({
     tests
   })
 );
@@ -19,11 +20,11 @@ interface SidePanelProps {
   block: string;
   challengeDescription: ReactElement;
   challengeTitle: ReactElement;
-  guideUrl?: string;
+  guideUrl: string;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   showToolPanel: boolean;
-  tests?: Record<string, unknown>[];
-  videoUrl?: string;
+  tests: Test[];
+  videoUrl: string;
 }
 
 export function SidePanel({
@@ -74,7 +75,6 @@ export function SidePanel({
     >
       {challengeTitle}
       {challengeDescription}
-      {/* @ts-expect-error ToolPanel's redux props are being inferred here, but we don't need to provide them here */}
       {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}
       <TestSuite tests={tests} />
     </div>

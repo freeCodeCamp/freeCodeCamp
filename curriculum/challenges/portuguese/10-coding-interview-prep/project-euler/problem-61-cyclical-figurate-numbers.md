@@ -21,7 +21,7 @@ Números triângulares, quadrado, pentagonais, hexagonais, heptagonais e octogon
 
 O conjunto ordenado de três números que possuem 4 algarismos, 8128, 2882, 8281, possui três propriedades interessantes.
 
-1. O conjunto é cíclico. Podemos notar que os dois últimos dígitos de cada número são os dois primeiros dígitos do próximo número (incluindo o último número com o primeiro).
+1. O conjunto é cíclico. Podemos notar que os dois últimos algarismos de cada número são os dois primeiros algarismos do próximo número (incluindo o último número com o primeiro).
 2. Cada tipo poligonal, triângulo ($P_3(127) = 8128$), quadrado ($P_4(91) = 8281$) e pentagonal ($P_5(44) = 2882$), é representado por um número diferente no conjunto.
 3. Este é o único conjunto de números de 4 algarismos com estas propriedades.
 

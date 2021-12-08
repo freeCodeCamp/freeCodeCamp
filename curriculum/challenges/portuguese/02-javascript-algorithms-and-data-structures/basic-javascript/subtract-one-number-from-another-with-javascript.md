@@ -16,7 +16,7 @@ JavaScript usa o símbolo `-` para subtração.
 **Exemplo**
 
 ```js
-myVar = 12 - 6;
+const myVar = 12 - 6;
 ```
 
 `myVar` teria o valor `6`.
@@ -49,11 +49,11 @@ assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
 ## --seed-contents--
 
 ```js
-var difference = 45 - 0;
+const difference = 45 - 0;
 ```
 
 # --solutions--
 
 ```js
-var difference = 45 - 33;
+const difference = 45 - 33;
 ```

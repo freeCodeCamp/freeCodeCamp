@@ -91,7 +91,6 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -163,6 +162,12 @@ config/client/sass-compile.json
 config/client/frame-runner.json
 config/client/test-evaluator.json
 config/curriculum.json
+config/i18n/all-langs.js
+config/certification-settings.js
+
+tools/scripts/build/ensure-env.js
+tools/tsconfig.tsbuildinfo
+tools/scripts/lint/validate-keys.js
 
 ### vim ###
 # Swap

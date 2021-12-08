@@ -28,6 +28,7 @@ import { hardGoTo as navigate } from '../../../redux';
 import { updateUserFlag } from '../../../redux/settings';
 import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
+import { Themes } from '../../settings/theme';
 
 const { clientLocale, radioLocation, apiLocation } = envData;
 
@@ -46,7 +47,7 @@ export interface NavLinksProps {
 
 const mapDispatchToProps = {
   navigate,
-  toggleNightMode: (theme: unknown) => updateUserFlag({ theme })
+  toggleNightMode: (theme: Themes) => updateUserFlag({ theme })
 };
 
 export class NavLinks extends Component<NavLinksProps, {}> {
@@ -57,8 +58,10 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     this.handleLanguageChange = this.handleLanguageChange.bind(this);
   }
 
-  toggleTheme(currentTheme = 'default', toggleNightMode: any) {
-    toggleNightMode(currentTheme === 'night' ? 'default' : 'night');
+  toggleTheme(currentTheme = Themes.Default, toggleNightMode: any) {
+    toggleNightMode(
+      currentTheme === Themes.Night ? Themes.Default : Themes.Night
+    );
   }
 
   handleLanguageChange = (
@@ -175,7 +178,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           {username ? (
             <>
               <span>{t('settings.labels.night-mode')}</span>
-              {theme === 'night' ? (
+              {theme === Themes.Night ? (
                 <FontAwesomeIcon icon={faCheckSquare} />
               ) : (
                 <FontAwesomeIcon icon={faSquare} />
@@ -189,7 +192,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           {t('footer.language')}
         </div>
 
-        <div className='nav-link' key='language-dropdown'>
+        <div className='nav-link dropdown-nav-link' key='language-dropdown'>
           <select
             className='nav-link-lang-dropdown'
             onChange={this.handleLanguageChange}

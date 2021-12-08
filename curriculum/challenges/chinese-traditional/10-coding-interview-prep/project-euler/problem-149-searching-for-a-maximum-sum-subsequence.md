@@ -1,6 +1,6 @@
 ---
 id: 5900f4021000cf542c50ff13
-title: 'Problem 149: Searching for a maximum-sum subsequence'
+title: '問題 149：搜索最大和子序列'
 challengeType: 5
 forumTopicId: 301778
 dashedName: problem-149-searching-for-a-maximum-sum-subsequence
@@ -8,28 +8,30 @@ dashedName: problem-149-searching-for-a-maximum-sum-subsequence
 
 # --description--
 
-Looking at the table below, it is easy to verify that the maximum possible sum of adjacent numbers in any direction (horizontal, vertical, diagonal or anti-diagonal) is 16 (= 8 + 7 + 1).
+觀察下表，可以輕易驗證任意方向（水平、垂直、對角線或反對角線）上相鄰數字最大和爲 $16 (= 8 + 7 + 1)$。
 
-−25329−6513273−18−4 8
+$$\begin{array}{|r|r|r|r|} \hline −2 &  5 &  3 & 2 \\\\ \hline 9 & −6 &  5 & 1 \\\\ \hline 3 &  2 &  7 & 3 \\\\ \hline −1 &  8 & −4 & 8 \\\\ \hline \end{array}$$
 
-Now, let us repeat the search, but on a much larger scale:
+現在我們重複一遍搜索過程，但是這次是在一個更大規模的表格中：
 
-First, generate four million pseudo-random numbers using a specific form of what is known as a "Lagged Fibonacci Generator":
+首先，使用被稱爲“滯後斐波那契生成器”的特殊方法，生成四百萬個僞隨機數：
 
-For 1 ≤ k ≤ 55, sk = \[100003 − 200003k + 300007k3] (modulo 1000000) − 500000. For 56 ≤ k ≤ 4000000, sk = \[sk−24 + sk−55 + 1000000] (modulo 1000000) − 500000.
+對於 $1 ≤ k ≤ 55$，$s_k = (100003 − 200003k + 300007{k}^3) \\ (modulo\\ 1000000) − 500000$。
 
-Thus, s10 = −393027 and s100 = 86613.
+對於 $56 ≤ k ≤ 4000000$，$s_k = (s_{k − 24} + s_{k − 55} + 1000000) \\ (modulo\\ 1000000) − 500000$。
 
-The terms of s are then arranged in a 2000×2000 table, using the first 2000 numbers to fill the first row (sequentially), the next 2000 numbers to fill the second row, and so on.
+可得，$s_{10} = −393027$，$s_{100} = 86613$。
 
-Finally, find the greatest sum of (any number of) adjacent entries in any direction (horizontal, vertical, diagonal or anti-diagonal).
+這些數字 $s$ 隨後排列在一個 2000 x 2000 的表格中，前 2000 個數字填入第一行（順序填入），後 2000 個數字填充第二行，依次類推。
+
+最後，請找到任意方向（水平、垂直、對象線或反對角線）上相鄰數字（任意數量）的最大和。
 
 # --hints--
 
-`euler149()` should return 52852124.
+`maximumSubSequence()` 應該返回 `52852124`。
 
 ```js
-assert.strictEqual(euler149(), 52852124);
+assert.strictEqual(maximumSubSequence(), 52852124);
 ```
 
 # --seed--
@@ -37,12 +39,12 @@ assert.strictEqual(euler149(), 52852124);
 ## --seed-contents--
 
 ```js
-function euler149() {
+function maximumSubSequence() {
 
   return true;
 }
 
-euler149();
+maximumSubSequence();
 ```
 
 # --solutions--

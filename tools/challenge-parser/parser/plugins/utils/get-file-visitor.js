@@ -12,14 +12,21 @@ const supportedLanguages = ['js', 'css', 'html', 'jsx', 'py'];
 
 function defaultFile(lang, id) {
   return {
-    fileKey: `index${lang}`,
     ext: lang,
-    name: 'index',
+    name: getFilenames(lang),
     contents: '',
     head: '',
     tail: '',
     id
   };
+}
+
+function getFilenames(lang) {
+  const langToFilename = {
+    js: 'script',
+    css: 'styles'
+  };
+  return langToFilename[lang] ?? 'index';
 }
 
 function getFileVisitor(seeds, seedKey, validate) {
@@ -43,21 +50,21 @@ function codeToData(node, seeds, seedKey, validate) {
  Please use one of js, css, html, jsx or py
 `);
 
-  const fileKey = `index${lang}`;
-  const id = seeds[fileKey] ? seeds[fileKey].id : '';
+  const fileId = `index${lang}`;
+  const id = seeds[fileId] ? seeds[fileId].id : '';
   // the contents will be missing if there is an id preceding this code
   // block.
-  if (!seeds[fileKey]) {
-    seeds[fileKey] = defaultFile(lang, id);
+  if (!seeds[fileId]) {
+    seeds[fileId] = defaultFile(lang, id);
   }
   if (isEmpty(node.value) && seedKey !== 'contents') {
     const section = keyToSection[seedKey];
     throw Error(`Empty code block in --${section}-- section`);
   }
 
-  seeds[fileKey][seedKey] = isEmpty(seeds[fileKey][seedKey])
+  seeds[fileId][seedKey] = isEmpty(seeds[fileId][seedKey])
     ? node.value
-    : seeds[fileKey][seedKey] + '\n' + node.value;
+    : seeds[fileId][seedKey] + '\n' + node.value;
 }
 
 function idToData(node, index, parent, seeds) {

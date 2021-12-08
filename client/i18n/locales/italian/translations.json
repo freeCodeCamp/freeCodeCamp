@@ -32,6 +32,7 @@
     "profile": "Profilo",
     "news": "Notizie",
     "donate": "Dona",
+    "support-our-nonprofit": "Support our non-profit",
     "update-settings": "Aggiorna le impostazioni del mio account",
     "sign-me-out": "Esci da freeCodeCamp",
     "flag-user": "Segnala l'account di questo utente per abusi",
@@ -62,7 +63,8 @@
     "verify-email": "Verifica Email",
     "submit-and-go": "Invia e vai alla prossima sfida",
     "go-to-next": "Vai alla prossima sfida",
-    "ask-later": "Chiedimelo più tardi"
+    "ask-later": "Chiedimelo più tardi",
+    "start-coding": "Start coding!"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -99,6 +101,7 @@
     "private-name": "Il tuo nome non apparirà sulle certificazioni, se impostato su privato.",
     "claim-legacy": "Una volta che avrai ottenuto le seguenti certificazioni gratuite di freeCodeCamp, sarai in grado di richiedere la {{cert}}:",
     "for": "Impostazioni Account per {{username}}",
+    "sound-mode": "Questo aggiunge i piacevoli suoni di una chitarra acustica nel sito. Suonerà mentre scrivi nell'editor, completi sfide, ottieni certificazioni, e altro.",
     "username": {
       "contains invalid characters": "Il nome utente \"{{username}}\" contiene caratteri non validi",
       "is too short": "Il nome utente \"{{username}}\" è troppo corto",
@@ -133,7 +136,8 @@
       "my-portfolio": "Il mio portfolio",
       "my-timeline": "La mia cronologia",
       "my-donations": "Le mie donazioni",
-      "night-mode": "Modalità Notturna"
+      "night-mode": "Modalità Notturna",
+      "sound-mode": "Modalità Campfire"
     },
     "headings": {
       "certs": "Certificazioni",
@@ -286,7 +290,10 @@
       "preview": "Anteprima"
     },
     "help-translate": "Stiamo ancora traducendo le seguenti certificazioni.",
-    "help-translate-link": "Aiutaci con le traduzioni..."
+    "help-translate-link": "Aiutaci con le traduzioni...",
+    "season-greetings": "Season's Greetings to you and your family.",
+    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
+    "project-preview-title": "Here's a preview of what you will build"
   },
   "donate": {
     "title": "Supporta il nostro no profit",
@@ -356,7 +363,7 @@
   },
   "search": {
     "label": "Cerca",
-    "placeholder": "Cerca tra oltre 7.000 tutorial",
+    "placeholder": "Search 8,000+ tutorials",
     "see-results": "Vedi tutti i risultati per {{searchQuery}}",
     "no-tutorials": "Nessun tutorial trovato",
     "try": "Cerchi qualcosa? Prova la barra di ricerca su questa pagina.",
@@ -364,7 +371,7 @@
   },
   "misc": {
     "offline": "Sembra che tu sia offline, i tuoi progressi potrebbero non essere salvati",
-    "server-offline": "The server could not be reached and your progress may not be saved. Please contact <0>support</0> if this message persists",
+    "server-offline": "Il server non può essere raggiunto e i tuoi progressi potrebbero non essere salvati. Contatta il <0>supporto</0> se questo messaggio persiste",
     "unsubscribed": "Hai annullato correttamente l'iscrizione",
     "keep-coding": "Qualsiasi cosa tu abbia intenzione di fare, continua a programmare!",
     "email-signup": "Registrazione con email",
@@ -428,7 +435,7 @@
     "wrong-updating": "Qualcosa è andato storto nell'aggiornamento del tuo account. Ti preghiamo di controllare e riprovare",
     "updated-preferences": "Abbiamo aggiornato le tue preferenze",
     "email-invalid": "Formato email non valido",
-    "email-valid": "Your email has successfully been changed, happy coding!",
+    "email-valid": "La tua email è stata modificata con successo, happy coding!",
     "bad-challengeId": "currentChallengeId non è un ID challenge valido",
     "theme-invalid": "Tema non valido",
     "theme-set": "Tema già impostato",
@@ -464,7 +471,11 @@
     "unlink-success": "Hai scollegato correttamente il tuo {{website}}",
     "provide-username": "Spunta la casella se hai fornito un nome utente e un report",
     "report-sent": "Un report è stato inviato al team con {{email}} in copia",
-    "certificate-missing": "The certification you tried to view does not exist"
+    "certificate-missing": "La certificazione che hai cercato di visualizzare non esiste",
+    "create-token-err": "An error occurred trying to create a token",
+    "delete-token-err": "An error occurred trying to delete your token",
+    "token-created": "You have successfully created a new token.",
+    "token-deleted": "Your token has been deleted."
   },
   "validation": {
     "max-characters": "C'è un limite massimo di 288 caratteri, hai {{charsLeft}} rimanenti",
@@ -592,5 +603,18 @@
     "add-code-one": "Sostituisci queste due frasi con il codice copiato.",
     "add-code-two": "Si prega di lasciare la linea ``` sopra e la linea ``` sotto,",
     "add-code-three": "perché consentono al codice di disporsi correttamente nel post."
+  },
+  "webhook-token": {
+    "title": "Webhook Token",
+    "create": "Create a new token",
+    "create-p1": "It looks like you don't have a webhook token. Create one to save your progress on this section",
+    "create-p2": "Create a webhook token to save your progress on the curriculum sections that use a virtual machine.",
+    "delete": "Delete my token",
+    "delete-title": "Delete My Webhook Token",
+    "delete-p1": "Your webhook token below is used to save your progress on the curriculum sections that use a virtual machine.",
+    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
+    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
+    "no-thanks": "No thanks, I would like to keep my token",
+    "yes-please": "Yes please, I would like to delete my token"
   }
 }

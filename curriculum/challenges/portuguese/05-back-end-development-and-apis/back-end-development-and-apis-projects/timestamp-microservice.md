@@ -16,6 +16,8 @@ Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a
 
 Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 
+**Observação:** a conversão de fusos horários não é um dos objetivos deste projeto, então suponha que todas as datas válidas enviadas serão analisadas com `new Date()` como datas GMT.
+
 # --hints--
 
 Você deve fornecer seu próprio projeto, não o exemplo de URL.
@@ -85,7 +87,7 @@ Seu projeto pode tratar as datas que podem ser analisadas com sucesso por `new D
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/05 October 2011').then(
+  $.get(getUserInput('url') + '/api/05 October 2011, GMT').then(
     (data) => {
       assert(
         data.unix === 1317772800000 &&

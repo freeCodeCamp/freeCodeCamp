@@ -2,12 +2,11 @@
   "name": "JavaScript Algorithms and Data Structures Certification",
   "isUpcomingChange": false,
   "dashedName": "javascript-algorithms-and-data-structures-certification",
-  "order": 2,
+  "order": 1,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certifications",
-  "superOrder": 0,
   "challengeOrder": [
     [
       "561abd10cb81ac38a17513bc",

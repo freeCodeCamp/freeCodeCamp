@@ -1,6 +1,6 @@
 ---
 id: 5900f4c51000cf542c50ffd7
-title: 'Problem 344: Silver dollar game'
+title: 'Problema 344: Jogo do dólar de prata'
 challengeType: 5
 forumTopicId: 302003
 dashedName: problem-344-silver-dollar-game
@@ -8,30 +8,32 @@ dashedName: problem-344-silver-dollar-game
 
 # --description--
 
-One variant of N.G. de Bruijn's silver dollar game can be described as follows:
+O jogo de N.G. de Bruijn, conhecido como o jogo do dólar de prata, tem uma variante que pode ser descrita da seguinte forma:
 
-On a strip of squares a number of coins are placed, at most one coin per square. Only one coin, called the silver dollar, has any value. Two players take turns making moves. At each turn a player must make either a regular or a special move.
+Em uma faixa de quadrados, várias moedas são colocadas, estando, no máximo, uma moeda por quadrado. Apenas uma moeda, chamada de dólar de prata, tem qualquer valor. Dois jogadores se revezam fazendo movimentos. Em cada turno, um jogador deve fazer um movimento regular ou especial.
 
-A regular move consists of selecting one coin and moving it one or more squares to the left. The coin cannot move out of the strip or jump on or over another coin.
+Um movimento regular consiste em selecionar uma moeda e movê-la um ou mais quadrados para a esquerda. A moeda não pode se mover para fora da faixa, ou saltar sobre ou por cima de outra moeda.
 
-Alternatively, the player can choose to make the special move of pocketing the leftmost coin rather than making a regular move. If no regular moves are possible, the player is forced to pocket the leftmost coin.
+Como alternativa, o jogador pode escolher fazer o movimento especial de guardar a moeda mais à esquerda, em vez de fazer um movimento regular. Se nenhum movimento regular for possível, o jogador será forçado a guardar a moeda mais à esquerda.
 
-The winner is the player who pockets the silver dollar.
+O vencedor é o jogador que guarda o dólar de prata.
 
-A winning configuration is an arrangement of coins on the strip where the first player can force a win no matter what the second player does.
+<img class="img-responsive center-block" alt="jogo do dólar de prata" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;" />
 
-Let W(n,c) be the number of winning configurations for a strip of n squares, c worthless coins and one silver dollar.
+Uma configuração vencedora é um arranjo de moedas na faixa onde o primeiro jogador pode forçar uma vitória, não importa o que o segundo jogador fizer.
 
-You are given that W(10,2) = 324 and W(100,10) = 1514704946113500.
+Considere $W(n, c)$ como o número de configurações vencedoras para uma faixa de $n$ quadrados, $c$ moedas sem valor e um dólar de prata.
 
-Find W(1 000 000, 100) modulo the semiprime 1000 036 000 099 (= 1 000 003 · 1 000 033).
+Você é informado de que $W(10, 2) = 324$ e $W(100, 10) = 1.514.704.946.113.500$.
+
+Encontre $W(1.000.000, 100)$ modulo o número semiprimo $1000.036.000.099 (= 1.000.003 \times 1.000.033)$.
 
 # --hints--
 
-`euler344()` should return 65579304332.
+`silverDollarGame()` deve retornar `65579304332`.
 
 ```js
-assert.strictEqual(euler344(), 65579304332);
+assert.strictEqual(silverDollarGame(), 65579304332);
 ```
 
 # --seed--
@@ -39,12 +41,12 @@ assert.strictEqual(euler344(), 65579304332);
 ## --seed-contents--
 
 ```js
-function euler344() {
+function silverDollarGame() {
 
   return true;
 }
 
-euler344();
+silverDollarGame();
 ```
 
 # --solutions--

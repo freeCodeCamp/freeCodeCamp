@@ -49,13 +49,14 @@ assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
 
 ```js
 // Setup
-var processed = 0;
+let processed = 0;
 
 function processArg(num) {
   return (num + 3) / 5;
 }
 
 // Only change code below this line
+
 ```
 
 # --solutions--

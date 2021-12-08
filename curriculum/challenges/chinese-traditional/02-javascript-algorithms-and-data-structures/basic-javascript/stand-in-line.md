@@ -93,12 +93,10 @@ function nextInLine(arr, item) {
 
   return item;
   // Only change code above this line
-
-
 }
 
 // Setup
-var testArr = [1,2,3,4,5];
+const testArr = [1, 2, 3, 4, 5];
 
 // Display code
 console.log("Before: " + JSON.stringify(testArr));
@@ -109,7 +107,7 @@ console.log("After: " + JSON.stringify(testArr));
 # --solutions--
 
 ```js
-var testArr = [ 1,2,3,4,5];
+const testArr = [1, 2, 3, 4, 5];
 
 function nextInLine(arr, item) {
     arr.push(item);

@@ -1,6 +1,6 @@
 ---
 id: 5900f4571000cf542c50ff69
-title: 'Problem 234: Semidivisible numbers'
+title: 'Problema 234: Números semidivisíveis'
 challengeType: 5
 forumTopicId: 301878
 dashedName: problem-234-semidivisible-numbers
@@ -8,22 +8,22 @@ dashedName: problem-234-semidivisible-numbers
 
 # --description--
 
-For an integer n ≥ 4, we define the lower prime square root of n, denoted by lps(n), as the largest prime ≤ √n and the upper prime square root of n, ups(n), as the smallest prime ≥ √n.
+Para um número inteiro $n ≥ 4$, definiremos a menor raiz quadrada de número primo de $n$, denotada por $lps(n)$, como $\text{maior primo} ≤ \sqrt{n}$ e a maior raiz quadrada de número primo de $n$, $ups(n)$, como $\text{menor primo} ≥ \sqrt{n}$.
 
-So, for example, lps(4) = 2 = ups(4), lps(1000) = 31, ups(1000) = 37.
+Por exemplo, $lps(4) = 2 = ups(4)$, $lps(1000) = 31$, $ups(1000) = 37$.
 
-Let us call an integer n ≥ 4 semidivisible, if one of lps(n) and ups(n) divides n, but not both.
+Chamaremos um número inteiro $n ≥ 4$ de semidivisível se $lps(n)$ ou $ups(n)$ dividir $n$, mas não os dois.
 
-The sum of the semidivisible numbers not exceeding 15 is 30, the numbers are 8, 10 and 12. 15 is not semidivisible because it is a multiple of both lps(15) = 3 and ups(15) = 5. As a further example, the sum of the 92 semidivisible numbers up to 1000 is 34825.
+A soma dos números semidivisíveis não excedendo 15 é 30, e os números são 8, 10 e 12. 15 não é semidivisível, pois ele é um múltiplo de $lps(15) = 3$ e de $ups(15) = 5$. Como outro exemplo, a soma dos 92 números semidivisíveis até 1000 é 34825.
 
-What is the sum of all semidivisible numbers not exceeding 999966663333 ?
+Qual é a soma de todos os números semidivisíveis que não excedem 999966663333?
 
 # --hints--
 
-`euler234()` should return 1259187438574927000.
+`semidivisibleNumbers()` deve retornar `1259187438574927000`.
 
 ```js
-assert.strictEqual(euler234(), 1259187438574927000);
+assert.strictEqual(semidivisibleNumbers(), 1259187438574927000);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler234(), 1259187438574927000);
 ## --seed-contents--
 
 ```js
-function euler234() {
+function semidivisibleNumbers() {
 
   return true;
 }
 
-euler234();
+semidivisibleNumbers();
 ```
 
 # --solutions--

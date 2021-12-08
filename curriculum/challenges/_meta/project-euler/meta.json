@@ -2,12 +2,12 @@
   "name": "Project Euler",
   "isUpcomingChange": false,
   "dashedName": "project-euler",
-  "order": 6,
+  "order": 4,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "coding-interview-prep",
-  "superOrder": 12,
+  "superOrder": 11,
   "challengeOrder": [
     [
       "5900f36e1000cf542c50fe80",
@@ -1139,7 +1139,7 @@
     ],
     [
       "5900f4881000cf542c50ff9a",
-      "Problem 283: Integer sided triangles for which the area * perimeter ratio is integral"
+      "Problem 283: Integer sided triangles for which the area / perimeter ratio is integral"
     ],
     [
       "5900f4891000cf542c50ff9b",

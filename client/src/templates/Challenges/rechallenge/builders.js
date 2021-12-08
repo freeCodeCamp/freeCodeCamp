@@ -20,7 +20,7 @@ const cssCatch = '\n/*fcc*/\n';
 
 const defaultTemplate = ({ source }) => {
   return `
-  <body id='display-body'style='margin:8px;'>
+  <body id='display-body'>
     <!-- fcc-start-source -->
       ${source}
     <!-- fcc-end-source -->
@@ -91,7 +91,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       }
       return '';
     })
-    .reduce((head, element) => head.concat(element));
+    .reduce((head, element) => head.concat(element), []);
 
   const indexHtml = findIndexHtml(challengeFiles);
 

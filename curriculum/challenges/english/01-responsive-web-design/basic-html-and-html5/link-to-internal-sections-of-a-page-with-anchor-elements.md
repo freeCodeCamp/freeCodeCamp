@@ -21,7 +21,7 @@ Below is an example of an internal anchor link and its target element:
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-When users click the `Contacts` link, they'll be taken to the section of the webpage with the **Contacts** header element.
+When users click the `Contacts` link, they'll be taken to the section of the webpage with the **Contacts** heading element.
 
 # --instructions--
 

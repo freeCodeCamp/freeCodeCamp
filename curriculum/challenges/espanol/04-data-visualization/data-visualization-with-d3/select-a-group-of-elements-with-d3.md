@@ -1,6 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bc3
-title: Select a Group of Elements with D3
+title: Selecciona un grupo de elementos con D3
 challengeType: 6
 forumTopicId: 301490
 dashedName: select-a-group-of-elements-with-d3
@@ -8,21 +8,21 @@ dashedName: select-a-group-of-elements-with-d3
 
 # --description--
 
-D3 also has the `selectAll()` method to select a group of elements. It returns an array of HTML nodes for all the items in the document that match the input string. Here's an example to select all the anchor tags in a document:
+D3 también tiene el método `selectAll()` para seleccionar un grupo de elementos. Devuelve un arreglo de nodos HTML con todos los elementos en el documento que coinciden con el texto ingresado. Aquí hay un ejemplo para seleccionar todas las etiquetas de anclaje en un documento:
 
 ```js
 const anchors = d3.selectAll("a");
 ```
 
-Like the `select()` method, `selectAll()` supports method chaining, and you can use it with other methods.
+Al igual que el método `select()`, `selectAll()` soporta el encadenamiento de métodos, y puedes usarlo con otros métodos.
 
 # --instructions--
 
-Select all of the `li` tags in the document, and change their text to the string `list item` by chaining the `.text()` method.
+Selecciona todas las etiquetas `li` en el documento, y cambia su texto a la cadena `list item` concatenando el método `.text()`.
 
 # --hints--
 
-There should be 3 `li` elements on the page, and the text in each one should say `list item`. Capitalization and spacing should match exactly.
+Debe haber 3 elementos `li` en la pagina, y el texto en cada uno debe ser `list item`. Las mayúsculas y los espacios deben coincidir exactamente.
 
 ```js
 assert(
@@ -32,13 +32,13 @@ assert(
 );
 ```
 
-Your code should access the `d3` object.
+Tu código debe acceder al objeto `d3`.
 
 ```js
 assert(code.match(/d3/g));
 ```
 
-Your code should use the `selectAll` method.
+Tu código debe utilizar el método `selectAll`.
 
 ```js
 assert(code.match(/\.selectAll/g));

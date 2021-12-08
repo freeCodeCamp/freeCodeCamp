@@ -4,7 +4,7 @@ Esta guía te ayudará a comprender nuestra infraestructura y cómo le damos man
 
 Déjanos saber, si tienes algún comentario o consulta, y la aclararemos con mucho gusto.
 
-# Manual de Vuelo - Despliegues de código
+# Manual de vuelo: Despliegues de código
 
 Este repositorio se construye, prueba y despliega continuamente para ** separar conjuntos de infraestructura (Servidores, Bases de Datos, CDNs, etc.)**.
 
@@ -14,7 +14,7 @@ Esto involucra tres pasos que deben seguirse en secuencia:
 2. Estos cambios son ejecutados a través de una serie de pruebas automatizadas.
 3. Una vez que las pruebas se completan de forma satisfactoria, publicamos los cambios (o los actualizamos si es necesario) para desplegarlos en nuestra infraestructura.
 
-#### Construyendo la base de código - Mapeando las Ramas de Git con los Despliegues.
+#### Construyendo la base de código - Mapeando las ramas de Git con los despliegues.
 
 Normalmente, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (la rama de desarrollo por defecto) se integra diariamente en la rama [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) y se publica en una infraestructura aislada.
 
@@ -26,7 +26,7 @@ Una vez que el equipo de desarrolladores [`@freeCodeCamp/dev-team`](https://gith
 
 Esta es la versión final que despliega los cambios a nuestras plataformas de producción en freeCodeCamp.org.
 
-#### Pruebas de cambios - pruebas de Integración y aceptación del usuario.
+#### Pruebas de cambios - pruebas de integración y aceptación del usuario.
 
 Empleamos varios niveles de pruebas de integración y aceptación para verificar la calidad del código. Todas nuestras pruebas se realizan a través de software como [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) y [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
@@ -36,7 +36,7 @@ Contamos con pruebas unitarias para probar nuestras soluciones a los desafíos, 
 
 Juntas, estas pruebas ayudan a evitar que los problemas se repitan y garantizan que no introduzcamos un error mientras trabajamos en otro error o en una funcionalidad.
 
-#### Desplegando los Cambios: Enviando los cambios a los servidores.
+#### Desplegando los cambios: Enviando los cambios a los servidores.
 
 Hemos configurado un software de entrega continua para publicar los cambios en nuestros servidores de desarrollo y producción.
 
@@ -110,7 +110,7 @@ Los pasos anteriores activarán automáticamente un flujo de compilación para l
 
 El flujo de publicación se activa automáticamente cuando hay un nuevo artefacto disponible en el flujo de compilación conectado. Para las plataformas de staging, este proceso no implica aprobación manual y los artefactos se envían a los servidores de API y CDN Cliente.
 
-### Publicando cambios a las Aplicaciones en Producción.
+### Publicando cambios a las aplicaciones en producción.
 
 El proceso es prácticamente el mismo que el de las plataformas de staging, con algunas comprobaciones adicionales. Esto es solo para asegurarnos de que no rompemos nada en freeCodeCamp.org, el cual puede tener a cientos de usuarios usándolo en cualquier momento.
 
@@ -154,11 +154,11 @@ Para uso del personal:
 
 Una vez que uno de los miembros del personal apruebe una publicación, el flujo enviará los cambios a los servidores de API y CDN de producción de freeCodeCamp.org.
 
-## Estado de la Compilación, Pruebas y Despliegue
+## Estado de la compilación, pruebas y despliegue
 
 Aquí está el estado actual de las pruebas, compilación y despliegue del código base.
 
-| Rama                                                                             | Pruebas de unidad                                                                                                                                                                                                                | Pruebas de integración                                                                                                                                                                                                        | Compilación y Despliegue                                                                                                          |
+| Rama                                                                             | Pruebas de unidad                                                                                                                                                                                                                | pruebas de integración                                                                                                                                                                                                        | compilación y despliegue                                                                                                          |
 |:-------------------------------------------------------------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------- |
 | [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main)                 | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=main)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22)                               | [![Pruebas de Cypress E2E](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/main&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time)         | -                                                                                                                                 |
 | [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) | [![Node.js CI](https://github.com/freeCodeCamp/freeCodeCamp/workflows/Node.js%20CI/badge.svg?branch=prod-staging)](https://github.com/freeCodeCamp/freeCodeCamp/actions?query=workflow%3A%22Node.js+CI%22+branch%3Aprod-staging) | [![Pruebas de Cypress E2E](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ke77ns/prod-staging&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ke77ns/analytics/runs-over-time) | [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_dashboards/dashboard/d59f36b9-434a-482d-8dbd-d006b71713d4) |
@@ -173,7 +173,7 @@ Tus contribuciones a través de comentarios y reporte de errores nos ayudarán a
 
 Te agradecemos por reportar los errores que encuentres y ayudar a mejorar freeCodeCamp.org. ¡Eres genial!
 
-### Identificando la próxima version de las plataformas
+### Identificando la próxima versión de las plataformas
 
 Actualmente una versión de prueba beta pública está disponible en:
 
@@ -415,7 +415,7 @@ nginx -t
 nginx -s reload
 ```
 
-## Trabajar en Instancias del API
+## Trabajar en instancias del API
 
 1. Instala las herramientas de compilación para archivos binarios de Node (`node-gyp`) etc.
 
@@ -432,7 +432,7 @@ Aprovisionamiento de MVs con el código
 2. Actualiza `npm`, instala PM2 y configura `logrotate` e inicio en arranque
 
    ```console
-   npm i -g npm@6
+   npm i -g npm@8
    npm i -g pm2
    pm2 install pm2-logrotate
    pm2 startup
@@ -479,7 +479,7 @@ pm2 logs
 pm2 monit
 ```
 
-### Actualización de las Instancias (Mantenimiento)
+### Actualización de las instancias (mantenimiento)
 
 Los cambios en el código deben desplegarse en las instancias de la API cada tanto. Esto puede ser una actualización continua o una actualización manual. La última es esencial al cambiar dependencias o al agregar variables de entorno.
 
@@ -511,15 +511,15 @@ npm run ensure-env && npm run build:curriculum && npm run build:server
 pm2 start all --update-env && pm2 logs
 ```
 
-#### 2. Actualizaciones Continuas: Utilizadas para cambios lógicos en el código.
+#### 2. Actualizaciones continuas: Utilizadas para cambios lógicos en el código.
 
 ```console
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] Estamos manejando actualizaciones continuas de código, lógica, mediante flujos (pipelines). You should not need to run these commands. These are here for documentation.
+> [!NOTE] Estamos manejando actualizaciones continuas de código, lógica, mediante flujos (pipelines). No debes tener que ejecutar estos comandos. Estos están aquí para documentación.
 
-## Trabajar en Instancias de Cliente
+## Trabajar en instancias de cliente
 
 1. Instala las herramientas de compilación para archivos binarios de Node (`node-gyp`), etc.
 
@@ -527,13 +527,13 @@ pm2 reload all --update-env && pm2 logs
 sudo apt install build-essential
 ```
 
-### Primera Instalación
+### Primera instalación
 
-Provisioning VMs with the Code
+Aprovisionamiento de MVs con el código
 
 1. Instala Node LTS.
 
-2. Update `npm` and install PM2 and setup `logrotate` and startup on boot
+2. Actualiza `npm` e instala PM2 y configura `logrotate` e inicia en el arranque
 
    ```console
    npm i -g npm@6
@@ -550,9 +550,9 @@ Provisioning VMs with the Code
    cd client
    ```
 
-   Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipeline.
+   Inicia las instancias provisionales para el cliente web, estas se actualizarán con los artefactos del flujo de Azure.
 
-   > Todo: This setup needs to move to S3 or Azure Blob storage 
+   > Todo: Esta configuración debe moverse a S3 o al almacenamiento de Azure Blob 
    > 
    > ```console
    >    echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
@@ -565,7 +565,7 @@ Provisioning VMs with the Code
    >    pm2 start  ./client-start-secondary.sh --name client-secondary
    > ```
 
-### Registro de Eventos y Monitoreo
+### Registro de eventos y monitoreo
 
 ```console
 pm2 logs
@@ -575,13 +575,13 @@ pm2 logs
 pm2 monit
 ```
 
-### Actualización de las Instancias (Mantenimiento)
+### Actualización de las instancias (mantenimiento)
 
-Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding environment variables.
+Los cambios en el código deben desplegarse en las instancias del API cada cierto tiempo. Esto puede ser una actualización continua o una actualización manual. La última es esencial al cambiar dependencias o al agregar variables de entorno.
 
-> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+> [!ATTENTION] Los flujos automáticos no están manejando actualizaciones de dependencias en el momento. Necesitamos realizar una actualización manual antes de que se ejecute cualquier flujo de despliegue.
 
-#### 1. Manual Updates - Used for updating dependencies, env variables.
+#### 1. Actualizaciones Manuales: Utilizadas para actualizar dependencias, variables de entorno.
 
 1. Detén todas las instancias
 
@@ -597,27 +597,27 @@ Code changes need to be deployed to the API instances from time to time. It can 
    pm2 start all --update-env && pm2 logs
    ```
 
-#### 2. Rolling updates - Used for logical changes to code.
+#### 2. Actualizaciones Continuas: Utilizadas para cambios lógicos en el código.
 
 ```console
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
+> [!NOTE] Estamos manejando actualizaciones continuas de código, lógica, a través de flujos. No necesitarás aplicar estos comandos.  Estos están por la documentación.
 
-## Work on Chat Servers
+## Trabaja en los servidores de Chat
 
-Our chat servers are available with a HA configuration [recommended in Rocket.Chat docs](https://docs.rocket.chat/installation/docker-containers/high-availability-install). The `docker-compose` file for this is [available here](https://github.com/freeCodeCamp/chat-config).
+Nuestros servidores de chat están disponibles con una configuración HA [recomendada en la documentación de Rocket.Chat](https://docs.rocket.chat/installation/docker-containers/high-availability-install). El archivo `docker-compose` para esto está [disponible aquí](https://github.com/freeCodeCamp/chat-config).
 
-We provision redundant NGINX instances which are themselves load balanced (Azure Load Balancer) in front of the Rocket.Chat cluster. The NGINX configuration file are [available here](https://github.com/freeCodeCamp/chat-nginx-config).
+Aprovisionamos instancias NGINX redundantes que a su vez tienen equilibrio de carga (Azure Load Balancer) frente al clúster Rocket.Chat. El archivo de configuración de NGINX está [disponible aquí](https://github.com/freeCodeCamp/chat-nginx-config).
 
-### First Install
+### Primera Instala
 
-Provisioning VMs with the Code
+Aprovisionamiento de MVs con el código
 
-**NGINX Cluster:**
+**Clúster NGINX:**
 
-1. Install NGINX and configure from repository.
+1. Instala NGINX y configúralo desde el repositorio.
 
    ```console
    sudo su
@@ -632,85 +632,85 @@ Provisioning VMs with the Code
    cd /etc/nginx
    ```
 
-2. Install Cloudflare origin certificates and upstream application config.
+2. Instala los certificados de origen de Cloudflare y la configuración de la aplicación upstream.
 
-   Get the Cloudflare origin certificates from the secure storage and install at required locations.
+   Obtén los certificados de origen de almacenamiento seguro de Cloudflare e instálalos en los lugares requeridos.
 
-   **OR**
+   **O**
 
-   Move over existing certificates:
+   Mueve los certificados existentes:
 
    ```console
-   # Local
+   # Localmente
    scp -r username@source-server-public-ip:/etc/nginx/ssl ./
    scp -pr ./ssl username@target-server-public-ip:/tmp/
 
-   # Remote
+   # Remotamente
    rm -rf ./ssl
    mv /tmp/ssl ./
    ```
 
-   Update Upstream Configurations:
+   Actualiza las configuraciones de upstream:
 
    ```console
    vi configs/upstreams.conf
    ```
 
-   Add/update the source/origin application IP addresses.
+   Agrega/actualiza las direcciones IP fuente/origen de la aplicación.
 
-3. Setup networking and firewalls.
+3. Configura redes y cortafuegos.
 
-   Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
+   Configura los firewalls de Azure y `ufw` según sea necesario para las direcciones de origen de entrada.
 
-4. Add the VM to the load balancer backend pool.
+4. Agregue la MV al grupo de backend del balanceador de carga.
 
-   Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
+   Configura y agrega reglas al balanceador de carga si es necesario. Es posible que también debas agregar las VMs al grupo de backend del balanceador de carga si es necesario.
 
-**Docker Cluster:**
+**Clúster de Docker:**
 
-1. Install Docker and configure from the repository
+1. Instala NGINX y configúralo desde el repositorio
 
    ```console
    git clone https://github.com/freeCodeCamp/chat-config.git chat
    cd chat
    ```
 
-2. Configure the required environment variables and instance IP addresses.
+2. Configura las variables de entorno necesarias y las direcciones IP de la instancia.
 
-3. Run rocket-chat server
+3. Ejecuta el servidor de rocket-chat
 
    ```console
    docker-compose config
    docker-compose up -d
    ```
 
-### Logging and Monitoring
+### Registro de eventos y monitoreo
 
-1. Check status for NGINX service using the below command:
+1. Comprueba el estado del servicio NGINX utilizando el siguiente comando:
 
    ```console
    sudo systemctl status nginx
    ```
 
-2. Check status for running docker instances with:
+2. Verifica el estado para ejecutar instancias de Docker con:
 
    ```console
    docker ps
    ```
 
-### Updating Instances (Maintenance)
+### Actualización de las instancias (mantenimiento)
 
-**NGINX Cluster:**
+**Clúster NGINX:**
 
-Config changes to our NGINX instances are maintained on GitHub, these should be deployed on each instance like so:
+Los cambios de configuración a nuestras instancias NGINX se mantienen en GitHub, estos se deben implementar en cada instancia de la siguiente manera:
 
-1. SSH into the instance and enter sudo
+1. SSH en la instancia e ingresa sudo
 
    ```console
    sudo su
    ```
 
-2. Get the latest config code.
+2. Obtén el código de configuración más reciente.
 
    ```console
    cd /etc/nginx
@@ -718,53 +718,53 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
    git reset --hard origin/main
    ```
 
-3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
+3. Prueba y recarga la configuración [con Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
 
    ```console
    nginx -t
    nginx -s reload
    ```
 
-**Docker Cluster:**
+**Clúster de Docker:**
 
-1. SSH into the instance and navigate to the chat config path
+1. SSH en la instancia y navega hasta la ruta de configuración del chat
 
    ```console
    cd ~/chat
    ```
 
-2. Get the latest config code.
+2. Obtén el código de configuración más reciente.
 
    ```console
    git fetch --all --prune
    git reset --hard origin/main
    ```
 
-3. Pull down the latest docker image for Rocket.Chat
+3. Baja la imagen más reciente de docker para Rocket.Chat
 
    ```console
    docker-compose pull
    ```
 
-4. Update the running instances
+4. Actualiza las instancias en ejecución
 
    ```console
    docker-compose up -d
    ```
 
-5. Validate the instances are up
+5. Válida que las instancias estén activas
 
    ```console
    docker ps
    ```
 
-6. Cleanup extraneous resources
+6. Limpia los recursos externos
 
    ```console
    docker system prune --volumes
    ```
 
-   Output:
+   Salida:
 
    ```console
    WARNING! This will remove:
@@ -777,7 +777,21 @@ Config changes to our NGINX instances are maintained on GitHub, these should be 
    Are you sure you want to continue? [y/N] y
    ```
 
-   Select yes (y) to remove everything that is not in use. This will remove all stopped containers, all networks and volumes not used by at least one container, and all dangling images and build caches.
+   Selecciona sí (y) para eliminar todo lo que no esté en uso. Esto eliminará todos los contenedores detenidos, todas las redes y volúmenes no utilizados por al menos un contenedor, y todas las imágenes colgantes y cachés de compilación.
+
+## Work on Contributor Tools
+
+### Deploy updates
+
+ssh into the VM (hosted on Digital Ocean).
+
+```console
+cd tools
+git pull origin master
+npm ci
+npm run build
+pm2 restart contribute-app
+```
 
 ## Updating Node.js versions on VMs
 
@@ -794,7 +808,7 @@ nvm ls
 Install the latest Node.js LTS, and reinstall any global packages
 
 ```console
-nvm install 'lts/*' --reinstall-packages-from=default
+nvm install --lts --reinstall-packages-from=default
 ```
 
 Verify installed packages
@@ -803,10 +817,10 @@ Verify installed packages
 npm ls -g --depth=0
 ```
 
-Alias the `default` Node.js version to the current LTS
+Alias the `default` Node.js version to the current LTS (pinned to latest major version)
 
 ```console
-nvm alias default lts/*
+nvm alias default 16
 ```
 
 (Optional) Uninstall old versions
@@ -815,7 +829,21 @@ nvm alias default lts/*
 nvm uninstall <version>
 ```
 
-> [!WARNING] If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
+> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
+> 
+> If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
+
+Get the uninstall instructions/commands with the `unstartup` command and use the output to remove the systemctl services
+
+```console
+pm2 unstartup
+```
+
+Get the install instructions/commands with the `startup` command and use the output to add the systemctl services
+
+```console
+pm2 startup
+```
 
 Quick commands for PM2 to list, resurrect saved processes, etc.
 
@@ -835,8 +863,6 @@ pm2 save
 pm2 logs
 ```
 
-> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
-
 ## Installing and Updating Azure Pipeline Agents
 
 See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
@@ -853,32 +879,32 @@ Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register 
 
 Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables. We need to do this for instance updating Node.js on our deployment target VMs.
 
-1. Navigate and check status of the service
+1. Navega y revisa el estado del servicio
 
    ```console
    cd ~/azagent
    sudo ./svc.sh status
    ```
 
-2. Stop the service
+2. Detén el servicio
 
    ```console
    sudo ./svc.sh stop
    ```
 
-3. Uninstall the service
+3. Desinstala el servicio
 
    ```console
    sudo ./svc.sh uninstall
    ```
 
-4. Remove the agent from the pipeline pool
+4. Remueve el agente de la pila de flujo
 
    ```console
    ./config.sh remove
    ```
 
-5. Remove the config files
+5. Elimina los archivos de configuración
 
    ```console
    cd ~
@@ -887,33 +913,50 @@ Currently updating agents requires them to be removed and reconfigured. This is 
 
 Once You have completed the steps above, you can repeat the same steps as installing the agent.
 
-# Flight Manual - Email Blast
+# Manual de piloto - Correo masivo
 
 We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to send out the weekly newsletter. To spin this up and begin the process:
 
-1. Sign in to DigitalOcean, and spin up new droplets under the `Sendgrid` project. Use the Ubuntu Sendgrid snapshot with the most recent date. This comes pre-loaded with the CLI tool and the script to fetch emails from the database. With the current volume, three droplets are sufficient to send the emails in a timely manner.
+1. Inicia sesión en DigitalOcean, e inicia nuevas droplets bajo el proyecto `Sendgrid`. Usa el snapshot de Ubuntu Sendgrid con la fecha más reciente.  Esto viene precargado con la herramienta CLI y el script para obtener correos electrónicos desde la base de datos. Con el volumen actual, tres droplets son suficientes para enviar los correos electrónicos de manera oportuna.
 
-2. Set up the script to fetch the email list.
+2. Configura el siguiente script para obtener la lista de correos.
 
    ```console
    cd /home/freecodecamp/scripts/emails
    cp sample.env .env
    ```
 
-   You will need to replace the placeholder values in the `.env` file with your credentials.
+   Tendrás que reemplazar los valores del marcador de posición en el archivo `.env` con tus credenciales.
 
-3. Run the script.
+3. Ejecuta el script.
 
    ```console
    node get-emails.js emails.csv
    ```
 
-   This will save the email list in an `emails.csv` file.
+   Esto guardará la lista de correos en un archivo `emails.csv`.
 
-4. Break the emails down into multiple files, depending on the number of droplets you need. This is easiest to do by using `scp` to pull the email list locally and using your preferred text editor to split them into multiple files. Each file will need the `email,unsubscribeId` header.
+4. Divide los correos electrónicos en varios archivos, dependiendo de la cantidad de droplets que necesites. Esto es más fácil de hacer utilizando `scp` para extraer la lista de correos electrónicos localmente y, utilizando tu editor de texto favorito para dividirlos en varios archivos. Cada archivo necesitará el encabezado `email,unsubscribeId`.
 
-5. Switch to the CLI directory with `cd /home/sendgrid-email-blast` and configure the tool [per the documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
+5. Cambia al directorio CLI con `cd /home/sendgrid-email-blast` y configura la herramienta [según la documentación](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
 
-6. Run the tool to send the emails, following the [usage documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
+6. Ejecuta la herramienta para enviar los correos, según la [documentación de uso](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
 
-7. When the email blast is complete, verify that no emails have failed before destroying the droplets.
+7. Cuando el correo masivo haya terminado, verifica que no hay correos fallados antes de destruir los droplets.
+
+# Flight Manual - Adding news instances for new languages
+
+### Theme Changes
+
+We use a custom [theme](https://github.com/freeCodeCamp/news-theme) for our news publication. Adding the following changes to the theme enables the addition of new languages.
+
+1. Include an `else if` statement for the new [ISO language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
+2. Create an initial config folder by duplicating the [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) folder and changing its name to the new language code. (`en` —> `es` for Spanish)
+3. Inside the new language folder, change the variable names in `main.js` and `footer.js` to the relevant language short code (`enMain` —> `esMain` for Spanish)
+4. Duplicate the [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) and rename it to the new language code.
+5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), add scripts for the newly created config files.
+6. Add the related language `day.js` script from [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) to the [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
+
+### Ghost Dashboard Changes
+
+Update the publication assets by going to the Ghost dashboard > settings > general and uploading the publications's [icon](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png), and [cover](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png).
