@@ -1,8 +1,13 @@
 on:
   push:
+    paths-ignore:
+      - 'docs/**'
     branches:
       - main
+
   pull_request_target:
+    paths-ignore:
+      - 'docs/**'
     types: [opened, synchronize, reopened]
 
 name: CodeSee Map
