@@ -268,14 +268,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
     ]);
     superBlocks.forEach(superBlock => {
       const filteredMeta = Object.values(meta)
-        /**
-         * Exclude any meta which doesn't have a superOrder, as these shouldn't
-         * appear on the learn map and thus don't need to be validated.
-         */
-        .filter(
-          el =>
-            el.superBlock === superBlock && typeof el.superOrder !== 'undefined'
-        )
+        .filter(el => el.superBlock === superBlock)
         .sort((a, b) => a.order - b.order);
       if (!filteredMeta.length) {
         return;
