@@ -32,7 +32,8 @@ const superBlockToOrder = {
   'data-analysis-with-python': 8,
   'information-security': 9,
   'machine-learning-with-python': 10,
-  'coding-interview-prep': 11
+  'coding-interview-prep': 11,
+  certifications: null
 };
 
 function getSuperOrder(superblock, { isLegacy } = { isLegacy: false }) {

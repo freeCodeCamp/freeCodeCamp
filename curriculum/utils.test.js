@@ -1,13 +1,23 @@
 import { getSuperOrder } from './utils';
 
 describe('getSuperOrder', () => {
-  it('returns a number or throws an error', () => {
-    expect.assertions(5);
+  it('returns a number for valid superblocks', () => {
+    expect.assertions(1);
+    expect(typeof getSuperOrder('responsive-web-design')).toBe('number');
+  });
+
+  it('throws for unknown superblocks', () => {
+    expect.assertions(4);
     expect(() => getSuperOrder()).toThrow();
     expect(() => getSuperOrder(null)).toThrow();
     expect(() => getSuperOrder('')).toThrow();
     expect(() => getSuperOrder('respansive-wib-desoin')).toThrow();
-    expect(typeof getSuperOrder('responsive-web-design')).toBe('number');
+  });
+
+  it('returns null for "certifications"', () => {
+    expect.assertions(2);
+    expect(getSuperOrder('certifications')).toBeNull();
+    expect(getSuperOrder('certifications', { isLegacy: true })).toBeNull();
   });
 
   it('returns unique numbers for all current superblocks', () => {
