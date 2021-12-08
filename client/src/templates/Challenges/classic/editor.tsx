@@ -491,7 +491,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     // The z-index needs increasing as ViewZones default to below the lines.
     domNode.style.zIndex = '10';
 
-    domNode.setAttribute('aria-hidden', 'true');
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
@@ -526,8 +525,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     // TODO: does it?
     // The z-index needs increasing as ViewZones default to below the lines.
     outputNode.style.zIndex = '10';
-
-    outputNode.setAttribute('aria-hidden', 'true');
 
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
