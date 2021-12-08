@@ -37,7 +37,7 @@ O console mostraria o valor `[ 'John', 'Amy', 'camperCat' ]`.
 
 # --instructions--
 
-A variável `watchList` armazena um array de objetos com informações de diversos filmes. Use o `map` na `watchList` para atribuir uma nova matriz de objetos à variável</code>ratins`. Cada filme no novo array deve ter apenas um <code>title` com o nome do filme, e uma chave `rating` com a classificação do IMDB. O código atual no editor usa um loop `for` para fazer isso, então você deve substituir o laço com sua expressão `map`.
+A variável `watchList` armazena um array de objetos com informações de diversos filmes. Use o `map` na `watchList` para atribuir uma nova matriz de objetos à variável `ratings`. Cada filme no novo array deve ter apenas um `title` com o nome do filme, e uma chave `rating` com a classificação do IMDB. O código atual no editor usa um loop `for` para fazer isso, então você deve substituir o laço com sua expressão `map`.
 
 # --hints--
 
