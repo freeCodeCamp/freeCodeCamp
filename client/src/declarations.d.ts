@@ -13,22 +13,6 @@ declare module '*.woff' {
   const url: string;
   export default url;
 }
-declare namespace NodeJS {
-  interface Global {
-    MathJax: {
-      Hub: {
-        Config: (attributes: {
-          tex2jax: {
-            inlineMath: Array<string[]>;
-            processEscapes: boolean;
-            processClass: string;
-          };
-        }) => void;
-        Queue: (attributes: unknown[]) => void;
-      };
-    };
-  }
-}
 
 declare module '*.png' {
   const content: string;
