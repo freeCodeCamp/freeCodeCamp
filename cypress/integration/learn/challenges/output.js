@@ -77,6 +77,7 @@ describe('jQuery challenge', function () {
   });
 
   it('should not show a reference error', () => {
+    cy.wait(5000);
     cy.get(selectors.defaultOutput).should(
       'not.contain',
       'ReferenceError: $ is not defined'
