@@ -38,7 +38,7 @@ class Kitten extends React.Component {
 assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div');
 ```
 
-返回的 `div` 中應該渲染一個 `h1` 標題。
+返回的 `div` 中應該渲染一個 `h1` 標題元素。
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-`h1` 標題中應該包含字符串 `Hello React!`。
+`h1` 標題元素中應該包含字符串 `Hello React!`。
 
 ```js
 assert(

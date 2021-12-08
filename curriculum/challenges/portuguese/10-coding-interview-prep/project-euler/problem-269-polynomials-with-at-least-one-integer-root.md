@@ -1,6 +1,6 @@
 ---
 id: 5900f4791000cf542c50ff8c
-title: 'Problem 269: Polynomials with at least one integer root'
+title: 'Problema 269: Polinômios com pelo menos uma raiz inteira'
 challengeType: 5
 forumTopicId: 301918
 dashedName: problem-269-polynomials-with-at-least-one-integer-root
@@ -8,24 +8,30 @@ dashedName: problem-269-polynomials-with-at-least-one-integer-root
 
 # --description--
 
-A root or zero of a polynomial P(x) is a solution to the equation P(x) = 0.
+Uma raiz ou zero de um polinômio $P(x)$ é uma solução para a equação $P(x) = 0$.
 
-Define Pn as the polynomial whose coefficients are the digits of n.
+Defina $P_n$ como o polinômio cujos coeficientes são os algarismos de $n$.
 
-For example, P5703(x) = 5x3 + 7x2 + 3.
+Por exemplo, $P_{5703}(x) = 5x^3 + 7x^2 + 3$.
 
-We can see that:Pn(0) is the last digit of n, Pn(1) is the sum of the digits of n, Pn(10) is n itself.Define Z(k) as the number of positive integers, n, not exceeding k for which the polynomial Pn has at least one integer root.
+Podemos ver que:
 
-It can be verified that Z(100 000) is 14696.
+- $P_n(0)$ é o último algarismo de $n$,
+- $P_n(1)$ é a soma dos algarismos de $n$,
+- $Pn(10)$ é o próprio $n$.
 
-What is Z(1016)?
+Defina $Z(k)$ como a quantidade de números inteiros positivos, $n$, sem exceder $k$, para a qual o polinômio $P_n$ tem pelo menos uma raiz inteira.
+
+Podemos verificar que $Z(100.000)$ é 14696.
+
+Qual é a $Z({10}^{16})$?
 
 # --hints--
 
-`euler269()` should return 1311109198529286.
+`polynomialsWithOneIntegerRoot()` deve retornar `1311109198529286`.
 
 ```js
-assert.strictEqual(euler269(), 1311109198529286);
+assert.strictEqual(polynomialsWithOneIntegerRoot(), 1311109198529286);
 ```
 
 # --seed--
@@ -33,12 +39,12 @@ assert.strictEqual(euler269(), 1311109198529286);
 ## --seed-contents--
 
 ```js
-function euler269() {
+function polynomialsWithOneIntegerRoot() {
 
   return true;
 }
 
-euler269();
+polynomialsWithOneIntegerRoot();
 ```
 
 # --solutions--

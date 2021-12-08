@@ -16,10 +16,7 @@ import {
   executeGA,
   allowBlockDonationRequests
 } from '../../../redux';
-import {
-  AllChallengeNodeType,
-  ChallengeFiles
-} from '../../../redux/prop-types';
+import { AllChallengeNode, ChallengeFiles } from '../../../redux/prop-types';
 
 import {
   closeModal,
@@ -281,7 +278,7 @@ export class CompletionModalInner extends Component<
 const useCurrentBlockIds = (blockName: string) => {
   const {
     allChallengeNode: { edges }
-  }: { allChallengeNode: AllChallengeNodeType } = useStaticQuery(graphql`
+  }: { allChallengeNode: AllChallengeNode } = useStaticQuery(graphql`
     query getCurrentBlockNodes {
       allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
         edges {

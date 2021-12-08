@@ -1,6 +1,6 @@
 ---
 id: 5900f40f1000cf542c50ff22
-title: 'Problem 163: Cross-hatched triangles'
+title: 'Problema 163: Triângulos cruzados'
 challengeType: 5
 forumTopicId: 301797
 dashedName: problem-163-cross-hatched-triangles
@@ -8,16 +8,26 @@ dashedName: problem-163-cross-hatched-triangles
 
 # --description--
 
-Consider an equilateral triangle in which straight lines are drawn from each vertex to the middle of the opposite side, such as in the size 1 triangle in the sketch below.
+Considere um triângulo equilátero em que linhas retas são desenhadas a partir de cada vértice até o meio do lado oposto, como no triângulo de tamanho 1 no esboço abaixo.
 
-Sixteen triangles of either different shape or size or orientation or location can now be observed in that triangle. Using size 1 triangles as building blocks, larger triangles can be formed, such as the size 2 triangle in the above sketch. One-hundred and four triangles of either different shape or size or orientation or location can now be observed in that size 2 triangle. It can be observed that the size 2 triangle contains 4 size 1 triangle building blocks. A size 3 triangle would contain 9 size 1 triangle building blocks and a size n triangle would thus contain n2 size 1 triangle building blocks. If we denote T(n) as the number of triangles present in a triangle of size n, then T(1) = 16 T(2) = 104 Find T(36).
+<img class="img-responsive center-block" alt="triângulos de tamanho 1 e tamanho 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px;" />
+
+Agora, nesse triângulo, podem ser observados dezesseis triângulos de forma, tamanho, orientação ou localização diferentes. Usando o triângulos de tamanho 1 como blocos de construção, triângulos maiores podem ser formados, como o de tamanho 2 no esboço acima. Agora, nesse triângulo de lado 2, podem ser observados 104 triângulos de forma, tamanho, orientação ou localização diferentes.
+
+É possível observar que o triângulo de tamanho 2 contém como blocos de construção 4 triângulos de tamanho 1. Um triângulo de tamanho 3 contém 9 blocos de construção de triângulos de tamanho 1, e um triângulo de tamanho $n$ teria, portanto, $n^2$ blocos de construção de triângulos de tamanho 1.
+
+Se quisermos indicar que $T(n)$ é o número de triângulos presentes em um triângulo de tamanho $n$, então
+
+$$\begin{align} & T(1) = 16 \\\\ & T(2) = 104 \end{align}$$
+
+Encontre $T(36)$.
 
 # --hints--
 
-`euler163()` should return 343047.
+`crossHatchedTriangles()` deve retornar `343047`.
 
 ```js
-assert.strictEqual(euler163(), 343047);
+assert.strictEqual(crossHatchedTriangles(), 343047);
 ```
 
 # --seed--
@@ -25,12 +35,12 @@ assert.strictEqual(euler163(), 343047);
 ## --seed-contents--
 
 ```js
-function euler163() {
+function crossHatchedTriangles() {
 
   return true;
 }
 
-euler163();
+crossHatchedTriangles();
 ```
 
 # --solutions--

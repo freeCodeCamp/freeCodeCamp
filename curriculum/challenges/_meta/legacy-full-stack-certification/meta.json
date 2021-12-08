@@ -2,12 +2,11 @@
   "name": "Legacy Full Stack Certification",
   "isUpcomingChange": false,
   "dashedName": "full-stack-certification",
-  "order": 5,
+  "order": 15,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certifications",
-  "superOrder": 12,
   "challengeOrder": [
     [
       "561add10cb82ac38a17213bd",

@@ -2,10 +2,10 @@
   "name": "MongoDB and Mongoose",
   "isUpcomingChange": false,
   "dashedName": "mongodb-and-mongoose",
-  "order": 3,
+  "order": 2,
   "time": "5 hours",
   "superBlock": "back-end-development-and-apis",
-  "superOrder": 6,
+  "superOrder": 5,
   "challengeOrder": [
     [
       "587d7fb6367417b2b2512c06",

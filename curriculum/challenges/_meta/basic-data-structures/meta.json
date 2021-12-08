@@ -2,12 +2,12 @@
   "name": "Basic Data Structures",
   "isUpcomingChange": false,
   "dashedName": "basic-data-structures",
-  "order": 5,
+  "order": 4,
   "time": "1 hour",
   "template": "",
   "required": [],
   "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2,
+  "superOrder": 1,
   "challengeOrder": [
     [
       "587d7b7e367417b2b2512b20",

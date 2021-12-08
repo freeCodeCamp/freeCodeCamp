@@ -1,6 +1,6 @@
 ---
 id: 5900f3b21000cf542c50fec5
-title: 'Problema 70: Permutações Totiente'
+title: 'Problema 70: Permutações de totientes'
 challengeType: 5
 forumTopicId: 302183
 dashedName: problem-70-totient-permutation
@@ -8,7 +8,7 @@ dashedName: problem-70-totient-permutation
 
 # --description--
 
-A função Totiente de Euler, ${\phi}(n)$ (às vezes chamada de função phi), é usada para determinar a quantidade de números menores que `n`, que são primos próximos de `n`. Por exemplo, 1, 2, 4, 5, 7 e 8 são todos inferiores a nove e primos relativos de nove, ${\phi}(9) = 6$. O número 1 é considerado um primo relativo para todos os números positivos, portanto ${\phi}(1) = 1$.
+A função totiente de Euler, ${\phi}(n)$ (às vezes chamada de função phi), é usada para determinar a quantidade de números menores que `n`, que são primos próximos de `n`. Por exemplo, 1, 2, 4, 5, 7 e 8 são todos inferiores a nove e primos relativos de nove, ${\phi}(9) = 6$. O número 1 é considerado um primo relativo para todos os números positivos, portanto ${\phi}(1) = 1$.
 
 Curiosamente, ${\phi}(87109) = 79180$, e pode ser visto que 87109 é uma permutação de 79180.
 

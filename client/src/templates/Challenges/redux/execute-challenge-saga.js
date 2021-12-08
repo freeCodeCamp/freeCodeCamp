@@ -13,14 +13,15 @@ import {
   take,
   cancel
 } from 'redux-saga/effects';
-import store from 'store';
 
+import { playTone } from '../../../utils/tone';
 import {
   buildChallenge,
   canBuildChallenge,
   getTestRunner,
   challengeHasPreview,
   updatePreview,
+  updateProjectPreview,
   isJavaScriptChallenge,
   isLoopProtected
 } from '../utils/build';
@@ -85,7 +86,8 @@ export function* executeChallengeSaga({ payload }) {
     const protect = isLoopProtected(challengeMeta);
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
-      protect
+      protect,
+      usesTestRunner: true
     });
     const document = yield getContext('document');
     const testRunner = yield call(
@@ -98,17 +100,10 @@ export function* executeChallengeSaga({ payload }) {
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
-    const playSound = store.get('fcc-sound');
-    let player;
-    if (playSound) {
-      void import('tone').then(tone => {
-        player = new tone.Player(
-          challengeComplete && payload?.showCompletionModal
-            ? 'https://campfire-mode.freecodecamp.org/chal-comp.mp3'
-            : 'https://campfire-mode.freecodecamp.org/try-again.mp3'
-        ).toDestination();
-        player.autostart = true;
-      });
+    if (challengeComplete) {
+      playTone('tests-completed');
+    } else {
+      playTone('tests-failed');
     }
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
@@ -167,7 +162,11 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         throw err;
       }
     } catch (err) {
-      newTest.message = text;
+      const { actual, expected } = err;
+
+      newTest.message = text
+        .replace('--fcc-expected--', expected)
+        .replace('--fcc-actual--', actual);
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
@@ -236,6 +235,24 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   }
 }
 
+function* previewProjectSolutionSaga({ payload }) {
+  if (!payload) return;
+  const { showProjectPreview, challengeData } = payload;
+  if (!showProjectPreview) return;
+
+  try {
+    if (canBuildChallenge(challengeData)) {
+      const buildData = yield buildChallengeData(challengeData);
+      if (challengeHasPreview(challengeData)) {
+        const document = yield getContext('document');
+        yield call(updateProjectPreview, buildData, document);
+      }
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
@@ -247,6 +264,7 @@ export function createExecuteChallengeSaga(types) {
         types.resetChallenge
       ],
       executeCancellablePreviewSaga
-    )
+    ),
+    takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
 }

@@ -109,7 +109,7 @@ function InstantSearchRoot({
         if (
           location.state &&
           typeof location.state === 'object' &&
-          location.state.hasOwnProperty('query')
+          Object.prototype.hasOwnProperty.call(location.state, 'query')
         ) {
           updateSearchQuery(location.state.query);
         } else if (location.search) {

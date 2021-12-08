@@ -1,6 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3d
-title: 'Problem 190: Maximising a weighted product'
+title: 'Problema 190: Maximização de um produto ponderado'
 challengeType: 5
 forumTopicId: 301828
 dashedName: problem-190-maximising-a-weighted-product
@@ -8,18 +8,18 @@ dashedName: problem-190-maximising-a-weighted-product
 
 # --description--
 
-Let Sm = (x1, x2, ... , xm) be the m-tuple of positive real numbers with x1 + x2 + ... + xm = m for which Pm = x1 \* x22 \* ... \* xmm is maximised.
+Considere $S_m = (x_1, x_2, \ldots, x_m)$ a $m$-ésima tupla de números reais positivos com $x_1 + x_2 + \cdots + x_m = m$ para a qual $P_m = x_1 \times {x_2}^2 \times \cdots \times {x_m}^m$ é maximizado.
 
-For example, it can be verified that \[P10] = 4112 (\[ ] is the integer part function).
+Por exemplo, pode-se verificar que $[P_{10}] = 4112$ ([ ] é a parte inteira da função).
 
-Find Σ\[Pm] for 2 ≤ m ≤ 15.
+Encontre $\sum {[P_m]}$ para $2 ≤ m ≤ 15$.
 
 # --hints--
 
-`euler190()` should return 371048281.
+`maximisingWeightedProduct()` deve retornar `371048281`.
 
 ```js
-assert.strictEqual(euler190(), 371048281);
+assert.strictEqual(maximisingWeightedProduct(), 371048281);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler190(), 371048281);
 ## --seed-contents--
 
 ```js
-function euler190() {
+function maximisingWeightedProduct() {
 
   return true;
 }
 
-euler190();
+maximisingWeightedProduct();
 ```
 
 # --solutions--

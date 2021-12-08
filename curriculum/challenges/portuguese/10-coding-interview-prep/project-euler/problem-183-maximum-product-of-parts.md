@@ -1,6 +1,6 @@
 ---
 id: 5900f4231000cf542c50ff36
-title: 'Problem 183: Maximum product of parts'
+title: 'Problema 183: Produto máximo das partes'
 challengeType: 5
 forumTopicId: 301819
 dashedName: problem-183-maximum-product-of-parts
@@ -8,30 +8,30 @@ dashedName: problem-183-maximum-product-of-parts
 
 # --description--
 
-Let N be a positive integer and let N be split into k equal parts, r = N/k, so that N = r + r + ... + r.
+Considere $N$ um número inteiro positivo que pode ser dividido em $k$ partes iguais, $r = \frac{N}{k}$, de modo que $N = r + r + \cdots + r$.
 
-Let P be the product of these parts, P = r × r × ... × r = rk.
+Considere $P$ o produto dessas partes, $P = r × r × \cdots × r = r^k$.
 
-For example, if 11 is split into five equal parts, 11 = 2.2 + 2.2 + 2.2 + 2.2 + 2.2, then P = 2.25 = 51.53632.
+Por exemplo, se 11 for dividido em cinco partes iguais, 11 = 2,2 + 2,2 + 2,2 + 2,2 + 2,2, então $P = {2.2}^5 = 51,53632$.
 
-Let M(N) = Pmax for a given value of N.
+Considere $M(N) = P_{max}$ para um valor dado de $N$.
 
-It turns out that the maximum for N = 11 is found by splitting eleven into four equal parts which leads to Pmax = (11/4)4; that is, M(11) = 14641/256 = 57.19140625, which is a terminating decimal.
+Acontece que o máximo para $N = 11$ é encontrado ao dividirmos onze em quatro partes iguais, o que leva a $P_{max} = {(\frac{11}{4})}^4$; ou seja, $M(11) = \frac{14641}{256} = 57.19140625$, que é um número decimal finito.
 
-However, for N = 8 the maximum is achieved by splitting it into three equal parts, so M(8) = 512/27, which is a non-terminating decimal.
+No entanto, para $N = 8$, o máximo é alcançado dividindo-o em três partes iguais, então $M(8) = \frac{512}{27}$, que é um decimal infinito.
 
-Let D(N) = N if M(N) is a non-terminating decimal and D(N) = -N if M(N) is a terminating decimal.
+Considere $D(N) = N$ se $M(N)$ for um decimal infinito e $D(N) = -N$ se $M(N)$ for um decimal finito.
 
-For example, ΣD(N) for 5 ≤ N ≤ 100 is 2438.
+Por exemplo, $\sum D(N)$ para $5 ≤ N ≤ 100$ é 2438.
 
-Find ΣD(N) for 5 ≤ N ≤ 10000.
+Encontre $\sum D(N)$ para $5 ≤ N ≤ 10000$.
 
 # --hints--
 
-`euler183()` should return 48861552.
+`maximumProductOfParts()` deve retornar `48861552`.
 
 ```js
-assert.strictEqual(euler183(), 48861552);
+assert.strictEqual(maximumProductOfParts(), 48861552);
 ```
 
 # --seed--
@@ -39,12 +39,12 @@ assert.strictEqual(euler183(), 48861552);
 ## --seed-contents--
 
 ```js
-function euler183() {
+function maximumProductOfParts() {
 
   return true;
 }
 
-euler183();
+maximumProductOfParts();
 ```
 
 # --solutions--

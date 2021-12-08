@@ -4,11 +4,7 @@ import '../components/layouts/project-links.css';
 import { Trans, useTranslation } from 'react-i18next';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { Spacer, Link } from '../components/helpers';
-import {
-  ChallengeFiles,
-  CompletedChallenge,
-  UserType
-} from '../redux/prop-types';
+import { ChallengeFiles, CompletedChallenge, User } from '../redux/prop-types';
 import {
   projectMap,
   legacyProjectMap
@@ -16,27 +12,27 @@ import {
 
 import { maybeUrlRE } from '../utils';
 
-interface IShowProjectLinksProps {
+interface ShowProjectLinksProps {
   certName: string;
   name: string;
-  user: UserType;
+  user: User;
 }
 
-type SolutionStateType = {
+type SolutionState = {
   projectTitle: string;
   challengeFiles: ChallengeFiles;
   solution: CompletedChallenge['solution'];
   isOpen: boolean;
 };
 
-const initSolutionState: SolutionStateType = {
+const initSolutionState: SolutionState = {
   projectTitle: '',
   challengeFiles: null,
   solution: '',
   isOpen: false
 };
 
-const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
+const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const [solutionState, setSolutionState] = useState(initSolutionState);
 
   const handleSolutionModalHide = () => setSolutionState(initSolutionState);
@@ -120,14 +116,10 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
         { title: 'Data Visualization' },
         { title: 'Back End Development and APIs' },
         { title: 'Legacy Information Security and Quality Assurance' }
-      ];
+      ] as const;
       return legacyCerts.map((cert, ind) => {
-        /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-        /* eslint-disable @typescript-eslint/no-unsafe-call */
-        /* eslint-disable @typescript-eslint/no-unsafe-return */
-        /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-        // @ts-expect-error Error expected until projectMap is typed
-        const mapToUse = projectMap[cert.title] || legacyProjectMap[cert.title];
+        const mapToUse = (projectMap[cert.title] ||
+          legacyProjectMap[cert.title]) as { certSlug: string }[];
         const { certSlug } = first(mapToUse) as { certSlug: string };
         const certLocation = `/certification/${username}/${certSlug}`;
         return (
@@ -145,21 +137,19 @@ const ShowProjectLinks = (props: IShowProjectLinksProps): JSX.Element => {
       });
     }
     // @ts-expect-error Error expected until projectMap is typed
-    return (projectMap[certName] || legacyProjectMap[certName]).map(
-      // @ts-expect-error Error expected until projectMap is typed
-      ({ link, title, id }) => (
-        <li key={id}>
-          <Link className='project-link' to={link}>
-            {t(`certification.project.title.${title as string}`, title)}
-          </Link>
-          : {getProjectSolution(id, title)}
-        </li>
-      )
-    );
-    /* eslint-enable @typescript-eslint/no-unsafe-assignment */
-    /* eslint-enable @typescript-eslint/no-unsafe-call */
-    /* eslint-enable @typescript-eslint/no-unsafe-return */
-    /* eslint-enable @typescript-eslint/no-unsafe-member-access */
+    const project = (projectMap[certName] || legacyProjectMap[certName]) as {
+      link: string;
+      title: string;
+      id: string;
+    }[];
+    return project.map(({ link, title, id }) => (
+      <li key={id}>
+        <Link className='project-link' to={link}>
+          {t(`certification.project.title.${title}`, title)}
+        </Link>
+        : {getProjectSolution(id, title)}
+      </li>
+    ));
   };
 
   const {

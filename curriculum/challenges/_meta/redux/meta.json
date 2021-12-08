@@ -2,7 +2,7 @@
   "name": "Redux",
   "isUpcomingChange": false,
   "dashedName": "redux",
-  "order": 6,
+  "order": 4,
   "time": "5 hours",
   "template": "",
   "required": [
@@ -14,7 +14,7 @@
     }
   ],
   "superBlock": "front-end-development-libraries",
-  "superOrder": 3,
+  "superOrder": 2,
   "challengeOrder": [
     [
       "5a24c314108439a4d403614b",

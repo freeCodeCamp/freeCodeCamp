@@ -1,6 +1,6 @@
 ---
 id: 5900f42c1000cf542c50ff3f
-title: 'Problem 192: Best Approximations'
+title: 'Problema 192: Melhores aproximações'
 challengeType: 5
 forumTopicId: 301830
 dashedName: problem-192-best-approximations
@@ -8,22 +8,22 @@ dashedName: problem-192-best-approximations
 
 # --description--
 
-Let x be a real number.
+Considere $x$ um número real.
 
-A best approximation to x for the denominator bound d is a rational number r/s in reduced form, with s ≤ d, such that any rational number which is closer to x than r/s has a denominator larger than d:
+Uma melhor aproximação de $x$ para o denominador vinculado a $d$ é um número racional $\frac{r}{s}$ na forma reduzida, com $s ≤ d$, tal que qualquer número racional que esteja mais próximo de $x$ do que $\frac{r}{s}$ tenha um denominador maior que $d$:
 
-|p/q-x| &lt; |r/s-x| ⇒ q > d
+$$|\frac{p}{q} - x| &lt; |\frac{r}{s} - x| ⇒ q > d$$
 
-For example, the best approximation to √13 for the denominator bound 20 is 18/5 and the best approximation to √13 for the denominator bound 30 is 101/28.
+Por exemplo, a melhor aproximação de $\sqrt{13}$ do denominador vinculado $20$ é $\frac{18}{5}$ e a melhor aproximação de $\sqrt{13}$ do denominador vinculado $30$ é $\frac{101}{28}$.
 
-Find the sum of all denominators of the best approximations to √n for the denominator bound 1012, where n is not a perfect square and 1 &lt; n ≤ 100000.
+Encontre a soma de todos os denominadores das melhores aproximações de $\sqrt{n}$ para o denominador vinculado ${10}^{12}$, onde $n$ não é um quadrado perfeito e $1 &lt; n ≤ 100000$.
 
 # --hints--
 
-`euler192()` should return 57060635927998344.
+`bestApproximations()` deve retornar `57060635927998344`.
 
 ```js
-assert.strictEqual(euler192(), 57060635927998344);
+assert.strictEqual(bestApproximations(), 57060635927998344);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler192(), 57060635927998344);
 ## --seed-contents--
 
 ```js
-function euler192() {
+function bestApproximations() {
 
   return true;
 }
 
-euler192();
+bestApproximations();
 ```
 
 # --solutions--

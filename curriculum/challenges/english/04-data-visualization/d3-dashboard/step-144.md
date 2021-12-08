@@ -16,11 +16,10 @@ After that, you will be able hover any of the circles or year labels to get the 
 test-text
 
 ```js
-const script = $('.dashboard').siblings('script')[1].innerHTML;
-assert(
-  script.match(
-    /\.on\(('|"|`)mouseover\1, function \(d\) \{\s*return drawDashboard\(d\.year\);\s*\}\)/g
-  ).length === 3
+assert.equal(
+  code.match(
+    /\.on\('mouseover', d => drawDashboard\(d\.year\)\)/g
+  )?.length, 3
 );
 ```
 

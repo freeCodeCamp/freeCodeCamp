@@ -14,11 +14,19 @@
 
 const { execSync } = require('child_process');
 const { existsSync } = require('fs');
+require('dotenv').config();
 
 module.exports = (on, config) => {
+  // `on` is used to hook into various events Cypress emits
+  // `config` is the resolved Cypress config
+  config.env = config.env || {};
   on('before:run', () => {
     if (!existsSync('../../config/curriculum.json')) {
       execSync('npm run build:curriculum');
     }
   });
+
+  // Allows us to test the new curriculum before it's released:
+  config.env.SHOW_UPCOMING_CHANGES = process.env.SHOW_UPCOMING_CHANGES;
+  return config;
 };

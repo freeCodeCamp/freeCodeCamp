@@ -1,6 +1,6 @@
 ---
 id: 5900f4f11000cf542c510003
-title: 'Problem 387: Harshad Numbers'
+title: 'Problema 387: Números de Harshad'
 challengeType: 5
 forumTopicId: 302051
 dashedName: problem-387-harshad-numbers
@@ -8,30 +8,34 @@ dashedName: problem-387-harshad-numbers
 
 # --description--
 
-A Harshad or Niven number is a number that is divisible by the sum of its digits.
+Um número de Harshad ou número de Niven é um número divisível pela soma de seus algarismos.
 
-201 is a Harshad number because it is divisible by 3 (the sum of its digits.)
+201 é um número de Harshad, pois é divisível por 3 (a soma de seus algarismos).
 
-When we truncate the last digit from 201, we get 20, which is a Harshad number.
+Quando truncamos o último algarismo de 201, obtemos 20, que é um número de Harshad.
 
-When we truncate the last digit from 20, we get 2, which is also a Harshad number.
+Quando truncamos o último algarismo de 20, obtemos 2, que também é um número de Harshad.
 
-Let's call a Harshad number that, while recursively truncating the last digit, always results in a Harshad number a right truncatable Harshad number.
+Vamos chamar um número de Harshad que, embora truncando recursivamente o último algarismo, sempre resulte em um número de Harshad, de um número de Harshad corretamente truncável.
 
-Also: 201/3=67 which is prime. Let's call a Harshad number that, when divided by the sum of its digits, results in a prime a strong Harshad number.
+Além disso:
 
-Now take the number 2011 which is prime. When we truncate the last digit from it we get 201, a strong Harshad number that is also right truncatable. Let's call such primes strong, right truncatable Harshad primes.
+$\frac{201}{3} = 67$, que é um número primo.
 
-You are given that the sum of the strong, right truncatable Harshad primes less than 10000 is 90619.
+Vamos chamar um número de Harshad que, quando dividido pela soma de seus algarismos, resulte em um número primo, de número de Harshad forte.
 
-Find the sum of the strong, right truncatable Harshad primes less than 1014.
+Vejamos agora o número 2011, que é um número primo. Quando truncamos o último algarismo dele chegamos em 201, um número forte de Harshad, que também é corretamente truncável. Vamos chamar esses números primos e fortes de números primos de Harshad corretamente truncáveis.
+
+Você é informado de que a soma dos números primos de Harshad corretamente truncáveis e fortes inferiores a 10000 é de 90619.
+
+Encontre a soma dos números primos de Harshad corretamente truncáveis e fortes inferiores a ${10}^{14}$.
 
 # --hints--
 
-`euler387()` should return 696067597313468.
+`harshadNumbers()` deve retornar `696067597313468`.
 
 ```js
-assert.strictEqual(euler387(), 696067597313468);
+assert.strictEqual(harshadNumbers(), 696067597313468);
 ```
 
 # --seed--
@@ -39,12 +43,12 @@ assert.strictEqual(euler387(), 696067597313468);
 ## --seed-contents--
 
 ```js
-function euler387() {
+function harshadNumbers() {
 
   return true;
 }
 
-euler387();
+harshadNumbers();
 ```
 
 # --solutions--

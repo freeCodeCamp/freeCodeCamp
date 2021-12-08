@@ -32,6 +32,7 @@
     "profile": "Perfil",
     "news": "Notícias",
     "donate": "Doar",
+    "support-our-nonprofit": "Dê seu apoio à nossa organização sem fins lucrativos",
     "update-settings": "Atualizar as configurações da minha conta",
     "sign-me-out": "Sair do freeCodeCamp",
     "flag-user": "Denunciar a conta deste usuário por abuso",
@@ -62,7 +63,8 @@
     "verify-email": "Verificar e-mail",
     "submit-and-go": "Enviar e ir para o próximo desafio",
     "go-to-next": "Ir para o próximo desafio",
-    "ask-later": "Pergunte-me depois"
+    "ask-later": "Pergunte-me depois",
+    "start-coding": "Comece a programar!"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -99,7 +101,7 @@
     "private-name": "Seu nome não aparecerá nas certificações, se isto estiver definido como privado.",
     "claim-legacy": "Após receber os seguintes certificados do freeCodeCamp, você poderá reivindicar o(s) {{cert}}:",
     "for": "Configurações de conta para {{username}}",
-    "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
+    "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
       "is too short": "O nome de usuário \"{{username}}\" é muito curto",
@@ -288,7 +290,10 @@
       "preview": "Pré-visualizar"
     },
     "help-translate": "Ainda estamos traduzindo as certificações a seguir.",
-    "help-translate-link": "Ajude-nos a traduzir."
+    "help-translate-link": "Ajude-nos a traduzir.",
+    "season-greetings": "Boas festas de fim de ano para você e sua família.",
+    "if-getting-value": "Se você está conseguindo tirar proveito do conteúdo do freeCodeCamp, agora é um ótimo momento para fazer sua doação e apoiar nossa missão sem fins lucrativos.",
+    "project-preview-title": "Aqui está uma prévia do que você vai criar"
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -358,7 +363,7 @@
   },
   "search": {
     "label": "Pesquisar",
-    "placeholder": "Pesquisar entre mais de 7.000 tutoriais",
+    "placeholder": "Pesquisar entre mais de 8.000 tutoriais",
     "see-results": "Ver todos os resultados para {{searchQuery}}",
     "no-tutorials": "Nenhum tutorial foi encontrado",
     "try": "Procurando algo? Tente a barra de pesquisa nesta página.",
@@ -466,7 +471,11 @@
     "unlink-success": "Você desvinculou seu {{website}} com sucesso",
     "provide-username": "Verifique se você forneceu um nome de usuário e um relatório",
     "report-sent": "Um relatório foi enviado para a equipe com {{email}} em cópia",
-    "certificate-missing": "A certificação que você tentou visualizar não existe"
+    "certificate-missing": "A certificação que você tentou visualizar não existe",
+    "create-token-err": "Ocorreu um erro ao tentar criar um token",
+    "delete-token-err": "Ocorreu um erro ao tentar excluir seu token",
+    "token-created": "Você criou com sucesso um novo token.",
+    "token-deleted": "Seu token foi excluído."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
@@ -594,5 +603,18 @@
     "add-code-one": "Substitua essas duas frases pelo código que você copiou.",
     "add-code-two": "Deixe as linhas com ``` acima e ``` abaixo de seu código,",
     "add-code-three": "pois elas permitirão a formatação adequada de seu código na publicação."
+  },
+  "webhook-token": {
+    "title": "Token de webhook",
+    "create": "Criar um novo token",
+    "create-p1": "Parece que você não tem um token de webhook. Crie um para salvar seu progresso nesta seção",
+    "create-p2": "Crie um token de webhook para salvar seu progresso nas seções de currículo que usam uma máquina virtual.",
+    "delete": "Excluir meu token",
+    "delete-title": "Excluir meu token de webhook",
+    "delete-p1": "Seu token de webhook abaixo é usado para salvar seu progresso nas seções de currículo que usam uma máquina virtual.",
+    "delete-p2": "Se você suspeitar que seu token foi comprometido, você pode excluí-lo para torná-lo inutilizável. O progresso nas aulas enviadas anteriormente não será perdido.",
+    "delete-p3": "Você precisa criar um novo token para salvar seu progresso futuro nas seções de currículo que usam uma máquina virtual.",
+    "no-thanks": "Não, obrigado. Eu gostaria de manter meu token",
+    "yes-please": "Sim, eu gostaria de excluir meu token"
   }
 }

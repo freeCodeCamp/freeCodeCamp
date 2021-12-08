@@ -2,7 +2,7 @@
   "name": "Bootstrap",
   "isUpcomingChange": false,
   "dashedName": "bootstrap",
-  "order": 2,
+  "order": 0,
   "time": "5 hours",
   "template": "",
   "required": [
@@ -11,7 +11,7 @@
     }
   ],
   "superBlock": "front-end-development-libraries",
-  "superOrder": 3,
+  "superOrder": 2,
   "challengeOrder": [
     [
       "bad87fee1348bd9acde08712",

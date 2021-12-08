@@ -2,12 +2,12 @@
   "name": "Take Home Projects",
   "isUpcomingChange": false,
   "dashedName": "take-home-projects",
-  "order": 4,
+  "order": 2,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "coding-interview-prep",
-  "superOrder": 12,
+  "superOrder": 11,
   "challengeOrder": [
     [
       "bd7158d8c442eddfaeb5bd10",

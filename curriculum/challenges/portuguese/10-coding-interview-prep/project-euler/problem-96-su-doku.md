@@ -8,7 +8,7 @@ dashedName: problem-96-su-doku
 
 # --description--
 
-Sudoku (do japonês, *lugar do número*) é o nome dado a um conceito de desafio popular. A sua origem não é clara, mas o mérito deve ser atribuído a Leonhard Euler, que inventou uma ideia de quebra-cabeça semelhante e muito mais difícil, chamada de Quadrados Latinos. No entanto, o objetivo dos quebra-cabeças de sudoku é substituir as lacunas (ou zeros) em um tabuleiro de 9 por 9, de tal forma que cada linha, coluna e caixa de 3 por 3 contenha cada um dos dígitos de 1 a 9. Abaixo, vemos um exemplo típico de tabuleiro inicial e o tabuleiro solucionado.
+Sudoku (do japonês, *lugar do número*) é o nome dado a um conceito de desafio popular. A sua origem não é clara, mas o mérito deve ser atribuído a Leonhard Euler, que inventou uma ideia de quebra-cabeça semelhante e muito mais difícil, chamada de Quadrados Latinos. No entanto, o objetivo dos quebra-cabeças de sudoku é substituir as lacunas (ou zeros) em um tabuleiro de 9 por 9, de tal forma que cada linha, coluna e caixa de 3 por 3 contenha cada um dos algarismos de 1 a 9. Abaixo, vemos um exemplo típico de tabuleiro inicial e o tabuleiro solucionado.
 
 <div style="margin: auto; background-color: white; padding: 10px; width: 80%; text-align: center;">
   <table border="0" cellpadding="0" cellspacing="0" align="center">
@@ -104,7 +104,7 @@ Um quebra-cabeças de sudoku bem construído tem uma solução única e pode ser
 
 O array `puzzlesArr` contém cadeias de quebra-cabeças de sudoku de várias dificuldades, mas com soluções únicas.
 
-Resolvendo todos os quebra-cabeças de `puzzlesArr`, encontre a soma dos números de 3 algarismos encontrados no canto superior esquerdo de cada tabuleiro solucionado. Por exemplo, 483 é o número de 3 dígitos encontrado no canto superior esquerdo do tabuleiro solucionado acima.
+Resolvendo todos os quebra-cabeças de `puzzlesArr`, encontre a soma dos números de 3 algarismos encontrados no canto superior esquerdo de cada tabuleiro solucionado. Por exemplo, 483 é o número de 3 algarismos encontrado no canto superior esquerdo do tabuleiro solucionado acima.
 
 # --hints--
 

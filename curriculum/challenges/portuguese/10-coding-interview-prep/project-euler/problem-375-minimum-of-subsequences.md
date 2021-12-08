@@ -1,6 +1,6 @@
 ---
 id: 5900f4e41000cf542c50fff5
-title: 'Problem 375: Minimum of subsequences'
+title: 'Problema 375: Mínimo das subsequências'
 challengeType: 5
 forumTopicId: 302037
 dashedName: problem-375-minimum-of-subsequences
@@ -8,30 +8,22 @@ dashedName: problem-375-minimum-of-subsequences
 
 # --description--
 
-Let Sn be an integer sequence produced with the following pseudo-random number generator:
+Considere $S_n$ como uma sequência de números inteiros produzida com o seguinte gerador de números pseudoaleatórios:
 
-S0
+$$\begin{align} S_0 & = 290.797 \\\\ S_{n + 1} & = {S_n}^2\bmod 50.515.093 \end{align}$$
 
-=
+Considere $A(i, j)$ como o mínimo dos números $S_i, S_{i + 1}, \ldots, S_j$ para $i ≤ j$. Considere $M(N) = \sum A(i, j)$ para $1 ≤ i ≤ j ≤ N$.
 
-290797
+Podemos verificar que $M(10) = 432.256.955$ e $M(10.000) = 3.264.567.774.119$.
 
-Sn+1
-
-=
-
-Sn2 mod 50515093
-
-Let A(i, j) be the minimum of the numbers Si, Si+1, ... , Sj for i ≤ j. Let M(N) = ΣA(i, j) for 1 ≤ i ≤ j ≤ N. We can verify that M(10) = 432256955 and M(10 000) = 3264567774119.
-
-Find M(2 000 000 000).
+Encontre $M(2.000.000.000)$.
 
 # --hints--
 
-`euler375()` should return 7435327983715286000.
+`minimumOfSubsequences()` deve retornar `7435327983715286000`.
 
 ```js
-assert.strictEqual(euler375(), 7435327983715286000);
+assert.strictEqual(minimumOfSubsequences(), 7435327983715286000);
 ```
 
 # --seed--
@@ -39,12 +31,12 @@ assert.strictEqual(euler375(), 7435327983715286000);
 ## --seed-contents--
 
 ```js
-function euler375() {
+function minimumOfSubsequences() {
 
   return true;
 }
 
-euler375();
+minimumOfSubsequences();
 ```
 
 # --solutions--

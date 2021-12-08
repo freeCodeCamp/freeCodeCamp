@@ -19,13 +19,14 @@ import { createSelector } from 'reselect';
 import store from 'store';
 
 import { Loader } from '../../../components/helpers';
+import { Themes } from '../../../components/settings/theme';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import {
   ChallengeFiles,
-  DimensionsType,
-  ExtTypes,
-  FileKeyTypes,
-  ResizePropsType,
+  Dimensions,
+  Ext,
+  FileKey,
+  ResizeProps,
   Test
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
@@ -55,29 +56,28 @@ interface EditorProps {
   containerRef: RefObject<HTMLElement>;
   contents: string;
   description: string;
-  dimensions: DimensionsType;
+  dimensions: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  ext: ExtTypes;
-  fileKey: FileKeyTypes;
+  ext: Ext;
+  fileKey: FileKey;
   canFocusOnMountRef: MutableRefObject<boolean>;
   initialEditorContent: string;
   initialExt: string;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
-  isProjectStep: boolean;
   isResetting: boolean;
   output: string[];
-  resizeProps: ResizePropsType;
+  resizeProps: ResizeProps;
   saveEditorContent: () => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
   stopResetting: () => void;
   tests: Test[];
-  theme: string;
+  theme: Themes;
   title: string;
   updateFile: (object: {
-    fileKey: FileKeyTypes;
+    fileKey: FileKey;
     editorValue: string;
     editableRegionBoundaries: number[] | null;
   }) => void;
@@ -112,7 +112,7 @@ const mapStateToProps = createSelector(
     output: string[],
     open,
     isResetting: boolean,
-    { theme = 'default' }: { theme: string },
+    { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
@@ -143,7 +143,10 @@ const modeMap = {
 };
 
 let monacoThemesDefined = false;
-const defineMonacoThemes = (monaco: typeof monacoEditor) => {
+const defineMonacoThemes = (
+  monaco: typeof monacoEditor,
+  options: { usesMultifileEditor: boolean }
+) => {
   if (monacoThemesDefined) {
     return;
   }
@@ -169,7 +172,7 @@ const defineMonacoThemes = (monaco: typeof monacoEditor) => {
     inherit: true,
     // TODO: Use actual color from style-guide
     colors: {
-      'editor.background': '#fff'
+      'editor.background': options.usesMultifileEditor ? '#eee' : '#fff'
     },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
   });
@@ -223,9 +226,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    guides: {
-      indentation: false
-    },
+    renderIndentGuides: false,
     minimap: {
       enabled: false
     },
@@ -259,10 +260,10 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
-    const { challengeFiles, fileKey } = props;
+    const { challengeFiles, fileKey, usesMultifileEditor } = props;
 
     monacoRef.current = monaco;
-    defineMonacoThemes(monaco);
+    defineMonacoThemes(monaco, { usesMultifileEditor });
     // If a model is not provided, then the editor 'owns' the model it creates
     // and will dispose of that model if it is replaced. Since we intend to
     // swap and reuse models, we have to create our own models to prevent
@@ -613,6 +614,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       range,
       options: {
         isWholeLine: true,
+        className: 'editable-region',
         linesDecorationsClassName: 'myEditableLineDecoration',
         stickiness:
           monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges
@@ -991,7 +993,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const { theme } = props;
-  const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
+  const editorTheme = theme === Themes.Night ? 'vs-dark-custom' : 'vs-custom';
   return (
     <Suspense fallback={<Loader timeout={600} />}>
       <span className='notranslate'>

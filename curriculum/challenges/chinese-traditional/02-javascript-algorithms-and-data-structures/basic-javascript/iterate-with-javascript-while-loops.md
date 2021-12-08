@@ -14,9 +14,10 @@ dashedName: iterate-with-javascript-while-loops
 我們將學習的第一種類型的循環稱爲 `while` 循環，當 while 指定的條件爲真，循環纔會執行，反之不執行。
 
 ```js
-var ourArray = [];
-var i = 0;
-while(i < 5) {
+const ourArray = [];
+let i = 0;
+
+while (i < 5) {
   ourArray.push(i);
   i++;
 }
@@ -38,7 +39,7 @@ while(i < 5) {
 assert(code.match(/while/g));
 ```
 
-`myArray` 應該等於 `[5,4,3,2,1,0]`。
+`myArray` 應該等於 `[5, 4, 3, 2, 1, 0]`。
 
 ```js
 assert.deepEqual(myArray, [5, 4, 3, 2, 1, 0]);
@@ -56,17 +57,18 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 // Setup
-var myArray = [];
+const myArray = [];
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [];
-var i = 5;
-while(i >= 0) {
+const myArray = [];
+let i = 5;
+while (i >= 0) {
   myArray.push(i);
   i--;
 }

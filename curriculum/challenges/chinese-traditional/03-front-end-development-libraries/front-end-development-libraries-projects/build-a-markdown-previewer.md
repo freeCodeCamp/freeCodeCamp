@@ -22,7 +22,7 @@ dashedName: build-a-markdown-previewer
 
 **需求 4：** 當在具有 `#editor` 屬性的元素內輸入 GitHub 風格的 markdown 內容時，文本應該以 HTML 的形式，把所鍵入的內容渲染在具有 `#preview` 屬性的元素中（提示：不需要自己解析 Markdown——可以引入一個叫做 Marked 的庫來完成這項工作：<https://cdnjs.com/libraries/marked>）。
 
-**需求 5：** 當 Markdown 預覽器首次加載時，具有 `#editor` 屬性的元素內的默認內容應該包含以下每個種類的至少一段有效的 Markdown 代碼：標題（H1 標籤）、次級標題（H2 標籤）、鏈接、行內代碼、代碼塊、列表、引用塊、圖片、加粗文本。
+**需求 5：** 當 Markdown 預覽器首次加載時，具有 `#editor` 屬性的元素內的默認內容應該包含以下每個種類的至少一段有效的 Markdown 代碼：標題元素（H1 標籤）、次級標題元素（H2 標籤）、鏈接、行內代碼、代碼塊、列表、引用塊、圖片、加粗文本。
 
 **需求 6：** 當 Markdown 預覽器首次加載時，具有 `#editor` 屬性的元素內容應該以 HTML 的形式渲染在具有 `#preview` 屬性的元素中。
 

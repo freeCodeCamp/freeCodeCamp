@@ -8,13 +8,58 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-Neste desafio você deve analisar dados demográficos usando o Pandas. Você receberá um conjunto de dados relativos aos dados demográficos que foram extraídos do banco de dados do censo de 1994.
+Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer).
 
-Você pode acessar [a descrição completa do projeto e o código inicial no Replit](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer).
+Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
-Depois de ir para esse link, faça fork no projeto. Depois que você completar o projeto com base nas instruções do 'README.md', envie o link do seu projeto abaixo.
+- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
+- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
 
-Ainda estamos desenvolvendo a parte instrucional interativa do currículo de análise de dados com Python. Por enquanto, você terá que usar outros recursos para aprender a vencer este desafio.
+# --instructions--
+
+Neste desafio você deve analisar dados demográficos usando o Pandas. Você receberá um conjunto de dados relativos aos dados demográficos que foram extraídos do banco de dados do censo de 1994. Aqui está um exemplo de como os dados ficariam:
+
+```markdown
+|    |   age | workclass        |   fnlwgt | education   |   education-num | marital-status     | occupation        | relationship   | race   | sex    |   capital-gain |   capital-loss |   hours-per-week | native-country   | salary   |
+|---:|------:|:-----------------|---------:|:------------|----------------:|:-------------------|:------------------|:---------------|:-------|:-------|---------------:|---------------:|-----------------:|:-----------------|:---------|
+|  0 |    39 | State-gov        |    77516 | Bachelors   |              13 | Never-married      | Adm-clerical      | Not-in-family  | White  | Male   |           2174 |              0 |               40 | United-States    | <=50K    |
+|  1 |    50 | Self-emp-not-inc |    83311 | Bachelors   |              13 | Married-civ-spouse | Exec-managerial   | Husband        | White  | Male   |              0 |              0 |               13 | United-States    | <=50K    |
+|  2 |    38 | Private          |   215646 | HS-grad     |               9 | Divorced           | Handlers-cleaners | Not-in-family  | White  | Male   |              0 |              0 |               40 | United-States    | <=50K    |
+|  3 |    53 | Private          |   234721 | 11th        |               7 | Married-civ-spouse | Handlers-cleaners | Husband        | Black  | Male   |              0 |              0 |               40 | United-States    | <=50K    |
+|  4 |    28 | Private          |   338409 | Bachelors   |              13 | Married-civ-spouse | Prof-specialty    | Wife           | Black  | Female |              0 |              0 |               40 | Cuba             | <=50K    |
+```
+
+Você deve usar o Pandas para responder as seguintes questões:
+
+- Quantas pessoas de cada raça estão representadas neste dataset? Esta deve ser uma série Pandas com nomes das raças como rótulos de índice. (coluna `race`)
+- Qual é a média de idade dos homens?
+- Qual é a porcentagem de pessoas que têm um diploma de bacharel?
+- Qual é a porcentagem de pessoas com educação superior (`Bachelors`, `Masters`, ou `Doctorate` - graduados, mestres e doutores, respectivamente) que ganham mais de 50 mil?
+- Qual é a porcentagem de pessoas sem educação superior que ganham mais de 50 mil?
+- Qual é o número mínimo de horas que uma pessoa trabalha por semana?
+- Qual é a porcentagem das pessoas que trabalham o número mínimo de horas por semana e que têm um salário superior a 50 mil?
+- Qual país tem a maior porcentagem de pessoas que ganham > 50mil e qual é essa porcentagem?
+- Identifique a ocupação mais popular entre aqueles que ganham > 50 mil na Índia.
+
+Use o código inicial do arquivo `demographic_data_analyzer`. Atualize o código para que todas as variáveis definidas como "None" sejam definidas com o cálculo ou código apropriado. Arredonde todos os números decimais para o décimo mais próximo.
+
+Os testes unitários foram escritos para você no `test_module.py`.
+
+## Desenvolvimento
+
+Para o desenvolvimento, você pode usar `main.py` para testar suas funções. Clique no botão "Run" e `main.py` será executado.
+
+## Testes
+
+Importamos os testes de `test_module.py` em `main.py` para a sua conveniência. Os testes serão executados automaticamente sempre que você clicar no botão "Run".
+
+## Envio
+
+Copie o URL do seu projeto e envie-o para o freeCodeCamp.
+
+## Fonte do dataset
+
+Dua, D. e Graff, C. (2019). [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml). Irvine, CA: University of California, School of Information and Computer Science.
 
 # --hints--
 

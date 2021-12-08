@@ -16,31 +16,33 @@ import Honesty from '../components/settings/honesty';
 import Internet from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
+import { Themes } from '../components/settings/theme';
+import WebhookToken from '../components/settings/webhook-token';
 import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
   hardGoTo as navigate
 } from '../redux';
-import { UserType } from '../redux/prop-types';
+import { User } from '../redux/prop-types';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 
-const { apiLocation } = envData;
+const { apiLocation, showUpcomingChanges } = envData;
 
 // TODO: update types for actions
-interface IShowSettingsProps {
+interface ShowSettingsProps {
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
   navigate: (location: string) => void;
   showLoading: boolean;
   submitNewAbout: () => void;
-  toggleNightMode: (theme: string) => void;
+  toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   updateInternetSettings: () => void;
   updateIsHonest: () => void;
   updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
-  user: UserType;
+  user: User;
   verifyCert: () => void;
   path?: string;
 }
@@ -49,7 +51,7 @@ const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  (showLoading: boolean, user: UserType, isSignedIn) => ({
+  (showLoading: boolean, user: User, isSignedIn) => ({
     showLoading,
     user,
     isSignedIn
@@ -60,7 +62,7 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: (theme: string) => updateUserFlag({ theme }),
+  toggleNightMode: (theme: Themes) => updateUserFlag({ theme }),
   toggleSoundMode: (sound: boolean) => updateUserFlag({ sound }),
   updateInternetSettings: updateUserFlag,
   updateIsHonest: updateUserFlag,
@@ -70,7 +72,7 @@ const mapDispatchToProps = {
   verifyCert
 };
 
-export function ShowSettings(props: IShowSettingsProps): JSX.Element {
+export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const { t } = useTranslation();
   const {
     createFlashMessage,
@@ -198,6 +200,8 @@ export function ShowSettings(props: IShowSettingsProps): JSX.Element {
             username={username}
             verifyCert={verifyCert}
           />
+          {showUpcomingChanges && <Spacer />}
+          {showUpcomingChanges && <WebhookToken />}
           <Spacer />
           <DangerZone />
         </main>

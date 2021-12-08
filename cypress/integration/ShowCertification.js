@@ -1,6 +1,8 @@
+import { SuperBlocks } from '../../config/certification-settings';
+
 const certificationUrl = '/certification/developmentuser/responsive-web-design';
 const projects = {
-  superBlock: 'responsive-web-design',
+  superBlock: SuperBlocks.RespWebDesign,
   block: 'responsive-web-design-projects',
   challenges: [
     {

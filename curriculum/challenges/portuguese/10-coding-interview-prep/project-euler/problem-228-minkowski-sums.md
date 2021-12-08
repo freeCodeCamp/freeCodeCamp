@@ -1,6 +1,6 @@
 ---
 id: 5900f4511000cf542c50ff63
-title: 'Problem 228: Minkowski Sums'
+title: 'Problem 228: Somas de Minkowski'
 challengeType: 5
 forumTopicId: 301871
 dashedName: problem-228-minkowski-sums
@@ -8,34 +8,26 @@ dashedName: problem-228-minkowski-sums
 
 # --description--
 
-<!-- TODO Use MathJax and re-write from projecteuler.net -->
+Considere $S_n$ como o polígono – ou forma – regular de $n$ lados, cujos vértices $v_k (k = 1, 2, \ldots, n)$ têm as coordenadas:
 
-Let Sn be the regular n-sided polygon – or shape – whose vertices
+$$\begin{align} & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\ & y_k = sin(\frac{2k - 1}{n} × 180°) \end{align}$$
 
-vk (k = 1,2,…,n) have coordinates:
+Cada $S_n$ deve ser interpretado como uma forma preenchida que consiste em todos os pontos no perímetro e no interior.
 
-xk = cos( 2k-1/n ×180° )
+A soma de Minkowski, $S + T$, de duas formas $S$ e $T$ é o resultado de adicionar cada ponto em $S$ a cada ponto em $T$, onde a adição dos pontos é realizada através das coordenadas: $(u, v) + (x, y) = (u + x, v + y)$.
 
-yk = sin( 2k-1/n ×180° )
+Por exemplo, a soma de $S_3$ e $S_4$ é a forma de seis lados mostrada em rosa abaixo:
 
-Each Sn is to be interpreted as a filled shape consisting of all points on the perimeter and in the interior.
+<img class="img-responsive center-block" alt="imagem mostrando S_3, S_4 e S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px;" />
 
-The Minkowski sum, S+T, of two shapes S and T is the result of
-
-adding every point in S to every point in T, where point addition is performed coordinate-wise:
-
-(u, v) + (x, y) = (u+x, v+y).
-
-For example, the sum of S3 and S4 is the six-sided shape shown in pink below:
-
-How many sides does S1864 + S1865 + … + S1909 have?
+Quantos lados tem $S_{1864} + S_{1865} + \ldots + S_{1909}$?
 
 # --hints--
 
-`euler228()` should return 86226.
+`minkowskiSums()` deve retornar `86226`.
 
 ```js
-assert.strictEqual(euler228(), 86226);
+assert.strictEqual(minkowskiSums(), 86226);
 ```
 
 # --seed--
@@ -43,12 +35,12 @@ assert.strictEqual(euler228(), 86226);
 ## --seed-contents--
 
 ```js
-function euler228() {
+function minkowskiSums() {
 
   return true;
 }
 
-euler228();
+minkowskiSums();
 ```
 
 # --solutions--

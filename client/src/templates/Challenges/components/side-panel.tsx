@@ -1,17 +1,18 @@
 import React, { useEffect, ReactElement } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Test } from '../../../redux/prop-types';
 
 import { mathJaxScriptLoader } from '../../../utils/script-loaders';
 import { challengeTestsSelector } from '../redux';
-import TestSuite from './Test-Suite';
+import TestSuite from './test-suite';
 import ToolPanel from './tool-panel';
 
 import './side-panel.css';
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
-  (tests: Record<string, unknown>[]) => ({
+  (tests: Test[]) => ({
     tests
   })
 );
@@ -22,7 +23,7 @@ interface SidePanelProps {
   guideUrl: string;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   showToolPanel: boolean;
-  tests?: Record<string, unknown>[];
+  tests: Test[];
   videoUrl: string;
 }
 

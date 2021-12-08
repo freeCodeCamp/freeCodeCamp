@@ -8,7 +8,7 @@ dashedName: problem-53-combinatoric-selections
 
 # --description--
 
-Existem exatamente dez maneiras de selecionar um número de 3 dígitos a partir de um número de 5 dígitos, 12345:
+Existem exatamente dez maneiras de selecionar um número de 3 algarismos a partir de um número de 5 algarismos, 12345:
 
 <div style='text-align: center;'>123, 124, 125, 134, 135, 145, 234, 235, 245 e 345</div>
 

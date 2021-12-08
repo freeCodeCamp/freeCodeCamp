@@ -26,7 +26,7 @@ dashedName: comparison-with-the-strict-equality-operator
 
 # --instructions--
 
-在 `if` 语句中，添加严格相等运算符，这样函数在当 `val` 严格等于 `7` 的时候，会返回 `Equal`。
+在 `if` 语句中使用严格相等运算符，这样当 `val` 严格等于 `7` 时，函数将返回字符串 `Equal`。
 
 # --hints--
 

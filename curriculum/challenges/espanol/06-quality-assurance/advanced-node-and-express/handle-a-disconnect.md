@@ -1,6 +1,6 @@
 ---
 id: 589fc831f9fc0f352b528e76
-title: Handle a Disconnect
+title: Maneja una desconexión
 challengeType: 2
 forumTopicId: 301552
 dashedName: handle-a-disconnect
@@ -8,9 +8,9 @@ dashedName: handle-a-disconnect
 
 # --description--
 
-You may notice that up to now you have only been increasing the user count. Handling a user disconnecting is just as easy as handling the initial connect, except you have to listen for it on each socket instead of on the whole server.
+Puedes observar que hasta ahora sólo has aumentado el recuento de usuarios. Manejar la desconexión de un usuario es tan fácil como manejar la conexión inicial, excepto que tienes que escucharlo en cada socket en lugar de en todo el servidor.
 
-To do this, add another listener inside the existing `'connect'` listener that listens for `'disconnect'` on the socket with no data passed through. You can test this functionality by just logging that a user has disconnected to the console.
+Para ello, añade otro oyente (listener) dentro del oyente existente `'connect'` que escuche `'disconnect'` en el socket sin que pasen datos. Puedes probar esta funcionalidad simplemente registrando que un usuario se ha desconectado en la consola.
 
 ```js
 socket.on('disconnect', () => {
@@ -18,15 +18,15 @@ socket.on('disconnect', () => {
 });
 ```
 
-To make sure clients continuously have the updated count of current users, you should decrease the currentUsers by 1 when the disconnect happens then emit the 'user count' event with the updated count!
+Para asegurarse de que los clientes tienen continuamente el recuento actualizado de los usuarios actuales, ¡debes disminuir el currentUsers en 1 cuando se produce la desconexión y luego emitir el evento 'user count' con el recuento actualizado!
 
-**Note:** Just like `'disconnect'`, all other events that a socket can emit to the server should be handled within the connecting listener where we have 'socket' defined.
+**Nota:** Al igual que `'disconnect'`, todos los demás eventos que un socket puede emitir al servidor deben ser manejados dentro del oyente de conexión donde tenemos definido 'socket'.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa).
+Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa).
 
 # --hints--
 
-Server should handle the event disconnect from a socket.
+El servidor debe manejar la desconexión del evento de un socket.
 
 ```js
 (getUserInput) =>
@@ -40,7 +40,7 @@ Server should handle the event disconnect from a socket.
   );
 ```
 
-Your client should be listening for 'user count' event.
+Tu cliente debe estar escuchando el evento 'user count'.
 
 ```js
 (getUserInput) =>

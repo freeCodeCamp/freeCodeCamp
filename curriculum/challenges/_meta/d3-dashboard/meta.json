@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "d3-dashboard",
-  "order": 4,
+  "order": 3,
   "time": "5 hours",
   "template": "",
   "required": [
@@ -12,7 +12,7 @@
     }
   ],
   "superBlock": "data-visualization",
-  "superOrder": 4,
+  "superOrder": 3,
   "challengeOrder": [
     [
       "5d8a4cfbe6b6180ed9a1c9de",

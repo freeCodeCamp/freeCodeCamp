@@ -2,6 +2,7 @@ import { uniqBy } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 import store from 'store';
 
+import { SuperBlocks } from '../../../config/certification-settings';
 import { actionTypes as challengeTypes } from '../templates/Challenges/redux/action-types';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 import { createAcceptTermsSaga } from './accept-terms-saga';
@@ -18,6 +19,7 @@ import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
 import { createSoundModeSaga } from './sound-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
+import { createWebhookSaga } from './webhook-saga';
 
 export const MainApp = 'app';
 
@@ -75,7 +77,8 @@ export const sagas = [
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
-  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes })
+  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes }),
+  ...createWebhookSaga(actionTypes)
 ];
 
 export const appMount = createAction(actionTypes.appMount);
@@ -167,6 +170,15 @@ export const showCert = createAction(actionTypes.showCert);
 export const showCertComplete = createAction(actionTypes.showCertComplete);
 export const showCertError = createAction(actionTypes.showCertError);
 
+export const postWebhookToken = createAction(actionTypes.postWebhookToken);
+export const postWebhookTokenComplete = createAction(
+  actionTypes.postWebhookTokenComplete
+);
+export const deleteWebhookToken = createAction(actionTypes.deleteWebhookToken);
+export const deleteWebhookTokenComplete = createAction(
+  actionTypes.deleteWebhookTokenComplete
+);
+
 export const updateCurrentChallengeId = createAction(
   actionTypes.updateCurrentChallengeId
 );
@@ -189,6 +201,7 @@ export const stepsToClaimSelector = state => {
     isShowProfile: !user?.profileUI?.isLocked
   };
 };
+export const emailSelector = state => userSelector(state).email;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
@@ -228,6 +241,10 @@ export const shouldRequestDonationSelector = state => {
   // this will mean we have completed 3 or more challenges this browser session
   // and enough challenges overall to not be new
   return completionCount >= 3;
+};
+
+export const webhookTokenSelector = state => {
+  return userSelector(state).webhookToken;
 };
 
 export const userByNameSelector = username => state => {
@@ -277,27 +294,27 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
-        certSlug: 'responsive-web-design'
+        certSlug: SuperBlocks.RespWebDesign
       },
       {
         show: isJsAlgoDataStructCert,
         title: 'JavaScript Algorithms and Data Structures Certification',
-        certSlug: 'javascript-algorithms-and-data-structures'
+        certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         show: isFrontEndLibsCert,
         title: 'Front End Development Libraries Certification',
-        certSlug: 'front-end-development-libraries'
+        certSlug: SuperBlocks.FrontEndDevLibs
       },
       {
         show: is2018DataVisCert,
         title: 'Data Visualization Certification',
-        certSlug: 'data-visualization'
+        certSlug: SuperBlocks.DataVis
       },
       {
         show: isApisMicroservicesCert,
         title: 'Back End Development and APIs Certification',
-        certSlug: 'back-end-development-and-apis'
+        certSlug: SuperBlocks.BackEndDevApis
       },
       {
         show: isQaCertV7,
@@ -629,6 +646,32 @@ export const reducer = handleActions(
               ],
               'id'
             )
+          }
+        }
+      };
+    },
+    [actionTypes.postWebhookTokenComplete]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            webhookToken: payload
+          }
+        }
+      };
+    },
+    [actionTypes.deleteWebhookTokenComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            webhookToken: null
           }
         }
       };

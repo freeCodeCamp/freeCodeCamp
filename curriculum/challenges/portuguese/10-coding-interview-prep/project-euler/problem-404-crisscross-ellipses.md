@@ -1,6 +1,6 @@
 ---
 id: 5900f5001000cf542c510012
-title: 'Problem 404: Crisscross Ellipses'
+title: 'Problema 404: Elipses cruzadas'
 challengeType: 5
 forumTopicId: 302072
 dashedName: problem-404-crisscross-ellipses
@@ -8,22 +8,30 @@ dashedName: problem-404-crisscross-ellipses
 
 # --description--
 
-Ea is an ellipse with an equation of the form x2 + 4y2 = 4a2.
+$E_a$ é uma elipse com a equação na forma $x^2 + 4y^2 = 4a^2$.
 
-Ea' is the rotated image of Ea by θ degrees counterclockwise around the origin O(0, 0) for 0° &lt; θ &lt; 90°.
+$E_a'$ é a imagem rodada de $E_a$ por $θ$ graus no sentido anti-horário ao redor da origem $O(0, 0)$ para $0° &lt; θ &lt; 90°$.
 
-b is the distance to the origin of the two intersection points closest to the origin and c is the distance of the two other intersection points. We call an ordered triplet (a, b, c) a canonical ellipsoidal triplet if a, b and c are positive integers. For example, (209, 247, 286) is a canonical ellipsoidal triplet.
+<img class="img-responsive center-block" alt="elipse E_a e elipse rodada por θ graus E_a'" src="https://cdn.freecodecamp.org/curriculum/project-euler/crisscross-ellipses.gif" style="background-color: white; padding: 10px;" />
 
-Let C(N) be the number of distinct canonical ellipsoidal triplets (a, b, c) for a ≤ N. It can be verified that C(103) = 7, C(104) = 106 and C(106) = 11845.
+$b$ é a distância da origem dos dois pontos de interseção mais próximos da origem e $c$ é a distância dos outros dois pontos de interseção.
 
-Find C(1017).
+Chamaremos um trio ordenado ($a$, $b$, $c$) de trio elipsoidal canônico se $a$, $b$ e $c$ forem números inteiros positivos.
+
+Por exemplo, (209, 247, 286) é um trio elipsoidal canônico.
+
+Considere $C(N)$ como o número de trios elipsoidais canônicos ($a$, $b$, $c$) distintos para $a ≤ N$.
+
+Pode-se verificar que $C({10}^3) = 7$, $C({10}^4) = 106$ e $C({10}^6) = 11.845$.
+
+Encontre $C({10}^{17})$.
 
 # --hints--
 
-`euler404()` should return 1199215615081353.
+`crisscrossEllipses()` deve retornar `1199215615081353`.
 
 ```js
-assert.strictEqual(euler404(), 1199215615081353);
+assert.strictEqual(crisscrossEllipses(), 1199215615081353);
 ```
 
 # --seed--
@@ -31,12 +39,12 @@ assert.strictEqual(euler404(), 1199215615081353);
 ## --seed-contents--
 
 ```js
-function euler404() {
+function crisscrossEllipses() {
 
   return true;
 }
 
-euler404();
+crisscrossEllipses();
 ```
 
 # --solutions--

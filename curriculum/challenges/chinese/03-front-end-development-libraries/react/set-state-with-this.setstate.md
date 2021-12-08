@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-`MyComponent` 应该渲染一个 `h1` 标题。
+`MyComponent` 应该渲染一个 `h1` 标题元素。
 
 ```js
 assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1);
 ```
 
-渲染的 `h1` 标题中应该包含一段文本，这段文本是从组件的 state 中渲染出来的。
+渲染的 `h1` 标题元素应包含从组件状态渲染的文本。
 
 ```js
 async () => {

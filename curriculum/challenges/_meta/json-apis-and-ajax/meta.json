@@ -2,7 +2,7 @@
   "name": "JSON APIs and AJAX",
   "isUpcomingChange": false,
   "dashedName": "json-apis-and-ajax",
-  "order": 2,
+  "order": 1,
   "time": "2 hours",
   "template": "",
   "required": [
@@ -11,7 +11,7 @@
     }
   ],
   "superBlock": "data-visualization",
-  "superOrder": 4,
+  "superOrder": 3,
   "challengeOrder": [
     [
       "587d7fad367417b2b2512be1",

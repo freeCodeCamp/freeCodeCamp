@@ -22,9 +22,9 @@ $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 2}} = \\frac {17}{12} = 1.41666 \\dots$
 
 $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 {2+\\frac 1 2}}} = \\frac {41}{29} = 1.41379 \\dots$
 
-As três próximas iterações são $\\frac {99}{70}$, $\\frac {239}{169}$ e $\\frac {577}{408}$. Mas a oitava iteração, $\\frac {1393}{985}$, é o primeiro exemplo em que o número de dígitos no numerador excede o número de dígitos no denominador.
+As três próximas iterações são $\\frac {99}{70}$, $\\frac {239}{169}$ e $\\frac {577}{408}$. Mas a oitava iteração, $\\frac {1393}{985}$, é o primeiro exemplo em que o número de algarismos no numerador excede o número de algarismos no denominador.
 
-Nas primeiras `n` iterações, quantas frações contém um numerador com mais dígitos que o denominador?
+Nas primeiras `n` iterações, quantas frações contém um numerador com mais algarismos que o denominador?
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4081000cf542c50ff1a
-title: 'Problem 155: Counting Capacitor Circuits'
+title: 'Problema 155: Contagem de circuitos de capacitor'
 challengeType: 5
 forumTopicId: 301786
 dashedName: problem-155-counting-capacitor-circuits
@@ -8,20 +8,26 @@ dashedName: problem-155-counting-capacitor-circuits
 
 # --description--
 
-An electric circuit uses exclusively identical capacitors of the same value C.
+Um circuito elétrico usa exclusivamente capacitores idênticos de mesmo valor C.
 
-The capacitors can be connected in series or in parallel to form sub-units, which can then be connected in series or in parallel with other capacitors or other sub-units to form larger sub-units, and so on up to a final circuit. Using this simple procedure and up to n identical capacitors, we can make circuits having a range of different total capacitances. For example, using up to n=3 capacitors of 60 F each, we can obtain the following 7 distinct total capacitance values:
+Os capacitores podem ser conectados em série ou em paralelo para formar subunidades, as quais podem então ser conectadas em série ou em paralelo com outros capacitores ou outras subunidades para formar subunidades maiores e assim por diante até um circuito final.
 
-If we denote by D(n) the number of distinct total capacitance values we can obtain when using up to n equal-valued capacitors and the simple procedure described above, we have: D(1)=1, D(2)=3, D(3)=7 ... Find D(18). Reminder : When connecting capacitors C1, C2 etc in parallel, the total capacitance is CT = C1 + C2 +...,
+Utilizando este procedimento simples e com n capacitores idênticos, podemos fazer circuitos que tenham um intervalo de capacitâncias total diferentes. Por exemplo, usando até $n = 3$ capacitores de $60 μF$ cada, podemos obter os seguintes 7 valores distintos de capacitância total:
 
-whereas when connecting them in series, the overall capacitance is given by:
+<img class="img-responsive center-block" alt="circuitos de exemplo com até três capacitores, cada um com 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
+
+Se considerarmos $D(n)$ o número de valores de capacitância total distintos que podemos obter ao usar até $n$ capacitores de valor igual e o procedimento simples descrito acima, temos: $D(1) = 1, D(2) = 3, D(3)=7, \ldots$
+
+Encontre $D(18)$.
+
+Lembrete: Ao conectar os capacitores $C_1$, $C_2$ e assim por diante em paralelo, a capacitância total é $C_T = C_1 + C_2 + \cdots$, enquanto, ao conectá-los em série, a capacitância geral é dada por: $\frac{1}{C_T} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots$.
 
 # --hints--
 
-`euler155()` should return 3857447.
+`capacitanceValues()` deve retornar `3857447`.
 
 ```js
-assert.strictEqual(euler155(), 3857447);
+assert.strictEqual(capacitanceValues(), 3857447);
 ```
 
 # --seed--
@@ -29,12 +35,12 @@ assert.strictEqual(euler155(), 3857447);
 ## --seed-contents--
 
 ```js
-function euler155() {
+function capacitanceValues() {
 
   return true;
 }
 
-euler155();
+capacitanceValues();
 ```
 
 # --solutions--

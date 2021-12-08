@@ -2,12 +2,12 @@
   "name": "Rosetta Code",
   "isUpcomingChange": false,
   "dashedName": "rosetta-code",
-  "order": 5,
+  "order": 3,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "coding-interview-prep",
-  "superOrder": 12,
+  "superOrder": 11,
   "challengeOrder": [
     [
       "594810f028c0303b75339acb",

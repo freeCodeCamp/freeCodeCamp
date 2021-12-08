@@ -31,7 +31,6 @@ function createChallengeNode(challenge, reporter) {
     type: challenge.challengeType === 7 ? 'CertificateNode' : 'ChallengeNode'
   };
 
-  /* eslint-disable prefer-object-spread/prefer-object-spread */
   return JSON.parse(
     JSON.stringify(
       Object.assign(

@@ -1,6 +1,6 @@
 ---
 id: 5900f3df1000cf542c50fef1
-title: 'Problem 115: Counting block combinations II'
+title: '问题 115：计数块组合 II'
 challengeType: 5
 forumTopicId: 301741
 dashedName: problem-115-counting-block-combinations-ii
@@ -8,23 +8,23 @@ dashedName: problem-115-counting-block-combinations-ii
 
 # --description--
 
-A row measuring `n` units in length has red blocks with a minimum length of `m` units placed on it, such that any two red blocks (which are allowed to be different lengths) are separated by at least one black square.
+一排长度为 `n` 个单位的行上放置了最小长度为 `m` 个单位的红色块，这样任何两个红色块（允许长度不同）至少被一个黑色方块隔开。
 
-Let the fill-count function, $F(m, n)$, represent the number of ways that a row can be filled.
+让填充计数函数，$F(m, n)$，表示可以填充的行数。
 
-For example, $F(3, 29) = 673135$ and $F(3, 30) = 1089155$.
+例如， $F(3, 29) = 673135$，$F(3, 30) = 1089155$。
 
-That is, for m = 3, it can be seen that n = 30 is the smallest value for which the fill-count function first exceeds one million.
+就是说，对于 m = 3，可以看出 n = 30 是函数结果超过 100 万的最小 n 值。
 
-In the same way, for m = 10, it can be verified that $F(10, 56) = 880711$ and $F(10, 57) = 1148904$, so n = 57 is the least value for which the fill-count function first exceeds one million.
+同样，对于 m = 10，可以验证 $F(10, 56) = 880711$ 和 $F(10, 57) = 1148904$。即函数第一次超过 100 万的 n 最小值为 57。
 
-For m = 50, find the least value of `n` for which the fill-count function first exceeds one million.
+对于 m = 50，找到最小值 `n` 的值，让函数第一次超过 100 万。
 
-**Note:** This is a more difficult version of Problem 114.
+**注意：** 这是问题 114 的一个困难版本。
 
 # --hints--
 
-`countingBlockTwo()` should return `168`.
+`countingBlockTwo()` 应该返回 `168`。
 
 ```js
 assert.strictEqual(countingBlockTwo(), 168);

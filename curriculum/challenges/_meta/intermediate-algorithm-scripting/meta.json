@@ -2,12 +2,12 @@
   "name": "Intermediate Algorithm Scripting",
   "isUpcomingChange": false,
   "dashedName": "intermediate-algorithm-scripting",
-  "order": 9,
+  "order": 8,
   "time": "50 hours",
   "template": "",
   "required": [],
   "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2,
+  "superOrder": 1,
   "challengeOrder": [
     [
       "a3566b1109230028080c9345",

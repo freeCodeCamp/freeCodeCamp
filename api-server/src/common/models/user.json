@@ -325,6 +325,11 @@
       "type": "hasMany",
       "model": "article",
       "foreignKey": "externalId"
+    },
+    "webhookTokens": {
+      "type": "hasMany",
+      "model": "WebhookToken",
+      "foreignKey": "userId"
     }
   },
   "acls": [

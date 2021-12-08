@@ -43,7 +43,7 @@ describe('challenges/superblock/block/challenge redirect', function () {
     cy.title().should(
       'eq',
       // eslint-disable-next-line max-len
-      'Learn Basic HTML and HTML5: Say Hello to HTML Elements | freeCodeCamp.org'
+      'Basic HTML and HTML5: Say Hello to HTML Elements | freeCodeCamp.org'
     );
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(locations.learnChallenge);

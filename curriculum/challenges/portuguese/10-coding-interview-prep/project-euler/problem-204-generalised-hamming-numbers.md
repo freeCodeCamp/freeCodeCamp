@@ -1,6 +1,6 @@
 ---
 id: 5900f4381000cf542c50ff4b
-title: 'Problem 204: Generalised Hamming Numbers'
+title: 'Problema 204: Números de Hamming generalizados'
 challengeType: 5
 forumTopicId: 301845
 dashedName: problem-204-generalised-hamming-numbers
@@ -8,22 +8,22 @@ dashedName: problem-204-generalised-hamming-numbers
 
 # --description--
 
-A Hamming number is a positive number which has no prime factor larger than 5.
+Um número de Hamming é um número positivo que não tem fator primo maior que 5.
 
-So the first few Hamming numbers are 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15.
+Assim, os primeiros números de Hamming são 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 e 15.
 
-There are 1105 Hamming numbers not exceeding 108.
+Há 1105 números de Hamming que não excedem ${10}^8$.
 
-We will call a positive number a generalised Hamming number of type n, if it has no prime factor larger than n. Hence the Hamming numbers are the generalised Hamming numbers of type 5.
+Chamaremos um número positivo de número generalizado de Hamming do tipo $n$, se ele não tiver fator primo maior que $n$. Assim, os números de Hamming são os números generalizados de Hamming do tipo 5.
 
-How many generalised Hamming numbers of type 100 are there which don't exceed 109?
+Quantos números de Hamming generalizados do tipo 100 existem que não excedem ${10}^9$?
 
 # --hints--
 
-`euler204()` should return 2944730.
+`generalisedHammingNumbers()` deve retornar `2944730`.
 
 ```js
-assert.strictEqual(euler204(), 2944730);
+assert.strictEqual(generalisedHammingNumbers(), 2944730);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler204(), 2944730);
 ## --seed-contents--
 
 ```js
-function euler204() {
+function generalisedHammingNumbers() {
 
   return true;
 }
 
-euler204();
+generalisedHammingNumbers();
 ```
 
 # --solutions--

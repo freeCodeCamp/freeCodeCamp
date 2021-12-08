@@ -1,7 +1,7 @@
 ---
 id: 5900f4151000cf542c50ff28
 title: >-
-  Problem 169: Exploring the number of different ways a number can be expressed as a sum of powers of 2
+  Problema 169: Explorar o número de maneiras diferentes pelas quais um número pode ser expresso como uma soma de potências de 2
 challengeType: 5
 forumTopicId: 301803
 dashedName: >-
@@ -10,26 +10,20 @@ dashedName: >-
 
 # --description--
 
-Define f(0)=1 and f(n) to be the number of different ways n can be expressed as a sum of integer powers of 2 using each power no more than twice.
+Defina $f(0)=1$ e $f(n)$ como o número de diferentes maneiras pelas quais $n$ pode ser expresso como uma soma de potências inteiras de 2 usando cada potência não mais que duas vezes.
 
-For example, f(10)=5 since there are five different ways to express 10:
+Por exemplo, $f(10)=5$ já que há cinco maneiras diferentes de expressar 10:
 
-1 + 1 + 8
+$$\begin{align} & 1 + 1 + 8 \\\\ & 1 + 1 + 4 + 4 \\\\ & 1 + 1 + 2 + 2 + 4 \\\\ & 2 + 4 + 4 \\\\ & 2 + 8 \end{align}$$
 
-1 + 1 + 4 + 41 + 1 + 2 + 2 + 4
-
-2 + 4 + 4
-
-2 + 8
-
-What is f(1025)?
+Qual é $f({10}^{25})$?
 
 # --hints--
 
-`euler169()` should return 178653872807.
+`numberOfWaysToExpress()` deve retornar `178653872807`.
 
 ```js
-assert.strictEqual(euler169(), 178653872807);
+assert.strictEqual(numberOfWaysToExpress(), 178653872807);
 ```
 
 # --seed--
@@ -37,12 +31,12 @@ assert.strictEqual(euler169(), 178653872807);
 ## --seed-contents--
 
 ```js
-function euler169() {
+function numberOfWaysToExpress() {
 
   return true;
 }
 
-euler169();
+numberOfWaysToExpress();
 ```
 
 # --solutions--

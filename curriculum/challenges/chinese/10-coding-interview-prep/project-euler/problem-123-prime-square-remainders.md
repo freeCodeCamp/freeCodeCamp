@@ -1,6 +1,6 @@
 ---
 id: 5900f3e71000cf542c50fefa
-title: 'Problem 123: Prime square remainders'
+title: '问题 123：素数平方余数'
 challengeType: 5
 forumTopicId: 301750
 dashedName: problem-123-prime-square-remainders
@@ -8,20 +8,20 @@ dashedName: problem-123-prime-square-remainders
 
 # --description--
 
-Let pn be the nth prime: 2, 3, 5, 7, 11, ..., and let r be the remainder when (pn−1)n + (pn+1)n is divided by pn2.
+令 $p_n$ 为第 $n$ 个素数：2, 3, 5, 7, 11, ...，并令 $r$ 为当 ${(p_n−1)}^n + {(p_n+ 1)}^n$ 除以 ${p_n}^2$ 的余数。
 
-For example, when n = 3, p3 = 5, and 43 + 63 = 280 ≡ 5 mod 25.
+例如，当 $n = 3, p_3 = 5$，$4^3 + 6^3 = 280 ≡ 5\\ mod\\ 25$。
 
-The least value of n for which the remainder first exceeds 109 is 7037.
+余数超过 $10^9$ 的 $n$ 的最小值是 7037。
 
-Find the least value of n for which the remainder first exceeds 1010.
+求余数超过 $10^{10}$ 时的 $n$ 的最小值。
 
 # --hints--
 
-`euler123()` should return 21035.
+`primeSquareRemainders()` 应该返回 `21035`。
 
 ```js
-assert.strictEqual(euler123(), 21035);
+assert.strictEqual(primeSquareRemainders(), 21035);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler123(), 21035);
 ## --seed-contents--
 
 ```js
-function euler123() {
+function primeSquareRemainders() {
 
   return true;
 }
 
-euler123();
+primeSquareRemainders();
 ```
 
 # --solutions--

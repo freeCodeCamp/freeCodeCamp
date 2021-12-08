@@ -2,7 +2,7 @@
   "name": "Data Visualization with D3",
   "isUpcomingChange": false,
   "dashedName": "data-visualization-with-d3",
-  "order": 1,
+  "order": 0,
   "time": "5 hours",
   "template": "",
   "required": [
@@ -11,7 +11,7 @@
     }
   ],
   "superBlock": "data-visualization",
-  "superOrder": 4,
+  "superOrder": 3,
   "challengeOrder": [
     ["587d7fa6367417b2b2512bc2", "Add Document Elements with D3"],
     ["587d7fa6367417b2b2512bc3", "Select a Group of Elements with D3"],

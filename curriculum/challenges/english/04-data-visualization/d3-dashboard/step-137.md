@@ -25,12 +25,7 @@ After this, you will be able to use `data[index]` to get that item in the array.
 test-text
 
 ```js
-const script = $('.dashboard').siblings('script')[1].innerHTML;
-assert(
-  /var index = data.findIndex\(function \(d\) \{\s*return (year === d\.year|d.year === year);\s*\}\);/g.test(
-    script
-  )
-);
+assert.match(code,/const index = data.findIndex\(\(?d\)? => (year === d\.year|d.year === year)\s*\)/g);
 ```
 
 # --seed--

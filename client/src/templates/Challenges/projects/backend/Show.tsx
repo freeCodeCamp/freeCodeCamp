@@ -14,17 +14,17 @@ import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
 import { isSignedInSelector } from '../../../../redux';
 import {
-  ChallengeMetaType,
-  ChallengeNodeType,
+  ChallengeMeta,
+  ChallengeNode,
   Test
 } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/Challenge-Description';
 import Hotkeys from '../../components/Hotkeys';
-import TestSuite from '../../components/Test-Suite';
 import ChallengeTitle from '../../components/challenge-title';
 import CompletionModal from '../../components/completion-modal';
 import HelpModal from '../../components/help-modal';
 import Output from '../../components/output';
+import TestSuite from '../../components/test-suite';
 import {
   challengeMounted,
   challengeTestsSelector,
@@ -73,7 +73,7 @@ const mapDispatchToActions = {
 // Types
 interface BackEndProps {
   challengeMounted: (arg0: string) => void;
-  data: { challengeNode: ChallengeNodeType };
+  data: { challengeNode: ChallengeNode };
   description: string;
   executeChallenge: (options: { showCompletionModal: boolean }) => void;
   forumTopicId: number;
@@ -84,12 +84,12 @@ interface BackEndProps {
   isSignedIn: boolean;
   output: string[];
   pageContext: {
-    challengeMeta: ChallengeMetaType;
+    challengeMeta: ChallengeMeta;
   };
   t: TFunction;
   tests: Test[];
   title: string;
-  updateChallengeMeta: (arg0: ChallengeMetaType) => void;
+  updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
 }
 
@@ -203,7 +203,9 @@ class BackEnd extends Component<BackEndProps> {
       updateSolutionFormValues
     } = this.props;
 
-    const blockNameTitle = `${blockName} - ${title}`;
+    const blockNameTitle = `${t(
+      `intro:${superBlock}.blocks.${block}.title`
+    )} - ${title}`;
 
     return (
       <Hotkeys
