@@ -4,7 +4,7 @@ Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeC
 
 ### What do I need to know to contribute to the codebase?
 
-freeCodeCamp runs on a modern Javascript stack. If you're interested in contributing to our codebase, you will need some familiarity with Javascript and some of the technologies we use like Node.js, MongoDB, OAuth 2.0, React, Gatsby, and Webpack.
+freeCodeCamp runs on a modern JavaScript stack. If you're interested in contributing to our codebase, you will need some familiarity with JavaScript and some of the technologies we use like Node.js, MongoDB, OAuth 2.0, React, Gatsby, and Webpack.
 
 ### Can I translate freeCodeCamp's resources?
 
