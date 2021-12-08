@@ -95,123 +95,123 @@ describe('<certification />', () => {
 const defaultTestProps = {
   completedChallenges: [
     {
-      id: 'bd7156d8c242eddfaeb5bd13',
+      challengeId: 'bd7156d8c242eddfaeb5bd13',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7155d8c242eddfaeb5bd13',
+      challengeId: 'bd7155d8c242eddfaeb5bd13',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7154d8c242eddfaeb5bd13',
+      challengeId: 'bd7154d8c242eddfaeb5bd13',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7153d8c242eddfaeb5bd13',
+      challengeId: 'bd7153d8c242eddfaeb5bd13',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7168d8c242eddfaeb5bd13',
+      challengeId: 'bd7168d8c242eddfaeb5bd13',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7178d8c242eddfaeb5bd13',
+      challengeId: 'bd7178d8c242eddfaeb5bd13',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7188d8c242eddfaeb5bd13',
+      challengeId: 'bd7188d8c242eddfaeb5bd13',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7198d8c242eddfaeb5bd13',
+      challengeId: 'bd7198d8c242eddfaeb5bd13',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7108d8c242eddfaeb5bd13',
+      challengeId: 'bd7108d8c242eddfaeb5bd13',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7158d8c443edefaeb5bdef',
+      challengeId: 'bd7158d8c443edefaeb5bdef',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7158d8c443edefaeb5bdff',
+      challengeId: 'bd7158d8c443edefaeb5bdff',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7158d8c443edefaeb5bd0e',
+      challengeId: 'bd7158d8c443edefaeb5bd0e',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7158d8c443edefaeb5bdee',
+      challengeId: 'bd7158d8c443edefaeb5bdee',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7158d8c443edefaeb5bd0f',
+      challengeId: 'bd7158d8c443edefaeb5bd0f',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7158d8c443eddfaeb5bdef',
+      challengeId: 'bd7158d8c443eddfaeb5bdef',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7158d8c443eddfaeb5bdff',
+      challengeId: 'bd7158d8c443eddfaeb5bdff',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7158d8c443eddfaeb5bd0e',
+      challengeId: 'bd7158d8c443eddfaeb5bd0e',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7158d8c443eddfaeb5bd0f',
+      challengeId: 'bd7158d8c443eddfaeb5bd0f',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7158d8c443eddfaeb5bdee',
+      challengeId: 'bd7158d8c443eddfaeb5bdee',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e444147903586ffb414c94c',
+      challengeId: '5e444147903586ffb414c94c',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e444147903586ffb414c94d',
+      challengeId: '5e444147903586ffb414c94d',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e444147903586ffb414c94e',
+      challengeId: '5e444147903586ffb414c94e',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e444147903586ffb414c94f',
+      challengeId: '5e444147903586ffb414c94f',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e44414f903586ffb414c950',
+      challengeId: '5e44414f903586ffb414c950',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e46f7e5ac417301a38fb928',
+      challengeId: '5e46f7e5ac417301a38fb928',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e46f7e5ac417301a38fb929',
+      challengeId: '5e46f7e5ac417301a38fb929',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e46f7f8ac417301a38fb92a',
+      challengeId: '5e46f7f8ac417301a38fb92a',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e46f802ac417301a38fb92b',
+      challengeId: '5e46f802ac417301a38fb92b',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e4f5c4b570f7e3a4949899f',
+      challengeId: '5e4f5c4b570f7e3a4949899f',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: 'bd7157d8c242eddfaeb5bd13',
+      challengeId: 'bd7157d8c242eddfaeb5bd13',
       completedDate: 1554272923799,
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     }
@@ -249,16 +249,16 @@ const propsForOnlySolution = {
   ...defaultTestProps,
   completedChallenges: [
     {
-      id: '5e46f802ac417301a38fb92b',
+      challengeId: '5e46f802ac417301a38fb92b',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
-      id: '5e4f5c4b570f7e3a4949899f',
+      challengeId: '5e4f5c4b570f7e3a4949899f',
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp1',
       githubLink: 'https://github.com/freeCodeCamp/freeCodeCamp2'
     },
     {
-      id: '5e46f7f8ac417301a38fb92a',
+      challengeId: '5e46f7f8ac417301a38fb92a',
       challengeFiles: [
         {
           contents,

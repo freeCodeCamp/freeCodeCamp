@@ -162,12 +162,13 @@ function TimelineInner({
   }
 
   function renderCompletion(completed: CompletedChallenge): JSX.Element {
-    const { id, challengeFiles, githubLink, solution } = completed;
+    const { challengeId, challengeFiles, githubLink, solution } = completed;
     const completedDate = new Date(completed.completedDate);
     // @ts-expect-error idToNameMap is not a <string, string> Map...
-    const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
+    const { challengeTitle, challengePath, certPath } =
+      idToNameMap.get(challengeId);
     return (
-      <tr className='timeline-row' key={id}>
+      <tr className='timeline-row' key={challengeId}>
         <td>
           {certPath ? (
             <Link
@@ -181,7 +182,9 @@ function TimelineInner({
             <Link to={challengePath as string}>{challengeTitle}</Link>
           )}
         </td>
-        <td>{renderViewButton(id, challengeFiles, githubLink, solution)}</td>
+        <td>
+          {renderViewButton(challengeId, challengeFiles, githubLink, solution)}
+        </td>
         <td className='text-center'>
           <time dateTime={completedDate.toISOString()}>
             {completedDate.toLocaleString([localeCode, 'en-US'], {
@@ -272,7 +275,7 @@ function useIdToNameMap(): Map<string, string> {
             fields {
               slug
             }
-            id
+            challengeId
             title
           }
         }
@@ -290,14 +293,17 @@ function useIdToNameMap(): Map<string, string> {
     ({
       node: {
         // @ts-expect-error Graphql needs typing
-        id,
+        challengeId,
         // @ts-expect-error Graphql needs typing
         title,
         // @ts-expect-error Graphql needs typing
         fields: { slug }
       }
     }) => {
-      idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
+      idToNameMap.set(challengeId, {
+        challengeTitle: title,
+        challengePath: slug
+      });
     }
   );
   return idToNameMap;
@@ -311,7 +317,7 @@ const Timeline = (props: TimelineProps): JSX.Element => {
   const { sortedTimeline, totalPages } = useMemo(() => {
     const sortedTimeline = reverse(
       sortBy(completedMap, ['completedDate']).filter(challenge => {
-        return idToNameMap.has(challenge.id);
+        return idToNameMap.has(challenge.challengeId);
       })
     );
     const totalPages = Math.ceil(sortedTimeline.length / ITEMS_PER_PAGE);

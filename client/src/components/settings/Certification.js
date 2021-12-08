@@ -28,7 +28,7 @@ import './certification.css';
 const propTypes = {
   completedChallenges: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      challengeId: PropTypes.string,
       solution: PropTypes.string,
       githubLink: PropTypes.string,
       challengeType: PropTypes.number,
@@ -163,7 +163,7 @@ export class CertificationSettings extends Component {
     const { completedChallenges, t } = this.props;
     const completedProject = find(
       completedChallenges,
-      ({ id }) => projectId === id
+      ({ challengeId }) => projectId === challengeId
     );
     if (!completedProject) {
       return null;
@@ -292,13 +292,13 @@ export class CertificationSettings extends Component {
         : createFlashMessage(honestyInfoMessage);
     };
     return projectsMap[certName]
-      .map(({ link, title, id }) => (
-        <tr className='project-row' key={id}>
+      .map(({ link, title, challengeId }) => (
+        <tr className='project-row' key={challengeId}>
           <td className='project-title col-sm-8'>
             <Link to={link}>{title}</Link>
           </td>
           <td className='project-solution col-sm-4'>
-            {this.getProjectSolution(id, title)}
+            {this.getProjectSolution(challengeId, title)}
           </td>
         </tr>
       ))

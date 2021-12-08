@@ -45,7 +45,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     } = props;
     const completedProject = find(
       completedChallenges,
-      ({ id }) => projectId === id
+      ({ challengeId }) => projectId === challengeId
     ) as CompletedChallenge;
 
     if (!completedProject) {

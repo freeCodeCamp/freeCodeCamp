@@ -303,6 +303,9 @@ ${getFullPath('english')}
     time,
     usesMultifileEditor
   } = meta;
+  // TODO: rename the ids in the frontmatters, so we never use id at all
+  challenge.challengeId = challenge.id;
+  delete challenge.id;
   challenge.block = dasherize(blockName);
   challenge.order = order;
   challenge.superOrder = superOrder;

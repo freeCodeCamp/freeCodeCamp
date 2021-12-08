@@ -30,7 +30,9 @@ const mapStateToProps = (
     completedChallengesSelector,
     (isExpanded: boolean, completedChallenges: CompletedChallenge[]) => ({
       isExpanded,
-      completedChallengeIds: completedChallenges.map(({ id }) => id)
+      completedChallengeIds: completedChallenges.map(
+        ({ challengeId }) => challengeId
+      )
     })
   )(state as Record<string, unknown>);
 };
@@ -102,9 +104,9 @@ export class Block extends Component<BlockProps> {
 
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
-      const { id } = challenge;
+      const { challengeId } = challenge;
       const isCompleted = completedChallengeIds.some(
-        (completedChallengeId: string) => completedChallengeId === id
+        (completedChallengeId: string) => completedChallengeId === challengeId
       );
       if (isCompleted) {
         completedCount++;

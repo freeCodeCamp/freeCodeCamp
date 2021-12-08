@@ -308,12 +308,12 @@ function populateTestsForLang({ lang, challenges, meta }) {
           // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function () {
             const index = meta[dashedBlockName].challengeOrder.findIndex(
-              arr => arr[0] === challenge.id
+              arr => arr[0] === challenge.challengeId
             );
 
             if (index < 0) {
               throw new AssertionError(
-                `Cannot find ID "${challenge.id}" in meta.json file`
+                `Cannot find ID "${challenge.challengeId}" in meta.json file`
               );
             }
           });
@@ -324,9 +324,9 @@ function populateTestsForLang({ lang, challenges, meta }) {
             if (result.error) {
               throw new AssertionError(result.error);
             }
-            const { id, title, block, dashedName } = challenge;
+            const { challengeId, title, block, dashedName } = challenge;
             const pathAndTitle = `${block}/${dashedName}`;
-            mongoIds.check(id, title);
+            mongoIds.check(challengeId, title);
             challengeTitles.check(title, pathAndTitle);
           });
 
@@ -344,7 +344,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
               '5a94fe7769fb03452672e463',
               '5a24c314108439a4d4036148'
             ];
-            if (specialCases.includes(challenge.id)) return;
+            if (specialCases.includes(challenge.challengeId)) return;
             if (
               lang === 'english' ||
               !isAuditedCert(lang, challenge.superBlock)

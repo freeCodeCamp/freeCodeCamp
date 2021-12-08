@@ -77,7 +77,7 @@ interface BackEndProps {
   description: string;
   executeChallenge: (options: { showCompletionModal: boolean }) => void;
   forumTopicId: number;
-  id: string;
+  challengeId: string;
   initConsole: () => void;
   initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
@@ -165,7 +165,7 @@ class BackEnd extends Component<BackEndProps> {
       challengeType,
       helpCategory
     });
-    challengeMounted(challengeMeta.id);
+    challengeMounted(challengeMeta.challengeId);
   }
 
   handleSubmit({

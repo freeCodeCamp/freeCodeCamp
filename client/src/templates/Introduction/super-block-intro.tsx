@@ -141,7 +141,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     if (isSignedIn) {
       // see if currentChallenge is in this superBlock
       const currentChallengeEdge = edges.find(
-        edge => edge.node.id === currentChallengeId
+        edge => edge.node.challengeId === currentChallengeId
       );
 
       return currentChallengeEdge
@@ -272,7 +272,7 @@ export const query = graphql`
             slug
             blockName
           }
-          id
+          challengeId
           block
           challengeType
           title

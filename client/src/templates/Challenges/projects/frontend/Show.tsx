@@ -87,7 +87,7 @@ class Project extends Component<ProjectProps> {
       challengeType,
       helpCategory
     });
-    challengeMounted(challengeMeta.id);
+    challengeMounted(challengeMeta.challengeId);
     this._container.focus();
   }
 
@@ -112,7 +112,7 @@ class Project extends Component<ProjectProps> {
         challengeType,
         helpCategory
       });
-      challengeMounted(challengeMeta.id);
+      challengeMounted(challengeMeta.challengeId);
     }
   }
 

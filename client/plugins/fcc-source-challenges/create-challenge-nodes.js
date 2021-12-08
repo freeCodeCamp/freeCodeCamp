@@ -41,7 +41,8 @@ function createChallengeNode(challenge, reporter) {
           internal,
           sourceInstanceName: 'challenge'
         },
-        challenge
+        challenge,
+        { id: crypto.randomUUID() }
       )
     )
   );

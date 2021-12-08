@@ -14,14 +14,14 @@ import { updateSuccessMessage } from './';
 
 export const CURRENT_CHALLENGE_KEY = 'currentChallengeId';
 
-export function* currentChallengeSaga({ payload: id }) {
-  store.set(CURRENT_CHALLENGE_KEY, id);
+export function* currentChallengeSaga({ payload: challengeId }) {
+  store.set(CURRENT_CHALLENGE_KEY, challengeId);
   const isSignedIn = yield select(isSignedInSelector);
   if (isSignedIn) {
     const update = {
       endpoint: '/update-my-current-challenge',
       payload: {
-        currentChallengeId: id
+        currentChallengeId: challengeId
       }
     };
     try {

@@ -273,7 +273,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       challengeType,
       helpCategory
     });
-    challengeMounted(challengeMeta.id);
+    challengeMounted(challengeMeta.challengeId);
   }
 
   componentWillUnmount() {

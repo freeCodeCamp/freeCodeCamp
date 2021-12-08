@@ -67,7 +67,8 @@ interface SessionUser {
 
 type ChallengeFilesForFiles = {
   files: Array<Omit<ChallengeFile, 'fileKey'> & { key: string }>;
-} & Omit<CompletedChallenge, 'challengeFiles'>;
+  id: string;
+} & Omit<CompletedChallenge, 'challengeFiles' | 'challengeId'>;
 
 type ApiSessionResponse = Omit<SessionUser, 'user'>;
 type ApiUser = {
@@ -98,7 +99,8 @@ function parseApiResponseToClientUser(data: ApiUser): UserResponse {
               challengeFiles: curr.files.map(({ key: fileKey, ...file }) => ({
                 ...file,
                 fileKey
-              }))
+              })),
+              challengeId: curr.id
             }
           ];
         },

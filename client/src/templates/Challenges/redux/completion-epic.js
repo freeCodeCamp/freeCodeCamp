@@ -62,11 +62,11 @@ function submitModern(type, state) {
     }
 
     if (type === actionTypes.submitChallenge) {
-      const { id, block } = challengeMetaSelector(state);
+      const { challengeId, block } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
       const challengeInfo = {
-        id
+        id: challengeId
       };
       // Only send files to server, if it is a JS project
       if (block === 'javascript-algorithms-and-data-structures-projects') {
@@ -91,9 +91,9 @@ function submitProject(type, state) {
   }
 
   const { solution, githubLink } = projectFormValuesSelector(state);
-  const { id, challengeType } = challengeMetaSelector(state);
+  const { challengeId, challengeType } = challengeMetaSelector(state);
   const { username } = userSelector(state);
-  const challengeInfo = { id, challengeType, solution };
+  const challengeInfo = { id: challengeId, challengeType, solution };
   if (challengeType === challengeTypes.backEndProject) {
     challengeInfo.githubLink = githubLink;
   }
@@ -111,12 +111,12 @@ function submitBackendChallenge(type, state) {
   const tests = challengeTestsSelector(state);
   if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
     if (type === actionTypes.submitChallenge) {
-      const { id } = challengeMetaSelector(state);
+      const { challengeId } = challengeMetaSelector(state);
       const { username } = userSelector(state);
       const {
         solution: { value: solution }
       } = projectFormValuesSelector(state);
-      const challengeInfo = { id, solution };
+      const challengeInfo = { id: challengeId, solution };
 
       const update = {
         endpoint: '/backend-challenge-completed',

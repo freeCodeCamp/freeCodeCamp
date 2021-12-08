@@ -12,7 +12,9 @@ import { completedChallengesSelector, executeGA } from '../../../redux';
 
 const mapStateToProps = state => {
   return createSelector(completedChallengesSelector, completedChallenges => ({
-    completedChallenges: completedChallenges.map(({ id }) => id)
+    completedChallenges: completedChallenges.map(
+      ({ challengeId }) => challengeId
+    )
   }))(state);
 };
 

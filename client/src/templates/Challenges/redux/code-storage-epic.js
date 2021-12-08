@@ -25,8 +25,8 @@ const legacyPrefixes = [
 ];
 const legacyPostfix = 'Val';
 
-function getCode(id) {
-  const code = store.get(id);
+function getCode(challengeId) {
+  const code = store.get(challengeId);
   return code ? code : null;
 }
 
@@ -75,8 +75,8 @@ function clearCodeEpic(action$, state$) {
   return action$.pipe(
     ofType(appTypes.submitComplete, actionTypes.resetChallenge),
     tap(() => {
-      const { id } = challengeMetaSelector(state$.value);
-      store.remove(id);
+      const { challengeId } = challengeMetaSelector(state$.value);
+      store.remove(challengeId);
     }),
     ignoreElements()
   );
@@ -89,13 +89,15 @@ function saveCodeEpic(action$, state$) {
     filter(() => !isCodeLockedSelector(state$.value)),
     map(action => {
       const state = state$.value;
-      const { id } = challengeMetaSelector(state);
+      const { challengeId } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
       try {
-        store.set(id, challengeFiles);
+        store.set(challengeId, challengeFiles);
         const fileKey = challengeFiles[0].fileKey;
         if (
-          store.get(id).find(challengeFile => challengeFile.fileKey === fileKey)
+          store
+            .get(challengeId)
+            .find(challengeFile => challengeFile.fileKey === fileKey)
             .contents !==
           challengeFiles.find(challengeFile => challengeFile.fileKey).contents
         ) {
@@ -130,7 +132,7 @@ function loadCodeEpic(action$, state$) {
       const challengeFiles = challengeFilesSelector(state$.value);
       return challengeFiles?.length > 0;
     }),
-    switchMap(({ payload: id }) => {
+    switchMap(({ payload: challengeId }) => {
       let finalFiles;
       const state = state$.value;
       const challenge = challengeMetaSelector(state);
@@ -139,7 +141,7 @@ function loadCodeEpic(action$, state$) {
       const invalidForLegacy = fileKeys.length > 1;
       const { title: legacyKey } = challenge;
 
-      const codeFound = getCode(id);
+      const codeFound = getCode(challengeId);
       if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
           let foundChallengeFile = {};

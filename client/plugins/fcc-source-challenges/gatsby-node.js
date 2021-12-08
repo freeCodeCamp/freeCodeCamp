@@ -42,7 +42,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
           .then(challenge => {
             reporter.info(
               `
-File changed at ${filePath}, replacing challengeNode id ${challenge.id}
+File changed at ${filePath}, replacing challengeNode challengeId ${challenge.challengeId}
               `
             );
             createVisibleChallenge(challenge);
@@ -76,7 +76,7 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
             .then(challenge => {
               reporter.info(
                 `
-File changed at ${relativePath}, replacing challengeNode id ${challenge.id}
+File changed at ${relativePath}, replacing challengeNode challengeId ${challenge.challengeId}
             `
               );
               createVisibleChallenge(challenge);

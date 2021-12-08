@@ -108,7 +108,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       challengeType,
       helpCategory
     });
-    challengeMounted(challengeMeta.id);
+    challengeMounted(challengeMeta.challengeId);
     this._container?.focus();
   }
 
@@ -133,7 +133,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
         challengeType,
         helpCategory
       });
-      challengeMounted(challengeMeta.id);
+      challengeMounted(challengeMeta.challengeId);
     }
   }
 

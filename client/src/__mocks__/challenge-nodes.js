@@ -4,7 +4,7 @@ const mockChallengeNodes = [
       slug: '/super-block-one/block-a/challenge-one',
       blockName: 'Block A'
     },
-    id: 'a',
+    challengeId: 'a',
     block: 'block-a',
     title: 'Challenge One',
     isPrivate: false,
@@ -16,7 +16,7 @@ const mockChallengeNodes = [
       slug: '/super-block-one/block-a/challenge-two',
       blockName: 'Block A'
     },
-    id: 'b',
+    challengeId: 'b',
     block: 'block-a',
     title: 'Challenge Two',
     isPrivate: false,
@@ -28,7 +28,7 @@ const mockChallengeNodes = [
       slug: '/super-block-one/block-b/challenge-one',
       blockName: 'Block B'
     },
-    id: 'c',
+    challengeId: 'c',
     block: 'block-b',
     title: 'Challenge One',
     isPrivate: false,
@@ -41,7 +41,7 @@ const mockChallengeNodes = [
       blockName: 'Block B'
     },
 
-    id: 'd',
+    challengeId: 'd',
     block: 'block-b',
     title: 'Challenge Two',
     isPrivate: false,
@@ -53,7 +53,7 @@ const mockChallengeNodes = [
       slug: '/super-block-one/block-c/challenge-one',
       blockName: 'Block C'
     },
-    id: 'e',
+    challengeId: 'e',
     block: 'block-c',
     title: 'Challenge One',
     isPrivate: true,
@@ -65,7 +65,7 @@ const mockChallengeNodes = [
       slug: '/super-block-two/block-a/challenge-one',
       blockName: 'Block A'
     },
-    id: 'f',
+    challengeId: 'f',
     block: 'block-a',
     title: 'Challenge One',
     isPrivate: false,
@@ -77,7 +77,7 @@ const mockChallengeNodes = [
       slug: '/super-block-two/block-a/challenge-two',
       blockName: 'Block A'
     },
-    id: 'g',
+    challengeId: 'g',
     block: 'block-a',
     title: 'Challenge Two',
     isPrivate: false,
@@ -89,7 +89,7 @@ const mockChallengeNodes = [
       slug: '/super-block-two/block-b/challenge-one',
       blockName: 'Block B'
     },
-    id: 'h',
+    challengeId: 'h',
     block: 'block-b',
     title: 'Challenge One',
     isPrivate: false,
@@ -101,7 +101,7 @@ const mockChallengeNodes = [
       slug: '/super-block-two/block-b/challenge-two',
       blockName: 'Block B'
     },
-    id: 'i',
+    challengeId: 'i',
     block: 'block-b',
     title: 'Challenge Two',
     isPrivate: false,
@@ -113,7 +113,7 @@ const mockChallengeNodes = [
       slug: '/super-block-three/block-a/challenge-one',
       blockName: 'Block A'
     },
-    id: 'j',
+    challengeId: 'j',
     block: 'block-a',
     title: 'Challenge One',
     isPrivate: false,
@@ -125,7 +125,7 @@ const mockChallengeNodes = [
       slug: '/super-block-three/block-c/challenge-two',
       blockName: 'Block C'
     },
-    id: 'k',
+    challengeId: 'k',
     block: 'block-c',
     title: 'Challenge Two',
     isPrivate: false,

@@ -80,7 +80,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                 fields {
                   slug
                 }
-                id
+                challengeId
                 order
                 required {
                   link

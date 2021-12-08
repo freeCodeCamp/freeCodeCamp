@@ -66,7 +66,7 @@ exports.createChallengePages = function (createPage) {
       required = [],
       template,
       challengeType,
-      id
+      challengeId
     } = challenge;
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
@@ -90,7 +90,7 @@ exports.createChallengePages = function (createPage) {
             index,
             allChallengeEdges
           ),
-          id
+          challengeId
         },
         projectPreview: getProjectPreviewConfig(challenge, allChallengeEdges),
         slug
@@ -112,10 +112,10 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
   const lastChallengeFiles = sortChallengeFiles(
     lastChallenge.challengeFiles ?? []
   );
-  const projectPreviewChallengeFiles = lastChallengeFiles.map((file, id) =>
+  const projectPreviewChallengeFiles = lastChallengeFiles.map((file, i) =>
     createPoly({
       ...file,
-      contents: solutionToLastChallenge[id]?.contents ?? file.contents
+      contents: solutionToLastChallenge[i]?.contents ?? file.contents
     })
   );
 

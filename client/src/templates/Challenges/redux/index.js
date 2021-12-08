@@ -23,7 +23,7 @@ const initialState = {
   challengeMeta: {
     superBlock: '',
     block: '',
-    id: '',
+    challengeId: '',
     nextChallengePath: '/',
     prevChallengePath: '/',
     challengeType: -1
@@ -135,11 +135,13 @@ export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
 export const completedChallengesIds = state =>
-  completedChallengesSelector(state).map(node => node.id);
+  completedChallengesSelector(state).map(node => node.challengeId);
 export const isChallengeCompletedSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
-  const { id: currentChallengeId } = challengeMetaSelector(state);
-  return completedChallenges.some(({ id }) => id === currentChallengeId);
+  const { challengeId: currentChallengeId } = challengeMetaSelector(state);
+  return completedChallenges.some(
+    ({ challengeId }) => challengeId === currentChallengeId
+  );
 };
 export const isCodeLockedSelector = state => state[ns].isCodeLocked;
 export const isCompletionModalOpenSelector = state =>

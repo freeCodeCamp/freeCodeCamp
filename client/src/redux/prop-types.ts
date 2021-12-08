@@ -8,7 +8,7 @@ export const UserPropType = PropTypes.shape({
   about: PropTypes.string,
   completedChallenges: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      challengeId: PropTypes.string,
       solution: PropTypes.string,
       githubLink: PropTypes.string,
       challengeType: PropTypes.number,
@@ -42,7 +42,7 @@ export const UserPropType = PropTypes.shape({
   points: PropTypes.number,
   portfolio: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      challengeId: PropTypes.string.isRequired,
       title: PropTypes.string,
       url: PropTypes.string,
       image: PropTypes.string,
@@ -139,7 +139,7 @@ export type ChallengeNode = {
   guideUrl: string;
   head: string[];
   helpCategory: string;
-  id: string;
+  challengeId: string;
   instructions: string;
   isComingSoon: boolean;
   internal?: {
@@ -289,7 +289,7 @@ export type ClaimedCertifications = {
 };
 
 export type CompletedChallenge = {
-  id: string;
+  challengeId: string;
   solution?: string | null;
   githubLink?: string;
   challengeType?: number;
@@ -302,7 +302,7 @@ export type FileKey = 'scriptjs' | 'indexhtml' | 'stylescss';
 
 export type ChallengeMeta = {
   block: string;
-  id: string;
+  challengeId: string;
   introPath: string;
   nextChallengePath: string;
   prevChallengePath: string;

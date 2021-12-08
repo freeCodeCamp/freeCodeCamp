@@ -286,7 +286,7 @@ const useCurrentBlockIds = (blockName: string) => {
             fields {
               blockName
             }
-            id
+            challengeId
           }
         }
       }
@@ -296,7 +296,7 @@ const useCurrentBlockIds = (blockName: string) => {
   const currentBlockIds = edges
     .filter(edge => edge.node.fields.blockName === blockName)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    .map(edge => edge.node.id);
+    .map(edge => edge.node.challengeId);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return currentBlockIds;
 };
