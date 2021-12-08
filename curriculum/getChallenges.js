@@ -305,7 +305,8 @@ ${getFullPath('english')}
   } = meta;
   challenge.block = dasherize(blockName);
   challenge.order = order;
-  challenge.superOrder = getSuperOrder(superBlock);
+  const superOrder = getSuperOrder(superBlock);
+  if (superOrder !== null) challenge.superOrder = superOrder;
   challenge.superBlock = superBlock;
   challenge.challengeOrder = challengeOrder;
   challenge.isPrivate = challenge.isPrivate || isPrivate;
