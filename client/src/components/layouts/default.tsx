@@ -1,7 +1,7 @@
 import fontawesome from '@fortawesome/fontawesome';
 import React, { Component, ReactNode } from 'react';
 import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
+import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -24,7 +24,7 @@ import {
   userSelector,
   executeGA
 } from '../../redux';
-import { UserFetchState, UserType } from '../../redux/prop-types';
+import { UserFetchState, User } from '../../redux/prop-types';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -52,7 +52,7 @@ const mapStateToProps = createSelector(
     isOnline: boolean,
     isServerOnline: boolean,
     fetchState: UserFetchState,
-    user: UserType
+    user: User
   ) => ({
     isSignedIn,
     flashMessage,
@@ -85,7 +85,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   children: ReactNode;
   pathname: string;
   showFooter?: boolean;
-  t(selector: string): string;
+  t: TFunction;
   useTheme?: boolean;
 }
 
