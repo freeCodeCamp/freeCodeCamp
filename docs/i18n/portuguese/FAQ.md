@@ -2,51 +2,63 @@
 
 Leia nosso ["Guia de como contribuir com código aberto"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). É uma referência ampla para quem contribui com projetos pela primeira vez. E inclui muitas dicas de como contribuir para código aberto.
 
-### Posso traduzir os recursos do freeCodeCamp?
+### What do I need to know to contribute to the codebase?
 
-Sim. Você pode contribuir com qualquer um dos mais de 30 idiomas disponíveis em nossa plataforma de tradução.
+freeCodeCamp runs on a modern JavaScript stack. If you're interested in contributing to our codebase, you will need some familiarity with JavaScript and some of the technologies we use like Node.js, MongoDB, OAuth 2.0, React, Gatsby, and Webpack.
 
-Temos traduções enviadas por usuários ao vivo em alguns idiomas. Pretendemos traduzir o freeCodeCamp para vários idiomas. Você pode ler mais sobre isso em nosso [anúncio aqui](https://www.freecodecamp.org/news/world-language-translation-effort).
+### Can I translate freeCodeCamp's resources?
 
-Se você está interessado em contribuir com as traduções, certifique-se de [ler este guia](how-to-translate-files.md) primeiro.
+Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
 
-### Como posso relatar um novo erro?
+We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
 
-Se você acha que encontrou um erro, primeiro leia o artigo ["Socorro, encontrei um erro"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) e siga suas instruções.
+If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
 
-Se você está confiante de que é um novo erro, vá em frente e crie uma nova issue no GitHub. Certifique-se de incluir o máximo de informações possível para que possamos reproduzir o erro. Temos um modelo predefinido de issue para ajudar você.
+### Can I contribute articles to freeCodeCamp News or videos to freeCodeCamp's YouTube channel?
 
-Observe que essas issues do GitHub são para discussões e questões relacionadas ao código – não para obter ajuda sobre como aprender a programar. Sempre que houver dúvidas, você deve [procurar por assistência no fórum](https://forum.freecodecamp.org) antes de criar uma issue no GitHub.
+Yes - you can contribute to our publication blog and YouTube channel.
 
-### Como posso relatar um problema de segurança?
+If you're interested in writing articles for freeCodeCamp News, please visit this [publication guide](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/). In addition, please read our [style guide](https://www.freecodecamp.org/news/developer-news-style-guide/) as this will help you write stronger and more effective articles.
 
-Não crie issues no GitHub para problemas de segurança. Em vez disso, envie um e-mail para `security@freecodecamp.org` e nós vamos investigar isso imediatamente.
+To help us make educational videos for our YouTube channel, you can follow the [YouTube channel guide here](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/).
 
-### Eu sou estudante. Posso trabalhar em um recurso para créditos acadêmicos?
+### How can I report a new bug?
 
-Sim. Note, porém, que não podemos nos comprometer com nenhum cronograma ou documentação que possa ser um requisito da sua faculdade ou universidade. Recebemos muitos pull-requests e contribuições em código de desenvolvedores voluntários e respeitamos o tempo e esforço deles. Em respeito a todos os outros contribuidores, não daremos nenhuma prioridade especial a nenhum PR só por ser relacionado à escola.
+If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
-Pedimos que você planeje com antecedência e que trabalhe em suas contribuições de código tendo isso em mente.
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-### O que significam estas diferentes etiquetas marcadas em issues?
+Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
 
-Os responsáveis pelo código fazem a [triagem](https://en.wikipedia.org/wiki/Software_bug#Bug_management) das issues e pull requests tendo como base a prioridade, importância e outros fatores. Você pode [encontrar um glossário completo dos significados aqui](https://github.com/freecodecamp/freecodecamp/labels).
+### How can I report a security issue?
 
-### Por onde começar se quero ajudar em uma issue?
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-Você deve consultar issues [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) ou [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) para saber o que está disponível para ajuda.
+### I am a student. Can I work on a feature for academic credits?
+
+Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
+
+We request you to plan ahead and work on code contributions with this in mind.
+
+### What do these different labels that are tagged on issues mean?
+
+The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
+
+### Where do I start if I want to work on an issue?
+
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
 > [!TIP] Você não precisa pedir permissão para ajudar com issues marcadas como **`help wanted`**. No entanto, issues com a etiqueta **`first timers only`** são issues especiais projetadas para pessoas que não contribuíram antes para a base de código freeCodeCamp.
 
-### Encontrei um erro de digitação. Devo relatar uma issue antes de poder fazer um pull request?
+### I found a typo. Should I report an issue before I can make a pull request?
 
-Para erros de digitação e outras mudanças em palavras, você pode diretamente abrir pull requests sem criar uma issue antes. Por favor certifique-se de mencionar detalhes na descrição do pull request para nos ajudar a entender e revisar sua contribuição – mesmo se for uma mudança pequena.
+For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
-Crie uma issue se quiser discutir grandes aspectos da base do código ou currículo.
+Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
 
-### Como posso receber uma issue atribuída a mim?
+### How can I get an issue assigned to me?
 
-Tipicamente, não atribuímos issues para ninguém além de contribuidores de longo prazo. Ao invés disso, seguimos a política abaixo para sermos justos com todos:
+We typically do not assign issues to anyone other than long-time contributors. Instead, we follow the below policy to be fair to everyone:
 
 1. É muito provável que façamos o merge do primeiro pull request que resolve a issue.
 2. No caso de vários colaboradores abrindo um pull request para a mesma issue, ao mesmo tempo, daremos prioridade ao pull request que melhor resolve a issue. Algumas coisas que consideramos:
@@ -57,19 +69,19 @@ Tipicamente, não atribuímos issues para ninguém além de contribuidores de lo
    - Você seguiu a checklist do pull request?
    - Você deu um título significativo ao seu pull request?
 
-### Estou com dificuldade em algo que não está incluído na documentação.
+### I am stuck on something that is not included in this documentation.
 
-**Fique à vontade para pedir ajuda em:**
+**Feel free to ask for help in:**
 
 - A categoria `Contributors` do [fórum da nossa comunidade](https://forum.freecodecamp.org/c/contributors).
 - O canal `#Contributors` em nosso [servidor](https://chat.freecodecamp.org/channel/contributors).
 
-Estamos animados em ajudar você a contribuir com qualquer tópico que desejar. Se você nos perguntar algo relacionado às issues, vamos ficar felizes em esclarecer. Certifique-se de pesquisar sua pergunta antes de postar uma nova.
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 
-Agradecemos antecipadamente por ser educado(a) e paciente. Lembre-se – esta comunidade é feita principalmente de voluntários.
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
-### Assistência adicional
+### Additional Assistance
 
-Se você tiver dúvidas sobre a stack, a arquitetura do código, as traduções ou qualquer outra coisa, pode entrar em contato com nossa equipe [no fórum](https://forum.freecodecamp.org/g/team).
+If you have queries about the stack, architecture of the codebase, translations, or anything else feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 
-**Você pode enviar um e-mail para nossa equipe de desenvolvimento: `dev[at]freecodecamp.org`**
+**You can email our developer staff at: `dev[at]freecodecamp.org`**
