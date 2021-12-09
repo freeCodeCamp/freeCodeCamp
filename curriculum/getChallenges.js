@@ -296,6 +296,7 @@ ${getFullPath('english')}
   );
   const {
     name: blockName,
+    hasEditableBoundaries,
     order,
     isPrivate,
     required = [],
@@ -304,6 +305,7 @@ ${getFullPath('english')}
     usesMultifileEditor
   } = meta;
   challenge.block = dasherize(blockName);
+  challenge.hasEditableBoundaries = !!hasEditableBoundaries;
   challenge.order = order;
   const superOrder = getSuperOrder(superBlock);
   if (superOrder !== null) challenge.superOrder = superOrder;

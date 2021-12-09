@@ -2,6 +2,7 @@
   "name": "Learn CSS Animation by Building a Ferris Wheel",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "learn-css-animation-by-building-a-ferris-wheel",
   "order": 15,
   "time": "5 hours",

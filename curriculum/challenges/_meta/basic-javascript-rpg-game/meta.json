@@ -2,6 +2,7 @@
   "name": "Basic JavaScript RPG Game",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "basic-javascript-rpg-game",
   "order": 10,
   "time": "2 hours",

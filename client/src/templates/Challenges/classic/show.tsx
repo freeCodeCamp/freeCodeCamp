@@ -398,20 +398,12 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     );
   }
 
-  hasEditableBoundaries() {
-    const { challengeFiles } = this.props;
-    return (
-      challengeFiles?.some(
-        challengeFile => challengeFile.editableRegionBoundaries?.length === 2
-      ) ?? false
-    );
-  }
-
   render() {
     const {
       block,
       fields: { blockName },
       forumTopicId,
+      hasEditableBoundaries,
       superBlock,
       title,
       usesMultifileEditor,
@@ -443,7 +435,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             <MobileLayout
               editor={this.renderEditor()}
               guideUrl={getGuideUrl({ forumTopicId, title })}
-              hasEditableBoundaries={this.hasEditableBoundaries()}
+              hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
@@ -461,7 +453,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               block={block}
               challengeFiles={challengeFiles}
               editor={this.renderEditor()}
-              hasEditableBoundaries={this.hasEditableBoundaries()}
+              hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
@@ -504,6 +496,7 @@ export const query = graphql`
         block
         title
         description
+        hasEditableBoundaries
         instructions
         notes
         removeComments
