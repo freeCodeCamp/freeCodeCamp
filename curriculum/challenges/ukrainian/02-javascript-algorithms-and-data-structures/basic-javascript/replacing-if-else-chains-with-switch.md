@@ -1,0 +1,157 @@
+---
+id: 56533eb9ac21ba0edf2244e0
+title: Заміна "if else" ланцюжка ключем
+challengeType: 1
+videoUrl: 'https://scrimba.com/c/c3JE8fy'
+forumTopicId: 18266
+dashedName: replacing-if-else-chains-with-switch
+---
+
+# --description--
+
+Якщо ви маєте багато опцій, з яких можете вибирати, то твердження `switch` може бути легшим для написання, ніж багатоланцюгові `if`/`else if` твердження. Наступне:
+
+```js
+if (val === 1) {
+  answer = "a";
+} else if (val === 2) {
+  answer = "b";
+} else {
+  answer = "c";
+}
+```
+
+можна замінити цим:
+
+```js
+switch(val) {
+  case 1:
+    answer = "a";
+    break;
+  case 2:
+    answer = "b";
+    break;
+  default:
+    answer = "c";
+}
+```
+
+# --instructions--
+
+Змініть ланцюжкові `if`/`else if` твердження на `switch` твердження.
+
+# --hints--
+
+Вам не слід використовувати будь-які `else` твердження будь-де в редакторі
+
+```js
+assert(!/else/g.test(code));
+```
+
+Вам не слід використовувати будь-які `if` твердження будь-де в редакторі
+
+```js
+assert(!/if/g.test(code));
+```
+
+Ви повинні мати хоча б чотири `break` твердження
+
+```js
+assert(code.match(/break/g).length >= 4);
+```
+
+`chainToSwitch("bob")` має бути рядком `Marley`
+
+```js
+assert(chainToSwitch('bob') === 'Marley');
+```
+
+`chainToSwitch(42)` має бути рядком `The Answer`
+
+```js
+assert(chainToSwitch(42) === 'The Answer');
+```
+
+`chainToSwitch(1)` має бути рядком `There is no #1`
+
+```js
+assert(chainToSwitch(1) === 'There is no #1');
+```
+
+`chainToSwitch(99)` має бути рядком `Missed me by this much!`
+
+```js
+assert(chainToSwitch(99) === 'Missed me by this much!');
+```
+
+`chainToSwitch(7)` має бути рядком `Ate Nine`
+
+```js
+assert(chainToSwitch(7) === 'Ate Nine');
+```
+
+`chainToSwitch("John")` має бути `""` (пустим рядком)
+
+```js
+assert(chainToSwitch('John') === '');
+```
+
+`chainToSwitch(156)` має бути `""` (пустим рядком)
+
+```js
+assert(chainToSwitch(156) === '');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function chainToSwitch(val) {
+  let answer = "";
+  // Only change code below this line
+
+  if (val === "bob") {
+    answer = "Marley";
+  } else if (val === 42) {
+    answer = "The Answer";
+  } else if (val === 1) {
+    answer = "There is no #1";
+  } else if (val === 99) {
+    answer = "Missed me by this much!";
+  } else if (val === 7) {
+    answer = "Ate Nine";
+  }
+
+  // Only change code above this line
+  return answer;
+}
+
+chainToSwitch(7);
+```
+
+# --solutions--
+
+```js
+function chainToSwitch(val) {
+  let answer = "";
+
+  switch(val) {
+    case "bob":
+      answer = "Marley";
+      break;
+    case 42:
+      answer = "The Answer";
+      break;
+    case 1:
+      answer = "There is no #1";
+      break;
+    case 99:
+      answer = "Missed me by this much!";
+      break;
+    case 7:
+      answer = "Ate Nine";
+  }
+  return answer;
+}
+```
