@@ -143,18 +143,30 @@ function loadCodeEpic(action$, state$) {
       if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
           let foundChallengeFile = {};
+          // TODO: this is a hack to support the old fileKeys delete after sufficient
+          // time has passed
+          let hack = null;
           if (Array.isArray(codeFound)) {
             foundChallengeFile = codeFound.find(
               x => x.fileKey === challengeFile.fileKey
             );
+            hack = codeFound.find(x => x.fileKey === 'indexjs');
           } else {
             // TODO: After sufficient time, remove parsing of old code-storage format
             // This was pushed to production with https://github.com/freeCodeCamp/freeCodeCamp/pull/43023
             foundChallengeFile = codeFound[challengeFile.fileKey];
+            hack = codeFound['indexjs'];
           }
           let isCodeFound;
+          hack.fileKey = 'scriptjs';
+          hack.history = ['script.js'];
+          hack.name = 'script';
+          hack.path = 'script.js';
           if (foundChallengeFile) {
             isCodeFound = Object.keys(foundChallengeFile).length > 0;
+          } else if (hack) {
+            isCodeFound = Object.keys(hack).length > 0;
+            foundChallengeFile = hack;
           } else {
             // the stored code is not valid, so we should delete it.
             store.remove(id);
