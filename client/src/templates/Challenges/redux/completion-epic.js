@@ -62,16 +62,20 @@ function submitModern(type, state) {
     }
 
     if (type === actionTypes.submitChallenge) {
-      const { id } = challengeMetaSelector(state);
+      const { id, block } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
       const challengeInfo = {
         id,
-        files: challengeFiles.reduce(
+        files: undefined
+      };
+      // Only send files to server, if it is a JS project
+      if (block === 'javascript-algorithms-and-data-structures-projects') {
+        challengeInfo.files = challengeFiles.reduce(
           (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
           []
-        )
-      };
+        );
+      }
       const update = {
         endpoint: '/modern-challenge-completed',
         payload: challengeInfo
