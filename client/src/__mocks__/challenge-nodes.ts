@@ -1,4 +1,17 @@
-const mockChallengeNodes = [
+interface MockChallengeNodes {
+  fields: {
+    slug: string;
+    blockName: string;
+  };
+  id: string;
+  block: string;
+  title: string;
+  isPrivate: boolean;
+  superBlock: string;
+  dashedName: string;
+}
+
+const mockChallengeNodes: MockChallengeNodes[] = [
   {
     fields: {
       slug: '/super-block-one/block-a/challenge-one',
