@@ -548,7 +548,7 @@ function createVerifyCanClaim(certTypeIds, app) {
         .flatMap(challenge => {
           const certName = certTypeTitleMap[certType];
           const { tests = [] } = challenge;
-          const { isHonest, completedChallenges } = user;
+          const { isHonest = false, completedChallenges } = user;
           const isProjectsCompleted = canClaim(tests, completedChallenges);
           let result = 'incomplete-requirements';
           let status = false;
