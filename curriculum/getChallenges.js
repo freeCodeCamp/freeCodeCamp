@@ -172,6 +172,13 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
 };
 
 async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
+  // TODO: this is a hack to avoid fetching the meta for the certifications.
+  // Instead, the certifications should be moved from the challenges directory
+  // and handled separately.
+  if (superBlock === 'certifications') {
+    curriculum[superBlock].blocks[blockName] = { challenges: [] };
+    return;
+  }
   const metaPath = path.resolve(
     __dirname,
     `./challenges/_meta/${blockName}/meta.json`
@@ -199,10 +206,10 @@ async function buildSuperBlocks({ path, fullPath }, curriculum) {
   return walk(fullPath, curriculum, { depth: 1, type: 'directories' }, cb);
 }
 
-async function buildChallenges({ path }, curriculum, lang) {
+async function buildChallenges({ path: filePath }, curriculum, lang) {
   // path is relative to getChallengesDirForLang(lang)
-  const block = getBlockNameFromPath(path);
-  const { name: superBlock } = superBlockInfoFromPath(path);
+  const block = getBlockNameFromPath(filePath);
+  const { name: superBlock } = superBlockInfoFromPath(filePath);
   let challengeBlock;
 
   // TODO: this try block and process exit can all go once errors terminate the
@@ -219,8 +226,10 @@ async function buildChallenges({ path }, curriculum, lang) {
     process.exit(1);
   }
   const { meta } = challengeBlock;
-
-  const challenge = await createChallenge(challengesDir, path, lang, meta);
+  const isCert = path.extname(filePath) === '.yml';
+  const challenge = isCert
+    ? await createCertification(challengesDir, filePath, lang)
+    : await createChallenge(challengesDir, filePath, lang, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
@@ -234,6 +243,17 @@ async function parseTranslation(transPath, dict, lang, parse = parseMD) {
   return challengeType !== 11 && challengeType !== 3
     ? translateCommentsInChallenge(translatedChal, lang, dict)
     : translatedChal;
+}
+
+async function createCertification(basePath, filePath, lang) {
+  function getFullPath(pathLang) {
+    return path.resolve(__dirname, basePath, pathLang, filePath);
+  }
+  const { name: superBlock } = superBlockInfoFromPath(filePath);
+  const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
+  return useEnglish
+    ? parseCert(getFullPath('english'))
+    : parseCert(getFullPath(lang));
 }
 
 async function createChallenge(basePath, filePath, lang, maybeMeta) {
@@ -264,18 +284,11 @@ ${getFullPath('english')}
   // while the auditing is ongoing, we default to English for un-audited certs
   // once that's complete, we can revert to using isEnglishChallenge(fullPath)
   const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
-  const isCert = path.extname(filePath) === '.yml';
-  let challenge;
 
-  if (isCert) {
-    challenge = await (useEnglish
-      ? parseCert(getFullPath('english'))
-      : parseCert(getFullPath(lang)));
-  } else {
-    challenge = await (useEnglish
-      ? parseMD(getFullPath('english'))
-      : parseTranslation(getFullPath(lang), COMMENT_TRANSLATIONS, lang));
-  }
+  const challenge = await (useEnglish
+    ? parseMD(getFullPath('english'))
+    : parseTranslation(getFullPath(lang), COMMENT_TRANSLATIONS, lang));
+
   const challengeOrder = findIndex(
     meta.challengeOrder,
     ([id]) => id === challenge.id
@@ -363,3 +376,4 @@ function getBlockNameFromPath(filePath) {
 exports.hasEnglishSource = hasEnglishSource;
 exports.parseTranslation = parseTranslation;
 exports.createChallenge = createChallenge;
+exports.createCertification = createCertification;
