@@ -2,6 +2,10 @@
 
 Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
+### What do I need to know to contribute to the codebase?
+
+freeCodeCamp runs on a modern JavaScript stack. If you're interested in contributing to our codebase, you will need some familiarity with JavaScript and some of the technologies we use like Node.js, MongoDB, OAuth 2.0, React, Gatsby, and Webpack.
+
 ### Can I translate freeCodeCamp's resources?
 
 Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
@@ -9,6 +13,14 @@ Yes - You can contribute to any of the 30+ languages we have enabled on our tran
 We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
 
 If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
+
+### Can I contribute articles to freeCodeCamp News or videos to freeCodeCamp's YouTube channel?
+
+Yes - you can contribute to our publication blog and YouTube channel.
+
+If you're interested in writing articles for freeCodeCamp News, please visit this [publication guide](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/). In addition, please read our [style guide](https://www.freecodecamp.org/news/developer-news-style-guide/) as this will help you write stronger and more effective articles.
+
+To help us make educational videos for our YouTube channel, you can follow the [YouTube channel guide here](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/).
 
 ### How can I report a new bug?
 
