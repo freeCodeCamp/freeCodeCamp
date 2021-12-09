@@ -158,10 +158,13 @@ function loadCodeEpic(action$, state$) {
             hack = codeFound['indexjs'];
           }
           let isCodeFound;
-          hack.fileKey = 'scriptjs';
-          hack.history = ['script.js'];
-          hack.name = 'script';
-          hack.path = 'script.js';
+          if (hack) {
+            hack.fileKey = 'scriptjs';
+            hack.history = ['script.js'];
+            hack.name = 'script';
+            hack.path = 'script.js';
+          }
+
           if (foundChallengeFile) {
             isCodeFound = Object.keys(foundChallengeFile).length > 0;
           } else if (hack) {
