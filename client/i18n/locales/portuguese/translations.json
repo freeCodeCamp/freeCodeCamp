@@ -287,6 +287,10 @@
       "info": "Informações",
       "code": "Código",
       "tests": "Testes",
+      "restart": "Restart",
+      "restart-step": "Restart Step",
+      "console": "Console",
+      "notes": "Notes",
       "preview": "Pré-visualizar"
     },
     "help-translate": "Ainda estamos traduzindo as certificações a seguir.",

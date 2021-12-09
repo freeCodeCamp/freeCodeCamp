@@ -287,6 +287,10 @@
       "info": "信息",
       "code": "编程",
       "tests": "测试",
+      "restart": "Restart",
+      "restart-step": "Restart Step",
+      "console": "Console",
+      "notes": "Notes",
       "preview": "预览"
     },
     "help-translate": "我们仍然在翻译以下证书。",
