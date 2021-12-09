@@ -2,6 +2,7 @@ import { first } from 'lodash-es';
 import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
+import { challengeTypes } from '../../../../utils/challenge-types';
 import {
   ChallengeFile,
   ChallengeFiles,
@@ -15,6 +16,7 @@ type Pane = { flex: number };
 interface DesktopLayoutProps {
   block: string;
   challengeFiles: ChallengeFiles;
+  challengeType: number;
   editor: ReactElement | null;
   hasEditableBoundaries: boolean;
   hasNotes: boolean;
@@ -69,6 +71,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const {
     block,
+    challengeType,
     resizeProps,
     instructions,
     editor,
@@ -84,11 +87,15 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
-  const displayPreview = projectBasedChallenge
-    ? showPreview && hasPreview
-    : hasPreview;
+  const isMultiFileCertProject =
+    challengeType === challengeTypes.multiFileCertProject;
+  const displayPreview =
+    projectBasedChallenge || isMultiFileCertProject
+      ? showPreview && hasPreview
+      : hasPreview;
   const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
-  const displayConsole = projectBasedChallenge ? showConsole : true;
+  const displayConsole =
+    projectBasedChallenge || isMultiFileCertProject ? showConsole : true;
   const {
     codePane,
     editorPane,
@@ -100,7 +107,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout'>
-      {projectBasedChallenge && (
+      {(projectBasedChallenge || isMultiFileCertProject) && (
         <ActionRow
           block={block}
           hasNotes={hasNotes}
