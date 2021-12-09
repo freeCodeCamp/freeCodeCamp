@@ -1,4 +1,4 @@
-import { uniqBy } from 'lodash-es';
+import { uniqBy, omit } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 import store from 'store';
 
@@ -627,7 +627,13 @@ export const reducer = handleActions(
       }
     }),
     [actionTypes.submitComplete]: (state, { payload }) => {
-      let submittedchallenges = [{ ...payload, completedDate: Date.now() }];
+      let submittedchallenges = [
+        {
+          ...omit(payload, 'id'),
+          completedDate: Date.now(),
+          challengeId: payload.id
+        }
+      ];
       if (payload.challArray) {
         submittedchallenges = payload.challArray;
       }
@@ -644,7 +650,7 @@ export const reducer = handleActions(
                 ...submittedchallenges,
                 ...state.user[appUsername].completedChallenges
               ],
-              'id'
+              'challengeId'
             )
           }
         }
@@ -680,6 +686,7 @@ export const reducer = handleActions(
       ...state,
       currentChallengeId: payload
     }),
+    // TODO: I think we can get rid of this - it doesn't seem to be used
     [settingsTypes.updateLegacyCertComplete]: (state, { payload }) => {
       const { appUsername } = state;
       return {
@@ -691,7 +698,7 @@ export const reducer = handleActions(
             ...state.user[appUsername],
             completedChallenges: uniqBy(
               [...state.user[appUsername].completedChallenges, payload],
-              'id'
+              'challengeId'
             )
           }
         }
