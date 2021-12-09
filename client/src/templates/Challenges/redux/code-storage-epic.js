@@ -121,6 +121,8 @@ function saveCodeEpic(action$, state$) {
   );
 }
 
+// TODO: Ignored temporarily while we update the code storage UI
+// eslint-disable-next-line no-unused-vars
 function loadCodeEpic(action$, state$) {
   return action$.pipe(
     ofType(actionTypes.challengeMounted),
@@ -173,4 +175,4 @@ function loadCodeEpic(action$, state$) {
   );
 }
 
-export default combineEpics(saveCodeEpic, loadCodeEpic, clearCodeEpic);
+export default combineEpics(saveCodeEpic, clearCodeEpic);
