@@ -32,10 +32,10 @@ const Intro = ({
   onAlertClick
 }: IntroProps): JSX.Element => {
   const { t } = useTranslation();
-  const buttonVariation = (email: string | undefined): string => {
+  const titleVariation = (email: string | undefined): string => {
     if (!email || emailToABVariant(email).isAVariant)
-      return t('buttons.donate');
-    return t('buttons.support-our-nonprofit');
+      return t('learn.season-greetings');
+    return t('learn.season-greetings-fcc');
   };
   if (pending && !complete) {
     return (
@@ -80,7 +80,7 @@ const Intro = ({
         )}
         <Alert bsStyle='info' className='annual-donation-alert'>
           <p>
-            <b>{t('learn.season-greetings')}</b>
+            <b>{titleVariation(email)}</b>
           </p>
           <p>{t('learn.if-getting-value')}</p>
           <hr />
@@ -92,7 +92,7 @@ const Intro = ({
               sameTab={false}
               to='/donate'
             >
-              {buttonVariation(email)}
+              {t('buttons.support-our-nonprofit')}
             </Link>
           </p>
         </Alert>
