@@ -265,6 +265,8 @@ function populateTestsForLang({ lang, challenges, meta }) {
       ...Object.values(meta)
         .map(el => el.superBlock)
         .filter(el => !superBlocksUnderDevelopment.includes(el))
+        // certificates should not be superblocks and do not need to be sorted
+        .filter(el => el === 'certificate')
     ]);
     superBlocks.forEach(superBlock => {
       const filteredMeta = Object.values(meta)
@@ -275,9 +277,6 @@ function populateTestsForLang({ lang, challenges, meta }) {
       }
       it(`${superBlock} should have the same order in every meta`, function () {
         const firstOrder = getSuperOrder(filteredMeta[0].superBlock);
-        if (firstOrder === null) {
-          return;
-        }
         assert.isNumber(firstOrder);
         assert.isTrue(
           filteredMeta.every(el => getSuperOrder(el.superBlock) === firstOrder),
