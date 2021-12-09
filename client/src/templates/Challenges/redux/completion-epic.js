@@ -66,8 +66,7 @@ function submitModern(type, state) {
       const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
       const challengeInfo = {
-        id,
-        files: undefined
+        id
       };
       // Only send files to server, if it is a JS project
       if (block === 'javascript-algorithms-and-data-structures-projects') {
