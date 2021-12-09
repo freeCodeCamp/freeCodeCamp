@@ -1,4 +1,5 @@
 import cookies from 'browser-cookies';
+import { omit } from 'lodash-es';
 import envData from '../../../config/env.json';
 import { FlashMessageArg } from '../components/Flash/redux';
 
@@ -95,7 +96,7 @@ function parseApiResponseToClientUser(data: ApiUser): UserResponse {
           return [
             ...acc,
             {
-              ...curr,
+              ...omit(curr, 'id'),
               challengeFiles: curr.files.map(({ key: fileKey, ...file }) => ({
                 ...file,
                 fileKey
