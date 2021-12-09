@@ -191,6 +191,41 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
+          CROWDIN_PERSONAL_TOKEN:
+            ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+
+            ##### Download Ukrainian #####
+      - name: Crowdin Download Ukrainian Translations
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: false
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+
+          # downloads
+          download_translations: true
+          download_language: uk
+          skip_untranslated_files: false
+          export_only_approved: true
+
+          push_translations: false
+
+          # pull-request
+          create_pull_request: false
+
+          # global options
+          config: './config/crowdin/docs/crowdin.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          # dryrun_action: true
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
       # Create Commit
