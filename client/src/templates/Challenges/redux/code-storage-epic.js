@@ -152,7 +152,13 @@ function loadCodeEpic(action$, state$) {
             // This was pushed to production with https://github.com/freeCodeCamp/freeCodeCamp/pull/43023
             foundChallengeFile = codeFound[challengeFile.fileKey];
           }
-          const isCodeFound = Object.keys(foundChallengeFile).length > 0;
+          let isCodeFound;
+          if (foundChallengeFile) {
+            isCodeFound = Object.keys(foundChallengeFile).length > 0;
+          } else {
+            // the stored code is not valid, so we should delete it.
+            store.remove(id);
+          }
           return [
             ...challengeFiles,
             {
