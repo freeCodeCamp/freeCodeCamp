@@ -40,7 +40,7 @@ const mapStateToProps = createSelector(
   successMessageSelector,
   (
     challengeFiles: ChallengeFiles,
-    { title, id }: { title: string; id: string },
+    { title, challengeId }: { title: string; challengeId: string },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
@@ -48,7 +48,7 @@ const mapStateToProps = createSelector(
   ) => ({
     challengeFiles,
     title,
-    id,
+    challengeId,
     completedChallengesIds,
     isOpen,
     isSignedIn,
@@ -79,9 +79,11 @@ export function getCompletedPercent(
     ? completedChallengesIds
     : [...completedChallengesIds, currentChallengeId];
 
-  const completedChallengesInBlock = completedChallengesIds.filter(id => {
-    return currentBlockIds.includes(id);
-  });
+  const completedChallengesInBlock = completedChallengesIds.filter(
+    challengeId => {
+      return currentBlockIds.includes(challengeId);
+    }
+  );
 
   const completedPercent = Math.round(
     (completedChallengesInBlock.length / currentBlockIds.length) * 100
@@ -99,7 +101,7 @@ interface CompletionModalsProps {
   currentBlockIds?: string[];
   executeGA: () => void;
   challengeFiles: ChallengeFiles;
-  id: string;
+  challengeId: string;
   isOpen: boolean;
   isSignedIn: boolean;
   message: string;
@@ -160,9 +162,14 @@ export class CompletionModalInner extends Component<
       newURL = URL.createObjectURL(blob);
     }
 
-    const { completedChallengesIds, currentBlockIds, id, isSignedIn } = props;
+    const { completedChallengesIds, currentBlockIds, challengeId, isSignedIn } =
+      props;
     const completedPercent = isSignedIn
-      ? getCompletedPercent(completedChallengesIds, currentBlockIds, id)
+      ? getCompletedPercent(
+          completedChallengesIds,
+          currentBlockIds,
+          challengeId
+        )
       : 0;
     return { downloadURL: newURL, completedPercent: completedPercent };
   }
@@ -186,7 +193,7 @@ export class CompletionModalInner extends Component<
   checkBlockCompletion(): void {
     if (
       this.state.completedPercent === 100 &&
-      !this.props.completedChallengesIds.includes(this.props.id)
+      !this.props.completedChallengesIds.includes(this.props.challengeId)
     ) {
       this.props.allowBlockDonationRequests(this.props.blockName);
     }
