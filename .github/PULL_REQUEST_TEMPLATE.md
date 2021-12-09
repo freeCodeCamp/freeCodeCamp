@@ -1,5 +1,3 @@
-<!-- Please note that low quality PRs and PRs that do not follow our contributing guidelines will be marked as invalid for Hacktoberfest. -->
-
 Checklist:
 
 <!-- Please follow this checklist and put an x in each of the boxes, like this: [x]. It will ensure that our team takes your pull request seriously. -->
