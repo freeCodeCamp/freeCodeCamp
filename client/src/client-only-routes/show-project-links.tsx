@@ -140,14 +140,14 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     const project = (projectMap[certName] || legacyProjectMap[certName]) as {
       link: string;
       title: string;
-      id: string;
+      challengeId: string;
     }[];
-    return project.map(({ link, title, id }) => (
-      <li key={id}>
+    return project.map(({ link, title, challengeId }) => (
+      <li key={challengeId}>
         <Link className='project-link' to={link}>
           {t(`certification.project.title.${title}`, title)}
         </Link>
-        : {getProjectSolution(id, title)}
+        : {getProjectSolution(challengeId, title)}
       </li>
     ));
   };
