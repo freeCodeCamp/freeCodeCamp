@@ -1,7 +1,7 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
 title: Build a Tribute Page
-challengeType: 3
+challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
 ---
@@ -11,8 +11,6 @@ dashedName: build-a-tribute-page
 **Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/zNqgVx>.
 
 Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
-
-You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
 **User Story #1:** My tribute page should have an element with a corresponding `id="main"`, which contains all other elements.
 
@@ -36,8 +34,22 @@ You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' t
 
 Once you're done, submit the URL to your working project with all its tests passing.
 
-# --solutions--
+# --hints--
+
+Auto pass test
+
+```js
+assert(true)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
 ```

@@ -295,15 +295,25 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const { challengeType } = this.getChallenge();
     return (
       challengeType === challengeTypes.html ||
-      challengeType === challengeTypes.modern
+      challengeType === challengeTypes.modern ||
+      challengeType === challengeTypes.multiFileCertProject
     );
   }
 
   renderInstructionsPanel({ showToolPanel }: { showToolPanel: boolean }) {
-    const { block, description, instructions, superBlock, translationPending } =
-      this.getChallenge();
+    const {
+      block,
+      challengeType,
+      description,
+      forumTopicId,
+      instructions,
+      superBlock,
+      title,
+      translationPending
+    } = this.getChallenge();
 
-    const { forumTopicId, title } = this.getChallenge();
+    const showBreadCrumbs =
+      challengeType !== challengeTypes.multiFileCertProject;
     return (
       <SidePanel
         block={block}
@@ -318,6 +328,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <ChallengeTitle
             block={block}
             isCompleted={this.props.isChallengeCompleted}
+            showBreadCrumbs={showBreadCrumbs}
             superBlock={superBlock}
             translationPending={translationPending}
           >
@@ -400,6 +411,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   render() {
     const {
       block,
+      challengeType,
       fields: { blockName },
       forumTopicId,
       superBlock,
@@ -450,6 +462,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             <DesktopLayout
               block={block}
               challengeFiles={challengeFiles}
+              challengeType={challengeType}
               editor={this.renderEditor()}
               hasEditableBoundaries={this.hasEditableBoundaries()}
               hasNotes={!!notes}

@@ -218,6 +218,8 @@ export function isValidChallengeCompletion(req, res, next) {
 }
 
 export function modernChallengeCompleted(req, res, next) {
+  console.log('modernChallengeCompleted');
+  console.log(req.body);
   const user = req.user;
   return user
     .getCompletedChallenges$()

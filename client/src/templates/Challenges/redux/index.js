@@ -192,7 +192,8 @@ export const challengeDataSelector = state => {
     };
   } else if (
     challengeType === challengeTypes.html ||
-    challengeType === challengeTypes.modern
+    challengeType === challengeTypes.modern ||
+    challengeType === challengeTypes.multiFileCertProject
   ) {
     const { required = [], template = '' } = challengeMetaSelector(state);
     challengeData = {

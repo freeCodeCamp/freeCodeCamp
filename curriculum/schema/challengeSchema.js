@@ -26,7 +26,7 @@ const schema = Joi.object()
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
     removeComments: Joi.bool(),
-    challengeType: Joi.number().min(0).max(12).required(),
+    challengeType: Joi.number().min(0).max(14).required(),
     checksum: Joi.number(),
     // __commentCounts is only used to test the comment replacement
     __commentCounts: Joi.object(),
