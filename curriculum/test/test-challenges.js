@@ -50,7 +50,7 @@ const {
   getTranslatableComments
 } = require('../getChallenges');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
-const { testedLang } = require('../utils');
+const { testedLang, getSuperOrder } = require('../utils');
 const ChallengeTitles = require('./utils/challengeTitles');
 const MongoIds = require('./utils/mongoIds');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -274,9 +274,13 @@ function populateTestsForLang({ lang, challenges, meta }) {
         return;
       }
       it(`${superBlock} should have the same order in every meta`, function () {
-        const firstOrder = filteredMeta[0].superOrder;
+        const firstOrder = getSuperOrder(filteredMeta[0].superBlock);
+        if (firstOrder === null) {
+          return;
+        }
+        assert.isNumber(firstOrder);
         assert.isTrue(
-          filteredMeta.every(el => el.superOrder === firstOrder),
+          filteredMeta.every(el => getSuperOrder(el.superBlock) === firstOrder),
           'The superOrder properties are mismatched.'
         );
       });
