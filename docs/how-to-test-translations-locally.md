@@ -9,9 +9,10 @@ If you would like to test your translations on a local instance of the freeCodeC
 
 There are a few steps to take in order to allow the codebase to build in your desired language.
 
-First, visit the `config/i18n/all-langs.js` file to add the language to the available languages list and configure the values. There are four objects here.
+First, visit the `config/i18n/all-langs.ts` file to add the language to the available languages list and configure the values. There are four objects here.
 
 - `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
+- `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.
 - `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
 - `langDisplayNames`: These are the display names for the language selector in the navigation menu.
 - `langCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
@@ -27,6 +28,45 @@ const availableLangs = {
     'chinese',
     'chinese-traditional',
     'dothraki'
+  ]
+};
+
+export const auditedCerts = {
+  espanol: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis
+  ],
+  chinese: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy
+  ],
+  'chinese-traditional': [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy
+  ],
+  dothraki: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
   ]
 };
 
@@ -55,9 +95,12 @@ const langCodes = {
 };
 ```
 
-Next, open the `client/src/utils/algolia-locale-setup.js` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
+Next, open the `client/src/utils/algolia-locale-setup.ts` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
 
 Add an object for your language to the `algoliaIndices` object. You should use the values for the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
+
+> [!NOTE]
+> If we have already deployed an instance of news in your target language, you can update the values to reflect the live instance. Otherwise, use the English values.
 
 If you were to add Dothraki:
 
@@ -86,40 +129,6 @@ const algoliaIndices = {
 };
 ```
 
-Next, you will need to tell the client which certifications are translated, and which are still in English. Open the `utils/is-audited.js` file. Within the `auditedCerts`, add a new key with your language's `availableLangs` value. Assign the value of that key to an array containing the _dashed names_ for the certifications that have been translated. Refer to the existing data for those dashed names.
-
-Continuing the work to enable Dothraki - we have translated the first three certifications:
-
-```js
-const auditedCerts = {
-  espanol: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures'
-  ],
-  chinese: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis',
-    'quality-assurance'
-  ],
-  'chinese-traditional': [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis',
-    'quality-assurance'
-  ],
-  dothraki: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries'
-  ]
-};
-```
-
 Finally, in your `.env` file, set `CLIENT_LOCALE` and `CURRICULUM_LOCALE` to your new language (use the `availableLangs` value.)
 
 ```txt
@@ -144,7 +153,7 @@ For the video challenges, you need to change a few things. First add the new loc
       ...
 ```
 
-Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.js` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
+Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
 
 ```yml
 videoLocaleIds:
