@@ -33,6 +33,7 @@ const {
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges,
   SHOW_MOBILE_AD: showMobileAd
+  SHOW_NEW_CURRICULUM: showNewCurriculum
 } = process.env;
 
 const locations = {
@@ -73,4 +74,5 @@ module.exports = Object.assign(locations, {
       : patreonClientId,
   showUpcomingChanges: showUpcomingChanges === 'true',
   showMobileAd: showMobileAd === 'true'
+  showNewCurriculum: showNewCurriculum === 'true'
 });

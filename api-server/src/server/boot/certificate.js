@@ -20,6 +20,7 @@ import { reportError } from '../middlewares/sentry-error-handler.js';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUser401 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
+import { ensureLowerCaseString } from '../../common/models/user';
 
 const {
   legacyFrontEndChallengeId,
@@ -523,7 +524,7 @@ function createVerifyCanClaim(certTypeIds, app) {
     let certType = superBlockCertTypeMap[superBlock];
     log(certType);
 
-    return findUserByUsername$(username, {
+    return findUserByUsername$(ensureLowerCaseString(username), {
       isFrontEndCert: true,
       isBackEndCert: true,
       isFullStackCert: true,
@@ -544,14 +545,35 @@ function createVerifyCanClaim(certTypeIds, app) {
       isHonest: true,
       completedChallenges: true
     }).subscribe(user => {
+      if (!user) {
+        return res.status(404).json({
+          message: {
+            type: 'info',
+            message: 'flash.username-not-found',
+            variables: { username }
+          }
+        });
+      }
+
+      if (!certTypeIds[certType]) {
+        return res.status(404).json({
+          message: {
+            type: 'info',
+            // TODO: create a specific 'flash.cert-not-found' message
+            message: 'flash.could-not-find'
+          }
+        });
+      }
+
       return Observable.of(certTypeIds[certType])
         .flatMap(challenge => {
           const certName = certTypeTitleMap[certType];
           const { tests = [] } = challenge;
-          const { isHonest, completedChallenges } = user;
-          const isProjectsCompleted = canClaim(tests, completedChallenges);
           let result = 'incomplete-requirements';
           let status = false;
+
+          const { isHonest, completedChallenges } = user;
+          const isProjectsCompleted = canClaim(tests, completedChallenges);
 
           if (isHonest && isProjectsCompleted) {
             status = true;

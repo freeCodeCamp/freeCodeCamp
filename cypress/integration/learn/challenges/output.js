@@ -8,7 +8,10 @@ const selectors = {
 const locations = {
   index:
     '/learn/responsive-web-design/basic-html-and-html5/' +
-    'say-hello-to-html-elements'
+    'say-hello-to-html-elements',
+  jQuery:
+    '/learn/front-end-development-libraries/jquery/' +
+    'target-html-elements-with-selectors-using-jquery'
 };
 
 const defaultOutput = `
@@ -57,5 +60,27 @@ describe('Classic challenge', function () {
           .contains(runningOutput)
           .contains(finishedOutput);
       });
+  });
+});
+
+describe('jQuery challenge', function () {
+  before(() => {
+    cy.visit(locations.jQuery);
+  });
+
+  it('renders the default output text', () => {
+    cy.title().should(
+      'eq',
+      'jQuery: Target HTML Elements with Selectors Using jQuery | freeCodeCamp.org'
+    );
+    cy.get(selectors.defaultOutput).contains(defaultOutput);
+  });
+
+  it('should not show a reference error', () => {
+    cy.wait(5000);
+    cy.get(selectors.defaultOutput).should(
+      'not.contain',
+      'ReferenceError: $ is not defined'
+    );
   });
 });

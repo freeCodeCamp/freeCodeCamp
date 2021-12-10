@@ -1,0 +1,21 @@
+---
+id: 561acd10cb82ac38a17513bc
+title: Сертифікація бібліотеки Front End розробки
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c442eddfaeb5bd13
+    title: Створіть генератор випадкових цитат
+  - 
+    id: bd7157d8c242eddfaeb5bd13
+    title: Створіть Markdown-програму попереднього перегляду
+  - 
+    id: 587d7dbc367417b2b2512bae
+    title: Створіть драм-машину
+  - 
+    id: bd7158d8c442eddfaeb5bd17
+    title: Створіть JavaScript калькулятор
+  - 
+    id: bd7158d8c442eddfaeb5bd0f
+    title: Створіть таймер 25 + 5

@@ -152,6 +152,7 @@ export type ChallengeNode = {
     owner: string;
     type: string;
   };
+  notes: string;
   removeComments: boolean;
   isLocked: boolean;
   isPrivate: boolean;
@@ -347,3 +348,10 @@ export type ChallengeFile = {
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;
+
+export interface UserFetchState {
+  pending: boolean;
+  complete: boolean;
+  errored: boolean;
+  error: string | null;
+}

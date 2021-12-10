@@ -198,7 +198,10 @@ async function setup() {
   const meta = {};
   for (const challenge of challenges) {
     const dashedBlockName = challenge.block;
-    if (!meta[dashedBlockName]) {
+    // certifications do not have dashedBlockName's and don't have metas so
+    // we can skip them.
+    // TODO: omit certifications from the list of challenges
+    if (dashedBlockName && !meta[dashedBlockName]) {
       meta[dashedBlockName] = await getMetaForBlock(dashedBlockName);
     }
   }
@@ -296,6 +299,9 @@ function populateTestsForLang({ lang, challenges, meta }) {
     this.timeout(5000);
     challenges.forEach((challenge, id) => {
       const dashedBlockName = challenge.block;
+      // TODO: once certifications are not included in the list of challenges,
+      // stop returning early here.
+      if (typeof dashedBlockName === 'undefined') return;
       describe(challenge.block || 'No block', function () {
         describe(challenge.title || 'No title', function () {
           // Note: the title in meta.json are purely for human readability and
@@ -570,14 +576,11 @@ async function createTestRunner(
     challengeFile.editableContents = solutionFile.editableContents;
   });
 
-  const { build, sources, loadEnzyme } = await buildChallenge(
-    {
-      challengeFiles,
-      required,
-      template
-    },
-    { usesTestRunner: true }
-  );
+  const { build, sources, loadEnzyme } = await buildChallenge({
+    challengeFiles,
+    required,
+    template
+  });
 
   const code = {
     contents: sources.index,
