@@ -548,10 +548,17 @@ function createVerifyCanClaim(certTypeIds, app) {
         .flatMap(challenge => {
           const certName = certTypeTitleMap[certType];
           const { tests = [] } = challenge;
-          const { isHonest = false, completedChallenges } = user;
-          const isProjectsCompleted = canClaim(tests, completedChallenges);
           let result = 'incomplete-requirements';
           let status = false;
+          if (!user) {
+            return Observable.just({
+              type: 'success',
+              message: { status, result },
+              variables: { name: certName }
+            });
+          }
+          const { isHonest, completedChallenges } = user;
+          const isProjectsCompleted = canClaim(tests, completedChallenges);
 
           if (isHonest && isProjectsCompleted) {
             status = true;
