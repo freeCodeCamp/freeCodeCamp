@@ -287,11 +287,16 @@
       "info": "Інформація",
       "code": "Код",
       "tests": "Тести",
+      "restart": "Restart",
+      "restart-step": "Restart Step",
+      "console": "Console",
+      "notes": "Notes",
       "preview": "Попередній перегляд"
     },
     "help-translate": "Ми все ще перекладаємо такі сертифікати.",
     "help-translate-link": "Допоможіть нам з перекладом.",
     "season-greetings": "Season's Greetings to you and your family.",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
     "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
     "project-preview-title": "Here's a preview of what you will build"
   },
