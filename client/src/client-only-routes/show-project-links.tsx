@@ -65,6 +65,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       return (
         <button
           className='project-link-button-override'
+          data-cy={`${projectTitle} solution`}
           onClick={onClickHandler}
         >
           {t('certification.project.solution')}
@@ -97,11 +98,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       );
     }
     return (
-      <button
-        className='project-link-button-override'
-        data-cy={`${projectTitle} solution`}
-        onClick={onClickHandler}
-      >
+      <button className='project-link-button-override' onClick={onClickHandler}>
         {t('certification.project.solution')}
       </button>
     );
