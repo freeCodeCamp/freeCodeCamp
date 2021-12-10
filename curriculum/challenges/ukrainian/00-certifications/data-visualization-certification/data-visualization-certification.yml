@@ -4,18 +4,18 @@ title: Сертифікація Візуалізації Даних
 challengeType: 7
 isPrivate: true
 tests:
-  - 
-    id: bd7168d8c242eddfaeb5bd13
+  -
+    challengeId: bd7168d8c242eddfaeb5bd13
     title: Візуалізуйте дані за допомогою гістограми
-  - 
-    id: bd7178d8c242eddfaeb5bd13
+  -
+    challengeId: bd7178d8c242eddfaeb5bd13
     title: Відобразити дані за допомогою діаграми розсіювання
-  - 
-    id: bd7188d8c242eddfaeb5bd13
+  -
+    challengeId: bd7188d8c242eddfaeb5bd13
     title: Візуалізувати дані за допомогою теплокарти
-  - 
-    id: 587d7fa6367417b2b2512bbf
+  -
+    challengeId: 587d7fa6367417b2b2512bbf
     title: Візуалізувати дані за допомогою карти Хороплета
-  - 
-    id: 587d7fa6367417b2b2512bc0
+  -
+    challengeId: 587d7fa6367417b2b2512bc0
     title: Візуалізувати дані за допомогою діаграми Treemap

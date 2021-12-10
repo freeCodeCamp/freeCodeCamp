@@ -4,18 +4,18 @@ title: Certificação de desenvolvimento com bibliotecas de front-end
 challengeType: 7
 isPrivate: true
 tests:
-  - 
-    id: bd7158d8c442eddfaeb5bd13
+  -
+    challengeId: bd7158d8c442eddfaeb5bd13
     title: Criar uma máquina de citação aleatória
-  - 
-    id: bd7157d8c242eddfaeb5bd13
+  -
+    challengeId: bd7157d8c242eddfaeb5bd13
     title: Criar um pré-visualizador de markdown
-  - 
-    id: 587d7dbc367417b2b2512bae
+  -
+    challengeId: 587d7dbc367417b2b2512bae
     title: Criar uma bateria eletrônica
-  - 
-    id: bd7158d8c442eddfaeb5bd17
+  -
+    challengeId: bd7158d8c442eddfaeb5bd17
     title: Cria uma calculadora em JavaScript
-  - 
-    id: bd7158d8c442eddfaeb5bd0f
+  -
+    challengeId: bd7158d8c442eddfaeb5bd0f
     title: Criar um Relógio 25 + 5

@@ -4,13 +4,13 @@ title: Back End Development and APIs Certification
 challengeType: 7
 isPrivate: true
 tests:
-  - id: bd7158d8c443edefaeb5bdef
+  - challengeId: bd7158d8c443edefaeb5bdef
     title: Timestamp Microservice
-  - id: bd7158d8c443edefaeb5bdff
+  - challengeId: bd7158d8c443edefaeb5bdff
     title: Request Header Parser Microservice
-  - id: bd7158d8c443edefaeb5bd0e
+  - challengeId: bd7158d8c443edefaeb5bd0e
     title: URL Shortener Microservice
-  - id: 5a8b073d06fa14fcfde687aa
+  - challengeId: 5a8b073d06fa14fcfde687aa
     title: Exercise Tracker
-  - id: bd7158d8c443edefaeb5bd0f
+  - challengeId: bd7158d8c443edefaeb5bd0f
     title: File Metadata Microservice

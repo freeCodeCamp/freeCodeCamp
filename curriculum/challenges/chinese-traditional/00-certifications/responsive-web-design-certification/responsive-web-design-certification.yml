@@ -4,18 +4,18 @@ title: 響應式 Web 設計認證
 challengeType: 7
 isPrivate: true
 tests:
-  - 
-    id: bd7158d8c442eddfaeb5bd18
+  -
+    challengeId: bd7158d8c442eddfaeb5bd18
     title: 製作一個致敬頁
-  - 
-    id: 587d78af367417b2b2512b03
+  -
+    challengeId: 587d78af367417b2b2512b03
     title: 製作一個調查表格
-  - 
-    id: 587d78af367417b2b2512b04
+  -
+    challengeId: 587d78af367417b2b2512b04
     title: 製作一個產品登錄頁
-  - 
-    id: 587d78b0367417b2b2512b05
+  -
+    challengeId: 587d78b0367417b2b2512b05
     title: 製作一個技術文檔頁面
-  - 
-    id: bd7158d8c242eddfaeb5bd13
+  -
+    challengeId: bd7158d8c242eddfaeb5bd13
     title: 製作一個個人作品集展示頁

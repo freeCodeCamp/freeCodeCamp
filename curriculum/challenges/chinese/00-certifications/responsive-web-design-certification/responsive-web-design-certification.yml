@@ -4,18 +4,18 @@ title: 响应式 Web 设计认证
 challengeType: 7
 isPrivate: true
 tests:
-  - 
-    id: bd7158d8c442eddfaeb5bd18
+  -
+    challengeId: bd7158d8c442eddfaeb5bd18
     title: 制作一个致敬页
-  - 
-    id: 587d78af367417b2b2512b03
+  -
+    challengeId: 587d78af367417b2b2512b03
     title: 制作一个调查表格
-  - 
-    id: 587d78af367417b2b2512b04
+  -
+    challengeId: 587d78af367417b2b2512b04
     title: 制作一个产品登录页
-  - 
-    id: 587d78b0367417b2b2512b05
+  -
+    challengeId: 587d78b0367417b2b2512b05
     title: 制作一个技术文档页面
-  - 
-    id: bd7158d8c242eddfaeb5bd13
+  -
+    challengeId: bd7158d8c242eddfaeb5bd13
     title: 制作一个个人作品集展示页

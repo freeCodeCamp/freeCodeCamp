@@ -4,18 +4,18 @@ title: Back End розробка та сертифікація API
 challengeType: 7
 isPrivate: true
 tests:
-  - 
-    id: bd7158d8c443edefaeb5bdef
+  -
+    challengeId: bd7158d8c443edefaeb5bdef
     title: Мікросервіс Timestamp
-  - 
-    id: bd7158d8c443edefaeb5bdff
+  -
+    challengeId: bd7158d8c443edefaeb5bdff
     title: Мікросервіс синтаксичного аналізатора заголовків запиту
-  - 
-    id: bd7158d8c443edefaeb5bd0e
+  -
+    challengeId: bd7158d8c443edefaeb5bd0e
     title: Мікросервіс скорочування URL-адрес
-  - 
-    id: 5a8b073d06fa14fcfde687aa
+  -
+    challengeId: 5a8b073d06fa14fcfde687aa
     title: Фітнес-трекер
-  - 
-    id: bd7158d8c443edefaeb5bd0f
+  -
+    challengeId: bd7158d8c443edefaeb5bd0f
     title: Мікросервіс метаданих файлу

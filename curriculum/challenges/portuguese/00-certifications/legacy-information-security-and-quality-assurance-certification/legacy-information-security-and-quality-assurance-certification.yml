@@ -4,18 +4,18 @@ title: Certificação de garantia da qualidade e segurança da informação lega
 challengeType: 7
 isPrivate: true
 tests:
-  - 
-    id: 587d8249367417b2b2512c41
+  -
+    challengeId: 587d8249367417b2b2512c41
     title: Conversor de medidas dos sistemas métrico e imperial
-  - 
-    id: 587d8249367417b2b2512c42
+  -
+    challengeId: 587d8249367417b2b2512c42
     title: Rastreador de problemas
-  - 
-    id: 587d824a367417b2b2512c43
+  -
+    challengeId: 587d824a367417b2b2512c43
     title: Biblioteca pessoal
-  - 
-    id: 587d824a367417b2b2512c44
+  -
+    challengeId: 587d824a367417b2b2512c44
     title: Verificador de preço de ações
-  - 
-    id: 587d824a367417b2b2512c45
+  -
+    challengeId: 587d824a367417b2b2512c45
     title: Quadro de mensagens anônimas

@@ -4,18 +4,18 @@ title: Vecchia certificazione di Sicurezza delle Informazioni e Garanzia di Qual
 challengeType: 7
 isPrivate: true
 tests:
-  - 
-    id: 587d8249367417b2b2512c41
+  -
+    challengeId: 587d8249367417b2b2512c41
     title: Convertitore Metrico-Imperiale
-  - 
-    id: 587d8249367417b2b2512c42
+  -
+    challengeId: 587d8249367417b2b2512c42
     title: Tracciatore di problemi
-  - 
-    id: 587d824a367417b2b2512c43
+  -
+    challengeId: 587d824a367417b2b2512c43
     title: Biblioteca personale
-  - 
-    id: 587d824a367417b2b2512c44
+  -
+    challengeId: 587d824a367417b2b2512c44
     title: Controllo del prezzo delle azioni
-  - 
-    id: 587d824a367417b2b2512c45
+  -
+    challengeId: 587d824a367417b2b2512c45
     title: Pannello messaggi anonimo
