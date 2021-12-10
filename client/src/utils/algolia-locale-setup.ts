@@ -29,6 +29,10 @@ const algoliaIndices = {
   portuguese: {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
+  },
+  ukrainian: {
+    name: 'news',
+    searchPage: 'https://www.freecodecamp.org/news/search/'
   }
 };
 
