@@ -32,7 +32,7 @@ const {
   PATREON_CLIENT_ID: patreonClientId,
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges,
-  SHOW_MOBILE_AD: showMobileAd
+  SHOW_MOBILE_AD: showMobileAd,
   SHOW_NEW_CURRICULUM: showNewCurriculum
 } = process.env;
 
@@ -73,6 +73,6 @@ module.exports = Object.assign(locations, {
       ? null
       : patreonClientId,
   showUpcomingChanges: showUpcomingChanges === 'true',
-  showMobileAd: showMobileAd === 'true'
+  showMobileAd: showMobileAd === 'true',
   showNewCurriculum: showNewCurriculum === 'true'
 });
