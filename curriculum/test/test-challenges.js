@@ -265,8 +265,6 @@ function populateTestsForLang({ lang, challenges, meta }) {
       ...Object.values(meta)
         .map(el => el.superBlock)
         .filter(el => !superBlocksUnderDevelopment.includes(el))
-        // certificates should not be superblocks and do not need to be sorted
-        .filter(el => el === 'certificate')
     ]);
     superBlocks.forEach(superBlock => {
       const filteredMeta = Object.values(meta)
