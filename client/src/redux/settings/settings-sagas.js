@@ -1,3 +1,4 @@
+import { omit } from 'lodash-es';
 import { call, delay, put, takeLatest, takeEvery } from 'redux-saga/effects';
 
 import { createFlashMessage } from '../../components/Flash/redux';
@@ -85,7 +86,14 @@ function* verifyCertificationSaga({ payload }) {
     yield put(
       verifyCertComplete({
         ...response,
-        payload: { ...isCertMap, completedChallenges }
+        payload: {
+          ...isCertMap,
+          completedChallenges: completedChallenges.map(x => ({
+            ...omit(x, ['id', 'files']),
+            challengeId: x.id,
+            challengeFiles: x.files
+          }))
+        }
       })
     );
     yield put(createFlashMessage(response));

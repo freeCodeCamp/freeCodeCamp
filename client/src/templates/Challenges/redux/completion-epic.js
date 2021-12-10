@@ -1,4 +1,5 @@
 import { navigate } from 'gatsby';
+import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { of, empty } from 'rxjs';
 import {
@@ -35,16 +36,21 @@ import {
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
-    switchMap(({ points }) =>
-      of(
+    switchMap(({ points }) => {
+      const payloadWithClientProperties = {
+        ...omit(update.payload, ['id', 'files']),
+        challengeId: update.payload.id,
+        challengeFiles: update.payload.files
+      };
+      return of(
         submitComplete({
           username,
           points,
-          ...update.payload
+          ...payloadWithClientProperties
         }),
         updateComplete()
-      )
-    ),
+      );
+    }),
     catchError(() => of(updateFailed(update)))
   );
   return saveChallenge;
@@ -79,6 +85,7 @@ function submitModern(type, state) {
         endpoint: '/modern-challenge-completed',
         payload: challengeInfo
       };
+      console.log('submitModern', update);
       return postChallenge(update, username);
     }
   }

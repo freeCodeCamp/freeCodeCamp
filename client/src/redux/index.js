@@ -1,4 +1,4 @@
-import { uniqBy, omit } from 'lodash-es';
+import { uniqBy } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 import store from 'store';
 
@@ -627,13 +627,7 @@ export const reducer = handleActions(
       }
     }),
     [actionTypes.submitComplete]: (state, { payload }) => {
-      let submittedchallenges = [
-        {
-          ...omit(payload, 'id'),
-          completedDate: Date.now(),
-          challengeId: payload.id
-        }
-      ];
+      let submittedchallenges = [{ ...payload, completedDate: Date.now() }];
       if (payload.challArray) {
         submittedchallenges = payload.challArray;
       }
