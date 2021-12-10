@@ -23,7 +23,7 @@ import {
   signInLoadingSelector,
   userSelector,
   executeGA,
-  isAvariantSelector
+  isAVariantSelector
 } from '../redux';
 
 interface ExecuteGaArg {
@@ -40,22 +40,22 @@ interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
-  isAvarient: boolean;
+  isAVariant: boolean;
   t: TFunction;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
-  isAvariantSelector,
+  isAVariantSelector,
   (
     { isDonating }: { isDonating: boolean },
     showLoading: boolean,
-    isAvarient: boolean
+    isAVariant: boolean
   ) => ({
     isDonating,
     showLoading,
-    isAvarient
+    isAVariant
   })
 );
 
@@ -67,7 +67,7 @@ function DonatePage({
   executeGA = () => {},
   isDonating = false,
   showLoading,
-  isAvarient,
+  isAVariant,
   t
 }: DonatePageProps) {
   useEffect(() => {
@@ -155,7 +155,7 @@ function DonatePage({
                   <DonateForm handleProcessing={handleProcessing} />
                 </Col>
               </Row>
-              {isAvarient ? donationSupport : donationFaq}
+              {isAVariant ? donationSupport : donationFaq}
             </Col>
             <Col lg={6}>
               <CampersImage pageName='donate' />

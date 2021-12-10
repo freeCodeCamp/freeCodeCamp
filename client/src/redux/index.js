@@ -203,7 +203,7 @@ export const stepsToClaimSelector = state => {
   };
 };
 export const emailSelector = state => userSelector(state).email;
-export const isAvariantSelector = state => {
+export const isAVariantSelector = state => {
   const email = emailSelector(state);
   // if the user is not signed in and the user info is not available.
   // always return A the control variant
