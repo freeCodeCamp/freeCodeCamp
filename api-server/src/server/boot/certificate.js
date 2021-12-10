@@ -135,12 +135,17 @@ function canClaim(ids, completedChallenges = []) {
   );
 }
 
+// TODO: only get certs, not all challenges
 function getCertById(anId, allChallenges) {
+  // TODO: rather than mapping the challengeIds to ids, just modify canClaim?
   return allChallenges
     .filter(({ id }) => id === anId)
     .map(({ id, tests, name, challengeType }) => ({
       id,
-      tests,
+      tests: tests.map(({ challengeId, title }) => ({
+        id: challengeId,
+        title
+      })),
       name,
       challengeType
     }))[0];
