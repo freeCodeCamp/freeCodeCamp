@@ -287,11 +287,16 @@
       "info": "信息",
       "code": "编程",
       "tests": "测试",
+      "restart": "Restart",
+      "restart-step": "Restart Step",
+      "console": "Console",
+      "notes": "Notes",
       "preview": "预览"
     },
     "help-translate": "我们仍然在翻译以下证书。",
     "help-translate-link": "帮助我们翻译。",
     "season-greetings": "Season's Greetings to you and your family.",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
     "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
     "project-preview-title": "下面是你将构建的项目的预览"
   },

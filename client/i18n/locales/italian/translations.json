@@ -287,11 +287,16 @@
       "info": "Informazioni",
       "code": "Codice",
       "tests": "Test",
+      "restart": "Restart",
+      "restart-step": "Restart Step",
+      "console": "Console",
+      "notes": "Notes",
       "preview": "Anteprima"
     },
     "help-translate": "Stiamo ancora traducendo le seguenti certificazioni.",
     "help-translate-link": "Aiutaci con le traduzioni...",
     "season-greetings": "Season's Greetings to you and your family.",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
     "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
     "project-preview-title": "Here's a preview of what you will build"
   },
