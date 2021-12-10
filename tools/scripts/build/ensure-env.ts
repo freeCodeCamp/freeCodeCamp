@@ -50,7 +50,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     'deploymentEnv',
     'environment',
     'showUpcomingChanges',
-    'showMobileAd'
+    'showMobileAd',
     'showNewCurriculum'
   ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
