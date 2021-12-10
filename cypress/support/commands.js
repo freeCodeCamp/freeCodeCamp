@@ -53,7 +53,6 @@ Cypress.Commands.add('toggleAll', () => {
 });
 
 Cypress.Commands.add('resetUsername', () => {
-  cy.login();
   cy.visit('/settings');
 
   cy.get('@usernameInput')
