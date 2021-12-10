@@ -1,0 +1,36 @@
+---
+id: 561add10cb82ac38a17513be
+title: Застарілий код Legacy
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c242eddfaeb5bd13
+    title: Створити веб-сторінку персонального портфоліо
+  - 
+    id: bd7158d8c442eddfaeb5bd13
+    title: Створити генератор випадкових цитат
+  - 
+    id: bd7158d8c442eddfaeb5bd0f
+    title: Створити таймер 25 + 5 хвилин
+  - 
+    id: bd7158d8c442eddfaeb5bd17
+    title: Створити калькулятор за допомогою JavaScript
+  - 
+    id: bd7158d8c442eddfaeb5bd10
+    title: Показати місцеву погоду
+  - 
+    id: bd7158d8c442eddfaeb5bd1f
+    title: Використовувати Twitch JSON API
+  - 
+    id: bd7158d8c442eddfaeb5bd18
+    title: Стилізувати стрічку новин на Camper News
+  - 
+    id: bd7158d8c442eddfaeb5bd19
+    title: Вбудувати опцію перегляду Вікіпедії
+  - 
+    id: bd7158d8c442eedfaeb5bd1c
+    title: Створити гру Хрестики-нулики
+  - 
+    id: bd7158d8c442eddfaeb5bd1c
+    title: Створити гру Simon

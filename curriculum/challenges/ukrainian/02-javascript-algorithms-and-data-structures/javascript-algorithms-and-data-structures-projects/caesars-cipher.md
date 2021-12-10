@@ -1,0 +1,88 @@
+---
+id: 56533eb9ac21ba0edf2244e2
+title: Шифр Цезаря
+challengeType: 5
+forumTopicId: 16003
+dashedName: caesars-cipher
+---
+
+# --description--
+
+Одним з найпростіших і найпоширеніших <dfn>шифрів</dfn> є <dfn>шифр Цезаря</dfn>, також відомий як <dfn>шифр зсуву</dfn>. У шифрі зсуву кожна літера заміняється на ту, що віддалена від неї в алфавіті на сталу кількість позицій.
+
+Поширеним різновидом шифру Цезаря є алгоритм [ROT13](https://en.wikipedia.org/wiki/ROT13) який заміняє літеру 13 буквою в абетці після неї. Таким чином, `A ↔ N`, `B ↔ O` і так далі.
+
+Напишіть функцію, у якій вхідними даними буде рядок, закодований шифром [ROT13](https://en.wikipedia.org/wiki/ROT13), а вихідними даними - розшифрований рядок.
+
+У шифрі використовуються тільки великі літери. Не потрібно замінювати неалфавітні символи (тобто, пробіли, знаки пунктуації), але їх треба переносити до шифру.
+
+# --hints--
+
+`rot13("SERR PBQR PNZC")` розшифровується як `FREE CODE CAMP`
+
+```js
+assert(rot13('SERR PBQR PNZC') === 'FREE CODE CAMP');
+```
+
+`rot13("SERR CVMMN!")` розшифровується як `FREE PIZZA!`
+
+```js
+assert(rot13('SERR CVMMN!') === 'FREE PIZZA!');
+```
+
+`rot13("SERR YBIR?")` розшифровується як `FREE LOVE?`
+
+```js
+assert(rot13('SERR YBIR?') === 'FREE LOVE?');
+```
+
+`rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")` розшифровується як `THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.`
+
+```js
+assert(
+  rot13('GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.') ===
+    'THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.'
+);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function rot13(str) {
+  return str;
+}
+
+rot13("SERR PBQR PNZC");
+```
+
+# --solutions--
+
+```js
+var lookup = {
+  'A': 'N','B': 'O','C': 'P','D': 'Q',
+  'E': 'R','F': 'S','G': 'T','H': 'U',
+  'I': 'V','J': 'W','K': 'X','L': 'Y',
+  'M': 'Z','N': 'A','O': 'B','P': 'C',
+  'Q': 'D','R': 'E','S': 'F','T': 'G',
+  'U': 'H','V': 'I','W': 'J','X': 'K',
+  'Y': 'L','Z': 'M'
+};
+
+function rot13(encodedStr) {
+  var codeArr = encodedStr.split("");  // String to Array
+  var decodedArr = []; // Your Result goes here
+  // Only change code below this line
+
+  decodedArr = codeArr.map(function(letter) {
+    if(lookup.hasOwnProperty(letter)) {
+      letter = lookup[letter];
+    }
+    return letter;
+  });
+
+  // Only change code above this line
+  return decodedArr.join(""); // Array to String
+}
+```
