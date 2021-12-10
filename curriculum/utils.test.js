@@ -14,10 +14,10 @@ describe('getSuperOrder', () => {
     expect(() => getSuperOrder('respansive-wib-desoin')).toThrow();
   });
 
-  it('returns null for "certifications"', () => {
+  it('throws for "certifications"', () => {
     expect.assertions(2);
-    expect(getSuperOrder('certifications')).toBeNull();
-    expect(getSuperOrder('certifications', { isLegacy: true })).toBeNull();
+    expect(() => getSuperOrder('certifications')).toThrow();
+    expect(() => getSuperOrder('certifications', { isLegacy: true })).toThrow();
   });
 
   it('returns unique numbers for all current superblocks', () => {

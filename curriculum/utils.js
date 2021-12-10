@@ -32,8 +32,7 @@ const superBlockToOrder = {
   'data-analysis-with-python': 8,
   'information-security': 9,
   'machine-learning-with-python': 10,
-  'coding-interview-prep': 11,
-  certifications: null
+  'coding-interview-prep': 11
 };
 
 function getSuperOrder(superblock, { isLegacy } = { isLegacy: false }) {
@@ -42,7 +41,7 @@ function getSuperOrder(superblock, { isLegacy } = { isLegacy: false }) {
   const order = superBlockToOrder[superblock];
   if (typeof order === 'undefined')
     throw Error(`${superblock} is not a valid superblock`);
-  return order !== null && isLegacy ? order + 12 : order;
+  return isLegacy ? order + 12 : order;
 }
 
 exports.getSuperOrder = getSuperOrder;
