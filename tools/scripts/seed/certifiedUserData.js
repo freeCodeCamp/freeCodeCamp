@@ -4635,7 +4635,7 @@ module.exports = {
   rand: 0.6126749173148205,
   theme: 'default',
   profileUI: {
-    isLocked: true,
+    isLocked: false,
     showAbout: true,
     showCerts: true,
     showDonation: true,

@@ -4,10 +4,13 @@ describe('Settings certifications area', () => {
   before(() => {
     cy.exec('npm run seed');
     cy.login();
-    cy.visit('/settings');
   });
 
   describe('initially', () => {
+    beforeEach(() => {
+      cy.visit('/settings');
+    });
+
     it('Should render 15 "Claim Certification" buttons', () => {
       cy.findAllByText('Claim Certification').should($btns => {
         expect($btns).to.have.length(15);
@@ -30,28 +33,28 @@ describe('Settings certifications area', () => {
         ).should('exist');
       });
     });
+  });
 
-    describe('after isHonest', () => {
-      beforeEach(() => {
-        cy.visit('/');
-        cy.login();
-        cy.visit('/settings');
-      });
+  describe('after isHonest', () => {
+    before(() => {
+      cy.login();
+    });
 
-      it('Should render "You have accepted our Academic Honesty Policy." button after clicking "Agree"', () => {
-        cy.contains('Agree').click({ force: true });
-        cy.contains('You have accepted our Academic Honesty Policy.').should(
-          'exist'
-        );
-      });
+    it('Should render "You have accepted our Academic Honesty Policy." button after clicking "Agree"', () => {
+      cy.visit('/settings');
+      cy.contains('Agree').click({ force: true });
+      cy.contains('You have accepted our Academic Honesty Policy.').should(
+        'exist'
+      );
+    });
 
-      it('Should show "incompleted projects" message when clicking "Claim Certification"', () => {
-        cy.contains('Claim Certification').click({ force: true });
+    it('Should show "incompleted projects" message when clicking "Claim Certification"', () => {
+      cy.visit('/settings');
+      cy.contains('Claim Certification').click({ force: true });
 
-        cy.contains(
-          'It looks like you have not completed the necessary steps. Please complete the required projects to claim the Responsive Web Design Certification'
-        ).should('exist');
-      });
+      cy.contains(
+        'It looks like you have not completed the necessary steps. Please complete the required projects to claim the Responsive Web Design Certification'
+      ).should('exist');
     });
   });
 });
