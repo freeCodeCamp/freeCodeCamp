@@ -103,8 +103,8 @@ export const auditedCerts = {
     SuperBlocks.BackEndDevApis,
     SuperBlocks.QualityAssurance,
     SuperBlocks.SciCompPy,
-    // SuperBlocks.DataAnalysisPy,        // These are not yet approved atleast 95%
-    // SuperBlocks.InfoSec,               // These are not yet approved atleast 95%
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.RelationalDb
