@@ -18,8 +18,10 @@ export function getChallenges() {
       ).map(challenge => ({
         ...omit(challenge, 'challengeId'),
         // challengeId is used by the client, but the api expects to work with
-        // id
-        id: challenge.challengeId
+        // id.  Certificates have id not challengeId, so we need to keep those
+        // ids here.  This problem will go away if we get challenges and
+        // certifications seperately (which we should).
+        id: challenge.id ?? challenge.challengeId
       }));
 
       return [...challengeArray, ...challengesForBlock];
