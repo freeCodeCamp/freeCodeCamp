@@ -49,7 +49,8 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     'showLocaleDropdownMenu',
     'deploymentEnv',
     'environment',
-    'showUpcomingChanges'
+    'showUpcomingChanges',
+    'showNewCurriculum'
   ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
   const donationKeys = ['stripePublicKey', 'paypalClientId', 'patreonClientId'];
@@ -112,13 +113,18 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   checkClientLocale();
   checkCurriculumLocale();
   if (fs.existsSync(`${globalConfigPath}/env.json`)) {
-    // eslint-disable-next-line
-    const { showUpcomingChanges } = require(`${globalConfigPath}/env.json`);
-    if (env['showUpcomingChanges'] !== showUpcomingChanges) {
+    /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment */
+    const {
+      showNewCurriculum,
+      showUpcomingChanges
+    } = require(`${globalConfigPath}/env.json`);
+    /* eslint-enable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment */
+    if (
+      env['showUpcomingChanges'] !== showUpcomingChanges ||
+      env['showNewCurriculum'] !== showNewCurriculum
+    ) {
       /* eslint-enable @typescript-eslint/no-unsafe-member-access */
-      console.log(
-        'SHOW_UPCOMING_CHANGES value has changed, cleaning client cache.'
-      );
+      console.log('Feature flags have been changed, cleaning client cache.');
       const child = spawn('npm', ['run', 'clean:client']);
       child.stdout.setEncoding('utf8');
       child.stdout.on('data', function (data) {

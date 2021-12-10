@@ -9,8 +9,8 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
 import { challengeTypes } from '../../../../utils/challenge-types';
-
 import LearnLayout from '../../../components/layouts/learn';
+
 import {
   ChallengeFile,
   ChallengeFiles,
@@ -26,6 +26,7 @@ import ResetModal from '../components/ResetModal';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
+import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview from '../components/preview';
 import ProjectPreviewModal, {
@@ -115,6 +116,7 @@ interface ReflexLayout {
   codePane: { flex: number };
   editorPane: { flex: number };
   instructionPane: { flex: number };
+  notesPane: { flex: number };
   previewPane: { flex: number };
   testsPane: { flex: number };
 }
@@ -126,6 +128,7 @@ const BASE_LAYOUT = {
   editorPane: { flex: 1 },
   instructionPane: { flex: 1 },
   previewPane: { flex: 0.7 },
+  notesPane: { flex: 0.7 },
   testsPane: { flex: 0.25 }
 };
 
@@ -371,6 +374,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     );
   }
 
+  renderNotes(notes?: string) {
+    return <Notes notes={notes} />;
+  }
+
   renderPreview() {
     return (
       <Preview
@@ -397,7 +404,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       forumTopicId,
       superBlock,
       title,
-      usesMultifileEditor
+      usesMultifileEditor,
+      notes
     } = this.getChallenge();
     const {
       executeChallenge,
@@ -425,10 +433,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             <MobileLayout
               editor={this.renderEditor()}
               guideUrl={getGuideUrl({ forumTopicId, title })}
+              hasEditableBoundaries={this.hasEditableBoundaries()}
+              hasNotes={!!notes}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
                 showToolPanel: false
               })}
+              notes={this.renderNotes(notes)}
               preview={this.renderPreview()}
               testOutput={this.renderTestOutput()}
               usesMultifileEditor={usesMultifileEditor}
@@ -441,11 +452,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               challengeFiles={challengeFiles}
               editor={this.renderEditor()}
               hasEditableBoundaries={this.hasEditableBoundaries()}
+              hasNotes={!!notes}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
                 showToolPanel: true
               })}
               layoutState={this.state.layout}
+              notes={this.renderNotes(notes)}
               preview={this.renderPreview()}
               resizeProps={this.resizeProps}
               superBlock={superBlock}
@@ -481,6 +494,7 @@ export const query = graphql`
       title
       description
       instructions
+      notes
       removeComments
       challengeType
       helpCategory

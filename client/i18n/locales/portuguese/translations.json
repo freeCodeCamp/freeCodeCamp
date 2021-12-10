@@ -88,7 +88,7 @@
       "emma": {
         "location": "<strong>Emma Bostian</strong> na Suécia",
         "occupation": "Engenheira de software na <strong>Spotify</strong>",
-        "testimony": "\"Eu sempre tive dificuldade em aprender JavaScript. Eu fiz muitos cursos, mas o curso do freeCodeCamp foi aquele que prendeu minha atenção. Estudar JavaScript, bem como estruturas e algoritmos de dados no <strong>freeCodeCamp me deu as habilidades</strong> e a confiança que eu precisava para conseguir o trabalho dos meus sonhos como engenheira de software na Spotify.\""
+        "testimony": "\"Eu sempre tive dificuldade em aprender JavaScript. Eu fiz muitos cursos, mas o curso do freeCodeCamp foi aquele que prendeu minha atenção. Estudar JavaScript, bem como algoritmos e estruturas de dados no <strong>freeCodeCamp me deu as habilidades</strong> e a confiança que eu precisava para conseguir o trabalho dos meus sonhos como engenheira de software na Spotify.\""
       }
     },
     "certification-heading": "Ganhe certificações verificadas gratuitas em:"
@@ -287,11 +287,16 @@
       "info": "Informações",
       "code": "Código",
       "tests": "Testes",
+      "restart": "Restart",
+      "restart-step": "Restart Step",
+      "console": "Console",
+      "notes": "Notes",
       "preview": "Pré-visualizar"
     },
     "help-translate": "Ainda estamos traduzindo as certificações a seguir.",
     "help-translate-link": "Ajude-nos a traduzir.",
     "season-greetings": "Boas festas de fim de ano para você e sua família.",
+    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
     "if-getting-value": "Se você está conseguindo tirar proveito do conteúdo do freeCodeCamp, agora é um ótimo momento para fazer sua doação e apoiar nossa missão sem fins lucrativos.",
     "project-preview-title": "Aqui está uma prévia do que você vai criar"
   },

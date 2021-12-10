@@ -91,12 +91,22 @@ const CertChallenge = ({
       void (async () => {
         try {
           const data = await getVerifyCanClaimCert(username, superBlock);
-          const { status, result } = data?.response?.message;
-          setCanClaimCert(status);
-          setCertVerificationMessage(result);
-          setVerificationComplete(true);
+          if (data?.message) {
+            setCanClaimCert(false);
+            createFlashMessage(data.message);
+          } else {
+            const { status, result } = data?.response?.message;
+            setCanClaimCert(status);
+            setCertVerificationMessage(result);
+          }
         } catch (e) {
-          // TODO: How do we handle errors...?
+          console.error(e);
+          createFlashMessage({
+            type: 'danger',
+            message: FlashMessages.ReallyWeird
+          });
+        } finally {
+          setVerificationComplete(true);
         }
       })();
     }

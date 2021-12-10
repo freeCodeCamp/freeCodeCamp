@@ -55,7 +55,7 @@ function destroyAll(id, Model) {
   return Observable.fromNodeCallback(Model.destroyAll, Model)({ userId: id });
 }
 
-function ensureLowerCaseString(maybeString) {
+export function ensureLowerCaseString(maybeString) {
   return (maybeString && maybeString.toLowerCase()) || '';
 }
 

@@ -1,0 +1,91 @@
+---
+id: 587d7b87367417b2b2512b42
+title: Видозмінюйте наданий масив за допомогою змінної
+challengeType: 1
+forumTopicId: 301206
+dashedName: mutate-an-array-declared-with-const
+---
+
+# --description--
+
+Якщо ви ще не знаєте про `const`, то перегляньте [це завдання](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword).
+
+Є багато значень змінної `const` у сучасній JavaScript.
+
+Деякі розробники надають перевагу привласненню усіх змінних за допомогою `const`, доки вони не дізнаються про можливу необхідність перепризначення змінної. Тоді вони використовують `let`.
+
+Проте варто розуміти, що об'єкти (включаючи масиви та функції), призначенні змінній за допомогою `const`, все ще можна змінювати. Правильне використання `const` запобігає зміненню ідентифікатора змінної.
+
+```js
+const s = [5, 6, 7];
+s = [1, 2, 3];
+s[2] = 45;
+console.log(s);
+```
+
+`s = [1, 2, 3]` призведе до помилки. Виклик `console.log` відображає `[5, 6, 45]`.
+
+Як ви помітили, можна змінювати об'єкт `[5, 6, 7]`. Змінна `s` все ще вказуватиме на змінений масив `[5, 6, 45]</code. Як і усі масиви, елементи масиву в <code>s` є незмінними, бо було використано `const`. Ви не можете використовувати ідентифікатор змінної `s`, щоб вказувати на інший масив оператору призначення.
+
+# --instructions--
+
+Масив оголошується як `const s = [5, 7, 2]`. Змініть масив на `[2, 5, 7]` використовуючи різні призначення елементів.
+
+# --hints--
+
+Вам не слід замінювати ключове слово `const`.
+
+```js
+(getUserInput) => assert(getUserInput('index').match(/const/g));
+```
+
+`s` має бути постійно змінною (використовуйте `const`).
+
+```js
+(getUserInput) => assert(getUserInput('index').match(/const\s+s/g));
+```
+
+Не слід змінювати початковий масив.
+
+```js
+(getUserInput) =>
+  assert(
+    getUserInput('index').match(
+      /const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g
+    )
+  );
+```
+
+`s` повинен дорівнювати `[2, 5, 7]`.
+
+```js
+assert.deepEqual(s, [2, 5, 7]);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+const s = [5, 7, 2];
+function editInPlace() {
+  // Only change code below this line
+
+  // Using s = [2, 5, 7] would be invalid
+
+  // Only change code above this line
+}
+editInPlace();
+```
+
+# --solutions--
+
+```js
+const s = [5, 7, 2];
+function editInPlace() {
+  s[0] = 2;
+  s[1] = 5;
+  s[2] = 7;
+}
+editInPlace();
+```
