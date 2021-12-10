@@ -552,7 +552,7 @@ export const reducer = handleActions(
     ) => {
       const ensuredUsername = ensureLowerCaseString(username);
       const previousUserObject =
-        username in state.user ? state.user[ensuredUsername] : {};
+        ensuredUsername in state.user ? state.user[ensuredUsername] : {};
       return {
         ...state,
         user: {
