@@ -19,3 +19,7 @@ export const fixCompletedChallengeItem = obj =>
     'challengeType',
     'files'
   ]);
+
+export function ensureLowerCaseString(maybeString) {
+  return (maybeString && maybeString.toLowerCase()) || '';
+}

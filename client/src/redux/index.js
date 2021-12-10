@@ -3,6 +3,7 @@ import { createAction, handleActions } from 'redux-actions';
 import store from 'store';
 
 import { SuperBlocks } from '../../../config/certification-settings';
+import { ensureLowerCaseString } from '../../../utils';
 import { actionTypes as challengeTypes } from '../templates/Challenges/redux/action-types';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 import { createAcceptTermsSaga } from './accept-terms-saga';
@@ -251,7 +252,7 @@ export const userByNameSelector = username => state => {
   const { user } = state[MainApp];
   // return initial state empty user empty object instead of empty
   // object litteral to prevent components from re-rendering unnecessarily
-  return user[username] ?? initialState.user;
+  return user[ensureLowerCaseString(username)] ?? initialState.user;
 };
 
 export const certificatesByNameSelector = username => state => {
@@ -386,7 +387,7 @@ export const usernameSelector = state => state[MainApp].appUsername;
 export const userSelector = state => {
   const username = usernameSelector(state);
 
-  return state[MainApp].user[username] || {};
+  return state[MainApp].user[ensureLowerCaseString(username)] || {};
 };
 
 export const sessionMetaSelector = state => state[MainApp].sessionMeta;
@@ -521,7 +522,7 @@ export const reducer = handleActions(
       ...state,
       user: {
         ...state.user,
-        [username]: { ...user, sessionUser: true }
+        [ensureLowerCaseString(username)]: { ...user, sessionUser: true }
       },
       appUsername: username,
       currentChallengeId: user.currentChallengeId,
@@ -549,13 +550,14 @@ export const reducer = handleActions(
       state,
       { payload: { user, username } }
     ) => {
+      const ensuredUsername = ensureLowerCaseString(username);
       const previousUserObject =
-        username in state.user ? state.user[username] : {};
+        username in state.user ? state.user[ensuredUsername] : {};
       return {
         ...state,
         user: {
           ...state.user,
-          [username]: { ...previousUserObject, ...user }
+          [ensuredUsername]: { ...previousUserObject, ...user }
         },
         userProfileFetchState: {
           ...defaultFetchState,

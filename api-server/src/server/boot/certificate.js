@@ -20,7 +20,7 @@ import { reportError } from '../middlewares/sentry-error-handler.js';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUser401 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
-import { ensureLowerCaseString } from '../../common/models/user';
+import { ensureLowerCaseString } from '../../common/utils';
 
 const {
   legacyFrontEndChallengeId,

@@ -36,7 +36,8 @@ import {
   getWaitMessage,
   renderEmailChangeEmail,
   renderSignUpEmail,
-  renderSignInEmail
+  renderSignInEmail,
+  ensureLowerCaseString
 } from '../utils';
 
 const log = debugFactory('fcc:models:user');
@@ -53,10 +54,6 @@ const createEmailError = redirectTo =>
 
 function destroyAll(id, Model) {
   return Observable.fromNodeCallback(Model.destroyAll, Model)({ userId: id });
-}
-
-export function ensureLowerCaseString(maybeString) {
-  return (maybeString && maybeString.toLowerCase()) || '';
 }
 
 function buildCompletedChallengesUpdate(completedChallenges, project) {

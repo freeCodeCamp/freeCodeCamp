@@ -47,3 +47,7 @@ for (const [id, title] of idToTitle) {
 export const getCertIds = () => idToPath.keys();
 export const getPathFromID = id => idToPath.get(id);
 export const getTitleFromId = id => idToTitle.get(id);
+
+export function ensureLowerCaseString(maybeString) {
+  return (maybeString && maybeString.toLowerCase()) || '';
+}
