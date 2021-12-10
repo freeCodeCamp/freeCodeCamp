@@ -202,7 +202,6 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
     yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);
-    console.log({ challengeData });
     if (canBuildChallenge(challengeData)) {
       const challengeMeta = yield select(challengeMetaSelector);
       const protect = isLoopProtected(challengeMeta);
@@ -210,7 +209,6 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         preview: true,
         protect
       });
-      console.log(challengeHasPreview(challengeData));
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
@@ -254,6 +252,7 @@ function* previewProjectSolutionSaga({ payload }) {
 }
 
 export function createExecuteChallengeSaga(types) {
+  console.log('createExecuteChallengeSaga');
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
     takeLatest(

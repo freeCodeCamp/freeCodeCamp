@@ -5,6 +5,7 @@ import type {
   ChallengeFile,
   ClaimedCertifications,
   CompletedChallenge,
+  SaveableChallenge,
   User
 } from '../redux/prop-types';
 
@@ -228,6 +229,13 @@ export function postResetProgress(): Promise<void> {
 
 export function postWebhookToken(): Promise<void> {
   return post('/user/webhook-token', {});
+}
+
+export function postSaveChallenge(body: {
+  id: string;
+  challengeFile: SaveableChallenge;
+}): Promise<void> {
+  return post('/save-challenge', body);
 }
 
 /** PUT **/

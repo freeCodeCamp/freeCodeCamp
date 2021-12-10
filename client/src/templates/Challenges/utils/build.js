@@ -147,7 +147,6 @@ export function buildDOMChallenge({
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
     .then(challengeFiles => {
-      console.log(challengeFiles);
       return {
         challengeType:
           challengeTypes.html || challengeTypes.multiFileCertProject,

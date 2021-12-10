@@ -349,6 +349,14 @@ export type ChallengeFile = {
 
 export type ChallengeFiles = ChallengeFile[] | null;
 
+export type SaveableChallenge = {
+  contents: string;
+  key: FileKey;
+  name: string;
+  ext: Ext;
+  path: string;
+};
+
 export interface UserFetchState {
   pending: boolean;
   complete: boolean;

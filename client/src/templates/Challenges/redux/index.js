@@ -13,6 +13,7 @@ import completionEpic from './completion-epic';
 import createQuestionEpic from './create-question-epic';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
+import { createSaveChallengeSaga } from './save-challenge-saga';
 
 export { ns };
 
@@ -55,7 +56,8 @@ export const epics = [
 
 export const sagas = [
   ...createExecuteChallengeSaga(actionTypes),
-  ...createCurrentChallengeSaga(actionTypes)
+  ...createCurrentChallengeSaga(actionTypes),
+  ...createSaveChallengeSaga(actionTypes)
 ];
 
 // TODO: can createPoly handle editable region, rather than separating it?
@@ -85,6 +87,7 @@ export const updateChallengeMeta = createAction(
   actionTypes.updateChallengeMeta
 );
 export const updateFile = createAction(actionTypes.updateFile);
+export const saveChallenge = createAction(actionTypes.saveChallenge); // we made it here
 export const updateConsole = createAction(actionTypes.updateConsole);
 export const updateLogs = createAction(actionTypes.updateLogs);
 export const updateJSEnabled = createAction(actionTypes.updateJSEnabled);

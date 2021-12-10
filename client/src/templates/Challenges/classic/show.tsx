@@ -348,6 +348,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       challengeFiles,
       data: {
         challengeNode: {
+          challengeType,
+          id,
           fields: { tests },
           usesMultifileEditor
         }
@@ -359,6 +361,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       challengeFiles && (
         <MultifileEditor
           challengeFiles={challengeFiles}
+          id={id}
+          challengeType={challengeType}
           containerRef={this.containerRef}
           description={description}
           editorRef={this.editorRef}
@@ -506,6 +510,7 @@ export const query = graphql`
       block
       title
       description
+      id
       instructions
       notes
       removeComments

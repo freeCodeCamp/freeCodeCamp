@@ -21,6 +21,7 @@ const propTypes = {
   canFocus: PropTypes.bool,
   // TODO: use shape
   challengeFiles: PropTypes.array,
+  challengeType: PropTypes.number,
   containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
   description: PropTypes.string,
@@ -29,6 +30,7 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
+  id: PropTypes.string,
   initialEditorContent: PropTypes.string,
   initialExt: PropTypes.string,
   initialTests: PropTypes.array,
@@ -75,9 +77,11 @@ const mapDispatchToProps = {
 const MultifileEditor = props => {
   const {
     challengeFiles,
+    challengeType,
     containerRef,
     description,
     editorRef,
+    id,
     initialTests,
     theme,
     resizeProps,
@@ -136,10 +140,12 @@ const MultifileEditor = props => {
                   <Editor
                     canFocusOnMountRef={canFocusOnMountRef}
                     challengeFiles={challengeFiles}
+                    challengeType={challengeType}
                     containerRef={containerRef}
                     description={targetEditor === key ? description : null}
                     editorRef={editorRef}
                     fileKey={key}
+                    id={id}
                     initialTests={initialTests}
                     resizeProps={resizeProps}
                     theme={editorTheme}
