@@ -19,7 +19,6 @@ function Footer(): JSX.Element {
               <Link className='inline' to='/donate'>
                 {t('footer.donate-link')}
               </Link>
-              .
             </p>
           </div>
           <div className='trending-guides'>
