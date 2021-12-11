@@ -33,7 +33,6 @@ exports[`<Footer /> matches snapshot 1`] = `
           >
             footer.donate-link
           </a>
-          .
         </p>
       </div>
       <div
