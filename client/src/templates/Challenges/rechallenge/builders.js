@@ -80,8 +80,8 @@ export function concatHtml({
     .map(({ link, src }) => {
       if (link && src) {
         throw new Error(`
-		A required file can not have both a src and a link: src = ${src}, link = ${link}
-		`);
+A required file can not have both a src and a link: src = ${src}, link = ${link}
+`);
       }
       if (src) {
         return `<script src='${src}' type='text/javascript'></script>`;
