@@ -536,7 +536,7 @@ Fare provisioning delle VM con il codice
 2. Aggiorna `npm` e installa PM2 e fai il setup di `logrotate` e avvio all'accensione
 
    ```console
-   npm i -g npm@6
+   npm i -g npm@8
    npm i -g pm2
    npm install -g serve
    pm2 install pm2-logrotate
