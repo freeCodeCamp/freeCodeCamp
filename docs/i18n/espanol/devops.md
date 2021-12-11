@@ -536,7 +536,7 @@ Aprovisionamiento de MVs con el código
 2. Actualiza `npm` e instala PM2 y configura `logrotate` e inicia en el arranque
 
    ```console
-   npm i -g npm@6
+   npm i -g npm@8
    npm i -g pm2
    npm install -g serve
    pm2 install pm2-logrotate
