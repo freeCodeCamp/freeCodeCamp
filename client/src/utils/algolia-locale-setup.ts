@@ -28,6 +28,11 @@ const algoliaIndices = {
   portuguese: {
     name: 'news-pt',
     searchPage: 'https://www.freecodecamp.org/portuguese/news/search/'
+  },
+  // TODO: Replace with Ukrainian news when we have more useful resources on that instance
+  ukrainian: {
+    name: 'news',
+    searchPage: 'https://www.freecodecamp.org/news/search/'
   }
 };
 
