@@ -21,15 +21,15 @@ const algoliaIndices = {
     name: 'news-zh',
     searchPage: 'https://chinese.freecodecamp.org/news/search'
   },
-  // TODO: Replace with i18n pages when shipped
   italian: {
-    name: 'news',
-    searchPage: 'https://www.freecodecamp.org/news/search/'
+    name: 'news-it',
+    searchPage: 'https://www.freecodecamp.org/italian/news/search/'
   },
   portuguese: {
-    name: 'news',
-    searchPage: 'https://www.freecodecamp.org/news/search/'
+    name: 'news-pt',
+    searchPage: 'https://www.freecodecamp.org/portuguese/news/search/'
   },
+  // TODO: Replace with Ukrainian news when we have more useful resources on that instance
   ukrainian: {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
