@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     strategy:
+      fail-fast: false
       matrix:
         node-version: [16.x]
 
@@ -39,6 +40,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     strategy:
+      fail-fast: false
       matrix:
         node-version: [16.x]
 
@@ -70,6 +72,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     strategy:
+      fail-fast: false
       matrix:
         node-version: [16.x]
 
@@ -103,6 +106,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     strategy:
+      fail-fast: false
       matrix:
         node-version: [16.x]
         locale: [chinese, espanol]

@@ -8,12 +8,13 @@ Se você gostaria de testar suas traduções em uma instância local do site Fre
 
 Existem algumas etapas a serem seguidas para permitir que a base de código seja compilada no idioma desejado.
 
-Primeiro, visite o arquivo `config/i18n/all-langs.js` para adicionar o idioma à lista de idiomas disponíveis e configurar os valores. Existem quatro objetos aqui.
+First, visit the `config/i18n/all-langs.ts` file to add the language to the available languages list and configure the values. Existem quatro objetos aqui.
 
 - `availableLangs`: tanto para o array `client` quanto para o array `curriculum`, adicione o nome do idioma. Esse valor é o que será usado no arquivo `.env` depois.
-- `i18nextCodes`: esses são os códigos ISO de cada linguagem. Você vai precisar do código ISO apropriado para o idioma que você está habilitando. Eles precisam ser únicos para cada idioma.
-- `langDisplayNames`: esses são os nomes dos idiomas que aparecerão para a seleção no menu de navegação.
-- `langCodes`: esses são os códigos de idiomas usados para formatar datas e números. Esses deverão ser códigos Unicode CLDR ao invés de códigos ISO.
+- `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.
+- `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
+- `langDisplayNames`: These are the display names for the language selector in the navigation menu.
+- `langCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
 
 Como um exemplo, se você tivesse que habilitar o idioma Dothraki como seu idioma, os objetos  `all-langs.js` devem ficar assim:
 
@@ -26,6 +27,45 @@ const availableLangs = {
     'chinese',
     'chinese-traditional',
     'dothraki'
+  ]
+};
+
+export const auditedCerts = {
+  espanol: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis
+  ],
+  chinese: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy
+  ],
+  'chinese-traditional': [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy
+  ],
+  dothraki: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
   ]
 };
 
@@ -54,9 +94,11 @@ const langCodes = {
 };
 ```
 
-Agora, abra o arquivo `client/src/utils/algolia-locale-setup.js`. Esse dado é usado para a barra de busca que carrega os artigos `/news`. Embora seja improvável que você venha a testar essa funcionalidade, não ter os dados para o seu idioma pode levar a erros quando tentar criar a base de código localmente.
+Next, open the `client/src/utils/algolia-locale-setup.ts` file. Esse dado é usado para a barra de busca que carrega os artigos `/news`. Embora seja improvável que você venha a testar essa funcionalidade, não ter os dados para o seu idioma pode levar a erros quando tentar criar a base de código localmente.
 
 Adicione um objeto para seu idioma no objeto `algoliaIndices`. Você deve usar os valores do objeto `english` para o teste local, substituindo a chave `english` pelo valor de `availableLangs` do seu idioma.
+
+> [!NOTE] If we have already deployed an instance of news in your target language, you can update the values to reflect the live instance. Otherwise, use the English values.
 
 Se você fosse adicionar Dothraki:
 
@@ -85,41 +127,7 @@ const algoliaIndices = {
 };
 ```
 
-Depois, você precisará informar ao client quais certificações estão traduzidas e quais ainda estão em inglês. Abra o arquivo `utils/is-audited.js`. Dentro de `auditedCerts`, adicione uma nova chave com o valor de `availableLangs` de seu idioma. Atribua o valor daquela chave a um array que contém os _nomes hifenizados_ para as certificações foram traduzidas. Consulte os dados existentes para aqueles nomes hifenizados.
-
-Dando continuidade ao trabalho para habilitar o idioma Dothraki – traduzimos as três primeiras certificações:
-
-```js
-const auditedCerts = {
-  espanol: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures'
-  ],
-  chinese: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis',
-    'quality-assurance'
-  ],
-  'chinese-traditional': [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis',
-    'quality-assurance'
-  ],
-  dothraki: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries'
-  ]
-};
-```
-
-Por fim, em seu arquivo `.env`, definimos `CLIENT_LOCALE` e `CURRICULUM_LOCALE` com o valor de seu novo idioma (use o valor de `availableLangs`.)
+Finally, in your `.env` file, set `CLIENT_LOCALE` and `CURRICULUM_LOCALE` to your new language (use the `availableLangs` value.)
 
 ```txt
 CLIENT_LOCALE="dothraki"
@@ -128,7 +136,7 @@ CURRICULUM_LOCALE="dothraki"
 
 ## Ativando vídeos localizados
 
-Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, adicione o novo idioma (locale) à consilta do GraphQL no arquivo `client/src/templates/Challenges/video/Show.tsx`. Por exemplo, para adicionar Dothraki à consulta:
+For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -143,7 +151,7 @@ Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, 
       ...
 ```
 
-Em seguida, adicione um id para o novo idioma para qualquer desafio em vídeo em um bloco auditado. Por exemplo, se `auditedCerts` em `all-langs.js` inclui `scientific-computing-with-python` para `dothraki`, você deve adicionar uma entrada em `dothraki` em `videoLocaleIds`. O frontmatter dever ter essa aparência:
+Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
 
 ```yml
 videoLocaleIds:
@@ -151,11 +159,11 @@ videoLocaleIds:
   italian: hiRTRAqNlpE
   portuguese: AelGAcoMXbI
   dothraki: new-id-here
-nomeComTracos: introducao-por-que-programa
+dashedName: introduction-why-program
 ---
 ```
 
-Atualize a interface de `VideoLocaleIds` em `client/src/redux/prop-types` para que ela inclua o novo idioma.
+Update the `VideoLocaleIds` interface in `client/src/redux/prop-types` to include the new language.
 
 ```ts
 export interface VideoLocaleIds {
@@ -166,7 +174,7 @@ export interface VideoLocaleIds {
 }
 ```
 
-Por fim, atualize o schema de desafios em `curriculum/schema/challengeSchema.js`.
+And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
 
 ```js
 videoLocaleIds: Joi.when('challengeType', {
@@ -182,10 +190,10 @@ videoLocaleIds: Joi.when('challengeType', {
 
 ## Carregando traduções
 
-Como o idioma ainda não foi aprovado para produção, nossos scripts ainda não estão baixando automaticamente as traduções. Somente membros da equipe têm acesso para baixar as traduções diretamente – entre em contato conosco quando quiser em nossa [sala de chat dos contribuidores](https://chat.freecodecamp.org/channel/contributors) ou traduza os arquivos de markdown em inglês localmente para fins de teste.
+Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors), or you can translate the English markdown files locally for testing purposes.
 
-Quando tiver os arquivos em mãos, você precisará colocá-los no diretório correto. Para os desafios do currículo, você deve colocar as pastas de certificação (por exemplo, `01-responsive-web-design`) no diretório `curriculum/challenges/{lang}`. Para nossas traduções em Dothraki, esse diretório seria `curriculum/challenges/dothraki`. Os arquivos `.json` de tradução do client vão no diretório `client/i18n/locales/{lang}`.
+Once you have the files, you will need to place them in the correct directory. For the curriculum challenges, you should place the certification folders (i.e. `01-responsive-web-design`) within the `curriculum/challenges/{lang}` directory. For our Dothraki translations, this would be `curriculum/challenges/dothraki`. The client translation `.json` files will go in the `client/i18n/locales/{lang}` directory.
 
-Quando estes arquivos estiverem no local certo, você deve poder usar `npm run develop` para ver sua versão traduzida do freeCodeCamp.
+Once these are in place, you should be able to run `npm run develop` to view your translated version of freeCodeCamp.
 
-> [!ATTENTION] Embora você possa realizar as traduções localmente para fins de teste, lembramos a todos que as traduções _não_ devem ser enviadas pelo GitHub e devem ser feitas somente pelo Crowdin. Certifique-se de reiniciar sua base de código local após realizar os testes.
+> [!ATTENTION] While you may perform translations locally for the purpose of testing, we remind everyone that translations should _not_ be submitted through GitHub and should only be done through Crowdin. Be sure to reset your local codebase after you are done testing.

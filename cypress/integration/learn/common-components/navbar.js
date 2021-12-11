@@ -32,8 +32,34 @@ function waitForAppStart() {
   });
 }
 
-describe('Navbar', () => {
+describe('Navbar when logged out', () => {
   beforeEach(() => {
+    appHasStarted = false;
+    cy.visit('/', {
+      onBeforeLoad: spyOnListener
+    }).then(waitForAppStart);
+    cy.viewport(1300, 660);
+  });
+
+  it('Should have a "Sign in" button', () => {
+    cy.contains("[data-test-label='landing-small-cta']", 'Sign in');
+  });
+
+  it(
+    'Should have `Sign in` link on landing and learn pages' +
+      ' when not signed in',
+    () => {
+      cy.contains(selectors.smallCallToAction, 'Sign in');
+      cy.get(selectors.menuButton).click();
+      cy.get(selectors.navigationLinks).contains('Curriculum').click();
+      cy.contains(selectors.smallCallToAction, 'Sign in');
+    }
+  );
+});
+
+describe('Navbar Logged in', () => {
+  beforeEach(() => {
+    cy.login();
     appHasStarted = false;
     cy.visit('/', {
       onBeforeLoad: spyOnListener
@@ -56,10 +82,6 @@ describe('Navbar', () => {
     }
   );
 
-  it('Should have a "Sign in" button', () => {
-    cy.contains("[data-test-label='landing-small-cta']", 'Sign in');
-  });
-
   // have the curriculum and CTA on landing and /learn pages.
   it(
     'Should have `Radio`, `Forum`, and `Curriculum` links on landing and learn pages' +
@@ -75,32 +97,18 @@ describe('Navbar', () => {
     }
   );
 
-  it(
-    'Should have `Sign in` link on landing and learn pages' +
-      ' when not signed in',
-    () => {
-      cy.contains(selectors.smallCallToAction, 'Sign in');
-      cy.get(selectors.menuButton).click();
-      cy.get(selectors.navigationLinks).contains('Curriculum').click();
-      cy.contains(selectors.smallCallToAction, 'Sign in');
-    }
-  );
-
   it('Should have `Profile` link when user is signed in', () => {
-    cy.login();
     cy.get(selectors.menuButton).click();
     cy.get(selectors.navigationLinks).contains('Profile').click();
     cy.url().should('include', '/developmentuser');
   });
 
   it('Should have a profile image with class `default-border`', () => {
-    cy.login();
     cy.get(selectors.avatarContainer).should('have.class', 'default-border');
     cy.get(selectors.defaultAvatar).should('exist');
   });
 
   it('Should have a profile image with dimensions that are <= 31px', () => {
-    cy.login();
     cy.get(selectors.avatarImage).invoke('width').should('lte', 31);
     cy.get(selectors.avatarImage).invoke('height').should('lte', 31);
   });

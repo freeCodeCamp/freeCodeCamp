@@ -1,6 +1,8 @@
 describe('Settings', () => {
-  it('should be possible to reset your progress', () => {
+  before(() => {
     cy.login();
+  });
+  it('should be possible to reset your progress', () => {
     cy.visit('/settings');
     cy.contains('Reset all of my progress').click();
     cy.contains('Reset everything. I want to start from the beginning').click();

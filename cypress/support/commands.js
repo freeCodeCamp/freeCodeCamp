@@ -33,14 +33,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => {});
 
 Cypress.Commands.add('login', () => {
-  cy.visit('/');
-  cy.contains("Get started (it's free)").click();
-  cy.location({ timeout: 10000 }).should(loc => {
-    // I'm not 100% sure why logins get redirected to /learn/ via 301 in
-    // development, but not in production, but they do. Hence to make it easier
-    // work on tests, we'll just allow for both.
-    expect(loc.pathname).to.match(/^\/learn\/?$/);
-  });
+  cy.visit('http://localhost:3000/signin');
   cy.contains('Welcome back');
 });
 
@@ -60,7 +53,6 @@ Cypress.Commands.add('toggleAll', () => {
 });
 
 Cypress.Commands.add('resetUsername', () => {
-  cy.login();
   cy.visit('/settings');
 
   cy.get('@usernameInput')
