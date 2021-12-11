@@ -1,60 +1,40 @@
 import '@testing-library/cypress/add-commands';
 
 describe('Settings certifications area', () => {
-  before(() => {
-    cy.exec('npm run seed');
-    cy.login();
-  });
-
   describe('initially', () => {
-    beforeEach(() => {
-      cy.visit('/settings');
+    before(() => {
+      cy.exec('npm run seed');
+      cy.login();
     });
 
-    it('Should render 15 "Claim Certification" buttons', () => {
+    it('Should render the default settings page', () => {
+      cy.visit('/settings/');
       cy.findAllByText('Claim Certification').should($btns => {
         expect($btns).to.have.length(15);
       });
-    });
-
-    it('Should render zero "Show Certification" buttons', () => {
-      cy.contains('Show Certification').should('not.exist');
-    });
-
-    it('Should render one "Agree" button', () => {
-      cy.contains('Agree').should('exist');
-    });
-
-    describe('before isHonest', () => {
-      it('Should show "must agree" message when trying to claim a cert', () => {
-        cy.contains('Claim Certification').click();
-        cy.contains(
-          'To claim a certification, you must first accept our academic honesty policy'
-        ).should('exist');
-      });
+      cy.findByText('Show Certification').should('not.exist');
+      cy.contains('Agree');
+      cy.contains('Claim Certification').click();
+      cy.contains(
+        'To claim a certification, you must first accept our academic honesty policy'
+      );
     });
   });
 
   describe('after isHonest', () => {
     before(() => {
+      cy.exec('npm run seed');
       cy.login();
     });
 
-    it('Should render "You have accepted our Academic Honesty Policy." button after clicking "Agree"', () => {
+    it('Should update the user as they try to claim their certifications', () => {
       cy.visit('/settings');
-      cy.contains('Agree').click({ force: true });
-      cy.contains('You have accepted our Academic Honesty Policy.').should(
-        'exist'
-      );
-    });
-
-    it('Should show "incompleted projects" message when clicking "Claim Certification"', () => {
-      cy.visit('/settings');
-      cy.contains('Claim Certification').click({ force: true });
-
+      cy.contains('Agree').click();
+      cy.contains('You have accepted our Academic Honesty Policy.');
+      cy.contains('Claim Certification').click();
       cy.contains(
         'It looks like you have not completed the necessary steps. Please complete the required projects to claim the Responsive Web Design Certification'
-      ).should('exist');
+      );
     });
   });
 });
