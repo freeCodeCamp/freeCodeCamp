@@ -1,14 +1,18 @@
 describe('Username input field', () => {
   beforeEach(() => {
     cy.login();
+  });
+
+  function goToSettings() {
     cy.visit('/settings');
 
     // Setting aliases here
     cy.get('input[name=username-settings]').as('usernameInput');
     cy.get('form#usernameSettings').as('usernameForm');
-  });
+  }
 
   it('Should be possible to type', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('twaha', { force: true })
@@ -16,6 +20,7 @@ describe('Username input field', () => {
   });
 
   it('Should show message when validating name', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('twaha', { force: true });
@@ -28,6 +33,7 @@ describe('Username input field', () => {
   });
 
   it('Should show username is available if it is', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('brad', { force: true });
@@ -41,6 +47,7 @@ describe('Username input field', () => {
   });
 
   it('Should info message if username is available', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('mrugesh', { force: true });
@@ -58,6 +65,7 @@ describe('Username input field', () => {
 
   // eslint-disable-next-line
   it('Should be able to click the `Save` button if username is avalable', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('oliver', { force: true });
@@ -68,6 +76,7 @@ describe('Username input field', () => {
   });
 
   it('Should show username is unavailable if it is', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('twaha', { force: true });
@@ -82,6 +91,7 @@ describe('Username input field', () => {
 
   // eslint-disable-next-line
   it('Should not be possible to click the `Save` button if username is unavailable', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('twaha', { force: true });
@@ -97,6 +107,7 @@ describe('Username input field', () => {
   });
 
   it('Should not show anything if user types their current name', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('developmentuser', { force: true });
@@ -106,6 +117,7 @@ describe('Username input field', () => {
 
   // eslint-disable-next-line max-len
   it('Should not be possible to click the `Save` button if user types their current name', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('developmentuser', { force: true });
@@ -114,6 +126,7 @@ describe('Username input field', () => {
   });
 
   it('Should show warning if username includes invalid character', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('Quincy Larson', { force: true });
@@ -128,6 +141,7 @@ describe('Username input field', () => {
 
   // eslint-disable-next-line max-len
   it('Should not be able to click the `Save` button if username includes invalid character', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('Quincy Larson', { force: true });
@@ -136,6 +150,7 @@ describe('Username input field', () => {
   });
 
   it('Should change username if `Save` button is clicked', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('quincy', { force: true });
@@ -149,6 +164,7 @@ describe('Username input field', () => {
   });
 
   it('Should change username with uppercase characters if `Save` button is clicked', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('Quincy', { force: true });
@@ -162,6 +178,7 @@ describe('Username input field', () => {
   });
 
   it('Should show flash message showing username has been updated', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('nhcarrigan', { force: true });
@@ -181,6 +198,7 @@ describe('Username input field', () => {
   });
 
   it('Should be able to close the shown flash message', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('bjorno', { force: true });
@@ -197,6 +215,7 @@ describe('Username input field', () => {
   });
 
   it('Should change username if enter is pressed', () => {
+    goToSettings();
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('symbol', { force: true });

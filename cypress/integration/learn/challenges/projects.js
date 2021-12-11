@@ -34,6 +34,7 @@ const pythonProjects = {
 describe('project submission', () => {
   beforeEach(() => {
     cy.exec('npm run seed');
+    cy.login();
   });
   // NOTE: this will fail once challenge tests are added.
   it('Should be possible to submit Python projects', () => {
@@ -46,7 +47,7 @@ describe('project submission', () => {
         .type('https://replit.com/@camperbot/python-project#main.py');
 
       cy.contains("I've completed this challenge").click();
-      cy.contains('Go to next challenge');
+      cy.contains('go to next challenge');
       // clicking on 'Go to next challenge' seems to have caused flakiness, so
       // it's commented out until we figure out why.
       // cy.contains('Go to next challenge').click();
@@ -61,7 +62,6 @@ describe('project submission', () => {
     'JavaScript projects can be submitted and then viewed in /settings and on the certifications',
     { browser: 'electron' },
     () => {
-      cy.login();
       cy.fixture('../../config/curriculum.json').then(curriculum => {
         const { challenges, meta } =
           curriculum[SuperBlocks.JsAlgoDataStruct].blocks[

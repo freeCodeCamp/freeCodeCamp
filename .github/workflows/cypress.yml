@@ -62,6 +62,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: build-client
     strategy:
+      fail-fast: false
       matrix:
         browsers: [chrome, firefox, electron]
         node-version: [16.x]
