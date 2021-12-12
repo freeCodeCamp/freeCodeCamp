@@ -11,7 +11,7 @@ const log = debug('fcc:boot:settings');
 export default function settingsController(app) {
   const api = app.loopback.Router();
 
-  const updateMyUsername = createUpdateMyUsername(app);
+  const updateMyUsernameDisplay = createUpdateMyUsernameDisplay(app);
 
   api.put('/update-privacy-terms', ifNoUser401, updatePrivacyTerms);
 
@@ -44,7 +44,7 @@ export default function settingsController(app) {
     updateMyEmail
   );
   api.put('/update-my-profileui', ifNoUser401, updateMyProfileUI);
-  api.put('/update-my-username', ifNoUser401, updateMyUsername);
+  api.put('/update-my-username-display', ifNoUser401, updateMyUsernameDisplay);
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
 
   app.use(api);
@@ -170,11 +170,12 @@ function updateMyAbout(req, res, next) {
   );
 }
 
-function createUpdateMyUsername(app) {
+function createUpdateMyUsernameDisplay(app) {
   const { User } = app.models;
-  return async function updateMyUsername(req, res, next) {
+  return async function updateMyUsernameDisplay(req, res, next) {
     const { user, body } = req;
-    const usernameDisplay = body.username.trim();
+    const usernameDisplay = body.usernameDisplay.trim();
+    // 'username' should already be usernameDisplay.toLowerCase(), but this double-checks
     const username = usernameDisplay.toLowerCase();
     if (
       username === user.username &&
@@ -189,6 +190,7 @@ function createUpdateMyUsername(app) {
     const validation = isValidUsername(username);
 
     if (!validation.valid) {
+      // TODO: SHAUN - return usernameDisplay instead?
       return res.json({
         type: 'info',
         message: `Username ${username} ${validation.error}`
@@ -214,7 +216,7 @@ function createUpdateMyUsername(app) {
       return res.status(200).json({
         type: 'success',
         message: `flash.username-updated`,
-        variables: { username: usernameDisplay }
+        variables: { username, usernameDisplay }
       });
     });
   };

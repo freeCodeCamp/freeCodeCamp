@@ -105,13 +105,12 @@ function isTheSame(val1, val2) {
 
 function getAboutProfile({
   username,
-  usernameDisplay,
   githubProfile: github,
   progressTimestamps = [],
   bio
 }) {
   return {
-    username: usernameDisplay || username,
+    username: username,
     github,
     browniePoints: progressTimestamps.length,
     bio
@@ -125,7 +124,7 @@ function nextTick(fn) {
 const getRandomNumber = () => Math.random();
 
 function populateRequiredFields(user) {
-  user.usernameDisplay = user.username.trim();
+  user.usernameDisplay = user.usernameDisplay.trim();
   user.username = user.usernameDisplay.toLowerCase();
   user.email =
     typeof user.email === 'string'
@@ -191,6 +190,7 @@ export default function initializeUser(User) {
         }
         // assign random username to new users
         user.username = 'fcc' + uuid();
+        user.usernameDisplay = user.username;
         populateRequiredFields(user);
         return Observable.fromPromise(User.doesExist(null, user.email)).do(
           exists => {
