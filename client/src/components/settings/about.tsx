@@ -34,6 +34,7 @@ type AboutProps = {
   toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   username: string;
+  usernameDisplay?: string;
 };
 
 type AboutState = {
@@ -191,13 +192,17 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       currentTheme,
       sound,
       username,
+      usernameDisplay,
       t,
       toggleNightMode,
       toggleSoundMode
     } = this.props;
     return (
       <div className='about-settings'>
-        <UsernameSettings username={username} />
+        <UsernameSettings
+          username={username}
+          usernameDisplay={usernameDisplay}
+        />
         <br />
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>

@@ -52,6 +52,7 @@ const userProps = {
     theme: Themes.Default,
     twitter: 'string',
     username: 'string',
+    usernameDisplay: 'String',
     website: 'string',
     yearsTopContributor: [],
     isDonating: false,

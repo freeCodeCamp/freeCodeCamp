@@ -38,6 +38,7 @@ interface CamperProps {
   points: number | null;
   twitter: string;
   username: string;
+  usernameDisplay?: string;
   website: string;
   yearsTopContributor: string[];
 }
@@ -68,6 +69,7 @@ function parseDate(joinDate: string, t: TFunction): string {
 function Camper({
   name,
   username,
+  usernameDisplay,
   location,
   points,
   picture,
@@ -85,7 +87,7 @@ function Camper({
   website
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
-
+  const displayName = usernameDisplay || username;
   return (
     <div>
       <Row>
@@ -94,7 +96,7 @@ function Camper({
             isDonating={isDonating}
             isTopContributor={yearsTopContributor.length > 0}
             picture={picture}
-            userName={username}
+            usernameDisplay={displayName}
           />
         </Col>
       </Row>
@@ -106,11 +108,11 @@ function Camper({
         isWebsite={isWebsite}
         linkedin={linkedin}
         twitter={twitter}
-        username={username}
+        usernameDisplay={usernameDisplay || username}
         website={website}
       />
       <br />
-      <h2 className='text-center username'>@{username}</h2>
+      <h2 className='text-center username'>@{displayName}</h2>
       {name && <p className='text-center name'>{name}</p>}
       {location && <p className='text-center location'>{location}</p>}
       {isDonating && (

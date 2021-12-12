@@ -9,12 +9,12 @@ interface AvatarRendererProps {
   isDonating?: boolean;
   isTopContributor?: boolean;
   picture: string;
-  userName: string;
+  usernameDisplay: string;
 }
 
 function AvatarRenderer({
   picture,
-  userName,
+  usernameDisplay,
   isDonating,
   isTopContributor
 }: AvatarRendererProps): JSX.Element {
@@ -42,7 +42,7 @@ function AvatarRenderer({
         <DefaultAvatar className='avatar default-avatar' />
       ) : (
         <Image
-          alt={t('profile.avatar', { username: userName })}
+          alt={t('profile.avatar', { usernameDisplay })}
           className='avatar'
           responsive={true}
           src={picture}

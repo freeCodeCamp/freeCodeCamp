@@ -53,7 +53,7 @@ describe('<EmailSignUp />', () => {
         app: {
           appUsername: 'John Doe',
           user: {
-            'John Doe': {
+            'john doe': {
               acceptedPrivacyTerms: true,
               name: 'John Doe'
             }

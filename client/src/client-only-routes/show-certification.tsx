@@ -21,6 +21,7 @@ import {
   showCert,
   userFetchStateSelector,
   usernameSelector,
+  usernameDisplaySelector,
   isDonatingSelector,
   executeGA,
   userByNameSelector,
@@ -74,6 +75,7 @@ interface ShowCertificationProps {
   userFetchState: UserFetchState;
   userFullName: string;
   username: string;
+  usernameDisplay?: string;
 }
 
 const requestedUserSelector = (state: unknown, { username = '' }) =>
@@ -87,6 +89,7 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
     showCertSelector,
     showCertFetchStateSelector,
     usernameSelector,
+    usernameDisplaySelector,
     userFetchStateSelector,
     isDonatingSelector,
     requestedUserSelector,
@@ -94,6 +97,7 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
       cert: Cert,
       fetchState: ShowCertificationProps['fetchState'],
       signedInUserName: string,
+      usernameDisplay: string,
       userFetchState: UserFetchState,
       isDonating: boolean,
       user
@@ -102,6 +106,7 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
       fetchState,
       isValidCert,
       signedInUserName,
+      usernameDisplay,
       userFetchState,
       isDonating,
       user
@@ -201,7 +206,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     isValidCert,
     createFlashMessage,
     signedInUserName,
-    location: { pathname }
+    location: { pathname },
+    usernameDisplay
   } = props;
 
   if (!isValidCert) {
@@ -235,7 +241,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const { user } = props;
 
-  const displayName = userFullName ?? username;
+  // Preferential name display order: userFullName > usernameDisplay > username
+  const displayName = userFullName ?? (usernameDisplay || username);
 
   const certDate = new Date(date);
   const certYear = certDate.getFullYear();

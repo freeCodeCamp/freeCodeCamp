@@ -102,6 +102,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isHonest,
       sendQuincyEmail,
       username,
+      usernameDisplay,
       about,
       picture,
       points,
@@ -140,7 +141,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
         <main>
           <Spacer size={2} />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
-            {t('settings.for', { username: username })}
+            {t('settings.for', { usernameDisplay })}
           </h1>
           <About
             about={about}
@@ -154,6 +155,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
             username={username}
+            usernameDisplay={usernameDisplay}
           />
           <Spacer />
           <Privacy />

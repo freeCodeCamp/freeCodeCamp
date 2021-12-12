@@ -16,16 +16,17 @@ import { isValidUsername } from '../../../../utils/validate';
 import {
   validateUsername,
   usernameValidationSelector,
-  submitNewUsername
+  submitNewUsernameDisplay
 } from '../../redux/settings';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import FullWidthRow from '../helpers/full-width-row';
 
 type UsernameProps = {
   isValidUsername: boolean;
-  submitNewUsername: (name: string) => void;
+  submitNewUsernameDisplay: (usernameDisplay: string) => void;
   t: TFunction;
   username: string;
+  usernameDisplay?: string;
   validateUsername: (name: string) => void;
   validating: boolean;
 };
@@ -63,7 +64,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
-      submitNewUsername,
+      submitNewUsernameDisplay,
       validateUsername
     },
     dispatch
@@ -79,7 +80,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
 
     this.state = {
       isFormPristine: true,
-      formValue: props.username,
+      formValue: props.usernameDisplay || props.username,
       characterValidation: { valid: false, error: null },
       submitClicked: false,
       isUserNew: tempUserRegex.test(props.username)
@@ -91,14 +92,17 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
   }
 
   componentDidUpdate(prevProps: UsernameProps, prevState: UsernameState) {
-    const { username: prevUsername } = prevProps;
+    const { usernameDisplay: prevUsernameDisplay } = prevProps;
     const { formValue: prevFormValue } = prevState;
-    const { username } = this.props;
+    const { username, usernameDisplay } = this.props;
     const { formValue } = this.state;
-    if (prevUsername !== username && prevFormValue === formValue) {
+    if (
+      prevUsernameDisplay !== usernameDisplay &&
+      prevFormValue === formValue
+    ) {
       // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
-        isFormPristine: username === formValue,
+        isFormPristine: username === formValue.toLowerCase(),
         submitClicked: false,
         isUserNew: tempUserRegex.test(username)
       });
@@ -108,32 +112,32 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
 
   handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const { submitNewUsername } = this.props;
+    const { submitNewUsernameDisplay } = this.props;
     const {
       formValue,
       characterValidation: { valid }
     } = this.state;
 
     return this.setState({ submitClicked: true }, () =>
-      valid ? submitNewUsername(formValue) : null
+      valid ? submitNewUsernameDisplay(formValue) : null
     );
   }
 
   handleChange(e: React.FormEvent<HTMLInputElement>) {
     e.preventDefault();
-    const { username, validateUsername } = this.props;
+    const { usernameDisplay, validateUsername } = this.props;
     const newValue = (e.target as HTMLInputElement).value;
     return this.setState(
       {
         formValue: newValue,
-        isFormPristine: username === newValue,
+        isFormPristine: usernameDisplay === newValue,
         characterValidation: this.validateFormInput(newValue),
         submitClicked: false
       },
       () =>
         this.state.isFormPristine ||
         this.state.characterValidation.error ||
-        username.toLowerCase().trim() === newValue.toLowerCase().trim()
+        usernameDisplay?.toLowerCase()?.trim() === newValue.toLowerCase().trim()
           ? null
           : validateUsername(this.state.formValue)
     );
@@ -155,7 +159,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
         <FullWidthRow>
           <Alert bsStyle='danger' closeLabel={t('buttons.close')}>
             {t(`settings.username.${error}`, {
-              username: this.state.formValue
+              usernameDisplay: this.state.formValue
             })}
           </Alert>
         </FullWidthRow>

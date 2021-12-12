@@ -17,18 +17,12 @@ import {
   userSelector,
   executeGA
 } from '../redux';
+import { User } from '../redux/prop-types';
 
 interface FetchState {
   pending: boolean;
   complete: boolean;
   errored: boolean;
-}
-
-interface User {
-  email: string;
-  name: string;
-  username: string;
-  completedChallengeCount: number;
 }
 
 const mapStateToProps = createSelector(

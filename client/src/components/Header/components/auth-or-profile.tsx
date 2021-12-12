@@ -2,11 +2,12 @@
 // @ts-nocheck
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { User } from '../../../redux/prop-types';
 import { Link, AvatarRenderer } from '../../helpers';
 import Login from './Login';
 
 export interface AuthOrProfileProps {
-  user?: Record<string, unknown>;
+  user?: User;
 }
 const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
   const { t } = useTranslation();
@@ -21,12 +22,12 @@ const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
     );
   } else {
     return (
-      <Link className='avatar-nav-link' to={`/${user.username as string}`}>
+      <Link className='avatar-nav-link' to={`/${user.username}`}>
         <AvatarRenderer
           isDonating={isUserDonating}
           isTopContributor={isTopContributor}
           picture={user.picture}
-          userName={user.username}
+          usernameDisplay={user.usernameDisplay || user.username}
         />
       </Link>
     );

@@ -19,8 +19,10 @@ interface ProfileProps {
 function renderMessage(
   isSessionUser: boolean,
   username: string,
-  t: TFunction
+  t: TFunction,
+  usernameDisplay?: string
 ): JSX.Element {
+  const displayName = usernameDisplay || username;
   return isSessionUser ? (
     <>
       <FullWidthRow>
@@ -35,12 +37,14 @@ function renderMessage(
     <>
       <FullWidthRow>
         <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
-          {t('profile.username-not-public', { username: username })}
+          {t('profile.username-not-public', { usernameDisplay: displayName })}
         </h2>
       </FullWidthRow>
       <FullWidthRow>
         <p className='alert alert-info'>
-          {t('profile.username-change-privacy', { username: username })}
+          {t('profile.username-change-privacy', {
+            usernameDisplay: displayName
+          })}
         </p>
       </FullWidthRow>
       <Spacer />
@@ -120,7 +124,8 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   const { t } = useTranslation();
   const {
     profileUI: { isLocked = true },
-    username
+    username,
+    usernameDisplay
   } = user;
 
   return (
@@ -131,7 +136,9 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
       <Spacer />
       <Grid>
         <Spacer />
-        {isLocked ? renderMessage(isSessionUser, username, t) : null}
+        {isLocked
+          ? renderMessage(isSessionUser, username, t, usernameDisplay)
+          : null}
         {!isLocked || isSessionUser ? renderProfile(user) : null}
         {isSessionUser ? null : (
           <Row className='text-center'>

@@ -34,6 +34,7 @@ interface ShowUserProps {
   t: TFunction;
   userFetchState: UserFetchState;
   username: string;
+  usernameDisplay?: string;
 }
 
 const mapStateToProps = createSelector(
@@ -43,11 +44,12 @@ const mapStateToProps = createSelector(
   (
     isSignedIn,
     userFetchState: UserFetchState,
-    { email }: { email: string }
+    { email, usernameDisplay }: { email: string; usernameDisplay?: string }
   ) => ({
     isSignedIn,
     userFetchState,
-    email
+    email,
+    usernameDisplay
   })
 );
 
@@ -61,7 +63,8 @@ function ShowUser({
   reportUser,
   t,
   userFetchState,
-  username
+  username,
+  usernameDisplay
 }: ShowUserProps) {
   const [textarea, setTextarea] = useState('');
 
@@ -111,7 +114,7 @@ function ShowUser({
       <Spacer size={2} />
       <Row className='text-center overflow-fix'>
         <Col sm={8} smOffset={2} xs={12}>
-          <h2>{t('report.portfolio-2', { username: username })}</h2>
+          <h2>{t('report.portfolio-2', { usernameDisplay })}</h2>
         </Col>
       </Row>
       <Row className='overflow-fix'>
