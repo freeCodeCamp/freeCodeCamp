@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import Link from '../helpers/link';
 import './footer.css';
 
@@ -15,10 +15,9 @@ function Footer(): JSX.Element {
             <p>{t('footer.mission-statement')}</p>
             <p>{t('footer.donation-initiatives')}</p>
             <p className='footer-donation'>
-              {t('footer.donate-text')}{' '}
-              <Link className='inline' to='/donate'>
-                {t('footer.donate-link')}
-              </Link>
+              <Trans i18nKey='footer.donate-text'>
+                <Link className='inline' to='/donate' />
+              </Trans>
             </p>
           </div>
           <div className='trending-guides'>
