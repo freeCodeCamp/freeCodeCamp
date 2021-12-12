@@ -16,7 +16,6 @@ interface IntroProps {
   name?: string;
   pending?: boolean;
   slug?: string;
-  username?: string;
   email?: string;
   onAlertClick?: () => void;
 }

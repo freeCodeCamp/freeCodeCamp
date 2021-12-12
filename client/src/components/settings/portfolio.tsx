@@ -30,7 +30,6 @@ type PortfolioProps = {
   portfolio: PortfolioValues[];
   t: TFunction;
   updatePortfolio: (obj: { portfolio: PortfolioValues[] }) => void;
-  username?: string;
 };
 
 type PortfolioState = {
