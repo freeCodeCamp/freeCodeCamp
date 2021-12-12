@@ -224,6 +224,7 @@ export type User = {
   calendar: Record<string, number>;
   about: string;
   acceptedPrivacyTerms: boolean;
+  completedChallengeCount?: number;
   completedChallenges: CompletedChallenge[];
   currentChallengeId: string;
   email: string;
@@ -251,6 +252,7 @@ export type User = {
   theme: Themes;
   twitter: string;
   username: string;
+  usernameDisplay?: string;
   website: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   yearsTopContributor: any[];

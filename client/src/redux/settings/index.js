@@ -36,13 +36,16 @@ export const submitNewAboutComplete = createAction(
 );
 export const submitNewAboutError = createAction(types.submitNewAboutError);
 
-export const submitNewUsername = createAction(types.submitNewUsername);
-export const submitNewUsernameComplete = createAction(
-  types.submitNewUsernameComplete,
-  ({ type, username }) => (type === 'success' ? username : null)
+// TODO: SHAUN
+export const submitNewUsernameDisplay = createAction(
+  types.submitNewUsernameDisplay
 );
-export const submitNewUsernameError = createAction(
-  types.submitNewUsernameError
+export const submitNewUsernameDisplayComplete = createAction(
+  types.submitNewUsernameDisplayComplete,
+  ({ type, usernameDisplay }) => (type === 'success' ? usernameDisplay : null)
+);
+export const submitNewUsernameDisplayError = createAction(
+  types.submitNewUsernameDisplayError
 );
 
 export const submitProfileUI = createAction(types.submitProfileUI);
@@ -86,7 +89,7 @@ export const usernameValidationSelector = state => state[ns].usernameValidation;
 
 export const reducer = handleActions(
   {
-    [types.submitNewUsernameComplete]: state => ({
+    [types.submitNewUsernameDisplayComplete]: state => ({
       ...state,
       usernameValidation: { ...initialState.usernameValidation }
     }),

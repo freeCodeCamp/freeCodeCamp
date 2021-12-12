@@ -5,7 +5,7 @@ import {
   getUsernameExists,
   putUpdateMyAbout,
   putUpdateMyProfileUI,
-  putUpdateMyUsername,
+  putUpdateMyUsernameDisplay,
   putUpdateUserFlag,
   putVerifyCert
 } from '../../utils/ajax';
@@ -16,8 +16,8 @@ import {
   validateUsernameError,
   submitNewAboutComplete,
   submitNewAboutError,
-  submitNewUsernameComplete,
-  submitNewUsernameError,
+  submitNewUsernameDisplayComplete,
+  submitNewUsernameDisplayError,
   submitProfileUIComplete,
   submitProfileUIError,
   verifyCertComplete,
@@ -34,13 +34,15 @@ function* submitNewAboutSaga({ payload }) {
   }
 }
 
-function* submitNewUsernameSaga({ payload: username }) {
+function* submitNewUsernameDisplaySaga({ payload: usernameDisplay }) {
   try {
-    const response = yield call(putUpdateMyUsername, username);
-    yield put(submitNewUsernameComplete({ ...response, username }));
+    const response = yield call(putUpdateMyUsernameDisplay, usernameDisplay);
+    yield put(
+      submitNewUsernameDisplayComplete({ ...response, usernameDisplay })
+    );
     yield put(createFlashMessage(response));
   } catch (e) {
-    yield put(submitNewUsernameError(e));
+    yield put(submitNewUsernameDisplayError(e));
   }
 }
 
@@ -98,7 +100,7 @@ export function createSettingsSagas(types) {
   return [
     takeEvery(types.updateUserFlag, updateUserFlagSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
-    takeLatest(types.submitNewUsername, submitNewUsernameSaga),
+    takeLatest(types.submitNewUsernameDisplay, submitNewUsernameDisplaySaga),
     takeLatest(types.validateUsername, validateUsernameSaga),
     takeLatest(types.submitProfileUI, submitProfileUISaga),
     takeEvery(types.verifyCert, verifyCertificationSaga)

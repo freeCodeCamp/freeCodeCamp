@@ -6,7 +6,7 @@ export const actionTypes = createTypes(
   [
     ...createAsyncTypes('validateUsername'),
     ...createAsyncTypes('submitNewAbout'),
-    ...createAsyncTypes('submitNewUsername'),
+    ...createAsyncTypes('submitNewUsernameDisplay'),
     ...createAsyncTypes('updateMyEmail'),
     ...createAsyncTypes('updateLegacyCert'),
     ...createAsyncTypes('updateUserFlag'),

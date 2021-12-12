@@ -3,7 +3,6 @@ import { createAction, handleActions } from 'redux-actions';
 import store from 'store';
 
 import { SuperBlocks } from '../../../config/certification-settings';
-import { ensureLowerCaseString } from '../../../utils';
 import { actionTypes as challengeTypes } from '../templates/Challenges/redux/action-types';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 import { createAcceptTermsSaga } from './accept-terms-saga';
@@ -65,7 +64,8 @@ const initialState = {
   isServerOnline: true,
   donationFormState: {
     ...defaultDonationFormState
-  }
+  },
+  usernameDisplay: ''
 };
 
 export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
@@ -252,7 +252,7 @@ export const userByNameSelector = username => state => {
   const { user } = state[MainApp];
   // return initial state empty user empty object instead of empty
   // object litteral to prevent components from re-rendering unnecessarily
-  return user[ensureLowerCaseString(username)] ?? initialState.user;
+  return user[username] ?? initialState.user;
 };
 
 export const certificatesByNameSelector = username => state => {
@@ -384,10 +384,17 @@ export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
 export const usernameSelector = state => state[MainApp].appUsername;
+export const usernameDisplaySelector = state => {
+  const username = usernameSelector(state);
+  return (
+    state[MainApp].usernameDisplay ||
+    state[MainApp].user[username]?.usernameDisplay
+  );
+};
 export const userSelector = state => {
   const username = usernameSelector(state);
 
-  return state[MainApp].user[ensureLowerCaseString(username)] || {};
+  return state[MainApp].user[username] || {};
 };
 
 export const sessionMetaSelector = state => state[MainApp].sessionMeta;
@@ -522,7 +529,7 @@ export const reducer = handleActions(
       ...state,
       user: {
         ...state.user,
-        [ensureLowerCaseString(username)]: { ...user, sessionUser: true }
+        [username]: { ...user, sessionUser: true }
       },
       appUsername: username,
       currentChallengeId: user.currentChallengeId,
@@ -535,7 +542,8 @@ export const reducer = handleActions(
       sessionMeta: {
         ...state.sessionMeta,
         ...sessionMeta
-      }
+      },
+      usernameDisplay: user.usernameDisplay || username
     }),
     [actionTypes.fetchUserError]: (state, { payload }) => ({
       ...state,
@@ -550,20 +558,20 @@ export const reducer = handleActions(
       state,
       { payload: { user, username } }
     ) => {
-      const ensuredUsername = ensureLowerCaseString(username);
       const previousUserObject =
-        ensuredUsername in state.user ? state.user[ensuredUsername] : {};
+        username in state.user ? state.user[username] : {};
       return {
         ...state,
         user: {
           ...state.user,
-          [ensuredUsername]: { ...previousUserObject, ...user }
+          [username]: { ...previousUserObject, ...user }
         },
         userProfileFetchState: {
           ...defaultFetchState,
           pending: false,
           complete: true
-        }
+        },
+        usernameDisplay: user.usernameDisplay || username
       };
     },
     [actionTypes.fetchProfileForUserError]: (state, { payload }) => ({
@@ -699,19 +707,24 @@ export const reducer = handleActions(
         }
       };
     },
-    [settingsTypes.submitNewUsernameComplete]: (state, { payload }) =>
-      payload
+    [settingsTypes.submitNewUsernameDisplayComplete]: (
+      state,
+      { payload: usernameDisplay }
+    ) => {
+      return usernameDisplay
         ? {
             ...state,
             user: {
               ...state.user,
               [state.appUsername]: {
                 ...state.user[state.appUsername],
-                username: payload
+                username: usernameDisplay.toLowerCase()
               }
-            }
+            },
+            usernameDisplay
           }
-        : state,
+        : state;
+    },
     [settingsTypes.submitNewAboutComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyEmailComplete]: (state, { payload }) =>

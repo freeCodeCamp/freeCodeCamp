@@ -244,8 +244,11 @@ export function putUpdateMyAbout(values: MyAbout): Promise<void> {
   return put('/update-my-about', { ...values });
 }
 
-export function putUpdateMyUsername(username: string): Promise<void> {
-  return put('/update-my-username', { username });
+/** Updating usernameDisplay also updates username if `usernameDisplay.toLowerCase() !== username` */
+export function putUpdateMyUsernameDisplay(
+  usernameDisplay: string
+): Promise<void> {
+  return put('/update-my-username-display', { usernameDisplay });
 }
 
 export function putUpdateMyProfileUI(
