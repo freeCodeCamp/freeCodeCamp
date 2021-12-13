@@ -993,6 +993,24 @@ export default function initializeUser(User) {
       return user.completedChallenges;
     });
   };
+  User.prototype.getInProgressChallenges$ =
+    function getInProgressChallenges$() {
+      if (
+        Array.isArray(this.inProgressChallenges) &&
+        this.inProgressChallenges.length
+      ) {
+        return Observable.of(this.inProgressChallenges);
+      }
+      const id = this.getId();
+      const filter = {
+        where: { id },
+        fields: { inProgressChallenges: true }
+      };
+      return this.constructor.findOne$(filter).map(user => {
+        this.inProgressChallenges = user.inProgressChallenges;
+        return user.inProgressChallenges;
+      });
+    };
 
   User.getMessages = messages => Promise.resolve(messages);
 

@@ -1,18 +1,16 @@
 import { call, takeEvery } from 'redux-saga/effects';
 import { postSaveChallenge } from '../../../utils/ajax';
 
-export function* saveChallengeSaga(payload) {
-  console.log(payload);
-  try {
-    const response = yield call(postSaveChallenge(payload));
+export function* saveChallengeSaga({ payload }) {
+  const { id, challengeFile } = payload;
 
-    if (response) {
-      console.log('got a response');
-    } else {
-      console.log('no response');
-    }
+  try {
+    const response = yield call(postSaveChallenge({ id, challengeFile }));
+    console.log('response');
+    console.log(response);
   } catch (e) {
     console.log('error caught');
+    console.log(e);
   }
 }
 

@@ -203,6 +203,41 @@
     "completedChallenges": {
       "type": [
         {
+          "lastUpdated": "number",
+          "id": "string",
+          "solution": "string",
+          "githubLink": "string",
+          "challengeType": "number",
+          "files": {
+            "type": [
+              {
+                "contents": {
+                  "type": "string",
+                  "default": ""
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                }
+              }
+            ],
+            "default": []
+          }
+        }
+      ],
+      "default": []
+    },
+    "inProgressChallenges": {
+      "type": [
+        {
           "completedDate": "number",
           "id": "string",
           "solution": "string",

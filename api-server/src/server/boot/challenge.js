@@ -58,6 +58,13 @@ export default async function bootChallenge(app, done) {
     backendChallengeCompleted
   );
 
+  api.post(
+    '/save-challenge',
+    send200toNonUser,
+    isValidChallengeCompletion,
+    saveChallenge
+  );
+
   router.get('/challenges/current-challenge', redirectToCurrentChallenge);
 
   const coderoadChallengeCompleted = createCoderoadChallengeCompleted(app);
@@ -197,6 +204,7 @@ export function isValidChallengeCompletion(req, res, next) {
     body: { id, challengeType, solution }
   } = req;
 
+  // ToDO: Validate other things (challengeFiles, etc)
   const isValidChallengeCompletionErrorMsg = {
     type: 'error',
     message: 'That does not appear to be a valid challenge submission.'
@@ -218,8 +226,6 @@ export function isValidChallengeCompletion(req, res, next) {
 }
 
 export function modernChallengeCompleted(req, res, next) {
-  console.log('modernChallengeCompleted');
-  console.log(req.body);
   const user = req.user;
   return user
     .getCompletedChallenges$()
@@ -333,6 +339,14 @@ function backendChallengeCompleted(req, res, next) {
       });
     })
     .subscribe(() => {}, next);
+}
+
+function saveChallenge(req, res) {
+  console.log('attempting to save challenge!! - req.body:');
+  console.log(req.body);
+  console.log('req.user============');
+  console.log(req.user);
+  res.send('response here');
 }
 
 function createCoderoadChallengeCompleted(app) {
