@@ -92,7 +92,7 @@ const Intro = ({
               sameTab={false}
               to='/donate'
             >
-              {t('buttons.support-our-nonprofit')}
+              {t('buttons.donate')}
             </Link>
           </p>
         </Alert>
