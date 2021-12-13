@@ -16,6 +16,7 @@ import {
 } from '../../../../config/donation-settings';
 import {
   isSignedInSelector,
+  isDonatingSelector,
   signInLoadingSelector,
   donationFormStateSelector,
   addDonation,
@@ -70,6 +71,7 @@ type DonateFormProps = {
   donationFormState: DonateFormState;
   isMinimalForm?: boolean;
   isSignedIn: boolean;
+  isDonating: boolean;
   showLoading: boolean;
   t: (
     label: string,
@@ -82,15 +84,18 @@ type DonateFormProps = {
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   isSignedInSelector,
+  isDonatingSelector,
   donationFormStateSelector,
   userSelector,
   (
     showLoading: DonateFormProps['showLoading'],
     isSignedIn: DonateFormProps['isSignedIn'],
+    isDonating: DonateFormProps['isDonating'],
     donationFormState: DonateFormState,
     { email, theme }: { email: string; theme: Themes }
   ) => ({
     isSignedIn,
+    isDonating,
     showLoading,
     donationFormState,
     email,
@@ -310,7 +315,8 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       theme,
       t,
       isMinimalForm,
-      isSignedIn
+      isSignedIn,
+      isDonating
     } = this.props;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
     const isOneTime = donationDuration === 'onetime';
@@ -318,6 +324,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
       { usd: donationAmount / 100 }
     )}:`;
+    const showMinimalPayments = isMinimalForm || !isDonating;
 
     return (
       <>
@@ -342,14 +349,16 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             donationDuration={donationDuration}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
             handleProcessing={handleProcessing}
-            isMinimalForm={isMinimalForm}
+            isMinimalForm={showMinimalPayments}
             isPaypalLoading={loading.paypal}
             isSignedIn={isSignedIn}
             onDonationStateChange={this.onDonationStateChange}
             theme={priorityTheme}
           />
-          <PatreonButton postPatreonRedirect={this.postPatreonRedirect} />
-          {isMinimalForm && (
+          {(!loading.stripe || !loading.paypal) && (
+            <PatreonButton postPatreonRedirect={this.postPatreonRedirect} />
+          )}
+          {showMinimalPayments && (
             <>
               <div className='separator'>{t('donate.or-card')}</div>
               <StripeCardForm
