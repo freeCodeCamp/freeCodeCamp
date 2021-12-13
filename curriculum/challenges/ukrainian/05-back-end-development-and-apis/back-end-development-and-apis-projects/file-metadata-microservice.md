@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bd0f
-title: File Metadata Microservice
+title: Мікросервіс метаданих файлу
 challengeType: 4
 forumTopicId: 301506
 dashedName: file-metadata-microservice
@@ -8,21 +8,21 @@ dashedName: file-metadata-microservice
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://file-metadata-microservice.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+Створіть full stack додаток на JavaScript, який функціонально схожий до цього:<https://file-metadata-microservice.freecodecamp.rocks/>. Робота над цим проектом залучатиме тебе писати свій код використовуючи один з наступних методів:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-filemetadata/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Клонувати [цей репозиторій з GitHub](https://github.com/freeCodeCamp/boilerplate-project-filemetadata/) та локально завершити свій проект.
+-   Використати [наш проект для початківців на Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata) для завершення свого проекту.
+-   Використати конструктор сайтів на свій вибір для завершення проекту. Впевніться, що ви зберегли всі файли із нашого GitHub репозиторію.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+По завершенню переконайтеся, що працююча демоверсія вашого проекту розміщена у відкритому доступі. Потім введіть його URL-адресу в поле `Solution Link`. За бажанням також можете ввести посилання на вихідний код вашого проєкту в полі `GitHub Link`.
 
 # --instructions--
 
-**HINT:** You can use the `multer` npm package to handle file uploading.
+**ПІДКАЗКА:** Ви можете використовувати npm пакет `multer` щоб опрацювати завантаження файлу.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Вам необхідно вказати свій власний проект, а не приклад URL-адреси.
 
 ```js
 (getUserInput) => {
@@ -34,7 +34,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can submit a form that includes a file upload.
+Ви можете надіслати форму, що включає в себе завантаження файлу.
 
 ```js
 async (getUserInput) => {
@@ -45,7 +45,7 @@ async (getUserInput) => {
 };
 ```
 
-The form file input field has the `name` attribute set to `upfile`.
+Поле вводу файлу форми має параметр `name` встановлений в `upfile`.
 
 ```js
 async (getUserInput) => {
@@ -56,7 +56,7 @@ async (getUserInput) => {
 };
 ```
 
-When you submit a file, you receive the file `name`, `type`, and `size` in bytes within the JSON response.
+Коли ви надсилаєте файл, ви отримуєте `name`, `type` і `size` файлу в байтах у відповіді JSON.
 
 ```js
 async (getUserInput) => {
