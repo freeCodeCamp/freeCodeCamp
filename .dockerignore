@@ -1,9 +1,0 @@
-client/.cache
-client/public
-.env
-.git
-.gitignore
-.dockerignore
-*Dockerfile*
-*docker-compose*
-**/node_modules
