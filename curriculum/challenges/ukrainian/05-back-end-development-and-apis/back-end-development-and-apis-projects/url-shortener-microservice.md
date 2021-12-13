@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bd0e
-title: URL Shortener Microservice
+title: Мікросервіс скорочування URL-адрес
 challengeType: 4
 forumTopicId: 301509
 dashedName: url-shortener-microservice
@@ -8,21 +8,21 @@ dashedName: url-shortener-microservice
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://url-shortener-microservice.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+Створіть повний пакет додатку на JavaScript, який функціонально схожий до цього:<https://url-shortener-microservice.freecodecamp.rocks/>. Робота над цим проєктом включатиме написання коду одним із таких методів:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-urlshortener/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Клонувати [цей репозиторій з GitHub](https://github.com/freeCodeCamp/boilerplate-project-urlshortener/) та локально завершити свій проект.
+-   Використати [наш проект для початківців на Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-urlshortener) для завершення свого проекту.
+-   Використати конструктор сайту на свій вибір для завершення проекту. Впевнитися, що включили всі файли з нашого репозиторію GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+По завершенню переконайтеся, що працююча демо-версія вашого проекту розміщена у відкритому доступі. Потім введіть його URL-адресу в поле `Solution Link`. За бажанням також можете ввести посилання на вихідний код вашого проєкту в полі `GitHub Link`.
 
 # --instructions--
 
-**HINT:** Do not forget to use a body parsing middleware to handle the POST requests. Also, you can use the function `dns.lookup(host, cb)` from the `dns` core module to verify a submitted URL.
+**ПІДКАЗКА:** не забудьте використовувати проміжне програмне забезпечення body parsing для обробки запитів POST. Також ви можете використовувати функцію `dns.lookup(host, cb)` з основного модуля `dns` для перевірки надісланої URL-адреси.
 
 # --hints--
 
-You should provide your own project, not the example URL.
+Вам необхідно вказати свій власний проект, а не приклад URL-адреси.
 
 ```js
 (getUserInput) => {
@@ -34,7 +34,7 @@ You should provide your own project, not the example URL.
 };
 ```
 
-You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
+Ви можете POST URL до `/api/shorturl` та отримати відповідь JSON з властивостями `original_url` і `short_url`. Ось приклад: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
 async (getUserInput) => {
@@ -56,7 +56,7 @@ async (getUserInput) => {
 };
 ```
 
-When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
+Коли ви відкриєте `/api/shorturl/<short_url>`, вас буде перенаправлено на оригінальне URL.
 
 ```js
 async (getUserInput) => {
@@ -88,7 +88,7 @@ async (getUserInput) => {
 };
 ```
 
-If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`
+Якщо ви введете недійсний URL, який не відповідає дійсному формату `http://www.example.com` , то відповідь JSON буде містити `{ error: 'invalid url' }`
 
 ```js
 async (getUserInput) => {
