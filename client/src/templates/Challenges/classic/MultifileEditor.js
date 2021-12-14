@@ -7,11 +7,7 @@ import { isDonationModalOpenSelector, userSelector } from '../../../redux';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
-  executeChallenge,
-  saveEditorContent,
-  setEditorFocusability,
-  visibleEditorsSelector,
-  updateFile
+  visibleEditorsSelector
 } from '../redux';
 import { getTargetEditor } from '../utils/getTargetEditor';
 import './editor.css';
@@ -26,7 +22,6 @@ const propTypes = {
   description: PropTypes.string,
   dimensions: PropTypes.object,
   editorRef: PropTypes.any.isRequired,
-  executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
   initialEditorContent: PropTypes.string,
@@ -37,11 +32,8 @@ const propTypes = {
     onStopResize: PropTypes.func,
     onResize: PropTypes.func
   }),
-  saveEditorContent: PropTypes.func.isRequired,
-  setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
   title: PropTypes.string,
-  updateFile: PropTypes.func.isRequired,
   usesMultifileEditor: PropTypes.bool,
   visibleEditors: PropTypes.shape({
     scriptjs: PropTypes.bool,
@@ -64,13 +56,6 @@ const mapStateToProps = createSelector(
     theme
   })
 );
-
-const mapDispatchToProps = {
-  executeChallenge,
-  saveEditorContent,
-  setEditorFocusability,
-  updateFile
-};
 
 const MultifileEditor = props => {
   const {
@@ -159,4 +144,4 @@ const MultifileEditor = props => {
 MultifileEditor.displayName = 'MultifileEditor';
 MultifileEditor.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(MultifileEditor);
+export default connect(mapStateToProps)(MultifileEditor);

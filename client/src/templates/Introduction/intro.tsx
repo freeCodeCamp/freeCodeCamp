@@ -21,7 +21,7 @@ function renderMenuItems({
   edges?: Array<{ node: ChallengeNode }>;
 }) {
   return edges
-    .map(({ node }) => node)
+    .map(({ node: { challenge } }) => challenge)
     .map(({ title, fields: { slug } }) => (
       <Link key={'intro-' + slug} to={slug}>
         <ListGroupItem>{title}</ListGroupItem>
@@ -42,7 +42,8 @@ function IntroductionPage({
     html,
     frontmatter: { block }
   } = markdownRemark;
-  const firstLesson = allChallengeNode && allChallengeNode.edges[0].node;
+  const firstLesson =
+    allChallengeNode && allChallengeNode.edges[0].node.challenge;
   const firstLessonPath = firstLesson
     ? firstLesson.fields.slug
     : '/strange-place';
@@ -97,15 +98,23 @@ export const query = graphql`
       html
     }
     allChallengeNode(
-      filter: { block: { eq: $block } }
-      sort: { fields: [superOrder, order, challengeOrder] }
+      filter: { challenge: { block: { eq: $block } } }
+      sort: {
+        fields: [
+          challenge___superOrder
+          challenge___order
+          challenge___challengeOrder
+        ]
+      }
     ) {
       edges {
         node {
-          fields {
-            slug
+          challenge {
+            fields {
+              slug
+            }
+            title
           }
-          title
         }
       }
     }

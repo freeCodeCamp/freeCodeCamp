@@ -25,13 +25,12 @@ exports[`<Footer /> matches snapshot 1`] = `
         <p
           className="footer-donation"
         >
-          footer.donate-text
-           
+          You can
           <a
             className="inline"
             href="/donate"
           >
-            footer.donate-link
+            make a tax-deductible donation here
           </a>
           .
         </p>

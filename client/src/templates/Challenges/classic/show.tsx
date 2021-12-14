@@ -212,7 +212,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   componentDidMount() {
     const {
       data: {
-        challengeNode: { title }
+        challengeNode: {
+          challenge: { title }
+        }
       }
     } = this.props;
     this.initializeComponent(title);
@@ -222,16 +224,20 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const {
       data: {
         challengeNode: {
-          title: prevTitle,
-          fields: { tests: prevTests }
+          challenge: {
+            title: prevTitle,
+            fields: { tests: prevTests }
+          }
         }
       }
     } = prevProps;
     const {
       data: {
         challengeNode: {
-          title: currentTitle,
-          fields: { tests: currTests }
+          challenge: {
+            title: currentTitle,
+            fields: { tests: currTests }
+          }
         }
       }
     } = this.props;
@@ -250,11 +256,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       openModal,
       data: {
         challengeNode: {
-          challengeFiles,
-          fields: { tests },
-          challengeType,
-          removeComments,
-          helpCategory
+          challenge: {
+            challengeFiles,
+            fields: { tests },
+            challengeType,
+            removeComments,
+            helpCategory
+          }
         }
       },
       pageContext: {
@@ -282,7 +290,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     cancelTests();
   }
 
-  getChallenge = () => this.props.data.challengeNode;
+  getChallenge = () => this.props.data.challengeNode.challenge;
 
   getBlockNameTitle(t: TFunction) {
     const { block, superBlock, title } = this.getChallenge();
@@ -337,8 +345,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       challengeFiles,
       data: {
         challengeNode: {
-          fields: { tests },
-          usesMultifileEditor
+          challenge: {
+            fields: { tests },
+            usesMultifileEditor
+          }
         }
       }
     } = this.props;
@@ -489,40 +499,42 @@ export default connect(
 
 export const query = graphql`
   query ClassicChallenge($slug: String!) {
-    challengeNode(fields: { slug: { eq: $slug } }) {
-      block
-      title
-      description
-      instructions
-      notes
-      removeComments
-      challengeType
-      helpCategory
-      videoUrl
-      superBlock
-      translationPending
-      forumTopicId
-      fields {
-        blockName
-        slug
-        tests {
-          text
-          testString
+    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+      challenge {
+        block
+        title
+        description
+        instructions
+        notes
+        removeComments
+        challengeType
+        helpCategory
+        videoUrl
+        superBlock
+        translationPending
+        forumTopicId
+        fields {
+          blockName
+          slug
+          tests {
+            text
+            testString
+          }
         }
-      }
-      required {
-        link
-        src
-      }
-      usesMultifileEditor
-      challengeFiles {
-        fileKey
-        ext
-        name
-        contents
-        head
-        tail
-        editableRegionBoundaries
+        required {
+          link
+          src
+        }
+        usesMultifileEditor
+        challengeFiles {
+          fileKey
+          ext
+          name
+          contents
+          head
+          tail
+          editableRegionBoundaries
+        }
       }
     }
   }

@@ -45,12 +45,12 @@ const views = {
 
 function getNextChallengePath(_node, index, nodeArray) {
   const next = nodeArray[index + 1];
-  return next ? next.node.fields.slug : '/learn';
+  return next ? next.node.challenge.fields.slug : '/learn';
 }
 
 function getPrevChallengePath(_node, index, nodeArray) {
   const prev = nodeArray[index - 1];
-  return prev ? prev.node.fields.slug : '/learn';
+  return prev ? prev.node.challenge.fields.slug : '/learn';
 }
 
 function getTemplateComponent(challengeType) {
@@ -58,7 +58,7 @@ function getTemplateComponent(challengeType) {
 }
 
 exports.createChallengePages = function (createPage) {
-  return function ({ node: challenge }, index, allChallengeEdges) {
+  return function ({ node: { challenge } }, index, allChallengeEdges) {
     const {
       superBlock,
       block,
@@ -103,8 +103,8 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
   const { block, challengeOrder, usesMultifileEditor } = challenge;
 
   const challengesInBlock = allChallengeEdges
-    .filter(({ node }) => node.block === block)
-    .map(({ node }) => node);
+    .filter(({ node: { challenge } }) => challenge.block === block)
+    .map(({ node: { challenge } }) => challenge);
   const lastChallenge = challengesInBlock[challengesInBlock.length - 1];
   const solutionToLastChallenge = sortChallengeFiles(
     lastChallenge.solutions[0] ?? []

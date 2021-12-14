@@ -4,6 +4,7 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
+const { getSuperOrder } = require('./utils');
 const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
 const { curriculum: curriculumLangs } =
@@ -296,7 +297,6 @@ ${getFullPath('english')}
   const {
     name: blockName,
     order,
-    superOrder,
     isPrivate,
     required = [],
     template,
@@ -305,7 +305,8 @@ ${getFullPath('english')}
   } = meta;
   challenge.block = dasherize(blockName);
   challenge.order = order;
-  challenge.superOrder = superOrder;
+  const superOrder = getSuperOrder(superBlock);
+  if (superOrder !== null) challenge.superOrder = superOrder;
   challenge.superBlock = superBlock;
   challenge.challengeOrder = challengeOrder;
   challenge.isPrivate = challenge.isPrivate || isPrivate;

@@ -53,7 +53,9 @@ interface LearnPageProps {
   user: User;
   data: {
     challengeNode: {
-      fields: Slug;
+      challenge: {
+        fields: Slug;
+      };
     };
   };
   executeGA: (payload: Record<string, unknown>) => void;
@@ -70,7 +72,9 @@ function LearnPage({
   executeGA,
   data: {
     challengeNode: {
-      fields: { slug }
+      challenge: {
+        fields: { slug }
+      }
     }
   }
 }: LearnPageProps) {
@@ -117,9 +121,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(LearnPage);
 
 export const query = graphql`
   query FirstChallenge {
-    challengeNode(order: { eq: 0 }, challengeOrder: { eq: 0 }) {
-      fields {
-        slug
+    challengeNode(challenge: { order: { eq: 0 }, challengeOrder: { eq: 0 } }) {
+      challenge {
+        fields {
+          slug
+        }
       }
     }
   }
