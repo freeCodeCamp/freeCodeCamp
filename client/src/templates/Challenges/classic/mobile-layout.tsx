@@ -41,7 +41,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
   };
 
-  switchTab = (tab: string) => {
+  switchTab = (tab: Tab) => {
     this.setState({
       currentTab: tab
     });
