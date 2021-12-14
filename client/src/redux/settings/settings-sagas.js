@@ -90,7 +90,7 @@ function* verifyCertificationSaga({ payload }) {
           ...isCertMap,
           completedChallenges: completedChallenges.map(x => ({
             ...omit(x, 'files'),
-            challengeFiles: x.files
+            challengeFiles: x.files ?? null
           }))
         }
       })
