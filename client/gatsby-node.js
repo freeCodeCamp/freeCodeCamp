@@ -20,13 +20,6 @@ const createByIdentityMap = {
 
 exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
-  if (node.internal.type === 'ChallengeNode') {
-    const { tests = [], block, dashedName, superBlock } = node;
-    const slug = `/learn/${superBlock}/${block}/${dashedName}`;
-    createNodeField({ node, name: 'slug', value: slug });
-    createNodeField({ node, name: 'blockName', value: blockNameify(block) });
-    createNodeField({ node, name: 'tests', value: tests });
-  }
 
   if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({ node, getNode });
@@ -71,37 +64,45 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
       graphql(`
         {
           allChallengeNode(
-            sort: { fields: [superOrder, order, challengeOrder] }
+            sort: {
+              fields: [
+                challenge___superOrder
+                challenge___order
+                challenge___challengeOrder
+              ]
+            }
           ) {
             edges {
               node {
-                block
-                challengeType
-                fields {
-                  slug
+                challenge {
+                  block
+                  challengeType
+                  fields {
+                    slug
+                  }
+                  id
+                  order
+                  required {
+                    link
+                    src
+                  }
+                  challengeOrder
+                  challengeFiles {
+                    name
+                    ext
+                    contents
+                    head
+                    tail
+                  }
+                  solutions {
+                    contents
+                    ext
+                  }
+                  superBlock
+                  superOrder
+                  template
+                  usesMultifileEditor
                 }
-                id
-                order
-                required {
-                  link
-                  src
-                }
-                challengeOrder
-                challengeFiles {
-                  name
-                  ext
-                  contents
-                  head
-                  tail
-                }
-                solutions {
-                  contents
-                  ext
-                }
-                superBlock
-                superOrder
-                template
-                usesMultifileEditor
               }
             }
           }
@@ -137,12 +138,22 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
         );
 
         const blocks = uniq(
-          result.data.allChallengeNode.edges.map(({ node: { block } }) => block)
+          result.data.allChallengeNode.edges.map(
+            ({
+              node: {
+                challenge: { block }
+              }
+            }) => block
+          )
         ).map(block => blockNameify(block));
 
         const superBlocks = uniq(
           result.data.allChallengeNode.edges.map(
-            ({ node: { superBlock } }) => superBlock
+            ({
+              node: {
+                challenge: { superBlock }
+              }
+            }) => superBlock
           )
         );
 
@@ -256,6 +267,9 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
     type ChallengeNode implements Node {
+      challenge: Challenge
+    }
+    type Challenge {
       challengeFiles: [FileContents]
       notes: String
       url: String

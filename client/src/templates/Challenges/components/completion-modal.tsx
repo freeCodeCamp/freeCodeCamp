@@ -280,13 +280,23 @@ const useCurrentBlockIds = (blockName: string) => {
     allChallengeNode: { edges }
   }: { allChallengeNode: AllChallengeNode } = useStaticQuery(graphql`
     query getCurrentBlockNodes {
-      allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
+      allChallengeNode(
+        sort: {
+          fields: [
+            challenge___superOrder
+            challenge___order
+            challenge___challengeOrder
+          ]
+        }
+      ) {
         edges {
           node {
-            fields {
-              blockName
+            challenge {
+              fields {
+                blockName
+              }
+              id
             }
-            id
           }
         }
       }
@@ -294,9 +304,9 @@ const useCurrentBlockIds = (blockName: string) => {
   `);
 
   const currentBlockIds = edges
-    .filter(edge => edge.node.fields.blockName === blockName)
+    .filter(edge => edge.node.challenge.fields.blockName === blockName)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    .map(edge => edge.node.id);
+    .map(edge => edge.node.challenge.id);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return currentBlockIds;
 };

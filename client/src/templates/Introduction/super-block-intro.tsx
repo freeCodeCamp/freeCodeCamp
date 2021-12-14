@@ -141,15 +141,15 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     if (isSignedIn) {
       // see if currentChallenge is in this superBlock
       const currentChallengeEdge = edges.find(
-        edge => edge.node.id === currentChallengeId
+        edge => edge.node.challenge.id === currentChallengeId
       );
 
       return currentChallengeEdge
-        ? currentChallengeEdge.node.block
-        : edge.node.block;
+        ? currentChallengeEdge.node.challenge.block
+        : edge.node.challenge.block;
     }
 
-    return edge.node.block;
+    return edge.node.challenge.block;
   };
 
   const initializeExpandedState = () => {
@@ -173,7 +173,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   } = props;
 
   const nodesForSuperBlock = edges.map(({ node }) => node);
-  const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
+  const blockDashedNames = uniq(
+    nodesForSuperBlock.map(({ challenge: { block } }) => block)
+  );
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nTitle =
     superBlock === SuperBlocks.CodingInterviewPrep
@@ -206,7 +208,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                   <Block
                     blockDashedName={blockDashedName}
                     challenges={nodesForSuperBlock.filter(
-                      node => node.block === blockDashedName
+                      node => node.challenge.block === blockDashedName
                     )}
                     superBlock={superBlock}
                   />
@@ -263,22 +265,30 @@ export const query = graphql`
       }
     }
     allChallengeNode(
-      sort: { fields: [superOrder, order, challengeOrder] }
-      filter: { superBlock: { eq: $superBlock } }
+      sort: {
+        fields: [
+          challenge___superOrder
+          challenge___order
+          challenge___challengeOrder
+        ]
+      }
+      filter: { challenge: { superBlock: { eq: $superBlock } } }
     ) {
       edges {
         node {
-          fields {
-            slug
-            blockName
+          challenge {
+            fields {
+              slug
+              blockName
+            }
+            id
+            block
+            challengeType
+            title
+            order
+            superBlock
+            dashedName
           }
-          id
-          block
-          challengeType
-          title
-          order
-          superBlock
-          dashedName
         }
       }
     }

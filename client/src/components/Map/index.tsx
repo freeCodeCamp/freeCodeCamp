@@ -42,19 +42,19 @@ const linkSpacingStyle = {
 
 function renderLandingMap(nodes: ChallengeNode[]) {
   nodes = nodes.filter(
-    node => node.superBlock !== SuperBlocks.CodingInterviewPrep
+    ({ challenge }) => challenge.superBlock !== SuperBlocks.CodingInterviewPrep
   );
   return (
     <ul data-test-label='certifications'>
-      {nodes.map((node, i) => (
+      {nodes.map(({ challenge }, i) => (
         <li key={i}>
           <Link
             className='btn link-btn btn-lg'
-            to={`/learn/${node.superBlock}/`}
+            to={`/learn/${challenge.superBlock}/`}
           >
             <div style={linkSpacingStyle}>
-              {generateIconComponent(node.superBlock, 'map-icon')}
-              {i18next.t(`intro:${node.superBlock}.title`)}
+              {generateIconComponent(challenge.superBlock, 'map-icon')}
+              {i18next.t(`intro:${challenge.superBlock}.title`)}
             </div>
             <LinkButton />
           </Link>
@@ -68,18 +68,20 @@ function renderLearnMap(
   nodes: ChallengeNode[],
   currentSuperBlock: MapProps['currentSuperBlock']
 ) {
-  nodes = nodes.filter(node => node.superBlock !== currentSuperBlock);
+  nodes = nodes.filter(
+    ({ challenge }) => challenge.superBlock !== currentSuperBlock
+  );
   return curriculumLocale === 'english' ? (
     <ul data-test-label='learn-curriculum-map'>
-      {nodes.map((node, i) => (
+      {nodes.map(({ challenge }, i) => (
         <li key={i}>
           <Link
             className='btn link-btn btn-lg'
-            to={`/learn/${node.superBlock}/`}
+            to={`/learn/${challenge.superBlock}/`}
           >
             <div style={linkSpacingStyle}>
-              {generateIconComponent(node.superBlock, 'map-icon')}
-              {createSuperBlockTitle(node.superBlock)}
+              {generateIconComponent(challenge.superBlock, 'map-icon')}
+              {createSuperBlockTitle(challenge.superBlock)}
             </div>
           </Link>
         </li>
@@ -88,16 +90,18 @@ function renderLearnMap(
   ) : (
     <ul data-test-label='learn-curriculum-map'>
       {nodes
-        .filter(node => isAuditedCert(curriculumLocale, node.superBlock))
-        .map((node, i) => (
+        .filter(({ challenge }) =>
+          isAuditedCert(curriculumLocale, challenge.superBlock)
+        )
+        .map(({ challenge }, i) => (
           <li key={i}>
             <Link
               className='btn link-btn btn-lg'
-              to={`/learn/${node.superBlock}/`}
+              to={`/learn/${challenge.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
-                {generateIconComponent(node.superBlock, 'map-icon')}
-                {createSuperBlockTitle(node.superBlock)}
+                {generateIconComponent(challenge.superBlock, 'map-icon')}
+                {createSuperBlockTitle(challenge.superBlock)}
               </div>
             </Link>
           </li>
@@ -115,16 +119,19 @@ function renderLearnMap(
         <Spacer />
       </div>
       {nodes
-        .filter(node => !isAuditedCert(curriculumLocale, node.superBlock))
-        .map((node, i) => (
+        .filter(
+          ({ challenge }) =>
+            !isAuditedCert(curriculumLocale, challenge.superBlock)
+        )
+        .map(({ challenge }, i) => (
           <li key={i}>
             <Link
               className='btn link-btn btn-lg'
-              to={`/learn/${node.superBlock}/`}
+              to={`/learn/${challenge.superBlock}/`}
             >
               <div style={linkSpacingStyle}>
-                {generateIconComponent(node.superBlock, 'map-icon')}
-                {createSuperBlockTitle(node.superBlock)}
+                {generateIconComponent(challenge.superBlock, 'map-icon')}
+                {createSuperBlockTitle(challenge.superBlock)}
               </div>
             </Link>
           </li>
@@ -145,12 +152,14 @@ export function Map({
   const data: MapData = useStaticQuery(graphql`
     query SuperBlockNodes {
       allChallengeNode(
-        sort: { fields: [superOrder] }
-        filter: { order: { eq: 0 }, challengeOrder: { eq: 0 } }
+        sort: { fields: [challenge___superOrder] }
+        filter: { challenge: { order: { eq: 0 }, challengeOrder: { eq: 0 } } }
       ) {
         nodes {
-          superBlock
-          dashedName
+          challenge {
+            superBlock
+            dashedName
+          }
         }
       }
     }

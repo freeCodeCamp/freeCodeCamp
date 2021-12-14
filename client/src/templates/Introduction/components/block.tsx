@@ -101,7 +101,7 @@ export class Block extends Component<BlockProps> {
     } = this.props;
 
     let completedCount = 0;
-    const challengesWithCompleted = challenges.map(challenge => {
+    const challengesWithCompleted = challenges.map(({ challenge }) => {
       const { id } = challenge;
       const isCompleted = completedChallengeIds.some(
         (completedChallengeId: string) => completedChallengeId === id
@@ -112,7 +112,7 @@ export class Block extends Component<BlockProps> {
       return { ...challenge, isCompleted };
     });
 
-    const isProjectBlock = challenges.some(challenge => {
+    const isProjectBlock = challenges.some(({ challenge }) => {
       const isJsProject =
         challenge.order === 10 && challenge.challengeType === 5;
 
