@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c53
-title: Test if a String Contains a Substring
+title: Evalúa si una cadena contiene un substring
 challengeType: 2
 forumTopicId: 301597
 dashedName: test-if-a-string-contains-a-substring
@@ -8,17 +8,17 @@ dashedName: test-if-a-string-contains-a-substring
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`include()` and `notInclude()` work for strings too! `include()` asserts that the actual string contains the expected substring.
+`include()` y `notInclude()` también funcionan con cadenas! `include()` comprueba que la cadena actual contiene el substring esperado.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#14` in the `Strings` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#14` en el conjunto de `Strings`, cambia cada `assert` a `assert.include` o `assert.notInclude` para pasar la prueba (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 
-All tests should pass.
+Todas las pruebas deben pasar.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `include` vs. `notInclude`.
+Debe elegir el método correcto para la primera comprobación - `include` vs. `notInclude`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `include` vs. `no
   );
 ```
 
-You should choose the correct method for the second assertion - `include` vs. `notInclude`.
+Debe elegir el método correcto para la segunda comprobación - `include` vs. `notInclude`.
 
 ```js
 (getUserInput) =>
