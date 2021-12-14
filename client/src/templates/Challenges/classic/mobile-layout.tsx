@@ -113,7 +113,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           )}
           {hasPreview && (
             <TabPane
-              eventKey='preview'
+              eventKey={Tab.Preview}
               title={i18next.t('learn.editor-tabs.preview')}
             >
               {preview}
