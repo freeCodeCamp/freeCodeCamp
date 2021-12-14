@@ -97,7 +97,9 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const {
       challengeMounted,
       data: {
-        challengeNode: { title, challengeType, helpCategory }
+        challengeNode: {
+          challenge: { title, challengeType, helpCategory }
+        }
       },
       pageContext: { challengeMeta },
       updateChallengeMeta
@@ -115,13 +117,17 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
   componentDidUpdate(prevProps: ShowVideoProps): void {
     const {
       data: {
-        challengeNode: { title: prevTitle }
+        challengeNode: {
+          challenge: { title: prevTitle }
+        }
       }
     } = prevProps;
     const {
       challengeMounted,
       data: {
-        challengeNode: { title: currentTitle, challengeType, helpCategory }
+        challengeNode: {
+          challenge: { title: currentTitle, challengeType, helpCategory }
+        }
       },
       pageContext: { challengeMeta },
       updateChallengeMeta
@@ -169,16 +175,18 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const {
       data: {
         challengeNode: {
-          fields: { blockName },
-          title,
-          description,
-          superBlock,
-          block,
-          translationPending,
-          videoId,
-          videoLocaleIds,
-          bilibiliIds,
-          question: { text, answers, solution }
+          challenge: {
+            fields: { blockName },
+            title,
+            description,
+            superBlock,
+            block,
+            translationPending,
+            videoId,
+            videoLocaleIds,
+            bilibiliIds,
+            question: { text, answers, solution }
+          }
         }
       },
       openCompletionModal,
@@ -313,34 +321,36 @@ export default connect(
 
 export const query = graphql`
   query VideoChallenge($slug: String!) {
-    challengeNode(fields: { slug: { eq: $slug } }) {
-      videoId
-      videoLocaleIds {
-        espanol
-        italian
-        portuguese
+    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+      challenge {
+        videoId
+        videoLocaleIds {
+          espanol
+          italian
+          portuguese
+        }
+        bilibiliIds {
+          aid
+          bvid
+          cid
+        }
+        title
+        description
+        challengeType
+        helpCategory
+        superBlock
+        block
+        fields {
+          blockName
+          slug
+        }
+        question {
+          text
+          answers
+          solution
+        }
+        translationPending
       }
-      bilibiliIds {
-        aid
-        bvid
-        cid
-      }
-      title
-      description
-      challengeType
-      helpCategory
-      superBlock
-      block
-      fields {
-        blockName
-        slug
-      }
-      question {
-        text
-        answers
-        solution
-      }
-      translationPending
     }
   }
 `;

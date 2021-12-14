@@ -128,55 +128,57 @@ export interface VideoLocaleIds {
 }
 
 export type ChallengeNode = {
-  block: string;
-  challengeOrder: number;
-  challengeType: number;
-  dashedName: string;
-  description: string;
-  challengeFiles: ChallengeFiles;
-  fields: Fields;
-  forumTopicId: number;
-  guideUrl: string;
-  head: string[];
-  helpCategory: string;
-  id: string;
-  instructions: string;
-  isComingSoon: boolean;
-  internal?: {
-    content: string;
-    contentDigest: string;
+  challenge: {
+    block: string;
+    challengeOrder: number;
+    challengeType: number;
+    dashedName: string;
     description: string;
-    fieldOwners: string[];
-    ignoreType: boolean | null;
-    mediaType: string;
-    owner: string;
-    type: string;
+    challengeFiles: ChallengeFiles;
+    fields: Fields;
+    forumTopicId: number;
+    guideUrl: string;
+    head: string[];
+    helpCategory: string;
+    id: string;
+    instructions: string;
+    isComingSoon: boolean;
+    internal?: {
+      content: string;
+      contentDigest: string;
+      description: string;
+      fieldOwners: string[];
+      ignoreType: boolean | null;
+      mediaType: string;
+      owner: string;
+      type: string;
+    };
+    notes: string;
+    removeComments: boolean;
+    isLocked: boolean;
+    isPrivate: boolean;
+    order: number;
+    question: Question;
+    required: Required[];
+    solutions: {
+      [T in FileKey]: FileKeyChallenge;
+    };
+    sourceInstanceName: string;
+    superOrder: number;
+    superBlock: SuperBlocks;
+    tail: string[];
+    template: string;
+    tests: Test[];
+    time: string;
+    title: string;
+    translationPending: boolean;
+    url: string;
+    usesMultifileEditor: boolean;
+    videoId: string;
+    videoLocaleIds?: VideoLocaleIds;
+    bilibiliIds?: BilibiliIds;
+    videoUrl: string;
   };
-  notes: string;
-  removeComments: boolean;
-  isLocked: boolean;
-  isPrivate: boolean;
-  order: number;
-  question: Question;
-  required: Required[];
-  solutions: {
-    [T in FileKey]: FileKeyChallenge;
-  };
-  sourceInstanceName: string;
-  superOrder: number;
-  superBlock: SuperBlocks;
-  tail: string[];
-  template: string;
-  tests: Test[];
-  time: string;
-  title: string;
-  translationPending: boolean;
-  url: string;
-  usesMultifileEditor: boolean;
-  videoId: string;
-  videoLocaleIds?: VideoLocaleIds;
-  bilibiliIds?: BilibiliIds;
-  videoUrl: string;
 };
 
 export type AllChallengeNode = {

@@ -76,7 +76,9 @@ class Project extends Component<ProjectProps> {
     const {
       challengeMounted,
       data: {
-        challengeNode: { title, challengeType, helpCategory }
+        challengeNode: {
+          challenge: { title, challengeType, helpCategory }
+        }
       },
       pageContext: { challengeMeta },
       updateChallengeMeta
@@ -94,13 +96,17 @@ class Project extends Component<ProjectProps> {
   componentDidUpdate(prevProps: ProjectProps): void {
     const {
       data: {
-        challengeNode: { title: prevTitle }
+        challengeNode: {
+          challenge: { title: prevTitle }
+        }
       }
     } = prevProps;
     const {
       challengeMounted,
       data: {
-        challengeNode: { title: currentTitle, challengeType, helpCategory }
+        challengeNode: {
+          challenge: { title: currentTitle, challengeType, helpCategory }
+        }
       },
       pageContext: { challengeMeta },
       updateChallengeMeta
@@ -130,15 +136,17 @@ class Project extends Component<ProjectProps> {
     const {
       data: {
         challengeNode: {
-          challengeType,
-          fields: { blockName },
-          forumTopicId,
-          title,
-          description,
-          instructions,
-          superBlock,
-          block,
-          translationPending
+          challenge: {
+            challengeType,
+            fields: { blockName },
+            forumTopicId,
+            title,
+            description,
+            instructions,
+            superBlock,
+            block,
+            translationPending
+          }
         }
       },
       isChallengeCompleted,
@@ -215,19 +223,21 @@ export default connect(
 
 export const query = graphql`
   query ProjectChallenge($slug: String!) {
-    challengeNode(fields: { slug: { eq: $slug } }) {
-      forumTopicId
-      title
-      description
-      instructions
-      challengeType
-      helpCategory
-      superBlock
-      block
-      translationPending
-      fields {
-        blockName
-        slug
+    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+      challenge {
+        forumTopicId
+        title
+        description
+        instructions
+        challengeType
+        helpCategory
+        superBlock
+        block
+        translationPending
+        fields {
+          blockName
+          slug
+        }
       }
     }
   }

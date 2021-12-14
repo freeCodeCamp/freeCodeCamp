@@ -269,11 +269,13 @@ function useIdToNameMap(): Map<string, string> {
       allChallengeNode {
         edges {
           node {
-            fields {
-              slug
+            challenge {
+              fields {
+                slug
+              }
+              id
+              title
             }
-            id
-            title
           }
         }
       }
@@ -289,12 +291,14 @@ function useIdToNameMap(): Map<string, string> {
   edges.forEach(
     ({
       node: {
-        // @ts-expect-error Graphql needs typing
-        id,
-        // @ts-expect-error Graphql needs typing
-        title,
-        // @ts-expect-error Graphql needs typing
-        fields: { slug }
+        challenge: {
+          // @ts-expect-error Graphql needs typing
+          id,
+          // @ts-expect-error Graphql needs typing
+          title,
+          // @ts-expect-error Graphql needs typing
+          fields: { slug }
+        }
       }
     }) => {
       idToNameMap.set(id, { challengeTitle: title, challengePath: slug });

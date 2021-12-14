@@ -1,4 +1,5 @@
 const crypto = require('crypto');
+const { blockNameify } = require('../../../utils/block-nameify');
 
 function createChallengeNode(challenge, reporter) {
   // challengeType 11 is for video challenges (they only have instructions)
@@ -31,6 +32,17 @@ function createChallengeNode(challenge, reporter) {
     type: challenge.challengeType === 7 ? 'CertificateNode' : 'ChallengeNode'
   };
 
+  if (internal.type === 'ChallengeNode') {
+    const { tests = [], block, dashedName, superBlock } = challenge;
+    const slug = `/learn/${superBlock}/${block}/${dashedName}`;
+
+    challenge.fields = {
+      slug,
+      blockName: blockNameify(block),
+      tests
+    };
+  }
+
   return JSON.parse(
     JSON.stringify(
       Object.assign(
@@ -41,7 +53,8 @@ function createChallengeNode(challenge, reporter) {
           internal,
           sourceInstanceName: 'challenge'
         },
-        challenge
+        { challenge },
+        { id: crypto.randomUUID() }
       )
     )
   );
