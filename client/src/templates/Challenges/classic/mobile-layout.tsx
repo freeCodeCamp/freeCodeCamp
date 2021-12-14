@@ -89,7 +89,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             </TabPane>
           )}
           <TabPane
-            eventKey='editor'
+            eventKey={Tab.Editor}
             title={i18next.t('learn.editor-tabs.code')}
             {...editorTabPaneProps}
           >
