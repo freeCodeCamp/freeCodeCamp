@@ -22,8 +22,16 @@ interface MobileLayoutProps {
   usesMultifileEditor: boolean;
 }
 
+enum Tab {
+  Editor = 'editor',
+  Preview = 'preview',
+  Console = 'console',
+  Notes = 'notes',
+  Instructions = 'instructions'
+}
+
 interface MobileLayoutState {
-  currentTab: string;
+  currentTab: Tab;
 }
 
 class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
