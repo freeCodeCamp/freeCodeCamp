@@ -105,7 +105,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           </TabPane>
           {hasNotes && projectBasedChallenge && (
             <TabPane
-              eventKey='notes'
+              eventKey={Tab.Notes}
               title={i18next.t('learn.editor-tabs.notes')}
             >
               {notes}
