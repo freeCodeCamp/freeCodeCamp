@@ -39,7 +39,7 @@ function postChallenge(update, username) {
     switchMap(({ points }) => {
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files']),
-        challengeFiles: update.payload.files
+        challengeFiles: update.payload.files ?? null
       };
       return of(
         submitComplete({
