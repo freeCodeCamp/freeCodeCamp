@@ -1,6 +1,7 @@
 ---
 title: Responsive Web Design Two
 superBlock: responsive-web-design-two
+certification: responsive-web-design
 ---
 
 ## Introduction to Responsive Web Design Two

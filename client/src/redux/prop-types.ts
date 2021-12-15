@@ -86,6 +86,8 @@ export type MarkdownRemark = {
     block: string;
     isBeta: boolean;
     superBlock: SuperBlocks;
+    // TODO: make enum like superBlock
+    certification: string;
     title: typeof certMap[number]['title'];
   };
   headings: [
@@ -130,6 +132,7 @@ export interface VideoLocaleIds {
 export type ChallengeNode = {
   challenge: {
     block: string;
+    certification: string;
     challengeOrder: number;
     challengeType: number;
     dashedName: string;

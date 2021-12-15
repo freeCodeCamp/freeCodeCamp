@@ -100,6 +100,7 @@ interface CompletionModalsProps {
   allowBlockDonationRequests: (arg0: string) => void;
   block: string;
   blockName: string;
+  certification: string;
   challengeType: number;
   close: () => void;
   completedChallengesIds: string[];
@@ -288,14 +289,15 @@ interface Options {
 
 interface CertificateNode {
   challenge: {
-    title: string;
+    // TODO: use enum
+    certification: string;
     tests: { id: string }[];
   };
 }
 
 const useCurrentBlockIds = (
   block: string,
-  superBlock: string,
+  certification: string,
   options?: Options
 ) => {
   const {
@@ -327,7 +329,7 @@ const useCurrentBlockIds = (
       allCertificateNode {
         nodes {
           challenge {
-            title
+            certification
             tests {
               id
             }
@@ -337,13 +339,11 @@ const useCurrentBlockIds = (
     }
   `);
 
-  // TODO: create dashedNames for all the certifcateNodes OTHERWISE I18N WILL
-  // BREAK
   const currentCertificateIds = certificateNodes
     .filter(
-      node => dasherize(node.challenge.title) === superBlock + '-certification'
+      node => dasherize(node.challenge.certification) === certification
     )[0]
-    .challenge.tests.map(test => test.id);
+    ?.challenge.tests.map(test => test.id);
   const currentBlockIds = challengeEdges
     .filter(edge => edge.node.challenge.block === block)
     .map(edge => edge.node.challenge.id);
@@ -356,7 +356,7 @@ const useCurrentBlockIds = (
 const CompletionModal = (props: CompletionModalsProps) => {
   const currentBlockIds = useCurrentBlockIds(
     props.block || '',
-    props.superBlock || '',
+    props.certification || '',
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     { isCertificationBlock: isProject(props.challengeType) }
   );

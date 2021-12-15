@@ -310,6 +310,14 @@ ${getFullPath('english')}
   challenge.order = order;
   const superOrder = getSuperOrder(superBlock);
   if (superOrder !== null) challenge.superOrder = superOrder;
+  /* Since there can be more than one way to complete a certification (using the
+   legacy curriculum or the new one, for instance), we need a certification
+   field to track which certification this belongs to. */
+  // TODO: generalize this to all superBlocks
+  challenge.certification =
+    superBlock === 'responsive-web-design-two'
+      ? 'responsive-web-design'
+      : superBlock;
   challenge.superBlock = superBlock;
   challenge.challengeOrder = challengeOrder;
   challenge.isPrivate = challenge.isPrivate || isPrivate;

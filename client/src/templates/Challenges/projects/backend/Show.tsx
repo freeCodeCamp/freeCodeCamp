@@ -196,6 +196,7 @@ class BackEnd extends Component<BackEndProps> {
             description,
             instructions,
             translationPending,
+            certification,
             superBlock,
             block
           }
@@ -266,6 +267,7 @@ class BackEnd extends Component<BackEndProps> {
               <CompletionModal
                 block={block}
                 blockName={blockName}
+                certification={certification}
                 superBlock={superBlock}
               />
               <HelpModal />
@@ -294,6 +296,7 @@ export const query = graphql`
         instructions
         challengeType
         helpCategory
+        certification
         superBlock
         block
         translationPending

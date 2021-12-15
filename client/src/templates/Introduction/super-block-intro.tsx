@@ -11,7 +11,6 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { SuperBlocks } from '../../../../config/certification-settings';
-import { showNewCurriculum } from '../../../../config/env.json';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
@@ -163,7 +162,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const {
     data: {
       markdownRemark: {
-        frontmatter: { superBlock, title }
+        frontmatter: { superBlock, title, certification }
       },
       allChallengeNode: { edges }
     },
@@ -222,6 +221,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               {superBlock !== SuperBlocks.CodingInterviewPrep && (
                 <div>
                   <CertChallenge
+                    certification={certification}
                     superBlock={superBlock}
                     title={title}
                     user={user}
@@ -264,6 +264,7 @@ export const query = graphql`
   query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
+        certification
         superBlock
         title
       }

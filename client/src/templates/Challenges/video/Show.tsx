@@ -180,6 +180,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
             title,
             description,
             superBlock,
+            certification,
             block,
             translationPending,
             videoId,
@@ -302,6 +303,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               <CompletionModal
                 block={block}
                 blockName={blockName}
+                certification={certification}
                 superBlock={superBlock}
               />
             </Row>
@@ -339,6 +341,7 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
+        certification
         block
         fields {
           blockName
