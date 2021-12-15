@@ -105,7 +105,7 @@ export class CompletionModalBody extends PureComponent<
               data-testid='fcc-progress-bar-percent'
               style={{ width: `${this.state.shownPercent}%` }}
             >
-              <div className='progress-bar-foreground' aria-hidden='true'>
+              <div className='progress-bar-foreground'>
                 {t('learn.percent-complete', {
                   percent: this.state.shownPercent
                 })}
