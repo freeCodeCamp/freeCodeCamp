@@ -324,7 +324,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       isOneTime ? 'donate.wallet-label' : 'donate.wallet-label-1',
       { usd: donationAmount / 100 }
     )}:`;
-    const showMinimalPayments = isMinimalForm || !isDonating;
+    const showMinimalPayments = isSignedIn && (isMinimalForm || !isDonating);
 
     return (
       <>
