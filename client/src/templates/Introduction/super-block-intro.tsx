@@ -175,15 +175,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
 
   const nodesForSuperBlock = edges.map(({ node }) => node);
   const blockDashedNames = uniq(
-    nodesForSuperBlock
-      .filter(node => !node.challenge.isLegacy)
-      .map(({ challenge: { block } }) => block)
+    nodesForSuperBlock.map(({ challenge: { block } }) => block)
   );
-  const legacyBlockDashedNames = uniq(
-    nodesForSuperBlock
-      .filter(node => node.challenge.isLegacy)
-      .map(({ challenge: { block } }) => block)
-  );
+
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nTitle =
     superBlock === SuperBlocks.CodingInterviewPrep
@@ -192,13 +186,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
           cert: i18nSuperBlock
         });
 
-  // When there aren't any legacy challenges, that means there isn't a new curriculum to show.
-  // So all of the existing challenges would be in `blockDashedNames`.
-  const loadNewCurriculum =
-    !!showNewCurriculum && legacyBlockDashedNames.length;
-  const defaultCurriculumNames = legacyBlockDashedNames.length
-    ? legacyBlockDashedNames
-    : blockDashedNames;
+  const defaultCurriculumNames = blockDashedNames;
 
   return (
     <>
@@ -218,79 +206,29 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               {t(`intro:misc-text.courses`)}
             </h2>
             <Spacer />
-            {!loadNewCurriculum && (
-              <div className='block-ui'>
-                {defaultCurriculumNames.map(blockDashedName => (
-                  <Fragment key={blockDashedName}>
-                    <Block
-                      blockDashedName={blockDashedName}
-                      challenges={nodesForSuperBlock.filter(
-                        node =>
-                          node.challenge.block === blockDashedName &&
-                          !node.challenge.isLegacy
-                      )}
-                      superBlock={superBlock}
-                    />
-                    {blockDashedName !== 'project-euler' ? <Spacer /> : null}
-                  </Fragment>
-                ))}
-                {superBlock !== SuperBlocks.CodingInterviewPrep && (
-                  <div>
-                    <CertChallenge
-                      superBlock={superBlock}
-                      title={title}
-                      user={user}
-                    />
-                  </div>
-                )}
-              </div>
-            )}
-            {loadNewCurriculum && (
-              <div className='block-ui'>
-                {blockDashedNames.map(blockDashedName => (
-                  <Fragment key={blockDashedName}>
-                    <Block
-                      blockDashedName={blockDashedName}
-                      challenges={nodesForSuperBlock.filter(
-                        node =>
-                          node.challenge.block === blockDashedName &&
-                          !node.challenge.isLegacy
-                      )}
-                      superBlock={superBlock}
-                    />
-                    {blockDashedName !== 'project-euler' ? <Spacer /> : null}
-                  </Fragment>
-                ))}
-                {superBlock !== SuperBlocks.CodingInterviewPrep && (
-                  <div>
-                    <CertChallenge
-                      superBlock={superBlock}
-                      title={title}
-                      user={user}
-                    />
-                  </div>
-                )}
-                <Spacer />
-                <h2 className='text-center big-subheading'>
-                  {t(`intro:misc-text.legacy-header`)}
-                </h2>
-                <p>{t('intro:misc-text.legacy-desc')}</p>
-                {legacyBlockDashedNames.map(blockDashedName => (
-                  <Fragment key={blockDashedName}>
-                    <Block
-                      blockDashedName={blockDashedName}
-                      challenges={nodesForSuperBlock.filter(
-                        node =>
-                          node.challenge.block === blockDashedName &&
-                          node.challenge.isLegacy
-                      )}
-                      superBlock={superBlock}
-                    />
-                    {blockDashedName !== 'project-euler' ? <Spacer /> : null}
-                  </Fragment>
-                ))}
-              </div>
-            )}
+            <div className='block-ui'>
+              {defaultCurriculumNames.map(blockDashedName => (
+                <Fragment key={blockDashedName}>
+                  <Block
+                    blockDashedName={blockDashedName}
+                    challenges={nodesForSuperBlock.filter(
+                      node => node.challenge.block === blockDashedName
+                    )}
+                    superBlock={superBlock}
+                  />
+                  {blockDashedName !== 'project-euler' ? <Spacer /> : null}
+                </Fragment>
+              ))}
+              {superBlock !== SuperBlocks.CodingInterviewPrep && (
+                <div>
+                  <CertChallenge
+                    superBlock={superBlock}
+                    title={title}
+                    user={user}
+                  />
+                </div>
+              )}
+            </div>
             {!isSignedIn && !signInLoading && (
               <div>
                 <Spacer size={2} />
