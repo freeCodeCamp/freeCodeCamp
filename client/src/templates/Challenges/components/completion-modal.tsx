@@ -287,8 +287,10 @@ interface Options {
 }
 
 interface CertificateNode {
-  title: string;
-  tests: { id: string }[];
+  challenge: {
+    title: string;
+    tests: { id: string }[];
+  };
 }
 
 const useCurrentBlockIds = (
@@ -338,8 +340,10 @@ const useCurrentBlockIds = (
   // TODO: create dashedNames for all the certifcateNodes OTHERWISE I18N WILL
   // BREAK
   const currentCertificateIds = certificateNodes
-    .filter(node => dasherize(node.title) === superBlock + '-certification')[0]
-    .tests.map(test => test.id);
+    .filter(
+      node => dasherize(node.challenge.title) === superBlock + '-certification'
+    )[0]
+    .challenge.tests.map(test => test.id);
   const currentBlockIds = challengeEdges
     .filter(edge => edge.node.challenge.block === block)
     .map(edge => edge.node.challenge.id);
