@@ -2,6 +2,7 @@
   "name": "Functional Programming Spreadsheet",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "functional-programming-spreadsheet",
   "order": 12,
   "time": "2 hours",

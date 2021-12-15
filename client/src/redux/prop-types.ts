@@ -139,6 +139,7 @@ export type ChallengeNode = {
     forumTopicId: number;
     guideUrl: string;
     head: string[];
+    hasEditableBoundaries: boolean;
     helpCategory: string;
     id: string;
     instructions: string;

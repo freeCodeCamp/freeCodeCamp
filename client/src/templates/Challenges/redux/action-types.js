@@ -40,8 +40,6 @@ export const actionTypes = createTypes(
     'stopResetting',
     'submitChallenge',
 
-    'moveToTab',
-
     'setEditorFocusability',
     'toggleVisibleEditor'
   ],

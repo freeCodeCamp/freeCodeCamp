@@ -2,6 +2,7 @@
   "name": "D3 Dashboard",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "d3-dashboard",
   "order": 3,
   "time": "5 hours",
