@@ -19,7 +19,7 @@ function ChallengeTitle({
   block,
   children,
   isCompleted,
-  showBreadCrumbs,
+  showBreadCrumbs = true,
   superBlock,
   translationPending
 }: ChallengeTitleProps): JSX.Element {
