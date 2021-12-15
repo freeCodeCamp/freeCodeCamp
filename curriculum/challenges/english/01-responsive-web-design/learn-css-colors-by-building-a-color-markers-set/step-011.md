@@ -9,7 +9,7 @@ dashedName: step-11
 
 It's time to add some color to the page. Remember that one way to add color to an element is to use a <dfn>color keyword</dfn> like `black`, `cyan`, or `yellow`.
 
-Use a class selector to target `marker` and apply a background color to it. As a reminder, here's how to target the `class` `freecodecamp`:
+Use a `class` selector to target `marker` and apply a background color to it. As a reminder, here's how to target the `class` `freecodecamp`:
 
 ```css
 .freecodecamp {
@@ -21,10 +21,16 @@ Create a new CSS rule that targets the `marker` `class`, and set its `background
 
 # --hints--
 
-Test 1
+You should create a `class` selector to target the `marker` `class`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.marker'));
+```
 
+Your `marker` CSS rule should have a `background-color` property set to `red`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.marker')?.backgroundColor === 'red');
 ```
 
 # --seed--

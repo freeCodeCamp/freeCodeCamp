@@ -11,10 +11,29 @@ Next, within the `container` `div`, add another `div` element and set its `class
 
 # --hints--
 
-Test 1
+Your new `div` element should have an opening tag.
 
 ```js
+assert([...code.matchAll(/<div.*>/gi)][1]);
+```
 
+Your new `div` element should have a closing tag.
+
+```js
+assert([...code.matchAll(/<\/div\s*>/gi)][1]);
+```
+
+Your new `div` element should be within the `container` `div` element.
+
+```js
+assert(document.querySelector('.container')?.children[0]?.localName === 'div');
+```
+
+Your new `div` element should have a `class` attribute set to `marker`.
+
+```js
+const containerChildren = [...document.querySelector('.container')?.children];
+assert(containerChildren.every(child => child.classList?.contains('marker')));
 ```
 
 # --seed--

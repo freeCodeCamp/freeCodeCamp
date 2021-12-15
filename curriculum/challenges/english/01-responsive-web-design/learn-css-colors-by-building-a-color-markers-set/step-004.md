@@ -9,14 +9,29 @@ dashedName: step-4
 
 To tell browsers how to encode characters on your page, set the `charset` to `utf-8`. `utf-8` is a universal character set that includes almost every character from all human languages.
 
-Inside the `head` element, nest a `meta` element with the attribute `charset` set to `utf-8`. Remember that `meta` elements are self-closing.
+Inside the `head` element, nest a `meta` element with the attribute `charset` set to `utf-8`. Remember that `meta` elements are self-closing, and do not need a closing tag.
 
 # --hints--
 
-Test 1
+You should have one `meta` element.
 
 ```js
+const meta = document.querySelectorAll('meta');
+assert(meta?.length === 1);
+```
 
+Your `meta` element should be a self-closing element.
+
+```js
+assert(code.match(/<\/meta>/i) === null);
+```
+
+Your `meta` element should have a `charset` attribute set to `utf-8`.
+
+```js
+const meta = [...document.querySelectorAll('meta')];
+const target = meta?.find(m => m?.getAttribute('charset').toLowerCase() === 'utf-8');
+assert.exists(target);
 ```
 
 # --seed--

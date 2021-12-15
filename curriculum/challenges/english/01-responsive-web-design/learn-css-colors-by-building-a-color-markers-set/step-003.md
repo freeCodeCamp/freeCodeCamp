@@ -13,10 +13,30 @@ Within the `head` element, nest a `title` element with the text `CSS Color Marke
 
 # --hints--
 
-Test 1
+You should have an opening `title` tag.
 
 ```js
+assert(code.match(/<title\s*>/i));
+```
 
+You should have a closing `title` tag.
+
+```js
+assert(code.match(/<\/title\s*>/i));
+```
+
+Your project should have the title `CSS Color Markers`.
+
+```js
+const title = document.querySelector('title');
+assert.equal(title?.text?.trim()?.toLowerCase(), 'css color markers')
+```
+
+Remember, the casing and spelling matter for the title text
+
+```js
+const title = document.querySelector('title');
+assert.equal(title?.text?.trim(), 'CSS Color Markers');
 ```
 
 # --seed--

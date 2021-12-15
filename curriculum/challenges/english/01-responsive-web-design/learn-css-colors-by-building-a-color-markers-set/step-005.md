@@ -13,10 +13,25 @@ Nest a self-closing `meta` element with the `head`. Give it a `name` attribute s
 
 # --hints--
 
-Test 1
+You should have two `meta` elements.
 
 ```js
+const meta = document.querySelectorAll('meta');
+assert(meta?.length === 2);
+```
 
+Your new `meta` element should be a self-closing element.
+
+```js
+assert(code.match(/<\/meta>/i) === null);
+```
+
+Your new `meta` element should have a `name` attribute set to `viewport`, and a `content` attribute set to `width=device-width, initial-scale=1.0`.
+
+```js
+const meta = [...document.querySelectorAll('meta')];
+const target = meta?.find(m => m?.getAttribute('name') === 'viewport' && m?.getAttribute('content') === 'width=device-width, initial-scale=1.0');
+assert.exists(target);
 ```
 
 # --seed--

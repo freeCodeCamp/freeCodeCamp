@@ -15,10 +15,10 @@ To center your marker on the page, set its `margin` property to `auto`. This set
 
 # --hints--
 
-Test 1
+Your `marker` CSS rule should have a `margin` property set to `auto`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.marker')?.margin === 'auto');
 ```
 
 # --seed--

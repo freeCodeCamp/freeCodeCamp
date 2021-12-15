@@ -21,10 +21,16 @@ Create a new CSS rule that targets the `h1` element, and set the `text-align` pr
 
 # --hints--
 
-Test 1
+You should create an `h1` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('h1'));
+```
 
+Your `h1` CSS rule should have a `text-align` property set to `center`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.textAlign === 'center');
 ```
 
 # --seed--

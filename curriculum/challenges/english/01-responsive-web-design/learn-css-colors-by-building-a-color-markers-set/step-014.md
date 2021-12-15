@@ -13,10 +13,42 @@ In the `container` `div`, add two more `div` elements with the `class` `marker`.
 
 # --hints--
 
-Test 1
+Your first new `div` element should have an opening tag.
 
 ```js
+assert([...code.matchAll(/<div.*>/gi)][2]);
+```
 
+Your first new `div` element should have a closing tag.
+
+```js
+assert([...code.matchAll(/<\/div\s*>/gi)][2]);
+```
+
+Your second new `div` element should have an opening tag.
+
+```js
+assert([...code.matchAll(/<div.*>/gi)][3]);
+```
+
+Your second new `div` element should have a closing tag.
+
+```js
+assert([...code.matchAll(/<\/div\s*>/gi)][3]);
+```
+
+Your new `div` elements should be within the `container` `div` element.
+
+```js
+const containerChildren = [...document.querySelector('.container')?.children];
+assert(containerChildren.every(child => child?.localName === 'div') && containerChildren.length === 3);
+```
+
+Your new `div` elements should both have their `class` attributes set to `marker`.
+
+```js
+const containerChildren = [...document.querySelector('.container')?.children];
+assert(containerChildren.every(child => child?.classList?.contains('marker')));
 ```
 
 # --seed--

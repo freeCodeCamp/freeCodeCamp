@@ -13,10 +13,37 @@ First, within the `body` element, add a `div` element and set its `class` attrib
 
 # --hints--
 
-Test 1
+You should have an opening `div` tag.
 
 ```js
+assert(code.match(/<div.*>/i));
+```
 
+You should have a closing `div` tag.
+
+```js
+assert(code.match(/<\/div\s*>/i));
+```
+
+Your `div` element should be within your `body` element.
+
+```js
+assert(document.querySelector('div')?.parentElement?.localName === 'body');
+```
+
+Your `div` element should be after the `h1` element.
+
+```js
+const bodyElements = [...document.querySelector('body')?.children];
+const h1 = document.querySelector('h1');
+const div = document.querySelector('div');
+assert(bodyElements.indexOf(h1) < bodyElements.indexOf(div));
+```
+
+Your `div` element should have a `class` attribute set to `container`.
+
+```js
+assert(document.querySelector('div')?.classList?.contains('container'));
 ```
 
 # --seed--

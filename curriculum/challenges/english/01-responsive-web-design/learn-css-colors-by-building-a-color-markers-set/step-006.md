@@ -13,10 +13,43 @@ Within the `body`, nest an `h1` element with the text `CSS Color Markers`.
 
 # --hints--
 
-Test 1
+Your code should have an `h1` element.
 
 ```js
+const title = document.querySelector('h1');
+assert.exists(title);
+```
 
+You should have an opening `h1` tag.
+
+```js
+assert(code.match(/<h1\s*>/i));
+```
+
+You should have a closing `h1` tag.
+
+```js
+assert(code.match(/<\/h1\s*>/i));
+```
+
+Your `h1` element should be within the `body` element.
+
+```js
+assert(document.querySelector('h1')?.parentElement?.localName === 'body');
+```
+
+Your `h1` element should have the text `CSS Color Markers`.
+
+```js
+const h1 = document.querySelector('h1');
+assert.equal(h1?.textContent?.trim()?.toLowerCase(), 'css color markers')
+```
+
+Remember, the casing and spelling matter for the `h1` text.
+
+```js
+const h1 = document.querySelector('h1');
+assert.equal(h1?.textContent?.trim(), 'CSS Color Markers');
 ```
 
 # --seed--

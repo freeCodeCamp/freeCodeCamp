@@ -15,10 +15,10 @@ In your `marker` CSS rule, set the `margin` property to `10px auto`.
 
 # --hints--
 
-Test 1
+Your `marker` CSS rule should have a `margin` property set to `10px auto`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.marker')?.margin === '10px auto');
 ```
 
 # --seed--

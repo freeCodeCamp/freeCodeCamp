@@ -13,10 +13,46 @@ Add a `DOCTYPE html` declaration at the top of the document, and an `html` eleme
 
 # --hints--
 
-Test 1
+Your code should contain the `DOCTYPE` reference.
 
 ```js
+assert(code.match(/<!DOCTYPE/gi));
+```
 
+You should include a space after the `DOCTYPE` reference.
+
+```js
+assert(code.match(/<!DOCTYPE\s+/gi));
+```
+
+You should define the document type to be `html`.
+
+```js
+assert(code.match(/<!DOCTYPE\s+html/gi));
+```
+
+You should close the `DOCTYPE` declaration with a `>` after the type.
+
+```js
+assert(code.match(/<!DOCTYPE\s+html\s*>/gi));
+```
+
+Your `html` element should have an opening tag.
+
+```js
+assert(code.match(/<html\s*>/gi));
+```
+
+Your `html` element should have a closing tag.
+
+```js
+assert(code.match(/<\/html\s*>/));
+```
+
+Your `html` element should be below the `DOCTYPE` declaration.
+
+```js
+assert(code.match(/(?<!<html\s*>)<!DOCTYPE\s+html\s*>/gi));
 ```
 
 # --seed--
