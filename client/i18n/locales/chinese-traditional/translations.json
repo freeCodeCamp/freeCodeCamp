@@ -216,8 +216,7 @@
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 條款下具有免稅資格的非營利性組織（稅號：82-0779546)。",
     "mission-statement": "我們的使命：幫助人們免費學習編程。我們通過創建成千上萬的視頻、文章和交互式編程課程——所有內容向公衆免費開放——來實現這一目標。學員在世界各地自發成立數千個 freeCodeCamp 學習小組。",
     "donation-initiatives": "所有給 freeCodeCamp 的捐款都將用於我們的教育項目，購買服務器和其他服務，以及聘用員工。",
-    "donate-text": "你可以",
-    "donate-link": "點擊此處免稅捐款",
+    "donate-text": "You can <1>make a tax-deductible donation here</1>.",
     "trending-guides": "精選文章",
     "our-nonprofit": "關於我們",
     "links": {
