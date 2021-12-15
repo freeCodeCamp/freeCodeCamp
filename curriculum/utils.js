@@ -21,7 +21,7 @@ exports.testedLang = function testedLang() {
 // config/certification-settings.ts
 
 const superBlockToOrder = {
-  'responsive-web-design': 0,
+  'responsive-web-design-two': 0,
   'javascript-algorithms-and-data-structures': 1,
   'front-end-development-libraries': 2,
   'data-visualization': 3,
@@ -32,7 +32,8 @@ const superBlockToOrder = {
   'data-analysis-with-python': 8,
   'information-security': 9,
   'machine-learning-with-python': 10,
-  'coding-interview-prep': 11
+  'coding-interview-prep': 11,
+  'responsive-web-design': 12
 };
 
 function getSuperOrder(superblock, { isLegacy } = { isLegacy: false }) {
