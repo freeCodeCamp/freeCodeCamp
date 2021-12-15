@@ -9,9 +9,9 @@ dashedName: step-46
 
 A very common way to apply color to an element with CSS is with <dfn>hexadecimal</dfn> or hex values. While hex values sound complicated, they're really just another form of RGB values.
 
-Hex color values start with a `#` character and take six characters from 0-9 and A-F. The first pair of characters represent red, the second pair represent blue, and the third pair represent green. For example, `#4B5320`.
+Hex color values start with a `#` character and take six characters from 0-9 and A-F. The first pair of characters represent red, the second pair represent green, and the third pair represent blue. For example, `#4B5320`.
 
-In the `green` CSS rule, set the `background-color` property to a hex color code with the values `00` for red, `FF` for blue, and `00` green.
+In the `green` CSS rule, set the `background-color` property to a hex color code with the values `00` for red, `FF` for green, and `00` blue.
 
 # --hints--
 
