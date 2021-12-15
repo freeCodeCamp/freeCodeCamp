@@ -7,7 +7,6 @@ const baseProps = {
   block: 'fake-block',
   children: 'title text',
   isCompleted: true,
-  showBreadCrumbs: true,
   superBlock: 'fake-superblock',
   translationPending: false
 };
