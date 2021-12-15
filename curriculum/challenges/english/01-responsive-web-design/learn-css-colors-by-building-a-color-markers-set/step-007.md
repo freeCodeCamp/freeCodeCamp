@@ -26,6 +26,7 @@ Test 1
 ```html
 <!DOCTYPE html>
 <html>
+--fcc-editable-region--
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +36,6 @@ Test 1
   <body>
     <h1>CSS Color Markers</h1>
   </body>
---fcc-editable-region--
 </html>
 ```
 
