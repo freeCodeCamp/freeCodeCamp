@@ -18,5 +18,5 @@ export const fixCompletedChallengeItem = obj =>
     'githubLink',
     'challengeType',
     'files',
-    'manuallyApproved'
+    'isManuallyApproved'
   ]);

@@ -239,7 +239,7 @@ export function modernChallengeCompleted(req, res, next) {
       };
 
       if (challengeType === 14) {
-        data.manuallyApproved = false;
+        data.isManuallyApproved = false;
       }
 
       const { alreadyCompleted, updateData } = buildUserUpdate(user, id, data);
