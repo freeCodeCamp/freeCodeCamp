@@ -17,7 +17,6 @@ describe('getSuperOrder', () => {
   it('throws for "certifications"', () => {
     expect.assertions(2);
     expect(() => getSuperOrder('certifications')).toThrow();
-    expect(() => getSuperOrder('certifications', { isLegacy: true })).toThrow();
   });
 
   it('returns unique numbers for all current superblocks', () => {
