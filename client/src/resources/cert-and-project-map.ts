@@ -299,14 +299,6 @@ const certMap = [
     flag: 'isRespWebDesignCert',
     projects: [
       {
-        id: 'bd7158d8c442eddfaeb5bd18',
-        title: 'Build a Tribute Page',
-        link: getResponsiveWebDesignPath('build-a-tribute-page', {
-          showNewCurriculum
-        }),
-        certSlug: SuperBlocks.RespWebDesign
-      },
-      {
         id: '587d78af367417b2b2512b03',
         title: 'Build a Survey Form',
         link: getResponsiveWebDesignPath('build-a-survey-form', {
@@ -315,9 +307,9 @@ const certMap = [
         certSlug: SuperBlocks.RespWebDesign
       },
       {
-        id: '587d78af367417b2b2512b04',
-        title: 'Build a Product Landing Page',
-        link: getResponsiveWebDesignPath('build-a-product-landing-page', {
+        id: 'bd7158d8c442eddfaeb5bd18',
+        title: 'Build a Tribute Page',
+        link: getResponsiveWebDesignPath('build-a-tribute-page', {
           showNewCurriculum
         }),
         certSlug: SuperBlocks.RespWebDesign
@@ -329,6 +321,14 @@ const certMap = [
           'build-a-technical-documentation-page',
           { showNewCurriculum }
         ),
+        certSlug: SuperBlocks.RespWebDesign
+      },
+      {
+        id: '587d78af367417b2b2512b04',
+        title: 'Build a Product Landing Page',
+        link: getResponsiveWebDesignPath('build-a-product-landing-page', {
+          showNewCurriculum
+        }),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
