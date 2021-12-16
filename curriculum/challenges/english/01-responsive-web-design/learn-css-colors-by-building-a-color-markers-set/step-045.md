@@ -7,14 +7,44 @@ dashedName: step-45
 
 # --description--
 
-Update the CSS class selector `two` so it targets the new `green` `class`. And update `three` so it targets `blue`.
+Update the CSS class selector `.two` so it targets the new `green` `class`. And update the `.three` selector so it targets the new `blue` `class`.
 
 # --hints--
 
-Test 1
+Your code should no longer have a `.two` class selector.
 
 ```js
+assert(!new __helpers.CSSHelp(document).getStyle('.two'));
+```
 
+You should use a class selector to target the `class` `green`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.green'));
+```
+
+Your `.green` CSS rule should have a `background-color` property set to `rgb(0, 0, 0)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.green')?.backgroundColor === 'rgb(0, 0, 0)');
+```
+
+Your code should no longer have a `.three` class selector.
+
+```js
+assert(!new __helpers.CSSHelp(document).getStyle('.three'));
+```
+
+You should use a class selector to target the `class` `blue`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.blue'));
+```
+
+Your `.blue` CSS rule should have a `background-color` property set to `rgb(0, 0, 0)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.blue')?.backgroundColor === 'rgb(0, 0, 0)');
 ```
 
 # --seed--

@@ -11,14 +11,14 @@ Notice how your eyes are naturally drawn to the red color in the center? When de
 
 There are several other important color combinations outside of complementary colors, but you'll learn those a bit later.
 
-For now, use the `rgb` function in `two` to set the `background-color` to black.
+For now, use the `rgb` function in the `.two` rule to set the `background-color` to black.
 
 # --hints--
 
-Test 1
+Your `.two` CSS rule should have a `background-color` property set to `rgb(0, 0, 0)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'rgb(0, 0, 0)');
 ```
 
 # --seed--

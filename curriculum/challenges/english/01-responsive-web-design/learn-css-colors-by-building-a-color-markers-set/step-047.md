@@ -13,16 +13,16 @@ You may already be familiar with decimal, or base 10 values, which go from 0 - 1
 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
 ```
 
-With hex colors, 00 is 0% of that color, and FF is 100%. So `#00FF00` translates to 0% red, 100% green, and 0% blue, and is the same as `rgb(0, 255, 0)`.
+With hex colors, `00` is 0% of that color, and `FF` is 100%. So `#00FF00` translates to 0% red, 100% green, and 0% blue, and is the same as `rgb(0, 255, 0)`.
 
 Lower the intensity of green by setting green value of the hex color to `7F`.
 
 # --hints--
 
-Test 1
+Your `.green` CSS rule should have a `background-color` property set to `#007F00`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.green')?.backgroundColor === 'rgb(0, 127, 0)');
 ```
 
 # --seed--

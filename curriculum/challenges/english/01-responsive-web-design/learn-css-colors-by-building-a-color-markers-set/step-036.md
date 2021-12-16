@@ -7,18 +7,24 @@ dashedName: step-36
 
 # --description--
 
-A color wheel is a circle where similar colors, or hues, are near each other, and different ones are further apart. For example, pure red is between the hues rose and orange.
+A color wheel is a circle where similar colors, or <dfn>hues</dfn>, are near each other, and different ones are further apart. For example, pure red is between the hues rose and orange.
 
 Two colors that are opposite from each other on the color wheel are called <dfn>complementary colors</dfn>. If two complementary colors are combined, they produce gray. But when they are placed side-by-side, these colors produce strong visual contrast and appear brighter.
 
-Set `one` and `two` to the complementary colors red and cyan. In the `rgb` function for `one` set the red value to the max of `255`. In the `rgb` function for two, set the values for green and blue to the max of `255`.
+In the `rgb` function for the `.one` CSS rule, set the red value to the max of `255` to produce pure red. In the `rgb` function for `.two` CSS rule, set the values for green and blue to the max of `255` to produce cyan.
 
 # --hints--
 
-Test 1
+Your `.one` CSS rule should have a `background-color` property set to `rgb(255, 0, 0)`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.one')?.backgroundColor === 'rgb(255, 0, 0)');
+```
 
+Your `.two` CSS rule should have a `background-color` property set to `rgb(0, 255, 255)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'rgb(0, 255, 255)');
 ```
 
 # --seed--

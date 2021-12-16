@@ -11,10 +11,10 @@ Next, set the color-stop for red to `0%`, the color-stop for green to `50%`, and
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `background` property set to `linear-gradient(180deg, rgb(255, 0, 0) 0%, rgb(0, 255, 0) 50%, rgb(0, 0, 255) 100%)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(rgb(255, 0, 0) 0%, rgb(0, 255, 0) 50%, rgb(0, 0, 255) 100%)');
 ```
 
 # --seed--

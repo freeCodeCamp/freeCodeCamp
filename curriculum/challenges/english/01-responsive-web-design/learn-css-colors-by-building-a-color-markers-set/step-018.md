@@ -11,7 +11,7 @@ Then, create a new CSS rule that targets the `class` `one` and set its `backgrou
 
 # --hints--
 
-You should use a `class` selector to target the `class` `one`.
+You should use a class selector to target the `class` `one`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.one'));

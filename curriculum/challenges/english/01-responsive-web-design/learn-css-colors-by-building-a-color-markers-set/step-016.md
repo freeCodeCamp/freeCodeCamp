@@ -11,18 +11,18 @@ In school, you might have learned that red, yellow, and blue are primary colors,
 
 These days, there are two main color models: the <dfn>additive</dfn> RGB (red, green, blue) model used in electronic devices, and the <dfn>subtractive</dfn> CMYK (cyan, magenta, yellow, black) model used in print. In this project you'll work with the RGB model.
 
-First, add the `class` `one` to the first `marker` `div` element.
+First, add the `class` `one` to the first marker `div` element.
 
 # --hints--
 
-You should add the `class` `one` to the first `marker` `div` element in the `container` `div`.
+You should add the `class` `one` to the first marker `div` element in the `container` `div`.
 
 ```js
 const containerFirstChild = [...document.querySelector('.container')?.children][0];
 assert(containerFirstChild?.classList?.contains('one'));
 ```
 
-Your first `marker` `div` should have the classes `marker` and `one`.
+Your first marker `div` should have the classes `marker` and `one`.
 
 ```js
 const containerFirstChild = [...document.querySelector('.container')?.children][0];

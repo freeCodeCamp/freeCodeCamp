@@ -7,14 +7,20 @@ dashedName: step-38
 
 # --description--
 
-Next, in `one`, use the `rgb` function to set the `background-color` to black. And in `two`, use the `rgb` function to set the `background-color` to red.
+Next, in the `.one` rule, use the `rgb` function to set the `background-color` to black. And in the `.two` rule, use the `rgb` function to set the `background-color` to red.
 
 # --hints--
 
-Test 1
+Your `.one` CSS rule should have a `background-color` property set to `rgb(0, 0, 0)`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.one')?.backgroundColor === 'rgb(0, 0, 0)');
+```
 
+Your `.two` CSS rule should have a `background-color` property set to `rgb(255, 0, 0)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'rgb(255, 0, 0)');
 ```
 
 # --seed--

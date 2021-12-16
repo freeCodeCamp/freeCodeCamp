@@ -7,14 +7,14 @@ dashedName: step-43
 
 # --description--
 
-And update the `rgb` function in `red` so that the red value is at the max.
+And update the `rgb` function in the `.red` rule so that the red value is at the max.
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `background-color` property set to `rgb(255, 0, 0)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.backgroundColor === 'rgb(255, 0, 0)');
 ```
 
 # --seed--

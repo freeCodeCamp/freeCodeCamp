@@ -13,10 +13,10 @@ In the same `linear-gradient` function, use the `rgb` function to set the second
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `background` property set to `linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0))`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0))');
 ```
 
 # --seed--

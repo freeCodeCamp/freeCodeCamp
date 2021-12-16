@@ -13,7 +13,7 @@ Also, create a separate CSS rule that targets the `class` `three` and set its `b
 
 # --hints--
 
-You should use a `class` selector to target the `class` `two`.
+You should use a class selector to target the `class` `two`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.two'));
@@ -25,7 +25,7 @@ Your `.two` CSS rule should have a `background-color` property set to `green`.
 assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'green');
 ```
 
-You should use a `class` selector to target the `class` `three`.
+You should use a class selector to target the `class` `three`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.three'));

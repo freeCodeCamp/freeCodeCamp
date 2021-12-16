@@ -11,10 +11,11 @@ And in the `h1` rule, remove the `background-color` property and value to go bac
 
 # --hints--
 
-Test 1
+Your `h1` CSS rule should not have a `background-color` property or value.
 
 ```js
-
+const backgroundColorInstances = code.match(/background-color:.*;/gi);
+assert(backgroundColorInstances.length === 4 && !new __helpers.CSSHelp(document).getStyle('h1')?.backgroundColor);
 ```
 
 # --seed--

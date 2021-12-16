@@ -13,10 +13,10 @@ Use the `rgb` function to add pure blue as the third color argument to the `line
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `background` property set to `linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0), rgb(0, 0, 255))`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0), rgb(0, 0, 255))');
 ```
 
 # --seed--

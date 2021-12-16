@@ -19,10 +19,10 @@ In the `linear-gradient` function, add a `75%` color stop after the first red co
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `background` property set to `linear-gradient(90deg, rgb(255, 0, 0) 75%, rgb(0, 255, 0), rgb(0, 0, 255))`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(90deg, rgb(255, 0, 0) 75%, rgb(0, 255, 0), rgb(0, 0, 255))');
 ```
 
 # --seed--

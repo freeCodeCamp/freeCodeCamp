@@ -9,14 +9,15 @@ dashedName: step-60
 
 The red marker is looking much more realistic. Now you'll do the same for the green marker, using a combination of the `linear-gradient` function and hex colors.
 
-In the `green` CSS rule, change the `background-color` property to `background`.
+In the `.green` CSS rule, change the `background-color` property to `background`.
 
 # --hints--
 
-Test 1
+Your `.green` CSS rule should have a `background` property with the value `rgb(0, 127, 0)`.
 
 ```js
-
+console.log(new __helpers.CSSHelp(document).getStyle('.green').cssText);
+assert(new __helpers.CSSHelp(document).getStyle('.green').cssText === 'background: rgb(0, 127, 0);');
 ```
 
 # --seed--

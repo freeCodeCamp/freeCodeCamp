@@ -7,7 +7,7 @@ dashedName: step-50
 
 # --description--
 
-The `linear-gradient` function is very flexible, but here is the basic syntax you'll use in this tutorial:
+The `linear-gradient` function is very flexible -- here is the basic syntax you'll use in this tutorial:
 
 ```css
 linear-gradient(gradientDirection, color1, color2, ...);
@@ -17,14 +17,14 @@ linear-gradient(gradientDirection, color1, color2, ...);
 
 Now you'll apply a red-to-green gradient along a 90 degree line to the first marker.
 
-First, in the `red` CSS rule, set the `background` property to `linear-gradient()`, and pass it the value `90deg` as the `gradientDirection`.
+First, in the `.red` CSS rule, set the `background` property to `linear-gradient()`, and pass it the value `90deg` as the `gradientDirection`.
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `background` property with the value `linear-gradient(90deg)`.
 
 ```js
-
+assert(code.match(/background\s*:\s*linear-gradient\(\s*90deg\s*\);?/g));
 ```
 
 # --seed--

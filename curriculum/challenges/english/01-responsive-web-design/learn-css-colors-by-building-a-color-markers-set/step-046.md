@@ -11,14 +11,14 @@ A very common way to apply color to an element with CSS is with <dfn>hexadecimal
 
 Hex color values start with a `#` character and take six characters from 0-9 and A-F. The first pair of characters represent red, the second pair represent green, and the third pair represent blue. For example, `#4B5320`.
 
-In the `green` CSS rule, set the `background-color` property to a hex color code with the values `00` for red, `FF` for green, and `00` blue.
+In the `.green` CSS rule, set the `background-color` property to a hex color code with the values `00` for red, `FF` for green, and `00` blue.
 
 # --hints--
 
-Test 1
+Your `.green` CSS rule should have a `background-color` property set to `#00FF00`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.green')?.backgroundColor === 'rgb(0, 255, 0)');
 ```
 
 # --seed--

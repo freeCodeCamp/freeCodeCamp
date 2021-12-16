@@ -15,7 +15,7 @@ Create a new CSS rule that targets the `container` `class` and set its `backgrou
 
 # --hints--
 
-You should use a `class` selector to target the `container` `class`.
+You should use a class selector to target the `container` `class`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.container'));

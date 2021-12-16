@@ -9,14 +9,22 @@ dashedName: step-41
 
 Now it's time time to add other details to the markers, starting with the first one.
 
-First, change the class of the first marker `div` element from `one` to `red`.
+First, change the `class` attribute of the first marker `div` element from `one` to `red`.
 
 # --hints--
 
-Test 1
+Your first marker `div` should not have the `class` `one`.
 
 ```js
+const containerFirstChild = [...document.querySelector('.container')?.children][0];
+assert(!containerFirstChild?.classList?.contains('one'));
+```
 
+Your first marker `div` should have the classes `marker` and `red`.
+
+```js
+const containerFirstChild = [...document.querySelector('.container')?.children][0];
+assert(containerFirstChild?.classList?.contains('marker') && containerFirstChild?.classList?.contains('red'));
 ```
 
 # --seed--

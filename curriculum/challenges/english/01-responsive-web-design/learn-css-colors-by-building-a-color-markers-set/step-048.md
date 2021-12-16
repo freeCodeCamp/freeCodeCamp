@@ -21,10 +21,10 @@ In the `blue` CSS rule, use the `hsl` function to change the `background-color` 
 
 # --hints--
 
-Test 1
+Your `.blue` CSS rule should have a `background-color` property set to `hsl(240, 100%, 50%)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.blue')?.backgroundColor === 'rgb(0, 0, 255)');
 ```
 
 # --seed--

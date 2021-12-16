@@ -9,14 +9,26 @@ dashedName: step-35
 
 Now that you've gone through all the primary, secondary, and tertiary colors on a color wheel, it'll be easier to understand other color theory concepts and how they impact design.
 
-First, in the `.one`, `.two`, and `.three`, adjust the values in the `rgb` function so that the `background-color` of each element is set to pure black.
+First, in the rules `.one`, `.two`, and `.three`, adjust the values in the `rgb` function so that the `background-color` of each element is set to pure black. Remember that the `rgb` function uses the additive color model, where colors start as black and change as the values of red, green, and blue increase.
 
 # --hints--
 
-Test 1
+Your `.one` CSS rule should have a `background-color` property set to `rgb(0, 0, 0)`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.one')?.backgroundColor === 'rgb(0, 0, 0)');
+```
 
+Your `.two` CSS rule should have a `background-color` property set to `rgb(0, 0, 0)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'rgb(0, 0, 0)');
+```
+
+Your `.three` CSS rule should have a `background-color` property set to `rgb(0, 0, 0)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.three')?.backgroundColor === 'rgb(0, 0, 0)');
 ```
 
 # --seed--

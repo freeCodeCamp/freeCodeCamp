@@ -7,7 +7,7 @@ dashedName: step-15
 
 # --description--
 
-While you have three separate `marker` elements, they look like one big rectangle. You should add some space between them to make it easier to see each element.
+While you have three separate marker `div` elements, they look like one big rectangle. You should add some space between them to make it easier to see each element.
 
 When the shorthand `margin` property has two values, it sets `margin-top` and `margin-bottom` to the first value, and `margin-left` and `margin-right` to the second value.
 

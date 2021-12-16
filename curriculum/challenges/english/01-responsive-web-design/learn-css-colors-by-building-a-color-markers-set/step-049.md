@@ -13,14 +13,14 @@ A gradient is when one color transitions into another. The CSS `linear-gradient`
 
 One thing to remember is that the `linear-gradient` function actually creates an `image` element, and is usually paired with the `background` property which can accept an image as a value.
 
-In the `red` CSS rule, change the `background-color` property to `background`.
+In the `.red` CSS rule, change the `background-color` property to `background`.
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `background` property with the value `rgb(255, 0, 0)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red').cssText === 'background: rgb(255, 0, 0);');
 ```
 
 # --seed--

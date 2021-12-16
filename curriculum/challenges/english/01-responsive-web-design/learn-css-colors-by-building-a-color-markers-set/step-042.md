@@ -7,14 +7,26 @@ dashedName: step-42
 
 # --description--
 
-Update the `one` class selector to target the new `red` `class`.
+Update the `.one` class selector to target the new `red` `class`.
 
 # --hints--
 
-Test 1
+Your code should no longer have a `.one` class selector.
 
 ```js
+assert(!new __helpers.CSSHelp(document).getStyle('.one'));
+```
 
+You should use a class selector to target the `class` `red`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.red'));
+```
+
+Your `.red` CSS rule should have a `background-color` property set to `rgb(0, 0, 0)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.backgroundColor === 'rgb(0, 0, 0)');
 ```
 
 # --seed--
