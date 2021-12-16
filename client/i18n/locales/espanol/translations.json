@@ -462,7 +462,7 @@
     "username-not-found": "No pudimos encontrar un usuario con el nombre de usuario \"{{username}}\"",
     "add-name": "Este usuario debe agregar su nombre a su cuenta para que otros puedan ver su certificación.",
     "not-eligible": "Este usuario no es elegible para las certificaciones de freeCodeCamp.org en este momento.",
-    "profile-private": "{{username}} ha elegido que su portafolio sea privado. Deberá hacer público su portafolio para que otros puedan ver su certificación.",
+    "profile-private": "{{username}} has chosen to make their profile private. They will need to make their profile public in order for others to be able to view their certification.",
     "certs-private": "{{username}} ha elegido que sus certificaciones sean privadas. Deberá hacer públicas sus certificaciones para que otros puedan verlas.",
     "not-honest": "{{username}} aún no ha aceptado nuestro Compromiso de Honestidad Académica.",
     "user-not-certified": "Parece que el usuario {{username}} no está certificado por {{cert}}",

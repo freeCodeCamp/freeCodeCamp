@@ -216,7 +216,7 @@
     "tax-exempt-status": "O freeCodeCamp é uma organização sem fins lucrativos apoiada por doadores e isenta de impostos 501(c)(3) (Número de identificação fiscal federal dos Estados Unidos: 82-0779546)",
     "mission-statement": "Nossa missão: ajudar as pessoas a aprender a programar de graça. Nós conseguimos isso através da criação de milhares de vídeos, artigos e aulas interativas de programação – tudo disponível gratuitamente para o público. Também temos milhares de grupos de estudo do freeCodeCamp espalhados por todo o mundo.",
     "donation-initiatives": "Doações para o freeCodeCamp vão para as nossas iniciativas educacionais e ajudam a pagar por servidores, serviços e equipe.",
-    "donate-text": "You can <1>make a tax-deductible donation here</1>.",
+    "donate-text": "Você pode <1>fazer uma doação dedutível de imposto aqui</1>.",
     "trending-guides": "Guias em alta",
     "our-nonprofit": "Nossa organização sem fins lucrativos",
     "links": {
@@ -462,7 +462,7 @@
     "username-not-found": "Não foi possível encontrar um usuário com o nome de usuário \"{{username}}\"",
     "add-name": "Este usuário precisa adicionar seu nome à sua conta para que outros possam visualizar sua certificação.",
     "not-eligible": "Este usuário não é elegível para certificações do freeCodeCamp.org no momento.",
-    "profile-private": "{{username}} escolheu tornar seu portfólio privado. Ele/ela terá que tornar seu portfólio público para que outros possam ver a sua certificação.",
+    "profile-private": "{{username}} has chosen to make their profile private. They will need to make their profile public in order for others to be able to view their certification.",
     "certs-private": "{{username}} escolheu deixar suas certificações privadas. Ele/ela terá que tornar suas certificações públicas para que outros possam vê-las.",
     "not-honest": "{{username}} ainda não concordou com nosso compromisso com a honestidade acadêmica.",
     "user-not-certified": "Parece que o usuário {{username}} não possui o certificado {{cert}}",
