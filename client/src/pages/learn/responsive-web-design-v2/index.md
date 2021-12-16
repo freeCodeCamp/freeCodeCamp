@@ -1,6 +1,6 @@
 ---
 title: Responsive Web Design
-superBlock: responsive-web-design-two
+superBlock: responsive-web-design-v2
 certification: responsive-web-design
 ---
 

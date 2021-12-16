@@ -21,7 +21,7 @@ exports.testedLang = function testedLang() {
 // config/certification-settings.ts
 
 const superBlockToOrder = {
-  'responsive-web-design-two': 0,
+  'responsive-web-design-v2': 0,
   'javascript-algorithms-and-data-structures': 1,
   'front-end-development-libraries': 2,
   'data-visualization': 3,

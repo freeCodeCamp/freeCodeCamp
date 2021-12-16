@@ -315,7 +315,7 @@ ${getFullPath('english')}
    field to track which certification this belongs to. */
   // TODO: generalize this to all superBlocks
   challenge.certification =
-    superBlock === 'responsive-web-design-two'
+    superBlock === 'responsive-web-design-v2'
       ? 'responsive-web-design'
       : superBlock;
   challenge.superBlock = superBlock;
