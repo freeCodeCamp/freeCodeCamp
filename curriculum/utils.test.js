@@ -15,7 +15,7 @@ describe('getSuperOrder', () => {
   });
 
   it('throws for "certifications"', () => {
-    expect.assertions(2);
+    expect.assertions(1);
     expect(() => getSuperOrder('certifications')).toThrow();
   });
 
