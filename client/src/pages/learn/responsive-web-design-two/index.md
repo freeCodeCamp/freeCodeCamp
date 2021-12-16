@@ -1,10 +1,10 @@
 ---
-title: Responsive Web Design Two
+title: Responsive Web Design
 superBlock: responsive-web-design-two
 certification: responsive-web-design
 ---
 
-## Introduction to Responsive Web Design Two
+## Introduction to Responsive Web Design
 
 Welcome to Responsive Web Design!
 
