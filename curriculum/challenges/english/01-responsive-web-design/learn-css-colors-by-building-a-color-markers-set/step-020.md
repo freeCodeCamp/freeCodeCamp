@@ -13,10 +13,28 @@ Also, create a separate CSS rule that targets the `class` `three` and set its `b
 
 # --hints--
 
-Test 1
+You should use a `class` selector to target the `class` `two`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.two'));
+```
 
+Your `.two` CSS rule should have a `background-color` property set to `green`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'green');
+```
+
+You should use a `class` selector to target the `class` `three`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.three'));
+```
+
+Your `.three` CSS rule should have a `background-color` property set to `blue`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.three')?.backgroundColor === 'blue');
 ```
 
 # --seed--

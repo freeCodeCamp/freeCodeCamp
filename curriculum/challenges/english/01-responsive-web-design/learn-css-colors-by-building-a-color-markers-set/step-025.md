@@ -9,14 +9,20 @@ dashedName: step-25
 
 Now add a little more vertical space between your markers and the edge of the `container` element they're in.
 
-Use the shorthand `padding` property to add `10px` of top and bottom padding, and set the left and right padding to `0`. This works similarly to the shorthand `margin` property you used earlier.
+In the `.container` CSS rule, use the shorthand `padding` property to add `10px` of top and bottom padding, and set the left and right padding to `0`. This works similarly to the shorthand `margin` property you used earlier.
 
 # --hints--
 
-Test 1
+You should not remove the `background-color` property and its value from the `.container` CSS rule.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.container')?.backgroundColor === 'rgb(0, 0, 0)');
+```
 
+Your `.container` CSS rule should have a `padding` property set to `10px 0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.container')?.padding === '10px 0px');
 ```
 
 # --seed--

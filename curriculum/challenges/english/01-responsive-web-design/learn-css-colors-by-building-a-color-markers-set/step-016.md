@@ -15,10 +15,18 @@ First, add the `class` `one` to the first `marker` `div` element.
 
 # --hints--
 
-Test 1
+You should add the `class` `one` to the first `marker` `div` element in the `container` `div`.
 
 ```js
+const containerFirstChild = [...document.querySelector('.container')?.children][0];
+assert(containerFirstChild?.classList?.contains('one'));
+```
 
+Your first `marker` `div` should have the classes `marker` and `one`.
+
+```js
+const containerFirstChild = [...document.querySelector('.container')?.children][0];
+assert(containerFirstChild?.classList?.contains('marker') && containerFirstChild?.classList?.contains('one'));
 ```
 
 # --seed--

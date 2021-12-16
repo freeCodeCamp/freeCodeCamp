@@ -9,18 +9,30 @@ dashedName: step-34
 
 There are three more tertiary colors: chartreuse green (green + yellow), azure (blue + cyan), and rose (red + magenta).
 
-To create chartreuse green, update the `rgb` function in `one` so that red is at `128`, and set green to the max value.
+To create chartreuse green, update the `rgb` function in the `.one` rule so that red is at `127`, and set green to the max value.
 
-For azure, update the `rgb` function in `two` so that green is at `128` and blue is at the max value.
+For azure, update the `rgb` function in the `.two` rule so that green is at `127` and blue is at the max value.
 
-And for rose, which is sometimes called bright pink, update the `rgb` function in `three` so that green is at `128` and red is at the max value.
+And for rose, which is sometimes called bright pink, update the `rgb` function in the `.three` rule so that blue is at `127` and red is at the max value.
 
 # --hints--
 
-Test 1
+Your `.one` CSS rule should have a `background-color` property set to `rgb(127, 255, 0)`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.one')?.backgroundColor === 'rgb(127, 255, 0)');
+```
 
+Your `.two` CSS rule should have a `background-color` property set to `rgb(0, 127, 255)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'rgb(0, 127, 255)');
+```
+
+Your `.three` CSS rule should have a `background-color` property set to `rgb(255, 0, 127)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.three')?.backgroundColor === 'rgb(255, 0, 127)');
 ```
 
 # --seed--
@@ -68,15 +80,15 @@ h1 {
 
 --fcc-editable-region--
 .one {
-  background-color: rgb(255, 128, 0);
+  background-color: rgb(255, 127, 0);
 }
 
 .two {
-  background-color: rgb(0, 255, 128);
+  background-color: rgb(0, 255, 127);
 }
 
 .three {
-  background-color: rgb(128, 0, 255);
+  background-color: rgb(127, 0, 255);
 }
 --fcc-editable-region--
 

@@ -21,7 +21,7 @@ Create a new CSS rule that targets the `h1` element, and set the `text-align` pr
 
 # --hints--
 
-You should create an `h1` selector.
+You should use an `h1` selector.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('h1'));

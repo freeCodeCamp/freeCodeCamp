@@ -7,16 +7,36 @@ dashedName: step-23
 
 # --description--
 
-Notice that the `background-color` for `one` is still red. This is because you set the red value of the `rgb` function to the max of 255, or 100% red, and set both the green and blue values to 0.
+Notice that the `background-color` for your marker is still red. This is because you set the red value of the `rgb` function to the max of `255`, or 100% red, and set both the green and blue values to `0`.
 
-Now do the same for the other colors. In the `two` CSS rule, use the `rgb` function to set the `background-color` to the max value for green. And in the `three` CSS rule, use the `rgb` function to set the `background-color` to the max value for blue.
+Now use the `rgb` function to set the other colors.
+
+In the `.two` CSS rule, use the `rgb` function to set the `background-color` to the max value for green, and `0` for the other values. And in the `.three` CSS rule, use the `rgb` function to set the `background-color` to the max value for blue, and `0` for the other values.
 
 # --hints--
 
-Test 1
+Your `.two` CSS rule should not use the `green` color keyword to set the `background-color` property.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor !== 'green');
+```
 
+Your `.two` CSS rule should have a `background-color` property set to `rgb(0, 255, 0)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'rgb(0, 255, 0)');
+```
+
+Your `.three` CSS rule should not use the `blue` color keyword to set the `background-color` property.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.three')?.backgroundColor !== 'blue');
+```
+
+Your `.three` CSS rule should have a `background-color` property set to `rgb(0, 0, 255)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.three')?.backgroundColor === 'rgb(0, 0, 255)');
 ```
 
 # --seed--

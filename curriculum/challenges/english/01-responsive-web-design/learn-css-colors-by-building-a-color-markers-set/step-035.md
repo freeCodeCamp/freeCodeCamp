@@ -9,7 +9,7 @@ dashedName: step-35
 
 Now that you've gone through all the primary, secondary, and tertiary colors on a color wheel, it'll be easier to understand other color theory concepts and how they impact design.
 
-First, in `one`, `two`, and `three`, adjust the values in the `rgb` function so that the `background-color` of each element is set to pure black.
+First, in the `.one`, `.two`, and `.three`, adjust the values in the `rgb` function so that the `background-color` of each element is set to pure black.
 
 # --hints--
 
@@ -64,15 +64,15 @@ h1 {
 
 --fcc-editable-region--
 .one {
-  background-color: rgb(128, 255, 0);
+  background-color: rgb(127, 255, 0);
 }
 
 .two {
-  background-color: rgb(0, 128, 255);
+  background-color: rgb(0, 127, 255);
 }
 
 .three {
-  background-color: rgb(255, 0, 128);
+  background-color: rgb(255, 0, 127);
 }
 --fcc-editable-region--
 

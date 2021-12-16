@@ -7,14 +7,14 @@ dashedName: step-29
 
 # --description--
 
-To create the next secondary color, cyan, update the `rgb` function in the `two` CSS rule to combine pure green and pure blue.
+To create the next secondary color, cyan, update the `rgb` function in the `.two` CSS rule to combine pure green and pure blue.
 
 # --hints--
 
-Test 1
+Your `.two` CSS rule should have a `background-color` property set to `rgb(0, 255, 255)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'rgb(0, 255, 255)');
 ```
 
 # --seed--

@@ -7,14 +7,36 @@ dashedName: step-19
 
 # --description--
 
-Add the `class` `two` to the second `marker` `div`, and the `class` `three` to the third marker `div`.
+Add the `class` `two` to the second `marker` `div`, and the `class` `three` to the third `marker` `div`.
 
 # --hints--
 
-Test 1
+You should add the `class` `two` to the second `marker` `div` element in the `container` `div`.
 
 ```js
+const containerSecondChild = [...document.querySelector('.container')?.children][1];
+assert(containerSecondChild?.classList?.contains('two'));
+```
 
+Your second `marker` `div` should have the classes `marker` and `two`.
+
+```js
+const containerSecondChild = [...document.querySelector('.container')?.children][1];
+assert(containerSecondChild?.classList?.contains('marker') && containerSecondChild.classList?.contains('two'));
+```
+
+You should add the `class` `three` to the third `marker` `div` element in the `container` `div`.
+
+```js
+const containerThirdChild = [...document.querySelector('.container')?.children][2];
+assert(containerThirdChild?.classList?.contains('three'));
+```
+
+Your third `marker` `div` should have the classes `marker` and `three`.
+
+```js
+const containerThirdChild = [...document.querySelector('.container')?.children][2];
+assert(containerThirdChild?.classList?.contains('marker') && containerThirdChild?.classList?.contains('three'));
 ```
 
 # --seed--

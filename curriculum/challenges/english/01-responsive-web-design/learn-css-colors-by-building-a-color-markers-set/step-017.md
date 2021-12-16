@@ -7,14 +7,14 @@ dashedName: step-17
 
 # --description--
 
-Next, remove the `background-color` property and its value from the `marker` CSS rule.
+Next, remove the `background-color` property and its value from the `.marker` CSS rule.
 
 # --hints--
 
-Test 1
+Your `.marker` CSS rule should not have a `background-color` property and value.
 
 ```js
-
+assert(!code.includes('background-color') && !new __helpers.CSSHelp(document).getStyle('.marker')?.backgroundColor);
 ```
 
 # --seed--

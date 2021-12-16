@@ -15,10 +15,16 @@ Create a new CSS rule that targets the `container` `class` and set its `backgrou
 
 # --hints--
 
-Test 1
+You should use a `class` selector to target the `container` `class`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.container'));
+```
 
+Your `.container` CSS rule should have a `background-color` property set to `rgb(0, 0, 0)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.container')?.backgroundColor === 'rgb(0, 0, 0)');
 ```
 
 # --seed--

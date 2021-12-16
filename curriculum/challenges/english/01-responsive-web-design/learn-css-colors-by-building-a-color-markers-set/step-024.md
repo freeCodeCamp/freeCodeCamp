@@ -9,14 +9,14 @@ dashedName: step-24
 
 While the red and blue markers look the same, the green one is much lighter than it was before. This is because the `green` color keyword is actually a darker shade, and is about halfway between black and the maximum value for green.
 
-In the `two` CSS rule, set the green value in the `rgb` function to `127` to lower its intensity.
+In the `two` CSS rule, set the green value in the `rgb` function to `128` to lower its intensity.
 
 # --hints--
 
-Test 1
+Your `.two` CSS rule should have a `background-color` property set to `rgb(0, 127, 0)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'rgb(0, 127, 0)');
 ```
 
 # --seed--

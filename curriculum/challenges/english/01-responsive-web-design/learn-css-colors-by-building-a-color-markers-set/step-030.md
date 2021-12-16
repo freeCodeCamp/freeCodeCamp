@@ -7,14 +7,14 @@ dashedName: step-30
 
 # --description--
 
-To create the final secondary color, magenta, update the `rgb` function in the `three` CSS rule to combine pure blue and pure red.
+To create the final secondary color, magenta, update the `rgb` function in the `.three` CSS rule to combine pure blue and pure red.
 
 # --hints--
 
-Test 1
+Your `.three` CSS rule should have a `background-color` property set to `rgb(255, 0, 255)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.three')?.backgroundColor === 'rgb(255, 0, 255)');
 ```
 
 # --seed--

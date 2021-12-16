@@ -7,22 +7,28 @@ dashedName: step-22
 
 # --description--
 
-A function is a piece of code that can take input and perform a specific action. The CSS `rgb` function accepts a values, or arguments, for red, green and blue, and produces a color:
+A function is a piece of code that can take an input and perform a specific action. The CSS `rgb` function accepts a values, or <dfn>arguments</dfn>, for red, green, and blue, and produces a color:
 
 ```css
 rgb(red, green, blue);
 ```
 
-Each red, green, and blue value is a number from 0 to 255. 0 means that there's 0% of that color, and is black. 255 means that there's 100% of that color.
+Each red, green, and blue value is a number from `0` to `255`. `0` means that there's 0% of that color, and is black. `255` means that there's 100% of that color.
 
-In the `one` CSS rule, replace the color keyword `red` with the `rgb` function. For the `rgb` function, set the value for red to `255`, the value for green to `0`, and the value for blue to `0`.
+In the `.one` CSS rule, replace the color keyword `red` with the `rgb` function. For the `rgb` function, set the value for red to `255`, the value for green to `0`, and the value for blue to `0`.
 
 # --hints--
 
-Test 1
+Your `.one` CSS rule should not use the `red` color keyword to set the `background-color` property.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.one')?.backgroundColor !== 'red');
+```
 
+Your `.one` CSS rule should have a `background-color` property set to `rgb(255, 0, 0)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.one')?.backgroundColor === 'rgb(255, 0, 0)');
 ```
 
 # --seed--

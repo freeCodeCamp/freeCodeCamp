@@ -7,14 +7,14 @@ dashedName: step-33
 
 # --description--
 
-And to create the tertiary color violet, combine magenta with blue. Update the `rgb` function in `three` so that blue is at the max value, and set red to `128`.
+And to create the tertiary color violet, combine magenta with blue. Update the `rgb` function in the `.three` CSS rule so that blue is at the max value, and set red to `127`.
 
 # --hints--
 
-Test 1
+Your `.three` CSS rule should have a `background-color` property set to `rgb(127, 0, 255)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.three')?.backgroundColor === 'rgb(127, 0, 255)');
 ```
 
 # --seed--
@@ -61,11 +61,11 @@ h1 {
 }
 
 .one {
-  background-color: rgb(255, 128, 0);
+  background-color: rgb(255, 127, 0);
 }
 
 .two {
-  background-color: rgb(0, 255, 128);
+  background-color: rgb(0, 255, 127);
 }
 
 --fcc-editable-region--

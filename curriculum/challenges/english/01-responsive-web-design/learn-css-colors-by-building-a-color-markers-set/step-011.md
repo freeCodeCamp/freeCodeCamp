@@ -27,7 +27,7 @@ You should create a `class` selector to target the `marker` `class`.
 assert(new __helpers.CSSHelp(document).getStyle('.marker'));
 ```
 
-Your `marker` CSS rule should have a `background-color` property set to `red`.
+Your `.marker` CSS rule should have a `background-color` property set to `red`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.marker')?.backgroundColor === 'red');

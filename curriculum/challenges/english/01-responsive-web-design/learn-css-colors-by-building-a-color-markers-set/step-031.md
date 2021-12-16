@@ -9,14 +9,14 @@ dashedName: step-31
 
 Now that you're familiar with secondary colors, you'll learn how to create <dfn>tertiary colors</dfn>. Tertiary colors are created by combining a primary with a nearby secondary color.
 
-To create the tertiary color orange, update the `rgb` function in `one` so that red is at the max value, and set green to `128`.
+To create the tertiary color orange, update the `rgb` function in the `.one` CSS rule so that red is at the max value, and set green to `127`.
 
 # --hints--
 
-Test 1
+Your `.one` CSS rule should have a `background-color` property set to `rgb(255, 127, 0)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.one')?.backgroundColor === 'rgb(255, 127, 0)');
 ```
 
 # --seed--

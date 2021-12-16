@@ -11,11 +11,11 @@ While you have three separate `marker` elements, they look like one big rectangl
 
 When the shorthand `margin` property has two values, it sets `margin-top` and `margin-bottom` to the first value, and `margin-left` and `margin-right` to the second value.
 
-In your `marker` CSS rule, set the `margin` property to `10px auto`.
+In your `.marker` CSS rule, set the `margin` property to `10px auto`.
 
 # --hints--
 
-Your `marker` CSS rule should have a `margin` property set to `10px auto`.
+Your `.marker` CSS rule should have a `margin` property set to `10px auto`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.marker')?.margin === '10px auto');

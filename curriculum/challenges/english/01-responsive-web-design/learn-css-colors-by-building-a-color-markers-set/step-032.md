@@ -9,14 +9,14 @@ dashedName: step-32
 
 Notice that, to create orange, you had to increase the intensity of red and decrease the intensity of the green `rgb` values. This is because orange is the combination of red and yellow, and falls between the two colors on the color wheel.
 
-To create the tertiary color spring green, combine cyan with green. Update the `rgb` function in `two` so that green is at the max value, and set blue to `128`.
+To create the tertiary color spring green, combine cyan with green. Update the `rgb` function in the `.two` CSS rule so that green is at the max value, and set blue to `127`.
 
 # --hints--
 
-Test 1
+Your `.two` CSS rule should have a `background-color` property set to `rgb(0, 255, 127)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.two')?.backgroundColor === 'rgb(0, 255, 127)');
 ```
 
 # --seed--
@@ -63,7 +63,7 @@ h1 {
 }
 
 .one {
-  background-color: rgb(255, 128, 0);
+  background-color: rgb(255, 127, 0);
 }
 
 --fcc-editable-region--

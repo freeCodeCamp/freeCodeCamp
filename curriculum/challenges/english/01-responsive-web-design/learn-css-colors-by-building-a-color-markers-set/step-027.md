@@ -9,14 +9,14 @@ dashedName: step-27
 
 Now that you have the primary RGB colors, it's time to combine them.
 
-For the `rgb` function in the `container` rule, set the red, green, and blue values to the max of `255`.
+For the `rgb` function in the `.container` rule, set the red, green, and blue values to the max of `255`.
 
 # --hints--
 
-Test 1
+Your `.container` CSS rule should have a `background-color` property set to `rgb(255, 255, 255)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.container')?.backgroundColor === 'rgb(255, 255, 255)');
 ```
 
 # --seed--
