@@ -25,7 +25,7 @@ Quando os usuários clicam no link `Contacts`, eles são levados à seção da p
 
 # --instructions--
 
-Troque o link externo por um link interno mudando o atributo `href` para o valor `"#footer"` e o texto de `cat photos` para `Jump to Bottom`.
+Troque o link externo por um link interno mudando o atributo `href` para o valor `#footer` e o texto de `cat photos` para `Jump to Bottom`.
 
 Remova o atributo `target="_blank"` da tag de âncora, pois ele faz com que o documento vinculado abra em uma nova aba do navegador.
 
