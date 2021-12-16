@@ -42,12 +42,8 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
       <b>
         title text
       </b>
-      <span
-        className="sr-only"
-      >
-        icons.passed
-      </span>
       <svg
+        aria-label="icons.passed"
         height="50"
         style={
           Object {
@@ -60,7 +56,9 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
         width="50"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g>
+        <g
+          aria-hidden="true"
+        >
           <title>
             icons.passed
           </title>

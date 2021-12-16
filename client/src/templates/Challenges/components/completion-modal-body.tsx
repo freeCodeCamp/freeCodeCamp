@@ -88,13 +88,19 @@ export class CompletionModalBody extends PureComponent<
         </div>
         <div className='completion-block-details'>
           <div className='completion-block-name'>{blockTitle}</div>
-          <div className='progress-bar-wrap'>
-            <div className='progress-bar-background'>
+          <div
+            className='progress-bar-wrap'
+            aria-label={t('learn.percent-complete', {
+              percent: completedPercent
+            })}
+          >
+            <div className='progress-bar-background' aria-hidden='true'>
               {t('learn.percent-complete', {
                 percent: this.state.shownPercent
               })}
             </div>
             <div
+              aria-hidden='true'
               className='progress-bar-percent'
               data-testid='fcc-progress-bar-percent'
               style={{ width: `${this.state.shownPercent}%` }}
