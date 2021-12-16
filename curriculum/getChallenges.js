@@ -228,6 +228,14 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   }
   const { meta } = challengeBlock;
   const isCert = path.extname(filePath) === '.yml';
+  // TODO: there's probably a better way, but this makes sure we don't build any
+  // of the new curriculum when we don't want it.
+  if (
+    process.env.SHOW_NEW_CURRICULUM !== 'true' &&
+    superBlock === 'responsive-web-design-v2'
+  ) {
+    return;
+  }
   const challenge = isCert
     ? await createCertification(challengesDir, filePath, lang)
     : await createChallenge(challengesDir, filePath, lang, meta);
@@ -308,7 +316,9 @@ ${getFullPath('english')}
   challenge.block = dasherize(blockName);
   challenge.hasEditableBoundaries = !!hasEditableBoundaries;
   challenge.order = order;
-  const superOrder = getSuperOrder(superBlock);
+  const superOrder = getSuperOrder(superBlock, {
+    showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
+  });
   if (superOrder !== null) challenge.superOrder = superOrder;
   /* Since there can be more than one way to complete a certification (using the
    legacy curriculum or the new one, for instance), we need a certification
