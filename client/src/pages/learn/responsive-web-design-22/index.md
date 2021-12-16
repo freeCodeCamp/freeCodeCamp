@@ -1,6 +1,6 @@
 ---
 title: Responsive Web Design
-superBlock: responsive-web-design-v2
+superBlock: responsive-web-design-22
 certification: responsive-web-design
 ---
 
@@ -9,7 +9,6 @@ certification: responsive-web-design
 Welcome to Responsive Web Design!
 
 Let's first take a look at what is in the scope of Responsive Web Design (and what is not).
-
 The Web part of Responsive Web Design means that the content you are creating is designed to be delivered over the web to users' browsers. To do this, you will need to learn the language that browsers use to describe web pages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.
 
 That brings us to design. Web Design focuses on how websites should look and behave to the end user. There are plenty of additional aspects to websites, including how to host a website so people can access it, how to protect your websites and store your users' data, and the ethos behind what should go on a website in the first place. These are somewhat harder to teach, but do require a good understanding of the capabilities of the web in modern contexts.

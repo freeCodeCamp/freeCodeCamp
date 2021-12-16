@@ -117,7 +117,7 @@ export const superBlockCertTypeMap = {
 
   // post-modern
   // TODO: use enum
-  'responsive-web-design-v2': certTypes.respWebDesign
+  'responsive-web-design-22': certTypes.respWebDesign
 };
 
 export const certTypeIdMap = {

@@ -5,7 +5,7 @@ const { showNewCurriculum } = envData;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
-const responsiveWebV2Base = '/learn/responsive-web-design-v2';
+const responsiveWeb22Base = '/learn/responsive-web-design-22';
 const jsAlgoBase =
   '/learn/javascript-algorithms-and-data-structures/' +
   'javascript-algorithms-and-data-structures-projects';
@@ -730,7 +730,7 @@ function getResponsiveWebDesignPath(
   { showNewCurriculum }: { showNewCurriculum: boolean }
 ) {
   return showNewCurriculum
-    ? `${responsiveWebV2Base}/${project}-project/${project}`
+    ? `${responsiveWeb22Base}/${project}-project/${project}`
     : `${responsiveWebBase}/${project}/`;
 }
 
