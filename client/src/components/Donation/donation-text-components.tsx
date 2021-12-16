@@ -135,8 +135,7 @@ export const DonationFaqText = (): JSX.Element => {
       A: (
         <>
           <p>{t('donate.fcc-budget')}</p>
-          <p>{t('donate.i-am-fool')}</p>
-          <p>{t('donate.i-can-also')}</p>
+          <p>{t('donate.help-millions')}</p>
         </>
       )
     },
@@ -189,23 +188,20 @@ export const DonationFaqText = (): JSX.Element => {
         <>
           <p>{t('donate.we-honored')}</p>
           <p>
-            <blockquote>{t('donate.add-language')}</blockquote>
+            <blockquote>{t('donate.legacy-gift-message')}</blockquote>
           </p>
           <p>{t('donate.thank-wikimedia')}</p>
-          <p>{t('donate.again-questions')}</p>
+          <p>{t('donate.legacy-gift-questions')}</p>
         </>
       )
     },
     { Q: t('donate.how-stock'), A: <p>{t('donate.welcome-stock')}</p> },
-    { Q: t('donate.how-update'), A: <p>{t('donate.forward-recipt')}</p> },
+    { Q: t('donate.how-update'), A: <p>{t('donate.forward-receipt')}</p> },
     {
-      Q: t('donate.how-matching-gift'),
+      Q: t('donate.anything-else'),
       A: (
         <>
-          <p>{t('donate.anything-else')}</p>
-          <p>{t('donate.everything')}</p>
           <p>{t('donate.other-support')}</p>
-          <p>{t('donate.i-am-honored')}</p>
         </>
       )
     }
