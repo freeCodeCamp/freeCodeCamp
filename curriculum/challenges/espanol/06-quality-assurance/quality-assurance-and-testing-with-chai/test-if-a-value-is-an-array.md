@@ -30,7 +30,7 @@ Todas las pruebas deben pasar.
   );
 ```
 
-Debe elegir el método correcto para la primera comprobación - `isArray` vs `isNotArray`.
+Debes elegir el método correcto para la primera comprobación - `isArray` vs `isNotArray`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ Debe elegir el método correcto para la primera comprobación - `isArray` vs `is
   );
 ```
 
-Debe elegir el método correcto para la segunda comprobación - `isArray` vs `isNotArray`.
+Debes elegir el método correcto para la segunda comprobación - `isArray` vs `isNotArray`.
 
 ```js
 (getUserInput) =>
