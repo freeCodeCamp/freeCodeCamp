@@ -216,8 +216,7 @@
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 条款下具有免税资格的非营利性组织（税号：82-0779546)。",
     "mission-statement": "我们的使命：帮助人们免费学习编程。我们通过创建成千上万的视频、文章和交互式编程课程——所有内容向公众免费开放——来实现这一目标。学员在世界各地自发成立数千个 freeCodeCamp 学习小组。",
     "donation-initiatives": "所有给 freeCodeCamp 的捐款都将用于我们的教育项目，购买服务器和其他服务，以及聘用员工。",
-    "donate-text": "你可以",
-    "donate-link": "点击此处免税捐款",
+    "donate-text": "You can <1>make a tax-deductible donation here</1>.",
     "trending-guides": "精选文章",
     "our-nonprofit": "关于我们",
     "links": {
@@ -463,7 +462,7 @@
     "username-not-found": "我们未找到用户名为 \"{{username}}\" 的用户",
     "add-name": "这个用户需要在账号中添加名字，以便其他人查看该用户的认证。",
     "not-eligible": "这个用户目前不符合 freeCodeCamp.org 认证的条件。",
-    "profile-private": "{{username}} 已将其作品集设置为仅自己可见。用户需要将作品集设置为公开，其他人才能查看该用户的认证。",
+    "profile-private": "{{username}} has chosen to make their profile private. They will need to make their profile public in order for others to be able to view their certification.",
     "certs-private": "{{username}} 已将其作品集设置为仅自己可见。用户需要将认证设置为公开，其他人才能查看该用户的认证。",
     "not-honest": "{{username}} 未接受我们的《学术诚信条例》。",
     "user-not-certified": "用户 {{username}} 似乎未获得 {{cert}} 认证",

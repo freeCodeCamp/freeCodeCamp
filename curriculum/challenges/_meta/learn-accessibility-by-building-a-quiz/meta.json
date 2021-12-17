@@ -2,6 +2,7 @@
   "name": "Learn Accessibility by Building a Quiz",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "learn-accessibility-by-building-a-quiz",
   "order": 42,
   "time": "5 hours",

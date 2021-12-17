@@ -80,6 +80,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   fields {
                     slug
                   }
+                  hasEditableBoundaries
                   id
                   order
                   required {

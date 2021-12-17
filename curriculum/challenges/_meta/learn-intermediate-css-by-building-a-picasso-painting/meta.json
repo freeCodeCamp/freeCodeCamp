@@ -2,6 +2,7 @@
   "name": "Learn Intermediate CSS by Building a Picasso Painting",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "learn-intermediate-css-by-building-a-picasso-painting",
   "order": 11,
   "time": "5 hours",

@@ -120,8 +120,6 @@ export const resetChallenge = createAction(actionTypes.resetChallenge);
 export const stopResetting = createAction(actionTypes.stopResetting);
 export const submitChallenge = createAction(actionTypes.submitChallenge);
 
-export const moveToTab = createAction(actionTypes.moveToTab);
-
 export const setEditorFocusability = createAction(
   actionTypes.setEditorFocusability
 );
@@ -343,10 +341,6 @@ export const reducer = handleActions(
         ...state.modal,
         [payload]: true
       }
-    }),
-    [actionTypes.moveToTab]: (state, { payload }) => ({
-      ...state,
-      currentTab: payload
     }),
     [actionTypes.executeChallenge]: state => ({
       ...state,

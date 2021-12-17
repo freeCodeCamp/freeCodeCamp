@@ -5,12 +5,8 @@ exports[`<CompletionModalBody /> matches snapshot 1`] = `
   <div
     class="completion-challenge-details"
   >
-    <span
-      class="sr-only"
-    >
-      icons.passed
-    </span>
     <svg
+      aria-label="icons.passed"
       class="completion-success-icon"
       data-testid="fcc-completion-success-icon"
       height="50"
@@ -18,7 +14,9 @@ exports[`<CompletionModalBody /> matches snapshot 1`] = `
       width="50"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g>
+      <g
+        aria-hidden="true"
+      >
         <title>
           icons.passed
         </title>
@@ -62,14 +60,17 @@ exports[`<CompletionModalBody /> matches snapshot 1`] = `
       intro:responsive-web-design.blocks.basic-html-and-html5.title
     </div>
     <div
+      aria-label="learn.percent-complete"
       class="progress-bar-wrap"
     >
       <div
+        aria-hidden="true"
         class="progress-bar-background"
       >
         learn.percent-complete
       </div>
       <div
+        aria-hidden="true"
         class="progress-bar-percent"
         data-testid="fcc-progress-bar-percent"
         style="width: 0%;"

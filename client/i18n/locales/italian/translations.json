@@ -216,8 +216,7 @@
     "tax-exempt-status": "freeCodeCamp è un'organizzazione senza scopo di lucro (United States Federal Tax Identification Number: 82-0779546)",
     "mission-statement": "La nostra missione: aiutare le persone a imparare a programmare gratuitamente. Lo facciamo creando migliaia di video, articoli e lezioni di programmazione interattive - tutti liberamente disponibili al pubblico. Abbiamo anche migliaia di gruppi di studio freeCodeCamp in tutto il mondo.",
     "donation-initiatives": "Le donazioni a freeCodeCamp vanno alle nostre iniziative educative e aiutano a pagare i server, i servizi e il personale.",
-    "donate-text": "Puoi",
-    "donate-link": "fare una donazione deducibile dalle tasse qui",
+    "donate-text": "You can <1>make a tax-deductible donation here</1>.",
     "trending-guides": "Guide Di Tendenza",
     "our-nonprofit": "Il nostro nonprofit",
     "links": {
@@ -463,7 +462,7 @@
     "username-not-found": "Non siamo riusciti a trovare un utente con il nome utente \"{{username}}\"",
     "add-name": "Questo utente deve aggiungere il proprio nome al proprio account affinché gli altri possano visualizzare la sua certificazione.",
     "not-eligible": "Questo utente non è idoneo per le certificazioni freeCodeCamp.org al momento.",
-    "profile-private": "{{username}} ha scelto di rendere privato il suo portfolio. Dovrà renderlo pubblico affinché altri possano vedere la sua certificazione.",
+    "profile-private": "{{username}} has chosen to make their profile private. They will need to make their profile public in order for others to be able to view their certification.",
     "certs-private": "{{username}} ha scelto di rendere privato il suo portfolio. Dovrà renderlo pubblico affinché altri possano vedere la sua certificazione.",
     "not-honest": "{{username}} non ha ancora accettato il nostro Impegno di Onestà Accademica.",
     "user-not-certified": "Sembra che l'utente {{username}} non sia certificato {{cert}}",

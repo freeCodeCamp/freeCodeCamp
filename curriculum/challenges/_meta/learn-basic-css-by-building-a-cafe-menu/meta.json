@@ -2,6 +2,7 @@
   "name": "Learn Basic CSS by Building a Cafe Menu",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "learn-basic-css-by-building-a-cafe-menu",
   "order": 10,
   "time": "5 hours",
