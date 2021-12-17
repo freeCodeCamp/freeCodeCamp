@@ -342,6 +342,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   renderEditor() {
     const {
+      pageContext: {
+        projectPreview: { showProjectPreview }
+      },
       challengeFiles,
       data: {
         challengeNode: {
@@ -365,6 +368,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           resizeProps={this.resizeProps}
           title={title}
           usesMultifileEditor={usesMultifileEditor}
+          showProjectPreview={showProjectPreview}
         />
       )
     );
