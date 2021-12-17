@@ -37,7 +37,7 @@ Your second new `div` element should have a closing tag.
 assert([...code.matchAll(/<\/div\s*>/gi)][3]);
 ```
 
-Your new `div` elements should be within the `container` `div` element.
+Your new `div` elements should be within the `div.container` element.
 
 ```js
 const containerChildren = [...document.querySelector('.container')?.children];
