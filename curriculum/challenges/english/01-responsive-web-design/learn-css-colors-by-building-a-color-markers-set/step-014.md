@@ -9,7 +9,7 @@ dashedName: step-14
 
 Now that you've got one marker centered with color, it's time to add the other markers.
 
-In the `container` `div`, add two more `div` elements with the `class` `marker`.
+In the `container` `div`, add two more `div` elements and give them each a class of `marker`.
 
 # --hints--
 
@@ -37,14 +37,14 @@ Your second new `div` element should have a closing tag.
 assert([...code.matchAll(/<\/div\s*>/gi)][3]);
 ```
 
-Your new `div` elements should be within the `div.container` element.
+Your new `div` elements should be within the `div` with the class `container`.
 
 ```js
 const containerChildren = [...document.querySelector('.container')?.children];
 assert(containerChildren.every(child => child?.localName === 'div') && containerChildren.length === 3);
 ```
 
-Your new `div` elements should both have their `class` attributes set to `marker`.
+Your new `div` elements should both have a class of `marker`.
 
 ```js
 const containerChildren = [...document.querySelector('.container')?.children];

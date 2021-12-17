@@ -9,18 +9,18 @@ dashedName: step-70
 
 Now that the markers have the correct colors, it's time to build the marker sleeves. Start with the red marker.
 
-Inside the `div.red` element, create a new `div` with the `class` attribute set to `sleeve`.
+Inside the red marker `div`, create a new `div` and give it a class of `sleeve`.
 
 # --hints--
 
-Your new `div` element should be within the `div.red` element.
+Your new `div` element should be within the red marker's `div` element.
 
 ```js
 const redMarkerChildren = [...document.querySelector('.red')?.children];
 assert(redMarkerChildren.every(child => child?.localName === 'div') && redMarkerChildren.length === 1);
 ```
 
-Your new `div` element should have a `class` attribute set to `sleeve`.
+Your new `div` element should have a class of `sleeve`.
 
 ```js
 const redMarkerChild = [...document.querySelector('.red')?.children][0];

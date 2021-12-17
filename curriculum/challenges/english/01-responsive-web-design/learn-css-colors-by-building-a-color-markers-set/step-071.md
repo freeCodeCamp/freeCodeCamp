@@ -7,13 +7,11 @@ dashedName: step-71
 
 # --description--
 
-Create a new CSS rule that targets the `class` attribute, `sleeve`.
-
-Inside the new rule, set the `width` property to `110px`, and the `height` property to `25px`.
+Create a new CSS rule that targets the class `sleeve`. Set the `width` property to `110px`, and the `height` property to `25px`.
 
 # --hints--
 
-You should use a class selector to target the `class` attribute, `sleeve`.
+You should use a class selector to target class `sleeve`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.sleeve'));

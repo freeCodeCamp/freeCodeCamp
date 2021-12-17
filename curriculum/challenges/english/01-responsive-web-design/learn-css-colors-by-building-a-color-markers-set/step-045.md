@@ -7,7 +7,7 @@ dashedName: step-45
 
 # --description--
 
-Update the CSS class selector `.two` so it targets the new `green` `class`. And update the `.three` selector so it targets the new `blue` `class`.
+Update the CSS class selector `.two` so it targets the new `green` class. And update the `.three` selector so it targets the new `blue` class.
 
 # --hints--
 
@@ -17,7 +17,7 @@ Your code should no longer have a `.two` class selector.
 assert(!new __helpers.CSSHelp(document).getStyle('.two'));
 ```
 
-You should use a class selector to target the `class` `green`.
+You should use a class selector to target the class `green`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.green'));
@@ -35,7 +35,7 @@ Your code should no longer have a `.three` class selector.
 assert(!new __helpers.CSSHelp(document).getStyle('.three'));
 ```
 
-You should use a class selector to target the `class` `blue`.
+You should use a class selector to target the class `blue`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.blue'));

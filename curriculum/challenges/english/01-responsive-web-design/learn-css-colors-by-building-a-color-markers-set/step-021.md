@@ -11,11 +11,11 @@ Earlier you learned that the RGB color model is additive. This means that colors
 
 An easy way to see this is with the CSS `rgb` function.
 
-Create a new CSS rule that targets the `container` `class` and set its `background-color` to black with `rgb(0, 0, 0)`.
+Create a new CSS rule that targets the class `container` and set its `background-color` to black with `rgb(0, 0, 0)`.
 
 # --hints--
 
-You should use a class selector to target the `container` `class`.
+You should use a class selector to target the class `container`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.container'));

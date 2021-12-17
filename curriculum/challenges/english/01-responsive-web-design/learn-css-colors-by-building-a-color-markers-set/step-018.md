@@ -7,11 +7,11 @@ dashedName: step-18
 
 # --description--
 
-Then, create a new CSS rule that targets the `class` `one` and set its `background-color` property to `red`.
+Then, create a new CSS rule that targets the class `one` and set its `background-color` property to `red`.
 
 # --hints--
 
-You should use a class selector to target the `class` `one`.
+You should use a class selector to target the class `one`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.one'));

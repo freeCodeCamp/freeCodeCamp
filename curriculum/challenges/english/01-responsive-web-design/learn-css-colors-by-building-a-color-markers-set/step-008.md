@@ -17,7 +17,7 @@ p {
 }
 ```
 
-Create a new CSS rule that targets the `h1` element, and set the `text-align` property to `center`.
+Create a new CSS rule that targets the `h1` element, and set its `text-align` property to `center`.
 
 # --hints--
 

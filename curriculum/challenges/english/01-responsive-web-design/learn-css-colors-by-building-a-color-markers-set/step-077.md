@@ -7,11 +7,11 @@ dashedName: step-77
 
 # --description--
 
-Create a new CSS rule to target `cap`. In the new rule, set the `width` property to `60px`, and the `height` to `25px`.
+Create a new CSS rule to target the class `cap`. In the new rule, set the `width` property to `60px`, and the `height` to `25px`.
 
 # --hints--
 
-You should use a class selector to target the `class` attribute, `cap`.
+You should use a class selector to target the class `cap`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cap'));

@@ -7,27 +7,27 @@ dashedName: step-76
 
 # --description--
 
-Your sleeve is looking good, but it would look even better if it was positioned more toward the right side of the marker. One way to do that is to add another element before the `div.sleeve` element to push the sleeve to the right.
+Your sleeve is looking good, but it would look even better if it was positioned more toward the right side of the marker. One way to do that is to add another element before the sleeve to push it to the right.
 
-Add a new `div` element with the `class` attribute set to `cap` before the `div.sleeve` element.
+Add a new `div` with the class `cap` before the sleeve `div` element.
 
 # --hints--
 
-Your new `div` element should be within the `div.red` element.
+Your new `div` element should be within the red marker `div`.
 
 ```js
 const redMarkerChildren = [...document.querySelector('div.red')?.children];
 assert(redMarkerChildren.every(child => child?.localName === 'div') && redMarkerChildren.length === 2);
 ```
 
-Your new `div` element should have a `class` attribute set to `cap`.
+Your new `div` element should have a class of `cap`.
 
 ```js
 const redMarkerChildren = [...document.querySelector('div.red')?.children];
 assert(redMarkerChildren.some(child => child?.classList?.contains('cap')));
 ```
 
-Your `div.cap` element should be before the `div.sleeve` element.
+Your cap `div` should be before the sleeve `div`.
 
 ```js
 const redMarkerChildren = [...document.querySelector('div.red')?.children];

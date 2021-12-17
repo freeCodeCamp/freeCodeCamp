@@ -20,7 +20,7 @@ const greenMarkerChildren = [...document.querySelector('.green')?.children];
 assert(greenMarkerChildren.every(child => child?.localName === 'div') && greenMarkerChildren.length === 2);
 ```
 
-Your green marker's `div.cap` element should be before the `div.sleeve` element.
+Your green marker's cap `div` element should be before the sleeve `div` element.
 
 ```js
 const greenMarkerChildren = [...document.querySelector('.green')?.children];
@@ -36,7 +36,7 @@ const blueMarkerChildren = [...document.querySelector('.blue')?.children];
 assert(blueMarkerChildren.every(child => child?.localName === 'div') && blueMarkerChildren.length === 2);
 ```
 
-Your green marker's `div.cap` element should be before the `div.sleeve` element.
+Your green marker's cap `div` element should be before the sleeve `div` element.
 
 ```js
 const blueMarkerChildren = [...document.querySelector('.blue')?.children];

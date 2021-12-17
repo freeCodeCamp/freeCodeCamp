@@ -7,7 +7,7 @@ dashedName: step-42
 
 # --description--
 
-Update the `.one` class selector to target the new `red` `class`.
+Update the `.one` class selector to target the new `red` class.
 
 # --hints--
 
@@ -17,7 +17,7 @@ Your code should no longer have a `.one` class selector.
 assert(!new __helpers.CSSHelp(document).getStyle('.one'));
 ```
 
-You should use a class selector to target the `class` `red`.
+You should use a class selector to target the class `red`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.red'));

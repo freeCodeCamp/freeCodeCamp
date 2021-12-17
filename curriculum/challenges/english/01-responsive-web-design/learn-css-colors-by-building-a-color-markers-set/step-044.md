@@ -7,11 +7,11 @@ dashedName: step-44
 
 # --description--
 
-Next, change the `class` of the second marker `div` from `two` to `green`, and the `class` of the third marker `div` from `three` to `blue`.
+Next, change the class `two` to `green` in the second marker `div`, and the class `three` to `blue` in the third marker `div`.
 
 # --hints--
 
-Your second marker `div` should not have the `class` `two`.
+Your second marker `div` should not have the class `two`.
 
 ```js
 const containerSecondChild = [...document.querySelector('.container')?.children][1];
@@ -25,7 +25,7 @@ const containerSecondChild = [...document.querySelector('.container')?.children]
 assert(containerSecondChild?.classList?.contains('marker') && containerSecondChild?.classList?.contains('green'));
 ```
 
-Your third marker `div` should not have the `class` `three`.
+Your third marker `div` should not have the class `three`.
 
 ```js
 const containerThirdChild = [...document.querySelector('.container')?.children][2];

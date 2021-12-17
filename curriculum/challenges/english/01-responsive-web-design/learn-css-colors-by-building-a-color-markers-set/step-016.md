@@ -15,7 +15,7 @@ First, add the `class` `one` to the first marker `div` element.
 
 # --hints--
 
-You should add the `class` `one` to the first marker `div` element in the `container` `div`.
+You should add the class `one` to the first marker `div` element.
 
 ```js
 const containerFirstChild = [...document.querySelector('.container')?.children][0];

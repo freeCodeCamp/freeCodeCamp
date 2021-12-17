@@ -17,7 +17,7 @@ Saturation is the intensity of a color from 0%, or gray, to 100% for pure color.
 
 Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete white, with 50% being neutral.
 
-In the `blue` CSS rule, use the `hsl` function to change the `background-color` property to pure blue. Set the hue to `240`, the saturation to `100%`, and the lightness to `50%`.
+In the `.blue` CSS rule, use the `hsl` function to change the `background-color` property to pure blue. Set the hue to `240`, the saturation to `100%`, and the lightness to `50%`.
 
 # --hints--
 

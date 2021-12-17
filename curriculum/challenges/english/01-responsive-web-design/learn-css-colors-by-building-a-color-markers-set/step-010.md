@@ -7,7 +7,7 @@ dashedName: step-10
 
 # --description--
 
-Next, within the `container` `div`, add another `div` element and set its `class` to `marker`.
+Next, within the `div`, add another `div` element and give it a class of `marker`.
 
 # --hints--
 
@@ -23,13 +23,13 @@ Your new `div` element should have a closing tag.
 assert([...code.matchAll(/<\/div\s*>/gi)][1]);
 ```
 
-Your new `div` element should be within the `container` `div` element.
+You should nest your new `div` element within the `div` with the class `container`.
 
 ```js
 assert(document.querySelector('.container')?.children[0]?.localName === 'div');
 ```
 
-Your new `div` element should have a `class` attribute set to `marker`.
+You should give your new `div` element a class of `container`.
 
 ```js
 const containerChildren = [...document.querySelector('.container')?.children];

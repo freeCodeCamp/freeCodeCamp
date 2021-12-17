@@ -32,7 +32,7 @@ const title = document.querySelector('title');
 assert.equal(title?.text?.trim()?.toLowerCase(), 'css color markers')
 ```
 
-Remember, the casing and spelling matter for the title text
+Remember, casing and spelling matter for the title text.
 
 ```js
 const title = document.querySelector('title');
