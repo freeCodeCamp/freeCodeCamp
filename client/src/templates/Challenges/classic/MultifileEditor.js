@@ -34,6 +34,7 @@ const propTypes = {
   }),
   theme: PropTypes.string,
   title: PropTypes.string,
+  showProjectPreview: PropTypes.bool,
   usesMultifileEditor: PropTypes.bool,
   visibleEditors: PropTypes.shape({
     scriptjs: PropTypes.bool,
@@ -68,7 +69,8 @@ const MultifileEditor = props => {
     resizeProps,
     title,
     visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx },
-    usesMultifileEditor
+    usesMultifileEditor,
+    showProjectPreview
   } = props;
   const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
   // TODO: the tabs mess up the rendering (scroll doesn't work properly and
@@ -130,6 +132,7 @@ const MultifileEditor = props => {
                     theme={editorTheme}
                     title={title}
                     usesMultifileEditor={usesMultifileEditor}
+                    showProjectPreview={showProjectPreview}
                   />
                 </ReflexElement>
               );
