@@ -1,6 +1,4 @@
-/* #description {
   background: var(--secondary-background);
-} */
 .monaco-editor .margin-view-overlays .line-numbers,
 .monaco-editor .margin-view-overlays .myLineDecoration + .line-numbers {
   color: var(--primary-color);
