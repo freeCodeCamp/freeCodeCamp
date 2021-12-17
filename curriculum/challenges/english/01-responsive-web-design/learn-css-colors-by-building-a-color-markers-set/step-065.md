@@ -13,10 +13,22 @@ Clean up your code a little more by removing the `gradientDirection` argument fr
 
 # --hints--
 
-Test 1
+You should remove the `gradientDirection` arguments from the `linear-gradient` functions in your `.red` and `.green` CSS rules.
 
 ```js
+assert(!code.match(/linear-gradient\s*\(\s*180deg/gi));
+```
 
+Your `.red` CSS rule should have a `background` property set to `linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27))`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27))');
+```
+
+Your `.green` CSS rule should have a `background` property set to `linear-gradient(#55680D, #71F53E, #116C31)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.green')?.background === 'linear-gradient(rgb(85, 104, 13), rgb(113, 245, 62), rgb(17, 108, 49))');
 ```
 
 # --seed--

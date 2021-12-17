@@ -9,14 +9,14 @@ dashedName: step-66
 
 Now you'll apply a gradient to the blue marker, this time using the `hsl` function as color arguments.
 
-In the `blue` CSS rule, change the `background-color` property to `background`.
+In the `.blue` CSS rule, change the `background-color` property to `background`.
 
 # --hints--
 
-Test 1
+Your `.blue` CSS rule should have a `background` property with the value `hsl(240, 100%, 50%)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.blue').cssText === 'background: rgb(0, 0, 255);');
 ```
 
 # --seed--

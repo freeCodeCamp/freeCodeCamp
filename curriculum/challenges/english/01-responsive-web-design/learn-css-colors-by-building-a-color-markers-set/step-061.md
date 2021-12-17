@@ -13,10 +13,12 @@ Use the `linear-gradient` function and set `gradientDirection` to `180deg`. And 
 
 # --hints--
 
-Test 1
+Your `.green` CSS rule should have a `background` property with the value `linear-gradient(180deg, #55680D)`.
 
 ```js
-
+assert(
+  __helpers.removeWhiteSpace($('style').text()).match(/\.green{.*background:linear-gradient\(180deg,#55680D\).*}/g)
+);
 ```
 
 # --seed--

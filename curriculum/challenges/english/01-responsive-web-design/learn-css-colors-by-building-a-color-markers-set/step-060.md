@@ -13,10 +13,9 @@ In the `.green` CSS rule, change the `background-color` property to `background`
 
 # --hints--
 
-Your `.green` CSS rule should have a `background` property with the value `rgb(0, 127, 0)`.
+Your `.green` CSS rule should have a `background` property with the value `#007F00`.
 
 ```js
-console.log(new __helpers.CSSHelp(document).getStyle('.green').cssText);
 assert(new __helpers.CSSHelp(document).getStyle('.green').cssText === 'background: rgb(0, 127, 0);');
 ```
 

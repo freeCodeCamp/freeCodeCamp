@@ -11,10 +11,10 @@ For the second color argument, use a hex color code with the values `71` for red
 
 # --hints--
 
-Test 1
+Your `.green` CSS rule should have a `background` property set to `linear-gradient(180deg, #55680D, #71F53E)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.green')?.background === 'linear-gradient(rgb(85, 104, 13), rgb(113, 245, 62))');
 ```
 
 # --seed--

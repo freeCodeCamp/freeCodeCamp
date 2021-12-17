@@ -11,10 +11,10 @@ As the second color argument, pass in the `hsl` function with the values `223` f
 
 # --hints--
 
-Test 1
+Your `.blue` CSS rule should have a `background` property set to `linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%))`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.blue')?.background === 'linear-gradient(rgb(10, 66, 72), rgb(61, 113, 245))');
 ```
 
 # --seed--

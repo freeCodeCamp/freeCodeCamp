@@ -11,14 +11,14 @@ Even without the color-stops, you might have noticed that the colors for the gre
 
 The `linear-gradient` function automatically calculates these values for you, and places colors evenly along the gradient line by default.
 
-In the `red` CSS rule, remove the three color stops from the `linear-gradient` function to clean up your code a bit.
+In the `.red` CSS rule, remove the three color stops from the `linear-gradient` function to clean up your code a bit.
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `background` property set to `linear-gradient(180deg, rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27))`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27))');
 ```
 
 # --seed--
