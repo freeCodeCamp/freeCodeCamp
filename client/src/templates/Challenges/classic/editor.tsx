@@ -42,7 +42,8 @@ import {
   submitChallenge,
   initTests,
   isResettingSelector,
-  stopResetting
+  stopResetting,
+  isProjectPreviewModalOpenSelector
 } from '../redux';
 
 import './editor.css';
@@ -76,6 +77,8 @@ interface EditorProps {
   tests: Test[];
   theme: Themes;
   title: string;
+  showProjectPreview: boolean;
+  previewOpen: boolean;
   updateFile: (object: {
     fileKey: FileKey;
     editorValue: string;
@@ -104,6 +107,7 @@ const mapStateToProps = createSelector(
   canFocusEditorSelector,
   consoleOutputSelector,
   isDonationModalOpenSelector,
+  isProjectPreviewModalOpenSelector,
   isResettingSelector,
   userSelector,
   challengeTestsSelector,
@@ -111,11 +115,13 @@ const mapStateToProps = createSelector(
     canFocus: boolean,
     output: string[],
     open,
+    previewOpen: boolean,
     isResetting: boolean,
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
+    previewOpen,
     isResetting,
     output,
     theme,
@@ -895,6 +901,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles, props.isResetting]);
+
+  useEffect(() => {
+    const { showProjectPreview, previewOpen } = props;
+    if (!previewOpen && showProjectPreview) {
+      const description = document.getElementsByClassName(
+        'description-container'
+      )[0];
+      description.classList.add('description-highlighter');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.previewOpen]);
+
   useEffect(() => {
     const { output } = props;
     const { model, insideEditDecId } = dataRef.current;
