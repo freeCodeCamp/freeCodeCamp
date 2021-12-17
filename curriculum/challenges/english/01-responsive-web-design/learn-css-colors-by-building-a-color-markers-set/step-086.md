@@ -17,14 +17,14 @@ box-shadow: offsetX offsetY color;
 
 Start by adding a simple shadow to the red marker.
 
-In the `red` CSS rule, add the `box-shadow` property with the values `5px` for `offsetX`, `5px` for `offsetY`, and `red` for `color`.
+In the `.red` CSS rule, add the `box-shadow` property with the values `5px` for `offsetX`, `5px` for `offsetY`, and `red` for `color`.
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `box-shadow` shorthand property and with the value `5px 5px red`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.boxShadow === 'red 5px 5px');
 ```
 
 # --seed--

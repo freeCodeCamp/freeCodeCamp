@@ -7,16 +7,16 @@ dashedName: step-90
 
 # --description--
 
-Now that you're familiar with the `box-shadow` property, you can finalize the shadows, starting with the one for the red marker.
+Now that you're familiar with the `box-shadow` property you can finalize the shadows, starting with the one for the red marker.
 
-In the `red` CSS rule, update the values for the `box-shadow` property so `offsetX` is `0`,`offsetY` is `0`, `blurRadius` is `20px`, and `spreadRadius` is `0`.
+In the `.red` CSS rule, update the values for the `box-shadow` property so `offsetX` is `0`,`offsetY` is `0`, `blurRadius` is `20px`, and `spreadRadius` is `0`.
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `box-shadow` shorthand property and with the value `0 0 20px 0 red`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.boxShadow === 'red 0px 0px 20px 0px');
 ```
 
 # --seed--

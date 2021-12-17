@@ -9,14 +9,14 @@ dashedName: step-72
 
 To make the marker look more realistic, give the sleeve a transparent white color.
 
-First, set the `sleeve` element's `background-color` to `white`.
+First, set the `div.sleeve` element's `background-color` to `white`.
 
 # --hints--
 
-Test 1
+Your `.sleeve` CSS rule should have a `background-color` property set to `white`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.sleeve')?.backgroundColor === 'white');
 ```
 
 # --seed--

@@ -11,10 +11,10 @@ Finally, for the green marker's `box-shadow` property, replace the named color w
 
 # --hints--
 
-Test 1
+Your `.blue` CSS rule should have a `box-shadow` shorthand property and with the value `0 0 20px 0 hsla(223, 59%, 31%, 0.8)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.blue')?.boxShadow === 'rgba(32, 59, 126, 0.8) 0px 0px 20px 0px');
 ```
 
 # --seed--

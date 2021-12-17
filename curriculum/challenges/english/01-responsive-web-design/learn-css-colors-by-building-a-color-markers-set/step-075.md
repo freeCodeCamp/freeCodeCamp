@@ -9,20 +9,20 @@ dashedName: step-75
 
 You're already familiar with using the `rgb` function to set colors. To add an alpha channel to an `rgb` color, use the `rgba` function instead.
 
-The `rgba` function works just like the `rgb` function, but takes one more number from 0 to 1.0 for the alpha channel:
+The `rgba` function works just like the `rgb` function, but takes one more number from `0` to `1.0` for the alpha channel:
 
 ```css
 rgba(redValue, greenValue, blueValue, alphaValue);
 ```
 
-In the `sleeve` rule, use the `rgba` function to set the `background-color` property to pure white with 50% opacity.
+In the `.sleeve` rule, use the `rgba` function to set the `background-color` property to pure white with 50% opacity.
 
 # --hints--
 
-Test 1
+Your `.sleeve` CSS rule should have a `background-color` property set to `rgba(255, 255, 255, 0.5)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.sleeve')?.backgroundColor === 'rgba(255, 255, 255, 0.5)');
 ```
 
 # --seed--

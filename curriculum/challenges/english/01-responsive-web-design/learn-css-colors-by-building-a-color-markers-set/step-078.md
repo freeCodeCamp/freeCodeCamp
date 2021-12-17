@@ -17,10 +17,16 @@ Create a new rule to target both the `cap` and `sleeve` classes, and set `displa
 
 # --hints--
 
-Test 1
+You should use a class selector to target both the `cap` and `sleeve` classes.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.cap, .sleeve') || new __helpers.CSSHelp(document).getStyle('.sleeve, .cap'));
+```
 
+Your CSS rule should have a `display` property set to `inline-block`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.cap, .sleeve')?.display === 'inline-block' || new __helpers.CSSHelp(document).getStyle('.sleeve, .cap')?.display === 'inline-block');
 ```
 
 # --seed--

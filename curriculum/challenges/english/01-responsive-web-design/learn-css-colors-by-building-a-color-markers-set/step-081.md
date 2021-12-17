@@ -11,14 +11,14 @@ Your border should be visible now. If no color is set, black is used by default.
 
 But to make your code more readable, it's better to set the border color explicitly.
 
-In the `sleeve` CSS rule, add the `border-left-color` property with the value `black`.
+In the `.sleeve` CSS rule, add the `border-left-color` property with the value `black`.
 
 # --hints--
 
-Test 1
+Your `.sleeve` CSS rule should have a `border-left-color` property and with the value `black`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.sleeve')?.borderLeftColor === 'black');
 ```
 
 # --seed--

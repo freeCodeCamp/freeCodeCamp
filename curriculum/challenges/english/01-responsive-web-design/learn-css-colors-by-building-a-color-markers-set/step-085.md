@@ -9,14 +9,40 @@ dashedName: step-85
 
 Awesome. Your red marker is looking good. Now all you need to do is add the caps and sleeves to your other markers.
 
-In both green and blue marker `div` elements, nest new `cap` and `sleeve` `div` elements. You can just copy the ones from the red marker and paste them into the other two markers.
+Add a cap and sleeve to both the green and blue markers. You can just copy the `div` elements from the red marker and paste them into the other two markers.
 
 # --hints--
 
-Test 1
+Your green marker `div` should contain two `div` elements.
 
 ```js
+const greenMarkerChildren = [...document.querySelector('.green')?.children];
+assert(greenMarkerChildren.every(child => child?.localName === 'div') && greenMarkerChildren.length === 2);
+```
 
+Your green marker's `div.cap` element should be before the `div.sleeve` element.
+
+```js
+const greenMarkerChildren = [...document.querySelector('.green')?.children];
+const greenMarkerCap = document.querySelector('.green .cap');
+const greenMarkerSleeve = document.querySelector('.green .sleeve');
+assert(greenMarkerChildren.indexOf(greenMarkerCap) < greenMarkerChildren.indexOf(greenMarkerSleeve));
+```
+
+Your blue marker `div` should contain two `div` elements.
+
+```js
+const blueMarkerChildren = [...document.querySelector('.blue')?.children];
+assert(blueMarkerChildren.every(child => child?.localName === 'div') && blueMarkerChildren.length === 2);
+```
+
+Your green marker's `div.cap` element should be before the `div.sleeve` element.
+
+```js
+const blueMarkerChildren = [...document.querySelector('.blue')?.children];
+const blueMarkerCap = document.querySelector('.blue .cap');
+const blueMarkerSleeve = document.querySelector('.blue .sleeve');
+assert(blueMarkerChildren.indexOf(blueMarkerCap) < blueMarkerChildren.indexOf(blueMarkerSleeve));
 ```
 
 # --seed--

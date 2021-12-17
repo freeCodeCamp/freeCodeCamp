@@ -13,10 +13,10 @@ Replace the named color with the `rgba` function. Use the values `83` for red, `
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `box-shadow` shorthand property and with the value `0 0 20px 0 rgba(83, 14, 14, 0.8)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.boxShadow === 'rgba(83, 14, 14, 0.8) 0px 0px 20px 0px');
 ```
 
 # --seed--

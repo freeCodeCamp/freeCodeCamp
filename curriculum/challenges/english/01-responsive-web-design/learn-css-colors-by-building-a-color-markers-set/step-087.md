@@ -15,10 +15,10 @@ Update the values for the `box-shadow` property, and set `offsetX` to `-5px`, an
 
 # --hints--
 
-Test 1
+Your `.red` CSS rule should have a `box-shadow` shorthand property and with the value `-5px -5px red`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.red')?.boxShadow === 'red -5px -5px');
 ```
 
 # --seed--

@@ -11,14 +11,14 @@ Another way to set the opacity for an element is with the <dfn>alpha channel</df
 
 You've already set sleeve's opacity with a named color and the `opacity` property, but you can add an alpha channel to the other CSS color properties.
 
-First, inside the `sleeve` rule, remove the `opacity` property and value.
+First, inside the `.sleeve` rule, remove the `opacity` property and value.
 
 # --hints--
 
-Test 1
+Your `.sleeve` CSS rule should not have an `opacity` property and value.
 
 ```js
-
+assert(!new __helpers.CSSHelp(document).getStyle('.sleeve')?.opacity);
 ```
 
 # --seed--

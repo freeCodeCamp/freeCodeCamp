@@ -13,10 +13,10 @@ For the `border-left` shorthand property, use the `rgba` function to set the col
 
 # --hints--
 
-Test 1
+Your `.sleeve` CSS rule should have a `border-left` shorthand property and with the value `10px double rgba(0, 0, 0, 0.75)`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.sleeve')?.borderLeft === '10px double rgba(0, 0, 0, 0.75)');
 ```
 
 # --seed--

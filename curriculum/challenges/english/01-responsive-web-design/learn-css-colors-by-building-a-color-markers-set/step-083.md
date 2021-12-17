@@ -13,10 +13,10 @@ For the `border-left` shorthand property, change the border style value from `so
 
 # --hints--
 
-Test 1
+Your `.sleeve` CSS rule should have a `border-left` shorthand property and with the value `10px double black`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.sleeve')?.borderLeft === '10px double black');
 ```
 
 # --seed--

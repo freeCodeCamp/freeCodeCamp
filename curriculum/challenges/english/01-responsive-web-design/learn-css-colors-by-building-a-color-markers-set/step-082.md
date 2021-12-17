@@ -15,14 +15,38 @@ Here is the syntax:
 border-left: width style color;
 ```
 
-In the `sleeve` CSS rule, replace the `border-left-width`, `border-left-style`, and `border-left-color` properties with the `border-left` shorthand property. The values for the width, style, and color of the left border should be the same.
+In the `.sleeve` CSS rule, replace the `border-left-width`, `border-left-style`, and `border-left-color` properties with the `border-left` shorthand property. The values for the width, style, and color of the left border should be the same.
 
 # --hints--
 
-Test 1
+Your `.sleeve` CSS rule should not have a `border-left-width` property and value.
 
 ```js
+assert(
+  !__helpers.removeWhiteSpace($('style').text()).includes('border-left-width:')
+);
+```
 
+Your `.sleeve` CSS rule should not have a `border-left-style` property and value.
+
+```js
+assert(
+  !__helpers.removeWhiteSpace($('style').text()).includes('border-left-style:')
+);
+```
+
+Your `.sleeve` CSS rule should not have a `border-left-color` property and value.
+
+```js
+assert(
+  !__helpers.removeWhiteSpace($('style').text()).includes('border-left-color:')
+);
+```
+
+Your `.sleeve` CSS rule should have a `border-left` shorthand property and with the value `10px solid black`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.sleeve')?.borderLeft === '10px solid black');
 ```
 
 # --seed--

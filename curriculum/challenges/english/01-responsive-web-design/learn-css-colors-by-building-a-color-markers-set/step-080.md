@@ -9,14 +9,14 @@ dashedName: step-80
 
 Borders have several styles to choose from. You can make your border a solid line, but can also go with a dashed or dotted line if you prefer. Solid border lines are probably the most common.
 
-In the `sleeve` CSS rule, add the `border-left-style` property with the value `solid`.
+In the `.sleeve` CSS rule, add the `border-left-style` property with the value `solid`.
 
 # --hints--
 
-Test 1
+Your `.sleeve` CSS rule should have a `border-left-style` property and with the value `solid`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.sleeve')?.borderLeftStyle === 'solid');
 ```
 
 # --seed--

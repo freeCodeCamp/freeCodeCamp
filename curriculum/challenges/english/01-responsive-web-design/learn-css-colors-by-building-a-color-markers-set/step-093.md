@@ -11,10 +11,10 @@ For the green marker's `box-shadow` property, replace the named color with a hex
 
 # --hints--
 
-Test 1
+Your `.green` CSS rule should have a `box-shadow` shorthand property and with the value `0 0 20px 0 #3B7E20CC`.
 
 ```js
-
+assert(new __helpers.CSSHelp(document).getStyle('.green')?.boxShadow === 'rgba(59, 126, 32, 0.8) 0px 0px 20px 0px');
 ```
 
 # --seed--

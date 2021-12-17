@@ -9,14 +9,20 @@ dashedName: step-92
 
 The shadows for your green and blue markers will have the same position, blur, and spread. The only difference will be the colors.
 
-In the `green` and `blue` CSS rules, update the values for the `box-shadow` properties so `offsetX` is `0`,`offsetY` is `0`, `blurRadius` is `20px`, and `spreadRadius` is `0`. Leave the colors as `green` and `blue` for now.
+In the `.green` and `.blue` CSS rules, update the values for the `box-shadow` properties so `offsetX` is `0`,`offsetY` is `0`, `blurRadius` is `20px`, and `spreadRadius` is `0`. Leave the colors as `green` and `blue` for now.
 
 # --hints--
 
-Test 1
+Your `.green` CSS rule should have a `box-shadow` shorthand property and with the value `0 0 20px 0 green`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.green')?.boxShadow === 'green 0px 0px 20px 0px');
+```
 
+Your `.blue` CSS rule should have a `box-shadow` shorthand property and with the value `0 0 20px 0 blue`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.blue')?.boxShadow === 'blue 0px 0px 20px 0px');
 ```
 
 # --seed--
