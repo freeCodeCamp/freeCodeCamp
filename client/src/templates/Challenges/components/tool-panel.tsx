@@ -7,24 +7,44 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
+import { createSelector } from 'reselect';
+import { challengeTypes } from '../../../../utils/challenge-types';
 
 import './tool-panel.css';
-import { openModal, executeChallenge } from '../redux';
+import {
+  openModal,
+  executeChallenge,
+  saveChallenge,
+  challengeMetaSelector
+} from '../redux';
 
-const mapStateToProps = () => ({});
+// const mapStateToProps = () => ({});
+//      challengeType === challengeTypes.multiFileCertProject
+
+const mapStateToProps = createSelector(
+  challengeMetaSelector,
+  ({ challengeId, challengeType }: { challengeId: string, challengeType: number }) => ({
+    challengeId,
+    challengeType
+  })
+);
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       executeChallenge,
       openHelpModal: () => openModal('help'),
       openVideoModal: () => openModal('video'),
-      openResetModal: () => openModal('reset')
+      openResetModal: () => openModal('reset'),
+      saveChallenge
     },
     dispatch
   );
 
 interface ToolPanelProps {
+  challengeId: string;
+  challengeType: number;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
+  saveChallenge: () => void;
   isMobile?: boolean;
   openHelpModal: () => void;
   openVideoModal: () => void;
@@ -34,7 +54,10 @@ interface ToolPanelProps {
 }
 
 function ToolPanel({
+  challengeId,
+  challengeType,
   executeChallenge,
+  saveChallenge,
   isMobile,
   openHelpModal,
   openVideoModal,
@@ -60,14 +83,25 @@ function ToolPanel({
       >
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
-      <Button
-        block={true}
-        bsStyle='primary'
-        className='btn-invert'
-        onClick={openResetModal}
-      >
-        {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
-      </Button>
+      {challengeType === challengeTypes.multiFileCertProject ? (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          onClick={saveChallenge}
+        >
+          {isMobile ? t('buttons.save') : t('buttons.save')}
+        </Button>
+      ) : (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          onClick={openResetModal}
+        >
+          {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
+        </Button>
+      )}
       <DropdownButton
         block={true}
         bsStyle='primary'

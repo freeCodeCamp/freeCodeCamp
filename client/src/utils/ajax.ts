@@ -3,6 +3,7 @@ import envData from '../../../config/env.json';
 
 import type {
   ChallengeFile,
+  ChallengeFiles,
   ClaimedCertifications,
   CompletedChallenge,
   SaveableChallenge,
@@ -233,7 +234,7 @@ export function postWebhookToken(): Promise<void> {
 
 export function postSaveChallenge(body: {
   id: string;
-  challengeFile: SaveableChallenge;
+  challengeFiles: ChallengeFiles;
 }): Promise<void> {
   return post('/save-challenge', body);
 }

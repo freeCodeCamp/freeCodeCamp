@@ -226,6 +226,7 @@ export function isValidChallengeCompletion(req, res, next) {
 }
 
 export function modernChallengeCompleted(req, res, next) {
+  console.log('modernChallengeCompleted');
   const user = req.user;
   return user
     .getCompletedChallenges$()
@@ -238,6 +239,9 @@ export function modernChallengeCompleted(req, res, next) {
         files,
         completedDate
       });
+
+      console.log('updateData');
+      console.log(updateData);
 
       const points = alreadyCompleted ? user.points : user.points + 1;
       const updatePromise = new Promise((resolve, reject) =>
@@ -260,6 +264,7 @@ export function modernChallengeCompleted(req, res, next) {
 }
 
 function projectCompleted(req, res, next) {
+  console.log('projectCompleted');
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, [
@@ -308,6 +313,7 @@ function projectCompleted(req, res, next) {
 }
 
 function backendChallengeCompleted(req, res, next) {
+  console.log('backendChallengeCompleted');
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, ['id', 'solution']);
@@ -342,11 +348,41 @@ function backendChallengeCompleted(req, res, next) {
 }
 
 function saveChallenge(req, res) {
-  console.log('attempting to save challenge!! - req.body:');
-  console.log(req.body);
-  console.log('req.user============');
-  console.log(req.user);
-  res.send('response here');
+  const user = req.user;
+  const { id, challengeFiles: files } = req.body;
+
+  const savableChallenges = getChallenges().filter(
+    challenge => challenge.challengeType === 14
+  ).map(challenge => challenge.id);
+
+  if(!savableChallenges.includes(id)) {
+    return res.status('403').send('That challenge type is not savable');
+  }
+
+  let challengeToSave = {
+    id,
+    lastSavedDate: Date.now(),
+    files: files.map(file =>
+      pick(file, ['contents', 'fileKey', 'index', 'name', 'path', 'ext'])
+    )
+  };
+
+  const { savedChallenges = [] } = user;
+  const updateData = {};
+
+  updateData.$set = {
+    savedChallenges: uniqBy(
+      [challengeToSave, ...savedChallenges.map(fixCompletedChallengeItem)],
+      'id'
+    )
+  };
+
+  user.updateAttributes(updateData, err => {
+    if (err) {
+      return res.send('Something went wrong trying to save your code.');
+    }
+    return res.send('Your code was saved. It will be here the next time you visit this project.')
+  })
 }
 
 function createCoderoadChallengeCompleted(app) {

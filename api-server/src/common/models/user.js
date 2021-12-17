@@ -993,22 +993,22 @@ export default function initializeUser(User) {
       return user.completedChallenges;
     });
   };
-  User.prototype.getInProgressChallenges$ =
-    function getInProgressChallenges$() {
+  User.prototype.getSavedChallenges$ =
+    function getSavedChallenges$() {
       if (
-        Array.isArray(this.inProgressChallenges) &&
-        this.inProgressChallenges.length
+        Array.isArray(this.savedChallenges) &&
+        this.savedChallenges.length
       ) {
-        return Observable.of(this.inProgressChallenges);
+        return Observable.of(this.savedChallenges);
       }
       const id = this.getId();
       const filter = {
         where: { id },
-        fields: { inProgressChallenges: true }
+        fields: { savedChallenges: true }
       };
       return this.constructor.findOne$(filter).map(user => {
-        this.inProgressChallenges = user.inProgressChallenges;
-        return user.inProgressChallenges;
+        this.savedChallenges = user.savedChallenges;
+        return user.savedChallenges;
       });
     };
 

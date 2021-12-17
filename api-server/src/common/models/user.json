@@ -203,7 +203,7 @@
     "completedChallenges": {
       "type": [
         {
-          "lastUpdated": "number",
+          "completedDate": "number",
           "id": "string",
           "solution": "string",
           "githubLink": "string",
@@ -235,13 +235,11 @@
       ],
       "default": []
     },
-    "inProgressChallenges": {
+    "savedChallenges": {
       "type": [
         {
-          "completedDate": "number",
+          "lastSavedDate": "number",
           "id": "string",
-          "solution": "string",
-          "githubLink": "string",
           "challengeType": "number",
           "files": {
             "type": [

@@ -614,7 +614,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
 
     // Save file to database on change for cert projects
-    if (
+    /*if (
       (challengeType === challengeTypes.multiFileCertProject ||
         challengeType === 0) &&
       challengeFiles
@@ -634,7 +634,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
         saveChallenge({ id, challengeFile });
       }
-    }
+    }*/
 
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
