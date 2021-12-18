@@ -87,7 +87,7 @@ export const updateChallengeMeta = createAction(
   actionTypes.updateChallengeMeta
 );
 export const updateFile = createAction(actionTypes.updateFile);
-export const saveChallenge = createAction(actionTypes.saveChallenge); // we made it here
+export const saveChallenge = createAction(actionTypes.saveChallenge);
 export const updateConsole = createAction(actionTypes.updateConsole);
 export const updateLogs = createAction(actionTypes.updateLogs);
 export const updateJSEnabled = createAction(actionTypes.updateJSEnabled);

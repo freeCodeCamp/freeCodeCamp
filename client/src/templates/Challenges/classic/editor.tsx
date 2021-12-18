@@ -26,11 +26,10 @@ import {
   Dimensions,
   Ext,
   FileKey,
-  SaveableChallenge,
   ResizeProps,
   Test
 } from '../../../redux/prop-types';
-import { challengeTypes } from '../../../../utils/challenge-types';
+
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
@@ -40,7 +39,6 @@ import {
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  saveChallenge,
   challengeTestsSelector,
   submitChallenge,
   initTests,
@@ -56,7 +54,6 @@ const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 interface EditorProps {
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
-  challengeType: number;
   containerRef: RefObject<HTMLElement>;
   contents: string;
   description: string;
@@ -66,7 +63,6 @@ interface EditorProps {
   ext: Ext;
   fileKey: FileKey;
   canFocusOnMountRef: MutableRefObject<boolean>;
-  id: string;
   initialEditorContent: string;
   initialExt: string;
   initTests: (tests: Test[]) => void;
@@ -74,10 +70,6 @@ interface EditorProps {
   isResetting: boolean;
   output: string[];
   resizeProps: ResizeProps;
-  saveChallenge: (object: {
-    id: string;
-    challengeFile: SaveableChallenge;
-  }) => void;
   saveEditorContent: () => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
@@ -141,7 +133,6 @@ const mapDispatchToProps = {
   updateFile,
   submitChallenge,
   initTests,
-  saveChallenge,
   stopResetting
 };
 
@@ -579,14 +570,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const onChange = (editorValue: string) => {
-    const {
-      updateFile,
-      fileKey,
-      challengeFiles,
-      challengeType,
-      id,
-      saveChallenge
-    } = props;
+    const { updateFile, fileKey } = props;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
     // those imply that the positions have changed (i.e. if the content height
@@ -612,30 +596,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       });
     }
-
-    // Save file to database on change for cert projects
-    /*if (
-      (challengeType === challengeTypes.multiFileCertProject ||
-        challengeType === 0) &&
-      challengeFiles
-    ) {
-      const originalFile = challengeFiles.find(
-        file => file.fileKey === fileKey
-      );
-
-      if (originalFile) {
-        const challengeFile = {
-          contents: editorValue,
-          key: fileKey,
-          name: originalFile.name,
-          path: originalFile.path,
-          ext: originalFile.ext
-        };
-
-        saveChallenge({ id, challengeFile });
-      }
-    }*/
-
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
 

@@ -1,34 +1,25 @@
-import { call, takeEvery } from 'redux-saga/effects';
+import { call, takeEvery, put, select } from 'redux-saga/effects';
 import { postSaveChallenge } from '../../../utils/ajax';
-import { select } from 'redux-saga/effects';
 import { challengeDataSelector, challengeMetaSelector } from './';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { createFlashMessage } from '../../../components/Flash/redux';
 
 export function* saveChallengeSaga() {
-  console.log('saveChallengeSaga');
-  // const { id, challengeFile } = payload;
-
   try {
-    const { id, challengeType } = yield select(challengeMetaSelector);
+    const { id } = yield select(challengeMetaSelector);
     const { challengeFiles } = yield select(challengeDataSelector);
-    
-    console.log('challengeFiles');
-    console.log(challengeFiles);
 
-    // only allow saving the cert projects for now
-    if(challengeType !== challengeTypes.multiFileCertProject) {
-      throw new Error(`Cannot save challenge type of ${challengeType}`);
+    const response = yield call(postSaveChallenge, { id, challengeFiles });
+
+    if (response?.message) {
+      yield put(createFlashMessage(response));
     }
-
-    //console.log('challengeMeta');
-    //console.log(challengeMeta);
-
-    const response = yield call(postSaveChallenge({ id, challengeFiles }));
-    console.log('response');
-    console.log(response);
   } catch (e) {
-    console.log('error caught');
-    console.log(e);
+    yield put(
+      createFlashMessage({
+        type: 'danger',
+        message: 'flash.save-code-error'
+      })
+    );
   }
 }
 

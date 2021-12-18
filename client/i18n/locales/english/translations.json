@@ -480,7 +480,9 @@
     "create-token-err": "An error occurred trying to create a token",
     "delete-token-err": "An error occurred trying to delete your token",
     "token-created": "You have successfully created a new token.",
-    "token-deleted": "Your token has been deleted."
+    "token-deleted": "Your token has been deleted.",
+    "code-saved": "Your code was saved. It will be here when you return.",
+    "code-save-error": "An error occurred trying to save your code."
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",

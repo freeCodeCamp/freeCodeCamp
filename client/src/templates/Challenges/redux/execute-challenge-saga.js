@@ -252,7 +252,6 @@ function* previewProjectSolutionSaga({ payload }) {
 }
 
 export function createExecuteChallengeSaga(types) {
-  console.log('createExecuteChallengeSaga');
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
     takeLatest(

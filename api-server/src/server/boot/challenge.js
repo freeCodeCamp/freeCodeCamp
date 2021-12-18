@@ -226,7 +226,6 @@ export function isValidChallengeCompletion(req, res, next) {
 }
 
 export function modernChallengeCompleted(req, res, next) {
-  console.log('modernChallengeCompleted');
   const user = req.user;
   return user
     .getCompletedChallenges$()
@@ -239,9 +238,6 @@ export function modernChallengeCompleted(req, res, next) {
         files,
         completedDate
       });
-
-      console.log('updateData');
-      console.log(updateData);
 
       const points = alreadyCompleted ? user.points : user.points + 1;
       const updatePromise = new Promise((resolve, reject) =>
@@ -264,7 +260,6 @@ export function modernChallengeCompleted(req, res, next) {
 }
 
 function projectCompleted(req, res, next) {
-  console.log('projectCompleted');
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, [
@@ -351,12 +346,12 @@ function saveChallenge(req, res) {
   const user = req.user;
   const { id, challengeFiles: files } = req.body;
 
-  const savableChallenges = getChallenges().filter(
-    challenge => challenge.challengeType === 14
-  ).map(challenge => challenge.id);
+  const savableChallenges = getChallenges()
+    .filter(challenge => challenge.challengeType === 14)
+    .map(challenge => challenge.id);
 
-  if(!savableChallenges.includes(id)) {
-    return res.status('403').send('That challenge type is not savable');
+  if (!savableChallenges.includes(id)) {
+    return res.status(403).send('That challenge type is not savable');
   }
 
   let challengeToSave = {
@@ -379,10 +374,16 @@ function saveChallenge(req, res) {
 
   user.updateAttributes(updateData, err => {
     if (err) {
-      return res.send('Something went wrong trying to save your code.');
+      return res.status(500).json({
+        type: 'danger',
+        message: 'flash.code-save-error'
+      });
     }
-    return res.send('Your code was saved. It will be here the next time you visit this project.')
-  })
+    return res.status(200).json({
+      type: 'success',
+      message: 'flash.code-saved'
+    });
+  });
 }
 
 function createCoderoadChallengeCompleted(app) {

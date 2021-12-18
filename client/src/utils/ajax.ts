@@ -6,7 +6,6 @@ import type {
   ChallengeFiles,
   ClaimedCertifications,
   CompletedChallenge,
-  SaveableChallenge,
   User
 } from '../redux/prop-types';
 
