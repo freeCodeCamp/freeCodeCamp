@@ -308,7 +308,6 @@ function projectCompleted(req, res, next) {
 }
 
 function backendChallengeCompleted(req, res, next) {
-  console.log('backendChallengeCompleted');
   const { user, body = {} } = req;
 
   const completedChallenge = pick(body, ['id', 'solution']);
