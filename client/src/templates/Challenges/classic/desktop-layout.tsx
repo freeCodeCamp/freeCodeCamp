@@ -113,6 +113,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         <ActionRow
           block={block}
           hasNotes={hasNotes}
+          isMultiFileCertProject={isMultiFileCertProject}
           showConsole={showConsole}
           showNotes={showNotes}
           showPreview={showPreview}

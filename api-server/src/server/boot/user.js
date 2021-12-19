@@ -99,28 +99,43 @@ function createReadSessionUser(app) {
       queryUser &&
       Observable.forkJoin(
         queryUser.getCompletedChallenges$(),
+        queryUser.getSavedChallenges$(),
         queryUser.getPoints$(),
         Donation.getCurrentActiveDonationCount$(),
-        (completedChallenges, progressTimestamps, activeDonations) => ({
+        (
+          completedChallenges,
+          savedChallenges,
+          progressTimestamps,
+          activeDonations
+        ) => ({
           activeDonations,
           completedChallenges,
-          progress: getProgress(progressTimestamps, queryUser.timezone)
+          progress: getProgress(progressTimestamps, queryUser.timezone),
+          savedChallenges
         })
       );
     Observable.if(
       () => !queryUser,
       Observable.of({ user: {}, result: '' }),
       Observable.defer(() => source)
-        .map(({ activeDonations, completedChallenges, progress }) => ({
-          user: {
-            ...queryUser.toJSON(),
-            ...progress,
-            completedChallenges: completedChallenges.map(
-              fixCompletedChallengeItem
-            )
-          },
-          sessionMeta: { activeDonations }
-        }))
+        .map(
+          ({
+            activeDonations,
+            completedChallenges,
+            progress,
+            savedChallenges
+          }) => ({
+            user: {
+              ...queryUser.toJSON(),
+              ...progress,
+              completedChallenges: completedChallenges.map(
+                fixCompletedChallengeItem
+              ),
+              savedChallenges: savedChallenges.map(fixCompletedChallengeItem)
+            },
+            sessionMeta: { activeDonations }
+          })
+        )
         .map(({ user, sessionMeta }) => ({
           user: {
             [user.username]: {

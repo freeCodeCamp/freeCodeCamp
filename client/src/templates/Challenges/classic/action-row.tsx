@@ -8,6 +8,7 @@ import EditorTabs from './editor-tabs';
 interface ActionRowProps {
   block: string;
   hasNotes: boolean;
+  isMultiFileCertProject: boolean;
   showConsole: boolean;
   showNotes: boolean;
   showPreview: boolean;
@@ -22,6 +23,7 @@ const mapDispatchToProps = {
 
 const ActionRow = ({
   hasNotes,
+  isMultiFileCertProject,
   togglePane,
   showNotes,
   showPreview,
@@ -38,13 +40,15 @@ const ActionRow = ({
       </div>
       <div className='tabs-row'>
         <EditorTabs />
-        <button
-          className='restart-step-tab'
-          onClick={resetChallenge}
-          role='tab'
-        >
-          {t('learn.editor-tabs.restart-step')}
-        </button>
+        {!isMultiFileCertProject && (
+          <button
+            className='restart-step-tab'
+            onClick={resetChallenge}
+            role='tab'
+          >
+            {t('learn.editor-tabs.restart-step')}
+          </button>
+        )}
         <div className='panel-display-tabs'>
           <button
             className={showConsole ? 'active-tab' : ''}

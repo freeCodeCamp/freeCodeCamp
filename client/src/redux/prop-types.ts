@@ -49,6 +49,12 @@ export const UserPropType = PropTypes.shape({
       description: PropTypes.string
     })
   ),
+  savedChallenges: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      challengeFiles: PropTypes.array
+    })
+  ),
   sendQuincyEmail: PropTypes.bool,
   sound: PropTypes.bool,
   theme: PropTypes.string,
@@ -246,6 +252,7 @@ export type User = {
   portfolio: Portfolio[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
+  savedChallenges: SavedChallenges;
   sendQuincyEmail: boolean;
   sound: boolean;
   theme: Themes;
@@ -287,6 +294,21 @@ export type ClaimedCertifications = {
   isDataAnalysisPyCertV7: boolean;
   isMachineLearningPyCertV7: boolean;
 };
+
+export type SavedChallenges = {
+  id: string;
+  challengeFiles: SavedChallengeFiles;
+};
+
+export type SavedChallengeFile = {
+  fileKey: string;
+  ext: Ext;
+  name: string;
+  path: string;
+  contents: string;
+};
+
+export type SavedChallengeFiles = SavedChallengeFile[] | null;
 
 export type CompletedChallenge = {
   id: string;

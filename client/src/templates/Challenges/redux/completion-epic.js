@@ -33,7 +33,7 @@ import {
 } from './';
 
 function postChallenge(update, username) {
-  const saveChallenge = postUpdate$(update).pipe(
+  const postChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ points }) =>
       of(
@@ -47,7 +47,7 @@ function postChallenge(update, username) {
     ),
     catchError(() => of(updateFailed(update)))
   );
-  return saveChallenge;
+  return postChallenge;
 }
 
 function submitModern(type, state) {
@@ -75,8 +75,7 @@ function submitModern(type, state) {
           []
         );
       }
-      console.log('challengeInfo');
-      console.log(challengeInfo);
+
       const update = {
         endpoint: '/modern-challenge-completed',
         payload: challengeInfo

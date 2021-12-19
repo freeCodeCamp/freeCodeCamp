@@ -90,7 +90,7 @@ function ToolPanel({
           className='btn-invert'
           onClick={saveChallenge}
         >
-          {isMobile ? t('buttons.save') : t('buttons.save')}
+          {isMobile ? t('buttons.save-code') : t('buttons.save')}
         </Button>
       ) : (
         <Button

@@ -1,6 +1,10 @@
 import { call, takeEvery, put, select } from 'redux-saga/effects';
 import { postSaveChallenge } from '../../../utils/ajax';
-import { challengeDataSelector, challengeMetaSelector } from './';
+import {
+  challengeDataSelector,
+  challengeMetaSelector,
+  saveChallengeComplete
+} from './';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { challengeTypes } from '../../../../utils/challenge-types';
 
@@ -12,14 +16,20 @@ export function* saveChallengeSaga() {
     try {
       const response = yield call(postSaveChallenge, { id, challengeFiles });
 
-      if (response?.message) {
-        yield put(createFlashMessage(response));
+      if (response?.savedChallenges) {
+        yield put(saveChallengeComplete(response.savedChallenges));
+        yield put(
+          createFlashMessage({
+            type: 'success',
+            message: 'flash.code-saved'
+          })
+        );
       }
     } catch (e) {
       yield put(
         createFlashMessage({
           type: 'danger',
-          message: 'flash.save-code-error'
+          message: 'flash.code-save-error'
         })
       );
     }

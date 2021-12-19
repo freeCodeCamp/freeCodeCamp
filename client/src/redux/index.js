@@ -183,6 +183,7 @@ export const updateCurrentChallengeId = createAction(
   actionTypes.updateCurrentChallengeId
 );
 
+export const savedChallengesSelector = state => userSelector(state).savedChallenges || [];
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[MainApp].completionCount;

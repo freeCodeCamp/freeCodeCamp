@@ -45,6 +45,7 @@ export const actionTypes = createTypes(
     'setEditorFocusability',
     'toggleVisibleEditor',
 
+    'saveChallengeComplete',
     ...createAsyncTypes('saveChallenge')
   ],
   ns

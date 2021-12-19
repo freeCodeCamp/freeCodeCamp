@@ -4,7 +4,7 @@ import { createAction, handleActions } from 'redux-actions';
 import { getLines } from '../../../../../utils/get-lines';
 import { createPoly } from '../../../../../utils/polyvinyl';
 import { challengeTypes } from '../../../../utils/challenge-types';
-import { completedChallengesSelector } from '../../../redux';
+import { completedChallengesSelector, savedChallengesSelector } from '../../../redux';
 import { getTargetEditor } from '../utils/getTargetEditor';
 import { actionTypes, ns } from './action-types';
 import codeLockEpic from './code-lock-epic';
@@ -87,7 +87,6 @@ export const updateChallengeMeta = createAction(
   actionTypes.updateChallengeMeta
 );
 export const updateFile = createAction(actionTypes.updateFile);
-export const saveChallenge = createAction(actionTypes.saveChallenge);
 export const updateConsole = createAction(actionTypes.updateConsole);
 export const updateLogs = createAction(actionTypes.updateLogs);
 export const updateJSEnabled = createAction(actionTypes.updateJSEnabled);
@@ -123,6 +122,11 @@ export const resetChallenge = createAction(actionTypes.resetChallenge);
 export const stopResetting = createAction(actionTypes.stopResetting);
 export const submitChallenge = createAction(actionTypes.submitChallenge);
 
+export const saveChallenge = createAction(actionTypes.saveChallenge);
+export const saveChallengeComplete = createAction(
+  actionTypes.saveChallengeComplete
+);
+
 export const moveToTab = createAction(actionTypes.moveToTab);
 
 export const setEditorFocusability = createAction(
@@ -133,7 +137,14 @@ export const toggleVisibleEditor = createAction(
 );
 
 export const currentTabSelector = state => state[ns].currentTab;
-export const challengeFilesSelector = state => state[ns].challengeFiles;
+// export const challengeFilesSelector = state => state[ns].challengeFiles;
+export const challengeFilesSelector = state => {
+  const savedChallenges = savedChallengesSelector(state);
+  const { id: currentChallengeId } = challengeMetaSelector(state);
+  const savedFiles = savedChallenges.find(challenge => challenge.id === currentChallengeId)?.files;
+  return savedFiles || state[ns].challengeFiles;
+};
+
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
@@ -356,6 +367,19 @@ export const reducer = handleActions(
       ...state,
       currentTab: 3
     }),
+    [actionTypes.saveChallengeComplete]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            savedChallenges: payload
+          }
+        }
+      };
+    },
     [actionTypes.setEditorFocusability]: (state, { payload }) => ({
       ...state,
       canFocusEditor: payload

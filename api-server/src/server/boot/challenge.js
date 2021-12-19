@@ -341,9 +341,9 @@ function backendChallengeCompleted(req, res, next) {
     .subscribe(() => {}, next);
 }
 
-function saveChallenge(req, res) {
+function saveChallenge(req, res, next) {
   const user = req.user;
-  const { id, challengeFiles: files } = req.body;
+  const { id, challengeFiles: files = [] } = req.body;
 
   const savableChallenges = getChallenges()
     .filter(challenge => challenge.challengeType === 14)
@@ -362,27 +362,33 @@ function saveChallenge(req, res) {
   };
 
   const { savedChallenges = [] } = user;
-  const updateData = {};
-
-  updateData.$set = {
-    savedChallenges: uniqBy(
-      [challengeToSave, ...savedChallenges.map(fixCompletedChallengeItem)],
+  const newSavedChallenges = uniqBy(
+        [challengeToSave, ...savedChallenges.map(fixCompletedChallengeItem)],
       'id'
-    )
-  };
+    );
 
-  user.updateAttributes(updateData, err => {
-    if (err) {
-      return res.status(500).json({
-        type: 'danger',
-        message: 'flash.code-save-error'
+  return user
+    .getSavedChallenges$()
+    .flatMap(() => {
+      const updateData = {};
+      updateData.$set = {
+        savedChallenges: newSavedChallenges
+      };
+      const updatePromise = new Promise((resolve, reject) =>
+        user.updateAttributes(updateData, err => {
+          if (err) {
+            return reject(err);
+          }
+          return resolve();
+        })
+      );
+      return Observable.fromPromise(updatePromise).doOnNext(() => {
+        return res.json({
+          savedChallenges: newSavedChallenges
+        });
       });
-    }
-    return res.status(200).json({
-      type: 'success',
-      message: 'flash.code-saved'
-    });
-  });
+    })
+    .subscribe(() => {}, next);
 }
 
 function createCoderoadChallengeCompleted(app) {

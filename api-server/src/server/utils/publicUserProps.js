@@ -36,6 +36,7 @@ export const publicUserProps = [
   'portfolio',
   'profileUI',
   'projects',
+  'savedChallenges',
   'streak',
   'twitter',
   'username',
