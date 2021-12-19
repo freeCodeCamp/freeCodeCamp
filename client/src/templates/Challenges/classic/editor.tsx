@@ -29,7 +29,6 @@ import {
   ResizeProps,
   Test
 } from '../../../redux/prop-types';
-
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
 import {

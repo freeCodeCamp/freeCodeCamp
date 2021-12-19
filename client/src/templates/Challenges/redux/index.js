@@ -4,7 +4,10 @@ import { createAction, handleActions } from 'redux-actions';
 import { getLines } from '../../../../../utils/get-lines';
 import { createPoly } from '../../../../../utils/polyvinyl';
 import { challengeTypes } from '../../../../utils/challenge-types';
-import { completedChallengesSelector, savedChallengesSelector } from '../../../redux';
+import {
+  completedChallengesSelector,
+  savedChallengesSelector
+} from '../../../redux';
 import { getTargetEditor } from '../utils/getTargetEditor';
 import { actionTypes, ns } from './action-types';
 import codeLockEpic from './code-lock-epic';
@@ -137,11 +140,12 @@ export const toggleVisibleEditor = createAction(
 );
 
 export const currentTabSelector = state => state[ns].currentTab;
-// export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeFilesSelector = state => {
   const savedChallenges = savedChallengesSelector(state);
   const { id: currentChallengeId } = challengeMetaSelector(state);
-  const savedFiles = savedChallenges.find(challenge => challenge.id === currentChallengeId)?.files;
+  const savedFiles = savedChallenges.find(
+    challenge => challenge.id === currentChallengeId
+  )?.files;
   return savedFiles || state[ns].challengeFiles;
 };
 

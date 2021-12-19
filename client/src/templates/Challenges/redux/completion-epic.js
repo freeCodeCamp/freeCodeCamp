@@ -75,7 +75,6 @@ function submitModern(type, state) {
           []
         );
       }
-
       const update = {
         endpoint: '/modern-challenge-completed',
         payload: challengeInfo

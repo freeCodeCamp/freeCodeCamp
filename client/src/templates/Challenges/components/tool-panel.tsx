@@ -18,13 +18,9 @@ import {
   challengeMetaSelector
 } from '../redux';
 
-// const mapStateToProps = () => ({});
-//      challengeType === challengeTypes.multiFileCertProject
-
 const mapStateToProps = createSelector(
   challengeMetaSelector,
-  ({ challengeId, challengeType }: { challengeId: string, challengeType: number }) => ({
-    challengeId,
+  ({ challengeType }: { challengeId: string; challengeType: number }) => ({
     challengeType
   })
 );
@@ -41,7 +37,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   );
 
 interface ToolPanelProps {
-  challengeId: string;
   challengeType: number;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   saveChallenge: () => void;
@@ -54,7 +49,6 @@ interface ToolPanelProps {
 }
 
 function ToolPanel({
-  challengeId,
   challengeType,
   executeChallenge,
   saveChallenge,

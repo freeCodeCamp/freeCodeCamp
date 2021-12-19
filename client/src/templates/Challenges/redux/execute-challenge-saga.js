@@ -202,6 +202,7 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
     yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);
+
     if (canBuildChallenge(challengeData)) {
       const challengeMeta = yield select(challengeMetaSelector);
       const protect = isLoopProtected(challengeMeta);
