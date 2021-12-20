@@ -91,7 +91,6 @@ function saveCodeEpic(action$, state$) {
       const state = state$.value;
       const { id } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
-      console.log('saving', challengeFiles);
       try {
         store.set(id, challengeFiles);
         const fileKey = challengeFiles[0].fileKey;
