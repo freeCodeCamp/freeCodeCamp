@@ -159,7 +159,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
   const curriculum = await walk(
     root,
     {},
-    { type: 'directories', depth: 1 },
+    { type: 'directories', depth: 0 },
     buildSuperBlocks
   );
   const cb = (file, curriculum) => buildChallenges(file, curriculum, lang);
@@ -172,57 +172,55 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
   );
 };
 
-async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
-  // TODO: this is a hack to avoid fetching the meta for the certifications.
-  // Instead, the certifications should be moved from the challenges directory
-  // and handled separately.
-  if (superBlock === 'certifications') {
-    curriculum[superBlock].blocks[blockName] = { challenges: [] };
-    return;
-  }
+async function buildBlocks({ basename: blockName }, curriculum, baseDir) {
   const metaPath = path.resolve(
     __dirname,
     `./challenges/_meta/${blockName}/meta.json`
   );
-  const blockMeta = require(metaPath);
-  const { isUpcomingChange } = blockMeta;
-  if (typeof isUpcomingChange !== 'boolean') {
-    throw Error(
-      `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
-    );
-  }
+  let blockMeta;
+  try {
+    blockMeta = require(metaPath);
+    const { isUpcomingChange } = blockMeta;
+    if (typeof isUpcomingChange !== 'boolean') {
+      throw Error(
+        `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
+      );
+    }
 
-  if (!isUpcomingChange || showUpcomingChanges) {
-    // add the block to the superBlock
-    const blockInfo = { meta: blockMeta, challenges: [] };
-    curriculum[superBlock].blocks[blockName] = blockInfo;
+    if (!isUpcomingChange || showUpcomingChanges) {
+      // add the block to the superBlock
+      const blockInfo = { meta: blockMeta, challenges: [] };
+      curriculum[baseDir].blocks[blockName] = blockInfo;
+    }
+  } catch (e) {
+    curriculum['00-certifications'].blocks[blockName] = { challenges: [] };
   }
 }
 
 async function buildSuperBlocks({ path, fullPath }, curriculum) {
-  const { order, name: superBlock } = superBlockInfo(path);
-  curriculum[superBlock] = { superBlock, order, blocks: {} };
+  const baseDir = getBaseDir(path);
+  curriculum[baseDir] = { blocks: {} };
 
-  const cb = (file, curriculum) => buildBlocks(file, curriculum, superBlock);
+  const cb = (file, curriculum) => buildBlocks(file, curriculum, baseDir);
   return walk(fullPath, curriculum, { depth: 1, type: 'directories' }, cb);
 }
 
 async function buildChallenges({ path: filePath }, curriculum, lang) {
   // path is relative to getChallengesDirForLang(lang)
   const block = getBlockNameFromPath(filePath);
-  const { name: superBlock } = superBlockInfoFromPath(filePath);
+  const baseDir = getBaseDir(filePath);
   let challengeBlock;
 
   // TODO: this try block and process exit can all go once errors terminate the
   // tests correctly.
   try {
-    challengeBlock = curriculum[superBlock].blocks[block];
+    challengeBlock = curriculum[baseDir].blocks[block];
     if (!challengeBlock) {
       // this should only happen when a isUpcomingChange block is skipped
       return;
     }
   } catch (e) {
-    console.log(`failed to create superBlock ${superBlock}`);
+    console.log(`failed to create superBlock from ${baseDir}`);
     // eslint-disable-next-line no-process-exit
     process.exit(1);
   }
@@ -232,7 +230,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   // of the new curriculum when we don't want it.
   if (
     process.env.SHOW_NEW_CURRICULUM !== 'true' &&
-    superBlock === 'responsive-web-design-22'
+    meta?.superBlock === 'responsive-web-design-22'
   ) {
     return;
   }
@@ -280,7 +278,7 @@ async function createChallenge(basePath, filePath, lang, maybeMeta) {
     );
     meta = require(metaPath);
   }
-  const { name: superBlock } = superBlockInfoFromPath(filePath);
+  const { superBlock } = meta;
   if (!curriculumLangs.includes(lang))
     throw Error(`${lang} is not a accepted language.
   Trying to parse ${filePath}`);
@@ -372,22 +370,9 @@ async function hasEnglishSource(basePath, translationPath) {
     .catch(() => false);
 }
 
-function superBlockInfoFromPath(filePath) {
-  const [maybeSuper] = filePath.split(path.sep);
-  return superBlockInfo(maybeSuper);
-}
-
-function superBlockInfo(fileName) {
-  const [maybeOrder, ...superBlock] = fileName.split('-');
-  let order = parseInt(maybeOrder, 10);
-  if (isNaN(order)) {
-    return { order: 0, name: fileName };
-  } else {
-    return {
-      order: order,
-      name: superBlock.join('-')
-    };
-  }
+function getBaseDir(filePath) {
+  const [baseDir] = filePath.split(path.sep);
+  return [baseDir];
 }
 
 function getBlockNameFromPath(filePath) {
