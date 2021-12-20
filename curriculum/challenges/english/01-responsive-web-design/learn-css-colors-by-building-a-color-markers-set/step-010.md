@@ -29,7 +29,7 @@ You should nest your new `div` element within the `div` with the class `containe
 assert(document.querySelector('.container')?.children[0]?.localName === 'div');
 ```
 
-You should give your new `div` element a class of `container`.
+You should give your new `div` element a class of `marker`.
 
 ```js
 const containerChildren = [...document.querySelector('.container')?.children];
