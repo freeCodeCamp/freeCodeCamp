@@ -1,15 +1,14 @@
 {
   "name": "Learn CSS Colors by Building a Color Markers Set",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "learn-css-colors-by-building-a-color-markers-set",
-  "order": 42,
+  "order": 2,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "superOrder": 1,
-  "isBeta": true,
   "challengeOrder": [
     [
       "61695197ac34f0407e339882",
