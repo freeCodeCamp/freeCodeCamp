@@ -230,7 +230,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   // of the new curriculum when we don't want it.
   if (
     process.env.SHOW_NEW_CURRICULUM !== 'true' &&
-    meta?.superBlock === 'responsive-web-design-22'
+    meta?.superBlock === '2022/responsive-web-design'
   ) {
     return;
   }
@@ -323,7 +323,7 @@ ${getFullPath('english')}
    field to track which certification this belongs to. */
   // TODO: generalize this to all superBlocks
   challenge.certification =
-    superBlock === 'responsive-web-design-22'
+    superBlock === '2022/responsive-web-design'
       ? 'responsive-web-design'
       : superBlock;
   challenge.superBlock = superBlock;
