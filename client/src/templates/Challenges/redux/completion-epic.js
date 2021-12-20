@@ -78,7 +78,7 @@ function submitModern(type, state) {
       // Only send files to server, if it is a JS project or multiFile cert project
       if (
         block === 'javascript-algorithms-and-data-structures-projects' ||
-        challengeType === 14
+        challengeType === challengeTypes.multiFileCertProject
       ) {
         challengeInfo.files = challengeFiles.reduce(
           (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],

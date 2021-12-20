@@ -230,7 +230,7 @@ export function modernChallengeCompleted(req, res, next) {
     .getCompletedChallenges$()
     .flatMap(() => {
       const completedDate = Date.now();
-      const { id, files, challengeType = null } = req.body;
+      const { id, files, challengeType } = req.body;
 
       const data = {
         id,

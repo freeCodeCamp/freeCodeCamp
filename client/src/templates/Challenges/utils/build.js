@@ -147,7 +147,7 @@ export function buildDOMChallenge({
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
     .then(challengeFiles => ({
-      challengeType: challengeTypes.html || challengeTypes.multiFileCertProject,
+      challengeType: challengeTypes.html,
       build: concatHtml({
         required: finalRequires,
         template,
