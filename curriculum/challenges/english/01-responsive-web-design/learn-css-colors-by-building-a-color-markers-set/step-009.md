@@ -34,10 +34,7 @@ assert(document.querySelector('div')?.parentElement?.localName === 'body');
 Your `div` element should be after the `h1` element.
 
 ```js
-const bodyElements = [...document.querySelector('body')?.children];
-const h1 = document.querySelector('h1');
-const div = document.querySelector('div');
-assert(bodyElements.indexOf(h1) < bodyElements.indexOf(div));
+assert.exists(document.querySelector('h1 + div'));
 ```
 
 Your `div` element should have a `class` attribute set to `container`.
