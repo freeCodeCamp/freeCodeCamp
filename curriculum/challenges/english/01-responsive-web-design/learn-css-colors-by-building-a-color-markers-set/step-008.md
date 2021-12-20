@@ -7,7 +7,7 @@ dashedName: step-8
 
 # --description--
 
-Now that your external CSS file is set up, you can start styling the page. Target the `h1` element, and use the `text-align` property to center it on the page.
+Now that your external CSS file is set up, you can start styling the page.
 
 As a reminder, here's how to target a paragraph element and align it to the right:
 
