@@ -91,6 +91,7 @@ function saveCodeEpic(action$, state$) {
       const state = state$.value;
       const { id } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
+      console.log('saving', challengeFiles);
       try {
         store.set(id, challengeFiles);
         const fileKey = challengeFiles[0].fileKey;
@@ -143,35 +144,42 @@ function loadCodeEpic(action$, state$) {
       if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
           let foundChallengeFile = {};
-          // TODO: this is a hack to support the old fileKeys delete after sufficient
-          // time has passed
-          let hack = null;
+          // TODO: after sufficient time, say 6 months from this commit, we can
+          // assume that the majority of users have revisited any pages with old
+          // stored code. At this point we can remove everything related to
+          // indexjsCode.
+          let indexjsCode = null;
           if (Array.isArray(codeFound)) {
             foundChallengeFile = codeFound.find(
               x => x.fileKey === challengeFile.fileKey
             );
-            hack = codeFound.find(x => x.fileKey === 'indexjs');
+            indexjsCode = codeFound.find(x => x.fileKey === 'indexjs');
           } else {
             // TODO: After sufficient time, remove parsing of old code-storage format
             // This was pushed to production with https://github.com/freeCodeCamp/freeCodeCamp/pull/43023
             foundChallengeFile = codeFound[challengeFile.fileKey];
-            hack = codeFound['indexjs'];
+            indexjsCode = codeFound['indexjs'];
           }
           let isCodeFound;
-          if (hack) {
-            hack.fileKey = 'scriptjs';
-            hack.history = ['script.js'];
-            hack.name = 'script';
-            hack.path = 'script.js';
+          // Fix the format of the old file
+          if (indexjsCode) {
+            indexjsCode.fileKey = 'scriptjs';
+            indexjsCode.history = ['script.js'];
+            indexjsCode.name = 'script';
+            indexjsCode.path = 'script.js';
           }
 
           if (foundChallengeFile) {
             isCodeFound = Object.keys(foundChallengeFile).length > 0;
-          } else if (hack) {
-            isCodeFound = Object.keys(hack).length > 0;
-            foundChallengeFile = hack;
+          } else if (indexjsCode) {
+            isCodeFound = Object.keys(indexjsCode).length > 0;
+            foundChallengeFile = indexjsCode;
+            // Repair the store, by replacing old style code with the repaired
+            // file
+            store.set(id, [indexjsCode]);
           } else {
-            // the stored code is not valid, so we should delete it.
+            // The stored code is neither old code nor new, so we do not know
+            // how to handle it.  The safest option is to delete it.
             store.remove(id);
           }
           return [
