@@ -7,7 +7,7 @@ dashedName: step-54
 
 # --description--
 
-Color-stops allow you to fine-tune where colors are placed along the gradient line. They a length unit like `px` or percentages that follow a color in the `linear-gradient` function.
+Color-stops allow you to fine-tune where colors are placed along the gradient line. They are a length unit like `px` or percentages that follow a color in the `linear-gradient` function.
 
 For example, in this red-black gradient, the transition from red to black takes place at the 90% point along the gradient line, so red takes up most of the available space:
 
