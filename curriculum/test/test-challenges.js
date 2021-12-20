@@ -260,7 +260,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
      * a superblock (because keeping those challenges in order is
      * tricky and needs cleaning up before deploying).
      */
-    const superBlocksUnderDevelopment = ['responsive-web-design'];
+    const superBlocksUnderDevelopment = [];
     const superBlocks = new Set([
       ...Object.values(meta)
         .map(el => el.superBlock)
