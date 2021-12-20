@@ -1,15 +1,14 @@
 {
   "name": "Learn Accessibility by Building a Quiz",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-accessibility-by-building-a-quiz",
-  "order": 42,
+  "order": 8,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "isBeta": true,
   "challengeOrder": [
     [
       "614ccc21ea91ef1736b9b578",

@@ -10,6 +10,7 @@ import { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { dasherize } from '../../../../../utils/slugs';
+import { isProject } from '../../../../utils/challenge-types';
 import Login from '../../../components/Header/components/Login';
 import {
   isSignedInSelector,
@@ -40,7 +41,11 @@ const mapStateToProps = createSelector(
   successMessageSelector,
   (
     challengeFiles: ChallengeFiles,
-    { title, id }: { title: string; id: string },
+    {
+      title,
+      id,
+      challengeType
+    }: { title: string; id: string; challengeType: number },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
@@ -49,6 +54,7 @@ const mapStateToProps = createSelector(
     challengeFiles,
     title,
     id,
+    challengeType,
     completedChallengesIds,
     isOpen,
     isSignedIn,
@@ -94,6 +100,8 @@ interface CompletionModalsProps {
   allowBlockDonationRequests: (arg0: string) => void;
   block: string;
   blockName: string;
+  certification: string;
+  challengeType: number;
   close: () => void;
   completedChallengesIds: string[];
   currentBlockIds?: string[];
@@ -275,10 +283,30 @@ export class CompletionModalInner extends Component<
   }
 }
 
-const useCurrentBlockIds = (blockName: string) => {
+interface Options {
+  isCertificationBlock: boolean;
+}
+
+interface CertificateNode {
+  challenge: {
+    // TODO: use enum
+    certification: string;
+    tests: { id: string }[];
+  };
+}
+
+const useCurrentBlockIds = (
+  block: string,
+  certification: string,
+  options?: Options
+) => {
   const {
-    allChallengeNode: { edges }
-  }: { allChallengeNode: AllChallengeNode } = useStaticQuery(graphql`
+    allChallengeNode: { edges: challengeEdges },
+    allCertificateNode: { nodes: certificateNodes }
+  }: {
+    allChallengeNode: AllChallengeNode;
+    allCertificateNode: { nodes: CertificateNode[] };
+  } = useStaticQuery(graphql`
     query getCurrentBlockNodes {
       allChallengeNode(
         sort: {
@@ -292,9 +320,17 @@ const useCurrentBlockIds = (blockName: string) => {
         edges {
           node {
             challenge {
-              fields {
-                blockName
-              }
+              block
+              id
+            }
+          }
+        }
+      }
+      allCertificateNode {
+        nodes {
+          challenge {
+            certification
+            tests {
               id
             }
           }
@@ -303,16 +339,27 @@ const useCurrentBlockIds = (blockName: string) => {
     }
   `);
 
-  const currentBlockIds = edges
-    .filter(edge => edge.node.challenge.fields.blockName === blockName)
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  const currentCertificateIds = certificateNodes
+    .filter(
+      node => dasherize(node.challenge.certification) === certification
+    )[0]
+    ?.challenge.tests.map(test => test.id);
+  const currentBlockIds = challengeEdges
+    .filter(edge => edge.node.challenge.block === block)
     .map(edge => edge.node.challenge.id);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return currentBlockIds;
+
+  return options?.isCertificationBlock
+    ? currentCertificateIds
+    : currentBlockIds;
 };
 
 const CompletionModal = (props: CompletionModalsProps) => {
-  const currentBlockIds = useCurrentBlockIds(props.blockName || '');
+  const currentBlockIds = useCurrentBlockIds(
+    props.block || '',
+    props.certification || '',
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    { isCertificationBlock: isProject(props.challengeType) }
+  );
   return <CompletionModalInner currentBlockIds={currentBlockIds} {...props} />;
 };
 

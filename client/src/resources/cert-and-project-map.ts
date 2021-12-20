@@ -1,7 +1,11 @@
 import { SuperBlocks } from '../../../config/certification-settings';
+import envData from '../../../config/env.json';
+
+const { showNewCurriculum } = envData;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
+const responsiveWeb22Base = '/learn/responsive-web-design-22';
 const jsAlgoBase =
   '/learn/javascript-algorithms-and-data-structures/' +
   'javascript-algorithms-and-data-structures-projects';
@@ -295,37 +299,49 @@ const certMap = [
     flag: 'isRespWebDesignCert',
     projects: [
       {
-        id: 'bd7158d8c442eddfaeb5bd18',
-        title: 'Build a Tribute Page',
-        link: `${responsiveWebBase}/build-a-tribute-page`,
-        certSlug: SuperBlocks.RespWebDesign
-      },
-      {
         id: '587d78af367417b2b2512b03',
         title: 'Build a Survey Form',
-        link: `${responsiveWebBase}/build-a-survey-form`,
+        link: getResponsiveWebDesignPath('build-a-survey-form', {
+          showNewCurriculum
+        }),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
-        id: '587d78af367417b2b2512b04',
-        title: 'Build a Product Landing Page',
-        link: `${responsiveWebBase}/build-a-product-landing-page`,
+        id: 'bd7158d8c442eddfaeb5bd18',
+        title: 'Build a Tribute Page',
+        link: getResponsiveWebDesignPath('build-a-tribute-page', {
+          showNewCurriculum
+        }),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: '587d78b0367417b2b2512b05',
         title: 'Build a Technical Documentation Page',
-        link: `${responsiveWebBase}/build-a-technical-documentation-page`,
+        link: getResponsiveWebDesignPath(
+          'build-a-technical-documentation-page',
+          { showNewCurriculum }
+        ),
+        certSlug: SuperBlocks.RespWebDesign
+      },
+      {
+        id: '587d78af367417b2b2512b04',
+        title: 'Build a Product Landing Page',
+        link: getResponsiveWebDesignPath('build-a-product-landing-page', {
+          showNewCurriculum
+        }),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: 'bd7158d8c242eddfaeb5bd13',
         title: 'Build a Personal Portfolio Webpage',
-        link: `${responsiveWebBase}/build-a-personal-portfolio-webpage`,
+        link: getResponsiveWebDesignPath('build-a-personal-portfolio-webpage', {
+          showNewCurriculum
+        }),
         certSlug: SuperBlocks.RespWebDesign
       }
     ]
   },
+
   {
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',
@@ -708,6 +724,15 @@ const certMap = [
     ]
   }
 ] as const;
+
+function getResponsiveWebDesignPath(
+  project: string,
+  { showNewCurriculum }: { showNewCurriculum: boolean }
+) {
+  return showNewCurriculum
+    ? `${responsiveWeb22Base}/${project}-project/${project}`
+    : `${responsiveWebBase}/${project}/`;
+}
 
 const titles = certMap.map(({ title }) => title);
 type Title = typeof titles[number];

@@ -162,7 +162,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const {
     data: {
       markdownRemark: {
-        frontmatter: { superBlock, title }
+        frontmatter: { superBlock, title, certification }
       },
       allChallengeNode: { edges }
     },
@@ -176,6 +176,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const blockDashedNames = uniq(
     nodesForSuperBlock.map(({ challenge: { block } }) => block)
   );
+
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nTitle =
     superBlock === SuperBlocks.CodingInterviewPrep
@@ -183,6 +184,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
       : t(`intro:misc-text.certification`, {
           cert: i18nSuperBlock
         });
+
+  const defaultCurriculumNames = blockDashedNames;
 
   return (
     <>
@@ -203,7 +206,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
             </h2>
             <Spacer />
             <div className='block-ui'>
-              {blockDashedNames.map(blockDashedName => (
+              {defaultCurriculumNames.map(blockDashedName => (
                 <Fragment key={blockDashedName}>
                   <Block
                     blockDashedName={blockDashedName}
@@ -218,6 +221,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               {superBlock !== SuperBlocks.CodingInterviewPrep && (
                 <div>
                   <CertChallenge
+                    certification={certification}
                     superBlock={superBlock}
                     title={title}
                     user={user}
@@ -260,6 +264,7 @@ export const query = graphql`
   query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
+        certification
         superBlock
         title
       }

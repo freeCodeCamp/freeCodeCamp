@@ -1,6 +1,6 @@
 ---
 id: 587d8259367417b2b2512c83
-title: Invert a Binary Tree
+title: 反轉二叉樹
 challengeType: 1
 forumTopicId: 301704
 dashedName: invert-a-binary-tree
@@ -8,11 +8,11 @@ dashedName: invert-a-binary-tree
 
 # --description--
 
-Here will we create a function to invert a binary tree. Given a binary tree, we want to produce a new tree that is equivalently the mirror image of this tree. Running an inorder traversal on an inverted tree will explore the nodes in reverse order when compared to the inorder traversal of the original tree. Write a method to do this called `invert` on our binary tree. Calling this method should invert the current tree structure. Ideally, we would like to do this in-place in linear time. That is, we only visit each node once and we modify the existing tree structure as we go, without using any additional memory. Good luck!
+這裏我們將創建一個反轉二叉樹的函數。 給定二叉樹，我們希望生成一個新樹，它等效於該樹的鏡像。 與原始樹的中序遍歷相比，在倒轉樹上運行中序遍歷將以相反的順序探索節點。 在我們的二叉樹上編寫一個名爲 `invert` 的方法。 調用此方法應該反轉當前樹結構。 理想情況下，我們希望在線性時間內就地執行此操作。 也就是說，我們只訪問每個節點一次，我們在不使用任何額外內存的情況下修改現有的樹結構。 祝你好運！
 
 # --hints--
 
-The `BinarySearchTree` data structure should exist.
+存在 `BinarySearchTree` 數據結構。
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-The binary search tree should have a method called `invert`.
+二叉搜索樹有一個名爲 `invert` 的方法。
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-The `invert` method should correctly invert the tree structure.
+`invert` 方法正確地反轉樹結構。
 
 ```js
 assert(
@@ -70,7 +70,7 @@ assert(
 );
 ```
 
-Inverting an empty tree should return `null`.
+反轉空樹應該返回 `null`。
 
 ```js
 assert(

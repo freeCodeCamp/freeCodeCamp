@@ -1,15 +1,14 @@
 {
   "name": "Learn the CSS Box Model by Building a Rothko Painting",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-the-css-box-model-by-building-a-rothko-painting",
-  "order": 12,
+  "order": 5,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "isBeta": true,
   "challengeOrder": [
     [
       "60a3e3396c7b40068ad6996a",

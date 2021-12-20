@@ -15,9 +15,8 @@ describe('getSuperOrder', () => {
   });
 
   it('throws for "certifications"', () => {
-    expect.assertions(2);
+    expect.assertions(1);
     expect(() => getSuperOrder('certifications')).toThrow();
-    expect(() => getSuperOrder('certifications', { isLegacy: true })).toThrow();
   });
 
   it('returns unique numbers for all current superblocks', () => {
@@ -36,8 +35,54 @@ describe('getSuperOrder', () => {
     expect(getSuperOrder('coding-interview-prep')).toBe(11);
   });
 
-  it('returns unique numbers for all legacy superblocks', () => {
-    expect.assertions(1);
-    expect(getSuperOrder('responsive-web-design', { isLegacy: true })).toBe(12);
+  it('returns a different order if passed the option showNewCurriculum: true', () => {
+    expect.assertions(13);
+    expect(
+      getSuperOrder('responsive-web-design-22', { showNewCurriculum: true })
+    ).toBe(0);
+    expect(
+      getSuperOrder('javascript-algorithms-and-data-structures', {
+        showNewCurriculum: true
+      })
+    ).toBe(1);
+    expect(
+      getSuperOrder('front-end-development-libraries', {
+        showNewCurriculum: true
+      })
+    ).toBe(2);
+    expect(
+      getSuperOrder('data-visualization', { showNewCurriculum: true })
+    ).toBe(3);
+    expect(
+      getSuperOrder('relational-databases', { showNewCurriculum: true })
+    ).toBe(4);
+    expect(
+      getSuperOrder('back-end-development-and-apis', {
+        showNewCurriculum: true
+      })
+    ).toBe(5);
+    expect(
+      getSuperOrder('quality-assurance', { showNewCurriculum: true })
+    ).toBe(6);
+    expect(
+      getSuperOrder('scientific-computing-with-python', {
+        showNewCurriculum: true
+      })
+    ).toBe(7);
+    expect(
+      getSuperOrder('data-analysis-with-python', { showNewCurriculum: true })
+    ).toBe(8);
+    expect(
+      getSuperOrder('information-security', { showNewCurriculum: true })
+    ).toBe(9);
+    expect(
+      getSuperOrder('machine-learning-with-python', { showNewCurriculum: true })
+    ).toBe(10);
+    expect(
+      getSuperOrder('coding-interview-prep', { showNewCurriculum: true })
+    ).toBe(11);
+    expect(
+      getSuperOrder('responsive-web-design', { showNewCurriculum: true })
+    ).toBe(12);
   });
 });

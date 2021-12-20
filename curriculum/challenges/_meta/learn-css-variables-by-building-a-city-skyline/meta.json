@@ -1,10 +1,10 @@
 {
   "name": "Learn CSS Variables by Building a City Skyline",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-css-variables-by-building-a-city-skyline",
-  "order": 8,
+  "order": 14,
   "time": "5 hours",
   "template": "",
   "required": [],

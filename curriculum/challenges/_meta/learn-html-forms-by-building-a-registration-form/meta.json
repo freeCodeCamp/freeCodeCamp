@@ -1,15 +1,14 @@
 {
   "name": "Learn HTML Forms by Building a Registration Form",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-html-forms-by-building-a-registration-form",
-  "order": 23,
+  "order": 3,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "isBeta": true,
   "challengeOrder": [
     [
       "60eebd07ea685b0e777b5583",

@@ -146,7 +146,8 @@ export default function completionEpic(action$, state$) {
     switchMap(({ type }) => {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
-      const { nextChallengePath, challengeType, superBlock } = meta;
+      const { nextChallengePath, challengeType, superBlock, certification } =
+        meta;
       const closeChallengeModal = of(closeModal('completion'));
 
       let submitter = () => of({ type: 'no-user-signed-in' });
@@ -165,6 +166,7 @@ export default function completionEpic(action$, state$) {
 
       const pathToNavigateTo = async () => {
         return await findPathToNavigateTo(
+          certification,
           nextChallengePath,
           superBlock,
           state,
@@ -182,6 +184,7 @@ export default function completionEpic(action$, state$) {
 }
 
 async function findPathToNavigateTo(
+  certification,
   nextChallengePath,
   superBlock,
   state,
@@ -196,7 +199,7 @@ async function findPathToNavigateTo(
   if (isProjectSubmission) {
     const username = usernameSelector(state);
     try {
-      const response = await getVerifyCanClaimCert(username, superBlock);
+      const response = await getVerifyCanClaimCert(username, certification);
       if (response.status === 200) {
         canClaimCert = response.data?.response?.message === 'can-claim-cert';
       }
