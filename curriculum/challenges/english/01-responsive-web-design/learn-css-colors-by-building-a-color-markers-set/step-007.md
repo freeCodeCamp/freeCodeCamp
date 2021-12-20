@@ -16,7 +16,7 @@ Nest a `link` element within the `head`. Give it a `rel` attribute set to `style
 Your code should have one `link` element.
 
 ```js
-assert(code.match(/<link/g)?.length === 1);
+assert(code.match(/<link/i)?.length === 1);
 ```
 
 Your `link` element should be a self-closing element.
@@ -29,7 +29,7 @@ Your `link` element should be within your `head` element.
 
 ```js
 const head = code.match(/<head>(.|\r|\n)*<\/head>/i)?.[0];
-assert(head.match(/<link/g)?.length === 1)
+assert(head.match(/<link/i)?.length === 1)
 ```
 
 Your `link` element should have a `rel` attribute with the value `stylesheet`.
@@ -44,7 +44,7 @@ Your `link` element should have a `type` attribute with the value `text/css`.
 assert(code.match(/<link[\s\S]*?type=('|"|`)text\/css\1/gi)?.length === 1);
 ```
 
-Your `link` element should have an `href` attribute with the value `styles.css`.
+Your `link` element should have an `href` attribute with the value `styles.css`. Remember, casing matters when you link to an external file.
 
 ```js
 assert.match(code, /<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/);

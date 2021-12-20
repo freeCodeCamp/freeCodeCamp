@@ -15,7 +15,7 @@ Your `.blue` CSS rule should have a `background` property with the value `linear
 
 ```js
 assert(
-  __helpers.removeWhiteSpace($('style').text()).match(/\.blue{.*linear-gradient\(hsl\(186,76%,16%\)\).*}/g)
+  __helpers.removeWhiteSpace($('style').text()).match(/\.blue{.*linear-gradient\(hsl\(186,76%,16%\)\).*}/gi)
 );
 ```
 

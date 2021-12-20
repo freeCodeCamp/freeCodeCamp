@@ -17,7 +17,7 @@ Your `.red` CSS rule should have a `background` property with the value `linear-
 
 ```js
 assert(
-  __helpers.removeWhiteSpace($('style').text()).match(/\.red{.*background:linear-gradient\(90deg,rgb\(255,0,0\)\).*}/g)
+  __helpers.removeWhiteSpace($('style').text()).match(/\.red{.*background:linear-gradient\(90deg,rgb\(255,0,0\)\).*}/gi)
 );
 ```
 

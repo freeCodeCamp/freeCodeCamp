@@ -17,7 +17,7 @@ Your `.green` CSS rule should have a `background` property with the value `linea
 
 ```js
 assert(
-  __helpers.removeWhiteSpace($('style').text()).match(/\.green{.*background:linear-gradient\(180deg,#55680D\).*}/g)
+  __helpers.removeWhiteSpace($('style').text()).match(/\.green{.*background:linear-gradient\(180deg,#55680D\).*}/gi)
 );
 ```
 

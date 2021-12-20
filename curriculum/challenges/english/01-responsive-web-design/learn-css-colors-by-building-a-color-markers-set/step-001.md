@@ -46,7 +46,7 @@ assert(code.match(/<html\s*>/gi));
 Your `html` element should have a closing tag.
 
 ```js
-assert(code.match(/<\/html\s*>/));
+assert(code.match(/<\/html\s*>/gi));
 ```
 
 Your `html` element should be below the `DOCTYPE` declaration.
