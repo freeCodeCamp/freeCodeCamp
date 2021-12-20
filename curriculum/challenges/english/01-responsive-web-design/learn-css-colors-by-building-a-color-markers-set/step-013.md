@@ -7,7 +7,7 @@ dashedName: step-13
 
 # --description--
 
-Your marker would look better if it's centered on the page. An easy way to do that is with the `margin` <dfn>shorthand property</dfn>.
+Your marker would look better if it was centered on the page. An easy way to do that is with the `margin` <dfn>shorthand property</dfn>.
 
 In the last project, you set the margin area of elements separately with properties like `margin-top` and `margin-left`. The `margin` shorthand property makes it easy to set multiple margin areas at the same time.
 
