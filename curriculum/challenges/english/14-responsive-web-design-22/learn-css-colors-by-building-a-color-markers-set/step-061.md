@@ -16,7 +16,7 @@ Use the `linear-gradient` function and set `gradientDirection` to `180deg`. And 
 Your `.green` CSS rule should have a `background` property with the value `linear-gradient(180deg, #55680D)`.
 
 ```js
-assert.equal(__helpers.CSSHelp(document).getStyle('.green').getPropVal('background', true), 'linear-gradient(180deg,#55680D)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.green').getPropVal('background', true), 'linear-gradient(180deg,#55680D)');
 ```
 
 # --seed--
