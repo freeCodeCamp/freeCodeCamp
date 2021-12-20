@@ -16,6 +16,8 @@ dashedName: timestamp-microservice
 
 完成本项目后，请将一个正常运行的 demo（项目演示）托管在可以公开访问的平台。 然后在 `Solution Link` 字段中提交它的 URL。 此外，还可以将项目的源码提交到 `GitHub Link` 中。
 
+**注意：** 时区转换不是本项目的目的，因此假设所有发送的有效日期将使用 `new Date()` 解析为 GMT 日期。
+
 # --hints--
 
 提交自己的项目，而不是示例的 URL。
@@ -28,7 +30,7 @@ dashedName: timestamp-microservice
 };
 ```
 
-向 `/api/:date?` 发送一个带有有效日期的请求，应该很快（在几毫秒内）返回一个 JSON 对象，在这个 JSON 对象内有一个包含输入日期的 Unix 时间戳的 `unix` 键。
+对具有有效日期的 `/api/:date?` 的请求应返回一个带有 `unix` 键的 JSON 对象，该键是输入日期的 Unix 时间戳（以毫秒为单位）
 
 ```js
 (getUserInput) =>
@@ -46,7 +48,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-向 `/api/:date?` 发送一个带有有效日期的请求，应该返回一个 JSON 对象，在这个 JSON 对象内有一个包含如 `Thu, 01 Jan 1970 00:00:00 GMT` 格式的输入日期的 `utc` 键。
+对具有有效日期的 `/api/:date?` 的请求应返回一个带有 `utc` 键的 JSON 对象，该键是输入日期的字符串，格式为：`Thu, 01 Jan 1970 00:00:00 GMT`
 
 ```js
 (getUserInput) =>
@@ -64,7 +66,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-向 `/api/1451001600000` 发送请求，应该返回 `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`。
+对 `/api/1451001600000` 的请求应该返回 `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`
 
 ```js
 (getUserInput) =>
@@ -81,11 +83,11 @@ dashedName: timestamp-microservice
   );
 ```
 
-程序能成功处理能被 `new Date(date_string)` 解析的日期。
+你的项目可以处理可以通过 `new Date(date_string)` 成功解析的日期
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/api/05 October 2011').then(
+  $.get(getUserInput('url') + '/api/05 October 2011, GMT').then(
     (data) => {
       assert(
         data.unix === 1317772800000 &&
@@ -98,7 +100,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-如果传入的日期是无效的，将返回一个带有结构体 `{ error : "Invalid Date" }` 的对象。
+如果输入的日期字符串无效，api 将返回一个具有结构的对象 `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
@@ -112,7 +114,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-如果传入的参数是空日期，将返回一个包含当前时间的 `unix` 键的 JSON 对象。
+一个空的日期参数应该返回一个带有 `unix` 键的 JSON 对象中的当前时间
 
 ```js
 (getUserInput) =>
@@ -127,7 +129,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-如果传入的参数是空日期，将返回一个包含当前时间的 `utc` 键的 JSON 对象。
+空日期参数应返回带有 `utc` 键的 JSON 对象中的当前时间
 
 ```js
 (getUserInput) =>

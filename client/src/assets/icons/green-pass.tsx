@@ -8,15 +8,15 @@ function GreenPass(
 
   return (
     <>
-      <span className='sr-only'>{t('icons.passed')}</span>
       <svg
+        aria-label={t('icons.passed')}
         height='50'
         viewBox='0 0 200 200'
         width='50'
         xmlns='http://www.w3.org/2000/svg'
         {...props}
       >
-        <g>
+        <g aria-hidden='true'>
           <title>{t('icons.passed')}</title>
           <circle
             cx='100'

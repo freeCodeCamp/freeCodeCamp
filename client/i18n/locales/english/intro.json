@@ -634,6 +634,8 @@
     "steps": "Steps",
     "expand": "Expand",
     "collapse": "Collapse",
+    "expand": "Expand courses",
+    "collapse": "Collapse courses",
     "legacy-header": "Legacy Courses",
     "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning."
   }

@@ -462,7 +462,7 @@
     "username-not-found": "Ми не змогли знайти користувача з ім'ям \"{{username}}\"",
     "add-name": "Цей користувач повинен додати своє ім'я до свого облікового запису, щоб інші могли переглянути його сертифікат.",
     "not-eligible": "Наразі цей користувач не має права отримати безкоштовний сертифікат freeCodeCamp.org.",
-    "profile-private": "{{username}} вирішив зробити своє портфоліо конфіденційним. Йому потрібно надати спільний доступ до свого портфоліо, щоб інші мали змогу переглянути його сертифікат.",
+    "profile-private": "{{username}} has chosen to make their profile private. They will need to make their profile public in order for others to be able to view their certification.",
     "certs-private": "{{username}} вирішив зробити свої сертифікати конфіденційними. Йому потрібно надати спільний доступ до своїх сертифікатів, щоб інші могли їх переглянути.",
     "not-honest": "{{username}} ще не прийняв нашу Обітницю академічної доброчесності.",
     "user-not-certified": "Схоже, що користувач {{username}} не є сертифікованим {{cert}}",

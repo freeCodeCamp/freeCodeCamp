@@ -462,7 +462,7 @@
     "username-not-found": "我們未找到用戶名爲 \"{{username}}\" 的用戶",
     "add-name": "這個用戶需要在賬號中添加名字，以便其他人查看該用戶的認證。",
     "not-eligible": "這個用戶目前不符合 freeCodeCamp.org 認證的條件。",
-    "profile-private": "{{username}} 已將其作品集設置爲僅自己可見。用戶需要將作品集設置爲公開，其他人才能查看該用戶的認證。",
+    "profile-private": "{{username}} has chosen to make their profile private. They will need to make their profile public in order for others to be able to view their certification.",
     "certs-private": "{{username}} 已將其作品集設置爲僅自己可見。用戶需要將認證設置爲公開，其他人才能查看該用戶的認證。",
     "not-honest": "{{username}} 未接受我們的《學術誠信條例》。",
     "user-not-certified": "用戶 {{username}} 似乎未獲得 {{cert}} 認證",
