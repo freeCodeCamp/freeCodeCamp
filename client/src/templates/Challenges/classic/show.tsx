@@ -36,7 +36,7 @@ import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
   cancelTests,
-  challengeFilesSelector,
+  challengeFilesToLoadSelector,
   challengeMounted,
   challengeTestsSelector,
   consoleOutputSelector,
@@ -60,7 +60,7 @@ import '../components/test-frame.css';
 
 // Redux Setup
 const mapStateToProps = createStructuredSelector({
-  challengeFiles: challengeFilesSelector,
+  challengeFiles: challengeFilesToLoadSelector,
   tests: challengeTestsSelector,
   output: consoleOutputSelector,
   isChallengeCompleted: isChallengeCompletedSelector

@@ -1,12 +1,12 @@
 import { call, takeEvery, put, select } from 'redux-saga/effects';
-import { postSaveChallenge } from '../../../utils/ajax';
+import { postSaveChallenge } from '../utils/ajax';
 import {
   challengeDataSelector,
-  challengeMetaSelector,
-  saveChallengeComplete
-} from './';
-import { createFlashMessage } from '../../../components/Flash/redux';
-import { challengeTypes } from '../../../../utils/challenge-types';
+  challengeMetaSelector
+} from '../templates/Challenges/redux';
+import { saveChallengeComplete } from './';
+import { createFlashMessage } from '../components/Flash/redux';
+import { challengeTypes } from '../../utils/challenge-types';
 
 export function* saveChallengeSaga() {
   const { id, challengeType } = yield select(challengeMetaSelector);

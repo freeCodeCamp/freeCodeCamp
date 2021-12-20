@@ -20,6 +20,7 @@ import { createShowCertSaga } from './show-cert-saga';
 import { createSoundModeSaga } from './sound-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
 import { createWebhookSaga } from './webhook-saga';
+import { createSaveChallengeSaga } from './save-challenge-saga';
 
 export const MainApp = 'app';
 
@@ -78,7 +79,8 @@ export const sagas = [
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
   ...createSoundModeSaga({ ...actionTypes, ...settingsTypes }),
-  ...createWebhookSaga(actionTypes)
+  ...createWebhookSaga(actionTypes),
+  ...createSaveChallengeSaga(actionTypes)
 ];
 
 export const appMount = createAction(actionTypes.appMount);
@@ -116,6 +118,11 @@ export const hardGoTo = createAction(actionTypes.hardGoTo);
 export const submitComplete = createAction(actionTypes.submitComplete);
 export const updateComplete = createAction(actionTypes.updateComplete);
 export const updateFailed = createAction(actionTypes.updateFailed);
+
+export const saveChallenge = createAction(actionTypes.saveChallenge);
+export const saveChallengeComplete = createAction(
+  actionTypes.saveChallengeComplete
+);
 
 export const acceptTerms = createAction(actionTypes.acceptTerms);
 export const acceptTermsComplete = createAction(
@@ -183,7 +190,8 @@ export const updateCurrentChallengeId = createAction(
   actionTypes.updateCurrentChallengeId
 );
 
-export const savedChallengesSelector = state => userSelector(state).savedChallenges || [];
+export const savedChallengesSelector = state =>
+  userSelector(state).savedChallenges || [];
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[MainApp].completionCount;
@@ -681,6 +689,19 @@ export const reducer = handleActions(
       ...state,
       currentChallengeId: payload
     }),
+    [actionTypes.saveChallengeComplete]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            savedChallenges: payload
+          }
+        }
+      };
+    },
     [settingsTypes.updateLegacyCertComplete]: (state, { payload }) => {
       const { appUsername } = state;
       return {

@@ -1,4 +1,4 @@
-import { createTypes, createAsyncTypes } from '../../../utils/create-types';
+import { createTypes } from '../../../utils/create-types';
 
 export const ns = 'challenge';
 
@@ -43,10 +43,7 @@ export const actionTypes = createTypes(
     'moveToTab',
 
     'setEditorFocusability',
-    'toggleVisibleEditor',
-
-    'saveChallengeComplete',
-    ...createAsyncTypes('saveChallenge')
+    'toggleVisibleEditor'
   ],
   ns
 );

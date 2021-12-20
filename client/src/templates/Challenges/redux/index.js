@@ -16,7 +16,6 @@ import completionEpic from './completion-epic';
 import createQuestionEpic from './create-question-epic';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
-import { createSaveChallengeSaga } from './save-challenge-saga';
 
 export { ns };
 
@@ -59,8 +58,7 @@ export const epics = [
 
 export const sagas = [
   ...createExecuteChallengeSaga(actionTypes),
-  ...createCurrentChallengeSaga(actionTypes),
-  ...createSaveChallengeSaga(actionTypes)
+  ...createCurrentChallengeSaga(actionTypes)
 ];
 
 // TODO: can createPoly handle editable region, rather than separating it?
@@ -125,11 +123,6 @@ export const resetChallenge = createAction(actionTypes.resetChallenge);
 export const stopResetting = createAction(actionTypes.stopResetting);
 export const submitChallenge = createAction(actionTypes.submitChallenge);
 
-export const saveChallenge = createAction(actionTypes.saveChallenge);
-export const saveChallengeComplete = createAction(
-  actionTypes.saveChallengeComplete
-);
-
 export const moveToTab = createAction(actionTypes.moveToTab);
 
 export const setEditorFocusability = createAction(
@@ -140,7 +133,10 @@ export const toggleVisibleEditor = createAction(
 );
 
 export const currentTabSelector = state => state[ns].currentTab;
-export const challengeFilesSelector = state => {
+export const challengeFilesSelector = state => state[ns].challengeFiles;
+
+// get files from saveChallenges first, state (markdown) second
+export const challengeFilesToLoadSelector = state => {
   const savedChallenges = savedChallengesSelector(state);
   const { id: currentChallengeId } = challengeMetaSelector(state);
   const savedFiles = savedChallenges.find(
@@ -371,19 +367,6 @@ export const reducer = handleActions(
       ...state,
       currentTab: 3
     }),
-    [actionTypes.saveChallengeComplete]: (state, { payload }) => {
-      const { appUsername } = state;
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
-            savedChallenges: payload
-          }
-        }
-      };
-    },
     [actionTypes.setEditorFocusability]: (state, { payload }) => ({
       ...state,
       canFocusEditor: payload

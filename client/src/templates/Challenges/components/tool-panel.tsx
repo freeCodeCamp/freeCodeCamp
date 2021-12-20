@@ -11,12 +11,9 @@ import { createSelector } from 'reselect';
 import { challengeTypes } from '../../../../utils/challenge-types';
 
 import './tool-panel.css';
-import {
-  openModal,
-  executeChallenge,
-  saveChallenge,
-  challengeMetaSelector
-} from '../redux';
+import { openModal, executeChallenge, challengeMetaSelector } from '../redux';
+
+import { saveChallenge } from '../../../redux';
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,

@@ -16,6 +16,7 @@ export const actionTypes = createTypes(
     'resetUserData',
     'tryToShowDonationModal',
     'executeGA',
+    'saveChallengeComplete',
     'submitComplete',
     'updateComplete',
     'updateCurrentChallengeId',
@@ -31,7 +32,8 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('reportUser'),
     ...createAsyncTypes('postChargeStripeCard'),
     ...createAsyncTypes('postWebhookToken'),
-    ...createAsyncTypes('deleteWebhookToken')
+    ...createAsyncTypes('deleteWebhookToken'),
+    ...createAsyncTypes('saveChallenge')
   ],
   ns
 );
