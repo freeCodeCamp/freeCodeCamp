@@ -7,7 +7,7 @@ dashedName: step-94
 
 # --description--
 
-Finally, for the green marker's `box-shadow` property, replace the named color with the `hsla` function. Use the values `223` for hue, `59%` for saturation, `31%` for lightness, and `0.8` for the alpha channel.
+Finally, for the blue marker's `box-shadow` property, replace the named color with the `hsla` function. Use the values `223` for hue, `59%` for saturation, `31%` for lightness, and `0.8` for the alpha channel.
 
 # --hints--
 
