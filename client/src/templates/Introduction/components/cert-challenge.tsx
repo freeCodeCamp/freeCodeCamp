@@ -23,6 +23,8 @@ import { getVerifyCanClaimCert } from '../../../utils/ajax';
 import CertificationCard from './certification-card';
 
 interface CertChallengeProps {
+  // TODO: create enum/reuse SuperBlocks enum somehow
+  certification: string;
   createFlashMessage: typeof createFlashMessage;
   fetchState: {
     pending: boolean;
@@ -63,6 +65,7 @@ const mapDispatchToProps = {
 };
 
 const CertChallenge = ({
+  certification,
   createFlashMessage,
   steps = {},
   superBlock,
@@ -90,7 +93,7 @@ const CertChallenge = ({
     if (username) {
       void (async () => {
         try {
-          const data = await getVerifyCanClaimCert(username, superBlock);
+          const data = await getVerifyCanClaimCert(username, certification);
           if (data?.message) {
             setCanClaimCert(false);
             createFlashMessage(data.message);

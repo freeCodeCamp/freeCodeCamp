@@ -409,6 +409,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       forumTopicId,
       hasEditableBoundaries,
       superBlock,
+      certification,
       title,
       usesMultifileEditor,
       notes
@@ -474,6 +475,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <CompletionModal
             block={block}
             blockName={blockName}
+            certification={certification}
             superBlock={superBlock}
           />
           <HelpModal />
@@ -508,6 +510,7 @@ export const query = graphql`
         helpCategory
         videoUrl
         superBlock
+        certification
         translationPending
         forumTopicId
         fields {

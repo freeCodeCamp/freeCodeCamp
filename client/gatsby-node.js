@@ -76,6 +76,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
               node {
                 challenge {
                   block
+                  certification
                   challengeType
                   fields {
                     slug
@@ -116,6 +117,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   component
                 }
                 frontmatter {
+                  certification
                   block
                   superBlock
                   title
@@ -183,6 +185,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
             const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
             pageBuilder(edge);
           } catch (e) {
+            console.log(e);
             console.log(`
             ident: ${nodeIdentity} does not belong to a function
 

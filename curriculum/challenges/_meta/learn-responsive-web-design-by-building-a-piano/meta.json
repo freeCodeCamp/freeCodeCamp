@@ -1,15 +1,14 @@
 {
   "name": "Learn Responsive Web Design by Building a Piano",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-responsive-web-design-by-building-a-piano",
-  "order": 13,
+  "order": 12,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "isBeta": true,
   "challengeOrder": [
     [
       "612e6afc009b450a437940a1",

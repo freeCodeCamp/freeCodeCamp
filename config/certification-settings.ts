@@ -113,7 +113,11 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.SciCompPy]: certTypes.sciCompPyV7,
   [SuperBlocks.DataAnalysisPy]: certTypes.dataAnalysisPyV7,
   [SuperBlocks.MachineLearningPy]: certTypes.machineLearningPyV7,
-  [SuperBlocks.RelationalDb]: certTypes.relationalDatabasesV8
+  [SuperBlocks.RelationalDb]: certTypes.relationalDatabasesV8,
+
+  // post-modern
+  // TODO: use enum
+  'responsive-web-design-22': certTypes.respWebDesign
 };
 
 export const certTypeIdMap = {

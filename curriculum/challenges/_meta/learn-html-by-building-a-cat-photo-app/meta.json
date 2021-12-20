@@ -1,15 +1,14 @@
 {
   "name": "Learn HTML by Building a Cat Photo App",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-html-by-building-a-cat-photo-app",
-  "order": 9,
+  "order": 0,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "isBeta": true,
   "challengeOrder": [
     [
       "5dc174fcf86c76b9248c6eb2",

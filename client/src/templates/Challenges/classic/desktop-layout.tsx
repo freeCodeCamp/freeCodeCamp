@@ -2,15 +2,13 @@ import { first } from 'lodash-es';
 import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
-import envData from '../../../../../config/env.json';
 import {
   ChallengeFile,
   ChallengeFiles,
   ResizeProps
 } from '../../../redux/prop-types';
 import ActionRow from './action-row';
-
-const { showUpcomingChanges } = envData;
+import EditorTabs from './editor-tabs';
 
 type Pane = { flex: number };
 
@@ -85,7 +83,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   } = props;
 
   const challengeFile = getChallengeFile();
-  const projectBasedChallenge = showUpcomingChanges && hasEditableBoundaries;
+  const projectBasedChallenge = hasEditableBoundaries;
   const displayPreview = projectBasedChallenge
     ? showPreview && hasPreview
     : hasPreview;
@@ -124,6 +122,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
 
         <ReflexElement flex={editorPane.flex} {...resizeProps}>
+          {challengeFile && !hasEditableBoundaries && <EditorTabs />}
           {challengeFile && (
             <ReflexContainer
               key={challengeFile.fileKey}

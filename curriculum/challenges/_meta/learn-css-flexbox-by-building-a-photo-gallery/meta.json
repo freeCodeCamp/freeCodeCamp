@@ -1,15 +1,14 @@
 {
   "name": "Learn CSS Flexbox by Building a Photo Gallery",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-css-flexbox-by-building-a-photo-gallery",
-  "order": 20,
+  "order": 6,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "isBeta": true,
   "challengeOrder": [
     [
       "61537485c4f2a624f18d7794",

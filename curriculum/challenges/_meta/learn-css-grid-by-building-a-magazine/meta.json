@@ -1,15 +1,14 @@
 {
   "name": "Learn CSS Grid by Building a Magazine",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-css-grid-by-building-a-magazine",
-  "order": 16,
+  "order": 15,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "isBeta": true,
   "challengeOrder": [
     [
       "61437d575fb98f57fa8f7f36",

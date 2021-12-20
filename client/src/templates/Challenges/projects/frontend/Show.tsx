@@ -144,6 +144,7 @@ class Project extends Component<ProjectProps> {
             description,
             instructions,
             superBlock,
+            certification,
             block,
             translationPending
           }
@@ -203,6 +204,7 @@ class Project extends Component<ProjectProps> {
               <CompletionModal
                 block={block}
                 blockName={blockName}
+                certification={certification}
                 superBlock={superBlock}
               />
               <HelpModal />
@@ -232,6 +234,7 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
+        certification
         block
         translationPending
         fields {

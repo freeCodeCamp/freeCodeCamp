@@ -1,15 +1,14 @@
 {
   "name": "Learn Typography by Building a Nutrition Label",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-typography-by-building-a-nutrition-label",
-  "order": 25,
+  "order": 7,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "responsive-web-design",
-  "isBeta": true,
   "challengeOrder": [
     [
       "615f2abbe7d18d49a1e0e1c8",

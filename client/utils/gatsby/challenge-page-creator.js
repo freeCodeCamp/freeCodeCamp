@@ -60,6 +60,7 @@ function getTemplateComponent(challengeType) {
 exports.createChallengePages = function (createPage) {
   return function ({ node: { challenge } }, index, allChallengeEdges) {
     const {
+      certification,
       superBlock,
       block,
       fields: { slug },
@@ -76,6 +77,7 @@ exports.createChallengePages = function (createPage) {
       component: getTemplateComponent(challengeType),
       context: {
         challengeMeta: {
+          certification,
           superBlock,
           block,
           template,
@@ -152,13 +154,23 @@ exports.createSuperBlockIntroPages = function (createPage) {
   return function (edge) {
     const {
       fields: { slug },
-      frontmatter: { superBlock }
+      frontmatter: { superBlock, certification }
     } = edge.node;
+
+    if (!certification) {
+      throw Error(
+        `superBlockIntro page, '${superBlock}' must have certification in frontmatter`
+      );
+    }
+
+    // TODO: throw if it encounters an unknown certification. Also, handle
+    // coding-interview-prep. it's not a certification, but it is a superBlock.
 
     createPage({
       path: slug,
       component: superBlockIntro,
       context: {
+        certification,
         superBlock,
         slug
       }

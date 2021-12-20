@@ -16,11 +16,10 @@ class MongoIds {
     }
 
     const idIndex = findIndex(this.knownIds, existing => id === existing);
+    // TODO: check for the exceptions or remove the warning.
     if (idIndex !== -1) {
-      throw new Error(`
-    All challenges must have a unique id.
-
-    The id for ${title} is already assigned
+      console.warn(`The id for challenge ${title} appears more than once.
+      With the exception of some projects this should not happen.
     `);
     }
     this.knownIds = [...this.knownIds, id];

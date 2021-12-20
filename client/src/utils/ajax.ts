@@ -178,10 +178,10 @@ export interface GetVerifyCanClaimCert {
 
 export function getVerifyCanClaimCert(
   username: string,
-  superBlock: string
+  certification: string
 ): Promise<GetVerifyCanClaimCert> {
   return get(
-    `/certificate/verify-can-claim-cert?username=${username}&superBlock=${superBlock}`
+    `/certificate/verify-can-claim-cert?username=${username}&superBlock=${certification}`
   );
 }
 

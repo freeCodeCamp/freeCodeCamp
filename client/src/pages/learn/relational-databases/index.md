@@ -1,6 +1,7 @@
 ---
 title: Relational Databases
 superBlock: relational-databases
+certification: relational-databases
 ---
 
 ## Introduction to Relational Databases
