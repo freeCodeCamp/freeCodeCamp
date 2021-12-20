@@ -30,7 +30,7 @@ Your `meta` element should have a `charset` attribute set to `utf-8`.
 
 ```js
 const meta = [...document.querySelectorAll('meta')];
-const target = meta?.find(m => m?.getAttribute('charset').toLowerCase() === 'utf-8');
+const target = meta?.find(m => m?.getAttribute('charset')?.toLowerCase() === 'utf-8');
 assert.exists(target);
 ```
 
