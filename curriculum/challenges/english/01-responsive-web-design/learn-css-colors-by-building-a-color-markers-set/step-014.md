@@ -28,7 +28,7 @@ assert([...code.matchAll(/<\/div\s*>/gi)][2]);
 Your second new `div` element should have an opening tag.
 
 ```js
-assert([...code.matchAll(/<div.*>/gi)][3]);
+assert([...code.matchAll(/<div.*?>/gi)][3]);
 ```
 
 Your second new `div` element should have a closing tag.
