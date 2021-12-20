@@ -16,7 +16,7 @@ In the `container` `div`, add two more `div` elements and give them each a class
 Your first new `div` element should have an opening tag.
 
 ```js
-assert([...code.matchAll(/<div.*>/gi)][2]);
+assert([...code.matchAll(/<div.*?>/gi)][2]);
 ```
 
 Your first new `div` element should have a closing tag.
