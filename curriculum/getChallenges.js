@@ -254,15 +254,16 @@ async function parseTranslation(transPath, dict, lang, parse = parseMD) {
     : translatedChal;
 }
 
+// eslint-disable-next-line no-unused-vars
 async function createCertification(basePath, filePath, lang) {
   function getFullPath(pathLang) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
   }
-  const { name: superBlock } = superBlockInfoFromPath(filePath);
-  const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
-  return useEnglish
-    ? parseCert(getFullPath('english'))
-    : parseCert(getFullPath(lang));
+  // TODO: restart using isAudited() once we can determine a) the superBlocks
+  // (plural) a certification belongs to and b) get that info from the parsed
+  // certification, rather than the path. ASSUMING that this is used by the
+  // client.  If not, delete this comment and the lang param.
+  return parseCert(getFullPath('english'));
 }
 
 async function createChallenge(basePath, filePath, lang, maybeMeta) {
