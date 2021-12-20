@@ -19,6 +19,7 @@ export const certTypes = {
 
 export enum SuperBlocks {
   RespWebDesign = 'responsive-web-design',
+  RespWebDesign22 = 'responsive-web-design-22',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
   FrontEndDevLibs = 'front-end-development-libraries',
   DataVis = 'data-visualization',
@@ -82,6 +83,7 @@ export const certSlugTypeMap = {
 
   // modern
   [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
+  [SuperBlocks.RespWebDesign22]: certTypes.respWebDesign,
   [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
   [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
   [SuperBlocks.DataVis]: certTypes.dataVis2018,
@@ -104,6 +106,7 @@ export const superBlockCertTypeMap = {
 
   // modern
   [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
+  [SuperBlocks.RespWebDesign22]: certTypes.respWebDesign,
   [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
   [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
   [SuperBlocks.DataVis]: certTypes.dataVis2018,
@@ -113,11 +116,7 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.SciCompPy]: certTypes.sciCompPyV7,
   [SuperBlocks.DataAnalysisPy]: certTypes.dataAnalysisPyV7,
   [SuperBlocks.MachineLearningPy]: certTypes.machineLearningPyV7,
-  [SuperBlocks.RelationalDb]: certTypes.relationalDatabasesV8,
-
-  // post-modern
-  // TODO: use enum
-  'responsive-web-design-22': certTypes.respWebDesign
+  [SuperBlocks.RelationalDb]: certTypes.relationalDatabasesV8
 };
 
 export const certTypeIdMap = {
