@@ -18,7 +18,7 @@ dashedName: build-a-tribute-page
 
 **需求 2：** 此 app 中應存在一個 `id="title"` 的元素，其中包含描述致敬頁主題的字符串文本，如 "Dr. Norman Borlaug"。
 
-**需求 3：** 此 app 中應存在一個 `id="img-div"` 的 `div` 元素。
+**需求 3：** 此 app 中應存在一個 `id="img-div"` 的 `figure` 或 `div` 元素。
 
 **需求 4：** 在 `img-div` 元素內，應存在一個 `id="image"` 的 `img` 元素。
 

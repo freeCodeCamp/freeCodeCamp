@@ -536,7 +536,7 @@ Provisionando MVs com o código
 2. Atualize o `npm` e instale o PM2 e configure `logrotate` e inicie quando reiniciar
 
    ```console
-   npm i -g npm@6
+   npm i -g npm@8
    npm i -g pm2
    npm install -g serve
    pm2 install pm2-logrotate

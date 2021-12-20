@@ -2,13 +2,13 @@
   "name": "Intermediate JavaScript Calorie Counter",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "intermediate-javascript-calorie-counter",
   "order": 11,
   "time": "2 hours",
   "template": "",
   "required": [],
   "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 1,
   "challengeOrder": [
     [
       "5ddb965c65d27e1512d44d9a",

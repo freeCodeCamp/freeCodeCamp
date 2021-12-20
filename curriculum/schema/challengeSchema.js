@@ -26,6 +26,7 @@ const schema = Joi.object()
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
     removeComments: Joi.bool(),
+    certification: Joi.string().regex(slugRE),
     challengeType: Joi.number().min(0).max(12).required(),
     checksum: Joi.number(),
     // __commentCounts is only used to test the comment replacement
@@ -39,6 +40,7 @@ const schema = Joi.object()
     }),
     challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
+    hasEditableBoundaries: Joi.boolean(),
     helpCategory: Joi.valid(
       'JavaScript',
       'HTML-CSS',

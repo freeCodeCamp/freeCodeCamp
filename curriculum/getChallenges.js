@@ -4,6 +4,7 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
+const { getSuperOrder } = require('./utils');
 const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
 const { curriculum: curriculumLangs } =
@@ -227,6 +228,14 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   }
   const { meta } = challengeBlock;
   const isCert = path.extname(filePath) === '.yml';
+  // TODO: there's probably a better way, but this makes sure we don't build any
+  // of the new curriculum when we don't want it.
+  if (
+    process.env.SHOW_NEW_CURRICULUM !== 'true' &&
+    superBlock === 'responsive-web-design-22'
+  ) {
+    return;
+  }
   const challenge = isCert
     ? await createCertification(challengesDir, filePath, lang)
     : await createChallenge(challengesDir, filePath, lang, meta);
@@ -295,8 +304,8 @@ ${getFullPath('english')}
   );
   const {
     name: blockName,
+    hasEditableBoundaries,
     order,
-    superOrder,
     isPrivate,
     required = [],
     template,
@@ -304,8 +313,20 @@ ${getFullPath('english')}
     usesMultifileEditor
   } = meta;
   challenge.block = dasherize(blockName);
+  challenge.hasEditableBoundaries = !!hasEditableBoundaries;
   challenge.order = order;
-  challenge.superOrder = superOrder;
+  const superOrder = getSuperOrder(superBlock, {
+    showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
+  });
+  if (superOrder !== null) challenge.superOrder = superOrder;
+  /* Since there can be more than one way to complete a certification (using the
+   legacy curriculum or the new one, for instance), we need a certification
+   field to track which certification this belongs to. */
+  // TODO: generalize this to all superBlocks
+  challenge.certification =
+    superBlock === 'responsive-web-design-22'
+      ? 'responsive-web-design'
+      : superBlock;
   challenge.superBlock = superBlock;
   challenge.challengeOrder = challengeOrder;
   challenge.isPrivate = challenge.isPrivate || isPrivate;

@@ -11,7 +11,6 @@
     }
   ],
   "superBlock": "data-visualization",
-  "superOrder": 3,
   "challengeOrder": [
     ["587d7fa6367417b2b2512bc2", "Add Document Elements with D3"],
     ["587d7fa6367417b2b2512bc3", "Select a Group of Elements with D3"],

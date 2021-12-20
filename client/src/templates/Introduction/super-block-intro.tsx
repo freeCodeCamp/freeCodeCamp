@@ -141,15 +141,15 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     if (isSignedIn) {
       // see if currentChallenge is in this superBlock
       const currentChallengeEdge = edges.find(
-        edge => edge.node.id === currentChallengeId
+        edge => edge.node.challenge.id === currentChallengeId
       );
 
       return currentChallengeEdge
-        ? currentChallengeEdge.node.block
-        : edge.node.block;
+        ? currentChallengeEdge.node.challenge.block
+        : edge.node.challenge.block;
     }
 
-    return edge.node.block;
+    return edge.node.challenge.block;
   };
 
   const initializeExpandedState = () => {
@@ -162,7 +162,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const {
     data: {
       markdownRemark: {
-        frontmatter: { superBlock, title }
+        frontmatter: { superBlock, title, certification }
       },
       allChallengeNode: { edges }
     },
@@ -173,7 +173,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   } = props;
 
   const nodesForSuperBlock = edges.map(({ node }) => node);
-  const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
+  const blockDashedNames = uniq(
+    nodesForSuperBlock.map(({ challenge: { block } }) => block)
+  );
+
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nTitle =
     superBlock === SuperBlocks.CodingInterviewPrep
@@ -181,6 +184,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
       : t(`intro:misc-text.certification`, {
           cert: i18nSuperBlock
         });
+
+  const defaultCurriculumNames = blockDashedNames;
 
   return (
     <>
@@ -201,12 +206,12 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
             </h2>
             <Spacer />
             <div className='block-ui'>
-              {blockDashedNames.map(blockDashedName => (
+              {defaultCurriculumNames.map(blockDashedName => (
                 <Fragment key={blockDashedName}>
                   <Block
                     blockDashedName={blockDashedName}
                     challenges={nodesForSuperBlock.filter(
-                      node => node.block === blockDashedName
+                      node => node.challenge.block === blockDashedName
                     )}
                     superBlock={superBlock}
                   />
@@ -216,6 +221,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               {superBlock !== SuperBlocks.CodingInterviewPrep && (
                 <div>
                   <CertChallenge
+                    certification={certification}
                     superBlock={superBlock}
                     title={title}
                     user={user}
@@ -258,27 +264,36 @@ export const query = graphql`
   query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
+        certification
         superBlock
         title
       }
     }
     allChallengeNode(
-      sort: { fields: [superOrder, order, challengeOrder] }
-      filter: { superBlock: { eq: $superBlock } }
+      sort: {
+        fields: [
+          challenge___superOrder
+          challenge___order
+          challenge___challengeOrder
+        ]
+      }
+      filter: { challenge: { superBlock: { eq: $superBlock } } }
     ) {
       edges {
         node {
-          fields {
-            slug
-            blockName
+          challenge {
+            fields {
+              slug
+              blockName
+            }
+            id
+            block
+            challengeType
+            title
+            order
+            superBlock
+            dashedName
           }
-          id
-          block
-          challengeType
-          title
-          order
-          superBlock
-          dashedName
         }
       }
     }

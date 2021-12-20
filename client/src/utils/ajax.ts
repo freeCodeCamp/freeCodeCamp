@@ -1,5 +1,6 @@
 import cookies from 'browser-cookies';
 import envData from '../../../config/env.json';
+import { FlashMessageArg } from '../components/Flash/redux';
 
 import type {
   ChallengeFile,
@@ -172,14 +173,15 @@ export interface GetVerifyCanClaimCert {
   };
   isCertMap: ClaimedCertifications;
   completedChallenges: CompletedChallenge[];
+  message?: FlashMessageArg;
 }
 
 export function getVerifyCanClaimCert(
   username: string,
-  superBlock: string
+  certification: string
 ): Promise<GetVerifyCanClaimCert> {
   return get(
-    `/certificate/verify-can-claim-cert?username=${username}&superBlock=${superBlock}`
+    `/certificate/verify-can-claim-cert?username=${username}&superBlock=${certification}`
   );
 }
 

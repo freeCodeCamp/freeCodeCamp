@@ -17,9 +17,7 @@ exports.translateComments = (text, lang, dict, codeLang) => {
 
 exports.translateCommentsInChallenge = (challenge, lang, dict) => {
   const challClone = cloneDeep(challenge);
-  if (!challClone.challengeFiles) {
-    console.warn(`Challenge ${challClone.title} has no seed to translate`);
-  } else {
+  if (challClone?.challengeFiles) {
     challClone.challengeFiles.forEach(challengeFile => {
       if (challengeFile.contents) {
         let { text, commentCounts } = this.translateComments(

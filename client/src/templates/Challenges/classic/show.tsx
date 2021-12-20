@@ -212,7 +212,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   componentDidMount() {
     const {
       data: {
-        challengeNode: { title }
+        challengeNode: {
+          challenge: { title }
+        }
       }
     } = this.props;
     this.initializeComponent(title);
@@ -222,16 +224,20 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const {
       data: {
         challengeNode: {
-          title: prevTitle,
-          fields: { tests: prevTests }
+          challenge: {
+            title: prevTitle,
+            fields: { tests: prevTests }
+          }
         }
       }
     } = prevProps;
     const {
       data: {
         challengeNode: {
-          title: currentTitle,
-          fields: { tests: currTests }
+          challenge: {
+            title: currentTitle,
+            fields: { tests: currTests }
+          }
         }
       }
     } = this.props;
@@ -250,11 +256,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       openModal,
       data: {
         challengeNode: {
-          challengeFiles,
-          fields: { tests },
-          challengeType,
-          removeComments,
-          helpCategory
+          challenge: {
+            challengeFiles,
+            fields: { tests },
+            challengeType,
+            removeComments,
+            helpCategory
+          }
         }
       },
       pageContext: {
@@ -282,7 +290,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     cancelTests();
   }
 
-  getChallenge = () => this.props.data.challengeNode;
+  getChallenge = () => this.props.data.challengeNode.challenge;
 
   getBlockNameTitle(t: TFunction) {
     const { block, superBlock, title } = this.getChallenge();
@@ -334,11 +342,16 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
   renderEditor() {
     const {
+      pageContext: {
+        projectPreview: { showProjectPreview }
+      },
       challengeFiles,
       data: {
         challengeNode: {
-          fields: { tests },
-          usesMultifileEditor
+          challenge: {
+            fields: { tests },
+            usesMultifileEditor
+          }
         }
       }
     } = this.props;
@@ -355,6 +368,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           resizeProps={this.resizeProps}
           title={title}
           usesMultifileEditor={usesMultifileEditor}
+          showProjectPreview={showProjectPreview}
         />
       )
     );
@@ -388,21 +402,14 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     );
   }
 
-  hasEditableBoundaries() {
-    const { challengeFiles } = this.props;
-    return (
-      challengeFiles?.some(
-        challengeFile => challengeFile.editableRegionBoundaries?.length === 2
-      ) ?? false
-    );
-  }
-
   render() {
     const {
       block,
       fields: { blockName },
       forumTopicId,
+      hasEditableBoundaries,
       superBlock,
+      certification,
       title,
       usesMultifileEditor,
       notes
@@ -433,7 +440,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             <MobileLayout
               editor={this.renderEditor()}
               guideUrl={getGuideUrl({ forumTopicId, title })}
-              hasEditableBoundaries={this.hasEditableBoundaries()}
+              hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
@@ -451,7 +458,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               block={block}
               challengeFiles={challengeFiles}
               editor={this.renderEditor()}
-              hasEditableBoundaries={this.hasEditableBoundaries()}
+              hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
@@ -468,6 +475,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <CompletionModal
             block={block}
             blockName={blockName}
+            certification={certification}
             superBlock={superBlock}
           />
           <HelpModal />
@@ -489,40 +497,44 @@ export default connect(
 
 export const query = graphql`
   query ClassicChallenge($slug: String!) {
-    challengeNode(fields: { slug: { eq: $slug } }) {
-      block
-      title
-      description
-      instructions
-      notes
-      removeComments
-      challengeType
-      helpCategory
-      videoUrl
-      superBlock
-      translationPending
-      forumTopicId
-      fields {
-        blockName
-        slug
-        tests {
-          text
-          testString
+    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+      challenge {
+        block
+        title
+        description
+        hasEditableBoundaries
+        instructions
+        notes
+        removeComments
+        challengeType
+        helpCategory
+        videoUrl
+        superBlock
+        certification
+        translationPending
+        forumTopicId
+        fields {
+          blockName
+          slug
+          tests {
+            text
+            testString
+          }
         }
-      }
-      required {
-        link
-        src
-      }
-      usesMultifileEditor
-      challengeFiles {
-        fileKey
-        ext
-        name
-        contents
-        head
-        tail
-        editableRegionBoundaries
+        required {
+          link
+          src
+        }
+        usesMultifileEditor
+        challengeFiles {
+          fileKey
+          ext
+          name
+          contents
+          head
+          tail
+          editableRegionBoundaries
+        }
       }
     }
   }
