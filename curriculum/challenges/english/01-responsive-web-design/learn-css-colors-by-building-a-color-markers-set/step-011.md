@@ -9,7 +9,7 @@ dashedName: step-11
 
 It's time to add some color to the page. Remember that one way to add color to an element is to use a <dfn>color keyword</dfn> like `black`, `cyan`, or `yellow`.
 
-Use a class selector to target the class `marker` and apply a background color to it. As a reminder, here's how to target the class `freecodecamp`:
+As a reminder, here's how to target the class `freecodecamp`:
 
 ```css
 .freecodecamp {
