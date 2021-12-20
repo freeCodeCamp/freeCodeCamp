@@ -19,18 +19,17 @@ describe('Challenge with editor', function () {
     cy.get('@editor', { timeout: 10000 }).contains(editorContents);
   });
 
-  // DISABLED until we update the local storage UI
-  // it('renders code from localStorage after "Ctrl + S"', () => {
-  //   const editorContents = `<h1>Hello</h1>`;
-  //   cy.get(selectors.editor).as('editor').contains(editorContents);
-  //   cy.get('@editor')
-  //     .click()
-  //     .focused()
-  //     .type(`{movetoend}<h1>Hello World</h1>{ctrl+s}`);
-  //   cy.contains("Saved! Your code was saved to your browser's local storage.");
-  //   cy.reload();
-  //   cy.get('@editor', { timeout: 10000 }).contains(
-  //     '<h1>Hello</h1><h1>Hello World</h1>'
-  //   );
-  // });
+  it('renders code from localStorage after "Ctrl + S"', () => {
+    const editorContents = `<h1>Hello</h1>`;
+    cy.get(selectors.editor).as('editor').contains(editorContents);
+    cy.get('@editor')
+      .click()
+      .focused()
+      .type(`{movetoend}<h1>Hello World</h1>{ctrl+s}`);
+    cy.contains("Saved! Your code was saved to your browser's local storage.");
+    cy.reload();
+    cy.get('@editor', { timeout: 10000 }).contains(
+      '<h1>Hello</h1><h1>Hello World</h1>'
+    );
+  });
 });
