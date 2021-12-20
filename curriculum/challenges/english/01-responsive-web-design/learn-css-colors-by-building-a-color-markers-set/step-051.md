@@ -16,9 +16,7 @@ In the `linear-gradient` function, use the `rgb` function to set the first color
 Your `.red` CSS rule should have a `background` property with the value `linear-gradient(90deg, rgb(255, 0, 0))`.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace($('style').text()).match(/\.red{.*background:linear-gradient\(90deg,rgb\(255,0,0\)\).*}/gi)
-);
+assert.equal(__helpers.CSSHelp(document).getStyle('.red').getPropVal('background', true), 'linear-gradient(90deg,rgb(255,0,0))');
 ```
 
 # --seed--

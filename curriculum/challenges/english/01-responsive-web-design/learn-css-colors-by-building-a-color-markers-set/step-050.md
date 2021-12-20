@@ -24,9 +24,7 @@ First, in the `.red` CSS rule, set the `background` property to `linear-gradient
 Your `.red` CSS rule should have a `background` property with the value `linear-gradient(90deg)`.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace($('style').text()).match(/\.red{.*background:linear-gradient\(90deg\).*}/gi)
-);
+assert.equal(__helpers.CSSHelp(document).getStyle('.red').getPropVal('background', true), 'linear-gradient(90deg)');
 ```
 
 # --seed--

@@ -14,9 +14,7 @@ Use the `linear-gradient` function, and pass in the `hsl` function with the valu
 Your `.blue` CSS rule should have a `background` property with the value `linear-gradient(hsl(186, 76%, 16%))`.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace($('style').text()).match(/\.blue{.*linear-gradient\(hsl\(186,76%,16%\)\).*}/gi)
-);
+assert.equal(__helpers.CSSHelp(document).getStyle('.blue').getPropVal('background', true), 'linear-gradient(hsl(186,76%,16%))');
 ```
 
 # --seed--
