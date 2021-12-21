@@ -1,6 +1,7 @@
 ---
 id: 561add10cb82ac38a17213bd
 title: Застаріла сертифікація програмного забезпечення повного циклу
+certification: legacy-full-stack
 challengeType: 7
 isPrivate: true
 tests:
