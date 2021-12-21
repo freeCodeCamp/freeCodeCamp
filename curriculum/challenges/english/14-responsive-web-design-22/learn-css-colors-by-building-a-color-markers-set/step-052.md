@@ -16,7 +16,7 @@ In the same `linear-gradient` function, use the `rgb` function to set the second
 Your `.red` CSS rule should have a `background` property set to `linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0))`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0))');
+assert.include(['linear-gradient(90deg,rgb(255,0,0),rgb(0,255,0))', 'rgba(0,0,0,0)linear-gradient(90deg,rgb(255,0,0),rgb(0,255,0))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.red')?.getPropVal('background', true));
 ```
 
 # --seed--
