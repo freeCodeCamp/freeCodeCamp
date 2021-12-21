@@ -187,9 +187,9 @@ export const DonationFaqText = (): JSX.Element => {
       A: (
         <>
           <p>{t('donate.we-honored')}</p>
-          <p>
-            <blockquote>{t('donate.legacy-gift-message')}</blockquote>
-          </p>
+          <blockquote cite="https://commons.wikimedia.org/wiki/Main_Page">
+              <p>{t('donate.legacy-gift-message')}</p>
+          </blockquote>
           <p>{t('donate.thank-wikimedia')}</p>
           <p>{t('donate.legacy-gift-questions')}</p>
         </>
