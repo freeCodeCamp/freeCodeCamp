@@ -22,20 +22,19 @@ In the `.sleeve` CSS rule, replace the `border-left-width`, `border-left-style`,
 Your `.sleeve` CSS rule should not have a `border-left-width` property and value.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.sleeve')?.borderLeftWidth);
-);
+assert(!/border-left-width/g.test(code));
 ```
 
 Your `.sleeve` CSS rule should not have a `border-left-style` property and value.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.sleeve')?.borderLeftStyle);
+assert(!/border-left-style/g.test(code));
 ```
 
 Your `.sleeve` CSS rule should not have a `border-left-color` property and value.
 
 ```js
-assert.isEmpty(new __helpers.CSSHelp(document).getStyle('.sleeve')?.borderLeftColor);
+assert(!/border-left-color/g.test(code));
 ```
 
 Your `.sleeve` CSS rule should have a `border-left` shorthand property and with the value `10px solid black`.
