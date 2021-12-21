@@ -16,7 +16,7 @@ In the `linear-gradient` function, set `gradientDirection` to `180deg`.
 Your `.red` CSS rule should have a `background` property set to `linear-gradient(180deg, rgb(255, 0, 0) 75%, rgb(0, 255, 0), rgb(0, 0, 255))`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(rgb(255, 0, 0) 75%, rgb(0, 255, 0), rgb(0, 0, 255))');
+assert.include(['linear-gradient(rgb(255,0,0)75%,rgb(0,255,0),rgb(0,0,255))', 'rgba(0,0,0,0)linear-gradient(rgb(255,0,0)75%,rgb(0,255,0),rgb(0,0,255))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.red')?.getPropVal('background', true));
 ```
 
 # --seed--
