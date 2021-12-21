@@ -15,7 +15,6 @@ import Shield from './shield';
 
 const iconMap = {
   [SuperBlocks.RespWebDesign]: ResponsiveDesign,
-  [SuperBlocks.RespWebDesign22]: ResponsiveDesign,
   [SuperBlocks.JsAlgoDataStruct]: JavaScriptIcon,
   [SuperBlocks.FrontEndDevLibs]: ReactIcon,
   [SuperBlocks.DataVis]: D3Icon,
