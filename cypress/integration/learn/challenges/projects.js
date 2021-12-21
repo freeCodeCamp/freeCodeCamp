@@ -64,7 +64,7 @@ describe('project submission', () => {
     () => {
       cy.fixture('../../config/curriculum.json').then(curriculum => {
         const { challenges, meta } =
-          curriculum[SuperBlocks.JsAlgoDataStruct].blocks[
+          curriculum['02-javascript-algorithms-and-data-structures'].blocks[
             'javascript-algorithms-and-data-structures-projects'
           ];
 
