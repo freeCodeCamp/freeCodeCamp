@@ -372,7 +372,7 @@ async function hasEnglishSource(basePath, translationPath) {
 
 function getBaseDir(filePath) {
   const [baseDir] = filePath.split(path.sep);
-  return [baseDir];
+  return baseDir;
 }
 
 function getBlockNameFromPath(filePath) {
