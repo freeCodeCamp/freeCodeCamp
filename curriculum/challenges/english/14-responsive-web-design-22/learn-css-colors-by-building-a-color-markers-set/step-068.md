@@ -14,7 +14,7 @@ As the second color argument, pass in the `hsl` function with the values `223` f
 Your `.blue` CSS rule should have a `background` property set to `linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%))`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.blue')?.background === 'linear-gradient(rgb(10, 66, 72), rgb(61, 113, 245))');
+assert.include(['linear-gradient(rgb(10,66,72),rgb(61,113,245))', 'rgba(0,0,0,0)linear-gradient(rgb(10,66,72),rgb(61,113,245))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.blue')?.getPropVal('background', true));
 ```
 
 # --seed--
