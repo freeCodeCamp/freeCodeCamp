@@ -18,7 +18,7 @@ In the `.red` CSS rule, remove the three color stops from the `linear-gradient` 
 Your `.red` CSS rule should have a `background` property set to `linear-gradient(180deg, rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27))`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27))');
+assert.include(['linear-gradient(rgb(122,74,14),rgb(245,62,113),rgb(162,27,27))', 'rgba(0,0,0,0)linear-gradient(rgb(122,74,14),rgb(245,62,113),rgb(162,27,27))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.red')?.getPropVal('background', true));
 ```
 
 # --seed--
