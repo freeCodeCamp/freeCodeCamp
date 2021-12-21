@@ -27,11 +27,11 @@ import {
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
+import LegacyLinks from './components/legacy-links';
 import SuperBlockIntro from './components/super-block-intro';
 import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
-import LegacyLinks from './components/legacy-links';
 
 type FetchState = {
   pending: boolean;
