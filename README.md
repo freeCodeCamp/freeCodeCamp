@@ -168,7 +168,7 @@ If you're confident it's a new bug and have confirmed that someone else is facin
 
 If you think you have found a vulnerability, _please report responsibly_. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](HoF.md) for security researchers.
+We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](https://contribute.freecodecamp.org/#/security-hall-of-fame) for security researchers.
 
 ### Contributing
 
@@ -178,7 +178,7 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 ### Platform, Build, and Deployment Status
 
-The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md).
+The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](https://contribute.freecodecamp.org/#/devops).
 
 ### License
 

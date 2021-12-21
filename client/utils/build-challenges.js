@@ -6,7 +6,6 @@ const envData = require('../../config/env.json');
 const {
   getChallengesForLang,
   createChallenge,
-  createCertification,
   challengesDir,
   getChallengesDirForLang
 } = require('../../curriculum/getChallenges');
@@ -26,11 +25,14 @@ exports.replaceChallengeNode = () => {
       `../../curriculum/challenges/_meta/${blockName}/meta.json`
     );
     delete require.cache[require.resolve(metaPath)];
-    const isCert = path.extname(filePath) === '.yml';
     const meta = require(metaPath);
-    return isCert
-      ? await createCertification(challengesDir, filePath, curriculumLocale)
-      : await createChallenge(challengesDir, filePath, curriculumLocale, meta);
+    // TODO: reimplement hot-reloading of certifications
+    return await createChallenge(
+      challengesDir,
+      filePath,
+      curriculumLocale,
+      meta
+    );
   };
 };
 

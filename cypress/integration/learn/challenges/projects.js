@@ -63,10 +63,12 @@ describe('project submission', () => {
     { browser: 'electron' },
     () => {
       cy.fixture('../../config/curriculum.json').then(curriculum => {
-        const { challenges, meta } =
-          curriculum[SuperBlocks.JsAlgoDataStruct].blocks[
-            'javascript-algorithms-and-data-structures-projects'
-          ];
+        const targetBlock =
+          'javascript-algorithms-and-data-structures-projects';
+        const javaScriptSuperBlock = Object.values(curriculum).filter(
+          ({ blocks }) => blocks[targetBlock]
+        )[0];
+        const { challenges, meta } = javaScriptSuperBlock.blocks[targetBlock];
 
         const projectTitles = meta.challengeOrder.map(([, title]) => title);
         const projectsInOrder = projectTitles.map(projectTitle => {

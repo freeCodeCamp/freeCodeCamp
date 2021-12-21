@@ -1,6 +1,6 @@
 ---
 title: Responsive Web Design
-superBlock: responsive-web-design-22
+superBlock: 2022/responsive-web-design
 certification: responsive-web-design
 ---
 
