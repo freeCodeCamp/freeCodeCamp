@@ -22,13 +22,13 @@ assert(!code.match(/linear-gradient\s*\(\s*180deg/gi));
 Your `.red` CSS rule should have a `background` property set to `linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27))`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27))');
+assert.include(['linear-gradient(rgb(122,74,14),rgb(245,62,113),rgb(162,27,27))', 'rgba(0,0,0,0)linear-gradient(rgb(122,74,14),rgb(245,62,113),rgb(162,27,27))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.red')?.getPropVal('background', true));
 ```
 
 Your `.green` CSS rule should have a `background` property set to `linear-gradient(#55680D, #71F53E, #116C31)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.green')?.background === 'linear-gradient(rgb(85, 104, 13), rgb(113, 245, 62), rgb(17, 108, 49))');
+assert.include(['linear-gradient(rgb(85,104,13),rgb(113,245,62),rgb(17,108,49))', 'rgba(0,0,0,0)linear-gradient(rgb(85,104,13),rgb(113,245,62),rgb(17,108,49))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.green')?.getPropVal('background', true));
 ```
 
 # --seed--
