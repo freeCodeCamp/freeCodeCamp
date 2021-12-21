@@ -16,7 +16,7 @@ For the first color argument, which is currently pure red, update the `rgb` func
 Your `.red` CSS rule should have a `background` property set to `linear-gradient(180deg, rgb(122, 74, 14) 0%, rgb(0, 255, 0) 50%, rgb(0, 0, 255) 100%)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(rgb(122, 74, 14) 0%, rgb(0, 255, 0) 50%, rgb(0, 0, 255) 100%)');
+assert.include(['linear-gradient(rgb(122,74,14)0%,rgb(0,255,0)50%,rgb(0,0,255)100%)', 'rgba(0,0,0,0)linear-gradient(rgb(122,74,14)0%,rgb(0,255,0)50%,rgb(0,0,255)100%)repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.red')?.getPropVal('background', true));
 ```
 
 # --seed--
