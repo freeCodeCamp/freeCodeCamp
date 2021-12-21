@@ -1,0 +1,73 @@
+---
+id: 61764c602bee6974e7790f35
+title: Step 16
+challengeType: 0
+dashedName: step-16
+---
+
+# --description--
+
+In school, you might have learned that red, yellow, and blue are primary colors, and learned how to create new colors by mixing those. However, this is an outdated model.
+
+These days, there are two main color models: the <dfn>additive</dfn> RGB (red, green, blue) model used in electronic devices, and the <dfn>subtractive</dfn> CMYK (cyan, magenta, yellow, black) model used in print. In this project you'll work with the RGB model.
+
+First, add the `class` `one` to the first marker `div` element.
+
+# --hints--
+
+You should add the class `one` to the first marker `div` element.
+
+```js
+const containerFirstChild = [...document.querySelector('.container')?.children][0];
+assert(containerFirstChild?.classList?.contains('one'));
+```
+
+Your first marker `div` should have the classes `marker` and `one`.
+
+```js
+const containerFirstChild = [...document.querySelector('.container')?.children][0];
+assert(containerFirstChild?.classList?.contains('marker') && containerFirstChild?.classList?.contains('one'));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Color Markers</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1>CSS Color Markers</h1>
+    <div class="container">
+--fcc-editable-region--
+      <div class="marker">
+      </div>
+      <div class="marker">
+      </div>
+      <div class="marker">
+      </div>
+--fcc-editable-region--
+    </div>
+  </body>
+</html>
+```
+
+```css
+h1 {
+  text-align: center;
+}
+
+.marker {
+  width: 200px;
+  height: 25px;
+  background-color: red;
+  margin: 10px auto;
+}
+
+```

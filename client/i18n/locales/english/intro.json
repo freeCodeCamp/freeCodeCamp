@@ -95,6 +95,10 @@
         "title": "Build a Technical Documentation Page Project",
         "intro": ["placeholder", "holder of place"]
       },
+      "learn-css-colors-by-building-a-set-of-colored-markers": {
+        "title": "Learn CSS Colors by Building a Set of Colored Markers",
+        "intro": ["placeholder", "holder of place"]
+      },
       "learn-html-by-building-a-cat-photo-app": {
         "title": "Learn HTML by Building a Cat Photo App",
         "intro": [
@@ -262,15 +266,24 @@
       },
       "basic-javascript-rpg-game": {
         "title": "Basic JavaScript RPG Game",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "intermediate-javascript-calorie-counter": {
         "title": "Intermediate JavaScript Calorie Counter",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "functional-programming-spreadsheet": {
         "title": "Functional Programming Spreadsheet",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -370,7 +383,13 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": [
+          "",
+          ""
+        ]
+      }
     }
   },
   "relational-databases": {
