@@ -22,7 +22,7 @@ In the `linear-gradient` function, add a `75%` color stop after the first red co
 Your `.red` CSS rule should have a `background` property set to `linear-gradient(90deg, rgb(255, 0, 0) 75%, rgb(0, 255, 0), rgb(0, 0, 255))`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.red')?.background === 'linear-gradient(90deg, rgb(255, 0, 0) 75%, rgb(0, 255, 0), rgb(0, 0, 255))');
+assert.include(['linear-gradient(90deg,rgb(255,0,0)75%,rgb(0,255,0),rgb(0,0,255))', 'rgba(0,0,0,0)linear-gradient(90deg,rgb(255,0,0)75%,rgb(0,255,0),rgb(0,0,255))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.red')?.getPropVal('background', true));
 ```
 
 # --seed--
