@@ -3,7 +3,6 @@ import { takeEvery, call, all, select } from 'redux-saga/effects';
 import { aBTestConfig } from '../../../config/donation-settings';
 import ga from '../analytics';
 import {
-  isSignedInSelector,
   emailSelector,
   completionCountSelector,
   completedChallengesSelector
@@ -18,9 +17,8 @@ function* callGaType({ payload: { type, data } }) {
     data.category.includes('Donation') &&
     aBTestConfig.isTesting
   ) {
-    const isSignedIn = yield select(isSignedInSelector);
-    if (isSignedIn) {
-      const email = yield select(emailSelector);
+    const email = yield select(emailSelector);
+    if (email) {
       const completedChallengeTotal = yield select(completedChallengesSelector);
       const completedChallengeSession = yield select(completionCountSelector);
       const customDimensions = {

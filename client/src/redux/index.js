@@ -12,6 +12,7 @@ import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
 import { createFetchUserSaga } from './fetch-user-saga';
 import { createGaSaga } from './ga-saga';
+import { emailToABVariant } from '../utils/A-B-tester';
 
 import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
@@ -202,6 +203,13 @@ export const stepsToClaimSelector = state => {
   };
 };
 export const emailSelector = state => userSelector(state).email;
+export const isAVariantSelector = state => {
+  const email = emailSelector(state);
+  // if the user is not signed in and the user info is not available.
+  // always return A the control variant
+  if (!email) return true;
+  return emailToABVariant(email).isAVariant;
+};
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
