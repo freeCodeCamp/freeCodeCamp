@@ -9,7 +9,7 @@ dashedName: step-94
 
 Finally, for the blue marker's `box-shadow` property, replace the named color with the `hsla` function. Use the values `223` for hue, `59%` for saturation, `31%` for lightness, and `0.8` for the alpha channel.
 
-And with that, your color markers set is complete! Well done.
+And with that, your set of colored markers is complete! Well done.
 
 # --hints--
 
