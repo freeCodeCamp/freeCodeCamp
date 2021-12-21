@@ -14,7 +14,10 @@ export function* saveChallengeSaga() {
 
   if (challengeType === challengeTypes.multiFileCertProject) {
     try {
-      const response = yield call(postSaveChallenge, { id, challengeFiles });
+      const response = yield call(postSaveChallenge, { id, files: challengeFiles.reduce(
+          (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
+          []
+        ) });
 
       if (response?.savedChallenges) {
         yield put(saveChallengeComplete(response.savedChallenges));
