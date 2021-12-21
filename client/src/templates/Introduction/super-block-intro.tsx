@@ -197,7 +197,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size={2} />
             <SuperBlockIntro superBlock={superBlock} />
-            {superBlock === 'relational-databases' && isSignedIn && (
+            {superBlock === SuperBlocks.RelationalDb && isSignedIn && (
               <WebhookToken isSuperBlockPage={true} />
             )}
             <Spacer size={2} />
