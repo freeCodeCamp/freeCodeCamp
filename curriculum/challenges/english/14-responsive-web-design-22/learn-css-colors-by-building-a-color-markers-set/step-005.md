@@ -9,7 +9,7 @@ dashedName: step-5
 
 Finally, use a `viewport` `<meta>` tag to make sure your page looks the same on all devices.
 
-Nest a self-closing `meta` element with the `head`. Give it a `name` attribute set to `viewport` and a `content` attribute set to `width=device-width, initial-scale=1.0`.
+Nest a self-closing `meta` element within the `head`. Give it a `name` attribute set to `viewport` and a `content` attribute set to `width=device-width, initial-scale=1.0`.
 
 # --hints--
 
