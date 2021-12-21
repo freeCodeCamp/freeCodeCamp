@@ -13,9 +13,9 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
     <>
       {superBlock === SuperBlocks.RespWebDesignNew && (
         <h2>
-          {t('intro:viewing-upcoming-change')}
+          {t('intro:misc-text.viewing-upcoming-change')}
           <Link className='inline' to={`/learn/`}>
-            {t('intro:go-back-to-learn')}
+            {t('intro:misc-text.go-back-to-learn')}
           </Link>
         </h2>
       )}

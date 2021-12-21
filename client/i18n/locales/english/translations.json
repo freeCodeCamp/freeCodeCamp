@@ -412,9 +412,7 @@
     "tensorflow": "Tensorflow icon",
     "database": "Database icon",
     "algorithm": "Branching nodes",
-    "magnifier": "magnifier",
-    "viewing-upcoming-change": "You are looking at an beta version of the curriculum.",
-    "go-back-to-learn": "Go back to the stable version."
+    "magnifier": "magnifier"
   },
   "aria": {
     "fcc-logo": "freeCodeCamp Logo",

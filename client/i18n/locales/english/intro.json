@@ -654,6 +654,8 @@
     "expand": "Expand courses",
     "collapse": "Collapse courses",
     "legacy-header": "Legacy Courses",
-    "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning."
+    "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
+    "viewing-upcoming-change": "You are looking at an beta version of the curriculum. ",
+    "go-back-to-learn": "Go back to the stable version."
   }
 }
