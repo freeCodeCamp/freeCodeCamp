@@ -54,7 +54,9 @@ function createChallengeNode(challenge, reporter) {
           sourceInstanceName: 'challenge'
         },
         { challenge },
-        { id: crypto.randomUUID() }
+        {
+          id: `${challenge.superBlock}/${challenge.block}/${challenge.dashedName}`
+        }
       )
     )
   );
