@@ -14,7 +14,7 @@ Next, within the `div`, add another `div` element and give it a class of `marker
 Your new `div` element should have an opening tag.
 
 ```js
-assert([...code.matchAll(/<div.*>/gi)][1]);
+assert([...code.matchAll(/<div.*?[^>]>/gi)][1]);
 ```
 
 Your new `div` element should have a closing tag.
