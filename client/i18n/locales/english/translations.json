@@ -413,8 +413,8 @@
     "database": "Database icon",
     "algorithm": "Branching nodes",
     "magnifier": "magnifier",
-    "link-to-legacy-rwd": "Looking for the old Responsive Web Design curriculum? Go <1>here</1>.",
-    "lint-to-rwd": "There is a newer version of this curriculum available <1>here</1>."
+    "viewing-upcoming-change": "You are looking at an beta version of the curriculum.",
+    "go-back-to-learn": "Go back to the stable version."
   },
   "aria": {
     "fcc-logo": "freeCodeCamp Logo",
