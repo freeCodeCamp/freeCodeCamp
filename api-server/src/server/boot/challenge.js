@@ -357,7 +357,7 @@ function saveChallenge(req, res, next) {
     id,
     lastSavedDate: Date.now(),
     files: files.map(file =>
-      pick(file, ['contents', 'fileKey', 'index', 'name', 'path', 'ext'])
+      pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext'])
     )
   };
 
