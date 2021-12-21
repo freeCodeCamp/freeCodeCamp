@@ -233,7 +233,7 @@ export function postWebhookToken(): Promise<void> {
 
 export function postSaveChallenge(body: {
   id: string;
-  challengeFiles: ChallengeFiles;
+  files: ChallengeFiles;
 }): Promise<void> {
   return post('/save-challenge', body);
 }
