@@ -412,7 +412,9 @@
     "tensorflow": "Tensorflow icon",
     "database": "Database icon",
     "algorithm": "Branching nodes",
-    "magnifier": "magnifier"
+    "magnifier": "magnifier",
+    "link-to-legacy-rwd": "Looking for the old Responsive Web Design curriculum? Go <1>here</1>.",
+    "lint-to-rwd": "There is a newer version of this curriculum available <1>here</1>."
   },
   "aria": {
     "fcc-logo": "freeCodeCamp Logo",

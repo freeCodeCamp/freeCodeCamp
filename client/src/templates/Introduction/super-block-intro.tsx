@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
 import React, { Fragment, useEffect, memo } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import { TFunction, Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
@@ -14,7 +14,7 @@ import { SuperBlocks } from '../../../../config/certification-settings';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
-import { Spacer } from '../../components/helpers';
+import { Link, Spacer } from '../../components/helpers';
 import WebhookToken from '../../components/settings/webhook-token';
 import {
   currentChallengeIdSelector,
@@ -30,7 +30,11 @@ import CertChallenge from './components/cert-challenge';
 import SuperBlockIntro from './components/super-block-intro';
 import { resetExpansion, toggleBlock } from './redux';
 
+import envData from '../../../../config/env.json';
+
 import './intro.css';
+
+const { showNewCurriculum } = envData;
 
 type FetchState = {
   pending: boolean;
@@ -196,6 +200,34 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
         <Row className='super-block-intro-page'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size={2} />
+            {superBlock === SuperBlocks.RespWebDesignNew && (
+              <h2>
+                <Trans i18nKey='intro:link-to-legacy-rwd'>
+                  Looking for the old Responsive Web Design curriculum? Go{' '}
+                  <Link
+                    className='inline'
+                    to={`/learn/${SuperBlocks.RespWebDesign}`}
+                  >
+                    here
+                  </Link>
+                  .
+                </Trans>
+              </h2>
+            )}
+            {superBlock === SuperBlocks.RespWebDesign && showNewCurriculum && (
+              <h2>
+                <Trans i18nKey='intro:link-to-rwd'>
+                  There is a newer version of this curriculum available{' '}
+                  <Link
+                    className='inline'
+                    to={`/learn/${SuperBlocks.RespWebDesignNew}`}
+                  >
+                    here
+                  </Link>
+                  .
+                </Trans>
+              </h2>
+            )}
             <SuperBlockIntro superBlock={superBlock} />
             {superBlock === SuperBlocks.RelationalDb && isSignedIn && (
               <WebhookToken isSuperBlockPage={true} />
