@@ -383,4 +383,3 @@ function getBlockNameFromPath(filePath) {
 exports.hasEnglishSource = hasEnglishSource;
 exports.parseTranslation = parseTranslation;
 exports.createChallenge = createChallenge;
-exports.createCertification = createCertification;
