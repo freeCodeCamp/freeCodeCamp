@@ -16,7 +16,7 @@ In the same `linear-gradient` function, add a hex color code with the values `11
 Your `.green` CSS rule should have a `background` property set to `linear-gradient(180deg, #55680D, #71F53E, #116C31)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.green')?.background === 'linear-gradient(rgb(85, 104, 13), rgb(113, 245, 62), rgb(17, 108, 49))');
+assert.include(['linear-gradient(rgb(85,104,13),rgb(113,245,62),rgb(17,108,49))', 'rgba(0,0,0,0)linear-gradient(rgb(85,104,13),rgb(113,245,62),rgb(17,108,49))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.green')?.getPropVal('background', true));
 ```
 
 # --seed--
