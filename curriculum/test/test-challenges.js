@@ -274,10 +274,17 @@ function populateTestsForLang({ lang, challenges, meta }) {
         return;
       }
       it(`${superBlock} should have the same order in every meta`, function () {
-        const firstOrder = getSuperOrder(filteredMeta[0].superBlock);
+        const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
+          showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+        });
         assert.isNumber(firstOrder);
         assert.isTrue(
-          filteredMeta.every(el => getSuperOrder(el.superBlock) === firstOrder),
+          filteredMeta.every(
+            el =>
+              getSuperOrder(el.superBlock, {
+                showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+              }) === firstOrder
+          ),
           'The superOrder properties are mismatched.'
         );
       });
