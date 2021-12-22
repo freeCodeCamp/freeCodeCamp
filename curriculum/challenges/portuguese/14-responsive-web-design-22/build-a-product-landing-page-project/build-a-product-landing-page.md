@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
-title: Criar uma landing page para um produto
+title: Criar uma página inicial para um produto
 challengeType: 3
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
@@ -10,9 +10,9 @@ dashedName: build-a-product-landing-page
 
 **Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/RKRbwL>.
 
-Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo e obtenha aprovação em todos os testes. Dê à página o seu próprio estilo pessoal.
+Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo e obtenha aprovação em todos os testes. Dê ao projeto o seu próprio estilo pessoal.
 
-Você pode usar HTML, JavaScript e CSS para completar este projeto. É recomendado utilizar CSS puro, pois é disso que trataram as lições até agora. É bom você adquirir alguma prática com CSS. Você pode usar Bootstrap ou SASS se quiser. Outras tecnologias (como, por exemplo, jQuery, React, Angular ou Vue) não são recomendadas para este projeto. Use-as por sua conta e risco. Outros projetos te darão uma chance de trabalhar com diferentes bibliotecas, como o React. Vamos aceitar e tentar corrigir todos os relatórios de problemas que usem a stack de tecnologias sugerida para esse projeto. Boa programação!
+Você pode usar HTML, JavaScript e CSS para completar este projeto. É recomendado utilizar CSS puro, pois é disso que trataram as lições até agora. É bom você adquirir alguma prática com CSS. Você pode usar Bootstrap ou SASS se quiser. Outras tecnologias (como, por exemplo, jQuery, React, Angular ou Vue) não são recomendadas para este projeto. Use-as por sua conta e risco. Outros projetos darão a você uma oportunidade de trabalhar com diferentes bibliotecas, como o React. Vamos aceitar e tentar corrigir todos os relatórios de problemas que usem o conjunto de tecnologias sugeridas para esse projeto. Boa programação!
 
 **História de usuário nº 1:** a página inicial do produto deve ter um elemento `header` com um `id="header"` correspondente.
 
@@ -26,7 +26,7 @@ Você pode usar HTML, JavaScript e CSS para completar este projeto. É recomenda
 
 **História de usuário nº 6:** é possível assistir a um vídeo do produto no elemento de `id="video"`.
 
-**História de usuário nº 7:** a landing page deve ter um formulário (`form`) com um `id="form"`.
+**História de usuário nº 7:** a página inicial deve ter um formulário (`form`) com um `id="form"`.
 
 **História de usuário nº 8:** dentro do formulário, deve haver um campo de entrada (`input`) com `id="email"`, onde deve ser possível digitar um endereço de e-mail.
 
@@ -46,7 +46,7 @@ Você pode usar HTML, JavaScript e CSS para completar este projeto. É recomenda
 
 Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando este modelo da CodePen</a> e, logo após, clicar em `Save` para criar seu próprio projeto. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Quando tiver terminado, envie o URL do seu projeto depois de ele haver passado em todos os testes.
+Quando você terminar, envie o URL do seu projeto depois de ele haver passado em todos os testes.
 
 # --solutions--
 

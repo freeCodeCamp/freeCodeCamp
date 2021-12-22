@@ -10,19 +10,19 @@ dashedName: build-the-game-of-life
 
 **Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/BpwMZv/>.
 
-Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**Especificação de usuário:** assim que eu chegar ao jogo, ele vai gerar aleatoriamente um tabuleiro e começar a jogar.
+**História de usuário:** assim que eu chegar ao jogo, ele vai gerar aleatoriamente um tabuleiro e começar a jogar.
 
-**Especificação de usuário:** posso iniciar e parar o tabuleiro.
+**História de usuário:** posso iniciar e parar o tabuleiro.
 
-**Especificação de usuário:** posso configurar o tabuleiro.
+**História de usuário:** posso configurar o tabuleiro.
 
-**Especificação de usuário:** posso limpar o tabuleiro.
+**História de usuário:** posso limpar o tabuleiro.
 
-**Especificação de usuário:** quando eu pressionar iniciar, o jogo vai começar.
+**História de usuário:** quando eu pressionar iniciar, o jogo vai começar.
 
-**Especificação de usuário:** cada vez que o tabuleiro muda, posso ver quantas gerações já passaram.
+**História de usuário:** cada vez que o tabuleiro muda, posso ver quantas gerações já passaram.
 
 **Dica:** aqui está uma explicação do Jogo da Vida da Conway escrito pelo próprio John Conway: <https://www.youtube.com/watch?v=E8kUJL04ELA>
 
