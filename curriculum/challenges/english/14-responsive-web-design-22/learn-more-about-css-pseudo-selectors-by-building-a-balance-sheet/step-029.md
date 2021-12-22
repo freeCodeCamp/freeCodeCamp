@@ -105,7 +105,7 @@ assert(new __helpers.CSSHelp(document).getStyle('#sheet')?.margin === 'auto');
       <div class="section">
         <p class="row total">
           <span class="name">Total</span>
-          <span>$-171</span>
+          <span>-$171</span>
           <span>$136</span>
           <span class="current">$334</span>
         </p>

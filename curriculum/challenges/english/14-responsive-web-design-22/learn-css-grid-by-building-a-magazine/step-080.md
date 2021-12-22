@@ -772,7 +772,7 @@ hr {
   } 
 }
 
-@media only screen (max-width: 420px) {
+@media only screen and (max-width: 420px) {
   .hero-title {
     font-size: 4.5rem;
   }

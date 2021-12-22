@@ -12,9 +12,7 @@ Object {
 a container directive
 :::</p>
 </section>",
-  "solutions": Array [
-    Array [],
-  ],
+  "solutions": Array [],
   "tests": Array [],
 }
 `;
@@ -43,9 +41,7 @@ Object {
 <pre><code class=\\"language-js\\">  var x = 'y';
 </code></pre>",
   },
-  "solutions": Array [
-    Array [],
-  ],
+  "solutions": Array [],
   "tests": Array [],
 }
 `;
@@ -100,9 +96,7 @@ for (let index = 0; index < array.length; index++) {
 <pre><code class=\\"language-html\\">code example 0
 </code></pre>
 </section>",
-  "solutions": Array [
-    Array [],
-  ],
+  "solutions": Array [],
   "tests": Array [
     Object {
       "testString": "// test code",
@@ -166,9 +160,7 @@ Object {
 <pre><code class=\\"language-html\\">code example 0
 </code></pre>
 </section>",
-  "solutions": Array [
-    Array [],
-  ],
+  "solutions": Array [],
   "tests": Array [
     Object {
       "testString": "// test code",
@@ -516,9 +508,7 @@ Object {
   "forumTopicId": 18276,
   "id": "bd7123c8c441eddfaeb5bdef",
   "isHidden": false,
-  "solutions": Array [
-    Array [],
-  ],
+  "solutions": Array [],
   "tests": Array [
     Object {
       "testString": "// test code",

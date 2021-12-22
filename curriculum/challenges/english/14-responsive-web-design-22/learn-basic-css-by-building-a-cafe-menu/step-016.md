@@ -20,9 +20,11 @@ assert(!code.match(/style/i));
 You should not have any CSS selectors in your HTML file.
 
 ```js
-const html = code.split('<!DOCTYPE html>')[1];
-assert(!html.includes('style'));
-assert(!html.includes('text-align'));
+(getUserInput) => {
+  const html = getUserInput('editableContents');
+  assert(!html.includes('style'));
+  assert(!html.includes('text-align'));
+}
 ```
 
 # --seed--
