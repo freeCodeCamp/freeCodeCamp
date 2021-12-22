@@ -53,7 +53,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.chin')?.borderBottomLeft
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
     <title>CSS Penguin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>

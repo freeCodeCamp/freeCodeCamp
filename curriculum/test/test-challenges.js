@@ -161,8 +161,10 @@ async function setup() {
   // as they appear in the list of challenges
   const blocks = challenges.map(({ block }) => block);
   const superBlocks = challenges.map(({ superBlock }) => superBlock);
-  const targetBlockStrings = [...new Set(blocks)];
-  const targetSuperBlockStrings = [...new Set(superBlocks)];
+  const targetBlockStrings = [...new Set(blocks.filter(el => Boolean(el)))];
+  const targetSuperBlockStrings = [
+    ...new Set(superBlocks.filter(el => Boolean(el)))
+  ];
 
   // the next few statements will filter challenges based on command variables
   if (process.env.npm_config_superblock) {

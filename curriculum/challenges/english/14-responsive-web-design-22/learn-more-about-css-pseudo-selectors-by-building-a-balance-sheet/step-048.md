@@ -105,7 +105,7 @@ assert(new __helpers.CSSHelp(document).getStyle('#header h2')?.backgroundColor =
       <div class="section">
         <p class="row total" tabindex="1">
           <span class="name">Total</span>
-          <span>$-171</span>
+          <span>-$171</span>
           <span>$136</span>
           <span class="current">$334</span>
         </p>
@@ -179,6 +179,11 @@ span[class="current"] {
 
 .row[tabindex]:hover {
   background-color: #99c9ff;
+}
+
+.row[tabindex]:focus {
+  background-color: #198eee;
+  color: white;
 }
 
 div > h2 {

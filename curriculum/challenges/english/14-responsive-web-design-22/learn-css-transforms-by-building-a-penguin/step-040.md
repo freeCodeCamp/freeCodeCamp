@@ -7,7 +7,7 @@ dashedName: step-40
 
 # --description--
 
-Give the pseudo-element a `width` half that of its parent, a `height` of `40%`, and a `background-color` of `gray`.
+Give the pseudo-element a `width` half that of its parent, a `height` of `45%`, and a `background-color` of `gray`.
 
 # --hints--
 
@@ -17,10 +17,10 @@ You should give `.penguin-body::before` a `width` of `50%`.
 assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.width, '50%');
 ```
 
-You should give `.penguin-body::before` a `height` of `40%`.
+You should give `.penguin-body::before` a `height` of `45%`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.height, '40%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.height, '45%');
 ```
 
 You should give `.penguin-body::before` a `background-color` of `--fcc-expected--`, but found `--fcc-actual--`.
@@ -38,7 +38,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin-body::before')?.
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
     <title>CSS Penguin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
