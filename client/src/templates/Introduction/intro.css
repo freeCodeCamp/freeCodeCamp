@@ -3,6 +3,11 @@
   font-size: 1.17rem;
 }
 
+.super-block-intro-page .alert p {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 .big-subheading {
   font-size: 2rem;
   overflow-wrap: break-word;

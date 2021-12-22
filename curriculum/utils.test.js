@@ -38,7 +38,7 @@ describe('getSuperOrder', () => {
   it('returns a different order if passed the option showNewCurriculum: true', () => {
     expect.assertions(13);
     expect(
-      getSuperOrder('2022/responsive-web-design', { showNewCurriculum: true })
+      getSuperOrder('responsive-web-design', { showNewCurriculum: true })
     ).toBe(0);
     expect(
       getSuperOrder('javascript-algorithms-and-data-structures', {
@@ -82,7 +82,7 @@ describe('getSuperOrder', () => {
       getSuperOrder('coding-interview-prep', { showNewCurriculum: true })
     ).toBe(11);
     expect(
-      getSuperOrder('responsive-web-design', { showNewCurriculum: true })
+      getSuperOrder('2022/responsive-web-design', { showNewCurriculum: true })
     ).toBe(12);
   });
 });
