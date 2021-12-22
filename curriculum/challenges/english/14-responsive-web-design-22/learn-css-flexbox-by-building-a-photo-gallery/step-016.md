@@ -14,7 +14,10 @@ Give your `#gallery` selector a `padding` property set to `0 4px`.
 Your `#gallery` selector should have a `padding` property set to `0 4px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#gallery')?.padding === '0px 4px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('#gallery')?.paddingTop, '0px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('#gallery')?.paddingBottom, '0px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('#gallery')?.paddingLeft, '4px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('#gallery')?.paddingRight, '4px');
 ```
 
 # --seed--
