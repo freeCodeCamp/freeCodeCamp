@@ -12,7 +12,7 @@ Add a medium divider after your `.daily-value` element. Below that new divider, 
 Give the `p` element the following text:
 
 ```
-The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
+* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
 ```
 
 # --hints--
@@ -45,7 +45,7 @@ assert(document.querySelector('.label')?.lastElementChild?.classList?.contains('
 Your new `p` element should have the provided text.
 
 ```js
-assert(document.querySelector('.label')?.lastElementChild?.innerText === 'The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.');
+assert.equal(document.querySelector('.label')?.lastElementChild?.innerText, '* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.');
 ```
 
 # --seed--
