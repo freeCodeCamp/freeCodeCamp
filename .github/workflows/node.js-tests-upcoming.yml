@@ -33,6 +33,7 @@ jobs:
         run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
       - name: Lint Source Files
@@ -66,6 +67,7 @@ jobs:
         run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
       - name: Install Dependencies

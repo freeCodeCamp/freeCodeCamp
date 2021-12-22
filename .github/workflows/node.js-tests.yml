@@ -25,7 +25,10 @@ jobs:
           cache: 'npm'
 
       - name: Set Environment variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
 
       - name: Lint Source Files
         run: |
@@ -55,7 +58,10 @@ jobs:
           cache: npm
 
       - name: Set Environment variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
 
       - name: Install Dependencies
         run: |
@@ -90,6 +96,8 @@ jobs:
         run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
 
       - name: Install Dependencies
         run: |
@@ -122,7 +130,11 @@ jobs:
           cache: npm
 
       - name: Set Environment variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
 
       - name: Install Dependencies
         env:
