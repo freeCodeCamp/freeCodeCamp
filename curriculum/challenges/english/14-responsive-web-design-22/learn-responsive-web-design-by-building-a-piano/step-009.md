@@ -36,7 +36,7 @@ assert(new __helpers.CSSHelp(document).getStyle('html')?.boxSizing === 'border-b
     <meta charset="UTF-8" />
     <title>Responsive Web Design Piano</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div id="piano">

@@ -251,5 +251,6 @@ main {
 
 .hero {
   grid-column: 1 / -1;
+  position: relative;
 }
 ```

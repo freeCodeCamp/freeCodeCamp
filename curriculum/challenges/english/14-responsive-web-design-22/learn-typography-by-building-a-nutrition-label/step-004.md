@@ -56,6 +56,7 @@ assert(links.find(link => link?.getAttribute('href') === 'https://fonts.googleap
   <body>
     <h1>Nutrition Facts</h1>
     <p>8 servings per container</p>
+    <p>Serving size 2/3 cup (55g)</p>
   </body>
 </html>
 --fcc-editable-region--

@@ -243,6 +243,7 @@ img {
 
 hr {
   margin: 1.5rem 0;
+  border: 1px solid rgba(120, 120, 120, 0.6);
 }
 
 .heading {

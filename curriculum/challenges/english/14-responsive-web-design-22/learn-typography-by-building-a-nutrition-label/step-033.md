@@ -7,7 +7,7 @@ dashedName: step-33
 
 # --description--
 
-Create a new `.calories-info h1` selector setting the top and bottom margin to `-5px`, and removing the left and right margin.
+Create a new `.calories-info h1` selector setting the top and bottom margin to `-5px`, and the left and right margin to `-2px`.
 
 # --hints--
 
@@ -17,10 +17,13 @@ You should have a new `.calories-info h1` selector.
 assert(new __helpers.CSSHelp(document).getStyle('.calories-info h1'));
 ```
 
-Your new `.calories-info h1` selector should have a `margin` property set to `-5px 0`.
+Your new `.calories-info h1` selector should have a `margin` property set to `-5px -2px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.margin === '-5px 0px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginTop, '-5px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginBottom, '-5px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginLeft, '-2px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginRight, '-2px');
 ```
 
 # --seed--

@@ -119,13 +119,13 @@ textarea,
 select {
   margin: 10px 0 0 0;
 	width: 100%;
+  min-height: 2em;
 }
 
 input, textarea {
   background-color: #0a0a23;
   border: 1px solid #0a0a23;
   color: #ffffff;
-  min-height: 2em;
 }
 
 .inline {
@@ -139,7 +139,7 @@ input[type="submit"] {
   width: 60%;
   margin: 1em auto;
   height: 2em;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   background-color: #3b3b4f;
   border-color: white;
   min-width: 300px;

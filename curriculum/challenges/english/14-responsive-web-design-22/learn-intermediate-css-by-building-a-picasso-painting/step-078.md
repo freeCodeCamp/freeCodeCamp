@@ -178,6 +178,7 @@ body {
   width: 10px;
   height: 10px;
   background-color: rgb(45, 31, 19);
+  border-radius: 50%;
   display: block;
   margin: auto;
   margin-top: 65%;
@@ -287,6 +288,7 @@ body {
   position: absolute;
   top: -40px;
   left: 20px;
+  z-index: 3;
 }
 
 #triangles {

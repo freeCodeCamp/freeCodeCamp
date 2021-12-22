@@ -50,38 +50,38 @@ assert(new __helpers.CSSHelp(document).getStyle('.note')?.margin === '5px 0px');
         <p>8 servings per container</p>
         <p class="bold">Serving size <span class="right">2/3 cup (55g)</span></p>
       </header>
-    <div class="divider lg"></div>
-    <div class="calories-info">
-      <p class="bold sm-text">Amount per serving</p>
-      <h1>Calories <span class="right">230</span></h1>
-    </div>
-    <div class="divider md"></div>
-    <div class="daily-value sm-text">
-      <p class="right bold no-divider">% Daily Value *</p>
-      <div class="divider"></div>
-      <p><span class="bold">Total Fat</span> 8g <span class="bold right">10%</span></p>
-      <p class="indent no-divider">Saturated Fat 1g <span class="bold right">5%</span></p>
-      <div class="divider"></div>
-      <p class="indent no-divider"><i>Trans</i> Fat 0g</p>
-      <div class="divider"></div>
-      <p><span class="bold">Cholesterol</span> 0mg <span class="right bold">0%</span></p>
-      <p><span class="bold">Sodium</span> 160mg <span class="right bold">7%</span></p>
-      <p><span class="bold">Total Carbohydrate</span> 37g <span class="right bold">13%</span></p>
-      <p class="indent no-divider">Dietary Fiber 4g</p>
-      <div class="divider"></div>
-      <p class="indent no-divider">Total Sugars 12g</p>
-      <div class="divider dbl-indent"></div>
-      <p class="dbl-indent no-divider">Includes 10g Added Sugars <span class="right bold">20%</span>
-      <div class="divider"></div>
-      <p class="no-divider"><span class="bold">Protein</span> 3g</p>
       <div class="divider lg"></div>
-      <p>Vitamin D 2mcg <span class="right">10%</span></p>
-      <p>Calcium 260mg <span class="right">20%</span></p>
-      <p>Iron 8mg <span class="right">45%</span></p>
-      <p class="no-divider">Potassium 235mg <span class="right">6%</span></p>
-    </div>
-    <div class="divider md"></div>
-    <p class="note">* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.</p>
+      <div class="calories-info">
+        <p class="bold sm-text">Amount per serving</p>
+        <h1>Calories <span class="right">230</span></h1>
+      </div>
+      <div class="divider md"></div>
+      <div class="daily-value sm-text">
+        <p class="right bold no-divider">% Daily Value *</p>
+        <div class="divider"></div>
+        <p><span class="bold">Total Fat</span> 8g <span class="bold right">10%</span></p>
+        <p class="indent no-divider">Saturated Fat 1g <span class="bold right">5%</span></p>
+        <div class="divider"></div>
+        <p class="indent no-divider"><i>Trans</i> Fat 0g</p>
+        <div class="divider"></div>
+        <p><span class="bold">Cholesterol</span> 0mg <span class="right bold">0%</span></p>
+        <p><span class="bold">Sodium</span> 160mg <span class="right bold">7%</span></p>
+        <p><span class="bold">Total Carbohydrate</span> 37g <span class="right bold">13%</span></p>
+        <p class="indent no-divider">Dietary Fiber 4g</p>
+        <div class="divider"></div>
+        <p class="indent no-divider">Total Sugars 12g</p>
+        <div class="divider dbl-indent"></div>
+        <p class="dbl-indent no-divider">Includes 10g Added Sugars <span class="right bold">20%</span>
+        <div class="divider"></div>
+        <p class="no-divider"><span class="bold">Protein</span> 3g</p>
+        <div class="divider lg"></div>
+        <p>Vitamin D 2mcg <span class="right">10%</span></p>
+        <p>Calcium 260mg <span class="right">20%</span></p>
+        <p>Iron 8mg <span class="right">45%</span></p>
+        <p class="no-divider">Potassium 235mg <span class="right">6%</span></p>
+      </div>
+      <div class="divider md"></div>
+      <p class="note">* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.</p>
     </div>
   </body>
 </html>

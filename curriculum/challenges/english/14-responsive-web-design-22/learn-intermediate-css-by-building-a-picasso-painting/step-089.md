@@ -186,6 +186,7 @@ body {
   width: 10px;
   height: 10px;
   background-color: rgb(45, 31, 19);
+  border-radius: 50%;
   display: block;
   margin: auto;
   margin-top: 65%;
@@ -382,7 +383,7 @@ body {
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -541,6 +542,7 @@ body {
   width: 10px;
   height: 10px;
   background-color: rgb(45, 31, 19);
+  border-radius: 50%;
   display: block;
   margin: auto;
   margin-top: 65%;

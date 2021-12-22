@@ -16,7 +16,7 @@ Congratulations! Your magazine is now complete.
 You should have a new `@media` query for `only screen and (max-width: 420px)`. This should be the last query in the `@media` query list.
 
 ```js
-assert(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.media?.mediaText === 'only screen and (max-width: 420px)');
+assert.equal(new __helpers.CSSHelp(document).getCSSRules('media')?.[3]?.media?.mediaText, 'only screen and (max-width: 420px)');
 ```
 
 Your new `@media` query should have a `.hero-title` selector.
@@ -256,6 +256,7 @@ img {
 
 hr {
   margin: 1.5rem 0;
+  border: 1px solid rgba(120, 120, 120, 0.6);
 }
 
 .heading {
@@ -404,7 +405,7 @@ hr {
 --fcc-editable-region--
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -627,6 +628,7 @@ img {
 
 hr {
   margin: 1.5rem 0;
+  border: 1px solid rgba(120, 120, 120, 0.6);
 }
 
 .heading {
@@ -770,9 +772,8 @@ hr {
   } 
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen (max-width: 420px) {
   .hero-title {
-    max-width: 420px;
     font-size: 4.5rem;
   }
 }
