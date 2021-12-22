@@ -23,7 +23,7 @@ class MongoIds {
     }
 
     const idIndex = findIndex(this.knownIds, existing => id === existing);
-    if (idIndex !== -1 && !duplicatedProjectIds.includes(idIndex)) {
+    if (idIndex !== -1 && !duplicatedProjectIds.includes(id)) {
       throw Error(`The id for challenge ${title} appears more than once.
       With the exception of duplicatedProjectIds this should not happen.
     `);
