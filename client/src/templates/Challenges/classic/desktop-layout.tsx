@@ -8,7 +8,6 @@ import {
   ResizeProps
 } from '../../../redux/prop-types';
 import ActionRow from './action-row';
-import EditorTabs from './editor-tabs';
 
 type Pane = { flex: number };
 
@@ -122,7 +121,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
 
         <ReflexElement flex={editorPane.flex} {...resizeProps}>
-          {challengeFile && !hasEditableBoundaries && <EditorTabs />}
           {challengeFile && (
             <ReflexContainer
               key={challengeFile.fileKey}

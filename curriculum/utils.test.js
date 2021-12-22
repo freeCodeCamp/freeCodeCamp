@@ -38,7 +38,7 @@ describe('getSuperOrder', () => {
   it('returns a different order if passed the option showNewCurriculum: true', () => {
     expect.assertions(13);
     expect(
-      getSuperOrder('responsive-web-design-22', { showNewCurriculum: true })
+      getSuperOrder('2022/responsive-web-design', { showNewCurriculum: true })
     ).toBe(0);
     expect(
       getSuperOrder('javascript-algorithms-and-data-structures', {

@@ -5,7 +5,7 @@ const { showNewCurriculum } = envData;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
-const responsiveWeb22Base = '/learn/responsive-web-design-22';
+const responsiveWeb22Base = '/learn/2022/responsive-web-design';
 const jsAlgoBase =
   '/learn/javascript-algorithms-and-data-structures/' +
   'javascript-algorithms-and-data-structures-projects';

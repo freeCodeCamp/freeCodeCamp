@@ -63,100 +63,145 @@
           "Hora de colocar suas novas habilidades aprendidas para funcionar. Ao trabalhar nestes projetos, você terá a oportunidade de aplicar todas as competências, princípios e conceitos que você aprendeu até agora: HTML, CSS, Visual Design, Acessibilidade e muito mais.",
           "Conclua os cinco projetos de programação web abaixo para ganhar a sua Certificação de Design responsivo para a web."
         ]
+      }
+    }
+  },
+  "responsive-web-design-22": {
+    "title": "Responsive Web Design",
+    "intro": [
+      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
+      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
+      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+    ],
+    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "blocks": {
+      "build-a-tribute-page-project": {
+        "title": "Build a Tribute Page Project",
+        "intro": [
+          "placeholder",
+          "holder of place"
+        ]
+      },
+      "build-a-personal-portfolio-webpage-project": {
+        "title": "Build a Personal Portfolio Webpage Project",
+        "intro": [
+          "placeholder",
+          "holder of place"
+        ]
+      },
+      "build-a-product-landing-page-project": {
+        "title": "Build a Product Landing Page Project",
+        "intro": [
+          "placeholder",
+          "holder of place"
+        ]
+      },
+      "build-a-survey-form-project": {
+        "title": "Build a Survey Form Project",
+        "intro": [
+          "placeholder",
+          "holder of place"
+        ]
+      },
+      "build-a-technical-documentation-page-project": {
+        "title": "Build a Technical Documentation Page Project",
+        "intro": [
+          "placeholder",
+          "holder of place"
+        ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "Aprenda HTML criando um aplicativo de fotos de gatos",
+        "title": "Learn HTML by Building a Cat Photo App",
         "intro": [
-          "",
-          ""
+          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
+          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "Aprenda CSS básico criando um menu de restaurante",
+        "title": "Learn Basic CSS by Building a Cafe Menu",
         "intro": [
-          "",
-          ""
+          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
+          "In this course, you'll learn CSS by designing a menu page for a cafe webpage."
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Aprenda o box model do CSS criando uma pintura de Rothko",
+        "title": "Learn the CSS Box Model by Building a Rothko Painting",
         "intro": [
-          "Mark Rothko era conhecido por seu estilo abstrato de pintura. As pinturas de Rothko geralmente retratavam regiões retangulares coloridas em tamanhos variados.",
-          "Nesta lição, você usará o CSS para criar sua própria pintura no estilo de Rothko. Você usará muitas das habilidades que você já está praticando, bem como novas ferramentas do CSS como o desfoque (blur) e a transformação (transform)."
+          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
+          "In this course, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "Aprenda variáveis em CSS criando o horizonte em uma cidade",
+        "title": "Learn CSS Variables by Building a City Skyline",
         "intro": [
-          "",
-          ""
+          "CSS variables help you organize your styles and reuse them.",
+          "In this course, you'll build a city skyline. You'll learn how to configure CSS variables so you can reuse them whenever you want."
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "Aprenda formulários em HTML criando um formulário de registro",
+        "title": "Learn HTML Forms by Building a Registration Form",
         "intro": [
-          "",
-          ""
+          "You can use HTML forms to collect information from people who visit your webpage.",
+          "In this course, you'll learn HTML forms by building a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "Aprenda acessibilidade criando um questionário",
+        "title": "Learn Accessibility by Building a Quiz",
         "intro": [
-          "",
-          ""
+          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
+          "In this course, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "Aprenda CSS intermediário criando uma pintura de Picasso",
+        "title": "Learn Intermediate CSS by Building a Picasso Painting",
         "intro": [
-          "Pablo Picasso era conhecido pelo seu estilo de pintura, o Cubismo, um estilo reconhecido por representações de objetos divididos e remontados a partir de múltiplas perspectivas. As pinturas de Picasso costumam ser altamente abstratas e instigantes.",
-          "Neste curso, você usará o CSS para criar sua própria pintura no estilo de Picasso. Você aprenderá sobre os ícones SVG do FontAwesome, posicionamento em CSS e reforçará as habilidades que você já aprendeu."
+          "In this course, you'll use learn some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Aprenda design responsivo para a web criando um piano",
+        "title": "Learn Responsive Web Design by Building a Piano",
         "intro": [
-          "",
-          ""
+          "Responsive Design tells your webpage how it should look on different-sized screens.",
+          "In this course, you'll use CSS and Responsive Design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "Aprenda CSS Flexbox criando uma galeria de fotos",
+        "title": "Learn CSS Flexbox by Building a Photo Gallery",
         "intro": [
-          "",
-          ""
+          "Flexbox helps you design your webpage so that it looks good on any screen size.",
+          "In this course, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Aprenda sobre CSS Grid criando uma revista",
+        "title": "Learn CSS Grid by Building a Magazine",
         "intro": [
-          "",
-          ""
+          "CSS Grid gives you control over the rows and columns of your webpage design.",
+          "In this course, you'll build a magazine article. You'll learn how to use CSS Grid, including concepts like grid rows and grid columns."
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "Aprenda tipografia criando um rótulo nutricional",
+        "title": "Learn Typography by Building a Nutrition Label",
         "intro": [
-          "",
-          ""
+          "Typography is the art of styling your text to be easily readable and suit its purpose.",
+          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
-        "title": "Aprenda transformações em CSS criando um pinguim",
+        "title": "Learn CSS Transforms by Building a Penguin",
         "intro": [
           "",
           ""
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
-        "title": "Aprenda animação em CSS construindo uma roda gigante",
+        "title": "Learn CSS Animation by Building a Ferris Wheel",
         "intro": [
-          "",
-          ""
+          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
+          "In this course, you'll build a Ferris wheel. You'll learn how to use CSS to animate elements, transform them, and adjust their speed."
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Saiba mais sobre os pseudosseletores em CSS criando uma folha de saldo",
+        "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
         "intro": [
           "",
           ""
@@ -632,7 +677,9 @@
     "browse-other": "Navegue por nossas outras certificações gratuitas\n(recomendamos fazer isto em sequência)",
     "courses": "Cursos",
     "steps": "Passos",
-    "expand": "Expandir",
-    "collapse": "Recolher"
+    "expand": "Expand courses",
+    "collapse": "Collapse courses",
+    "legacy-header": "Legacy Courses",
+    "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning."
   }
 }
