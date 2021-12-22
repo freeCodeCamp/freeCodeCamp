@@ -66,145 +66,152 @@
       }
     }
   },
-  "responsive-web-design-22": {
-    "title": "Responsive Web Design",
+  "2022/responsive-web-design": {
+    "title": "Design responsivo para a web",
     "intro": [
-      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+      "Nessa certificação de Design responsivo para a web, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
+      "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um formulário web.",
+      "Finalmente, você vai aprender a fazer páginas web que respondem a diferentes tamanhos de telas construindo um card do Twitter com Flexbox, e um layout complexo de blog com o CSS Grid."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e extensões de modo escuro podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem o conteúdo ou o layout das páginas durante o curso.",
     "blocks": {
       "build-a-tribute-page-project": {
-        "title": "Build a Tribute Page Project",
+        "title": "Projeto de criar uma página de homenagem",
         "intro": [
-          "placeholder",
-          "holder of place"
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma página de tributo para alguém de sua escolha, fictício ou real."
         ]
       },
       "build-a-personal-portfolio-webpage-project": {
-        "title": "Build a Personal Portfolio Webpage Project",
+        "title": "Projeto de criar uma página de portfólio pessoal",
         "intro": [
-          "placeholder",
-          "holder of place"
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará sua própria página pessoal de portfólio."
         ]
       },
       "build-a-product-landing-page-project": {
-        "title": "Build a Product Landing Page Project",
+        "title": "Projeto de criar uma página inicial para um produto",
         "intro": [
-          "placeholder",
-          "holder of place"
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma página inicial de produto para comercializar um produto de sua escolha."
         ]
       },
       "build-a-survey-form-project": {
-        "title": "Build a Survey Form Project",
+        "title": "Projeto de criar um formulário de pesquisa",
         "intro": [
-          "placeholder",
-          "holder of place"
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará um formulário de pesquisa para coletar dados de seus usuários."
         ]
       },
       "build-a-technical-documentation-page-project": {
-        "title": "Build a Technical Documentation Page Project",
+        "title": "Projeto de criar uma página de documentação técnica",
         "intro": [
-          "placeholder",
-          "holder of place"
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma página de documentação técnica para servir como instrução ou referência para um tópico."
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "Learn HTML by Building a Cat Photo App",
+        "title": "Aprenda HTML criando um aplicativo de fotos de gatos",
         "intro": [
-          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
-          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
+          "Tags HTML dão a uma página web sua estrutura. Você pode usar tags HTML para adicionar fotos, botões e outros elementos à sua página da web.",
+          "Neste curso, você vai aprender as tags HTML mais comuns criando o seu próprio aplicativo de fotos de gatos."
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "Learn Basic CSS by Building a Cafe Menu",
+        "title": "Aprenda CSS básico criando um menu de restaurante",
         "intro": [
-          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
-          "In this course, you'll learn CSS by designing a menu page for a cafe webpage."
+          "O CSS informa ao navegador como exibir sua página da web. Você pode usar o CSS para definir cor, fonte, tamanho e outros aspectos dos elementos HTML.",
+          "Neste curso, você aprenderá CSS criando uma página de menu para uma página da web para um café."
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Learn the CSS Box Model by Building a Rothko Painting",
+        "title": "Aprenda o box model do CSS criando uma pintura de Rothko",
         "intro": [
-          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
-          "In this course, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+          "Cada elemento HTML é uma caixa própria, com seu próprio espaçamento e borda. A isso chamamos de Modelo de Caixa, ou Box Model.",
+          "Nesse curso, você usará o CSS e o Box Model para criar suas próprias obras de arte retangulares ao estilo de Rothko."
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "Learn CSS Variables by Building a City Skyline",
+        "title": "Aprenda variáveis em CSS criando o horizonte em uma cidade",
         "intro": [
-          "CSS variables help you organize your styles and reuse them.",
-          "In this course, you'll build a city skyline. You'll learn how to configure CSS variables so you can reuse them whenever you want."
+          "As variáveis CSS ajudam você a organizar seus estilos e a reutilizá-los.",
+          "Neste curso, você vai construir um céu na cidade. Você vai aprender como configurar variáveis CSS para que você possa reutilizá-las quando quiser."
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "Learn HTML Forms by Building a Registration Form",
+        "title": "Aprenda formulários em HTML criando um formulário de registro",
         "intro": [
-          "You can use HTML forms to collect information from people who visit your webpage.",
-          "In this course, you'll learn HTML forms by building a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+          "Você pode usar formulários HTML para coletar informações de pessoas que visitam sua página da web.",
+          "Neste curso, você aprenderá formulários HTML construindo uma página de cadastro. Você aprenderá como controlar quais tipos de dados as pessoas podem digitar em seu formulário e algumas novas ferramentas CSS para estilizar sua página."
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "Learn Accessibility by Building a Quiz",
+        "title": "Aprenda acessibilidade criando um questionário",
         "intro": [
-          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
-          "In this course, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+          "A acessibilidade facilita a utilização da sua página da web para todos – mesmo para as pessoas com deficiência.",
+          "Neste curso, você vai criar um questionário na página. Você aprenderá ferramentas de acessibilidade, como atalhos de teclado, atributos ARIA e melhores práticas."
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "Learn Intermediate CSS by Building a Picasso Painting",
+        "title": "Aprenda CSS intermediário criando uma pintura de Picasso",
         "intro": [
-          "In this course, you'll use learn some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
+          "Neste curso, você vai aprender algumas técnicas de CSS intermediárias programando sua própria página de uma pintura de Picasso. Você vai aprender sobre ícones SVG, posicionamento em CSS e revisar outras habilidades CSS que você aprendeu."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Learn Responsive Web Design by Building a Piano",
+        "title": "Aprenda design responsivo para a web criando um piano",
         "intro": [
-          "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this course, you'll use CSS and Responsive Design to code a piano. You'll also learn more about media queries and pseudo selectors."
+          "O design responsivo diz à sua página da web como ela deve ficar em telas de tamanho diferente.",
+          "Neste curso, você vai usar o Design Responsivo e o CSS para codificar um piano. Você também vai aprender mais sobre consultas de mídia e pseudosseletores."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "Learn CSS Flexbox by Building a Photo Gallery",
+        "title": "Aprenda CSS Flexbox criando uma galeria de fotos",
         "intro": [
-          "Flexbox helps you design your webpage so that it looks good on any screen size.",
-          "In this course, you'll use Flexbox to build a responsive photo gallery webpage."
+          "O Flexbox ajuda você a projetar sua página da web para que fique bem em qualquer tamanho de tela.",
+          "Neste curso, você vai usar o Flexbox para construir uma página da galeria de fotos responsiva."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Learn CSS Grid by Building a Magazine",
+        "title": "Aprenda sobre CSS Grid criando uma revista",
         "intro": [
-          "CSS Grid gives you control over the rows and columns of your webpage design.",
-          "In this course, you'll build a magazine article. You'll learn how to use CSS Grid, including concepts like grid rows and grid columns."
+          "O CSS Grid dá a você o controle sobre as linhas e colunas do seu design de página da web.",
+          "Neste curso, você vai construir um artigo de revista. Você aprenderá a usar o CSS Grid, incluindo conceitos como linhas e colunas de grade."
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "Learn Typography by Building a Nutrition Label",
+        "title": "Aprenda tipografia criando um rótulo nutricional",
         "intro": [
-          "Typography is the art of styling your text to be easily readable and suit its purpose.",
-          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS."
+          "A tipografia é a arte de estilizar seu texto para ser facilmente legível e adequado ao seu propósito.",
+          "Neste curso, você usará a tipografia para construir uma página da web de rótulo nutricional. Você aprenderá como estilizar texto, ajustar a altura da linha e posicionar seu texto usando CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
-        "title": "Learn CSS Transforms by Building a Penguin",
+        "title": "Aprenda transformações em CSS criando um pinguim",
         "intro": [
-          "",
-          ""
+          "Você pode transformar elementos HTML para criar projetos atraentes que chamam a atenção do seu leitor. Você pode usar transformações para girar elementos, dimensionar e muito mais.",
+          "Neste curso, você criará um pinguim. Você usará transformações em CSS para posicionar e redimensionar as partes do seu pinguim, criar um plano de fundo e animar o seu trabalho."
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
-        "title": "Learn CSS Animation by Building a Ferris Wheel",
+        "title": "Aprenda animação em CSS construindo uma roda gigante",
         "intro": [
-          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
-          "In this course, you'll build a Ferris wheel. You'll learn how to use CSS to animate elements, transform them, and adjust their speed."
+          "Você pode usar a animação em CSS para chamar a atenção para seções específicas da sua página e torná-la mais envolvente.",
+          "Neste curso, você vai construir uma roda-gigante. Você vai aprender como usar o CSS para animar elementos, transformá-los e ajustar sua velocidade."
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
+        "title": "Saiba mais sobre os pseudosseletores em CSS criando uma folha de saldo",
         "intro": [
-          "",
-          ""
+          "Você pode usar pseudosseletores em CSS para alterar elementos HTML específicos.",
+          "Neste curso, você criará uma folha de balanço usando pseudosseletores. Você aprenderá como alterar o estilo de um elemento ao passar o mouse sobre ele e acionar outros eventos em sua página da web."
+        ]
+      },
+      "learn-css-colors-by-building-a-set-of-colored-markers": {
+        "title": "Aprenda cores em CSS criando um conjunto de marcadores coloridos",
+        "intro": [
+          "Selecionar as cores corretas para sua página da web pode melhorar muito o apelo estético para os seus leitores.",
+          "Neste curso, você criará um conjunto de marcadores coloridos. Você aprenderá maneiras diferentes de definir valores de cores e como combinar cores uma com a outra."
         ]
       }
     }
@@ -677,9 +684,9 @@
     "browse-other": "Navegue por nossas outras certificações gratuitas\n(recomendamos fazer isto em sequência)",
     "courses": "Cursos",
     "steps": "Passos",
-    "expand": "Expand courses",
-    "collapse": "Collapse courses",
-    "legacy-header": "Legacy Courses",
-    "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning."
+    "expand": "Expandir cursos",
+    "collapse": "Recolher cursos",
+    "legacy-header": "Cursos anteriores",
+    "legacy-desc": "Estes cursos não fazem mais parte do caminho de certificação, mas ainda estão disponíveis para você continuar aprendendo."
   }
 }
