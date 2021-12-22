@@ -1,6 +1,7 @@
 - **Getting Started**
   - [Introduction](index.md 'Contribute to the freeCodeCamp.org Community')
   - [Frequently Asked Questions](FAQ.md)
+  - [Reporting a Vulnerability](security.md)
 - **Translation Contribution**
   - [Work on translating resources](how-to-translate-files.md)
   - [Work on proofreading translations](how-to-proofread-files.md)
