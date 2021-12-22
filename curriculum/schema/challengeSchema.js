@@ -4,6 +4,7 @@ Joi.objectId = require('joi-objectid')(Joi);
 const { challengeTypes } = require('../../client/utils/challenge-types');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
+const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
 
 const fileJoi = Joi.object().keys({
   fileKey: Joi.string(),
@@ -91,7 +92,7 @@ const schema = Joi.object()
       })
     ),
     solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
-    superBlock: Joi.string().regex(slugRE),
+    superBlock: Joi.string().regex(slugWithSlashRE),
     superOrder: Joi.number(),
     suborder: Joi.number(),
     tests: Joi.array().items(
