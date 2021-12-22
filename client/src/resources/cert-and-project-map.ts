@@ -729,8 +729,7 @@ function getResponsiveWebDesignPath(
   project: string,
   { showNewCurriculum }: { showNewCurriculum: boolean }
 ) {
-  // TODO: for the hard launch, we'll want to use this showUpcomingChanges or
-  // not
+  // TODO: for the hard launch, the conditional should just be `showNewCurriculum`
   return showNewCurriculum && showUpcomingChanges
     ? `${responsiveWeb22Base}/${project}-project/${project}`
     : `${responsiveWebBase}/${project}/`;
