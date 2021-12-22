@@ -36,7 +36,7 @@ const superBlockToOrder = {
 };
 
 const superBlockToNewOrder = {
-  'responsive-web-design-22': 0,
+  '2022/responsive-web-design': 0,
   'javascript-algorithms-and-data-structures': 1,
   'front-end-development-libraries': 2,
   'data-visualization': 3,

@@ -25,7 +25,6 @@ interface FetchState {
 }
 
 interface User {
-  email: string;
   name: string;
   username: string;
   completedChallengeCount: number;
@@ -66,7 +65,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 function LearnPage({
   isSignedIn,
-  user,
   fetchState: { pending, complete },
   user: { name = '', completedChallengeCount = 0 },
   executeGA,
@@ -99,7 +97,6 @@ function LearnPage({
             <Intro
               complete={complete}
               completedChallengeCount={completedChallengeCount}
-              email={user.email}
               isSignedIn={isSignedIn}
               name={name}
               onAlertClick={onAlertClick}
