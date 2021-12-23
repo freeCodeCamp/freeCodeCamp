@@ -66,7 +66,7 @@ function Challenges({
                 challenge.isCompleted ? 'challenge-completed' : ''
               }`}
             >
-              {isGridMap ? i + 1 : challenge.title}
+              { i + 1 }
             </Link>
           ) : (
             <Link
