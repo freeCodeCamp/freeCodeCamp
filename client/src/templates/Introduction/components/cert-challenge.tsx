@@ -118,7 +118,6 @@ const CertChallenge = ({
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
-  console.log(currentCerts, isCertified);
   return (
     <div className='block'>
       {isSignedIn && (
