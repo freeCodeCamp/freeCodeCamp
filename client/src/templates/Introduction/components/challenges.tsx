@@ -84,7 +84,7 @@ function Challenges({
     </ul>
   ) : (
     <ul className={`map-challenges-ul`}>
-      {[...challengesWithCompleted].map(challenge => (
+      {challengesWithCompleted.map(challenge => (
         <li
           className={`map-challenge-title ${
             isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
