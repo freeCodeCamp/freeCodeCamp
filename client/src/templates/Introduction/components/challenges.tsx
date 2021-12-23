@@ -66,7 +66,7 @@ function Challenges({
                 challenge.isCompleted ? 'challenge-completed' : ''
               }`}
             >
-              { i + 1 }
+              {i + 1}
             </Link>
           ) : (
             <Link

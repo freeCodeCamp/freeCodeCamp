@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { SuperBlocks } from '../../../../../config/certification-settings';
 
 import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
@@ -44,7 +45,7 @@ interface BlockProps {
   completedChallengeIds: string[];
   executeGA: typeof executeGA;
   isExpanded: boolean;
-  superBlock: string;
+  superBlock: SuperBlocks;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
 }

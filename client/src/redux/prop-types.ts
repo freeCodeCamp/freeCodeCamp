@@ -139,7 +139,7 @@ export type ChallengeWithCompletedNode = {
   id: string;
   isCompleted: boolean;
   order: number;
-  superBlock: SuperBlocks
+  superBlock: SuperBlocks;
   title: string;
 };
 
