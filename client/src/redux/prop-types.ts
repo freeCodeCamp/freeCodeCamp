@@ -129,6 +129,20 @@ export interface VideoLocaleIds {
   portuguese?: string;
 }
 
+export type ChallengeWithCompletedNode = {
+  block: string;
+  challengeType: number;
+  dashedName: string;
+  fields: {
+    slug: string;
+  };
+  id: string;
+  isCompleted: boolean;
+  order: number;
+  superBlock: SuperBlocks;
+  title: string;
+};
+
 export type ChallengeNode = {
   challenge: {
     block: string;

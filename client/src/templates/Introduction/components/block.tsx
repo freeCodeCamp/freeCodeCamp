@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { SuperBlocks } from '../../../../../config/certification-settings';
 
 import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
@@ -15,7 +16,7 @@ import { completedChallengesSelector, executeGA } from '../../../redux';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import Challenges from './Challenges';
+import Challenges from './challenges';
 
 const { curriculumLocale } = envData;
 
@@ -44,7 +45,7 @@ interface BlockProps {
   completedChallengeIds: string[];
   executeGA: typeof executeGA;
   isExpanded: boolean;
-  superBlock: string;
+  superBlock: SuperBlocks;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
 }
@@ -167,6 +168,7 @@ export class Block extends Component<BlockProps> {
           <Challenges
             challengesWithCompleted={challengesWithCompleted}
             isProjectBlock={isProjectBlock}
+            superBlock={superBlock}
           />
         </div>
       </ScrollableAnchor>
@@ -214,6 +216,7 @@ export class Block extends Component<BlockProps> {
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
+              superBlock={superBlock}
             />
           )}
         </div>
