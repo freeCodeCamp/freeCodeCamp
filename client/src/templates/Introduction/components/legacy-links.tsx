@@ -16,7 +16,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
         <Alert bsStyle='info'>
           <p>
             {t('intro:misc-text.viewing-upcoming-change')}{' '}
-            <Link sameTab={false} to={`/learn/`}>
+            <Link sameTab={false} to={`/learn/responsive-web-design`}>
               {t('intro:misc-text.go-back-to-learn')}
             </Link>
           </p>
