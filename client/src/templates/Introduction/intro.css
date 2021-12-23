@@ -229,12 +229,31 @@ button.map-title {
   padding: 10px 15px;
 }
 
+.map-challenges-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.map-challenge-title-grid {
+  flex: 0 1 60px;
+}
+.map-challenges-grid .map-project-wrap {
+  flex: 1 1 100px;
+}
+.map-challenge-title-grid a.map-grid-item {
+  margin: 5px 0px;
+  justify-content: center;
+}
+
 .block-description {
   padding: 18px 0;
 }
 
 .block-description > p:last-child {
   margin-bottom: 0;
+}
+
+.challenge-completed {
+  background: var(--highlight-background);
 }
 
 @media screen and (max-width: 500px) {
