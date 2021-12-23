@@ -19,7 +19,7 @@ interface Challenges {
   challengesWithCompleted: ChallengeWithCompletedNode[];
   executeGA: (payload: ExecuteGaArg) => void;
   isProjectBlock: boolean;
-  superBlock: string;
+  superBlock: SuperBlocks;
 }
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
