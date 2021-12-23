@@ -18,6 +18,7 @@ export const certTypes = {
 };
 
 export enum SuperBlocks {
+  RespWebDesignNew = '2022/responsive-web-design',
   RespWebDesign = 'responsive-web-design',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
   FrontEndDevLibs = 'front-end-development-libraries',

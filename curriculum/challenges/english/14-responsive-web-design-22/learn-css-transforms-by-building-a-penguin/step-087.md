@@ -44,7 +44,7 @@ assert.include(['linear-gradient(90deg,gray,rgb(209,210,199))', 'rgba(0,0,0,0)li
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
     <title>CSS Penguin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>

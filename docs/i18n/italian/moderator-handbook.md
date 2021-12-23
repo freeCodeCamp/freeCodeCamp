@@ -174,7 +174,7 @@ I moderatori del forum possono cancellare i post degli utenti. Dovresti farlo so
 
 Al primo post di spam di un utente, mandagli un messaggio spiegando il problema e rimuovi il link o il post come appropriato. Lascia una nota sul profilo dell'utente spiegando le azioni che hai intrapreso. Se il problema persiste, allora impedisci tranquillamente all'utente di postare (usando l'opzione silenzia sul pannello Amministratore Utente). Manda all'utente un avvertimento con il Codice di Condotta. Spunta la casella nel messaggio privato che indica che il tuo messaggio è un "ammonimento formale."
 
-Puoi fare domande e riportare incidenti sulla [sezione staff del forum](https://forum.freecodecamp.com/c/staff).
+As a moderator, you can ask questions and report incidents in the [staff forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
 ### Affrontare conversazioni off-topic
 

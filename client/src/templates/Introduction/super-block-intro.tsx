@@ -27,6 +27,7 @@ import {
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
+import LegacyLinks from './components/legacy-links';
 import SuperBlockIntro from './components/super-block-intro';
 import { resetExpansion, toggleBlock } from './redux';
 
@@ -196,8 +197,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
         <Row className='super-block-intro-page'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size={2} />
+            <LegacyLinks superBlock={superBlock} />
             <SuperBlockIntro superBlock={superBlock} />
-            {superBlock === 'relational-databases' && isSignedIn && (
+            {superBlock === SuperBlocks.RelationalDb && isSignedIn && (
               <WebhookToken isSuperBlockPage={true} />
             )}
             <Spacer size={2} />

@@ -1,7 +1,7 @@
 import { SuperBlocks } from '../../../config/certification-settings';
 import envData from '../../../config/env.json';
 
-const { showNewCurriculum } = envData;
+const { showNewCurriculum, showUpcomingChanges } = envData;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
@@ -729,7 +729,8 @@ function getResponsiveWebDesignPath(
   project: string,
   { showNewCurriculum }: { showNewCurriculum: boolean }
 ) {
-  return showNewCurriculum
+  // TODO: for the hard launch, the conditional should just be `showNewCurriculum`
+  return showNewCurriculum && showUpcomingChanges
     ? `${responsiveWeb22Base}/${project}-project/${project}`
     : `${responsiveWebBase}/${project}/`;
 }

@@ -7,7 +7,7 @@ dashedName: step-23
 
 # --description--
 
-Within your `.image-wrapper` element, give the second `img` element a `src` of `https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png`, an `alt` of `image of the calculator project`, a `loading` attribute set to `lazy`, a `class` set to `image-2`, a `width` attribute set to `400`, and a `height` attribute set to `400`.
+Within your `.image-wrapper` element, give the second `img` element a `src` of `https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png`, an `alt` of `image of a calculator project`, a `loading` attribute set to `lazy`, a `class` set to `image-2`, a `width` attribute set to `400`, and a `height` attribute set to `400`.
 
 # --hints--
 
@@ -17,10 +17,10 @@ Your second `img` element should have a `src` set to `https://cdn.freecodecamp.o
 assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('src') === 'https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png');
 ```
 
-Your second `img` element should have an `alt` set to `image of the calculator project`.
+Your second `img` element should have an `alt` set to `image of a calculator project`.
 
 ```js
-assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('alt') === 'image of the calculator project');
+assert(document.querySelectorAll('.image-wrapper img')?.[1]?.getAttribute('alt') === 'image of a calculator project');
 ```
 
 Your second `img` element should have a `loading` attribute set to `lazy`.

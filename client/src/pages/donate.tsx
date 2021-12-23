@@ -26,7 +26,7 @@ import {
   isAVariantSelector
 } from '../redux';
 
-interface ExecuteGaArg {
+export interface ExecuteGaArg {
   type: string;
   data: {
     category: string;

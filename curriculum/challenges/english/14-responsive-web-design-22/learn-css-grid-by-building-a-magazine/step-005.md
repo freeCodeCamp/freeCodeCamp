@@ -56,7 +56,7 @@ assert(document.querySelector('p')?.className === 'hero-subtitle');
 Your `p` element should have the text set to `Our efforts to restructure our curriculum with a more project-based focus`.
 
 ```js
-assert(document.querySelector('p')?.textContent === 'Our efforts to restructure our curriculum with a more project-based focus');
+assert.equal(document.querySelector('p')?.textContent?.trim()?.replace(/\s{2,}/, ' '), 'Our efforts to restructure our curriculum with a more project-based focus');
 ```
 
 # --seed--

@@ -10,15 +10,15 @@ dashedName: build-a-nightlife-coordination-app
 
 Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <https://yoyo44.herokuapp.com/>. Use um construtor de site de sua escolha para completar o projeto.
 
-Aqui estão as especificações de usuário que você deve implementar para este projeto:
+Aqui estão as histórias de usuário que você deve implementar para este projeto:
 
-**Especificação de usuário:** como usuário não autenticado, você pode visualizar todas as barras da minha área.
+**História de usuário:** como usuário não autenticado, você pode visualizar todas as barras da minha área.
 
-**Especificação de usuário:** como usuário autenticado, você pode me adicionar a um bar para indicar que eu estarei lá esta noite.
+**História de usuário:** como usuário autenticado, você pode me adicionar a um bar para indicar que eu estarei lá esta noite.
 
-**Especificação de usuário:** como usuário autenticado, você pode me remover de um bar para indicar que eu não quero mais ir lá.
+**História de usuário:** como usuário autenticado, você pode me remover de um bar para indicar que eu não quero mais ir lá.
 
-**Especificação de usuário:** como um usuário não autenticado, quando você faz o login, você não deve ter que pesquisar novamente.
+**História de usuário:** como um usuário não autenticado, quando você faz o login, você não deve ter que pesquisar novamente.
 
 **Dica:** tente usar a [API da Yelp](https://www.yelp.com/developers/documentation/v3) para encontrar estabelecimentos que os usuários pesquisam nas cidades. Se você usar a API da Yelp, certifique-se de mencionar isso na aplicação.
 

@@ -81,6 +81,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 0 4px;
 }
 
 --fcc-editable-region--

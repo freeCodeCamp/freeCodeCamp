@@ -42,7 +42,7 @@ assert(logo?.style.width === '150px');
   </head>
   <body>
     <div id="piano">
-      <img class="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
+      <img class="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freeCodeCamp Logo" />
       <div class="keys">
         <div class="key"></div>
         <div class="key black--key"></div>

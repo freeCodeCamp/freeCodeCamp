@@ -14,7 +14,10 @@ These dots are just a little too square. Give the `black-dot` class a `border-ra
 Your `.black-dot` selector should have a `border-radius` property set to `50%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.black-dot')?.borderRadius === '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.black-dot')?.borderTopLeftRadius, '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.black-dot')?.borderTopRightRadius, '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.black-dot')?.borderBottomRightRadius, '50%');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.black-dot')?.borderBottomLeftRadius, '50%');
 ```
 
 # --seed--

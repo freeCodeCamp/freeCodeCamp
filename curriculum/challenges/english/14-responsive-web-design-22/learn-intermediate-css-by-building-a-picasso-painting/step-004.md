@@ -17,7 +17,7 @@ You should add another `link` element.
 
 ```js
 // We set this to 1 because the CSS link is stripped from the code by our parser.
-assert(document.querySelectorAll('link').length === 2);
+assert(document.querySelectorAll('link').length === 1);
 ```
 
 Your `link` element should have a `rel` of `stylesheet`.
@@ -30,7 +30,7 @@ Your `link` element should have an `href` of
 `https://use.fontawesome.com/releases/v5.8.2/css/all.css`.
 
 ```js
-assert(document.querySelectorAll('link')?.[1]?.getAttribute('href') === 'https://use.fontawesome.com/releases/v5.8.2/css/all.css')
+assert(document.querySelectorAll('link')?.[0]?.getAttribute('href') === 'https://use.fontawesome.com/releases/v5.8.2/css/all.css')
 ```
 
 # --seed--

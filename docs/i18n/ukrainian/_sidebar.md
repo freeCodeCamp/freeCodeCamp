@@ -1,6 +1,7 @@
 - **Початок роботи**
   - [Вступ](index.md "Зробіть свій внесок у спільноту freeCodeCamp.org")
   - [Поширені питання](FAQ.md)
+  - [Reporting a Vulnerability](security.md)
 - **Внесок у переклад**
   - [Робота над перекладом матеріалів](how-to-translate-files.md)
   - [Робота над вичиткою перекладів](how-to-proofread-files.md)

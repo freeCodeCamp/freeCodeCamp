@@ -7,14 +7,14 @@ dashedName: step-76
 
 # --description--
 
-Position the `div` with the heart emoji `11.5px` from the top, and `12px` from the left of its parent.
+Position the `div` with the heart emoji `22.5px` from the top, and `12px` from the left of its parent.
 
 # --hints--
 
 You should give `.shirt div` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt div')?.top, '11.5px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt div')?.top, '22.5px');
 ```
 
 You should give `.shirt div` a `left` of `--fcc-expected--`, but found `--fcc-actual--`.
@@ -32,7 +32,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.shirt div')?.left, '12px
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
     <title>CSS Penguin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>

@@ -36,7 +36,7 @@ const superBlockToOrder = {
 };
 
 const superBlockToNewOrder = {
-  '2022/responsive-web-design': 0,
+  'responsive-web-design': 0,
   'javascript-algorithms-and-data-structures': 1,
   'front-end-development-libraries': 2,
   'data-visualization': 3,
@@ -48,7 +48,7 @@ const superBlockToNewOrder = {
   'information-security': 9,
   'machine-learning-with-python': 10,
   'coding-interview-prep': 11,
-  'responsive-web-design': 12
+  '2022/responsive-web-design': 12
 };
 
 function getSuperOrder(

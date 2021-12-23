@@ -1,6 +1,7 @@
 - **はじめに**
   - [イントロダクション](index.md "freeCodeCamp.org コミュニティに貢献する")
   - [よくある質問](FAQ.md)
+  - [Reporting a Vulnerability](security.md)
 - **翻訳のコントリビューション**
   - [リソースを翻訳する](how-to-translate-files.md)
   - [翻訳を校正する](how-to-proofread-files.md)
