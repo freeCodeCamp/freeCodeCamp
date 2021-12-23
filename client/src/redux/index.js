@@ -189,19 +189,7 @@ export const completedChallengesSelector = state =>
 export const completionCountSelector = state => state[MainApp].completionCount;
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
-export const stepsToClaimSelector = state => {
-  const user = userSelector(state);
-  const currentCerts = certificatesByNameSelector(user.username)(
-    state
-  ).currentCerts;
-  return {
-    currentCerts: currentCerts,
-    isHonest: user?.isHonest,
-    isShowName: user?.profileUI?.showName,
-    isShowCerts: user?.profileUI?.showCerts,
-    isShowProfile: !user?.profileUI?.isLocked
-  };
-};
+
 export const emailSelector = state => userSelector(state).email;
 export const isAVariantSelector = state => {
   const email = emailSelector(state);

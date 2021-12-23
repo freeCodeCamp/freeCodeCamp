@@ -1,6 +1,6 @@
 import { Button } from '@freecodecamp/react-bootstrap';
 import { navigate } from 'gatsby-link';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, MouseEvent } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -13,8 +13,8 @@ import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
   userFetchStateSelector,
-  stepsToClaimSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  certificatesByNameSelector
 } from '../../../redux';
 import { User, Steps } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings';
@@ -31,7 +31,7 @@ interface CertChallengeProps {
     error: null | string;
   };
   isSignedIn: boolean;
-  steps: Steps;
+  currentCerts: Steps['currentCerts'];
   superBlock: SuperBlocks;
   t: TFunction;
   title: typeof certMap[number]['title'];
@@ -45,12 +45,16 @@ const honestyInfoMessage = {
 };
 
 const mapStateToProps = (state: unknown) => {
+  const currentCerts = certificatesByNameSelector(
+    // @ts-expect-error One day, state will be typed
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    state?.app?.appUsername || ''
+  )(state)?.currentCerts;
   return createSelector(
-    stepsToClaimSelector,
     userFetchStateSelector,
     isSignedInSelector,
-    (steps, fetchState: CertChallengeProps['fetchState'], isSignedIn) => ({
-      steps,
+    (fetchState: CertChallengeProps['fetchState'], isSignedIn) => ({
+      currentCerts: currentCerts,
       fetchState,
       isSignedIn
     })
@@ -64,7 +68,7 @@ const mapDispatchToProps = {
 
 const CertChallenge = ({
   createFlashMessage,
-  steps = {},
+  currentCerts,
   superBlock,
   t,
   verifyCert,
@@ -93,19 +97,19 @@ const CertChallenge = ({
 
   useEffect(() => {
     setIsCertified(
-      steps?.currentCerts?.find(
+      currentCerts?.find(
         (cert: { certSlug: string }) =>
           certSlugTypeMapTyped[cert.certSlug] ===
           superBlockCertTypeMapTyped[superBlock]
       )?.show ?? false
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [superBlock]);
+  }, [currentCerts]);
 
   const certLocation = `/certification/${username}/${certSlug}`;
 
   const createClickHandler =
-    (certSlug: string | undefined) => (e: { preventDefault: () => void }) => {
+    (certSlug: string | undefined) => (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
       if (isCertified) {
         return navigate(certLocation);
@@ -114,6 +118,7 @@ const CertChallenge = ({
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
+  console.log(currentCerts, isCertified);
   return (
     <div className='block'>
       {isSignedIn && (
@@ -121,8 +126,8 @@ const CertChallenge = ({
           block={true}
           bsStyle='primary'
           className='cert-btn'
-          href={isCertified ? certLocation : `/settings`}
-          onClick={createClickHandler(certSlug)}
+          href={isCertified ? certLocation : `/settings#certification-settings`}
+          onClick={() => (isCertified ? createClickHandler(certSlug) : false)}
         >
           {isCertified && userLoaded
             ? t('buttons.show-cert')
