@@ -125,7 +125,7 @@
     "@types/prismjs": "1.16.6",
     "@types/psl": "1.1.0",
     "@types/reach__router": "1.3.9",
-    "@types/react": "17.0.37",
+    "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
     "@types/react-helmet": "6.1.4",
     "@types/react-instantsearch-dom": "6.12.1",
