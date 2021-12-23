@@ -50,7 +50,7 @@ function Challenges({
 
   return isGridMap ? (
     <ul className={`map-challenges-ul map-challenges-grid `}>
-      {[...challengesWithCompleted].map((challenge, i) => (
+      {challengesWithCompleted.map((challenge, i) => (
         <li
           className={`map-challenge-title map-challenge-title-grid ${
             isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
