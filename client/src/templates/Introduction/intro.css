@@ -208,7 +208,7 @@ button.map-title {
   stroke: var(--color-quaternary);
 }
 
-.open > .map-title svg:first-child {
+.open > .map-title > svg:first-child {
   transform: rotate(90deg);
 }
 
