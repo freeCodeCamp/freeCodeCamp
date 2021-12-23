@@ -907,8 +907,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!previewOpen && showProjectPreview) {
       const description = document.getElementsByClassName(
         'description-container'
-      )[0];
-      description.classList.add('description-highlighter');
+      )?.[0];
+      description?.classList.add('description-highlighter');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.previewOpen]);
