@@ -175,15 +175,9 @@ export default function completionEpic(action$, state$) {
 }
 
 async function findPathToNavigateTo(nextChallengePath, superBlock) {
-  let canClaimCert = false;
-  let pathToNavigateTo;
-
-  if (nextChallengePath.includes(superBlock) && !canClaimCert) {
-    pathToNavigateTo = nextChallengePath;
-  } else if (canClaimCert) {
-    pathToNavigateTo = `/learn/${superBlock}/#claim-cert-block`;
+  if (nextChallengePath.includes(superBlock)) {
+    return nextChallengePath;
   } else {
-    pathToNavigateTo = `/learn/${superBlock}/#${superBlock}-projects`;
+    return `/learn/${superBlock}/#${superBlock}-projects`;
   }
-  return pathToNavigateTo;
 }
