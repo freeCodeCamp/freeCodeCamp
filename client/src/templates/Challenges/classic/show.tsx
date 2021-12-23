@@ -129,7 +129,7 @@ const BASE_LAYOUT = {
   instructionPane: { flex: 1 },
   previewPane: { flex: 0.7 },
   notesPane: { flex: 0.7 },
-  testsPane: { flex: 0.25 }
+  testsPane: { flex: 0.3 }
 };
 
 // Component
