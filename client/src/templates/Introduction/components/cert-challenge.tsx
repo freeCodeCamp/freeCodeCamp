@@ -19,8 +19,6 @@ import {
 import { User, Steps } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings';
 import { certMap } from '../../../resources/cert-and-project-map';
-import { getVerifyCanClaimCert } from '../../../utils/ajax';
-import CertificationCard from './certification-card';
 
 interface CertChallengeProps {
   // TODO: create enum/reuse SuperBlocks enum somehow
@@ -65,7 +63,6 @@ const mapDispatchToProps = {
 };
 
 const CertChallenge = ({
-  certification,
   createFlashMessage,
   steps = {},
   superBlock,
@@ -76,45 +73,8 @@ const CertChallenge = ({
   isSignedIn,
   user: { isHonest, username }
 }: CertChallengeProps): JSX.Element => {
-  const [canClaimCert, setCanClaimCert] = useState(false);
-  const [certVerificationMessage, setCertVerificationMessage] = useState('');
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
-  const [verificationComplete, setVerificationComplete] = useState(false);
-  const [stepState, setStepState] = useState({
-    numberOfSteps: 0,
-    completedCount: 0
-  });
-  const [hasCompletedRequiredSteps, setHasCompletedRequiredSteps] =
-    useState(false);
-  const [isProjectsCompleted, setIsProjectsCompleted] = useState(false);
-
-  useEffect(() => {
-    if (username) {
-      void (async () => {
-        try {
-          const data = await getVerifyCanClaimCert(username, certification);
-          if (data?.message) {
-            setCanClaimCert(false);
-            createFlashMessage(data.message);
-          } else {
-            const { status, result } = data?.response?.message;
-            setCanClaimCert(status);
-            setCertVerificationMessage(result);
-          }
-        } catch (e) {
-          console.error(e);
-          createFlashMessage({
-            type: 'danger',
-            message: FlashMessages.ReallyWeird
-          });
-        } finally {
-          setVerificationComplete(true);
-        }
-      })();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [username]);
 
   // @ts-expect-error Typescript is confused
   const certSlug = certMap.find(x => x.title === title).certSlug;
@@ -139,31 +99,10 @@ const CertChallenge = ({
           superBlockCertTypeMapTyped[superBlock]
       )?.show ?? false
     );
-
-    const projectsCompleted =
-      canClaimCert || certVerificationMessage === 'projects-completed';
-    const projectsCompletedNumber = projectsCompleted ? 1 : 0;
-    const completedCount =
-      Object.values(steps).filter(
-        stepVal => typeof stepVal === 'boolean' && stepVal
-      ).length + projectsCompletedNumber;
-    const numberOfSteps = Object.keys(steps).length;
-    setHasCompletedRequiredSteps(completedCount === numberOfSteps);
-    setStepState({ numberOfSteps, completedCount });
-    setIsProjectsCompleted(projectsCompleted);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [steps, canClaimCert, certVerificationMessage]);
+  }, [superBlock]);
 
   const certLocation = `/certification/${username}/${certSlug}`;
-  const i18nSuperBlock = t(`intro:${superBlock}.title`);
-  const i18nCertText = t(`intro:misc-text.certification`, {
-    cert: i18nSuperBlock
-  });
-
-  const showCertificationCard =
-    userLoaded &&
-    isSignedIn &&
-    (!isCertified || (!hasCompletedRequiredSteps && verificationComplete));
 
   const createClickHandler =
     (certSlug: string | undefined) => (e: { preventDefault: () => void }) => {
@@ -177,33 +116,19 @@ const CertChallenge = ({
     };
   return (
     <div className='block'>
-      {showCertificationCard && (
-        <CertificationCard
-          i18nCertText={i18nCertText}
-          isProjectsCompleted={isProjectsCompleted}
-          steps={steps}
-          stepState={stepState}
-          superBlock={superBlock}
-        />
+      {isSignedIn && (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='cert-btn'
+          href={isCertified ? certLocation : `/settings`}
+          onClick={createClickHandler(certSlug)}
+        >
+          {isCertified && userLoaded
+            ? t('buttons.show-cert')
+            : t('buttons.go-to-settings')}
+        </Button>
       )}
-      <>
-        {isSignedIn && (
-          <Button
-            block={true}
-            bsStyle='primary'
-            className='cert-btn'
-            disabled={
-              !canClaimCert || (isCertified && !hasCompletedRequiredSteps)
-            }
-            href={certLocation}
-            onClick={createClickHandler(certSlug)}
-          >
-            {isCertified && userLoaded
-              ? t('buttons.show-cert')
-              : t('buttons.claim-cert')}
-          </Button>
-        )}
-      </>
     </div>
   );
 };
