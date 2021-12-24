@@ -1,6 +1,6 @@
 # Divulgação responsável - Lista dos famosos
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. If you are interested in contributing to the security of our platform, please read our [security policy outlined here](https://contribute.freecodecamp.org/#/security).
+Apreciamos qualquer divulgação responsável de vulnerabilidades que possam impactar a integridade de nossas plataformas e usuários. Se você está interessado em contribuir para a segurança de nossa plataforma, leia nossa [política de segurança](https://contribute.freecodecamp.org/#/security), delineada aqui.
 
 Embora não possamos oferecer nenhuma recompensa ou troca no momento, agradecemos a essas pessoas incríveis por nos ajudar a manter a plataforma segura para todos:
 
