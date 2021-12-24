@@ -136,7 +136,7 @@
     "@types/react-test-renderer": "17.0.1",
     "@types/react-transition-group": "4.4.4",
     "@types/redux-actions": "2.6.2",
-    "@types/sanitize-html": "2.6.0",
+    "@types/sanitize-html": "2.6.1",
     "@types/store": "2.0.2",
     "@types/validator": "13.7.0",
     "@typescript-eslint/eslint-plugin": "5.8.0",
