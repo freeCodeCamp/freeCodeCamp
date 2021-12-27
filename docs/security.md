@@ -23,7 +23,7 @@ Here is a list of the platforms and codebases we are accepting reports for:
 ### Learn Platform
 
 | Version     | Branch         | Supported | Website active           |
-| ----------- | -------------- | --------- | ------------------------ |
+| ----------- | -------------- | :-------: | ------------------------ |
 | production  | `prod-current` | Yes       | `freecodecamp.org/learn` |
 | staging     | `prod-staging` | Yes       | `freecodecamp.dev/learn` |
 | development | `main`         | No        |                          |
@@ -31,14 +31,14 @@ Here is a list of the platforms and codebases we are accepting reports for:
 ### Publication Platform
 
 | Version    | Supported | Website active                     |
-| ---------- | --------- | ---------------------------------- |
+| ---------- | :-------: | ---------------------------------- |
 | production | Yes       | `freecodecamp.org/news`            |
 | localized  | Yes       | `freecodecamp.org/<language>/news` |
 
 ### Mobile app
 
 | Version    | Supported | Website active                                                   |
-| ---------- | --------- | ---------------------------------------------------------------- |
+| ---------- | :-------: | ---------------------------------------------------------------- |
 | production | Yes       | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
 
 Apart from the above, we are also accepting reports for repositories hosted on GitHub, under the freeCodeCamp organization.
