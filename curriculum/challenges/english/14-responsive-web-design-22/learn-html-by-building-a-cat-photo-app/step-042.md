@@ -9,7 +9,7 @@ dashedName: step-42
 
 Even through you added your button below the text input, they appear next to each other on the page. That's because both `input` and `button` elements are <dfn>inline elements</dfn>, which don't appear on new lines.
 
-You learned previously that the button submits the form by default, but you can explicitly add the `type` attribute with the value `submit` to it to make it clearer. Go ahead and do this to specify this button should submit the form.
+You learned previously that the button submits the form by default, but you can explicitly add the `type` attribute with the value `submit` to make it clearer. Go ahead and do this to specify this button should submit the form.
 
 # --hints--
 
