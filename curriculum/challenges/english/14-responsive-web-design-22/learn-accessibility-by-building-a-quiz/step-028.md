@@ -9,7 +9,7 @@ dashedName: step-28
 
 Give each `fieldset` an adaquate `name` attribute. Then, give both unordered lists a `class` of `answers-list`.
 
-Finally, add use the `legend` to caption the content of the `fieldset`, by placing a true/false question as the text content.
+Finally, use the `legend` to caption the content of the `fieldset`, by placing a true/false question as the text content.
 
 # --hints--
 
