@@ -22,7 +22,7 @@ assert.exists(new __helpers.CSSHelp(document).getStyle('.question'));
 You should give the `.question` a `border` of `none`.
 
 ```js
-assert.include(['none', 'medium none'], new __helpers.CSSHelp(document).getStyle('.question')?.border);
+assert.equal(new __helpers.CSSHelp(document).getStyle('.question')?.borderStyle, 'none');
 ```
 
 You should give the `.question` a `padding-bottom` of `0`.
