@@ -12,7 +12,7 @@ The dropdown options are currently empty. To give them content, add the followin
 ```md
 (select one)
 freeCodeCamp News
-freeCodeCamp YouTube
+freeCodeCamp Channel YouTube
 freeCodeCamp Forum
 Other
 ```
