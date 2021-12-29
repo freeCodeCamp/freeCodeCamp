@@ -84,7 +84,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.sr-only')?.whiteSpace, '
 You should give the `.sr-only` a `border` of `0`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.sr-only')?.border, '0px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sr-only')?.borderWidth, '0px');
 ```
 
 # --seed--
