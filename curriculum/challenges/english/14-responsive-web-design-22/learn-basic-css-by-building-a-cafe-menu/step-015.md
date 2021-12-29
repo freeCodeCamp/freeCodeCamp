@@ -7,7 +7,7 @@ dashedName: step-15
 
 # --description--
 
-You have styled three elements by writing CSS inside the `style` tags. This works, but since there will many more styles, it's best to put all the styles in a separate file and link to it.
+You have styled three elements by writing CSS inside the `style` tags. This works, but since there will be many more styles, it's best to put all the styles in a separate file and link to it.
 
 We have created a separate `styles.css` file for you and switched the editor view to that file. You can change between files with the tabs at the top of the editor.
 
