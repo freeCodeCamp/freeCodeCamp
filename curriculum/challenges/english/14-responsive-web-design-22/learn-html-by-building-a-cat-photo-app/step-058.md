@@ -7,7 +7,7 @@ dashedName: step-58
 
 # --description--
 
-Add a final checkbox after the previous one with an `id` attribute value of `energetic`. The `name` and attribute should be the same as the last checkbox.
+Add a final checkbox after the previous one with an `id` attribute value of `energetic`. The `name` attribute should be the same as the previous checkbox.
 
 Also add a `label` element to the right of the new checkbox with text `Energetic`. Make sure to associate the `label` element with the new checkbox.
 
