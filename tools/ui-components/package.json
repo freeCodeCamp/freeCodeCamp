@@ -40,7 +40,7 @@
     "@storybook/react": "6.4.9",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
-    "@types/jest": "27.0.3",
+    "@types/jest": "27.4.0",
     "autoprefixer": "10.4.1",
     "babel-loader": "8.2.3",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
