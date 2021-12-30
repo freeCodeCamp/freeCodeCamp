@@ -8,7 +8,7 @@ dashedName: use-model-find-to-search-your-database
 
 # --description--
 
-In its simplest usage, `Model.find()` accepts a query document (a JSON object) as the first argument, then a callback. It returns an array of matches. It supports an extremely wide range of search options. Read more in the docs.
+In its simplest usage, `Model.find()` accepts a query document (a JSON object) as the first argument, then a callback. It returns an array of matches. It supports an extremely wide range of search options. Read more [in the docs](https://mongoosejs.com/docs/api.html#model_Model.find).
 
 # --instructions--
 
