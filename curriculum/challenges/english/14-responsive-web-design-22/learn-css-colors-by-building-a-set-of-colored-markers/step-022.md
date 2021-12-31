@@ -7,7 +7,7 @@ dashedName: step-22
 
 # --description--
 
-A function is a piece of code that can take an input and perform a specific action. The CSS `rgb` function accepts a values, or <dfn>arguments</dfn>, for red, green, and blue, and produces a color:
+A function is a piece of code that can take an input and perform a specific action. The CSS `rgb` function accepts values, or <dfn>arguments</dfn>, for red, green, and blue, and produces a color:
 
 ```css
 rgb(red, green, blue);
