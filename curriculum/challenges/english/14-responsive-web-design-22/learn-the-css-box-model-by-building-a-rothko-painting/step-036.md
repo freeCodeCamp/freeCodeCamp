@@ -7,7 +7,7 @@ dashedName: step-36
 
 # --description--
 
-Create a rule that targets both `.one` and `.two` and increase their `blur` effect by 1 pixel.
+Create a rule that targets both `.one` and `.two` and decrease their `blur` effect to 1 pixel.
 
 Here's an example of a rule that increases the `blur` of two elements:
 

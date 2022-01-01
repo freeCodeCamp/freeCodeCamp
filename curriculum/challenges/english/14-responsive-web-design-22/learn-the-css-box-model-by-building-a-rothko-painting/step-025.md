@@ -7,7 +7,7 @@ dashedName: step-25
 
 # --description--
 
-Set the `height` of the `.two` to 200 pixels.
+Set the `height` of the `.two` element to 200 pixels.
 
 # --hints--
 
