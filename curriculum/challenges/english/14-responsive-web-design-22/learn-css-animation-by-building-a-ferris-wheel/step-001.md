@@ -54,7 +54,7 @@ assert(code.match(/<\/html\s*>/));
 Your `html` element should be below the `DOCTYPE` declaration.
 
 ```js
-assert(code.match(/^\s*<!DOCTYPE\s+html\s*>[\s\S]*<\s*html\s*>/gi));
+assert(code.match(/\s*<!DOCTYPE\s+html\s*>(\r?\n)+<\s*html\s*>/gi));
 ```
 
 You should have an opening `head` tag.
