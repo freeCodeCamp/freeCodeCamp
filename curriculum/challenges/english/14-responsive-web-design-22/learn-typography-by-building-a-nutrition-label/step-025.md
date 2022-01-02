@@ -7,7 +7,7 @@ dashedName: step-25
 
 # --description--
 
-Now update your `h1` selector to be `header h1`, to specifically target your `h1` element within your new `header`.
+Now update your `h1` selector to be `header h1` to specifically target your `h1` element within your new `header`.
 
 # --hints--
 
