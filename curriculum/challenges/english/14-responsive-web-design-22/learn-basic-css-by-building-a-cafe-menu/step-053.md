@@ -12,7 +12,7 @@ Below the dessert you just added, add the rest of the desserts and prices using 
 ```bash
 Cherry Pie 2.75
 Cheesecake 3.00
-Cinammon Roll 2.50
+Cinnamon Roll 2.50
 ```
 
 # --hints--
@@ -35,14 +35,14 @@ Your `section` element should have eight `p` elements.
 assert($('section').last().find('p').length === 8);
 ```
 
-Your `.dessert` elements should have the text `Donut`, `Cherry Pie`, `Cheesecake`, and `Cinammon Roll`.
+Your `.dessert` elements should have the text `Donut`, `Cherry Pie`, `Cheesecake`, and `Cinnamon Roll`.
 
 ```js
 const dessert = $('.dessert');
 assert(dessert[0].innerText.match(/donut/i));
 assert(dessert[1].innerText.match(/cherry pie/i));
 assert(dessert[2].innerText.match(/cheesecake/i));
-assert(dessert[3].innerText.match(/cinammon roll/i));
+assert(dessert[3].innerText.match(/cinnamon roll/i));
 ```
 
 Your new `.price` elements should have the text `1.50`, `2.75`, `3.00`, and `2.50`.
