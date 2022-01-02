@@ -74,7 +74,7 @@ assert($('hr')[1].className === 'bottom-line');
             <p class="dessert">Cheesecake</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
+            <p class="dessert">Cinnamon Roll</p><p class="price">2.50</p>
           </article>
         </section>
       </main>

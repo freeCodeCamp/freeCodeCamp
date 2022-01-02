@@ -7,7 +7,7 @@ dashedName: step-80
 
 # --description--
 
-Borders have several styles to choose from. You can make your border a solid line, but can also go with a dashed or dotted line if you prefer. Solid border lines are probably the most common.
+Borders have several styles to choose from. You can make your border a solid line, but you can also use a dashed or dotted line if you prefer. Solid border lines are probably the most common.
 
 In the `.sleeve` CSS rule, add the `border-left-style` property with the value `solid`.
 
