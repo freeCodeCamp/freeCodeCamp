@@ -15,7 +15,7 @@ box-shadow: offsetX offsetY blurRadius color;
 
 If a `blurRadius` value isn't included, it defaults to `0` and produces sharp edges. The higher the value of `blurRadius`, the greater the blurring effect is.
 
-In the `.green` CSS rule, add the `box-shadow` property with the values `5px` for `offsetX`, `5px` for `offsetY`, `5px`, for `blurRadius`, and `green` for `color`.
+In the `.green` CSS rule, add the `box-shadow` property with the values `5px` for `offsetX`, `5px` for `offsetY`, `5px` for `blurRadius`, and `green` for `color`.
 
 # --hints--
 

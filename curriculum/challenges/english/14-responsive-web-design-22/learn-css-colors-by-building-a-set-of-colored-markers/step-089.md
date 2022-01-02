@@ -17,7 +17,7 @@ Like `blurRadius`, `spreadRadius` defaults to `0` if it isn't included.
 
 Practice by adding a 5 pixel shadow directly around the blue marker.
 
-In the `.blue` CSS rule, add the `box-shadow` property with the values `0` for `offsetX`, `0` for `offsetY`, `0`, for `blurRadius`, `5px` for `spreadRadius`, and `blue` for `color`.
+In the `.blue` CSS rule, add the `box-shadow` property with the values `0` for `offsetX`, `0` for `offsetY`, `0` for `blurRadius`, `5px` for `spreadRadius`, and `blue` for `color`.
 
 # --hints--
 
