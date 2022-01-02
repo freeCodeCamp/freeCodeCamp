@@ -193,8 +193,10 @@ copy sample.env .env
 
 <!-- tabs:end -->
 
-The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
+The keys in the `.env` file are _not_ required to be changed to run the app locally. For the most part, you can leave the default values copied over from `sample.env` as-is.
 
+> [!TIP]
+> If you want to see the new curriculum in your local copy, the value for `SHOW_NEW_CURRICULUM` needs to be changed to `true` in the `.env` file.
 > [!TIP]
 > Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
