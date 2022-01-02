@@ -14,7 +14,7 @@ Add opening and closing `html` tags below the `DOCTYPE` so you have a place to s
 Your `html` element should be below the `DOCTYPE` declaration.
 
 ```js
-assert(code.match(/(?<!<html\s*>)<!DOCTYPE\s+html\s*>/gi));
+assert(code.match(/\s*<!DOCTYPE\s+html\s*>(\r?\n)+<\s*html\s*>/gi));
 ```
 
 Your `html` element should have an opening tag.
