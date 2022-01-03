@@ -1,6 +1,7 @@
 import { Image } from '@freecodecamp/react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import isURL from 'validator/es/lib/isURL';
 import { defaultUserImage } from '../../../../config/misc';
 import DefaultAvatar from '../../assets/icons/default-avatar';
 import { borderColorPicker } from '.';
@@ -26,9 +27,13 @@ function AvatarRenderer({
 
   useEffect(() => {
     const validationImage = document.createElement('img');
-    validationImage.src = picture;
-    validationImage.onload = onImageLoad;
-    validationImage.onerror = onImageError;
+    if (isURL(picture)) {
+      validationImage.src = picture;
+      validationImage.onload = onImageLoad;
+      validationImage.onerror = onImageError;
+    } else {
+      setIsPictureValid(false);
+    }
   }, [picture]);
 
   const isPlaceHolderImage =
