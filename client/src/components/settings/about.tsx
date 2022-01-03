@@ -8,7 +8,7 @@ import {
 import React, { Component } from 'react';
 
 import { TFunction, withTranslation } from 'react-i18next';
-import isURL from 'validator/es/lib/isURL';
+import isURL from 'validator/lib/isURL';
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SoundSettings from './sound';
