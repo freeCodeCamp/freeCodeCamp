@@ -139,9 +139,7 @@ assert.notEmpty(document.querySelectorAll('.answer')?.[1]?.querySelector('textar
               <label>Do you have any questions:</label>
             </div>
             <div class="answer">
-              <textarea rows="5" cols="24">
-Who is flexbox...
-              </textarea>
+              <textarea rows="5" cols="24" placeholder="Who is flexbox..."></textarea>
             </div>
 --fcc-editable-region--
           </div>

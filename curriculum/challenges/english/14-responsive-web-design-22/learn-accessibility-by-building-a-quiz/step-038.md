@@ -35,10 +35,10 @@ assert.notEmpty(cols);
 assert.isNotNaN(Number(cols));
 ```
 
-You should give the `textarea` placeholder text describing an example answer.
+You should give the `textarea` a `placeholder` attribute with text describing an example answer.
 
 ```js
-assert.notEmpty(document.querySelectorAll('div.answer')?.[1]?.querySelector('textarea')?.textContent);
+assert.notEmpty(document.querySelectorAll('div.answer')?.[1]?.querySelector('textarea')?.getAttribute('placeholder'));
 ```
 
 # --seed--
