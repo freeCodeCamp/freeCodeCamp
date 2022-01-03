@@ -7,7 +7,7 @@ dashedName: step-53
 
 # --description--
 
-Below your last `p` element, create another `p` element with the text `Sodium 160mg 7%`. Wrap the text `sodium` in a `span` element with a `class` attribute set to `bold`. Wrap the `7%` text in another `span` element with the `class` set to `bold right`.
+Below your last `p` element, create another `p` element with the text `Sodium 160mg 7%`. Wrap the text `Sodium` in a `span` element with a `class` attribute set to `bold`. Wrap the `7%` text in another `span` element with the `class` set to `bold right`.
 
 # --hints--
 
