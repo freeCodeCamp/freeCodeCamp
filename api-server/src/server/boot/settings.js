@@ -166,7 +166,7 @@ function updateMyAbout(req, res, next) {
   } = req;
   log(name, location, picture, about);
   // prevent dataurls from being stored
-  const update = isURL(picture)
+  const update = isURL(picture, { require_protocol: true })
     ? { name, location, about, picture }
     : { name, location, about };
   return user.updateAttributes(update, createStandardHandler(req, res, next));

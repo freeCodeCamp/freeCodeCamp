@@ -27,7 +27,8 @@ function AvatarRenderer({
 
   useEffect(() => {
     const validationImage = document.createElement('img');
-    if (isURL(picture)) {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    if (isURL(picture, { require_protocol: true })) {
       validationImage.src = picture;
       validationImage.onload = onImageLoad;
       validationImage.onerror = onImageError;

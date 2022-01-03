@@ -150,7 +150,8 @@ class AboutSettings extends Component<AboutProps, AboutState> {
 
   handlePictureChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
-    if (isURL(value)) {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    if (isURL(value, { require_protocol: true })) {
       this.validationImage.src = value;
     } else {
       this.setState({
