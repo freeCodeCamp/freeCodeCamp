@@ -41,7 +41,7 @@
     "build:server": "cd ./api-server && npm run build",
     "clean": "npm-run-all clean:build-files clean:client clean:server clean:packages",
     "clean-and-develop": "npm run clean && npm ci && npm run develop",
-    "clean:build-files": "shx rm ./tools/tsconfig.tsbuildinfo",
+    "clean:build-files": "shx rm -f ./tools/tsconfig.tsbuildinfo",
     "clean:client": "cd ./client && npm run clean",
     "clean:curriculum": "shx rm ./config/curriculum.json",
     "clean:gatsby-site": "npm run clean:client",
