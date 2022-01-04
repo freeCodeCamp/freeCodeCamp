@@ -17,7 +17,7 @@ jobs:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
       - name: Generate Crowdin Config
-        uses: nhcarrigan/crowdin-action@main
+        uses: freecodecamp/crowdin-action@main
         env:
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
           CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
