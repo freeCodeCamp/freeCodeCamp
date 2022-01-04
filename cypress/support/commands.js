@@ -33,7 +33,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => {});
 
 Cypress.Commands.add('login', () => {
-  cy.visit('http://localhost:3000/signin');
+  cy.visit(`${process.env.API_LOCATION}/signin`);
   cy.contains('Welcome back');
 });
 
