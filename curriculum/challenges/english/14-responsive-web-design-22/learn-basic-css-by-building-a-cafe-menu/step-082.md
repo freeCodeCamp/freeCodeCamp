@@ -7,7 +7,7 @@ dashedName: step-82
 
 # --description--
 
-You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue; }`.
+You change properties of a link when the mouse hovers over them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue; }`.
 
 Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
 

@@ -7,7 +7,7 @@ dashedName: step-60
 
 # --description--
 
-You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma. This second font would be used in case the browser does not have the font built-in to it.
+You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma. Fallbacks are used in instances where the initial is not found/available.
 
 Add the fallback font `serif` after the `Impact` font.
 
