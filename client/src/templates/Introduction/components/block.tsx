@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { SuperBlocks } from '../../../../../config/certification-settings';
 
 import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
@@ -15,7 +16,7 @@ import { completedChallengesSelector, executeGA } from '../../../redux';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import Challenges from './Challenges';
+import Challenges from './challenges';
 
 const { curriculumLocale } = envData;
 
@@ -44,7 +45,7 @@ interface BlockProps {
   completedChallengeIds: string[];
   executeGA: typeof executeGA;
   isExpanded: boolean;
-  superBlock: string;
+  superBlock: SuperBlocks;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
 }
@@ -101,7 +102,7 @@ export class Block extends Component<BlockProps> {
     } = this.props;
 
     let completedCount = 0;
-    const challengesWithCompleted = challenges.map(challenge => {
+    const challengesWithCompleted = challenges.map(({ challenge }) => {
       const { id } = challenge;
       const isCompleted = completedChallengeIds.some(
         (completedChallengeId: string) => completedChallengeId === id
@@ -112,7 +113,7 @@ export class Block extends Component<BlockProps> {
       return { ...challenge, isCompleted };
     });
 
-    const isProjectBlock = challenges.some(challenge => {
+    const isProjectBlock = challenges.some(({ challenge }) => {
       const isJsProject =
         challenge.order === 10 && challenge.challengeType === 5;
 
@@ -136,12 +137,10 @@ export class Block extends Component<BlockProps> {
     const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
     const {
       expand: expandText,
-      collapse: collapseText,
-      courses: coursesText
+      collapse: collapseText
     }: {
       expand: string;
       collapse: string;
-      courses: string;
     } = t('intro:misc-text');
 
     return isProjectBlock ? (
@@ -169,6 +168,7 @@ export class Block extends Component<BlockProps> {
           <Challenges
             challengesWithCompleted={challengesWithCompleted}
             isProjectBlock={isProjectBlock}
+            superBlock={superBlock}
           />
         </div>
       </ScrollableAnchor>
@@ -203,9 +203,7 @@ export class Block extends Component<BlockProps> {
           >
             <Caret />
             <h4 className='course-title'>
-              {`${
-                isExpanded ? collapseText : expandText
-              } ${coursesText.toLowerCase()}`}
+              {`${isExpanded ? collapseText : expandText}`}
             </h4>
             <div className='map-title-completed course-title'>
               {this.renderCheckMark(
@@ -218,6 +216,7 @@ export class Block extends Component<BlockProps> {
             <Challenges
               challengesWithCompleted={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
+              superBlock={superBlock}
             />
           )}
         </div>

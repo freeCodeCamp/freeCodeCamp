@@ -25,7 +25,6 @@ interface FetchState {
 }
 
 interface User {
-  email: string;
   name: string;
   username: string;
   completedChallengeCount: number;
@@ -53,7 +52,9 @@ interface LearnPageProps {
   user: User;
   data: {
     challengeNode: {
-      fields: Slug;
+      challenge: {
+        fields: Slug;
+      };
     };
   };
   executeGA: (payload: Record<string, unknown>) => void;
@@ -64,13 +65,14 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 function LearnPage({
   isSignedIn,
-  user,
   fetchState: { pending, complete },
   user: { name = '', completedChallengeCount = 0 },
   executeGA,
   data: {
     challengeNode: {
-      fields: { slug }
+      challenge: {
+        fields: { slug }
+      }
     }
   }
 }: LearnPageProps) {
@@ -95,7 +97,6 @@ function LearnPage({
             <Intro
               complete={complete}
               completedChallengeCount={completedChallengeCount}
-              email={user.email}
               isSignedIn={isSignedIn}
               name={name}
               onAlertClick={onAlertClick}
@@ -117,9 +118,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(LearnPage);
 
 export const query = graphql`
   query FirstChallenge {
-    challengeNode(order: { eq: 0 }, challengeOrder: { eq: 0 }) {
-      fields {
-        slug
+    challengeNode(challenge: { order: { eq: 0 }, challengeOrder: { eq: 0 } }) {
+      challenge {
+        fields {
+          slug
+        }
       }
     }
   }

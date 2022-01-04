@@ -28,7 +28,7 @@ assert(typeof longestString == 'function');
 assert(Array.isArray(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg'])));
 ```
 
-`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` should return `["ccc", "ggg"]'`.
+`longestString(["a", "bb", "ccc", "ee", "f", "ggg"])` should return `["ccc", "ggg"]`.
 
 ```js
 assert.deepEqual(longestString(['a', 'bb', 'ccc', 'ee', 'f', 'ggg']), [

@@ -26,6 +26,7 @@ exports.replaceChallengeNode = () => {
     );
     delete require.cache[require.resolve(metaPath)];
     const meta = require(metaPath);
+    // TODO: reimplement hot-reloading of certifications
     return await createChallenge(
       challengesDir,
       filePath,

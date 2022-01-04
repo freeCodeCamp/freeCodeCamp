@@ -73,6 +73,10 @@ assert.equal(
 );
 ```
 
+# --notes--
+
+Extra information for a challenge, in markdown
+
 # --seed--
 
 ## --before-user-code--

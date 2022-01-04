@@ -1,3 +1,4 @@
+const { isEmpty } = require('lodash');
 const { root } = require('mdast-builder');
 const visitChildren = require('unist-util-visit-children');
 
@@ -30,7 +31,7 @@ function createPlugin() {
       );
 
       visitForContents(solutionTree);
-      solutions.push(Object.values(solution));
+      if (!isEmpty(solution)) solutions.push(Object.values(solution));
     });
 
     file.data = {

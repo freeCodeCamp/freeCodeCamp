@@ -1,7 +1,6 @@
 import { Alert } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { emailToABVariant } from '../../utils/A-B-tester';
 import { randomQuote } from '../../utils/get-words';
 import Login from '../Header/components/Login';
 import { Link, Spacer, Loader } from '../helpers';
@@ -17,7 +16,6 @@ interface IntroProps {
   pending?: boolean;
   slug?: string;
   username?: string;
-  email?: string;
   onAlertClick?: () => void;
 }
 
@@ -28,15 +26,9 @@ const Intro = ({
   complete,
   completedChallengeCount,
   slug,
-  email,
   onAlertClick
 }: IntroProps): JSX.Element => {
   const { t } = useTranslation();
-  const buttonVariation = (email: string | undefined): string => {
-    if (!email || emailToABVariant(email).isAVariant)
-      return t('buttons.donate');
-    return t('buttons.support-our-nonprofit');
-  };
   if (pending && !complete) {
     return (
       <>
@@ -80,7 +72,7 @@ const Intro = ({
         )}
         <Alert bsStyle='info' className='annual-donation-alert'>
           <p>
-            <b>{t('learn.season-greetings')}</b>
+            <b>{t('learn.season-greetings-fcc')}</b>
           </p>
           <p>{t('learn.if-getting-value')}</p>
           <hr />
@@ -92,7 +84,7 @@ const Intro = ({
               sameTab={false}
               to='/donate'
             >
-              {buttonVariation(email)}
+              {t('buttons.donate')}
             </Link>
           </p>
         </Alert>

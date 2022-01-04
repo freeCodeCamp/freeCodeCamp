@@ -91,7 +91,8 @@ const mountFrame =
   };
 
 const buildProxyConsole = proxyLogger => ctx => {
-  if (proxyLogger) {
+  // window does not exist if the preview is hidden, so we have to check.
+  if (proxyLogger && ctx?.window) {
     const oldLog = ctx.window.console.log.bind(ctx.window.console);
     ctx.window.console.log = function proxyConsole(...args) {
       proxyLogger(args.map(arg => format(arg)).join(' '));

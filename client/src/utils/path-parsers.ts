@@ -7,8 +7,14 @@ const splitPath = (pathname: string): string[] =>
 export const isChallenge = (pathname: string): boolean => {
   const pathArray = splitPath(pathname);
   return (
-    (pathArray.length === 4 && pathArray[0]) === 'learn' ||
-    (pathArray.length === 5 && pathArray[1]) === 'learn'
+    // learn/<superBlock>/<block>/<challenge>
+    (pathArray.length === 4 && pathArray[0] === 'learn') ||
+    // learn/<year>/<superBlock>/<block>/<challenge>
+    (pathArray.length === 5 && pathArray[0] === 'learn') ||
+    // <i18n>/learn/<superBlock>/<block>/<challenge>
+    (pathArray.length === 5 && pathArray[1] === 'learn') ||
+    // <i18n>/learn/<year>/<superBlock>/<block>/<challenge>
+    (pathArray.length === 6 && pathArray[1] === 'learn')
   );
 };
 

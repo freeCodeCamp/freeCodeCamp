@@ -2,6 +2,7 @@
   "name": "D3 Dashboard",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "d3-dashboard",
   "order": 3,
   "time": "5 hours",
@@ -12,7 +13,6 @@
     }
   ],
   "superBlock": "data-visualization",
-  "superOrder": 3,
   "challengeOrder": [
     [
       "5d8a4cfbe6b6180ed9a1c9de",

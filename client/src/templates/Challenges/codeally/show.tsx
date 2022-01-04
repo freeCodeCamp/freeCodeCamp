@@ -49,7 +49,9 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const {
       updateChallengeMeta,
       data: {
-        challengeNode: { challengeType, title }
+        challengeNode: {
+          challenge: { challengeType, title }
+        }
       },
       pageContext: { challengeMeta }
     } = this.props;
@@ -60,9 +62,11 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const {
       data: {
         challengeNode: {
-          title,
-          fields: { blockName },
-          url
+          challenge: {
+            title,
+            fields: { blockName },
+            url
+          }
         }
       },
       webhookToken = null
@@ -94,12 +98,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(ShowCodeAlly);
 // GraphQL
 export const query = graphql`
   query CodeAllyChallenge($slug: String!) {
-    challengeNode(fields: { slug: { eq: $slug } }) {
-      title
-      challengeType
-      url
-      fields {
-        blockName
+    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+      challenge {
+        title
+        challengeType
+        url
+        fields {
+          blockName
+        }
       }
     }
   }

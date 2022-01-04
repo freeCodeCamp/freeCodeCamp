@@ -7,11 +7,7 @@ import { isDonationModalOpenSelector, userSelector } from '../../../redux';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
-  executeChallenge,
-  saveEditorContent,
-  setEditorFocusability,
-  visibleEditorsSelector,
-  updateFile
+  visibleEditorsSelector
 } from '../redux';
 import { getTargetEditor } from '../utils/getTargetEditor';
 import './editor.css';
@@ -26,7 +22,6 @@ const propTypes = {
   description: PropTypes.string,
   dimensions: PropTypes.object,
   editorRef: PropTypes.any.isRequired,
-  executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
   initialEditorContent: PropTypes.string,
@@ -37,11 +32,9 @@ const propTypes = {
     onStopResize: PropTypes.func,
     onResize: PropTypes.func
   }),
-  saveEditorContent: PropTypes.func.isRequired,
-  setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
   title: PropTypes.string,
-  updateFile: PropTypes.func.isRequired,
+  showProjectPreview: PropTypes.bool,
   usesMultifileEditor: PropTypes.bool,
   visibleEditors: PropTypes.shape({
     scriptjs: PropTypes.bool,
@@ -65,13 +58,6 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = {
-  executeChallenge,
-  saveEditorContent,
-  setEditorFocusability,
-  updateFile
-};
-
 const MultifileEditor = props => {
   const {
     challengeFiles,
@@ -83,7 +69,8 @@ const MultifileEditor = props => {
     resizeProps,
     title,
     visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx },
-    usesMultifileEditor
+    usesMultifileEditor,
+    showProjectPreview
   } = props;
   const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
   // TODO: the tabs mess up the rendering (scroll doesn't work properly and
@@ -145,6 +132,7 @@ const MultifileEditor = props => {
                     theme={editorTheme}
                     title={title}
                     usesMultifileEditor={usesMultifileEditor}
+                    showProjectPreview={showProjectPreview}
                   />
                 </ReflexElement>
               );
@@ -159,4 +147,4 @@ const MultifileEditor = props => {
 MultifileEditor.displayName = 'MultifileEditor';
 MultifileEditor.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(MultifileEditor);
+export default connect(mapStateToProps)(MultifileEditor);

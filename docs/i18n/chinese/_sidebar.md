@@ -1,6 +1,7 @@
 - **准备开始**
   - [介绍](index.md "为 freeCodeCamp.org 社区贡献")
   - [常见问题](FAQ.md)
+  - [Reporting a Vulnerability](security.md)
 - **Translation Contribution**
   - [Work on translating resources](how-to-translate-files.md)
   - [Work on proofreading translations](how-to-proofread-files.md)

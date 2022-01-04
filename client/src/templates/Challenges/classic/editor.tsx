@@ -42,7 +42,8 @@ import {
   submitChallenge,
   initTests,
   isResettingSelector,
-  stopResetting
+  stopResetting,
+  isProjectPreviewModalOpenSelector
 } from '../redux';
 
 import './editor.css';
@@ -76,6 +77,8 @@ interface EditorProps {
   tests: Test[];
   theme: Themes;
   title: string;
+  showProjectPreview: boolean;
+  previewOpen: boolean;
   updateFile: (object: {
     fileKey: FileKey;
     editorValue: string;
@@ -104,6 +107,7 @@ const mapStateToProps = createSelector(
   canFocusEditorSelector,
   consoleOutputSelector,
   isDonationModalOpenSelector,
+  isProjectPreviewModalOpenSelector,
   isResettingSelector,
   userSelector,
   challengeTestsSelector,
@@ -111,11 +115,13 @@ const mapStateToProps = createSelector(
     canFocus: boolean,
     output: string[],
     open,
+    previewOpen: boolean,
     isResetting: boolean,
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
+    previewOpen,
     isResetting,
     output,
     theme,
@@ -716,9 +722,9 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function initializeRegions(editableRegion: number[]) {
-    const { model } = dataRef.current;
+    const { model, editor } = dataRef.current;
     const monaco = monacoRef.current;
-    if (!model || !monaco) return;
+    if (!model || !monaco || !editor) return;
 
     const editableRange = positionsToRange(monaco, model, [
       editableRegion[0] + 1,
@@ -729,6 +735,14 @@ const Editor = (props: EditorProps): JSX.Element => {
       monaco,
       model
     })[0];
+
+    // This isn't strictly necessary, but it makes sure the description zone and
+    // widget are always rendered in the correct place. The reason it's not
+    // strictly necessary is that, somehow, the first (incorrect) position was
+    // never rendered.
+    dataRef.current.descriptionZoneTop = editor.getTopForLineNumber(
+      getLineBeforeEditableRegion() + 1
+    );
   }
 
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
@@ -764,8 +778,18 @@ const Editor = (props: EditorProps): JSX.Element => {
         descriptionNode,
         getDescriptionZoneTop
       );
+      // this order (add widget, change zone) is necessary, since the zone
+      // relies on the domnode being in the DOM to calculate its height - that
+      // doesn't happen until the widget is added.
       editor.addOverlayWidget(dataRef.current.descriptionWidget);
       editor.changeViewZones(descriptionZoneCallback);
+      // Now that the description zone is in place, the browser knows its height
+      // and we can use that to calculate the top of the output zone.  If we do
+      // not do this the output zone will be on top of the description zone,
+      // initially.
+      dataRef.current.outputZoneTop = editor.getTopForLineNumber(
+        getLastLineOfEditableRegion() + 1
+      );
     }
     if (!dataRef.current.outputWidget) {
       dataRef.current.outputWidget = createWidget(
@@ -895,6 +919,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles, props.isResetting]);
+
+  useEffect(() => {
+    const { showProjectPreview, previewOpen } = props;
+    if (!previewOpen && showProjectPreview) {
+      const description = document.getElementsByClassName(
+        'description-container'
+      )?.[0];
+      description?.classList.add('description-highlighter');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.previewOpen]);
+
   useEffect(() => {
     const { output } = props;
     const { model, insideEditDecId } = dataRef.current;

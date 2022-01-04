@@ -8,6 +8,7 @@ import {
 import React, { Component } from 'react';
 
 import { TFunction, withTranslation } from 'react-i18next';
+import isURL from 'validator/lib/isURL';
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SoundSettings from './sound';
@@ -149,8 +150,15 @@ class AboutSettings extends Component<AboutProps, AboutState> {
 
   handlePictureChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
-    this.validationImage.src = value;
-    return this.setState(state => ({
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    if (isURL(value, { require_protocol: true })) {
+      this.validationImage.src = value;
+    } else {
+      this.setState({
+        isPictureUrlValid: false
+      });
+    }
+    this.setState(state => ({
       formValues: {
         ...state.formValues,
         picture: value

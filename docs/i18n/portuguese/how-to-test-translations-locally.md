@@ -8,9 +8,10 @@ Se você gostaria de testar suas traduções em uma instância local do site Fre
 
 Existem algumas etapas a serem seguidas para permitir que a base de código seja compilada no idioma desejado.
 
-Primeiro, visite o arquivo `config/i18n/all-langs.js` para adicionar o idioma à lista de idiomas disponíveis e configurar os valores. Existem quatro objetos aqui.
+Primeiro, visite o arquivo `config/i18n/all-langs.ts` para adicionar o idioma à lista de idiomas disponíveis e configurar os valores. Existem quatro objetos aqui.
 
 - `availableLangs`: tanto para o array `client` quanto para o array `curriculum`, adicione o nome do idioma. Esse valor é o que será usado no arquivo `.env` depois.
+- `auditedCerts`: adicione o nome do texto do idioma como a _chave_ e adicione um array de variáveis `SuperBlocks.{cert}` como o _valor_. Isto informa ao cliente quais certificações estão totalmente traduzidas.
 - `i18nextCodes`: esses são os códigos ISO de cada linguagem. Você vai precisar do código ISO apropriado para o idioma que você está habilitando. Eles precisam ser únicos para cada idioma.
 - `langDisplayNames`: esses são os nomes dos idiomas que aparecerão para a seleção no menu de navegação.
 - `langCodes`: esses são os códigos de idiomas usados para formatar datas e números. Esses deverão ser códigos Unicode CLDR ao invés de códigos ISO.
@@ -26,6 +27,45 @@ const availableLangs = {
     'chinese',
     'chinese-traditional',
     'dothraki'
+  ]
+};
+
+export const auditedCerts = {
+  espanol: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis
+  ],
+  chinese: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy
+  ],
+  'chinese-traditional': [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy
+  ],
+  dothraki: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
   ]
 };
 
@@ -54,9 +94,11 @@ const langCodes = {
 };
 ```
 
-Agora, abra o arquivo `client/src/utils/algolia-locale-setup.js`. Esse dado é usado para a barra de busca que carrega os artigos `/news`. Embora seja improvável que você venha a testar essa funcionalidade, não ter os dados para o seu idioma pode levar a erros quando tentar criar a base de código localmente.
+Agora, abra o arquivo `client/src/utils/algolia-locale-setup.ts`. Esse dado é usado para a barra de busca que carrega os artigos `/news`. Embora seja improvável que você venha a testar essa funcionalidade, não ter os dados para o seu idioma pode levar a erros quando tentar criar a base de código localmente.
 
 Adicione um objeto para seu idioma no objeto `algoliaIndices`. Você deve usar os valores do objeto `english` para o teste local, substituindo a chave `english` pelo valor de `availableLangs` do seu idioma.
+
+> [!NOTE] Se nós já implantamos uma instância do editorial em sua língua-alvo, você pode atualizar os valores para refletir a instância que já está implantada. Do contrário, use os valores em inglês.
 
 Se você fosse adicionar Dothraki:
 
@@ -85,40 +127,6 @@ const algoliaIndices = {
 };
 ```
 
-Depois, você precisará informar ao client quais certificações estão traduzidas e quais ainda estão em inglês. Abra o arquivo `utils/is-audited.js`. Dentro de `auditedCerts`, adicione uma nova chave com o valor de `availableLangs` de seu idioma. Atribua o valor daquela chave a um array que contém os _nomes hifenizados_ para as certificações foram traduzidas. Consulte os dados existentes para aqueles nomes hifenizados.
-
-Dando continuidade ao trabalho para habilitar o idioma Dothraki – traduzimos as três primeiras certificações:
-
-```js
-const auditedCerts = {
-  espanol: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures'
-  ],
-  chinese: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis',
-    'quality-assurance'
-  ],
-  'chinese-traditional': [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries',
-    'data-visualization',
-    'back-end-development-and-apis',
-    'quality-assurance'
-  ],
-  dothraki: [
-    'responsive-web-design',
-    'javascript-algorithms-and-data-structures',
-    'front-end-development-libraries'
-  ]
-};
-```
-
 Por fim, em seu arquivo `.env`, definimos `CLIENT_LOCALE` e `CURRICULUM_LOCALE` com o valor de seu novo idioma (use o valor de `availableLangs`.)
 
 ```txt
@@ -128,7 +136,7 @@ CURRICULUM_LOCALE="dothraki"
 
 ## Ativando vídeos localizados
 
-Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, adicione o novo idioma (locale) à consilta do GraphQL no arquivo `client/src/templates/Challenges/video/Show.tsx`. Por exemplo, para adicionar Dothraki à consulta:
+Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, adicione o novo idioma (locale) à consulta do GraphQL no arquivo `client/src/templates/Challenges/video/Show.tsx`. Por exemplo, para adicionar Dothraki à consulta:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -143,7 +151,7 @@ Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, 
       ...
 ```
 
-Em seguida, adicione um id para o novo idioma para qualquer desafio em vídeo em um bloco auditado. Por exemplo, se `auditedCerts` em `all-langs.js` inclui `scientific-computing-with-python` para `dothraki`, você deve adicionar uma entrada em `dothraki` em `videoLocaleIds`. O frontmatter dever ter essa aparência:
+Em seguida, adicione um id para o novo idioma para qualquer desafio em vídeo em um bloco auditado. Por exemplo, se `auditedCerts` em `all-langs.ts` inclui `scientific-computing-with-python` para `dothraki`, você deve adicionar uma entrada em `dothraki` em `videoLocaleIds`. O frontmatter dever ter essa aparência:
 
 ```yml
 videoLocaleIds:
@@ -151,7 +159,7 @@ videoLocaleIds:
   italian: hiRTRAqNlpE
   portuguese: AelGAcoMXbI
   dothraki: new-id-here
-nomeComTracos: introducao-por-que-programa
+nomeComTracos: introducao-por-que-programar
 ---
 ```
 

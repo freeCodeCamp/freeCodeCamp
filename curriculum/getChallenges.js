@@ -4,6 +4,7 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
+const { getSuperOrder } = require('./utils');
 const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
 const { curriculum: curriculumLangs } =
@@ -158,7 +159,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
   const curriculum = await walk(
     root,
     {},
-    { type: 'directories', depth: 1 },
+    { type: 'directories', depth: 0 },
     buildSuperBlocks
   );
   const cb = (file, curriculum) => buildChallenges(file, curriculum, lang);
@@ -171,56 +172,71 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
   );
 };
 
-async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
+async function buildBlocks({ basename: blockName }, curriculum, baseDir) {
   const metaPath = path.resolve(
     __dirname,
     `./challenges/_meta/${blockName}/meta.json`
   );
-  const blockMeta = require(metaPath);
-  const { isUpcomingChange } = blockMeta;
-  if (typeof isUpcomingChange !== 'boolean') {
-    throw Error(
-      `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
-    );
-  }
+  let blockMeta;
+  try {
+    blockMeta = require(metaPath);
+    const { isUpcomingChange } = blockMeta;
+    if (typeof isUpcomingChange !== 'boolean') {
+      throw Error(
+        `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
+      );
+    }
 
-  if (!isUpcomingChange || showUpcomingChanges) {
-    // add the block to the superBlock
-    const blockInfo = { meta: blockMeta, challenges: [] };
-    curriculum[superBlock].blocks[blockName] = blockInfo;
+    if (!isUpcomingChange || showUpcomingChanges) {
+      // add the block to the superBlock
+      const blockInfo = { meta: blockMeta, challenges: [] };
+      curriculum[baseDir].blocks[blockName] = blockInfo;
+    }
+  } catch (e) {
+    curriculum['00-certifications'].blocks[blockName] = { challenges: [] };
   }
 }
 
 async function buildSuperBlocks({ path, fullPath }, curriculum) {
-  const { order, name: superBlock } = superBlockInfo(path);
-  curriculum[superBlock] = { superBlock, order, blocks: {} };
+  const baseDir = getBaseDir(path);
+  curriculum[baseDir] = { blocks: {} };
 
-  const cb = (file, curriculum) => buildBlocks(file, curriculum, superBlock);
+  const cb = (file, curriculum) => buildBlocks(file, curriculum, baseDir);
   return walk(fullPath, curriculum, { depth: 1, type: 'directories' }, cb);
 }
 
-async function buildChallenges({ path }, curriculum, lang) {
+async function buildChallenges({ path: filePath }, curriculum, lang) {
   // path is relative to getChallengesDirForLang(lang)
-  const block = getBlockNameFromPath(path);
-  const { name: superBlock } = superBlockInfoFromPath(path);
+  const block = getBlockNameFromPath(filePath);
+  const baseDir = getBaseDir(filePath);
   let challengeBlock;
 
   // TODO: this try block and process exit can all go once errors terminate the
   // tests correctly.
   try {
-    challengeBlock = curriculum[superBlock].blocks[block];
+    challengeBlock = curriculum[baseDir].blocks[block];
     if (!challengeBlock) {
       // this should only happen when a isUpcomingChange block is skipped
       return;
     }
   } catch (e) {
-    console.log(`failed to create superBlock ${superBlock}`);
+    console.log(`failed to create superBlock from ${baseDir}`);
     // eslint-disable-next-line no-process-exit
     process.exit(1);
   }
   const { meta } = challengeBlock;
-
-  const challenge = await createChallenge(challengesDir, path, lang, meta);
+  const isCert = path.extname(filePath) === '.yml';
+  // TODO: there's probably a better way, but this makes sure we don't build any
+  // of the new curriculum when we don't want it.
+  if (
+    process.env.SHOW_NEW_CURRICULUM !== 'true' &&
+    meta?.superBlock === '2022/responsive-web-design'
+  ) {
+    return;
+  }
+  const challenge = isCert
+    ? await createCertification(challengesDir, filePath, lang)
+    : await createChallenge(challengesDir, filePath, lang, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
@@ -234,6 +250,18 @@ async function parseTranslation(transPath, dict, lang, parse = parseMD) {
   return challengeType !== 11 && challengeType !== 3
     ? translateCommentsInChallenge(translatedChal, lang, dict)
     : translatedChal;
+}
+
+// eslint-disable-next-line no-unused-vars
+async function createCertification(basePath, filePath, lang) {
+  function getFullPath(pathLang) {
+    return path.resolve(__dirname, basePath, pathLang, filePath);
+  }
+  // TODO: restart using isAudited() once we can determine a) the superBlocks
+  // (plural) a certification belongs to and b) get that info from the parsed
+  // certification, rather than the path. ASSUMING that this is used by the
+  // client.  If not, delete this comment and the lang param.
+  return parseCert(getFullPath('english'));
 }
 
 async function createChallenge(basePath, filePath, lang, maybeMeta) {
@@ -250,7 +278,7 @@ async function createChallenge(basePath, filePath, lang, maybeMeta) {
     );
     meta = require(metaPath);
   }
-  const { name: superBlock } = superBlockInfoFromPath(filePath);
+  const { superBlock } = meta;
   if (!curriculumLangs.includes(lang))
     throw Error(`${lang} is not a accepted language.
   Trying to parse ${filePath}`);
@@ -264,26 +292,19 @@ ${getFullPath('english')}
   // while the auditing is ongoing, we default to English for un-audited certs
   // once that's complete, we can revert to using isEnglishChallenge(fullPath)
   const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
-  const isCert = path.extname(filePath) === '.yml';
-  let challenge;
 
-  if (isCert) {
-    challenge = await (useEnglish
-      ? parseCert(getFullPath('english'))
-      : parseCert(getFullPath(lang)));
-  } else {
-    challenge = await (useEnglish
-      ? parseMD(getFullPath('english'))
-      : parseTranslation(getFullPath(lang), COMMENT_TRANSLATIONS, lang));
-  }
+  const challenge = await (useEnglish
+    ? parseMD(getFullPath('english'))
+    : parseTranslation(getFullPath(lang), COMMENT_TRANSLATIONS, lang));
+
   const challengeOrder = findIndex(
     meta.challengeOrder,
     ([id]) => id === challenge.id
   );
   const {
     name: blockName,
+    hasEditableBoundaries,
     order,
-    superOrder,
     isPrivate,
     required = [],
     template,
@@ -291,8 +312,20 @@ ${getFullPath('english')}
     usesMultifileEditor
   } = meta;
   challenge.block = dasherize(blockName);
+  challenge.hasEditableBoundaries = !!hasEditableBoundaries;
   challenge.order = order;
-  challenge.superOrder = superOrder;
+  const superOrder = getSuperOrder(superBlock, {
+    showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
+  });
+  if (superOrder !== null) challenge.superOrder = superOrder;
+  /* Since there can be more than one way to complete a certification (using the
+   legacy curriculum or the new one, for instance), we need a certification
+   field to track which certification this belongs to. */
+  // TODO: generalize this to all superBlocks
+  challenge.certification =
+    superBlock === '2022/responsive-web-design'
+      ? 'responsive-web-design'
+      : superBlock;
   challenge.superBlock = superBlock;
   challenge.challengeOrder = challengeOrder;
   challenge.isPrivate = challenge.isPrivate || isPrivate;
@@ -337,22 +370,9 @@ async function hasEnglishSource(basePath, translationPath) {
     .catch(() => false);
 }
 
-function superBlockInfoFromPath(filePath) {
-  const [maybeSuper] = filePath.split(path.sep);
-  return superBlockInfo(maybeSuper);
-}
-
-function superBlockInfo(fileName) {
-  const [maybeOrder, ...superBlock] = fileName.split('-');
-  let order = parseInt(maybeOrder, 10);
-  if (isNaN(order)) {
-    return { order: 0, name: fileName };
-  } else {
-    return {
-      order: order,
-      name: superBlock.join('-')
-    };
-  }
+function getBaseDir(filePath) {
+  const [baseDir] = filePath.split(path.sep);
+  return baseDir;
 }
 
 function getBlockNameFromPath(filePath) {

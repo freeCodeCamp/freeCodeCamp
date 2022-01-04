@@ -4,6 +4,7 @@ Joi.objectId = require('joi-objectid')(Joi);
 const { challengeTypes } = require('../../client/utils/challenge-types');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
+const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
 
 const fileJoi = Joi.object().keys({
   fileKey: Joi.string(),
@@ -26,6 +27,7 @@ const schema = Joi.object()
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
     removeComments: Joi.bool(),
+    certification: Joi.string().regex(slugRE),
     challengeType: Joi.number().min(0).max(12).required(),
     checksum: Joi.number(),
     // __commentCounts is only used to test the comment replacement
@@ -39,6 +41,7 @@ const schema = Joi.object()
     }),
     challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
+    hasEditableBoundaries: Joi.boolean(),
     helpCategory: Joi.valid(
       'JavaScript',
       'HTML-CSS',
@@ -52,6 +55,7 @@ const schema = Joi.object()
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
+    notes: Joi.string().allow(''),
     order: Joi.number(),
     // video challenges only:
     videoId: Joi.when('challengeType', {
@@ -87,8 +91,8 @@ const schema = Joi.object()
         crossDomain: Joi.bool()
       })
     ),
-    solutions: Joi.array().items(Joi.array().items(fileJoi)),
-    superBlock: Joi.string().regex(slugRE),
+    solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
+    superBlock: Joi.string().regex(slugWithSlashRE),
     superOrder: Joi.number(),
     suborder: Joi.number(),
     tests: Joi.array().items(

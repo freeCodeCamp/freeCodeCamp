@@ -1,4 +1,5 @@
 import { navigate } from 'gatsby';
+import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { of, empty } from 'rxjs';
 import {
@@ -35,16 +36,20 @@ import {
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
-    switchMap(({ points }) =>
-      of(
+    switchMap(({ points }) => {
+      const payloadWithClientProperties = {
+        ...omit(update.payload, ['files']),
+        challengeFiles: update.payload.files ?? null
+      };
+      return of(
         submitComplete({
           username,
           points,
-          ...update.payload
+          ...payloadWithClientProperties
         }),
         updateComplete()
-      )
-    ),
+      );
+    }),
     catchError(() => of(updateFailed(update)))
   );
   return saveChallenge;
@@ -62,16 +67,19 @@ function submitModern(type, state) {
     }
 
     if (type === actionTypes.submitChallenge) {
-      const { id } = challengeMetaSelector(state);
+      const { id, block } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
       const challengeInfo = {
-        id,
-        files: challengeFiles.reduce(
+        id
+      };
+      // Only send files to server, if it is a JS project
+      if (block === 'javascript-algorithms-and-data-structures-projects') {
+        challengeInfo.files = challengeFiles.reduce(
           (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
           []
-        )
-      };
+        );
+      }
       const update = {
         endpoint: '/modern-challenge-completed',
         payload: challengeInfo
@@ -138,7 +146,8 @@ export default function completionEpic(action$, state$) {
     switchMap(({ type }) => {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
-      const { nextChallengePath, challengeType, superBlock } = meta;
+      const { nextChallengePath, challengeType, superBlock, certification } =
+        meta;
       const closeChallengeModal = of(closeModal('completion'));
 
       let submitter = () => of({ type: 'no-user-signed-in' });
@@ -157,6 +166,7 @@ export default function completionEpic(action$, state$) {
 
       const pathToNavigateTo = async () => {
         return await findPathToNavigateTo(
+          certification,
           nextChallengePath,
           superBlock,
           state,
@@ -174,6 +184,7 @@ export default function completionEpic(action$, state$) {
 }
 
 async function findPathToNavigateTo(
+  certification,
   nextChallengePath,
   superBlock,
   state,
@@ -188,7 +199,7 @@ async function findPathToNavigateTo(
   if (isProjectSubmission) {
     const username = usernameSelector(state);
     try {
-      const response = await getVerifyCanClaimCert(username, superBlock);
+      const response = await getVerifyCanClaimCert(username, certification);
       if (response.status === 200) {
         canClaimCert = response.data?.response?.message === 'can-claim-cert';
       }

@@ -50,7 +50,7 @@ const {
   getTranslatableComments
 } = require('../getChallenges');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
-const { testedLang } = require('../utils');
+const { testedLang, getSuperOrder } = require('../utils');
 const ChallengeTitles = require('./utils/challengeTitles');
 const MongoIds = require('./utils/mongoIds');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -161,8 +161,10 @@ async function setup() {
   // as they appear in the list of challenges
   const blocks = challenges.map(({ block }) => block);
   const superBlocks = challenges.map(({ superBlock }) => superBlock);
-  const targetBlockStrings = [...new Set(blocks)];
-  const targetSuperBlockStrings = [...new Set(superBlocks)];
+  const targetBlockStrings = [...new Set(blocks.filter(el => Boolean(el)))];
+  const targetSuperBlockStrings = [
+    ...new Set(superBlocks.filter(el => Boolean(el)))
+  ];
 
   // the next few statements will filter challenges based on command variables
   if (process.env.npm_config_superblock) {
@@ -198,7 +200,10 @@ async function setup() {
   const meta = {};
   for (const challenge of challenges) {
     const dashedBlockName = challenge.block;
-    if (!meta[dashedBlockName]) {
+    // certifications do not have dashedBlockName's and don't have metas so
+    // we can skip them.
+    // TODO: omit certifications from the list of challenges
+    if (dashedBlockName && !meta[dashedBlockName]) {
       meta[dashedBlockName] = await getMetaForBlock(dashedBlockName);
     }
   }
@@ -265,22 +270,23 @@ function populateTestsForLang({ lang, challenges, meta }) {
     ]);
     superBlocks.forEach(superBlock => {
       const filteredMeta = Object.values(meta)
-        /**
-         * Exclude any meta which doesn't have a superOrder, as these shouldn't
-         * appear on the learn map and thus don't need to be validated.
-         */
-        .filter(
-          el =>
-            el.superBlock === superBlock && typeof el.superOrder !== 'undefined'
-        )
+        .filter(el => el.superBlock === superBlock)
         .sort((a, b) => a.order - b.order);
       if (!filteredMeta.length) {
         return;
       }
       it(`${superBlock} should have the same order in every meta`, function () {
-        const firstOrder = filteredMeta[0].superOrder;
+        const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
+          showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+        });
+        assert.isNumber(firstOrder);
         assert.isTrue(
-          filteredMeta.every(el => el.superOrder === firstOrder),
+          filteredMeta.every(
+            el =>
+              getSuperOrder(el.superBlock, {
+                showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+              }) === firstOrder
+          ),
           'The superOrder properties are mismatched.'
         );
       });
@@ -296,6 +302,9 @@ function populateTestsForLang({ lang, challenges, meta }) {
     this.timeout(5000);
     challenges.forEach((challenge, id) => {
       const dashedBlockName = challenge.block;
+      // TODO: once certifications are not included in the list of challenges,
+      // stop returning early here.
+      if (typeof dashedBlockName === 'undefined') return;
       describe(challenge.block || 'No block', function () {
         describe(challenge.title || 'No title', function () {
           // Note: the title in meta.json are purely for human readability and
@@ -490,24 +499,26 @@ ${inspect(commentMap)}
             // This is expected to happen in the project based curriculum.
 
             const nextChallenge = challenges[id + 1];
-            // TODO: can this be dried out, ideally by removing the redux
-            // handler?
+
             if (nextChallenge) {
               const solutionFiles = cloneDeep(nextChallenge.challengeFiles);
-              solutionFiles.forEach(challengeFile => {
-                challengeFile.editableContents = getLines(
-                  challengeFile.contents,
-                  challenge.challengeFiles.find(
-                    x =>
-                      x.ext === challengeFile.ext &&
-                      x.name === challengeFile.name
-                  ).editableRegionBoundaries
-                );
-              });
-              solutions = [solutionFiles];
+              const solutionFilesWithEditableContents = solutionFiles.map(
+                file => ({
+                  ...file,
+                  editableContents: getLines(
+                    file.contents,
+                    file.editableRegionBoundaries
+                  )
+                })
+              );
+              // Since there is only one seed, there can only be one solution,
+              // but the tests assume solutions is an array.
+              solutions = [solutionFilesWithEditableContents];
               solutionFromNext = true;
             } else {
-              throw Error('solution omitted');
+              throw Error(
+                `solution omitted for ${challenge.superBlock} ${challenge.block} ${challenge.title}`
+              );
             }
           }
 
@@ -560,15 +571,11 @@ async function createTestRunner(
   solutionFromNext
 ) {
   const { required = [], template, removeComments } = challenge;
-  // we should avoid modifying challenge, as it gets reused:
-  const challengeFiles = cloneDeep(challenge.challengeFiles);
-  solutionFiles.forEach(solutionFile => {
-    const challengeFile = challengeFiles.find(
-      x => x.ext === solutionFile.ext && x.name === solutionFile.name
-    );
-    challengeFile.contents = solutionFile.contents;
-    challengeFile.editableContents = solutionFile.editableContents;
-  });
+
+  const challengeFiles = replaceChallengeFilesContentsWithSolutions(
+    challenge.challengeFiles,
+    solutionFiles
+  );
 
   const { build, sources, loadEnzyme } = await buildChallenge({
     challengeFiles,
@@ -606,6 +613,25 @@ async function createTestRunner(
       throw err;
     }
   };
+}
+
+function replaceChallengeFilesContentsWithSolutions(
+  challengeFiles,
+  solutionFiles
+) {
+  return challengeFiles.map(file => {
+    const matchingSolutionFile = solutionFiles.find(
+      ({ ext, name }) => ext === file.ext && file.name === name
+    );
+    if (!matchingSolutionFile) {
+      throw Error(`No matching solution file found`);
+    }
+    return {
+      ...file,
+      contents: matchingSolutionFile.contents,
+      editableContents: matchingSolutionFile.editableContents
+    };
+  });
 }
 
 async function getContextEvaluator(build, sources, code, loadEnzyme) {

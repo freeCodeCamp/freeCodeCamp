@@ -25,7 +25,7 @@ Não inclua aspas (simples ou duplas) na saída.
 
 # --hints--
 
-Sequências de cartas 2, 3, 4, 5, 6 deve retornar `5 Bet`
+Sequência de cartas 2, 3, 4, 5, 6 deve retornar a string `5 Bet`
 
 ```js
 assert(

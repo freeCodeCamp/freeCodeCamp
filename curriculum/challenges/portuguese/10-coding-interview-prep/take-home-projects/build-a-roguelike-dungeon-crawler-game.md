@@ -10,25 +10,25 @@ dashedName: build-a-roguelike-dungeon-crawler-game
 
 **Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/apLXEJ/>.
 
-Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**Especificação de usuário:** eu tenho saúde, um nível e uma arma. Eu posso pegar uma arma melhor. Eu posso pegar itens de saúde.
+**História de usuário:** eu tenho saúde, um nível e uma arma. Eu posso pegar uma arma melhor. Eu posso pegar itens de saúde.
 
-**Especificação de usuário:** todos os itens e inimigos do mapa são organizados aleatoriamente.
+**História de usuário:** todos os itens e inimigos do mapa são organizados aleatoriamente.
 
-**Especificação de usuário:** eu posso me mover através de um mapa, descobrindo itens.
+**História de usuário:** eu posso me mover através de um mapa, descobrindo itens.
 
-**Especificação de usuário:** eu posso me mover para qualquer lugar dentro dos limites do mapa, mas não posso me mover através de um inimigo até ter vencido.
+**História de usuário:** eu posso me mover para qualquer lugar dentro dos limites do mapa, mas não posso me mover através de um inimigo até ter vencido.
 
-**Especificação de usuário:** grande parte do mapa está oculta. Quando eu dou um passo, todos os espaços que estão dentro de uma certa distância ao meu redor meus são revelados.
+**História de usuário:** grande parte do mapa está oculta. Quando eu dou um passo, todos os espaços que estão dentro de uma certa distância ao meu redor meus são revelados.
 
-**Especificação de usuário:** quando eu derroto um inimigo, o inimigo vai embora e eu ganho XP, o que eventualmente aumenta meu nível.
+**História de usuário:** quando eu derroto um inimigo, o inimigo vai embora e eu ganho XP, o que eventualmente aumenta meu nível.
 
-**Especificação de usuário:** quando eu enfrento um inimigo, nós ferimos um ao outro em turnos até que um de nós perca. Eu causo dano baseado no meu nível e na minha arma. O inimigo causa dano baseado em seu nível. O dano é, de certo modo, aleatório dentro de um intervalo.
+**História de usuário:** quando eu enfrento um inimigo, nós ferimos um ao outro em turnos até que um de nós perca. Eu causo dano baseado no meu nível e na minha arma. O inimigo causa dano baseado em seu nível. O dano é, de certo modo, aleatório dentro de um intervalo.
 
-**Especificação de usuário:** quando eu encontrar e derrotar o chefe, eu ganho o jogo.
+**História de usuário:** quando eu encontrar e derrotar o chefe, eu ganho o jogo.
 
-**Especificação de usuário:** o jogo deve ser desafiador, mas teoricamente ganhável.
+**História de usuário:** o jogo deve ser desafiador, mas teoricamente ganhável.
 
 Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 

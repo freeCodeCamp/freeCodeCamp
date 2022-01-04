@@ -79,11 +79,17 @@
   "learn-github-by-building-a-list-of-inspirational-quotes": "Relational Databases",
   "number-guessing-game": "Relational Databases",
   "learn-accessibility-by-building-a-quiz": "HTML-CSS",
+  "learn-css-colors-by-building-a-set-of-colored-markers": "HTML-CSS",
   "learn-html-forms-by-building-a-registration-form": "HTML-CSS",
   "learn-css-animation-by-building-a-ferris-wheel": "HTML-CSS",
   "learn-css-flexbox-by-building-a-photo-gallery": "HTML-CSS",
   "learn-css-grid-by-building-a-magazine": "HTML-CSS",
   "learn-css-transforms-by-building-a-penguin": "HTML-CSS",
   "learn-typography-by-building-a-nutrition-label": "HTML-CSS",
-  "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": "HTML-CSS"
+  "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": "HTML-CSS",
+  "build-a-personal-portfolio-webpage-project": "HTML-CSS",
+  "build-a-product-landing-page-project": "HTML-CSS",
+  "build-a-survey-form-project": "HTML-CSS",
+  "build-a-technical-documentation-page-project": "HTML-CSS",
+  "build-a-tribute-page-project": "HTML-CSS"
 }
