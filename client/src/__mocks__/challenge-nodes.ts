@@ -1,14 +1,16 @@
 interface MockChallengeNodes {
-  fields: {
-    slug: string;
-    blockName: string;
+  challenge: {
+    fields: {
+      slug: string;
+      blockName: string;
+    };
+    id: string;
+    block: string;
+    title: string;
+    isPrivate: boolean;
+    superBlock: string;
+    dashedName: string;
   };
-  id: string;
-  block: string;
-  title: string;
-  isPrivate: boolean;
-  superBlock: string;
-  dashedName: string;
 }
 
 const mockChallengeNodes: MockChallengeNodes[] = [
