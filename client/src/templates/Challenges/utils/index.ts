@@ -3,7 +3,7 @@ import envData from '../../../../../config/env.json';
 const { forumLocation } = envData;
 
 interface GuideData {
-  forumTopicId: number;
+  forumTopicId?: number;
   title?: string;
 }
 
