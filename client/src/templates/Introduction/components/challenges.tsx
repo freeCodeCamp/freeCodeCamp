@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 
+import { SuperBlocks } from '../../../../../config/certification-settings';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { executeGA } from '../../../redux';
-import { SuperBlocks } from '../../../../../config/certification-settings';
 import { ExecuteGaArg } from '../../../pages/donate';
+import { executeGA } from '../../../redux';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
