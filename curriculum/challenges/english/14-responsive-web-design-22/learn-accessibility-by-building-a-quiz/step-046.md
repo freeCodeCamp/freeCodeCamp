@@ -159,9 +159,7 @@ assert.equal(cursor, 'pointer');
               <label for="css-questions">Do you have any questions:</label>
             </div>
             <div class="answer">
-              <textarea id="css-questions" name="css-questions" rows="5" cols="24">
-                Who is flexbox...
-              </textarea>
+              <textarea id="css-questions" name="css-questions" rows="5" cols="24" placeholder="Who is flexbox..."></textarea>
             </div>
           </div>
         </section>
