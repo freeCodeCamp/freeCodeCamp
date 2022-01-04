@@ -688,23 +688,6 @@ export const reducer = handleActions(
       ...state,
       currentChallengeId: payload
     }),
-    [settingsTypes.updateLegacyCertComplete]: (state, { payload }) => {
-      const { appUsername } = state;
-      return {
-        ...state,
-        completionCount: state.completionCount + 1,
-        user: {
-          ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
-            completedChallenges: uniqBy(
-              [...state.user[appUsername].completedChallenges, payload],
-              'id'
-            )
-          }
-        }
-      };
-    },
     [settingsTypes.submitNewUsernameComplete]: (state, { payload }) =>
       payload
         ? {
