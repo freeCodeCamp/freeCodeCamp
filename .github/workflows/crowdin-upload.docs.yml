@@ -13,6 +13,16 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@v2
+
+      - name: Generate Crowdin Config
+        uses: freecodecamp/crowdin-action@fix/bad-paths
+        env:
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
+          PLUGIN: 'generate-config'
+          PROJECT_NAME: 'docs'
+
       - name: Crowdin Upload
         uses: crowdin/github-action@master
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
@@ -30,7 +40,7 @@ jobs:
           create_pull_request: false
 
           # global options
-          config: './config/crowdin/docs/crowdin.yml'
+          config: './crowdin-config.yml'
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug
@@ -40,9 +50,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-      #- name: Remove Deleted English Docs Files From Crowdin
-      #  uses: ./tools/crowdin/actions/remove-deleted-files
-      #  env:
-      #    CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-      #    CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-      #    CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+
+      # - name: Remove deleted files
+      #   uses: freecodecamp/crowdin-action@fix/bad-paths
+      #   env:
+      #     CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+      #     CROWDIN_API_URL: "https://freecodecamp.crowdin.com/api/v2/"
+      #     CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
+      #     PLUGIN: "remove-deleted-files"
+      #     FILE_PATH: "docs"

@@ -9,7 +9,7 @@ dashedName: step-37
 
 That is kind of what you want, but now it would be nice if the flavor and price were on the same line. `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of their parent element.
 
-To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements. Add a `class` attribute with the value `item` to first `article` element under the `Coffee` heading.
+To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements. Add a `class` attribute with the value `item` to the first `article` element under the `Coffee` heading.
 
 # --hints--
 

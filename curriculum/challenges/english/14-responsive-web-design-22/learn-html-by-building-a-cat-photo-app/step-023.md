@@ -7,7 +7,7 @@ dashedName: step-23
 
 # --description--
 
-A figure caption (`figcaption`) element is used to add a caption to describe the image contained withing the `figure` element. For example, `<figcaption>A cute cat</figcaption>` adds the caption `A cute cat`.
+A figure caption (`figcaption`) element is used to add a caption to describe the image contained within the `figure` element. For example, `<figcaption>A cute cat</figcaption>` adds the caption `A cute cat`.
 
 After the image nested in the `figure` element, add a `figcaption` element with the text `Cats love lasagna.`
 

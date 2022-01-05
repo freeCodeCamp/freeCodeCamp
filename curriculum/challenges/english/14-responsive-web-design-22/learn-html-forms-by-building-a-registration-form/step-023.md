@@ -7,7 +7,7 @@ dashedName: step-23
 
 # --description--
 
-For the terms and conditions, add an `input` of with a `type` of `checkbox` to the third `label` element. Also, as we do not want users to sign up, without having read the terms and conditions, make it `required`.
+For the terms and conditions, add an `input` with a `type` of `checkbox` to the third `label` element. Also, as we do not want users to sign up, without having read the terms and conditions, make it `required`.
 
 # --hints--
 

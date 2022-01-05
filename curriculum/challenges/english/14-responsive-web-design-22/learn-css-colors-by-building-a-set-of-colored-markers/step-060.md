@@ -16,7 +16,7 @@ In the `.green` CSS rule, change the `background-color` property to `background`
 Your `.green` CSS rule should have a `background` property with the value `#007F00`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.green').cssText === 'background: rgb(0, 127, 0);');
+assert.include(new __helpers.CSSHelp(document).getStyle('.green').cssText, 'background: rgb(0, 127, 0)');
 ```
 
 # --seed--
