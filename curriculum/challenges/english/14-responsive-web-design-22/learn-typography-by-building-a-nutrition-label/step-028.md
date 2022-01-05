@@ -14,7 +14,7 @@ You may notice there is still a small border at the bottom of your `.lg` element
 Your `.lg, .md` selector should have a `border` property set to `0`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.lg, .md')?.border === '0px');
+assert(new __helpers.CSSHelp(document).getStyle('.lg, .md')?.borderWidth === '0px');
 ```
 
 # --seed--
