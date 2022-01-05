@@ -7,7 +7,7 @@ dashedName: step-8
 
 # --description--
 
-A useful property of an _SVG_ (scalable vector graphics) is that is contains a `path` attribute which allows the image to be scaled without affecting the resolution of the resultant image.
+A useful property of an _SVG_ (scalable vector graphics) is that it contains a `path` attribute which allows the image to be scaled without affecting the resolution of the resultant image.
 
 Currently, the `img` is assuming it's default size, which is too large. Correctly, scale the image using it's `id` as a selector, and setting the `width` to `max(100px, 18vw)`.
 
