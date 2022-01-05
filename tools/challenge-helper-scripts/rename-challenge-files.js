@@ -3,6 +3,11 @@ const { join } = require('path');
 const gray = require('gray-matter');
 const { exec } = require('child_process');
 const { promisify } = require('util');
+
+/**
+ * From the root directory, run the following CLI command to rename all RWD-22 challenge files:
+ * node tools/challenge-helper-scripts/rename-challenge-files.js
+ */
 (async () => {
   const asyncExec = promisify(exec);
   const blocks = await readdir(
