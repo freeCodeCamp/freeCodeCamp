@@ -16,7 +16,7 @@ In the `.blue` CSS rule, change the `background-color` property to `background`.
 Your `.blue` CSS rule should have a `background` property with the value `hsl(240, 100%, 50%)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.blue').cssText === 'background: rgb(0, 0, 255);');
+assert.include(new __helpers.CSSHelp(document).getStyle('.blue').cssText, 'background: rgb(0, 0, 255)');
 ```
 
 # --seed--
