@@ -90,9 +90,7 @@ Here are some recommended paths for some of our platforms:
   for more information.
 - To be a **GitHub** moderator, help process GitHub issues that are brought up
   to see if they are valid and (ideally) try to propose solutions for these
-  issues to be picked up by others (or yourself). Take a look at the
-  [Moderator Handbook](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/moderator-handbook.md)
-  for more information.
+  issues to be picked up by others (or yourself).
 
 Altogether, be respectful to others. We are humans all around the world. With
 that in mind, please also consider using encouraging or supportive language and
@@ -103,6 +101,10 @@ members recommend you, a staff member will reach out and onboard you to the
 moderators' team. Open source work is voluntary work and our time is limited.
 We acknowledge that this is probably true in your case as well. So we emphasize
 being **consistent** rather than engaging in the community 24/7.
+
+Take a look at our [Moderator Handbook](https://contribute.freecodecamp.org/#/moderator-handbook)
+for a more exhaustive list of other responsibilities and expectations we have
+of our moderators.
 
 ### I am stuck on something that is not included in this documentation.
 
