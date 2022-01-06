@@ -71,8 +71,8 @@ We typically do not assign issues to anyone other than long-time contributors. I
 
 ### I am interested in being a moderator at freeCodeCamp. Where should I start?
 
-Our community moderators are our heros. Their voluntary contributions make
-freeCodeCamp make freeCodeCamp a safe and welcoming community.
+Our community moderators are our heroes. Their voluntary contributions make
+freeCodeCamp a safe and welcoming community.
 
 First and foremost, we would need you to be an active participant in the
 community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/)
