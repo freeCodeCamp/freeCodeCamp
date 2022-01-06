@@ -57,7 +57,7 @@ describe('Responsive Web Design Superblock', () => {
         cy.contains("I've completed this challenge")
           .should('not.be.disabled')
           .click();
-        cy.intercept(`${process.env.API_LOCATION}/project-completed`).as(
+        cy.intercept(`${Cypress.env('API_LOCATION')}/project-completed`).as(
           'challengeCompleted'
         );
         cy.contains('Submit and go to next challenge').click();

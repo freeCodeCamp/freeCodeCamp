@@ -28,5 +28,6 @@ module.exports = (on, config) => {
 
   // Allows us to test the new curriculum before it's released:
   config.env.SHOW_UPCOMING_CHANGES = process.env.SHOW_UPCOMING_CHANGES;
+  config.env.API_LOCATION = process.env.API_LOCATION;
   return config;
 };
