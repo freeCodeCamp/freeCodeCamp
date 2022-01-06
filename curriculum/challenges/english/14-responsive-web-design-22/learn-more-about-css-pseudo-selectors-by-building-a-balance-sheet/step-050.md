@@ -9,7 +9,7 @@ dashedName: step-50
 
 The `elem1 ~ elem2` selector will target `elem2` elements where they are preceded by an `elem1` element. This means that any `elem2` element which has a sibling `elem1` somewhere *before* it within the same parent will be targeted.
 
-Create a `div ~ h2` selector to target all of your `h2` elements except the first (as it does not have a `div` element as a sibling). Give this new selector a `font-weight` property set to `normal`, to make your section text a bit less obtrusive.
+Create a `div ~ h2` selector to target all of your `h2` elements except the first (as it does not have a `div` element as a sibling). Give this new selector a `font-weight` property set to `normal` to make your section text a bit less obtrusive.
 
 # --hints--
 

@@ -7,7 +7,7 @@ dashedName: step-34
 
 # --description--
 
-Now you'll need to adjust the layout of the dollar values. The CSS `:not()` selector allows you to target all elements matching a given selector *except* those which match the selector you provide within the `:not()`.
+Now you'll need to adjust the layout of the dollar values. The CSS `:not()` selector allows you to target all elements matching a given selector *except* those which match the selector you provide within `:not()`.
 
 Create a `span:not(.name)` selector to target all of your `span` elements except those with the `class` set to `name`. Give it a `margin-left` property set to `10px` and a `min-width` property set to `15%`.
 
