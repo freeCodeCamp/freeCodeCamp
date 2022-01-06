@@ -208,6 +208,7 @@
           "solution": "string",
           "githubLink": "string",
           "challengeType": "number",
+          "isManuallyApproved": "boolean",
           "files": {
             "type": [
               {

@@ -69,13 +69,17 @@ export default async function bootChallenge(app, done) {
   done();
 }
 
-const jsProjects = [
+const jsCertProjectIds = [
   'aaa48de84e1ecc7c742e1124',
   'a7f4d8f2483413a6ce226cac',
   '56533eb9ac21ba0edf2244e2',
   'aff0395860f5d3034dc0bfc9',
   'aa2e6f85cab2ab736c9a9b24'
 ];
+
+const multiFileCertProjectIds = getChallenges()
+  .filter(challenge => challenge.challengeType === 14)
+  .map(challenge => challenge.id);
 
 export function buildUserUpdate(
   user,
@@ -85,7 +89,10 @@ export function buildUserUpdate(
 ) {
   const { files, completedDate = Date.now() } = _completedChallenge;
   let completedChallenge = {};
-  if (jsProjects.includes(challengeId)) {
+  if (
+    jsCertProjectIds.includes(challengeId) ||
+    multiFileCertProjectIds.includes(challengeId)
+  ) {
     completedChallenge = {
       ..._completedChallenge,
       files: files.map(file =>
@@ -223,14 +230,19 @@ export function modernChallengeCompleted(req, res, next) {
     .getCompletedChallenges$()
     .flatMap(() => {
       const completedDate = Date.now();
-      const { id, files } = req.body;
+      const { id, files, challengeType } = req.body;
 
-      const { alreadyCompleted, updateData } = buildUserUpdate(user, id, {
+      const data = {
         id,
         files,
         completedDate
-      });
+      };
 
+      if (challengeType === 14) {
+        data.isManuallyApproved = false;
+      }
+
+      const { alreadyCompleted, updateData } = buildUserUpdate(user, id, data);
       const points = alreadyCompleted ? user.points : user.points + 1;
       const updatePromise = new Promise((resolve, reject) =>
         user.updateAttributes(updateData, err => {

@@ -71,10 +71,15 @@ function submitModern(type, state) {
       const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
       const challengeInfo = {
-        id
+        id,
+        challengeType
       };
-      // Only send files to server, if it is a JS project
-      if (block === 'javascript-algorithms-and-data-structures-projects') {
+
+      // Only send files to server, if it is a JS project or multiFile cert project
+      if (
+        block === 'javascript-algorithms-and-data-structures-projects' ||
+        challengeType === challengeTypes.multiFileCertProject
+      ) {
         challengeInfo.files = challengeFiles.reduce(
           (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
           []
