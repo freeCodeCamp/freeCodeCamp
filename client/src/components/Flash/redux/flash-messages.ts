@@ -5,6 +5,8 @@ export enum FlashMessages {
   CertClaimSuccess = 'flash.cert-claim-success',
   CertificateMissing = 'flash.certificate-missing',
   CertsPrivate = 'flash.certs-private',
+  CodeSaved = 'flash.code-saved',
+  CodeSaveError = 'flash.code-save-error',
   CompleteProjectFirst = 'flash.complete-project-first',
   DeleteTokenErr = 'flash.delete-token-err',
   EmailValid = 'flash.email-valid',

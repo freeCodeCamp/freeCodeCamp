@@ -12,7 +12,6 @@ import { challengeTypes } from '../../../../utils/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 
 import {
-  ChallengeFile,
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
@@ -49,6 +48,7 @@ import {
   openModal,
   setEditorFocusability
 } from '../redux';
+import { savedChallengesSelector } from '../../../redux';
 import { getGuideUrl } from '../utils';
 import MultifileEditor from './MultifileEditor';
 import DesktopLayout from './desktop-layout';
@@ -62,7 +62,8 @@ const mapStateToProps = createStructuredSelector({
   challengeFiles: challengeFilesSelector,
   tests: challengeTestsSelector,
   output: consoleOutputSelector,
-  isChallengeCompleted: isChallengeCompletedSelector
+  isChallengeCompleted: isChallengeCompletedSelector,
+  savedChallenges: savedChallengesSelector
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -86,7 +87,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowClassicProps {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
-  createFiles: (arg0: ChallengeFile[]) => void;
+  createFiles: (arg0: ChallengeFiles) => void;
   data: { challengeNode: ChallengeNode };
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
@@ -107,6 +108,7 @@ interface ShowClassicProps {
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
   previewMounted: () => void;
+  savedChallenges: CompletedChallenge[];
 }
 
 interface ShowClassicState {
@@ -256,6 +258,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       initTests,
       updateChallengeMeta,
       openModal,
+      savedChallenges,
       data: {
         challengeNode: {
           challenge: {
@@ -273,7 +276,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       }
     } = this.props;
     initConsole('');
-    createFiles(challengeFiles ?? []);
+
+    const savedChallenge = savedChallenges?.find(challenge => {
+      return challenge.id === challengeMeta.id;
+    });
+
+    createFiles(savedChallenge?.challengeFiles || challengeFiles || []);
+
     initTests(tests);
     if (showProjectPreview) openModal('projectPreview');
     updateChallengeMeta({
@@ -521,6 +530,7 @@ export const query = graphql`
         block
         title
         description
+        id
         hasEditableBoundaries
         instructions
         notes

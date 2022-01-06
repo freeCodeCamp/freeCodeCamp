@@ -21,6 +21,8 @@ import {
 } from '../../../redux';
 
 import postUpdate$ from '../utils/postUpdate$';
+import { mapFilesToChallengeFiles } from '../../../utils/ajax';
+import { uniformizeChallengeSize } from '../../../utils/uniformize-challenge-size';
 import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,
@@ -34,7 +36,7 @@ import {
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
-    switchMap(({ points }) => {
+    switchMap(({ points, savedChallenges = undefined }) => {
       // TODO: do this all in ajax.ts
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
@@ -49,9 +51,12 @@ function postChallenge(update, username) {
       }
       return of(
         submitComplete({
-          username,
-          points,
-          ...payloadWithClientProperties
+          submittedChallenge: {
+            username,
+            points,
+            ...payloadWithClientProperties
+          },
+          savedChallenges: mapFilesToChallengeFiles(savedChallenges)
         }),
         updateComplete()
       );
@@ -76,24 +81,23 @@ function submitModern(type, state) {
       const { id, block } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
-      const challengeInfo = {
-        id,
-        challengeType
-      };
 
-      // Only send files to server, if it is a JS project or multiFile cert project
+      let body;
       if (
         block === 'javascript-algorithms-and-data-structures-projects' ||
         challengeType === challengeTypes.multiFileCertProject
       ) {
-        challengeInfo.files = challengeFiles.reduce(
-          (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
-          []
-        );
+        body = uniformizeChallengeSize({ id, challengeType, challengeFiles });
+      } else {
+        body = {
+          id,
+          challengeType
+        };
       }
+
       const update = {
         endpoint: '/modern-challenge-completed',
-        payload: challengeInfo
+        payload: body
       };
       return postChallenge(update, username);
     }

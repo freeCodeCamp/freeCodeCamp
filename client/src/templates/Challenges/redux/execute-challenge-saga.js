@@ -25,6 +25,9 @@ import {
   isJavaScriptChallenge,
   isLoopProtected
 } from '../utils/build';
+import { challengeTypes } from '../../../../utils/challenge-types';
+import { createFlashMessage } from '../../../components/Flash/redux';
+import { uniformizeChallengeSize } from '../../../utils/uniformize-challenge-size';
 import { actionTypes } from './action-types';
 import {
   challengeDataSelector,
@@ -45,7 +48,36 @@ import {
 const previewTimeout = 2500;
 let previewTask;
 
+// when 'run tests' is clicked, do this first
 export function* executeCancellableChallengeSaga(payload) {
+  const { challengeType, id } = yield select(challengeMetaSelector);
+  const { challengeFiles } = yield select(challengeDataSelector);
+
+  // if multiFileCertProject, see if body/code size is submittable
+  if (challengeType === challengeTypes.multiFileCertProject) {
+    // body-parser has a size limit for req.body
+    // this makes a uniform object to check the size of for submitting and saving challenges
+    const body = uniformizeChallengeSize({ id, challengeFiles, challengeType });
+    const bodySizeInBytes = new Blob([JSON.stringify(body)]).size;
+
+    // body-parser's default size limit
+    const MAX_SIZE = 102400;
+
+    // if it's too big, create flash message and don't do anything else
+    if (bodySizeInBytes > MAX_SIZE) {
+      return yield put(
+        createFlashMessage({
+          type: 'danger',
+          message: 'flash.challenge-submit-too-big',
+          variables: {
+            'max-size': MAX_SIZE,
+            'user-size': bodySizeInBytes
+          }
+        })
+      );
+    }
+  }
+
   if (previewTask) {
     yield cancel(previewTask);
   }

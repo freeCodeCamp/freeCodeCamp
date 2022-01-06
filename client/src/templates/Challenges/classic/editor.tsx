@@ -82,7 +82,7 @@ interface EditorProps {
   updateFile: (object: {
     fileKey: FileKey;
     editorValue: string;
-    editableRegionBoundaries: number[] | null;
+    editableRegionBoundaries?: number[];
   }) => void;
   usesMultifileEditor: boolean;
 }
@@ -630,10 +630,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     // has changed or if content is dragged between regions)
 
     const coveringRange = getLinesCoveringEditableRegion();
-    const editableRegionBoundaries = coveringRange && [
-      coveringRange.startLineNumber - 1,
-      coveringRange.endLineNumber + 1
-    ];
+    const editableRegionBoundaries =
+      (coveringRange && [
+        coveringRange.startLineNumber - 1,
+        coveringRange.endLineNumber + 1
+      ]) ??
+      undefined;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (player.current.sampler?.loaded && player.current.shouldPlay) {

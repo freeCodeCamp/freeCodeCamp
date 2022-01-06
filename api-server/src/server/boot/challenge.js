@@ -64,6 +64,13 @@ export default async function bootChallenge(app, done) {
     backendChallengeCompleted
   );
 
+  api.post(
+    '/save-challenge',
+    send200toNonUser,
+    isValidChallengeCompletion,
+    saveChallenge
+  );
+
   router.get('/challenges/current-challenge', redirectToCurrentChallenge);
 
   const coderoadChallengeCompleted = createCoderoadChallengeCompleted(app);
@@ -84,6 +91,10 @@ const jsCertProjectIds = [
 ];
 
 const multiFileCertProjectIds = getChallenges()
+  .filter(challenge => challenge.challengeType === 14)
+  .map(challenge => challenge.id);
+
+const savableChallenges = getChallenges()
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
 
@@ -110,7 +121,11 @@ export function buildUserUpdate(
   }
   let finalChallenge;
   const updateData = {};
-  const { timezone: userTimezone, completedChallenges = [] } = user;
+  const {
+    timezone: userTimezone,
+    completedChallenges = [],
+    savedChallenges = []
+  } = user;
 
   const oldChallenge = find(
     completedChallenges,
@@ -133,11 +148,38 @@ export function buildUserUpdate(
     };
   }
 
+  let newSavedChallenges = savedChallenges;
+
+  // if savable challenge, update record in db on submit
+  if (savableChallenges.includes(challengeId)) {
+    let challengeToSave = {
+      id: challengeId,
+      lastSavedDate: completedDate,
+      files: files.map(file =>
+        pick(file, [
+          'contents',
+          'key',
+          'index',
+          'name',
+          'path',
+          'ext',
+          'history'
+        ])
+      )
+    };
+
+    newSavedChallenges = uniqBy(
+      [challengeToSave, ...savedChallenges.map(fixCompletedChallengeItem)],
+      'id'
+    );
+  }
+
   updateData.$set = {
     completedChallenges: uniqBy(
       [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
       'id'
-    )
+    ),
+    savedChallenges: newSavedChallenges
   };
 
   updateData.$pull = {
@@ -157,7 +199,8 @@ export function buildUserUpdate(
   return {
     alreadyCompleted,
     updateData,
-    completedDate: finalChallenge.completedDate
+    completedDate: finalChallenge.completedDate,
+    savedChallenges: newSavedChallenges
   };
 }
 
@@ -214,6 +257,7 @@ export function isValidChallengeCompletion(req, res, next) {
     body: { id, challengeType, solution }
   } = req;
 
+  // ToDO: Validate other things (challengeFiles, etc)
   const isValidChallengeCompletionErrorMsg = {
     type: 'error',
     message: 'That does not appear to be a valid challenge submission.'
@@ -261,10 +305,10 @@ export function modernChallengeCompleted(req, res, next) {
         completedChallenge.challengeType = challengeType;
       }
 
-      const { alreadyCompleted, updateData } = buildUserUpdate(
+      const { alreadyCompleted, savedChallenges, updateData } = buildUserUpdate(
         user,
         id,
-        completedChallenge
+        data
       );
       const points = alreadyCompleted ? user.points : user.points + 1;
       const updatePromise = new Promise((resolve, reject) =>
@@ -279,7 +323,8 @@ export function modernChallengeCompleted(req, res, next) {
         return res.json({
           points,
           alreadyCompleted,
-          completedDate
+          completedDate,
+          savedChallenges
         });
       });
     })
@@ -383,6 +428,52 @@ function backendChallengeCompleted(req, res, next) {
           alreadyCompleted,
           points: alreadyCompleted ? user.points : user.points + 1,
           completedDate: completedChallenge.completedDate
+        });
+      });
+    })
+    .subscribe(() => {}, next);
+}
+
+function saveChallenge(req, res, next) {
+  const user = req.user;
+  const { id, files = [] } = req.body;
+
+  if (!savableChallenges.includes(id)) {
+    return res.status(403).send('That challenge type is not savable');
+  }
+
+  let challengeToSave = {
+    id,
+    lastSavedDate: Date.now(),
+    files: files.map(file =>
+      pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext', 'history'])
+    )
+  };
+
+  const { savedChallenges = [] } = user;
+  const newSavedChallenges = uniqBy(
+    [challengeToSave, ...savedChallenges.map(fixCompletedChallengeItem)],
+    'id'
+  );
+
+  return user
+    .getSavedChallenges$()
+    .flatMap(() => {
+      const updateData = {};
+      updateData.$set = {
+        savedChallenges: newSavedChallenges
+      };
+      const updatePromise = new Promise((resolve, reject) =>
+        user.updateAttributes(updateData, err => {
+          if (err) {
+            return reject(err);
+          }
+          return resolve();
+        })
+      );
+      return Observable.fromPromise(updatePromise).doOnNext(() => {
+        return res.json({
+          savedChallenges: newSavedChallenges
         });
       });
     })

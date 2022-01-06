@@ -114,18 +114,21 @@ function createReadSessionUser(app) {
       Observable.forkJoin(
         queryUser.getCompletedChallenges$(),
         queryUser.getPartiallyCompletedChallenges$(),
+        queryUser.getSavedChallenges$(),
         queryUser.getPoints$(),
         Donation.getCurrentActiveDonationCount$(),
         (
           completedChallenges,
           partiallyCompletedChallenges,
+          savedChallenges,
           progressTimestamps,
           activeDonations
         ) => ({
           activeDonations,
           completedChallenges,
           partiallyCompletedChallenges,
-          progress: getProgress(progressTimestamps, queryUser.timezone)
+          progress: getProgress(progressTimestamps, queryUser.timezone),
+          savedChallenges
         })
       );
     Observable.if(
@@ -137,7 +140,8 @@ function createReadSessionUser(app) {
             activeDonations,
             completedChallenges,
             partiallyCompletedChallenges,
-            progress
+            progress,
+            savedChallenges
           }) => ({
             user: {
               ...queryUser.toJSON(),
@@ -147,7 +151,8 @@ function createReadSessionUser(app) {
               ),
               partiallyCompletedChallenges: partiallyCompletedChallenges.map(
                 fixPartiallyCompletedChallengeItem
-              )
+              ),
+              savedChallenges: savedChallenges.map(fixCompletedChallengeItem)
             },
             sessionMeta: { activeDonations }
           })

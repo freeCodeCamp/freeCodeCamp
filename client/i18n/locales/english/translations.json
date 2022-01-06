@@ -57,6 +57,7 @@
     "resubscribe": "You can click here to resubscribe",
     "click-here": "Click here to sign in",
     "save": "Save",
+    "save-code": "Save your Code",
     "no-thanks": "No thanks",
     "yes-please": "Yes please",
     "update-email": "Update my Email",
@@ -528,7 +529,11 @@
     "start-project-err": "Something went wrong trying to start the project. Please try again.",
     "complete-project-first": "You must complete the project first.",
     "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
-    "local-code-saved": "Saved! Your code was saved to your browser's local storage."
+    "local-code-saved": "Saved! Your code was saved to your browser's local storage.",
+    "code-saved": "Your code was saved to the database. It will be here when you return.",
+    "code-save-error": "An error occurred trying to save your code.",
+    "challenge-save-too-big": "Sorry, you cannot save your code. The maximum size is {{max-size}} bytes. Your code is {{user-size}} bytes. Please make your code smaller and try again.",
+    "challenge-submit-too-big": "Sorry, you cannot submit your code. The a maximum size is {{max-size}} bytes. Your code is {{user-size}} bytes. Please make your code smaller and try again."
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",

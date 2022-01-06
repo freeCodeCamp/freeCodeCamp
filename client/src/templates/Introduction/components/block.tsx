@@ -127,7 +127,8 @@ export class Block extends Component<BlockProps> {
         challenge.challengeType === 4 ||
         challenge.challengeType === 10 ||
         challenge.challengeType === 12 ||
-        challenge.challengeType === 13;
+        challenge.challengeType === 13 ||
+        challenge.challengeType === 14;
 
       const isTakeHomeProject = blockDashedName === 'take-home-projects';
 
