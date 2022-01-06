@@ -69,17 +69,6 @@ We typically do not assign issues to anyone other than long-time contributors. I
    - Did you follow the pull request checklist?
    - Did you give your pull request a meaningful title?
 
-### I am stuck on something that is not included in this documentation.
-
-**Feel free to ask for help in:**
-
-- The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The `#Contributors` channel on [our chat server](https://chat.freecodecamp.org/channel/contributors).
-
-We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
-
-Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
-
 ### I am interested in being a moderator at freeCodeCamp. Where should I start?
 
 Our community moderators are our heros. Their voluntary contributions make
@@ -114,6 +103,17 @@ members recommend you, a staff member will reach out and onboard you to the
 moderators' team. Open source work is voluntary work and our time is limited.
 We acknowledge that this is probably true in your case as well. So we emphasize
 being **consistent** rather than engaging in the community 24/7.
+
+### I am stuck on something that is not included in this documentation.
+
+**Feel free to ask for help in:**
+
+- The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
+- The `#Contributors` channel on [our chat server](https://chat.freecodecamp.org/channel/contributors).
+
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
+
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
 ### Additional Assistance
 
