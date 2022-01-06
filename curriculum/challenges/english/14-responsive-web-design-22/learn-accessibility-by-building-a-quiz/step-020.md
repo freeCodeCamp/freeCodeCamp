@@ -9,7 +9,7 @@ dashedName: step-20
 
 It is important to link each `input` to the corresponding `label` element. This provides assistive technology users with a visual reference to the input.
 
-This is done, by giving the `label` a `for` attribute, which contains the `id` of the `input`.
+This is done by giving the `label` a `for` attribute, which contains the `id` of the `input`.
 
 This section will take a student's name, email address, and date of birth. Give the `label` elements appropriate `for` attributes, as well as text content. Then, link the `input` elements to the corresponding `label` elements.
 
