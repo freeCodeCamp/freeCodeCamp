@@ -34,12 +34,9 @@ describe('Responsive Web Design Superblock', () => {
     cy.visit('/learn/responsive-web-design');
   });
   describe('Before submitting projects', () => {
-    it('should have an anchor element with the text "Go to settings to claim your certification", and class "disabled"', () => {
-      cy.get('a.disabled').should('be.visible');
-      cy.get('a.disabled').should(
-        'have.text',
-        'Go to settings to claim your certification'
-      );
+    it('should navigate to "/settings#certification-settings" when clicking the "Go to settings to claim your certification" anchor', () => {
+      cy.contains('Go to settings to claim your certification').click();
+      cy.url().should('include', '/settings#certification-settings');
     });
   });
   describe('After submitting all 5 projects', () => {
