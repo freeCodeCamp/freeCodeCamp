@@ -51,14 +51,14 @@ jobs:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
-      - name: Remove deleted files
-        uses: freecodecamp/crowdin-action@main
-        env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
-          PLUGIN: 'remove-deleted-files'
-          FILE_PATH: 'curriculum/'
+      # - name: Remove deleted files
+      #   uses: freecodecamp/crowdin-action@main
+      #   env:
+      #     CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+      #     CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
+      #     CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+      #     PLUGIN: 'remove-deleted-files'
+      #     FILE_PATH: 'curriculum/'
 
       - name: Hide Non-Translated Strings
         uses: freecodecamp/crowdin-action@main
