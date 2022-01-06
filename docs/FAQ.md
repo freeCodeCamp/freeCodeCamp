@@ -101,7 +101,9 @@ Here are some recommended paths for some of our platforms:
   for more information.
 - To be a **GitHub** moderator, help process GitHub issues that are brought up
   to see if they are valid and (ideally) try to propose solutions for these
-  issues to be picked up by others (or yourself).
+  issues to be picked up by others (or yourself). Take a look at the
+  [Moderator Handbook](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/moderator-handbook.md)
+  for more information.
 
 Altogether, be respectful to others. We are humans all around the world. With
 that in mind, please also consider using encouraging or supportive language and
