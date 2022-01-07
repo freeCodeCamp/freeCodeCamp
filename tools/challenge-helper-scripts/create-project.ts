@@ -145,7 +145,7 @@ async function createMetaJson(
   newMeta.order = order;
   newMeta.superOrder = Object.values(SuperBlocks).indexOf(superBlock) + 1;
   newMeta.superBlock = superBlock;
-  newMeta.challengeOrder = [[challengeId.id, 'Step 1']];
+  newMeta.challengeOrder = [[challengeId.toString(), 'Step 1']];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
     await fs.mkdir(newMetaDir);

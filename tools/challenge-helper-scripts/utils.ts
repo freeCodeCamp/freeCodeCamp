@@ -93,7 +93,8 @@ const reorderSteps = () => {
     );
     const filePath = `${projectPath}${newFileName}.tmp`;
     const frontMatter = matter.read(filePath);
-    const challengeID = (frontMatter.data.id as string) || new ObjectID().id;
+    const challengeID =
+      (frontMatter.data.id as string) || new ObjectID().toString();
     const title =
       newFileName === 'final.md' ? 'Final Prototype' : `Step ${newStepNum}`;
     const dashedName = `step-${newStepNum}`;

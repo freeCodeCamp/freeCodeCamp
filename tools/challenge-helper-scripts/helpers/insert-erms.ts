@@ -1,5 +1,5 @@
 // Update given value with markers (labels)
-const insertErms = (seedCode, erms) => {
+const insertErms = (seedCode: string, erms: number[]): string => {
   if (!erms || erms.length <= 1) {
     throw `erms should be provided`;
   }
@@ -27,4 +27,4 @@ const insertErms = (seedCode, erms) => {
   return newSeedCode;
 };
 
-exports.insertErms = insertErms;
+export { insertErms };
