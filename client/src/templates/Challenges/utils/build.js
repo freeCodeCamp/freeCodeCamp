@@ -84,7 +84,6 @@ export function canBuildChallenge(challengeData) {
 export async function buildChallenge(challengeData, options) {
   const { challengeType } = challengeData;
   let build = buildFunctions[challengeType];
-
   if (build) {
     return build(challengeData, options);
   }
