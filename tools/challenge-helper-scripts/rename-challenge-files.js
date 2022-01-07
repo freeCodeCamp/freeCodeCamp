@@ -1,8 +1,8 @@
 const { readdir, readFile } = require('fs').promises;
 const { join } = require('path');
-const gray = require('gray-matter');
 const { exec } = require('child_process');
 const { promisify } = require('util');
+const gray = require('gray-matter');
 
 /**
  * From the root directory, run the following CLI command to rename all RWD-22 challenge files:
