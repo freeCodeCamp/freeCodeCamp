@@ -7,7 +7,7 @@ dashedName: step-38
 
 # --description--
 
-In order for a form's data to be accessed by the locaton specified in the `action` attribute, you must give the text field a `name` attribute and assign it a value to represent the data being submitted. For example, you could use the following syntax for an email address text field: `<input type="text" name="email">`.
+In order for a form's data to be accessed by the location specified in the `action` attribute, you must give the text field a `name` attribute and assign it a value to represent the data being submitted. For example, you could use the following syntax for an email address text field: `<input type="text" name="email">`.
 
 Add the `name` attribute with the value `catphotourl` to your text field.
 
