@@ -118,7 +118,9 @@ const reorderSteps = () => {
   fs.writeFileSync(projectMetaPath, JSON.stringify(newMeta, null, 2));
 };
 
-const getChallengeSeeds = challengeFilePath => {
+const getChallengeSeeds = (
+  challengeFilePath: string
+): Record<string, unknown> => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
   return parseMDSync(challengeFilePath).challengeFiles;
 };
