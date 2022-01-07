@@ -7,7 +7,7 @@ import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 import { SuperBlocks } from '../../config/certification-settings';
 import { blockNameify } from '../../utils/block-nameify';
-import { createStepFile } from './utils.js';
+import { createStepFile } from './utils';
 
 const helpCategories = ['HTML-CSS', 'JavaScript', 'Python'] as const;
 

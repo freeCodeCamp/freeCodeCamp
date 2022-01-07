@@ -12,7 +12,7 @@ import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
 interface Options {
   projectPath: string;
   stepNum: number;
-  challengeSeeds: Record<string, unknown>;
+  challengeSeeds?: Record<string, unknown>;
   stepBetween?: boolean;
 }
 

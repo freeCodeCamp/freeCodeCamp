@@ -4,7 +4,7 @@ import path from 'path';
 // Generates an array with the output of processing filenames with an expected
 // format (`step-###.md`).
 // ['step-001.md', 'step-002.md'] => [1, 2]
-function getExistingStepNums(projectPath: string) {
+function getExistingStepNums(projectPath: string): number[] {
   return fs.readdirSync(projectPath).reduce((stepNums, fileName) => {
     if (
       path.extname(fileName).toLowerCase() === '.md' &&
