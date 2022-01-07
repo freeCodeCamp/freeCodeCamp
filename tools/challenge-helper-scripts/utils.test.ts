@@ -1,7 +1,7 @@
-const fs = require('fs');
-const ObjectID = require('bson-objectid');
-const glob = require('glob');
-const mock = require('mock-fs');
+import fs from 'fs';
+import ObjectID from 'bson-objectid';
+import glob from 'glob';
+import mock from 'mock-fs';
 
 // NOTE:
 // Use `console.log()` before mocking the filesystem or use
@@ -49,8 +49,8 @@ jest.mock(
 );
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
-const { getStepTemplate } = require('./helpers/get-step-template');
-const { createStepFile, reorderSteps } = require('./utils');
+import { getStepTemplate } from './helpers/get-step-template';
+import { createStepFile, reorderSteps } from './utils';
 
 describe('Challenge utils helper scripts', () => {
   describe('createStepFile util', () => {
@@ -67,7 +67,7 @@ describe('Challenge utils helper scripts', () => {
         stepNum: 3
       });
 
-      expect(step).toEqual(mockChallengeId);
+      expect(step.toString()).toEqual(mockChallengeId);
       expect(ObjectID).toHaveBeenCalledTimes(1);
 
       // Internal tasks

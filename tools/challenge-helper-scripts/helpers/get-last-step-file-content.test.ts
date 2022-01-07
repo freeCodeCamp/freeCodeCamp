@@ -1,5 +1,5 @@
-const mock = require('mock-fs');
-const { getLastStepFileContent } = require('./get-last-step-file-content');
+import mock from 'mock-fs';
+import { getLastStepFileContent } from './get-last-step-file-content';
 
 jest.mock('./get-project-path', () => {
   return {

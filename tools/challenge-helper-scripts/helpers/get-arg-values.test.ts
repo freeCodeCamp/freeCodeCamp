@@ -1,4 +1,4 @@
-const { getArgValues } = require('./get-arg-values');
+import { getArgValues } from './get-arg-values';
 
 describe('getArgValues helper', () => {
   it('should be able to run if there are no values to process', () => {

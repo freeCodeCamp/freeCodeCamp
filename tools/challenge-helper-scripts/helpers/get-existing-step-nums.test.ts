@@ -1,5 +1,5 @@
-const mock = require('mock-fs');
-const { getExistingStepNums } = require('./get-existing-step-nums');
+import mock from 'mock-fs';
+import { getExistingStepNums } from './get-existing-step-nums';
 
 // NOTE:
 // Use `console.log()` before mocking the filesystem or use

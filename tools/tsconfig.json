@@ -2,13 +2,13 @@
   "include": [
     "./scripts/lint/validate-keys.ts",
     "./scripts/build/ensure-env.ts",
-    "./challenge-helper-scripts/**/*.ts",
+    "./challenge-helper-scripts/**/*.ts"
   ],
   "compilerOptions": {
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "typeRoots": ["../node_modules/@types"],
-    "types": ["node"]
+    "types": ["node", "jest"]
   }
 }
