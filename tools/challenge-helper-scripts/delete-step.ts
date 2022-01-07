@@ -1,17 +1,17 @@
-const fs = require('fs');
-const { getArgValues } = require('./helpers/get-arg-values');
-const { getExistingStepNums } = require('./helpers/get-existing-step-nums');
-const { getProjectPath } = require('./helpers/get-project-path');
-const { padWithLeadingZeros } = require('./helpers/pad-with-leading-zeros');
-const { reorderSteps } = require('./utils');
+import fs from 'fs';
+import { getArgValues } from './helpers/get-arg-values';
+import { getExistingStepNums } from './helpers/get-existing-step-nums';
+import { getProjectPath } from './helpers/get-project-path';
+import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
+import { reorderSteps } from './utils';
 
-const stepExists = (steps, stepToFind) => steps.includes(stepToFind);
+const stepExists = (steps: number[], stepToFind: number) =>
+  steps.includes(stepToFind);
 
 const projectPath = getProjectPath();
 const args = getArgValues(process.argv);
 
-let { num } = args;
-num = parseInt(num, 10);
+const num = parseInt(args.num, 10);
 
 if (!Number.isInteger(num) || num < 1) {
   throw 'Step not deleted. Step num must be a number greater than 0.';
