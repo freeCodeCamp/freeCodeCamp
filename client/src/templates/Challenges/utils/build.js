@@ -44,7 +44,15 @@ const composeFunctions = (...fns) =>
 
 function buildSourceMap(challengeFiles) {
   // TODO: rename sources.index to sources.contents.
-  const source = challengeFiles.reduce(
+  // Make sure index.html is always first
+  let fixedChallengeFiles = challengeFiles;
+  if (
+    challengeFiles.length === 2 &&
+    challengeFiles[1].fileKey === 'indexhtml'
+  ) {
+    fixedChallengeFiles = [...challengeFiles].reverse();
+  }
+  const source = fixedChallengeFiles.reduce(
     (sources, challengeFile) => {
       sources.index += challengeFile.source || challengeFile.contents;
       sources.editableContents += challengeFile.editableContents || '';
