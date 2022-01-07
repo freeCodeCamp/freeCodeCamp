@@ -57,7 +57,7 @@ export default function bootCertificate(app) {
 }
 
 function verifyCanClaimCert(_req, res) {
-  return res.status(200).json({
+  return res.status(410).json({
     message: {
       type: 'info',
       message: 'Please reload the app, this feature is no longer available.'
