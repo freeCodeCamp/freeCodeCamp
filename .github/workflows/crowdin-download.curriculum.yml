@@ -67,7 +67,7 @@ jobs:
           CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'convert-chinese'
-          FILE_PATH: '/curriculum/challenges/chinese/'
+          FILE_PATHS: '["/curriculum/challenges/chinese/", "/curriculum/dictionaries/chinese"]'
 
       ##### Download Espanol #####
       - name: Crowdin Download Espanol Translations
