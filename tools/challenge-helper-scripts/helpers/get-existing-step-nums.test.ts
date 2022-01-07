@@ -68,7 +68,7 @@ describe('getExistingStepNums helper', () => {
     expect(steps).toEqual(expected);
   });
 
-  afterAll(() => {
+  afterEach(() => {
     mock.restore();
   });
 });

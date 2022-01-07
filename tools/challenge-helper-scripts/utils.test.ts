@@ -82,8 +82,6 @@ describe('Challenge utils helper scripts', () => {
         `project/step-002.md`,
         `project/step-003.md`
       ]);
-
-      mock.restore();
     });
   });
 
@@ -132,8 +130,9 @@ describe('Challenge utils helper scripts', () => {
 }`;
 
       expect(result).toEqual(expectedResult);
-
-      mock.restore();
     });
+  });
+  afterEach(() => {
+    mock.restore();
   });
 });

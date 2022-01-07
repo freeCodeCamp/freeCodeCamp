@@ -30,8 +30,6 @@ describe('getLastStepFileContent helper', () => {
     expect(() => {
       getLastStepFileContent();
     }).toThrow();
-
-    mock.restore();
   });
 
   it('should return information if steps count is correct', () => {
@@ -51,7 +49,9 @@ describe('getLastStepFileContent helper', () => {
     };
 
     expect(getLastStepFileContent()).toEqual(expected);
+  });
 
+  afterEach(() => {
     mock.restore();
   });
 });
