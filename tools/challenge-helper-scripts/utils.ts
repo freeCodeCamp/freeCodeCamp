@@ -22,7 +22,6 @@ const createStepFile = ({
   challengeSeeds = {},
   stepBetween = false
 }: Options) => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const challengeId = new ObjectID();
 
   let finalStepNum = padWithLeadingZeros(stepNum);

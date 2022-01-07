@@ -9,7 +9,7 @@ import mock from 'mock-fs';
 // `require`.
 
 jest.mock('bson-objectid', () => {
-  return jest.fn(() => mockChallengeId);
+  return jest.fn(() => ({ toString: () => mockChallengeId }));
 });
 
 jest.mock('./helpers/get-step-template', () => {
@@ -33,9 +33,9 @@ jest.mock('./helpers/get-project-path', () => {
 jest.mock('gray-matter', () => {
   return {
     read: jest.fn(() => ({
-      data: { id: mockChallengeId },
-      stringify: jest.fn(() => 'Lorem ipsum...')
-    }))
+      data: { id: mockChallengeId }
+    })),
+    stringify: jest.fn(() => 'Lorem ipsum...')
   };
 });
 
