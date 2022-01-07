@@ -1,5 +1,7 @@
+import ObjectID from "bson-objectid";
+
 type StepOptions = {
-  challengeId: string;
+  challengeId: ObjectID;
   challengeSeeds: unknown;
   stepBetween: boolean;
   stepNum: number;

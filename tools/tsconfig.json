@@ -1,7 +1,8 @@
 {
   "include": [
     "./scripts/lint/validate-keys.ts",
-    "./scripts/build/ensure-env.ts"
+    "./scripts/build/ensure-env.ts",
+    "./challenge-helper-scripts/**/*.ts",
   ],
   "compilerOptions": {
     "esModuleInterop": true,

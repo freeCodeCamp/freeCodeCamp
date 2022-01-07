@@ -1,23 +1,29 @@
-const fs = require('fs');
-const path = require('path');
-const ObjectID = require('bson-objectid');
-const matter = require('gray-matter');
-const {
-  getMetaData
-} = require('../challenge-helper-scripts/helpers/get-project-path-metadata');
-const { parseMDSync } = require('../challenge-parser/parser');
-const { getProjectMetaPath } = require('./helpers/get-project-meta-path');
-const { getProjectPath } = require('./helpers/get-project-path');
-const { getStepTemplate } = require('./helpers/get-step-template');
-const { padWithLeadingZeros } = require('./helpers/pad-with-leading-zeros');
+import fs from 'fs';
+import path from 'path';
+import ObjectID from 'bson-objectid';
+import * as matter from 'gray-matter';
+import { getMetaData } from '../challenge-helper-scripts/helpers/get-project-path-metadata';
+import { parseMDSync } from '../challenge-parser/parser';
+import { getProjectMetaPath } from './helpers/get-project-meta-path';
+import { getProjectPath } from './helpers/get-project-path';
+import { getStepTemplate } from './helpers/get-step-template';
+import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
+
+interface Options {
+  projectPath: string;
+  stepNum: number;
+  challengeSeeds: Record<string, unknown>;
+  stepBetween?: boolean;
+}
 
 const createStepFile = ({
   projectPath,
   stepNum,
   challengeSeeds = {},
   stepBetween = false
-}) => {
-  const challengeId = ObjectID();
+}: Options) => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const challengeId = new ObjectID();
 
   let finalStepNum = padWithLeadingZeros(stepNum);
   finalStepNum += stepBetween ? 'a' : '';
@@ -87,7 +93,7 @@ const reorderSteps = () => {
     );
     const filePath = `${projectPath}${newFileName}.tmp`;
     const frontMatter = matter.read(filePath);
-    const challengeID = frontMatter.data.id || ObjectID();
+    const challengeID = (frontMatter.data.id as string) || new ObjectID().id;
     const title =
       newFileName === 'final.md' ? 'Final Prototype' : `Step ${newStepNum}`;
     const dashedName = `step-${newStepNum}`;
@@ -98,7 +104,7 @@ const reorderSteps = () => {
       title,
       dashedName
     };
-    fs.writeFileSync(filePath, frontMatter.stringify(newData));
+    fs.writeFileSync(filePath, matter.stringify(frontMatter.content, newData));
   });
 
   filesToReorder.forEach(({ newFileName }) => {
@@ -113,11 +119,8 @@ const reorderSteps = () => {
 };
 
 const getChallengeSeeds = challengeFilePath => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
   return parseMDSync(challengeFilePath).challengeFiles;
 };
 
-module.exports = {
-  createStepFile,
-  getChallengeSeeds,
-  reorderSteps
-};
+export { createStepFile, reorderSteps, getChallengeSeeds };
