@@ -76,12 +76,15 @@ class WorkerExecutor {
           }, timeout);
 
           worker.onmessage = e => {
-            if (e.data && e.data.type) {
-              this.emit(e.data.type, e.data.data);
-              return;
-            }
             clearTimeout(timeoutId);
-            this.emit('done', e.data);
+            // data.type is undefined when the message has been processed
+            // successfully and defined when something else has happened (e.g.
+            // an error occurred)
+            if (e.data?.type) {
+              this.emit(e.data.type, e.data.data);
+            } else {
+              this.emit('done', e.data);
+            }
           };
 
           worker.onerror = e => {
