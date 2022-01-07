@@ -78,7 +78,8 @@ describe('project submission', () => {
         // We need to wait for everything to finish loading and hydrating, so we
         // use this text as a proxy for that.
         const textInNextPage = projectTitles.slice(1);
-        textInNextPage.push('Claim Your Certification');
+        // The following text exists on the donation modal
+        textInNextPage.push('Nicely done');
 
         projectsInOrder.forEach(
           ({ block, superBlock, dashedName, solutions }, i) => {
