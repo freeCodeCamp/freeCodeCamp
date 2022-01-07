@@ -1,5 +1,5 @@
-import { getGuideUrl } from './index';
 import envData from '../../../../../config/env.json';
+import { getGuideUrl } from './index';
 
 const { forumLocation } = envData;
 

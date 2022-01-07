@@ -8,6 +8,9 @@
   "required": [
     {
       "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"
+    },
+    {
+      "src": "https://code.jquery.com/jquery-3.6.0.min.js"
     }
   ],
   "superBlock": "front-end-development-libraries",

@@ -5,6 +5,7 @@ import store from 'store';
 import { SuperBlocks } from '../../../config/certification-settings';
 import { actionTypes as challengeTypes } from '../templates/Challenges/redux/action-types';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
+import { emailToABVariant } from '../utils/A-B-tester';
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { actionTypes } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
@@ -12,7 +13,6 @@ import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
 import { createFetchUserSaga } from './fetch-user-saga';
 import { createGaSaga } from './ga-saga';
-import { emailToABVariant } from '../utils/A-B-tester';
 
 import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';

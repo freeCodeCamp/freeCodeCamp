@@ -1,6 +1,6 @@
 ---
 id: 587d824c367417b2b2512c4c
-title: Assert Deep Equality with .deepEqual and .notDeepEqual
+title: Confirmar la igualdad profunda con .deepEqual y .notDeepEqual
 challengeType: 2
 forumTopicId: 301587
 dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
@@ -8,17 +8,17 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`deepEqual()` asserts that two objects are deep equal.
+`deepEqual()` confirma que dos objetos son iguales en profundidad.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#7` in the `Equality` suite, change each `assert` to either `assert.deepEqual` or `assert.notDeepEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#7` en `Equality` suite, cambia cada `assert` a `assert.deepEqual` o `assert.notDeepEqual` para pasar la prueba (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 
-All tests should pass.
+Todas las pruebas deben pasar.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `deepEqual` vs. `notDeepEqual`.
+Debe elegir el método correcto para la primera aserción - `deepEqual` vs. `notDeepEqual`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `deepEqual` vs. `
   );
 ```
 
-You should choose the correct method for the second assertion - `deepEqual` vs. `notDeepEqual`.
+Debe elegir el método correcto para la segunda aserción - `deepEqual` vs. `notDeepEqual`.
 
 ```js
 (getUserInput) =>
