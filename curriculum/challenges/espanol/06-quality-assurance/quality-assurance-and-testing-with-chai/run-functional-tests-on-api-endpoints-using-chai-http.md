@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c58
-title: Run Functional Tests on API Endpoints using Chai-HTTP
+title: Ejecutar pruebas funcionales en API Endpoints usando Chai-HTTP II
 challengeType: 2
 forumTopicId: 301593
 dashedName: run-functional-tests-on-api-endpoints-using-chai-http
@@ -8,43 +8,42 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-Mocha allows testing asyncronous operations. There is a small (BIG) difference. Can you spot it?
+Mocha te permite comprobar operaciones asíncronas como llamadas a los endpoints de la API con un complemento llamado `chai-http`.
 
-We can test our API endpoints using a plugin, called `chai-http`. Let's see how it works. And remember, API calls are asynchronous.
-
-The following is an example of a test using `chai-http` for the `'GET /hello?name=[name] => "hello [name]"'` suite. The test sends a name string in a url query string (`?name=John`) using a `GET`request to the `server`. In the `end` method's callback function, the response object (`res`) is received and contains the `status` property. The first `assert.equal` checks if the status is equal to `200`. The second `assert.equal` checks that the response string (`res.text`) is equal to `"hello John"`.
+El siguiente es un ejemplo de una prueba usando `chai-http` para una suite llamada `'GET /hello?name=[name] => "hello [name]"'`:
 
 ```js
 suite('GET /hello?name=[name] => "hello [name]"', function () {
-  test("?name=John", function (done) {
+  test('?name=John', function (done) {
     chai
       .request(server)
-      .get("/hello?name=John")
+      .get('/hello?name=John')
       .end(function (err, res) {
-        assert.equal(res.status, 200, "response status should be 200");
-        assert.equal(
-          res.text,
-          "hello John",
-          'response should be "hello John"'
-        );
+        assert.equal(res.status, 200, 'Response status should be 200');
+        assert.equal(res.text, 'hello John', 'Response should be "hello John"');
         done();
       });
   });
+});
 ```
 
-Notice the `done` parameter in the test's callback function. Calling it at the end without an argument is necessary to signal successful asynchronous completion.
+La prueba envía una solicitud `GET` al servidor con un nombre como una cadena de consulta de URL (`?name=John`). En la función callback del método `end`, el objeto de respuesta (`res`) es recibido y contiene la propiedad `status`.
+
+La primera `assert.equal` comprueba si el estado es igual a `200`. El segundo `assert.equal` comprueba que la cadena de respuesta (`res.text`) sea igual a `"hello John"`.
+
+También, ten en cuenta el parámetro `done` en la función callback de la prueba. Llamarlo sin un argumento al final de una prueba es necesario para indicar que la operación asíncrona está completa.
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with no name'` test (`// #1`) to assert the `status` and the `text` response to make the test pass. Do not alter the arguments passed to the asserts.
+Dentro de `tests/2_functional-tests.js`, modifica la prueba `'Test GET /hello with no name'` (`// #1`) para afirmar él `status` y el `text` de la respuesta para hacer que la prueba pase. No modifiques los argumentos pasados ​​a los verificadores.
 
-There should be no name in the query; the endpoint responds with `hello Guest`.
+No debe haber ninguna consulta de URL. Sin una consulta de nombre URL, el endpoint responde con `hello Guest`.
 
 # --hints--
 
-All tests should pass
+Todas las pruebas deben pasar
 
 ```js
 (getUserInput) =>
@@ -58,7 +57,7 @@ All tests should pass
   );
 ```
 
-You should test for 'res.status' == 200
+Debe comprobar si `res.status` == 200
 
 ```js
 (getUserInput) =>
@@ -74,7 +73,7 @@ You should test for 'res.status' == 200
   );
 ```
 
-You should test for 'res.text' == 'hello Guest'
+Debes probar que `res.text` == `'hello Guest'`
 
 ```js
 (getUserInput) =>

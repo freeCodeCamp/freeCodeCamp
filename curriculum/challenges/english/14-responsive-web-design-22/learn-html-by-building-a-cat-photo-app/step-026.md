@@ -9,7 +9,7 @@ dashedName: step-26
 
 The code for an ordered list (`ol`) is similar to an unordered list, but list items in an ordered list are numbered when displayed.
 
-After the final second section' last `h3` element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
+After the second `section`'s last `h3` element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
 
 # --hints--
 

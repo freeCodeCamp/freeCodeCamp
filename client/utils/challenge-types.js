@@ -12,6 +12,7 @@ const invalid = 9;
 const pythonProject = 10;
 const video = 11;
 const codeally = 12;
+const multiFileCertProject = 14;
 
 // individual exports
 exports.backend = backend;
@@ -33,7 +34,8 @@ exports.challengeTypes = {
   quiz,
   invalid,
   video,
-  codeally
+  codeally,
+  multiFileCertProject
 };
 
 // (Oliver) I don't think we need this for codeally projects, so they're ignored
@@ -67,7 +69,8 @@ exports.viewTypes = {
   [quiz]: 'quiz',
   [backend]: 'backend',
   [video]: 'video',
-  [codeally]: 'codeally'
+  [codeally]: 'codeally',
+  [multiFileCertProject]: 'classic'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -87,7 +90,8 @@ exports.submitTypes = {
   [quiz]: 'quiz',
   [backend]: 'backend',
   [modern]: 'tests',
-  [video]: 'tests'
+  [video]: 'tests',
+  [multiFileCertProject]: 'tests'
 };
 
 // determine which help forum questions should be posted to

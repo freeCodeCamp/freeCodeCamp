@@ -7,7 +7,7 @@ dashedName: step-19
 
 # --description--
 
-Filling out the content of the quiz, below the `#student-info`, add three `div` elements with a `class` of `info`.
+Filling out the content of the quiz, below `#student-info`, add three `div` elements with a `class` of `info`.
 
 Then, within each `div` nest one `label` element, and one `input` element.
 

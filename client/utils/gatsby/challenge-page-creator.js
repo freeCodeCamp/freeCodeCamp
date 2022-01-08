@@ -2,7 +2,7 @@ const path = require('path');
 const { createPoly } = require('../../../utils/polyvinyl');
 const { dasherize } = require('../../../utils/slugs');
 const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
-const { viewTypes } = require('../challenge-types');
+const { challengeTypes, viewTypes } = require('../challenge-types');
 
 const backend = path.resolve(
   __dirname,
@@ -102,7 +102,8 @@ exports.createChallengePages = function (createPage) {
 };
 
 function getProjectPreviewConfig(challenge, allChallengeEdges) {
-  const { block, challengeOrder, usesMultifileEditor } = challenge;
+  const { block, challengeOrder, challengeType, usesMultifileEditor } =
+    challenge;
 
   const challengesInBlock = allChallengeEdges
     .filter(({ node: { challenge } }) => challenge.block === block)
@@ -122,7 +123,10 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
   );
 
   return {
-    showProjectPreview: challengeOrder === 0 && usesMultifileEditor,
+    showProjectPreview:
+      challengeOrder === 0 &&
+      usesMultifileEditor &&
+      challengeType !== challengeTypes.multiFileCertProject,
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles,

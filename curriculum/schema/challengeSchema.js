@@ -28,7 +28,7 @@ const schema = Joi.object()
     challengeOrder: Joi.number(),
     removeComments: Joi.bool(),
     certification: Joi.string().regex(slugRE),
-    challengeType: Joi.number().min(0).max(12).required(),
+    challengeType: Joi.number().min(0).max(14).required(),
     checksum: Joi.number(),
     // __commentCounts is only used to test the comment replacement
     __commentCounts: Joi.object(),

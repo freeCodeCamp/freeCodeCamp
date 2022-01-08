@@ -86,7 +86,8 @@ export function* executeChallengeSaga({ payload }) {
     const protect = isLoopProtected(challengeMeta);
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
-      protect
+      protect,
+      usesTestRunner: true
     });
     const document = yield getContext('document');
     const testRunner = yield call(

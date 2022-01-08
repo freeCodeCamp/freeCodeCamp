@@ -42,7 +42,7 @@ O texto, `link to www.freecodecamp.org`, dentro do elemento `a`, é chamado de <
 
 O resultado final do exemplo ficará assim:
 
-Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.freecodecamp.org</a> for you to follow.
+Aqui temos o <a href="https://www.freecodecamp.org" target="_blank">link para www.freecodecamp.org</a> para você seguir.
 
 # --instructions--
 

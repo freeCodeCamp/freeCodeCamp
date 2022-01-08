@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Alert } from '@freecodecamp/react-bootstrap';
 import { SuperBlocks } from '../../../../../config/certification-settings';
 import { Link } from '../../../components/helpers';
-import { Alert } from '@freecodecamp/react-bootstrap';
 
 interface LegacyLinksProps {
   superBlock: SuperBlocks;
