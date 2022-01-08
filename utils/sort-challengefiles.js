@@ -1,16 +1,14 @@
 exports.sortChallengeFiles = function sortChallengeFiles(challengeFiles) {
   const xs = challengeFiles.slice();
-  // TODO: refactor this to use an ext array ['html', 'js', 'css'] and loop over
-  // that.
   xs.sort((a, b) => {
-    if (a.ext === 'html') return -1;
-    if (b.ext === 'html') return 1;
-    if (a.ext === 'css') return -1;
-    if (b.ext === 'css') return 1;
-    if (a.ext === 'jsx') return -1;
-    if (b.ext === 'jsx') return 1;
-    if (a.ext === 'js') return -1;
-    if (b.ext === 'js') return 1;
+    if (a.history[0] === 'index.html') return -1;
+    if (b.history[0] === 'index.html') return 1;
+    if (a.history[0] === 'styles.css') return -1;
+    if (b.history[0] === 'styles.css') return 1;
+    if (a.history[0] === 'index.jsx') return -1;
+    if (b.history[0] === 'index.jsx') return 1;
+    if (a.history[0] === 'script.js') return -1;
+    if (b.history[0] === 'script.js') return 1;
     return 0;
   });
   return xs;
