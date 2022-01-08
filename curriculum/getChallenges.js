@@ -344,20 +344,21 @@ ${getFullPath('english')}
 // gets the challenge ready for sourcing into Gatsby
 function prepareChallenge(challenge) {
   if (challenge.challengeFiles) {
-    challenge.challengeFiles = challenge.challengeFiles.reduce(
-      (challengeFiles, challengeFile) => {
-        return [
-          ...challengeFiles,
-          {
-            ...createPoly(challengeFile),
-            seed: challengeFile.contents.slice(0)
-          }
-        ];
-      },
-      []
-    );
+    challenge.challengeFiles = filesToPolys(challenge.challengeFiles);
   }
   return challenge;
+}
+
+function filesToPolys(files) {
+  return files.reduce((challengeFiles, challengeFile) => {
+    return [
+      ...challengeFiles,
+      {
+        ...createPoly(challengeFile),
+        seed: challengeFile.contents.slice(0)
+      }
+    ];
+  }, []);
 }
 
 async function hasEnglishSource(basePath, translationPath) {
@@ -383,3 +384,4 @@ function getBlockNameFromPath(filePath) {
 exports.hasEnglishSource = hasEnglishSource;
 exports.parseTranslation = parseTranslation;
 exports.createChallenge = createChallenge;
+exports.filesToPolys = filesToPolys;

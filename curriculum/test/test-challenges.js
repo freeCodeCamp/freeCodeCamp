@@ -47,7 +47,8 @@ const { sortChallengeFiles } = require('../../utils/sort-challengefiles');
 const {
   getChallengesForLang,
   getMetaForBlock,
-  getTranslatableComments
+  getTranslatableComments,
+  filesToPolys
 } = require('../getChallenges');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
 const { testedLang, getSuperOrder } = require('../utils');
@@ -525,7 +526,11 @@ ${inspect(commentMap)}
           // TODO: the no-solution filtering is a little convoluted:
           const noSolution = new RegExp('// solution required');
 
-          const solutionsAsArrays = solutions.map(sortChallengeFiles);
+          // sortChallengeFiles relies on the history, which doesn't exist
+          // before we make them into polyVinyls.
+          const solutionsAsArrays = solutions
+            .map(filesToPolys)
+            .map(sortChallengeFiles);
 
           const filteredSolutions = solutionsAsArrays.filter(solution => {
             return !isEmpty(
