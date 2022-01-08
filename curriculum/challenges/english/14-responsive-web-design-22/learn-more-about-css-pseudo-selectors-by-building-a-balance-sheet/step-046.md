@@ -7,7 +7,7 @@ dashedName: step-46
 
 # --description--
 
-You can see your changes when you hover over a total row, but it does not apply when you tab to them. An element that has been targeted by the tab key (or a mouse click) can be styled using the `:active` selector.
+You can see your changes when you hover over a total row, but it does not apply when you tab to them. An element that has been targeted by the tab key (or a mouse click) can be styled using the `:focus` selector.
 
 Create a `.row[tabindex]:focus` selector, and give it a `background-color` property set to `#198eee` and a `color` property set to `white`. Then try experimenting with hovering and clicking on your rows.
 
