@@ -108,15 +108,13 @@ const initTestFrame = frameReady => ctx => {
   waitForFrame(ctx)
     .then(async () => {
       const { sources, loadEnzyme } = ctx;
-      // default for classic challenges
-      // should not be used for modern
-      const code = {
-        contents: sources.index,
-        editableContents: sources.editableContents
-      };
       // provide the file name and get the original source
       const getUserInput = fileName => toString(sources[fileName]);
-      await ctx.document.__initTestFrame({ code, getUserInput, loadEnzyme });
+      await ctx.document.__initTestFrame({
+        code: sources,
+        getUserInput,
+        loadEnzyme
+      });
       frameReady();
     })
     .catch(handleDocumentNotFound);

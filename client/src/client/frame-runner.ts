@@ -33,6 +33,8 @@ export interface InitTestFrameArg {
 
 async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   const code = (e.code.contents || '').slice();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const __sources = e.code;
   const editableContents = (e.code.editableContents || '').slice();
   // __testEditable allows test authors to run tests against a transitory dom
   // element built using only the code in the editable region.

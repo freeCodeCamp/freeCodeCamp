@@ -47,6 +47,8 @@ function buildSourceMap(challengeFiles) {
   const source = challengeFiles.reduce(
     (sources, challengeFile) => {
       sources.index += challengeFile.source || challengeFile.contents;
+      sources.contents = sources.index;
+      sources[challengeFile.history[0]] = challengeFile.source;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
