@@ -124,7 +124,7 @@ it('Worker executor should successfully execute 3 tasks, use 3 workers and termi
 // eslint-disable-next-line max-len
 it('Worker executor should successfully execute 3 tasks in parallel and use 3 workers', async () => {
   mockWorker();
-  const testWorker = createWorker('test', { concurrency: 3 });
+  const testWorker = createWorker('test', { maxWorkers: 3 });
 
   const task1 = testWorker.execute('test1');
   const task2 = testWorker.execute('test2');
@@ -139,7 +139,7 @@ it('Worker executor should successfully execute 3 tasks in parallel and use 3 wo
 // eslint-disable-next-line max-len
 it('Worker executor should successfully execute 3 tasks and use 1 worker', async () => {
   mockWorker();
-  const testWorker = createWorker('test', { concurrency: 1 });
+  const testWorker = createWorker('test', { maxWorkers: 1 });
 
   const task1 = testWorker.execute('test1');
   const task2 = testWorker.execute('test2');
