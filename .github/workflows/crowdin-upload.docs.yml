@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Generate Crowdin Config
-        uses: freecodecamp/crowdin-action@fix/bad-paths
+        uses: freecodecamp/crowdin-action@main
         env:
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
           CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
@@ -50,12 +50,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
-      # - name: Remove deleted files
-      #   uses: freecodecamp/crowdin-action@fix/bad-paths
-      #   env:
-      #     CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-      #     CROWDIN_API_URL: "https://freecodecamp.crowdin.com/api/v2/"
-      #     CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
-      #     PLUGIN: "remove-deleted-files"
-      #     FILE_PATH: "docs"

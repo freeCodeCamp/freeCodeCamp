@@ -67,7 +67,7 @@ jobs:
           CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'convert-chinese'
-          FILE_PATH: '/docs/i18n/chinese/'
+          FILE_PATHS: '["/docs/i18n/chinese/"]'
 
       ##### Download Portuguese#####
       - name: Crowdin Download Portuguese Translations

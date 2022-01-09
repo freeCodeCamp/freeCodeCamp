@@ -160,7 +160,7 @@
     "husky": "7.0.4",
     "jest": "27.4.7",
     "js-yaml": "3.14.1",
-    "lint-staged": "12.1.6",
+    "lint-staged": "12.1.7",
     "lodash": "4.17.21",
     "markdownlint": "0.25.0",
     "mock-fs": "5.1.2",

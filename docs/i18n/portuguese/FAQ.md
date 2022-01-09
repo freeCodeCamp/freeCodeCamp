@@ -69,19 +69,37 @@ Tipicamente, não atribuímos issues para ninguém além de contribuidores de lo
    - Você seguiu a checklist do pull request?
    - Você deu um título significativo ao seu pull request?
 
-### Estou com dificuldade em algo que não está incluído na documentação.
+### I am interested in being a moderator at freeCodeCamp. Where should I start?
 
-**Fique à vontade para pedir ajuda em:**
+Our community moderators are our heroes. Their voluntary contributions make freeCodeCamp a safe and welcoming community.
 
-- A categoria `Contributors` do [fórum da nossa comunidade](https://forum.freecodecamp.org/c/contributors).
-- O canal `#Contributors` em nosso [servidor](https://chat.freecodecamp.org/channel/contributors).
+First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
 
-Estamos animados em ajudar você a contribuir com qualquer tópico que desejar. Se você nos perguntar algo relacionado às issues, vamos ficar felizes em esclarecer. Certifique-se de pesquisar sua pergunta antes de postar uma nova.
+Here are some recommended paths for some of our platforms:
 
-Agradecemos antecipadamente por ser educado(a) e paciente. Lembre-se – esta comunidade é feita principalmente de voluntários.
+- To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even given feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
+- To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
 
-### Assistência adicional
+Altogether, be respectful to others. We are humans all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
 
-Se você tiver dúvidas sobre a stack, a arquitetura do código, as traduções ou qualquer outra coisa, pode entrar em contato com nossa equipe [no fórum](https://forum.freecodecamp.org/g/team).
+If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. Open source work is voluntary work and our time is limited. We acknowledge that this is probably true in your case as well. So we emphasize being **consistent** rather than engaging in the community 24/7.
 
-**Você pode enviar um e-mail para nossa equipe de desenvolvimento: `dev[at]freecodecamp.org`**
+Take a look at our [Moderator Handbook](https://contribute.freecodecamp.org/#/moderator-handbook) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
+
+### I am stuck on something that is not included in this documentation.
+
+**Feel free to ask for help in:**
+
+- The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
+- The `#Contributors` channel on [our chat server](https://chat.freecodecamp.org/channel/contributors).
+
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
+
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
+
+### Additional Assistance
+
+If you have queries about the stack, architecture of the codebase, translations, or anything else feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
+
+**You can email our developer staff at: `dev[at]freecodecamp.org`**
