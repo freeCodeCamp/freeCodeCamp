@@ -7,7 +7,7 @@ dashedName: step-16
 
 # --description--
 
-Time to style the keys themselves. Create a `class` selector for the `key` elements. Set the `background-color` set to the value `#ffffff`, the `position` property to `relative`, the `width` property to `41px`, and the `height` property to `175px`.
+Time to style the keys themselves. Create a `class` selector for the `.key` elements. Set the `background-color` set to the value `#ffffff`, the `position` property to `relative`, the `width` property to `41px`, and the `height` property to `175px`.
 
 # --hints--
 
