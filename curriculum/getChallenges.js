@@ -341,6 +341,11 @@ ${getFullPath('english')}
     // The client expects the challengeFiles to be an array of polyvinyls
     challenge.challengeFiles = challengeFilesToPolys(challenge.challengeFiles);
   }
+  if (challenge.solutions) {
+    // The test runner needs the solutions to be an array of polyvinyls so it
+    // can sort them correctly.
+    challenge.solutions = challengeFilesToPolys(challenge.solutions);
+  }
 
   return challenge;
 }
@@ -380,4 +385,3 @@ function getBlockNameFromPath(filePath) {
 exports.hasEnglishSource = hasEnglishSource;
 exports.parseTranslation = parseTranslation;
 exports.createChallenge = createChallenge;
-exports.challengeFilesToPolys = challengeFilesToPolys;
