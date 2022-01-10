@@ -19,18 +19,18 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
-    "prebuild": "tsc -p ../tools/ && node ../tools/scripts/build/ensure-env.js && npm run build:workers -- --env production",
+    "prebuild": "ts-node ../tools/scripts/build/ensure-env && npm run build:workers -- --env production",
     "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" gatsby build --prefix-paths",
     "build:workers": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" webpack --config ./webpack-workers.js",
     "clean": "gatsby clean",
-    "predevelop": "tsc -p ../tools/ && node ../tools/scripts/build/ensure-env.js && npm run build:workers -- --env development",
+    "predevelop": "ts-node ../tools/scripts/build/ensure-env && npm run build:workers -- --env development",
     "develop": "cross-env NODE_OPTIONS=\"--max-old-space-size=5000\" gatsby develop --inspect=9230",
     "lint": "node ./i18n/schema-validation.js",
     "serve": "gatsby serve -p 8000",
     "serve-ci": "serve -l 8000 -c ../serve.json public",
     "prestand-alone": "npm run prebuild",
     "stand-alone": "gatsby develop",
-    "validate-keys": "tsc -p ../tools/ && node ../tools/scripts/lint/validate-keys.js"
+    "validate-keys": "ts-node ../tools/scripts/lint/validate-keys"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "7.16.7",
@@ -145,6 +145,7 @@
     "redux-mock-store": "1.5.4",
     "redux-saga-test-plan": "4.0.4",
     "serve": "13.0.2",
+    "ts-node": "^10.4.0",
     "webpack": "5.66.0",
     "webpack-cli": "4.9.1"
   }

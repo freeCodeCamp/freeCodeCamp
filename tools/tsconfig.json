@@ -7,6 +7,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "noEmit": true,
     "typeRoots": ["../node_modules/@types"],
     "types": ["node", "jest"]
   }

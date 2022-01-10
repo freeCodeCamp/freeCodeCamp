@@ -39,9 +39,8 @@
     "build:client": "cd ./client && npm run build",
     "build:curriculum": "cd ./curriculum && npm run build",
     "build:server": "cd ./api-server && npm run build",
-    "clean": "npm-run-all clean:build-files clean:client clean:server clean:packages",
+    "clean": "npm-run-all clean:client clean:server clean:packages",
     "clean-and-develop": "npm run clean && npm ci && npm run develop",
-    "clean:build-files": "shx rm -f ./tools/tsconfig.tsbuildinfo",
     "clean:client": "cd ./client && npm run clean",
     "clean:curriculum": "shx rm ./config/curriculum.json",
     "clean:gatsby-site": "npm run clean:client",
@@ -65,7 +64,7 @@
     "e2e:dev:watch": "start-test develop ':3000/status/ping|8000' cypress:dev:watch",
     "e2e:prd:run": "npm run build && start-test ':3000/status/ping|8000' cypress:dev:run",
     "e2e:prd:watch": "npm run build && start-test ':3000/status/ping|8000' cypress:dev:watch",
-    "ensure-env": "cd ./tools/ && tsc --incremental && cross-env DEBUG=fcc:* node ./scripts/build/ensure-env.js",
+    "ensure-env": "cd ./tools/ && cross-env DEBUG=fcc:* ts-node ./scripts/build/ensure-env.ts",
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "eslint . --fix",
     "format:prettier": "prettier --write .",
@@ -171,6 +170,7 @@
     "process": "0.11.10",
     "shx": "0.3.4",
     "start-server-and-test": "1.14.0",
+    "ts-node": "^10.4.0",
     "typescript": "4.5.4",
     "webpack-bundle-analyzer": "4.5.0"
   }
