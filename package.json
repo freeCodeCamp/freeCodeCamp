@@ -73,7 +73,7 @@
     "lint": "npm-run-all ensure-env -p lint:*",
     "lint:challenges": "cd ./curriculum && npm run lint",
     "lint:js": "eslint --max-warnings 0 .",
-    "lint:ts": "tsc && tsc -p tools/ui-components && tsc -p tools",
+    "lint:ts": "tsc && tsc -p tools/ui-components",
     "lint:prettier": "prettier --list-different .",
     "seed": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
     "seed:certified-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser certUser",
