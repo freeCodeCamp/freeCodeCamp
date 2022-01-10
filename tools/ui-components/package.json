@@ -46,7 +46,6 @@
     "babel-loader": "8.2.3",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
-    "cssnano": "^5.0.14",
     "postcss": "8.4.5",
     "postcss-import": "14.0.2",
     "rimraf": "3.0.2",
