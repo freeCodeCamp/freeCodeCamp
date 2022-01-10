@@ -337,19 +337,15 @@ ${getFullPath('english')}
   challenge.translationPending =
     lang !== 'english' && !isAuditedCert(lang, superBlock);
   challenge.usesMultifileEditor = !!usesMultifileEditor;
-
-  return prepareChallenge(challenge);
-}
-
-// gets the challenge ready for sourcing into Gatsby
-function prepareChallenge(challenge) {
   if (challenge.challengeFiles) {
-    challenge.challengeFiles = filesToPolys(challenge.challengeFiles);
+    // The client expects the challengeFiles to be an array of polyvinyls
+    challenge.challengeFiles = challengeFilesToPolys(challenge.challengeFiles);
   }
+
   return challenge;
 }
 
-function filesToPolys(files) {
+function challengeFilesToPolys(files) {
   return files.reduce((challengeFiles, challengeFile) => {
     return [
       ...challengeFiles,
@@ -384,4 +380,4 @@ function getBlockNameFromPath(filePath) {
 exports.hasEnglishSource = hasEnglishSource;
 exports.parseTranslation = parseTranslation;
 exports.createChallenge = createChallenge;
-exports.filesToPolys = filesToPolys;
+exports.challengeFilesToPolys = challengeFilesToPolys;

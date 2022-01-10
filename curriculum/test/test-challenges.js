@@ -48,7 +48,7 @@ const {
   getChallengesForLang,
   getMetaForBlock,
   getTranslatableComments,
-  filesToPolys
+  challengeFilesToPolys
 } = require('../getChallenges');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
 const { testedLang, getSuperOrder } = require('../utils');
@@ -529,7 +529,7 @@ ${inspect(commentMap)}
           // sortChallengeFiles relies on the history, which doesn't exist
           // before we make them into polyVinyls.
           const solutionsAsArrays = solutions
-            .map(filesToPolys)
+            .map(challengeFilesToPolys)
             .map(sortChallengeFiles);
 
           const filteredSolutions = solutionsAsArrays.filter(solution => {
