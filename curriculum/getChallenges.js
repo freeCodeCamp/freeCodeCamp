@@ -342,9 +342,9 @@ ${getFullPath('english')}
     challenge.challengeFiles = challengeFilesToPolys(challenge.challengeFiles);
   }
   if (challenge.solutions) {
-    // The test runner needs the solutions to be an array of polyvinyls so it
+    // The test runner needs the solutions to be arrays of polyvinyls so it
     // can sort them correctly.
-    challenge.solutions = challengeFilesToPolys(challenge.solutions);
+    challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
   }
 
   return challenge;
