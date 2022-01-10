@@ -7,7 +7,7 @@ dashedName: step-51
 
 # --description--
 
-Finally, the `elem1 + elem2` selector will target each `elem2` element that comes immediately after an `elem1` element. The notes in the balance sheet stand out too much - create a `p + span` selector to target them, and set the `font-size` property to `0.8em`.
+Finally, the `elem1 + elem2` selector will target each `elem2` element that comes immediately after an `elem1` element. The notes in the balance sheet stand out too much. Create a `p + span` selector to target them, and set the `font-size` property to `0.8em`.
 
 # --hints--
 

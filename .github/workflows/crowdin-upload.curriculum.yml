@@ -58,7 +58,7 @@ jobs:
           CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'remove-deleted-files'
-          FILE_PATH: 'curriculum/challenges/english'
+          FILE_PATHS: '["curriculum/challenges/english", "curriculum/dictionaries/english"]'
 
       - name: Hide Non-Translated Strings
         uses: freecodecamp/crowdin-action@main
@@ -79,11 +79,10 @@ jobs:
           STRING_CONTENT: Here's a <a href="https://www.freecodecamp.org" target="_blank" mark="crwd-mark">link to www.freecodecamp.org</a> for you to follow.
 
       - name: Unhide Title of Use && For a More Concise Conditional
-        uses: ./tools/crowdin/actions/unhide-specific-string
-        with:
-          filename: 'react/use--for-a-more-concise-conditional.md'
-          string-content: 'Use &amp;&amp; for a More Concise Conditional'
+        uses: freecodecamp/crowdin-action@main
         env:
           CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+          FILE_NAME: 'react/use--for-a-more-concise-conditional.md'
+          STRING_CONTENT: 'Use &amp;&amp; for a More Concise Conditional'

@@ -69,6 +69,24 @@ Tipicamente, não atribuímos issues para ninguém além de contribuidores de lo
    - Você seguiu a checklist do pull request?
    - Você deu um título significativo ao seu pull request?
 
+### Tenho interesse em ser um moderador no freeCodeCamp. Por onde devo começar?
+
+Os moderadores da nossa comunidade são nossos heróis. Suas contribuições voluntárias fazem do freeCodeCamp uma comunidade segura e receptiva.
+
+Primeiro e mais importante, precisamos que você seja um participante ativo da comunidade e que siga à risca o nosso [código de conduta](https://www.freecodecamp.org/news/code-of-conduct/) (não se limite apenas a aplicá-lo).
+
+Aqui estão alguns caminhos recomendados para algumas de nossas plataformas:
+
+- Para ser um moderador do **Discord/Chat**, tenha uma presença ativa em nosso chat e compromissos positivos com os outros, ao mesmo tempo em que aprende e pratica como lidar com conflitos em potencial que possam surgir.
+- Para ser um moderador do **fórum**, similar a um moderador de chat, tenha uma presença ativa e interaja com as outras pessoas que publicam no fórum, apoie-os em sua jornada de aprendizado e dê feedback quando perguntarem. Dê uma olhada no [Manual do líder do subfórum](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) para obter mais informações.
+- Para ser um moderador do **GitHub**, ajude a processar as issues levantadas no GitHub para ver se elas são válidas e (idealmente) tente propor soluções para essas issues a serem resolvidas por outras pessoas (ou por você mesmo).
+
+No conjunto, seja respeitoso com os outros. Somos seres humanos de todo o mundo. Tendo isso em mente, considere também usar uma linguagem de incentivo ou de apoio e esteja atento à comunicação intercultural.
+
+Se você praticar o que foi dito acima **consistentemente por algum tempo** e se nossos companheiros moderadores recomendarem você, um membro da equipe entrará em contato e fará sua inclusão na equipe de moderadores. O trabalho em código aberto é trabalho voluntário e nosso tempo é limitado. Reconhecemos que isso é provavelmente também é verdade no seu caso. Por isso, enfatizamos a importância de ser **consistente** em vez de se envolver na comunidade em tempo integral.
+
+Dê uma olhada no nosso [Manual do Moderador](https://contribute.freecodecamp.org/#/moderator-handbook) para obter uma lista mais extensa de responsabilidades e expectativas que temos com relação a nossos moderadores.
+
 ### Estou com dificuldade em algo que não está incluído na documentação.
 
 **Fique à vontade para pedir ajuda em:**
