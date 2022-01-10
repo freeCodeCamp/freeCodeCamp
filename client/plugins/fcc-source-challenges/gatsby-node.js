@@ -45,7 +45,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
 File changed at ${filePath}, replacing challengeNode id ${challenge.id}
               `
             );
-            createVisibleChallenge(challenge);
+            createVisibleChallenge(challenge, { isReloading: true });
           })
           .catch(e =>
             reporter.error(`fcc-replace-challenge
@@ -111,8 +111,8 @@ ${e.message}
       });
   }
 
-  function createVisibleChallenge(challenge) {
-    createNode(createChallengeNode(challenge, reporter));
+  function createVisibleChallenge(challenge, options) {
+    createNode(createChallengeNode(challenge, reporter, options));
   }
 
   return new Promise((resolve, reject) => {
