@@ -26,22 +26,22 @@ Camper Cat's Mortal Kombat survey results are in! Wrap a `time` tag around the t
 Your code should have a `p` element which includes the text `Thank you to everyone for responding to Master Camper Cat's survey.` and include a `time` element.
 
 ```js
-assert(timeElement.length);
+assert(timeElement);
 ```
 
 Your added `time` tags should wrap around the text `Thursday, September 15<sup>th</sup>`.
 
 ```js
 assert(
-  timeElement.length &&
-    $(timeElement).html().trim() === 'Thursday, September 15<sup>th</sup>'
+  timeElement &&
+    timeElement?.innerHTML?.trim() === 'Thursday, September 15<sup>th</sup>'
 );
 ```
 
 Your added `time` tag should have a `datetime` attribute that is not empty.
 
 ```js
-assert(datetimeAttr && datetimeAttr.length);
+assert(datetimeAttr && datetimeAttr?.length);
 ```
 
 Your added `datetime` attribute should be set to a value of `2016-09-15`.
@@ -56,10 +56,10 @@ assert(datetimeAttr === '2016-09-15');
 
 ```html
 <script>
-const pElement = $("article > p")
-  .filter((_, elem) => $(elem).text().includes("Thank you to everyone for responding to Master Camper Cat's survey."));
-const timeElement = pElement[0] ? $(pElement[0]).find("time") : null;
-const datetimeAttr = $(timeElement).attr("datetime");
+const pElement = [...document.querySelectorAll("article > p")]
+  .filter(x => x?.textContent?.includes("Thank you to everyone for responding to Master Camper Cat's survey."));
+const timeElement = pElement[0] ? pElement[0].querySelector("time") : null;
+const datetimeAttr = timeElement?.getAttribute("datetime");
 </script>
 ```
 
