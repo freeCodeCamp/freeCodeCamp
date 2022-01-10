@@ -341,7 +341,7 @@ ${getFullPath('english')}
     // The client expects the challengeFiles to be an array of polyvinyls
     challenge.challengeFiles = challengeFilesToPolys(challenge.challengeFiles);
   }
-  if (challenge.solutions) {
+  if (challenge.solutions?.length) {
     // The test runner needs the solutions to be arrays of polyvinyls so it
     // can sort them correctly.
     challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
