@@ -6,13 +6,13 @@ import { getMetaData } from '../challenge-helper-scripts/helpers/get-project-pat
 import { parseMDSync } from '../challenge-parser/parser';
 import { getProjectMetaPath } from './helpers/get-project-meta-path';
 import { getProjectPath } from './helpers/get-project-path';
-import { getStepTemplate } from './helpers/get-step-template';
+import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template';
 import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
 
 interface Options {
   projectPath: string;
   stepNum: number;
-  challengeSeeds?: Record<string, unknown>;
+  challengeSeeds?: Record<string, ChallengeSeed>;
   stepBetween?: boolean;
 }
 
@@ -83,7 +83,7 @@ const reorderSteps = () => {
     };
   });
 
-  const challengeOrder = [];
+  const challengeOrder: string[][] = [];
 
   filesToReorder.forEach(({ oldFileName, newFileName, newStepNum }) => {
     fs.renameSync(
@@ -120,7 +120,7 @@ const reorderSteps = () => {
 
 const getChallengeSeeds = (
   challengeFilePath: string
-): Record<string, unknown> => {
+): Record<string, ChallengeSeed> => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
   return parseMDSync(challengeFilePath).challengeFiles;
 };

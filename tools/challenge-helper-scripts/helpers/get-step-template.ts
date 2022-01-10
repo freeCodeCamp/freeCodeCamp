@@ -21,17 +21,17 @@ ${content}`
 
 type StepOptions = {
   challengeId: ObjectID;
-  challengeSeeds: unknown;
+  challengeSeeds: Record<string, ChallengeSeed>;
   stepBetween: boolean;
   stepNum: number;
 };
 
-interface ChallengeSeed {
+export interface ChallengeSeed {
   contents: string;
   ext: string;
   editableRegionBoundaries: number[];
-  head: string;
-  tail: string;
+  head?: string;
+  tail?: string;
 }
 
 // Build the base markdown for a step

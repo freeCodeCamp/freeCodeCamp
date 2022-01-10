@@ -63,7 +63,7 @@ describe('getExistingStepNums helper', () => {
 
     const folder = `${process.cwd()}/mock-project/`;
     const steps = getExistingStepNums(folder);
-    const expected = [];
+    const expected: number[] = [];
 
     expect(steps).toEqual(expected);
   });

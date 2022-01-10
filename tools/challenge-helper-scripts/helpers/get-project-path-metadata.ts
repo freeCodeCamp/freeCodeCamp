@@ -5,7 +5,7 @@ function getMetaData(file: string): Record<string, unknown> {
   let metaData;
 
   try {
-    metaData = fs.readFileSync(file);
+    metaData = fs.readFileSync(file, 'utf8');
   } catch (err) {
     throw `No _meta.json file exists at ${file}`;
   }

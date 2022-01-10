@@ -24,7 +24,7 @@ function getExistingStepNums(projectPath: string): number[] {
     }
 
     return stepNums;
-  }, []);
+  }, [] as number[]);
 }
 
 export { getExistingStepNums };

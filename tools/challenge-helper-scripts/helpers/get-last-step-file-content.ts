@@ -2,12 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import { getChallengeSeeds } from '../utils';
 import { getProjectPath } from './get-project-path';
+import { ChallengeSeed } from './get-step-template';
 
 // Looks up the last file found with format `step-###.md` in a directory and
 // returns associated information to it. At the same time validates that the
 // number of files match the names used to name these.
 function getLastStepFileContent(): {
-  challengeSeeds: Record<string, unknown>;
+  challengeSeeds: Record<string, ChallengeSeed>;
   nextStepNum: number;
 } {
   const filesArr: string[] = [];
