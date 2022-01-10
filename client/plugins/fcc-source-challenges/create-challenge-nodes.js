@@ -1,7 +1,13 @@
 const crypto = require('crypto');
 const { blockNameify } = require('../../../utils/block-nameify');
 
-function createChallengeNode(challenge, reporter) {
+const createdIds = new Set();
+
+function createChallengeNode(
+  challenge,
+  reporter,
+  { isReloading } = { isReloading: false }
+) {
   // challengeType 11 is for video challenges (they only have instructions)
   // challengeType 7 is for certificates (they only have tests)
   // challengeType 12 is for CodeAlly/CodeRoad challenge
@@ -43,6 +49,14 @@ function createChallengeNode(challenge, reporter) {
     };
   }
 
+  const id = `${challenge.superBlock}/${challenge.block}/${challenge.dashedName}`;
+  if (createdIds.has(id) && !isReloading) {
+    reporter.warn(`
+    Challenge slugs must be unique, but ${id} already exists.
+    `);
+  }
+  createdIds.add(id);
+
   return JSON.parse(
     JSON.stringify(
       Object.assign(
@@ -55,7 +69,7 @@ function createChallengeNode(challenge, reporter) {
         },
         { challenge },
         {
-          id: `${challenge.superBlock}/${challenge.block}/${challenge.dashedName}`
+          id
         }
       )
     )
