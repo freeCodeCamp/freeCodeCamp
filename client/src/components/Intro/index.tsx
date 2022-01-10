@@ -1,4 +1,3 @@
-import { Alert } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { randomQuote } from '../../utils/get-words';
@@ -16,7 +15,6 @@ interface IntroProps {
   pending?: boolean;
   slug?: string;
   username?: string;
-  onAlertClick?: () => void;
 }
 
 const Intro = ({
@@ -25,8 +23,7 @@ const Intro = ({
   pending,
   complete,
   completedChallengeCount,
-  slug,
-  onAlertClick
+  slug
 }: IntroProps): JSX.Element => {
   const { t } = useTranslation();
   if (pending && !complete) {
@@ -70,24 +67,6 @@ const Intro = ({
         ) : (
           ''
         )}
-        <Alert bsStyle='info' className='annual-donation-alert'>
-          <p>
-            <b>{t('learn.season-greetings-fcc')}</b>
-          </p>
-          <p>{t('learn.if-getting-value')}</p>
-          <hr />
-          <p className={'text-center'}>
-            <Link
-              className='btn'
-              key='donate'
-              onClick={onAlertClick}
-              sameTab={false}
-              to='/donate'
-            >
-              {t('buttons.donate')}
-            </Link>
-          </p>
-        </Alert>
       </>
     );
   } else {
