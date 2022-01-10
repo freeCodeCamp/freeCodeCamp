@@ -7,7 +7,7 @@ dashedName: step-13
 
 # --description--
 
-Time to style the keys. Below the `#piano` rule, target the `.keys` with a `class` selector. Give the new rule a `background-color` property of `#040404`, a `width` property of `949px` and a `height` property of `180px`.
+Time to style the keys. Below the `#piano` rule, target the `.keys` element with a `class` selector. Give the new rule a `background-color` property of `#040404`, a `width` property of `949px` and a `height` property of `180px`.
 
 # --hints--
 
