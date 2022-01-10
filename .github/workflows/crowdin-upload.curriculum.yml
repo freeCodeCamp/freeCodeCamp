@@ -84,5 +84,6 @@ jobs:
           CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+          PLUGIN: 'unhide-string'
           FILE_NAME: 'react/use--for-a-more-concise-conditional.md'
           STRING_CONTENT: 'Use &amp;&amp; for a More Concise Conditional'
