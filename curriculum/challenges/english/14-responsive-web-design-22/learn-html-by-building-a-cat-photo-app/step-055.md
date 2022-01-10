@@ -1,3 +1,5 @@
+<img width="1440" alt="Ekran Resmi 2022-01-10 15 37 06" src="https://user-images.githubusercontent.com/96954609/148767632-d0ad5c1e-78f5-4613-870c-eb87f654765b.png">
+<img width="1440" alt="Ekran Resmi 2022-01-10 15 44 58" src="https://user-images.githubusercontent.com/96954609/148768014-340e80d3-2d7a-4ca0-8556-b5f63c1fe255.png">
 ---
 id: 5efc4f528d6a74d05e68af74
 title: Step 55
