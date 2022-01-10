@@ -231,8 +231,8 @@ export const reducer = handleActions(
         );
       return {
         ...state,
-        challengeFiles: state.challengeFiles.map(file =>
-          file.fileKey === fileKey ? { ...file, ...updates } : { ...file }
+        challengeFiles: state.challengeFiles.map(challengeFile =>
+          challengeFile.fileKey === fileKey ? { ...challengeFile, ...updates } : { ...challengeFile }
         )
       };
     },
