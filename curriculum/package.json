@@ -45,7 +45,6 @@
     "chai": "4.3.4",
     "cross-env": "7.0.3",
     "css": "3.0.0",
-    "gulp": "4.0.2",
     "invariant": "2.2.4",
     "joi": "17.5.0",
     "joi-objectid": "3.0.1",
