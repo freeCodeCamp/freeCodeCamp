@@ -18,7 +18,7 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
-    "build": "node ../tools/scripts/build/build-curriculum.js",
+    "build": "ts-node --project ../tsconfig.json ../tools/scripts/build/build-curriculum",
     "create-empty-steps": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-next-step",
     "create-step-between": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-step-between",
