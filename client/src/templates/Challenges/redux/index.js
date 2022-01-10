@@ -231,13 +231,11 @@ export const reducer = handleActions(
         );
       return {
         ...state,
-        challengeFiles: [
-          ...state.challengeFiles.filter(x => x.fileKey !== fileKey),
-          {
-            ...state.challengeFiles.find(x => x.fileKey === fileKey),
-            ...updates
-          }
-        ]
+        challengeFiles: state.challengeFiles.map(challengeFile =>
+          challengeFile.fileKey === fileKey
+            ? { ...challengeFile, ...updates }
+            : { ...challengeFile }
+        )
       };
     },
     [actionTypes.storedCodeFound]: (state, { payload }) => ({
