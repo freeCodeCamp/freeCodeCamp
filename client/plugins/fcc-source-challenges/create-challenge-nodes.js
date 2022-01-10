@@ -49,9 +49,13 @@ function createChallengeNode(
     };
   }
 
-  const id = `${challenge.superBlock}/${challenge.block}/${challenge.dashedName}`;
+  // Challenge id should be unique for CertificateNodes, but not for
+  // ChallengeNodes
+  const id =
+    internal.type === 'ChallengeNode' ? challenge.fields.slug : challenge.id;
+
   if (createdIds.has(id) && !isReloading) {
-    reporter.warn(`
+    throw Error(`
     Challenge slugs must be unique, but ${id} already exists.
     `);
   }
