@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import fs from 'fs';
 import ObjectID from 'bson-objectid';
 import glob from 'glob';
@@ -40,12 +41,19 @@ jest.mock('gray-matter', () => {
   };
 });
 
-jest.mock('../challenge-helper-scripts/helpers/project-metadata', () => ({
-  getMetaData: jest.fn(() => ({
-    id: 'mock-id'
-  })),
-  updateMetaData: jest.fn()
-}));
+jest.mock('./helpers/project-metadata', () => {
+  const original = jest.requireActual(
+    './helpers/project-metadata'
+  );
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return {
+    __esModule: true,
+    ...original,
+    getMetaData: jest.fn(() => ({
+      id: 'mock-id'
+    }))
+  };
+});
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';
