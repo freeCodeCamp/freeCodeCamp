@@ -19,11 +19,11 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
-    "prebuild": "npm --prefix ../ run ensure-env   && npm run build:workers -- --env production",
+    "prebuild": "npm --prefix ../ run prepare-config   && npm run build:workers -- --env production",
     "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" gatsby build --prefix-paths",
     "build:workers": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" webpack --config ./webpack-workers.js",
     "clean": "gatsby clean",
-    "predevelop": "npm --prefix ../ run ensure-env && npm run build:workers -- --env development",
+    "predevelop": "npm --prefix ../ run prepare-config && npm run build:workers -- --env development",
     "develop": "cross-env NODE_OPTIONS=\"--max-old-space-size=5000\" gatsby develop --inspect=9230",
     "lint": "node ./i18n/schema-validation.js",
     "serve": "gatsby serve -p 8000",
