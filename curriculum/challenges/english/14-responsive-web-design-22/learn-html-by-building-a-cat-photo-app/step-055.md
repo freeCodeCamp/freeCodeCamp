@@ -25,7 +25,7 @@ Your checkbox should still have an `id` attribute with the value `loving`. You m
 assert($('input[type="checkbox"]')[0].id === 'loving');
 ```
 
-The text ` Loving` should no longer be located directly to the right of your checkbox. It should be wrapped in a `label` element.
+The text ` Loving` should no longer be located directly to the right of your checkbox. It should be wrapped in a `label` element. Make sure there is a space between the two elements.
 
 ```js
 const checkboxInputElem = $('input[type="checkbox"]')[0];
