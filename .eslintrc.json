@@ -41,7 +41,11 @@
       "files": ["**/*.ts?(x)"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
-        "project": ["./tsconfig.json", "./tools/ui-components/tsconfig.json"]
+        "project": [
+          "./tsconfig.json",
+          "./config/tsconfig.json",
+          "./tools/ui-components/tsconfig.json"
+        ]
       },
       "extends": [
         "plugin:@typescript-eslint/recommended",
