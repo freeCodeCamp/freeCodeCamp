@@ -26,22 +26,22 @@ Camper Cat 格斗的调查结果出来了！ 用 `time` 标签包裹文本 `Thur
 应存在一个 `time` 元素和一个内容文本为 `Thank you to everyone for responding to Master Camper Cat's survey.` 的 `p` 元素。
 
 ```js
-assert(timeElement.length);
+assert(timeElement);
 ```
 
 `time` 元素的内容文本应为 `Thursday, September 15<sup>th</sup>`。
 
 ```js
 assert(
-  timeElement.length &&
-    $(timeElement).html().trim() === 'Thursday, September 15<sup>th</sup>'
+  timeElement &&
+    timeElement?.innerHTML?.trim() === 'Thursday, September 15<sup>th</sup>'
 );
 ```
 
 `time` 元素应包含非空的 `datetime` 属性。
 
 ```js
-assert(datetimeAttr && datetimeAttr.length);
+assert(datetimeAttr && datetimeAttr?.length);
 ```
 
 `datetime` 的属性值应为 `2016-09-15`。
@@ -56,10 +56,10 @@ assert(datetimeAttr === '2016-09-15');
 
 ```html
 <script>
-const pElement = $("article > p")
-  .filter((_, elem) => $(elem).text().includes("Thank you to everyone for responding to Master Camper Cat's survey."));
-const timeElement = pElement[0] ? $(pElement[0]).find("time") : null;
-const datetimeAttr = $(timeElement).attr("datetime");
+const pElement = [...document.querySelectorAll("article > p")]
+  .filter(x => x?.textContent?.includes("Thank you to everyone for responding to Master Camper Cat's survey."));
+const timeElement = pElement[0] ? pElement[0].querySelector("time") : null;
+const datetimeAttr = timeElement?.getAttribute("datetime");
 </script>
 ```
 
