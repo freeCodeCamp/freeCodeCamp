@@ -2,9 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import ObjectID from 'bson-objectid';
 import * as matter from 'gray-matter';
-import { getMetaData } from '../challenge-helper-scripts/helpers/get-project-path-metadata';
 import { parseMDSync } from '../challenge-parser/parser';
-import { getProjectMetaPath } from './helpers/get-project-meta-path';
+import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import { getProjectPath } from './helpers/get-project-path';
 import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template';
 import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
@@ -47,13 +46,7 @@ const reorderSteps = () => {
     ? process.env.CALLING_DIR.split(path.sep).slice(-1).toString()
     : process.cwd().split(path.sep).slice(-1).toString();
 
-  const curriculumPath = process.env.CALLING_DIR
-    ? ''
-    : path.join(__dirname, '../');
-
-  const projectMetaPath = getProjectMetaPath(curriculumPath, projectName);
-
-  const parsedData = getMetaData(projectMetaPath);
+  const parsedData = getMetaData(projectName);
 
   let foundFinal = false;
   const filesArr = [];
@@ -115,8 +108,7 @@ const reorderSteps = () => {
     );
   });
 
-  const newMeta = { ...parsedData, challengeOrder };
-  fs.writeFileSync(projectMetaPath, JSON.stringify(newMeta, null, 2));
+  updateMetaData(projectName, { ...parsedData, challengeOrder });
 };
 
 const getChallengeSeeds = (

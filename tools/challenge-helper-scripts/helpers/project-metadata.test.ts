@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import { getMetaData } from './get-project-path-metadata';
+import { getMetaData } from './project-metadata';
 
 jest.mock('fs', () => {
   return {
@@ -31,6 +31,8 @@ describe('getMetaData helper', () => {
 
     expect(() => {
       getMetaData(mockPath);
-    }).toThrowError(new Error(`No _meta.json file exists at ${mockPath}`));
+    }).toThrowError(
+      new Error(`No _meta.json file exists at ${mockPath}/meta.json`)
+    );
   });
 });
