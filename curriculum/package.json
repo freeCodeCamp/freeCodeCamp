@@ -31,9 +31,9 @@
   "devDependencies": {
     "@babel/core": "7.16.7",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.16.7",
+    "@babel/preset-env": "7.16.8",
     "@babel/preset-typescript": "7.16.7",
-    "@babel/register": "7.16.7",
+    "@babel/register": "7.16.8",
     "acorn": "8.7.0",
     "acorn-jsx": "5.3.2",
     "babel-plugin-dynamic-import-node": "2.3.3",
