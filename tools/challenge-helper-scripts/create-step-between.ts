@@ -1,6 +1,6 @@
 import { getArgValues } from './helpers/get-arg-values';
 import { getExistingStepNums } from './helpers/get-existing-step-nums';
-import { getProjectPath } from './helpers/get-project-path';
+import { getProjectPath } from './helpers/get-project-info';
 import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
 import { createStepFile, getChallengeSeeds, reorderSteps } from './utils';
 

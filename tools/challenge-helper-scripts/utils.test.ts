@@ -24,9 +24,10 @@ jest.mock('./helpers/get-project-meta-path', () => {
   };
 });
 
-jest.mock('./helpers/get-project-path', () => {
+jest.mock('./helpers/get-project-info', () => {
   return {
-    getProjectPath: jest.fn(() => 'project/')
+    getProjectPath: jest.fn(() => 'project/'),
+    getProjectName: jest.fn(() => 'project')
   };
 });
 
@@ -39,14 +40,12 @@ jest.mock('gray-matter', () => {
   };
 });
 
-jest.mock(
-  '../challenge-helper-scripts/helpers/get-project-path-metadata',
-  () => ({
-    getMetaData: jest.fn(() => ({
-      id: 'mock-id'
-    }))
-  })
-);
+jest.mock('../challenge-helper-scripts/helpers/project-metadata', () => ({
+  getMetaData: jest.fn(() => ({
+    id: 'mock-id'
+  })),
+  updateMetaData: jest.fn()
+}));
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';

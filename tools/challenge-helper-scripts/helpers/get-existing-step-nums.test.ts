@@ -22,21 +22,6 @@ describe('getExistingStepNums helper', () => {
     expect(steps).toEqual(expected);
   });
 
-  it('should ignore text formatting and files named final.md', () => {
-    mock({
-      'mock-project': {
-        'final.md': 'Lorem ipsum...',
-        'step-001.md': 'Lorem ipsum...'
-      }
-    });
-
-    const folder = `${process.cwd()}/mock-project/`;
-    const steps = getExistingStepNums(folder);
-    const expected = [1];
-
-    expect(steps).toEqual(expected);
-  });
-
   it('should throw if file names do not follow naming convention', () => {
     mock({
       'mock-project': {

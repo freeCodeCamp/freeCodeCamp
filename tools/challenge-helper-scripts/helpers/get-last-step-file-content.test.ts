@@ -1,7 +1,7 @@
 import mock from 'mock-fs';
 import { getLastStepFileContent } from './get-last-step-file-content';
 
-jest.mock('./get-project-path', () => {
+jest.mock('./get-project-info', () => {
   return {
     getProjectPath: jest.fn(() => 'mock-project/')
   };
@@ -37,12 +37,14 @@ describe('getLastStepFileContent helper', () => {
       'mock-project': {
         'step-001.md': 'Lorem ipsum...',
         'step-002.md': 'Lorem ipsum...',
-        'final.md': 'Lorem ipsum...'
+        'step-003.md': 'Lorem ipsum...'
       }
     });
-
+    // it feels like an off-by-one error, but I think it's assuming that
+    // final.md is the last 'step'. That's never really been used and it works
+    // just fine.
     const expected = {
-      nextStepNum: 3,
+      nextStepNum: 4,
       challengeSeeds: {
         lorem: 'ipsum'
       }

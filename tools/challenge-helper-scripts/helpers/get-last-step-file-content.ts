@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { getChallengeSeeds } from '../utils';
-import { getProjectPath } from './get-project-path';
+import { getProjectPath } from './get-project-info';
 import { ChallengeSeed } from './get-step-template';
 
 // Looks up the last file found with format `step-###.md` in a directory and

@@ -4,7 +4,7 @@ import ObjectID from 'bson-objectid';
 import * as matter from 'gray-matter';
 import { parseMDSync } from '../challenge-parser/parser';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
-import { getProjectPath } from './helpers/get-project-path';
+import { getProjectName, getProjectPath } from './helpers/get-project-info';
 import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template';
 import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
 
@@ -42,11 +42,7 @@ const createStepFile = ({
 const reorderSteps = () => {
   const projectPath = getProjectPath();
 
-  const projectName = process.env.CALLING_DIR
-    ? process.env.CALLING_DIR.split(path.sep).slice(-1).toString()
-    : process.cwd().split(path.sep).slice(-1).toString();
-
-  const parsedData = getMetaData(projectName);
+  const parsedData = getMetaData(getProjectName());
 
   let foundFinal = false;
   const filesArr = [];
@@ -108,7 +104,7 @@ const reorderSteps = () => {
     );
   });
 
-  updateMetaData(projectName, { ...parsedData, challengeOrder });
+  updateMetaData(getProjectName(), { ...parsedData, challengeOrder });
 };
 
 const getChallengeSeeds = (

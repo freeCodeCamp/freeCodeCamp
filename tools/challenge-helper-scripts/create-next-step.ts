@@ -1,5 +1,5 @@
 import { getLastStepFileContent } from './helpers/get-last-step-file-content';
-import { getProjectPath } from './helpers/get-project-path';
+import { getProjectPath } from './helpers/get-project-info';
 import { reorderSteps, createStepFile } from './utils';
 
 const projectPath = getProjectPath();
