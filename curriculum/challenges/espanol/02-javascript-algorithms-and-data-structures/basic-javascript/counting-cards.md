@@ -25,7 +25,7 @@ NO incluyas comillas (individuales o dobles) en el resultado.
 
 # --hints--
 
-La secuencia de cartas 2, 3, 4, 5, 6 debe devolver `5 Bet`
+La secuencia de cartas 2, 3, 4, 5, 6 debe devolver la cadena `5 Bet`
 
 ```js
 assert(
