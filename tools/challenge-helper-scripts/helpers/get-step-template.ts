@@ -22,7 +22,7 @@ ${content}`
 type StepOptions = {
   challengeId: ObjectID;
   challengeSeeds: Record<string, ChallengeSeed>;
-  stepBetween: boolean;
+  isExtraStep: boolean;
   stepNum: number;
 };
 
@@ -38,7 +38,7 @@ export interface ChallengeSeed {
 function getStepTemplate({
   challengeId,
   challengeSeeds,
-  stepBetween,
+  isExtraStep,
   stepNum
 }: StepOptions): string {
   const seedTexts = Object.values(challengeSeeds)
@@ -61,10 +61,10 @@ function getStepTemplate({
     .map(({ ext, tail }: ChallengeSeed) => getCodeBlock(ext, tail))
     .join('\n');
 
-  const descStepNum = stepBetween ? stepNum + 1 : stepNum;
+  const descStepNum = isExtraStep ? stepNum + 1 : stepNum;
 
   const stepDescription = `${
-    stepBetween ? 'new ' : ''
+    isExtraStep ? 'new ' : ''
   }step ${descStepNum} instructions`;
 
   const seedChallengeSection = getSeedSection(seedTexts, 'seed-contents');

@@ -6,10 +6,7 @@ import path from 'path';
 // ['step-001.md', 'step-002.md'] => [1, 2]
 function getExistingStepNums(projectPath: string): number[] {
   return fs.readdirSync(projectPath).reduce((stepNums, fileName) => {
-    if (
-      path.extname(fileName).toLowerCase() === '.md' &&
-      !fileName.endsWith('final.md')
-    ) {
+    if (path.extname(fileName).toLowerCase() === '.md') {
       const stepNumString = fileName.split('.')[0].split('-')[1];
 
       if (!/^\d{3}$/.test(stepNumString)) {

@@ -13,24 +13,25 @@ interface Options {
   projectPath: string;
   stepNum: number;
   challengeSeeds?: Record<string, ChallengeSeed>;
-  stepBetween?: boolean;
+  isExtraStep?: boolean;
 }
 
 const createStepFile = ({
   projectPath,
   stepNum,
   challengeSeeds = {},
-  stepBetween = false
+  isExtraStep = false
 }: Options) => {
   const challengeId = new ObjectID();
 
   let finalStepNum = padWithLeadingZeros(stepNum);
-  finalStepNum += stepBetween ? 'a' : '';
+  // adds 'tmp' because otherwise the existing file will be overwritten
+  finalStepNum += isExtraStep ? 'tmp' : '';
 
   const template = getStepTemplate({
     challengeId,
     challengeSeeds,
-    stepBetween,
+    isExtraStep,
     stepNum
   });
 

@@ -4,9 +4,6 @@ import { getProjectPath } from './helpers/get-project-path';
 import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
 import { createStepFile, getChallengeSeeds, reorderSteps } from './utils';
 
-const allStepsExist = (steps: number[], stepsToFind: number[]) =>
-  stepsToFind.every(num => steps.includes(num));
-
 const projectPath = getProjectPath();
 const args = getArgValues(process.argv);
 
@@ -23,6 +20,10 @@ if (!allStepsExist(existingSteps, [start, end])) {
   throw `Step not created. Both start step, ${start}, and end step, ${end}, must exist`;
 }
 
+function allStepsExist(steps: number[], stepsToFind: number[]) {
+  return stepsToFind.every(num => steps.includes(num));
+}
+
 const challengeSeeds = getChallengeSeeds(
   `${projectPath}step-${padWithLeadingZeros(start)}.md`
 );
@@ -30,7 +31,7 @@ createStepFile({
   stepNum: start,
   projectPath,
   challengeSeeds,
-  stepBetween: true
+  isExtraStep: true
 });
 console.log(`Sucessfully added step between step #${start} and step #${end}`);
 reorderSteps();

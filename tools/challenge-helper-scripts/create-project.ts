@@ -211,7 +211,7 @@ async function createFirstChallenge(
     projectPath: newChallengeDir + '/',
     stepNum: 1,
     challengeSeeds,
-    stepBetween: false
+    isExtraStep: false
   });
 }
 

@@ -15,17 +15,18 @@ function getLastStepFileContent(): {
   const projectPath = getProjectPath();
 
   fs.readdirSync(projectPath).forEach(fileName => {
-    if (
-      path.extname(fileName).toLowerCase() === '.md' &&
-      !fileName.endsWith('final.md')
-    ) {
+    if (path.extname(fileName).toLowerCase() === '.md') {
       filesArr.push(fileName);
     }
   });
 
-  const fileName = filesArr[filesArr.length - 1];
+  // TODO: this looks like it relies on the file order, but that was sketchy
+  // before and won't work when we have ids as names.
+  const lastStepFilename = filesArr[filesArr.length - 1];
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  const lastStepFileString: string = fileName.split('.')[0].split('-')[1];
+  const lastStepFileString: string = lastStepFilename
+    .split('.')[0]
+    .split('-')[1];
   const lastStepFileNum = parseInt(lastStepFileString, 10);
   if (filesArr.length !== lastStepFileNum) {
     throw `Error: The last file step is ${lastStepFileNum} and there are ${filesArr.length} files.`;
@@ -33,7 +34,7 @@ function getLastStepFileContent(): {
 
   return {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    challengeSeeds: getChallengeSeeds(projectPath + fileName),
+    challengeSeeds: getChallengeSeeds(projectPath + lastStepFilename),
     nextStepNum: lastStepFileNum + 1
   };
 }

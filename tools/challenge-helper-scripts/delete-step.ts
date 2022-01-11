@@ -5,9 +5,6 @@ import { getProjectPath } from './helpers/get-project-path';
 import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
 import { reorderSteps } from './utils';
 
-const stepExists = (steps: number[], stepToFind: number) =>
-  steps.includes(stepToFind);
-
 const projectPath = getProjectPath();
 const args = getArgValues(process.argv);
 
@@ -18,7 +15,7 @@ if (!Number.isInteger(num) || num < 1) {
 }
 
 const existingSteps = getExistingStepNums(projectPath);
-if (!stepExists(existingSteps, num)) {
+if (!existingSteps.includes(num)) {
   throw `Step # ${num} not deleted because it does not exist.`;
 }
 
