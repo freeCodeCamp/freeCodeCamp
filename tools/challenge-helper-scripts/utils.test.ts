@@ -41,20 +41,6 @@ jest.mock('gray-matter', () => {
   };
 });
 
-jest.mock('./helpers/project-metadata', () => {
-  const original = jest.requireActual(
-    './helpers/project-metadata'
-  );
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return {
-    __esModule: true,
-    ...original,
-    getMetaData: jest.fn(() => ({
-      id: 'mock-id'
-    }))
-  };
-});
-
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';
 import { createStepFile, reorderSteps } from './utils';
@@ -96,7 +82,7 @@ describe('Challenge utils helper scripts', () => {
     it('should sort files found in given path', () => {
       mock({
         '_meta/project/': {
-          'meta.json': 'Lorem ipsum meta content...'
+          'meta.json': '{"id": "mock-id"}'
         },
         'project/': {
           'step-001.md': 'Lorem ipsum 1...',
