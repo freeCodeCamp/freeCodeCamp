@@ -1,21 +1,15 @@
 import path from 'path';
+import { getProjectPath } from './get-project-info';
 
 // Returns the path of the meta file associated to arguments provided.
-const getProjectMetaPath = (
-  curriculumPath: string,
-  projectName: string
-): string => {
-  if (typeof curriculumPath !== 'string' || typeof projectName !== 'string') {
-    throw `${curriculumPath} and ${projectName} should be of type string`;
-  }
-
+const getProjectMetaPath = (projectName: string): string => {
   if (!projectName) {
     throw `${projectName} can't be an empty string`;
   }
 
   return path.resolve(
-    curriculumPath,
-    'challenges',
+    getProjectPath(),
+    '../../..',
     '_meta',
     projectName,
     'meta.json'
