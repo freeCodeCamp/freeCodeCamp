@@ -1,32 +1,21 @@
 import path from 'path';
 import { getProjectMetaPath } from './get-project-meta-path';
 
-const mockProjectName = 'mock-project';
-
-jest.mock('./get-project-info', () => {
-  return {
-    getProjectPath: jest.fn(
-      () => `curriculum/challenges/english/superblock/${mockProjectName}/`
-    ),
-    getProjectName: jest.fn(() => mockProjectName)
-  };
-});
-
 describe('getProjectMetaPath helper', () => {
-  it('should throw if args are invalid', () => {
-    expect(() => {
-      getProjectMetaPath('');
-    }).toThrow();
-  });
-
   it('should return the meta path', () => {
-    const expected = path.resolve(
-      process.cwd(),
+    const expected = path.join(
       'curriculum',
       'challenges',
-      `_meta/${mockProjectName}/meta.json`
+      `_meta/mock-project/meta.json`
     );
 
-    expect(getProjectMetaPath(mockProjectName)).toEqual(expected);
+    process.env.CALLING_DIR =
+      'curriculum/challenges/english/superblock/mock-project';
+
+    expect(getProjectMetaPath()).toEqual(expected);
+  });
+
+  afterEach(() => {
+    delete process.env.CALLING_DIR;
   });
 });

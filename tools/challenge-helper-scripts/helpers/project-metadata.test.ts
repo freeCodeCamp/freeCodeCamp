@@ -1,38 +1,61 @@
-import { readFileSync } from 'fs';
+import mock from 'mock-fs';
 import { getMetaData } from './project-metadata';
 
-jest.mock('fs', () => {
-  return {
-    readFileSync: jest.fn()
-  };
-});
-
-const mockPath = '/mock/path';
-
 describe('getMetaData helper', () => {
+  beforeEach(() => {
+    mock({
+      curriculum: {
+        challenges: {
+          english: {
+            superblock: {
+              'mock-project': {
+                'step-001.md': 'Lorem ipsum...',
+                'step-002.md': 'Lorem ipsum...',
+                'step-003.md': 'Lorem ipsum...'
+              }
+            }
+          },
+          _meta: {
+            'mock-project': {
+              'meta.json': `{
+      "id": "mock-id",
+      "challengeOrder": [["1","step1"], ["2","step2"], ["1","step3"]]}
+      `
+            }
+          }
+        }
+      }
+    });
+  });
+
   it('should process requested file', () => {
-    // @ts-expect-error - readFileSync is mocked
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    readFileSync.mockImplementation(() => '{"name": "Test Project"}');
-
     const expected = {
-      name: 'Test Project'
+      id: 'mock-id',
+      challengeOrder: [
+        ['1', 'step1'],
+        ['2', 'step2'],
+        ['1', 'step3']
+      ]
     };
-
-    expect(getMetaData(mockPath)).toEqual(expected);
+    process.env.CALLING_DIR =
+      'curriculum/challenges/english/superblock/mock-project';
+    expect(getMetaData()).toEqual(expected);
   });
 
   it('should throw if file is not found', () => {
-    // @ts-expect-error - readFileSync is mocked
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    readFileSync.mockImplementation(() => {
-      throw new Error();
-    });
-
+    process.env.CALLING_DIR =
+      'curriculum/challenges/english/superblock/mick-priject';
     expect(() => {
-      getMetaData(mockPath);
+      getMetaData();
     }).toThrowError(
-      new Error(`No _meta.json file exists at ${mockPath}/meta.json`)
+      new Error(
+        `No _meta.json file exists at curriculum/challenges/_meta/mick-priject/meta.json`
+      )
     );
+  });
+
+  afterEach(() => {
+    delete process.env.CALLING_DIR;
+    mock.restore();
   });
 });

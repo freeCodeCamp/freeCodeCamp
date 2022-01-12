@@ -38,7 +38,7 @@ const createStepFile = ({
 const reorderSteps = () => {
   const projectPath = getProjectPath();
 
-  const parsedData = getMetaData(getProjectName());
+  const parsedData = getMetaData();
 
   let foundFinal = false;
   const filesArr = [];

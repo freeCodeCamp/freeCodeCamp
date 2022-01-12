@@ -3,7 +3,7 @@ import path from 'path';
 import { last } from 'lodash';
 import { getChallengeSeeds } from '../utils';
 import { getMetaData } from './project-metadata';
-import { getProjectName, getProjectPath } from './get-project-info';
+import { getProjectPath } from './get-project-info';
 import { ChallengeSeed } from './get-step-template';
 
 // Looks up the last file found with format `step-###.md` in a directory and
@@ -30,7 +30,7 @@ function getLastStepFileContent(): {
 }
 
 function getLastStep(): { stepId: string; stepNum: number } {
-  const meta = getMetaData(getProjectName());
+  const meta = getMetaData();
   const challengeOrder: string[][] = meta.challengeOrder;
   const step = last(challengeOrder);
   if (!step) throw new Error('No steps found');
