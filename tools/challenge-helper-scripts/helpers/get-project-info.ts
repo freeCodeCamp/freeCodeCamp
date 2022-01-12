@@ -5,7 +5,5 @@ export function getProjectPath(): string {
 }
 
 export function getProjectName(): string {
-  return process.env.CALLING_DIR
-    ? process.env.CALLING_DIR.split(path.sep).slice(-1).toString()
-    : process.cwd().split(path.sep).slice(-1).toString();
+  return getProjectPath().split(path.sep).slice(-2)[0];
 }
