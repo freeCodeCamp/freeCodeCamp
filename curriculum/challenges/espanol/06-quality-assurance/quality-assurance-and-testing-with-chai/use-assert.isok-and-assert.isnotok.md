@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c48
-title: Use Assert.isOK and Assert.isNotOK
+title: Use Assert.isOK y Assert.isNotOK
 challengeType: 2
 forumTopicId: 301607
 dashedName: use-assert-isok-and-assert-isnotok
@@ -8,19 +8,19 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`isOk()` will test for a truthy value, and `isNotOk()` will test for a falsy value.
+`isOk()` prueba un valor verdadero y `isNotOk()` prueba un valor falso.
 
-To learn more about truthy and falsy values, try our [Falsy Bouncer](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer) challenge.
+Para aprender más sobre los valores verdaderos y falsos, prueba nuestro desafío de [Falsy Bouncer](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/falsy-bouncer).
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#3` in the `Basic Assertions` suite, change each `assert` to either `assert.isOk()` or `assert.isNotOk()` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#3` en `Basic Assertions` suite, cambie cada `assert` a `assert.isOk()` o `assert.isNotOk()` para hacer que la prueba pase (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 
-All tests should pass.
+Todas las pruebas deben pasar.
 
 ```js
 (getUserInput) =>
@@ -34,7 +34,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `isOk` vs. `isNotOk`.
+Debe elegir el método correcto para la primera aserción - `isOk` vs `isNotOk`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `isOk` vs. `isNot
   );
 ```
 
-You should choose the correct method for the second assertion - `isOk` vs. `isNotOk`.
+Debe elegir el método correcto para la segunda aserción - `isOk` vs `isNotOk`.
 
 ```js
 (getUserInput) =>
@@ -62,7 +62,7 @@ You should choose the correct method for the second assertion - `isOk` vs. `isNo
   );
 ```
 
-You should choose the correct method for the third assertion - `isOk` vs. `isNotOk`.
+Debe elegir el método correcto para la tercera aserción - `isOk` vs `isNotOk`.
 
 ```js
 (getUserInput) =>

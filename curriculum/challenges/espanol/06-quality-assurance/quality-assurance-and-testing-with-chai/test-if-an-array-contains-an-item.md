@@ -1,6 +1,6 @@
 ---
 id: 587d824d367417b2b2512c51
-title: Test if an Array Contains an Item
+title: Comprueba si un arreglo contiene un elemento
 challengeType: 2
 forumTopicId: 301603
 dashedName: test-if-an-array-contains-an-item
@@ -8,15 +8,15 @@ dashedName: test-if-an-array-contains-an-item
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Repl.it](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#12` in the `Arrays` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#12` en `Arrays` suite, cambia cada `assert` a `assert.include` o `assert.notInclude` para pasar la prueba (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 
-All tests should pass.
+Todas las pruebas deben pasar.
 
 ```js
 (getUserInput) =>
@@ -30,7 +30,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `include` vs. `notInclude`.
+Debe elegir el método correcto para la primera aserción - `include` vs `notInclude`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +48,7 @@ You should choose the correct method for the first assertion - `include` vs. `no
   );
 ```
 
-You should choose the correct method for the second assertion - `include` vs. `notInclude`.
+Debe elegir el método correcto para la segunda aserción - `include` vs `notInclude`.
 
 ```js
 (getUserInput) =>

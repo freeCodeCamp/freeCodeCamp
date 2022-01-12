@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c57
-title: Test if an Object is an Instance of a Constructor
+title: Comprueba si un objeto es una instancia de un constructor
 challengeType: 2
 forumTopicId: 301605
 dashedName: test-if-an-object-is-an-instance-of-a-constructor
@@ -8,17 +8,17 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`#instanceOf` asserts that an object is an instance of a constructor.
+`#instanceOf` verifica que un objeto es una instancia de un constructor.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#18` in the `Objects` suite, change each `assert` to either `assert.instanceOf` or `assert.notInstanceOf` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#18` en `Objects` suite, cambia cada `assert` a `assert.instanceOf` o `assert.notInstanceOf` para pasar la prueba (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 
-All tests should pass.
+Todas las pruebas deben pasar.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `instanceOf` vs. `notInstanceOf`.
+Debe elegir el método correcto para la primera aserción - `instanceOf` vs `notInstanceOf`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `instanceOf` vs. 
   );
 ```
 
-You should choose the correct method for the second assertion - `instanceOf` vs. `notInstanceOf`.
+Debe elegir el método correcto para la segunda aserción - `instanceOf` vs `notInstanceOf`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ You should choose the correct method for the second assertion - `instanceOf` vs.
   );
 ```
 
-You should choose the correct method for the third assertion - `instanceOf` vs. `notInstanceOf`.
+Debe elegir el método correcto para la tercera aserción - `instanceOf` vs `notInstanceOf`.
 
 ```js
 (getUserInput) =>
@@ -86,7 +86,7 @@ You should choose the correct method for the third assertion - `instanceOf` vs. 
   );
 ```
 
-You should choose the correct method for the fourth assertion - `instanceOf` vs. `notInstanceOf`.
+Debe elegir el método correcto para la cuarta aserción - `instanceOf` vs `notInstanceOf`.
 
 ```js
 (getUserInput) =>
