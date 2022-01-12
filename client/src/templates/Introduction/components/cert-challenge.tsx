@@ -54,7 +54,7 @@ const mapStateToProps = (state: unknown) => {
     userFetchStateSelector,
     isSignedInSelector,
     (fetchState: CertChallengeProps['fetchState'], isSignedIn) => ({
-      currentCerts: currentCerts,
+      currentCerts,
       fetchState,
       isSignedIn
     })
