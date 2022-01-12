@@ -23,10 +23,6 @@ const createStepFile = ({
 }: Options) => {
   const challengeId = new ObjectID();
 
-  let finalStepNum = padWithLeadingZeros(stepNum);
-  // adds 'tmp' because otherwise the existing file will be overwritten
-  finalStepNum += isExtraStep ? 'tmp' : '';
-
   const template = getStepTemplate({
     challengeId,
     challengeSeeds,
@@ -34,7 +30,7 @@ const createStepFile = ({
     stepNum
   });
 
-  fs.writeFileSync(`${projectPath}step-${finalStepNum}.md`, template);
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, template);
 
   return challengeId;
 };
