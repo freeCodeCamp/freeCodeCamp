@@ -89,7 +89,7 @@ assert(
 const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
 // Change code below this line
-function add (bookName) {
+function add(bookName) {
 
   bookList.push(bookName);
   return bookList;
@@ -98,7 +98,7 @@ function add (bookName) {
 }
 
 // Change code below this line
-function remove (bookName) {
+function remove(bookName) {
   const book_index = bookList.indexOf(bookName);
   if (book_index >= 0) {
 

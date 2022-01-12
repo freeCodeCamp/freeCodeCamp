@@ -26,22 +26,22 @@ dashedName: standardize-times-with-the-html5-datetime-attribute
 Ваш код має містити елемент `p`, що включає текст `Thank you to everyone for responding to Master Camper Cat's survey.` і елемент `time`.
 
 ```js
-assert(timeElement.length);
+assert(timeElement);
 ```
 
 Додані теґи `time` мають обгортати текст `Thursday, September 15<sup>th</sup>`.
 
 ```js
 assert(
-  timeElement.length &&
-    $(timeElement).html().trim() === 'Thursday, September 15<sup>th</sup>'
+  timeElement &&
+    timeElement?.innerHTML?.trim() === 'Thursday, September 15<sup>th</sup>'
 );
 ```
 
 Доданий теґ `time` має містити атрибут `datetime`, який не є порожнім.
 
 ```js
-assert(datetimeAttr && datetimeAttr.length);
+assert(datetimeAttr && datetimeAttr?.length);
 ```
 
 Доданий атрибут `datetime` має бути встановленим на значення `2016-09-15`.
@@ -56,10 +56,10 @@ assert(datetimeAttr === '2016-09-15');
 
 ```html
 <script>
-const pElement = $("article > p")
-  .filter((_, elem) => $(elem).text().includes("Thank you to everyone for responding to Master Camper Cat's survey."));
-const timeElement = pElement[0] ? $(pElement[0]).find("time") : null;
-const datetimeAttr = $(timeElement).attr("datetime");
+const pElement = [...document.querySelectorAll("article > p")]
+  .filter(x => x?.textContent?.includes("Thank you to everyone for responding to Master Camper Cat's survey."));
+const timeElement = pElement[0] ? pElement[0].querySelector("time") : null;
+const datetimeAttr = timeElement?.getAttribute("datetime");
 </script>
 ```
 
