@@ -26,22 +26,22 @@ Aquí hay un ejemplo:
 Tu código debe tener un elemento `p` que incluya el texto `Thank you to everyone for responding to Master Camper Cat's survey.` e incluya un elemento `time`.
 
 ```js
-assert(timeElement.length);
+assert(timeElement);
 ```
 
 Las etiquetas `time` añadidas deben envolver el texto `Thursday, September 15<sup>th</sup>`.
 
 ```js
 assert(
-  timeElement.length &&
-    $(timeElement).html().trim() === 'Thursday, September 15<sup>th</sup>'
+  timeElement &&
+    timeElement?.innerHTML?.trim() === 'Thursday, September 15<sup>th</sup>'
 );
 ```
 
 Tu etiqueta `time` agregada debe tener un atributo `datetime` que no esté vacío.
 
 ```js
-assert(datetimeAttr && datetimeAttr.length);
+assert(datetimeAttr && datetimeAttr?.length);
 ```
 
 Tu atributo `datetime` agregado debe establecerse en un valor de `2016-09-15`.
@@ -56,10 +56,10 @@ assert(datetimeAttr === '2016-09-15');
 
 ```html
 <script>
-const pElement = $("article > p")
-  .filter((_, elem) => $(elem).text().includes("Thank you to everyone for responding to Master Camper Cat's survey."));
-const timeElement = pElement[0] ? $(pElement[0]).find("time") : null;
-const datetimeAttr = $(timeElement).attr("datetime");
+const pElement = [...document.querySelectorAll("article > p")]
+  .filter(x => x?.textContent?.includes("Thank you to everyone for responding to Master Camper Cat's survey."));
+const timeElement = pElement[0] ? pElement[0].querySelector("time") : null;
+const datetimeAttr = timeElement?.getAttribute("datetime");
 </script>
 ```
 

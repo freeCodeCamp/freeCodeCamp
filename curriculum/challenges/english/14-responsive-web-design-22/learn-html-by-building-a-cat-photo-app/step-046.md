@@ -7,7 +7,7 @@ dashedName: step-46
 
 # --description--
 
-Nest a another radio button with the option `Outdoor` in a new `label` element. The new radio button should be placed after the first one. Also, set its `id` attribute value to `outdoor`.
+Nest another radio button with the option `Outdoor` in a new `label` element. The new radio button should be placed after the first one. Also, set its `id` attribute value to `outdoor`.
 
 # --hints--
 
