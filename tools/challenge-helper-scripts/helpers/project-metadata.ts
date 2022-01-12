@@ -11,10 +11,7 @@ function getMetaData(): Meta {
   }
 }
 
-function updateMetaData(
-  projectName: string,
-  newMetaData: Record<string, unknown>
-): void {
+function updateMetaData(newMetaData: Record<string, unknown>): void {
   fs.writeFileSync(getProjectMetaPath(), JSON.stringify(newMetaData, null, 2));
 }
 

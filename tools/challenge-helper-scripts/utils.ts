@@ -4,7 +4,7 @@ import ObjectID from 'bson-objectid';
 import * as matter from 'gray-matter';
 import { parseMDSync } from '../challenge-parser/parser';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
-import { getProjectName, getProjectPath } from './helpers/get-project-info';
+import { getProjectPath } from './helpers/get-project-info';
 import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template';
 import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
 
@@ -34,6 +34,24 @@ const createStepFile = ({
 
   return challengeId;
 };
+
+interface InsertOptions {
+  stepNum: number;
+  stepId: string;
+}
+
+function insertStepIntoMeta({ stepNum, stepId }: InsertOptions) {
+  const existingMeta = getMetaData();
+  const oldOrder = [...existingMeta.challengeOrder];
+  oldOrder.splice(stepNum - 1, 0, [stepId]);
+  // rename all the files in challengeOrder
+  const challengeOrder = oldOrder.map(([id], index) => [
+    id,
+    `Step ${index + 1}`
+  ]);
+
+  updateMetaData({ ...existingMeta, challengeOrder });
+}
 
 const reorderSteps = () => {
   const projectPath = getProjectPath();
@@ -100,7 +118,7 @@ const reorderSteps = () => {
     );
   });
 
-  updateMetaData(getProjectName(), { ...parsedData, challengeOrder });
+  updateMetaData({ ...parsedData, challengeOrder });
 };
 
 const getChallengeSeeds = (
@@ -110,4 +128,4 @@ const getChallengeSeeds = (
   return parseMDSync(challengeFilePath).challengeFiles;
 };
 
-export { createStepFile, reorderSteps, getChallengeSeeds };
+export { createStepFile, reorderSteps, getChallengeSeeds, insertStepIntoMeta };

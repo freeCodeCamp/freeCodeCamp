@@ -30,7 +30,7 @@ jest.mock('gray-matter', () => {
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';
-import { createStepFile, reorderSteps } from './utils';
+import { createStepFile, insertStepIntoMeta, reorderSteps } from './utils';
 
 describe('Challenge utils helper scripts', () => {
   describe('createStepFile util', () => {
@@ -58,10 +58,50 @@ describe('Challenge utils helper scripts', () => {
       const files = glob.sync(`project/*.md`);
 
       expect(files).toEqual([
+        `project/${mockChallengeId}.md`,
         `project/step-001.md`,
-        `project/step-002.md`,
-        `project/step-003.md`
+        `project/step-002.md`
       ]);
+    });
+  });
+
+  describe('insertStepIntoMeta util', () => {
+    it('should update the meta with a new file id and name', () => {
+      mock({
+        '_meta/project/': {
+          'meta.json': `{"id": "mock-id",
+          "challengeOrder": [
+            [
+              "id-1",
+              "Step 1"
+            ],
+            [
+              "id-2",
+              "Step 2"
+            ],
+            [
+              "id-3",
+              "Step 3"
+            ]
+          ]}`
+        }
+      });
+      process.env.CALLING_DIR = 'english/superblock/project';
+
+      insertStepIntoMeta({ stepNum: 3, stepId: mockChallengeId });
+
+      const meta = JSON.parse(
+        fs.readFileSync('_meta/project/meta.json', 'utf8')
+      );
+      expect(meta).toEqual({
+        id: 'mock-id',
+        challengeOrder: [
+          ['id-1', 'Step 1'],
+          ['id-2', 'Step 2'],
+          [mockChallengeId, 'Step 3'],
+          ['id-3', 'Step 4']
+        ]
+      });
     });
   });
 
@@ -94,25 +134,18 @@ describe('Challenge utils helper scripts', () => {
         'english/superblock/project/step-003.md'
       ]);
 
-      const result = fs.readFileSync('_meta/project/meta.json', 'utf8');
+      const result = JSON.parse(
+        fs.readFileSync('_meta/project/meta.json', 'utf8')
+      );
 
-      const expectedResult = `{
-  "id": "mock-id",
-  "challengeOrder": [
-    [
-      "60d35cf3fe32df2ce8e31b03",
-      "Step 1"
-    ],
-    [
-      "60d35cf3fe32df2ce8e31b03",
-      "Step 2"
-    ],
-    [
-      "60d35cf3fe32df2ce8e31b03",
-      "Step 3"
-    ]
-  ]
-}`;
+      const expectedResult = {
+        id: 'mock-id',
+        challengeOrder: [
+          ['60d35cf3fe32df2ce8e31b03', 'Step 1'],
+          ['60d35cf3fe32df2ce8e31b03', 'Step 2'],
+          ['60d35cf3fe32df2ce8e31b03', 'Step 3']
+        ]
+      };
 
       expect(result).toEqual(expectedResult);
     });
