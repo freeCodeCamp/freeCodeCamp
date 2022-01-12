@@ -19,19 +19,6 @@ jest.mock('./helpers/get-step-template', () => {
   };
 });
 
-jest.mock('./helpers/get-project-meta-path', () => {
-  return {
-    getProjectMetaPath: jest.fn(() => '_meta/project/meta.json')
-  };
-});
-
-jest.mock('./helpers/get-project-info', () => {
-  return {
-    getProjectPath: jest.fn(() => 'project/'),
-    getProjectName: jest.fn(() => 'project')
-  };
-});
-
 jest.mock('gray-matter', () => {
   return {
     read: jest.fn(() => ({
@@ -84,22 +71,27 @@ describe('Challenge utils helper scripts', () => {
         '_meta/project/': {
           'meta.json': '{"id": "mock-id"}'
         },
-        'project/': {
+        'english/superblock/project/': {
           'step-001.md': 'Lorem ipsum 1...',
           'step-002.md': 'Lorem ipsum 2...',
           'step-002b.md': 'Lorem ipsum 3...'
         }
       });
 
+      // This seems odd, but it's necessary so that all the mocked files are at
+      // the correct relative depth. _meta is the lowest level we care about
+      // and that's a sibling of english.
+      process.env.CALLING_DIR = 'english/superblock/project';
+
       reorderSteps();
 
       // - Should write a file with a given name and template
-      const files = glob.sync(`project/*.md`);
+      const files = glob.sync(`english/superblock/project/*.md`);
 
       expect(files).toEqual([
-        'project/step-001.md',
-        'project/step-002.md',
-        'project/step-003.md'
+        'english/superblock/project/step-001.md',
+        'english/superblock/project/step-002.md',
+        'english/superblock/project/step-003.md'
       ]);
 
       const result = fs.readFileSync('_meta/project/meta.json', 'utf8');
@@ -127,5 +119,6 @@ describe('Challenge utils helper scripts', () => {
   });
   afterEach(() => {
     mock.restore();
+    delete process.env.CALLING_DIR;
   });
 });

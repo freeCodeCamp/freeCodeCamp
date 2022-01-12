@@ -61,17 +61,15 @@ describe('getLastStepFileContent helper', () => {
         lorem: 'ipsum'
       }
     };
-    // Add mock to test condition
+
     process.env.CALLING_DIR =
       'curriculum/challenges/english/superblock/mock-project';
 
     expect(getLastStepFileContent()).toEqual(expected);
-
-    // Remove mock to not affect other tests
-    delete process.env.CALLING_DIR;
   });
 
   afterEach(() => {
     mock.restore();
+    delete process.env.CALLING_DIR;
   });
 });

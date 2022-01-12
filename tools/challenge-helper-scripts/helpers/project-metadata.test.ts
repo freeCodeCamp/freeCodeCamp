@@ -55,7 +55,7 @@ describe('getMetaData helper', () => {
   });
 
   afterEach(() => {
-    delete process.env.CALLING_DIR;
     mock.restore();
+    delete process.env.CALLING_DIR;
   });
 });
