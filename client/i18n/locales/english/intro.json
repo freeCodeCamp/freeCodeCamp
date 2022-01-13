@@ -76,31 +76,31 @@
     "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
     "blocks": {
       "build-a-tribute-page-project": {
-        "title": "Build a Tribute Page Project",
+        "title": "Build a Tribute Page Certification Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a tribute page for a subject of your choosing, fictional or real."
         ] },
       "build-a-personal-portfolio-webpage-project": {
-        "title": "Build a Personal Portfolio Webpage Project",
+        "title": "Build a Personal Portfolio Webpage Certification Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build your own personal portfolio page."
         ] },
       "build-a-product-landing-page-project": {
-        "title": "Build a Product Landing Page Project",
+        "title": "Build a Product Landing Page Certification Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a product landing page to market a product of your choice."
         ] },
       "build-a-survey-form-project": {
-        "title": "Build a Survey Form Project",
+        "title": "Build a Survey Form Certification Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a survey form to collect data from your users."
         ] },
       "build-a-technical-documentation-page-project": {
-        "title": "Build a Technical Documentation Page Project",
+        "title": "Build a Technical Documentation Page Certification Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
           "For this project, you will build a technical documentation page to serve as instruction or reference for a topic."
