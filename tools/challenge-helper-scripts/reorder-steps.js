@@ -1,3 +1,3 @@
-const { reorderSteps } = require('./utils');
+const { renameSteps } = require('./utils');
 
-reorderSteps();
+renameSteps();

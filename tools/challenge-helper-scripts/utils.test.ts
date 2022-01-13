@@ -2,6 +2,7 @@
 import fs from 'fs';
 import ObjectID from 'bson-objectid';
 import glob from 'glob';
+import * as matter from 'gray-matter';
 import mock from 'mock-fs';
 
 // NOTE:
@@ -19,18 +20,9 @@ jest.mock('./helpers/get-step-template', () => {
   };
 });
 
-jest.mock('gray-matter', () => {
-  return {
-    read: jest.fn(() => ({
-      data: { id: mockChallengeId }
-    })),
-    stringify: jest.fn(() => 'Lorem ipsum...')
-  };
-});
-
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';
-import { createStepFile, insertStepIntoMeta, reorderSteps } from './utils';
+import { createStepFile, insertStepIntoMeta, renameSteps } from './utils';
 
 describe('Challenge utils helper scripts', () => {
   describe('createStepFile util', () => {
@@ -105,49 +97,60 @@ describe('Challenge utils helper scripts', () => {
     });
   });
 
-  describe('reorderSteps util', () => {
-    it('should sort files found in given path', () => {
+  describe('renameSteps util', () => {
+    it('should apply meta.challengeOrder to step files', () => {
       mock({
         '_meta/project/': {
-          'meta.json': '{"id": "mock-id"}'
+          'meta.json':
+            '{"id": "mock-id", "challengeOrder": [["id-1", "Step 1"], ["id-3", "Step 2"], ["id-2", "Step 3"]]}'
         },
         'english/superblock/project/': {
-          'step-001.md': 'Lorem ipsum 1...',
-          'step-002.md': 'Lorem ipsum 2...',
-          'step-002b.md': 'Lorem ipsum 3...'
+          'id-1.md': `---
+id: id-1
+title: Step 2
+challengeType: a
+dashedName: step-2
+---
+`,
+          'id-2.md': `---
+id: id-2
+title: Step 1
+challengeType: b
+dashedName: step-1
+---
+`,
+          'id-3.md': `---
+id: id-3
+title: Step 3
+challengeType: c
+dashedName: step-3
+---
+`
         }
       });
 
-      // This seems odd, but it's necessary so that all the mocked files are at
-      // the correct relative depth. _meta is the lowest level we care about
-      // and that's a sibling of english.
       process.env.CALLING_DIR = 'english/superblock/project';
 
-      reorderSteps();
+      renameSteps();
 
-      // - Should write a file with a given name and template
-      const files = glob.sync(`english/superblock/project/*.md`);
-
-      expect(files).toEqual([
-        'english/superblock/project/step-001.md',
-        'english/superblock/project/step-002.md',
-        'english/superblock/project/step-003.md'
-      ]);
-
-      const result = JSON.parse(
-        fs.readFileSync('_meta/project/meta.json', 'utf8')
-      );
-
-      const expectedResult = {
-        id: 'mock-id',
-        challengeOrder: [
-          ['60d35cf3fe32df2ce8e31b03', 'Step 1'],
-          ['60d35cf3fe32df2ce8e31b03', 'Step 2'],
-          ['60d35cf3fe32df2ce8e31b03', 'Step 3']
-        ]
-      };
-
-      expect(result).toEqual(expectedResult);
+      expect(matter.read('english/superblock/project/id-1.md').data).toEqual({
+        id: 'id-1',
+        title: 'Step 1',
+        challengeType: 'a',
+        dashedName: 'step-1'
+      });
+      expect(matter.read('english/superblock/project/id-2.md').data).toEqual({
+        id: 'id-2',
+        title: 'Step 3',
+        challengeType: 'b',
+        dashedName: 'step-3'
+      });
+      expect(matter.read('english/superblock/project/id-3.md').data).toEqual({
+        id: 'id-3',
+        title: 'Step 2',
+        challengeType: 'c',
+        dashedName: 'step-2'
+      });
     });
   });
   afterEach(() => {

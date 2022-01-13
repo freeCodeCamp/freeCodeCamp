@@ -3,7 +3,7 @@ import { getArgValues } from './helpers/get-arg-values';
 import { getExistingStepNums } from './helpers/get-existing-step-nums';
 import { getProjectPath } from './helpers/get-project-info';
 import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
-import { reorderSteps } from './utils';
+import { renameSteps } from './utils';
 
 const projectPath = getProjectPath();
 const args = getArgValues(process.argv);
@@ -23,7 +23,7 @@ const stepFileToDelete = `${projectPath}step-${padWithLeadingZeros(num)}.md`;
 try {
   fs.unlinkSync(stepFileToDelete);
   console.log(`Sucessfully deleted step #${num}`);
-  reorderSteps();
+  renameSteps();
 } catch (err) {
   console.error(err);
 }

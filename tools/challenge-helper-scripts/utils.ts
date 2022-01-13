@@ -6,7 +6,6 @@ import { parseMDSync } from '../challenge-parser/parser';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import { getProjectPath } from './helpers/get-project-info';
 import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template';
-import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
 
 interface Options {
   projectPath: string;
@@ -53,72 +52,32 @@ function insertStepIntoMeta({ stepNum, stepId }: InsertOptions) {
   updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-const reorderSteps = () => {
+const renameSteps = () => {
   const projectPath = getProjectPath();
+  const meta = getMetaData();
 
-  const parsedData = getMetaData();
-
-  let foundFinal = false;
-  const filesArr = [];
+  const fileNames: string[] = [];
   fs.readdirSync(projectPath).forEach(fileName => {
     if (path.extname(fileName).toLowerCase() === '.md') {
-      if (!fileName.endsWith('final.md')) {
-        filesArr.push(fileName);
-      } else {
-        foundFinal = true;
-      }
+      fileNames.push(fileName);
     }
   });
 
-  if (foundFinal) {
-    filesArr.push('final.md');
-  }
-
-  const filesToReorder = filesArr.map((fileName, i) => {
-    const newStepNum = i + 1;
-    const newFileName =
-      fileName !== 'final.md'
-        ? `step-${padWithLeadingZeros(newStepNum)}.md`
-        : 'final.md';
-    return {
-      oldFileName: fileName,
-      newFileName,
-      newStepNum
-    };
-  });
-
-  const challengeOrder: string[][] = [];
-
-  filesToReorder.forEach(({ oldFileName, newFileName, newStepNum }) => {
-    fs.renameSync(
-      `${projectPath}${oldFileName}`,
-      `${projectPath}${newFileName}.tmp`
-    );
-    const filePath = `${projectPath}${newFileName}.tmp`;
+  fileNames.forEach(fileName => {
+    const filePath = `${projectPath}${fileName}`;
     const frontMatter = matter.read(filePath);
-    const challengeID =
-      (frontMatter.data.id as string) || new ObjectID().toString();
-    const title =
-      newFileName === 'final.md' ? 'Final Prototype' : `Step ${newStepNum}`;
+    const newStepNum =
+      meta.challengeOrder.findIndex(elem => elem[0] === frontMatter.data.id) +
+      1;
+    const title = `Step ${newStepNum}`;
     const dashedName = `step-${newStepNum}`;
-    challengeOrder.push(['' + challengeID, title]);
     const newData = {
       ...frontMatter.data,
-      id: challengeID,
       title,
       dashedName
     };
     fs.writeFileSync(filePath, matter.stringify(frontMatter.content, newData));
   });
-
-  filesToReorder.forEach(({ newFileName }) => {
-    fs.renameSync(
-      `${projectPath}${newFileName}.tmp`,
-      `${projectPath}${newFileName}`
-    );
-  });
-
-  updateMetaData({ ...parsedData, challengeOrder });
 };
 
 const getChallengeSeeds = (
@@ -128,4 +87,4 @@ const getChallengeSeeds = (
   return parseMDSync(challengeFilePath).challengeFiles;
 };
 
-export { createStepFile, reorderSteps, getChallengeSeeds, insertStepIntoMeta };
+export { createStepFile, renameSteps, getChallengeSeeds, insertStepIntoMeta };

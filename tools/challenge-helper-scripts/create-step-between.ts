@@ -1,7 +1,12 @@
 import { getArgValues } from './helpers/get-arg-values';
 import { getProjectPath } from './helpers/get-project-info';
 import { getMetaData } from './helpers/project-metadata';
-import { createStepFile, getChallengeSeeds, insertStepIntoMeta } from './utils';
+import {
+  createStepFile,
+  getChallengeSeeds,
+  insertStepIntoMeta,
+  renameSteps
+} from './utils';
 
 const projectPath = getProjectPath();
 const args = getArgValues(process.argv);
@@ -35,4 +40,4 @@ insertStepIntoMeta({ stepNum, stepId });
 console.log(`Sucessfully inserted new step #${stepNum}`);
 // TODO: this will apply the challenge order names to the steps titles and
 // dashed names
-// renameSteps();
+renameSteps();
