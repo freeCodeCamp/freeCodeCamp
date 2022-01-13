@@ -37,13 +37,13 @@ const createStepFile = ({
 
 interface InsertOptions {
   stepNum: number;
-  stepId: string;
+  stepId: ObjectID;
 }
 
 function insertStepIntoMeta({ stepNum, stepId }: InsertOptions) {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
-  oldOrder.splice(stepNum - 1, 0, [stepId]);
+  oldOrder.splice(stepNum - 1, 0, [stepId.toString()]);
   // rename all the files in challengeOrder
   const challengeOrder = oldOrder.map(([id], index) => [
     id,

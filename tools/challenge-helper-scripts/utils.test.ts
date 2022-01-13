@@ -88,7 +88,7 @@ describe('Challenge utils helper scripts', () => {
       });
       process.env.CALLING_DIR = 'english/superblock/project';
 
-      insertStepIntoMeta({ stepNum: 3, stepId: mockChallengeId });
+      insertStepIntoMeta({ stepNum: 3, stepId: new ObjectID(mockChallengeId) });
 
       const meta = JSON.parse(
         fs.readFileSync('_meta/project/meta.json', 'utf8')
