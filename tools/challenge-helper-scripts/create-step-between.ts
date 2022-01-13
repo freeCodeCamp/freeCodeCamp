@@ -1,37 +1,38 @@
 import { getArgValues } from './helpers/get-arg-values';
-import { getExistingStepNums } from './helpers/get-existing-step-nums';
 import { getProjectPath } from './helpers/get-project-info';
-import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
-import { createStepFile, getChallengeSeeds, reorderSteps } from './utils';
+import { getMetaData } from './helpers/project-metadata';
+import { createStepFile, getChallengeSeeds, insertStepIntoMeta } from './utils';
 
 const projectPath = getProjectPath();
 const args = getArgValues(process.argv);
 
-const start = parseInt(args.start, 10);
+const stepNum = parseInt(args.start, 10);
 
-if (!Number.isInteger(start) || start < 1) {
-  throw 'Step not created. Start step must be greater than 0.';
+if (!Number.isInteger(stepNum) || stepNum < 1) {
+  throw 'Step not inserted. New step number must be greater than 0.';
 }
 
-const end = start + 1;
+const challengeOrder = getMetaData().challengeOrder;
 
-const existingSteps = getExistingStepNums(projectPath);
-if (!allStepsExist(existingSteps, [start, end])) {
-  throw `Step not created. Both start step, ${start}, and end step, ${end}, must exist`;
-}
+if (stepNum > challengeOrder.length + 1)
+  throw `Step not inserted. New step number must be less than ${
+    challengeOrder.length + 2
+  }.`;
 
-function allStepsExist(steps: number[], stepsToFind: number[]) {
-  return stepsToFind.every(num => steps.includes(num));
-}
+const challengeSeeds =
+  stepNum > 1
+    ? getChallengeSeeds(`${projectPath}${challengeOrder[stepNum - 2][0]}.md`)
+    : {};
 
-const challengeSeeds = getChallengeSeeds(
-  `${projectPath}step-${padWithLeadingZeros(start)}.md`
-);
-createStepFile({
-  stepNum: start,
+const stepId = createStepFile({
+  stepNum,
   projectPath,
-  challengeSeeds,
-  isExtraStep: true
+  challengeSeeds
 });
-console.log(`Sucessfully added step between step #${start} and step #${end}`);
-reorderSteps();
+
+insertStepIntoMeta({ stepNum, stepId });
+
+console.log(`Sucessfully inserted new step #${stepNum}`);
+// TODO: this will apply the challenge order names to the steps titles and
+// dashed names
+// renameSteps();
