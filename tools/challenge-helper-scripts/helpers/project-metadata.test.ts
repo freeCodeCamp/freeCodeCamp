@@ -1,6 +1,10 @@
 import path from 'path';
 import mock from 'mock-fs';
-import { getMetaData, getProjectMetaPath } from './project-metadata';
+import {
+  getMetaData,
+  getProjectMetaPath,
+  validateMetaData
+} from './project-metadata';
 
 describe('getProjectMetaPath helper', () => {
   it('should return the meta path', () => {
@@ -71,6 +75,82 @@ describe('getMetaData helper', () => {
       new Error(
         `ENOENT: no such file or directory, open 'curriculum/challenges/_meta/mick-priject/meta.json'`
       )
+    );
+  });
+
+  afterEach(() => {
+    mock.restore();
+    delete process.env.CALLING_DIR;
+  });
+});
+
+describe('validateMetaData helper', () => {
+  it('should throw if a stepfile is missing', () => {
+    mock({
+      '_meta/project/': {
+        'meta.json':
+          '{"id": "mock-id", "challengeOrder": [["id-1", "Step 1"], ["id-3", "Step 2"], ["id-2", "Step 3"]]}'
+      },
+      'english/superblock/project/': {
+        'id-1.md': `---
+id: id-1
+title: Step 2
+challengeType: a
+dashedName: step-2
+---
+`,
+        'id-3.md': `---
+id: id-3
+title: Step 3
+challengeType: c
+dashedName: step-3
+---
+`
+      }
+    });
+
+    process.env.CALLING_DIR = 'english/superblock/project';
+
+    expect(() => validateMetaData()).toThrow(
+      "ENOENT: no such file or directory, access 'english/superblock/project/id-2.md'"
+    );
+  });
+
+  it('should throw if a step is present in the project, but not the meta', () => {
+    mock({
+      '_meta/project/': {
+        'meta.json':
+          '{"id": "mock-id", "challengeOrder": [["id-1", "Step 1"], ["id-2", "Step 3"]]}'
+      },
+      'english/superblock/project/': {
+        'id-1.md': `---
+id: id-1
+title: Step 2
+challengeType: a
+dashedName: step-2
+---
+`,
+        'id-2.md': `---
+id: id-2
+title: Step 1
+challengeType: b
+dashedName: step-1
+---
+`,
+        'id-3.md': `---
+id: id-3
+title: Step 3
+challengeType: c
+dashedName: step-3
+---
+`
+      }
+    });
+
+    process.env.CALLING_DIR = 'english/superblock/project';
+
+    expect(() => validateMetaData()).toThrow(
+      "File english/superblock/project/id-3.md should be in the meta.json's challengeOrder"
     );
   });
 
