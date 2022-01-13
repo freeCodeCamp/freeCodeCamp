@@ -36,8 +36,5 @@ const stepId = createStepFile({
 });
 
 insertStepIntoMeta({ stepNum, stepId });
-
-console.log(`Sucessfully inserted new step #${stepNum}`);
-// TODO: this will apply the challenge order names to the steps titles and
-// dashed names
 renameSteps();
+console.log(`Sucessfully inserted new step #${stepNum}`);
