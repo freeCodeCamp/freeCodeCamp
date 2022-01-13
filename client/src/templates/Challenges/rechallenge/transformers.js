@@ -105,8 +105,6 @@ async function loadPresetReact() {
 const babelTransformCode = options => code =>
   Babel.transform(code, options).code;
 
-// const sourceReg =
-//  /(<!-- fcc-start-source -->)([\s\S]*?)(?=<!-- fcc-end-source -->)/g;
 const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
 const testJS = matchesProperty('ext', 'js');
