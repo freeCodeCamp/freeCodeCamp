@@ -305,7 +305,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a PUT request to `/api/threads/{board}` and pass along the `thread_id`. Returned will be the string `success`. The `reported` value of the `thread_id` will be changed to `true`.
+You can send a PUT request to `/api/threads/{board}` and pass along the `thread_id`. Returned will be the string `reported`. The `reported` value of the `thread_id` will be changed to `true`.
 
 ```js
 async (getUserInput) => {
@@ -326,7 +326,7 @@ async (getUserInput) => {
     const reported = await res.text();
     try {
       assert.equal(res.status, 200);
-      assert.equal(reported, "success");
+      assert.equal(reported, "reported");
     } catch (err) {
       throw new Error(err.responseText || err.message);
     }
@@ -336,7 +336,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a PUT request to `/api/replies/{board}` and pass along the `thread_id` & `reply_id`. Returned will be the string `success`. The `reported` value of the `reply_id` will be changed to `true`.
+You can send a PUT request to `/api/replies/{board}` and pass along the `thread_id` & `reply_id`. Returned will be the string `reported`. The `reported` value of the `reply_id` will be changed to `true`.
 
 ```js
 async (getUserInput) => {
@@ -358,7 +358,7 @@ async (getUserInput) => {
     const reported = await res.text();
     try {
       assert.equal(res.status, 200);
-      assert.equal(reported, "success");
+      assert.equal(reported, "reported");
     } catch (err) {
       throw new Error(err.responseText || err.message);
     }
