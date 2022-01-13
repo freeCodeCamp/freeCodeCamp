@@ -3,12 +3,8 @@ import { Meta } from '../create-project';
 import { getProjectMetaPath } from './get-project-meta-path';
 
 function getMetaData(): Meta {
-  try {
-    const metaData = fs.readFileSync(getProjectMetaPath(), 'utf8');
-    return JSON.parse(metaData) as Meta;
-  } catch (err) {
-    throw `No _meta.json file exists at ${getProjectMetaPath()}`;
-  }
+  const metaData = fs.readFileSync(getProjectMetaPath(), 'utf8');
+  return JSON.parse(metaData) as Meta;
 }
 
 function updateMetaData(newMetaData: Record<string, unknown>): void {

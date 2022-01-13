@@ -49,7 +49,7 @@ describe('getMetaData helper', () => {
       getMetaData();
     }).toThrowError(
       new Error(
-        `No _meta.json file exists at curriculum/challenges/_meta/mick-priject/meta.json`
+        `ENOENT: no such file or directory, open 'curriculum/challenges/_meta/mick-priject/meta.json'`
       )
     );
   });
