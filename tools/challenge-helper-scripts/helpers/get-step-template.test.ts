@@ -48,7 +48,6 @@ Test 1
           tail: ''
         }
       },
-      isExtraStep: false,
       stepNum: 5
     };
 

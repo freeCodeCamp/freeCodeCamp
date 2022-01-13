@@ -48,7 +48,6 @@ function insertStep(stepNum: number) {
 
   const stepId = createStepFile({
     stepNum,
-    projectPath: getProjectPath(),
     challengeSeeds
   });
 
@@ -65,7 +64,7 @@ function createEmptySteps(num: number) {
   const nextStepNum = getMetaData().challengeOrder.length + 1;
 
   for (let stepNum = nextStepNum; stepNum < nextStepNum + num; stepNum++) {
-    const stepId = createStepFile({ stepNum, projectPath: getProjectPath() });
+    const stepId = createStepFile({ stepNum });
     insertStepIntoMeta({ stepNum, stepId });
   }
   console.log(`Sucessfully added ${num} steps`);

@@ -8,24 +8,21 @@ import { getProjectPath } from './helpers/get-project-info';
 import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template';
 
 interface Options {
-  projectPath: string;
   stepNum: number;
+  projectPath?: string;
   challengeSeeds?: Record<string, ChallengeSeed>;
-  isExtraStep?: boolean;
 }
 
 const createStepFile = ({
-  projectPath,
   stepNum,
-  challengeSeeds = {},
-  isExtraStep = false
+  projectPath = getProjectPath(),
+  challengeSeeds = {}
 }: Options) => {
   const challengeId = new ObjectID();
 
   const template = getStepTemplate({
     challengeId,
     challengeSeeds,
-    isExtraStep,
     stepNum
   });
 
@@ -66,18 +63,17 @@ function deleteStepFromMeta({ stepNum }: { stepNum: number }) {
 }
 
 const renameSteps = () => {
-  const projectPath = getProjectPath();
   const meta = getMetaData();
 
   const fileNames: string[] = [];
-  fs.readdirSync(projectPath).forEach(fileName => {
+  fs.readdirSync(getProjectPath()).forEach(fileName => {
     if (path.extname(fileName).toLowerCase() === '.md') {
       fileNames.push(fileName);
     }
   });
 
   fileNames.forEach(fileName => {
-    const filePath = `${projectPath}${fileName}`;
+    const filePath = `${getProjectPath()}${fileName}`;
     const frontMatter = matter.read(filePath);
     const newStepNum =
       meta.challengeOrder.findIndex(elem => elem[0] === frontMatter.data.id) +
