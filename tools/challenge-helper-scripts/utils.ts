@@ -52,6 +52,19 @@ function insertStepIntoMeta({ stepNum, stepId }: InsertOptions) {
   updateMetaData({ ...existingMeta, challengeOrder });
 }
 
+function deleteStepFromMeta({ stepNum }: { stepNum: number }) {
+  const existingMeta = getMetaData();
+  const oldOrder = [...existingMeta.challengeOrder];
+  oldOrder.splice(stepNum - 1, 1);
+  // rename all the files in challengeOrder
+  const challengeOrder = oldOrder.map(([id], index) => [
+    id,
+    `Step ${index + 1}`
+  ]);
+
+  updateMetaData({ ...existingMeta, challengeOrder });
+}
+
 const renameSteps = () => {
   const projectPath = getProjectPath();
   const meta = getMetaData();
@@ -87,4 +100,10 @@ const getChallengeSeeds = (
   return parseMDSync(challengeFilePath).challengeFiles;
 };
 
-export { createStepFile, renameSteps, getChallengeSeeds, insertStepIntoMeta };
+export {
+  createStepFile,
+  renameSteps,
+  getChallengeSeeds,
+  insertStepIntoMeta,
+  deleteStepFromMeta
+};
