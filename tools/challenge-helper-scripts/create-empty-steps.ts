@@ -1,13 +1,4 @@
-import { getArgValues } from './helpers/get-arg-values';
+import { getArgValue } from './helpers/get-arg-value';
 import { createEmptySteps } from './commands';
 
-const args = getArgValues(process.argv);
-
-const { num: numString } = args;
-
-if (!numString) {
-  throw `No steps created. num arg val must be specified.`;
-}
-const num = parseInt(numString, 10);
-
-createEmptySteps(num);
+createEmptySteps(getArgValue(process.argv));

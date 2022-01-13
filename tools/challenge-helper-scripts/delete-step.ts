@@ -1,8 +1,4 @@
 import { deleteStep } from './commands';
-import { getArgValues } from './helpers/get-arg-values';
+import { getArgValue } from './helpers/get-arg-value';
 
-const args = getArgValues(process.argv);
-
-const stepNum = parseInt(args.num, 10);
-
-deleteStep(stepNum);
+deleteStep(getArgValue(process.argv));

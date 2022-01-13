@@ -1,8 +1,4 @@
-import { getArgValues } from './helpers/get-arg-values';
+import { getArgValue } from './helpers/get-arg-value';
 import { insertStep } from './commands';
 
-const args = getArgValues(process.argv);
-
-const stepNum = parseInt(args.start, 10);
-
-insertStep(stepNum);
+insertStep(getArgValue(process.argv));

@@ -10,7 +10,7 @@ import {
 } from './utils';
 
 function deleteStep(stepNum: number) {
-  if (!Number.isInteger(stepNum) || stepNum < 1) {
+  if (stepNum < 1) {
     throw 'Step not deleted. Step num must be a number greater than 0.';
   }
 
@@ -29,7 +29,7 @@ function deleteStep(stepNum: number) {
 }
 
 function insertStep(stepNum: number) {
-  if (!Number.isInteger(stepNum) || stepNum < 1) {
+  if (stepNum < 1) {
     throw 'Step not inserted. New step number must be greater than 0.';
   }
   const challengeOrder = getMetaData().challengeOrder;
