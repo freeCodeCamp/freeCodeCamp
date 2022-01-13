@@ -1,6 +1,7 @@
 import fs from 'fs';
+import path from 'path';
 import { Meta } from '../create-project';
-import { getProjectMetaPath } from './get-project-meta-path';
+import { getProjectName, getProjectPath } from './get-project-info';
 
 function getMetaData(): Meta {
   const metaData = fs.readFileSync(getProjectMetaPath(), 'utf8');
@@ -11,4 +12,14 @@ function updateMetaData(newMetaData: Record<string, unknown>): void {
   fs.writeFileSync(getProjectMetaPath(), JSON.stringify(newMetaData, null, 2));
 }
 
-export { getMetaData, updateMetaData };
+function getProjectMetaPath(): string {
+  return path.join(
+    getProjectPath(),
+    '../../..',
+    '_meta',
+    getProjectName(),
+    'meta.json'
+  );
+}
+
+export { getMetaData, updateMetaData, getProjectMetaPath };
