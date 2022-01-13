@@ -1,13 +1,3 @@
-const selectors = {
-  donateSupport: {
-    firstTitle: '.donate-support h4:first-of-type b',
-    secondTitle: '.donate-support h4:last-of-type b',
-    firstText: '.donate-support p:first-of-type',
-    secondText: '.donate-support p:last-of-type',
-    link: '.donate-support a'
-  }
-};
-
 describe('Donate page', () => {
   before(() => {
     cy.clearCookies();
@@ -24,40 +14,31 @@ describe('Donate page', () => {
     cy.contains('Confirm your donation of $5 / month:').should('be.visible');
   });
 
-  it('Should have support section', () => {
+  it('Should have FAQ section', () => {
+    cy.contains('Frequently asked questions');
+    cy.contains('How can I get help with my donations?');
+    cy.contains('How transparent is freeCodeCamp.org?');
+    cy.contains('How efficient is freeCodeCamp?');
+    cy.contains('How can I make a one-time donation?');
     cy.contains(
-      'Want to make a bigger one-time donation, mail us a check, or give in other ways?'
-    ).should('be.visible');
-  });
-
-  it('Support section should have support text', () => {
+      'Does freeCodeCamp accept donations in Bitcoin or other cryptocurrencies?'
+    );
+    cy.contains('Can I mail a physical check?');
     cy.contains(
-      selectors.donateSupport.firstTitle,
-      'Want to make a bigger one-time donation, mail us a check, or give in other ways?'
+      'How can I set up matching gifts from my employer, or payroll deductions?'
+    );
+    cy.contains('How can I set up an Endowment Gift to freeCodeCamp.org?');
+    cy.contains('How can I set up a Legacy gift to freeCodeCamp.org?').should(
+      'be.visible'
+    );
+    cy.contains('How can I donate stock to freeCodeCamp.org?').should(
+      'be.visible'
     );
     cy.contains(
-      selectors.donateSupport.secondTitle,
-      'Need help with your current or past donations?'
+      'I set up a monthly donation, but I need to update or pause the monthly recurrence. How can I do this?'
     );
     cy.contains(
-      selectors.donateSupport.firstText,
-      "Here are many other ways you can support our non-profit's mission."
+      'Is there anything else I can learn about donating to freeCodeCamp.org?'
     );
-    cy.contains(
-      selectors.donateSupport.secondText,
-      'Forward a copy of your donation receipt to donors@freecodecamp.org and tell us how we can help.'
-    );
-  });
-
-  it('Support section should have donation link', () => {
-    cy.get(selectors.donateSupport.link).should(
-      'have.attr',
-      'href',
-      'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'
-    );
-  });
-
-  it('Donor alert should not be visible for non-donor', () => {
-    cy.get('.alert-info').should('not.exist');
   });
 });

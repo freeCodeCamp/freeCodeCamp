@@ -231,6 +231,7 @@ export const shouldRequestDonationSelector = state => {
   const canRequestProgressDonation = state[MainApp].canRequestProgressDonation;
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
+  const isAVariant = isAVariantSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
@@ -243,9 +244,17 @@ export const shouldRequestDonationSelector = state => {
 
   // donations only appear after the user has completed ten challenges (i.e.
   // not before the 11th challenge has mounted)
-  if (completedChallenges.length < 10) {
-    return false;
+  // the follwoing is an AB test for increasing the completed challenge requirement to 20
+  if (isAVariant) {
+    if (completedChallenges.length < 10) {
+      return false;
+    }
+  } else {
+    if (completedChallenges.length < 20) {
+      return false;
+    }
   }
+
   // this will mean we have completed 3 or more challenges this browser session
   // and enough challenges overall to not be new
   return completionCount >= 3;
