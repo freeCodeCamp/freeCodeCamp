@@ -6,7 +6,7 @@ import {
   deleteStepFromMeta,
   getChallengeSeeds,
   insertStepIntoMeta,
-  renameSteps
+  updateStepTitles
 } from './utils';
 
 function deleteStep(stepNum: number) {
@@ -23,7 +23,7 @@ function deleteStep(stepNum: number) {
 
   fs.unlinkSync(`${getProjectPath()}${stepId}.md`);
   deleteStepFromMeta({ stepNum });
-  renameSteps();
+  updateStepTitles();
 
   console.log(`Sucessfully deleted step #${stepNum}`);
 }
@@ -52,7 +52,7 @@ function insertStep(stepNum: number) {
   });
 
   insertStepIntoMeta({ stepNum, stepId });
-  renameSteps();
+  updateStepTitles();
   console.log(`Sucessfully inserted new step #${stepNum}`);
 }
 

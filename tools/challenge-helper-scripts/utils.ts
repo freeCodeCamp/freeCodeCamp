@@ -62,7 +62,7 @@ function deleteStepFromMeta({ stepNum }: { stepNum: number }) {
   updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-const renameSteps = () => {
+const updateStepTitles = () => {
   const meta = getMetaData();
 
   const fileNames: string[] = [];
@@ -98,7 +98,7 @@ const getChallengeSeeds = (
 
 export {
   createStepFile,
-  renameSteps,
+  updateStepTitles,
   getChallengeSeeds,
   insertStepIntoMeta,
   deleteStepFromMeta

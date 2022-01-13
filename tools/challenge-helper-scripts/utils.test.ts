@@ -22,7 +22,7 @@ jest.mock('./helpers/get-step-template', () => {
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';
-import { createStepFile, insertStepIntoMeta, renameSteps } from './utils';
+import { createStepFile, insertStepIntoMeta, updateStepTitles } from './utils';
 
 describe('Challenge utils helper scripts', () => {
   describe('createStepFile util', () => {
@@ -97,7 +97,7 @@ describe('Challenge utils helper scripts', () => {
     });
   });
 
-  describe('renameSteps util', () => {
+  describe('updateStepTitles util', () => {
     it('should apply meta.challengeOrder to step files', () => {
       mock({
         '_meta/project/': {
@@ -131,7 +131,7 @@ dashedName: step-3
 
       process.env.CALLING_DIR = 'english/superblock/project';
 
-      renameSteps();
+      updateStepTitles();
 
       expect(matter.read('english/superblock/project/id-1.md').data).toEqual({
         id: 'id-1',
