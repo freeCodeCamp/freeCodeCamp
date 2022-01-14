@@ -30,12 +30,12 @@ body .content {
 /****** Nav ****/
 
 .universal-nav {
-  margin: 0px;
+  margin: 0;
   width: 100vw;
   height: 38px;
   background-color: var(--theme-color);
   position: fixed;
-  top: 0px;
+  top: 0;
   display: flex;
   justify-content: center;
   z-index: 100;
@@ -48,11 +48,11 @@ body .content {
   line-height: 24px;
   font-size: 16px;
   margin: 6px 0;
-  padding: 0 0;
+  padding: 0;
 }
 
 .universal-nav img {
-  margin: 7px 0px;
+  margin: 7px 0;
   height: 24px;
 }
 
@@ -193,7 +193,7 @@ section.cover.show ~ .sidebar-toggle {
 }
 
 .sidebar {
-  padding: 0px;
+  padding: 0;
 }
 
 .sidebar-toggle {
@@ -280,7 +280,7 @@ body.close .github-corner {
 .markdown-section code {
   background-color: #f8f8f8;
   color: #525252;
-  padding: 0.05em 0.15em 0.15em 0.15em;
+  padding: 0.05em 0.15em 0.15em;
   margin: 0.05em;
   font-size: 16px;
   line-height: 24px;
@@ -305,7 +305,7 @@ body.close .github-corner {
 .markdown-section a > strong > code {
   background-color: #f8f8f8;
   color: #525252;
-  padding: 0.05em 0.15em 0 0.15em;
+  padding: 0.05em 0.15em 0;
   margin: 0.05em;
 }
 
@@ -315,7 +315,7 @@ body.close .github-corner {
 .markdown-section a > strong > code:active {
   background-color: #525252;
   color: #f8f8f8;
-  padding: 0.05em 0.15em 0 0.15em;
+  padding: 0.05em 0.15em 0;
   margin: 0.05em;
 }
 
@@ -327,7 +327,7 @@ body.close .github-corner {
 @media screen and (max-width: 768px) {
   .markdown-section {
     max-width: 90%;
-    padding: 40px 15px 40px 15px;
+    padding: 40px 15px;
   }
 }
 

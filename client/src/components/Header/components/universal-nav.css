@@ -27,7 +27,7 @@
 .universal-nav-left {
   display: flex;
   flex: 1 0 33%;
-  margin-left: 0px;
+  margin-left: 0;
   z-index: 2000;
 }
 
@@ -75,7 +75,7 @@
   display: block;
   width: auto;
   height: 24px;
-  margin: 7px 0px;
+  margin: 7px 0;
 }
 
 .nav-list {
@@ -83,7 +83,7 @@
   position: absolute;
   background-color: var(--theme-color);
   top: calc(var(--header-height) * 2);
-  right: 0px;
+  right: 0;
   flex-wrap: wrap;
   justify-content: flex-end;
   width: 100vw;
@@ -96,7 +96,7 @@
 
 .nav-link {
   margin: 0;
-  padding: 2px 15px 0 15px;
+  padding: 2px 15px 0;
   display: flex;
   align-items: center;
   color: var(--gray-00);
@@ -198,7 +198,7 @@
 }
 
 .toggle-button-nav {
-  padding: 2px 14px 2px;
+  padding: 2px 14px;
   border: 1px solid var(--gray-00);
   font-family: 'lato', sans-serif;
   font-size: 18px;
@@ -338,7 +338,7 @@
     display: flex;
     position: absolute;
     left: 17px;
-    top: 0px;
+    top: 0;
   }
 
   .expand-nav {
