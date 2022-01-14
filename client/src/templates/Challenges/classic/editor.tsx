@@ -409,7 +409,59 @@ const Editor = (props: EditorProps): JSX.Element => {
         });
       }
     });
+    editor.addAction({
+      id: 'toggle-aria-roledescription',
+      label: 'Toggle JAWS 2022 editor bugfix',
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KEY_J
+      ],
+      run: toggleAriaRoledescription
+    });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
+
+    // aria-roledescription is set by default, check if it needs
+    // to be removed.
+    const ariaRoledescription = getStoredAriaRoledescription();
+    if (!ariaRoledescription) {
+      setAriaRoledescription(false);
+    }
+  };
+
+  const toggleAriaRoledescription = () => {
+    const newValue = !getStoredAriaRoledescription();
+    setAriaRoledescription(newValue);
+    ariaAlert(`JAWS 2022 editor bugfix turned ${!newValue ? 'on' : 'off'}`);
+  };
+
+  const setAriaRoledescription = (value: boolean) => {
+    const textareas = document.querySelectorAll('.monaco-editor textarea');
+    textareas.forEach(textarea => {
+      value
+        ? textarea.setAttribute('aria-roledescription', 'editor')
+        : textarea.removeAttribute('aria-roledescription');
+    });
+    store.set('ariaRoledescription', value);
+  };
+
+  const getStoredAriaRoledescription = (): boolean => {
+    const roledescription = store.get('ariaRoledescription') as
+      | boolean
+      | undefined;
+    return !!(roledescription === undefined || roledescription);
+  };
+
+  // Borrowed from
+  // freeCodeCamp/node_modules/monaco-editor/esm/vs/base/browser/ui/aria/aria.js
+  const ariaAlert = (message: string) => {
+    const ariaLive = document.getElementsByClassName(
+      'monaco-alert'
+    ) as HTMLCollection;
+    if (ariaLive.length > 0) {
+      const liveText = ariaLive[0] as HTMLElement;
+      liveText.textContent = message;
+      liveText.style.visibility = 'hidden';
+      liveText.style.visibility = 'visible';
+    }
   };
 
   const descriptionZoneCallback = (
