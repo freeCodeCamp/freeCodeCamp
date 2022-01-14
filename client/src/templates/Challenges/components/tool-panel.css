@@ -16,7 +16,7 @@
 .tool-panel-group-mobile > .btn-block,
 .tool-panel-group-mobile > .dropdown > .btn-block {
   margin: 0 2px 0 0;
-  padding: 5px 0px;
+  padding: 5px 0;
 }
 
 .tool-panel-group .btn-group {
@@ -28,7 +28,7 @@
 .tool-panel-group-mobile .btn-group {
   display: block;
   width: 100%;
-  margin: 0 2px 0 2px;
+  margin: 0 2px;
 }
 
 .tool-panel-group-mobile .btn {

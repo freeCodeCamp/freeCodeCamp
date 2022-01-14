@@ -15,14 +15,14 @@
 
 .landing-page ul {
   list-style: none;
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 #featured-logos {
   max-width: 600px;
 }
 .landing-top h1:first-child {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .landing-page h1,
@@ -32,7 +32,7 @@
 }
 
 p.caption {
-  margin: 10px 0 0 0;
+  margin: 10px 0 0;
   font-size: 0.8rem;
   color: var(--quaternary-color);
 }
@@ -132,7 +132,7 @@ p.caption {
   max-width: 350px;
   display: flex;
   flex-direction: column;
-  margin: 10px 10px 50px 10px;
+  margin: 10px 10px 50px;
   background: var(--gray-00);
   -webkit-box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09);
   box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09);
@@ -149,7 +149,7 @@ p.caption {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 10px 0px 30px 0px;
+  padding: 10px 0 30px;
 }
 
 .testimonial-meta p,
@@ -208,7 +208,7 @@ p.caption {
     height: 100%;
   }
   .testimonial-meta {
-    padding: 0px 0px 30px;
+    padding: 0 0 30px;
   }
   .testimonial-meta p,
   .testimonial-meta strong {
