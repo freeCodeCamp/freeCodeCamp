@@ -271,7 +271,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       }
     } = this.props;
     initConsole('');
-    console.log('props', this.props);
     createFiles(challengeFiles ?? []);
     initTests(tests);
     if (showProjectPreview) openModal('projectPreview');
