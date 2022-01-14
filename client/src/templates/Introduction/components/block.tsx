@@ -156,6 +156,7 @@ export class Block extends Component<BlockProps> {
                 {blockTitle}
                 <span className='block-link-icon'>#</span>
               </h3>
+              <p className='cert-tag'>Certification Project</p>
             </a>
             {!isAuditedCert(curriculumLocale, superBlock) && (
               <div className='block-cta-wrapper'>
