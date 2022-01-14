@@ -2,24 +2,6 @@ import React, { useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import Caret from '../../assets/icons/caret';
 
-const WALLETS = (
-  <>
-    <code>Bitcoin: 3B4QShnJawtzBd1FFzHPpVCpxBpVbcbPRg</code>
-    <br />
-    <code>Ethereum: 0x1ee753faa97BE3C4b9b1dE775dB44c9Bfac0EC91</code>
-    <br />
-    <code>Litecoin: MVDLr18spSjd9nDyKG2Y94BFmgzbjXgfCD</code>
-    <br />
-    <code>Bitcoin Cash: qqw8lhpnu635za8f5c22ghynl6yz5zelp52t25lmnm</code>
-    <br />
-    <code>USD Coin: 0xad4f0c8363fE733DdbfEDBdAf6600E2b6dF2900d</code>
-    <br />
-    <code>DAI: 0xad4f0c8363fE733DdbfEDBdAf6600E2b6dF2900d</code>
-    <br />
-    <code>Dash: XyRp67PQVBRaZu2LJU6Ndc5kp3AaRaHnXt</code>
-  </>
-);
-
 const POBOX = (
   <>
     <code>Free Code Camp, Inc.</code>
@@ -156,8 +138,7 @@ export const DonationFaqText = (): JSX.Element => {
       Q: t('donate.does-crypto'),
       A: (
         <>
-          <p>{t('donate.yes-crypto')}</p>
-          <p>{WALLETS}</p>
+          <p>{t('donate.yes-cryptocurrency')}</p>
         </>
       )
     },
