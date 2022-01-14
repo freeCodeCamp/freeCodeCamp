@@ -21,7 +21,7 @@ USER node
 WORKDIR /home/node/build
 COPY --chown=node:node . .
 RUN npm ci
-# we don't need to separately run prepare-config, since it gets called as part of
+# we don't need to separately run create:config, since it gets called as part of
 # build:client
 RUN npm run build:client
 
