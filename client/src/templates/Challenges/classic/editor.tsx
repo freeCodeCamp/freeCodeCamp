@@ -409,9 +409,11 @@ const Editor = (props: EditorProps): JSX.Element => {
         });
       }
     });
+    // Introduced as a work around for a bug in JAWS 2022
+    // https://github.com/FreedomScientific/VFO-standards-support/issues/598
     editor.addAction({
       id: 'toggle-aria-roledescription',
-      label: 'Toggle JAWS 2022 editor bugfix',
+      label: 'Toggle aria-roledescription',
       keybindings: [
         monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KEY_J
       ],
@@ -419,7 +421,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
 
-    // aria-roledescription is set by default, check if it needs
+    // aria-roledescription is on (true) by default, check if it needs
     // to be removed.
     const ariaRoledescription = getStoredAriaRoledescription();
     if (!ariaRoledescription) {
@@ -428,9 +430,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   const toggleAriaRoledescription = () => {
-    const newValue = !getStoredAriaRoledescription();
-    setAriaRoledescription(newValue);
-    ariaAlert(`JAWS 2022 editor bugfix turned ${!newValue ? 'on' : 'off'}`);
+    const newRoledescription = !getStoredAriaRoledescription();
+    setAriaRoledescription(newRoledescription);
+    ariaAlert(
+      `aria-roledescription has been turned ${
+        newRoledescription ? 'on' : 'off'
+      }`
+    );
   };
 
   const setAriaRoledescription = (value: boolean) => {
