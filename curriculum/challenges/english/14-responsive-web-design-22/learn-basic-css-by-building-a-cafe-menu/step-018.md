@@ -7,7 +7,7 @@ dashedName: step-18
 
 # --description--
 
-So the styling of the page looks similar on mobile as it does on a desktop or laptop, you need to add a `meta` element with a special `content` attribute.
+To make the page's styling look the same on mobile as it does on a desktop or laptop, you must include a `meta` element with a special `content` attribute.
 
 Add the following within the `head` element:
 
