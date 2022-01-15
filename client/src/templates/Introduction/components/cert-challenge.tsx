@@ -14,7 +14,7 @@ import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
   userFetchStateSelector,
   isSignedInSelector,
-  certificatesByNameSelector
+  currentCertsSelector
 } from '../../../redux';
 import { User, Steps } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings';
@@ -45,15 +45,16 @@ const honestyInfoMessage = {
 };
 
 const mapStateToProps = (state: unknown) => {
-  const currentCerts = certificatesByNameSelector(
-    // @ts-expect-error One day, state will be typed
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    state?.app?.appUsername || ''
-  )(state)?.currentCerts;
   return createSelector(
+    currentCertsSelector,
     userFetchStateSelector,
     isSignedInSelector,
-    (fetchState: CertChallengeProps['fetchState'], isSignedIn) => ({
+    (
+      currentCerts,
+      fetchState: CertChallengeProps['fetchState'],
+      isSignedIn
+    ) => ({
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       currentCerts,
       fetchState,
       isSignedIn

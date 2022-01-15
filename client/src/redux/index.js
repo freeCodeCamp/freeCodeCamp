@@ -250,6 +250,9 @@ export const userByNameSelector = username => state => {
   return user[username] ?? initialState.user;
 };
 
+export const currentCertsSelector = state =>
+  certificatesByNameSelector(state[MainApp]?.appUsername)(state)?.currentCerts;
+
 export const certificatesByNameSelector = username => state => {
   const {
     isRespWebDesignCert,
