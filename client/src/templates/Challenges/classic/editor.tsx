@@ -458,9 +458,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   // Borrowed from
   // freeCodeCamp/node_modules/monaco-editor/esm/vs/base/browser/ui/aria/aria.js
   const ariaAlert = (message: string) => {
-    const ariaLive = document.getElementsByClassName(
-      'monaco-alert'
-    ) as HTMLCollection;
+    const ariaLive = document.getElementsByClassName('monaco-alert');
     if (ariaLive.length > 0) {
       const liveText = ariaLive[0] as HTMLElement;
       liveText.textContent = message;
