@@ -453,11 +453,15 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // Borrowed from
   // freeCodeCamp/node_modules/monaco-editor/esm/vs/base/browser/ui/aria/aria.js
+  // Uses the aria live region provided by monaco.
   const ariaAlert = (message: string) => {
     const ariaLive = document.getElementsByClassName('monaco-alert');
     if (ariaLive.length > 0) {
       const liveText = ariaLive[0] as HTMLElement;
       liveText.textContent = message;
+      // Hack used by monaco to force older browsers to announce the update to
+      // the live region.
+      // See https://www.tpgi.com/html5-accessibility-chops-aria-rolealert-browser-support/
       liveText.style.visibility = 'hidden';
       liveText.style.visibility = 'visible';
     }
