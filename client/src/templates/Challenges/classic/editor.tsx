@@ -423,8 +423,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     // aria-roledescription is on (true) by default, check if it needs
     // to be removed.
-    const ariaRoledescription = getStoredAriaRoledescription();
-    if (!ariaRoledescription) {
+    if (!getStoredAriaRoledescription()) {
       setAriaRoledescription(false);
     }
   };
