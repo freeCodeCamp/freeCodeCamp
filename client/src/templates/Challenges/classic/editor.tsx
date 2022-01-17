@@ -448,12 +448,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     store.set('ariaRoledescription', value);
   };
 
-  const getStoredAriaRoledescription = (): boolean => {
-    const roledescription = store.get('ariaRoledescription') as
-      | boolean
-      | undefined;
-    return !!(roledescription === undefined || roledescription);
-  };
+  const getStoredAriaRoledescription = () =>
+    !!(store.get('ariaRoledescription') ?? true);
 
   // Borrowed from
   // freeCodeCamp/node_modules/monaco-editor/esm/vs/base/browser/ui/aria/aria.js
