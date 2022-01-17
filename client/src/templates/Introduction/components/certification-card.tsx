@@ -46,12 +46,7 @@ const CertificationCard = ({
     <ScrollableAnchor id='claim-cert-block'>
       <div className={`block ${isExpanded ? 'open' : ''}`}>
         <div className='block-title-wrapper'>
-          <a className='block-link' href='#claim-cert-block'>
-            <h3 className='big-block-title'>
-              {t('certification-card.title')}
-              <span className='block-link-icon'>#</span>
-            </h3>
-          </a>
+          <h3 className='big-block-title'>{t('certification-card.title')}</h3>
         </div>
         <div className='block-description'>
           {t('certification-card.intro', { i18nCertText })}
