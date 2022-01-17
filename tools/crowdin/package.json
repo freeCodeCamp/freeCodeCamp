@@ -27,7 +27,7 @@
     "dotenv": "10.0.0",
     "fs-extra": "10.0.0",
     "gray-matter": "4.0.3",
-    "node-fetch": "2.6.6",
+    "node-fetch": "2.6.7",
     "node-opencc": "2.0.1",
     "path": "0.12.7",
     "readdirp": "3.6.0"
