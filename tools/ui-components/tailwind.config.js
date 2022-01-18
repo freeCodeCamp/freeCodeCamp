@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [
+  content: [
     './src/**/*.html',
     './src/**/*.js',
     './src/**/*.ts',
@@ -52,11 +52,6 @@ module.exports = {
         800: 'var(--red80)',
         900: 'var(--red90)'
       }
-    }
-  },
-  variants: {
-    extend: {
-      opacity: ['hover', 'focus']
     }
   },
   plugins: []
