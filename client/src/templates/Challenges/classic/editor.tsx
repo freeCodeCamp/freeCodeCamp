@@ -489,13 +489,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     highlightAllUnder(desc);
-    // TODO: the solution is probably just to use an overlay that's forced to
-    // follow the decorations.
-    // TODO: this is enough for Firefox, but Chrome needs more before the
-    // user can select text by clicking and dragging.
+
     domNode.style.userSelect = 'text';
-    // The z-index needs increasing as ViewZones default to below the lines.
-    domNode.style.zIndex = '10';
 
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
@@ -528,17 +523,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       executeChallenge();
     };
 
-    // TODO: does it?
-    // The z-index needs increasing as ViewZones default to below the lines.
-    outputNode.style.zIndex = '10';
-
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
-
     outputNode.style.top = getOutputZoneTop();
 
     dataRef.current.outputNode = outputNode;
-
     return outputNode;
   }
 
