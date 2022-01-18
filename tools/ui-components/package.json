@@ -52,7 +52,7 @@
     "rollup": "2.64.0",
     "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-terser": "7.0.2",
-    "tailwindcss": "2.2.19"
+    "tailwindcss": "3.0.13"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

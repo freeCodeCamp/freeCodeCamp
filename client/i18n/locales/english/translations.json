@@ -63,7 +63,8 @@
     "submit-and-go": "Submit and go to next challenge",
     "go-to-next": "Go to next challenge",
     "ask-later": "Ask me later",
-    "start-coding": "Start coding!"
+    "start-coding": "Start coding!",
+    "go-to-settings": "Go to settings to claim your certification"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
