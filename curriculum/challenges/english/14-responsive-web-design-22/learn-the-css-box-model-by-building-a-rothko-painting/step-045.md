@@ -7,7 +7,7 @@ dashedName: step-45
 
 # --description--
 
-Rotate `.two` clockwise by 0.4 degrees.
+Rotate the `.two` element clockwise by 0.4 degrees.
 
 # --hints--
 
