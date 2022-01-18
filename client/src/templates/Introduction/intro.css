@@ -19,30 +19,6 @@
   flex-direction: row;
 }
 
-.block-title-wrapper .block-link {
-  flex-grow: 3;
-  flex-basis: 0;
-}
-
-.block-link:hover,
-.block-link:focus,
-.block-link:active {
-  background-color: var(--primary-background);
-}
-
-.block-link {
-  cursor: pointer;
-}
-
-.block-link:hover .block-link-icon {
-  display: inline-block;
-}
-
-.block-link-icon {
-  display: none;
-  margin-left: 15px;
-}
-
 .big-block-title {
   font-size: 1.5rem;
   overflow-wrap: break-word;
