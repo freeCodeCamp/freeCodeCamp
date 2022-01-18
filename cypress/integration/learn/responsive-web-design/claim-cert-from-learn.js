@@ -34,16 +34,6 @@ describe('Responsive Web Design Superblock', () => {
     cy.visit('/learn/responsive-web-design');
   });
   describe('Before submitting projects', () => {
-    it('should have a card with href "claim-cert-block"', () => {
-      cy.get('a[href="#claim-cert-block"]').scrollIntoView();
-      cy.get('a[href="#claim-cert-block"]').should('be.visible');
-    });
-
-    it('should have an anchor element with the text "Claim Certification", and class "disabled"', () => {
-      cy.get('a.disabled').should('be.visible');
-      cy.get('a.disabled').should('have.text', 'Claim Certification');
-    });
-
     it('should have an unordered list with class "map-challenges-ul" containing 5 items', () => {
       cy.get('[data-cy=claim-cert-steps]').should('be.visible');
       cy.get('[data-cy=claim-cert-steps]').children().should('have.length', 5);
