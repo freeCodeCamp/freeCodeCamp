@@ -9,7 +9,7 @@ dashedName: step-44
 
 Rotate each rectangle to give them more of an imperfect, hand-painted look.
 
-Use `transform` on `.one` to `rotate` it counter clockwise by 0.6 degrees.
+Use the `transform` property on the `.one` selector to `rotate` it counter clockwise by 0.6 degrees.
 
 # --hints--
 
