@@ -7,7 +7,7 @@ dashedName: step-42
 
 # --description--
 
-Use `border-radius` on `.two` to set its top-left and bottom-right radius to `8px`, and top-right and bottom-left radius to `10px`.
+Use the `border-radius` property on the `.two` selector, to set its top-left and bottom-right radii to `8px`, and top-right and bottom-left radii to `10px`.
 
 # --hints--
 
