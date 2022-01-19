@@ -63,7 +63,8 @@
     "submit-and-go": "Enviar y pasar al siguiente desafío",
     "go-to-next": "Ir al próximo desafío",
     "ask-later": "Pregúntame luego",
-    "start-coding": "¡Empieza a programar!"
+    "start-coding": "¡Empieza a programar!",
+    "go-to-settings": "Go to settings to claim your certification"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
