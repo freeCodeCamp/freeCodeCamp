@@ -63,7 +63,8 @@
     "submit-and-go": "Відправити та перейти до наступного завдання",
     "go-to-next": "Перейти до наступного завдання",
     "ask-later": "Запитати пізніше",
-    "start-coding": "Start coding!"
+    "start-coding": "Start coding!",
+    "go-to-settings": "Go to settings to claim your certification"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати — це безкоштовно.",
