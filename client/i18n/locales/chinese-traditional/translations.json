@@ -63,7 +63,8 @@
     "submit-and-go": "提交併訪問下一個挑戰",
     "go-to-next": "訪問下一個挑戰",
     "ask-later": "稍後問我",
-    "start-coding": "開始編碼！"
+    "start-coding": "開始編碼！",
+    "go-to-settings": "Go to settings to claim your certification"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
