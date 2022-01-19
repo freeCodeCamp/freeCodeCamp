@@ -9,7 +9,7 @@ dashedName: step-75
 
 If you look closely, the _heart_ emoji is slightly different. This is because some of the character's properties were overridden by the `font-weight` style of `bold`.
 
-Fix this, by targetting the `div` with the heart emoji, and setting its `font-weight` to its original value.
+Fix this, by targeting the `div` with the heart emoji, and setting its `font-weight` to its original value.
 
 # --hints--
 
