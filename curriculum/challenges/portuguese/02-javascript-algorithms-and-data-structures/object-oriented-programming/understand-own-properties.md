@@ -12,7 +12,7 @@ No próximo exemplo, o construtor de `Bird` define duas propriedades: `name` e `
 
 ```js
 function Bird(name) {
-  this.name = name;
+  this.name  = name;
   this.numLegs = 2;
 }
 
@@ -70,7 +70,7 @@ assert(
 
 ```js
 function Bird(name) {
-  this.name  = name;
+  this.name = name;
   this.numLegs = 2;
 }
 

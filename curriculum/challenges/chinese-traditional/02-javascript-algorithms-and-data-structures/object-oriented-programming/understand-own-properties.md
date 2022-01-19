@@ -12,7 +12,7 @@ dashedName: understand-own-properties
 
 ```js
 function Bird(name) {
-  this.name = name;
+  this.name  = name;
   this.numLegs = 2;
 }
 
@@ -83,7 +83,7 @@ let ownProps = [];
 
 ```js
 function Bird(name) {
-  this.name  = name;
+  this.name = name;
   this.numLegs = 2;
 }
 
