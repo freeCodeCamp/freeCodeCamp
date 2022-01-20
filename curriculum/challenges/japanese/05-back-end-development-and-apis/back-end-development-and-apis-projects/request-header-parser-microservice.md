@@ -1,0 +1,77 @@
+---
+id: bd7158d8c443edefaeb5bdff
+title: リクエストヘッダーパーサー マイクロサービス
+challengeType: 4
+forumTopicId: 301507
+dashedName: request-header-parser-microservice
+---
+
+# --description--
+
+<https://request-header-parser-microservice.freecodecamp.rocks/> と同様の機能を持つフルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
+
+-   [GitHub リポジトリ](https://github.com/freeCodeCamp/boilerplate-project-headerparser/)をクローンし、ローカル環境でプロジェクトを完了させる。
+-   [Replit 始動プロジェクト](https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser)を使用して、プロジェクトを完了させる。
+-   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
+
+完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして、`Solution Link` フィールドでデモへの URL を送信してください。 必要に応じて、プロジェクトのソースコードへのリンクを `GitHub Link` フィールドへ送信してください。
+
+# --hints--
+
+サンプルの URL ではなく、自分で作成したプロジェクトを提供する必要があります。
+
+```js
+(getUserInput) => {
+  assert(
+    !/.*\/request-header-parser-microservice\.freecodecamp\.rocks/.test(
+      getUserInput('url')
+    )
+  );
+};
+```
+
+`/api/whoami` へのリクエストに対して、`ipaddress` キーに IP アドレスを持つ JSON オブジェクトを返す必要があります。
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/api/whoami').then(
+    (data) => assert(data.ipaddress && data.ipaddress.length > 0),
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+`/api/whoami` へのリクエストに対して、`language` キーに優先言語を持つ JSON オブジェクトを返す必要があります。
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/api/whoami').then(
+    (data) => assert(data.language && data.language.length > 0),
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+`/api/whoami` へのリクエストに対して、`software` キーにソフトウェアを持つ JSON オブジェクトを返す必要があります。
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/api/whoami').then(
+    (data) => assert(data.software && data.software.length > 0),
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+# --solutions--
+
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```
