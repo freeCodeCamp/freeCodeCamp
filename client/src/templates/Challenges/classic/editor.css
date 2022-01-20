@@ -86,3 +86,8 @@
   background-color: var(--primary-background);
   z-index: -1;
 }
+
+/* Unless we increase the z-index the help widget gets obscured by the jaws */
+.accessibilityHelpWidget {
+  z-index: 1;
+}
