@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/react-bootstrap';
 import { SuperBlocks } from '../../../../../config/certification-settings';
+import IsNewRespCert from '../../../utils/is-new-responsive-web-design-cert';
 import { Link } from '../../../components/helpers';
 
 interface LegacyLinksProps {
@@ -12,7 +13,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <>
-      {superBlock === SuperBlocks.RespWebDesignNew && (
+      {IsNewRespCert(superBlock) && (
         <Alert bsStyle='info'>
           <p>
             {t('intro:misc-text.viewing-upcoming-change')}{' '}
