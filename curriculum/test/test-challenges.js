@@ -307,6 +307,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
   });
 
   describe(`Check challenges (${lang})`, function () {
+    this.timeout(5000);
     challenges.forEach((challenge, id) => {
       const dashedBlockName = challenge.block;
       // TODO: once certifications are not included in the list of challenges,
