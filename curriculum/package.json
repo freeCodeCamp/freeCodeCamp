@@ -23,6 +23,7 @@
     "create-next-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-next-step",
     "create-step-between": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-step-between",
     "delete-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
+    "lint": "ts-node --project ../tsconfig.json lint-localized",
     "reorder-steps": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/reorder-steps",
     "test": "mocha --delay --exit  --reporter progress --bail",
     "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
