@@ -9,7 +9,7 @@ dashedName: step-41
 
 The corners of each rectangle are still too sharp.
 
-Round each corner of `.one` by 9 pixels with `border-radius: 9px;`.
+Round each corner of the `.one` element by 9 pixels, using the `border-radius` property.
 
 # --hints--
 
