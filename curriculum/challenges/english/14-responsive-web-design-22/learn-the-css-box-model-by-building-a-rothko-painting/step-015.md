@@ -9,7 +9,7 @@ dashedName: step-15
 
 Use margins to adjust the spacing outside of an element.
 
-Add the `margin` property to `.frame` and set it to `20px auto` to move the frame down 20 pixels and center it horizontally on the page.
+Using the `margin` property, give the `.frame` element vertical margin of `20px`, and horizontal margin of `auto`. This will move the frame down 20 pixels and horizontally center it on the page.
 
 # --hints--
 

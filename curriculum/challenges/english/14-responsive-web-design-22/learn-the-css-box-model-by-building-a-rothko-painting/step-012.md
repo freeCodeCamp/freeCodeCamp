@@ -9,7 +9,7 @@ dashedName: step-12
 
 Write a new rule using the `.frame` class selector.
 
-Give the `.frame` a border with the shorthand `border: 50px solid black;` declaration.
+Use the `border` shorthand declaration to give the `.frame` element a solid, black border with a width of `50px`.
 
 # --hints--
 
