@@ -11,7 +11,7 @@ It's helpful to have your margins push in one direction.
 
 In this case, the bottom margin of the `.one` element pushes `.two` down 20 pixels.
 
-In the `.two` selector, use `margin` shorthand property to set top margin to `0`, horizontal margin to `auto`, and bottom margin to `20px`. This will set its top margin to 0, horizontally center it, and set its bottom margin to 20 pixels.
+In the `.two` selector, use `margin` shorthand property to set top margin to `0`, horizontal margin to `auto`, and bottom margin to `20px`. This will remove its top margin, horizontally center it, and set its bottom margin to 20 pixels.
 
 # --hints--
 
