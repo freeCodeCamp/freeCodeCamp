@@ -122,6 +122,76 @@ Translating our contributing documentation is a similar flow to translating our 
 > [!NOTE]
 > Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
 
+## Translate the LearnToCode RPG
+
+The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings:
+
+- The sentences to be translated are always between `""`. These are dialogues or UI strings.
+- In case of `new "..."` Do not translate `new`.
+- Prefixes like `player`, `annika`, `layla`, `marco` (or variants like `player @ happy`) should not be translated.
+- Postfixes like `nointeract` should not be translated.
+- Do not translate things between `[]` and `{}`. These are variable interpolations and text tags.
+
+### Examples
+
+---
+
+https://github.com/freeCodeCamp/LearnToCodeRPG/blob/351f26074b441d056ab9d6e1381e8be1e9ede8b1/game/tl/traditional_chinese/script.rpy#L61
+
+#### Before translation
+
+```renpy
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+```
+
+#### After translation
+
+```renpy
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+"[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
+```
+
+Note: The `[]` and `{}` tags should be left intact.
+
+---
+
+https://github.com/freeCodeCamp/LearnToCodeRPG/blob/351f26074b441d056ab9d6e1381e8be1e9ede8b1/game/tl/traditional_chinese/screens.rpy#L15
+
+#### Before translation
+
+```renpy
+old "{icon=icon-fast-forward} Skip"
+new "{icon=icon-fast-forward} Skip" <-- translate this line, see below
+```
+
+#### After translation
+
+```renpy
+old "{icon=icon-fast-forward} Skip"
+new "{icon=icon-fast-forward} 跳过"
+```
+
+Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
+
+---
+
+#### Before translation
+
+```renpy
+# layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
+layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
+```
+
+#### After translation
+
+```renpy
+# layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
+layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
+```
+
+Note: `layla @ neutral` and `[player_name]` are left unchanged.
+
 ## Rate Translations
 
 Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
