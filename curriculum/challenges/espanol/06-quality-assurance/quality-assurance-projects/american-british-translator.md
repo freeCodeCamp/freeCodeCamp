@@ -1,6 +1,6 @@
 ---
 id: 5e601c0d5ac9d0ecd8b94afe
-title: American British Translator
+title: Traductor británico americano
 challengeType: 4
 forumTopicId: 462358
 dashedName: american-british-translator
@@ -8,62 +8,62 @@ dashedName: american-british-translator
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://american-british-translator.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+Construye una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <https://american-british-translator.freecodecamp.rocks/>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/) y completa tu proyecto localmente.
+-   Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator) para completar tu proyecto.
+-   Usa un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, ingresa la URL en el campo `Solution Link`. Opcionalmente, también ingresa un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
 
 # --instructions--
 
--   All logic can go into `/components/translator.js`
--   Complete the `/api/translate` route in `/routes/api.js`
--   Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`
--   See the JavaScript files in `/components` for the different spelling and terms your application should translate
--   To run the tests on Replit, set `NODE_ENV` to `test` without quotes in the `.env` file
--   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+-   Toda la lógica puede ir en `/components/translator.js`
+-   Completa la ruta `/api/translate` en `/routes/api.js`
+-   Crea todas las pruebas unitarias/funcionales en `tests/1_unit-tests.js` y `tests/2_functional-tests.js`
+-   Consulta los archivos de JavaScript en `/components` para ver las diferentes ortografías y términos que debe traducir tu aplicación
+-   Para ejecutar las pruebas en Replit, establece a `test` `NODE_ENV` sin comillas en el archivo `.env`
+-   Para ejecutar las pruebas en la consola, usa el comando `npm run test`. Para abrir la consola de Replit presiona Ctrl+Shift+P (Cmd si estas en Mac) y escribe "open shell"
 
-Write the following tests in `tests/1_unit-tests.js`:
+Escribe las siguientes pruebas en `tests/1_unit-tests.js`:
 
--   Translate `Mangoes are my favorite fruit.` to British English
--   Translate `I ate yogurt for breakfast.` to British English
--   Translate `We had a party at my friend's condo.` to British English
--   Translate `Can you toss this in the trashcan for me?` to British English
--   Translate `The parking lot was full.` to British English
--   Translate `Like a high tech Rube Goldberg machine.` to British English
--   Translate `To play hooky means to skip class or work.` to British English
--   Translate `No Mr. Bond, I expect you to die.` to British English
--   Translate `Dr. Grosh will see you now.` to British English
--   Translate `Lunch is at 12:15 today.` to British English
--   Translate `We watched the footie match for a while.` to American English
--   Translate `Paracetamol takes up to an hour to work.` to American English
--   Translate `First, caramelise the onions.` to American English
--   Translate `I spent the bank holiday at the funfair.` to American English
--   Translate `I had a bicky then went to the chippy.` to American English
--   Translate `I've just got bits and bobs in my bum bag.` to American English
--   Translate `The car boot sale at Boxted Airfield was called off.` to American English
--   Translate `Have you met Mrs Kalyani?` to American English
--   Translate `Prof Joyner of King's College, London.` to American English
--   Translate `Tea time is usually around 4 or 4.30.` to American English
--   Highlight translation in `Mangoes are my favorite fruit.`
--   Highlight translation in `I ate yogurt for breakfast.`
--   Highlight translation in `We watched the footie match for a while.`
--   Highlight translation in `Paracetamol takes up to an hour to work.`
+-   Traduce `Mangoes are my favorite fruit.` al inglés británico
+-   Traduce `I ate yogurt for breakfast.` al inglés británico
+-   Traduce `We had a party at my friend's condo.` al inglés británico
+-   Traduce `Can you toss this in the trashcan for me?` al inglés británico
+-   Traduce `The parking lot was full.` a Inglés británico
+-   Traduce `Like a high tech Rube Goldberg machine.` al inglés británico
+-   Traduce `To play hooky means to skip class or work.` al inglés británico
+-   Traduce `No Mr. Bond, I expect you to die.` a Inglés británico
+-   Traduce `Dr. Grosh will see you now.` a Inglés británico
+-   Traduce `Lunch is at 12:15 today.` al inglés británico
+-   Traduce `We watched the footie match for a while.` al inglés americano
+-   Traduce `Paracetamol takes up to an hour to work.` al inglés americano
+-   Traduce `First, caramelise the onions.` al inglés americano
+-   Traduce `I spent the bank holiday at the funfair.` al inglés americano
+-   Traduce `I had a bicky then went to the chippy.` a Inglés Americano
+-   Traduce `I've just got bits and bobs in my bum bag.` al inglés americano
+-   Traduce `The car boot sale at Boxted Airfield was called off.` al inglés americano
+-   Traduce `Have you met Mrs Kalyani?` al inglés americano
+-   Traduce `Prof Joyner of King's College, London.` al inglés americano
+-   Traduce `Tea time is usually around 4 or 4.30.` al inglés americano
+-   Resalta la traducción en `Mangoes are my favorite fruit.`
+-   Resalta la traducción en `I ate yogurt for breakfast.`
+-   Resalta la traducción en `We watched the footie match for a while.`
+-   Resalta la traducción en `Paracetamol takes up to an hour to work.`
 
-Write the following tests in `tests/2_functional-tests.js`:
+Escribe las siguientes pruebas en `tests/2_functional-tests.js`:
 
--   Translation with text and locale fields: POST request to `/api/translate`
--   Translation with text and invalid locale field: POST request to `/api/translate`
--   Translation with missing text field: POST request to `/api/translate`
--   Translation with missing locale field: POST request to `/api/translate`
--   Translation with empty text: POST request to `/api/translate`
--   Translation with text that needs no translation: POST request to `/api/translate`
+-   Traducción con campos de texto y configuración regional: solicitud POST a `/api/translate`
+-   Traducción con texto y campo de configuración regional no válido: solicitud POST a `/api/translate`
+-   Traducción con campo de texto faltante: solicitud POST a `/api/translate`
+-   Traducción sin campo de configuración regional: solicitud POST a `/api/translate`
+-   Traducción con texto vacío: solicitud POST a `/api/translate`
+-   Traducción con texto que no necesita traducción: solicitud POST a `/api/translate`
 
 # --hints--
 
-I can provide my own project, not the example URL.
+Puedo proporcionar mi propio proyecto, no la URL de ejemplo.
 
 ```js
 (getUserInput) => {
@@ -75,7 +75,7 @@ I can provide my own project, not the example URL.
 };
 ```
 
-You can `POST` to `/api/translate` with a body containing `text` with the text to translate and `locale` with either `american-to-british` or `british-to-american`. The returned object should contain the submitted `text` and `translation` with the translated text.
+Puedes `POST` a `/api/translate` con un cuerpo que contenga `text` con el texto para traducir y `locale` con `american-to-british` o `british-to-american`. El objeto devuelto debe contener el `text` agregado y la `translation` con el texto traducido.
 
 ```js
 async (getUserInput) => {
@@ -103,7 +103,7 @@ async (getUserInput) => {
 };
 ```
 
-The `/api/translate` route should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English. The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
+La ruta `/api/translate` debe manejar la forma en que se escribe la hora en inglés americano y británico. Por ejemplo, diez treinta se escribe como "10.30" en inglés británico y "10:30" en inglés americano. El elemento `span` debe envolver toda la cadena de tiempo, es decir, `<span class="highlight">10:30</span>`.
 
 ```js
 async (getUserInput) => {
@@ -130,7 +130,7 @@ async (getUserInput) => {
 };
 ```
 
-The `/api/translate` route should also handle the way titles/honorifics are abbreviated in American and British English. For example, Doctor Wright is abbreviated as "Dr Wright" in British English and "Dr. Wright" in American English. See `/components/american-to-british-titles.js` for the different titles your application should handle.
+La ruta `/api/translate` también debe manejar la forma en que los títulos/honoríficos se abrevian en inglés americano y británico. Por ejemplo, Doctor Wright es abreviado como "Dr Wright" en inglés británico y "Dr. Wright" en inglés americano. Consulta `/components/american-to-british-titles.js` para los diferentes títulos que tu aplicación debe manejar.
 
 ```js
 async (getUserInput) => {
@@ -157,7 +157,7 @@ async (getUserInput) => {
 };
 ```
 
-Wrap any translated spelling or terms with `<span class="highlight">...</span>` tags so they appear in green.
+Envuelve cualquier ortografía traducida o término con las etiquetas `<span class="highlight">...</span>` para que aparezcan en verde.
 
 ```js
 async (getUserInput) => {
@@ -185,7 +185,7 @@ async (getUserInput) => {
 };
 ```
 
-If one or more of the required fields is missing, return `{ error: 'Required field(s) missing' }`.
+Si faltan uno o más de los campos requeridos, devuelve `{ error: 'Required field(s) missing' }`.
 
 ```js
 async (getUserInput) => {
@@ -206,7 +206,7 @@ async (getUserInput) => {
 };
 ```
 
-If `text` is empty, return `{ error: 'No text to translate' }`
+Si `text` está vacío, devuelve `{ error: 'No text to translate' }`
 
 ```js
 async (getUserInput) => {
@@ -227,7 +227,7 @@ async (getUserInput) => {
 };
 ```
 
-If `locale` does not match one of the two specified locales, return `{ error: 'Invalid value for locale field' }`.
+Si `locale` no coincide con uno de los dos locales especificados, devuelve `{ error: 'Invalid value for locale field' }`.
 
 ```js
 async (getUserInput) => {
@@ -249,7 +249,7 @@ async (getUserInput) => {
 };
 ```
 
-If `text` requires no translation, return `"Everything looks good to me!"` for the `translation` value.
+Si `text` no requiere traducción, devuelve `"Everything looks good to me!"` para el valor `translation`.
 
 ```js
 async (getUserInput) => {
@@ -276,7 +276,7 @@ async (getUserInput) => {
 };
 ```
 
-All 24 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
+Las 24 unidades de prueba están completas y pasan. Consulta `/tests/1_unit-tests.js` para el comportamiento esperado del cual debes escribir pruebas.
 
 ```js
 async (getUserInput) => {
@@ -301,7 +301,7 @@ async (getUserInput) => {
 };
 ```
 
-All 6 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
+Las 6 pruebas funcionales están completas y pasan. Consulta `/tests/2_functional-tests.js` para conocer la funcionalidad de la cual debes escribir pruebas.
 
 ```js
 async (getUserInput) => {
