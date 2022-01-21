@@ -1,6 +1,7 @@
 {
   "name": "Responsive Web Design Projects",
   "isUpcomingChange": false,
+  "usesMultiFileEditor": true,
   "dashedName": "responsive-web-design-projects",
   "order": 7,
   "time": "150 hours",
