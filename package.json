@@ -171,7 +171,7 @@
     "process": "0.11.10",
     "shx": "0.3.4",
     "start-server-and-test": "1.14.0",
-    "typescript": "4.5.4",
+    "typescript": "4.5.5",
     "webpack-bundle-analyzer": "4.5.0"
   }
 }
