@@ -1,6 +1,6 @@
 ---
 id: 5900f4b21000cf542c50ffc5
-title: 'Problem 326: Modulo Summations'
+title: '問題 326: 剰余の総和 (Modulo Summation)'
 challengeType: 5
 forumTopicId: 301983
 dashedName: problem-326-modulo-summations
@@ -8,23 +8,23 @@ dashedName: problem-326-modulo-summations
 
 # --description--
 
-Let an be a sequence recursively defined by: $a_1 = 1$, $\displaystyle a_n = \left(\sum_{k = 1}^{n - 1} k \times a_k\right)\bmod n$.
+$a_1 = 1$, $\displaystyle a_n = \left(\sum_{k = 1}^{n - 1} k \times a_k\right)\bmod n$ によって再帰的に定義される数列を $a_n$ とします。
 
-So the first 10 elements of $a_n$ are: 1, 1, 0, 3, 0, 3, 5, 4, 1, 9.
+したがって、$a_n$ の最初の 10 項は 1, 1, 0, 3, 0, 3, 5, 4, 1, 9 です。
 
-Let $f(N, M)$ represent the number of pairs $(p, q)$ such that:
+次の条件を満たす対 $(p, q)$ の個数を $f(N, M)$ とします。
 
-$$ 1 \le p \le q \le N \\; \text{and} \\; \left(\sum_{i = p}^q a_i\right)\bmod M = 0$$
+$$ 1 \le p \le q \le N \\; \text{かつ} \\; \left(\sum_{i = p}^q a_i\right)\bmod M = 0$$
 
-It can be seen that $f(10, 10) = 4$ with the pairs (3,3), (5,5), (7,9) and (9,10).
+$f(10, 10) = 4 であることが分かります。(3,3), (5,5), (7,9), (9,10) の 4 対です。
 
-You are also given that $f({10}^4, {10}^3) = 97\\,158$.
+さらに、$f({10}^4, {10}^3) = 97\\,158$ が与えられます。
 
-Find $f({10}^{12}, {10}^6)$.
+$f({10}^{12}, {10}^6)$ を求めなさい。
 
 # --hints--
 
-`moduloSummations()` should return `1966666166408794400`.
+`moduloSummations()` は `1966666166408794400` を返す必要があります。
 
 ```js
 assert.strictEqual(moduloSummations(), 1966666166408794400);

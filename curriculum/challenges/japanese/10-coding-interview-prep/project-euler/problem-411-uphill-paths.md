@@ -1,6 +1,6 @@
 ---
 id: 5900f5081000cf542c510019
-title: 'Problem 411: Uphill paths'
+title: '問題 411: 登り坂を描く経路'
 challengeType: 5
 forumTopicId: 302080
 dashedName: problem-411-uphill-paths
@@ -8,23 +8,23 @@ dashedName: problem-411-uphill-paths
 
 # --description--
 
-Let $n$ be a positive integer. Suppose there are stations at the coordinates $(x, y) = (2^i\bmod n, 3^i\bmod n)$ for $0 ≤ i ≤ 2n$. We will consider stations with the same coordinates as the same station.
+$n$ を正の整数とします。 $0 ≤ i ≤ 2n$ のとき、座標 $(x, y) = (2^i\bmod n, 3^i\bmod n)$ に駅があるとします。 同じ座標を持つ駅が複数ある場合、それらは同じ駅であると考えます。
 
-We wish to form a path from (0, 0) to ($n$, $n$) such that the $x$ and $y$ coordinates never decrease.
+$x$, $y$ 座標の値が減少することのない経路を、(0, 0) から ($n$, $n$) まで作成するとします。
 
-Let $S(n)$ be the maximum number of stations such a path can pass through.
+その経路が通過できる駅の最大数を $S(n)$ とします。
 
-For example, if $n = 22$, there are 11 distinct stations, and a valid path can pass through at most 5 stations. Therefore, $S(22) = 5$. The case is illustrated below, with an example of an optimal path:
+例えば、$n = 22$ のとき、11 の相異なる駅があり、1 本の有効な経路がたかだか 5 駅を通ることができます。 したがって、$S(22) = 5$ となります。 下図に、このケースを最適な経路の例と共に示します。
 
-<img class="img-responsive center-block" alt="valid path passing through 5 stations, for n = 22, with 11 distinct stations" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="5 駅を通る有効な経路 (n = 22 であり、11 の相異なる駅がある場合)" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;" />
 
-It can also be verified that $S(123) = 14$ and $S(10\\,000) = 48$.
+$S(123) = 14$, $S(10\\,000) = 48$ であることも確認できます。
 
-Find $\sum S(k^5)$ for $1 ≤ k ≤ 30$.
+$1 ≤ k ≤ 30$ のとき、$\sum S(k^5)$ を求めなさい。
 
 # --hints--
 
-`uphillPaths()` should return `9936352`.
+`uphillPaths()` は `9936352` を返す必要があります。
 
 ```js
 assert.strictEqual(uphillPaths(), 9936352);

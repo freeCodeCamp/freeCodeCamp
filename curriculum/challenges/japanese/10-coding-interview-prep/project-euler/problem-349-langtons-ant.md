@@ -1,6 +1,6 @@
 ---
 id: 5900f4ca1000cf542c50ffdc
-title: 'Problem 349: Langton''s ant'
+title: '問題 349: ラングトンのアリ'
 challengeType: 5
 forumTopicId: 302008
 dashedName: problem-349-langtons-ant
@@ -8,18 +8,18 @@ dashedName: problem-349-langtons-ant
 
 # --description--
 
-An ant moves on a regular grid of squares that are coloured either black or white.
+黒または白に塗られた規則的な格子の上を、アリが歩きます。
 
-The ant is always oriented in one of the cardinal directions (left, right, up or down) and moves from square to adjacent square according to the following rules:
+アリは常に基本方向 (上下左右) のいずれかを向き、次のルールに従って隣のマスへ移動します。
 
-- if it is on a black square, it flips the color of the square to white, rotates 90° counterclockwise and moves forward one square.
-- if it is on a white square, it flips the color of the square to black, rotates 90° clockwise and moves forward one square.
+- 黒いマスにアリがいる場合、そのマスの色を白に変え、反時計回りに 90° 方向転換して 1 マス進みます。
+- 白いマスにアリがいる場合、そのマスの色を黒に変え、時計回りに 90° 方向転換して 1 マス進みます。
 
-Starting with a grid that is entirely white, how many squares are black after ${10}^{18}$ moves of the ant?
+格子全体が白い状態から始め、アリが ${10}^{18}$ 回移動した後、黒いマスはいくつありますか。
 
 # --hints--
 
-`langtonsAnt()` should return `115384615384614940`.
+`langtonsAnt()` は `115384615384614940` を返す必要があります。
 
 ```js
 assert.strictEqual(langtonsAnt(), 115384615384614940);

@@ -1,6 +1,6 @@
 ---
 id: 5900f4931000cf542c50ffa4
-title: 'Problem 293: Pseudo-Fortunate Numbers'
+title: '問題 293: 疑似フォーチュン数'
 challengeType: 5
 forumTopicId: 301945
 dashedName: problem-293-pseudo-fortunate-numbers
@@ -8,19 +8,19 @@ dashedName: problem-293-pseudo-fortunate-numbers
 
 # --description--
 
-An even positive integer $N$ will be called admissible, if it is a power of 2 or its distinct prime factors are consecutive primes.
+偶数の正整数 $N$ は、2 の累乗であるか、またはその相異なる素因数が連続した素数である場合、「許容的」であるとされます。
 
-The first twelve admissible numbers are 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36, 48.
+許容的な数を最小のものから 12 個挙げると 2, 4, 6, 8, 12, 16, 18, 24, 30, 32, 36, 48 となります。
 
-If $N$ is admissible, the smallest integer $M > 1$ such that $N + M$ is prime, will be called the pseudo-Fortunate number for $N$.
+$N$ が許容的である場合、$N + M$ が素数になるような最小の整数 $M > 1$ を、$N$ に対する「擬似フォーチュン数」と呼ぶことにします。
 
-For example, $N = 630$ is admissible since it is even and its distinct prime factors are the consecutive primes 2, 3, 5 and 7. The next prime number after 631 is 641; hence, the pseudo-Fortunate number for 630 is $M = 11$. It can also be seen that the pseudo-Fortunate number for 16 is 3.
+例えば、$N = 630$ は許容的です。偶数であり、その相異なる素因子は連続する素数 2, 3, 5, 7 だからです。 631 の次の 素数は 641 なので、630 に対する疑似フォーチュン数は $M = 11$ です。 また、16 の擬似フォーチュン数が 3 であることが分かります。
 
-Find the sum of all distinct pseudo-Fortunate numbers for admissible numbers $N$ less than ${10}^9$.
+${10}^9$ 未満の許容的な数 $N$ に対する相異なる疑似フォーチュン数の総和を求めなさい。
 
 # --hints--
 
-`pseudoFortunateNumbers()` should return `2209`.
+`pseudoFortunateNumbers()` は `2209` を返す必要があります。
 
 ```js
 assert.strictEqual(pseudoFortunateNumbers(), 2209);

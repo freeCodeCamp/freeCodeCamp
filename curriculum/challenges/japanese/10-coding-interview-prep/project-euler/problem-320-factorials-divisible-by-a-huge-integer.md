@@ -1,6 +1,6 @@
 ---
 id: 5900f4ae1000cf542c50ffbf
-title: 'Problem 320: Factorials divisible by a huge integer'
+title: '問題 320: 巨大な整数で割り切れる階乗'
 challengeType: 5
 forumTopicId: 301977
 dashedName: problem-320-factorials-divisible-by-a-huge-integer
@@ -8,17 +8,17 @@ dashedName: problem-320-factorials-divisible-by-a-huge-integer
 
 # --description--
 
-Let $N(i)$ be the smallest integer $n$ such that $n!$ is divisible by $(i!)^{1234567890}$
+$n!$ が $(i!)^{1234567890}$ で割り切れるような最小の整数 $n$ を $N(i)$ とします。
 
-Let $S(u) = \sum N(i)$ for $10 ≤ i ≤ u$.
+$10 ≤ i ≤ u$ に対し、$S(u) = \sum N(i)$ と定義します。
 
-$S(1000)=614\\,538\\,266\\,565\\,663$.
+$S(1000)=614\\,538\\,266\\,565\\,663$ です。
 
-Find $S(1\\,000\\,000)\bmod {10}^{18}$.
+$S(1\\,000\\,000)\bmod {10}^{18}$ を求めなさい。
 
 # --hints--
 
-`divisibleByHugeInteger()` should return `278157919195482660`.
+`divisibleByHugeInteger()` `278157919195482660` を返す必要があります。
 
 ```js
 assert.strictEqual(divisibleByHugeInteger(), 278157919195482660);

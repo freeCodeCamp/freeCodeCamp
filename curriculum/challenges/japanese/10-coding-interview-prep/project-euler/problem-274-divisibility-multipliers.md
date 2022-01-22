@@ -1,6 +1,6 @@
 ---
 id: 5900f47f1000cf542c50ff91
-title: 'Problem 274: Divisibility Multipliers'
+title: '問題 274: 整除乗数'
 challengeType: 5
 forumTopicId: 301924
 dashedName: problem-274-divisibility-multipliers
@@ -8,25 +8,25 @@ dashedName: problem-274-divisibility-multipliers
 
 # --description--
 
-For each integer $p > 1$ coprime to 10 there is a positive divisibility multiplier $m &lt; p$ which preserves divisibility by $p$ for the following function on any positive integer, $n$:
+10 と互いに素な整数 $p > 1$ のそれぞれについて、任意の正の整数 $n$ の $p$ での整除性が次の関数に対しても維持されるような、正の整除乗数 (divisibility multiplier) $m &lt; p$ が存在します。
 
-$f(n) = (\text{all but the last digit of} \\; n) + (\text{the last digit of} \\; n) \times m$
+$f(n) = (\\; n {\text{の最下位の桁以外すべて}) + (\\; n \text{の最下位の桁}) \times m$
 
-That is, if $m$ is the divisibility multiplier for $p$, then $f(n)$ is divisible by $p$ if and only if $n$ is divisible by $p$.
+つまり、$m$ が $p$ の整除乗数である場合、$f(n) が $p$ で整除できるための必要十分条件は $n$ が $p$ で整除できることです。
 
-(When $n$ is much larger than $p$, $f(n)$ will be less than $n$ and repeated application of $f$ provides a multiplicative divisibility test for $p$.)
+($n$ が $p$よりもはるかに大きい場合、$f(n)$ は $n$ よりも小さくなり、$f$ を繰り返し適用することで $p$ の乗法整除性を検証できます。)
 
-For example, the divisibility multiplier for 113 is 34.
+例えば、113 の 整除乗数は 34 です。
 
-$f(76275) = 7627 + 5 \times 34 = 7797$: 76275 and 7797 are both divisible by 113
+$f(76275) = 7627 + 5 \times 34 = 7797$: 76275 と 77977 はいずれも 113 で割り切れます。
 
-$f(12345) = 1234 + 5 \times 34 = 1404$: 12345 and 1404 are both not divisible by 113
+$f(12345) = 1234 + 5 \times 34 = 1404$: 12345 と 14047 はいずれも 113 で割り切れません。
 
-The sum of the divisibility multipliers for the primes that are coprime to 10 and less than 1000 is 39517. What is the sum of the divisibility multipliers for the primes that are coprime to 10 and less than ${10}^7$?
+10 と互いに素な 1000 未満の素数の、整除乗数の和は 39517 です。 10 と互いに素な ${10}^7$ 未満の素数の、整除乗数の和を求めなさい。
 
 # --hints--
 
-`divisibilityMultipliers()` should return `1601912348822`.
+`divisibilityMultipliers()` は `1601912348822` を返す必要があります。
 
 ```js
 assert.strictEqual(divisibilityMultipliers(), 1601912348822);

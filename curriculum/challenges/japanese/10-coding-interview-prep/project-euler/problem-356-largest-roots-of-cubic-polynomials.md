@@ -1,6 +1,6 @@
 ---
 id: 5900f4d01000cf542c50ffe3
-title: 'Problem 356: Largest roots of cubic polynomials'
+title: '問題 356: 三次多項式の最大根'
 challengeType: 5
 forumTopicId: 302016
 dashedName: problem-356-largest-roots-of-cubic-polynomials
@@ -8,17 +8,17 @@ dashedName: problem-356-largest-roots-of-cubic-polynomials
 
 # --description--
 
-Let an be the largest real root of a polynomial $g(x) = x^3 - 2^n \times x^2 + n$.
+$a_n$ を、多項式 $g(x) = x^3 - 2^n \times x^2 + n$ の最大の実根とします。
 
-For example, $a_2 = 3.86619826\ldots$
+例: $a_2 = 3.86619826\ldots$
 
-Find the last eight digits of $\displaystyle\sum_{i = 1}^{30} \lfloor {a_i}^{987654321}\rfloor$.
+$\displaystyle\sum_{i = 1}^{30} \lfloor {a_i}^{987654321}\rfloor$ の下位 8 桁を求めなさい。
 
-**Note:** $\lfloor a\rfloor$ represents the floor function.
+**注:** $\lfloor a\rfloor$ は床関数を表します。
 
 # --hints--
 
-`rootsOfCubicPolynomials()` should return `28010159`.
+`rootsOfCubicPolynomials()` は `28010159` を返す必要があります。
 
 ```js
 assert.strictEqual(rootsOfCubicPolynomials(), 28010159);

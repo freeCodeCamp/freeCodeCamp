@@ -1,6 +1,6 @@
 ---
 id: 5900f4f21000cf542c510005
-title: 'Problem 390: Triangles with non rational sides and integral area'
+title: '問題 390: 非有理的な辺と整数の面積を持つ三角形'
 challengeType: 5
 forumTopicId: 302055
 dashedName: problem-390-triangles-with-non-rational-sides-and-integral-area
@@ -8,19 +8,19 @@ dashedName: problem-390-triangles-with-non-rational-sides-and-integral-area
 
 # --description--
 
-Consider the triangle with sides $\sqrt{5}$, $\sqrt{65}$ and $\sqrt{68}$. It can be shown that this triangle has area 9.
+辺長が $\sqrt{5}$, $\sqrt{65}$, $\sqrt{68} $ である三角形について考えます。 この三角形の面積が 9 であることが分かります。
 
-$S(n)$ is the sum of the areas of all triangles with sides $\sqrt{1 + b^2}$, $\sqrt{1 + c^2}$ and $\sqrt{b^2 + c^2}$ (for positive integers $b$ and $c$) that have an integral area not exceeding $n$.
+$n$ を超えない整数の面積を持ち、3 辺が $\sqrt{1 + b^2}$, $\sqrt{1 + c^2}$, $\sqrt{b^2 + c^2}$ (ここで $b$ と $c$ は正の整数) である三角形について、それらすべての面積の和を $S(n)$ とします。
 
-The example triangle has $b = 2$ and $c = 8$.
+例に挙げた三角形では $b = 2$, $c = 8$ です。
 
-$S({10}^6) = 18\\,018\\,206$.
+$S({10}^6) = 18\\,018\\,206$ です。
 
-Find $S({10}^{10})$.
+$S({10}^{10})$ を求めなさい。
 
 # --hints--
 
-`nonRationalSidesAndIntegralArea()` should return `2919133642971`.
+`nonRationalSidesAndIntegralArea()` は `2919133642971` を返す必要があります。
 
 ```js
 assert.strictEqual(nonRationalSidesAndIntegralArea(), 2919133642971);

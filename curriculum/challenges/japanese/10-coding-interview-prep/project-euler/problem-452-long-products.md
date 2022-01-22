@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510043
-title: 'Problem 452: Long Products'
+title: '問題 452: 長い積'
 challengeType: 5
 forumTopicId: 302125
 dashedName: problem-452-long-products
@@ -8,17 +8,17 @@ dashedName: problem-452-long-products
 
 # --description--
 
-Define $F(m, n)$ as the number of $n$-tuples of positive integers for which the product of the elements doesn't exceed $m$.
+要素の積が $m$ を超えないような、$n$ 個の正の整数からなる組の数を $F(m, n)$ とします。
 
-$F(10, 10) = 571$.
+$F(10, 10) = 571$
 
-$F({10}^6, {10}^6)\bmod 1\\,234\\,567\\,891 = 252\\,903\\,833$.
+$F({10}^6, {10}^6)\bmod 1\\,234\\,567\\,891 = 252\\,903\\,833$
 
-Find $F({10}^9, {10}^9)\bmod 1\\,234\\,567\\,891$.
+$F({10}^9, {10}^9)\bmod 1\\,234\\,567\\,891$ を求めなさい。
 
 # --hints--
 
-`longProducts()` should return `345558983`.
+`longProducts()` は `345558983` を返す必要があります。
 
 ```js
 assert.strictEqual(longProducts(), 345558983);

@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acd
-title: 'Abundant, deficient and perfect number classifications'
+title: '余剰数、不足数、完全数の分類'
 challengeType: 5
 forumTopicId: 302221
 dashedName: abundant-deficient-and-perfect-number-classifications
@@ -8,55 +8,55 @@ dashedName: abundant-deficient-and-perfect-number-classifications
 
 # --description--
 
-These define three classifications of positive integers based on their proper divisors.
+真の約数に基づいて、正の整数を3つに分類します。
 
-Let $P(n)$ be the sum of the proper divisors of `n` where proper divisors are all positive integers `n` other than `n` itself.
+$P(n)$ は、真の約数が `n` 自身以外の正の整数 `n` である場合の `n` の真の約数の総和です。
 
-If `P(n) < n` then `n` is classed as `deficient`
+`P(n) < n` の場合、`n` は `deficient` に分類されます。
 
-If `P(n) === n` then `n` is classed as `perfect`
+`P(n) === n` の場合、`n` は `perfect` に分類されます。
 
-If `P(n) > n` then `n` is classed as `abundant`
+`P(n) > n` の場合 `n` は `abundant`に分類されます。
 
-**Example**: `6` has proper divisors of `1`, `2`, and `3`. `1 + 2 + 3 = 6`, so `6` is classed as a perfect number.
+**例**: `6` の真の約数は、`1`, `2`, `3`です。 `1 + 2 + 3 = 6` なので、`6` は完全数に分類されます。
 
 # --instructions--
 
-Implement a function that calculates how many of the integers from `1` to `num` (inclusive) are in each of the three classes. Output the result as an array in the following format `[deficient, perfect, abundant]`.
+3つの分類に、`1` から `num` までの整数が、それぞれいくつ含まれるかを計算する関数を作成します。 `[deficient, perfect, abundant]` の形式で、結果を配列として出力します。
 
 # --hints--
 
-`getDPA` should be a function.
+`getDPA` という関数です。
 
 ```js
 assert(typeof getDPA === 'function');
 ```
 
-`getDPA(5000)` should return an array.
+`getDPA(5000)` は配列を返します。
 
 ```js
 assert(Array.isArray(getDPA(5000)));
 ```
 
-`getDPA(5000)` return array should have a length of `3`.
+`getDPA(5000)` は長さ`3`の配列を返します。
 
 ```js
 assert(getDPA(5000).length === 3);
 ```
 
-`getDPA(5000)` should return `[3758, 3, 1239]`.
+`getDPA(5000)` は`[3758, 3, 1239]`を返します。
 
 ```js
 assert.deepEqual(getDPA(5000), [3758, 3, 1239]);
 ```
 
-`getDPA(10000)` should return `[7508, 4, 2488]`.
+`getDPA(10000)` は`[7508, 4, 2488]`を返します。
 
 ```js
 assert.deepEqual(getDPA(10000), [7508, 4, 2488]);
 ```
 
-`getDPA(20000)` should return `[15043, 4, 4953]`.
+`getDPA(20000)` は`[15043, 4, 4953]`を返します。
 
 ```js
 assert.deepEqual(getDPA(20000), [15043, 4, 4953]);

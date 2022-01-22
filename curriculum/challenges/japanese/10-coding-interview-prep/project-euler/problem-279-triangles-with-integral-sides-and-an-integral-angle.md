@@ -1,6 +1,6 @@
 ---
 id: 5900f4841000cf542c50ff96
-title: 'Problem 279: Triangles with integral sides and an integral angle'
+title: '問題 279: 辺と角度が整数である三角形'
 challengeType: 5
 forumTopicId: 301929
 dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
@@ -8,11 +8,11 @@ dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
 
 # --description--
 
-How many triangles are there with integral sides, at least one integral angle (measured in degrees), and a perimeter that does not exceed ${10}^8$?
+3 辺の長さが整数であり、少なくとも 1 つの角度 (度単位で測定) が整数であり、かつ、周長が ${10}^8$ を超えない三角形はいくつありますか。
 
 # --hints--
 
-`trianglesWithIntegralSidesAndAngle()` should return `416577688`.
+`trianglesWithIntegralSidesAndAngle()` は `416577688` を返す必要があります。
 
 ```js
 assert.strictEqual(trianglesWithIntegralSidesAndAngle(), 416577688);

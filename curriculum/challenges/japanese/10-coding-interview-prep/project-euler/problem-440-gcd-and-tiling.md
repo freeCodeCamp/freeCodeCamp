@@ -1,6 +1,6 @@
 ---
 id: 5900f5241000cf542c510037
-title: 'Problem 440: GCD and Tiling'
+title: '問題 440: 最大公約数とタイル貼り'
 challengeType: 5
 forumTopicId: 302112
 dashedName: problem-440-gcd-and-tiling
@@ -8,29 +8,29 @@ dashedName: problem-440-gcd-and-tiling
 
 # --description--
 
-We want to tile a board of length $n$ and height 1 completely, with either 1 × 2 blocks or 1 × 1 blocks with a single decimal digit on top:
+1 × 2 のタイル、または下図のように 1 桁の 10 進数が書かれた 1 × 1 のタイルを、長さ$n$、高さ 1 の板全体に貼ります。
 
-<img class="img-responsive center-block" alt="ten blocks 1x1 with single decimal digit on top, and 1x2 block" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="1 桁の 10 進数が書かれた 1 × 1 のブロック と、1 x 2 のブロック" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px;" />
 
-For example, here are some of the ways to tile a board of length $n = 8$:
+例えば、$n = 8$ のときに板にタイルを貼る方法をいくつか示します。
 
-<img class="img-responsive center-block" alt="examples of ways to tile a board of length n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="長さ n = 8 の板にタイルを貼る方法の例" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px;" />
 
-Let $T(n)$ be the number of ways to tile a board of length $n$ as described above.
+上述の長さ $n$ の板にタイルを貼る方法の数を $T(n)$ とします。
 
-For example, $T(1) = 10$ and $T(2) = 101$.
+例えば、$T(1) = 10$, $T(2) = 101$ です。
 
-Let $S(L)$ be the triple sum $\sum_{a, b, c} gcd(T(c^a), T(c^b))$ for $1 ≤ a, b, c ≤ L$.
+$1 ≤ a, b, c ≤ L$ のとき、三重和 $\sum_{a, b, c} gcd(T(c^a), T(c^b))$ を $S(L)$ とします。
 
-For example:
+例えば、次のようになります。
 
 $$\begin{align} & S(2) = 10\\,444 \\\\ & S(3) = 1\\,292\\,115\\,238\\,446\\,807\\,016\\,106\\,539\\,989 \\\\ & S(4)\bmod 987\\,898\\,789 = 670\\,616\\,280. \end{align}$$
 
-Find $S(2000)\bmod 987\\,898\\,789$.
+$S(2000)\bmod 987\\,898\\,789$ を求めなさい。
 
 # --hints--
 
-`gcdAndTiling()` should return `970746056`.
+`gcdAndTiling()` は `970746056` を返す必要があります。
 
 ```js
 assert.strictEqual(gcdAndTiling(), 970746056);

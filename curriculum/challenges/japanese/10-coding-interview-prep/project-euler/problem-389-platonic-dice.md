@@ -1,6 +1,6 @@
 ---
 id: 5900f4f21000cf542c510004
-title: 'Problem 389: Platonic Dice'
+title: '問題 389: プラトンのサイコロ'
 challengeType: 5
 forumTopicId: 302053
 dashedName: problem-389-platonic-dice
@@ -8,21 +8,21 @@ dashedName: problem-389-platonic-dice
 
 # --description--
 
-An unbiased single 4-sided die is thrown and its value, $T$, is noted.
+偏りのない 4 面サイコロを 1 個振り、出た目 $T$ を書き留めます。
 
-$T$ unbiased 6-sided dice are thrown and their scores are added together. The sum, $C$, is noted.
+次に、偏りのない 6 面サイコロを $T$ 個振り、出た目を合計します。 その合計 $C$ を書き留めます。
 
-$C$ unbiased 8-sided dice are thrown and their scores are added together. The sum, $O$, is noted.
+続いて、偏りのない 8 面サイコロを $C$ 個振り、出た目を合計します。 その合計 $O$ を書き留めます。
 
-$O$ unbiased 12-sided dice are thrown and their scores are added together. The sum, $D$, is noted.
+さらに、偏りのない 12 面サイコロを $O$ 個振り、出た目を合計します。 その合計 $D$ を書き留めます。
 
-$D$ unbiased 20-sided dice are thrown and their scores are added together. The sum, $I$, is noted.
+最後に、偏りのない 20 面サイコロを $D$ 個振り、出た目を合計します。 その合計 $I$ を書き留めます。
 
-Find the variance of $I$, and give your answer rounded to 4 decimal places.
+$I$ の分散を求め、四捨五入して小数第 4 位まで示しなさい。
 
 # --hints--
 
-`platonicDice()` should return `2406376.3623`.
+`platonicDice()` は `2406376.3623` を返す必要があります。
 
 ```js
 assert.strictEqual(platonicDice(), 2406376.3623);

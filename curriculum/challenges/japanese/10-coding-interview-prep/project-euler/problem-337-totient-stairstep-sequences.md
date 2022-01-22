@@ -1,6 +1,6 @@
 ---
 id: 5900f4be1000cf542c50ffd0
-title: 'Problem 337: Totient Stairstep Sequences'
+title: '問題 337: トーティエント階段型数列 (Stairstep Sequence)'
 challengeType: 5
 forumTopicId: 301995
 dashedName: problem-337-totient-stairstep-sequences
@@ -8,25 +8,25 @@ dashedName: problem-337-totient-stairstep-sequences
 
 # --description--
 
-Let $\\{a_1, a_2, \ldots, a_n\\}$ be an integer sequence of length $n$ such that:
+次の条件を満たす長さ $n$ の整数数列を $\\{a_1, a_2, \ldots, a_n\\}$ とします。
 
 - $a_1 = 6$
-- for all $1 ≤ i &lt; n$ : $φ(a_i) &lt; φ(a_{i + 1}) &lt; a_i &lt; a_{i + 1}$
+- すべての $1 ≤ i &lt; n$ について、$φ(a_i) &lt; φ(a_{i + 1}) &lt; a_i &lt; a_{i + 1}$
 
-$φ$ denotes Euler's totient function.
+$φ$ はオイラーのトーティエント関数を表します。
 
-Let $S(N)$ be the number of such sequences with $a_n ≤ N$.
+そのような数列のうち $a_n ≤ N$ を満たすものの数を $S(N)$ とします。
 
-For example, $S(10) = 4$: {6}, {6, 8}, {6, 8, 9} and {6, 10}.
+例: $S(10) = 4$: {6}, {6, 8}, {6, 8, 9}, {6, 10}
 
-We can verify that $S(100) = 482\\,073\\,668$ and $S(10\\,000)\bmod {10}^8 = 73\\,808\\,307$.
+$S(100) = 482\\,073\\,668$, $S(10\\,000)\bmod {10}^8 = 73\\,808\\,307$ であることを確認できます。
 
-Find $S(20\\,000\\,000)\bmod {10}^8$.
+$S(20\\,000\\,000)\bmod {10}^8$ を求めなさい。
 
 
 # --hints--
 
-`totientStairstepSequences()` should return `85068035`.
+`totientStairstepSequences()` は `85068035` を返す必要があります。
 
 ```js
 assert.strictEqual(totientStairstepSequences(), 85068035);

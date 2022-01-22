@@ -1,6 +1,6 @@
 ---
 id: 5900f4c81000cf542c50ffdb
-title: 'Problem 348: Sum of a square and a cube'
+title: '問題 348: 平方数と立方数の和'
 challengeType: 5
 forumTopicId: 302007
 dashedName: problem-348-sum-of-a-square-and-a-cube
@@ -8,19 +8,19 @@ dashedName: problem-348-sum-of-a-square-and-a-cube
 
 # --description--
 
-Many numbers can be expressed as the sum of a square and a cube. Some of them in more than one way.
+多くの数は平方数と立方数の和として表すことができます。 複数の表し方ができる数もあります。
 
-Consider the palindromic numbers that can be expressed as the sum of a square and a cube, both greater than 1, in exactly 4 different ways.
+1 より大きい平方数と 1 より大きい立方数の和として、ちょうど 4 通りの表し方がある回文数について考えます。
 
-For example, 5229225 is a palindromic number and it can be expressed in exactly 4 different ways:
+例えば、5229225 は回文数であり、ちょうど 4 通りの表し方があります。
 
 $$\begin{align} & {2285}^2 + {20}^3 \\\\ & {2223}^2 + {66}^3 \\\\ & {1810}^2 + {125}^3 \\\\ & {1197}^2 + {156}^3 \end{align}$$
 
-Find the sum of the five smallest such palindromic numbers.
+このような回文数のうち最小の数 5 つの和を求めなさい。
 
 # --hints--
 
-`sumOfSquareAndCube()` should return `1004195061`.
+`sumOfSquareAndCube()` は `1004195061` を返す必要があります。
 
 ```js
 assert.strictEqual(sumOfSquareAndCube(), 1004195061);

@@ -1,6 +1,6 @@
 ---
 id: 5900f48f1000cf542c50ffa1
-title: 'Problem 290: Digital Signature'
+title: '問題 290: 数字の性質'
 challengeType: 5
 forumTopicId: 301942
 dashedName: problem-290-digital-signature
@@ -8,11 +8,11 @@ dashedName: problem-290-digital-signature
 
 # --description--
 
-How many integers $0 ≤ n &lt; {10}^{18}$ have the property that the sum of the digits of $n$ equals the sum of digits of $137n$?
+$0 ≤ n &lt; {10}^{18}$ のとき、$n$ の各位の和が $137n$ の各位の和と等しくなるという性質を持つ整数 $n$ はいくつありますか。
 
 # --hints--
 
-`digitalSignature()` should return `20444710234716470`.
+`digitalSignature()` は `20444710234716470` を返す必要があります。
 
 ```js
 assert.strictEqual(digitalSignature(), 20444710234716470);

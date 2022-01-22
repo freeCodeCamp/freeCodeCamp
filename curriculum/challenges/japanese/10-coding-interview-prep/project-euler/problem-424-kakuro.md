@@ -1,6 +1,6 @@
 ---
 id: 5900f5141000cf542c510026
-title: 'Problem 424: Kakuro'
+title: '問題 424: カックロ'
 challengeType: 5
 forumTopicId: 302094
 dashedName: problem-424-kakuro
@@ -8,37 +8,37 @@ dashedName: problem-424-kakuro
 
 # --description--
 
-<img class="img-responsive center-block" alt="kakuro example" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="カックロの例" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px;" />
 
-The above is an example of a cryptic kakuro (also known as cross sums, or even sums cross) puzzle, with its final solution on the right. (The common rules of kakuro puzzles can be found easily on numerous internet sites. Other related information can also be currently found at krazydad.com whose author has provided the puzzle data for this challenge.)
+上図は暗号カックロ (別名: クロスサム、サムクロス) というパズルの例であり、右側はその最終解です。 (カックロパズルの一般ルールは、数多くのインターネットサイトで簡単に見つかります。 その他の関連情報は現在、このチャレンジにパズルデータを提供した方が運営する krazydad.com でも見つかります。)
 
-The `testPuzzles` array contains the description of 200 such puzzles, a mix of 5x5 and 6x6 types. The first puzzle in the file is the above example which is coded as string as follows:
+`testPuzzles` 配列には、このようなパズルの 5x5 タイプと 6x6 のタイプが計 200 問含まれています。 このファイルにある最初のパズルが上の例であり、次の文字列で書かれています。
 
 `6,X,X,(vCC),(vI),X,X,X,(hH),B,O,(vCA),(vJE),X,(hFE,vD),O,O,O,O,(hA),O,I,(hJC,vB),O,O,(hJC),H,O,O,O,X,X,X,(hJE),O,O,X`
 
-The first character is a numerical digit indicating the size of the information grid. It would be either a 6 (for a 5x5 kakuro puzzle) or a 7 (for a 6x6 puzzle) followed by a comma (,). The extra top line and left column are needed to insert information.
+最初の文字は、情報格子のサイズを表す数字です。 6 (5x5 のカックロパズルの場合) または 7 (6x6 のカックロパズルの場合) の後にカンマ (,) が続きます。 追加情報を入れるために、最上行と最左列が付加されています。
 
-The content of each cell is then described and followed by a comma, going left to right and starting with the top line.
+各マスの内容は、最上行から始まり、左から右へカンマ区切りで記述されます。
 
-`X` = Gray cell, not required to be filled by a digit.
+`X`: 灰色のマスであり、数字を埋める必要はありません。
 
-`O` (upper case letter)= White empty cell to be filled by a digit.
+`O` (大文字): 数字を埋める必要のある空白のマスです。
 
-`A` = Or any one of the upper case letters from A to J to be replaced by its equivalent digit in the solved puzzle.
+`A` (大文字の A から J までのすべて): パズルを解くときにそれに相当する数字に置き換えられます。
 
-`( )` = Location of the encrypted sums. Horizontal sums are preceded by a lower case "h" and vertical sums are preceded by a lower case "v". Those are followed by one or two upper case letters depending if the sum is a single digit or double digit one. For double digit sums, the first letter would be for the "tens" and the second one for the "units". When the cell must contain information for both a horizontal and a vertical sum, the first one is always for the horizontal sum and the two are separated by a comma within the same set of brackets, ex.: (hFE,vD). Each set of brackets is also immediately followed by a comma.
+`( )`: 暗号化された和の位置です。 横方向の和のは小文字の "h" で始まり、縦方向の和は小文字の "v" で始まります。 その後に、和が 1 桁か 2 桁かに応じて 1 つまたは 2 つの大文字のアルファベットが続きます。 和が 2 桁のとき、1 つ目のアルファベットは 10 の位、2 つ目のアルファベットは 1 の位を表します。 マスが縦方向と横方向の両方の和を持つ必要があるとき、1 つ目は常に横方向の和であり、両方の和が同じ括弧内でカンマで区切られます。例えば、(hFE,vD) となります。 左括弧から右括弧までの各まとまりの直後にも、カンマが続きます。
 
-The description of the last cell is followed by a Carriage Return/Line Feed (CRLF) instead of a comma.
+最後のマスの記述の後は、カンマではなく改行 (CRLF) が続きます。
 
-The required answer to each puzzle is based on the value of each letter necessary to arrive at the solution and according to the alphabetical order. As indicated under the example puzzle, its answer would be 8426039571. At least 9 out of the 10 encrypting letters are always part of the problem description. When only 9 are given, the missing one must be assigned the remaining digit.
+それぞれのパズルの解は、パズルを解くのに必要となる各文字の値をアルファベット順に並べたものに基づきます。 例題の解は、パズルの下に示すとおり 8426039571 です。 暗号化文字 10 個のうち少なくとも 9 個が必ずパズル記述に含まれています。 9 個のみ含まれている場合、含まれていない 1 個には残りの数字が割り当てられる必要があります。
 
-You are given that the sum of the answers for the first 10 puzzles in `testPuzzles` is 64414157580.
+最初の 10 問のパズルの解の和は `testPuzzles` であることが与えられます。
 
-Find the sum of the answers for `puzzles` array.
+`puzzles` 配列の解の和を求めなさい。
 
 # --hints--
 
-`kakuro(testPuzzles)` should return `1059760019628`.
+`kakuro(testPuzzles)` は `1059760019628` を返す必要があります。
 
 ```js
 assert.strictEqual(kakuro(_testPuzzles), 1059760019628);

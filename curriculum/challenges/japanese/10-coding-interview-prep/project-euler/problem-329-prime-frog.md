@@ -1,6 +1,6 @@
 ---
 id: 5900f4b51000cf542c50ffc8
-title: 'Problem 329: Prime Frog'
+title: '問題 329: 素数ガエル'
 challengeType: 5
 forumTopicId: 301986
 dashedName: problem-329-prime-frog
@@ -8,27 +8,27 @@ dashedName: problem-329-prime-frog
 
 # --description--
 
-Susan has a prime frog.
+スーザンは素数ガエルを飼っています。
 
-Her frog is jumping around over 500 squares numbered 1 to 500.
+そのカエルは、1 から 500 までの番号が振られた 500 個のマスの上を跳び回ります。
 
-He can only jump one square to the left or to the right, with equal probability, and he cannot jump outside the range [1;500]. (if it lands at either end, it automatically jumps to the only available square on the next move.)
+左または右のマスのみへ等しい確率で跳ぶことができ、範囲 [1;500] の外側に跳ぶことはできません。 (いずれかの端に着くと、次に移動できる唯一のマスへ自動的に跳びます。)
 
-When he is on a square with a prime number on it, he croaks 'P' (PRIME) with probability $\frac{2}{3}$ or 'N' (NOT PRIME) with probability $\frac{1}{3}$ just before jumping to the next square. When he is on a square with a number on it that is not a prime he croaks 'P' with probability $\frac{1}{3}$ or 'N' with probability $\frac{2}{3}$ just before jumping to the next square.
+素数が書かれたマスにいるとき、次のマスへ跳ぶ直前に、確率 $\frac{2}{3}$で 'P' (素数)、または確率 $\frac{1}{3}$ で 'N' (非素数) と鳴きます。 非素数が書かれたマスにいるとき、次のマスへ跳ぶ直前に、確率 $\frac{1}{3}$で 'P' と鳴くか、確率 $\frac{2}{3}$ で 'N' と鳴きます。
 
-Given that the frog's starting position is random with the same probability for every square, and given that she listens to his first 15 croaks, what is the probability that she hears the sequence PPPPNNPPPNPPNPN?
+カエルがどのマスから跳び始めるかは、不規則かつすべてのマスで等確率であるとします。カエルの最初の 15 回の鳴き声が PPPPNNPPPNPPNPN の順になる確率を求めなさい。
 
-Give your answer as a string as a fraction `p/q` in reduced form.
+回答は、既約分数 `p/q` の形式の文字列にすること。
 
 # --hints--
 
-`primeFrog()` should return a string.
+`primeFrog()` は文字列を返す必要があります。
 
 ```js
 assert(typeof primeFrog() === 'string');
 ```
 
-`primeFrog()` should return the string `199740353/29386561536000`.
+`primeFrog()` は文字列 `199740353/29386561536000` を返す必要があります。
 
 ```js
 assert.strictEqual(primeFrog(), '199740353/29386561536000');

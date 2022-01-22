@@ -1,6 +1,6 @@
 ---
 id: 5900f50a1000cf542c51001c
-title: 'Problem 413: One-child Numbers'
+title: '問題 413: 一人っ子数'
 challengeType: 5
 forumTopicId: 302082
 dashedName: problem-413-one-child-numbers
@@ -8,19 +8,19 @@ dashedName: problem-413-one-child-numbers
 
 # --description--
 
-We say that a $d$-digit positive number (no leading zeros) is a one-child number if exactly one of its sub-strings is divisible by $d$.
+$d$ 桁の正の数 (先行ゼロなし) の部分文字列のうちちょうど 1 つが $d$ で割り切れる場合、その正の数を「一人っ子数」と呼ぶことにします。
 
-For example, 5671 is a 4-digit one-child number. Among all its sub-strings 5, 6, 7, 1, 56, 67, 71, 567, 671 and 5671, only 56 is divisible by 4.
+例えば、5671 は 4 桁の一人っ子数です。 すべての部分文字列 5, 6, 7, 1, 56, 67, 71, 567, 671, 5671 の中で、4 で割り切れるのは 56 のみです。
 
-Similarly, 104 is a 3-digit one-child number because only 0 is divisible by 3. 1132451 is a 7-digit one-child number because only 245 is divisible by 7.
+同様に、104 は 3 桁の 一人っ子数であり、3 で割り切れるのは 0 のみです。 また、1132451 は 7 桁の一人っ子数であり、7 で割り切れるのは 245 のみです。
 
-Let $F(N)$ be the number of the one-child numbers less than $N$. We can verify that $F(10) = 9$, $F({10}^3) = 389$ and $F({10}^7) = 277\\,674$.
+$N$ 未満の一人っ子数の個数を $F(N)$ とします。 $F(10) = 9$, $F({10}^3) = 389$, $F({10}^7) = 277\\,674$ であることを確認できます。
 
-Find $F({10}^{19})$.
+$F({10}^{19})$ を求めなさい
 
 # --hints--
 
-`oneChildNumbers()` should return `3079418648040719`.
+`oneChildNumbers()` は `3079418648040719` を返す必要があります。
 
 ```js
 assert.strictEqual(oneChildNumbers(), 3079418648040719);

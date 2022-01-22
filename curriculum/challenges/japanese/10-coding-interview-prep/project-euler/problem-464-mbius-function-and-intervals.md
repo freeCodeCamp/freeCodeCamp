@@ -1,6 +1,6 @@
 ---
 id: 5900f53d1000cf542c51004f
-title: 'Problem 464: Möbius function and intervals'
+title: '問題 464: メビウス関数と区間'
 challengeType: 5
 forumTopicId: 302139
 dashedName: problem-464-mbius-function-and-intervals
@@ -8,30 +8,30 @@ dashedName: problem-464-mbius-function-and-intervals
 
 # --description--
 
-The Möbius function, denoted $μ(n)$, is defined as:
+$μ(n)$ で表されるメビウス関数は次のように定義されます。
 
-- $μ(n) = (-1)^{ω(n)}$ if $n$ is squarefree (where $ω(n)$ is the number of distinct prime factors of $n$)
-- $μ(n) = 0$ if $n$ is not squarefree.
+- $n$ が無平方数のとき、$μ(n) = (-1)^{ω(n)}$ (ここで、$ω(n)$ は $n$ の相異なる素因数)
+- $n$ が無平方数でないとき、$μ(n) = 0$
 
-Let $P(a, b)$ be the number of integers $n$ in the interval $[a, b]$ such that $μ(n) = 1$.
+区間 $[a, b]$ において $μ(n) = 1$ となる整数 $n$ の数を、$P(a, b)$ とします。
 
-Let $N(a, b)$ be the number of integers $n$ in the interval $[a, b]$ such that $μ(n) = -1$.
+区間 $[a, b]$ において $μ(n) = -1$ となる整数 $n$ の数を、$N(a, b)$ とします。
 
-For example, $P(2, 10) = 2$ and $N(2, 10) = 4$.
+例えば、$P(2, 10) = 2$, $N(2, 10) = 4$ です。
 
-Let $C(n)$ be the number of integer pairs $(a, b)$ such that:
+次の条件をすべて満たす整数の対 $(a, b)$ を $C(n)$ とします。
 
-- $1 ≤ a ≤ b ≤ n$,
-- $99 \times N(a, b) ≤ 100 \times P(a, b)$, and
-- $99 \times P(a, b) ≤ 100 \times N(a, b)$.
+- $1 ≤ a ≤ b ≤ n$
+- $99 \times N(a, b) ≤ 100 \times P(a, b)$
+- $99 \times P(a, b) ≤ 100 \times N(a, b)$
 
-For example, $C(10) = 13$, $C(500) = 16\\,676$ and $C(10\\,000) = 20\\,155\\,319$.
+例えば、$C(10) = 13$, $C(500) = 16\\,676$, $C(10\\,000) = 20\\,155\\,319$ です。
 
-Find $C(20\\,000\\,000)$.
+$C(20\\,000\\,000)$ を求めなさい。
 
 # --hints--
 
-`mobiusFunctionAndIntervals()` should return `198775297232878`.
+`mobiusFunctionAndIntervals()` は `198775297232878` を返す必要があります。
 
 ```js
 assert.strictEqual(mobiusFunctionAndIntervals(), 198775297232878);

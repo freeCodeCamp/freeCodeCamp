@@ -1,6 +1,6 @@
 ---
 id: 5900f5261000cf542c510038
-title: 'Problem 441: The inverse summation of coprime couples'
+title: '問題 441: 互いに素な組の逆数の総和'
 challengeType: 5
 forumTopicId: 302113
 dashedName: problem-441-the-inverse-summation-of-coprime-couples
@@ -8,21 +8,21 @@ dashedName: problem-441-the-inverse-summation-of-coprime-couples
 
 # --description--
 
-For an integer $M$, we define $R(M)$ as the sum of $\frac{1}{p·q}$ for all the integer pairs $p$ and $q$ which satisfy all of these conditions:
+整数 $M$ について、以下の条件をすべて満たすすべての整数対 $p$, $q$ に対する $\frac{1}{p·q}$ の和を$R(M)$ と定義します。
 
 - $1 ≤ p &lt; q ≤ M$
 - $p + q ≥ M$
-- $p$ and $q$ are coprime.
+- $p$ と $q$ は互いに素である。
 
-We also define $S(N)$ as the sum of $R(i)$ for $2 ≤ i ≤ N$.
+$2 ≤ i ≤ N$ のとき、$R(i)$ の和を $S(N)$ と定義します。
 
-We can verify that $S(2) = R(2) = \frac{1}{2}$, $S(10) ≈ 6.9147$ and $S(100) ≈ 58.2962$.
+$S(2) = R(2) = \frac{1}{2}$, $S(10) ≈ 6.9147$ and $S(100) ≈ 58.2962$ であることを確認できます。
 
-Find $S({10}^7)$. Give your answer rounded to four decimal places.
+$S({10}^7)$ を求めなさい。 回答は、四捨五入して小数第 4 位まで示すこと。
 
 # --hints--
 
-`inverseSummationCoprimeCouples()` should return `5000088.8395`.
+`inverseSummationCoprimeCouples()` は `5000088.8395` を返す必要があります。
 
 ```js
 assert.strictEqual(inverseSummationCoprimeCouples(), 5000088.8395);

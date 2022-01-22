@@ -44,38 +44,34 @@ Per eseguire i test su build di produzione, sostituisci `dev` con `prd` nella pa
 
 ## Setup di Cypress su GitPod
 
-### 1. Assicurati di essere nella _Feature Preview_ di GitPod _dalla data del 02/01/2021_
-
-- Vai a [GitPod Docs - Feature Preview](https://www.gitpod.io/docs/feature-preview/) per vedere come attivare la _Feature Preview_
-
-### 2. Assicurati che l'ambiente di sviluppo sia in esecuzione
+### 1. Ensure Development Environment is Running
 
 Se l'avvio di GitPod non sviluppa automaticamente l'ambiente:
 
-- Avvia il database
+- Start the database
 
 ```console
 mongod
 ```
 
-- Fai il seed del database
+- Seed the database
 
 ```console
 npm run seed
 ```
 
-- Sviluppa il server e il client
+- Develop the server and client
 
 ```console
 npm run develop
 ```
 
-### 3. Installa Cypress Build Tools
+### 2. Install Cypress Build Tools
 
 ```console
 npm run cypress:install-build-tools
 ```
 
-- Quando chiesto dal terminale, seleziona il layout della tua tastiera per lingua/area
+- When prompted in the terminal, select your keyboard layout by language/area
 
 Ora, [puoi eseguire Cypress](#_2-esegui-i-test-cypress)

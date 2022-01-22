@@ -1,6 +1,6 @@
 ---
 id: 5900f49b1000cf542c50ffad
-title: 'Problem 302: Strong Achilles Numbers'
+title: '問題 302: 強力なアキレス数'
 challengeType: 5
 forumTopicId: 301956
 dashedName: problem-302-strong-achilles-numbers
@@ -8,23 +8,23 @@ dashedName: problem-302-strong-achilles-numbers
 
 # --description--
 
-A positive integer $n$ is powerful if $p^2$ is a divisor of $n$ for every prime factor $p$ in $n$.
+正の整数 $n$ のすべての素因数 $p$ について $p^2$ が $n$ の約数である場合、$n$ は多冪数です。
 
-A positive integer $n$ is a perfect power if $n$ can be expressed as a power of another positive integer.
+正の整数 $n$ を別の正の整数の累乗で表せる場合、$n$ は累乗数です。
 
-A positive integer $n$ is an Achilles number if $n$ is powerful but not a perfect power. For example, 864 and 1800 are Achilles numbers: $864 = 2^5 \times 3^3$ and $1800 = 2^3 \times 3^2 \times 5^2$.
+正の整数 $n$ が多冪数であるが累乗数ではない場合、$n$ はアキレス数です。 例えば、864 と 1800 はアキレス数です。それぞれ、$864 = 2^5 \times 3^3$ と $1800 = 2^3 \times 3^2 \times 5^2$ です。
 
-We shall call a positive integer $S$ a Strong Achilles number if both $S$ and $φ(S)$ are Achilles numbers. $φ$ denotes Euler's totient function.
+正の整数 $S$ と φ(S)$ の両方がアキレス数の場合、$S$ を「強力なアキレス数」と呼ぶことにします。 $φ$ はオイラーのトーティエント関数を表します。
 
-For example, 864 is a Strong Achilles number: $φ(864) = 288 = 2^5 \times 3^2$. However, 1800 isn't a Strong Achilles number because: $φ(1800) = 480 = 2^5 \times 3^1 \times 5^1$.
+例えば、864 は強力なアキレス数です。$φ(864) = 288 = 2^5 \times 3^2$ となるからです。 しかし、1800 は強力なアキレス数ではありません。$φ(1800) = 480 = 2^5 \times 3^1 \times 5^1$ となるからです。
 
-There are 7 Strong Achilles numbers below ${10}^4$ and 656 below ${10}^8$.
+強力なアキレス数は ${10}^4$ 未満に 7 つ、${10}^8$ 未満に 656 個あります。
 
-How many Strong Achilles numbers are there below ${10}^{18}$?
+${10}^{18}$ 未満の強力なアキレス数はいくつありますか。
 
 # --hints--
 
-`strongAchillesNumbers()` should return `1170060`.
+`strongAchillesNumbers()` は `1170060` を返す必要があります。
 
 ```js
 assert.strictEqual(strongAchillesNumbers(), 1170060);

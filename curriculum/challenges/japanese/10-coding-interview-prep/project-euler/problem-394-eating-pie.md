@@ -1,6 +1,6 @@
 ---
 id: 5900f4f71000cf542c510009
-title: 'Problem 394: Eating pie'
+title: '問題 394: パイの食べ方'
 challengeType: 5
 forumTopicId: 302059
 dashedName: problem-394-eating-pie
@@ -8,26 +8,26 @@ dashedName: problem-394-eating-pie
 
 # --description--
 
-Jeff eats a pie in an unusual way.
+ジェフのパイの食べ方は一風変わっています。
 
-The pie is circular. He starts with slicing an initial cut in the pie along a radius.
+パイは円形です。 まず、彼はパイの半径に沿って最初の切れ目を入れます。
 
-While there is at least a given fraction $F$ of pie left, he performs the following procedure:
+少なくとも与えられた割合 $F$ のパイが残っている間、彼は以下の手順に従います。
 
-- He makes two slices from the pie centre to any point of what is remaining of the pie border, any point on the remaining pie border equally likely. This will divide the remaining pie into three pieces.
-- Going counterclockwise from the initial cut, he takes the first two pie pieces and eats them.
+- パイの中心から、残っているパイの縁の任意の点 (点の位置は縁全体から等確率で選ばれます) まで切れ目を入れ切ることにより、2 枚のスライスを作ります。 これによって、残っているパイは 3 つの部分に分割されます。
+- 最初の切れ目から反時計回りに、最初の 2 枚のスライスを取って食べます。
 
-When less than a fraction $F$ of pie remains, he does not repeat this procedure. Instead, he eats all of the remaining pie.
+パイの残りの割合が $F$ 未満になったら、もうこの手順を繰り返しません。 代わりに、残ったパイを全部食べます。
 
-<img class="img-responsive center-block" alt="animation of pie slicing procedure" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="パイを切る手順のアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
 
-For $x ≥ 1$, let $E(x)$ be the expected number of times Jeff repeats the procedure above with $F = \frac{1}{x}$. It can be verified that $E(1) = 1$, $E(2) ≈ 1.2676536759$, and $E(7.5) ≈ 2.1215732071$.
+$x ≥ 1$, $F = frac{1}{x}$ のとき、ジェフが上の手順を繰り返す回数の期待値を $E(x)$ とします。 $E(1) = 1$, $E(2) ≈ 1.2676536759$, $E(7.5) ≈ 2.1215732071$ であることを確認できます。
 
-Find $E(40)$ rounded to 10 decimal places behind the decimal point.
+$E(40)$ を求め、四捨五入して小数第 10 位まで示しなさい。
 
 # --hints--
 
-`eatingPie()` should return `3.2370342194`.
+`eatingPie()` は `3.2370342194` を返す必要があります。
 
 ```js
 assert.strictEqual(eatingPie(), 3.2370342194);

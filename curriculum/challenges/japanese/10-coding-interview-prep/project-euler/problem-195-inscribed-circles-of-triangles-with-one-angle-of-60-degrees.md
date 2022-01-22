@@ -1,6 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff43
-title: '60 度の角を 1 つ持つ三角形の内接円'
+title: '問題 195: 60 度の角を 1 つ持つ三角形の内接円'
 challengeType: 5
 forumTopicId: 301833
 dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degrees

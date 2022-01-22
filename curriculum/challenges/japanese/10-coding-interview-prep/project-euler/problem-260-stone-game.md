@@ -1,6 +1,6 @@
 ---
 id: 5900f4701000cf542c50ff83
-title: 'Problem 260: Stone Game'
+title: '問題 260: 石取りゲーム'
 challengeType: 5
 forumTopicId: 301909
 dashedName: problem-260-stone-game
@@ -8,33 +8,33 @@ dashedName: problem-260-stone-game
 
 # --description--
 
-A game is played with three piles of stones and two players.
+石を積み上げた 3 つの山と 2 人のプレイヤーでゲームをします。
 
-On each player's turn, the player removes one or more stones from the piles. However, if the player takes stones from more than one pile, the same number of stones must be removed from each of the selected piles.
+各プレイヤーは自分のターンで、石の山から 1 つ以上の石を取ります。 ただし、複数の山から石を取る場合は、選んだ山のそれぞれから同じ数の石を取らなければなりません。
 
-In other words, the player chooses some $N > 0$ and removes:
+つまり、プレイヤーは次のいずれかのパターンで個数 $N > 0$ を選び、山から取ります。
 
-- $N$ stones from any single pile; or
-- $N$ stones from each of any two piles ($2N$ total); or
-- $N$ stones from each of the three piles ($3N$ total).
+- 1 つの山から $N$ 個の石を取る。
+- 2 つの山から $N$ 個ずつ石を取る (計: $2N$ 個)。
+- 3 つの山から $N$ 個ずつ石を取る (計: $3N$ 個)。
 
-The player taking the last stone(s) wins the game.
+最後の石を取ったプレイヤーの勝ちです。
 
-A winning configuration is one where the first player can force a win.
+勝利構成とは、先手が必ず勝てる構成です。
 
-For example, (0,0,13), (0,11,11) and (5,5,5) are winning configurations because the first player can immediately remove all stones.
+例えば、(0,0,13), (0,11,11), (5,5,5) は、先手が即座にすべての石を取れるので、勝利構成です。
 
-A losing configuration is one where the second player can force a win, no matter what the first player does.
+敗北構成とは、先手が何をしようと 後手が必ず勝てる構成です。
 
-For example, (0,1,2) and (1,3,3) are losing configurations: any legal move leaves a winning configuration for the second player.
+例えば、(0,1,2) と (1,3,3) は敗北構成です。ルールに従う限り、何をしても 後手の勝利構成になります。
 
-Consider all losing configurations ($x_i$,$y_i$,$z_i$) where $x_i ≤ y_i ≤ z_i ≤ 100$. We can verify that $\sum (x_i + y_i + z_i) = 173\\,895$ for these.
+$x_i ≤ y_i ≤ z_i ≤ 100$ として、すべての敗北構成 ($x_i$,$y_i$,$z_i$) について考えます。 それらの構成について $\sum (x_i + y_i + z_i) = 173\\,895$ であることを確認できます。
 
-Find $\sum (x_i + y_i + z_i)$ where ($x_i$,$y_i$,$z_i$) ranges over the losing configurations with $x_i ≤ y_i ≤ z_i ≤ 1000$.
+$x_i ≤ y_i ≤ z_i ≤ 1000$ として、($x_i$,$y_i$,$z_i$) が敗北構成の全範囲を表すとき、$\sum (x_i + y_i + z_i)$ を求めなさい。
 
 # --hints--
 
-`stoneGame()` should return `167542057`.
+`stoneGame()` は `167542057` を返す必要があります。
 
 ```js
 assert.strictEqual(stoneGame(), 167542057);

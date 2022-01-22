@@ -1,6 +1,6 @@
 ---
 id: 5900f4af1000cf542c50ffc1
-title: 'Problem 322: Binomial coefficients divisible by 10'
+title: '問題 322: 10 で割り切れる二項係数'
 challengeType: 5
 forumTopicId: 301979
 dashedName: problem-322-binomial-coefficients-divisible-by-10
@@ -8,15 +8,15 @@ dashedName: problem-322-binomial-coefficients-divisible-by-10
 
 # --description--
 
-Let $T(m, n)$ be the number of the binomial coefficients ${}^iC_n$ that are divisible by 10 for $n ≤ i &lt; m$ ($i$, $m$ and $n$ are positive integers).
+$n ≤ i &lt; m$ ($i$, $m$, $n$ は正の整数) のとき、10 で割り切れる二項係数 ${}^iC_n$ の数を $T(m, n)$ とします。
 
-You are given that $T({10}^9, {10}^7 - 10) = 989\\,697\\,000$.
+$T({10}^9, {10}^7 - 10) = 989\\,697\\,000$ が与えられます。
 
-Find $T({10}^{18}, {10}^{12} - 10)$.
+$T({10}^{18}, {10}^{12} - 10)$ を求めなさい。
 
 # --hints--
 
-`binomialCoefficientsDivisibleBy10()` should return `999998760323314000`.
+`binomialCoefficientsDivisibleBy10()` は `999998760323314000` を返す必要があります。
 
 ```js
 assert.strictEqual(binomialCoefficientsDivisibleBy10(), 999998760323314000);

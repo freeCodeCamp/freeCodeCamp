@@ -1,6 +1,6 @@
 ---
 id: 5900f5141000cf542c510027
-title: 'Problem 423: Consecutive die throws'
+title: '問題 423: 連続サイコロ投げ'
 challengeType: 5
 forumTopicId: 302093
 dashedName: problem-423-consecutive-die-throws
@@ -8,31 +8,31 @@ dashedName: problem-423-consecutive-die-throws
 
 # --description--
 
-Let $n$ be a positive integer.
+$n$ を正の整数とします。
 
-A 6-sided die is thrown $n$ times. Let $c$ be the number of pairs of consecutive throws that give the same value.
+6 面サイコロを $n$ 回投げます。 連続する同じ出目の対がいくつあるかを $c$ で表します。
 
-For example, if $n = 7$ and the values of the die throws are (1, 1, 5, 6, 6, 6, 3), then the following pairs of consecutive throws give the same value:
+例えば、$n = 7$、サイコロの出目が (1, 1, 5, 6, 6, 6, 3) の場合、連続する同じ出目の対は次のとおりです。
 
 $$\begin{align} & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\ & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\ & (1, 1, 5, 6, \underline{6}, \underline{6}, 3) \end{align}$$
 
-Therefore, $c = 3$ for (1, 1, 5, 6, 6, 6, 3).
+したがって、(1, 1, 5, 6, 6, 6, 3) のとき、$c = 3$ になります。
 
-Define $C(n)$ as the number of outcomes of throwing a 6-sided die $n$ times such that $c$ does not exceed $π(n)$.<sup>1</sup>
+6 面サイコロを $n$ 回投げた結果のうち、$c$ が $π(n)$ を超えない結果の数を $C(n)$ とします<sup>1</sup>。
 
-For example, $C(3) = 216$, $C(4) = 1290$, $C(11) = 361\\,912\\,500$ and $C(24) = 4\\,727\\,547\\,363\\,281\\,250\\,000$.
+例えば、$C(3) = 216$, $C(4) = 1290$, $C(11) = 361\\,912\\,500$, $C(24) = 4\\,727\\,547\\,363\\,281\\,250\\,000$ です。
 
-Define $S(L)$ as $\sum C(n)$ for $1 ≤ n ≤ L$.
+$1 ≤ n ≤ L$ のとき、$\sum C(n)$ を $S(L)$ と定義します。
 
-For example, $S(50)\bmod 1\\,000\\,000\\,007 = 832\\,833\\,871$.
+例えば、$S(50)\bmod 1\\,000\\,000\\,007 = 832\\,833\\,871$ です。
 
-Find $S(50\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
+$S(50\\,000\\,000)\bmod 1\\,000\\,000\\,007$ を求めなさい。
 
-<sup>1</sup> $π$ denotes the prime-counting function, i.e. $π(n)$ is the number of primes $≤ n$.
+<sup>1</sup> $π$ は素数計数関数を意味します。すなわち、$π(n)$ は $n$ 以下の素数の数です。
 
 # --hints--
 
-`consecutiveDieThrows()` should return `653972374`.
+`consecutiveDieThrows()` は `653972374` を返す必要があります。
 
 ```js
 assert.strictEqual(consecutiveDieThrows(), 653972374);

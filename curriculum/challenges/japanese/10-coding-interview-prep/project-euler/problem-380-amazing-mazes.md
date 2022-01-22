@@ -1,6 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffb
-title: 'Problem 380: Amazing Mazes!'
+title: '問題 380: 驚くべき迷路！'
 challengeType: 5
 forumTopicId: 302044
 dashedName: problem-380-amazing-mazes
@@ -8,27 +8,27 @@ dashedName: problem-380-amazing-mazes
 
 # --description--
 
-An $m×n$ maze is an $m×n$ rectangular grid with walls placed between grid cells such that there is exactly one path from the top-left square to any other square. The following are examples of a 9×12 maze and a 15×20 maze:
+$m×n$ の長方形格子で作られた $m×n$ 迷路があります。格子の各マスの間に壁があり、左上のマスからスタートし、他のいずれのマスへ行くにも経路は 1 つしかありません。 下図は、9×12 迷路と15×20 迷路の例です。
 
-<img class="img-responsive center-block" alt="9x12 maze and 15x20 maze" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="9x12 迷路と15x20 迷路" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
 
-Let $C(m, n)$ be the number of distinct $m×n$ mazes. Mazes which can be formed by rotation and reflection from another maze are considered distinct.
+相異なる $m×n$ 迷路の数を $C(m, n)$ とします。 別の迷路の回転や反転によって形成される迷路は、相異なる迷路とみなされます。
 
-It can be verified that $C(1, 1) = 1$, $C(2, 2) = 4$, $C(3, 4) = 2415$, and $C(9, 12) = 2.5720\mathrm{e}\\,46$ (in scientific notation rounded to 5 significant digits).
+$C(1, 1) = 1$, $C(2, 2) = 4$, $C(3, 4) = 2415$, $C(9, 12) = 2.5720\mathrm{e}\\,46$ (有効数字 5 桁に四捨五入された科学的記数法) であることを確認できます。
 
-Find $C(100, 500)$ and write your answer as a string in scientific notation rounded to 5 significant digits.
+$C(100, 500)$ を求め、有効数字 5 桁に四捨五入された科学的記数法の文字列で答えなさい。
 
-When giving your answer, use a lowercase e to separate mantissa and exponent. E.g. if the answer is 1234567891011 then the answer format would be the string `1.2346e12`.
+回答の仮数部と指数部を小文字 e で区切ること。 例: 求めた値が1234567891011 の場合、回答は文字列 `1.2346e12` になります。
 
 # --hints--
 
-`amazingMazes()` should return a string.
+`amazingMazes()` は文字列を返す必要があります。
 
 ```js
 assert(typeof amazingMazes() === 'string');
 ```
 
-`amazingMazes()` should return the string `6.3202e25093`.
+`amazingMazes()` は文字列 `6.3202e25093` を返す必要があります。
 
 ```js
 assert.strictEqual(amazingMazes(), '6.3202e25093');

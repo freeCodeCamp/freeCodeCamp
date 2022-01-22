@@ -1,7 +1,7 @@
 ---
 id: 5900f4791000cf542c50ff8b
 title: >-
-  Problem 268: Counting numbers with at least four distinct prime factors less than 100
+  問題 268: 相異なる 100 未満の素因数を少なくとも 4 つ持つ数を数え上げる
 challengeType: 5
 forumTopicId: 301917
 dashedName: >-
@@ -10,13 +10,13 @@ dashedName: >-
 
 # --description--
 
-It can be verified that there are 23 positive integers less than 1000 that are divisible by at least four distinct primes less than 100.
+少なくとも 4 つの 100 未満の相異なる素数で割り切れる、1000 未満の正の整数が 23 個あることを確認できます。
 
-Find how many positive integers less than ${10}^{16}$ are divisible by at least four distinct primes less than 100.
+少なくとも 4 つの 100 未満の相異なる素数で割り切れる、${10}^{16}$ 未満の正の整数はいくつありますか。
 
 # --hints--
 
-`fourDistinctPrimeFactors()` should return `785478606870985`.
+`fourDistinctPrimeFactors()` は `785478606870985` を返す必要があります。
 
 ```js
 assert.strictEqual(fourDistinctPrimeFactors(), 785478606870985);

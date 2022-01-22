@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad0
-title: Align columns
+title: 列を揃える
 challengeType: 5
 forumTopicId: 302224
 dashedName: align-columns
@@ -8,11 +8,11 @@ dashedName: align-columns
 
 # --description--
 
-Given an array of many lines, where fields within a line are delineated by a single `$` character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
+たくさんの行を持つ配列で、行内のフィールドが単一の `$` 文字で区切られます。 各列の単語が少なくとも1つのスペースで区切られることで、フィールドの各列を揃えるプログラムを作成します。 さらに、各単語をその列内で左揃え、右揃え、または中央揃えにします。
 
 # --instructions--
 
-Use the following text to test your programs:
+次のコードを使用して、プログラムをテストします。
 
 ```js
 const testText = [
@@ -29,16 +29,16 @@ const testText = [
 ];
 ```
 
-**Note that:**
+**注記:**
 
-- The example input texts lines may, or may not, have trailing dollar characters.
-- All columns should share the same alignment.
-- Consecutive space characters produced adjacent to the end of lines are insignificant for the purposes of the task.
-- Output text will be viewed in a mono-spaced font on a plain text editor or basic terminal. Lines in it should be joined using new line character (`\n`).
-- The minimum space between columns should be computed from the text and not hard-coded.
-- It is not a requirement to add separating characters between or around columns.
+- 入力コードの例では、ドル文字を末尾に含めることもできますが、そうでない場合もあります。
+- すべての列を同じように配列する必要があります。
+- 行末に隣接して生成された連続空白文字は、タスクの目的において重要なものではありません。
+- 出力テキストは、プレーンテキストエディタまたは基本端末に等幅フォントで表示されます。 その行は、改行文字 (`\n`) を使って結合します。
+- 列間の最小スペースは、ハードコーディングせずに、テキストから計算します。
+- 列間または列の周りに区切り文字を追加する必要はありません。
 
-For example, one of the lines from the `testText`, after jusitifing to the right, left and center respectivelly:
+次の例は、 `testText`の行を右揃え、左揃え、中央揃えしたものです。
 
 ```js
 '    column        are separated     by     at    least       one space.\n'
@@ -48,25 +48,25 @@ For example, one of the lines from the `testText`, after jusitifing to the right
 
 # --hints--
 
-`formatText` should be a function.
+`formatText` という関数です。
 
 ```js
 assert(typeof formatText === 'function');
 ```
 
-`formatText(testText, 'right')` should produce text with columns justified to the right.
+`formatText(testText, 'right')` で、列が右揃えされたテキストが生成されます。
 
 ```js
 assert.strictEqual(formatText(_testText, 'right'), rightAligned);
 ```
 
-`formatText(testText, 'left')` should produce text with columns justified to the left.
+`formatText(testText, 'left')` で、列が左揃えされたテキストが生成されます。
 
 ```js
 assert.strictEqual(formatText(_testText, 'left'), leftAligned);
 ```
 
-`formatText(testText, 'center')` should produce text with columns justified to the center.
+`formatText(testText, 'center')` で、列が中央揃えされたテキストが生成されます。
 
 ```js
 assert.strictEqual(formatText(_testText, 'center'), centerAligned);

@@ -1,6 +1,6 @@
 ---
 id: 5900f4931000cf542c50ffa6
-title: 'Problem 295: Lenticular holes'
+title: '問題 295: レンズ状の穴'
 challengeType: 5
 forumTopicId: 301947
 dashedName: problem-295-lenticular-holes
@@ -8,31 +8,31 @@ dashedName: problem-295-lenticular-holes
 
 # --description--
 
-We call the convex area enclosed by two circles a lenticular hole if:
+2 つの円に囲まれた凸状の領域が次の条件を満たす場合、その領域を「レンズ状の穴」と呼びます。
 
-- The centres of both circles are on lattice points.
-- The two circles intersect at two distinct lattice points.
-- The interior of the convex area enclosed by both circles does not contain any lattice points.
+- 両方の円心が格子点上にある。
+- 2 つの円が 2 つの相異なる格子点で交差する
+- 両方の円に囲まれた凸状の領域が格子点を内包しない。
 
-Consider the circles:
+次のような円を考えます。
 
 $$\begin{align} & C_0: x^2 + y^2 = 25 \\\\ & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
 
-The circles $C_0$, $C_1$ and $C_2$ are drawn in the picture below.
+円 $C_0$, $C_1$, $C_2$ を下図に示します。
 
-<img class="img-responsive center-block" alt="C_0, C_1 and C_2 circles" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="円 C_0, C_1, C_2" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
 
-$C_0$ and $C_1$ form a lenticular hole, as well as $C_0$ and $C_2$.
+$C_0$ と $C_1$ はレンズ状の穴を形成し、$C_0$ と $C_2$ も同様です。
 
-We call an ordered pair of positive real numbers ($r_1$, $r_2$) a lenticular pair if there exist two circles with radii $r_1$ and $r_2$ that form a lenticular hole. We can verify that ($1$, $5$) and ($5$, $\sqrt{65}$) are the lenticular pairs of the example above.
+レンズ状の穴を形成する半径 $r_1$, $r_2$ の 2 つの円が存在する場合、正の実数の順序対 ($r_1$, $r_2$) を「レンズペア」と呼びます。 上の例では、($1$, $5$) と ($5$, $\sqrt{65}$) が共にレンズペアであることを確認できます。
 
-Let $L(N)$ be the number of distinct lenticular pairs ($r_1$, $r_2$) for which $0 &lt; r_1 ≤ r_2 ≤ N$. We can verify that $L(10) = 30$ and $L(100) = 3442$.
+$0 &lt; r_1 ≤ r_2 ≤ N$ となるような相異なるレンズペア ($r_1$, $r_2$) の個数を $L(N)$ とします。 $L(10) = 30$, $L(100) = 3442$ であることを確認できます。
 
-Find $L(100\\,000)$.
+$L(100\\,000)$ を求めなさい。
 
 # --hints--
 
-`lenticularHoles()` should return `4884650818`.
+`lenticularHoles()` は `4884650818` を返す必要があります。
 
 ```js
 assert.strictEqual(lenticularHoles(), 4884650818);

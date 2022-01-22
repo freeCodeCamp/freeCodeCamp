@@ -1,6 +1,6 @@
 ---
 id: 596a8888ab7c01048de257d5
-title: Deepcopy
+title: ディープコピー
 challengeType: 5
 forumTopicId: 302247
 dashedName: deepcopy
@@ -8,44 +8,44 @@ dashedName: deepcopy
 
 # --description--
 
-Write a function that returns a deep copy of a given object. The copy must not be the same object that was given.
+与えられたオブジェクトのディープコピーを返す関数を作成します。 コピーは与えられたオブジェクトと同じであってはなりません。
 
-This task will not test for:
+このタスクは次のものをテストするものではありません。
 
 <ul>
-  <li>Objects with properties that are functions</li>
-  <li>Date objects or object with properties that are Date objects</li>
-  <li>RegEx or object with properties that are RegEx objects</li>
-  <li>Prototype copying</li>
+  <li>関数のプロパティを持つオブジェクト</li>
+  <li>日付オブジェクト、または日付オブジェクトであるプロパティを持つオブジェクト</li>
+  <li>RegEx、またはRegExオブジェクトであるプロパティを持つオブジェクト</li>
+  <li>プロトタイプのコピー</li>
 </ul>
 
 # --hints--
 
-`deepcopy` should be a function.
+`deepcopy` という関数です。
 
 ```js
 assert(typeof deepcopy === 'function');
 ```
 
-`deepcopy({test: "test"})` should return an object.
+`deepcopy({test: "test"})` はオブジェクトを返します。
 
 ```js
 assert(typeof deepcopy(obj1) === 'object');
 ```
 
-`deepcopy` should not return the same object that was provided.
+`deepcopy` は元のオブジェクトと同じオブジェクトを返しません。
 
 ```js
 assert(deepcopy(obj2) != obj2);
 ```
 
-When passed an object containing an array, `deepcopy` should return a deep copy of the object.
+配列を含むオブジェクトが渡された場合、 `deepcopy` はそのオブジェクトのディープコピーを返します。
 
 ```js
 assert.deepEqual(deepcopy(obj2), obj2);
 ```
 
-When passed an object containing another object, `deepcopy`  should return a deep copy of the object.
+別のオブジェクトを含むオブジェクトが渡された場合、 `deepcopy` はそのオブジェクトのディープコピーを返します。
 
 ```js
 assert.deepEqual(deepcopy(obj3), obj3);

@@ -1,6 +1,6 @@
 ---
 id: 594dc6c729e5700999302b45
-title: Balanced brackets
+title: 対の括弧
 challengeType: 5
 forumTopicId: 302230
 dashedName: balanced-brackets
@@ -8,129 +8,129 @@ dashedName: balanced-brackets
 
 # --description--
 
-Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
+生成された括弧が対になっているかどうかを確認します。括弧が開き括弧と閉じ括弧の順番で対になっているかどうか、誤った入れ子になっていないかどうかを確認します。
 
-**Examples:**
-| Input                     | Output |
-| ------------------------- | ------ |
-| <code>\[]</code> | true   |
-| <code>]\[</code> | false  |
-| <code>[][]</code> | true   |
-| <code>]\[]</code> | false  |
-| <code>\[]]\[\[]</code> | false  |
-| <code>\[\[\[\[]]]]</code> | true   |
+**例:**
+| 入力                        | 出力 |
+| ------------------------- | -- |
+| <code>\[]</code> | 真  |
+| <code>]\[</code> | 偽  |
+| <code>[][]</code> | 真  |
+| <code>]\[]</code> | 偽  |
+| <code>\[]]\[\[]</code> | 偽  |
+| <code>\[\[\[\[]]]]</code> | 真  |
 
 # --hints--
 
-`isBalanced` should be a function.
+`isBalanced` という関数です。
 
 ```js
 assert(typeof isBalanced === 'function');
 ```
 
-`isBalanced("[]")` should return true.
+`isBalanced("[]")` は真を返します。
 
 ```js
 assert(isBalanced(testCases[0]));
 ```
 
-`isBalanced("]][[[][][][]][")` should return false.
+`isBalanced("]][[[][][][]][")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[1]));
 ```
 
-`isBalanced("[][[[[][][[[]]]]]]")` should return true.
+`isBalanced("[][[[[][][[[]]]]]]")` は真を返します。
 
 ```js
 assert(isBalanced(testCases[2]));
 ```
 
-`isBalanced("][")` should return false.
+`isBalanced("][")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[3]));
 ```
 
-`isBalanced("[[[]]]][[]")` should return false.
+`isBalanced("[[[]]]][[]")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[4]));
 ```
 
-`isBalanced("][[]")` should return false.
+`isBalanced("][[]")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[5]));
 ```
 
-`isBalanced("][[][]][[[]]")` should return false.
+`isBalanced("][[][]][[[]]")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[6]));
 ```
 
-`isBalanced("[[][]]][")` should return false.
+`isBalanced("[[][]]][")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[7]));
 ```
 
-`isBalanced("[[[]]][[]]]][][[")` should return false.
+`isBalanced("[[[]]][[]]]][][[")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[8]));
 ```
 
-`isBalanced("[]][[]]][[[[][]]")` should return false.
+`isBalanced("[]][[]]][[[[][]]")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[9]));
 ```
 
-`isBalanced("][]][[][")` should return false.
+`isBalanced("][]][[][")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[10]));
 ```
 
-`isBalanced("[[]][[][]]")` should return true.
+`isBalanced("[[]][[][]]")` は真を返します。
 
 ```js
 assert(isBalanced(testCases[11]));
 ```
 
-`isBalanced("[[]]")` should return true.
+`isBalanced("[[]]")` は真を返します。
 
 ```js
 assert(isBalanced(testCases[12]));
 ```
 
-`isBalanced("]][]][[]][[[")` should return false.
+`isBalanced("]][]][[]][[[")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[13]));
 ```
 
-`isBalanced("][]][][[")` should return false.
+`isBalanced("][]][][[")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[14]));
 ```
 
-`isBalanced("][][")` should return false.
+`isBalanced("][][")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[15]));
 ```
 
-`isBalanced("[]]]")` should return false.
+`isBalanced("[]]]")` は偽を返します。
 
 ```js
 assert(!isBalanced(testCases[16]));
 ```
 
-`isBalanced("")` should return true.
+`isBalanced("")` は真を返します。
 
 ```js
 assert(isBalanced(testCases[17]));

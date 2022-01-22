@@ -1,6 +1,6 @@
 ---
 id: 599d0ba974141b0f508b37d5
-title: Emirp primes
+title: エマープ
 challengeType: 5
 forumTopicId: 302253
 dashedName: emirp-primes
@@ -8,30 +8,30 @@ dashedName: emirp-primes
 
 # --description--
 
-An emirp (**prime** spelled backwards) are primes that when reversed (in their decimal representation) are a different prime.
+emirp (**prime** の逆さの綴り) は、(10 進数表記で) 逆から読んでも素数になる素数です。
 
 # --instructions--
 
-Write a function that:
+以下の関数を作成します。
 
 <ul>
-  <li>Shows the first <code>n</code> emirp numbers.</li>
-  <li>Shows the emirp numbers in a range.</li>
-  <li>Shows the number of emirps in a range.</li>
-  <li>Shows the <code>n<sup>th</sup></code> emirp number.</li>
+  <li>最初の <code>n</code> 個のエマープを表示します。</li>
+  <li>範囲内のエマープを表示します。</li>
+  <li>範囲内のエマープの数を表示します。</li>
+  <li><code>n<sup>th</sup></code> のエマープを表示します。</li>
 </ul>
 
-The function should accept two parameters. The first will receive `n` or the range as an array. The second will receive a boolean, that specifies if the function returns the emirps as an array or a single number (the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array or a number.
+関数は2つのパラメーターを使用します。 1つ目としては、`n` または範囲を配列として受け取ります。 2 つ目は、ブール値です。 ブール値は、関数が エマープを配列として返すか、単一の数値 として返すかを指定します (範囲内の素数、または <code>n<sup>th</sup></code> 素数)。 パラメータに基づき、関数は配列または数値を返します。
 
 # --hints--
 
-`emirps` should be a function.
+`emirps` という関数です。
 
 ```js
 assert(typeof emirps === 'function');
 ```
 
-`emirps(20,true)` should return `[13,17,31,37,71,73,79,97,107,113,149,157,167,179,199,311,337,347,359,389]`
+`emirps(20,true)` は `[13,17,31,37,71,73,79,97,107,113,149,157,167,179,199,311,337,347,359,389]` を返します。
 
 ```js
 assert.deepEqual(emirps(20, true), [
@@ -58,13 +58,13 @@ assert.deepEqual(emirps(20, true), [
 ]);
 ```
 
-`emirps(1000)` should return `70529`
+`emirps(1000)` は `70529` を返します。
 
 ```js
 assert.deepEqual(emirps(1000), 70529);
 ```
 
-`emirps([7700,8000],true)` should return `[7717,7757,7817,7841,7867,7879,7901,7927,7949,7951,7963]`
+`emirps([7700,8000],true)` は `[7717,7757,7817,7841,7867,7879,7901,7927,7949,7951,7963]` を返します。
 
 ```js
 assert.deepEqual(emirps([7700, 8000], true), [
@@ -82,7 +82,7 @@ assert.deepEqual(emirps([7700, 8000], true), [
 ]);
 ```
 
-`emirps([7700,8000],false)` should return `11`
+`emirps([7700,8000],false)` は `11` を返します。
 
 ```js
 assert.deepEqual(emirps([7700, 8000], false), 11);

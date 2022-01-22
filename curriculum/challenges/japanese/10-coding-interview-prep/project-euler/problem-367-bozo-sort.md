@@ -1,6 +1,6 @@
 ---
 id: 5900f4db1000cf542c50ffee
-title: 'Problem 367: Bozo sort'
+title: '問題 367: ボゾソート'
 challengeType: 5
 forumTopicId: 302028
 dashedName: problem-367-bozo-sort
@@ -8,29 +8,29 @@ dashedName: problem-367-bozo-sort
 
 # --description--
 
-Bozo sort, not to be confused with the slightly less efficient bogo sort, consists out of checking if the input sequence is sorted and if not swapping randomly two elements. This is repeated until eventually the sequence is sorted.
+ボゾソートと聞いて、やや効率の低いボゴソートと混同しないでください。ボゾソートは、入力数列がソートされているかをチェックし、ソートされていない場合は無作為に 2 つの要素を交換します。 最終的に数列がソートされるまで、これが繰り返されます。
 
-If we consider all permutations of the first 4 natural numbers as input the expectation value of the number of swaps, averaged over all $4!$ input sequences is $24.75$.
+最初の 4 つの自然数が含まれるすべての順列を入力として考えた場合、交換回数の期待値は、$4!$ 個すべての入力数列で平均 $24.75$ になります。
 
-The already sorted sequence takes 0 steps.
+ソート済みの数列の場合、交換回数は 0 回です。
 
-In this problem we consider the following variant on bozo sort.
+この問題では、次のような変種のボゾソートについて考えます。
 
-If the sequence is not in order we pick three elements at random and shuffle these three elements randomly.
+数列がソートされていない場合は、無作為に 3 つの要素を選択し、これら 3 つの要素を無作為に入れ替えます。
 
-All $3! = 6$ permutations of those three elements are equally likely.
+これら 3 つの要素の $3! = 6$ 個の順列はすべて等確率で現れます。
 
-The already sorted sequence will take 0 steps.
+ソート済みの数列の場合、交換回数は 0 回です。
 
-If we consider all permutations of the first 4 natural numbers as input the expectation value of the number of shuffles, averaged over all $4!$ input sequences is $27.5$.
+最初の 4 つの自然数が含まれるすべての順列を入力として考えた場合、交換回数の期待値は、$4!$ 個すべての入力数列で平均 $27.5$ になります。
 
-Consider as input sequences the permutations of the first 11 natural numbers.
+入力数列として、最初の 11 個の自然数の順列を考えます。
 
-Averaged over all $11!$ input sequences, what is the expected number of shuffles this sorting algorithm will perform? Give your answer rounded to the nearest integer.
+$11!$ 個すべての入力数列で平均すると、このソートアルゴリズムによる交換回数の期待値はいくつですか？ 最も近い整数に四捨五入して答えなさい。
 
 # --hints--
 
-`bozoSort()` should return `48271207`.
+`bozoSort()` は `48271207` を返す必要があります。
 
 ```js
 assert.strictEqual(bozoSort(), 48271207);

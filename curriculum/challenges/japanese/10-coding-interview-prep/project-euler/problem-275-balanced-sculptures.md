@@ -1,6 +1,6 @@
 ---
 id: 5900f4801000cf542c50ff92
-title: 'Problem 275: Balanced Sculptures'
+title: '問題 275: 平衡な彫像'
 challengeType: 5
 forumTopicId: 301925
 dashedName: problem-275-balanced-sculptures
@@ -8,24 +8,24 @@ dashedName: problem-275-balanced-sculptures
 
 # --description--
 
-Let us define a balanced sculpture of order $n$ as follows:
+位数 $n$ の平衡な彫像を次のように定義します。
 
-- A polyomino made up of $n + 1$ tiles known as the blocks ($n$ tiles) and the plinth (remaining tile);
-- the plinth has its centre at position ($x = 0$, $y = 0$);
-- the blocks have $y$-coordinates greater than zero (so the plinth is the unique lowest tile);
-- the centre of mass of all the blocks, combined, has $x$-coordinate equal to zero.
+- ブロック ($n$ 枚のタイル) と台座 (残りのタイル) として知られる $n + 1$ 枚のタイルで構成されたポリオミノである。
+- 台座の中心は ($x = 0$, $y = 0$) に位置する。
+- ブロックの $y$ 座標は 0 より大きい (したがって台座は唯一の一番下のタイル)。
+- すべてのブロックを合わせたときの重心の $x$ 座標は 0 に等しい。
 
-When counting the sculptures, any arrangements which are simply reflections about the $y$-axis, are <u>not</u> counted as distinct. For example, the 18 balanced sculptures of order 6 are shown below; note that each pair of mirror images (about the $y$-axis) is counted as one sculpture:
+彫像を数えるとき、単に $y$ 軸で反転させた配置は区別<u>されません</u>。 例えば、位数 6 の平衡な彫像 18 個を下に示します。($y$ 軸で反転して) 鏡像となる各ペアが 1 つの彫像としてカウントされることに注意してください。
 
-<img class="img-responsive center-block" alt="18 balanced sculptures of order 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="位数 6 に対する 18 個の平衡な彫像" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
 
-There are 964 balanced sculptures of order 10 and 360505 of order 15.
+位数 10 の平衡な彫像は 964 個、位数 15 の平衡な彫像は 360505 個あります。
 
-How many balanced sculptures are there of order 18?
+位数 18 の平衡な彫像はいくつありますか。
 
 # --hints--
 
-`balancedSculptures()` should return `15030564`.
+`balancedSculptures()` は `15030564` を返す必要があります。
 
 ```js
 assert.strictEqual(balancedSculptures(), 15030564);

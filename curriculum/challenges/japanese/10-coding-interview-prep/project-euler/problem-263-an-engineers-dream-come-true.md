@@ -1,6 +1,6 @@
 ---
 id: 5900f4741000cf542c50ff86
-title: 'Problem 263: An engineers'' dream come true'
+title: '問題 263: エンジニアの夢がかなう'
 challengeType: 5
 forumTopicId: 301912
 dashedName: problem-263-an-engineers-dream-come-true
@@ -8,30 +8,30 @@ dashedName: problem-263-an-engineers-dream-come-true
 
 # --description--
 
-Consider the number 6. The divisors of 6 are: 1,2,3 and 6.
+6 という数について考えます。 6 の約数は 1, 2, 3, 6 です。
 
-Every number from 1 up to and including 6 can be written as a sum of distinct divisors of 6:
+1 から 6 までのすべての数は、次のように 6 の相異なる約数の和として表せます。
 
-$1 = 1$, $2 = 2$, $3 = 1 + 2$, $4 = 1 + 3$, $5 = 2 + 3$, $6 = 6$.
+$1 = 1$, $2 = 2$, $3 = 1 + 2$, $4 = 1 + 3$, $5 = 2 + 3$, $6 = 6$
 
-A number $n$ is called a practical number if every number from 1 up to and including $n$ can be expressed as a sum of distinct divisors of $n$.
+1 から $n$ までのすべての数が $n$ の相異なる約数の和として表すことができる場合、 $n$ はプラクティカル数と呼ばれます。
 
-A pair of consecutive prime numbers with a difference of six is called a sexy pair (since "sex" is the Latin word for "six"). The first sexy pair is (23, 29).
+差が 6 である連続した素数のペアは、セクシーペアと呼ばれます ("six" はラテン語で "sex" なので) 。 最初のセクシーペアは (23, 29) です。
 
-We may occasionally find a triple-pair, which means three consecutive sexy prime pairs, such that the second member of each pair is the first member of the next pair.
+トリプルペアが見つかることがあります。トリプルペアとは、各ペアの 2 つ目の要素が次のペアの 1 つ目の要素になるような、3 つの連続したセクシーペアのことです。
 
-We shall call a number $n$ such that:
+次のような数 $n$ を考えます。
 
-- ($n - 9$, $n - 3$), ($n - 3$, $n + 3$), ($n + 3$, $n + 9$) form a triple-pair, and
-- the numbers $n - 8$, $n - 4$, $n$, $n + 4$ and $n + 8$ are all practical,
+- ($n - 9$, $n - 3$), ($n - 3$, $n + 3$), ($n + 3$, $n + 9$) がトリプルペアになっている。かつ、
+- 数 $n - 8$, $n - 4$, $n$, $n + 4$, $n + 8$ がすべてプラクティカル数である。
 
-an engineers’ paradise.
+このような数を「エンジニアの楽園」と呼ぶことにします。
 
-Find the sum of the first four engineers’ paradises.
+エンジニアの楽園のうち最初の 4 つの和を求めなさい。
 
 # --hints--
 
-`engineersDreamComeTrue()` should return `2039506520`.
+`engineersDreamComeTrue()` は `2039506520` を返す必要があります。
 
 ```js
 assert.strictEqual(engineersDreamComeTrue(), 2039506520);

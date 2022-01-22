@@ -1,6 +1,6 @@
 ---
 id: 5900f4f31000cf542c510006
-title: 'Problem 391: Hopping Game'
+title: '問題 391: ホッピングゲーム'
 challengeType: 5
 forumTopicId: 302056
 dashedName: problem-391-hopping-game
@@ -8,32 +8,32 @@ dashedName: problem-391-hopping-game
 
 # --description--
 
-Let $s_k$ be the number of 1’s when writing the numbers from 0 to $k$ in binary.
+0 から $s_k$ までの数を 2 進数で表した場合の 1 の個数を、$k$ とします。
 
-For example, writing 0 to 5 in binary, we have 0, 1, 10, 11, 100, 101. There are seven 1’s, so $s_5 = 7$.
+例えば、0 から 5 を 2 進数で表すと、0, 1, 10, 11, 100, 101 となります。 1 が 7 個あるので、$s_5 = 7$ です。
 
-The sequence $S = \\{s_k : k ≥ 0\\}$ starts $\\{0, 1, 2, 4, 5, 7, 9, 12, \ldots\\}$.
+数列 $S = \\{s_k : k ≥ 0\\}$ の最初の部分は $\\{0, 1, 2, 4, 5, 7, 9, 12, \ldots\\}$ です。
 
-A game is played by two players. Before the game starts, a number $n$ is chosen. A counter $c$ starts at 0. At each turn, the player chooses a number from 1 to $n$ (inclusive) and increases $c$ by that number. The resulting value of $c$ must be a member of $S$. If there are no more valid moves, the player loses.
+あるゲームを 2 人のプレイヤーで行います。 ゲームを始める前に、数 $n$ が選択されます。 カウンター $c$ は 0 から開始します。 各ターンで、プレイヤーは 1 から $n$ (1 と $n$を含む) までの数を 1 つ選び、その数の分だけ $c$ を増加させます。 $c$ の結果の値は $S$ の要素である必要があります。 これ以上は有効な手がない場合、そのプレイヤーは負けます。
 
-For example, with $n = 5$ and starting with $c = 0$:
+例えば、$n = 5$ であり、$c = 0$ から始めるとします。
 
-- Player 1 chooses 4, so $c$ becomes $0 + 4 = 4$.
-- Player 2 chooses 5, so $c$ becomes $4 + 5 = 9$.
-- Player 1 chooses 3, so $c$ becomes $9 + 3 = 12$.
-- etc.
+- プレイヤー 1 が 4 を選ぶと、$c$ は $0 + 4 = 4$ になります。
+- プレイヤー 2 が ５を選ぶと、$c$ は $4 + 5 = 9$ になります。
+- プレイヤー 1 が 3 を選ぶと、$c$ は $9 + 3 = 12$ になります。
+- 以降も同様に続けます。
 
-Note that $c$ must always belong to $S$, and each player can increase $c$ by at most $n$.
+注意点として、$c$ は常に $S$ に属している必要があり、各プレイヤーはたかだか $n$ の分だけ $c$ を増加させることができます。
 
-Let $M(n)$ be the highest number the first player can choose at her first turn to force a win, and $M(n) = 0$ if there is no such move. For example, $M(2) = 2$, $M(7) = 1$ and $M(20) = 4$.
+ここで、プレイヤー 1 が確実に勝つために最初のターンで選ぶことのできる最大の数を $M(n)$ とし、そのような手がない場合は $M(n)=0$ とします。 例えば、$M(2) = 2$, $M(7) = 1$, $M(20) = 4$ です。
 
-It can be verified $\sum M{(n)}^3 = 8150$ for $1 ≤ n ≤ 20$.
+$1 ≤ n ≤ 20$ のとき、$\sum M{(n)}^3 = 8150$ であることを確認できます。
 
-Find $\sum M{(n)}^3$ for $1 ≤ n ≤ 1000$.
+$1 ≤ n ≤ 1000$ のとき、$\sum M{(n)}^3$ を求めなさい。
 
 # --hints--
 
-`hoppingGame()` should return `61029882288`.
+`hoppingGame()` は `61029882288` を返す必要があります。
 
 ```js
 assert.strictEqual(hoppingGame(), 61029882288);

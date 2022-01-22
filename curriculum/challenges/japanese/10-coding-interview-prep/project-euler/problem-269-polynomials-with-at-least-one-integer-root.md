@@ -1,6 +1,6 @@
 ---
 id: 5900f4791000cf542c50ff8c
-title: 'Problem 269: Polynomials with at least one integer root'
+title: '問題 269: 少なくとも 1 つの整数根を持つ多項式'
 challengeType: 5
 forumTopicId: 301918
 dashedName: problem-269-polynomials-with-at-least-one-integer-root
@@ -8,27 +8,27 @@ dashedName: problem-269-polynomials-with-at-least-one-integer-root
 
 # --description--
 
-A root or zero of a polynomial $P(x)$ is a solution to the equation $P(x) = 0$.
+多項式 $P(x)$ の根すなわち零点とは、式 $P(x) = 0$ の解です。
 
-Define $P_n$ as the polynomial whose coefficients are the digits of $n$.
+$P_n$ を多項式として定義し、その係数を $n$ の各位とします。
 
-For example, $P_{5703}(x) = 5x^3 + 7x^2 + 3$.
+例えば、$P_{5703}(x) = 5x^3 + 7x^2 + 3$ です。
 
-We can see that:
+次のことが分かります。
 
-- $P_n(0)$ is the last digit of $n$,
-- $P_n(1)$ is the sum of the digits of $n$,
-- $Pn(10)$ is $n$ itself.
+- $P_n(0)$ は $n$ の最下位の数字である。
+- $P_n(1)$ は $n$ の各位の和である。
+- $Pn(10)$ は $n$ そのものである。
 
-Define $Z(k)$ as the number of positive integers, $n$, not exceeding $k$ for which the polynomial $P_n$ has at least one integer root.
+多項式 $P_n$ が少なくとも 1 つの整数根 (integer root) を持つような $k$ 以下の正の整数 $n$ の個数を、$Z(k)$とします。
 
-It can be verified that $Z(100\\,000)$ is 14696.
+$Z(100\\,000)$ が 14696 であることを確認できます。
 
-What is $Z({10}^{16})$?
+$Z({10}^{16})$ を求めなさい。
 
 # --hints--
 
-`polynomialsWithOneIntegerRoot()` should return `1311109198529286`.
+`polynomialsWithOneIntegerRoot()` は `1311109198529286` を返す必要があります。
 
 ```js
 assert.strictEqual(polynomialsWithOneIntegerRoot(), 1311109198529286);

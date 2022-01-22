@@ -1,6 +1,6 @@
 ---
 id: 5900f54c1000cf542c51005e
-title: 'Problem 478: Mixtures'
+title: '問題 478: 混合物'
 challengeType: 5
 forumTopicId: 302155
 dashedName: problem-478-mixtures
@@ -8,29 +8,29 @@ dashedName: problem-478-mixtures
 
 # --description--
 
-Let us consider mixtures of three substances: $A$, $B$ and $C$. A mixture can be described by a ratio of the amounts of $A$, $B$, and $C$ in it, i.e., $(a : b : c)$. For example, a mixture described by the ratio (2 : 3 : 5) contains 20% $A$, 30% $B$ and 50% $C$.
+3 つの物質 $A$, $B$, $C$ の混合物について考えます。 混合物は、それに含まれる $A$, $B$, $C$ の比率によって $(a : b : c)$ と表すことができます。 例えば、比率 (2 : 3 : 5) で表された混合物には、$A$ が20%、$B$ が30%、そして $C$ が 50% 含まれています。
 
-For the purposes of this problem, we cannot separate the individual components from a mixture. However, we can combine different amounts of different mixtures to form mixtures with new ratios.
+この問題の目的上、混合物から各物質を分離することはできないものとします。 しかし、異なる混合物をさまざまな量で組み合わせ、新しい比率の混合物を作ることはできます。
 
-For example, say we have three mixtures with ratios (3 : 0 : 2), (3 : 6 : 11) and (3 : 3 : 4). By mixing 10 units of the first, 20 units of the second and 30 units of the third, we get a new mixture with ratio (6 : 5 : 9), since: ($10 \times \frac{3}{5} + 20 \times \frac{3}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{0}{5} + 20 \times \frac{6}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{2}{5} + 20 \times \frac{11}{20} + 30 \times \frac{4}{10}$) = (18 : 15 : 27) = (6 : 5 : 9)
+例えば、3 つの比率 (3 : 0 : 2), (3 : 6 : 11), (3 : 3 : 4) の混合物があるとします。 1 つ目の混合物を 10 単位、2 つ目の混合物を 20 単位、3 つ目の混合物を 30 単位使って混合すると、比率が (6 : 5 : 9) の混合物ができます。なぜなら、($10 \times \frac{3}{5} + 20 \times \frac{3}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{0}{5} + 20 \times \frac{6}{20} + 30 \times \frac{3}{10}$ : $10 \times \frac{2}{5} + 20 \times \frac{11}{20} + 30 \times \frac{4}{10}$) = (18 : 15 : 27) = (6 : 5 : 9) だからです。
 
-However, with the same three mixtures, it is impossible to form the ratio (3 : 2 : 1), since the amount of $B$ is always less than the amount of $C$.
+しかし、上と同じ 3 つの混合物を使って比率を (3 : 2 : 1) にすることは不可能です。どのように組み合わせても $B$ の量が $C$ の量より少なくなるからです。
 
-Let $n$ be a positive integer. Suppose that for every triple of integers $(a, b, c)$ with $0 ≤ a, b, c ≤ n$ and $gcd(a, b, c) = 1$, we have a mixture with ratio $(a : b : c)$. Let $M(n)$ be the set of all such mixtures.
+$n$ を正の整数とします。 $0 ≤ a, b, c ≤ n$ かつ $gcd(a, b, c) = 1$ を満たす整数の三つ組 $(a, b, c)$ に対して、比率 $(a : b : c)$ の混合物が常にあるとします。 そのようなすべての混合物の集合を $M(n)$ とします。
 
-For example, $M(2)$ contains the 19 mixtures with the following ratios:
+例えば、$M(2)$ には次の比率で 19 の混合物が含まれています。
 
-{(0 : 0 : 1), (0 : 1 : 0), (0 : 1 : 1), (0 : 1 : 2), (0 : 2 : 1), (1 : 0 : 0), (1 : 0 : 1), (1 : 0 : 2), (1 : 1 : 0), (1 : 1 : 1), (1 : 1 : 2), (1 : 2 : 0), (1 : 2 : 1), (1 : 2 : 2), (2 : 0 : 1), (2 : 1 : 0), (2 : 1 : 1), (2 : 1 : 2), (2 : 2 : 1)}.
+{(0 : 0 : 1), (0 : 1 : 0), (0 : 1 : 1), (0 : 1 : 2), (0 : 2 : 1), (1 : 0 : 0), (1 : 0 : 1), (1 : 0 : 2), (1 : 1 : 0), (1 : 1 : 1), (1 : 1 : 2), (1 : 2 : 0), (1 : 2 : 1), (1 : 2 : 2), (2 : 0 : 1), (2 : 1 : 0), (2 : 1 : 1), (2 : 1 : 2), (2 : 2 : 1)}
 
-Let $E(n)$ be the number of subsets of $M(n)$ which can produce the mixture with ratio (1 : 1 : 1), i.e., the mixture with equal parts $A$, $B$ and $C$.
+比率 (1 : 1 : 1)、すなわち $A$, $B$, $C$ が等しく配合された混合物を作れる $M(n)$ の部分集合の個数を $E(n)$ とします。
 
-We can verify that $E(1) = 103$, $E(2) = 520\\,447$, $E(10)\bmod {11}^8 = 82\\,608\\,406$ and $E(500)\bmod {11}^8 = 13\\,801\\,403$.
+$E(1) = 103$, $E(2) = 520\\,447$, $E(10)\bmod {11}^8 = 82\\,608\\,406$, $E(500)\bmod {11}^8 = 13\\,801\\,403$ であることを確認できます。
 
-Find $E(10\\,000\\,000)\bmod {11}^8$.
+$E(10\\,000\\,000)\bmod {11}^8$ を求めなさい。
 
 # --hints--
 
-`mixtures()` should return `59510340`.
+`mixtures()` は `59510340` を返す必要があります。
 
 ```js
 assert.strictEqual(mixtures(), 59510340);

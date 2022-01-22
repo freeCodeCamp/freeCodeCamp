@@ -1,6 +1,6 @@
 ---
 id: 5900f4bd1000cf542c50ffcf
-title: 'Problem 336: Maximix Arrangements'
+title: '問題 336: 最も不ぞろいな配置'
 challengeType: 5
 forumTopicId: 301994
 dashedName: problem-336-maximix-arrangements
@@ -8,31 +8,31 @@ dashedName: problem-336-maximix-arrangements
 
 # --description--
 
-A train is used to transport four carriages in the order: $ABCD$. However, sometimes when the train arrives to collect the carriages they are not in the correct order.
+4 つの貨物 $ABCD$ をこの順序に並べ、機関車で運びます。 しかし、機関車が貨物を受け取るために到着したとき、貨物が正しい順序に並んでいないことがあります。
 
-To rearrange the carriages, they are all shunted onto a large rotating turntable. After the carriages are uncoupled at a specific point, the train moves off the turntable pulling the carriages still attached with it. The remaining carriages are rotated 180°. All of the carriages are then rejoined and this process is repeated as often as necessary in order to obtain the least number of uses of the turntable.
+順序を入れ替えるために、すべての貨物が大きな回転台に載せられます。 特定の個所で貨物が切り離された後、機関車はそれ自体に連結されている貨物をけん引しながら回転台から離れます。 残りの貨物は 180° 回転されます。 その後、すべての貨物が再び連結され、回転台の使用回数が最も少なくなるような方法で、正しい順序になるまでこの作業が繰り返されます。
 
-Some arrangements, such as $ADCB$, can be solved easily: the carriages are separated between $A$ and $D$, and after $DCB$ are rotated the correct order has been achieved.
+$ADCB$ などの配置は簡単に直せます。貨物を $A$ と $D$ の間で切り離し、$DCB$ を回転すると正しい順序になります。
 
-However, Simple Simon, the train driver, is not known for his efficiency, so he always solves the problem by initially getting carriage $A$ in the correct place, then carriage $B$, and so on.
+しかし、機関車を運転するシンプル・サイモンは効率が悪い人なので、いつも最初に貨物 $A$ を正しい位置に置き換え、次に貨物 $B$ を正しい位置に置き換え、以降も同様にすることで正しく並べ替えます。
 
-Using four carriages, the worst possible arrangements for Simon, which we shall call maximix arrangements, are $DACB$ and $DBAC$; each requiring him five rotations (although, using the most efficient approach, they could be solved using just three rotations). The process he uses for $DACB$ is shown below.
+貨物が 4 つある場合、サイモンにとって起こり得る最悪の配置 (「最も不ぞろいな配置」と呼ぶことにします) は $DACB$ と $DBAC$ で、それぞれ 5 回の回転が必要です (最も効率的な方法なら 3 回の回転で済むのですが)。 サイモンが $DACB$ に使用した手順を下に示します。
 
-<img class="img-responsive center-block" alt="five rotations for maximix arrangement DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="最も不ぞろいな配置 DACB で行われる 5 回の回転" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;" />
 
-It can be verified that there are 24 maximix arrangements for six carriages, of which the tenth lexicographic maximix arrangement is $DFAECB$.
+貨物が 6 つある場合、最も不ぞろいな配置は最大 24 個あり、そのうち辞書順で 10 番目の最も不ぞろいな配置が $DFAECB$ であることを確認できます。
 
-Find the ${2011}^{\text{th}}$ lexicographic maximix arrangement for eleven carriages.
+貨物が 11 個があるとき、辞書順で ${2011}$ 番目の最も不ぞろいな配置を求めなさい。
 
 # --hints--
 
-`maximixArrangements()` should return a string.
+`maximixArrangements()` は文字列を返す必要があります。
 
 ```js
 assert(typeof maximixArrangements() === 'string');
 ```
 
-`maximixArrangements()` should return the string `CAGBIHEFJDK`.
+`maximixArrangements()` は文字列 `CAGBIHEFJDK` を返す必要があります。
 
 ```js
 assert.strictEqual(maximixArrangements(), 'CAGBIHEFJDK');
