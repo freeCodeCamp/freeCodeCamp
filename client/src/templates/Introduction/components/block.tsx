@@ -5,11 +5,9 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { SuperBlocks } from '../../../../../config/certification-settings';
-
 import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
 import Caret from '../../../assets/icons/caret';
-import CertificationIcon from '../../../assets/icons/certification-icon';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Link } from '../../../components/helpers';
@@ -18,8 +16,6 @@ import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import Challenges from './challenges';
-
-import './block.css';
 
 const { curriculumLocale } = envData;
 
@@ -151,12 +147,11 @@ export class Block extends Component<BlockProps> {
         <div className='block'>
           <div className='block-title-wrapper'>
             <a className='block-link' href={`#${blockDashedName}`}>
+              <span className='cert-tag'>Certification Project</span>
               <h3 className='big-block-title'>
-                <CertificationIcon />
                 {blockTitle}
                 <span className='block-link-icon'>#</span>
               </h3>
-              <p className='cert-tag'>Certification Project</p>
             </a>
             {!isAuditedCert(curriculumLocale, superBlock) && (
               <div className='block-cta-wrapper'>

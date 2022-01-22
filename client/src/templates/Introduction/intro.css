@@ -22,6 +22,7 @@
 .block-title-wrapper .block-link {
   flex-grow: 3;
   flex-basis: 0;
+  padding: 25px 15px 10px;
 }
 
 .block-link:hover,
@@ -162,9 +163,6 @@ button.map-title {
   background: var(--primary-background);
 }
 
-.block-ui .block .big-block-title {
-  padding: 25px 15px 10px;
-}
 .block-ui .block .block-description {
   padding: 0 15px 15px;
   border-bottom: 3px solid var(--secondary-background);
@@ -324,4 +322,15 @@ button.map-title {
   text-decoration: none;
   text-decoration-style: none;
   color: var(--secondary-color);
+}
+
+.cert-tag {
+  text-align: left;
+  width: fit-content;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 20px;
+  padding: 4px 10px;
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
 }
