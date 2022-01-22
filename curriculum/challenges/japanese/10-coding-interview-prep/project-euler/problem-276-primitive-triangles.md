@@ -1,6 +1,6 @@
 ---
 id: 5900f4801000cf542c50ff93
-title: 'Problem 276: Primitive Triangles'
+title: '問題 276: 原始的な三角形'
 challengeType: 5
 forumTopicId: 301926
 dashedName: problem-276-primitive-triangles
@@ -8,15 +8,15 @@ dashedName: problem-276-primitive-triangles
 
 # --description--
 
-Consider the triangles with integer sides $a$, $b$ and $c$ with $a ≤ b ≤ c$.
+整数辺 $a$, $b$, $c$ ($a ≤ b ≤ c$) を持つ三角形を考えます。
 
-An integer sided triangle $(a,b,c)$ is called primitive if $gcd(a,b,c) = 1$.
+$gcd(a,b,c) = 1$ が成り立つとき、整数辺を持つ三角形 $(a,b,c)$ は「原始的」(primitive) であると呼ばれます。
 
-How many primitive integer sided triangles exist with a perimeter not exceeding $10\\,000\\,000$?
+周長が $10\\,000\\,000$ 以下、辺長が整数、かつ原始的である三角形はいくつありますか。
 
 # --hints--
 
-`primitiveTriangles()` should return `5777137137739633000`.
+`primitiveTriangles()` は `5777137137739633000` を返す必要があります。
 
 ```js
 assert.strictEqual(primitiveTriangles(), 5777137137739633000);

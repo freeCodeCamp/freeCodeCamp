@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e1e
-title: Dot product
+title: ドット積
 challengeType: 5
 forumTopicId: 302251
 dashedName: dot-product
@@ -8,47 +8,47 @@ dashedName: dot-product
 
 # --description--
 
-Create a function, to compute the **[dot product](https://en.wikipedia.org/wiki/Dot product)**, also known as the **scalar product** of two vectors.
+2つのベクトルの**スカラー積**としても知られる**[ドット積](https://en.wikipedia.org/wiki/Dot product)**を計算する関数を作成します。
 
 # --hints--
 
-`dotProduct` should be a function.
+`dotProduct` という関数です。
 
 ```js
 assert(typeof dotProduct == 'function');
 ```
 
-`dotProduct([1, 3, -5], [4, -2, -1])` should return a number.
+`dotProduct([1, 3, -5], [4, -2, -1])` は数字を返します。
 
 ```js
 assert(typeof dotProduct([1, 3, -5], [4, -2, -1]) == 'number');
 ```
 
-`dotProduct([1, 3, -5], [4, -2, -1])` should return `3`.
+`dotProduct([1, 3, -5], [4, -2, -1])` は `3` を返します。
 
 ```js
 assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3);
 ```
 
-`dotProduct([1, 2, 3, 4, 5], [6, 7, 8, 9, 10])` should return `130`.
+`dotProduct([1, 2, 3, 4, 5], [6, 7, 8, 9, 10])` は `130` を返します。
 
 ```js
 assert.equal(dotProduct([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]), 130);
 ```
 
-`dotProduct([5, 4, 3, 2], [7, 8, 9, 6])` should return `106`.
+`dotProduct([5, 4, 3, 2], [7, 8, 9, 6])` は `106` を返します。
 
 ```js
 assert.equal(dotProduct([5, 4, 3, 2], [7, 8, 9, 6]), 106);
 ```
 
-`dotProduct([-5, 4, -3, 2], [-7, -8, 9, -6])` should return `-36`.
+`dotProduct([-5, 4, -3, 2], [-7, -8, 9, -6])` は `-36` を返します。
 
 ```js
 assert.equal(dotProduct([-5, 4, -3, 2], [-7, -8, 9, -6]), -36);
 ```
 
-`dotProduct([17, 27, 34, 43, 15], [62, 73, 48, 95, 110])` should return `10392`.
+`dotProduct([17, 27, 34, 43, 15], [62, 73, 48, 95, 110])` は `10392` を返します。
 
 ```js
 assert.equal(dotProduct([17, 27, 34, 43, 15], [62, 73, 48, 95, 110]), 10392);

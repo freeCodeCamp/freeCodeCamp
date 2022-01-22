@@ -1,6 +1,6 @@
 ---
 id: 5900f4d01000cf542c50ffe2
-title: 'Problem 355: Maximal coprime subset'
+title: '問題 355: 最大の互いに素な部分集合'
 challengeType: 5
 forumTopicId: 302015
 dashedName: problem-355-maximal-coprime-subset
@@ -8,15 +8,15 @@ dashedName: problem-355-maximal-coprime-subset
 
 # --description--
 
-Define $Co(n)$ to be the maximal possible sum of a set of mutually co-prime elements from $\\{1, 2, \ldots, n\\}$. For example $Co(10)$ is 30 and hits that maximum on the subset $\\{1, 5, 7, 8, 9\\}$.
+$\\{1, 2, \ldots, n\\}$ の要素のうち互いに素な要素の集合の最大和を、$Co(n)$ と定義します。 例えば、 $Co(10)$ は 30 であり、最大の部分集合は $\\{1, 5, 7, 8, 9\\}$ になります。
 
-You are given that $Co(30) = 193$ and $Co(100) = 1356$.
+$Co(30) = 193$ と $Co(100) = 1356$ が与えられます。
 
-Find $Co(200\\,000)$.
+$Co(200\\,000)$ を求めなさい。
 
 # --hints--
 
-`maximalCoprimeSubset()` should return `1726545007`.
+`maximalCoprimeSubset()` は `1726545007` を返す必要があります。
 
 ```js
 assert.strictEqual(maximalCoprimeSubset(), 1726545007);

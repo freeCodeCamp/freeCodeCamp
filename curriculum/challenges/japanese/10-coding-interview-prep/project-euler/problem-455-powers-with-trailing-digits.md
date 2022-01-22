@@ -1,6 +1,6 @@
 ---
 id: 5900f5331000cf542c510046
-title: 'Problem 455: Powers With Trailing Digits'
+title: '問題 455: 累乗の下位桁'
 challengeType: 5
 forumTopicId: 302129
 dashedName: problem-455-powers-with-trailing-digits
@@ -8,17 +8,17 @@ dashedName: problem-455-powers-with-trailing-digits
 
 # --description--
 
-Let $f(n)$ be the largest positive integer $x$ less than ${10}^9$ such that the last 9 digits of $n^x$ form the number $x$ (including leading zeros), or zero if no such integer exists.
+$n^x$ の下位 9 桁が $x$ (先行ゼロを含む) になるような ${10}^9$ 未満の最大の正の整数 $x$ を $f(n)$ とし、そのような整数が存在しないときはその関数の結果を 0 とします。
 
-For example:
+次に例を示します。
 
 $$\begin{align} & f(4) = 411\\,728\\,896 (4^{411\\,728\\,896} = ...490\underline{411728896}) \\\\ & f(10) = 0 \\\\ & f(157) = 743\\,757 (157^{743\\,757} = ...567\underline{000743757}) \\\\ & Σf(n), 2 ≤ n ≤ 103 = 442\\,530\\,011\\,399 \end{align}$$
 
-Find $\sum f(n)$, $2 ≤ n ≤ {10}^6$.
+$2 ≤ n ≤ {10}^6$ のとき、$\sum f(n)$ を求めなさい。
 
 # --hints--
 
-`powersWithTrailingDigits()` should return `450186511399999`.
+`powersWithTrailingDigits()` は `450186511399999` を返す必要があります。
 
 ```js
 assert.strictEqual(powersWithTrailingDigits(), 450186511399999);

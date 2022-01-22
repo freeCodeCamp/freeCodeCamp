@@ -8,33 +8,33 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/zNqgVx>.
+**目標:** こちら <https://codepen.io/freeCodeCamp/full/zNqgVx> と同様の機能を持つ [CodePen.io](https://codepen.io) アプリを構築します。
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
+以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を満たし、すべてのテストがパスするようにしてください。 あなた独自のスタイルを与えてください。
 
-You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+このプロジェクトを完了するために、HTML、JavaScript、CSS を使用することができます。 これまでのレッスンでカバーされた純粋な CSS の練習をするため、純粋な CSS の使用を推奨します。 Bootstrap や SASS を使用しても構いません。 このプロジェクトで追加のテクノロジー (jQuery、React、Angular、Vue など) を使用することは推奨されません。使用する場合は自己責任で使用してください。 React のようなさまざまな技術スタックで作業する機会は他のプロジェクトで得られます。 このプロジェクトで推奨される一連のテクノロジーを使用している場合の不具合報告については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 ハッピーコーディング！
 
-**User Story #1:** My tribute page should have an element with a corresponding `id="main"`, which contains all other elements.
+**ユーザーストーリー #1:** 私のトリビュートページには `id="main"` を持つ要素があり、その中に他のすべての要素が含まれます。
 
-**User Story #2:** I should see an element with a corresponding `id="title"`, which contains a string (i.e. text) that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug").
+**ユーザーストーリー #2:** `id="title"` を持つ要素があり、これにはトリビュートページで取り上げる対象者 (例: "Dr. Norman Borlaug") を説明する文字列 (すなわちテキスト) が記載されています。
 
-**User Story #3:** I should see either a `figure` or a `div` element with a corresponding `id="img-div"`.
+**ユーザーストーリー #3:** `id="img-div"` を持つ、`figure` または `div` 要素のどちらかが表示される必要があります。
 
-**User Story #4:** Within the `img-div` element, I should see an `img` element with a corresponding `id="image"`.
+**ユーザーストーリー #4:** `img-div` 要素内に、`id="image"` を持つ `img` 要素があります。
 
-**User Story #5:** Within the `img-div` element, I should see an element with a corresponding `id="img-caption"` that contains textual content describing the image shown in `img-div`.
+**ユーザーストーリー #5:** `img-div` 要素内には、`id="img-caption"` を持つ要素があり、`img-div` 内に表示されている画像を説明するテキストコンテンツを含みます。
 
-**User Story #6:** I should see an element with a corresponding `id="tribute-info"`, which contains textual content describing the subject of the tribute page.
+**ユーザーストーリー #6:** `id="tribute-info"` を持つ要素があり、これにはトリビュートページの対象者を説明するテキストコンテンツが含まれます。
 
-**User Story #7:** I should see an `a` element with a corresponding `id="tribute-link"`, which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of `target` and set it to `_blank` in order for your link to open in a new tab (i.e. `target="_blank"`).
+**ユーザーストーリー #7:** `id="tribute-link"` を持つ `a` 要素があり、これはトリビュートページの対象者に関する追加情報を含む外部サイトへのリンクです。 ヒント: リンクを新しいタブで開くためには、要素に `target` 属性を与え、その値に `_blank` を設定しなければなりません (つまり `target="_blank"` となります)。
 
-**User Story #8:** The `img` element should responsively resize, relative to the width of its parent element, without exceeding its original size.
+**ユーザーストーリー #8:** `img` 要素は、オリジナルのサイズを超えることなく、親要素の幅に応じてレスポンシブにサイズが変更される必要があります。
 
-**User Story #9:** The `img` element should be centered within its parent element.
+**ユーザーストーリー #9:** `img` 要素は、その親要素内で中央に配置される必要があります。
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
+<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>この CodePen テンプレートを使用して</a> あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen を作成することができます。 または、この CDN リンクを使用して任意の環境でテストを実行できます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+完了したら、すべてのテストがパスする状態の作業プロジェクトの URL を送信します。
 
 # --solutions--
 

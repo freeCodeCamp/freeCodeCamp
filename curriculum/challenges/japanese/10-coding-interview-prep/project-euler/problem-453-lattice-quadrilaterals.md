@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510044
-title: 'Problem 453: Lattice Quadrilaterals'
+title: '問題 453: 格子四角形'
 challengeType: 5
 forumTopicId: 302126
 dashedName: problem-453-lattice-quadrilaterals
@@ -8,21 +8,21 @@ dashedName: problem-453-lattice-quadrilaterals
 
 # --description--
 
-A simple quadrilateral is a polygon that has four distinct vertices, has no straight angles and does not self-intersect.
+単純四角形とは、4 つの相異なる頂点を持ち、平角を持たず、かつ自己交差していない多角形のことです。
 
-Let $Q(m, n)$ be the number of simple quadrilaterals whose vertices are lattice points with coordinates ($x$, $y$) satisfying $0 ≤ x ≤ m$ and $0 ≤ y ≤ n$.
+$0 ≤ x ≤ m$, $0 ≤ y ≤ m$ を満たす座標 ($x$, $y$) の格子点を頂点とする単純四角形の個数を、$Q(m, n)$ とします。
 
-For example, $Q(2, 2) = 94$ as can be seen below:
+例えば、下図のとおり $Q(2, 2) = 94$ です。
 
-<img class="img-responsive center-block" alt="94 quadrilaterals whose vertices are lattice points with coordinates (x, y) satiffying 0 &le; x &le; m and 0 &le; y &le; n" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="0 &le; x &le; m, 0 &le; y &le; n を満たす座標 ($x$, $y$) の格子点を頂点とする 94 個の四角形" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
 
-It can also be verified that $Q(3, 7) = 39\\,590$, $Q(12, 3) = 309\\,000$ and $Q(123, 45) = 70\\,542\\,215\\,894\\,646$.
+$Q(3, 7) = 39\\,590$, $Q(12, 3) = 309\\,000$, $Q(123, 45) = 70\\,542\\,215\\,894\\,646$ であることも確認できます。
 
-Find $Q(12\\,345, 6\\,789)\bmod 135\\,707\\,531$.
+$Q(12\\,345, 6\\,789)\bmod 135\\,707\\,531$ を求めなさい。
 
 # --hints--
 
-`latticeQuadrilaterals()` should return `104354107`.
+`latticeQuadrilaterals()` は `104354107` を返す必要があります。
 
 ```js
 assert.strictEqual(latticeQuadrilaterals(), 104354107);

@@ -1,6 +1,6 @@
 ---
 id: 5900f49f1000cf542c50ffb1
-title: 'Problem 306: Paper-strip Game'
+title: '問題 306: 短冊ゲーム'
 challengeType: 5
 forumTopicId: 301960
 dashedName: problem-306-paper-strip-game
@@ -8,27 +8,27 @@ dashedName: problem-306-paper-strip-game
 
 # --description--
 
-The following game is a classic example of Combinatorial Game Theory:
+次のゲームは、組み合わせゲーム理論の古典的な例です。
 
-Two players start with a strip of $n$ white squares and they take alternate turns. On each turn, a player picks two contiguous white squares and paints them black. The first player who cannot make a move loses.
+一列に並べた $n$ 個の白いマスが最初にあり、2 人のプレイヤーが交互にプレイしていきます。 それぞれのターンで、プレイヤーは連続する白いマスを 2 つ選び、それらを黒く塗ります。 先にどこも塗れなくなったプレイヤーの負けです。
 
-- $n = 1$: No valid moves, so the first player loses automatically.
-- $n = 2$: Only one valid move, after which the second player loses.
-- $n = 3$: Two valid moves, but both leave a situation where the second player loses.
-- $n = 4$: There are three valid moves for the first player; who is able to win the game by painting the two middle squares.
-- $n = 5$: Four valid moves for the first player (shown below in red); but no matter what the player does, the second player (blue) wins.
+- $n = 1$: 有効な塗り方がないため、先手が自動的に負けます。
+- $n = 2$: 有効な塗り方は 1 通りのみです。その後、後手が負けます。
+- $n = 3$: 有効な塗り方が 2 通りありますが、いずれでも後手が負けます。
+- $n = 4$: 先手には 3 通りの有効な塗り方があります。中央の 2 マスを塗れば勝てます。
+- $n = 5$: 先手には有効な塗り方が 4 通りありますが (下図の赤色)、いずれでも後手 (青) が勝ちます。
 
-<img class="img-responsive center-block" alt="valid starting moves for strip with 5 squares" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="5 マスの短冊において有効な最初の塗り方" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
 
-So, for $1 ≤ n ≤ 5$, there are 3 values of $n$ for which the first player can force a win.
+したがって、$1 ≤ n ≤ 5$ のとき、先手が必ず勝てるような $n$ の値は 3 つあります。
 
-Similarly, for $1 ≤ n ≤ 50$, there are 40 values of $n$ for which the first player can force a win.
+同様に、$1 ≤ n ≤ 50$ のとき、先手が必ず勝てるような $n$ の値は 40 個あります。
 
-For $1 ≤ n ≤ 1\\,000\\,000$, how many values of $n$ are there for which the first player can force a win?
+$1 ≤ n ≤ 1\\,000\\,000$ のとき、先手が必ず勝てるような $n$ の値はいつくありますか。
 
 # --hints--
 
-`paperStripGame()` should return `852938`.
+`paperStripGame()` は `852938` を返す必要があります。
 
 ```js
 assert.strictEqual(paperStripGame(), 852938);

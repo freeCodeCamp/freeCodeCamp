@@ -1,6 +1,6 @@
 ---
 id: 5900f49a1000cf542c50ffac
-title: 'Problem 300: Protein folding'
+title: '問題 300: タンパク質の折り畳み'
 challengeType: 5
 forumTopicId: 301954
 dashedName: problem-300-protein-folding
@@ -8,29 +8,29 @@ dashedName: problem-300-protein-folding
 
 # --description--
 
-In a very simplified form, we can consider proteins as strings consisting of hydrophobic (H) and polar (P) elements, e.g. HHPPHHHPHHPH.
+非常に単純化すれば、タンパク質は疎水性要素 (H) と極性要素 (P) で構成される文字列と考えることができます。例えば、HHPPHHHPHHPH です。
 
-For this problem, the orientation of a protein is important; e.g. HPP is considered distinct from PPH. Thus, there are $2^n$ distinct proteins consisting of $n$ elements.
+この問題ではタンパク質の方向が重要であり、例えば HPP は PPH と区別されます。 したがって、$n$ 個の要素で構成される相異なるタンパク質は $2^n$ 種類存在します。
 
-When one encounters these strings in nature, they are always folded in such a way that the number of H-H contact points is as large as possible, since this is energetically advantageous.
+自然界では、これらの文字列は常に H-H 接点の数ができるだけ多くなるように折り畳まれています。その方がエネルギー面で有利だからです。
 
-As a result, the H-elements tend to accumulate in the inner part, with the P-elements on the outside.
+その結果、H 要素は内側に蓄積し、P 要素は外側に蓄積する傾向があります。
 
-Natural proteins are folded in three dimensions of course, but we will only consider protein folding in <u>two dimensions</u>.
+自然のタンパク質はもちろん三次元で折り畳まれていますが、ここでは<u>二次元</u>で折り畳まれるタンパク質のみを考えます。
 
-The figure below shows two possible ways that our example protein could be folded (H-H contact points are shown with red dots).
+下図は、上の例のタンパク質を折り畳む 2 通りの方法を示しています (赤い点は H-H 接点)。
 
-<img class="img-responsive center-block" alt="two possible ways to fold example protein" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="タンパク質 (例) を折り畳む 2 通りの方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px;" />
 
-The folding on the left has only six H-H contact points, thus it would never occur naturally. On the other hand, the folding on the right has nine H-H contact points, which is optimal for this string.
+左側の折り畳みは H-H 接点が 6つしかないため、自然にこの形になることはあり得ないでしょう。 一方、右側の折り畳みは H-H 接点が 9 つあり、この文字列には最適です。
 
-Assuming that H and P elements are equally likely to occur in any position along the string, the average number of H-H contact points in an optimal folding of a random protein string of length 8 turns out to be $\frac{850}{2^8} = 3.3203125$.
+文字列のいずれの位置にも H 要素と P 要素が同じ確率で存在すると仮定すると、長さ 8 の無作為なタンパク質文字列の最適な折り畳みにおいて、H-H 接点の平均数は $\frac{850}{2^8} = 3.3203125$ になります。
 
-What is the average number of H-H contact points in an optimal folding of a random protein string of length 15? Give your answer using as many decimal places as necessary for an exact result.
+長さ 15 の無作為なタンパク質文字列の最適な折り畳みにおいて、H-H 接点の平均数はいくつですか。 回答は、厳密な結果に対して適宜小数位を使用すること。
 
 # --hints--
 
-`proteinFolding()` should return `8.0540771484375`.
+`proteinFolding()` は `8.0540771484375` を返す必要があります。
 
 ```js
 assert.strictEqual(proteinFolding(), 8.0540771484375);

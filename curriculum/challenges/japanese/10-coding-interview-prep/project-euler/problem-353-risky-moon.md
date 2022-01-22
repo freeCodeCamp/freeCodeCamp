@@ -1,6 +1,6 @@
 ---
 id: 5900f4cd1000cf542c50ffe0
-title: 'Problem 353: Risky moon'
+title: '問題 353: 危険な月'
 challengeType: 5
 forumTopicId: 302013
 dashedName: problem-353-risky-moon
@@ -8,27 +8,27 @@ dashedName: problem-353-risky-moon
 
 # --description--
 
-A moon could be described by the sphere $C(r)$ with centre (0, 0, 0) and radius $r$.
+月は、中心 (0, 0, 0)、半径 $r$ の球 $C(r)$ で表すことができます。
 
-There are stations on the moon at the points on the surface of $C(r)$ with integer coordinates. The station at (0, 0, $r$) is called North Pole station, the station at (0, 0, $-r$) is called South Pole station.
+$C(r)$ の月面の整数座標地点に駅があります。 (0, 0, $r$) にある駅は北極駅、(0, 0, $-r$) にある駅は南極駅と呼ばれます。
 
-All stations are connected with each other via the shortest road on the great arc through the stations. A journey between two stations is risky. If $d$ is the length of the road between two stations, $\{\left(\frac{d}{πr}\right)}^2$ is a measure for the risk of the journey (let us call it the risk of the road). If the journey includes more than two stations, the risk of the journey is the sum of risks of the used roads.
+すべての駅は、それらの駅を通る大円弧上の最短道路で互いに連絡しています。 2 駅間の旅は危険です。 2 駅間の道路の長さが $d$ の場合、旅のリスクの大きさは $\{\left(\frac{d}{πr}\right)}^2$ で示されます (これを道路のリスクと呼びます)。 旅に 2 つ以上の駅が含まれている場合、使用された道路のリスクの和がその旅のリスクとなります。
 
-A direct journey from the North Pole station to the South Pole station has the length $πr$ and risk 1. The journey from the North Pole station to the South Pole station via (0, $r$, 0) has the same length, but a smaller risk:
+北極駅から南極駅へ直行する際の移動距離は $πr$、リスクは 1 です。 (0, $r$, 0) を経由して北極駅から南極駅へ移動すると、移動距離は同じですが、次のようにリスクは小さくなります。
 
 $${\left(\frac{\frac{1}{2}πr}{πr}\right)}^2+{\left(\frac{\frac{1}{2}πr}{πr}\right)}^2 = 0.5$$
 
-The minimal risk of a journey from the North Pole station to the South Pole station on $C(r)$ is $M(r)$.
+$C(r)$ 上の北極駅から南極駅まで移動する際の最小リスクは $M(r)$ です。
 
-You are given that $M(7) = 0.178\\,494\\,399\\,8$ rounded to 10 digits behind the decimal point.
+$M(7) = 0.178\\,494\\,399\\,8$ (小数第 10 位に四捨五入) が与えられます。
 
-Find $\displaystyle\sum_{n = 1}^{15} M(2^n - 1)$.
+$\displaystyle\sum_{n = 1}^{15} M(2^n - 1)$ を求めなさい。
 
-Give your answer rounded to 10 digits behind the decimal point in the form a.bcdefghijk.
+回答は、四捨五入して小数第 10 位まで求め、a.bcdefghijk の形式にすること。
 
 # --hints--
 
-`riskyMoon()` should return `1.2759860331`.
+`riskyMoon()` は `1.2759860331` を返す必要があります。
 
 ```js
 assert.strictEqual(riskyMoon(), 1.2759860331);

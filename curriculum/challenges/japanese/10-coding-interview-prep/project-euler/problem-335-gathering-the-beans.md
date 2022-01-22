@@ -1,6 +1,6 @@
 ---
 id: 5900f4bd1000cf542c50ffce
-title: 'Problem 335: Gathering the beans'
+title: '問題 335: 豆を集める'
 challengeType: 5
 forumTopicId: 301993
 dashedName: problem-335-gathering-the-beans
@@ -8,19 +8,19 @@ dashedName: problem-335-gathering-the-beans
 
 # --description--
 
-Whenever Peter feels bored, he places some bowls, containing one bean each, in a circle. After this, he takes all the beans out of a certain bowl and drops them one by one in the bowls going clockwise. He repeats this, starting from the bowl he dropped the last bean in, until the initial situation appears again. For example with 5 bowls he acts as follows:
+ピーターは退屈に感じるたびに、ボウルをいくつか置き、それぞれに 1 つ豆を入れて円形に並べます。 この後、ある 1 つのボウルからすべての豆を取り出し、右回りに 1つずつボウルに落としていきます。 最後の豆を落としたボウルから再び同じことをします。これを、最初の状態に戻るまで繰り返します。 例えば 5 つのボウルでは次のようにします。
 
-<img class="img-responsive center-block" alt="animation of moving beans in 5 bowls" src="https://cdn.freecodecamp.org/curriculum/project-euler/gathering-the-beans.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="5 つのボウルに豆を動かすアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/gathering-the-beans.gif" style="background-color: white; padding: 10px;" />
 
-So with 5 bowls it takes Peter 15 moves to return to the initial situation.
+したがって、ボウルが 5 つの場合、最初の状況に戻るまでに豆を 15 回動かします。
 
-Let $M(x)$ represent the number of moves required to return to the initial situation, starting with $x$ bowls. Thus, $M(5) = 15$. It can also be verified that $M(100) = 10920$.
+$x$ 個のボウルで始めて最初の状況に戻るまでに必要な移動回数を、$M(x)$ とします。 したがって、$M(5) = 15$ です。 $M(100) = 10920$ であることも確認できます。
 
-Find $\displaystyle\sum_{k = 0}^{{10}^{18}} M(2^k + 1)$. Give your answer modulo $7^9$.
+$\displaystyle\sum_{k = 0}^{{10}^{18}} M(2^k + 1)$ を求めなさい。 mod $7^9$ で答えること。
 
 # --hints--
 
-`gatheringTheBeans()` should return `5032316`.
+`gatheringTheBeans()` は `5032316` を返す必要があります。
 
 ```js
 assert.strictEqual(gatheringTheBeans(), 5032316);

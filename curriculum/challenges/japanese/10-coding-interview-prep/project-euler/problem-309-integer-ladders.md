@@ -1,6 +1,6 @@
 ---
 id: 5900f4a11000cf542c50ffb4
-title: 'Problem 309: Integer Ladders'
+title: '問題 309: 整数のはしご'
 challengeType: 5
 forumTopicId: 301963
 dashedName: problem-309-integer-ladders
@@ -8,19 +8,19 @@ dashedName: problem-309-integer-ladders
 
 # --description--
 
-In the classic "Crossing Ladders" problem, we are given the lengths $x$ and $y$ of two ladders resting on the opposite walls of a narrow, level street. We are also given the height $h$ above the street where the two ladders cross and we are asked to find the width of the street ($w$).
+古典的な「交差するはしご」問題では、それぞれの長さが $x$ と $y$ のはしご 2 本が、狭く平らな道の両壁に 1 本ずつ立て掛けられています。 また、2 本のはしごが交差する個所の、路面からの高さ $h$ が与えられ、道幅 ($w$) を導くよう求められます。
 
-<img class="img-responsive center-block" alt="ladders x and y, crossing at the height h, and resting on opposite walls of the street of width w" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="はしご x と y が高さ h で交差し、幅 w の道の両壁に立て掛けられている" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px;" />
 
-Here, we are only concerned with instances where all four variables are positive integers. For example, if $x = 70$, $y = 119$ and $h = 30$, we can calculate that $w = 56$.
+ここでは、4 つの変数がすべて正の整数であるケースのみを扱います。 例えば、$x = 70$, $y = 119$, $h = 30$ の場合、$w = 56$ と計算できます。
 
-In fact, for integer values $x$, $y$, $h$ and $0 &lt; x &lt; y &lt; 200$, there are only five triplets ($x$, $y$, $h$) producing integer solutions for $w$: (70, 119, 30), (74, 182, 21), (87, 105, 35), (100, 116, 35) and (119, 175, 40).
+実は、整数値 $x$, $y$, $h$ および $0 &lt; x &lt; y &lt; 200$ に対し、$w$ の整数解となる三つ組数 ($x$, $y$, $h$) は、(70, 119, 30), (74, 182, 21), (87, 105, 35), (100, 116, 35), (119, 175, 40) の 5 つだけです。
 
-For integer values $x$, $y$, $h$ and $0 &lt; x &lt; y &lt; 1\\,000\\,000$, how many triplets ($x$, $y$, $h$) produce integer solutions for $w$?
+整数値 $x$, $y$, $h$ および $0 &lt; x &lt; y &lt; 1\\,000\\,000$ に対し、$w$ が整数解となる三つ組数 ($x$, $y$, $h$) はいくつありますか。
 
 # --hints--
 
-`integerLadders()` should return `210139`.
+`integerLadders()` は `210139` を返す必要があります。
 
 ```js
 assert.strictEqual(integerLadders(), 210139);

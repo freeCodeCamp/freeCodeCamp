@@ -1,6 +1,6 @@
 ---
 id: 5900f4841000cf542c50ff97
-title: 'Problem 280: Ant and seeds'
+title: '問題 280: アリと種'
 challengeType: 5
 forumTopicId: 301931
 dashedName: problem-280-ant-and-seeds
@@ -8,15 +8,15 @@ dashedName: problem-280-ant-and-seeds
 
 # --description--
 
-A laborious ant walks randomly on a 5x5 grid. The walk starts from the central square. At each step, the ant moves to an adjacent square at random, without leaving the grid; thus there are 2, 3 or 4 possible moves at each step depending on the ant's position.
+働き者のアリが 5x5 の格子上を不規則に歩きます。 中央のマスから出発します。 各ステップで、アリは格子を離れることなく、不規則に隣のマスに移動します。したがって、アリの位置に応じて各ステップで 2 通り、3 通り、または 4 通りの動き方があります。
 
-At the start of the walk, a seed is placed on each square of the lower row. When the ant isn't carrying a seed and reaches a square of the lower row containing a seed, it will start to carry the seed. The ant will drop the seed on the first empty square of the upper row it eventually reaches.
+アリが歩き始めると、より下の列の各マスに種が置かれます。 種の運搬中でないアリは、より下の列の、種のあるマスに達すると種を運び始めます。 そして、最終的に到達する、より上の列にある最初の空のマスに種を下ろします。
 
-What's the expected number of steps until all seeds have been dropped in the top row? Give your answer rounded to 6 decimal places.
+すべての種が最上列に下ろされるまでの期待ステップ数を求めなさい。 回答は、四捨五入して小数第 6 位まで示すこと。
 
 # --hints--
 
-`antAndSeeds()` should return `430.088247`.
+`antAndSeeds()` は `430.088247` を返す必要があります。
 
 ```js
 assert.strictEqual(antAndSeeds(), 430.088247);

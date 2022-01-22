@@ -12,9 +12,9 @@ dashedName: build-the-game-of-life
 
 以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を実装してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
 
-**ユーザーストーリー:** 最初にゲームを訪れたときに、ボードをランダムに生成してから、自由に動き始めます。
+**ユーザーストーリー:** 最初にゲームを訪れたときから、ボードがランダムに生成され、自由に動き始めます。
 
-**ユーザーストーリー:** ボードを開始または停止できます。
+**ユーザーストーリー:** ボードの動作を開始または停止できます。
 
 **ユーザーストーリー:** ボードを設定することができます。
 
@@ -24,9 +24,9 @@ dashedName: build-the-game-of-life
 
 **ユーザーストーリー:** ボードが変化するごとに、どれだけの世代が過ぎ去ったかを見ることができます。
 
-**ヒント:** John Conway 自身による Conway のゲーム・オブ・ライフの説明はこちらです: <https://www.youtube.com/watch?v=E8kUJL04ELA>
+**ヒント:** John Conway 自身によるライフゲームの説明はこちらです: <https://www.youtube.com/watch?v=E8kUJL04ELA>
 
-**ヒント:** 参照のために、ルールを含む Conway のゲーム・オブ・ライフの概要はこちらです: [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+**ヒント:** ルールを含めたライフゲームの概要についてはこちらを参照してください: [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
 

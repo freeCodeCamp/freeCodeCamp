@@ -1,6 +1,6 @@
 ---
 id: 5900f5041000cf542c510016
-title: 'Problem 407: Idempotents'
+title: '冪等元'
 challengeType: 5
 forumTopicId: 302075
 dashedName: problem-407-idempotents
@@ -8,17 +8,17 @@ dashedName: problem-407-idempotents
 
 # --description--
 
-If we calculate $a^2\bmod 6$ for $0 ≤ a ≤ 5$ we get: 0, 1, 4, 3, 4, 1.
+$0 ≤ a ≤ 5$ のとき $a^2\bmod 6$ を求めると、0, 1, 4, 3, 4, 1 になります。
 
-The largest value of a such that $a^2 ≡ a\bmod 6$ is $4$.
+$a^2 ≡ a\bmod 6$ となる a の最大値は $4$ です。
 
-Let's call $M(n)$ the largest value of $a &lt; n$ such that $a^2 ≡ a (\text{mod } n)$. So $M(6) = 4$.
+$a^2 ≡ a (\text{mod } n)$ となる $a &lt; n$ の最大値を $M(n)$ とします。 したがって、$M(6) = 4$ です。
 
-Find $\sum M(n)$ for $1 ≤ n ≤ {10}^7$.
+$1 ≤ n ≤ {10}^7$ のとき、$\sum M(n)$ を求めなさい。
 
 # --hints--
 
-`idempotents()` should return `39782849136421`.
+`idempotents()` は `39782849136421` を返す必要があります。
 
 ```js
 assert.strictEqual(idempotents(), 39782849136421);

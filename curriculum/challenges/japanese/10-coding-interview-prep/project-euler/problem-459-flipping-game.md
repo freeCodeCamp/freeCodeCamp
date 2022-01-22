@@ -1,6 +1,6 @@
 ---
 id: 5900f5371000cf542c51004a
-title: 'Problem 459: Flipping game'
+title: '問題 459: 裏返しゲーム'
 challengeType: 5
 forumTopicId: 302133
 dashedName: problem-459-flipping-game
@@ -8,35 +8,35 @@ dashedName: problem-459-flipping-game
 
 # --description--
 
-The flipping game is a two player game played on a $N$ by $N$ square board.
+裏返しゲームは、$N$ × $N$ 個のマスがある盤を使って 2 人で行うゲームです。
 
-Each square contains a disk with one side white and one side black.
+各マスには、白と黒の面を持つ円盤が置いてあります。
 
-The game starts with all disks showing their white side.
+ゲーム開始時は、すべての円盤の白い面が上になっています。
 
-A turn consists of flipping all disks in a rectangle with the following properties:
+各ターンで、以下の性質を持つ長方形の範囲内にあるすべての円盤を裏返します。
 
-- the upper right corner of the rectangle contains a white disk
-- the rectangle width is a perfect square (1, 4, 9, 16, ...)
-- the rectangle height is a triangular number (1, 3, 6, 10, ...)
+- 長方形の右上隅に白い円盤がある
+- 長方形の幅が完全正方数 (1, 4, 9, 16, ...) である
+- 長方形の高さが三角数 (1, 3, 6, 10, ...) である
 
-<img class="img-responsive center-block" alt="flipping all disks in a 4x3 rectangle on a 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="5x5 盤上の 4x3 の長方形の範囲内にあるすべての円盤を裏返す" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px;" />
 
-Players alternate turns. A player wins by turning the grid all black.
+プレイヤーは交互に手を打ちます。 すべてのマスを黒にしたプレイヤーの勝ちです。
 
-Let $W(N)$ be the number of winning moves for the first player on a $N$ by $N$ board with all disks white, assuming perfect play.
+すべての円盤が白である $N$ x $N$ 個のマスから始めて完璧なプレイをすると仮定して、先手必勝の手の数を $W(N)$ とします。
 
-$W(1) = 1$, $W(2) = 0$, $W(5) = 8$ and $W({10}^2) = 31\\,395$.
+$W(1) = 1$, $W(2) = 0$, $W(5) = 8$, $W({10}^2) = 31\\,395$ となります。
 
-For $N = 5$, the first player's eight winning first moves are:
+$N = 5$ のとき、先手必勝の第 1 手は次の 8 つです。
 
-<img class="img-responsive center-block" alt="eight winning first moves for N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="先手必勝の第 1 手は 8 つ (N = 5)" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;" />
 
-Find $W({10}^6)$.
+$W({10}^6)$ を求めなさい。
 
 # --hints--
 
-`flippingGame()` should return `3996390106631`.
+`flippingGame()` は `3996390106631` を返す必要があります。
 
 ```js
 assert.strictEqual(flippingGame(), 3996390106631);

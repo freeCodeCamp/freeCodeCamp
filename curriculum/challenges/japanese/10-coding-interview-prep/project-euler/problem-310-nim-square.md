@@ -1,6 +1,6 @@
 ---
 id: 5900f4a21000cf542c50ffb5
-title: 'Problem 310: Nim Square'
+title: '問題 310: ニム平方数'
 challengeType: 5
 forumTopicId: 301966
 dashedName: problem-310-nim-square
@@ -8,19 +8,19 @@ dashedName: problem-310-nim-square
 
 # --description--
 
-Alice and Bob play the game Nim Square.
+アリスとボブが「ニム平方数」というゲームをします。
 
-Nim Square is just like ordinary three-heap normal play Nim, but the players may only remove a square number of stones from a heap.
+ニム平方数は、3 つの石の山を使う通常のニムと似ていますが、プレイヤーは 1 つの山から平方数個の石を取らなければなりません。
 
-The number of stones in the three heaps is represented by the ordered triple ($a$, $b$, $c$).
+3 つの山に積まれた石の数を、3 つの数の順序組 ($a$ $b$, $c$) として表します。
 
-If $0 ≤ a ≤ b ≤ c ≤ 29$ then the number of losing positions for the next player is 1160.
+$0 ≤ a ≤ b ≤ c ≤ 29$ の場合、次のプレイヤーが負けるポジションは 1160 個あります。
 
-Find the number of losing positions for the next player if $0 ≤ a ≤ b ≤ c ≤ 100\\,000$.
+$0 ≤ a ≤ b ≤ c ≤ 100\\,000$ の場合に次のプレイヤーが負けるポジションの数を求めなさい。
 
 # --hints--
 
-`nimSquare()` should return `2586528661783`.
+`nimSquare()` は `2586528661783` を返す必要があります。
 
 ```js
 assert.strictEqual(nimSquare(), 2586528661783);

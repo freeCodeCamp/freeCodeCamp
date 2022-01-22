@@ -1,6 +1,6 @@
 ---
 id: 5900f4771000cf542c50ff89
-title: 'Problem 266: Pseudo Square Root'
+title: '問題 266: 擬似平方根'
 challengeType: 5
 forumTopicId: 301915
 dashedName: problem-266-pseudo-square-root
@@ -8,19 +8,19 @@ dashedName: problem-266-pseudo-square-root
 
 # --description--
 
-The divisors of 12 are: 1,2,3,4,6 and 12.
+12 の約数は 1, 2, 3, 4, 6, 12 です。
 
-The largest divisor of 12 that does not exceed the square root of 12 is 3.
+12 の平方根を超えない 12 の最大の約数は 3 です。
 
-We shall call the largest divisor of an integer $n$ that does not exceed the square root of $n$ the pseudo square root ($PSR$) of $n$.
+$n$ の平方根を超えないような整数 $n$ の最大の約数を、$n$ の「擬似平方根」 ($PSR$) と呼ぶことにします。
 
-It can be seen that $PSR(3102) = 47$.
+$PSR(3102) = 47$ であることが分かります。
 
-Let $p$ be the product of the primes below 190. Find $PSR(p)\bmod {10}^{16}$.
+$p$ を 190 未満の素数の積とします。 $PSR(p)\bmod {10}^{16} $ を求めなさい。
 
 # --hints--
 
-`pseudoSquareRoot()` should return `1096883702440585`.
+`pseudoSquareRoot()` は `1096883702440585` を返す必要があります。
 
 ```js
 assert.strictEqual(pseudoSquareRoot(), 1096883702440585);

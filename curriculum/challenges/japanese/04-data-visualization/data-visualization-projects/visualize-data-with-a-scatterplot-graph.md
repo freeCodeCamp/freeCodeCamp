@@ -1,6 +1,6 @@
 ---
 id: bd7178d8c242eddfaeb5bd13
-title: Visualize Data with a Scatterplot Graph
+title: 散布図でデータを可視化する
 challengeType: 3
 forumTopicId: 301467
 dashedName: visualize-data-with-a-scatterplot-graph

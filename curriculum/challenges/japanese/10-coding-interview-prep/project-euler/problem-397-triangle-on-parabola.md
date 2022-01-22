@@ -1,6 +1,6 @@
 ---
 id: 5900f4f91000cf542c51000c
-title: 'Problem 397: Triangle on parabola'
+title: '問題 397: 放物線上の三角形'
 challengeType: 5
 forumTopicId: 302062
 dashedName: problem-397-triangle-on-parabola
@@ -8,17 +8,17 @@ dashedName: problem-397-triangle-on-parabola
 
 # --description--
 
-On the parabola $y = \frac{x^2}{k}$, three points $A(a, \frac{a^2}{k})$, $B(b, \frac{b^2}{k})$ and $C(c, \frac{c^2}{k})$ are chosen.
+放物線 $y = \frac{x^2}{k}$ 上の 3 点 $A(a, \frac{a^2}{k})$, $B(b, \frac{b^2}{k})$, $C(c, \frac{c^2}{k})$ を選択します。
 
-Let $F(K, X)$ be the number of the integer quadruplets $(k, a, b, c)$ such that at least one angle of the triangle $ABC$ is 45°, with $1 ≤ k ≤ K$ and $-X ≤ a &lt; b &lt; c ≤ X$.
+$1 ≤ k ≤ K$, $-X ≤ a &lt; b &lt; c ≤ X$ のとき、三角形 $ABC$ の少なくとも 1 つの角度が 45 度であるような整数の四つ組 $(k, a, b, c)$ の個数を $F(K, X)$ とします。
 
-For example, $F(1, 10) = 41$ and $F(10, 100) = 12\\,492$.
+例えば、$F(1, 10) = 41$, $F(10, 100) = 12\\,492$ です。
 
-Find $F({10}^6, {10}^9)$.
+$F({10}^6, {10}^9)$ を求めなさい。
 
 # --hints--
 
-`triangleOnParabola()` should return `141630459461893730`.
+`triangleOnParabola()` は `141630459461893730` を返す必要があります。
 
 ```js
 assert.strictEqual(triangleOnParabola(), 141630459461893730);

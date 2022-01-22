@@ -1,6 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffa
-title: 'Problem 379: Least common multiple count'
+title: '問題 379: 最小公倍数に関する数え上げ'
 challengeType: 5
 forumTopicId: 302041
 dashedName: problem-379-least-common-multiple-count
@@ -8,17 +8,17 @@ dashedName: problem-379-least-common-multiple-count
 
 # --description--
 
-Let $f(n)$ be the number of couples ($x$, $y$) with $x$ and $y$ positive integers, $x ≤ y$ and the least common multiple of $x$ and $y$ equal to $n$.
+$x ≤ y$ を満たし、$x$ と $y$ の最小公倍数が $n$ に等しくなるような正の整数 $x$, $y$ の組 ($x$, $y$) の個数を $f(n)$ とします。
 
-Let $g$ be the summatory function of $f$, i.e.: $g(n) = \sum f(i)$ for $1 ≤ i ≤ n$.
+$1 ≤ i ≤ n$ について、$f$ の総和関数を $g$ とします。すなわち、$g(n) = \sum f(i)$ です。
 
-You are given that $g({10}^6) = 37\\,429\\,395$.
+ここで $g({10}^6) = 37\\,429\\,395$ が与えられます。
 
-Find $g({10}^{12})$.
+$g({10}^{12})$ を求めなさい。
 
 # --hints--
 
-`leastCommonMultipleCount()` should return `132314136838185`.
+`leastCommonMultipleCount()` は `132314136838185` を返す必要があります。
 
 ```js
 assert.strictEqual(leastCommonMultipleCount(), 132314136838185);

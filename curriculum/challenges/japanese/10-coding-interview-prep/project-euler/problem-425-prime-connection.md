@@ -1,6 +1,6 @@
 ---
 id: 5900f5151000cf542c510028
-title: 'Problem 425: Prime connection'
+title: '問題 425: 素数の親類関係'
 challengeType: 5
 forumTopicId: 302095
 dashedName: problem-425-prime-connection
@@ -8,26 +8,26 @@ dashedName: problem-425-prime-connection
 
 # --description--
 
-Two positive numbers $A$ and $B$ are said to be connected (denoted by "$A ↔ B$") if one of these conditions holds:
+2 つの正の整数 $A$ と $B$ が次の条件のいずれか 1 つを満たすとき、それらは親類関係にある ("$A ↔ B$" で表記) ものとします。
 
-1. $A$ and $B$ have the same length and differ in exactly one digit; for example, $123 ↔ 173$.
-2. Adding one digit to the left of $A$ (or $B$) makes $B$ (or $A$); for example, $23 ↔ 223$ and $123 ↔ 23$.
+1. $A$ と $B$ の桁数が同じで、ちょうど 1 桁が異なる。例: 123 ↔ 173
+2. $A$ (または $B$) の左側に 1 桁追加すると $B$ (または $A$) になる。例: 23 ↔ 223 および 123 ↔ 23
 
-We call a prime $P$ a 2's relative if there exists a chain of connected primes between 2 and $P$ and no prime in the chain exceeds $P$.
+親類関係にある素数の連鎖が 2 と 素数 $P$ の間にあり、その連鎖の中に $P$ を超える素数がないとき、$P$ を 2 の親類と呼ぶことにします。
 
-For example, 127 is a 2's relative. One of the possible chains is shown below:
+例えば、127 は 2 の親類です。 考えられる連鎖の一つを次に示します。
 
 $$2 ↔ 3 ↔ 13 ↔ 113 ↔ 103 ↔ 107 ↔ 127$$
 
-However, 11 and 103 are not 2's relatives.
+しかし、11 と 103 は 2 の親類ではありません。
 
-Let $F(N)$ be the sum of the primes $≤ N$ which are not 2's relatives. We can verify that $F({10}^3) = 431$ and $F({10}^4) = 78\\,728$.
+2 の親類ではない N 以下の素数の和を $F(N)$ とします。 $F({10}^3) = 431$, $F({10}^4) = 78\\,728$ であることを確認できます。
 
-Find $F({10}^7)$.
+$F({10}^7)$ を求めなさい。
 
 # --hints--
 
-`primeConnection()` should return `46479497324`.
+`primeConnection()` は `46479497324` を返す必要があります。
 
 ```js
 assert.strictEqual(primeConnection(), 46479497324);

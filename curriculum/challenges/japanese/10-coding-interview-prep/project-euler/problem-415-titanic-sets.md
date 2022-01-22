@@ -1,6 +1,6 @@
 ---
 id: 5900f50c1000cf542c51001e
-title: 'Problem 415: Titanic sets'
+title: '問題 415: タイタニック集合'
 challengeType: 5
 forumTopicId: 302084
 dashedName: problem-415-titanic-sets
@@ -8,19 +8,19 @@ dashedName: problem-415-titanic-sets
 
 # --description--
 
-A set of lattice points $S$ is called a titanic set if there exists a line passing through exactly two points in $S$.
+格子点の集合 $S$ に含まれる格子点のうちちょうど 2 点を通る直線がある場合、その格子点の集合 $S$ をタイタニック集合と呼びます。
 
-An example of a titanic set is $S = \\{(0, 0), (0, 1), (0, 2), (1, 1), (2, 0), (1, 0)\\}$, where the line passing through (0, 1) and (2, 0) does not pass through any other point in $S$.
+タイタニック集合の例を挙げます。$S = \\{(0, 0), (0, 1), (0, 2), (1, 1), (2, 0), (1, 0)\\}$ ここで、(0, 1) と (2, 0) を通る線は $S$ の他のいずれの点も通りません。
 
-On the other hand, the set {(0, 0), (1, 1), (2, 2), (4, 4)} is not a titanic set since the line passing through any two points in the set also passes through the other two.
+一方、集合 {(0, 0), (1, 1), (2, 2), (4, 4)} はタイタニック集合ではありません。なぜなら、集合内のいずれの 2 点を通る線も、さらに他の 2 点を通るからです。
 
-For any positive integer $N$, let $T(N)$ be the number of titanic sets $S$ whose every point ($x$, $y$) satisfies $0 ≤ x$, $y ≤ N$. It can be verified that $T(1) = 11$, $T(2) = 494$, $T(4) = 33\\,554\\,178$, $T(111)\bmod {10}^8 = 13\\,500\\,401$ and $T({10}^5)\bmod {10}^8 = 63\\,259\\,062$.
+任意の正の整数 $N$ について、すべての点 ($x$, $y$) が $0 ≤ x$, $y ≤ N$ を満たすようなタイタニック集合 $S$ の数を $T(N)$ とします。 $T(1) = 11$, $T(2) = 494$, $T(4) = 33\\,554\\,178$, $T(111)\bmod {10}^8 = 13\\,500\\,401$, $T({10}^5)\bmod {10}^8 = 63\\,259\\,062$ であることを確認できます。
 
-Find $T({10}^{11})\bmod {10}^8$.
+$T({10}^{11})\bmod {10}^8$ を求めなさい。
 
 # --hints--
 
-`titanicSets()` should return `55859742`.
+`titanicSets()` は `55859742` を返す必要があります。
 
 ```js
 assert.strictEqual(titanicSets(), 55859742);

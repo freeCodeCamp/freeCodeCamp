@@ -1,6 +1,6 @@
 ---
 id: 5900f4a01000cf542c50ffb2
-title: 'Problem 307: Chip Defects'
+title: '問題 307: IC チップの不良'
 challengeType: 5
 forumTopicId: 301961
 dashedName: problem-307-chip-defects
@@ -8,15 +8,15 @@ dashedName: problem-307-chip-defects
 
 # --description--
 
-$k$ defects are randomly distributed amongst $n$ integrated-circuit chips produced by a factory (any number of defects may be found on a chip and each defect is independent of the other defects).
+工場で製造される IC チップ $n$ 個において $k$ 件の不良が不規則に生じます (1 個のチップに何件でも不良が生じる可能性があり、それぞれの不良は他の不良から独立しています)。
 
-Let $p(k,n)$ represent the probability that there is a chip with at least 3 defects. For instance $p(3,7) ≈ 0.0204081633$.
+少なくとも 3 件の不良を持つチップが存在する確率を、$p(k,n)$ とします。 例えば、$p(3,7) ≈ 0.0204081633$ です。
 
-Find $p(20\\,000, 1\\,000\\,000)$ and give your answer rounded to 10 decimal places in the form 0.abcdefghij
+$p(20\\,000, 1\\,000\\,000)$ を求め、小数第 10 位に四捨五入して 0.abcdefghij の形式弟答えなさい。
 
 # --hints--
 
-`chipDefects()` should return `0.7311720251`.
+`chipDefects()` は `0.7311720251` を返す必要があります。
 
 ```js
 assert.strictEqual(chipDefects(), 0.7311720251);

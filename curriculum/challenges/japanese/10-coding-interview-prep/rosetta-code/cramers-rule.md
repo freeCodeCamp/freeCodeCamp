@@ -1,6 +1,6 @@
 ---
 id: 59713da0a428c1a62d7db430
-title: Cramer's rule
+title: クラメルの公式
 challengeType: 5
 forumTopicId: 302239
 dashedName: cramers-rule
@@ -8,43 +8,43 @@ dashedName: cramers-rule
 
 # --description--
 
-In [linear algebra](https://en.wikipedia.org/wiki/linear algebra "wp: linear algebra"), [Cramer's rule](https://en.wikipedia.org/wiki/Cramer's rule "wp: Cramer's rule") is an explicit formula for the solution of a [system of linear equations](https://en.wikipedia.org/wiki/system of linear equations "wp: system of linear equations") with as many equations as unknowns, valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and of matrices obtained from it by replacing one column by the vector of right hand sides of the equations.
+[線形代数で](https://en.wikipedia.org/wiki/linear algebra "wp: linear algebra")、[クラメルの公式](https://en.wikipedia.org/wiki/Cramer's rule "wp: Cramer's rule") は未知数と同じくらい多くの方程式を含む [線形方程式のシステム](https://en.wikipedia.org/wiki/system of linear equations "wp: system of linear equations") を解くための明示的な公式であり、システムに一意の解があれば常に有効です。 解を、(正方) 係数行列と、列を方程式右辺のベクトルで置き換えて得られる行列の行列式で表します。
 
-Given
+次のように仮定します。
 
 $\\left\\{\\begin{matrix}a_1x + b_1y + c_1z&= {\\color{red}d_1}\\\\a_2x + b_2y + c_2z&= {\\color{red}d_2}\\\\a_3x + b_3y + c_3z&= {\\color{red}d_3}\\end{matrix}\\right.$
 
-which in matrix format is
+行列形式で、上記は以下のように表されます。
 
 $\\begin{bmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{bmatrix}\\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}=\\begin{bmatrix} {\\color{red}d_1} \\\\ {\\color{red}d_2} \\\\ {\\color{red}d_3} \\end{bmatrix}.$
 
-Then the values of $x, y$ and $z$ can be found as follows:
+したがって、$x、y$、および $z$ の値は以下のようになります。
 
 $x = \\frac{\\begin{vmatrix} {\\color{red}d_1} & b_1 & c_1 \\\\ {\\color{red}d_2} & b_2 & c_2 \\\\ {\\color{red}d_3} & b_3 & c_3 \\end{vmatrix} } { \\begin{vmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{vmatrix}}, \\quad y = \\frac {\\begin{vmatrix} a_1 & {\\color{red}d_1} & c_1 \\\\ a_2 & {\\color{red}d_2} & c_2 \\\\ a_3 & {\\color{red}d_3} & c_3 \\end{vmatrix}} {\\begin{vmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{vmatrix}}, \\text{ and }z = \\frac { \\begin{vmatrix} a_1 & b_1 & {\\color{red}d_1} \\\\ a_2 & b_2 & {\\color{red}d_2} \\\\ a_3 & b_3 & {\\color{red}d_3} \\end{vmatrix}} {\\begin{vmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{vmatrix} }.$
 
 # --instructions--
 
-Given the following system of equations:
+以下の連立方程式が与えられます。
 
 $\\begin{cases} 2w-x+5y+z=-3 \\\\ 3w+2x+2y-6z=-32 \\\\ w+3x+3y-z=-47 \\\\ 5w-2x-3y+3z=49 \\\\ \\end{cases}$
 
-solve for $w$, $x$, $y$ and $z$, using Cramer's rule.
+クラメルの公式を使用すると、解は $w$、$x$、$y$ および $z$となります。
 
 # --hints--
 
-`cramersRule` should be a function.
+`cramersRule` という関数です。
 
 ```js
 assert(typeof cramersRule === 'function');
 ```
 
-`cramersRule([[2, -1, 5, 1], [3, 2, 2, -6], [1, 3, 3, -1], [5, -2, -3, 3]], [-3, -32, -47, 49])` should return `[2, -12, -4, 1]`.
+`cramersRule([[2, -1, 5, 1], [3, 2, 2, -6], [1, 3, 3, -1], [5, -2, -3, 3]], [-3, -32, -47, 49])` は `[2, -12, -4, 1]` を返します。
 
 ```js
 assert.deepEqual(cramersRule(matrices[0], freeTerms[0]), answers[0]);
 ```
 
-`cramersRule([[3, 1, 1], [2, 2, 5], [1, -3, -4]], [3, -1, 2])` should return `[1, 1, -1]`.
+`cramersRule([[3, 1, 1], [2, 2, 5], [1, -3, -4]], [3, -1, 2])` は `[1, 1, -1]` を返します。
 
 ```js
 assert.deepEqual(cramersRule(matrices[1], freeTerms[1]), answers[1]);

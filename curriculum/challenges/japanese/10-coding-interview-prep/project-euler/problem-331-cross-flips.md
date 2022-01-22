@@ -1,6 +1,6 @@
 ---
 id: 5900f4b71000cf542c50ffca
-title: 'Problem 331: Cross flips'
+title: '問題 331: 十字めくり'
 challengeType: 5
 forumTopicId: 301989
 dashedName: problem-331-cross-flips
@@ -8,25 +8,25 @@ dashedName: problem-331-cross-flips
 
 # --description--
 
-N×N disks are placed on a square game board. Each disk has a black side and white side.
+N×N 個の円盤が正方形のゲーム盤上に置かれています。 円盤にはそれぞれ黒い面と白い面があります。
 
-At each turn, you may choose a disk and flip all the disks in the same row and the same column as this disk: thus $2 × N - 1$ disks are flipped. The game ends when all disks show their white side. The following example shows a game on a 5×5 board.
+ターンごとに円盤を 1 枚選び、それと同じ横列および同じ縦列にある円盤をすべて裏返します。したがって、$2 × N - 1$ 枚の円盤が裏返されます。 すべての円盤が白い面になるとゲームは終了です。 次の例は、5×5 の盤を使用したゲームです。
 
-<img class="img-responsive center-block" alt="animation showing game on 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="5x5 の盤でのゲームを示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
 
-It can be proven that 3 is the minimal number of turns to finish this game.
+このゲームを終了するための最小ターン数が 3 であることが分かります。
 
-The bottom left disk on the $N×N$ board has coordinates (0, 0); the bottom right disk has coordinates ($N - 1$,$0$) and the top left disk has coordinates ($0$,$N - 1$).
+$N×N$ の盤の左下の円盤は座標 (0,0)、右下の円盤は座標 ($N - 1$,$0$)、そして左上の円盤は座標 ($0$,$N - 1$) です。
 
-Let $C_N$ be the following configuration of a board with $N × N$ disks: A disk at ($x$, $y$) satisfying $N - 1 \le \sqrt{x^2 + y^2} \lt N$, shows its black side; otherwise, it shows its white side. $C_5$ is shown above.
+$N × N$ 枚の円盤を並べた盤について、$N - 1 \le \sqrt{x^2 + y^2} \lt N$ を満たす ($x$, $y$) の円盤は黒い面が見え、それ以外は白い面が見えているような配置を、$C_N$ とします。 上図は $C_5$ です。
 
-Let $T(N)$ be the minimal number of turns to finish a game starting from configuration $C_N$ or 0 if configuration $C_N$ is unsolvable. We have shown that $T(5) = 3$. You are also given that $T(10) = 29$ and $T(1\\,000) = 395\\,253$.
+配置 $C_N$ からゲームを始めて終了するまでの最小ターン数を $T(N)$ とし、配置 $C_N$ に解が存在しない場合は最小ターン数を 0 とします。 $T(5) = 3$ であることは既に示しました。 さらに、$T(10) = 29$ と $T(1\\000) = 395\\,253$ が与えられます。
 
-Find $\displaystyle \sum_{i = 3}^{31} T(2^i - i)$.
+$\displaystyle \sum_{i = 3}^{31} T(2^i - i)$ を求めなさい。
 
 # --hints--
 
-`crossFlips()` should return `467178235146843500`.
+`crossFlips()` は `467178235146843500` を返す必要があります。
 
 ```js
 assert.strictEqual(crossFlips(), 467178235146843500);

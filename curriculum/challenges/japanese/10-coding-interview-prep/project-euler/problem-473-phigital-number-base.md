@@ -1,6 +1,6 @@
 ---
 id: 5900f5461000cf542c510058
-title: 'Problem 473: Phigital number base'
+title: '問題 473: フィジタル進数'
 challengeType: 5
 forumTopicId: 302150
 dashedName: problem-473-phigital-number-base
@@ -8,29 +8,29 @@ dashedName: problem-473-phigital-number-base
 
 # --description--
 
-Let $\varphi$ be the golden ratio: $\varphi = \frac{1+\sqrt{5}}{2}.$
+黄金比 $\varphi = \frac{1+\sqrt{5}}{2}$ を $\varphi$ とします。
 
-Remarkably it is possible to write every positive integer as a sum of powers of $\varphi$ even if we require that every power of $\varphi$ is used at most once in this sum.
+驚くべきことに、すべての正の整数は $\varphi$ の累乗の和として表すことができます。たとえこの和の中で $\varphi$ のすべての累乗をたかだか 1 度しか使えないとしても、それが可能なのです。
 
-Even then this representation is not unique.
+しかも、この表し方は唯一のものではありません。
 
-We can make it unique by requiring that no powers with consecutive exponents are used and that the representation is finite.
+指数が連続するような累乗を使わないこと、および、その表し方が有限であることを条件にすれば、表し方を一意にできます。
 
-E.g:
+例:
 
-$2 = \varphi + \varphi^{-2}$ and $3 = \varphi^{2} + \varphi^{-2}$
+$2 = \varphi + \varphi^{-2}$, $3 = \varphi^{2} + \varphi^{-2}$
 
-To represent this sum of powers of $\varphi$ we use a string of 0's and 1's with a point to indicate where the negative exponents start. We call this the representation in the phigital numberbase.
+$\varphi$ の累乗の和を表すために、0 と 1 からなり、負の指数の開始点が小数点で示されている文字列を使用します。 この表記法を「フィジタル進数」と呼ぶことにします。
 
-So $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ and $14 = 100100.001001_{\varphi}$. The strings representing 1, 2 and 14 in the phigital number base are palindromic, while the string representing 3 is not. (the phigital point is not the middle character).
+したがって、$1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$, $14 = 100100.001001_{\varphi}$ となります。 フィジタル進数の 1, 2, 14 を表す文字列は回文数で、3 を表す文字列は回文数ではありません (フィジタル進数の小数点が中央の文字ではありません)。
 
-The sum of the positive integers not exceeding 1000 whose phigital representation is palindromic is 4345.
+フィジタル進数で表すと回文数になる 1000 以下の正の整数の和は 4345 です。
 
-Find the sum of the positive integers not exceeding $10^{10}$ whose phigital representation is palindromic.
+フィジタル進数で表すと回文数になる $10^{10}$ 以下の正の整数の和を求めなさい。
 
 # --hints--
 
-`phigitalNumberBase()` should return `35856681704365`.
+`phigitalNumberBase()` は `35856681704365` を返す必要があります。
 
 ```js
 assert.strictEqual(phigitalNumberBase(), 35856681704365);

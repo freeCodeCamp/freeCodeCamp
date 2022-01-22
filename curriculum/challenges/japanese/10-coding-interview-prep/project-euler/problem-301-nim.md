@@ -1,6 +1,6 @@
 ---
 id: 5900f4991000cf542c50ffab
-title: 'Problem 301: Nim'
+title: '問題 301: ニム (石取りゲーム)'
 challengeType: 5
 forumTopicId: 301955
 dashedName: problem-301-nim
@@ -8,31 +8,31 @@ dashedName: problem-301-nim
 
 # --description--
 
-Nim is a game played with heaps of stones, where two players take it in turn to remove any number of stones from any heap until no stones remain.
+ニムは石が積まれた山で遊ぶゲームです。2 人のプレイヤーが交互に任意の山から任意の数の石を取り、石がなくなったら終了です。
 
-We'll consider the three-heap normal-play version of Nim, which works as follows:
+ここでは、3 つの山を使う一般的なニムの遊び方を考えます。ルールは次のとおりです。
 
-- At the start of the game there are three heaps of stones.
-- On his turn the player removes any positive number of stones from any single heap.
-- The first player unable to move (because no stones remain) loses.
+- 開始時、石の山が 3 つあります。
+- プレイヤーは自分のターンで、任意の 1 つの山から任意の正の整数個の石を取ります。
+- 先に (もう石がないために) 石を取れなくなったプレイヤーの負けです。
 
-If ($n_1$, $n_2$, $n_3$) indicates a Nim position consisting of heaps of size $n_1$, $n_2$ and $n_3$ then there is a simple function $X(n_1,n_2,n_3)$ — that you may look up or attempt to deduce for yourself — that returns:
+サイズ $n_1$, $n_2$, $n_3$ の山がある場合のニムのポジションを ($n_1$, $n_2$, $n_3$) で表すとします。次の結果を返す単純な関数 $X(n_1,n_2,n_3)$ があります (この関数については自ら調べるか導出すること)。
 
-- zero if, with perfect strategy, the player about to move will eventually lose; or
-- non-zero if, with perfect strategy, the player about to move will eventually win.
+- 0: 完璧な戦略に基づけば、現在のプレイヤー(今、自分の番を迎えている人) が最終的に負ける。
+- 0 以外: 完璧な戦略に基づけば、現在のプレイヤー(今、自分の番を迎えている人) が最終的に勝つ。
 
-For example $X(1, 2, 3) = 0$ because, no matter what the current player does, his opponent can respond with a move that leaves two heaps of equal size, at which point every move by the current player can be mirrored by his opponent until no stones remain; so the current player loses. To illustrate:
+例えば、$X(1, 2, 3) = 0$ です。なぜなら現在のプレイヤーが何をしても、対戦相手は同じサイズの山を 2 つ残すように石を取れるからです。その時点で、以降に現在のプレイヤーがどのように石を取っても対戦相手が同じように取れることが確定し、現在のプレーヤーは負けます。 下に具体例を示します。
 
-- current player moves to (1,2,1)
-- opponent moves to (1,0,1)
-- current player moves to (0,0,1)
-- opponent moves to (0,0,0), and so wins.
+- 現在のプレイヤーがポジションを (1,2,1) にする
+- 対戦相手がポジションを (1,0,1) にする
+- 現在のプレイヤーがポジションを (0,0,1) にする
+- 対戦相手がポジションを (0,0,0) にし、勝つ。
 
-For how many positive integers $n ≤ 2^{30}$ does $X(n, 2n, 3n) = 0$?
+$X(n, 2n, 3n) = 0$ となる正の整数 $n ≤ 2^{30}$ はいくつありますか。
 
 # --hints--
 
-`nim()` should return `2178309`.
+`nim()` は `2178309` を返す必要があります。
 
 ```js
 assert.strictEqual(nim(), 2178309);

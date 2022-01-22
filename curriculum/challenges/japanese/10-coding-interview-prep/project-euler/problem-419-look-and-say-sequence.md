@@ -1,6 +1,6 @@
 ---
 id: 5900f5101000cf542c510022
-title: 'Problem 419: Look and say sequence'
+title: '問題 419: 読み上げ数列'
 challengeType: 5
 forumTopicId: 302088
 dashedName: problem-419-look-and-say-sequence
@@ -8,38 +8,38 @@ dashedName: problem-419-look-and-say-sequence
 
 # --description--
 
-The look and say sequence goes 1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211, ...
+読み上げ数列は、1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211, ... と続きます。
 
-The sequence starts with 1 and all other members are obtained by describing the previous member in terms of consecutive digits.
+この数列は 1 から始まり、他のすべての項は、連続する桁によって前項の数を説明しています。
 
-It helps to do this out loud:
+声に出して読むとすぐ分かります。
 
-1 is 'one one' $→ 11$
+1 は 「1 個の 1」$→ 11$
 
-11 is 'two ones' $→ 21$
+11 は 「2 個の 1」$→ 21 $
 
-21 is 'one two and one one' $→ 1211$
+21 は「1 個の 2 と 1 個の 1」$→ 1211$
 
-1211 is 'one one, one two and two ones' $→ 111221$
+1211 は 「1 個の 1、1 個の 2、2 個の 1」$→ 111221$
 
-111221 is 'three ones, two twos and one one' $→ 312211$
+111221 は 「3 個の 1、2 個の 2、1 個の 1」$→ 312211$
 
-...
+このように続いていきます。
 
-Define $A(n)$, $B(n)$ and $C(n)$ as the number of ones, twos and threes in the $n$'th element of the sequence respectively. One can verify that $A(40) = 31\\,254$, $B(40) = 20\\,259$ and $C(40) = 11\\,625$.
+この数列の第 $n$ 項に含まれる 1, 2, 3 の個数をそれぞれ $A(n)$, $B(n)$, $C(n)$ とします。 $A(40) = 31\\,254$, $B(40) = 20\\,259$, $C(40) = 11\\,625$ であることを確認できます。
 
-Find $A(n)$, $B(n)$ and $C(n)$ for $n = {10}^{12}$. Give your answer modulo $2^{30}$ as a string and separate your values for $A$, $B$ and $C$ by a comma. E.g. for $n = 40$ the answer would be `31254,20259,11625`.
+$n = {10}^{12}$ のとき、$A(n)$, $B(n)$, $C(n)$ を求めなさい。 回答は mod $2^{30}$ の文字列とし、値 $A$, $B$, $C$ をカンマで区切ること。 例: $n = 40$ のとき、回答は `31254,20259,11625` になります。
 
 # --hints--
 
-`lookAndSaySequence()` should return a string.
+`lookAndSaySequence()` は文字列を返す必要があります。
 
 ```js
 assert(typeof lookAndSaySequence() === 'string');
 ```
 
 
-`lookAndSaySequence()` should return the string `998567458,1046245404,43363922`.
+`lookAndSaySequence()` は文字列 `998567458,1046245404,43363922` を返す必要があります。
 
 ```js
 assert.strictEqual(lookAndSaySequence(), '998567458,1046245404,43363922');

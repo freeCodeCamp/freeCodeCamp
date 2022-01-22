@@ -1,6 +1,6 @@
 ---
 id: 5900f4d31000cf542c50ffe6
-title: 'Problem 359: Hilbert''s New Hotel'
+title: '問題 359: ヒルベルトの新しいホテル'
 challengeType: 5
 forumTopicId: 302019
 dashedName: problem-359-hilberts-new-hotel
@@ -8,32 +8,32 @@ dashedName: problem-359-hilberts-new-hotel
 
 # --description--
 
-An infinite number of people (numbered 1, 2, 3, etc.) are lined up to get a room at Hilbert's newest infinite hotel. The hotel contains an infinite number of floors (numbered 1, 2, 3, etc.), and each floor contains an infinite number of rooms (numbered 1, 2, 3, etc.).
+ヒルベルトの最新の無限ホテルで部屋を取ろうと、人々 (1, 2, 3,... の番号付き) が無限に並んでいます。 ホテルには階 (1, 2, 3,... の番号付き) が無限にあり、各階には部屋 (1, 2, 3,... の番号付き) が無限にあります。
 
-Initially the hotel is empty. Hilbert declares a rule on how the $n^{\text{th}}$ person is assigned a room: person $n$ gets the first vacant room in the lowest numbered floor satisfying either of the following:
+当初、ホテルに客はいませんでした。 ヒルベルトは、$n$ 番目の人にどのように部屋を割り当てるかを宣言しました。それによれば、$n$ 番目の人は、以下のいずれかを満たす最下階の最初の空き部屋を取ります。
 
-- the floor is empty
-- the floor is not empty, and if the latest person taking a room in that floor is person $m$, then $m + n$ is a perfect square
+- その階が空いている
+- その階が空いておらず、その階で最後に部屋を取った人が $m$ 番目である場合は $m + n$ が完全平方数になる
 
-Person 1 gets room 1 in floor 1 since floor 1 is empty.
+1 階が空いているので、1 番目の人は 1 階の 1 号室を取ります。
 
-Person 2 does not get room 2 in floor 1 since 1 + 2 = 3 is not a perfect square.
+1 + 2 = 3 は完全平方数ではないので、2 番目の人は 1 階の 2 号室を取れません。
 
-Person 2 instead gets room 1 in floor 2 since floor 2 is empty.
+しかし 2 階が空いているので、2 番目の人は代わりに 2 階の 1 号室を取ります。
 
-Person 3 gets room 2 in floor 1 since 1 + 3 = 4 is a perfect square.
+1 + 3 = 4 は完全平方数なので、3 番目の人は 1 階の 2 号室を取ります。
 
-Eventually, every person in the line gets a room in the hotel.
+最終的には、並んでいたすべての人がホテルの部屋を取れます。
 
-Define $P(f, r)$ to be $n$ if person $n$ occupies room $r$ in floor $f$, and 0 if no person occupies the room. Here are a few examples:
+$P(f, r)$ の結果を次のように定義します: $n$ 番目の人が $f$ 階の $r$ 号室を取る場合は $n$、誰もその部屋を取らない場合は 0 になります。 いくつかの例を次に示します。
 
 $$\begin{align} & P(1, 1) = 1 \\\\ & P(1, 2) = 3 \\\\ & P(2, 1) = 2 \\\\ & P(10, 20) = 440 \\\\ & P(25, 75) = 4863 \\\\ & P(99, 100) = 19454 \end{align}$$
 
-Find the sum of all $P(f, r)$ for all positive $f$ and $r$ such that $f × r = 71\\,328\\,803\\,586\\,048$ and give the last 8 digits as your answer.
+$f × r = 71\\,328\\,803\\,586\\,048$ となるすべての正の数 $f$, $r$ について $P(f, r)$ の総和を求め、下位 8 桁を答えなさい。
 
 # --hints--
 
-`hilbertsNewHotel()` should return `40632119`.
+`hilbertsNewHotel()` は `40632119` を返す必要があります。
 
 ```js
 assert.strictEqual(hilbertsNewHotel(), 40632119);

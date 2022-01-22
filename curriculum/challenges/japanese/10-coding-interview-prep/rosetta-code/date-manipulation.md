@@ -1,6 +1,6 @@
 ---
 id: 5966c21cf732a95f1b67dd28
-title: Date manipulation
+title: 日付操作
 challengeType: 5
 forumTopicId: 302244
 dashedName: date-manipulation
@@ -8,27 +8,27 @@ dashedName: date-manipulation
 
 # --description--
 
-Given a date string in EST, output the given date as a string with 12 hours added to the time. Time zone should be preserved.
+ESTに基づく日付文字列が与えられると、12時間を加えて日付を文字列として出力します。 タイムゾーンは保持します。
 
-Example input: `"March 6 2009 7:30pm EST"`
+入力例: `"March 6 2009 7:30pm EST"`
 
-Example output: `"March 7 2009 7:30am EST"`
+出力例: `"March 7 2009 7:30am EST"`
 
 # --hints--
 
-`add12Hours` should be a function.
+`add12Hours` という関数です。
 
 ```js
 assert(typeof add12Hours === 'function');
 ```
 
-`add12Hours(dateString)` should return a string.
+`add12Hours(dateString)` は文字列を返します。
 
 ```js
 assert(typeof add12Hours('January 17 2017 11:43am EST') === 'string');
 ```
 
-`add12Hours("January 17 2017 11:43am EST")` should return `"January 17 2017 11:43pm EST"`
+`add12Hours("January 17 2017 11:43am EST")` は `"January 17 2017 11:43pm EST"` を返します。
 
 ```js
 assert(
@@ -36,25 +36,25 @@ assert(
 );
 ```
 
-Should handle day change. `add12Hours("March 6 2009 7:30pm EST")` should return `"March 7 2009 7:30am EST"`
+日付が変更されます。 `add12Hours("March 6 2009 7:30pm EST")` は `"March 7 2009 7:30am EST"` を返します。
 
 ```js
 assert(add12Hours('March 6 2009 7:30pm EST') === 'March 7 2009 7:30am EST');
 ```
 
-Should handle month change in a leap years. `add12Hours("February 29 2004 9:15pm EST")` should return `"March 1 2004 9:15am EST"`
+うるう年の月に変更が加えられます。 `add12Hours("February 29 2004 9:15pm EST")` は `"March 1 2004 9:15am EST"` を返します。
 
 ```js
 assert(add12Hours('February 29 2004 9:15pm EST') === 'March 1 2004 9:15am EST');
 ```
 
-Should handle month change in a common years. `add12Hours("February 28 1999 3:15pm EST")` should return `"March 1 1999 3:15am EST"`
+平年の月に変更が加えられます。 `add12Hours("February 28 1999 3:15pm EST")` は `"March 1 1999 3:15am EST"` を返します。
 
 ```js
 assert(add12Hours('February 28 1999 3:15pm EST') === 'March 1 1999 3:15am EST');
 ```
 
-Should handle year change. `add12Hours("December 31 2020 1:45pm EST")` should return `"January 1 2021 1:45am EST"`
+年に変更が加えられます。 `add12Hours("December 31 2020 1:45pm EST")` は `"January 1 2021 1:45am EST"` を返します。
 
 ```js
 assert(

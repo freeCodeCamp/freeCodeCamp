@@ -1,6 +1,6 @@
 ---
 id: 5900f4571000cf542c50ff69
-title: 'Problem 234: 半整除可能な数'
+title: '問題 234: 半整除可能な数'
 challengeType: 5
 forumTopicId: 301878
 dashedName: problem-234-semidivisible-numbers

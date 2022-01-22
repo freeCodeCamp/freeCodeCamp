@@ -1,6 +1,6 @@
 ---
 id: 5900f4971000cf542c50ffaa
-title: 'Problem 299: Three similar triangles'
+title: '問題 299: 3 つの相似三角形'
 challengeType: 5
 forumTopicId: 301951
 dashedName: problem-299-three-similar-triangles
@@ -8,29 +8,29 @@ dashedName: problem-299-three-similar-triangles
 
 # --description--
 
-Four points with integer coordinates are selected:
+整数座標を持つ、次の 4 つの点が選択されます。
 
-$A(a, 0)$, $B(b, 0)$, $C(0, c)$ and $D(0, d)$, with $0 &lt; a &lt; b$ and $0 &lt; c &lt; d$.
+$A(a, 0)$, $B(b, 0)$, $C(0, c)$, $D(0, d)$ ($0 &lt; a &lt; b$ かつ $0 &lt; c &lt; d$)
 
-Point $P$, also with integer coordinates, is chosen on the line $AC$ so that the three triangles $ABP$, $CDP$ and $BDP$ are all similar.
+3 つの三角形 $ABP$, $CDP$, $BDP$ がすべて相似形になるように、同じく整数座標を持つ点 $P$ を線 $AC$ 上で選びます。
 
-<img class="img-responsive center-block" alt="points A, B, C, D and P creating three triangles: ABP, CDP, and BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="点 A, B, C, D, P で作られる 3 つの三角形 ABP, CDP, BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px;" />
 
-It is easy to prove that the three triangles can be similar, only if $a = c$.
+$a = c$ のときのみ 3 つの三角形が相似形になり得るということは、容易に証明できます。
 
-So, given that $a = c$, we are looking for triplets ($a$, $b$, $d$) such that at least one point $P$ (with integer coordinates) exists on $AC$, making the three triangles $ABP$, $CDP$ and $BDP$ all similar.
+つまり、$a=c$ とすると、(整数座標を持つ) 点 $P$ が $AC$ 上に少なくとも 1 つ存在して 3 つの三角形 $ABP$, $CDP$, $BDP$ がすべて相似形になるような、三つ組数 ($a$, $b$, $d$) を探します。
 
-For example, if $(a, b, d) = (2, 3, 4)$, it can be easily verified that point $P(1, 1)$ satisfies the above condition. Note that the triplets (2,3,4) and (2,4,3) are considered as distinct, although point $P(1, 1)$ is common for both.
+例えば、$(a, b, d) = (2, 3, 4)$ の場合、点 $P(1, 1)$ が上の条件を満たすことを容易に確認できます。 注意点として、三つ組数 (2,3,4) と (2,4,3) は点 $P(1, 1)$ を共有しますが相異なる組とみなされます。
 
-If $b + d &lt; 100$, there are 92 distinct triplets ($a$, $b$, $d$) such that point $P$ exists.
+$b + d &lt; 100$ の場合、点 $P$ が存在するような相異なる三つ組数 ($a$, $b$, $d$) は 92 個存在します。
 
-If $b + d &lt; 100\\,000$, there are 320471 distinct triplets ($a$, $b$, $d$) such that point $P$ exists.
+$b + d &lt; 100\\,000$ の場合、点 $P$ が存在するような相異なる三つ組数 ($a$, $b$, $d$) は 320471 個存在します。
 
-If $b + d &lt; 100\\,000\\,000$, how many distinct triplets ($a$, $b$, $d$) are there such that point $P$ exists?
+$b + d &lt; 100\\,000\\,000$ の場合、点 $P$ が存在するような相異なる三つ組数 ($a$, $b$, $d$) はいくつ存在しますか。
 
 # --hints--
 
-`threeSimilarTriangles()` should return `549936643`.
+`threeSimilarTriangles()` は `549936643` を返す必要があります。
 
 ```js
 assert.strictEqual(threeSimilarTriangles(), 549936643);

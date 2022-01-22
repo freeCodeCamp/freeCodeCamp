@@ -1,6 +1,6 @@
 ---
 id: 5900f4fd1000cf542c51000f
-title: 'Problem 401: Sum of squares of divisors'
+title: '問題 401: 約数の平方和'
 challengeType: 5
 forumTopicId: 302069
 dashedName: problem-401-sum-of-squares-of-divisors
@@ -8,19 +8,19 @@ dashedName: problem-401-sum-of-squares-of-divisors
 
 # --description--
 
-The divisors of 6 are 1, 2, 3 and 6.
+6 の約数は 1, 2, 3, 6 です。
 
-The sum of the squares of these numbers is $1 + 4 + 9 + 36 = 50$.
+これらの数の平方和は $1 + 4 + 9 + 36 = 50$ です。
 
-Let $\sigma_2(n)$ represent the sum of the squares of the divisors of $n$. Thus $\sigma_2(6) = 50$.
+$n$ の約数の平方和を $\sigma_2(n)$ で表すことにします。 そうすると、$\sigma_2(6) = 50$ になります。
 
-Let $\Sigma_2$ represent the summatory function of $\sigma_2$, that is $\Sigma_2(n) = \sum \sigma_2(i)$ for $i=1$ to $n$. The first 6 values of $\Sigma_2$ are: 1, 6, 16, 37, 63 and 113.
+$\sigma_2$ の総和関数を $\Sigma_2$ で表します。つまり、$\Sigma_2(n) = \sum \sigma_2(i)$ ($i=1$ から $n$ まで) です。 $\Sigma_2$ の最初の 6 つの値は 1, 6, 16, 37, 63, 113 です。
 
-Find $\Sigma_2({10}^{15})$ modulo ${10}^9$.
+$\Sigma_2({10}^{15})$ mod ${10}^9$ を求めなさい。
 
 # --hints--
 
-`sumOfSquaresDivisors()` should return `281632621`.
+`sumOfSquaresDivisors()` は `281632621` を返す必要があります。
 
 ```js
 assert.strictEqual(sumOfSquaresDivisors(), 281632621);

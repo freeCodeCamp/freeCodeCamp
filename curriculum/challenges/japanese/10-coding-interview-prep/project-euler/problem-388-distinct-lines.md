@@ -1,6 +1,6 @@
 ---
 id: 5900f4f11000cf542c510002
-title: 'Problem 388: Distinct Lines'
+title: '問題 388: 相異なる線'
 challengeType: 5
 forumTopicId: 302052
 dashedName: problem-388-distinct-lines
@@ -8,17 +8,17 @@ dashedName: problem-388-distinct-lines
 
 # --description--
 
-Consider all lattice points ($a$, $b$, $c$) with $0 ≤ a, b, c ≤ N$.
+$0 ≤ a, b, c ≤ N$ を満たすすべての格子点 ($a$, $b$, $c$) について考えます。
 
-From the origin $O(0, 0, 0)$ all lines are drawn to the other lattice points. Let $D(N)$ be the number of distinct such lines.
+すべての線は、原点 $O(0, 0, 0)$ から他の格子点まで引かれます。 相異なるこのような線の数を $D(N)$ とします。
 
-You are given that $D(1\\,000\\,000) = 831\\,909\\,254\\,469\\,114\\,121$.
+$D(1\\,000\\,000) = 831\\,909\\,254\\,469\\,114\\,121$ です。
 
-Find $D({10}^{10})$. Give as your answer the first nine digits followed by the last nine digits.
+$D({10}^{10})$ を求めなさい。 回答は、上位 9 桁に続けて下位 9 桁を示すこと。
 
 # --hints--
 
-`distinctLines()` should return `831907372805130000`.
+`distinctLines()` は `831907372805130000` を返す必要があります。
 
 ```js
 assert.strictEqual(distinctLines(), 831907372805130000);

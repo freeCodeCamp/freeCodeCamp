@@ -1,6 +1,6 @@
 ---
 id: 598eea87e5cf4b116c3ff81a
-title: Factors of a Mersenne number
+title: メルセンヌ数の因数
 challengeType: 5
 forumTopicId: 302264
 dashedName: factors-of-a-mersenne-number
@@ -8,25 +8,25 @@ dashedName: factors-of-a-mersenne-number
 
 # --description--
 
-A Mersenne number is a number in the form of <code>2<sup>P</sup>-1</code>.
+メルセンヌ数は <code>2<sup>P</sup>-1</code> の形式の数値です。
 
-If `P` is prime, the Mersenne number may be a Mersenne prime. (If `P` is not prime, the Mersenne number is also not prime.)
+`P` が素数の場合、メルセンヌ数はメルセンヌの素数である場合があります。 ( `P` が素数でない場合、メルセンヌ数も素数ではありません。)
 
-In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a, potentially lengthy, [Lucas-Lehmer test](https://rosettacode.org/wiki/Lucas-Lehmer test "Lucas-Lehmer test").
+メルセンヌ素数を求めるには、長い時間を要する可能性がある [Lucas-Lehmer test](https://rosettacode.org/wiki/Lucas-Lehmer test "Lucas-Lehmer test") を開始する前に、小さな因数を見つけることによって指数を除去することをお勧めします。
 
-There are very efficient algorithms for determining if a number divides <code>2<sup>P</sup>-1</code> (or equivalently, if <code>2<sup>P</sup> mod (the number) = 1</code>).
+数字が <code>2<sup>P</sup>-1</code> を割るかどうか (すなわち、<code>2<sup>P</sup> mod (the number) = 1</code> となるかどうか) を判定するのに適した非常に効率的なアルゴリズムがあります。
 
-Some languages already have built-in implementations of this exponent-and-mod operation (called modPow or similar).
+指数と剰余演算 (modPow などと呼ばれる) の組み込み実装が既にある言語もあります。
 
-The following is how to implement this modPow yourself:
+以下は、このmodPowを自分で実装する方法です。
 
-For example, let's compute <code>2<sup>23</sup> mod 47</code>.
+例えば、 <code>2<sup>23</sup> mod 47</code> を計算してみましょう。
 
-Convert the exponent 23 to binary, you get 10111. Starting with <code><tt>square</tt> = 1</code>, repeatedly square it.
+指数23を2進数に変換すると、10111が得られます。 <code><tt>square</tt> = 1</code> から始めて、繰り返し2乗にしていきます。
 
-Remove the top bit of the exponent, and if it's 1 multiply `square` by the base of the exponentiation (2), then compute <code><tt>square</tt> modulo 47</code>.
+指数の上位ビットを削除し、1である場合、`square` に冪乗の底 (2) を掛けて、<code><tt>square</tt> modulo 47</code>を計算します。
 
-Use the result of the modulo from the last step as the initial value of `square` in the next step:
+最後のステップのモジュロの結果を、次のステップの `square` の初期値として使用します。
 
 <pre>Remove   Optional
 square        top bit  multiply by 2  mod 47
@@ -38,51 +38,51 @@ square        top bit  multiply by 2  mod 47
 27*27 = 729   1        729*2 = 1458      1
 </pre>
 
-Since <code>2<sup>23</sup> mod 47 = 1</code>, 47 is a factor of <code>2<sup>P</sup>-1</code>.
+<code>2<sup>23</sup> mod 47 = 1</code>であるため、 47 は <code>2<sup>P</sup>-1</code> の因数です。
 
-(To see this, subtract 1 from both sides: <code>2<sup>23</sup>-1 = 0 mod 47</code>.)
+(これを理解するには、両辺から1を引きます: <code>2<sup>23</sup>-1 = 0 mod 47</code>。)
 
-Since we've shown that 47 is a factor, <code>2<sup>23</sup>-1</code> is not prime.
+47 が因数であるとしているので、<code>2<sup>23</sup>-1</code> は素数ではありません。
 
-Further properties of Mersenne numbers allow us to refine the process even more.
+メルセンヌ数には他にも特有の性質があるため、メルセンヌ数を使用するとプロセスをもっと改善できます。
 
-Any factor `q` of <code>2<sup>P</sup>-1</code> must be of the form `2kP+1`, `k` being a positive integer or zero. Furthermore, `q` must be `1` or `7 mod 8`.
+<code>2<sup>P</sup>-1</code> の因数 `q` は `2kP+1`の形を取り、`k` は正の整数またはゼロです。 さらに、`q` は `1` または `7 mod 8` です。
 
-Finally any potential factor `q` must be [prime](https://rosettacode.org/wiki/Primality by Trial Division "Primality by Trial Division").
+最後に、潜在的因数 `q` は [素数](https://rosettacode.org/wiki/Primality by Trial Division "Primality by Trial Division") でなければなりません。
 
-As in other trial division algorithms, the algorithm stops when `2kP+1 > sqrt(N)`.These primarily tests only work on Mersenne numbers where `P` is prime. For example, <code>M<sub>4</sub>=15</code> yields no factors using these techniques, but factors into 3 and 5, neither of which fit `2kP+1`.
+他の試行徐算アルゴリズムと同様に、アルゴリズムは `2kP+1 > sqrt(N)`となった場合に停止します。これらのテストは、`P` が素数である場合に、メルセンヌ数に対してのみ働きます。 例えば、<code>M<sub>4</sub>=15</code> はこれらの手法で因数を生成しません。3と5を考えると、いずれも`2kP+1`に適合しません。
 
 # --instructions--
 
-Using the above method find a factor of <code>2<sup>p</sup>-1</code>.
+上記のメソッドを使用して、<code>2<sup>p</sup>-1</code> の因数を求めます。
 
 # --hints--
 
-`check_mersenne` should be a function.
+`check_mersenne` という関数です。
 
 ```js
 assert(typeof check_mersenne === 'function');
 ```
 
-`check_mersenne(3)` should return a string.
+`check_mersenne(3)` は文字列を返します。
 
 ```js
 assert(typeof check_mersenne(3) == 'string');
 ```
 
-`check_mersenne(3)` should return the string `M3 = 2^3-1 is prime`.
+`check_mersenne(3)` は文字列 `M3 = 2^3-1 is prime` を返します。
 
 ```js
 assert.equal(check_mersenne(3), 'M3 = 2^3-1 is prime');
 ```
 
-`check_mersenne(23)` should return the string `M23 = 2^23-1 is composite with factor 47`.
+`check_mersenne(23)` は文字列 `M23 = 2^23-1 is composite with factor 47` を返します。
 
 ```js
 assert.equal(check_mersenne(23), 'M23 = 2^23-1 is composite with factor 47');
 ```
 
-`check_mersenne(929)` should return the string `M929 = 2^929-1 is composite with factor 13007`.
+`check_mersenne(929)` は 文字列 `M929 = 2^929-1 is composite with factor 13007` を返します。
 
 ```js
 assert.equal(

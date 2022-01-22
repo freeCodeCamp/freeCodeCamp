@@ -1,6 +1,6 @@
 ---
 id: 5900f5481000cf542c51005a
-title: 'Problem 475: Music festival'
+title: '問題 475: 音楽祭'
 challengeType: 5
 forumTopicId: 302152
 dashedName: problem-475-music-festival
@@ -8,21 +8,21 @@ dashedName: problem-475-music-festival
 
 # --description--
 
-$12n$ musicians participate at a music festival. On the first day, they form $3n$ quartets and practice all day.
+$12n$ 人の演奏家が音楽祭に参加します。 初日に $3n$ 組のカルテットを編成し、終日練習します。
 
-It is a disaster. At the end of the day, all musicians decide they will never again agree to play with any member of their quartet.
+そして大変な事態が起こります。 練習の後、すべての演奏家が自分のカルテットのいずれのメンバーとも共演しないと決めたのです。
 
-On the second day, they form $4n$ trios, each musician avoiding his previous quartet partners.
+2 日目に、演奏家たちは以前のカルテットのパートナーを避けて $4n$ 組のトリオを編成します。
 
-Let $f(12n)$ be the number of ways to organize the trios amongst the $12n$ musicians.
+$12n$ 人の演奏家の間でトリオを編成する方法が何通りあるかを、$f(12n)$ で表します。
 
-You are given $f(12) = 576$ and $f(24)\bmod 1\\,000\\,000\\,007 = 509\\,089\\,824$.
+$f(12) = 576$ および $f(24)\bmod 1\\,000\\,000\\,007 = 509\\,089\\,824$ が与えられます。
 
-Find $f(600)\bmod 1\\,000\\,000\\,007$.
+$f(600)\bmod 1\\,000\\,000\\,007$ を求めなさい。
 
 # --hints--
 
-`musicFestival()` should return `75780067`.
+`musicFestival()` は `75780067` を返す必要があります。
 
 ```js
 assert.strictEqual(musicFestival(), 75780067);

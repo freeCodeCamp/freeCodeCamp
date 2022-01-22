@@ -1,6 +1,6 @@
 ---
 id: 5900f4de1000cf542c50fff0
-title: 'Problem 369: Badugi'
+title: '問題 369: バドゥーギ'
 challengeType: 5
 forumTopicId: 302030
 dashedName: problem-369-badugi
@@ -8,15 +8,15 @@ dashedName: problem-369-badugi
 
 # --description--
 
-In a standard 52 card deck of playing cards, a set of 4 cards is a Badugi if it contains 4 cards with no pairs and no two cards of the same suit.
+標準的な 52 枚組のトランプで、ペアがなく、同じスート (マーク) の 2 枚のカードもない 4 枚のカードの組は、バドゥーギと呼ばれます。
 
-Let $f(n)$ be the number of ways to choose $n$ cards with a 4 card subset that is a Badugi. For example, there are $2\\,598\\,960$ ways to choose five cards from a standard 52 card deck, of which $514\\,800$ contain a 4 card subset that is a Badugi, so $f(5) = 514800$.
+バドゥーギである 4 枚のカードからなる部分集合を持つ $n$ 枚のカードを選ぶ方法の数を、$f(n)$ とします。 例えば、標準的な 52 枚組のトランプから 5 枚のカードを選ぶ法は $2\\,598\\,960$ 通りあり、そのうち $514\\,800$ 通りが、バドゥーギとなる 4 枚のカードからなる部分集合を含んでいるので、$f(5) = 514800$ となります。
 
-Find $\sum f(n)$ for $4 ≤ n ≤ 13$.
+$4 ≤ n ≤ 13$ のとき、$\sum f(n)$ を求めなさい。
 
 # --hints--
 
-`badugi()` should return `862400558448`.
+`badugi()` は `862400558448` を返す必要があります。
 
 ```js
 assert.strictEqual(badugi(), 862400558448);

@@ -1,6 +1,6 @@
 ---
 id: 5900f4d11000cf542c50ffe4
-title: 'Problem 357: Prime generating integers'
+title: '問題 357: 素数を生成する整数'
 challengeType: 5
 forumTopicId: 302017
 dashedName: problem-357-prime-generating-integers
@@ -8,15 +8,15 @@ dashedName: problem-357-prime-generating-integers
 
 # --description--
 
-Consider the divisors of 30: 1, 2, 3, 5, 6, 10, 15, 30.
+30 の約数である 1, 2, 3, 5, 6, 10, 15, 30 について考えます。
 
-It can be seen that for every divisor $d$ of 30, $d + \frac{30}{d}$ is prime.
+30 のすべての約数 $d$ について、$d + \frac{30}{d}$ が素数であることが分かります。
 
-Find the sum of all positive integers $n$ not exceeding $100\\,000\\,000$ such that for every divisor $d$ of $n$, $d + \frac{n}{d}$ is prime.
+$n$ のすべての約数 $d$ について $d + \frac{n}{d}$ が素数となるような、$100\\,000\\,000$ を超えない正の整数 $n$ の総和を求めなさい。
 
 # --hints--
 
-`primeGeneratingIntegers()` should return `1739023853137`.
+`primeGeneratingIntegers()` は `1739023853137` を返す必要があります。
 
 ```js
 assert.strictEqual(primeGeneratingIntegers(), 1739023853137);

@@ -1,6 +1,6 @@
 ---
 id: 594d966a1467eb84194f0086
-title: Averages/Pythagorean means
+title: 平均/ピタゴラス平均
 challengeType: 5
 forumTopicId: 302227
 dashedName: averagespythagorean-means
@@ -8,24 +8,24 @@ dashedName: averagespythagorean-means
 
 # --description--
 
-Compute all three of the [Pythagorean means](https://en.wikipedia.org/wiki/Pythagorean means "wp: Pythagorean means") of the set of integers $1$ through $10$ (inclusive).
+$1$ から $10$ を含む整数の集合における全部で3つの [ピタゴラス平均](https://en.wikipedia.org/wiki/Pythagorean means "wp: Pythagorean means") を計算します。
 
-Show that $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ for this set of positive integers.
+正の整数の集合において、$A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ を示します。
 
 <ul>
-  <li>The most common of the three means, the <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>arithmetic mean</a>, is the sum of the list divided by its length:<br>
-  <big>$ A(x_1, \ldots, x_n) = \frac{x_1 + \cdots + x_n}{n}$</big></li>
-  <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean' target='_blank'>geometric mean</a> is the $n$th root of the product of the list:<br>
+  <li>3つの平均の最も一般的なものである <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>算術平均</a>は、リストの総和をその長さで割ったものです。<br>
+  <big>$ A(x_1) \ldots, x_n) = \frac{x_1 + \cdots + x_n}{n}$</big></li>
+  <li><a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean' target='_blank'>幾何平均</a> は、リストの総乗の $n$乗根です。<br>
   <big>$ G(x_1, \ldots, x_n) = \sqrt[n]{x_1 \cdots x_n} $</big></li>
-  <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean' target='_blank'>harmonic mean</a> is $n$ divided by the sum of the reciprocal of each item in the list:<br>
+  <li><a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean' target='_blank'>調和平均</a> は、リスト内の各項目の逆数合計で割った$n$ です。<br>
   <big>$ H(x_1, \ldots, x_n) = \frac{n}{\frac{1}{x_1} + \cdots + \frac{1}{x_n}} $</big></li>
 </ul>
 
 # --instructions--
 
-When writing your function, assume the input is an ordered array of all inclusive numbers.
+関数を書くときは、入力がすべての包括的数値の規則配列であると想定します。
 
-For the answer, please output an object in the following format:
+答えは、以下の形式でオブジェクトを出力してください。
 
 ```js
 {
@@ -40,13 +40,13 @@ For the answer, please output an object in the following format:
 
 # --hints--
 
-`pythagoreanMeans` should be a function.
+`pythagoreanMeans` という関数です。
 
 ```js
 assert(typeof pythagoreanMeans === 'function');
 ```
 
-`pythagoreanMeans([1, 2, ..., 10])` should equal the same output above.
+`pythagoreanMeans([1, 2, ..., 10])` は上記の出力と同じになります。
 
 ```js
 assert.deepEqual(pythagoreanMeans(range1), answer1);

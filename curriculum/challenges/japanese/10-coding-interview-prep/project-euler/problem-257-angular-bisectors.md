@@ -1,6 +1,6 @@
 ---
 id: 5900f46e1000cf542c50ff80
-title: 'Problem 257: Angular Bisectors'
+title: '問題 257: 角の二等分線'
 challengeType: 5
 forumTopicId: 301905
 dashedName: problem-257-angular-bisectors
@@ -8,19 +8,19 @@ dashedName: problem-257-angular-bisectors
 
 # --description--
 
-Given is an integer sided triangle $ABC$ with sides $a ≤ b ≤ c$. ($AB = c$, $BC = a$ and $AC = b$).
+整数の辺長を持つ三角形 $ABC$ が与えられ、辺は $a ≤ b ≤ c$ です ($AB = c$, $BC = a$, $AC = b$)。
 
-The angular bisectors of the triangle intersect the sides at points $E$, $F$ and $G$ (see picture below).
+三角形の角の二等分線は、点 $E$, $F$, $G$ で辺と交わります (下図参照)。
 
-<img class="img-responsive center-block" alt="triangle ABC, with angular bisectors intersecting sides at the points E, F and G" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="三角形 ABC の角の二等分線が点 E, F, G で辺と交わる" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px;" />
 
-The segments $EF$, $EG$ and $FG$ partition the triangle $ABC$ into four smaller triangles: $AEG$, $BFE$, $CGF$ and $EFG$. It can be proven that for each of these four triangles the ratio $\frac{\text{area}(ABC)}{\text{area}(\text{subtriangle})}$ is rational. However, there exist triangles for which some or all of these ratios are integral.
+線分 $EF$, $EG$, $FG$ は、$ABC$ を 4 つの小さな三角形 $AEG$, $BFE$, $CGF$, $EFG$ に分割します。 この 4 つの三角形のそれぞれについて、比率 $\frac{\text{面積}(ABC)}{\text{面積}(\text{部分三角形})}$ が有理数であることを証明できます。 しかし、これらの比率の一部またはすべてが整数である三角形が存在します。
 
-How many triangles $ABC$ with perimeter $≤ 100\\,000\\,000$ exist so that the ratio $\frac{\text{area}(ABC)}{\text{area}(AEG)}$ is integral?
+周長が $100\\,000\\,000$ 以下で、比率 $\frac{\text{面積}(ABC)}{\text{面積}(AEG)}$ が整数である三角形 $ABC$ はいくつ存在しますか。
 
 # --hints--
 
-`angularBisectors()` should return `139012411`.
+`angularBisectors()` は `139012411` を返す必要があります。
 
 ```js
 assert.strictEqual(angularBisectors(), 139012411);

@@ -1,6 +1,6 @@
 ---
 id: 5900f5361000cf542c510049
-title: 'Problem 458: Permutations of Project'
+title: '問題 458: "Project" の順列'
 challengeType: 5
 forumTopicId: 302132
 dashedName: problem-458-permutations-of-project
@@ -8,17 +8,17 @@ dashedName: problem-458-permutations-of-project
 
 # --description--
 
-Consider the alphabet $A$ made out of the letters of the word `project`: $A = \\{c, e, j, o, p, r, t\\}$.
+"`project`"という単語に含まれる文字からなるアルファベットの集合 $A$、すなわち $A = \\{c, e, j, o, p, r, t\\}$ について考えます。
 
-Let $T(n)$ be the number of strings of length $n$ consisting of letters from $A$ that do not have a substring that is one of the 5040 permutations of `project`.
+$A$ の文字で構成される長さ $n$ の文字列のうち、"`project`" の 5040 通りの順列の一つである部分文字列を持たない文字列の数を、$T(n)$ とします。
 
-$T(7) = 7^7 - 7! = 818\\,503$.
+$T(7) = 7^7 - 7! = 818\\,503$ です。
 
-Find $T({10}^{12})$. Give the last 9 digits of your answer.
+$T({10}^{12})$ を求めなさい。 回答は、下位 9 桁とすること。
 
 # --hints--
 
-`permutationsOfProject()` should return `423341841`.
+`permutationsOfProject()` は `423341841` を返す必要があります。
 
 ```js
 assert.strictEqual(permutationsOfProject(), 423341841);

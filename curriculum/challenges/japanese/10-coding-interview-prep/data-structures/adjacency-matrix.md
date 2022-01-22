@@ -81,7 +81,7 @@ assert(adjMatUndirected[0][2] === 1 && adjMatUndirected[2][0] === 1);
 assert(adjMatUndirected[2][4] === 1 && adjMatUndirected[4][2] === 1);
 ```
 
-There should be an edge between the fourth and fifth node.
+4 番目と 5 番目のノードの間にはエッジが必要です。
 
 ```js
 assert(adjMatUndirected[3][4] === 1 && adjMatUndirected[4][3] === 1);

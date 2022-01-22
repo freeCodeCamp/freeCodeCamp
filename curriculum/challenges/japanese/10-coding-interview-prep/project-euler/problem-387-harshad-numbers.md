@@ -1,6 +1,6 @@
 ---
 id: 5900f4f11000cf542c510003
-title: 'Problem 387: Harshad Numbers'
+title: '問題 387: ハーシャッド数'
 challengeType: 5
 forumTopicId: 302051
 dashedName: problem-387-harshad-numbers
@@ -8,31 +8,31 @@ dashedName: problem-387-harshad-numbers
 
 # --description--
 
-A Harshad or Niven number is a number that is divisible by the sum of its digits.
+ハーシャッド数またはニーベン数とは、その各位の和によって整除できる数のことです。
 
-201 is a Harshad number because it is divisible by 3 (the sum of its digits.)
+201 は 3 (各位の和) で整除できるのでハーシャッド数です。
 
-When we truncate the last digit from 201, we get 20, which is a Harshad number.
+201 の最下位の桁を切り詰めると 20 になり、これはハーシャッド数です。
 
-When we truncate the last digit from 20, we get 2, which is also a Harshad number.
+20 の最下位の桁を切り詰めると 2 になり、これもハーシャッド数です。
 
-Let's call a Harshad number that, while recursively truncating the last digit, always results in a Harshad number a right truncatable Harshad number.
+最下位の桁を再帰的に切り詰めても結果が常にハーシャッド数になるようなハーシャッド数を、右桁切り詰め可能なハーシャッド数と呼ぶことにします。
 
-Also:
+また、
 
-$\frac{201}{3} = 67$ which is prime.
+$\frac{201}{3} = 67$ は素数です。
 
-Let's call a Harshad number that, when divided by the sum of its digits, results in a prime a strong Harshad number.
+各位の和で割ると素数になるハーシャッド数を、強ハーシャッド数と呼ぶことにします。
 
-Now take the number 2011 which is prime. When we truncate the last digit from it we get 201, a strong Harshad number that is also right truncatable. Let's call such primes strong, right truncatable Harshad primes.
+ここでは素数 2011 を取り上げます。 最下位の桁を切り詰めると 201 になります。これは強ハルシャッド数であり、右桁が切り詰め可能でもあります。 このような素数を、右桁切り詰め可能な強ハーシャッド素数と呼ぶことにします。
 
-You are given that the sum of the strong, right truncatable Harshad primes less than 10000 is 90619.
+10000 未満の右桁切り詰め可能な強ハーシャッド素数の和は 90619 です。
 
-Find the sum of the strong, right truncatable Harshad primes less than ${10}^{14}$.
+${10}^{14}$ 未満の右桁切り詰め可能な強ハーシャッド素数の和を求めなさい。
 
 # --hints--
 
-`harshadNumbers()` should return `696067597313468`.
+`harshadNumbers()` は `696067597313468` を返す必要があります。
 
 ```js
 assert.strictEqual(harshadNumbers(), 696067597313468);

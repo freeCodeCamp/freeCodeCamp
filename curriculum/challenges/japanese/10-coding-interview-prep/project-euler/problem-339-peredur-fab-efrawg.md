@@ -1,6 +1,6 @@
 ---
 id: 5900f4c01000cf542c50ffd2
-title: 'Problem 339: Peredur fab Efrawg'
+title: '問題 339: 『エヴラウクの息子ペレドゥルの物語』'
 challengeType: 5
 forumTopicId: 301997
 dashedName: problem-339-peredur-fab-efrawg
@@ -8,17 +8,17 @@ dashedName: problem-339-peredur-fab-efrawg
 
 # --description--
 
-"And he came towards a valley, through which ran a river; and the borders of the valley were wooded, and on each side of the river were level meadows. And on one side of the river he saw a flock of white sheep, and on the other a flock of black sheep. And whenever one of the white sheep bleated, one of the black sheep would cross over and become white; and when one of the black sheep bleated, one of the white sheep would cross over and become black." - Peredur the Son of Evrawc
+「そして彼は川が流れる谷へ向かいました。谷の縁は木々に覆われ、川の両側には平らな草地がありました。 片方の川岸には白い羊の群れが、反対側の川岸には黒い羊の群れが見えました。 白い羊が鳴くたびに 1 頭の黒い羊が川を渡って白くなり、黒い羊が鳴くと 1 頭の白い羊が川を渡って黒くなりました。」 - 『エヴラウクの息子ペレドゥルの物語』
 
-Initially, each flock consists of $n$ sheep. Each sheep (regardless of color) is equally likely to be the next sheep to bleat. After a sheep has bleated and a sheep from the other flock has crossed over, Peredur may remove a number of white sheep in order to maximize the expected final number of black sheep. Let $E(n)$ be the expected final number of black sheep if Peredur uses an optimal strategy.
+最初はそれぞれの群れに $n$ 頭います。 (色に関係なく) それぞれの羊は等しい確率で次に鳴きます。 1 頭の羊が鳴き、他方の群れの 1 頭の羊が 渡った後、ペレドゥルは黒い羊の最終的な期待頭数を最大化するために、任意の頭数の白い羊を取り除くことができます。 ペレドゥルが最適な戦略を使った場合の、黒い羊の最終的な期待頭数を $E(n)$ とします。
 
-You are given that $E(5) = 6.871346$ rounded to 6 places behind the decimal point.
+$E(5) = 6.871346$ (小数第 6 位に四捨五入) が与えられます。
 
-Find $E(10\\,000)$ and give your answer rounded to 6 places behind the decimal point.
+$E(10\\,000)$ を求め、四捨五入して小数第 6 位まで示しなさい。
 
 # --hints--
 
-`peredurFabEfrawg()` should return `19823.542204`.
+`peredurFabEfrawg()` は `19823.542204` を返す必要があります。
 
 ```js
 assert.strictEqual(peredurFabEfrawg(), 19823.542204);

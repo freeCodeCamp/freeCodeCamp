@@ -1,6 +1,6 @@
 ---
 id: 5900f4d21000cf542c50ffe5
-title: 'Problem 358: Cyclic numbers'
+title: '問題 358: 巡回数'
 challengeType: 5
 forumTopicId: 302018
 dashedName: problem-358-cyclic-numbers
@@ -8,25 +8,25 @@ dashedName: problem-358-cyclic-numbers
 
 # --description--
 
-A cyclic number with $n$ digits has a very interesting property:
+$n$ 桁の巡回数は非常に興味深い性質を持っています:
 
-When it is multiplied by 1, 2, 3, 4, ... $n$, all the products have exactly the same digits, in the same order, but rotated in a circular fashion!
+1, 2, 3, 4, ... $n$ を乗じると、すべての積に全く同じ数字が使われ、数字を循環させると順序も同じになります！
 
-The smallest cyclic number is the 6-digit number 142857:
+最小の巡回数は、6 桁の数 142857 です。
 
 $$\begin{align} & 142857 × 1 = 142857 \\\\ & 142857 × 2 = 285714 \\\\ & 142857 × 3 = 428571 \\\\ & 142857 × 4 = 571428 \\\\ & 142857 × 5 = 714285 \\\\ & 142857 × 6 = 857142 \end{align}$$
 
-The next cyclic number is 0588235294117647 with 16 digits:
+次の巡回数は、16 桁の 0588235294117647 です。
 
 $$\begin{align} & 0588235294117647 × 1 = 0588235294117647 \\\\ & 0588235294117647 × 2 = 1176470588235294 \\\\ & 0588235294117647 × 3 = 1764705882352941 \\\\ & \ldots \\\\ & 0588235294117647 × 16 = 9411764705882352 \end{align}$$
 
-Note that for cyclic numbers, leading zeros are important.
+なお、巡回数では先行ゼロが重要です。
 
-There is only one cyclic number for which, the eleven leftmost digits are 00000000137 and the five rightmost digits are 56789 (i.e., it has the form $00000000137\ldots56789$ with an unknown number of digits in the middle). Find the sum of all its digits.
+左端の 11 桁が 00000000137 で、右端の 5 桁が 56789 (すなわち $00000000137\ldots56789$ の形を取り、中間の数字は不明) の巡回数は 1 つしかありません。 この数のすべての桁の和を求めなさい。
 
 # --hints--
 
-`cyclicNumbers()` should return `3284144505`.
+`cyclicNumbers()` は `3284144505` を返す必要があります。
 
 ```js
 assert.strictEqual(cyclicNumbers(), 3284144505);

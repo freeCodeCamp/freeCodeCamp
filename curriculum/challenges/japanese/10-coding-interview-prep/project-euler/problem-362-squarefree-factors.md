@@ -1,6 +1,6 @@
 ---
 id: 5900f4d61000cf542c50ffe9
-title: 'Problem 362: Squarefree factors'
+title: '問題 362: 無平方因数'
 challengeType: 5
 forumTopicId: 302023
 dashedName: problem-362-squarefree-factors
@@ -8,25 +8,25 @@ dashedName: problem-362-squarefree-factors
 
 # --description--
 
-Consider the number 54.
+54 という数について考えます。
 
-54 can be factored in 7 distinct ways into one or more factors larger than 1:
+1 より大きい因数を 1 つ以上使って 54 を因数分解する方法は、次のように 7 通りあります。
 
-$$54, 2 × 27, 3 × 18, 6 × 9, 3 × 3 × 6, 2 × 3 × 9 \text{ and } 2 × 3 × 3 × 3$$
+$$54, 2 × 27, 3 × 18, 6 × 9, 3 × 3 × 6, 2 × 3 × 9, \text{ および } 2 × 3 × 3 × 3$$
 
-If we require that the factors are all squarefree only two ways remain: $3 × 3 × 6$ and $2 × 3 × 3 × 3$.
+すべての因数は無平方因数でなければならないとした場合、$3 × 3 × 3$ と $2 × 3 × 3$ の 2 通りに限定されます。
 
-Let's call $Fsf(n)$ the number of ways $n$ can be factored into one or more squarefree factors larger than 1, so $Fsf(54) = 2$.
+1 より大きい、かつ無平方因数を 1 つ以上使って $n$ を因数分解できる方法の数を $Fsf(n)$ とします。したがって、$Fsf(54) = 2$ です。
 
-Let $S(n)$ be $\sum Fsf(k)$ for $k = 2$ to $n$.
+2 から $n$ までの $k$ について、$S(n)$ を $\sum Fsf(k)$ とします。
 
-$S(100) = 193$.
+$S(100) = 193$ です。
 
-Find $S(10\\,000\\,000\\,000)$.
+$S(10\\,000\\,000\\,000)$ を求めなさい。
 
 # --hints--
 
-`squarefreeFactors()` should return `457895958010`.
+`squarefreeFactors()` は `457895958010` を返す必要があります。
 
 ```js
 assert.strictEqual(squarefreeFactors(), 457895958010);

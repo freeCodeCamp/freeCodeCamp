@@ -1,6 +1,6 @@
 ---
 id: 596fda99c69f779975a1b67d
-title: Count occurrences of a substring
+title: 部分文字列の出現回数を数える
 challengeType: 5
 forumTopicId: 302237
 dashedName: count-occurrences-of-a-substring
@@ -8,42 +8,42 @@ dashedName: count-occurrences-of-a-substring
 
 # --description--
 
-Create a function, or show a built-in function, to count the number of non-overlapping occurrences of a substring inside a string.
+関数を作成するか、組み込み関数を表示して、文字列内で重複しない部分文字列の発生回数を数えます。
 
-The function should take two arguments:
+関数は二つの引数を取ります。
 
 <ul>
-  <li>the first argument being the string to search, and</li>
-  <li>the second a substring to be searched for.</li>
+  <li>1つ目の引数は検索文字列です。</li>
+  <li>2つ目の引数は検索する部分文字列です。</li>
 </ul>
 
-It should return an integer count.
+整数カウントを返します。
 
-The matching should yield the highest number of non-overlapping matches.
+照合は、重複しない最大一致数になります。
 
-In general, this essentially means matching from left-to-right or right-to-left.
+通常、これは左から右へ、または右から左への照合を意味します。
 
 # --hints--
 
-`countSubstring` should be a function.
+`countSubstring` という関数です。
 
 ```js
 assert(typeof countSubstring === 'function');
 ```
 
-`countSubstring("the three truths", "th")` should return `3`.
+`countSubstring("the three truths", "th")` は `3` を返します。
 
 ```js
 assert.equal(countSubstring(testCases[0], searchString[0]), results[0]);
 ```
 
-`countSubstring("ababababab", "abab")` should return `2`.
+`countSubstring("ababababab", "abab")` は `2` を返します。
 
 ```js
 assert.equal(countSubstring(testCases[1], searchString[1]), results[1]);
 ```
 
-`countSubstring("abaabba*bbaba*bbab", "a*b")` should return `2`.
+`countSubstring("abaabba*bbaba*bbab", "a*b")` は `2` を返します。
 
 ```js
 assert.equal(countSubstring(testCases[2], searchString[2]), results[2]);

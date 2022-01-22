@@ -1,6 +1,6 @@
 ---
 id: 5900f4ae1000cf542c50ffc0
-title: 'Problem 321: Swapping Counters'
+title: '問題 321: カウンターを入れ替える'
 challengeType: 5
 forumTopicId: 301978
 dashedName: problem-321-swapping-counters
@@ -8,25 +8,25 @@ dashedName: problem-321-swapping-counters
 
 # --description--
 
-A horizontal row comprising of $2n + 1$ squares has $n$ red counters placed at one end and $n$ blue counters at the other end, being separated by a single empty square in the center. For example, when $n = 3$.
+$2n + 1$ 個のマスが横方向に一列に並べられ、一方の端に $n$ 個の赤のカウンターが置かれ、もう一方の端に $n$ 個の青のカウンターが置かれ、その間の 1 マスは空いています。 例えば、$n = 3$ のときは下図のようになります。
 
-<img class="img-responsive center-block" alt="three squares with red and blue counters placed on opposite ends of the row, separated by one empty square" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="列の両側の 3 マスに赤と青のカウンターが置かれ、間の 1 マスは空いている" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px;" />
 
-A counter can move from one square to the next (slide) or can jump over another counter (hop) as long as the square next to that counter is unoccupied.
+カウンターは、あるマスから次のマスに移動したり (スライド)、別のカウンターの隣のマスが空いていればそのカウンターを飛び越えたり (ホップ) できます。
 
-<img class="img-responsive center-block" alt="allowed moves of the counter" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="許容されるカウンターの動き方" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px;" />
 
-Let $M(n)$ represent the minimum number of moves/actions to completely reverse the positions of the colored counters; that is, move all the red counters to the right and all the blue counters to the left.
+色付きカウンターの位置を完全に入れ替える (すなわち赤のカウンターをすべて右へ、青のカウンターをすべて左へ移動する) ための移動やアクションの最小回数を、$M(n)$ とします。
 
-It can be verified $M(3) = 15$, which also happens to be a triangle number.
+$M(3) = 15$ であることを確認できます。これは三角数でもあります。
 
-If we create a sequence based on the values of n for which $M(n)$ is a triangle number then the first five terms would be: 1, 3, 10, 22, and 63, and their sum would be 99.
+$M(n)$ が三角数となるような n の値に基づいて数列を作ると、最初の 5 項は 1, 3, 10, 22, 63 で、それらの和は 99 です。
 
-Find the sum of the first forty terms of this sequence.
+この数列の最初の 40 項の和を求めなさい。
 
 # --hints--
 
-`swappingCounters()` should return `2470433131948040`.
+`swappingCounters()` は `2470433131948040` を返す必要があります。
 
 ```js
 assert.strictEqual(swappingCounters(), 2470433131948040);

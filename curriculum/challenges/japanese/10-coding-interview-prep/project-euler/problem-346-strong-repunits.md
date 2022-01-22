@@ -1,6 +1,6 @@
 ---
 id: 5900f4c71000cf542c50ffd8
-title: 'Problem 346: Strong Repunits'
+title: '問題 346: 強力なレピュニット数'
 challengeType: 5
 forumTopicId: 302005
 dashedName: problem-346-strong-repunits
@@ -8,15 +8,15 @@ dashedName: problem-346-strong-repunits
 
 # --description--
 
-The number 7 is special, because 7 is 111 written in base 2, and 11 written in base 6 (i.e. $7_{10} = {11}_6 = {111}_2$). In other words, 7 is a repunit in at least two bases $b > 1$.
+7 という数は特殊です。2 進数では 111、6 進数では 11 と表されるからです ($7_{10} = {11}_6 = {111}_2$)。 つまり、7 は少なくとも 2 つの基数 ($b > 1$) のレピュニット数です。
 
-We shall call a positive integer with this property a strong repunit. It can be verified that there are 8 strong repunits below 50: {1, 7, 13, 15, 21, 31, 40, 43}. Furthermore, the sum of all strong repunits below 1000 equals 15864.
+このような性質を持つ正の整数を「強力なレピュニット数」と呼ぶことにします。 50 未満の強力なレピュニット数は {1, 7, 13, 15, 21, 31, 40, 43} の 8 つであることを確認できます。 さらに、1000 未満の強力なレピュニット数の総和は 15864 です。
 
-Find the sum of all strong repunits below ${10}^{12}$.
+${10}^{12}$ 未満の強力なレピュニット数の総和を求めなさい。
 
 # --hints--
 
-`strongRepunits()` should return `336108797689259260`.
+`strongRepunits()` は `336108797689259260` を返す必要があります
 
 ```js
 assert.strictEqual(strongRepunits(), 336108797689259260);

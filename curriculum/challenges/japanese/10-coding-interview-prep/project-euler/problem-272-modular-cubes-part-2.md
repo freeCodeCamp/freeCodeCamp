@@ -1,6 +1,6 @@
 ---
 id: 5900f47d1000cf542c50ff8f
-title: 'Problem 272: Modular Cubes, part 2'
+title: '問題 272: モジュラー立方数 (2)'
 challengeType: 5
 forumTopicId: 301922
 dashedName: problem-272-modular-cubes-part-2
@@ -8,15 +8,15 @@ dashedName: problem-272-modular-cubes-part-2
 
 # --description--
 
-For a positive number $n$, define $C(n)$ as the number of the integers $x$, for which $1 < x < n$ and $x^3 \equiv 1\bmod n$.
+正の整数 $n$ について、$1 < x < n$ かつ $x^3 \equiv 1\bmod n$ であるような整数 $x$ の個数を $C(n)$ とします。
 
-When $n = 91$, there are 8 possible values for $x$, namely: 9, 16, 22, 29, 53, 74, 79, 81. Thus, $C(91) = 8$.
+$n = 91$ のとき、考えられる $x$ の値は 9, 16, 22, 29, 53, 74, 79, 81 の 8 つです。 したがって、$C(91) = 8$ です。
 
-Find the sum of the positive numbers $n ≤ {10}^{11}$ for which $C(n)=242$.
+$C(n)=242$ となる正の整数 $n ≤ {10}^{11}$ の和を求めなさい。
 
 # --hints--
 
-`modularCubesTwo()` should return `8495585919506151000`.
+`modularCubesTwo()` は `8495585919506151000` を返す必要があります。
 
 ```js
 assert.strictEqual(modularCubesTwo(), 8495585919506151000);

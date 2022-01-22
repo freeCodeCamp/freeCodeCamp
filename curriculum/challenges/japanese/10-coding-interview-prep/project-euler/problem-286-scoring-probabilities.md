@@ -1,6 +1,6 @@
 ---
 id: 5900f48a1000cf542c50ff9d
-title: 'Problem 286: Scoring probabilities'
+title: '問題 286: 得点の確率'
 challengeType: 5
 forumTopicId: 301937
 dashedName: problem-286-scoring-probabilities
@@ -8,15 +8,15 @@ dashedName: problem-286-scoring-probabilities
 
 # --description--
 
-Barbara is a mathematician and a basketball player. She has found that the probability of scoring a point when shooting from a distance $x$ is exactly ($1 - \frac{x}{q}$), where $q$ is a real constant greater than 50.
+バーバラは数学者で、バスケットボール選手でもあります。 彼女は、距離 $x$ からシュートしたときに 1 点取れる確率がちょうど ($1 - \frac{x}{q}$) であること気付きました。ここで、$q$ は 50 よりも大きい実数定数です。
 
-During each practice run, she takes shots from distances $x = 1, x = 2, \ldots, x = 50$ and, according to her records, she has precisely a 2 % chance to score a total of exactly 20 points.
+1 回の練習ごとにそれぞれ距離 $x = 1, x = 2, \ldots, x = 50$ からシュートし、記録によると、合計がちょうど 20 点になる確率はちょうど 2% です。
 
-Find $q$ and give your answer rounded to 10 decimal places.
+$q$ を求め、四捨五入して小数点以下 10 桁まで示しなさい。
 
 # --hints--
 
-`scoringProbabilities()` should return `52.6494571953`.
+`scoringProbabilities()` は `52.6494571953` を返す必要があります。
 
 ```js
 assert.strictEqual(scoringProbabilities(), 52.6494571953);

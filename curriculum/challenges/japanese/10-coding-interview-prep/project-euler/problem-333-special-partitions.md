@@ -1,6 +1,6 @@
 ---
 id: 5900f4b91000cf542c50ffcc
-title: 'Problem 333: Special partitions'
+title: '問題 333: 特殊な分割'
 challengeType: 5
 forumTopicId: 301991
 dashedName: problem-333-special-partitions
@@ -8,25 +8,25 @@ dashedName: problem-333-special-partitions
 
 # --description--
 
-All positive integers can be partitioned in such a way that each and every term of the partition can be expressed as $2^i \times 3^j$, where $i, j ≥ 0$.
+すべての正の整数は、すべての項を $2^i \times 3^j$ (ここで $i, j ≥ 0$) で表せるような形で分割することができます。
 
-Let's consider only those such partitions where none of the terms can divide any of the other terms. For example, the partition of $17 = 2 + 6 + 9 = (2^1 \times 3^0 + 2^1 \times 3^1 + 2^0 \times 3^2)$ would not be valid since 2 can divide 6. Neither would the partition $17 = 16 + 1 = (2^4 \times 3^0 + 2^0 \times 3^0)$ since 1 can divide 16. The only valid partition of 17 would be $8 + 9 = (2^3 \times 3^0 + 2^0 \times 3^2)$.
+他の項の約数である項が一つもないような分割のみを考えます。 例えば、$17 = 2 + 6 + 9 = (2^1 \times 3^0 + 2^1 \times 3^1 + 2^0 \times 3^2)$ は、2 が 6 を割り切るので有効ではありません。 分割 $17 = 16 + 1 = (2^4 \times 3^0 + 2^0 \times 3^0)$ も、1 が 16 を割り切るので有効ではありません。 17 の場合、唯一の有効な分割は $8 + 9 = (2^3 \times 3^0 + 2^0 \times 3^2)$ です。
 
-Many integers have more than one valid partition, the first being 11 having the following two partitions.
+多くの整数には有効な分割が複数個あります。そのような最初の数は 11 であり、次の 2 つの分割があります。
 
 $$\begin{align} & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\ & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1) \end{align}$$
 
-Let's define $P(n)$ as the number of valid partitions of $n$. For example, $P(11) = 2$.
+$n$ の有効な分割の数を $P(n)$ とします。 例えば、$P(11) = 2$ です。
 
-Let's consider only the prime integers $q$ which would have a single valid partition such as $P(17)$.
+$P(17)$ のような、有効な分割を 1 つ持つ素数の整数 $q$ のみについて考えます。
 
-The sum of the primes $q &lt;100$ such that $P(q) = 1$ equals 233.
+$P(q) = 1$ となる $q &lt;100$ の和は 233 です。
 
-Find the sum of the primes $q &lt; 1\\,000\\,000$ such that $P(q) = 1$.
+$P(q) = 1$ となる素数 $q &lt; 1\\,000\\,000$ の和を求めなさい。
 
 # --hints--
 
-`specialPartitions()` should return `3053105`.
+`specialPartitions()` は `3053105` を返す必要があります。
 
 ```js
 assert.strictEqual(specialPartitions(), 3053105);

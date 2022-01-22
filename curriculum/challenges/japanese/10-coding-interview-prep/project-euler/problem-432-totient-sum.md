@@ -1,6 +1,6 @@
 ---
 id: 5900f51e1000cf542c510030
-title: 'Problem 432: Totient sum'
+title: '問題 432: トーティエント和'
 challengeType: 5
 forumTopicId: 302103
 dashedName: problem-432-totient-sum
@@ -8,15 +8,15 @@ dashedName: problem-432-totient-sum
 
 # --description--
 
-Let $S(n, m) = \sum φ(n × i)$ for $1 ≤ i ≤ m$. ($φ$ is Euler's totient function)
+$1 ≤ i ≤ m$ のとき、$S(n, m) = \sum φ(n × i)$ とします。 ($φ$ はオイラーのトーティエント関数を表します。)
 
-You are given that $S(510\\,510, {10}^6) = 45\\,480\\,596\\,821\\,125\\,120$.
+$S(510\\,510, {10}^6) = 45\\,480\\,596\\,821\\,125\\,120$ が与えられます。
 
-Find $S(510\\,510, {10}^{11})$. Give the last 9 digits of your answer.
+$S(510\\,510, {10}^{11})$ を求めなさい。 回答は、下位 9 桁とすること。
 
 # --hints--
 
-`totientSum()` should return `754862080`.
+`totientSum()` は `754862080` を返す必要があります。
 
 ```js
 assert.strictEqual(totientSum(), 754862080);

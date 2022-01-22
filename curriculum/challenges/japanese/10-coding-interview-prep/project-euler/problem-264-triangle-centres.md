@@ -1,6 +1,6 @@
 ---
 id: 5900f4751000cf542c50ff87
-title: 'Problem 264: Triangle Centres'
+title: '問題 264: 三角形の中心'
 challengeType: 5
 forumTopicId: 301913
 dashedName: problem-264-triangle-centres
@@ -8,15 +8,15 @@ dashedName: problem-264-triangle-centres
 
 # --description--
 
-Consider all the triangles having:
+以下が当てはまるすべての三角形について考えてます。
 
-- All their vertices on lattice points.
-- Circumcentre at the origin O.
-- Orthocentre at the point H(5, 0).
+- すべての頂点が格子点上にある。
+- 外心が原点 O にある。
+- 垂心が点 H (5, 0) にある。
 
-There are nine such triangles having a $\text{perimeter} ≤ 50$.
+$\text{周長} ≤ 50$ に対してこのような三角形は 9 つあります。
 
-Listed and shown in ascending order of their perimeter, they are:
+それらを下表に周長の昇順で示します。
 
 <table>
   <tbody>
@@ -34,18 +34,18 @@ A(8, 1), B(1, -8), C(-4, 7)<br>
 A(2, 9), B(9, -2), C(-6, -7)<br>
 A(9, 2), B(2, -9), C(-6, 7)<br>
       </td>
-      <td><img class="img-responsive center-block" alt="nine triangles ABC with perimeter ≤ 50" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangle-centres.gif" style="background-color: white; padding: 10px;"></td>
+      <td><img class="img-responsive center-block" alt="周長が 50 以下の 9 つの三角形 ABC" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangle-centres.gif" style="background-color: white; padding: 10px;"></td>
     </tr>
   </tbody>
 </table>
 
-The sum of their perimeters, rounded to four decimal places, is 291.0089.
+これらの周長の和を小数第 4 位に四捨五入すると 291.0089 です。
 
-Find all such triangles with a $\text{perimeter} ≤ {10}^5$. Enter as your answer the sum of their perimeters rounded to four decimal places.
+$\text{周長} ≤ {10}^5$ を満たすこのような三角形をすべて求めなさい。 回答は、これらの三角形の周長の和を四捨五入して小数第 4 位まで示すこと。
 
 # --hints--
 
-`triangleCentres()` should return `2816417.1055`.
+`triangleCentres()` は `2816417.1055` を返す必要があります。
 
 ```js
 assert.strictEqual(triangleCentres(), 2816417.1055);

@@ -1,6 +1,6 @@
 ---
 id: 5900f52e1000cf542c510041
-title: 'Problem 450: Hypocycloid and Lattice points'
+title: '問題 450: 内サイクロイドと格子点'
 challengeType: 5
 forumTopicId: 302123
 dashedName: problem-450-hypocycloid-and-lattice-points
@@ -8,35 +8,35 @@ dashedName: problem-450-hypocycloid-and-lattice-points
 
 # --description--
 
-A hypocycloid is the curve drawn by a point on a small circle rolling inside a larger circle. The parametric equations of a hypocycloid centered at the origin, and starting at the right most point is given by:
+内サイクロイドとは、大きな円の内部で回転する小さな円上の点によって描かれる曲線のことです。 原点を中心とし、右端の点から始まる内サイクロイドのパラメトリック方程式を次に示します。
 
 $$x(t) = (R - r) \cos(t) + r \cos(\frac{R - r}{r}t)$$
 
 $$y(t) = (R - r) \sin(t) - r \sin(\frac{R - r}{r} t)$$
 
-Where $R$ is the radius of the large circle and $r$ the radius of the small circle.
+ここで、$R$ は大きな円の半径、$r$ は小さな円の半径です。
 
-Let $C(R, r)$ be the set of distinct points with integer coordinates on the hypocycloid with radius $R$ and $r$ and for which there is a corresponding value of $t$ such that $\sin(t)$ and $\cos(t)$ are rational numbers.
+半径 $R$ と $r$ を持つ内サイクロイド上の整数座標の点であり、$\sin(t)$ と $\cos(t)$ が有理数となる $t$ の相当値が存在するような、相異なる点の集合を $C(R, r)$ とします。
 
-Let $S(R, r) = \sum\_{(x,y) \in C(R, r)} |x| + |y|$ be the sum of the absolute values of the $x$ and $y$ coordinates of the points in $C(R, r)$.
+$C(R, r)$ に含まれる点の $x$ 座標と $y$ 座標の絶対値の総和を $S(R, r) = \sum\_{(x,y) \in C(R, r)} |x| + |y|$ とします。
 
-Let $T(N) = \sum_{R = 3}^N \sum_{r=1}^{\left\lfloor \frac{R - 1}{2} \right\rfloor} S(R, r)$ be the sum of $S(R, r)$ for $R$ and $r$ positive integers, $R\leq N$ and $2r &lt; R$.
+正の整数 $R$ と $r$ について、$R\leq N$ かつ $2r &lt; R$のとき、$S(R, r)$ の和を $T(N) = \sum_{R = 3}^N \sum_{r=1}^{\left\lfloor \frac{R - 1}{2} \right\rfloor} S(R, r)$ とします。
 
-You are given:
+次が与えられます。
 
 $$\begin{align} C(3, 1) = & \\{(3, 0), (-1, 2), (-1,0), (-1,-2)\\} \\\\ C(2500, 1000) = & \\{(2500, 0), (772, 2376), (772, -2376), (516, 1792), (516, -1792), (500, 0), (68, 504), \\\\ &(68, -504),(-1356, 1088), (-1356, -1088), (-1500, 1000), (-1500, -1000)\\} \end{align}$$
 
-**Note:** (-625, 0) is not an element of $C(2500, 1000)$ because $\sin(t)$ is not a rational number for the corresponding values of t.
+** 注:** (-625, 0) は $C(2500, 1000)$ の要素ではありません。なぜなら、$t$ の相当値で $\sin(t)$ が有理数とならないからです。
 
 $S(3, 1) = (|3| + |0|) + (|-1| + |2|) + (|-1| + |0|) + (|-1| + |-2|) = 10$
 
-$T(3) = 10$; $T(10) = 524$; $T(100) = 580\\,442$; $T({10}^3) = 583\\,108\\,600$.
+$T(3) = 10$; $T(10) = 524$; $T(100) = 580\\,442$; $T({10}^3) = 583\\,108\\,600$
 
-Find $T({10}^6)$.
+$T({10}^6)$ を求めなさい。
 
 # --hints--
 
-`hypocycloidAndLatticePoints()` should return `583333163984220900`.
+`hypocycloidAndLatticePoints()` は `583333163984220900` を返す必要があります。
 
 ```js
 assert.strictEqual(hypocycloidAndLatticePoints(), 583333163984220900);
